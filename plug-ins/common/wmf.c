@@ -4348,7 +4348,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5cae650108
+DECL|struct|__anon2b95e9c10108
 block|{
 DECL|member|scale
 name|double
@@ -4376,7 +4376,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5cae650208
+DECL|struct|__anon2b95e9c10208
 block|{
 DECL|member|run
 name|gint
@@ -4403,7 +4403,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5cae650308
+DECL|struct|__anon2b95e9c10308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -4424,7 +4424,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5cae650403
+DECL|enum|__anon2b95e9c10403
 block|{
 DECL|enumerator|OBJ_BITMAP
 name|OBJ_BITMAP
@@ -4455,7 +4455,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5cae650508
+DECL|struct|__anon2b95e9c10508
 block|{
 DECL|member|dummy
 name|int
@@ -4470,7 +4470,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5cae650608
+DECL|struct|__anon2b95e9c10608
 block|{
 DECL|member|color
 name|GdkColor
@@ -4497,7 +4497,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5cae650708
+DECL|struct|__anon2b95e9c10708
 block|{
 DECL|member|dummy
 name|int
@@ -4512,7 +4512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5cae650808
+DECL|struct|__anon2b95e9c10808
 block|{
 DECL|member|color
 name|GdkColor
@@ -4539,7 +4539,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5cae650908
+DECL|struct|__anon2b95e9c10908
 block|{
 DECL|member|font
 name|GdkFont
@@ -4555,7 +4555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5cae650a08
+DECL|struct|__anon2b95e9c10a08
 block|{
 DECL|member|dummy
 name|int
@@ -4570,14 +4570,14 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5cae650b08
+DECL|struct|__anon2b95e9c10b08
 block|{
 DECL|member|type
 name|ObjectType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2b5cae650c0a
+DECL|union|__anon2b95e9c10c0a
 block|{
 DECL|member|bitmap
 name|BitmapObject
@@ -4616,7 +4616,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5cae650d08
+DECL|struct|__anon2b95e9c10d08
 block|{
 DECL|member|gc
 name|GdkGC
@@ -4669,7 +4669,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5cae650e08
+DECL|struct|__anon2b95e9c10e08
 block|{
 DECL|member|pixmap
 name|GdkPixmap
@@ -4720,7 +4720,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5cae650f08
+DECL|struct|__anon2b95e9c10f08
 block|{
 DECL|member|valid
 name|gboolean
@@ -5009,10 +5009,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|load_ok_callback
 argument_list|,
@@ -5026,10 +5023,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

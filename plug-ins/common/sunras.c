@@ -137,7 +137,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289286480108
+DECL|struct|__anon2770945e0108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -226,7 +226,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289286480208
+DECL|struct|__anon2770945e0208
 block|{
 DECL|member|val
 name|gint
@@ -827,7 +827,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289286480308
+DECL|struct|__anon2770945e0308
 block|{
 DECL|member|rle
 name|gint
@@ -843,7 +843,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289286480408
+DECL|struct|__anon2770945e0408
 block|{
 DECL|member|run
 name|gint
@@ -7866,10 +7866,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|save_ok_callback
 argument_list|,
@@ -7883,10 +7880,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

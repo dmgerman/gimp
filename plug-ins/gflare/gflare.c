@@ -506,7 +506,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2922e6850103
+DECL|enum|__anon2c78b98c0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -533,7 +533,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2922e6850203
+DECL|enum|__anon2c78b98c0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -554,7 +554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922e6850308
+DECL|struct|__anon2c78b98c0308
 block|{
 DECL|member|name
 name|gchar
@@ -695,7 +695,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922e6850408
+DECL|struct|__anon2c78b98c0408
 block|{
 DECL|member|fp
 name|FILE
@@ -715,7 +715,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2922e6850503
+DECL|enum|__anon2c78b98c0503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -743,7 +743,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922e6850608
+DECL|struct|__anon2c78b98c0608
 block|{
 DECL|member|init
 name|gint
@@ -765,7 +765,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2922e6850708
+DECL|struct|__anon2c78b98c0708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -839,7 +839,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922e6850808
+DECL|struct|__anon2c78b98c0808
 block|{
 DECL|member|init
 name|gint
@@ -909,7 +909,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922e6850908
+DECL|struct|__anon2c78b98c0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -936,7 +936,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922e6850a08
+DECL|struct|__anon2c78b98c0a08
 block|{
 DECL|member|init
 name|gint
@@ -1106,7 +1106,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922e6850b08
+DECL|struct|__anon2c78b98c0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1133,7 +1133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922e6850c08
+DECL|struct|__anon2c78b98c0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1174,7 +1174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922e6850d08
+DECL|struct|__anon2c78b98c0d08
 block|{
 DECL|member|tile
 name|GimpTile
@@ -1400,7 +1400,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922e6850e08
+DECL|struct|__anon2c78b98c0e08
 block|{
 DECL|member|tag
 name|gint
@@ -1477,7 +1477,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922e6850f08
+DECL|struct|__anon2c78b98c0f08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1535,7 +1535,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922e6851008
+DECL|struct|__anon2c78b98c1008
 block|{
 DECL|member|run
 name|gint
@@ -9332,7 +9332,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon2922e6851108
+DECL|struct|__anon2c78b98c1108
 specifier|static
 struct|struct
 block|{
@@ -12450,10 +12450,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|dlg_ok_callback
 argument_list|,
@@ -12467,10 +12464,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
@@ -15800,7 +15794,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2922e6851208
+DECL|struct|__anon2c78b98c1208
 block|{
 DECL|member|label
 name|gchar
@@ -16896,15 +16890,9 @@ name|FALSE
 argument_list|,
 name|str
 argument_list|,
-name|_
-argument_list|(
-literal|"Delete"
-argument_list|)
+name|GTK_STOCK_DELETE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|NULL
 argument_list|,
@@ -17285,10 +17273,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|ed_ok_callback
 argument_list|,
@@ -17302,10 +17287,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

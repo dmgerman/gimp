@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b98ed570108
+DECL|struct|__anon2a1ccf880108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -563,7 +563,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b98ed570203
+DECL|enum|__anon2a1ccf880203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -582,7 +582,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b98ed570308
+DECL|struct|__anon2a1ccf880308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -652,7 +652,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b98ed570408
+DECL|struct|__anon2a1ccf880408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -1434,10 +1434,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|tileit_ok_callback
 argument_list|,
@@ -1451,10 +1448,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

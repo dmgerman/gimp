@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ce4f3b0103
+DECL|enum|__anon2905ed8d0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -127,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ce4f3b0208
+DECL|struct|__anon2905ed8d0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ce4f3b0308
+DECL|struct|__anon2905ed8d0308
 block|{
 DECL|member|run
 name|gint
@@ -1682,10 +1682,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|warp_ok_callback
 argument_list|,
@@ -1699,10 +1696,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

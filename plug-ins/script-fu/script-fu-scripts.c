@@ -295,7 +295,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fcd7300108
+DECL|struct|__anon28e63d800108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fcd7300208
+DECL|struct|__anon28e63d800208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fcd7300308
+DECL|struct|__anon28e63d800308
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -386,7 +386,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fcd7300408
+DECL|struct|__anon28e63d800408
 block|{
 DECL|member|name
 name|gchar
@@ -414,7 +414,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fcd7300508
+DECL|struct|__anon28e63d800508
 block|{
 DECL|member|list
 name|GSList
@@ -434,7 +434,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon28fcd730060a
+DECL|union|__anon28e63d80060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -504,7 +504,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fcd7300708
+DECL|struct|__anon28e63d800708
 block|{
 DECL|member|script_name
 name|gchar
@@ -590,7 +590,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fcd7300808
+DECL|struct|__anon28e63d800808
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -7845,12 +7845,9 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -7899,12 +7896,9 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -9865,10 +9859,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Close"
-argument_list|)
+name|GTK_STOCK_CLOSE
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

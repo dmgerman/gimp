@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed22260108
+DECL|struct|__anon2c6296f10108
 block|{
 DECL|member|resolution
 name|guint
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed22260208
+DECL|struct|__anon2c6296f10208
 block|{
 DECL|member|run
 name|gint
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed22260308
+DECL|struct|__anon2c6296f10308
 block|{
 DECL|member|width
 DECL|member|height
@@ -308,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed22260408
+DECL|struct|__anon2c6296f10408
 block|{
 DECL|member|run
 name|gint
@@ -848,7 +848,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed22260508
+DECL|struct|__anon2c6296f10508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1719,7 +1719,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed22260608
+DECL|struct|__anon2c6296f10608
 block|{
 DECL|member|eol
 name|long
@@ -13376,10 +13376,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|load_ok_callback
 argument_list|,
@@ -13393,10 +13390,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
@@ -14506,10 +14500,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|save_ok_callback
 argument_list|,
@@ -14523,10 +14514,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

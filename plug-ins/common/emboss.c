@@ -70,7 +70,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba95eed0103
+DECL|enum|__anon2c6adf320103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -2400,10 +2400,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|emboss_ok_callback
 argument_list|,
@@ -2417,10 +2414,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

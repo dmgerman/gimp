@@ -376,7 +376,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon29c242380108
+DECL|struct|__anon2c15fda10108
 typedef|typedef
 struct|struct
 block|{
@@ -445,7 +445,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29c242380208
+DECL|struct|__anon2c15fda10208
 typedef|typedef
 struct|struct
 block|{
@@ -563,7 +563,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29c242380308
+DECL|struct|__anon2c15fda10308
 typedef|typedef
 struct|struct
 block|{
@@ -592,7 +592,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29c242380408
+DECL|struct|__anon2c15fda10408
 typedef|typedef
 struct|struct
 block|{
@@ -619,7 +619,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29c242380508
+DECL|struct|__anon2c15fda10508
 typedef|typedef
 struct|struct
 block|{
@@ -6723,10 +6723,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Close"
-argument_list|)
+name|GTK_STOCK_CLOSE
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288408c90108
+DECL|struct|__anon2b5363020108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -249,7 +249,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288408c90208
+DECL|struct|__anon2b5363020208
 block|{
 DECL|member|run
 name|gint
@@ -2426,10 +2426,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|randomize_ok_callback
 argument_list|,
@@ -2443,10 +2440,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

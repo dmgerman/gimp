@@ -223,7 +223,7 @@ value|256
 end_define
 
 begin_typedef
-DECL|struct|__anon2b0b5b930108
+DECL|struct|__anon278f74500108
 typedef|typedef
 struct|struct
 block|{
@@ -238,7 +238,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b0b5b930208
+DECL|struct|__anon278f74500208
 typedef|typedef
 struct|struct
 block|{
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b5b930308
+DECL|struct|__anon278f74500308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -443,7 +443,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b0b5b930408
+DECL|struct|__anon278f74500408
 typedef|typedef
 struct|struct
 block|{
@@ -538,7 +538,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0b5b930503
+DECL|enum|__anon278f74500503
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -2863,12 +2863,9 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3058,12 +3055,9 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -13808,10 +13802,7 @@ index|]
 operator|.
 name|but_txt
 operator|=
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 expr_stmt|;
 name|b_argv
 index|[

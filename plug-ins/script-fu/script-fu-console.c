@@ -173,7 +173,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fb80a80108
+DECL|struct|__anon277940d30108
 block|{
 DECL|member|console
 name|GtkTextBuffer
@@ -603,10 +603,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Close"
-argument_list|)
+name|GTK_STOCK_CLOSE
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

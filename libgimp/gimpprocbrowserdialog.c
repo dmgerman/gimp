@@ -101,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2d18340108
+DECL|struct|__anon29c725160108
 block|{
 DECL|member|label
 name|gchar
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2d18340208
+DECL|struct|__anon29c725160208
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -529,10 +529,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Apply"
-argument_list|)
+name|GTK_STOCK_APPLY
 argument_list|,
 name|dialog_apply_callback
 argument_list|,
@@ -546,10 +543,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Close"
-argument_list|)
+name|GTK_STOCK_CLOSE
 argument_list|,
 name|dialog_close_callback
 argument_list|,
@@ -634,10 +628,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Close"
-argument_list|)
+name|GTK_STOCK_CLOSE
 argument_list|,
 name|dialog_close_callback
 argument_list|,

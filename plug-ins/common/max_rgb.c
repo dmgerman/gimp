@@ -234,7 +234,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b617ebd0103
+DECL|enum|__anon2babdb7d0103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -252,7 +252,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b617ebd0208
+DECL|struct|__anon2babdb7d0208
 block|{
 DECL|member|max_p
 name|gint
@@ -268,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b617ebd0308
+DECL|struct|__anon2babdb7d0308
 block|{
 DECL|member|run
 name|gint
@@ -1598,10 +1598,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|ok_callback
 argument_list|,
@@ -1615,10 +1612,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

@@ -145,7 +145,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c961050103
+DECL|enum|__anon2b1566340103
 block|{
 DECL|enumerator|act_lredux
 name|act_lredux
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c961050203
+DECL|enum|__anon2b1566340203
 block|{
 DECL|enumerator|mode_ntsc
 name|mode_ntsc
@@ -219,7 +219,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon27c961050308
+DECL|struct|__anon2b1566340308
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -2437,10 +2437,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|hot_ok_callback
 argument_list|,
@@ -2454,10 +2451,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

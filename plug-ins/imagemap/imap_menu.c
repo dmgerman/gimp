@@ -890,10 +890,7 @@ name|make_item_with_label
 argument_list|(
 name|file_menu
 argument_list|,
-name|_
-argument_list|(
-literal|"Close"
-argument_list|)
+name|GTK_STOCK_CLOSE
 argument_list|,
 name|menu_command
 argument_list|,

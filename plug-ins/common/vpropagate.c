@@ -690,7 +690,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279075fa0108
+DECL|struct|__anon28e5d7cd0108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -842,7 +842,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279075fa0208
+DECL|struct|__anon28e5d7cd0208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1067,7 +1067,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279075fa0308
+DECL|struct|__anon28e5d7cd0308
 block|{
 DECL|member|run
 name|gint
@@ -3622,7 +3622,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279075fa0408
+DECL|struct|__anon28e5d7cd0408
 block|{
 DECL|member|min_modified
 name|gshort
@@ -5341,10 +5341,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|vpropagate_ok_callback
 argument_list|,
@@ -5358,10 +5355,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

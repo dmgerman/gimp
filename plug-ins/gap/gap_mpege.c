@@ -694,10 +694,7 @@ index|]
 operator|.
 name|but_txt
 operator|=
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 expr_stmt|;
 name|b_argv
 index|[
@@ -716,10 +713,7 @@ index|]
 operator|.
 name|but_txt
 operator|=
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 expr_stmt|;
 name|b_argv
 index|[
@@ -995,10 +989,7 @@ index|]
 operator|.
 name|but_txt
 operator|=
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 expr_stmt|;
 name|b_argv
 index|[

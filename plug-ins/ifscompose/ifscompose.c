@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274e92780103
+DECL|enum|__anon2b2120b70103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274e92780203
+DECL|enum|__anon2b2120b70203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e92780308
+DECL|struct|__anon2b2120b70308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -184,7 +184,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon274e9278040a
+DECL|union|__anon2b2120b7040a
 block|{
 DECL|member|d
 name|gdouble
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e92780508
+DECL|struct|__anon2b2120b70508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e92780608
+DECL|struct|__anon2b2120b70608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e92780708
+DECL|struct|__anon2b2120b70708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e92780808
+DECL|struct|__anon2b2120b70808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -381,7 +381,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e92780908
+DECL|struct|__anon2b2120b70908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -553,7 +553,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e92780a08
+DECL|struct|__anon2b2120b70a08
 block|{
 DECL|member|run
 name|gint
@@ -4119,10 +4119,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|ifs_compose_ok_callback
 argument_list|,
@@ -4187,10 +4184,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
@@ -6667,10 +6661,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Close"
-argument_list|)
+name|GTK_STOCK_CLOSE
 argument_list|,
 name|gtk_widget_hide
 argument_list|,

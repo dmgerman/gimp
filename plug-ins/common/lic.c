@@ -150,7 +150,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bbc6810108
+DECL|struct|__anon2bdf99a30108
 block|{
 DECL|member|r
 DECL|member|g
@@ -219,7 +219,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bbc6810208
+DECL|struct|__anon2bdf99a30208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -4837,10 +4837,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|ok_button_clicked
 argument_list|,
@@ -4854,10 +4851,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_main_quit
 argument_list|,

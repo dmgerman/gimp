@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d936610103
+DECL|enum|__anon2bf0962d0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d936610203
+DECL|enum|__anon2bf0962d0203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d936610303
+DECL|enum|__anon2bf0962d0303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -4606,10 +4606,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|ok_callback
 argument_list|,
@@ -4623,10 +4620,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

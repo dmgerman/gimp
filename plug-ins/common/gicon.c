@@ -111,7 +111,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba00db80108
+DECL|struct|__anon2b20b6880108
 block|{
 DECL|member|icon_name
 name|gchar
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba00db80208
+DECL|struct|__anon2b20b6880208
 block|{
 DECL|member|run
 name|gint
@@ -1788,10 +1788,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|ok_callback
 argument_list|,
@@ -1805,10 +1802,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

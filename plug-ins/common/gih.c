@@ -173,7 +173,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b608a1e0108
+DECL|struct|__anon277366030108
 block|{
 DECL|member|spacing
 name|guint
@@ -230,7 +230,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b608a1e0208
+DECL|struct|__anon277366030208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -3815,10 +3815,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|ok_callback
 argument_list|,
@@ -3832,10 +3829,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

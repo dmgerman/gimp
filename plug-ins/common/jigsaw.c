@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7d58310103
+DECL|enum|__anon2bc2432a0103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -78,7 +78,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7d58310203
+DECL|enum|__anon2bc2432a0203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -14794,10 +14794,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|run_callback
 argument_list|,
@@ -14811,10 +14808,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

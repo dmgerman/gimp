@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9518230108
+DECL|struct|__anon2b04543e0108
 block|{
 DECL|member|height
 name|gint
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9518230208
+DECL|struct|__anon2b04543e0208
 block|{
 DECL|member|run
 name|gint
@@ -763,10 +763,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|engrave_ok_callback
 argument_list|,
@@ -780,10 +777,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
@@ -1866,7 +1860,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9518230308
+DECL|struct|__anon2b04543e0308
 block|{
 DECL|member|x
 DECL|member|y

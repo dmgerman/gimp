@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b70d06e0108
+DECL|struct|__anon28fd6f6b0108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b70d06e0208
+DECL|struct|__anon28fd6f6b0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -2093,10 +2093,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|dialog_ok_callback
 argument_list|,
@@ -2110,10 +2107,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

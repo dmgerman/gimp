@@ -67,6 +67,14 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_SIZE_ENTRY))
+DECL|macro|GIMP_SIZE_ENTRY_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_SIZE_ENTRY_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_SIZE_ENTRY, GimpSizeEntryClass))
 DECL|typedef|GimpSizeEntryClass
 typedef|typedef
 name|struct
@@ -83,9 +91,9 @@ DECL|struct|_GimpSizeEntry
 struct|struct
 name|_GimpSizeEntry
 block|{
-DECL|member|table
+DECL|member|parent_instance
 name|GtkTable
-name|table
+name|parent_instance
 decl_stmt|;
 DECL|member|fields
 name|GSList
@@ -170,7 +178,7 @@ function_decl|;
 block|}
 struct|;
 comment|/* For information look into the C source or the html documentation */
-name|GtkType
+name|GType
 name|gimp_size_entry_get_type
 parameter_list|(
 name|void

@@ -83,7 +83,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2910b9610103
+DECL|enum|__anon297389530103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -303,7 +303,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2910b9610208
+DECL|struct|__anon297389530208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -458,7 +458,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2910b9610308
+DECL|struct|__anon297389530308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -3779,10 +3779,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|ok_callback
 argument_list|,
@@ -3816,10 +3813,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

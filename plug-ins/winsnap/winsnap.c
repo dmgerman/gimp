@@ -368,7 +368,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c0a859b0108
+DECL|struct|__anon2c46d01b0108
 typedef|typedef
 struct|struct
 block|{
@@ -415,7 +415,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c0a859b0208
+DECL|struct|__anon2c46d01b0208
 typedef|typedef
 struct|struct
 block|{
@@ -3026,12 +3026,9 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS

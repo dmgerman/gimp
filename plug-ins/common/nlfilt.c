@@ -154,7 +154,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276c7c030103
+DECL|enum|__anon2a2d29380103
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -1593,10 +1593,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|nlfilt_ok_callback
 argument_list|,
@@ -1610,10 +1607,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

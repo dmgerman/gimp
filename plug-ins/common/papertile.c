@@ -74,7 +74,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acbdd3d0103
+DECL|enum|__anon2a9ced280103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acbdd3d0203
+DECL|enum|__anon2a9ced280203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -190,7 +190,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2acbdd3d0308
+DECL|struct|__anon2a9ced280308
 block|{
 DECL|member|params
 name|PluginParams
@@ -210,7 +210,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2acbdd3d0408
+DECL|struct|__anon2a9ced280408
 block|{
 DECL|member|x0
 name|gint
@@ -577,7 +577,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2acbdd3d0508
+DECL|struct|__anon2a9ced280508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject
@@ -1049,10 +1049,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|dialog_ok_clicked
 argument_list|,
@@ -1066,10 +1063,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

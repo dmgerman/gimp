@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a297d400103
+DECL|enum|__anon2a46f3180103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -106,7 +106,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a297d400208
+DECL|struct|__anon2a46f3180208
 block|{
 DECL|member|amount
 name|gdouble
@@ -125,7 +125,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a297d400308
+DECL|struct|__anon2a46f3180308
 block|{
 DECL|member|run
 name|gint
@@ -140,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a297d400408
+DECL|struct|__anon2a46f3180408
 block|{
 DECL|member|tile
 name|GimpTile
@@ -2663,10 +2663,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|edge_ok_callback
 argument_list|,
@@ -2680,10 +2677,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

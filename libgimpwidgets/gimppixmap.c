@@ -148,8 +148,7 @@ name|pixmap_type
 operator|=
 name|gtk_type_unique
 argument_list|(
-name|gtk_pixmap_get_type
-argument_list|()
+name|GTK_TYPE_PIXMAP
 argument_list|,
 operator|&
 name|pixmap_info
@@ -245,8 +244,7 @@ name|pixmap
 operator|=
 name|gtk_type_new
 argument_list|(
-name|gimp_pixmap_get_type
-argument_list|()
+name|GIMP_TYPE_PIXMAP
 argument_list|)
 expr_stmt|;
 name|gtk_pixmap_set_build_insensitive
@@ -294,13 +292,6 @@ modifier|*
 name|xpm_data
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|pixmap
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_PIXMAP

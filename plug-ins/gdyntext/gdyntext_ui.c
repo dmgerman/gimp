@@ -208,7 +208,7 @@ file|"graphics/layer_align_9.xpm"
 end_include
 
 begin_typedef
-DECL|struct|__anon2a9fee760108
+DECL|struct|__anon2909a2b30108
 typedef|typedef
 struct|struct
 block|{
@@ -1217,12 +1217,9 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -4042,12 +4039,9 @@ argument_list|)
 expr_stmt|;
 name|button_ok
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4185,12 +4179,9 @@ argument_list|)
 expr_stmt|;
 name|button_cancel
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"Close"
-argument_list|)
+name|GTK_STOCK_CLOSE
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS

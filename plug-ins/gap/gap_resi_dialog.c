@@ -86,7 +86,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c775e850108
+DECL|struct|__anon29a223140108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -109,7 +109,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c775e850208
+DECL|struct|__anon29a223140208
 typedef|typedef
 struct|struct
 block|{
@@ -578,12 +578,9 @@ expr_stmt|;
 comment|/*  Action area  */
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -639,12 +636,9 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS

@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aac971d0103
+DECL|enum|__anon296529790103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aac971d0203
+DECL|enum|__anon296529790203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aac971d0303
+DECL|enum|__anon296529790303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aac971d0403
+DECL|enum|__anon296529790403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aac971d0508
+DECL|struct|__anon296529790508
 block|{
 DECL|member|h_style
 name|gint
@@ -336,7 +336,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aac971d0608
+DECL|struct|__anon296529790608
 block|{
 DECL|member|run
 name|gint
@@ -1654,10 +1654,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|align_layers_ok_callback
 argument_list|,
@@ -1671,10 +1668,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

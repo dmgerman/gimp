@@ -30504,7 +30504,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c850cfb0108
+DECL|struct|__anon2c53528b0108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -30539,7 +30539,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c850cfb0208
+DECL|struct|__anon2c53528b0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -33128,7 +33128,7 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"About"
+literal|"About..."
 argument_list|)
 argument_list|,
 name|alienmap_logo_dialog
@@ -33143,10 +33143,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|dialog_ok_callback
 argument_list|,
@@ -33160,10 +33157,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
@@ -34644,10 +34638,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_CLOSE
 argument_list|,
 name|gtk_widget_hide
 argument_list|,

@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7d25680108
+DECL|struct|__anon2c1ba54d0108
 block|{
 DECL|member|horizontal
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7d25680208
+DECL|struct|__anon2c1ba54d0208
 block|{
 DECL|member|run
 name|gint
@@ -796,10 +796,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|sobel_ok_callback
 argument_list|,
@@ -813,10 +810,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

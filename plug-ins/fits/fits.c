@@ -79,7 +79,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291314700108
+DECL|struct|__anon276a13320108
 block|{
 DECL|member|replace
 name|gint
@@ -105,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291314700208
+DECL|struct|__anon276a13320208
 block|{
 DECL|member|run
 name|gint
@@ -4451,10 +4451,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|load_ok_callback
 argument_list|,
@@ -4468,10 +4465,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

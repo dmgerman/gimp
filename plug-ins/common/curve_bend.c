@@ -771,7 +771,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e725ad0108
+DECL|struct|__anon28d1786e0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -857,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e725ad0208
+DECL|struct|__anon28d1786e0208
 block|{
 DECL|member|y
 name|gint32
@@ -6399,10 +6399,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|bender_ok_callback
 argument_list|,
@@ -6416,10 +6413,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|bender_cancel_callback
 argument_list|,

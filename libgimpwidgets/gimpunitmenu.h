@@ -67,6 +67,14 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_UNIT_MENU))
+DECL|macro|GIMP_UNIT_MENU_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_UNIT_MENU_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_UNIT_MENU, GimpUnitMenuClass))
 DECL|typedef|GimpUnitMenuClass
 typedef|typedef
 name|struct
@@ -77,9 +85,9 @@ DECL|struct|_GimpUnitMenu
 struct|struct
 name|_GimpUnitMenu
 block|{
-DECL|member|optionmenu
+DECL|member|parent_instance
 name|GtkOptionMenu
-name|optionmenu
+name|parent_instance
 decl_stmt|;
 comment|/* public (read only) */
 DECL|member|format
@@ -134,7 +142,7 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
-name|GtkType
+name|GType
 name|gimp_unit_menu_get_type
 parameter_list|(
 name|void

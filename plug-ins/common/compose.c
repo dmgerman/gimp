@@ -397,7 +397,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8a5390108
+DECL|struct|__anon2c4c42f90108
 block|{
 DECL|member|compose_type
 name|gchar
@@ -671,7 +671,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8a5390208
+DECL|struct|__anon2c4c42f90208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -702,7 +702,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8a5390308
+DECL|struct|__anon2c4c42f90308
 block|{
 DECL|member|width
 DECL|member|height
@@ -3956,10 +3956,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|compose_ok_callback
 argument_list|,
@@ -3973,10 +3970,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

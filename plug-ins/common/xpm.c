@@ -98,7 +98,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b038920108
+DECL|struct|__anon27855cb60108
 block|{
 DECL|member|threshold
 name|gint
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b038920208
+DECL|struct|__anon27855cb60208
 block|{
 DECL|member|run
 name|gint
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b038920308
+DECL|struct|__anon27855cb60308
 block|{
 DECL|member|r
 name|guchar
@@ -3178,10 +3178,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|save_ok_callback
 argument_list|,
@@ -3195,10 +3192,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

@@ -135,7 +135,7 @@ value|"help"
 end_define
 
 begin_enum
-DECL|enum|__anon2772acbd0103
+DECL|enum|__anon27d33b3a0103
 enum|enum
 block|{
 DECL|enumerator|CONTENTS
@@ -151,7 +151,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2772acbd0203
+DECL|enum|__anon27d33b3a0203
 enum|enum
 block|{
 DECL|enumerator|URL_UNKNOWN
@@ -183,7 +183,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2772acbd0308
+DECL|struct|__anon27d33b3a0308
 block|{
 DECL|member|index
 name|gint
@@ -223,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2772acbd0408
+DECL|struct|__anon27d33b3a0408
 block|{
 DECL|member|title
 name|gchar
@@ -3525,10 +3525,7 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
-name|_
-argument_list|(
-literal|"Close"
-argument_list|)
+name|GTK_STOCK_CLOSE
 argument_list|)
 expr_stmt|;
 name|gtk_button_set_relief

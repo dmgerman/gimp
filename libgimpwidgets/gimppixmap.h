@@ -67,6 +67,14 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PIXMAP))
+DECL|macro|GIMP_PIXMAP_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_PIXMAP_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PIXMAP, GimpPixmapClass))
 DECL|typedef|GimpPixmapClass
 typedef|typedef
 name|struct
@@ -77,9 +85,9 @@ DECL|struct|_GimpPixmap
 struct|struct
 name|_GimpPixmap
 block|{
-DECL|member|pixmap
+DECL|member|parent_instance
 name|GtkPixmap
-name|pixmap
+name|parent_instance
 decl_stmt|;
 DECL|member|xpm_data
 name|gchar
@@ -99,7 +107,7 @@ name|parent_class
 decl_stmt|;
 block|}
 struct|;
-name|GtkType
+name|GType
 name|gimp_pixmap_get_type
 parameter_list|(
 name|void

@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4b2af0108
+DECL|struct|__anon2b84ae070108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4b2af0208
+DECL|struct|__anon2b84ae070208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4b2af0308
+DECL|struct|__anon2b84ae070308
 block|{
 DECL|member|col
 DECL|member|row
@@ -3573,10 +3573,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|dialog_ok_callback
 argument_list|,
@@ -3590,10 +3587,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

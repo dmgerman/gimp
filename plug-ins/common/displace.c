@@ -119,7 +119,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278bd7030108
+DECL|struct|__anon2b69d23e0108
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278bd7030208
+DECL|struct|__anon2b69d23e0208
 block|{
 DECL|member|run
 name|gint
@@ -1060,10 +1060,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|displace_ok_callback
 argument_list|,
@@ -1077,10 +1074,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

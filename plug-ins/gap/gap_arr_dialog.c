@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa355da0108
+DECL|struct|__anon2b0d73f10108
 block|{
 DECL|member|arr_ptr
 name|t_arr_arg
@@ -120,7 +120,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2aa355da0208
+DECL|struct|__anon2b0d73f10208
 typedef|typedef
 struct|struct
 block|{
@@ -3623,18 +3623,15 @@ name|NULL
 condition|)
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|)
 expr_stmt|;
 else|else
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
 name|b_argv
 index|[
@@ -3722,12 +3719,9 @@ block|{
 comment|/* if no buttons are specified use one CLOSE button per default */
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"Close"
-argument_list|)
+name|GTK_STOCK_CLOSE
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4856,10 +4850,7 @@ index|]
 operator|.
 name|but_txt
 operator|=
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 expr_stmt|;
 name|b_argv
 index|[
@@ -4877,10 +4868,7 @@ index|]
 operator|.
 name|but_txt
 operator|=
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 expr_stmt|;
 name|b_argv
 index|[

@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a8d3d30108
+DECL|struct|__anon27d3a9ef0108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -83,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a8d3d30208
+DECL|struct|__anon27d3a9ef0208
 block|{
 DECL|member|run
 name|gboolean
@@ -98,7 +98,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a8d3d30308
+DECL|struct|__anon27d3a9ef0308
 block|{
 DECL|member|color_button
 name|GtkWidget
@@ -1751,10 +1751,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|colortoalpha_ok_callback
 argument_list|,
@@ -1768,10 +1765,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
