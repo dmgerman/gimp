@@ -124,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c087fa0108
+DECL|struct|__anon29b661d90108
 block|{
 DECL|member|gimage
 name|GImage
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c087fa0208
+DECL|struct|__anon29b661d90208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -3295,7 +3295,7 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-literal|"rename"
+literal|"name_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(

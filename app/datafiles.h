@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d92f970103
+DECL|enum|__anon277cb4730103
 block|{
 DECL|enumerator|INCLUDE_TEMP_DIR
 name|INCLUDE_TEMP_DIR
@@ -49,6 +49,7 @@ modifier|*
 name|GimpDataFileLoaderFunc
 function_decl|)
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -56,14 +57,11 @@ parameter_list|)
 function_decl|;
 end_typedef
 
-begin_comment
-comment|/***** Functions *****/
-end_comment
-
 begin_function_decl
 name|void
 name|datafiles_read_directories
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|path_str

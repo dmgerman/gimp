@@ -60,7 +60,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c27f78d0108
+DECL|struct|__anon28f97b040108
 block|{
 DECL|member|object
 name|gpointer
@@ -83,7 +83,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c27f78d0203
+DECL|enum|__anon28f97b040203
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -579,8 +579,7 @@ name|set
 operator|=
 name|gtk_type_new
 argument_list|(
-name|gimp_set_get_type
-argument_list|()
+name|GIMP_TYPE_SET
 argument_list|)
 expr_stmt|;
 name|set

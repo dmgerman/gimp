@@ -88,9 +88,9 @@ DECL|struct|_GimpObject
 struct|struct
 name|_GimpObject
 block|{
-DECL|member|object
+DECL|member|parent_instance
 name|GtkObject
-name|object
+name|parent_instance
 decl_stmt|;
 DECL|member|name
 name|gchar

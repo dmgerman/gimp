@@ -88,9 +88,9 @@ DECL|struct|_GimpDrawable
 struct|struct
 name|_GimpDrawable
 block|{
-DECL|member|data
+DECL|member|parent_instance
 name|GimpObject
-name|data
+name|parent_instance
 decl_stmt|;
 DECL|member|tiles
 name|TileManager

@@ -147,7 +147,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276180c30103
+DECL|enum|__anon29d9da7b0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -572,8 +572,7 @@ name|layer_mask_type
 operator|=
 name|gtk_type_unique
 argument_list|(
-name|gimp_channel_get_type
-argument_list|()
+name|GIMP_TYPE_CHANNEL
 argument_list|,
 operator|&
 name|layer_mask_info
@@ -1033,8 +1032,7 @@ name|layer
 operator|=
 name|gtk_type_new
 argument_list|(
-name|gimp_layer_get_type
-argument_list|()
+name|GIMP_TYPE_LAYER
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_configure
@@ -7553,8 +7551,7 @@ name|layer_mask
 operator|=
 name|gtk_type_new
 argument_list|(
-name|gimp_layer_mask_get_type
-argument_list|()
+name|GIMP_TYPE_LAYER_MASK
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_configure

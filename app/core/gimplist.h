@@ -46,6 +46,17 @@ value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_LIST, GimpList))
 end_define
 
 begin_define
+DECL|macro|GIMP_LIST_CLASS (klass)
+define|#
+directive|define
+name|GIMP_LIST_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_LIST, GimpListClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_LIST (obj)
 define|#
 directive|define
@@ -57,14 +68,14 @@ value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_LIST))
 end_define
 
 begin_define
-DECL|macro|GIMP_LIST_CLASS (klass)
+DECL|macro|GIMP_IS_LIST_CLASS (klass)
 define|#
 directive|define
-name|GIMP_LIST_CLASS
+name|GIMP_IS_LIST_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_LIST, GimpListClass))
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_LIST))
 end_define
 
 begin_typedef
@@ -81,9 +92,9 @@ DECL|struct|_GimpList
 struct|struct
 name|_GimpList
 block|{
-DECL|member|gobject
+DECL|member|parent_instance
 name|GimpObject
-name|gobject
+name|parent_instance
 decl_stmt|;
 DECL|member|type
 name|GtkType

@@ -120,6 +120,7 @@ name|GSList
 modifier|*
 name|list
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -139,6 +140,7 @@ parameter_list|(
 name|gint
 name|fd
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename

@@ -108,9 +108,9 @@ DECL|struct|_GimpChannel
 struct|struct
 name|_GimpChannel
 block|{
-DECL|member|drawable
+DECL|member|parent_instance
 name|GimpDrawable
-name|drawable
+name|parent_instance
 decl_stmt|;
 DECL|member|col
 name|guchar

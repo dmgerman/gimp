@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b638010108
+DECL|struct|__anon2b3027040108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -165,7 +165,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b638010208
+DECL|struct|__anon2b3027040208
 block|{
 DECL|member|boole
 name|gboolean
@@ -1978,11 +1978,15 @@ name|pair
 operator|->
 name|string
 argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|filename
+argument_list|)
+argument_list|)
 argument_list|)
 operator|==
 literal|0

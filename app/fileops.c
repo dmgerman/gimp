@@ -5810,9 +5810,12 @@ name|set_filename
 condition|)
 block|{
 comment|/*  set the image title  */
-name|gimp_image_set_filename
+name|gimp_object_set_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)

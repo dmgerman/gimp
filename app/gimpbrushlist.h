@@ -42,6 +42,17 @@ value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_BRUSH_LIST, GimpBrushList))
 end_define
 
 begin_define
+DECL|macro|GIMP_BRUSH_LIST_CLASS (klass)
+define|#
+directive|define
+name|GIMP_BRUSH_LIST_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST (klass, GIMP_TYPE_BRUSH_LIST, GimpBrushListClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_BRUSH_LIST (obj)
 define|#
 directive|define
@@ -53,14 +64,14 @@ value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_BRUSH_LIST))
 end_define
 
 begin_define
-DECL|macro|GIMP_BRUSH_LIST_CLASS (klass)
+DECL|macro|GIMP_IS_BRUSH_LIST_CLASS (klass)
 define|#
 directive|define
-name|GIMP_BRUSH_LIST_CLASS
+name|GIMP_IS_BRUSH_LIST_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST (klass, GIMP_TYPE_BRUSH_LIST, GimpBrushListClass))
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_BRUSH_LIST))
 end_define
 
 begin_typedef
@@ -77,9 +88,9 @@ DECL|struct|_GimpBrushList
 struct|struct
 name|_GimpBrushList
 block|{
-DECL|member|gimplist
+DECL|member|parent_instance
 name|GimpList
-name|gimplist
+name|parent_instance
 decl_stmt|;
 DECL|member|num_brushes
 name|gint
@@ -187,6 +198,7 @@ name|GimpBrushList
 modifier|*
 name|list
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name

@@ -170,10 +170,6 @@ directive|include
 file|"libgimp/gimpenv.h"
 end_include
 
-begin_comment
-comment|/***** Functions *****/
-end_comment
-
 begin_decl_stmt
 DECL|variable|filestat_valid
 specifier|static
@@ -364,9 +360,10 @@ end_endif
 
 begin_function
 name|void
-DECL|function|datafiles_read_directories (gchar * path_str,GimpDataFileLoaderFunc loader_func,GimpDataFileFlags flags)
+DECL|function|datafiles_read_directories (const gchar * path_str,GimpDataFileLoaderFunc loader_func,GimpDataFileFlags flags)
 name|datafiles_read_directories
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|path_str

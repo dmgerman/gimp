@@ -141,7 +141,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a155ba0103
+DECL|enum|__anon274e08ca0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -1099,7 +1099,7 @@ name|gimp_set_add_handler
 argument_list|(
 name|context
 argument_list|,
-literal|"rename"
+literal|"name_changed"
 argument_list|,
 name|image_rename_cb
 argument_list|,
@@ -5659,7 +5659,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a155ba0208
+DECL|struct|__anon274e08ca0208
 block|{
 DECL|member|def
 name|GimpImage

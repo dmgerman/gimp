@@ -218,7 +218,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3c42ad0103
+DECL|enum|__anon27d6a2730103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3c42ad0203
+DECL|enum|__anon27d6a2730203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -8571,7 +8571,7 @@ name|hard_error
 goto|;
 while|while
 condition|(
-literal|1
+name|TRUE
 condition|)
 block|{
 comment|/* read in the offset of the next layer */
@@ -8669,7 +8669,7 @@ expr_stmt|;
 block|}
 while|while
 condition|(
-literal|1
+name|TRUE
 condition|)
 block|{
 comment|/* read in the offset of the next channel */
@@ -8791,9 +8791,12 @@ operator|->
 name|active_channel
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_filename
+name|gimp_object_set_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|info
 operator|->
@@ -8816,7 +8819,8 @@ name|hard_error
 goto|;
 name|g_message
 argument_list|(
-literal|"XCF: This file is corrupt!  I have loaded as much\nof it as I can, but it is incomplete."
+literal|"XCF: This file is corrupt!  I have loaded as much\n"
+literal|"of it as I can, but it is incomplete."
 argument_list|)
 expr_stmt|;
 return|return
@@ -8826,7 +8830,8 @@ name|hard_error
 label|:
 name|g_message
 argument_list|(
-literal|"XCF: This file is corrupt!  I could not even\nsalvage any partial image data from it."
+literal|"XCF: This file is corrupt!  I could not even\n"
+literal|"salvage any partial image data from it."
 argument_list|)
 expr_stmt|;
 name|gimage_delete
@@ -8863,7 +8868,7 @@ name|prop_size
 decl_stmt|;
 while|while
 condition|(
-literal|1
+name|TRUE
 condition|)
 block|{
 if|if
@@ -9898,7 +9903,7 @@ name|prop_size
 decl_stmt|;
 while|while
 condition|(
-literal|1
+name|TRUE
 condition|)
 block|{
 if|if
@@ -10427,7 +10432,7 @@ name|prop_size
 decl_stmt|;
 while|while
 condition|(
-literal|1
+name|TRUE
 condition|)
 block|{
 if|if

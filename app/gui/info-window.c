@@ -1569,7 +1569,7 @@ operator|->
 name|gimage
 argument_list|)
 argument_list|,
-literal|"rename"
+literal|"name_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(

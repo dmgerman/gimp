@@ -155,9 +155,9 @@ DECL|struct|_GimpLayer
 struct|struct
 name|_GimpLayer
 block|{
-DECL|member|drawable
+DECL|member|parent_instance
 name|GimpDrawable
-name|drawable
+name|parent_instance
 decl_stmt|;
 DECL|member|linked
 name|gboolean
@@ -202,7 +202,7 @@ decl_stmt|;
 comment|/*  layer combination mode         */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2bd3fe5f0108
+DECL|struct|__anon2a1c4eff0108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -275,9 +275,9 @@ DECL|struct|_GimpLayerMask
 struct|struct
 name|_GimpLayerMask
 block|{
-DECL|member|drawable
+DECL|member|parent_instance
 name|GimpChannel
-name|drawable
+name|parent_instance
 decl_stmt|;
 DECL|member|layer
 name|Layer

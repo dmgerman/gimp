@@ -77,7 +77,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b25d2d0103
+DECL|enum|__anon2b2faa280103
 block|{
 DECL|enumerator|GIMP_CONTEXT_ARG_IMAGE
 name|GIMP_CONTEXT_ARG_IMAGE
@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b25d2d0203
+DECL|enum|__anon2b2faa280203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -240,14 +240,9 @@ DECL|struct|_GimpContext
 struct|struct
 name|_GimpContext
 block|{
-DECL|member|object
+DECL|member|parent_instance
 name|GimpObject
-name|object
-decl_stmt|;
-DECL|member|name
-name|gchar
-modifier|*
-name|name
+name|parent_instance
 decl_stmt|;
 DECL|member|parent
 name|GimpContext
@@ -624,10 +619,12 @@ comment|/*  functions for manipulating a single context  */
 end_comment
 
 begin_function_decl
+specifier|const
 name|gchar
 modifier|*
 name|gimp_context_get_name
 parameter_list|(
+specifier|const
 name|GimpContext
 modifier|*
 name|context
@@ -656,6 +653,7 @@ name|GimpContext
 modifier|*
 name|gimp_context_get_parent
 parameter_list|(
+specifier|const
 name|GimpContext
 modifier|*
 name|context

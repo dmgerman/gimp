@@ -2924,11 +2924,14 @@ name|fp
 argument_list|,
 literal|"\n        (brush \"%s\")"
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|gimp_context_get_brush
 argument_list|(
 name|device_info
 operator|->
 name|context
+argument_list|)
 argument_list|)
 operator|->
 name|name

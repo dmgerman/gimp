@@ -699,7 +699,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon278462320103
+DECL|enum|__anon2c1e319d0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -1712,7 +1712,7 @@ operator|->
 name|data
 argument_list|)
 argument_list|,
-literal|"rename"
+literal|"name_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
@@ -1789,7 +1789,10 @@ argument_list|)
 decl_stmt|;
 name|name
 operator|=
+name|GIMP_OBJECT
+argument_list|(
 name|brush
+argument_list|)
 operator|->
 name|name
 expr_stmt|;
@@ -2052,7 +2055,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon278462320208
+DECL|struct|__anon2c1e319d0208
 typedef|typedef
 struct|struct
 block|{
@@ -3999,7 +4002,10 @@ argument_list|(
 name|gcp
 argument_list|)
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|brush
+argument_list|)
 operator|->
 name|name
 argument_list|,

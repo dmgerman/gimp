@@ -301,7 +301,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bffb4f80103
+DECL|enum|__anon2a2fa1690103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -341,7 +341,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bffb4f80203
+DECL|enum|__anon2a2fa1690203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bffb4f80308
+DECL|struct|__anon2a2fa1690308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -648,7 +648,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon2bffb4f80408
+DECL|struct|__anon2a2fa1690408
 block|{
 DECL|member|r
 DECL|member|g
@@ -2656,6 +2656,7 @@ specifier|static
 name|void
 name|grad_load_gradient
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -2672,6 +2673,7 @@ name|gradient_t
 modifier|*
 name|grad
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -25904,9 +25906,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|grad_load_gradient (gchar * filename)
+DECL|function|grad_load_gradient (const gchar * filename)
 name|grad_load_gradient
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -26260,14 +26263,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|grad_save_gradient (gradient_t * grad,char * filename)
+DECL|function|grad_save_gradient (gradient_t * grad,const gchar * filename)
 name|grad_save_gradient
 parameter_list|(
 name|gradient_t
 modifier|*
 name|grad
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -26276,7 +26280,7 @@ name|FILE
 modifier|*
 name|file
 decl_stmt|;
-name|int
+name|gint
 name|num_segments
 decl_stmt|;
 name|grad_segment_t

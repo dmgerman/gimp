@@ -3825,7 +3825,10 @@ name|nreturn_vals
 argument_list|,
 name|PDB_STRING
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|brush
+argument_list|)
 operator|->
 name|name
 argument_list|,
@@ -4665,7 +4668,7 @@ argument_list|(
 name|brush
 argument_list|)
 argument_list|,
-literal|"rename"
+literal|"name_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
@@ -5267,7 +5270,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2ce4a10108
+DECL|struct|__anon2ab2eb600108
 block|{
 DECL|member|bsp
 name|BrushSelect
@@ -7966,7 +7969,10 @@ operator|->
 name|brush_name
 argument_list|)
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|brush
+argument_list|)
 operator|->
 name|name
 argument_list|)

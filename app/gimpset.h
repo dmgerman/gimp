@@ -46,17 +46,6 @@ value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_SET, GimpSet))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_SET (obj)
-define|#
-directive|define
-name|GIMP_IS_SET
-parameter_list|(
-name|obj
-parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), gimp_set_get_type()))
-end_define
-
-begin_define
 DECL|macro|GIMP_SET_CLASS (klass)
 define|#
 directive|define
@@ -64,7 +53,29 @@ name|GIMP_SET_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), gimp_set_get_type(), GimpSetClass))
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_SET, GimpSetClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_SET (obj)
+define|#
+directive|define
+name|GIMP_IS_SET
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_SET))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_SET_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_SET_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_SET))
 end_define
 
 begin_typedef
@@ -81,9 +92,9 @@ DECL|struct|_GimpSet
 struct|struct
 name|_GimpSet
 block|{
-DECL|member|gobject
+DECL|member|parent_instance
 name|GimpObject
-name|gobject
+name|parent_instance
 decl_stmt|;
 DECL|member|type
 name|GtkType

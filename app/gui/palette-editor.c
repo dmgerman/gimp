@@ -336,7 +336,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af91c510103
+DECL|enum|__anon2c55609a0103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -587,6 +587,7 @@ name|palette_entry_free
 parameter_list|(
 name|PaletteEntry
 modifier|*
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -598,6 +599,7 @@ name|palette_entries_free
 parameter_list|(
 name|PaletteEntries
 modifier|*
+name|entries
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -607,8 +609,10 @@ specifier|static
 name|void
 name|palette_entries_load
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
+name|filename
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -620,9 +624,12 @@ name|palette_entries_save
 parameter_list|(
 name|PaletteEntries
 modifier|*
+name|entries
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
+name|filename
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1533,9 +1540,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_entries_load (gchar * filename)
+DECL|function|palette_entries_load (const gchar * filename)
 name|palette_entries_load
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -2071,13 +2079,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_entries_save (PaletteEntries * palette,gchar * filename)
+DECL|function|palette_entries_save (PaletteEntries * palette,const gchar * filename)
 name|palette_entries_save
 parameter_list|(
 name|PaletteEntries
 modifier|*
 name|palette
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename

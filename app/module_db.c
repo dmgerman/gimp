@@ -145,7 +145,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d066510103
+DECL|enum|__anon294fb9280103
 block|{
 DECL|enumerator|ST_MODULE_ERROR
 name|ST_MODULE_ERROR
@@ -319,11 +319,11 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d066510208
+DECL|struct|__anon294fb9280208
 block|{
-DECL|member|object
+DECL|member|parent_instance
 name|GtkObject
-name|object
+name|parent_instance
 decl_stmt|;
 DECL|member|fullpath
 name|gchar
@@ -398,7 +398,7 @@ DECL|macro|MODULE_INFO_TYPE
 define|#
 directive|define
 name|MODULE_INFO_TYPE
-value|module_info_get_type()
+value|(module_info_get_type ())
 end_define
 
 begin_define
@@ -409,7 +409,7 @@ name|MODULE_INFO
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_CAST (obj, MODULE_INFO_TYPE, ModuleInfo)
+value|(GTK_CHECK_CAST (obj, MODULE_INFO_TYPE, ModuleInfo))
 end_define
 
 begin_define
@@ -420,7 +420,7 @@ name|IS_MODULE_INFO
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_TYPE (obj, MODULE_INFO_TYPE)
+value|(GTK_CHECK_TYPE (obj, MODULE_INFO_TYPE))
 end_define
 
 begin_define
@@ -434,7 +434,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d066510308
+DECL|struct|__anon294fb9280308
 block|{
 DECL|member|table
 name|GtkWidget
@@ -502,7 +502,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* If the inhibit state of any modules changes, we might need to  * re-write the modulerc. */
+comment|/* If the inhibit state of any modules changes, we might need to  * re-write the modulerc.  */
 end_comment
 
 begin_decl_stmt
@@ -586,6 +586,7 @@ specifier|static
 name|void
 name|module_initialize
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -1734,20 +1735,42 @@ block|}
 end_function
 
 begin_comment
-comment|/**************************************************************/
+comment|/**************************/
 end_comment
 
 begin_comment
 comment|/* ModuleInfo object glue */
 end_comment
 
+begin_enum
+enum|enum
+DECL|enum|__anon294fb9280403
+block|{
+DECL|enumerator|MODIFIED
+name|MODIFIED
+block|,
+DECL|enumerator|LAST_SIGNAL
+name|LAST_SIGNAL
+block|}
+enum|;
+end_enum
+
 begin_typedef
+DECL|typedef|ModuleInfoClass
 typedef|typedef
+name|struct
+name|_ModuleInfoClass
+name|ModuleInfoClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_ModuleInfoClass
 struct|struct
-DECL|struct|__anon28d066510408
+name|_ModuleInfoClass
 block|{
 DECL|member|parent_class
-name|GtkObjectClass
+name|GimpObjectClass
 name|parent_class
 decl_stmt|;
 DECL|member|modified
@@ -1762,24 +1785,9 @@ modifier|*
 name|module_info
 parameter_list|)
 function_decl|;
-DECL|typedef|ModuleInfoClass
 block|}
-name|ModuleInfoClass
-typedef|;
-end_typedef
-
-begin_enum
-enum|enum
-DECL|enum|__anon28d066510503
-block|{
-DECL|enumerator|MODIFIED
-name|MODIFIED
-block|,
-DECL|enumerator|LAST_SIGNAL
-name|LAST_SIGNAL
-block|}
-enum|;
-end_enum
+struct|;
+end_struct
 
 begin_decl_stmt
 DECL|variable|module_info_signals
@@ -1789,6 +1797,17 @@ name|module_info_signals
 index|[
 name|LAST_SIGNAL
 index|]
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|parent_class
+specifier|static
+name|GimpObjectClass
+modifier|*
+name|parent_class
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -1842,6 +1861,25 @@ operator|->
 name|fullpath
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|GTK_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|destroy
+condition|)
+name|GTK_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|destroy
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1867,6 +1905,13 @@ name|GtkObjectClass
 operator|*
 operator|)
 name|klass
+expr_stmt|;
+name|parent_class
+operator|=
+name|gtk_type_class
+argument_list|(
+name|GIMP_TYPE_OBJECT
+argument_list|)
 expr_stmt|;
 name|module_info_signals
 index|[
@@ -2001,8 +2046,7 @@ name|module_info_type
 operator|=
 name|gtk_type_unique
 argument_list|(
-name|gtk_object_get_type
-argument_list|()
+name|GIMP_TYPE_OBJECT
 argument_list|,
 operator|&
 name|module_info_info
@@ -2383,9 +2427,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|module_initialize (gchar * filename)
+DECL|function|module_initialize (const gchar * filename)
 name|module_initialize
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -2469,7 +2514,7 @@ name|unload
 operator|=
 name|NULL
 expr_stmt|;
-comment|/* Count of times main gimp is within the module.  Normally, this    * will be 1, and we assume that the module won't call its    * unload callback until it is satisfied that it's not in use any    * more.  refs can be 2 temporarily while we're running the module's    * unload function, to stop the module attempting to unload    * itself. */
+comment|/* Count of times main gimp is within the module.  Normally, this    * will be 1, and we assume that the module won't call its    * unload callback until it is satisfied that it's not in use any    * more.  refs can be 2 temporarily while we're running the module's    * unload function, to stop the module attempting to unload    * itself.    */
 name|mod
 operator|->
 name|refs
@@ -2868,11 +2913,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|mod_unload_completed_callback (void * data)
+DECL|function|mod_unload_completed_callback (gpointer data)
 name|mod_unload_completed_callback
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 block|{
@@ -4635,7 +4679,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d066510608
+DECL|struct|__anon294fb9280508
 block|{
 DECL|member|search_key
 specifier|const
@@ -4916,10 +4960,6 @@ expr_stmt|;
 block|}
 block|}
 end_function
-
-begin_comment
-comment|/* End of module_db.c */
-end_comment
 
 end_unit
 

@@ -81,7 +81,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3110370103
+DECL|enum|__anon28b7bacf0103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -470,6 +470,7 @@ name|PlugInDef
 modifier|*
 name|plug_in_def_new
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|prog

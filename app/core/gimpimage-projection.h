@@ -157,16 +157,10 @@ DECL|struct|_GimpImage
 struct|struct
 name|_GimpImage
 block|{
-DECL|member|gobject
+DECL|member|parent_instance
 name|GimpObject
-name|gobject
+name|parent_instance
 decl_stmt|;
-DECL|member|filename
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
-comment|/*  original filename            */
 DECL|member|has_filename
 name|gboolean
 name|has_filename
@@ -480,18 +474,6 @@ modifier|*
 name|gimage
 parameter_list|)
 function_decl|;
-DECL|member|rename
-name|void
-function_decl|(
-modifier|*
-name|rename
-function_decl|)
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
 DECL|member|resize
 name|void
 function_decl|(
@@ -558,7 +540,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d776ec0103
+DECL|enum|__anon27ef10640103
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -586,7 +568,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d776ec0203
+DECL|enum|__anon27ef10640203
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -705,6 +687,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename

@@ -8053,7 +8053,7 @@ name|gdisp
 operator|->
 name|gimage
 operator|->
-name|filename
+name|has_filename
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

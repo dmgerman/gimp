@@ -230,6 +230,7 @@ parameter_list|(
 name|gint
 name|fd
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -245,6 +246,7 @@ specifier|static
 name|void
 name|load_pattern
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -607,13 +609,14 @@ end_function
 begin_function
 name|GPattern
 modifier|*
-DECL|function|pattern_list_get_pattern (GSList * list,gchar * name)
+DECL|function|pattern_list_get_pattern (GSList * list,const gchar * name)
 name|pattern_list_get_pattern
 parameter_list|(
 name|GSList
 modifier|*
 name|list
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -680,12 +683,13 @@ end_function
 begin_function
 name|GPattern
 modifier|*
-DECL|function|pattern_load (gint fd,gchar * filename)
+DECL|function|pattern_load (gint fd,const gchar * filename)
 name|pattern_load
 parameter_list|(
 name|gint
 name|fd
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -708,12 +712,13 @@ begin_function
 specifier|static
 name|GPattern
 modifier|*
-DECL|function|pattern_load_real (gint fd,gchar * filename,gboolean quiet)
+DECL|function|pattern_load_real (gint fd,const gchar * filename,gboolean quiet)
 name|pattern_load_real
 parameter_list|(
 name|gint
 name|fd
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -1129,12 +1134,6 @@ operator|->
 name|mask
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|pattern
-operator|->
-name|filename
-condition|)
 name|g_free
 argument_list|(
 name|pattern
@@ -1142,12 +1141,6 @@ operator|->
 name|filename
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|pattern
-operator|->
-name|name
-condition|)
 name|g_free
 argument_list|(
 name|pattern
@@ -1237,9 +1230,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_pattern (gchar * filename)
+DECL|function|load_pattern (const gchar * filename)
 name|load_pattern
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename

@@ -148,7 +148,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b1dacf0103
+DECL|enum|__anon2b0573d80103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR
@@ -2355,9 +2355,12 @@ name|name
 operator|=
 name|g_strdup
 argument_list|(
-name|gimp_brush_get_name
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|brush
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

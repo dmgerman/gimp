@@ -42,6 +42,17 @@ value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_BRUSH_PIPE, GimpBrushPipe))
 end_define
 
 begin_define
+DECL|macro|GIMP_BRUSH_PIPE_CLASS (klass)
+define|#
+directive|define
+name|GIMP_BRUSH_PIPE_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_BRUSH_PIPE, GimpBrushPipeClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_BRUSH_PIPE (obj)
 define|#
 directive|define
@@ -52,10 +63,21 @@ parameter_list|)
 value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_BRUSH_PIPE))
 end_define
 
+begin_define
+DECL|macro|GIMP_IS_BRUSH_PIPE_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_BRUSH_PIPE_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_BRUSH_PIPE))
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2991d5ec0103
+DECL|enum|__anon2ad4179a0103
 block|{
 DECL|enumerator|PIPE_SELECT_CONSTANT
 name|PIPE_SELECT_CONSTANT
@@ -100,11 +122,10 @@ DECL|struct|_GimpBrushPipe
 struct|struct
 name|_GimpBrushPipe
 block|{
-DECL|member|gbrush
+DECL|member|parent_instance
 name|GimpBrush
-name|gbrush
+name|parent_instance
 decl_stmt|;
-comment|/* Also itself a brush */
 DECL|member|dimension
 name|gint
 name|dimension
@@ -181,6 +202,7 @@ name|GimpBrush
 modifier|*
 name|gimp_brush_pipe_load
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename

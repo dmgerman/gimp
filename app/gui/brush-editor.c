@@ -734,8 +734,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brush_renamed_callback (GtkWidget * widget,BrushEditGeneratedWindow * begw)
-name|brush_renamed_callback
+DECL|function|brush_name_changed_callback (GtkWidget * widget,BrushEditGeneratedWindow * begw)
+name|brush_name_changed_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -755,9 +755,9 @@ operator|->
 name|name
 argument_list|)
 argument_list|,
-name|gimp_brush_get_name
+name|gimp_object_get_name
 argument_list|(
-name|GIMP_BRUSH
+name|GIMP_OBJECT
 argument_list|(
 name|begw
 operator|->
@@ -912,11 +912,11 @@ argument_list|(
 name|brush
 argument_list|)
 argument_list|,
-literal|"rename"
+literal|"name_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|brush_renamed_callback
+name|brush_name_changed_callback
 argument_list|)
 argument_list|,
 name|begw
@@ -997,9 +997,12 @@ operator|->
 name|name
 argument_list|)
 argument_list|,
-name|gimp_brush_get_name
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|gbrush
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1060,9 +1063,9 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_brush_set_name
+name|gimp_object_set_name
 argument_list|(
-name|GIMP_BRUSH
+name|GIMP_OBJECT
 argument_list|(
 name|begw
 operator|->

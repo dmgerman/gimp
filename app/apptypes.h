@@ -71,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1885200103
+DECL|enum|__anon2b264a6a0103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1885200203
+DECL|enum|__anon2b264a6a0203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1885200303
+DECL|enum|__anon2b264a6a0303
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -166,7 +166,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1885200403
+DECL|enum|__anon2b264a6a0403
 block|{
 DECL|enumerator|NORMAL_MODE
 name|NORMAL_MODE
@@ -249,7 +249,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1885200503
+DECL|enum|__anon2b264a6a0503
 block|{
 DECL|enumerator|NORMAL_CONVOL
 name|NORMAL_CONVOL
@@ -275,7 +275,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1885200603
+DECL|enum|__anon2b264a6a0603
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -301,7 +301,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1885200703
+DECL|enum|__anon2b264a6a0703
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -320,7 +320,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1885200803
+DECL|enum|__anon2b264a6a0803
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -337,7 +337,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon2a1885200903
+DECL|enum|__anon2b264a6a0903
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -360,7 +360,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1885200a03
+DECL|enum|__anon2b264a6a0a03
 block|{
 DECL|enumerator|ONCE_FORWARD
 name|ONCE_FORWARD
@@ -394,7 +394,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1885200b03
+DECL|enum|__anon2b264a6a0b03
 block|{
 DECL|enumerator|LINEAR_INTERPOLATION
 name|LINEAR_INTERPOLATION
@@ -414,7 +414,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a1885200c03
+DECL|enum|__anon2b264a6a0c03
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -433,7 +433,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1885200d03
+DECL|enum|__anon2b264a6a0d03
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -456,7 +456,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1885200e03
+DECL|enum|__anon2b264a6a0e03
 block|{
 DECL|enumerator|PDB_INT32
 name|PDB_INT32
@@ -539,7 +539,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1885200f03
+DECL|enum|__anon2b264a6a0f03
 block|{
 DECL|enumerator|PDB_EXECUTION_ERROR
 name|PDB_EXECUTION_ERROR
@@ -569,7 +569,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=PDB_>*/
-DECL|enum|__anon2a1885201003
+DECL|enum|__anon2b264a6a1003
 block|{
 DECL|enumerator|PDB_INTERNAL
 name|PDB_INTERNAL
@@ -596,7 +596,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=CHANNEL_OP_>*/
-DECL|enum|__anon2a1885201103
+DECL|enum|__anon2b264a6a1103
 block|{
 DECL|enumerator|CHANNEL_OP_ADD
 name|CHANNEL_OP_ADD
@@ -619,7 +619,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a1885201203
+DECL|enum|__anon2b264a6a1203
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -663,7 +663,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a1885201303
+DECL|enum|__anon2b264a6a1303
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -687,7 +687,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a1885201403
+DECL|enum|__anon2b264a6a1403
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -720,7 +720,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a1885201503
+DECL|enum|__anon2b264a6a1503
 block|{
 DECL|enumerator|TOOL_TYPE_NONE
 name|TOOL_TYPE_NONE
@@ -865,7 +865,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a1885201603
+DECL|enum|__anon2b264a6a1603
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -898,7 +898,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a1885201703
+DECL|enum|__anon2b264a6a1703
 block|{
 DECL|enumerator|TRANSFORM_INIT
 name|TRANSFORM_INIT
@@ -921,7 +921,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a1885201803
+DECL|enum|__anon2b264a6a1803
 block|{
 DECL|enumerator|CURSOR_MODE_TOOL_ICON
 name|CURSOR_MODE_TOOL_ICON
@@ -941,7 +941,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a1885201903
+DECL|enum|__anon2b264a6a1903
 block|{
 DECL|enumerator|CURSOR_MODIFIER_NONE
 name|CURSOR_MODIFIER_NONE

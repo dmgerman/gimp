@@ -729,6 +729,7 @@ specifier|static
 name|void
 name|plug_in_write_rc
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -741,6 +742,7 @@ specifier|static
 name|void
 name|plug_in_init_file
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -2933,9 +2935,10 @@ end_function
 begin_function
 name|PlugInDef
 modifier|*
-DECL|function|plug_in_def_new (gchar * prog)
+DECL|function|plug_in_def_new (const gchar * prog)
 name|plug_in_def_new
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|prog
@@ -9560,9 +9563,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_write_rc (gchar * filename)
+DECL|function|plug_in_write_rc (const gchar * filename)
 name|plug_in_write_rc
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -10215,9 +10219,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_init_file (gchar * filename)
+DECL|function|plug_in_init_file (const gchar * filename)
 name|plug_in_init_file
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename

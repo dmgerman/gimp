@@ -42,6 +42,17 @@ value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_BRUSH, GimpBrush))
 end_define
 
 begin_define
+DECL|macro|GIMP_BRUSH_CLASS (klass)
+define|#
+directive|define
+name|GIMP_BRUSH_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_BRUSH, GimpBrushClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_BRUSH (obj)
 define|#
 directive|define
@@ -53,14 +64,14 @@ value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_BRUSH))
 end_define
 
 begin_define
-DECL|macro|GIMP_BRUSH_CLASS (klass)
+DECL|macro|GIMP_IS_BRUSH_CLASS (klass)
 define|#
 directive|define
-name|GIMP_BRUSH_CLASS
+name|GIMP_IS_BRUSH_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), gimp_brush_get_type(), GimpBrushClass))
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_BRUSH))
 end_define
 
 begin_typedef
@@ -77,9 +88,9 @@ DECL|struct|_GimpBrush
 struct|struct
 name|_GimpBrush
 block|{
-DECL|member|gobject
+DECL|member|parent_instance
 name|GimpObject
-name|gobject
+name|parent_instance
 decl_stmt|;
 DECL|member|filename
 name|gchar
@@ -87,12 +98,6 @@ modifier|*
 name|filename
 decl_stmt|;
 comment|/*  actual filename--brush's location on disk  */
-DECL|member|name
-name|gchar
-modifier|*
-name|name
-decl_stmt|;
-comment|/*  brush's name--for brush selection dialog   */
 DECL|member|spacing
 name|gint
 name|spacing
@@ -145,18 +150,6 @@ modifier|*
 name|brush
 parameter_list|)
 function_decl|;
-DECL|member|rename
-name|void
-function_decl|(
-modifier|*
-name|rename
-function_decl|)
-parameter_list|(
-name|GimpBrush
-modifier|*
-name|brush
-parameter_list|)
-function_decl|;
 comment|/* FIXME: these are no virtual function pointers but bad hacks: */
 DECL|member|select_brush
 name|GimpBrush
@@ -201,6 +194,7 @@ name|GimpBrush
 modifier|*
 name|gimp_brush_load
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -216,6 +210,7 @@ parameter_list|(
 name|gint
 name|fd
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -228,6 +223,7 @@ name|TempBuf
 modifier|*
 name|gimp_brush_get_mask
 parameter_list|(
+specifier|const
 name|GimpBrush
 modifier|*
 name|brush
@@ -240,36 +236,10 @@ name|TempBuf
 modifier|*
 name|gimp_brush_get_pixmap
 parameter_list|(
+specifier|const
 name|GimpBrush
 modifier|*
 name|brush
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gchar
-modifier|*
-name|gimp_brush_get_name
-parameter_list|(
-name|GimpBrush
-modifier|*
-name|brush
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_brush_set_name
-parameter_list|(
-name|GimpBrush
-modifier|*
-name|brush
-parameter_list|,
-name|gchar
-modifier|*
-name|name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -278,6 +248,7 @@ begin_function_decl
 name|gint
 name|gimp_brush_get_spacing
 parameter_list|(
+specifier|const
 name|GimpBrush
 modifier|*
 name|brush
