@@ -1333,7 +1333,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-comment|/* sets paused_count to 0 -- is this ok? */
 comment|/* EDIT_MASK_TRANSLATE is performed here at movement end, not 'live' like    *  the other translation types.    */
 if|if
 condition|(

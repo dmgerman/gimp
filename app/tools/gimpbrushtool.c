@@ -1378,7 +1378,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-comment|/* sets paused_count to 0 -- is this ok? */
 name|gimp_paint_core_finish
 argument_list|(
 name|core

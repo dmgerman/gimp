@@ -1695,7 +1695,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-comment|/* sets paused_count to 0 -- is this ok? */
 comment|/*  free the last blob  */
 name|g_free
 argument_list|(
@@ -4449,7 +4448,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c1552940103
+DECL|enum|__anon2998d5350103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

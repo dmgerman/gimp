@@ -159,7 +159,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon279d58750103
+DECL|enum|__anon29d02c820103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -5199,7 +5199,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-comment|/* sets paused_count to 0 -- is this ok? */
 if|if
 condition|(
 name|crop

@@ -1188,7 +1188,6 @@ operator|==
 name|HALT
 condition|)
 block|{
-comment|/* sets paused_count to 0 -- is this ok? */
 name|gimp_tool_control_halt
 argument_list|(
 name|tool_manager

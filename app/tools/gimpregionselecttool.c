@@ -957,7 +957,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-comment|/* sets paused_count to 0 -- is this ok? */
 comment|/*  First take care of the case where the user "cancels" the action  */
 if|if
 condition|(

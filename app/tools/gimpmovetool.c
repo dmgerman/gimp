@@ -1256,7 +1256,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-comment|/* sets paused_count to 0 -- is this ok? */
 if|if
 condition|(
 name|move

@@ -1354,7 +1354,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-comment|/* sets paused_count to 0 -- is this ok? */
 return|return;
 block|}
 comment|/*  If the tool is already active, clear the current state            *  and reset            */
@@ -3641,7 +3640,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-comment|/* sets paused_count to 0 -- is this ok? */
 name|tool
 operator|->
 name|gdisp

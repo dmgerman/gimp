@@ -407,12 +407,6 @@ name|state
 operator|=
 name|INACTIVE
 expr_stmt|;
-name|control
-operator|->
-name|paused_count
-operator|=
-literal|0
-expr_stmt|;
 block|}
 end_function
 

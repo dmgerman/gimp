@@ -1021,7 +1021,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-comment|/* sets paused_count to 0 -- is this ok? */
 comment|/*  if the 3rd button isn't pressed, fill the selected region  */
 if|if
 condition|(

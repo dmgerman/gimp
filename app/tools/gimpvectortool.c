@@ -780,7 +780,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-comment|/* sets paused_count to 0 -- is this ok? */
 break|break;
 default|default:
 break|break;

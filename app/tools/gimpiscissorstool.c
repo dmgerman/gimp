@@ -2004,7 +2004,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-comment|/* sets paused_count to 0 -- is this ok? */
 name|iscissors
 operator|->
 name|draw
