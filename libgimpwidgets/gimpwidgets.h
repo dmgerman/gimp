@@ -751,7 +751,8 @@ comment|/*  *  Helper Functions  */
 end_comment
 
 begin_function_decl
-name|void
+name|GtkWidget
+modifier|*
 name|gimp_table_attach_aligned
 parameter_list|(
 name|GtkTable

@@ -2677,7 +2677,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276d01550108
+DECL|struct|__anon2bd66ebc0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3557,7 +3557,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276d01550208
+DECL|struct|__anon2bd66ebc0208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -4853,11 +4853,12 @@ comment|/*  *  Helper Functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_table_attach_aligned:  * @table:      The #GtkTable the widgets will be attached to.  * @column:     The column to start with.  * @row:        The row to attach the eidgets.  * @label_text: The text for the #GtkLabel which will be attached left of the  *              widget.  * @xalign:     The horizontal alignment of the #GtkLabel.  * @yalign:     The vertival alignment of the #GtkLabel.  * @widget:     The #GtkWidget to attach right of the label.  * @colspan:    The number of columns the widget will use.  * @left_align: #TRUE if the widget should be left-aligned.  *  * Note that the @label_text can be #NULL and that the widget will be attached  * starting at (@column + 1) in this case, too.  **/
+comment|/**  * gimp_table_attach_aligned:  * @table:      The #GtkTable the widgets will be attached to.  * @column:     The column to start with.  * @row:        The row to attach the widgets.  * @label_text: The text for the #GtkLabel which will be attached left of the  *              widget.  * @xalign:     The horizontal alignment of the #GtkLabel.  * @yalign:     The vertival alignment of the #GtkLabel.  * @widget:     The #GtkWidget to attach right of the label.  * @colspan:    The number of columns the widget will use.  * @left_align: #TRUE if the widget should be left-aligned.  *  * Note that the @label_text can be #NULL and that the widget will be attached  * starting at (@column + 1) in this case, too.  *  * Returns: The created #GtkLabel.  **/
 end_comment
 
 begin_function
-name|void
+name|GtkWidget
+modifier|*
 DECL|function|gimp_table_attach_aligned (GtkTable * table,gint column,gint row,const gchar * label_text,gfloat xalign,gfloat yalign,GtkWidget * widget,gint colspan,gboolean left_align)
 name|gimp_table_attach_aligned
 parameter_list|(
@@ -4893,15 +4894,17 @@ name|gboolean
 name|left_align
 parameter_list|)
 block|{
+name|GtkWidget
+modifier|*
+name|label
+init|=
+name|NULL
+decl_stmt|;
 if|if
 condition|(
 name|label_text
 condition|)
 block|{
-name|GtkWidget
-modifier|*
-name|label
-decl_stmt|;
 name|label
 operator|=
 name|gtk_label_new
@@ -5046,6 +5049,9 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
+return|return
+name|label
+return|;
 block|}
 end_function
 
