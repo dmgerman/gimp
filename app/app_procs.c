@@ -933,13 +933,12 @@ name|the_gimp
 operator|=
 name|NULL
 expr_stmt|;
-if|#
-directive|if
-literal|0
 comment|/*  There used to be foo_main_quit() here, but there's a chance    *  that foo_main() was never called before we reach this point. --Sven    */
-block|exit (0);
-endif|#
-directive|endif
+name|exit
+argument_list|(
+literal|0
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
