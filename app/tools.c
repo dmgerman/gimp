@@ -204,6 +204,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"path_tool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pencil.h"
 end_include
 
@@ -1495,6 +1501,46 @@ block|,
 name|NULL
 block|}
 block|,
+block|{
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Path"
+argument_list|)
+block|,
+literal|26
+block|,
+name|N_
+argument_list|(
+literal|"/Tools/Path"
+argument_list|)
+block|,
+literal|""
+block|,
+operator|(
+name|char
+operator|*
+operator|*
+operator|)
+name|measure_bits
+block|,
+name|N_
+argument_list|(
+literal|"Manipulate paths"
+argument_list|)
+block|,
+literal|"ContextHelp/path"
+block|,
+name|PATH_TOOL
+block|,
+name|tools_new_path_tool
+block|,
+name|tools_free_path_tool
+block|,
+name|NULL
+block|}
+block|,
 comment|/*  Non-toolbox tools  */
 block|{
 name|NULL
@@ -1504,7 +1550,7 @@ argument_list|(
 literal|"By Color Select"
 argument_list|)
 block|,
-literal|26
+literal|27
 block|,
 name|N_
 argument_list|(
@@ -1536,7 +1582,7 @@ argument_list|(
 literal|"Color Balance"
 argument_list|)
 block|,
-literal|27
+literal|28
 block|,
 name|N_
 argument_list|(
@@ -1568,7 +1614,7 @@ argument_list|(
 literal|"Brightness-Contrast"
 argument_list|)
 block|,
-literal|28
+literal|29
 block|,
 name|N_
 argument_list|(
@@ -1600,7 +1646,7 @@ argument_list|(
 literal|"Hue-Saturation"
 argument_list|)
 block|,
-literal|29
+literal|30
 block|,
 name|N_
 argument_list|(
@@ -1632,7 +1678,7 @@ argument_list|(
 literal|"Posterize"
 argument_list|)
 block|,
-literal|30
+literal|31
 block|,
 name|N_
 argument_list|(
@@ -1664,7 +1710,7 @@ argument_list|(
 literal|"Threshold"
 argument_list|)
 block|,
-literal|31
+literal|32
 block|,
 name|N_
 argument_list|(
@@ -1696,7 +1742,7 @@ argument_list|(
 literal|"Curves"
 argument_list|)
 block|,
-literal|32
+literal|33
 block|,
 name|N_
 argument_list|(
@@ -1728,7 +1774,7 @@ argument_list|(
 literal|"Levels"
 argument_list|)
 block|,
-literal|33
+literal|34
 block|,
 name|N_
 argument_list|(
@@ -1760,7 +1806,7 @@ argument_list|(
 literal|"Histogram"
 argument_list|)
 block|,
-literal|34
+literal|35
 block|,
 name|N_
 argument_list|(

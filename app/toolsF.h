@@ -35,7 +35,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c01c5e60103
+DECL|enum|__anon2b3df5480103
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -67,7 +67,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c01c5e60203
+DECL|enum|__anon2b3df5480203
 block|{
 DECL|enumerator|FIRST_TOOLBOX_TOOL
 name|FIRST_TOOLBOX_TOOL
@@ -161,10 +161,13 @@ block|,
 DECL|enumerator|XINPUT_AIRBRUSH
 name|XINPUT_AIRBRUSH
 block|,
+DECL|enumerator|PATH_TOOL
+name|PATH_TOOL
+block|,
 DECL|enumerator|LAST_TOOLBOX_TOOL
 name|LAST_TOOLBOX_TOOL
 init|=
-name|XINPUT_AIRBRUSH
+name|PATH_TOOL
 block|,
 comment|/*  Non-toolbox tools  */
 DECL|enumerator|BY_COLOR_SELECT
