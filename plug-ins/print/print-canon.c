@@ -24,7 +24,7 @@ comment|/*  * Local functions...  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29fc17b70108
+DECL|struct|__anon294f4f300108
 typedef|typedef
 struct|struct
 block|{
@@ -2907,11 +2907,15 @@ index|[
 name|i
 index|]
 operator|=
+operator|(
+name|unsigned
+name|char
+operator|)
 name|va_arg
 argument_list|(
-argument|ap
+name|ap
 argument_list|,
-argument|unsigned char
+name|int
 argument_list|)
 expr_stmt|;
 name|va_end
