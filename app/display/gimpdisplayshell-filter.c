@@ -24,43 +24,43 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"display-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdisplay_color.h"
+file|"core/gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"gimpdisplay.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpimageP.h"
+file|"gimpdisplayshell.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
+file|"gimpdisplayshell-filter.h"
 end_include
 
 begin_typedef
@@ -95,17 +95,6 @@ block|}
 struct|;
 end_struct
 
-begin_decl_stmt
-DECL|variable|color_display_table
-specifier|static
-name|GHashTable
-modifier|*
-name|color_display_table
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 specifier|static
 name|void
@@ -126,11 +115,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gdisplay_color_detach_real
+name|gimp_display_shell_filter_detach_real
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|ColorDisplayNode
 modifier|*
@@ -158,6 +147,17 @@ name|name
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_decl_stmt
+DECL|variable|color_display_table
+specifier|static
+name|GHashTable
+modifier|*
+name|color_display_table
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_function
 name|void
@@ -289,9 +289,9 @@ name|ColorDisplayInfo
 modifier|*
 name|info
 decl_stmt|;
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 decl_stmt|;
 name|GList
 modifier|*
@@ -314,31 +314,39 @@ block|{
 name|GSList
 modifier|*
 name|refs
-init|=
+decl_stmt|;
+for|for
+control|(
+name|refs
+operator|=
 name|info
 operator|->
 name|refs
-decl_stmt|;
-while|while
-condition|(
+init|;
 name|refs
-condition|)
-block|{
-name|gdisp
+condition|;
+name|refs
 operator|=
-operator|(
-name|GimpDisplay
-operator|*
-operator|)
+name|g_slist_next
+argument_list|(
+name|refs
+argument_list|)
+control|)
+block|{
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
 name|refs
 operator|->
 name|data
+argument_list|)
 expr_stmt|;
 name|node
 operator|=
 name|g_list_find_custom
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|cd_list
 argument_list|,
@@ -353,22 +361,22 @@ operator|)
 name|node_name_compare
 argument_list|)
 expr_stmt|;
-name|gdisp
+name|shell
 operator|->
 name|cd_list
 operator|=
 name|g_list_remove_link
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|cd_list
 argument_list|,
 name|node
 argument_list|)
 expr_stmt|;
-name|gdisplay_color_detach_real
+name|gimp_display_shell_filter_detach_real
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|node
 operator|->
@@ -381,12 +389,6 @@ name|g_list_free_1
 argument_list|(
 name|node
 argument_list|)
-expr_stmt|;
-name|refs
-operator|=
-name|refs
-operator|->
-name|next
 expr_stmt|;
 block|}
 name|g_slist_free
@@ -507,13 +509,15 @@ block|{
 name|DisplayForeachData
 modifier|*
 name|data
-init|=
+decl_stmt|;
+name|data
+operator|=
 operator|(
 name|DisplayForeachData
 operator|*
 operator|)
 name|user_data
-decl_stmt|;
+expr_stmt|;
 name|data
 operator|->
 name|func
@@ -531,12 +535,12 @@ end_function
 begin_function
 name|ColorDisplayNode
 modifier|*
-DECL|function|gdisplay_color_attach (GimpDisplay * gdisp,const gchar * name)
-name|gdisplay_color_attach
+DECL|function|gimp_display_shell_filter_attach (GimpDisplayShell * shell,const gchar * name)
+name|gimp_display_shell_filter_attach
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 specifier|const
 name|gchar
@@ -554,9 +558,10 @@ name|node
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|gdisp
-operator|!=
-name|NULL
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -629,7 +634,7 @@ name|info
 operator|->
 name|refs
 argument_list|,
-name|gdisp
+name|shell
 argument_list|)
 expr_stmt|;
 if|if
@@ -650,6 +655,8 @@ name|methods
 operator|.
 name|new
 argument_list|(
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -667,13 +674,13 @@ name|methods
 operator|.
 name|convert
 expr_stmt|;
-name|gdisp
+name|shell
 operator|->
 name|cd_list
 operator|=
 name|g_list_append
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|cd_list
 argument_list|,
@@ -699,12 +706,12 @@ end_function
 begin_function
 name|ColorDisplayNode
 modifier|*
-DECL|function|gdisplay_color_attach_clone (GimpDisplay * gdisp,ColorDisplayNode * node)
-name|gdisplay_color_attach_clone
+DECL|function|gimp_display_shell_filter_attach_clone (GimpDisplayShell * shell,ColorDisplayNode * node)
+name|gimp_display_shell_filter_attach_clone
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|ColorDisplayNode
 modifier|*
@@ -721,9 +728,10 @@ name|clone
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|gdisp
-operator|!=
-name|NULL
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -789,7 +797,7 @@ name|info
 operator|->
 name|refs
 argument_list|,
-name|gdisp
+name|shell
 argument_list|)
 expr_stmt|;
 if|if
@@ -825,13 +833,13 @@ name|methods
 operator|.
 name|convert
 expr_stmt|;
-name|gdisp
+name|shell
 operator|->
 name|cd_list
 operator|=
 name|g_list_append
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|cd_list
 argument_list|,
@@ -856,12 +864,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_color_detach (GimpDisplay * gdisp,ColorDisplayNode * node)
-name|gdisplay_color_detach
+DECL|function|gimp_display_shell_filter_detach (GimpDisplayShell * shell,ColorDisplayNode * node)
+name|gimp_display_shell_filter_detach
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|ColorDisplayNode
 modifier|*
@@ -870,18 +878,19 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|gdisp
-operator|!=
-name|NULL
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
 argument_list|)
 expr_stmt|;
-name|gdisp
+name|shell
 operator|->
 name|cd_list
 operator|=
 name|g_list_remove
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|cd_list
 argument_list|,
@@ -893,12 +902,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_color_detach_destroy (GimpDisplay * gdisp,ColorDisplayNode * node)
-name|gdisplay_color_detach_destroy
+DECL|function|gimp_display_shell_filter_detach_destroy (GimpDisplayShell * shell,ColorDisplayNode * node)
+name|gimp_display_shell_filter_detach_destroy
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|ColorDisplayNode
 modifier|*
@@ -907,27 +916,28 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|gdisp
-operator|!=
-name|NULL
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
 argument_list|)
 expr_stmt|;
-name|gdisplay_color_detach_real
+name|gimp_display_shell_filter_detach_real
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|node
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gdisp
+name|shell
 operator|->
 name|cd_list
 operator|=
 name|g_list_remove
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|cd_list
 argument_list|,
@@ -939,12 +949,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_color_detach_all (GimpDisplay * gdisp)
-name|gdisplay_color_detach_all
+DECL|function|gimp_display_shell_filter_detach_all (GimpDisplayShell * shell)
+name|gimp_display_shell_filter_detach_all
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|)
 block|{
 name|GList
@@ -953,25 +963,33 @@ name|list
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gdisp
-operator|!=
-name|NULL
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
 argument_list|)
 expr_stmt|;
+for|for
+control|(
 name|list
 operator|=
-name|gdisp
+name|shell
 operator|->
 name|cd_list
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
-block|{
-name|gdisplay_color_detach_real
+condition|;
+name|list
+operator|=
+name|g_list_next
 argument_list|(
-name|gdisp
+name|list
+argument_list|)
+control|)
+block|{
+name|gimp_display_shell_filter_detach_real
+argument_list|(
+name|shell
 argument_list|,
 name|list
 operator|->
@@ -980,21 +998,15 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|list
-operator|=
-name|list
-operator|->
-name|next
-expr_stmt|;
 block|}
 name|g_list_free
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|cd_list
 argument_list|)
 expr_stmt|;
-name|gdisp
+name|shell
 operator|->
 name|cd_list
 operator|=
@@ -1006,12 +1018,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_color_detach_real (GimpDisplay * gdisp,ColorDisplayNode * node,gboolean unref)
-name|gdisplay_color_detach_real
+DECL|function|gimp_display_shell_filter_detach_real (GimpDisplayShell * shell,ColorDisplayNode * node,gboolean unref)
+name|gimp_display_shell_filter_detach_real
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|ColorDisplayNode
 modifier|*
@@ -1027,9 +1039,10 @@ name|info
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gdisp
-operator|!=
-name|NULL
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -1088,7 +1101,7 @@ name|info
 operator|->
 name|refs
 argument_list|,
-name|gdisp
+name|shell
 argument_list|)
 expr_stmt|;
 if|if
@@ -1129,12 +1142,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_color_reorder_up (GimpDisplay * gdisp,ColorDisplayNode * node)
-name|gdisplay_color_reorder_up
+DECL|function|gimp_display_shell_filter_reorder_up (GimpDisplayShell * shell,ColorDisplayNode * node)
+name|gimp_display_shell_filter_reorder_up
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|ColorDisplayNode
 modifier|*
@@ -1145,11 +1158,26 @@ name|GList
 modifier|*
 name|node_list
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|node
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|node_list
 operator|=
 name|g_list_find
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|cd_list
 argument_list|,
@@ -1187,12 +1215,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_color_reorder_down (GimpDisplay * gdisp,ColorDisplayNode * node)
-name|gdisplay_color_reorder_down
+DECL|function|gimp_display_shell_filter_reorder_down (GimpDisplayShell * shell,ColorDisplayNode * node)
+name|gimp_display_shell_filter_reorder_down
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|ColorDisplayNode
 modifier|*
@@ -1205,7 +1233,15 @@ name|node_list
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gdisp
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|node
 operator|!=
 name|NULL
 argument_list|)
@@ -1214,7 +1250,7 @@ name|node_list
 operator|=
 name|g_list_find
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|cd_list
 argument_list|,
@@ -1281,8 +1317,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_color_configure (ColorDisplayNode * node,GFunc ok_func,gpointer ok_data,GFunc cancel_func,gpointer cancel_data)
-name|gdisplay_color_configure
+DECL|function|gimp_display_shell_filter_configure (ColorDisplayNode * node,GFunc ok_func,gpointer ok_data,GFunc cancel_func,gpointer cancel_data)
+name|gimp_display_shell_filter_configure
 parameter_list|(
 name|ColorDisplayNode
 modifier|*
@@ -1368,8 +1404,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_color_configure_cancel (ColorDisplayNode * node)
-name|gdisplay_color_configure_cancel
+DECL|function|gimp_display_shell_filter_configure_cancel (ColorDisplayNode * node)
+name|gimp_display_shell_filter_configure_cancel
 parameter_list|(
 name|ColorDisplayNode
 modifier|*

@@ -337,9 +337,6 @@ modifier|*
 name|nav_popup
 decl_stmt|;
 comment|/*  navigation popup                   */
-ifdef|#
-directive|ifdef
-name|DISPLAY_FILTERS
 DECL|member|cd_list
 name|GList
 modifier|*
@@ -352,9 +349,6 @@ modifier|*
 name|cd_ui
 decl_stmt|;
 comment|/* color display filter dialog         */
-endif|#
-directive|endif
-comment|/* DISPLAY_FILTERS */
 block|}
 struct|;
 end_struct

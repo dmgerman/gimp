@@ -6,23 +6,23 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GDISPLAY_COLOR_UI_H__
+name|__GIMP_DISPLAY_SHELL_FILTER_DIALOG_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GDISPLAY_COLOR_UI_H__
+DECL|macro|__GIMP_DISPLAY_SHELL_FILTER_DIALOG_H__
 define|#
 directive|define
-name|__GDISPLAY_COLOR_UI_H__
+name|__GIMP_DISPLAY_SHELL_FILTER_DIALOG_H__
 end_define
 
 begin_function_decl
 name|void
-name|gdisplay_color_ui_new
+name|gimp_display_shell_filter_dialog_new
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -33,7 +33,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GDISPLAY_COLOR_UI_H__ */
+comment|/* __GIMP_DISPLAY_SHELL_FILTER_DIALOG_H__ */
 end_comment
 
 end_unit

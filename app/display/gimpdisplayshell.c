@@ -202,6 +202,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-filter.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-handlers.h"
 end_include
 
@@ -240,27 +246,6 @@ include|#
 directive|include
 file|"undo.h"
 end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|DISPLAY_FILTERS
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|"gdisplay_color.h"
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* DISPLAY_FILTERS */
-end_comment
 
 begin_include
 include|#
@@ -924,9 +909,6 @@ name|nav_popup
 operator|=
 name|NULL
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|DISPLAY_FILTERS
 name|shell
 operator|->
 name|cd_list
@@ -939,9 +921,6 @@ name|cd_ui
 operator|=
 name|NULL
 expr_stmt|;
-endif|#
-directive|endif
-comment|/* DISPLAY_FILTERS */
 name|gtk_window_set_wmclass
 argument_list|(
 name|GTK_WINDOW
@@ -1204,18 +1183,11 @@ operator|->
 name|display_areas
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|DISPLAY_FILTERS
-comment|/* detach any color displays */
-name|gdisplay_color_detach_all
+name|gimp_display_shell_filter_detach_all
 argument_list|(
-name|gdisp
+name|shell
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
-comment|/* DISPLAY_FILTERS */
 if|if
 condition|(
 name|shell

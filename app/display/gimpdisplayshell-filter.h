@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GDISPLAY_COLOR_H__
+name|__GIMP_DISPLAY_SHELL_FILTER_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GDISPLAY_COLOR_H__
+DECL|macro|__GIMP_DISPLAY_SHELL_FILTER_H__
 define|#
 directive|define
-name|__GDISPLAY_COLOR_H__
+name|__GIMP_DISPLAY_SHELL_FILTER_H__
 end_define
 
 begin_include
@@ -98,11 +98,11 @@ end_function_decl
 begin_function_decl
 name|ColorDisplayNode
 modifier|*
-name|gdisplay_color_attach
+name|gimp_display_shell_filter_attach
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 specifier|const
 name|gchar
@@ -115,11 +115,11 @@ end_function_decl
 begin_function_decl
 name|ColorDisplayNode
 modifier|*
-name|gdisplay_color_attach_clone
+name|gimp_display_shell_filter_attach_clone
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|ColorDisplayNode
 modifier|*
@@ -130,11 +130,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplay_color_detach
+name|gimp_display_shell_filter_detach
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|ColorDisplayNode
 modifier|*
@@ -145,11 +145,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplay_color_detach_destroy
+name|gimp_display_shell_filter_detach_destroy
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|ColorDisplayNode
 modifier|*
@@ -160,22 +160,22 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplay_color_detach_all
+name|gimp_display_shell_filter_detach_all
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplay_color_reorder_up
+name|gimp_display_shell_filter_reorder_up
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|ColorDisplayNode
 modifier|*
@@ -186,11 +186,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplay_color_reorder_down
+name|gimp_display_shell_filter_reorder_down
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|ColorDisplayNode
 modifier|*
@@ -201,7 +201,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplay_color_configure
+name|gimp_display_shell_filter_configure
 parameter_list|(
 name|ColorDisplayNode
 modifier|*
@@ -224,7 +224,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplay_color_configure_cancel
+name|gimp_display_shell_filter_configure_cancel
 parameter_list|(
 name|ColorDisplayNode
 modifier|*
@@ -239,7 +239,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GDISPLAY_COLOR_H__ */
+comment|/* __GIMP_DISPLAY_SHELL_FILTER_H__ */
 end_comment
 
 end_unit

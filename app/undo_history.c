@@ -153,7 +153,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b736ea40108
+DECL|struct|__anon2bdc57430108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b736ea40208
+DECL|struct|__anon2bdc57430208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -3476,7 +3476,7 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-literal|"destroy"
+literal|"disconnect"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

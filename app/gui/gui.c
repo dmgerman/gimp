@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell-filter.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplayshell-render.h"
 end_include
 
@@ -857,15 +863,9 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|DISPLAY_FILTERS
 name|color_display_init
 argument_list|()
 expr_stmt|;
-endif|#
-directive|endif
-comment|/* DISPLAY_FILTERS */
 name|render_setup
 argument_list|(
 name|gimprc

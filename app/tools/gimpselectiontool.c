@@ -447,10 +447,18 @@ if|if
 condition|(
 name|key
 operator|==
+operator|(
 name|state
+operator|&
+operator|(
+name|GDK_SHIFT_MASK
+operator||
+name|GDK_CONTROL_MASK
+operator|)
+operator|)
 condition|)
-comment|/*  first modifier pressed  */
 block|{
+comment|/*  first modifier pressed  */
 name|selection_tool
 operator|->
 name|saved_op
@@ -466,10 +474,18 @@ block|{
 if|if
 condition|(
 operator|!
+operator|(
 name|state
+operator|&
+operator|(
+name|GDK_SHIFT_MASK
+operator||
+name|GDK_CONTROL_MASK
+operator|)
+operator|)
 condition|)
-comment|/*  last modifier released  */
 block|{
+comment|/*  last modifier released  */
 name|button_op
 operator|=
 name|selection_tool
