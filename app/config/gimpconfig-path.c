@@ -155,6 +155,14 @@ argument_list|,
 name|error
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|expanded
+condition|)
+return|return
+name|NULL
+return|;
 name|retval
 operator|=
 name|g_filename_from_utf8
@@ -180,8 +188,6 @@ return|return
 name|retval
 return|;
 block|}
-else|else
-block|{
 return|return
 name|gimp_config_path_expand_only
 argument_list|(
@@ -190,7 +196,6 @@ argument_list|,
 name|error
 argument_list|)
 return|;
-block|}
 block|}
 end_function
 
