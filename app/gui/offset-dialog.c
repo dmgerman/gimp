@@ -1235,11 +1235,6 @@ operator|->
 name|dlg
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|off_d
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
