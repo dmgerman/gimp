@@ -88,7 +88,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298cb8580108
+DECL|struct|__anon2a2bb7540108
 block|{
 DECL|member|type
 name|DobjType
@@ -219,26 +219,6 @@ modifier|*
 name|tmp_line
 decl_stmt|;
 end_decl_stmt
-
-begin_function_decl
-name|void
-name|d_pnt_add_line
-parameter_list|(
-name|GfigObject
-modifier|*
-name|obj
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|,
-name|gint
-name|pos
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|DobjPoints

@@ -63,7 +63,45 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_function_decl
+specifier|static
+name|GfigObject
+modifier|*
+name|d_copy_line
+parameter_list|(
+name|GfigObject
+modifier|*
+name|obj
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|d_draw_line
+parameter_list|(
+name|GfigObject
+modifier|*
+name|obj
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|d_paint_line
+parameter_list|(
+name|GfigObject
+modifier|*
+name|obj
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function
+specifier|static
 name|GfigObject
 modifier|*
 DECL|function|d_copy_line (GfigObject * obj)
@@ -132,6 +170,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|d_draw_line (GfigObject * obj)
 name|d_draw_line
@@ -246,6 +285,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|d_paint_line (GfigObject * obj)
 name|d_paint_line

@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gfig-line.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gfig-dobject.h"
 end_include
 

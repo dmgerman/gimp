@@ -29,6 +29,15 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|d_spiral_object_class_init
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|d_update_spiral
 parameter_list|(
 name|GdkPoint
@@ -62,15 +71,6 @@ name|pnt
 parameter_list|,
 name|gboolean
 name|shift_down
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|d_spiral_object_class_init
-parameter_list|(
-name|void
 parameter_list|)
 function_decl|;
 end_function_decl

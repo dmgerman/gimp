@@ -47,7 +47,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bab6e260108
+DECL|struct|__anon278147790108
 block|{
 DECL|member|gridspacing
 name|gint
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bab6e260208
+DECL|struct|__anon278147790208
 block|{
 DECL|member|type
 name|SelectionType
@@ -282,7 +282,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bab6e260308
+DECL|struct|__anon278147790308
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -477,7 +477,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bab6e260408
+DECL|struct|__anon278147790408
 block|{
 DECL|member|debug_styles
 name|gboolean
@@ -839,21 +839,6 @@ name|x1
 parameter_list|,
 name|gint
 name|y1
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gfig_preview_expose
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|event
 parameter_list|)
 function_decl|;
 end_function_decl

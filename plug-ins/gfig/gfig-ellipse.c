@@ -75,6 +75,43 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_function_decl
+specifier|static
+name|void
+name|d_draw_ellipse
+parameter_list|(
+name|GfigObject
+modifier|*
+name|obj
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|d_paint_ellipse
+parameter_list|(
+name|GfigObject
+modifier|*
+name|obj
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|GfigObject
+modifier|*
+name|d_copy_ellipse
+parameter_list|(
+name|GfigObject
+modifier|*
+name|obj
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function
 specifier|static
 name|void
@@ -1134,14 +1171,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|d_ellipse_start (GdkPoint * pnt,gint shift_down)
+DECL|function|d_ellipse_start (GdkPoint * pnt,gboolean shift_down)
 name|d_ellipse_start
 parameter_list|(
 name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 block|{
@@ -1165,14 +1202,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|d_ellipse_end (GdkPoint * pnt,gint shift_down)
+DECL|function|d_ellipse_end (GdkPoint * pnt,gboolean shift_down)
 name|d_ellipse_end
 parameter_list|(
 name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 block|{

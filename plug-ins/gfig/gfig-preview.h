@@ -35,10 +35,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gfig_update_stat_labels
+name|gboolean
+name|gfig_preview_expose
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -53,17 +59,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|dialog_update_preview
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -220,6 +220,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gfig_pos_update_labels
+parameter_list|(
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function
 name|GtkWidget
 modifier|*
@@ -822,7 +833,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|gfig_preview_events (GtkWidget * widget,GdkEvent * event)
 name|gfig_preview_events
 parameter_list|(

@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gfig-line.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gfig-dialog.h"
 end_include
 
@@ -1344,14 +1350,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|d_spiral_start (GdkPoint * pnt,gint shift_down)
+DECL|function|d_spiral_start (GdkPoint * pnt,gboolean shift_down)
 name|d_spiral_start
 parameter_list|(
 name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 block|{
@@ -1394,14 +1400,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|d_spiral_end (GdkPoint * pnt,gint shift_down)
+DECL|function|d_spiral_end (GdkPoint * pnt,gboolean shift_down)
 name|d_spiral_end
 parameter_list|(
 name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 block|{

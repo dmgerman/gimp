@@ -1300,14 +1300,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|object_operation_start (GdkPoint * pnt,gint shift_down)
+DECL|function|object_operation_start (GdkPoint * pnt,gboolean shift_down)
 name|object_operation_start
 parameter_list|(
 name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 block|{
@@ -1612,14 +1612,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|object_operation_end (GdkPoint * pnt,gint shift_down)
+DECL|function|object_operation_end (GdkPoint * pnt,gboolean shift_down)
 name|object_operation_end
 parameter_list|(
 name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 block|{
@@ -1717,14 +1717,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|object_operation (GdkPoint * to_pnt,gint shift_down)
+DECL|function|object_operation (GdkPoint * to_pnt,gboolean shift_down)
 name|object_operation
 parameter_list|(
 name|GdkPoint
 modifier|*
 name|to_pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 block|{
@@ -2993,14 +2993,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|object_end (GdkPoint * pnt,gint shift_down)
+DECL|function|object_end (GdkPoint * pnt,gboolean shift_down)
 name|object_end
 parameter_list|(
 name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 block|{

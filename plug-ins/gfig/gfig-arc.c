@@ -2449,7 +2449,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*d_draw_line (newarc);  Should undraw line */
 if|if
 condition|(
 name|need_to_scale
