@@ -182,7 +182,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c8ed890103
+DECL|enum|__anon29ce9bba0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -2727,7 +2727,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon27c8ed89020a
+DECL|union|__anon29ce9bba020a
 block|{
 DECL|member|u
 name|guint16
@@ -2806,8 +2806,10 @@ argument_list|(
 name|short_float
 operator|.
 name|f
-operator|*=
-literal|255.9999
+operator|*
+literal|255.0
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 block|}

@@ -169,7 +169,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b7bfda0108
+DECL|struct|__anon296e69560108
 block|{
 DECL|member|description
 name|gchar
@@ -1802,7 +1802,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon28b7bfda020a
+DECL|union|__anon296e6956020a
 block|{
 DECL|member|u
 name|guint16
@@ -1883,8 +1883,10 @@ argument_list|(
 name|short_float
 operator|.
 name|f
-operator|*=
-literal|255.9999
+operator|*
+literal|255.0
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 block|}
