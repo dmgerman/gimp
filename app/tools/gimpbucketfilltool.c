@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -195,17 +189,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_decl_stmt
-DECL|variable|bucket_options
-specifier|static
-name|BucketOptions
-modifier|*
-name|bucket_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|parent_class
@@ -348,11 +331,13 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|BucketOptions
+name|GimpToolOptions
 modifier|*
 name|bucket_options_new
 parameter_list|(
-name|void
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -375,19 +360,27 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_bucket_fill_tool_register (Gimp * gimp)
+DECL|function|gimp_bucket_fill_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
 name|gimp_bucket_fill_tool_register
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpToolRegisterCallback
+name|callback
 parameter_list|)
 block|{
-name|tool_manager_register_tool
+call|(
+modifier|*
+name|callback
+call|)
 argument_list|(
 name|gimp
 argument_list|,
 name|GIMP_TYPE_BUCKET_FILL_TOOL
+argument_list|,
+name|bucket_options_new
 argument_list|,
 name|TRUE
 argument_list|,
@@ -589,29 +582,6 @@ argument_list|(
 name|bucket_fill_tool
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|bucket_options
-condition|)
-block|{
-name|bucket_options
-operator|=
-name|bucket_options_new
-argument_list|()
-expr_stmt|;
-name|tool_manager_register_tool_options
-argument_list|(
-name|GIMP_TYPE_BUCKET_FILL_TOOL
-argument_list|,
-operator|(
-name|GimpToolOptions
-operator|*
-operator|)
-name|bucket_options
-argument_list|)
-expr_stmt|;
-block|}
 name|tool
 operator|->
 name|tool_cursor
@@ -1349,12 +1319,14 @@ end_function
 
 begin_function
 specifier|static
-name|BucketOptions
+name|GimpToolOptions
 modifier|*
-DECL|function|bucket_options_new (void)
+DECL|function|bucket_options_new (GimpToolInfo * tool_info)
 name|bucket_options_new
 parameter_list|(
-name|void
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 block|{
 name|BucketOptions
@@ -1398,10 +1370,20 @@ operator|*
 operator|)
 name|options
 argument_list|,
-name|GIMP_TYPE_BUCKET_FILL_TOOL
-argument_list|,
-name|bucket_options_reset
+name|tool_info
 argument_list|)
+expr_stmt|;
+operator|(
+operator|(
+name|GimpToolOptions
+operator|*
+operator|)
+name|options
+operator|)
+operator|->
+name|reset_func
+operator|=
+name|bucket_options_reset
 expr_stmt|;
 name|options
 operator|->
@@ -1791,6 +1773,10 @@ name|options
 argument_list|)
 expr_stmt|;
 return|return
+operator|(
+name|GimpToolOptions
+operator|*
+operator|)
 name|options
 return|;
 block|}

@@ -132,18 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -190,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27917b090103
+DECL|enum|__anon28b0ae7e0103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -459,11 +447,13 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|CloneOptions
+name|GimpToolOptions
 modifier|*
 name|clone_options_new
 parameter_list|(
-name|void
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -479,34 +469,6 @@ name|options
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* The parent class */
-end_comment
-
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpPaintToolClass
-modifier|*
-name|parent_class
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  the clone tool options  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|clone_options
-specifier|static
-name|CloneOptions
-modifier|*
-name|clone_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/*  local variables  */
@@ -707,25 +669,42 @@ name|non_gui_type
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|parent_class
+specifier|static
+name|GimpPaintToolClass
+modifier|*
+name|parent_class
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
-comment|/* global functions  */
+comment|/* public functions  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_clone_tool_register (Gimp * gimp)
+DECL|function|gimp_clone_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
 name|gimp_clone_tool_register
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpToolRegisterCallback
+name|callback
 parameter_list|)
 block|{
-name|tool_manager_register_tool
+call|(
+modifier|*
+name|callback
+call|)
 argument_list|(
 name|gimp
 argument_list|,
 name|GIMP_TYPE_CLONE_TOOL
+argument_list|,
+name|clone_options_new
 argument_list|,
 name|TRUE
 argument_list|,
@@ -954,29 +933,6 @@ argument_list|(
 name|clone
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|clone_options
-condition|)
-block|{
-name|clone_options
-operator|=
-name|clone_options_new
-argument_list|()
-expr_stmt|;
-name|tool_manager_register_tool_options
-argument_list|(
-name|GIMP_TYPE_CLONE_TOOL
-argument_list|,
-operator|(
-name|GimpToolOptions
-operator|*
-operator|)
-name|clone_options
-argument_list|)
-expr_stmt|;
-block|}
 name|tool
 operator|->
 name|tool_cursor
@@ -3216,12 +3172,14 @@ end_comment
 
 begin_function
 specifier|static
-name|CloneOptions
+name|GimpToolOptions
 modifier|*
-DECL|function|clone_options_new (void)
+DECL|function|clone_options_new (GimpToolInfo * tool_info)
 name|clone_options_new
 parameter_list|(
-name|void
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 block|{
 name|CloneOptions
@@ -3236,10 +3194,9 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
-comment|/*  the new clone tool options structure  */
 name|options
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|CloneOptions
 argument_list|,
@@ -3254,10 +3211,20 @@ operator|*
 operator|)
 name|options
 argument_list|,
-name|GIMP_TYPE_CLONE_TOOL
-argument_list|,
-name|clone_options_reset
+name|tool_info
 argument_list|)
+expr_stmt|;
+operator|(
+operator|(
+name|GimpToolOptions
+operator|*
+operator|)
+name|options
+operator|)
+operator|->
+name|reset_func
+operator|=
+name|clone_options_reset
 expr_stmt|;
 name|options
 operator|->
@@ -3487,6 +3454,10 @@ name|frame
 argument_list|)
 expr_stmt|;
 return|return
+operator|(
+name|GimpToolOptions
+operator|*
+operator|)
 name|options
 return|;
 block|}

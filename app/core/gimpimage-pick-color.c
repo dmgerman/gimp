@@ -381,11 +381,13 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GimpColorPickerToolOptions
+name|GimpToolOptions
 modifier|*
 name|gimp_color_picker_tool_options_new
 parameter_list|(
-name|void
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -468,21 +470,6 @@ name|final
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  the color picker tool options  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|gimp_color_picker_tool_options
-specifier|static
-name|GimpColorPickerToolOptions
-modifier|*
-name|gimp_color_picker_tool_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/*  the color value  */
@@ -642,19 +629,27 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_color_picker_tool_register (Gimp * gimp)
+DECL|function|gimp_color_picker_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
 name|gimp_color_picker_tool_register
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpToolRegisterCallback
+name|callback
 parameter_list|)
 block|{
-name|tool_manager_register_tool
+call|(
+modifier|*
+name|callback
+call|)
 argument_list|(
 name|gimp
 argument_list|,
 name|GIMP_TYPE_COLOR_PICKER_TOOL
+argument_list|,
+name|gimp_color_picker_tool_options_new
 argument_list|,
 name|FALSE
 argument_list|,
@@ -892,29 +887,6 @@ argument_list|(
 name|color_picker_tool
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|gimp_color_picker_tool_options
-condition|)
-block|{
-name|gimp_color_picker_tool_options
-operator|=
-name|gimp_color_picker_tool_options_new
-argument_list|()
-expr_stmt|;
-name|tool_manager_register_tool_options
-argument_list|(
-name|GIMP_TYPE_COLOR_PICKER_TOOL
-argument_list|,
-operator|(
-name|GimpToolOptions
-operator|*
-operator|)
-name|gimp_color_picker_tool_options
-argument_list|)
-expr_stmt|;
-block|}
 name|tool
 operator|->
 name|tool_cursor
@@ -3438,12 +3410,14 @@ end_comment
 
 begin_function
 specifier|static
-name|GimpColorPickerToolOptions
+name|GimpToolOptions
 modifier|*
-DECL|function|gimp_color_picker_tool_options_new (void)
+DECL|function|gimp_color_picker_tool_options_new (GimpToolInfo * tool_info)
 name|gimp_color_picker_tool_options_new
 parameter_list|(
-name|void
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 block|{
 name|GimpColorPickerToolOptions
@@ -3487,8 +3461,20 @@ operator|*
 operator|)
 name|options
 argument_list|,
-name|gimp_color_picker_tool_options_reset
+name|tool_info
 argument_list|)
+expr_stmt|;
+operator|(
+operator|(
+name|GimpToolOptions
+operator|*
+operator|)
+name|options
+operator|)
+operator|->
+name|reset_func
+operator|=
+name|gimp_color_picker_tool_options_reset
 expr_stmt|;
 name|options
 operator|->
@@ -4068,6 +4054,10 @@ name|update_active_w
 argument_list|)
 expr_stmt|;
 return|return
+operator|(
+name|GimpToolOptions
+operator|*
+operator|)
 name|options
 return|;
 block|}

@@ -332,15 +332,13 @@ comment|/*  paint tool options functions  */
 end_comment
 
 begin_function_decl
-name|PaintOptions
+name|GimpToolOptions
 modifier|*
 name|paint_options_new
 parameter_list|(
-name|GType
-name|tool_type
-parameter_list|,
-name|ToolOptionsResetFunc
-name|reset_func
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -368,11 +366,9 @@ name|PaintOptions
 modifier|*
 name|options
 parameter_list|,
-name|GType
-name|tool_type
-parameter_list|,
-name|ToolOptionsResetFunc
-name|reset_func
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 function_decl|;
 end_function_decl

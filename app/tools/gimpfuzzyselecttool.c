@@ -150,12 +150,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -312,32 +306,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpSelectionToolClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  the fuzzy selection tool options  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|fuzzy_options
-specifier|static
-name|SelectionOptions
-modifier|*
-name|fuzzy_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/*  XSegments which make up the fuzzy selection boundary  */
 end_comment
@@ -363,25 +331,44 @@ literal|0
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|parent_class
+specifier|static
+name|GimpSelectionToolClass
+modifier|*
+name|parent_class
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  public functions  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_fuzzy_select_tool_register (Gimp * gimp)
+DECL|function|gimp_fuzzy_select_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
 name|gimp_fuzzy_select_tool_register
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpToolRegisterCallback
+name|callback
 parameter_list|)
 block|{
-name|tool_manager_register_tool
+call|(
+modifier|*
+name|callback
+call|)
 argument_list|(
 name|gimp
 argument_list|,
 name|GIMP_TYPE_FUZZY_SELECT_TOOL
+argument_list|,
+name|selection_options_new
 argument_list|,
 name|FALSE
 argument_list|,
@@ -622,33 +609,6 @@ argument_list|(
 name|fuzzy_select
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|fuzzy_options
-condition|)
-block|{
-name|fuzzy_options
-operator|=
-name|selection_options_new
-argument_list|(
-name|GIMP_TYPE_FUZZY_SELECT_TOOL
-argument_list|,
-name|selection_options_reset
-argument_list|)
-expr_stmt|;
-name|tool_manager_register_tool_options
-argument_list|(
-name|GIMP_TYPE_FUZZY_SELECT_TOOL
-argument_list|,
-operator|(
-name|GimpToolOptions
-operator|*
-operator|)
-name|fuzzy_options
-argument_list|)
-expr_stmt|;
-block|}
 name|tool
 operator|->
 name|tool_cursor

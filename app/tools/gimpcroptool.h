@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba2c4380103
+DECL|enum|__anon29d110560103
 block|{
 DECL|enumerator|CROP_CROP
 name|CROP_CROP
@@ -215,6 +215,9 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpToolRegisterCallback
+name|callback
 parameter_list|)
 function_decl|;
 end_function_decl

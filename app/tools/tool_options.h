@@ -30,8 +30,13 @@ name|GtkWidget
 modifier|*
 name|main_vbox
 decl_stmt|;
+DECL|member|tool_info
+name|GimpToolInfo
+modifier|*
+name|tool_info
+decl_stmt|;
 DECL|member|reset_func
-name|ToolOptionsResetFunc
+name|GimpToolOptionsResetFunc
 name|reset_func
 decl_stmt|;
 block|}
@@ -47,7 +52,9 @@ name|GimpToolOptions
 modifier|*
 name|tool_options_new
 parameter_list|(
-name|void
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -64,8 +71,9 @@ name|GimpToolOptions
 modifier|*
 name|options
 parameter_list|,
-name|ToolOptionsResetFunc
-name|reset_func
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 function_decl|;
 end_function_decl

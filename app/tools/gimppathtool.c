@@ -54,25 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawtool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppathtool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool_options.h"
 end_include
 
 begin_include
@@ -427,32 +409,29 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|path_options
-specifier|static
-name|GimpToolOptions
-modifier|*
-name|path_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 name|void
-DECL|function|gimp_path_tool_register (Gimp * gimp)
+DECL|function|gimp_path_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
 name|gimp_path_tool_register
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpToolRegisterCallback
+name|callback
 parameter_list|)
 block|{
-name|tool_manager_register_tool
+call|(
+modifier|*
+name|callback
+call|)
 argument_list|(
 name|gimp
 argument_list|,
 name|GIMP_TYPE_PATH_TOOL
+argument_list|,
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
@@ -690,37 +669,6 @@ argument_list|(
 name|path_tool
 argument_list|)
 expr_stmt|;
-comment|/*  The tool options  */
-if|if
-condition|(
-operator|!
-name|path_options
-condition|)
-block|{
-name|path_options
-operator|=
-name|tool_options_new
-argument_list|()
-expr_stmt|;
-name|tool_manager_register_tool_options
-argument_list|(
-name|GIMP_TYPE_PATH_TOOL
-argument_list|,
-operator|(
-name|GimpToolOptions
-operator|*
-operator|)
-name|path_options
-argument_list|)
-expr_stmt|;
-block|}
-name|tool
-operator|->
-name|preserve
-operator|=
-name|TRUE
-expr_stmt|;
-comment|/*  Preserve on drawable change  */
 name|path_tool
 operator|->
 name|click_type
@@ -854,6 +802,13 @@ operator|=
 literal|0
 expr_stmt|;
 comment|/* path_tool->cur_path->path_tool = path_tool; */
+name|tool
+operator|->
+name|preserve
+operator|=
+name|TRUE
+expr_stmt|;
+comment|/*  Preserve on drawable change  */
 block|}
 end_function
 

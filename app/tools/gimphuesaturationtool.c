@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"app_procs.h"
 end_include
 
@@ -424,47 +418,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  the hue-saturation tool options  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|hue_saturation_options
-specifier|static
-name|GimpToolOptions
-modifier|*
-name|hue_saturation_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  the hue-saturation tool dialog  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|hue_saturation_dialog
-specifier|static
-name|HueSaturationDialog
-modifier|*
-name|hue_saturation_dialog
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpImageMapToolClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/*  Local variables  */
 end_comment
 
@@ -574,25 +527,55 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|hue_saturation_dialog
+specifier|static
+name|HueSaturationDialog
+modifier|*
+name|hue_saturation_dialog
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|parent_class
+specifier|static
+name|GimpImageMapToolClass
+modifier|*
+name|parent_class
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
-comment|/*  functions  */
+comment|/*  public functions  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_hue_saturation_tool_register (Gimp * gimp)
+DECL|function|gimp_hue_saturation_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
 name|gimp_hue_saturation_tool_register
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpToolRegisterCallback
+name|callback
 parameter_list|)
 block|{
-name|tool_manager_register_tool
+call|(
+modifier|*
+name|callback
+call|)
 argument_list|(
 name|gimp
 argument_list|,
 name|GIMP_TYPE_HUE_SATURATION_TOOL
+argument_list|,
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
@@ -766,42 +749,7 @@ name|GimpHueSaturationTool
 modifier|*
 name|bc_tool
 parameter_list|)
-block|{
-name|GimpTool
-modifier|*
-name|tool
-decl_stmt|;
-name|tool
-operator|=
-name|GIMP_TOOL
-argument_list|(
-name|bc_tool
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|hue_saturation_options
-condition|)
-block|{
-name|hue_saturation_options
-operator|=
-name|tool_options_new
-argument_list|()
-expr_stmt|;
-name|tool_manager_register_tool_options
-argument_list|(
-name|GIMP_TYPE_HUE_SATURATION_TOOL
-argument_list|,
-operator|(
-name|GimpToolOptions
-operator|*
-operator|)
-name|hue_saturation_options
-argument_list|)
-expr_stmt|;
-block|}
-block|}
+block|{ }
 end_function
 
 begin_function

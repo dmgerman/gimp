@@ -488,24 +488,18 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|paint_options_init (PaintOptions * options,GType tool_type,ToolOptionsResetFunc reset_func)
+DECL|function|paint_options_init (PaintOptions * options,GimpToolInfo * tool_info)
 name|paint_options_init
 parameter_list|(
 name|PaintOptions
 modifier|*
 name|options
 parameter_list|,
-name|GType
-name|tool_type
-parameter_list|,
-name|ToolOptionsResetFunc
-name|reset_func
-parameter_list|)
-block|{
 name|GimpToolInfo
 modifier|*
 name|tool_info
-decl_stmt|;
+parameter_list|)
+block|{
 name|GtkWidget
 modifier|*
 name|vbox
@@ -518,34 +512,6 @@ name|GtkWidget
 modifier|*
 name|scale
 decl_stmt|;
-name|tool_info
-operator|=
-name|tool_manager_get_info_by_type
-argument_list|(
-name|the_gimp
-argument_list|,
-name|tool_type
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|tool_info
-condition|)
-block|{
-name|g_warning
-argument_list|(
-literal|"%s(): no tool info registered for %s"
-argument_list|,
-name|G_GNUC_FUNCTION
-argument_list|,
-name|g_type_name
-argument_list|(
-name|tool_type
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
 comment|/*  initialize the tool options structure  */
 name|tool_options_init
 argument_list|(
@@ -555,8 +521,20 @@ operator|*
 operator|)
 name|options
 argument_list|,
-name|reset_func
+name|tool_info
 argument_list|)
+expr_stmt|;
+operator|(
+operator|(
+name|GimpToolOptions
+operator|*
+operator|)
+name|options
+operator|)
+operator|->
+name|reset_func
+operator|=
+name|paint_options_reset
 expr_stmt|;
 comment|/*  initialize the paint options structure  */
 name|options
@@ -826,30 +804,44 @@ expr_stmt|;
 comment|/*  the paint mode menu  */
 if|if
 condition|(
+name|tool_info
+operator|->
 name|tool_type
 operator|==
 name|GIMP_TYPE_BUCKET_FILL_TOOL
 operator|||
+name|tool_info
+operator|->
 name|tool_type
 operator|==
 name|GIMP_TYPE_BLEND_TOOL
 operator|||
+name|tool_info
+operator|->
 name|tool_type
 operator|==
 name|GIMP_TYPE_PENCIL_TOOL
 operator|||
+name|tool_info
+operator|->
 name|tool_type
 operator|==
 name|GIMP_TYPE_PAINTBRUSH_TOOL
 operator|||
+name|tool_info
+operator|->
 name|tool_type
 operator|==
 name|GIMP_TYPE_AIRBRUSH_TOOL
 operator|||
+name|tool_info
+operator|->
 name|tool_type
 operator|==
 name|GIMP_TYPE_CLONE_TOOL
 operator|||
+name|tool_info
+operator|->
 name|tool_type
 operator|==
 name|GIMP_TYPE_INK_TOOL
@@ -950,10 +942,14 @@ expr_stmt|;
 comment|/*  a separator after the common paint options which can be global  */
 if|if
 condition|(
+name|tool_info
+operator|->
 name|tool_type
 operator|==
 name|GIMP_TYPE_BUCKET_FILL_TOOL
 operator|||
+name|tool_info
+operator|->
 name|tool_type
 operator|==
 name|GIMP_TYPE_BLEND_TOOL
@@ -1005,18 +1001,26 @@ expr_stmt|;
 comment|/*  the "incremental" toggle  */
 if|if
 condition|(
+name|tool_info
+operator|->
 name|tool_type
 operator|==
 name|GIMP_TYPE_AIRBRUSH_TOOL
 operator|||
+name|tool_info
+operator|->
 name|tool_type
 operator|==
 name|GIMP_TYPE_ERASER_TOOL
 operator|||
+name|tool_info
+operator|->
 name|tool_type
 operator|==
 name|GIMP_TYPE_PAINTBRUSH_TOOL
 operator|||
+name|tool_info
+operator|->
 name|tool_type
 operator|==
 name|GIMP_TYPE_PENCIL_TOOL
@@ -1106,6 +1110,8 @@ name|pressure_options
 operator|=
 name|paint_pressure_options_new
 argument_list|(
+name|tool_info
+operator|->
 name|tool_type
 argument_list|,
 name|options
@@ -1160,6 +1166,8 @@ name|gradient_options
 operator|=
 name|paint_gradient_options_new
 argument_list|(
+name|tool_info
+operator|->
 name|tool_type
 argument_list|,
 name|options
@@ -1222,16 +1230,14 @@ block|}
 end_function
 
 begin_function
-name|PaintOptions
+name|GimpToolOptions
 modifier|*
-DECL|function|paint_options_new (GType tool_type,ToolOptionsResetFunc reset_func)
+DECL|function|paint_options_new (GimpToolInfo * tool_info)
 name|paint_options_new
 parameter_list|(
-name|GType
-name|tool_type
-parameter_list|,
-name|ToolOptionsResetFunc
-name|reset_func
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 block|{
 name|PaintOptions
@@ -1240,7 +1246,7 @@ name|options
 decl_stmt|;
 name|options
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|PaintOptions
 argument_list|,
@@ -1251,9 +1257,7 @@ name|paint_options_init
 argument_list|(
 name|options
 argument_list|,
-name|tool_type
-argument_list|,
-name|reset_func
+name|tool_info
 argument_list|)
 expr_stmt|;
 if|if
@@ -1274,6 +1278,10 @@ name|global
 argument_list|)
 expr_stmt|;
 return|return
+operator|(
+name|GimpToolOptions
+operator|*
+operator|)
 name|options
 return|;
 block|}

@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"app_procs.h"
 end_include
 
@@ -366,25 +360,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  the histogram tool options  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|histogram_options
-specifier|static
-name|GimpToolOptions
-modifier|*
-name|histogram_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  the histogram tool dialog  */
-end_comment
-
 begin_decl_stmt
 DECL|variable|histogram_dialog
 specifier|static
@@ -408,24 +383,32 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  functions  */
+comment|/*  public functions  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_histogram_tool_register (Gimp * gimp)
+DECL|function|gimp_histogram_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
 name|gimp_histogram_tool_register
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpToolRegisterCallback
+name|callback
 parameter_list|)
 block|{
-name|tool_manager_register_tool
+call|(
+modifier|*
+name|callback
+call|)
 argument_list|(
 name|gimp
 argument_list|,
 name|GIMP_TYPE_HISTOGRAM_TOOL
+argument_list|,
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
@@ -611,29 +594,6 @@ argument_list|(
 name|bc_tool
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|histogram_options
-condition|)
-block|{
-name|histogram_options
-operator|=
-name|tool_options_new
-argument_list|()
-expr_stmt|;
-name|tool_manager_register_tool_options
-argument_list|(
-name|GIMP_TYPE_HISTOGRAM_TOOL
-argument_list|,
-operator|(
-name|GimpToolOptions
-operator|*
-operator|)
-name|histogram_options
-argument_list|)
-expr_stmt|;
-block|}
 name|tool
 operator|->
 name|scroll_lock

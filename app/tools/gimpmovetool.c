@@ -84,18 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormaps.h"
 end_include
 
@@ -274,17 +262,6 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
-DECL|variable|move_options
-specifier|static
-name|GimpToolOptions
-modifier|*
-name|move_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
 name|GimpDrawToolClass
@@ -297,19 +274,27 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_move_tool_register (Gimp * gimp)
+DECL|function|gimp_move_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
 name|gimp_move_tool_register
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpToolRegisterCallback
+name|callback
 parameter_list|)
 block|{
-name|tool_manager_register_tool
+call|(
+modifier|*
+name|callback
+call|)
 argument_list|(
 name|gimp
 argument_list|,
 name|GIMP_TYPE_MOVE_TOOL
+argument_list|,
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
@@ -536,30 +521,6 @@ argument_list|(
 name|move_tool
 argument_list|)
 expr_stmt|;
-comment|/*  The tool options  */
-if|if
-condition|(
-operator|!
-name|move_options
-condition|)
-block|{
-name|move_options
-operator|=
-name|tool_options_new
-argument_list|()
-expr_stmt|;
-name|tool_manager_register_tool_options
-argument_list|(
-name|GIMP_TYPE_MOVE_TOOL
-argument_list|,
-operator|(
-name|GimpToolOptions
-operator|*
-operator|)
-name|move_options
-argument_list|)
-expr_stmt|;
-block|}
 name|move_tool
 operator|->
 name|layer

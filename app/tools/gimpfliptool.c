@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tool_options.h"
 end_include
 
@@ -251,11 +245,13 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|FlipOptions
+name|GimpToolOptions
 modifier|*
 name|flip_options_new
 parameter_list|(
-name|void
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -271,17 +267,6 @@ name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-DECL|variable|flip_options
-specifier|static
-name|FlipOptions
-modifier|*
-name|flip_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|parent_class
@@ -300,19 +285,27 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_flip_tool_register (Gimp * gimp)
+DECL|function|gimp_flip_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
 name|gimp_flip_tool_register
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpToolRegisterCallback
+name|callback
 parameter_list|)
 block|{
-name|tool_manager_register_tool
+call|(
+modifier|*
+name|callback
+call|)
 argument_list|(
 name|gimp
 argument_list|,
 name|GIMP_TYPE_FLIP_TOOL
+argument_list|,
+name|flip_options_new
 argument_list|,
 name|FALSE
 argument_list|,
@@ -547,30 +540,6 @@ argument_list|(
 name|flip_tool
 argument_list|)
 expr_stmt|;
-comment|/*  The tool options  */
-if|if
-condition|(
-operator|!
-name|flip_options
-condition|)
-block|{
-name|flip_options
-operator|=
-name|flip_options_new
-argument_list|()
-expr_stmt|;
-name|tool_manager_register_tool_options
-argument_list|(
-name|GIMP_TYPE_FLIP_TOOL
-argument_list|,
-operator|(
-name|GimpToolOptions
-operator|*
-operator|)
-name|flip_options
-argument_list|)
-expr_stmt|;
-block|}
 name|tool
 operator|->
 name|tool_cursor
@@ -1004,14 +973,20 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  tool options stuff  */
+end_comment
+
 begin_function
 specifier|static
-name|FlipOptions
+name|GimpToolOptions
 modifier|*
-DECL|function|flip_options_new (void)
+DECL|function|flip_options_new (GimpToolInfo * tool_info)
 name|flip_options_new
 parameter_list|(
-name|void
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 block|{
 name|FlipOptions
@@ -1043,8 +1018,20 @@ operator|*
 operator|)
 name|options
 argument_list|,
-name|flip_options_reset
+name|tool_info
 argument_list|)
+expr_stmt|;
+operator|(
+operator|(
+name|GimpToolOptions
+operator|*
+operator|)
+name|options
+operator|)
+operator|->
+name|reset_func
+operator|=
+name|flip_options_reset
 expr_stmt|;
 name|options
 operator|->
@@ -1155,6 +1142,10 @@ name|frame
 argument_list|)
 expr_stmt|;
 return|return
+operator|(
+name|GimpToolOptions
+operator|*
+operator|)
 name|options
 return|;
 block|}

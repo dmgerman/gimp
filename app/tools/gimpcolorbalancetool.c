@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"app_procs.h"
 end_include
 
@@ -389,25 +383,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  the color balance tool options  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|color_balance_options
-specifier|static
-name|GimpToolOptions
-modifier|*
-name|color_balance_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  the color balance dialog  */
-end_comment
-
 begin_decl_stmt
 DECL|variable|color_balance_dialog
 specifier|static
@@ -436,19 +411,27 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_color_balance_tool_register (Gimp * gimp)
+DECL|function|gimp_color_balance_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
 name|gimp_color_balance_tool_register
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpToolRegisterCallback
+name|callback
 parameter_list|)
 block|{
-name|tool_manager_register_tool
+call|(
+modifier|*
+name|callback
+call|)
 argument_list|(
 name|gimp
 argument_list|,
 name|GIMP_TYPE_COLOR_BALANCE_TOOL
+argument_list|,
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
@@ -625,42 +608,7 @@ name|GimpColorBalanceTool
 modifier|*
 name|bc_tool
 parameter_list|)
-block|{
-name|GimpTool
-modifier|*
-name|tool
-decl_stmt|;
-name|tool
-operator|=
-name|GIMP_TOOL
-argument_list|(
-name|bc_tool
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|color_balance_options
-condition|)
-block|{
-name|color_balance_options
-operator|=
-name|tool_options_new
-argument_list|()
-expr_stmt|;
-name|tool_manager_register_tool_options
-argument_list|(
-name|GIMP_TYPE_COLOR_BALANCE_TOOL
-argument_list|,
-operator|(
-name|GimpToolOptions
-operator|*
-operator|)
-name|color_balance_options
-argument_list|)
-expr_stmt|;
-block|}
-block|}
+block|{ }
 end_function
 
 begin_function

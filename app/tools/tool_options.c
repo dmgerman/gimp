@@ -35,15 +35,16 @@ end_include
 
 begin_function
 name|void
-DECL|function|tool_options_init (GimpToolOptions * options,ToolOptionsResetFunc reset_func)
+DECL|function|tool_options_init (GimpToolOptions * options,GimpToolInfo * tool_info)
 name|tool_options_init
 parameter_list|(
 name|GimpToolOptions
 modifier|*
 name|options
 parameter_list|,
-name|ToolOptionsResetFunc
-name|reset_func
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 block|{
 name|options
@@ -59,9 +60,9 @@ argument_list|)
 expr_stmt|;
 name|options
 operator|->
-name|reset_func
+name|tool_info
 operator|=
-name|reset_func
+name|tool_info
 expr_stmt|;
 block|}
 end_function
@@ -69,10 +70,12 @@ end_function
 begin_function
 name|GimpToolOptions
 modifier|*
-DECL|function|tool_options_new (void)
+DECL|function|tool_options_new (GimpToolInfo * tool_info)
 name|tool_options_new
 parameter_list|(
-name|void
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 block|{
 name|GimpToolOptions
@@ -96,7 +99,7 @@ name|tool_options_init
 argument_list|(
 name|options
 argument_list|,
-name|NULL
+name|tool_info
 argument_list|)
 expr_stmt|;
 name|label

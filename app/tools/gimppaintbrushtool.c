@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimptoolinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppaintbrushtool.h"
 end_include
 
@@ -103,12 +109,6 @@ begin_include
 include|#
 directive|include
 file|"paint_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool_manager.h"
 end_include
 
 begin_include
@@ -227,17 +227,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|paintbrush_options
-specifier|static
-name|PaintOptions
-modifier|*
-name|paintbrush_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
 name|GimpPaintToolClass
@@ -249,24 +238,32 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  functions  */
+comment|/*  public functions  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_paintbrush_tool_register (Gimp * gimp)
+DECL|function|gimp_paintbrush_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
 name|gimp_paintbrush_tool_register
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpToolRegisterCallback
+name|callback
 parameter_list|)
 block|{
-name|tool_manager_register_tool
+call|(
+modifier|*
+name|callback
+call|)
 argument_list|(
 name|gimp
 argument_list|,
 name|GIMP_TYPE_PAINTBRUSH_TOOL
+argument_list|,
+name|paint_options_new
 argument_list|,
 name|TRUE
 argument_list|,
@@ -386,6 +383,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  private functions  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -457,33 +458,6 @@ argument_list|(
 name|paintbrush
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|paintbrush_options
-condition|)
-block|{
-name|paintbrush_options
-operator|=
-name|paint_options_new
-argument_list|(
-name|GIMP_TYPE_PAINTBRUSH_TOOL
-argument_list|,
-name|paint_options_reset
-argument_list|)
-expr_stmt|;
-name|tool_manager_register_tool_options
-argument_list|(
-name|GIMP_TYPE_PAINTBRUSH_TOOL
-argument_list|,
-operator|(
-name|GimpToolOptions
-operator|*
-operator|)
-name|paintbrush_options
-argument_list|)
-expr_stmt|;
-block|}
 name|tool
 operator|->
 name|tool_cursor
@@ -523,6 +497,10 @@ name|PaintState
 name|state
 parameter_list|)
 block|{
+name|PaintOptions
+modifier|*
+name|paint_options
+decl_stmt|;
 name|PaintPressureOptions
 modifier|*
 name|pressure_options
@@ -567,26 +545,41 @@ operator|!
 name|gimage
 condition|)
 return|return;
+name|paint_options
+operator|=
+operator|(
+name|PaintOptions
+operator|*
+operator|)
+name|GIMP_TOOL
+argument_list|(
+name|paint_tool
+argument_list|)
+operator|->
+name|tool_info
+operator|->
+name|tool_options
+expr_stmt|;
 if|if
 condition|(
-name|paintbrush_options
+name|paint_options
 condition|)
 block|{
 name|pressure_options
 operator|=
-name|paintbrush_options
+name|paint_options
 operator|->
 name|pressure_options
 expr_stmt|;
 name|gradient_options
 operator|=
-name|paintbrush_options
+name|paint_options
 operator|->
 name|gradient_options
 expr_stmt|;
 name|incremental
 operator|=
-name|paintbrush_options
+name|paint_options
 operator|->
 name|incremental
 expr_stmt|;

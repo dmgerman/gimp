@@ -101,18 +101,16 @@ end_include
 
 begin_function
 name|void
-DECL|function|selection_options_init (SelectionOptions * options,GType tool_type,ToolOptionsResetFunc reset_func)
+DECL|function|selection_options_init (SelectionOptions * options,GimpToolInfo * tool_info)
 name|selection_options_init
 parameter_list|(
 name|SelectionOptions
 modifier|*
 name|options
 parameter_list|,
-name|GType
-name|tool_type
-parameter_list|,
-name|ToolOptionsResetFunc
-name|reset_func
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 block|{
 name|GtkWidget
@@ -144,8 +142,20 @@ operator|*
 operator|)
 name|options
 argument_list|,
-name|reset_func
+name|tool_info
 argument_list|)
+expr_stmt|;
+operator|(
+operator|(
+name|GimpToolOptions
+operator|*
+operator|)
+name|options
+operator|)
+operator|->
+name|reset_func
+operator|=
+name|selection_options_reset
 expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
@@ -721,6 +731,8 @@ expr_stmt|;
 comment|/*  the antialias toggle button  */
 if|if
 condition|(
+name|tool_info
+operator|->
 name|tool_type
 operator|!=
 name|GIMP_TYPE_RECT_SELECT_TOOL
@@ -804,12 +816,14 @@ if|#
 directive|if
 literal|0
 comment|/*  a separator between the common and tool-specific selection options  */
-block|if (tool_type == GIMP_TYPE_ISCISSORS_TOOL      ||       tool_type == GIMP_TYPE_RECT_SELECT_TOOL    ||       tool_type == GIMP_TYPE_ELLIPSE_SELECT_TOOL ||       tool_type == GIMP_TYPE_FUZZY_SELECT_TOOL   ||       tool_type == GIMP_TYPE_BY_COLOR_SELECT_TOOL)     {       GtkWidget *separator;        separator = gtk_hseparator_new ();       gtk_box_pack_start (GTK_BOX (vbox), separator, FALSE, FALSE, 0);       gtk_widget_show (separator);     }
+block|if (tool_info->tool_type == GIMP_TYPE_ISCISSORS_TOOL      ||       tool_info->tool_type == GIMP_TYPE_RECT_SELECT_TOOL    ||       tool_info->tool_type == GIMP_TYPE_ELLIPSE_SELECT_TOOL ||       tool_info->tool_type == GIMP_TYPE_FUZZY_SELECT_TOOL   ||       tool_info->tool_type == GIMP_TYPE_BY_COLOR_SELECT_TOOL)     {       GtkWidget *separator;        separator = gtk_hseparator_new ();       gtk_box_pack_start (GTK_BOX (vbox), separator, FALSE, FALSE, 0);       gtk_widget_show (separator);     }
 endif|#
 directive|endif
 comment|/* selection tool with an interactive boundary that can be toggled */
 if|if
 condition|(
+name|tool_info
+operator|->
 name|tool_type
 operator|==
 name|GIMP_TYPE_ISCISSORS_TOOL
@@ -892,10 +906,14 @@ block|}
 comment|/*  selection tools which operate on colors or contiguous regions  */
 if|if
 condition|(
+name|tool_info
+operator|->
 name|tool_type
 operator|==
 name|GIMP_TYPE_FUZZY_SELECT_TOOL
 operator|||
+name|tool_info
+operator|->
 name|tool_type
 operator|==
 name|GIMP_TYPE_BY_COLOR_SELECT_TOOL
@@ -1153,10 +1171,14 @@ block|}
 comment|/*  widgets for fixed size select  */
 if|if
 condition|(
+name|tool_info
+operator|->
 name|tool_type
 operator|==
 name|GIMP_TYPE_RECT_SELECT_TOOL
 operator|||
+name|tool_info
+operator|->
 name|tool_type
 operator|==
 name|GIMP_TYPE_ELLIPSE_SELECT_TOOL
@@ -1926,16 +1948,14 @@ block|}
 end_function
 
 begin_function
-name|SelectionOptions
+name|GimpToolOptions
 modifier|*
-DECL|function|selection_options_new (GType tool_type,ToolOptionsResetFunc reset_func)
+DECL|function|selection_options_new (GimpToolInfo * tool_info)
 name|selection_options_new
 parameter_list|(
-name|GType
-name|tool_type
-parameter_list|,
-name|ToolOptionsResetFunc
-name|reset_func
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 block|{
 name|SelectionOptions
@@ -1944,7 +1964,7 @@ name|options
 decl_stmt|;
 name|options
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|SelectionOptions
 argument_list|,
@@ -1955,12 +1975,14 @@ name|selection_options_init
 argument_list|(
 name|options
 argument_list|,
-name|tool_type
-argument_list|,
-name|reset_func
+name|tool_info
 argument_list|)
 expr_stmt|;
 return|return
+operator|(
+name|GimpToolOptions
+operator|*
+operator|)
 name|options
 return|;
 block|}

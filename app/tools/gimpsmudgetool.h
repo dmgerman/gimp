@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2afca3570103
+DECL|enum|__anon28c6cbd60103
 block|{
 DECL|enumerator|SMUDGE_TYPE_SMUDGE
 name|SMUDGE_TYPE_SMUDGE
@@ -152,6 +152,9 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpToolRegisterCallback
+name|callback
 parameter_list|)
 function_decl|;
 end_function_decl

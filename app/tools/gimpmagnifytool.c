@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -347,11 +341,13 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|MagnifyOptions
+name|GimpToolOptions
 modifier|*
 name|magnify_options_new
 parameter_list|(
-name|void
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -367,17 +363,6 @@ name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-DECL|variable|magnify_options
-specifier|static
-name|MagnifyOptions
-modifier|*
-name|magnify_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|parent_class
@@ -396,19 +381,27 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_magnify_tool_register (Gimp * gimp)
+DECL|function|gimp_magnify_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
 name|gimp_magnify_tool_register
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpToolRegisterCallback
+name|callback
 parameter_list|)
 block|{
-name|tool_manager_register_tool
+call|(
+modifier|*
+name|callback
+call|)
 argument_list|(
 name|gimp
 argument_list|,
 name|GIMP_TYPE_MAGNIFY_TOOL
+argument_list|,
+name|magnify_options_new
 argument_list|,
 name|FALSE
 argument_list|,
@@ -633,29 +626,6 @@ argument_list|(
 name|magnify_tool
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|magnify_options
-condition|)
-block|{
-name|magnify_options
-operator|=
-name|magnify_options_new
-argument_list|()
-expr_stmt|;
-name|tool_manager_register_tool_options
-argument_list|(
-name|GIMP_TYPE_MAGNIFY_TOOL
-argument_list|,
-operator|(
-name|GimpToolOptions
-operator|*
-operator|)
-name|magnify_options
-argument_list|)
-expr_stmt|;
-block|}
 name|magnify_tool
 operator|->
 name|x
@@ -1714,12 +1684,14 @@ end_comment
 
 begin_function
 specifier|static
-name|MagnifyOptions
+name|GimpToolOptions
 modifier|*
-DECL|function|magnify_options_new (void)
+DECL|function|magnify_options_new (GimpToolInfo * tool_info)
 name|magnify_options_new
 parameter_list|(
-name|void
+name|GimpToolInfo
+modifier|*
+name|tool_info
 parameter_list|)
 block|{
 name|MagnifyOptions
@@ -1734,7 +1706,6 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
-comment|/*  the new magnify tool options structure  */
 name|options
 operator|=
 name|g_new0
@@ -1752,8 +1723,20 @@ operator|*
 operator|)
 name|options
 argument_list|,
-name|magnify_options_reset
+name|tool_info
 argument_list|)
+expr_stmt|;
+operator|(
+operator|(
+name|GimpToolOptions
+operator|*
+operator|)
+name|options
+operator|)
+operator|->
+name|reset_func
+operator|=
+name|magnify_options_reset
 expr_stmt|;
 name|options
 operator|->
@@ -1948,6 +1931,10 @@ name|frame
 argument_list|)
 expr_stmt|;
 return|return
+operator|(
+name|GimpToolOptions
+operator|*
+operator|)
 name|options
 return|;
 block|}
