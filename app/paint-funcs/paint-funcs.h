@@ -1283,6 +1283,9 @@ name|divisor
 parameter_list|,
 name|GimpConvolutionType
 name|mode
+parameter_list|,
+name|gboolean
+name|alpha_weighting
 parameter_list|)
 function_decl|;
 end_function_decl

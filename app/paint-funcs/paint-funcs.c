@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1189880103
+DECL|enum|__anon2b53520f0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -10204,7 +10204,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|convolve_region (PixelRegion * srcR,PixelRegion * destR,gfloat * matrix,gint size,gdouble divisor,GimpConvolutionType mode)
+DECL|function|convolve_region (PixelRegion * srcR,PixelRegion * destR,gfloat * matrix,gint size,gdouble divisor,GimpConvolutionType mode,gboolean alpha_weighting)
 name|convolve_region
 parameter_list|(
 name|PixelRegion
@@ -10227,6 +10227,9 @@ name|divisor
 parameter_list|,
 name|GimpConvolutionType
 name|mode
+parameter_list|,
+name|gboolean
+name|alpha_weighting
 parameter_list|)
 block|{
 comment|/*  Convolve the src image using the convolution matrix, writing to dest  */
@@ -10388,10 +10391,7 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|HAS_ALPHA
-argument_list|(
-name|bytes
-argument_list|)
+name|alpha_weighting
 condition|)
 block|{
 name|m
@@ -10558,10 +10558,7 @@ literal|2
 expr_stmt|;
 if|if
 condition|(
-name|HAS_ALPHA
-argument_list|(
-name|bytes
-argument_list|)
+name|alpha_weighting
 condition|)
 while|while
 condition|(
@@ -10638,56 +10635,12 @@ operator|*
 name|m
 condition|)
 block|{
-if|if
-condition|(
-name|alpha
-operator|==
-literal|255
-condition|)
-block|{
-name|weighted_divisor
-operator|+=
-operator|*
-name|m
-expr_stmt|;
-for|for
-control|(
-name|b
-operator|=
-literal|0
-init|;
-name|b
-operator|<
-name|a_byte
-condition|;
-name|b
-operator|++
-control|)
-name|total
-index|[
-name|b
-index|]
-operator|+=
-operator|*
-name|m
-operator|*
-operator|*
-name|s
-operator|++
-expr_stmt|;
-block|}
-else|else
-block|{
 name|mult_alpha
 operator|=
 operator|*
 name|m
 operator|*
-operator|(
 name|alpha
-operator|/
-literal|255.0
-operator|)
 expr_stmt|;
 name|weighted_divisor
 operator|+=
@@ -10717,7 +10670,6 @@ operator|*
 name|s
 operator|++
 expr_stmt|;
-block|}
 name|total
 index|[
 name|a_byte

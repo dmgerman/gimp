@@ -7355,6 +7355,8 @@ argument_list|,
 literal|32
 argument_list|,
 name|GIMP_NORMAL_CONVOL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  Set the "src" temp buf up as the new source Pixel Region  */
@@ -7396,6 +7398,8 @@ argument_list|,
 literal|1
 argument_list|,
 name|GIMP_NEGATIVE_CONVOL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  Get the vertical derivative  */
@@ -7420,6 +7424,8 @@ argument_list|,
 literal|1
 argument_list|,
 name|GIMP_NEGATIVE_CONVOL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* calculate overall gradient */
