@@ -161,7 +161,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1d686f0108
+DECL|struct|__anon2945efeb0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1d686f0208
+DECL|struct|__anon2945efeb0208
 block|{
 DECL|member|run
 name|gint
@@ -211,7 +211,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1d686f0308
+DECL|struct|__anon2945efeb0308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -2335,9 +2335,9 @@ name|preview
 operator|=
 name|gimp_fixme_preview_new
 argument_list|(
-name|center
-operator|->
 name|drawable
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_events
@@ -2991,6 +2991,11 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|printf
+argument_list|(
+literal|"Before\n"
+argument_list|)
+expr_stmt|;
 name|nova_center_draw
 argument_list|(
 operator|(
@@ -3000,6 +3005,11 @@ operator|)
 name|data
 argument_list|,
 name|ALL
+argument_list|)
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"After\n"
 argument_list|)
 expr_stmt|;
 return|return

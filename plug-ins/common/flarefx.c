@@ -106,7 +106,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cbfec30108
+DECL|struct|__anon29fe73be0108
 block|{
 DECL|member|posx
 name|gint
@@ -125,7 +125,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cbfec30208
+DECL|struct|__anon29fe73be0208
 block|{
 DECL|member|run
 name|gint
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cbfec30308
+DECL|struct|__anon29fe73be0308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -5444,6 +5444,8 @@ operator|=
 name|gimp_fixme_preview_new
 argument_list|(
 name|drawable
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_events

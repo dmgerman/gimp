@@ -35,7 +35,7 @@ comment|/* Preview stuff. WARNING: don't use this in new code!!!!!!!  * It's jus
 end_comment
 
 begin_typedef
-DECL|struct|__anon291f900e0108
+DECL|struct|__anon29d98b2a0108
 typedef|typedef
 struct|struct
 block|{
@@ -43,6 +43,11 @@ DECL|member|widget
 name|GtkWidget
 modifier|*
 name|widget
+decl_stmt|;
+DECL|member|frame
+name|GtkWidget
+modifier|*
+name|frame
 decl_stmt|;
 DECL|member|cache
 name|guchar
@@ -80,6 +85,15 @@ DECL|member|bpp
 name|gint
 name|bpp
 decl_stmt|;
+DECL|member|cmap
+name|guchar
+modifier|*
+name|cmap
+decl_stmt|;
+DECL|member|ncolors
+name|gint
+name|ncolors
+decl_stmt|;
 DECL|member|scale_x
 name|gdouble
 name|scale_x
@@ -102,6 +116,9 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|gboolean
+name|has_frame
 parameter_list|)
 function_decl|;
 end_function_decl
