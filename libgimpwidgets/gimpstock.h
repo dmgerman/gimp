@@ -25,6 +25,11 @@ define|#
 directive|define
 name|GIMP_STOCK_ANCHOR
 value|"gimp-anchor"
+DECL|macro|GIMP_STOCK_CENTER
+define|#
+directive|define
+name|GIMP_STOCK_CENTER
+value|"gimp-center"
 DECL|macro|GIMP_STOCK_DUPLICATE
 define|#
 directive|define
@@ -270,6 +275,11 @@ define|#
 directive|define
 name|GIMP_STOCK_LINE_SPACING
 value|"gimp-line-spacing"
+DECL|macro|GIMP_STOCK_PRINT_RESOLUTION
+define|#
+directive|define
+name|GIMP_STOCK_PRINT_RESOLUTION
+value|"gimp-print-resolution"
 DECL|macro|GIMP_STOCK_TEXT_DIR_LTR
 define|#
 directive|define

@@ -255,7 +255,7 @@ name|title
 argument_list|,
 name|role
 argument_list|,
-name|GTK_STOCK_PRINT
+name|GIMP_STOCK_PRINT_RESOLUTION
 argument_list|,
 name|title
 argument_list|,

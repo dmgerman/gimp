@@ -304,7 +304,7 @@ block|,
 block|{
 literal|"image-print-size"
 block|,
-name|GTK_STOCK_PRINT
+name|GIMP_STOCK_PRINT_RESOLUTION
 block|,
 name|N_
 argument_list|(
