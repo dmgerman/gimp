@@ -144,7 +144,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b3cea370103
+DECL|enum|__anon2c3b43c30103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -5315,6 +5315,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|layer
+operator|!=
+name|NULL
+operator|&&
 name|layer
 operator|->
 name|fs
