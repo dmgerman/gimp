@@ -228,7 +228,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_drawable_attach_new_parasite
 parameter_list|(
 name|gint32

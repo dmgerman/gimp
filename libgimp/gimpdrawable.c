@@ -1135,11 +1135,11 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_attach_new_parasite:  * @drawable_ID: the ID of the #GimpDrawable to attach the #GimpParasite to.  * @name: the name of the #GimpParasite to create and attach.  * @flags: the flags set on the #GimpParasite.  * @size: the size of the parasite data in bytes.  * @data: a pointer to the data attached with the #GimpParasite.  *  * Convenience function that creates a parasite and attaches it  * to the GIMP.  *  * See Also: gimp_drawable_parasite_attach()  */
+comment|/**  * gimp_drawable_attach_new_parasite:  * @drawable_ID: the ID of the #GimpDrawable to attach the #GimpParasite to.  * @name: the name of the #GimpParasite to create and attach.  * @flags: the flags set on the #GimpParasite.  * @size: the size of the parasite data in bytes.  * @data: a pointer to the data attached with the #GimpParasite.  *  * Convenience function that creates a parasite and attaches it  * to the GIMP.  *  * Return value: TRUE on successful creation and attachment of  * the new parasite.  *  * See Also: gimp_drawable_parasite_attach()  */
 end_comment
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_drawable_attach_new_parasite (gint32 drawable_ID,const gchar * name,gint flags,gint size,gconstpointer data)
 name|gimp_drawable_attach_new_parasite
 parameter_list|(
@@ -1176,6 +1176,11 @@ argument_list|,
 name|data
 argument_list|)
 decl_stmt|;
+name|gboolean
+name|success
+decl_stmt|;
+name|success
+operator|=
 name|gimp_drawable_parasite_attach
 argument_list|(
 name|drawable_ID
@@ -1188,6 +1193,9 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 

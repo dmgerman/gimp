@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bacfe670103
+DECL|enum|__anon2b8265610103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -4401,11 +4401,11 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_attach_new_parasite:  * @name: the name of the #GimpParasite to create and attach.  * @flags: the flags set on the #GimpParasite.  * @size: the size of the parasite data in bytes.  * @data: a pointer to the data attached with the #GimpParasite.  *  * Convenience function that creates a parasite and attaches it  * to the GIMP.  *  * See Also: gimp_parasite_attach()  */
+comment|/**  * gimp_attach_new_parasite:  * @name: the name of the #GimpParasite to create and attach.  * @flags: the flags set on the #GimpParasite.  * @size: the size of the parasite data in bytes.  * @data: a pointer to the data attached with the #GimpParasite.  *  * Convenience function that creates a parasite and attaches it  * to the GIMP.  *  * Return value: TRUE on successful creation and attachment of  * the new parasite.  *  * See Also: gimp_parasite_attach()  */
 end_comment
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_attach_new_parasite (const gchar * name,gint flags,gint size,gconstpointer data)
 name|gimp_attach_new_parasite
 parameter_list|(
@@ -4439,6 +4439,11 @@ argument_list|,
 name|data
 argument_list|)
 decl_stmt|;
+name|gboolean
+name|success
+decl_stmt|;
+name|success
+operator|=
 name|gimp_parasite_attach
 argument_list|(
 name|parasite
@@ -4449,6 +4454,9 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
