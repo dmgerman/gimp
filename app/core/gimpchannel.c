@@ -771,6 +771,10 @@ argument_list|)
 argument_list|,
 name|gimage
 argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|width
 argument_list|,
 name|height

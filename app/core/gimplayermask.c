@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d513b90103
+DECL|enum|__anon27ea906e0103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -434,6 +434,10 @@ name|layer_mask
 argument_list|)
 argument_list|,
 name|gimage
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|width
 argument_list|,

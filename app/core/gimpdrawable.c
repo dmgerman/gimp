@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be18fd40103
+DECL|enum|__anon27a14fe60103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -787,7 +787,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_configure (GimpDrawable * drawable,GimpImage * gimage,gint width,gint height,GimpImageType type,const gchar * name)
+DECL|function|gimp_drawable_configure (GimpDrawable * drawable,GimpImage * gimage,gint offset_x,gint offset_y,gint width,gint height,GimpImageType type,const gchar * name)
 name|gimp_drawable_configure
 parameter_list|(
 name|GimpDrawable
@@ -797,6 +797,12 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|gint
+name|offset_x
+parameter_list|,
+name|gint
+name|offset_y
 parameter_list|,
 name|gint
 name|width
@@ -904,13 +910,13 @@ name|drawable
 operator|->
 name|offset_x
 operator|=
-literal|0
+name|offset_x
 expr_stmt|;
 name|drawable
 operator|->
 name|offset_y
 operator|=
-literal|0
+name|offset_y
 expr_stmt|;
 if|if
 condition|(
@@ -1239,6 +1245,14 @@ name|drawable
 argument_list|)
 argument_list|)
 argument_list|,
+name|drawable
+operator|->
+name|offset_x
+argument_list|,
+name|drawable
+operator|->
+name|offset_y
+argument_list|,
 name|gimp_drawable_width
 argument_list|(
 name|drawable
@@ -1258,22 +1272,6 @@ name|g_free
 argument_list|(
 name|new_name
 argument_list|)
-expr_stmt|;
-name|new_drawable
-operator|->
-name|offset_x
-operator|=
-name|drawable
-operator|->
-name|offset_x
-expr_stmt|;
-name|new_drawable
-operator|->
-name|offset_y
-operator|=
-name|drawable
-operator|->
-name|offset_y
 expr_stmt|;
 name|new_drawable
 operator|->

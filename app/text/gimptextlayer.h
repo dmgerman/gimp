@@ -155,6 +155,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpText
+modifier|*
+name|gimp_text_layer_get_text
+parameter_list|(
+name|GimpTextLayer
+modifier|*
+name|layer
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

@@ -213,6 +213,12 @@ modifier|*
 name|gimage
 parameter_list|,
 name|gint
+name|offset_x
+parameter_list|,
+name|gint
+name|offset_y
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint

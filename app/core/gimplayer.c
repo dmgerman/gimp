@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b00f9390103
+DECL|enum|__anon29ab1d570103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -1271,6 +1271,10 @@ name|layer
 argument_list|)
 argument_list|,
 name|gimage
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|width
 argument_list|,
