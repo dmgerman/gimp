@@ -219,7 +219,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7738830103
+DECL|enum|__anon28a0e9be0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2380,6 +2380,10 @@ argument_list|,
 literal|"image-height"
 argument_list|,
 literal|0
+argument_list|,
+literal|"image-mimetype"
+argument_list|,
+name|NULL
 argument_list|,
 literal|"image-type"
 argument_list|,
