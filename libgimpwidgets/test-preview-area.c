@@ -132,7 +132,7 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"\nPerformance tests for GimpPreviewArea (%s, %d iterations):\n"
+literal|"\nPerformance tests for GimpPreviewArea (%s, %d iterations):\n\n"
 argument_list|,
 name|visible
 condition|?
@@ -410,7 +410,7 @@ expr_stmt|;
 name|g_print
 argument_list|(
 literal|"%-16s "
-literal|"time elapsed for draw:  %5.2fs, %8.1f fps, %8.2f megapixels/s\n"
+literal|"draw  :  %5.2fs, %8.1f fps, %8.2f megapixels/s\n"
 argument_list|,
 name|enum_value
 operator|->
@@ -563,7 +563,7 @@ expr_stmt|;
 name|g_print
 argument_list|(
 literal|"%-16s "
-literal|"time elapsed for blend: %5.2fs, %8.1f fps, %8.2f megapixels/s\n"
+literal|"blend :  %5.2fs, %8.1f fps, %8.2f megapixels/s\n"
 argument_list|,
 name|enum_value
 operator|->
@@ -735,7 +735,7 @@ expr_stmt|;
 name|g_print
 argument_list|(
 literal|"%-16s "
-literal|"time elapsed for blend: %5.2fs, %8.1f fps, %8.2f megapixels/s\n"
+literal|"mask  :  %5.2fs, %8.1f fps, %8.2f megapixels/s\n"
 argument_list|,
 name|enum_value
 operator|->
@@ -758,6 +758,11 @@ literal|1e-6
 operator|)
 operator|/
 name|total_time
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"\n"
 argument_list|)
 expr_stmt|;
 block|}
@@ -857,7 +862,7 @@ expr_stmt|;
 name|g_print
 argument_list|(
 literal|"%-16s "
-literal|"time elapsed: %5.2fs, %8.1f fps, %8.2f megapixels/s\n"
+literal|"fill:  %5.2fs, %8.1f fps, %8.2f megapixels/s\n"
 argument_list|,
 literal|"Color fill"
 argument_list|,
@@ -981,7 +986,7 @@ name|test_preview_area
 argument_list|()
 expr_stmt|;
 return|return
-literal|0
+name|EXIT_SUCCESS
 return|;
 block|}
 end_function
