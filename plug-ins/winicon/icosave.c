@@ -1981,8 +1981,6 @@ name|num_colors_used
 init|=
 literal|0
 decl_stmt|,
-name|buf_bpp
-decl_stmt|,
 name|black_index
 decl_stmt|;
 name|guchar
@@ -2127,9 +2125,6 @@ name|palette
 argument_list|,
 operator|&
 name|buffer
-argument_list|,
-operator|&
-name|buf_bpp
 argument_list|)
 expr_stmt|;
 name|buffer32

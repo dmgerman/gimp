@@ -318,10 +318,6 @@ name|guchar
 modifier|*
 modifier|*
 name|buffer
-parameter_list|,
-name|gint
-modifier|*
-name|buf_bpp
 parameter_list|)
 function_decl|;
 end_function_decl

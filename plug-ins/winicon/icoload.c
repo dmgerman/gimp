@@ -2812,11 +2812,6 @@ argument_list|(
 name|dest_vec
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_flush
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 name|gimp_drawable_detach
 argument_list|(
 name|drawable
