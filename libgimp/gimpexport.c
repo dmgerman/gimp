@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ac8a4f0108
+DECL|struct|__anon2a8bbc790108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -2404,6 +2404,7 @@ operator|*
 name|drawable_ID
 argument_list|)
 condition|)
+block|{
 name|dialog_return
 operator|=
 name|confirm_save_dialog
@@ -2417,6 +2418,7 @@ argument_list|,
 name|format_name
 argument_list|)
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -2426,6 +2428,7 @@ operator|*
 name|drawable_ID
 argument_list|)
 condition|)
+block|{
 name|dialog_return
 operator|=
 name|confirm_save_dialog
@@ -2439,9 +2442,16 @@ argument_list|,
 name|format_name
 argument_list|)
 expr_stmt|;
+block|}
 else|else
-empty_stmt|;
+block|{
 comment|/* this should not happen */
+name|g_warning
+argument_list|(
+literal|"gimp_export_image: unknown drawable type!"
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* cancel - the user can then select an appropriate layer to save */
 if|if
 condition|(
