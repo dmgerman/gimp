@@ -417,7 +417,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon27d995320103
+DECL|enum|__anon2afa43b30103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1445,7 +1445,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d995320208
+DECL|struct|__anon2afa43b30208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1522,7 +1522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d995320308
+DECL|struct|__anon2afa43b30308
 block|{
 DECL|member|ncolors
 name|long
@@ -1693,7 +1693,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d995320408
+DECL|struct|__anon2afa43b30408
 block|{
 DECL|member|used_count
 name|signed
@@ -3395,7 +3395,7 @@ break|break;
 default|default:
 break|break;
 block|}
-name|gimp_drawable_set_tiles
+name|gimp_drawable_set_tiles_full
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3409,6 +3409,20 @@ argument_list|,
 name|new_tiles
 argument_list|,
 name|new_layer_type
+argument_list|,
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+operator|->
+name|offset_x
+argument_list|,
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+operator|->
+name|offset_y
 argument_list|)
 expr_stmt|;
 name|tile_manager_unref

@@ -340,6 +340,12 @@ name|tiles
 parameter_list|,
 name|GimpImageType
 name|type
+parameter_list|,
+name|gint
+name|offset_x
+parameter_list|,
+name|gint
+name|offset_y
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1155,7 +1161,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_layer_set_tiles (GimpDrawable * drawable,gboolean push_undo,const gchar * undo_desc,TileManager * tiles,GimpImageType type)
+DECL|function|gimp_text_layer_set_tiles (GimpDrawable * drawable,gboolean push_undo,const gchar * undo_desc,TileManager * tiles,GimpImageType type,gint offset_x,gint offset_y)
 name|gimp_text_layer_set_tiles
 parameter_list|(
 name|GimpDrawable
@@ -1176,6 +1182,12 @@ name|tiles
 parameter_list|,
 name|GimpImageType
 name|type
+parameter_list|,
+name|gint
+name|offset_x
+parameter_list|,
+name|gint
+name|offset_y
 parameter_list|)
 block|{
 name|GIMP_DRAWABLE_CLASS
@@ -1194,6 +1206,10 @@ argument_list|,
 name|tiles
 argument_list|,
 name|type
+argument_list|,
+name|offset_x
+argument_list|,
+name|offset_y
 argument_list|)
 expr_stmt|;
 name|GIMP_TEXT_LAYER
@@ -1871,7 +1887,7 @@ name|drawable
 operator|->
 name|bytes
 argument_list|)
-operator|,
+expr_stmt|;
 name|gimp_drawable_set_tiles
 argument_list|(
 name|drawable
@@ -1881,11 +1897,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|new_tiles
-argument_list|,
-name|gimp_drawable_type
-argument_list|(
-name|drawable
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|tile_manager_unref

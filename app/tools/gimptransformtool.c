@@ -4014,10 +4014,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|new_tiles
-argument_list|,
-name|drawable
-operator|->
-name|type
 argument_list|)
 expr_stmt|;
 name|tile_manager_unref
