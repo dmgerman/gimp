@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimppdbprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpprogress.h"
 end_include
 
@@ -58,7 +64,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|plug_in_progress_cancel
+name|plug_in_progress_cancel_callback
 parameter_list|(
 name|GimpProgress
 modifier|*
@@ -200,7 +206,7 @@ literal|"cancel"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|plug_in_progress_cancel
+name|plug_in_progress_cancel_callback
 argument_list|)
 argument_list|,
 name|plug_in
@@ -424,6 +430,114 @@ block|}
 block|}
 end_function
 
+begin_function
+name|void
+DECL|function|plug_in_progress_install (PlugIn * plug_in,const gchar * progress_callback)
+name|plug_in_progress_install
+parameter_list|(
+name|PlugIn
+modifier|*
+name|plug_in
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|progress_callback
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|plug_in
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|progress_callback
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+if|#
+directive|if
+literal|0
+block|if (plug_in->progress)     {       plug_in_progress_end (plug_in);        if (GIMP_IS_PDB_PROGRESS (plug_in->progress))         g_object_unref (plug_in->progress);       else         g_object_remove_weak_pointer (G_OBJECT (plug_in->progress),                                       (gpointer *)&plug_in->progress);        plug_in->progress = NULL;     }    plug_in->progress = g_object_new (GIMP_TYPE_PDB_PROGRESS,                                     "context",       plug_in->context,                                     "callback-name", progress_callback,                                     NULL);
+endif|#
+directive|endif
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|plug_in_progress_uninstall (PlugIn * plug_in,const gchar * progress_callback)
+name|plug_in_progress_uninstall
+parameter_list|(
+name|PlugIn
+modifier|*
+name|plug_in
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|progress_callback
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|plug_in
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|progress_callback
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+if|#
+directive|if
+literal|0
+block|if (GIMP_IS_PDB_PROGRESS (plug_in->progress))     {       plug_in_progress_end (plug_in);       g_object_unref (plug_in->progress);       plug_in->progress = NULL;     }
+endif|#
+directive|endif
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|plug_in_progress_cancel (PlugIn * plug_in,const gchar * progress_callback)
+name|plug_in_progress_cancel
+parameter_list|(
+name|PlugIn
+modifier|*
+name|plug_in
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|progress_callback
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|plug_in
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|progress_callback
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 begin_comment
 comment|/*  private functions  */
 end_comment
@@ -431,8 +545,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_progress_cancel (GimpProgress * progress,PlugIn * plug_in)
-name|plug_in_progress_cancel
+DECL|function|plug_in_progress_cancel_callback (GimpProgress * progress,PlugIn * plug_in)
+name|plug_in_progress_cancel_callback
 parameter_list|(
 name|GimpProgress
 modifier|*

@@ -490,6 +490,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPdbProgress
+typedef|typedef
+name|struct
+name|_GimpPdbProgress
+name|GimpPdbProgress
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpProjection
 typedef|typedef
 name|struct
