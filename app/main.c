@@ -980,10 +980,6 @@ name|int
 name|sig_num
 parameter_list|)
 block|{
-name|char
-modifier|*
-name|sig
-decl_stmt|;
 if|if
 condition|(
 name|caught_fatal_sig
@@ -1009,89 +1005,92 @@ block|{
 case|case
 name|SIGHUP
 case|:
-name|sig
-operator|=
-literal|"sighup"
+name|terminate
+argument_list|(
+literal|"sighup caught"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
 name|SIGINT
 case|:
-name|sig
-operator|=
-literal|"sigint"
+name|terminate
+argument_list|(
+literal|"sigint caught"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
 name|SIGQUIT
 case|:
-name|sig
-operator|=
-literal|"sigquit"
+name|terminate
+argument_list|(
+literal|"sigquit caught"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
 name|SIGABRT
 case|:
-name|sig
-operator|=
-literal|"sigabrt"
+name|terminate
+argument_list|(
+literal|"sigabrt caught"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
 name|SIGBUS
 case|:
-name|sig
-operator|=
-literal|"sigbus"
+name|fatal_error
+argument_list|(
+literal|"sigbus caught"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
 name|SIGSEGV
 case|:
-name|sig
-operator|=
-literal|"sigsegv"
+name|fatal_error
+argument_list|(
+literal|"sigsegv caught"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
 name|SIGPIPE
 case|:
-name|sig
-operator|=
-literal|"sigpipe"
+name|terminate
+argument_list|(
+literal|"sigpipe caught"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
 name|SIGTERM
 case|:
-name|sig
-operator|=
-literal|"sigterm"
+name|terminate
+argument_list|(
+literal|"sigterm caught"
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
 name|SIGFPE
 case|:
-name|sig
-operator|=
-literal|"sigfpe"
+name|fatal_error
+argument_list|(
+literal|"sigfpe caught"
+argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|sig
-operator|=
+name|fatal_error
+argument_list|(
 literal|"unknown signal"
+argument_list|)
 expr_stmt|;
 break|break;
 block|}
-name|fatal_error
-argument_list|(
-literal|"%s caught"
-argument_list|,
-name|sig
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

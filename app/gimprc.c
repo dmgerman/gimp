@@ -124,7 +124,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon29bc08a30103
+DECL|enum|__anon2b285f950103
 typedef|typedef
 enum|enum
 block|{
@@ -347,6 +347,16 @@ DECL|variable|default_gradient
 name|char
 modifier|*
 name|default_gradient
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|pluginrc_path
+name|char
+modifier|*
+name|pluginrc_path
 init|=
 name|NULL
 decl_stmt|;
@@ -1342,6 +1352,17 @@ name|TT_PATH
 block|,
 operator|&
 name|gradient_path
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"pluginrc-path"
+block|,
+name|TT_PATH
+block|,
+operator|&
+name|pluginrc_path
 block|,
 name|NULL
 block|}

@@ -139,7 +139,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon27711c2c0108
+DECL|struct|__anon29f35c9b0108
 typedef|typedef
 struct|struct
 block|{
@@ -157,7 +157,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27711c2c0208
+DECL|struct|__anon29f35c9b0208
 typedef|typedef
 struct|struct
 block|{
@@ -794,11 +794,11 @@ begin_comment
 comment|/****/
 end_comment
 
-begin_expr_stmt
+begin_macro
+DECL|function|MAIN ()
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_comment
 comment|/****/
@@ -813,7 +813,6 @@ comment|/* Some Vector-functions */
 end_comment
 
 begin_function
-DECL|function|v_set (vector_t * v,double x,double y)
 specifier|static
 name|void
 name|v_set
@@ -3318,12 +3317,14 @@ name|GtkSignalFunc
 operator|)
 name|dialog_toggle_update
 argument_list|,
-operator|(
+call|(
 name|gpointer
-operator|)
+call|)
+argument_list|(
 name|i
 operator|+
 literal|5
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4096,7 +4097,7 @@ name|y
 decl_stmt|,
 name|color_image
 decl_stmt|;
-name|guint
+name|gint
 name|x1
 decl_stmt|,
 name|y1

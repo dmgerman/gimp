@@ -580,18 +580,9 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|palette_merge_entries_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_comment
+comment|/* static void palette_merge_entries_callback (GtkWidget *, gpointer); */
+end_comment
 
 begin_function_decl
 specifier|static

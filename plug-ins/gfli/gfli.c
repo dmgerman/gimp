@@ -803,7 +803,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|fli_read_frame (FILE * f,s_fli_header * fli_header,guchar * framebuf,gchar * cmap)
+DECL|function|fli_read_frame (FILE * f,s_fli_header * fli_header,guchar * framebuf,guchar * cmap)
 name|void
 name|fli_read_frame
 parameter_list|(
@@ -819,7 +819,7 @@ name|guchar
 modifier|*
 name|framebuf
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|cmap
 parameter_list|)

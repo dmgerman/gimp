@@ -121,7 +121,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|filename
 specifier|static
-name|guchar
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
@@ -292,13 +292,13 @@ comment|/* AFAIK This should be part of libgimp (sigh) */
 end_comment
 
 begin_function
-DECL|function|gimp_gimprc_query (guchar * key)
+DECL|function|gimp_gimprc_query (gchar * key)
 specifier|static
-name|guchar
+name|gchar
 modifier|*
 name|gimp_gimprc_query
 parameter_list|(
-name|guchar
+name|gchar
 modifier|*
 name|key
 parameter_list|)
@@ -310,7 +310,7 @@ decl_stmt|;
 name|int
 name|nreturn_vals
 decl_stmt|;
-name|guchar
+name|gchar
 modifier|*
 name|value
 decl_stmt|;
@@ -926,7 +926,7 @@ name|GtkWidget
 modifier|*
 name|dialog
 decl_stmt|;
-name|guchar
+name|gchar
 modifier|*
 name|directory
 decl_stmt|,

@@ -429,7 +429,7 @@ name|tc_closure_traced
 condition|)
 empty_stmt|;
 else|else
-name|err
+name|my_err
 argument_list|(
 literal|"not a closure, cannot trace"
 argument_list|,
@@ -531,7 +531,7 @@ operator|=
 name|tc_closure
 expr_stmt|;
 else|else
-name|err
+name|my_err
 argument_list|(
 literal|"not a closure, cannot untrace"
 argument_list|,

@@ -12048,6 +12048,7 @@ if|if
 condition|(
 name|gdisp
 condition|)
+block|{
 if|if
 condition|(
 name|gdisp
@@ -12079,6 +12080,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|gimage

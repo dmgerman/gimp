@@ -4964,14 +4964,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gfig_name_encode (gchar * dest,guchar * src)
+DECL|function|gfig_name_encode (gchar * dest,gchar * src)
 name|gfig_name_encode
 parameter_list|(
 name|gchar
 modifier|*
 name|dest
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|src
 parameter_list|)
@@ -5052,14 +5052,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gfig_name_decode (gchar * dest,guchar * src)
+DECL|function|gfig_name_decode (gchar * dest,gchar * src)
 name|gfig_name_decode
 parameter_list|(
 name|gchar
 modifier|*
 name|dest
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|src
 parameter_list|)
@@ -8246,7 +8246,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bf8830108
+DECL|struct|__anon2c5136c90108
 block|{
 DECL|member|color_string
 name|gchar

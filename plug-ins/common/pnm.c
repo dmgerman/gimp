@@ -210,7 +210,6 @@ name|fd
 decl_stmt|;
 comment|/* File descriptor */
 DECL|member|rowbuf
-name|unsigned
 name|char
 modifier|*
 name|rowbuf
@@ -260,7 +259,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ecb3270108
+DECL|struct|__anon2c602d900108
 block|{
 DECL|member|raw
 name|gint
@@ -276,7 +275,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ecb3270208
+DECL|struct|__anon2c602d900208
 block|{
 DECL|member|run
 name|gint
@@ -3196,7 +3195,6 @@ block|{
 name|int
 name|i
 decl_stmt|;
-name|unsigned
 name|char
 modifier|*
 name|rbcur
@@ -3310,7 +3308,6 @@ block|{
 name|int
 name|i
 decl_stmt|;
-name|unsigned
 name|char
 modifier|*
 name|rbcur
@@ -3414,7 +3411,6 @@ block|{
 name|int
 name|i
 decl_stmt|;
-name|unsigned
 name|char
 modifier|*
 name|rbcur
@@ -3629,7 +3625,6 @@ decl_stmt|,
 modifier|*
 name|d
 decl_stmt|;
-name|unsigned
 name|char
 modifier|*
 name|rowbuf

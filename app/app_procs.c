@@ -475,7 +475,7 @@ end_comment
 
 begin_function
 DECL|function|file_open_wrapper (char * name)
-name|GtkFunction
+name|gint
 name|file_open_wrapper
 parameter_list|(
 name|char
@@ -536,7 +536,6 @@ name|gtk_idle_add
 argument_list|(
 operator|(
 name|GtkFunction
-operator|*
 operator|)
 name|file_open_wrapper
 argument_list|,

@@ -89,7 +89,7 @@ name|guchar
 modifier|*
 name|col1
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|col2
 parameter_list|,
@@ -1229,7 +1229,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|colours_equal (guchar * col1,gchar * col2,int bytes)
+DECL|function|colours_equal (guchar * col1,guchar * col2,int bytes)
 specifier|static
 specifier|inline
 name|int
@@ -1239,7 +1239,7 @@ name|guchar
 modifier|*
 name|col1
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|col2
 parameter_list|,

@@ -154,7 +154,7 @@ DECL|macro|B_W
 define|#
 directive|define
 name|B_W
-value|0
+value|0L
 end_define
 
 begin_comment
@@ -167,7 +167,7 @@ DECL|macro|USE_FG_BG
 define|#
 directive|define
 name|USE_FG_BG
-value|1
+value|1L
 end_define
 
 begin_define
@@ -175,7 +175,7 @@ DECL|macro|USE_COLORS
 define|#
 directive|define
 name|USE_COLORS
-value|2
+value|2L
 end_define
 
 begin_define
@@ -183,7 +183,7 @@ DECL|macro|LINEAR
 define|#
 directive|define
 name|LINEAR
-value|0
+value|0L
 end_define
 
 begin_comment
@@ -196,7 +196,7 @@ DECL|macro|BILINEAR
 define|#
 directive|define
 name|BILINEAR
-value|1
+value|1L
 end_define
 
 begin_define
@@ -204,7 +204,7 @@ DECL|macro|SINUS
 define|#
 directive|define
 name|SINUS
-value|2
+value|2L
 end_define
 
 begin_define
@@ -212,7 +212,7 @@ DECL|macro|IDEAL
 define|#
 directive|define
 name|IDEAL
-value|0
+value|0L
 end_define
 
 begin_comment
@@ -225,11 +225,11 @@ DECL|macro|PERTURBED
 define|#
 directive|define
 name|PERTURBED
-value|1
+value|1L
 end_define
 
 begin_typedef
-DECL|struct|__anon2b0ae1620108
+DECL|struct|__anon2b4223180108
 typedef|typedef
 struct|struct
 block|{
@@ -257,15 +257,15 @@ name|gint
 name|tiling
 decl_stmt|;
 DECL|member|perturbation
-name|gint
+name|glong
 name|perturbation
 decl_stmt|;
 DECL|member|colorization
-name|gint
+name|glong
 name|colorization
 decl_stmt|;
 DECL|member|colors
-name|gint
+name|glong
 name|colors
 decl_stmt|;
 DECL|member|col1
@@ -330,7 +330,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b0ae1620208
+DECL|struct|__anon2b4223180208
 typedef|typedef
 struct|struct
 block|{
@@ -1478,7 +1478,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-DECL|struct|__anon2b0ae1620308
+DECL|struct|__anon2b4223180308
 DECL|member|r
 DECL|member|g
 DECL|member|b

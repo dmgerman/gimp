@@ -290,7 +290,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2883a0b10108
+DECL|struct|__anon2b6cfa1b0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -318,7 +318,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2883a0b10208
+DECL|struct|__anon2b6cfa1b0208
 block|{
 DECL|member|name
 name|gchar
@@ -1544,7 +1544,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2883a0b10308
+DECL|struct|__anon2b6cfa1b0308
 block|{
 DECL|member|function
 name|gint
@@ -1617,7 +1617,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2883a0b10408
+DECL|struct|__anon2b6cfa1b0408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -2383,7 +2383,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2883a0b10508
+DECL|struct|__anon2b6cfa1b0508
 block|{
 DECL|member|run
 name|gint
@@ -2431,7 +2431,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2883a0b10608
+DECL|struct|__anon2b6cfa1b0608
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -13082,7 +13082,7 @@ name|GtkWidget
 modifier|*
 name|table
 decl_stmt|;
-name|guchar
+name|gchar
 name|buffer
 index|[
 name|CML_LINE_SIZE

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   SGI image file format library routines.  *  *   Copyright 1997 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Contents:  *  *   sgiClose()    - Close an SGI image file.  *   sgiGetRow()   - Get a row of image data from a file.  *   sgiOpen()     - Open an SGI image file for reading or writing.  *   sgiPutRow()   - Put a row of image data to a file.  *   getlong()     - Get a 32-bit big-endian integer.  *   getshort()    - Get a 16-bit big-endian integer.  *   putlong()     - Put a 32-bit big-endian integer.  *   putshort()    - Put a 16-bit big-endian integer.  *   read_rle8()   - Read 8-bit RLE data.  *   read_rle16()  - Read 16-bit RLE data.  *   write_rle8()  - Write 8-bit RLE data.  *   write_rle16() - Write 16-bit RLE data.  *  * Revision History:  *  *   $Log$  *   Revision 1.3  1998/04/01 22:14:53  neo  *   Added checks for print spoolers to configure.in as suggested by Michael  *   Sweet. The print plug-in still needs some changes to Makefile.am to make  *   make use of this.  *  *   Updated print and sgi plug-ins to version on the registry.  *  *  *   --Sven  *  *   Revision 1.3  1997/07/02  16:40:16  mike  *   sgiOpen() wasn't opening files with "rb" or "wb+".  This caused problems  *   on PCs running Windows/DOS...  *  *   Revision 1.2  1997/06/18  00:55:28  mike  *   Updated to hold length table when writing.  *   Updated to hold current length when doing ARLE.  *   Wasn't writing length table on close.  *   Wasn't saving new line into arle_row when necessary.  *  *   Revision 1.1  1997/06/15  03:37:19  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   SGI image file format library routines.  *  *   Copyright 1997 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Contents:  *  *   sgiClose()    - Close an SGI image file.  *   sgiGetRow()   - Get a row of image data from a file.  *   sgiOpen()     - Open an SGI image file for reading or writing.  *   sgiPutRow()   - Put a row of image data to a file.  *   getlong()     - Get a 32-bit big-endian integer.  *   getshort()    - Get a 16-bit big-endian integer.  *   putlong()     - Put a 32-bit big-endian integer.  *   putshort()    - Put a 16-bit big-endian integer.  *   read_rle8()   - Read 8-bit RLE data.  *   read_rle16()  - Read 16-bit RLE data.  *   write_rle8()  - Write 8-bit RLE data.  *   write_rle16() - Write 16-bit RLE data.  *  * Revision History:  *  *   $Log$  *   Revision 1.4  1998/04/11 05:07:50  yosh  *   * app/app_procs.c: fixed up idle handler for file open (look like testgtk  *   idle demo)  *  *   * app/colomaps.c: fixup for visual test and use of gdk_color_alloc for some  *   fixed colors (from Owen Taylor)  *  *   * app/errors.h  *   * app/errors.c  *   * app/main.c  *   * libgimp/gimp.c: redid the signal handlers so we only get a debug prompt on  *   SIGSEGV, SIGBUS, and SIGFPE.  *  *   * applied gimp-jbuhler-980408-0 and gimp-joke-980409-0 (warning fixups)  *  *   * applied gimp-monnaux-980409-0 for configurable plugin path for multiarch  *   setups  *  *   -Yosh  *  *   Revision 1.3  1998/04/01 22:14:53  neo  *   Added checks for print spoolers to configure.in as suggested by Michael  *   Sweet. The print plug-in still needs some changes to Makefile.am to make  *   make use of this.  *  *   Updated print and sgi plug-ins to version on the registry.  *  *  *   --Sven  *  *   Revision 1.3  1997/07/02  16:40:16  mike  *   sgiOpen() wasn't opening files with "rb" or "wb+".  This caused problems  *   on PCs running Windows/DOS...  *  *   Revision 1.2  1997/06/18  00:55:28  mike  *   Updated to hold length table when writing.  *   Updated to hold current length when doing ARLE.  *   Wasn't writing length table on close.  *   Wasn't saving new line into arle_row when necessary.  *  *   Revision 1.1  1997/06/15  03:37:19  mike  *   Initial revision  */
 end_comment
 
 begin_include
@@ -295,7 +295,6 @@ literal|1
 operator|)
 return|;
 block|}
-empty_stmt|;
 if|if
 condition|(
 name|sgip
@@ -323,7 +322,6 @@ name|table
 argument_list|)
 expr_stmt|;
 block|}
-empty_stmt|;
 if|if
 condition|(
 name|sgip
@@ -351,7 +349,6 @@ name|length
 argument_list|)
 expr_stmt|;
 block|}
-empty_stmt|;
 if|if
 condition|(
 name|sgip
@@ -585,7 +582,6 @@ name|file
 argument_list|)
 expr_stmt|;
 block|}
-empty_stmt|;
 break|break;
 case|case
 name|SGI_COMP_RLE
@@ -667,7 +663,6 @@ operator|)
 return|;
 break|break;
 block|}
-empty_stmt|;
 return|return
 operator|(
 literal|0
@@ -787,7 +782,6 @@ name|NULL
 operator|)
 return|;
 block|}
-empty_stmt|;
 if|if
 condition|(
 operator|(
@@ -817,7 +811,6 @@ name|NULL
 operator|)
 return|;
 block|}
-empty_stmt|;
 name|sgip
 operator|->
 name|mode
@@ -858,7 +851,6 @@ name|NULL
 operator|)
 return|;
 block|}
-empty_stmt|;
 name|sgip
 operator|->
 name|comp
@@ -1080,7 +1072,6 @@ name|file
 argument_list|)
 expr_stmt|;
 block|}
-empty_stmt|;
 break|break;
 case|case
 name|SGI_WRITE
@@ -1131,7 +1122,6 @@ name|NULL
 operator|)
 return|;
 block|}
-empty_stmt|;
 if|if
 condition|(
 operator|(
@@ -1161,7 +1151,6 @@ name|NULL
 operator|)
 return|;
 block|}
-empty_stmt|;
 name|sgip
 operator|->
 name|mode
@@ -1308,7 +1297,6 @@ argument_list|)
 expr_stmt|;
 comment|/* Maximum pixel */
 block|}
-empty_stmt|;
 name|putlong
 argument_list|(
 literal|0
@@ -1489,7 +1477,6 @@ name|file
 argument_list|)
 expr_stmt|;
 block|}
-empty_stmt|;
 break|break;
 case|case
 name|SGI_COMP_ARLE
@@ -1720,7 +1707,6 @@ name|ysize
 expr_stmt|;
 break|break;
 block|}
-empty_stmt|;
 break|break;
 default|default :
 name|free
@@ -1734,7 +1720,6 @@ name|NULL
 operator|)
 return|;
 block|}
-empty_stmt|;
 return|return
 operator|(
 name|sgip
@@ -1939,7 +1924,6 @@ name|file
 argument_list|)
 expr_stmt|;
 block|}
-empty_stmt|;
 break|break;
 case|case
 name|SGI_COMP_ARLE
@@ -2047,9 +2031,7 @@ literal|0
 operator|)
 return|;
 block|}
-empty_stmt|;
 block|}
-empty_stmt|;
 comment|/*         * If that didn't match, search all the previous rows...         */
 name|fseek
 argument_list|(
@@ -2118,7 +2100,6 @@ literal|0
 expr_stmt|;
 break|break;
 block|}
-empty_stmt|;
 for|for
 control|(
 name|x
@@ -2207,7 +2188,6 @@ literal|0
 expr_stmt|;
 break|break;
 block|}
-empty_stmt|;
 for|for
 control|(
 name|x
@@ -2249,7 +2229,6 @@ name|xsize
 condition|)
 do|;
 block|}
-empty_stmt|;
 if|if
 condition|(
 name|x
@@ -2446,7 +2425,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-empty_stmt|;
 name|sgip
 operator|->
 name|nextrow
@@ -2476,7 +2454,6 @@ name|x
 operator|)
 return|;
 block|}
-empty_stmt|;
 return|return
 operator|(
 literal|0
@@ -2932,9 +2909,7 @@ operator|=
 name|ch
 expr_stmt|;
 block|}
-empty_stmt|;
 block|}
-empty_stmt|;
 return|return
 operator|(
 name|xsize
@@ -3109,9 +3084,7 @@ operator|=
 name|ch
 expr_stmt|;
 block|}
-empty_stmt|;
 block|}
-empty_stmt|;
 return|return
 operator|(
 name|xsize
@@ -3236,7 +3209,6 @@ name|x
 operator|--
 expr_stmt|;
 block|}
-empty_stmt|;
 name|row
 operator|-=
 literal|2
@@ -3329,9 +3301,7 @@ name|length
 operator|++
 expr_stmt|;
 block|}
-empty_stmt|;
 block|}
-empty_stmt|;
 if|if
 condition|(
 name|x
@@ -3375,7 +3345,6 @@ name|x
 operator|--
 expr_stmt|;
 block|}
-empty_stmt|;
 name|count
 operator|=
 name|row
@@ -3444,9 +3413,7 @@ name|length
 operator|++
 expr_stmt|;
 block|}
-empty_stmt|;
 block|}
-empty_stmt|;
 name|length
 operator|++
 expr_stmt|;
@@ -3583,7 +3550,6 @@ name|x
 operator|--
 expr_stmt|;
 block|}
-empty_stmt|;
 name|row
 operator|-=
 literal|2
@@ -3676,9 +3642,7 @@ name|length
 operator|++
 expr_stmt|;
 block|}
-empty_stmt|;
 block|}
-empty_stmt|;
 if|if
 condition|(
 name|x
@@ -3722,7 +3686,6 @@ name|x
 operator|--
 expr_stmt|;
 block|}
-empty_stmt|;
 name|count
 operator|=
 name|row
@@ -3791,9 +3754,7 @@ name|length
 operator|++
 expr_stmt|;
 block|}
-empty_stmt|;
 block|}
-empty_stmt|;
 name|length
 operator|++
 expr_stmt|;
