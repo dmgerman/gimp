@@ -195,7 +195,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_config_copy_properties
+name|gimp_config_sync
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
@@ -210,6 +210,8 @@ name|GIMP_CONFIG
 argument_list|(
 name|options
 argument_list|)
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_name
@@ -352,7 +354,7 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
-name|gimp_config_copy_properties
+name|gimp_config_sync
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
@@ -367,6 +369,8 @@ name|tool_info
 operator|->
 name|tool_options
 argument_list|)
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}

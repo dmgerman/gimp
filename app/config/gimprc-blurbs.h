@@ -156,30 +156,12 @@ value|"Specify a default image grid."
 end_define
 
 begin_define
-DECL|macro|DEFAULT_IMAGE_WIDTH_BLURB
+DECL|macro|DEFAULT_IMAGE_BLURB
 define|#
 directive|define
-name|DEFAULT_IMAGE_WIDTH_BLURB
+name|DEFAULT_IMAGE_BLURB
 define|\
-value|"Sets the default image width in the \"File/New\" dialog."
-end_define
-
-begin_define
-DECL|macro|DEFAULT_IMAGE_HEIGHT_BLURB
-define|#
-directive|define
-name|DEFAULT_IMAGE_HEIGHT_BLURB
-define|\
-value|"Sets the default image height in the \"File/New\" dialog."
-end_define
-
-begin_define
-DECL|macro|DEFAULT_IMAGE_TYPE_BLURB
-define|#
-directive|define
-name|DEFAULT_IMAGE_TYPE_BLURB
-define|\
-value|"Sets the default image type in the \"File/New\" dialog."
+value|"Sets the default image in the \"File/New\" dialog."
 end_define
 
 begin_define
@@ -201,15 +183,6 @@ value|"Specify a default palette.  The palette is searched for in the " \ "speci
 end_define
 
 begin_define
-DECL|macro|DEFAULT_RESOLUTION_UNIT_BLURB
-define|#
-directive|define
-name|DEFAULT_RESOLUTION_UNIT_BLURB
-define|\
-value|"Sets the units for the display of the default resolution in the " \ "\"File/New\" dialog."
-end_define
-
-begin_define
 DECL|macro|DEFAULT_THRESHOLD_BLURB
 define|#
 directive|define
@@ -225,24 +198,6 @@ directive|define
 name|DEFAULT_UNIT_BLURB
 define|\
 value|"Sets the default unit for new images and for the \"File/New\" dialog. " \ "This units will be used for coordinate display when not in dot-for-dot " \ "mode."
-end_define
-
-begin_define
-DECL|macro|DEFAULT_XRESOLUTION_BLURB
-define|#
-directive|define
-name|DEFAULT_XRESOLUTION_BLURB
-define|\
-value|"Sets the default horizontal resolution for new images and for the " \ "\"File/New\" dialog. This value is always in dpi (dots per inch)."
-end_define
-
-begin_define
-DECL|macro|DEFAULT_YRESOLUTION_BLURB
-define|#
-directive|define
-name|DEFAULT_YRESOLUTION_BLURB
-define|\
-value|"Sets the default vertical resolution for new images and for the " \ "\"File/New\" dialog. This value is always in dpi (dots per inch)."
 end_define
 
 begin_define

@@ -131,7 +131,7 @@ name|gimage
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_config_copy_properties
+name|gimp_config_sync
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
@@ -144,6 +144,8 @@ name|GIMP_CONFIG
 argument_list|(
 name|template
 argument_list|)
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -219,7 +221,7 @@ name|template
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_config_copy_properties
+name|gimp_config_sync
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
@@ -232,6 +234,8 @@ name|gimp
 operator|->
 name|image_new_last_template
 argument_list|)
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp

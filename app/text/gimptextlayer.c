@@ -812,8 +812,6 @@ name|new_text_layer
 operator|->
 name|text
 operator|=
-name|GIMP_TEXT
-argument_list|(
 name|gimp_config_duplicate
 argument_list|(
 name|GIMP_CONFIG
@@ -821,7 +819,6 @@ argument_list|(
 name|text_layer
 operator|->
 name|text
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

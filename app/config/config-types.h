@@ -120,6 +120,15 @@ name|GimpGrid
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpTemplate
+typedef|typedef
+name|struct
+name|_GimpTemplate
+name|GimpTemplate
+typedef|;
+end_typedef
+
 begin_endif
 endif|#
 directive|endif

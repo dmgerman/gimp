@@ -93,10 +93,6 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpTemplate
-modifier|*
-name|template
 parameter_list|)
 function_decl|;
 end_function_decl

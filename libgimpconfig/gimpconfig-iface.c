@@ -582,11 +582,13 @@ argument_list|(
 name|construct_params
 argument_list|)
 expr_stmt|;
-name|gimp_config_copy_properties
+name|gimp_config_sync
 argument_list|(
 name|config
 argument_list|,
 name|dup
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 return|return
@@ -1491,12 +1493,11 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_duplicate:  * @config: a #GObject that implements the #GimpConfigInterface.  *  * Creates a copy of the passed object by copying all object  * properties. The default implementation of the #GimpConfigInterface  * only works for objects that are completely defined by their  * properties.  *  * Return value: the duplicated #GObject.  **/
+comment|/**  * gimp_config_duplicate:  * @config: a #GObject that implements the #GimpConfigInterface.  *  * Creates a copy of the passed object by copying all object  * properties. The default implementation of the #GimpConfigInterface  * only works for objects that are completely defined by their  * properties.  *  * Return value: the duplicated #GimpConfig object  **/
 end_comment
 
 begin_function
-name|GimpConfig
-modifier|*
+name|gpointer
 DECL|function|gimp_config_duplicate (GimpConfig * config)
 name|gimp_config_duplicate
 parameter_list|(
@@ -1648,7 +1649,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c74c1610108
+DECL|struct|__anon29b4c9b20108
 block|{
 DECL|member|key
 name|gchar

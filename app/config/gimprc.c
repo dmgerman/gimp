@@ -123,7 +123,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4263090103
+DECL|enum|__anon28f8fdf50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1192,11 +1192,13 @@ argument_list|,
 name|NULL
 argument_list|)
 decl_stmt|;
-name|gimp_config_copy_properties
+name|gimp_config_sync
 argument_list|(
 name|config
 argument_list|,
 name|dup
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_config_foreach_unknown_token

@@ -192,6 +192,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptemplate.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpundostack.h"
 end_include
 
@@ -252,7 +258,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cb15710103
+DECL|enum|__anon2c54d7280103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -3896,7 +3902,9 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|default_xresolution
+name|default_image
+operator|->
+name|xresolution
 expr_stmt|;
 name|gimage
 operator|->
@@ -3906,7 +3914,9 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|default_yresolution
+name|default_image
+operator|->
+name|yresolution
 expr_stmt|;
 name|gimage
 operator|->
@@ -3916,20 +3926,15 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|default_unit
+name|default_image
+operator|->
+name|unit
 expr_stmt|;
 name|gimage
 operator|->
 name|grid
 operator|=
-name|g_object_new
-argument_list|(
-name|GIMP_TYPE_GRID
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_config_copy_properties
+name|gimp_config_duplicate
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
@@ -3938,13 +3943,6 @@ operator|->
 name|config
 operator|->
 name|default_grid
-argument_list|)
-argument_list|,
-name|GIMP_CONFIG
-argument_list|(
-name|gimage
-operator|->
-name|grid
 argument_list|)
 argument_list|)
 expr_stmt|;

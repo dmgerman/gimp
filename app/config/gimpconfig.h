@@ -381,8 +381,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpConfig
-modifier|*
+name|gpointer
 name|gimp_config_duplicate
 parameter_list|(
 name|GimpConfig

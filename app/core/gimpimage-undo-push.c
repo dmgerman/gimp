@@ -2724,14 +2724,11 @@ name|gu
 operator|->
 name|grid
 operator|=
-name|GIMP_GRID
-argument_list|(
 name|gimp_config_duplicate
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
 name|grid
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2777,8 +2774,6 @@ name|grid
 decl_stmt|;
 name|grid
 operator|=
-name|GIMP_GRID
-argument_list|(
 name|gimp_config_duplicate
 argument_list|(
 name|GIMP_CONFIG
@@ -2788,7 +2783,6 @@ operator|->
 name|gimage
 operator|->
 name|grid
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

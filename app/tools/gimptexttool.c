@@ -1216,8 +1216,6 @@ name|gimage
 expr_stmt|;
 name|text
 operator|=
-name|GIMP_TEXT
-argument_list|(
 name|gimp_config_duplicate
 argument_list|(
 name|GIMP_CONFIG
@@ -1225,7 +1223,6 @@ argument_list|(
 name|options
 operator|->
 name|text
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1484,7 +1481,7 @@ argument_list|(
 name|text
 argument_list|)
 expr_stmt|;
-name|gimp_config_copy_properties
+name|gimp_config_sync
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
@@ -1499,6 +1496,8 @@ name|options
 operator|->
 name|text
 argument_list|)
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_config_connect

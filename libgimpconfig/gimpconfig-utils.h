@@ -66,8 +66,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_config_copy_properties
+name|gboolean
+name|gimp_config_sync
 parameter_list|(
 name|GimpConfig
 modifier|*
@@ -76,6 +76,9 @@ parameter_list|,
 name|GimpConfig
 modifier|*
 name|dest
+parameter_list|,
+name|GParamFlags
+name|flags
 parameter_list|)
 function_decl|;
 end_function_decl

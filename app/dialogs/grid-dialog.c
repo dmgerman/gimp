@@ -522,7 +522,7 @@ argument_list|,
 literal|"grid"
 argument_list|)
 expr_stmt|;
-name|gimp_config_copy_properties
+name|gimp_config_sync
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
@@ -539,6 +539,8 @@ name|GIMP_CONFIG
 argument_list|(
 name|grid
 argument_list|)
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_image_grid_changed

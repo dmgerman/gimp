@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimptemplate.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpunit.h"
 end_include
 
@@ -3987,7 +3993,9 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|default_resolution_unit
+name|default_image
+operator|->
+name|resolution_unit
 expr_stmt|;
 name|res_unit_factor
 operator|=

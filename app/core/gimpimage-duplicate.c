@@ -1013,13 +1013,10 @@ name|gimage
 operator|->
 name|grid
 condition|)
-block|{
 name|new_gimage
 operator|->
 name|grid
 operator|=
-name|GIMP_GRID
-argument_list|(
 name|gimp_config_duplicate
 argument_list|(
 name|GIMP_CONFIG
@@ -1029,9 +1026,7 @@ operator|->
 name|grid
 argument_list|)
 argument_list|)
-argument_list|)
 expr_stmt|;
-block|}
 comment|/* Copy the qmask info */
 name|new_gimage
 operator|->
