@@ -6129,7 +6129,7 @@ argument_list|()
 argument_list|,
 literal|"curves"
 argument_list|,
-literal|"."
+name|G_DIR_SEPARATOR_S
 argument_list|,
 name|NULL
 argument_list|)
@@ -6307,7 +6307,7 @@ name|file
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_widget_destroy
+name|gtk_widget_hide
 argument_list|(
 name|dialog
 argument_list|)
