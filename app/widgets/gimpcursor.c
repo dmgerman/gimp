@@ -2051,12 +2051,10 @@ name|tool_cursor
 operator|>=
 name|GIMP_LAST_STOCK_TOOL_CURSOR_ENTRY
 condition|)
-block|{
 name|tool_cursor
 operator|=
 name|GIMP_TOOL_CURSOR_NONE
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|tool_cursor
@@ -2099,12 +2097,10 @@ name|modifier
 operator|>=
 name|GIMP_LAST_CURSOR_MODIFIER_ENTRY
 condition|)
-block|{
 name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_NONE
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|modifier
@@ -2692,12 +2688,10 @@ name|tool_cursor
 operator|>=
 name|GIMP_LAST_STOCK_TOOL_CURSOR_ENTRY
 condition|)
-block|{
 name|tool_cursor
 operator|=
 name|GIMP_TOOL_CURSOR_NONE
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|tool_cursor
@@ -2733,12 +2727,10 @@ name|modifier
 operator|>=
 name|GIMP_LAST_CURSOR_MODIFIER_ENTRY
 condition|)
-block|{
 name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_NONE
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|modifier
@@ -2785,7 +2777,6 @@ operator|->
 name|pixbuf
 argument_list|)
 expr_stmt|;
-comment|/*  new bitmap and mask for on-the-fly cursor creation  */
 name|pixbuf
 operator|=
 name|gdk_pixbuf_new
@@ -2808,7 +2799,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  first draw the bitmap completely ... */
 name|gdk_pixbuf_composite
 argument_list|(
 name|bmcursor
@@ -2868,7 +2858,7 @@ literal|1.0
 argument_list|,
 name|GDK_INTERP_NEAREST
 argument_list|,
-literal|255
+literal|180
 argument_list|)
 expr_stmt|;
 if|if
@@ -2901,7 +2891,7 @@ literal|1.0
 argument_list|,
 name|GDK_INTERP_NEAREST
 argument_list|,
-literal|255
+literal|180
 argument_list|)
 expr_stmt|;
 name|cursor
