@@ -439,20 +439,7 @@ modifier|*
 name|proc
 parameter_list|)
 block|{
-if|if
-condition|(
-name|proc
-condition|)
-name|file_dialog_update_name
-argument_list|(
-name|proc
-argument_list|,
-name|GTK_FILE_SELECTION
-argument_list|(
-name|fileload
-argument_list|)
-argument_list|)
-expr_stmt|;
+comment|/* Don't call file_dialog_update_name() here, see bug #112273.  */
 name|load_file_proc
 operator|=
 name|proc
