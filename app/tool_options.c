@@ -4322,9 +4322,7 @@ case|:
 case|case
 name|ERASER
 case|:
-case|case
-name|PAINTBRUSH
-case|:
+comment|/*    case PAINTBRUSH: */
 name|pressure
 operator|->
 name|pressure_w

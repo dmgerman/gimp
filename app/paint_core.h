@@ -94,7 +94,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a343c750103
+DECL|enum|__anon28fe4d560103
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -257,11 +257,16 @@ name|double
 name|distance
 decl_stmt|;
 comment|/*  distance traveled by brush */
+DECL|member|pixel_dist
+name|double
+name|pixel_dist
+decl_stmt|;
+comment|/*  distance in pixels         */
 DECL|member|spacing
 name|double
 name|spacing
 decl_stmt|;
-comment|/*  distance traveled by brush */
+comment|/*  spacing                    */
 DECL|member|x1
 DECL|member|y1
 name|int

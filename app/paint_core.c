@@ -4060,6 +4060,12 @@ name|distance
 operator|=
 literal|0.0
 expr_stmt|;
+name|paint_core
+operator|->
+name|pixel_dist
+operator|=
+literal|0.0
+expr_stmt|;
 return|return
 name|TRUE
 return|;
@@ -4106,10 +4112,6 @@ name|distance
 decl_stmt|;
 comment|/* distance in current brush stroke */
 name|double
-name|position
-decl_stmt|;
-comment|/* position in the gradient to ge the color from */
-name|double
 name|temp_opacity
 decl_stmt|;
 comment|/* so i can blank out stuff */
@@ -4117,7 +4119,7 @@ name|distance
 operator|=
 name|paint_core
 operator|->
-name|distance
+name|pixel_dist
 expr_stmt|;
 name|y
 operator|=
@@ -4134,101 +4136,14 @@ name|temp_opacity
 operator|=
 literal|1.0
 expr_stmt|;
-comment|/* if were past the first chunk... */
+comment|/* for the once modes, set alpha to 0.0 after the first chunk */
 if|if
 condition|(
-operator|(
 name|y
-operator|/
-name|gradient_length
-operator|)
-operator|>
+operator|>=
 literal|1.0
-condition|)
-block|{
-comment|/* if this is an "odd" chunk... */
-if|if
-condition|(
-call|(
-name|int
-call|)
-argument_list|(
-name|y
-operator|/
-name|gradient_length
-argument_list|)
-operator|&
-literal|1
-condition|)
-block|{
-comment|/* draw it "normally" */
-name|y
-operator|=
-name|y
-operator|-
+operator|&&
 operator|(
-name|gradient_length
-operator|*
-call|(
-name|int
-call|)
-argument_list|(
-name|y
-operator|/
-name|gradient_length
-argument_list|)
-operator|)
-expr_stmt|;
-block|}
-comment|/* if this is an "even" chunk... */
-else|else
-block|{
-comment|/* draw it "backwards"  */
-switch|switch
-condition|(
-name|mode
-condition|)
-block|{
-case|case
-name|LOOP_SAWTOOTH
-case|:
-name|y
-operator|=
-name|y
-operator|-
-operator|(
-name|gradient_length
-operator|*
-call|(
-name|int
-call|)
-argument_list|(
-name|y
-operator|/
-name|gradient_length
-argument_list|)
-operator|)
-expr_stmt|;
-break|break;
-case|case
-name|LOOP_TRIANGLE
-case|:
-name|y
-operator|=
-name|gradient_length
-operator|-
-name|fmod
-argument_list|(
-name|y
-argument_list|,
-name|gradient_length
-argument_list|)
-expr_stmt|;
-break|break;
-block|}
-block|}
-if|if
-condition|(
 name|mode
 operator|==
 name|ONCE_FORWARD
@@ -4236,59 +4151,57 @@ operator|||
 name|mode
 operator|==
 name|ONCE_BACKWARDS
+operator|)
 condition|)
-block|{
-comment|/*  printf("got here \n"); */
-comment|/* for the once modes, set alpha to 0.0 */
 name|temp_opacity
 operator|=
 literal|0.0
 expr_stmt|;
-block|}
-block|}
-comment|/* if this is the first chunk... */
-else|else
-block|{
-comment|/* draw it backwards */
-switch|switch
+if|if
 condition|(
+operator|(
+operator|(
+name|int
+operator|)
+name|y
+operator|&
+literal|1
+operator|&&
 name|mode
+operator|!=
+name|LOOP_SAWTOOTH
+operator|)
+operator|||
+name|mode
+operator|==
+name|ONCE_BACKWARDS
 condition|)
-block|{
-case|case
-name|ONCE_FORWARD
-case|:
-case|case
-name|ONCE_END_COLOR
-case|:
-case|case
-name|LOOP_TRIANGLE
-case|:
 name|y
 operator|=
-name|gradient_length
+literal|1.0
 operator|-
+operator|(
 name|y
+operator|-
+operator|(
+name|int
+operator|)
+name|y
+operator|)
 expr_stmt|;
-break|break;
-default|default:
-comment|/* all the other modes go here ;-> */
-break|break;
-block|}
-comment|/* if it doesnt need to be reveresed, let y be y ;-> */
-block|}
-comment|/* stolen from the fade effect in paintbrush */
-comment|/* model this on a gaussian curve */
-comment|/* position = exp (- y * y * 0.5); */
-name|position
+else|else
+name|y
 operator|=
 name|y
-operator|/
-name|gradient_length
+operator|-
+operator|(
+name|int
+operator|)
+name|y
 expr_stmt|;
 name|grad_get_color_at
 argument_list|(
-name|position
+name|y
 argument_list|,
 name|r
 argument_list|,
@@ -4299,7 +4212,6 @@ argument_list|,
 name|a
 argument_list|)
 expr_stmt|;
-comment|/* set opacity to zero if this isnt a repeater call */
 operator|*
 name|a
 operator|=
@@ -4358,14 +4270,8 @@ decl_stmt|;
 endif|#
 directive|endif
 comment|/* GTK_HAVE_SIX_VALUATORS */
-name|double
-name|spacing
-decl_stmt|;
-name|double
-name|lastscale
-decl_stmt|,
-name|curscale
-decl_stmt|;
+comment|/*   double spacing; */
+comment|/*   double lastscale, curscale; */
 name|double
 name|left
 decl_stmt|;
@@ -4380,6 +4286,12 @@ name|dist
 decl_stmt|;
 name|double
 name|total
+decl_stmt|;
+name|double
+name|pixel_dist
+decl_stmt|;
+name|double
+name|pixel_initial
 decl_stmt|;
 name|double
 name|xd
@@ -4592,7 +4504,7 @@ operator|)
 expr_stmt|;
 name|dist
 operator|=
-literal|.5
+literal|0.5
 operator|*
 name|sqrt
 argument_list|(
@@ -4619,60 +4531,24 @@ name|paint_core
 operator|->
 name|distance
 expr_stmt|;
-comment|/*  FIXME: the adaptive spacing is pretty dumb !!  */
-name|lastscale
+name|pixel_dist
 operator|=
-name|paint_core
-operator|->
-name|lastpressure
-operator|>
-literal|1
-operator|/
-literal|256
-condition|?
-name|paint_core
-operator|->
-name|lastpressure
-else|:
-literal|1
-operator|/
-literal|256
-expr_stmt|;
-name|curscale
-operator|=
-name|paint_core
-operator|->
-name|curpressure
-operator|>
-literal|1
-operator|/
-literal|256
-condition|?
-name|paint_core
-operator|->
-name|curpressure
-else|:
-literal|1
-operator|/
-literal|256
-expr_stmt|;
-name|spacing
-operator|=
-name|paint_core
-operator|->
-name|spacing
-operator|*
-name|sqrt
+name|vector2d_magnitude
 argument_list|(
-literal|0.5
-operator|*
-operator|(
-name|lastscale
-operator|+
-name|curscale
-operator|)
+operator|&
+name|delta
 argument_list|)
 expr_stmt|;
+name|pixel_initial
+operator|=
+name|paint_core
+operator|->
+name|pixel_dist
+expr_stmt|;
+comment|/*  FIXME: need to adapt the spacing to the size  */
+comment|/*   lastscale = MIN (paint_core->lastpressure, 1/256); */
+comment|/*   curscale = MIN (paint_core->curpressure,  1/256); */
+comment|/*   spacing = paint_core->spacing * sqrt (0.5 * (lastscale + curscale)); */
 while|while
 condition|(
 name|paint_core
@@ -4769,6 +4645,16 @@ operator|+
 name|delta
 operator|.
 name|y
+operator|*
+name|t
+expr_stmt|;
+name|paint_core
+operator|->
+name|pixel_dist
+operator|=
+name|pixel_initial
+operator|+
+name|pixel_dist
 operator|*
 name|t
 expr_stmt|;
@@ -4879,6 +4765,14 @@ operator|->
 name|distance
 operator|=
 name|total
+expr_stmt|;
+name|paint_core
+operator|->
+name|pixel_dist
+operator|=
+name|pixel_initial
+operator|+
+name|pixel_dist
 expr_stmt|;
 name|paint_core
 operator|->

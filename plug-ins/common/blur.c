@@ -141,7 +141,7 @@ comment|/*********************************  *  *  PLUGIN-SPECIFIC STRUCTURES AND
 end_comment
 
 begin_typedef
-DECL|struct|__anon27c1bfdd0108
+DECL|struct|__anon2b09b5020108
 typedef|typedef
 struct|struct
 block|{
@@ -178,7 +178,7 @@ name|BlurVals
 name|pivals
 init|=
 block|{
-literal|50.0
+literal|100.0
 block|,
 literal|1.0
 block|,
@@ -190,7 +190,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon27c1bfdd0208
+DECL|struct|__anon2b09b5020208
 typedef|typedef
 struct|struct
 block|{
