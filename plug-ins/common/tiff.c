@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f307c90108
+DECL|struct|__anon2aa5766d0108
 block|{
 DECL|member|compression
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f307c90208
+DECL|struct|__anon2aa5766d0208
 block|{
 DECL|member|ID
 name|gint32
@@ -492,7 +492,7 @@ block|{
 name|COMPRESSION_NONE
 block|,
 comment|/*  compression  */
-name|FALSE
+name|TRUE
 block|,
 comment|/*  alpha handling */
 block|}
@@ -681,6 +681,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* Add a save menu path for this procedure, since it is registered as a     * save handler below. */
 name|gimp_install_procedure
 argument_list|(
 literal|"file_tiff_save2"
@@ -697,7 +698,7 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996,2000-2003"
 argument_list|,
-literal|"<Save>/Tiff"
+name|NULL
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED"
 argument_list|,
@@ -1246,7 +1247,7 @@ name|tsvals
 operator|.
 name|save_transp_pixels
 operator|=
-name|FALSE
+name|TRUE
 expr_stmt|;
 block|}
 break|break;
