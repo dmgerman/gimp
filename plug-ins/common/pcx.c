@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* PCX loading and saving file filter for the Gimp  *  -Francisco Bustamante  *  * This filter's code is based on the GIF loading/saving filter for the GIMP,  * by Peter Mattis, and Spencer Kimball. However, code from the "netpbm" package  * is no longer used in this plug-in.  */
+comment|/* PCX loading and saving file filter for the Gimp  *  -Francisco Bustamante  *  * This filter's code is based on the GIF loading/saving filter for the GIMP,  * by Peter Mattis, and Spencer Kimball. However, code from the "netpbm" package  * is no longer used in this plug-in.  *  * Fixes to RLE saving by Nick Lamb (njl195@ecs.soton.ac.uk)  */
 end_comment
 
 begin_include
@@ -786,7 +786,7 @@ typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|__anon27deb2610108
+DECL|struct|__anon2b7497890108
 specifier|static
 struct|struct
 block|{
@@ -2485,6 +2485,8 @@ name|height
 decl_stmt|;
 name|int
 name|bpp
+init|=
+literal|0
 decl_stmt|;
 name|int
 name|colors
@@ -2497,17 +2499,9 @@ name|guchar
 modifier|*
 name|name_buf
 decl_stmt|;
-name|gint
-name|max_progress
-decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-comment|/* initialize */
-name|bpp
-operator|=
-literal|0
-expr_stmt|;
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -2580,12 +2574,6 @@ name|g_free
 argument_list|(
 name|name_buf
 argument_list|)
-expr_stmt|;
-name|max_progress
-operator|=
-name|drawable
-operator|->
-name|height
 expr_stmt|;
 switch|switch
 condition|(
@@ -2721,6 +2709,9 @@ argument_list|,
 literal|"PCX: you should not receive this error for any reason\n"
 argument_list|)
 expr_stmt|;
+return|return
+name|FALSE
+return|;
 break|break;
 block|}
 if|if
@@ -2860,6 +2851,12 @@ operator|<=
 literal|8
 condition|)
 block|{
+name|pcx_header
+operator|.
+name|bytesperline
+operator|=
+name|width
+expr_stmt|;
 name|pcx_header
 operator|.
 name|bitsperpixel
@@ -3163,7 +3160,7 @@ block|{
 while|while
 condition|(
 name|cur_x
-operator|<=
+operator|<
 name|len
 condition|)
 block|{
@@ -3207,7 +3204,7 @@ if|if
 condition|(
 name|cur_x
 operator|+
-literal|63
+literal|62
 operator|>
 name|len
 condition|)
@@ -3222,7 +3219,7 @@ name|max
 operator|=
 name|cur_x
 operator|+
-literal|63
+literal|62
 expr_stmt|;
 while|while
 condition|(
@@ -3243,6 +3240,9 @@ block|{
 name|times
 operator|++
 expr_stmt|;
+name|cur_x
+operator|++
+expr_stmt|;
 name|temp
 operator|=
 operator|(
@@ -3254,9 +3254,6 @@ operator|+
 name|cur_x
 operator|+
 name|buffer
-expr_stmt|;
-name|cur_x
-operator|++
 expr_stmt|;
 block|}
 if|if
