@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aeaebfb0108
+DECL|struct|__anon2c2f2b960108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -564,7 +564,7 @@ specifier|static
 name|GimpParam
 name|values
 index|[
-literal|2
+literal|4
 index|]
 decl_stmt|;
 name|GimpRunMode
