@@ -145,7 +145,7 @@ DECL|macro|DEFAULT_IMAGE_TITLE_FORMAT
 define|#
 directive|define
 name|DEFAULT_IMAGE_TITLE_FORMAT
-value|"%f-%p.%i (%t) %z%%"
+value|"%f-%p.%i (%t, %L) %z%%"
 end_define
 
 begin_define
@@ -153,12 +153,12 @@ DECL|macro|DEFAULT_IMAGE_STATUS_FORMAT
 define|#
 directive|define
 name|DEFAULT_IMAGE_STATUS_FORMAT
-value|"%L (%l layers, %m)"
+value|"%n (%m)"
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb286130103
+DECL|enum|__anon278081d00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

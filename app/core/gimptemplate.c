@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3c1c620103
+DECL|enum|__anon27a3d7390103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -138,18 +138,6 @@ parameter_list|(
 name|GimpTemplateClass
 modifier|*
 name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_template_init
-parameter_list|(
-name|GimpTemplate
-modifier|*
-name|template
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -353,11 +341,9 @@ block|,
 literal|0
 block|,
 comment|/* n_preallocs    */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|gimp_template_init
-block|,       }
+name|NULL
+comment|/* instance_init  */
+block|}
 decl_stmt|;
 specifier|static
 specifier|const
@@ -648,19 +634,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_template_init (GimpTemplate * template)
-name|gimp_template_init
-parameter_list|(
-name|GimpTemplate
-modifier|*
-name|template
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|gimp_template_config_iface_init (GimpConfigInterface * config_iface)
 name|gimp_template_config_iface_init
 parameter_list|(
@@ -698,14 +671,33 @@ block|{
 name|GimpTemplate
 modifier|*
 name|template
-decl_stmt|;
-name|template
-operator|=
+init|=
 name|GIMP_TEMPLATE
 argument_list|(
 name|object
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|template
+operator|->
+name|filename
+condition|)
+block|{
+name|g_free
+argument_list|(
+name|template
+operator|->
+name|filename
+argument_list|)
 expr_stmt|;
+name|template
+operator|->
+name|filename
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -745,14 +737,12 @@ block|{
 name|GimpTemplate
 modifier|*
 name|template
-decl_stmt|;
-name|template
-operator|=
+init|=
 name|GIMP_TEMPLATE
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 switch|switch
 condition|(
 name|property_id
@@ -928,14 +918,12 @@ block|{
 name|GimpTemplate
 modifier|*
 name|template
-decl_stmt|;
-name|template
-operator|=
+init|=
 name|GIMP_TEMPLATE
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 switch|switch
 condition|(
 name|property_id
@@ -1605,6 +1593,7 @@ case|:
 name|type
 operator|=
 operator|(
+operator|(
 name|template
 operator|->
 name|image_type
@@ -1615,11 +1604,13 @@ condition|?
 name|GIMP_RGBA_IMAGE
 else|:
 name|GIMP_GRAYA_IMAGE
+operator|)
 expr_stmt|;
 break|break;
 default|default:
 name|type
 operator|=
+operator|(
 operator|(
 name|template
 operator|->
@@ -1631,6 +1622,7 @@ condition|?
 name|GIMP_RGB_IMAGE
 else|:
 name|GIMP_GRAY_IMAGE
+operator|)
 expr_stmt|;
 break|break;
 block|}

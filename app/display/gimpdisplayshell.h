@@ -23,7 +23,7 @@ file|<gtk/gtkwindow.h>
 end_include
 
 begin_comment
-comment|/* FIXME remmove all gui/ stuff */
+comment|/*  FIXME: remove all gui/ stuff  */
 end_comment
 
 begin_include

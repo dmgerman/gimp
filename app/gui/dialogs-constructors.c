@@ -1642,7 +1642,10 @@ argument_list|(
 literal|"Templates"
 argument_list|)
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Image Templates"
+argument_list|)
 argument_list|,
 name|GIMP_STOCK_TEMPLATE
 argument_list|,
