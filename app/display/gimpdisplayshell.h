@@ -33,6 +33,21 @@ file|"gui/gui-types.h"
 end_include
 
 begin_comment
+comment|/* Apply to a float the same rounding mode used in the renderer */
+end_comment
+
+begin_define
+DECL|macro|PROJ_ROUND (coord)
+define|#
+directive|define
+name|PROJ_ROUND
+parameter_list|(
+name|coord
+parameter_list|)
+value|((gint) ceil (coord))
+end_define
+
+begin_comment
 comment|/* finding the effective screen resolution (double) */
 end_comment
 
@@ -98,7 +113,7 @@ name|s
 parameter_list|,
 name|x
 parameter_list|)
-value|((gint) (x * SCALEFACTOR_X(s)))
+value|PROJ_ROUND (x * SCALEFACTOR_X(s))
 end_define
 
 begin_define
@@ -111,7 +126,7 @@ name|s
 parameter_list|,
 name|y
 parameter_list|)
-value|((gint) (y * SCALEFACTOR_Y(s)))
+value|PROJ_ROUND (y * SCALEFACTOR_Y(s))
 end_define
 
 begin_comment

@@ -62,10 +62,10 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
-name|gint
+name|gdouble
 name|x
 parameter_list|,
-name|gint
+name|gdouble
 name|y
 parameter_list|,
 name|gint

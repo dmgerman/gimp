@@ -1146,7 +1146,7 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|gdouble
+name|gint
 name|sx
 decl_stmt|,
 name|sy
@@ -1190,7 +1190,7 @@ argument_list|,
 name|i
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_xy_f
+name|gimp_display_shell_transform_xy
 argument_list|(
 name|shell
 argument_list|,
@@ -1218,10 +1218,7 @@ index|]
 operator|.
 name|x
 operator|=
-name|ROUND
-argument_list|(
 name|sx
-argument_list|)
 expr_stmt|;
 name|gdk_coords
 index|[
@@ -1230,10 +1227,7 @@ index|]
 operator|.
 name|y
 operator|=
-name|ROUND
-argument_list|(
 name|sy
-argument_list|)
 expr_stmt|;
 block|}
 name|gimp_canvas_draw_lines
