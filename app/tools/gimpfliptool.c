@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -67,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpui.h"
 end_include
 
 begin_include
@@ -114,13 +108,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"tool_options.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tool_options.h"
+file|"tools.h"
 end_include
 
 begin_include

@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
 end_include
 
@@ -78,6 +72,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"temp_buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint_core.h"
 end_include
 
@@ -102,25 +108,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
+file|"tool_options.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool_options.h"
 end_include
 
 begin_define

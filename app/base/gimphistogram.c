@@ -45,6 +45,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -94,12 +100,6 @@ begin_include
 include|#
 directive|include
 file|"pixel_processor.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimphelpui.h>
 end_include
 
 begin_struct

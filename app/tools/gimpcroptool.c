@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -49,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"channel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"crop.h"
 end_include
 
 begin_include
@@ -102,18 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimphelp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"info_dialog.h"
 end_include
 
@@ -132,7 +120,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"crop.h"
 end_include
 
 begin_include
@@ -144,13 +138,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpsizeentry.h"
+file|"tools.h"
 end_include
 
 begin_include
@@ -738,7 +726,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d6b0c00103
+DECL|enum|__anon29b4ab220103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING

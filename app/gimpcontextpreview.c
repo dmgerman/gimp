@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -85,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimphelpui.h"
 end_include
 
 begin_include
@@ -699,7 +693,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbf2fab0103
+DECL|enum|__anon290a3ef00103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -2055,7 +2049,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bbf2fab0208
+DECL|struct|__anon290a3ef00208
 typedef|typedef
 struct|struct
 block|{

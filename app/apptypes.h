@@ -31,17 +31,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpuitypes.h"
-end_include
-
-begin_comment
-comment|/* stuff that will go to general-purpose libraries */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpunit.h"
+file|"libgimpwidgets/gimpwidgetstypes.h"
 end_include
 
 begin_include

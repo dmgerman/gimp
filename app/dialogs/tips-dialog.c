@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tips_dialog.h"
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
+file|"tips_dialog.h"
 end_include
 
 begin_include
@@ -178,6 +178,8 @@ specifier|static
 name|GtkWidget
 modifier|*
 name|tips_label
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -208,6 +210,8 @@ DECL|variable|old_show_tips
 specifier|static
 name|gint
 name|old_show_tips
+init|=
+literal|0
 decl_stmt|;
 end_decl_stmt
 

@@ -36,13 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -84,37 +84,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"ink.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"blob.h"
 end_include
 
 begin_include
@@ -151,6 +121,30 @@ begin_include
 include|#
 directive|include
 file|"tile_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"blob.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"ink.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
 end_include
 
 begin_include
@@ -6117,7 +6111,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon29accee70103
+DECL|enum|__anon2afd2d410103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

@@ -193,6 +193,12 @@ directive|include
 file|"undo.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|airbrush_proc
 specifier|static

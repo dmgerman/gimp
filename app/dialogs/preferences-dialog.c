@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -85,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpui.h"
 end_include
 
 begin_include
@@ -162,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c8ca4d0103
+DECL|enum|__anon2b7250f00103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -12543,7 +12537,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28c8ca4d0208
+DECL|struct|__anon2b7250f00208
 block|{
 DECL|member|label
 name|gchar
@@ -12772,7 +12766,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28c8ca4d0308
+DECL|struct|__anon2b7250f00308
 block|{
 DECL|member|tree_label
 name|gchar

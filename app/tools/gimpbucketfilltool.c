@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -31,12 +37,6 @@ begin_include
 include|#
 directive|include
 file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"bucket_fill.h"
 end_include
 
 begin_include
@@ -55,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"fuzzy_select.h"
 end_include
 
 begin_include
@@ -96,19 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint_funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_options.h"
 end_include
 
 begin_include
@@ -144,13 +126,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"undo.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"undo.h"
+file|"bucket_fill.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"fuzzy_select.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
 end_include
 
 begin_include

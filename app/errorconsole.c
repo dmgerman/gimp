@@ -155,6 +155,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -173,12 +179,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"session.h"
 end_include
 
@@ -186,12 +186,6 @@ begin_include
 include|#
 directive|include
 file|"dialog_handler.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimphelpui.h"
 end_include
 
 begin_include

@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -60,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"info_dialog.h"
 end_include
 
@@ -85,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"pdb/procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpunit.h"
 end_include
 
 begin_include

@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpcolorbutton.h"
+file|"libgimpwidgets/gimpcolorbutton.h"
 end_include
 
 begin_define

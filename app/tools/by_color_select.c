@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -43,12 +49,6 @@ begin_include
 include|#
 directive|include
 file|"boundary.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"by_color_select.h"
 end_include
 
 begin_include
@@ -132,12 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"selection_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"temp_buf.h"
 end_include
 
@@ -156,13 +150,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"by_color_select.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"selection_options.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"tool_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
 end_include
 
 begin_include

@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -37,6 +43,12 @@ begin_include
 include|#
 directive|include
 file|"appenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"cursorutil.h"
 end_include
 
 begin_include
@@ -78,25 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint_funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_core.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_options.h"
 end_include
 
 begin_include
@@ -114,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"clone.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"selection.h"
 end_include
 
@@ -132,13 +120,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"clone.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
+file|"paint_core.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
 end_include
 
 begin_include
@@ -190,7 +190,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2afc2ab60103
+DECL|enum|__anon29cf9b770103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO

@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -102,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"session.h"
 end_include
 
@@ -127,12 +127,6 @@ begin_include
 include|#
 directive|include
 file|"pdb/procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimphelpui.h"
 end_include
 
 begin_include
@@ -5270,7 +5264,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e5f08e0108
+DECL|struct|__anon2b65f7060108
 block|{
 DECL|member|bsp
 name|BrushSelect

@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -54,19 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"info_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"measure.h"
 end_include
 
 begin_include
@@ -78,13 +66,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"measure.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"tool_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
 end_include
 
 begin_include
@@ -148,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b75e8840103
+DECL|enum|__anon29752cd10103
 block|{
 DECL|enumerator|CREATING
 name|CREATING

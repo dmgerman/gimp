@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptypes.h"
+file|"libgimp/gimpunit.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpuitypes.h"
+file|"gimpwidgetstypes.h"
 end_include
 
 begin_include
@@ -177,7 +177,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7023e90103
+DECL|enum|__anon296847430103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED

@@ -23,7 +23,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpcolorarea.h"
+file|"libgimpwidgets/gimpcolorarea.h"
 end_include
 
 begin_ifdef

@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"channel.h"
 end_include
 
@@ -49,12 +43,6 @@ begin_include
 include|#
 directive|include
 file|"edit_selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"ellipse_select.h"
 end_include
 
 begin_include
@@ -90,19 +78,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"ellipse_select.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"selection_options.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"tool_options.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tool_options.h"
+file|"tools.h"
 end_include
 
 begin_comment

@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"boundary.h"
 end_include
 
@@ -78,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"fuzzy_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimage_mask.h"
 end_include
 
@@ -102,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -115,18 +97,6 @@ begin_include
 include|#
 directive|include
 file|"pixel_region.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"rect_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"selection_options.h"
 end_include
 
 begin_include
@@ -144,13 +114,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"fuzzy_select.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"rect_select.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"selection_options.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"tool_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
 end_include
 
 begin_include

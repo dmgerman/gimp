@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -102,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"nav_window.h"
 end_include
 
@@ -127,12 +127,6 @@ begin_include
 include|#
 directive|include
 file|"pdb/procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpunit.h"
 end_include
 
 begin_include
@@ -208,7 +202,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9d5ea80103
+DECL|enum|__anon2b8d16360103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW

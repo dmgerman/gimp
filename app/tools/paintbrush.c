@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gradient.h"
 end_include
 
@@ -91,6 +85,18 @@ begin_include
 include|#
 directive|include
 file|"paint_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"temp_buf.h"
 end_include
 
 begin_include
@@ -114,31 +120,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tool_options.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpunitmenu.h"
+file|"tools.h"
 end_include
 
 begin_include

@@ -18,19 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools.h"
 end_include
 
 begin_include
@@ -54,19 +48,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gtkhwrapbox.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpunitmenu.h"
+file|"paint_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
 end_include
 
 begin_include

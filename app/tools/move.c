@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"cursorutil.h"
 end_include
 
@@ -43,12 +37,6 @@ begin_include
 include|#
 directive|include
 file|"draw_core.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"edit_selection.h"
 end_include
 
 begin_include
@@ -90,13 +78,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"move.h"
+file|"selection.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"selection.h"
+file|"undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"edit_selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"move.h"
 end_include
 
 begin_include
@@ -109,18 +109,6 @@ begin_include
 include|#
 directive|include
 file|"tool_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
 end_include
 
 begin_include

@@ -71,6 +71,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -102,12 +108,6 @@ begin_include
 include|#
 directive|include
 file|"gimpset.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpui.h"
 end_include
 
 begin_include
@@ -145,7 +145,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294fb9280103
+DECL|enum|__anon2a416a9c0103
 block|{
 DECL|enumerator|ST_MODULE_ERROR
 name|ST_MODULE_ERROR
@@ -319,7 +319,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294fb9280208
+DECL|struct|__anon2a416a9c0208
 block|{
 DECL|member|parent_instance
 name|GtkObject
@@ -434,7 +434,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294fb9280308
+DECL|struct|__anon2a416a9c0308
 block|{
 DECL|member|table
 name|GtkWidget
@@ -1744,7 +1744,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon294fb9280403
+DECL|enum|__anon2a416a9c0403
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -4679,7 +4679,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294fb9280508
+DECL|struct|__anon2a416a9c0508
 block|{
 DECL|member|search_key
 specifier|const

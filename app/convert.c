@@ -56,13 +56,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -105,12 +105,6 @@ begin_include
 include|#
 directive|include
 file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpui.h"
 end_include
 
 begin_include
@@ -195,12 +189,6 @@ begin_include
 include|#
 directive|include
 file|"tools/threshold.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimphelpui.h"
 end_include
 
 begin_include
@@ -34941,7 +34929,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295793020108
+DECL|struct|__anon290854930108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35018,7 +35006,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295793020208
+DECL|struct|__anon290854930208
 block|{
 DECL|member|ncolors
 name|long
@@ -35037,7 +35025,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295793020308
+DECL|struct|__anon290854930308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -38390,7 +38378,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295793020408
+DECL|struct|__anon290854930408
 block|{
 DECL|member|used_count
 name|signed

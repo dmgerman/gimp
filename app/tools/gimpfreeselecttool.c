@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"channel.h"
 end_include
 
@@ -60,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"edit_selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"errors.h"
 end_include
 
@@ -73,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"floating_sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"free_select.h"
 end_include
 
 begin_include
@@ -102,6 +84,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"scan_convert.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"edit_selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"free_select.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"rect_select.h"
 end_include
 
@@ -114,19 +114,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"scan_convert.h"
+file|"tool_options.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool_options.h"
 end_include
 
 begin_define

@@ -30,72 +30,7 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the html documentation */
-typedef|typedef
-enum|enum
-DECL|enum|__anon2ba9f76d0103
-block|{
-DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
-name|GIMP_SIZE_ENTRY_UPDATE_NONE
-init|=
-literal|0
-block|,
-DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_SIZE
-name|GIMP_SIZE_ENTRY_UPDATE_SIZE
-init|=
-literal|1
-block|,
-DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_RESOLUTION
-name|GIMP_SIZE_ENTRY_UPDATE_RESOLUTION
-init|=
-literal|2
-DECL|typedef|GimpSizeEntryUpdatePolicy
-block|}
-name|GimpSizeEntryUpdatePolicy
-typedef|;
-DECL|typedef|GimpColorArea
-typedef|typedef
-name|struct
-name|_GimpColorArea
-name|GimpColorArea
-typedef|;
-DECL|typedef|GimpColorButton
-typedef|typedef
-name|struct
-name|_GimpColorButton
-name|GimpColorButton
-typedef|;
-DECL|typedef|GimpPathEditor
-typedef|typedef
-name|struct
-name|_GimpPathEditor
-name|GimpPathEditor
-typedef|;
-DECL|typedef|GimpSizeEntry
-typedef|typedef
-name|struct
-name|_GimpSizeEntry
-name|GimpSizeEntry
-typedef|;
-DECL|typedef|GimpUnitMenu
-typedef|typedef
-name|struct
-name|_GimpUnitMenu
-name|GimpUnitMenu
-typedef|;
-DECL|typedef|GimpHelpFunc
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|GimpHelpFunc
-function_decl|)
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|help_data
-parameter_list|)
-function_decl|;
+comment|/* empty at the moment because most stuff went to libgimpwidgets.  *  * left here because it will contain stuff again  --Mitch  */
 ifdef|#
 directive|ifdef
 name|__cplusplus
@@ -117,7 +52,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_TYPES_H__ */
+comment|/* __GIMP_UI_TYPES_H__ */
 end_comment
 
 end_unit

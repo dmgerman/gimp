@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpuitypes.h"
+file|"gimpwidgetstypes.h"
 end_include
 
 begin_include

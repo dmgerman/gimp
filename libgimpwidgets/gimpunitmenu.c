@@ -18,13 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptypes.h"
+file|"libgimp/gimpunit.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpuitypes.h"
+file|"gimpwidgetstypes.h"
 end_include
 
 begin_include
@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp-intl.h"
+file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
@@ -90,7 +90,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af73c5b0103
+DECL|enum|__anon294df9c90103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED

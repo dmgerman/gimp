@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dodgeburn.h"
+file|"gdisplay.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"gimage.h"
 end_include
 
 begin_include
@@ -72,25 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint_funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_core.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_options.h"
 end_include
 
 begin_include
@@ -114,13 +96,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"dodgeburn.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimage.h"
+file|"paint_core.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
 end_include
 
 begin_include

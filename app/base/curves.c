@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -43,12 +49,6 @@ begin_include
 include|#
 directive|include
 file|"cursorutil.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"curves.h"
 end_include
 
 begin_include
@@ -96,7 +96,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"curves.h"
 end_include
 
 begin_include
@@ -108,13 +108,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpenv.h"
+file|"tools.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimphelpui.h"
+file|"libgimp/gimpenv.h"
 end_include
 
 begin_include

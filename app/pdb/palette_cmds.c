@@ -49,6 +49,12 @@ directive|include
 file|"palette.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|palette_get_foreground_proc
 specifier|static

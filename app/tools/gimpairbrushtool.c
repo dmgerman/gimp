@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -31,12 +37,6 @@ begin_include
 include|#
 directive|include
 file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"airbrush.h"
 end_include
 
 begin_include
@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint_funcs.h"
 end_include
 
@@ -96,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"selection.h"
 end_include
 
@@ -109,6 +97,18 @@ begin_include
 include|#
 directive|include
 file|"temp_buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"airbrush.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_options.h"
 end_include
 
 begin_include

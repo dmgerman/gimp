@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -129,12 +135,6 @@ directive|include
 file|"libgimp/gimplimits.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpcolorarea.h"
-end_include
-
 begin_define
 DECL|macro|DRAG_PREVIEW_SIZE
 define|#
@@ -154,7 +154,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277f5c510103
+DECL|enum|__anon2c129a9c0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR

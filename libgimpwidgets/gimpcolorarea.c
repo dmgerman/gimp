@@ -18,25 +18,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp.h"
+file|"libgimpcolor/gimpcolor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpuitypes.h"
+file|"libgimp/gimplimits.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpwidgetstypes.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpcolorarea.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimplimits.h"
 end_include
 
 begin_define
@@ -96,7 +96,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2790b57e0103
+DECL|enum|__anon28b9ffe30103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
