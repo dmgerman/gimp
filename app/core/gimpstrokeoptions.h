@@ -111,6 +111,11 @@ DECL|member|width
 name|gdouble
 name|width
 decl_stmt|;
+DECL|member|resolution
+name|gdouble
+name|resolution
+decl_stmt|;
+comment|/* in DPI */
 DECL|member|unit
 name|GimpUnit
 name|unit

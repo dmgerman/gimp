@@ -58,6 +58,27 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/* set the X- and Y-resolution for the ScanConvert.  * Only gets used for stroking.  * The stroke width has to be given in X-Resolution.  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_scan_convert_set_resolution
+parameter_list|(
+name|GimpScanConvert
+modifier|*
+name|sc
+parameter_list|,
+name|gdouble
+name|xresolution
+parameter_list|,
+name|gdouble
+name|yresolution
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* Add "npoints" from "pointlist" to the polygon currently being  * described by "scan_converter". DEPRECATED.  */
 end_comment
 
@@ -108,7 +129,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Stroke the content of a GimpScanConvert. The next  * gimp_scan_convert_to_channel will result in the outline of the polygon  * defined with the commands above.  *  * You cannot add additional polygons after this command.  */
+comment|/* Stroke the content of a GimpScanConvert. The next  * gimp_scan_convert_to_channel will result in the outline of the polygon  * defined with the commands above.  *  * You cannot add additional polygons after this command.  *  * Note that if you have nonstandard resolution, "width" gives the  * width (in pixels) for a vertical stroke, i.e. use the X-resolution  * to calculate the width of a stroke when operating with real world  * units.  */
 end_comment
 
 begin_function_decl
