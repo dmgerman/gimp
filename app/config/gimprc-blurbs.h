@@ -21,6 +21,15 @@ comment|/*  Not all strings defined here are used in the user interface  *  (the
 end_comment
 
 begin_define
+DECL|macro|ACTIVATE_ON_FOCUS_BLURB
+define|#
+directive|define
+name|ACTIVATE_ON_FOCUS_BLURB
+define|\
+value|N_("When enabled, an image will become the active image when its image " \    "window receives the focus. This is useful for window managers using " \    "\"click to focus\".")
+end_define
+
+begin_define
 DECL|macro|BRUSH_PATH_BLURB
 define|#
 directive|define

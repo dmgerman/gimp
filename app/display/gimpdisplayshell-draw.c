@@ -322,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b64ca5b0103
+DECL|enum|__anon29b01e420103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1224,6 +1224,10 @@ operator||
 name|GDK_KEY_PRESS_MASK
 operator||
 name|GDK_KEY_RELEASE_MASK
+operator||
+name|GDK_FOCUS_CHANGE_MASK
+operator||
+name|GDK_SCROLL_MASK
 operator|)
 argument_list|)
 expr_stmt|;

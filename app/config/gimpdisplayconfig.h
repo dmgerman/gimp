@@ -174,6 +174,10 @@ name|GimpDisplayOptions
 modifier|*
 name|default_fullscreen_view
 decl_stmt|;
+DECL|member|activate_on_focus
+name|gboolean
+name|activate_on_focus
+decl_stmt|;
 block|}
 struct|;
 end_struct
