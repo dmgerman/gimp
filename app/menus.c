@@ -78,7 +78,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"fileops.h"
+file|"file-open.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"file-save.h"
 end_include
 
 begin_include

@@ -192,7 +192,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"fileops.h"
+file|"file-open.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"file-save.h"
 end_include
 
 begin_include
@@ -2495,10 +2501,13 @@ block|}
 name|RESET_BAR
 argument_list|()
 expr_stmt|;
-name|file_ops_pre_init
+name|file_open_pre_init
 argument_list|()
 expr_stmt|;
-comment|/*  pre-initialize the file types  */
+comment|/*  pre-initialize the file types     */
+name|file_save_pre_init
+argument_list|()
+expr_stmt|;
 name|RESET_BAR
 argument_list|()
 expr_stmt|;
@@ -2625,10 +2634,13 @@ comment|/*  load any modules we need           */
 name|RESET_BAR
 argument_list|()
 expr_stmt|;
-name|file_ops_post_init
+name|file_open_post_init
 argument_list|()
 expr_stmt|;
 comment|/*  post-initialize the file types     */
+name|file_save_post_init
+argument_list|()
+expr_stmt|;
 name|menus_reorder_plugins
 argument_list|()
 expr_stmt|;

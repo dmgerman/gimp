@@ -6,23 +6,15 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__FILEOPS_H__
+name|__FILE_SAVE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__FILEOPS_H__
+DECL|macro|__FILE_SAVE_H__
 define|#
 directive|define
-name|__FILEOPS_H__
+name|__FILE_SAVE_H__
 end_define
-
-begin_decl_stmt
-specifier|extern
-name|GSList
-modifier|*
-name|load_procs
-decl_stmt|;
-end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
@@ -34,7 +26,7 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|file_ops_pre_init
+name|file_save_pre_init
 parameter_list|(
 name|void
 parameter_list|)
@@ -43,23 +35,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|file_ops_post_init
+name|file_save_post_init
 parameter_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|file_open_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -108,34 +86,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|file_revert_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|file_open_by_extension_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|file_save_by_extension_callback
 parameter_list|(
 name|GtkWidget
@@ -148,45 +98,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gint
-name|file_open
-parameter_list|(
-name|gchar
-modifier|*
-name|filename
-parameter_list|,
-name|gchar
-modifier|*
-name|raw_filename
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|PlugInProcDef
-modifier|*
-name|file_proc_find
-parameter_list|(
-name|GSList
-modifier|*
-name|procs
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/* __FILEOPS_H__ */
+comment|/* __FILE_SAVE_H__ */
 end_comment
 
 end_unit

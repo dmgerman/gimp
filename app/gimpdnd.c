@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"fileops.h"
+file|"file-open.h"
 end_include
 
 begin_include
@@ -190,7 +190,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6dcbff0103
+DECL|enum|__anon27a27ec30103
 block|{
 DECL|enumerator|GIMP_DND_DATA_NONE
 name|GIMP_DND_DATA_NONE
