@@ -74,26 +74,26 @@ file|"core/gimppalette.h"
 end_include
 
 begin_decl_stmt
-DECL|variable|convert_rgb_proc
+DECL|variable|image_convert_rgb_proc
 specifier|static
 name|ProcRecord
-name|convert_rgb_proc
+name|image_convert_rgb_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|convert_grayscale_proc
+DECL|variable|image_convert_grayscale_proc
 specifier|static
 name|ProcRecord
-name|convert_grayscale_proc
+name|image_convert_grayscale_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|convert_indexed_proc
+DECL|variable|image_convert_indexed_proc
 specifier|static
 name|ProcRecord
-name|convert_indexed_proc
+name|image_convert_indexed_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -112,7 +112,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|convert_rgb_proc
+name|image_convert_rgb_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -120,7 +120,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|convert_grayscale_proc
+name|image_convert_grayscale_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -128,7 +128,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|convert_indexed_proc
+name|image_convert_indexed_proc
 argument_list|)
 expr_stmt|;
 block|}
@@ -138,8 +138,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|convert_rgb_invoker (Gimp * gimp,Argument * args)
-name|convert_rgb_invoker
+DECL|function|image_convert_rgb_invoker (Gimp * gimp,Argument * args)
+name|image_convert_rgb_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -233,7 +233,7 @@ return|return
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|convert_rgb_proc
+name|image_convert_rgb_proc
 argument_list|,
 name|success
 argument_list|)
@@ -242,10 +242,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|convert_rgb_inargs
+DECL|variable|image_convert_rgb_inargs
 specifier|static
 name|ProcArg
-name|convert_rgb_inargs
+name|image_convert_rgb_inargs
 index|[]
 init|=
 block|{
@@ -261,13 +261,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|convert_rgb_proc
+DECL|variable|image_convert_rgb_proc
 specifier|static
 name|ProcRecord
-name|convert_rgb_proc
+name|image_convert_rgb_proc
 init|=
 block|{
-literal|"gimp_convert_rgb"
+literal|"gimp_image_convert_rgb"
 block|,
 literal|"Convert specified image to RGB color"
 block|,
@@ -283,7 +283,7 @@ name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
-name|convert_rgb_inargs
+name|image_convert_rgb_inargs
 block|,
 literal|0
 block|,
@@ -291,7 +291,7 @@ name|NULL
 block|,
 block|{
 block|{
-name|convert_rgb_invoker
+name|image_convert_rgb_invoker
 block|}
 block|}
 block|}
@@ -302,8 +302,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|convert_grayscale_invoker (Gimp * gimp,Argument * args)
-name|convert_grayscale_invoker
+DECL|function|image_convert_grayscale_invoker (Gimp * gimp,Argument * args)
+name|image_convert_grayscale_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -397,7 +397,7 @@ return|return
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|convert_grayscale_proc
+name|image_convert_grayscale_proc
 argument_list|,
 name|success
 argument_list|)
@@ -406,10 +406,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|convert_grayscale_inargs
+DECL|variable|image_convert_grayscale_inargs
 specifier|static
 name|ProcArg
-name|convert_grayscale_inargs
+name|image_convert_grayscale_inargs
 index|[]
 init|=
 block|{
@@ -425,13 +425,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|convert_grayscale_proc
+DECL|variable|image_convert_grayscale_proc
 specifier|static
 name|ProcRecord
-name|convert_grayscale_proc
+name|image_convert_grayscale_proc
 init|=
 block|{
-literal|"gimp_convert_grayscale"
+literal|"gimp_image_convert_grayscale"
 block|,
 literal|"Convert specified image to grayscale (256 intensity levels)"
 block|,
@@ -447,7 +447,7 @@ name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
-name|convert_grayscale_inargs
+name|image_convert_grayscale_inargs
 block|,
 literal|0
 block|,
@@ -455,7 +455,7 @@ name|NULL
 block|,
 block|{
 block|{
-name|convert_grayscale_invoker
+name|image_convert_grayscale_invoker
 block|}
 block|}
 block|}
@@ -466,8 +466,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|convert_indexed_invoker (Gimp * gimp,Argument * args)
-name|convert_indexed_invoker
+DECL|function|image_convert_indexed_invoker (Gimp * gimp,Argument * args)
+name|image_convert_indexed_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -818,7 +818,7 @@ return|return
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|convert_indexed_proc
+name|image_convert_indexed_proc
 argument_list|,
 name|success
 argument_list|)
@@ -827,10 +827,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|convert_indexed_inargs
+DECL|variable|image_convert_indexed_inargs
 specifier|static
 name|ProcArg
-name|convert_indexed_inargs
+name|image_convert_indexed_inargs
 index|[]
 init|=
 block|{
@@ -894,13 +894,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|convert_indexed_proc
+DECL|variable|image_convert_indexed_proc
 specifier|static
 name|ProcRecord
-name|convert_indexed_proc
+name|image_convert_indexed_proc
 init|=
 block|{
-literal|"gimp_convert_indexed"
+literal|"gimp_image_convert_indexed"
 block|,
 literal|"Convert specified image to and Indexed image"
 block|,
@@ -916,7 +916,7 @@ name|GIMP_INTERNAL
 block|,
 literal|7
 block|,
-name|convert_indexed_inargs
+name|image_convert_indexed_inargs
 block|,
 literal|0
 block|,
@@ -924,7 +924,7 @@ name|NULL
 block|,
 block|{
 block|{
-name|convert_indexed_invoker
+name|image_convert_indexed_invoker
 block|}
 block|}
 block|}

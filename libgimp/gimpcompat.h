@@ -42,6 +42,21 @@ define|#
 directive|define
 name|gimp_color_cube
 value|((guchar *) { 6, 6, 4, 24 })
+DECL|macro|gimp_convert_rgb
+define|#
+directive|define
+name|gimp_convert_rgb
+value|gimp_image_convert_rgb
+DECL|macro|gimp_convert_grayscale
+define|#
+directive|define
+name|gimp_convert_grayscale
+value|gimp_image_convert_grayscale
+DECL|macro|gimp_convert_indexed
+define|#
+directive|define
+name|gimp_convert_indexed
+value|gimp_image_convert_indexed
 DECL|macro|gimp_crop
 define|#
 directive|define
@@ -322,7 +337,7 @@ directive|define
 name|GIMP_IS_FILE_SELECTION
 value|GIMP_IS_FILE_ENTRY
 name|enum
-DECL|enum|__anon27b0fe340103
+DECL|enum|__anon29e0af740103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -354,7 +369,7 @@ end_decl_stmt
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon27b0fe340203
+DECL|enum|__anon29e0af740203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -381,7 +396,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b0fe340303
+DECL|enum|__anon29e0af740303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -408,7 +423,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b0fe340403
+DECL|enum|__anon29e0af740403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -440,7 +455,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b0fe340503
+DECL|enum|__anon29e0af740503
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -457,7 +472,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b0fe340603
+DECL|enum|__anon29e0af740603
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -474,7 +489,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b0fe340703
+DECL|enum|__anon29e0af740703
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS
@@ -491,7 +506,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b0fe340803
+DECL|enum|__anon29e0af740803
 block|{
 DECL|enumerator|GIMP_HORIZONTAL
 name|GIMP_HORIZONTAL
@@ -513,7 +528,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b0fe340903
+DECL|enum|__anon29e0af740903
 block|{
 DECL|enumerator|GIMP_LINEAR
 name|GIMP_LINEAR

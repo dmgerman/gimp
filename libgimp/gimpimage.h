@@ -19,21 +19,6 @@ end_define
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-DECL|macro|gimp_image_convert_rgb
-define|#
-directive|define
-name|gimp_image_convert_rgb
-value|gimp_convert_rgb
-DECL|macro|gimp_image_convert_grayscale
-define|#
-directive|define
-name|gimp_image_convert_grayscale
-value|gimp_convert_grayscale
-DECL|macro|gimp_image_convert_indexed
-define|#
-directive|define
-name|gimp_image_convert_indexed
-value|gimp_convert_indexed
 name|guchar
 modifier|*
 name|gimp_image_get_cmap

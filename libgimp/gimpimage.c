@@ -16,7 +16,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_image_get_cmap:  * @image_ID: The image.  * @num_colors: Number of colors in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of colors contained in the colormap. If the image   * is not of base type INDEXED, this pointer will be NULL.  *  * Returns: The image's colormap.  */
+comment|/**  * gimp_image_get_cmap:  * @image_ID: The image.  * @num_colors: Number of colors in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of colors contained in the colormap. If the image  * is not of base type INDEXED, this pointer will be NULL.  *  * Returns: The image's colormap.  */
 end_comment
 
 begin_function
