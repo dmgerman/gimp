@@ -6,7 +6,7 @@ file|"output.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2c995de60108
+DECL|struct|__anon296c52020108
 typedef|typedef
 struct|struct
 block|{
@@ -86,19 +86,25 @@ parameter_list|)
 block|{
 name|FlagData
 name|d
-init|=
-block|{
+decl_stmt|;
+name|d
+operator|.
+name|i
+operator|=
 operator|-
 literal|1
-block|,
+expr_stmt|;
+name|d
+operator|.
+name|t
+operator|=
 name|DEF
 argument_list|(
 name|e
 argument_list|)
 operator|->
 name|type
-block|}
-decl_stmt|;
+expr_stmt|;
 return|return
 name|p_fmt
 argument_list|(
@@ -268,7 +274,6 @@ literal|"~"
 literal|"\t\t{0, NULL, NULL}\n"
 literal|"\t};\n"
 literal|"\t~ = gtk_type_register_flags (\"~\", values);\n"
-literal|"\treturn ~;\n"
 argument_list|,
 name|p_prf
 argument_list|(
@@ -326,7 +331,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|output_flags (PRoot * out,FlagsDef * e)
+DECL|function|output_flags (PRoot * out,Def * d)
 name|void
 name|output_flags
 parameter_list|(
@@ -334,11 +339,21 @@ name|PRoot
 modifier|*
 name|out
 parameter_list|,
-name|FlagsDef
+name|Def
 modifier|*
-name|e
+name|d
 parameter_list|)
 block|{
+name|FlagsDef
+modifier|*
+name|f
+init|=
+operator|(
+name|FlagsDef
+operator|*
+operator|)
+name|d
+decl_stmt|;
 name|pr_add
 argument_list|(
 name|out
@@ -347,7 +362,7 @@ literal|"type"
 argument_list|,
 name|p_flags_decl
 argument_list|(
-name|e
+name|f
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -355,7 +370,7 @@ name|output_flags_type_init
 argument_list|(
 name|out
 argument_list|,
-name|e
+name|f
 argument_list|)
 expr_stmt|;
 block|}

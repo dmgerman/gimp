@@ -18,7 +18,7 @@ file|"marshall.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon27dd22f00103
+DECL|enum|__anon2b7794fc0103
 typedef|typedef
 enum|enum
 block|{
@@ -203,6 +203,8 @@ operator|->
 name|type
 operator|->
 name|module
+operator|->
+name|package
 operator|->
 name|name
 expr_stmt|;
@@ -848,6 +850,8 @@ name|t
 operator|->
 name|module
 operator|->
+name|package
+operator|->
 name|name
 argument_list|)
 argument_list|,
@@ -873,7 +877,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27dd22f00208
+DECL|struct|__anon2b7794fc0208
 typedef|typedef
 struct|struct
 block|{
@@ -1177,8 +1181,10 @@ init|=
 literal|0
 decl_stmt|;
 return|return
-name|p_lst
+name|p_fmt
 argument_list|(
+literal|"~~"
+argument_list|,
 operator|(
 name|t
 operator|->
@@ -1246,8 +1252,6 @@ operator|&
 name|idx
 argument_list|)
 argument_list|)
-argument_list|,
-name|p_nil
 argument_list|)
 return|;
 block|}

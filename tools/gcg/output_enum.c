@@ -191,7 +191,7 @@ name|out
 argument_list|,
 literal|"type"
 argument_list|,
-name|type_gtk_type
+name|NULL
 argument_list|,
 name|p_internal_varname
 argument_list|(
@@ -214,7 +214,6 @@ literal|"~"
 literal|"\t\t{0, NULL, NULL}\n"
 literal|"\t};\n"
 literal|"\t~ = gtk_type_register_enum (\"~\", values);\n"
-literal|"\treturn ~;\n"
 argument_list|,
 name|p_prf
 argument_list|(
@@ -272,7 +271,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|output_enum (PRoot * out,EnumDef * e)
+DECL|function|output_enum (PRoot * out,Def * d)
 name|void
 name|output_enum
 parameter_list|(
@@ -280,11 +279,21 @@ name|PRoot
 modifier|*
 name|out
 parameter_list|,
+name|Def
+modifier|*
+name|d
+parameter_list|)
+block|{
 name|EnumDef
 modifier|*
 name|e
-parameter_list|)
-block|{
+init|=
+operator|(
+name|EnumDef
+operator|*
+operator|)
+name|d
+decl_stmt|;
 name|output_enum_type_init
 argument_list|(
 name|out
