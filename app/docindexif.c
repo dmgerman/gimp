@@ -15,12 +15,6 @@ directive|include
 file|"docindexif.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
 begin_function
 name|void
 DECL|function|raise_if_match (gpointer data,gpointer user_data)
