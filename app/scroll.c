@@ -379,11 +379,6 @@ argument_list|,
 operator|&
 name|child_y
 argument_list|,
-ifdef|#
-directive|ifdef
-name|GTK_HAVE_SIX_VALUATORS
-name|NULL
-argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -393,21 +388,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-comment|/* !GTK_HAVE_SIX_VALUATORS */
-name|NULL
-operator|,
-name|NULL
-operator|,
-name|NULL
-operator|,
-name|NULL
-block|)
-empty_stmt|;
-endif|#
-directive|endif
-comment|/* GTK_HAVE_SIX_VALUATORS */
 if|if
 condition|(
 name|child_x
@@ -433,22 +413,24 @@ name|mevent
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
-begin_macro
-unit|}  gboolean
+begin_function
+name|gboolean
 DECL|function|scroll_display (GDisplay * gdisp,gint x_offset,gint y_offset)
 name|scroll_display
-argument_list|(
-argument|GDisplay *gdisp
-argument_list|,
-argument|gint      x_offset
-argument_list|,
-argument|gint      y_offset
-argument_list|)
-end_macro
-
-begin_block
+parameter_list|(
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|,
+name|gint
+name|x_offset
+parameter_list|,
+name|gint
+name|y_offset
+parameter_list|)
 block|{
 name|gint
 name|old_x
@@ -845,7 +827,7 @@ return|return
 name|FALSE
 return|;
 block|}
-end_block
+end_function
 
 end_unit
 

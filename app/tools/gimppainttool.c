@@ -227,7 +227,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6ca6e90103
+DECL|enum|__anon2b0bc8fd0103
 block|{
 DECL|enumerator|PAINT
 name|PAINT
@@ -1477,20 +1477,6 @@ name|bevent
 operator|->
 name|ytilt
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GTK_HAVE_SIX_VALUATORS
-name|paint_tool
-operator|->
-name|curwheel
-operator|=
-name|bevent
-operator|->
-name|wheel
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* GTK_HAVE_SIX_VALUATORS */
 name|paint_tool
 operator|->
 name|state
@@ -1618,24 +1604,6 @@ name|paint_tool
 operator|->
 name|curxtilt
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GTK_HAVE_SIX_VALUATORS
-name|paint_tool
-operator|->
-name|startwheel
-operator|=
-name|paint_tool
-operator|->
-name|lastwheel
-operator|=
-name|paint_tool
-operator|->
-name|curwheel
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* GTK_HAVE_SIX_VALUATORS */
 block|}
 comment|/*  If shift is down and this is not the first paint    *  stroke, then draw a line from the last coords to the pointer    */
 elseif|else
@@ -1692,20 +1660,6 @@ name|paint_tool
 operator|->
 name|lastytilt
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GTK_HAVE_SIX_VALUATORS
-name|paint_tool
-operator|->
-name|startwheel
-operator|=
-name|paint_tool
-operator|->
-name|lastwheel
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* GTK_HAVE_SIX_VALUATORS */
 comment|/* Restrict to multiples of 15 degrees if ctrl is pressed */
 if|if
 condition|(
@@ -2154,20 +2108,6 @@ name|paint_tool
 operator|->
 name|curytilt
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GTK_HAVE_SIX_VALUATORS
-name|paint_tool
-operator|->
-name|lastwheel
-operator|=
-name|paint_tool
-operator|->
-name|curwheel
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* GTK_HAVE_SIX_VALUATORS */
 block|}
 else|else
 block|{
@@ -2533,20 +2473,6 @@ name|mevent
 operator|->
 name|ytilt
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GTK_HAVE_SIX_VALUATORS
-name|paint_tool
-operator|->
-name|curwheel
-operator|=
-name|mevent
-operator|->
-name|wheel
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* GTK_HAVE_SIX_VALUATORS */
 name|paint_tool
 operator|->
 name|state
@@ -2656,20 +2582,6 @@ name|paint_tool
 operator|->
 name|curytilt
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GTK_HAVE_SIX_VALUATORS
-name|paint_tool
-operator|->
-name|lastwheel
-operator|=
-name|paint_tool
-operator|->
-name|curwheel
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* GTK_HAVE_SIX_VALUATORS */
 block|}
 end_function
 
@@ -4110,15 +4022,7 @@ if|#
 directive|if
 literal|0
 comment|/* Set up some defaults for non-gui use */
-block|if (paint_tool ==&non_gui_paint_tool)     {       paint_tool->startpressure = paint_tool->lastpressure = paint_tool->curpressure = 0.5;       paint_tool->startxtilt = paint_tool->lastxtilt = paint_tool->curxtilt = 0;       paint_tool->startytilt = paint_tool->lastytilt = paint_tool->curytilt = 0;
-ifdef|#
-directive|ifdef
-name|GTK_HAVE_SIX_VALUATORS
-block|paint_tool->startwheel = paint_tool->lastwheel = paint_tool->curwheel = 0.5;
-endif|#
-directive|endif
-comment|/* GTK_HAVE_SIX_VALUATORS */
-block|}
+block|if (paint_tool ==&non_gui_paint_tool)     {       paint_tool->startpressure = paint_tool->lastpressure = paint_tool->curpressure = 0.5;       paint_tool->startxtilt = paint_tool->lastxtilt = paint_tool->curxtilt = 0;       paint_tool->startytilt = paint_tool->lastytilt = paint_tool->curytilt = 0;     }
 endif|#
 directive|endif
 comment|/*  Each buffer is the same size as the maximum bounds of the active brush... */
@@ -4357,15 +4261,6 @@ name|dxtilt
 decl_stmt|,
 name|dytilt
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|GTK_HAVE_SIX_VALUATORS
-name|gdouble
-name|dwheel
-decl_stmt|;
-endif|#
-directive|endif
-comment|/* GTK_HAVE_SIX_VALUATORS */
 comment|/*   double spacing; */
 comment|/*   double lastscale, curscale; */
 name|gdouble
@@ -4454,53 +4349,7 @@ name|paint_tool
 operator|->
 name|lastytilt
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GTK_HAVE_SIX_VALUATORS
-name|dwheel
-operator|=
-name|paint_tool
-operator|->
-name|curwheel
-operator|-
-name|paint_tool
-operator|->
-name|lastwheel
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* GTK_HAVE_SIX_VALUATORS */
 comment|/* return if there has been no motion */
-ifdef|#
-directive|ifdef
-name|GTK_HAVE_SIX_VALUATORS
-if|if
-condition|(
-operator|!
-name|delta
-operator|.
-name|x
-operator|&&
-operator|!
-name|delta
-operator|.
-name|y
-operator|&&
-operator|!
-name|dpressure
-operator|&&
-operator|!
-name|dxtilt
-operator|&&
-operator|!
-name|dytilt
-operator|&&
-operator|!
-name|dwheel
-condition|)
-else|#
-directive|else
-comment|/* !GTK_HAVE_SIX_VALUATORS */
 if|if
 condition|(
 operator|!
@@ -4522,9 +4371,6 @@ operator|&&
 operator|!
 name|dytilt
 condition|)
-endif|#
-directive|endif
-comment|/* GTK_HAVE_SIX_VALUATORS */
 return|return;
 comment|/* calculate the distance traveled in the coordinate space of the brush */
 name|mag
@@ -4793,24 +4639,6 @@ name|dytilt
 operator|*
 name|t
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GTK_HAVE_SIX_VALUATORS
-name|paint_tool
-operator|->
-name|curwheel
-operator|=
-name|paint_tool
-operator|->
-name|lastwheel
-operator|+
-name|dwheel
-operator|*
-name|t
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* GTK_HAVE_SIX_VALUATORS */
 comment|/*  save the current brush  */
 name|current_brush
 operator|=
@@ -4936,22 +4764,6 @@ name|lastytilt
 operator|+
 name|dytilt
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GTK_HAVE_SIX_VALUATORS
-name|paint_tool
-operator|->
-name|curwheel
-operator|=
-name|paint_tool
-operator|->
-name|lastwheel
-operator|+
-name|dwheel
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* GTK_HAVE_SIX_VALUATORS */
 block|}
 end_function
 
@@ -5076,20 +4888,6 @@ name|paint_tool
 operator|->
 name|startytilt
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GTK_HAVE_SIX_VALUATORS
-name|pu
-operator|->
-name|lastwheel
-operator|=
-name|paint_tool
-operator|->
-name|startwheel
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* GTK_HAVE_SIX_VALUATORS */
 comment|/*  Push a paint undo  */
 name|undo_push_paint
 argument_list|(

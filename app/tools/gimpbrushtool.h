@@ -30,7 +30,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon291271a00103
+DECL|enum|__anon2b413de90103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon291271a00203
+DECL|enum|__anon2b413de90203
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -181,17 +181,6 @@ name|gdouble
 name|startytilt
 decl_stmt|;
 comment|/*  starting ytilt             */
-ifdef|#
-directive|ifdef
-name|GTK_HAVE_SIX_VALUATORS
-DECL|member|startwheel
-name|gdouble
-name|startwheel
-decl_stmt|;
-comment|/*  starting wheel             */
-endif|#
-directive|endif
-comment|/* GTK_HAVE_SIX_VALUATORS */
 DECL|member|curx
 name|gdouble
 name|curx
@@ -217,17 +206,6 @@ name|gdouble
 name|curytilt
 decl_stmt|;
 comment|/*  current ytilt              */
-ifdef|#
-directive|ifdef
-name|GTK_HAVE_SIX_VALUATORS
-DECL|member|curwheel
-name|gdouble
-name|curwheel
-decl_stmt|;
-comment|/*  current wheel              */
-endif|#
-directive|endif
-comment|/* GTK_HAVE_SIX_VALUATORS */
 DECL|member|lastx
 name|gdouble
 name|lastx
@@ -253,17 +231,6 @@ name|gdouble
 name|lastytilt
 decl_stmt|;
 comment|/*  last ytilt                 */
-ifdef|#
-directive|ifdef
-name|GTK_HAVE_SIX_VALUATORS
-DECL|member|lastwheel
-name|gdouble
-name|lastwheel
-decl_stmt|;
-comment|/*  last wheel                 */
-endif|#
-directive|endif
-comment|/* GTK_HAVE_SIX_VALUATORS */
 DECL|member|state
 name|gint
 name|state
@@ -405,16 +372,6 @@ DECL|member|lastytilt
 name|gdouble
 name|lastytilt
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|GTK_HAVE_SIX_VALUATORS
-DECL|member|lastwheel
-name|gdouble
-name|lastwheel
-decl_stmt|;
-endif|#
-directive|endif
-comment|/* GTK_HAVE_SIX_VALUATORS */
 block|}
 struct|;
 end_struct
