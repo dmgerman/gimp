@@ -65,12 +65,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"install.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay_ops.h"
 end_include
 
@@ -90,6 +84,12 @@ begin_include
 include|#
 directive|include
 file|"unitrc.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"user_install.h"
 end_include
 
 begin_include
@@ -631,7 +631,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c525d520108
+DECL|struct|__anon2c7ef4b70108
 block|{
 DECL|member|directory
 name|gboolean

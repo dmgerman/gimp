@@ -135,7 +135,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"install.h"
+file|"user_install.h"
 end_include
 
 begin_include
