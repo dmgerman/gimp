@@ -124,7 +124,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_progress_install:  * @start_callback: the function to call when progress starts  * @end_callback:   the function to call when progress finishes  * @text_callback:  the function to call to change the text  * @value_callback: the function to call to change the value  * @user_data:      a pointer that is returned when uninstalling the progress  *  * Return value: the name of the temporary procedure that's been installed  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_progress_install:  * @start_callback: the function to call when progress starts  * @end_callback:   the function to call when progress finishes  * @text_callback:  the function to call to change the text  * @value_callback: the function to call to change the value  * @user_data:      a pointer that is returned when uninstalling the progress  *  * Return value: the name of the temporary procedure that's been installed  *  * Since: GIMP 2.2  *  * Note that since GIMP 2.4, the @value_callback can be called with  * nagative values. This is triggered by calls to gimp_progress_pulse().  * The callback should then implement a progress indicating busyness,  * e.g. by calling gtk_progress_bar_pulse().  **/
 end_comment
 
 begin_function
@@ -630,6 +630,22 @@ operator|.
 name|data
 operator|.
 name|d_float
+argument_list|,
+name|progress_data
+operator|->
+name|data
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_PROGRESS_COMMAND_PULSE
+case|:
+name|progress_data
+operator|->
+name|value_callback
+argument_list|(
+operator|-
+literal|1.0
 argument_list|,
 name|progress_data
 operator|->
