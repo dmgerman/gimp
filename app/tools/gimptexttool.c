@@ -39,11 +39,11 @@ directive|include
 file|<gdk/gdkkeysyms.h>
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GDK_WINDOWING_WIN32
-end_ifndef
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|GDK_WINDOWING_X11
+end_ifdef
 
 begin_include
 include|#
@@ -2837,9 +2837,9 @@ name|void
 modifier|*
 name|pr
 decl_stmt|;
-ifndef|#
-directive|ifndef
-name|GDK_WINDOWING_WIN32
+ifdef|#
+directive|ifdef
+name|GDK_WINDOWING_X11
 name|XFontStruct
 modifier|*
 name|xfs
@@ -2907,9 +2907,9 @@ name|gdk_error_code
 operator|=
 literal|0
 expr_stmt|;
-ifndef|#
-directive|ifndef
-name|GDK_WINDOWING_WIN32
+ifdef|#
+directive|ifdef
+name|GDK_WINDOWING_X11
 name|font
 operator|=
 name|gdk_font_load
@@ -3843,9 +3843,9 @@ name|line_width
 decl_stmt|,
 name|line_height
 decl_stmt|;
-ifndef|#
-directive|ifndef
-name|GDK_WINDOWING_WIN32
+ifdef|#
+directive|ifdef
+name|GDK_WINDOWING_X11
 name|XFontStruct
 modifier|*
 name|xfs
@@ -3861,9 +3861,9 @@ name|gdk_error_code
 operator|=
 literal|0
 expr_stmt|;
-ifndef|#
-directive|ifndef
-name|GDK_WINDOWING_WIN32
+ifdef|#
+directive|ifdef
+name|GDK_WINDOWING_X11
 name|font
 operator|=
 name|gdk_font_load
