@@ -152,6 +152,10 @@ name|data
 expr_stmt|;
 if|if
 condition|(
+name|gsp
+operator|->
+name|callback_name
+operator|&&
 operator|!
 name|strcmp
 argument_list|(
