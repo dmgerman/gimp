@@ -22,6 +22,22 @@ directive|include
 file|"temp_buf.h"
 end_include
 
+begin_define
+DECL|macro|PREVIEW_CACHE_PRIME_WIDTH
+define|#
+directive|define
+name|PREVIEW_CACHE_PRIME_WIDTH
+value|112
+end_define
+
+begin_define
+DECL|macro|PREVIEW_CACHE_PRIME_HEIGHT
+define|#
+directive|define
+name|PREVIEW_CACHE_PRIME_HEIGHT
+value|112
+end_define
+
 begin_function_decl
 name|TempBuf
 modifier|*
