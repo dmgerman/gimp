@@ -45,6 +45,19 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|gui_themes_get_theme_dir
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gui_init
 parameter_list|(
