@@ -82,7 +82,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd31380108
+DECL|struct|__anon2bae6c0f0108
 block|{
 DECL|member|scale
 name|gint
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27cd31380203
+DECL|enum|__anon2bae6c0f0203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -171,7 +171,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd31380308
+DECL|struct|__anon2bae6c0f0308
 block|{
 DECL|member|N
 name|gint
@@ -519,7 +519,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"cvar"
 block|,
-literal|"variance value"
+literal|"Variance value"
 block|}
 block|}
 decl_stmt|;
@@ -793,7 +793,7 @@ if|if
 condition|(
 name|nparams
 operator|!=
-literal|6
+literal|7
 condition|)
 block|{
 name|status
