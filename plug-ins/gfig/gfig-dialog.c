@@ -473,7 +473,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b47340108
+DECL|struct|__anon2ad64e310108
 block|{
 DECL|member|gridspacing
 name|void
@@ -1470,9 +1470,11 @@ argument_list|)
 expr_stmt|;
 name|menuitem
 operator|=
-name|gtk_menu_item_new_with_mnemonic
+name|gtk_image_menu_item_new_from_stock
 argument_list|(
-literal|"_Open"
+name|GTK_STOCK_OPEN
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_menu_shell_append
@@ -1542,9 +1544,11 @@ argument_list|)
 expr_stmt|;
 name|menuitem
 operator|=
-name|gtk_menu_item_new_with_mnemonic
+name|gtk_image_menu_item_new_from_stock
 argument_list|(
-literal|"_Save"
+name|GTK_STOCK_SAVE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_menu_shell_append
@@ -1657,9 +1661,11 @@ argument_list|)
 expr_stmt|;
 name|menuitem
 operator|=
-name|gtk_menu_item_new_with_mnemonic
+name|gtk_image_menu_item_new_from_stock
 argument_list|(
-literal|"_Options"
+name|GTK_STOCK_PREFERENCES
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_menu_shell_append
@@ -3832,6 +3838,15 @@ define|\
 value|gtk_box_pack_start (GTK_BOX (hbox), (button), FALSE, FALSE, 0);\   gtk_widget_show (button);\   gimp_help_set_help_data (button, (text), NULL);
 end_define
 
+begin_define
+DECL|macro|SKIP_ROW
+define|#
+directive|define
+name|SKIP_ROW
+define|\
+value|do                                                                 \         {                                                                  \           GtkWidget *separator;                                            \           separator = gtk_vseparator_new ();                               \           gtk_box_pack_start (GTK_BOX (hbox), separator, FALSE, FALSE, 0); \           gtk_widget_show (separator);                                     \         }                                                                  \         while (0)
+end_define
+
 begin_function
 specifier|static
 name|GtkWidget
@@ -4110,7 +4125,8 @@ argument_list|,
 name|button
 argument_list|)
 expr_stmt|;
-comment|//SKIP_ROW;
+name|SKIP_ROW
+expr_stmt|;
 name|button
 operator|=
 name|but_with_pix
@@ -4256,7 +4272,8 @@ argument_list|,
 name|button
 argument_list|)
 expr_stmt|;
-comment|//SKIP_ROW;
+name|SKIP_ROW
+expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new
@@ -5431,6 +5448,18 @@ argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|toggle
+argument_list|)
+argument_list|,
+name|selvals
+operator|.
+name|showpos
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|toggle
@@ -5473,7 +5502,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Hide control points"
+literal|"Show control points"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5491,6 +5520,20 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|6
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|toggle
+argument_list|)
+argument_list|,
+name|selvals
+operator|.
+name|opts
+operator|.
+name|showcontrol
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

@@ -1658,6 +1658,12 @@ block|}
 if|if
 condition|(
 name|operation_obj
+operator|&&
+name|selvals
+operator|.
+name|otype
+operator|!=
+name|DEL_OBJ
 condition|)
 name|gfig_style_set_context_from_style
 argument_list|(
