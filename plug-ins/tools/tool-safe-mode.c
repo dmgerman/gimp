@@ -92,6 +92,19 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_comment
+comment|/* EEEEEEEK! */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpToolInfo
+typedef|typedef
+name|struct
+name|_GimpToolInfo
+name|GimpToolInfo
+typedef|;
+end_typedef
+
 begin_include
 include|#
 directive|include

@@ -1327,44 +1327,22 @@ argument_list|(
 name|ink_tool
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_motion_mode
+argument_list|(
 name|tool
 operator|->
 name|control
-operator|=
-name|gimp_tool_control_new
-argument_list|(
-name|FALSE
 argument_list|,
-comment|/* scroll_lock */
-name|TRUE
-argument_list|,
-comment|/* auto_snap_to */
-name|TRUE
-argument_list|,
-comment|/* preserve */
-name|FALSE
-argument_list|,
-comment|/* handle_empty_image */
 name|GIMP_MOTION_MODE_EXACT
+argument_list|)
+expr_stmt|;
+name|gimp_tool_control_set_tool_cursor
+argument_list|(
+name|tool
+operator|->
+name|control
 argument_list|,
-comment|/* motion_mode */
-name|GIMP_MOUSE_CURSOR
-argument_list|,
-comment|/* cursor */
 name|GIMP_INK_TOOL_CURSOR
-argument_list|,
-comment|/* tool_cursor */
-name|GIMP_CURSOR_MODIFIER_NONE
-argument_list|,
-comment|/* cursor_modifier */
-name|GIMP_MOUSE_CURSOR
-argument_list|,
-comment|/* toggle_cursor */
-name|GIMP_TOOL_CURSOR_NONE
-argument_list|,
-comment|/* toggle_tool_cursor */
-name|GIMP_CURSOR_MODIFIER_NONE
-comment|/* toggle_cursor_modifier */
 argument_list|)
 expr_stmt|;
 block|}
@@ -4685,7 +4663,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon28abf7dc0103
+DECL|enum|__anon2c01abe90103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

@@ -241,9 +241,9 @@ specifier|static
 name|void
 name|gimp_hue_saturation_tool_init
 parameter_list|(
-name|GimpHueSaturationTool
+name|GimpTool
 modifier|*
-name|bc_tool
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -777,55 +777,30 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_hue_saturation_tool_init (GimpHueSaturationTool * tool)
+DECL|function|gimp_hue_saturation_tool_init (GimpTool * tool)
 name|gimp_hue_saturation_tool_init
 parameter_list|(
-name|GimpHueSaturationTool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|)
 block|{
-name|GIMP_TOOL
+name|gimp_tool_control_set_scroll_lock
 argument_list|(
 name|tool
-argument_list|)
 operator|->
 name|control
-operator|=
-name|gimp_tool_control_new
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_tool_control_set_preserve
 argument_list|(
-name|TRUE
+name|tool
+operator|->
+name|control
 argument_list|,
-comment|/* scroll_lock */
-name|TRUE
-argument_list|,
-comment|/* auto_snap_to */
 name|FALSE
-argument_list|,
-comment|/* preserve */
-name|FALSE
-argument_list|,
-comment|/* handle_empty_image */
-name|GIMP_MOTION_MODE_HINT
-argument_list|,
-comment|/* motion_mode */
-name|GIMP_MOUSE_CURSOR
-argument_list|,
-comment|/* cursor */
-name|GIMP_TOOL_CURSOR_NONE
-argument_list|,
-comment|/* tool_cursor */
-name|GIMP_CURSOR_MODIFIER_NONE
-argument_list|,
-comment|/* cursor_modifier */
-name|GIMP_MOUSE_CURSOR
-argument_list|,
-comment|/* toggle_cursor */
-name|GIMP_TOOL_CURSOR_NONE
-argument_list|,
-comment|/* toggle_tool_cursor */
-name|GIMP_CURSOR_MODIFIER_NONE
-comment|/* toggle_cursor_modifier */
 argument_list|)
 expr_stmt|;
 block|}

@@ -58,15 +58,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpToolInfo
-typedef|typedef
-name|struct
-name|_GimpToolInfo
-name|GimpToolInfo
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpToolControl
 typedef|typedef
 name|struct

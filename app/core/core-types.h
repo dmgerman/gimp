@@ -65,7 +65,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288099450103
+DECL|enum|__anon288d61a80103
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -85,7 +85,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon288099450203
+DECL|enum|__anon288d61a80203
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -106,7 +106,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon288099450303
+DECL|enum|__anon288d61a80303
 block|{
 comment|/* NOTE: If you change this list, please update the textual mapping at    *  the bottom of undo.c as well.    */
 comment|/* Type NO_UNDO_GROUP (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */
@@ -315,6 +315,20 @@ name|_GimpBuffer
 name|GimpBuffer
 typedef|;
 end_typedef
+
+begin_typedef
+DECL|typedef|GimpToolInfo
+typedef|typedef
+name|struct
+name|_GimpToolInfo
+name|GimpToolInfo
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|GimpToolInfo
+comment|/*< proxy-include>*/
+end_comment
 
 begin_typedef
 DECL|typedef|GimpPaintInfo

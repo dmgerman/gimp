@@ -34,6 +34,10 @@ file|"gimptooltypes.h"
 end_include
 
 begin_comment
+comment|/* this is ugly */
+end_comment
+
+begin_comment
 comment|/*#include "core/gimpimage.h" #include "core/gimpmarshal.h"  #include "display/gimpdisplay.h" #include "display/gimpdisplayshell.h" #include "display/gimpstatusbar.h" */
 end_comment
 
@@ -486,15 +490,16 @@ name|tool
 operator|->
 name|control
 operator|=
+name|GIMP_TOOL_CONTROL
+argument_list|(
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_TOOL_CONTROL
+argument_list|,
 name|NULL
+argument_list|)
+argument_list|)
 expr_stmt|;
-comment|/* ToolControl stuff MUST be handled by child */
-if|#
-directive|if
-literal|0
-block|tool->state                  = INACTIVE;   tool->paused_count           = 0;
-endif|#
-directive|endif
 name|tool
 operator|->
 name|gdisp
@@ -507,22 +512,6 @@ name|drawable
 operator|=
 name|NULL
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|tool->scroll_lock            = FALSE;
-comment|/*  Allow scrolling                  */
-block|tool->auto_snap_to           = TRUE;
-comment|/*  Snap to guides                   */
-block|tool->preserve               = TRUE;
-comment|/*  Preserve across drawable change  */
-block|tool->handle_empty_image     = FALSE;
-comment|/*  Require active drawable          */
-block|tool->perfectmouse           = FALSE;
-comment|/*  Use MOTION_HINT compression      */
-block|tool->cursor                 = GIMP_MOUSE_CURSOR;   tool->tool_cursor            = GIMP_TOOL_CURSOR_NONE;   tool->cursor_modifier        = GIMP_CURSOR_MODIFIER_NONE;    tool->toggle_cursor          = GIMP_MOUSE_CURSOR;   tool->toggle_tool_cursor     = GIMP_TOOL_CURSOR_NONE;   tool->toggle_cursor_modifier = GIMP_CURSOR_MODIFIER_NONE;    tool->toggled                = FALSE;
-endif|#
-directive|endif
 block|}
 end_function
 
