@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-parasites.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -47,12 +53,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpparasite.h"
 end_include
 
 begin_include

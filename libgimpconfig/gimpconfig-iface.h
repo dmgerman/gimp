@@ -16,6 +16,32 @@ directive|define
 name|__GIMP_CONFIG_H__
 end_define
 
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2ad3e92d0103
+block|{
+DECL|enumerator|GIMP_CONFIG_ERROR_ENOENT
+name|GIMP_CONFIG_ERROR_ENOENT
+block|,
+comment|/*  file does not exist  */
+DECL|enumerator|GIMP_CONFIG_ERROR_OPEN
+name|GIMP_CONFIG_ERROR_OPEN
+block|,
+comment|/*  open failed          */
+DECL|enumerator|GIMP_CONFIG_ERROR_WRITE
+name|GIMP_CONFIG_ERROR_WRITE
+block|,
+comment|/*  write failed         */
+DECL|enumerator|GIMP_CONFIG_ERROR_PARSE
+name|GIMP_CONFIG_ERROR_PARSE
+comment|/*  parser error         */
+DECL|typedef|GimpConfigError
+block|}
+name|GimpConfigError
+typedef|;
+end_typedef
+
 begin_define
 DECL|macro|GIMP_TYPE_CONFIG_INTERFACE
 define|#
@@ -54,7 +80,7 @@ name|GTypeInterface
 name|base_iface
 decl_stmt|;
 DECL|member|serialize
-name|void
+name|gboolean
 function_decl|(
 modifier|*
 name|serialize
@@ -164,6 +190,16 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|header
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|footer
 parameter_list|,
 name|GError
 modifier|*
@@ -294,28 +330,6 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon28a146520103
-block|{
-DECL|enumerator|GIMP_CONFIG_ERROR_FILE_ENOENT
-name|GIMP_CONFIG_ERROR_FILE_ENOENT
-block|,
-comment|/* config file does not exist      */
-DECL|enumerator|GIMP_CONFIG_ERROR_FILE
-name|GIMP_CONFIG_ERROR_FILE
-block|,
-comment|/* config file could not be opened */
-DECL|enumerator|GIMP_CONFIG_ERROR_PARSE
-name|GIMP_CONFIG_ERROR_PARSE
-comment|/* config file could not be parsed */
-DECL|typedef|GimpConfigError
-block|}
-name|GimpConfigError
-typedef|;
-end_typedef
 
 begin_endif
 endif|#

@@ -116,7 +116,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_config_iface_serialize
 parameter_list|(
 name|GObject
@@ -303,7 +303,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_config_iface_serialize (GObject * object,gint fd)
 name|gimp_config_iface_serialize
 parameter_list|(
@@ -315,13 +315,14 @@ name|gint
 name|fd
 parameter_list|)
 block|{
+return|return
 name|gimp_config_serialize_properties
 argument_list|(
 name|object
 argument_list|,
 name|fd
 argument_list|)
-expr_stmt|;
+return|;
 block|}
 end_function
 
@@ -577,12 +578,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize:  * @object: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to write the configuration to.  * @error:  *   * Serializes the object properties of @object to the file specified  * by @filename. If a file with that name already exists, it is   * overwritten. Basically this function opens @filename for you and  * calls the serialize function of the @object's #GimpConfigInterface.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  **/
+comment|/**  * gimp_config_serialize:  * @object: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to write the configuration to.  * @header: optional file header (should be a comment)  * @footer: optional file footer (should be a comment)  * @error:  *   * Serializes the object properties of @object to the file specified  * by @filename. If a file with that name already exists, it is   * overwritten. Basically this function opens @filename for you and  * calls the serialize function of the @object's #GimpConfigInterface.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_serialize (GObject * object,const gchar * filename,GError ** error)
+DECL|function|gimp_config_serialize (GObject * object,const gchar * filename,const gchar * header,const gchar * footer,GError ** error)
 name|gimp_config_serialize
 parameter_list|(
 name|GObject
@@ -594,6 +595,16 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|header
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|footer
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -603,6 +614,11 @@ block|{
 name|GimpConfigInterface
 modifier|*
 name|gimp_config_iface
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|gchar
 modifier|*
@@ -692,11 +708,11 @@ name|error
 argument_list|,
 name|GIMP_CONFIG_ERROR
 argument_list|,
-name|GIMP_CONFIG_ERROR_FILE
+name|GIMP_CONFIG_ERROR_OPEN
 argument_list|,
 name|_
 argument_list|(
-literal|"Failed to generate temporary file for '%s': %s"
+literal|"Failed to create temporary file for '%s': %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -716,6 +732,35 @@ return|return
 name|FALSE
 return|;
 block|}
+if|if
+condition|(
+name|header
+condition|)
+name|success
+operator|=
+operator|(
+name|write
+argument_list|(
+name|fd
+argument_list|,
+name|header
+argument_list|,
+name|strlen
+argument_list|(
+name|header
+argument_list|)
+argument_list|)
+operator|!=
+operator|-
+literal|1
+operator|)
+expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+name|success
+operator|=
 name|gimp_config_iface
 operator|->
 name|serialize
@@ -725,6 +770,64 @@ argument_list|,
 name|fd
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|success
+operator|&&
+name|footer
+condition|)
+name|success
+operator|=
+operator|(
+name|write
+argument_list|(
+name|fd
+argument_list|,
+name|footer
+argument_list|,
+name|strlen
+argument_list|(
+name|footer
+argument_list|)
+argument_list|)
+operator|!=
+operator|-
+literal|1
+operator|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|success
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_CONFIG_ERROR
+argument_list|,
+name|GIMP_CONFIG_ERROR_WRITE
+argument_list|,
+name|_
+argument_list|(
+literal|"Error when writing to file '%s': %s"
+argument_list|)
+argument_list|,
+name|tmpname
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|unlink
+argument_list|(
+name|tmpname
+argument_list|)
+expr_stmt|;
+block|}
 name|close
 argument_list|(
 name|fd
@@ -732,6 +835,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|success
+operator|&&
 name|rename
 argument_list|(
 name|tmpname
@@ -749,14 +854,12 @@ name|error
 argument_list|,
 name|GIMP_CONFIG_ERROR
 argument_list|,
-name|GIMP_CONFIG_ERROR_FILE
+name|GIMP_CONFIG_ERROR_OPEN
 argument_list|,
 name|_
 argument_list|(
-literal|"Failed to rename temporary file '%s' to '%s': %s"
+literal|"Failed to create file '%s': %s"
 argument_list|)
-argument_list|,
-name|tmpname
 argument_list|,
 name|filename
 argument_list|,
@@ -771,14 +874,10 @@ argument_list|(
 name|tmpname
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|tmpname
-argument_list|)
-expr_stmt|;
-return|return
+name|success
+operator|=
 name|FALSE
-return|;
+expr_stmt|;
 block|}
 name|g_free
 argument_list|(
@@ -786,7 +885,7 @@ name|tmpname
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|success
 return|;
 block|}
 end_function
@@ -906,9 +1005,9 @@ name|errno
 operator|==
 name|ENOENT
 condition|?
-name|GIMP_CONFIG_ERROR_FILE_ENOENT
+name|GIMP_CONFIG_ERROR_ENOENT
 else|:
-name|GIMP_CONFIG_ERROR_FILE
+name|GIMP_CONFIG_ERROR_OPEN
 operator|)
 argument_list|,
 name|_
@@ -1258,7 +1357,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9c8b0d0108
+DECL|struct|__anon2ab075f20108
 block|{
 DECL|member|key
 name|gchar

@@ -137,7 +137,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_rc_serialize
 parameter_list|(
 name|GObject
@@ -181,7 +181,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_rc_write_header
 parameter_list|(
 name|gint
@@ -340,7 +340,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_rc_serialize (GObject * object,gint fd)
 name|gimp_rc_serialize
 parameter_list|(
@@ -352,20 +352,23 @@ name|gint
 name|fd
 parameter_list|)
 block|{
+return|return
+operator|(
 name|gimp_config_serialize_properties
 argument_list|(
 name|object
 argument_list|,
 name|fd
 argument_list|)
-expr_stmt|;
+operator|&&
 name|gimp_config_serialize_unknown_tokens
 argument_list|(
 name|object
 argument_list|,
 name|fd
 argument_list|)
-expr_stmt|;
+operator|)
+return|;
 block|}
 end_function
 
@@ -781,6 +784,9 @@ modifier|*
 name|filename
 parameter_list|)
 block|{
+name|gboolean
+name|success
+decl_stmt|;
 name|gint
 name|fd
 decl_stmt|;
@@ -812,51 +818,27 @@ name|fd
 operator|=
 name|open
 argument_list|(
-name|filename
+argument|filename
 argument_list|,
-name|O_WRONLY
-operator||
-name|O_CREAT
+argument|O_WRONLY | O_CREAT
 argument_list|,
 ifndef|#
 directive|ifndef
 name|G_OS_WIN32
-name|S_IRUSR
-operator||
-name|S_IWUSR
-operator||
-name|S_IRGRP
-operator||
-name|S_IROTH
-argument_list|)
-expr_stmt|;
+argument|S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH
 else|#
 directive|else
-name|_S_IREAD
-operator||
-name|_S_IWRITE
-block|)
-function|;
-end_function
-
-begin_endif
+argument|_S_IREAD | _S_IWRITE
 endif|#
 directive|endif
-end_endif
-
-begin_else
+argument_list|)
+expr_stmt|;
 else|else
 name|fd
 operator|=
 literal|1
 expr_stmt|;
-end_else
-
-begin_comment
 comment|/* stdout */
-end_comment
-
-begin_if
 if|if
 condition|(
 name|fd
@@ -884,17 +866,14 @@ return|return
 name|FALSE
 return|;
 block|}
-end_if
-
-begin_expr_stmt
+name|success
+operator|=
+operator|(
 name|gimp_rc_write_header
 argument_list|(
 name|fd
 argument_list|)
-expr_stmt|;
-end_expr_stmt
-
-begin_expr_stmt
+operator|&&
 name|gimp_config_serialize_changed_properties
 argument_list|(
 name|G_OBJECT
@@ -909,10 +888,7 @@ argument_list|)
 argument_list|,
 name|fd
 argument_list|)
-expr_stmt|;
-end_expr_stmt
-
-begin_expr_stmt
+operator|&&
 name|gimp_config_serialize_unknown_tokens
 argument_list|(
 name|G_OBJECT
@@ -922,10 +898,8 @@ argument_list|)
 argument_list|,
 name|fd
 argument_list|)
+operator|)
 expr_stmt|;
-end_expr_stmt
-
-begin_if
 if|if
 condition|(
 name|filename
@@ -935,17 +909,16 @@ argument_list|(
 name|fd
 argument_list|)
 expr_stmt|;
-end_if
-
-begin_return
+comment|/* FIXME: should use GError */
 return|return
-name|TRUE
+name|success
 return|;
-end_return
+block|}
+end_function
 
 begin_function
-unit|}  static
-name|void
+specifier|static
+name|gboolean
 DECL|function|gimp_rc_write_header (gint fd)
 name|gimp_rc_write_header
 parameter_list|(
@@ -953,6 +926,9 @@ name|gint
 name|fd
 parameter_list|)
 block|{
+name|gboolean
+name|success
+decl_stmt|;
 name|gchar
 modifier|*
 name|filename
@@ -987,6 +963,10 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+operator|(
+operator|(
 name|write
 argument_list|(
 name|fd
@@ -998,7 +978,12 @@ argument_list|(
 name|top
 argument_list|)
 argument_list|)
-expr_stmt|;
+operator|!=
+operator|-
+literal|1
+operator|)
+operator|&&
+operator|(
 name|write
 argument_list|(
 name|fd
@@ -1010,7 +995,12 @@ argument_list|(
 name|filename
 argument_list|)
 argument_list|)
-expr_stmt|;
+operator|!=
+operator|-
+literal|1
+operator|)
+operator|&&
+operator|(
 name|write
 argument_list|(
 name|fd
@@ -1022,12 +1012,20 @@ argument_list|(
 name|bottom
 argument_list|)
 argument_list|)
+operator|!=
+operator|-
+literal|1
+operator|)
+operator|)
 expr_stmt|;
 name|g_free
 argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 

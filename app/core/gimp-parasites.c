@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpparasite.h"
+file|"gimp-parasites.h"
 end_include
 
 begin_include
@@ -241,7 +241,43 @@ block|}
 end_function
 
 begin_comment
-comment|/*  parasiterc functions  **********/
+comment|/*  FIXME: this doesn't belong here  */
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_parasite_shift_parent (GimpParasite * parasite)
+name|gimp_parasite_shift_parent
+parameter_list|(
+name|GimpParasite
+modifier|*
+name|parasite
+parameter_list|)
+block|{
+if|if
+condition|(
+name|parasite
+operator|==
+name|NULL
+condition|)
+return|return;
+name|parasite
+operator|->
+name|flags
+operator|=
+operator|(
+name|parasite
+operator|->
+name|flags
+operator|>>
+literal|8
+operator|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/*  parasiterc functions  */
 end_comment
 
 begin_function
@@ -329,6 +365,23 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|header
+init|=
+literal|"# GIMP parasiterc\n"
+literal|"#\n"
+literal|"# This file will be entirely rewritten every time you "
+literal|"quit the gimp.\n\n"
+decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|footer
+init|=
+literal|"# end of parasiterc"
+decl_stmt|;
 name|gchar
 modifier|*
 name|filename
@@ -344,6 +397,16 @@ argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_PARASITE_LIST
+argument_list|(
+name|gimp
+operator|->
+name|parasites
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -367,6 +430,10 @@ name|parasites
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|header
+argument_list|,
+name|footer
 argument_list|,
 operator|&
 name|error

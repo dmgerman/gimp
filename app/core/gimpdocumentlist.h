@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_DOCUMENTS_H__
+name|__GIMP_DOCUMENT_LIST_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DOCUMENTS_H__
+DECL|macro|__GIMP_DOCUMENT_LIST_H__
 define|#
 directive|define
-name|__GIMP_DOCUMENTS_H__
+name|__GIMP_DOCUMENT_LIST_H__
 end_define
 
 begin_include
@@ -23,69 +23,69 @@ file|"core/gimplist.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_DOCUMENTS
+DECL|macro|GIMP_TYPE_DOCUMENT_LIST
 define|#
 directive|define
-name|GIMP_TYPE_DOCUMENTS
-value|(gimp_documents_get_type ())
+name|GIMP_TYPE_DOCUMENT_LIST
+value|(gimp_document_list_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_DOCUMENTS (obj)
+DECL|macro|GIMP_DOCUMENT_LIST (obj)
 define|#
 directive|define
-name|GIMP_DOCUMENTS
+name|GIMP_DOCUMENT_LIST
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DOCUMENTS, GimpDocuments))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DOCUMENT_LIST, GimpDocumentList))
 end_define
 
 begin_define
-DECL|macro|GIMP_DOCUMENTS_CLASS (klass)
+DECL|macro|GIMP_DOCUMENT_LIST_CLASS (klass)
 define|#
 directive|define
-name|GIMP_DOCUMENTS_CLASS
+name|GIMP_DOCUMENT_LIST_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DOCUMENTS, GimpDocumentsClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DOCUMENT_LIST, GimpDocumentListClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_DOCUMENTS (obj)
+DECL|macro|GIMP_IS_DOCUMENT_LIST (obj)
 define|#
 directive|define
-name|GIMP_IS_DOCUMENTS
+name|GIMP_IS_DOCUMENT_LIST
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DOCUMENTS))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DOCUMENT_LIST))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_DOCUMENTS_CLASS (klass)
+DECL|macro|GIMP_IS_DOCUMENT_LIST_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_DOCUMENTS_CLASS
+name|GIMP_IS_DOCUMENT_LIST_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DOCUMENTS))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DOCUMENT_LIST))
 end_define
 
 begin_typedef
-DECL|typedef|GimpDocumentsClass
+DECL|typedef|GimpDocumentListClass
 typedef|typedef
 name|struct
 name|_GimpListClass
-name|GimpDocumentsClass
+name|GimpDocumentListClass
 typedef|;
 end_typedef
 
 begin_decl_stmt
 name|GType
-name|gimp_documents_get_type
+name|gimp_document_list_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -96,34 +96,9 @@ end_decl_stmt
 begin_function_decl
 name|GimpContainer
 modifier|*
-name|gimp_documents_new
+name|gimp_document_list_new
 parameter_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_documents_load
-parameter_list|(
-name|GimpDocuments
-modifier|*
-name|documents
-parameter_list|,
-name|gint
-name|thumbnail_size
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_documents_save
-parameter_list|(
-name|GimpDocuments
-modifier|*
-name|documents
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -131,11 +106,11 @@ end_function_decl
 begin_function_decl
 name|GimpImagefile
 modifier|*
-name|gimp_documents_add
+name|gimp_document_list_add_uri
 parameter_list|(
-name|GimpDocuments
+name|GimpDocumentList
 modifier|*
-name|documents
+name|document_list
 parameter_list|,
 specifier|const
 name|gchar
@@ -151,7 +126,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_DOCUMENTS_H__  */
+comment|/*  __GIMP_DOCUMENT_LIST_H__  */
 end_comment
 
 end_unit

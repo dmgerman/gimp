@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-parasites.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpchannel.h"
 end_include
 
@@ -90,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpparasite.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpparasitelist.h"
 end_include
 
@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac9fe9e0103
+DECL|enum|__anon2bf7af510103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED

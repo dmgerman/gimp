@@ -70,6 +70,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-documents.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp-parasites.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbrush.h"
 end_include
 
@@ -112,7 +124,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdocuments.h"
+file|"gimpdocumentlist.h"
 end_include
 
 begin_include
@@ -161,12 +173,6 @@ begin_include
 include|#
 directive|include
 file|"gimppattern.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpparasite.h"
 end_include
 
 begin_include
@@ -734,7 +740,7 @@ name|gimp
 operator|->
 name|documents
 operator|=
-name|gimp_documents_new
+name|gimp_document_list_new
 argument_list|()
 expr_stmt|;
 name|gimp
@@ -2432,18 +2438,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_documents_load
 argument_list|(
-name|GIMP_DOCUMENTS
-argument_list|(
 name|gimp
-operator|->
-name|documents
-argument_list|)
-argument_list|,
-name|gimp
-operator|->
-name|config
-operator|->
-name|thumbnail_size
 argument_list|)
 expr_stmt|;
 call|(
@@ -2519,12 +2514,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_documents_save
 argument_list|(
-name|GIMP_DOCUMENTS
-argument_list|(
 name|gimp
-operator|->
-name|documents
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_parasiterc_save

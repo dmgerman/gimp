@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-parasites.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpchannel.h"
 end_include
 
@@ -133,12 +139,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimplayermask.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpparasite.h"
 end_include
 
 begin_include
@@ -245,7 +245,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acf0d800103
+DECL|enum|__anon2789d41a0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO

@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-parasites.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -145,12 +151,6 @@ begin_include
 include|#
 directive|include
 file|"gimpmarshal.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpparasite.h"
 end_include
 
 begin_include
@@ -234,7 +234,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdf1fab0103
+DECL|enum|__anon2a908b840103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED

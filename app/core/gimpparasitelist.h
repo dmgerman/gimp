@@ -277,17 +277,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|gimp_parasite_shift_parent
-parameter_list|(
-name|GimpParasite
-modifier|*
-name|parasite
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

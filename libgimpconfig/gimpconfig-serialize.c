@@ -111,7 +111,7 @@ comment|/**  * gimp_config_serialize_properties:  * @object: a #GObject.   * @fd
 end_comment
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_config_serialize_properties (GObject * object,gint fd)
 name|gimp_config_serialize_properties
 parameter_list|(
@@ -142,12 +142,14 @@ name|GString
 modifier|*
 name|str
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|G_IS_OBJECT
 argument_list|(
 name|object
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|klass
@@ -172,7 +174,9 @@ condition|(
 operator|!
 name|property_specs
 condition|)
-return|return;
+return|return
+name|TRUE
+return|;
 name|str
 operator|=
 name|g_string_new
@@ -289,6 +293,8 @@ argument_list|,
 literal|")\n"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
 name|write
 argument_list|(
 name|fd
@@ -301,7 +307,13 @@ name|str
 operator|->
 name|len
 argument_list|)
-expr_stmt|;
+operator|==
+operator|-
+literal|1
+condition|)
+return|return
+name|FALSE
+return|;
 block|}
 elseif|else
 if|if
@@ -357,6 +369,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -365,7 +380,7 @@ comment|/**  * gimp_config_serialize_properties:  * @new: a #GObject.   * @old: 
 end_comment
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_config_serialize_changed_properties (GObject * new,GObject * old,gint fd)
 name|gimp_config_serialize_changed_properties
 parameter_list|(
@@ -400,23 +415,27 @@ name|GString
 modifier|*
 name|str
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|G_IS_OBJECT
 argument_list|(
 name|new
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|G_IS_OBJECT
 argument_list|(
 name|old
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
@@ -427,6 +446,8 @@ name|G_TYPE_FROM_INSTANCE
 argument_list|(
 name|old
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|klass
@@ -451,7 +472,9 @@ condition|(
 operator|!
 name|property_specs
 condition|)
-return|return;
+return|return
+name|TRUE
+return|;
 name|str
 operator|=
 name|g_string_new
@@ -610,6 +633,8 @@ argument_list|,
 literal|")\n"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
 name|write
 argument_list|(
 name|fd
@@ -622,7 +647,13 @@ name|str
 operator|->
 name|len
 argument_list|)
-expr_stmt|;
+operator|==
+operator|-
+literal|1
+condition|)
+return|return
+name|FALSE
+return|;
 block|}
 elseif|else
 if|if
@@ -685,6 +716,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -1036,7 +1070,7 @@ comment|/**  * gimp_config_serialize_unknown_tokens:  * @object: a #GObject.  * 
 end_comment
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_config_serialize_unknown_tokens (GObject * object,gint fd)
 name|gimp_config_serialize_unknown_tokens
 parameter_list|(
@@ -1052,12 +1086,14 @@ name|GString
 modifier|*
 name|str
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|G_IS_OBJECT
 argument_list|(
 name|object
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|str
@@ -1076,6 +1112,8 @@ argument_list|,
 name|str
 argument_list|)
 expr_stmt|;
+return|return
+operator|(
 name|write
 argument_list|(
 name|fd
@@ -1088,7 +1126,11 @@ name|str
 operator|->
 name|len
 argument_list|)
-expr_stmt|;
+operator|!=
+operator|-
+literal|1
+operator|)
+return|;
 block|}
 end_function
 

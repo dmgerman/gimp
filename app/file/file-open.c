@@ -138,7 +138,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdocuments.h"
+file|"core/gimpdocumentlist.h"
 end_include
 
 begin_include
@@ -790,6 +790,10 @@ condition|(
 name|gimage
 condition|)
 block|{
+name|GimpDocumentList
+modifier|*
+name|documents
+decl_stmt|;
 name|GimpImagefile
 modifier|*
 name|imagefile
@@ -825,16 +829,20 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|imagefile
+name|documents
 operator|=
-name|gimp_documents_add
-argument_list|(
-name|GIMP_DOCUMENTS
+name|GIMP_DOCUMENT_LIST
 argument_list|(
 name|gimp
 operator|->
 name|documents
 argument_list|)
+expr_stmt|;
+name|imagefile
+operator|=
+name|gimp_document_list_add_uri
+argument_list|(
+name|documents
 argument_list|,
 name|uri
 argument_list|)

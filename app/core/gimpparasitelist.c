@@ -82,7 +82,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d761310103
+DECL|enum|__anon2b81ddc30103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -160,7 +160,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_parasite_list_serialize
 parameter_list|(
 name|GObject
@@ -203,7 +203,8 @@ name|GimpParasite
 modifier|*
 name|parasite
 parameter_list|,
-name|gpointer
+name|gint
+modifier|*
 name|fd_ptr
 parameter_list|)
 function_decl|;
@@ -834,7 +835,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_parasite_list_serialize (GObject * list,gint fd)
 name|gimp_parasite_list_serialize
 parameter_list|(
@@ -846,28 +847,6 @@ name|gint
 name|fd
 parameter_list|)
 block|{
-specifier|const
-name|gchar
-modifier|*
-name|header
-init|=
-literal|"# GIMP parasiterc\n"
-literal|"#\n"
-literal|"# This file will be entirely rewritten every time you "
-literal|"quit the gimp.\n\n"
-decl_stmt|;
-name|write
-argument_list|(
-name|fd
-argument_list|,
-name|header
-argument_list|,
-name|strlen
-argument_list|(
-name|header
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|GIMP_PARASITE_LIST
@@ -891,12 +870,18 @@ name|GHFunc
 operator|)
 name|parasite_serialize
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
+operator|&
 name|fd
 argument_list|)
-argument_list|)
 expr_stmt|;
+return|return
+operator|(
+name|fd
+operator|!=
+operator|-
+literal|1
+operator|)
+return|;
 block|}
 end_function
 
@@ -1656,7 +1641,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|parasite_serialize (const gchar * key,GimpParasite * parasite,gpointer fd_ptr)
+DECL|function|parasite_serialize (const gchar * key,GimpParasite * parasite,gint * fd_ptr)
 name|parasite_serialize
 parameter_list|(
 specifier|const
@@ -1668,7 +1653,8 @@ name|GimpParasite
 modifier|*
 name|parasite
 parameter_list|,
-name|gpointer
+name|gint
+modifier|*
 name|fd_ptr
 parameter_list|)
 block|{
@@ -1684,6 +1670,16 @@ decl_stmt|;
 name|guint32
 name|len
 decl_stmt|;
+comment|/* return if write failed earlier */
+if|if
+condition|(
+operator|*
+name|fd_ptr
+operator|==
+operator|-
+literal|1
+condition|)
+return|return;
 if|if
 condition|(
 operator|!
@@ -1830,12 +1826,12 @@ argument_list|,
 literal|"\")\n\n"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
 name|write
 argument_list|(
-name|GPOINTER_TO_INT
-argument_list|(
+operator|*
 name|fd_ptr
-argument_list|)
 argument_list|,
 name|str
 operator|->
@@ -1845,6 +1841,15 @@ name|str
 operator|->
 name|len
 argument_list|)
+operator|==
+operator|-
+literal|1
+condition|)
+operator|*
+name|fd_ptr
+operator|=
+operator|-
+literal|1
 expr_stmt|;
 name|g_string_free
 argument_list|(
@@ -1950,42 +1955,6 @@ operator|*
 name|count
 operator|+
 literal|1
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/* FIXME: this doesn't belong here */
-end_comment
-
-begin_function
-name|void
-DECL|function|gimp_parasite_shift_parent (GimpParasite * parasite)
-name|gimp_parasite_shift_parent
-parameter_list|(
-name|GimpParasite
-modifier|*
-name|parasite
-parameter_list|)
-block|{
-if|if
-condition|(
-name|parasite
-operator|==
-name|NULL
-condition|)
-return|return;
-name|parasite
-operator|->
-name|flags
-operator|=
-operator|(
-name|parasite
-operator|->
-name|flags
-operator|>>
-literal|8
-operator|)
 expr_stmt|;
 block|}
 end_function

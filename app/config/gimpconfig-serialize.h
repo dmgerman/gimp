@@ -17,7 +17,7 @@ name|__GIMP_CONFIG_SERIALIZE_H__
 end_define
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_config_serialize_properties
 parameter_list|(
 name|GObject
@@ -31,7 +31,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_config_serialize_changed_properties
 parameter_list|(
 name|GObject
@@ -49,7 +49,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_config_serialize_unknown_tokens
 parameter_list|(
 name|GObject

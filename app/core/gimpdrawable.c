@@ -144,12 +144,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpparasite.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpparasitelist.h"
 end_include
 
@@ -173,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fea6b20103
+DECL|enum|__anon2770d3070103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED

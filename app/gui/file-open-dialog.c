@@ -124,12 +124,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdocuments.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage.h"
 end_include
 

@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__APP_GIMP_PARASITE_H__
+name|__GIMP_PARASITES_H__
 end_ifndef
 
 begin_define
-DECL|macro|__APP_GIMP_PARASITE_H__
+DECL|macro|__GIMP_PARASITES_H__
 define|#
 directive|define
-name|__APP_GIMP_PARASITE_H__
+name|__GIMP_PARASITES_H__
 end_define
 
 begin_comment
@@ -87,6 +87,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_parasite_shift_parent
+parameter_list|(
+name|GimpParasite
+modifier|*
+name|parasite
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_parasiterc_load
 parameter_list|(
 name|Gimp
@@ -113,7 +124,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __APP_GIMP_PARASITE_H__  */
+comment|/*  __GIMP_PARASITES_H__  */
 end_comment
 
 end_unit
