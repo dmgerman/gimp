@@ -44,6 +44,29 @@ directive|include
 file|<glib.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__EMX__
+end_ifdef
+
+begin_comment
+comment|/* hope this is right for OS/2 */
+end_comment
+
+begin_define
+DECL|macro|SA_RESTART
+define|#
+directive|define
+name|SA_RESTART
+value|SA_SYSV
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
 comment|/* GimpRetSigType is a reference   * to a (signal handler) function   * that takes a signal ID and   * returns void.   * signal(2) returns such references;   * so does gimp_signal_private.  */
 end_comment
