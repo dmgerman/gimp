@@ -1738,7 +1738,20 @@ name|win_initstatus
 operator|=
 name|gtk_window_new
 argument_list|(
-name|GTK_WINDOW_POPUP
+name|GTK_WINDOW_DIALOG
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_title
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|win_initstatus
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"GIMP Startup"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_wmclass
@@ -1772,7 +1785,7 @@ argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)
