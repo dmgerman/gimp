@@ -220,7 +220,7 @@ value|3
 end_define
 
 begin_typedef
-DECL|enum|__anon29d64a270103
+DECL|enum|__anon28b6075c0103
 typedef|typedef
 enum|enum
 block|{
@@ -1260,18 +1260,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|int
-name|parse_locale_def
-parameter_list|(
-name|PlugInDef
-modifier|*
-name|plug_in_def
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|int
 name|parse_plug_in_def
 parameter_list|(
 name|gpointer
@@ -1363,6 +1351,18 @@ name|val1p
 parameter_list|,
 name|gpointer
 name|val2p
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|int
+name|parse_locale_def
+parameter_list|(
+name|PlugInDef
+modifier|*
+name|plug_in_def
 parameter_list|)
 function_decl|;
 end_function_decl

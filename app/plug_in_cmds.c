@@ -1491,7 +1491,7 @@ literal|"gimp_plugin_domain_add"
 block|,
 literal|"Adds a textdomain for localisation."
 block|,
-literal|"This procedure adds a textdomain to the list of domains Gimp searches for strings when translating its menu entries. There is no need to call this function for plug-ins that have their strings included in the gimp-stdplugins domain as that is use by default. If the compiled message catalog is not in the standard location, you may specify an absolute path to another location. This procedure can only be called in the query function of a plug-in and it has to be called before a procedure is installed."
+literal|"This procedure adds a textdomain to the list of domains Gimp searches for strings when translating its menu entries. There is no need to call this function for plug-ins that have their strings included in the gimp-std-plugins domain as that is use by default. If the compiled message catalog is not in the standard location, you may specify an absolute path to another location. This procedure can only be called in the query function of a plug-in and it has to be called before a procedure is installed."
 block|,
 literal|"Sven Neumann"
 block|,

@@ -181,6 +181,10 @@ name|GimpItemFactoryEntry
 modifier|*
 name|entry
 parameter_list|,
+name|gchar
+modifier|*
+name|domain_name
+parameter_list|,
 name|gpointer
 name|callback_data
 parameter_list|)
