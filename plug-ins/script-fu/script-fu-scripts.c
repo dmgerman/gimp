@@ -3014,6 +3014,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 return|return
 name|my_err
 argument_list|(
@@ -3022,6 +3023,7 @@ argument_list|,
 name|NIL
 argument_list|)
 return|;
+block|}
 block|}
 block|}
 name|script
@@ -3114,7 +3116,7 @@ name|command
 decl_stmt|;
 name|gchar
 modifier|*
-name|qf
+name|escaped
 init|=
 name|g_strescape
 argument_list|(
@@ -3131,12 +3133,12 @@ name|g_strdup_printf
 argument_list|(
 literal|"(load \"%s\")"
 argument_list|,
-name|qf
+name|escaped
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|qf
+name|escaped
 argument_list|)
 expr_stmt|;
 if|if
@@ -4325,7 +4327,6 @@ return|return
 name|TRUE
 return|;
 block|}
-else|else
 return|return
 name|FALSE
 return|;
@@ -4372,7 +4373,6 @@ condition|)
 return|return
 name|NULL
 return|;
-else|else
 return|return
 operator|(
 name|SFScript
