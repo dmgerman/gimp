@@ -926,6 +926,12 @@ name|pick_colors
 operator|=
 name|TRUE
 expr_stmt|;
+name|private
+operator|->
+name|flags
+operator||=
+name|TOOL_CAN_HANDLE_CHANGING_BRUSH
+expr_stmt|;
 return|return
 name|tool
 return|;

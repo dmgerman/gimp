@@ -91,6 +91,22 @@ value|4
 end_define
 
 begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2bd495500103
+block|{
+DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
+name|TOOL_CAN_HANDLE_CHANGING_BRUSH
+init|=
+literal|0x0001
+comment|/* Set for tools that don't mind 					   * if the brush changes while 					   * painting. 					   */
+DECL|typedef|ToolFlags
+block|}
+name|ToolFlags
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|PaintFunc
 typedef|typedef
 name|void
@@ -249,6 +265,11 @@ name|int
 name|pick_state
 decl_stmt|;
 comment|/*  was ctl or alt pressed when clicked?  */
+DECL|member|flags
+name|int
+name|flags
+decl_stmt|;
+comment|/*  tool flags, see ToolFlags above */
 block|}
 struct|;
 end_struct
