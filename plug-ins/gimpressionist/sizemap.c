@@ -86,11 +86,10 @@ end_define
 
 begin_decl_stmt
 DECL|variable|smwindow
+specifier|static
 name|GtkWidget
 modifier|*
 name|smwindow
-init|=
-name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -2221,20 +2220,6 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|GTK_STOCK_CANCEL
-argument_list|,
-name|gtk_widget_hide
-argument_list|,
-name|NULL
-argument_list|,
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
 name|GTK_STOCK_APPLY
 argument_list|,
 name|smapplyclick
@@ -2242,6 +2227,20 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|GTK_STOCK_CANCEL
+argument_list|,
+name|gtk_widget_hide
+argument_list|,
+name|NULL
+argument_list|,
+literal|1
 argument_list|,
 name|NULL
 argument_list|,

@@ -294,16 +294,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|interactive_preview_timer_callback
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|apply_callback
 parameter_list|(
 name|GtkWidget
@@ -508,7 +498,7 @@ comment|/*****************************/
 end_comment
 
 begin_comment
-comment|/* static void togglebump_update (GtkWidget *widget, 		   gpointer   data) {   gimp_toggle_button_update (widget, data);      if (mapvals.bump_mapped)     {       bump_page_pos = g_list_length (options_note_book->children);        bump_page = create_bump_page ();       gtk_notebook_append_page (options_note_book, bump_page, 				gtk_label_new (_("Bumpmap")));     }   else     {       gtk_notebook_remove_page (options_note_book, bump_page_pos);       if (bump_page_pos< env_page_pos)         env_page_pos--;       bump_page_pos = 0;     } } */
+comment|/* static void togglebump_update (GtkWidget *widget, 		   gpointer   data) {   gimp_toggle_button_update (widget, data);      if (mapvals.bump_mapped)     {       bump_page_pos = g_list_length (options_note_book->children);        bump_page = create_bump_page ();       gtk_notebook_append_page (options_note_book, bump_page, 				gtk_label_new (_("Bumpmap")));     }   else   {       gtk_notebook_remove_page (options_note_book, bump_page_pos);       if (bump_page_pos< env_page_pos)         env_page_pos--;       bump_page_pos = 0;     } } */
 end_comment
 
 begin_comment
@@ -618,8 +608,10 @@ name|dirlightwid
 argument_list|)
 expr_stmt|;
 block|}
-name|update_preview_image
-argument_list|()
+name|interactive_preview_callback
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -1637,10 +1629,6 @@ name|GtkWidget
 modifier|*
 name|colorbutton
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|spinbutton
-decl_stmt|;
 name|GtkObject
 modifier|*
 name|adj
@@ -1913,7 +1901,7 @@ literal|"color_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|update_preview_image
+name|interactive_preview_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -2148,7 +2136,7 @@ literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|update_preview_image
+name|interactive_preview_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -2259,7 +2247,7 @@ literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|update_preview_image
+name|interactive_preview_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -2370,7 +2358,7 @@ literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|update_preview_image
+name|interactive_preview_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -2485,7 +2473,7 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-name|spinbutton
+name|spin_dir_x
 operator|=
 name|gimp_spin_button_new
 argument_list|(
@@ -2536,7 +2524,7 @@ literal|1.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|spinbutton
+name|spin_dir_x
 argument_list|,
 literal|1
 argument_list|,
@@ -2578,7 +2566,7 @@ literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|update_preview_image
+name|interactive_preview_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -2586,7 +2574,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data
 argument_list|(
-name|spinbutton
+name|spin_dir_x
 argument_list|,
 name|_
 argument_list|(
@@ -2596,7 +2584,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|spinbutton
+name|spin_dir_y
 operator|=
 name|gimp_spin_button_new
 argument_list|(
@@ -2647,7 +2635,7 @@ literal|1.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|spinbutton
+name|spin_dir_y
 argument_list|,
 literal|1
 argument_list|,
@@ -2689,7 +2677,7 @@ literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|update_preview_image
+name|interactive_preview_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -2697,7 +2685,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data
 argument_list|(
-name|spinbutton
+name|spin_dir_y
 argument_list|,
 name|_
 argument_list|(
@@ -2707,7 +2695,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|spinbutton
+name|spin_dir_z
 operator|=
 name|gimp_spin_button_new
 argument_list|(
@@ -2758,7 +2746,7 @@ literal|1.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|spinbutton
+name|spin_dir_z
 argument_list|,
 literal|1
 argument_list|,
@@ -2800,7 +2788,7 @@ literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|update_preview_image
+name|interactive_preview_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -2808,7 +2796,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data
 argument_list|(
-name|spinbutton
+name|spin_dir_z
 argument_list|,
 name|_
 argument_list|(
@@ -3137,7 +3125,7 @@ literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|update_preview_image
+name|interactive_preview_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -3341,7 +3329,7 @@ literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|update_preview_image
+name|interactive_preview_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -3641,6 +3629,23 @@ operator|.
 name|diffuse_ref
 argument_list|)
 expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|adj
+argument_list|)
+argument_list|,
+literal|"value_changed"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|interactive_preview_callback
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|spinbutton
@@ -3828,6 +3833,23 @@ operator|.
 name|specular_ref
 argument_list|)
 expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|adj
+argument_list|)
+argument_list|,
+literal|"value_changed"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|interactive_preview_callback
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|spinbutton
@@ -4012,6 +4034,23 @@ operator|.
 name|material
 operator|.
 name|highlight
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|adj
+argument_list|)
+argument_list|,
+literal|"value_changed"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|interactive_preview_callback
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -5694,7 +5733,7 @@ literal|"toggled"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|update_preview_image
+name|interactive_preview_callback
 argument_list|)
 argument_list|,
 name|NULL

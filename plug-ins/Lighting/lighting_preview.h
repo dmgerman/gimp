@@ -35,7 +35,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a20f1d0108
+DECL|struct|__anon2bf1910c0108
 block|{
 DECL|member|x
 DECL|member|y
@@ -130,6 +130,30 @@ name|spin_pos_z
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|GtkWidget
+modifier|*
+name|spin_dir_x
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|GtkWidget
+modifier|*
+name|spin_dir_y
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|GtkWidget
+modifier|*
+name|spin_dir_z
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/* Externally visible functions */
 end_comment
@@ -146,9 +170,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|update_preview_image
+name|interactive_preview_callback
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -190,17 +216,6 @@ name|xpos
 parameter_list|,
 name|gint
 name|ypos
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|preview_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
 parameter_list|)
 function_decl|;
 end_function_decl

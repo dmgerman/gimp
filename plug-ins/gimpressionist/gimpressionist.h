@@ -157,7 +157,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275c5edd0108
+DECL|struct|__anon2c8fad9e0108
 typedef|typedef
 struct|struct
 block|{
@@ -427,14 +427,6 @@ specifier|extern
 name|GtkWidget
 modifier|*
 name|window
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|GtkWidget
-modifier|*
-name|omwindow
 decl_stmt|;
 end_decl_stmt
 
@@ -939,7 +931,7 @@ name|subdir
 parameter_list|,
 name|GtkWidget
 modifier|*
-name|list
+name|view
 parameter_list|,
 name|char
 modifier|*
@@ -1018,6 +1010,32 @@ name|d
 parameter_list|,
 name|int
 name|num
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|createonecolumnlist
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|parent
+parameter_list|,
+name|void
+function_decl|(
+modifier|*
+name|changed_cb
+function_decl|)
+parameter_list|(
+name|GtkTreeSelection
+modifier|*
+name|selection
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
 parameter_list|)
 function_decl|;
 end_function_decl
