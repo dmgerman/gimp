@@ -280,6 +280,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_preview_area_menu_popup
+parameter_list|(
+name|GimpPreviewArea
+modifier|*
+name|area
+parameter_list|,
+name|guint
+name|button
+parameter_list|,
+name|guint32
+name|activate_time
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
