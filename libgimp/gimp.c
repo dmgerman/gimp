@@ -1485,6 +1485,20 @@ block|}
 end_function
 
 begin_function
+name|gint32
+DECL|function|gimp_default_display (void)
+name|gimp_default_display
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|_gdisp_ID
+return|;
+block|}
+end_function
+
+begin_function
 name|void
 DECL|function|gimp_message (const gchar * message)
 name|gimp_message

@@ -762,6 +762,13 @@ name|gdouble
 name|percentage
 parameter_list|)
 function_decl|;
+comment|/* Returns the default gdisplay (given at plug-in config time).  */
+name|gint32
+name|gimp_default_display
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
 comment|/* Pops up a dialog box with "message". Useful for status and  * error reports. If "message" is NULL, do nothing.  */
 name|void
 name|gimp_message
