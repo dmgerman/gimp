@@ -108,7 +108,7 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifdef
 
 begin_include
@@ -8313,7 +8313,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c171bc90108
+DECL|struct|__anon27afec220108
 block|{
 DECL|member|color_string
 name|gchar

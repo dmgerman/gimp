@@ -32,7 +32,7 @@ end_include
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifndef
 
 begin_include
@@ -61,7 +61,7 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifdef
 
 begin_decl_stmt

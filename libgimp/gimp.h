@@ -67,7 +67,7 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifdef
 
 begin_ifdef
@@ -116,7 +116,7 @@ directive|else
 end_else
 
 begin_comment
-comment|/* !NATIVE_WIN32 */
+comment|/* !G_OS_WIN32 */
 end_comment
 
 begin_define
@@ -638,7 +638,7 @@ block|}
 struct|;
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 comment|/* Define WinMain() because plug-ins are built as GUI applications. Also  * define a main() in case some plug-in still is built as a console  * application.  */
 ifdef|#
 directive|ifdef

@@ -16,7 +16,7 @@ file|<glib.h>
 end_include
 
 begin_comment
-comment|/* Include early for NATIVE_WIN32 */
+comment|/* Include early for G_OS_WIN32 */
 end_comment
 
 begin_include
@@ -93,7 +93,7 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifdef
 
 begin_include
@@ -149,7 +149,7 @@ comment|/* Declare local data types  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c186fa00108
+DECL|struct|__anon2a066d810108
 typedef|typedef
 struct|struct
 block|{

@@ -100,7 +100,7 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifdef
 
 begin_include
@@ -140,7 +140,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aed64ec0108
+DECL|struct|__anon28ca5fa50108
 block|{
 DECL|member|resolution
 name|guint
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aed64ec0208
+DECL|struct|__anon28ca5fa50208
 block|{
 DECL|member|run
 name|gint
@@ -258,7 +258,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aed64ec0308
+DECL|struct|__anon28ca5fa50308
 block|{
 DECL|member|width
 DECL|member|height
@@ -315,7 +315,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aed64ec0408
+DECL|struct|__anon28ca5fa50408
 block|{
 DECL|member|run
 name|gint
@@ -836,7 +836,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aed64ec0508
+DECL|struct|__anon28ca5fa50508
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -940,7 +940,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aed64ec0608
+DECL|struct|__anon28ca5fa50608
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -4631,7 +4631,7 @@ end_decl_stmt
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifdef
 
 begin_decl_stmt
@@ -5092,7 +5092,7 @@ argument_list|)
 expr_stmt|;
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 if|if
 condition|(
 name|gs
@@ -5314,7 +5314,7 @@ comment|/* open the outputfile and return its filepointer. But be sure         *
 comment|/* to close and remove the file within ps_close().                     */
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 comment|/* Work around braindead command line length limit.    * Hmm, I wonder if this is necessary, but it doesn't harm...    */
 if|if
 condition|(
@@ -5473,7 +5473,7 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 if|if
 condition|(
 name|indirfile

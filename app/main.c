@@ -153,7 +153,7 @@ end_include
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifndef
 
 begin_function_decl
@@ -526,7 +526,7 @@ argument_list|)
 operator|||
 name|defined
 argument_list|(
-name|NATIVE_WIN32
+name|G_OS_WIN32
 argument_list|)
 name|use_shm
 operator|=
@@ -1402,7 +1402,7 @@ argument_list|)
 expr_stmt|;
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 comment|/* No use catching these on Win32, the user won't get any     * stack trace from glib anyhow. It's better to let Windows inform    * about the program error, and offer debugging (if the use    * has installed MSVC or some other compiler that knows how to    * install itself as a handler for program errors).    */
 comment|/* Handle some signals */
 ifdef|#
@@ -1579,7 +1579,7 @@ end_function
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifdef
 
 begin_comment
@@ -1707,7 +1707,7 @@ end_decl_stmt
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifndef
 
 begin_function
@@ -1726,7 +1726,7 @@ name|caught_fatal_sig
 condition|)
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 name|raise
 argument_list|(
 name|sig_num
@@ -1983,7 +1983,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baed6790108
+DECL|struct|__anon2bb795b50108
 block|{
 DECL|member|test_gint32
 name|gint32
@@ -2403,7 +2403,7 @@ argument_list|)
 expr_stmt|;
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 name|g_message
 argument_list|(
 literal|"Passed serialization test\n"

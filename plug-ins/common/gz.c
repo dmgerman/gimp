@@ -48,13 +48,13 @@ file|<glib.h>
 end_include
 
 begin_comment
-comment|/* For NATIVE_WIN32 */
+comment|/* For G_OS_WIN32 */
 end_comment
 
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifdef
 
 begin_define
@@ -1126,7 +1126,7 @@ name|tmpname
 decl_stmt|;
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 name|FILE
 modifier|*
 name|f
@@ -1280,7 +1280,7 @@ comment|/*     return -1; */
 comment|/*   } */
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 ifndef|#
 directive|ifndef
 name|__EMX__
@@ -1478,7 +1478,7 @@ block|}
 block|}
 else|#
 directive|else
-comment|/* NATIVE_WIN32 */
+comment|/* G_OS_WIN32 */
 name|secattr
 operator|.
 name|nLength
@@ -1689,7 +1689,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-comment|/* NATIVE_WIN32 */
+comment|/* G_OS_WIN32 */
 name|unlink
 argument_list|(
 name|tmpname
@@ -1732,7 +1732,7 @@ name|tmpname
 decl_stmt|;
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 name|int
 name|pid
 decl_stmt|;
@@ -1812,7 +1812,7 @@ name|d_string
 expr_stmt|;
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 ifndef|#
 directive|ifndef
 name|__EMX__
@@ -2230,7 +2230,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-comment|/* NATIVE_WIN32 */
+comment|/* G_OS_WIN32 */
 comment|/* now that we un-gziped it, load the temp file */
 name|params
 operator|=

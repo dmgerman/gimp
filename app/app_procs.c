@@ -93,7 +93,7 @@ end_endif
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifdef
 
 begin_include
@@ -2340,7 +2340,7 @@ expr_stmt|;
 name|internal_procs_init
 argument_list|()
 expr_stmt|;
-name|gdisplay_color_init
+name|color_display_init
 argument_list|()
 expr_stmt|;
 name|RESET_BAR
@@ -3433,7 +3433,7 @@ argument_list|)
 decl_stmt|;
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 if|if
 condition|(
 name|kill

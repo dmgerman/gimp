@@ -81,7 +81,7 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifdef
 
 begin_ifndef
@@ -209,7 +209,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon2784bf350103
+DECL|enum|__anon29fc4e590103
 enum|enum
 block|{
 DECL|enumerator|FILENAME_CHANGED

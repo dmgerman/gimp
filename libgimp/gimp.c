@@ -171,11 +171,19 @@ endif|#
 directive|endif
 end_endif
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|WIN32
-end_ifdef
+begin_if
+if|#
+directive|if
+name|defined
+argument_list|(
+name|G_OS_WIN32
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|G_HAVE_CYGWIN
+argument_list|)
+end_if
 
 begin_define
 DECL|macro|STRICT
@@ -280,7 +288,7 @@ end_function_decl
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifndef
 
 begin_function_decl
@@ -477,11 +485,19 @@ name|GIMP_MICRO_VERSION
 decl_stmt|;
 end_decl_stmt
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|WIN32
-end_ifdef
+begin_if
+if|#
+directive|if
+name|defined
+argument_list|(
+name|G_OS_WIN32
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|G_HAVE_CYGWIN
+argument_list|)
+end_if
 
 begin_decl_stmt
 DECL|variable|shm_handle
@@ -588,7 +604,7 @@ end_decl_stmt
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifdef
 
 begin_decl_stmt
@@ -701,7 +717,7 @@ parameter_list|)
 block|{
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 name|char
 modifier|*
 name|peer
@@ -730,7 +746,7 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 comment|/* Check for exe file name with spaces in the path having been split up    * by buggy NT C runtime, or something. I don't know why this happens    * on NT (including w2k), but not on w95/98.    */
 for|for
 control|(
@@ -933,7 +949,7 @@ index|]
 expr_stmt|;
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 comment|/* No use catching these on Win32, the user won't get any meaningful    * stack trace from glib anyhow. It's better to let Windows inform    * about the program error, and offer debugging if the plug-in    * has been built with MSVC, and the user has MSVC installed.    */
 ifdef|#
 directive|ifdef
@@ -1025,7 +1041,7 @@ endif|#
 directive|endif
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 name|_readchannel
 operator|=
 name|g_io_channel_unix_new
@@ -1208,7 +1224,7 @@ return|;
 block|}
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 comment|/* Tell the GIMP our thread id */
 name|thread
 operator|=
@@ -1263,9 +1279,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_close ()
+DECL|function|gimp_close (void)
 name|gimp_close
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -1281,9 +1299,17 @@ name|quit_proc
 call|)
 argument_list|()
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|WIN32
+if|#
+directive|if
+name|defined
+argument_list|(
+name|G_OS_WIN32
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|G_HAVE_CYGWIN
+argument_list|)
 name|CloseHandle
 argument_list|(
 name|shm_handle
@@ -1328,9 +1354,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_quit ()
+DECL|function|gimp_quit (void)
 name|gimp_quit
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gimp_close
 argument_list|()
@@ -4783,7 +4811,7 @@ parameter_list|)
 block|{
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 name|fd_set
 name|readfds
 decl_stmt|;
@@ -4990,9 +5018,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_extension_ack ()
+DECL|function|gimp_extension_ack (void)
 name|gimp_extension_ack
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 comment|/*  Send an extension initialization acknowledgement  */
 if|if
@@ -5011,9 +5041,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_run_temp ()
+DECL|function|gimp_run_temp (void)
 name|gimp_run_temp
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gimp_single_message
 argument_list|()
@@ -5046,7 +5078,7 @@ end_function
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifndef
 
 begin_function
@@ -5069,16 +5101,6 @@ if|if
 condition|(
 name|caught_fatal_sig
 condition|)
-ifdef|#
-directive|ifdef
-name|NATIVE_WIN32
-name|raise
-argument_list|(
-name|signum
-argument_list|)
-expr_stmt|;
-else|#
-directive|else
 name|kill
 argument_list|(
 name|getpid
@@ -5087,8 +5109,6 @@ argument_list|,
 name|signum
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|caught_fatal_sig
 operator|=
 literal|1
@@ -5140,21 +5160,11 @@ case|case
 literal|123456
 case|:
 comment|/* Must have some case value... */
-ifndef|#
-directive|ifndef
-name|NATIVE_WIN32
 name|g_on_error_query
 argument_list|(
 name|progname
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-name|abort
-argument_list|()
-expr_stmt|;
-endif|#
-directive|endif
 break|break;
 default|default:
 break|break;
@@ -5675,9 +5685,17 @@ operator|-
 literal|1
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|WIN32
+if|#
+directive|if
+name|defined
+argument_list|(
+name|G_OS_WIN32
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|G_HAVE_CYGWIN
+argument_list|)
 comment|/*        * Use Win32 shared memory mechanisms for        * transfering tile data        */
 name|char
 name|fileMapName

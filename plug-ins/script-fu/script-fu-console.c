@@ -124,7 +124,7 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifdef
 
 begin_include
@@ -147,7 +147,7 @@ end_endif
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifndef
 
 begin_define
@@ -185,7 +185,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c41bdd40108
+DECL|struct|__anon29800daf0108
 block|{
 DECL|member|console
 name|GtkWidget
@@ -2909,9 +2909,11 @@ begin_function
 specifier|static
 name|FILE
 modifier|*
-DECL|function|script_fu_open_siod_console ()
+DECL|function|script_fu_open_siod_console (void)
 name|script_fu_open_siod_console
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -2990,9 +2992,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_close_siod_console ()
+DECL|function|script_fu_close_siod_console (void)
 name|script_fu_close_siod_console
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -3030,7 +3034,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* !NATIVE_WIN32 */
+comment|/* !G_OS_WIN32 */
 end_comment
 
 begin_function

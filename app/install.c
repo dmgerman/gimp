@@ -95,7 +95,7 @@ end_include
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifndef
 
 begin_ifndef
@@ -422,7 +422,7 @@ name|GdkFont
 modifier|*
 name|font
 decl_stmt|;
-DECL|struct|__anon2991ba070108
+DECL|struct|__anon2bdff5340108
 specifier|static
 specifier|const
 struct|struct
@@ -1432,7 +1432,7 @@ end_function
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifdef
 
 begin_function
@@ -1871,7 +1871,7 @@ argument_list|)
 expr_stmt|;
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 name|gtk_text_insert
 argument_list|(
 name|GTK_TEXT
@@ -2054,7 +2054,7 @@ condition|)
 block|{
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 name|char
 modifier|*
 name|quoted_data_dir
@@ -2309,7 +2309,7 @@ name|FALSE
 expr_stmt|;
 endif|#
 directive|endif
-comment|/* !NATIVE_WIN32 */
+comment|/* !G_OS_WIN32 */
 block|}
 if|if
 condition|(
@@ -2381,7 +2381,7 @@ name|callback
 decl_stmt|;
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 name|FreeConsole
 argument_list|()
 expr_stmt|;

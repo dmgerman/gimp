@@ -121,7 +121,7 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifdef
 
 begin_define
@@ -212,7 +212,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* NATIVE_WIN32 */
+comment|/* G_OS_WIN32 */
 end_comment
 
 begin_if
@@ -348,7 +348,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28767c180108
+DECL|struct|__anon2bd34e030108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -383,7 +383,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28767c180208
+DECL|struct|__anon2bd34e030208
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -427,7 +427,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28767c180308
+DECL|struct|__anon2bd34e030308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -453,7 +453,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28767c180408
+DECL|struct|__anon2bd34e030408
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -474,7 +474,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28767c180508
+DECL|struct|__anon2bd34e030508
 block|{
 DECL|member|name
 name|gchar
@@ -502,7 +502,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon28767c18060a
+DECL|union|__anon2bd34e03060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -568,7 +568,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28767c180708
+DECL|struct|__anon2bd34e030708
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -649,7 +649,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28767c180808
+DECL|struct|__anon2bd34e030808
 block|{
 DECL|member|status
 name|GtkWidget
@@ -1719,7 +1719,7 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 comment|/* No, I don't know why, but this is  			       * necessary on NT 4.0. 			       */
 name|Sleep
 argument_list|(
@@ -3418,7 +3418,7 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 comment|/* Replace POSIX slashes with Win32 backslashes. This 		   * is just so script-fus can be written with only 		   * POSIX directory separators. 		   */
 name|val
 operator|=

@@ -646,7 +646,7 @@ argument_list|)
 expr_stmt|;
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 name|gimp_install_procedure
 argument_list|(
 literal|"extension_script_fu_console"
@@ -880,7 +880,7 @@ expr_stmt|;
 block|}
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 comment|/*    *  The script-fu console for interactive SIOD development    */
 elseif|else
 if|if
@@ -5190,7 +5190,7 @@ argument_list|)
 expr_stmt|;
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 comment|/*  if we're in server mode, listen for additional commands for 10 ms  */
 if|if
 condition|(

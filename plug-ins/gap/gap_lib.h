@@ -37,7 +37,7 @@ end_comment
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifdef
 
 begin_comment
@@ -77,7 +77,7 @@ directive|else
 end_else
 
 begin_comment
-comment|/* !NATIVE_WIN32 */
+comment|/* !G_OS_WIN32 */
 end_comment
 
 begin_comment
@@ -117,7 +117,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* !NATIVE_WIN32 */
+comment|/* !G_OS_WIN32 */
 end_comment
 
 begin_typedef

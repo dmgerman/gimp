@@ -131,11 +131,19 @@ endif|#
 directive|endif
 end_endif
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|WIN32
-end_ifdef
+begin_if
+if|#
+directive|if
+name|defined
+argument_list|(
+name|G_OS_WIN32
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|G_HAVE_CYGWIN
+argument_list|)
+end_if
 
 begin_define
 DECL|macro|STRICT
@@ -159,7 +167,7 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifdef
 
 begin_include
@@ -182,7 +190,7 @@ end_endif
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|__CYGWIN32__
+name|G_HAVE_CYGWIN
 end_ifdef
 
 begin_define
@@ -1067,11 +1075,19 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|WIN32
-end_ifdef
+begin_if
+if|#
+directive|if
+name|defined
+argument_list|(
+name|G_OS_WIN32
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|G_HAVE_CYGWIN
+argument_list|)
+end_if
 
 begin_decl_stmt
 DECL|variable|shm_handle
@@ -1206,9 +1222,17 @@ directive|endif
 block|}
 else|#
 directive|else
-ifdef|#
-directive|ifdef
-name|WIN32
+if|#
+directive|if
+name|defined
+argument_list|(
+name|G_OS_WIN32
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|G_HAVE_CYGWIN
+argument_list|)
 comment|/* Use Win32 shared memory mechanisms for    * transfering tile data.    */
 name|int
 name|pid
@@ -1971,9 +1995,17 @@ name|PlugIn
 modifier|*
 name|plug_in
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|WIN32
+if|#
+directive|if
+name|defined
+argument_list|(
+name|G_OS_WIN32
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|G_HAVE_CYGWIN
+argument_list|)
 name|CloseHandle
 argument_list|(
 name|shm_handle
@@ -3721,7 +3753,7 @@ if|#
 directive|if
 name|defined
 argument_list|(
-name|__CYGWIN32__
+name|G_HAVE_CYGWIN
 argument_list|)
 operator|||
 name|defined
@@ -3773,7 +3805,7 @@ endif|#
 directive|endif
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 name|plug_in
 operator|->
 name|my_read
@@ -3886,7 +3918,7 @@ directive|endif
 comment|/* Remember the file descriptors for the pipes.        */
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 name|sprintf
 argument_list|(
 name|plug_in
@@ -4091,12 +4123,12 @@ if|#
 directive|if
 name|defined
 argument_list|(
-name|__CYGWIN32__
+name|G_OS_WIN32
 argument_list|)
 operator|||
 name|defined
 argument_list|(
-name|NATIVE_WIN32
+name|G_HAVE_CYGWIN
 argument_list|)
 operator|||
 name|defined
@@ -4287,7 +4319,7 @@ name|NULL
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 comment|/* The plug-in tells us its thread id */
 if|if
 condition|(
@@ -4403,7 +4435,7 @@ name|status
 decl_stmt|;
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 name|struct
 name|timeval
 name|tv
@@ -4451,7 +4483,7 @@ expr_stmt|;
 comment|/*  give the plug-in some time (10 ms)  */
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 name|tv
 operator|.
 name|tv_sec
@@ -4492,7 +4524,7 @@ block|}
 comment|/* If necessary, kill the filter.        */
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 if|if
 condition|(
 name|kill_it
@@ -5957,7 +5989,7 @@ name|GP_REQUEST_WAKEUPS
 case|:
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 name|g_io_channel_win32_pipe_request_wakeups
 argument_list|(
 name|current_plug_in

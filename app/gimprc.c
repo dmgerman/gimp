@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2b309d950103
+DECL|enum|__anon291021320103
 typedef|typedef
 enum|enum
 block|{
@@ -13134,7 +13134,7 @@ if|#
 directive|if
 name|defined
 argument_list|(
-name|NATIVE_WIN32
+name|G_OS_WIN32
 argument_list|)
 operator|||
 name|defined
@@ -13196,7 +13196,7 @@ if|#
 directive|if
 name|defined
 argument_list|(
-name|NATIVE_WIN32
+name|G_OS_WIN32
 argument_list|)
 operator|||
 name|defined

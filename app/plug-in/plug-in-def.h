@@ -105,7 +105,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b144f570103
+DECL|enum|__anon29c313570103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -216,7 +216,7 @@ decl_stmt|;
 comment|/* Plug-in's read and write channels */
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 DECL|member|his_thread_id
 name|guint
 name|his_thread_id

@@ -114,7 +114,7 @@ end_endif
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifdef
 
 begin_include
@@ -166,7 +166,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6deff70108
+DECL|struct|__anon29cf95380108
 block|{
 DECL|member|run
 name|gint

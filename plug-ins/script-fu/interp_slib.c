@@ -99,7 +99,7 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifdef
 
 begin_define
@@ -1951,7 +1951,7 @@ operator|)
 return|;
 elif|#
 directive|elif
-name|NATIVE_WIN32
+name|G_OS_WIN32
 name|FILETIME
 name|creation
 decl_stmt|,

@@ -141,7 +141,7 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifdef
 
 begin_include
@@ -249,7 +249,7 @@ parameter_list|)
 block|{
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 name|va_list
 name|args
 decl_stmt|;
@@ -361,7 +361,7 @@ parameter_list|)
 block|{
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 name|va_list
 name|args
 decl_stmt|;

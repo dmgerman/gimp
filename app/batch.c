@@ -278,7 +278,7 @@ condition|)
 block|{
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 comment|/* for now */
 name|g_print
 argument_list|(
@@ -507,7 +507,7 @@ end_function
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 end_ifndef
 
 begin_function
@@ -746,7 +746,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* !NATIVE_WIN32 */
+comment|/* !G_OS_WIN32 */
 end_comment
 
 begin_function
