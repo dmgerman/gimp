@@ -204,6 +204,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimprecentlist.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -1040,6 +1046,13 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_recent_list_add_uri
+argument_list|(
+name|uri
+argument_list|,
+name|mime_type
+argument_list|)
+expr_stmt|;
 comment|/*  the display owns the image now  */
 name|g_object_unref
 argument_list|(

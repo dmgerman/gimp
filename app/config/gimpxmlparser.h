@@ -55,6 +55,25 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_xml_parser_parse_fd
+parameter_list|(
+name|GimpXmlParser
+modifier|*
+name|parser
+parameter_list|,
+name|gint
+name|fd
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_xml_parser_parse_io_channel
 parameter_list|(
 name|GimpXmlParser

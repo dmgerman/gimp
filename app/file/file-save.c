@@ -198,6 +198,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimprecentlist.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -931,6 +937,15 @@ operator|=
 name|saved_uri
 expr_stmt|;
 block|}
+name|gimp_recent_list_add_uri
+argument_list|(
+name|uri
+argument_list|,
+name|file_proc
+operator|->
+name|mime_type
+argument_list|)
+expr_stmt|;
 block|}
 elseif|else
 if|if
