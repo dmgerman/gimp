@@ -3518,7 +3518,7 @@ block|{
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|gimp_layer_get_linked
+name|gimp_drawable_get_linked
 argument_list|(
 name|self
 operator|->
@@ -3588,7 +3588,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_layer_set_linked
+name|gimp_drawable_set_linked
 argument_list|(
 name|self
 operator|->
