@@ -4554,7 +4554,7 @@ argument_list|)
 block|,
 name|MENU_SEPARATOR
 argument_list|(
-literal|"/Filters/---"
+literal|"/Filters/web-separator"
 argument_list|)
 block|,
 name|MENU_BRANCH
