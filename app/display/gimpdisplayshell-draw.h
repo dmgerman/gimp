@@ -219,17 +219,12 @@ name|GtkWidget
 modifier|*
 name|vsb
 decl_stmt|;
-DECL|member|qmaskoff
+DECL|member|qmask
 name|GtkWidget
 modifier|*
-name|qmaskoff
+name|qmask
 decl_stmt|;
-comment|/*  qmask buttons       */
-DECL|member|qmaskon
-name|GtkWidget
-modifier|*
-name|qmaskon
-decl_stmt|;
+comment|/*  qmask button        */
 DECL|member|hrule
 name|GtkWidget
 modifier|*

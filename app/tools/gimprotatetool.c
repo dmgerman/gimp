@@ -1485,6 +1485,10 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|TransformOptions
+modifier|*
+name|options
+decl_stmt|;
 name|gdouble
 name|angle1
 decl_stmt|,
@@ -1555,6 +1559,21 @@ name|cury
 expr_stmt|;
 return|return;
 block|}
+name|options
+operator|=
+operator|(
+name|TransformOptions
+operator|*
+operator|)
+name|GIMP_TOOL
+argument_list|(
+name|transform_tool
+argument_list|)
+operator|->
+name|tool_info
+operator|->
+name|tool_options
+expr_stmt|;
 name|cx
 operator|=
 name|transform_tool
@@ -1740,12 +1759,11 @@ expr_stmt|;
 comment|/*  constrain the angle to 15-degree multiples if ctrl is held down  */
 if|if
 condition|(
-name|transform_tool
+name|options
 operator|->
-name|state
-operator|&
-name|GDK_CONTROL_MASK
+name|constrain_1
 condition|)
+block|{
 name|transform_tool
 operator|->
 name|trans_info
@@ -1775,7 +1793,9 @@ operator|/
 name|FIFTEEN_DEG
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|transform_tool
 operator|->
 name|trans_info
@@ -1790,6 +1810,7 @@ index|[
 name|REAL_ANGLE
 index|]
 expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -37,22 +37,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_qmask_on_toggled
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_display_shell_qmask_off_toggled
+name|gimp_display_shell_qmask_toggled
 parameter_list|(
 name|GtkWidget
 modifier|*

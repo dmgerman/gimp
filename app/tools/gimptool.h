@@ -161,6 +161,11 @@ name|gboolean
 name|auto_snap_to
 decl_stmt|;
 comment|/*  snap to guides automatically                */
+DECL|member|handle_empty_image
+name|gboolean
+name|handle_empty_image
+decl_stmt|;
+comment|/*  invoke the tool on images without                                      *  active drawable                                      */
 DECL|member|preserve
 name|gboolean
 name|preserve

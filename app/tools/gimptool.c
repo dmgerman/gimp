@@ -526,11 +526,18 @@ expr_stmt|;
 comment|/*  Snap to guides   */
 name|tool
 operator|->
+name|handle_empty_image
+operator|=
+name|FALSE
+expr_stmt|;
+comment|/*  Don't work without active drawable  */
+name|tool
+operator|->
 name|preserve
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/*  Preserve tool across drawable changes  */
+comment|/*  Preserve across drawable changes  */
 name|tool
 operator|->
 name|gdisp

@@ -673,17 +673,24 @@ name|NULL
 expr_stmt|;
 name|tool
 operator|->
-name|tool_cursor
-operator|=
-name|GIMP_MOVE_TOOL_CURSOR
-expr_stmt|;
-name|tool
-operator|->
 name|auto_snap_to
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/*  Don't snap to guides  */
+comment|/*  Don't snap to guides     */
+name|tool
+operator|->
+name|handle_empty_image
+operator|=
+name|TRUE
+expr_stmt|;
+comment|/*  Can handle empty images  */
+name|tool
+operator|->
+name|tool_cursor
+operator|=
+name|GIMP_MOVE_TOOL_CURSOR
+expr_stmt|;
 block|}
 end_function
 
