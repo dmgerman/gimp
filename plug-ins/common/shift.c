@@ -104,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29db338d0108
+DECL|struct|__anon2b1bf0f80108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -123,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29db338d0208
+DECL|struct|__anon2b1bf0f80208
 block|{
 DECL|member|run
 name|gint
@@ -1862,7 +1862,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Shift Anount:"
+literal|"Shift Amount:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
