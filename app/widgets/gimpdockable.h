@@ -210,6 +210,11 @@ name|PangoLayout
 modifier|*
 name|title_layout
 decl_stmt|;
+DECL|member|title_window
+name|GdkWindow
+modifier|*
+name|title_window
+decl_stmt|;
 DECL|member|menu_button
 name|GtkWidget
 modifier|*
