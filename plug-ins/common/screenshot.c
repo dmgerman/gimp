@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*    *  ScreenShot plug-in  *  Copyright 1998-1999 Sven Neumann<sven@gimp.org>  *  *  Any suggestions, bug-reports or patches are very welcome.  *   *  This plug-in uses the X-utility xwd to grab an image from the screen  *  and the xwd-plug-in created by Peter Kirchgessner (pkirchg@aol.com)  *  to load this image into the gimp.  *  Hence its nothing but a simple frontend to those utilities.  */
+comment|/*    *  ScreenShot plug-in  *  Copyright 1998-2000 Sven Neumann<sven@gimp.org>  *  *  Any suggestions, bug-reports or patches are very welcome.  *   *  This plug-in uses the X-utility xwd to grab an image from the screen  *  and the xwd-plug-in created by Peter Kirchgessner (pkirchg@aol.com)  *  to load this image into the gimp.  *  Hence its nothing but a simple frontend to those utilities.  */
 end_comment
 
 begin_comment
@@ -112,10 +112,10 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275ee6a00108
+DECL|struct|__anon2b4e64df0108
 block|{
 DECL|member|root
-name|gint
+name|gboolean
 name|root
 decl_stmt|;
 DECL|member|window_id
@@ -128,47 +128,12 @@ name|guint
 name|delay
 decl_stmt|;
 DECL|member|decor
-name|gint
+name|gboolean
 name|decor
 decl_stmt|;
 DECL|typedef|ScreenShotValues
 block|}
 name|ScreenShotValues
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon275ee6a00208
-block|{
-DECL|member|decor_button
-name|GtkWidget
-modifier|*
-name|decor_button
-decl_stmt|;
-DECL|member|delay_spinner
-name|GtkWidget
-modifier|*
-name|delay_spinner
-decl_stmt|;
-DECL|member|single_button
-name|GtkWidget
-modifier|*
-name|single_button
-decl_stmt|;
-DECL|member|root_button
-name|GtkWidget
-modifier|*
-name|root_button
-decl_stmt|;
-DECL|member|run
-name|gint
-name|run
-decl_stmt|;
-DECL|typedef|ScreenShotInterface
-block|}
-name|ScreenShotInterface
 typedef|;
 end_typedef
 
@@ -195,19 +160,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|shootint
-specifier|static
-name|ScreenShotInterface
-name|shootint
-init|=
-block|{
-name|FALSE
-comment|/* run */
-block|}
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 specifier|static
 name|void
@@ -230,17 +182,14 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-comment|/* number of parameters passed in */
 name|GimpParam
 modifier|*
 name|param
 parameter_list|,
-comment|/* parameters passed in */
 name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-comment|/* number of parameters returned */
 name|GimpParam
 modifier|*
 modifier|*
@@ -248,10 +197,6 @@ name|return_vals
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* parameters to be returned */
-end_comment
 
 begin_function_decl
 specifier|static
@@ -265,7 +210,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|shoot_dialog
 parameter_list|(
 name|void
@@ -284,21 +229,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|shoot_toggle_update
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|radio_button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -361,6 +291,15 @@ name|image_ID
 init|=
 operator|-
 literal|1
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|run_flag
+name|gboolean
+name|run_flag
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -479,9 +418,9 @@ literal|"passed as a parameter."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
-literal|"1998, 1999"
+literal|"1998 - 2000"
 argument_list|,
-literal|"v0.9.4 (99/12/28)"
+literal|"v0.9.5 (2000/10/29)"
 argument_list|,
 name|N_
 argument_list|(
@@ -623,7 +562,10 @@ operator|!
 name|shoot_dialog
 argument_list|()
 condition|)
-return|return;
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
 break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
@@ -639,9 +581,6 @@ name|shootvals
 operator|.
 name|root
 operator|=
-operator|(
-name|gint
-operator|)
 name|param
 index|[
 literal|1
@@ -729,7 +668,6 @@ comment|/* Run the main function */
 name|shoot
 argument_list|()
 expr_stmt|;
-block|}
 name|status
 operator|=
 operator|(
@@ -743,6 +681,7 @@ name|GIMP_PDB_SUCCESS
 else|:
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|status
@@ -850,7 +789,7 @@ index|[
 literal|7
 index|]
 decl_stmt|;
-comment|/* only need a maximum of 7 arguments to xwd */
+comment|/*  need a maximum of 7 arguments to xwd  */
 name|gdouble
 name|xres
 decl_stmt|,
@@ -867,7 +806,7 @@ name|i
 init|=
 literal|0
 decl_stmt|;
-comment|/* get a temp name with the right extension and save into it. */
+comment|/*  get a temp name with the right extension  */
 name|tmpname
 operator|=
 name|gimp_temp_name
@@ -875,7 +814,7 @@ argument_list|(
 literal|"xwd"
 argument_list|)
 expr_stmt|;
-comment|/* construct the xwd arguments */
+comment|/*  construct the xwd arguments  */
 name|xwdargv
 index|[
 name|i
@@ -973,7 +912,7 @@ expr_stmt|;
 ifndef|#
 directive|ifndef
 name|__EMX__
-comment|/* fork off a xwd process */
+comment|/*  fork off a xwd process  */
 if|if
 condition|(
 operator|(
@@ -1013,7 +952,7 @@ argument_list|,
 name|xwdargv
 argument_list|)
 expr_stmt|;
-comment|/* What are we doing here? exec must have failed */
+comment|/*  What are we doing here? exec must have failed  */
 name|g_message
 argument_list|(
 literal|"screenshot: exec failed: xwd: %s\n"
@@ -1091,7 +1030,7 @@ expr_stmt|;
 return|return;
 block|}
 block|}
-comment|/* now load the tmpfile using the xwd-plug-in */
+comment|/*  now load the tmpfile using the xwd-plug-in  */
 name|params
 operator|=
 name|gimp_run_procedure
@@ -1149,7 +1088,7 @@ argument_list|,
 name|retvals
 argument_list|)
 expr_stmt|;
-comment|/* get rid of the tmpfile */
+comment|/*  get rid of the tmpfile  */
 name|unlink
 argument_list|(
 name|tmpname
@@ -1168,7 +1107,7 @@ operator|-
 literal|1
 condition|)
 block|{
-comment|/* figure out the monitor resolution and set the image to it */
+comment|/*  figure out the monitor resolution and set the image to it  */
 name|gimp_get_monitor_resolution
 argument_list|(
 operator|&
@@ -1187,7 +1126,7 @@ argument_list|,
 name|yres
 argument_list|)
 expr_stmt|;
-comment|/* unset the image filename */
+comment|/*  unset the image filename  */
 name|gimp_image_set_filename
 argument_list|(
 name|image_ID
@@ -1201,12 +1140,41 @@ block|}
 end_function
 
 begin_comment
-comment|/* ScreenShot dialog */
+comment|/*  ScreenShot dialog  */
 end_comment
 
 begin_function
 specifier|static
-name|gint
+name|void
+DECL|function|shoot_ok_callback (GtkWidget * widget,gpointer data)
+name|shoot_ok_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|run_flag
+operator|=
+name|TRUE
+expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|data
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
 DECL|function|shoot_dialog (void)
 name|shoot_dialog
 parameter_list|(
@@ -1237,67 +1205,32 @@ name|GtkWidget
 modifier|*
 name|label
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|button
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|decor_button
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|spinner
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|sep
+decl_stmt|;
 name|GSList
 modifier|*
 name|radio_group
 init|=
 name|NULL
 decl_stmt|;
-name|GtkAdjustment
+name|GtkObject
 modifier|*
 name|adj
 decl_stmt|;
-name|gint
-name|radio_pressed
-index|[
-literal|2
-index|]
-decl_stmt|;
-name|gint
-name|decorations
-decl_stmt|;
-name|guint
-name|delay
-decl_stmt|;
-name|radio_pressed
-index|[
-literal|0
-index|]
-operator|=
-operator|(
-name|shootvals
-operator|.
-name|root
-operator|==
-name|FALSE
-operator|)
-expr_stmt|;
-name|radio_pressed
-index|[
-literal|1
-index|]
-operator|=
-operator|(
-name|shootvals
-operator|.
-name|root
-operator|==
-name|TRUE
-operator|)
-expr_stmt|;
-name|decorations
-operator|=
-name|shootvals
-operator|.
-name|decor
-expr_stmt|;
-name|delay
-operator|=
-name|shootvals
-operator|.
-name|delay
-expr_stmt|;
-comment|/* Init GTK  */
 name|gimp_ui_init
 argument_list|(
 literal|"screenshot"
@@ -1305,7 +1238,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Main Dialog */
+comment|/*  main dialog  */
 name|dialog
 operator|=
 name|gimp_dialog_new
@@ -1331,7 +1264,7 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"Grab"
+literal|"OK"
 argument_list|)
 argument_list|,
 name|shoot_ok_callback
@@ -1428,12 +1361,15 @@ argument_list|(
 name|main_vbox
 argument_list|)
 expr_stmt|;
-comment|/*  Single Window */
+comment|/*  single window  */
 name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
-name|NULL
+name|_
+argument_list|(
+literal|"Grab"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1491,9 +1427,7 @@ argument_list|,
 name|vbox
 argument_list|)
 expr_stmt|;
-name|shootint
-operator|.
-name|single_button
+name|button
 operator|=
 name|gtk_radio_button_new_with_label
 argument_list|(
@@ -1501,7 +1435,7 @@ name|radio_group
 argument_list|,
 name|_
 argument_list|(
-literal|"Grab a Single Window"
+literal|"Single Window"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1511,9 +1445,7 @@ name|gtk_radio_button_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
-name|shootint
-operator|.
-name|single_button
+name|button
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1524,9 +1456,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|shootint
-operator|.
-name|single_button
+name|button
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1539,9 +1469,7 @@ name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|shootint
-operator|.
-name|single_button
+name|button
 argument_list|)
 argument_list|,
 literal|"toggled"
@@ -1549,38 +1477,46 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|shoot_toggle_update
+name|gimp_radio_button_update
 argument_list|,
 operator|&
-name|radio_pressed
-index|[
-literal|0
-index|]
+name|shootvals
+operator|.
+name|root
+argument_list|)
+expr_stmt|;
+name|gtk_object_set_user_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|shootint
-operator|.
-name|single_button
+name|button
 argument_list|)
 argument_list|,
-name|radio_pressed
-index|[
-literal|0
-index|]
+operator|!
+name|shootvals
+operator|.
+name|root
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|shootint
-operator|.
-name|single_button
+name|button
 argument_list|)
 expr_stmt|;
-comment|/* with decorations */
+comment|/*  with decorations  */
 name|hbox
 operator|=
 name|gtk_hbox_new
@@ -1606,15 +1542,13 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|shootint
-operator|.
 name|decor_button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Include Decorations"
+literal|"With Decorations"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1622,8 +1556,6 @@ name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|shootint
-operator|.
 name|decor_button
 argument_list|)
 argument_list|,
@@ -1632,10 +1564,36 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|shoot_toggle_update
+name|gimp_toggle_button_update
 argument_list|,
 operator|&
-name|decorations
+name|shootvals
+operator|.
+name|decor
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|decor_button
+argument_list|)
+argument_list|,
+name|shootvals
+operator|.
+name|decor
+argument_list|)
+expr_stmt|;
+name|gtk_object_set_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+literal|"set_sensitive"
+argument_list|,
+name|decor_button
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
@@ -1645,8 +1603,6 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-name|shootint
-operator|.
 name|decor_button
 argument_list|,
 name|FALSE
@@ -1658,8 +1614,6 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|shootint
-operator|.
 name|decor_button
 argument_list|)
 expr_stmt|;
@@ -1668,42 +1622,19 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|vbox
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
-comment|/* Root Window */
-name|frame
+name|sep
 operator|=
-name|gtk_frame_new
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
-argument_list|)
+name|gtk_hseparator_new
+argument_list|()
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|main_vbox
+name|vbox
 argument_list|)
 argument_list|,
-name|frame
+name|sep
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1712,38 +1643,13 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|vbox
-operator|=
-name|gtk_vbox_new
+name|gtk_widget_show
 argument_list|(
-name|FALSE
-argument_list|,
-literal|2
+name|sep
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|vbox
-argument_list|)
-expr_stmt|;
-name|shootint
-operator|.
-name|root_button
+comment|/*  root window  */
+name|button
 operator|=
 name|gtk_radio_button_new_with_label
 argument_list|(
@@ -1751,7 +1657,7 @@ name|radio_group
 argument_list|,
 name|_
 argument_list|(
-literal|"Grab the Whole Screen"
+literal|"Whole Screen"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1761,9 +1667,7 @@ name|gtk_radio_button_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
-name|shootint
-operator|.
-name|root_button
+name|button
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1774,9 +1678,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|shootint
-operator|.
-name|root_button
+name|button
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1789,9 +1691,7 @@ name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|shootint
-operator|.
-name|root_button
+name|button
 argument_list|)
 argument_list|,
 literal|"toggled"
@@ -1799,20 +1699,42 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|shoot_toggle_update
+name|gimp_radio_button_update
 argument_list|,
 operator|&
-name|radio_pressed
-index|[
-literal|1
-index|]
+name|shootvals
+operator|.
+name|root
+argument_list|)
+expr_stmt|;
+name|gtk_object_set_user_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|shootvals
+operator|.
+name|root
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|shootint
-operator|.
-name|root_button
+name|button
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1825,7 +1747,7 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-comment|/* with delay */
+comment|/*  with delay  */
 name|hbox
 operator|=
 name|gtk_hbox_new
@@ -1884,15 +1806,10 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
-operator|(
-name|gfloat
-operator|)
+name|shootvals
+operator|.
 name|delay
 argument_list|,
 literal|0.0
@@ -1906,13 +1823,31 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
-name|shootint
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|adj
+argument_list|)
+argument_list|,
+literal|"value_changed"
+argument_list|,
+name|gimp_int_adjustment_update
+argument_list|,
+operator|&
+name|shootvals
 operator|.
-name|delay_spinner
+name|delay
+argument_list|)
+expr_stmt|;
+name|spinner
 operator|=
 name|gtk_spin_button_new
 argument_list|(
+name|GTK_ADJUSTMENT
+argument_list|(
 name|adj
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -1926,9 +1861,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-name|shootint
-operator|.
-name|delay_spinner
+name|spinner
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1939,9 +1872,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|shootint
-operator|.
-name|delay_spinner
+name|spinner
 argument_list|)
 expr_stmt|;
 name|label
@@ -1980,45 +1911,6 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|shootint
-operator|.
-name|decor_button
-argument_list|)
-argument_list|,
-name|decorations
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_sensitive
-argument_list|(
-name|shootint
-operator|.
-name|decor_button
-argument_list|,
-name|radio_pressed
-index|[
-literal|0
-index|]
-argument_list|)
-expr_stmt|;
-name|gtk_toggle_button_set_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|shootint
-operator|.
-name|root_button
-argument_list|)
-argument_list|,
-name|radio_pressed
-index|[
-literal|1
-index|]
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|dialog
@@ -2027,173 +1919,14 @@ expr_stmt|;
 name|gtk_main
 argument_list|()
 expr_stmt|;
-name|gdk_flush
-argument_list|()
-expr_stmt|;
-name|shootvals
-operator|.
-name|root
-operator|=
-name|radio_pressed
-index|[
-literal|1
-index|]
-expr_stmt|;
-name|shootvals
-operator|.
-name|decor
-operator|=
-name|decorations
-expr_stmt|;
 return|return
-name|shootint
-operator|.
-name|run
+name|run_flag
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/*  ScreenShot interface functions  */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|shoot_ok_callback (GtkWidget * widget,gpointer data)
-name|shoot_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|shootint
-operator|.
-name|run
-operator|=
-name|TRUE
-expr_stmt|;
-name|shootvals
-operator|.
-name|delay
-operator|=
-name|gtk_spin_button_get_value_as_int
-argument_list|(
-name|GTK_SPIN_BUTTON
-argument_list|(
-name|shootint
-operator|.
-name|delay_spinner
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_widget_destroy
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|shoot_toggle_update (GtkWidget * widget,gpointer radio_button)
-name|shoot_toggle_update
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|radio_button
-parameter_list|)
-block|{
-name|gint
-modifier|*
-name|toggle_val
-decl_stmt|;
-name|toggle_val
-operator|=
-operator|(
-name|gint
-operator|*
-operator|)
-name|radio_button
-expr_stmt|;
-if|if
-condition|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|widget
-argument_list|)
-operator|->
-name|active
-condition|)
-operator|*
-name|toggle_val
-operator|=
-name|TRUE
-expr_stmt|;
-else|else
-operator|*
-name|toggle_val
-operator|=
-name|FALSE
-expr_stmt|;
-if|if
-condition|(
-name|widget
-operator|==
-name|shootint
-operator|.
-name|single_button
-condition|)
-block|{
-name|gtk_widget_set_sensitive
-argument_list|(
-name|shootint
-operator|.
-name|decor_button
-argument_list|,
-operator|*
-name|toggle_val
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|widget
-operator|==
-name|shootint
-operator|.
-name|root_button
-condition|)
-block|{
-name|gtk_widget_set_sensitive
-argument_list|(
-name|shootint
-operator|.
-name|decor_button
-argument_list|,
-operator|!
-operator|*
-name|toggle_val
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-end_function
-
-begin_comment
-comment|/* Delay functions */
+comment|/*  delay functions  */
 end_comment
 
 begin_function
@@ -2238,15 +1971,13 @@ block|{
 name|gint
 modifier|*
 name|seconds_left
-decl_stmt|;
-name|seconds_left
-operator|=
+init|=
 operator|(
 name|gint
 operator|*
 operator|)
 name|data
-expr_stmt|;
+decl_stmt|;
 operator|(
 operator|*
 name|seconds_left
@@ -2263,10 +1994,8 @@ name|gtk_main_quit
 argument_list|()
 expr_stmt|;
 return|return
-operator|(
 operator|*
 name|seconds_left
-operator|)
 return|;
 block|}
 end_function
