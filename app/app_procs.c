@@ -813,8 +813,14 @@ block|}
 end_function
 
 begin_comment
-comment|/* gimprc debugging code, to be removed */
+comment|/****************************************  * gimprc debugging code, to be removed *  ****************************************/
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"config/gimpconfig-serialize.h"
+end_include
 
 begin_function
 specifier|static
