@@ -283,7 +283,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2c6c47a50108
+DECL|struct|__anon2b33b7590108
 typedef|typedef
 struct|struct
 block|{
@@ -320,7 +320,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c6c47a50208
+DECL|struct|__anon2b33b7590208
 typedef|typedef
 struct|struct
 block|{
@@ -375,7 +375,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c6c47a50308
+DECL|struct|__anon2b33b7590308
 typedef|typedef
 struct|struct
 block|{
@@ -10089,7 +10089,7 @@ decl_stmt|;
 name|int
 name|tmp
 decl_stmt|;
-name|int
+name|double
 name|slope
 decl_stmt|;
 if|if
@@ -10183,13 +10183,23 @@ name|x1
 operator|=
 name|x2
 operator|+
-operator|(
+call|(
+name|int
+call|)
+argument_list|(
+literal|0.5
+operator|+
+call|(
+name|double
+call|)
+argument_list|(
 literal|0
 operator|-
 name|y2
-operator|)
+argument_list|)
 operator|/
 name|slope
+argument_list|)
 expr_stmt|;
 name|y1
 operator|=
@@ -10249,13 +10259,23 @@ name|x2
 operator|=
 name|x1
 operator|+
-operator|(
+call|(
+name|int
+call|)
+argument_list|(
+literal|0.5
+operator|+
+call|(
+name|double
+call|)
+argument_list|(
 name|height
 operator|-
 name|y1
-operator|)
+argument_list|)
 operator|/
 name|slope
+argument_list|)
 expr_stmt|;
 name|y2
 operator|=
