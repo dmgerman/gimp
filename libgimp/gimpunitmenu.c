@@ -48,7 +48,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon27b36c3b0103
+DECL|enum|__anon2b667f4d0103
 enum|enum
 block|{
 DECL|enumerator|GUM_UNIT_CHANGED_SIGNAL
@@ -342,7 +342,7 @@ name|start
 init|;
 name|u
 operator|<
-name|gimp_unit_get_number_of_units
+name|gimp_unit_get_number_of_built_in_units
 argument_list|()
 condition|;
 name|u
@@ -606,11 +606,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp_unit_menu_build_string (gchar * format,GUnit unit)
 specifier|static
 specifier|const
 name|gchar
 modifier|*
+DECL|function|gimp_unit_menu_build_string (gchar * format,GUnit unit)
 name|gimp_unit_menu_build_string
 parameter_list|(
 name|gchar

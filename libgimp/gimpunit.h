@@ -38,7 +38,7 @@ comment|/* __cplusplus */
 comment|/* I've put this here and not to libgimp/gimpenums.h, because if this  * file includes libgimp/gimpenums.h there is a name clash wherever  * someone includes libgimp/gimpunit.h and app/gimpimage.h  * (the constants RGB, GRAY and INDEXED are defined in both  * gimpenums.h and gimpimage.h) (is this a bug? don't know...)  */
 typedef|typedef
 enum|enum
-DECL|enum|__anon27fbd8e40103
+DECL|enum|__anon2bdf1c310103
 block|{
 DECL|enumerator|UNIT_PIXEL
 name|UNIT_PIXEL
@@ -50,8 +50,8 @@ name|UNIT_INCH
 init|=
 literal|1
 block|,
-DECL|enumerator|UNIT_CM
-name|UNIT_CM
+DECL|enumerator|UNIT_MM
+name|UNIT_MM
 init|=
 literal|2
 block|,
@@ -84,15 +84,39 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-comment|/* create a new, empty user unit and returns it's ID  */
+comment|/* Create a new user unit and returns it's ID.  *  * Note that a new unit is always created with it's deletion flag  * set to TRUE. You will have to set it to FALSE after creation to make  * the unit definition persistant.  */
 name|GUnit
 name|gimp_unit_new
 parameter_list|(
-name|void
+name|gchar
+modifier|*
+name|identifier
+parameter_list|,
+name|gfloat
+name|factor
+parameter_list|,
+name|gint
+name|digits
+parameter_list|,
+name|gchar
+modifier|*
+name|symbol
+parameter_list|,
+name|gchar
+modifier|*
+name|abbreviation
+parameter_list|,
+name|gchar
+modifier|*
+name|singular
+parameter_list|,
+name|gchar
+modifier|*
+name|plural
 parameter_list|)
 function_decl|;
-comment|/* the following functions fall back to inch (not pixel, as pixel is not  * a 'real' unit) if the value passed is out of range  *  * trying to change built-in units will be ignored  */
-comment|/* if the deletion flag for a unit is TRUE on GIMP exit, this unit  * will not be saved in the user units database  */
+comment|/* The following functions fall back to inch (not pixel, as pixel is not  * a 'real' unit) if the value passed is out of range.  *  * Trying to change the deletion flag of built-in units will be ignored.  */
+comment|/* If the deletion flag for a unit is TRUE on GIMP exit, this unit  * will not be saved in the user units database.  */
 name|guint
 name|gimp_unit_get_deletion_flag
 parameter_list|(
@@ -110,43 +134,7 @@ name|guint
 name|deletion_flag
 parameter_list|)
 function_decl|;
-comment|/* the meaning of 'factor' is:  * distance_in_units == ( factor * distance_in_inches )  *  * returns 0 for unit == UNIT_PIXEL as we don't have resolution info here  */
-name|gfloat
-name|gimp_unit_get_factor
-parameter_list|(
-name|GUnit
-name|unit
-parameter_list|)
-function_decl|;
-name|void
-name|gimp_unit_set_factor
-parameter_list|(
-name|GUnit
-name|unit
-parameter_list|,
-name|gfloat
-name|factor
-parameter_list|)
-function_decl|;
-comment|/* the following function gives a hint how many digits a spinbutton  * should provide to get approximately the accuracy of an inch-spinbutton  * with two digits.  *  * returns 0 for unit == UNIT_PIXEL as we don't have resolution info here  */
-name|gint
-name|gimp_unit_get_digits
-parameter_list|(
-name|GUnit
-name|unit
-parameter_list|)
-function_decl|;
-name|void
-name|gimp_unit_set_digits
-parameter_list|(
-name|GUnit
-name|unit
-parameter_list|,
-name|gint
-name|digits
-parameter_list|)
-function_decl|;
-comment|/* this one is an untranslated string for gimprc */
+comment|/* This one is an untranslated string for gimprc */
 specifier|const
 name|gchar
 modifier|*
@@ -156,15 +144,20 @@ name|GUnit
 name|unit
 parameter_list|)
 function_decl|;
-name|void
-name|gimp_unit_set_identifier
+comment|/* The meaning of 'factor' is:  * distance_in_units == ( factor * distance_in_inches )  *  * Returns 0 for unit == UNIT_PIXEL as we don't have resolution info here  */
+name|gfloat
+name|gimp_unit_get_factor
 parameter_list|(
 name|GUnit
 name|unit
-parameter_list|,
-name|gchar
-modifier|*
-name|identifier
+parameter_list|)
+function_decl|;
+comment|/* The following function gives a hint how many digits a spinbutton  * should provide to get approximately the accuracy of an inch-spinbutton  * with two digits.  *  * Returns 0 for unit == UNIT_PIXEL as we don't have resolution info here.  */
+name|gint
+name|gimp_unit_get_digits
+parameter_list|(
+name|GUnit
+name|unit
 parameter_list|)
 function_decl|;
 specifier|const
@@ -176,17 +169,6 @@ name|GUnit
 name|unit
 parameter_list|)
 function_decl|;
-name|void
-name|gimp_unit_set_symbol
-parameter_list|(
-name|GUnit
-name|unit
-parameter_list|,
-name|gchar
-modifier|*
-name|symbol
-parameter_list|)
-function_decl|;
 specifier|const
 name|gchar
 modifier|*
@@ -194,17 +176,6 @@ name|gimp_unit_get_abbreviation
 parameter_list|(
 name|GUnit
 name|unit
-parameter_list|)
-function_decl|;
-name|void
-name|gimp_unit_set_abbreviation
-parameter_list|(
-name|GUnit
-name|unit
-parameter_list|,
-name|gchar
-modifier|*
-name|abbreviation
 parameter_list|)
 function_decl|;
 specifier|const
@@ -216,17 +187,6 @@ name|GUnit
 name|unit
 parameter_list|)
 function_decl|;
-name|void
-name|gimp_unit_set_singular
-parameter_list|(
-name|GUnit
-name|unit
-parameter_list|,
-name|gchar
-modifier|*
-name|singular
-parameter_list|)
-function_decl|;
 specifier|const
 name|gchar
 modifier|*
@@ -234,17 +194,6 @@ name|gimp_unit_get_plural
 parameter_list|(
 name|GUnit
 name|unit
-parameter_list|)
-function_decl|;
-name|void
-name|gimp_unit_set_plural
-parameter_list|(
-name|GUnit
-name|unit
-parameter_list|,
-name|gchar
-modifier|*
-name|plural
 parameter_list|)
 function_decl|;
 ifdef|#
