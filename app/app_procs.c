@@ -2828,6 +2828,10 @@ expr_stmt|;
 name|tools_options_dialog_free
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|save_session_info
+condition|)
 name|save_sessionrc
 argument_list|()
 expr_stmt|;
