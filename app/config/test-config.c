@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcoreconfig.h"
+file|"gimpguiconfig.h"
 end_include
 
 begin_function_decl
@@ -184,7 +184,7 @@ name|config
 operator|=
 name|g_object_new
 argument_list|(
-name|GIMP_TYPE_CORE_CONFIG
+name|GIMP_TYPE_GUI_CONFIG
 argument_list|,
 name|NULL
 argument_list|)

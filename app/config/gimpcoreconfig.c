@@ -142,7 +142,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae7c0710103
+DECL|enum|__anon27c6e7710103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -467,7 +467,7 @@ name|PROP_DEFAULT_COMMENT
 argument_list|,
 literal|"default-comment"
 argument_list|,
-name|NULL
+literal|"Created with The GIMP"
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
