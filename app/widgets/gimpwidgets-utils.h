@@ -347,6 +347,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GClosure
+modifier|*
+name|gimp_action_get_accel_closure
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
