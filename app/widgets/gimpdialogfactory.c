@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpconfigwriter.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontainerview.h"
 end_include
 
@@ -143,7 +149,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2f8c500103
+DECL|enum|__anon2b9289f50103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -164,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2f8c500203
+DECL|enum|__anon2b9289f50203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -241,9 +247,9 @@ name|GimpDialogFactory
 modifier|*
 name|factory
 parameter_list|,
-name|FILE
+name|GimpConfigWriter
 modifier|*
-name|fp
+name|writer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3081,12 +3087,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dialog_factories_session_save (FILE * file)
+DECL|function|gimp_dialog_factories_session_save (GimpConfigWriter * writer)
 name|gimp_dialog_factories_session_save
 parameter_list|(
-name|FILE
+name|GimpConfigWriter
 modifier|*
-name|file
+name|writer
 parameter_list|)
 block|{
 name|GimpDialogFactoryClass
@@ -3095,7 +3101,7 @@ name|factory_class
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|file
+name|writer
 operator|!=
 name|NULL
 argument_list|)
@@ -3118,7 +3124,7 @@ name|GHFunc
 operator|)
 name|gimp_dialog_factories_save_foreach
 argument_list|,
-name|file
+name|writer
 argument_list|)
 expr_stmt|;
 block|}
@@ -3397,7 +3403,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dialog_factories_save_foreach (gchar * name,GimpDialogFactory * factory,FILE * fp)
+DECL|function|gimp_dialog_factories_save_foreach (gchar * name,GimpDialogFactory * factory,GimpConfigWriter * writer)
 name|gimp_dialog_factories_save_foreach
 parameter_list|(
 name|gchar
@@ -3408,9 +3414,9 @@ name|GimpDialogFactory
 modifier|*
 name|factory
 parameter_list|,
-name|FILE
+name|GimpConfigWriter
 modifier|*
-name|fp
+name|writer
 parameter_list|)
 block|{
 name|GList
@@ -3496,7 +3502,6 @@ name|info
 operator|->
 name|toplevel_entry
 condition|)
-block|{
 name|dialog_name
 operator|=
 name|info
@@ -3505,30 +3510,44 @@ name|toplevel_entry
 operator|->
 name|identifier
 expr_stmt|;
-block|}
 else|else
-block|{
 name|dialog_name
 operator|=
 literal|"dock"
 expr_stmt|;
-block|}
-name|fprintf
+name|gimp_config_writer_open
 argument_list|(
-name|fp
+name|writer
 argument_list|,
-literal|"(session-info \"%s\" \"%s\"\n"
+literal|"session-info"
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_string
+argument_list|(
+name|writer
 argument_list|,
 name|name
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_string
+argument_list|(
+name|writer
 argument_list|,
 name|dialog_name
 argument_list|)
 expr_stmt|;
-name|fprintf
+name|gimp_config_writer_open
 argument_list|(
-name|fp
+name|writer
 argument_list|,
-literal|"    (position %d %d)"
+literal|"position"
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_printf
+argument_list|(
+name|writer
+argument_list|,
+literal|"%d %d"
 argument_list|,
 name|info
 operator|->
@@ -3537,6 +3556,11 @@ argument_list|,
 name|info
 operator|->
 name|y
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_close
+argument_list|(
+name|writer
 argument_list|)
 expr_stmt|;
 if|if
@@ -3553,11 +3577,19 @@ name|height
 operator|>
 literal|0
 condition|)
-name|fprintf
+block|{
+name|gimp_config_writer_open
 argument_list|(
-name|fp
+name|writer
 argument_list|,
-literal|"\n    (size %d %d)"
+literal|"size"
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_printf
+argument_list|(
+name|writer
+argument_list|,
+literal|"%d %d"
 argument_list|,
 name|info
 operator|->
@@ -3568,19 +3600,32 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
+name|gimp_config_writer_close
+argument_list|(
+name|writer
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|info
 operator|->
 name|open
 condition|)
-name|fprintf
+block|{
+name|gimp_config_writer_open
 argument_list|(
-name|fp
+name|writer
 argument_list|,
-literal|"\n    (open-on-exit)"
+literal|"open-on-exit"
 argument_list|)
 expr_stmt|;
+name|gimp_config_writer_close
+argument_list|(
+name|writer
+argument_list|)
+expr_stmt|;
+block|}
 comment|/*  save aux-info  */
 if|if
 condition|(
@@ -3609,11 +3654,11 @@ name|GList
 modifier|*
 name|aux
 decl_stmt|;
-name|fprintf
+name|gimp_config_writer_open
 argument_list|(
-name|fp
+name|writer
 argument_list|,
-literal|"\n    (aux-info ("
+literal|"aux-info"
 argument_list|)
 expr_stmt|;
 for|for
@@ -3633,13 +3678,10 @@ argument_list|(
 name|aux
 argument_list|)
 control|)
-block|{
-name|gchar
-modifier|*
-name|str
-decl_stmt|;
-name|str
-operator|=
+name|gimp_config_writer_string
+argument_list|(
+name|writer
+argument_list|,
 operator|(
 name|gchar
 operator|*
@@ -3647,38 +3689,11 @@ operator|)
 name|aux
 operator|->
 name|data
-expr_stmt|;
-if|if
-condition|(
-name|aux
-operator|->
-name|prev
-condition|)
-name|fprintf
-argument_list|(
-name|fp
-argument_list|,
-literal|" \"%s\""
-argument_list|,
-name|str
 argument_list|)
 expr_stmt|;
-else|else
-name|fprintf
+name|gimp_config_writer_close
 argument_list|(
-name|fp
-argument_list|,
-literal|"\"%s\""
-argument_list|,
-name|str
-argument_list|)
-expr_stmt|;
-block|}
-name|fprintf
-argument_list|(
-name|fp
-argument_list|,
-literal|"))"
+name|writer
 argument_list|)
 expr_stmt|;
 name|g_list_foreach
@@ -3739,11 +3754,11 @@ operator|->
 name|widget
 argument_list|)
 expr_stmt|;
-name|fprintf
+name|gimp_config_writer_open
 argument_list|(
-name|fp
+name|writer
 argument_list|,
-literal|"\n    (dock "
+literal|"dock"
 argument_list|)
 expr_stmt|;
 for|for
@@ -3786,11 +3801,11 @@ name|books
 operator|->
 name|data
 expr_stmt|;
-name|fprintf
+name|gimp_config_writer_open
 argument_list|(
-name|fp
+name|writer
 argument_list|,
-literal|"("
+literal|"book"
 argument_list|)
 expr_stmt|;
 name|children
@@ -3864,6 +3879,11 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
+name|gimp_config_writer_linefeed
+argument_list|(
+name|writer
+argument_list|)
+expr_stmt|;
 name|view
 operator|=
 name|gimp_container_view_get_by_dockable
@@ -3902,9 +3922,9 @@ operator|->
 name|preview_size
 condition|)
 block|{
-name|fprintf
+name|gimp_config_writer_printf
 argument_list|(
-name|fp
+name|writer
 argument_list|,
 literal|"\"%s@%d\""
 argument_list|,
@@ -3918,9 +3938,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|fprintf
+name|gimp_config_writer_printf
 argument_list|(
-name|fp
+name|writer
 argument_list|,
 literal|"\"%s\""
 argument_list|,
@@ -3930,19 +3950,6 @@ name|identifier
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|pages
-operator|->
-name|next
-condition|)
-name|fprintf
-argument_list|(
-name|fp
-argument_list|,
-literal|" "
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 name|g_list_free
@@ -3950,37 +3957,26 @@ argument_list|(
 name|children
 argument_list|)
 expr_stmt|;
-name|fprintf
+name|gimp_config_writer_close
 argument_list|(
-name|fp
-argument_list|,
-literal|")%s"
-argument_list|,
-name|books
-operator|->
-name|next
-condition|?
-literal|"\n          "
-else|:
-literal|""
+name|writer
 argument_list|)
 expr_stmt|;
+comment|/* book */
 block|}
-name|fprintf
+name|gimp_config_writer_close
 argument_list|(
-name|fp
-argument_list|,
-literal|")"
+name|writer
 argument_list|)
 expr_stmt|;
+comment|/* dock */
 block|}
-name|fprintf
+name|gimp_config_writer_close
 argument_list|(
-name|fp
-argument_list|,
-literal|")\n\n"
+name|writer
 argument_list|)
 expr_stmt|;
+comment|/* session-info */
 block|}
 block|}
 end_function

@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpobject.h"
 end_include
 
@@ -524,9 +518,9 @@ begin_function_decl
 name|void
 name|gimp_dialog_factories_session_save
 parameter_list|(
-name|FILE
+name|GimpConfigWriter
 modifier|*
-name|file
+name|writer
 parameter_list|)
 function_decl|;
 end_function_decl

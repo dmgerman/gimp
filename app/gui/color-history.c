@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpconfigwriter.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"color-history.h"
 end_include
 
@@ -120,12 +126,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|color_history_write (FILE * fp)
+DECL|function|color_history_write (GimpConfigWriter * writer)
 name|color_history_write
 parameter_list|(
-name|FILE
+name|GimpConfigWriter
 modifier|*
-name|fp
+name|writer
 parameter_list|)
 block|{
 name|gint
@@ -139,11 +145,11 @@ condition|)
 name|color_history_init
 argument_list|()
 expr_stmt|;
-name|fprintf
+name|gimp_config_writer_open
 argument_list|(
-name|fp
+name|writer
 argument_list|,
-literal|"(color-history"
+literal|"color-history"
 argument_list|)
 expr_stmt|;
 for|for
@@ -245,11 +251,18 @@ operator|.
 name|a
 argument_list|)
 expr_stmt|;
-name|fprintf
+name|gimp_config_writer_open
 argument_list|(
-name|fp
+name|writer
 argument_list|,
-literal|"\n    (color-rgba %s %s %s %s)"
+literal|"color-rgba"
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_printf
+argument_list|(
+name|writer
+argument_list|,
+literal|"%s %s %s %s"
 argument_list|,
 name|buf
 index|[
@@ -272,12 +285,15 @@ literal|3
 index|]
 argument_list|)
 expr_stmt|;
-block|}
-name|fprintf
+name|gimp_config_writer_close
 argument_list|(
-name|fp
-argument_list|,
-literal|")\n\n"
+name|writer
+argument_list|)
+expr_stmt|;
+block|}
+name|gimp_config_writer_close
+argument_list|(
+name|writer
 argument_list|)
 expr_stmt|;
 block|}

@@ -16,16 +16,6 @@ directive|define
 name|__COLOR_HISTORY_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_comment
-comment|/* FILE */
-end_comment
-
 begin_define
 DECL|macro|COLOR_HISTORY_SIZE
 define|#
@@ -90,9 +80,9 @@ begin_function_decl
 name|void
 name|color_history_write
 parameter_list|(
-name|FILE
+name|GimpConfigWriter
 modifier|*
-name|fp
+name|writer
 parameter_list|)
 function_decl|;
 end_function_decl

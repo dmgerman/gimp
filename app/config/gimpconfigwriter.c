@@ -27,6 +27,12 @@ directive|include
 file|<stdio.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<string.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -432,6 +438,13 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|name
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|writer
@@ -555,6 +568,11 @@ argument_list|(
 name|string
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|len
+condition|)
+block|{
 name|g_string_append_c
 argument_list|(
 name|writer
@@ -575,6 +593,7 @@ argument_list|,
 name|len
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -623,15 +642,6 @@ operator|->
 name|error
 condition|)
 return|return;
-name|g_string_append_c
-argument_list|(
-name|writer
-operator|->
-name|buffer
-argument_list|,
-literal|' '
-argument_list|)
-expr_stmt|;
 name|va_start
 argument_list|(
 name|args
@@ -651,6 +661,15 @@ expr_stmt|;
 name|va_end
 argument_list|(
 name|args
+argument_list|)
+expr_stmt|;
+name|g_string_append_c
+argument_list|(
+name|writer
+operator|->
+name|buffer
+argument_list|,
+literal|' '
 argument_list|)
 expr_stmt|;
 name|g_string_append
