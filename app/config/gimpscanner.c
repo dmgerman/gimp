@@ -124,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b27f33e0108
+DECL|struct|__anon2969b47a0108
 block|{
 DECL|member|fd
 name|gint
@@ -260,12 +260,11 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_set_error
-argument_list|(
-name|error
-argument_list|,
-name|GIMP_CONFIG_ERROR
-argument_list|,
+name|GimpConfigError
+name|code
+decl_stmt|;
+name|code
+operator|=
 operator|(
 name|errno
 operator|==
@@ -275,6 +274,14 @@ name|GIMP_CONFIG_ERROR_OPEN_ENOENT
 else|:
 name|GIMP_CONFIG_ERROR_OPEN
 operator|)
+expr_stmt|;
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_CONFIG_ERROR
+argument_list|,
+name|code
 argument_list|,
 name|_
 argument_list|(
@@ -992,7 +999,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b27f33e0203
+DECL|enum|__anon2969b47a0203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB
