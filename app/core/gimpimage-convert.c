@@ -8,7 +8,7 @@ comment|/*    * TODO for Convert:    *    *   Make GRAYSCALE->INDEXED sane again
 end_comment
 
 begin_comment
-comment|/*  * 97/10/14 - fixed divide-by-zero when converting a completely transparent  *  RGB image to indexed. [Adam]  *  * 97/07/01 - started todo/revision log.  Put code back in to  *  eliminate full-alpha pixels from RGB histogram.  *  [Adam D. Moss - adam@gimp.org]  */
+comment|/*  * 97/11/04 - fixed the accidental use of the colour-counting case  *  when palette_type is WEB or MONO. [Adam]  *  * 97/10/25 - colour-counting implemented (could use some hashing, but  *  performance actually seems okay) - now RGB->INDEXED conversion isn't  *  destructive if it doesn't have to be. [Adam]  *  * 97/10/14 - fixed divide-by-zero when converting a completely transparent  *  RGB image to indexed. [Adam]  *  * 97/07/01 - started todo/revision log.  Put code back in to  *  eliminate full-alpha pixels from RGB histogram.  *  [Adam D. Moss - adam@gimp.org]  */
 end_comment
 
 begin_include
@@ -1772,7 +1772,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae9ca180108
+DECL|struct|__anon28952a040108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1819,7 +1819,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae9ca180208
+DECL|struct|__anon28952a040208
 block|{
 DECL|member|ncolors
 name|long
@@ -1838,7 +1838,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae9ca180308
+DECL|struct|__anon28952a040308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -3905,6 +3905,7 @@ argument_list|,
 name|num_cols
 argument_list|)
 expr_stmt|;
+comment|/* 	       * Note: generate_histogram_rgb may set needs_quantize if 	       *  the image contains more colours than the limit specified 	       *  by the user. 	       */
 block|}
 block|}
 if|if
@@ -3915,10 +3916,19 @@ operator|==
 name|RGB
 operator|)
 operator|&&
+operator|(
 operator|!
 name|needs_quantize
+operator|)
+operator|&&
+operator|(
+name|palette_type
+operator|==
+name|MAKE_PALETTE
+operator|)
 condition|)
 block|{
+comment|/* If this is an RGB image, and the user wanted a custom-built           *  generated palette, and this image has no more colours than           *  the user asked for, we don't need the first pass (quantization).           *           * There's also no point in dithering, since there's no error to           *  spread.  So we destroy the old quantobj and make a new one           *  with the remapping function set to a special LUT-based           *  no-dither remapper.           */
 name|quantobj
 operator|->
 name|delete_func

@@ -526,7 +526,7 @@ argument_list|(
 name|temp
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
@@ -567,7 +567,7 @@ argument_list|,
 name|GTK_JUSTIFY_LEFT
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_end
+name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
