@@ -564,7 +564,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon28b7b0760103
+DECL|enum|__anon28ef25d50103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -1486,7 +1486,8 @@ block|{
 name|gchar
 modifier|*
 name|new_filename
-decl_stmt|,
+decl_stmt|;
+name|gchar
 modifier|*
 name|old_filename
 decl_stmt|;
@@ -3350,7 +3351,7 @@ condition|(
 name|mask
 condition|)
 block|{
-name|int
+name|gint
 name|mx
 decl_stmt|,
 name|my
