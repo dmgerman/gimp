@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c37d25e0103
+DECL|enum|__anon2a1ed1f60103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -2185,7 +2185,7 @@ literal|0
 operator|&&
 name|size
 operator|<=
-literal|256
+name|GIMP_PREVIEW_MAX_SIZE
 argument_list|,
 name|NULL
 argument_list|)

@@ -736,7 +736,7 @@ name|width
 operator|*
 literal|2
 argument_list|,
-literal|256
+name|GIMP_PREVIEW_MAX_POPUP_SIZE
 argument_list|)
 argument_list|,
 name|MIN
@@ -747,7 +747,7 @@ name|height
 operator|*
 literal|2
 argument_list|,
-literal|256
+name|GIMP_PREVIEW_MAX_POPUP_SIZE
 argument_list|)
 argument_list|,
 literal|1.0

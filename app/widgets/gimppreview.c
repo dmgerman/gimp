@@ -131,7 +131,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3091e80103
+DECL|enum|__anon288380ca0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -2065,7 +2065,7 @@ literal|0
 operator|&&
 name|size
 operator|<=
-literal|256
+name|GIMP_PREVIEW_MAX_SIZE
 argument_list|,
 name|NULL
 argument_list|)
@@ -2177,7 +2177,7 @@ literal|0
 operator|&&
 name|width
 operator|<=
-literal|256
+name|GIMP_PREVIEW_MAX_SIZE
 argument_list|,
 name|NULL
 argument_list|)
@@ -2190,7 +2190,7 @@ literal|0
 operator|&&
 name|height
 operator|<=
-literal|256
+name|GIMP_PREVIEW_MAX_SIZE
 argument_list|,
 name|NULL
 argument_list|)
@@ -2596,7 +2596,7 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-literal|256
+name|GIMP_PREVIEW_MAX_SIZE
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -2678,7 +2678,7 @@ literal|0
 operator|&&
 name|width
 operator|<=
-literal|256
+name|GIMP_PREVIEW_MAX_SIZE
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -2689,7 +2689,7 @@ literal|0
 operator|&&
 name|height
 operator|<=
-literal|256
+name|GIMP_PREVIEW_MAX_SIZE
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -3112,12 +3112,30 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|preview
+operator|->
+name|viewable
+condition|)
 name|GIMP_PREVIEW_GET_CLASS
 argument_list|(
 name|preview
 argument_list|)
 operator|->
 name|get_size
+argument_list|(
+name|preview
+argument_list|,
+name|size
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|)
+expr_stmt|;
+else|else
+name|gimp_preview_real_get_size
 argument_list|(
 name|preview
 argument_list|,
@@ -3282,7 +3300,7 @@ name|width
 operator|*
 literal|2
 argument_list|,
-literal|256
+name|GIMP_PREVIEW_MAX_POPUP_SIZE
 argument_list|)
 expr_stmt|;
 name|popup_height
@@ -3295,7 +3313,7 @@ name|height
 operator|*
 literal|2
 argument_list|,
-literal|256
+name|GIMP_PREVIEW_MAX_POPUP_SIZE
 argument_list|)
 expr_stmt|;
 return|return
