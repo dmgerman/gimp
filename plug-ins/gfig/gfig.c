@@ -314,7 +314,7 @@ DECL|macro|PREVIEW_MASK
 define|#
 directive|define
 name|PREVIEW_MASK
-value|(GDK_EXPOSURE_MASK       | \ 		       GDK_POINTER_MOTION_MASK | \                        GDK_BUTTON_PRESS_MASK   | \ 		       GDK_BUTTON_RELEASE_MASK | \ 		       GDK_BUTTON_MOTION_MASK  | \ 		       GDK_KEY_PRESS_MASK      | \ 		       GDK_KEY_RELEASE_MASK)
+value|(GDK_EXPOSURE_MASK       | \                        GDK_POINTER_MOTION_MASK | \                        GDK_BUTTON_PRESS_MASK   | \                        GDK_BUTTON_RELEASE_MASK | \                        GDK_BUTTON_MOTION_MASK  | \                        GDK_KEY_PRESS_MASK      | \                        GDK_KEY_RELEASE_MASK)
 end_define
 
 begin_decl_stmt
@@ -902,7 +902,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2932d4100108
+DECL|struct|__anon2b0ea2d30108
 block|{
 DECL|member|gridspacing
 name|void
@@ -1366,7 +1366,7 @@ end_decl_stmt
 
 begin_comment
 DECL|variable|select_page_widget
-comment|/* Widget for the selection part 				       * of notebook */
+comment|/* Widget for the selection part                                        * of notebook */
 end_comment
 
 begin_decl_stmt
@@ -1410,7 +1410,7 @@ end_decl_stmt
 
 begin_comment
 DECL|variable|gfig_obj_for_menu
-comment|/* More static data - 				      * need to know which object was selected*/
+comment|/* More static data -                                       * need to know which object was selected*/
 end_comment
 
 begin_decl_stmt
@@ -2131,7 +2131,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|if (run_mode == GIMP_RUN_INTERACTIVE) 	gimp_set_data ("plug_in_gfig",&selvals, sizeof (SelectItVals));
+block|if (run_mode == GIMP_RUN_INTERACTIVE)         gimp_set_data ("plug_in_gfig",&selvals, sizeof (SelectItVals));
 endif|#
 directive|endif
 comment|/* 0 */
@@ -2439,7 +2439,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  *	Insert gfigs in alphabetical order  */
+comment|/*  *      Insert gfigs in alphabetical order  */
 end_comment
 
 begin_function
@@ -3902,7 +3902,7 @@ if|#
 directive|if
 literal|0
 comment|/* Maurits: code not implemented */
-block|gtk_toggle_button_set_active 	(GTK_TOGGLE_BUTTON (gfig_opt_widget.lockongrid), 	 current_obj->opts.lockongrid);
+block|gtk_toggle_button_set_active         (GTK_TOGGLE_BUTTON (gfig_opt_widget.lockongrid),          current_obj->opts.lockongrid);
 endif|#
 directive|endif
 block|}
@@ -13671,13 +13671,99 @@ argument_list|()
 expr_stmt|;
 name|gfig_path
 operator|=
-name|gimp_plug_in_get_path
+name|gimp_gimprc_query
 argument_list|(
 literal|"gfig-path"
-argument_list|,
-literal|"gfig"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gfig_path
+condition|)
+block|{
+name|gchar
+modifier|*
+name|gimprc
+init|=
+name|gimp_personal_rc_file
+argument_list|(
+literal|"gimprc"
+argument_list|)
+decl_stmt|;
+name|gchar
+modifier|*
+name|full_path
+decl_stmt|;
+name|gchar
+modifier|*
+name|esc_path
+decl_stmt|;
+name|full_path
+operator|=
+name|g_strconcat
+argument_list|(
+literal|"${gimp_dir}"
+argument_list|,
+name|G_DIR_SEPARATOR_S
+argument_list|,
+literal|"gfig"
+argument_list|,
+name|G_SEARCHPATH_SEPARATOR_S
+argument_list|,
+literal|"${gimp_data_dir}"
+argument_list|,
+name|G_DIR_SEPARATOR_S
+argument_list|,
+literal|"gfig"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|esc_path
+operator|=
+name|g_strescape
+argument_list|(
+name|full_path
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|full_path
+argument_list|)
+expr_stmt|;
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"No %s in gimprc:\n"
+literal|"You need to add an entry like\n"
+literal|"(%s \"%s\")\n"
+literal|"to your %s file."
+argument_list|)
+argument_list|,
+literal|"gfig-path"
+argument_list|,
+literal|"gfig-path"
+argument_list|,
+name|esc_path
+argument_list|,
+name|gimprc
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|gimprc
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|esc_path
+argument_list|)
+expr_stmt|;
+block|}
 name|img_width
 operator|=
 name|gimp_drawable_width
@@ -13696,7 +13782,7 @@ operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
-comment|/* Start buildng the dialog up */
+comment|/* Start building the dialog up */
 name|top_level_dlg
 operator|=
 name|gimp_dialog_new
@@ -16964,7 +17050,7 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|/* Warning - we have a problem here 	   * since we are not really "creating an entry" 	   * why call gfig_new? 	   */
+comment|/* Warning - we have a problem here            * since we are not really "creating an entry"            * why call gfig_new?            */
 name|new_button_callback
 argument_list|(
 name|NULL
@@ -17671,7 +17757,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|accelerator_table = gtk_accelerator_table_new ();   gtk_menu_set_accelerator_table (GTK_MENU (gfig_op_menu), 				  accelerator_table);   gtk_window_add_accelerator_table (GTK_WINDOW (window), accelerator_table);
+block|accelerator_table = gtk_accelerator_table_new ();   gtk_menu_set_accelerator_table (GTK_MENU (gfig_op_menu),                                   accelerator_table);   gtk_window_add_accelerator_table (GTK_WINDOW (window), accelerator_table);
 endif|#
 directive|endif
 comment|/* 0 */
@@ -17720,7 +17806,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|gtk_widget_install_accelerator (menu_item, 				  accelerator_table, 				  "activate", 'S', 0);
+block|gtk_widget_install_accelerator (menu_item,                                   accelerator_table,                                   "activate", 'S', 0);
 endif|#
 directive|endif
 comment|/* 0 */
@@ -17765,7 +17851,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|gtk_widget_install_accelerator (menu_item, 				  accelerator_table, 				  "activate", 'A', 0);
+block|gtk_widget_install_accelerator (menu_item,                                   accelerator_table,                                   "activate", 'A', 0);
 endif|#
 directive|endif
 comment|/* 0 */
@@ -17810,7 +17896,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|gtk_widget_install_accelerator (menu_item, 				  accelerator_table, 				  "activate", 'C', 0);
+block|gtk_widget_install_accelerator (menu_item,                                   accelerator_table,                                   "activate", 'C', 0);
 endif|#
 directive|endif
 comment|/* 0 */
@@ -17855,7 +17941,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|gtk_widget_install_accelerator (menu_item, 				  accelerator_table, 				  "activate", 'E', 0);
+block|gtk_widget_install_accelerator (menu_item,                                   accelerator_table,                                   "activate", 'E', 0);
 endif|#
 directive|endif
 comment|/* 0 */
