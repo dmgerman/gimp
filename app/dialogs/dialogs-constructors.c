@@ -1344,8 +1344,8 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_document_list_new (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
-name|dialogs_document_list_new
+DECL|function|dialogs_document_list_view_new (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
+name|dialogs_document_list_view_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
@@ -1387,8 +1387,8 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_template_list_new (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
-name|dialogs_template_list_new
+DECL|function|dialogs_template_list_view_new (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
+name|dialogs_template_list_view_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
@@ -1800,8 +1800,8 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_document_grid_new (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
-name|dialogs_document_grid_new
+DECL|function|dialogs_document_grid_view_new (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
+name|dialogs_document_grid_view_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
@@ -1830,7 +1830,50 @@ name|context
 argument_list|,
 name|preview_size
 argument_list|,
-literal|1
+literal|0
+argument_list|,
+name|factory
+operator|->
+name|menu_factory
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|dialogs_template_grid_view_new (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
+name|dialogs_template_grid_view_new
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|gint
+name|preview_size
+parameter_list|)
+block|{
+return|return
+name|gimp_template_view_new
+argument_list|(
+name|GIMP_VIEW_TYPE_GRID
+argument_list|,
+name|context
+operator|->
+name|gimp
+operator|->
+name|templates
+argument_list|,
+name|context
+argument_list|,
+name|preview_size
+argument_list|,
+literal|0
 argument_list|,
 name|factory
 operator|->
