@@ -161,7 +161,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c54e2c40108
+DECL|struct|__anon29c16f0d0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c54e2c40208
+DECL|struct|__anon29c16f0d0208
 block|{
 DECL|member|run
 name|gboolean
@@ -211,7 +211,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c54e2c40308
+DECL|struct|__anon29c16f0d0308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -647,7 +647,7 @@ argument_list|,
 comment|/* don't translate '<Image>' */
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Light Effects/SuperNova..."
+literal|"<Image>/Filters/Light Effects/Su_perNova..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

@@ -106,7 +106,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b17de3f0108
+DECL|struct|__anon2b9c3c070108
 block|{
 DECL|member|posx
 name|gint
@@ -125,7 +125,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b17de3f0208
+DECL|struct|__anon2b9c3c070208
 block|{
 DECL|member|run
 name|gboolean
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b17de3f0308
+DECL|struct|__anon2b9c3c070308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -882,7 +882,7 @@ argument_list|,
 comment|/* don't translate '<Image>' entry,  			   * it is keyword for the gtk toolkit */
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Light Effects/FlareFX..."
+literal|"<Image>/Filters/Light Effects/_FlareFX..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

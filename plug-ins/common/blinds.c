@@ -161,7 +161,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a18c9d10108
+DECL|struct|__anon28e8c2f20108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -577,7 +577,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/Blinds..."
+literal|"<Image>/Filters/Distorts/_Blinds..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

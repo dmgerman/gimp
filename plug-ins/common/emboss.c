@@ -82,7 +82,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3f77bd0103
+DECL|enum|__anon27b538be0103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -100,7 +100,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3f77bd0208
+DECL|struct|__anon27b538be0208
 block|{
 DECL|member|img
 name|gint32
@@ -178,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3f77bd0308
+DECL|struct|__anon27b538be0308
 block|{
 DECL|member|width
 name|gint
@@ -515,7 +515,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/Emboss..."
+literal|"<Image>/Filters/Distorts/_Emboss..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

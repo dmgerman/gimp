@@ -202,7 +202,7 @@ literal|"27th January 1998"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Semi-Flatten"
+literal|"<Image>/Filters/Colors/_Semi-Flatten"
 argument_list|)
 argument_list|,
 literal|"RGBA"

@@ -354,7 +354,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon2a56f78a0108
+DECL|struct|__anon2bc04b560108
 typedef|typedef
 struct|struct
 block|{
@@ -423,7 +423,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a56f78a0208
+DECL|struct|__anon2bc04b560208
 typedef|typedef
 struct|struct
 block|{
@@ -541,7 +541,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a56f78a0308
+DECL|struct|__anon2bc04b560308
 typedef|typedef
 struct|struct
 block|{
@@ -570,7 +570,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a56f78a0408
+DECL|struct|__anon2bc04b560408
 typedef|typedef
 struct|struct
 block|{
@@ -597,7 +597,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a56f78a0508
+DECL|struct|__anon2bc04b560508
 typedef|typedef
 struct|struct
 block|{
@@ -1392,7 +1392,7 @@ literal|"02/2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Map/Sample Colorize..."
+literal|"<Image>/Filters/Colors/Map/_Sample Colorize..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

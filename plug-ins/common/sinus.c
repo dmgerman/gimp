@@ -22252,7 +22252,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bf42180108
+DECL|struct|__anon2ab0d8650108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -22355,7 +22355,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bf42180208
+DECL|struct|__anon2ab0d8650208
 block|{
 DECL|member|height
 DECL|member|width
@@ -22437,7 +22437,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bf42180308
+DECL|struct|__anon2ab0d8650308
 block|{
 DECL|member|width
 name|gint
@@ -22973,7 +22973,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Sinus..."
+literal|"<Image>/Filters/Render/_Sinus..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

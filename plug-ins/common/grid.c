@@ -265,7 +265,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b33edb0108
+DECL|struct|__anon29b43d7f0108
 block|{
 DECL|member|hwidth
 name|gint
@@ -564,7 +564,7 @@ literal|"1997 - 2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Pattern/Grid..."
+literal|"<Image>/Filters/Render/Pattern/_Grid..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"

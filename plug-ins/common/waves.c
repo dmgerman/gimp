@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d66c9b0103
+DECL|enum|__anon289cd62f0103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -61,7 +61,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d66c9b0208
+DECL|struct|__anon289cd62f0208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -395,7 +395,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/Waves..."
+literal|"<Image>/Filters/Distorts/_Waves..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

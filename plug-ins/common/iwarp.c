@@ -121,7 +121,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ec8a6f0103
+DECL|enum|__anon29aa5a6a0103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -149,7 +149,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec8a6f0208
+DECL|struct|__anon29aa5a6a0208
 block|{
 DECL|member|run
 name|gboolean
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec8a6f0308
+DECL|struct|__anon29aa5a6a0308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -1025,7 +1025,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/IWarp..."
+literal|"<Image>/Filters/Distorts/_IWarp..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

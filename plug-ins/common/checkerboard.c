@@ -68,7 +68,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c27d0c70108
+DECL|struct|__anon27dfc36b0108
 block|{
 DECL|member|run
 name|gboolean
@@ -316,7 +316,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Pattern/Checkerboard..."
+literal|"<Image>/Filters/Render/Pattern/_Checkerboard..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af3e96a0108
+DECL|struct|__anon2b4d258a0108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -103,7 +103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af3e96a0208
+DECL|struct|__anon2b4d258a0208
 block|{
 DECL|member|run
 name|gboolean
@@ -348,7 +348,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/Shift..."
+literal|"<Image>/Filters/Distorts/_Shift..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

@@ -202,7 +202,7 @@ literal|"1996"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Layer/Colors/Auto/Stretch Contrast"
+literal|"<Image>/Layer/Colors/Auto/_Stretch Contrast"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
@@ -812,7 +812,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b056ade0108
+DECL|struct|__anon299c578a0108
 typedef|typedef
 struct|struct
 block|{

@@ -821,7 +821,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Enhance/Sharpen..."
+literal|"<Image>/Filters/Enhance/_Sharpen..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

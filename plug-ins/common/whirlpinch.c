@@ -150,7 +150,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2772015b0108
+DECL|struct|__anon2b871eb60108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2772015b0208
+DECL|struct|__anon2b871eb60208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -619,7 +619,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/Whirl and Pinch..."
+literal|"<Image>/Filters/Distorts/W_hirl and Pinch..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

@@ -794,7 +794,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2923eff20108
+DECL|struct|__anon29b495470108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -880,7 +880,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2923eff20208
+DECL|struct|__anon29b495470208
 block|{
 DECL|member|y
 name|gint32
@@ -2980,7 +2980,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/CurveBend..."
+literal|"<Image>/Filters/Distorts/_CurveBend..."
 argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES

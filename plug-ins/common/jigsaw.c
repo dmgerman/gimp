@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4a26450103
+DECL|enum|__anon2c49f86d0103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -70,7 +70,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4a26450203
+DECL|enum|__anon2c49f86d0203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -2161,7 +2161,7 @@ literal|"May 2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Pattern/Jigsaw..."
+literal|"<Image>/Filters/Render/Pattern/_Jigsaw..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

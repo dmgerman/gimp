@@ -75,7 +75,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2aeb670108
+DECL|struct|__anon29199d660108
 block|{
 DECL|member|img
 name|gint32
@@ -106,7 +106,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2aeb670203
+DECL|enum|__anon29199d660203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -401,7 +401,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Enhance/NL Filter..."
+literal|"<Image>/Filters/Enhance/_NL Filter..."
 argument_list|)
 argument_list|,
 literal|"RGB,GRAY"

@@ -161,7 +161,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a59d76a0103
+DECL|enum|__anon2c2e50640103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -179,7 +179,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a59d76a0203
+DECL|enum|__anon2c2e50640203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -198,7 +198,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a59d76a0308
+DECL|struct|__anon2c2e50640308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -257,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a59d76a0408
+DECL|struct|__anon2c2e50640408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -302,7 +302,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a59d76a0508
+DECL|struct|__anon2c2e50640508
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1275,7 +1275,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/Bump Map..."
+literal|"<Image>/Filters/Map/_Bump Map..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

@@ -497,7 +497,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Enhance/Destripe..."
+literal|"<Image>/Filters/Enhance/Des_tripe..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

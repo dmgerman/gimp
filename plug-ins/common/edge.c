@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2938315e0108
+DECL|struct|__anon29feda0c0108
 block|{
 DECL|member|amount
 name|gdouble
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2938315e0208
+DECL|struct|__anon29feda0c0208
 block|{
 DECL|member|run
 name|gboolean
@@ -339,7 +339,7 @@ literal|"1996"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Edge-Detect/Edge..."
+literal|"<Image>/Filters/Edge-Detect/_Edge..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

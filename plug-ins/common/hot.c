@@ -70,7 +70,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2e2b9b0108
+DECL|struct|__anon27c8f6630108
 block|{
 DECL|member|image
 name|gint32
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2e2b9b0203
+DECL|enum|__anon27c8f6630203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2e2b9b0303
+DECL|enum|__anon27c8f6630303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -165,7 +165,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c2e2b9b0408
+DECL|struct|__anon27c8f6630408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -629,7 +629,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Hot..."
+literal|"<Image>/Filters/Colors/_Hot..."
 argument_list|)
 argument_list|,
 literal|"RGB"

@@ -222,7 +222,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Edge-Detect/Laplace"
+literal|"<Image>/Filters/Edge-Detect/_Laplace"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

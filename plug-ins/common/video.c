@@ -60925,7 +60925,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29da1b240108
+DECL|struct|__anon2b2ffc350108
 block|{
 DECL|member|pattern_number
 name|gint
@@ -60948,7 +60948,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29da1b240208
+DECL|struct|__anon2b2ffc350208
 block|{
 DECL|member|run
 name|gboolean
@@ -61274,7 +61274,7 @@ literal|"2nd March 1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/Video..."
+literal|"<Image>/Filters/Distorts/Vi_deo..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

@@ -716,7 +716,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af16c290108
+DECL|struct|__anon29b3a3c50108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -868,7 +868,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af16c290208
+DECL|struct|__anon29b3a3c50208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1093,7 +1093,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af16c290308
+DECL|struct|__anon29b3a3c50308
 block|{
 DECL|member|run
 name|gint
@@ -1234,7 +1234,7 @@ literal|"1996-1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/Value Propagate..."
+literal|"<Image>/Filters/Distorts/_Value Propagate..."
 argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
@@ -1269,7 +1269,7 @@ literal|"1996-1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Generic/Erode"
+literal|"<Image>/Filters/Generic/E_rode"
 argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
@@ -1304,7 +1304,7 @@ literal|"1996-1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Generic/Dilate"
+literal|"<Image>/Filters/Generic/_Dilate"
 argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
@@ -3938,7 +3938,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af16c290408
+DECL|struct|__anon29b3a3c50408
 block|{
 DECL|member|min_modified
 name|gshort

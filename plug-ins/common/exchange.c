@@ -95,7 +95,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5bf3360108
+DECL|struct|__anon2b40b1610108
 block|{
 DECL|member|from
 name|GimpRGB
@@ -567,7 +567,7 @@ literal|"June 17th, 1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Map/Color Exchange..."
+literal|"<Image>/Filters/Colors/Map/_Color Exchange..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

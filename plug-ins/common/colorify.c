@@ -164,7 +164,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a9d040108
+DECL|struct|__anon2be4734f0108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -179,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a9d040208
+DECL|struct|__anon2be4734f0208
 block|{
 DECL|member|run
 name|gboolean
@@ -476,7 +476,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Colorify..."
+literal|"<Image>/Filters/Colors/_Colorify..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

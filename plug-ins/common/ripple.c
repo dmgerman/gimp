@@ -124,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b394ed10108
+DECL|struct|__anon2c85abc80108
 block|{
 DECL|member|period
 name|gint
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b394ed10208
+DECL|struct|__anon2c85abc80208
 block|{
 DECL|member|run
 name|gboolean
@@ -518,7 +518,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/Ripple..."
+literal|"<Image>/Filters/Distorts/_Ripple..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

@@ -222,7 +222,7 @@ literal|"27th March 1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Value Invert"
+literal|"<Image>/Filters/Colors/_Value Invert"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*"

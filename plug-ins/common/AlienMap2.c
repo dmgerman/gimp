@@ -30515,7 +30515,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c453380108
+DECL|struct|__anon2a1f97f50108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -30566,7 +30566,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c453380208
+DECL|struct|__anon2a1f97f50208
 block|{
 DECL|member|run
 name|gint
@@ -30995,7 +30995,7 @@ literal|"24th April 1998"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Map/Alien Map 2..."
+literal|"<Image>/Filters/Colors/Map/Alien Map _2..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

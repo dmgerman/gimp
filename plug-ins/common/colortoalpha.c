@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd1e3bd0108
+DECL|struct|__anon28f561a80108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd1e3bd0208
+DECL|struct|__anon28f561a80208
 block|{
 DECL|member|run
 name|gboolean
@@ -328,7 +328,7 @@ literal|"7th Aug 1999"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Color to Alpha..."
+literal|"<Image>/Filters/Colors/Color to _Alpha..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

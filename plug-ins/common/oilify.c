@@ -103,7 +103,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b17760108
+DECL|struct|__anon28c746640108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b17760208
+DECL|struct|__anon28c746640208
 block|{
 DECL|member|run
 name|gboolean
@@ -358,7 +358,7 @@ literal|"1996"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Artistic/Oilify..."
+literal|"<Image>/Filters/Artistic/Oili_fy..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

@@ -290,7 +290,7 @@ literal|"1998"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Border Average..."
+literal|"<Image>/Filters/Colors/_Border Average..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

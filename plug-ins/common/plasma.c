@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c85e5fc0108
+DECL|struct|__anon2b96fb270108
 block|{
 DECL|member|seed
 name|guint32
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c85e5fc0208
+DECL|struct|__anon2b96fb270208
 block|{
 DECL|member|run
 name|gboolean
@@ -593,7 +593,7 @@ literal|"May 2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Clouds/Plasma..."
+literal|"<Image>/Filters/Render/Clouds/_Plasma..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

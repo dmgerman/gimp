@@ -204,7 +204,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Layer/Colors/Auto/Stretch HSV"
+literal|"<Image>/Layer/Colors/Auto/Stretch _HSV"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*"
@@ -444,7 +444,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bf1bb750108
+DECL|struct|__anon2c36e10a0108
 typedef|typedef
 struct|struct
 block|{

@@ -203,7 +203,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Layer/Colors/Auto/Color Enhance"
+literal|"<Image>/Layer/Colors/Auto/_Color Enhance"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*"
@@ -988,7 +988,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2913da950108
+DECL|struct|__anon2bf65b530108
 typedef|typedef
 struct|struct
 block|{

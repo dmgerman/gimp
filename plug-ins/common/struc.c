@@ -40878,7 +40878,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f8b3160103
+DECL|enum|__anon286d3fb30103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40898,7 +40898,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f8b3160208
+DECL|struct|__anon286d3fb30208
 block|{
 DECL|member|direction
 name|gint
@@ -40917,7 +40917,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f8b3160308
+DECL|struct|__anon286d3fb30308
 block|{
 DECL|member|run
 name|gboolean
@@ -41148,7 +41148,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Artistic/Apply Canvas..."
+literal|"<Image>/Filters/Artistic/_Apply Canvas..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

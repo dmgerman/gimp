@@ -661,7 +661,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Enhance/Despeckle..."
+literal|"<Image>/Filters/Enhance/Des_peckle..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

@@ -105,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2771a4860108
+DECL|struct|__anon29bcdc210108
 block|{
 DECL|member|tilable
 name|gint
@@ -140,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2771a4860208
+DECL|struct|__anon29bcdc210208
 block|{
 DECL|member|run
 name|gint
@@ -510,7 +510,7 @@ literal|"Apr 1998, v1.03"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Clouds/Solid Noise..."
+literal|"<Image>/Filters/Render/Clouds/_Solid Noise..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

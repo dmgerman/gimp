@@ -866,7 +866,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Combine/Depth Merge..."
+literal|"<Image>/Filters/Combine/_Depth Merge..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

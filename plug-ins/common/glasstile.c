@@ -56,7 +56,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acccbf40108
+DECL|struct|__anon29c2ac750108
 block|{
 DECL|member|xblock
 name|gint
@@ -75,7 +75,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acccbf40208
+DECL|struct|__anon29c2ac750208
 block|{
 DECL|member|run
 name|gboolean
@@ -321,7 +321,7 @@ literal|"May 2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Glass Effects/Glass Tile..."
+literal|"<Image>/Filters/Glass Effects/_Glass Tile..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

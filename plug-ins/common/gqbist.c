@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d07ccc0103
+DECL|enum|__anon2893cc040103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -225,7 +225,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d07ccc0208
+DECL|struct|__anon2893cc040208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -264,7 +264,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d07ccc0308
+DECL|struct|__anon2893cc040308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -2307,7 +2307,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Pattern/Qbist..."
+literal|"<Image>/Filters/Render/Pattern/_Qbist..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

@@ -107,7 +107,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291f1ed30108
+DECL|struct|__anon2b0a42440108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -203,7 +203,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291f1ed30208
+DECL|struct|__anon2b0a42440208
 block|{
 DECL|member|menu
 name|gchar
@@ -459,7 +459,7 @@ literal|"1999"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/Xtns/Plugin Details..."
+literal|"<Toolbox>/Xtns/_Plugin Details..."
 argument_list|)
 argument_list|,
 literal|""

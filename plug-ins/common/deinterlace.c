@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b546a980103
+DECL|enum|__anon2a105bc60103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -223,7 +223,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Enhance/Deinterlace..."
+literal|"<Image>/Filters/Enhance/_Deinterlace..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

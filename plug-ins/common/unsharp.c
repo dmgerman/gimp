@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2054b30108
+DECL|struct|__anon28bca6330108
 block|{
 DECL|member|radius
 name|gdouble
@@ -117,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2054b30208
+DECL|struct|__anon28bca6330208
 block|{
 DECL|member|run
 name|gboolean
@@ -473,7 +473,7 @@ literal|"1999"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Enhance/Unsharp Mask..."
+literal|"<Image>/Filters/Enhance/_Unsharp Mask..."
 argument_list|)
 argument_list|,
 literal|"GRAY*, RGB*"

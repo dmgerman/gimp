@@ -65,7 +65,7 @@ end_define
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a955d5e0108
+DECL|struct|__anon28b4ab350108
 block|{
 DECL|member|prDlg
 name|PRINTDLG
@@ -691,7 +691,7 @@ literal|"$Id$"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/File/Print"
+literal|"<Image>/File/_Print"
 argument_list|)
 argument_list|,
 literal|"RGB*,GRAY*,INDEXED*"

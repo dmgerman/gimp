@@ -186,7 +186,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/Make Seamless"
+literal|"<Image>/Filters/Map/_Make Seamless"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

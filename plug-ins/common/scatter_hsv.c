@@ -337,7 +337,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4759d0108
+DECL|struct|__anon2b1fa0710108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -383,7 +383,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4759d0208
+DECL|struct|__anon2b1fa0710208
 block|{
 DECL|member|run
 name|gboolean
@@ -598,7 +598,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Noise/Scatter HSV..."
+literal|"<Image>/Filters/Noise/S_catter HSV..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

@@ -133,7 +133,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a00b30108
+DECL|struct|__anon291bd7a00108
 block|{
 DECL|member|colors
 name|GimpRGB
@@ -220,7 +220,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a00b30208
+DECL|struct|__anon291bd7a00208
 block|{
 DECL|member|width
 DECL|member|height
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a00b30308
+DECL|struct|__anon291bd7a00308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1516,7 +1516,7 @@ name|dversio
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Map/Adjust FG-BG"
+literal|"<Image>/Filters/Colors/Map/Adjust _FG-BG"
 argument_list|)
 argument_list|,
 literal|"RGB*"

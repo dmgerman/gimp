@@ -143,7 +143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29119c2d0108
+DECL|struct|__anon2a9b6c4f0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -548,7 +548,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29119c2d0203
+DECL|enum|__anon2a9b6c4f0203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -567,7 +567,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29119c2d0308
+DECL|struct|__anon2a9b6c4f0308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -637,7 +637,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29119c2d0408
+DECL|struct|__anon2a9b6c4f0408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -860,7 +860,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/Small Tiles..."
+literal|"<Image>/Filters/Map/_Small Tiles..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

@@ -70,7 +70,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba8cbe10108
+DECL|struct|__anon27a6210a0108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -89,7 +89,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba8cbe10208
+DECL|struct|__anon27a6210a0208
 block|{
 DECL|member|size
 name|GtkWidget
@@ -332,7 +332,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Noise/Spread..."
+literal|"<Image>/Filters/Noise/Sp_read..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

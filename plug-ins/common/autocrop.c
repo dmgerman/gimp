@@ -246,7 +246,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Image/Transform/Autocrop"
+literal|"<Image>/Image/Transform/_Autocrop"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"

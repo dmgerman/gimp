@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0b5ec30108
+DECL|struct|__anon2c6c1a9c0108
 block|{
 DECL|member|height
 name|gint
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0b5ec30208
+DECL|struct|__anon2c6c1a9c0208
 block|{
 DECL|member|run
 name|gboolean
@@ -363,7 +363,7 @@ literal|"1995,1996,1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/Engrave..."
+literal|"<Image>/Filters/Distorts/En_grave..."
 argument_list|)
 argument_list|,
 literal|"RGBA, GRAYA"
@@ -1835,7 +1835,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0b5ec30308
+DECL|struct|__anon2c6c1a9c0308
 block|{
 DECL|member|x
 DECL|member|y

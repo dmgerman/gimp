@@ -144,7 +144,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae3d1d10108
+DECL|struct|__anon29fa42730108
 block|{
 DECL|member|division
 name|gint32
@@ -300,7 +300,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/Illusion..."
+literal|"<Image>/Filters/Map/_Illusion..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

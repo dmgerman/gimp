@@ -115,7 +115,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277fd2d90108
+DECL|struct|__anon2b41db6b0108
 block|{
 DECL|member|film_height
 name|gint
@@ -219,7 +219,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277fd2d90208
+DECL|struct|__anon2b41db6b0208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -934,7 +934,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Combine/Film..."
+literal|"<Image>/Filters/Combine/_Film..."
 argument_list|)
 argument_list|,
 literal|"INDEXED*, GRAY*, RGB*"

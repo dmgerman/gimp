@@ -85,7 +85,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f3ba110103
+DECL|enum|__anon2b73e4420103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -105,7 +105,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f3ba110208
+DECL|struct|__anon2b73e4420208
 block|{
 DECL|member|amount
 name|gdouble
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f3ba110308
+DECL|struct|__anon2b73e4420308
 block|{
 DECL|member|run
 name|gboolean
@@ -879,7 +879,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/Warp..."
+literal|"<Image>/Filters/Map/_Warp..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

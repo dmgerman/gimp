@@ -165,7 +165,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277090460108
+DECL|struct|__anon28a2cd740108
 block|{
 DECL|member|circle
 name|gdouble
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277090460208
+DECL|struct|__anon28a2cd740208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -656,7 +656,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/Polar Coords..."
+literal|"<Image>/Filters/Distorts/P_olar Coords..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

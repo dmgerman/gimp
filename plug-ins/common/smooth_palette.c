@@ -280,7 +280,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Smooth Palette..."
+literal|"<Image>/Filters/Colors/Smoo_th Palette..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -308,7 +308,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28af24010108
+DECL|struct|__anon2c2879610108
 block|{
 DECL|member|width
 name|gint

@@ -458,7 +458,7 @@ literal|"2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Toys/Gee-Slime"
+literal|"<Image>/Filters/Toys/Gee-_Slime"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"

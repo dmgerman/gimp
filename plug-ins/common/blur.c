@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b44df330108
+DECL|struct|__anon2b87703f0108
 block|{
 DECL|member|blur_pct
 name|gdouble
@@ -177,7 +177,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b44df330208
+DECL|struct|__anon2b87703f0208
 block|{
 DECL|member|run
 name|gboolean
@@ -510,7 +510,7 @@ name|copyright_date
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Blur/Blur..."
+literal|"<Image>/Filters/Blur/_Blur..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

@@ -216,7 +216,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2c2bb48f0103
+DECL|enum|__anon2757de2f0103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -236,7 +236,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2bb48f0208
+DECL|struct|__anon2757de2f0208
 block|{
 DECL|member|x1
 name|gdouble
@@ -403,7 +403,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/Fractal Trace..."
+literal|"<Image>/Filters/Map/_Fractal Trace..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -432,7 +432,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2bb48f0308
+DECL|struct|__anon2757de2f0308
 block|{
 DECL|member|x1
 name|gint
@@ -475,7 +475,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2bb48f0408
+DECL|struct|__anon2757de2f0408
 block|{
 DECL|member|width
 name|gint
@@ -1030,7 +1030,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2bb48f0508
+DECL|struct|__anon2757de2f0508
 block|{
 DECL|member|r
 name|guchar
@@ -2914,7 +2914,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2bb48f0608
+DECL|struct|__anon2757de2f0608
 block|{
 DECL|member|preview
 name|GtkWidget

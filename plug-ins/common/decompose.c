@@ -737,7 +737,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2972fc850108
+DECL|struct|__anon299db3020108
 block|{
 DECL|member|type
 name|gchar
@@ -1349,7 +1349,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2972fc850208
+DECL|struct|__anon299db3020208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1367,7 +1367,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2972fc850308
+DECL|struct|__anon299db3020308
 block|{
 DECL|member|extract_flag
 name|gint
@@ -1556,7 +1556,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Decompose..."
+literal|"<Image>/Filters/Colors/_Decompose..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

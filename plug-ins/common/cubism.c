@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278e39800108
+DECL|struct|__anon2ac52fb50108
 block|{
 DECL|member|npts
 name|gint
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278e39800208
+DECL|struct|__anon2ac52fb50208
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278e39800308
+DECL|struct|__anon2ac52fb50308
 block|{
 DECL|member|run
 name|gboolean
@@ -575,7 +575,7 @@ literal|"1996"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Artistic/Cubism..."
+literal|"<Image>/Filters/Artistic/_Cubism..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

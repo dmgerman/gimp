@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf065c90108
+DECL|struct|__anon28af1b180108
 block|{
 DECL|member|new_width
 name|gint
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf065c90208
+DECL|struct|__anon28af1b180208
 block|{
 DECL|member|sizeentry
 name|GtkWidget
@@ -372,7 +372,7 @@ literal|"1996-1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/Tile..."
+literal|"<Image>/Filters/Map/_Tile..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"

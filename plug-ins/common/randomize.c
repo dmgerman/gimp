@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27aa32810108
+DECL|struct|__anon289665cd0108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -242,7 +242,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27aa32810208
+DECL|struct|__anon289665cd0208
 block|{
 DECL|member|run
 name|gboolean
@@ -579,7 +579,7 @@ name|copyright_date
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Noise/Hurl..."
+literal|"<Image>/Filters/Noise/_Hurl..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
@@ -637,7 +637,7 @@ name|copyright_date
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Noise/Pick..."
+literal|"<Image>/Filters/Noise/_Pick..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
@@ -695,7 +695,7 @@ name|copyright_date
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Noise/Slur..."
+literal|"<Image>/Filters/Noise/_Slur..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"

@@ -154,7 +154,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c08a20b0108
+DECL|struct|__anon29ed7ee40108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -201,7 +201,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c08a20b0208
+DECL|struct|__anon29ed7ee40208
 block|{
 DECL|member|run
 name|gboolean
@@ -319,7 +319,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Glass Effects/Apply Lens..."
+literal|"<Image>/Filters/Glass Effects/Apply _Lens..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"

@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a599740108
+DECL|struct|__anon2b95ebf90108
 block|{
 DECL|member|radius
 name|gdouble
@@ -67,7 +67,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a599740208
+DECL|struct|__anon2b95ebf90208
 block|{
 DECL|member|run
 name|gboolean
@@ -300,7 +300,7 @@ literal|"1999"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Blur/Selective Gaussian Blur..."
+literal|"<Image>/Filters/Blur/_Selective Gaussian Blur..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

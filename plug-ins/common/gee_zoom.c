@@ -555,7 +555,7 @@ literal|"1998"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Toys/Gee-Zoom"
+literal|"<Image>/Filters/Toys/Gee-_Zoom"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"

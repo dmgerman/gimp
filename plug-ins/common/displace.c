@@ -95,7 +95,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7da6380108
+DECL|struct|__anon2b07e7c40108
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7da6380208
+DECL|struct|__anon2b07e7c40208
 block|{
 DECL|member|run
 name|gboolean
@@ -491,7 +491,7 @@ literal|"1996"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/Displace..."
+literal|"<Image>/Filters/Map/_Displace..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

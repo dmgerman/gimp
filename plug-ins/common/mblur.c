@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2739cada0108
+DECL|struct|__anon28f779b60108
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -466,7 +466,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Blur/Motion Blur..."
+literal|"<Image>/Filters/Blur/_Motion Blur..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

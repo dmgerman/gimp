@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b326da70108
+DECL|struct|__anon2c7df7ff0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b326da70208
+DECL|struct|__anon2c7df7ff0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b326da70308
+DECL|struct|__anon2c7df7ff0308
 block|{
 DECL|member|size
 name|GtkWidget
@@ -534,7 +534,7 @@ literal|"1995-2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Blur/Gaussian Blur (IIR)..."
+literal|"<Image>/Filters/Blur/Gaussian Blur (_IIR)..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

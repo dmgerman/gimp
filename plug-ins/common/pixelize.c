@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aac1f650108
+DECL|struct|__anon2909097b0108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aac1f650208
+DECL|struct|__anon2909097b0208
 block|{
 DECL|member|sizeentry
 name|GtkWidget
@@ -151,7 +151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aac1f650308
+DECL|struct|__anon2909097b0308
 block|{
 DECL|member|x
 DECL|member|y
@@ -512,7 +512,7 @@ literal|"1995"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Blur/Pixelize..."
+literal|"<Image>/Filters/Blur/_Pixelize..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

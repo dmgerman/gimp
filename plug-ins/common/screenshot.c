@@ -112,7 +112,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296360350108
+DECL|struct|__anon2bb682e40108
 block|{
 DECL|member|root
 name|gboolean
@@ -392,7 +392,7 @@ literal|"v0.9.5 (2000/10/29)"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/File/Acquire/Screen Shot..."
+literal|"<Toolbox>/File/Acquire/_Screen Shot..."
 argument_list|)
 argument_list|,
 name|NULL

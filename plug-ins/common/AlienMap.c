@@ -30511,7 +30511,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a6c5620108
+DECL|struct|__anon2b2c2f910108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -30546,7 +30546,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a6c5620208
+DECL|struct|__anon2b2c2f910208
 block|{
 DECL|member|run
 name|gint
@@ -30926,7 +30926,7 @@ literal|"1th May 1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Map/Alien Map..."
+literal|"<Image>/Filters/Colors/Map/_Alien Map..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

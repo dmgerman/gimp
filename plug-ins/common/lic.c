@@ -169,7 +169,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2878f0100108
+DECL|struct|__anon279f8dd70108
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -4378,7 +4378,7 @@ literal|"Version 0.14, September 24 1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/Van Gogh (LIC)..."
+literal|"<Image>/Filters/Map/_Van Gogh (LIC)..."
 argument_list|)
 argument_list|,
 literal|"RGB"

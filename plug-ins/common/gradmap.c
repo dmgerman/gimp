@@ -245,7 +245,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Map/Gradient Map"
+literal|"<Image>/Filters/Colors/Map/_Gradient Map"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -445,7 +445,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c8891b20108
+DECL|struct|__anon27b969790108
 typedef|typedef
 struct|struct
 block|{

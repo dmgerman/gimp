@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8cd5f30108
+DECL|struct|__anon27d68a630108
 block|{
 DECL|member|horizontal
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8cd5f30208
+DECL|struct|__anon27d68a630208
 block|{
 DECL|member|run
 name|gint
@@ -369,7 +369,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Edge-Detect/Sobel..."
+literal|"<Image>/Filters/Edge-Detect/_Sobel..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

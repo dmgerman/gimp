@@ -127,7 +127,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b08bd720108
+DECL|struct|__anon2a2285240108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b08bd720208
+DECL|struct|__anon2a2285240208
 block|{
 DECL|member|run
 name|gboolean
@@ -694,7 +694,7 @@ argument_list|,
 comment|/* don't translate '<Image>', it's a special 			   * keyword for the gtk toolkit */
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Light Effects/Sparkle..."
+literal|"<Image>/Filters/Light Effects/_Sparkle..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

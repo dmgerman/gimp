@@ -83,7 +83,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e71ab20103
+DECL|enum|__anon2c72976d0103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -294,7 +294,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e71ab20208
+DECL|struct|__anon2c72976d0208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -451,7 +451,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon29e71ab20308
+DECL|struct|__anon2c72976d0308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -636,7 +636,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Generic/Convolution Matrix..."
+literal|"<Image>/Filters/Generic/_Convolution Matrix..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
