@@ -1629,7 +1629,7 @@ name|char
 modifier|*
 name|l_findnext_guide_proc
 init|=
-literal|"gimp_image_findnext_guide"
+literal|"gimp_image_find_next_guide"
 decl_stmt|;
 name|GParam
 modifier|*

@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * gimp   1.1.15.1;  1999/05/08  hof: bugix (dont mix GDrawableType with GImageType)  * version 0.98.00   1998.11.27  hof: - use new module gap_pdb_calls.h  * version 0.97.00   1998.10.19  hof: - created module  */
+comment|/* revision history:  * gimp   1.1.6;     1999/06/21  hof: bugix: wrong iterator total_steps and direction  * gimp   1.1.15.1;  1999/05/08  hof: bugix (dont mix GDrawableType with GImageType)  * version 0.98.00   1998.11.27  hof: - use new module gap_pdb_calls.h  * version 0.97.00   1998.10.19  hof: - created module  */
 end_comment
 
 begin_comment
@@ -2797,6 +2797,13 @@ index|[
 literal|512
 index|]
 decl_stmt|;
+specifier|static
+name|char
+name|l_key_from
+index|[
+literal|512
+index|]
+decl_stmt|;
 name|gint32
 name|l_last_image_id
 decl_stmt|;
@@ -3001,6 +3008,30 @@ expr_stmt|;
 name|p_set_data
 argument_list|(
 name|l_key_to
+argument_list|,
+name|l_plugin_data_len
+argument_list|)
+expr_stmt|;
+comment|/* get FROM values */
+name|sprintf
+argument_list|(
+name|l_key_from
+argument_list|,
+literal|"%s_ITER_FROM"
+argument_list|,
+name|filter_procname
+argument_list|)
+expr_stmt|;
+name|l_plugin_data_len
+operator|=
+name|p_get_data
+argument_list|(
+name|l_key_from
+argument_list|)
+expr_stmt|;
+name|p_set_data
+argument_list|(
+name|filter_procname
 argument_list|,
 name|l_plugin_data_len
 argument_list|)
@@ -3253,10 +3284,6 @@ name|l_plugin_data_len
 operator|=
 literal|0
 expr_stmt|;
-name|l_cur_step
-operator|=
-literal|0
-expr_stmt|;
 name|l_apply_mode
 operator|=
 name|PAPP_CONSTANT
@@ -3397,8 +3424,9 @@ operator|-
 name|l_begin
 expr_stmt|;
 block|}
+name|l_cur_step
+operator|=
 name|l_total_steps
-operator|--
 expr_stmt|;
 name|l_cur_frame_nr
 operator|=
@@ -3876,7 +3904,7 @@ operator|)
 condition|)
 block|{
 name|l_cur_step
-operator|+=
+operator|-=
 literal|1.0
 expr_stmt|;
 comment|/* call plugin-specific iterator, to modify          * the plugin's last_values          */

@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Change Log:  * 1999.03.14 hof: added iterators for gimp 1.1.3 prerelease  *                 iterator code reorganized in _iter_ALT.inc Files  * 1998.06.12 hof: added p_delta_drawable (Iterate layers in the layerstack)  *                 this enables to apply an animated bumpmap.  * 1998.01.29 hof: 1st release  */
+comment|/* Change Log:  * 1999.06.21 hof: removed Colorify iterator  * 1999.03.14 hof: added iterators for gimp 1.1.3 prerelease  *                 iterator code reorganized in _iter_ALT.inc Files  * 1998.06.12 hof: added p_delta_drawable (Iterate layers in the layerstack)  *                 this enables to apply an animated bumpmap.  * 1998.01.29 hof: 1st release  */
 end_comment
 
 begin_comment
@@ -105,7 +105,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon28ec7bab0108
+DECL|struct|__anon2b1d93470108
 typedef|typedef
 struct|struct
 block|{
@@ -123,7 +123,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28ec7bab0208
+DECL|struct|__anon2b1d93470208
 typedef|typedef
 struct|struct
 block|{
@@ -974,6 +974,61 @@ index|]
 operator|+
 name|delta
 expr_stmt|;
+if|if
+condition|(
+name|gap_debug
+condition|)
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"DEBUG: p_delta_color[%d] total: %d  from: %d to: %d curr: %d    delta: %f  current_step: %f\n"
+argument_list|,
+operator|(
+name|int
+operator|)
+name|l_idx
+argument_list|,
+operator|(
+name|int
+operator|)
+name|total_steps
+argument_list|,
+operator|(
+name|int
+operator|)
+name|val_from
+operator|->
+name|color
+index|[
+name|l_idx
+index|]
+argument_list|,
+operator|(
+name|int
+operator|)
+name|val_to
+operator|->
+name|color
+index|[
+name|l_idx
+index|]
+argument_list|,
+operator|(
+name|int
+operator|)
+name|val
+operator|->
+name|color
+index|[
+name|l_idx
+index|]
+argument_list|,
+name|delta
+argument_list|,
+name|current_step
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -1292,7 +1347,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec7bab0308
+DECL|struct|__anon2b1d93470308
 block|{
 DECL|member|color
 name|double
@@ -1311,7 +1366,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec7bab0408
+DECL|struct|__anon2b1d93470408
 block|{
 DECL|member|coord
 name|double
@@ -1328,7 +1383,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28ec7bab0503
+DECL|enum|__anon2b1d93470503
 typedef|typedef
 enum|enum
 block|{
@@ -1350,7 +1405,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28ec7bab0603
+DECL|enum|__anon2b1d93470603
 typedef|typedef
 enum|enum
 block|{
@@ -1368,7 +1423,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec7bab0708
+DECL|struct|__anon2b1d93470708
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -1403,7 +1458,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec7bab0808
+DECL|struct|__anon2b1d93470808
 block|{
 DECL|member|type
 name|t_LightType
@@ -2426,11 +2481,7 @@ name|g_iter_ALT_tab
 index|[]
 init|=
 block|{
-block|{
-literal|"Colorify"
-block|,
-name|p_Colorify_iter_ALT
-block|}
+comment|/*  { "Colorify",  p_Colorify_iter_ALT }                                          */
 comment|/*, { "perl_fu_blowinout",  p_perl_fu_blowinout_iter_ALT }                        */
 comment|/*, { "perl_fu_feedback",  p_perl_fu_feedback_iter_ALT }                          */
 comment|/*, { "perl_fu_prep4gif",  p_perl_fu_prep4gif_iter_ALT }                          */
@@ -2442,7 +2493,6 @@ comment|/*, { "perl_fu_windify",  p_perl_fu_windify_iter_ALT }                  
 comment|/*, { "perl_fu_xach_blocks",  p_perl_fu_xach_blocks_iter_ALT }                    */
 comment|/*, { "perl_fu_xach_shadows",  p_perl_fu_xach_shadows_iter_ALT }                  */
 comment|/*, { "perl_fu_xachvision",  p_perl_fu_xachvision_iter_ALT }                      */
-block|,
 block|{
 literal|"plug_in_CML_explorer"
 block|,
@@ -2536,7 +2586,12 @@ literal|"plug_in_color_map"
 block|,
 name|p_plug_in_color_map_iter_ALT
 block|}
-comment|/*, { "plug_in_colorify",  p_plug_in_colorify_iter_ALT }                          */
+block|,
+block|{
+literal|"plug_in_colorify"
+block|,
+name|p_plug_in_colorify_iter_ALT
+block|}
 comment|/*, { "plug_in_compose",  p_plug_in_compose_iter_ALT }                            */
 block|,
 block|{

@@ -54,7 +54,7 @@ DECL|macro|PLUG_IN_NAME
 define|#
 directive|define
 name|PLUG_IN_NAME
-value|"Colorify"
+value|"plug_in_colorify"
 end_define
 
 begin_define
@@ -104,7 +104,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2b7918d10108
+DECL|struct|__anon2960ca1b0108
 typedef|typedef
 struct|struct
 block|{
@@ -122,7 +122,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b7918d10208
+DECL|struct|__anon2960ca1b0208
 typedef|typedef
 struct|struct
 block|{
@@ -137,7 +137,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b7918d10308
+DECL|struct|__anon2960ca1b0308
 typedef|typedef
 struct|struct
 block|{
@@ -511,7 +511,7 @@ argument_list|(
 literal|"<Image>/Filters/Colors/Colorify"
 argument_list|)
 argument_list|,
-literal|"RGB"
+literal|"RGB*"
 argument_list|,
 name|PROC_PLUG_IN
 argument_list|,
@@ -915,6 +915,9 @@ name|row
 parameter_list|,
 name|gint
 name|width
+parameter_list|,
+name|gint
+name|bpp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1013,6 +1016,9 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|row
+decl_stmt|;
+name|gint
+name|bpp
 decl_stmt|;
 name|gint
 name|y
@@ -1119,13 +1125,22 @@ operator|/
 literal|255
 expr_stmt|;
 block|}
+name|bpp
+operator|=
+name|gimp_drawable_bpp
+argument_list|(
+name|drawable
+operator|->
+name|id
+argument_list|)
+expr_stmt|;
 name|row
 operator|=
 name|g_malloc
 argument_list|(
 name|sel_width
 operator|*
-literal|3
+name|bpp
 operator|*
 sizeof|sizeof
 argument_list|(
@@ -1206,6 +1221,8 @@ argument_list|(
 name|row
 argument_list|,
 name|sel_width
+argument_list|,
+name|bpp
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_set_row
@@ -1274,7 +1291,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|colorify_row (guchar * row,gint width)
+DECL|function|colorify_row (guchar * row,gint width,gint bpp)
 name|colorify_row
 parameter_list|(
 name|guchar
@@ -1283,6 +1300,9 @@ name|row
 parameter_list|,
 name|gint
 name|width
+parameter_list|,
+name|gint
+name|bpp
 parameter_list|)
 block|{
 name|gint
@@ -1370,7 +1390,7 @@ index|]
 expr_stmt|;
 name|current
 operator|+=
-literal|3
+name|bpp
 expr_stmt|;
 block|}
 block|}
