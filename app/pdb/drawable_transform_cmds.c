@@ -1337,7 +1337,7 @@ name|gdouble
 name|y1
 decl_stmt|;
 name|gboolean
-name|interpolation
+name|interpolate
 decl_stmt|;
 name|gboolean
 name|clip_result
@@ -1429,7 +1429,7 @@ name|value
 operator|.
 name|pdb_float
 expr_stmt|;
-name|interpolation
+name|interpolate
 operator|=
 name|args
 index|[
@@ -1538,7 +1538,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|interpolation
+name|interpolate
 condition|)
 name|interpolation_type
 operator|=
@@ -1580,7 +1580,7 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-name|interpolation
+name|interpolate
 argument_list|,
 literal|3
 argument_list|,
@@ -1688,7 +1688,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"interpolation"
+literal|"interpolate"
 block|,
 literal|"Whether to use interpolation and supersampling"
 block|}
@@ -1734,7 +1734,7 @@ literal|"gimp_drawable_transform_flip_defaults"
 block|,
 literal|"Flip the specified drawable around a given line."
 block|,
-literal|"This procedure is a variant of gimp_drawable_transform_flip() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolation' parameter)."
+literal|"This procedure is a variant of gimp_drawable_transform_flip() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 block|,
 literal|"JoÃ£o S. O. Bueno Calligaris"
 block|,
@@ -2490,7 +2490,7 @@ modifier|*
 name|drawable
 decl_stmt|;
 name|gboolean
-name|interpolation
+name|interpolate
 decl_stmt|;
 name|gboolean
 name|clip_result
@@ -2656,7 +2656,7 @@ name|value
 operator|.
 name|pdb_float
 expr_stmt|;
-name|interpolation
+name|interpolate
 operator|=
 name|args
 index|[
@@ -2797,7 +2797,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|interpolation
+name|interpolate
 condition|)
 name|interpolation_type
 operator|=
@@ -2839,7 +2839,7 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-name|interpolation
+name|interpolate
 argument_list|,
 literal|3
 argument_list|,
@@ -2979,7 +2979,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"interpolation"
+literal|"interpolate"
 block|,
 literal|"Whether to use interpolation and supersampling"
 block|}
@@ -3025,7 +3025,7 @@ literal|"gimp_drawable_transform_perspective_defaults"
 block|,
 literal|"Perform a possibly non-affine transformation on the specified drawable, with extra parameters."
 block|,
-literal|"This procedure is a variant of gimp_drawable_transform_perspective() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolation' parameter)."
+literal|"This procedure is a variant of gimp_drawable_transform_perspective() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 block|,
 literal|"JoÃ£o S. O. Bueno Calligaris"
 block|,
@@ -4076,7 +4076,7 @@ name|gint32
 name|center_y
 decl_stmt|;
 name|gboolean
-name|interpolation
+name|interpolate
 decl_stmt|;
 name|gboolean
 name|clip_result
@@ -4172,7 +4172,7 @@ name|value
 operator|.
 name|pdb_int
 expr_stmt|;
-name|interpolation
+name|interpolate
 operator|=
 name|args
 index|[
@@ -4292,7 +4292,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|interpolation
+name|interpolate
 condition|)
 name|interpolation_type
 operator|=
@@ -4334,7 +4334,7 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-name|interpolation
+name|interpolate
 argument_list|,
 literal|3
 argument_list|,
@@ -4442,7 +4442,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"interpolation"
+literal|"interpolate"
 block|,
 literal|"Whether to use interpolation and supersampling"
 block|}
@@ -4488,7 +4488,7 @@ literal|"gimp_drawable_transform_rotate_defaults"
 block|,
 literal|"Rotate the specified drawable about given coordinates through the specified angle."
 block|,
-literal|"This procedure is a variant of gimp_drawable_transform_rotate() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolation' parameter)."
+literal|"This procedure is a variant of gimp_drawable_transform_rotate() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 block|,
 literal|"JoÃ£o S. O. Bueno Calligaris"
 block|,
@@ -5168,7 +5168,7 @@ modifier|*
 name|drawable
 decl_stmt|;
 name|gboolean
-name|interpolation
+name|interpolate
 decl_stmt|;
 name|gboolean
 name|clip_result
@@ -5278,7 +5278,7 @@ name|value
 operator|.
 name|pdb_float
 expr_stmt|;
-name|interpolation
+name|interpolate
 operator|=
 name|args
 index|[
@@ -5431,7 +5431,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|interpolation
+name|interpolate
 condition|)
 name|interpolation_type
 operator|=
@@ -5473,7 +5473,7 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-name|interpolation
+name|interpolate
 argument_list|,
 literal|3
 argument_list|,
@@ -5581,7 +5581,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"interpolation"
+literal|"interpolate"
 block|,
 literal|"Whether to use interpolation and supersampling"
 block|}
@@ -5627,7 +5627,7 @@ literal|"gimp_drawable_transform_scale_defaults"
 block|,
 literal|"Scale the specified drawable with extra parameters"
 block|,
-literal|"This procedure is a variant of gimp_drawable_transform_scale() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolation' parameter)."
+literal|"This procedure is a variant of gimp_drawable_transform_scale() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 block|,
 literal|"JoÃ£o S. O. Bueno Calligaris"
 block|,
@@ -6229,7 +6229,7 @@ name|gdouble
 name|magnitude
 decl_stmt|;
 name|gboolean
-name|interpolation
+name|interpolate
 decl_stmt|;
 name|gboolean
 name|clip_result
@@ -6313,7 +6313,7 @@ name|value
 operator|.
 name|pdb_float
 expr_stmt|;
-name|interpolation
+name|interpolate
 operator|=
 name|args
 index|[
@@ -6418,7 +6418,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|interpolation
+name|interpolate
 condition|)
 name|interpolation_type
 operator|=
@@ -6460,7 +6460,7 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-name|interpolation
+name|interpolate
 argument_list|,
 literal|3
 argument_list|,
@@ -6552,7 +6552,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"interpolation"
+literal|"interpolate"
 block|,
 literal|"Whether to use interpolation and supersampling"
 block|}
@@ -6598,7 +6598,7 @@ literal|"gimp_drawable_transform_shear_defaults"
 block|,
 literal|"Shear the specified drawable about its center by the specified magnitude, with extra parameters."
 block|,
-literal|"This procedure is a variant of gimp_drawable_transform_shear() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolation' parameter)."
+literal|"This procedure is a variant of gimp_drawable_transform_shear() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 block|,
 literal|"JoÃ£o S. O. Bueno Calligaris"
 block|,
@@ -7339,7 +7339,7 @@ name|gdouble
 name|dest_y
 decl_stmt|;
 name|gboolean
-name|interpolation
+name|interpolate
 decl_stmt|;
 name|gboolean
 name|clip_result
@@ -7464,7 +7464,7 @@ name|value
 operator|.
 name|pdb_float
 expr_stmt|;
-name|interpolation
+name|interpolate
 operator|=
 name|args
 index|[
@@ -7597,7 +7597,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|interpolation
+name|interpolate
 condition|)
 name|interpolation_type
 operator|=
@@ -7639,7 +7639,7 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-name|interpolation
+name|interpolate
 argument_list|,
 literal|3
 argument_list|,
@@ -7771,7 +7771,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"interpolation"
+literal|"interpolate"
 block|,
 literal|"Whether to use interpolation and supersampling"
 block|}
@@ -7817,7 +7817,7 @@ literal|"gimp_drawable_transform_2d_defaults"
 block|,
 literal|"Transform the specified drawable in 2d, with extra parameters."
 block|,
-literal|"This procedure is a variant of gimp_drawable_transform_2d() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolation' parameter)."
+literal|"This procedure is a variant of gimp_drawable_transform_2d() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 block|,
 literal|"JoÃ£o S. O. Bueno Calligaris"
 block|,
@@ -8670,7 +8670,7 @@ name|gdouble
 name|coeff_2_2
 decl_stmt|;
 name|gboolean
-name|interpolation
+name|interpolate
 decl_stmt|;
 name|gboolean
 name|clip_result
@@ -8817,7 +8817,7 @@ name|value
 operator|.
 name|pdb_float
 expr_stmt|;
-name|interpolation
+name|interpolate
 operator|=
 name|args
 index|[
@@ -9012,7 +9012,7 @@ name|coeff_2_2
 expr_stmt|;
 if|if
 condition|(
-name|interpolation
+name|interpolate
 condition|)
 name|interpolation_type
 operator|=
@@ -9054,7 +9054,7 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-name|interpolation
+name|interpolate
 argument_list|,
 literal|3
 argument_list|,
@@ -9202,7 +9202,7 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"interpolation"
+literal|"interpolate"
 block|,
 literal|"Whether to use interpolation and supersampling"
 block|}
@@ -9248,7 +9248,7 @@ literal|"gimp_drawable_transform_matrix_defaults"
 block|,
 literal|"Transform the specified drawable in 2d, with extra parameters."
 block|,
-literal|"This procedure is a variant of gimp_drawable_transform_matrix() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolation' parameter)."
+literal|"This procedure is a variant of gimp_drawable_transform_matrix() which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 block|,
 literal|"JoÃ£o S. O. Bueno Calligaris"
 block|,

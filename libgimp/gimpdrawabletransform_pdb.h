@@ -101,7 +101,7 @@ name|gdouble
 name|y1
 parameter_list|,
 name|gboolean
-name|interpolation
+name|interpolate
 parameter_list|,
 name|gboolean
 name|clip_result
@@ -190,7 +190,7 @@ name|gdouble
 name|y3
 parameter_list|,
 name|gboolean
-name|interpolation
+name|interpolate
 parameter_list|,
 name|gboolean
 name|clip_result
@@ -280,7 +280,7 @@ name|gint
 name|center_y
 parameter_list|,
 name|gboolean
-name|interpolation
+name|interpolate
 parameter_list|,
 name|gboolean
 name|clip_result
@@ -345,7 +345,7 @@ name|gdouble
 name|y1
 parameter_list|,
 name|gboolean
-name|interpolation
+name|interpolate
 parameter_list|,
 name|gboolean
 name|clip_result
@@ -398,7 +398,7 @@ name|gdouble
 name|magnitude
 parameter_list|,
 name|gboolean
-name|interpolation
+name|interpolate
 parameter_list|,
 name|gboolean
 name|clip_result
@@ -481,7 +481,7 @@ name|gdouble
 name|dest_y
 parameter_list|,
 name|gboolean
-name|interpolation
+name|interpolate
 parameter_list|,
 name|gboolean
 name|clip_result
@@ -576,7 +576,7 @@ name|gdouble
 name|coeff_2_2
 parameter_list|,
 name|gboolean
-name|interpolation
+name|interpolate
 parameter_list|,
 name|gboolean
 name|clip_result
