@@ -358,7 +358,7 @@ name|GIMP_HELP_FILE_CLOSE_CONFIRM
 argument_list|,
 name|_
 argument_list|(
-literal|"_Close without Saving"
+literal|"Cl_ose without Saving"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CLOSE
