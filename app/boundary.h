@@ -16,16 +16,10 @@ directive|define
 name|__BOUNDARY_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"paint_funcs.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ec09d20103
+DECL|enum|__anon2b0d5c130103
 block|{
 DECL|enumerator|WithinBounds
 name|WithinBounds

@@ -124,7 +124,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
-comment|/* Defaults */
+comment|/*  Defaults  */
 end_comment
 
 begin_define
@@ -204,6 +204,58 @@ struct|;
 end_struct
 
 begin_comment
+comment|/*  forward function declarations  */
+end_comment
+
+begin_function_decl
+specifier|static
+name|gpointer
+name|eraser_paint_func
+parameter_list|(
+name|PaintCore
+modifier|*
+name|paint_core
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|PaintState
+name|state
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|eraser_motion
+parameter_list|(
+name|PaintCore
+modifier|*
+name|paint_core
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|PaintPressureOptions
+modifier|*
+name|pressure_options
+parameter_list|,
+name|gboolean
+name|hard
+parameter_list|,
+name|gboolean
+name|incremental
+parameter_list|,
+name|gboolean
+name|anti_erase
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  the eraser tool options  */
 end_comment
 
@@ -245,33 +297,6 @@ name|gboolean
 name|non_gui_anti_erase
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-comment|/*  forward function declarations  */
-end_comment
-
-begin_function_decl
-specifier|static
-name|void
-name|eraser_motion
-parameter_list|(
-name|PaintCore
-modifier|*
-parameter_list|,
-name|GimpDrawable
-modifier|*
-parameter_list|,
-name|PaintPressureOptions
-modifier|*
-parameter_list|,
-name|gboolean
-parameter_list|,
-name|gboolean
-parameter_list|,
-name|gboolean
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_comment
 comment|/*  functions  */
@@ -563,7 +588,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|eraser_modifier_key_func (Tool * tool,GdkEventKey * kevent,gpointer gdisp_ptr)
+DECL|function|eraser_modifier_key_func (Tool * tool,GdkEventKey * kevent,GDisplay * gdisp)
 name|eraser_modifier_key_func
 parameter_list|(
 name|Tool
@@ -574,8 +599,9 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 switch|switch
@@ -670,9 +696,9 @@ block|}
 end_function
 
 begin_function
-name|void
-modifier|*
-DECL|function|eraser_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
+specifier|static
+name|gpointer
+DECL|function|eraser_paint_func (PaintCore * paint_core,GimpDrawable * drawable,PaintState state)
 name|eraser_paint_func
 parameter_list|(
 name|PaintCore
@@ -683,7 +709,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|PaintState
 name|state
 parameter_list|)
 block|{
@@ -1065,9 +1091,8 @@ end_function
 
 begin_function
 specifier|static
-name|void
-modifier|*
-DECL|function|eraser_non_gui_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
+name|gpointer
+DECL|function|eraser_non_gui_paint_func (PaintCore * paint_core,GimpDrawable * drawable,PaintState state)
 name|eraser_non_gui_paint_func
 parameter_list|(
 name|PaintCore
@@ -1078,7 +1103,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|PaintState
 name|state
 parameter_list|)
 block|{
@@ -1106,17 +1131,17 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|eraser_non_gui_default (GimpDrawable * drawable,int num_strokes,double * stroke_array)
+DECL|function|eraser_non_gui_default (GimpDrawable * drawable,gint num_strokes,gdouble * stroke_array)
 name|eraser_non_gui_default
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|num_strokes
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|stroke_array
 parameter_list|)
@@ -1189,31 +1214,31 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|eraser_non_gui (GimpDrawable * drawable,int num_strokes,double * stroke_array,int hardness,int method,int anti_erase)
+DECL|function|eraser_non_gui (GimpDrawable * drawable,gint num_strokes,gdouble * stroke_array,gint hardness,gint method,gboolean anti_erase)
 name|eraser_non_gui
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|num_strokes
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|stroke_array
 parameter_list|,
-name|int
+name|gint
 name|hardness
 parameter_list|,
-name|int
+name|gint
 name|method
 parameter_list|,
-name|int
+name|gboolean
 name|anti_erase
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if
@@ -1377,7 +1402,6 @@ return|return
 name|TRUE
 return|;
 block|}
-else|else
 return|return
 name|FALSE
 return|;

@@ -284,11 +284,15 @@ name|bucket_fill_button_press
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -300,11 +304,15 @@ name|bucket_fill_button_release
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -316,11 +324,15 @@ name|bucket_fill_cursor_update
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -486,16 +498,11 @@ decl_stmt|;
 comment|/*  the new bucket fill tool options structure  */
 name|options
 operator|=
-operator|(
-name|BucketOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|BucketOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|paint_options_init
@@ -895,7 +902,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|bucket_fill_button_press (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|bucket_fill_button_press (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|bucket_fill_button_press
 parameter_list|(
 name|Tool
@@ -906,14 +913,11 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|BucketTool
 modifier|*
 name|bucket_tool
@@ -921,14 +925,6 @@ decl_stmt|;
 name|gboolean
 name|use_offsets
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|bucket_tool
 operator|=
 operator|(
@@ -1007,9 +1003,9 @@ expr_stmt|;
 comment|/*  Make the tool active and set the gdisplay which owns it  */
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 name|tool
 operator|->
@@ -1023,7 +1019,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bucket_fill_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|bucket_fill_button_release (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|bucket_fill_button_release
 parameter_list|(
 name|Tool
@@ -1034,14 +1030,11 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|BucketTool
 modifier|*
 name|bucket_tool
@@ -1053,14 +1046,6 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|bucket_tool
 operator|=
 operator|(
@@ -1232,7 +1217,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bucket_fill_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|bucket_fill_cursor_update (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|bucket_fill_cursor_update
 parameter_list|(
 name|Tool
@@ -1243,14 +1228,11 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|Layer
 modifier|*
 name|layer
@@ -1275,14 +1257,6 @@ name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|gdisplay_untransform_coords
 argument_list|(
 name|gdisp
@@ -1453,7 +1427,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bucket_fill_modifier_key_func (Tool * tool,GdkEventKey * kevent,gpointer gdisp_ptr)
+DECL|function|bucket_fill_modifier_key_func (Tool * tool,GdkEventKey * kevent,GDisplay * gdisp)
 name|bucket_fill_modifier_key_func
 parameter_list|(
 name|Tool
@@ -1464,8 +1438,9 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 switch|switch
@@ -1995,7 +1970,7 @@ condition|(
 name|sample_merged
 condition|)
 block|{
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
@@ -2954,8 +2929,7 @@ operator|->
 name|private
 operator|=
 operator|(
-name|void
-operator|*
+name|gpointer
 operator|)
 name|private
 expr_stmt|;

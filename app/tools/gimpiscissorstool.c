@@ -267,7 +267,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d4b1210103
+DECL|enum|__anon28f8a8a30103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -293,7 +293,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d4b1210203
+DECL|enum|__anon28f8a8a30203
 block|{
 DECL|enumerator|DRAW_NOTHING
 name|DRAW_NOTHING
@@ -764,7 +764,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|move
 specifier|static
-name|int
+name|gint
 name|move
 index|[
 literal|8
@@ -1195,11 +1195,15 @@ name|iscissors_button_press
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1211,11 +1215,15 @@ name|iscissors_button_release
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1227,11 +1235,15 @@ name|iscissors_motion
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1243,11 +1255,15 @@ name|iscissors_oper_update
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1259,11 +1275,15 @@ name|iscissors_modifier_update
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventKey
 modifier|*
+name|kevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1275,11 +1295,15 @@ name|iscissors_cursor_update
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1291,10 +1315,14 @@ name|iscissors_control
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|ToolAction
+name|tool_action
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1879,7 +1907,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|iscissors_button_press (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|iscissors_button_press (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|iscissors_button_press
 parameter_list|(
 name|Tool
@@ -1890,14 +1918,11 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1911,14 +1936,6 @@ name|grab_pointer
 init|=
 name|FALSE
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|iscissors
 operator|=
 operator|(
@@ -1974,11 +1991,11 @@ name|state
 operator|==
 name|ACTIVE
 operator|&&
-name|gdisp_ptr
+name|gdisp
 operator|!=
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 condition|)
 block|{
 comment|/*iscissors->draw = DRAW_CURVE; XXX? */
@@ -2005,9 +2022,9 @@ name|ACTIVE
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 switch|switch
 condition|(
@@ -2023,7 +2040,7 @@ if|#
 directive|if
 literal|0
 comment|/* XXX what's this supposed to do? */
-block|if (!(bevent->state& GDK_SHIFT_MASK)&& 	  !(bevent->state& GDK_CONTROL_MASK)) 	if (selection_point_inside (gdisp->select, gdisp_ptr, 				    bevent->x, bevent->y)) 	  { 	    init_edit_selection (tool, gdisp->select, gdisp_ptr, 				 bevent->x, bevent->y); 	    return; 	  }
+block|if (! (bevent->state& GDK_SHIFT_MASK)&& 	  ! (bevent->state& GDK_CONTROL_MASK)) 	if (selection_point_inside (gdisp->select, gdisp, 				    bevent->x, bevent->y)) 	  { 	    init_edit_selection (tool, gdisp->select, gdisp, 				 bevent->x, bevent->y); 	    return; 	  }
 endif|#
 directive|endif
 name|iscissors
@@ -2431,27 +2448,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|iscissors_convert (Iscissors * iscissors,gpointer gdisp_ptr)
+DECL|function|iscissors_convert (Iscissors * iscissors,GDisplay * gdisp)
 name|iscissors_convert
 parameter_list|(
 name|Iscissors
 modifier|*
 name|iscissors
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-init|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-decl_stmt|;
+parameter_list|)
+block|{
 name|ScanConverter
 modifier|*
 name|sc
@@ -2661,7 +2669,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|iscissors_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|iscissors_button_release (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|iscissors_button_release
 parameter_list|(
 name|Tool
@@ -2672,30 +2680,19 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|Iscissors
 modifier|*
 name|iscissors
 decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 name|ICurve
 modifier|*
 name|curve
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|iscissors
 operator|=
 operator|(
@@ -3133,7 +3130,7 @@ name|iscissors_convert
 argument_list|(
 name|iscissors
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -3142,7 +3139,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|iscissors_motion (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|iscissors_motion (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|iscissors_motion
 parameter_list|(
 name|Tool
@@ -3153,26 +3150,15 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|Iscissors
 modifier|*
 name|iscissors
 decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|iscissors
 operator|=
 operator|(
@@ -3506,7 +3492,7 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|int
+name|gint
 name|tx1
 decl_stmt|,
 name|ty1
@@ -3515,7 +3501,7 @@ name|tx2
 decl_stmt|,
 name|ty2
 decl_stmt|;
-name|int
+name|gint
 name|txn
 decl_stmt|,
 name|tyn
@@ -3529,13 +3515,9 @@ argument_list|)
 expr_stmt|;
 name|gdisp
 operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 name|iscissors
 operator|=
@@ -4205,7 +4187,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|iscissors_oper_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|iscissors_oper_update (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|iscissors_oper_update
 parameter_list|(
 name|Tool
@@ -4216,17 +4198,14 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|Iscissors
 modifier|*
 name|iscissors
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|gint
 name|x
@@ -4242,14 +4221,6 @@ operator|)
 name|tool
 operator|->
 name|private
-expr_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
 expr_stmt|;
 name|gdisplay_untransform_coords
 argument_list|(
@@ -4440,7 +4411,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|iscissors_modifier_update (Tool * tool,GdkEventKey * kevent,gpointer gdisp_ptr)
+DECL|function|iscissors_modifier_update (Tool * tool,GdkEventKey * kevent,GDisplay * gdisp)
 name|iscissors_modifier_update
 parameter_list|(
 name|Tool
@@ -4451,8 +4422,9 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|Iscissors
@@ -4606,7 +4578,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|iscissors_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|iscissors_cursor_update (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|iscissors_cursor_update
 parameter_list|(
 name|Tool
@@ -4617,17 +4589,14 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|Iscissors
 modifier|*
 name|iscissors
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|iscissors
 operator|=
@@ -4638,14 +4607,6 @@ operator|)
 name|tool
 operator|->
 name|private
-expr_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
 expr_stmt|;
 switch|switch
 condition|(
@@ -4830,7 +4791,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|iscissors_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
+DECL|function|iscissors_control (Tool * tool,ToolAction action,GDisplay * gdisp)
 name|iscissors_control
 parameter_list|(
 name|Tool
@@ -4840,8 +4801,9 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|Iscissors
@@ -6120,13 +6082,9 @@ expr_stmt|;
 comment|/*  Calculate the lowest cost path from one vertex to the next as specified    *  by the parameter "curve".    *    Here are the steps:    *      1)  Calculate the appropriate working area for this operation    *      2)  Allocate a temp buf for the dynamic programming array    *      3)  Run the dynamic programming algorithm to find the optimal path    *      4)  Translate the optimal path into pixels in the icurve data    *            structure.    */
 name|gdisp
 operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 name|iscissors
 operator|=

@@ -869,7 +869,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_button_press (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|paint_core_button_press (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|paint_core_button_press
 parameter_list|(
 name|Tool
@@ -880,17 +880,14 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|PaintCore
 modifier|*
 name|paint_core
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|GimpBrush
 modifier|*
@@ -908,14 +905,6 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|paint_core
 operator|=
 operator|(
@@ -1043,11 +1032,11 @@ name|state
 expr_stmt|;
 if|if
 condition|(
-name|gdisp_ptr
+name|gdisp
 operator|!=
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|||
 name|paint_core
 operator|->
@@ -1078,11 +1067,11 @@ comment|/*  if this is a new image, reinit the core vals  */
 if|if
 condition|(
 operator|(
-name|gdisp_ptr
+name|gdisp
 operator|!=
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|)
 operator|||
 operator|!
@@ -1486,9 +1475,9 @@ name|ACTIVE
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 name|tool
 operator|->
@@ -1868,7 +1857,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|paint_core_button_release (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|paint_core_button_release
 parameter_list|(
 name|Tool
@@ -1879,14 +1868,11 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|GImage
 modifier|*
 name|gimage
@@ -1895,14 +1881,6 @@ name|PaintCore
 modifier|*
 name|paint_core
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|gimage
 operator|=
 name|gdisp
@@ -2005,7 +1983,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_motion (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|paint_core_motion (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|paint_core_motion
 parameter_list|(
 name|Tool
@@ -2016,26 +1994,15 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|PaintCore
 modifier|*
 name|paint_core
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|paint_core
 operator|=
 operator|(
@@ -2284,7 +2251,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|paint_core_cursor_update (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|paint_core_cursor_update
 parameter_list|(
 name|Tool
@@ -2295,14 +2262,11 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|Layer
 modifier|*
 name|layer
@@ -2337,14 +2301,6 @@ name|ctoggle
 init|=
 name|FALSE
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|paint_core
 operator|=
 operator|(
@@ -2367,11 +2323,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gdisp_ptr
+name|gdisp
 operator|!=
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|||
 name|paint_core
 operator|->
@@ -2435,11 +2391,11 @@ block|{
 comment|/* If shift is down and this is not the first paint stroke, draw a line */
 if|if
 condition|(
-name|gdisp_ptr
+name|gdisp
 operator|==
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|&&
 operator|(
 name|mevent
@@ -3163,7 +3119,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
+DECL|function|paint_core_control (Tool * tool,ToolAction action,GDisplay * gdisp)
 name|paint_core_control
 parameter_list|(
 name|Tool
@@ -3173,30 +3129,19 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|PaintCore
 modifier|*
 name|paint_core
 decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|paint_core
 operator|=
 operator|(
@@ -3316,13 +3261,9 @@ condition|)
 block|{
 name|gdisp
 operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 name|gdisplay_transform_coords
 argument_list|(
@@ -4116,27 +4057,18 @@ decl_stmt|;
 name|GimpVector2
 name|delta
 decl_stmt|;
+name|gdouble
+name|dpressure
+decl_stmt|,
+name|dxtilt
+decl_stmt|,
+name|dytilt
+decl_stmt|;
 ifdef|#
 directive|ifdef
 name|GTK_HAVE_SIX_VALUATORS
 name|gdouble
-name|dpressure
-decl_stmt|,
-name|dxtilt
-decl_stmt|,
-name|dytilt
-decl_stmt|,
 name|dwheel
-decl_stmt|;
-else|#
-directive|else
-comment|/* !GTK_HAVE_SIX_VALUATORS */
-name|gdouble
-name|dpressure
-decl_stmt|,
-name|dxtilt
-decl_stmt|,
-name|dytilt
 decl_stmt|;
 endif|#
 directive|endif
@@ -4435,7 +4367,7 @@ block|{
 name|n
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|paint_core
@@ -6216,7 +6148,7 @@ expr_stmt|;
 name|index1
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|left
@@ -6257,7 +6189,7 @@ expr_stmt|;
 name|index2
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|left
@@ -6881,7 +6813,7 @@ name|i
 operator|++
 control|)
 block|{
-name|int
+name|gint
 name|tmp
 init|=
 operator|(
@@ -7661,7 +7593,7 @@ expr_stmt|;
 block|}
 comment|/*  Otherwise:    *   combine the canvas buf and the brush mask to the canvas buf    */
 else|else
-comment|/*  mode != CONSTANT  */
+block|{
 name|brush_to_canvas_buf
 argument_list|(
 name|paint_core
@@ -7671,6 +7603,7 @@ argument_list|,
 name|brush_opacity
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  intialize canvas buf source pixel regions  */
 name|srcPR
 operator|.

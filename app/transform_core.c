@@ -172,121 +172,66 @@ file|"libgimp/gimpmath.h"
 end_include
 
 begin_comment
-comment|/*  variables  */
+comment|/* This should be migrated to pixel_region or similar... */
 end_comment
-
-begin_decl_stmt
-DECL|variable|old_trans_info
-specifier|static
-name|TranInfo
-name|old_trans_info
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|transform_info
-name|InfoDialog
-modifier|*
-name|transform_info
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|transform_info_inited
-specifier|static
-name|gboolean
-name|transform_info_inited
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
-comment|/*  forward function declarations  */
+comment|/* PixelSurround describes a (read-only)  *  region around a pixel in a tile manager  */
 end_comment
 
-begin_function_decl
-specifier|static
-name|void
-name|transform_core_bounds
-parameter_list|(
-name|Tool
+begin_typedef
+DECL|struct|_PixelSurround
+typedef|typedef
+struct|struct
+name|_PixelSurround
+block|{
+DECL|member|tile
+name|Tile
 modifier|*
-parameter_list|,
-name|void
+name|tile
+decl_stmt|;
+DECL|member|mgr
+name|TileManager
 modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|transform_core_recalc
-parameter_list|(
-name|Tool
+name|mgr
+decl_stmt|;
+DECL|member|buff
+name|guchar
 modifier|*
-parameter_list|,
-name|void
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|transform_core_doit
-parameter_list|(
-name|Tool
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gdouble
-name|cubic
-parameter_list|(
-name|gdouble
-parameter_list|,
+name|buff
+decl_stmt|;
+DECL|member|buff_size
 name|gint
-parameter_list|,
+name|buff_size
+decl_stmt|;
+DECL|member|bpp
 name|gint
-parameter_list|,
+name|bpp
+decl_stmt|;
+DECL|member|w
 name|gint
-parameter_list|,
+name|w
+decl_stmt|;
+DECL|member|h
 name|gint
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|transform_core_setup_grid
-parameter_list|(
-name|Tool
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|transform_core_grid_recalc
-parameter_list|(
-name|TransformCore
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
+name|h
+decl_stmt|;
+DECL|member|bg
+name|guchar
+name|bg
+index|[
+name|MAX_CHANNELS
+index|]
+decl_stmt|;
+DECL|member|row_stride
+name|gint
+name|row_stride
+decl_stmt|;
+DECL|typedef|PixelSurround
+block|}
+name|PixelSurround
+typedef|;
+end_typedef
 
 begin_define
 DECL|macro|BILINEAR (jk,j1k,jk1,j1k1,dx,dy)
@@ -365,71 +310,140 @@ value|tile[i] = tile_manager_get_tile (float_tiles, x, y, TRUE, FALSE); \      s
 end_define
 
 begin_comment
-comment|/* This should be migrated to pixel_region or similar... */
+comment|/*  forward function declarations  */
 end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|transform_core_bounds
+parameter_list|(
+name|Tool
+modifier|*
+name|tool
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|transform_core_recalc
+parameter_list|(
+name|Tool
+modifier|*
+name|tool
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|transform_core_doit
+parameter_list|(
+name|Tool
+modifier|*
+name|tool
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gdouble
+name|cubic
+parameter_list|(
+name|gdouble
+name|dx
+parameter_list|,
+name|gint
+name|jm1
+parameter_list|,
+name|gint
+name|j
+parameter_list|,
+name|gint
+name|jp1
+parameter_list|,
+name|gint
+name|jp2
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|transform_core_setup_grid
+parameter_list|(
+name|Tool
+modifier|*
+name|tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|transform_core_grid_recalc
+parameter_list|(
+name|TransformCore
+modifier|*
+name|transform_core
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_comment
-comment|/* PixelSurround describes a (read-only)  *  region around a pixel in a tile manager  */
+comment|/*  variables  */
 end_comment
 
-begin_typedef
-DECL|struct|_PixelSurround
-typedef|typedef
-struct|struct
-name|_PixelSurround
-block|{
-DECL|member|tile
-name|Tile
+begin_decl_stmt
+DECL|variable|old_trans_info
+specifier|static
+name|TranInfo
+name|old_trans_info
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|transform_info
+name|InfoDialog
 modifier|*
-name|tile
+name|transform_info
+init|=
+name|NULL
 decl_stmt|;
-DECL|member|mgr
-name|TileManager
-modifier|*
-name|mgr
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|transform_info_inited
+specifier|static
+name|gboolean
+name|transform_info_inited
+init|=
+name|FALSE
 decl_stmt|;
-DECL|member|buff
-name|guchar
-modifier|*
-name|buff
-decl_stmt|;
-DECL|member|buff_size
-name|gint
-name|buff_size
-decl_stmt|;
-DECL|member|bpp
-name|gint
-name|bpp
-decl_stmt|;
-DECL|member|w
-name|gint
-name|w
-decl_stmt|;
-DECL|member|h
-name|gint
-name|h
-decl_stmt|;
-DECL|member|bg
-name|guchar
-name|bg
-index|[
-name|MAX_CHANNELS
-index|]
-decl_stmt|;
-DECL|member|row_stride
-name|gint
-name|row_stride
-decl_stmt|;
-DECL|typedef|PixelSurround
-block|}
-name|PixelSurround
-typedef|;
-end_typedef
+end_decl_stmt
 
 begin_function
 specifier|static
 name|void
-DECL|function|pixel_surround_init (PixelSurround * ps,TileManager * t,gint w,gint h,guchar bg[MAX_CHANNELS])
+DECL|function|pixel_surround_init (PixelSurround * ps,TileManager * tm,gint w,gint h,guchar bg[MAX_CHANNELS])
 name|pixel_surround_init
 parameter_list|(
 name|PixelSurround
@@ -438,7 +452,7 @@ name|ps
 parameter_list|,
 name|TileManager
 modifier|*
-name|t
+name|tm
 parameter_list|,
 name|gint
 name|w
@@ -487,13 +501,13 @@ name|ps
 operator|->
 name|tile
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 name|ps
 operator|->
 name|mgr
 operator|=
-name|t
+name|tm
 expr_stmt|;
 name|ps
 operator|->
@@ -501,7 +515,7 @@ name|bpp
 operator|=
 name|tile_manager_level_bpp
 argument_list|(
-name|t
+name|tm
 argument_list|)
 expr_stmt|;
 name|ps
@@ -898,7 +912,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|pixel_surround_rowstride (PixelSurround * ps)
 name|pixel_surround_rowstride
 parameter_list|(
@@ -1026,7 +1040,7 @@ name|tool
 argument_list|,
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -1118,7 +1132,7 @@ name|tool
 argument_list|,
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 comment|/*  resume drawing the current tool  */
@@ -1169,7 +1183,7 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|transform_core_button_press (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|transform_core_button_press (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|transform_core_button_press
 parameter_list|(
 name|Tool
@@ -1180,14 +1194,11 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|TransformCore
 modifier|*
 name|transform_core
@@ -1215,14 +1226,6 @@ name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|transform_core
 operator|=
 operator|(
@@ -1299,7 +1302,7 @@ name|gdisp
 operator|==
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|)
 operator|&&
 name|transform_core
@@ -1724,13 +1727,13 @@ name|transform_core_reset
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 comment|/*  Set the pointer to the active display  */
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
 name|gdisp
 expr_stmt|;
@@ -1786,7 +1789,7 @@ name|transform_core_bounds
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 comment|/*  Calculate the grid line endpoints  */
@@ -1810,7 +1813,7 @@ call|)
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|,
 name|TRANSFORM_INIT
 argument_list|)
@@ -1886,7 +1889,7 @@ name|transform_core_recalc
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 comment|/*  recall this function to find which handle we're dragging  */
@@ -1902,7 +1905,7 @@ name|tool
 argument_list|,
 name|bevent
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -1911,7 +1914,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|transform_core_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|transform_core_button_release (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|transform_core_button_release
 parameter_list|(
 name|Tool
@@ -1922,14 +1925,11 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|TransformCore
 modifier|*
 name|transform_core
@@ -1937,14 +1937,6 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|transform_core
 operator|=
 operator|(
@@ -2024,7 +2016,7 @@ name|transform_core_doit
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -2089,7 +2081,7 @@ name|transform_core_recalc
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 comment|/*  resume drawing the current tool  */
@@ -2136,21 +2128,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|transform_core_doit (Tool * tool,gpointer gdisp_ptr)
+DECL|function|transform_core_doit (Tool * tool,GDisplay * gdisp)
 name|transform_core_doit
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|TransformCore
 modifier|*
 name|transform_core
@@ -2179,14 +2168,6 @@ name|y
 decl_stmt|;
 name|gimp_add_busy_cursors
 argument_list|()
-expr_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
 expr_stmt|;
 name|transform_core
 operator|=
@@ -2286,7 +2267,7 @@ call|)
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|,
 name|TRANSFORM_FINISH
 argument_list|)
@@ -2300,7 +2281,7 @@ call|)
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|,
 name|TRANSFORM_INIT
 argument_list|)
@@ -2309,7 +2290,7 @@ name|transform_core_recalc
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 if|if
@@ -2570,7 +2551,7 @@ name|transform_core_reset
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 comment|/*  if this tool is non-interactive, make it inactive after use  */
@@ -2592,7 +2573,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|transform_core_motion (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|transform_core_motion (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|transform_core_motion
 parameter_list|(
 name|Tool
@@ -2603,26 +2584,15 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|TransformCore
 modifier|*
 name|transform_core
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|transform_core
 operator|=
 operator|(
@@ -2715,7 +2685,7 @@ call|)
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|,
 name|TRANSFORM_MOTION
 argument_list|)
@@ -2751,7 +2721,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|transform_core_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|transform_core_cursor_update (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|transform_core_cursor_update
 parameter_list|(
 name|Tool
@@ -2762,14 +2732,11 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|TransformCore
 modifier|*
 name|transform_core
@@ -2788,14 +2755,6 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|transform_core
 operator|=
 operator|(
@@ -2952,7 +2911,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|transform_core_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
+DECL|function|transform_core_control (Tool * tool,ToolAction action,GDisplay * gdisp)
 name|transform_core_control
 parameter_list|(
 name|Tool
@@ -2962,8 +2921,9 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|TransformCore
@@ -3005,7 +2965,7 @@ name|transform_core_recalc
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 name|draw_core_resume
@@ -3025,7 +2985,7 @@ name|transform_core_reset
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3109,7 +3069,7 @@ name|gdisp
 operator|=
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 name|transform_core
 operator|=
@@ -4401,25 +4361,21 @@ end_function
 
 begin_function
 name|void
-DECL|function|transform_core_reset (Tool * tool,void * gdisp_ptr)
+DECL|function|transform_core_reset (Tool * tool,GDisplay * gdisp)
 name|transform_core_reset
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|void
+name|GDisplay
 modifier|*
-name|gdisp_ptr
+name|gdisp
 parameter_list|)
 block|{
 name|TransformCore
 modifier|*
 name|transform_core
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|transform_core
 operator|=
@@ -4430,14 +4386,6 @@ operator|)
 name|tool
 operator|->
 name|private
-expr_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
 expr_stmt|;
 if|if
 condition|(
@@ -4487,7 +4435,7 @@ name|INACTIVE
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
 name|NULL
 expr_stmt|;
@@ -4503,22 +4451,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|transform_core_bounds (Tool * tool,void * gdisp_ptr)
+DECL|function|transform_core_bounds (Tool * tool,GDisplay * gdisp)
 name|transform_core_bounds
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|void
-modifier|*
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|TransformCore
 modifier|*
 name|transform_core
@@ -4536,14 +4480,6 @@ name|offset_x
 decl_stmt|,
 name|offset_y
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|transform_core
 operator|=
 operator|(
@@ -5239,16 +5175,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|transform_core_recalc (Tool * tool,void * gdisp_ptr)
+DECL|function|transform_core_recalc (Tool * tool,GDisplay * gdisp)
 name|transform_core_recalc
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|void
+name|GDisplay
 modifier|*
-name|gdisp_ptr
+name|gdisp
 parameter_list|)
 block|{
 name|TransformCore
@@ -5269,7 +5205,7 @@ name|transform_core_bounds
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 call|(
@@ -5281,7 +5217,7 @@ call|)
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|,
 name|TRANSFORM_RECALC
 argument_list|)

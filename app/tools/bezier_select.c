@@ -248,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd655a10108
+DECL|struct|__anon2b1597960108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -284,7 +284,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd655a10208
+DECL|struct|__anon2b1597960208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd655a10308
+DECL|struct|__anon2b1597960308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -385,8 +385,9 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -404,8 +405,9 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -423,8 +425,9 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -441,8 +444,9 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -460,8 +464,9 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1257,12 +1262,12 @@ end_function
 
 begin_function
 name|gint
-DECL|function|bezier_select_load (void * gdisp_ptr,BezierPoint * pts,gint num_pts,gint closed)
+DECL|function|bezier_select_load (GDisplay * gdisp,BezierPoint * pts,gint num_pts,gint closed)
 name|bezier_select_load
 parameter_list|(
-name|void
+name|GDisplay
 modifier|*
-name|gdisp_ptr
+name|gdisp
 parameter_list|,
 name|BezierPoint
 modifier|*
@@ -1275,10 +1280,6 @@ name|gint
 name|closed
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 name|Tool
 modifier|*
 name|tool
@@ -1287,14 +1288,6 @@ name|BezierSelect
 modifier|*
 name|bezier_sel
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 comment|/*  select the bezier tool  */
 name|gimp_context_set_tool
 argument_list|(
@@ -1316,9 +1309,9 @@ name|ACTIVE
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 name|bezier_sel
 operator|=
@@ -1374,7 +1367,7 @@ name|bezier_sel
 argument_list|,
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 argument_list|,
 name|SUBDIVIDE
 argument_list|,
@@ -3430,7 +3423,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bezier_select_button_press (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|bezier_select_button_press (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|bezier_select_button_press
 parameter_list|(
 name|Tool
@@ -3441,14 +3434,11 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|BezierSelect
 modifier|*
 name|bezier_sel
@@ -3481,14 +3471,6 @@ name|halfwidth
 decl_stmt|,
 name|dummy
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|tool
 operator|->
 name|drawable
@@ -3519,9 +3501,9 @@ condition|)
 block|{
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 block|}
 else|else
@@ -3535,11 +3517,11 @@ name|state
 operator|==
 name|ACTIVE
 operator|&&
-name|gdisp_ptr
+name|gdisp
 operator|!=
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 condition|)
 block|{
 name|draw_core_stop
@@ -3625,13 +3607,13 @@ operator|(
 name|GDisplay
 operator|*
 operator|)
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 name|active_tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 name|curCore
 operator|=
@@ -3668,20 +3650,20 @@ name|ACTIVE
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 comment|/*       if (bevent->state& GDK_MOD1_MASK) */
 comment|/* 	{ */
-comment|/* 	  init_edit_selection (tool, gdisp_ptr, bevent, EDIT_MASK_TRANSLATE); */
+comment|/* 	  init_edit_selection (tool, gdisp, bevent, EDIT_MASK_TRANSLATE); */
 comment|/* 	  break; */
 comment|/* 	} */
 comment|/*       else if (!(bevent->state& GDK_SHIFT_MASK)&& !(bevent->state& GDK_CONTROL_MASK)) */
 comment|/* 	if (! (layer_is_floating_sel (gimp_image_get_active_layer (gdisp->gimage)))&& */
 comment|/* 	    gdisplay_mask_value (gdisp, bevent->x, bevent->y)> HALF_WAY) */
 comment|/* 	  { */
-comment|/* 	    init_edit_selection (tool, gdisp_ptr, bevent, EDIT_MASK_TO_LAYER_TRANSLATE); */
+comment|/* 	    init_edit_selection (tool, gdisp, bevent, EDIT_MASK_TO_LAYER_TRANSLATE); */
 comment|/* 	    break; */
 comment|/* 	  } */
 name|bezier_sel
@@ -3880,7 +3862,7 @@ name|tool
 argument_list|,
 name|bevent
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -4028,7 +4010,7 @@ name|tool
 argument_list|,
 name|bevent
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -4140,7 +4122,7 @@ name|tool
 argument_list|,
 name|bevent
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -4811,7 +4793,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bezier_select_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|bezier_select_button_release (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|bezier_select_button_release
 parameter_list|(
 name|Tool
@@ -4822,14 +4804,11 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|BezierSelect
 modifier|*
 name|bezier_sel
@@ -4838,7 +4817,7 @@ name|gdisp
 operator|=
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 name|bezier_sel
 operator|=
@@ -4877,7 +4856,7 @@ name|bezier_sel
 argument_list|,
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 argument_list|,
 name|SUBDIVIDE
 argument_list|,
@@ -4902,7 +4881,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|bezier_select_motion (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|bezier_select_motion (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|bezier_select_motion
 parameter_list|(
 name|Tool
@@ -4913,8 +4892,9 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 specifier|static
@@ -4922,10 +4902,6 @@ name|gint
 name|lastx
 decl_stmt|,
 name|lasty
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|BezierSelect
 modifier|*
@@ -4959,10 +4935,6 @@ operator|!=
 name|ACTIVE
 condition|)
 return|return;
-name|gdisp
-operator|=
-name|gdisp_ptr
-expr_stmt|;
 name|bezier_sel
 operator|=
 name|tool
@@ -6286,7 +6258,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bezier_select_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|bezier_select_cursor_update (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|bezier_select_cursor_update
 parameter_list|(
 name|Tool
@@ -6297,14 +6269,11 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|BezierSelect
 modifier|*
 name|bezier_sel
@@ -6328,14 +6297,6 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|bezier_sel
 operator|=
 name|tool
@@ -6348,7 +6309,7 @@ name|gdisp
 operator|!=
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|||
 name|bezier_sel
 operator|->
@@ -6915,7 +6876,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bezier_select_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
+DECL|function|bezier_select_control (Tool * tool,ToolAction action,GDisplay * gdisp)
 name|bezier_select_control
 parameter_list|(
 name|Tool
@@ -6925,8 +6886,9 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|BezierSelect
@@ -7214,7 +7176,7 @@ name|gdisp
 operator|=
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 name|bezier_sel
 operator|=
@@ -9183,36 +9145,35 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|buf
 decl_stmt|,
 modifier|*
 name|b
 decl_stmt|;
-name|int
+name|gint
 name|draw_type
 decl_stmt|;
-name|int
+name|gint
 modifier|*
 name|vals
 decl_stmt|,
 name|val
 decl_stmt|;
-name|int
+name|gint
 name|start
 decl_stmt|,
 name|end
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|x2
 decl_stmt|,
 name|w
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -10000,7 +9961,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bezier_convert_line (GSList ** scanlines,int x1,int y1,int x2,int y2)
+DECL|function|bezier_convert_line (GSList ** scanlines,gint x1,gint y1,gint x2,gint y2)
 name|bezier_convert_line
 parameter_list|(
 name|GSList
@@ -10008,33 +9969,33 @@ modifier|*
 modifier|*
 name|scanlines
 parameter_list|,
-name|int
+name|gint
 name|x1
 parameter_list|,
-name|int
+name|gint
 name|y1
 parameter_list|,
-name|int
+name|gint
 name|x2
 parameter_list|,
-name|int
+name|gint
 name|y2
 parameter_list|)
 block|{
-name|int
+name|gint
 name|dx
 decl_stmt|,
 name|dy
 decl_stmt|;
-name|int
+name|gint
 name|error
 decl_stmt|,
 name|inc
 decl_stmt|;
-name|int
+name|gint
 name|tmp
 decl_stmt|;
-name|double
+name|gdouble
 name|slope
 decl_stmt|;
 if|if
@@ -10444,14 +10405,14 @@ begin_function
 specifier|static
 name|GSList
 modifier|*
-DECL|function|bezier_insert_in_list (GSList * list,int x)
+DECL|function|bezier_insert_in_list (GSList * list,gint x)
 name|bezier_insert_in_list
 parameter_list|(
 name|GSList
 modifier|*
 name|list
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|)
 block|{
@@ -10590,9 +10551,11 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|bezier_tool_selected ()
+DECL|function|bezier_tool_selected (void)
 name|bezier_tool_selected
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 return|return
 operator|(
@@ -10645,7 +10608,7 @@ name|bpnt
 init|=
 name|NULL
 decl_stmt|;
-name|int
+name|gint
 name|need_move
 init|=
 literal|0
@@ -10719,7 +10682,7 @@ literal|0
 expr_stmt|;
 name|active_tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
 name|gdisp
 expr_stmt|;
@@ -10816,6 +10779,7 @@ literal|0
 expr_stmt|;
 block|}
 else|else
+block|{
 name|bezier_add_point
 argument_list|(
 name|curSel
@@ -10833,6 +10797,7 @@ operator|->
 name|y
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|bpnt
@@ -10957,7 +10922,7 @@ if|if
 condition|(
 name|curTool
 operator|->
-name|gdisp_ptr
+name|gdisp
 condition|)
 name|bezier_convert
 argument_list|(
@@ -10965,7 +10930,7 @@ name|curSel
 argument_list|,
 name|curTool
 operator|->
-name|gdisp_ptr
+name|gdisp
 argument_list|,
 name|SUBDIVIDE
 argument_list|,
@@ -11073,7 +11038,7 @@ name|bezier_sel
 argument_list|,
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 argument_list|,
 name|SUBDIVIDE
 argument_list|,
@@ -12445,8 +12410,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|bezier_select_mode (gint mode)
 name|void
+DECL|function|bezier_select_mode (gint mode)
 name|bezier_select_mode
 parameter_list|(
 name|gint

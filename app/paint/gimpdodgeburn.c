@@ -130,6 +130,34 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
+comment|/*  Default values  */
+end_comment
+
+begin_define
+DECL|macro|DODGEBURN_DEFAULT_TYPE
+define|#
+directive|define
+name|DODGEBURN_DEFAULT_TYPE
+value|DODGE
+end_define
+
+begin_define
+DECL|macro|DODGEBURN_DEFAULT_EXPOSURE
+define|#
+directive|define
+name|DODGEBURN_DEFAULT_EXPOSURE
+value|50.0
+end_define
+
+begin_define
+DECL|macro|DODGEBURN_DEFAULT_MODE
+define|#
+directive|define
+name|DODGEBURN_DEFAULT_MODE
+value|DODGEBURN_HIGHLIGHTS
+end_define
+
+begin_comment
 comment|/*  the dodgeburn structures  */
 end_comment
 
@@ -208,23 +236,48 @@ end_struct
 
 begin_function_decl
 specifier|static
+name|gpointer
+name|dodgeburn_paint_func
+parameter_list|(
+name|PaintCore
+modifier|*
+name|paint_core
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|PaintState
+name|state
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|void
 name|dodgeburn_make_luts
 parameter_list|(
 name|PaintCore
 modifier|*
+name|paint_cure
 parameter_list|,
-name|double
+name|gdouble
+name|db_exposure
 parameter_list|,
 name|DodgeBurnType
+name|type
 parameter_list|,
 name|DodgeBurnMode
+name|mode
 parameter_list|,
 name|GimpLut
 modifier|*
+name|lut
 parameter_list|,
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -234,14 +287,17 @@ specifier|static
 name|gfloat
 name|dodgeburn_highlights_lut_func
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
+name|user_data
 parameter_list|,
-name|int
+name|gint
+name|nchannels
 parameter_list|,
-name|int
+name|gint
+name|channel
 parameter_list|,
 name|gfloat
+name|value
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -251,14 +307,17 @@ specifier|static
 name|gfloat
 name|dodgeburn_midtones_lut_func
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
+name|user_data
 parameter_list|,
-name|int
+name|gint
+name|nchannels
 parameter_list|,
-name|int
+name|gint
+name|channel
 parameter_list|,
 name|gfloat
+name|value
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -268,66 +327,76 @@ specifier|static
 name|gfloat
 name|dodgeburn_shadows_lut_func
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
+name|user_data
 parameter_list|,
-name|int
+name|gint
+name|nchannels
 parameter_list|,
-name|int
-parameter_list|,
-name|gfloat
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* The dodge burn lookup tables */
-end_comment
-
-begin_function_decl
-name|gfloat
-name|dodgeburn_highlights
-parameter_list|(
-name|void
-modifier|*
-parameter_list|,
-name|int
-parameter_list|,
-name|int
+name|gint
+name|channel
 parameter_list|,
 name|gfloat
+name|value
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gfloat
-name|dodgeburn_midtones
-parameter_list|(
+specifier|static
 name|void
+name|dodgeburn_motion
+parameter_list|(
+name|PaintCore
 modifier|*
+name|paint_core
 parameter_list|,
-name|int
+name|PaintPressureOptions
+modifier|*
+name|pressure_options
 parameter_list|,
-name|int
+name|gdouble
+name|dodgeburn_exposure
 parameter_list|,
-name|gfloat
+name|GimpLut
+modifier|*
+name|lut
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gfloat
-name|dodgeburn_shadows
-parameter_list|(
+specifier|static
 name|void
+name|dodgeburn_init
+parameter_list|(
+name|PaintCore
 modifier|*
+name|paint_cure
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|dodgeburn_finish
+parameter_list|(
+name|PaintCore
+modifier|*
+name|paint_core
 parameter_list|,
-name|int
-parameter_list|,
-name|gfloat
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -354,7 +423,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|non_gui_exposure
 specifier|static
-name|double
+name|gdouble
 name|non_gui_exposure
 decl_stmt|;
 end_decl_stmt
@@ -367,84 +436,6 @@ modifier|*
 name|non_gui_lut
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-comment|/* Default values */
-end_comment
-
-begin_define
-DECL|macro|DODGEBURN_DEFAULT_TYPE
-define|#
-directive|define
-name|DODGEBURN_DEFAULT_TYPE
-value|DODGE
-end_define
-
-begin_define
-DECL|macro|DODGEBURN_DEFAULT_EXPOSURE
-define|#
-directive|define
-name|DODGEBURN_DEFAULT_EXPOSURE
-value|50.0
-end_define
-
-begin_define
-DECL|macro|DODGEBURN_DEFAULT_MODE
-define|#
-directive|define
-name|DODGEBURN_DEFAULT_MODE
-value|DODGEBURN_HIGHLIGHTS
-end_define
-
-begin_function_decl
-specifier|static
-name|void
-name|dodgeburn_motion
-parameter_list|(
-name|PaintCore
-modifier|*
-parameter_list|,
-name|PaintPressureOptions
-modifier|*
-parameter_list|,
-name|double
-parameter_list|,
-name|GimpLut
-modifier|*
-parameter_list|,
-name|GimpDrawable
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|dodgeburn_init
-parameter_list|(
-name|PaintCore
-modifier|*
-parameter_list|,
-name|GimpDrawable
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|dodgeburn_finish
-parameter_list|(
-name|PaintCore
-modifier|*
-parameter_list|,
-name|GimpDrawable
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_comment
 comment|/* functions  */
@@ -992,9 +983,9 @@ block|}
 end_function
 
 begin_function
-name|void
-modifier|*
-DECL|function|dodgeburn_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
+specifier|static
+name|gpointer
+DECL|function|dodgeburn_paint_func (PaintCore * paint_core,GimpDrawable * drawable,PaintState state)
 name|dodgeburn_paint_func
 parameter_list|(
 name|PaintCore
@@ -1005,7 +996,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|PaintState
 name|state
 parameter_list|)
 block|{
@@ -1060,6 +1051,8 @@ argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 return|return
@@ -1160,14 +1153,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dodgeburn_make_luts (PaintCore * paint_core,double db_exposure,DodgeBurnType type,DodgeBurnMode mode,GimpLut * lut,GimpDrawable * drawable)
+DECL|function|dodgeburn_make_luts (PaintCore * paint_core,gdouble db_exposure,DodgeBurnType type,DodgeBurnMode mode,GimpLut * lut,GimpDrawable * drawable)
 name|dodgeburn_make_luts
 parameter_list|(
 name|PaintCore
 modifier|*
 name|paint_core
 parameter_list|,
-name|double
+name|gdouble
 name|db_exposure
 parameter_list|,
 name|DodgeBurnType
@@ -1188,7 +1181,7 @@ block|{
 name|GimpLutFunc
 name|lut_func
 decl_stmt|;
-name|int
+name|gint
 name|nchannels
 init|=
 name|gimp_drawable_bytes
@@ -1202,9 +1195,7 @@ name|exposure
 decl_stmt|;
 name|exposure
 operator|=
-operator|(
 name|db_exposure
-operator|)
 operator|/
 literal|100.0
 expr_stmt|;
@@ -1263,8 +1254,7 @@ argument_list|,
 name|lut_func
 argument_list|,
 operator|(
-name|void
-operator|*
+name|gpointer
 operator|)
 operator|&
 name|exposure
@@ -1278,7 +1268,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dodgeburn_modifier_key_func (Tool * tool,GdkEventKey * kevent,gpointer gdisp_ptr)
+DECL|function|dodgeburn_modifier_key_func (Tool * tool,GdkEventKey * kevent,GDisplay * gdisp)
 name|dodgeburn_modifier_key_func
 parameter_list|(
 name|Tool
@@ -1289,8 +1279,9 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 switch|switch
@@ -1461,7 +1452,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dodgeburn_cursor_update_func (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|dodgeburn_cursor_update_func (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|dodgeburn_cursor_update_func
 parameter_list|(
 name|Tool
@@ -1472,8 +1463,9 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|tool
@@ -1494,7 +1486,7 @@ name|tool
 argument_list|,
 name|mevent
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -2146,9 +2138,8 @@ end_function
 
 begin_function
 specifier|static
-name|void
-modifier|*
-DECL|function|dodgeburn_non_gui_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
+name|gpointer
+DECL|function|dodgeburn_non_gui_paint_func (PaintCore * paint_core,GimpDrawable * drawable,PaintState state)
 name|dodgeburn_non_gui_paint_func
 parameter_list|(
 name|PaintCore
@@ -2159,7 +2150,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|PaintState
 name|state
 parameter_list|)
 block|{
@@ -2185,22 +2176,22 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|dodgeburn_non_gui_default (GimpDrawable * drawable,int num_strokes,double * stroke_array)
+DECL|function|dodgeburn_non_gui_default (GimpDrawable * drawable,gint num_strokes,gdouble * stroke_array)
 name|dodgeburn_non_gui_default
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|num_strokes
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|stroke_array
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|exposure
 init|=
 name|DODGEBURN_DEFAULT_TYPE
@@ -2266,14 +2257,14 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|dodgeburn_non_gui (GimpDrawable * drawable,double exposure,DodgeBurnType type,DodgeBurnMode mode,int num_strokes,double * stroke_array)
+DECL|function|dodgeburn_non_gui (GimpDrawable * drawable,gdouble exposure,DodgeBurnType type,DodgeBurnMode mode,gint num_strokes,gdouble * stroke_array)
 name|dodgeburn_non_gui
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|double
+name|gdouble
 name|exposure
 parameter_list|,
 name|DodgeBurnType
@@ -2282,15 +2273,15 @@ parameter_list|,
 name|DodgeBurnMode
 name|mode
 parameter_list|,
-name|int
+name|gint
 name|num_strokes
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|stroke_array
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if
@@ -2482,17 +2473,16 @@ end_function
 begin_function
 specifier|static
 name|gfloat
-DECL|function|dodgeburn_highlights_lut_func (void * user_data,int nchannels,int channel,gfloat value)
+DECL|function|dodgeburn_highlights_lut_func (gpointer user_data,gint nchannels,gint channel,gfloat value)
 name|dodgeburn_highlights_lut_func
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|user_data
 parameter_list|,
-name|int
+name|gint
 name|nchannels
 parameter_list|,
-name|int
+name|gint
 name|channel
 parameter_list|,
 name|gfloat
@@ -2562,17 +2552,16 @@ end_function
 begin_function
 specifier|static
 name|gfloat
-DECL|function|dodgeburn_midtones_lut_func (void * user_data,int nchannels,int channel,gfloat value)
+DECL|function|dodgeburn_midtones_lut_func (gpointer user_data,gint nchannels,gint channel,gfloat value)
 name|dodgeburn_midtones_lut_func
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|user_data
 parameter_list|,
-name|int
+name|gint
 name|nchannels
 parameter_list|,
-name|int
+name|gint
 name|channel
 parameter_list|,
 name|gfloat
@@ -2664,17 +2653,16 @@ end_function
 begin_function
 specifier|static
 name|gfloat
-DECL|function|dodgeburn_shadows_lut_func (void * user_data,int nchannels,int channel,gfloat value)
+DECL|function|dodgeburn_shadows_lut_func (gpointer user_data,gint nchannels,gint channel,gfloat value)
 name|dodgeburn_shadows_lut_func
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|user_data
 parameter_list|,
-name|int
+name|gint
 name|nchannels
 parameter_list|,
-name|int
+name|gint
 name|channel
 parameter_list|,
 name|gfloat

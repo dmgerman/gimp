@@ -21,7 +21,9 @@ name|InfoDialog
 modifier|*
 name|nav_window_create
 parameter_list|(
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl

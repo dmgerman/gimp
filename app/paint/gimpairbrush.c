@@ -246,6 +246,48 @@ struct|;
 end_struct
 
 begin_comment
+comment|/*  local function prototypes  */
+end_comment
+
+begin_function_decl
+specifier|static
+name|gpointer
+name|airbrush_paint_func
+parameter_list|(
+name|PaintCore
+modifier|*
+name|paint_core
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|PaintState
+name|state
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gpointer
+name|airbrush_non_gui_paint_func
+parameter_list|(
+name|PaintCore
+modifier|*
+name|paint_core
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|PaintState
+name|state
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  the airbrush tool options  */
 end_comment
 
@@ -841,9 +883,9 @@ block|}
 end_function
 
 begin_function
-name|void
-modifier|*
-DECL|function|airbrush_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
+specifier|static
+name|gpointer
+DECL|function|airbrush_paint_func (PaintCore * paint_core,GimpDrawable * drawable,PaintState state)
 name|airbrush_paint_func
 parameter_list|(
 name|PaintCore
@@ -854,7 +896,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|PaintState
 name|state
 parameter_list|)
 block|{
@@ -1537,9 +1579,8 @@ end_function
 
 begin_function
 specifier|static
-name|void
-modifier|*
-DECL|function|airbrush_non_gui_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
+name|gpointer
+DECL|function|airbrush_non_gui_paint_func (PaintCore * paint_core,GimpDrawable * drawable,PaintState state)
 name|airbrush_non_gui_paint_func
 parameter_list|(
 name|PaintCore
@@ -1550,7 +1591,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|PaintState
 name|state
 parameter_list|)
 block|{
@@ -1576,17 +1617,17 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|airbrush_non_gui_default (GimpDrawable * drawable,int num_strokes,double * stroke_array)
+DECL|function|airbrush_non_gui_default (GimpDrawable * drawable,gint num_strokes,gdouble * stroke_array)
 name|airbrush_non_gui_default
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|num_strokes
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|stroke_array
 parameter_list|)
@@ -1629,25 +1670,25 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|airbrush_non_gui (GimpDrawable * drawable,double pressure,int num_strokes,double * stroke_array)
+DECL|function|airbrush_non_gui (GimpDrawable * drawable,gdouble pressure,gint num_strokes,gdouble * stroke_array)
 name|airbrush_non_gui
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|double
+name|gdouble
 name|pressure
 parameter_list|,
-name|int
+name|gint
 name|num_strokes
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|stroke_array
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if
@@ -1803,7 +1844,6 @@ return|return
 name|TRUE
 return|;
 block|}
-else|else
 return|return
 name|FALSE
 return|;

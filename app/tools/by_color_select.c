@@ -388,11 +388,15 @@ name|by_color_select_button_press
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -404,11 +408,15 @@ name|by_color_select_button_release
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -420,11 +428,15 @@ name|by_color_select_modifier_update
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventKey
 modifier|*
+name|kevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -436,11 +448,15 @@ name|by_color_select_cursor_update
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -452,11 +468,15 @@ name|by_color_select_oper_update
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -468,10 +488,14 @@ name|by_color_select_control
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|ToolAction
+name|action
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -932,8 +956,7 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|void
-modifier|*
+name|gpointer
 name|pr
 decl_stmt|;
 name|gint
@@ -1471,7 +1494,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|by_color_select_button_press (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|by_color_select_button_press (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|by_color_select_button_press
 parameter_list|(
 name|Tool
@@ -1482,26 +1505,15 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|ByColorSelect
 modifier|*
 name|by_color_sel
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|by_color_sel
 operator|=
 operator|(
@@ -1553,9 +1565,9 @@ name|ACTIVE
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 comment|/*  Make sure the "by color" select dialog is visible  */
 if|if
@@ -1691,7 +1703,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|by_color_select_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|by_color_select_button_release (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|by_color_select_button_release
 parameter_list|(
 name|Tool
@@ -1702,17 +1714,14 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|ByColorSelect
 modifier|*
 name|by_color_sel
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|gint
 name|x
@@ -1730,14 +1739,6 @@ decl_stmt|;
 name|gint
 name|use_offsets
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|by_color_sel
 operator|=
 operator|(
@@ -1963,7 +1964,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|by_color_select_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|by_color_select_cursor_update (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|by_color_select_cursor_update
 parameter_list|(
 name|Tool
@@ -1974,17 +1975,14 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|ByColorSelect
 modifier|*
 name|by_col_sel
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|Layer
 modifier|*
@@ -1995,14 +1993,6 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|by_col_sel
 operator|=
 operator|(
@@ -2321,7 +2311,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|by_color_select_modifier_update (Tool * tool,GdkEventKey * kevent,gpointer gdisp_ptr)
+DECL|function|by_color_select_modifier_update (Tool * tool,GdkEventKey * kevent,GDisplay * gdisp)
 name|by_color_select_modifier_update
 parameter_list|(
 name|Tool
@@ -2332,8 +2322,9 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|ByColorSelect
@@ -2442,11 +2433,7 @@ name|by_col_sel
 argument_list|,
 name|state
 argument_list|,
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -2455,7 +2442,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|by_color_select_oper_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|by_color_select_oper_update (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|by_color_select_oper_update
 parameter_list|(
 name|Tool
@@ -2466,8 +2453,9 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|ByColorSelect
@@ -2492,11 +2480,7 @@ name|mevent
 operator|->
 name|state
 argument_list|,
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -2505,7 +2489,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|by_color_select_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
+DECL|function|by_color_select_control (Tool * tool,ToolAction action,GDisplay * gdisp)
 name|by_color_select_control
 parameter_list|(
 name|Tool
@@ -2515,8 +2499,9 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 switch|switch

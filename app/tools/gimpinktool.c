@@ -452,70 +452,6 @@ struct|;
 end_struct
 
 begin_comment
-comment|/* the ink tool options  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|ink_options
-specifier|static
-name|InkOptions
-modifier|*
-name|ink_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/* local variables */
-end_comment
-
-begin_comment
-comment|/*  undo blocks variables  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|undo_tiles
-specifier|static
-name|TileManager
-modifier|*
-name|undo_tiles
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/* Tiles used to render the stroke at 1 byte/pp */
-end_comment
-
-begin_decl_stmt
-DECL|variable|canvas_tiles
-specifier|static
-name|TileManager
-modifier|*
-name|canvas_tiles
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/* Flat buffer that is used to used to render the dirty region  * for composition onto the destination drawable  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|canvas_buf
-specifier|static
-name|TempBuf
-modifier|*
-name|canvas_buf
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/*  local function prototypes  */
 end_comment
 
@@ -526,11 +462,15 @@ name|ink_button_press
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|mevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -542,11 +482,15 @@ name|ink_button_release
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -558,11 +502,15 @@ name|ink_motion
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -574,11 +522,15 @@ name|ink_cursor_update
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -590,10 +542,14 @@ name|ink_control
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|ToolAction
+name|tool_action
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -695,10 +651,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 function_decl|;
@@ -717,7 +673,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|tool_id
 parameter_list|)
 function_decl|;
@@ -861,16 +817,16 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 function_decl|;
@@ -881,16 +837,16 @@ specifier|static
 name|void
 name|ink_set_canvas_tiles
 parameter_list|(
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 function_decl|;
@@ -911,7 +867,7 @@ name|brush_widget
 parameter_list|,
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkRectangle
 modifier|*
@@ -927,7 +883,7 @@ name|brush_widget_realize
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -939,7 +895,7 @@ name|brush_widget_expose
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEventExpose
 modifier|*
@@ -959,7 +915,7 @@ name|brush_widget_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEventButton
 modifier|*
@@ -979,7 +935,7 @@ name|brush_widget_button_release
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEventButton
 modifier|*
@@ -999,7 +955,7 @@ name|brush_widget_motion_notify
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEventMotion
 modifier|*
@@ -1011,6 +967,70 @@ name|brush_widget
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/* local variables */
+end_comment
+
+begin_comment
+comment|/* the ink tool options  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|ink_options
+specifier|static
+name|InkOptions
+modifier|*
+name|ink_options
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  undo blocks variables  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|undo_tiles
+specifier|static
+name|TileManager
+modifier|*
+name|undo_tiles
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/* Tiles used to render the stroke at 1 byte/pp */
+end_comment
+
+begin_decl_stmt
+DECL|variable|canvas_tiles
+specifier|static
+name|TileManager
+modifier|*
+name|canvas_tiles
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/* Flat buffer that is used to used to render the dirty region  * for composition onto the destination drawable  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|canvas_buf
+specifier|static
+name|TempBuf
+modifier|*
+name|canvas_buf
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  functions  */
@@ -4363,7 +4383,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ink_button_press (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|ink_button_press (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|ink_button_press
 parameter_list|(
 name|Tool
@@ -4374,18 +4394,15 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|gdouble
 name|x
 decl_stmt|,
 name|y
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|InkTool
 modifier|*
@@ -4399,14 +4416,6 @@ name|Blob
 modifier|*
 name|b
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|ink_tool
 operator|=
 operator|(
@@ -4467,9 +4476,9 @@ name|ACTIVE
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 name|tool
 operator|->
@@ -4559,9 +4568,9 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 name|tool
 operator|->
@@ -4660,7 +4669,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ink_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|ink_button_release (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|ink_button_release
 parameter_list|(
 name|Tool
@@ -4671,14 +4680,11 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|GImage
 modifier|*
 name|gimage
@@ -4687,14 +4693,6 @@ name|InkTool
 modifier|*
 name|ink_tool
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|gimage
 operator|=
 name|gdisp
@@ -5096,7 +5094,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ink_motion (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|ink_motion (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|ink_motion
 parameter_list|(
 name|Tool
@@ -5107,14 +5105,11 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|InkTool
 modifier|*
 name|ink_tool
@@ -5130,18 +5125,18 @@ decl_stmt|,
 modifier|*
 name|blob_union
 decl_stmt|;
-name|double
+name|gdouble
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|double
+name|gdouble
 name|pressure
 decl_stmt|;
-name|double
+name|gdouble
 name|velocity
 decl_stmt|;
-name|double
+name|gdouble
 name|dist
 decl_stmt|;
 name|gdouble
@@ -5149,14 +5144,6 @@ name|lasttime
 decl_stmt|,
 name|thistime
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|ink_tool
 operator|=
 operator|(
@@ -5450,7 +5437,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ink_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|ink_cursor_update (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|ink_cursor_update
 parameter_list|(
 name|Tool
@@ -5461,14 +5448,11 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|Layer
 modifier|*
 name|layer
@@ -5478,19 +5462,11 @@ name|ctype
 init|=
 name|GDK_TOP_LEFT_ARROW
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|gdisplay_untransform_coords
 argument_list|(
 name|gdisp
@@ -5639,7 +5615,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ink_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
+DECL|function|ink_control (Tool * tool,ToolAction action,GDisplay * gdisp)
 name|ink_control
 parameter_list|(
 name|Tool
@@ -5649,8 +5625,9 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|InkTool
@@ -5714,7 +5691,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ink_init (InkTool * ink_tool,GimpDrawable * drawable,double x,double y)
+DECL|function|ink_init (InkTool * ink_tool,GimpDrawable * drawable,gdouble x,gdouble y)
 name|ink_init
 parameter_list|(
 name|InkTool
@@ -5725,10 +5702,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
@@ -5817,7 +5794,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ink_finish (InkTool * ink_tool,GimpDrawable * drawable,int tool_id)
+DECL|function|ink_finish (InkTool * ink_tool,GimpDrawable * drawable,gint tool_id)
 name|ink_finish
 parameter_list|(
 name|InkTool
@@ -5828,7 +5805,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|tool_id
 parameter_list|)
 block|{
@@ -5959,7 +5936,7 @@ modifier|*
 name|blob
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -5968,7 +5945,7 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -5977,7 +5954,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|bytes
 decl_stmt|;
 name|blob_bounds
@@ -6140,7 +6117,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2bab15160103
+DECL|enum|__anon2876b9e70103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -6157,27 +6134,27 @@ comment|/* The insertion sort here, for SUBSAMPLE = 8, tends to beat out  * qsor
 end_comment
 
 begin_function
-DECL|function|insert_sort (int * data,int n)
 specifier|static
 name|void
+DECL|function|insert_sort (gint * data,gint n)
 name|insert_sort
 parameter_list|(
-name|int
+name|gint
 modifier|*
 name|data
 parameter_list|,
-name|int
+name|gint
 name|n
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|,
 name|k
 decl_stmt|;
-name|int
+name|gint
 name|tmp1
 decl_stmt|,
 name|tmp2
@@ -6297,7 +6274,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|fill_run (guchar * dest,guchar alpha,int w)
+DECL|function|fill_run (guchar * dest,guchar alpha,gint w)
 name|fill_run
 parameter_list|(
 name|guchar
@@ -6307,7 +6284,7 @@ parameter_list|,
 name|guchar
 name|alpha
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|)
 block|{
@@ -6358,7 +6335,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|render_blob_line (Blob * blob,guchar * dest,int x,int y,int width)
+DECL|function|render_blob_line (Blob * blob,guchar * dest,gint x,gint y,gint width)
 name|render_blob_line
 parameter_list|(
 name|Blob
@@ -6369,17 +6346,17 @@ name|guchar
 modifier|*
 name|dest
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|)
 block|{
-name|int
+name|gint
 name|buf
 index|[
 literal|4
@@ -6387,29 +6364,29 @@ operator|*
 name|SUBSAMPLE
 index|]
 decl_stmt|;
-name|int
+name|gint
 modifier|*
 name|data
 init|=
 name|buf
 decl_stmt|;
-name|int
+name|gint
 name|n
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|int
+name|gint
 name|current
 init|=
 literal|0
 decl_stmt|;
-comment|/* number of filled rows at this point 				 * in the scan line */
-name|int
+comment|/* number of filled rows at this point 		       * in the scan line 		       */
+name|gint
 name|last_x
 decl_stmt|;
 comment|/* Sort start and ends for all lines */
@@ -6693,7 +6670,7 @@ name|n
 condition|;
 control|)
 block|{
-name|int
+name|gint
 name|cur_x
 init|=
 name|data
@@ -6707,7 +6684,7 @@ name|SUBSAMPLE
 operator|-
 name|x
 decl_stmt|;
-name|int
+name|gint
 name|pixel
 decl_stmt|;
 comment|/* Fill in portion leading up to this pixel */
@@ -6914,19 +6891,17 @@ modifier|*
 name|blob
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|h
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|s
 decl_stmt|;
-name|void
-modifier|*
+name|gpointer
 name|pr
 decl_stmt|;
 for|for
@@ -7036,13 +7011,12 @@ decl_stmt|;
 name|PixelRegion
 name|srcPR
 decl_stmt|;
-name|int
+name|gint
 name|offx
 decl_stmt|,
 name|offy
 decl_stmt|;
-name|unsigned
-name|char
+name|gchar
 name|col
 index|[
 name|MAX_CHANNELS
@@ -7707,23 +7681,23 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ink_set_canvas_tiles (int x,int y,int w,int h)
+DECL|function|ink_set_canvas_tiles (gint x,gint y,gint w,gint h)
 name|ink_set_canvas_tiles
 parameter_list|(
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j

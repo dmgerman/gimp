@@ -29,7 +29,7 @@ name|win
 decl_stmt|;
 comment|/*  Window to draw to                 */
 DECL|member|gdisp
-name|void
+name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -45,7 +45,7 @@ name|GdkGC
 modifier|*
 name|gc_out
 decl_stmt|;
-comment|/*  GC for selected regions outside current layer */
+comment|/*  GC for selected regions outside 				  *  current layer */
 DECL|member|gc_layer
 name|GdkGC
 modifier|*
@@ -159,7 +159,7 @@ index|[
 literal|8
 index|]
 decl_stmt|;
-comment|/* number of points in points_in     */
+comment|/*  number of points in points_in     */
 DECL|member|gc_white
 name|GdkGC
 modifier|*
@@ -187,14 +187,20 @@ name|selection_create
 parameter_list|(
 name|GdkWindow
 modifier|*
+name|win
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|disp
 parameter_list|,
 name|gint
+name|size
 parameter_list|,
 name|gint
+name|width
 parameter_list|,
 name|gint
+name|speed
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -205,6 +211,7 @@ name|selection_pause
 parameter_list|(
 name|Selection
 modifier|*
+name|select
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -215,6 +222,7 @@ name|selection_resume
 parameter_list|(
 name|Selection
 modifier|*
+name|select
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -225,8 +233,10 @@ name|selection_start
 parameter_list|(
 name|Selection
 modifier|*
+name|select
 parameter_list|,
 name|gint
+name|recalc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -237,6 +247,7 @@ name|selection_invis
 parameter_list|(
 name|Selection
 modifier|*
+name|select
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -247,6 +258,7 @@ name|selection_layer_invis
 parameter_list|(
 name|Selection
 modifier|*
+name|select
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -257,8 +269,11 @@ name|selection_hide
 parameter_list|(
 name|Selection
 modifier|*
+name|select
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -269,6 +284,7 @@ name|selection_free
 parameter_list|(
 name|Selection
 modifier|*
+name|select
 parameter_list|)
 function_decl|;
 end_function_decl

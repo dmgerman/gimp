@@ -111,7 +111,7 @@ value|1000
 end_define
 
 begin_enum
-DECL|enum|__anon2aeb174f0103
+DECL|enum|__anon2c400cf00103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -261,7 +261,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aeb174f0208
+DECL|struct|__anon2c400cf00208
 block|{
 DECL|member|count
 name|gint
@@ -307,9 +307,9 @@ begin_function_decl
 name|gint
 name|bezier_select_load
 parameter_list|(
-name|void
+name|GDisplay
 modifier|*
-name|gdisp_ptr
+name|gdisp
 parameter_list|,
 name|BezierPoint
 modifier|*

@@ -3981,17 +3981,17 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|gdisp
-operator|=
-name|gdisplay_active
-argument_list|()
-expr_stmt|;
 name|tool_type
 operator|=
 operator|(
 name|ToolType
 operator|)
 name|callback_action
+expr_stmt|;
+name|gdisp
+operator|=
+name|gdisplay_active
+argument_list|()
 expr_stmt|;
 name|gimp_context_set_tool
 argument_list|(
@@ -4044,10 +4044,10 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  setting the gdisp_ptr here is a HACK to allow the tools'    *  dialog windows being hidden if the tool was selected from    *  a tear-off-menu and there was no mouse click in the display    *  before deleting it    */
+comment|/*  setting the tool->gdisp here is a HACK to allow the tools'    *  dialog windows being hidden if the tool was selected from    *  a tear-off-menu and there was no mouse click in the display    *  before deleting it    */
 name|active_tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
 name|gdisp
 expr_stmt|;

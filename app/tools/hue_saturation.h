@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2942c1d60103
+DECL|enum|__anon2c2cf1bf0103
 block|{
 DECL|enumerator|ALL_HUES
 name|ALL_HUES

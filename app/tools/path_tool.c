@@ -2990,7 +2990,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|path_tool_button_press (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|path_tool_button_press (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|path_tool_button_press
 parameter_list|(
 name|Tool
@@ -3001,14 +3001,11 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|PathTool
 modifier|*
 name|path_tool
@@ -3040,14 +3037,6 @@ expr_stmt|;
 endif|#
 directive|endif
 endif|PATH_TOOL_DEBUG
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|path_tool
 operator|=
 operator|(
@@ -3060,9 +3049,9 @@ name|private
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 comment|/* Transform window-coordinates to canvas-coordinates */
 name|gdisplay_untransform_coords
@@ -4573,7 +4562,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_tool_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|path_tool_button_release (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|path_tool_button_release
 parameter_list|(
 name|Tool
@@ -4584,14 +4573,11 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|PathTool
 modifier|*
 name|path_tool
@@ -4609,14 +4595,6 @@ expr_stmt|;
 endif|#
 directive|endif
 endif|PATH_TOOL_DEBUG
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|path_tool
 operator|=
 operator|(
@@ -4653,7 +4631,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|path_tool_motion (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|path_tool_motion (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|path_tool_motion
 parameter_list|(
 name|Tool
@@ -4664,14 +4642,11 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|PathTool
 modifier|*
 name|path_tool
@@ -4682,14 +4657,6 @@ name|gtk_events_pending
 argument_list|()
 condition|)
 return|return;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|path_tool
 operator|=
 operator|(
@@ -5438,7 +5405,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_tool_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|path_tool_cursor_update (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|path_tool_cursor_update
 parameter_list|(
 name|Tool
@@ -5449,17 +5416,14 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|PathTool
 modifier|*
 name|path_tool
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|gint
 name|x
@@ -5479,14 +5443,6 @@ comment|/* fprintf (stderr, "path_tool_cursor_update\n");     */
 endif|#
 directive|endif
 endif|PATH_TOOL_DEBUG
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|path_tool
 operator|=
 operator|(
@@ -5639,7 +5595,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|path_tool_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
+DECL|function|path_tool_control (Tool * tool,ToolAction action,GDisplay * gdisp)
 name|path_tool_control
 parameter_list|(
 name|Tool
@@ -5649,14 +5605,11 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|PathTool
 modifier|*
 name|path_tool
@@ -5674,16 +5627,6 @@ expr_stmt|;
 endif|#
 directive|endif
 endif|PATH_TOOL_DEBUG
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|tool
-operator|->
-name|gdisp_ptr
-expr_stmt|;
 name|path_tool
 operator|=
 operator|(
@@ -6075,13 +6018,9 @@ name|private
 expr_stmt|;
 name|gdisp
 operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 if|if
 condition|(
@@ -6142,7 +6081,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon29a305390108
+DECL|struct|__anon277b8a740108
 typedef|typedef
 struct|struct
 block|{
@@ -6527,7 +6466,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon29a305390208
+DECL|struct|__anon277b8a740208
 typedef|typedef
 struct|struct
 block|{
@@ -6879,7 +6818,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon29a305390308
+DECL|struct|__anon277b8a740308
 typedef|typedef
 struct|struct
 block|{
@@ -7209,7 +7148,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon29a305390408
+DECL|struct|__anon277b8a740408
 typedef|typedef
 struct|struct
 block|{
@@ -7367,7 +7306,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon29a305390508
+DECL|struct|__anon277b8a740508
 typedef|typedef
 struct|struct
 block|{
@@ -7744,7 +7683,7 @@ name|gdisp
 operator|=
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 name|path_tool
 operator|=
@@ -7979,7 +7918,7 @@ name|gdisp
 operator|=
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 name|path_tool
 operator|=

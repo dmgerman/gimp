@@ -117,6 +117,14 @@ directive|include
 file|"tool_options.h"
 end_include
 
+begin_define
+DECL|macro|PENCIL_INCREMENTAL_DEFAULT
+define|#
+directive|define
+name|PENCIL_INCREMENTAL_DEFAULT
+value|FALSE
+end_define
+
 begin_comment
 comment|/*  the pencil tool options  */
 end_comment
@@ -143,17 +151,6 @@ block|}
 struct|;
 end_struct
 
-begin_decl_stmt
-DECL|variable|pencil_options
-specifier|static
-name|PencilOptions
-modifier|*
-name|pencil_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/*  forward function declarations  */
 end_comment
@@ -165,17 +162,50 @@ name|pencil_motion
 parameter_list|(
 name|PaintCore
 modifier|*
+name|paint_core
 parameter_list|,
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|,
 name|PaintPressureOptions
 modifier|*
+name|pressure_options
 parameter_list|,
 name|gboolean
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_function_decl
+specifier|static
+name|gpointer
+name|pencil_paint_func
+parameter_list|(
+name|PaintCore
+modifier|*
+name|paint_core
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|PaintState
+name|state
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_decl_stmt
+DECL|variable|pencil_options
+specifier|static
+name|PencilOptions
+modifier|*
+name|pencil_options
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|non_gui_incremental
@@ -197,22 +227,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_define
-DECL|macro|PENCIL_INCREMENTAL_DEFAULT
-define|#
-directive|define
-name|PENCIL_INCREMENTAL_DEFAULT
-value|FALSE
-end_define
-
 begin_comment
 comment|/*  functions  */
 end_comment
 
 begin_function
-name|void
-modifier|*
-DECL|function|pencil_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
+name|gpointer
+DECL|function|pencil_paint_func (PaintCore * paint_core,GimpDrawable * drawable,PaintState state)
 name|pencil_paint_func
 parameter_list|(
 name|PaintCore
@@ -223,7 +244,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|PaintState
 name|state
 parameter_list|)
 block|{
@@ -790,9 +811,8 @@ end_function
 
 begin_function
 specifier|static
-name|void
-modifier|*
-DECL|function|pencil_non_gui_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
+name|gpointer
+DECL|function|pencil_non_gui_paint_func (PaintCore * paint_core,GimpDrawable * drawable,PaintState state)
 name|pencil_non_gui_paint_func
 parameter_list|(
 name|PaintCore
@@ -803,7 +823,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|PaintState
 name|state
 parameter_list|)
 block|{

@@ -406,11 +406,15 @@ name|color_picker_button_press
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -422,11 +426,15 @@ name|color_picker_button_release
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -438,11 +446,15 @@ name|color_picker_motion
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -454,11 +466,15 @@ name|color_picker_cursor_update
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -470,10 +486,14 @@ name|color_picker_control
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|ToolAction
+name|action
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -485,8 +505,10 @@ name|color_picker_info_window_close_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -498,8 +520,10 @@ name|color_picker_info_update
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|gboolean
+name|valid
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1265,7 +1289,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_picker_button_press (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|color_picker_button_press (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|color_picker_button_press
 parameter_list|(
 name|Tool
@@ -1276,14 +1300,11 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|ColorPickerTool
 modifier|*
 name|cp_tool
@@ -1293,14 +1314,6 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|cp_tool
 operator|=
 operator|(
@@ -1314,7 +1327,7 @@ expr_stmt|;
 comment|/*  Make the tool active and set it's gdisplay& drawable  */
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
 name|gdisp
 expr_stmt|;
@@ -1870,7 +1883,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_picker_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|color_picker_button_release (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|color_picker_button_release
 parameter_list|(
 name|Tool
@@ -1881,14 +1894,11 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|ColorPickerTool
 modifier|*
 name|cp_tool
@@ -1907,14 +1917,6 @@ argument_list|)
 expr_stmt|;
 name|gdk_flush
 argument_list|()
-expr_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
 expr_stmt|;
 name|cp_tool
 operator|=
@@ -2009,7 +2011,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_picker_motion (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|color_picker_motion (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|color_picker_motion
 parameter_list|(
 name|Tool
@@ -2020,14 +2022,11 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|ColorPickerTool
 modifier|*
 name|cp_tool
@@ -2037,14 +2036,6 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|cp_tool
 operator|=
 operator|(
@@ -2170,7 +2161,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_picker_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|color_picker_cursor_update (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|color_picker_cursor_update
 parameter_list|(
 name|Tool
@@ -2181,27 +2172,16 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|gint
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|gdisplay_untransform_coords
 argument_list|(
 name|gdisp
@@ -2271,7 +2251,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_picker_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
+DECL|function|color_picker_control (Tool * tool,ToolAction action,GDisplay * gdisp)
 name|color_picker_control
 parameter_list|(
 name|Tool
@@ -2281,8 +2261,9 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|ColorPickerTool
@@ -2941,10 +2922,6 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 name|ColorPickerTool
 modifier|*
 name|cp_tool
@@ -2972,16 +2949,6 @@ operator|->
 name|sample_average
 condition|)
 return|return;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|tool
-operator|->
-name|gdisp_ptr
-expr_stmt|;
 name|cp_tool
 operator|=
 operator|(
@@ -2994,6 +2961,8 @@ name|private
 expr_stmt|;
 name|gdisplay_transform_coords
 argument_list|(
+name|tool
+operator|->
 name|gdisp
 argument_list|,
 name|cp_tool
@@ -3017,6 +2986,8 @@ name|radiusx
 operator|=
 name|SCALEX
 argument_list|(
+name|tool
+operator|->
 name|gdisp
 argument_list|,
 name|color_picker_options
@@ -3028,6 +2999,8 @@ name|radiusy
 operator|=
 name|SCALEY
 argument_list|(
+name|tool
+operator|->
 name|gdisp
 argument_list|,
 name|color_picker_options
@@ -3039,6 +3012,8 @@ name|cx
 operator|=
 name|SCALEX
 argument_list|(
+name|tool
+operator|->
 name|gdisp
 argument_list|,
 literal|1
@@ -3048,6 +3023,8 @@ name|cy
 operator|=
 name|SCALEY
 argument_list|(
+name|tool
+operator|->
 name|gdisp
 argument_list|,
 literal|1

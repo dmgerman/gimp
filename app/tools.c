@@ -4294,21 +4294,21 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  don't set gdisp_ptr here! (see commands.c)  */
+comment|/*  don't set tool->gdisp here! (see commands.c)  */
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|active_tool_control (ToolAction action,void * gdisp_ptr)
+DECL|function|active_tool_control (ToolAction action,GDisplay * gdisp)
 name|active_tool_control
 parameter_list|(
 name|ToolAction
 name|action
 parameter_list|,
-name|void
+name|GDisplay
 modifier|*
-name|gdisp_ptr
+name|gdisp
 parameter_list|)
 block|{
 if|if
@@ -4320,9 +4320,9 @@ if|if
 condition|(
 name|active_tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|==
-name|gdisp_ptr
+name|gdisp
 condition|)
 block|{
 switch|switch
@@ -4367,7 +4367,7 @@ name|active_tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -4420,7 +4420,7 @@ name|active_tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -4446,7 +4446,7 @@ name|active_tool
 argument_list|,
 name|action
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4492,7 +4492,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|standard_button_press_func (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|standard_button_press_func (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|standard_button_press_func
 parameter_list|(
 name|Tool
@@ -4503,21 +4503,14 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
-name|gdisp
-operator|=
-name|gdisp_ptr
-expr_stmt|;
+parameter_list|)
+block|{
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
 name|gdisp
 expr_stmt|;
@@ -4538,7 +4531,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|standard_button_release_func (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|standard_button_release_func (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|standard_button_release_func
 parameter_list|(
 name|Tool
@@ -4549,8 +4542,9 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{ }
 end_function
@@ -4558,7 +4552,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|standard_motion_func (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|standard_motion_func (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|standard_motion_func
 parameter_list|(
 name|Tool
@@ -4569,8 +4563,9 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{ }
 end_function
@@ -4578,7 +4573,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|standard_arrow_keys_func (Tool * tool,GdkEventKey * kevent,gpointer gdisp_ptr)
+DECL|function|standard_arrow_keys_func (Tool * tool,GdkEventKey * kevent,GDisplay * gdisp)
 name|standard_arrow_keys_func
 parameter_list|(
 name|Tool
@@ -4589,8 +4584,9 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{ }
 end_function
@@ -4598,7 +4594,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|standard_modifier_key_func (Tool * tool,GdkEventKey * kevent,gpointer gdisp_ptr)
+DECL|function|standard_modifier_key_func (Tool * tool,GdkEventKey * kevent,GDisplay * gdisp)
 name|standard_modifier_key_func
 parameter_list|(
 name|Tool
@@ -4609,8 +4605,9 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{ }
 end_function
@@ -4618,7 +4615,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|standard_cursor_update_func (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|standard_cursor_update_func (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|standard_cursor_update_func
 parameter_list|(
 name|Tool
@@ -4629,22 +4626,11 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
+parameter_list|)
+block|{
 name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
@@ -4664,7 +4650,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|standard_operator_update_func (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|standard_operator_update_func (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|standard_operator_update_func
 parameter_list|(
 name|Tool
@@ -4675,8 +4661,9 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{ }
 end_function
@@ -4684,7 +4671,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|standard_control_func (Tool * tool,ToolAction action,gpointer gdisp_ptr)
+DECL|function|standard_control_func (Tool * tool,ToolAction action,GDisplay * gdisp)
 name|standard_control_func
 parameter_list|(
 name|Tool
@@ -4694,8 +4681,9 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{ }
 end_function
@@ -4775,7 +4763,7 @@ expr_stmt|;
 comment|/*  Preserve tool across drawable changes  */
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
 name|NULL
 expr_stmt|;

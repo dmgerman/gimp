@@ -482,7 +482,7 @@ name|gdisp
 init|=
 name|active_tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 decl_stmt|;
 if|if
 condition|(

@@ -192,53 +192,28 @@ block|}
 struct|;
 end_struct
 
-begin_decl_stmt
-DECL|variable|accumPR
-specifier|static
-name|PixelRegion
-name|accumPR
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|accum_data
-specifier|static
-name|guchar
-modifier|*
-name|accum_data
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  the smudge tool options  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|smudge_options
-specifier|static
-name|SmudgeOptions
-modifier|*
-name|smudge_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  local variables */
-end_comment
-
-begin_decl_stmt
-DECL|variable|non_gui_rate
-specifier|static
-name|gdouble
-name|non_gui_rate
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/*  function prototypes */
 end_comment
+
+begin_function_decl
+specifier|static
+name|gpointer
+name|smudge_paint_func
+parameter_list|(
+name|PaintCore
+modifier|*
+name|paint_core
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|PaintState
+name|state
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -247,14 +222,18 @@ name|smudge_motion
 parameter_list|(
 name|PaintCore
 modifier|*
+name|paint_core
 parameter_list|,
 name|PaintPressureOptions
 modifier|*
+name|pressure_options
 parameter_list|,
 name|gdouble
+name|smudge_rate
 parameter_list|,
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -266,9 +245,11 @@ name|smudge_init
 parameter_list|(
 name|PaintCore
 modifier|*
+name|paint_core
 parameter_list|,
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -280,9 +261,11 @@ name|smudge_finish
 parameter_list|(
 name|PaintCore
 modifier|*
+name|paint_core
 parameter_list|,
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -335,6 +318,50 @@ name|do_fill
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  local variables */
+end_comment
+
+begin_decl_stmt
+DECL|variable|accumPR
+specifier|static
+name|PixelRegion
+name|accumPR
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|accum_data
+specifier|static
+name|guchar
+modifier|*
+name|accum_data
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  the smudge tool options  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|smudge_options
+specifier|static
+name|SmudgeOptions
+modifier|*
+name|smudge_options
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|non_gui_rate
+specifier|static
+name|gdouble
+name|non_gui_rate
+decl_stmt|;
+end_decl_stmt
 
 begin_function
 specifier|static
@@ -630,9 +657,9 @@ block|}
 end_function
 
 begin_function
-name|void
-modifier|*
-DECL|function|smudge_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
+specifier|static
+name|gpointer
+DECL|function|smudge_paint_func (PaintCore * paint_core,GimpDrawable * drawable,PaintState state)
 name|smudge_paint_func
 parameter_list|(
 name|PaintCore
@@ -643,7 +670,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|PaintState
 name|state
 parameter_list|)
 block|{
@@ -712,6 +739,8 @@ name|initialized
 operator|=
 name|FALSE
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 return|return
@@ -1957,9 +1986,8 @@ end_function
 
 begin_function
 specifier|static
-name|void
-modifier|*
-DECL|function|smudge_non_gui_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
+name|gpointer
+DECL|function|smudge_non_gui_paint_func (PaintCore * paint_core,GimpDrawable * drawable,PaintState state)
 name|smudge_non_gui_paint_func
 parameter_list|(
 name|PaintCore
@@ -1970,7 +1998,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|PaintState
 name|state
 parameter_list|)
 block|{
@@ -1994,17 +2022,17 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|smudge_non_gui_default (GimpDrawable * drawable,int num_strokes,double * stroke_array)
+DECL|function|smudge_non_gui_default (GimpDrawable * drawable,gint num_strokes,gdouble * stroke_array)
 name|smudge_non_gui_default
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|num_strokes
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|stroke_array
 parameter_list|)
@@ -2047,7 +2075,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|smudge_non_gui (GimpDrawable * drawable,gdouble rate,int num_strokes,double * stroke_array)
+DECL|function|smudge_non_gui (GimpDrawable * drawable,gdouble rate,gint num_strokes,gdouble * stroke_array)
 name|smudge_non_gui
 parameter_list|(
 name|GimpDrawable
@@ -2057,10 +2085,10 @@ parameter_list|,
 name|gdouble
 name|rate
 parameter_list|,
-name|int
+name|gint
 name|num_strokes
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|stroke_array
 parameter_list|)
@@ -2245,7 +2273,6 @@ return|return
 name|TRUE
 return|;
 block|}
-else|else
 return|return
 name|FALSE
 return|;

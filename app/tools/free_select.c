@@ -202,6 +202,70 @@ struct|;
 end_struct
 
 begin_comment
+comment|/*  local function prototypes  */
+end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|free_select_button_press
+parameter_list|(
+name|Tool
+modifier|*
+name|tool
+parameter_list|,
+name|GdkEventButton
+modifier|*
+name|bevent
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|free_select_button_release
+parameter_list|(
+name|Tool
+modifier|*
+name|tool
+parameter_list|,
+name|GdkEventButton
+modifier|*
+name|bevent
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|free_select_motion
+parameter_list|(
+name|Tool
+modifier|*
+name|tool
+parameter_list|,
+name|GdkEventMotion
+modifier|*
+name|mevent
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  the free selection tool options  */
 end_comment
 
@@ -546,8 +610,9 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|free_select_button_press (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|free_select_button_press (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|free_select_button_press
 parameter_list|(
 name|Tool
@@ -558,26 +623,15 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|FreeSelect
 modifier|*
 name|free_sel
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|free_sel
 operator|=
 operator|(
@@ -621,9 +675,9 @@ name|ACTIVE
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 switch|switch
 condition|(
@@ -639,7 +693,7 @@ name|init_edit_selection
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|,
 name|bevent
 argument_list|,
@@ -654,7 +708,7 @@ name|init_edit_selection
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|,
 name|bevent
 argument_list|,
@@ -703,8 +757,9 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|free_select_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|free_select_button_release (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|free_select_button_release
 parameter_list|(
 name|Tool
@@ -715,8 +770,9 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|FreeSelect
@@ -727,21 +783,9 @@ name|ScanConvertPoint
 modifier|*
 name|pts
 decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|free_sel
 operator|=
 operator|(
@@ -940,8 +984,9 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|free_select_motion (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|free_select_motion (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|free_select_motion
 parameter_list|(
 name|Tool
@@ -952,26 +997,15 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|FreeSelect
 modifier|*
 name|free_sel
 decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|free_sel
 operator|=
 operator|(
@@ -1029,7 +1063,7 @@ name|tool
 argument_list|,
 name|mevent
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -1118,7 +1152,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|free_select_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
+DECL|function|free_select_control (Tool * tool,ToolAction action,GDisplay * gdisp)
 name|free_select_control
 parameter_list|(
 name|Tool
@@ -1128,8 +1162,9 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|FreeSelect

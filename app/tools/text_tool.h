@@ -16,10 +16,18 @@ directive|define
 name|__TEXT_TOOL_H__
 end_define
 
+begin_define
+DECL|macro|SUPERSAMPLE
+define|#
+directive|define
+name|SUPERSAMPLE
+value|3
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2954026a0103
+DECL|enum|__anon2c24cbc90103
 block|{
 DECL|enumerator|PIXELS
 name|PIXELS
@@ -31,14 +39,6 @@ block|}
 name|SizeType
 typedef|;
 end_typedef
-
-begin_define
-DECL|macro|SUPERSAMPLE
-define|#
-directive|define
-name|SUPERSAMPLE
-value|3
-end_define
 
 begin_function_decl
 name|Tool

@@ -760,7 +760,7 @@ name|gdisplay_transform_coords
 argument_list|(
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 argument_list|,
 name|coordinates
 index|[

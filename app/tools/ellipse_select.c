@@ -343,10 +343,6 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 name|EllipseSelect
 modifier|*
 name|ellipse_sel
@@ -361,16 +357,6 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|tool
-operator|->
-name|gdisp_ptr
-expr_stmt|;
 name|ellipse_sel
 operator|=
 operator|(
@@ -451,6 +437,8 @@ argument_list|)
 expr_stmt|;
 name|gdisplay_transform_coords
 argument_list|(
+name|tool
+operator|->
 name|gdisp
 argument_list|,
 name|x1
@@ -468,6 +456,8 @@ argument_list|)
 expr_stmt|;
 name|gdisplay_transform_coords
 argument_list|(
+name|tool
+operator|->
 name|gdisp
 argument_list|,
 name|x2

@@ -418,12 +418,12 @@ end_function
 
 begin_function
 name|ImageMap
-DECL|function|image_map_create (void * gdisp_ptr,GimpDrawable * drawable)
+DECL|function|image_map_create (GDisplay * gdisp,GimpDrawable * drawable)
 name|image_map_create
 parameter_list|(
-name|void
+name|GDisplay
 modifier|*
-name|gdisp_ptr
+name|gdisp
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -447,11 +447,7 @@ name|_image_map
 operator|->
 name|gdisp
 operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 name|_image_map
 operator|->

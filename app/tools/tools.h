@@ -65,11 +65,15 @@ function_decl|)
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_typedef
@@ -85,11 +89,15 @@ function_decl|)
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_typedef
@@ -105,11 +113,15 @@ function_decl|)
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_typedef
@@ -125,11 +137,15 @@ function_decl|)
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventKey
 modifier|*
+name|kevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_typedef
@@ -145,11 +161,15 @@ function_decl|)
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventKey
 modifier|*
+name|kevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_typedef
@@ -165,11 +185,15 @@ function_decl|)
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_typedef
@@ -185,11 +209,15 @@ function_decl|)
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_typedef
@@ -205,10 +233,14 @@ function_decl|)
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|ToolAction
+name|action
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_typedef
@@ -243,6 +275,7 @@ function_decl|)
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_typedef
@@ -258,6 +291,7 @@ function_decl|)
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_typedef
@@ -307,14 +341,14 @@ name|gboolean
 name|preserve
 decl_stmt|;
 comment|/*  Preserve this tool across drawable changes  */
-DECL|member|gdisp_ptr
-name|void
+DECL|member|gdisp
+name|GDisplay
 modifier|*
-name|gdisp_ptr
+name|gdisp
 decl_stmt|;
 comment|/*  pointer to currently active gdisp           */
 DECL|member|drawable
-name|void
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -323,14 +357,12 @@ DECL|member|toggled
 name|gboolean
 name|toggled
 decl_stmt|;
-comment|/*  Bad hack to let the paint_core show the     */
-comment|/*  right toggle cursors                        */
+comment|/*  Bad hack to let the paint_core show the 			       *  right toggle cursors 			       */
 DECL|member|private
-name|void
-modifier|*
+name|gpointer
 name|private
 decl_stmt|;
-comment|/*  Tool-specific information                   */
+comment|/*  Tool-specific information                 */
 comment|/*  Action functions  */
 DECL|member|button_press_func
 name|ButtonPressFunc
@@ -459,33 +491,6 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  Global Data Structures  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|Tool
-modifier|*
-name|active_tool
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|ToolInfo
-name|tool_info
-index|[]
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gint
-name|num_tools
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/*  Function declarations  */
 end_comment
 
@@ -531,9 +536,9 @@ parameter_list|(
 name|ToolAction
 name|action
 parameter_list|,
-name|void
+name|GDisplay
 modifier|*
-name|gdisp_ptr
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -602,7 +607,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* don't unref this pixmaps, they are static! */
+comment|/*  don't unref these pixmaps, they are static!  */
 end_comment
 
 begin_function_decl
@@ -626,6 +631,33 @@ name|tool_type
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  Global Data Structures  */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|Tool
+modifier|*
+name|active_tool
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ToolInfo
+name|tool_info
+index|[]
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gint
+name|num_tools
+decl_stmt|;
+end_decl_stmt
 
 begin_endif
 endif|#

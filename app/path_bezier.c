@@ -354,7 +354,7 @@ name|gdisp
 init|=
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 decl_stmt|;
 name|gint
 name|sx

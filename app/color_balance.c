@@ -208,10 +208,14 @@ name|color_balance_control
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|ToolAction
+name|action
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -234,8 +238,9 @@ name|color_balance_update
 parameter_list|(
 name|ColorBalanceDialog
 modifier|*
+name|cbd
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -247,6 +252,7 @@ name|color_balance_preview
 parameter_list|(
 name|ColorBalanceDialog
 modifier|*
+name|cbd
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -258,8 +264,10 @@ name|color_balance_reset_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -271,8 +279,10 @@ name|color_balance_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -284,8 +294,10 @@ name|color_balance_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -297,8 +309,10 @@ name|color_balance_range_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -310,8 +324,10 @@ name|color_balance_preserve_update
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -323,8 +339,10 @@ name|color_balance_preview_update
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -336,8 +354,10 @@ name|color_balance_cr_adjustment_update
 parameter_list|(
 name|GtkAdjustment
 modifier|*
+name|adj
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -349,8 +369,10 @@ name|color_balance_mg_adjustment_update
 parameter_list|(
 name|GtkAdjustment
 modifier|*
+name|adj
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -362,8 +384,10 @@ name|color_balance_yb_adjustment_update
 parameter_list|(
 name|GtkAdjustment
 modifier|*
+name|adj
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -408,7 +432,7 @@ decl_stmt|,
 modifier|*
 name|d
 decl_stmt|;
-name|gint
+name|gboolean
 name|alpha
 decl_stmt|;
 name|gint
@@ -658,7 +682,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|color_balance_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
+DECL|function|color_balance_control (Tool * tool,ToolAction action,GDisplay * gdisp)
 name|color_balance_control
 parameter_list|(
 name|Tool
@@ -668,8 +692,9 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|ColorBalance
@@ -3279,7 +3304,7 @@ name|NULL
 expr_stmt|;
 name|active_tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
 name|NULL
 expr_stmt|;
@@ -3363,7 +3388,7 @@ expr_stmt|;
 block|}
 name|active_tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
 name|NULL
 expr_stmt|;

@@ -137,33 +137,6 @@ name|STATUSBAR_SIZE
 value|128
 end_define
 
-begin_comment
-comment|/*  the rectangular selection tool options  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|rect_options
-specifier|static
-name|SelectionOptions
-modifier|*
-name|rect_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  in gimp, ellipses are rectangular, too ;)  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|SelectionOptions
-modifier|*
-name|ellipse_options
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 specifier|extern
 name|void
@@ -224,6 +197,33 @@ name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  the rectangular selection tool options  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|rect_options
+specifier|static
+name|SelectionOptions
+modifier|*
+name|rect_options
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  in gimp, ellipses are rectangular, too ;)  */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|SelectionOptions
+modifier|*
+name|ellipse_options
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*************************************/
@@ -432,7 +432,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|rect_select_button_press (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|rect_select_button_press (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|rect_select_button_press
 parameter_list|(
 name|Tool
@@ -443,14 +443,11 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|RectSelect
 modifier|*
 name|rect_sel
@@ -474,14 +471,6 @@ decl_stmt|;
 name|gdouble
 name|unit_factor
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|rect_sel
 operator|=
 operator|(
@@ -769,9 +758,9 @@ name|ACTIVE
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 switch|switch
 condition|(
@@ -787,7 +776,7 @@ name|init_edit_selection
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|,
 name|bevent
 argument_list|,
@@ -802,7 +791,7 @@ name|init_edit_selection
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|,
 name|bevent
 argument_list|,
@@ -940,7 +929,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|rect_select_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|rect_select_button_release (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|rect_select_button_release
 parameter_list|(
 name|Tool
@@ -951,17 +940,14 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|RectSelect
 modifier|*
 name|rect_sel
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|gint
 name|x1
@@ -978,14 +964,6 @@ name|w
 decl_stmt|,
 name|h
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|rect_sel
 operator|=
 operator|(
@@ -1294,7 +1272,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|rect_select_motion (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|rect_select_motion (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|rect_select_motion
 parameter_list|(
 name|Tool
@@ -1305,17 +1283,14 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|RectSelect
 modifier|*
 name|rect_sel
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|gchar
 name|size
@@ -1348,14 +1323,6 @@ decl_stmt|;
 name|gdouble
 name|ratio
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|rect_sel
 operator|=
 operator|(
@@ -1413,7 +1380,7 @@ name|tool
 argument_list|,
 name|mevent
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -2146,10 +2113,6 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 name|RectSelect
 modifier|*
 name|rect_sel
@@ -2164,16 +2127,6 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|tool
-operator|->
-name|gdisp_ptr
-expr_stmt|;
 name|rect_sel
 operator|=
 operator|(
@@ -2254,6 +2207,8 @@ argument_list|)
 expr_stmt|;
 name|gdisplay_transform_coords
 argument_list|(
+name|tool
+operator|->
 name|gdisp
 argument_list|,
 name|x1
@@ -2271,6 +2226,8 @@ argument_list|)
 expr_stmt|;
 name|gdisplay_transform_coords
 argument_list|(
+name|tool
+operator|->
 name|gdisp
 argument_list|,
 name|x2
@@ -2581,7 +2538,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|rect_select_oper_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|rect_select_oper_update (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|rect_select_oper_update
 parameter_list|(
 name|Tool
@@ -2592,8 +2549,9 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|RectSelect
@@ -2642,7 +2600,7 @@ name|mevent
 operator|->
 name|state
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -2650,7 +2608,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|rect_select_modifier_update (Tool * tool,GdkEventKey * kevent,gpointer gdisp_ptr)
+DECL|function|rect_select_modifier_update (Tool * tool,GdkEventKey * kevent,GDisplay * gdisp)
 name|rect_select_modifier_update
 parameter_list|(
 name|Tool
@@ -2661,8 +2619,9 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|RectSelect
@@ -2779,7 +2738,7 @@ name|current_y
 argument_list|,
 name|state
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -2787,7 +2746,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|rect_select_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|rect_select_cursor_update (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|rect_select_cursor_update
 parameter_list|(
 name|Tool
@@ -2798,17 +2757,14 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|RectSelect
 modifier|*
 name|rect_sel
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|rect_sel
 operator|=
@@ -2819,14 +2775,6 @@ operator|)
 name|tool
 operator|->
 name|private
-expr_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
 expr_stmt|;
 switch|switch
 condition|(
@@ -2972,7 +2920,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|rect_select_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
+DECL|function|rect_select_control (Tool * tool,ToolAction action,GDisplay * gdisp)
 name|rect_select_control
 parameter_list|(
 name|Tool
@@ -2982,8 +2930,9 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|RectSelect

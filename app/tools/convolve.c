@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29aa9e0b0103
+DECL|enum|__anon2b5a523b0103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -273,6 +273,122 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/*  forward function declarations  */
+end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|calculate_matrix
+parameter_list|(
+name|ConvolveType
+name|type
+parameter_list|,
+name|gdouble
+name|rate
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|integer_matrix
+parameter_list|(
+name|gfloat
+modifier|*
+name|source
+parameter_list|,
+name|gint
+modifier|*
+name|dest
+parameter_list|,
+name|gint
+name|size
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|copy_matrix
+parameter_list|(
+name|gfloat
+modifier|*
+name|src
+parameter_list|,
+name|gfloat
+modifier|*
+name|dest
+parameter_list|,
+name|gint
+name|size
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gint
+name|sum_matrix
+parameter_list|(
+name|gint
+modifier|*
+name|matrix
+parameter_list|,
+name|gint
+name|size
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gpointer
+name|convolve_paint_func
+parameter_list|(
+name|PaintCore
+modifier|*
+name|paint_core
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|PaintState
+name|state
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|convolve_motion
+parameter_list|(
+name|PaintCore
+modifier|*
+name|paint_core
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|PaintPressureOptions
+modifier|*
+name|pressure_options
+parameter_list|,
+name|ConvolveType
+name|type
+parameter_list|,
+name|gdouble
+name|rate
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_comment
 comment|/*  the convolve tool options  */
@@ -524,88 +640,6 @@ literal|0
 block|, }
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-comment|/*  forward function declarations  */
-end_comment
-
-begin_function_decl
-specifier|static
-name|void
-name|calculate_matrix
-parameter_list|(
-name|ConvolveType
-parameter_list|,
-name|double
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|integer_matrix
-parameter_list|(
-name|float
-modifier|*
-parameter_list|,
-name|int
-modifier|*
-parameter_list|,
-name|int
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|copy_matrix
-parameter_list|(
-name|float
-modifier|*
-parameter_list|,
-name|float
-modifier|*
-parameter_list|,
-name|int
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|int
-name|sum_matrix
-parameter_list|(
-name|int
-modifier|*
-parameter_list|,
-name|int
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|convolve_motion
-parameter_list|(
-name|PaintCore
-modifier|*
-parameter_list|,
-name|GimpDrawable
-modifier|*
-parameter_list|,
-name|PaintPressureOptions
-modifier|*
-parameter_list|,
-name|ConvolveType
-parameter_list|,
-name|double
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_comment
 comment|/* functions  */
@@ -1021,9 +1055,9 @@ block|}
 end_function
 
 begin_function
-name|void
-modifier|*
-DECL|function|convolve_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
+specifier|static
+name|gpointer
+DECL|function|convolve_paint_func (PaintCore * paint_core,GimpDrawable * drawable,PaintState state)
 name|convolve_paint_func
 parameter_list|(
 name|PaintCore
@@ -1034,7 +1068,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|PaintState
 name|state
 parameter_list|)
 block|{
@@ -1068,6 +1102,8 @@ name|rate
 argument_list|)
 expr_stmt|;
 break|break;
+default|default:
+break|break;
 block|}
 return|return
 name|NULL
@@ -1078,7 +1114,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|convolve_modifier_key_func (Tool * tool,GdkEventKey * kevent,gpointer gdisp_ptr)
+DECL|function|convolve_modifier_key_func (Tool * tool,GdkEventKey * kevent,GDisplay * gdisp)
 name|convolve_modifier_key_func
 parameter_list|(
 name|Tool
@@ -1089,8 +1125,9 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 switch|switch
@@ -1261,7 +1298,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|convolve_cursor_update_func (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|convolve_cursor_update_func (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|convolve_cursor_update_func
 parameter_list|(
 name|Tool
@@ -1272,8 +1309,9 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|tool
@@ -1294,7 +1332,7 @@ name|tool
 argument_list|,
 name|mevent
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -2770,22 +2808,22 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|integer_matrix (float * source,int * dest,int size)
+DECL|function|integer_matrix (gfloat * source,gint * dest,gint size)
 name|integer_matrix
 parameter_list|(
-name|float
+name|gfloat
 modifier|*
 name|source
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|dest
 parameter_list|,
-name|int
+name|gint
 name|size
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 DECL|macro|PRECISION
@@ -2813,7 +2851,7 @@ name|dest
 operator|++
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 operator|*
@@ -2829,22 +2867,22 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|copy_matrix (float * src,float * dest,int size)
+DECL|function|copy_matrix (gfloat * src,gfloat * dest,gint size)
 name|copy_matrix
 parameter_list|(
-name|float
+name|gfloat
 modifier|*
 name|src
 parameter_list|,
-name|float
+name|gfloat
 modifier|*
 name|dest
 parameter_list|,
-name|int
+name|gint
 name|size
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 for|for
@@ -2876,18 +2914,18 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|sum_matrix (int * matrix,int size)
+DECL|function|sum_matrix (gint * matrix,gint size)
 name|sum_matrix
 parameter_list|(
-name|int
+name|gint
 modifier|*
 name|matrix
 parameter_list|,
-name|int
+name|gint
 name|size
 parameter_list|)
 block|{
-name|int
+name|gint
 name|sum
 init|=
 literal|0
@@ -2915,9 +2953,8 @@ end_function
 
 begin_function
 specifier|static
-name|void
-modifier|*
-DECL|function|convolve_non_gui_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
+name|gpointer
+DECL|function|convolve_non_gui_paint_func (PaintCore * paint_core,GimpDrawable * drawable,PaintState state)
 name|convolve_non_gui_paint_func
 parameter_list|(
 name|PaintCore
@@ -2928,7 +2965,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|PaintState
 name|state
 parameter_list|)
 block|{
@@ -2954,22 +2991,22 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|convolve_non_gui_default (GimpDrawable * drawable,int num_strokes,double * stroke_array)
+DECL|function|convolve_non_gui_default (GimpDrawable * drawable,gint num_strokes,gdouble * stroke_array)
 name|convolve_non_gui_default
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|num_strokes
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|stroke_array
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|rate
 init|=
 name|DEFAULT_CONVOLVE_RATE
@@ -3022,7 +3059,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|convolve_non_gui (GimpDrawable * drawable,double rate,ConvolveType type,int num_strokes,double * stroke_array)
+DECL|function|convolve_non_gui (GimpDrawable * drawable,double rate,ConvolveType type,gint num_strokes,gdouble * stroke_array)
 name|convolve_non_gui
 parameter_list|(
 name|GimpDrawable
@@ -3035,15 +3072,15 @@ parameter_list|,
 name|ConvolveType
 name|type
 parameter_list|,
-name|int
+name|gint
 name|num_strokes
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|stroke_array
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if
@@ -3203,7 +3240,6 @@ return|return
 name|TRUE
 return|;
 block|}
-else|else
 return|return
 name|FALSE
 return|;

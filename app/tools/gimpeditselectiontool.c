@@ -547,15 +547,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|init_edit_selection (Tool * tool,gpointer gdisp_ptr,GdkEventButton * bevent,EditType edit_type)
+DECL|function|init_edit_selection (Tool * tool,GDisplay * gdisp,GdkEventButton * bevent,EditType edit_type)
 name|init_edit_selection
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|,
 name|GdkEventButton
 modifier|*
@@ -565,10 +566,6 @@ name|EditType
 name|edit_type
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 name|Layer
 modifier|*
 name|layer
@@ -578,14 +575,6 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|undo_push_group_start
 argument_list|(
 name|gdisp
@@ -939,7 +928,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_selection_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|edit_selection_button_release (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|edit_selection_button_release
 parameter_list|(
 name|Tool
@@ -950,8 +939,9 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|gint
@@ -960,22 +950,10 @@ decl_stmt|;
 name|gint
 name|y
 decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 comment|/*  resume the current selection and ungrab the pointer  */
 name|selection_resume
 argument_list|(
@@ -1286,7 +1264,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_selection_motion (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|edit_selection_motion (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|edit_selection_motion
 parameter_list|(
 name|Tool
@@ -1297,14 +1275,11 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|gchar
 name|offset
 index|[
@@ -1332,14 +1307,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|gdk_flush
 argument_list|()
 expr_stmt|;
@@ -2148,13 +2115,9 @@ name|segs_copy
 decl_stmt|;
 name|gdisp
 operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 name|select
 operator|=
@@ -2689,7 +2652,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_selection_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
+DECL|function|edit_selection_control (Tool * tool,ToolAction action,GDisplay * gdisp)
 name|edit_selection_control
 parameter_list|(
 name|Tool
@@ -2699,8 +2662,9 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 switch|switch
@@ -2762,7 +2726,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_selection_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|edit_selection_cursor_update (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|edit_selection_cursor_update
 parameter_list|(
 name|Tool
@@ -2773,22 +2737,11 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
+parameter_list|)
+block|{
 name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
@@ -3236,7 +3189,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_sel_arrow_keys_func (Tool * tool,GdkEventKey * kevent,gpointer gdisp_ptr)
+DECL|function|edit_sel_arrow_keys_func (Tool * tool,GdkEventKey * kevent,GDisplay * gdisp)
 name|edit_sel_arrow_keys_func
 parameter_list|(
 name|Tool
@@ -3247,8 +3200,9 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|gint
@@ -3259,10 +3213,6 @@ decl_stmt|,
 name|mask_inc_x
 decl_stmt|,
 name|mask_inc_y
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|Layer
 modifier|*
@@ -3282,14 +3232,6 @@ decl_stmt|;
 name|layer
 operator|=
 name|NULL
-expr_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
 expr_stmt|;
 name|inc_x
 operator|=

@@ -17,22 +17,6 @@ name|__PAINTBRUSH_H__
 end_define
 
 begin_function_decl
-name|void
-modifier|*
-name|paintbrush_paint_func
-parameter_list|(
-name|PaintCore
-modifier|*
-parameter_list|,
-name|GimpDrawable
-modifier|*
-parameter_list|,
-name|gint
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gboolean
 name|paintbrush_non_gui
 parameter_list|(

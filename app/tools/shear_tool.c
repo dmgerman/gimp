@@ -176,28 +176,28 @@ value|5
 end_define
 
 begin_comment
-comment|/*  variables local to this file  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|xshear_val
-specifier|static
-name|gdouble
-name|xshear_val
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|yshear_val
-specifier|static
-name|gdouble
-name|yshear_val
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/*  forward function declarations  */
 end_comment
+
+begin_function_decl
+specifier|static
+name|TileManager
+modifier|*
+name|shear_tool_transform
+parameter_list|(
+name|Tool
+modifier|*
+name|tool
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|,
+name|TransformState
+name|state
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -206,9 +206,11 @@ name|shear_tool_recalc
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
-name|void
+name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -220,9 +222,11 @@ name|shear_tool_motion
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
-name|void
+name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -234,13 +238,10 @@ name|shear_info_update
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  Info dialog callback funtions  */
-end_comment
 
 begin_function_decl
 specifier|static
@@ -272,18 +273,40 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  variables local to this file  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|xshear_val
+specifier|static
+name|gdouble
+name|xshear_val
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|yshear_val
+specifier|static
+name|gdouble
+name|yshear_val
+decl_stmt|;
+end_decl_stmt
+
 begin_function
+specifier|static
 name|TileManager
 modifier|*
-DECL|function|shear_tool_transform (Tool * tool,gpointer gdisp_ptr,TransformState state)
+DECL|function|shear_tool_transform (Tool * tool,GDisplay * gdisp,TransformState state)
 name|shear_tool_transform
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|,
 name|TransformState
 name|state
@@ -292,10 +315,6 @@ block|{
 name|TransformCore
 modifier|*
 name|transform_core
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|transform_core
 operator|=
@@ -306,14 +325,6 @@ operator|)
 name|tool
 operator|->
 name|private
-expr_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
 expr_stmt|;
 switch|switch
 condition|(
@@ -458,14 +469,14 @@ name|shear_tool_motion
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 name|shear_tool_recalc
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 break|break;
@@ -476,7 +487,7 @@ name|shear_tool_recalc
 argument_list|(
 name|tool
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 break|break;
@@ -680,10 +691,6 @@ name|TransformCore
 modifier|*
 name|transform_core
 decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 name|gint
 name|value
 decl_stmt|;
@@ -700,16 +707,6 @@ condition|(
 name|tool
 condition|)
 block|{
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|tool
-operator|->
-name|gdisp_ptr
-expr_stmt|;
 name|transform_core
 operator|=
 operator|(
@@ -763,6 +760,8 @@ name|shear_tool_recalc
 argument_list|(
 name|tool
 argument_list|,
+name|tool
+operator|->
 name|gdisp
 argument_list|)
 expr_stmt|;
@@ -802,10 +801,6 @@ name|TransformCore
 modifier|*
 name|transform_core
 decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 name|gint
 name|value
 decl_stmt|;
@@ -822,16 +817,6 @@ condition|(
 name|tool
 condition|)
 block|{
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|tool
-operator|->
-name|gdisp_ptr
-expr_stmt|;
 name|transform_core
 operator|=
 operator|(
@@ -885,6 +870,8 @@ name|shear_tool_recalc
 argument_list|(
 name|tool
 argument_list|,
+name|tool
+operator|->
 name|gdisp
 argument_list|)
 expr_stmt|;
@@ -905,16 +892,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|shear_tool_motion (Tool * tool,void * gdisp_ptr)
+DECL|function|shear_tool_motion (Tool * tool,GDisplay * gdisp)
 name|shear_tool_motion
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|void
+name|GDisplay
 modifier|*
-name|gdisp_ptr
+name|gdisp
 parameter_list|)
 block|{
 name|TransformCore
@@ -1219,25 +1206,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|shear_tool_recalc (Tool * tool,void * gdisp_ptr)
+DECL|function|shear_tool_recalc (Tool * tool,GDisplay * gdisp)
 name|shear_tool_recalc
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|void
+name|GDisplay
 modifier|*
-name|gdisp_ptr
+name|gdisp
 parameter_list|)
 block|{
 name|TransformCore
 modifier|*
 name|transform_core
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|gfloat
 name|width
@@ -1249,16 +1232,6 @@ name|cx
 decl_stmt|,
 name|cy
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|tool
-operator|->
-name|gdisp_ptr
-expr_stmt|;
 name|transform_core
 operator|=
 operator|(

@@ -434,6 +434,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|gpointer
+name|paintbrush_paint_func
+parameter_list|(
+name|PaintCore
+modifier|*
+name|paint_core
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|PaintState
+name|state
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  functions  */
 end_comment
@@ -459,7 +478,7 @@ init|=
 name|paintbrush_options
 decl_stmt|;
 specifier|static
-name|int
+name|gboolean
 name|incremental_save
 init|=
 name|FALSE
@@ -2015,9 +2034,9 @@ value|0
 end_define
 
 begin_function
-name|void
-modifier|*
-DECL|function|paintbrush_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
+specifier|static
+name|gpointer
+DECL|function|paintbrush_paint_func (PaintCore * paint_core,GimpDrawable * drawable,PaintState state)
 name|paintbrush_paint_func
 parameter_list|(
 name|PaintCore
@@ -2028,7 +2047,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|PaintState
 name|state
 parameter_list|)
 block|{
@@ -2969,9 +2988,8 @@ end_function
 
 begin_function
 specifier|static
-name|void
-modifier|*
-DECL|function|paintbrush_non_gui_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
+name|gpointer
+DECL|function|paintbrush_non_gui_paint_func (PaintCore * paint_core,GimpDrawable * drawable,PaintState state)
 name|paintbrush_non_gui_paint_func
 parameter_list|(
 name|PaintCore
@@ -2982,7 +3000,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|PaintState
 name|state
 parameter_list|)
 block|{
@@ -2990,13 +3008,13 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|double
+name|gdouble
 name|fade_out
 decl_stmt|;
-name|double
+name|gdouble
 name|gradient_length
 decl_stmt|;
-name|double
+name|gdouble
 name|unit_factor
 decl_stmt|;
 if|if

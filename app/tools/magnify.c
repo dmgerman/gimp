@@ -203,21 +203,6 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  the magnify tool options  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|magnify_options
-specifier|static
-name|MagnifyOptions
-modifier|*
-name|magnify_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/*  magnify action functions  */
 end_comment
 
@@ -228,11 +213,15 @@ name|magnify_button_press
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -244,11 +233,15 @@ name|magnify_button_release
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -260,11 +253,15 @@ name|magnify_motion
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -276,11 +273,15 @@ name|magnify_modifier_update
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventKey
 modifier|*
+name|kevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -292,11 +293,15 @@ name|magnify_cursor_update
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -308,10 +313,14 @@ name|magnify_control
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|ToolAction
+name|tool_action
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -357,6 +366,21 @@ name|scale
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  the magnify tool options  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|magnify_options
+specifier|static
+name|MagnifyOptions
+modifier|*
+name|magnify_options
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  magnify tool options functions  */
@@ -767,7 +791,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|magnify_button_press (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|magnify_button_press (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|magnify_button_press
 parameter_list|(
 name|Tool
@@ -778,14 +802,11 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|Magnify
 modifier|*
 name|magnify
@@ -795,14 +816,6 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|magnify
 operator|=
 operator|(
@@ -893,9 +906,9 @@ name|ACTIVE
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 name|draw_core_start
 argument_list|(
@@ -918,7 +931,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|magnify_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|magnify_button_release (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|magnify_button_release
 parameter_list|(
 name|Tool
@@ -929,17 +942,14 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|Magnify
 modifier|*
 name|magnify
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|gint
 name|win_width
@@ -972,14 +982,6 @@ name|w
 decl_stmt|,
 name|h
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|magnify
 operator|=
 operator|(
@@ -1326,7 +1328,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|magnify_motion (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|magnify_motion (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|magnify_motion
 parameter_list|(
 name|Tool
@@ -1337,17 +1339,14 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|Magnify
 modifier|*
 name|magnify
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|gint
 name|x
@@ -1363,14 +1362,6 @@ operator|!=
 name|ACTIVE
 condition|)
 return|return;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|magnify
 operator|=
 operator|(
@@ -1452,7 +1443,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|magnify_modifier_update (Tool * tool,GdkEventKey * kevent,gpointer gdisp_ptr)
+DECL|function|magnify_modifier_update (Tool * tool,GdkEventKey * kevent,GDisplay * gdisp)
 name|magnify_modifier_update
 parameter_list|(
 name|Tool
@@ -1463,8 +1454,9 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 switch|switch
@@ -1541,7 +1533,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|magnify_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|magnify_cursor_update (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|magnify_cursor_update
 parameter_list|(
 name|Tool
@@ -1552,22 +1544,11 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
+parameter_list|)
+block|{
 if|if
 condition|(
 name|magnify_options
@@ -1620,10 +1601,6 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 name|Magnify
 modifier|*
 name|magnify
@@ -1637,16 +1614,6 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|tool
-operator|->
-name|gdisp_ptr
-expr_stmt|;
 name|magnify
 operator|=
 operator|(
@@ -1727,6 +1694,8 @@ argument_list|)
 expr_stmt|;
 name|gdisplay_transform_coords
 argument_list|(
+name|tool
+operator|->
 name|gdisp
 argument_list|,
 name|x1
@@ -1744,6 +1713,8 @@ argument_list|)
 expr_stmt|;
 name|gdisplay_transform_coords
 argument_list|(
+name|tool
+operator|->
 name|gdisp
 argument_list|,
 name|x2
@@ -1798,7 +1769,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|magnify_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
+DECL|function|magnify_control (Tool * tool,ToolAction action,GDisplay * gdisp)
 name|magnify_control
 parameter_list|(
 name|Tool
@@ -1808,8 +1779,9 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|Magnify

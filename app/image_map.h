@@ -28,11 +28,13 @@ begin_function_decl
 name|ImageMap
 name|image_map_create
 parameter_list|(
-name|void
+name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -400,7 +400,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1d0c860108
+DECL|struct|__anon292e3c410108
 block|{
 DECL|member|offset
 name|gdouble
@@ -452,7 +452,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1d0c860208
+DECL|struct|__anon292e3c410208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -585,8 +585,10 @@ name|gradient_type_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -598,11 +600,15 @@ name|blend_button_press
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -614,11 +620,15 @@ name|blend_button_release
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -630,11 +640,15 @@ name|blend_motion
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -646,11 +660,15 @@ name|blend_cursor_update
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -662,10 +680,14 @@ name|blend_control
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|ToolAction
+name|action
 parameter_list|,
-name|gpointer
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2429,7 +2451,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|blend_button_press (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|blend_button_press (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|blend_button_press
 parameter_list|(
 name|Tool
@@ -2440,26 +2462,15 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|BlendTool
 modifier|*
 name|blend_tool
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|blend_tool
 operator|=
 operator|(
@@ -2574,9 +2585,9 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
-name|gdisp_ptr
+name|gdisp
 expr_stmt|;
 name|tool
 operator|->
@@ -2642,7 +2653,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|blend_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|blend_button_release (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|blend_button_release
 parameter_list|(
 name|Tool
@@ -2653,14 +2664,11 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|GImage
 modifier|*
 name|gimage
@@ -2687,14 +2695,6 @@ name|progress
 decl_stmt|;
 endif|#
 directive|endif
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|gimage
 operator|=
 name|gdisp
@@ -3086,7 +3086,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|blend_motion (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|blend_motion (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|blend_motion
 parameter_list|(
 name|Tool
@@ -3097,14 +3097,11 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|BlendTool
 modifier|*
 name|blend_tool
@@ -3115,14 +3112,6 @@ index|[
 name|STATUSBAR_SIZE
 index|]
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|blend_tool
 operator|=
 operator|(
@@ -3560,7 +3549,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|blend_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|blend_cursor_update (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|blend_cursor_update
 parameter_list|(
 name|Tool
@@ -3571,22 +3560,11 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
+parameter_list|)
+block|{
 switch|switch
 condition|(
 name|drawable_type
@@ -3650,15 +3628,11 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 name|BlendTool
 modifier|*
 name|blend_tool
 decl_stmt|;
-name|int
+name|gint
 name|tx1
 decl_stmt|,
 name|ty1
@@ -3667,16 +3641,6 @@ name|tx2
 decl_stmt|,
 name|ty2
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|tool
-operator|->
-name|gdisp_ptr
-expr_stmt|;
 name|blend_tool
 operator|=
 operator|(
@@ -3689,6 +3653,8 @@ name|private
 expr_stmt|;
 name|gdisplay_transform_coords
 argument_list|(
+name|tool
+operator|->
 name|gdisp
 argument_list|,
 name|blend_tool
@@ -3710,6 +3676,8 @@ argument_list|)
 expr_stmt|;
 name|gdisplay_transform_coords
 argument_list|(
+name|tool
+operator|->
 name|gdisp
 argument_list|,
 name|blend_tool
@@ -3901,7 +3869,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|blend_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
+DECL|function|blend_control (Tool * tool,ToolAction action,GDisplay * gdisp)
 name|blend_control
 parameter_list|(
 name|Tool
@@ -3911,8 +3879,9 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 name|BlendTool

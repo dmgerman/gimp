@@ -20,102 +20,50 @@ begin_comment
 comment|/* the different states that the painting function can be called with  */
 end_comment
 
-begin_define
-DECL|macro|INIT_PAINT
-define|#
-directive|define
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< skip>*/
+DECL|enum|__anon279d03370103
+block|{
+DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
-value|0
-end_define
-
-begin_comment
-DECL|macro|INIT_PAINT
+block|,
 comment|/* Setup PaintFunc internals */
-end_comment
-
-begin_define
-DECL|macro|MOTION_PAINT
-define|#
-directive|define
+DECL|enumerator|MOTION_PAINT
 name|MOTION_PAINT
-value|1
-end_define
-
-begin_comment
-DECL|macro|MOTION_PAINT
+block|,
 comment|/* PaintFunc performs motion-related rendering */
-end_comment
-
-begin_define
-DECL|macro|PAUSE_PAINT
-define|#
-directive|define
+DECL|enumerator|PAUSE_PAINT
 name|PAUSE_PAINT
-value|2
-end_define
-
-begin_comment
-DECL|macro|PAUSE_PAINT
+block|,
 comment|/* Unused. Reserved */
-end_comment
-
-begin_define
-DECL|macro|RESUME_PAINT
-define|#
-directive|define
+DECL|enumerator|RESUME_PAINT
 name|RESUME_PAINT
-value|3
-end_define
-
-begin_comment
-DECL|macro|RESUME_PAINT
+block|,
 comment|/* Unused. Reserved */
-end_comment
-
-begin_define
-DECL|macro|FINISH_PAINT
-define|#
-directive|define
+DECL|enumerator|FINISH_PAINT
 name|FINISH_PAINT
-value|4
-end_define
-
-begin_comment
-DECL|macro|FINISH_PAINT
+block|,
 comment|/* Cleanup and/or reset PaintFunc operation */
-end_comment
-
-begin_define
-DECL|macro|PRETRACE_PAINT
-define|#
-directive|define
+DECL|enumerator|PRETRACE_PAINT
 name|PRETRACE_PAINT
-value|5
-end_define
-
-begin_comment
-DECL|macro|PRETRACE_PAINT
+block|,
 comment|/* PaintFunc performs window tracing activity prior to rendering */
-end_comment
-
-begin_define
-DECL|macro|POSTTRACE_PAINT
-define|#
-directive|define
+DECL|enumerator|POSTTRACE_PAINT
 name|POSTTRACE_PAINT
-value|6
-end_define
-
-begin_comment
-DECL|macro|POSTTRACE_PAINT
 comment|/* PaintFunc performs window tracing activity following rendering */
-end_comment
+DECL|typedef|PaintState
+block|}
+name|PaintState
+typedef|;
+end_typedef
 
 begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c13d1960103
+DECL|enum|__anon279d03370203
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -135,8 +83,7 @@ end_typedef
 begin_typedef
 DECL|typedef|PaintFunc
 typedef|typedef
-name|void
-modifier|*
+name|gpointer
 function_decl|(
 modifier|*
 name|PaintFunc
@@ -144,11 +91,14 @@ function_decl|)
 parameter_list|(
 name|PaintCore
 modifier|*
+name|paint_core
 parameter_list|,
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|,
-name|int
+name|PaintState
+name|paint_state
 parameter_list|)
 function_decl|;
 end_typedef
@@ -165,27 +115,27 @@ name|core
 decl_stmt|;
 comment|/*  Core select object         */
 DECL|member|startx
-name|double
+name|gdouble
 name|startx
 decl_stmt|;
 comment|/*  starting x coord           */
 DECL|member|starty
-name|double
+name|gdouble
 name|starty
 decl_stmt|;
 comment|/*  starting y coord           */
 DECL|member|startpressure
-name|double
+name|gdouble
 name|startpressure
 decl_stmt|;
 comment|/*  starting pressure          */
 DECL|member|startxtilt
-name|double
+name|gdouble
 name|startxtilt
 decl_stmt|;
 comment|/*  starting xtilt             */
 DECL|member|startytilt
-name|double
+name|gdouble
 name|startytilt
 decl_stmt|;
 comment|/*  starting ytilt             */
@@ -193,7 +143,7 @@ ifdef|#
 directive|ifdef
 name|GTK_HAVE_SIX_VALUATORS
 DECL|member|startwheel
-name|double
+name|gdouble
 name|startwheel
 decl_stmt|;
 comment|/*  starting wheel             */
@@ -201,27 +151,27 @@ endif|#
 directive|endif
 comment|/* GTK_HAVE_SIX_VALUATORS */
 DECL|member|curx
-name|double
+name|gdouble
 name|curx
 decl_stmt|;
 comment|/*  current x coord            */
 DECL|member|cury
-name|double
+name|gdouble
 name|cury
 decl_stmt|;
 comment|/*  current y coord            */
 DECL|member|curpressure
-name|double
+name|gdouble
 name|curpressure
 decl_stmt|;
 comment|/*  current pressure           */
 DECL|member|curxtilt
-name|double
+name|gdouble
 name|curxtilt
 decl_stmt|;
 comment|/*  current xtilt              */
 DECL|member|curytilt
-name|double
+name|gdouble
 name|curytilt
 decl_stmt|;
 comment|/*  current ytilt              */
@@ -229,7 +179,7 @@ ifdef|#
 directive|ifdef
 name|GTK_HAVE_SIX_VALUATORS
 DECL|member|curwheel
-name|double
+name|gdouble
 name|curwheel
 decl_stmt|;
 comment|/*  current wheel              */
@@ -237,27 +187,27 @@ endif|#
 directive|endif
 comment|/* GTK_HAVE_SIX_VALUATORS */
 DECL|member|lastx
-name|double
+name|gdouble
 name|lastx
 decl_stmt|;
 comment|/*  last x coord               */
 DECL|member|lasty
-name|double
+name|gdouble
 name|lasty
 decl_stmt|;
 comment|/*  last y coord               */
 DECL|member|lastpressure
-name|double
+name|gdouble
 name|lastpressure
 decl_stmt|;
 comment|/*  last pressure              */
 DECL|member|lastxtilt
-name|double
+name|gdouble
 name|lastxtilt
 decl_stmt|;
 comment|/*  last xtilt                 */
 DECL|member|lastytilt
-name|double
+name|gdouble
 name|lastytilt
 decl_stmt|;
 comment|/*  last ytilt                 */
@@ -265,7 +215,7 @@ ifdef|#
 directive|ifdef
 name|GTK_HAVE_SIX_VALUATORS
 DECL|member|lastwheel
-name|double
+name|gdouble
 name|lastwheel
 decl_stmt|;
 comment|/*  last wheel                 */
@@ -273,28 +223,28 @@ endif|#
 directive|endif
 comment|/* GTK_HAVE_SIX_VALUATORS */
 DECL|member|state
-name|int
+name|gint
 name|state
 decl_stmt|;
 comment|/*  state of buttons and keys  */
 DECL|member|distance
-name|double
+name|gdouble
 name|distance
 decl_stmt|;
 comment|/*  distance traveled by brush */
 DECL|member|pixel_dist
-name|double
+name|gdouble
 name|pixel_dist
 decl_stmt|;
 comment|/*  distance in pixels         */
 DECL|member|spacing
-name|double
+name|gdouble
 name|spacing
 decl_stmt|;
 comment|/*  spacing                    */
 DECL|member|x1
 DECL|member|y1
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -302,7 +252,7 @@ decl_stmt|;
 comment|/*  image space coordinate     */
 DECL|member|x2
 DECL|member|y2
-name|int
+name|gint
 name|x2
 decl_stmt|,
 name|y2
@@ -320,12 +270,12 @@ name|paint_func
 decl_stmt|;
 comment|/*  painting function          */
 DECL|member|pick_colors
-name|int
+name|gboolean
 name|pick_colors
 decl_stmt|;
 comment|/*  pick color if ctrl or alt is pressed  */
 DECL|member|pick_state
-name|int
+name|gboolean
 name|pick_state
 decl_stmt|;
 comment|/*  was ctrl or alt pressed when clicked? */
@@ -358,45 +308,45 @@ begin_typedef
 DECL|typedef|PaintUndo
 typedef|typedef
 name|struct
-name|_paint_undo
+name|_PaintUndo
 name|PaintUndo
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_paint_undo
+DECL|struct|_PaintUndo
 struct|struct
-name|_paint_undo
+name|_PaintUndo
 block|{
 DECL|member|tool_ID
-name|int
+name|gint
 name|tool_ID
 decl_stmt|;
 DECL|member|lastx
-name|double
+name|gdouble
 name|lastx
 decl_stmt|;
 DECL|member|lasty
-name|double
+name|gdouble
 name|lasty
 decl_stmt|;
 DECL|member|lastpressure
-name|double
+name|gdouble
 name|lastpressure
 decl_stmt|;
 DECL|member|lastxtilt
-name|double
+name|gdouble
 name|lastxtilt
 decl_stmt|;
 DECL|member|lastytilt
-name|double
+name|gdouble
 name|lastytilt
 decl_stmt|;
 ifdef|#
 directive|ifdef
 name|GTK_HAVE_SIX_VALUATORS
 DECL|member|lastwheel
-name|double
+name|gdouble
 name|lastwheel
 decl_stmt|;
 endif|#
@@ -422,8 +372,9 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -440,8 +391,9 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -458,8 +410,9 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -476,8 +429,9 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -493,8 +447,9 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl

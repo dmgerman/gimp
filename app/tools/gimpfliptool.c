@@ -191,6 +191,34 @@ block|}
 struct|;
 end_struct
 
+begin_comment
+comment|/*  local function prototypes  */
+end_comment
+
+begin_function_decl
+specifier|static
+name|TileManager
+modifier|*
+name|flip_tool_transform
+parameter_list|(
+name|Tool
+modifier|*
+name|tool
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|,
+name|TransformState
+name|state
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  private variables  */
+end_comment
+
 begin_decl_stmt
 DECL|variable|flip_options
 specifier|static
@@ -409,7 +437,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|flip_modifier_key_func (Tool * tool,GdkEventKey * kevent,gpointer gdisp_ptr)
+DECL|function|flip_modifier_key_func (Tool * tool,GdkEventKey * kevent,GDisplay * gdisp)
 name|flip_modifier_key_func
 parameter_list|(
 name|Tool
@@ -420,8 +448,9 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 block|{
 switch|switch
@@ -504,17 +533,19 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|TileManager
 modifier|*
-DECL|function|flip_tool_transform (Tool * tool,gpointer gdisp_ptr,TransformState state)
+DECL|function|flip_tool_transform (Tool * tool,GDisplay * gdisp,TransformState state)
 name|flip_tool_transform
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|,
 name|TransformState
 name|state
@@ -523,10 +554,6 @@ block|{
 name|TransformCore
 modifier|*
 name|transform_core
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|transform_core
 operator|=
@@ -537,14 +564,6 @@ operator|)
 name|tool
 operator|->
 name|private
-expr_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
 expr_stmt|;
 switch|switch
 condition|(
@@ -615,7 +634,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|flip_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
+DECL|function|flip_cursor_update (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|flip_cursor_update
 parameter_list|(
 name|Tool
@@ -626,14 +645,11 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -643,14 +659,6 @@ name|ctype
 init|=
 name|GIMP_BAD_CURSOR
 decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 if|if
 condition|(
 operator|(

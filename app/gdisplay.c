@@ -1581,7 +1581,7 @@ name|active_tool
 operator|&&
 name|active_tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|==
 name|gdisp
 condition|)
@@ -1594,7 +1594,7 @@ name|NULL
 expr_stmt|;
 name|active_tool
 operator|->
-name|gdisp_ptr
+name|gdisp
 operator|=
 name|NULL
 expr_stmt|;
