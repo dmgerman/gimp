@@ -46,6 +46,12 @@ directive|include
 file|<libgimp/gimpmenu.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpmiscui.h>
+end_include
+
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
