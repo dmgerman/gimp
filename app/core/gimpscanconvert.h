@@ -58,22 +58,19 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* set the X- and Y-resolution for the ScanConvert.  * Only gets used for stroking.  * The stroke width has to be given in X-Resolution.  */
+comment|/* set the Pixel-Ratio (width / height) for the pixels.  */
 end_comment
 
 begin_function_decl
 name|void
-name|gimp_scan_convert_set_resolution
+name|gimp_scan_convert_set_pixel_ratio
 parameter_list|(
 name|GimpScanConvert
 modifier|*
 name|sc
 parameter_list|,
 name|gdouble
-name|xresolution
-parameter_list|,
-name|gdouble
-name|yresolution
+name|ratio_xy
 parameter_list|)
 function_decl|;
 end_function_decl

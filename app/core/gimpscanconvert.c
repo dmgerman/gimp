@@ -82,9 +82,9 @@ DECL|member|height
 name|guint
 name|height
 decl_stmt|;
-DECL|member|pixel_xy_ratio
+DECL|member|ratio_xy
 name|gdouble
-name|pixel_xy_ratio
+name|ratio_xy
 decl_stmt|;
 DECL|member|antialias
 name|gboolean
@@ -224,7 +224,7 @@ name|height
 expr_stmt|;
 name|sc
 operator|->
-name|pixel_xy_ratio
+name|ratio_xy
 operator|=
 literal|1.0
 expr_stmt|;
@@ -292,23 +292,20 @@ block|}
 end_function
 
 begin_comment
-comment|/* set the X- and Y-resolution for the ScanConvert.  * Only gets used for stroking.  */
+comment|/* set the Pixel-Ratio (width / height) for the pixels.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_scan_convert_set_resolution (GimpScanConvert * sc,gdouble xresolution,gdouble yresolution)
-name|gimp_scan_convert_set_resolution
+DECL|function|gimp_scan_convert_set_pixel_ratio (GimpScanConvert * sc,gdouble ratio_xy)
+name|gimp_scan_convert_set_pixel_ratio
 parameter_list|(
 name|GimpScanConvert
 modifier|*
 name|sc
 parameter_list|,
 name|gdouble
-name|xresolution
-parameter_list|,
-name|gdouble
-name|yresolution
+name|ratio_xy
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -321,11 +318,9 @@ expr_stmt|;
 comment|/* we only need the relative resolution */
 name|sc
 operator|->
-name|pixel_xy_ratio
+name|ratio_xy
 operator|=
-name|xresolution
-operator|/
-name|yresolution
+name|ratio_xy
 expr_stmt|;
 block|}
 end_function
@@ -1155,7 +1150,7 @@ if|if
 condition|(
 name|sc
 operator|->
-name|pixel_xy_ratio
+name|ratio_xy
 operator|!=
 literal|1.0
 condition|)
@@ -1186,11 +1181,11 @@ index|[
 name|i
 index|]
 operator|.
-name|y
+name|x
 operator|*=
 name|sc
 operator|->
-name|pixel_xy_ratio
+name|ratio_xy
 expr_stmt|;
 block|}
 block|}
@@ -1341,7 +1336,7 @@ if|if
 condition|(
 name|sc
 operator|->
-name|pixel_xy_ratio
+name|ratio_xy
 operator|!=
 literal|1.0
 condition|)
@@ -1387,21 +1382,21 @@ name|segment
 operator|->
 name|bbox
 operator|.
-name|y0
+name|x0
 operator|/=
 name|sc
 operator|->
-name|pixel_xy_ratio
+name|ratio_xy
 expr_stmt|;
 name|segment
 operator|->
 name|bbox
 operator|.
-name|y1
+name|x1
 operator|/=
 name|sc
 operator|->
-name|pixel_xy_ratio
+name|ratio_xy
 expr_stmt|;
 for|for
 control|(
@@ -1429,11 +1424,11 @@ name|j
 expr_stmt|;
 name|point
 operator|->
-name|y
+name|x
 operator|/=
 name|sc
 operator|->
-name|pixel_xy_ratio
+name|ratio_xy
 expr_stmt|;
 block|}
 block|}
