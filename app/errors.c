@@ -83,6 +83,13 @@ name|prog_name
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|int
+name|use_debug_handler
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 name|void
 DECL|function|message (char * fmt,...)
@@ -284,6 +291,15 @@ expr_stmt|;
 name|va_end
 argument_list|(
 name|args
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|use_debug_handler
+condition|)
+name|g_debug
+argument_list|(
+name|prog_name
 argument_list|)
 expr_stmt|;
 name|gdk_exit

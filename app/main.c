@@ -187,6 +187,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|use_debug_handler
+name|int
+name|use_debug_handler
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|prog_name
 name|char
 modifier|*
@@ -373,6 +380,10 @@ expr_stmt|;
 name|use_shm
 operator|=
 name|TRUE
+expr_stmt|;
+name|use_debug_handler
+operator|=
+name|FALSE
 expr_stmt|;
 name|batch_cmds
 operator|=
@@ -716,6 +727,27 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|argv
+index|[
+name|i
+index|]
+argument_list|,
+literal|"--debug-handlers"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|use_debug_handler
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 comment|/*  *    ANYTHING ELSE starting with a '-' is an error.  */
 elseif|else
 if|if
@@ -816,6 +848,11 @@ expr_stmt|;
 name|g_print
 argument_list|(
 literal|"  --no-xshm              Do not use the X Shared Memory extension.\n"
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"  --debug-handlers       Enable debugging signal handlers.\n"
 argument_list|)
 expr_stmt|;
 name|g_print

@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Animation Optimizer plug-in version 0.61.0  *  * by Adam D. Moss, 1997-98  *     adam@gimp.org  *     adam@foxbox.org  *  * This is part of the GIMP package and falls under the GPL.  */
+comment|/*  * Animation Optimizer plug-in version 0.70.0  *  * by Adam D. Moss, 1997-98  *     adam@gimp.org  *     adam@foxbox.org  *  * This is part of the GIMP package and falls under the GPL.  */
 end_comment
 
 begin_comment
-comment|/*  * REVISION HISTORY:  *  * 98.03.16 : version 0.61.0  *            Support more rare opaque/transparent combinations.  *  * 97.12.09 : version 0.60.0  *            Added support for INDEXED* and GRAY* images.  *  * 97.12.09 : version 0.52.0  *            Fixed some bugs.  *  * 97.12.08 : version 0.51.0  *            Relaxed bounding box on optimized layers marked  *            'replace'.  *  * 97.12.07 : version 0.50.0  *            Initial release.  */
+comment|/*  * REVISION HISTORY:  *  * 98.04.19 : version 0.70.0  *            Plug-in doubles up as Animation UnOptimize too!  (This  *            is somewhat more useful than it sounds.)  *  * 98.03.16 : version 0.61.0  *            Support more rare opaque/transparent combinations.  *  * 97.12.09 : version 0.60.0  *            Added support for INDEXED* and GRAY* images.  *  * 97.12.09 : version 0.52.0  *            Fixed some bugs.  *  * 97.12.08 : version 0.51.0  *            Relaxed bounding box on optimized layers marked  *            'replace'.  *  * 97.12.07 : version 0.50.0  *            Initial release.  */
 end_comment
 
 begin_comment
@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b02a57f0103
+DECL|enum|__anon2b8163b80103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -303,6 +303,13 @@ name|ncolours
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|optimize
+name|gboolean
+name|optimize
+decl_stmt|;
+end_decl_stmt
+
 begin_macro
 DECL|function|MAIN ()
 name|MAIN
@@ -389,9 +396,42 @@ literal|"Adam D. Moss<adam@gimp.org>"
 argument_list|,
 literal|"Adam D. Moss<adam@gimp.org>"
 argument_list|,
-literal|"1997"
+literal|"1997-98"
 argument_list|,
 literal|"<Image>/Filters/Animation/Animation Optimize"
+argument_list|,
+literal|"RGB*, INDEXED*, GRAY*"
+argument_list|,
+name|PROC_PLUG_IN
+argument_list|,
+name|nargs
+argument_list|,
+name|nreturn_vals
+argument_list|,
+name|args
+argument_list|,
+name|return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+literal|"plug_in_animationunoptimize"
+argument_list|,
+literal|"This plugin 'simplifies' a GIMP layer-based"
+literal|" animation that has been AnimationOptimized.  This"
+literal|" makes the animation much easier to work with if,"
+literal|" for example, the optimized version is all you"
+literal|" have."
+argument_list|,
+literal|""
+argument_list|,
+literal|"Adam D. Moss<adam@gimp.org>"
+argument_list|,
+literal|"Adam D. Moss<adam@gimp.org>"
+argument_list|,
+literal|"1997-98"
+argument_list|,
+literal|"<Image>/Filters/Animation/Animation UnOptimize"
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -492,6 +532,28 @@ name|STATUS_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
+comment|/* Check the procedure name we were called with, to decide      what needs to be done. */
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"plug_in_animationoptimize"
+argument_list|)
+operator|==
+literal|0
+condition|)
+name|optimize
+operator|=
+name|TRUE
+expr_stmt|;
+else|else
+name|optimize
+operator|=
+name|FALSE
+expr_stmt|;
+comment|/* UnOptimize */
 if|if
 condition|(
 name|status
@@ -671,7 +733,7 @@ comment|/* function is presently unused */
 end_comment
 
 begin_comment
-unit|static void build_dialog(GImageType basetype, 	     char*      imagename) {   gchar** argv;   gint argc;    gchar* windowname;    GtkWidget* dlg;   GtkWidget* button;   GtkWidget* toggle;   GtkWidget* label;   GtkWidget* entry;   GtkWidget* frame;   GtkWidget* frame2;   GtkWidget* vbox;   GtkWidget* vbox2;   GtkWidget* hbox;   GtkWidget* hbox2;   guchar* color_cube;   GSList* group = NULL;    argc = 1;   argv = g_new (gchar *, 1);   argv[0] = g_strdup ("animationplay");   gtk_init (&argc,&argv);   gtk_rc_parse (gimp_gtkrc ());   gdk_set_use_xshm (gimp_use_xshm ());
+unit|static void build_dialog(GImageType basetype, 	     char*      imagename) {   gchar** argv;   gint argc;    gchar* windowname;    GtkWidget* dlg;   GtkWidget* button;   GtkWidget* toggle;   GtkWidget* label;   GtkWidget* entry;   GtkWidget* frame;   GtkWidget* frame2;   GtkWidget* vbox;   GtkWidget* vbox2;   GtkWidget* hbox;   GtkWidget* hbox2;   guchar* color_cube;   GSList* group = NULL;    argc = 1;   argv = g_new (gchar *, 1);   argv[0] = g_strdup ("animationoptimize");   gtk_init (&argc,&argv);   gtk_rc_parse (gimp_gtkrc ());   gdk_set_use_xshm (gimp_use_xshm ());
 comment|/*  gtk_preview_set_gamma (gimp_gamma ());   gtk_preview_set_install_cmap (gimp_install_cmap ());   color_cube = gimp_color_cube ();   gtk_preview_set_color_cube (color_cube[0], color_cube[1],                               color_cube[2], color_cube[3]);   gtk_widget_set_default_visual (gtk_preview_get_visual ());   gtk_widget_set_default_colormap (gtk_preview_get_cmap ());*/
 end_comment
 
@@ -2276,11 +2338,17 @@ expr_stmt|;
 comment|/*        *        * OPTIMIZE HERE!        *        */
 if|if
 condition|(
+operator|(
 name|this_frame_num
 operator|!=
 literal|0
-condition|)
+operator|)
 comment|/* Can't delta bottom frame! */
+operator|&&
+operator|(
+name|optimize
+operator|)
+condition|)
 block|{
 name|int
 name|xit
