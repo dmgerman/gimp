@@ -102,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277735530108
+DECL|struct|__anon275f6dfb0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -2193,14 +2193,14 @@ name|gdouble
 operator|)
 name|xres
 operator|*
-literal|0.254
+literal|0.0254
 argument_list|,
 operator|(
 name|gdouble
 operator|)
 name|yres
 operator|*
-literal|0.254
+literal|0.0254
 argument_list|)
 expr_stmt|;
 break|break;
