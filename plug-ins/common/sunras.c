@@ -138,9 +138,9 @@ comment|/* Fileheader of SunRaster files */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29639b9b0108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2ad6e82e0108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -227,9 +227,9 @@ comment|/* Runlength compression format */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29639b9b0208
 typedef|typedef
 struct|struct
+DECL|struct|__anon2ad6e82e0208
 block|{
 DECL|member|val
 name|int
@@ -266,18 +266,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -294,7 +294,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -306,7 +306,7 @@ specifier|static
 name|gint
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -785,32 +785,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|save_toggle_update
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|show_message
-parameter_list|(
-name|char
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/* Portability kludge */
 end_comment
@@ -845,16 +819,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -866,7 +840,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29639b9b0308
+DECL|struct|__anon2ad6e82e0308
 block|{
 DECL|member|rle
 name|gint
@@ -882,7 +856,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29639b9b0408
+DECL|struct|__anon2ad6e82e0408
 block|{
 DECL|member|run
 name|gint
@@ -1014,6 +988,7 @@ specifier|static
 name|int
 name|nload_return_vals
 init|=
+operator|(
 sizeof|sizeof
 argument_list|(
 name|load_return_vals
@@ -1026,6 +1001,7 @@ index|[
 literal|0
 index|]
 argument_list|)
+operator|)
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -1199,21 +1175,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -1290,7 +1266,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
@@ -1321,34 +1297,18 @@ operator|.
 name|d_string
 argument_list|)
 expr_stmt|;
-operator|*
-name|nreturn_vals
-operator|=
-literal|2
-expr_stmt|;
-name|status
-operator|=
-operator|(
+if|if
+condition|(
 name|image_ID
 operator|!=
 operator|-
 literal|1
-operator|)
-condition|?
-name|STATUS_SUCCESS
-else|:
-name|STATUS_EXECUTION_ERROR
-expr_stmt|;
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+condition|)
+block|{
+operator|*
+name|nreturn_vals
 operator|=
-name|status
+literal|2
 expr_stmt|;
 name|values
 index|[
@@ -1370,6 +1330,14 @@ name|d_image
 operator|=
 name|image_ID
 expr_stmt|;
+block|}
+else|else
+block|{
+name|status
+operator|=
+name|STATUS_EXECUTION_ERROR
+expr_stmt|;
+block|}
 block|}
 elseif|else
 if|if
@@ -1452,11 +1420,6 @@ operator|==
 name|EXPORT_CANCEL
 condition|)
 block|{
-operator|*
-name|nreturn_vals
-operator|=
-literal|1
-expr_stmt|;
 name|values
 index|[
 literal|0
@@ -1466,7 +1429,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|STATUS_CANCEL
 expr_stmt|;
 return|return;
 block|}
@@ -1498,7 +1461,10 @@ operator|!
 name|save_dialog
 argument_list|()
 condition|)
-return|return;
+name|status
+operator|=
+name|STATUS_CANCEL
+expr_stmt|;
 break|break;
 case|case
 name|RUN_NONINTERACTIVE
@@ -1604,17 +1570,6 @@ name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|status
-expr_stmt|;
 if|if
 condition|(
 name|export
@@ -1627,16 +1582,34 @@ name|image_ID
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
+block|}
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|status
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (char * filename)
+DECL|function|load_image (gchar * filename)
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -1680,7 +1653,7 @@ operator|!
 name|ifp
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -1717,7 +1690,7 @@ operator|!=
 name|RAS_MAGIC
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -1756,7 +1729,7 @@ literal|5
 operator|)
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -1817,7 +1790,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 literal|"Can't get memory for colour map"
 argument_list|)
@@ -1921,7 +1894,7 @@ operator|!=
 name|RAS_MAGIC
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 literal|"Can't read colour entries"
 argument_list|)
@@ -1949,7 +1922,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -2132,7 +2105,7 @@ operator|-
 literal|1
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -2158,10 +2131,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (char * filename,gint32 image_ID,gint32 drawable_ID)
+DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -2202,7 +2175,7 @@ name|drawable_ID
 argument_list|)
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -2230,7 +2203,7 @@ name|RGB_IMAGE
 case|:
 break|break;
 default|default:
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -2261,7 +2234,7 @@ operator|!
 name|ofp
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -2402,16 +2375,16 @@ block|}
 end_function
 
 begin_function
-DECL|function|read_card32 (FILE * ifp,int * err)
 specifier|static
 name|L_CARD32
+DECL|function|read_card32 (FILE * ifp,gint * err)
 name|read_card32
 parameter_list|(
 name|FILE
 modifier|*
 name|ifp
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|err
 parameter_list|)
@@ -2682,33 +2655,29 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|byte2bit (unsigned char * byteline,int width,unsigned char * bitline,int invert)
+DECL|function|byte2bit (guchar * byteline,gint width,guchar * bitline,gint invert)
 name|byte2bit
 parameter_list|(
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|byteline
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|bitline
 parameter_list|,
-name|int
+name|gint
 name|invert
 parameter_list|)
 block|{
 specifier|register
-name|unsigned
-name|char
+name|guchar
 name|bitval
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|rest
 index|[
 literal|8
@@ -3005,18 +2974,18 @@ end_comment
 
 begin_function
 specifier|static
-name|int
-DECL|function|rle_fread (char * ptr,int sz,int nelem,FILE * ifp)
+name|gint
+DECL|function|rle_fread (gchar * ptr,gint sz,gint nelem,FILE * ifp)
 name|rle_fread
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|ptr
 parameter_list|,
-name|int
+name|gint
 name|sz
 parameter_list|,
-name|int
+name|gint
 name|nelem
 parameter_list|,
 name|FILE
@@ -3115,7 +3084,7 @@ end_comment
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|rle_fgetc (FILE * ifp)
 name|rle_fgetc
 parameter_list|(
@@ -3294,18 +3263,18 @@ end_comment
 
 begin_function
 specifier|static
-name|int
-DECL|function|rle_fwrite (char * ptr,int sz,int nelem,FILE * ofp)
+name|gint
+DECL|function|rle_fwrite (gchar * ptr,gint sz,gint nelem,FILE * ofp)
 name|rle_fwrite
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|ptr
 parameter_list|,
-name|int
+name|gint
 name|sz
 parameter_list|,
-name|int
+name|gint
 name|nelem
 parameter_list|,
 name|FILE
@@ -3324,8 +3293,7 @@ name|err
 init|=
 literal|0
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|pixels
 init|=
@@ -3411,11 +3379,11 @@ end_comment
 
 begin_function
 specifier|static
-name|int
-DECL|function|rle_fputc (int val,FILE * ofp)
+name|gint
+DECL|function|rle_fputc (gint val,FILE * ofp)
 name|rle_fputc
 parameter_list|(
-name|int
+name|gint
 name|val
 parameter_list|,
 name|FILE
@@ -3569,14 +3537,14 @@ end_comment
 
 begin_function
 specifier|static
-name|int
-DECL|function|rle_putrun (int n,int val,FILE * ofp)
+name|gint
+DECL|function|rle_putrun (gint n,gint val,FILE * ofp)
 name|rle_putrun
 parameter_list|(
-name|int
+name|gint
 name|n
 parameter_list|,
-name|int
+name|gint
 name|val
 parameter_list|,
 name|FILE
@@ -3959,7 +3927,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|read_sun_cols (FILE * ifp,L_SUNFILEHEADER * sunhdr,unsigned char * colormap)
+DECL|function|read_sun_cols (FILE * ifp,L_SUNFILEHEADER * sunhdr,guchar * colormap)
 name|read_sun_cols
 parameter_list|(
 name|FILE
@@ -3970,8 +3938,7 @@ name|L_SUNFILEHEADER
 modifier|*
 name|sunhdr
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|colormap
 parameter_list|)
@@ -4041,7 +4008,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|write_sun_cols (FILE * ofp,L_SUNFILEHEADER * sunhdr,unsigned char * colormap)
+DECL|function|write_sun_cols (FILE * ofp,L_SUNFILEHEADER * sunhdr,guchar * colormap)
 name|write_sun_cols
 parameter_list|(
 name|FILE
@@ -4052,8 +4019,7 @@ name|L_SUNFILEHEADER
 modifier|*
 name|sunhdr
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|colormap
 parameter_list|)
@@ -4088,9 +4054,9 @@ comment|/* Set a GIMP colourtable using the sun colourmap */
 end_comment
 
 begin_function
-DECL|function|set_color_table (gint32 image_ID,L_SUNFILEHEADER * sunhdr,guchar * suncolmap)
 specifier|static
 name|void
+DECL|function|set_color_table (gint32 image_ID,L_SUNFILEHEADER * sunhdr,guchar * suncolmap)
 name|set_color_table
 parameter_list|(
 name|gint32
@@ -4110,8 +4076,7 @@ name|ncols
 decl_stmt|,
 name|j
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|ColorMap
 index|[
 literal|256
@@ -4269,10 +4234,10 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|create_new_image (char * filename,guint width,guint height,GImageType type,gint32 * layer_ID,GDrawable ** drawable,GPixelRgn * pixel_rgn)
+DECL|function|create_new_image (gchar * filename,guint width,guint height,GImageType type,gint32 * layer_ID,GDrawable ** drawable,GPixelRgn * pixel_rgn)
 name|create_new_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -4436,10 +4401,10 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_sun_d1 (char * filename,FILE * ifp,L_SUNFILEHEADER * sunhdr,unsigned char * suncolmap)
+DECL|function|load_sun_d1 (gchar * filename,FILE * ifp,L_SUNFILEHEADER * sunhdr,guchar * suncolmap)
 name|load_sun_d1
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -4451,8 +4416,7 @@ name|L_SUNFILEHEADER
 modifier|*
 name|sunhdr
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|suncolmap
 parameter_list|)
@@ -4477,8 +4441,7 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dest
 decl_stmt|,
@@ -4497,8 +4460,7 @@ name|GDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|bit2byte
 index|[
 literal|256
@@ -4509,8 +4471,7 @@ decl_stmt|;
 name|L_SUNFILEHEADER
 name|sun_bwhdr
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|sun_bwcolmap
 index|[
 literal|6
@@ -4998,7 +4959,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -5026,10 +4987,10 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_sun_d8 (char * filename,FILE * ifp,L_SUNFILEHEADER * sunhdr,unsigned char * suncolmap)
+DECL|function|load_sun_d8 (gchar * filename,FILE * ifp,L_SUNFILEHEADER * sunhdr,guchar * suncolmap)
 name|load_sun_d8
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -5041,8 +5002,7 @@ name|L_SUNFILEHEADER
 modifier|*
 name|sunhdr
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|suncolmap
 parameter_list|)
@@ -5068,8 +5028,7 @@ name|scan_lines
 decl_stmt|,
 name|tile_height
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dest
 decl_stmt|,
@@ -5475,7 +5434,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -5503,10 +5462,10 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_sun_d24 (char * filename,FILE * ifp,L_SUNFILEHEADER * sunhdr,unsigned char * suncolmap)
+DECL|function|load_sun_d24 (gchar * filename,FILE * ifp,L_SUNFILEHEADER * sunhdr,guchar * suncolmap)
 name|load_sun_d24
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -5518,22 +5477,19 @@ name|L_SUNFILEHEADER
 modifier|*
 name|sunhdr
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|suncolmap
 parameter_list|)
 block|{
 specifier|register
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dest
 decl_stmt|,
 name|blue
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|;
@@ -5915,7 +5871,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -5943,10 +5899,10 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_sun_d32 (char * filename,FILE * ifp,L_SUNFILEHEADER * sunhdr,unsigned char * suncolmap)
+DECL|function|load_sun_d32 (gchar * filename,FILE * ifp,L_SUNFILEHEADER * sunhdr,guchar * suncolmap)
 name|load_sun_d32
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -5958,22 +5914,19 @@ name|L_SUNFILEHEADER
 modifier|*
 name|sunhdr
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|suncolmap
 parameter_list|)
 block|{
 specifier|register
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dest
 decl_stmt|,
 name|blue
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|;
@@ -6400,7 +6353,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -6424,7 +6377,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_index (FILE * ofp,gint32 image_ID,gint32 drawable_ID,int grey,int rle)
+DECL|function|save_index (FILE * ofp,gint32 image_ID,gint32 drawable_ID,gint grey,gint rle)
 name|save_index
 parameter_list|(
 name|FILE
@@ -6437,10 +6390,10 @@ parameter_list|,
 name|gint32
 name|drawable_ID
 parameter_list|,
-name|int
+name|gint
 name|grey
 parameter_list|,
-name|int
+name|gint
 name|rle
 parameter_list|)
 block|{
@@ -6474,8 +6427,7 @@ name|tmp
 init|=
 literal|0
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|cmap
 decl_stmt|,
@@ -6484,8 +6436,7 @@ name|bwline
 init|=
 name|NULL
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|,
@@ -6495,8 +6446,7 @@ decl_stmt|;
 name|L_SUNFILEHEADER
 name|sunhdr
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|sun_colormap
 index|[
 literal|256
@@ -6505,8 +6455,7 @@ literal|3
 index|]
 decl_stmt|;
 specifier|static
-name|unsigned
-name|char
+name|guchar
 name|sun_bwmap
 index|[
 literal|6
@@ -6527,8 +6476,7 @@ literal|255
 block|}
 decl_stmt|;
 specifier|static
-name|unsigned
-name|char
+name|guchar
 name|sun_wbmap
 index|[
 literal|6
@@ -7292,7 +7240,7 @@ name|ofp
 argument_list|)
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -7320,7 +7268,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_rgb (FILE * ofp,gint32 image_ID,gint32 drawable_ID,int rle)
+DECL|function|save_rgb (FILE * ofp,gint32 image_ID,gint32 drawable_ID,gint rle)
 name|save_rgb
 parameter_list|(
 name|FILE
@@ -7333,7 +7281,7 @@ parameter_list|,
 name|gint32
 name|drawable_ID
 parameter_list|,
-name|int
+name|gint
 name|rle
 parameter_list|)
 block|{
@@ -7353,8 +7301,7 @@ name|j
 decl_stmt|,
 name|bpp
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|,
@@ -7431,8 +7378,7 @@ operator|=
 name|data
 operator|=
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|*
 operator|)
 name|g_malloc
@@ -7895,7 +7841,7 @@ name|ofp
 argument_list|)
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -7927,9 +7873,11 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|init_gtk ()
+DECL|function|init_gtk (void)
 name|init_gtk
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gchar
 modifier|*
@@ -7996,41 +7944,7 @@ name|dlg
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|toggle
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|frame
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|toggle_vbox
-decl_stmt|;
-name|GSList
-modifier|*
-name|group
-decl_stmt|;
-name|gint
-name|use_rle
-init|=
-operator|(
-name|psvals
-operator|.
-name|rle
-operator|==
-name|TRUE
-operator|)
-decl_stmt|;
-name|gint
-name|use_std
-init|=
-operator|(
-name|psvals
-operator|.
-name|rle
-operator|==
-name|FALSE
-operator|)
 decl_stmt|;
 name|dlg
 operator|=
@@ -8112,22 +8026,54 @@ expr_stmt|;
 comment|/*  file save type  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_radio_group_new2
 argument_list|(
+name|TRUE
+argument_list|,
 name|_
 argument_list|(
 literal|"Data Formatting"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
+argument_list|,
+name|gimp_radio_button_update
+argument_list|,
+operator|&
+name|psvals
+operator|.
+name|rle
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|psvals
+operator|.
+name|rle
+argument_list|,
+name|_
 argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
+literal|"RunLength Encoded"
 argument_list|)
 argument_list|,
-name|GTK_SHADOW_ETCHED_IN
+operator|(
+name|gpointer
+operator|)
+name|TRUE
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Standard"
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|FALSE
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -8161,186 +8107,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|toggle_vbox
-operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|toggle_vbox
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|toggle_vbox
-argument_list|)
-expr_stmt|;
-name|group
-operator|=
-name|NULL
-expr_stmt|;
-name|toggle
-operator|=
-name|gtk_radio_button_new_with_label
-argument_list|(
-name|group
-argument_list|,
-name|_
-argument_list|(
-literal|"RunLength Encoded"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|group
-operator|=
-name|gtk_radio_button_group
-argument_list|(
-name|GTK_RADIO_BUTTON
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|toggle_vbox
-argument_list|)
-argument_list|,
-name|toggle
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|,
-literal|"toggled"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|save_toggle_update
-argument_list|,
-operator|&
-name|use_rle
-argument_list|)
-expr_stmt|;
-name|gtk_toggle_button_set_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|,
-name|use_rle
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle
-argument_list|)
-expr_stmt|;
-name|toggle
-operator|=
-name|gtk_radio_button_new_with_label
-argument_list|(
-name|group
-argument_list|,
-name|_
-argument_list|(
-literal|"Standard"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|group
-operator|=
-name|gtk_radio_button_group
-argument_list|(
-name|GTK_RADIO_BUTTON
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|toggle_vbox
-argument_list|)
-argument_list|,
-name|toggle
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|,
-literal|"toggled"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|save_toggle_update
-argument_list|,
-operator|&
-name|use_std
-argument_list|)
-expr_stmt|;
-name|gtk_toggle_button_set_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|,
-name|use_std
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle_vbox
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|frame
@@ -8356,23 +8122,6 @@ argument_list|()
 expr_stmt|;
 name|gdk_flush
 argument_list|()
-expr_stmt|;
-if|if
-condition|(
-name|use_rle
-condition|)
-name|psvals
-operator|.
-name|rle
-operator|=
-name|TRUE
-expr_stmt|;
-else|else
-name|psvals
-operator|.
-name|rle
-operator|=
-name|FALSE
 expr_stmt|;
 return|return
 name|psint
@@ -8408,94 +8157,6 @@ name|GTK_WIDGET
 argument_list|(
 name|data
 argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|save_toggle_update (GtkWidget * widget,gpointer data)
-name|save_toggle_update
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|int
-modifier|*
-name|toggle_val
-decl_stmt|;
-name|toggle_val
-operator|=
-operator|(
-name|int
-operator|*
-operator|)
-name|data
-expr_stmt|;
-if|if
-condition|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|widget
-argument_list|)
-operator|->
-name|active
-condition|)
-operator|*
-name|toggle_val
-operator|=
-name|TRUE
-expr_stmt|;
-else|else
-operator|*
-name|toggle_val
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/* Show a message. Where to show it, depends on the runmode */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|show_message (char * message)
-name|show_message
-parameter_list|(
-name|char
-modifier|*
-name|message
-parameter_list|)
-block|{
-if|if
-condition|(
-name|l_run_mode
-operator|==
-name|RUN_INTERACTIVE
-condition|)
-name|g_message
-argument_list|(
-name|message
-argument_list|)
-expr_stmt|;
-else|else
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"sunras: %s\n"
-argument_list|,
-name|message
 argument_list|)
 expr_stmt|;
 block|}

@@ -28,12 +28,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -131,7 +125,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7707d40108
+DECL|struct|__anon2b555e6b0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -194,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7707d40208
+DECL|struct|__anon2b555e6b0208
 block|{
 DECL|member|run
 name|gint
@@ -4201,7 +4195,7 @@ operator|*
 name|rand
 argument_list|()
 operator|/
-name|RAND_MAX
+name|G_MAXRAND
 expr_stmt|;
 else|else
 name|spike_angle
@@ -4215,7 +4209,7 @@ condition|(
 name|rand
 argument_list|()
 operator|<=
-name|RAND_MAX
+name|G_MAXRAND
 operator|*
 name|svals
 operator|.

@@ -7052,7 +7052,7 @@ index|]
 operator|.
 name|arg_type
 operator|=
-name|PDB_INT32
+name|PDB_STATUS
 expr_stmt|;
 name|return_vals
 index|[

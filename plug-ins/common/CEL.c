@@ -166,7 +166,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|void
 name|palette_dialog
 parameter_list|(
 name|gchar
@@ -205,7 +205,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|palette_file
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|palette_file
 init|=
@@ -320,6 +320,7 @@ specifier|static
 name|gint
 name|nload_return_vals
 init|=
+operator|(
 sizeof|sizeof
 argument_list|(
 name|load_return_vals
@@ -332,6 +333,7 @@ index|[
 literal|0
 index|]
 argument_list|)
+operator|)
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -443,17 +445,6 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
-name|gimp_register_magic_load_handler
-argument_list|(
-literal|"file_cel_load"
-argument_list|,
-literal|"cel"
-argument_list|,
-literal|""
-argument_list|,
-literal|"0,string,KiSS\040"
-argument_list|)
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_cel_save"
@@ -487,6 +478,17 @@ argument_list|,
 name|save_args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_register_magic_load_handler
+argument_list|(
+literal|"file_cel_load"
+argument_list|,
+literal|"cel"
+argument_list|,
+literal|""
+argument_list|,
+literal|"0,string,KiSS\040"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
@@ -528,14 +530,6 @@ modifier|*
 name|return_vals
 parameter_list|)
 block|{
-name|gint32
-name|image
-decl_stmt|;
-comment|/* image ID after load */
-name|gint
-name|status
-decl_stmt|;
-comment|/* status after save */
 specifier|static
 name|GParam
 name|values
@@ -546,6 +540,14 @@ decl_stmt|;
 comment|/* Return values */
 name|GRunModeType
 name|run_mode
+decl_stmt|;
+name|GStatusType
+name|status
+init|=
+name|STATUS_SUCCESS
+decl_stmt|;
+name|gint32
+name|image
 decl_stmt|;
 name|run_mode
 operator|=
@@ -563,6 +565,11 @@ operator|*
 name|nreturn_vals
 operator|=
 literal|1
+expr_stmt|;
+operator|*
+name|return_vals
+operator|=
+name|values
 expr_stmt|;
 name|values
 index|[
@@ -582,12 +589,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_SUCCESS
-expr_stmt|;
-operator|*
-name|return_vals
-operator|=
-name|values
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
@@ -806,14 +808,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
@@ -832,8 +827,9 @@ operator|==
 literal|0
 condition|)
 block|{
-name|status
-operator|=
+if|if
+condition|(
+operator|!
 name|save_image
 argument_list|(
 name|param
@@ -872,22 +868,9 @@ name|data
 operator|.
 name|d_int32
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|status
-operator|!=
-name|TRUE
 condition|)
 block|{
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
@@ -920,6 +903,11 @@ block|}
 block|}
 else|else
 block|{
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
+block|}
 name|values
 index|[
 literal|0
@@ -929,9 +917,8 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|status
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -959,7 +946,7 @@ modifier|*
 name|fp
 decl_stmt|;
 comment|/* Read file pointer */
-name|char
+name|gchar
 modifier|*
 name|progress
 decl_stmt|;
@@ -971,7 +958,7 @@ literal|32
 index|]
 decl_stmt|;
 comment|/* File header */
-name|int
+name|gint
 name|height
 decl_stmt|,
 name|width
@@ -1014,7 +1001,7 @@ name|GPixelRgn
 name|pixel_rgn
 decl_stmt|;
 comment|/* Pixel region for layer */
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -1049,9 +1036,10 @@ argument_list|,
 name|file
 argument_list|)
 expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 block|}
 name|progress
 operator|=
@@ -1265,9 +1253,10 @@ literal|"CEL Can't create a new image"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 block|}
 name|gimp_image_set_filename
 argument_list|(
@@ -1665,9 +1654,10 @@ argument_list|,
 name|colours
 argument_list|)
 expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 block|}
 name|gimp_pixel_rgn_set_rect
 argument_list|(
@@ -1770,6 +1760,11 @@ argument_list|,
 name|palette
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -1834,11 +1829,6 @@ literal|1
 argument_list|)
 expr_stmt|;
 comment|/* Close palette file, give back allocated memory */
-name|fclose
-argument_list|(
-name|fp
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|palette
@@ -2265,9 +2255,9 @@ literal|"Only an indexed-alpha image can be saved in CEL format"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 comment|/* Find out how offset this layer was */
 name|gimp_drawable_offsets
@@ -2315,9 +2305,9 @@ argument_list|,
 name|file
 argument_list|)
 expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 name|progress
 operator|=
@@ -2325,7 +2315,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading %s:"
+literal|"Saving %s:"
 argument_list|)
 argument_list|,
 name|brief
@@ -2871,7 +2861,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|void
 DECL|function|palette_dialog (gchar * title)
 name|palette_dialog
 parameter_list|(
@@ -3040,9 +3030,6 @@ expr_stmt|;
 name|gdk_flush
 argument_list|()
 expr_stmt|;
-return|return
-literal|0
-return|;
 block|}
 end_function
 

@@ -99,18 +99,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -127,9 +127,14 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|GStatusType
+modifier|*
+name|status
+comment|/* return value */
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -142,16 +147,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -166,7 +171,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -215,7 +222,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_args
 init|=
 sizeof|sizeof
@@ -232,9 +239,10 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_return_vals
 init|=
+operator|(
 sizeof|sizeof
 argument_list|(
 name|load_return_vals
@@ -247,6 +255,7 @@ index|[
 literal|0
 index|]
 argument_list|)
+operator|)
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -301,21 +310,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -334,6 +343,11 @@ index|]
 decl_stmt|;
 name|GRunModeType
 name|run_mode
+decl_stmt|;
+name|GStatusType
+name|status
+init|=
+name|STATUS_SUCCESS
 decl_stmt|;
 name|gint32
 name|image_ID
@@ -377,7 +391,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
@@ -403,6 +417,9 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|,
+operator|&
+name|status
 argument_list|)
 expr_stmt|;
 if|if
@@ -411,23 +428,16 @@ name|image_ID
 operator|!=
 operator|-
 literal|1
+operator|&&
+name|status
+operator|==
+name|STATUS_SUCCESS
 condition|)
 block|{
 operator|*
 name|nreturn_vals
 operator|=
 literal|2
-expr_stmt|;
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|STATUS_SUCCESS
 expr_stmt|;
 name|values
 index|[
@@ -450,8 +460,14 @@ operator|=
 name|image_ID
 expr_stmt|;
 block|}
+block|}
 else|else
 block|{
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
+block|}
 name|values
 index|[
 literal|0
@@ -461,15 +477,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
-expr_stmt|;
-block|}
-block|}
-else|else
-name|g_assert
-argument_list|(
-name|FALSE
-argument_list|)
+name|status
 expr_stmt|;
 block|}
 end_function
@@ -477,12 +485,16 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (char * filename)
+DECL|function|load_image (gchar * filename,GStatusType * status)
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|GStatusType
+modifier|*
+name|status
 parameter_list|)
 block|{
 name|GParam
@@ -492,7 +504,7 @@ decl_stmt|;
 name|gint
 name|retvals
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|ext
 init|=
@@ -503,15 +515,15 @@ argument_list|,
 literal|'.'
 argument_list|)
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|tmpname
 decl_stmt|;
-name|int
+name|gint
 name|pid
 decl_stmt|;
-name|int
-name|status
+name|gint
+name|process_status
 decl_stmt|;
 if|if
 condition|(
@@ -537,6 +549,11 @@ name|g_message
 argument_list|(
 literal|"url: can't open URL without an extension\n"
 argument_list|)
+expr_stmt|;
+operator|*
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
 expr_stmt|;
 return|return
 operator|-
@@ -611,6 +628,11 @@ name|g_free
 argument_list|(
 name|tmpname
 argument_list|)
+expr_stmt|;
+operator|*
+name|status
+operator|=
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 return|return
 operator|-
@@ -707,6 +729,11 @@ argument_list|(
 name|tmpname
 argument_list|)
 expr_stmt|;
+operator|*
+name|status
+operator|=
+name|STATUS_EXECUTION_ERROR
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -720,7 +747,7 @@ argument_list|(
 name|pid
 argument_list|,
 operator|&
-name|status
+name|process_status
 argument_list|,
 literal|0
 argument_list|)
@@ -730,12 +757,12 @@ condition|(
 operator|!
 name|WIFEXITED
 argument_list|(
-name|status
+name|process_status
 argument_list|)
 operator|||
 name|WEXITSTATUS
 argument_list|(
-name|status
+name|process_status
 argument_list|)
 operator|!=
 literal|0
@@ -752,6 +779,11 @@ name|g_free
 argument_list|(
 name|tmpname
 argument_list|)
+expr_stmt|;
+operator|*
+name|status
+operator|=
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 return|return
 operator|-
@@ -793,6 +825,18 @@ argument_list|(
 name|tmpname
 argument_list|)
 expr_stmt|;
+operator|*
+name|status
+operator|=
+name|params
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+expr_stmt|;
 if|if
 condition|(
 name|params
@@ -803,13 +847,15 @@ operator|.
 name|data
 operator|.
 name|d_status
-operator|==
-name|FALSE
+operator|!=
+name|STATUS_SUCCESS
 condition|)
+block|{
 return|return
 operator|-
 literal|1
 return|;
+block|}
 else|else
 block|{
 name|gimp_image_set_filename

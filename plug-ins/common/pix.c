@@ -29,6 +29,12 @@ end_decl_stmt
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -59,25 +65,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -154,18 +154,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -186,7 +186,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -198,7 +198,7 @@ specifier|static
 name|gint
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -260,16 +260,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -284,9 +284,11 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
-comment|/*  * Description:  *     Register the services provided by this plug-in   */
+parameter_list|(
+name|void
+parameter_list|)
 block|{
+comment|/*    * Description:    *     Register the services provided by this plug-in     */
 specifier|static
 name|GParamDef
 name|load_args
@@ -319,7 +321,22 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|GParamDef
+name|load_return_vals
+index|[]
+init|=
+block|{
+block|{
+name|PARAM_IMAGE
+block|,
+literal|"image"
+block|,
+literal|"Output image"
+block|}
+block|,   }
+decl_stmt|;
+specifier|static
+name|gint
 name|nload_args
 init|=
 sizeof|sizeof
@@ -336,24 +353,10 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
-name|load_return_vals
-index|[]
-init|=
-block|{
-block|{
-name|PARAM_IMAGE
-block|,
-literal|"image"
-block|,
-literal|"Output image"
-block|}
-block|,   }
-decl_stmt|;
-specifier|static
-name|int
+name|gint
 name|nload_return_vals
 init|=
+operator|(
 sizeof|sizeof
 argument_list|(
 name|load_return_vals
@@ -366,6 +369,7 @@ index|[
 literal|0
 index|]
 argument_list|)
+operator|)
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -415,7 +419,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nsave_args
 init|=
 sizeof|sizeof
@@ -528,21 +532,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -551,8 +555,8 @@ modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
-comment|/*   *  Description:  *      perform registered plug-in function   *  *  Arguments:  *      name         - name of the function to perform  *      nparams      - number of parameters passed to the function  *      param        - parameters passed to the function  *      nreturn_vals - number of parameters returned by the function  *      return_vals  - parameters returned by the function  */
 block|{
+comment|/*     *  Description:    *      perform registered plug-in function     *    *  Arguments:    *      name         - name of the function to perform    *      nparams      - number of parameters passed to the function    *      param        - parameters passed to the function    *      nreturn_vals - number of parameters returned by the function    *      return_vals  - parameters returned by the function    */
 specifier|static
 name|GParam
 name|values
@@ -618,7 +622,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
@@ -666,17 +670,6 @@ literal|2
 expr_stmt|;
 name|values
 index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|STATUS_SUCCESS
-expr_stmt|;
-name|values
-index|[
 literal|1
 index|]
 operator|.
@@ -699,14 +692,7 @@ block|}
 else|else
 block|{
 comment|/* The image load falied */
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
@@ -800,7 +786,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|STATUS_CANCEL
 expr_stmt|;
 return|return;
 block|}
@@ -844,17 +830,6 @@ name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|status
-expr_stmt|;
 if|if
 condition|(
 name|export
@@ -869,12 +844,22 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_assert
-argument_list|(
-name|FALSE
-argument_list|)
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
 expr_stmt|;
 block|}
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|status
+expr_stmt|;
 block|}
 end_function
 
@@ -888,8 +873,8 @@ name|FILE
 modifier|*
 name|file
 parameter_list|)
-comment|/*   * Description:  *     Reads a 16-bit integer from a file in such a way that the machine's  *     bit ordering should not matter   */
 block|{
+comment|/*     * Description:    *     Reads a 16-bit integer from a file in such a way that the machine's    *     bit ordering should not matter     */
 name|guchar
 name|buf
 index|[
@@ -942,8 +927,8 @@ name|FILE
 modifier|*
 name|file
 parameter_list|)
-comment|/*   * Description:  *     Reads a 16-bit integer from a file in such a way that the machine's  *     bit ordering should not matter   */
 block|{
+comment|/*     * Description:    *     Reads a 16-bit integer from a file in such a way that the machine's    *     bit ordering should not matter     */
 name|guchar
 name|buf
 index|[
@@ -995,15 +980,15 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (char * filename)
+DECL|function|load_image (gchar * filename)
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
-comment|/*  *  Description:  *      load the given image into gimp  *   *  Arguments:  *      filename      - name on the file to read  *  *  Return Value:  *      Image id for the loaded image  *        */
 block|{
+comment|/*    *  Description:    *      load the given image into gimp    *     *  Arguments:    *      filename      - name on the file to read    *    *  Return Value:    *      Image id for the loaded image    *          */
 name|gint
 name|i
 decl_stmt|,
@@ -1678,7 +1663,7 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
-name|free
+name|g_free
 argument_list|(
 name|dest_base
 argument_list|)
@@ -1708,10 +1693,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (char * filename,gint32 image_ID,gint32 drawable_ID)
+DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -1721,8 +1706,8 @@ parameter_list|,
 name|gint32
 name|drawable_ID
 parameter_list|)
-comment|/*   *  Description:  *      save the given file out as an alias pix or matte file  *   *  Arguments:   *      filename    - name of file to save to  *      image_ID    - ID of image to save  *      drawable_ID - current drawable  */
 block|{
+comment|/*   *  Description:  *      save the given file out as an alias pix or matte file  *   *  Arguments:   *      filename    - name of file to save to  *      image_ID    - ID of image to save  *      drawable_ID - current drawable  */
 name|gint
 name|depth
 decl_stmt|,
@@ -1738,7 +1723,7 @@ name|writelen
 decl_stmt|,
 name|rectHeight
 decl_stmt|;
-comment|/* gboolean    savingAlpha = FALSE; */
+comment|/* gboolean   savingAlpha = FALSE; */
 name|gboolean
 name|savingColor
 init|=
@@ -1876,13 +1861,9 @@ condition|(
 operator|!
 name|file
 condition|)
-block|{
 return|return
-operator|(
 name|FALSE
-operator|)
 return|;
-block|}
 comment|/* Set up progress display */
 name|progMessage
 operator|=
@@ -2545,7 +2526,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|free
+name|g_free
 argument_list|(
 name|src_base
 argument_list|)
@@ -2556,9 +2537,7 @@ name|file
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
-literal|1
-operator|)
+name|TRUE
 return|;
 block|}
 end_function

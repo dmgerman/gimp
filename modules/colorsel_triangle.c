@@ -36,19 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpintl.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimpmodule.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|<libgimp/gimpmath.h>
 end_include
 
 begin_include
@@ -57,24 +51,11 @@ directive|include
 file|"modregister.h"
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpintl.h>
+end_include
 
 begin_comment
 comment|/* prototypes */
@@ -355,7 +336,7 @@ value|GDK_EXPOSURE_MASK | \                        GDK_BUTTON_PRESS_MASK | \    
 end_define
 
 begin_typedef
-DECL|enum|__anon27b8efdd0103
+DECL|enum|__anon2b0faa570103
 typedef|typedef
 enum|enum
 block|{
@@ -2159,7 +2140,7 @@ index|[
 name|HUE
 index|]
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180
 expr_stmt|;
@@ -2189,7 +2170,7 @@ name|hue
 operator|-
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|3
 argument_list|)
@@ -2204,7 +2185,7 @@ name|hue
 operator|-
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|3
 argument_list|)
@@ -2219,7 +2200,7 @@ name|hue
 operator|+
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|3
 argument_list|)
@@ -2234,7 +2215,7 @@ name|hue
 operator|+
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|3
 argument_list|)
@@ -2386,7 +2367,7 @@ argument_list|,
 name|y
 argument_list|)
 operator|/
-name|M_PI
+name|G_PI
 operator|*
 literal|180
 argument_list|,
@@ -2622,7 +2603,7 @@ name|sin
 argument_list|(
 name|hue
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180
 argument_list|)
@@ -2657,7 +2638,7 @@ name|cos
 argument_list|(
 name|hue
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180
 argument_list|)
@@ -2691,7 +2672,7 @@ argument_list|,
 name|y0
 argument_list|)
 operator|/
-name|M_PI
+name|G_PI
 operator|*
 literal|180
 argument_list|,
@@ -2851,7 +2832,7 @@ argument_list|,
 name|y
 argument_list|)
 operator|/
-name|M_PI
+name|G_PI
 operator|*
 literal|180
 argument_list|,
@@ -3093,7 +3074,7 @@ argument_list|,
 name|y
 argument_list|)
 operator|/
-name|M_PI
+name|G_PI
 operator|*
 literal|180
 argument_list|,
@@ -3606,7 +3587,7 @@ argument_list|,
 name|y
 argument_list|)
 operator|/
-name|M_PI
+name|G_PI
 operator|*
 literal|180
 argument_list|,
@@ -4222,7 +4203,7 @@ argument_list|,
 name|y
 argument_list|)
 operator|/
-name|M_PI
+name|G_PI
 operator|*
 literal|180
 argument_list|)
@@ -4266,7 +4247,7 @@ index|[
 name|HUE
 index|]
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180
 expr_stmt|;
@@ -4296,7 +4277,7 @@ name|hue
 operator|-
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|3
 argument_list|)
@@ -4311,7 +4292,7 @@ name|hue
 operator|-
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|3
 argument_list|)
@@ -4326,7 +4307,7 @@ name|hue
 operator|+
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|3
 argument_list|)
@@ -4341,7 +4322,7 @@ name|hue
 operator|+
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|3
 argument_list|)

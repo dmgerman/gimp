@@ -156,13 +156,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -178,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba0a9780108
+DECL|struct|__anon2c1937b70108
 block|{
 DECL|member|run
 name|gint
@@ -210,18 +210,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -238,7 +238,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -250,7 +250,7 @@ specifier|static
 name|gint
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -273,33 +273,8 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|gint
-name|save_dialog
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|save_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
-comment|/* static void   save_toggle_update       (GtkWidget *widget, 					gpointer   data); */
+comment|/* static gint   save_dialog      (void); static void   save_ok_callback (GtkWidget *widget, 				gpointer   data); */
 end_comment
 
 begin_define
@@ -354,32 +329,23 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|psint
-specifier|static
-name|HRZSaveInterface
-name|psint
-init|=
-block|{
-name|FALSE
-comment|/* run */
-block|}
-decl_stmt|;
-end_decl_stmt
+begin_comment
+comment|/* static HRZSaveInterface psint = {   FALSE     / * run * / }; */
+end_comment
 
 begin_macro
 DECL|function|MAIN ()
@@ -391,7 +357,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -440,7 +408,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_args
 init|=
 sizeof|sizeof
@@ -457,9 +425,10 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_return_vals
 init|=
+operator|(
 sizeof|sizeof
 argument_list|(
 name|load_return_vals
@@ -472,6 +441,7 @@ index|[
 literal|0
 index|]
 argument_list|)
+operator|)
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -521,7 +491,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nsave_args
 init|=
 sizeof|sizeof
@@ -636,21 +606,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -725,7 +695,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
@@ -771,17 +741,6 @@ literal|2
 expr_stmt|;
 name|values
 index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|STATUS_SUCCESS
-expr_stmt|;
-name|values
-index|[
 literal|1
 index|]
 operator|.
@@ -803,14 +762,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
@@ -904,7 +856,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|STATUS_CANCEL
 expr_stmt|;
 return|return;
 block|}
@@ -924,13 +876,7 @@ case|case
 name|RUN_INTERACTIVE
 case|:
 comment|/*  First acquire information with a dialog  */
-if|if
-condition|(
-operator|!
-name|save_dialog
-argument_list|()
-condition|)
-return|return;
+comment|/*  Save dialog has no options (yet???) 	  if (! save_dialog ()) 	    status = STATUS_CANCEL; 	  */
 break|break;
 case|case
 name|RUN_NONINTERACTIVE
@@ -946,6 +892,7 @@ name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
+break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
@@ -953,13 +900,16 @@ break|break;
 default|default:
 break|break;
 block|}
-operator|*
-name|nreturn_vals
-operator|=
-literal|1
-expr_stmt|;
 if|if
 condition|(
+name|status
+operator|==
+name|STATUS_SUCCESS
+condition|)
+block|{
+if|if
+condition|(
+operator|!
 name|save_image
 argument_list|(
 name|param
@@ -977,30 +927,12 @@ name|drawable_ID
 argument_list|)
 condition|)
 block|{
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|STATUS_SUCCESS
-expr_stmt|;
-block|}
-else|else
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
+block|}
+block|}
 if|if
 condition|(
 name|export
@@ -1013,6 +945,24 @@ name|image_ID
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
+block|}
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|status
+expr_stmt|;
 block|}
 end_function
 
@@ -1041,12 +991,12 @@ decl_stmt|,
 modifier|*
 name|d
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|int
+name|gint
 name|start
 decl_stmt|,
 name|end
@@ -1113,8 +1063,7 @@ name|d
 argument_list|,
 operator|(
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|*
 operator|)
 name|mapped
@@ -1228,10 +1177,10 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (char * filename)
+DECL|function|load_image (gchar * filename)
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -1249,10 +1198,10 @@ name|GDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|int
+name|gint
 name|filedes
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|temp
 decl_stmt|;
@@ -1337,11 +1286,9 @@ operator|*
 literal|3
 condition|)
 block|{
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
-literal|"hrz filter: file is not HRZ type\n"
+literal|"hrz: file is not HRZ type"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1387,11 +1334,9 @@ literal|1
 operator|)
 condition|)
 block|{
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
-literal|"hrz filter: could not map file\n"
+literal|"hrz: could not map file"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1434,11 +1379,9 @@ operator|*
 literal|3
 condition|)
 block|{
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
-literal|"hrz filter: file read error\n"
+literal|"hrz: file read error"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1586,28 +1529,26 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|saverow (FILE * fp,unsigned char * data)
+DECL|function|saverow (FILE * fp,guchar * data)
 name|saverow
 parameter_list|(
 name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 parameter_list|)
 block|{
-name|int
+name|gint
 name|loop
 init|=
 literal|256
 operator|*
 literal|3
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|walk
 init|=
@@ -1656,10 +1597,10 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (char * filename,gint32 image_ID,gint32 drawable_ID)
+DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -1680,37 +1621,34 @@ decl_stmt|;
 name|GDrawableType
 name|drawable_type
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|d
 decl_stmt|;
 comment|/* FIX */
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|rowbuf
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|temp
 decl_stmt|;
-name|int
+name|gint
 name|np
 init|=
 literal|3
 decl_stmt|;
-name|int
+name|gint
 name|xres
 decl_stmt|,
 name|yres
 decl_stmt|;
-name|int
+name|gint
 name|ypos
 decl_stmt|,
 name|yend
@@ -1794,10 +1732,8 @@ name|NULL
 condition|)
 block|{
 comment|/* Ought to pass errno back... */
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
 literal|"hrz: can't open \"%s\"\n"
 argument_list|,
 name|filename
@@ -1834,11 +1770,9 @@ literal|240
 operator|)
 condition|)
 block|{
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
-literal|"hrz: Image must be 256x240 for HRZ format.\n"
+literal|"hrz: Image must be 256x240 for HRZ format."
 argument_list|)
 expr_stmt|;
 return|return
@@ -1852,11 +1786,9 @@ operator|==
 name|INDEXED_IMAGE
 condition|)
 block|{
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
-literal|"hrz: Image must be RGB for HRZ format.\n"
+literal|"hrz: Image must be RGB or GRAY for HRZ format."
 argument_list|)
 expr_stmt|;
 return|return
@@ -1889,8 +1821,7 @@ comment|/* allocate a buffer for retrieving information from the pixel region  *
 name|data
 operator|=
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|*
 operator|)
 name|g_malloc
@@ -2107,147 +2038,8 @@ begin_comment
 comment|/*********** Save dialog ************/
 end_comment
 
-begin_function
-specifier|static
-name|gint
-DECL|function|save_dialog (void)
-name|save_dialog
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|GtkWidget
-modifier|*
-name|dlg
-decl_stmt|;
-name|dlg
-operator|=
-name|gimp_dialog_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Save as HRZ"
-argument_list|)
-argument_list|,
-literal|"hrz"
-argument_list|,
-name|gimp_plugin_help_func
-argument_list|,
-literal|"filters/hrz.html"
-argument_list|,
-name|GTK_WIN_POS_MOUSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
-argument_list|,
-name|save_ok_callback
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
-argument_list|,
-name|gtk_widget_destroy
-argument_list|,
-name|NULL
-argument_list|,
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|dlg
-argument_list|)
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|gtk_main_quit
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gdk_flush
-argument_list|()
-expr_stmt|;
-return|return
-name|psint
-operator|.
-name|run
-return|;
-block|}
-end_function
-
 begin_comment
-comment|/**********  Save interface functions  **********/
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|save_ok_callback (GtkWidget * widget,gpointer data)
-name|save_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|psint
-operator|.
-name|run
-operator|=
-name|TRUE
-expr_stmt|;
-name|gtk_widget_destroy
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/* static void save_toggle_update (GtkWidget *widget, 		    gpointer   data) {   int *toggle_val;    toggle_val = (int *) data;    if (GTK_TOGGLE_BUTTON (widget)->active)     *toggle_val = TRUE;   else     *toggle_val = FALSE; } */
+comment|/* static gint save_dialog (void) {   GtkWidget *dlg;    dlg = gimp_dialog_new (_("Save as HRZ"), "hrz", 			 gimp_plugin_help_func, "filters/hrz.html", 			 GTK_WIN_POS_MOUSE, 			 FALSE, TRUE, FALSE,  			 _("OK"), save_ok_callback, 			 NULL, NULL, NULL, TRUE, FALSE, 			 _("Cancel"), gtk_widget_destroy, 			 NULL, 1, NULL, FALSE, TRUE,  			 NULL);    gtk_signal_connect (GTK_OBJECT (dlg), "destroy", 		      GTK_SIGNAL_FUNC (gtk_main_quit), 		      NULL);    gtk_main ();   gdk_flush ();    return psint.run; }  static void save_ok_callback (GtkWidget *widget, 		  gpointer   data) {   psint.run = TRUE;    gtk_widget_destroy (GTK_WIDGET (data)); } */
 end_comment
 
 end_unit

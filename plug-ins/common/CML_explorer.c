@@ -76,6 +76,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpmath.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpcolorspace.h>
 end_include
 
@@ -84,29 +90,6 @@ include|#
 directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|RAND_MAX
-end_ifndef
-
-begin_define
-DECL|macro|RAND_MAX
-define|#
-directive|define
-name|RAND_MAX
-value|2147483647
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* RAND_MAX */
-end_comment
 
 begin_define
 DECL|macro|PARAM_FILE_FORMAT_VERSION
@@ -267,7 +250,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8cbf010108
+DECL|struct|__anon2a360ede0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -295,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8cbf010208
+DECL|struct|__anon2a360ede0208
 block|{
 DECL|member|name
 name|gchar
@@ -318,6 +301,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|gtkW_border_width
+specifier|static
 name|gint
 name|gtkW_border_width
 init|=
@@ -327,6 +311,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|gtkW_border_height
+specifier|static
 name|gint
 name|gtkW_border_height
 init|=
@@ -336,6 +321,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|gtkW_homogeneous_layout
+specifier|static
 name|gint
 name|gtkW_homogeneous_layout
 init|=
@@ -345,6 +331,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|gtkW_frame_shadow_type
+specifier|static
 name|gint
 name|gtkW_frame_shadow_type
 init|=
@@ -354,6 +341,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|gtkW_align_x
+specifier|static
 name|gint
 name|gtkW_align_x
 init|=
@@ -365,6 +353,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|gtkW_align_y
+specifier|static
 name|gint
 name|gtkW_align_y
 init|=
@@ -849,7 +838,7 @@ DECL|macro|RANDOM
 define|#
 directive|define
 name|RANDOM
-value|((gdouble) ((double) rand ()/((double) RAND_MAX)))
+value|((gdouble) ((double) rand ()/((double) G_MAXRAND)))
 end_define
 
 begin_define
@@ -1590,7 +1579,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8cbf010308
+DECL|struct|__anon2a360ede0308
 block|{
 DECL|member|function
 name|gint
@@ -1663,7 +1652,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8cbf010408
+DECL|struct|__anon2a360ede0408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -2410,7 +2399,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8cbf010508
+DECL|struct|__anon2a360ede0508
 block|{
 DECL|member|run
 name|gint
@@ -2458,7 +2447,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8cbf010608
+DECL|struct|__anon2a360ede0608
 block|{
 DECL|member|widget
 name|GtkWidget

@@ -28,12 +28,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -52,7 +46,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpintl.h>
+file|<libgimp/gimpmath.h>
 end_include
 
 begin_include
@@ -61,28 +55,11 @@ directive|include
 file|"modregister.h"
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
-end_comment
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpintl.h>
+end_include
 
 begin_comment
 comment|/* prototypes */
@@ -508,7 +485,7 @@ value|40
 end_define
 
 begin_typedef
-DECL|struct|__anon29b05aa60108
+DECL|struct|__anon2ad6aaa30108
 typedef|typedef
 struct|struct
 block|{
@@ -699,7 +676,7 @@ name|sin
 argument_list|(
 name|angle
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180
 argument_list|)
@@ -716,7 +693,7 @@ name|cos
 argument_list|(
 name|angle
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180
 argument_list|)

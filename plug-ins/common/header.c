@@ -1,4 +1,14 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_comment
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
 begin_include
 include|#
 directive|include
@@ -20,25 +30,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -66,18 +70,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -101,10 +105,10 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -149,7 +153,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -199,7 +205,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nsave_args
 init|=
 sizeof|sizeof
@@ -265,21 +271,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -298,6 +304,11 @@ index|]
 decl_stmt|;
 name|GRunModeType
 name|run_mode
+decl_stmt|;
+name|GStatusType
+name|status
+init|=
+name|STATUS_SUCCESS
 decl_stmt|;
 name|gint32
 name|image_ID
@@ -349,7 +360,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
@@ -363,11 +374,6 @@ operator|==
 literal|0
 condition|)
 block|{
-operator|*
-name|nreturn_vals
-operator|=
-literal|1
-expr_stmt|;
 name|image_ID
 operator|=
 name|param
@@ -443,7 +449,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|STATUS_CANCEL
 expr_stmt|;
 return|return;
 block|}
@@ -453,6 +459,7 @@ break|break;
 block|}
 if|if
 condition|(
+operator|!
 name|save_image
 argument_list|(
 name|param
@@ -469,29 +476,12 @@ argument_list|,
 name|drawable_ID
 argument_list|)
 condition|)
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|STATUS_SUCCESS
-expr_stmt|;
-else|else
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+block|{
+name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|export
@@ -504,15 +494,35 @@ name|image_ID
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
+block|}
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|status
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|init_gtk ()
+DECL|function|init_gtk (void)
 name|init_gtk
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gchar
 modifier|*
@@ -567,10 +577,10 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|save_image (char * filename,gint32 image_ID,gint32 drawable_ID)
+DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -595,7 +605,7 @@ name|FILE
 modifier|*
 name|fp
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -638,12 +648,11 @@ name|guchar
 modifier|*
 name|data
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|cmap
 decl_stmt|;
-name|int
+name|gint
 name|colors
 decl_stmt|;
 if|if

@@ -99,29 +99,6 @@ begin_comment
 comment|/* Some useful macros */
 end_comment
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|RAND_MAX
-end_ifndef
-
-begin_define
-DECL|macro|RAND_MAX
-define|#
-directive|define
-name|RAND_MAX
-value|2147483647
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* RAND_MAX */
-end_comment
-
 begin_if
 if|#
 directive|if
@@ -235,7 +212,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a42fd220108
+DECL|struct|__anon2b8a5d260108
 block|{
 DECL|member|xcenter
 DECL|member|ycenter
@@ -272,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a42fd220208
+DECL|struct|__anon2b8a5d260208
 block|{
 DECL|member|run
 name|gint
@@ -287,7 +264,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a42fd220308
+DECL|struct|__anon2b8a5d260308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -4036,19 +4013,19 @@ end_comment
 
 begin_function
 specifier|static
-name|double
+name|gdouble
 DECL|function|gauss (void)
 name|gauss
 parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|sum
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 for|for
@@ -4067,12 +4044,12 @@ control|)
 name|sum
 operator|+=
 operator|(
-name|double
+name|gdouble
 operator|)
 name|rand
 argument_list|()
 operator|/
-name|RAND_MAX
+name|G_MAXRAND
 expr_stmt|;
 return|return
 name|sum
@@ -4311,7 +4288,7 @@ operator|/
 operator|(
 name|gdouble
 operator|)
-name|RAND_MAX
+name|G_MAXRAND
 operator|-
 literal|0.5
 operator|)

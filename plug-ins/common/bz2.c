@@ -34,6 +34,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -111,13 +117,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
@@ -141,18 +141,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -169,22 +169,27 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
 name|gint32
 name|run_mode
+parameter_list|,
+name|GStatusType
+modifier|*
+name|status
+comment|/* return value */
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|GStatusType
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -202,10 +207,10 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gboolean
 name|valid_file
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -214,11 +219,11 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|find_extension
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -233,16 +238,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -257,7 +262,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -306,7 +313,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_args
 init|=
 sizeof|sizeof
@@ -323,9 +330,10 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_return_vals
 init|=
+operator|(
 sizeof|sizeof
 argument_list|(
 name|load_return_vals
@@ -338,6 +346,7 @@ index|[
 literal|0
 index|]
 argument_list|)
+operator|)
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -387,7 +396,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nsave_args
 init|=
 sizeof|sizeof
@@ -485,21 +494,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -527,9 +536,6 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -540,6 +546,9 @@ operator|.
 name|data
 operator|.
 name|d_int32
+expr_stmt|;
+name|INIT_I18N
+argument_list|()
 expr_stmt|;
 operator|*
 name|nreturn_vals
@@ -569,7 +578,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
@@ -604,6 +613,9 @@ operator|.
 name|data
 operator|.
 name|d_int32
+argument_list|,
+operator|&
+name|status
 argument_list|)
 expr_stmt|;
 if|if
@@ -612,23 +624,16 @@ name|image_ID
 operator|!=
 operator|-
 literal|1
+operator|&&
+name|status
+operator|==
+name|STATUS_SUCCESS
 condition|)
 block|{
 operator|*
 name|nreturn_vals
 operator|=
 literal|2
-expr_stmt|;
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|STATUS_SUCCESS
 expr_stmt|;
 name|values
 index|[
@@ -649,20 +654,6 @@ operator|.
 name|d_image
 operator|=
 name|image_ID
-expr_stmt|;
-block|}
-else|else
-block|{
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -702,6 +693,7 @@ name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
+break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
@@ -709,13 +701,15 @@ break|break;
 default|default:
 break|break;
 block|}
-operator|*
-name|nreturn_vals
-operator|=
-literal|1
-expr_stmt|;
 if|if
 condition|(
+name|status
+operator|==
+name|STATUS_SUCCESS
+condition|)
+block|{
+name|status
+operator|=
 name|save_image
 argument_list|(
 name|param
@@ -754,8 +748,16 @@ name|data
 operator|.
 name|d_int32
 argument_list|)
-condition|)
+expr_stmt|;
+block|}
+block|}
+else|else
 block|{
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
+block|}
 name|values
 index|[
 literal|0
@@ -765,27 +767,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_SUCCESS
-expr_stmt|;
-block|}
-else|else
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|STATUS_EXECUTION_ERROR
-expr_stmt|;
-block|}
-else|else
-name|g_assert
-argument_list|(
-name|FALSE
-argument_list|)
+name|status
 expr_stmt|;
 block|}
 end_function
@@ -797,24 +779,24 @@ name|__EMX__
 end_ifdef
 
 begin_function
-DECL|function|spawn_bz (char * filename,char * tmpname,char * parms,int * pid)
 specifier|static
-name|int
+name|gint
+DECL|function|spawn_bz (gchar * filename,gchar * tmpname,gchar * parms,gint * pid)
 name|spawn_bz
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|tmpname
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|parms
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|pid
 parameter_list|)
@@ -823,7 +805,7 @@ name|FILE
 modifier|*
 name|f
 decl_stmt|;
-name|int
+name|gint
 name|tfd
 decl_stmt|;
 if|if
@@ -992,11 +974,11 @@ end_endif
 
 begin_function
 specifier|static
-name|gint
-DECL|function|save_image (char * filename,gint32 image_ID,gint32 drawable_ID,gint32 run_mode)
+name|GStatusType
+DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 run_mode)
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -1021,18 +1003,18 @@ decl_stmt|;
 name|gint
 name|retvals
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|ext
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|tmpname
 decl_stmt|;
-name|int
+name|gint
 name|pid
 decl_stmt|;
-name|int
+name|gint
 name|status
 decl_stmt|;
 if|if
@@ -1048,10 +1030,20 @@ name|filename
 argument_list|)
 operator|)
 condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"bz2: can't open bzip2ed file without a "
+literal|"sensible extension\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
-operator|-
-literal|1
+name|STATUS_CALLING_ERROR
 return|;
+block|}
 comment|/* get a temp name with the right extension and save into it. */
 name|params
 operator|=
@@ -1126,6 +1118,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|valid_file
+argument_list|(
+name|tmpname
+argument_list|)
+operator|||
 name|params
 index|[
 literal|0
@@ -1134,14 +1132,8 @@ operator|.
 name|data
 operator|.
 name|d_status
-operator|==
-name|FALSE
-operator|||
-operator|!
-name|valid_file
-argument_list|(
-name|tmpname
-argument_list|)
+operator|!=
+name|STATUS_SUCCESS
 condition|)
 block|{
 name|unlink
@@ -1155,8 +1147,14 @@ name|tmpname
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|params
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
 return|;
 block|}
 comment|/*   if (! file_save(image_ID, tmpname, tmpname)) { */
@@ -1195,8 +1193,7 @@ name|tmpname
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|STATUS_EXECUTION_ERROR
 return|;
 block|}
 elseif|else
@@ -1335,8 +1332,7 @@ name|tmpname
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|STATUS_EXECUTION_ERROR
 return|;
 block|}
 endif|#
@@ -1381,7 +1377,7 @@ name|tmpname
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|STATUS_EXECUTION_ERROR
 return|;
 block|}
 block|}
@@ -1396,7 +1392,7 @@ name|tmpname
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|STATUS_SUCCESS
 return|;
 block|}
 end_function
@@ -1404,15 +1400,20 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (char * filename,gint32 run_mode)
+DECL|function|load_image (gchar * filename,gint32 run_mode,GStatusType * status)
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
 name|gint32
 name|run_mode
+parameter_list|,
+name|GStatusType
+modifier|*
+name|status
+comment|/* return value */
 parameter_list|)
 block|{
 name|GParam
@@ -1422,19 +1423,19 @@ decl_stmt|;
 name|gint
 name|retvals
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|ext
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|tmpname
 decl_stmt|;
-name|int
+name|gint
 name|pid
 decl_stmt|;
-name|int
-name|status
+name|gint
+name|process_status
 decl_stmt|;
 if|if
 condition|(
@@ -1449,10 +1450,26 @@ name|filename
 argument_list|)
 operator|)
 condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"bz2: can't open bzip2ed file without a "
+literal|"sensible extension\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+operator|*
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
 return|return
 operator|-
 literal|1
 return|;
+block|}
 comment|/* find a temp name */
 name|params
 operator|=
@@ -1523,6 +1540,11 @@ name|g_free
 argument_list|(
 name|tmpname
 argument_list|)
+expr_stmt|;
+operator|*
+name|status
+operator|=
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 return|return
 operator|-
@@ -1670,6 +1692,11 @@ argument_list|(
 name|tmpname
 argument_list|)
 expr_stmt|;
+operator|*
+name|status
+operator|=
+name|STATUS_EXECUTION_ERROR
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -1683,7 +1710,7 @@ argument_list|(
 name|pid
 argument_list|,
 operator|&
-name|status
+name|process_status
 argument_list|,
 literal|0
 argument_list|)
@@ -1693,12 +1720,12 @@ condition|(
 operator|!
 name|WIFEXITED
 argument_list|(
-name|status
+name|process_status
 argument_list|)
 operator|||
 name|WEXITSTATUS
 argument_list|(
-name|status
+name|process_status
 argument_list|)
 operator|!=
 literal|0
@@ -1715,6 +1742,11 @@ name|g_free
 argument_list|(
 name|tmpname
 argument_list|)
+expr_stmt|;
+operator|*
+name|status
+operator|=
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 return|return
 operator|-
@@ -1757,6 +1789,18 @@ argument_list|(
 name|tmpname
 argument_list|)
 expr_stmt|;
+operator|*
+name|status
+operator|=
+name|params
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+expr_stmt|;
 if|if
 condition|(
 name|params
@@ -1767,13 +1811,15 @@ operator|.
 name|data
 operator|.
 name|d_status
-operator|==
-name|FALSE
+operator|!=
+name|STATUS_SUCCESS
 condition|)
+block|{
 return|return
 operator|-
 literal|1
 return|;
+block|}
 else|else
 block|{
 name|gimp_image_set_filename
@@ -1805,17 +1851,17 @@ block|}
 end_function
 
 begin_function
-DECL|function|valid_file (char * filename)
 specifier|static
-name|int
+name|gboolean
+DECL|function|valid_file (gchar * filename)
 name|valid_file
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
 block|{
-name|int
+name|gint
 name|stat_res
 decl_stmt|;
 name|struct
@@ -1849,39 +1895,39 @@ literal|0
 operator|)
 condition|)
 return|return
-literal|1
+name|TRUE
 return|;
 else|else
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|find_extension (char * filename)
 specifier|static
-name|char
+name|gchar
 modifier|*
+DECL|function|find_extension (gchar * filename)
 name|find_extension
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|filename_copy
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|ext
 decl_stmt|;
 comment|/* we never free this copy - aren't we evil! */
 name|filename_copy
 operator|=
-name|malloc
+name|g_malloc
 argument_list|(
 name|strlen
 argument_list|(
@@ -1933,14 +1979,6 @@ literal|'/'
 argument_list|)
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"bz2: can't open bzip2ed file without a sensible extension\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
 return|return
 name|NULL
 return|;

@@ -92,13 +92,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
@@ -161,18 +161,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -189,7 +189,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -276,16 +276,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -300,7 +300,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -349,7 +351,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_args
 init|=
 sizeof|sizeof
@@ -366,9 +368,10 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_return_vals
 init|=
+operator|(
 sizeof|sizeof
 argument_list|(
 name|load_return_vals
@@ -381,6 +384,7 @@ index|[
 literal|0
 index|]
 argument_list|)
+operator|)
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -434,21 +438,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -464,6 +468,11 @@ name|values
 index|[
 literal|2
 index|]
+decl_stmt|;
+name|GStatusType
+name|status
+init|=
+name|STATUS_SUCCESS
 decl_stmt|;
 name|gint32
 name|image_ID
@@ -482,7 +491,7 @@ expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
-literal|2
+literal|1
 expr_stmt|;
 operator|*
 name|return_vals
@@ -507,7 +516,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
@@ -577,16 +586,10 @@ operator|-
 literal|1
 condition|)
 block|{
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+operator|*
+name|nreturn_vals
 operator|=
-name|STATUS_SUCCESS
+literal|1
 expr_stmt|;
 name|values
 index|[
@@ -611,6 +614,19 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|status
+operator|=
+name|STATUS_EXECUTION_ERROR
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
+block|}
 name|values
 index|[
 literal|0
@@ -620,10 +636,8 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|status
 expr_stmt|;
-block|}
-block|}
 block|}
 end_function
 
@@ -758,7 +772,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b66337a0108
+DECL|struct|__anon2b7a49920108
 block|{
 DECL|member|Width
 name|unsigned
@@ -808,7 +822,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b66337a0208
+DECL|struct|__anon2b7a49920208
 block|{
 DECL|member|transparent
 name|int
@@ -997,10 +1011,10 @@ end_function_decl
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (char * filename)
+DECL|function|load_image (gchar * filename)
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)

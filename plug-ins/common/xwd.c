@@ -66,19 +66,19 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -115,9 +115,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2900e4410108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2c41cee00108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -249,9 +249,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2900e4410208
 typedef|typedef
 struct|struct
+DECL|struct|__anon2c41cee00208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -307,23 +307,24 @@ value|((1<< MAPPERBITS)-1)
 end_define
 
 begin_typedef
-DECL|struct|__anon2900e4410308
 typedef|typedef
 struct|struct
+DECL|struct|__anon2c41cee00308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
 name|pixel_val
 decl_stmt|;
 DECL|member|red
-DECL|member|green
-DECL|member|blue
-name|unsigned
-name|char
+name|guchar
 name|red
-decl_stmt|,
+decl_stmt|;
+DECL|member|green
+name|guchar
 name|green
-decl_stmt|,
+decl_stmt|;
+DECL|member|blue
+name|guchar
 name|blue
 decl_stmt|;
 DECL|typedef|PMAP
@@ -333,18 +334,17 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2900e4410408
 typedef|typedef
 struct|struct
+DECL|struct|__anon2c41cee00408
 block|{
 DECL|member|npixel
-name|int
+name|gint
 name|npixel
 decl_stmt|;
 comment|/* Number of pixel values in map */
 DECL|member|pixel_in_map
-name|unsigned
-name|char
+name|guchar
 name|pixel_in_map
 index|[
 literal|1
@@ -410,18 +410,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -448,7 +448,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -460,7 +460,7 @@ specifier|static
 name|gint
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -849,17 +849,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|show_message
-parameter_list|(
-name|char
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 DECL|variable|read_msb_first
 specifier|static
@@ -878,16 +867,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -965,7 +954,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_args
 init|=
 sizeof|sizeof
@@ -982,9 +971,10 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_return_vals
 init|=
+operator|(
 sizeof|sizeof
 argument_list|(
 name|load_return_vals
@@ -997,6 +987,7 @@ index|[
 literal|0
 index|]
 argument_list|)
+operator|)
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -1046,7 +1037,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nsave_args
 init|=
 sizeof|sizeof
@@ -1161,21 +1152,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -1210,9 +1201,6 @@ name|GimpExportReturnType
 name|export
 init|=
 name|EXPORT_CANCEL
-decl_stmt|;
-name|int
-name|ev
 decl_stmt|;
 name|l_run_mode
 operator|=
@@ -1255,7 +1243,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
@@ -1286,34 +1274,18 @@ operator|.
 name|d_string
 argument_list|)
 expr_stmt|;
-operator|*
-name|nreturn_vals
-operator|=
-literal|2
-expr_stmt|;
-name|status
-operator|=
-operator|(
+if|if
+condition|(
 name|image_ID
 operator|!=
 operator|-
 literal|1
-operator|)
-condition|?
-name|STATUS_SUCCESS
-else|:
-name|STATUS_EXECUTION_ERROR
-expr_stmt|;
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+condition|)
+block|{
+operator|*
+name|nreturn_vals
 operator|=
-name|status
+literal|2
 expr_stmt|;
 name|values
 index|[
@@ -1335,6 +1307,14 @@ name|d_image
 operator|=
 name|image_ID
 expr_stmt|;
+block|}
+else|else
+block|{
+name|status
+operator|=
+name|STATUS_EXECUTION_ERROR
+expr_stmt|;
+block|}
 block|}
 elseif|else
 if|if
@@ -1417,11 +1397,6 @@ operator|==
 name|EXPORT_CANCEL
 condition|)
 block|{
-operator|*
-name|nreturn_vals
-operator|=
-literal|1
-expr_stmt|;
 name|values
 index|[
 literal|0
@@ -1431,7 +1406,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|STATUS_CANCEL
 expr_stmt|;
 return|return;
 block|}
@@ -1477,8 +1452,9 @@ operator|==
 name|STATUS_SUCCESS
 condition|)
 block|{
-name|ev
-operator|=
+if|if
+condition|(
+operator|!
 name|save_image
 argument_list|(
 name|param
@@ -1494,14 +1470,31 @@ name|image_ID
 argument_list|,
 name|drawable_ID
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
 name|status
 operator|=
-name|ev
-condition|?
-name|STATUS_SUCCESS
-else|:
 name|STATUS_EXECUTION_ERROR
+expr_stmt|;
+block|}
+block|}
+if|if
+condition|(
+name|export
+operator|==
+name|EXPORT_EXPORT
+condition|)
+name|gimp_image_delete
+argument_list|(
+name|image_ID
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|status
+operator|=
+name|STATUS_CANCEL
 expr_stmt|;
 block|}
 name|values
@@ -1515,27 +1508,17 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-if|if
-condition|(
-name|export
-operator|==
-name|EXPORT_EXPORT
-condition|)
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|init_gtk ()
+DECL|function|init_gtk (void)
 name|init_gtk
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gchar
 modifier|*
@@ -1590,10 +1573,10 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (char * filename)
+DECL|function|load_image (gchar * filename)
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -1638,7 +1621,7 @@ operator|!
 name|ifp
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -1706,7 +1689,7 @@ operator|!=
 literal|7
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -1776,7 +1759,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -1902,7 +1885,7 @@ operator|!=
 literal|7
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -2241,7 +2224,7 @@ argument_list|,
 name|bpp
 argument_list|)
 expr_stmt|;
-name|show_message
+name|g_message
 argument_list|(
 name|temp
 argument_list|)
@@ -2313,7 +2296,7 @@ name|drawable_ID
 argument_list|)
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -2341,7 +2324,7 @@ name|RGB_IMAGE
 case|:
 break|break;
 default|default:
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -2372,7 +2355,7 @@ operator|!
 name|ofp
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -6290,7 +6273,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -6790,7 +6773,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -7029,7 +7012,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -7727,7 +7710,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -8922,7 +8905,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -10334,7 +10317,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -11082,7 +11065,7 @@ name|ofp
 argument_list|)
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -11580,7 +11563,7 @@ name|ofp
 argument_list|)
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -11599,45 +11582,6 @@ operator|(
 name|TRUE
 operator|)
 return|;
-block|}
-end_function
-
-begin_comment
-comment|/* Show a message. Where to show it, depends on the runmode */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|show_message (char * message)
-name|show_message
-parameter_list|(
-name|char
-modifier|*
-name|message
-parameter_list|)
-block|{
-if|if
-condition|(
-name|l_run_mode
-operator|==
-name|RUN_INTERACTIVE
-condition|)
-name|gimp_message
-argument_list|(
-name|message
-argument_list|)
-expr_stmt|;
-else|else
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"sunras: %s\n"
-argument_list|,
-name|message
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

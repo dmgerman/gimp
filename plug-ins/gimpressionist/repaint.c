@@ -73,25 +73,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<time.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpressionist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"ppmtool.h"
 end_include
 
 begin_include
@@ -104,6 +86,24 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpmath.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpressionist.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"ppmtool.h"
 end_include
 
 begin_include
@@ -5580,7 +5580,7 @@ argument_list|()
 operator|*
 literal|0.75
 operator|/
-name|RAND_MAX
+name|G_MAXRAND
 decl_stmt|;
 name|tx
 operator|=
@@ -6393,7 +6393,7 @@ operator|/
 operator|(
 name|float
 operator|)
-name|RAND_MAX
+name|G_MAXRAND
 operator|*
 name|v
 operator|-
@@ -6411,7 +6411,7 @@ operator|/
 operator|(
 name|float
 operator|)
-name|RAND_MAX
+name|G_MAXRAND
 operator|*
 name|v
 operator|-
@@ -6429,7 +6429,7 @@ operator|/
 operator|(
 name|float
 operator|)
-name|RAND_MAX
+name|G_MAXRAND
 operator|*
 name|v
 operator|-

@@ -785,7 +785,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d46d6c0108
+DECL|struct|__anon2a1058da0108
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -871,7 +871,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d46d6c0208
+DECL|struct|__anon2a1058da0208
 block|{
 DECL|member|y
 name|gint32
@@ -2227,7 +2227,7 @@ operator|=
 operator|(
 name|angle_deg
 operator|*
-literal|3.14159
+name|G_PI
 operator|)
 operator|/
 literal|180.0

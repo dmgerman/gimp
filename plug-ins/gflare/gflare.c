@@ -67,12 +67,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<ctype.h>
 end_include
 
@@ -109,19 +103,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpcolorspace.h"
+file|<libgimp/gimpmath.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimplimits.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpcolorspace.h>
 end_include
 
 begin_include
@@ -366,30 +372,6 @@ name|ENTRY_WIDTH
 value|40
 end_define
 
-begin_define
-DECL|macro|CHECK_SIZE
-define|#
-directive|define
-name|CHECK_SIZE
-value|4
-end_define
-
-begin_define
-DECL|macro|LIGHTCHECK
-define|#
-directive|define
-name|LIGHTCHECK
-value|192
-end_define
-
-begin_define
-DECL|macro|DARKCHECK
-define|#
-directive|define
-name|DARKCHECK
-value|128
-end_define
-
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -498,7 +480,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac9f6a70103
+DECL|enum|__anon29b1b0170103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -525,7 +507,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac9f6a70203
+DECL|enum|__anon29b1b0170203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -544,7 +526,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ac9f6a70308
+DECL|struct|__anon29b1b0170308
 typedef|typedef
 struct|struct
 block|{
@@ -681,7 +663,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ac9f6a70408
+DECL|struct|__anon29b1b0170408
 typedef|typedef
 struct|struct
 block|{
@@ -701,7 +683,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ac9f6a70503
+DECL|enum|__anon29b1b0170503
 typedef|typedef
 enum|enum
 block|{
@@ -729,7 +711,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ac9f6a70608
+DECL|struct|__anon29b1b0170608
 typedef|typedef
 struct|struct
 block|{
@@ -752,7 +734,7 @@ name|Preview
 modifier|*
 name|preview
 decl_stmt|;
-DECL|struct|__anon2ac9f6a70708
+DECL|struct|__anon29b1b0170708
 struct|struct
 block|{
 DECL|member|x0
@@ -838,7 +820,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ac9f6a70808
+DECL|struct|__anon29b1b0170808
 typedef|typedef
 struct|struct
 block|{
@@ -910,7 +892,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac9f6a70908
+DECL|struct|__anon29b1b0170908
 block|{
 DECL|member|x0
 name|gdouble
@@ -937,7 +919,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac9f6a70a08
+DECL|struct|__anon29b1b0170a08
 block|{
 DECL|member|init
 name|gint
@@ -1107,7 +1089,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac9f6a70b08
+DECL|struct|__anon29b1b0170b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1134,7 +1116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac9f6a70c08
+DECL|struct|__anon29b1b0170c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1175,7 +1157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac9f6a70d08
+DECL|struct|__anon29b1b0170d08
 block|{
 DECL|member|tile
 name|GTile
@@ -1405,7 +1387,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac9f6a70e08
+DECL|struct|__anon29b1b0170e08
 block|{
 DECL|member|tag
 name|gint
@@ -1480,7 +1462,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon2ac9f6a70f03
+DECL|enum|__anon29b1b0170f03
 typedef|typedef
 enum|enum
 block|{
@@ -1514,7 +1496,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ac9f6a71008
+DECL|struct|__anon29b1b0171008
 typedef|typedef
 struct|struct
 block|{
@@ -1558,7 +1540,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ac9f6a71108
+DECL|struct|__anon29b1b0171108
 typedef|typedef
 struct|struct
 block|{
@@ -1616,7 +1598,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ac9f6a71208
+DECL|struct|__anon29b1b0171208
 typedef|typedef
 struct|struct
 block|{
@@ -9744,7 +9726,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon2ac9f6a71308
+DECL|struct|__anon29b1b0171308
 specifier|static
 struct|struct
 block|{
@@ -10536,7 +10518,7 @@ operator|)
 name|rand
 argument_list|()
 operator|/
-name|RAND_MAX
+name|G_MAXRAND
 expr_stmt|;
 for|for
 control|(
@@ -16619,7 +16601,7 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-DECL|struct|__anon2ac9f6a71408
+DECL|struct|__anon29b1b0171408
 specifier|static
 struct|struct
 block|{
@@ -23440,34 +23422,34 @@ operator|(
 name|x
 operator|%
 operator|(
-name|CHECK_SIZE
-operator|*
-literal|2
+name|GIMP_CHECK_SIZE
 operator|)
 operator|<
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE_SM
 operator|)
 operator|^
 operator|(
 name|y
 operator|%
 operator|(
-name|CHECK_SIZE
-operator|*
-literal|2
+name|GIMP_CHECK_SIZE
 operator|)
 operator|<
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE_SM
 operator|)
 condition|)
 name|check
 operator|=
-name|LIGHTCHECK
+name|GIMP_CHECK_LIGHT
+operator|*
+literal|255
 expr_stmt|;
 else|else
 name|check
 operator|=
-name|DARKCHECK
+name|GIMP_CHECK_DARK
+operator|*
+literal|255
 expr_stmt|;
 if|if
 condition|(
@@ -24708,7 +24690,7 @@ name|GM_PREVIEW_HEIGHT
 condition|;
 name|row
 operator|+=
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE_SM
 control|)
 block|{
 for|for
@@ -24783,34 +24765,34 @@ operator|(
 name|col
 operator|%
 operator|(
-name|CHECK_SIZE
-operator|*
-literal|2
+name|GIMP_CHECK_SIZE
 operator|)
 operator|<
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE_SM
 operator|)
 operator|^
 operator|(
 name|row
 operator|%
 operator|(
-name|CHECK_SIZE
-operator|*
-literal|2
+name|GIMP_CHECK_SIZE
 operator|)
 operator|<
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE_SM
 operator|)
 condition|)
 name|check
 operator|=
-name|LIGHTCHECK
+name|GIMP_CHECK_LIGHT
+operator|*
+literal|255
 expr_stmt|;
 else|else
 name|check
 operator|=
-name|DARKCHECK
+name|GIMP_CHECK_DARK
+operator|*
+literal|255
 expr_stmt|;
 if|if
 condition|(
@@ -24901,7 +24883,7 @@ literal|0
 init|;
 name|irow
 operator|<
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE_SM
 operator|&&
 name|row
 operator|+

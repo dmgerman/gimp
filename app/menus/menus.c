@@ -4486,7 +4486,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|file_load_by_extension_callback
+name|file_open_by_extension_callback
 block|,
 literal|0
 block|}
@@ -4567,7 +4567,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/By extension"
+literal|"/By Extension"
 argument_list|)
 block|,
 name|NULL
@@ -7710,6 +7710,9 @@ decl_stmt|;
 name|guint
 name|num_entries
 decl_stmt|;
+name|gint
+name|status
+decl_stmt|;
 name|num_entries
 operator|=
 name|g_slist_length
@@ -7748,16 +7751,26 @@ argument_list|(
 name|raw_filename
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
+name|status
+operator|=
 name|file_open
 argument_list|(
 name|raw_filename
 argument_list|,
 name|raw_filename
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|status
+operator|!=
+name|PDB_SUCCESS
+operator|&&
+name|status
+operator|!=
+name|PDB_CANCEL
 condition|)
+block|{
 name|g_message
 argument_list|(
 name|_
@@ -7768,6 +7781,7 @@ argument_list|,
 name|raw_filename
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -68,12 +68,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpui.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -81,7 +75,7 @@ begin_decl_stmt
 DECL|variable|linenoise
 specifier|static
 specifier|const
-name|char
+name|gchar
 name|linenoise
 index|[]
 init|=
@@ -104,7 +98,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc148510108
+DECL|struct|__anon2c6666670108
 block|{
 DECL|member|threshold
 name|gdouble
@@ -119,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc148510208
+DECL|struct|__anon2c6666670208
 block|{
 DECL|member|run
 name|gint
@@ -134,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc148510308
+DECL|struct|__anon2c6666670308
 block|{
 DECL|member|r
 name|guchar
@@ -155,23 +149,23 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/* whether the image is color or not.  global so I only have to pass one user value to the GHFunc */
+comment|/*  whether the image is color or not.  global so I only have to pass  *  one user value to the GHFunc  */
 end_comment
 
 begin_decl_stmt
 DECL|variable|color
-name|int
+name|gint
 name|color
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* bytes per pixel.  global so I only have to pass one user value to the GHFunc */
+comment|/*  bytes per pixel.  global so I only have to pass one user value  *  to the GHFunc  */
 end_comment
 
 begin_decl_stmt
 DECL|variable|cpp
-name|int
+name|gint
 name|cpp
 decl_stmt|;
 end_decl_stmt
@@ -195,18 +189,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -223,7 +217,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -271,7 +265,7 @@ specifier|static
 name|gint
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -319,22 +313,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|save_scale_update
-parameter_list|(
-name|GtkAdjustment
-modifier|*
-name|adjustment
-parameter_list|,
-name|double
-modifier|*
-name|scale_val
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
 name|GPlugInInfo
@@ -343,16 +321,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -444,7 +422,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_args
 init|=
 sizeof|sizeof
@@ -461,9 +439,10 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_return_vals
 init|=
+operator|(
 sizeof|sizeof
 argument_list|(
 name|load_return_vals
@@ -476,6 +455,7 @@ index|[
 literal|0
 index|]
 argument_list|)
+operator|)
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -525,7 +505,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nsave_args
 init|=
 sizeof|sizeof
@@ -634,21 +614,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -668,6 +648,11 @@ decl_stmt|;
 name|GRunModeType
 name|run_mode
 decl_stmt|;
+name|GStatusType
+name|status
+init|=
+name|STATUS_SUCCESS
+decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
@@ -678,11 +663,6 @@ name|GimpExportReturnType
 name|export
 init|=
 name|EXPORT_CANCEL
-decl_stmt|;
-name|GStatusType
-name|status
-init|=
-name|STATUS_SUCCESS
 decl_stmt|;
 name|run_mode
 operator|=
@@ -723,7 +703,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -769,17 +749,6 @@ literal|2
 expr_stmt|;
 name|values
 index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|STATUS_SUCCESS
-expr_stmt|;
-name|values
-index|[
 literal|1
 index|]
 operator|.
@@ -801,14 +770,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
@@ -894,11 +856,6 @@ operator|==
 name|EXPORT_CANCEL
 condition|)
 block|{
-operator|*
-name|nreturn_vals
-operator|=
-literal|1
-expr_stmt|;
 name|values
 index|[
 literal|0
@@ -908,7 +865,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|STATUS_CANCEL
 expr_stmt|;
 return|return;
 block|}
@@ -947,7 +904,10 @@ operator|!
 name|save_dialog
 argument_list|()
 condition|)
-return|return;
+name|status
+operator|=
+name|STATUS_CANCEL
+expr_stmt|;
 break|break;
 case|case
 name|RUN_NONINTERACTIVE
@@ -959,16 +919,13 @@ name|nparams
 operator|!=
 literal|4
 condition|)
+block|{
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
-if|if
-condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
-condition|)
+block|}
+else|else
 block|{
 name|xpmvals
 operator|.
@@ -983,14 +940,8 @@ name|data
 operator|.
 name|d_float
 expr_stmt|;
-block|}
 if|if
 condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
-operator|&&
-operator|(
 name|xpmvals
 operator|.
 name|threshold
@@ -1002,12 +953,13 @@ operator|.
 name|threshold
 operator|>
 literal|1.0
-operator|)
 condition|)
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
+block|}
+break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
@@ -1024,11 +976,13 @@ break|break;
 default|default:
 break|break;
 block|}
-operator|*
-name|nreturn_vals
-operator|=
-literal|1
-expr_stmt|;
+if|if
+condition|(
+name|status
+operator|==
+name|STATUS_SUCCESS
+condition|)
+block|{
 if|if
 condition|(
 name|save_image
@@ -1061,30 +1015,15 @@ name|XpmSaveVals
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|STATUS_SUCCESS
-expr_stmt|;
 block|}
 else|else
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+block|{
+name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
+block|}
+block|}
 if|if
 condition|(
 name|export
@@ -1098,10 +1037,22 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-name|g_assert
-argument_list|(
-name|FALSE
-argument_list|)
+block|{
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
+block|}
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|status
 expr_stmt|;
 block|}
 end_function
@@ -1109,10 +1060,10 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (char * filename)
+DECL|function|load_image (gchar * filename)
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -1863,8 +1814,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|rgbhash (rgbkey * c)
 name|guint
+DECL|function|rgbhash (rgbkey * c)
 name|rgbhash
 parameter_list|(
 name|rgbkey
@@ -1904,8 +1855,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|compare (rgbkey * c1,rgbkey * c2)
 name|guint
+DECL|function|compare (rgbkey * c1,rgbkey * c2)
 name|compare
 parameter_list|(
 name|rgbkey
@@ -1952,8 +1903,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|set_XpmImage (XpmColor * array,guint index,char * colorstring)
 name|void
+DECL|function|set_XpmImage (XpmColor * array,guint index,gchar * colorstring)
 name|set_XpmImage
 parameter_list|(
 name|XpmColor
@@ -1963,16 +1914,16 @@ parameter_list|,
 name|guint
 name|index
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|colorstring
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|p
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|charnum
@@ -2135,8 +2086,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_colormap_from_hash (gpointer gkey,gpointer value,gpointer user_data)
 name|void
+DECL|function|create_colormap_from_hash (gpointer gkey,gpointer value,gpointer user_data)
 name|create_colormap_from_hash
 parameter_list|(
 name|gpointer
@@ -2155,7 +2106,7 @@ name|key
 init|=
 name|gkey
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|string
 init|=
@@ -2216,10 +2167,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (char * filename,gint32 image_ID,gint32 drawable_ID)
+DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -2234,25 +2185,25 @@ name|GDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|;
-name|int
+name|gint
 name|height
 decl_stmt|;
-name|int
+name|gint
 name|alpha
 decl_stmt|;
-name|int
+name|gint
 name|ncolors
 init|=
 literal|1
 decl_stmt|;
-name|int
+name|gint
 modifier|*
 name|indexno
 decl_stmt|;
-name|int
+name|gint
 name|indexed
 decl_stmt|;
 name|XpmColor
@@ -2287,14 +2238,14 @@ name|hash
 init|=
 name|NULL
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|,
 name|k
 decl_stmt|;
-name|int
+name|gint
 name|threshold
 init|=
 literal|255
@@ -2752,6 +2703,7 @@ name|a
 operator|<
 name|threshold
 condition|)
+block|{
 operator|*
 operator|(
 name|idata
@@ -2760,11 +2712,14 @@ operator|)
 operator|=
 literal|0
 expr_stmt|;
-elseif|else
+block|}
+else|else
+block|{
 if|if
 condition|(
 name|indexed
 condition|)
+block|{
 operator|*
 operator|(
 name|idata
@@ -2779,6 +2734,7 @@ operator|)
 operator|+
 literal|1
 expr_stmt|;
+block|}
 else|else
 block|{
 name|indexno
@@ -2839,6 +2795,7 @@ operator|=
 operator|*
 name|indexno
 expr_stmt|;
+block|}
 block|}
 block|}
 comment|/* kick the progress bar */
@@ -3254,14 +3211,6 @@ name|dlg
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|label
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|scale
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|frame
 decl_stmt|;
 name|GtkWidget
@@ -3370,7 +3319,7 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -3401,13 +3350,18 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|frame
+argument_list|)
+expr_stmt|;
 name|table
 operator|=
 name|gtk_table_new
 argument_list|(
 literal|1
 argument_list|,
-literal|2
+literal|3
 argument_list|,
 name|FALSE
 argument_list|)
@@ -3442,60 +3396,33 @@ argument_list|,
 name|table
 argument_list|)
 expr_stmt|;
-name|label
+name|gtk_widget_show
+argument_list|(
+name|table
+argument_list|)
+expr_stmt|;
+name|scale_data
 operator|=
-name|gtk_label_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Alpha Threshold:"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_misc_set_alignment
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|label
-argument_list|)
-argument_list|,
-literal|1.0
-argument_list|,
-literal|1.0
-argument_list|)
-expr_stmt|;
-name|gtk_table_attach
+name|gimp_scale_entry_new
 argument_list|(
 name|GTK_TABLE
 argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|label
-argument_list|,
-literal|0
-argument_list|,
-literal|1
-argument_list|,
-literal|0
-argument_list|,
-literal|1
-argument_list|,
-name|GTK_FILL
-operator||
-name|GTK_EXPAND
-argument_list|,
-name|GTK_FILL
-argument_list|,
 literal|0
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|scale_data
-operator|=
-name|gtk_adjustment_new
+argument_list|,
+name|_
 argument_list|(
+literal|"Alpha Threshold:"
+argument_list|)
+argument_list|,
+name|SCALE_WIDTH
+argument_list|,
+literal|0
+argument_list|,
 name|xpmvals
 operator|.
 name|threshold
@@ -3506,86 +3433,13 @@ literal|1.0
 argument_list|,
 literal|0.01
 argument_list|,
-literal|0.01
-argument_list|,
-literal|0.0
-argument_list|)
-expr_stmt|;
-name|scale
-operator|=
-name|gtk_hscale_new
-argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
-name|scale_data
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_usize
-argument_list|(
-name|scale
-argument_list|,
-name|SCALE_WIDTH
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_table_attach
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-name|scale
-argument_list|,
-literal|1
+literal|0.1
 argument_list|,
 literal|2
 argument_list|,
-literal|0
+name|NULL
 argument_list|,
-literal|1
-argument_list|,
-name|GTK_FILL
-operator||
-name|GTK_EXPAND
-argument_list|,
-name|GTK_FILL
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_scale_set_value_pos
-argument_list|(
-name|GTK_SCALE
-argument_list|(
-name|scale
-argument_list|)
-argument_list|,
-name|GTK_POS_TOP
-argument_list|)
-expr_stmt|;
-name|gtk_scale_set_digits
-argument_list|(
-name|GTK_SCALE
-argument_list|(
-name|scale
-argument_list|)
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_range_set_update_policy
-argument_list|(
-name|GTK_RANGE
-argument_list|(
-name|scale
-argument_list|)
-argument_list|,
-name|GTK_UPDATE_DELAYED
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -3599,33 +3453,13 @@ literal|"value_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|save_scale_update
+name|gimp_double_adjustment_update
 argument_list|)
 argument_list|,
 operator|&
 name|xpmvals
 operator|.
 name|threshold
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|scale
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|table
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3674,31 +3508,6 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|save_scale_update (GtkAdjustment * adjustment,double * scale_val)
-name|save_scale_update
-parameter_list|(
-name|GtkAdjustment
-modifier|*
-name|adjustment
-parameter_list|,
-name|double
-modifier|*
-name|scale_val
-parameter_list|)
-block|{
-operator|*
-name|scale_val
-operator|=
-name|adjustment
-operator|->
-name|value
 expr_stmt|;
 block|}
 end_function

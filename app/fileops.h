@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__FILE_OPS_H__
+name|__FILEOPS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__FILE_OPS_H__
+DECL|macro|__FILEOPS_H__
 define|#
 directive|define
-name|__FILE_OPS_H__
+name|__FILEOPS_H__
 end_define
 
 begin_include
@@ -79,10 +79,10 @@ name|file_open_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -93,10 +93,10 @@ name|file_save_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -107,10 +107,10 @@ name|file_save_as_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -121,24 +121,24 @@ name|file_revert_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|file_load_by_extension_callback
+name|file_open_by_extension_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -149,23 +149,23 @@ name|file_save_by_extension_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|file_open
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|raw_filename
 parameter_list|)
@@ -173,22 +173,22 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|file_save
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|raw_filename
 parameter_list|,
-name|gint
+name|RunModeType
 name|mode
 parameter_list|)
 function_decl|;
@@ -203,7 +203,7 @@ name|GSList
 modifier|*
 name|procs
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -232,7 +232,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* FILE_OPS_H */
+comment|/* __FILEOPS_H__ */
 end_comment
 
 end_unit

@@ -38,6 +38,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -56,25 +62,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -102,18 +102,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -230,12 +230,17 @@ init|=
 block|{
 name|NULL
 block|,
+comment|/* init_proc  */
 name|NULL
 block|,
+comment|/* quit_proc  */
 name|query
 block|,
+comment|/* query_proc */
 name|run
-block|, }
+block|,
+comment|/* run_proc   */
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -249,7 +254,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -298,7 +305,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_args
 init|=
 sizeof|sizeof
@@ -315,9 +322,10 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_return_vals
 init|=
+operator|(
 sizeof|sizeof
 argument_list|(
 name|load_return_vals
@@ -330,6 +338,7 @@ index|[
 literal|0
 index|]
 argument_list|)
+operator|)
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -379,7 +388,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nsave_args
 init|=
 sizeof|sizeof
@@ -504,7 +513,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -520,17 +529,17 @@ name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|buffer
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 function_decl|;
@@ -545,17 +554,17 @@ name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|buffer
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 function_decl|;
@@ -570,17 +579,17 @@ name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|buffer
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 function_decl|;
@@ -595,17 +604,17 @@ name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|buffer
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 function_decl|;
@@ -624,7 +633,7 @@ name|guchar
 modifier|*
 name|buffer
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 function_decl|;
@@ -635,7 +644,7 @@ specifier|static
 name|gint
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -657,10 +666,10 @@ name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
 name|guchar
@@ -679,10 +688,10 @@ name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
 name|guchar
@@ -705,7 +714,7 @@ name|guchar
 modifier|*
 name|buffer
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 function_decl|;
@@ -718,21 +727,21 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -749,13 +758,13 @@ index|[
 literal|2
 index|]
 decl_stmt|;
+name|GRunModeType
+name|run_mode
+decl_stmt|;
 name|GStatusType
 name|status
 init|=
 name|STATUS_SUCCESS
-decl_stmt|;
-name|GRunModeType
-name|run_mode
 decl_stmt|;
 name|gint32
 name|image_ID
@@ -807,7 +816,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
@@ -853,17 +862,6 @@ literal|2
 expr_stmt|;
 name|values
 index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|STATUS_SUCCESS
-expr_stmt|;
-name|values
-index|[
 literal|1
 index|]
 operator|.
@@ -885,14 +883,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
@@ -988,7 +979,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|STATUS_CANCEL
 expr_stmt|;
 return|return;
 block|}
@@ -1029,13 +1020,16 @@ break|break;
 default|default:
 break|break;
 block|}
-operator|*
-name|nreturn_vals
-operator|=
-literal|1
-expr_stmt|;
 if|if
 condition|(
+name|status
+operator|==
+name|STATUS_SUCCESS
+condition|)
+block|{
+if|if
+condition|(
+operator|!
 name|save_image
 argument_list|(
 name|param
@@ -1053,31 +1047,11 @@ name|drawable_ID
 argument_list|)
 condition|)
 block|{
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|STATUS_SUCCESS
-expr_stmt|;
-block|}
-else|else
-block|{
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -1091,15 +1065,35 @@ name|image_ID
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
+block|}
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|status
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|init_gtk ()
+DECL|function|init_gtk (void)
 name|init_gtk
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gchar
 modifier|*
@@ -1176,9 +1170,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2ae512e60108
 specifier|static
 struct|struct
+DECL|struct|__anon278496040108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1257,10 +1251,10 @@ end_struct
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (char * filename)
+DECL|function|load_image (gchar * filename)
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -1342,7 +1336,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PCX Can't open\n%s"
+literal|"PCX: Can't open\n%s"
 argument_list|,
 name|filename
 argument_list|)
@@ -1371,7 +1365,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"PCX Can't read header from\n%s"
+literal|"PCX: Can't read header from\n%s"
 argument_list|,
 name|filename
 argument_list|)
@@ -1878,24 +1872,24 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_8 (FILE * fp,int width,int height,char * buffer,int bytes)
+DECL|function|load_8 (FILE * fp,gint width,gint height,gchar * buffer,gint bytes)
 name|load_8
 parameter_list|(
 name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|buffer
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 block|{
@@ -1978,24 +1972,24 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_24 (FILE * fp,int width,int height,char * buffer,int bytes)
+DECL|function|load_24 (FILE * fp,gint width,gint height,gchar * buffer,gint bytes)
 name|load_24
 parameter_list|(
 name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|buffer
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 block|{
@@ -2121,24 +2115,24 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_1 (FILE * fp,int width,int height,char * buffer,int bytes)
+DECL|function|load_1 (FILE * fp,gint width,gint height,gchar * buffer,gint bytes)
 name|load_1
 parameter_list|(
 name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|buffer
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 block|{
@@ -2263,24 +2257,24 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_4 (FILE * fp,int width,int height,char * buffer,int bytes)
+DECL|function|load_4 (FILE * fp,gint width,gint height,gchar * buffer,gint bytes)
 name|load_4
 parameter_list|(
 name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|buffer
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 block|{
@@ -2438,7 +2432,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|readline (FILE * fp,guchar * buffer,int bytes)
+DECL|function|readline (FILE * fp,guchar * buffer,gint bytes)
 name|readline
 parameter_list|(
 name|FILE
@@ -2449,7 +2443,7 @@ name|guchar
 modifier|*
 name|buffer
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 block|{
@@ -2552,10 +2546,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (char * filename,gint32 image,gint32 layer)
+DECL|function|save_image (gchar * filename,gint32 image,gint32 layer)
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -2828,8 +2822,7 @@ literal|"PCX Can't save this image type\nFlatten your image"
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|FALSE
 return|;
 break|break;
 block|}
@@ -2857,8 +2850,7 @@ name|filename
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|FALSE
 return|;
 block|}
 name|pixels
@@ -3137,8 +3129,7 @@ literal|"Can't save this image as PCX\nFlatten your image"
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|FALSE
 return|;
 break|break;
 block|}
@@ -3166,17 +3157,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|save_8 (FILE * fp,int width,int height,guchar * buffer)
+DECL|function|save_8 (FILE * fp,gint width,gint height,guchar * buffer)
 name|save_8
 parameter_list|(
 name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
 name|guchar
@@ -3234,17 +3225,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|save_24 (FILE * fp,int width,int height,guchar * buffer)
+DECL|function|save_24 (FILE * fp,gint width,gint height,guchar * buffer)
 name|save_24
 parameter_list|(
 name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
 name|guchar
@@ -3374,7 +3365,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|writeline (FILE * fp,guchar * buffer,int bytes)
+DECL|function|writeline (FILE * fp,guchar * buffer,gint bytes)
 name|writeline
 parameter_list|(
 name|FILE
@@ -3385,7 +3376,7 @@ name|guchar
 modifier|*
 name|buffer
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 block|{

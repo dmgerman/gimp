@@ -112,24 +112,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimp.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
 end_include
 
@@ -142,13 +124,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"bmp.h"
+file|<string.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"bmp.h"
 end_include
 
 begin_include
@@ -167,7 +167,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|prog_name
-name|char
+name|gchar
 modifier|*
 name|prog_name
 init|=
@@ -177,7 +177,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|filename
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
@@ -185,7 +185,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|interactive_bmp
-name|int
+name|gint
 name|interactive_bmp
 decl_stmt|;
 end_decl_stmt
@@ -233,18 +233,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -274,16 +274,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -298,7 +298,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -347,7 +349,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_args
 init|=
 sizeof|sizeof
@@ -364,9 +366,10 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_return_vals
 init|=
+operator|(
 sizeof|sizeof
 argument_list|(
 name|load_return_vals
@@ -379,6 +382,7 @@ index|[
 literal|0
 index|]
 argument_list|)
+operator|)
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -428,7 +432,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nsave_args
 init|=
 sizeof|sizeof
@@ -543,21 +547,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -574,13 +578,13 @@ index|[
 literal|2
 index|]
 decl_stmt|;
+name|GRunModeType
+name|run_mode
+decl_stmt|;
 name|GStatusType
 name|status
 init|=
 name|STATUS_SUCCESS
-decl_stmt|;
-name|GRunModeType
-name|run_mode
 decl_stmt|;
 name|gint32
 name|image_ID
@@ -632,7 +636,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
@@ -684,6 +688,13 @@ break|break;
 default|default:
 break|break;
 block|}
+if|if
+condition|(
+name|status
+operator|==
+name|STATUS_SUCCESS
+condition|)
+block|{
 name|image_ID
 operator|=
 name|ReadBMP
@@ -713,17 +724,6 @@ literal|2
 expr_stmt|;
 name|values
 index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|STATUS_SUCCESS
-expr_stmt|;
-name|values
-index|[
 literal|1
 index|]
 operator|.
@@ -745,17 +745,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
+block|}
 block|}
 block|}
 elseif|else
@@ -839,11 +833,6 @@ operator|==
 name|EXPORT_CANCEL
 condition|)
 block|{
-operator|*
-name|nreturn_vals
-operator|=
-literal|1
-expr_stmt|;
 name|values
 index|[
 literal|0
@@ -853,7 +842,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|STATUS_CANCEL
 expr_stmt|;
 return|return;
 block|}
@@ -904,13 +893,16 @@ break|break;
 default|default:
 break|break;
 block|}
-operator|*
-name|nreturn_vals
-operator|=
-literal|1
-expr_stmt|;
 if|if
 condition|(
+name|status
+operator|==
+name|STATUS_SUCCESS
+condition|)
+block|{
+if|if
+condition|(
+operator|!
 name|WriteBMP
 argument_list|(
 name|param
@@ -928,30 +920,12 @@ name|drawable_ID
 argument_list|)
 condition|)
 block|{
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|STATUS_SUCCESS
-expr_stmt|;
-block|}
-else|else
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
+block|}
+block|}
 if|if
 condition|(
 name|export
@@ -964,6 +938,24 @@ name|image_ID
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
+block|}
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|status
+expr_stmt|;
 block|}
 end_function
 

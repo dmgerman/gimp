@@ -28,12 +28,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -272,7 +266,7 @@ begin_function_decl
 specifier|static
 name|GtkWidget
 modifier|*
-name|gtkW_table_add_toggle
+name|gtk_table_add_toggle
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -666,14 +660,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_define
-DECL|macro|ENTRY_WIDTH
-define|#
-directive|define
-name|ENTRY_WIDTH
-value|100
-end_define
-
-begin_define
 DECL|macro|UPDATE_STEP
 define|#
 directive|define
@@ -712,7 +698,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba85a160108
+DECL|struct|__anon2b5463110108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -856,7 +842,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba85a160208
+DECL|struct|__anon2b5463110208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1081,7 +1067,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba85a160308
+DECL|struct|__anon2b5463110308
 block|{
 DECL|member|run
 name|gint
@@ -1206,14 +1192,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -1228,12 +1207,6 @@ index|[
 literal|0
 index|]
 argument_list|)
-decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -1269,11 +1242,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -3657,7 +3630,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba85a160408
+DECL|struct|__anon2b5463110408
 block|{
 DECL|member|min_modified
 name|short
@@ -5972,7 +5945,7 @@ argument_list|(
 name|sep
 argument_list|)
 expr_stmt|;
-name|gtkW_table_add_toggle
+name|gtk_table_add_toggle
 argument_list|(
 name|table
 argument_list|,
@@ -5999,7 +5972,7 @@ name|Right2Left
 index|]
 argument_list|)
 expr_stmt|;
-name|gtkW_table_add_toggle
+name|gtk_table_add_toggle
 argument_list|(
 name|table
 argument_list|,
@@ -6026,7 +5999,7 @@ name|Left2Right
 index|]
 argument_list|)
 expr_stmt|;
-name|gtkW_table_add_toggle
+name|gtk_table_add_toggle
 argument_list|(
 name|table
 argument_list|,
@@ -6053,7 +6026,7 @@ name|Bottom2Top
 index|]
 argument_list|)
 expr_stmt|;
-name|gtkW_table_add_toggle
+name|gtk_table_add_toggle
 argument_list|(
 name|table
 argument_list|,
@@ -6138,7 +6111,7 @@ name|toggle
 decl_stmt|;
 name|toggle
 operator|=
-name|gtkW_table_add_toggle
+name|gtk_table_add_toggle
 argument_list|(
 name|table
 argument_list|,
@@ -6189,7 +6162,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|gtkW_table_add_toggle
+name|gtk_table_add_toggle
 argument_list|(
 name|table
 argument_list|,
@@ -6346,8 +6319,8 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gtkW_table_add_toggle (GtkWidget * table,gchar * name,gint x1,gint x2,gint y,GtkSignalFunc update,gint * value)
-name|gtkW_table_add_toggle
+DECL|function|gtk_table_add_toggle (GtkWidget * table,gchar * name,gint x1,gint x2,gint y,GtkSignalFunc update,gint * value)
+name|gtk_table_add_toggle
 parameter_list|(
 name|GtkWidget
 modifier|*

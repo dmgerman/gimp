@@ -18,6 +18,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -31,12 +37,6 @@ begin_include
 include|#
 directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
 end_include
 
 begin_include
@@ -4348,7 +4348,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ff6080108
+DECL|struct|__anon2c3f11f50108
 block|{
 DECL|member|scale
 name|double
@@ -4376,7 +4376,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ff6080208
+DECL|struct|__anon2c3f11f50208
 block|{
 DECL|member|run
 name|gint
@@ -4403,7 +4403,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ff6080308
+DECL|struct|__anon2c3f11f50308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -4424,7 +4424,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4ff6080403
+DECL|enum|__anon2c3f11f50403
 block|{
 DECL|enumerator|OBJ_BITMAP
 name|OBJ_BITMAP
@@ -4455,7 +4455,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ff6080508
+DECL|struct|__anon2c3f11f50508
 block|{
 DECL|member|dummy
 name|int
@@ -4470,7 +4470,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ff6080608
+DECL|struct|__anon2c3f11f50608
 block|{
 DECL|member|color
 name|GdkColor
@@ -4497,7 +4497,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ff6080708
+DECL|struct|__anon2c3f11f50708
 block|{
 DECL|member|dummy
 name|int
@@ -4512,7 +4512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ff6080808
+DECL|struct|__anon2c3f11f50808
 block|{
 DECL|member|color
 name|GdkColor
@@ -4539,7 +4539,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ff6080908
+DECL|struct|__anon2c3f11f50908
 block|{
 DECL|member|font
 name|GdkFont
@@ -4555,7 +4555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ff6080a08
+DECL|struct|__anon2c3f11f50a08
 block|{
 DECL|member|dummy
 name|int
@@ -4570,14 +4570,14 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ff6080b08
+DECL|struct|__anon2c3f11f50b08
 block|{
 DECL|member|type
 name|ObjectType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2b4ff6080c0a
+DECL|union|__anon2c3f11f50c0a
 block|{
 DECL|member|bitmap
 name|BitmapObject
@@ -4616,7 +4616,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ff6080d08
+DECL|struct|__anon2c3f11f50d08
 block|{
 DECL|member|gc
 name|GdkGC
@@ -4669,7 +4669,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ff6080e08
+DECL|struct|__anon2c3f11f50e08
 block|{
 DECL|member|pixmap
 name|GdkPixmap
@@ -4720,7 +4720,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ff6080f08
+DECL|struct|__anon2c3f11f50f08
 block|{
 DECL|member|valid
 name|gboolean
@@ -4761,18 +4761,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -4789,7 +4789,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -4844,16 +4844,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -4936,10 +4936,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_dialog (char * file_name)
+DECL|function|load_dialog (gchar * file_name)
 name|load_dialog
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|file_name
 parameter_list|)
@@ -5474,7 +5474,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -5508,7 +5510,22 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|GParamDef
+name|load_return_vals
+index|[]
+init|=
+block|{
+block|{
+name|PARAM_IMAGE
+block|,
+literal|"image"
+block|,
+literal|"Output image"
+block|}
+block|,   }
+decl_stmt|;
+specifier|static
+name|gint
 name|nload_args
 init|=
 sizeof|sizeof
@@ -5525,24 +5542,10 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
-name|load_return_vals
-index|[]
-init|=
-block|{
-block|{
-name|PARAM_IMAGE
-block|,
-literal|"image"
-block|,
-literal|"Output image"
-block|}
-block|,   }
-decl_stmt|;
-specifier|static
-name|int
+name|gint
 name|nload_return_vals
 init|=
+operator|(
 sizeof|sizeof
 argument_list|(
 name|load_return_vals
@@ -5555,6 +5558,7 @@ index|[
 literal|0
 index|]
 argument_list|)
+operator|)
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -5572,9 +5576,10 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_setargs_args
 init|=
+operator|(
 sizeof|sizeof
 argument_list|(
 name|load_setargs_args
@@ -5587,6 +5592,7 @@ index|[
 literal|0
 index|]
 argument_list|)
+operator|)
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -5675,21 +5681,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -5705,6 +5711,11 @@ name|values
 index|[
 literal|2
 index|]
+decl_stmt|;
+name|GStatusType
+name|status
+init|=
+name|STATUS_SUCCESS
 decl_stmt|;
 name|gint32
 name|image_ID
@@ -5748,7 +5759,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
@@ -5796,7 +5807,10 @@ operator|.
 name|d_string
 argument_list|)
 condition|)
-return|return;
+name|status
+operator|=
+name|STATUS_CANCEL
+expr_stmt|;
 break|break;
 case|case
 name|RUN_NONINTERACTIVE
@@ -5827,6 +5841,8 @@ operator|&
 name|load_vals
 argument_list|)
 expr_stmt|;
+default|default:
+break|break;
 block|}
 name|check_load_vals
 argument_list|()
@@ -5845,38 +5861,12 @@ operator|.
 name|d_string
 argument_list|)
 expr_stmt|;
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-operator|(
+if|if
+condition|(
 name|image_ID
 operator|!=
 operator|-
 literal|1
-operator|)
-condition|?
-name|STATUS_SUCCESS
-else|:
-name|STATUS_EXECUTION_ERROR
-expr_stmt|;
-if|if
-condition|(
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|STATUS_SUCCESS
 condition|)
 block|{
 name|gimp_set_data
@@ -5920,6 +5910,19 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|status
+operator|=
+name|STATUS_EXECUTION_ERROR
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
+block|}
 name|values
 index|[
 literal|0
@@ -5929,10 +5932,8 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|status
 expr_stmt|;
-block|}
-block|}
 block|}
 end_function
 

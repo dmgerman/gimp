@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   SGI image file plug-in for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   save_image()                - Save the specified image to a PNG file.  *   save_ok_callback()          - Destroy the save dialog and save the image.  *   save_dialog()               - Pop up the save dialog.  *  * Revision History:  *  *   $Log$  *   Revision 1.18  2000/01/17 17:02:26  mitch  *   2000-01-17  Michael Natterer<mitch@gimp.org>  *  *   	* libgimp/gimpcolorbutton.c: emit the "color_changed" signal  *   	whenever the user selects "Use FG/BG Color" from the popup menu.  *  *   	* libgimp/gimpwidgets.c: gimp_table_attach_aligned(): allow the  *   	function to be called with label == NULL.  *  *   	* plug-ins/AlienMap/AlienMap.c  *   	* plug-ins/AlienMap2/AlienMap2.c  *   	* plug-ins/common/CEL.c  *   	* plug-ins/common/CML_explorer.c  *   	* plug-ins/common/apply_lens.c  *   	* plug-ins/common/checkerboard.c  *   	* plug-ins/common/engrave.c  *   	* plug-ins/common/exchange.c  *   	* plug-ins/common/gauss_iir.c  *   	* plug-ins/common/gauss_rle.c  *   	* plug-ins/common/illusion.c  *   	* plug-ins/common/max_rgb.c  *   	* plug-ins/common/mblur.c  *   	* plug-ins/common/oilify.c  *   	* plug-ins/common/sel_gauss.c  *   	* plug-ins/common/shift.c  *   	* plug-ins/common/smooth_palette.c  *   	* plug-ins/common/sparkle.c  *   	* plug-ins/common/video.c  *   	* plug-ins/common/vpropagate.c  *   	* plug-ins/common/warp.c  *   	* plug-ins/sgi/sgi.c: more ui updates.  *  *   Revision 1.17  2000/01/13 15:39:25  mitch  *   2000-01-13  Michael Natterer<mitch@gimp.org>  *  *   	* app/gimpui.[ch]  *   	* app/preferences_dialog.c: removed& renamed some functions from  *   	gimpui.[ch] (see below).  *  *   	* libgimp/Makefile.am  *   	* libgimp/gimpwidgets.[ch]; new files. Functions moved from  *   	app/gimpui.[ch]. Added a constructor for the label + hscale +  *   	entry combination used in many plugins (now hscale + spinbutton).  *  *   	* libgimp/gimpui.h: include gimpwidgets.h  *  *   	* plug-ins/megawidget/megawidget.[ch]: removed all functions  *   	except the preview stuff (I'm not yet sure how to implement this  *   	in libgimp because the libgimp preview should be general enough to  *   	replace all the other plugin previews, too).  *  *   	* plug-ins/borderaverage/Makefile.am  *   	* plug-ins/borderaverage/borderaverage.c  *   	* plug-ins/common/plugin-defs.pl  *   	* plug-ins/common/Makefile.am  *   	* plug-ins/common/aa.c  *   	* plug-ins/common/align_layers.c  *   	* plug-ins/common/animationplay.c  *   	* plug-ins/common/apply_lens.c  *   	* plug-ins/common/blinds.c  *   	* plug-ins/common/bumpmap.c  *   	* plug-ins/common/checkerboard.c  *   	* plug-ins/common/colorify.c  *   	* plug-ins/common/convmatrix.c  *   	* plug-ins/common/cubism.c  *   	* plug-ins/common/curve_bend.c  *   	* plug-ins/common/deinterlace.c  *   	* plug-ins/common/despeckle.c  *   	* plug-ins/common/destripe.c  *   	* plug-ins/common/displace.c  *   	* plug-ins/common/edge.c  *   	* plug-ins/common/emboss.c  *   	* plug-ins/common/hot.c  *   	* plug-ins/common/nlfilt.c  *   	* plug-ins/common/pixelize.c  *   	* plug-ins/common/waves.c  *   	* plug-ins/sgi/sgi.c  *   	* plug-ins/sinus/sinus.c: ui updates like removing megawidget,  *   	using the dialog constructor, I18N fixes, indentation, ...  *  *   Revision 1.16  2000/01/01 15:38:59  neo  *   added gettext support  *  *  *   --Sven  *  *   Revision 1.15  1999/11/27 02:54:25  neo  *          * plug-ins/sgi/sgi.c: bail out nicely instead of aborting when  *           saving fails.  *  *   --Sven  *  *   Revision 1.14  1999/11/26 20:58:26  neo  *   more action_area beautifiction  *  *  *   --Sven  *  *   Revision 1.13  1999/10/20 01:45:41  neo  *   the rest of the save plug-ins !?  *  *  *   --Sven  *  *   Revision 1.12  1999/04/23 06:32:41  asbjoer  *   use MAIN macro  *  *   Revision 1.11  1999/04/15 21:49:06  yosh  *   * applied gimp-lecorfec-99041[02]-0, changes follow  *  *   * plug-ins/FractalExplorer/Dialogs.h (make_color_map):  *   replaced free with g_free to fix segfault.  *  *   * plug-ins/Lighting/lighting_preview.c (compute_preview):  *   allocate xpostab and ypostab only when needed (it could also be  *   allocated on stack with a compilation-fixed size like MapObject).  *   It avoids to lose some Kb on each preview :)  *   Also reindented (unfortunate C-c C-q) some other lines.  *  *   * plug-ins/Lighting/lighting_main.c (run):  *   release allocated postabs.  *  *   * plug-ins/Lighting/lighting_ui.c:  *   callbacks now have only one argument because gck widget use  *   gtk_signal_connect_object. Caused segfault for scale widget.  *  *   * plug-ins/autocrop/autocrop.c (doit):  *   return if image has only background (thus fixing a segfault).  *  *   * plug-ins/emboss/emboss.c (pluginCore, emboss_do_preview):  *   replaced malloc/free with g_malloc/g_free (unneeded, but  *   shouldn't everyone use glib calls ? :)  *  *   * plug-ins/flame/flame.c :  *   replaced a segfaulting free, and several harmless malloc/free pairs.  *  *   * plug-ins/flame/megawidget.c (mw_preview_build):  *   replaced harmless malloc/free pair.  *   Note : mwp->bits is malloc'ed but seems to be never freed.  *  *   * plug-ins/fractaltrace/fractaltrace.c (pixels_free):  *   replaced a bunch of segfaulting free.  *   (pixels_get, dialog_show): replaced gtk_signal_connect_object  *   with gtk_signal_connect to accomodate callbacks (caused STRANGE  *   dialog behaviour, coz you destroyed buttons one by one).  *  *   * plug-ins/illusion/illusion.c (dialog):  *   same gtk_signal_connect_object replacement for same reasons.  *  *   * plug-ins/libgck/gck/gckcolor.c :  *   changed all gck_rgb_to_color* functions to use a static GdkColor  *   instead of a malloc'ed area. Provided reentrant functions with  *   the old behaviour (gck_rgb_to_color*_r). Made some private functions  *   static, too.  *   gck_rgb_to_gdkcolor now use the new functions while  *   gck_rgb_to_gdkcolor_r is the reentrant version.  *   Also affected by this change: gck_gc_set_foreground and  *   gck_gc_set_background (no more free(color)).  *  *   * plug-ins/libgck/gck/gckcolor.h :  *   added the gck_rgb_to_gdkcolor_r proto.  *  *   * plug-ins/lic/lic.c (ok_button_clicked, cancel_button_clicked) :  *   segfault on gtk_widget_destroy, now calls gtk_main_quit.  *   (dialog_destroy) : segfault on window closure when called by  *   "destroy" event. Now called by "delete_event".  *  *   * plug-ins/megawidget/megawidget.c (mw_preview_build):  *   replaced harmless malloc/free pair.  *   Note : mwp->bits is malloc'ed but seems to be never freed.  *  *   * plug-ins/png/png.c (load_image):  *   replaced 2 segfaulting free.  *  *   * plug-ins/print/print-ps.c (ps_print):  *   replaced a segfaulting free (called many times :).  *  *   * plug-ins/sgi/sgi.c (load_image, save_image):  *   replaced a bunch of segfaulting free, and did some harmless  *   inits to avoid a few gcc warnings.  *  *   * plug-ins/wind/wind.c (render_wind):  *   replaced a segfaulting free.  *   (render_blast): replaced harmless malloc/free pair.  *  *   * plug-ins/bmp/bmpread.c (ReadImage):  *   yet another free()/g_free() problem fixed.  *  *   * plug-ins/exchange/exchange.c (real_exchange):  *   ditto.  *  *   * plug-ins/fp/fp.h: added Frames_Check_Button_In_A_Box proto.  *   * plug-ins/fp/fp_gtk.c: closing subdialogs via window manager  *   wasn't handled, thus leading to errors and crashes.  *   Now delete_event signals the dialog control button  *   to close a dialog with the good way.  *  *   * plug-ins/ifscompose/ifscompose.c (value_pair_create):  *   tried to set events mask on scale widget (a NO_WINDOW widget).  *  *   * plug-ins/png/png.c (save_image):  *   Replaced 2 free() with g_free() for g_malloc'ed memory.  *   Mysteriously I corrected the loading bug but not the saving one :)  *  *   -Yosh  *  *   Revision 1.10  1999/01/15 17:34:37  unammx  *   1999-01-15  Federico Mena Quintero<federico@nuclecu.unam.mx>  *  *   	* Updated gtk_toggle_button_set_state() to  *   	gtk_toggle_button_set_active() in all the files.  *  *   Revision 1.9  1998/06/06 23:22:19  yosh  *   * adding Lighting plugin  *  *   * updated despeckle, png, sgi, and sharpen  *  *   -Yosh  *  *   Revision 1.5  1998/05/17 16:01:33  mike  *   Removed signal handler stuff used for debugging.  *   Added gtk_rc_parse().  *   Removed extra variables.  *  *   Revision 1.4  1998/04/23  17:40:49  mike  *   Updated to support 16-bit<unsigned> image data.  *  *   Revision 1.3  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *   Added warning message about advanced RLE compression not being supported  *   by SGI.  *  *   Revision 1.2  1997/07/25  20:44:05  mike  *   Fixed image_load_sgi load error bug (causes GIMP hang/crash).  *  *   Revision 1.1  1997/06/18  00:55:28  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   SGI image file plug-in for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   save_image()                - Save the specified image to a PNG file.  *   save_ok_callback()          - Destroy the save dialog and save the image.  *   save_dialog()               - Pop up the save dialog.  *  * Revision History:  *  *   $Log$  *   Revision 1.19  2000/01/25 17:46:54  mitch  *   2000-01-25  Michael Natterer<mitch@gimp.org>  *  *   	* configure.in  *   	* po-plug-ins/POTFILES.in  *   	* plug-ins/common/Makefile.am  *   	* plug-ins/common/plugin-defs.pl  *   	* plug-ins/megawidget/*: removed. (There were only 3 functions  *   	left which were used by ~5 plugins, so I moved the resp. functions  *   	to the plugins). More preview stuff to come...  *  *   	* app/airbrush_blob.c  *   	* modules/colorsel_triangle.c  *   	* modules/colorsel_water.c: use G_PI instead of M_PI.  *  *   	* app/procedural_db.h  *   	* libgimp/gimpenums.h  *   	* plug-ins/script-fu/script-fu-constants.c  *   	* tools/pdbgen/enums.pl: new PDB return value STATUS_CANCEL which  *   	indicates that "Cancel" was pressed in a plugin dialog. (Useful  *   	only for file load/save plugins).  *  *   	* app/fileops.[ch]  *   	* app/menus.c: changes to handle STATUS_CANCEL correctly. Did some  *   	code cleanup in fileops.[ch]. Pop up a warning if File->Save  *   	failed.  *  *   	* app/plug_in.c: return_val[0] is of type PDB_STATUS, not  *   	PDB_INT32.  *  *   	* libgimp/gimpmath.h: new constant G_MAXRAND which equals to  *   	RAND_MAX if it exists or to G_MAXINT otherwise.  *  *   	* libgimp/gimpwidgets.[ch]: new function gimp_random_seed_new()  *   	which creates a spinbutton and a "Time" toggle.  *   	Call the function which does the "set_sensitive" magic from the  *   	radio button callback.  *  *   	* plug-ins/[75 plugins]:  *  *   	- Return STATUS_CANCEL in all file load/save dialogs if "Cancel"  *   	  was pressed.  *   	- Standardized the file plugins' "run" functions.  *   	- Use G_PI and G_MAXRAND everywhere.  *   	- Added tons of scales and spinbuttons instead of text entries.  *   	- Applied uniform packing/spacings all over the place.  *   	- Reorganized some UIs (stuff like moving the preview to the top  *   	  left corner of the dialog).  *   	- Removed many ui helper functions and callbacks and use the stuff  *   	  from libgimp instead.  *   	- I tried not to restrict the range of possible values when I  *   	  replaced entries with spinbuttons/scales but may have failed,  *   	  though in some cases. Please test ;-)  *   	- #include<libgimp/gimpmath.h> where appropriate and use it's  *   	  constants.  *   	- Indentation, s/int/gint/ et.al., code cleanup.  *  *   	RFC: The plugins are definitely not useable with GIMP 1.0 any  *   	     more, so shouldn't we remove all the remaining compatibility  *   	     stuff ??? (like "#ifdef GIMP_HAVE_PARASITES")  *  *   Revision 1.18  2000/01/17 17:02:26  mitch  *   2000-01-17  Michael Natterer<mitch@gimp.org>  *  *   	* libgimp/gimpcolorbutton.c: emit the "color_changed" signal  *   	whenever the user selects "Use FG/BG Color" from the popup menu.  *  *   	* libgimp/gimpwidgets.c: gimp_table_attach_aligned(): allow the  *   	function to be called with label == NULL.  *  *   	* plug-ins/AlienMap/AlienMap.c  *   	* plug-ins/AlienMap2/AlienMap2.c  *   	* plug-ins/common/CEL.c  *   	* plug-ins/common/CML_explorer.c  *   	* plug-ins/common/apply_lens.c  *   	* plug-ins/common/checkerboard.c  *   	* plug-ins/common/engrave.c  *   	* plug-ins/common/exchange.c  *   	* plug-ins/common/gauss_iir.c  *   	* plug-ins/common/gauss_rle.c  *   	* plug-ins/common/illusion.c  *   	* plug-ins/common/max_rgb.c  *   	* plug-ins/common/mblur.c  *   	* plug-ins/common/oilify.c  *   	* plug-ins/common/sel_gauss.c  *   	* plug-ins/common/shift.c  *   	* plug-ins/common/smooth_palette.c  *   	* plug-ins/common/sparkle.c  *   	* plug-ins/common/video.c  *   	* plug-ins/common/vpropagate.c  *   	* plug-ins/common/warp.c  *   	* plug-ins/sgi/sgi.c: more ui updates.  *  *   Revision 1.17  2000/01/13 15:39:25  mitch  *   2000-01-13  Michael Natterer<mitch@gimp.org>  *  *   	* app/gimpui.[ch]  *   	* app/preferences_dialog.c: removed& renamed some functions from  *   	gimpui.[ch] (see below).  *  *   	* libgimp/Makefile.am  *   	* libgimp/gimpwidgets.[ch]; new files. Functions moved from  *   	app/gimpui.[ch]. Added a constructor for the label + hscale +  *   	entry combination used in many plugins (now hscale + spinbutton).  *  *   	* libgimp/gimpui.h: include gimpwidgets.h  *  *   	* plug-ins/megawidget/megawidget.[ch]: removed all functions  *   	except the preview stuff (I'm not yet sure how to implement this  *   	in libgimp because the libgimp preview should be general enough to  *   	replace all the other plugin previews, too).  *  *   	* plug-ins/borderaverage/Makefile.am  *   	* plug-ins/borderaverage/borderaverage.c  *   	* plug-ins/common/plugin-defs.pl  *   	* plug-ins/common/Makefile.am  *   	* plug-ins/common/aa.c  *   	* plug-ins/common/align_layers.c  *   	* plug-ins/common/animationplay.c  *   	* plug-ins/common/apply_lens.c  *   	* plug-ins/common/blinds.c  *   	* plug-ins/common/bumpmap.c  *   	* plug-ins/common/checkerboard.c  *   	* plug-ins/common/colorify.c  *   	* plug-ins/common/convmatrix.c  *   	* plug-ins/common/cubism.c  *   	* plug-ins/common/curve_bend.c  *   	* plug-ins/common/deinterlace.c  *   	* plug-ins/common/despeckle.c  *   	* plug-ins/common/destripe.c  *   	* plug-ins/common/displace.c  *   	* plug-ins/common/edge.c  *   	* plug-ins/common/emboss.c  *   	* plug-ins/common/hot.c  *   	* plug-ins/common/nlfilt.c  *   	* plug-ins/common/pixelize.c  *   	* plug-ins/common/waves.c  *   	* plug-ins/sgi/sgi.c  *   	* plug-ins/sinus/sinus.c: ui updates like removing megawidget,  *   	using the dialog constructor, I18N fixes, indentation, ...  *  *   Revision 1.16  2000/01/01 15:38:59  neo  *   added gettext support  *  *  *   --Sven  *  *   Revision 1.15  1999/11/27 02:54:25  neo  *          * plug-ins/sgi/sgi.c: bail out nicely instead of aborting when  *           saving fails.  *  *   --Sven  *  *   Revision 1.14  1999/11/26 20:58:26  neo  *   more action_area beautifiction  *  *  *   --Sven  *  *   Revision 1.13  1999/10/20 01:45:41  neo  *   the rest of the save plug-ins !?  *  *  *   --Sven  *  *   Revision 1.12  1999/04/23 06:32:41  asbjoer  *   use MAIN macro  *  *   Revision 1.11  1999/04/15 21:49:06  yosh  *   * applied gimp-lecorfec-99041[02]-0, changes follow  *  *   * plug-ins/FractalExplorer/Dialogs.h (make_color_map):  *   replaced free with g_free to fix segfault.  *  *   * plug-ins/Lighting/lighting_preview.c (compute_preview):  *   allocate xpostab and ypostab only when needed (it could also be  *   allocated on stack with a compilation-fixed size like MapObject).  *   It avoids to lose some Kb on each preview :)  *   Also reindented (unfortunate C-c C-q) some other lines.  *  *   * plug-ins/Lighting/lighting_main.c (run):  *   release allocated postabs.  *  *   * plug-ins/Lighting/lighting_ui.c:  *   callbacks now have only one argument because gck widget use  *   gtk_signal_connect_object. Caused segfault for scale widget.  *  *   * plug-ins/autocrop/autocrop.c (doit):  *   return if image has only background (thus fixing a segfault).  *  *   * plug-ins/emboss/emboss.c (pluginCore, emboss_do_preview):  *   replaced malloc/free with g_malloc/g_free (unneeded, but  *   shouldn't everyone use glib calls ? :)  *  *   * plug-ins/flame/flame.c :  *   replaced a segfaulting free, and several harmless malloc/free pairs.  *  *   * plug-ins/flame/megawidget.c (mw_preview_build):  *   replaced harmless malloc/free pair.  *   Note : mwp->bits is malloc'ed but seems to be never freed.  *  *   * plug-ins/fractaltrace/fractaltrace.c (pixels_free):  *   replaced a bunch of segfaulting free.  *   (pixels_get, dialog_show): replaced gtk_signal_connect_object  *   with gtk_signal_connect to accomodate callbacks (caused STRANGE  *   dialog behaviour, coz you destroyed buttons one by one).  *  *   * plug-ins/illusion/illusion.c (dialog):  *   same gtk_signal_connect_object replacement for same reasons.  *  *   * plug-ins/libgck/gck/gckcolor.c :  *   changed all gck_rgb_to_color* functions to use a static GdkColor  *   instead of a malloc'ed area. Provided reentrant functions with  *   the old behaviour (gck_rgb_to_color*_r). Made some private functions  *   static, too.  *   gck_rgb_to_gdkcolor now use the new functions while  *   gck_rgb_to_gdkcolor_r is the reentrant version.  *   Also affected by this change: gck_gc_set_foreground and  *   gck_gc_set_background (no more free(color)).  *  *   * plug-ins/libgck/gck/gckcolor.h :  *   added the gck_rgb_to_gdkcolor_r proto.  *  *   * plug-ins/lic/lic.c (ok_button_clicked, cancel_button_clicked) :  *   segfault on gtk_widget_destroy, now calls gtk_main_quit.  *   (dialog_destroy) : segfault on window closure when called by  *   "destroy" event. Now called by "delete_event".  *  *   * plug-ins/megawidget/megawidget.c (mw_preview_build):  *   replaced harmless malloc/free pair.  *   Note : mwp->bits is malloc'ed but seems to be never freed.  *  *   * plug-ins/png/png.c (load_image):  *   replaced 2 segfaulting free.  *  *   * plug-ins/print/print-ps.c (ps_print):  *   replaced a segfaulting free (called many times :).  *  *   * plug-ins/sgi/sgi.c (load_image, save_image):  *   replaced a bunch of segfaulting free, and did some harmless  *   inits to avoid a few gcc warnings.  *  *   * plug-ins/wind/wind.c (render_wind):  *   replaced a segfaulting free.  *   (render_blast): replaced harmless malloc/free pair.  *  *   * plug-ins/bmp/bmpread.c (ReadImage):  *   yet another free()/g_free() problem fixed.  *  *   * plug-ins/exchange/exchange.c (real_exchange):  *   ditto.  *  *   * plug-ins/fp/fp.h: added Frames_Check_Button_In_A_Box proto.  *   * plug-ins/fp/fp_gtk.c: closing subdialogs via window manager  *   wasn't handled, thus leading to errors and crashes.  *   Now delete_event signals the dialog control button  *   to close a dialog with the good way.  *  *   * plug-ins/ifscompose/ifscompose.c (value_pair_create):  *   tried to set events mask on scale widget (a NO_WINDOW widget).  *  *   * plug-ins/png/png.c (save_image):  *   Replaced 2 free() with g_free() for g_malloc'ed memory.  *   Mysteriously I corrected the loading bug but not the saving one :)  *  *   -Yosh  *  *   Revision 1.10  1999/01/15 17:34:37  unammx  *   1999-01-15  Federico Mena Quintero<federico@nuclecu.unam.mx>  *  *   	* Updated gtk_toggle_button_set_state() to  *   	gtk_toggle_button_set_active() in all the files.  *  *   Revision 1.9  1998/06/06 23:22:19  yosh  *   * adding Lighting plugin  *  *   * updated despeckle, png, sgi, and sharpen  *  *   -Yosh  *  *   Revision 1.5  1998/05/17 16:01:33  mike  *   Removed signal handler stuff used for debugging.  *   Added gtk_rc_parse().  *   Removed extra variables.  *  *   Revision 1.4  1998/04/23  17:40:49  mike  *   Updated to support 16-bit<unsigned> image data.  *  *   Revision 1.3  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *   Added warning message about advanced RLE compression not being supported  *   by SGI.  *  *   Revision 1.2  1997/07/25  20:44:05  mike  *   Fixed image_load_sgi load error bug (causes GIMP hang/crash).  *  *   Revision 1.1  1997/06/18  00:55:28  mike  *   Initial revision  */
 end_comment
 
 begin_include
@@ -48,18 +48,18 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"sgi.h"
 end_include
 
 begin_comment
 comment|/* SGI image library definitions */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
 
 begin_comment
 comment|/*  * Constants...  */
@@ -177,16 +177,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -502,13 +502,20 @@ modifier|*
 name|return_vals
 parameter_list|)
 block|{
+specifier|static
 name|GParam
-modifier|*
 name|values
+index|[
+literal|2
+index|]
 decl_stmt|;
-comment|/* Return values */
 name|GRunModeType
 name|run_mode
+decl_stmt|;
+name|GStatusType
+name|status
+init|=
+name|STATUS_SUCCESS
 decl_stmt|;
 name|gint32
 name|image_ID
@@ -521,15 +528,26 @@ name|export
 init|=
 name|EXPORT_CANCEL
 decl_stmt|;
-comment|/*    * Initialize parameter data...    */
-name|values
+name|run_mode
 operator|=
-name|g_new
-argument_list|(
-name|GParam
-argument_list|,
-literal|2
-argument_list|)
+name|param
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+operator|*
+name|nreturn_vals
+operator|=
+literal|1
+expr_stmt|;
+operator|*
+name|return_vals
+operator|=
+name|values
 expr_stmt|;
 name|values
 index|[
@@ -549,17 +567,11 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_SUCCESS
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
-operator|*
-name|return_vals
-operator|=
-name|values
-expr_stmt|;
-comment|/*    * Load or save an image...    */
 if|if
 condition|(
 name|strcmp
@@ -572,11 +584,6 @@ operator|==
 literal|0
 condition|)
 block|{
-operator|*
-name|nreturn_vals
-operator|=
-literal|2
-expr_stmt|;
 name|image_ID
 operator|=
 name|load_image
@@ -599,6 +606,11 @@ operator|-
 literal|1
 condition|)
 block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|2
+expr_stmt|;
 name|values
 index|[
 literal|1
@@ -621,17 +633,12 @@ name|image_ID
 expr_stmt|;
 block|}
 else|else
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+block|{
+name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
+block|}
 block|}
 elseif|else
 if|if
@@ -646,22 +653,6 @@ operator|==
 literal|0
 condition|)
 block|{
-operator|*
-name|nreturn_vals
-operator|=
-literal|1
-expr_stmt|;
-name|run_mode
-operator|=
-name|param
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
 name|image_ID
 operator|=
 name|param
@@ -736,7 +727,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|STATUS_CANCEL
 expr_stmt|;
 return|return;
 block|}
@@ -768,9 +759,10 @@ operator|!
 name|save_dialog
 argument_list|()
 condition|)
-goto|goto
-name|finish
-goto|;
+name|status
+operator|=
+name|STATUS_CANCEL
+expr_stmt|;
 break|break;
 case|case
 name|RUN_NONINTERACTIVE
@@ -782,17 +774,12 @@ name|nparams
 operator|!=
 literal|6
 condition|)
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+block|{
+name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
+block|}
 else|else
 block|{
 name|compression
@@ -816,14 +803,7 @@ name|compression
 operator|>
 literal|2
 condition|)
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
@@ -849,14 +829,7 @@ block|}
 empty_stmt|;
 if|if
 condition|(
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+name|status
 operator|==
 name|STATUS_SUCCESS
 condition|)
@@ -879,6 +852,7 @@ argument_list|,
 name|drawable_ID
 argument_list|)
 condition|)
+block|{
 name|gimp_set_data
 argument_list|(
 literal|"file_sgi_save"
@@ -892,22 +866,15 @@ name|compression
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 else|else
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+block|{
+name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 block|}
-empty_stmt|;
-name|finish
-label|:
+block|}
 if|if
 condition|(
 name|export
@@ -921,6 +888,12 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
+block|}
 name|values
 index|[
 literal|0
@@ -930,7 +903,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|status
 expr_stmt|;
 block|}
 end_function
@@ -1008,8 +981,7 @@ modifier|*
 name|pptr
 decl_stmt|;
 comment|/* Current pixel */
-name|unsigned
-name|short
+name|gushort
 modifier|*
 modifier|*
 name|rows
@@ -1047,14 +1019,15 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_print
+name|g_message
 argument_list|(
 literal|"can't open image file\n"
 argument_list|)
 expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 block|}
 empty_stmt|;
 if|if
@@ -1110,7 +1083,7 @@ argument_list|(
 name|progress
 argument_list|)
 expr_stmt|;
-comment|/*   * Get the image dimensions and create the image...   */
+comment|/*    * Get the image dimensions and create the image...    */
 name|image_type
 operator|=
 literal|0
@@ -1180,7 +1153,6 @@ name|RGBA_IMAGE
 expr_stmt|;
 break|break;
 block|}
-empty_stmt|;
 name|image
 operator|=
 name|gimp_image_new
@@ -1204,16 +1176,16 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_print
+name|g_message
 argument_list|(
 literal|"can't allocate new image\n"
 argument_list|)
 expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 block|}
-empty_stmt|;
 name|gimp_image_set_filename
 argument_list|(
 name|image
@@ -1221,7 +1193,7 @@ argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
-comment|/*   * Create the "background" layer to hold the image...   */
+comment|/*    * Create the "background" layer to hold the image...    */
 name|layer
 operator|=
 name|gimp_layer_new
@@ -1257,7 +1229,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*   * Get the drawable and set the pixel region for our load...   */
+comment|/*    * Get the drawable and set the pixel region for our load...    */
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -1289,7 +1261,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*   * Temporary buffers...   */
+comment|/*    * Temporary buffers...    */
 name|tile_height
 operator|=
 name|gimp_tile_height
@@ -1404,7 +1376,7 @@ name|sgip
 operator|->
 name|xsize
 expr_stmt|;
-comment|/*   * Load the image...   */
+comment|/*    * Load the image...    */
 for|for
 control|(
 name|y
@@ -1475,7 +1447,6 @@ name|ysize
 argument_list|)
 expr_stmt|;
 block|}
-empty_stmt|;
 for|for
 control|(
 name|i
@@ -1539,7 +1510,7 @@ operator|==
 literal|1
 condition|)
 block|{
-comment|/*       * 8-bit (unsigned) pixels...       */
+comment|/* 	   * 8-bit (unsigned) pixels... 	   */
 for|for
 control|(
 name|x
@@ -1594,7 +1565,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*       * 16-bit (unsigned) pixels...       */
+comment|/* 	   * 16-bit (unsigned) pixels... 	   */
 for|for
 control|(
 name|x
@@ -1649,10 +1620,8 @@ operator|>>
 literal|8
 expr_stmt|;
 block|}
-empty_stmt|;
 block|}
-empty_stmt|;
-comment|/*   * Do the last n rows (count always> 0)   */
+comment|/*    * Do the last n rows (count always> 0)    */
 name|gimp_pixel_rgn_set_rect
 argument_list|(
 operator|&
@@ -1673,7 +1642,7 @@ argument_list|,
 name|count
 argument_list|)
 expr_stmt|;
-comment|/*   * Done with the file...   */
+comment|/*    * Done with the file...    */
 name|sgiClose
 argument_list|(
 name|sgip
@@ -1702,7 +1671,7 @@ argument_list|(
 name|rows
 argument_list|)
 expr_stmt|;
-comment|/*   * Update the display...   */
+comment|/*    * Update the display...    */
 name|gimp_drawable_flush
 argument_list|(
 name|drawable
@@ -1728,24 +1697,21 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (char * filename,gint32 image_ID,gint32 drawable_ID)
+DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
-comment|/* I - File to save to */
 name|gint32
 name|image_ID
 parameter_list|,
-comment|/* I - Image to save */
 name|gint32
 name|drawable_ID
 parameter_list|)
-comment|/* I - Current drawable */
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -1794,8 +1760,7 @@ modifier|*
 name|pptr
 decl_stmt|;
 comment|/* Current pixel */
-name|unsigned
-name|short
+name|gushort
 modifier|*
 modifier|*
 name|rows
@@ -1883,9 +1848,9 @@ literal|4
 expr_stmt|;
 break|break;
 default|default:
-name|g_warning
+name|g_message
 argument_list|(
-literal|"Image must be of type RGB or GRAY\n"
+literal|"SGI: Image must be of type RGB or GRAY\n"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1893,7 +1858,6 @@ name|FALSE
 return|;
 break|break;
 block|}
-empty_stmt|;
 comment|/*    * Open the file for writing...    */
 name|sgip
 operator|=
@@ -1925,9 +1889,9 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
-literal|"can't create image file\n"
+literal|"SGI: Can't create image file\n"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1988,7 +1952,7 @@ argument_list|(
 name|progress
 argument_list|)
 expr_stmt|;
-comment|/*   * Allocate memory for "tile_height" rows...   */
+comment|/*    * Allocate memory for "tile_height" rows...    */
 name|tile_height
 operator|=
 name|gimp_tile_height
@@ -2051,9 +2015,12 @@ name|rows
 operator|=
 name|g_new
 argument_list|(
-argument|unsigned short *
+name|gushort
+operator|*
 argument_list|,
-argument|sgip->zsize
+name|sgip
+operator|->
+name|zsize
 argument_list|)
 expr_stmt|;
 name|rows
@@ -2063,9 +2030,15 @@ index|]
 operator|=
 name|g_new
 argument_list|(
-argument|unsigned short
+name|gushort
 argument_list|,
-argument|sgip->xsize * sgip->zsize
+name|sgip
+operator|->
+name|xsize
+operator|*
+name|sgip
+operator|->
+name|zsize
 argument_list|)
 expr_stmt|;
 for|for
@@ -2099,7 +2072,7 @@ name|sgip
 operator|->
 name|xsize
 expr_stmt|;
-comment|/*   * Save the image...   */
+comment|/*    * Save the image...    */
 for|for
 control|(
 name|y

@@ -77,6 +77,22 @@ name|G_SQRT2
 value|1.4142135623730951
 endif|#
 directive|endif
+ifndef|#
+directive|ifndef
+name|RAND_MAX
+DECL|macro|G_MAXRAND
+define|#
+directive|define
+name|G_MAXRAND
+value|G_MAXINT
+else|#
+directive|else
+define|#
+directive|define
+name|G_MAXRAND
+value|RAND_MAX
+endif|#
+directive|endif
 comment|/* Use RINT() instead of rint() */
 ifdef|#
 directive|ifdef

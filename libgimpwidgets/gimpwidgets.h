@@ -179,6 +179,25 @@ modifier|*
 name|private_tip
 parameter_list|)
 function_decl|;
+name|GtkWidget
+modifier|*
+name|gimp_random_seed_new
+parameter_list|(
+name|gint
+modifier|*
+name|seed
+parameter_list|,
+name|gint
+modifier|*
+name|use_time
+parameter_list|,
+name|gint
+name|time_true
+parameter_list|,
+name|gint
+name|time_false
+parameter_list|)
+function_decl|;
 comment|/*  *  Standard Callbacks  */
 name|void
 name|gimp_toggle_button_update

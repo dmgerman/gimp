@@ -6,12 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -36,7 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpmath.h>
 end_include
 
 begin_include
@@ -45,31 +45,8 @@ directive|include
 file|"ifscompose.h"
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|RAND_MAX
-end_ifndef
-
-begin_define
-DECL|macro|RAND_MAX
-define|#
-directive|define
-name|RAND_MAX
-value|2147483647
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* RAND_MAX */
-end_comment
-
 begin_typedef
-DECL|struct|__anon27439fd20108
+DECL|struct|__anon2c649e690108
 typedef|typedef
 struct|struct
 block|{
@@ -5138,7 +5115,7 @@ control|)
 block|{
 name|psum
 operator|+=
-name|RAND_MAX
+name|G_MAXRAND
 operator|*
 operator|(
 name|fprob
@@ -5164,7 +5141,7 @@ operator|-
 literal|1
 index|]
 operator|=
-name|RAND_MAX
+name|G_MAXRAND
 expr_stmt|;
 comment|/* make sure we don't get bitten 				   by roundoff*/
 comment|/* create the brush */

@@ -163,8 +163,7 @@ struct|struct
 name|_TgaSaveInterface
 block|{
 DECL|member|run
-name|unsigned
-name|char
+name|gint
 name|run
 decl_stmt|;
 DECL|typedef|TgaSaveInterface
@@ -314,7 +313,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28e1a7480108
+DECL|struct|__anon2ba654a70108
 block|{
 DECL|member|extensionAreaOffset
 name|guint32
@@ -369,18 +368,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -397,7 +396,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -409,7 +408,7 @@ specifier|static
 name|gint
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -457,21 +456,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|save_toggle_update
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
 name|GPlugInInfo
@@ -480,16 +464,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -522,9 +506,11 @@ end_endif
 begin_function
 specifier|static
 name|void
-DECL|function|query ()
+DECL|function|query (void)
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -573,7 +559,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_args
 init|=
 sizeof|sizeof
@@ -590,9 +576,10 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_return_vals
 init|=
+operator|(
 sizeof|sizeof
 argument_list|(
 name|load_return_vals
@@ -605,6 +592,7 @@ index|[
 literal|0
 index|]
 argument_list|)
+operator|)
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -662,7 +650,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nsave_args
 init|=
 sizeof|sizeof
@@ -771,21 +759,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -802,13 +790,13 @@ index|[
 literal|2
 index|]
 decl_stmt|;
+name|GRunModeType
+name|run_mode
+decl_stmt|;
 name|GStatusType
 name|status
 init|=
 name|STATUS_SUCCESS
-decl_stmt|;
-name|GRunModeType
-name|run_mode
 decl_stmt|;
 name|gint32
 name|image_ID
@@ -871,7 +859,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 ifdef|#
 directive|ifdef
@@ -944,17 +932,6 @@ literal|2
 expr_stmt|;
 name|values
 index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|STATUS_SUCCESS
-expr_stmt|;
-name|values
-index|[
 literal|1
 index|]
 operator|.
@@ -976,14 +953,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
@@ -1072,11 +1042,6 @@ operator|==
 name|EXPORT_CANCEL
 condition|)
 block|{
-operator|*
-name|nreturn_vals
-operator|=
-literal|1
-expr_stmt|;
 name|values
 index|[
 literal|0
@@ -1086,7 +1051,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|STATUS_CANCEL
 expr_stmt|;
 return|return;
 block|}
@@ -1118,7 +1083,10 @@ operator|!
 name|save_dialog
 argument_list|()
 condition|)
-return|return;
+name|status
+operator|=
+name|STATUS_CANCEL
+expr_stmt|;
 break|break;
 case|case
 name|RUN_NONINTERACTIVE
@@ -1130,16 +1098,13 @@ name|nparams
 operator|!=
 literal|6
 condition|)
+block|{
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
-if|if
-condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
-condition|)
+block|}
+else|else
 block|{
 name|tsvals
 operator|.
@@ -1189,11 +1154,13 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-operator|*
-name|nreturn_vals
-operator|=
-literal|1
-expr_stmt|;
+if|if
+condition|(
+name|status
+operator|==
+name|STATUS_SUCCESS
+condition|)
+block|{
 if|if
 condition|(
 name|save_image
@@ -1227,30 +1194,15 @@ name|tsvals
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|STATUS_SUCCESS
-expr_stmt|;
 block|}
 else|else
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+block|{
+name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
+block|}
+block|}
 if|if
 condition|(
 name|export
@@ -1263,6 +1215,24 @@ name|image_ID
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
+block|}
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|status
+expr_stmt|;
 ifdef|#
 directive|ifdef
 name|PROFILE
@@ -1320,7 +1290,7 @@ name|tga_header
 modifier|*
 name|hdr
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -1330,10 +1300,10 @@ end_function_decl
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (char * filename)
+DECL|function|load_image (gchar * filename)
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -1371,7 +1341,7 @@ operator|!
 name|fp
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"TGA: can't open \"%s\"\n"
 argument_list|,
@@ -1442,7 +1412,7 @@ operator|!=
 literal|1
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"TGA: Cannot read footer from \"%s\"\n"
 argument_list|,
@@ -1530,7 +1500,7 @@ operator|!=
 literal|1
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"TGA: Cannot read header from \"%s\"\n"
 argument_list|,
@@ -1561,7 +1531,7 @@ name|SEEK_CUR
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"TGA: Cannot skip ID field in \"%s\"\n"
 argument_list|,
@@ -4354,10 +4324,10 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (char * filename,gint32 image_ID,gint32 drawable_ID)
+DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -4681,7 +4651,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"TGA: can't create \"%s\"\n"
 argument_list|,
@@ -4752,7 +4722,7 @@ operator|>
 literal|256
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"TGA: cannot handle colormap with more than 256 colors (got %d)\n"
 argument_list|,
@@ -5529,9 +5499,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|init_gtk ()
+DECL|function|init_gtk (void)
 name|init_gtk
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gchar
 modifier|*
@@ -5802,10 +5774,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|save_toggle_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|tsvals
@@ -5859,10 +5831,6 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/*  Save interface functions  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -5890,55 +5858,6 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|save_toggle_update (GtkWidget * widget,gpointer data)
-name|save_toggle_update
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|int
-modifier|*
-name|toggle_val
-decl_stmt|;
-name|toggle_val
-operator|=
-operator|(
-name|int
-operator|*
-operator|)
-name|data
-expr_stmt|;
-if|if
-condition|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|widget
-argument_list|)
-operator|->
-name|active
-condition|)
-operator|*
-name|toggle_val
-operator|=
-name|TRUE
-expr_stmt|;
-else|else
-operator|*
-name|toggle_val
-operator|=
-name|FALSE
 expr_stmt|;
 block|}
 end_function

@@ -137,7 +137,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb8cc880103
+DECL|enum|__anon2936b5370103
 typedef|typedef
 enum|enum
 block|{
@@ -201,7 +201,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb8cc880203
+DECL|enum|__anon2936b5370203
 typedef|typedef
 enum|enum
 block|{
@@ -241,7 +241,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb8cc880303
+DECL|enum|__anon2936b5370303
 typedef|typedef
 enum|enum
 block|{
@@ -273,7 +273,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb8cc880403
+DECL|enum|__anon2936b5370403
 typedef|typedef
 enum|enum
 block|{
@@ -301,7 +301,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb8cc880503
+DECL|enum|__anon2936b5370503
 typedef|typedef
 enum|enum
 block|{
@@ -329,7 +329,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb8cc880603
+DECL|enum|__anon2936b5370603
 typedef|typedef
 enum|enum
 block|{
@@ -351,7 +351,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb8cc880703
+DECL|enum|__anon2936b5370703
 typedef|typedef
 enum|enum
 block|{
@@ -387,7 +387,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb8cc880803
+DECL|enum|__anon2936b5370803
 typedef|typedef
 enum|enum
 block|{
@@ -407,7 +407,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb8cc880903
+DECL|enum|__anon2936b5370903
 typedef|typedef
 enum|enum
 block|{
@@ -455,7 +455,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb8cc880a03
+DECL|enum|__anon2936b5370a03
 typedef|typedef
 enum|enum
 block|{
@@ -479,7 +479,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb8cc880b03
+DECL|enum|__anon2936b5370b03
 typedef|typedef
 enum|enum
 block|{
@@ -540,7 +540,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bb8cc880c03
+DECL|enum|__anon2936b5370c03
 typedef|typedef
 enum|enum
 block|{
@@ -613,7 +613,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb8cc880d08
+DECL|struct|__anon2936b5370d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -675,18 +675,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -703,7 +703,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -715,7 +715,7 @@ specifier|static
 name|gint
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -740,16 +740,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -761,7 +761,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb8cc880e08
+DECL|struct|__anon2936b5370e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -776,7 +776,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb8cc880f08
+DECL|struct|__anon2936b5370f08
 block|{
 DECL|member|run
 name|gint
@@ -842,7 +842,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -891,7 +893,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_args
 init|=
 sizeof|sizeof
@@ -908,9 +910,10 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_return_vals
 init|=
+operator|(
 sizeof|sizeof
 argument_list|(
 name|load_return_vals
@@ -923,6 +926,7 @@ index|[
 literal|0
 index|]
 argument_list|)
+operator|)
 decl_stmt|;
 comment|/*    static GParamDef save_args[] = */
 comment|/*    { */
@@ -934,7 +938,7 @@ comment|/*      { PARAM_STRING, "raw_filename", "The name of the file to save th
 comment|/*      { PARAM_INT32, "compression", "Specify 0 for no compression, " */
 comment|/*        "1 for RLE, and 2 for LZ77" } */
 comment|/*    }; */
-comment|/*    static int nsave_args = sizeof (save_args) / sizeof (save_args[0]); */
+comment|/*    static gint nsave_args = sizeof (save_args) / sizeof (save_args[0]); */
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
@@ -982,56 +986,7 @@ argument_list|,
 literal|"0,string,Paint Shop Pro Image File\n\032"
 argument_list|)
 expr_stmt|;
-comment|/* Removed until Saving is implemented -- njl195@zepler.org   gimp_register_save_handler ("file_psp_save", "psp,tub", ""); */
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|save_toggle_update (GtkWidget * widget,gpointer data)
-name|save_toggle_update
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|int
-modifier|*
-name|toggle_val
-decl_stmt|;
-name|toggle_val
-operator|=
-operator|(
-name|int
-operator|*
-operator|)
-name|data
-expr_stmt|;
-if|if
-condition|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|widget
-argument_list|)
-operator|->
-name|active
-condition|)
-operator|*
-name|toggle_val
-operator|=
-name|TRUE
-expr_stmt|;
-else|else
-operator|*
-name|toggle_val
-operator|=
-name|FALSE
-expr_stmt|;
+comment|/* Removed until Saving is implemented -- njl195@zepler.org   gimp_register_save_handler       ("file_psp_save",                                     "psp,tub",                                     ""); */
 block|}
 end_function
 
@@ -1140,52 +1095,7 @@ name|dlg
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|toggle
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|frame
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|toggle_vbox
-decl_stmt|;
-name|GSList
-modifier|*
-name|group
-decl_stmt|;
-name|gint
-name|use_none
-init|=
-operator|(
-name|psvals
-operator|.
-name|compression
-operator|==
-name|PSP_COMP_NONE
-operator|)
-decl_stmt|;
-name|gint
-name|use_rle
-init|=
-operator|(
-name|psvals
-operator|.
-name|compression
-operator|==
-name|PSP_COMP_RLE
-operator|)
-decl_stmt|;
-name|gint
-name|use_lz77
-init|=
-operator|(
-name|psvals
-operator|.
-name|compression
-operator|==
-name|PSP_COMP_LZ77
-operator|)
 decl_stmt|;
 name|dlg
 operator|=
@@ -1267,22 +1177,66 @@ expr_stmt|;
 comment|/*  file save type  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_radio_group_new2
 argument_list|(
+name|TRUE
+argument_list|,
 name|_
 argument_list|(
 literal|"Data Compression"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
+argument_list|,
+name|gimp_radio_button_update
+argument_list|,
+operator|&
+name|psvals
+operator|.
+name|compression
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|psvals
+operator|.
+name|compression
+argument_list|,
+name|_
 argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
+literal|"None"
 argument_list|)
 argument_list|,
-name|GTK_SHADOW_ETCHED_IN
+operator|(
+name|gpointer
+operator|)
+name|PSP_COMP_NONE
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"RLE"
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|PSP_COMP_RLE
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"LZ77"
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|PSP_COMP_LZ77
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -1316,257 +1270,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|toggle_vbox
-operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|toggle_vbox
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|toggle_vbox
-argument_list|)
-expr_stmt|;
-name|group
-operator|=
-name|NULL
-expr_stmt|;
-name|toggle
-operator|=
-name|gtk_radio_button_new_with_label
-argument_list|(
-name|group
-argument_list|,
-name|_
-argument_list|(
-literal|"None"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|group
-operator|=
-name|gtk_radio_button_group
-argument_list|(
-name|GTK_RADIO_BUTTON
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|toggle_vbox
-argument_list|)
-argument_list|,
-name|toggle
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|,
-literal|"toggled"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|save_toggle_update
-argument_list|,
-operator|&
-name|use_none
-argument_list|)
-expr_stmt|;
-name|gtk_toggle_button_set_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|,
-name|use_none
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle
-argument_list|)
-expr_stmt|;
-name|toggle
-operator|=
-name|gtk_radio_button_new_with_label
-argument_list|(
-name|group
-argument_list|,
-name|_
-argument_list|(
-literal|"RLE"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|group
-operator|=
-name|gtk_radio_button_group
-argument_list|(
-name|GTK_RADIO_BUTTON
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|toggle_vbox
-argument_list|)
-argument_list|,
-name|toggle
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|,
-literal|"toggled"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|save_toggle_update
-argument_list|,
-operator|&
-name|use_rle
-argument_list|)
-expr_stmt|;
-name|gtk_toggle_button_set_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|,
-name|use_rle
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle
-argument_list|)
-expr_stmt|;
-name|toggle
-operator|=
-name|gtk_radio_button_new_with_label
-argument_list|(
-name|group
-argument_list|,
-name|_
-argument_list|(
-literal|"LZ77"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|group
-operator|=
-name|gtk_radio_button_group
-argument_list|(
-name|GTK_RADIO_BUTTON
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|toggle_vbox
-argument_list|)
-argument_list|,
-name|toggle
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|,
-literal|"toggled"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|save_toggle_update
-argument_list|,
-operator|&
-name|use_lz77
-argument_list|)
-expr_stmt|;
-name|gtk_toggle_button_set_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|,
-name|use_lz77
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle_vbox
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|frame
@@ -1583,34 +1286,6 @@ expr_stmt|;
 name|gdk_flush
 argument_list|()
 expr_stmt|;
-if|if
-condition|(
-name|use_none
-condition|)
-name|psvals
-operator|.
-name|compression
-operator|=
-name|PSP_COMP_NONE
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|use_rle
-condition|)
-name|psvals
-operator|.
-name|compression
-operator|=
-name|PSP_COMP_RLE
-expr_stmt|;
-else|else
-name|psvals
-operator|.
-name|compression
-operator|=
-name|PSP_COMP_LZ77
-expr_stmt|;
 return|return
 name|psint
 operator|.
@@ -1621,17 +1296,17 @@ end_function
 
 begin_function
 specifier|static
-name|char
+name|gchar
 modifier|*
-DECL|function|block_name (int id)
+DECL|function|block_name (gint id)
 name|block_name
 parameter_list|(
-name|int
+name|gint
 name|id
 parameter_list|)
 block|{
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|block_names
 index|[]
@@ -1707,7 +1382,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|read_block_header (FILE * f,guint32 * init_len,guint32 * total_len)
 name|read_block_header
 parameter_list|(
@@ -1936,7 +1611,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|read_general_image_attribute_block (FILE * f,guint init_len,guint total_len,PSPimage * ia)
 name|read_general_image_attribute_block
 parameter_list|(
@@ -1955,7 +1630,7 @@ modifier|*
 name|ia
 parameter_list|)
 block|{
-name|char
+name|gchar
 name|buf
 index|[
 literal|6
@@ -2495,18 +2170,18 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|try_fseek (FILE * f,long pos,int whence)
+name|gint
+DECL|function|try_fseek (FILE * f,glong pos,gint whence)
 name|try_fseek
 parameter_list|(
 name|FILE
 modifier|*
 name|f
 parameter_list|,
-name|long
+name|glong
 name|pos
 parameter_list|,
-name|int
+name|gint
 name|whence
 parameter_list|)
 block|{
@@ -2547,7 +2222,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|read_creator_block (FILE * f,gint image_ID,guint total_len,PSPimage * ia)
 name|read_creator_block
 parameter_list|(
@@ -3364,7 +3039,7 @@ end_function
 
 begin_function
 specifier|static
-name|char
+name|gchar
 modifier|*
 DECL|function|blend_mode_name (PSPLayerBlendModes mode)
 name|blend_mode_name
@@ -3374,7 +3049,7 @@ name|mode
 parameter_list|)
 block|{
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|blend_mode_names
 index|[]
@@ -3460,17 +3135,17 @@ end_function
 
 begin_function
 specifier|static
-name|char
+name|gchar
 modifier|*
-DECL|function|bitmap_type_name (int type)
+DECL|function|bitmap_type_name (gint type)
 name|bitmap_type_name
 parameter_list|(
-name|int
+name|gint
 name|type
 parameter_list|)
 block|{
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|bitmap_type_names
 index|[]
@@ -3534,12 +3209,12 @@ end_function
 
 begin_function
 specifier|static
-name|char
+name|gchar
 modifier|*
-DECL|function|channel_type_name (int type)
+DECL|function|channel_type_name (gint type)
 name|channel_type_name
 parameter_list|(
-name|int
+name|gint
 name|type
 parameter_list|)
 block|{
@@ -4309,7 +3984,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|read_layer_block (FILE * f,gint image_ID,guint total_len,PSPimage * ia)
 name|read_layer_block
 parameter_list|(
@@ -4328,7 +4003,7 @@ modifier|*
 name|ia
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|long
@@ -4338,7 +4013,7 @@ name|sub_block_start
 decl_stmt|,
 name|channel_start
 decl_stmt|;
-name|int
+name|gint
 name|sub_id
 decl_stmt|;
 name|guint32
@@ -6155,7 +5830,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|read_tube_block (FILE * f,gint image_ID,guint total_len,PSPimage * ia)
 name|read_tube_block
 parameter_list|(
@@ -6646,12 +6321,12 @@ end_function
 
 begin_function
 specifier|static
-name|char
+name|gchar
 modifier|*
-DECL|function|compression_name (int compression)
+DECL|function|compression_name (gint compression)
 name|compression_name
 parameter_list|(
-name|int
+name|gint
 name|compression
 parameter_list|)
 block|{
@@ -6691,10 +6366,10 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (char * filename)
+DECL|function|load_image (gchar * filename)
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -7391,10 +7066,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (char * filename,gint32 image_ID,gint32 drawable_ID)
+DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -7411,7 +7086,7 @@ literal|"PSP: Saving not implemented yet"
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 end_function
@@ -7419,21 +7094,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -7458,16 +7133,16 @@ name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
-name|GimpExportReturnType
-name|export
-init|=
-name|EXPORT_CANCEL
-decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
 name|gint32
 name|drawable_ID
+decl_stmt|;
+name|GimpExportReturnType
+name|export
+init|=
+name|EXPORT_CANCEL
 decl_stmt|;
 name|tile_height
 operator|=
@@ -7513,7 +7188,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
@@ -7556,17 +7231,6 @@ literal|2
 expr_stmt|;
 name|values
 index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|STATUS_SUCCESS
-expr_stmt|;
-name|values
-index|[
 literal|1
 index|]
 operator|.
@@ -7588,14 +7252,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
+name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
@@ -7686,11 +7343,6 @@ operator|==
 name|EXPORT_CANCEL
 condition|)
 block|{
-operator|*
-name|nreturn_vals
-operator|=
-literal|1
-expr_stmt|;
 name|values
 index|[
 literal|0
@@ -7700,7 +7352,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|STATUS_CANCEL
 expr_stmt|;
 return|return;
 block|}
@@ -7732,7 +7384,10 @@ operator|!
 name|save_dialog
 argument_list|()
 condition|)
-return|return;
+name|status
+operator|=
+name|STATUS_CANCEL
+expr_stmt|;
 break|break;
 case|case
 name|RUN_NONINTERACTIVE
@@ -7743,7 +7398,36 @@ condition|(
 name|nparams
 operator|!=
 literal|6
-operator|||
+condition|)
+block|{
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
+block|}
+else|else
+block|{
+name|psvals
+operator|.
+name|compression
+operator|=
+operator|(
+name|param
+index|[
+literal|5
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+operator|)
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+if|if
+condition|(
 name|param
 index|[
 literal|5
@@ -7769,32 +7453,6 @@ condition|)
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
-expr_stmt|;
-if|if
-condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
-condition|)
-block|{
-name|psvals
-operator|.
-name|compression
-operator|=
-operator|(
-name|param
-index|[
-literal|5
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-operator|)
-condition|?
-name|TRUE
-else|:
-name|FALSE
 expr_stmt|;
 block|}
 case|case
@@ -7851,15 +7509,32 @@ name|PSPSaveVals
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|status
-operator|=
-name|STATUS_SUCCESS
-expr_stmt|;
 block|}
 else|else
+block|{
 name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
+expr_stmt|;
+block|}
+block|}
+if|if
+condition|(
+name|export
+operator|==
+name|EXPORT_EXPORT
+condition|)
+name|gimp_image_delete
+argument_list|(
+name|image_ID
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
 expr_stmt|;
 block|}
 name|values
@@ -7873,18 +7548,6 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-if|if
-condition|(
-name|export
-operator|==
-name|EXPORT_EXPORT
-condition|)
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
