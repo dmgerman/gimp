@@ -223,7 +223,7 @@ value|256
 end_define
 
 begin_typedef
-DECL|struct|__anon2c60d3bc0108
+DECL|struct|__anon2c664dc70108
 typedef|typedef
 struct|struct
 block|{
@@ -238,7 +238,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c60d3bc0208
+DECL|struct|__anon2c664dc70208
 typedef|typedef
 struct|struct
 block|{
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c60d3bc0308
+DECL|struct|__anon2c664dc70308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -443,7 +443,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c60d3bc0408
+DECL|struct|__anon2c664dc70408
 typedef|typedef
 struct|struct
 block|{
@@ -4716,7 +4716,7 @@ name|RUN_INTERACTIVE
 argument_list|,
 name|_
 argument_list|(
-literal|"Generate Animate Preview failed\n"
+literal|"Generate Animated Preview failed\n"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -159,7 +159,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7552ae0103
+DECL|enum|__anon2c2a8c3c0103
 block|{
 DECL|enumerator|TEXT
 name|TEXT
@@ -2185,7 +2185,7 @@ name|_
 argument_list|(
 literal|"WARNING: GDynText is too old!\n"
 literal|"  You may loose some data by changing this text.\n"
-literal|"  A newer version is reqired to handle this layer.\n"
+literal|"  A newer version is required to handle this layer.\n"
 literal|"  Get it from %s\n"
 argument_list|)
 argument_list|,
