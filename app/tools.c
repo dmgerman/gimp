@@ -1132,7 +1132,7 @@ literal|"By Color Select"
 block|,
 literal|22
 block|,
-literal|"/Select/By Color"
+literal|"/Select/By Color..."
 block|,
 name|NULL
 block|,
