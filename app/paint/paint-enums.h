@@ -33,23 +33,18 @@ comment|/*< skip>*/
 end_comment
 
 begin_comment
-unit|are registered with the GType system.     If you want the enum to be skipped by both scripts, you have to use
+unit|are registered with the GType system.    If you want the enum to be skipped by both scripts, you have to use
 comment|/*< pdb-skip, skip>*/
 end_comment
 
-begin_comment
-unit|.      All enum values that are marked with
-comment|/*< skip>*/
-end_comment
-
 begin_endif
-unit|are skipped for    both targets.
+unit|.     The same syntax applies to enum values.
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*   * these enums that are registered with the type system  */
+comment|/*  * these enums that are registered with the type system  */
 end_comment
 
 begin_define
@@ -73,7 +68,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c31727a0103
+DECL|enum|__anon27de2a680103
 block|{
 DECL|enumerator|GIMP_IMAGE_CLONE
 name|GIMP_IMAGE_CLONE
@@ -110,7 +105,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c31727a0203
+DECL|enum|__anon27de2a680203
 block|{
 DECL|enumerator|GIMP_CLONE_ALIGN_NO
 name|GIMP_CLONE_ALIGN_NO
@@ -150,7 +145,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c31727a0303
+DECL|enum|__anon27de2a680303
 block|{
 DECL|enumerator|GIMP_DODGE
 name|GIMP_DODGE
@@ -186,7 +181,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c31727a0403
+DECL|enum|__anon27de2a680403
 block|{
 DECL|enumerator|GIMP_BLUR_CONVOLVE
 name|GIMP_BLUR_CONVOLVE
@@ -198,7 +193,7 @@ block|,
 comment|/*< desc="Sharpen">*/
 DECL|enumerator|GIMP_CUSTOM_CONVOLVE
 name|GIMP_CUSTOM_CONVOLVE
-comment|/*< skip>*/
+comment|/*< pdb-skip, skip>*/
 DECL|typedef|GimpConvolveType
 block|}
 name|GimpConvolveType
@@ -227,7 +222,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c31727a0503
+DECL|enum|__anon27de2a680503
 block|{
 DECL|enumerator|GIMP_INK_BLOB_TYPE_ELLIPSE
 name|GIMP_INK_BLOB_TYPE_ELLIPSE
@@ -264,7 +259,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c31727a0603
+DECL|enum|__anon27de2a680603
 block|{
 DECL|enumerator|GIMP_PAINT_CONSTANT
 name|GIMP_PAINT_CONSTANT
@@ -287,7 +282,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c31727a0703
+DECL|enum|__anon27de2a680703
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -297,7 +292,7 @@ name|GIMP_BRUSH_SOFT
 block|,
 DECL|enumerator|GIMP_BRUSH_PRESSURE
 name|GIMP_BRUSH_PRESSURE
-comment|/*< skip>*/
+comment|/*< pdb-skip, skip>*/
 DECL|typedef|GimpBrushApplicationMode
 block|}
 name|GimpBrushApplicationMode

@@ -556,6 +556,11 @@ specifier|const
 name|GimpRGB
 modifier|*
 name|color
+parameter_list|,
+specifier|const
+name|GimpPattern
+modifier|*
+name|pattern
 parameter_list|)
 function_decl|;
 end_function_decl

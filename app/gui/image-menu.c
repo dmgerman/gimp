@@ -957,7 +957,7 @@ block|,
 operator|(
 name|guint
 operator|)
-name|GIMP_FG_BUCKET_FILL
+name|GIMP_FOREGROUND_FILL
 block|,
 literal|"<StockItem>"
 block|,
@@ -985,7 +985,7 @@ block|,
 operator|(
 name|guint
 operator|)
-name|GIMP_BG_BUCKET_FILL
+name|GIMP_BACKGROUND_FILL
 block|,
 literal|"<StockItem>"
 block|,
@@ -1013,7 +1013,7 @@ block|,
 operator|(
 name|guint
 operator|)
-name|GIMP_PATTERN_BUCKET_FILL
+name|GIMP_PATTERN_FILL
 block|,
 literal|"<StockItem>"
 block|,

@@ -1037,7 +1037,7 @@ name|GIMP_FOREGROUND_FILL
 operator|||
 name|fill_type
 operator|>
-name|GIMP_NO_FILL
+name|GIMP_PATTERN_FILL
 condition|)
 name|success
 operator|=
@@ -1106,7 +1106,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"fill_type"
 block|,
-literal|"The type of fill: GIMP_FOREGROUND_FILL (0), GIMP_BACKGROUND_FILL (1), GIMP_WHITE_FILL (2), GIMP_TRANSPARENT_FILL (3), GIMP_NO_FILL (4)"
+literal|"The type of fill: GIMP_FOREGROUND_FILL (0), GIMP_BACKGROUND_FILL (1), GIMP_WHITE_FILL (2), GIMP_TRANSPARENT_FILL (3), GIMP_PATTERN_FILL (4)"
 block|}
 block|}
 decl_stmt|;

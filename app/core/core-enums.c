@@ -910,6 +910,17 @@ literal|"transparent-fill"
 block|}
 block|,
 block|{
+name|GIMP_PATTERN_FILL
+block|,
+name|N_
+argument_list|(
+literal|"Pattern"
+argument_list|)
+block|,
+literal|"pattern-fill"
+block|}
+block|,
+block|{
 name|GIMP_NO_FILL
 block|,
 name|N_

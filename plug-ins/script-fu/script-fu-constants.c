@@ -805,7 +805,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"NO-FILL"
+literal|"PATTERN-FILL"
 argument_list|)
 argument_list|,
 name|flocons

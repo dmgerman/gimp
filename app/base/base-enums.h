@@ -33,23 +33,18 @@ comment|/*< skip>*/
 end_comment
 
 begin_comment
-unit|are registered with the GType system.     If you want the enum to be skipped by both scripts, you have to use
+unit|are registered with the GType system.    If you want the enum to be skipped by both scripts, you have to use
 comment|/*< pdb-skip, skip>*/
 end_comment
 
-begin_comment
-unit|.      All enum values that are marked with
-comment|/*< skip>*/
-end_comment
-
 begin_endif
-unit|are skipped for    both targets.
+unit|.     The same syntax applies to enum values.
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*   * these enums that are registered with the type system  */
+comment|/*  * these enums that are registered with the type system  */
 end_comment
 
 begin_define
@@ -74,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c3a741b0103
+DECL|enum|__anon295ce2370103
 block|{
 DECL|enumerator|GIMP_SMALL_CHECKS
 name|GIMP_SMALL_CHECKS
@@ -121,7 +116,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c3a741b0203
+DECL|enum|__anon295ce2370203
 block|{
 DECL|enumerator|GIMP_LIGHT_CHECKS
 name|GIMP_LIGHT_CHECKS
@@ -186,7 +181,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c3a741b0303
+DECL|enum|__anon295ce2370303
 block|{
 DECL|enumerator|GIMP_CURVE_SMOOTH
 name|GIMP_CURVE_SMOOTH
@@ -223,7 +218,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c3a741b0403
+DECL|enum|__anon295ce2370403
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -282,7 +277,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c3a741b0503
+DECL|enum|__anon295ce2370503
 block|{
 DECL|enumerator|GIMP_INTERPOLATION_NONE
 name|GIMP_INTERPOLATION_NONE
@@ -322,7 +317,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3a741b0603
+DECL|enum|__anon295ce2370603
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -396,14 +391,14 @@ block|,
 DECL|enumerator|GIMP_ERASE_MODE
 name|GIMP_ERASE_MODE
 block|,
-comment|/*< skip>*/
+comment|/*< pdb-skip, skip>*/
 DECL|enumerator|GIMP_REPLACE_MODE
 name|GIMP_REPLACE_MODE
 block|,
-comment|/*< skip>*/
+comment|/*< pdb-skip, skip>*/
 DECL|enumerator|GIMP_ANTI_ERASE_MODE
 name|GIMP_ANTI_ERASE_MODE
-comment|/*< skip>*/
+comment|/*< pdb-skip, skip>*/
 DECL|typedef|GimpLayerModeEffects
 block|}
 name|GimpLayerModeEffects
@@ -431,7 +426,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3a741b0703
+DECL|enum|__anon295ce2370703
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS
@@ -458,7 +453,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c3a741b0803
+DECL|enum|__anon295ce2370803
 block|{
 DECL|enumerator|GIMP_NORMAL_CONVOL
 name|GIMP_NORMAL_CONVOL
@@ -481,7 +476,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c3a741b0903
+DECL|enum|__anon295ce2370903
 block|{
 DECL|enumerator|GIMP_VALUE_LUT
 name|GIMP_VALUE_LUT
@@ -502,7 +497,7 @@ DECL|enumerator|GIMP_GRAY_LUT
 name|GIMP_GRAY_LUT
 init|=
 literal|0
-comment|/*< skip>*/
+comment|/*< pdb-skip, skip>*/
 DECL|typedef|GimpChannelLutType
 block|}
 name|GimpChannelLutType
@@ -513,7 +508,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c3a741b0a03
+DECL|enum|__anon295ce2370a03
 block|{
 DECL|enumerator|GIMP_ALL_HUES
 name|GIMP_ALL_HUES

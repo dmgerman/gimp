@@ -1770,6 +1770,8 @@ operator|->
 name|text
 operator|->
 name|color
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|bitmap
