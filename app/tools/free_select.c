@@ -615,7 +615,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 default|default:
-comment|/*  fallthrough  */
+break|break;
 block|}
 name|add_point
 argument_list|(

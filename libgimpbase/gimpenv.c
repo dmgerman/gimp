@@ -1302,6 +1302,9 @@ decl_stmt|;
 if|if
 condition|(
 name|g_path_is_absolute
+argument_list|(
+name|dir
+argument_list|)
 condition|)
 name|p
 operator|=
