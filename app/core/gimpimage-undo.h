@@ -105,8 +105,8 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gboolean
-name|dirties_image
+name|GimpDirtyMask
+name|dirty_mask
 parameter_list|,
 name|GimpUndoPopFunc
 name|pop_func

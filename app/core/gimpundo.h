@@ -162,11 +162,11 @@ name|gint64
 name|size
 decl_stmt|;
 comment|/* size of undo item                  */
-DECL|member|dirties_image
-name|gboolean
-name|dirties_image
+DECL|member|dirty_mask
+name|GimpDirtyMask
+name|dirty_mask
 decl_stmt|;
-comment|/* TRUE if undo mutates image         */
+comment|/* affected parts of the image        */
 DECL|member|pop_func
 name|GimpUndoPopFunc
 name|pop_func

@@ -150,6 +150,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpselection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"text/gimptextlayer.h"
 end_include
 
@@ -293,7 +299,7 @@ name|GIMP_UNDO_IMAGE_TYPE
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_IMAGE
 argument_list|,
 name|undo_pop_image_type
 argument_list|,
@@ -572,7 +578,9 @@ name|GIMP_UNDO_IMAGE_SIZE
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_IMAGE
+operator||
+name|GIMP_DIRTY_IMAGE_SIZE
 argument_list|,
 name|undo_pop_image_size
 argument_list|,
@@ -899,7 +907,7 @@ name|GIMP_UNDO_IMAGE_RESOLUTION
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_IMAGE
 argument_list|,
 name|undo_pop_image_resolution
 argument_list|,
@@ -1286,7 +1294,7 @@ name|GIMP_UNDO_IMAGE_GRID
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_IMAGE_META
 argument_list|,
 name|undo_pop_image_grid
 argument_list|,
@@ -1590,7 +1598,7 @@ name|GIMP_UNDO_IMAGE_GUIDE
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_IMAGE_META
 argument_list|,
 name|undo_pop_image_guide
 argument_list|,
@@ -2004,7 +2012,7 @@ name|GIMP_UNDO_IMAGE_COLORMAP
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_IMAGE
 argument_list|,
 name|undo_pop_image_colormap
 argument_list|,
@@ -2484,7 +2492,9 @@ name|GIMP_UNDO_DRAWABLE
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_ITEM
+operator||
+name|GIMP_DIRTY_DRAWABLE
 argument_list|,
 name|undo_pop_drawable
 argument_list|,
@@ -2847,7 +2857,9 @@ name|GIMP_UNDO_DRAWABLE_MOD
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_ITEM
+operator||
+name|GIMP_DIRTY_DRAWABLE
 argument_list|,
 name|undo_pop_drawable_mod
 argument_list|,
@@ -3409,7 +3421,16 @@ name|GIMP_UNDO_MASK
 argument_list|,
 name|undo_desc
 argument_list|,
-name|FALSE
+name|GIMP_IS_SELECTION
+argument_list|(
+name|mask
+argument_list|)
+condition|?
+name|GIMP_DIRTY_SELECTION
+else|:
+name|GIMP_DIRTY_ITEM
+operator||
+name|GIMP_DIRTY_DRAWABLE
 argument_list|,
 name|undo_pop_mask
 argument_list|,
@@ -4187,7 +4208,7 @@ name|GIMP_UNDO_ITEM_RENAME
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_ITEM_META
 argument_list|,
 name|undo_pop_item_rename
 argument_list|,
@@ -4513,7 +4534,18 @@ name|GIMP_UNDO_ITEM_DISPLACE
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_IS_DRAWABLE
+argument_list|(
+name|item
+argument_list|)
+condition|?
+name|GIMP_DIRTY_ITEM
+operator||
+name|GIMP_DIRTY_DRAWABLE
+else|:
+name|GIMP_DIRTY_ITEM
+operator||
+name|GIMP_DIRTY_VECTORS
 argument_list|,
 name|undo_pop_item_displace
 argument_list|,
@@ -4812,7 +4844,7 @@ name|GIMP_UNDO_ITEM_VISIBILITY
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_ITEM_META
 argument_list|,
 name|undo_pop_item_visibility
 argument_list|,
@@ -5084,7 +5116,7 @@ name|GIMP_UNDO_ITEM_LINKED
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_ITEM_META
 argument_list|,
 name|undo_pop_item_linked
 argument_list|,
@@ -5547,7 +5579,7 @@ name|type
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_IMAGE_STRUCTURE
 argument_list|,
 name|undo_pop_layer
 argument_list|,
@@ -6302,7 +6334,7 @@ name|type
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_IMAGE_STRUCTURE
 argument_list|,
 name|undo_pop_layer_mask
 argument_list|,
@@ -6659,7 +6691,7 @@ name|GIMP_UNDO_LAYER_REPOSITION
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_IMAGE_STRUCTURE
 argument_list|,
 name|undo_pop_layer_reposition
 argument_list|,
@@ -7085,7 +7117,7 @@ name|undo_type
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_ITEM_META
 argument_list|,
 name|undo_pop_layer_properties
 argument_list|,
@@ -7407,7 +7439,9 @@ name|GIMP_UNDO_TEXT_LAYER
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_ITEM
+operator||
+name|GIMP_DIRTY_DRAWABLE
 argument_list|,
 name|NULL
 argument_list|,
@@ -7572,7 +7606,7 @@ name|GIMP_UNDO_TEXT_LAYER_MODIFIED
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_ITEM_META
 argument_list|,
 name|undo_pop_text_layer_modified
 argument_list|,
@@ -8054,7 +8088,7 @@ name|type
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_IMAGE_STRUCTURE
 argument_list|,
 name|undo_pop_channel
 argument_list|,
@@ -8488,7 +8522,7 @@ name|GIMP_UNDO_CHANNEL_REPOSITION
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_IMAGE_STRUCTURE
 argument_list|,
 name|undo_pop_channel_reposition
 argument_list|,
@@ -8775,7 +8809,9 @@ name|GIMP_UNDO_CHANNEL_COLOR
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_ITEM
+operator||
+name|GIMP_DIRTY_DRAWABLE
 argument_list|,
 name|undo_pop_channel_color
 argument_list|,
@@ -9244,7 +9280,7 @@ name|type
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_IMAGE_STRUCTURE
 argument_list|,
 name|undo_pop_vectors
 argument_list|,
@@ -9706,7 +9742,9 @@ name|GIMP_UNDO_VECTORS_MOD
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_ITEM
+operator||
+name|GIMP_DIRTY_VECTORS
 argument_list|,
 name|undo_pop_vectors_mod
 argument_list|,
@@ -10115,7 +10153,7 @@ name|GIMP_UNDO_VECTORS_REPOSITION
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_IMAGE_STRUCTURE
 argument_list|,
 name|undo_pop_vectors_reposition
 argument_list|,
@@ -10425,7 +10463,7 @@ name|GIMP_UNDO_FS_TO_LAYER
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_IMAGE_STRUCTURE
 argument_list|,
 name|undo_pop_fs_to_layer
 argument_list|,
@@ -10904,7 +10942,7 @@ name|GIMP_UNDO_FS_RIGOR
 argument_list|,
 name|undo_desc
 argument_list|,
-name|FALSE
+name|GIMP_DIRTY_NONE
 argument_list|,
 name|undo_pop_fs_rigor
 argument_list|,
@@ -11101,7 +11139,7 @@ name|GIMP_UNDO_FS_RELAX
 argument_list|,
 name|undo_desc
 argument_list|,
-name|FALSE
+name|GIMP_DIRTY_NONE
 argument_list|,
 name|undo_pop_fs_relax
 argument_list|,
@@ -11346,7 +11384,7 @@ name|GIMP_UNDO_PARASITE_ATTACH
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_IMAGE_META
 argument_list|,
 name|undo_pop_parasite
 argument_list|,
@@ -11474,7 +11512,7 @@ name|GIMP_UNDO_PARASITE_REMOVE
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_IMAGE_META
 argument_list|,
 name|undo_pop_parasite
 argument_list|,
@@ -11601,7 +11639,7 @@ name|GIMP_UNDO_PARASITE_ATTACH
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_ITEM_META
 argument_list|,
 name|undo_pop_parasite
 argument_list|,
@@ -11733,7 +11771,7 @@ name|GIMP_UNDO_PARASITE_REMOVE
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_ITEM_META
 argument_list|,
 name|undo_pop_parasite
 argument_list|,
@@ -12149,7 +12187,7 @@ name|GIMP_UNDO_CANT
 argument_list|,
 name|undo_desc
 argument_list|,
-name|TRUE
+name|GIMP_DIRTY_ALL
 argument_list|,
 name|undo_pop_cantundo
 argument_list|,

@@ -144,6 +144,11 @@ name|gboolean
 name|preserve
 decl_stmt|;
 comment|/*  Preserve this tool across drawable   *                                       *  changes                              */
+DECL|member|dirty_mask
+name|GimpDirtyMask
+name|dirty_mask
+decl_stmt|;
+comment|/*  if preserve is FALSE, cancel the     *                                       *  tool on these events                 */
 DECL|member|handle_empty_image
 name|gboolean
 name|handle_empty_image
@@ -317,6 +322,31 @@ end_function_decl
 begin_function_decl
 name|gboolean
 name|gimp_tool_control_preserve
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_tool_control_set_dirty_mask
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
+parameter_list|,
+name|GimpDirtyMask
+name|dirty_mask
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpDirtyMask
+name|gimp_tool_control_dirty_mask
 parameter_list|(
 name|GimpToolControl
 modifier|*

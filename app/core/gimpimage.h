@@ -682,6 +682,9 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpDirtyMask
+name|dirty_mask
 parameter_list|)
 function_decl|;
 DECL|member|dirty
@@ -694,6 +697,9 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpDirtyMask
+name|dirty_mask
 parameter_list|)
 function_decl|;
 DECL|member|update
@@ -749,18 +755,6 @@ name|gimage
 parameter_list|,
 name|gint
 name|color_index
-parameter_list|)
-function_decl|;
-DECL|member|undo_start
-name|void
-function_decl|(
-modifier|*
-name|undo_start
-function_decl|)
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|)
 function_decl|;
 DECL|member|undo_event
@@ -1401,17 +1395,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_undo_start
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_image_undo_event
 parameter_list|(
 name|GimpImage
@@ -1435,6 +1418,9 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpDirtyMask
+name|dirty_mask
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1446,6 +1432,9 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpDirtyMask
+name|dirty_mask
 parameter_list|)
 function_decl|;
 end_function_decl

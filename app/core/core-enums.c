@@ -2593,17 +2593,6 @@ literal|"group-image-rotate"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_GROUP_IMAGE_CONVERT
-block|,
-name|N_
-argument_list|(
-literal|"Convert image"
-argument_list|)
-block|,
-literal|"group-image-convert"
-block|}
-block|,
-block|{
 name|GIMP_UNDO_GROUP_IMAGE_CROP
 block|,
 name|N_
@@ -2612,6 +2601,17 @@ literal|"Crop image"
 argument_list|)
 block|,
 literal|"group-image-crop"
+block|}
+block|,
+block|{
+name|GIMP_UNDO_GROUP_IMAGE_CONVERT
+block|,
+name|N_
+argument_list|(
+literal|"Convert image"
+argument_list|)
+block|,
+literal|"group-image-convert"
 block|}
 block|,
 block|{
@@ -3426,6 +3426,14 @@ block|,
 literal|"GIMP_DIRTY_IMAGE"
 block|,
 literal|"image"
+block|}
+block|,
+block|{
+name|GIMP_DIRTY_IMAGE_SIZE
+block|,
+literal|"GIMP_DIRTY_IMAGE_SIZE"
+block|,
+literal|"image-size"
 block|}
 block|,
 block|{

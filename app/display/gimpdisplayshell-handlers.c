@@ -138,6 +138,9 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+name|GimpDirtyMask
+name|dirty_mask
+parameter_list|,
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1441,12 +1444,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_clean_dirty_handler (GimpImage * gimage,GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_clean_dirty_handler (GimpImage * gimage,GimpDirtyMask dirty_mask,GimpDisplayShell * shell)
 name|gimp_display_shell_clean_dirty_handler
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpDirtyMask
+name|dirty_mask
 parameter_list|,
 name|GimpDisplayShell
 modifier|*

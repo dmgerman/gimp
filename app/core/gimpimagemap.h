@@ -165,9 +165,6 @@ name|GimpImageMap
 modifier|*
 name|gimp_image_map_new
 parameter_list|(
-name|gboolean
-name|interactive
-parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable

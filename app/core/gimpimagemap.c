@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9606b00103
+DECL|enum|__anon2bede5810103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -96,10 +96,6 @@ block|{
 DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
-decl_stmt|;
-DECL|member|interactive
-name|gboolean
-name|interactive
 decl_stmt|;
 DECL|member|drawable
 name|GimpDrawable
@@ -935,12 +931,9 @@ end_function
 begin_function
 name|GimpImageMap
 modifier|*
-DECL|function|gimp_image_map_new (gboolean interactive,GimpDrawable * drawable,const gchar * undo_desc)
+DECL|function|gimp_image_map_new (GimpDrawable * drawable,const gchar * undo_desc)
 name|gimp_image_map_new
 parameter_list|(
-name|gboolean
-name|interactive
-parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1000,16 +993,6 @@ argument_list|)
 expr_stmt|;
 name|image_map
 operator|->
-name|interactive
-operator|=
-name|interactive
-condition|?
-name|TRUE
-else|:
-name|FALSE
-expr_stmt|;
-name|image_map
-operator|->
 name|drawable
 operator|=
 name|drawable
@@ -1021,12 +1004,6 @@ operator|=
 name|g_strdup
 argument_list|(
 name|undo_desc
-argument_list|)
-expr_stmt|;
-comment|/* Interactive tools based on image_map disable the undo stack    * to avert any unintented undo interaction through the UI    */
-name|gimp_image_undo_freeze
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 return|return
@@ -1678,12 +1655,6 @@ operator|!
 name|gimage
 condition|)
 return|return;
-comment|/* Interactive phase ends: we can commit an undo frame now */
-name|gimp_image_undo_thaw
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 comment|/*  Register an undo step  */
 if|if
 condition|(
@@ -1971,17 +1942,12 @@ operator|->
 name|undo_tiles
 argument_list|)
 expr_stmt|;
-name|gimp_image_undo_thaw
-argument_list|(
-name|gimage
-argument_list|)
+name|image_map
+operator|->
+name|undo_tiles
+operator|=
+name|NULL
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|gimp_display_shell_set_menu_sensitivity (GIMP_DISPLAY_SHELL (image_map->gdisp->shell),                                                    image_map->gdisp->gimage->gimp);
-endif|#
-directive|endif
 name|g_object_unref
 argument_list|(
 name|image_map
@@ -2075,11 +2041,6 @@ return|return;
 name|gimp_image_map_clear
 argument_list|(
 name|image_map
-argument_list|)
-expr_stmt|;
-name|gimp_image_undo_thaw
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -2265,12 +2226,6 @@ argument_list|,
 name|h
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|image_map
-operator|->
-name|interactive
-condition|)
 name|g_signal_emit
 argument_list|(
 name|image_map
@@ -2309,12 +2264,6 @@ name|idle_id
 operator|=
 literal|0
 expr_stmt|;
-if|if
-condition|(
-name|image_map
-operator|->
-name|interactive
-condition|)
 name|gimp_image_flush
 argument_list|(
 name|gimage

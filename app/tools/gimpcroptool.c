@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c52c380103
+DECL|enum|__anon2b2b18a20103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -932,6 +932,15 @@ operator|->
 name|control
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_tool_control_set_dirty_mask
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|GIMP_DIRTY_IMAGE_SIZE
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_tool_cursor

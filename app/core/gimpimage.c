@@ -270,7 +270,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0c0add0103
+DECL|enum|__anon278addcb0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -326,9 +326,6 @@ block|,
 DECL|enumerator|COLORMAP_CHANGED
 name|COLORMAP_CHANGED
 block|,
-DECL|enumerator|UNDO_START
-name|UNDO_START
-block|,
 DECL|enumerator|UNDO_EVENT
 name|UNDO_EVENT
 block|,
@@ -343,7 +340,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0c0add0203
+DECL|enum|__anon278addcb0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1527,11 +1524,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|gimp_marshal_VOID__FLAGS
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
-literal|0
+literal|1
+argument_list|,
+name|GIMP_TYPE_DIRTY_MASK
 argument_list|)
 expr_stmt|;
 name|gimp_image_signals
@@ -1561,11 +1560,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|gimp_marshal_VOID__FLAGS
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
-literal|0
+literal|1
+argument_list|,
+name|GIMP_TYPE_DIRTY_MASK
 argument_list|)
 expr_stmt|;
 name|gimp_image_signals
@@ -1680,40 +1681,6 @@ argument_list|,
 literal|1
 argument_list|,
 name|G_TYPE_INT
-argument_list|)
-expr_stmt|;
-name|gimp_image_signals
-index|[
-name|UNDO_START
-index|]
-operator|=
-name|g_signal_new
-argument_list|(
-literal|"undo_start"
-argument_list|,
-name|G_TYPE_FROM_CLASS
-argument_list|(
-name|klass
-argument_list|)
-argument_list|,
-name|G_SIGNAL_RUN_FIRST
-argument_list|,
-name|G_STRUCT_OFFSET
-argument_list|(
-name|GimpImageClass
-argument_list|,
-name|undo_start
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|gimp_marshal_VOID__VOID
-argument_list|,
-name|G_TYPE_NONE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_image_signals
@@ -1961,12 +1928,6 @@ operator|->
 name|colormap_changed
 operator|=
 name|gimp_image_real_colormap_changed
-expr_stmt|;
-name|klass
-operator|->
-name|undo_start
-operator|=
-name|NULL
 expr_stmt|;
 name|klass
 operator|->
@@ -7123,39 +7084,6 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_undo_start (GimpImage * gimage)
-name|gimp_image_undo_start
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_IMAGE
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_signal_emit
-argument_list|(
-name|gimage
-argument_list|,
-name|gimp_image_signals
-index|[
-name|UNDO_START
-index|]
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
 DECL|function|gimp_image_undo_event (GimpImage * gimage,GimpUndoEvent event,GimpUndo * undo)
 name|gimp_image_undo_event
 parameter_list|(
@@ -7236,12 +7164,15 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_image_dirty (GimpImage * gimage)
+DECL|function|gimp_image_dirty (GimpImage * gimage,GimpDirtyMask dirty_mask)
 name|gimp_image_dirty
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpDirtyMask
+name|dirty_mask
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -7269,6 +7200,8 @@ name|DIRTY
 index|]
 argument_list|,
 literal|0
+argument_list|,
+name|dirty_mask
 argument_list|)
 expr_stmt|;
 name|TRC
@@ -7298,12 +7231,15 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_clean (GimpImage * gimage)
+DECL|function|gimp_image_clean (GimpImage * gimage,GimpDirtyMask dirty_mask)
 name|gimp_image_clean
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpDirtyMask
+name|dirty_mask
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -7331,6 +7267,8 @@ name|CLEAN
 index|]
 argument_list|,
 literal|0
+argument_list|,
+name|dirty_mask
 argument_list|)
 expr_stmt|;
 name|TRC
