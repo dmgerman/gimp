@@ -2313,6 +2313,8 @@ argument_list|,
 name|n_points
 argument_list|,
 name|points
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_free
