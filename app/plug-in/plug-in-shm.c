@@ -5581,7 +5581,7 @@ name|proc_def
 operator|->
 name|image_types_val
 operator|&
-name|RGB_IMAGE
+name|RGB_IMAGE_OK
 expr_stmt|;
 break|break;
 case|case
@@ -5593,7 +5593,7 @@ name|proc_def
 operator|->
 name|image_types_val
 operator|&
-name|RGBA_IMAGE
+name|RGBA_IMAGE_OK
 expr_stmt|;
 break|break;
 case|case
@@ -5605,7 +5605,7 @@ name|proc_def
 operator|->
 name|image_types_val
 operator|&
-name|GRAY_IMAGE
+name|GRAY_IMAGE_OK
 expr_stmt|;
 break|break;
 case|case
@@ -5617,7 +5617,7 @@ name|proc_def
 operator|->
 name|image_types_val
 operator|&
-name|GRAYA_IMAGE
+name|GRAYA_IMAGE_OK
 expr_stmt|;
 break|break;
 case|case
@@ -5629,7 +5629,7 @@ name|proc_def
 operator|->
 name|image_types_val
 operator|&
-name|INDEXED_IMAGE
+name|INDEXED_IMAGE_OK
 expr_stmt|;
 break|break;
 case|case
@@ -5641,7 +5641,7 @@ name|proc_def
 operator|->
 name|image_types_val
 operator|&
-name|INDEXEDA_IMAGE
+name|INDEXEDA_IMAGE_OK
 expr_stmt|;
 break|break;
 default|default:
@@ -14633,11 +14633,11 @@ name|image_types
 condition|)
 return|return
 operator|(
-name|RGB_IMAGE
+name|RGB_IMAGE_OK
 operator||
-name|GRAY_IMAGE
+name|GRAY_IMAGE_OK
 operator||
-name|INDEXED_IMAGE
+name|INDEXED_IMAGE_OK
 operator|)
 return|;
 name|types
@@ -14703,7 +14703,7 @@ condition|)
 block|{
 name|types
 operator||=
-name|RGBA_IMAGE
+name|RGBA_IMAGE_OK
 expr_stmt|;
 name|image_types
 operator|+=
@@ -14727,9 +14727,9 @@ condition|)
 block|{
 name|types
 operator||=
-name|RGB_IMAGE
+name|RGB_IMAGE_OK
 operator||
-name|RGBA_IMAGE
+name|RGBA_IMAGE_OK
 expr_stmt|;
 name|image_types
 operator|+=
@@ -14753,7 +14753,7 @@ condition|)
 block|{
 name|types
 operator||=
-name|RGB_IMAGE
+name|RGB_IMAGE_OK
 expr_stmt|;
 name|image_types
 operator|+=
@@ -14777,7 +14777,7 @@ condition|)
 block|{
 name|types
 operator||=
-name|GRAYA_IMAGE
+name|GRAYA_IMAGE_OK
 expr_stmt|;
 name|image_types
 operator|+=
@@ -14801,9 +14801,9 @@ condition|)
 block|{
 name|types
 operator||=
-name|GRAY_IMAGE
+name|GRAY_IMAGE_OK
 operator||
-name|GRAYA_IMAGE
+name|GRAYA_IMAGE_OK
 expr_stmt|;
 name|image_types
 operator|+=
@@ -14827,7 +14827,7 @@ condition|)
 block|{
 name|types
 operator||=
-name|GRAY_IMAGE
+name|GRAY_IMAGE_OK
 expr_stmt|;
 name|image_types
 operator|+=
@@ -14851,7 +14851,7 @@ condition|)
 block|{
 name|types
 operator||=
-name|INDEXEDA_IMAGE
+name|INDEXEDA_IMAGE_OK
 expr_stmt|;
 name|image_types
 operator|+=
@@ -14875,9 +14875,9 @@ condition|)
 block|{
 name|types
 operator||=
-name|INDEXED_IMAGE
+name|INDEXED_IMAGE_OK
 operator||
-name|INDEXEDA_IMAGE
+name|INDEXEDA_IMAGE_OK
 expr_stmt|;
 name|image_types
 operator|+=
@@ -14901,7 +14901,7 @@ condition|)
 block|{
 name|types
 operator||=
-name|INDEXED_IMAGE
+name|INDEXED_IMAGE_OK
 expr_stmt|;
 name|image_types
 operator|+=

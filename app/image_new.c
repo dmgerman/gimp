@@ -785,7 +785,7 @@ break|break;
 default|default:
 name|type
 operator|=
-name|RGB_IMAGE
+name|RGB_GIMAGE
 expr_stmt|;
 break|break;
 block|}
