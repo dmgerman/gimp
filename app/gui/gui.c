@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"color-select.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"devices.h"
 end_include
 
@@ -223,6 +229,18 @@ expr_stmt|;
 name|session_init
 argument_list|()
 expr_stmt|;
+comment|/*  tooltips  */
+name|gimp_help_init
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|show_tool_tips
+condition|)
+name|gimp_help_disable_tooltips
+argument_list|()
+expr_stmt|;
 name|gimp_dialog_factory_dialog_new
 argument_list|(
 name|global_dialog_factory
@@ -347,12 +365,39 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|color_select_init
+argument_list|()
+expr_stmt|;
 name|devices_restore
 argument_list|()
 expr_stmt|;
 name|session_restore
 argument_list|()
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gui_post_init (void)
+name|gui_post_init
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|show_tips
+condition|)
+block|{
+name|gimp_dialog_factory_dialog_new
+argument_list|(
+name|global_dialog_factory
+argument_list|,
+literal|"gimp:tips-dialog"
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -419,6 +464,9 @@ name|tool_options_dialog_free
 argument_list|()
 expr_stmt|;
 name|toolbox_free
+argument_list|()
+expr_stmt|;
+name|gimp_help_free
 argument_list|()
 expr_stmt|;
 block|}

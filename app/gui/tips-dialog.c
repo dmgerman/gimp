@@ -377,7 +377,7 @@ literal|"delete_event"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|tips_dialog_destroy
+name|gtk_widget_destroy
 argument_list|)
 argument_list|,
 name|NULL
@@ -394,11 +394,10 @@ literal|"destroy"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gtk_widget_destroyed
+name|tips_dialog_destroy
 argument_list|)
 argument_list|,
-operator|&
-name|tips_dialog
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* destroy the tips window if the mainlevel gtk_main() function is left */
@@ -775,7 +774,7 @@ argument_list|,
 name|button
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|gtk_signal_connect_object
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -786,10 +785,13 @@ literal|"clicked"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|tips_dialog_destroy
+name|gtk_widget_destroy
 argument_list|)
 argument_list|,
-name|NULL
+name|GTK_OBJECT
+argument_list|(
+name|tips_dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -995,10 +997,9 @@ init|=
 name|NULL
 decl_stmt|;
 comment|/* options that should be commented out */
-name|gtk_widget_destroy
-argument_list|(
 name|tips_dialog
-argument_list|)
+operator|=
+name|NULL
 expr_stmt|;
 comment|/* the last-shown-tip is now saved in sessionrc */
 if|if

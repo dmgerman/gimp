@@ -210,12 +210,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/tips-dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -472,17 +466,16 @@ block|}
 name|batch_init
 argument_list|()
 expr_stmt|;
-comment|/* Handle showing dialogs with gdk_quit_adds here  */
 if|if
 condition|(
 operator|!
 name|no_interface
-operator|&&
-name|show_tips
 condition|)
-name|tips_dialog_create
+block|{
+name|gui_post_init
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -925,10 +918,6 @@ name|color_transfer_init
 argument_list|()
 expr_stmt|;
 name|paint_funcs_setup
-argument_list|()
-expr_stmt|;
-comment|/* register internal color selectors */
-name|color_select_init
 argument_list|()
 expr_stmt|;
 if|if

@@ -2035,7 +2035,7 @@ name|data
 parameter_list|)
 block|{
 specifier|static
-name|BrushEditGeneratedWindow
+name|BrushEditor
 modifier|*
 name|brush_editor_dialog
 init|=
@@ -2068,11 +2068,11 @@ condition|)
 block|{
 name|brush_editor_dialog
 operator|=
-name|brush_edit_generated_new
+name|brush_editor_new
 argument_list|()
 expr_stmt|;
 block|}
-name|brush_edit_generated_set_brush
+name|brush_editor_set_brush
 argument_list|(
 name|brush_editor_dialog
 argument_list|,
