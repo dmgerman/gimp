@@ -507,10 +507,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|brushes_init (int no_data)
+DECL|function|brushes_init (gint no_data)
 name|brushes_init
 parameter_list|(
-name|int
+name|gint
 name|no_data
 parameter_list|)
 block|{
@@ -545,7 +545,7 @@ argument_list|(
 name|brush_path
 argument_list|,
 operator|(
-name|datafile_loader_t
+name|GimpDataFileLoaderFunc
 operator|)
 name|brushes_brush_load
 argument_list|,
@@ -557,7 +557,7 @@ argument_list|(
 name|brush_vbr_path
 argument_list|,
 operator|(
-name|datafile_loader_t
+name|GimpDataFileLoaderFunc
 operator|)
 name|brushes_brush_load
 argument_list|,

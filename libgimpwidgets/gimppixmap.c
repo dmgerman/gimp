@@ -339,7 +339,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pixmap_new:  * @pixmap: The pixmap widget you want to set the new xpm_data for.  * @xpm_data: A pointer to a XPM data structure as found in XPM files.  *  * Sets a new image for an existing #GimpPixmap widget.  *  */
+comment|/**  * gimp_pixmap_set:  * @pixmap: The pixmap widget you want to set the new xpm_data for.  * @xpm_data: A pointer to a XPM data structure as found in XPM files.  *  * Sets a new image for an existing #GimpPixmap widget.  *  */
 end_comment
 
 begin_function

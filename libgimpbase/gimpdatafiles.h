@@ -6,20 +6,26 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|_DATAFILES_H_
+name|__DATAFILES_H__
 end_ifndef
 
 begin_define
-DECL|macro|_DATAFILES_H_
+DECL|macro|__DATAFILES_H__
 define|#
 directive|define
-name|_DATAFILES_H_
+name|__DATAFILES_H__
 end_define
 
 begin_include
 include|#
 directive|include
 file|<time.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib.h>
 end_include
 
 begin_define
@@ -43,15 +49,15 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|typedef|datafile_loader_t
+DECL|typedef|GimpDataFileLoaderFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|datafile_loader_t
+name|GimpDataFileLoaderFunc
 function_decl|)
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -66,21 +72,21 @@ begin_function_decl
 name|void
 name|datafiles_read_directories
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|path_str
 parameter_list|,
-name|datafile_loader_t
+name|GimpDataFileLoaderFunc
 name|loader_func
 parameter_list|,
-name|int
+name|gint
 name|flags
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Return the current datafiles access, modification  *  or change time. The current datafile is the one for  *  which the "datafile_loader_t" function has been called  *  on.  */
+comment|/* Return the current datafiles access, modification  *  or change time. The current datafile is the one for  *  which the "DataFileLoaderFunc" function has been called  *  on.  */
 end_comment
 
 begin_function_decl
@@ -114,6 +120,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/*  __DATAFILES_H__ */
+end_comment
 
 end_unit
 
