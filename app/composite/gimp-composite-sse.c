@@ -140,6 +140,58 @@ directive|endif
 end_endif
 
 begin_comment
+comment|/* a = INT_MULT(a,b) */
+end_comment
+
+begin_define
+DECL|macro|mmx_int_mult (a,b,w128)
+define|#
+directive|define
+name|mmx_int_mult
+parameter_list|(
+name|a
+parameter_list|,
+name|b
+parameter_list|,
+name|w128
+parameter_list|)
+define|\
+value|"\tpmullw    %%"#b",    %%"#a"; " \                   "\tpaddw     %%"#w128", %%"#a"; " \                   "\tmovq      %%"#a",    %%"#b"; " \                   "\tpsrlw     $8,        %%"#b"; " \                   "\tpaddw     %%"#a",    %%"#b"; " \                   "\tpsrlw     $8,        %%"#b"\n"
+end_define
+
+begin_define
+DECL|macro|mmx_low_bytes_to_words (src,dst,zero)
+define|#
+directive|define
+name|mmx_low_bytes_to_words
+parameter_list|(
+name|src
+parameter_list|,
+name|dst
+parameter_list|,
+name|zero
+parameter_list|)
+define|\
+value|"\tmovq      %%"#src", %%"#dst"; " \ 		       "\tpunpcklbw %%"#zero", %%"#dst"\n"
+end_define
+
+begin_define
+DECL|macro|mmx_high_bytes_to_words (src,dst,zero)
+define|#
+directive|define
+name|mmx_high_bytes_to_words
+parameter_list|(
+name|src
+parameter_list|,
+name|dst
+parameter_list|,
+name|zero
+parameter_list|)
+define|\
+value|"\tmovq      %%"#src", %%"#dst"; " \ 		       "\tpunpckhbw %%"#zero", %%"#dst"\n"
+end_define
+
+begin_comment
 comment|/*  * Clobbers eax, ecx edx  */
 end_comment
 
@@ -297,6 +349,25 @@ block|{
 literal|0x00010001
 block|,
 literal|0x00010001
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|rgba8_w2
+specifier|const
+specifier|static
+name|unsigned
+name|long
+name|rgba8_w2
+index|[
+literal|2
+index|]
+init|=
+block|{
+literal|0x00020002
+block|,
+literal|0x00020002
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1270,114 +1341,49 @@ asm|asm("emms");
 block|}
 end_function
 
-begin_decl_stmt
-DECL|variable|rgba8_lower_ff
-specifier|const
-specifier|static
-name|unsigned
-name|long
-name|rgba8_lower_ff
-index|[
-literal|2
-index|]
-init|=
-block|{
-literal|0x00FF00FF
-block|,
-literal|0x00FF00FF
-block|}
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 specifier|static
 name|void
-DECL|function|op_overlay (void)
-name|op_overlay
+DECL|function|sse_op_overlay (void)
+name|sse_op_overlay
 parameter_list|(
 name|void
 parameter_list|)
 block|{
-asm|asm("movq      %mm2, %mm1");
-asm|asm("punpcklbw %mm6, %mm1");
-asm|asm("movq      %mm3, %mm5");
-asm|asm("punpcklbw %mm6, %mm5");
-asm|asm("pmullw    %mm5, %mm1");
-asm|asm("paddw     %mm7, %mm1");
-asm|asm("movq      %mm1, %mm5");
-asm|asm("psrlw     $8, %mm5");
-asm|asm("paddw     %mm5, %mm1");
-asm|asm("psrlw     $8, %mm1");
-asm|asm("pcmpeqb   %mm4, %mm4");
-asm|asm("psubb     %mm2, %mm4");
-asm|asm("punpcklbw %mm6, %mm4");
-asm|asm("pcmpeqb   %mm5, %mm5");
-asm|asm("psubb     %mm3, %mm5");
-asm|asm("punpcklbw %mm6, %mm5");
-asm|asm("pmullw    %mm5, %mm4");
-asm|asm("paddw     %mm7, %mm4");
-asm|asm("movq      %mm4, %mm5");
-asm|asm("psrlw     $8, %mm5");
-asm|asm("paddw     %mm5, %mm4");
-asm|asm("psrlw     $8, %mm4");
-asm|asm("movq      rgba8_lower_ff, %mm5");
-asm|asm("psubw     %mm4, %mm5");
-asm|asm("psubw     %mm1, %mm5");
-asm|asm("movq      %mm2, %mm4");
-asm|asm("punpcklbw %mm6, %mm4");
-asm|asm("pmullw    %mm4, %mm5");
-asm|asm("paddw     %mm7, %mm5");
-asm|asm("movq      %mm5, %mm4");
-asm|asm("psrlw     $8, %mm4");
-asm|asm("paddw     %mm4, %mm5");
-asm|asm("psrlw     $8, %mm5");
-asm|asm("paddw     %mm1, %mm5");
-asm|asm("subl      $8, %esp");
-asm|asm("movq      %mm5, (%esp)");
-asm|asm("movq      %mm2, %mm1");
-asm|asm("punpckhbw %mm6, %mm1");
-asm|asm("movq      %mm3, %mm5");
-asm|asm("punpckhbw %mm6, %mm5");
-asm|asm("pmullw    %mm5, %mm1");
-asm|asm("paddw     %mm7, %mm1");
-asm|asm("movq      %mm1, %mm5");
-asm|asm("psrlw     $8, %mm5");
-asm|asm("paddw     %mm5, %mm1");
-asm|asm("psrlw     $8, %mm1");
-asm|asm("pcmpeqb   %mm4, %mm4");
-asm|asm("psubb     %mm2, %mm4");
-asm|asm("punpckhbw %mm6, %mm4");
-asm|asm("pcmpeqb   %mm5, %mm5");
-asm|asm("psubb     %mm3, %mm5");
-asm|asm("punpckhbw %mm6, %mm5");
-asm|asm("pmullw    %mm5, %mm4");
-asm|asm("paddw     %mm7, %mm4");
-asm|asm("movq      %mm4, %mm5");
-asm|asm("psrlw     $8, %mm5");
-asm|asm("paddw     %mm5, %mm4");
-asm|asm("psrlw     $8, %mm4");
-asm|asm("movq      rgba8_lower_ff, %mm5");
-asm|asm("psubw     %mm4, %mm5");
-asm|asm("psubw     %mm1, %mm5");
-asm|asm("movq      %mm2, %mm4");
-asm|asm("punpckhbw %mm6, %mm4");
-asm|asm("pmullw    %mm4, %mm5");
-asm|asm("paddw     %mm7, %mm5");
-asm|asm("movq      %mm5, %mm4");
-asm|asm("psrlw     $8, %mm4");
-asm|asm("paddw     %mm4, %mm5");
-asm|asm("psrlw     $8, %mm5");
-asm|asm("paddw     %mm1, %mm5");
-asm|asm("movq      (%esp), %mm4");
-asm|asm("addl      $8, %esp");
-asm|asm("packuswb  %mm5, %mm4");
-asm|asm("movq      %mm0, %mm1");
-asm|asm("pandn     %mm4, %mm1");
-asm|asm("movq      %mm2, %mm4");
-asm|asm("psubusb   %mm3, %mm4");
-asm|asm("psubb     %mm4, %mm2");
-asm|asm("pand      %mm0, %mm2");
-asm|asm("por       %mm2, %mm1");
+asm|asm
+specifier|volatile
+asm|(
+comment|/* low bytes */
+asm|mmx_low_bytes_to_words(mm3,mm5,mm0) 																"\tpcmpeqb   %%mm4, %%mm4\n" 																"\tpsubb     %%mm2, %%mm4\n"
+comment|/* mm4 = 255 - A */
+asm|"\tpunpcklbw %%mm0, %%mm4\n"
+comment|/* mm4 = (low bytes as word) mm4 */
+asm|"\tmovq      (%0), %%mm6\n"
+comment|/* mm6 = words of value 2 */
+asm|"\tpmullw    %%mm5, %%mm6\n"
+comment|/* mm6 = 2 * low bytes of B */
+asm|mmx_int_mult(mm6,mm4,mm7)
+comment|/* mm4 = INT_MULT(mm6, mm4) */
+comment|/* high bytes */
+asm|mmx_high_bytes_to_words(mm3,mm5,mm0) 																"\tpcmpeqb   %%mm1, %%mm1\n" 																"\tpsubb     %%mm2, %%mm1\n"
+comment|/* mm1 = 255 - A */
+asm|"\tpunpckhbw %%mm0, %%mm1\n"
+comment|/* mm1 = (high bytes as word) mm1 */
+asm|"\tmovq      (%0), %%mm6\n"
+comment|/* mm6 = words of value 2 */
+asm|"\tpmullw    %%mm5, %%mm6\n"
+comment|/* mm6 = 2 * high bytes of B */
+asm|mmx_int_mult(mm6,mm1,mm7)
+comment|/* mm1 = INT_MULT(mm6, mm1) */
+asm|"\tpackuswb  %%mm1,%%mm4\n"
+comment|/* mm4 = intermediate value */
+asm|mmx_low_bytes_to_words(mm4,mm5,mm0) 																mmx_low_bytes_to_words(mm2,mm6,mm0) 																"\tpaddw     %%mm6,%%mm5\n" 																mmx_int_mult(mm6,mm5,mm7)
+comment|/* mm5 = INT_MULT(mm6, mm5) low bytes */
+asm|mmx_high_bytes_to_words(mm4,mm1,mm0) 																mmx_high_bytes_to_words(mm2,mm6,mm0) 																"\tpaddw     %%mm6,%%mm1\n" 																mmx_int_mult(mm6,mm1,mm7)
+comment|/* mm1 = INT_MULT(mm6, mm1) high bytes */
+asm|"\tpackuswb  %%mm1,%%mm5\n"  																"\tmovq      %1, %%mm0\n" 																"\tmovq      %%mm0, %%mm1\n" 																"\tpandn     %%mm5, %%mm1\n"  																"\t" pminub(mm2,mm3,mm4) "\n" 																"\tpand      %%mm0, %%mm3\n"  																"\tpor       %%mm3, %%mm1\n"  																:
+comment|/* empty */
+asm|: "m" (*rgba8_w2), "m" (*rgba8_alpha_mask) 																);
 block|}
 end_function
 
@@ -1397,7 +1403,9 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-asm|asm("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
+asm|asm
+specifier|volatile
+asm|("pxor    %%mm0,%%mm0\n" 																"movq    (%0),%%mm7" 																:  : "m" (*rgba8_w128) : "%mm0");
 for|for
 control|(
 init|;
@@ -1414,9 +1422,7 @@ operator|-=
 literal|2
 control|)
 block|{
-asm|asm
-specifier|volatile
-asm|("  movq    (%0), %%mm2; addl  $8, %0\n"                   "\tmovq    (%1), %%mm3; addl  $8, %1\n"                    "\tcall op_overlay\n"                    "\tmovq    %%mm1, (%2); addl  $8, %2\n"                   : "+r" (op.A), "+S" (op.B), "+D" (op.D)                   :
+asm|asm ("  movq    (%0), %%mm2; addl  $8, %0\n" 									"\tmovq    (%1), %%mm3; addl  $8, %1\n"  									"\tcall sse_op_overlay\n"  									"\tmovq    %%mm1, (%2); addl  $8, %2\n" 									: "+r" (op.A), "+S" (op.B), "+D" (op.D) 									:
 comment|/* empty */
 asm|: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
 block|}
@@ -1429,7 +1435,7 @@ condition|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movd    (%0), %%mm2;\n"                   "\tmovd    (%1), %%mm3;\n"                    "\tcall op_overlay\n"                    "\tmovd    %%mm1, (%2);\n"                   :
+asm|("  movd    (%0), %%mm2;\n"                   "\tmovd    (%1), %%mm3;\n"                    "\tcall sse_op_overlay\n"                    "\tmovd    %%mm1, (%2);\n"                   :
 comment|/* empty */
 asm|: "r" (op.A), "r" (op.B), "r" (op.D)                   : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
 block|}

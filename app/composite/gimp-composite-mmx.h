@@ -145,7 +145,7 @@ end_function_decl
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_composite_grainextract_rgba8_rgba8_rgba8_mmx
+name|gimp_composite_grain_extract_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -156,7 +156,7 @@ end_function_decl
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_composite_grainmerge_rgba8_rgba8_rgba8_mmx
+name|gimp_composite_grain_merge_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -398,7 +398,7 @@ end_function_decl
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_composite_grainextract_va8_va8_va8_mmx
+name|gimp_composite_grain_extract_va8_va8_va8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -409,7 +409,7 @@ end_function_decl
 begin_function_decl
 specifier|extern
 name|void
-name|gimp_composite_grainmerge_va8_va8_va8_mmx
+name|gimp_composite_grain_merge_va8_va8_va8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
