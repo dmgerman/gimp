@@ -827,12 +827,6 @@ comment|/* Stroke options */
 name|gdouble
 name|width
 decl_stmt|;
-name|GArray
-modifier|*
-name|dash_array
-init|=
-name|NULL
-decl_stmt|;
 name|TileManager
 modifier|*
 name|base
@@ -1055,9 +1049,13 @@ name|options
 operator|->
 name|miter
 argument_list|,
-literal|0.0
+name|options
+operator|->
+name|dash_offset
 argument_list|,
-name|dash_array
+name|options
+operator|->
+name|dash_info
 argument_list|)
 expr_stmt|;
 comment|/* fill a 1-bpp Tilemanager with black, this will describe the shape    * of the stroke.    */

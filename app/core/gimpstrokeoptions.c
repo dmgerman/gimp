@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad45ff70103
+DECL|enum|__anon2c6b323e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -416,7 +416,7 @@ literal|0.0
 argument_list|,
 literal|2000.0
 argument_list|,
-literal|10.0
+literal|0.0
 argument_list|,
 literal|0
 argument_list|)
@@ -908,23 +908,20 @@ name|val_array
 decl_stmt|;
 name|GValue
 name|item
+init|=
+block|{
+literal|0
+block|, }
 decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-if|if
-condition|(
-name|options
-operator|->
-name|dash_info
-condition|)
-name|g_array_free
+name|g_value_init
 argument_list|(
-name|options
-operator|->
-name|dash_info
+operator|&
+name|item
 argument_list|,
-name|TRUE
+name|G_TYPE_DOUBLE
 argument_list|)
 expr_stmt|;
 if|if

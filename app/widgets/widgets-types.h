@@ -633,6 +633,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDashEditor
+typedef|typedef
+name|struct
+name|_GimpDashEditor
+name|GimpDashEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpTextEditor
 typedef|typedef
 name|struct
