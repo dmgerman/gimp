@@ -235,6 +235,11 @@ name|h
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_image_mask_changed
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -411,6 +416,11 @@ name|antialias
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_image_mask_changed
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -576,6 +586,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_image_mask_changed
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -869,6 +884,11 @@ argument_list|,
 name|offset_x
 argument_list|,
 name|offset_y
+argument_list|)
+expr_stmt|;
+name|gimp_image_mask_changed
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 block|}
