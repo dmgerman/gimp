@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewcache.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -109,6 +103,12 @@ begin_include
 include|#
 directive|include
 file|"session.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"temp_buf.h"
 end_include
 
 begin_include
@@ -1736,7 +1736,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b79f6f40108
+DECL|struct|__anon2b9eb3380108
 block|{
 DECL|member|def
 name|GImage
@@ -1957,9 +1957,12 @@ name|tmp
 decl_stmt|;
 name|tmp
 operator|=
-name|gimp_image_construct_composite_preview
+name|gimp_viewable_preview_new
+argument_list|(
+name|GIMP_VIEWABLE
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|gimage
 operator|->
@@ -1972,7 +1975,7 @@ argument_list|)
 expr_stmt|;
 name|buf
 operator|=
-name|gimp_preview_scale
+name|temp_buf_scale
 argument_list|(
 name|tmp
 argument_list|,
@@ -1991,9 +1994,12 @@ else|else
 block|{
 name|buf
 operator|=
-name|gimp_image_construct_composite_preview
+name|gimp_viewable_preview_new
+argument_list|(
+name|GIMP_VIEWABLE
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|width
 argument_list|,

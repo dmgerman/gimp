@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
 end_include
 
@@ -285,13 +291,22 @@ argument_list|,
 name|h
 argument_list|)
 expr_stmt|;
-comment|/*  invalidate the preview  */
-name|gimp_drawable_invalidate_preview
-argument_list|(
 name|drawable
-argument_list|,
+operator|->
+name|preview_valid
+operator|=
 name|FALSE
-argument_list|)
+expr_stmt|;
+comment|/*  invalidate the preview  */
+if|if
+condition|(
+name|gimage
+condition|)
+name|gimage
+operator|->
+name|comp_preview_valid
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 end_function

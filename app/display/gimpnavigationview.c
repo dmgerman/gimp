@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewcache.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -121,6 +115,12 @@ begin_include
 include|#
 directive|include
 file|"scale.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"temp_buf.h"
 end_include
 
 begin_include
@@ -202,7 +202,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c038f2c0103
+DECL|enum|__anon29f5f13c0103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -2188,9 +2188,12 @@ name|tmp
 decl_stmt|;
 name|tmp
 operator|=
-name|gimp_image_construct_composite_preview
+name|gimp_viewable_preview_new
+argument_list|(
+name|GIMP_VIEWABLE
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|gimage
 operator|->
@@ -2203,7 +2206,7 @@ argument_list|)
 expr_stmt|;
 name|preview_buf
 operator|=
-name|gimp_preview_scale
+name|temp_buf_scale
 argument_list|(
 name|tmp
 argument_list|,
@@ -2222,9 +2225,12 @@ else|else
 block|{
 name|preview_buf
 operator|=
-name|gimp_image_construct_composite_preview
+name|gimp_viewable_preview_new
+argument_list|(
+name|GIMP_VIEWABLE
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|MAX
 argument_list|(

@@ -154,7 +154,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8b28b90103
+DECL|enum|__anon2bac1eed0103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -761,9 +761,12 @@ block|}
 comment|/* Min size is 2 */
 name|preview_buf
 operator|=
-name|gimp_image_construct_composite_preview
+name|gimp_viewable_preview_new
+argument_list|(
+name|GIMP_VIEWABLE
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|MAX
 argument_list|(

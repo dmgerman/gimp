@@ -4249,18 +4249,17 @@ block|}
 block|}
 comment|/*printf("tn: %d x %d -> ", w, h);fflush(stdout);*/
 return|return
-operator|(
-name|gimp_image_composite_preview
+name|gimp_viewable_preview
+argument_list|(
+name|GIMP_VIEWABLE
 argument_list|(
 name|gimage
-argument_list|,
-name|GRAY_CHANNEL
+argument_list|)
 argument_list|,
 name|w
 argument_list|,
 name|h
 argument_list|)
-operator|)
 return|;
 block|}
 end_function

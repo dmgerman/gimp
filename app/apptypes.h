@@ -95,6 +95,15 @@ name|GimpContext
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpViewable
+typedef|typedef
+name|struct
+name|_GimpViewable
+name|GimpViewable
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  drawable objects  */
 end_comment

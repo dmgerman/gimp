@@ -85,24 +85,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|TempBuf
-modifier|*
-name|gimp_preview_scale
-parameter_list|(
-name|TempBuf
-modifier|*
-name|buf
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

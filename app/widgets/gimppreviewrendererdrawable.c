@@ -155,12 +155,12 @@ end_comment
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_drawable_preview (GimpDrawable * drawable,gint width,gint height)
+DECL|function|gimp_drawable_preview (GimpViewable * viewable,gint width,gint height)
 name|gimp_drawable_preview
 parameter_list|(
-name|GimpDrawable
+name|GimpViewable
 modifier|*
-name|drawable
+name|viewable
 parameter_list|,
 name|gint
 name|width
@@ -169,23 +169,15 @@ name|gint
 name|height
 parameter_list|)
 block|{
-name|g_return_val_if_fail
-argument_list|(
+name|GimpDrawable
+modifier|*
 name|drawable
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
+decl_stmt|;
+name|drawable
+operator|=
 name|GIMP_DRAWABLE
 argument_list|(
-name|drawable
-argument_list|)
-argument_list|,
-name|NULL
+name|viewable
 argument_list|)
 expr_stmt|;
 comment|/* Ok prime the cache with a large preview if the cache is invalid */

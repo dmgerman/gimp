@@ -16,14 +16,18 @@ directive|define
 name|__GIMP_DRAWABLE_PREVIEW_H__
 end_define
 
+begin_comment
+comment|/*  *  virtual function of GimpDrawable -- dont't call directly  */
+end_comment
+
 begin_function_decl
 name|TempBuf
 modifier|*
 name|gimp_drawable_preview
 parameter_list|(
-name|GimpDrawable
+name|GimpViewable
 modifier|*
-name|drawable
+name|viewable
 parameter_list|,
 name|gint
 name|width

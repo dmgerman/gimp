@@ -59,7 +59,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad7eca00103
+DECL|enum|__anon2b0c44840103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1132,6 +1132,8 @@ parameter_list|)
 block|{
 name|gboolean
 name|have
+init|=
+name|FALSE
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(

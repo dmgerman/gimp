@@ -227,7 +227,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c10fed30103
+DECL|enum|__anon290a31bf0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -8453,16 +8453,14 @@ case|case
 name|UNDO
 case|:
 comment|/*  Update the preview for the floating sel  */
-name|gimp_drawable_invalidate_preview
+name|gimp_viewable_invalidate_preview
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_VIEWABLE
 argument_list|(
 name|fsu
 operator|->
 name|layer
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|fsu
@@ -8556,16 +8554,14 @@ name|layer
 argument_list|)
 expr_stmt|;
 comment|/*  Update the preview for the gimage and underlying drawable  */
-name|gimp_drawable_invalidate_preview
+name|gimp_viewable_invalidate_preview
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_VIEWABLE
 argument_list|(
 name|fsu
 operator|->
 name|layer
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -8617,16 +8613,14 @@ name|height
 argument_list|)
 expr_stmt|;
 comment|/*  Update the preview for the gimage and underlying drawable  */
-name|gimp_drawable_invalidate_preview
+name|gimp_viewable_invalidate_preview
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_VIEWABLE
 argument_list|(
 name|fsu
 operator|->
 name|layer
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  clear the selection  */
@@ -8655,16 +8649,14 @@ operator|=
 name|NULL
 expr_stmt|;
 comment|/*  Update the fs drawable  */
-name|gimp_drawable_invalidate_preview
+name|gimp_viewable_invalidate_preview
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_VIEWABLE
 argument_list|(
 name|fsu
 operator|->
 name|layer
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -9562,9 +9554,12 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_image_invalidate_preview
+name|gimp_viewable_invalidate_preview
+argument_list|(
+name|GIMP_VIEWABLE
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdisplays_update_full

@@ -46,12 +46,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawablepreview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimplayer.h"
 end_include
 
@@ -4585,9 +4579,12 @@ name|dheight
 expr_stmt|;
 name|buf
 operator|=
-name|gimp_drawable_preview
+name|gimp_viewable_preview
+argument_list|(
+name|GIMP_VIEWABLE
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 name|req_width
 argument_list|,

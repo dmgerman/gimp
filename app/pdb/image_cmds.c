@@ -8305,9 +8305,12 @@ name|dheight
 expr_stmt|;
 name|buf
 operator|=
-name|gimp_image_construct_composite_preview
+name|gimp_viewable_preview_new
+argument_list|(
+name|GIMP_VIEWABLE
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|req_width
 argument_list|,

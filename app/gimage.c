@@ -409,8 +409,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|invalidate_cb (gpointer image,gpointer user_data)
-name|invalidate_cb
+DECL|function|gimage_invalidate_previews_foreach_func (gpointer image,gpointer user_data)
+name|gimage_invalidate_previews_foreach_func
 parameter_list|(
 name|gpointer
 name|image
@@ -419,9 +419,9 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|gimp_image_invalidate_preview
+name|gimp_viewable_invalidate_preview
 argument_list|(
-name|GIMP_IMAGE
+name|GIMP_VIEWABLE
 argument_list|(
 name|image
 argument_list|)
@@ -442,7 +442,7 @@ name|gimp_container_foreach
 argument_list|(
 name|image_context
 argument_list|,
-name|invalidate_cb
+name|gimage_invalidate_previews_foreach_func
 argument_list|,
 name|NULL
 argument_list|)
@@ -770,9 +770,12 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_image_invalidate_preview
+name|gimp_viewable_invalidate_preview
+argument_list|(
+name|GIMP_VIEWABLE
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdisplays_resize_cursor_label

@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpobject.h"
+file|"gimpviewable.h"
 end_include
 
 begin_define
@@ -89,7 +89,7 @@ struct|struct
 name|_GimpDrawable
 block|{
 DECL|member|parent_instance
-name|GimpObject
+name|GimpViewable
 name|parent_instance
 decl_stmt|;
 DECL|member|tiles
@@ -178,7 +178,7 @@ struct|struct
 name|_GimpDrawableClass
 block|{
 DECL|member|parent_class
-name|GimpObjectClass
+name|GimpViewableClass
 name|parent_class
 decl_stmt|;
 DECL|member|removed
@@ -186,18 +186,6 @@ name|void
 function_decl|(
 modifier|*
 name|removed
-function_decl|)
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|)
-function_decl|;
-DECL|member|invalidate_preview
-name|void
-function_decl|(
-modifier|*
-name|invalidate_preview
 function_decl|)
 parameter_list|(
 name|GimpDrawable
@@ -354,20 +342,6 @@ parameter_list|,
 name|gint
 modifier|*
 name|y2
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_drawable_invalidate_preview
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|gboolean
-name|emit_signal
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewcache.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimplut.h"
 end_include
 

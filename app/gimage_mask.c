@@ -1182,11 +1182,12 @@ operator|)
 argument_list|)
 expr_stmt|;
 comment|/*  Invalidate the preview  */
-name|gimp_drawable_invalidate_preview
+name|gimp_viewable_invalidate_preview
+argument_list|(
+name|GIMP_VIEWABLE
 argument_list|(
 name|drawable
-argument_list|,
-name|TRUE
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawablepreview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimplayer.h"
 end_include
 
@@ -10995,7 +10989,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287d296c0108
+DECL|struct|__anon2bcfcd6f0108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -12101,11 +12095,14 @@ condition|(
 name|exclusive
 condition|)
 block|{
-name|gimp_image_invalidate_preview
+name|gimp_viewable_invalidate_preview
+argument_list|(
+name|GIMP_VIEWABLE
 argument_list|(
 name|layer_widget
 operator|->
 name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdisplays_update_area
@@ -12151,11 +12148,14 @@ name|visible
 condition|)
 block|{
 comment|/*  Invalidate the gimage preview  */
-name|gimp_image_invalidate_preview
+name|gimp_viewable_invalidate_preview
+argument_list|(
+name|GIMP_VIEWABLE
 argument_list|(
 name|layer_widget
 operator|->
 name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|drawable_update
@@ -13613,9 +13613,9 @@ name|LAYER_PREVIEW
 case|:
 name|preview_buf
 operator|=
-name|gimp_drawable_preview
+name|gimp_viewable_preview
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_VIEWABLE
 argument_list|(
 name|layer_widget
 operator|->
@@ -13643,9 +13643,9 @@ name|MASK_PREVIEW
 case|:
 name|preview_buf
 operator|=
-name|gimp_drawable_preview
+name|gimp_viewable_preview
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_VIEWABLE
 argument_list|(
 name|layer_widget
 operator|->

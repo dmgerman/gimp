@@ -720,7 +720,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b65e2720103
+DECL|enum|__anon279366270103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -5123,9 +5123,12 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_image_invalidate_preview
+name|gimp_viewable_invalidate_preview
+argument_list|(
+name|GIMP_VIEWABLE
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdisplays_update_full

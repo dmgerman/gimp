@@ -293,14 +293,12 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  invalidate the preview of the obscured drawable.  We do this here    *  because it will not be done until the floating selection is removed,    *  at which point the obscured drawable's preview will not be declared invalid    */
-name|gimp_drawable_invalidate_preview
+name|gimp_viewable_invalidate_preview
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_VIEWABLE
 argument_list|(
 name|layer
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  remove the layer from the gimage  */
@@ -371,16 +369,17 @@ argument_list|,
 name|FS_ANCHOR_UNDO
 argument_list|)
 expr_stmt|;
-comment|/* Invalidate the previews of the layer that will be composited with the floating section. */
-name|gimp_drawable_invalidate_preview
+comment|/* Invalidate the previews of the layer that will be composited    * with the floating section.    */
+name|gimp_viewable_invalidate_preview
+argument_list|(
+name|GIMP_VIEWABLE
 argument_list|(
 name|layer
 operator|->
 name|fs
 operator|.
 name|drawable
-argument_list|,
-name|TRUE
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Relax the floating selection  */
@@ -738,14 +737,12 @@ name|drawable
 argument_list|)
 expr_stmt|;
 comment|/*  update the fs drawable--this updates the gimage composite preview    *  as well as the underlying drawable's    */
-name|gimp_drawable_invalidate_preview
+name|gimp_viewable_invalidate_preview
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_VIEWABLE
 argument_list|(
 name|layer
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  allocate the undo structure  */
@@ -2534,15 +2531,16 @@ name|layer
 parameter_list|)
 block|{
 comment|/*  Invalidate the attached-to drawable's preview  */
-name|gimp_drawable_invalidate_preview
+name|gimp_viewable_invalidate_preview
+argument_list|(
+name|GIMP_VIEWABLE
 argument_list|(
 name|layer
 operator|->
 name|fs
 operator|.
 name|drawable
-argument_list|,
-name|TRUE
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Invalidate the boundary  */
