@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon292be67e0103
+DECL|enum|__anon292eb0680103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -131,7 +131,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292be67e0208
+DECL|struct|__anon292eb0680208
 block|{
 DECL|member|amount
 name|gdouble
@@ -338,11 +338,11 @@ init|=
 block|{
 literal|2.0
 block|,
-comment|/* amount   */
+comment|/* amount */
 name|SOBEL
 block|,
 comment|/* Edge detection algorithm */
-name|PIXEL_SMEAR
+name|GIMP_PIXEL_FETCHER_EDGE_SMEAR
 comment|/* wrapmode */
 block|}
 decl_stmt|;
@@ -922,9 +922,6 @@ decl_stmt|;
 name|gint
 name|max_progress
 decl_stmt|;
-name|gint
-name|wrapmode
-decl_stmt|;
 if|if
 condition|(
 name|evals
@@ -944,6 +941,15 @@ operator|=
 name|gimp_pixel_fetcher_new
 argument_list|(
 name|drawable
+argument_list|)
+expr_stmt|;
+name|gimp_pixel_fetcher_set_edgemode
+argument_list|(
+name|pft
+argument_list|,
+name|evals
+operator|.
+name|wrapmode
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_mask_bounds
@@ -1011,12 +1017,6 @@ expr_stmt|;
 name|maxval
 operator|=
 literal|255
-expr_stmt|;
-name|wrapmode
-operator|=
-name|evals
-operator|.
-name|wrapmode
 expr_stmt|;
 name|cur_progress
 operator|=
@@ -1340,7 +1340,7 @@ block|}
 else|else
 block|{
 comment|/*                   ** The kernel is not inside of the tile -- do slow                   ** version                   */
-name|gimp_pixel_fetcher_get_pixel2
+name|gimp_pixel_fetcher_get_pixel
 argument_list|(
 name|pft
 argument_list|,
@@ -1351,13 +1351,11 @@ argument_list|,
 name|y
 operator|-
 literal|1
-argument_list|,
-name|wrapmode
 argument_list|,
 name|pix00
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_fetcher_get_pixel2
+name|gimp_pixel_fetcher_get_pixel
 argument_list|(
 name|pft
 argument_list|,
@@ -1366,13 +1364,11 @@ argument_list|,
 name|y
 operator|-
 literal|1
-argument_list|,
-name|wrapmode
 argument_list|,
 name|pix10
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_fetcher_get_pixel2
+name|gimp_pixel_fetcher_get_pixel
 argument_list|(
 name|pft
 argument_list|,
@@ -1383,13 +1379,11 @@ argument_list|,
 name|y
 operator|-
 literal|1
-argument_list|,
-name|wrapmode
 argument_list|,
 name|pix20
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_fetcher_get_pixel2
+name|gimp_pixel_fetcher_get_pixel
 argument_list|(
 name|pft
 argument_list|,
@@ -1398,13 +1392,11 @@ operator|-
 literal|1
 argument_list|,
 name|y
-argument_list|,
-name|wrapmode
 argument_list|,
 name|pix01
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_fetcher_get_pixel2
+name|gimp_pixel_fetcher_get_pixel
 argument_list|(
 name|pft
 argument_list|,
@@ -1412,12 +1404,10 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-name|wrapmode
-argument_list|,
 name|pix11
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_fetcher_get_pixel2
+name|gimp_pixel_fetcher_get_pixel
 argument_list|(
 name|pft
 argument_list|,
@@ -1427,12 +1417,10 @@ literal|1
 argument_list|,
 name|y
 argument_list|,
-name|wrapmode
-argument_list|,
 name|pix21
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_fetcher_get_pixel2
+name|gimp_pixel_fetcher_get_pixel
 argument_list|(
 name|pft
 argument_list|,
@@ -1444,12 +1432,10 @@ name|y
 operator|+
 literal|1
 argument_list|,
-name|wrapmode
-argument_list|,
 name|pix02
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_fetcher_get_pixel2
+name|gimp_pixel_fetcher_get_pixel
 argument_list|(
 name|pft
 argument_list|,
@@ -1458,13 +1444,11 @@ argument_list|,
 name|y
 operator|+
 literal|1
-argument_list|,
-name|wrapmode
 argument_list|,
 name|pix12
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_fetcher_get_pixel2
+name|gimp_pixel_fetcher_get_pixel
 argument_list|(
 name|pft
 argument_list|,
@@ -1475,8 +1459,6 @@ argument_list|,
 name|y
 operator|+
 literal|1
-argument_list|,
-name|wrapmode
 argument_list|,
 name|pix22
 argument_list|)
@@ -3074,7 +3056,7 @@ name|evals
 operator|.
 name|wrapmode
 operator|==
-name|PIXEL_WRAP
+name|GIMP_PIXEL_FETCHER_EDGE_WRAP
 operator|)
 decl_stmt|;
 name|gboolean
@@ -3085,7 +3067,7 @@ name|evals
 operator|.
 name|wrapmode
 operator|==
-name|PIXEL_SMEAR
+name|GIMP_PIXEL_FETCHER_EDGE_SMEAR
 operator|)
 decl_stmt|;
 name|gboolean
@@ -3096,7 +3078,7 @@ name|evals
 operator|.
 name|wrapmode
 operator|==
-name|PIXEL_BLACK
+name|GIMP_PIXEL_FETCHER_EDGE_BLACK
 operator|)
 decl_stmt|;
 name|gimp_ui_init
@@ -3684,7 +3666,7 @@ name|evals
 operator|.
 name|wrapmode
 operator|=
-name|PIXEL_WRAP
+name|GIMP_PIXEL_FETCHER_EDGE_WRAP
 expr_stmt|;
 elseif|else
 if|if
@@ -3695,7 +3677,7 @@ name|evals
 operator|.
 name|wrapmode
 operator|=
-name|PIXEL_SMEAR
+name|GIMP_PIXEL_FETCHER_EDGE_SMEAR
 expr_stmt|;
 elseif|else
 if|if
@@ -3706,7 +3688,7 @@ name|evals
 operator|.
 name|wrapmode
 operator|=
-name|PIXEL_BLACK
+name|GIMP_PIXEL_FETCHER_EDGE_BLACK
 expr_stmt|;
 return|return
 name|run

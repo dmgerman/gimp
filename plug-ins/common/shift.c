@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc086f50108
+DECL|struct|__anon2b5162460108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -746,6 +746,13 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+name|gimp_pixel_fetcher_set_edge_mode
+argument_list|(
+name|pft
+argument_list|,
+name|GIMP_PIXEL_FETCHER_EDGE_WRAP
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
@@ -947,7 +954,7 @@ name|y
 operator|++
 control|)
 block|{
-name|gimp_pixel_fetcher_get_pixel2
+name|gimp_pixel_fetcher_get_pixel
 argument_list|(
 name|pft
 argument_list|,
@@ -956,8 +963,6 @@ argument_list|,
 name|y
 operator|+
 name|ydist
-argument_list|,
-name|PIXEL_WRAP
 argument_list|,
 name|dest
 argument_list|)
@@ -1049,7 +1054,7 @@ name|x
 operator|++
 control|)
 block|{
-name|gimp_pixel_fetcher_get_pixel2
+name|gimp_pixel_fetcher_get_pixel
 argument_list|(
 name|pft
 argument_list|,
@@ -1058,8 +1063,6 @@ operator|+
 name|xdist
 argument_list|,
 name|y
-argument_list|,
-name|PIXEL_WRAP
 argument_list|,
 name|dest
 argument_list|)

@@ -95,7 +95,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273d83860108
+DECL|struct|__anon2b3152730108
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -315,7 +315,7 @@ operator|-
 literal|1
 block|,
 comment|/* displace_map_y */
-name|PIXEL_WRAP
+name|GIMP_PIXEL_FETCHER_EDGE_WRAP
 comment|/* displace_type */
 block|}
 decl_stmt|;
@@ -1689,7 +1689,7 @@ literal|"gimp-item-data"
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|PIXEL_WRAP
+name|GIMP_PIXEL_FETCHER_EDGE_WRAP
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1721,7 +1721,7 @@ name|dvals
 operator|.
 name|displace_type
 operator|==
-name|PIXEL_WRAP
+name|GIMP_PIXEL_FETCHER_EDGE_WRAP
 argument_list|)
 expr_stmt|;
 name|toggle
@@ -1778,7 +1778,7 @@ literal|"gimp-item-data"
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|PIXEL_SMEAR
+name|GIMP_PIXEL_FETCHER_EDGE_SMEAR
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1810,7 +1810,7 @@ name|dvals
 operator|.
 name|displace_type
 operator|==
-name|PIXEL_SMEAR
+name|GIMP_PIXEL_FETCHER_EDGE_SMEAR
 argument_list|)
 expr_stmt|;
 name|toggle
@@ -1867,7 +1867,7 @@ literal|"gimp-item-data"
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|PIXEL_BLACK
+name|GIMP_PIXEL_FETCHER_EDGE_BLACK
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1899,7 +1899,7 @@ name|dvals
 operator|.
 name|displace_type
 operator|==
-name|PIXEL_BLACK
+name|GIMP_PIXEL_FETCHER_EDGE_BLACK
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2108,6 +2108,15 @@ operator|=
 name|gimp_pixel_fetcher_new
 argument_list|(
 name|drawable
+argument_list|)
+expr_stmt|;
+name|gimp_pixel_fetcher_set_edge_mode
+argument_list|(
+name|pft
+argument_list|,
+name|dvals
+operator|.
+name|displace_type
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_mask_bounds
@@ -2685,17 +2694,13 @@ operator|+
 literal|1
 operator|)
 expr_stmt|;
-name|gimp_pixel_fetcher_get_pixel2
+name|gimp_pixel_fetcher_get_pixel
 argument_list|(
 name|pft
 argument_list|,
 name|xi
 argument_list|,
 name|yi
-argument_list|,
-name|dvals
-operator|.
-name|displace_type
 argument_list|,
 name|pixel
 index|[
@@ -2703,7 +2708,7 @@ literal|0
 index|]
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_fetcher_get_pixel2
+name|gimp_pixel_fetcher_get_pixel
 argument_list|(
 name|pft
 argument_list|,
@@ -2712,10 +2717,6 @@ operator|+
 literal|1
 argument_list|,
 name|yi
-argument_list|,
-name|dvals
-operator|.
-name|displace_type
 argument_list|,
 name|pixel
 index|[
@@ -2723,7 +2724,7 @@ literal|1
 index|]
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_fetcher_get_pixel2
+name|gimp_pixel_fetcher_get_pixel
 argument_list|(
 name|pft
 argument_list|,
@@ -2732,10 +2733,6 @@ argument_list|,
 name|yi
 operator|+
 literal|1
-argument_list|,
-name|dvals
-operator|.
-name|displace_type
 argument_list|,
 name|pixel
 index|[
@@ -2743,7 +2740,7 @@ literal|2
 index|]
 argument_list|)
 expr_stmt|;
-name|gimp_pixel_fetcher_get_pixel2
+name|gimp_pixel_fetcher_get_pixel
 argument_list|(
 name|pft
 argument_list|,
@@ -2754,10 +2751,6 @@ argument_list|,
 name|yi
 operator|+
 literal|1
-argument_list|,
-name|dvals
-operator|.
-name|displace_type
 argument_list|,
 name|pixel
 index|[

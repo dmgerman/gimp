@@ -738,7 +738,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6799b90108
+DECL|struct|__anon2aafdd690108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -792,7 +792,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6799b90208
+DECL|struct|__anon2aafdd690208
 block|{
 DECL|member|y
 name|gint32
@@ -13314,6 +13314,15 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+name|gimp_pixel_fetcher_set_edge_mode
+argument_list|(
+name|gdrw
+operator|->
+name|pft
+argument_list|,
+name|GIMP_PIXEL_FETCHER_EDGE_BLACK
+argument_list|)
+expr_stmt|;
 name|gdrw
 operator|->
 name|tile_width
@@ -13438,7 +13447,7 @@ operator|=
 literal|255
 expr_stmt|;
 comment|/* simulate full visible alpha channel */
-name|gimp_pixel_fetcher_get_pixel2
+name|gimp_pixel_fetcher_get_pixel
 argument_list|(
 name|gdrw
 operator|->
@@ -13447,8 +13456,6 @@ argument_list|,
 name|x
 argument_list|,
 name|y
-argument_list|,
-name|PIXEL_BLACK
 argument_list|,
 name|pixel
 argument_list|)

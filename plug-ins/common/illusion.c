@@ -150,7 +150,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1cda090108
+DECL|struct|__anon2c2e010a0108
 block|{
 DECL|member|division
 name|gint32
@@ -642,7 +642,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b1cda090208
+DECL|struct|__anon2c2e010a0208
 typedef|typedef
 struct|struct
 block|{
@@ -885,7 +885,7 @@ name|angle
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_pixel_fetcher_get_pixel2
+name|gimp_pixel_fetcher_get_pixel
 argument_list|(
 name|param
 operator|->
@@ -894,8 +894,6 @@ argument_list|,
 name|xx
 argument_list|,
 name|yy
-argument_list|,
-name|PIXEL_SMEAR
 argument_list|,
 name|pixel
 argument_list|)
@@ -1120,6 +1118,15 @@ operator|=
 name|gimp_pixel_fetcher_new
 argument_list|(
 name|drawable
+argument_list|)
+expr_stmt|;
+name|gimp_pixel_fetcher_set_edge_mode
+argument_list|(
+name|param
+operator|.
+name|pft
+argument_list|,
+name|GIMP_PIXEL_FETCHER_EDGE_SMEAR
 argument_list|)
 expr_stmt|;
 name|param
