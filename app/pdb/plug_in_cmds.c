@@ -113,6 +113,12 @@ endif|#
 directive|endif
 end_endif
 
+begin_include
+include|#
+directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|progress_init_proc
 specifier|static
@@ -1078,7 +1084,7 @@ index|[
 name|i
 index|]
 operator|=
-name|g_strdup
+name|gimp_strip_uline
 argument_list|(
 name|proc_def
 operator|->

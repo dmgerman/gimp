@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0fbd800108
+DECL|struct|__anon2bcbcbbf0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -213,7 +213,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|void
 name|procedure_select_callback
 parameter_list|(
 name|GtkTreeSelection
@@ -361,6 +361,10 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|scrolled_window
+decl_stmt|;
+name|GtkCellRenderer
+modifier|*
+name|renderer
 decl_stmt|;
 name|dbbrowser
 operator|=
@@ -704,6 +708,21 @@ operator|=
 name|gtk_tree_view_new
 argument_list|()
 expr_stmt|;
+name|renderer
+operator|=
+name|gtk_cell_renderer_text_new
+argument_list|()
+expr_stmt|;
+name|gtk_cell_renderer_text_set_fixed_height_from_font
+argument_list|(
+name|GTK_CELL_RENDERER_TEXT
+argument_list|(
+name|renderer
+argument_list|)
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
 name|gtk_tree_view_insert_column_with_attributes
 argument_list|(
 name|GTK_TREE_VIEW
@@ -718,8 +737,7 @@ literal|1
 argument_list|,
 name|NULL
 argument_list|,
-name|gtk_cell_renderer_text_new
-argument_list|()
+name|renderer
 argument_list|,
 literal|"text"
 argument_list|,
@@ -1171,7 +1189,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|void
 DECL|function|procedure_select_callback (GtkTreeSelection * sel,dbbrowser_t * dbbrowser)
 name|procedure_select_callback
 parameter_list|(
@@ -1191,22 +1209,18 @@ name|gchar
 modifier|*
 name|func
 decl_stmt|;
-name|g_return_val_if_fail
+name|g_return_if_fail
 argument_list|(
 name|sel
 operator|!=
 name|NULL
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
+name|g_return_if_fail
 argument_list|(
 name|dbbrowser
 operator|!=
 name|NULL
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1256,9 +1270,6 @@ name|func
 argument_list|)
 expr_stmt|;
 block|}
-return|return
-name|FALSE
-return|;
 block|}
 end_function
 
