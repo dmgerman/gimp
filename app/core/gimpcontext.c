@@ -536,7 +536,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2a31bd0103
+DECL|enum|__anon28fccd760103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -643,7 +643,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2a31bd0203
+DECL|enum|__anon28fccd760203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -4163,6 +4163,38 @@ end_function
 
 begin_function
 name|void
+DECL|function|gimp_palette_get_foreground (guchar * r,guchar * g,guchar * b)
+name|gimp_palette_get_foreground
+parameter_list|(
+name|guchar
+modifier|*
+name|r
+parameter_list|,
+name|guchar
+modifier|*
+name|g
+parameter_list|,
+name|guchar
+modifier|*
+name|b
+parameter_list|)
+block|{
+name|gimp_context_get_foreground
+argument_list|(
+name|NULL
+argument_list|,
+name|r
+argument_list|,
+name|g
+argument_list|,
+name|b
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|gimp_context_set_foreground (GimpContext * context,gint r,gint g,gint b)
 name|gimp_context_set_foreground
 parameter_list|(
@@ -4466,6 +4498,38 @@ name|background
 index|[
 literal|2
 index|]
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_palette_get_background (guchar * r,guchar * g,guchar * b)
+name|gimp_palette_get_background
+parameter_list|(
+name|guchar
+modifier|*
+name|r
+parameter_list|,
+name|guchar
+modifier|*
+name|g
+parameter_list|,
+name|guchar
+modifier|*
+name|b
+parameter_list|)
+block|{
+name|gimp_context_get_background
+argument_list|(
+name|NULL
+argument_list|,
+name|r
+argument_list|,
+name|g
+argument_list|,
+name|b
+argument_list|)
 expr_stmt|;
 block|}
 end_function

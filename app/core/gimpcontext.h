@@ -77,7 +77,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af93b8f0103
+DECL|enum|__anon28b25d2d0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_ARG_IMAGE
 name|GIMP_CONTEXT_ARG_IMAGE
@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af93b8f0203
+DECL|enum|__anon28b25d2d0203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -932,6 +932,29 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  FIXME: this let's the core link against gimp_color_button  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_palette_get_foreground
+parameter_list|(
+name|guchar
+modifier|*
+name|r
+parameter_list|,
+name|guchar
+modifier|*
+name|g
+parameter_list|,
+name|guchar
+modifier|*
+name|b
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function_decl
 name|void
 name|gimp_context_set_foreground
@@ -975,6 +998,29 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+name|guchar
+modifier|*
+name|r
+parameter_list|,
+name|guchar
+modifier|*
+name|g
+parameter_list|,
+name|guchar
+modifier|*
+name|b
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  FIXME: this let's the core link against gimp_color_button  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_palette_get_background
+parameter_list|(
 name|guchar
 modifier|*
 name|r

@@ -39,7 +39,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b7cdc50103
+DECL|enum|__anon29763cef0103
 block|{
 DECL|enumerator|POINT_LIGHT
 name|POINT_LIGHT
@@ -60,7 +60,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b7cdc50203
+DECL|enum|__anon29763cef0203
 block|{
 DECL|enumerator|LINEAR_MAP
 name|LINEAR_MAP
@@ -79,7 +79,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b7cdc50303
+DECL|enum|__anon29763cef0303
 block|{
 DECL|enumerator|IMAGE_BUMP
 name|IMAGE_BUMP
@@ -93,7 +93,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b7cdc50408
+DECL|struct|__anon29763cef0408
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b7cdc50508
+DECL|struct|__anon29763cef0508
 block|{
 DECL|member|type
 name|LightType
@@ -159,7 +159,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b7cdc50608
+DECL|struct|__anon29763cef0608
 block|{
 DECL|member|drawable_id
 name|gint32

@@ -543,6 +543,17 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+name|void
+name|gimp_color_update_uchar
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
 comment|/*  *  Helper Functions  */
 name|void
 name|gimp_table_attach_aligned

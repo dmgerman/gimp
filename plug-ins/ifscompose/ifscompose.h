@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b7888440108
+DECL|struct|__anon2b8598550108
 typedef|typedef
 struct|struct
 block|{
@@ -34,7 +34,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b7888440208
+DECL|struct|__anon2b8598550208
 typedef|typedef
 struct|struct
 block|{
@@ -55,7 +55,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b7888440308
+DECL|struct|__anon2b8598550308
 typedef|typedef
 struct|struct
 block|{
@@ -75,25 +75,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b7888440408
-typedef|typedef
-struct|struct
-block|{
-DECL|member|vals
-name|gdouble
-name|vals
-index|[
-literal|3
-index|]
-decl_stmt|;
-DECL|typedef|IfsColor
-block|}
-name|IfsColor
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|struct|__anon2b7888440508
+DECL|struct|__anon2b8598550408
 typedef|typedef
 struct|struct
 block|{
@@ -125,23 +107,23 @@ name|gint
 name|flip
 decl_stmt|;
 DECL|member|red_color
-name|IfsColor
+name|GimpRGB
 name|red_color
 decl_stmt|;
 DECL|member|green_color
-name|IfsColor
+name|GimpRGB
 name|green_color
 decl_stmt|;
 DECL|member|blue_color
-name|IfsColor
+name|GimpRGB
 name|blue_color
 decl_stmt|;
 DECL|member|black_color
-name|IfsColor
+name|GimpRGB
 name|black_color
 decl_stmt|;
 DECL|member|target_color
-name|IfsColor
+name|GimpRGB
 name|target_color
 decl_stmt|;
 DECL|member|hue_scale
@@ -169,7 +151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7888440608
+DECL|struct|__anon2b8598550508
 block|{
 DECL|member|num_elements
 name|gint
@@ -210,7 +192,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b7888440708
+DECL|struct|__anon2b8598550608
 typedef|typedef
 struct|struct
 block|{
@@ -520,7 +502,8 @@ parameter_list|,
 name|gdouble
 name|y
 parameter_list|,
-name|IfsColor
+name|GimpRGB
+modifier|*
 name|color
 parameter_list|,
 name|gint
