@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b93bba60103
+DECL|enum|__anon2c0b96d20103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -2915,7 +2915,7 @@ case|case
 name|GIMP_INDEXED
 case|:
 block|{
-name|gint
+name|guchar
 name|index
 decl_stmt|;
 name|gimp_image_transform_color
@@ -2925,7 +2925,7 @@ argument_list|,
 name|drawable
 argument_list|,
 operator|&
-name|i
+name|index
 argument_list|,
 name|GIMP_RGB
 argument_list|,
@@ -2937,7 +2937,7 @@ index|[
 name|INDEXED_PIX
 index|]
 operator|=
-name|i
+name|index
 expr_stmt|;
 name|c
 index|[
