@@ -3484,6 +3484,14 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|new_stroke
+operator|->
+name|closed
+operator|=
+name|stroke
+operator|->
+name|closed
+expr_stmt|;
 return|return
 name|new_stroke
 return|;
