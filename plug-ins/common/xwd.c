@@ -43,6 +43,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<unistd.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -80,7 +86,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a0b176a0108
+DECL|struct|__anon2a3e59d90108
 typedef|typedef
 struct|struct
 block|{
@@ -214,7 +220,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a0b176a0208
+DECL|struct|__anon2a3e59d90208
 typedef|typedef
 struct|struct
 block|{
@@ -272,7 +278,7 @@ value|((1<< MAPPERBITS)-1)
 end_define
 
 begin_typedef
-DECL|struct|__anon2a0b176a0308
+DECL|struct|__anon2a3e59d90308
 typedef|typedef
 struct|struct
 block|{
@@ -298,7 +304,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a0b176a0408
+DECL|struct|__anon2a3e59d90408
 typedef|typedef
 struct|struct
 block|{

@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<unistd.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -978,7 +984,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2c545bec0108
+DECL|struct|__anon29f3d0b40108
 specifier|static
 struct|struct
 block|{

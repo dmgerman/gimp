@@ -125,7 +125,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288cdd250108
+DECL|struct|__anon2ac6adeb0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -156,7 +156,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288cdd250208
+DECL|struct|__anon2ac6adeb0208
 block|{
 DECL|member|run
 name|gint
@@ -3469,10 +3469,16 @@ index|]
 decl_stmt|;
 name|gdouble
 name|ho
+init|=
+literal|1.0
 decl_stmt|,
 name|so
+init|=
+literal|1.0
 decl_stmt|,
 name|vo
+init|=
+literal|1.0
 decl_stmt|;
 name|gdouble
 name|theta

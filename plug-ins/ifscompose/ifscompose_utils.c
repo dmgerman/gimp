@@ -45,8 +45,31 @@ directive|include
 file|"ifscompose.h"
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|RAND_MAX
+end_ifndef
+
+begin_define
+DECL|macro|RAND_MAX
+define|#
+directive|define
+name|RAND_MAX
+value|2147483647
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* RAND_MAX */
+end_comment
+
 begin_typedef
-DECL|struct|__anon2b9dbd140108
+DECL|struct|__anon2b14299f0108
 typedef|typedef
 struct|struct
 block|{

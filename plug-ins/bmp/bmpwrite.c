@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<unistd.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -76,7 +82,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a272cca0108
+DECL|struct|__anon2a352b0d0108
 block|{
 DECL|member|run
 name|gint

@@ -57,27 +57,6 @@ directive|include
 file|<sys/types.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_SYS_SELECT_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<sys/select.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* HAVE_SYS_SELECT_H */
-end_comment
-
 begin_include
 include|#
 directive|include
@@ -101,6 +80,33 @@ include|#
 directive|include
 file|<netdb.h>
 end_include
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_SYS_SELECT_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<sys/select.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* HAVE_SYS_SELECT_H */
+end_comment
 
 begin_include
 include|#
@@ -149,6 +155,30 @@ directive|define
 name|MAGIC
 value|'G'
 end_define
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|NO_DIFFTIME
+end_ifdef
+
+begin_define
+DECL|macro|difftime (a,b)
+define|#
+directive|define
+name|difftime
+parameter_list|(
+name|a
+parameter_list|,
+name|b
+parameter_list|)
+value|(((double)(a)) - ((double)(b)))
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_ifndef
 ifndef|#
@@ -295,7 +325,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf6be8c0108
+DECL|struct|__anon29407c4b0108
 block|{
 DECL|member|command
 name|gchar
@@ -319,7 +349,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf6be8c0208
+DECL|struct|__anon29407c4b0208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -562,7 +592,7 @@ name|FILE
 modifier|*
 name|server_log_file
 init|=
-name|stdout
+name|NULL
 decl_stmt|;
 end_decl_stmt
 

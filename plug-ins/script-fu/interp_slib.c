@@ -76,6 +76,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"siod.h"
 end_include
 
@@ -751,8 +757,6 @@ DECL|variable|siod_output
 name|FILE
 modifier|*
 name|siod_output
-init|=
-name|stdout
 decl_stmt|;
 end_decl_stmt
 
@@ -16311,7 +16315,7 @@ name|end
 operator|-
 name|start
 expr_stmt|;
-name|memmove
+name|g_memmove
 argument_list|(
 name|buffer
 argument_list|,
@@ -18106,7 +18110,7 @@ name|errmsg
 decl_stmt|;
 name|errmsg
 operator|=
-name|strerror
+name|g_strerror
 argument_list|(
 name|xerrno
 argument_list|)
@@ -18165,7 +18169,7 @@ name|char
 modifier|*
 name|errmsg
 init|=
-name|strerror
+name|g_strerror
 argument_list|(
 name|xerrno
 argument_list|)

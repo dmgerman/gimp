@@ -49,6 +49,29 @@ begin_comment
 comment|/* for seed of random number */
 end_comment
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|RAND_MAX
+end_ifndef
+
+begin_define
+DECL|macro|RAND_MAX
+define|#
+directive|define
+name|RAND_MAX
+value|2147483647
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* RAND_MAX */
+end_comment
+
 begin_define
 DECL|macro|PLUG_IN_NAME
 define|#
@@ -610,7 +633,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b819f1e0108
+DECL|struct|__anon288733a80108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -656,7 +679,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b819f1e0208
+DECL|struct|__anon288733a80208
 block|{
 DECL|member|run
 name|gint

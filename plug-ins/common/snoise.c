@@ -49,6 +49,29 @@ begin_comment
 comment|/*---- Defines ----*/
 end_comment
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|RAND_MAX
+end_ifndef
+
+begin_define
+DECL|macro|RAND_MAX
+define|#
+directive|define
+name|RAND_MAX
+value|2147483647
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* RAND_MAX */
+end_comment
+
 begin_define
 DECL|macro|TABLE_SIZE
 define|#
@@ -97,7 +120,7 @@ comment|/*---- Typedefs ----*/
 end_comment
 
 begin_typedef
-DECL|struct|__anon27af924c0108
+DECL|struct|__anon2c2ceefe0108
 typedef|typedef
 struct|struct
 block|{
@@ -137,7 +160,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27af924c0208
+DECL|struct|__anon2c2ceefe0208
 typedef|typedef
 struct|struct
 block|{
@@ -152,7 +175,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27af924c0308
+DECL|struct|__anon2c2ceefe0308
 typedef|typedef
 struct|struct
 block|{

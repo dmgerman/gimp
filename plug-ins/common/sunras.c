@@ -43,6 +43,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<unistd.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -103,7 +109,7 @@ comment|/* Fileheader of SunRaster files */
 end_comment
 
 begin_typedef
-DECL|struct|__anon278ae21e0108
+DECL|struct|__anon28941e630108
 typedef|typedef
 struct|struct
 block|{
@@ -192,7 +198,7 @@ comment|/* Runlength compression format */
 end_comment
 
 begin_typedef
-DECL|struct|__anon278ae21e0208
+DECL|struct|__anon28941e630208
 typedef|typedef
 struct|struct
 block|{
@@ -810,7 +816,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278ae21e0308
+DECL|struct|__anon28941e630308
 block|{
 DECL|member|rle
 name|gint
@@ -826,7 +832,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278ae21e0408
+DECL|struct|__anon28941e630408
 block|{
 DECL|member|run
 name|gint

@@ -65,6 +65,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<unistd.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -295,7 +301,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27dfd3c80108
+DECL|struct|__anon2be370b30108
 block|{
 DECL|member|extensionAreaOffset
 name|guint32

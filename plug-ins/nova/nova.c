@@ -92,6 +92,29 @@ begin_comment
 comment|/* M_PI */
 end_comment
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|RAND_MAX
+end_ifndef
+
+begin_define
+DECL|macro|RAND_MAX
+define|#
+directive|define
+name|RAND_MAX
+value|2147483647
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* RAND_MAX */
+end_comment
+
 begin_if
 if|#
 directive|if
@@ -203,7 +226,7 @@ value|GDK_EXPOSURE_MASK | \ 		       GDK_BUTTON_PRESS_MASK | \ 		       GDK_BUTT
 end_define
 
 begin_typedef
-DECL|struct|__anon28a553ab0108
+DECL|struct|__anon278e97370108
 typedef|typedef
 struct|struct
 block|{
@@ -236,7 +259,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28a553ab0208
+DECL|struct|__anon278e97370208
 typedef|typedef
 struct|struct
 block|{
@@ -251,7 +274,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28a553ab0308
+DECL|struct|__anon278e97370308
 typedef|typedef
 struct|struct
 block|{
@@ -278,7 +301,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a553ab0408
+DECL|struct|__anon278e97370408
 block|{
 DECL|member|drawable
 name|GDrawable

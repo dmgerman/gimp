@@ -109,19 +109,13 @@ end_undef
 begin_undef
 undef|#
 directive|undef
+name|NO_DIFFTIME
+end_undef
+
+begin_undef
+undef|#
+directive|undef
 name|NO_FD_SET
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|RETSIGTYPE
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|TIME_WITH_SYS_TIME
 end_undef
 
 begin_undef

@@ -131,6 +131,29 @@ begin_comment
 comment|/* M_PI */
 end_comment
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|RAND_MAX
+end_ifndef
+
+begin_define
+DECL|macro|RAND_MAX
+define|#
+directive|define
+name|RAND_MAX
+value|2147483647
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* RAND_MAX */
+end_comment
+
 begin_define
 DECL|macro|ROUND_TO_INT (val)
 define|#
@@ -237,7 +260,7 @@ value|1
 end_define
 
 begin_typedef
-DECL|struct|__anon29ec0e840108
+DECL|struct|__anon2b8c1d6a0108
 typedef|typedef
 struct|struct
 block|{
@@ -338,7 +361,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29ec0e840208
+DECL|struct|__anon2b8c1d6a0208
 typedef|typedef
 struct|struct
 block|{
@@ -1486,7 +1509,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-DECL|struct|__anon29ec0e840308
+DECL|struct|__anon2b8c1d6a0308
 DECL|member|r
 DECL|member|g
 DECL|member|b

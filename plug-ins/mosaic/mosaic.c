@@ -50,6 +50,29 @@ end_include
 begin_ifndef
 ifndef|#
 directive|ifndef
+name|RAND_MAX
+end_ifndef
+
+begin_define
+DECL|macro|RAND_MAX
+define|#
+directive|define
+name|RAND_MAX
+value|2147483647
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* RAND_MAX */
+end_comment
+
+begin_ifndef
+ifndef|#
+directive|ifndef
 name|M_PI
 end_ifndef
 
@@ -220,7 +243,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d9c750108
+DECL|struct|__anon2c64b1450108
 block|{
 DECL|member|x
 DECL|member|y
@@ -238,7 +261,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d9c750208
+DECL|struct|__anon2c64b1450208
 block|{
 DECL|member|npts
 name|gint
@@ -260,7 +283,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d9c750308
+DECL|struct|__anon2c64b1450308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -289,7 +312,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d9c750408
+DECL|struct|__anon2c64b1450408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -344,7 +367,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d9c750508
+DECL|struct|__anon2c64b1450508
 block|{
 DECL|member|run
 name|gint

@@ -63,6 +63,14 @@ directive|include
 file|"script-fu-server.h"
 end_include
 
+begin_decl_stmt
+specifier|extern
+name|FILE
+modifier|*
+name|siod_output
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/* External functions  */
 end_comment
@@ -657,6 +665,10 @@ modifier|*
 name|return_vals
 parameter_list|)
 block|{
+name|siod_output
+operator|=
+name|stdout
+expr_stmt|;
 comment|/*  Determine before we allow scripts to register themselves    *   whether this is the base, automatically installed script-fu extension    */
 if|if
 condition|(
