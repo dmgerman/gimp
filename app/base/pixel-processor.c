@@ -295,11 +295,6 @@ literal|4
 index|]
 decl_stmt|;
 name|gint
-name|n_tiles
-init|=
-literal|0
-decl_stmt|;
-name|gint
 name|i
 decl_stmt|;
 name|g_static_mutex_lock
@@ -448,9 +443,6 @@ name|processor
 operator|->
 name|mutex
 argument_list|)
-expr_stmt|;
-name|n_tiles
-operator|++
 expr_stmt|;
 switch|switch
 condition|(
@@ -1206,6 +1198,12 @@ operator|>
 name|TILES_PER_THREAD
 condition|)
 block|{
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 name|gint
 name|tasks
 init|=
@@ -1232,15 +1230,39 @@ condition|(
 name|tasks
 operator|--
 condition|)
+block|{
 name|g_thread_pool_push
 argument_list|(
 name|pool
 argument_list|,
 name|processor
 argument_list|,
-name|NULL
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|error
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"thread creation failed: %s"
+argument_list|,
+name|error
+operator|->
+name|message
+argument_list|)
+expr_stmt|;
+name|g_clear_error
+argument_list|(
+operator|&
+name|error
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 if|if
 condition|(
 name|progress_func
@@ -1577,7 +1599,7 @@ default|default:
 name|g_warning
 argument_list|(
 literal|"pixel_regions_process_parallel: "
-literal|"bad number of regions (%d)\n"
+literal|"bad number of regions (%d)"
 argument_list|,
 name|processor
 operator|.
@@ -1791,7 +1813,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"changing the number of threads to %d failed: %s\n"
+literal|"changing the number of threads to %d failed: %s"
 argument_list|,
 name|num_threads
 argument_list|,
