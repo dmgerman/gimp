@@ -270,7 +270,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c85c460103
+DECL|enum|__anon29013e790103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -588,6 +588,9 @@ parameter_list|,
 name|Argument
 modifier|*
 name|args
+parameter_list|,
+name|int
+name|argc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2011,6 +2014,8 @@ operator|->
 name|db_info
 argument_list|,
 name|NULL
+argument_list|,
+literal|0
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4683,7 +4688,7 @@ end_function
 begin_function
 name|Argument
 modifier|*
-DECL|function|plug_in_run (ProcRecord * proc_rec,Argument * args,int synchronous,int destroy_values,int gdisp_ID)
+DECL|function|plug_in_run (ProcRecord * proc_rec,Argument * args,int argc,int synchronous,int destroy_values,int gdisp_ID)
 name|plug_in_run
 parameter_list|(
 name|ProcRecord
@@ -4693,6 +4698,9 @@ parameter_list|,
 name|Argument
 modifier|*
 name|args
+parameter_list|,
+name|int
+name|argc
 parameter_list|,
 name|int
 name|synchronous
@@ -4738,6 +4746,8 @@ argument_list|(
 name|proc_rec
 argument_list|,
 name|args
+argument_list|,
+name|argc
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -4890,9 +4900,7 @@ name|proc_run
 operator|.
 name|nparams
 operator|=
-name|proc_rec
-operator|->
-name|num_args
+name|argc
 expr_stmt|;
 name|proc_run
 operator|.
@@ -4902,9 +4910,7 @@ name|plug_in_args_to_params
 argument_list|(
 name|args
 argument_list|,
-name|proc_rec
-operator|->
-name|num_args
+name|argc
 argument_list|,
 name|FALSE
 argument_list|)
@@ -5073,30 +5079,10 @@ name|g_new
 argument_list|(
 name|Argument
 argument_list|,
-name|last_plug_in
-operator|->
-name|num_args
+literal|3
 argument_list|)
 expr_stmt|;
-name|memset
-argument_list|(
-name|args
-argument_list|,
-literal|0
-argument_list|,
-operator|(
-sizeof|sizeof
-argument_list|(
-name|Argument
-argument_list|)
-operator|*
-name|last_plug_in
-operator|->
-name|num_args
-operator|)
-argument_list|)
-expr_stmt|;
-comment|/* initialize the argument types */
+comment|/* initialize the first three argument types */
 for|for
 control|(
 name|i
@@ -5105,9 +5091,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|last_plug_in
-operator|->
-name|num_args
+literal|3
 condition|;
 name|i
 operator|++
@@ -5128,7 +5112,7 @@ index|]
 operator|.
 name|arg_type
 expr_stmt|;
-comment|/* initialize the first 3 plug-in arguments  */
+comment|/* initialize the first three plug-in arguments  */
 name|args
 index|[
 literal|0
@@ -5187,6 +5171,8 @@ argument_list|(
 name|last_plug_in
 argument_list|,
 name|args
+argument_list|,
+literal|3
 argument_list|,
 name|FALSE
 argument_list|,
@@ -9797,6 +9783,12 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
+name|int
+name|argc
+init|=
+literal|0
+decl_stmt|;
+comment|/* calm down a gcc warning.  */
 comment|/* get the active gdisplay */
 name|gdisplay
 operator|=
@@ -9895,6 +9887,10 @@ name|pdb_int
 operator|=
 name|RUN_INTERACTIVE
 expr_stmt|;
+name|argc
+operator|=
+literal|1
+expr_stmt|;
 break|break;
 case|case
 name|PDB_PLUGIN
@@ -9956,6 +9952,10 @@ operator|->
 name|gimage
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|argc
+operator|=
+literal|3
 expr_stmt|;
 block|}
 else|else
@@ -10067,6 +10067,10 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|argc
+operator|=
+literal|3
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -10096,7 +10100,12 @@ literal|"Unknown procedure type."
 argument_list|)
 argument_list|)
 expr_stmt|;
-break|break;
+name|g_free
+argument_list|(
+name|args
+argument_list|)
+expr_stmt|;
+return|return;
 block|}
 comment|/* run the plug-in procedure */
 name|plug_in_run
@@ -10104,6 +10113,8 @@ argument_list|(
 name|proc_rec
 argument_list|,
 name|args
+argument_list|,
+name|argc
 argument_list|,
 name|FALSE
 argument_list|,
@@ -10816,7 +10827,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plug_in_temp_run (ProcRecord * proc_rec,Argument * args)
+DECL|function|plug_in_temp_run (ProcRecord * proc_rec,Argument * args,int argc)
 name|plug_in_temp_run
 parameter_list|(
 name|ProcRecord
@@ -10826,6 +10837,9 @@ parameter_list|,
 name|Argument
 modifier|*
 name|args
+parameter_list|,
+name|int
+name|argc
 parameter_list|)
 block|{
 name|Argument
@@ -10908,9 +10922,7 @@ name|proc_run
 operator|.
 name|nparams
 operator|=
-name|proc_rec
-operator|->
-name|num_args
+name|argc
 expr_stmt|;
 name|proc_run
 operator|.
@@ -10920,9 +10932,7 @@ name|plug_in_args_to_params
 argument_list|(
 name|args
 argument_list|,
-name|proc_rec
-operator|->
-name|num_args
+name|argc
 argument_list|,
 name|FALSE
 argument_list|)

@@ -1968,6 +1968,10 @@ name|procedure
 argument_list|,
 name|args
 argument_list|,
+name|procedure
+operator|->
+name|num_args
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -1988,6 +1992,10 @@ name|procedure
 argument_list|,
 name|args
 argument_list|,
+name|procedure
+operator|->
+name|num_args
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -2007,6 +2015,10 @@ argument_list|(
 name|procedure
 argument_list|,
 name|args
+argument_list|,
+name|procedure
+operator|->
+name|num_args
 argument_list|,
 name|TRUE
 argument_list|,

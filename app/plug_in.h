@@ -548,6 +548,9 @@ modifier|*
 name|args
 parameter_list|,
 name|int
+name|argc
+parameter_list|,
+name|int
 name|synchronous
 parameter_list|,
 name|int
