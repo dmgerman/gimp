@@ -330,7 +330,7 @@ name|g_signal_connect
 argument_list|(
 name|config
 argument_list|,
-literal|"notify::num_processors"
+literal|"notify::num-processors"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
