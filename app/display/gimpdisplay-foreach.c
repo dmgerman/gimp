@@ -291,7 +291,7 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-comment|/*  destroying the shell removes the GimpDisplay from the list, so    *  do a while loop "around" the first element to get them all    */
+comment|/*  this removes the GimpDisplay from the list, so do a while loop    *  "around" the first element to get them all    */
 while|while
 condition|(
 name|display_list
