@@ -2272,22 +2272,7 @@ block|}
 block|}
 else|else
 block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Trying legacy loader on file '%s' "
-literal|"with unknown extension."
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|file_data
-operator|->
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
+comment|/*      	    g_message (_("Trying fallback loader on file '%s' " 		         "with unknown extension."),                        gimp_filename_to_utf8 (file_data->filename));           */
 goto|goto
 name|insert
 goto|;
