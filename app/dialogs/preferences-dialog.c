@@ -5855,7 +5855,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Navigation preview size:"
+literal|"Na_vigation preview size:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -5911,7 +5911,7 @@ literal|"can-change-accels"
 argument_list|,
 name|_
 argument_list|(
-literal|"Use dynamic _keyboard shortcuts"
+literal|"Use _dynamic keyboard shortcuts"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5928,7 +5928,7 @@ name|GTK_STOCK_PREFERENCES
 argument_list|,
 name|_
 argument_list|(
-literal|"Configure Keyboard Shortcuts..."
+literal|"Configure _Keyboard Shortcuts..."
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5959,7 +5959,7 @@ literal|"save-accels"
 argument_list|,
 name|_
 argument_list|(
-literal|"Save keyboard shortcuts on exit"
+literal|"_Save keyboard shortcuts on exit"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5976,7 +5976,7 @@ name|GTK_STOCK_SAVE
 argument_list|,
 name|_
 argument_list|(
-literal|"Save Keyboard Shortcuts Now"
+literal|"Save Keyboard Shortcuts _Now"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -6003,11 +6003,12 @@ name|button2
 operator|=
 name|prefs_button_add
 argument_list|(
-name|GTK_STOCK_CLEAR
+name|GIMP_STOCK_RESET
 argument_list|,
 name|_
 argument_list|(
-literal|"Clear Saved Keyboard Shortcuts Now"
+literal|"_Reset Saved Keyboard Shortcuts to "
+literal|"Default Values"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -7708,7 +7709,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2afc9f320108
+DECL|struct|__anon27ec52c30108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -8859,7 +8860,7 @@ name|GTK_STOCK_PREFERENCES
 argument_list|,
 name|_
 argument_list|(
-literal|"Configure Extended Input Devices..."
+literal|"Configure E_xtended Input Devices..."
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -8890,7 +8891,7 @@ literal|"save-device-status"
 argument_list|,
 name|_
 argument_list|(
-literal|"Save input device settings on exit"
+literal|"_Save input device settings on exit"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -8907,7 +8908,7 @@ name|GTK_STOCK_SAVE
 argument_list|,
 name|_
 argument_list|(
-literal|"Save Input Device Settings Now"
+literal|"Save Input Device Settings _Now"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -8934,11 +8935,12 @@ name|button2
 operator|=
 name|prefs_button_add
 argument_list|(
-name|GTK_STOCK_CLEAR
+name|GIMP_STOCK_RESET
 argument_list|,
 name|_
 argument_list|(
-literal|"Clear Saved Input Device Settings Now"
+literal|"_Reset Saved Input Device Settings to "
+literal|"Default Values"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -9030,7 +9032,7 @@ modifier|*
 name|list
 decl_stmt|;
 enum|enum
-DECL|enum|__anon2afc9f320203
+DECL|enum|__anon27ec52c30203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -10008,7 +10010,7 @@ name|GTK_STOCK_SAVE
 argument_list|,
 name|_
 argument_list|(
-literal|"Save Window Positions Now"
+literal|"Save Window Positions _Now"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -10035,11 +10037,12 @@ name|button2
 operator|=
 name|prefs_button_add
 argument_list|(
-name|GTK_STOCK_CLEAR
+name|GIMP_STOCK_RESET
 argument_list|,
 name|_
 argument_list|(
-literal|"Clear Saved Window Positions Now"
+literal|"_Reset Saved Window Positions to "
+literal|"Default Values"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -10422,7 +10425,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2afc9f320308
+DECL|struct|__anon27ec52c30308
 block|{
 DECL|member|label
 specifier|const
@@ -10579,7 +10582,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2afc9f320408
+DECL|struct|__anon27ec52c30408
 block|{
 DECL|member|tree_label
 specifier|const
