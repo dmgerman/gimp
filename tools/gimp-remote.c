@@ -75,10 +75,16 @@ begin_function
 specifier|static
 name|GdkWindow
 modifier|*
-DECL|function|gimp_remote_find_window (void)
+DECL|function|gimp_remote_find_window (GdkDisplay * display,GdkScreen * screen)
 name|gimp_remote_find_window
 parameter_list|(
-name|void
+name|GdkDisplay
+modifier|*
+name|display
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
 parameter_list|)
 block|{
 name|GdkWindow
@@ -86,6 +92,10 @@ modifier|*
 name|result
 init|=
 name|NULL
+decl_stmt|;
+name|Display
+modifier|*
+name|xdisplay
 decl_stmt|;
 name|Window
 name|root
@@ -108,14 +118,32 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|GdkWindow
+modifier|*
+name|root_window
+init|=
+name|gdk_screen_get_root_window
+argument_list|(
+name|screen
+argument_list|)
+decl_stmt|;
+name|xdisplay
+operator|=
+name|gdk_x11_display_get_xdisplay
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|XQueryTree
 argument_list|(
-name|gdk_display
+name|xdisplay
 argument_list|,
-name|gdk_x11_get_default_root_xwindow
-argument_list|()
+name|GDK_WINDOW_XID
+argument_list|(
+name|root_window
+argument_list|)
 argument_list|,
 operator|&
 name|root
@@ -151,7 +179,7 @@ name|class_atom
 operator|=
 name|XInternAtom
 argument_list|(
-name|gdk_display
+name|xdisplay
 argument_list|,
 literal|"WM_CLASS"
 argument_list|,
@@ -162,7 +190,7 @@ name|string_atom
 operator|=
 name|XInternAtom
 argument_list|(
-name|gdk_display
+name|xdisplay
 argument_list|,
 literal|"STRING"
 argument_list|,
@@ -209,7 +237,7 @@ name|window
 operator|=
 name|XmuClientWindow
 argument_list|(
-name|gdk_display
+name|xdisplay
 argument_list|,
 name|children
 index|[
@@ -222,7 +250,7 @@ if|if
 condition|(
 name|XGetWindowProperty
 argument_list|(
-name|gdk_display
+name|xdisplay
 argument_list|,
 name|window
 argument_list|,
@@ -291,8 +319,10 @@ argument_list|)
 expr_stmt|;
 name|result
 operator|=
-name|gdk_window_foreign_new
+name|gdk_window_foreign_new_for_display
 argument_list|(
+name|display
+argument_list|,
 name|window
 argument_list|)
 expr_stmt|;
@@ -429,9 +459,11 @@ expr_stmt|;
 name|g_print
 argument_list|(
 literal|"Valid options are:\n"
-literal|"  -h --help       Output this help.\n"
-literal|"  -v --version    Output version info.\n"
-literal|"  -n --new        Start gimp if no active gimp window was found.\n\n"
+literal|"  --display<display>  Use the designated X display.\n"
+literal|"  -n --new             Start gimp if no active gimp window was found.\n"
+literal|"  -h --help            Output this help.\n"
+literal|"  -v --version         Output version info.\n"
+literal|"\n"
 argument_list|)
 expr_stmt|;
 name|g_print
@@ -922,6 +954,10 @@ name|GtkWidget
 modifier|*
 name|source
 decl_stmt|;
+name|GdkDisplay
+modifier|*
+name|display
+decl_stmt|;
 name|GdkWindow
 modifier|*
 name|gimp_window
@@ -976,6 +1012,15 @@ decl_stmt|;
 name|guint
 name|i
 decl_stmt|;
+name|gtk_init
+argument_list|(
+operator|&
+name|argc
+argument_list|,
+operator|&
+name|argv
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -1216,20 +1261,21 @@ return|return
 name|EXIT_SUCCESS
 return|;
 block|}
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
-argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
 comment|/*  locate Gimp window */
+name|display
+operator|=
+name|gdk_display_get_default
+argument_list|()
+expr_stmt|;
 name|gimp_window
 operator|=
 name|gimp_remote_find_window
+argument_list|(
+name|display
+argument_list|,
+name|gdk_screen_get_default
 argument_list|()
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1263,8 +1309,10 @@ return|return
 name|EXIT_FAILURE
 return|;
 block|}
-name|gdk_drag_get_protocol
+name|gdk_drag_get_protocol_for_display
 argument_list|(
+name|display
+argument_list|,
 name|GDK_WINDOW_XID
 argument_list|(
 name|gimp_window
