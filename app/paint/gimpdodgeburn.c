@@ -771,6 +771,11 @@ block|{
 name|GimpItem
 modifier|*
 name|item
+init|=
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
 decl_stmt|;
 name|gint
 name|x1
@@ -781,13 +786,6 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|item
-operator|=
-name|GIMP_ITEM
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 name|x1
 operator|=
 name|CLAMP

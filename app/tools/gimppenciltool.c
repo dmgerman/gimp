@@ -75,10 +75,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  functions  */
-end_comment
-
 begin_function
 name|void
 DECL|function|gimp_pencil_tool_register (GimpToolRegisterCallback callback,gpointer data)

@@ -533,6 +533,12 @@ literal|0.0
 expr_stmt|;
 name|core
 operator|->
+name|pixel_dist
+operator|=
+literal|0.0
+expr_stmt|;
+name|core
+operator|->
 name|x1
 operator|=
 literal|0
@@ -1950,6 +1956,7 @@ name|cur_coords
 operator|.
 name|y
 operator|=
+operator|(
 name|core
 operator|->
 name|last_coords
@@ -1962,6 +1969,7 @@ name|dx
 argument_list|,
 name|dy
 argument_list|)
+operator|)
 expr_stmt|;
 else|else
 name|core
@@ -1970,6 +1978,7 @@ name|cur_coords
 operator|.
 name|x
 operator|=
+operator|(
 name|core
 operator|->
 name|last_coords
@@ -1982,6 +1991,7 @@ name|dy
 argument_list|,
 name|dx
 argument_list|)
+operator|)
 expr_stmt|;
 block|}
 end_function
@@ -2182,20 +2192,20 @@ name|Tile
 modifier|*
 name|undo_tile
 decl_stmt|;
-name|gint
-name|h
+name|gboolean
+name|release_tile
 decl_stmt|;
 name|gint
-name|refd
+name|h
 decl_stmt|;
 name|gint
 name|pixelwidth
 decl_stmt|;
 name|gint
-name|dwidth
+name|drawable_width
 decl_stmt|;
 name|gint
-name|dheight
+name|drawable_height
 decl_stmt|;
 name|guchar
 modifier|*
@@ -2240,7 +2250,7 @@ name|y1
 operator|)
 argument_list|)
 expr_stmt|;
-name|dwidth
+name|drawable_width
 operator|=
 name|gimp_item_width
 argument_list|(
@@ -2250,7 +2260,7 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|dheight
+name|drawable_height
 operator|=
 name|gimp_item_height
 argument_list|(
@@ -2268,7 +2278,7 @@ name|x1
 argument_list|,
 literal|0
 argument_list|,
-name|dwidth
+name|drawable_width
 argument_list|)
 expr_stmt|;
 name|y1
@@ -2279,7 +2289,7 @@ name|y1
 argument_list|,
 literal|0
 argument_list|,
-name|dheight
+name|drawable_height
 argument_list|)
 expr_stmt|;
 name|x2
@@ -2290,7 +2300,7 @@ name|x2
 argument_list|,
 literal|0
 argument_list|,
-name|dwidth
+name|drawable_width
 argument_list|)
 expr_stmt|;
 name|y2
@@ -2301,7 +2311,7 @@ name|y2
 argument_list|,
 literal|0
 argument_list|,
-name|dheight
+name|drawable_height
 argument_list|)
 expr_stmt|;
 comment|/*  configure the pixel regions  */
@@ -2490,9 +2500,9 @@ name|undo_tile
 argument_list|)
 condition|)
 block|{
-name|refd
+name|release_tile
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|undo_tile
 operator|=
@@ -2517,6 +2527,7 @@ argument_list|)
 expr_stmt|;
 name|s
 operator|=
+operator|(
 operator|(
 name|guchar
 operator|*
@@ -2553,14 +2564,15 @@ name|x
 operator|%
 name|TILE_WIDTH
 operator|)
+operator|)
 expr_stmt|;
 comment|/* dubious... */
 block|}
 else|else
 block|{
-name|refd
+name|release_tile
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|s
 operator|=
@@ -2621,7 +2633,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|refd
+name|release_tile
 condition|)
 name|tile_release
 argument_list|(

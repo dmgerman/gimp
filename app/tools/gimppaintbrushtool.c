@@ -75,10 +75,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  public functions  */
-end_comment
-
 begin_function
 name|void
 DECL|function|gimp_paintbrush_tool_register (GimpToolRegisterCallback callback,gpointer data)
@@ -221,10 +217,6 @@ name|tool_type
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*  private functions  */
-end_comment
 
 begin_function
 specifier|static

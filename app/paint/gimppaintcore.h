@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b96b1b80103
+DECL|enum|__anon2c1bf4c50103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -204,7 +204,7 @@ name|TileManager
 modifier|*
 name|canvas_tiles
 decl_stmt|;
-comment|/*  the mask used for painting       */
+comment|/*  the buffer to paint the mask to  */
 DECL|member|orig_buf
 name|TempBuf
 modifier|*
@@ -216,7 +216,7 @@ name|TempBuf
 modifier|*
 name|canvas_buf
 decl_stmt|;
-comment|/*  the buffer to paint to           */
+comment|/*  the buffer to paint pixels to    */
 block|}
 struct|;
 end_struct

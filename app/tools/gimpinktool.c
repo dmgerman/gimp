@@ -72,18 +72,6 @@ end_include
 begin_function_decl
 specifier|static
 name|void
-name|gimp_ink_tool_class_init
-parameter_list|(
-name|GimpInkToolClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|gimp_ink_tool_init
 parameter_list|(
 name|GimpInkTool
@@ -196,11 +184,9 @@ name|GBaseFinalizeFunc
 operator|)
 name|NULL
 block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_ink_tool_class_init
+name|NULL
 block|,
+comment|/* class_init     */
 name|NULL
 block|,
 comment|/* class_finalize */
@@ -240,19 +226,6 @@ return|return
 name|tool_type
 return|;
 block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_ink_tool_class_init (GimpInkToolClass * klass)
-name|gimp_ink_tool_class_init
-parameter_list|(
-name|GimpInkToolClass
-modifier|*
-name|klass
-parameter_list|)
-block|{ }
 end_function
 
 begin_function
