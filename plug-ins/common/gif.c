@@ -122,7 +122,7 @@ end_comment
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|_PARASITE_H_
+name|GIMP_HAVE_PARASITES
 end_ifdef
 
 begin_define
@@ -144,7 +144,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon293321130103
+DECL|enum|__anon297560250103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -161,7 +161,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293321130208
+DECL|struct|__anon297560250208
 block|{
 DECL|member|interlace
 name|gint
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293321130308
+DECL|struct|__anon297560250308
 block|{
 DECL|member|run
 name|gint
