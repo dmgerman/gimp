@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpairbrushtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppaintbrushtool.h"
 end_include
 
