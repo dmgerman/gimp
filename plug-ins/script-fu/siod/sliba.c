@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"siod.h"
 end_include
 
@@ -765,9 +771,14 @@ operator|++
 name|j
 control|)
 block|{
-name|sprintf
+name|g_ascii_formatd
 argument_list|(
 name|tkbuffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|tkbuffer
+argument_list|)
 argument_list|,
 literal|"%g"
 argument_list|,
@@ -8776,6 +8787,12 @@ name|b
 argument_list|)
 condition|)
 block|{
+name|char
+name|format
+index|[
+literal|32
+index|]
+decl_stmt|;
 if|if
 condition|(
 operator|(
@@ -8792,14 +8809,14 @@ operator|)
 condition|)
 name|sprintf
 argument_list|(
-name|buffer
+name|format
 argument_list|,
 name|NULLP
 argument_list|(
 name|b
 argument_list|)
 condition|?
-literal|"% *.*g"
+literal|"%%%d.%dg"
 else|:
 name|EQ
 argument_list|(
@@ -8808,15 +8825,13 @@ argument_list|,
 name|b
 argument_list|)
 condition|?
-literal|"% *.*e"
+literal|"%%%d.%dd"
 else|:
-literal|"% *.*f"
+literal|"%%%d.%df"
 argument_list|,
 name|width
 argument_list|,
 name|prec
-argument_list|,
-name|y
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -8828,14 +8843,14 @@ literal|0
 condition|)
 name|sprintf
 argument_list|(
-name|buffer
+name|format
 argument_list|,
 name|NULLP
 argument_list|(
 name|b
 argument_list|)
 condition|?
-literal|"% *g"
+literal|"%%%dg"
 else|:
 name|EQ
 argument_list|(
@@ -8844,13 +8859,11 @@ argument_list|,
 name|b
 argument_list|)
 condition|?
-literal|"% *e"
+literal|"%%%de"
 else|:
-literal|"% *f"
+literal|"%%%df"
 argument_list|,
 name|width
-argument_list|,
-name|y
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -8862,14 +8875,14 @@ literal|0
 condition|)
 name|sprintf
 argument_list|(
-name|buffer
+name|format
 argument_list|,
 name|NULLP
 argument_list|(
 name|b
 argument_list|)
 condition|?
-literal|"%.*g"
+literal|"%%.%dg"
 else|:
 name|EQ
 argument_list|(
@@ -8878,19 +8891,17 @@ argument_list|,
 name|b
 argument_list|)
 condition|?
-literal|"%.*e"
+literal|"%%.%de"
 else|:
-literal|"%.*f"
+literal|"%%.%df"
 argument_list|,
 name|prec
-argument_list|,
-name|y
 argument_list|)
 expr_stmt|;
 else|else
 name|sprintf
 argument_list|(
-name|buffer
+name|format
 argument_list|,
 name|NULLP
 argument_list|(
@@ -8909,6 +8920,18 @@ condition|?
 literal|"%e"
 else|:
 literal|"%f"
+argument_list|)
+expr_stmt|;
+name|g_ascii_formatd
+argument_list|(
+name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
+argument_list|,
+name|format
 argument_list|,
 name|y
 argument_list|)
@@ -9074,9 +9097,11 @@ name|b
 condition|)
 name|result
 operator|=
-name|atof
+name|g_ascii_strtod
 argument_list|(
 name|str
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 elseif|else
