@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__QMASK_H__
+name|__GIMP_DISPLAY_SHELL_QMASK_H__
 end_ifndef
 
 begin_define
-DECL|macro|__QMASK_H__
+DECL|macro|__GIMP_DISPLAY_SHELL_QMASK_H__
 define|#
 directive|define
-name|__QMASK_H__
+name|__GIMP_DISPLAY_SHELL_QMASK_H__
 end_define
 
 begin_function_decl
 name|gboolean
-name|qmask_button_press_callback
+name|gimp_display_shell_qmask_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -28,49 +28,39 @@ name|GdkEventButton
 modifier|*
 name|event
 parameter_list|,
-name|gpointer
-name|data
+name|GimpDisplayShell
+modifier|*
+name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|qmask_activate_callback
+name|gimp_display_shell_qmask_on_toggled
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|qmask_deactivate_callback
+name|gimp_display_shell_qmask_off_toggled
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|qmask_buttons_update
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
+name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -81,7 +71,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __QMASK_H__ */
+comment|/* __GIMP_DISPLAY_SHELL_QMASK_H__ */
 end_comment
 
 end_unit

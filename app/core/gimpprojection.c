@@ -130,12 +130,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"qmask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -1809,12 +1803,6 @@ argument_list|)
 expr_stmt|;
 comment|/*  update the gdisplay's info dialog  */
 name|info_window_update
-argument_list|(
-name|gdisp
-argument_list|)
-expr_stmt|;
-comment|/* update the gdisplay's qmask buttons */
-name|qmask_buttons_update
 argument_list|(
 name|gdisp
 argument_list|)
