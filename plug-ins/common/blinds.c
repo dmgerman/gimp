@@ -161,7 +161,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4e312d0108
+DECL|struct|__anon28e6ce500108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1464,7 +1464,7 @@ name|orientation
 argument_list|,
 name|_
 argument_list|(
-literal|"Horizontal"
+literal|"_Horizontal"
 argument_list|)
 argument_list|,
 operator|(
@@ -1476,7 +1476,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Vertical"
+literal|"_Vertical"
 argument_list|)
 argument_list|,
 operator|(
@@ -1577,11 +1577,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Transparent"
+literal|"_Transparent"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1774,7 +1774,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Displacement:"
+literal|"_Displacement:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -1841,7 +1841,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Num Segments:"
+literal|"_Num Segments:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2070,10 +2070,8 @@ name|guchar
 modifier|*
 name|p
 decl_stmt|;
-name|int
+name|gboolean
 name|isgrey
-init|=
-literal|0
 decl_stmt|;
 name|gimp_pixel_rgn_init
 argument_list|(
@@ -2161,29 +2159,15 @@ operator|+
 name|has_alpha
 expr_stmt|;
 block|}
-switch|switch
-condition|(
-name|gimp_drawable_type
+name|isgrey
+operator|=
+name|gimp_drawable_is_gray
 argument_list|(
 name|blindsdrawable
 operator|->
 name|drawable_id
 argument_list|)
-condition|)
-block|{
-case|case
-name|GIMP_GRAYA_IMAGE
-case|:
-case|case
-name|GIMP_GRAY_IMAGE
-case|:
-name|isgrey
-operator|=
-literal|1
 expr_stmt|;
-default|default:
-break|break;
-block|}
 for|for
 control|(
 name|y
@@ -2228,9 +2212,7 @@ literal|0
 init|;
 name|x
 operator|<
-operator|(
 name|preview_width
-operator|)
 condition|;
 name|x
 operator|++

@@ -82,7 +82,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292268840103
+DECL|enum|__anon275882f60103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -97,56 +97,10 @@ block|}
 enum|;
 end_enum
 
-begin_struct
-DECL|struct|Grgb
+begin_typedef
+typedef|typedef
 struct|struct
-name|Grgb
-block|{
-DECL|member|red
-name|guint8
-name|red
-decl_stmt|;
-DECL|member|green
-name|guint8
-name|green
-decl_stmt|;
-DECL|member|blue
-name|guint8
-name|blue
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|GRegion
-struct|struct
-name|GRegion
-block|{
-DECL|member|x
-name|gint32
-name|x
-decl_stmt|;
-DECL|member|y
-name|gint32
-name|y
-decl_stmt|;
-DECL|member|width
-name|gint32
-name|width
-decl_stmt|;
-DECL|member|height
-name|gint32
-name|height
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|piArgs
-struct|struct
-name|piArgs
+DECL|struct|__anon275882f60208
 block|{
 DECL|member|img
 name|gint32
@@ -172,9 +126,11 @@ DECL|member|embossp
 name|gint32
 name|embossp
 decl_stmt|;
+DECL|typedef|piArgs
 block|}
-struct|;
-end_struct
+name|piArgs
+typedef|;
+end_typedef
 
 begin_struct
 DECL|struct|embossFilter
@@ -219,10 +175,10 @@ begin_comment
 comment|/*  preview stuff -- to be removed as soon as we have a real libgimp preview  */
 end_comment
 
-begin_struct
-DECL|struct|mwPreview
+begin_typedef
+typedef|typedef
 struct|struct
-name|mwPreview
+DECL|struct|__anon275882f60308
 block|{
 DECL|member|width
 name|gint
@@ -245,9 +201,11 @@ name|guchar
 modifier|*
 name|bits
 decl_stmt|;
+DECL|typedef|mwPreview
 block|}
-struct|;
-end_struct
+name|mwPreview
+typedef|;
+end_typedef
 
 begin_define
 DECL|macro|PREVIEW_SIZE
@@ -277,7 +235,6 @@ name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-name|struct
 name|mwPreview
 modifier|*
 name|mwp
@@ -287,7 +244,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|struct
 name|mwPreview
 modifier|*
 name|mw_preview_build
@@ -342,7 +298,6 @@ specifier|static
 name|gint
 name|pluginCore
 parameter_list|(
-name|struct
 name|piArgs
 modifier|*
 name|argp
@@ -355,7 +310,6 @@ specifier|static
 name|gint
 name|pluginCoreIA
 parameter_list|(
-name|struct
 name|piArgs
 modifier|*
 name|argp
@@ -459,7 +413,6 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|thePreview
 specifier|static
-name|struct
 name|mwPreview
 modifier|*
 name|thePreview
@@ -616,7 +569,6 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|struct
 name|piArgs
 name|args
 decl_stmt|;
@@ -646,7 +598,6 @@ literal|0
 argument_list|,
 sizeof|sizeof
 argument_list|(
-expr|struct
 name|piArgs
 argument_list|)
 argument_list|)
@@ -825,7 +776,6 @@ name|args
 argument_list|,
 sizeof|sizeof
 argument_list|(
-expr|struct
 name|piArgs
 argument_list|)
 argument_list|)
@@ -1557,10 +1507,9 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|pluginCore (struct piArgs * argp)
+DECL|function|pluginCore (piArgs * argp)
 name|pluginCore
 parameter_list|(
-name|struct
 name|piArgs
 modifier|*
 name|argp
@@ -1775,7 +1724,7 @@ argument_list|)
 expr_stmt|;
 name|srcbuf
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|guchar
 argument_list|,
@@ -1786,36 +1735,10 @@ argument_list|)
 expr_stmt|;
 name|dstbuf
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|guchar
 argument_list|,
-name|rowsize
-argument_list|)
-expr_stmt|;
-name|memset
-argument_list|(
-name|srcbuf
-argument_list|,
-literal|0
-argument_list|,
-operator|(
-name|size_t
-operator|)
-name|rowsize
-operator|*
-literal|3
-argument_list|)
-expr_stmt|;
-name|memset
-argument_list|(
-name|dstbuf
-argument_list|,
-literal|0
-argument_list|,
-operator|(
-name|size_t
-operator|)
 name|rowsize
 argument_list|)
 expr_stmt|;
@@ -2331,10 +2254,9 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|pluginCoreIA (struct piArgs * argp)
+DECL|function|pluginCoreIA (piArgs * argp)
 name|pluginCoreIA
 parameter_list|(
-name|struct
 name|piArgs
 modifier|*
 name|argp
@@ -2577,7 +2499,7 @@ name|embossp
 argument_list|,
 name|_
 argument_list|(
-literal|"Bumpmap"
+literal|"_Bumpmap"
 argument_list|)
 argument_list|,
 operator|(
@@ -2589,7 +2511,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Emboss"
+literal|"_Emboss"
 argument_list|)
 argument_list|,
 operator|(
@@ -2730,7 +2652,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Azimuth:"
+literal|"_Azimuth:"
 argument_list|)
 argument_list|,
 literal|100
@@ -2797,7 +2719,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Elevation:"
+literal|"E_levation:"
 argument_list|)
 argument_list|,
 literal|100
@@ -2864,7 +2786,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Depth:"
+literal|"_Depth:"
 argument_list|)
 argument_list|,
 literal|100
@@ -2968,7 +2890,6 @@ name|theWidget
 init|=
 name|NULL
 decl_stmt|;
-name|struct
 name|piArgs
 modifier|*
 name|ap
@@ -3363,7 +3284,6 @@ end_function
 
 begin_function
 specifier|static
-name|struct
 name|mwPreview
 modifier|*
 DECL|function|mw_preview_build_virgin (GimpDrawable * drw)
@@ -3374,7 +3294,6 @@ modifier|*
 name|drw
 parameter_list|)
 block|{
-name|struct
 name|mwPreview
 modifier|*
 name|mwp
@@ -3383,7 +3302,6 @@ name|mwp
 operator|=
 name|g_new
 argument_list|(
-expr|struct
 name|mwPreview
 argument_list|,
 literal|1
@@ -3492,7 +3410,6 @@ end_function
 
 begin_function
 specifier|static
-name|struct
 name|mwPreview
 modifier|*
 DECL|function|mw_preview_build (GimpDrawable * drw)
@@ -3503,7 +3420,6 @@ modifier|*
 name|drw
 parameter_list|)
 block|{
-name|struct
 name|mwPreview
 modifier|*
 name|mwp
@@ -3716,14 +3632,13 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|mw_preview_new (GtkWidget * parent,struct mwPreview * mwp)
+DECL|function|mw_preview_new (GtkWidget * parent,mwPreview * mwp)
 name|mw_preview_new
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-name|struct
 name|mwPreview
 modifier|*
 name|mwp
@@ -3902,11 +3817,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Do Preview"
+literal|"Do _Preview"
 argument_list|)
 argument_list|)
 expr_stmt|;

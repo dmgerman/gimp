@@ -183,7 +183,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf2fb0a0108
+DECL|struct|__anon27ddee9d0108
 block|{
 DECL|member|posx
 name|gint
@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf2fb0a0208
+DECL|struct|__anon27ddee9d0208
 block|{
 DECL|member|run
 name|gint
@@ -273,7 +273,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf2fb0a0308
+DECL|struct|__anon27ddee9d0308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -922,7 +922,7 @@ specifier|static
 name|gboolean
 name|show_cursor
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -5229,11 +5229,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"X:"
+literal|"_X:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5343,6 +5343,16 @@ argument_list|(
 name|spinbutton
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|spinbutton
+argument_list|)
+expr_stmt|;
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
@@ -5381,11 +5391,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Y:"
+literal|"_Y:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5492,6 +5502,16 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|spinbutton
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
 name|spinbutton
 argument_list|)
 expr_stmt|;
@@ -5684,11 +5704,11 @@ expr_stmt|;
 comment|/* show / hide cursor */
 name|check
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Show Cursor"
+literal|"_Show Cursor"
 argument_list|)
 argument_list|)
 expr_stmt|;

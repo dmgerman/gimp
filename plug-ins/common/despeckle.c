@@ -2800,11 +2800,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Adaptive"
+literal|"_Adaptive"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2866,11 +2866,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Recursive"
+literal|"R_ecursive"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3033,7 +3033,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Radius:"
+literal|"_Radius:"
 argument_list|)
 argument_list|,
 literal|100
@@ -3097,7 +3097,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Black Level:"
+literal|"_Black Level:"
 argument_list|)
 argument_list|,
 literal|100
@@ -3162,7 +3162,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"White Level:"
+literal|"_White Level:"
 argument_list|)
 argument_list|,
 literal|100

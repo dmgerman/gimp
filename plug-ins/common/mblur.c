@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a33ca4e0108
+DECL|struct|__anon2a4d05f70108
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a33ca4e0208
+DECL|struct|__anon2a4d05f70208
 block|{
 DECL|member|col
 DECL|member|row
@@ -1845,10 +1845,6 @@ literal|1
 argument_list|)
 operator|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-operator|(
 name|ct
 operator|=
 name|g_new
@@ -1857,13 +1853,7 @@ name|float
 argument_list|,
 name|n
 argument_list|)
-operator|)
-operator|==
-name|NULL
-operator|)
-operator|||
-operator|(
-operator|(
+expr_stmt|;
 name|st
 operator|=
 name|g_new
@@ -1872,12 +1862,7 @@ name|float
 argument_list|,
 name|n
 argument_list|)
-operator|)
-operator|==
-name|NULL
-operator|)
-condition|)
-return|return;
+expr_stmt|;
 name|offset
 operator|=
 name|theta
@@ -3534,7 +3519,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Linear"
+literal|"_Linear"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -3546,7 +3531,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Radial"
+literal|"_Radial"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -3558,7 +3543,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Zoom"
+literal|"_Zoom"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -3694,7 +3679,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Length:"
+literal|"L_ength:"
 argument_list|)
 argument_list|,
 literal|150
@@ -3761,7 +3746,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Angle:"
+literal|"_Angle:"
 argument_list|)
 argument_list|,
 literal|150

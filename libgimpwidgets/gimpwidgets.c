@@ -1520,7 +1520,7 @@ literal|1
 condition|)
 name|button
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
@@ -2814,7 +2814,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299f01500108
+DECL|struct|__anon2c1078aa0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3694,7 +3694,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299f01500208
+DECL|struct|__anon2c1078aa0208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment

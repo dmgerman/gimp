@@ -2661,11 +2661,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Create Histogram"
+literal|"Create _Histogram"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2740,7 +2740,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Width:"
+literal|"_Width:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

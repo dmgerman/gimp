@@ -103,7 +103,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c3746f0108
+DECL|struct|__anon29bcb0cc0108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c3746f0208
+DECL|struct|__anon29bcb0cc0208
 block|{
 DECL|member|run
 name|gint
@@ -2275,11 +2275,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Use Intensity Algorithm"
+literal|"_Use Intensity Algorithm"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2361,7 +2361,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Mask Size:"
+literal|"_Mask Size:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279bee9e0108
+DECL|struct|__anon2c6406ae0108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279bee9e0208
+DECL|struct|__anon2c6406ae0208
 block|{
 DECL|member|sizeentry
 name|GtkWidget
@@ -151,7 +151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279bee9e0308
+DECL|struct|__anon2c6406ae0308
 block|{
 DECL|member|x
 DECL|member|y
@@ -1204,7 +1204,7 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"Pixel Width:"
+literal|"Pixel _Width:"
 argument_list|)
 argument_list|,
 name|pvals
@@ -1227,7 +1227,7 @@ name|width
 argument_list|,
 name|_
 argument_list|(
-literal|"Pixel Height:"
+literal|"Pixel _Height:"
 argument_list|)
 argument_list|,
 name|pvals
