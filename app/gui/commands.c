@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"batch_convert.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"brightness_contrast.h"
 end_include
 
@@ -306,7 +300,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfeda430108
+DECL|struct|__anon2957e2be0108
 block|{
 DECL|member|shell
 name|GtkWidget
