@@ -4019,13 +4019,6 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|gimp_ui_manager_ui_get
-argument_list|(
-name|dockbook_ui_manager
-argument_list|,
-literal|"/dockable-popup"
-argument_list|)
-expr_stmt|;
 name|dialog_ui_manager
 operator|=
 name|gimp_dockable_get_menu
@@ -4090,12 +4083,9 @@ argument_list|)
 expr_stmt|;
 name|parent_menu_widget
 operator|=
-name|gtk_ui_manager_get_widget
-argument_list|(
-name|GTK_UI_MANAGER
+name|gimp_ui_manager_ui_get
 argument_list|(
 name|dockbook_ui_manager
-argument_list|)
 argument_list|,
 literal|"/dockable-popup/dockable-menu"
 argument_list|)
@@ -4286,8 +4276,6 @@ name|dockbook_ui_manager
 argument_list|,
 literal|"/dockable-popup"
 argument_list|,
-name|dockable
-argument_list|,
 name|GTK_WIDGET
 argument_list|(
 name|dockable
@@ -4301,6 +4289,8 @@ operator|(
 name|GtkDestroyNotify
 operator|)
 name|gimp_dockable_menu_end
+argument_list|,
+name|dockable
 argument_list|)
 expr_stmt|;
 return|return

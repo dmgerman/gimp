@@ -192,7 +192,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbca0890103
+DECL|enum|__anon288947610103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -603,7 +603,7 @@ name|TEAROFF_MENUS_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
-name|GIMP_PARAM_RESTART
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN

@@ -334,7 +334,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc18eb80103
+DECL|enum|__anon2adc621a0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1966,7 +1966,11 @@ name|shell
 decl_stmt|;
 name|GimpDisplayConfig
 modifier|*
-name|config
+name|display_config
+decl_stmt|;
+name|GimpGuiConfig
+modifier|*
+name|gui_config
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1995,10 +1999,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|image
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|menubar
 decl_stmt|;
 name|GdkScreen
 modifier|*
@@ -2090,7 +2090,7 @@ name|gimage
 operator|->
 name|height
 expr_stmt|;
-name|config
+name|display_config
 operator|=
 name|GIMP_DISPLAY_CONFIG
 argument_list|(
@@ -2103,11 +2103,18 @@ operator|->
 name|config
 argument_list|)
 expr_stmt|;
+name|gui_config
+operator|=
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|display_config
+argument_list|)
+expr_stmt|;
 name|shell
 operator|->
 name|dot_for_dot
 operator|=
-name|config
+name|display_config
 operator|->
 name|default_dot_for_dot
 expr_stmt|;
@@ -2115,7 +2122,7 @@ name|gimp_config_sync
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
-name|config
+name|display_config
 operator|->
 name|default_view
 argument_list|)
@@ -2134,7 +2141,7 @@ name|gimp_config_sync
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
-name|config
+name|display_config
 operator|->
 name|default_fullscreen_view
 argument_list|)
@@ -2162,10 +2169,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_DISPLAY_CONFIG
-argument_list|(
-name|config
-argument_list|)
+name|display_config
 operator|->
 name|monitor_res_from_gdk
 condition|)
@@ -2192,10 +2196,7 @@ name|shell
 operator|->
 name|monitor_xres
 operator|=
-name|GIMP_DISPLAY_CONFIG
-argument_list|(
-name|config
-argument_list|)
+name|display_config
 operator|->
 name|monitor_xres
 expr_stmt|;
@@ -2203,10 +2204,7 @@ name|shell
 operator|->
 name|monitor_yres
 operator|=
-name|GIMP_DISPLAY_CONFIG
-argument_list|(
-name|config
-argument_list|)
+name|display_config
 operator|->
 name|monitor_yres
 expr_stmt|;
@@ -2249,7 +2247,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|config
+name|display_config
 operator|->
 name|initial_zoom_to_fit
 condition|)
@@ -2445,6 +2443,8 @@ argument_list|,
 name|main_vbox
 argument_list|)
 expr_stmt|;
+name|shell
+operator|->
 name|menubar
 operator|=
 name|gimp_ui_manager_ui_get
@@ -2463,6 +2463,8 @@ argument_list|(
 name|main_vbox
 argument_list|)
 argument_list|,
+name|shell
+operator|->
 name|menubar
 argument_list|,
 name|FALSE
@@ -2482,12 +2484,16 @@ name|show_menubar
 condition|)
 name|gtk_widget_show
 argument_list|(
+name|shell
+operator|->
 name|menubar
 argument_list|)
 expr_stmt|;
 comment|/*  make sure we can activate accels even if the menubar is invisible    *  (see http://bugzilla.gnome.org/show_bug.cgi?id=137151)    */
 name|g_signal_connect
 argument_list|(
+name|shell
+operator|->
 name|menubar
 argument_list|,
 literal|"can-activate-accel"
@@ -2503,6 +2509,8 @@ expr_stmt|;
 comment|/*  active display callback  */
 name|g_signal_connect
 argument_list|(
+name|shell
+operator|->
 name|menubar
 argument_list|,
 literal|"button_press_event"
@@ -2517,6 +2525,8 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
+name|shell
+operator|->
 name|menubar
 argument_list|,
 literal|"button_release_event"
@@ -2531,6 +2541,8 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
+name|shell
+operator|->
 name|menubar
 argument_list|,
 literal|"key_press_event"

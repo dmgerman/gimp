@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -54,6 +60,20 @@ modifier|*
 name|ui_path
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|ui_path
+argument_list|,
+literal|"/dummy-menubar"
+argument_list|)
+condition|)
+name|ui_path
+operator|=
+literal|"/dummy-menubar/image-popup"
+expr_stmt|;
 name|file_menu_setup
 argument_list|(
 name|manager

@@ -413,6 +413,12 @@ modifier|*
 name|origin
 decl_stmt|;
 comment|/*  origin button                      */
+DECL|member|menubar
+name|GtkWidget
+modifier|*
+name|menubar
+decl_stmt|;
+comment|/*  menubar                            */
 DECL|member|statusbar
 name|GtkWidget
 modifier|*

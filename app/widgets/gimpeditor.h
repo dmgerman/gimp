@@ -198,6 +198,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_editor_popup_menu
+parameter_list|(
+name|GimpEditor
+modifier|*
+name|editor
+parameter_list|,
+name|GimpMenuPositionFunc
+name|position_func
+parameter_list|,
+name|gpointer
+name|position_data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_editor_add_button

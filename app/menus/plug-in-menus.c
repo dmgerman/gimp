@@ -550,7 +550,7 @@ name|strcmp
 argument_list|(
 name|ui_path
 argument_list|,
-literal|"/image-popup"
+literal|"/dummy-menubar/image-popup"
 argument_list|)
 operator|)
 operator|)

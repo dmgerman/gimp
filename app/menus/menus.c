@@ -255,7 +255,7 @@ literal|"image-menu.xml"
 argument_list|,
 name|image_menu_setup
 argument_list|,
-literal|"/image-popup"
+literal|"/dummy-menubar"
 argument_list|,
 literal|"image-menu.xml"
 argument_list|,

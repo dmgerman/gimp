@@ -320,9 +320,6 @@ name|gchar
 modifier|*
 name|ui_path
 parameter_list|,
-name|gpointer
-name|popup_data
-parameter_list|,
 name|GtkWidget
 modifier|*
 name|parent
@@ -335,6 +332,9 @@ name|position_data
 parameter_list|,
 name|GtkDestroyNotify
 name|popdown_func
+parameter_list|,
+name|gpointer
+name|popdown_data
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -1074,7 +1074,7 @@ name|list
 operator|->
 name|data
 argument_list|,
-literal|"/image-popup"
+literal|"/dummy-menubar/image-popup"
 argument_list|,
 name|proc_def
 argument_list|,
