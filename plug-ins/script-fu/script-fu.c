@@ -2002,7 +2002,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"SPRIAL-ANTICLOCKWISE"
+literal|"SPIRAL-ANTICLOCKWISE"
 argument_list|)
 argument_list|,
 name|flocons
