@@ -6760,6 +6760,9 @@ block|}
 name|brush_area_update
 argument_list|()
 expr_stmt|;
+name|pattern_area_update
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 
