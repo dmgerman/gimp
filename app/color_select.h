@@ -17,7 +17,7 @@ name|__COLOR_SELECT_H__
 end_define
 
 begin_typedef
-DECL|enum|__anon2c7b72610103
+DECL|enum|__anon2c1bda370103
 typedef|typedef
 enum|enum
 block|{
@@ -116,6 +116,11 @@ name|entries
 index|[
 literal|6
 index|]
+decl_stmt|;
+DECL|member|hex_entry
+name|GtkWidget
+modifier|*
+name|hex_entry
 decl_stmt|;
 DECL|member|slider_data
 name|GtkAdjustment
