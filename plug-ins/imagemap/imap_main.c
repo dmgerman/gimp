@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2002 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2003 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -239,6 +239,12 @@ begin_include
 include|#
 directive|include
 file|"imap_menu.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"imap_misc.h"
 end_include
 
 begin_include
@@ -2288,20 +2294,13 @@ operator|&
 name|grad0
 argument_list|)
 expr_stmt|;
+name|polygon_append_point
+argument_list|(
 name|polygon
-operator|->
-name|points
-operator|=
-name|g_list_append
-argument_list|(
-name|NULL
 argument_list|,
-name|new_point
-argument_list|(
 name|x0
 argument_list|,
 name|y0
-argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -2405,22 +2404,13 @@ operator|>
 literal|0.1
 condition|)
 block|{
-name|polygon
-operator|->
-name|points
-operator|=
-name|g_list_append
+name|polygon_append_point
 argument_list|(
 name|polygon
-operator|->
-name|points
 argument_list|,
-name|new_point
-argument_list|(
 name|x1
 argument_list|,
 name|y1
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|grad0
@@ -3521,38 +3511,34 @@ name|param
 parameter_list|)
 block|{
 specifier|static
-name|DefaultDialog_t
+name|Alert_t
 modifier|*
-name|dialog
+name|alert
 decl_stmt|;
 if|if
 condition|(
 operator|!
-name|dialog
+name|alert
 condition|)
 block|{
-name|dialog
+name|alert
 operator|=
-name|make_default_dialog
+name|create_confirm_alert
 argument_list|(
-name|_
-argument_list|(
-literal|"Data changed"
-argument_list|)
+name|GTK_STOCK_DIALOG_WARNING
 argument_list|)
 expr_stmt|;
-name|default_dialog_hide_apply_button
+name|alert_set_text
 argument_list|(
-name|dialog
-argument_list|)
-expr_stmt|;
-name|default_dialog_set_label
-argument_list|(
-name|dialog
+name|alert
 argument_list|,
 name|_
 argument_list|(
-literal|"Some data has been changed.\n"
+literal|"Some data has been changed!"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
 literal|"Do you really want to discard your changes?"
 argument_list|)
 argument_list|)
@@ -3560,6 +3546,8 @@ expr_stmt|;
 block|}
 name|default_dialog_set_ok_cb
 argument_list|(
+name|alert
+operator|->
 name|dialog
 argument_list|,
 name|continue_cb
@@ -3569,6 +3557,8 @@ argument_list|)
 expr_stmt|;
 name|default_dialog_show
 argument_list|(
+name|alert
+operator|->
 name|dialog
 argument_list|)
 expr_stmt|;
@@ -4664,44 +4654,43 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|DefaultDialog_t
+name|Alert_t
 modifier|*
-name|dialog
+name|alert
 decl_stmt|;
 if|if
 condition|(
 operator|!
-name|dialog
+name|alert
 condition|)
 block|{
-name|dialog
+name|alert
 operator|=
-name|make_default_dialog
+name|create_confirm_alert
 argument_list|(
-name|_
-argument_list|(
-literal|"Image size changed"
-argument_list|)
+name|GTK_STOCK_DIALOG_WARNING
 argument_list|)
 expr_stmt|;
-name|default_dialog_hide_apply_button
+name|alert_set_text
 argument_list|(
-name|dialog
-argument_list|)
-expr_stmt|;
-name|default_dialog_set_label
-argument_list|(
-name|dialog
+name|alert
 argument_list|,
 name|_
 argument_list|(
-literal|"Image size has changed.\n"
-literal|"Resize Area's?"
+literal|"Image size has changed."
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Resize area's?"
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|default_dialog_set_ok_cb
 argument_list|(
+name|alert
+operator|->
 name|dialog
 argument_list|,
 name|resize_image_ok_cb
@@ -4711,6 +4700,8 @@ argument_list|)
 expr_stmt|;
 name|default_dialog_set_cancel_cb
 argument_list|(
+name|alert
+operator|->
 name|dialog
 argument_list|,
 name|resize_image_cancel_cb
@@ -4718,9 +4709,10 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 name|default_dialog_show
 argument_list|(
+name|alert
+operator|->
 name|dialog
 argument_list|)
 expr_stmt|;
@@ -4947,7 +4939,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|close_callback (GtkWidget * widget,gpointer data)
 name|close_callback
 parameter_list|(
@@ -4959,9 +4951,12 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|gtk_main_quit
+name|do_quit
 argument_list|()
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -6441,7 +6436,7 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
-literal|"destroy"
+literal|"delete_event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

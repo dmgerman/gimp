@@ -29,7 +29,7 @@ file|"imap_mru.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2a958c670108
+DECL|struct|__anon2c7e7b6c0108
 typedef|typedef
 struct|struct
 block|{
@@ -42,6 +42,11 @@ DECL|member|edit_menu
 name|GtkWidget
 modifier|*
 name|edit_menu
+decl_stmt|;
+DECL|member|open_recent
+name|GtkWidget
+modifier|*
+name|open_recent
 decl_stmt|;
 DECL|member|undo
 name|GtkWidget

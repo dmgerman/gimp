@@ -1591,9 +1591,9 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
-name|gtk_signal_handler_block
+name|g_signal_handler_block
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -1619,9 +1619,9 @@ else|:
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_signal_handler_unblock
+name|g_signal_handler_unblock
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
