@@ -27,6 +27,10 @@ directive|include
 file|"gimpchecks.h"
 end_include
 
+begin_comment
+comment|/**  * gimp_checks_get_shades:  * @type:  the checkerboard type  * @light: return location for the light shade  * @dark:  return location for the dark shade  *  * Retrieves the actual shades of gray to use when drawing a  * checkerboard for a certain #GimpCheckType.  *  * Since: GIMP 2.2  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_checks_get_shades (GimpCheckType type,guchar * light,guchar * dark)

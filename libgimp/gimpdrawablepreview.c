@@ -857,6 +857,15 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|preview
+operator|->
+name|drawable
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
 name|buf
 operator|!=
 name|NULL

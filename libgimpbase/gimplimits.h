@@ -83,46 +83,6 @@ DECL|macro|GIMP_MAX_MEMSIZE
 comment|/*  4 terabyte;                                                   *  needs a 64bit variable                                                   *  and must be< G_MAXDOUBLE                                                   */
 end_comment
 
-begin_comment
-comment|/*  the size of the checks which indicate transparency...  */
-end_comment
-
-begin_define
-DECL|macro|GIMP_CHECK_SIZE
-define|#
-directive|define
-name|GIMP_CHECK_SIZE
-value|8
-end_define
-
-begin_define
-DECL|macro|GIMP_CHECK_SIZE_SM
-define|#
-directive|define
-name|GIMP_CHECK_SIZE_SM
-value|4
-end_define
-
-begin_comment
-comment|/*  ...and their colors  */
-end_comment
-
-begin_define
-DECL|macro|GIMP_CHECK_DARK
-define|#
-directive|define
-name|GIMP_CHECK_DARK
-value|0.4
-end_define
-
-begin_define
-DECL|macro|GIMP_CHECK_LIGHT
-define|#
-directive|define
-name|GIMP_CHECK_LIGHT
-value|0.6
-end_define
-
 begin_endif
 endif|#
 directive|endif
