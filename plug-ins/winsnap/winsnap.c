@@ -349,7 +349,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b7b0eaf0108
+DECL|struct|__anon278a66fb0108
 typedef|typedef
 struct|struct
 block|{
@@ -396,7 +396,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b7b0eaf0208
+DECL|struct|__anon278a66fb0208
 typedef|typedef
 struct|struct
 block|{
@@ -3748,7 +3748,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Seconds Delay"
+literal|"Seconds delay"
 argument_list|)
 argument_list|)
 expr_stmt|;

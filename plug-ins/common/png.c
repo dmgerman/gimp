@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27723f340108
+DECL|struct|__anon2954e2fb0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27723f340208
+DECL|struct|__anon2954e2fb0208
 block|{
 DECL|member|run
 name|gboolean
@@ -5830,14 +5830,14 @@ literal|"file-png-save-defaults"
 argument_list|,
 name|_
 argument_list|(
-literal|"_Load Defaults"
+literal|"_Load defaults"
 argument_list|)
 argument_list|,
 name|RESPONSE_LOAD_DEFAULTS
 argument_list|,
 name|_
 argument_list|(
-literal|"_Save Defaults"
+literal|"_Save defaults"
 argument_list|)
 argument_list|,
 name|RESPONSE_SAVE_DEFAULTS
@@ -6033,7 +6033,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save _Background Color"
+literal|"Save _background color"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6107,7 +6107,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save _Gamma"
+literal|"Save _gamma"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6181,7 +6181,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save Layer O_ffset"
+literal|"Save layer o_ffset"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6255,7 +6255,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save _Resolution"
+literal|"Save _resolution"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6329,7 +6329,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save Creation _Time"
+literal|"Save creation _time"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6403,7 +6403,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save Comme_nt"
+literal|"Save comme_nt"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6516,7 +6516,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save Color _Values From Transparent Pixels"
+literal|"Save color _values from transparent pixels"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6608,7 +6608,7 @@ literal|8
 argument_list|,
 name|_
 argument_list|(
-literal|"Co_mpression Level:"
+literal|"Co_mpression level:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

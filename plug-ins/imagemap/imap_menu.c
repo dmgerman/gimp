@@ -675,7 +675,7 @@ name|file_menu
 argument_list|,
 name|_
 argument_list|(
-literal|"Open Recent"
+literal|"Open recent"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1221,7 +1221,7 @@ name|edit_menu
 argument_list|,
 name|_
 argument_list|(
-literal|"Select _All"
+literal|"Select _all"
 argument_list|)
 argument_list|,
 name|menu_command
@@ -1251,7 +1251,7 @@ name|edit_menu
 argument_list|,
 name|_
 argument_list|(
-literal|"Deselect _All"
+literal|"Deselect _all"
 argument_list|)
 argument_list|,
 name|menu_command
@@ -1290,7 +1290,7 @@ name|edit_menu
 argument_list|,
 name|_
 argument_list|(
-literal|"Edit Area Info..."
+literal|"Edit area info..."
 argument_list|)
 argument_list|,
 name|menu_command
@@ -1396,7 +1396,7 @@ name|view_menu
 argument_list|,
 name|_
 argument_list|(
-literal|"Area List"
+literal|"Area list"
 argument_list|)
 argument_list|,
 name|menu_command
@@ -1608,7 +1608,7 @@ name|view_menu
 argument_list|,
 name|_
 argument_list|(
-literal|"Zoom To"
+literal|"Zoom to"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1977,7 +1977,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Select Contiguous Region"
+literal|"Select contiguous region"
 argument_list|)
 argument_list|,
 name|menu_fuzzy_select
@@ -2152,7 +2152,7 @@ name|tools_menu
 argument_list|,
 name|_
 argument_list|(
-literal|"Grid Settings..."
+literal|"Grid settings..."
 argument_list|)
 argument_list|,
 name|menu_command
@@ -2174,7 +2174,7 @@ name|tools_menu
 argument_list|,
 name|_
 argument_list|(
-literal|"Use GIMP Guides..."
+literal|"Use GIMP guides..."
 argument_list|)
 argument_list|,
 name|menu_command
@@ -2191,7 +2191,7 @@ name|tools_menu
 argument_list|,
 name|_
 argument_list|(
-literal|"Create Guides..."
+literal|"Create guides..."
 argument_list|)
 argument_list|,
 name|menu_command

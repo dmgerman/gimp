@@ -4895,7 +4895,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Save Background Color"
+literal|"Save background color"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4962,7 +4962,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Save Gamma"
+literal|"Save gamma"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5022,7 +5022,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Save Resolution"
+literal|"Save resolution"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5089,7 +5089,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Save Creation Time"
+literal|"Save creation time"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5237,14 +5237,14 @@ name|gimp_int_combo_box_new
 argument_list|(
 name|_
 argument_list|(
-literal|"PNG + Delta PNG"
+literal|"PNG + delta PNG"
 argument_list|)
 argument_list|,
 name|CHUNKS_PNG_D
 argument_list|,
 name|_
 argument_list|(
-literal|"JNG + Delta PNG"
+literal|"JNG + delta PNG"
 argument_list|)
 argument_list|,
 name|CHUNKS_JNG_D
@@ -5315,7 +5315,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Default Chunks Type:"
+literal|"Default chunks type:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -5392,7 +5392,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Default Frame Disposal:"
+literal|"Default frame disposal:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -5488,7 +5488,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"PNG Compression Level:"
+literal|"PNG compression level:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -5621,7 +5621,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"JPEG Compression Quality:"
+literal|"JPEG compression quality:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -5741,7 +5741,7 @@ literal|4
 argument_list|,
 name|_
 argument_list|(
-literal|"JPEG Smoothing Factor:"
+literal|"JPEG smoothing factor:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -5788,7 +5788,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Animated MNG Options"
+literal|"Animated MNG options"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5918,7 +5918,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Default Frame Delay:"
+literal|"Default frame delay:"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -4611,7 +4611,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Printer Name:"
+literal|"Printer name:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -4939,7 +4939,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Printer Name:"
+literal|"Printer name:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -4985,7 +4985,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Printer Model:"
+literal|"Printer model:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -5038,7 +5038,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Setup Printer..."
+literal|"Setup printer..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5114,7 +5114,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"New Printer..."
+literal|"New printer..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5218,7 +5218,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Media Size:"
+literal|"Media size:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -5506,7 +5506,7 @@ literal|5
 argument_list|,
 name|_
 argument_list|(
-literal|"Media Type:"
+literal|"Media type:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -5571,7 +5571,7 @@ literal|6
 argument_list|,
 name|_
 argument_list|(
-literal|"Media Source:"
+literal|"Media source:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -5636,7 +5636,7 @@ literal|7
 argument_list|,
 name|_
 argument_list|(
-literal|"Ink Type:"
+literal|"Ink type:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -6940,7 +6940,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Image Type:"
+literal|"Image type:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6992,7 +6992,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Line Art"
+literal|"Line art"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7068,7 +7068,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Solid Colors"
+literal|"Solid colors"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7328,7 +7328,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Output Type:"
+literal|"Output type:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7524,7 +7524,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Black and White"
+literal|"Black and white"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7599,7 +7599,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Adjust Output..."
+literal|"Adjust output..."
 argument_list|)
 argument_list|)
 expr_stmt|;

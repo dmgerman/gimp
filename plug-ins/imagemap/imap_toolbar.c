@@ -762,7 +762,7 @@ literal|"EditMapInfo"
 argument_list|,
 name|_
 argument_list|(
-literal|"Edit Map Info"
+literal|"Edit map info"
 argument_list|)
 argument_list|,
 name|toolbar_command

@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c07050d0108
+DECL|struct|__anon2b20ad770108
 block|{
 DECL|member|threshold
 name|gint
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c07050d0208
+DECL|struct|__anon2b20ad770208
 block|{
 DECL|member|r
 name|guchar
@@ -3184,7 +3184,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Alpha Threshold:"
+literal|"_Alpha threshold:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

@@ -709,7 +709,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aedd3660108
+DECL|struct|__anon2becf1220108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -861,7 +861,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aedd3660208
+DECL|struct|__anon2becf1220208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -3934,7 +3934,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aedd3660308
+DECL|struct|__anon2becf1220308
 block|{
 DECL|member|min_modified
 name|gshort
@@ -5603,10 +5603,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|button
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|sep
 decl_stmt|;
 name|GtkObject
 modifier|*

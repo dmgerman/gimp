@@ -241,7 +241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4258360108
+DECL|struct|__anon2c6c192d0108
 block|{
 DECL|member|resolution
 name|guint
@@ -330,7 +330,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4258360208
+DECL|struct|__anon2c6c192d0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -904,7 +904,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4258360308
+DECL|struct|__anon2c6c192d0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1760,7 +1760,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4258360408
+DECL|struct|__anon2c6c192d0408
 block|{
 DECL|member|eol
 name|long
@@ -14511,7 +14511,7 @@ name|TRUE
 argument_list|,
 name|_
 argument_list|(
-literal|"Text Antialiasing"
+literal|"Text antialiasing"
 argument_list|)
 argument_list|,
 name|G_CALLBACK
@@ -14587,7 +14587,7 @@ name|TRUE
 argument_list|,
 name|_
 argument_list|(
-literal|"Graphic Antialiasing"
+literal|"Graphic antialiasing"
 argument_list|)
 argument_list|,
 name|G_CALLBACK
@@ -15271,7 +15271,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"_X Offset:"
+literal|"_X offset:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -15351,7 +15351,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"_Y Offset:"
+literal|"_Y offset:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -15393,7 +15393,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Keep Aspect Ratio"
+literal|"_Keep aspect ratio"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -15670,7 +15670,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_PostScript Level 2"
+literal|"_PostScript level 2"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -15947,7 +15947,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Preview _Size:"
+literal|"Preview _size:"
 argument_list|)
 argument_list|,
 literal|1.0

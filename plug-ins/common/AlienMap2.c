@@ -121,7 +121,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2798e8240108
+DECL|struct|__anon2b9edaa60108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2798e8240208
+DECL|struct|__anon2b9edaa60208
 block|{
 DECL|member|run
 name|gint
@@ -704,12 +704,12 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"Red _Frequency:"
+literal|"Red _frequency:"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Hue _Frequency:"
+literal|"Hue _frequency:"
 argument_list|)
 block|}
 block|,
@@ -740,12 +740,12 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Red _Phaseshift:"
+literal|"Red _phaseshift:"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Hue _Phaseshift:"
+literal|"Hue _phaseshift:"
 argument_list|)
 block|}
 block|,

@@ -370,7 +370,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1c52040108
+DECL|struct|__anon2b996d080108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -439,7 +439,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1c52040208
+DECL|struct|__anon2b996d080208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1c52040308
+DECL|struct|__anon2b996d080308
 block|{
 DECL|member|color
 name|guchar
@@ -576,7 +576,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1c52040408
+DECL|struct|__anon2b996d080408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -603,7 +603,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1c52040508
+DECL|struct|__anon2b996d080508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -6494,7 +6494,7 @@ name|RESPONSE_RESET
 argument_list|,
 name|_
 argument_list|(
-literal|"Get Sample Colors"
+literal|"Get sample colors"
 argument_list|)
 argument_list|,
 name|RESPONSE_GET_COLORS
@@ -6795,7 +6795,7 @@ name|GIMP_INT_STORE_LABEL
 argument_list|,
 name|_
 argument_list|(
-literal|"From Reverse Gradient"
+literal|"From reverse gradient"
 argument_list|)
 argument_list|,
 name|GIMP_INT_STORE_STOCK_ID
@@ -6821,7 +6821,7 @@ name|GIMP_INT_STORE_LABEL
 argument_list|,
 name|_
 argument_list|(
-literal|"From Gradient"
+literal|"From gradient"
 argument_list|)
 argument_list|,
 name|GIMP_INT_STORE_STOCK_ID
@@ -6940,7 +6940,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Show Selection"
+literal|"Show selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7001,7 +7001,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Show Color"
+literal|"Show color"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7104,7 +7104,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Show Selection"
+literal|"Show selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7165,7 +7165,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Show Color"
+literal|"Show color"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7850,7 +7850,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Input Levels:"
+literal|"Input levels:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8471,7 +8471,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Hold Intensity"
+literal|"Hold intensity"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8532,7 +8532,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Original Intensity"
+literal|"Original intensity"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8652,7 +8652,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Use Subcolors"
+literal|"Use subcolors"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8713,7 +8713,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Smooth Samples"
+literal|"Smooth samples"
 argument_list|)
 argument_list|)
 expr_stmt|;

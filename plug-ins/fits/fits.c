@@ -85,7 +85,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e710250108
+DECL|struct|__anon2bfa58410108
 block|{
 DECL|member|replace
 name|gint
@@ -4561,7 +4561,7 @@ name|TRUE
 argument_list|,
 name|_
 argument_list|(
-literal|"Pixel Value Scaling"
+literal|"Pixel value scaling"
 argument_list|)
 argument_list|,
 name|G_CALLBACK

@@ -4532,7 +4532,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_X10 Format Bitmap"
+literal|"_X10 format bitmap"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4679,7 +4679,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Identifier Prefix:"
+literal|"_Identifier prefix:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -4722,7 +4722,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Write Hot Spot Values"
+literal|"_Write hot spot values"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4893,7 +4893,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Hot Spot _X:"
+literal|"Hot spot _X:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -4968,7 +4968,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Hot Spot _Y:"
+literal|"Hot spot _Y:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -5083,7 +5083,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"W_rite Extra Mask File"
+literal|"W_rite extra mask file"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5179,7 +5179,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"_Mask File Extension:"
+literal|"_Mask file extension:"
 argument_list|)
 argument_list|,
 literal|0.0

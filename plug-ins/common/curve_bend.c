@@ -746,7 +746,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a0a3ec0108
+DECL|struct|__anon2bb2b03f0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -800,7 +800,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a0a3ec0208
+DECL|struct|__anon2bb2b03f0208
 block|{
 DECL|member|y
 name|gint32
@@ -6002,7 +6002,7 @@ name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Preview Once"
+literal|"_Preview once"
 argument_list|)
 argument_list|)
 expr_stmt|;

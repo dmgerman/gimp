@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274b9a820108
+DECL|struct|__anon2a17d5090108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -3584,7 +3584,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_X Ratio:"
+literal|"_X ratio:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3738,7 +3738,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Y Ratio:"
+literal|"_Y ratio:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4044,7 +4044,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Import _Paths"
+literal|"Import _paths"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4145,7 +4145,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Merge Imported Paths"
+literal|"Merge imported paths"
 argument_list|)
 argument_list|)
 expr_stmt|;

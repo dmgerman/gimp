@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274f65540108
+DECL|struct|__anon27cd9a3c0108
 block|{
 DECL|member|raw
 name|gint
@@ -4491,7 +4491,7 @@ name|TRUE
 argument_list|,
 name|_
 argument_list|(
-literal|"Data Formatting"
+literal|"Data formatting"
 argument_list|)
 argument_list|,
 name|G_CALLBACK

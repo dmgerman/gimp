@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3031350108
+DECL|struct|__anon29b75c840108
 block|{
 DECL|member|file_name
 name|gchar
@@ -3311,7 +3311,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Use GLib Types (guint8*)"
+literal|"_Use GLib types (guint8*)"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28bf853c0108
+DECL|struct|__anon2bafcc2b0108
 block|{
 DECL|member|list_view
 name|GtkTreeView
@@ -138,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28bf853c0208
+DECL|struct|__anon2bafcc2b0208
 block|{
 DECL|member|menu
 name|gchar
@@ -177,7 +177,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bf853c0303
+DECL|enum|__anon2bafcc2b0303
 block|{
 DECL|enumerator|LIST_NAME_COLUMN
 name|LIST_NAME_COLUMN
@@ -202,7 +202,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bf853c0403
+DECL|enum|__anon2bafcc2b0403
 block|{
 DECL|enumerator|TREE_PATH_NAME_COLUMN
 name|TREE_PATH_NAME_COLUMN
@@ -3962,7 +3962,7 @@ name|gtk_tree_view_column_new_with_attributes
 argument_list|(
 name|_
 argument_list|(
-literal|"Ins Date"
+literal|"Ins date"
 argument_list|)
 argument_list|,
 name|renderer
@@ -3995,7 +3995,7 @@ name|gtk_tree_view_column_new_with_attributes
 argument_list|(
 name|_
 argument_list|(
-literal|"Menu Path"
+literal|"Menu path"
 argument_list|)
 argument_list|,
 name|renderer
@@ -4028,7 +4028,7 @@ name|gtk_tree_view_column_new_with_attributes
 argument_list|(
 name|_
 argument_list|(
-literal|"Image Types"
+literal|"Image types"
 argument_list|)
 argument_list|,
 name|renderer
@@ -4226,7 +4226,7 @@ name|gtk_tree_view_column_new_with_attributes
 argument_list|(
 name|_
 argument_list|(
-literal|"Menu Path/Name"
+literal|"Menu path/name"
 argument_list|)
 argument_list|,
 name|renderer
@@ -4259,7 +4259,7 @@ name|gtk_tree_view_column_new_with_attributes
 argument_list|(
 name|_
 argument_list|(
-literal|"Ins Date"
+literal|"Ins date"
 argument_list|)
 argument_list|,
 name|renderer
@@ -4292,7 +4292,7 @@ name|gtk_tree_view_column_new_with_attributes
 argument_list|(
 name|_
 argument_list|(
-literal|"Image Types"
+literal|"Image types"
 argument_list|)
 argument_list|,
 name|renderer
@@ -4401,7 +4401,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Tree View"
+literal|"Tree view"
 argument_list|)
 argument_list|)
 expr_stmt|;
