@@ -72,16 +72,24 @@ value|72.0
 end_define
 
 begin_define
-DECL|macro|GRID_EDITOR_COLOR_BUTTON_SIZE
+DECL|macro|GRID_EDITOR_COLOR_BUTTON_WIDTH
 define|#
 directive|define
-name|GRID_EDITOR_COLOR_BUTTON_SIZE
+name|GRID_EDITOR_COLOR_BUTTON_WIDTH
+value|60
+end_define
+
+begin_define
+DECL|macro|GRID_EDITOR_COLOR_BUTTON_HEIGHT
+define|#
+directive|define
+name|GRID_EDITOR_COLOR_BUTTON_HEIGHT
 value|20
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9aec330103
+DECL|enum|__anon287f6cb30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -733,7 +741,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -743,7 +751,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -798,7 +806,7 @@ name|style
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|color_button
@@ -819,9 +827,9 @@ argument_list|(
 literal|"Change Grid Foreground Color"
 argument_list|)
 argument_list|,
-name|GRID_EDITOR_COLOR_BUTTON_SIZE
+name|GRID_EDITOR_COLOR_BUTTON_WIDTH
 argument_list|,
-name|GRID_EDITOR_COLOR_BUTTON_SIZE
+name|GRID_EDITOR_COLOR_BUTTON_HEIGHT
 argument_list|,
 name|GIMP_COLOR_AREA_FLAT
 argument_list|)
@@ -871,9 +879,9 @@ argument_list|(
 literal|"Change Grid Background Color"
 argument_list|)
 argument_list|,
-name|GRID_EDITOR_COLOR_BUTTON_SIZE
+name|GRID_EDITOR_COLOR_BUTTON_WIDTH
 argument_list|,
-name|GRID_EDITOR_COLOR_BUTTON_SIZE
+name|GRID_EDITOR_COLOR_BUTTON_HEIGHT
 argument_list|,
 name|GIMP_COLOR_AREA_FLAT
 argument_list|)
@@ -947,17 +955,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1142,17 +1140,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
