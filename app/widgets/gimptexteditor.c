@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288f52380103
+DECL|enum|__anon29b4c5c30103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED
@@ -566,17 +566,11 @@ literal|"role"
 argument_list|,
 literal|"gimp-text-editor"
 argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_help_connect
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|editor
-argument_list|)
+literal|"help-func"
 argument_list|,
 name|gimp_standard_help_func
+argument_list|,
+literal|"help-id"
 argument_list|,
 name|GIMP_HELP_TEXT_EDITOR_DIALOG
 argument_list|,
