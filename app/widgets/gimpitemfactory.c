@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -116,7 +122,7 @@ DECL|macro|MRU_MENU_ENTRY_SIZE
 define|#
 directive|define
 name|MRU_MENU_ENTRY_SIZE
-value|sizeof ("/File/MRU00 ")
+value|(strlen (_("/File/MRU00 ")) + 1)
 end_define
 
 begin_define
@@ -126,6 +132,20 @@ directive|define
 name|MRU_MENU_ACCEL_SIZE
 value|sizeof ("<control>0")
 end_define
+
+begin_decl_stmt
+DECL|variable|dummyMRU
+specifier|static
+name|char
+modifier|*
+name|dummyMRU
+init|=
+name|N_
+argument_list|(
+literal|"/File/MRU00 "
+argument_list|)
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -2885,9 +2905,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|menus_init_mru ()
+DECL|function|menus_init_mru (void)
 name|menus_init_mru
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gchar
 modifier|*

@@ -108,24 +108,24 @@ block|}
 end_function
 
 begin_typedef
-DECL|enum|__anon275eea880103
+DECL|enum|__anon2794ae4b0103
 typedef|typedef
 enum|enum
 block|{
-DECL|enumerator|NONE
-name|NONE
+DECL|enumerator|EDGE_NONE
+name|EDGE_NONE
 init|=
 literal|0
 block|,
-DECL|enumerator|LEFT
-name|LEFT
+DECL|enumerator|EDGE_LEFT
+name|EDGE_LEFT
 init|=
 literal|1
 operator|<<
 literal|0
 block|,
-DECL|enumerator|RIGHT
-name|RIGHT
+DECL|enumerator|EDGE_RIGHT
+name|EDGE_RIGHT
 init|=
 literal|1
 operator|<<
@@ -316,9 +316,9 @@ index|[
 name|j
 index|]
 operator|=
-name|LEFT
+name|EDGE_LEFT
 operator||
-name|RIGHT
+name|EDGE_RIGHT
 expr_stmt|;
 name|result
 operator|->
@@ -498,9 +498,9 @@ index|[
 name|j
 index|]
 operator|=
-name|LEFT
+name|EDGE_LEFT
 operator||
-name|RIGHT
+name|EDGE_RIGHT
 expr_stmt|;
 name|result
 operator|->
@@ -621,7 +621,7 @@ index|[
 name|i
 index|]
 operator|&
-name|LEFT
+name|EDGE_LEFT
 operator|)
 condition|)
 continue|continue;
@@ -671,7 +671,7 @@ name|i2
 index|]
 operator|&=
 operator|~
-name|LEFT
+name|EDGE_LEFT
 expr_stmt|;
 name|i2
 operator|=
@@ -687,7 +687,7 @@ operator|--
 name|i1
 index|]
 operator|&
-name|LEFT
+name|EDGE_LEFT
 operator|)
 operator|&&
 name|i1
@@ -862,7 +862,7 @@ index|[
 name|i
 index|]
 operator|&
-name|RIGHT
+name|EDGE_RIGHT
 operator|)
 condition|)
 continue|continue;
@@ -912,7 +912,7 @@ name|i2
 index|]
 operator|&=
 operator|~
-name|RIGHT
+name|EDGE_RIGHT
 expr_stmt|;
 name|i2
 operator|=
@@ -928,7 +928,7 @@ operator|--
 name|i1
 index|]
 operator|&
-name|RIGHT
+name|EDGE_RIGHT
 operator|)
 operator|&&
 name|i1
@@ -1074,7 +1074,7 @@ operator|+
 literal|1
 index|]
 operator|&
-name|LEFT
+name|EDGE_LEFT
 operator|)
 condition|)
 block|{
@@ -1113,7 +1113,7 @@ index|[
 name|i2
 index|]
 operator|&
-name|LEFT
+name|EDGE_LEFT
 operator|)
 operator|&&
 name|i2
@@ -1328,7 +1328,7 @@ operator|+
 literal|1
 index|]
 operator|&
-name|RIGHT
+name|EDGE_RIGHT
 operator|)
 condition|)
 block|{
@@ -1367,7 +1367,7 @@ index|[
 name|i2
 index|]
 operator|&
-name|RIGHT
+name|EDGE_RIGHT
 operator|)
 operator|&&
 name|i2
@@ -2235,7 +2235,7 @@ operator|->
 name|y
 index|]
 operator|&
-name|RIGHT
+name|EDGE_RIGHT
 condition|)
 name|b
 operator|->
@@ -2294,7 +2294,7 @@ operator|->
 name|y
 index|]
 operator||=
-name|RIGHT
+name|EDGE_RIGHT
 expr_stmt|;
 block|}
 block|}
@@ -2311,7 +2311,7 @@ operator|->
 name|y
 index|]
 operator|&
-name|LEFT
+name|EDGE_LEFT
 condition|)
 name|b
 operator|->
@@ -2370,7 +2370,7 @@ operator|->
 name|y
 index|]
 operator||=
-name|LEFT
+name|EDGE_LEFT
 expr_stmt|;
 block|}
 block|}
@@ -3779,9 +3779,9 @@ name|i
 index|]
 operator|!=
 operator|(
-name|LEFT
+name|EDGE_LEFT
 operator||
-name|RIGHT
+name|EDGE_RIGHT
 operator|)
 condition|)
 block|{
