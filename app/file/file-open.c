@@ -1038,6 +1038,16 @@ operator|==
 literal|0
 condition|)
 block|{
+comment|/*  no need to save a thumbnail if there's a good one already  */
+if|if
+condition|(
+operator|!
+name|gimp_imagefile_check_thumbnail
+argument_list|(
+name|imagefile
+argument_list|)
+condition|)
+block|{
 name|gimp_imagefile_save_thumbnail
 argument_list|(
 name|imagefile
@@ -1045,6 +1055,7 @@ argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|gimp_recent_list_add_uri
 argument_list|(

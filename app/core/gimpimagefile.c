@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288c85fc0103
+DECL|enum|__anon2af514700103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -247,6 +247,9 @@ name|gimage
 parameter_list|,
 name|gint
 name|size
+parameter_list|,
+name|gboolean
+name|replace
 parameter_list|,
 name|GError
 modifier|*
@@ -827,7 +830,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_imagefile_create_thumbnail (GimpImagefile * imagefile,GimpContext * context,GimpProgress * progress,gint size)
+DECL|function|gimp_imagefile_create_thumbnail (GimpImagefile * imagefile,GimpContext * context,GimpProgress * progress,gint size,gboolean replace)
 name|gimp_imagefile_create_thumbnail
 parameter_list|(
 name|GimpImagefile
@@ -844,6 +847,9 @@ name|progress
 parameter_list|,
 name|gint
 name|size
+parameter_list|,
+name|gboolean
+name|replace
 parameter_list|)
 block|{
 name|GimpThumbnail
@@ -1017,6 +1023,8 @@ name|gimage
 argument_list|,
 name|size
 argument_list|,
+name|replace
+argument_list|,
 operator|&
 name|error
 argument_list|)
@@ -1040,6 +1048,11 @@ name|GIMP_VERSION
 argument_list|,
 operator|&
 name|error
+argument_list|)
+expr_stmt|;
+name|gimp_imagefile_update
+argument_list|(
+name|imagefile
 argument_list|)
 expr_stmt|;
 block|}
@@ -1072,12 +1085,12 @@ block|}
 end_function
 
 begin_comment
-comment|/*  The weak version doesn't ref the imagefile but deals gracefully  *  with an imagefile that is destroyed while the thumbnail is  *  created. Thia allows to use this function w/o the need to block  *  the user interface (making it insensitive).  */
+comment|/*  The weak version doesn't ref the imagefile but deals gracefully  *  with an imagefile that is destroyed while the thumbnail is  *  created. Thia allows to use this function w/o the need to block  *  the user interface.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_imagefile_create_thumbnail_weak (GimpImagefile * imagefile,GimpContext * context,GimpProgress * progress,gint size)
+DECL|function|gimp_imagefile_create_thumbnail_weak (GimpImagefile * imagefile,GimpContext * context,GimpProgress * progress,gint size,gboolean replace)
 name|gimp_imagefile_create_thumbnail_weak
 parameter_list|(
 name|GimpImagefile
@@ -1094,6 +1107,9 @@ name|progress
 parameter_list|,
 name|gint
 name|size
+parameter_list|,
+name|gboolean
+name|replace
 parameter_list|)
 block|{
 name|GimpImagefile
@@ -1182,6 +1198,8 @@ argument_list|,
 name|progress
 argument_list|,
 name|size
+argument_list|,
+name|replace
 argument_list|)
 expr_stmt|;
 if|if
@@ -1250,6 +1268,74 @@ end_function
 
 begin_function
 name|gboolean
+DECL|function|gimp_imagefile_check_thumbnail (GimpImagefile * imagefile)
+name|gimp_imagefile_check_thumbnail
+parameter_list|(
+name|GimpImagefile
+modifier|*
+name|imagefile
+parameter_list|)
+block|{
+name|gint
+name|size
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGEFILE
+argument_list|(
+name|imagefile
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|size
+operator|=
+name|imagefile
+operator|->
+name|gimp
+operator|->
+name|config
+operator|->
+name|thumbnail_size
+expr_stmt|;
+if|if
+condition|(
+name|size
+operator|>
+literal|0
+condition|)
+block|{
+name|GimpThumbState
+name|state
+decl_stmt|;
+name|state
+operator|=
+name|gimp_thumbnail_check_thumb
+argument_list|(
+name|imagefile
+operator|->
+name|thumbnail
+argument_list|,
+name|size
+argument_list|)
+expr_stmt|;
+return|return
+operator|(
+name|state
+operator|==
+name|GIMP_THUMB_STATE_OK
+operator|)
+return|;
+block|}
+return|return
+name|TRUE
+return|;
+block|}
+end_function
+
+begin_function
+name|gboolean
 DECL|function|gimp_imagefile_save_thumbnail (GimpImagefile * imagefile,GimpImage * gimage)
 name|gimp_imagefile_save_thumbnail
 parameter_list|(
@@ -1262,8 +1348,13 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
+name|gint
+name|size
+decl_stmt|;
 name|gboolean
 name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|GError
 modifier|*
@@ -1291,6 +1382,23 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|size
+operator|=
+name|imagefile
+operator|->
+name|gimp
+operator|->
+name|config
+operator|->
+name|thumbnail_size
+expr_stmt|;
+if|if
+condition|(
+name|size
+operator|>
+literal|0
+condition|)
+block|{
 comment|/*  peek the thumbnail to make sure that mtime and filesize are set  */
 name|gimp_thumbnail_peek_image
 argument_list|(
@@ -1307,13 +1415,9 @@ name|imagefile
 argument_list|,
 name|gimage
 argument_list|,
-name|gimage
-operator|->
-name|gimp
-operator|->
-name|config
-operator|->
-name|thumbnail_size
+name|size
+argument_list|,
+name|FALSE
 argument_list|,
 operator|&
 name|error
@@ -1337,6 +1441,7 @@ argument_list|(
 name|error
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|success
@@ -2553,7 +2658,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_imagefile_save_thumb (GimpImagefile * imagefile,GimpImage * gimage,gint size,GError ** error)
+DECL|function|gimp_imagefile_save_thumb (GimpImagefile * imagefile,GimpImage * gimage,gint size,gboolean replace,GError ** error)
 name|gimp_imagefile_save_thumb
 parameter_list|(
 name|GimpImagefile
@@ -2566,6 +2671,9 @@ name|gimage
 parameter_list|,
 name|gint
 name|size
+parameter_list|,
+name|gboolean
+name|replace
 parameter_list|,
 name|GError
 modifier|*
@@ -2849,11 +2957,30 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
+if|if
+condition|(
+name|replace
+condition|)
+name|gimp_thumbnail_delete_others
+argument_list|(
+name|thumbnail
+argument_list|,
+name|size
+argument_list|)
+expr_stmt|;
+else|else
+name|gimp_thumbnail_delete_failure
+argument_list|(
+name|thumbnail
+argument_list|)
+expr_stmt|;
 name|gimp_imagefile_update
 argument_list|(
 name|imagefile
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|success
 return|;

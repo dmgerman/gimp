@@ -194,6 +194,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  for internal use only   */
+end_comment
+
+begin_function_decl
+name|void
+name|_gimp_thumbs_delete_others
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|uri
+parameter_list|,
+name|GimpThumbSize
+name|size
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
