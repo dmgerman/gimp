@@ -6,36 +6,44 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__INTERFACE_H__
+name|__TOOLBOX_H__
 end_ifndef
 
 begin_define
-DECL|macro|__INTERFACE_H__
+DECL|macro|__TOOLBOX_H__
 define|#
 directive|define
-name|__INTERFACE_H__
+name|__TOOLBOX_H__
 end_define
 
 begin_function_decl
 name|void
-name|create_display_shell
+name|toolbox_create
 parameter_list|(
-name|GDisplay
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|toolbox_free
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|toolbox_raise_callback
+parameter_list|(
+name|GtkWidget
 modifier|*
-name|gdisp
+name|widget
 parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
-parameter_list|,
-name|gchar
-modifier|*
-name|title
-parameter_list|,
-name|gint
-name|type
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -46,7 +54,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __INTERFACE_H__ */
+comment|/* __TOOLBOX_H__ */
 end_comment
 
 end_unit

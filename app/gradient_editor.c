@@ -8,7 +8,7 @@ comment|/* Special thanks to:  *  * Luis Albarran (luis4@mindspring.com) - Nice 
 end_comment
 
 begin_comment
-comment|/* TODO:  *  * - Fix memory leaks: grad_free_gradient_editor() and any others  * which I may have missed.  *  * - Add all of Marcelo's neat suggestions:  *   - Hue rotate, saturation, brightness, contrast.  *  * - Better handling of bogus gradient files and inconsistent  *   segments.  Do not loop indefinitely in seg_get_segment_at() if  *   there is a missing segment between two others.  *  * - Add a Gradient brush mode (color changes as you move it).  */
+comment|/* TODO:  *  * - Fix memory leaks: grad_free_gradient_editor() and any others  * which I may have missed.  *  * - Add all of Marcelo's neat suggestions:  *   - Hue rotate, saturation, brightness, contrast.  *  * - Better handling of bogus gradient files and inconsistent  *   segments.  Do not loop indefinitely in seg_get_segment_at() if  *   there is a missing segment between two others.  */
 end_comment
 
 begin_include
@@ -307,7 +307,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d498800103
+DECL|enum|__anon2962ee220103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -347,7 +347,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d498800203
+DECL|enum|__anon2962ee220203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -371,7 +371,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d498800308
+DECL|struct|__anon2962ee220308
 block|{
 DECL|member|shell
 name|GtkWidget

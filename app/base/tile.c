@@ -71,7 +71,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|tile_count
-name|int
+name|gint
 name|tile_count
 init|=
 literal|0
@@ -398,17 +398,17 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+endif|#
+directive|endif
 name|tile_count
 operator|++
 expr_stmt|;
-endif|#
-directive|endif
 block|}
 end_function
 
 begin_decl_stmt
 DECL|variable|tile_ref_count
-name|int
+name|gint
 name|tile_ref_count
 init|=
 literal|0
@@ -417,7 +417,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|tile_share_count
-name|int
+name|gint
 name|tile_share_count
 init|=
 literal|0
@@ -426,7 +426,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|tile_active_count
-name|int
+name|gint
 name|tile_active_count
 init|=
 literal|0
@@ -441,7 +441,7 @@ end_ifdef
 
 begin_decl_stmt
 DECL|variable|tile_exist_peak
-name|int
+name|gint
 name|tile_exist_peak
 init|=
 literal|0
@@ -450,7 +450,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|tile_exist_count
-name|int
+name|gint
 name|tile_exist_count
 init|=
 literal|0
@@ -474,8 +474,7 @@ parameter_list|)
 block|{
 comment|/* Increment the global reference count.    */
 name|tile_ref_count
-operator|+=
-literal|1
+operator|++
 expr_stmt|;
 comment|/* Increment this tile's reference count.    */
 name|TILE_MUTEX_LOCK
@@ -486,8 +485,7 @@ expr_stmt|;
 name|tile
 operator|->
 name|ref_count
-operator|+=
-literal|1
+operator|++
 expr_stmt|;
 if|if
 condition|(
@@ -581,8 +579,7 @@ parameter_list|)
 block|{
 comment|/* Decrement the global reference count.    */
 name|tile_ref_count
-operator|-=
-literal|1
+operator|--
 expr_stmt|;
 name|TILE_MUTEX_LOCK
 argument_list|(
@@ -593,8 +590,7 @@ comment|/* Decrement this tile's reference count.    */
 name|tile
 operator|->
 name|ref_count
-operator|-=
-literal|1
+operator|--
 expr_stmt|;
 comment|/* Decrement write ref count if dirtying    */
 if|if
@@ -602,14 +598,13 @@ condition|(
 name|dirty
 condition|)
 block|{
-name|int
+name|gint
 name|y
 decl_stmt|;
 name|tile
 operator|->
 name|write_count
-operator|-=
-literal|1
+operator|--
 expr_stmt|;
 if|if
 condition|(
@@ -881,7 +876,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|tile_size (Tile * tile)
 name|tile_size
 parameter_list|(
@@ -890,12 +885,8 @@ modifier|*
 name|tile
 parameter_list|)
 block|{
-name|int
-name|size
-decl_stmt|;
 comment|/* Return the actual size of the tile data.    *  (Based on its effective width and height).    */
-name|size
-operator|=
+return|return
 name|tile
 operator|->
 name|ewidth
@@ -907,15 +898,12 @@ operator|*
 name|tile
 operator|->
 name|bpp
-expr_stmt|;
-return|return
-name|size
 return|;
 block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|tile_ewidth (Tile * tile)
 name|tile_ewidth
 parameter_list|(
@@ -933,7 +921,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|tile_eheight (Tile * tile)
 name|tile_eheight
 parameter_list|(
@@ -951,7 +939,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|tile_bpp (Tile * tile)
 name|tile_bpp
 parameter_list|(
@@ -969,7 +957,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|tile_is_valid (Tile * tile)
 name|tile_is_valid
 parameter_list|(
@@ -1017,7 +1005,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_attach (Tile * tile,void * tm,int tile_num)
+DECL|function|tile_attach (Tile * tile,void * tm,gint tile_num)
 name|tile_attach
 parameter_list|(
 name|Tile
@@ -1028,7 +1016,7 @@ name|void
 modifier|*
 name|tm
 parameter_list|,
-name|int
+name|gint
 name|tile_num
 parameter_list|)
 block|{
@@ -1140,7 +1128,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_detach (Tile * tile,void * tm,int tile_num)
+DECL|function|tile_detach (Tile * tile,void * tm,gint tile_num)
 name|tile_detach
 parameter_list|(
 name|Tile
@@ -1151,7 +1139,7 @@ name|void
 modifier|*
 name|tm
 parameter_list|,
-name|int
+name|gint
 name|tile_num
 parameter_list|)
 block|{
@@ -1310,25 +1298,26 @@ block|}
 end_function
 
 begin_function
-name|void
-modifier|*
-DECL|function|tile_data_pointer (Tile * tile,int xoff,int yoff)
+name|gpointer
+DECL|function|tile_data_pointer (Tile * tile,gint xoff,gint yoff)
 name|tile_data_pointer
 parameter_list|(
 name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|int
+name|gint
 name|xoff
 parameter_list|,
-name|int
+name|gint
 name|yoff
 parameter_list|)
 block|{
-name|int
+name|gint
 name|offset
-init|=
+decl_stmt|;
+name|offset
+operator|=
 name|yoff
 operator|*
 name|tile
@@ -1336,13 +1325,12 @@ operator|->
 name|ewidth
 operator|+
 name|xoff
-decl_stmt|;
+expr_stmt|;
 return|return
-operator|(
-name|void
-operator|*
-operator|)
-operator|(
+call|(
+name|gpointer
+call|)
+argument_list|(
 name|tile
 operator|->
 name|data
@@ -1352,7 +1340,7 @@ operator|*
 name|tile
 operator|->
 name|bpp
-operator|)
+argument_list|)
 return|;
 block|}
 end_function

@@ -270,12 +270,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"lc_dialog.h"
 end_include
 
@@ -343,6 +337,12 @@ begin_include
 include|#
 directive|include
 file|"tips_dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"toolbox.h"
 end_include
 
 begin_include
@@ -2737,7 +2737,7 @@ expr_stmt|;
 name|session_init
 argument_list|()
 expr_stmt|;
-name|create_toolbox
+name|toolbox_create
 argument_list|()
 expr_stmt|;
 comment|/*  Fill the "last opened" menu items with the first last_opened_size        *  elements of the docindex        */

@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"layers_dialog.h"
 end_include
 
@@ -133,6 +127,12 @@ begin_include
 include|#
 directive|include
 file|"scale.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"toolbox.h"
 end_include
 
 begin_include
