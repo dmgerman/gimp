@@ -42,6 +42,11 @@ name|gboolean
 name|open
 decl_stmt|;
 comment|/*  only valid while restoring and saving the session  */
+DECL|member|screen
+name|gint
+name|screen
+decl_stmt|;
+comment|/*  only valid while restoring and saving the session  */
 comment|/*  dialog specific list of GimpSessionInfoAux  */
 DECL|member|aux_info
 name|GList
