@@ -280,7 +280,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_directory:  *  * Returns the user-specific GIMP settings directory. If the  * environment variable GIMP_DIRECTORY exists, it is used. If it is an  * absolute path, it is used as is.  If it is a relative path, it is  * taken to be a subdirectory of the home directory. If it is a  * relative path, and no home directory can be determined, it is taken  * to be a subdirectory of gimp_data_directory().  *  * The usual case is that no GIMP_DIRECTORY environment variable  * exists, and then we use the GIMPDIR subdirectory of the home  * directory. If no home directory exists, we use a per-user  * subdirectory of gimp_data_directory().  In any case, we always  * return some non-empty string, whether it corresponds to an existing  * directory or not.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The user-specific GIMP settings directory.  **/
+comment|/**  * gimp_directory:  *  * Returns the user-specific GIMP settings directory. If the  * environment variable GIMP2_DIRECTORY exists, it is used. If it is  * an absolute path, it is used as is.  If it is a relative path, it  * is taken to be a subdirectory of the home directory. If it is a  * relative path, and no home directory can be determined, it is taken  * to be a subdirectory of gimp_data_directory().  *  * The usual case is that no GIMP2_DIRECTORY environment variable  * exists, and then we use the GIMPDIR subdirectory of the home  * directory. If no home directory exists, we use a per-user  * subdirectory of gimp_data_directory().  In any case, we always  * return some non-empty string, whether it corresponds to an existing  * directory or not.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The user-specific GIMP settings directory.  **/
 end_comment
 
 begin_function
@@ -321,7 +321,7 @@ name|env_gimp_dir
 operator|=
 name|g_getenv
 argument_list|(
-literal|"GIMP_DIRECTORY"
+literal|"GIMP2_DIRECTORY"
 argument_list|)
 expr_stmt|;
 name|home_dir
@@ -751,7 +751,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/**  * gimp_data_directory:  *  * Returns the top directory for GIMP data. If the environment variable   * GIMP_DATADIR exists, that is used.  It should be an absolute pathname.  * Otherwise, on Unix the compile-time defined directory is used.  On  * Win32, the installation directory as deduced from the executable's  * name is used.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The top directory for GIMP data.  **/
+comment|/**  * gimp_data_directory:  *  * Returns the top directory for GIMP data. If the environment  * variable GIMP2_DATADIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used.  On Win32, the installation directory as deduced  * from the executable's name is used.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The top directory for GIMP data.  **/
 end_comment
 
 begin_function
@@ -782,7 +782,7 @@ name|gimp_data_dir
 operator|=
 name|gimp_env_get_dir
 argument_list|(
-literal|"GIMP_DATADIR"
+literal|"GIMP2_DATADIR"
 argument_list|,
 name|DATADIR
 argument_list|)
@@ -794,7 +794,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_locale_directory:  *  * Returns the top directory for GIMP locale files. If the environment  * variable GIMP_LOCALEDIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used.  On Win32, the installation directory as deduced  * from the executable's name is used.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The top directory for GIMP locale files.  */
+comment|/**  * gimp_locale_directory:  *  * Returns the top directory for GIMP locale files. If the environment  * variable GIMP2_LOCALEDIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used.  On Win32, the installation directory as deduced  * from the executable's name is used.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The top directory for GIMP locale files.  */
 end_comment
 
 begin_function
@@ -827,7 +827,7 @@ name|gimp_locale_dir
 operator|=
 name|gimp_env_get_dir
 argument_list|(
-literal|"GIMP_LOCALEDIR"
+literal|"GIMP2_LOCALEDIR"
 argument_list|,
 name|LOCALEDIR
 argument_list|)
@@ -839,7 +839,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_sysconf_directory:  *  * Returns the top directory for GIMP config files. If the environment  * variable GIMP_SYSCONFDIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used.  On Win32, the installation directory as deduced  * from the executable's name is used.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The top directory for GIMP config files.  **/
+comment|/**  * gimp_sysconf_directory:  *  * Returns the top directory for GIMP config files. If the environment  * variable GIMP2_SYSCONFDIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used.  On Win32, the installation directory as deduced  * from the executable's name is used.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The top directory for GIMP config files.  **/
 end_comment
 
 begin_function
@@ -872,7 +872,7 @@ name|gimp_sysconf_dir
 operator|=
 name|gimp_env_get_dir
 argument_list|(
-literal|"GIMP_SYSCONFDIR"
+literal|"GIMP2_SYSCONFDIR"
 argument_list|,
 name|SYSCONFDIR
 argument_list|)
@@ -884,7 +884,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_directory:  *  * Returns the top directory for GIMP plug_ins and modules. If the   * environment variable GIMP_PLUGINDIR exists, that is used.  It   * should be an absolute pathname. Otherwise, on Unix the compile-time   * defined directory is used. On Win32, the installation directory as   * deduced from the executable's name is used.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The top directory for GIMP plug_ins and modules.  **/
+comment|/**  * gimp_plug_in_directory:  *  * Returns the top directory for GIMP plug_ins and modules. If the   * environment variable GIMP2_PLUGINDIR exists, that is used.  It   * should be an absolute pathname. Otherwise, on Unix the compile-time   * defined directory is used. On Win32, the installation directory as   * deduced from the executable's name is used.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The top directory for GIMP plug_ins and modules.  **/
 end_comment
 
 begin_function
@@ -915,7 +915,7 @@ name|gimp_plug_in_dir
 operator|=
 name|gimp_env_get_dir
 argument_list|(
-literal|"GIMP_PLUGINDIR"
+literal|"GIMP2_PLUGINDIR"
 argument_list|,
 name|PLUGINDIR
 argument_list|)

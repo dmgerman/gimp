@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GimpConfig object property dumper.   * Copyright (C) 2001-2002  Sven Neumann<sven@gimp.org>  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GimpConfig object property dumper.   * Copyright (C) 2001-2003  Sven Neumann<sven@gimp.org>  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -113,7 +113,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0124920103
+DECL|enum|__anon2baf468a0103
 block|{
 DECL|enumerator|DUMP_NONE
 name|DUMP_NONE
@@ -521,8 +521,8 @@ literal|"By default everything in this file is commented out.  The file then "
 literal|"documents the default values and shows what changes are possible.\n"
 literal|"\n"
 literal|"The variable ${gimp_dir} is set to the value of the environment "
-literal|"variable GIMP_DIRECTORY or, if that is not set, the compiled-in "
-literal|"default value is used.  If GIMP_DIRECTORY is not an absolute path, "
+literal|"variable GIMP2_DIRECTORY or, if that is not set, the compiled-in "
+literal|"default value is used.  If GIMP2_DIRECTORY is not an absolute path, "
 literal|"it is interpreted relative to your home directory."
 decl_stmt|;
 end_decl_stmt
@@ -763,21 +763,21 @@ literal|"There are a few variables that are pre-defined:\n"
 literal|".TP\n"
 literal|".I gimp_dir\n"
 literal|"The personal gimp directory which is set to the value of the environment\n"
-literal|"variable GIMP_DIRECTORY or to ~/@gimpdir@.\n"
+literal|"variable GIMP2_DIRECTORY or to ~/@gimpdir@.\n"
 literal|".TP\n"
 literal|".I gimp_data_dir\n"
 literal|"Nase for paths to shareable data, which is set to the value of the\n"
-literal|"environment variable GIMP_DATADIR or to the compiled-in default value\n"
+literal|"environment variable GIMP2_DATADIR or to the compiled-in default value\n"
 literal|"@gimpdatadir@.\n"
 literal|".TP\n"
 literal|".I gimp_plug_in_dir\n"
 literal|"Base to paths for architecture-specific plugins and modules, which is set\n"
-literal|"to the value of the environment variable GIMP_PLUGINDIR or to the\n"
+literal|"to the value of the environment variable GIMP2_PLUGINDIR or to the\n"
 literal|"compiled-in default value @gimpplugindir@.\n"
 literal|".TP\n"
 literal|".I gimp_sysconf_dir\n"
 literal|"Path to configuration files, which is set to the value of the environment\n"
-literal|"variable GIMP_SYSCONFDIR or to the compiled-in default value \n"
+literal|"variable GIMP2_SYSCONFDIR or to the compiled-in default value \n"
 literal|"@gimpsysconfdir@.\n"
 literal|"\n"
 decl_stmt|;
