@@ -1747,17 +1747,6 @@ name|GimpChannelOps
 operator|)
 name|action
 expr_stmt|;
-if|if
-condition|(
-name|gimp_drawable_has_alpha
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|active_layer
-argument_list|)
-argument_list|)
-condition|)
-block|{
 name|gimp_channel_select_alpha
 argument_list|(
 name|gimp_image_get_mask
@@ -1781,7 +1770,6 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 

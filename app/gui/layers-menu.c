@@ -1223,8 +1223,6 @@ name|fs
 operator|&&
 operator|!
 name|ac
-operator|&&
-name|alpha
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -1256,6 +1254,9 @@ expr_stmt|;
 undef|#
 directive|undef
 name|SET_SENSITIVE
+undef|#
+directive|undef
+name|SET_VISIBLE
 block|}
 end_function
 

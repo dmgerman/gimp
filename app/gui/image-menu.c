@@ -7652,8 +7652,6 @@ name|lp
 operator|&&
 operator|!
 name|aux
-operator|&&
-name|alpha
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -7664,8 +7662,6 @@ name|lp
 operator|&&
 operator|!
 name|aux
-operator|&&
-name|alpha
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -7676,8 +7672,6 @@ name|lp
 operator|&&
 operator|!
 name|aux
-operator|&&
-name|alpha
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -7688,8 +7682,6 @@ name|lp
 operator|&&
 operator|!
 name|aux
-operator|&&
-name|alpha
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
