@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpconfig-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpconfig-utils.h"
 end_include
 
@@ -258,7 +252,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27deca890103
+DECL|enum|__anon291d394a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -1269,7 +1275,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfec6250103
+DECL|enum|__anon2b31b5d70103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1283,7 +1289,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfec6250203
+DECL|enum|__anon2b31b5d70203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
