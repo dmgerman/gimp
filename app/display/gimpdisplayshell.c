@@ -1909,7 +1909,7 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-literal|"toggled"
+literal|"clicked"
 argument_list|,
 operator|(
 name|GtkSignalFunc
