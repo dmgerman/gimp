@@ -125,7 +125,7 @@ modifier|*
 name|drawable
 parameter_list|,
 name|gboolean
-name|cut_gimage
+name|cut_image
 parameter_list|,
 name|gboolean
 name|keep_indexed
@@ -148,6 +148,9 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|gboolean
+name|cut_image
 parameter_list|,
 name|gint
 name|off_x

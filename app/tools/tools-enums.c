@@ -171,6 +171,14 @@ literal|"move"
 block|}
 block|,
 block|{
+name|SELECTION_MOVE_COPY
+block|,
+literal|"SELECTION_MOVE_COPY"
+block|,
+literal|"move-copy"
+block|}
+block|,
+block|{
 name|SELECTION_ANCHOR
 block|,
 literal|"SELECTION_ANCHOR"

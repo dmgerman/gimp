@@ -698,7 +698,7 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_image_mask_extract (GimpImage * gimage,GimpDrawable * drawable,gboolean cut_gimage,gboolean keep_indexed,gboolean add_alpha)
+DECL|function|gimp_image_mask_extract (GimpImage * gimage,GimpDrawable * drawable,gboolean cut_image,gboolean keep_indexed,gboolean add_alpha)
 name|gimp_image_mask_extract
 parameter_list|(
 name|GimpImage
@@ -710,7 +710,7 @@ modifier|*
 name|drawable
 parameter_list|,
 name|gboolean
-name|cut_gimage
+name|cut_image
 parameter_list|,
 name|gboolean
 name|keep_indexed
@@ -965,7 +965,7 @@ expr_stmt|;
 comment|/*  If a cut was specified, and the selection mask is not empty,    *  push an undo    */
 if|if
 condition|(
-name|cut_gimage
+name|cut_image
 operator|&&
 name|non_empty
 condition|)
@@ -1054,7 +1054,7 @@ name|y2
 operator|-
 name|y1
 argument_list|,
-name|cut_gimage
+name|cut_image
 argument_list|)
 expr_stmt|;
 name|pixel_region_init
@@ -1149,12 +1149,12 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|cut_gimage
+name|cut_image
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|cut_gimage
+name|cut_image
 condition|)
 block|{
 comment|/*  Clear the region  */
@@ -1275,7 +1275,7 @@ expr_stmt|;
 comment|/*  If we're cutting, remove either the layer (or floating selection),        *  the layer mask, or the channel        */
 if|if
 condition|(
-name|cut_gimage
+name|cut_image
 condition|)
 block|{
 if|if
@@ -1372,7 +1372,7 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_mask_float (GimpImage * gimage,GimpDrawable * drawable,gint off_x,gint off_y)
+DECL|function|gimp_image_mask_float (GimpImage * gimage,GimpDrawable * drawable,gboolean cut_image,gint off_x,gint off_y)
 name|gimp_image_mask_float
 parameter_list|(
 name|GimpImage
@@ -1382,6 +1382,9 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|gboolean
+name|cut_image
 parameter_list|,
 name|gint
 name|off_x
@@ -1491,7 +1494,7 @@ literal|"Float Selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  Cut the selected region  */
+comment|/*  Cut or copy the selected region  */
 name|tiles
 operator|=
 name|gimp_image_mask_extract
@@ -1500,11 +1503,24 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
-name|TRUE
+name|cut_image
 argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+comment|/*  Clear the selection as if we had cut the pixels  */
+if|if
+condition|(
+operator|!
+name|cut_image
+condition|)
+name|gimp_image_mask_clear
+argument_list|(
+name|gimage
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Create a new layer from the buffer, using the drawable's type    *  because it may be different from the image's type if we cut from    *  a channel or layer mask    */

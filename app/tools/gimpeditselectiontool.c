@@ -1195,6 +1195,9 @@ break|break;
 case|case
 name|EDIT_MASK_TO_LAYER_TRANSLATE
 case|:
+case|case
+name|EDIT_MASK_COPY_TO_LAYER_TRANSLATE
+case|:
 name|x1
 operator|=
 name|edit_select
@@ -2319,6 +2322,9 @@ break|break;
 case|case
 name|EDIT_MASK_TO_LAYER_TRANSLATE
 case|:
+case|case
+name|EDIT_MASK_COPY_TO_LAYER_TRANSLATE
+case|:
 if|if
 condition|(
 operator|!
@@ -2334,6 +2340,12 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
+argument_list|,
+name|edit_select
+operator|->
+name|edit_type
+operator|==
+name|EDIT_MASK_TO_LAYER_TRANSLATE
 argument_list|,
 literal|0
 argument_list|,
@@ -2948,6 +2960,9 @@ block|}
 break|break;
 case|case
 name|EDIT_MASK_TO_LAYER_TRANSLATE
+case|:
+case|case
+name|EDIT_MASK_COPY_TO_LAYER_TRANSLATE
 case|:
 name|gimp_draw_tool_draw_rectangle
 argument_list|(
@@ -4298,6 +4313,9 @@ name|EDIT_MASK_TRANSLATE
 case|:
 case|case
 name|EDIT_MASK_TO_LAYER_TRANSLATE
+case|:
+case|case
+name|EDIT_MASK_COPY_TO_LAYER_TRANSLATE
 case|:
 comment|/*  this won't happen  */
 break|break;

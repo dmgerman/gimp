@@ -79,7 +79,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c2698a00103
+DECL|enum|__anon2a1ec14a0103
 block|{
 DECL|enumerator|GIMP_CROP
 name|GIMP_CROP
@@ -103,7 +103,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2c2698a00203
+DECL|enum|__anon2a1ec14a0203
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -131,6 +131,9 @@ block|,
 DECL|enumerator|SELECTION_MOVE
 name|SELECTION_MOVE
 block|,
+DECL|enumerator|SELECTION_MOVE_COPY
+name|SELECTION_MOVE_COPY
+block|,
 DECL|enumerator|SELECTION_ANCHOR
 name|SELECTION_ANCHOR
 DECL|typedef|SelectOps
@@ -148,7 +151,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2c2698a00303
+DECL|enum|__anon2a1ec14a0303
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -173,7 +176,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2c2698a00403
+DECL|enum|__anon2a1ec14a0403
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
@@ -211,7 +214,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c2698a00503
+DECL|enum|__anon2a1ec14a0503
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -252,7 +255,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c2698a00603
+DECL|enum|__anon2a1ec14a0603
 block|{
 DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_NONE
 name|GIMP_TRANSFORM_GRID_TYPE_NONE
@@ -280,7 +283,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2c2698a00703
+DECL|enum|__anon2a1ec14a0703
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING

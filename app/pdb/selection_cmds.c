@@ -1335,6 +1335,8 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
+name|TRUE
+argument_list|,
 name|offx
 argument_list|,
 name|offy
