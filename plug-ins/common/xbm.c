@@ -311,7 +311,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_dialog
 parameter_list|(
 name|gint32
@@ -331,7 +331,7 @@ comment|/* DISABLED - see http://bugzilla.gnome.org/show_bug.cgi?id=82763 */
 end_comment
 
 begin_endif
-unit|static void   comment_entry_callback  (GtkWidget   *widget, 				       gpointer     data);
+unit|static void      comment_entry_callback  (GtkWidget   *widget,                                           gpointer     data);
 endif|#
 directive|endif
 end_endif
@@ -4386,7 +4386,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|save_dialog (gint32 drawable_ID)
 name|save_dialog
 parameter_list|(
@@ -4462,7 +4462,7 @@ expr_stmt|;
 comment|/* parameter settings */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -4477,7 +4477,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4512,17 +4512,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -4614,7 +4604,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -4624,7 +4614,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4692,7 +4682,7 @@ argument_list|(
 literal|"_Identifier Prefix:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -4722,7 +4712,7 @@ if|#
 directive|if
 literal|0
 comment|/* DISABLED - see http://bugzilla.gnome.org/show_bug.cgi?id=82763 */
-block|entry = gtk_entry_new ();   gtk_entry_set_max_length (GTK_ENTRY (entry), MAX_COMMENT);   gtk_widget_set_size_request (entry, 240, -1);   gtk_entry_set_text (GTK_ENTRY (entry), xsvals.comment);   gimp_table_attach_aligned (GTK_TABLE (table), 0, 1, 			     _("Comment:"), 1.0, 0.5, 			     entry, 1, TRUE);   g_signal_connect (entry, "changed",                     G_CALLBACK (comment_entry_callback),                     NULL);
+block|entry = gtk_entry_new ();   gtk_entry_set_max_length (GTK_ENTRY (entry), MAX_COMMENT);   gtk_widget_set_size_request (entry, 240, -1);   gtk_entry_set_text (GTK_ENTRY (entry), xsvals.comment);   gimp_table_attach_aligned (GTK_TABLE (table), 0, 1, 			     _("Comment:"), 0.0, 0.5, 			     entry, 1, TRUE);   g_signal_connect (entry, "changed",                     G_CALLBACK (comment_entry_callback),                     NULL);
 endif|#
 directive|endif
 comment|/* hotspot toggle */
@@ -4804,7 +4794,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -4814,7 +4804,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4906,7 +4896,7 @@ argument_list|(
 literal|"Hot Spot _X:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -4978,10 +4968,10 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"_Y:"
+literal|"Hot Spot _Y:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -5012,7 +5002,7 @@ expr_stmt|;
 comment|/* mask file */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -5052,16 +5042,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
 name|gtk_table_set_col_spacings
 argument_list|(
 name|GTK_TABLE
@@ -5069,7 +5049,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -5079,7 +5059,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -5202,7 +5182,7 @@ argument_list|(
 literal|"_Mask File Extension:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,

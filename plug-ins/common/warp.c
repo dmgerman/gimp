@@ -85,7 +85,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4a955e0103
+DECL|enum|__anon27bcaf110103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -105,7 +105,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4a955e0208
+DECL|struct|__anon27bcaf110208
 block|{
 DECL|member|amount
 name|gdouble
@@ -1444,10 +1444,6 @@ name|table
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|otable
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|spinbutton
 decl_stmt|;
 name|GtkObject
@@ -1510,7 +1506,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -1520,7 +1516,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1551,11 +1547,11 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Main Options"
+literal|"Basic Options"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1573,6 +1569,11 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|frame
 argument_list|)
 expr_stmt|;
 name|table
@@ -1593,7 +1594,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -1603,17 +1604,19 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
+name|gtk_table_set_col_spacing
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_TABLE
 argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|1
+argument_list|,
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1623,6 +1626,11 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
+name|table
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
@@ -1671,7 +1679,7 @@ argument_list|(
 literal|"Step Size:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -1679,7 +1687,7 @@ name|spinbutton
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1741,7 +1749,7 @@ argument_list|(
 literal|"Iterations:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -1749,7 +1757,7 @@ name|spinbutton
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1778,6 +1786,18 @@ name|_
 argument_list|(
 literal|"Displacement Map:"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -1896,9 +1916,9 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -1965,6 +1985,11 @@ argument_list|,
 literal|0
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|toggle_hbox
 argument_list|)
 expr_stmt|;
 name|toggle
@@ -2323,30 +2348,15 @@ operator|==
 name|COLOR
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle_hbox
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|table
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
 comment|/* -------------------------------------------------------------------- */
 comment|/* ---------    The secondary table         --------------------------  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Secondary Options"
+literal|"Advanced Options"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2364,6 +2374,11 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|frame
 argument_list|)
 expr_stmt|;
 name|table
@@ -2384,7 +2399,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -2394,17 +2409,19 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
+name|gtk_table_set_col_spacing
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_TABLE
 argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|1
+argument_list|,
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2414,6 +2431,11 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
+name|table
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
@@ -2459,7 +2481,7 @@ argument_list|(
 literal|"Dither Size:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -2467,7 +2489,7 @@ name|spinbutton
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -2529,7 +2551,7 @@ argument_list|(
 literal|"Rotation Angle:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -2537,7 +2559,7 @@ name|spinbutton
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -2599,7 +2621,7 @@ argument_list|(
 literal|"Substeps:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -2607,7 +2629,7 @@ name|spinbutton
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -2636,6 +2658,18 @@ name|_
 argument_list|(
 literal|"Magnitude Map:"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2781,13 +2815,18 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|toggle_hbox
+argument_list|)
+expr_stmt|;
 name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Use Mag Map"
+literal|"Use Magnitude Map"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2841,30 +2880,15 @@ operator|.
 name|mag_use
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle_hbox
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|table
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
 comment|/* -------------------------------------------------------------------- */
 comment|/* ---------    The "other" table         --------------------------  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Other Options"
+literal|"More Advanced Options"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2884,7 +2908,12 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|otable
+name|gtk_widget_show
+argument_list|(
+name|frame
+argument_list|)
+expr_stmt|;
+name|table
 operator|=
 name|gtk_table_new
 argument_list|(
@@ -2899,30 +2928,32 @@ name|gtk_table_set_row_spacings
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|otable
+name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|otable
+name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
+name|gtk_table_set_col_spacing
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_TABLE
 argument_list|(
-name|otable
+name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|1
+argument_list|,
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2932,7 +2963,12 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-name|otable
+name|table
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|table
 argument_list|)
 expr_stmt|;
 name|spinbutton
@@ -2967,7 +3003,7 @@ name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|otable
+name|table
 argument_list|)
 argument_list|,
 literal|0
@@ -2979,7 +3015,7 @@ argument_list|(
 literal|"Gradient Scale:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -2987,7 +3023,7 @@ name|spinbutton
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -3043,7 +3079,7 @@ name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|otable
+name|table
 argument_list|)
 argument_list|,
 name|combo
@@ -3119,7 +3155,7 @@ name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|otable
+name|table
 argument_list|)
 argument_list|,
 literal|0
@@ -3131,7 +3167,7 @@ argument_list|(
 literal|"Vector Mag:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -3139,7 +3175,7 @@ name|spinbutton
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -3190,7 +3226,7 @@ name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|otable
+name|table
 argument_list|)
 argument_list|,
 literal|0
@@ -3202,7 +3238,7 @@ argument_list|(
 literal|"Angle:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -3210,7 +3246,7 @@ name|spinbutton
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -3266,7 +3302,7 @@ name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|otable
+name|table
 argument_list|)
 argument_list|,
 name|combo
@@ -3307,16 +3343,6 @@ literal|"Fixed-direction-vector map selection menu"
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|otable
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
