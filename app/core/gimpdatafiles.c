@@ -643,10 +643,8 @@ continue|continue;
 block|}
 name|filename
 operator|=
-name|g_strdup_printf
+name|g_build_filename
 argument_list|(
-literal|"%s%s"
-argument_list|,
 operator|(
 name|gchar
 operator|*
@@ -658,6 +656,8 @@ argument_list|,
 name|dir_ent
 operator|->
 name|d_name
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Check the file and see that it is not a sub-directory */

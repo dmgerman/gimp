@@ -522,7 +522,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon273d90160108
+DECL|struct|__anon29fb5b820108
 block|{
 DECL|member|directory
 name|gboolean
@@ -3756,10 +3756,16 @@ modifier|*
 name|pfp
 decl_stmt|;
 name|gchar
-name|buffer
-index|[
-literal|2048
-index|]
+modifier|*
+name|filename
+init|=
+name|NULL
+decl_stmt|;
+name|gchar
+modifier|*
+name|command
+init|=
+name|NULL
 decl_stmt|;
 name|struct
 name|stat
@@ -3773,19 +3779,18 @@ name|executable
 init|=
 name|TRUE
 decl_stmt|;
-comment|/*  Generate output  */
-name|g_snprintf
+name|filename
+operator|=
+name|g_build_filename
 argument_list|(
-argument|buffer
+name|gimp_data_directory
+argument_list|()
 argument_list|,
-argument|sizeof (buffer)
+name|USER_INSTALL
 argument_list|,
-literal|"%s"
-argument|G_DIR_SEPARATOR_S USER_INSTALL
-argument_list|,
-argument|gimp_data_directory ()
+name|NULL
 argument_list|)
-empty_stmt|;
+expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -3793,7 +3798,7 @@ name|err
 operator|=
 name|stat
 argument_list|(
-name|buffer
+name|filename
 argument_list|,
 operator|&
 name|stat_buf
@@ -3813,7 +3818,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s\n%s"
 argument_list|,
-name|buffer
+name|filename
 argument_list|,
 name|_
 argument_list|(
@@ -3876,7 +3881,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s\n%s"
 argument_list|,
-name|buffer
+name|filename
 argument_list|,
 name|_
 argument_list|(
@@ -3914,7 +3919,7 @@ block|{
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
-name|char
+name|gchar
 modifier|*
 name|quoted_data_dir
 decl_stmt|,
@@ -3953,38 +3958,36 @@ comment|/* The Microsoft _popen doesn't work in Windows applications, sigh.     
 name|AllocConsole
 argument_list|()
 expr_stmt|;
-name|g_snprintf
+name|g_free
 argument_list|(
-argument|buffer
-argument_list|,
-argument|sizeof(buffer)
-argument_list|,
-literal|"%s"
-argument|G_DIR_SEPARATOR_S USER_INSTALL
-literal|" %s %s %s"
-argument_list|,
-argument|quoted_data_dir
-argument_list|,
-argument|quoted_data_dir
-argument_list|,
-argument|quoted_user_dir
-argument_list|,
-argument|quoted_sysconf_dir
+name|filename
 argument_list|)
-empty_stmt|;
-if|if
-condition|(
-name|system
-argument_list|(
-name|buffer
-argument_list|)
-operator|==
-operator|-
-literal|1
-condition|)
-name|executable
+expr_stmt|;
+name|filename
 operator|=
-name|FALSE
+name|g_build_filename
+argument_list|(
+name|quoted_data_dir
+argument_list|,
+name|USER_INSTALL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|command
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"%s %s %s %s"
+argument_list|,
+name|fn
+argument_list|,
+name|quoted_data_dir
+argument_list|,
+name|quoted_user_dir
+argument_list|,
+name|quoted_sysconf_dir
+argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
@@ -4000,6 +4003,20 @@ name|g_free
 argument_list|(
 name|quoted_sysconf_dir
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|system
+argument_list|(
+name|command
+argument_list|)
+operator|==
+operator|-
+literal|1
+condition|)
+name|executable
+operator|=
+name|FALSE
 expr_stmt|;
 if|if
 condition|(
@@ -4022,59 +4039,35 @@ argument_list|)
 expr_stmt|;
 else|#
 directive|else
-ifndef|#
-directive|ifndef
+ifdef|#
+directive|ifdef
 name|__EMX__
-name|g_snprintf
+name|command
+operator|=
+name|g_strdup_printf
 argument_list|(
-argument|buffer
+literal|"cmd.exe /c %s %s %s %s"
 argument_list|,
-argument|sizeof(buffer)
+name|filename
 argument_list|,
-literal|"%s"
-argument|G_DIR_SEPARATOR_S USER_INSTALL
-literal|" %s %s %s %s"
+name|gimp_data_directory
+argument_list|()
 argument_list|,
-argument|gimp_data_directory ()
+name|gimp_directory
+argument_list|()
 argument_list|,
-literal|"2>&1"
-argument_list|,
-argument|gimp_data_directory()
-argument_list|,
-argument|gimp_directory ()
-argument_list|,
-argument|gimp_sysconf_directory()
+name|gimp_sysconf_directory
+argument_list|()
 argument_list|)
-empty_stmt|;
-else|#
-directive|else
-name|g_snprintf
-argument_list|(
-argument|buffer
-argument_list|,
-argument|sizeof(buffer)
-argument_list|,
-literal|"cmd.exe /c %s"
-argument|G_DIR_SEPARATOR_S USER_INSTALL
-literal|" %s %s %s"
-argument_list|,
-argument|gimp_data_directory ()
-argument_list|,
-argument|gimp_data_directory()
-argument_list|,
-argument|gimp_directory ()
-argument_list|,
-argument|gimp_sysconf_directory()
-argument_list|)
-empty_stmt|;
+expr_stmt|;
 block|{
-name|char
+name|gchar
 modifier|*
 name|s
 init|=
 name|buffer
 operator|+
-literal|10
+literal|11
 decl_stmt|;
 while|while
 condition|(
@@ -4099,8 +4092,33 @@ operator|++
 expr_stmt|;
 block|}
 block|}
+else|#
+directive|else
+name|command
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"%s 2>&1 %s %s %s"
+argument_list|,
+name|filename
+argument_list|,
+name|gimp_data_directory
+argument_list|()
+argument_list|,
+name|gimp_directory
+argument_list|()
+argument_list|,
+name|gimp_sysconf_directory
+argument_list|()
+argument_list|)
+expr_stmt|;
 endif|#
 directive|endif
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 comment|/*  urk - should really use something better than popen(), since        *  we can't tell if the installation script failed --austin        */
 if|if
 condition|(
@@ -4109,7 +4127,7 @@ name|pfp
 operator|=
 name|popen
 argument_list|(
-name|buffer
+name|command
 argument_list|,
 literal|"r"
 argument_list|)
@@ -4129,6 +4147,13 @@ decl_stmt|;
 name|GtkTextBuffer
 modifier|*
 name|log_buffer
+decl_stmt|;
+specifier|static
+name|gchar
+name|buffer
+index|[
+literal|2048
+index|]
 decl_stmt|;
 name|scrolled_window
 operator|=
@@ -4257,14 +4282,21 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|executable
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 endif|#
 directive|endif
 comment|/* !G_OS_WIN32 */
 block|}
+name|g_free
+argument_list|(
+name|command
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|executable

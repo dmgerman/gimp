@@ -265,17 +265,19 @@ name|temp
 decl_stmt|;
 name|temp
 operator|=
-name|g_strdup_printf
+name|g_build_filename
 argument_list|(
-literal|"%s"
-argument|G_DIR_SEPARATOR_S TIPS_DIR_NAME                               G_DIR_SEPARATOR_S
-literal|"%s"
+name|gimp_data_directory
+argument_list|()
 argument_list|,
-argument|gimp_data_directory ()
+name|TIPS_DIR_NAME
 argument_list|,
-argument|_(
+name|_
+argument_list|(
 literal|"gimp_tips.txt"
-argument|)
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|read_tips_file

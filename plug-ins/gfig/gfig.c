@@ -1110,7 +1110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291d23980103
+DECL|enum|__anon2c2fadd10103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1162,7 +1162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291d23980203
+DECL|enum|__anon2c2fadd10203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1183,7 +1183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291d23980303
+DECL|enum|__anon2c2fadd10303
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -1204,7 +1204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291d23980403
+DECL|enum|__anon2c2fadd10403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1231,7 +1231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291d23980503
+DECL|enum|__anon2c2fadd10503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1252,7 +1252,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291d23980603
+DECL|enum|__anon2c2fadd10603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1420,7 +1420,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291d23980708
+DECL|struct|__anon2c2fadd10708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1459,7 +1459,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291d23980808
+DECL|struct|__anon2c2fadd10808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1508,7 +1508,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291d23980908
+DECL|struct|__anon2c2fadd10908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1686,7 +1686,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291d23980a03
+DECL|enum|__anon2c2fadd10a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1716,7 +1716,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291d23980b03
+DECL|enum|__anon2c2fadd10b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1732,7 +1732,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291d23980c03
+DECL|enum|__anon2c2fadd10c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1757,7 +1757,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291d23980d03
+DECL|enum|__anon2c2fadd10d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -5085,34 +5085,15 @@ condition|)
 block|{
 name|filename
 operator|=
-name|g_malloc
+name|g_build_filename
 argument_list|(
-name|strlen
-argument_list|(
-name|path
-argument_list|)
-operator|+
-name|strlen
-argument_list|(
-name|dir_ent
-operator|->
-name|d_name
-argument_list|)
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|filename
-argument_list|,
-literal|"%s%s"
-argument_list|,
 name|path
 argument_list|,
 name|dir_ent
 operator|->
 name|d_name
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Check the file and see that it is not a sub-directory */
@@ -5184,14 +5165,12 @@ name|filename
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* while */
 name|closedir
 argument_list|(
 name|dir
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* else */
 block|}
 if|if
 condition|(

@@ -850,11 +850,9 @@ argument_list|()
 expr_stmt|;
 name|absolute
 operator|=
-name|g_strconcat
+name|g_build_filename
 argument_list|(
 name|current
-argument_list|,
-name|G_DIR_SEPARATOR_S
 argument_list|,
 name|name
 argument_list|,

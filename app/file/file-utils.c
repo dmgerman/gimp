@@ -2687,11 +2687,9 @@ argument_list|)
 expr_stmt|;
 name|xvpathname
 operator|=
-name|g_strconcat
+name|g_build_filename
 argument_list|(
 name|pathname
-argument_list|,
-name|G_DIR_SEPARATOR_S
 argument_list|,
 literal|".xvpics"
 argument_list|,
@@ -2700,11 +2698,9 @@ argument_list|)
 expr_stmt|;
 name|thumbnailname
 operator|=
-name|g_strconcat
+name|g_build_filename
 argument_list|(
 name|xvpathname
-argument_list|,
-name|G_DIR_SEPARATOR_S
 argument_list|,
 name|filename
 argument_list|,

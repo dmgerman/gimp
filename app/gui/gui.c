@@ -750,11 +750,9 @@ condition|)
 block|{
 name|gtkrc
 operator|=
-name|g_strconcat
+name|g_build_filename
 argument_list|(
 name|theme_dir
-argument_list|,
-name|G_DIR_SEPARATOR_S
 argument_list|,
 literal|"gtkrc"
 argument_list|,

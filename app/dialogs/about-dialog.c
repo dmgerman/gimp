@@ -1625,12 +1625,10 @@ name|TRUE
 return|;
 name|filename
 operator|=
-name|g_strconcat
+name|g_build_filename
 argument_list|(
 name|gimp_data_directory
 argument_list|()
-argument_list|,
-name|G_DIR_SEPARATOR_S
 argument_list|,
 literal|"gimp_logo.ppm"
 argument_list|,

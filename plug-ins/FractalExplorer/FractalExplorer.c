@@ -5426,9 +5426,6 @@ decl_stmt|;
 name|gint
 name|err
 decl_stmt|;
-name|gchar
-name|pathlast
-decl_stmt|;
 comment|/*  Make sure to clear any existing fractalexplorers  */
 name|current_obj
 operator|=
@@ -5460,18 +5457,6 @@ name|list
 operator|->
 name|next
 expr_stmt|;
-name|pathlast
-operator|=
-name|path
-index|[
-name|strlen
-argument_list|(
-name|path
-argument_list|)
-operator|-
-literal|1
-index|]
-expr_stmt|;
 comment|/* Open directory */
 name|dir
 operator|=
@@ -5485,6 +5470,7 @@ condition|(
 operator|!
 name|dir
 condition|)
+block|{
 name|g_warning
 argument_list|(
 literal|"error reading fractalexplorer directory \"%s\""
@@ -5492,6 +5478,7 @@ argument_list|,
 name|path
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 block|{
 while|while
@@ -5508,25 +5495,15 @@ condition|)
 block|{
 name|filename
 operator|=
-name|g_strdup_printf
+name|g_build_filename
 argument_list|(
-literal|"%s%s%s"
-argument_list|,
 name|path
-argument_list|,
-operator|(
-name|pathlast
-operator|==
-name|G_DIR_SEPARATOR
-condition|?
-literal|""
-else|:
-name|G_DIR_SEPARATOR_S
-operator|)
 argument_list|,
 name|dir_ent
 operator|->
 name|d_name
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Check the file and see that it is not a sub-directory */
@@ -5598,14 +5575,12 @@ name|filename
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* while */
 name|closedir
 argument_list|(
 name|dir
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* else */
 block|}
 if|if
 condition|(
