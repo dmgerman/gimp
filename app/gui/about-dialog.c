@@ -251,7 +251,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|about_dialog_timer
 parameter_list|(
 name|gpointer
@@ -2098,7 +2098,7 @@ condition|(
 name|timer
 condition|)
 block|{
-name|gtk_timeout_remove
+name|g_source_remove
 argument_list|(
 name|timer
 argument_list|)
@@ -2147,7 +2147,7 @@ argument_list|)
 expr_stmt|;
 name|timer
 operator|=
-name|gtk_timeout_add
+name|g_timeout_add
 argument_list|(
 literal|75
 argument_list|,
@@ -2241,7 +2241,8 @@ if|if
 condition|(
 name|timer
 condition|)
-name|gtk_timeout_remove
+block|{
+name|g_source_remove
 argument_list|(
 name|timer
 argument_list|)
@@ -2250,6 +2251,7 @@ name|timer
 operator|=
 literal|0
 expr_stmt|;
+block|}
 name|frame
 operator|=
 literal|0
@@ -2558,14 +2560,14 @@ if|if
 condition|(
 name|timer
 condition|)
-name|gtk_timeout_remove
+name|g_source_remove
 argument_list|(
 name|timer
 argument_list|)
 expr_stmt|;
 name|timer
 operator|=
-name|gtk_timeout_add
+name|g_timeout_add
 argument_list|(
 literal|75
 argument_list|,
@@ -2875,7 +2877,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|about_dialog_timer (gpointer data)
 name|about_dialog_timer
 parameter_list|(
@@ -3017,7 +3019,7 @@ literal|0
 expr_stmt|;
 name|timer
 operator|=
-name|gtk_timeout_add
+name|g_timeout_add
 argument_list|(
 literal|75
 argument_list|,
@@ -3080,7 +3082,7 @@ literal|2
 expr_stmt|;
 name|timer
 operator|=
-name|gtk_timeout_add
+name|g_timeout_add
 argument_list|(
 literal|700
 argument_list|,
@@ -3103,7 +3105,7 @@ literal|3
 expr_stmt|;
 name|timer
 operator|=
-name|gtk_timeout_add
+name|g_timeout_add
 argument_list|(
 literal|75
 argument_list|,
