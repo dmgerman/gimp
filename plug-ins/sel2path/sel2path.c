@@ -1709,9 +1709,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
-operator|(
+name|_
+argument_list|(
 literal|"Default Values"
-operator|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
