@@ -999,6 +999,13 @@ block|}
 comment|/*  the opacity toggle  */
 if|if
 condition|(
+name|g_type_is_a
+argument_list|(
+name|tool_type
+argument_list|,
+name|GIMP_TYPE_PAINTBRUSH_TOOL
+argument_list|)
+operator|||
 name|tool_type
 operator|==
 name|GIMP_TYPE_CLONE_TOOL
@@ -1010,14 +1017,6 @@ operator|||
 name|tool_type
 operator|==
 name|GIMP_TYPE_ERASER_TOOL
-operator|||
-name|tool_type
-operator|==
-name|GIMP_TYPE_PAINTBRUSH_TOOL
-operator|||
-name|tool_type
-operator|==
-name|GIMP_TYPE_PENCIL_TOOL
 condition|)
 block|{
 name|button
@@ -1157,14 +1156,6 @@ block|}
 comment|/*  the size toggle  */
 if|if
 condition|(
-operator|(
-name|g_type_is_a
-argument_list|(
-name|tool_type
-argument_list|,
-name|GIMP_TYPE_PAINTBRUSH_TOOL
-argument_list|)
-operator|||
 name|tool_type
 operator|==
 name|GIMP_TYPE_CLONE_TOOL
@@ -1180,15 +1171,14 @@ operator|||
 name|tool_type
 operator|==
 name|GIMP_TYPE_ERASER_TOOL
-operator|)
-operator|&&
-operator|!
-name|g_type_is_a
-argument_list|(
+operator|||
 name|tool_type
-argument_list|,
-name|GIMP_TYPE_AIRBRUSH_TOOL
-argument_list|)
+operator|==
+name|GIMP_TYPE_PAINTBRUSH_TOOL
+operator|||
+name|tool_type
+operator|==
+name|GIMP_TYPE_PENCIL_TOOL
 condition|)
 block|{
 name|button
@@ -1224,12 +1214,9 @@ block|}
 comment|/* the inverse size toggle */
 if|if
 condition|(
-name|g_type_is_a
-argument_list|(
 name|tool_type
-argument_list|,
+operator|==
 name|GIMP_TYPE_AIRBRUSH_TOOL
-argument_list|)
 condition|)
 block|{
 name|button
