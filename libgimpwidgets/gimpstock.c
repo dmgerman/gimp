@@ -2382,7 +2382,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon294fced40108
+DECL|struct|__anon2b3bce4a0108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3078,7 +3078,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon294fced40208
+DECL|struct|__anon2b3bce4a0208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3864,7 +3864,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon294fced40308
+DECL|struct|__anon2b3bce4a0308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3960,7 +3960,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon294fced40408
+DECL|struct|__anon2b3bce4a0408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4104,7 +4104,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon294fced40508
+DECL|struct|__anon2b3bce4a0508
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4144,6 +4144,10 @@ block|}
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/**  * gimp_stock_init:  *  * Initializes the GIMP stock icon factory.  *  * You don't need to call this function as gimp_ui_init() already does  * this for you.  */
+end_comment
 
 begin_function
 name|void
