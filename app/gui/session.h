@@ -137,7 +137,7 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|SessionInfo
-name|gradient_editor_session_info
+name|gradient_select_session_info
 decl_stmt|;
 end_decl_stmt
 

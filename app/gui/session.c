@@ -294,9 +294,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gradient_editor_session_info
+DECL|variable|gradient_select_session_info
 name|SessionInfo
-name|gradient_editor_session_info
+name|gradient_select_session_info
 init|=
 block|{
 literal|"gradient-editor"

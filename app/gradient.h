@@ -89,6 +89,15 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gradients_check_dialogs
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/***** Procedural database exports *****/
 end_comment
@@ -125,6 +134,34 @@ begin_decl_stmt
 specifier|extern
 name|ProcRecord
 name|gradients_sample_custom_proc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|gradients_close_popup_proc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|gradients_set_popup_proc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|gradients_popup_proc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|gradients_get_gradient_data_proc
 decl_stmt|;
 end_decl_stmt
 

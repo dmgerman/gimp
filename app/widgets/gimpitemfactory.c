@@ -305,7 +305,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/Gradient Editor..."
+literal|"/File/Dialogs/Gradient..."
 argument_list|)
 block|,
 literal|"<control>G"
@@ -1704,7 +1704,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/Gradient Editor..."
+literal|"/Dialogs/Gradient..."
 argument_list|)
 block|,
 literal|"<control>G"

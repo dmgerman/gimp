@@ -210,6 +210,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gradient.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"interface.h"
 end_include
 
@@ -270,7 +276,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1a1b580103
+DECL|enum|__anon2c72f2080103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -4559,6 +4565,9 @@ name|brushes_check_dialogs
 argument_list|()
 expr_stmt|;
 name|patterns_check_dialogs
+argument_list|()
+expr_stmt|;
+name|gradients_check_dialogs
 argument_list|()
 expr_stmt|;
 name|open_plug_ins
