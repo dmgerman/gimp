@@ -60,7 +60,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a992f6c0103
+DECL|enum|__anon2af5798b0103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_URI_LIST
 name|GIMP_DND_TYPE_URI_LIST
@@ -248,7 +248,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a992f6c0203
+DECL|enum|__anon2af5798b0203
 block|{
 DECL|enumerator|GIMP_DROP_NONE
 name|GIMP_DROP_NONE
@@ -783,10 +783,6 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
 parameter_list|)
 function_decl|;
 end_function_decl

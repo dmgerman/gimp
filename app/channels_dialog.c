@@ -6808,14 +6808,6 @@ name|channel_widget
 operator|->
 name|channel
 argument_list|)
-argument_list|,
-name|channel_widget
-operator|->
-name|channel_preview
-operator|->
-name|style
-operator|->
-name|black_gc
 argument_list|)
 expr_stmt|;
 block|}

@@ -558,7 +558,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon27c85bdd0103
+DECL|enum|__anon293ffcb30103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -13201,12 +13201,41 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-comment|/*  If the layer mode is discard, update the layer--invalidate gimage also  */
+comment|/*  If applying actually changed the view  */
 if|if
 condition|(
+operator|(
+name|mode
+operator|==
+name|APPLY
+operator|&&
+operator|(
+operator|!
+name|lmu
+operator|->
+name|apply_mask
+operator|||
+name|lmu
+operator|->
+name|show_mask
+operator|)
+operator|)
+operator|||
+operator|(
 name|mode
 operator|==
 name|DISCARD
+operator|&&
+operator|(
+name|lmu
+operator|->
+name|apply_mask
+operator|||
+name|lmu
+operator|->
+name|show_mask
+operator|)
+operator|)
 condition|)
 block|{
 name|gimp_image_invalidate_preview
@@ -13262,9 +13291,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|gdisplays_flush
-argument_list|()
-expr_stmt|;
 return|return
 name|NULL
 return|;

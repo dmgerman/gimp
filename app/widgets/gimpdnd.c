@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c733b3c0103
+DECL|enum|__anon278292100103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR
@@ -3830,7 +3830,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_dnd_set_drawable_preview_icon (GtkWidget * widget,GdkDragContext * context,GimpDrawable * drawable,GdkGC * gc)
+DECL|function|gimp_dnd_set_drawable_preview_icon (GtkWidget * widget,GdkDragContext * context,GimpDrawable * drawable)
 name|gimp_dnd_set_drawable_preview_icon
 parameter_list|(
 name|GtkWidget
@@ -3844,10 +3844,6 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
 parameter_list|)
 block|{
 name|GtkWidget
