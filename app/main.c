@@ -1845,71 +1845,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"  -b, --batch<commands>   Run in batch mode.\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-name|_
-argument_list|(
-literal|"  -c, --console-messages   Display warnings to console instead of a dialog box.\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-name|_
-argument_list|(
-literal|"  -d, --no-data            Do not load brushes, gradients, palettes, patterns.\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-name|_
-argument_list|(
-literal|"  -i, --no-interface       Run without a user interface.\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-name|_
-argument_list|(
-literal|"  -g, --gimprc<gimprc>    Use an alternate gimprc file.\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-name|_
-argument_list|(
 literal|"  -h, --help               Output this help.\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-name|_
-argument_list|(
-literal|"  -r, --restore-session    Try to restore saved session.\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-name|_
-argument_list|(
-literal|"  -s, --no-splash          Do not show the startup window.\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-name|_
-argument_list|(
-literal|"  -S, --no-splash-image    Do not add an image to the startup window.\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1949,7 +1885,15 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"  --debug-handlers         Enable non-fatal debugging signal handlers.\n"
+literal|"  -d, --no-data            Do not load brushes, gradients, palettes, patterns.\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"  -i, --no-interface       Run without a user interface.\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1965,6 +1909,38 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
+literal|"  -s, --no-splash          Do not show the startup window.\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"  -S, --no-splash-image    Do not add an image to the startup window.\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"  -r, --restore-session    Try to restore saved session.\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"  -g, --gimprc<gimprc>    Use an alternate gimprc file.\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+name|_
+argument_list|(
 literal|"  --system-gimprc<gimprc> Use an alternate system gimprc file.\n"
 argument_list|)
 argument_list|)
@@ -1973,13 +1949,54 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"  --enable-stack-trace<never | query | always>\n"
-literal|"                           Debugging mode for fatal signals.\n\n"
+literal|"  --dump-gimprc            Output a gimprc file with default settings.\n"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"  -c, --console-messages   Display warnings to console instead of a dialog box.\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"  --debug-handlers         Enable non-fatal debugging signal handlers.\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"  --enable-stack-trace<never | query | always>\n"
+literal|"                           Debugging mode for fatal signals.\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"  -b, --batch<commands>   Process commands in batch mode.\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"\n"
 argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_empty_stmt
+empty_stmt|;
+end_empty_stmt
 
 begin_function
 specifier|static
