@@ -162,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2757e2980103
+DECL|enum|__anon2baa5dfb0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -1001,6 +1001,14 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|edit_disable_tearoff_menus
+specifier|static
+name|gboolean
+name|edit_disable_tearoff_menus
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|edit_temp_path
 specifier|static
 name|gchar
@@ -1096,14 +1104,6 @@ modifier|*
 name|edit_module_path
 init|=
 name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|edit_disable_tearoff_menus
-specifier|static
-name|gboolean
-name|edit_disable_tearoff_menus
 decl_stmt|;
 end_decl_stmt
 
@@ -3211,6 +3211,10 @@ operator|!=
 name|old_disable_tearoff_menus
 condition|)
 block|{
+name|disable_tearoff_menus
+operator|=
+name|edit_disable_tearoff_menus
+expr_stmt|;
 name|update
 operator|=
 name|g_list_append
@@ -12539,7 +12543,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2757e2980208
+DECL|struct|__anon2baa5dfb0208
 block|{
 DECL|member|label
 name|gchar
@@ -12768,7 +12772,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2757e2980308
+DECL|struct|__anon2baa5dfb0308
 block|{
 DECL|member|tree_label
 name|gchar
