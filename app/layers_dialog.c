@@ -1675,6 +1675,10 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|GtkItemFactory
+modifier|*
+name|layers_factory
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
@@ -1841,18 +1845,26 @@ name|vbox
 argument_list|)
 expr_stmt|;
 comment|/*  The layers commands pulldown menu  */
-name|menus_get_layers_menu
-argument_list|(
-operator|&
+name|layers_factory
+operator|=
+name|menus_get_layers_factory
+argument_list|()
+expr_stmt|;
 name|layersD
 operator|->
 name|ops_menu
-argument_list|,
-operator|&
+operator|=
+name|layers_factory
+operator|->
+name|widget
+expr_stmt|;
 name|layersD
 operator|->
 name|accel_group
-argument_list|)
+operator|=
+name|layers_factory
+operator|->
+name|accel_group
 expr_stmt|;
 comment|/*  The Mode option menu, and the preserve transparency  */
 name|layersD
@@ -10805,7 +10817,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae453ff0108
+DECL|struct|__anon2c972cb40108
 block|{
 DECL|member|gimage
 name|GimpImage

@@ -1380,6 +1380,10 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|GtkItemFactory
+modifier|*
+name|channels_factory
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
@@ -1516,18 +1520,26 @@ name|vbox
 argument_list|)
 expr_stmt|;
 comment|/*  The channels commands pulldown menu  */
-name|menus_get_channels_menu
-argument_list|(
-operator|&
+name|channels_factory
+operator|=
+name|menus_get_channels_factory
+argument_list|()
+expr_stmt|;
 name|channelsD
 operator|->
 name|ops_menu
-argument_list|,
-operator|&
+operator|=
+name|channels_factory
+operator|->
+name|widget
+expr_stmt|;
 name|channelsD
 operator|->
 name|accel_group
-argument_list|)
+operator|=
+name|channels_factory
+operator|->
+name|accel_group
 expr_stmt|;
 comment|/*  The channels listbox  */
 name|channelsD
@@ -7053,7 +7065,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278a59990108
+DECL|struct|__anon2b4c294c0108
 block|{
 DECL|member|gimage
 name|GimpImage
