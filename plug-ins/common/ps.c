@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291c54370108
+DECL|struct|__anon290f29340108
 block|{
 DECL|member|resolution
 name|guint
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291c54370208
+DECL|struct|__anon290f29340208
 block|{
 DECL|member|run
 name|gint
@@ -252,7 +252,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291c54370308
+DECL|struct|__anon290f29340308
 block|{
 DECL|member|width
 DECL|member|height
@@ -309,7 +309,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291c54370408
+DECL|struct|__anon290f29340408
 block|{
 DECL|member|run
 name|gint
@@ -820,7 +820,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291c54370508
+DECL|struct|__anon290f29340508
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -924,7 +924,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291c54370608
+DECL|struct|__anon290f29340608
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -4438,6 +4438,20 @@ name|is_pdf
 operator|=
 literal|0
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|__EMX__
+name|fd_popen
+operator|=
+name|fopen
+argument_list|(
+name|filename
+argument_list|,
+literal|"r"
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|fd_popen
 operator|=
 name|fopen
@@ -4447,6 +4461,8 @@ argument_list|,
 literal|"rb"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|fd_popen
@@ -4911,6 +4927,20 @@ ifndef|#
 directive|ifndef
 name|USE_REAL_OUTPUTFILE
 comment|/* Start the command and use a pipe for reading the PNM-file. */
+ifndef|#
+directive|ifndef
+name|__EMX__
+name|fd_popen
+operator|=
+name|popen
+argument_list|(
+name|cmd
+argument_list|,
+literal|"r"
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|fd_popen
 operator|=
 name|popen
@@ -4920,6 +4950,8 @@ argument_list|,
 literal|"rb"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 else|#
 directive|else
 comment|/* If someone does not like the pipe (or it does not work), just start */
@@ -5008,6 +5040,20 @@ argument_list|(
 name|cmd
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|__EMX__
+name|fd_popen
+operator|=
+name|fopen
+argument_list|(
+name|pnmfile
+argument_list|,
+literal|"r"
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|fd_popen
 operator|=
 name|fopen
@@ -5017,6 +5063,8 @@ argument_list|,
 literal|"rb"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 endif|#
 directive|endif
 name|g_free
