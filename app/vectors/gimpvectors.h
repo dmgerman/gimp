@@ -537,6 +537,28 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_vectors_anchor_select
+parameter_list|(
+name|GimpVectors
+modifier|*
+name|vectors
+parameter_list|,
+name|GimpStroke
+modifier|*
+name|target_stroke
+parameter_list|,
+name|GimpAnchor
+modifier|*
+name|anchor
+parameter_list|,
+name|gboolean
+name|exclusive
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* GimpStroke is a connected component of a GimpVectors object */
 end_comment

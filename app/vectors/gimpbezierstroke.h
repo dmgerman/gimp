@@ -156,9 +156,9 @@ name|GimpAnchor
 modifier|*
 name|gimp_bezier_stroke_extend
 parameter_list|(
-name|GimpBezierStroke
+name|GimpStroke
 modifier|*
-name|bezier_stroke
+name|stroke
 parameter_list|,
 specifier|const
 name|GimpCoords

@@ -112,6 +112,10 @@ DECL|member|parent_instance
 name|GimpSelectionOptions
 name|parent_instance
 decl_stmt|;
+DECL|member|edit_mode
+name|gboolean
+name|edit_mode
+decl_stmt|;
 block|}
 struct|;
 end_struct
