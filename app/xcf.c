@@ -156,7 +156,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294a4eb70103
+DECL|enum|__anon27b8d2af0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -261,7 +261,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294a4eb70203
+DECL|enum|__anon27b8d2af0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -4047,7 +4047,7 @@ argument_list|)
 expr_stmt|;
 name|nguides
 operator|=
-name|g_slist_length
+name|g_list_length
 argument_list|(
 name|guides
 argument_list|)

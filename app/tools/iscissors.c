@@ -2652,7 +2652,16 @@ name|tool
 operator|->
 name|private
 expr_stmt|;
-comment|/* message_box ("Intelligent Scissors is currently not enabled\nfor use with the tile-based GIMP", 	       NULL, NULL);   return;*/
+name|message_box
+argument_list|(
+literal|"Intelligent Scissors is currently not enabled\nfor use with   the tile-based GIMP\non anything but yosh's computer."
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return;
 name|gdisplay_untransform_coords
 argument_list|(
 name|gdisp
@@ -5287,7 +5296,7 @@ operator|+
 name|index
 return|;
 block|}
-comment|/* I don't think this ever gets called -- Rockwalrus */
+comment|/* I don't think it ever gets to this point -- Rockwalrus */
 return|return
 name|NULL
 return|;
@@ -10916,6 +10925,18 @@ operator|-
 name|x
 expr_stmt|;
 comment|/*  Calculate the offsets into each buffer  */
+name|srcPR
+operator|.
+name|x
+operator|=
+name|x
+expr_stmt|;
+name|srcPR
+operator|.
+name|y
+operator|=
+name|y
+expr_stmt|;
 name|srcPR
 operator|.
 name|rowstride
