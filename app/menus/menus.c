@@ -10305,8 +10305,6 @@ condition|(
 name|i
 operator|<
 name|num_documents
-operator|-
-literal|1
 condition|)
 block|{
 name|GimpImagefile
