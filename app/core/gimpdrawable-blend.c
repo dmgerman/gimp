@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c408e670108
+DECL|struct|__anon2be577380108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c408e670208
+DECL|struct|__anon2be577380208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -438,6 +438,12 @@ name|PR
 parameter_list|,
 name|gdouble
 name|dist
+parameter_list|,
+name|GimpProgressFunc
+name|progress_callback
+parameter_list|,
+name|gpointer
+name|progress_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2396,7 +2402,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_precalc_shapeburst (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * PR,gdouble dist)
+DECL|function|gradient_precalc_shapeburst (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * PR,gdouble dist,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gradient_precalc_shapeburst
 parameter_list|(
 name|GimpImage
@@ -2413,6 +2419,12 @@ name|PR
 parameter_list|,
 name|gdouble
 name|dist
+parameter_list|,
+name|GimpProgressFunc
+name|progress_callback
+parameter_list|,
+name|gpointer
+name|progress_data
 parameter_list|)
 block|{
 name|GimpChannel
@@ -2746,6 +2758,10 @@ name|tempR
 argument_list|,
 operator|&
 name|distR
+argument_list|,
+name|progress_callback
+argument_list|,
+name|progress_data
 argument_list|)
 expr_stmt|;
 comment|/*  normalize the shapeburst with the max iteration  */
@@ -4405,6 +4421,10 @@ argument_list|,
 name|rbd
 operator|.
 name|dist
+argument_list|,
+name|progress_callback
+argument_list|,
+name|progress_data
 argument_list|)
 expr_stmt|;
 break|break;
