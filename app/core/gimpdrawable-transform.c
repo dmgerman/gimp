@@ -905,6 +905,28 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  Check if the matrix transforms the tiles into nothing  */
+if|if
+condition|(
+operator|(
+name|x2
+operator|-
+name|x1
+operator|)
+operator|<
+literal|1
+operator|||
+operator|(
+name|y2
+operator|-
+name|y1
+operator|)
+operator|<
+literal|1
+condition|)
+return|return
+name|NULL
+return|;
 comment|/*  Get the new temporary buffer for the transformed result  */
 name|new_tiles
 operator|=
