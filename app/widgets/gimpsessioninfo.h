@@ -181,6 +181,24 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpSessionInfoAux
+modifier|*
+name|gimp_session_info_aux_new
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|value
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_session_info_aux_free
 parameter_list|(
