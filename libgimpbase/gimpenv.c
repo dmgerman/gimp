@@ -431,12 +431,10 @@ name|basename
 parameter_list|)
 block|{
 return|return
-name|g_strconcat
+name|g_build_filename
 argument_list|(
 name|gimp_directory
 argument_list|()
-argument_list|,
-name|G_DIR_SEPARATOR_S
 argument_list|,
 name|basename
 argument_list|,
