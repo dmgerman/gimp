@@ -175,10 +175,6 @@ DECL|member|invalidate_preview_handler_id
 name|GQuark
 name|invalidate_preview_handler_id
 decl_stmt|;
-DECL|member|name_changed_handler_id
-name|GQuark
-name|name_changed_handler_id
-decl_stmt|;
 DECL|member|dnd_viewable
 name|GimpViewable
 modifier|*
