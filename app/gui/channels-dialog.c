@@ -84,7 +84,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layers_dialogP.h"
+file|"layers-dialog.h"
 end_include
 
 begin_include
@@ -7065,7 +7065,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2987c3ab0108
+DECL|struct|__anon2942a1a80108
 block|{
 DECL|member|gimage
 name|GimpImage

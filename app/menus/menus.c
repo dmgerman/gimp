@@ -96,7 +96,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layers-dialog.h"
+file|"layers-commands.h"
 end_include
 
 begin_include
@@ -3370,7 +3370,7 @@ argument_list|)
 block|,
 literal|"<control>M"
 block|,
-name|layers_merge_cmd_callback
+name|layers_merge_layers_cmd_callback
 block|,
 literal|0
 block|}
@@ -3389,7 +3389,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_flatten_cmd_callback
+name|layers_flatten_image_cmd_callback
 block|,
 literal|0
 block|}
@@ -4650,7 +4650,7 @@ argument_list|)
 block|,
 literal|"<control>N"
 block|,
-name|layers_dialog_new_layer_callback
+name|layers_new_cmd_callback
 block|,
 literal|0
 block|}
@@ -4670,7 +4670,7 @@ argument_list|)
 block|,
 literal|"<control>F"
 block|,
-name|layers_dialog_raise_layer_callback
+name|layers_raise_cmd_callback
 block|,
 literal|0
 block|}
@@ -4689,7 +4689,7 @@ argument_list|)
 block|,
 literal|"<control>B"
 block|,
-name|layers_dialog_lower_layer_callback
+name|layers_lower_cmd_callback
 block|,
 literal|0
 block|}
@@ -4708,7 +4708,7 @@ argument_list|)
 block|,
 literal|"<shift><control>F"
 block|,
-name|layers_dialog_raise_layer_to_top_callback
+name|layers_raise_to_top_cmd_callback
 block|,
 literal|0
 block|}
@@ -4727,7 +4727,7 @@ argument_list|)
 block|,
 literal|"<shift><control>B"
 block|,
-name|layers_dialog_lower_layer_to_bottom_callback
+name|layers_lower_to_bottom_cmd_callback
 block|,
 literal|0
 block|}
@@ -4746,7 +4746,7 @@ argument_list|)
 block|,
 literal|"<control>C"
 block|,
-name|layers_dialog_duplicate_layer_callback
+name|layers_duplicate_cmd_callback
 block|,
 literal|0
 block|}
@@ -4765,7 +4765,7 @@ argument_list|)
 block|,
 literal|"<control>H"
 block|,
-name|layers_dialog_anchor_layer_callback
+name|layers_anchor_cmd_callback
 block|,
 literal|0
 block|}
@@ -4784,7 +4784,7 @@ argument_list|)
 block|,
 literal|"<control>X"
 block|,
-name|layers_dialog_delete_layer_callback
+name|layers_delete_cmd_callback
 block|,
 literal|0
 block|}
@@ -4821,7 +4821,7 @@ argument_list|)
 block|,
 literal|"<control>R"
 block|,
-name|layers_dialog_resize_layer_callback
+name|layers_resize_cmd_callback
 block|,
 literal|0
 block|}
@@ -4840,7 +4840,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_dialog_resize_to_image_callback
+name|layers_resize_to_image_cmd_callback
 block|,
 literal|0
 block|}
@@ -4859,7 +4859,7 @@ argument_list|)
 block|,
 literal|"<control>S"
 block|,
-name|layers_dialog_scale_layer_callback
+name|layers_scale_cmd_callback
 block|,
 literal|0
 block|}
@@ -4896,7 +4896,7 @@ argument_list|)
 block|,
 literal|"<control>M"
 block|,
-name|layers_dialog_merge_layers_callback
+name|layers_merge_layers_cmd_callback
 block|,
 literal|0
 block|}
@@ -4915,7 +4915,7 @@ argument_list|)
 block|,
 literal|"<control><shift>M"
 block|,
-name|layers_dialog_merge_down_callback
+name|layers_merge_down_cmd_callback
 block|,
 literal|0
 block|}
@@ -4934,7 +4934,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_dialog_flatten_image_callback
+name|layers_flatten_image_cmd_callback
 block|,
 literal|0
 block|}
@@ -4971,7 +4971,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_dialog_add_layer_mask_callback
+name|layers_add_layer_mask_cmd_callback
 block|,
 literal|0
 block|}
@@ -4990,7 +4990,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_dialog_apply_layer_mask_callback
+name|layers_apply_layer_mask_cmd_callback
 block|,
 literal|0
 block|}
@@ -5009,7 +5009,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_dialog_delete_layer_mask_callback
+name|layers_delete_layer_mask_cmd_callback
 block|,
 literal|0
 block|}
@@ -5028,7 +5028,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_dialog_mask_select_callback
+name|layers_mask_select_cmd_callback
 block|,
 literal|0
 block|}
@@ -5065,7 +5065,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_dialog_add_alpha_channel_callback
+name|layers_add_alpha_channel_cmd_callback
 block|,
 literal|0
 block|}
@@ -5084,7 +5084,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_dialog_alpha_select_callback
+name|layers_alpha_select_cmd_callback
 block|,
 literal|0
 block|}
@@ -5121,7 +5121,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_dialog_edit_layer_attributes_callback
+name|layers_edit_attributes_cmd_callback
 block|,
 literal|0
 block|}

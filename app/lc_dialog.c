@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/layers-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"context_manager.h"
 end_include
 
@@ -103,12 +109,6 @@ begin_include
 include|#
 directive|include
 file|"lc_dialogP.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"layers_dialogP.h"
 end_include
 
 begin_include
@@ -1658,7 +1658,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2791c5f10108
+DECL|struct|__anon2c54858e0108
 block|{
 DECL|member|def
 name|GimpImage

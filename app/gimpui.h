@@ -48,6 +48,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_menu_position
+parameter_list|(
+name|GtkMenu
+modifier|*
+name|menu
+parameter_list|,
+name|gint
+modifier|*
+name|x
+parameter_list|,
+name|gint
+modifier|*
+name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

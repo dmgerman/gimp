@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a53fe900103
+DECL|enum|__anon27cd97a90103
 block|{
 DECL|enumerator|SelectionOff
 name|SelectionOff
@@ -321,6 +321,12 @@ name|gint
 name|ID
 decl_stmt|;
 comment|/*  unique identifier for this gdisplay     */
+DECL|member|ifactory
+name|GtkItemFactory
+modifier|*
+name|ifactory
+decl_stmt|;
+comment|/*  factory for popup menu                  */
 DECL|member|shell
 name|GtkWidget
 modifier|*
@@ -369,12 +375,6 @@ modifier|*
 name|origin
 decl_stmt|;
 comment|/*  widgets for rulers                      */
-DECL|member|popup
-name|GtkWidget
-modifier|*
-name|popup
-decl_stmt|;
-comment|/*  widget for popup menu                   */
 DECL|member|statusarea
 name|GtkWidget
 modifier|*

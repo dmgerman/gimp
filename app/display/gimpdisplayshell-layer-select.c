@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"layers-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawable.h"
 end_include
 
@@ -61,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"layers_dialogP.h"
 end_include
 
 begin_include
