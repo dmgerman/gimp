@@ -8,7 +8,7 @@ comment|/*    * TODO for Convert:    *    *   Use palette of another open INDEXE
 end_comment
 
 begin_comment
-comment|/*  * 99/08/29 - Deterministic colour dithering to arbitrary palettes.  *  Ideal for animations that are going to be delta-optimized or simply  *  don't want to look 'busy' in static areas.  Also a bunch of bugfixes  *  and tweaks.  [Adam]  *  * 99/08/28 - Deterministic alpha dithering over layers, reduced bleeding  *  of transparent values into opaque values, added optional stage to  *  remove duplicate or unused colour entries from final colourmap. [Adam]  *  * 99/02/24 - Many revisions to the box-cut quantizer used in RGB->INDEXED  *  conversion.  Box to be cut is chosen on the basis of posessing an axis  *  with the largest sum of weighted perceptible error, rather than based on  *  volume or population.  The box is split along this axis rather than its  *  longest axis, at the point of error mean rather than simply at its centre.  *  Error-limiting in the F-S dither has been disabled - it may become optional  *  again later.  If you're convinced that you have an image where the old  *  dither looks better, let me know.  [Adam]  *  * 99/01/10 - Hourglass... [Adam]  *  * 98/07/25 - Convert-to-indexed now remembers the last invocation's  *  settings.  Also, GRAY->INDEXED more flexible.  [Adam]  *  * 98/07/05 - Sucked the warning about quantizing to too many colours into  *  a text widget embedded in the dialog, improved intelligence of dialog  *  to default 'custom palette' selection to 'Web' if available, and  *  in this case not bother to present the native WWW-palette radio  *  button.  [Adam]  *  * 98/04/13 - avoid a division by zero when converting an empty gray-scale  *  image (who would like to do such a thing anyway??)  [Sven ]   *  * 98/03/23 - fixed a longstanding fencepost - hopefully the *right*  *  way, *again*.  [Adam]  *  * 97/11/14 - added a proper pdb interface and support for dithering  *  to custom palettes (based on a patch by Eric Hernes) [Yosh]  *  * 97/11/04 - fixed the accidental use of the colour-counting case  *  when palette_type is WEB or MONO. [Adam]  *  * 97/10/25 - colour-counting implemented (could use some hashing, but  *  performance actually seems okay) - now RGB->INDEXED conversion isn't  *  destructive if it doesn't have to be. [Adam]  *  * 97/10/14 - fixed divide-by-zero when converting a completely transparent  *  RGB image to indexed. [Adam]  *  * 97/07/01 - started todo/revision log.  Put code back in to  *  eliminate full-alpha pixels from RGB histogram.  *  [Adam D. Moss - adam@gimp.org]  */
+comment|/*  * 99/09/01 - Created a low-bleed FS-dither option.  [Adam]  *  * 99/08/29 - Deterministic colour dithering to arbitrary palettes.  *  Ideal for animations that are going to be delta-optimized or simply  *  don't want to look 'busy' in static areas.  Also a bunch of bugfixes  *  and tweaks.  [Adam]  *  * 99/08/28 - Deterministic alpha dithering over layers, reduced bleeding  *  of transparent values into opaque values, added optional stage to  *  remove duplicate or unused colour entries from final colourmap. [Adam]  *  * 99/02/24 - Many revisions to the box-cut quantizer used in RGB->INDEXED  *  conversion.  Box to be cut is chosen on the basis of posessing an axis  *  with the largest sum of weighted perceptible error, rather than based on  *  volume or population.  The box is split along this axis rather than its  *  longest axis, at the point of error mean rather than simply at its centre.  *  Error-limiting in the F-S dither has been disabled - it may become optional  *  again later.  If you're convinced that you have an image where the old  *  dither looks better, let me know.  [Adam]  *  * 99/01/10 - Hourglass... [Adam]  *  * 98/07/25 - Convert-to-indexed now remembers the last invocation's  *  settings.  Also, GRAY->INDEXED more flexible.  [Adam]  *  * 98/07/05 - Sucked the warning about quantizing to too many colours into  *  a text widget embedded in the dialog, improved intelligence of dialog  *  to default 'custom palette' selection to 'Web' if available, and  *  in this case not bother to present the native WWW-palette radio  *  button.  [Adam]  *  * 98/04/13 - avoid a division by zero when converting an empty gray-scale  *  image (who would like to do such a thing anyway??)  [Sven ]   *  * 98/03/23 - fixed a longstanding fencepost - hopefully the *right*  *  way, *again*.  [Adam]  *  * 97/11/14 - added a proper pdb interface and support for dithering  *  to custom palettes (based on a patch by Eric Hernes) [Yosh]  *  * 97/11/04 - fixed the accidental use of the colour-counting case  *  when palette_type is WEB or MONO. [Adam]  *  * 97/10/25 - colour-counting implemented (could use some hashing, but  *  performance actually seems okay) - now RGB->INDEXED conversion isn't  *  destructive if it doesn't have to be. [Adam]  *  * 97/10/14 - fixed divide-by-zero when converting a completely transparent  *  RGB image to indexed. [Adam]  *  * 97/07/01 - started todo/revision log.  Put code back in to  *  eliminate full-alpha pixels from RGB histogram.  *  [Adam D. Moss - adam@gimp.org]  */
 end_comment
 
 begin_include
@@ -1605,6 +1605,10 @@ literal|0
 block|}
 decl_stmt|;
 end_decl_stmt
+
+begin_comment
+comment|/* Note: convert.c code currently makes assumptions about some of the    below defines, so small fixes are needed if they change... */
+end_comment
 
 begin_define
 DECL|macro|DM_WIDTH
@@ -34875,6 +34879,11 @@ DECL|member|want_alpha_dither
 name|int
 name|want_alpha_dither
 decl_stmt|;
+DECL|member|error_freedom
+name|int
+name|error_freedom
+decl_stmt|;
+comment|/* 0=much bleed, 1=controlled bleed */
 block|}
 struct|;
 end_struct
@@ -34882,7 +34891,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae975d30108
+DECL|struct|__anon275eb9450108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -34959,7 +34968,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae975d30208
+DECL|struct|__anon275eb9450208
 block|{
 DECL|member|ncolors
 name|long
@@ -34978,7 +34987,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae975d30308
+DECL|struct|__anon275eb9450308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -35002,6 +35011,10 @@ decl_stmt|;
 DECL|member|fsdither_flag
 name|int
 name|fsdither_flag
+decl_stmt|;
+DECL|member|fslowbleeddither_flag
+name|int
+name|fslowbleeddither_flag
 decl_stmt|;
 DECL|member|fixeddither_flag
 name|int
@@ -35388,6 +35401,16 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|sfslowbleeddither_flag
+specifier|static
+name|gboolean
+name|sfslowbleeddither_flag
+init|=
+name|TRUE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|snodither_flag
 specifier|static
 name|gboolean
@@ -35673,6 +35696,12 @@ operator|->
 name|fsdither_flag
 operator|=
 name|sfsdither_flag
+expr_stmt|;
+name|dialog
+operator|->
+name|fslowbleeddither_flag
+operator|=
+name|sfslowbleeddither_flag
 expr_stmt|;
 name|dialog
 operator|->
@@ -36954,7 +36983,116 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Floyd-Steinberg colour dithering"
+literal|"Floyd-Steinberg colour dithering (reduced colour bleeding)"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|group
+operator|=
+name|gtk_radio_button_group
+argument_list|(
+name|GTK_RADIO_BUTTON
+argument_list|(
+name|toggle
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+name|toggle
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|toggle
+argument_list|)
+argument_list|,
+literal|"toggled"
+argument_list|,
+operator|(
+name|GtkSignalFunc
+operator|)
+name|indexed_radio_update
+argument_list|,
+operator|&
+operator|(
+name|dialog
+operator|->
+name|fslowbleeddither_flag
+operator|)
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|toggle
+argument_list|)
+argument_list|,
+name|dialog
+operator|->
+name|fslowbleeddither_flag
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|toggle
+argument_list|)
+expr_stmt|;
+block|}
+name|gtk_widget_show
+argument_list|(
+name|hbox
+argument_list|)
+expr_stmt|;
+name|hbox
+operator|=
+name|gtk_hbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+block|{
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|hbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|toggle
+operator|=
+name|gtk_radio_button_new_with_label
+argument_list|(
+name|group
+argument_list|,
+name|_
+argument_list|(
+literal|"Floyd-Steinberg colour dithering (normal)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -37888,7 +38026,7 @@ name|nodither_flag
 condition|)
 name|dither_type
 operator|=
-name|NODITHER
+name|NO_DITHER
 expr_stmt|;
 elseif|else
 if|if
@@ -37899,12 +38037,23 @@ name|fsdither_flag
 condition|)
 name|dither_type
 operator|=
-name|FSDITHER
+name|FS_DITHER
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|dialog
+operator|->
+name|fslowbleeddither_flag
+condition|)
+name|dither_type
+operator|=
+name|FSLOWBLEED_DITHER
 expr_stmt|;
 else|else
 name|dither_type
 operator|=
-name|FIXEDDITHER
+name|FIXED_DITHER
 expr_stmt|;
 comment|/*  Convert the image to indexed color  */
 name|convert_image
@@ -37953,6 +38102,12 @@ operator|=
 name|dialog
 operator|->
 name|fsdither_flag
+expr_stmt|;
+name|sfslowbleeddither_flag
+operator|=
+name|dialog
+operator|->
+name|fslowbleeddither_flag
 expr_stmt|;
 name|sfixeddither_flag
 operator|=
@@ -38337,7 +38492,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae975d30408
+DECL|struct|__anon275eb9450408
 block|{
 DECL|member|used_count
 name|signed
@@ -39437,7 +39592,7 @@ name|MAKE_PALETTE
 condition|)
 name|dither
 operator|=
-name|NODITHER
+name|NO_DITHER
 expr_stmt|;
 name|quantobj
 operator|=
@@ -39590,7 +39745,7 @@ name|old_type
 argument_list|,
 name|num_cols
 argument_list|,
-name|NODESTRUCTDITHER
+name|NODESTRUCT_DITHER
 argument_list|,
 name|palette_type
 argument_list|,
@@ -50006,10 +50161,12 @@ begin_function
 specifier|static
 name|int
 modifier|*
-DECL|function|init_error_limit (void)
+DECL|function|init_error_limit (const int error_freedom)
 name|init_error_limit
 parameter_list|(
-name|void
+specifier|const
+name|int
+name|error_freedom
 parameter_list|)
 comment|/* Allocate and fill in the error_limiter table */
 block|{
@@ -50022,6 +50179,8 @@ name|in
 decl_stmt|,
 name|out
 decl_stmt|;
+comment|/* #define STEPSIZE 16 */
+comment|/* #define STEPSIZE 200 */
 name|table
 operator|=
 name|g_malloc
@@ -50045,12 +50204,20 @@ operator|+=
 literal|255
 expr_stmt|;
 comment|/* so we can index -255 ... +255 */
-comment|/* #define STEPSIZE 16 */
-DECL|macro|STEPSIZE
-define|#
-directive|define
+if|if
+condition|(
+name|error_freedom
+operator|==
+literal|0
+condition|)
+block|{
+comment|/* Coarse function, much bleeding. */
+specifier|const
+name|int
 name|STEPSIZE
-value|200
+init|=
+literal|190
+decl_stmt|;
 for|for
 control|(
 name|in
@@ -50115,7 +50282,17 @@ operator|(
 name|table
 operator|)
 return|;
-comment|/* Map errors 1:1 up to +- 16 */
+block|}
+else|else
+block|{
+comment|/* Smooth function, bleeding more constrained */
+specifier|const
+name|int
+name|STEPSIZE
+init|=
+literal|24
+decl_stmt|;
+comment|/* Map errors 1:1 up to +- STEPSIZE */
 name|out
 operator|=
 literal|0
@@ -50154,7 +50331,7 @@ operator|-
 name|out
 expr_stmt|;
 block|}
-comment|/* Map errors 1:2 up to +- 3*16 */
+comment|/* Map errors 1:2 up to +- 3*STEPSIZE */
 for|for
 control|(
 init|;
@@ -50197,7 +50374,7 @@ operator|-
 name|out
 expr_stmt|;
 block|}
-comment|/* Clamp the rest to final out value (which is 32) */
+comment|/* Clamp the rest to final out value (which is STEPSIZE*2) */
 for|for
 control|(
 init|;
@@ -50226,12 +50403,10 @@ operator|-
 name|out
 expr_stmt|;
 block|}
-undef|#
-directive|undef
-name|STEPSIZE
 return|return
 name|table
 return|;
+block|}
 block|}
 end_function
 
@@ -50282,6 +50457,7 @@ name|int
 modifier|*
 name|error_limiter
 decl_stmt|;
+specifier|const
 name|short
 modifier|*
 name|fs_err1
@@ -50289,6 +50465,7 @@ decl_stmt|,
 modifier|*
 name|fs_err2
 decl_stmt|;
+specifier|const
 name|short
 modifier|*
 name|fs_err3
@@ -50296,6 +50473,7 @@ decl_stmt|,
 modifier|*
 name|fs_err4
 decl_stmt|;
+specifier|const
 name|short
 modifier|*
 name|range_limiter
@@ -50508,7 +50686,11 @@ expr_stmt|;
 name|error_limiter
 operator|=
 name|init_error_limit
-argument_list|()
+argument_list|(
+name|quantobj
+operator|->
+name|error_freedom
+argument_list|)
 expr_stmt|;
 name|range_limiter
 operator|=
@@ -51303,6 +51485,7 @@ name|int
 modifier|*
 name|error_limiter
 decl_stmt|;
+specifier|const
 name|short
 modifier|*
 name|fs_err1
@@ -51310,6 +51493,7 @@ decl_stmt|,
 modifier|*
 name|fs_err2
 decl_stmt|;
+specifier|const
 name|short
 modifier|*
 name|fs_err3
@@ -51317,6 +51501,7 @@ decl_stmt|,
 modifier|*
 name|fs_err4
 decl_stmt|;
+specifier|const
 name|short
 modifier|*
 name|range_limiter
@@ -51611,7 +51796,11 @@ expr_stmt|;
 name|error_limiter
 operator|=
 name|init_error_limit
-argument_list|()
+argument_list|(
+name|quantobj
+operator|->
+name|error_freedom
+argument_list|)
 expr_stmt|;
 name|range_limiter
 operator|=
@@ -52995,7 +53184,16 @@ name|dither_type
 condition|)
 block|{
 case|case
-name|NODITHER
+name|NODESTRUCT_DITHER
+case|:
+default|default:
+name|g_warning
+argument_list|(
+literal|"Uh-oh, bad dither type, W1"
+argument_list|)
+expr_stmt|;
+case|case
+name|NO_DITHER
 case|:
 name|quantobj
 operator|->
@@ -53011,8 +53209,14 @@ name|median_cut_pass2_no_dither_rgb
 expr_stmt|;
 break|break;
 case|case
-name|FSDITHER
+name|FS_DITHER
 case|:
+name|quantobj
+operator|->
+name|error_freedom
+operator|=
+literal|0
+expr_stmt|;
 name|quantobj
 operator|->
 name|second_pass_init
@@ -53027,7 +53231,29 @@ name|median_cut_pass2_fs_dither_rgb
 expr_stmt|;
 break|break;
 case|case
-name|FIXEDDITHER
+name|FSLOWBLEED_DITHER
+case|:
+name|quantobj
+operator|->
+name|error_freedom
+operator|=
+literal|1
+expr_stmt|;
+name|quantobj
+operator|->
+name|second_pass_init
+operator|=
+name|median_cut_pass2_rgb_init
+expr_stmt|;
+name|quantobj
+operator|->
+name|second_pass
+operator|=
+name|median_cut_pass2_fs_dither_rgb
+expr_stmt|;
+break|break;
+case|case
+name|FIXED_DITHER
 case|:
 name|quantobj
 operator|->
@@ -53050,7 +53276,16 @@ name|dither_type
 condition|)
 block|{
 case|case
-name|NODITHER
+name|NODESTRUCT_DITHER
+case|:
+default|default:
+name|g_warning
+argument_list|(
+literal|"Uh-oh, bad dither type, W2"
+argument_list|)
+expr_stmt|;
+case|case
+name|NO_DITHER
 case|:
 name|quantobj
 operator|->
@@ -53066,8 +53301,14 @@ name|median_cut_pass2_no_dither_gray
 expr_stmt|;
 break|break;
 case|case
-name|FSDITHER
+name|FS_DITHER
 case|:
+name|quantobj
+operator|->
+name|error_freedom
+operator|=
+literal|0
+expr_stmt|;
 name|quantobj
 operator|->
 name|second_pass_init
@@ -53082,7 +53323,29 @@ name|median_cut_pass2_fs_dither_gray
 expr_stmt|;
 break|break;
 case|case
-name|FIXEDDITHER
+name|FSLOWBLEED_DITHER
+case|:
+name|quantobj
+operator|->
+name|error_freedom
+operator|=
+literal|1
+expr_stmt|;
+name|quantobj
+operator|->
+name|second_pass_init
+operator|=
+name|median_cut_pass2_gray_init
+expr_stmt|;
+name|quantobj
+operator|->
+name|second_pass
+operator|=
+name|median_cut_pass2_fs_dither_gray
+expr_stmt|;
+break|break;
+case|case
+name|FIXED_DITHER
 case|:
 name|quantobj
 operator|->
@@ -53162,7 +53425,7 @@ name|dither_type
 condition|)
 block|{
 case|case
-name|NODITHER
+name|NO_DITHER
 case|:
 name|quantobj
 operator|->
@@ -53178,8 +53441,14 @@ name|median_cut_pass2_no_dither_rgb
 expr_stmt|;
 break|break;
 case|case
-name|FSDITHER
+name|FS_DITHER
 case|:
+name|quantobj
+operator|->
+name|error_freedom
+operator|=
+literal|0
+expr_stmt|;
 name|quantobj
 operator|->
 name|second_pass_init
@@ -53194,7 +53463,29 @@ name|median_cut_pass2_fs_dither_rgb
 expr_stmt|;
 break|break;
 case|case
-name|NODESTRUCTDITHER
+name|FSLOWBLEED_DITHER
+case|:
+name|quantobj
+operator|->
+name|error_freedom
+operator|=
+literal|1
+expr_stmt|;
+name|quantobj
+operator|->
+name|second_pass_init
+operator|=
+name|median_cut_pass2_rgb_init
+expr_stmt|;
+name|quantobj
+operator|->
+name|second_pass
+operator|=
+name|median_cut_pass2_fs_dither_rgb
+expr_stmt|;
+break|break;
+case|case
+name|NODESTRUCT_DITHER
 case|:
 name|quantobj
 operator|->
@@ -53210,7 +53501,7 @@ name|median_cut_pass2_nodestruct_dither_rgb
 expr_stmt|;
 break|break;
 case|case
-name|FIXEDDITHER
+name|FIXED_DITHER
 case|:
 name|quantobj
 operator|->

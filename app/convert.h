@@ -45,7 +45,7 @@ comment|/* adam's extra palette stuff */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2972296d0103
+DECL|enum|__anon2bbfda3c0103
 typedef|typedef
 enum|enum
 block|{
@@ -84,30 +84,35 @@ comment|/* adam's extra dither stuff */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2972296d0203
+DECL|enum|__anon2bbfda3c0203
 typedef|typedef
 enum|enum
 block|{
-DECL|enumerator|NODITHER
-name|NODITHER
+DECL|enumerator|NO_DITHER
+name|NO_DITHER
 init|=
 literal|0
 block|,
-DECL|enumerator|FSDITHER
-name|FSDITHER
+DECL|enumerator|FS_DITHER
+name|FS_DITHER
 init|=
 literal|1
 block|,
-DECL|enumerator|FIXEDDITHER
-name|FIXEDDITHER
+DECL|enumerator|FSLOWBLEED_DITHER
+name|FSLOWBLEED_DITHER
+init|=
+literal|2
+block|,
+DECL|enumerator|FIXED_DITHER
+name|FIXED_DITHER
 init|=
 literal|3
 block|,
-DECL|enumerator|NODESTRUCTDITHER
-name|NODESTRUCTDITHER
+DECL|enumerator|NODESTRUCT_DITHER
+name|NODESTRUCT_DITHER
 init|=
-literal|2
-comment|/* NEVER USE NODESTRUCTDITHER EXPLICITLY */
+literal|4
+comment|/* NEVER USE NODESTRUCT_DITHER EXPLICITLY */
 DECL|typedef|ConvertDitherType
 block|}
 name|ConvertDitherType

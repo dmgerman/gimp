@@ -22,6 +22,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|range_array
+specifier|const
 name|short
 name|range_array
 index|[]
@@ -2082,6 +2083,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|floyd_steinberg_error1
+specifier|const
 name|short
 name|floyd_steinberg_error1
 index|[]
@@ -4651,6 +4653,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|floyd_steinberg_error2
+specifier|const
 name|short
 name|floyd_steinberg_error2
 index|[]
@@ -7217,6 +7220,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|floyd_steinberg_error3
+specifier|const
 name|short
 name|floyd_steinberg_error3
 index|[]
@@ -9785,6 +9789,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|floyd_steinberg_error4
+specifier|const
 name|short
 name|floyd_steinberg_error4
 index|[]
