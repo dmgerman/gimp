@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b98415b0103
+DECL|enum|__anon2bc1379e0103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
@@ -1513,6 +1513,11 @@ argument_list|,
 name|NORMAL_MODE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|layer
+condition|)
+block|{
 comment|/*  add the new layer to the image  */
 name|gimp_drawable_set_gimage
 argument_list|(
@@ -1557,6 +1562,11 @@ argument_list|)
 expr_stmt|;
 return|return
 name|TRUE
+return|;
+block|}
+else|else
+return|return
+name|FALSE
 return|;
 block|}
 end_function

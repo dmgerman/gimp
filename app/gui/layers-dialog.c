@@ -3348,8 +3348,9 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-return|return;
 block|}
+else|else
+block|{
 comment|/*  Set all current layer widgets to visited = FALSE  */
 for|for
 control|(
@@ -3606,6 +3607,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 name|suspend_gimage_notify
 operator|--
 expr_stmt|;
@@ -17349,27 +17351,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|frame
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
