@@ -177,7 +177,11 @@ DECL|member|type_w
 name|GtkWidget
 modifier|*
 name|type_w
+index|[
+literal|2
+index|]
 decl_stmt|;
+comment|/* 2 radio buttons */
 DECL|member|pressure
 name|double
 name|pressure
@@ -585,6 +589,11 @@ argument_list|(
 name|options
 operator|->
 name|type_w
+index|[
+name|options
+operator|->
+name|type_d
+index|]
 argument_list|)
 argument_list|,
 name|TRUE
@@ -1044,17 +1053,12 @@ argument_list|(
 name|radio_button
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|i
-operator|==
-name|options
-operator|->
-name|type_d
-condition|)
 name|options
 operator|->
 name|type_w
+index|[
+name|i
+index|]
 operator|=
 name|radio_button
 expr_stmt|;
@@ -1148,6 +1152,10 @@ operator|*
 operator|)
 name|convolve_options
 argument_list|)
+expr_stmt|;
+comment|/*  press all default buttons  */
+name|convolve_options_reset
+argument_list|()
 expr_stmt|;
 block|}
 name|tool

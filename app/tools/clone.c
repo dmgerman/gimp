@@ -122,7 +122,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dcb1bd0103
+DECL|enum|__anon2b2f16990103
 block|{
 DECL|enumerator|AlignNo
 name|AlignNo
@@ -168,7 +168,11 @@ DECL|member|type_w
 name|GtkWidget
 modifier|*
 name|type_w
+index|[
+literal|2
+index|]
 decl_stmt|;
+comment|/* 2 radio buttons */
 DECL|member|aligned
 name|AlignType
 name|aligned
@@ -181,7 +185,11 @@ DECL|member|aligned_w
 name|GtkWidget
 modifier|*
 name|aligned_w
+index|[
+literal|3
+index|]
 decl_stmt|;
+comment|/* 3 radio buttons */
 block|}
 struct|;
 end_struct
@@ -579,6 +587,11 @@ argument_list|(
 name|options
 operator|->
 name|type_w
+index|[
+name|options
+operator|->
+name|type_d
+index|]
 argument_list|)
 argument_list|,
 name|TRUE
@@ -591,6 +604,11 @@ argument_list|(
 name|options
 operator|->
 name|aligned_w
+index|[
+name|options
+operator|->
+name|aligned_d
+index|]
 argument_list|)
 argument_list|,
 name|TRUE
@@ -884,17 +902,12 @@ argument_list|(
 name|radio_button
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|i
-operator|==
-name|options
-operator|->
-name|type_d
-condition|)
 name|options
 operator|->
 name|type_w
+index|[
+name|i
+index|]
 operator|=
 name|radio_button
 expr_stmt|;
@@ -1053,17 +1066,12 @@ argument_list|(
 name|radio_button
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|i
-operator|==
-name|options
-operator|->
-name|aligned_d
-condition|)
 name|options
 operator|->
 name|aligned_w
+index|[
+name|i
+index|]
 operator|=
 name|radio_button
 expr_stmt|;
@@ -1626,6 +1634,10 @@ operator|*
 operator|)
 name|clone_options
 argument_list|)
+expr_stmt|;
+comment|/*  press all default buttons  */
+name|clone_options_reset
+argument_list|()
 expr_stmt|;
 block|}
 name|tool
