@@ -22,19 +22,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpdrawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage.h"
+file|"layer.h"
 end_include
 
 begin_decl_stmt

@@ -31,7 +31,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ae6b500103
+DECL|enum|__anon27624ff50103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -54,7 +54,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ae6b500203
+DECL|enum|__anon27624ff50203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -92,7 +92,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ae6b500303
+DECL|enum|__anon27624ff50303
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ae6b500403
+DECL|enum|__anon27624ff50403
 block|{
 DECL|enumerator|NORMAL_MODE
 name|NORMAL_MODE
@@ -201,7 +201,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ae6b500503
+DECL|enum|__anon27624ff50503
 block|{
 DECL|enumerator|NORMAL_CONVOL
 name|NORMAL_CONVOL
@@ -227,7 +227,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ae6b500603
+DECL|enum|__anon27624ff50603
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -253,7 +253,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ae6b500703
+DECL|enum|__anon27624ff50703
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -272,7 +272,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ae6b500803
+DECL|enum|__anon27624ff50803
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -289,7 +289,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon28ae6b500903
+DECL|enum|__anon27624ff50903
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -302,6 +302,41 @@ name|ADD_ALPHA_MASK
 DECL|typedef|AddMaskType
 block|}
 name|AddMaskType
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* gradient paint modes */
+end_comment
+
+begin_typedef
+DECL|enum|__anon27624ff50a03
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|ONCE_FORWARD
+name|ONCE_FORWARD
+block|,
+comment|/* paint through once, then stop */
+DECL|enumerator|ONCE_BACKWARDS
+name|ONCE_BACKWARDS
+block|,
+comment|/* paint once, then stop, but run the gradient the other way */
+DECL|enumerator|LOOP_SAWTOOTH
+name|LOOP_SAWTOOTH
+block|,
+comment|/* keep painting, looping through the grad start->end,start->end /|/|/| */
+DECL|enumerator|LOOP_TRIANGLE
+name|LOOP_TRIANGLE
+block|,
+comment|/* keep paiting, looping though the grad start->end,end->start /\/\/\/  */
+DECL|enumerator|ONCE_END_COLOR
+name|ONCE_END_COLOR
+block|,
+comment|/* paint once, but keep painting with the end color */
+DECL|typedef|GradientPaintMode
+block|}
+name|GradientPaintMode
 typedef|;
 end_typedef
 

@@ -90,41 +90,6 @@ name|FINISH_PAINT
 value|4
 end_define
 
-begin_comment
-comment|/* gradient paint modes */
-end_comment
-
-begin_typedef
-DECL|enum|__anon2a1b456f0103
-typedef|typedef
-enum|enum
-block|{
-DECL|enumerator|ONCE_FORWARD
-name|ONCE_FORWARD
-block|,
-comment|/* paint through once, then stop */
-DECL|enumerator|ONCE_BACKWARDS
-name|ONCE_BACKWARDS
-block|,
-comment|/* paint once, then stop, but run the gradient the other way */
-DECL|enumerator|LOOP_SAWTOOTH
-name|LOOP_SAWTOOTH
-block|,
-comment|/* keep painting, looping through the grad start->end,start->end /|/|/| */
-DECL|enumerator|LOOP_TRIANGLE
-name|LOOP_TRIANGLE
-block|,
-comment|/* keep paiting, looping though the grad start->end,end->start /\/\/\/  */
-DECL|enumerator|ONCE_END_COLOR
-name|ONCE_END_COLOR
-block|,
-comment|/* paint once, but keep painting with the end color */
-DECL|typedef|GradientPaintMode
-block|}
-name|GradientPaintMode
-typedef|;
-end_typedef
-
 begin_typedef
 DECL|typedef|PaintCore
 typedef|typedef

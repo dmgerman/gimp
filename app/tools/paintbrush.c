@@ -346,9 +346,9 @@ name|double
 parameter_list|,
 name|double
 parameter_list|,
-name|gboolean
+name|PaintApplicationMode
 parameter_list|,
-name|int
+name|GradientPaintMode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1894,7 +1894,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paintbrush_motion (PaintCore * paint_core,GimpDrawable * drawable,double fade_out,double gradient_length,gboolean incremental,int gradient_type)
+DECL|function|paintbrush_motion (PaintCore * paint_core,GimpDrawable * drawable,double fade_out,double gradient_length,PaintApplicationMode incremental,GradientPaintMode gradient_type)
 name|paintbrush_motion
 parameter_list|(
 name|PaintCore
@@ -1911,10 +1911,10 @@ parameter_list|,
 name|double
 name|gradient_length
 parameter_list|,
-name|gboolean
+name|PaintApplicationMode
 name|incremental
 parameter_list|,
-name|int
+name|GradientPaintMode
 name|gradient_type
 parameter_list|)
 block|{
@@ -2186,7 +2186,7 @@ name|b
 expr_stmt|;
 comment|/* always use incremental mode with gradients */
 comment|/* make the gui cool later */
-name|paint_appl_mode
+name|incremental
 operator|=
 name|INCREMENTAL
 expr_stmt|;
@@ -2221,7 +2221,7 @@ operator|->
 name|brush
 argument_list|)
 expr_stmt|;
-name|paint_appl_mode
+name|incremental
 operator|=
 name|INCREMENTAL
 expr_stmt|;
@@ -2279,7 +2279,11 @@ argument_list|)
 argument_list|,
 name|PRESSURE
 argument_list|,
-name|paint_appl_mode
+name|incremental
+condition|?
+name|INCREMENTAL
+else|:
+name|CONSTANT
 argument_list|)
 expr_stmt|;
 block|}
