@@ -221,7 +221,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon292f63b20108
+DECL|struct|__anon2aeaad400108
 typedef|typedef
 struct|struct
 block|{
@@ -955,11 +955,12 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|char
+name|gchar
 modifier|*
 name|findfile
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 parameter_list|)
 function_decl|;

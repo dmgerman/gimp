@@ -21,18 +21,6 @@ directive|include
 file|<stdio.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/stat.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -547,7 +535,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon298109aa0108
+DECL|struct|__anon290ef9ae0108
 block|{
 DECL|member|randomize
 name|gint
@@ -2026,10 +2014,6 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|struct
-name|stat
-name|filestat
-decl_stmt|;
 name|fs
 operator|=
 name|GTK_FILE_SELECTION
@@ -2064,37 +2048,12 @@ name|ss
 decl_stmt|;
 if|if
 condition|(
-name|stat
-argument_list|(
-name|filename
-argument_list|,
-operator|&
-name|filestat
-argument_list|)
-condition|)
-block|{
-name|g_message
-argument_list|(
-literal|"%s: %s"
-argument_list|,
-name|filename
-argument_list|,
-name|g_strerror
-argument_list|(
-name|errno
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
-if|if
-condition|(
 operator|!
-name|S_ISREG
+name|g_file_test
 argument_list|(
-name|filestat
-operator|.
-name|st_mode
+name|filename
+argument_list|,
+name|G_FILE_TEST_IS_REGULAR
 argument_list|)
 condition|)
 block|{
@@ -2102,7 +2061,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: Is not a regular file"
+literal|"'%s' is not a regular file"
 argument_list|)
 argument_list|,
 name|filename
@@ -2128,7 +2087,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"%s: %s"
+name|_
+argument_list|(
+literal|"Can't open '%s': %s"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|,

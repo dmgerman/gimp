@@ -53,18 +53,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/stat.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<glib-object.h>
 end_include
 
@@ -2438,13 +2426,6 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|struct
-name|stat
-name|stat_buf
-decl_stmt|;
-name|gint
-name|err
-decl_stmt|;
 name|FILE
 modifier|*
 name|fp
@@ -2503,29 +2484,14 @@ name|generate_unique_filename
 argument_list|()
 expr_stmt|;
 comment|/*  Check if generated filename is valid  */
-name|err
-operator|=
-name|stat
+if|if
+condition|(
+name|g_file_test
 argument_list|(
 name|filename
 argument_list|,
-operator|&
-name|stat_buf
+name|G_FILE_TEST_IS_DIR
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|err
-condition|)
-block|{
-if|if
-condition|(
-name|stat_buf
-operator|.
-name|st_mode
-operator|&
-name|S_IFDIR
 condition|)
 block|{
 name|g_message
@@ -2541,7 +2507,6 @@ name|filename
 argument_list|)
 expr_stmt|;
 return|return;
-block|}
 block|}
 comment|/*  Open file for overwrite  */
 if|if
@@ -2695,10 +2660,6 @@ modifier|*
 name|buf
 parameter_list|)
 block|{
-name|struct
-name|stat
-name|stat_buf
-decl_stmt|;
 name|FILE
 modifier|*
 name|fp
@@ -2760,19 +2721,15 @@ operator|->
 name|bytes
 argument_list|)
 expr_stmt|;
-comment|/*  Find out if the filename of the swapped data is an existing file... */
-comment|/*  (buf->filname HAS to be != 0 */
 if|if
 condition|(
-operator|!
-name|stat
+name|g_file_test
 argument_list|(
 name|buf
 operator|->
 name|filename
 argument_list|,
-operator|&
-name|stat_buf
+name|G_FILE_TEST_IS_REGULAR
 argument_list|)
 condition|)
 block|{
@@ -2897,10 +2854,6 @@ modifier|*
 name|buf
 parameter_list|)
 block|{
-name|struct
-name|stat
-name|stat_buf
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -2933,15 +2886,13 @@ block|}
 comment|/*  Find out if the filename of the swapped data is an existing file... */
 if|if
 condition|(
-operator|!
-name|stat
+name|g_file_test
 argument_list|(
 name|buf
 operator|->
 name|filename
 argument_list|,
-operator|&
-name|stat_buf
+name|G_FILE_TEST_IS_REGULAR
 argument_list|)
 condition|)
 block|{

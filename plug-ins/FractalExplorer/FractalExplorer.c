@@ -43,18 +43,6 @@ directive|include
 file|<string.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/stat.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -71,12 +59,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_include
-include|#
-directive|include
-file|<ctype.h>
-end_include
 
 begin_ifdef
 ifdef|#
@@ -603,10 +585,12 @@ name|fractalexplorerOBJ
 modifier|*
 name|fractalexplorer_load
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -5186,13 +5170,15 @@ end_function
 begin_function
 name|fractalexplorerOBJ
 modifier|*
-DECL|function|fractalexplorer_load (gchar * filename,gchar * name)
+DECL|function|fractalexplorer_load (const gchar * filename,const gchar * name)
 name|fractalexplorer_load
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -5416,13 +5402,6 @@ name|gchar
 modifier|*
 name|dir_ent
 decl_stmt|;
-name|struct
-name|stat
-name|filestat
-decl_stmt|;
-name|gint
-name|err
-decl_stmt|;
 comment|/*  Make sure to clear any existing fractalexplorers  */
 name|current_obj
 operator|=
@@ -5505,27 +5484,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* Check the file and see that it is not a sub-directory */
-name|err
-operator|=
-name|stat
+if|if
+condition|(
+name|g_file_test
 argument_list|(
 name|filename
 argument_list|,
-operator|&
-name|filestat
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|err
-operator|&&
-name|S_ISREG
-argument_list|(
-name|filestat
-operator|.
-name|st_mode
+name|G_FILE_TEST_IS_REGULAR
 argument_list|)
 condition|)
 block|{

@@ -44,18 +44,6 @@ endif|#
 directive|endif
 end_endif
 
-begin_include
-include|#
-directive|include
-file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/stat.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -265,10 +253,6 @@ name|gchar
 modifier|*
 name|gimp_dir
 decl_stmt|;
-name|struct
-name|stat
-name|stat_buf
-decl_stmt|;
 comment|/*  Create an instance of the "Gimp" object which is the root of the    *  core object system    */
 name|the_gimp
 operator|=
@@ -301,15 +285,13 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
-name|stat
+operator|!
+name|g_file_test
 argument_list|(
 name|gimp_dir
 argument_list|,
-operator|&
-name|stat_buf
+name|G_FILE_TEST_IS_DIR
 argument_list|)
-operator|!=
-literal|0
 condition|)
 block|{
 comment|/*  not properly installed  */
