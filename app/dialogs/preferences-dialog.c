@@ -4223,7 +4223,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2c744f040108
+DECL|struct|__anon2a27653c0108
 specifier|static
 specifier|const
 struct|struct
@@ -4274,7 +4274,7 @@ operator|)
 block|}
 block|}
 struct|;
-DECL|struct|__anon2c744f040208
+DECL|struct|__anon2a27653c0208
 specifier|static
 specifier|const
 struct|struct
@@ -4366,7 +4366,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon2c744f040308
+DECL|struct|__anon2a27653c0308
 specifier|static
 specifier|const
 struct|struct
@@ -5561,7 +5561,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|1e-5
+literal|1
 argument_list|,
 literal|32767
 argument_list|)
@@ -5575,7 +5575,7 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-literal|1e-5
+literal|1
 argument_list|,
 literal|32767
 argument_list|)
