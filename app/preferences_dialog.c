@@ -4822,7 +4822,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_ctree_node_set_row_data
@@ -5553,15 +5553,6 @@ name|ctree
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
-argument_list|(
-name|ctree
-argument_list|,
-literal|140
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -5576,11 +5567,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|ctree
 argument_list|)
 expr_stmt|;
 comment|/* The main preferences notebook */
@@ -11266,7 +11252,7 @@ name|page_index
 operator|++
 expr_stmt|;
 block|{
-DECL|struct|__anon2b655aa40108
+DECL|struct|__anon2aeed2250108
 specifier|static
 specifier|const
 struct|struct
@@ -11491,7 +11477,7 @@ block|}
 block|}
 comment|/* Directories /<paths> */
 block|{
-DECL|struct|__anon2b655aa40208
+DECL|struct|__anon2aeed2250208
 specifier|static
 specifier|const
 struct|struct
@@ -11808,6 +11794,32 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/* Recalculate the width of the Category tree now */
+name|gtk_clist_set_column_width
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|ctree
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|gtk_clist_optimal_column_width
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|ctree
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|ctree
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|notebook
