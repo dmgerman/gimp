@@ -1322,11 +1322,11 @@ argument_list|)
 expr_stmt|;
 else|else
 block|{
-comment|/* don't translate 'yes' and 'no' */
 name|g_scanner_error
 argument_list|(
 name|scanner
 argument_list|,
+comment|/* please don't translate 'yes' and 'no' */
 name|_
 argument_list|(
 literal|"expected 'yes' or 'no' for boolean token %s, got '%s'"

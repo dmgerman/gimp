@@ -7870,7 +7870,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unable to open file '%s'\nError: %s."
+literal|"Failed to open file: '%s': %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -7962,7 +7962,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Failed to read from '%s'"
+literal|"Failed to read from '%s'."
 argument_list|)
 argument_list|,
 name|filename
@@ -8051,7 +8051,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Failed to read path from '%s'"
+literal|"Failed to read path from '%s'."
 argument_list|)
 argument_list|,
 name|filename
@@ -8075,7 +8075,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"No points specified in path file '%s'"
+literal|"No points specified in path file '%s'."
 argument_list|)
 argument_list|,
 name|filename
@@ -8135,7 +8135,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Failed to read path points from %s"
+literal|"Failed to read path points from '%s'."
 argument_list|)
 argument_list|,
 name|filename
@@ -8384,7 +8384,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Opening '%s' failed:\n%s"
+literal|"Failed to open file: '%s': %s"
 argument_list|)
 argument_list|,
 name|filename

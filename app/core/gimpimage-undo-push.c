@@ -245,7 +245,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2789d41a0103
+DECL|enum|__anon289abfb10103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -14155,10 +14155,7 @@ block|,
 block|{
 name|CANT_UNDO
 block|,
-name|N_
-argument_list|(
 literal|"EEK: can't undo"
-argument_list|)
 block|}
 block|}
 struct|;

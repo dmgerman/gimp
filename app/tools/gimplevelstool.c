@@ -8169,10 +8169,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unable to open file %s"
+literal|"Failed to open file: '%s': %s"
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -8189,7 +8194,7 @@ block|{
 name|g_message
 argument_list|(
 operator|(
-literal|"Error in reading file %s"
+literal|"Error in reading file '%s'."
 operator|)
 argument_list|,
 name|filename
@@ -8224,10 +8229,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unable to open file %s"
+literal|"Failed to open file: '%s': %s"
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

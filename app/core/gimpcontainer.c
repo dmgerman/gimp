@@ -80,12 +80,6 @@ directive|include
 file|"config/gimpscanner.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
 begin_comment
 comment|/* #define DEBUG_CONTAINER */
 end_comment
@@ -159,7 +153,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon291f086d0103
+DECL|enum|__anon2c243f950103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -184,7 +178,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291f086d0203
+DECL|enum|__anon2c243f950203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1359,7 +1353,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291f086d0308
+DECL|struct|__anon2c243f950308
 block|{
 DECL|member|fd
 name|gint
@@ -1819,10 +1813,7 @@ name|g_scanner_error
 argument_list|(
 name|scanner
 argument_list|,
-name|_
-argument_list|(
 literal|"unable to determine type of '%s'"
-argument_list|)
 argument_list|,
 name|scanner
 operator|->
@@ -1852,10 +1843,7 @@ name|g_scanner_error
 argument_list|(
 name|scanner
 argument_list|,
-name|_
-argument_list|(
 literal|"'%s' is not a subclass of '%s'"
-argument_list|)
 argument_list|,
 name|scanner
 operator|->
@@ -1890,10 +1878,7 @@ name|g_scanner_error
 argument_list|(
 name|scanner
 argument_list|,
-name|_
-argument_list|(
 literal|"'%s' does not implement GimpConfigInterface"
-argument_list|)
 argument_list|,
 name|scanner
 operator|->

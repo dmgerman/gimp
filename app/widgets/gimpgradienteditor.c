@@ -3900,10 +3900,7 @@ name|str3
 operator|=
 name|g_strdup_printf
 argument_list|(
-name|_
-argument_list|(
 literal|"(%0.3f, %0.3f, %0.3f)"
-argument_list|)
 argument_list|,
 name|color
 operator|.

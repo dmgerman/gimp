@@ -285,7 +285,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d9d04a0103
+DECL|enum|__anon27c63b2c0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -299,7 +299,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d9d04a0208
+DECL|struct|__anon27c63b2c0208
 block|{
 DECL|member|dirname
 specifier|const
@@ -1835,7 +1835,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Couldn't write thumbnail for '%s'\nas '%s'.\n%s"
+literal|"Failed to write thumbnail for '%s' as '%s': %s"
 argument_list|)
 argument_list|,
 name|uri
@@ -1868,7 +1868,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Couldn't set permissions of thumbnail '%s'.\n%s"
+literal|"Failed to set permissions of thumbnail '%s': %s"
 argument_list|)
 argument_list|,
 name|thumb_name
@@ -2752,7 +2752,7 @@ name|description
 operator|=
 name|_
 argument_list|(
-literal|"Could not open image"
+literal|"Failed to open"
 argument_list|)
 expr_stmt|;
 name|imagefile
@@ -3286,7 +3286,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Could not open thumbnail\nfile '%s':\n%s"
+literal|"Failed to open thumbnail file '%s': %s"
 argument_list|)
 argument_list|,
 name|thumbname
@@ -4008,7 +4008,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Couldn't write thumbnail for '%s'\nas '%s'.\n%s"
+literal|"Failed to write thumbnail for '%s' as '%s': %s"
 argument_list|)
 argument_list|,
 name|uri
@@ -4041,7 +4041,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Couldn't set permissions of thumbnail '%s'.\n%s"
+literal|"Failed to set permissions of thumbnail '%s': %s"
 argument_list|)
 argument_list|,
 name|thumb_name
@@ -4453,7 +4453,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Couldn't create thumbnail directory '%s'"
+literal|"Failed to create thumbnail directory '%s'."
 argument_list|)
 argument_list|,
 name|thumb_subdirs

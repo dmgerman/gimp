@@ -1509,10 +1509,7 @@ default|default:
 return|return
 name|g_strdup
 argument_list|(
-name|_
-argument_list|(
 literal|"EEEEK"
-argument_list|)
 argument_list|)
 return|;
 block|}
