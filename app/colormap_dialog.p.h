@@ -142,6 +142,11 @@ name|GtkWidget
 modifier|*
 name|image_menu
 decl_stmt|;
+DECL|member|popup_menu
+name|GtkWidget
+modifier|*
+name|popup_menu
+decl_stmt|;
 DECL|member|option_menu
 name|GtkOptionMenu
 modifier|*

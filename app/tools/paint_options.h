@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|"buildmenu.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools.h"
 end_include
 
@@ -283,7 +277,7 @@ name|GtkWidget
 modifier|*
 name|paint_mode_menu_new
 parameter_list|(
-name|MenuItemCallback
+name|GtkSignalFunc
 name|callback
 parameter_list|,
 name|gpointer
@@ -291,20 +285,6 @@ name|data
 parameter_list|,
 name|LayerModeEffects
 name|initial
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|paint_mode_menu_set_paint_mode
-parameter_list|(
-name|GtkOptionMenu
-modifier|*
-name|paint_mode_menu
-parameter_list|,
-name|LayerModeEffects
-name|paint_mode
 parameter_list|)
 function_decl|;
 end_function_decl

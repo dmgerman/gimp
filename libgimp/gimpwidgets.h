@@ -73,6 +73,17 @@ comment|/* specify menu items as va_list: 				     *  gchar          *label, 			
 modifier|...
 parameter_list|)
 function_decl|;
+name|void
+name|gimp_option_menu_set_history
+parameter_list|(
+name|GtkOptionMenu
+modifier|*
+name|option_menu
+parameter_list|,
+name|gpointer
+name|user_data
+parameter_list|)
+function_decl|;
 name|GtkWidget
 modifier|*
 name|gimp_radio_group_new

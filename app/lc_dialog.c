@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"buildmenu.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dialog_handler.h"
 end_include
 
@@ -276,7 +270,7 @@ parameter_list|,
 name|gint
 modifier|*
 parameter_list|,
-name|MenuItemCallback
+name|GtkSignalFunc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1674,7 +1668,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c827c810108
+DECL|struct|__anon296a1ee40108
 block|{
 DECL|member|def
 name|GImage
@@ -1688,7 +1682,7 @@ modifier|*
 name|default_index
 decl_stmt|;
 DECL|member|callback
-name|MenuItemCallback
+name|GtkSignalFunc
 name|callback
 decl_stmt|;
 DECL|member|menu
@@ -2513,9 +2507,6 @@ argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
 name|data
 operator|->
 name|callback
@@ -2785,7 +2776,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|lc_dialog_create_image_menu (GimpImage ** def,gint * default_index,MenuItemCallback callback)
+DECL|function|lc_dialog_create_image_menu (GimpImage ** def,gint * default_index,GtkSignalFunc callback)
 name|lc_dialog_create_image_menu
 parameter_list|(
 name|GimpImage
@@ -2797,7 +2788,7 @@ name|gint
 modifier|*
 name|default_index
 parameter_list|,
-name|MenuItemCallback
+name|GtkSignalFunc
 name|callback
 parameter_list|)
 block|{
