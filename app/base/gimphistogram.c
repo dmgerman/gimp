@@ -494,6 +494,9 @@ operator|!
 name|histogram
 operator|->
 name|values
+index|[
+literal|0
+index|]
 operator|||
 operator|(
 name|channel
@@ -657,6 +660,9 @@ operator|!
 name|histogram
 operator|->
 name|values
+index|[
+literal|0
+index|]
 operator|||
 name|bin
 operator|<
@@ -931,6 +937,9 @@ operator|!
 name|histogram
 operator|->
 name|values
+index|[
+literal|0
+index|]
 operator|||
 name|start
 operator|>
@@ -1057,6 +1066,9 @@ operator|!
 name|histogram
 operator|->
 name|values
+index|[
+literal|0
+index|]
 operator|||
 name|start
 operator|>
@@ -1283,6 +1295,9 @@ operator|!
 name|histogram
 operator|->
 name|values
+index|[
+literal|0
+index|]
 operator|||
 name|start
 operator|>
@@ -1515,6 +1530,9 @@ operator|!
 name|histogram
 operator|->
 name|values
+index|[
+literal|0
+index|]
 operator|||
 name|start
 operator|>
