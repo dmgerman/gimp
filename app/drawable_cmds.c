@@ -414,7 +414,7 @@ name|PDB_INT32
 block|,
 literal|"fill_type"
 block|,
-literal|"type of fill: { BG-IMAGE-FILL (0), WHITE-IMAGE-FILL (1), TRANS-IMAGE-FILL (2) }"
+literal|"type of fill: { FG-IMAGE-FILL (0), BG-IMAGE-FILL (1), WHITE-IMAGE-FILL (2), TRANS-IMAGE-FILL (3), NO-IMAGE-FILL (4) }"
 block|}
 block|}
 decl_stmt|;
