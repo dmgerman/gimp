@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4ef2a90103
+DECL|enum|__anon2b14ac500103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -103,7 +103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4ef2a90203
+DECL|enum|__anon2b14ac500203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -146,9 +146,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dialog_factory_destroy
+name|gimp_dialog_factory_finalize
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -346,7 +346,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|GtkType
+name|GType
 DECL|function|gimp_dialog_factory_get_type (void)
 name|gimp_dialog_factory_get_type
 parameter_list|(
@@ -354,7 +354,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|guint
+name|GType
 name|factory_type
 init|=
 literal|0
@@ -365,52 +365,60 @@ operator|!
 name|factory_type
 condition|)
 block|{
-name|GtkTypeInfo
+specifier|static
+specifier|const
+name|GTypeInfo
 name|factory_info
 init|=
 block|{
-literal|"GimpDialogFactory"
-block|,
-sizeof|sizeof
-argument_list|(
-name|GimpDialogFactory
-argument_list|)
-block|,
 sizeof|sizeof
 argument_list|(
 name|GimpDialogFactoryClass
 argument_list|)
 block|,
+name|NULL
+block|,
+comment|/* base_init */
+name|NULL
+block|,
+comment|/* base_finalize */
 operator|(
-name|GtkClassInitFunc
+name|GClassInitFunc
 operator|)
 name|gimp_dialog_factory_class_init
 block|,
+name|NULL
+block|,
+comment|/* class_finalize */
+name|NULL
+block|,
+comment|/* class_data */
+sizeof|sizeof
+argument_list|(
+name|GimpDialogFactory
+argument_list|)
+block|,
+literal|0
+block|,
+comment|/* n_preallocs */
 operator|(
-name|GtkObjectInitFunc
+name|GInstanceInitFunc
 operator|)
 name|gimp_dialog_factory_init
-block|,
-comment|/* reserved_1 */
-name|NULL
-block|,
-comment|/* reserved_2 */
-name|NULL
-block|,
-operator|(
-name|GtkClassInitFunc
-operator|)
-name|NULL
-block|}
+block|,       }
 decl_stmt|;
 name|factory_type
 operator|=
-name|gtk_type_unique
+name|g_type_register_static
 argument_list|(
 name|GIMP_TYPE_OBJECT
 argument_list|,
+literal|"GimpDialogFactory"
+argument_list|,
 operator|&
 name|factory_info
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -431,17 +439,16 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GtkObjectClass
+name|GObjectClass
 modifier|*
 name|object_class
 decl_stmt|;
 name|object_class
 operator|=
-operator|(
-name|GtkObjectClass
-operator|*
-operator|)
+name|G_OBJECT_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|parent_class
 operator|=
@@ -452,9 +459,9 @@ argument_list|)
 expr_stmt|;
 name|object_class
 operator|->
-name|destroy
+name|finalize
 operator|=
-name|gimp_dialog_factory_destroy
+name|gimp_dialog_factory_finalize
 expr_stmt|;
 name|klass
 operator|->
@@ -517,10 +524,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dialog_factory_destroy (GtkObject * object)
-name|gimp_dialog_factory_destroy
+DECL|function|gimp_dialog_factory_finalize (GObject * object)
+name|gimp_dialog_factory_finalize
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -602,6 +609,13 @@ name|entry
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|factory
+operator|->
+name|registered_dialogs
+condition|)
+block|{
 name|g_list_free
 argument_list|(
 name|factory
@@ -609,6 +623,20 @@ operator|->
 name|registered_dialogs
 argument_list|)
 expr_stmt|;
+name|factory
+operator|->
+name|registered_dialogs
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|factory
+operator|->
+name|open_dialogs
+condition|)
+block|{
 name|g_list_free
 argument_list|(
 name|factory
@@ -616,21 +644,19 @@ operator|->
 name|open_dialogs
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|GTK_OBJECT_CLASS
+name|factory
+operator|->
+name|open_dialogs
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|destroy
-condition|)
-name|GTK_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|destroy
+name|finalize
 argument_list|(
 name|object
 argument_list|)
