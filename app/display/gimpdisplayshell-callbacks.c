@@ -4044,6 +4044,12 @@ if|if
 condition|(
 name|event
 operator|->
+name|type
+operator|==
+name|GDK_BUTTON_PRESS
+operator|&&
+name|event
+operator|->
 name|button
 operator|==
 literal|1
@@ -4195,6 +4201,12 @@ name|TRUE
 return|;
 if|if
 condition|(
+name|event
+operator|->
+name|type
+operator|==
+name|GDK_BUTTON_PRESS
+operator|&&
 name|event
 operator|->
 name|button
