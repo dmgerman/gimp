@@ -1950,6 +1950,9 @@ case|case
 name|GIMP_PDB_PATH
 case|:
 case|case
+name|GIMP_PDB_PALETTE
+case|:
+case|case
 name|GIMP_PDB_STATUS
 case|:
 operator|(

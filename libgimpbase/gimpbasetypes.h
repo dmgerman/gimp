@@ -45,7 +45,7 @@ typedef|;
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon276856720103
+DECL|enum|__anon28a7382d0103
 block|{
 DECL|enumerator|GIMP_UNIT_PIXEL
 name|GIMP_UNIT_PIXEL
@@ -89,7 +89,7 @@ typedef|;
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon276856720203
+DECL|enum|__anon28a7382d0203
 block|{
 DECL|enumerator|GIMP_PDB_INT32
 name|GIMP_PDB_INT32
@@ -154,6 +154,9 @@ block|,
 DECL|enumerator|GIMP_PDB_PARASITE
 name|GIMP_PDB_PARASITE
 block|,
+DECL|enumerator|GIMP_PDB_PALETTE
+name|GIMP_PDB_PALETTE
+block|,
 DECL|enumerator|GIMP_PDB_STATUS
 name|GIMP_PDB_STATUS
 block|,
@@ -166,7 +169,7 @@ typedef|;
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon276856720303
+DECL|enum|__anon28a7382d0303
 block|{
 DECL|enumerator|GIMP_INTERNAL
 name|GIMP_INTERNAL
@@ -186,7 +189,7 @@ typedef|;
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon276856720403
+DECL|enum|__anon28a7382d0403
 block|{
 DECL|enumerator|GIMP_PDB_EXECUTION_ERROR
 name|GIMP_PDB_EXECUTION_ERROR
