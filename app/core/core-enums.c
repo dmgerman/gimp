@@ -1069,14 +1069,25 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_GRID_TYPE_INTERSECTION
+name|GIMP_GRID_TYPE_DOTS
+block|,
+name|N_
+argument_list|(
+literal|"Dots"
+argument_list|)
+block|,
+literal|"dots"
+block|}
+block|,
+block|{
+name|GIMP_GRID_TYPE_INTERSECTIONS
 block|,
 name|N_
 argument_list|(
 literal|"Intersections Only"
 argument_list|)
 block|,
-literal|"intersection"
+literal|"intersections"
 block|}
 block|,
 block|{

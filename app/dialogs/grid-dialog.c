@@ -521,7 +521,7 @@ argument_list|)
 argument_list|,
 literal|"type"
 argument_list|,
-name|GIMP_GRID_TYPE_INTERSECTION
+name|GIMP_GRID_TYPE_DOTS
 argument_list|,
 name|GIMP_GRID_TYPE_SOLID
 argument_list|)
