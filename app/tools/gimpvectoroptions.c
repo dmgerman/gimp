@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296e131e0103
+DECL|enum|__anon29e5c6710103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -509,12 +509,12 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Extend Stroke/Move Nodes"
+literal|"Insert/Delete Nodes"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Insert/Delete Nodes"
+literal|"Extend Stroke/Move Nodes"
 argument_list|)
 argument_list|)
 expr_stmt|;
