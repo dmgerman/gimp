@@ -6604,7 +6604,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|channel_bounds
+name|gimp_channel_bounds
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -6728,7 +6728,7 @@ elseif|else
 if|if
 condition|(
 operator|!
-name|channel_bounds
+name|gimp_channel_bounds
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(

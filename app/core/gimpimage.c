@@ -530,9 +530,9 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
-name|layer
+name|channel
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -681,7 +681,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0a572d0103
+DECL|enum|__anon2b709db40103
 block|{
 DECL|enumerator|CLEAN
 name|CLEAN
@@ -1758,7 +1758,7 @@ name|gimage
 operator|->
 name|selection_mask
 operator|=
-name|channel_new_mask
+name|gimp_channel_new_mask
 argument_list|(
 name|gimage
 argument_list|,
@@ -2172,7 +2172,7 @@ name|gint
 name|offset_y
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -2274,14 +2274,14 @@ block|{
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|list
 operator|->
 name|data
 expr_stmt|;
-name|channel_resize
+name|gimp_channel_resize
 argument_list|(
 name|channel
 argument_list|,
@@ -2420,7 +2420,7 @@ expr_stmt|;
 block|}
 block|}
 comment|/*  Don't forget the selection mask!  */
-name|channel_resize
+name|gimp_channel_resize
 argument_list|(
 name|gimage
 operator|->
@@ -2534,7 +2534,7 @@ name|gint
 name|new_height
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -2711,14 +2711,14 @@ block|{
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|list
 operator|->
 name|data
 expr_stmt|;
-name|channel_scale
+name|gimp_channel_scale
 argument_list|(
 name|channel
 argument_list|,
@@ -2729,8 +2729,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  Don't forget the selection mask!  */
-comment|/*  if (channel_is_empty(gimage->selection_mask))         channel_resize(gimage->selection_mask, new_width, new_height, 0, 0)       else   */
-name|channel_scale
+comment|/*  if (channel_is_empty(gimage->selection_mask))         gimp_channel_resize(gimage->selection_mask, new_width, new_height, 0, 0)       else   */
+name|gimp_channel_scale
 argument_list|(
 name|gimage
 operator|->
@@ -3241,7 +3241,7 @@ name|gint
 name|y
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;
@@ -3794,7 +3794,7 @@ name|gint
 name|y
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;
@@ -5823,7 +5823,7 @@ name|retval
 init|=
 name|TRUE
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -5970,7 +5970,7 @@ decl_stmt|;
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|channels
@@ -6577,14 +6577,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|project_channel (GimpImage * gimage,Channel * channel,PixelRegion * src,PixelRegion * src2)
+DECL|function|project_channel (GimpImage * gimage,GimpChannel * channel,PixelRegion * src,PixelRegion * src2)
 name|project_channel
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
@@ -6817,7 +6817,7 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -6842,7 +6842,7 @@ block|{
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|list
@@ -7463,7 +7463,7 @@ name|gint
 name|h
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -7520,7 +7520,7 @@ block|{
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|reverse_list
@@ -8883,7 +8883,7 @@ name|GSList
 modifier|*
 name|tmp
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -8923,7 +8923,7 @@ block|{
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|tmp
@@ -9095,7 +9095,7 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_channel_index (const GimpImage * gimage,const Channel * channel_arg)
+DECL|function|gimp_image_get_channel_index (const GimpImage * gimage,const GimpChannel * channel_arg)
 name|gimp_image_get_channel_index
 parameter_list|(
 specifier|const
@@ -9104,12 +9104,12 @@ modifier|*
 name|gimage
 parameter_list|,
 specifier|const
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel_arg
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -9169,7 +9169,7 @@ block|{
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|channels
@@ -9233,7 +9233,7 @@ block|}
 end_function
 
 begin_function
-name|Channel
+name|GimpChannel
 modifier|*
 DECL|function|gimp_image_get_active_channel (const GimpImage * gimage)
 name|gimp_image_get_active_channel
@@ -9346,7 +9346,7 @@ block|}
 end_function
 
 begin_function
-name|Channel
+name|GimpChannel
 modifier|*
 DECL|function|gimp_image_get_channel_by_tattoo (const GimpImage * gimage,Tattoo tattoo)
 name|gimp_image_get_channel_by_tattoo
@@ -9360,7 +9360,7 @@ name|Tattoo
 name|tattoo
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -9399,7 +9399,7 @@ block|{
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|channels
@@ -9429,7 +9429,7 @@ block|}
 end_function
 
 begin_function
-name|Channel
+name|GimpChannel
 modifier|*
 DECL|function|gimp_image_get_channel_by_name (const GimpImage * gimage,const gchar * name)
 name|gimp_image_get_channel_by_name
@@ -9445,7 +9445,7 @@ modifier|*
 name|name
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -9484,7 +9484,7 @@ block|{
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|channels
@@ -9518,7 +9518,7 @@ block|}
 end_function
 
 begin_function
-name|Channel
+name|GimpChannel
 modifier|*
 DECL|function|gimp_image_get_mask (const GimpImage * gimage)
 name|gimp_image_get_mask
@@ -9956,16 +9956,16 @@ block|}
 end_function
 
 begin_function
-name|Channel
+name|GimpChannel
 modifier|*
-DECL|function|gimp_image_set_active_channel (GimpImage * gimage,Channel * channel)
+DECL|function|gimp_image_set_active_channel (GimpImage * gimage,GimpChannel * channel)
 name|gimp_image_set_active_channel
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -10019,7 +10019,7 @@ block|}
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|gimage
@@ -10044,7 +10044,7 @@ block|}
 end_function
 
 begin_function
-name|Channel
+name|GimpChannel
 modifier|*
 DECL|function|gimp_image_unset_active_channel (GimpImage * gimage)
 name|gimp_image_unset_active_channel
@@ -10054,7 +10054,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -13768,7 +13768,7 @@ block|}
 end_function
 
 begin_function
-name|Channel
+name|GimpChannel
 modifier|*
 DECL|function|gimp_image_remove_layer_mask (GimpImage * gimage,GimpLayer * layer,MaskApplyMode mode)
 name|gimp_image_remove_layer_mask
@@ -14005,25 +14005,25 @@ block|}
 end_function
 
 begin_function
-name|Channel
+name|GimpChannel
 modifier|*
-DECL|function|gimp_image_raise_channel (GimpImage * gimage,Channel * channel_arg)
+DECL|function|gimp_image_raise_channel (GimpImage * gimage,GimpChannel * channel_arg)
 name|gimp_image_raise_channel
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel_arg
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|prev_channel
 decl_stmt|;
@@ -14073,7 +14073,7 @@ block|{
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|list
@@ -14087,7 +14087,7 @@ condition|)
 name|prev_channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|prev
@@ -14187,25 +14187,25 @@ block|}
 end_function
 
 begin_function
-name|Channel
+name|GimpChannel
 modifier|*
-DECL|function|gimp_image_lower_channel (GimpImage * gimage,Channel * channel_arg)
+DECL|function|gimp_image_lower_channel (GimpImage * gimage,GimpChannel * channel_arg)
 name|gimp_image_lower_channel
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel_arg
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|next_channel
 decl_stmt|;
@@ -14250,7 +14250,7 @@ block|{
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|list
@@ -14271,7 +14271,7 @@ condition|)
 name|next_channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|next
@@ -14364,16 +14364,16 @@ block|}
 end_function
 
 begin_function
-name|Channel
+name|GimpChannel
 modifier|*
-DECL|function|gimp_image_position_channel (GimpImage * gimage,Channel * channel_arg,gint new_index)
+DECL|function|gimp_image_position_channel (GimpImage * gimage,GimpChannel * channel_arg,gint new_index)
 name|gimp_image_position_channel
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel_arg
 parameter_list|,
@@ -14381,7 +14381,7 @@ name|gint
 name|new_index
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -14453,7 +14453,7 @@ block|{
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|list
@@ -14563,16 +14563,16 @@ block|}
 end_function
 
 begin_function
-name|Channel
+name|GimpChannel
 modifier|*
-DECL|function|gimp_image_add_channel (GimpImage * gimage,Channel * channel,gint position)
+DECL|function|gimp_image_add_channel (GimpImage * gimage,GimpChannel * channel,gint position)
 name|gimp_image_add_channel
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
@@ -14791,16 +14791,16 @@ block|}
 end_function
 
 begin_function
-name|Channel
+name|GimpChannel
 modifier|*
-DECL|function|gimp_image_remove_channel (GimpImage * gimage,Channel * channel)
+DECL|function|gimp_image_remove_channel (GimpImage * gimage,GimpChannel * channel)
 name|gimp_image_remove_channel
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -14894,7 +14894,7 @@ operator|=
 operator|(
 operator|(
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|gimage

@@ -1010,7 +1010,7 @@ comment|/* Scan convert the polygon described by the list of points passed to  *
 end_comment
 
 begin_function
-name|Channel
+name|GimpChannel
 modifier|*
 DECL|function|scan_converter_to_channel (ScanConverter * sc,GimpImage * gimage)
 name|scan_converter_to_channel
@@ -1024,7 +1024,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;
@@ -1176,7 +1176,7 @@ expr_stmt|;
 block|}
 name|mask
 operator|=
-name|channel_new_mask
+name|gimp_channel_new_mask
 argument_list|(
 name|gimage
 argument_list|,
@@ -1460,7 +1460,7 @@ operator|==
 literal|1
 condition|)
 block|{
-name|channel_add_segment
+name|gimp_channel_add_segment
 argument_list|(
 name|mask
 argument_list|,

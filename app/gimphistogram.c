@@ -1781,7 +1781,7 @@ operator|!
 name|no_mask
 condition|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|sel_mask
 decl_stmt|;

@@ -667,7 +667,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|Channel
+name|GimpChannel
 modifier|*
 name|by_color_select_color
 parameter_list|(
@@ -884,7 +884,7 @@ end_function
 
 begin_function
 specifier|static
-name|Channel
+name|GimpChannel
 modifier|*
 DECL|function|by_color_select_color (GImage * gimage,GimpDrawable * drawable,guchar * color,gboolean antialias,gint threshold,gboolean sample_merged)
 name|by_color_select_color
@@ -912,7 +912,7 @@ name|sample_merged
 parameter_list|)
 block|{
 comment|/*  Scan over the gimage's active layer, finding pixels within the specified    *  threshold from the given R, G,& B values.  If antialiasing is on,    *  use the same antialiasing scheme as in fuzzy_select.  Modify the gimage's    *  mask to reflect the additional selection    */
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;
@@ -1147,7 +1147,7 @@ literal|1
 expr_stmt|;
 name|mask
 operator|=
-name|channel_new_mask
+name|gimp_channel_new_mask
 argument_list|(
 name|gimage
 argument_list|,
@@ -1370,7 +1370,7 @@ name|gboolean
 name|sample_merged
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|new_mask
 decl_stmt|;
@@ -1452,7 +1452,7 @@ if|if
 condition|(
 name|feather
 condition|)
-name|channel_feather
+name|gimp_channel_feather
 argument_list|(
 name|new_mask
 argument_list|,
@@ -1473,7 +1473,7 @@ name|off_y
 argument_list|)
 expr_stmt|;
 else|else
-name|channel_combine_mask
+name|gimp_channel_combine_mask
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -3846,7 +3846,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;

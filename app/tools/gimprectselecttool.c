@@ -258,7 +258,7 @@ name|gdouble
 name|feather_radius
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|new_mask
 decl_stmt|;
@@ -288,7 +288,7 @@ condition|)
 block|{
 name|new_mask
 operator|=
-name|channel_new_mask
+name|gimp_channel_new_mask
 argument_list|(
 name|gimage
 argument_list|,
@@ -301,7 +301,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-name|channel_combine_rect
+name|gimp_channel_combine_rect
 argument_list|(
 name|new_mask
 argument_list|,
@@ -316,7 +316,7 @@ argument_list|,
 name|h
 argument_list|)
 expr_stmt|;
-name|channel_feather
+name|gimp_channel_feather
 argument_list|(
 name|new_mask
 argument_list|,
@@ -355,7 +355,7 @@ condition|)
 block|{
 name|new_mask
 operator|=
-name|channel_new_mask
+name|gimp_channel_new_mask
 argument_list|(
 name|gimage
 argument_list|,
@@ -368,7 +368,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-name|channel_combine_rect
+name|gimp_channel_combine_rect
 argument_list|(
 name|new_mask
 argument_list|,
@@ -383,7 +383,7 @@ argument_list|,
 name|h
 argument_list|)
 expr_stmt|;
-name|channel_combine_mask
+name|gimp_channel_combine_mask
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -409,7 +409,8 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-name|channel_combine_rect
+block|{
+name|gimp_channel_combine_rect
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -427,6 +428,7 @@ argument_list|,
 name|h
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

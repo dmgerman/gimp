@@ -4607,7 +4607,7 @@ expr_stmt|;
 else|else
 name|buf
 operator|=
-name|channel_preview
+name|gimp_channel_preview
 argument_list|(
 name|GIMP_CHANNEL
 argument_list|(

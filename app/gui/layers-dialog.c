@@ -372,7 +372,7 @@ modifier|*
 name|active_layer
 decl_stmt|;
 DECL|member|active_channel
-name|Channel
+name|GimpChannel
 modifier|*
 name|active_channel
 decl_stmt|;
@@ -10983,7 +10983,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf6f4fc0108
+DECL|struct|__anon2c34fbf00108
 block|{
 DECL|member|gimage
 name|GimpImage

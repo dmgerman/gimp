@@ -726,7 +726,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e79e640103
+DECL|enum|__anon2c37367a0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -4575,7 +4575,7 @@ name|GimpLayer
 modifier|*
 name|floating_layer
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -4791,14 +4791,14 @@ block|{
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|list
 operator|->
 name|data
 expr_stmt|;
-name|channel_resize
+name|gimp_channel_resize
 argument_list|(
 name|channel
 argument_list|,
@@ -4822,7 +4822,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  Don't forget the selection mask!  */
-name|channel_resize
+name|gimp_channel_resize
 argument_list|(
 name|gimage
 operator|->

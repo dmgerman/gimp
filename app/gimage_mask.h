@@ -350,7 +350,7 @@ name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -358,7 +358,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
+name|GimpChannel
 modifier|*
 name|gimage_mask_save
 parameter_list|(

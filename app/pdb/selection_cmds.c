@@ -2798,7 +2798,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -2982,7 +2982,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 init|=
@@ -3159,7 +3159,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -3170,7 +3170,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|new_channel
 decl_stmt|;
@@ -3271,7 +3271,7 @@ condition|)
 block|{
 name|new_channel
 operator|=
-name|channel_copy
+name|gimp_channel_copy
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -3279,7 +3279,7 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|channel_combine_mask
+name|gimp_channel_combine_mask
 argument_list|(
 name|new_channel
 argument_list|,

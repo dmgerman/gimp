@@ -101,7 +101,7 @@ comment|/* Scan convert the polygon described by the list of points passed to  *
 end_comment
 
 begin_function_decl
-name|Channel
+name|GimpChannel
 modifier|*
 name|scan_converter_to_channel
 parameter_list|(

@@ -50,7 +50,7 @@ modifier|*
 name|active_layer
 decl_stmt|;
 DECL|member|active_channel
-name|Channel
+name|GimpChannel
 modifier|*
 name|active_channel
 decl_stmt|;

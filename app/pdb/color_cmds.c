@@ -3893,7 +3893,7 @@ decl_stmt|;
 name|gboolean
 name|no_mask
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;

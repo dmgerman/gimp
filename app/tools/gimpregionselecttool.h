@@ -17,7 +17,7 @@ name|__FUZZY_SELECT_H__
 end_define
 
 begin_function_decl
-name|Channel
+name|GimpChannel
 modifier|*
 name|find_contiguous_region
 parameter_list|(
@@ -94,7 +94,7 @@ end_function_decl
 
 begin_decl_stmt
 specifier|extern
-name|Channel
+name|GimpChannel
 modifier|*
 name|fuzzy_mask
 decl_stmt|;

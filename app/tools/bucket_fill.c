@@ -1567,7 +1567,7 @@ name|bufPR
 decl_stmt|,
 name|maskPR
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 init|=
@@ -1947,7 +1947,7 @@ argument_list|,
 name|sample_merged
 argument_list|)
 expr_stmt|;
-name|channel_bounds
+name|gimp_channel_bounds
 argument_list|(
 name|mask
 argument_list|,

@@ -219,7 +219,7 @@ condition|)
 block|{
 comment|/*  If there is a floating selection, then        *  we need to do some slightly different boundaries.        *  Instead of inside and outside boundaries being defined        *  by the extents of the layer, the inside boundary (the one        *  that actually marches and is black/white) is the boundary of        *  the floating selection.  The outside boundary (doesn't move,        *  is black/gray) is defined as the normal selection mask        */
 comment|/*  Find the selection mask boundary  */
-name|channel_boundary
+name|gimp_channel_boundary
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -278,7 +278,7 @@ argument_list|)
 condition|)
 block|{
 return|return
-name|channel_boundary
+name|gimp_channel_boundary
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -409,7 +409,7 @@ name|height
 argument_list|)
 expr_stmt|;
 return|return
-name|channel_boundary
+name|gimp_channel_boundary
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -490,7 +490,7 @@ name|y2
 parameter_list|)
 block|{
 return|return
-name|channel_bounds
+name|gimp_channel_bounds
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -523,7 +523,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;
@@ -611,7 +611,7 @@ name|y
 parameter_list|)
 block|{
 return|return
-name|channel_value
+name|gimp_channel_value
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -646,7 +646,7 @@ name|TRUE
 return|;
 else|else
 return|return
-name|channel_is_empty
+name|gimp_channel_is_empty
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -673,7 +673,7 @@ name|gint
 name|off_y
 parameter_list|)
 block|{
-name|channel_translate
+name|gimp_channel_translate
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -716,7 +716,7 @@ name|TileManager
 modifier|*
 name|tiles
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|sel_mask
 decl_stmt|;
@@ -1153,7 +1153,7 @@ name|cut_gimage
 condition|)
 block|{
 comment|/*  Clear the region  */
-name|channel_clear
+name|gimp_channel_clear
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -1388,7 +1388,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 init|=
@@ -1595,7 +1595,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|channel_clear
+name|gimp_channel_clear
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -1616,7 +1616,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|channel_push_undo
+name|gimp_channel_push_undo
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -1637,7 +1637,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|channel_invert
+name|gimp_channel_invert
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -1659,7 +1659,7 @@ name|gimage
 parameter_list|)
 block|{
 comment|/*  No need to play with the selection visibility    *  because sharpen will not change the outline    */
-name|channel_sharpen
+name|gimp_channel_sharpen
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -1680,7 +1680,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|channel_all
+name|gimp_channel_all
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -1701,7 +1701,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|channel_clear
+name|gimp_channel_clear
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -1728,8 +1728,8 @@ name|gdouble
 name|feather_radius_y
 parameter_list|)
 block|{
-comment|/*  push the current mask onto the undo stack--need to do this here because    *  channel_feather doesn't do it    */
-name|channel_push_undo
+comment|/*  push the current mask onto the undo stack--need to do this here because    *  gimp_channel_feather doesn't do it    */
+name|gimp_channel_push_undo
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -1738,7 +1738,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  feather the region  */
-name|channel_feather
+name|gimp_channel_feather
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -1781,7 +1781,7 @@ name|border_radius_y
 parameter_list|)
 block|{
 comment|/*  feather the region  */
-name|channel_border
+name|gimp_channel_border
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -1813,7 +1813,7 @@ name|grow_pixels_y
 parameter_list|)
 block|{
 comment|/*  feather the region  */
-name|channel_grow
+name|gimp_channel_grow
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -1848,7 +1848,7 @@ name|edge_lock
 parameter_list|)
 block|{
 comment|/*  feather the region  */
-name|channel_shrink
+name|gimp_channel_shrink
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -1892,7 +1892,7 @@ argument_list|)
 condition|)
 block|{
 comment|/*  load the mask with the given layer's alpha channel  */
-name|channel_layer_alpha
+name|gimp_channel_layer_alpha
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -1943,7 +1943,7 @@ argument_list|)
 condition|)
 block|{
 comment|/*  load the mask with the given layer's alpha channel  */
-name|channel_layer_mask
+name|gimp_channel_layer_mask
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -1972,20 +1972,20 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_load (GImage * gimage,Channel * channel)
+DECL|function|gimage_mask_load (GImage * gimage,GimpChannel * channel)
 name|gimage_mask_load
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
 block|{
 comment|/*  Load the specified channel to the gimage mask  */
-name|channel_load
+name|gimp_channel_load
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -2001,7 +2001,7 @@ block|}
 end_function
 
 begin_function
-name|Channel
+name|GimpChannel
 modifier|*
 DECL|function|gimage_mask_save (GImage * gimage)
 name|gimage_mask_save
@@ -2011,13 +2011,13 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|new_channel
 decl_stmt|;
 name|new_channel
 operator|=
-name|channel_copy
+name|gimp_channel_copy
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(

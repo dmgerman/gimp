@@ -248,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297eb3060108
+DECL|struct|__anon2c63d2fd0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -284,7 +284,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297eb3060208
+DECL|struct|__anon2c63d2fd0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297eb3060308
+DECL|struct|__anon2c63d2fd0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -4564,7 +4564,7 @@ condition|(
 operator|!
 name|grab_pointer
 operator|&&
-name|channel_value
+name|gimp_channel_value
 argument_list|(
 name|bezier_sel
 operator|->
@@ -6409,7 +6409,7 @@ name|bezier_sel
 operator|->
 name|closed
 operator|&&
-name|channel_value
+name|gimp_channel_value
 argument_list|(
 name|bezier_sel
 operator|->
@@ -9294,7 +9294,7 @@ name|bezier_sel
 operator|->
 name|mask
 operator|=
-name|channel_new_mask
+name|gimp_channel_new_mask
 argument_list|(
 name|gdisp
 operator|->
@@ -9595,7 +9595,7 @@ condition|(
 operator|!
 name|antialias
 condition|)
-name|channel_add_segment
+name|gimp_channel_add_segment
 argument_list|(
 name|bezier_sel
 operator|->
@@ -9793,7 +9793,7 @@ name|scanlines
 operator|=
 name|NULL
 expr_stmt|;
-name|channel_invalidate_bounds
+name|gimp_channel_invalidate_bounds
 argument_list|(
 name|bezier_sel
 operator|->
@@ -11056,7 +11056,7 @@ name|bezier_options
 operator|->
 name|feather
 condition|)
-name|channel_feather
+name|gimp_channel_feather
 argument_list|(
 name|bezier_sel
 operator|->
@@ -11085,7 +11085,7 @@ literal|0
 argument_list|)
 expr_stmt|;
 else|else
-name|channel_combine_mask
+name|gimp_channel_combine_mask
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(

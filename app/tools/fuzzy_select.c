@@ -371,7 +371,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|fuzzy_mask
-name|Channel
+name|GimpChannel
 modifier|*
 name|fuzzy_mask
 init|=
@@ -1405,7 +1405,7 @@ block|}
 end_function
 
 begin_function
-name|Channel
+name|GimpChannel
 modifier|*
 DECL|function|find_contiguous_region (GImage * gimage,GimpDrawable * drawable,gboolean antialias,gint threshold,gint x,gint y,gboolean sample_merged)
 name|find_contiguous_region
@@ -1439,7 +1439,7 @@ name|srcPR
 decl_stmt|,
 name|maskPR
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;
@@ -1584,7 +1584,7 @@ expr_stmt|;
 block|}
 name|mask
 operator|=
-name|channel_new_mask
+name|gimp_channel_new_mask
 argument_list|(
 name|gimage
 argument_list|,
@@ -1780,7 +1780,7 @@ if|if
 condition|(
 name|feather
 condition|)
-name|channel_feather
+name|gimp_channel_feather
 argument_list|(
 name|fuzzy_mask
 argument_list|,
@@ -1801,7 +1801,7 @@ name|off_y
 argument_list|)
 expr_stmt|;
 else|else
-name|channel_combine_mask
+name|gimp_channel_combine_mask
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -2396,7 +2396,7 @@ name|FuzzySelect
 modifier|*
 name|fuzzy_sel
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|new
 decl_stmt|;

@@ -2791,7 +2791,7 @@ name|GimpLayer
 modifier|*
 name|floating_layer
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|,
@@ -2818,7 +2818,7 @@ name|active_layer
 init|=
 name|NULL
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|active_channel
 init|=
@@ -3110,7 +3110,7 @@ block|{
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|list
@@ -3126,7 +3126,7 @@ argument_list|)
 expr_stmt|;
 name|new_channel
 operator|=
-name|channel_copy
+name|gimp_channel_copy
 argument_list|(
 name|channel
 argument_list|)

@@ -233,7 +233,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3c8f3f0103
+DECL|enum|__anon27ce19690103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -1022,7 +1022,7 @@ specifier|static
 name|gint
 name|channel_size
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -1151,10 +1151,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|channel_size (Channel * channel)
+DECL|function|channel_size (GimpChannel * channel)
 name|channel_size
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -1166,7 +1166,7 @@ name|size
 operator|=
 sizeof|sizeof
 argument_list|(
-name|Channel
+name|GimpChannel
 argument_list|)
 operator|+
 name|GIMP_DRAWABLE
@@ -4276,7 +4276,7 @@ name|TileManager
 modifier|*
 name|new_tiles
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|sel_mask
 decl_stmt|;
@@ -4331,7 +4331,7 @@ argument_list|)
 expr_stmt|;
 name|selection
 operator|=
-name|channel_bounds
+name|gimp_channel_bounds
 argument_list|(
 name|sel_mask
 argument_list|,
@@ -7940,7 +7940,7 @@ name|gpointer
 name|channel_ptr
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -7962,7 +7962,7 @@ decl_stmt|;
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|channel_ptr
@@ -8111,7 +8111,7 @@ name|TileManager
 modifier|*
 name|temp
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -8126,7 +8126,7 @@ expr_stmt|;
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|data

@@ -3170,7 +3170,7 @@ argument_list|)
 operator|->
 name|offset_y
 expr_stmt|;
-name|channel_scale
+name|gimp_channel_scale
 argument_list|(
 name|GIMP_CHANNEL
 argument_list|(
@@ -4167,7 +4167,7 @@ argument_list|)
 operator|->
 name|offset_y
 expr_stmt|;
-name|channel_resize
+name|gimp_channel_resize
 argument_list|(
 name|GIMP_CHANNEL
 argument_list|(
@@ -4753,7 +4753,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;
@@ -4801,7 +4801,7 @@ comment|/*  Only bother with the bounds if there is a selection  */
 if|if
 condition|(
 operator|!
-name|channel_is_empty
+name|gimp_channel_is_empty
 argument_list|(
 name|mask
 argument_list|)

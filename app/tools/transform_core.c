@@ -7270,7 +7270,7 @@ name|layer
 init|=
 name|NULL
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 init|=

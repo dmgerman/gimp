@@ -299,7 +299,7 @@ literal|3
 index|]
 decl_stmt|;
 DECL|member|active_channel
-name|Channel
+name|GimpChannel
 modifier|*
 name|active_channel
 decl_stmt|;
@@ -368,7 +368,7 @@ modifier|*
 name|gimage
 decl_stmt|;
 DECL|member|channel
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -452,7 +452,7 @@ specifier|static
 name|void
 name|channels_dialog_position_channel
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
@@ -467,7 +467,7 @@ specifier|static
 name|void
 name|channels_dialog_add_channel
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -650,7 +650,7 @@ name|ChannelWidget
 modifier|*
 name|channel_widget_get_ID
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -667,7 +667,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
@@ -2066,7 +2066,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -2471,7 +2471,7 @@ comment|/*  create a channel list item  */
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|list
@@ -2548,7 +2548,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -2685,7 +2685,7 @@ block|{
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|list
@@ -2800,7 +2800,7 @@ block|{
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|list
@@ -3832,10 +3832,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|channels_dialog_position_channel (Channel * channel,gint new_index)
+DECL|function|channels_dialog_position_channel (GimpChannel * channel,gint new_index)
 name|channels_dialog_position_channel
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
@@ -3980,10 +3980,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|channels_dialog_add_channel (Channel * channel)
+DECL|function|channels_dialog_add_channel (GimpChannel * channel)
 name|channels_dialog_add_channel
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -4569,11 +4569,11 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|active_channel
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|new_channel
 decl_stmt|;
@@ -4606,7 +4606,7 @@ condition|)
 block|{
 name|new_channel
 operator|=
-name|channel_copy
+name|gimp_channel_copy
 argument_list|(
 name|active_channel
 argument_list|)
@@ -4759,11 +4759,11 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|active_channel
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|new_channel
 decl_stmt|;
@@ -4796,7 +4796,7 @@ condition|)
 block|{
 name|new_channel
 operator|=
-name|channel_copy
+name|gimp_channel_copy
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -4804,7 +4804,7 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|channel_combine_mask
+name|gimp_channel_combine_mask
 argument_list|(
 name|new_channel
 argument_list|,
@@ -4857,11 +4857,11 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|active_channel
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|new_channel
 decl_stmt|;
@@ -4894,7 +4894,7 @@ condition|)
 block|{
 name|new_channel
 operator|=
-name|channel_copy
+name|gimp_channel_copy
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -4902,7 +4902,7 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|channel_combine_mask
+name|gimp_channel_combine_mask
 argument_list|(
 name|new_channel
 argument_list|,
@@ -4955,11 +4955,11 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|active_channel
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|new_channel
 decl_stmt|;
@@ -4992,7 +4992,7 @@ condition|)
 block|{
 name|new_channel
 operator|=
-name|channel_copy
+name|gimp_channel_copy
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -5000,7 +5000,7 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|channel_combine_mask
+name|gimp_channel_combine_mask
 argument_list|(
 name|new_channel
 argument_list|,
@@ -5168,7 +5168,7 @@ operator|->
 name|active_channel
 condition|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -5242,7 +5242,7 @@ argument_list|)
 expr_stmt|;
 name|channel
 operator|=
-name|channel_new
+name|gimp_channel_new
 argument_list|(
 name|gimage
 argument_list|,
@@ -5278,7 +5278,7 @@ argument_list|,
 name|TRANSPARENT_FILL
 argument_list|)
 expr_stmt|;
-name|channel_translate
+name|gimp_channel_translate
 argument_list|(
 name|channel
 argument_list|,
@@ -5673,10 +5673,10 @@ begin_function
 specifier|static
 name|ChannelWidget
 modifier|*
-DECL|function|channel_widget_get_ID (Channel * channel)
+DECL|function|channel_widget_get_ID (GimpChannel * channel)
 name|channel_widget_get_ID
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -5747,14 +5747,14 @@ begin_function
 specifier|static
 name|ChannelWidget
 modifier|*
-DECL|function|channel_widget_create (GimpImage * gimage,Channel * channel,ChannelType type)
+DECL|function|channel_widget_create (GimpImage * gimage,GimpChannel * channel,ChannelType type)
 name|channel_widget_create
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
@@ -6929,7 +6929,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27de15a00108
+DECL|struct|__anon2c0c73c20108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -6937,7 +6937,7 @@ modifier|*
 name|gimage
 decl_stmt|;
 DECL|member|channel
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -7410,7 +7410,7 @@ name|ChannelWidget
 modifier|*
 name|channel_widget
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -8745,7 +8745,7 @@ comment|/*  Preview is scaling up!  */
 block|{
 name|preview_buf
 operator|=
-name|channel_preview
+name|gimp_channel_preview
 argument_list|(
 name|channel_widget
 operator|->
@@ -8780,7 +8780,7 @@ else|else
 block|{
 name|preview_buf
 operator|=
-name|channel_preview
+name|gimp_channel_preview
 argument_list|(
 name|channel_widget
 operator|->
@@ -10502,7 +10502,7 @@ name|NewChannelOptions
 modifier|*
 name|options
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|new_channel
 decl_stmt|;
@@ -10568,7 +10568,7 @@ argument_list|)
 expr_stmt|;
 name|new_channel
 operator|=
-name|channel_new
+name|gimp_channel_new
 argument_list|(
 name|gimage
 argument_list|,
@@ -11298,7 +11298,7 @@ name|EditChannelOptions
 modifier|*
 name|options
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;

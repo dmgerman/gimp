@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b361d40103
+DECL|enum|__anon2bf6b88f0103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
@@ -1423,7 +1423,7 @@ operator|&&
 operator|!
 name|paste_into
 condition|)
-name|channel_clear
+name|gimp_channel_clear
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(

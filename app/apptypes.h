@@ -113,19 +113,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|Channel
-typedef|typedef
-name|GimpChannel
-name|Channel
-typedef|;
-end_typedef
-
-begin_comment
-DECL|typedef|Channel
-comment|/* convenience */
-end_comment
-
-begin_typedef
 DECL|typedef|GimpLayer
 typedef|typedef
 name|struct

@@ -111,7 +111,7 @@ value|1000
 end_define
 
 begin_enum
-DECL|enum|__anon2c400cf00103
+DECL|enum|__anon288156fb0103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -238,7 +238,7 @@ name|num_points
 decl_stmt|;
 comment|/* number of points in the curve     */
 DECL|member|mask
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;
@@ -261,7 +261,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c400cf00208
+DECL|struct|__anon288156fb0208
 block|{
 DECL|member|count
 name|gint

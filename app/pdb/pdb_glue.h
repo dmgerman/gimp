@@ -89,10 +89,10 @@ value|gimp_drawable_get_tattoo(GIMP_DRAWABLE(l))
 end_define
 
 begin_define
-DECL|macro|channel_set_name (c,n)
+DECL|macro|gimp_channel_set_name (c,n)
 define|#
 directive|define
-name|channel_set_name
+name|gimp_channel_set_name
 parameter_list|(
 name|c
 parameter_list|,
@@ -102,10 +102,10 @@ value|gimp_object_set_name(GIMP_OBJECT(c),(n))
 end_define
 
 begin_define
-DECL|macro|channel_get_name (c)
+DECL|macro|gimp_channel_get_name (c)
 define|#
 directive|define
-name|channel_get_name
+name|gimp_channel_get_name
 parameter_list|(
 name|c
 parameter_list|)
@@ -113,10 +113,10 @@ value|gimp_object_get_name(GIMP_OBJECT(c))
 end_define
 
 begin_define
-DECL|macro|channel_set_tattoo (c,t)
+DECL|macro|gimp_channel_set_tattoo (c,t)
 define|#
 directive|define
-name|channel_set_tattoo
+name|gimp_channel_set_tattoo
 parameter_list|(
 name|c
 parameter_list|,
@@ -126,10 +126,10 @@ value|gimp_drawable_set_tattoo(GIMP_DRAWABLE(c),(t))
 end_define
 
 begin_define
-DECL|macro|channel_get_tattoo (c)
+DECL|macro|gimp_channel_get_tattoo (c)
 define|#
 directive|define
-name|channel_get_tattoo
+name|gimp_channel_get_tattoo
 parameter_list|(
 name|c
 parameter_list|)

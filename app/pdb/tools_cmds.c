@@ -6155,7 +6155,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|new
 decl_stmt|,

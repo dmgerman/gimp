@@ -308,7 +308,7 @@ name|active_layer
 decl_stmt|;
 comment|/*  ID of active layer           */
 DECL|member|active_channel
-name|Channel
+name|GimpChannel
 modifier|*
 name|active_channel
 decl_stmt|;
@@ -320,7 +320,7 @@ name|floating_sel
 decl_stmt|;
 comment|/*  ID of fs layer               */
 DECL|member|selection_mask
-name|Channel
+name|GimpChannel
 modifier|*
 name|selection_mask
 decl_stmt|;
@@ -538,7 +538,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b55342a0103
+DECL|enum|__anon29793c310103
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -566,7 +566,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b55342a0203
+DECL|enum|__anon29793c310203
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -1330,7 +1330,7 @@ modifier|*
 name|gimage
 parameter_list|,
 specifier|const
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel_arg
 parameter_list|)
@@ -1351,7 +1351,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
+name|GimpChannel
 modifier|*
 name|gimp_image_get_active_channel
 parameter_list|(
@@ -1380,7 +1380,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
+name|GimpChannel
 modifier|*
 name|gimp_image_get_channel_by_tattoo
 parameter_list|(
@@ -1396,7 +1396,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
+name|GimpChannel
 modifier|*
 name|gimp_image_get_channel_by_name
 parameter_list|(
@@ -1414,7 +1414,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
+name|GimpChannel
 modifier|*
 name|gimp_image_get_mask
 parameter_list|(
@@ -1494,7 +1494,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
+name|GimpChannel
 modifier|*
 name|gimp_image_set_active_channel
 parameter_list|(
@@ -1502,7 +1502,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -1510,7 +1510,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
+name|GimpChannel
 modifier|*
 name|gimp_image_unset_active_channel
 parameter_list|(
@@ -1781,7 +1781,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
+name|GimpChannel
 modifier|*
 name|gimp_image_remove_layer_mask
 parameter_list|(
@@ -1800,7 +1800,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
+name|GimpChannel
 modifier|*
 name|gimp_image_raise_channel
 parameter_list|(
@@ -1808,7 +1808,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel_arg
 parameter_list|)
@@ -1816,7 +1816,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
+name|GimpChannel
 modifier|*
 name|gimp_image_lower_channel
 parameter_list|(
@@ -1824,7 +1824,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel_arg
 parameter_list|)
@@ -1832,7 +1832,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
+name|GimpChannel
 modifier|*
 name|gimp_image_position_channel
 parameter_list|(
@@ -1840,7 +1840,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel_arg
 parameter_list|,
@@ -1851,7 +1851,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
+name|GimpChannel
 modifier|*
 name|gimp_image_add_channel
 parameter_list|(
@@ -1859,7 +1859,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
@@ -1870,7 +1870,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
+name|GimpChannel
 modifier|*
 name|gimp_image_remove_channel
 parameter_list|(
@@ -1878,7 +1878,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)

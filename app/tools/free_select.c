@@ -389,7 +389,7 @@ end_function
 
 begin_function
 specifier|static
-name|Channel
+name|GimpChannel
 modifier|*
 DECL|function|scan_convert (GimpImage * gimage,gint num_pts,ScanConvertPoint * pts,gint width,gint height,gboolean antialias)
 name|scan_convert
@@ -415,7 +415,7 @@ name|gboolean
 name|antialias
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;
@@ -504,7 +504,7 @@ name|gdouble
 name|feather_radius
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;
@@ -557,7 +557,7 @@ if|if
 condition|(
 name|feather
 condition|)
-name|channel_feather
+name|gimp_channel_feather
 argument_list|(
 name|mask
 argument_list|,
@@ -578,7 +578,7 @@ literal|0
 argument_list|)
 expr_stmt|;
 else|else
-name|channel_combine_mask
+name|gimp_channel_combine_mask
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(

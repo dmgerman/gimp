@@ -337,7 +337,7 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 init|=
@@ -490,7 +490,7 @@ literal|100.0
 expr_stmt|;
 name|channel
 operator|=
-name|channel_new
+name|gimp_channel_new
 argument_list|(
 name|gimage
 argument_list|,
@@ -685,11 +685,11 @@ name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|copy
 init|=
@@ -732,7 +732,7 @@ operator|=
 operator|(
 name|copy
 operator|=
-name|channel_copy
+name|gimp_channel_copy
 argument_list|(
 name|channel
 argument_list|)
@@ -870,7 +870,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -1000,11 +1000,11 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel1
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel2
 decl_stmt|;
@@ -1125,7 +1125,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|channel_combine_mask
+name|gimp_channel_combine_mask
 argument_list|(
 name|channel1
 argument_list|,
@@ -1261,7 +1261,7 @@ name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -1318,7 +1318,7 @@ name|pdb_pointer
 operator|=
 name|g_strdup
 argument_list|(
-name|channel_get_name
+name|gimp_channel_get_name
 argument_list|(
 name|channel
 argument_list|)
@@ -1423,7 +1423,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -1488,7 +1488,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|channel_set_name
+name|gimp_channel_set_name
 argument_list|(
 name|channel
 argument_list|,
@@ -1593,7 +1593,7 @@ name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -1754,7 +1754,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -1915,7 +1915,7 @@ name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -2073,7 +2073,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -2231,7 +2231,7 @@ name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -2393,7 +2393,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -2565,7 +2565,7 @@ name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -2736,7 +2736,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -2802,7 +2802,7 @@ name|color
 operator|.
 name|a
 expr_stmt|;
-name|channel_set_color
+name|gimp_channel_set_color
 argument_list|(
 name|channel
 argument_list|,
@@ -2909,7 +2909,7 @@ name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -2964,7 +2964,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|channel_get_tattoo
+name|gimp_channel_get_tattoo
 argument_list|(
 name|channel
 argument_list|)
@@ -3068,7 +3068,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -3128,7 +3128,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|channel_set_tattoo
+name|gimp_channel_set_tattoo
 argument_list|(
 name|channel
 argument_list|,

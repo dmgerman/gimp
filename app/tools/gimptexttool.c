@@ -3466,7 +3466,7 @@ argument_list|(
 name|gimage
 argument_list|)
 condition|)
-name|channel_clear
+name|gimp_channel_clear
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(

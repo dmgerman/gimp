@@ -207,7 +207,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1854230103
+DECL|enum|__anon2a1865ca0103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -233,7 +233,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1854230203
+DECL|enum|__anon2a1865ca0203
 block|{
 DECL|enumerator|DRAW_NOTHING
 name|DRAW_NOTHING
@@ -373,7 +373,7 @@ decl_stmt|;
 comment|/*  items to draw on a draw request         */
 comment|/* XXX might be useful */
 DECL|member|mask
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;
@@ -2019,7 +2019,7 @@ name|iscissors
 operator|->
 name|mask
 operator|&&
-name|channel_value
+name|gimp_channel_value
 argument_list|(
 name|iscissors
 operator|->
@@ -2092,7 +2092,7 @@ operator|)
 operator|->
 name|feather
 condition|)
-name|channel_feather
+name|gimp_channel_feather
 argument_list|(
 name|iscissors
 operator|->
@@ -2135,7 +2135,7 @@ literal|0
 argument_list|)
 expr_stmt|;
 else|else
-name|channel_combine_mask
+name|gimp_channel_combine_mask
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -2468,7 +2468,7 @@ argument_list|(
 name|sc
 argument_list|)
 expr_stmt|;
-name|channel_invalidate_bounds
+name|gimp_channel_invalidate_bounds
 argument_list|(
 name|iscissors
 operator|->
@@ -4336,7 +4336,7 @@ name|iscissors
 operator|->
 name|mask
 operator|&&
-name|channel_value
+name|gimp_channel_value
 argument_list|(
 name|iscissors
 operator|->

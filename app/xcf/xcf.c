@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ffc1c80103
+DECL|enum|__anon2a29f02b0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -359,7 +359,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ffc1c80203
+DECL|enum|__anon2a29f02b0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -508,7 +508,7 @@ name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -565,7 +565,7 @@ name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -702,7 +702,7 @@ name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -748,7 +748,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|Channel
+name|GimpChannel
 modifier|*
 name|xcf_load_channel
 parameter_list|(
@@ -2003,7 +2003,7 @@ name|GimpLayer
 modifier|*
 name|floating_layer
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -2949,7 +2949,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|xcf_save_channel_props (XcfInfo * info,GImage * gimage,Channel * channel)
+DECL|function|xcf_save_channel_props (XcfInfo * info,GImage * gimage,GimpChannel * channel)
 name|xcf_save_channel_props
 parameter_list|(
 name|XcfInfo
@@ -2960,7 +2960,7 @@ name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -6995,7 +6995,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|xcf_save_channel (XcfInfo * info,GImage * gimage,Channel * channel)
+DECL|function|xcf_save_channel (XcfInfo * info,GImage * gimage,GimpChannel * channel)
 name|xcf_save_channel
 parameter_list|(
 name|XcfInfo
@@ -7006,7 +7006,7 @@ name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -8518,7 +8518,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -10476,7 +10476,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_load_channel_props (XcfInfo * info,GImage * gimage,Channel * channel)
+DECL|function|xcf_load_channel_props (XcfInfo * info,GImage * gimage,GimpChannel * channel)
 name|xcf_load_channel_props
 parameter_list|(
 name|XcfInfo
@@ -10487,7 +10487,7 @@ name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -11348,7 +11348,7 @@ end_function
 
 begin_function
 specifier|static
-name|Channel
+name|GimpChannel
 modifier|*
 DECL|function|xcf_load_channel (XcfInfo * info,GImage * gimage)
 name|xcf_load_channel
@@ -11362,7 +11362,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -11468,7 +11468,7 @@ expr_stmt|;
 comment|/* create a new channel */
 name|channel
 operator|=
-name|channel_new
+name|gimp_channel_new
 argument_list|(
 name|gimage
 argument_list|,

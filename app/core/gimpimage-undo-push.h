@@ -584,29 +584,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Not really appropriate here, since undo_history_new is not defined  * in undo.c, but it saves on having a full header file for just one  * function prototype. */
-end_comment
-
-begin_function_decl
-name|GtkWidget
-modifier|*
-name|undo_history_new
-parameter_list|(
-name|GImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/* Argument to undo_event signal emitted by gimages: */
 end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2795b9300103
+DECL|enum|__anon2b26f8cb0103
 block|{
 DECL|enumerator|UNDO_PUSHED
 name|UNDO_PUSHED

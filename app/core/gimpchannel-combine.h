@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__CHANNEL_H__
+name|__GIMP_CHANNEL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__CHANNEL_H__
+DECL|macro|__GIMP_CHANNEL_H__
 define|#
 directive|define
-name|__CHANNEL_H__
+name|__GIMP_CHANNEL_H__
 end_define
 
 begin_include
@@ -33,10 +33,6 @@ directive|define
 name|HALF_WAY
 value|127
 end_define
-
-begin_comment
-comment|/*  structure declarations  */
-end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_CHANNEL
@@ -191,7 +187,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  Special undo type  */
+comment|/*  Special undo types  */
 end_comment
 
 begin_typedef
@@ -203,13 +199,22 @@ name|ChannelUndo
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|MaskUndo
+typedef|typedef
+name|struct
+name|_MaskUndo
+name|MaskUndo
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_ChannelUndo
 struct|struct
 name|_ChannelUndo
 block|{
 DECL|member|channel
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -220,7 +225,7 @@ name|prev_position
 decl_stmt|;
 comment|/*  former position in list     */
 DECL|member|prev_channel
-name|Channel
+name|GimpChannel
 modifier|*
 name|prev_channel
 decl_stmt|;
@@ -228,19 +233,6 @@ comment|/*  previous active channel     */
 block|}
 struct|;
 end_struct
-
-begin_comment
-comment|/*  Special undo type  */
-end_comment
-
-begin_typedef
-DECL|typedef|MaskUndo
-typedef|typedef
-name|struct
-name|_MaskUndo
-name|MaskUndo
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_MaskUndo
@@ -279,9 +271,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
+name|GimpChannel
 modifier|*
-name|channel_new
+name|gimp_channel_new
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -307,12 +299,12 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
+name|GimpChannel
 modifier|*
-name|channel_copy
+name|gimp_channel_copy
 parameter_list|(
 specifier|const
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -321,10 +313,10 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|channel_get_opacity
+name|gimp_channel_get_opacity
 parameter_list|(
 specifier|const
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -333,9 +325,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_set_opacity
+name|gimp_channel_set_opacity
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
@@ -349,10 +341,10 @@ begin_function_decl
 specifier|const
 name|GimpRGB
 modifier|*
-name|channel_get_color
+name|gimp_channel_get_color
 parameter_list|(
 specifier|const
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -361,9 +353,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_set_color
+name|gimp_channel_set_color
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
@@ -377,9 +369,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_scale
+name|gimp_channel_scale
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
@@ -394,9 +386,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_resize
+name|gimp_channel_resize
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
@@ -417,9 +409,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_update
+name|gimp_channel_update
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -432,9 +424,9 @@ end_comment
 
 begin_function_decl
 name|gboolean
-name|channel_toggle_visibility
+name|gimp_channel_toggle_visibility
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -444,9 +436,9 @@ end_function_decl
 begin_function_decl
 name|TempBuf
 modifier|*
-name|channel_preview
+name|gimp_channel_preview
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
@@ -464,9 +456,9 @@ comment|/* selection mask functions  */
 end_comment
 
 begin_function_decl
-name|Channel
+name|GimpChannel
 modifier|*
-name|channel_new_mask
+name|gimp_channel_new_mask
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -483,9 +475,9 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|channel_boundary
+name|gimp_channel_boundary
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -524,9 +516,9 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|channel_bounds
+name|gimp_channel_bounds
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -551,9 +543,9 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|channel_value
+name|gimp_channel_value
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -568,9 +560,9 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|channel_is_empty
+name|gimp_channel_is_empty
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|)
@@ -579,32 +571,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_add_segment
+name|gimp_channel_add_segment
 parameter_list|(
-name|Channel
-modifier|*
-name|mask
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|value
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|channel_sub_segment
-parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -625,9 +594,32 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_combine_rect
+name|gimp_channel_sub_segment
 parameter_list|(
-name|Channel
+name|GimpChannel
+modifier|*
+name|mask
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|value
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_channel_combine_rect
+parameter_list|(
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -651,9 +643,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_combine_ellipse
+name|gimp_channel_combine_ellipse
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -680,13 +672,13 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_combine_mask
+name|gimp_channel_combine_mask
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|add_on
 parameter_list|,
@@ -704,13 +696,13 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_feather
+name|gimp_channel_feather
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|input
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|output
 parameter_list|,
@@ -734,9 +726,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_push_undo
+name|gimp_channel_push_undo
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|)
@@ -745,9 +737,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_clear
+name|gimp_channel_clear
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|)
@@ -756,9 +748,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_invert
+name|gimp_channel_invert
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|)
@@ -767,9 +759,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_sharpen
+name|gimp_channel_sharpen
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|)
@@ -778,9 +770,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_all
+name|gimp_channel_all
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|)
@@ -789,26 +781,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_border
+name|gimp_channel_border
 parameter_list|(
-name|Channel
-modifier|*
-name|mask
-parameter_list|,
-name|gint
-name|radius_x
-parameter_list|,
-name|gint
-name|radius_y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|channel_grow
-parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -823,9 +798,26 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_shrink
+name|gimp_channel_grow
 parameter_list|(
-name|Channel
+name|GimpChannel
+modifier|*
+name|mask
+parameter_list|,
+name|gint
+name|radius_x
+parameter_list|,
+name|gint
+name|radius_y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_channel_shrink
+parameter_list|(
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -843,9 +835,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_translate
+name|gimp_channel_translate
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -860,13 +852,13 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_load
+name|gimp_channel_load
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -875,9 +867,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_layer_alpha
+name|gimp_channel_layer_alpha
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -890,9 +882,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_layer_mask
+name|gimp_channel_layer_mask
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -905,9 +897,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_invalidate_bounds
+name|gimp_channel_invalidate_bounds
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -920,7 +912,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __CHANNEL_H__ */
+comment|/* __GIMP_CHANNEL_H__ */
 end_comment
 
 end_unit

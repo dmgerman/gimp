@@ -5214,7 +5214,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -5552,7 +5552,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -5751,7 +5751,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -9584,7 +9584,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|active_channel
 init|=
@@ -9764,7 +9764,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|active_channel
 decl_stmt|;
@@ -9933,7 +9933,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|selection
 init|=
@@ -12350,7 +12350,7 @@ decl_stmt|;
 name|gint32
 name|tattoo
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 init|=

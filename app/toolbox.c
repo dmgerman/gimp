@@ -3123,7 +3123,7 @@ name|layer
 init|=
 name|NULL
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 init|=
@@ -3166,7 +3166,7 @@ expr_stmt|;
 name|channel
 operator|=
 operator|(
-name|Channel
+name|GimpChannel
 operator|*
 operator|)
 name|gtk_object_get_data

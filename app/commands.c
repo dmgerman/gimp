@@ -315,6 +315,12 @@ directive|include
 file|"undo.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"undo_history.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef

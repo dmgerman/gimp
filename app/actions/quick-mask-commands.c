@@ -857,7 +857,7 @@ expr_stmt|;
 block|}
 name|gmask
 operator|=
-name|channel_new
+name|gimp_channel_new
 argument_list|(
 name|gimg
 argument_list|,
@@ -900,7 +900,7 @@ block|{
 comment|/* if selection */
 name|gmask
 operator|=
-name|channel_copy
+name|gimp_channel_copy
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -917,7 +917,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|channel_set_color
+name|gimp_channel_set_color
 argument_list|(
 name|gmask
 argument_list|,
@@ -1464,7 +1464,7 @@ name|EditQmaskOptions
 modifier|*
 name|options
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -1534,7 +1534,7 @@ name|color
 operator|=
 name|color
 expr_stmt|;
-name|channel_update
+name|gimp_channel_update
 argument_list|(
 name|channel
 argument_list|)

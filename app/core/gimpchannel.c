@@ -199,9 +199,9 @@ begin_function_decl
 specifier|static
 name|TempBuf
 modifier|*
-name|channel_preview_private
+name|gimp_channel_preview_private
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
@@ -367,8 +367,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|channel_validate (TileManager * tm,Tile * tile)
-name|channel_validate
+DECL|function|gimp_channel_validate (TileManager * tm,Tile * tile)
+name|gimp_channel_validate
 parameter_list|(
 name|TileManager
 modifier|*
@@ -403,10 +403,10 @@ block|}
 end_function
 
 begin_function
-name|Channel
+name|GimpChannel
 modifier|*
-DECL|function|channel_new (GimpImage * gimage,gint width,gint height,const gchar * name,const GimpRGB * color)
-name|channel_new
+DECL|function|gimp_channel_new (GimpImage * gimage,gint width,gint height,const gchar * name,const GimpRGB * color)
+name|gimp_channel_new
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -429,7 +429,7 @@ modifier|*
 name|color
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 decl_stmt|;
@@ -555,13 +555,13 @@ block|}
 end_function
 
 begin_function
-name|Channel
+name|GimpChannel
 modifier|*
-DECL|function|channel_copy (const Channel * channel)
-name|channel_copy
+DECL|function|gimp_channel_copy (const GimpChannel * channel)
+name|gimp_channel_copy
 parameter_list|(
 specifier|const
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -570,7 +570,7 @@ name|gchar
 modifier|*
 name|channel_name
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|new_channel
 decl_stmt|;
@@ -718,7 +718,7 @@ expr_stmt|;
 comment|/*  allocate a new channel object  */
 name|new_channel
 operator|=
-name|channel_new
+name|gimp_channel_new
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -879,10 +879,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_set_color (Channel * channel,const GimpRGB * color)
-name|channel_set_color
+DECL|function|gimp_channel_set_color (GimpChannel * channel,const GimpRGB * color)
+name|gimp_channel_set_color
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
@@ -928,11 +928,11 @@ begin_function
 specifier|const
 name|GimpRGB
 modifier|*
-DECL|function|channel_get_color (const Channel * channel)
-name|channel_get_color
+DECL|function|gimp_channel_get_color (const GimpChannel * channel)
+name|gimp_channel_get_color
 parameter_list|(
 specifier|const
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -967,11 +967,11 @@ end_function
 
 begin_function
 name|gint
-DECL|function|channel_get_opacity (const Channel * channel)
-name|channel_get_opacity
+DECL|function|gimp_channel_get_opacity (const GimpChannel * channel)
+name|gimp_channel_get_opacity
 parameter_list|(
 specifier|const
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -1014,10 +1014,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_set_opacity (Channel * channel,gint opacity)
-name|channel_set_opacity
+DECL|function|gimp_channel_set_opacity (GimpChannel * channel,gint opacity)
+name|gimp_channel_set_opacity
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
@@ -1152,10 +1152,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_scale (Channel * channel,gint new_width,gint new_height)
-name|channel_scale
+DECL|function|gimp_channel_scale (GimpChannel * channel,gint new_width,gint new_height)
+name|gimp_channel_scale
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
@@ -1367,10 +1367,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_resize (Channel * channel,gint new_width,gint new_height,gint offx,gint offy)
-name|channel_resize
+DECL|function|gimp_channel_resize (GimpChannel * channel,gint new_width,gint new_height,gint offx,gint offy)
+name|gimp_channel_resize
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
@@ -1808,10 +1808,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_update (Channel * channel)
-name|channel_update
+DECL|function|gimp_channel_update (GimpChannel * channel)
+name|gimp_channel_update
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -1862,10 +1862,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|channel_toggle_visibility (Channel * channel)
-name|channel_toggle_visibility
+DECL|function|gimp_channel_toggle_visibility (GimpChannel * channel)
+name|gimp_channel_toggle_visibility
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -1899,10 +1899,10 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|channel_preview (Channel * channel,gint width,gint height)
-name|channel_preview
+DECL|function|gimp_channel_preview (GimpChannel * channel,gint width,gint height)
+name|gimp_channel_preview
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
@@ -1966,7 +1966,7 @@ name|TempBuf
 modifier|*
 name|tb
 init|=
-name|channel_preview_private
+name|gimp_channel_preview_private
 argument_list|(
 name|channel
 argument_list|,
@@ -1992,7 +1992,7 @@ return|;
 block|}
 comment|/* Second call - should NOT visit the tile cache... */
 return|return
-name|channel_preview_private
+name|gimp_channel_preview_private
 argument_list|(
 name|channel
 argument_list|,
@@ -2008,10 +2008,10 @@ begin_function
 specifier|static
 name|TempBuf
 modifier|*
-DECL|function|channel_preview_private (Channel * channel,gint width,gint height)
-name|channel_preview_private
+DECL|function|gimp_channel_preview_private (GimpChannel * channel,gint width,gint height)
+name|gimp_channel_preview_private
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
@@ -2333,10 +2333,10 @@ comment|/******************************/
 end_comment
 
 begin_function
-name|Channel
+name|GimpChannel
 modifier|*
-DECL|function|channel_new_mask (GimpImage * gimage,gint width,gint height)
-name|channel_new_mask
+DECL|function|gimp_channel_new_mask (GimpImage * gimage,gint width,gint height)
+name|gimp_channel_new_mask
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -2362,14 +2362,14 @@ block|,
 literal|0.5
 block|}
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|new_channel
 decl_stmt|;
 comment|/*  Create the new channel  */
 name|new_channel
 operator|=
-name|channel_new
+name|gimp_channel_new
 argument_list|(
 name|gimage
 argument_list|,
@@ -2396,7 +2396,7 @@ argument_list|)
 operator|->
 name|tiles
 argument_list|,
-name|channel_validate
+name|gimp_channel_validate
 argument_list|)
 expr_stmt|;
 return|return
@@ -2407,10 +2407,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|channel_boundary (Channel * mask,BoundSeg ** segs_in,BoundSeg ** segs_out,gint * num_segs_in,gint * num_segs_out,gint x1,gint y1,gint x2,gint y2)
-name|channel_boundary
+DECL|function|gimp_channel_boundary (GimpChannel * mask,BoundSeg ** segs_in,BoundSeg ** segs_out,gint * num_segs_in,gint * num_segs_out,gint x1,gint y1,gint x2,gint y2)
+name|gimp_channel_boundary
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -2494,7 +2494,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|channel_bounds
+name|gimp_channel_bounds
 argument_list|(
 name|mask
 argument_list|,
@@ -2760,10 +2760,10 @@ end_function
 
 begin_function
 name|gint
-DECL|function|channel_value (Channel * mask,gint x,gint y)
-name|channel_value
+DECL|function|gimp_channel_value (GimpChannel * mask,gint x,gint y)
+name|gimp_channel_value
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -2920,10 +2920,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|channel_bounds (Channel * mask,gint * x1,gint * y1,gint * x2,gint * y2)
-name|channel_bounds
+DECL|function|gimp_channel_bounds (GimpChannel * mask,gint * x1,gint * y1,gint * x2,gint * y2)
+name|gimp_channel_bounds
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -3532,10 +3532,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|channel_is_empty (Channel * mask)
-name|channel_is_empty
+DECL|function|gimp_channel_is_empty (GimpChannel * mask)
+name|gimp_channel_is_empty
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|)
@@ -3788,10 +3788,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_add_segment (Channel * mask,gint x,gint y,gint width,gint value)
-name|channel_add_segment
+DECL|function|gimp_channel_add_segment (GimpChannel * mask,gint x,gint y,gint width,gint value)
+name|gimp_channel_add_segment
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -4014,10 +4014,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_sub_segment (Channel * mask,gint x,gint y,gint width,gint value)
-name|channel_sub_segment
+DECL|function|gimp_channel_sub_segment (GimpChannel * mask,gint x,gint y,gint width,gint value)
+name|gimp_channel_sub_segment
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -4240,10 +4240,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_combine_rect (Channel * mask,ChannelOps op,gint x,gint y,gint w,gint h)
-name|channel_combine_rect
+DECL|function|gimp_channel_combine_rect (GimpChannel * mask,ChannelOps op,gint x,gint y,gint w,gint h)
+name|gimp_channel_combine_rect
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -4651,10 +4651,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_combine_ellipse (Channel * mask,ChannelOps op,gint x,gint y,gint w,gint h,gboolean antialias)
-name|channel_combine_ellipse
+DECL|function|gimp_channel_combine_ellipse (GimpChannel * mask,ChannelOps op,gint x,gint y,gint w,gint h,gboolean antialias)
+name|gimp_channel_combine_ellipse
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -4883,7 +4883,7 @@ case|:
 case|case
 name|CHANNEL_OP_REPLACE
 case|:
-name|channel_add_segment
+name|gimp_channel_add_segment
 argument_list|(
 name|mask
 argument_list|,
@@ -4904,7 +4904,7 @@ break|break;
 case|case
 name|CHANNEL_OP_SUB
 case|:
-name|channel_sub_segment
+name|gimp_channel_sub_segment
 argument_list|(
 name|mask
 argument_list|,
@@ -5114,7 +5114,7 @@ case|:
 case|case
 name|CHANNEL_OP_REPLACE
 case|:
-name|channel_add_segment
+name|gimp_channel_add_segment
 argument_list|(
 name|mask
 argument_list|,
@@ -5133,7 +5133,7 @@ break|break;
 case|case
 name|CHANNEL_OP_SUB
 case|:
-name|channel_sub_segment
+name|gimp_channel_sub_segment
 argument_list|(
 name|mask
 argument_list|,
@@ -5213,7 +5213,7 @@ name|op
 operator|==
 name|CHANNEL_OP_REPLACE
 condition|)
-name|channel_add_segment
+name|gimp_channel_add_segment
 argument_list|(
 name|mask
 argument_list|,
@@ -5235,7 +5235,7 @@ name|op
 operator|==
 name|CHANNEL_OP_SUB
 condition|)
-name|channel_sub_segment
+name|gimp_channel_sub_segment
 argument_list|(
 name|mask
 argument_list|,
@@ -5492,8 +5492,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|channel_combine_sub_region_add (void * unused,PixelRegion * srcPR,PixelRegion * destPR)
-name|channel_combine_sub_region_add
+DECL|function|gimp_channel_combine_sub_region_add (void * unused,PixelRegion * srcPR,PixelRegion * destPR)
+name|gimp_channel_combine_sub_region_add
 parameter_list|(
 name|void
 modifier|*
@@ -5619,8 +5619,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|channel_combine_sub_region_sub (void * unused,PixelRegion * srcPR,PixelRegion * destPR)
-name|channel_combine_sub_region_sub
+DECL|function|gimp_channel_combine_sub_region_sub (void * unused,PixelRegion * srcPR,PixelRegion * destPR)
+name|gimp_channel_combine_sub_region_sub
 parameter_list|(
 name|void
 modifier|*
@@ -5741,8 +5741,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|channel_combine_sub_region_intersect (void * unused,PixelRegion * srcPR,PixelRegion * destPR)
-name|channel_combine_sub_region_intersect
+DECL|function|gimp_channel_combine_sub_region_intersect (void * unused,PixelRegion * srcPR,PixelRegion * destPR)
+name|gimp_channel_combine_sub_region_intersect
 parameter_list|(
 name|void
 modifier|*
@@ -5850,14 +5850,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_combine_mask (Channel * mask,Channel * add_on,ChannelOps op,gint off_x,gint off_y)
-name|channel_combine_mask
+DECL|function|gimp_channel_combine_mask (GimpChannel * mask,GimpChannel * add_on,ChannelOps op,gint off_x,gint off_y)
+name|gimp_channel_combine_mask
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|add_on
 parameter_list|,
@@ -6054,7 +6054,7 @@ argument_list|(
 operator|(
 name|p_func
 operator|)
-name|channel_combine_sub_region_add
+name|gimp_channel_combine_sub_region_add
 argument_list|,
 name|NULL
 argument_list|,
@@ -6076,7 +6076,7 @@ argument_list|(
 operator|(
 name|p_func
 operator|)
-name|channel_combine_sub_region_sub
+name|gimp_channel_combine_sub_region_sub
 argument_list|,
 name|NULL
 argument_list|,
@@ -6098,7 +6098,7 @@ argument_list|(
 operator|(
 name|p_func
 operator|)
-name|channel_combine_sub_region_intersect
+name|gimp_channel_combine_sub_region_intersect
 argument_list|,
 name|NULL
 argument_list|,
@@ -6131,14 +6131,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_feather (Channel * input,Channel * output,gdouble radius_x,gdouble radius_y,ChannelOps op,gint off_x,gint off_y)
-name|channel_feather
+DECL|function|gimp_channel_feather (GimpChannel * input,GimpChannel * output,gdouble radius_x,gdouble radius_y,ChannelOps op,gint off_x,gint off_y)
+name|gimp_channel_feather
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|input
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|output
 parameter_list|,
@@ -6303,7 +6303,7 @@ name|input
 operator|!=
 name|output
 condition|)
-name|channel_combine_mask
+name|gimp_channel_combine_mask
 argument_list|(
 name|output
 argument_list|,
@@ -6327,10 +6327,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_push_undo (Channel * mask)
-name|channel_push_undo
+DECL|function|gimp_channel_push_undo (GimpChannel * mask)
+name|gimp_channel_push_undo
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|)
@@ -6372,7 +6372,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|channel_bounds
+name|gimp_channel_bounds
 argument_list|(
 name|mask
 argument_list|,
@@ -6536,10 +6536,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_clear (Channel * mask)
-name|channel_clear
+DECL|function|gimp_channel_clear (GimpChannel * mask)
+name|gimp_channel_clear
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|)
@@ -6553,7 +6553,7 @@ init|=
 literal|0
 decl_stmt|;
 comment|/*  push the current channel onto the undo stack  */
-name|channel_push_undo
+name|gimp_channel_push_undo
 argument_list|(
 name|mask
 argument_list|)
@@ -6721,10 +6721,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_invert (Channel * mask)
-name|channel_invert
+DECL|function|gimp_channel_invert (GimpChannel * mask)
+name|gimp_channel_invert
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|)
@@ -6737,7 +6737,7 @@ modifier|*
 name|lut
 decl_stmt|;
 comment|/*  push the current channel onto the undo stack  */
-name|channel_push_undo
+name|gimp_channel_push_undo
 argument_list|(
 name|mask
 argument_list|)
@@ -6813,10 +6813,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_sharpen (Channel * mask)
-name|channel_sharpen
+DECL|function|gimp_channel_sharpen (GimpChannel * mask)
+name|gimp_channel_sharpen
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|)
@@ -6829,7 +6829,7 @@ modifier|*
 name|lut
 decl_stmt|;
 comment|/*  push the current channel onto the undo stack  */
-name|channel_push_undo
+name|gimp_channel_push_undo
 argument_list|(
 name|mask
 argument_list|)
@@ -6901,10 +6901,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_all (Channel * mask)
-name|channel_all
+DECL|function|gimp_channel_all (GimpChannel * mask)
+name|gimp_channel_all
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|)
@@ -6918,7 +6918,7 @@ init|=
 literal|255
 decl_stmt|;
 comment|/*  push the current channel onto the undo stack  */
-name|channel_push_undo
+name|gimp_channel_push_undo
 argument_list|(
 name|mask
 argument_list|)
@@ -7018,10 +7018,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_border (Channel * mask,gint radius_x,gint radius_y)
-name|channel_border
+DECL|function|gimp_channel_border (GimpChannel * mask,gint radius_x,gint radius_y)
+name|gimp_channel_border
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -7058,7 +7058,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|channel_bounds
+name|gimp_channel_bounds
 argument_list|(
 name|mask
 argument_list|,
@@ -7078,7 +7078,7 @@ condition|)
 return|return;
 if|if
 condition|(
-name|channel_is_empty
+name|gimp_channel_is_empty
 argument_list|(
 name|mask
 argument_list|)
@@ -7173,7 +7173,7 @@ operator|+=
 name|radius_y
 expr_stmt|;
 comment|/*  push the current channel onto the undo stack  */
-name|channel_push_undo
+name|gimp_channel_push_undo
 argument_list|(
 name|mask
 argument_list|)
@@ -7230,10 +7230,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_grow (Channel * mask,gint radius_x,gint radius_y)
-name|channel_grow
+DECL|function|gimp_channel_grow (GimpChannel * mask,gint radius_x,gint radius_y)
+name|gimp_channel_grow
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -7278,7 +7278,7 @@ operator|<=
 literal|0
 condition|)
 block|{
-name|channel_shrink
+name|gimp_channel_shrink
 argument_list|(
 name|mask
 argument_list|,
@@ -7307,7 +7307,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|channel_bounds
+name|gimp_channel_bounds
 argument_list|(
 name|mask
 argument_list|,
@@ -7327,7 +7327,7 @@ condition|)
 return|return;
 if|if
 condition|(
-name|channel_is_empty
+name|gimp_channel_is_empty
 argument_list|(
 name|mask
 argument_list|)
@@ -7430,7 +7430,7 @@ operator|->
 name|height
 expr_stmt|;
 comment|/*  push the current channel onto the undo stack  */
-name|channel_push_undo
+name|gimp_channel_push_undo
 argument_list|(
 name|mask
 argument_list|)
@@ -7488,10 +7488,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_shrink (Channel * mask,gint radius_x,gint radius_y,gboolean edge_lock)
-name|channel_shrink
+DECL|function|gimp_channel_shrink (GimpChannel * mask,gint radius_x,gint radius_y,gboolean edge_lock)
+name|gimp_channel_shrink
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -7539,7 +7539,7 @@ operator|<=
 literal|0
 condition|)
 block|{
-name|channel_grow
+name|gimp_channel_grow
 argument_list|(
 name|mask
 argument_list|,
@@ -7566,7 +7566,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|channel_bounds
+name|gimp_channel_bounds
 argument_list|(
 name|mask
 argument_list|,
@@ -7586,7 +7586,7 @@ condition|)
 return|return;
 if|if
 condition|(
-name|channel_is_empty
+name|gimp_channel_is_empty
 argument_list|(
 name|mask
 argument_list|)
@@ -7639,7 +7639,7 @@ name|y2
 operator|++
 expr_stmt|;
 comment|/*  push the current channel onto the undo stack  */
-name|channel_push_undo
+name|gimp_channel_push_undo
 argument_list|(
 name|mask
 argument_list|)
@@ -7698,10 +7698,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_translate (Channel * mask,gint off_x,gint off_y)
-name|channel_translate
+DECL|function|gimp_channel_translate (GimpChannel * mask,gint off_x,gint off_y)
+name|gimp_channel_translate
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -7717,7 +7717,7 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|Channel
+name|GimpChannel
 modifier|*
 name|tmp_mask
 decl_stmt|;
@@ -7745,12 +7745,12 @@ operator|=
 name|NULL
 expr_stmt|;
 comment|/*  push the current channel onto the undo stack  */
-name|channel_push_undo
+name|gimp_channel_push_undo
 argument_list|(
 name|mask
 argument_list|)
 expr_stmt|;
-name|channel_bounds
+name|gimp_channel_bounds
 argument_list|(
 name|mask
 argument_list|,
@@ -7874,7 +7874,7 @@ block|{
 comment|/*  copy the portion of the mask we will keep to a        *  temporary buffer        */
 name|tmp_mask
 operator|=
-name|channel_new_mask
+name|gimp_channel_new_mask
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -8153,14 +8153,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_load (Channel * mask,Channel * channel)
-name|channel_load
+DECL|function|gimp_channel_load (GimpChannel * mask,GimpChannel * channel)
+name|gimp_channel_load
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)
@@ -8171,7 +8171,7 @@ decl_stmt|,
 name|destPR
 decl_stmt|;
 comment|/*  push the current mask onto the undo stack  */
-name|channel_push_undo
+name|gimp_channel_push_undo
 argument_list|(
 name|mask
 argument_list|)
@@ -8263,10 +8263,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_layer_alpha (Channel * mask,GimpLayer * layer)
-name|channel_layer_alpha
+DECL|function|gimp_channel_layer_alpha (GimpChannel * mask,GimpLayer * layer)
+name|gimp_channel_layer_alpha
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -8295,7 +8295,7 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 comment|/*  push the current mask onto the undo stack  */
-name|channel_push_undo
+name|gimp_channel_push_undo
 argument_list|(
 name|mask
 argument_list|)
@@ -8543,10 +8543,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_layer_mask (Channel * mask,GimpLayer * layer)
-name|channel_layer_mask
+DECL|function|gimp_channel_layer_mask (GimpChannel * mask,GimpLayer * layer)
+name|gimp_channel_layer_mask
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
@@ -8575,7 +8575,7 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 comment|/*  push the current mask onto the undo stack  */
-name|channel_push_undo
+name|gimp_channel_push_undo
 argument_list|(
 name|mask
 argument_list|)
@@ -8823,10 +8823,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_invalidate_bounds (Channel * channel)
-name|channel_invalidate_bounds
+DECL|function|gimp_channel_invalidate_bounds (GimpChannel * channel)
+name|gimp_channel_invalidate_bounds
 parameter_list|(
-name|Channel
+name|GimpChannel
 modifier|*
 name|channel
 parameter_list|)

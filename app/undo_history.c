@@ -124,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a885ff0108
+DECL|struct|__anon293e5b890108
 block|{
 DECL|member|gimage
 name|GImage
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a885ff0208
+DECL|struct|__anon293e5b890208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -285,7 +285,7 @@ modifier|*
 name|pheight
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;

@@ -400,7 +400,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28add16f0108
+DECL|struct|__anon2b76b90b0108
 block|{
 DECL|member|offset
 name|gdouble
@@ -452,7 +452,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28add16f0208
+DECL|struct|__anon2b76b90b0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -5883,7 +5883,7 @@ name|gdouble
 name|dist
 parameter_list|)
 block|{
-name|Channel
+name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;
