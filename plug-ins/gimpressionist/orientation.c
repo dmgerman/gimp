@@ -120,8 +120,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|orientchange (GtkWidget * wg,void * d,int num)
 name|void
+DECL|function|orientchange (GtkWidget * wg,void * d,int num)
 name|orientchange
 parameter_list|(
 name|GtkWidget
@@ -171,8 +171,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_orientationpage (GtkNotebook * notebook)
 name|void
+DECL|function|create_orientationpage (GtkNotebook * notebook)
 name|create_orientationpage
 parameter_list|(
 name|GtkNotebook
@@ -445,7 +445,7 @@ argument_list|,
 operator|&
 name|pcvals
 operator|.
-name|sizefirst
+name|orientfirst
 argument_list|)
 expr_stmt|;
 name|orientlastadjust
@@ -513,7 +513,7 @@ argument_list|,
 operator|&
 name|pcvals
 operator|.
-name|sizelast
+name|orientlast
 argument_list|)
 expr_stmt|;
 name|box2
