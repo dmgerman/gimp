@@ -210,20 +210,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|gimp_set_member_modified
-parameter_list|(
-name|GimpSet
-modifier|*
-name|set
-parameter_list|,
-name|gpointer
-name|ob
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
