@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b765910103
+DECL|enum|__anon2900b37f0103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -70,7 +70,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b765910208
+DECL|struct|__anon2900b37f0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -1743,6 +1743,8 @@ operator|=
 name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5d47810108
+DECL|struct|__anon29b5efa80108
 block|{
 DECL|member|radius
 name|gdouble
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5d47810208
+DECL|struct|__anon29b5efa80208
 block|{
 DECL|member|run
 name|gboolean
@@ -3016,7 +3016,7 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_drawable_preview_new_with_toggle
+name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,

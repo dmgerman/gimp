@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2766bc2a0108
+DECL|struct|__anon2c7ef0b60108
 block|{
 DECL|member|radius
 name|gdouble
@@ -3461,6 +3461,8 @@ operator|=
 name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

@@ -83,7 +83,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ad4dbf0108
+DECL|struct|__anon2bf9d6f00108
 block|{
 DECL|member|glow_radius
 name|gdouble
@@ -3717,6 +3717,8 @@ operator|=
 name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

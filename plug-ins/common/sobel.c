@@ -56,7 +56,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9ccb270108
+DECL|struct|__anon28d2408e0108
 block|{
 DECL|member|horizontal
 name|gboolean
@@ -859,6 +859,8 @@ operator|=
 name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b660c0b0108
+DECL|struct|__anon287178e80108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -668,7 +668,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b660c0b0208
+DECL|struct|__anon287178e80208
 typedef|typedef
 struct|struct
 block|{
@@ -1440,6 +1440,8 @@ operator|=
 name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
