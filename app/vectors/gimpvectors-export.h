@@ -57,11 +57,6 @@ specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
-parameter_list|,
-name|GError
-modifier|*
-modifier|*
-name|error
 parameter_list|)
 function_decl|;
 end_function_decl
