@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28aca7d10103
+DECL|enum|__anon2b4bfd780103
 block|{
 DECL|enumerator|SET_CONTAINER
 name|SET_CONTAINER
@@ -1571,15 +1571,6 @@ literal|256
 comment|/* FIXME: 64 */
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|view
-operator|->
-name|preview_size
-operator|!=
-name|preview_size
-condition|)
-block|{
 name|view
 operator|->
 name|preview_size
@@ -1599,7 +1590,6 @@ name|SET_PREVIEW_SIZE
 index|]
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 

@@ -172,7 +172,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimage_resize_handler
+name|gimage_size_changed_handler
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -304,11 +304,11 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-literal|"resize"
+literal|"size_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gimage_resize_handler
+name|gimage_size_changed_handler
 argument_list|)
 argument_list|,
 name|NULL
@@ -591,19 +591,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimage_resize_handler (GimpImage * gimage)
-name|gimage_resize_handler
+DECL|function|gimage_size_changed_handler (GimpImage * gimage)
+name|gimage_size_changed_handler
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|undo_push_group_end
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 comment|/*  shrink wrap and update all views  */
 name|gimp_image_invalidate_layer_previews
 argument_list|(

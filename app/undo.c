@@ -239,7 +239,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0696f70103
+DECL|enum|__anon27943b4d0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -1077,10 +1077,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|shrink_wrap
+DECL|variable|size_changed
 specifier|static
 name|gboolean
-name|shrink_wrap
+name|size_changed
 init|=
 name|FALSE
 decl_stmt|;
@@ -2201,23 +2201,18 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
-comment|/*  If the shrink_wrap flag was set  */
+comment|/*  If the size_changed flag was set  */
 if|if
 condition|(
-name|shrink_wrap
+name|size_changed
 condition|)
 block|{
-name|gdisplays_resize_cursor_label
+name|gimp_image_size_changed
 argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gdisplays_shrink_wrap
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-name|shrink_wrap
+name|size_changed
 operator|=
 name|FALSE
 expr_stmt|;
@@ -9339,34 +9334,6 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_image_invalidate_layer_previews
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-name|gimp_image_invalidate_channel_previews
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gdisplays_update_full
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-name|gdisplays_update_title
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 name|gimp_image_colormap_changed
 argument_list|(
 name|gimage
@@ -9416,7 +9383,7 @@ index|[
 literal|1
 index|]
 condition|)
-name|shrink_wrap
+name|size_changed
 operator|=
 name|TRUE
 expr_stmt|;
@@ -10240,8 +10207,8 @@ operator|=
 name|tmpunit
 expr_stmt|;
 block|}
-comment|/* really just want to recalc size and repaint */
-name|shrink_wrap
+comment|/* FIXME: really just want to recalc size and repaint */
+name|size_changed
 operator|=
 name|TRUE
 expr_stmt|;
