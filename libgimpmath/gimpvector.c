@@ -172,32 +172,20 @@ end_comment
 
 begin_function
 name|gdouble
-DECL|function|gimp_vector2_inner_product (GimpVector2 * vector1,GimpVector2 * vector2)
+DECL|function|gimp_vector2_inner_product (const GimpVector2 * vector1,const GimpVector2 * vector2)
 name|gimp_vector2_inner_product
 parameter_list|(
+specifier|const
 name|GimpVector2
 modifier|*
 name|vector1
 parameter_list|,
+specifier|const
 name|GimpVector2
 modifier|*
 name|vector2
 parameter_list|)
 block|{
-name|g_assert
-argument_list|(
-name|vector1
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_assert
-argument_list|(
-name|vector2
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 return|return
 operator|(
 name|vector1
@@ -256,13 +244,15 @@ end_function
 
 begin_function
 name|GimpVector2
-DECL|function|gimp_vector2_cross_product (GimpVector2 * vector1,GimpVector2 * vector2)
+DECL|function|gimp_vector2_cross_product (const GimpVector2 * vector1,const GimpVector2 * vector2)
 name|gimp_vector2_cross_product
 parameter_list|(
+specifier|const
 name|GimpVector2
 modifier|*
 name|vector1
 parameter_list|,
+specifier|const
 name|GimpVector2
 modifier|*
 name|vector2
@@ -271,20 +261,6 @@ block|{
 name|GimpVector2
 name|normal
 decl_stmt|;
-name|g_assert
-argument_list|(
-name|vector1
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_assert
-argument_list|(
-name|vector2
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|normal
 operator|.
 name|x
@@ -394,21 +370,15 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_vector2_length (GimpVector2 * vector)
+DECL|function|gimp_vector2_length (const GimpVector2 * vector)
 name|gimp_vector2_length
 parameter_list|(
+specifier|const
 name|GimpVector2
 modifier|*
 name|vector
 parameter_list|)
 block|{
-name|g_assert
-argument_list|(
-name|vector
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 return|return
 operator|(
 name|sqrt
@@ -481,13 +451,6 @@ block|{
 name|gdouble
 name|len
 decl_stmt|;
-name|g_assert
-argument_list|(
-name|vector
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|len
 operator|=
 name|gimp_vector2_length
@@ -613,13 +576,6 @@ name|gdouble
 name|factor
 parameter_list|)
 block|{
-name|g_assert
-argument_list|(
-name|vector
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|vector
 operator|->
 name|x
@@ -678,43 +634,24 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_vector2_sub (GimpVector2 * result,GimpVector2 * vector1,GimpVector2 * vector2)
+DECL|function|gimp_vector2_sub (GimpVector2 * result,const GimpVector2 * vector1,const GimpVector2 * vector2)
 name|gimp_vector2_sub
 parameter_list|(
 name|GimpVector2
 modifier|*
 name|result
 parameter_list|,
+specifier|const
 name|GimpVector2
 modifier|*
 name|vector1
 parameter_list|,
+specifier|const
 name|GimpVector2
 modifier|*
 name|vector2
 parameter_list|)
 block|{
-name|g_assert
-argument_list|(
-name|vector1
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_assert
-argument_list|(
-name|vector2
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_assert
-argument_list|(
-name|result
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|result
 operator|->
 name|x
@@ -803,13 +740,6 @@ name|gdouble
 name|y
 parameter_list|)
 block|{
-name|g_assert
-argument_list|(
-name|vector
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|vector
 operator|->
 name|x
@@ -860,43 +790,24 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_vector2_add (GimpVector2 * result,GimpVector2 * vector1,GimpVector2 * vector2)
+DECL|function|gimp_vector2_add (GimpVector2 * result,const GimpVector2 * vector1,const GimpVector2 * vector2)
 name|gimp_vector2_add
 parameter_list|(
 name|GimpVector2
 modifier|*
 name|result
 parameter_list|,
+specifier|const
 name|GimpVector2
 modifier|*
 name|vector1
 parameter_list|,
+specifier|const
 name|GimpVector2
 modifier|*
 name|vector2
 parameter_list|)
 block|{
-name|g_assert
-argument_list|(
-name|vector1
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_assert
-argument_list|(
-name|vector2
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_assert
-argument_list|(
-name|result
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|result
 operator|->
 name|x
@@ -979,13 +890,6 @@ modifier|*
 name|vector
 parameter_list|)
 block|{
-name|g_assert
-argument_list|(
-name|vector
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|vector
 operator|->
 name|x
@@ -1059,13 +963,6 @@ block|{
 name|GimpVector2
 name|result
 decl_stmt|;
-name|g_assert
-argument_list|(
-name|vector
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|result
 operator|.
 name|x
@@ -1197,32 +1094,20 @@ end_comment
 
 begin_function
 name|gdouble
-DECL|function|gimp_vector3_inner_product (GimpVector3 * vector1,GimpVector3 * vector2)
+DECL|function|gimp_vector3_inner_product (const GimpVector3 * vector1,const GimpVector3 * vector2)
 name|gimp_vector3_inner_product
 parameter_list|(
+specifier|const
 name|GimpVector3
 modifier|*
 name|vector1
 parameter_list|,
+specifier|const
 name|GimpVector3
 modifier|*
 name|vector2
 parameter_list|)
 block|{
-name|g_assert
-argument_list|(
-name|vector1
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_assert
-argument_list|(
-name|vector2
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 return|return
 operator|(
 name|vector1
@@ -1297,13 +1182,15 @@ end_function
 
 begin_function
 name|GimpVector3
-DECL|function|gimp_vector3_cross_product (GimpVector3 * vector1,GimpVector3 * vector2)
+DECL|function|gimp_vector3_cross_product (const GimpVector3 * vector1,const GimpVector3 * vector2)
 name|gimp_vector3_cross_product
 parameter_list|(
+specifier|const
 name|GimpVector3
 modifier|*
 name|vector1
 parameter_list|,
+specifier|const
 name|GimpVector3
 modifier|*
 name|vector2
@@ -1312,20 +1199,6 @@ block|{
 name|GimpVector3
 name|normal
 decl_stmt|;
-name|g_assert
-argument_list|(
-name|vector1
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_assert
-argument_list|(
-name|vector2
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|normal
 operator|.
 name|x
@@ -1475,21 +1348,15 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_vector3_length (GimpVector3 * vector)
+DECL|function|gimp_vector3_length (const GimpVector3 * vector)
 name|gimp_vector3_length
 parameter_list|(
+specifier|const
 name|GimpVector3
 modifier|*
 name|vector
 parameter_list|)
 block|{
-name|g_assert
-argument_list|(
-name|vector
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 return|return
 operator|(
 name|sqrt
@@ -1578,13 +1445,6 @@ block|{
 name|gdouble
 name|len
 decl_stmt|;
-name|g_assert
-argument_list|(
-name|vector
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|len
 operator|=
 name|gimp_vector3_length
@@ -1726,13 +1586,6 @@ name|gdouble
 name|factor
 parameter_list|)
 block|{
-name|g_assert
-argument_list|(
-name|vector
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|vector
 operator|->
 name|x
@@ -1807,43 +1660,24 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_vector3_sub (GimpVector3 * result,GimpVector3 * vector1,GimpVector3 * vector2)
+DECL|function|gimp_vector3_sub (GimpVector3 * result,const GimpVector3 * vector1,const GimpVector3 * vector2)
 name|gimp_vector3_sub
 parameter_list|(
 name|GimpVector3
 modifier|*
 name|result
 parameter_list|,
+specifier|const
 name|GimpVector3
 modifier|*
 name|vector1
 parameter_list|,
+specifier|const
 name|GimpVector3
 modifier|*
 name|vector2
 parameter_list|)
 block|{
-name|g_assert
-argument_list|(
-name|vector1
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_assert
-argument_list|(
-name|vector2
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_assert
-argument_list|(
-name|result
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|result
 operator|->
 name|x
@@ -1959,13 +1793,6 @@ name|gdouble
 name|z
 parameter_list|)
 block|{
-name|g_assert
-argument_list|(
-name|vector
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|vector
 operator|->
 name|x
@@ -2031,43 +1858,24 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_vector3_add (GimpVector3 * result,GimpVector3 * vector1,GimpVector3 * vector2)
+DECL|function|gimp_vector3_add (GimpVector3 * result,const GimpVector3 * vector1,const GimpVector3 * vector2)
 name|gimp_vector3_add
 parameter_list|(
 name|GimpVector3
 modifier|*
 name|result
 parameter_list|,
+specifier|const
 name|GimpVector3
 modifier|*
 name|vector1
 parameter_list|,
+specifier|const
 name|GimpVector3
 modifier|*
 name|vector2
 parameter_list|)
 block|{
-name|g_assert
-argument_list|(
-name|vector1
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_assert
-argument_list|(
-name|vector2
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_assert
-argument_list|(
-name|result
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|result
 operator|->
 name|x
@@ -2174,13 +1982,6 @@ modifier|*
 name|vector
 parameter_list|)
 block|{
-name|g_assert
-argument_list|(
-name|vector
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|vector
 operator|->
 name|x
@@ -2280,13 +2081,6 @@ name|s
 decl_stmt|,
 name|t
 decl_stmt|;
-name|g_assert
-argument_list|(
-name|vector
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 comment|/* First we rotate it around the Z axis (XY plane).. */
 comment|/* ================================================= */
 name|s
@@ -2627,7 +2421,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_vector_2d_to_3d (gint sx,gint sy,gint w,gint h,gint x,gint y,GimpVector3 * vp,GimpVector3 * p)
+DECL|function|gimp_vector_2d_to_3d (gint sx,gint sy,gint w,gint h,gint x,gint y,const GimpVector3 * vp,GimpVector3 * p)
 name|gimp_vector_2d_to_3d
 parameter_list|(
 name|gint
@@ -2648,6 +2442,7 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
+specifier|const
 name|GimpVector3
 modifier|*
 name|vp
@@ -2662,20 +2457,6 @@ name|t
 init|=
 literal|0.0
 decl_stmt|;
-name|g_assert
-argument_list|(
-name|vp
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_assert
-argument_list|(
-name|p
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|vp
@@ -3019,7 +2800,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_vector_3d_to_2d (gint sx,gint sy,gint w,gint h,gdouble * x,gdouble * y,GimpVector3 * vp,GimpVector3 * p)
+DECL|function|gimp_vector_3d_to_2d (gint sx,gint sy,gint w,gint h,gdouble * x,gdouble * y,const GimpVector3 * vp,const GimpVector3 * p)
 name|gimp_vector_3d_to_2d
 parameter_list|(
 name|gint
@@ -3042,10 +2823,12 @@ name|gdouble
 modifier|*
 name|y
 parameter_list|,
+specifier|const
 name|GimpVector3
 modifier|*
 name|vp
 parameter_list|,
+specifier|const
 name|GimpVector3
 modifier|*
 name|p
@@ -3057,20 +2840,6 @@ decl_stmt|;
 name|GimpVector3
 name|dir
 decl_stmt|;
-name|g_assert
-argument_list|(
-name|vp
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_assert
-argument_list|(
-name|p
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|gimp_vector3_sub
 argument_list|(
 operator|&

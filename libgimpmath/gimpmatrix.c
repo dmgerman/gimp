@@ -388,6 +388,7 @@ name|matrix
 parameter_list|)
 block|{
 specifier|static
+specifier|const
 name|GimpMatrix3
 name|identity
 init|=
