@@ -152,156 +152,90 @@ comment|/* standard params */
 block|{
 name|PARAM_INT32
 block|,
-name|_
-argument_list|(
 literal|"run_mode"
-argument_list|)
 block|,
-name|_
-argument_list|(
 literal|"Interactive, non-interactive"
-argument_list|)
 block|}
 block|,
 block|{
 name|PARAM_IMAGE
 block|,
-name|_
-argument_list|(
 literal|"image"
-argument_list|)
 block|,
-name|_
-argument_list|(
 literal|"Input image"
-argument_list|)
 block|}
 block|,
 block|{
 name|PARAM_DRAWABLE
 block|,
-name|_
-argument_list|(
 literal|"drawable"
-argument_list|)
 block|,
-name|_
-argument_list|(
 literal|"Input drawable"
-argument_list|)
 block|}
 block|,
 comment|/* gdyntext params */
 block|{
 name|PARAM_STRING
 block|,
-name|_
-argument_list|(
 literal|"text"
-argument_list|)
 block|,
-name|_
-argument_list|(
 literal|"Text to render"
-argument_list|)
 block|}
 block|,
 block|{
 name|PARAM_INT32
 block|,
-name|_
-argument_list|(
 literal|"antialias"
-argument_list|)
 block|,
-name|_
-argument_list|(
 literal|"Generate antialiased text"
-argument_list|)
 block|}
 block|,
 block|{
 name|PARAM_INT32
 block|,
-name|_
-argument_list|(
 literal|"alignment"
-argument_list|)
 block|,
-name|_
-argument_list|(
 literal|"Text alignment: { LEFT = 0, CENTER = 1, RIGHT = 2 }"
-argument_list|)
 block|}
 block|,
 block|{
 name|PARAM_INT32
 block|,
-name|_
-argument_list|(
 literal|"rotation"
-argument_list|)
 block|,
-name|_
-argument_list|(
 literal|"Text rotation (degrees)"
-argument_list|)
 block|}
 block|,
 block|{
 name|PARAM_INT32
 block|,
-name|_
-argument_list|(
 literal|"line_spacing"
-argument_list|)
 block|,
-name|_
-argument_list|(
 literal|"Line spacing"
-argument_list|)
 block|}
 block|,
 block|{
 name|PARAM_COLOR
 block|,
-name|_
-argument_list|(
 literal|"color"
-argument_list|)
 block|,
-name|_
-argument_list|(
 literal|"Text color"
-argument_list|)
 block|}
 block|,
 block|{
 name|PARAM_INT32
 block|,
-name|_
-argument_list|(
 literal|"layer_alignment"
-argument_list|)
 block|,
-name|_
-argument_list|(
 literal|"Layer alignment { NONE = 0, BOTTOM_LEFT = 1, BOTTOM_CENTER = 2, BOTTOM_RIGHT = 3, MIDDLE_LEFT = 4, CENTER = 5, MIDDLE_RIGHT = 6, TOP_LEFT = 7, TOP_CENTER = 8, TOP_RIGHT = 9 }"
-argument_list|)
 block|}
 block|,
 block|{
 name|PARAM_STRING
 block|,
-name|_
-argument_list|(
 literal|"fontname"
-argument_list|)
 block|,
-name|_
-argument_list|(
 literal|"The fontname (conforming to the X Logical Font Description Conventions)"
-argument_list|)
 block|}
 block|, 		}
 decl_stmt|;
@@ -316,10 +250,7 @@ name|PARAM_LAYER
 block|,
 literal|"layer"
 block|,
-name|_
-argument_list|(
 literal|"The text layer"
-argument_list|)
 block|}
 block|, 		}
 decl_stmt|;
@@ -361,24 +292,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_dynamic_text"
 argument_list|,
-name|_
-argument_list|(
 literal|"GIMP Dynamic Text"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|""
-argument_list|)
 argument_list|,
 literal|"Marco Lamberto<lm@geocities.com>"
 argument_list|,
 literal|"Marco Lamberto"
 argument_list|,
-name|_
-argument_list|(
 literal|"Jan 1999"
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -1687,7 +1609,10 @@ name|show_progress
 condition|)
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"GIMP Dynamic Text"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* undo start */

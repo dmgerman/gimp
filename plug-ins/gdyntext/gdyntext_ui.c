@@ -184,7 +184,7 @@ file|"graphics/layer_align_9.xpm"
 end_include
 
 begin_typedef
-DECL|struct|__anon2b15235e0108
+DECL|struct|__anon29c7bb930108
 typedef|typedef
 struct|struct
 block|{
@@ -825,9 +825,7 @@ name|message_window_new
 argument_list|(
 name|_
 argument_list|(
-literal|"GDynText "
-name|GDYNTEXT_VERSION
-literal|": Messages Window"
+literal|"GDynText: Messages Window"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -976,9 +974,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"GDynText "
-name|GDYNTEXT_VERSION
-literal|": About ..."
+literal|"GDynText: About ..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1179,8 +1175,6 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|_
-argument_list|(
 literal|"GIMP Dynamic Text "
 name|GDYNTEXT_VERSION
 literal|"\n"
@@ -1188,8 +1182,6 @@ literal|"Copyright (C) 1998,1999,2000 Marco Lamberto\n"
 literal|"E-mail: lm@geocities.com\n"
 literal|"Web page: "
 name|GDYNTEXT_WEB_PAGE
-literal|""
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1271,7 +1263,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Ok"
+literal|"OK"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1358,9 +1350,7 @@ name|gtk_color_selection_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"GDynText "
-name|GDYNTEXT_VERSION
-literal|": Select Color"
+literal|"GDynText: Select Color"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1639,6 +1629,10 @@ name|i
 decl_stmt|;
 name|gchar
 modifier|*
+name|title
+decl_stmt|;
+name|gchar
+modifier|*
 name|lalign_menu
 index|[]
 init|=
@@ -1649,7 +1643,7 @@ operator|*
 operator|)
 name|layer_align_0_xpm
 block|,
-name|_
+name|N_
 argument_list|(
 literal|"none"
 argument_list|)
@@ -1660,7 +1654,7 @@ operator|*
 operator|)
 name|layer_align_1_xpm
 block|,
-name|_
+name|N_
 argument_list|(
 literal|"bottom-left"
 argument_list|)
@@ -1671,7 +1665,7 @@ operator|*
 operator|)
 name|layer_align_2_xpm
 block|,
-name|_
+name|N_
 argument_list|(
 literal|"bottom-center"
 argument_list|)
@@ -1682,7 +1676,7 @@ operator|*
 operator|)
 name|layer_align_3_xpm
 block|,
-name|_
+name|N_
 argument_list|(
 literal|"bottom-right"
 argument_list|)
@@ -1693,7 +1687,7 @@ operator|*
 operator|)
 name|layer_align_4_xpm
 block|,
-name|_
+name|N_
 argument_list|(
 literal|"middle-left"
 argument_list|)
@@ -1704,7 +1698,7 @@ operator|*
 operator|)
 name|layer_align_5_xpm
 block|,
-name|_
+name|N_
 argument_list|(
 literal|"center"
 argument_list|)
@@ -1715,7 +1709,7 @@ operator|*
 operator|)
 name|layer_align_6_xpm
 block|,
-name|_
+name|N_
 argument_list|(
 literal|"middle-right"
 argument_list|)
@@ -1726,7 +1720,7 @@ operator|*
 operator|)
 name|layer_align_7_xpm
 block|,
-name|_
+name|N_
 argument_list|(
 literal|"top-left"
 argument_list|)
@@ -1737,7 +1731,7 @@ operator|*
 operator|)
 name|layer_align_8_xpm
 block|,
-name|_
+name|N_
 argument_list|(
 literal|"top-center"
 argument_list|)
@@ -1748,7 +1742,7 @@ operator|*
 operator|)
 name|layer_align_9_xpm
 block|,
-name|_
+name|N_
 argument_list|(
 literal|"top-right"
 argument_list|)
@@ -1756,7 +1750,7 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|, 	}
+block|,   }
 decl_stmt|;
 operator|*
 name|main_window
@@ -1796,6 +1790,22 @@ argument_list|(
 name|GTK_WINDOW_TOPLEVEL
 argument_list|)
 expr_stmt|;
+name|title
+operator|=
+name|g_strconcat
+argument_list|(
+name|_
+argument_list|(
+literal|"GDynText"
+argument_list|)
+argument_list|,
+literal|" "
+argument_list|,
+name|GDYNTEXT_VERSION
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gtk_window_set_title
 argument_list|(
 name|GTK_WINDOW
@@ -1805,8 +1815,12 @@ operator|->
 name|window
 argument_list|)
 argument_list|,
-literal|"GDynText "
-name|GDYNTEXT_VERSION
+name|title
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|title
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_policy
@@ -3214,12 +3228,15 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|gettext
+argument_list|(
 name|lalign_menu
 index|[
 name|i
 operator|+
 literal|1
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -4299,7 +4316,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Ok"
+literal|"OK"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6169,9 +6186,7 @@ name|charmap_window_new
 argument_list|(
 name|_
 argument_list|(
-literal|"GDynText "
-name|GDYNTEXT_VERSION
-literal|" : CharMap"
+literal|"GDynText: CharMap"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6538,9 +6553,7 @@ name|gtk_file_selection_new
 argument_list|(
 name|_
 argument_list|(
-literal|"GDynText "
-name|GDYNTEXT_VERSION
-literal|": Load text"
+literal|"GDynText: Load text"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -559,6 +559,32 @@ name|GDYNTEXT_MAGIC
 argument_list|)
 condition|)
 block|{
+specifier|static
+name|gchar
+modifier|*
+name|message
+init|=
+name|NULL
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|message
+condition|)
+name|message
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|" WARNING: GDynText is too old!"
+literal|" A newer version is required to handle this layer."
+literal|" Get it from %s"
+argument_list|)
+argument_list|,
+name|GDYNTEXT_WEB_PAGE
+argument_list|)
+expr_stmt|;
 name|data
 operator|->
 name|messages
@@ -569,14 +595,7 @@ name|data
 operator|->
 name|messages
 argument_list|,
-name|_
-argument_list|(
-literal|" WARNING: GDynText is too old!"
-literal|" A newer version is required to handle this layer."
-literal|" Get it from "
-name|GDYNTEXT_WEB_PAGE
-literal|""
-argument_list|)
+name|message
 argument_list|)
 expr_stmt|;
 return|return
@@ -894,6 +913,30 @@ name|GDYNTEXT_MAGIC
 argument_list|)
 condition|)
 block|{
+specifier|static
+name|gchar
+modifier|*
+name|message
+init|=
+name|NULL
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|message
+condition|)
+name|message
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|" Upgrading old GDynText layer to %s."
+argument_list|)
+argument_list|,
+name|GDYNTEXT_MAGIC
+argument_list|)
+expr_stmt|;
 name|data
 operator|->
 name|messages
@@ -904,12 +947,7 @@ name|data
 operator|->
 name|messages
 argument_list|,
-name|_
-argument_list|(
-literal|" Upgrading old GDynText layer to "
-name|GDYNTEXT_MAGIC
-literal|"."
-argument_list|)
+name|message
 argument_list|)
 expr_stmt|;
 block|}
