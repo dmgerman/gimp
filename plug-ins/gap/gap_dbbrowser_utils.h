@@ -52,32 +52,8 @@ begin_comment
 comment|/* end of configuration */
 end_comment
 
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gap_filter.h"
-end_include
-
 begin_typedef
-DECL|struct|__anon2c6abc1b0108
+DECL|struct|__anon2a1f5d9b0108
 typedef|typedef
 struct|struct
 block|{
@@ -98,7 +74,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c6abc1b0208
+DECL|struct|__anon2a1f5d9b0208
 typedef|typedef
 struct|struct
 block|{

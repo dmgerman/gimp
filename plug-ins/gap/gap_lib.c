@@ -10553,8 +10553,16 @@ argument_list|(
 literal|"Error: could not rename frame %ld to %ld"
 argument_list|)
 argument_list|,
+operator|(
+name|long
+name|int
+operator|)
 name|l_lo
 argument_list|,
+operator|(
+name|long
+name|int
+operator|)
 name|l_hi
 argument_list|)
 expr_stmt|;
