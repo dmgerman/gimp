@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e5dbc50103
+DECL|enum|__anon2c7cfef00103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -2172,7 +2172,7 @@ argument_list|(
 name|frame2
 argument_list|)
 argument_list|,
-name|GTK_SHADOW_ETCHED_IN
+name|GTK_SHADOW_IN
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
