@@ -1899,7 +1899,7 @@ expr_stmt|;
 comment|/*  show distance in statusbar  */
 if|if
 condition|(
-name|gdisp
+name|shell
 operator|->
 name|dot_for_dot
 condition|)

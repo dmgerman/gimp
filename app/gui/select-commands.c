@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -471,7 +477,12 @@ operator|->
 name|yresolution
 argument_list|)
 argument_list|,
+name|GIMP_DISPLAY_SHELL
+argument_list|(
 name|gdisp
+operator|->
+name|shell
+argument_list|)
 operator|->
 name|dot_for_dot
 argument_list|,
@@ -615,7 +626,12 @@ operator|->
 name|yresolution
 argument_list|)
 argument_list|,
+name|GIMP_DISPLAY_SHELL
+argument_list|(
 name|gdisp
+operator|->
+name|shell
+argument_list|)
 operator|->
 name|dot_for_dot
 argument_list|,
@@ -775,7 +791,12 @@ operator|->
 name|yresolution
 argument_list|)
 argument_list|,
+name|GIMP_DISPLAY_SHELL
+argument_list|(
 name|gdisp
+operator|->
+name|shell
+argument_list|)
 operator|->
 name|dot_for_dot
 argument_list|,
@@ -878,7 +899,12 @@ operator|->
 name|yresolution
 argument_list|)
 argument_list|,
+name|GIMP_DISPLAY_SHELL
+argument_list|(
 name|gdisp
+operator|->
+name|shell
+argument_list|)
 operator|->
 name|dot_for_dot
 argument_list|,

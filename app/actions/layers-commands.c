@@ -3710,9 +3710,11 @@ expr_stmt|;
 comment|/*  The radio frame and box  */
 if|if
 condition|(
+operator|!
+name|gimp_image_mask_is_empty
+argument_list|(
 name|gimage
-operator|->
-name|selection_mask
+argument_list|)
 condition|)
 block|{
 name|options

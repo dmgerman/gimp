@@ -2998,6 +2998,10 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|InfoWinData
 modifier|*
 name|iwd
@@ -3021,7 +3025,7 @@ name|InfoDialog
 modifier|*
 name|info_win
 decl_stmt|;
-name|info_win
+name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
@@ -3029,6 +3033,10 @@ name|gdisp
 operator|->
 name|shell
 argument_list|)
+expr_stmt|;
+name|info_win
+operator|=
+name|shell
 operator|->
 name|info_dialog
 expr_stmt|;
@@ -3267,12 +3275,12 @@ literal|"%d:%d"
 argument_list|,
 name|SCALEDEST
 argument_list|(
-name|gdisp
+name|shell
 argument_list|)
 argument_list|,
 name|SCALESRC
 argument_list|(
-name|gdisp
+name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -567,8 +567,6 @@ operator|=
 name|SCALEX
 argument_list|(
 name|shell
-operator|->
-name|gdisp
 argument_list|,
 name|shell
 operator|->
@@ -584,8 +582,6 @@ operator|=
 name|SCALEY
 argument_list|(
 name|shell
-operator|->
-name|gdisp
 argument_list|,
 name|shell
 operator|->

@@ -1050,7 +1050,12 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
+name|GIMP_DISPLAY_SHELL
+argument_list|(
 name|gdisp
+operator|->
+name|shell
+argument_list|)
 operator|->
 name|scale
 argument_list|)

@@ -119,10 +119,10 @@ DECL|member|parent_instance
 name|GtkStatusbar
 name|parent_instance
 decl_stmt|;
-DECL|member|gdisp
-name|GimpDisplay
+DECL|member|shell
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 decl_stmt|;
 DECL|member|cursor_frame
 name|GtkWidget
@@ -187,9 +187,9 @@ name|GtkWidget
 modifier|*
 name|gimp_statusbar_new
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -269,7 +269,7 @@ name|gimp_statusbar_update_cursor
 parameter_list|(
 name|GimpStatusbar
 modifier|*
-name|shell
+name|statusbar
 parameter_list|,
 name|gdouble
 name|x
@@ -286,7 +286,7 @@ name|gimp_statusbar_resize_cursor
 parameter_list|(
 name|GimpStatusbar
 modifier|*
-name|shell
+name|statusbar
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -2190,8 +2190,6 @@ argument_list|(
 name|view
 operator|->
 name|shell
-operator|->
-name|gdisp
 argument_list|)
 expr_stmt|;
 name|yratio
@@ -2201,8 +2199,6 @@ argument_list|(
 name|view
 operator|->
 name|shell
-operator|->
-name|gdisp
 argument_list|)
 expr_stmt|;
 name|xoffset
@@ -2733,8 +2729,6 @@ argument_list|(
 name|view
 operator|->
 name|shell
-operator|->
-name|gdisp
 argument_list|)
 argument_list|,
 name|SCALESRC
@@ -2742,8 +2736,6 @@ argument_list|(
 name|view
 operator|->
 name|shell
-operator|->
-name|gdisp
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2785,8 +2777,6 @@ argument_list|(
 name|view
 operator|->
 name|shell
-operator|->
-name|gdisp
 argument_list|)
 operator|)
 operator|/
@@ -2799,8 +2789,6 @@ argument_list|(
 name|view
 operator|->
 name|shell
-operator|->
-name|gdisp
 argument_list|)
 operator|)
 operator|)
@@ -2926,8 +2914,6 @@ argument_list|(
 name|view
 operator|->
 name|shell
-operator|->
-name|gdisp
 argument_list|)
 expr_stmt|;
 name|yratio
@@ -2937,8 +2923,6 @@ argument_list|(
 name|view
 operator|->
 name|shell
-operator|->
-name|gdisp
 argument_list|)
 expr_stmt|;
 if|if
@@ -2956,8 +2940,6 @@ name|view
 operator|->
 name|shell
 operator|->
-name|gdisp
-operator|->
 name|dot_for_dot
 condition|)
 name|gimp_preview_set_dot_for_dot
@@ -2972,8 +2954,6 @@ argument_list|,
 name|view
 operator|->
 name|shell
-operator|->
-name|gdisp
 operator|->
 name|dot_for_dot
 argument_list|)

@@ -32,6 +32,178 @@ directive|include
 file|"gui/gui-types.h"
 end_include
 
+begin_comment
+comment|/*  some useful macros  */
+end_comment
+
+begin_comment
+comment|/* unpacking the user scale level (char) */
+end_comment
+
+begin_define
+DECL|macro|SCALESRC (s)
+define|#
+directive|define
+name|SCALESRC
+parameter_list|(
+name|s
+parameter_list|)
+value|(s->scale& 0x00ff)
+end_define
+
+begin_define
+DECL|macro|SCALEDEST (s)
+define|#
+directive|define
+name|SCALEDEST
+parameter_list|(
+name|s
+parameter_list|)
+value|(s->scale>> 8)
+end_define
+
+begin_comment
+comment|/* finding the effective screen resolution (double) */
+end_comment
+
+begin_define
+DECL|macro|SCREEN_XRES (s)
+define|#
+directive|define
+name|SCREEN_XRES
+parameter_list|(
+name|s
+parameter_list|)
+value|(s->dot_for_dot ? \                            s->gdisp->gimage->xresolution : gimprc.monitor_xres)
+end_define
+
+begin_define
+DECL|macro|SCREEN_YRES (s)
+define|#
+directive|define
+name|SCREEN_YRES
+parameter_list|(
+name|s
+parameter_list|)
+value|(s->dot_for_dot ? \                            s->gdisp->gimage->yresolution : gimprc.monitor_yres)
+end_define
+
+begin_comment
+comment|/* calculate scale factors (double) */
+end_comment
+
+begin_define
+DECL|macro|SCALEFACTOR_X (s)
+define|#
+directive|define
+name|SCALEFACTOR_X
+parameter_list|(
+name|s
+parameter_list|)
+value|((SCALEDEST(s) * SCREEN_XRES(s)) / \ 			   (SCALESRC(s) * s->gdisp->gimage->xresolution))
+end_define
+
+begin_define
+DECL|macro|SCALEFACTOR_Y (s)
+define|#
+directive|define
+name|SCALEFACTOR_Y
+parameter_list|(
+name|s
+parameter_list|)
+value|((SCALEDEST(s) * SCREEN_YRES(s)) / \ 			   (SCALESRC(s) * s->gdisp->gimage->yresolution))
+end_define
+
+begin_comment
+comment|/* scale values */
+end_comment
+
+begin_define
+DECL|macro|SCALEX (s,x)
+define|#
+directive|define
+name|SCALEX
+parameter_list|(
+name|s
+parameter_list|,
+name|x
+parameter_list|)
+value|((gint) (x * SCALEFACTOR_X(s)))
+end_define
+
+begin_define
+DECL|macro|SCALEY (s,y)
+define|#
+directive|define
+name|SCALEY
+parameter_list|(
+name|s
+parameter_list|,
+name|y
+parameter_list|)
+value|((gint) (y * SCALEFACTOR_Y(s)))
+end_define
+
+begin_comment
+comment|/* unscale values */
+end_comment
+
+begin_define
+DECL|macro|UNSCALEX (s,x)
+define|#
+directive|define
+name|UNSCALEX
+parameter_list|(
+name|s
+parameter_list|,
+name|x
+parameter_list|)
+value|((gint) (x / SCALEFACTOR_X(s)))
+end_define
+
+begin_define
+DECL|macro|UNSCALEY (s,y)
+define|#
+directive|define
+name|UNSCALEY
+parameter_list|(
+name|s
+parameter_list|,
+name|y
+parameter_list|)
+value|((gint) (y / SCALEFACTOR_Y(s)))
+end_define
+
+begin_comment
+comment|/* (and float-returning versions) */
+end_comment
+
+begin_define
+DECL|macro|FUNSCALEX (s,x)
+define|#
+directive|define
+name|FUNSCALEX
+parameter_list|(
+name|s
+parameter_list|,
+name|x
+parameter_list|)
+value|(x / SCALEFACTOR_X(s))
+end_define
+
+begin_define
+DECL|macro|FUNSCALEY (s,y)
+define|#
+directive|define
+name|FUNSCALEY
+parameter_list|(
+name|s
+parameter_list|,
+name|y
+parameter_list|)
+value|(y / SCALEFACTOR_Y(s))
+end_define
+
 begin_define
 DECL|macro|GIMP_TYPE_DISPLAY_SHELL
 define|#
@@ -123,6 +295,16 @@ name|GimpItemFactory
 modifier|*
 name|item_factory
 decl_stmt|;
+DECL|member|scale
+name|gint
+name|scale
+decl_stmt|;
+comment|/*  scale factor from original raw image    */
+DECL|member|dot_for_dot
+name|gboolean
+name|dot_for_dot
+decl_stmt|;
+comment|/*  is monitor resolution being ignored?    */
 DECL|member|offset_x
 name|gint
 name|offset_x
@@ -411,6 +593,9 @@ parameter_list|(
 name|GimpDisplay
 modifier|*
 name|gdisp
+parameter_list|,
+name|guint
+name|scale
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -496,6 +681,121 @@ parameter_list|,
 name|GimpCoords
 modifier|*
 name|image_coords
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_shell_transform_xy
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
+name|gint
+modifier|*
+name|nx
+parameter_list|,
+name|gint
+modifier|*
+name|ny
+parameter_list|,
+name|gboolean
+name|use_offsets
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_shell_untransform_xy
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
+name|gint
+modifier|*
+name|nx
+parameter_list|,
+name|gint
+modifier|*
+name|ny
+parameter_list|,
+name|gboolean
+name|round
+parameter_list|,
+name|gboolean
+name|use_offsets
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_shell_transform_xy_f
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
+parameter_list|,
+name|gdouble
+modifier|*
+name|nx
+parameter_list|,
+name|gdouble
+modifier|*
+name|ny
+parameter_list|,
+name|gboolean
+name|use_offsets
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_shell_untransform_xy_f
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
+parameter_list|,
+name|gdouble
+modifier|*
+name|nx
+parameter_list|,
+name|gdouble
+modifier|*
+name|ny
+parameter_list|,
+name|gboolean
+name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpstatusbar.h"
 end_include
 
@@ -294,7 +300,7 @@ argument_list|)
 expr_stmt|;
 name|statusbar
 operator|->
-name|gdisp
+name|shell
 operator|=
 name|NULL
 expr_stmt|;
@@ -584,12 +590,12 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_statusbar_new (GimpDisplay * gdisp)
+DECL|function|gimp_statusbar_new (GimpDisplayShell * shell)
 name|gimp_statusbar_new
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|)
 block|{
 name|GimpStatusbar
@@ -598,9 +604,9 @@ name|statusbar
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_DISPLAY
+name|GIMP_IS_DISPLAY_SHELL
 argument_list|(
-name|gdisp
+name|shell
 argument_list|)
 argument_list|,
 name|NULL
@@ -617,9 +623,9 @@ argument_list|)
 expr_stmt|;
 name|statusbar
 operator|->
-name|gdisp
+name|shell
 operator|=
-name|gdisp
+name|shell
 expr_stmt|;
 return|return
 name|GTK_WIDGET
@@ -751,7 +757,7 @@ if|if
 condition|(
 name|statusbar
 operator|->
-name|gdisp
+name|shell
 operator|->
 name|dot_for_dot
 condition|)
@@ -797,6 +803,8 @@ name|gimp_unit_get_factor
 argument_list|(
 name|statusbar
 operator|->
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -825,6 +833,8 @@ name|unit_factor
 operator|/
 name|statusbar
 operator|->
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -838,6 +848,8 @@ operator|*
 name|unit_factor
 operator|/
 name|statusbar
+operator|->
+name|shell
 operator|->
 name|gdisp
 operator|->
@@ -926,9 +938,9 @@ name|gdouble
 name|y
 parameter_list|)
 block|{
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -938,11 +950,11 @@ name|statusbar
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gdisp
+name|shell
 operator|=
 name|statusbar
 operator|->
-name|gdisp
+name|shell
 expr_stmt|;
 if|if
 condition|(
@@ -956,6 +968,8 @@ literal|0
 operator|||
 name|x
 operator|>=
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -964,6 +978,8 @@ name|width
 operator|||
 name|y
 operator|>=
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -994,7 +1010,7 @@ index|]
 decl_stmt|;
 if|if
 condition|(
-name|gdisp
+name|shell
 operator|->
 name|dot_for_dot
 condition|)
@@ -1038,6 +1054,8 @@ name|unit_factor
 operator|=
 name|gimp_unit_get_factor
 argument_list|(
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -1064,6 +1082,8 @@ name|x
 operator|*
 name|unit_factor
 operator|/
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -1076,6 +1096,8 @@ name|y
 operator|*
 name|unit_factor
 operator|/
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -1117,9 +1139,9 @@ name|layout
 init|=
 name|NULL
 decl_stmt|;
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 decl_stmt|;
 name|gchar
 name|buffer
@@ -1141,15 +1163,15 @@ name|statusbar
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gdisp
+name|shell
 operator|=
 name|statusbar
 operator|->
-name|gdisp
+name|shell
 expr_stmt|;
 if|if
 condition|(
-name|gdisp
+name|shell
 operator|->
 name|dot_for_dot
 condition|)
@@ -1185,6 +1207,8 @@ name|cursor_format_str
 argument_list|,
 literal|""
 argument_list|,
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -1193,6 +1217,8 @@ name|width
 argument_list|,
 literal|", "
 argument_list|,
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -1204,17 +1230,26 @@ block|}
 else|else
 comment|/* show real world units */
 block|{
+name|GimpUnit
+name|unit
+decl_stmt|;
 name|gdouble
 name|unit_factor
 decl_stmt|;
-name|unit_factor
+name|unit
 operator|=
-name|gimp_unit_get_factor
-argument_list|(
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
 operator|->
+name|unit
+expr_stmt|;
+name|unit_factor
+operator|=
+name|gimp_unit_get_factor
+argument_list|(
 name|unit
 argument_list|)
 expr_stmt|;
@@ -1235,28 +1270,16 @@ literal|"%%s%%.%df%%s%%.%df %s"
 argument_list|,
 name|gimp_unit_get_digits
 argument_list|(
-name|gdisp
-operator|->
-name|gimage
-operator|->
 name|unit
 argument_list|)
 argument_list|,
 name|gimp_unit_get_digits
 argument_list|(
-name|gdisp
-operator|->
-name|gimage
-operator|->
 name|unit
 argument_list|)
 argument_list|,
 name|gimp_unit_get_symbol
 argument_list|(
-name|gdisp
-operator|->
-name|gimage
-operator|->
 name|unit
 argument_list|)
 argument_list|)
@@ -1279,6 +1302,8 @@ argument_list|,
 operator|(
 name|gdouble
 operator|)
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -1287,6 +1312,8 @@ name|width
 operator|*
 name|unit_factor
 operator|/
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -1298,6 +1325,8 @@ argument_list|,
 operator|(
 name|gdouble
 operator|)
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -1306,6 +1335,8 @@ name|height
 operator|*
 name|unit_factor
 operator|/
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage

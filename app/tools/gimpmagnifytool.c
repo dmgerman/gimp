@@ -1060,14 +1060,14 @@ name|scalesrc
 operator|=
 name|SCALESRC
 argument_list|(
-name|gdisp
+name|shell
 argument_list|)
 expr_stmt|;
 name|scaledest
 operator|=
 name|SCALEDEST
 argument_list|(
-name|gdisp
+name|shell
 argument_list|)
 expr_stmt|;
 name|win_width
@@ -1108,7 +1108,7 @@ condition|(
 operator|(
 name|SCALEX
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|w
 argument_list|)
@@ -1121,7 +1121,7 @@ operator|||
 operator|(
 name|SCALEY
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|h
 argument_list|)

@@ -1707,10 +1707,6 @@ argument_list|(
 name|event
 argument_list|)
 expr_stmt|;
-name|image_coords
-operator|=
-name|display_coords
-expr_stmt|;
 comment|/*  GimpCoords passed to tools are ALWAYS in image coordinates  */
 name|gimp_display_shell_untransform_coords
 argument_list|(
@@ -2915,10 +2911,6 @@ name|gdk_event_get_time
 argument_list|(
 name|event
 argument_list|)
-expr_stmt|;
-name|image_coords
-operator|=
-name|display_coords
 expr_stmt|;
 comment|/*  GimpCoords passed to tools are ALWAYS in image coordinates  */
 name|gimp_display_shell_untransform_coords

@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppathtool.h"
 end_include
 
@@ -977,6 +983,10 @@ name|GimpPathTool
 modifier|*
 name|path_tool
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|gint
 name|grab_pointer
 init|=
@@ -992,6 +1002,15 @@ operator|=
 name|GIMP_PATH_TOOL
 argument_list|(
 name|tool
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 ifdef|#
@@ -1031,7 +1050,7 @@ name|halfwidth
 operator|=
 name|UNSCALEX
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|PATH_TOOL_HALFWIDTH
 argument_list|)
@@ -1040,7 +1059,7 @@ name|halfheight
 operator|=
 name|UNSCALEY
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|PATH_TOOL_HALFWIDTH
 argument_list|)

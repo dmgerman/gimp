@@ -140,6 +140,16 @@ name|GimpChannel
 modifier|*
 name|fuzzy_mask
 decl_stmt|;
+comment|/*  Segments which make up the fuzzy selection boundary  */
+DECL|member|segs
+name|GdkSegment
+modifier|*
+name|segs
+decl_stmt|;
+DECL|member|num_segs
+name|gint
+name|num_segs
+decl_stmt|;
 block|}
 struct|;
 end_struct

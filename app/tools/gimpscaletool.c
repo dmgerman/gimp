@@ -95,6 +95,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui/info-dialog.h"
 end_include
 
@@ -894,7 +900,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|GIMP_DISPLAY_SHELL
+argument_list|(
 name|gdisp
+operator|->
+name|shell
+argument_list|)
 operator|->
 name|dot_for_dot
 condition|)

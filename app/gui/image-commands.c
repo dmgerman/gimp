@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpprogress.h"
 end_include
 
@@ -126,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b84e3950108
+DECL|struct|__anon28a786720108
 block|{
 DECL|member|resize
 name|Resize
@@ -439,7 +445,12 @@ name|gimage
 operator|->
 name|unit
 argument_list|,
+name|GIMP_DISPLAY_SHELL
+argument_list|(
 name|gdisp
+operator|->
+name|shell
+argument_list|)
 operator|->
 name|dot_for_dot
 argument_list|,
@@ -582,7 +593,12 @@ name|gimage
 operator|->
 name|unit
 argument_list|,
+name|GIMP_DISPLAY_SHELL
+argument_list|(
 name|gdisp
+operator|->
+name|shell
+argument_list|)
 operator|->
 name|dot_for_dot
 argument_list|,

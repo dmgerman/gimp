@@ -3602,8 +3602,6 @@ operator|=
 name|SCALEFACTOR_X
 argument_list|(
 name|shell
-operator|->
-name|gdisp
 argument_list|)
 expr_stmt|;
 name|info
@@ -3613,8 +3611,6 @@ operator|=
 name|SCALEFACTOR_Y
 argument_list|(
 name|shell
-operator|->
-name|gdisp
 argument_list|)
 expr_stmt|;
 name|info
@@ -3624,8 +3620,6 @@ operator|=
 name|UNSCALEX
 argument_list|(
 name|shell
-operator|->
-name|gdisp
 argument_list|,
 name|info
 operator|->
@@ -3639,8 +3633,6 @@ operator|=
 name|UNSCALEY
 argument_list|(
 name|shell
-operator|->
-name|gdisp
 argument_list|,
 name|info
 operator|->

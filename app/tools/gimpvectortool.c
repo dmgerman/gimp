@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplayshell.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpvectortool.h"
 end_include
 
@@ -841,10 +835,6 @@ name|VectorOptions
 modifier|*
 name|options
 decl_stmt|;
-name|GimpDisplayShell
-modifier|*
-name|shell
-decl_stmt|;
 name|GimpAnchor
 modifier|*
 name|anchor
@@ -875,15 +865,6 @@ operator|->
 name|tool_info
 operator|->
 name|tool_options
-expr_stmt|;
-name|shell
-operator|=
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|gdisp
-operator|->
-name|shell
-argument_list|)
 expr_stmt|;
 comment|/*  if we are changing displays, pop the statusbar of the old one  */
 if|if

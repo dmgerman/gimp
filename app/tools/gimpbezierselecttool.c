@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui/paths-dialog.h"
 end_include
 
@@ -280,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a57d47a0108
+DECL|struct|__anon28b65dfe0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -316,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a57d47a0208
+DECL|struct|__anon28b65dfe0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -371,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a57d47a0308
+DECL|struct|__anon28b65dfe0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -1549,6 +1555,10 @@ name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|GimpBezierSelectPoint
 modifier|*
 name|points
@@ -1578,6 +1588,15 @@ operator|=
 name|GIMP_BEZIER_SELECT_TOOL
 argument_list|(
 name|tool
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 name|grab_pointer
@@ -1631,7 +1650,7 @@ name|halfwidth
 operator|=
 name|UNSCALEX
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|BEZIER_HALFWIDTH
 argument_list|)
@@ -1640,7 +1659,7 @@ name|halfheight
 operator|=
 name|UNSCALEY
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|BEZIER_HALFWIDTH
 argument_list|)
@@ -6667,6 +6686,10 @@ name|GimpDrawTool
 modifier|*
 name|draw_tool
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|GimpToolCursorType
 name|tool_cursor
 init|=
@@ -6689,6 +6712,15 @@ operator|=
 name|GIMP_DRAW_TOOL
 argument_list|(
 name|tool
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 if|if
@@ -6724,7 +6756,7 @@ name|halfwidth
 operator|=
 name|UNSCALEX
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|BEZIER_HALFWIDTH
 argument_list|)
@@ -6733,7 +6765,7 @@ name|halfheight
 operator|=
 name|UNSCALEX
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|BEZIER_HALFWIDTH
 argument_list|)
@@ -7204,9 +7236,14 @@ operator|&&
 name|num_points
 condition|)
 block|{
-name|gdisplay_transform_coords
+name|gimp_display_shell_transform_xy
+argument_list|(
+name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|gdisp
+operator|->
+name|shell
+argument_list|)
 argument_list|,
 name|points
 operator|->
@@ -7226,7 +7263,7 @@ name|points
 operator|->
 name|sy
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
