@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288065b50103
+DECL|enum|__anon27b881160103
 block|{
 DECL|enumerator|INSERT_ITEM
 name|INSERT_ITEM
@@ -1653,8 +1653,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-operator|(
 name|view
 operator|->
 name|container
@@ -1662,9 +1660,8 @@ operator|&&
 name|view
 operator|->
 name|context
-operator|)
 condition|)
-return|return;
+block|{
 name|gimp_context_set_by_type
 argument_list|(
 name|view
@@ -1684,12 +1681,20 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_container_view_select_item
+argument_list|(
+name|view
+argument_list|,
+name|viewable
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_container_view_item_activate (GimpContainerView * view,GimpViewable * viewable)
-name|gimp_container_view_item_activate
+DECL|function|gimp_container_view_item_activated (GimpContainerView * view,GimpViewable * viewable)
+name|gimp_container_view_item_activated
 parameter_list|(
 name|GimpContainerView
 modifier|*

@@ -123,6 +123,16 @@ directive|include
 file|"paths_dialog.h"
 end_include
 
+begin_comment
+comment|/* test dialogs */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"test_commands.h"
+end_include
+
 begin_include
 include|#
 directive|include
@@ -831,26 +841,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_test_layer_list_cmd_callback
-block|,
-literal|1
-block|}
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/File/Test Dialogs/Layer Grid..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|dialogs_test_layer_grid_cmd_callback
+name|test_layer_list_cmd_callback
 block|,
 literal|1
 block|}
@@ -869,26 +860,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_test_channel_list_cmd_callback
-block|,
-literal|1
-block|}
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/File/Test Dialogs/Channel Grid..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|dialogs_test_channel_grid_cmd_callback
+name|test_channel_list_cmd_callback
 block|,
 literal|1
 block|}
@@ -922,7 +894,7 @@ literal|"/File/Test Dialogs/Images List..."
 block|,
 name|NULL
 block|,
-name|dialogs_test_image_container_list_view_cmd_callback
+name|test_image_container_list_view_cmd_callback
 block|,
 literal|0
 block|}
@@ -938,7 +910,7 @@ literal|"/File/Test Dialogs/Images Grid..."
 block|,
 name|NULL
 block|,
-name|dialogs_test_image_container_grid_view_cmd_callback
+name|test_image_container_grid_view_cmd_callback
 block|,
 literal|0
 block|}
@@ -972,7 +944,7 @@ literal|"/File/Test Dialogs/Brushe List..."
 block|,
 name|NULL
 block|,
-name|dialogs_test_brush_container_list_view_cmd_callback
+name|test_brush_container_list_view_cmd_callback
 block|,
 literal|0
 block|}
@@ -988,7 +960,7 @@ literal|"/File/Test Dialogs/Pattern List..."
 block|,
 name|NULL
 block|,
-name|dialogs_test_pattern_container_list_view_cmd_callback
+name|test_pattern_container_list_view_cmd_callback
 block|,
 literal|0
 block|}
@@ -1004,7 +976,7 @@ literal|"/File/Test Dialogs/Gradient List..."
 block|,
 name|NULL
 block|,
-name|dialogs_test_gradient_container_list_view_cmd_callback
+name|test_gradient_container_list_view_cmd_callback
 block|,
 literal|0
 block|}
@@ -1020,7 +992,7 @@ literal|"/File/Test Dialogs/Palette List..."
 block|,
 name|NULL
 block|,
-name|dialogs_test_palette_container_list_view_cmd_callback
+name|test_palette_container_list_view_cmd_callback
 block|,
 literal|0
 block|}
@@ -1054,7 +1026,7 @@ literal|"/File/Test Dialogs/Brushe Grid..."
 block|,
 name|NULL
 block|,
-name|dialogs_test_brush_container_grid_view_cmd_callback
+name|test_brush_container_grid_view_cmd_callback
 block|,
 literal|0
 block|}
@@ -1070,7 +1042,7 @@ literal|"/File/Test Dialogs/Pattern Grid..."
 block|,
 name|NULL
 block|,
-name|dialogs_test_pattern_container_grid_view_cmd_callback
+name|test_pattern_container_grid_view_cmd_callback
 block|,
 literal|0
 block|}
@@ -1086,7 +1058,7 @@ literal|"/File/Test Dialogs/Gradient Grid..."
 block|,
 name|NULL
 block|,
-name|dialogs_test_gradient_container_grid_view_cmd_callback
+name|test_gradient_container_grid_view_cmd_callback
 block|,
 literal|0
 block|}
@@ -1102,7 +1074,7 @@ literal|"/File/Test Dialogs/Palette Grid..."
 block|,
 name|NULL
 block|,
-name|dialogs_test_palette_container_grid_view_cmd_callback
+name|test_palette_container_grid_view_cmd_callback
 block|,
 literal|0
 block|}
@@ -1136,7 +1108,7 @@ literal|"/File/Test Dialogs/Multi List..."
 block|,
 name|NULL
 block|,
-name|dialogs_test_multi_container_list_view_cmd_callback
+name|test_multi_container_list_view_cmd_callback
 block|,
 literal|0
 block|}
@@ -1152,7 +1124,7 @@ literal|"/File/Test Dialogs/Multi Grid..."
 block|,
 name|NULL
 block|,
-name|dialogs_test_multi_container_grid_view_cmd_callback
+name|test_multi_container_grid_view_cmd_callback
 block|,
 literal|0
 block|}

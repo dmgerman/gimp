@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298bdfce0103
+DECL|enum|__anon29fb47480103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1705,36 +1705,6 @@ end_function
 begin_comment
 comment|/*  Function definitions  */
 end_comment
-
-begin_comment
-comment|/*  Create a default tool object  */
-end_comment
-
-begin_function
-name|GimpTool
-modifier|*
-DECL|function|gimp_tool_new (void)
-name|gimp_tool_new
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|GimpTool
-modifier|*
-name|tool
-decl_stmt|;
-name|tool
-operator|=
-name|gtk_type_new
-argument_list|(
-name|GIMP_TYPE_TOOL
-argument_list|)
-expr_stmt|;
-return|return
-name|tool
-return|;
-block|}
-end_function
 
 begin_function
 name|void

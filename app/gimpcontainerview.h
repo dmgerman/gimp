@@ -354,7 +354,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_container_view_item_activate
+name|gimp_container_view_item_activated
 parameter_list|(
 name|GimpContainerView
 modifier|*

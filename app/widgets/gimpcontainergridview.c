@@ -226,7 +226,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_container_grid_view_item_activate
+name|gimp_container_grid_view_item_activated
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1093,7 +1093,7 @@ literal|"double_clicked"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gimp_container_grid_view_item_activate
+name|gimp_container_grid_view_item_activated
 argument_list|)
 argument_list|,
 name|view
@@ -1470,23 +1470,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|gimp_container_grid_view_highlight_item
-argument_list|(
-name|GIMP_CONTAINER_VIEW
-argument_list|(
-name|data
-argument_list|)
-argument_list|,
-name|GIMP_PREVIEW
-argument_list|(
-name|widget
-argument_list|)
-operator|->
-name|viewable
-argument_list|,
-name|widget
-argument_list|)
-expr_stmt|;
 name|gimp_container_view_item_selected
 argument_list|(
 name|GIMP_CONTAINER_VIEW
@@ -1508,8 +1491,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_grid_view_item_activate (GtkWidget * widget,gpointer data)
-name|gimp_container_grid_view_item_activate
+DECL|function|gimp_container_grid_view_item_activated (GtkWidget * widget,gpointer data)
+name|gimp_container_grid_view_item_activated
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1519,7 +1502,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|gimp_container_view_item_activate
+name|gimp_container_view_item_activated
 argument_list|(
 name|GIMP_CONTAINER_VIEW
 argument_list|(

@@ -6156,6 +6156,12 @@ decl_stmt|;
 name|gint
 name|index
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|layer
+condition|)
+return|return;
 name|layer_widget
 operator|=
 name|layer_widget_get_ID
@@ -6281,6 +6287,12 @@ decl_stmt|;
 name|gint
 name|index
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|layer
+condition|)
+return|return;
 name|layer_widget
 operator|=
 name|layer_widget_get_ID
@@ -11030,7 +11042,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ecc58e0108
+DECL|struct|__anon2773e4af0108
 block|{
 DECL|member|gimage
 name|GimpImage

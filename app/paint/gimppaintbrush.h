@@ -159,6 +159,15 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_paintbrush_tool_register
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpTool
 modifier|*
 name|gimp_paintbrush_tool_new

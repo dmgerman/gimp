@@ -790,6 +790,14 @@ operator|*
 operator|)
 name|klass
 expr_stmt|;
+name|draw_class
+operator|=
+operator|(
+name|GimpDrawToolClass
+operator|*
+operator|)
+name|klass
+expr_stmt|;
 name|parent_class
 operator|=
 name|gtk_type_class

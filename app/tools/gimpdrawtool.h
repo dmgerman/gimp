@@ -22,6 +22,26 @@ directive|include
 file|"tools/tool.h"
 end_include
 
+begin_comment
+comment|/*  draw states  */
+end_comment
+
+begin_define
+DECL|macro|INVISIBLE
+define|#
+directive|define
+name|INVISIBLE
+value|0
+end_define
+
+begin_define
+DECL|macro|VISIBLE
+define|#
+directive|define
+name|VISIBLE
+value|1
+end_define
+
 begin_define
 DECL|macro|GIMP_TYPE_DRAW_TOOL
 define|#
@@ -74,43 +94,13 @@ parameter_list|)
 value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DRAW_TOOL))
 end_define
 
-begin_comment
-comment|/*  draw states  */
-end_comment
-
-begin_define
-DECL|macro|INVISIBLE
-define|#
-directive|define
-name|INVISIBLE
-value|0
-end_define
-
-begin_define
-DECL|macro|VISIBLE
-define|#
-directive|define
-name|VISIBLE
-value|1
-end_define
-
-begin_comment
-comment|/*  Structure definitions  */
-end_comment
-
 begin_typedef
-DECL|typedef|DrawToolDraw
+DECL|typedef|GimpDrawToolClass
 typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|DrawToolDraw
-function_decl|)
-parameter_list|(
-name|GimpDrawTool
-modifier|*
-parameter_list|)
-function_decl|;
+name|struct
+name|_GimpDrawToolClass
+name|GimpDrawToolClass
+typedef|;
 end_typedef
 
 begin_struct
@@ -178,25 +168,20 @@ name|GimpToolClass
 name|parent_class
 decl_stmt|;
 DECL|member|draw
-name|DrawToolDraw
+name|void
+function_decl|(
+modifier|*
 name|draw
-decl_stmt|;
+function_decl|)
+parameter_list|(
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|GimpDrawToolClass
-typedef|typedef
-name|struct
-name|_GimpDrawToolClass
-name|GimpDrawToolClass
-typedef|;
-end_typedef
-
-begin_comment
-comment|/*  draw core functions  */
-end_comment
 
 begin_function_decl
 name|GtkType
@@ -209,37 +194,15 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_draw_tool_class_init
-parameter_list|(
-name|GimpDrawToolClass
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpDrawTool
-modifier|*
-name|gimp_draw_tool_new
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* create a new, generic DrawTool */
-end_comment
-
-begin_function_decl
-name|void
 name|gimp_draw_tool_start
 parameter_list|(
 name|GimpDrawTool
 modifier|*
+name|draw_tool
 parameter_list|,
 name|GdkWindow
 modifier|*
+name|window
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -250,6 +213,7 @@ name|gimp_draw_tool_stop
 parameter_list|(
 name|GimpDrawTool
 modifier|*
+name|draw_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -260,6 +224,7 @@ name|gimp_draw_tool_pause
 parameter_list|(
 name|GimpDrawTool
 modifier|*
+name|draw_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -270,6 +235,7 @@ name|gimp_draw_tool_resume
 parameter_list|(
 name|GimpDrawTool
 modifier|*
+name|draw_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -280,7 +246,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __DRAWTOOL_H__  */
+comment|/*  __GIMP_DRAW_TOOL_H__  */
 end_comment
 
 end_unit

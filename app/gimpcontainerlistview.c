@@ -246,7 +246,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gint
-name|gimp_container_list_view_item_activate
+name|gimp_container_list_view_item_activated
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1089,7 +1089,7 @@ literal|"button_press_event"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gimp_container_list_view_item_activate
+name|gimp_container_list_view_item_activated
 argument_list|)
 argument_list|,
 name|list_view
@@ -1642,6 +1642,19 @@ name|list_view
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|gtk_list_unselect_all
+argument_list|(
+name|GTK_LIST
+argument_list|(
+name|list_view
+operator|->
+name|gtk_list
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1877,8 +1890,8 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|gimp_container_list_view_item_activate (GtkWidget * widget,GdkEventButton * bevent,gpointer data)
-name|gimp_container_list_view_item_activate
+DECL|function|gimp_container_list_view_item_activated (GtkWidget * widget,GdkEventButton * bevent,gpointer data)
+name|gimp_container_list_view_item_activated
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1922,7 +1935,7 @@ argument_list|)
 operator|->
 name|viewable
 expr_stmt|;
-name|gimp_container_view_item_activate
+name|gimp_container_view_item_activated
 argument_list|(
 name|GIMP_CONTAINER_VIEW
 argument_list|(

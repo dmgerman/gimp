@@ -259,6 +259,24 @@ name|GimpTool
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpPaintTool
+typedef|typedef
+name|struct
+name|_GimpPaintTool
+name|GimpPaintTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpDrawTool
+typedef|typedef
+name|struct
+name|_GimpDrawTool
+name|GimpDrawTool
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  widgets  */
 end_comment
@@ -372,6 +390,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDrawableListView
+typedef|typedef
+name|struct
+name|_GimpDrawableListView
+name|GimpDrawableListView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|HistogramWidget
 typedef|typedef
 name|struct
@@ -439,29 +466,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpDrawTool
-typedef|typedef
-name|struct
-name|_GimpDrawTool
-name|GimpDrawTool
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GDisplay
 typedef|typedef
 name|struct
 name|_GDisplay
 name|GDisplay
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpContextPreview
-typedef|typedef
-name|struct
-name|_GimpContextPreview
-name|GimpContextPreview
 typedef|;
 end_typedef
 
@@ -533,15 +542,6 @@ typedef|typedef
 name|struct
 name|_InfoDialog
 name|InfoDialog
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpPaintTool
-typedef|typedef
-name|struct
-name|_GimpPaintTool
-name|GimpPaintTool
 typedef|;
 end_typedef
 

@@ -2537,12 +2537,12 @@ name|GIMP_TYPE_PAINTBRUSH_TOOL
 argument_list|,
 literal|"gimp:paintbrush_tool"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Paintbrush"
 argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Paint fuzzy brush strokes"
 argument_list|)
