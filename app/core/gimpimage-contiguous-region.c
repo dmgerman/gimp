@@ -1647,7 +1647,6 @@ name|col_bytes
 init|=
 name|bytes
 decl_stmt|;
-empty_stmt|;
 name|Tile
 modifier|*
 name|s_tile
