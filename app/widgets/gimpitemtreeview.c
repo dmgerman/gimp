@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b62a68c0103
+DECL|enum|__anon2933e4e10103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -260,7 +260,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_item_tree_view_select_item
 parameter_list|(
 name|GimpContainerView
@@ -2419,7 +2419,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_item_tree_view_select_item (GimpContainerView * view,GimpViewable * item,gpointer insert_data)
 name|gimp_item_tree_view_select_item
 parameter_list|(
@@ -2464,6 +2464,9 @@ name|delete_sensitive
 init|=
 name|FALSE
 decl_stmt|;
+name|gboolean
+name|success
+decl_stmt|;
 name|tree_view
 operator|=
 name|GIMP_ITEM_TREE_VIEW
@@ -2471,6 +2474,8 @@ argument_list|(
 name|view
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
 name|GIMP_CONTAINER_VIEW_CLASS
 argument_list|(
 name|parent_class
@@ -2664,6 +2669,9 @@ argument_list|,
 name|delete_sensitive
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 

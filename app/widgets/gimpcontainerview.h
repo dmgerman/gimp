@@ -156,7 +156,7 @@ name|parent_class
 decl_stmt|;
 comment|/*  signals  */
 DECL|member|select_item
-name|void
+name|gboolean
 function_decl|(
 modifier|*
 name|select_item
@@ -443,7 +443,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_container_view_select_item
 parameter_list|(
 name|GimpContainerView
@@ -492,7 +492,7 @@ comment|/*  protected  */
 end_comment
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_container_view_item_selected
 parameter_list|(
 name|GimpContainerView

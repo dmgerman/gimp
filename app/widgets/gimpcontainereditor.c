@@ -107,7 +107,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_container_editor_select_item
 parameter_list|(
 name|GtkWidget
@@ -630,7 +630,7 @@ end_comment
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_container_editor_select_item (GtkWidget * widget,GimpViewable * viewable,gpointer insert_data,GimpContainerEditor * editor)
 name|gimp_container_editor_select_item
 parameter_list|(
@@ -676,6 +676,9 @@ argument_list|,
 name|viewable
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 

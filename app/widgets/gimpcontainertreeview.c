@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c7b1420103
+DECL|enum|__anon2c3e0f6c0103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -230,7 +230,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_container_tree_view_select_item
 parameter_list|(
 name|GimpContainerView
@@ -1977,7 +1977,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_container_tree_view_select_item (GimpContainerView * view,GimpViewable * viewable,gpointer insert_data)
 name|gimp_container_tree_view_select_item
 parameter_list|(
@@ -2087,7 +2087,9 @@ if|if
 condition|(
 name|equal
 condition|)
-return|return;
+return|return
+name|TRUE
+return|;
 block|}
 name|path
 operator|=
@@ -2202,6 +2204,9 @@ name|selection
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -2995,12 +3000,19 @@ operator|==
 name|GDK_BUTTON_PRESS
 condition|)
 block|{
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
 comment|/*  don't select item if a toggle was clicked */
 if|if
 condition|(
 operator|!
 name|toggled_cell
 condition|)
+name|success
+operator|=
 name|gimp_container_view_item_selected
 argument_list|(
 name|container_view
@@ -3108,6 +3120,33 @@ operator|->
 name|type
 operator|==
 name|GDK_2BUTTON_PRESS
+condition|)
+block|{
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+comment|/*  don't select item if a toggle was clicked */
+if|if
+condition|(
+operator|!
+name|toggled_cell
+condition|)
+name|success
+operator|=
+name|gimp_container_view_item_selected
+argument_list|(
+name|container_view
+argument_list|,
+name|renderer
+operator|->
+name|viewable
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|success
 condition|)
 block|{
 if|if
@@ -3228,6 +3267,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
 break|break;
 case|case
 literal|2
@@ -3236,6 +3276,8 @@ break|break;
 case|case
 literal|3
 case|:
+if|if
+condition|(
 name|gimp_container_view_item_selected
 argument_list|(
 name|container_view
@@ -3244,7 +3286,8 @@ name|renderer
 operator|->
 name|viewable
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
 if|if
 condition|(
 name|container_view
@@ -3263,6 +3306,7 @@ operator|->
 name|viewable
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 default|default:
 break|break;

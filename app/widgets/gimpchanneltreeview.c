@@ -129,7 +129,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_channel_tree_view_select_item
 parameter_list|(
 name|GimpContainerView
@@ -757,7 +757,7 @@ end_comment
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_channel_tree_view_select_item (GimpContainerView * view,GimpViewable * item,gpointer insert_data)
 name|gimp_channel_tree_view_select_item
 parameter_list|(
@@ -781,6 +781,9 @@ name|GimpChannelTreeView
 modifier|*
 name|tree_view
 decl_stmt|;
+name|gboolean
+name|success
+decl_stmt|;
 name|item_view
 operator|=
 name|GIMP_ITEM_TREE_VIEW
@@ -795,6 +798,8 @@ argument_list|(
 name|view
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
 name|GIMP_CONTAINER_VIEW_CLASS
 argument_list|(
 name|parent_class
@@ -852,11 +857,16 @@ name|tree_view
 operator|->
 name|toselection_button
 argument_list|,
+name|success
+operator|&&
 name|item
 operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 

@@ -219,7 +219,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_layer_tree_view_select_item
 parameter_list|(
 name|GimpContainerView
@@ -2002,7 +2002,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_layer_tree_view_select_item (GimpContainerView * view,GimpViewable * item,gpointer insert_data)
 name|gimp_layer_tree_view_select_item
 parameter_list|(
@@ -2041,6 +2041,9 @@ name|raise_sensitive
 init|=
 name|FALSE
 decl_stmt|;
+name|gboolean
+name|success
+decl_stmt|;
 name|item_view
 operator|=
 name|GIMP_ITEM_TREE_VIEW
@@ -2055,6 +2058,8 @@ argument_list|(
 name|view
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
 name|GIMP_CONTAINER_VIEW_CLASS
 argument_list|(
 name|parent_class
@@ -2072,6 +2077,11 @@ expr_stmt|;
 if|if
 condition|(
 name|item
+condition|)
+block|{
+if|if
+condition|(
+name|success
 condition|)
 block|{
 name|gimp_layer_tree_view_update_borders
@@ -2095,12 +2105,16 @@ name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|options_sensitive
 operator|=
 name|TRUE
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|success
+operator|||
 name|gimp_layer_is_floating_sel
 argument_list|(
 name|GIMP_LAYER
@@ -2201,6 +2215,9 @@ argument_list|,
 name|anchor_sensitive
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 

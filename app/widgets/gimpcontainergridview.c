@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0cd0d30103
+DECL|enum|__anon2a507f600103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -225,7 +225,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_container_grid_view_select_item
 parameter_list|(
 name|GimpContainerView
@@ -1825,7 +1825,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_container_grid_view_select_item (GimpContainerView * view,GimpViewable * viewable,gpointer insert_data)
 name|gimp_container_grid_view_select_item
 parameter_list|(
@@ -1850,6 +1850,9 @@ argument_list|,
 name|insert_data
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -2115,6 +2118,8 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+if|if
+condition|(
 name|gimp_container_view_item_selected
 argument_list|(
 name|GIMP_CONTAINER_VIEW
@@ -2129,7 +2134,8 @@ argument_list|)
 operator|->
 name|viewable
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
 name|gimp_container_view_item_context
 argument_list|(
 name|GIMP_CONTAINER_VIEW
@@ -2145,6 +2151,7 @@ operator|->
 name|viewable
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

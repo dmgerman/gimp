@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275f08620103
+DECL|enum|__anon28c225e00103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -457,7 +457,7 @@ argument_list|(
 name|klass
 argument_list|)
 argument_list|,
-name|G_SIGNAL_RUN_FIRST
+name|G_SIGNAL_RUN_LAST
 argument_list|,
 name|G_STRUCT_OFFSET
 argument_list|(
@@ -470,9 +470,9 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT_POINTER
+name|gimp_marshal_BOOLEAN__OBJECT_POINTER
 argument_list|,
-name|G_TYPE_NONE
+name|G_TYPE_BOOLEAN
 argument_list|,
 literal|2
 argument_list|,
@@ -1908,7 +1908,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_container_view_select_item (GimpContainerView * view,GimpViewable * viewable)
 name|gimp_container_view_select_item
 parameter_list|(
@@ -1921,23 +1921,33 @@ modifier|*
 name|viewable
 parameter_list|)
 block|{
-name|g_return_if_fail
+name|gboolean
+name|success
+init|=
+name|FALSE
+decl_stmt|;
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_CONTAINER_VIEW
 argument_list|(
 name|view
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
-operator|!
 name|viewable
+operator|==
+name|NULL
 operator|||
 name|GIMP_IS_VIEWABLE
 argument_list|(
 name|viewable
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1975,9 +1985,15 @@ argument_list|,
 name|viewable
 argument_list|,
 name|insert_data
+argument_list|,
+operator|&
+name|success
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|success
+return|;
 block|}
 end_function
 
@@ -2124,7 +2140,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_container_view_item_selected (GimpContainerView * view,GimpViewable * viewable)
 name|gimp_container_view_item_selected
 parameter_list|(
@@ -2137,22 +2153,31 @@ modifier|*
 name|viewable
 parameter_list|)
 block|{
-name|g_return_if_fail
+name|gboolean
+name|success
+decl_stmt|;
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_CONTAINER_VIEW
 argument_list|(
 name|view
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_VIEWABLE
 argument_list|(
 name|viewable
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
 name|gimp_container_view_select_item
 argument_list|(
 name|view
@@ -2162,6 +2187,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|success
+operator|&&
 name|view
 operator|->
 name|container
@@ -2225,6 +2252,9 @@ name|context
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|success
+return|;
 block|}
 end_function
 
@@ -2647,6 +2677,11 @@ block|{
 name|gpointer
 name|insert_data
 decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|FALSE
+decl_stmt|;
 name|insert_data
 operator|=
 name|g_hash_table_lookup
@@ -2672,6 +2707,20 @@ argument_list|,
 name|viewable
 argument_list|,
 name|insert_data
+argument_list|,
+operator|&
+name|success
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|success
+condition|)
+name|g_warning
+argument_list|(
+literal|"gimp_container_view_context_changed(): select_item() failed "
+literal|"(should not happen)"
 argument_list|)
 expr_stmt|;
 block|}
