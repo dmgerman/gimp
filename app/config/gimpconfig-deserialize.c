@@ -133,7 +133,7 @@ name|gimp_config_deserialize_unknown
 parameter_list|(
 name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GScanner
 modifier|*
@@ -149,7 +149,7 @@ name|gimp_config_deserialize_property
 parameter_list|(
 name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GScanner
 modifier|*
@@ -172,7 +172,7 @@ name|value
 parameter_list|,
 name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GParamSpec
 modifier|*
@@ -316,7 +316,7 @@ name|value
 parameter_list|,
 name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GParamSpec
 modifier|*
@@ -343,7 +343,7 @@ name|value
 parameter_list|,
 name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GParamSpec
 modifier|*
@@ -395,7 +395,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_config_deserialize_properties:  * @object: a #GimpConfig.  * @scanner: a #GScanner.  * @nest_level:  * @store_unknown_tokens: %TRUE if you want to store unknown tokens.  *  * This function uses the @scanner to configure the properties of @object.  *  * The store_unknown_tokens parameter is a special feature for #GimpRc.  * If it set to %TRUE, unknown tokens (e.g. tokens that don't refer to  * a property of @object) with string values are attached to @object as  * unknown tokens. GimpConfig has a couple of functions to handle the  * attached key/value pairs.  *  * Return value:  **/
+comment|/**  * gimp_config_deserialize_properties:  * @config: a #GimpConfig.  * @scanner: a #GScanner.  * @nest_level:  * @store_unknown_tokens: %TRUE if you want to store unknown tokens.  *  * This function uses the @scanner to configure the properties of @config.  *  * The store_unknown_tokens parameter is a special feature for #GimpRc.  * If it set to %TRUE, unknown tokens (e.g. tokens that don't refer to  * a property of @config) with string values are attached to @config as  * unknown tokens. GimpConfig has a couple of functions to handle the  * attached key/value pairs.  *  * Return value:  **/
 end_comment
 
 begin_function
@@ -729,12 +729,12 @@ end_function
 begin_function
 specifier|static
 name|GTokenType
-DECL|function|gimp_config_deserialize_unknown (GimpConfig * object,GScanner * scanner)
+DECL|function|gimp_config_deserialize_unknown (GimpConfig * config,GScanner * scanner)
 name|gimp_config_deserialize_unknown
 parameter_list|(
 name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GScanner
 modifier|*
@@ -795,7 +795,7 @@ return|;
 block|}
 name|gimp_config_add_unknown_token
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|key
 argument_list|,
@@ -1104,7 +1104,7 @@ end_function
 begin_function
 specifier|static
 name|GTokenType
-DECL|function|gimp_config_deserialize_value (GValue * value,GimpConfig * object,GParamSpec * prop_spec,GScanner * scanner)
+DECL|function|gimp_config_deserialize_value (GValue * value,GimpConfig * config,GParamSpec * prop_spec,GScanner * scanner)
 name|gimp_config_deserialize_value
 parameter_list|(
 name|GValue
@@ -1113,7 +1113,7 @@ name|value
 parameter_list|,
 name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GParamSpec
 modifier|*
@@ -1268,7 +1268,7 @@ name|gimp_config_deserialize_value_array
 argument_list|(
 name|value
 argument_list|,
-name|object
+name|config
 argument_list|,
 name|prop_spec
 argument_list|,
