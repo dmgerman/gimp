@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c13bed10103
+DECL|enum|__anon2999c4ce0103
 block|{
 DECL|enumerator|ACCEL_EDITED
 name|ACCEL_EDITED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c13bed10203
+DECL|enum|__anon2999c4ce0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1297,18 +1297,19 @@ argument_list|)
 block|,
 name|NULL
 block|,
-comment|/* base_init */
+comment|/* base_init      */
 name|NULL
 block|,
-comment|/* base_finalize */
+comment|/* base_finalize  */
 name|NULL
 block|,
+comment|/* class_init     */
 name|NULL
 block|,
 comment|/* class_finalize */
 name|NULL
 block|,
-comment|/* class_data */
+comment|/* class_data     */
 sizeof|sizeof
 argument_list|(
 name|GtkEventBox
@@ -1316,7 +1317,7 @@ argument_list|)
 block|,
 literal|0
 block|,
-comment|/* n_preallocs */
+comment|/* n_preallocs    */
 operator|(
 name|GInstanceInitFunc
 operator|)

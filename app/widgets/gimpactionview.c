@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0dc3890103
+DECL|enum|__anon27447a830103
 block|{
 DECL|enumerator|COLUMN_ACTION
 name|COLUMN_ACTION
@@ -1391,7 +1391,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0dc3890208
+DECL|struct|__anon27447a830208
 block|{
 DECL|member|accel_path
 name|gchar
@@ -1937,7 +1937,7 @@ name|gimp_query_boolean_box
 argument_list|(
 name|_
 argument_list|(
-literal|"Conflicting shortcuts"
+literal|"Conflicting Shortcuts"
 argument_list|)
 argument_list|,
 name|gtk_widget_get_toplevel
@@ -1968,7 +1968,7 @@ argument_list|(
 name|view
 argument_list|)
 argument_list|,
-literal|"unmap"
+literal|"destroy"
 argument_list|,
 name|gimp_action_view_accel_confirm
 argument_list|,
