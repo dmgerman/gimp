@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2755aeba0103
+DECL|enum|__anon287c1a900103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -90,7 +90,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2755aeba0203
+DECL|enum|__anon287c1a900203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -993,6 +993,9 @@ operator|+=
 operator|(
 name|pixbuf_instance_size
 operator|+
+operator|(
+name|gsize
+operator|)
 name|gdk_pixbuf_get_height
 argument_list|(
 name|pixbuf

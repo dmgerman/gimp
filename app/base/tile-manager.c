@@ -2487,6 +2487,9 @@ argument_list|(
 name|TileManager
 argument_list|)
 operator|+
+operator|(
+name|gint64
+operator|)
 name|tm
 operator|->
 name|ntile_rows
@@ -2507,6 +2510,9 @@ name|gpointer
 argument_list|)
 operator|)
 operator|+
+operator|(
+name|gint64
+operator|)
 name|tm
 operator|->
 name|width

@@ -2408,6 +2408,9 @@ block|{
 name|memsize
 operator|+=
 operator|(
+operator|(
+name|gsize
+operator|)
 name|temp_buf
 operator|->
 name|bytes
