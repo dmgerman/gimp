@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1c2c080103
+DECL|enum|__anon2a05ebce0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -2751,16 +2751,11 @@ name|height
 expr_stmt|;
 name|size
 operator|=
-name|MIN
-argument_list|(
-name|size
-argument_list|,
 name|MAX
 argument_list|(
 name|width
 argument_list|,
 name|height
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
