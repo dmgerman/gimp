@@ -37,7 +37,7 @@ comment|/* If you use one of a few functions that were not present in earlier   
 end_comment
 
 begin_comment
-comment|/* To verify whether ppport.h is needed for your module, and whether any    special defines should be used, ppport.h can be run through Perl to check    your source code. Simply say:        	perl -x ppport.h *.c *.h *.xs foo/*.c [etc]        The result will be a list of patches suggesting changes that should at    least be acceptable, if not necessarily the most efficient solution, or a    fix for all possible problems. It won't catch where dTHR is needed, and    doesn't attempt to account for global macro or function definitions,    nested includes, typemaps, etc.        In order to test for the need of dTHR, please try your module under a    recent version of Perl that has threading compiled-in.   */
+comment|/* To verify whether ppport.h is needed for your module, and whether any    special defines should be used, ppport.h can be run through Perl to check    your source code. Simply say:        	perl -x ppport.h *.c *.h *.xs [etc]        The result will be a list of patches suggesting changes that should at    least be acceptable, if not necessarily the most efficient solution, or a    fix for all possible problems. It won't catch where dTHR is needed, and    doesn't attempt to account for global macro or function definitions,    nested includes, typemaps, etc.        In order to test for the need of dTHR, please try your module under a    recent version of Perl that has threading compiled-in.   */
 end_comment
 
 begin_comment
