@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -30,19 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<errno.h>
+file|<sys/stat.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/stat.h>
 end_include
 
 begin_ifdef
@@ -159,22 +159,6 @@ directive|endif
 end_endif
 
 begin_define
-DECL|macro|NUM_PAGES
-define|#
-directive|define
-name|NUM_PAGES
-value|6
-end_define
-
-begin_define
-DECL|macro|EEK_PAGE
-define|#
-directive|define
-name|EEK_PAGE
-value|(NUM_PAGES - 1)
-end_define
-
-begin_define
 DECL|macro|PAGE_STYLE (widget)
 define|#
 directive|define
@@ -198,7 +182,35 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ec81270103
+DECL|enum|__anon28dcb5690103
+block|{
+DECL|enumerator|GPL_PAGE
+name|GPL_PAGE
+block|,
+DECL|enumerator|TREE_PAGE
+name|TREE_PAGE
+block|,
+DECL|enumerator|LOG_PAGE
+name|LOG_PAGE
+block|,
+DECL|enumerator|TUNING_PAGE
+name|TUNING_PAGE
+block|,
+DECL|enumerator|RESOLUTION_PAGE
+name|RESOLUTION_PAGE
+block|,
+DECL|enumerator|EEK_PAGE
+name|EEK_PAGE
+block|,
+DECL|enumerator|NUM_PAGES
+name|NUM_PAGES
+block|}
+enum|;
+end_enum
+
+begin_enum
+enum|enum
+DECL|enum|__anon28dcb5690203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -443,23 +455,23 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ec81270203
+DECL|enum|__anon28dcb5690303
 block|{
 DECL|enumerator|TREE_ITEM_DONT
 name|TREE_ITEM_DONT
 block|,
-comment|/*  Don't pre-create             */
+comment|/* Don't pre-create            */
 DECL|enumerator|TREE_ITEM_MKDIR_ONLY
 name|TREE_ITEM_MKDIR_ONLY
 block|,
-comment|/*  Just mkdir                   */
+comment|/* Just mkdir                  */
 DECL|enumerator|TREE_ITEM_FROM_SYSCONF_DIR
 name|TREE_ITEM_FROM_SYSCONF_DIR
 block|,
-comment|/*  Copy from sysconf directory  */
+comment|/* Copy from sysconf directory */
 DECL|enumerator|TREE_ITEM_FROM_DATA_DIR
 name|TREE_ITEM_FROM_DATA_DIR
-comment|/*  ... from data directory      */
+comment|/* ... from data directory     */
 DECL|typedef|TreeItemType
 block|}
 name|TreeItemType
@@ -469,7 +481,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28ec81270308
+DECL|struct|__anon28dcb5690408
 block|{
 DECL|member|directory
 name|gboolean
@@ -615,14 +627,11 @@ block|,
 block|{
 name|TRUE
 block|,
-literal|"brushes"
+literal|"themes"
 block|,
 name|N_
 argument_list|(
-literal|"This folder is used to store user defined brushes.\n"
-literal|"The GIMP checks this folder in addition to the system-\n"
-literal|"wide GIMP brushes installation when searching for\n"
-literal|"brushes."
+literal|"This folder is searched for user-installed themes."
 argument_list|)
 block|,
 name|TREE_ITEM_MKDIR_ONLY
@@ -633,12 +642,14 @@ block|,
 block|{
 name|TRUE
 block|,
-literal|"generated_brushes"
+literal|"brushes"
 block|,
 name|N_
 argument_list|(
-literal|"This folder is used to store brushes that are created\n"
-literal|"with the brush editor."
+literal|"This folder is used to store user defined brushes.\n"
+literal|"The GIMP checks this folder in addition to the system-\n"
+literal|"wide GIMP brushes installation when searching for\n"
+literal|"brushes."
 argument_list|)
 block|,
 name|TREE_ITEM_MKDIR_ONLY
@@ -901,18 +912,6 @@ block|}
 struct|;
 end_struct
 
-begin_decl_stmt
-specifier|static
-name|gint
-name|num_tree_items
-init|=
-name|G_N_ELEMENTS
-argument_list|(
-name|tree_items
-argument_list|)
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 specifier|static
 name|void
@@ -927,6 +926,10 @@ name|gint
 name|index
 parameter_list|)
 block|{
+name|GtkWidget
+modifier|*
+name|page
+decl_stmt|;
 name|gchar
 modifier|*
 name|title
@@ -934,10 +937,6 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|footer
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|page
 decl_stmt|;
 name|page
 operator|=
@@ -1088,7 +1087,7 @@ specifier|static
 name|gint
 name|notebook_index
 init|=
-literal|0
+name|GPL_PAGE
 decl_stmt|;
 switch|switch
 condition|(
@@ -1096,13 +1095,35 @@ name|notebook_index
 condition|)
 block|{
 case|case
-literal|0
+name|GPL_PAGE
 case|:
+name|user_install_notebook_set_page
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
+argument_list|)
+argument_list|,
+operator|++
+name|notebook_index
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
-literal|1
+name|TREE_PAGE
 case|:
-comment|/*  Creatring the directories can take some time on NFS, so inform        *  the user and set the buttons insensitive        */
+name|user_install_notebook_set_page
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
+argument_list|)
+argument_list|,
+operator|++
+name|notebook_index
+argument_list|)
+expr_stmt|;
+comment|/*  Creating the directories can take some time on NFS, so inform        *  the user and set the buttons insensitive        */
 name|gtk_widget_set_sensitive
 argument_list|(
 name|continue_button
@@ -1115,6 +1136,19 @@ argument_list|(
 name|cancel_button
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|user_install_run
+argument_list|()
+condition|)
+block|{
+name|gtk_widget_set_sensitive
+argument_list|(
+name|continue_button
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text
@@ -1126,31 +1160,29 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Please wait while your personal\n"
-literal|"GIMP folder is being created..."
+literal|"Installation successful.\n"
+literal|"Click \"Continue\" to proceed."
 argument_list|)
 argument_list|)
 expr_stmt|;
-while|while
-condition|(
-name|gtk_events_pending
-argument_list|()
-condition|)
-name|gtk_main_iteration
-argument_list|()
-expr_stmt|;
-if|if
-condition|(
-name|user_install_run
-argument_list|()
-condition|)
-name|gtk_widget_set_sensitive
+block|}
+else|else
+block|{
+name|gtk_label_set_text
 argument_list|(
-name|continue_button
+name|GTK_LABEL
+argument_list|(
+name|footer_label
+argument_list|)
 argument_list|,
-name|TRUE
+name|_
+argument_list|(
+literal|"Installation failed.\n"
+literal|"Contact system administrator."
+argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|gtk_widget_set_sensitive
 argument_list|(
 name|cancel_button
@@ -1160,8 +1192,19 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-literal|2
+name|LOG_PAGE
 case|:
+name|user_install_notebook_set_page
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
+argument_list|)
+argument_list|,
+operator|++
+name|notebook_index
+argument_list|)
+expr_stmt|;
 name|user_install_tuning
 argument_list|(
 name|gimprc
@@ -1169,8 +1212,19 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-literal|3
+name|TUNING_PAGE
 case|:
+name|user_install_notebook_set_page
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
+argument_list|)
+argument_list|,
+operator|++
+name|notebook_index
+argument_list|)
+expr_stmt|;
 name|user_install_resolution
 argument_list|(
 name|gimprc
@@ -1178,7 +1232,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-literal|4
+name|RESOLUTION_PAGE
 case|:
 name|gimp_rc_save
 argument_list|(
@@ -1211,33 +1265,11 @@ argument_list|()
 expr_stmt|;
 return|return;
 break|break;
-case|case
-name|EEK_PAGE
-case|:
 default|default:
 name|g_assert_not_reached
 argument_list|()
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|notebook_index
-operator|<
-name|NUM_PAGES
-operator|-
-literal|1
-condition|)
-name|user_install_notebook_set_page
-argument_list|(
-name|GTK_NOTEBOOK
-argument_list|(
-name|notebook
-argument_list|)
-argument_list|,
-operator|++
-name|notebook_index
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1256,14 +1288,14 @@ name|data
 parameter_list|)
 block|{
 specifier|static
-name|gint
-name|timeout
+name|guint
+name|timeout_id
 init|=
 literal|0
 decl_stmt|;
 if|if
 condition|(
-name|timeout
+name|timeout_id
 condition|)
 name|exit
 argument_list|(
@@ -1285,7 +1317,7 @@ argument_list|,
 name|EEK_PAGE
 argument_list|)
 expr_stmt|;
-name|timeout
+name|timeout_id
 operator|=
 name|g_timeout_add
 argument_list|(
@@ -3257,7 +3289,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"For a proper GIMP installation, a folder named\n"
-literal|"%s needs to be created."
+literal|"'%s' needs to be created."
 argument_list|)
 argument_list|,
 name|gimp_directory
@@ -3472,7 +3504,10 @@ literal|0
 init|;
 name|i
 operator|<
-name|num_tree_items
+name|G_N_ELEMENTS
+argument_list|(
+name|tree_items
+argument_list|)
 condition|;
 name|i
 operator|++
@@ -3668,7 +3703,11 @@ argument_list|(
 literal|"User Installation Log"
 argument_list|)
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Please wait while your personal\n"
+literal|"GIMP folder is being created..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Page 4  */
@@ -3870,21 +3909,20 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|FILE
-modifier|*
-name|sfile
-decl_stmt|;
-name|FILE
-modifier|*
-name|dfile
-decl_stmt|;
 name|gchar
 name|buffer
 index|[
 literal|4096
 index|]
 decl_stmt|;
-name|gsize
+name|FILE
+modifier|*
+name|sfile
+decl_stmt|,
+modifier|*
+name|dfile
+decl_stmt|;
+name|gint
 name|nbytes
 decl_stmt|;
 name|sfile
@@ -4032,7 +4070,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Error writing to '%s': %s"
+literal|"Error while writing '%s': %s"
 argument_list|)
 argument_list|,
 name|dest
@@ -4079,7 +4117,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Error reading from '%s': %s"
+literal|"Error while reading '%s': %s"
 argument_list|)
 argument_list|,
 name|source
@@ -4109,11 +4147,44 @@ argument_list|(
 name|sfile
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
 name|fclose
 argument_list|(
 name|dfile
 argument_list|)
+operator|==
+name|EOF
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Error while closing '%s': %s"
+argument_list|)
+argument_list|,
+name|dest
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
 expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
 return|return
 name|TRUE
 return|;
@@ -4259,27 +4330,6 @@ argument_list|(
 name|log_view
 argument_list|)
 expr_stmt|;
-for|for
-control|(
-name|i
-operator|=
-literal|0
-init|;
-name|i
-operator|<
-name|num_tree_items
-condition|;
-name|i
-operator|++
-control|)
-block|{
-if|if
-condition|(
-name|i
-operator|==
-literal|0
-condition|)
-block|{
 name|g_snprintf
 argument_list|(
 name|log_line
@@ -4291,7 +4341,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Creating folder %s\n"
+literal|"Creating folder '%s'\n"
 argument_list|)
 argument_list|,
 name|gimp_directory
@@ -4308,6 +4358,14 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+while|while
+condition|(
+name|gtk_events_pending
+argument_list|()
+condition|)
+name|gtk_main_iteration
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|mkdir
@@ -4315,19 +4373,7 @@ argument_list|(
 name|gimp_directory
 argument_list|()
 argument_list|,
-name|S_IRUSR
-operator||
-name|S_IWUSR
-operator||
-name|S_IXUSR
-operator||
-name|S_IRGRP
-operator||
-name|S_IXGRP
-operator||
-name|S_IROTH
-operator||
-name|S_IXOTH
+literal|0755
 argument_list|)
 operator|==
 operator|-
@@ -4348,8 +4394,11 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot create folder: %s"
+literal|"Cannot create folder '%s': %s"
 argument_list|)
+argument_list|,
+name|gimp_directory
+argument_list|()
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -4374,7 +4423,31 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-block|}
+while|while
+condition|(
+name|gtk_events_pending
+argument_list|()
+condition|)
+name|gtk_main_iteration
+argument_list|()
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|G_N_ELEMENTS
+argument_list|(
+name|tree_items
+argument_list|)
+condition|;
+name|i
+operator|++
+control|)
+block|{
 name|g_snprintf
 argument_list|(
 name|dest
@@ -4427,7 +4500,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Creating folder %s\n"
+literal|"Creating folder '%s'\n"
 argument_list|)
 argument_list|,
 name|dest
@@ -4442,6 +4515,14 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
+expr_stmt|;
+while|while
+condition|(
+name|gtk_events_pending
+argument_list|()
+condition|)
+name|gtk_main_iteration
+argument_list|()
 expr_stmt|;
 if|if
 condition|(
@@ -4605,7 +4686,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Copying file %s from %s\n"
+literal|"Copying file '%s' from '%s'\n"
 argument_list|)
 argument_list|,
 name|dest
@@ -4622,6 +4703,14 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
+expr_stmt|;
+while|while
+condition|(
+name|gtk_events_pending
+argument_list|()
+condition|)
+name|gtk_main_iteration
+argument_list|()
 expr_stmt|;
 if|if
 condition|(
@@ -4697,6 +4786,12 @@ operator|->
 name|message
 argument_list|)
 expr_stmt|;
+name|g_clear_error
+argument_list|(
+operator|&
+name|error
+argument_list|)
+expr_stmt|;
 name|gtk_text_buffer_insert_at_cursor
 argument_list|(
 name|log_buffer
@@ -4705,24 +4800,6 @@ name|log_line
 argument_list|,
 operator|-
 literal|1
-argument_list|)
-expr_stmt|;
-name|add_label
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|log_page
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"Installation failed.  Contact system administrator."
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_error_free
-argument_list|(
-name|error
 argument_list|)
 expr_stmt|;
 return|return
