@@ -112,6 +112,10 @@ DECL|member|draw_line
 name|gboolean
 name|draw_line
 decl_stmt|;
+DECL|member|notify_connected
+name|gboolean
+name|notify_connected
+decl_stmt|;
 DECL|member|draw_brush
 name|gboolean
 name|draw_brush

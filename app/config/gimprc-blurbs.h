@@ -591,6 +591,15 @@ value|"This path will be searched for scripts when the Script-Fu plug-in is run.
 end_define
 
 begin_define
+DECL|macro|SHOW_BRUSH_OUTLINE_BLURB
+define|#
+directive|define
+name|SHOW_BRUSH_OUTLINE_BLURB
+define|\
+value|N_("When enabled, all paint tools will show a preview of the current " \    "brush's outline.")
+end_define
+
+begin_define
 DECL|macro|SHOW_MENUBAR_BLURB
 define|#
 directive|define
