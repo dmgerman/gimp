@@ -125,7 +125,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2937084d0103
+DECL|enum|__anon292fcfb60103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -142,7 +142,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2937084d0208
+DECL|struct|__anon292fcfb60208
 block|{
 DECL|member|interlace
 name|gint
@@ -6587,6 +6587,7 @@ end_define
 
 begin_decl_stmt
 DECL|variable|hsize
+specifier|static
 specifier|const
 name|code_int
 name|hsize
@@ -8317,9 +8318,11 @@ block|}
 comment|/*  * Clear out the hash table  */
 specifier|static
 name|void
-DECL|function|cl_block ()
+DECL|function|cl_block (void)
 name|cl_block
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 comment|/* table clear for block compress */
 block|{
 name|cl_hash
@@ -8351,10 +8354,9 @@ expr_stmt|;
 block|}
 specifier|static
 name|void
-DECL|function|cl_hash (register count_int hsize)
+DECL|function|cl_hash (count_int hsize)
 name|cl_hash
 parameter_list|(
-specifier|register
 name|count_int
 name|hsize
 parameter_list|)
@@ -8571,9 +8573,11 @@ expr_stmt|;
 block|}
 specifier|static
 name|void
-DECL|function|writeerr ()
+DECL|function|writeerr (void)
 name|writeerr
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|g_message
 argument_list|(
@@ -8595,9 +8599,11 @@ decl_stmt|;
 comment|/*  * Set up the 'byte output' routine  */
 specifier|static
 name|void
-DECL|function|char_init ()
+DECL|function|char_init (void)
 name|char_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|a_count
 operator|=
