@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1d96ff0103
+DECL|enum|__anon2c1cf8cb0103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -89,7 +89,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1d96ff0203
+DECL|enum|__anon2c1cf8cb0203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1d96ff0303
+DECL|enum|__anon2c1cf8cb0303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -127,7 +127,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1d96ff0403
+DECL|enum|__anon2c1cf8cb0403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -250,7 +250,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1d96ff0508
+DECL|struct|__anon2c1cf8cb0508
 block|{
 DECL|member|h_style
 name|gint
@@ -390,7 +390,7 @@ argument_list|(
 literal|"Align _Visible Layers..."
 argument_list|)
 argument_list|,
-literal|"RGB*,GRAY*"
+literal|"RGB*,GRAY*,INDEXED*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
