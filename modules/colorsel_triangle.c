@@ -244,7 +244,7 @@ DECL|macro|COLORWHEELRADIUS
 define|#
 directive|define
 name|COLORWHEELRADIUS
-value|100
+value|(GIMP_COLOR_SELECTOR_SIZE / 2)
 end_define
 
 begin_define
@@ -252,7 +252,7 @@ DECL|macro|COLORTRIANGLERADIUS
 define|#
 directive|define
 name|COLORTRIANGLERADIUS
-value|80
+value|(COLORWHEELRADIUS - GIMP_COLOR_SELECTOR_BAR_SIZE)
 end_define
 
 begin_define
@@ -282,7 +282,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291ee2630103
+DECL|enum|__anon2b9b0ed60103
 block|{
 DECL|enumerator|HUE
 name|HUE
@@ -672,16 +672,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
 name|hbox
 operator|=
 name|gtk_hbox_new
@@ -695,10 +685,10 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|hbox
+name|vbox
 argument_list|)
 argument_list|,
-name|vbox
+name|hbox
 argument_list|,
 name|TRUE
 argument_list|,
@@ -738,7 +728,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|hbox
 argument_list|)
 argument_list|,
 name|frame
@@ -756,7 +746,7 @@ name|vbox
 argument_list|)
 expr_stmt|;
 return|return
-name|hbox
+name|vbox
 return|;
 block|}
 end_function

@@ -30,9 +30,19 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look at the html documentation */
+DECL|macro|GIMP_COLOR_SELECTOR_SIZE
+define|#
+directive|define
+name|GIMP_COLOR_SELECTOR_SIZE
+value|150
+DECL|macro|GIMP_COLOR_SELECTOR_BAR_SIZE
+define|#
+directive|define
+name|GIMP_COLOR_SELECTOR_BAR_SIZE
+value|15
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fc498c0103
+DECL|enum|__anon293119df0103
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE

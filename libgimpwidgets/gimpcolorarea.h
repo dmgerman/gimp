@@ -78,7 +78,7 @@ parameter_list|)
 value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_COLOR_AREA))
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c92f9d30103
+DECL|enum|__anon29bef2910103
 block|{
 DECL|enumerator|GIMP_COLOR_AREA_FLAT
 name|GIMP_COLOR_AREA_FLAT
@@ -100,6 +100,29 @@ name|struct
 name|_GimpColorAreaClass
 name|GimpColorAreaClass
 typedef|;
+DECL|struct|_GimpColorArea
+struct|struct
+name|_GimpColorArea
+block|{
+DECL|member|preview
+name|GtkPreview
+name|preview
+decl_stmt|;
+comment|/*< private>*/
+DECL|member|type
+name|GimpColorAreaType
+name|type
+decl_stmt|;
+DECL|member|color
+name|GimpRGB
+name|color
+decl_stmt|;
+DECL|member|idle_id
+name|guint
+name|idle_id
+decl_stmt|;
+block|}
+struct|;
 DECL|struct|_GimpColorAreaClass
 struct|struct
 name|_GimpColorAreaClass

@@ -104,7 +104,7 @@ DECL|macro|XY_DEF_WIDTH
 define|#
 directive|define
 name|XY_DEF_WIDTH
-value|200
+value|GIMP_COLOR_SELECTOR_SIZE
 end_define
 
 begin_define
@@ -112,7 +112,7 @@ DECL|macro|XY_DEF_HEIGHT
 define|#
 directive|define
 name|XY_DEF_HEIGHT
-value|200
+value|GIMP_COLOR_SELECTOR_SIZE
 end_define
 
 begin_define
@@ -120,7 +120,7 @@ DECL|macro|Z_DEF_WIDTH
 define|#
 directive|define
 name|Z_DEF_WIDTH
-value|15
+value|GIMP_COLOR_SELECTOR_BAR_SIZE
 end_define
 
 begin_define
@@ -128,23 +128,7 @@ DECL|macro|Z_DEF_HEIGHT
 define|#
 directive|define
 name|Z_DEF_HEIGHT
-value|200
-end_define
-
-begin_define
-DECL|macro|COLOR_AREA_WIDTH
-define|#
-directive|define
-name|COLOR_AREA_WIDTH
-value|74
-end_define
-
-begin_define
-DECL|macro|COLOR_AREA_HEIGHT
-define|#
-directive|define
-name|COLOR_AREA_HEIGHT
-value|20
+value|GIMP_COLOR_SELECTOR_SIZE
 end_define
 
 begin_define
@@ -152,13 +136,13 @@ DECL|macro|COLOR_AREA_MASK
 define|#
 directive|define
 name|COLOR_AREA_MASK
-value|(GDK_EXPOSURE_MASK | \                          GDK_BUTTON_PRESS_MASK | \                          GDK_BUTTON_RELEASE_MASK | \ 			 GDK_BUTTON1_MOTION_MASK | \                          GDK_ENTER_NOTIFY_MASK)
+value|(GDK_EXPOSURE_MASK       | \                          GDK_BUTTON_PRESS_MASK   | \                          GDK_BUTTON_RELEASE_MASK | \ 			 GDK_BUTTON1_MOTION_MASK | \                          GDK_ENTER_NOTIFY_MASK)
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad51b9c0103
+DECL|enum|__anon2aa643d20103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -209,7 +193,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad51b9c0203
+DECL|enum|__anon2aa643d20203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -1050,16 +1034,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|main_vbox
-argument_list|)
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
 name|main_hbox
 operator|=
 name|gtk_hbox_new
@@ -1096,7 +1070,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1151,7 +1125,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|2
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1322,7 +1296,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|2
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -7235,7 +7209,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad51b9c0308
+DECL|struct|__anon2aa643d20308
 block|{
 DECL|member|callback
 name|GimpColorSelectorCallback

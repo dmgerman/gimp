@@ -754,7 +754,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1b47170103
+DECL|enum|__anon2ac296920103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -16855,7 +16855,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-comment|/*  floating selections are added right above the layer  	      they are attached to  */
+comment|/*  floating selections are added right above the layer  	   *  they are attached to 	   */
 if|if
 condition|(
 name|gimp_layer_is_floating_sel
@@ -16886,6 +16886,7 @@ argument_list|(
 name|layer
 argument_list|)
 condition|)
+block|{
 name|reverse_list
 operator|=
 name|g_slist_prepend
@@ -16895,6 +16896,7 @@ argument_list|,
 name|floating_sel
 argument_list|)
 expr_stmt|;
+block|}
 name|reverse_list
 operator|=
 name|g_slist_prepend
@@ -16911,10 +16913,18 @@ name|construct_flag
 operator|=
 name|FALSE
 expr_stmt|;
-while|while
-condition|(
+for|for
+control|(
+init|;
 name|reverse_list
-condition|)
+condition|;
+name|reverse_list
+operator|=
+name|g_slist_next
+argument_list|(
+name|reverse_list
+argument_list|)
+control|)
 block|{
 name|layer
 operator|=
@@ -17000,6 +17010,17 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|w
+operator|<
+literal|1
+operator|||
+name|h
+operator|<
+literal|1
+condition|)
+continue|continue;
 name|x1
 operator|=
 name|CLAMP
@@ -17465,13 +17486,6 @@ block|}
 name|construct_flag
 operator|=
 name|TRUE
-expr_stmt|;
-name|reverse_list
-operator|=
-name|g_slist_next
-argument_list|(
-name|reverse_list
-argument_list|)
 expr_stmt|;
 block|}
 name|g_slist_free
