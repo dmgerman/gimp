@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b02153c0108
+DECL|struct|__anon2c5424de0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b02153c0208
+DECL|struct|__anon2c5424de0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b02153c0308
+DECL|struct|__anon2c5424de0308
 block|{
 DECL|member|size
 name|GtkWidget
@@ -378,7 +378,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"radius"
 block|,
-literal|"Radius of gaussian blur (in pixels> 1.0)"
+literal|"Radius of gaussian blur (in pixels,> 0.0)"
 block|}
 block|,
 block|{
@@ -433,7 +433,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"horizontal"
 block|,
-literal|"Horizontal radius of gaussian blur (in pixels)"
+literal|"Horizontal radius of gaussian blur (in pixels,> 0.0)"
 block|}
 block|,
 block|{
@@ -441,7 +441,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"vertical"
 block|,
-literal|"Vertical radius of gaussian blur (in pixels)"
+literal|"Vertical radius of gaussian blur (in pixels,> 0.0)"
 block|}
 block|}
 decl_stmt|;
@@ -459,9 +459,7 @@ literal|"Horizontal and vertical blurring can be "
 literal|"independently invoked by specifying only one to "
 literal|"run.  The RLE gaussian blurring performs most "
 literal|"efficiently on computer-generated images or images "
-literal|"with large areas of constant intensity.  Values for "
-literal|"radii less than 1.0 are invalid as they would "
-literal|"generate spurious results."
+literal|"with large areas of constant intensity."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -501,11 +499,7 @@ literal|"This radius can be specified indepently on for the "
 literal|"horizontal and the vertical direction. The RLE "
 literal|"gaussian blurring performs most efficiently on "
 literal|"computer-generated images or images with large "
-literal|"areas of constant intensity.  Values for radii "
-literal|"less than 1.0 would generate spurious results. "
-literal|"Therefore they are interpreted as 0.0, which means "
-literal|"that the computation for this orientation is "
-literal|"skipped."
+literal|"areas of constant intensity."
 argument_list|,
 literal|"Spencer Kimball, Peter Mattis& Sven Neumann"
 argument_list|,
@@ -781,8 +775,8 @@ operator|(
 name|bvals
 operator|.
 name|radius
-operator|<
-literal|1.0
+operator|<=
+literal|0.0
 operator|)
 condition|)
 name|status
@@ -944,14 +938,14 @@ operator|(
 name|b2vals
 operator|.
 name|horizontal
-operator|<
-literal|1.0
+operator|<=
+literal|0.0
 operator|&&
 name|b2vals
 operator|.
 name|vertical
-operator|<
-literal|1.0
+operator|<=
+literal|0.0
 operator|)
 condition|)
 name|status
@@ -1575,11 +1569,11 @@ name|bvals
 operator|.
 name|radius
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|5.0
 argument_list|,
@@ -2390,12 +2384,12 @@ decl_stmt|;
 if|if
 condition|(
 name|horz
-operator|<
-literal|1.0
+operator|<=
+literal|0.0
 operator|&&
 name|vert
-operator|<
-literal|1.0
+operator|<=
+literal|0.0
 condition|)
 return|return;
 name|gimp_drawable_mask_bounds
@@ -2564,8 +2558,8 @@ name|max_progress
 operator|=
 operator|(
 name|horz
-operator|<
-literal|1.0
+operator|<=
+literal|0.0
 operator|)
 condition|?
 literal|0
@@ -2580,8 +2574,8 @@ name|max_progress
 operator|+=
 operator|(
 name|vert
-operator|<
-literal|1.0
+operator|<=
+literal|0.0
 operator|)
 condition|?
 literal|0
@@ -2609,8 +2603,8 @@ comment|/*  First the vertical pass  */
 if|if
 condition|(
 name|vert
-operator|>=
-literal|1.0
+operator|>
+literal|0.0
 condition|)
 block|{
 name|vert
@@ -3085,8 +3079,8 @@ comment|/*  Now the horizontal pass  */
 if|if
 condition|(
 name|horz
-operator|>=
-literal|1.0
+operator|>
+literal|0.0
 condition|)
 block|{
 name|horz

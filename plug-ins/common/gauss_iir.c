@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2794d4b00108
+DECL|struct|__anon290baa410108
 block|{
 DECL|member|radius
 name|gdouble
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2794d4b00208
+DECL|struct|__anon290baa410208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2794d4b00308
+DECL|struct|__anon290baa410308
 block|{
 DECL|member|size
 name|GtkWidget
@@ -401,7 +401,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"radius"
 block|,
-literal|"Radius of gaussian blur (in pixels> 1.0)"
+literal|"Radius of gaussian blur (in pixels,> 0.0)"
 block|}
 block|,
 block|{
@@ -456,7 +456,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"horizontal"
 block|,
-literal|"Horizontal radius of gaussian blur (in pixels)"
+literal|"Horizontal radius of gaussian blur (in pixels,> 0.0)"
 block|}
 block|,
 block|{
@@ -464,7 +464,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"vertical"
 block|,
-literal|"Vertical radius of gaussian blur (in pixels)"
+literal|"Vertical radius of gaussian blur (in pixels,> 0.0)"
 block|}
 block|}
 decl_stmt|;
@@ -482,9 +482,7 @@ literal|"Horizontal and vertical blurring can be "
 literal|"independently invoked by specifying only one to "
 literal|"run.  The IIR gaussian blurring works best for "
 literal|"large radius values and for images which are not "
-literal|"computer-generated.  Values for radius less than "
-literal|"1.0 are invalid as they will generate spurious "
-literal|"results."
+literal|"computer-generated."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -524,10 +522,7 @@ literal|"This radius can be specified indepently on for the "
 literal|"horizontal and the vertical direction. The IIR "
 literal|"gaussian blurring works best for large radius "
 literal|"values and for images which are not "
-literal|"computer-generated.  Values for radii less than "
-literal|"1.0 would generate spurious results. Therefore "
-literal|"they are interpreted as 0.0, which means that the "
-literal|"computation for this orientation is skipped."
+literal|"computer-generated."
 argument_list|,
 literal|"Spencer Kimball, Peter Mattis& Sven Neumann"
 argument_list|,
@@ -800,8 +795,8 @@ operator|(
 name|bvals
 operator|.
 name|radius
-operator|<
-literal|1.0
+operator|<=
+literal|0.0
 operator|)
 condition|)
 name|status
@@ -966,14 +961,14 @@ operator|(
 name|b2vals
 operator|.
 name|horizontal
-operator|<
-literal|1.0
+operator|<=
+literal|0.0
 operator|&&
 name|b2vals
 operator|.
 name|vertical
-operator|<
-literal|1.0
+operator|<=
+literal|0.0
 operator|)
 condition|)
 name|status
@@ -1597,11 +1592,11 @@ name|bvals
 operator|.
 name|radius
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|5.0
 argument_list|,
@@ -2449,12 +2444,12 @@ decl_stmt|;
 if|if
 condition|(
 name|horz
-operator|<
-literal|1.0
+operator|<=
+literal|0.0
 operator|&&
 name|vert
-operator|<
-literal|1.0
+operator|<=
+literal|0.0
 condition|)
 return|return;
 name|gimp_drawable_mask_bounds
@@ -2638,8 +2633,8 @@ name|max_progress
 operator|=
 operator|(
 name|horz
-operator|<
-literal|1.0
+operator|<=
+literal|0.0
 operator|)
 condition|?
 literal|0
@@ -2654,8 +2649,8 @@ name|max_progress
 operator|+=
 operator|(
 name|vert
-operator|<
-literal|1.0
+operator|<=
+literal|0.0
 operator|)
 condition|?
 literal|0
@@ -2683,8 +2678,8 @@ comment|/*  First the vertical pass  */
 if|if
 condition|(
 name|vert
-operator|>=
-literal|1.0
+operator|>
+literal|0.0
 condition|)
 block|{
 name|vert
@@ -3229,8 +3224,8 @@ comment|/*  Now the horizontal pass  */
 if|if
 condition|(
 name|horz
-operator|>=
-literal|1.0
+operator|>
+literal|0.0
 condition|)
 block|{
 name|horz

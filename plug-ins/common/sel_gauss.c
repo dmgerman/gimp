@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace73210108
+DECL|struct|__anon2a36313d0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -67,7 +67,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace73210208
+DECL|struct|__anon2a36313d0208
 block|{
 DECL|member|run
 name|gint
@@ -264,7 +264,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"radius"
 block|,
-literal|"Radius of gaussian blur (in pixels>= 0.1)"
+literal|"Radius of gaussian blur (in pixels,> 0.0)"
 block|}
 block|,
 block|{
@@ -498,8 +498,8 @@ condition|(
 name|bvals
 operator|.
 name|radius
-operator|<
-literal|0.1
+operator|<=
+literal|0.0
 condition|)
 name|status
 operator|=
@@ -892,7 +892,7 @@ name|bvals
 operator|.
 name|radius
 argument_list|,
-literal|0.1
+literal|0.0
 argument_list|,
 name|G_MAXINT
 argument_list|,
