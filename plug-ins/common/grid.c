@@ -245,7 +245,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ca5f0f0108
+DECL|struct|__anon291370130108
 block|{
 DECL|member|hwidth
 name|gint
@@ -1563,7 +1563,7 @@ operator|.
 name|vcolor
 argument_list|)
 expr_stmt|;
-name|vcolor
+name|icolor
 index|[
 literal|0
 index|]
@@ -1573,7 +1573,7 @@ argument_list|(
 operator|&
 name|grid_cfg
 operator|.
-name|vcolor
+name|icolor
 argument_list|)
 expr_stmt|;
 name|blend
