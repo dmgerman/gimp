@@ -330,6 +330,12 @@ argument_list|,
 name|context
 argument_list|,
 name|flip_type
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0.0
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

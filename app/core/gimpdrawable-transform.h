@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3b40490103
+DECL|enum|__anon279fb4210103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -208,6 +208,15 @@ name|context
 parameter_list|,
 name|GimpOrientationType
 name|flip_type
+parameter_list|,
+name|gboolean
+name|center
+parameter_list|,
+name|gdouble
+name|axis
+parameter_list|,
+name|gboolean
+name|clip_result
 parameter_list|)
 function_decl|;
 end_function_decl

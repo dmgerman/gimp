@@ -4541,7 +4541,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_transform_flip (GimpDrawable * drawable,GimpContext * context,GimpOrientationType flip_type)
+DECL|function|gimp_drawable_transform_flip (GimpDrawable * drawable,GimpContext * context,GimpOrientationType flip_type,gboolean center,gdouble axis,gboolean clip_result)
 name|gimp_drawable_transform_flip
 parameter_list|(
 name|GimpDrawable
@@ -4554,6 +4554,15 @@ name|context
 parameter_list|,
 name|GimpOrientationType
 name|flip_type
+parameter_list|,
+name|gboolean
+name|center
+parameter_list|,
+name|gdouble
+name|axis
+parameter_list|,
+name|gboolean
+name|clip_result
 parameter_list|)
 block|{
 name|GimpImage
@@ -4660,11 +4669,6 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|gdouble
-name|axis
-init|=
-literal|0.0
-decl_stmt|;
 name|tile_manager_get_offsets
 argument_list|(
 name|orig_tiles
@@ -4690,6 +4694,11 @@ argument_list|(
 name|orig_tiles
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|center
+condition|)
+block|{
 switch|switch
 condition|(
 name|flip_type
@@ -4738,6 +4747,7 @@ break|break;
 default|default:
 break|break;
 block|}
+block|}
 comment|/* transform the buffer */
 name|new_tiles
 operator|=
@@ -4753,7 +4763,7 @@ name|flip_type
 argument_list|,
 name|axis
 argument_list|,
-name|FALSE
+name|clip_result
 argument_list|)
 expr_stmt|;
 comment|/* Free the cut/copied buffer */

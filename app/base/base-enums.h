@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon27925f0f0103
+DECL|enum|__anon29c0411c0103
 block|{
 DECL|enumerator|GIMP_CURVE_SMOOTH
 name|GIMP_CURVE_SMOOTH
@@ -105,7 +105,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27925f0f0203
+DECL|enum|__anon29c0411c0203
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -169,8 +169,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon27925f0f0303
+DECL|enum|__anon29c0411c0303
 block|{
 DECL|enumerator|GIMP_INTERPOLATION_NONE
 name|GIMP_INTERPOLATION_NONE
@@ -210,7 +209,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27925f0f0403
+DECL|enum|__anon29c0411c0403
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -319,7 +318,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27925f0f0503
+DECL|enum|__anon29c0411c0503
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS
@@ -346,7 +345,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon27925f0f0603
+DECL|enum|__anon29c0411c0603
 block|{
 DECL|enumerator|GIMP_NORMAL_CONVOL
 name|GIMP_NORMAL_CONVOL
@@ -369,7 +368,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon27925f0f0703
+DECL|enum|__anon29c0411c0703
 block|{
 DECL|enumerator|GIMP_ALL_HUES
 name|GIMP_ALL_HUES
