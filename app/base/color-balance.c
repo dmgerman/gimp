@@ -5490,6 +5490,12 @@ index|]
 operator|=
 name|yellow_blue
 expr_stmt|;
+name|color_balance_create_lookup_tables
+argument_list|(
+operator|&
+name|cbd
+argument_list|)
+expr_stmt|;
 comment|/*  The application should occur only within selection bounds  */
 name|drawable_mask_bounds
 argument_list|(
