@@ -1067,8 +1067,6 @@ argument_list|,
 name|dialog_factory
 argument_list|,
 name|context
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_context_define_properties
