@@ -135,32 +135,7 @@ file|"app/pattern_header.h"
 end_include
 
 begin_comment
-comment|/* Declare local data types  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|description
-name|gchar
-name|description
-index|[
-literal|256
-index|]
-init|=
-literal|"GIMP Pattern"
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|run_flag
-name|gboolean
-name|run_flag
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/* Declare some local functions.  */
+comment|/*  local function prototypes  */
 end_comment
 
 begin_function_decl
@@ -215,7 +190,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_image
 parameter_list|(
 name|gchar
@@ -233,7 +208,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_dialog
 parameter_list|(
 name|void
@@ -290,6 +265,33 @@ name|run
 block|,
 comment|/* run_proc   */
 block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  private variables  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|description
+specifier|static
+name|gchar
+name|description
+index|[
+literal|256
+index|]
+init|=
+literal|"GIMP Pattern"
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|run_flag
+specifier|static
+name|gboolean
+name|run_flag
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -467,7 +469,8 @@ literal|"file_pat_load"
 argument_list|,
 literal|"Loads Gimp's .PAT pattern files"
 argument_list|,
-literal|"The images in the pattern dialog can be loaded directly with this plug-in"
+literal|"The images in the pattern dialog can be loaded "
+literal|"directly with this plug-in"
 argument_list|,
 literal|"Tim Newsome"
 argument_list|,
@@ -496,7 +499,8 @@ literal|"file_pat_save"
 argument_list|,
 literal|"Saves Gimp pattern file (.PAT)"
 argument_list|,
-literal|"New Gimp patterns can be created by saving them in the appropriate place with this plug-in."
+literal|"New Gimp patterns can be created by saving them "
+literal|"in the appropriate place with this plug-in."
 argument_list|,
 literal|"Tim Newsome"
 argument_list|,
@@ -970,11 +974,11 @@ modifier|*
 name|filename
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|temp
 decl_stmt|;
-name|int
+name|gint
 name|fd
 decl_stmt|;
 name|PatternHeader
@@ -986,7 +990,8 @@ name|buffer
 decl_stmt|;
 name|gint32
 name|image_ID
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|layer_ID
 decl_stmt|;
 name|GimpDrawable
@@ -1060,13 +1065,13 @@ name|ph
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|ph
+name|PatternHeader
 argument_list|)
 argument_list|)
 operator|!=
 sizeof|sizeof
 argument_list|(
-name|ph
+name|PatternHeader
 argument_list|)
 condition|)
 block|{
@@ -1167,7 +1172,7 @@ name|header_size
 operator|<=
 sizeof|sizeof
 argument_list|(
-name|ph
+name|PatternHeader
 argument_list|)
 condition|)
 block|{
@@ -1193,7 +1198,7 @@ name|header_size
 operator|-
 sizeof|sizeof
 argument_list|(
-name|ph
+name|PatternHeader
 argument_list|)
 argument_list|,
 name|SEEK_CUR
@@ -1236,6 +1241,25 @@ name|GIMP_GRAY_IMAGE
 expr_stmt|;
 break|break;
 case|case
+literal|2
+case|:
+name|base_type
+operator|=
+name|GIMP_GRAY
+expr_stmt|;
+name|image_type
+operator|=
+name|GIMP_GRAYA_IMAGE
+expr_stmt|;
+name|g_message
+argument_list|(
+literal|"Your pattern has an aplha channel,\n"
+literal|"please flatten and save it again to fix this.\n"
+literal|"Loading it anyway..."
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 literal|3
 case|:
 name|base_type
@@ -1245,6 +1269,25 @@ expr_stmt|;
 name|image_type
 operator|=
 name|GIMP_RGB_IMAGE
+expr_stmt|;
+break|break;
+case|case
+literal|4
+case|:
+name|base_type
+operator|=
+name|GIMP_RGB
+expr_stmt|;
+name|image_type
+operator|=
+name|GIMP_RGBA_IMAGE
+expr_stmt|;
+name|g_message
+argument_list|(
+literal|"Your pattern has an aplha channel,\n"
+literal|"please flatten and save it again to fix this.\n"
+literal|"Loading it anyway..."
+argument_list|)
 expr_stmt|;
 break|break;
 default|default:
@@ -1439,12 +1482,12 @@ expr_stmt|;
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|line
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|ph
 operator|.
@@ -1465,7 +1508,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
@@ -1480,14 +1523,13 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 block|{
-name|int
+name|gint
 name|fd
 decl_stmt|;
 name|PatternHeader
 name|ph
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|buffer
 decl_stmt|;
@@ -1501,7 +1543,7 @@ decl_stmt|;
 name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|temp
 decl_stmt|;
@@ -1583,7 +1625,7 @@ operator|-
 literal|1
 condition|)
 return|return
-literal|0
+name|FALSE
 return|;
 name|ph
 operator|.
@@ -1593,7 +1635,7 @@ name|g_htonl
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|ph
+name|PatternHeader
 argument_list|)
 operator|+
 name|strlen
@@ -1666,13 +1708,13 @@ name|ph
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|ph
+name|PatternHeader
 argument_list|)
 argument_list|)
 operator|!=
 sizeof|sizeof
 argument_list|(
-name|ph
+name|PatternHeader
 argument_list|)
 condition|)
 block|{
@@ -1682,7 +1724,7 @@ name|fd
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 if|if
@@ -1715,7 +1757,7 @@ name|fd
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 name|buffer
@@ -1744,7 +1786,7 @@ name|fd
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 for|for
@@ -1811,18 +1853,18 @@ name|fd
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|line
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|drawable
 operator|->
@@ -1841,14 +1883,14 @@ name|fd
 argument_list|)
 expr_stmt|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|save_dialog (void)
 name|save_dialog
 parameter_list|(
