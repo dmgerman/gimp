@@ -8,6 +8,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_comment
+comment|/* memcpy, strcpy, strlen */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"siod.h"
 end_include
 
@@ -4675,9 +4685,21 @@ name|LISP
 name|a
 parameter_list|)
 block|{
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+name|g_warning
+argument_list|(
+literal|"script_fu_server not available."
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|script_fu_server_quit
 argument_list|()
 expr_stmt|;
+endif|#
+directive|endif
 return|return
 name|NIL
 return|;

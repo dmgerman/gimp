@@ -12,6 +12,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdlib.h>
+end_include
+
+begin_comment
+comment|/* abs */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -1925,7 +1935,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29383da30108
+DECL|struct|__anon2901b9cc0108
 typedef|typedef
 struct|struct
 block|{

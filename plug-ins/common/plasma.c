@@ -50,6 +50,16 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_comment
+comment|/* memcpy */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -110,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297d62a90108
+DECL|struct|__anon2c09bbc20108
 block|{
 DECL|member|seed
 name|gint
@@ -134,7 +144,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297d62a90208
+DECL|struct|__anon2c09bbc20208
 block|{
 DECL|member|run
 name|gint

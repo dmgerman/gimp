@@ -15,6 +15,16 @@ directive|include
 file|<stdio.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<string.h>
+end_include
+
+begin_comment
+comment|/* memcpy */
+end_comment
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -122,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a97b3e70103
+DECL|enum|__anon2b41cb800103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
