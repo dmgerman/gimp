@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpiscissorstool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpmagnifytool.h"
 end_include
 
@@ -249,8 +255,10 @@ expr_stmt|;
 name|gimp_color_picker_tool_register
 argument_list|()
 expr_stmt|;
-comment|/*  selection tool */
-comment|/* gimp_iscissors_tool_register (); */
+comment|/*  selection tools */
+name|gimp_iscissors_tool_register
+argument_list|()
+expr_stmt|;
 name|gimp_fuzzy_select_tool_register
 argument_list|()
 expr_stmt|;

@@ -6,20 +6,295 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__ISCISSORS_H__
+name|__GIMP_ISCISSORS_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__ISCISSORS_H__
+DECL|macro|__GIMP_ISCISSORS_TOOL_H__
 define|#
 directive|define
-name|__ISCISSORS_H__
+name|__GIMP_ISCISSORS_TOOL_H__
 end_define
 
-begin_function_decl
-name|Tool
+begin_include
+include|#
+directive|include
+file|"gimpdrawtool.h"
+end_include
+
+begin_comment
+comment|/*  The possible states...  */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b1bd1930103
+block|{
+DECL|enumerator|NO_ACTION
+name|NO_ACTION
+block|,
+DECL|enumerator|SEED_PLACEMENT
+name|SEED_PLACEMENT
+block|,
+DECL|enumerator|SEED_ADJUSTMENT
+name|SEED_ADJUSTMENT
+block|,
+DECL|enumerator|WAITING
+name|WAITING
+DECL|typedef|Iscissors_state
+block|}
+name|Iscissors_state
+typedef|;
+end_typedef
+
+begin_comment
+comment|/*  The possible drawing states...  */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b1bd1930203
+block|{
+DECL|enumerator|DRAW_NOTHING
+name|DRAW_NOTHING
+init|=
+literal|0x0
+block|,
+DECL|enumerator|DRAW_CURRENT_SEED
+name|DRAW_CURRENT_SEED
+init|=
+literal|0x1
+block|,
+DECL|enumerator|DRAW_CURVE
+name|DRAW_CURVE
+init|=
+literal|0x2
+block|,
+DECL|enumerator|DRAW_ACTIVE_CURVE
+name|DRAW_ACTIVE_CURVE
+init|=
+literal|0x4
+block|,
+DECL|enumerator|DRAW_LIVEWIRE
+name|DRAW_LIVEWIRE
+init|=
+literal|0x8
+block|,
+DECL|enumerator|DRAW_ALL
+name|DRAW_ALL
+init|=
+operator|(
+name|DRAW_CURRENT_SEED
+operator||
+name|DRAW_CURVE
+operator|)
+DECL|typedef|Iscissors_draw
+block|}
+name|Iscissors_draw
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|ICurve
+typedef|typedef
+name|struct
+name|_ICurve
+name|ICurve
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_ISCISSORS_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_ISCISSORS_TOOL
+value|(gimp_iscissors_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_ISCISSORS_TOOL (obj)
+define|#
+directive|define
+name|GIMP_ISCISSORS_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_ISCISSORS_TOOL, GimpIscissorsTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_ISCISSORS_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_ISCISSORS_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_ISCISSORS_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_ISCISSORS_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_ISCISSORS_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_ISCISSORS_TOOL, GimpIscissorsToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_ISCISSORS_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_ISCISSORS_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_ISCISSORS_TOOL))
+end_define
+
+begin_typedef
+DECL|typedef|GimpIscissorsTool
+typedef|typedef
+name|struct
+name|_GimpIscissorsTool
+name|GimpIscissorsTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpIscissorsToolClass
+typedef|typedef
+name|struct
+name|_GimpIscissorsToolClass
+name|GimpIscissorsToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpIscissorsTool
+struct|struct
+name|_GimpIscissorsTool
+block|{
+DECL|member|parent_instance
+name|GimpDrawTool
+name|parent_instance
+decl_stmt|;
+DECL|member|op
+name|SelectOps
+name|op
+decl_stmt|;
+DECL|member|x
+DECL|member|y
+name|gint
+name|x
+decl_stmt|,
+name|y
+decl_stmt|;
+comment|/*  upper left hand coordinate            */
+DECL|member|ix
+DECL|member|iy
+name|gint
+name|ix
+decl_stmt|,
+name|iy
+decl_stmt|;
+comment|/*  initial coordinates                   */
+DECL|member|nx
+DECL|member|ny
+name|gint
+name|nx
+decl_stmt|,
+name|ny
+decl_stmt|;
+comment|/*  new coordinates                       */
+DECL|member|dp_buf
+name|TempBuf
 modifier|*
-name|tools_new_iscissors
+name|dp_buf
+decl_stmt|;
+comment|/*  dynamic programming buffer            */
+DECL|member|livewire
+name|ICurve
+modifier|*
+name|livewire
+decl_stmt|;
+comment|/*  livewire boundary curve               */
+DECL|member|curve1
+name|ICurve
+modifier|*
+name|curve1
+decl_stmt|;
+comment|/*  1st curve connected to current point  */
+DECL|member|curve2
+name|ICurve
+modifier|*
+name|curve2
+decl_stmt|;
+comment|/*  2nd curve connected to current point  */
+DECL|member|curves
+name|GSList
+modifier|*
+name|curves
+decl_stmt|;
+comment|/*  the list of curves                    */
+DECL|member|first_point
+name|gboolean
+name|first_point
+decl_stmt|;
+comment|/*  is this the first point?              */
+DECL|member|connected
+name|gboolean
+name|connected
+decl_stmt|;
+comment|/*  is the region closed?                 */
+DECL|member|state
+name|Iscissors_state
+name|state
+decl_stmt|;
+comment|/*  state of iscissors                    */
+DECL|member|draw
+name|Iscissors_draw
+name|draw
+decl_stmt|;
+comment|/*  items to draw on a draw request       */
+comment|/* XXX might be useful */
+DECL|member|mask
+name|GimpChannel
+modifier|*
+name|mask
+decl_stmt|;
+comment|/*  selection mask                        */
+DECL|member|gradient_map
+name|TileManager
+modifier|*
+name|gradient_map
+decl_stmt|;
+comment|/*  lazily filled gradient map            */
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpIscissorsToolClass
+struct|struct
+name|_GimpIscissorsToolClass
+block|{
+DECL|member|parent_class
+name|GimpDrawToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_function_decl
+name|void
+name|gimp_iscissors_tool_register
 parameter_list|(
 name|void
 parameter_list|)
@@ -27,12 +302,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|tools_free_iscissors
+name|GtkType
+name|gimp_iscissors_tool_get_type
 parameter_list|(
-name|Tool
-modifier|*
-name|tool
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -43,7 +316,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __ISCISSORS_H__  */
+comment|/*  __GIMP_ISCISSORS_TOOL_H__  */
 end_comment
 
 end_unit

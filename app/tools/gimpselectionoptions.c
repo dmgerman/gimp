@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpiscissorstool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprectselecttool.h"
 end_include
 
