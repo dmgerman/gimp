@@ -181,7 +181,10 @@ block|}
 block|,
 name|MENU_BRANCH
 argument_list|(
+name|N_
+argument_list|(
 literal|"/_Add Tab"
+argument_list|)
 argument_list|)
 block|,
 name|ADD_TAB
@@ -530,7 +533,10 @@ argument_list|)
 block|,
 name|MENU_BRANCH
 argument_list|(
+name|N_
+argument_list|(
 literal|"/Preview Si_ze"
+argument_list|)
 argument_list|)
 block|,
 block|{
@@ -638,7 +644,10 @@ argument_list|)
 block|,
 name|MENU_BRANCH
 argument_list|(
+name|N_
+argument_list|(
 literal|"/_Tab Style"
+argument_list|)
 argument_list|)
 block|,
 block|{
