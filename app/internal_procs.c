@@ -387,6 +387,15 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|register_misc_procs
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function
 name|void
 DECL|function|internal_procs_init ()
@@ -2776,6 +2785,9 @@ argument_list|)
 expr_stmt|;
 name|pcount
 operator|++
+expr_stmt|;
+name|register_misc_procs
+argument_list|()
 expr_stmt|;
 block|}
 end_function
