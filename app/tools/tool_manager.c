@@ -75,6 +75,29 @@ directive|include
 file|"display/gimpdisplay.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|FIXME: #include "gui/dialogs.h"
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_include
+include|#
+directive|include
+file|"gui/dialogs.h"
+end_include
+
 begin_include
 include|#
 directive|include
@@ -170,7 +193,7 @@ DECL|macro|PAINT_OPTIONS_MASK
 define|#
 directive|define
 name|PAINT_OPTIONS_MASK
-value|GIMP_CONTEXT_OPACITY_MASK    | \                            GIMP_CONTEXT_PAINT_MODE_MASK | \                            GIMP_CONTEXT_BRUSH_MASK      | \                            GIMP_CONTEXT_PATTERN_MASK    | \                            GIMP_CONTEXT_GRADIENT_MASK
+value|GIMP_CONTEXT_OPACITY_MASK    | \                            GIMP_CONTEXT_PAINT_MODE_MASK | \                            GIMP_CONTEXT_BRUSH_MASK      | \                            GIMP_CONTEXT_PATTERN_MASK    | \                            GIMP_CONTEXT_GRADIENT_MASK   | \                            GIMP_CONTEXT_FONT_MASK
 end_define
 
 begin_typedef
@@ -720,6 +743,20 @@ condition|(
 name|options_gui_func
 condition|)
 block|{
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|tool_info
+operator|->
+name|tool_options
+argument_list|)
+argument_list|,
+literal|"gimp-tool-options-dialog-factory"
+argument_list|,
+name|global_dock_factory
+argument_list|)
+expr_stmt|;
 name|options_gui
 operator|=
 name|options_gui_func
@@ -727,6 +764,20 @@ argument_list|(
 name|tool_info
 operator|->
 name|tool_options
+argument_list|)
+expr_stmt|;
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|tool_info
+operator|->
+name|tool_options
+argument_list|)
+argument_list|,
+literal|"gimp-tool-options-dialog-factory"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

@@ -520,6 +520,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpViewableButton
+typedef|typedef
+name|struct
+name|_GimpViewableButton
+name|GimpViewableButton
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpViewableDialog
 typedef|typedef
 name|struct

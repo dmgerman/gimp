@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2065490103
+DECL|enum|__anon2acd0ca10103
 block|{
 DECL|enumerator|GIMP_CONTEXT_FIRST_PROP
 name|GIMP_CONTEXT_FIRST_PROP
@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2065490203
+DECL|enum|__anon2acd0ca10203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -912,6 +912,18 @@ end_comment
 begin_function_decl
 name|GimpContextPropType
 name|gimp_context_type_to_property
+parameter_list|(
+name|GType
+name|type
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|gimp_context_type_to_prop_name
 parameter_list|(
 name|GType
 name|type

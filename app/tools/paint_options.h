@@ -36,32 +36,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  utility function -- will become a widget soon  */
-end_comment
-
-begin_function_decl
-name|void
-name|paint_options_container_scrolled
-parameter_list|(
-name|GimpContainer
-modifier|*
-name|container
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-name|GType
-name|type
-parameter_list|,
-name|GdkEventScroll
-modifier|*
-name|sevent
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
