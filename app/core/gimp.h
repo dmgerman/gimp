@@ -192,6 +192,12 @@ name|GimpCoreConfig
 modifier|*
 name|config
 decl_stmt|;
+DECL|member|edit_config
+name|GimpCoreConfig
+modifier|*
+name|edit_config
+decl_stmt|;
+comment|/* don't use this one, it's just                                        * for the preferences dialog                                        */
 DECL|member|be_verbose
 name|gboolean
 name|be_verbose
@@ -466,6 +472,21 @@ name|no_interface
 parameter_list|,
 name|GimpStackTraceMode
 name|stack_trace_mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_set_config
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpCoreConfig
+modifier|*
+name|core_config
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -378,8 +378,9 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|gpointer
-name|data
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2289,30 +2290,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gui_image_disconnect (GimpImage * gimage,gpointer data)
+DECL|function|gui_image_disconnect (GimpImage * gimage,Gimp * gimp)
 name|gui_image_disconnect
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|Gimp
 modifier|*
 name|gimp
-decl_stmt|;
-name|gimp
-operator|=
-operator|(
-name|Gimp
-operator|*
-operator|)
-name|data
-expr_stmt|;
-comment|/*  check if this is the last image  */
+parameter_list|)
+block|{
+comment|/*  check if this is the last image and if it had a display  */
 if|if
 condition|(
 name|gimp_container_num_children
@@ -2323,6 +2313,12 @@ name|images
 argument_list|)
 operator|==
 literal|1
+operator|&&
+name|gimage
+operator|->
+name|instance_count
+operator|>
+literal|0
 condition|)
 block|{
 name|dialogs_show_toolbox

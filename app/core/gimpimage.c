@@ -234,7 +234,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a33cd500103
+DECL|enum|__anon2a1cce730103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -1767,6 +1767,12 @@ expr_stmt|;
 name|gimage
 operator|->
 name|active_channel
+operator|=
+name|NULL
+expr_stmt|;
+name|gimage
+operator|->
+name|active_vectors
 operator|=
 name|NULL
 expr_stmt|;
