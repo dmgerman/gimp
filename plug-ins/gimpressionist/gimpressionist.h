@@ -12,7 +12,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"v0.99.6, August 1999"
+value|"v1.0, November 2003"
 end_define
 
 begin_ifndef
@@ -128,7 +128,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2794b8c90108
+DECL|struct|__anon2b0988360108
 typedef|typedef
 struct|struct
 block|{
@@ -332,26 +332,9 @@ end_comment
 
 begin_decl_stmt
 specifier|extern
-name|GtkTooltips
-modifier|*
-name|tooltips
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
 name|char
 modifier|*
 name|standalone
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|unsigned
-name|char
-name|logobuffer
-index|[]
 decl_stmt|;
 end_decl_stmt
 

@@ -2539,13 +2539,8 @@ operator|.
 name|selectedbrush
 argument_list|)
 expr_stmt|;
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|GTK_TOOLTIPS
-argument_list|(
-name|tooltips
-argument_list|)
-argument_list|,
 name|tmpw
 argument_list|,
 name|_
