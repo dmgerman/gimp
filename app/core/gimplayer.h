@@ -445,6 +445,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|layer_temporarily_translate
+parameter_list|(
+name|Layer
+modifier|*
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|layer_translate
 parameter_list|(
 name|Layer

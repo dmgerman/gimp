@@ -132,7 +132,7 @@ name|origx
 decl_stmt|,
 name|origy
 decl_stmt|;
-comment|/*  original x and y coords            */
+comment|/*  original x and y coords         */
 DECL|member|x
 DECL|member|y
 name|int
@@ -140,7 +140,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-comment|/*  current x and y coords             */
+comment|/*  current x and y coords          */
 DECL|member|x1
 DECL|member|y1
 name|int
@@ -148,7 +148,7 @@ name|x1
 decl_stmt|,
 name|y1
 decl_stmt|;
-comment|/*  bounding box of selection mask     */
+comment|/*  bounding box of selection mask  */
 DECL|member|x2
 DECL|member|y2
 name|int
@@ -160,48 +160,48 @@ DECL|member|edit_type
 name|EditType
 name|edit_type
 decl_stmt|;
-comment|/*  translate the mask or layer?       */
+comment|/*  translate the mask or layer?    */
 DECL|member|core
 name|DrawCore
 modifier|*
 name|core
 decl_stmt|;
-comment|/*  selection core for drawing bounds  */
+comment|/* selection core for drawing bounds*/
 DECL|member|old_button_release
 name|ButtonReleaseFunc
 name|old_button_release
 decl_stmt|;
-comment|/*  old button press member func       */
+comment|/*  old button press member func    */
 DECL|member|old_motion
 name|MotionFunc
 name|old_motion
 decl_stmt|;
-comment|/*  old motion member function         */
+comment|/*  old motion member function      */
 DECL|member|old_control
 name|ToolCtlFunc
 name|old_control
 decl_stmt|;
-comment|/*  old control member function        */
+comment|/*  old control member function     */
 DECL|member|old_cursor_update
 name|CursorUpdateFunc
 name|old_cursor_update
 decl_stmt|;
-comment|/*  old cursor update function         */
+comment|/*  old cursor update function      */
 DECL|member|old_scroll_lock
 name|int
 name|old_scroll_lock
 decl_stmt|;
-comment|/*  old value of scroll lock           */
+comment|/*  old value of scroll lock        */
 DECL|member|old_auto_snap_to
 name|int
 name|old_auto_snap_to
 decl_stmt|;
-comment|/*  old value of auto snap to          */
+comment|/*  old value of auto snap to       */
 DECL|member|context_id
 name|guint
 name|context_id
 decl_stmt|;
-comment|/*  for the statusbar                  */
+comment|/*  for the statusbar               */
 block|}
 struct|;
 end_struct
@@ -1095,6 +1095,9 @@ argument_list|(
 name|layer
 argument_list|)
 condition|)
+block|{
+comment|/* Temporarily shift back to the original 			 position so that undo information is updated 			 properly... bit of a hack. DISABLED */
+comment|/*layer_temporarily_translate (layer, 						   edit_select.origx - x, 						   edit_select.origy - y);*/
 name|layer_translate
 argument_list|(
 name|layer
@@ -1116,6 +1119,7 @@ name|origy
 operator|)
 argument_list|)
 expr_stmt|;
+block|}
 name|layer_list
 operator|=
 name|g_slist_next
@@ -1304,6 +1308,7 @@ index|[
 name|STATUSBAR_SIZE
 index|]
 decl_stmt|;
+comment|/*  g_warning("motion");*/
 if|if
 condition|(
 name|tool
@@ -1320,6 +1325,9 @@ name|GDisplay
 operator|*
 operator|)
 name|gdisp_ptr
+expr_stmt|;
+name|gdk_flush
+argument_list|()
 expr_stmt|;
 name|draw_core_pause
 argument_list|(
@@ -1343,6 +1351,20 @@ operator|->
 name|y
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
+warning|#
+directive|warning
+warning|ADAM MADNESS
+block|if (edit_select.edit_type == LayerTranslate)     {       int x = edit_select.x;       int y = edit_select.y;       Layer* floating_layer;       Layer* layer;       GSList* layer_list;        if ((floating_layer = gimage_floating_sel (gdisp->gimage)))         floating_sel_relax (floating_layer, TRUE);
+comment|/*  translate the layer--and any "linked" layers as well  */
+block|layer_list = gdisp->gimage->layers;       while (layer_list)         {           layer = (Layer *) layer_list->data;           if (layer == gdisp->gimage->active_layer ||                layer_linked (layer)) 	    { 	      layer_temporarily_translate (layer, 					   (x - edit_select.origx), 					   (y - edit_select.origy)); 	    }           layer_list = g_slist_next (layer_list);         }        if (floating_layer)         floating_sel_rigor (floating_layer, TRUE);              gdisplays_flush();     }
+warning|#
+directive|warning
+warning|END OF ADAM MADNESS
+endif|#
+directive|endif
 name|gtk_statusbar_pop
 argument_list|(
 name|GTK_STATUSBAR
@@ -1481,6 +1503,7 @@ name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
+comment|/*static int ggg = 0;     g_warning("draw %d", ggg++);*/
 name|gdisp
 operator|=
 operator|(
@@ -2170,6 +2193,20 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
+warning|#
+directive|warning
+warning|ADAM MADNESS
+block|if (edit_select.edit_type == LayerTranslate)     {       int x = edit_select.x;       int y = edit_select.y;       Layer* floating_layer;       Layer* layer;       GSList* layer_list;        if ((floating_layer = gimage_floating_sel (gdisp->gimage)))         floating_sel_relax (floating_layer, TRUE);
+comment|/*  translate the layer--and any "linked" layers as well  */
+block|layer_list = gdisp->gimage->layers;       while (layer_list)         {           layer = (Layer *) layer_list->data;           if (layer == gdisp->gimage->active_layer ||                layer_linked (layer)) 	    { 	      layer_temporarily_translate (layer, 					   (x - edit_select.origx), 					   (y - edit_select.origy)); 	    }           layer_list = g_slist_next (layer_list);         }        if (floating_layer)         floating_sel_rigor (floating_layer, TRUE);              gdisplays_flush();     }
+warning|#
+directive|warning
+warning|END OF ADAM MADNESS
+endif|#
+directive|endif
 break|break;
 case|case
 name|FloatingSelTranslate

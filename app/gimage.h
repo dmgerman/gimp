@@ -550,6 +550,14 @@ value|gimp_image_construct
 end_define
 
 begin_define
+DECL|macro|gimage_invalidate_without_render
+define|#
+directive|define
+name|gimage_invalidate_without_render
+value|gimp_image_invalidate_without_render
+end_define
+
+begin_define
 DECL|macro|gimage_invalidate
 define|#
 directive|define

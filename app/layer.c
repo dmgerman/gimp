@@ -126,7 +126,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon29eb7b950103
+DECL|enum|__anon2870ad120103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -2741,15 +2741,18 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|layer_translate (layer,off_x,off_y)
-name|layer_translate
+DECL|function|layer_translate_lowlevel (layer,off_x,off_y,temporary)
+name|layer_translate_lowlevel
 parameter_list|(
 name|layer
 parameter_list|,
 name|off_x
 parameter_list|,
 name|off_y
+parameter_list|,
+name|temporary
 parameter_list|)
 name|Layer
 modifier|*
@@ -2760,8 +2763,18 @@ name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
+name|gboolean
+name|temporary
+decl_stmt|;
+block|{
+if|if
+condition|(
+operator|!
+name|temporary
+condition|)
 block|{
 comment|/*  the undo call goes here  */
+comment|/*g_warning ("setting undo for layer translation");*/
 name|undo_push_layer_displace
 argument_list|(
 name|GIMP_DRAWABLE
@@ -2774,6 +2787,7 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  update the affected region  */
 name|drawable_update
 argument_list|(
@@ -2801,12 +2815,19 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|temporary
+condition|)
+block|{
 comment|/*  invalidate the selection boundary because of a layer modification  */
 name|layer_invalidate_boundary
 argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  update the layer offsets  */
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2882,6 +2903,12 @@ name|offset_y
 operator|+=
 name|off_y
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|temporary
+condition|)
+block|{
 comment|/*  invalidate the mask preview  */
 name|drawable_invalidate_preview
 argument_list|(
@@ -2894,6 +2921,77 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|layer_temporarily_translate (layer,off_x,off_y)
+name|layer_temporarily_translate
+parameter_list|(
+name|layer
+parameter_list|,
+name|off_x
+parameter_list|,
+name|off_y
+parameter_list|)
+name|Layer
+modifier|*
+name|layer
+decl_stmt|;
+name|int
+name|off_x
+decl_stmt|,
+name|off_y
+decl_stmt|;
+block|{
+name|layer_translate_lowlevel
+argument_list|(
+name|layer
+argument_list|,
+name|off_x
+argument_list|,
+name|off_y
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|layer_translate (layer,off_x,off_y)
+name|layer_translate
+parameter_list|(
+name|layer
+parameter_list|,
+name|off_x
+parameter_list|,
+name|off_y
+parameter_list|)
+name|Layer
+modifier|*
+name|layer
+decl_stmt|;
+name|int
+name|off_x
+decl_stmt|,
+name|off_y
+decl_stmt|;
+block|{
+name|layer_translate_lowlevel
+argument_list|(
+name|layer
+argument_list|,
+name|off_x
+argument_list|,
+name|off_y
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

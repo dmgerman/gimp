@@ -491,7 +491,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon279f855e0103
+DECL|enum|__anon2b1e5bec0103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -6260,41 +6260,12 @@ name|gboolean
 name|can_use_cowproject
 parameter_list|)
 block|{
-name|gimage
-operator|->
-name|construct_flag
-operator|=
-literal|0
-expr_stmt|;
 if|#
 directive|if
 literal|0
 block|int xoff, yoff;
 comment|/*  set the construct flag, used to determine if anything        *  has been written to the gimage raw image yet.        */
-block|gimage->construct_flag = 0;
-comment|/* 	printf("************ [%d] ty:%d by:%d op:%d\n", 	       gimage->construct_flag, 	       gimage_projection_type(gimage), 	       gimage_projection_bytes(gimage), 	       gimage_projection_opacity(gimage) 	       );fflush(stdout);*/
-block|if (gimage->layers) 	{ 	  gimp_drawable_offsets (GIMP_DRAWABLE((Layer*)(gimage->layers->data)),&xoff,&yoff);
-if|#
-directive|if
-literal|0
-block|printf("-------\n%d,%d,%d,%d,%d,%d,%d,%d,%d\n", 		 (gimage->layers != NULL) ,
-comment|/* There's a layer.      */
-block|(!g_slist_next(gimage->layers)) ,
-comment|/* It's the only layer.  */
-block|(layer_has_alpha((Layer*)(gimage->layers->data))) ,
-comment|/* It's !flat.  */
-comment|/* It's visible.         */
-block|(drawable_visible (GIMP_DRAWABLE((Layer*)(gimage->layers->data)))) , 		 (drawable_width (GIMP_DRAWABLE((Layer*)(gimage->layers->data))) == 		  gimage->width) , 		 (drawable_height (GIMP_DRAWABLE((Layer*)(gimage->layers->data))) == 		  gimage->height) ,
-comment|/* Covers all.           */
-comment|/* Not indexed.          */
-block|(!drawable_indexed (GIMP_DRAWABLE((Layer*)(gimage->layers->data)))) , 		 (((Layer*)(gimage->layers->data))->opacity == OPAQUE_OPACITY)
-comment|/*opaq */
-block|, 		 ((xoff==0)&& (yoff==0)) 		 );fflush(stdout);
-endif|#
-directive|endif
-block|}       else 	{
-comment|/*	  printf("GIMAGE @%p HAS NO LAYERS?! %d\n", 		 gimage, 		 g_slist_length(gimage->layers)); 		 fflush(stdout);*/
-block|}        if (
+block|gimage->construct_flag = 0;              if (gimage->layers) 	{ 	  gimp_drawable_offsets (GIMP_DRAWABLE((Layer*)(gimage->layers->data)),&xoff,&yoff); 	}        if (
 comment|/*can_use_cowproject&&*/
 block|(gimage->layers)&&
 comment|/* There's a layer.      */
@@ -6310,14 +6281,15 @@ block|(!drawable_indexed (GIMP_DRAWABLE((Layer*)(gimage->layers->data))))&&     
 comment|/*opaq */
 block|)     {       int xoff, yoff;              gimp_drawable_offsets (GIMP_DRAWABLE((Layer*)(gimage->layers->data)),&xoff,&yoff);         if ((xoff==0)&& (yoff==0))
 comment|/* Starts at 0,0         */
-block|{ 	PixelRegion srcPR, destPR; 	void * pr; 	 	g_warning("Can use cow-projection hack.  Yay!");
-comment|/*	 	//	gimp_image_initialize_projection (gimage, x, y, w, h); */
-block|pixel_region_init (&srcPR, gimp_drawable_data 			   (GIMP_DRAWABLE 			    ((Layer*)(gimage->layers->data))), 			   x, y, w,h, FALSE); 	pixel_region_init (&destPR, 			   gimp_image_projection (gimage), 			   x, y, w,h, TRUE);
-comment|/*	 	//	tile_manager_set_validate_proc(destPR.tiles, NULL); */
-block|for (pr = pixel_regions_register (2,&srcPR,&destPR); 	     pr != NULL; 	     pr = pixel_regions_process (pr)) 	  {
-comment|/*if (!tile_is_valid(srcPR.curtile)) 	      tile_manager_validate (srcPR.tiles, 				     srcPR.curtile); 	    if (!tile_is_valid(destPR.curtile)) 	      tile_manager_validate (destPR.tiles, 	      destPR.curtile);*/
-block|tile_lock (destPR.curtile); 	    tile_lock (srcPR.curtile); 	    tile_manager_map_over_tile (destPR.tiles, 					destPR.curtile, srcPR.curtile); 	    tile_release(srcPR.curtile, FALSE); 	    tile_release(destPR.curtile, TRUE); 	  }  	gimage->construct_flag = 1; 	gimp_image_construct_channels (gimage, x, y, w, h); 	return;       }     }
-comment|/*            if (gimage->layers) 	g_warning("Can NOT use cow-projection hack.  Boo!");       else 	g_warning("gimage has no layers!  Boo!"); */
+block|{ 	PixelRegion srcPR, destPR; 	void * pr; 	 	g_warning("Can use cow-projection hack.  Yay!");  	pixel_region_init (&srcPR, gimp_drawable_data 			   (GIMP_DRAWABLE 			    ((Layer*)(gimage->layers->data))), 			   x, y, w,h, FALSE); 	pixel_region_init (&destPR, 			   gimp_image_projection (gimage), 			   x, y, w,h, TRUE);  	for (pr = pixel_regions_register (2,&srcPR,&destPR); 	     pr != NULL; 	     pr = pixel_regions_process (pr)) 	  { 	    tile_manager_map_over_tile (destPR.tiles, 					destPR.curtile, srcPR.curtile); 	  }  	gimage->construct_flag = 1; 	gimp_image_construct_channels (gimage, x, y, w, h); 	return;       }     }
+else|#
+directive|else
+name|gimage
+operator|->
+name|construct_flag
+operator|=
+literal|0
+expr_stmt|;
 endif|#
 directive|endif
 comment|/*  First, determine if the projection image needs to be    *  initialized--this is the case when there are no visible    *  layers that cover the entire canvas--either because layers    *  are offset or only a floating selection is visible    */
@@ -6361,6 +6333,215 @@ argument_list|,
 name|h
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_image_invalidate_without_render (GimpImage * gimage,int x,int y,int w,int h,int x1,int y1,int x2,int y2)
+name|gimp_image_invalidate_without_render
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|int
+name|x
+parameter_list|,
+name|int
+name|y
+parameter_list|,
+name|int
+name|w
+parameter_list|,
+name|int
+name|h
+parameter_list|,
+name|int
+name|x1
+parameter_list|,
+name|int
+name|y1
+parameter_list|,
+name|int
+name|x2
+parameter_list|,
+name|int
+name|y2
+parameter_list|)
+block|{
+name|Tile
+modifier|*
+name|tile
+decl_stmt|;
+name|TileManager
+modifier|*
+name|tm
+decl_stmt|;
+name|int
+name|i
+decl_stmt|,
+name|j
+decl_stmt|;
+name|tm
+operator|=
+name|gimp_image_projection
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
+comment|/*  invalidate all tiles which are located outside of the displayed area    *   all tiles inside the displayed area are constructed.    */
+for|for
+control|(
+name|i
+operator|=
+name|y
+init|;
+name|i
+operator|<
+operator|(
+name|y
+operator|+
+name|h
+operator|)
+condition|;
+name|i
+operator|+=
+operator|(
+name|TILE_HEIGHT
+operator|-
+operator|(
+name|i
+operator|%
+name|TILE_HEIGHT
+operator|)
+operator|)
+control|)
+for|for
+control|(
+name|j
+operator|=
+name|x
+init|;
+name|j
+operator|<
+operator|(
+name|x
+operator|+
+name|w
+operator|)
+condition|;
+name|j
+operator|+=
+operator|(
+name|TILE_WIDTH
+operator|-
+operator|(
+name|j
+operator|%
+name|TILE_WIDTH
+operator|)
+operator|)
+control|)
+block|{
+name|tile
+operator|=
+name|tile_manager_get_tile
+argument_list|(
+name|tm
+argument_list|,
+name|j
+argument_list|,
+name|i
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+comment|/*  check if the tile is outside the bounds  */
+if|if
+condition|(
+operator|(
+name|MIN
+argument_list|(
+operator|(
+name|j
+operator|+
+name|tile_ewidth
+argument_list|(
+name|tile
+argument_list|)
+operator|)
+argument_list|,
+name|x2
+argument_list|)
+operator|-
+name|MAX
+argument_list|(
+name|j
+argument_list|,
+name|x1
+argument_list|)
+operator|)
+operator|<=
+literal|0
+condition|)
+block|{
+name|tile_invalidate_tile
+argument_list|(
+operator|&
+name|tile
+argument_list|,
+name|tm
+argument_list|,
+name|j
+argument_list|,
+name|i
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|MIN
+argument_list|(
+operator|(
+name|i
+operator|+
+name|tile_eheight
+argument_list|(
+name|tile
+argument_list|)
+operator|)
+argument_list|,
+name|y2
+argument_list|)
+operator|-
+name|MAX
+argument_list|(
+name|i
+argument_list|,
+name|y1
+argument_list|)
+operator|<=
+literal|0
+condition|)
+block|{
+name|tile_invalidate_tile
+argument_list|(
+operator|&
+name|tile
+argument_list|,
+name|tm
+argument_list|,
+name|j
+argument_list|,
+name|i
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 block|}
 end_function
 

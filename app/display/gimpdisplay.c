@@ -5833,6 +5833,13 @@ argument_list|,
 name|dy
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
+comment|/* Invalidate the projection just after we render it! */
+block|gimage_invalidate_without_render (gdisp->gimage, 					      j - gdisp->disp_xoffset, 					      i - gdisp->disp_yoffset, 					      dx, dy, 					      0, 0, 0, 0);
+endif|#
+directive|endif
 name|gximage_put
 argument_list|(
 name|gdisp
