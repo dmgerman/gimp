@@ -90,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b41225f0103
+DECL|enum|__anon27f0470a0103
 block|{
 DECL|enumerator|Blur
 name|Blur
@@ -116,6 +116,8 @@ name|void
 name|calculate_matrix
 parameter_list|(
 name|ConvolveType
+parameter_list|,
+name|double
 parameter_list|,
 name|double
 parameter_list|)
@@ -522,18 +524,6 @@ name|adjustment
 operator|->
 name|value
 expr_stmt|;
-comment|/*  recalculate the matrix  */
-name|calculate_matrix
-argument_list|(
-name|convolve_options
-operator|->
-name|type
-argument_list|,
-name|convolve_options
-operator|->
-name|pressure
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -559,18 +549,6 @@ operator|(
 name|ConvolveType
 operator|)
 name|client_data
-expr_stmt|;
-comment|/*  recalculate the matrix  */
-name|calculate_matrix
-argument_list|(
-name|convolve_options
-operator|->
-name|type
-argument_list|,
-name|convolve_options
-operator|->
-name|pressure
-argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -1024,22 +1002,6 @@ name|state
 condition|)
 block|{
 case|case
-name|INIT_PAINT
-case|:
-comment|/*  calculate the matrix  */
-name|calculate_matrix
-argument_list|(
-name|convolve_options
-operator|->
-name|type
-argument_list|,
-name|convolve_options
-operator|->
-name|pressure
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
 name|MOTION_PAINT
 case|:
 name|convolve_motion
@@ -1049,10 +1011,6 @@ argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
-break|break;
-case|case
-name|FINISH_PAINT
-case|:
 break|break;
 block|}
 return|return
@@ -1304,6 +1262,21 @@ operator|=
 name|temp_buf_data
 argument_list|(
 name|area
+argument_list|)
+expr_stmt|;
+name|calculate_matrix
+argument_list|(
+name|convolve_options
+operator|->
+name|type
+argument_list|,
+name|convolve_options
+operator|->
+name|pressure
+argument_list|,
+name|paint_core
+operator|->
+name|curpressure
 argument_list|)
 expr_stmt|;
 comment|/*  convolve the source image with the convolve mask  */
@@ -1664,7 +1637,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|calculate_matrix (ConvolveType type,double pressure)
+DECL|function|calculate_matrix (ConvolveType type,double pressure,double curpressure)
 name|calculate_matrix
 parameter_list|(
 name|ConvolveType
@@ -1672,6 +1645,9 @@ name|type
 parameter_list|,
 name|double
 name|pressure
+parameter_list|,
+name|double
+name|curpressure
 parameter_list|)
 block|{
 name|float
@@ -1680,9 +1656,13 @@ decl_stmt|;
 comment|/*  find percent of tool pressure  */
 name|percent
 operator|=
+operator|(
 name|pressure
 operator|/
 literal|100.0
+operator|)
+operator|*
+name|curpressure
 expr_stmt|;
 comment|/*  get the appropriate convolution matrix and size and divisor  */
 switch|switch
@@ -2347,14 +2327,6 @@ condition|(
 name|success
 condition|)
 block|{
-comment|/*  calculate the convolution kernel  */
-name|calculate_matrix
-argument_list|(
-name|type
-argument_list|,
-name|pressure
-argument_list|)
-expr_stmt|;
 comment|/*  set the paint core's paint func  */
 name|non_gui_paint_core
 operator|.
