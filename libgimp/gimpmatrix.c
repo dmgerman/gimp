@@ -35,35 +35,39 @@ name|EPSILON
 value|1e-6
 end_define
 
+begin_comment
+comment|/**  * gimp_matrix_transform_point:  * @matrix: The transformation matrix.  * @x: The source X coordinate.  * @y: The source Y coordinate.  * @newx: The transformed X coordinate.  * @newy: The transformed Y coordinate.  *   * Transforms a point in 2D as specified by the transformation matrix.  */
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_matrix_transform_point (GimpMatrix m,double x,double y,double * newx,double * newy)
+DECL|function|gimp_matrix_transform_point (GimpMatrix matrix,gdouble x,gdouble y,gdouble * newx,gdouble * newy)
 name|gimp_matrix_transform_point
 parameter_list|(
 name|GimpMatrix
-name|m
+name|matrix
 parameter_list|,
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|newx
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|newy
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|w
 decl_stmt|;
 name|w
 operator|=
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -73,7 +77,7 @@ index|]
 operator|*
 name|x
 operator|+
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -83,7 +87,7 @@ index|]
 operator|*
 name|y
 operator|+
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -112,7 +116,7 @@ operator|*
 name|newx
 operator|=
 operator|(
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -122,7 +126,7 @@ index|]
 operator|*
 name|x
 operator|+
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -132,7 +136,7 @@ index|]
 operator|*
 name|y
 operator|+
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -147,7 +151,7 @@ operator|*
 name|newy
 operator|=
 operator|(
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -157,7 +161,7 @@ index|]
 operator|*
 name|x
 operator|+
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -167,7 +171,7 @@ index|]
 operator|*
 name|y
 operator|+
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -181,19 +185,23 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_matrix_mult:  * @matrix1: The first input matrix.  * @matrix2: The second input matrix which will be oeverwritten ba the result.  *   * Multiplies two matrices and puts the result into the second one.  */
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_matrix_mult (GimpMatrix m1,GimpMatrix m2)
+DECL|function|gimp_matrix_mult (GimpMatrix matrix1,GimpMatrix matrix2)
 name|gimp_matrix_mult
 parameter_list|(
 name|GimpMatrix
-name|m1
+name|matrix1
 parameter_list|,
 name|GimpMatrix
-name|m2
+name|matrix2
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -201,7 +209,7 @@ decl_stmt|;
 name|GimpMatrix
 name|tmp
 decl_stmt|;
-name|double
+name|gdouble
 name|t1
 decl_stmt|,
 name|t2
@@ -224,7 +232,7 @@ control|)
 block|{
 name|t1
 operator|=
-name|m1
+name|matrix1
 index|[
 name|i
 index|]
@@ -234,7 +242,7 @@ index|]
 expr_stmt|;
 name|t2
 operator|=
-name|m1
+name|matrix1
 index|[
 name|i
 index|]
@@ -244,7 +252,7 @@ index|]
 expr_stmt|;
 name|t3
 operator|=
-name|m1
+name|matrix1
 index|[
 name|i
 index|]
@@ -276,7 +284,7 @@ index|]
 operator|=
 name|t1
 operator|*
-name|m2
+name|matrix2
 index|[
 literal|0
 index|]
@@ -294,7 +302,7 @@ index|]
 operator|+=
 name|t2
 operator|*
-name|m2
+name|matrix2
 index|[
 literal|1
 index|]
@@ -312,7 +320,7 @@ index|]
 operator|+=
 name|t3
 operator|*
-name|m2
+name|matrix2
 index|[
 literal|2
 index|]
@@ -322,11 +330,11 @@ index|]
 expr_stmt|;
 block|}
 block|}
-comment|/*  put the results in m2 */
+comment|/*  put the results in matrix2 */
 name|memcpy
 argument_list|(
 operator|&
-name|m2
+name|matrix2
 index|[
 literal|0
 index|]
@@ -352,13 +360,17 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_matrix_identity:  * @matrix: A matrix.  *   * Sets the matrix to the identity matrix.  */
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_matrix_identity (GimpMatrix m)
+DECL|function|gimp_matrix_identity (GimpMatrix matrix)
 name|gimp_matrix_identity
 parameter_list|(
 name|GimpMatrix
-name|m
+name|matrix
 parameter_list|)
 block|{
 specifier|static
@@ -394,7 +406,7 @@ decl_stmt|;
 name|memcpy
 argument_list|(
 operator|&
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -420,22 +432,26 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_matrix_translate:  * @matrix: The matrix that is to be translated.  * @x: Translation in X direction.  * @y: Translation in Y direction.  *   * Translates the matrix by x and y.  */
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_matrix_translate (GimpMatrix m,double x,double y)
+DECL|function|gimp_matrix_translate (GimpMatrix matrix,gdouble x,gdouble y)
 name|gimp_matrix_translate
 parameter_list|(
 name|GimpMatrix
-name|m
+name|matrix
 parameter_list|,
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|g
 decl_stmt|,
 name|h
@@ -444,7 +460,7 @@ name|i
 decl_stmt|;
 name|g
 operator|=
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -454,7 +470,7 @@ index|]
 expr_stmt|;
 name|h
 operator|=
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -464,7 +480,7 @@ index|]
 expr_stmt|;
 name|i
 operator|=
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -472,7 +488,7 @@ index|[
 literal|2
 index|]
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -484,7 +500,7 @@ name|x
 operator|*
 name|g
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -496,7 +512,7 @@ name|x
 operator|*
 name|h
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -508,7 +524,7 @@ name|x
 operator|*
 name|i
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -520,7 +536,7 @@ name|y
 operator|*
 name|g
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -532,7 +548,7 @@ name|y
 operator|*
 name|h
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -547,22 +563,26 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_matrix_scale:  * @matrix: The matrix that is to be scaled.  * @x: X scale factor.  * @y: Y scale factor.  *   * Scales the matrix by x and y   */
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_matrix_scale (GimpMatrix m,double x,double y)
+DECL|function|gimp_matrix_scale (GimpMatrix matrix,gdouble x,gdouble y)
 name|gimp_matrix_scale
 parameter_list|(
 name|GimpMatrix
-name|m
+name|matrix
 parameter_list|,
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -572,7 +592,7 @@ index|]
 operator|*=
 name|x
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -582,7 +602,7 @@ index|]
 operator|*=
 name|x
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -592,7 +612,7 @@ index|]
 operator|*=
 name|x
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -602,7 +622,7 @@ index|]
 operator|*=
 name|y
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -612,7 +632,7 @@ index|]
 operator|*=
 name|y
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -625,24 +645,28 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_matrix_rotate:  * @matrix: The matrix that is to be rotated.  * @theta: The angle of rotation (in radians).  *   * Rotates the matrix by theta degrees.  */
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_matrix_rotate (GimpMatrix m,double theta)
+DECL|function|gimp_matrix_rotate (GimpMatrix matrix,gdouble theta)
 name|gimp_matrix_rotate
 parameter_list|(
 name|GimpMatrix
-name|m
+name|matrix
 parameter_list|,
-name|double
+name|gdouble
 name|theta
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|t1
 decl_stmt|,
 name|t2
 decl_stmt|;
-name|double
+name|gdouble
 name|cost
 decl_stmt|,
 name|sint
@@ -663,7 +687,7 @@ argument_list|)
 expr_stmt|;
 name|t1
 operator|=
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -673,7 +697,7 @@ index|]
 expr_stmt|;
 name|t2
 operator|=
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -681,7 +705,7 @@ index|[
 literal|0
 index|]
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -697,7 +721,7 @@ name|sint
 operator|*
 name|t2
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -715,7 +739,7 @@ name|t2
 expr_stmt|;
 name|t1
 operator|=
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -725,7 +749,7 @@ index|]
 expr_stmt|;
 name|t2
 operator|=
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -733,7 +757,7 @@ index|[
 literal|1
 index|]
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -749,7 +773,7 @@ name|sint
 operator|*
 name|t2
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -767,7 +791,7 @@ name|t2
 expr_stmt|;
 name|t1
 operator|=
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -777,7 +801,7 @@ index|]
 expr_stmt|;
 name|t2
 operator|=
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -785,7 +809,7 @@ index|[
 literal|2
 index|]
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -801,7 +825,7 @@ name|sint
 operator|*
 name|t2
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -820,19 +844,23 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_matrix_xshear:  * @matrix: The matrix that is to be sheared.  * @amount: X shear amount.  *   * Shears the matrix in the X direction.  */
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_matrix_xshear (GimpMatrix m,double amnt)
+DECL|function|gimp_matrix_xshear (GimpMatrix matrix,gdouble amount)
 name|gimp_matrix_xshear
 parameter_list|(
 name|GimpMatrix
-name|m
+name|matrix
 parameter_list|,
-name|double
-name|amnt
+name|gdouble
+name|amount
 parameter_list|)
 block|{
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -840,9 +868,9 @@ index|[
 literal|0
 index|]
 operator|+=
-name|amnt
+name|amount
 operator|*
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -850,7 +878,7 @@ index|[
 literal|0
 index|]
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -858,9 +886,9 @@ index|[
 literal|1
 index|]
 operator|+=
-name|amnt
+name|amount
 operator|*
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -868,7 +896,7 @@ index|[
 literal|1
 index|]
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -876,9 +904,9 @@ index|[
 literal|2
 index|]
 operator|+=
-name|amnt
+name|amount
 operator|*
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -888,20 +916,24 @@ index|]
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_matrix_yshear:  * @matrix: The matrix that is to be sheared.  * @amount: Y shear amount.  *   * Shears the matrix in the Y direction.  */
+end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix_yshear (GimpMatrix m,double amnt)
+DECL|function|gimp_matrix_yshear (GimpMatrix matrix,gdouble amount)
 name|gimp_matrix_yshear
 parameter_list|(
 name|GimpMatrix
-name|m
+name|matrix
 parameter_list|,
-name|double
-name|amnt
+name|gdouble
+name|amount
 parameter_list|)
 block|{
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -909,9 +941,9 @@ index|[
 literal|0
 index|]
 operator|+=
-name|amnt
+name|amount
 operator|*
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -919,7 +951,7 @@ index|[
 literal|0
 index|]
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -927,9 +959,9 @@ index|[
 literal|1
 index|]
 operator|+=
-name|amnt
+name|amount
 operator|*
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -937,7 +969,7 @@ index|[
 literal|1
 index|]
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -945,9 +977,9 @@ index|[
 literal|2
 index|]
 operator|+=
-name|amnt
+name|amount
 operator|*
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -958,21 +990,25 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_matrix_determinant:  * @matrix: The input matrix.   *   * Calculates the determinant of the given matrix.  *   * Returns: The determinant.  */
+end_comment
+
 begin_function
-name|double
-DECL|function|gimp_matrix_determinant (GimpMatrix m)
+name|gdouble
+DECL|function|gimp_matrix_determinant (GimpMatrix matrix)
 name|gimp_matrix_determinant
 parameter_list|(
 name|GimpMatrix
-name|m
+name|matrix
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|determinant
 decl_stmt|;
 name|determinant
 operator|=
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -981,7 +1017,7 @@ literal|0
 index|]
 operator|*
 operator|(
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -989,7 +1025,7 @@ index|[
 literal|1
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -997,7 +1033,7 @@ index|[
 literal|2
 index|]
 operator|-
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1005,7 +1041,7 @@ index|[
 literal|2
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1016,7 +1052,7 @@ operator|)
 expr_stmt|;
 name|determinant
 operator|-=
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1025,7 +1061,7 @@ literal|0
 index|]
 operator|*
 operator|(
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1033,7 +1069,7 @@ index|[
 literal|1
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1041,7 +1077,7 @@ index|[
 literal|2
 index|]
 operator|-
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1049,7 +1085,7 @@ index|[
 literal|2
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1060,7 +1096,7 @@ operator|)
 expr_stmt|;
 name|determinant
 operator|+=
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1069,7 +1105,7 @@ literal|0
 index|]
 operator|*
 operator|(
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1077,7 +1113,7 @@ index|[
 literal|1
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1085,7 +1121,7 @@ index|[
 literal|2
 index|]
 operator|-
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1093,7 +1129,7 @@ index|[
 literal|2
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1108,26 +1144,30 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_matrix_invert:  * @matrix: The matrix that is to be inverted.  * @matrix_inv: A matrix the inverted matrix should be written into.   *   * Inverts the given matrix.  */
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_matrix_invert (GimpMatrix m,GimpMatrix m_inv)
+DECL|function|gimp_matrix_invert (GimpMatrix matrix,GimpMatrix matrix_inv)
 name|gimp_matrix_invert
 parameter_list|(
 name|GimpMatrix
-name|m
+name|matrix
 parameter_list|,
 name|GimpMatrix
-name|m_inv
+name|matrix_inv
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|det_1
 decl_stmt|;
 name|det_1
 operator|=
 name|gimp_matrix_determinant
 argument_list|(
-name|m
+name|matrix
 argument_list|)
 expr_stmt|;
 if|if
@@ -1143,7 +1183,7 @@ literal|1.0
 operator|/
 name|det_1
 expr_stmt|;
-name|m_inv
+name|matrix_inv
 index|[
 literal|0
 index|]
@@ -1152,7 +1192,7 @@ literal|0
 index|]
 operator|=
 operator|(
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1160,7 +1200,7 @@ index|[
 literal|1
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1168,7 +1208,7 @@ index|[
 literal|2
 index|]
 operator|-
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1176,7 +1216,7 @@ index|[
 literal|2
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1187,7 +1227,7 @@ operator|)
 operator|*
 name|det_1
 expr_stmt|;
-name|m_inv
+name|matrix_inv
 index|[
 literal|1
 index|]
@@ -1197,7 +1237,7 @@ index|]
 operator|=
 operator|-
 operator|(
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1205,7 +1245,7 @@ index|[
 literal|0
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1213,7 +1253,7 @@ index|[
 literal|2
 index|]
 operator|-
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1221,7 +1261,7 @@ index|[
 literal|2
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1232,7 +1272,7 @@ operator|)
 operator|*
 name|det_1
 expr_stmt|;
-name|m_inv
+name|matrix_inv
 index|[
 literal|2
 index|]
@@ -1241,7 +1281,7 @@ literal|0
 index|]
 operator|=
 operator|(
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1249,7 +1289,7 @@ index|[
 literal|0
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1257,7 +1297,7 @@ index|[
 literal|1
 index|]
 operator|-
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1265,7 +1305,7 @@ index|[
 literal|1
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1276,7 +1316,7 @@ operator|)
 operator|*
 name|det_1
 expr_stmt|;
-name|m_inv
+name|matrix_inv
 index|[
 literal|0
 index|]
@@ -1286,7 +1326,7 @@ index|]
 operator|=
 operator|-
 operator|(
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1294,7 +1334,7 @@ index|[
 literal|1
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1302,7 +1342,7 @@ index|[
 literal|2
 index|]
 operator|-
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1310,7 +1350,7 @@ index|[
 literal|2
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1321,7 +1361,7 @@ operator|)
 operator|*
 name|det_1
 expr_stmt|;
-name|m_inv
+name|matrix_inv
 index|[
 literal|1
 index|]
@@ -1330,7 +1370,7 @@ literal|1
 index|]
 operator|=
 operator|(
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1338,7 +1378,7 @@ index|[
 literal|0
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1346,7 +1386,7 @@ index|[
 literal|2
 index|]
 operator|-
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1354,7 +1394,7 @@ index|[
 literal|2
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1365,7 +1405,7 @@ operator|)
 operator|*
 name|det_1
 expr_stmt|;
-name|m_inv
+name|matrix_inv
 index|[
 literal|2
 index|]
@@ -1375,7 +1415,7 @@ index|]
 operator|=
 operator|-
 operator|(
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1383,7 +1423,7 @@ index|[
 literal|0
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1391,7 +1431,7 @@ index|[
 literal|1
 index|]
 operator|-
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1399,7 +1439,7 @@ index|[
 literal|1
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1410,7 +1450,7 @@ operator|)
 operator|*
 name|det_1
 expr_stmt|;
-name|m_inv
+name|matrix_inv
 index|[
 literal|0
 index|]
@@ -1419,7 +1459,7 @@ literal|2
 index|]
 operator|=
 operator|(
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1427,7 +1467,7 @@ index|[
 literal|1
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1435,7 +1475,7 @@ index|[
 literal|2
 index|]
 operator|-
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1443,7 +1483,7 @@ index|[
 literal|2
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1454,7 +1494,7 @@ operator|)
 operator|*
 name|det_1
 expr_stmt|;
-name|m_inv
+name|matrix_inv
 index|[
 literal|1
 index|]
@@ -1464,7 +1504,7 @@ index|]
 operator|=
 operator|-
 operator|(
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1472,7 +1512,7 @@ index|[
 literal|0
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1480,7 +1520,7 @@ index|[
 literal|2
 index|]
 operator|-
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1488,7 +1528,7 @@ index|[
 literal|2
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1499,7 +1539,7 @@ operator|)
 operator|*
 name|det_1
 expr_stmt|;
-name|m_inv
+name|matrix_inv
 index|[
 literal|2
 index|]
@@ -1508,7 +1548,7 @@ literal|2
 index|]
 operator|=
 operator|(
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1516,7 +1556,7 @@ index|[
 literal|0
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1524,7 +1564,7 @@ index|[
 literal|1
 index|]
 operator|-
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1532,7 +1572,7 @@ index|[
 literal|1
 index|]
 operator|*
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1545,6 +1585,10 @@ name|det_1
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_matrix_duplicate:  * @src: The source matrix.  * @target: The destination matrix.   *   * Copies the source matrix to the destination matrix.  */
+end_comment
 
 begin_function
 name|void
@@ -1591,16 +1635,20 @@ begin_comment
 comment|/*  functions to test for matrix properties  */
 end_comment
 
+begin_comment
+comment|/**  * gimp_matrix_is_diagonal:  * @matrix: The matrix that is to be tested.  *   * Checks if the given matrix is diagonal.  *   * Returns: TRUE if the matrix is diagonal.  */
+end_comment
+
 begin_function
-name|int
-DECL|function|gimp_matrix_is_diagonal (GimpMatrix m)
+name|gboolean
+DECL|function|gimp_matrix_is_diagonal (GimpMatrix matrix)
 name|gimp_matrix_is_diagonal
 parameter_list|(
 name|GimpMatrix
-name|m
+name|matrix
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -1641,7 +1689,7 @@ name|j
 operator|&&
 name|fabs
 argument_list|(
-name|m
+name|matrix
 index|[
 name|i
 index|]
@@ -1663,16 +1711,20 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_matrix_is_identity:  * @matrix: The matrix that is to be tested.  *   * Checks if the given matrix is the identity matrix.  *   * Returns: TRUE if the matrix is the identity matrix.  */
+end_comment
+
 begin_function
-name|int
-DECL|function|gimp_matrix_is_identity (GimpMatrix m)
+name|gboolean
+DECL|function|gimp_matrix_is_identity (GimpMatrix matrix)
 name|gimp_matrix_is_identity
 parameter_list|(
 name|GimpMatrix
-name|m
+name|matrix
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -1716,7 +1768,7 @@ if|if
 condition|(
 name|fabs
 argument_list|(
-name|m
+name|matrix
 index|[
 name|i
 index|]
@@ -1739,7 +1791,7 @@ if|if
 condition|(
 name|fabs
 argument_list|(
-name|m
+name|matrix
 index|[
 name|i
 index|]
@@ -1766,19 +1818,23 @@ begin_comment
 comment|/*  Check if we'll need to interpolate when applying this matrix.      This function returns TRUE if all entries of the upper left      2x2 matrix are either 0 or 1   */
 end_comment
 
+begin_comment
+comment|/**  * gimp_matrix_is_simple:  * @matrix: The matrix that is to be tested.  *   * Checks if we'll need to interpolate when applying this matrix as  * a transformation.  *   * Returns: TRUE if all entries of the upper left 2x2 matrix are either   * 0 or 1  */
+end_comment
+
 begin_function
-name|int
-DECL|function|gimp_matrix_is_simple (GimpMatrix m)
+name|gboolean
+DECL|function|gimp_matrix_is_simple (GimpMatrix matrix)
 name|gimp_matrix_is_simple
 parameter_list|(
 name|GimpMatrix
-name|m
+name|matrix
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|absm
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -1815,7 +1871,7 @@ name|absm
 operator|=
 name|fabs
 argument_list|(
-name|m
+name|matrix
 index|[
 name|i
 index|]
