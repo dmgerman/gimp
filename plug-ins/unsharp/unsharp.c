@@ -121,7 +121,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon27916dab0108
+DECL|struct|__anon2b50e7720108
 typedef|typedef
 struct|struct
 block|{
@@ -144,7 +144,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27916dab0208
+DECL|struct|__anon2b50e7720208
 typedef|typedef
 struct|struct
 block|{
@@ -232,7 +232,7 @@ begin_function_decl
 specifier|static
 specifier|inline
 name|gint
-name|round
+name|round2int
 parameter_list|(
 name|gdouble
 name|i
@@ -2427,7 +2427,7 @@ expr_stmt|;
 comment|/* find integer value of threshold */
 name|threshold
 operator|=
-name|round
+name|round2int
 argument_list|(
 name|unsharp_params
 operator|.
@@ -2876,7 +2876,7 @@ operator|=
 operator|(
 name|guchar
 operator|)
-name|round
+name|round2int
 argument_list|(
 name|sum
 operator|/
@@ -2970,7 +2970,7 @@ operator|=
 operator|(
 name|guchar
 operator|)
-name|round
+name|round2int
 argument_list|(
 name|sum
 argument_list|)
@@ -3095,7 +3095,7 @@ operator|=
 operator|(
 name|guchar
 operator|)
-name|round
+name|round2int
 argument_list|(
 name|sum
 operator|/
@@ -3266,7 +3266,7 @@ operator|=
 operator|(
 name|guchar
 operator|)
-name|round
+name|round2int
 argument_list|(
 name|sum
 operator|/
@@ -3382,7 +3382,7 @@ name|dest_col_p
 operator|++
 operator|)
 operator|=
-name|round
+name|round2int
 argument_list|(
 name|sum
 argument_list|)
@@ -3501,7 +3501,7 @@ operator|=
 operator|(
 name|guchar
 operator|)
-name|round
+name|round2int
 argument_list|(
 name|sum
 operator|/
@@ -3516,11 +3516,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|round (gdouble i)
+DECL|function|round2int (gdouble i)
 specifier|static
 specifier|inline
 name|gint
-name|round
+name|round2int
 parameter_list|(
 name|gdouble
 name|i
