@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_MATRIX_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<glib.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -239,7 +233,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_MATRIX_H__  */
+comment|/* __GIMP_MATRIX_H__ */
 end_comment
 
 end_unit

@@ -19,13 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpsizeentry.h"
+file|<libgimp/gimpsizeentry.h>
 end_include
 
 begin_ifdef
@@ -40,6 +34,7 @@ literal|"C"
 block|{
 endif|#
 directive|endif
+comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
 comment|/*  *  Widget Constructors  */
 name|GtkWidget
@@ -590,6 +585,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __cplusplus */
+end_comment
 
 begin_endif
 endif|#

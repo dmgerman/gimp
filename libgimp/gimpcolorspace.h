@@ -16,11 +16,21 @@ directive|define
 name|__GIMPCOLORSPACE_H__
 end_define
 
-begin_comment
-comment|/*  Color conversion routines  */
-end_comment
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__cplusplus
+end_ifdef
 
-begin_function_decl
+begin_extern
+extern|extern
+literal|"C"
+block|{
+endif|#
+directive|endif
+comment|/* __cplusplus */
+comment|/* For information look into the C source or the html documentation */
+comment|/*  Color conversion routines  */
 name|void
 name|gimp_rgb_to_hsv
 parameter_list|(
@@ -40,9 +50,6 @@ name|blue
 comment|/* returns value      */
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_hsv_to_rgb
 parameter_list|(
@@ -62,9 +69,6 @@ name|value
 comment|/* returns blue       */
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_rgb_to_hls
 parameter_list|(
@@ -84,9 +88,6 @@ name|blue
 comment|/* returns saturation */
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gint
 name|gimp_rgb_to_l
 parameter_list|(
@@ -100,9 +101,6 @@ name|gint
 name|blue
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_hls_to_rgb
 parameter_list|(
@@ -122,9 +120,6 @@ name|saturation
 comment|/* returns blue       */
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_rgb_to_hsv_double
 parameter_list|(
@@ -144,9 +139,6 @@ name|blue
 comment|/* returns value      */
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_hsv_to_rgb_double
 parameter_list|(
@@ -166,9 +158,6 @@ name|value
 comment|/* returns blue       */
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_rgb_to_hsv4
 parameter_list|(
@@ -189,9 +178,6 @@ modifier|*
 name|blue
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_hsv_to_rgb4
 parameter_list|(
@@ -209,37 +195,22 @@ name|gdouble
 name|value
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  Map RGB to intensity  */
-end_comment
-
-begin_define
 DECL|macro|INTENSITY_RED
 define|#
 directive|define
 name|INTENSITY_RED
 value|0.30
-end_define
-
-begin_define
 DECL|macro|INTENSITY_GREEN
 define|#
 directive|define
 name|INTENSITY_GREEN
 value|0.59
-end_define
-
-begin_define
 DECL|macro|INTENSITY_BLUE
 define|#
 directive|define
 name|INTENSITY_BLUE
 value|0.11
-end_define
-
-begin_define
 DECL|macro|INTENSITY (r,g,b)
 define|#
 directive|define
@@ -252,7 +223,20 @@ parameter_list|,
 name|b
 parameter_list|)
 value|((r) * INTENSITY_RED   + \ 			  (g) * INTENSITY_GREEN + \ 			  (b) * INTENSITY_BLUE  + 0.001)
-end_define
+ifdef|#
+directive|ifdef
+name|__cplusplus
+block|}
+end_extern
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* __cplusplus */
+end_comment
 
 begin_endif
 endif|#

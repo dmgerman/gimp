@@ -19,19 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimphelpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpunit.h"
+file|<libgimp/gimphelpui.h>
 end_include
 
 begin_ifdef
@@ -47,6 +35,7 @@ block|{
 endif|#
 directive|endif
 comment|/* __cplusplus */
+comment|/* For information look into the C source or the html documentation */
 name|GtkWidget
 modifier|*
 name|gimp_dialog_new

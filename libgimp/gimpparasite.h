@@ -29,6 +29,7 @@ block|{
 endif|#
 directive|endif
 comment|/* __cplusplus */
+comment|/* For information look into the C source or the html documentation */
 DECL|macro|GIMP_PARASITE_PERSISTENT
 define|#
 directive|define

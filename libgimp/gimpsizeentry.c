@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplimits.h"
 end_include
 
@@ -76,7 +82,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb10d8b0103
+DECL|enum|__anon289fa9110103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED

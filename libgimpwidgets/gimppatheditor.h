@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_PATH_EDITOR_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -35,6 +29,7 @@ block|{
 endif|#
 directive|endif
 comment|/* __cplusplus */
+comment|/* For information look into the C source or the html documentation */
 DECL|macro|GIMP_TYPE_PATH_EDITOR
 define|#
 directive|define

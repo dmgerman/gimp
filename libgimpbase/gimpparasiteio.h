@@ -29,6 +29,7 @@ block|{
 endif|#
 directive|endif
 comment|/* __cplusplus */
+comment|/* For information look into the C source or the html documentation */
 comment|/*  Data structures for various standard parasites used by plug-ins and  *  the GIMP core, and functions to build and parse their string  *  representations.  */
 comment|/*  *  Pixmap brush pipes.  */
 DECL|macro|GIMP_PIXPIPE_MAXDIM
@@ -38,7 +39,7 @@ name|GIMP_PIXPIPE_MAXDIM
 value|4
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdd4b230108
+DECL|struct|__anon2958248d0108
 block|{
 DECL|member|step
 name|gint

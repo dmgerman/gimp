@@ -31,10 +31,23 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpparasite.h"
+file|<libgimp/gimpparasite.h>
 end_include
 
-begin_typedef
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__cplusplus
+end_ifdef
+
+begin_extern
+extern|extern
+literal|"C"
+block|{
+endif|#
+directive|endif
+comment|/* __cplusplus */
+comment|/* For information look at the html documentation */
 DECL|typedef|GimpColorDisplayInit
 typedef|typedef
 name|void
@@ -46,9 +59,6 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpColorDisplayNew
 typedef|typedef
 name|gpointer
@@ -61,9 +71,6 @@ name|gint
 name|type
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpColorDisplayClone
 typedef|typedef
 name|gpointer
@@ -76,9 +83,6 @@ name|gpointer
 name|cd_ID
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpColorDisplayConvert
 typedef|typedef
 name|void
@@ -107,9 +111,6 @@ name|gint
 name|bpl
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpColorDisplayDestroy
 typedef|typedef
 name|void
@@ -122,9 +123,6 @@ name|gpointer
 name|cd_ID
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpColorDisplayFinalize
 typedef|typedef
 name|void
@@ -136,9 +134,6 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpColorDisplayLoadState
 typedef|typedef
 name|void
@@ -155,9 +150,6 @@ modifier|*
 name|state
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpColorDisplaySaveState
 typedef|typedef
 name|GimpParasite
@@ -171,9 +163,6 @@ name|gpointer
 name|cd_ID
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpColorDisplayConfigure
 typedef|typedef
 name|void
@@ -198,9 +187,6 @@ name|gpointer
 name|cancel_data
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpColorDisplayConfigureCancel
 typedef|typedef
 name|void
@@ -213,18 +199,12 @@ name|gpointer
 name|cd_ID
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpColorDisplayMethods
 typedef|typedef
 name|struct
 name|_GimpColorDisplayMethods
 name|GimpColorDisplayMethods
 typedef|;
-end_typedef
-
-begin_struct
 DECL|struct|_GimpColorDisplayMethods
 struct|struct
 name|_GimpColorDisplayMethods
@@ -271,13 +251,7 @@ name|cancel
 decl_stmt|;
 block|}
 struct|;
-end_struct
-
-begin_comment
 comment|/*  The following two functions are implemted and exported by gimp/app  *  but need to be marked for it here too ...  */
-end_comment
-
-begin_function_decl
 name|G_MODULE_EXPORT
 name|gboolean
 name|gimp_color_display_register
@@ -292,9 +266,6 @@ modifier|*
 name|methods
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|G_MODULE_EXPORT
 name|gboolean
 name|gimp_color_display_unregister
@@ -305,7 +276,20 @@ modifier|*
 name|name
 parameter_list|)
 function_decl|;
-end_function_decl
+ifdef|#
+directive|ifdef
+name|__cplusplus
+block|}
+end_extern
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* __cplusplus */
+end_comment
 
 begin_endif
 endif|#

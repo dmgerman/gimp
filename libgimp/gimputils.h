@@ -29,8 +29,8 @@ block|{
 endif|#
 directive|endif
 comment|/* __cplusplus */
-comment|/*    *  Right now all you find here is the g_strescape function out of   *  glib-1.3. We need its functionality, but don't want to rely on  *  that version being installed   */
 comment|/* For information look into the C source or the html documentation */
+comment|/*    *  Right now all you find here is the g_strescape function out of   *  glib-1.3. We need its functionality, but don't want to rely on  *  that version being installed   */
 if|#
 directive|if
 operator|(
@@ -99,7 +99,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMPUTILS_H__  */
+comment|/* __GIMPUTILS_H__ */
 end_comment
 
 end_unit

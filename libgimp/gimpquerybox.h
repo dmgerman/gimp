@@ -19,26 +19,24 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<libgimp/gimpunit.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimphelpui.h"
-end_include
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__cplusplus
+end_ifdef
 
-begin_include
-include|#
-directive|include
-file|"gimpunit.h"
-end_include
-
-begin_comment
+begin_extern
+extern|extern
+literal|"C"
+block|{
+endif|#
+directive|endif
+comment|/* __cplusplus */
+comment|/* For information look into the C source or the html documentation */
 comment|/*  query box callback prototypes  */
-end_comment
-
-begin_typedef
 DECL|typedef|GimpQueryStringCallback
 typedef|typedef
 name|void
@@ -59,9 +57,6 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpQueryIntCallback
 typedef|typedef
 name|void
@@ -81,9 +76,6 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpQueryDoubleCallback
 typedef|typedef
 name|void
@@ -103,9 +95,6 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpQuerySizeCallback
 typedef|typedef
 name|void
@@ -128,9 +117,6 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpQueryBooleanCallback
 typedef|typedef
 name|void
@@ -150,13 +136,7 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_comment
 comment|/*  some simple query dialogs  */
-end_comment
-
-begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_query_string_box
@@ -195,9 +175,6 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_query_int_box
@@ -241,9 +218,6 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_query_double_box
@@ -290,9 +264,6 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_query_size_box
@@ -348,9 +319,6 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_query_boolean_box
@@ -396,7 +364,20 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
-end_function_decl
+ifdef|#
+directive|ifdef
+name|__cplusplus
+block|}
+end_extern
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* __cplusplus */
+end_comment
 
 begin_endif
 endif|#

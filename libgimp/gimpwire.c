@@ -99,6 +99,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwire.h"
 end_include
 

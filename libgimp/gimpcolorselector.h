@@ -16,11 +16,20 @@ directive|define
 name|__COLOR_SELECTOR_H__
 end_define
 
-begin_comment
-comment|/* For information look at the html documentation */
-end_comment
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__cplusplus
+end_ifdef
 
-begin_typedef
+begin_extern
+extern|extern
+literal|"C"
+block|{
+endif|#
+directive|endif
+comment|/* __cplusplus */
+comment|/* For information look at the html documentation */
 DECL|typedef|GimpColorSelector_Callback
 typedef|typedef
 name|void
@@ -42,9 +51,6 @@ name|gint
 name|b
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpColorSelector_NewFunc
 typedef|typedef
 name|GtkWidget
@@ -74,9 +80,6 @@ modifier|*
 name|selector_data
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpColorSelector_FreeFunc
 typedef|typedef
 name|void
@@ -89,9 +92,6 @@ name|gpointer
 name|selector_data
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpColorSelector_SetColorFunc
 typedef|typedef
 name|void
@@ -116,18 +116,12 @@ name|gboolean
 name|set_current
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpColorSelectorMethods
 typedef|typedef
 name|struct
 name|_GimpColorSelectorMethods
 name|GimpColorSelectorMethods
 typedef|;
-end_typedef
-
-begin_struct
 DECL|struct|_GimpColorSelectorMethods
 struct|struct
 name|_GimpColorSelectorMethods
@@ -146,27 +140,15 @@ name|setcolor
 decl_stmt|;
 block|}
 struct|;
-end_struct
-
-begin_typedef
 DECL|typedef|GimpColorSelectorID
 typedef|typedef
 name|gpointer
 name|GimpColorSelectorID
 typedef|;
-end_typedef
-
-begin_ifndef
 ifndef|#
 directive|ifndef
 name|__COLOR_NOTEBOOK_C__
-end_ifndef
-
-begin_comment
 comment|/*  Bypass when compiling the source for these functions.  */
-end_comment
-
-begin_function_decl
 name|GimpColorSelectorID
 name|gimp_color_selector_register
 parameter_list|(
@@ -185,9 +167,6 @@ modifier|*
 name|methods
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_typedef
 DECL|typedef|GimpColorSelectorFinishedCB
 typedef|typedef
 name|void
@@ -200,9 +179,6 @@ name|gpointer
 name|finished_data
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_function_decl
 name|gboolean
 name|gimp_color_selector_unregister
 parameter_list|(
@@ -216,7 +192,14 @@ name|gpointer
 name|finished_data
 parameter_list|)
 function_decl|;
-end_function_decl
+endif|#
+directive|endif
+comment|/* !__COLOR_NOTEBOOK_C__ */
+ifdef|#
+directive|ifdef
+name|__cplusplus
+block|}
+end_extern
 
 begin_endif
 endif|#
@@ -224,7 +207,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* !__COLOR_NOTEBOOK_C__ */
+comment|/* __cplusplus */
 end_comment
 
 begin_endif

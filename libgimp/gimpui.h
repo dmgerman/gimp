@@ -100,7 +100,20 @@ directive|include
 file|<libgimp/gimpwidgets.h>
 end_include
 
-begin_function_decl
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__cplusplus
+end_ifdef
+
+begin_extern
+extern|extern
+literal|"C"
+block|{
+endif|#
+directive|endif
+comment|/* __cplusplus */
+comment|/* For information look into the C source or the html documentation */
 name|void
 name|gimp_ui_init
 parameter_list|(
@@ -112,7 +125,20 @@ name|gboolean
 name|preview
 parameter_list|)
 function_decl|;
-end_function_decl
+ifdef|#
+directive|ifdef
+name|__cplusplus
+block|}
+end_extern
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* __cplusplus */
+end_comment
 
 begin_endif
 endif|#

@@ -20,12 +20,6 @@ directive|define
 name|__GIMP_CHAIN_BUTTON_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -90,7 +84,7 @@ name|GimpChainButtonClass
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ca3dee0103
+DECL|enum|__anon2bcea1ca0103
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP

@@ -57,6 +57,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpfileselection.h"
 end_include
 
@@ -216,7 +222,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a33d4980103
+DECL|enum|__anon29e011940103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED

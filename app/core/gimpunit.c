@@ -21,14 +21,10 @@ directive|include
 file|<stdio.h>
 end_include
 
-begin_comment
-comment|/* NOTE:  *  * one of our header files is in libgimp/ (see the note there)  */
-end_comment
-
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpunit.h"
+file|<glib.h>
 end_include
 
 begin_include
@@ -49,16 +45,26 @@ directive|include
 file|"gimprc.h"
 end_include
 
+begin_comment
+comment|/* NOTE:  *  * one of our header files is in libgimp/ (see the note there)  */
+end_comment
+
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/gimpunit.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"libgimp/gimpenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
@@ -68,7 +74,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2768d1d60108
+DECL|struct|__anon277b97460108
 block|{
 DECL|member|delete_on_exit
 name|gboolean

@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdialog.h"
 end_include
 
@@ -65,7 +71,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e20cf50103
+DECL|enum|__anon27af6ba70103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED

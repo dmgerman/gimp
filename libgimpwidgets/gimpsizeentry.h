@@ -19,13 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpunit.h"
+file|<libgimp/gimpunit.h>
 end_include
 
 begin_ifdef
@@ -41,6 +35,7 @@ block|{
 endif|#
 directive|endif
 comment|/* __cplusplus */
+comment|/* For information look into the C source or the html documentation */
 DECL|macro|GIMP_TYPE_SIZE_ENTRY
 define|#
 directive|define
@@ -92,7 +87,7 @@ name|GimpSizeEntryClass
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon293574860103
+DECL|enum|__anon2894432b0103
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE

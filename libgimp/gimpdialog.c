@@ -6,7 +6,13 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpdialog.h"
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdialog.h"
 end_include
 
 begin_include

@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_VECTOR_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<glib.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -34,6 +28,8 @@ literal|"C"
 block|{
 endif|#
 directive|endif
+comment|/* __cplusplus */
+comment|/* For information look into the C source or the html documentation */
 DECL|typedef|GimpVector2
 typedef|typedef
 name|struct
@@ -419,6 +415,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __cplusplus */
+end_comment
 
 begin_endif
 endif|#

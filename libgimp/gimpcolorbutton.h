@@ -20,12 +20,6 @@ directive|define
 name|__GIMP_COLOR_BUTTON_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef

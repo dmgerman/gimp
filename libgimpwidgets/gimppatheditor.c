@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppatheditor.h"
 end_include
 
@@ -147,7 +153,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c02bf5a0103
+DECL|enum|__anon298b17a60103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED

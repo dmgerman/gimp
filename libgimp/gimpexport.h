@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_EXPORT_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<glib.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -35,9 +29,10 @@ block|{
 endif|#
 directive|endif
 comment|/* __cplusplus */
-DECL|enum|__anon296f1f820103
+comment|/* For information look into the C source or the html documentation */
 typedef|typedef
 enum|enum
+DECL|enum|__anon2c39681e0103
 block|{
 DECL|enumerator|CAN_HANDLE_RGB
 name|CAN_HANDLE_RGB
@@ -93,7 +88,7 @@ name|GimpExportCapabilities
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon296f1f820203
+DECL|enum|__anon2c39681e0203
 block|{
 DECL|enumerator|EXPORT_CANCEL
 name|EXPORT_CANCEL
@@ -145,6 +140,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __GIMP_EXPORT_H__ */
+end_comment
 
 end_unit
 

@@ -19,13 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpunit.h"
+file|<libgimp/gimpunit.h>
 end_include
 
 begin_ifdef
@@ -41,6 +35,7 @@ block|{
 endif|#
 directive|endif
 comment|/* __cplusplus */
+comment|/* For information look into the C source or the html documentation */
 DECL|macro|GIMP_TYPE_UNIT_MENU
 define|#
 directive|define
@@ -151,7 +146,6 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
-comment|/* For information look into the C source or the html documentation */
 name|GtkType
 name|gimp_unit_menu_get_type
 parameter_list|(

@@ -16,6 +16,29 @@ directive|define
 name|__GIMPMATH_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|<math.h>
+end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<float.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -29,17 +52,6 @@ block|{
 endif|#
 directive|endif
 comment|/* __cplusplus */
-include|#
-directive|include
-file|<math.h>
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-include|#
-directive|include
-file|<float.h>
-endif|#
-directive|endif
 comment|/* Some portability enhancing stuff. For use both by the gimp app  * as well as plug-ins and modules.  *  * Include this instead of just<math.h>.  */
 ifndef|#
 directive|ifndef
@@ -233,7 +245,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMPMATH_H__  */
+comment|/* __GIMPMATH_H__ */
 end_comment
 
 end_unit

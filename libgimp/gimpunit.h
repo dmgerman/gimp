@@ -20,12 +20,6 @@ directive|define
 name|__GIMPUNIT_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<glib.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -39,9 +33,10 @@ block|{
 endif|#
 directive|endif
 comment|/* __cplusplus */
+comment|/* For information look into the C source or the html documentation */
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ee48820103
+DECL|enum|__anon2c860e470103
 block|{
 DECL|enumerator|GIMP_UNIT_PIXEL
 name|GIMP_UNIT_PIXEL
@@ -81,7 +76,6 @@ DECL|typedef|GimpUnit
 block|}
 name|GimpUnit
 typedef|;
-comment|/* For information look into the C source or the html documentation */
 name|gint
 name|gimp_unit_get_number_of_units
 parameter_list|(
@@ -216,7 +210,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMPUNIT_H__  */
+comment|/* __GIMPUNIT_H__ */
 end_comment
 
 end_unit
