@@ -280,7 +280,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0591ee0103
+DECL|enum|__anon2c3e36c60103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6509,7 +6509,7 @@ operator|<
 name|y2
 condition|)
 block|{
-name|gdk_draw_line
+name|gdk_draw_point
 argument_list|(
 name|shell
 operator|->
@@ -6518,10 +6518,6 @@ operator|->
 name|window
 argument_list|,
 name|gc
-argument_list|,
-name|x_real
-argument_list|,
-name|y_real
 argument_list|,
 name|x_real
 argument_list|,

@@ -1073,7 +1073,7 @@ name|GIMP_GRID_TYPE_DOTS
 block|,
 name|N_
 argument_list|(
-literal|"Dots"
+literal|"Intersections (dots)"
 argument_list|)
 block|,
 literal|"dots"
@@ -1084,7 +1084,7 @@ name|GIMP_GRID_TYPE_INTERSECTIONS
 block|,
 name|N_
 argument_list|(
-literal|"Intersections Only"
+literal|"Intersections (crosshairs)"
 argument_list|)
 block|,
 literal|"intersections"
