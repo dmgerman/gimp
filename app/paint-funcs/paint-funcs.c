@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ebd5330103
+DECL|enum|__anon2c6ee4060103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -497,16 +497,6 @@ name|layer_replace_mode
 block|,
 name|layer_anti_erase_mode
 block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|gimp_composite_use_old
-specifier|static
-name|gboolean
-name|gimp_composite_use_old
-init|=
-name|TRUE
 decl_stmt|;
 end_decl_stmt
 
@@ -22159,7 +22149,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*  Determine whether the alpha channel of the destination 										*  can be affected by the specified mode. -- This keeps 										*  consistency with varying opacities. 										*/
+comment|/*  Determine whether the alpha channel of the destination                  *  can be affected by the specified mode. -- This keeps                  *  consistency with varying opacities.                  */
 name|mode_affect
 operator|=
 name|layer_modes

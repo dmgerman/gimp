@@ -20052,44 +20052,37 @@ begin_function_decl
 specifier|extern
 name|void
 name|gimp_composite_generic_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function
 name|void
-DECL|function|gimp_composite_init ()
+DECL|function|gimp_composite_init (void)
 name|gimp_composite_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
-name|char
-modifier|*
-name|p
-decl_stmt|;
 if|if
 condition|(
-operator|(
-name|p
-operator|=
-name|getenv
+name|g_getenv
 argument_list|(
 literal|"GIMP_COMPOSITE"
 argument_list|)
-operator|)
 condition|)
 block|{
 name|gimp_composite_options
 operator|.
 name|use
 operator|=
-name|atol
-argument_list|(
-name|p
-argument_list|)
+name|TRUE
 expr_stmt|;
 name|g_printerr
 argument_list|(
-literal|"Using new image composite functions "
+literal|"Using new image composite functions\n"
 argument_list|)
 expr_stmt|;
 block|}
@@ -20108,7 +20101,7 @@ name|gimp_composite_options
 operator|.
 name|initialised
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 block|}
 block|}
