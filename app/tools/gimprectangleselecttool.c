@@ -212,7 +212,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0226a30103
+DECL|enum|__anon299927940103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -740,7 +740,7 @@ name|NULL
 argument_list|,
 name|GIMP_HELP_TOOL_RECT_SELECT
 argument_list|,
-name|GIMP_STOCK_TOOL_NEW_RECT_SELECT
+name|GIMP_STOCK_TOOL_RECT_SELECT
 argument_list|,
 name|data
 argument_list|)
