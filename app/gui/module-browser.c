@@ -131,7 +131,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28af178a0103
+DECL|enum|__anon279103800103
 block|{
 DECL|enumerator|ST_MODULE_ERROR
 name|ST_MODULE_ERROR
@@ -305,7 +305,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28af178a0208
+DECL|struct|__anon279103800208
 block|{
 DECL|member|parent_instance
 name|GtkObject
@@ -420,7 +420,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28af178a0308
+DECL|struct|__anon279103800308
 block|{
 DECL|member|table
 name|GtkWidget
@@ -891,14 +891,11 @@ expr_stmt|;
 comment|/* Load and initialize gimp modules */
 name|modules
 operator|=
-name|GIMP_CONTAINER
-argument_list|(
 name|gimp_list_new
 argument_list|(
 name|MODULE_INFO_TYPE
 argument_list|,
 name|GIMP_CONTAINER_POLICY_WEAK
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1738,7 +1735,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28af178a0403
+DECL|enum|__anon279103800403
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -4683,7 +4680,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28af178a0508
+DECL|struct|__anon279103800508
 block|{
 DECL|member|search_key
 specifier|const

@@ -440,12 +440,9 @@ name|factory
 operator|->
 name|container
 operator|=
-name|GIMP_CONTAINER
-argument_list|(
 name|gimp_data_list_new
 argument_list|(
 name|data_type
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_ref

@@ -119,7 +119,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpDataList
+name|GimpContainer
 modifier|*
 name|gimp_data_list_new
 parameter_list|(

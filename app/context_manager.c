@@ -464,14 +464,11 @@ decl_stmt|;
 comment|/* Create the context of all existing images */
 name|image_context
 operator|=
-name|GIMP_CONTAINER
-argument_list|(
 name|gimp_list_new
 argument_list|(
 name|GIMP_TYPE_IMAGE
 argument_list|,
 name|GIMP_CONTAINER_POLICY_WEAK
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Create the global data factories */

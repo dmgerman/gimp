@@ -736,7 +736,7 @@ block|}
 end_function
 
 begin_function
-name|GimpList
+name|GimpContainer
 modifier|*
 DECL|function|gimp_list_new (GtkType children_type,GimpContainerPolicy policy)
 name|gimp_list_new
@@ -803,7 +803,10 @@ operator|=
 name|policy
 expr_stmt|;
 return|return
+name|GIMP_CONTAINER
+argument_list|(
 name|list
+argument_list|)
 return|;
 block|}
 end_function

@@ -124,7 +124,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpList
+name|GimpContainer
 modifier|*
 name|gimp_list_new
 parameter_list|(

@@ -2053,16 +2053,13 @@ name|palette_dialog
 operator|->
 name|context
 argument_list|,
-literal|64
+name|SM_PREVIEW_HEIGHT
 argument_list|,
-comment|/* FIXME: SM_PREVIEW_WIDTH */
-literal|3
+literal|2
 argument_list|,
-comment|/* FIXME: STD_PALETTE_COLUMNS */
-literal|3
+literal|4
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: STD_PALETTE_ROWS */
 if|if
 condition|(
 operator|!

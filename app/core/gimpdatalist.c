@@ -435,7 +435,7 @@ block|}
 end_function
 
 begin_function
-name|GimpDataList
+name|GimpContainer
 modifier|*
 DECL|function|gimp_data_list_new (GtkType children_type)
 name|gimp_data_list_new
@@ -489,7 +489,10 @@ operator|=
 name|GIMP_CONTAINER_POLICY_STRONG
 expr_stmt|;
 return|return
+name|GIMP_CONTAINER
+argument_list|(
 name|list
+argument_list|)
 return|;
 block|}
 end_function
