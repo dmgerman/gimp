@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cdbc420103
+DECL|enum|__anon2ad639170103
 block|{
 DECL|enumerator|GIMP_VECTORS_COMPAT_ANCHOR
 name|GIMP_VECTORS_COMPAT_ANCHOR
@@ -460,6 +460,20 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|GIMP_ITEM
+argument_list|(
+name|vectors
+argument_list|)
+operator|->
+name|visible
+operator|==
+name|TRUE
+condition|)
+return|return
+name|FALSE
+return|;
 for|for
 control|(
 name|strokes
