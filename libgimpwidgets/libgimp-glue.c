@@ -16,19 +16,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimpcolor/gimpcolortypes.h>
+file|"libgimpcolor/gimpcolortypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpbase/gimpunit.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"libgimp/gimppalette_pdb.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpunit.h"
 end_include
 
 begin_comment

@@ -149,6 +149,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -156,12 +162,6 @@ begin_include
 include|#
 directive|include
 file|"datafiles.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpenv.h"
 end_include
 
 begin_decl_stmt

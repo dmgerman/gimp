@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpenv.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6865210103
+DECL|enum|__anon2bb731460103
 block|{
 DECL|enumerator|SPLASH_SHOW_LOGO_NEVER
 name|SPLASH_SHOW_LOGO_NEVER

@@ -129,7 +129,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpparasiteio.h>
+file|<libgimpbase/gimpparasiteio.h>
 end_include
 
 begin_include
@@ -173,7 +173,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ad2ec410108
+DECL|struct|__anon2bef5eb50108
 block|{
 DECL|member|spacing
 name|guint
@@ -230,7 +230,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad2ec410208
+DECL|struct|__anon2bef5eb50208
 block|{
 DECL|member|orientation
 name|GimpOrientationType

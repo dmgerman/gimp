@@ -119,6 +119,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpparasiteio.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
@@ -160,12 +166,6 @@ begin_include
 include|#
 directive|include
 file|"tools/gimppainttool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpparasiteio.h"
 end_include
 
 begin_include

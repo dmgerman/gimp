@@ -59,7 +59,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpenv.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
@@ -82,7 +82,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd3b05c0103
+DECL|enum|__anon2ae2ec660103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY

@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbsse.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -61,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpparasite.h"
 end_include
 
 begin_include
@@ -145,7 +145,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac086290103
+DECL|enum|__anon29a169f30103
 block|{
 DECL|enumerator|BUTTON_ADD
 name|BUTTON_ADD

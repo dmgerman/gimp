@@ -73,19 +73,13 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimplimits.h"
 end_include
 
 begin_include
@@ -275,7 +269,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon299299710103
+DECL|enum|__anon2791f4670103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -315,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299299710203
+DECL|enum|__anon2791f4670203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE

@@ -31,7 +31,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpparasite.h>
+file|<libgimpbase/gimpparasite.h>
 end_include
 
 begin_ifdef

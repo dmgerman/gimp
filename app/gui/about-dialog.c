@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpenv.h"
+file|"libgimpmath/gimpmath.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include

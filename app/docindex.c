@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -96,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c468c320108
+DECL|struct|__anon2c145dd10108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -153,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c468c320208
+DECL|struct|__anon2c145dd10208
 block|{
 DECL|member|boole
 name|gboolean

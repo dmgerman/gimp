@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimplimits.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
@@ -96,7 +96,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b42e3260103
+DECL|enum|__anon289cd3e00103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED

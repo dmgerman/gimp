@@ -71,6 +71,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -120,18 +126,6 @@ begin_include
 include|#
 directive|include
 file|"user_install.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimplimits.h"
 end_include
 
 begin_include
@@ -667,7 +661,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon299e7d2f0108
+DECL|struct|__anon2bba31e30108
 block|{
 DECL|member|directory
 name|gboolean

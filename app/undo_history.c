@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -88,12 +94,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimplimits.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -124,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6096bf0108
+DECL|struct|__anon2c4e1c250108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6096bf0208
+DECL|struct|__anon2c4e1c250208
 block|{
 DECL|member|clist
 name|GtkCList

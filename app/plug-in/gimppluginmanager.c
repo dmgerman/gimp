@@ -361,18 +361,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -386,6 +374,12 @@ begin_include
 include|#
 directive|include
 file|"libgimpbase/gimpwire.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/core-types.h"
 end_include
 
 begin_include

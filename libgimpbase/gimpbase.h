@@ -52,6 +52,23 @@ directive|include
 file|<libgimpbase/gimputils.h>
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
+end_ifndef
+
+begin_include
+include|#
+directive|include
+file|<libgimpbase/gimpsignal.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_endif
 endif|#
 directive|endif
