@@ -97,12 +97,6 @@ name|GtkWidget
 modifier|*
 name|gtk_list
 decl_stmt|;
-DECL|member|hash_table
-name|GHashTable
-modifier|*
-name|hash_table
-decl_stmt|;
-comment|/*  container child --> list item mapping  */
 block|}
 struct|;
 end_struct
