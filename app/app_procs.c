@@ -2775,7 +2775,7 @@ argument_list|,
 name|transparency_size
 argument_list|)
 expr_stmt|;
-name|tools_options_dialog_new
+name|tool_options_dialog_new
 argument_list|()
 expr_stmt|;
 comment|/*  EEK: force signal emission  */
@@ -3003,7 +3003,7 @@ expr_stmt|;
 name|render_free
 argument_list|()
 expr_stmt|;
-name|tools_options_dialog_free
+name|tool_options_dialog_free
 argument_list|()
 expr_stmt|;
 name|save_sessionrc

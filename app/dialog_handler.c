@@ -6,25 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"appenv.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -36,130 +18,71 @@ end_include
 begin_include
 include|#
 directive|include
-file|"errors.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"general.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dialog_handler.h"
 end_include
 
-begin_decl_stmt
-DECL|variable|active_dialogs
-specifier|static
-name|GSList
-modifier|*
-name|active_dialogs
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
-DECL|variable|active_dialogs
-comment|/* List of dialogs that have  					  been created and are on  					  screen (may be hidden already). 				       */
-end_comment
-
-begin_decl_stmt
-DECL|variable|doing_update
-specifier|static
-name|gint
-name|doing_update
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-DECL|variable|doing_update
-comment|/* Prevent multiple keypresses  				      from unsetting me. 				   */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|GtkWidget
-modifier|*
-name|fileload
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/* It's in fileops.c       */
-end_comment
-
-begin_comment
-comment|/* State of individual dialogs */
+comment|/*  State of individual dialogs  */
 end_comment
 
 begin_typedef
-DECL|typedef|DIALOGSTATE
-DECL|typedef|DIALOGSTATEP
-typedef|typedef
-name|struct
-name|_dialog_state
-name|DIALOGSTATE
-typedef|,
-modifier|*
-name|DIALOGSTATEP
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|enum|__anon2893cffd0103
 typedef|typedef
 enum|enum
+DECL|enum|__anon2c17ede70103
 block|{
-DECL|enumerator|WAS_HIDDEN
-name|WAS_HIDDEN
+DECL|enumerator|INVISIBLE
+name|INVISIBLE
 block|,
-DECL|enumerator|WAS_SHOWING
-name|WAS_SHOWING
+DECL|enumerator|VISIBLE
+name|VISIBLE
 block|,
 DECL|enumerator|UNKNOWN
 name|UNKNOWN
 block|, }
-DECL|typedef|dialogstate
-name|dialogstate
+DECL|typedef|VisibilityState
+name|VisibilityState
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|DialogState
+typedef|typedef
+name|struct
+name|_DialogState
+name|DialogState
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_dialog_state
+DECL|struct|_DialogState
 struct|struct
-name|_dialog_state
+name|_DialogState
 block|{
-DECL|member|d
+DECL|member|dialog
 name|GtkWidget
 modifier|*
-name|d
+name|dialog
 decl_stmt|;
-DECL|member|state
-name|dialogstate
-name|state
+DECL|member|saved_state
+name|VisibilityState
+name|saved_state
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_comment
-comment|/* This keeps track of the state the dialogs are in */
+comment|/*  This keeps track of the state the dialogs are in  */
 end_comment
 
 begin_comment
-comment|/* ie how many times we have pressed the tab key */
+comment|/*  ie how many times we have pressed the tab key     */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2893cffd0203
 typedef|typedef
 enum|enum
+DECL|enum|__anon2c17ede70203
 block|{
 DECL|enumerator|SHOW_ALL
 name|SHOW_ALL
@@ -178,6 +101,10 @@ name|ShowState
 typedef|;
 end_typedef
 
+begin_comment
+comment|/*  Start off with all dialogs showing  */
+end_comment
+
 begin_decl_stmt
 DECL|variable|dialogs_showing
 specifier|static
@@ -189,69 +116,110 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-DECL|variable|dialogs_showing
-comment|/* Start off with all  						dialogs showing  					     */
+comment|/*  Prevent multiple keypresses from unsetting me.  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|toolbox_shell
+DECL|variable|doing_update
 specifier|static
-name|DIALOGSTATEP
-name|toolbox_shell
+name|gboolean
+name|doing_update
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  List of dialogs that have been created and are on screen  *  (may be hidden already).  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|active_dialogs
+specifier|static
+name|GSList
+modifier|*
+name|active_dialogs
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
-DECL|variable|toolbox_shell
-comment|/* Copy of the shell for the tool  					      box - this has special behaviour  					      so is not on the normal list. 					   */
+comment|/*  Those have a special behaviour  */
 end_comment
+
+begin_decl_stmt
+DECL|variable|toolbox_shell
+specifier|static
+name|DialogState
+modifier|*
+name|toolbox_shell
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|fileload_shell
+specifier|static
+name|DialogState
+modifier|*
+name|fileload_shell
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/* Private */
 end_comment
 
 begin_comment
-comment|/* Hide all currently registered dialogs */
+comment|/*  Hide all currently registered dialogs  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_hide_all ()
+DECL|function|dialog_hide_all (void)
 name|dialog_hide_all
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
+name|DialogState
+modifier|*
+name|dstate
+decl_stmt|;
 name|GSList
 modifier|*
 name|list
-init|=
-name|active_dialogs
 decl_stmt|;
-name|DIALOGSTATEP
-name|dstate
-decl_stmt|;
-while|while
-condition|(
+for|for
+control|(
 name|list
-condition|)
-block|{
-name|dstate
 operator|=
-operator|(
-name|DIALOGSTATEP
-operator|)
+name|active_dialogs
+init|;
 name|list
-operator|->
-name|data
-expr_stmt|;
+condition|;
 name|list
 operator|=
 name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
+control|)
+block|{
+name|dstate
+operator|=
+operator|(
+name|DialogState
+operator|*
+operator|)
+name|list
+operator|->
+name|data
 expr_stmt|;
 if|if
 condition|(
@@ -259,21 +227,21 @@ name|GTK_WIDGET_VISIBLE
 argument_list|(
 name|dstate
 operator|->
-name|d
+name|dialog
 argument_list|)
 condition|)
 block|{
 name|dstate
 operator|->
-name|state
+name|saved_state
 operator|=
-name|WAS_SHOWING
+name|VISIBLE
 expr_stmt|;
 name|gtk_widget_hide
 argument_list|(
 name|dstate
 operator|->
-name|d
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -281,9 +249,9 @@ else|else
 block|{
 name|dstate
 operator|->
-name|state
+name|saved_state
 operator|=
-name|WAS_HIDDEN
+name|INVISIBLE
 expr_stmt|;
 block|}
 block|}
@@ -291,67 +259,73 @@ block|}
 end_function
 
 begin_comment
-comment|/* Show all currently registered dialogs */
+comment|/*  Show all currently registered dialogs  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_show_all ()
+DECL|function|dialog_show_all (void)
 name|dialog_show_all
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
+name|DialogState
+modifier|*
+name|dstate
+decl_stmt|;
 name|GSList
 modifier|*
 name|list
-init|=
-name|active_dialogs
 decl_stmt|;
-name|DIALOGSTATEP
-name|dstate
-decl_stmt|;
-while|while
-condition|(
+for|for
+control|(
 name|list
-condition|)
-block|{
-name|dstate
 operator|=
-operator|(
-name|DIALOGSTATEP
-operator|)
+name|active_dialogs
+init|;
 name|list
-operator|->
-name|data
-expr_stmt|;
+condition|;
 name|list
 operator|=
 name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
+control|)
+block|{
+name|dstate
+operator|=
+operator|(
+name|DialogState
+operator|*
+operator|)
+name|list
+operator|->
+name|data
 expr_stmt|;
 if|if
 condition|(
 name|dstate
 operator|->
-name|state
+name|saved_state
 operator|==
-name|WAS_SHOWING
+name|VISIBLE
 operator|&&
 operator|!
 name|GTK_WIDGET_VISIBLE
 argument_list|(
 name|dstate
 operator|->
-name|d
+name|dialog
 argument_list|)
 condition|)
 name|gtk_widget_show
 argument_list|(
 name|dstate
 operator|->
-name|d
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -359,15 +333,17 @@ block|}
 end_function
 
 begin_comment
-comment|/* Handle the tool box in a special way */
+comment|/*  Handle the tool box in a special way  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_hide_toolbox ()
+DECL|function|dialog_hide_toolbox (void)
 name|dialog_hide_toolbox
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -377,7 +353,7 @@ name|GTK_WIDGET_VISIBLE
 argument_list|(
 name|toolbox_shell
 operator|->
-name|d
+name|dialog
 argument_list|)
 condition|)
 block|{
@@ -385,28 +361,30 @@ name|gtk_widget_hide
 argument_list|(
 name|toolbox_shell
 operator|->
-name|d
+name|dialog
 argument_list|)
 expr_stmt|;
 name|toolbox_shell
 operator|->
-name|state
+name|saved_state
 operator|=
-name|WAS_SHOWING
+name|VISIBLE
 expr_stmt|;
 block|}
 block|}
 end_function
 
 begin_comment
-comment|/* public */
+comment|/*  public  */
 end_comment
 
 begin_function
 name|void
-DECL|function|dialog_show_toolbox ()
+DECL|function|dialog_show_toolbox (void)
 name|dialog_show_toolbox
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -414,16 +392,16 @@ name|toolbox_shell
 operator|&&
 name|toolbox_shell
 operator|->
-name|state
+name|saved_state
 operator|==
-name|WAS_SHOWING
+name|VISIBLE
 operator|&&
 operator|!
 name|GTK_WIDGET_VISIBLE
 argument_list|(
 name|toolbox_shell
 operator|->
-name|d
+name|dialog
 argument_list|)
 condition|)
 block|{
@@ -431,7 +409,7 @@ name|gtk_widget_show
 argument_list|(
 name|toolbox_shell
 operator|->
-name|d
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -439,44 +417,50 @@ block|}
 end_function
 
 begin_comment
-comment|/* Set hourglass cursor on all currently registered dialogs */
+comment|/*  Set hourglass cursor on all currently registered dialogs  */
 end_comment
 
 begin_function
 name|void
-DECL|function|dialog_idle_all ()
+DECL|function|dialog_idle_all (void)
 name|dialog_idle_all
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
+name|DialogState
+modifier|*
+name|dstate
+decl_stmt|;
 name|GSList
 modifier|*
 name|list
-init|=
-name|active_dialogs
 decl_stmt|;
-name|DIALOGSTATEP
-name|dstate
-decl_stmt|;
-while|while
-condition|(
+for|for
+control|(
 name|list
-condition|)
-block|{
-name|dstate
 operator|=
-operator|(
-name|DIALOGSTATEP
-operator|)
+name|active_dialogs
+init|;
 name|list
-operator|->
-name|data
-expr_stmt|;
+condition|;
 name|list
 operator|=
 name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
+control|)
+block|{
+name|dstate
+operator|=
+operator|(
+name|DialogState
+operator|*
+operator|)
+name|list
+operator|->
+name|data
 expr_stmt|;
 if|if
 condition|(
@@ -484,7 +468,7 @@ name|GTK_WIDGET_VISIBLE
 argument_list|(
 name|dstate
 operator|->
-name|d
+name|dialog
 argument_list|)
 condition|)
 block|{
@@ -492,7 +476,7 @@ name|change_win_cursor
 argument_list|(
 name|dstate
 operator|->
-name|d
+name|dialog
 operator|->
 name|window
 argument_list|,
@@ -509,7 +493,7 @@ name|GTK_WIDGET_VISIBLE
 argument_list|(
 name|toolbox_shell
 operator|->
-name|d
+name|dialog
 argument_list|)
 condition|)
 block|{
@@ -517,7 +501,7 @@ name|change_win_cursor
 argument_list|(
 name|toolbox_shell
 operator|->
-name|d
+name|dialog
 operator|->
 name|window
 argument_list|,
@@ -527,17 +511,21 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|fileload
+name|fileload_shell
 operator|&&
 name|GTK_WIDGET_VISIBLE
 argument_list|(
-name|fileload
+name|fileload_shell
+operator|->
+name|dialog
 argument_list|)
 condition|)
 block|{
 name|change_win_cursor
 argument_list|(
-name|fileload
+name|fileload_shell
+operator|->
+name|dialog
 operator|->
 name|window
 argument_list|,
@@ -549,44 +537,50 @@ block|}
 end_function
 
 begin_comment
-comment|/* And remove the hourglass again. */
+comment|/*  And remove the hourglass again.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|dialog_unidle_all ()
+DECL|function|dialog_unidle_all (void)
 name|dialog_unidle_all
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
+name|DialogState
+modifier|*
+name|dstate
+decl_stmt|;
 name|GSList
 modifier|*
 name|list
-init|=
-name|active_dialogs
 decl_stmt|;
-name|DIALOGSTATEP
-name|dstate
-decl_stmt|;
-while|while
-condition|(
+for|for
+control|(
 name|list
-condition|)
-block|{
-name|dstate
 operator|=
-operator|(
-name|DIALOGSTATEP
-operator|)
+name|active_dialogs
+init|;
 name|list
-operator|->
-name|data
-expr_stmt|;
+condition|;
 name|list
 operator|=
 name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
+control|)
+block|{
+name|dstate
+operator|=
+operator|(
+name|DialogState
+operator|*
+operator|)
+name|list
+operator|->
+name|data
 expr_stmt|;
 if|if
 condition|(
@@ -594,7 +588,7 @@ name|GTK_WIDGET_VISIBLE
 argument_list|(
 name|dstate
 operator|->
-name|d
+name|dialog
 argument_list|)
 condition|)
 block|{
@@ -602,7 +596,7 @@ name|unset_win_cursor
 argument_list|(
 name|dstate
 operator|->
-name|d
+name|dialog
 operator|->
 name|window
 argument_list|)
@@ -617,7 +611,7 @@ name|GTK_WIDGET_VISIBLE
 argument_list|(
 name|toolbox_shell
 operator|->
-name|d
+name|dialog
 argument_list|)
 condition|)
 block|{
@@ -625,7 +619,7 @@ name|unset_win_cursor
 argument_list|(
 name|toolbox_shell
 operator|->
-name|d
+name|dialog
 operator|->
 name|window
 argument_list|)
@@ -633,17 +627,21 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|fileload
+name|fileload_shell
 operator|&&
 name|GTK_WIDGET_VISIBLE
 argument_list|(
-name|fileload
+name|fileload_shell
+operator|->
+name|dialog
 argument_list|)
 condition|)
 block|{
 name|unset_win_cursor
 argument_list|(
-name|fileload
+name|fileload_shell
+operator|->
+name|dialog
 operator|->
 name|window
 argument_list|)
@@ -653,7 +651,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Register a dialog that we can handle */
+comment|/*  Register a dialog that we can handle  */
 end_comment
 
 begin_function
@@ -666,25 +664,28 @@ modifier|*
 name|dialog
 parameter_list|)
 block|{
-name|DIALOGSTATEP
-name|dstatep
-init|=
+name|DialogState
+modifier|*
+name|dstate
+decl_stmt|;
+name|dstate
+operator|=
 name|g_new
 argument_list|(
-name|DIALOGSTATE
+name|DialogState
 argument_list|,
 literal|1
 argument_list|)
-decl_stmt|;
-name|dstatep
+expr_stmt|;
+name|dstate
 operator|->
-name|d
+name|dialog
 operator|=
 name|dialog
 expr_stmt|;
-name|dstatep
+name|dstate
 operator|->
-name|state
+name|saved_state
 operator|=
 name|UNKNOWN
 expr_stmt|;
@@ -694,7 +695,7 @@ name|g_slist_append
 argument_list|(
 name|active_dialogs
 argument_list|,
-name|dstatep
+name|dstate
 argument_list|)
 expr_stmt|;
 block|}
@@ -710,37 +711,66 @@ modifier|*
 name|dialog
 parameter_list|)
 block|{
-name|DIALOGSTATEP
-name|dstatep
-init|=
+name|toolbox_shell
+operator|=
 name|g_new
 argument_list|(
-name|DIALOGSTATE
+name|DialogState
 argument_list|,
 literal|1
 argument_list|)
-decl_stmt|;
-name|dstatep
+expr_stmt|;
+name|toolbox_shell
 operator|->
-name|d
+name|dialog
 operator|=
 name|dialog
 expr_stmt|;
-name|dstatep
+name|toolbox_shell
 operator|->
-name|state
+name|saved_state
 operator|=
 name|UNKNOWN
 expr_stmt|;
-name|toolbox_shell
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|dialog_register_fileload (GtkWidget * dialog)
+name|dialog_register_fileload
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|dialog
+parameter_list|)
+block|{
+name|fileload_shell
 operator|=
-name|dstatep
+name|g_new
+argument_list|(
+name|DialogState
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|fileload_shell
+operator|->
+name|dialog
+operator|=
+name|dialog
+expr_stmt|;
+name|fileload_shell
+operator|->
+name|saved_state
+operator|=
+name|UNKNOWN
 expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/* unregister dialog */
+comment|/*  unregister dialog  */
 end_comment
 
 begin_function
@@ -753,43 +783,47 @@ modifier|*
 name|dialog
 parameter_list|)
 block|{
-name|GSList
+name|DialogState
 modifier|*
-name|list
-init|=
-name|active_dialogs
-decl_stmt|;
-name|DIALOGSTATEP
 name|dstate
 init|=
 name|NULL
 decl_stmt|;
-while|while
-condition|(
+name|GSList
+modifier|*
 name|list
-condition|)
-block|{
-name|dstate
+decl_stmt|;
+for|for
+control|(
+name|list
 operator|=
-operator|(
-name|DIALOGSTATEP
-operator|)
+name|active_dialogs
+init|;
 name|list
-operator|->
-name|data
-expr_stmt|;
+condition|;
 name|list
 operator|=
 name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
+control|)
+block|{
+name|dstate
+operator|=
+operator|(
+name|DialogState
+operator|*
+operator|)
+name|list
+operator|->
+name|data
 expr_stmt|;
 if|if
 condition|(
 name|dstate
 operator|->
-name|d
+name|dialog
 operator|==
 name|dialog
 condition|)
@@ -801,6 +835,7 @@ name|dstate
 operator|!=
 name|NULL
 condition|)
+block|{
 name|active_dialogs
 operator|=
 name|g_slist_remove
@@ -810,15 +845,17 @@ argument_list|,
 name|dstate
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|dstate
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
 begin_comment
-comment|/* Toggle showing of dialogs */
-end_comment
-
-begin_comment
-comment|/* States:-  * SHOW_ALL -> HIDE_ALL -> SHOW_TOOLBOX -> SHOW_ALL ....  */
+comment|/*  Toggle showing of dialogs  *  *  States:-  *  SHOW_ALL -> HIDE_ALL -> SHOW_TOOLBOX -> SHOW_ALL ....  */
 end_comment
 
 begin_function

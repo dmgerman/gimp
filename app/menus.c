@@ -390,7 +390,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|about_dialog_cmd_callback
+name|dialogs_about_cmd_callback
 block|,
 literal|0
 block|}
@@ -447,7 +447,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|tips_dialog_cmd_callback
+name|dialogs_tips_cmd_callback
 block|,
 literal|0
 block|}
@@ -601,7 +601,7 @@ argument_list|)
 block|,
 literal|"<control><shift>T"
 block|,
-name|dialogs_tools_options_cmd_callback
+name|dialogs_tool_options_cmd_callback
 block|,
 literal|0
 block|}
@@ -3276,7 +3276,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_tools_options_cmd_callback
+name|dialogs_tool_options_cmd_callback
 block|,
 literal|0
 block|}
@@ -4374,6 +4374,25 @@ literal|0
 block|}
 block|,
 literal|"path_to_selection.html"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Selection to Path"
+argument_list|)
+block|,
+literal|"<control>P"
+block|,
+name|paths_dialog_sel_to_path_callback
+block|,
+literal|0
+block|}
+block|,
+literal|"selection_to_path.html"
 block|,
 name|NULL
 block|}

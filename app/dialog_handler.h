@@ -29,6 +29,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|dialog_unregister
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|dialog
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|dialog_register_toolbox
 parameter_list|(
 name|GtkWidget
@@ -40,7 +51,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|dialog_unregister
+name|dialog_register_fileload
 parameter_list|(
 name|GtkWidget
 modifier|*

@@ -140,6 +140,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialog_handler.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
 end_include
 
@@ -253,12 +259,12 @@ modifier|*
 name|obox
 decl_stmt|;
 DECL|member|full_filename
-name|char
+name|gchar
 modifier|*
 name|full_filename
 decl_stmt|;
 DECL|member|raw_filename
-name|char
+name|gchar
 modifier|*
 name|raw_filename
 decl_stmt|;
@@ -540,6 +546,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|fileload
+specifier|static
 name|GtkWidget
 modifier|*
 name|fileload
@@ -547,11 +554,6 @@ init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-DECL|variable|fileload
-comment|/* Shared with dialog_handler.c */
-end_comment
 
 begin_decl_stmt
 DECL|variable|filesave
@@ -1116,6 +1118,11 @@ argument_list|,
 literal|"load_image"
 argument_list|,
 literal|"Gimp"
+argument_list|)
+expr_stmt|;
+name|dialog_register_fileload
+argument_list|(
+name|fileload
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect_object

@@ -223,7 +223,7 @@ block|,
 operator|(
 name|GtkItemFactoryCallback
 operator|)
-name|dialogs_tools_options_cmd_callback
+name|dialogs_tool_options_cmd_callback
 block|,
 literal|0
 block|,

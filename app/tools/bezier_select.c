@@ -277,7 +277,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2c217ddb0108
+DECL|struct|__anon2b0c151e0108
 typedef|typedef
 struct|struct
 block|{
@@ -314,7 +314,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c217ddb0208
+DECL|struct|__anon2b0c151e0208
 typedef|typedef
 struct|struct
 block|{
@@ -369,7 +369,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c217ddb0308
+DECL|struct|__anon2b0c151e0308
 typedef|typedef
 struct|struct
 block|{
@@ -1239,14 +1239,12 @@ operator|)
 name|gdisp_ptr
 expr_stmt|;
 comment|/*  select the bezier tool  */
-name|gtk_widget_activate
+name|gimp_context_set_tool
 argument_list|(
-name|tool_info
-index|[
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
 name|BEZIER_SELECT
-index|]
-operator|.
-name|tool_widget
 argument_list|)
 expr_stmt|;
 name|tool

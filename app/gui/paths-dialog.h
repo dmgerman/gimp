@@ -102,6 +102,18 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|paths_dialog_sel_to_path_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|paths_dialog_import_path_callback
 parameter_list|(
 name|GtkWidget

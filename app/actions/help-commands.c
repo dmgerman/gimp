@@ -264,7 +264,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5a774e0108
+DECL|struct|__anon277459640108
 block|{
 DECL|member|resize
 name|Resize
@@ -4244,8 +4244,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|dialogs_tools_options_cmd_callback (GtkWidget * widget,gpointer client_data)
-name|dialogs_tools_options_cmd_callback
+DECL|function|dialogs_tool_options_cmd_callback (GtkWidget * widget,gpointer client_data)
+name|dialogs_tool_options_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4255,7 +4255,7 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|tools_options_dialog_show
+name|tool_options_dialog_show
 argument_list|()
 expr_stmt|;
 block|}
@@ -4344,8 +4344,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|about_dialog_cmd_callback (GtkWidget * widget,gpointer client_data)
-name|about_dialog_cmd_callback
+DECL|function|dialogs_about_cmd_callback (GtkWidget * widget,gpointer client_data)
+name|dialogs_about_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4386,8 +4386,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|tips_dialog_cmd_callback (GtkWidget * widget,gpointer client_data)
-name|tips_dialog_cmd_callback
+DECL|function|dialogs_tips_cmd_callback (GtkWidget * widget,gpointer client_data)
+name|dialogs_tips_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*

@@ -760,7 +760,7 @@ operator|==
 literal|1
 operator|)
 condition|)
-name|tools_options_dialog_show
+name|tool_options_dialog_show
 argument_list|()
 expr_stmt|;
 return|return
