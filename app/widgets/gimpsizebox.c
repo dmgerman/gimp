@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c656a640103
+DECL|enum|__anon29014d190103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -878,10 +878,7 @@ name|box
 operator|->
 name|unit
 argument_list|,
-name|_
-argument_list|(
 literal|"%p"
-argument_list|)
 argument_list|,
 name|TRUE
 argument_list|,

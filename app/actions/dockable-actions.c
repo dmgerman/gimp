@@ -263,7 +263,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"_Show Image Menu"
+literal|"_Show Image Selection"
 argument_list|)
 block|,
 name|NULL
