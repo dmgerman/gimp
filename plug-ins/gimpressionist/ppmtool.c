@@ -111,7 +111,7 @@ operator|==
 literal|'#'
 condition|)
 do|;
-name|remove_trailing_whitespace
+name|g_strchomp
 argument_list|(
 name|buffer
 argument_list|)

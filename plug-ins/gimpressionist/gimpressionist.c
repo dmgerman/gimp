@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"presets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"ppmtool.h"
 end_include
 
