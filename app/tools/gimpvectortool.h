@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpselectiontool.h"
+file|"gimpdrawtool.h"
 end_include
 
 begin_comment
@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6313a00103
+DECL|enum|__anon277d03bd0103
 block|{
 DECL|enumerator|VECTORS_SELECT_VECTOR
 name|VECTORS_SELECT_VECTOR
@@ -75,9 +75,9 @@ name|VECTORS_CONVERT_EDGE
 block|,
 DECL|enumerator|VECTORS_FINISHED
 name|VECTORS_FINISHED
-DECL|typedef|VectorFunction
+DECL|typedef|GimpVectorFunction
 block|}
-name|VectorFunction
+name|GimpVectorFunction
 typedef|;
 end_typedef
 
@@ -168,85 +168,86 @@ struct|struct
 name|_GimpVectorTool
 block|{
 DECL|member|parent_instance
-name|GimpSelectionTool
+name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
 DECL|member|function
-name|VectorFunction
+name|GimpVectorFunction
 name|function
 decl_stmt|;
-comment|/* function we're performing      */
+comment|/* function we're performing         */
 DECL|member|restriction
 name|GimpAnchorFeatureType
 name|restriction
 decl_stmt|;
-comment|/* movement restriction           */
+comment|/* movement restriction              */
 DECL|member|modifier_lock
 name|gboolean
 name|modifier_lock
 decl_stmt|;
-comment|/* can we toggle the Shift key?   */
+comment|/* can we toggle the Shift key?      */
 DECL|member|saved_state
 name|GdkModifierType
 name|saved_state
 decl_stmt|;
-comment|/* modifier state at button_press */
+comment|/* modifier state at button_press    */
 DECL|member|last_x
 name|gdouble
 name|last_x
 decl_stmt|;
-comment|/* last x coordinate              */
+comment|/* last x coordinate                 */
 DECL|member|last_y
 name|gdouble
 name|last_y
 decl_stmt|;
-comment|/* last y coordinate              */
+comment|/* last y coordinate                 */
 DECL|member|cur_anchor
 name|GimpAnchor
 modifier|*
 name|cur_anchor
 decl_stmt|;
-comment|/*  The current Anchor                */
+comment|/* the current Anchor                */
 DECL|member|cur_stroke
 name|GimpStroke
 modifier|*
 name|cur_stroke
 decl_stmt|;
-comment|/*  The current Stroke                */
+comment|/* the current Stroke                */
 DECL|member|cur_position
 name|gdouble
 name|cur_position
 decl_stmt|;
-comment|/*  The current Position on a segment */
+comment|/* the current Position on a segment */
 DECL|member|vectors
 name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-comment|/*  The current Vector data           */
+comment|/* the current Vector data           */
 DECL|member|sel_count
 name|gint
 name|sel_count
 decl_stmt|;
-comment|/*  number of selected anchors        */
+comment|/* number of selected anchors        */
 DECL|member|sel_anchor
 name|GimpAnchor
 modifier|*
 name|sel_anchor
 decl_stmt|;
-comment|/*  currently selected anchor, NULL   */
-comment|/*  if multiple anchors are selected  */
+comment|/* currently selected anchor, NULL   */
+comment|/* if multiple anchors are selected  */
 DECL|member|sel_stroke
 name|GimpStroke
 modifier|*
 name|sel_stroke
 decl_stmt|;
-comment|/*  selected stroke                   */
+comment|/* selected stroke                   */
 DECL|member|select_vectors
 name|GimpVectors
 modifier|*
 name|select_vectors
 decl_stmt|;
+comment|/* used for VECTORS_SELECT_VECTOR    */
 block|}
 struct|;
 end_struct
@@ -257,7 +258,7 @@ struct|struct
 name|_GimpVectorToolClass
 block|{
 DECL|member|parent_class
-name|GimpSelectionToolClass
+name|GimpDrawToolClass
 name|parent_class
 decl_stmt|;
 block|}
