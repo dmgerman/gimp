@@ -5698,7 +5698,7 @@ name|graph
 operator|->
 name|style
 operator|->
-name|text_aa_gc
+name|dark_gc
 index|[
 name|GTK_STATE_NORMAL
 index|]
@@ -5744,7 +5744,7 @@ name|graph
 operator|->
 name|style
 operator|->
-name|text_aa_gc
+name|dark_gc
 index|[
 name|GTK_STATE_NORMAL
 index|]

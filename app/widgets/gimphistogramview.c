@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon276d30af0103
+DECL|enum|__anon295275530103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276d30af0203
+DECL|enum|__anon295275530203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1129,7 +1129,7 @@ name|widget
 operator|->
 name|style
 operator|->
-name|text_aa_gc
+name|dark_gc
 index|[
 name|GTK_STATE_NORMAL
 index|]
@@ -1308,7 +1308,7 @@ name|widget
 operator|->
 name|style
 operator|->
-name|text_aa_gc
+name|dark_gc
 index|[
 name|GTK_STATE_NORMAL
 index|]
