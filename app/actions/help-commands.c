@@ -252,7 +252,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274c6dd70108
+DECL|struct|__anon29c120280108
 block|{
 DECL|member|resize
 name|Resize
@@ -2155,7 +2155,7 @@ operator|)
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|info_dialog_popup
+name|nav_dialog_popup
 argument_list|(
 name|gdisp
 operator|->

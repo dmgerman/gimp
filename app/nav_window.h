@@ -53,6 +53,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|nav_dialog_popup
+parameter_list|(
+name|InfoDialog
+modifier|*
+name|idialog
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
