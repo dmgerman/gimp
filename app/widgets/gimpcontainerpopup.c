@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3f6c4b0103
+DECL|enum|__anon2ae09ba00103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -1962,9 +1962,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_container_view_set_size_request
+name|gimp_container_box_set_size_request
 argument_list|(
-name|GIMP_CONTAINER_VIEW
+name|GIMP_CONTAINER_BOX
 argument_list|(
 name|GIMP_CONTAINER_EDITOR
 argument_list|(

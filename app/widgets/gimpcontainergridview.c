@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b8d8fc0103
+DECL|enum|__anon27d695cd0103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -394,7 +394,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GimpContainerViewClass
+name|GimpContainerBoxClass
 modifier|*
 name|parent_class
 init|=
@@ -499,7 +499,7 @@ name|view_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GIMP_TYPE_CONTAINER_VIEW
+name|GIMP_TYPE_CONTAINER_BOX
 argument_list|,
 literal|"GimpContainerGridView"
 argument_list|,
@@ -795,11 +795,11 @@ modifier|*
 name|grid_view
 parameter_list|)
 block|{
-name|GimpContainerView
+name|GimpContainerBox
 modifier|*
-name|view
+name|box
 init|=
-name|GIMP_CONTAINER_VIEW
+name|GIMP_CONTAINER_BOX
 argument_list|(
 name|grid_view
 argument_list|)
@@ -832,7 +832,7 @@ name|gtk_scrolled_window_set_policy
 argument_list|(
 name|GTK_SCROLLED_WINDOW
 argument_list|(
-name|view
+name|box
 operator|->
 name|scrolled_win
 argument_list|)
@@ -920,7 +920,7 @@ name|gtk_scrolled_window_add_with_viewport
 argument_list|(
 name|GTK_SCROLLED_WINDOW
 argument_list|(
-name|view
+name|box
 operator|->
 name|scrolled_win
 argument_list|)
@@ -2434,6 +2434,15 @@ argument_list|(
 name|view
 argument_list|)
 decl_stmt|;
+name|GimpContainerBox
+modifier|*
+name|box
+init|=
+name|GIMP_CONTAINER_BOX
+argument_list|(
+name|view
+argument_list|)
+decl_stmt|;
 name|GimpPreview
 modifier|*
 name|preview
@@ -2516,7 +2525,7 @@ name|gtk_scrolled_window_get_vadjustment
 argument_list|(
 name|GTK_SCROLLED_WINDOW
 argument_list|(
-name|view
+name|box
 operator|->
 name|scrolled_win
 argument_list|)

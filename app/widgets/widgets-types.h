@@ -466,6 +466,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpContainerBox
+typedef|typedef
+name|struct
+name|_GimpContainerBox
+name|GimpContainerBox
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpContainerGridView
 typedef|typedef
 name|struct

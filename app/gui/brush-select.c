@@ -84,7 +84,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpcontainerview.h"
+file|"widgets/gimpcontainerbox.h"
 end_include
 
 begin_include
@@ -643,9 +643,9 @@ argument_list|,
 name|global_menu_factory
 argument_list|)
 expr_stmt|;
-name|gimp_container_view_set_size_request
+name|gimp_container_box_set_size_request
 argument_list|(
-name|GIMP_CONTAINER_VIEW
+name|GIMP_CONTAINER_BOX
 argument_list|(
 name|GIMP_CONTAINER_EDITOR
 argument_list|(
