@@ -130,7 +130,7 @@ value|1
 end_define
 
 begin_typedef
-DECL|struct|__anon297db87f0108
+DECL|struct|__anon275b6d110108
 typedef|typedef
 struct|struct
 block|{
@@ -169,7 +169,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon297db87f0208
+DECL|struct|__anon275b6d110208
 typedef|typedef
 struct|struct
 block|{
@@ -627,7 +627,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Ripples the pixels of the specified drawable. Each row or colum will be displaced a certain number of pixels coinciding with the given wave form"
+literal|"Ripples the pixels of the specified drawable. Each row or column will be displaced a certain number of pixels coinciding with the given wave form"
 argument_list|)
 argument_list|,
 literal|"Brian Degenhardt<bdegenha@ucsd.edu>"

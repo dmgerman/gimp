@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b84ea000108
+DECL|struct|__anon289f8da60108
 block|{
 DECL|member|radius
 name|gdouble
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b84ea000208
+DECL|struct|__anon289f8da60208
 block|{
 DECL|member|run
 name|gint
@@ -1021,7 +1021,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"IIR Raussian Blur"
+literal|"IIR Gaussian Blur"
 argument_list|)
 argument_list|,
 literal|"gauss_iir"
