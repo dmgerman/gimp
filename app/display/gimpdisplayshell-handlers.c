@@ -510,6 +510,13 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
+name|gimp_display_shell_qmask_changed_handler
+argument_list|(
+name|gimage
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1082,7 +1089,6 @@ name|shell
 operator|->
 name|icon_idle_id
 condition|)
-block|{
 name|g_source_remove
 argument_list|(
 name|shell
@@ -1090,7 +1096,6 @@ operator|->
 name|icon_idle_id
 argument_list|)
 expr_stmt|;
-block|}
 name|shell
 operator|->
 name|icon_idle_id
