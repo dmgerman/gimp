@@ -393,7 +393,7 @@ name|_
 argument_list|(
 literal|"WARNING:\n"
 literal|"Too many open message dialogs.\n"
-literal|"Messages are redirected to stderr.\n"
+literal|"Messages are redirected to stderr."
 argument_list|)
 expr_stmt|;
 block|}
