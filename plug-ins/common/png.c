@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288984040108
+DECL|struct|__anon2b19ab060108
 block|{
 DECL|member|interlaced
 name|gint
@@ -375,17 +375,6 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-name|g_print
-argument_list|(
-literal|"PNG: fuiac: Image claims to use %d/256 indices - finding free "
-literal|"index...\n"
-argument_list|,
-operator|(
-operator|*
-name|colors
-operator|)
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|i
@@ -480,13 +469,6 @@ operator|)
 name|FALSE
 condition|)
 block|{
-name|g_print
-argument_list|(
-literal|"PNG: Found unused colour index %d.\n"
-argument_list|,
-name|i
-argument_list|)
-expr_stmt|;
 return|return
 name|i
 return|;
@@ -509,21 +491,6 @@ name|colors
 operator|)
 operator|++
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"PNG: 2nd pass - Increasing bounds and using colour index %d.\n"
-argument_list|,
-call|(
-name|int
-call|)
-argument_list|(
-operator|*
-name|colors
-argument_list|)
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
 return|return
 operator|(
 operator|(
@@ -535,14 +502,6 @@ literal|1
 operator|)
 return|;
 block|}
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"PNG: Couldn't simply reduce colors further.\nSaving as opaque.\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
 return|return
 operator|(
 operator|-
@@ -3855,6 +3814,7 @@ argument_list|,
 name|num
 argument_list|)
 expr_stmt|;
+comment|/* If we're dealing with a paletted image with             * transparency set, write out the remapped palette */
 if|if
 condition|(
 name|info
@@ -3901,10 +3861,6 @@ operator|++
 name|k
 control|)
 block|{
-if|if
-condition|(
-name|PNG_INFO_PLTE
-condition|)
 name|fixed
 index|[
 name|k
@@ -3920,40 +3876,10 @@ name|k
 index|]
 index|]
 expr_stmt|;
-else|else
-name|fixed
-index|[
-name|k
-index|]
-operator|=
-operator|(
-name|fixed
-index|[
-name|k
-operator|*
-literal|2
-operator|+
-literal|1
-index|]
-operator|>
-literal|127
-operator|)
-condition|?
-name|fixed
-index|[
-name|k
-operator|*
-literal|2
-index|]
-operator|+
-literal|1
-else|:
-literal|0
-expr_stmt|;
 block|}
 block|}
-comment|/* Forgot this case before, what if there are too many colors? */
 block|}
+comment|/* Otherwise if we have a paletted image and transparency             * couldn't be set, we ignore the alpha channel */
 elseif|else
 if|if
 condition|(
@@ -4334,68 +4260,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"PNG: Swapping index %d  and index 0 of \"before\" "
-argument_list|,
-name|transparent
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"in \"after\".\n"
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"Old palette:\n"
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|i
-operator|=
-literal|0
-init|;
-name|i
-operator|<
-name|colors
-condition|;
-name|i
-operator|++
-control|)
-name|g_print
-argument_list|(
-literal|"Index %3d: (%3d, %3d, %3d)\n"
-argument_list|,
-name|i
-argument_list|,
-name|before
-index|[
-literal|3
-operator|*
-name|i
-index|]
-argument_list|,
-name|before
-index|[
-literal|3
-operator|*
-name|i
-operator|+
-literal|1
-index|]
-argument_list|,
-name|before
-index|[
-literal|3
-operator|*
-name|i
-operator|+
-literal|2
-index|]
-argument_list|)
-expr_stmt|;
 comment|/* Transform all pixels with a value = transparent to         * 0 and vice versa to compensate for re-ordering in palette         * due to png_set_tRNS() */
 name|remap
 index|[
@@ -4412,25 +4276,6 @@ operator|=
 literal|0
 expr_stmt|;
 comment|/* Copy from index 0 to index transparent - 1 to index 1 to         * transparent of after, then from transparent+1 to colors-1         * unchanged, and finally from index transparent to index 0. */
-name|g_print
-argument_list|(
-literal|"PNG: Setting index %d to transparent.\n"
-argument_list|,
-name|transparent
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"PNG: Copying from index 0 of \"before\" "
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"to index %d of \"after\".\n"
-argument_list|,
-name|transparent
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|i
@@ -4501,54 +4346,6 @@ literal|2
 index|]
 expr_stmt|;
 block|}
-name|g_print
-argument_list|(
-literal|"Setting a palette of %d colours.\n"
-argument_list|,
-name|colors
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|i
-operator|=
-literal|0
-init|;
-name|i
-operator|<
-name|colors
-condition|;
-name|i
-operator|++
-control|)
-name|g_print
-argument_list|(
-literal|"Index %3d: (%3d, %3d, %3d)\n"
-argument_list|,
-name|i
-argument_list|,
-name|palette
-index|[
-name|i
-index|]
-operator|.
-name|red
-argument_list|,
-name|palette
-index|[
-name|i
-index|]
-operator|.
-name|green
-argument_list|,
-name|palette
-index|[
-name|i
-index|]
-operator|.
-name|blue
-argument_list|)
-expr_stmt|;
 name|png_set_PLTE
 argument_list|(
 name|pp
