@@ -39,6 +39,12 @@ directive|include
 file|"docindex.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpenv.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|ideas
 name|idea_manager
@@ -91,7 +97,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon28e72fca0103
+DECL|enum|__anon2c1e162a0103
 enum|enum
 block|{
 DECL|enumerator|TARGET_URI_LIST
