@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpprogress.h"
 end_include
 
@@ -132,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eb39ee0108
+DECL|struct|__anon2b84e3950108
 block|{
 DECL|member|resize
 name|Resize
@@ -841,8 +835,10 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -952,8 +948,10 @@ operator|->
 name|merge_type
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
@@ -1347,8 +1345,12 @@ operator|->
 name|offset_y
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|image_resize
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -1876,8 +1878,10 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 block|}

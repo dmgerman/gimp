@@ -105,12 +105,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -159,7 +153,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2920e9520108
+DECL|struct|__anon2bee7abc0108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -210,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2920e9520208
+DECL|struct|__anon2bee7abc0208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -2198,11 +2192,13 @@ operator|->
 name|gimage
 argument_list|)
 condition|)
-block|{
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|st
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -2239,11 +2235,13 @@ operator|->
 name|gimage
 argument_list|)
 condition|)
-block|{
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|st
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -3007,8 +3005,12 @@ name|old_selection
 operator|++
 expr_stmt|;
 block|}
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|st
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 name|undo_history_set_pixmap
 argument_list|(

@@ -246,18 +246,6 @@ block|}
 struct|;
 end_struct
 
-begin_decl_stmt
-specifier|extern
-name|GSList
-modifier|*
-name|display_list
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/* EEK */
-end_comment
-
 begin_define
 DECL|macro|GIMP_TYPE_DISPLAY
 define|#

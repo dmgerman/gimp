@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"offset-dialog.h"
 end_include
 
@@ -1272,8 +1266,10 @@ argument_list|,
 name|offset_y
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 name|gtk_widget_destroy

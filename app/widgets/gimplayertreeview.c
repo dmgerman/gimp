@@ -33,28 +33,10 @@ directive|include
 file|"widgets-types.h"
 end_include
 
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "display/display-types.h"
-end_warning
-
-begin_include
-include|#
-directive|include
-file|"display/display-types.h"
-end_include
-
 begin_include
 include|#
 directive|include
 file|"core/gimpcontainer.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpdrawable.h"
 end_include
 
 begin_include
@@ -66,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-foreach.h"
+file|"core/gimpimage.h"
 end_include
 
 begin_include
@@ -1540,8 +1522,12 @@ expr_stmt|;
 name|UNBLOCK
 argument_list|()
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|item_view
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -1728,8 +1714,12 @@ expr_stmt|;
 name|UNBLOCK
 argument_list|()
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|item_view
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 block|}

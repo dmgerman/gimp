@@ -126,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpinktool.h"
 end_include
 
@@ -1761,8 +1755,12 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -4656,7 +4654,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon28b202a70103
+DECL|enum|__anon27db0ae50103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

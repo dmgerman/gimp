@@ -197,7 +197,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad63fc40103
+DECL|enum|__anon277129240103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -4356,8 +4356,10 @@ expr_stmt|;
 name|gdisplays_expose_full
 argument_list|()
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_displays_flush
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 block|}
 name|prefs_strset
@@ -4863,8 +4865,10 @@ expr_stmt|;
 name|gdisplays_expose_full
 argument_list|()
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_displays_flush
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 block|}
 comment|/*  no matching varible found  */
@@ -13142,7 +13146,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad63fc40208
+DECL|struct|__anon277129240208
 block|{
 DECL|member|label
 name|gchar
@@ -13322,7 +13326,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad63fc40308
+DECL|struct|__anon277129240308
 block|{
 DECL|member|tree_label
 name|gchar

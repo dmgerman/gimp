@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpenummenu.h"
 end_include
 
@@ -860,8 +854,12 @@ operator|->
 name|target_y
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 name|gimp_tool_control_halt

@@ -56,18 +56,6 @@ directive|include
 file|"widgets-types.h"
 end_include
 
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "display/display-types.h"
-end_warning
-
-begin_include
-include|#
-directive|include
-file|"display/display-types.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -102,12 +90,6 @@ begin_include
 include|#
 directive|include
 file|"vectors/gimpvectors.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpdisplay-foreach.h"
 end_include
 
 begin_include
@@ -166,7 +148,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2779b3e00103
+DECL|enum|__anon292409550103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1915,8 +1897,12 @@ argument_list|,
 name|item
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|list_view
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 name|index
@@ -2358,8 +2344,12 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|view
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -2451,8 +2441,12 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|view
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -2549,8 +2543,12 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|view
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -2642,8 +2640,12 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|view
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -2748,8 +2750,12 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|view
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -2844,8 +2850,12 @@ argument_list|,
 name|viewable
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|view
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 end_function

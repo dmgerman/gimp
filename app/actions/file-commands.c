@@ -984,8 +984,10 @@ argument_list|(
 name|new_gimage
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|new_gimage
+argument_list|)
 expr_stmt|;
 block|}
 elseif|else

@@ -161,12 +161,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbycolorselecttool.h"
 end_include
 
@@ -1596,8 +1590,12 @@ name|feather_radius
 argument_list|)
 expr_stmt|;
 comment|/*  show selection on all views  */
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 comment|/*  update the preview window  */
 name|by_color_select_render
@@ -3321,8 +3319,12 @@ name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  show selection on all views  */
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|bcd
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 comment|/*  update the preview window  */
 name|by_color_select_render
@@ -3407,8 +3409,12 @@ name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  show selection on all views  */
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|bcd
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 comment|/*  update the preview window  */
 name|by_color_select_render
@@ -3493,8 +3499,12 @@ name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  show selection on all views  */
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|bcd
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 comment|/*  update the preview window  */
 name|by_color_select_render
@@ -4011,8 +4021,12 @@ name|feather_radius
 argument_list|)
 expr_stmt|;
 comment|/*  show selection on all views  */
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|bcd
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 comment|/*  update the preview window  */
 name|by_color_select_render
@@ -4155,8 +4169,12 @@ name|feather_radius
 argument_list|)
 expr_stmt|;
 comment|/*  show selection on all views  */
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|bcd
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 comment|/*  update the preview window  */
 name|by_color_select_render

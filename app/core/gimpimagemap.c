@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplayshell.h"
 end_include
 
@@ -84,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a337a160103
+DECL|enum|__anon2b2d13eb0103
 block|{
 DECL|enumerator|IMAGE_MAP_WAITING
 name|IMAGE_MAP_WAITING
@@ -1868,8 +1862,14 @@ name|state
 operator|=
 name|IMAGE_MAP_WAITING
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|image_map
+operator|->
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 return|return
 name|FALSE

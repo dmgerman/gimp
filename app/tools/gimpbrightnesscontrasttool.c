@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbrightnesscontrasttool.h"
 end_include
 
@@ -2159,8 +2153,14 @@ name|image_map
 operator|=
 name|NULL
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|active_tool
+operator|->
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 name|active_tool
@@ -2277,8 +2277,14 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|active_tool
+operator|->
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 block|}

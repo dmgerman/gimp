@@ -304,6 +304,15 @@ name|GHashTable
 modifier|*
 name|item_table
 decl_stmt|;
+DECL|member|displays
+name|GimpContainer
+modifier|*
+name|displays
+decl_stmt|;
+DECL|member|next_display_ID
+name|gint
+name|next_display_ID
+decl_stmt|;
 DECL|member|global_buffer
 name|GimpBuffer
 modifier|*

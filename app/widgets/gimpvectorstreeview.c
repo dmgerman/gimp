@@ -56,18 +56,6 @@ directive|include
 file|"widgets-types.h"
 end_include
 
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "display/display-types.h"
-end_warning
-
-begin_include
-include|#
-directive|include
-file|"display/display-types.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -96,12 +84,6 @@ begin_include
 include|#
 directive|include
 file|"vectors/gimpvectors.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpdisplay-foreach.h"
 end_include
 
 begin_include
@@ -679,13 +661,22 @@ condition|(
 name|vectors
 condition|)
 block|{
-name|gimp_image_mask_select_vectors
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
+name|gimage
+operator|=
+name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|vectors
 argument_list|)
-operator|->
+argument_list|)
+expr_stmt|;
+name|gimp_image_mask_select_vectors
+argument_list|(
 name|gimage
 argument_list|,
 name|vectors
@@ -701,8 +692,10 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 block|}

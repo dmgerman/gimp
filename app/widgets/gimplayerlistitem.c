@@ -56,18 +56,6 @@ directive|include
 file|"widgets-types.h"
 end_include
 
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "display/display-types.h"
-end_warning
-
-begin_include
-include|#
-directive|include
-file|"display/display-types.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -90,12 +78,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimplayermask.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpdisplay-foreach.h"
 end_include
 
 begin_include
@@ -2541,8 +2523,16 @@ if|if
 condition|(
 name|flush
 condition|)
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|mask
+argument_list|)
+argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function

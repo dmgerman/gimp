@@ -50,28 +50,16 @@ directive|include
 file|"widgets-types.h"
 end_include
 
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "display/display-types.h"
-end_warning
-
 begin_include
 include|#
 directive|include
-file|"display/display-types.h"
+file|"core/gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"core/gimpitem.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpdisplay-foreach.h"
 end_include
 
 begin_include
@@ -527,8 +515,12 @@ name|dest_index
 argument_list|)
 expr_stmt|;
 block|}
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|item_view
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 else|else

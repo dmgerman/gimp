@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gui/paths-dialog.h"
 end_include
 
@@ -286,7 +280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc102340108
+DECL|struct|__anon2a57d47a0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -322,7 +316,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc102340208
+DECL|struct|__anon2a57d47a0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -377,7 +371,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc102340308
+DECL|struct|__anon2a57d47a0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -11293,8 +11287,12 @@ name|feather_radius
 argument_list|)
 expr_stmt|;
 comment|/*  show selection on all views  */
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -14139,8 +14137,12 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 end_function

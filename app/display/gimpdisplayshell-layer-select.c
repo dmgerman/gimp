@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell-layer-select.h"
 end_include
 
@@ -851,8 +845,12 @@ operator|->
 name|current_layer
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|layer_select
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 block|}

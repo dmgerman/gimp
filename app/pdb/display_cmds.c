@@ -473,8 +473,10 @@ modifier|*
 name|args
 parameter_list|)
 block|{
-name|gdisplays_flush
-argument_list|()
+name|gimp_displays_flush
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 return|return
 name|procedural_db_return_args

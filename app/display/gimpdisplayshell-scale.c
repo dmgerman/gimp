@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell.h"
 end_include
 
@@ -1818,8 +1812,10 @@ name|title_dirty
 operator|=
 name|TRUE
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_display_shell_flush
+argument_list|(
+name|shell
+argument_list|)
 expr_stmt|;
 block|}
 comment|/* re-enable the active tool */

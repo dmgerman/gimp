@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -266,8 +260,12 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 name|gimp_context_set_display
 argument_list|(
@@ -424,8 +422,10 @@ literal|0.0
 comment|/* fill params */
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -606,8 +606,12 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 end_function

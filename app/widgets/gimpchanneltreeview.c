@@ -56,18 +56,6 @@ directive|include
 file|"widgets-types.h"
 end_include
 
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "display/display-types.h"
-end_warning
-
-begin_include
-include|#
-directive|include
-file|"display/display-types.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -90,12 +78,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage-mask-select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpdisplay-foreach.h"
 end_include
 
 begin_include
@@ -1186,6 +1168,10 @@ name|operation
 init|=
 name|GIMP_CHANNEL_OP_REPLACE
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
 if|if
 condition|(
 name|state
@@ -1222,8 +1208,8 @@ operator|=
 name|GIMP_CHANNEL_OP_SUBTRACT
 expr_stmt|;
 block|}
-name|gimp_image_mask_select_channel
-argument_list|(
+name|gimage
+operator|=
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
@@ -1231,6 +1217,10 @@ argument_list|(
 name|viewable
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|gimp_image_mask_select_channel
+argument_list|(
+name|gimage
 argument_list|,
 name|GIMP_CHANNEL
 argument_list|(
@@ -1250,8 +1240,10 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 block|}

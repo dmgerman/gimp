@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplayshell.h"
 end_include
 
@@ -1525,8 +1519,12 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
@@ -3745,8 +3743,12 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 end_function

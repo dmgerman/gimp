@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimptool/gimptool.h"
 end_include
 
@@ -102,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac6a8d90108
+DECL|struct|__anon2952ae9f0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -331,8 +325,10 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -366,8 +362,10 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -2159,8 +2157,12 @@ argument_list|,
 name|theCustomPalette
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|dialog
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 comment|/* Save defaults for next time */
 name|sdither_type

@@ -3035,8 +3035,12 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 name|gimp_transform_tool_reset
 argument_list|(

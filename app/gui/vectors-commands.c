@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -256,8 +250,10 @@ argument_list|,
 name|active_vectors
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -297,8 +293,10 @@ argument_list|,
 name|active_vectors
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -342,7 +340,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|new_vectors = gimp_vectors_copy (active_vectors,                                    G_TYPE_FROM_INSTANCE (active_vectors),                                    TRUE);   gimp_image_add_vectors (gimage, new_vectors, -1);   gdisplays_flush ();
+block|new_vectors = gimp_vectors_copy (active_vectors,                                    G_TYPE_FROM_INSTANCE (active_vectors),                                    TRUE);   gimp_image_add_vectors (gimage, new_vectors, -1);   gimp_image_flush (gimage);
 endif|#
 directive|endif
 block|}
@@ -383,8 +381,10 @@ argument_list|,
 name|active_vectors
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -438,8 +438,10 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -1002,8 +1004,10 @@ name|core
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -1267,8 +1271,10 @@ argument_list|,
 name|vectors_name
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 name|gtk_widget_destroy
@@ -1360,8 +1366,10 @@ literal|1
 argument_list|)
 expr_stmt|;
 comment|/* undo_push_group_end (gimage); */
-name|gdisplays_flush
-argument_list|()
+name|gimp_image_flush
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 return|return;
 block|}

@@ -617,8 +617,10 @@ condition|(
 operator|!
 name|kill_it
 operator|&&
-name|gdisplays_dirty
-argument_list|()
+name|gimp_displays_dirty
+argument_list|(
+name|the_gimp
+argument_list|)
 operator|&&
 operator|!
 name|no_interface

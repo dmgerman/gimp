@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -61,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage-projection.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimplist.h"
 end_include
 
 begin_include
@@ -242,26 +254,6 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|display_list
-name|GSList
-modifier|*
-name|display_list
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|display_num
-specifier|static
-name|gint
-name|display_num
-init|=
-literal|1
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 name|GType
 DECL|function|gimp_display_get_type (void)
@@ -402,8 +394,7 @@ name|gdisp
 operator|->
 name|ID
 operator|=
-name|display_num
-operator|++
+literal|0
 expr_stmt|;
 name|gdisp
 operator|->
@@ -566,15 +557,15 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  add the new display to the list so that it isn't lost  */
-name|display_list
-operator|=
-name|g_slist_append
-argument_list|(
-name|display_list
-argument_list|,
 name|gdisp
-argument_list|)
+operator|->
+name|ID
+operator|=
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|next_display_ID
 expr_stmt|;
 comment|/*  refs the image  */
 name|gimp_display_connect
@@ -637,13 +628,20 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* remove the display from the list */
-name|display_list
-operator|=
-name|g_slist_remove
+name|gimp_container_remove
 argument_list|(
-name|display_list
-argument_list|,
 name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|displays
+argument_list|,
+name|GIMP_OBJECT
+argument_list|(
+name|gdisp
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  stop any active tool  */
@@ -826,7 +824,7 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|GSList
+name|GList
 modifier|*
 name|list
 decl_stmt|;
@@ -840,18 +838,24 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  Traverse the list of displays, returning the one that matches the ID    *  If no display in the list is a match, return NULL.    */
 for|for
 control|(
 name|list
 operator|=
-name|display_list
+name|GIMP_LIST
+argument_list|(
+name|gimp
+operator|->
+name|displays
+argument_list|)
+operator|->
+name|list
 init|;
 name|list
 condition|;
 name|list
 operator|=
-name|g_slist_next
+name|g_list_next
 argument_list|(
 name|list
 argument_list|)
