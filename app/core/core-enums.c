@@ -620,7 +620,7 @@ name|GIMP_NO_DITHER
 block|,
 name|N_
 argument_list|(
-literal|"No color dithering"
+literal|"None"
 argument_list|)
 block|,
 literal|"no-dither"
@@ -631,7 +631,7 @@ name|GIMP_FS_DITHER
 block|,
 name|N_
 argument_list|(
-literal|"Floyd-Steinberg color dithering (normal)"
+literal|"Floyd-Steinberg (normal)"
 argument_list|)
 block|,
 literal|"fs-dither"
@@ -642,7 +642,7 @@ name|GIMP_FSLOWBLEED_DITHER
 block|,
 name|N_
 argument_list|(
-literal|"Floyd-Steinberg color dithering (reduced color bleeding)"
+literal|"Floyd-Steinberg (reduced color bleeding)"
 argument_list|)
 block|,
 literal|"fslowbleed-dither"
@@ -653,7 +653,7 @@ name|GIMP_FIXED_DITHER
 block|,
 name|N_
 argument_list|(
-literal|"Positioned color dithering"
+literal|"Positioned"
 argument_list|)
 block|,
 literal|"fixed-dither"
@@ -684,6 +684,100 @@ operator|=
 name|g_enum_register_static
 argument_list|(
 literal|"GimpConvertDitherType"
+argument_list|,
+name|values
+argument_list|)
+expr_stmt|;
+return|return
+name|type
+return|;
+block|}
+end_function
+
+begin_function
+name|GType
+DECL|function|gimp_convert_palette_type_get_type (void)
+name|gimp_convert_palette_type_get_type
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+specifier|static
+specifier|const
+name|GEnumValue
+name|values
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_MAKE_PALETTE
+block|,
+name|N_
+argument_list|(
+literal|"Generate optimum palette"
+argument_list|)
+block|,
+literal|"make-palette"
+block|}
+block|,
+block|{
+name|GIMP_WEB_PALETTE
+block|,
+name|N_
+argument_list|(
+literal|"Use web-optimized palette"
+argument_list|)
+block|,
+literal|"web-palette"
+block|}
+block|,
+block|{
+name|GIMP_MONO_PALETTE
+block|,
+name|N_
+argument_list|(
+literal|"Use black and white (1-bit) palette"
+argument_list|)
+block|,
+literal|"mono-palette"
+block|}
+block|,
+block|{
+name|GIMP_CUSTOM_PALETTE
+block|,
+name|N_
+argument_list|(
+literal|"Use custom palette"
+argument_list|)
+block|,
+literal|"custom-palette"
+block|}
+block|,
+block|{
+literal|0
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|}
+decl_stmt|;
+specifier|static
+name|GType
+name|type
+init|=
+literal|0
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|type
+condition|)
+name|type
+operator|=
+name|g_enum_register_static
+argument_list|(
+literal|"GimpConvertPaletteType"
 argument_list|,
 name|values
 argument_list|)
