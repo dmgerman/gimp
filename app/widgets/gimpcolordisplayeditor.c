@@ -86,11 +86,7 @@ name|GtkWidget
 modifier|*
 name|dest
 decl_stmt|;
-DECL|member|target_menu
-name|GtkWidget
-modifier|*
-name|target_menu
-decl_stmt|;
+comment|/* GtkWidget *target_menu; */
 DECL|member|src_row
 name|gint
 name|src_row
@@ -1704,6 +1700,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|gdisp
 condition|)
 name|gdisp
