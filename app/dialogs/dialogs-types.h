@@ -23,15 +23,6 @@ file|"display/display-types.h"
 end_include
 
 begin_typedef
-DECL|typedef|ColorDialog
-typedef|typedef
-name|struct
-name|_ColorDialog
-name|ColorDialog
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|InfoDialog
 typedef|typedef
 name|struct
