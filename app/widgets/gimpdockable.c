@@ -27,6 +27,12 @@ directive|include
 file|"gimpdockable.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpdockbook.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -369,12 +375,16 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dockable_get_tab_widget (GimpDockable * dockable,gint size)
+DECL|function|gimp_dockable_get_tab_widget (GimpDockable * dockable,GimpDockbook * dockbook,gint size)
 name|gimp_dockable_get_tab_widget
 parameter_list|(
 name|GimpDockable
 modifier|*
 name|dockable
+parameter_list|,
+name|GimpDockbook
+modifier|*
+name|dockbook
 parameter_list|,
 name|gint
 name|size
@@ -394,6 +404,25 @@ argument_list|(
 name|GIMP_IS_DOCKABLE
 argument_list|(
 name|dockable
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|dockbook
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DOCKBOOK
+argument_list|(
+name|dockbook
 argument_list|)
 argument_list|,
 name|NULL
@@ -426,6 +455,8 @@ operator|->
 name|get_tab_func
 argument_list|(
 name|dockable
+argument_list|,
+name|dockbook
 argument_list|,
 name|size
 argument_list|)

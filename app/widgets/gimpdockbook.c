@@ -753,6 +753,8 @@ name|gimp_dockable_get_tab_widget
 argument_list|(
 name|dockable
 argument_list|,
+name|dockbook
+argument_list|,
 literal|24
 argument_list|)
 expr_stmt|;
@@ -838,6 +840,8 @@ operator|=
 name|gimp_dockable_get_tab_widget
 argument_list|(
 name|dockable
+argument_list|,
+name|dockbook
 argument_list|,
 literal|16
 argument_list|)
@@ -1879,6 +1883,10 @@ operator|=
 name|gimp_dockable_get_tab_widget
 argument_list|(
 name|dockable
+argument_list|,
+name|dockable
+operator|->
+name|dockbook
 argument_list|,
 literal|24
 argument_list|)

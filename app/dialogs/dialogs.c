@@ -45,6 +45,12 @@ directive|include
 file|"menus.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpcontext.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|global_dialog_factory
 name|GimpDialogFactory
@@ -76,6 +82,9 @@ name|global_dialog_factory
 operator|=
 name|gimp_dialog_factory_new
 argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
 name|item_factory
 argument_list|)
 expr_stmt|;

@@ -54,7 +54,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimpdock.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdockable.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimpdockbook.h"
 end_include
 
 begin_include
@@ -121,6 +139,10 @@ name|GimpDockable
 modifier|*
 name|dockable
 parameter_list|,
+name|GimpDockbook
+modifier|*
+name|dockbook
+parameter_list|,
 name|gint
 name|size
 parameter_list|)
@@ -136,6 +158,10 @@ parameter_list|(
 name|GimpDockable
 modifier|*
 name|dockable
+parameter_list|,
+name|GimpDockbook
+modifier|*
+name|dockbook
 parameter_list|,
 name|gint
 name|size
@@ -153,6 +179,10 @@ name|GimpDockable
 modifier|*
 name|dockable
 parameter_list|,
+name|GimpDockbook
+modifier|*
+name|dockbook
+parameter_list|,
 name|gint
 name|size
 parameter_list|)
@@ -168,6 +198,10 @@ parameter_list|(
 name|GimpDockable
 modifier|*
 name|dockable
+parameter_list|,
+name|GimpDockbook
+modifier|*
+name|dockbook
 parameter_list|,
 name|gint
 name|size
@@ -208,10 +242,12 @@ end_comment
 begin_function
 name|GimpDockable
 modifier|*
-DECL|function|dialogs_image_list_view_new (void)
+DECL|function|dialogs_image_list_view_new (GimpDialogFactory * factory)
 name|dialogs_image_list_view_new
 parameter_list|(
-name|void
+name|GimpDialogFactory
+modifier|*
+name|factory
 parameter_list|)
 block|{
 name|GtkWidget
@@ -224,8 +260,9 @@ name|gimp_container_list_view_new
 argument_list|(
 name|image_context
 argument_list|,
-name|gimp_context_get_user
-argument_list|()
+name|factory
+operator|->
+name|context
 argument_list|,
 literal|32
 argument_list|,
@@ -252,10 +289,12 @@ end_function
 begin_function
 name|GimpDockable
 modifier|*
-DECL|function|dialogs_brush_list_view_new (void)
+DECL|function|dialogs_brush_list_view_new (GimpDialogFactory * factory)
 name|dialogs_brush_list_view_new
 parameter_list|(
-name|void
+name|GimpDialogFactory
+modifier|*
+name|factory
 parameter_list|)
 block|{
 name|GtkWidget
@@ -272,8 +311,9 @@ name|global_brush_factory
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_context_get_user
-argument_list|()
+name|factory
+operator|->
+name|context
 argument_list|,
 literal|32
 argument_list|,
@@ -300,10 +340,12 @@ end_function
 begin_function
 name|GimpDockable
 modifier|*
-DECL|function|dialogs_pattern_list_view_new (void)
+DECL|function|dialogs_pattern_list_view_new (GimpDialogFactory * factory)
 name|dialogs_pattern_list_view_new
 parameter_list|(
-name|void
+name|GimpDialogFactory
+modifier|*
+name|factory
 parameter_list|)
 block|{
 name|GtkWidget
@@ -320,8 +362,9 @@ name|global_pattern_factory
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_context_get_user
-argument_list|()
+name|factory
+operator|->
+name|context
 argument_list|,
 literal|32
 argument_list|,
@@ -348,10 +391,12 @@ end_function
 begin_function
 name|GimpDockable
 modifier|*
-DECL|function|dialogs_gradient_list_view_new (void)
+DECL|function|dialogs_gradient_list_view_new (GimpDialogFactory * factory)
 name|dialogs_gradient_list_view_new
 parameter_list|(
-name|void
+name|GimpDialogFactory
+modifier|*
+name|factory
 parameter_list|)
 block|{
 name|GtkWidget
@@ -368,8 +413,9 @@ name|global_gradient_factory
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_context_get_user
-argument_list|()
+name|factory
+operator|->
+name|context
 argument_list|,
 literal|32
 argument_list|,
@@ -396,10 +442,12 @@ end_function
 begin_function
 name|GimpDockable
 modifier|*
-DECL|function|dialogs_palette_list_view_new (void)
+DECL|function|dialogs_palette_list_view_new (GimpDialogFactory * factory)
 name|dialogs_palette_list_view_new
 parameter_list|(
-name|void
+name|GimpDialogFactory
+modifier|*
+name|factory
 parameter_list|)
 block|{
 name|GtkWidget
@@ -416,8 +464,9 @@ name|global_palette_factory
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_context_get_user
-argument_list|()
+name|factory
+operator|->
+name|context
 argument_list|,
 literal|32
 argument_list|,
@@ -444,10 +493,12 @@ end_function
 begin_function
 name|GimpDockable
 modifier|*
-DECL|function|dialogs_tool_list_view_new (void)
+DECL|function|dialogs_tool_list_view_new (GimpDialogFactory * factory)
 name|dialogs_tool_list_view_new
 parameter_list|(
-name|void
+name|GimpDialogFactory
+modifier|*
+name|factory
 parameter_list|)
 block|{
 name|GtkWidget
@@ -460,8 +511,9 @@ name|gimp_container_list_view_new
 argument_list|(
 name|global_tool_info_list
 argument_list|,
-name|gimp_context_get_user
-argument_list|()
+name|factory
+operator|->
+name|context
 argument_list|,
 literal|22
 argument_list|,
@@ -485,13 +537,19 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  grid views  */
+end_comment
+
 begin_function
 name|GimpDockable
 modifier|*
-DECL|function|dialogs_image_grid_view_new (void)
+DECL|function|dialogs_image_grid_view_new (GimpDialogFactory * factory)
 name|dialogs_image_grid_view_new
 parameter_list|(
-name|void
+name|GimpDialogFactory
+modifier|*
+name|factory
 parameter_list|)
 block|{
 name|GtkWidget
@@ -504,8 +562,9 @@ name|gimp_container_grid_view_new
 argument_list|(
 name|image_context
 argument_list|,
-name|gimp_context_get_user
-argument_list|()
+name|factory
+operator|->
+name|context
 argument_list|,
 literal|32
 argument_list|,
@@ -532,10 +591,12 @@ end_function
 begin_function
 name|GimpDockable
 modifier|*
-DECL|function|dialogs_brush_grid_view_new (void)
+DECL|function|dialogs_brush_grid_view_new (GimpDialogFactory * factory)
 name|dialogs_brush_grid_view_new
 parameter_list|(
-name|void
+name|GimpDialogFactory
+modifier|*
+name|factory
 parameter_list|)
 block|{
 name|GtkWidget
@@ -552,8 +613,9 @@ name|global_brush_factory
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_context_get_user
-argument_list|()
+name|factory
+operator|->
+name|context
 argument_list|,
 literal|32
 argument_list|,
@@ -580,10 +642,12 @@ end_function
 begin_function
 name|GimpDockable
 modifier|*
-DECL|function|dialogs_pattern_grid_view_new (void)
+DECL|function|dialogs_pattern_grid_view_new (GimpDialogFactory * factory)
 name|dialogs_pattern_grid_view_new
 parameter_list|(
-name|void
+name|GimpDialogFactory
+modifier|*
+name|factory
 parameter_list|)
 block|{
 name|GtkWidget
@@ -600,8 +664,9 @@ name|global_pattern_factory
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_context_get_user
-argument_list|()
+name|factory
+operator|->
+name|context
 argument_list|,
 literal|32
 argument_list|,
@@ -628,10 +693,12 @@ end_function
 begin_function
 name|GimpDockable
 modifier|*
-DECL|function|dialogs_gradient_grid_view_new (void)
+DECL|function|dialogs_gradient_grid_view_new (GimpDialogFactory * factory)
 name|dialogs_gradient_grid_view_new
 parameter_list|(
-name|void
+name|GimpDialogFactory
+modifier|*
+name|factory
 parameter_list|)
 block|{
 name|GtkWidget
@@ -648,8 +715,9 @@ name|global_gradient_factory
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_context_get_user
-argument_list|()
+name|factory
+operator|->
+name|context
 argument_list|,
 literal|32
 argument_list|,
@@ -676,10 +744,12 @@ end_function
 begin_function
 name|GimpDockable
 modifier|*
-DECL|function|dialogs_palette_grid_view_new (void)
+DECL|function|dialogs_palette_grid_view_new (GimpDialogFactory * factory)
 name|dialogs_palette_grid_view_new
 parameter_list|(
-name|void
+name|GimpDialogFactory
+modifier|*
+name|factory
 parameter_list|)
 block|{
 name|GtkWidget
@@ -696,8 +766,9 @@ name|global_palette_factory
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_context_get_user
-argument_list|()
+name|factory
+operator|->
+name|context
 argument_list|,
 literal|32
 argument_list|,
@@ -724,10 +795,12 @@ end_function
 begin_function
 name|GimpDockable
 modifier|*
-DECL|function|dialogs_tool_grid_view_new (void)
+DECL|function|dialogs_tool_grid_view_new (GimpDialogFactory * factory)
 name|dialogs_tool_grid_view_new
 parameter_list|(
-name|void
+name|GimpDialogFactory
+modifier|*
+name|factory
 parameter_list|)
 block|{
 name|GtkWidget
@@ -740,8 +813,9 @@ name|gimp_container_grid_view_new
 argument_list|(
 name|global_tool_info_list
 argument_list|,
-name|gimp_context_get_user
-argument_list|()
+name|factory
+operator|->
+name|context
 argument_list|,
 literal|22
 argument_list|,
@@ -773,12 +847,16 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_brush_tab_func (GimpDockable * dockable,gint size)
+DECL|function|dialogs_brush_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,gint size)
 name|dialogs_brush_tab_func
 parameter_list|(
 name|GimpDockable
 modifier|*
 name|dockable
+parameter_list|,
+name|GimpDockbook
+modifier|*
+name|dockbook
 parameter_list|,
 name|gint
 name|size
@@ -794,8 +872,13 @@ name|preview
 decl_stmt|;
 name|context
 operator|=
-name|gimp_context_get_user
-argument_list|()
+name|dockbook
+operator|->
+name|dock
+operator|->
+name|factory
+operator|->
+name|context
 expr_stmt|;
 name|preview
 operator|=
@@ -852,12 +935,16 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_pattern_tab_func (GimpDockable * dockable,gint size)
+DECL|function|dialogs_pattern_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,gint size)
 name|dialogs_pattern_tab_func
 parameter_list|(
 name|GimpDockable
 modifier|*
 name|dockable
+parameter_list|,
+name|GimpDockbook
+modifier|*
+name|dockbook
 parameter_list|,
 name|gint
 name|size
@@ -873,8 +960,13 @@ name|preview
 decl_stmt|;
 name|context
 operator|=
-name|gimp_context_get_user
-argument_list|()
+name|dockbook
+operator|->
+name|dock
+operator|->
+name|factory
+operator|->
+name|context
 expr_stmt|;
 name|preview
 operator|=
@@ -931,12 +1023,16 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_gradient_tab_func (GimpDockable * dockable,gint size)
+DECL|function|dialogs_gradient_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,gint size)
 name|dialogs_gradient_tab_func
 parameter_list|(
 name|GimpDockable
 modifier|*
 name|dockable
+parameter_list|,
+name|GimpDockbook
+modifier|*
+name|dockbook
 parameter_list|,
 name|gint
 name|size
@@ -952,8 +1048,13 @@ name|preview
 decl_stmt|;
 name|context
 operator|=
-name|gimp_context_get_user
-argument_list|()
+name|dockbook
+operator|->
+name|dock
+operator|->
+name|factory
+operator|->
+name|context
 expr_stmt|;
 name|preview
 operator|=
@@ -1010,12 +1111,16 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_palette_tab_func (GimpDockable * dockable,gint size)
+DECL|function|dialogs_palette_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,gint size)
 name|dialogs_palette_tab_func
 parameter_list|(
 name|GimpDockable
 modifier|*
 name|dockable
+parameter_list|,
+name|GimpDockbook
+modifier|*
+name|dockbook
 parameter_list|,
 name|gint
 name|size
@@ -1031,8 +1136,13 @@ name|preview
 decl_stmt|;
 name|context
 operator|=
-name|gimp_context_get_user
-argument_list|()
+name|dockbook
+operator|->
+name|dock
+operator|->
+name|factory
+operator|->
+name|context
 expr_stmt|;
 name|preview
 operator|=

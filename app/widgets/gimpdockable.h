@@ -36,6 +36,10 @@ name|GimpDockable
 modifier|*
 name|dockable
 parameter_list|,
+name|GimpDockbook
+modifier|*
+name|dockbook
+parameter_list|,
 name|gint
 name|size
 parameter_list|)
@@ -186,6 +190,10 @@ parameter_list|(
 name|GimpDockable
 modifier|*
 name|dockable
+parameter_list|,
+name|GimpDockbook
+modifier|*
+name|dockbook
 parameter_list|,
 name|gint
 name|size

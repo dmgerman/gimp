@@ -2077,12 +2077,16 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|test_brush_tab_func (GimpDockable * dockable,gint size)
+DECL|function|test_brush_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,gint size)
 name|test_brush_tab_func
 parameter_list|(
 name|GimpDockable
 modifier|*
 name|dockable
+parameter_list|,
+name|GimpDockbook
+modifier|*
+name|dockbook
 parameter_list|,
 name|gint
 name|size
@@ -2156,12 +2160,16 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|test_pattern_tab_func (GimpDockable * dockable,gint size)
+DECL|function|test_pattern_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,gint size)
 name|test_pattern_tab_func
 parameter_list|(
 name|GimpDockable
 modifier|*
 name|dockable
+parameter_list|,
+name|GimpDockbook
+modifier|*
+name|dockbook
 parameter_list|,
 name|gint
 name|size
@@ -2235,12 +2243,16 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|test_gradient_tab_func (GimpDockable * dockable,gint size)
+DECL|function|test_gradient_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,gint size)
 name|test_gradient_tab_func
 parameter_list|(
 name|GimpDockable
 modifier|*
 name|dockable
+parameter_list|,
+name|GimpDockbook
+modifier|*
+name|dockbook
 parameter_list|,
 name|gint
 name|size
@@ -2314,12 +2326,16 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|test_palette_tab_func (GimpDockable * dockable,gint size)
+DECL|function|test_palette_tab_func (GimpDockable * dockable,GimpDockbook * dockbook,gint size)
 name|test_palette_tab_func
 parameter_list|(
 name|GimpDockable
 modifier|*
 name|dockable
+parameter_list|,
+name|GimpDockbook
+modifier|*
+name|dockbook
 parameter_list|,
 name|gint
 name|size
