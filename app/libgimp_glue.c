@@ -51,6 +51,13 @@ directive|include
 file|"app_procs.h"
 end_include
 
+begin_define
+DECL|macro|__LIBGIMP_GLUE_C__
+define|#
+directive|define
+name|__LIBGIMP_GLUE_C__
+end_define
+
 begin_include
 include|#
 directive|include

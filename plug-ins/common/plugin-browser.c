@@ -468,7 +468,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c13a3c0108
+DECL|struct|__anon291357610108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -574,7 +574,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c13a3c0208
+DECL|struct|__anon291357610208
 block|{
 DECL|member|menu
 name|gchar
@@ -3509,13 +3509,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|get_plugin_info (PDesc * pdesc,gchar * search_text)
+DECL|function|get_plugin_info (PDesc * pdesc,const gchar * search_text)
 name|get_plugin_info
 parameter_list|(
 name|PDesc
 modifier|*
 name|pdesc
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|search_text
@@ -4076,6 +4077,7 @@ name|pdesc
 init|=
 name|data
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|search_text

@@ -16,6 +16,27 @@ directive|define
 name|__LIBGIMP_GLUE_H__
 end_define
 
+begin_if
+if|#
+directive|if
+operator|!
+name|defined
+argument_list|(
+name|__LIBGIMP_GLUE_C__
+argument_list|)
+end_if
+
+begin_error
+error|#
+directive|error
+literal|"You must not include app/libgimp_glue.h."
+end_error
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
 comment|/*  This files lets various libgimp files link against the application.  *  *  NEVER include this header, it's only here for documentation.  */
 end_comment
