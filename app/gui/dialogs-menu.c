@@ -186,27 +186,6 @@ block|,
 name|NULL
 block|}
 block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/_Select Tab"
-argument_list|)
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-literal|0
-block|}
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
 name|MENU_BRANCH
 argument_list|(
 name|N_

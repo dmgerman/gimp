@@ -81,6 +81,12 @@ directive|include
 file|"gimpwidgets-utils.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -839,6 +845,20 @@ argument_list|(
 name|dockable
 operator|->
 name|close_button
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|dockable
+operator|->
+name|close_button
+argument_list|,
+name|_
+argument_list|(
+literal|"Close this Tab"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|image
@@ -3773,18 +3793,6 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_item_factory_set_visible
-argument_list|(
-name|GTK_ITEM_FACTORY
-argument_list|(
-name|dockbook_item_factory
-argument_list|)
-argument_list|,
-literal|"/Select Tab"
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 comment|/*  an item factory callback may destroy both dockable and dockbook,    *  so reference them for gimp_dockable_menu_end()    */
 name|g_object_ref
 argument_list|(
