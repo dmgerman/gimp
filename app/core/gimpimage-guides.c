@@ -789,7 +789,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b77e7540103
+DECL|enum|__anon27b3ca2c0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -4904,7 +4904,7 @@ name|g_warning
 argument_list|(
 literal|"%s: illegal parameters."
 argument_list|,
-name|G_GNUC_PRETTY_FUNC
+name|G_GNUC_PRETTY_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return;
@@ -5474,7 +5474,7 @@ name|g_warning
 argument_list|(
 literal|"%s: illegal parameters."
 argument_list|,
-name|G_GNUC_PRETTY_FUNC
+name|G_GNUC_PRETTY_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return;
@@ -8021,7 +8021,7 @@ argument_list|(
 literal|"%s: Tattoo state corrupted "
 literal|"(integer overflow)."
 argument_list|,
-name|G_GNUC_PRETTY_FUNC
+name|G_GNUC_PRETTY_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return
@@ -14991,7 +14991,7 @@ name|g_warning
 argument_list|(
 literal|"%s: could not allocate merge layer."
 argument_list|,
-name|G_GNUC_PRETTY_FUNC
+name|G_GNUC_PRETTY_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return
@@ -15118,7 +15118,7 @@ name|g_warning
 argument_list|(
 literal|"%s: could not allocate merge layer"
 argument_list|,
-name|G_GNUC_PRETTY_FUNC
+name|G_GNUC_PRETTY_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return
@@ -15832,7 +15832,7 @@ name|g_warning
 argument_list|(
 literal|"%s: attempting to add layer to wrong image."
 argument_list|,
-name|G_GNUC_PRETTY_FUNC
+name|G_GNUC_PRETTY_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return
@@ -15858,7 +15858,7 @@ name|g_warning
 argument_list|(
 literal|"%s: trying to add layer to image twice."
 argument_list|,
-name|G_GNUC_PRETTY_FUNC
+name|G_GNUC_PRETTY_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return
