@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Animation Playback plug-in version 0.83.0  *  * by Adam D. Moss, 1997  *     adam@gimp.org  *     adam@foxbox.org  *  * This is part of the GIMP package and falls under the GPL.  */
+comment|/*  * Animation Playback plug-in version 0.84.0  *  * by Adam D. Moss, 1997-98  *     adam@gimp.org  *     adam@foxbox.org  *  * This is part of the GIMP package and falls under the GPL.  */
 end_comment
 
 begin_comment
-comment|/*  * REVISION HISTORY:  *  * 97.12.11 : version 0.83.0  *            GTK's timer logic changed a little... adjusted  *            plugin to fit.  *  * 97.09.16 : version 0.81.7  *            Fixed progress bar's off-by-one problem with  *            the new timing.  Fixed erroneous black bars which  *            were sometimes visible when the first frame was  *            smaller than the image itself.  Made playback  *            controls inactive when image doesn't have multiple  *            frames.  Moved progress bar above control buttons,  *            it's less distracting there.  More cosmetic stuff.  *  * 97.09.15 : version 0.81.0  *            Now plays INDEXED and GRAY animations.  *  * 97.09.15 : version 0.75.0  *            Next frame is generated ahead of time - results  *            in more precise timing.  *  * 97.09.14 : version 0.70.0  *            Initial release.  RGB only.  */
+comment|/*  * REVISION HISTORY:  *  * 98.03.15 : version 0.84.0  *            Tried to clear up the GTK object/cast warnings.  Only  *            partially successful.  Could use some help.  *  * 97.12.11 : version 0.83.0  *            GTK's timer logic changed a little... adjusted  *            plugin to fit.  *  * 97.09.16 : version 0.81.7  *            Fixed progress bar's off-by-one problem with  *            the new timing.  Fixed erroneous black bars which  *            were sometimes visible when the first frame was  *            smaller than the image itself.  Made playback  *            controls inactive when image doesn't have multiple  *            frames.  Moved progress bar above control buttons,  *            it's less distracting there.  More cosmetic stuff.  *  * 97.09.15 : version 0.81.0  *            Now plays INDEXED and GRAY animations.  *  * 97.09.15 : version 0.75.0  *            Next frame is generated ahead of time - results  *            in more precise timing.  *  * 97.09.14 : version 0.70.0  *            Initial release.  RGB only.  */
 end_comment
 
 begin_comment
@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5369530103
+DECL|enum|__anon2b6facab0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -301,7 +301,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|preview
 specifier|static
-name|GtkWidget
+name|GtkPreview
 modifier|*
 name|preview
 init|=
@@ -311,7 +311,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|progress
-name|GtkWidget
+name|GtkProgressBar
 modifier|*
 name|progress
 decl_stmt|;
@@ -1215,7 +1215,10 @@ name|GtkSignalFunc
 operator|)
 name|window_close_callback
 argument_list|,
+name|GTK_OBJECT
+argument_list|(
 name|dlg
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1398,12 +1401,18 @@ expr_stmt|;
 block|{
 name|progress
 operator|=
+name|GTK_PROGRESS_BAR
+argument_list|(
 name|gtk_progress_bar_new
 argument_list|()
+argument_list|)
 expr_stmt|;
 name|gtk_widget_set_usize
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
 name|progress
+argument_list|)
 argument_list|,
 literal|150
 argument_list|,
@@ -1417,7 +1426,10 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
 name|progress
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1428,7 +1440,10 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
 name|progress
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|hbox2
@@ -1658,18 +1673,18 @@ expr_stmt|;
 block|{
 name|preview
 operator|=
+name|GTK_PREVIEW
+argument_list|(
 name|gtk_preview_new
 argument_list|(
 name|GTK_PREVIEW_COLOR
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* FIXME */
 name|gtk_preview_size
 argument_list|(
-name|GTK_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 name|width
 argument_list|,
@@ -1683,12 +1698,18 @@ argument_list|(
 name|frame2
 argument_list|)
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
 name|preview
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
 name|preview
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1903,10 +1924,7 @@ control|)
 block|{
 name|gtk_preview_draw_row
 argument_list|(
-name|GTK_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|preview_data
@@ -2466,10 +2484,7 @@ control|)
 block|{
 name|gtk_preview_draw_row
 argument_list|(
-name|GTK_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|preview_data
@@ -2689,10 +2704,7 @@ name|height
 condition|)
 name|gtk_preview_draw_row
 argument_list|(
-name|GTK_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|preview_data
@@ -2731,10 +2743,7 @@ control|)
 block|{
 name|gtk_preview_draw_row
 argument_list|(
-name|GTK_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|preview_data
@@ -3014,10 +3023,7 @@ control|)
 block|{
 name|gtk_preview_draw_row
 argument_list|(
-name|GTK_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|preview_data
@@ -3256,10 +3262,7 @@ name|height
 condition|)
 name|gtk_preview_draw_row
 argument_list|(
-name|GTK_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|preview_data
@@ -3298,10 +3301,7 @@ control|)
 block|{
 name|gtk_preview_draw_row
 argument_list|(
-name|GTK_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|preview_data
@@ -3346,7 +3346,10 @@ block|{
 comment|/* Tell GTK to physically draw the preview */
 name|gtk_widget_draw
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
 name|preview
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3357,10 +3360,7 @@ expr_stmt|;
 comment|/* update the dialog's progress bar */
 name|gtk_progress_bar_update
 argument_list|(
-name|GTK_PROGRESS_BAR
-argument_list|(
 name|progress
-argument_list|)
 argument_list|,
 operator|(
 operator|(
