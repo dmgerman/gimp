@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -49,6 +43,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpmath.h>
 end_include
 
 begin_include
@@ -625,7 +625,7 @@ name|contrast
 operator|*
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|*
 name|i
 operator|/
