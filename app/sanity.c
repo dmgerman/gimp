@@ -216,12 +216,12 @@ name|abort_message
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"Fontconfig version too old!\n\n"
-literal|"The GIMP requires fontconfig version %d.%d.%d or later.\n"
-literal|"Installed fontconfig version is %d.%d.%d.\n\n"
-literal|"Somehow you or your software packager managed\n"
-literal|"to install The GIMP with an older fontconfig version.\n\n"
-literal|"Please upgrade to fontconfig version %d.%d.%d or later."
+literal|"The Fontconfig version being used is too old!\n\n"
+literal|"The GIMP requires Fontconfig version %d.%d.%d or later.\n"
+literal|"The Fontconfig version loaded by The GIMP is %d.%d.%d.\n\n"
+literal|"This may be caused by another instance of libfontconfig.so.1\n"
+literal|"being installed in the system, probably in /usr/X11R6/lib.\n"
+literal|"Please correct the situation or report it to someone who can."
 argument_list|,
 name|FC_REQUIRED_MAJOR
 argument_list|,
@@ -234,12 +234,6 @@ argument_list|,
 name|fc_minor_version
 argument_list|,
 name|fc_micro_version
-argument_list|,
-name|FC_REQUIRED_MAJOR
-argument_list|,
-name|FC_REQUIRED_MINOR
-argument_list|,
-name|FC_REQUIRED_MICRO
 argument_list|)
 expr_stmt|;
 block|}
