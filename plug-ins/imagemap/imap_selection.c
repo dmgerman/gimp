@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-1999 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2002 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -108,18 +108,6 @@ begin_include
 include|#
 directive|include
 file|"arrow_down.xpm"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"delete.xpm"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"edit.xpm"
 end_include
 
 begin_function
@@ -857,13 +845,11 @@ name|data
 operator|->
 name|edit
 operator|=
-name|make_toolbar_icon
+name|make_toolbar_stock_icon
 argument_list|(
 name|toolbar
 argument_list|,
-name|window
-argument_list|,
-name|edit_xpm
+name|GTK_STOCK_PROPERTIES
 argument_list|,
 literal|"Edit"
 argument_list|,
@@ -892,13 +878,11 @@ name|data
 operator|->
 name|remove
 operator|=
-name|make_toolbar_icon
+name|make_toolbar_stock_icon
 argument_list|(
 name|toolbar
 argument_list|,
-name|window
-argument_list|,
-name|delete_xpm
+name|GTK_STOCK_DELETE
 argument_list|,
 literal|"Delete"
 argument_list|,

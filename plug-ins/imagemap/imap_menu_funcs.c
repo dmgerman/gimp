@@ -215,7 +215,7 @@ name|append_active_item
 argument_list|(
 name|parent
 argument_list|,
-name|gtk_menu_item_new_with_label
+name|gtk_menu_item_new_with_mnemonic
 argument_list|(
 name|label
 argument_list|)
@@ -295,7 +295,7 @@ name|GtkWidget
 modifier|*
 name|item
 init|=
-name|gtk_menu_item_new_with_label
+name|gtk_menu_item_new_with_mnemonic
 argument_list|(
 name|label
 argument_list|)
@@ -366,7 +366,7 @@ name|GtkWidget
 modifier|*
 name|item
 init|=
-name|gtk_image_menu_item_new_with_label
+name|gtk_image_menu_item_new_with_mnemonic
 argument_list|(
 name|label
 argument_list|)
@@ -437,7 +437,7 @@ name|append_active_item
 argument_list|(
 name|parent
 argument_list|,
-name|gtk_check_menu_item_new_with_label
+name|gtk_check_menu_item_new_with_mnemonic
 argument_list|(
 name|label
 argument_list|)
@@ -480,7 +480,7 @@ name|append_active_item
 argument_list|(
 name|parent
 argument_list|,
-name|gtk_radio_menu_item_new_with_label
+name|gtk_radio_menu_item_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
@@ -591,7 +591,7 @@ name|append_item
 argument_list|(
 name|parent
 argument_list|,
-name|gtk_menu_item_new_with_label
+name|gtk_menu_item_new_with_mnemonic
 argument_list|(
 name|label
 argument_list|)
@@ -639,7 +639,7 @@ name|GtkWidget
 modifier|*
 name|item
 init|=
-name|gtk_menu_item_new_with_label
+name|gtk_menu_item_new_with_mnemonic
 argument_list|(
 name|label
 argument_list|)

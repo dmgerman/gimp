@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2000 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2002 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -570,12 +570,9 @@ name|data
 operator|->
 name|apply
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"Apply"
-argument_list|)
+name|GTK_STOCK_APPLY
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -830,14 +827,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|default_dialog_set_ok_sensitivity (DefaultDialog_t * dialog,gint sensitive)
+DECL|function|default_dialog_set_ok_sensitivity (DefaultDialog_t * dialog,gboolean sensitive)
 name|default_dialog_set_ok_sensitivity
 parameter_list|(
 name|DefaultDialog_t
 modifier|*
 name|dialog
 parameter_list|,
-name|gint
+name|gboolean
 name|sensitive
 parameter_list|)
 block|{
@@ -896,7 +893,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|10
+literal|5
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

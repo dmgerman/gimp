@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-1999 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2002 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -49,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"imap_popup.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"imap_stock.h"
 end_include
 
 begin_include
@@ -404,14 +410,11 @@ operator|=
 name|gtk_menu_new
 argument_list|()
 expr_stmt|;
-name|make_item_with_label
+name|make_item_with_image
 argument_list|(
 name|popup_menu
 argument_list|,
-name|_
-argument_list|(
-literal|"Map Info..."
-argument_list|)
+name|IMAP_STOCK_MAP_INFO
 argument_list|,
 name|menu_command
 argument_list|,
@@ -565,14 +568,11 @@ name|_popup
 operator|.
 name|zoom_in
 operator|=
-name|make_item_with_label
+name|make_item_with_image
 argument_list|(
 name|sub_menu
 argument_list|,
-name|_
-argument_list|(
-literal|"In"
-argument_list|)
+name|GTK_STOCK_ZOOM_IN
 argument_list|,
 name|menu_command
 argument_list|,
@@ -586,14 +586,11 @@ name|_popup
 operator|.
 name|zoom_out
 operator|=
-name|make_item_with_label
+name|make_item_with_image
 argument_list|(
 name|sub_menu
 argument_list|,
-name|_
-argument_list|(
-literal|"Out"
-argument_list|)
+name|GTK_STOCK_ZOOM_OUT
 argument_list|,
 name|menu_command
 argument_list|,
@@ -666,14 +663,11 @@ argument_list|)
 expr_stmt|;
 name|paste
 operator|=
-name|make_item_with_label
+name|make_item_with_image
 argument_list|(
 name|popup_menu
 argument_list|,
-name|_
-argument_list|(
-literal|"Paste"
-argument_list|)
+name|GTK_STOCK_PASTE
 argument_list|,
 name|menu_command
 argument_list|,
