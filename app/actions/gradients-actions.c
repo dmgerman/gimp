@@ -120,7 +120,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Edit gradient"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -142,7 +145,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"New gradient"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -164,7 +170,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Duplicate gradient"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -186,7 +195,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Save gradient as POV-Ray"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -208,7 +220,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Delete gradient"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -230,7 +245,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Refresh gradients"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(

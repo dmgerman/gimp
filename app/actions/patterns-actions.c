@@ -116,7 +116,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Edit Pattern"
+literal|"Edit pattern"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -141,7 +141,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"New Pattern"
+literal|"New pattern"
 argument_list|)
 block|,
 name|G_CALLBACK
