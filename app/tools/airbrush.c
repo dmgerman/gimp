@@ -883,10 +883,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"killing stray timer, please report to lewing@gimp.org"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_timeout_remove

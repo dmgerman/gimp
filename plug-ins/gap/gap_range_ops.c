@@ -1548,7 +1548,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"Number ofColors"
+literal|"Number of Colors"
 argument_list|)
 expr_stmt|;
 name|argv

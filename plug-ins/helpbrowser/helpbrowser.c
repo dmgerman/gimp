@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"queue.h"
 end_include
 
@@ -121,7 +127,7 @@ value|"help"
 end_define
 
 begin_enum
-DECL|enum|__anon291aeede0103
+DECL|enum|__anon2afb53780103
 enum|enum
 block|{
 DECL|enumerator|CONTENTS
@@ -137,7 +143,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon291aeede0203
+DECL|enum|__anon2afb53780203
 enum|enum
 block|{
 DECL|enumerator|URL_UNKNOWN
@@ -169,7 +175,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291aeede0308
+DECL|struct|__anon2afb53780308
 block|{
 DECL|member|index
 name|gint
@@ -209,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291aeede0408
+DECL|struct|__anon2afb53780408
 block|{
 DECL|member|title
 name|gchar
@@ -242,6 +248,8 @@ name|char
 modifier|*
 name|doc_not_found_format_string
 init|=
+name|_
+argument_list|(
 literal|"<html><head><title>Document not found</title></head>"
 literal|"<body bgcolor=\"#ffffff\">"
 literal|"<center>"
@@ -251,11 +259,12 @@ literal|"<h3>Couldn't find document</h3>"
 literal|"<tt>%s</tt>"
 literal|"</center>"
 literal|"<p>"
-literal|"<small>This either means that the help for this topic has not been written yet "
-literal|"or that something is wrong with your installation. Please check carefully "
-literal|"before you report this as a bug.</small>"
+literal|"<small>This either means that the help for this topic has not been written "
+literal|"yet or that something is wrong with your installation. "
+literal|"Please check carefully before you report this as a bug.</small>"
 literal|"</body>"
 literal|"</html>"
+argument_list|)
 decl_stmt|;
 end_decl_stmt
 
@@ -266,6 +275,8 @@ name|char
 modifier|*
 name|dir_not_found_format_string
 init|=
+name|_
+argument_list|(
 literal|"<html><head><title>Directory not found</title></head>"
 literal|"<body bgcolor=\"#ffffff\">"
 literal|"<center>"
@@ -277,11 +288,12 @@ literal|"<h3>while trying to access</h3>"
 literal|"<tt>%s</tt>"
 literal|"</center>"
 literal|"<p>"
-literal|"<small>This either means that the help for this topic has not been written yet "
-literal|"or that something is wrong with your installation. Please check carefully "
-literal|"before you report this as a bug.</small>"
+literal|"<small>This either means that the help for this topic has not been written "
+literal|"yet or that something is wrong with your installation. "
+literal|"Please check carefully before you report this as a bug.</small>"
 literal|"</body>"
 literal|"</html>"
+argument_list|)
 decl_stmt|;
 end_decl_stmt
 
@@ -311,7 +323,10 @@ block|{
 block|{
 name|CONTENTS
 block|,
+name|N_
+argument_list|(
 literal|"Contents"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -325,7 +340,10 @@ block|,
 block|{
 name|INDEX
 block|,
+name|N_
+argument_list|(
 literal|"Index"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -339,7 +357,7 @@ block|,
 block|{
 name|HELP
 block|,
-literal|"Help"
+name|NULL
 block|,
 name|NULL
 block|,
@@ -1492,7 +1510,10 @@ condition|)
 name|title
 operator|=
 operator|(
+name|_
+argument_list|(
 literal|"<Untitled>"
+argument_list|)
 operator|)
 expr_stmt|;
 if|if
@@ -3023,8 +3044,11 @@ condition|)
 block|{
 name|gimp_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIMP Help Browser Error.\n\n"
 literal|"Couldn't find my root html directory."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3143,7 +3167,10 @@ argument_list|(
 name|window
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"GIMP Help Browser"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|vbox
@@ -3227,7 +3254,10 @@ name|pixmap_button_new
 argument_list|(
 name|back_xpm
 argument_list|,
+name|_
+argument_list|(
 literal|"Back"
+argument_list|)
 argument_list|,
 name|window
 argument_list|)
@@ -3280,7 +3310,10 @@ name|pixmap_button_new
 argument_list|(
 name|forward_xpm
 argument_list|,
+name|_
+argument_list|(
 literal|"Forward"
+argument_list|)
 argument_list|,
 name|window
 argument_list|)
@@ -3357,7 +3390,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Close"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_button_set_relief
@@ -3600,12 +3636,15 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|gettext
+argument_list|(
 name|pages
 index|[
 name|i
 index|]
 operator|.
 name|label
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -3710,9 +3749,16 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
+name|title
+operator|=
+name|drag_source
+operator|=
+name|NULL
+expr_stmt|;
+comment|/* to please the compiler */
 break|break;
 block|}
-comment|/*  connect to the button_press signal to make notebook switching working */
+comment|/*  connect to the button_press signal to make notebook switching work */
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -4682,9 +4728,16 @@ name|gimp_install_procedure
 argument_list|(
 name|GIMP_HELP_EXT_NAME
 argument_list|,
-literal|"Browse the GIMP help pages."
+name|_
+argument_list|(
+literal|"Browse the GIMP help pages"
+argument_list|)
 argument_list|,
-literal|""
+name|_
+argument_list|(
+literal|"A small and simple HTML browser optimzed for "
+literal|"browsing the GIMP help pages."
+argument_list|)
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>, "
 literal|"Michael Natterer<mitschel@cs.tu-berlin.de>"
@@ -4880,8 +4933,23 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
+name|path
+operator|=
+name|NULL
+expr_stmt|;
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
 break|break;
 block|}
+if|if
+condition|(
+name|status
+operator|==
+name|STATUS_SUCCESS
+condition|)
+block|{
 name|g_strdelimit
 argument_list|(
 name|path
@@ -4891,13 +4959,6 @@ argument_list|,
 name|G_DIR_SEPARATOR
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
-condition|)
-block|{
 if|if
 condition|(
 operator|!
@@ -4945,12 +5006,20 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|status
 expr_stmt|;
 block|}
 else|else
-name|g_assert_not_reached
-argument_list|()
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|STATUS_CALLING_ERROR
 expr_stmt|;
 block|}
 end_function

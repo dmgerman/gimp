@@ -2004,7 +2004,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"View image historgam"
+literal|"View image histogram"
 argument_list|)
 block|,
 literal|"tools/histogram.html"

@@ -137,7 +137,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|enum|__anon2c768de40103
+DECL|enum|__anon2992cca20103
 typedef|typedef
 enum|enum
 block|{
@@ -283,7 +283,7 @@ comment|/* one of these objects is kept per-module */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c768de40208
+DECL|struct|__anon2992cca20208
 typedef|typedef
 struct|struct
 block|{
@@ -400,7 +400,7 @@ value|7
 end_define
 
 begin_typedef
-DECL|struct|__anon2c768de40308
+DECL|struct|__anon2992cca20308
 typedef|typedef
 struct|struct
 block|{
@@ -1676,7 +1676,7 @@ comment|/* module_info object glue */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c768de40408
+DECL|struct|__anon2992cca20408
 typedef|typedef
 struct|struct
 block|{
@@ -1691,7 +1691,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2c768de40503
+DECL|enum|__anon2992cca20503
 enum|enum
 block|{
 DECL|enumerator|MODIFIED
@@ -2655,10 +2655,7 @@ name|last_module_error
 operator|=
 name|g_strdup
 argument_list|(
-name|_
-argument_list|(
 literal|"missing module_init() symbol"
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2667,10 +2664,7 @@ name|verbose
 condition|)
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"%s: module_init() symbol not found"
-argument_list|)
 argument_list|,
 name|mod
 operator|->
@@ -4537,7 +4531,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c768de40608
+DECL|struct|__anon2992cca20608
 typedef|typedef
 struct|struct
 block|{

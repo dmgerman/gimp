@@ -1223,7 +1223,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error: default resolution must not be zero."
+literal|"Error: Default resolution must not be zero."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -11582,7 +11582,7 @@ name|page_index
 operator|++
 expr_stmt|;
 block|{
-DECL|struct|__anon28c44f180108
+DECL|struct|__anon2ab424090108
 specifier|static
 specifier|const
 struct|struct
@@ -11807,7 +11807,7 @@ block|}
 block|}
 comment|/* Directories /<paths> */
 block|{
-DECL|struct|__anon28c44f180208
+DECL|struct|__anon2ab424090208
 specifier|static
 specifier|const
 struct|struct

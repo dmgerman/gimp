@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbdf52b0108
+DECL|struct|__anon2c881e580108
 block|{
 DECL|member|angle
 name|gint
@@ -97,7 +97,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbdf52b0208
+DECL|struct|__anon2c881e580208
 block|{
 DECL|member|ID
 name|gint32
@@ -496,12 +496,12 @@ literal|"plug_in_layer_rot180"
 argument_list|,
 name|_
 argument_list|(
-literal|"Rotates the given layer 180 degrees clockwise."
+literal|"Rotates the given layer 180 degrees."
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Rotates the given layer 180 degrees clockwise."
+literal|"Rotates the given layer 180 degrees."
 argument_list|)
 argument_list|,
 name|PLUG_IN_AUTHOR
@@ -610,12 +610,12 @@ literal|"plug_in_image_rot180"
 argument_list|,
 name|_
 argument_list|(
-literal|"Rotates the given image 180 degrees clockwise."
+literal|"Rotates the given image 180 degrees."
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Rotates the given image 180 degrees clockwise."
+literal|"Rotates the given image 180 degrees."
 argument_list|)
 argument_list|,
 name|PLUG_IN_AUTHOR

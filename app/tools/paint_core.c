@@ -8910,10 +8910,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"set_undo_tiles: undo_tiles is null"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

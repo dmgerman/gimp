@@ -58,7 +58,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon2c1aee1d0103
+DECL|enum|__anon288a73460103
 enum|enum
 block|{
 DECL|enumerator|UNIT_CHANGED
@@ -1570,10 +1570,7 @@ literal|0
 case|:
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"unit-menu-format string ended within %%-sequence"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1707,11 +1704,7 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
-literal|"unit-menu-format contains unknown "
-literal|"format sequence '%%%c'"
-argument_list|)
+literal|"unit-menu-format contains unknown format sequence '%%%c'"
 argument_list|,
 operator|*
 name|format

@@ -1858,11 +1858,8 @@ else|else
 block|{
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"devices_rc_update called multiple times "
 literal|"for not present device\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

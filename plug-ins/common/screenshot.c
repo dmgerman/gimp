@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Revision history  *  (98/02/18)  v0.1   first development release   *  (98/02/19)  v0.2   small bugfix   *  (98/03/09)  v0.3   another one  *  (98/03/13)  v0.4   cosmetic changes to the dialog  *  (98/04/02)  v0.5   it works non-interactively now and registers  *                     itself correctly as extension  *  (98/04/18)  v0.6   cosmetic change to the dialog  *  (98/05/28)  v0.7   use g_message for error output  *  (98/06/04)  v0.8   added delay-time for root window shot  *  (98/06/06)  v0.9   fixed a stupid bug in the dialog  *  (99/08/12)  v0.9.1 somebody changed the dialog;  *                     unset the image name and set the resolution  *  (99/09/01)  v0.9.2 try to fix a bug   */
+comment|/* Revision history  *  (98/02/18)  v0.1   first development release   *  (98/02/19)  v0.2   small bugfix   *  (98/03/09)  v0.3   another one  *  (98/03/13)  v0.4   cosmetic changes to the dialog  *  (98/04/02)  v0.5   it works non-interactively now and registers  *                     itself correctly as extension  *  (98/04/18)  v0.6   cosmetic change to the dialog  *  (98/05/28)  v0.7   use g_message for error output  *  (98/06/04)  v0.8   added delay-time for root window shot  *  (98/06/06)  v0.9   fixed a stupid bug in the dialog  *  (99/08/12)  v0.9.1 somebody changed the dialog;  *                     unset the image name and set the resolution  *  (99/09/01)  v0.9.2 tried to fix a bug   */
 end_comment
 
 begin_include
@@ -64,6 +64,12 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/* Defines */
 end_comment
@@ -74,62 +80,6 @@ define|#
 directive|define
 name|PLUG_IN_NAME
 value|"extension_screenshot"
-end_define
-
-begin_define
-DECL|macro|PLUG_IN_PRINT_NAME
-define|#
-directive|define
-name|PLUG_IN_PRINT_NAME
-value|"Screen Shot"
-end_define
-
-begin_define
-DECL|macro|PLUG_IN_VERSION
-define|#
-directive|define
-name|PLUG_IN_VERSION
-value|"v0.9.2 (99/09/01)"
-end_define
-
-begin_define
-DECL|macro|PLUG_IN_MENU_PATH
-define|#
-directive|define
-name|PLUG_IN_MENU_PATH
-value|"<Toolbox>/File/Acquire/Screen Shot..."
-end_define
-
-begin_define
-DECL|macro|PLUG_IN_AUTHOR
-define|#
-directive|define
-name|PLUG_IN_AUTHOR
-value|"Sven Neumann (neumanns@uni-duesseldorf.de)"
-end_define
-
-begin_define
-DECL|macro|PLUG_IN_COPYRIGHT
-define|#
-directive|define
-name|PLUG_IN_COPYRIGHT
-value|"Sven Neumann"
-end_define
-
-begin_define
-DECL|macro|PLUG_IN_DESCRIBTION
-define|#
-directive|define
-name|PLUG_IN_DESCRIBTION
-value|"Create a screenshot of a single window or the whole screen"
-end_define
-
-begin_define
-DECL|macro|PLUG_IN_HELP
-define|#
-directive|define
-name|PLUG_IN_HELP
-value|"This extension serves as a simple frontend to the X-window utility xwd and the xwd-file-plug-in. After specifying some options, xwd is called, the user selects a window, and the resulting image is loaded into the gimp. Alternatively the whole screen can be grabbed. When called non-interactively it may grab the root window or use the window-id passed as a parameter."
 end_define
 
 begin_define
@@ -184,7 +134,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon2bceb9450108
+DECL|struct|__anon2892f4eb0108
 typedef|typedef
 struct|struct
 block|{
@@ -212,7 +162,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bceb9450208
+DECL|struct|__anon2892f4eb0208
 typedef|typedef
 struct|struct
 block|{
@@ -517,17 +467,32 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|PLUG_IN_DESCRIBTION
+name|_
+argument_list|(
+literal|"Creates a screenshot of a single window or the whole screen"
+argument_list|)
 argument_list|,
-name|PLUG_IN_HELP
+name|_
+argument_list|(
+literal|"This extension serves as a simple frontend to the X-window "
+literal|"utility xwd and the xwd-file-plug-in. After specifying some "
+literal|"options, xwd is called, the user selects a window, and the "
+literal|"resulting image is loaded into the gimp. Alternatively the "
+literal|"whole screen can be grabbed. When called non-interactively "
+literal|"it may grab the root window or use the window-id passed as "
+literal|"a parameter."
+argument_list|)
 argument_list|,
-name|PLUG_IN_AUTHOR
+literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
-name|PLUG_IN_COPYRIGHT
+literal|"1998, 1999 Sven Neumann"
 argument_list|,
-name|PLUG_IN_VERSION
+literal|"v0.9.2 (99/09/01)"
 argument_list|,
-name|PLUG_IN_MENU_PATH
+name|_
+argument_list|(
+literal|"<Toolbox>/File/Acquire/Screen Shot..."
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1358,6 +1323,10 @@ name|hbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|hbbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|label
 decl_stmt|;
 name|GSList
@@ -1483,7 +1452,10 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|PLUG_IN_PRINT_NAME
+name|_
+argument_list|(
+literal|"Screen Shot"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -1514,11 +1486,85 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  Action area  */
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_box_set_homogeneous
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|hbbox
+operator|=
+name|gtk_hbutton_box_new
+argument_list|()
+expr_stmt|;
+name|gtk_button_box_set_spacing
+argument_list|(
+name|GTK_BUTTON_BOX
+argument_list|(
+name|hbbox
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_end
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+name|hbbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbbox
+argument_list|)
+expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Grab"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1549,19 +1595,14 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
+name|hbbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -1580,7 +1621,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1614,19 +1658,14 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
+name|hbbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -1827,7 +1866,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Grab a single window"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1888,7 +1930,10 @@ name|decor_button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Include decorations"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -2127,7 +2172,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Grab the whole screen"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2201,7 +2249,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"after"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2291,7 +2342,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"seconds delay"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

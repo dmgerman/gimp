@@ -27,12 +27,6 @@ directive|include
 file|"gimpenv.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpintl.h"
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -240,10 +234,7 @@ directive|ifndef
 name|G_OS_WIN32
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"warning: no home directory."
-argument_list|)
 argument_list|)
 expr_stmt|;
 endif|#
