@@ -60,7 +60,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28ae80e70108
+DECL|struct|__anon2a20440a0108
 typedef|typedef
 struct|struct
 block|{
@@ -80,7 +80,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28ae80e70208
+DECL|struct|__anon2a20440a0208
 typedef|typedef
 struct|struct
 block|{
@@ -2015,6 +2015,26 @@ break|break;
 case|case
 name|GIMP_PDB_STRING
 case|:
+if|if
+condition|(
+name|item
+operator|==
+name|Py_None
+condition|)
+block|{
+name|ret
+index|[
+name|i
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
+name|NULL
+expr_stmt|;
+break|break;
+block|}
 name|check
 argument_list|(
 operator|(
@@ -2484,6 +2504,22 @@ argument_list|,
 name|j
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|x
+operator|==
+name|Py_None
+condition|)
+block|{
+name|sa
+index|[
+name|j
+index|]
+operator|=
+name|NULL
+expr_stmt|;
+continue|continue;
+block|}
 name|arraycheck
 argument_list|(
 operator|(
