@@ -918,7 +918,7 @@ name|gtk_hbox_new
 argument_list|(
 name|TRUE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

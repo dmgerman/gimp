@@ -974,7 +974,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2bde5a520108
+DECL|struct|__anon27d300910108
 block|{
 DECL|member|label
 specifier|const
@@ -1963,7 +1963,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

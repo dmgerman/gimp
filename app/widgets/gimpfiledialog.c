@@ -679,7 +679,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_file_chooser_set_extra_widget
@@ -980,6 +980,7 @@ operator|->
 name|extensions_list
 condition|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1180,12 +1181,11 @@ name|uri
 argument_list|)
 condition|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|last_dot
 init|=
-name|last_dot
-operator|=
 name|strrchr
 argument_list|(
 name|uri

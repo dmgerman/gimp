@@ -3398,7 +3398,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5545,7 +5545,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -6983,7 +6983,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon296639ce0108
+DECL|struct|__anon2c016c470108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9427,7 +9427,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon296639ce0208
+DECL|struct|__anon2c016c470208
 block|{
 DECL|member|label
 specifier|const
@@ -9584,7 +9584,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon296639ce0308
+DECL|struct|__anon2c016c470308
 block|{
 DECL|member|tree_label
 specifier|const
