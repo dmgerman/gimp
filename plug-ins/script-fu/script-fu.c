@@ -853,10 +853,6 @@ comment|/*  Acknowledge that the extension is properly initialized  */
 name|gimp_extension_ack
 argument_list|()
 expr_stmt|;
-comment|/* We need wakeups (on Win32) when getting callbacks from the GIMP */
-name|gimp_request_wakeups
-argument_list|()
-expr_stmt|;
 while|while
 condition|(
 literal|1

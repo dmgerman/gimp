@@ -877,12 +877,6 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-name|void
-name|gimp_request_wakeups
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
 name|gchar
 modifier|*
 name|gimp_get_progname

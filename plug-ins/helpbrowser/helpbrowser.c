@@ -135,7 +135,7 @@ value|"help"
 end_define
 
 begin_enum
-DECL|enum|__anon2ab19b770103
+DECL|enum|__anon29c3ebea0103
 enum|enum
 block|{
 DECL|enumerator|CONTENTS
@@ -151,7 +151,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2ab19b770203
+DECL|enum|__anon29c3ebea0203
 enum|enum
 block|{
 DECL|enumerator|URL_UNKNOWN
@@ -183,7 +183,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab19b770308
+DECL|struct|__anon29c3ebea0308
 block|{
 DECL|member|index
 name|gint
@@ -223,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab19b770408
+DECL|struct|__anon29c3ebea0408
 block|{
 DECL|member|title
 name|gchar
@@ -4749,10 +4749,6 @@ name|input_callback
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-comment|/* This needed on Win32 */
-name|gimp_request_wakeups
-argument_list|()
 expr_stmt|;
 name|temp_proc_installed
 operator|=

@@ -4677,10 +4677,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* This needed on Win32 */
-name|gimp_request_wakeups
-argument_list|()
-expr_stmt|;
 name|first_time
 operator|=
 name|FALSE

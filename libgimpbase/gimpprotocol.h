@@ -37,7 +37,7 @@ directive|define
 name|GP_VERSION
 value|0x0004
 enum|enum
-DECL|enum|__anon287f614b0103
+DECL|enum|__anon2bd42e890103
 block|{
 DECL|enumerator|GP_QUIT
 name|GP_QUIT
@@ -74,9 +74,6 @@ name|GP_PROC_UNINSTALL
 block|,
 DECL|enumerator|GP_EXTENSION_ACK
 name|GP_EXTENSION_ACK
-block|,
-DECL|enumerator|GP_REQUEST_WAKEUPS
-name|GP_REQUEST_WAKEUPS
 block|}
 enum|;
 DECL|typedef|GPConfig
@@ -247,7 +244,7 @@ name|guint32
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon287f614b020a
+DECL|union|__anon2bd42e89020a
 block|{
 DECL|member|d_int32
 name|gint32
@@ -297,7 +294,7 @@ modifier|*
 name|d_stringarray
 decl_stmt|;
 struct|struct
-DECL|struct|__anon287f614b0308
+DECL|struct|__anon2bd42e890308
 block|{
 DECL|member|red
 name|guint8
@@ -316,7 +313,7 @@ block|}
 name|d_color
 struct|;
 struct|struct
-DECL|struct|__anon287f614b0408
+DECL|struct|__anon2bd42e890408
 block|{
 DECL|member|x
 name|gint32
@@ -371,7 +368,7 @@ name|gint32
 name|d_path
 decl_stmt|;
 struct|struct
-DECL|struct|__anon287f614b0508
+DECL|struct|__anon2bd42e890508
 block|{
 DECL|member|name
 name|gchar
@@ -675,14 +672,6 @@ parameter_list|)
 function_decl|;
 name|gboolean
 name|gp_extension_ack_write
-parameter_list|(
-name|GIOChannel
-modifier|*
-name|channel
-parameter_list|)
-function_decl|;
-name|gboolean
-name|gp_request_wakeups_write
 parameter_list|(
 name|GIOChannel
 modifier|*
