@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2784e57a0103
+DECL|enum|__anon2b5604bf0103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -127,6 +127,10 @@ parameter_list|(
 name|GimpColorDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GParamSpec
+modifier|*
+name|pspec
 parameter_list|,
 name|GimpColorDisplayStack
 modifier|*
@@ -776,7 +780,7 @@ name|g_signal_connect_object
 argument_list|(
 name|display
 argument_list|,
-literal|"enabled_changed"
+literal|"notify::enabled"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1265,12 +1269,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_display_stack_display_enabled (GimpColorDisplay * display,GimpColorDisplayStack * stack)
+DECL|function|gimp_color_display_stack_display_enabled (GimpColorDisplay * display,GParamSpec * pspec,GimpColorDisplayStack * stack)
 name|gimp_color_display_stack_display_enabled
 parameter_list|(
 name|GimpColorDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GParamSpec
+modifier|*
+name|pspec
 parameter_list|,
 name|GimpColorDisplayStack
 modifier|*

@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2943cdf30103
+DECL|enum|__anon2c0bf3500103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -73,7 +73,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2943cdf30203
+DECL|enum|__anon2c0bf3500203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -312,6 +312,10 @@ parameter_list|(
 name|GimpColorDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GParamSpec
+modifier|*
+name|pspec
 parameter_list|,
 name|GimpColorDisplayEditor
 modifier|*
@@ -1779,7 +1783,7 @@ name|g_signal_connect_object
 argument_list|(
 name|display
 argument_list|,
-literal|"enabled_changed"
+literal|"notify::enabled"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2611,7 +2615,7 @@ name|g_signal_connect_object
 argument_list|(
 name|display
 argument_list|,
-literal|"enabled_changed"
+literal|"notify::enabled"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3041,12 +3045,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_display_editor_enabled (GimpColorDisplay * display,GimpColorDisplayEditor * editor)
+DECL|function|gimp_color_display_editor_enabled (GimpColorDisplay * display,GParamSpec * pspec,GimpColorDisplayEditor * editor)
 name|gimp_color_display_editor_enabled
 parameter_list|(
 name|GimpColorDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GParamSpec
+modifier|*
+name|pspec
 parameter_list|,
 name|GimpColorDisplayEditor
 modifier|*
