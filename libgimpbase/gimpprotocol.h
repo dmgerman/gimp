@@ -24,9 +24,9 @@ DECL|macro|GP_VERSION
 define|#
 directive|define
 name|GP_VERSION
-value|0x000D
+value|0x000E
 name|enum
-DECL|enum|__anon2bc377b50103
+DECL|enum|__anon294b78e30103
 type|{
 DECL|enumerator|GP_QUIT
 name|GP_QUIT
@@ -277,7 +277,7 @@ name|guint32
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2bc377b5020a
+DECL|union|__anon294b78e3020a
 block|{
 DECL|member|d_int32
 name|gint32
@@ -331,7 +331,7 @@ name|GimpRGB
 name|d_color
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bc377b50308
+DECL|struct|__anon294b78e30308
 block|{
 DECL|member|x
 name|gint32
@@ -386,7 +386,7 @@ name|gint32
 name|d_path
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bc377b50408
+DECL|struct|__anon294b78e30408
 block|{
 DECL|member|name
 name|gchar
