@@ -182,6 +182,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"fileopsP.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"menus.h"
 end_include
 
@@ -3327,7 +3333,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|TempBuf
 modifier|*
 DECL|function|make_thumb_tempbuf (GimpImage * gimage)
@@ -3842,7 +3847,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|gboolean
 DECL|function|file_save_thumbnail (GimpImage * gimage,const char * full_source_filename,TempBuf * tempbuf)
 name|file_save_thumbnail
@@ -4919,7 +4923,6 @@ comment|/* The readXVThumb function source may be re-used under    the XFree86-s
 end_comment
 
 begin_function
-specifier|static
 name|guchar
 modifier|*
 DECL|function|readXVThumb (const gchar * fnam,gint * w,gint * h,gchar ** imginfo)

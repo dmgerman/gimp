@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__FILE_IO_H__
+name|__FILE_OPS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__FILE_IO_H__
+DECL|macro|__FILE_OPS_H__
 define|#
 directive|define
-name|__FILE_IO_H__
+name|__FILE_OPS_H__
 end_define
 
 begin_include
@@ -232,7 +232,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* FILE_IO_H */
+comment|/* FILE_OPS_H */
 end_comment
 
 end_unit

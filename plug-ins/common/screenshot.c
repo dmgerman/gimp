@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*    *  ScreenShot plug-in v0.9.2  *  Sven Neumann, neumanns@uni-duesseldorf.de    *  1999/09/01  *  *  Any suggestions, bug-reports or patches are very welcome.  *   *  This plug-in uses the X-utility xwd to grab an image from the screen  *  and the xwd-plug-in created by Peter Kirchgessner (pkirchg@aol.com)  *  to load this image into the gimp.  *  Hence its nothing but a simple frontend to those utilities.  */
+comment|/*    *  ScreenShot plug-in v0.9.3  *  Sven Neumann, neumanns@uni-duesseldorf.de    *  1999/09/01  *  *  Any suggestions, bug-reports or patches are very welcome.  *   *  This plug-in uses the X-utility xwd to grab an image from the screen  *  and the xwd-plug-in created by Peter Kirchgessner (pkirchg@aol.com)  *  to load this image into the gimp.  *  Hence its nothing but a simple frontend to those utilities.  */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Revision history  *  (98/02/18)  v0.1   first development release   *  (98/02/19)  v0.2   small bugfix   *  (98/03/09)  v0.3   another one  *  (98/03/13)  v0.4   cosmetic changes to the dialog  *  (98/04/02)  v0.5   it works non-interactively now and registers  *                     itself correctly as extension  *  (98/04/18)  v0.6   cosmetic change to the dialog  *  (98/05/28)  v0.7   use g_message for error output  *  (98/06/04)  v0.8   added delay-time for root window shot  *  (98/06/06)  v0.9   fixed a stupid bug in the dialog  *  (99/08/12)  v0.9.1 somebody changed the dialog;  *                     unset the image name and set the resolution  *  (99/09/01)  v0.9.2 tried to fix a bug   */
+comment|/* Revision history  *  (98/02/18)  v0.1   first development release   *  (98/02/19)  v0.2   small bugfix   *  (98/03/09)  v0.3   another one  *  (98/03/13)  v0.4   cosmetic changes to the dialog  *  (98/04/02)  v0.5   it works non-interactively now and registers  *                     itself correctly as extension  *  (98/04/18)  v0.6   cosmetic change to the dialog  *  (98/05/28)  v0.7   use g_message for error output  *  (98/06/04)  v0.8   added delay-time for root window shot  *  (98/06/06)  v0.9   fixed a stupid bug in the dialog  *  (99/08/12)  v0.9.1 somebody changed the dialog;  *                     unset the image name and set the resolution  *  (99/09/01)  v0.9.2 tried to fix a bug   *  (99/12/14)  v0.9.3 another try   */
 end_comment
 
 begin_include
@@ -134,7 +134,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon29380bb80108
+DECL|struct|__anon2922aa970108
 typedef|typedef
 struct|struct
 block|{
@@ -162,7 +162,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29380bb80208
+DECL|struct|__anon2922aa970208
 typedef|typedef
 struct|struct
 block|{
@@ -487,7 +487,7 @@ literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"1998, 1999"
 argument_list|,
-literal|"v0.9.2 (99/09/01)"
+literal|"v0.9.3 (99/12/14)"
 argument_list|,
 name|N_
 argument_list|(
@@ -1170,6 +1170,20 @@ argument_list|,
 name|PARAM_END
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|params
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|STATUS_SUCCESS
+condition|)
+block|{
 name|image_ID
 operator|=
 name|params
@@ -1181,6 +1195,7 @@ name|data
 operator|.
 name|d_image
 expr_stmt|;
+block|}
 name|gimp_destroy_params
 argument_list|(
 name|params
@@ -1199,6 +1214,14 @@ argument_list|(
 name|tmpname
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|image_ID
+operator|!=
+operator|-
+literal|1
+condition|)
+block|{
 comment|/* figure out the monitor resolution and set the image to it */
 name|params
 operator|=
@@ -1284,6 +1307,7 @@ argument_list|,
 literal|""
 argument_list|)
 expr_stmt|;
+block|}
 return|return;
 block|}
 end_function
