@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<sys/types.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -9332,9 +9338,7 @@ name|INDEXED
 operator|)
 argument_list|)
 expr_stmt|;
-warning|#
-directive|warning
-warning|FIXME (set_menu_sensitivity)
+comment|/* #warning FIXME (set_menu_sensitivity) */
 if|#
 directive|if
 literal|0

@@ -361,9 +361,7 @@ operator|!
 name|gdisp
 condition|)
 block|{
-warning|#
-directive|warning
-warning|FIXME   tool_type = RECT_SELECT;
+comment|/* #warning FIXME   tool_type = RECT_SELECT; */
 block|}
 comment|/*  Force the emission of the "tool_changed" signal    */
 name|tool_info
@@ -659,11 +657,9 @@ block|}
 block|}
 end_function
 
-begin_warning
-warning|#
-directive|warning
-warning|bogosity alert
-end_warning
+begin_comment
+comment|/* #warning bogosity alert */
+end_comment
 
 begin_if
 if|#

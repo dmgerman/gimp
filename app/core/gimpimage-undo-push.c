@@ -233,7 +233,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278344f60103
+DECL|enum|__anon29da09b40103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -5379,9 +5379,7 @@ name|gpointer
 name|tu_ptr
 parameter_list|)
 block|{
-warning|#
-directive|warning
-warning|very bogus
+comment|/* #warning very bogus */
 if|#
 directive|if
 literal|0
@@ -5542,38 +5540,44 @@ block|}
 block|}
 end_function
 
-begin_warning
-warning|#
-directive|warning
-warning|super bogosity error
-end_warning
+begin_comment
+comment|/* #warning super bogosity error */
+end_comment
 
-begin_if
+begin_function
+specifier|static
+name|gboolean
+DECL|function|undo_pop_paint (GimpImage * gimage,UndoState state,UndoType type,gpointer pu_ptr)
+name|undo_pop_paint
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|UndoState
+name|state
+parameter_list|,
+name|UndoType
+name|type
+parameter_list|,
+name|gpointer
+name|pu_ptr
+parameter_list|)
+block|{
 if|#
 directive|if
 literal|0
-end_if
-
-begin_comment
-unit|static gboolean undo_pop_paint (GimpImage *gimage, 		UndoState  state, 		UndoType   type, 		gpointer   pu_ptr) {   PaintCore *pc;   PaintUndo *pu;   gdouble    tmp;
+block|PaintCore *pc;   PaintUndo *pu;   gdouble    tmp;
 comment|/* Can't have ANY tool selected - maybe a plugin running */
-end_comment
-
-begin_comment
-unit|if (active_tool == NULL)     return TRUE;    pc = (PaintCore *) active_tool->private;   pu = (PaintUndo *) pu_ptr;
+block|if (active_tool == NULL)     return TRUE;    pc = (PaintCore *) active_tool->private;   pu = (PaintUndo *) pu_ptr;
 comment|/*  only pop if the active tool is the tool that pushed this undo  */
-end_comment
-
-begin_comment
-unit|if (pu->tool_ID != active_tool->ID)     return TRUE;
+block|if (pu->tool_ID != active_tool->ID)     return TRUE;
 comment|/*  swap the paint core information  */
-end_comment
-
-begin_endif
-unit|tmp = pc->lastx;   pc->lastx = pu->lastx;   pu->lastx = tmp;    tmp = pc->lasty;   pc->lasty = pu->lasty;   pu->lasty = tmp;    tmp = pc->lastpressure;   pc->lastpressure = pu->lastpressure;   pu->lastpressure = tmp;    tmp = pc->lastxtilt;   pc->lastxtilt = pu->lastxtilt;   pu->lastxtilt = tmp;    tmp = pc->lastytilt;   pc->lastytilt = pu->lastytilt;   pu->lastytilt = tmp;    return TRUE; }
+block|tmp = pc->lastx;   pc->lastx = pu->lastx;   pu->lastx = tmp;    tmp = pc->lasty;   pc->lasty = pu->lasty;   pu->lasty = tmp;    tmp = pc->lastpressure;   pc->lastpressure = pu->lastpressure;   pu->lastpressure = tmp;    tmp = pc->lastxtilt;   pc->lastxtilt = pu->lastxtilt;   pu->lastxtilt = tmp;    tmp = pc->lastytilt;   pc->lastytilt = pu->lastytilt;   pu->lastytilt = tmp;    return TRUE;
 endif|#
 directive|endif
-end_endif
+block|}
+end_function
 
 begin_function
 specifier|static

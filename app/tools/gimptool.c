@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27891b550103
+DECL|enum|__anon2bcc71a80103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -379,11 +379,9 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
-begin_warning
-warning|#
-directive|warning
-warning|FIXME: check what global_tool_ID was used for
-end_warning
+begin_comment
+comment|/* #warning FIXME: check what global_tool_ID was used for */
+end_comment
 
 begin_comment
 comment|/* static gint global_tool_ID = 0; */
@@ -2273,11 +2271,9 @@ argument|path_transform_xy
 argument_list|)
 end_macro
 
-begin_warning
-warning|#
-directive|warning
-warning|obsolete crap
-end_warning
+begin_comment
+comment|/* #warning obsolete crap */
+end_comment
 
 begin_ifdef
 ifdef|#

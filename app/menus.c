@@ -9687,9 +9687,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  reorder<Image>/Image/Colors  */
-warning|#
-directive|warning
-warning|FIXME (reorder<Image>/Image/Colors)
+comment|/*#warning FIXME (reorder<Image>/Image/Colors) */
 if|#
 directive|if
 literal|0

@@ -1154,9 +1154,6 @@ name|value
 operator|.
 name|pdb_color
 operator|=
-operator|(
-name|GimpRGB
-operator|)
 name|va_arg
 argument_list|(
 name|args

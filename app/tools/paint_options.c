@@ -4300,9 +4300,7 @@ modifier|*
 name|options
 parameter_list|)
 block|{
-warning|#
-directive|warning
-warning|(FIXME make incremental_save part of the struct)
+comment|/* #warning (FIXME make incremental_save part of the struct) */
 specifier|static
 name|gboolean
 name|incremental_save

@@ -4215,9 +4215,7 @@ argument_list|,
 name|tool_info
 argument_list|)
 expr_stmt|;
-warning|#
-directive|warning
-warning|FIXME (let the tool manager to this stuff)
+comment|/* #warning FIXME (let the tool manager to this stuff) */
 comment|/*  Paranoia  */
 name|active_tool
 operator|->
