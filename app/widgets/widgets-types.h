@@ -911,6 +911,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpViewRendererBuffer
+typedef|typedef
+name|struct
+name|_GimpViewRendererBuffer
+name|GimpViewRendererBuffer
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpViewRendererDrawable
 typedef|typedef
 name|struct

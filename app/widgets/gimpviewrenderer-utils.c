@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpbuffer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -67,6 +73,12 @@ begin_include
 include|#
 directive|include
 file|"gimpviewrendererbrush.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpviewrendererbuffer.h"
 end_include
 
 begin_include
@@ -138,6 +150,22 @@ block|{
 name|type
 operator|=
 name|GIMP_TYPE_VIEW_RENDERER_BRUSH
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|g_type_is_a
+argument_list|(
+name|viewable_type
+argument_list|,
+name|GIMP_TYPE_BUFFER
+argument_list|)
+condition|)
+block|{
+name|type
+operator|=
+name|GIMP_TYPE_VIEW_RENDERER_BUFFER
 expr_stmt|;
 block|}
 elseif|else
