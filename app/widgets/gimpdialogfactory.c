@@ -131,7 +131,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bce6ee10103
+DECL|enum|__anon291e48320103
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -1425,7 +1425,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dialog_new_internal (GimpDialogFactory * factory,GdkScreen * screen,GimpContext * context,const gchar * identifier,gint preview_size,gboolean raise_if_found)
+DECL|function|gimp_dialog_factory_dialog_new_internal (GimpDialogFactory * factory,GdkScreen * screen,GimpContext * context,const gchar * identifier,gint preview_size,gboolean return_existing,gboolean present)
 name|gimp_dialog_factory_dialog_new_internal
 parameter_list|(
 name|GimpDialogFactory
@@ -1449,7 +1449,10 @@ name|gint
 name|preview_size
 parameter_list|,
 name|gboolean
-name|raise_if_found
+name|return_existing
+parameter_list|,
+name|gboolean
+name|present
 parameter_list|)
 block|{
 name|GimpDialogFactoryEntry
@@ -1530,9 +1533,10 @@ return|return
 name|NULL
 return|;
 block|}
+comment|/*  a singleton dialog is always returned if it already exisits  */
 if|if
 condition|(
-name|raise_if_found
+name|return_existing
 operator|||
 name|entry
 operator|->
@@ -1842,7 +1846,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|raise_if_found
+name|present
 condition|)
 name|gtk_window_present
 argument_list|(
@@ -2026,6 +2030,8 @@ name|identifier
 argument_list|,
 name|preview_size
 argument_list|,
+name|FALSE
+argument_list|,
 name|present
 argument_list|)
 return|;
@@ -2189,6 +2195,8 @@ argument_list|,
 name|preview_size
 argument_list|,
 name|TRUE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_strfreev
@@ -2212,6 +2220,8 @@ argument_list|,
 name|identifiers
 argument_list|,
 name|preview_size
+argument_list|,
+name|TRUE
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2299,6 +2309,8 @@ argument_list|,
 name|identifier
 argument_list|,
 name|preview_size
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)
