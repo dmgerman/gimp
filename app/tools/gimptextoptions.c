@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad7ba0e0103
+DECL|enum|__anon2783b8180103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -789,9 +789,9 @@ literal|2
 argument_list|,
 literal|3
 argument_list|,
-literal|1
-argument_list|,
 literal|2
+argument_list|,
+literal|3
 argument_list|,
 name|GTK_SHRINK
 operator||
@@ -896,7 +896,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|3
+literal|4
 argument_list|,
 name|_
 argument_list|(
@@ -948,7 +948,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|4
+literal|5
 argument_list|,
 name|_
 argument_list|(
@@ -998,7 +998,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|5
+literal|6
 argument_list|,
 name|_
 argument_list|(
