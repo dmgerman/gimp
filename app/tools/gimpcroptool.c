@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be3e9bb0103
+DECL|enum|__anon28ddaa370103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -1354,9 +1354,9 @@ if|if
 condition|(
 name|options
 operator|->
-name|crop_type
+name|crop_mode
 operator|==
-name|GIMP_CROP
+name|GIMP_CROP_MODE_CROP
 condition|)
 name|crop_tool_crop_image
 argument_list|(
@@ -2783,11 +2783,11 @@ switch|switch
 condition|(
 name|options
 operator|->
-name|crop_type
+name|crop_mode
 condition|)
 block|{
 case|case
-name|GIMP_CROP
+name|GIMP_CROP_MODE_CROP
 case|:
 name|g_object_set
 argument_list|(
@@ -2795,14 +2795,14 @@ name|options
 argument_list|,
 literal|"crop-type"
 argument_list|,
-name|GIMP_RESIZE
+name|GIMP_CROP_MODE_RESIZE
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_RESIZE
+name|GIMP_CROP_MODE_RESIZE
 case|:
 name|g_object_set
 argument_list|(
@@ -2810,7 +2810,7 @@ name|options
 argument_list|,
 literal|"crop-type"
 argument_list|,
-name|GIMP_CROP
+name|GIMP_CROP_MODE_CROP
 argument_list|,
 name|NULL
 argument_list|)
@@ -3337,9 +3337,9 @@ name|control
 argument_list|,
 name|options
 operator|->
-name|crop_type
+name|crop_mode
 operator|==
-name|GIMP_CROP
+name|GIMP_CROP_MODE_CROP
 condition|?
 name|GIMP_CROP_TOOL_CURSOR
 else|:

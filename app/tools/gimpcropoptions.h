@@ -120,9 +120,9 @@ DECL|member|allow_enlarge
 name|gboolean
 name|allow_enlarge
 decl_stmt|;
-DECL|member|crop_type
-name|GimpCropType
-name|crop_type
+DECL|member|crop_mode
+name|GimpCropMode
+name|crop_mode
 decl_stmt|;
 block|}
 struct|;

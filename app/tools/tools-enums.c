@@ -114,16 +114,16 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|gimp_crop_type_enum_values
+DECL|variable|gimp_crop_mode_enum_values
 specifier|static
 specifier|const
 name|GEnumValue
-name|gimp_crop_type_enum_values
+name|gimp_crop_mode_enum_values
 index|[]
 init|=
 block|{
 block|{
-name|GIMP_CROP
+name|GIMP_CROP_MODE_CROP
 block|,
 name|N_
 argument_list|(
@@ -134,7 +134,7 @@ literal|"crop"
 block|}
 block|,
 block|{
-name|GIMP_RESIZE
+name|GIMP_CROP_MODE_RESIZE
 block|,
 name|N_
 argument_list|(
@@ -157,8 +157,8 @@ end_decl_stmt
 
 begin_function
 name|GType
-DECL|function|gimp_crop_type_get_type (void)
-name|gimp_crop_type_get_type
+DECL|function|gimp_crop_mode_get_type (void)
+name|gimp_crop_mode_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -178,9 +178,9 @@ name|enum_type
 operator|=
 name|g_enum_register_static
 argument_list|(
-literal|"GimpCropType"
+literal|"GimpCropMode"
 argument_list|,
-name|gimp_crop_type_enum_values
+name|gimp_crop_mode_enum_values
 argument_list|)
 expr_stmt|;
 return|return

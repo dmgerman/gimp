@@ -16,38 +16,6 @@ directive|define
 name|__TOOLS_ENUMS_H__
 end_define
 
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_comment
-unit|This file is parsed by two scripts, enumgen.pl in tools/pdbgen,    and gimp-mkenums. All enums that are not marked with
-comment|/*< pdb-skip>*/
-end_comment
-
-begin_comment
-unit|are exported to libgimp and the PDB. Enums that are    not marked with
-comment|/*< skip>*/
-end_comment
-
-begin_comment
-unit|are registered with the GType system.    If you want the enum to be skipped by both scripts, you have to use
-comment|/*< pdb-skip, skip>*/
-end_comment
-
-begin_comment
-unit|.     All enum values that are marked with
-comment|/*< skip>*/
-end_comment
-
-begin_endif
-unit|are skipped for    both targets.
-endif|#
-directive|endif
-end_endif
-
 begin_comment
 comment|/*  * these enums that are registered with the type system  */
 end_comment
@@ -73,8 +41,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon2b972ae80103
+DECL|enum|__anon2bf680160103
 block|{
 DECL|enumerator|GIMP_COLOR_PICK_MODE_FOREGROUND
 name|GIMP_COLOR_PICK_MODE_FOREGROUND
@@ -90,16 +57,16 @@ typedef|;
 end_typedef
 
 begin_define
-DECL|macro|GIMP_TYPE_CROP_TYPE
+DECL|macro|GIMP_TYPE_CROP_MODE
 define|#
 directive|define
-name|GIMP_TYPE_CROP_TYPE
-value|(gimp_crop_type_get_type ())
+name|GIMP_TYPE_CROP_MODE
+value|(gimp_crop_mode_get_type ())
 end_define
 
 begin_decl_stmt
 name|GType
-name|gimp_crop_type_get_type
+name|gimp_crop_mode_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -110,19 +77,18 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon2b972ae80203
+DECL|enum|__anon2bf680160203
 block|{
-DECL|enumerator|GIMP_CROP
-name|GIMP_CROP
+DECL|enumerator|GIMP_CROP_MODE_CROP
+name|GIMP_CROP_MODE_CROP
 block|,
 comment|/*< desc="Crop">*/
-DECL|enumerator|GIMP_RESIZE
-name|GIMP_RESIZE
+DECL|enumerator|GIMP_CROP_MODE_RESIZE
+name|GIMP_CROP_MODE_RESIZE
 comment|/*< desc="Resize">*/
-DECL|typedef|GimpCropType
+DECL|typedef|GimpCropMode
 block|}
-name|GimpCropType
+name|GimpCropMode
 typedef|;
 end_typedef
 
@@ -147,8 +113,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon2b972ae80303
+DECL|enum|__anon2bf680160303
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -188,8 +153,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon2b972ae80403
+DECL|enum|__anon2bf680160403
 block|{
 DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
 name|GIMP_TRANSFORM_TYPE_LAYER
@@ -229,8 +193,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon2b972ae80503
+DECL|enum|__anon2bf680160503
 block|{
 DECL|enumerator|GIMP_VECTOR_MODE_DESIGN
 name|GIMP_VECTOR_MODE_DESIGN
@@ -271,8 +234,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon2b972ae80603
+DECL|enum|__anon2bf680160603
 block|{
 DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_NONE
 name|GIMP_TRANSFORM_GRID_TYPE_NONE
@@ -298,8 +260,8 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2b972ae80703
+comment|/*< skip>*/
+DECL|enum|__anon2bf680160703
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -345,8 +307,8 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2b972ae80803
+comment|/*< skip>*/
+DECL|enum|__anon2bf680160803
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -369,8 +331,8 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2b972ae80903
+comment|/*< skip>*/
+DECL|enum|__anon2bf680160903
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
@@ -393,8 +355,8 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2b972ae80a03
+comment|/*< skip>*/
+DECL|enum|__anon2bf680160a03
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
