@@ -113,7 +113,7 @@ decl_stmt|;
 name|gchar
 modifier|*
 modifier|*
-name|gradient_names
+name|gradient_list
 init|=
 name|NULL
 decl_stmt|;
@@ -163,7 +163,7 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|gradient_names
+name|gradient_list
 operator|=
 name|g_new
 argument_list|(
@@ -188,7 +188,7 @@ condition|;
 name|i
 operator|++
 control|)
-name|gradient_names
+name|gradient_list
 index|[
 name|i
 index|]
@@ -217,7 +217,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|gradient_names
+name|gradient_list
 return|;
 block|}
 end_function

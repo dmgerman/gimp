@@ -83,6 +83,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpfonts_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpfontselect_pdb.h>
 end_include
 
