@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -25,12 +31,6 @@ begin_include
 include|#
 directive|include
 file|"brush_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"colormaps.h"
 end_include
 
 begin_include
@@ -241,12 +241,6 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
 end_include
 
 begin_include

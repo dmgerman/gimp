@@ -130,12 +130,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimphelp.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -178,12 +172,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimputils.h"
 end_include
 
@@ -191,6 +179,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/parasite.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
@@ -228,7 +222,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd14e00103
+DECL|enum|__anon2b87ac080103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING

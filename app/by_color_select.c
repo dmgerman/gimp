@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gdk/gdkkeysyms.h>
 end_include
 
@@ -25,12 +31,6 @@ begin_include
 include|#
 directive|include
 file|"by_color_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"colormaps.h"
 end_include
 
 begin_include
@@ -102,12 +102,6 @@ end_include
 begin_comment
 comment|/* ick. */
 end_comment
-
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
 
 begin_include
 include|#

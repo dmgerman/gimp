@@ -6,19 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -30,19 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"colormaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"general.h"
 end_include
 
 begin_include
@@ -72,19 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpcolorspace.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_include

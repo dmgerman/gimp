@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"errors.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -102,18 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"channel_pvt.h"
 end_include
 
@@ -135,8 +117,20 @@ directive|include
 file|"lut_funcs.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_enum
-DECL|enum|__anon288c649d0103
+DECL|enum|__anon277c00220103
 enum|enum
 block|{
 DECL|enumerator|REMOVED

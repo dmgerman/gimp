@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -42,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"general.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimage_mask.h"
 end_include
 
@@ -61,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"paint_funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/parasite.h"
 end_include
 
 begin_include
@@ -108,30 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpcolorspace.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimplimits.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tile_manager.h"
 end_include
 
@@ -156,6 +126,30 @@ end_include
 begin_comment
 comment|/* ick ick. */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpcolorspace.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimplimits.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/parasite.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
 
 begin_ifdef
 ifdef|#
@@ -558,7 +552,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon29a2867a0103
+DECL|enum|__anon2ae4016c0103
 enum|enum
 block|{
 DECL|enumerator|CLEAN

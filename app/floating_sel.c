@@ -6,13 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -31,12 +25,6 @@ begin_include
 include|#
 directive|include
 file|"layer.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"errors.h"
 end_include
 
 begin_include
@@ -66,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint_funcs.h"
 end_include
 
@@ -79,18 +61,6 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
 end_include
 
 begin_include
@@ -108,6 +78,18 @@ end_include
 begin_comment
 comment|/* ick. */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
 
 begin_function
 name|void

@@ -6,31 +6,19 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
+file|"config.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdk/gdkkeysyms.h"
+file|<gdk/gdkkeysyms.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"colormaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"errors.h"
 end_include
 
 begin_include
@@ -48,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"layer_select.h"
 end_include
 
@@ -61,12 +43,6 @@ begin_include
 include|#
 directive|include
 file|"layers_dialogP.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
 end_include
 
 begin_include
@@ -133,18 +109,18 @@ modifier|*
 name|current_layer
 decl_stmt|;
 DECL|member|dirty
-name|int
+name|gboolean
 name|dirty
 decl_stmt|;
 DECL|member|image_width
 DECL|member|image_height
-name|int
+name|gint
 name|image_width
 decl_stmt|,
 name|image_height
 decl_stmt|;
 DECL|member|ratio
-name|double
+name|gdouble
 name|ratio
 decl_stmt|;
 block|}
@@ -163,7 +139,7 @@ parameter_list|(
 name|LayerSelect
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -295,14 +271,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|layer_select_init (GImage * gimage,int dir,guint32 time)
+DECL|function|layer_select_init (GImage * gimage,gint dir,guint32 time)
 name|layer_select_init
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|dir
 parameter_list|,
 name|guint32
@@ -822,9 +798,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|layer_select_update_preview_size ()
+DECL|function|layer_select_update_preview_size (void)
 name|layer_select_update_preview_size
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -884,24 +862,24 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|layer_select_advance (LayerSelect * layer_select,int dir)
+DECL|function|layer_select_advance (LayerSelect * layer_select,gint dir)
 name|layer_select_advance
 parameter_list|(
 name|LayerSelect
 modifier|*
 name|layer_select
 parameter_list|,
-name|int
+name|gint
 name|dir
 parameter_list|)
 block|{
-name|int
+name|gint
 name|index
 decl_stmt|;
-name|int
+name|gint
 name|length
 decl_stmt|;
-name|int
+name|gint
 name|count
 decl_stmt|;
 name|GSList
@@ -1224,7 +1202,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|int
+name|gint
 name|image_width
 decl_stmt|,
 name|image_height
@@ -1761,12 +1739,12 @@ name|TempBuf
 modifier|*
 name|preview_buf
 decl_stmt|;
-name|int
+name|gint
 name|w
 decl_stmt|,
 name|h
 decl_stmt|;
-name|int
+name|gint
 name|offx
 decl_stmt|,
 name|offy

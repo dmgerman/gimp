@@ -18,19 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdk/gdkkeysyms.h"
+file|<gdk/gdkkeysyms.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"colormaps.h"
 end_include
 
 begin_include
@@ -96,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"nav_window.h"
 end_include
 
@@ -120,13 +108,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/gimpunit.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpunit.h"
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_include
@@ -196,7 +184,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon273df2210103
+DECL|enum|__anon278412400103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW

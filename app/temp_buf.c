@@ -110,12 +110,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"general.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -139,13 +133,11 @@ end_include
 
 begin_function_decl
 specifier|static
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|temp_buf_allocate
 parameter_list|(
-name|unsigned
-name|int
+name|guint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -184,31 +176,25 @@ end_comment
 
 begin_function
 specifier|static
-name|unsigned
-name|char
+name|guchar
 modifier|*
-DECL|function|temp_buf_allocate (unsigned int size)
+DECL|function|temp_buf_allocate (guint size)
 name|temp_buf_allocate
 parameter_list|(
-name|unsigned
-name|int
+name|guint
 name|size
 parameter_list|)
 block|{
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|;
 name|data
 operator|=
-operator|(
-name|unsigned
-name|char
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|size
 argument_list|)
 expr_stmt|;
@@ -237,13 +223,11 @@ modifier|*
 name|dest_buf
 parameter_list|)
 block|{
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|src
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dest
 decl_stmt|;
@@ -280,8 +264,7 @@ name|num_bytes
 operator|--
 condition|)
 block|{
-name|unsigned
-name|char
+name|guchar
 name|tmpch
 decl_stmt|;
 operator|*
@@ -334,13 +317,11 @@ modifier|*
 name|dest_buf
 parameter_list|)
 block|{
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|src
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dest
 decl_stmt|;
@@ -411,8 +392,7 @@ name|dest
 operator|++
 operator|=
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|)
 name|pix
 expr_stmt|;
@@ -423,26 +403,25 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|temp_buf_new (int width,int height,int bytes,int x,int y,unsigned char * col)
+DECL|function|temp_buf_new (gint width,gint height,gint bytes,gint x,gint y,guchar * col)
 name|temp_buf_new
 parameter_list|(
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|col
 parameter_list|)
@@ -453,8 +432,7 @@ decl_stmt|;
 name|int
 name|j
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|;
@@ -464,16 +442,11 @@ name|temp
 decl_stmt|;
 name|temp
 operator|=
-operator|(
-name|TempBuf
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|TempBuf
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|temp
@@ -667,8 +640,7 @@ block|}
 else|else
 block|{
 comment|/* No, we cannot */
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dptr
 decl_stmt|;
@@ -693,8 +665,7 @@ operator|--
 name|i
 control|)
 block|{
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|init
 decl_stmt|;
@@ -943,30 +914,30 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|temp_buf_resize (TempBuf * buf,int bytes,int x,int y,int w,int h)
+DECL|function|temp_buf_resize (TempBuf * buf,gint bytes,gint x,gint y,gint w,gint h)
 name|temp_buf_resize
 parameter_list|(
 name|TempBuf
 modifier|*
 name|buf
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
-name|int
+name|gint
 name|size
 decl_stmt|;
 comment|/*  calculate the requested size  */
@@ -1084,7 +1055,7 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|temp_buf_copy_area (TempBuf * src,TempBuf * dest,int x,int y,int w,int h,int border)
+DECL|function|temp_buf_copy_area (TempBuf * src,TempBuf * dest,gint x,gint y,gint w,gint h,gint border)
 name|temp_buf_copy_area
 parameter_list|(
 name|TempBuf
@@ -1095,19 +1066,19 @@ name|TempBuf
 modifier|*
 name|dest
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|,
-name|int
+name|gint
 name|border
 parameter_list|)
 block|{
@@ -1120,8 +1091,7 @@ name|srcR
 decl_stmt|,
 name|destR
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|empty
 index|[
 name|MAX_CHANNELS
@@ -1137,7 +1107,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -1501,8 +1471,7 @@ block|}
 end_function
 
 begin_function
-name|unsigned
-name|char
+name|guchar
 modifier|*
 DECL|function|temp_buf_data (TempBuf * temp_buf)
 name|temp_buf_data
@@ -1538,19 +1507,18 @@ end_comment
 begin_function
 name|MaskBuf
 modifier|*
-DECL|function|mask_buf_new (int width,int height)
+DECL|function|mask_buf_new (gint width,gint height)
 name|mask_buf_new
 parameter_list|(
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 block|{
 specifier|static
-name|unsigned
-name|char
+name|guchar
 name|empty
 init|=
 literal|0
@@ -1600,8 +1568,7 @@ block|}
 end_function
 
 begin_function
-name|unsigned
-name|char
+name|guchar
 modifier|*
 DECL|function|mask_buf_data (MaskBuf * mask_buf)
 name|mask_buf_data
@@ -1645,7 +1612,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|swap_index
 specifier|static
-name|int
+name|gint
 name|swap_index
 init|=
 literal|0
@@ -1669,7 +1636,7 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|char
+name|gchar
 modifier|*
 DECL|function|generate_unique_filename (void)
 name|generate_unique_filename
@@ -1720,7 +1687,7 @@ name|TempBuf
 modifier|*
 name|swap
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
@@ -1728,7 +1695,7 @@ name|struct
 name|stat
 name|stat_buf
 decl_stmt|;
-name|int
+name|gint
 name|err
 decl_stmt|;
 name|FILE

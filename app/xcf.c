@@ -88,12 +88,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -130,13 +124,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
+file|"plug_in.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"plug_in.h"
+file|"parasitelist.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"path.h"
 end_include
 
 begin_include
@@ -153,12 +153,6 @@ begin_include
 include|#
 directive|include
 file|"xcf.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
 end_include
 
 begin_include
@@ -188,12 +182,30 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pathP.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile.h"
 end_include
 
 begin_comment
 comment|/* ick. */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpunit.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimplimits.h>
+end_include
 
 begin_include
 include|#
@@ -210,31 +222,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"parasitelist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"path.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pathP.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpunit.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimplimits.h>
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
@@ -244,7 +232,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf3cca40103
+DECL|enum|__anon2bef1f490103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -379,7 +367,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf3cca40203
+DECL|enum|__anon2bef1f490203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE

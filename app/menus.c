@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -31,12 +37,6 @@ begin_include
 include|#
 directive|include
 file|"channels_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"colormaps.h"
 end_include
 
 begin_include
@@ -132,19 +132,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|"libgimp/gimpenv.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"libgimp/gimpintl.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpenv.h"
 end_include
 
 begin_define

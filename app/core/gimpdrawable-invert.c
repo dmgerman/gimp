@@ -6,19 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -31,12 +19,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"interface.h"
 end_include
 
 begin_include
@@ -66,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -93,7 +69,7 @@ name|Argument
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|drawable
@@ -193,7 +169,7 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1

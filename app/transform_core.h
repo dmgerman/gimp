@@ -37,12 +37,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpmatrix.h"
 end_include
 
@@ -53,7 +47,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b15b6f60103
+DECL|enum|__anon2758c39a0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -85,7 +79,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b15b6f60203
+DECL|enum|__anon2758c39a0203
 block|{
 DECL|enumerator|INIT
 name|INIT

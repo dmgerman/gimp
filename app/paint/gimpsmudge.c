@@ -12,19 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdk/gdkkeysyms.h"
+file|<gdk/gdkkeysyms.h>
 end_include
 
 begin_include
@@ -37,12 +25,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"errors.h"
 end_include
 
 begin_include
@@ -108,13 +90,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmath.h"
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment

@@ -12,18 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gdk/gdkkeysyms.h>
 end_include
 
@@ -37,12 +25,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"errors.h"
 end_include
 
 begin_include
@@ -108,13 +90,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmath.h"
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
@@ -1437,9 +1419,11 @@ end_function
 begin_function
 name|Tool
 modifier|*
-DECL|function|tools_new_dodgeburn ()
+DECL|function|tools_new_dodgeburn (void)
 name|tools_new_dodgeburn
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|Tool
 modifier|*
@@ -2657,7 +2641,7 @@ condition|)
 block|{
 name|factor
 operator|=
-literal|.333333
+literal|0.333333
 operator|*
 name|exposure
 expr_stmt|;
@@ -2678,7 +2662,7 @@ block|{
 name|factor
 operator|=
 operator|-
-literal|.333333
+literal|0.333333
 operator|*
 name|exposure
 expr_stmt|;

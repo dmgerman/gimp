@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"errors.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"floating_sel.h"
 end_include
 
@@ -73,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"gimage_mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpparasite.h"
 end_include
 
 begin_include
@@ -175,12 +175,6 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpparasite.h"
-end_include
-
 begin_comment
 comment|/*#define DEBUG*/
 end_comment
@@ -223,7 +217,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|enum|__anon28eb41110103
+DECL|enum|__anon2a46ade70103
 typedef|typedef
 enum|enum
 block|{
@@ -11441,7 +11435,7 @@ comment|/* Layer re-position */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28eb41110208
+DECL|struct|__anon2a46ade70208
 typedef|typedef
 struct|struct
 block|{
@@ -11671,7 +11665,7 @@ comment|/* Layer name change */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28eb41110308
+DECL|struct|__anon2a46ade70308
 typedef|typedef
 struct|struct
 block|{

@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdk/gdkkeysyms.h"
+file|<gdk/gdkkeysyms.h>
 end_include
 
 begin_include
@@ -31,12 +31,6 @@ begin_include
 include|#
 directive|include
 file|"bucket_fill.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"colormaps.h"
 end_include
 
 begin_include
@@ -66,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"general.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -85,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"info_window.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"interface.h"
 end_include
 
 begin_include

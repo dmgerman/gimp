@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tips_dialog.h"
 end_include
 
@@ -54,19 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimphelp.h"
+file|"gimpui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"wilber.h"
+file|"libgimp/gimpenv.h"
 end_include
 
 begin_include
@@ -78,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpenv.h"
+file|"wilber.h"
 end_include
 
 begin_define

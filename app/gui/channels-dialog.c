@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"colormaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"color_panel.h"
 end_include
 
@@ -43,12 +37,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"errors.h"
 end_include
 
 begin_include
@@ -126,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"channel_pvt.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -175,12 +169,6 @@ begin_include
 include|#
 directive|include
 file|"pixmaps/toselection.xpm"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"channel_pvt.h"
 end_include
 
 begin_define
@@ -6876,7 +6864,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c87e2390108
+DECL|struct|__anon2b94e37c0108
 block|{
 DECL|member|gimage
 name|GimpImage

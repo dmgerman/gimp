@@ -6,7 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -31,12 +31,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"errors.h"
 end_include
 
 begin_include
@@ -91,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
 end_include
 
 begin_include
@@ -705,7 +693,7 @@ case|case
 name|FINISH_PAINT
 case|:
 break|break;
-default|default :
+default|default:
 break|break;
 block|}
 return|return
@@ -717,9 +705,11 @@ end_function
 begin_function
 name|Tool
 modifier|*
-DECL|function|tools_new_eraser ()
+DECL|function|tools_new_eraser (void)
 name|tools_new_eraser
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|Tool
 modifier|*
@@ -790,15 +780,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_free_eraser (tool)
+DECL|function|tools_free_eraser (Tool * tool)
 name|tools_free_eraser
 parameter_list|(
-name|tool
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|)
 block|{
 name|paint_core_free
 argument_list|(

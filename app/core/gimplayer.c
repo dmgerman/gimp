@@ -10,19 +10,13 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|"config.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
 end_include
 
 begin_include
@@ -35,12 +29,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"errors.h"
 end_include
 
 begin_include
@@ -112,24 +100,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/parasite.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"layer_pvt.h"
 end_include
 
@@ -149,8 +119,26 @@ begin_comment
 comment|/* ick. */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/parasite.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_enum
-DECL|enum|__anon2b27c2030103
+DECL|enum|__anon2745c5740103
 enum|enum
 block|{
 DECL|enumerator|REMOVED

@@ -6,13 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -30,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -43,18 +31,6 @@ begin_include
 include|#
 directive|include
 file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"general.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
 end_include
 
 begin_include
@@ -73,12 +49,6 @@ begin_include
 include|#
 directive|include
 file|"libgimp/parasite.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
 end_include
 
 begin_include

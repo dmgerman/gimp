@@ -6,13 +6,19 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"config.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"colormaps.h"
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"appenv.h"
 end_include
 
 begin_include
@@ -60,25 +66,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpenv.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmath.h"
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_define

@@ -20,7 +20,7 @@ begin_typedef
 DECL|typedef|TempBuf
 typedef|typedef
 name|struct
-name|_temp_buf
+name|_TempBuf
 name|TempBuf
 typedef|;
 end_typedef
@@ -29,51 +29,50 @@ begin_typedef
 DECL|typedef|MaskBuf
 typedef|typedef
 name|struct
-name|_temp_buf
+name|_TempBuf
 name|MaskBuf
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_temp_buf
+DECL|struct|_TempBuf
 struct|struct
-name|_temp_buf
+name|_TempBuf
 block|{
 DECL|member|bytes
-name|int
+name|gint
 name|bytes
 decl_stmt|;
 comment|/*  The necessary info  */
 DECL|member|width
-name|int
+name|gint
 name|width
 decl_stmt|;
 DECL|member|height
-name|int
+name|gint
 name|height
 decl_stmt|;
 DECL|member|x
 DECL|member|y
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
 comment|/*  origin of data source  */
 DECL|member|swapped
-name|int
+name|gboolean
 name|swapped
 decl_stmt|;
 comment|/*  flag indicating whether buf is cached to disk  */
 DECL|member|filename
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
 comment|/*  filename of cached information  */
 DECL|member|data
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|;
@@ -91,18 +90,17 @@ name|TempBuf
 modifier|*
 name|temp_buf_new
 parameter_list|(
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 parameter_list|)
 function_decl|;
@@ -130,15 +128,15 @@ parameter_list|(
 name|TempBuf
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -154,15 +152,15 @@ parameter_list|,
 name|TempBuf
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -178,8 +176,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|temp_buf_data
 parameter_list|(
@@ -198,9 +195,9 @@ name|MaskBuf
 modifier|*
 name|mask_buf_new
 parameter_list|(
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -216,8 +213,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|mask_buf_data
 parameter_list|(
@@ -262,7 +258,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  Called by app_procs:exit to free up the cached undo buffer  */
+comment|/*  Called by app_procs:exit() to free up the cached undo buffer  */
 end_comment
 
 begin_function_decl

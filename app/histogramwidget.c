@@ -6,30 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -37,12 +13,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"errors.h"
 end_include
 
 begin_include
@@ -73,6 +43,12 @@ begin_include
 include|#
 directive|include
 file|"tile_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_define
@@ -132,7 +108,7 @@ value|0xF
 end_define
 
 begin_enum
-DECL|enum|__anon297404120103
+DECL|enum|__anon2944294a0103
 enum|enum
 block|{
 DECL|enumerator|RANGED

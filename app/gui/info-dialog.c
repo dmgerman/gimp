@@ -36,13 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"info_dialog.h"
+file|"gimpui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"interface.h"
+file|"info_dialog.h"
 end_include
 
 begin_include
@@ -55,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpintl.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpsizeentry.h"
 end_include
 
 begin_comment

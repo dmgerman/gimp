@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint_options.h"
 end_include
 
@@ -138,13 +132,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmath.h"
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
@@ -358,7 +352,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290f36060108
+DECL|struct|__anon2c61e5700108
 block|{
 DECL|member|offset
 name|gdouble
@@ -410,7 +404,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290f36060208
+DECL|struct|__anon2c61e5700208
 block|{
 DECL|member|PR
 name|PixelRegion

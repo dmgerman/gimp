@@ -86,12 +86,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -116,13 +110,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmath.h"
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_include
@@ -34888,7 +34882,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c255410108
+DECL|struct|__anon29320f5c0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -34965,7 +34959,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c255410208
+DECL|struct|__anon29320f5c0208
 block|{
 DECL|member|ncolors
 name|long
@@ -34984,7 +34978,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c255410308
+DECL|struct|__anon29320f5c0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -38279,7 +38273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c255410408
+DECL|struct|__anon29320f5c0408
 block|{
 DECL|member|used_count
 name|signed

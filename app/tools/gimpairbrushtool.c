@@ -6,7 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -25,12 +25,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"errors.h"
 end_include
 
 begin_include
@@ -91,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
 end_include
 
 begin_include

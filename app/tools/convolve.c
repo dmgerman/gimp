@@ -6,7 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -25,12 +25,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"errors.h"
 end_include
 
 begin_include
@@ -85,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"gimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
 end_include
 
 begin_include
@@ -1199,9 +1187,11 @@ end_function
 begin_function
 name|Tool
 modifier|*
-DECL|function|tools_new_convolve ()
+DECL|function|tools_new_convolve (void)
 name|tools_new_convolve
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|Tool
 modifier|*
@@ -1325,8 +1315,7 @@ name|TempBuf
 modifier|*
 name|area
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|temp_data
 decl_stmt|;

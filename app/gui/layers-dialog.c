@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"errors.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"floating_sel.h"
 end_include
 
@@ -10819,7 +10813,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2795ddc50108
+DECL|struct|__anon2b5e4a680108
 block|{
 DECL|member|gimage
 name|GimpImage

@@ -294,28 +294,6 @@ endif|#
 directive|endif
 end_endif
 
-begin_include
-include|#
-directive|include
-file|"libgimp/parasite.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/parasiteP.h"
-end_include
-
-begin_comment
-comment|/* ick */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpenv.h"
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -349,18 +327,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpprotocol.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpwire.h"
-end_include
 
 begin_include
 include|#
@@ -399,12 +365,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"errors.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -430,12 +390,6 @@ begin_include
 include|#
 directive|include
 file|"gradient_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"interface.h"
 end_include
 
 begin_include
@@ -468,6 +422,40 @@ end_include
 
 begin_comment
 comment|/* ick. */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpprotocol.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpwire.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/parasite.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/parasiteP.h"
+end_include
+
+begin_comment
+comment|/* ick */
 end_comment
 
 begin_include

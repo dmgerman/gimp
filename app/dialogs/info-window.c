@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"scroll.h"
 end_include
 
@@ -84,13 +78,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/gimpunit.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpunit.h"
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_define

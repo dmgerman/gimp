@@ -6,19 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -31,12 +19,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"errors.h"
 end_include
 
 begin_include
@@ -108,7 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
@@ -522,7 +504,7 @@ name|GtkWidget
 modifier|*
 name|spinbutton
 decl_stmt|;
-name|int
+name|gint
 name|digits
 decl_stmt|;
 name|paint_options_reset
@@ -2293,7 +2275,7 @@ argument_list|(
 name|timer
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"painting took %f:\n"
 argument_list|,

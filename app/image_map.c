@@ -6,24 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -31,12 +13,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"errors.h"
 end_include
 
 begin_include
@@ -129,8 +105,7 @@ name|ImageMapApplyFunc
 name|apply_func
 decl_stmt|;
 DECL|member|user_data
-name|void
-modifier|*
+name|gpointer
 name|user_data
 decl_stmt|;
 DECL|member|srcPR
@@ -146,7 +121,7 @@ modifier|*
 name|pr
 decl_stmt|;
 DECL|member|state
-name|int
+name|gint
 name|state
 decl_stmt|;
 DECL|member|idle

@@ -20,19 +20,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
 end_include
 
 begin_include
@@ -74,12 +62,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"errors.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -87,12 +69,6 @@ begin_include
 include|#
 directive|include
 file|"gimage_mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"interface.h"
 end_include
 
 begin_include
@@ -163,7 +139,7 @@ name|TRC
 parameter_list|(
 name|x
 parameter_list|)
-value|printf x
+value|g_print x
 end_define
 
 begin_define
@@ -255,7 +231,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9efa720103
+DECL|enum|__anon2baa8a680103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -281,7 +257,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9efa720203
+DECL|enum|__anon2baa8a680203
 block|{
 DECL|enumerator|DRAW_NOTHING
 name|DRAW_NOTHING

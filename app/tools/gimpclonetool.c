@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"errors.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -55,12 +49,6 @@ begin_include
 include|#
 directive|include
 file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"interface.h"
 end_include
 
 begin_include
@@ -154,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ab42b50103
+DECL|enum|__anon2b87192f0103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO

@@ -70,6 +70,10 @@ name|g_color_pixel
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/*  Pixel values for guides  */
+end_comment
+
 begin_decl_stmt
 specifier|extern
 name|gulong
@@ -81,42 +85,6 @@ begin_decl_stmt
 specifier|extern
 name|gulong
 name|g_active_guide_pixel
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  Foreground and Background colors  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|gulong
-name|foreground_pixel
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gulong
-name|background_pixel
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  Old and New colors  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|gulong
-name|old_color_pixel
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gulong
-name|new_color_pixel
 decl_stmt|;
 end_decl_stmt
 

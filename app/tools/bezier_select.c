@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"bezier_select.h"
 end_include
 
@@ -102,13 +96,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmath.h"
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
@@ -283,7 +277,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon27fe89c60108
+DECL|struct|__anon28b0be3b0108
 typedef|typedef
 struct|struct
 block|{
@@ -320,7 +314,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27fe89c60208
+DECL|struct|__anon28b0be3b0208
 typedef|typedef
 struct|struct
 block|{
@@ -375,7 +369,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27fe89c60308
+DECL|struct|__anon28b0be3b0308
 typedef|typedef
 struct|struct
 block|{

@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -43,12 +37,6 @@ begin_include
 include|#
 directive|include
 file|"colormaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"errors.h"
 end_include
 
 begin_include
@@ -156,7 +144,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf446c60103
+DECL|enum|__anon2a190c390103
 block|{
 DECL|enumerator|COLOR_SELECT_OK
 name|COLOR_SELECT_OK
@@ -175,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf446c60203
+DECL|enum|__anon2a190c390203
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -223,7 +211,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf446c60303
+DECL|enum|__anon2a190c390303
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -5058,12 +5046,6 @@ name|orig_color
 operator|->
 name|window
 expr_stmt|;
-name|color
-operator|.
-name|pixel
-operator|=
-name|old_color_pixel
-expr_stmt|;
 name|red
 operator|=
 name|csp
@@ -5101,12 +5083,6 @@ operator|->
 name|new_color
 operator|->
 name|window
-expr_stmt|;
-name|color
-operator|.
-name|pixel
-operator|=
-name|new_color_pixel
 expr_stmt|;
 name|red
 operator|=
@@ -10950,7 +10926,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf446c60408
+DECL|struct|__anon2a190c390408
 block|{
 DECL|member|callback
 name|GimpColorSelector_Callback
