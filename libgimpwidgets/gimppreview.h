@@ -314,6 +314,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_preview_draw
+parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_preview_invalidate
 parameter_list|(
 name|GimpPreview

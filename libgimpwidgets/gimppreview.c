@@ -51,7 +51,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d70a200103
+DECL|enum|__anon2ad502530103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -64,7 +64,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d70a200203
+DECL|enum|__anon2ad502530203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -154,18 +154,6 @@ parameter_list|,
 name|GParamSpec
 modifier|*
 name|pspec
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_preview_draw
-parameter_list|(
-name|GimpPreview
-modifier|*
-name|preview
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -283,6 +271,18 @@ name|GtkWidget
 modifier|*
 name|toggle
 parameter_list|,
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gboolean
+name|gimp_preview_invalidate_now
+parameter_list|(
 name|GimpPreview
 modifier|*
 name|preview
@@ -1273,42 +1273,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_draw (GimpPreview * preview)
-name|gimp_preview_draw
-parameter_list|(
-name|GimpPreview
-modifier|*
-name|preview
-parameter_list|)
-block|{
-name|GimpPreviewClass
-modifier|*
-name|class
-init|=
-name|GIMP_PREVIEW_GET_CLASS
-argument_list|(
-name|preview
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|class
-operator|->
-name|draw
-condition|)
-name|class
-operator|->
-name|draw
-argument_list|(
-name|preview
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|gimp_preview_area_realize (GtkWidget * widget,GimpPreview * preview)
 name|gimp_preview_area_realize
 parameter_list|(
@@ -2190,7 +2154,20 @@ name|update_preview
 operator|=
 name|TRUE
 expr_stmt|;
-name|gimp_preview_invalidate
+if|if
+condition|(
+name|preview
+operator|->
+name|timeout_id
+condition|)
+name|g_source_remove
+argument_list|(
+name|preview
+operator|->
+name|timeout_id
+argument_list|)
+expr_stmt|;
+name|gimp_preview_invalidate_now
 argument_list|(
 name|preview
 argument_list|)
@@ -2388,7 +2365,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_set_update:  * @preview: a #GimpPreview widget  * @update:  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_set_update:  * @preview: a #GimpPreview widget  * @update: %TRUE if the preview should invalidate itself when being  *          scrolled or when gimp_preview_invalidate() is being called  *  * Sets the state of the "Preview" check button.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -2577,7 +2554,46 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * gimp_preview_invalidate:  * @preview: a #GimpPreview widget  *  * Since: GIMP 2.2  **/
+comment|/*  * gimp_preview_draw:  * @preview: a #GimpPreview widget  *  * Calls the GimpPreview::draw method. GimpPreview itself doesn't  * implement a default draw method so the behaviour is determined by  * the derived class implementing this method.  *  * #GimpDrawablePreview implements gimp_preview_draw() by drawing the  * original, unmodified drawable to the @preview.  *  * Since: GIMP 2.2  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_preview_draw (GimpPreview * preview)
+name|gimp_preview_draw
+parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|)
+block|{
+name|GimpPreviewClass
+modifier|*
+name|class
+init|=
+name|GIMP_PREVIEW_GET_CLASS
+argument_list|(
+name|preview
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|class
+operator|->
+name|draw
+condition|)
+name|class
+operator|->
+name|draw
+argument_list|(
+name|preview
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/*  * gimp_preview_invalidate:  * @preview: a #GimpPreview widget  *  * This function starts or renews a short low-priority timeout. When  * the timeout expires, the GimpPreview::invalidated signal is emitted  * which will usually cause the @preview to be updated.  *  * This function does nothing unless the "Preview" button is checked.  *  * During the emission of the signal a busy cursor is set on the  * toplevel window containing the @preview and on the preview area  * itself.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
