@@ -432,7 +432,7 @@ block|{
 comment|/* anim preview uses one constant (prescaled) frame */
 name|l_tmp_image_id
 operator|=
-name|p_gimp_channel_ops_duplicate
+name|gimp_image_duplicate
 argument_list|(
 name|mov_ptr
 operator|->
@@ -3845,7 +3845,7 @@ block|{
 comment|/* copy and scale the source object image */
 name|l_tmp_image_id
 operator|=
-name|p_gimp_channel_ops_duplicate
+name|gimp_image_duplicate
 argument_list|(
 name|pvals_orig
 operator|->

@@ -265,16 +265,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint32
-name|p_gimp_channel_ops_duplicate
-parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gint
 name|p_gimp_drawable_set_image
 parameter_list|(

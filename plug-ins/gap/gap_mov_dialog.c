@@ -223,7 +223,7 @@ value|256
 end_define
 
 begin_typedef
-DECL|struct|__anon28ec23b10108
+DECL|struct|__anon275e65130108
 typedef|typedef
 struct|struct
 block|{
@@ -238,7 +238,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28ec23b10208
+DECL|struct|__anon275e65130208
 typedef|typedef
 struct|struct
 block|{
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec23b10308
+DECL|struct|__anon275e65130308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -443,7 +443,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28ec23b10408
+DECL|struct|__anon275e65130408
 typedef|typedef
 struct|struct
 block|{
@@ -538,7 +538,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ec23b10503
+DECL|enum|__anon275e65130503
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -2469,7 +2469,7 @@ name|pvals
 operator|->
 name|tmp_image_id
 operator|=
-name|p_gimp_channel_ops_duplicate
+name|gimp_image_duplicate
 argument_list|(
 name|pvals
 operator|->
@@ -4203,7 +4203,7 @@ condition|)
 block|{
 name|l_new_tmp_image_id
 operator|=
-name|p_gimp_channel_ops_duplicate
+name|gimp_image_duplicate
 argument_list|(
 name|path_ptr
 operator|->
@@ -15782,7 +15782,7 @@ name|pvals
 operator|->
 name|cache_tmp_image_id
 operator|=
-name|p_gimp_channel_ops_duplicate
+name|gimp_image_duplicate
 argument_list|(
 name|pvals
 operator|->
