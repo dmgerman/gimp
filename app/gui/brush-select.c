@@ -3864,7 +3864,7 @@ comment|/*  *  Local functions  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bcf1ad30108
+DECL|struct|__anon27ad86940108
 typedef|typedef
 struct|struct
 block|{
@@ -4940,8 +4940,6 @@ operator|*
 name|mask_buf
 operator|->
 name|width
-operator|*
-literal|3
 expr_stmt|;
 name|buf
 operator|=

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* curve_bend plugin for the GIMP (tested with GIMP 1.0.4 upto GIMP 1.1.4, requires gtk+ 1.2) */
+comment|/* curve_bend plugin for the GIMP (tested with GIMP 1.1.9, requires gtk+ 1.2) */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Revision history  *  (1999/05/10)  v1.0   hof: first public release  *  (1999/04/23)  v0.0   hof: coding started,  *                            splines and dialog parts are similar to curves.c  */
+comment|/* Revision history  *  (1999/09/13)  v1.01  hof: PDB-calls updated for gimp 1.1.9  *  (1999/05/10)  v1.0   hof: first public release  *  (1999/04/23)  v0.0   hof: coding started,  *                            splines and dialog parts are similar to curves.c  */
 end_comment
 
 begin_include
@@ -148,7 +148,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"v1.0 (1999/05/08)"
+value|"v1.01 (1999/09/13)"
 end_define
 
 begin_define
@@ -879,7 +879,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon292c28f50108
+DECL|struct|__anon27b97e2b0108
 typedef|typedef
 struct|struct
 block|{
@@ -908,7 +908,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon292c28f50208
+DECL|struct|__anon27b97e2b0208
 typedef|typedef
 struct|struct
 block|{
@@ -994,7 +994,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon292c28f50308
+DECL|struct|__anon27b97e2b0308
 typedef|typedef
 struct|struct
 block|{
@@ -2508,13 +2508,6 @@ operator|>=
 literal|0
 condition|)
 block|{
-if|if
-condition|(
-name|l_nparams
-operator|==
-literal|3
-condition|)
-block|{
 comment|/* use the new Interface (Gimp 1.1 style)           * (1.1 knows the image_id where the drawable belongs to)           */
 name|return_vals
 operator|=
@@ -2540,39 +2533,6 @@ argument_list|,
 name|PARAM_END
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-comment|/* use the old Interface (Gimp 1.0.2 style) */
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-name|l_rotate_proc
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|PARAM_IMAGE
-argument_list|,
-name|image_id
-argument_list|,
-name|PARAM_DRAWABLE
-argument_list|,
-name|drawable_id
-argument_list|,
-name|PARAM_INT32
-argument_list|,
-name|interpolation
-argument_list|,
-name|PARAM_FLOAT
-argument_list|,
-name|l_angle_rad
-argument_list|,
-name|PARAM_END
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|return_vals
@@ -2693,10 +2653,6 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_IMAGE
-argument_list|,
-name|image_id
-argument_list|,
 name|PARAM_DRAWABLE
 argument_list|,
 name|drawable_id
@@ -2816,10 +2772,6 @@ name|l_procname
 argument_list|,
 operator|&
 name|nreturn_vals
-argument_list|,
-name|PARAM_IMAGE
-argument_list|,
-name|image_id
 argument_list|,
 name|PARAM_DRAWABLE
 argument_list|,
