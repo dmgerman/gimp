@@ -1501,9 +1501,8 @@ if|if
 condition|(
 name|orientation
 operator|==
-literal|0
+name|ORIENTATION_VERTICAL
 condition|)
-comment|/* in GIMP 1.1 we could use (orientation == ORIENTATION_VERTICAL) */
 block|{
 name|l_add_guide_proc
 operator|=

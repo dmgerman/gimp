@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * version 1.02.00; 1999/02/01  hof: PDB-calls to load/save resolution tattoos and parasites  *                                   (needs GIMP 1.1.1)-- UNDER CONSTRUCTION ---  * version 1.01.00; 1998/11/22  hof: PDB-calls to load/save guides under GIMP 1.1  * version 1.00.00; 1998/10/26  hof: 1.st (pre) release  */
+comment|/* revision history:  * version 1.1.15;  2000/01/20  hof: parasites  * version 1.02.00; 1999/02/01  hof: PDB-calls to load/save resolution tattoos and parasites  *                                   (needs GIMP 1.1.1)-- UNDER CONSTRUCTION ---  * version 1.01.00; 1998/11/22  hof: PDB-calls to load/save guides under GIMP 1.1  * version 1.00.00; 1998/10/26  hof: 1.st (pre) release  */
 end_comment
 
 begin_ifndef
@@ -279,17 +279,14 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Parasite
-modifier|*
-name|gimp_image_parasite_find
-parameter_list|(
-name|gint32
-name|image_id
-parameter_list|,
-specifier|const
 name|char
 modifier|*
-name|name
+modifier|*
+name|p_gimp_parasite_list
+parameter_list|(
+name|gint32
+modifier|*
+name|num_parasites
 parameter_list|)
 function_decl|;
 end_function_decl
