@@ -18,14 +18,9 @@ end_define
 
 begin_function_decl
 name|void
-name|prefs_cmd_callback
+name|preferences_dialog_create
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -171,7 +171,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon295924dd0103
+DECL|enum|__anon29e29c9c0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -309,18 +309,6 @@ parameter_list|,
 name|GdkEventCrossing
 modifier|*
 name|event
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_preview_render
-parameter_list|(
-name|GimpPreview
-modifier|*
-name|preview
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2012,6 +2000,32 @@ block|}
 end_function
 
 begin_function
+name|void
+DECL|function|gimp_preview_render (GimpPreview * preview)
+name|gimp_preview_render
+parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|)
+block|{
+name|gtk_signal_emit
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|preview
+argument_list|)
+argument_list|,
+name|preview_signals
+index|[
+name|RENDER
+index|]
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 specifier|static
 name|gint
 DECL|function|gimp_preview_button_press_event (GtkWidget * widget,GdkEventButton * bevent)
@@ -2417,33 +2431,6 @@ block|}
 return|return
 name|FALSE
 return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_preview_render (GimpPreview * preview)
-name|gimp_preview_render
-parameter_list|(
-name|GimpPreview
-modifier|*
-name|preview
-parameter_list|)
-block|{
-name|gtk_signal_emit
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|preview
-argument_list|)
-argument_list|,
-name|preview_signals
-index|[
-name|RENDER
-index|]
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

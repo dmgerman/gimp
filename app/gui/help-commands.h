@@ -937,6 +937,18 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|tools_toolbox_raise_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|tools_default_colors_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -1001,6 +1013,18 @@ name|callback_data
 parameter_list|,
 name|guint
 name|callback_action
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|dialogs_preferences_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl

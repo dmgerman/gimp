@@ -36,14 +36,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|toolbox_raise_callback
+name|toolbox_raise
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl

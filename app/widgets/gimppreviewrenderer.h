@@ -330,6 +330,14 @@ modifier|*
 name|viewable
 parameter_list|)
 function_decl|;
+name|void
+name|gimp_preview_render
+parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|)
+function_decl|;
 comment|/*  private  */
 name|void
 name|gimp_preview_render_and_flush

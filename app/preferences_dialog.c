@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd235cf0103
+DECL|enum|__anon2c0b016a0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -5635,15 +5635,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|prefs_cmd_callback (GtkWidget * widget,gpointer client_data)
-name|prefs_cmd_callback
+DECL|function|preferences_dialog_create (void)
+name|preferences_dialog_create
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|client_data
+name|void
 parameter_list|)
 block|{
 name|GtkWidget
@@ -12473,7 +12468,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bd235cf0208
+DECL|struct|__anon2c0b016a0208
 block|{
 DECL|member|label
 name|gchar
@@ -12702,7 +12697,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bd235cf0308
+DECL|struct|__anon2c0b016a0308
 block|{
 DECL|member|tree_label
 name|gchar

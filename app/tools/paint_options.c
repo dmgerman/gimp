@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brush_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -1199,14 +1193,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/*  NULL means the main brush selection  */
-name|brush_select_show_paint_options
-argument_list|(
-name|NULL
-argument_list|,
-name|global
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

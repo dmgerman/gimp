@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"brush_select.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -324,16 +330,9 @@ name|gimp_context_set_tool
 argument_list|(
 name|user_context
 argument_list|,
-name|tool_manager_get_info_by_type
-argument_list|(
-name|GTK_OBJECT
+name|tool_manager_get_info_by_tool
 argument_list|(
 name|active_tool
-argument_list|)
-operator|->
-name|klass
-operator|->
-name|type
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1021,6 +1020,14 @@ condition|)
 return|return;
 name|paint_options_set_global
 argument_list|(
+name|global
+argument_list|)
+expr_stmt|;
+comment|/*  NULL is the main brush selection  */
+name|brush_select_show_paint_options
+argument_list|(
+name|NULL
+argument_list|,
 name|global
 argument_list|)
 expr_stmt|;

@@ -312,6 +312,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"preferences_dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"resize.h"
 end_include
 
@@ -331,6 +337,12 @@ begin_include
 include|#
 directive|include
 file|"tips_dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"toolbox.h"
 end_include
 
 begin_include
@@ -4036,6 +4048,25 @@ end_comment
 
 begin_function
 name|void
+DECL|function|tools_toolbox_raise_cmd_callback (GtkWidget * widget,gpointer client_data)
+name|tools_toolbox_raise_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|client_data
+parameter_list|)
+block|{
+name|toolbox_raise
+argument_list|()
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|tools_default_colors_cmd_callback (GtkWidget * widget,gpointer client_data)
 name|tools_default_colors_cmd_callback
 parameter_list|(
@@ -4179,6 +4210,9 @@ name|guint
 name|callback_action
 parameter_list|)
 block|{
+name|GtkType
+name|tool_type
+decl_stmt|;
 name|GimpToolInfo
 modifier|*
 name|tool_info
@@ -4187,11 +4221,15 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
+name|tool_type
+operator|=
+name|callback_action
+expr_stmt|;
 name|tool_info
 operator|=
-name|GIMP_TOOL_INFO
+name|tool_manager_get_info_by_type
 argument_list|(
-name|callback_action
+name|tool_type
 argument_list|)
 expr_stmt|;
 name|gdisp
@@ -4293,6 +4331,25 @@ end_function
 begin_comment
 comment|/*****  Dialogs  ******/
 end_comment
+
+begin_function
+name|void
+DECL|function|dialogs_preferences_cmd_callback (GtkWidget * widget,gpointer client_data)
+name|dialogs_preferences_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|client_data
+parameter_list|)
+block|{
+name|preferences_dialog_create
+argument_list|()
+expr_stmt|;
+block|}
+end_function
 
 begin_function
 name|void

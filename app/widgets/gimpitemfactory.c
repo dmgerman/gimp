@@ -126,18 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"preferences_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"toolbox.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpenv.h"
 end_include
 
@@ -517,7 +505,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|prefs_cmd_callback
+name|dialogs_preferences_cmd_callback
 block|,
 literal|0
 block|}
@@ -3442,7 +3430,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|toolbox_raise_callback
+name|tools_toolbox_raise_cmd_callback
 block|,
 literal|0
 block|}
@@ -7511,12 +7499,9 @@ name|entry
 operator|.
 name|path
 operator|=
-name|gettext
-argument_list|(
 name|tool_info
 operator|->
 name|menu_path
-argument_list|)
 expr_stmt|;
 name|entry
 operator|.
@@ -7543,6 +7528,8 @@ operator|.
 name|callback_action
 operator|=
 name|tool_info
+operator|->
+name|tool_type
 expr_stmt|;
 name|entry
 operator|.
@@ -7779,7 +7766,7 @@ argument_list|)
 condition|)
 name|g_warning
 argument_list|(
-literal|"Unable to set state for menu which doesn't exist:\n%s\n"
+literal|"Unable to set state for menu which doesn't exist:\n%s"
 argument_list|,
 name|path
 argument_list|)
@@ -9322,25 +9309,17 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GtkWidget
-modifier|*
-name|menu_item
-decl_stmt|;
+comment|/*GtkWidget    *menu_item;*/
 name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
+comment|/*  gint          i;*/
 name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|GimpToolInfo
-modifier|*
-name|tool_info
-decl_stmt|;
+comment|/*  GimpToolInfo *tool_info;*/
 if|if
 condition|(
 name|menus_initialized
@@ -9738,7 +9717,7 @@ block|}
 comment|/*  reorder<Image>/Image/Colors  */
 warning|#
 directive|warning
-warning|FIXME
+warning|FIXME (reorder<Image>/Image/Colors)
 if|#
 directive|if
 literal|0

@@ -21,7 +21,9 @@ name|GtkWidget
 modifier|*
 name|indicator_area_create
 parameter_list|(
-name|void
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl
