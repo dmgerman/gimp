@@ -365,11 +365,6 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_FUZZY_SELECT
 value|"gimp-tool-fuzzy-select"
-DECL|macro|GIMP_STOCK_TOOL_HISTOGRAM
-define|#
-directive|define
-name|GIMP_STOCK_TOOL_HISTOGRAM
-value|"gimp-tool-histogram"
 DECL|macro|GIMP_STOCK_TOOL_HUE_SATURATION
 define|#
 directive|define
@@ -671,6 +666,11 @@ define|#
 directive|define
 name|GIMP_STOCK_QMASK_ON
 value|"gimp-qmask-on"
+DECL|macro|GIMP_STOCK_HISTOGRAM
+define|#
+directive|define
+name|GIMP_STOCK_HISTOGRAM
+value|"gimp-histogram"
 DECL|macro|GIMP_STOCK_HISTOGRAM_LINEAR
 define|#
 directive|define

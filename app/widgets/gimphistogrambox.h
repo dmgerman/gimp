@@ -102,10 +102,10 @@ name|GtkWidget
 modifier|*
 name|label
 decl_stmt|;
-DECL|member|histogram
+DECL|member|view
 name|GimpHistogramView
 modifier|*
-name|histogram
+name|view
 decl_stmt|;
 DECL|member|gradient
 name|GtkWidget

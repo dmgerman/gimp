@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b21b62f0103
+DECL|enum|__anon275dc7f10103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b21b62f0203
+DECL|enum|__anon275dc7f10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1106,7 +1106,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|gimp_histogram_view_events (GimpHistogramView * view,GdkEvent * event)
 name|gimp_histogram_view_events
 parameter_list|(
@@ -1237,7 +1237,9 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
-break|break;
+return|return
+name|TRUE
+return|;
 case|case
 name|GDK_BUTTON_RELEASE
 case|:
@@ -1325,7 +1327,9 @@ operator|->
 name|end
 argument_list|)
 expr_stmt|;
-break|break;
+return|return
+name|TRUE
+return|;
 case|case
 name|GDK_MOTION_NOTIFY
 case|:
@@ -1379,7 +1383,9 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
-break|break;
+return|return
+name|TRUE
+return|;
 default|default:
 break|break;
 block|}

@@ -186,12 +186,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimphistogramtool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimphuesaturationtool.h"
 end_include
 
@@ -457,8 +451,6 @@ comment|/*  non-modifying tools  */
 name|gimp_measure_tool_register
 block|,
 name|gimp_magnify_tool_register
-block|,
-name|gimp_histogram_tool_register
 block|,
 name|gimp_color_picker_tool_register
 block|,

@@ -802,7 +802,7 @@ name|t_tool
 operator|->
 name|histogram_box
 operator|->
-name|histogram
+name|view
 argument_list|,
 name|gimp_threshold_tool_histogram_range
 argument_list|,
@@ -815,7 +815,7 @@ name|t_tool
 operator|->
 name|histogram_box
 operator|->
-name|histogram
+name|view
 argument_list|,
 name|t_tool
 operator|->
@@ -828,7 +828,7 @@ name|t_tool
 operator|->
 name|histogram_box
 operator|->
-name|histogram
+name|view
 argument_list|,
 name|t_tool
 operator|->
@@ -849,7 +849,7 @@ name|t_tool
 operator|->
 name|histogram_box
 operator|->
-name|histogram
+name|view
 argument_list|,
 name|gimp_threshold_tool_histogram_range
 argument_list|,
@@ -987,7 +987,7 @@ name|t_tool
 operator|->
 name|histogram_box
 operator|->
-name|histogram
+name|view
 argument_list|,
 literal|"range_changed"
 argument_list|,
@@ -1021,7 +1021,7 @@ name|t_tool
 operator|->
 name|histogram_box
 operator|->
-name|histogram
+name|view
 argument_list|)
 expr_stmt|;
 block|}
@@ -1069,7 +1069,7 @@ name|t_tool
 operator|->
 name|histogram_box
 operator|->
-name|histogram
+name|view
 argument_list|,
 name|t_tool
 operator|->

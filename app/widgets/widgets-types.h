@@ -642,6 +642,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpHistogramEditor
+typedef|typedef
+name|struct
+name|_GimpHistogramEditor
+name|GimpHistogramEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpTextEditor
 typedef|typedef
 name|struct

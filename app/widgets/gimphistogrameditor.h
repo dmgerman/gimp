@@ -6,145 +6,160 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_HISTOGRAM_TOOL_H__
+name|__GIMP_HISTOGRAM_EDITOR_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_HISTOGRAM_TOOL_H__
+DECL|macro|__GIMP_HISTOGRAM_EDITOR_H__
 define|#
 directive|define
-name|__GIMP_HISTOGRAM_TOOL_H__
+name|__GIMP_HISTOGRAM_EDITOR_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimpimagemaptool.h"
+file|"gimpimageeditor.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_HISTOGRAM_TOOL
+DECL|macro|GIMP_TYPE_HISTOGRAM_EDITOR
 define|#
 directive|define
-name|GIMP_TYPE_HISTOGRAM_TOOL
-value|(gimp_histogram_tool_get_type ())
+name|GIMP_TYPE_HISTOGRAM_EDITOR
+value|(gimp_histogram_editor_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_HISTOGRAM_TOOL (obj)
+DECL|macro|GIMP_HISTOGRAM_EDITOR (obj)
 define|#
 directive|define
-name|GIMP_HISTOGRAM_TOOL
+name|GIMP_HISTOGRAM_EDITOR
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_HISTOGRAM_TOOL, GimpHistogramTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_HISTOGRAM_EDITOR, GimpHistogramEditor))
 end_define
 
 begin_define
-DECL|macro|GIMP_HISTOGRAM_TOOL_CLASS (klass)
+DECL|macro|GIMP_HISTOGRAM_EDITOR_CLASS (klass)
 define|#
 directive|define
-name|GIMP_HISTOGRAM_TOOL_CLASS
+name|GIMP_HISTOGRAM_EDITOR_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_HISTOGRAM_TOOL, GimpHistogramToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_HISTOGRAM_EDITOR, GimpHistogramEditorClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_HISTOGRAM_TOOL (obj)
+DECL|macro|GIMP_IS_HISTOGRAM_EDITOR (obj)
 define|#
 directive|define
-name|GIMP_IS_HISTOGRAM_TOOL
+name|GIMP_IS_HISTOGRAM_EDITOR
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_HISTOGRAM_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_HISTOGRAM_EDITOR))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_HISTOGRAM_TOOL_CLASS (klass)
+DECL|macro|GIMP_IS_HISTOGRAM_EDITOR_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_HISTOGRAM_TOOL_CLASS
+name|GIMP_IS_HISTOGRAM_EDITOR_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_HISTOGRAM_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_HISTOGRAM_EDITOR))
 end_define
 
 begin_define
-DECL|macro|GIMP_HISTOGRAM_TOOL_GET_CLASS (obj)
+DECL|macro|GIMP_HISTOGRAM_EDITOR_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_HISTOGRAM_TOOL_GET_CLASS
+name|GIMP_HISTOGRAM_EDITOR_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_HISTOGRAM_TOOL, GimpHistogramToolClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_HISTOGRAM_EDITOR, GimpHistogramEditorClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpHistogramTool
+DECL|typedef|GimpHistogramEditorClass
 typedef|typedef
 name|struct
-name|_GimpHistogramTool
-name|GimpHistogramTool
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpHistogramToolClass
-typedef|typedef
-name|struct
-name|_GimpHistogramToolClass
-name|GimpHistogramToolClass
+name|_GimpHistogramEditorClass
+name|GimpHistogramEditorClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpHistogramTool
+DECL|struct|_GimpHistogramEditor
 struct|struct
-name|_GimpHistogramTool
+name|_GimpHistogramEditor
 block|{
 DECL|member|parent_instance
-name|GimpImageMapTool
+name|GimpImageEditor
 name|parent_instance
+decl_stmt|;
+DECL|member|drawable
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
+DECL|member|histogram
+name|GimpHistogram
+modifier|*
+name|histogram
+decl_stmt|;
+DECL|member|idle_id
+name|guint
+name|idle_id
+decl_stmt|;
+DECL|member|name
+name|GtkWidget
+modifier|*
+name|name
+decl_stmt|;
+DECL|member|menu
+name|GtkWidget
+modifier|*
+name|menu
+decl_stmt|;
+DECL|member|box
+name|GtkWidget
+modifier|*
+name|box
+decl_stmt|;
+DECL|member|labels
+name|GtkWidget
+modifier|*
+name|labels
+index|[
+literal|6
+index|]
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpHistogramToolClass
+DECL|struct|_GimpHistogramEditorClass
 struct|struct
-name|_GimpHistogramToolClass
+name|_GimpHistogramEditorClass
 block|{
 DECL|member|parent_class
-name|GimpImageMapToolClass
+name|GimpImageEditorClass
 name|parent_class
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
-begin_function_decl
-name|void
-name|gimp_histogram_tool_register
-parameter_list|(
-name|GimpToolRegisterCallback
-name|callback
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 name|GType
-name|gimp_histogram_tool_get_type
+name|gimp_histogram_editor_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -152,13 +167,25 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_histogram_editor_new
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_HISTOGRAM_TOOL_H__ */
+comment|/* __GIMP_HISTOGRAM_EDITOR_H__ */
 end_comment
 
 end_unit

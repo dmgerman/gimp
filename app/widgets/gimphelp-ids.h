@@ -1417,14 +1417,6 @@ value|"gimp-tool-fuzzy-select"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_TOOL_HISTOGRAM
-define|#
-directive|define
-name|GIMP_HELP_TOOL_HISTOGRAM
-value|"gimp-tool-histogram"
-end_define
-
-begin_define
 DECL|macro|GIMP_HELP_TOOL_HUE_SATURATION
 define|#
 directive|define
@@ -2617,6 +2609,14 @@ value|"gimp-dock-view-as-grid"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_ABOUT_DIALOG
+define|#
+directive|define
+name|GIMP_HELP_ABOUT_DIALOG
+value|"gimp-about-dialog"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_COLOR_DIALOG
 define|#
 directive|define
@@ -2633,11 +2633,19 @@ value|"gimp-device-status-dialog"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_MODULE_DIALOG
+DECL|macro|GIMP_HELP_DISPLAY_FILTER_DIALOG
 define|#
 directive|define
-name|GIMP_HELP_MODULE_DIALOG
-value|"gimp-module-dialog"
+name|GIMP_HELP_DISPLAY_FILTER_DIALOG
+value|"gimp-display-filter-dialog"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_HISTOGRAM_DIALOG
+define|#
+directive|define
+name|GIMP_HELP_HISTOGRAM_DIALOG
+value|"gimp-histogram-dialog"
 end_define
 
 begin_define
@@ -2649,27 +2657,19 @@ value|"gimp-info-dialog"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_MODULE_DIALOG
+define|#
+directive|define
+name|GIMP_HELP_MODULE_DIALOG
+value|"gimp-module-dialog"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_NAVIGATION_DIALOG
 define|#
 directive|define
 name|GIMP_HELP_NAVIGATION_DIALOG
 value|"gimp-navigation-dialog"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_DISPLAY_FILTER_DIALOG
-define|#
-directive|define
-name|GIMP_HELP_DISPLAY_FILTER_DIALOG
-value|"gimp-display-filter-dialog"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_UNDO_DIALOG
-define|#
-directive|define
-name|GIMP_HELP_UNDO_DIALOG
-value|"gimp-undo-dialog"
 end_define
 
 begin_define
@@ -2689,11 +2689,11 @@ value|"gimp-tips-dialog"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_ABOUT_DIALOG
+DECL|macro|GIMP_HELP_UNDO_DIALOG
 define|#
 directive|define
-name|GIMP_HELP_ABOUT_DIALOG
-value|"gimp-about-dialog"
+name|GIMP_HELP_UNDO_DIALOG
+value|"gimp-undo-dialog"
 end_define
 
 begin_define
