@@ -106,6 +106,14 @@ DECL|member|verbose
 name|gboolean
 name|verbose
 decl_stmt|;
+DECL|member|autosave
+name|gboolean
+name|autosave
+decl_stmt|;
+DECL|member|save_idle_id
+name|guint
+name|save_idle_id
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -143,15 +151,27 @@ name|gchar
 modifier|*
 name|system_gimprc
 parameter_list|,
-comment|/* NULL for default */
 specifier|const
 name|gchar
 modifier|*
 name|user_gimprc
 parameter_list|,
-comment|/* NULL for default */
 name|gboolean
 name|verbose
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_rc_set_autosave
+parameter_list|(
+name|GimpRc
+modifier|*
+name|gimprc
+parameter_list|,
+name|gboolean
+name|autosave
 parameter_list|)
 function_decl|;
 end_function_decl

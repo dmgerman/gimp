@@ -170,7 +170,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277bde9e0103
+DECL|enum|__anon2ac186e90103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -2194,7 +2194,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Fatal parsing error:\nBrush file '%s' appears truncated."
+literal|"Fatal parsing error:\n"
+literal|"Brush file '%s' appears truncated."
 argument_list|)
 argument_list|,
 name|filename
@@ -2339,7 +2340,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Fatal parsing error:\nBrush file '%s' appears truncated."
+literal|"Fatal parsing error:\n"
+literal|"Brush file '%s' appears truncated."
 argument_list|)
 argument_list|,
 name|filename
@@ -2489,7 +2491,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Fatal parsing error:\nBrush file '%s' appears truncated."
+literal|"Fatal parsing error:\n"
+literal|"Brush file '%s' appears truncated."
 argument_list|)
 argument_list|,
 name|filename

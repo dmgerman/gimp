@@ -1504,7 +1504,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Fatal parsing error:\nBrush pipe file '%s' is corrupt."
+literal|"Fatal parsing error:\n"
+literal|"Brush file '%s' is corrupt."
 argument_list|)
 argument_list|,
 name|filename
@@ -1599,7 +1600,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Fatal parsing error:\nBrush pipe file '%s' is corrupt."
+literal|"Fatal parsing error:\n"
+literal|"Brush file '%s' is corrupt."
 argument_list|)
 argument_list|,
 name|filename
@@ -2243,7 +2245,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Fatal parsing error:\n"
-literal|"Brush pipe file '%s' is corrupt."
+literal|"Brush file '%s' is corrupt."
 argument_list|)
 argument_list|,
 name|filename
