@@ -648,7 +648,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c1df3970108
+DECL|struct|__anon2ac138320108
 block|{
 DECL|member|directory
 name|gboolean
@@ -4576,7 +4576,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"GIMP uses a limited amount of memory to store image data, the so-called\n"
-literal|"\"Tile Cache\". You should adjust it's size to fit into memory. Consider\n"
+literal|"\"Tile Cache\". You should adjust its size to fit into memory. Consider\n"
 literal|"the amount of memory used by other running processes."
 argument_list|)
 argument_list|)
