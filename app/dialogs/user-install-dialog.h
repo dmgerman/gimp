@@ -20,9 +20,15 @@ begin_function_decl
 name|void
 name|user_install_dialog_create
 parameter_list|(
-name|Gimp
+specifier|const
+name|gchar
 modifier|*
-name|gimp
+name|alternate_system_gimprc
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|alernate_gimprc
 parameter_list|)
 function_decl|;
 end_function_decl

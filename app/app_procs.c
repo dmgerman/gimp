@@ -353,9 +353,17 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|user_install_dialog_create
+comment|/*  this needs to be done before gimprc loading  */
+name|gimp_unitrc_load
 argument_list|(
 name|the_gimp
+argument_list|)
+expr_stmt|;
+name|user_install_dialog_create
+argument_list|(
+name|alternate_system_gimprc
+argument_list|,
+name|alternate_gimprc
 argument_list|)
 expr_stmt|;
 name|gtk_main
