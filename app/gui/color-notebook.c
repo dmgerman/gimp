@@ -102,13 +102,13 @@ struct|struct
 name|_ColorSelectorInfo
 block|{
 DECL|member|name
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
 comment|/* label used in notebook tab */
 DECL|member|help_page
-name|char
+name|gchar
 modifier|*
 name|help_page
 decl_stmt|;
@@ -117,7 +117,7 @@ name|GimpColorSelectorMethods
 name|methods
 decl_stmt|;
 DECL|member|refs
-name|int
+name|gint
 name|refs
 decl_stmt|;
 comment|/* number of instances around */
@@ -126,20 +126,11 @@ name|gboolean
 name|active
 decl_stmt|;
 DECL|member|death_callback
-name|void
-function_decl|(
-modifier|*
+name|GimpColorSelectorFinishedCB
 name|death_callback
-function_decl|)
-parameter_list|(
-name|void
-modifier|*
-name|data
-parameter_list|)
-function_decl|;
+decl_stmt|;
 DECL|member|death_data
-name|void
-modifier|*
+name|gpointer
 name|death_data
 decl_stmt|;
 DECL|member|next
@@ -253,6 +244,9 @@ name|page
 parameter_list|,
 name|guint
 name|page_num
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -299,7 +293,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f907680103
+DECL|enum|__anon28f76c160103
 block|{
 DECL|enumerator|RED
 name|RED
@@ -312,9 +306,6 @@ name|BLUE
 block|,
 DECL|enumerator|ALPHA
 name|ALPHA
-block|,
-DECL|enumerator|NUM_COLORS
-name|NUM_COLORS
 block|}
 enum|;
 end_enum
@@ -626,7 +617,7 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/* create each registered colour selector */
+comment|/* create each registered color selector */
 name|info
 operator|=
 name|selector_info
@@ -845,18 +836,6 @@ operator|->
 name|notebook
 condition|)
 block|{
-name|gtk_object_set_user_data
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|cnp
-operator|->
-name|notebook
-argument_list|)
-argument_list|,
-name|cnp
-argument_list|)
-expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -873,7 +852,7 @@ argument_list|(
 name|color_notebook_page_switch
 argument_list|)
 argument_list|,
-name|NULL
+name|cnp
 argument_list|)
 expr_stmt|;
 block|}
@@ -968,7 +947,7 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-comment|/* call the free functions for all the colour selectors */
+comment|/* call the free functions for all the color selectors */
 name|csel
 operator|=
 name|cnp
@@ -1195,7 +1174,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Called by a colour selector on user selection of a colour */
+comment|/*  * Called by a color selector on user selection of a color  */
 end_comment
 
 begin_function
@@ -1374,6 +1353,7 @@ name|cnp
 operator|->
 name|callback
 condition|)
+block|{
 call|(
 modifier|*
 name|cnp
@@ -1417,6 +1397,7 @@ name|client_data
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_function
@@ -1451,6 +1432,7 @@ name|cnp
 operator|->
 name|callback
 condition|)
+block|{
 call|(
 modifier|*
 name|cnp
@@ -1494,12 +1476,13 @@ name|client_data
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|color_notebook_page_switch (GtkWidget * widget,GtkNotebookPage * page,guint page_num)
+DECL|function|color_notebook_page_switch (GtkWidget * widget,GtkNotebookPage * page,guint page_num,gpointer data)
 name|color_notebook_page_switch
 parameter_list|(
 name|GtkWidget
@@ -1512,6 +1495,9 @@ name|page
 parameter_list|,
 name|guint
 name|page_num
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 name|ColorNotebook
@@ -1524,13 +1510,11 @@ name|csel
 decl_stmt|;
 name|cnp
 operator|=
-name|gtk_object_get_user_data
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
+operator|(
+name|ColorNotebook
+operator|*
+operator|)
+name|data
 expr_stmt|;
 name|csel
 operator|=
@@ -1668,7 +1652,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**************************************************************/
+comment|/**************************/
 end_comment
 
 begin_comment
@@ -1797,21 +1781,14 @@ end_function
 begin_function
 name|G_MODULE_EXPORT
 name|gboolean
-DECL|function|gimp_color_selector_unregister (GimpColorSelectorID id,void (* callback)(gpointer data),gpointer data)
+DECL|function|gimp_color_selector_unregister (GimpColorSelectorID id,GimpColorSelectorFinishedCB callback,gpointer data)
 name|gimp_color_selector_unregister
 parameter_list|(
 name|GimpColorSelectorID
 name|id
 parameter_list|,
-name|void
-function_decl|(
-modifier|*
+name|GimpColorSelectorFinishedCB
 name|callback
-function_decl|)
-parameter_list|(
-name|gpointer
-name|data
-parameter_list|)
 parameter_list|,
 name|gpointer
 name|data

@@ -164,32 +164,13 @@ DECL|macro|COLOR_AREA_MASK
 define|#
 directive|define
 name|COLOR_AREA_MASK
-value|GDK_EXPOSURE_MASK | \                         GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | \ 			GDK_BUTTON1_MOTION_MASK | GDK_ENTER_NOTIFY_MASK
+value|GDK_EXPOSURE_MASK | \                         GDK_BUTTON_PRESS_MASK | \                         GDK_BUTTON_RELEASE_MASK | \ 			GDK_BUTTON1_MOTION_MASK | \                         GDK_ENTER_NOTIFY_MASK
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0d0c910103
-block|{
-DECL|enumerator|COLOR_SELECT_OK
-name|COLOR_SELECT_OK
-block|,
-DECL|enumerator|COLOR_SELECT_CANCEL
-name|COLOR_SELECT_CANCEL
-block|,
-DECL|enumerator|COLOR_SELECT_UPDATE
-name|COLOR_SELECT_UPDATE
-DECL|typedef|ColorSelectState
-block|}
-name|ColorSelectState
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2a0d0c910203
+DECL|enum|__anon298a10e10103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -240,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0d0c910303
+DECL|enum|__anon298a10e10203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -306,16 +287,19 @@ name|ColorSelectCallback
 function_decl|)
 parameter_list|(
 name|gint
+name|r
 parameter_list|,
 name|gint
+name|g
 parameter_list|,
 name|gint
+name|b
 parameter_list|,
 name|gint
-parameter_list|,
-name|ColorSelectState
+name|a
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_typedef
@@ -445,6 +429,7 @@ function_decl|)
 parameter_list|(
 name|ColorSelectFill
 modifier|*
+name|color_select_fill
 parameter_list|)
 function_decl|;
 end_typedef
@@ -1037,8 +1022,6 @@ parameter_list|,
 name|gint
 parameter_list|,
 name|gint
-parameter_list|,
-name|ColorSelectState
 parameter_list|,
 name|gpointer
 parameter_list|)
@@ -3279,8 +3262,6 @@ index|[
 name|COLOR_SELECT_ALPHA
 index|]
 argument_list|,
-name|COLOR_SELECT_UPDATE
-argument_list|,
 name|csp
 operator|->
 name|client_data
@@ -3843,7 +3824,7 @@ expr_stmt|;
 switch|switch
 condition|(
 operator|(
-name|int
+name|gint
 operator|)
 name|h
 condition|)
@@ -7023,9 +7004,11 @@ operator|)
 operator|>>
 literal|8
 argument_list|,
+operator|(
 name|hex_rgb
 operator|&
 literal|0x0000ff
+operator|)
 argument_list|,
 literal|0
 argument_list|,
@@ -10482,7 +10465,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d0c910408
+DECL|struct|__anon298a10e10308
 block|{
 DECL|member|callback
 name|GimpColorSelectorCallback
@@ -10852,7 +10835,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_select_notebook_update_callback (gint r,gint g,gint b,gint a,ColorSelectState state,gpointer data)
+DECL|function|color_select_notebook_update_callback (gint r,gint g,gint b,gint a,gpointer data)
 name|color_select_notebook_update_callback
 parameter_list|(
 name|gint
@@ -10867,9 +10850,6 @@ parameter_list|,
 name|gint
 name|a
 parameter_list|,
-name|ColorSelectState
-name|state
-parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -10880,14 +10860,6 @@ name|glue
 init|=
 name|data
 decl_stmt|;
-switch|switch
-condition|(
-name|state
-condition|)
-block|{
-case|case
-name|COLOR_SELECT_UPDATE
-case|:
 name|glue
 operator|->
 name|callback
@@ -10905,17 +10877,6 @@ argument_list|,
 name|a
 argument_list|)
 expr_stmt|;
-break|break;
-default|default:
-name|g_warning
-argument_list|(
-literal|"state %d can't happen!"
-argument_list|,
-name|state
-argument_list|)
-expr_stmt|;
-break|break;
-block|}
 block|}
 end_function
 
