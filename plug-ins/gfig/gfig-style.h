@@ -278,17 +278,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gfig_style_append
-parameter_list|(
-name|Style
-modifier|*
-name|style
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gfig_style_apply
 parameter_list|(
 name|Style
