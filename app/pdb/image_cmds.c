@@ -12457,6 +12457,8 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|name
+init|=
+name|NULL
 decl_stmt|;
 name|gchar
 modifier|*
@@ -12519,6 +12521,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|name
 operator|=
 name|g_strdup
@@ -12529,6 +12532,7 @@ literal|"Untitled"
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|return_args
 operator|=
