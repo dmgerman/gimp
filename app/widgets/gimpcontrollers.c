@@ -351,7 +351,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c3fe7a0103
+DECL|enum|__anon29fad6a90103
 block|{
 DECL|enumerator|CONTROLLER
 name|CONTROLLER
@@ -1222,7 +1222,10 @@ name|mapping
 argument_list|,
 name|key
 argument_list|,
+name|g_object_ref
+argument_list|(
 name|action
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
