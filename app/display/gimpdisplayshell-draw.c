@@ -280,7 +280,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3e36c60103
+DECL|enum|__anon291c57510103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4312,11 +4312,6 @@ name|coords
 expr_stmt|;
 if|if
 condition|(
-name|gimp_display_shell_get_show_guides
-argument_list|(
-name|shell
-argument_list|)
-operator|&&
 name|shell
 operator|->
 name|snap_to_guides
@@ -4337,11 +4332,6 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|gimp_display_shell_get_show_grid
-argument_list|(
-name|shell
-argument_list|)
-operator|&&
 name|gimp_display_shell_get_snap_to_grid
 argument_list|(
 name|shell
