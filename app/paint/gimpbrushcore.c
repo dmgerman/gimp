@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpairbrushoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -104,8 +110,8 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b61093e0103
-DECL|enum|__anon2b61093e0203
+DECL|enum|__anon2a21421c0103
+DECL|enum|__anon2a21421c0203
 block|{
 DECL|enumerator|SET_BRUSH
 DECL|enumerator|SET_BRUSH
@@ -2980,6 +2986,13 @@ name|pressure_options
 operator|->
 name|size
 condition|)
+if|if
+condition|(
+name|GIMP_IS_AIRBRUSH_OPTIONS
+argument_list|(
+name|paint_options
+argument_list|)
+condition|)
 name|core
 operator|->
 name|scale
@@ -2988,6 +3001,17 @@ literal|1.0
 operator|-
 literal|0.9
 operator|*
+name|paint_core
+operator|->
+name|cur_coords
+operator|.
+name|pressure
+expr_stmt|;
+else|else
+name|core
+operator|->
+name|scale
+operator|=
 name|paint_core
 operator|->
 name|cur_coords
