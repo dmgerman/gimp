@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0eb27b0108
+DECL|struct|__anon29b6c5f30108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0eb27b0208
+DECL|struct|__anon29b6c5f30208
 block|{
 DECL|member|run
 name|gint
@@ -84,7 +84,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b0eb27b0308
+DECL|struct|__anon29b6c5f30308
 typedef|typedef
 struct|struct
 block|{
@@ -2587,6 +2587,9 @@ name|i
 operator|=
 literal|0
 init|;
+operator|!
+name|worst_case
+operator|&&
 name|i
 operator|<
 name|extra
@@ -2782,11 +2785,6 @@ argument_list|,
 name|imageWidth
 argument_list|,
 name|imageLength
-argument_list|)
-expr_stmt|;
-name|g_message
-argument_list|(
-literal|"TIFF Fell back to RGBA, image may be inverted\n"
 argument_list|)
 expr_stmt|;
 block|}
