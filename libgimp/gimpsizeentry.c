@@ -73,7 +73,7 @@ comment|/* static int  gimp_size_entry_focus_in_callback  (GtkWidget *widget, 		
 end_comment
 
 begin_enum
-DECL|enum|__anon28c4cef30103
+DECL|enum|__anon2baed8b20103
 enum|enum
 block|{
 DECL|enumerator|VALUE_CHANGED
@@ -1199,7 +1199,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach_defaults
+name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
 argument_list|(
@@ -1229,6 +1229,18 @@ operator|->
 name|show_refval
 operator|+
 literal|2
+argument_list|,
+name|GTK_SHRINK
+operator||
+name|GTK_FILL
+argument_list|,
+name|GTK_SHRINK
+operator||
+name|GTK_FILL
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -1669,7 +1681,7 @@ argument_list|,
 literal|0.5
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach_defaults
+name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
 argument_list|(
@@ -1689,6 +1701,18 @@ argument_list|,
 name|row
 operator|+
 literal|1
+argument_list|,
+name|GTK_SHRINK
+operator||
+name|GTK_FILL
+argument_list|,
+name|GTK_SHRINK
+operator||
+name|GTK_FILL
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

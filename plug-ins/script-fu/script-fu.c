@@ -47,19 +47,13 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
@@ -90,6 +84,12 @@ begin_include
 include|#
 directive|include
 file|"script-fu-server.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_decl_stmt
@@ -189,7 +189,7 @@ name|FILE
 modifier|*
 name|f
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|st
 parameter_list|)
@@ -225,18 +225,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -293,7 +293,7 @@ specifier|static
 name|void
 name|convert_string
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|)
@@ -302,10 +302,10 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|sputs_fcn
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|st
 parameter_list|,
@@ -324,7 +324,7 @@ parameter_list|(
 name|LISP
 name|exp
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|dest
 parameter_list|)
@@ -379,18 +379,18 @@ specifier|static
 name|void
 name|script_fu_refresh_proc
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|params
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -410,16 +410,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|sfquit
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -427,7 +427,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|siod_argv
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|siod_argv
 index|[]
@@ -757,21 +757,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -1060,46 +1060,46 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|proc_list
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|proc_name
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|arg_name
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|proc_blurb
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|proc_help
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|proc_author
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|proc_copyright
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|proc_date
 decl_stmt|;
-name|int
+name|gint
 name|proc_type
 decl_stmt|;
-name|int
+name|gint
 name|nparams
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|GParamDef
@@ -1110,10 +1110,10 @@ name|GParamDef
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|num_procs
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 comment|/*  register the database execution procedure  */
@@ -2223,15 +2223,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|convert_string (str)
+DECL|function|convert_string (gchar * str)
 name|convert_string
 parameter_list|(
-name|str
-parameter_list|)
-name|char
+name|gchar
 modifier|*
 name|str
-decl_stmt|;
+parameter_list|)
 block|{
 while|while
 condition|(
@@ -2260,11 +2258,11 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|sputs_fcn (char * st,void * dest)
+name|gint
+DECL|function|sputs_fcn (gchar * st,void * dest)
 name|sputs_fcn
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|st
 parameter_list|,
@@ -2314,13 +2312,13 @@ end_function
 begin_function
 specifier|static
 name|LISP
-DECL|function|lprin1s (LISP exp,char * dest)
+DECL|function|lprin1s (LISP exp,gchar * dest)
 name|lprin1s
 parameter_list|(
 name|LISP
 name|exp
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|dest
 parameter_list|)
@@ -5274,9 +5272,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_auxillary_init ()
+DECL|function|script_fu_auxillary_init (void)
 name|script_fu_auxillary_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -5359,21 +5359,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_refresh_proc (char * name,int nparams,GParam * params,int * nreturn_vals,GParam ** return_vals)
+DECL|function|script_fu_refresh_proc (gchar * name,gint nparams,GParam * params,gint * nreturn_vals,GParam ** return_vals)
 name|script_fu_refresh_proc
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|params
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,

@@ -38,12 +38,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -376,7 +370,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon28da8fa70108
+DECL|struct|__anon290f95db0108
 typedef|typedef
 struct|struct
 block|{
@@ -445,7 +439,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28da8fa70208
+DECL|struct|__anon290f95db0208
 typedef|typedef
 struct|struct
 block|{
@@ -563,7 +557,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28da8fa70308
+DECL|struct|__anon290f95db0308
 typedef|typedef
 struct|struct
 block|{
@@ -592,7 +586,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28da8fa70408
+DECL|struct|__anon290f95db0408
 typedef|typedef
 struct|struct
 block|{
@@ -619,7 +613,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28da8fa70508
+DECL|struct|__anon290f95db0508
 typedef|typedef
 struct|struct
 block|{
