@@ -655,7 +655,7 @@ name|FALSE
 expr_stmt|;
 name|gdisp
 operator|->
-name|cd_name
+name|cd_list
 operator|=
 name|NULL
 expr_stmt|;
