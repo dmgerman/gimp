@@ -309,7 +309,7 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_item_undo_new (GimpImage * gimage,GimpItem * item,GimpUndoType undo_type,const gchar * name,gpointer data,gsize size,gboolean dirties_image,GimpUndoPopFunc pop_func,GimpUndoFreeFunc free_func)
+DECL|function|gimp_item_undo_new (GimpImage * gimage,GimpItem * item,GimpUndoType undo_type,const gchar * name,gpointer data,gint64 size,gboolean dirties_image,GimpUndoPopFunc pop_func,GimpUndoFreeFunc free_func)
 name|gimp_item_undo_new
 parameter_list|(
 name|GimpImage
@@ -331,7 +331,7 @@ parameter_list|,
 name|gpointer
 name|data
 parameter_list|,
-name|gsize
+name|gint64
 name|size
 parameter_list|,
 name|gboolean

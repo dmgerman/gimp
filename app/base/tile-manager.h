@@ -113,7 +113,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Get a specified tile from a tile manager.   */
+comment|/* Get a specified tile from a tile manager.  */
 end_comment
 
 begin_function_decl
@@ -404,7 +404,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gsize
+name|gint64
 name|tile_manager_get_memsize
 parameter_list|(
 specifier|const

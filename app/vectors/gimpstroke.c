@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a305a380103
+DECL|enum|__anon28a4c1150103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -138,14 +138,14 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gsize
+name|gint64
 name|gimp_stroke_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -1526,15 +1526,15 @@ end_function
 
 begin_function
 specifier|static
-name|gsize
-DECL|function|gimp_stroke_get_memsize (GimpObject * object,gsize * gui_size)
+name|gint64
+DECL|function|gimp_stroke_get_memsize (GimpObject * object,gint64 * gui_size)
 name|gimp_stroke_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -1543,7 +1543,7 @@ name|GimpStroke
 modifier|*
 name|stroke
 decl_stmt|;
-name|gsize
+name|gint64
 name|memsize
 init|=
 literal|0

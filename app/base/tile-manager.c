@@ -2455,7 +2455,7 @@ block|}
 end_function
 
 begin_function
-name|gsize
+name|gint64
 DECL|function|tile_manager_get_memsize (const TileManager * tm)
 name|tile_manager_get_memsize
 parameter_list|(
@@ -2465,7 +2465,7 @@ modifier|*
 name|tm
 parameter_list|)
 block|{
-name|gsize
+name|gint64
 name|memsize
 init|=
 literal|0

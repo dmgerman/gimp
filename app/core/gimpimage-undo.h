@@ -88,7 +88,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|gsize
+name|gint64
 name|size
 parameter_list|,
 name|gsize
@@ -127,7 +127,7 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
-name|gsize
+name|gint64
 name|size
 parameter_list|,
 name|gsize

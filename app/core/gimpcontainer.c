@@ -176,7 +176,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2797e8c80103
+DECL|enum|__anon27bd50cd0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2797e8c80203
+DECL|enum|__anon27bd50cd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -316,14 +316,14 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gsize
+name|gint64
 name|gimp_container_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -1212,15 +1212,15 @@ end_function
 
 begin_function
 specifier|static
-name|gsize
-DECL|function|gimp_container_get_memsize (GimpObject * object,gsize * gui_size)
+name|gint64
+DECL|function|gimp_container_get_memsize (GimpObject * object,gint64 * gui_size)
 name|gimp_container_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -1233,7 +1233,7 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|gsize
+name|gint64
 name|memsize
 init|=
 literal|0
@@ -1316,7 +1316,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2797e8c80308
+DECL|struct|__anon27bd50cd0308
 block|{
 DECL|member|writer
 name|GimpConfigWriter

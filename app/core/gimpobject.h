@@ -148,7 +148,7 @@ parameter_list|)
 function_decl|;
 comment|/*  virtual functions  */
 DECL|member|get_memsize
-name|gsize
+name|gint64
 function_decl|(
 modifier|*
 name|get_memsize
@@ -158,7 +158,7 @@ name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -261,14 +261,14 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gsize
+name|gint64
 name|gimp_object_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -276,7 +276,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gsize
+name|gint64
 name|gimp_g_object_get_memsize
 parameter_list|(
 name|GObject

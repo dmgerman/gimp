@@ -191,14 +191,14 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gsize
+name|gint64
 name|gimp_channel_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -1386,15 +1386,15 @@ end_function
 
 begin_function
 specifier|static
-name|gsize
-DECL|function|gimp_channel_get_memsize (GimpObject * object,gsize * gui_size)
+name|gint64
+DECL|function|gimp_channel_get_memsize (GimpObject * object,gint64 * gui_size)
 name|gimp_channel_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -1402,14 +1402,12 @@ block|{
 name|GimpChannel
 modifier|*
 name|channel
-decl_stmt|;
-name|channel
-operator|=
+init|=
 name|GIMP_CHANNEL
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 operator|*
 name|gui_size
 operator|+=
@@ -2183,14 +2181,12 @@ block|{
 name|GimpChannel
 modifier|*
 name|channel
-decl_stmt|;
-name|channel
-operator|=
+init|=
 name|GIMP_CHANNEL
 argument_list|(
 name|item
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_image_undo_push_channel_mod
 argument_list|(
 name|gimp_item_get_image
@@ -2281,14 +2277,12 @@ block|{
 name|GimpChannel
 modifier|*
 name|channel
-decl_stmt|;
-name|channel
-operator|=
+init|=
 name|GIMP_CHANNEL
 argument_list|(
 name|item
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_image_undo_push_channel_mod
 argument_list|(
 name|gimp_item_get_image

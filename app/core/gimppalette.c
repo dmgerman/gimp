@@ -134,14 +134,14 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gsize
+name|gint64
 name|gimp_palette_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -586,22 +586,12 @@ block|{
 name|GimpPalette
 modifier|*
 name|palette
-decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_PALETTE
-argument_list|(
-name|object
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|palette
-operator|=
+init|=
 name|GIMP_PALETTE
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|palette
@@ -652,15 +642,15 @@ end_function
 
 begin_function
 specifier|static
-name|gsize
-DECL|function|gimp_palette_get_memsize (GimpObject * object,gsize * gui_size)
+name|gint64
+DECL|function|gimp_palette_get_memsize (GimpObject * object,gint64 * gui_size)
 name|gimp_palette_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -673,7 +663,7 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|gsize
+name|gint64
 name|memsize
 init|=
 literal|0
@@ -706,9 +696,7 @@ block|{
 name|GimpPaletteEntry
 modifier|*
 name|entry
-decl_stmt|;
-name|entry
-operator|=
+init|=
 operator|(
 name|GimpPaletteEntry
 operator|*
@@ -716,7 +704,7 @@ operator|)
 name|list
 operator|->
 name|data
-expr_stmt|;
+decl_stmt|;
 name|memsize
 operator|+=
 sizeof|sizeof
@@ -1373,14 +1361,12 @@ block|{
 name|GimpPalette
 modifier|*
 name|palette
-decl_stmt|;
-name|palette
-operator|=
+init|=
 name|GIMP_PALETTE
 argument_list|(
 name|viewable
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|tooltip

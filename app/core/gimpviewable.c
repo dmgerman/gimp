@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b543d630103
+DECL|enum|__anon2a1f71630103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -78,7 +78,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b543d630203
+DECL|enum|__anon2a1f71630203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -189,14 +189,14 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gsize
+name|gint64
 name|gimp_viewable_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -882,15 +882,15 @@ end_function
 
 begin_function
 specifier|static
-name|gsize
-DECL|function|gimp_viewable_get_memsize (GimpObject * object,gsize * gui_size)
+name|gint64
+DECL|function|gimp_viewable_get_memsize (GimpObject * object,gint64 * gui_size)
 name|gimp_viewable_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)

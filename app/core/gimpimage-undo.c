@@ -564,14 +564,14 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push (GimpImage * gimage,gsize size,gsize struct_size,GimpUndoType type,const gchar * name,gboolean dirties_image,GimpUndoPopFunc pop_func,GimpUndoFreeFunc free_func)
+DECL|function|gimp_image_undo_push (GimpImage * gimage,gint64 size,gsize struct_size,GimpUndoType type,const gchar * name,gboolean dirties_image,GimpUndoPopFunc pop_func,GimpUndoFreeFunc free_func)
 name|gimp_image_undo_push
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|gsize
+name|gint64
 name|size
 parameter_list|,
 name|gsize
@@ -623,7 +623,7 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push_item (GimpImage * gimage,GimpItem * item,gsize size,gsize struct_size,GimpUndoType type,const gchar * name,gboolean dirties_image,GimpUndoPopFunc pop_func,GimpUndoFreeFunc free_func)
+DECL|function|gimp_image_undo_push_item (GimpImage * gimage,GimpItem * item,gint64 size,gsize struct_size,GimpUndoType type,const gchar * name,gboolean dirties_image,GimpUndoPopFunc pop_func,GimpUndoFreeFunc free_func)
 name|gimp_image_undo_push_item
 parameter_list|(
 name|GimpImage
@@ -634,7 +634,7 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
-name|gsize
+name|gint64
 name|size
 parameter_list|,
 name|gsize
@@ -1077,7 +1077,7 @@ decl_stmt|;
 name|gint
 name|max_undo_levels
 decl_stmt|;
-name|gulong
+name|gint64
 name|undo_size
 decl_stmt|;
 name|container

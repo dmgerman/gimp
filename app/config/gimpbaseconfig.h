@@ -111,7 +111,7 @@ name|guint
 name|num_processors
 decl_stmt|;
 DECL|member|tile_cache_size
-name|gulong
+name|guint64
 name|tile_cache_size
 decl_stmt|;
 block|}

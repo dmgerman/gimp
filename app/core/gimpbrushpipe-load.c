@@ -196,14 +196,14 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gsize
+name|gint64
 name|gimp_brush_pipe_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -740,15 +740,15 @@ end_function
 
 begin_function
 specifier|static
-name|gsize
-DECL|function|gimp_brush_pipe_get_memsize (GimpObject * object,gsize * gui_size)
+name|gint64
+DECL|function|gimp_brush_pipe_get_memsize (GimpObject * object,gint64 * gui_size)
 name|gimp_brush_pipe_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -757,7 +757,7 @@ name|GimpBrushPipe
 modifier|*
 name|pipe
 decl_stmt|;
-name|gsize
+name|gint64
 name|memsize
 init|=
 literal|0

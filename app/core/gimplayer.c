@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2d9aab0103
+DECL|enum|__anon2bcda47c0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -213,14 +213,14 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gsize
+name|gint64
 name|gimp_layer_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -1255,15 +1255,15 @@ end_function
 
 begin_function
 specifier|static
-name|gsize
-DECL|function|gimp_layer_get_memsize (GimpObject * object,gsize * gui_size)
+name|gint64
+DECL|function|gimp_layer_get_memsize (GimpObject * object,gint64 * gui_size)
 name|gimp_layer_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -1272,7 +1272,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gsize
+name|gint64
 name|memsize
 init|=
 literal|0

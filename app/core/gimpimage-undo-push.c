@@ -332,7 +332,7 @@ name|GimpItem
 modifier|*
 name|item
 decl_stmt|;
-name|gsize
+name|gint64
 name|size
 decl_stmt|;
 name|g_return_val_if_fail
@@ -674,7 +674,7 @@ name|GimpItem
 modifier|*
 name|item
 decl_stmt|;
-name|gsize
+name|gint64
 name|size
 decl_stmt|;
 name|gint
@@ -3732,7 +3732,7 @@ name|GimpUndo
 modifier|*
 name|new
 decl_stmt|;
-name|gsize
+name|gint64
 name|size
 decl_stmt|;
 name|g_return_val_if_fail
@@ -4594,7 +4594,7 @@ name|GimpUndo
 modifier|*
 name|new
 decl_stmt|;
-name|gsize
+name|gint64
 name|size
 decl_stmt|;
 specifier|const
@@ -5943,7 +5943,7 @@ name|GimpUndo
 modifier|*
 name|new
 decl_stmt|;
-name|gsize
+name|gint64
 name|size
 decl_stmt|;
 name|g_return_val_if_fail
@@ -6162,7 +6162,10 @@ block|{
 comment|/*  remove layer  */
 name|g_print
 argument_list|(
-literal|"undo_pop_layer: taking ownership, size += %u\n"
+literal|"undo_pop_layer: taking ownership, size += "
+literal|"%"
+name|G_GINT64_FORMAT
+literal|"\n"
 argument_list|,
 name|gimp_object_get_memsize
 argument_list|(
@@ -6403,7 +6406,10 @@ block|{
 comment|/*  restore layer  */
 name|g_print
 argument_list|(
-literal|"undo_pop_layer: dropping ownership, size -= %u\n"
+literal|"undo_pop_layer: dropping ownership, size -= "
+literal|"%"
+name|G_GINT64_FORMAT
+literal|"\n"
 argument_list|,
 name|gimp_object_get_memsize
 argument_list|(
@@ -6694,7 +6700,7 @@ name|TileManager
 modifier|*
 name|tiles
 decl_stmt|;
-name|gsize
+name|gint64
 name|size
 decl_stmt|;
 name|g_return_val_if_fail
@@ -7484,7 +7490,7 @@ name|GimpUndo
 modifier|*
 name|new
 decl_stmt|;
-name|gsize
+name|gint64
 name|size
 decl_stmt|;
 name|g_return_val_if_fail
@@ -8849,7 +8855,7 @@ name|GimpUndo
 modifier|*
 name|new
 decl_stmt|;
-name|gsize
+name|gint64
 name|size
 decl_stmt|;
 name|g_return_val_if_fail
@@ -9340,7 +9346,7 @@ name|GimpUndo
 modifier|*
 name|new
 decl_stmt|;
-name|gsize
+name|gint64
 name|size
 decl_stmt|;
 name|g_return_val_if_fail
@@ -10516,7 +10522,7 @@ name|GimpUndo
 modifier|*
 name|new
 decl_stmt|;
-name|gsize
+name|gint64
 name|size
 decl_stmt|;
 name|g_return_val_if_fail
@@ -11015,7 +11021,7 @@ name|GimpUndo
 modifier|*
 name|new
 decl_stmt|;
-name|gsize
+name|gint64
 name|size
 decl_stmt|;
 name|g_return_val_if_fail

@@ -202,14 +202,14 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gsize
+name|gint64
 name|gimp_pattern_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -550,14 +550,12 @@ block|{
 name|GimpPattern
 modifier|*
 name|pattern
-decl_stmt|;
-name|pattern
-operator|=
+init|=
 name|GIMP_PATTERN
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|pattern
@@ -594,15 +592,15 @@ end_function
 
 begin_function
 specifier|static
-name|gsize
-DECL|function|gimp_pattern_get_memsize (GimpObject * object,gsize * gui_size)
+name|gint64
+DECL|function|gimp_pattern_get_memsize (GimpObject * object,gint64 * gui_size)
 name|gimp_pattern_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -611,7 +609,7 @@ name|GimpPattern
 modifier|*
 name|pattern
 decl_stmt|;
-name|gsize
+name|gint64
 name|memsize
 init|=
 literal|0
@@ -687,14 +685,12 @@ block|{
 name|GimpPattern
 modifier|*
 name|pattern
-decl_stmt|;
-name|pattern
-operator|=
+init|=
 name|GIMP_PATTERN
 argument_list|(
 name|viewable
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|pattern
@@ -875,14 +871,12 @@ block|{
 name|GimpPattern
 modifier|*
 name|pattern
-decl_stmt|;
-name|pattern
-operator|=
+init|=
 name|GIMP_PATTERN
 argument_list|(
 name|viewable
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|tooltip

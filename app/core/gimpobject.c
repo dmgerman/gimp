@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a5ff900103
+DECL|enum|__anon28c8e7a90103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -63,7 +63,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a5ff900203
+DECL|enum|__anon28c8e7a90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -171,14 +171,14 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gsize
+name|gint64
 name|gimp_object_real_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -1205,25 +1205,25 @@ directive|endif
 end_endif
 
 begin_function
-name|gsize
-DECL|function|gimp_object_get_memsize (GimpObject * object,gsize * gui_size)
+name|gint64
+DECL|function|gimp_object_get_memsize (GimpObject * object,gint64 * gui_size)
 name|gimp_object_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
 block|{
-name|gsize
+name|gint64
 name|my_size
 init|=
 literal|0
 decl_stmt|;
-name|gsize
+name|gint64
 name|my_gui_size
 init|=
 literal|0
@@ -1266,10 +1266,10 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-name|gsize
+name|gint64
 name|memsize
 decl_stmt|;
-name|gsize
+name|gint64
 name|gui_memsize
 init|=
 literal|0
@@ -1348,12 +1348,16 @@ index|]
 operator|=
 literal|'\0'
 expr_stmt|;
-comment|/* FIXME: are we going to ever have> 4 GB objects?? */
 name|object_size
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s%s \"%s\": %u (%u)\n"
+literal|"%s%s \"%s\": "
+literal|"%"
+name|G_GINT64_FORMAT
+literal|"(%"
+name|G_GINT64_FORMAT
+literal|")\n"
 argument_list|,
 name|indent_buf
 argument_list|,
@@ -1369,14 +1373,8 @@ name|object
 operator|->
 name|name
 argument_list|,
-operator|(
-name|guint
-operator|)
 name|memsize
 argument_list|,
-operator|(
-name|guint
-operator|)
 name|gui_memsize
 argument_list|)
 expr_stmt|;
@@ -1468,7 +1466,7 @@ block|}
 end_function
 
 begin_function
-name|gsize
+name|gint64
 DECL|function|gimp_g_object_get_memsize (GObject * object)
 name|gimp_g_object_get_memsize
 parameter_list|(
@@ -1480,7 +1478,7 @@ block|{
 name|GTypeQuery
 name|type_query
 decl_stmt|;
-name|gsize
+name|gint64
 name|memsize
 init|=
 literal|0
@@ -1520,20 +1518,20 @@ end_function
 
 begin_function
 specifier|static
-name|gsize
-DECL|function|gimp_object_real_get_memsize (GimpObject * object,gsize * gui_size)
+name|gint64
+DECL|function|gimp_object_real_get_memsize (GimpObject * object,gint64 * gui_size)
 name|gimp_object_real_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
 block|{
-name|gsize
+name|gint64
 name|memsize
 init|=
 literal|0

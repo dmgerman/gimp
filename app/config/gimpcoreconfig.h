@@ -182,7 +182,7 @@ name|gint
 name|levels_of_undo
 decl_stmt|;
 DECL|member|undo_size
-name|gulong
+name|guint64
 name|undo_size
 decl_stmt|;
 DECL|member|plug_in_rc_path

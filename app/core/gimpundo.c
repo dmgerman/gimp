@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a99d9390103
+DECL|enum|__anon298c82060103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -105,14 +105,14 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gsize
+name|gint64
 name|gimp_undo_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -636,15 +636,15 @@ end_function
 
 begin_function
 specifier|static
-name|gsize
-DECL|function|gimp_undo_get_memsize (GimpObject * object,gsize * gui_size)
+name|gint64
+DECL|function|gimp_undo_get_memsize (GimpObject * object,gint64 * gui_size)
 name|gimp_undo_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
 parameter_list|,
-name|gsize
+name|gint64
 modifier|*
 name|gui_size
 parameter_list|)
@@ -653,7 +653,7 @@ name|GimpUndo
 modifier|*
 name|undo
 decl_stmt|;
-name|gsize
+name|gint64
 name|memsize
 init|=
 literal|0
@@ -996,7 +996,7 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_undo_new (GimpImage * gimage,GimpUndoType undo_type,const gchar * name,gpointer data,gsize size,gboolean dirties_image,GimpUndoPopFunc pop_func,GimpUndoFreeFunc free_func)
+DECL|function|gimp_undo_new (GimpImage * gimage,GimpUndoType undo_type,const gchar * name,gpointer data,gint64 size,gboolean dirties_image,GimpUndoPopFunc pop_func,GimpUndoFreeFunc free_func)
 name|gimp_undo_new
 parameter_list|(
 name|GimpImage
@@ -1014,7 +1014,7 @@ parameter_list|,
 name|gpointer
 name|data
 parameter_list|,
-name|gsize
+name|gint64
 name|size
 parameter_list|,
 name|gboolean

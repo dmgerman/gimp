@@ -160,7 +160,7 @@ parameter_list|,
 name|gpointer
 name|data
 parameter_list|,
-name|gsize
+name|gint64
 name|size
 parameter_list|,
 name|gboolean

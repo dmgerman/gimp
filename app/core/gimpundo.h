@@ -161,7 +161,7 @@ name|data
 decl_stmt|;
 comment|/* data to implement the undo         */
 DECL|member|size
-name|gsize
+name|gint64
 name|size
 decl_stmt|;
 comment|/* size of undo item                  */
@@ -270,7 +270,7 @@ parameter_list|,
 name|gpointer
 name|data
 parameter_list|,
-name|gsize
+name|gint64
 name|size
 parameter_list|,
 name|gboolean
