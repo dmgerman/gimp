@@ -87,7 +87,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295704ed0108
+DECL|struct|__anon2c0c310a0108
 block|{
 DECL|member|height
 name|gint
@@ -106,7 +106,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295704ed0208
+DECL|struct|__anon2c0c310a0208
 block|{
 DECL|member|run
 name|gint
@@ -974,7 +974,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -1937,7 +1937,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295704ed0308
+DECL|struct|__anon2c0c310a0308
 block|{
 DECL|member|x
 DECL|member|y

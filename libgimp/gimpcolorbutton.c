@@ -462,7 +462,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2a2238c20103
+DECL|enum|__anon291304360103
 enum|enum
 block|{
 DECL|enumerator|COLOR_CHANGED
@@ -2391,6 +2391,19 @@ argument_list|(
 name|gcb
 argument_list|)
 expr_stmt|;
+name|gtk_signal_emit
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gcb
+argument_list|)
+argument_list|,
+name|gimp_color_button_signals
+index|[
+name|COLOR_CHANGED
+index|]
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -2452,6 +2465,19 @@ expr_stmt|;
 name|gimp_color_button_update
 argument_list|(
 name|gcb
+argument_list|)
+expr_stmt|;
+name|gtk_signal_emit
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gcb
+argument_list|)
+argument_list|,
+name|gimp_color_button_signals
+index|[
+name|COLOR_CHANGED
+index|]
 argument_list|)
 expr_stmt|;
 block|}

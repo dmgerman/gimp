@@ -64,19 +64,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpcolorspace.h"
+file|<libgimp/gimpcolorspace.h>
 end_include
 
 begin_include
@@ -267,7 +267,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bda32840108
+DECL|struct|__anon2b8cbf010108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -295,7 +295,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bda32840208
+DECL|struct|__anon2b8cbf010208
 block|{
 DECL|member|name
 name|gchar
@@ -375,21 +375,6 @@ end_decl_stmt
 begin_comment
 comment|/* gtkW callback */
 end_comment
-
-begin_function_decl
-specifier|static
-name|void
-name|gtkW_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -1605,7 +1590,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bda32840308
+DECL|struct|__anon2b8cbf010308
 block|{
 DECL|member|function
 name|gint
@@ -1678,7 +1663,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bda32840408
+DECL|struct|__anon2b8cbf010408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -2411,13 +2396,13 @@ block|,
 comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -2425,7 +2410,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bda32840508
+DECL|struct|__anon2b8cbf010508
 block|{
 DECL|member|run
 name|gint
@@ -2473,7 +2458,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bda32840608
+DECL|struct|__anon2b8cbf010608
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -2670,7 +2655,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -2719,7 +2706,7 @@ init|=
 name|NULL
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -2736,7 +2723,7 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nreturn_vals
 init|=
 literal|0
@@ -7499,7 +7486,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|gtkW_close_callback
+name|gtk_main_quit
 argument_list|)
 expr_stmt|;
 name|memset
@@ -10602,7 +10589,7 @@ literal|"destroy"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gtkW_close_callback
+name|gtk_main_quit
 argument_list|)
 argument_list|,
 name|NULL
@@ -12568,7 +12555,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|gtkW_close_callback
+name|gtk_main_quit
 argument_list|)
 expr_stmt|;
 name|table
@@ -14276,26 +14263,6 @@ end_comment
 begin_comment
 comment|/* gtkW callback */
 end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|gtkW_close_callback (GtkWidget * widget,gpointer data)
-name|gtkW_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-block|}
-end_function
 
 begin_function
 specifier|static

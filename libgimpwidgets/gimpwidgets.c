@@ -1773,6 +1773,11 @@ name|gboolean
 name|left_adjust
 parameter_list|)
 block|{
+if|if
+condition|(
+name|text
+condition|)
+block|{
 name|GtkWidget
 modifier|*
 name|label
@@ -1843,6 +1848,7 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|left_adjust

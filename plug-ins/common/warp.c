@@ -144,9 +144,9 @@ value|3
 end_define
 
 begin_typedef
-DECL|struct|__anon2b3f0e9c0108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2bb14c3d0108
 block|{
 DECL|member|amount
 name|gdouble
@@ -211,9 +211,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b3f0e9c0208
 typedef|typedef
 struct|struct
+DECL|struct|__anon2bb14c3d0208
 block|{
 DECL|member|amount
 name|GtkWidget
@@ -698,15 +698,15 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* -------------------------------------------------------------------------------- */
+comment|/* -------------------------------------------------------------------------- */
 end_comment
 
 begin_comment
-comment|/*   Variables global over entire plug-in scope                                     */
+comment|/*   Variables global over entire plug-in scope                               */
 end_comment
 
 begin_comment
-comment|/* -------------------------------------------------------------------------------- */
+comment|/* -------------------------------------------------------------------------- */
 end_comment
 
 begin_decl_stmt
@@ -841,7 +841,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* -------------------------------------------------------------------------------- */
+comment|/* -------------------------------------------------------------------------- */
 end_comment
 
 begin_decl_stmt
@@ -926,7 +926,7 @@ comment|/* current selected foreground color */
 end_comment
 
 begin_comment
-comment|/* -------------------------------------------------------------------------------- */
+comment|/* -------------------------------------------------------------------------- */
 end_comment
 
 begin_comment
@@ -943,7 +943,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -1352,7 +1354,7 @@ case|:
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
-comment|/*  Make sure minimum args (mode, image, draw, amount, warp_map, iter) are there  */
+comment|/*  Make sure minimum args        *  (mode, image, draw, amount, warp_map, iter) are there         */
 if|if
 condition|(
 name|nparams
@@ -2996,7 +2998,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

@@ -97,7 +97,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2905b9db0108
+DECL|struct|__anon2afba3110108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2905b9db0208
+DECL|struct|__anon2afba3110208
 block|{
 DECL|member|run
 name|gint
@@ -2376,7 +2376,7 @@ name|toggle
 argument_list|,
 literal|0
 argument_list|,
-literal|2
+literal|3
 argument_list|,
 literal|0
 argument_list|,

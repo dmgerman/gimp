@@ -87,18 +87,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -131,11 +131,11 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|file
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|brief
 parameter_list|)
@@ -147,11 +147,11 @@ specifier|static
 name|gint
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|file
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|brief
 parameter_list|,
@@ -169,7 +169,7 @@ specifier|static
 name|gint
 name|palette_dialog
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|title
 parameter_list|)
@@ -188,22 +188,23 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|palette_file
+specifier|static
 name|char
 modifier|*
 name|palette_file
@@ -214,6 +215,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|data_length
+specifier|static
 name|size_t
 name|data_length
 init|=
@@ -298,7 +300,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_args
 init|=
 sizeof|sizeof
@@ -315,7 +317,7 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nload_return_vals
 init|=
 sizeof|sizeof
@@ -387,7 +389,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nsave_args
 init|=
 sizeof|sizeof
@@ -500,23 +502,23 @@ block|}
 end_function
 
 begin_function
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
 specifier|static
 name|void
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -938,16 +940,16 @@ comment|/* Load CEL image into The GIMP */
 end_comment
 
 begin_function
-DECL|function|load_image (char * file,char * brief)
 specifier|static
 name|gint32
+DECL|function|load_image (gchar * file,gchar * brief)
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|file
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|brief
 parameter_list|)
@@ -1862,9 +1864,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|load_palette (FILE * fp,guchar palette[])
 specifier|static
 name|gint
+DECL|function|load_palette (FILE * fp,guchar palette[])
 name|load_palette
 parameter_list|(
 name|FILE
@@ -2166,16 +2168,16 @@ block|}
 end_function
 
 begin_function
-DECL|function|save_image (char * file,char * brief,gint32 image,gint32 layer)
 specifier|static
 name|gint
+DECL|function|save_image (gchar * file,gchar * brief,gint32 image,gint32 layer)
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|file
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|brief
 parameter_list|,
@@ -2814,9 +2816,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|palette_ok (GtkWidget * widget,GtkWidget ** fs)
 specifier|static
 name|void
+DECL|function|palette_ok (GtkWidget * widget,GtkWidget ** fs)
 name|palette_ok
 parameter_list|(
 name|GtkWidget
@@ -2868,28 +2870,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|palette_cancel (GtkWidget * widget,GtkWidget ** window)
-specifier|static
-name|void
-name|palette_cancel
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GtkWidget
-modifier|*
-modifier|*
-name|window
-parameter_list|)
-block|{
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_function
 specifier|static
 name|gint
 DECL|function|palette_dialog (gchar * title)
@@ -2916,13 +2896,12 @@ name|dialog
 decl_stmt|;
 name|argv
 operator|=
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|gchar
 operator|*
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|argv
@@ -2991,29 +2970,12 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|palette_ok
-argument_list|,
-name|dialog
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|dialog
 argument_list|)
 argument_list|,
-literal|"destroy"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|palette_cancel
-argument_list|,
-name|NULL
+name|dialog
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect_object
@@ -3030,15 +2992,32 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|palette_cancel
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gtk_widget_destroy
+argument_list|)
 argument_list|,
 name|GTK_OBJECT
 argument_list|(
 name|dialog
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+literal|"destroy"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gtk_main_quit
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_help_connect_help_accel
