@@ -727,7 +727,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a1d8d670108
+DECL|struct|__anon29d5b8510108
 block|{
 DECL|member|Width
 name|unsigned
@@ -777,7 +777,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a1d8d670208
+DECL|struct|__anon29d5b8510208
 block|{
 DECL|member|transparent
 name|int
@@ -3621,6 +3621,27 @@ operator|==
 literal|1
 condition|)
 block|{
+comment|/* Guard against bogus logical screen size values */
+if|if
+condition|(
+name|screenwidth
+operator|==
+literal|0
+condition|)
+name|screenwidth
+operator|=
+name|len
+expr_stmt|;
+if|if
+condition|(
+name|screenheight
+operator|==
+literal|0
+condition|)
+name|screenheight
+operator|=
+name|height
+expr_stmt|;
 name|image_ID
 operator|=
 name|gimp_image_new
