@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28db66a60108
+DECL|struct|__anon2b2d00f10108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -3339,26 +3339,12 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* now sort the store */
-name|gtk_tree_sortable_set_sort_column_id
-argument_list|(
-name|GTK_TREE_SORTABLE
-argument_list|(
-name|dbbrowser
-operator|->
-name|store
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-name|GTK_SORT_ASCENDING
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|proc_list
 argument_list|)
 expr_stmt|;
+comment|/* now sort the store */
 name|gtk_tree_sortable_set_sort_column_id
 argument_list|(
 name|GTK_TREE_SORTABLE
