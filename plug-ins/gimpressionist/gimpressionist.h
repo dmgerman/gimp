@@ -1,4 +1,59 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_CONFIG_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|SRAND_FUNC
+end_ifndef
+
+begin_define
+DECL|macro|SRAND_FUNC
+define|#
+directive|define
+name|SRAND_FUNC
+value|srand
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|RAND_FUNC
+end_ifndef
+
+begin_define
+DECL|macro|RAND_FUNC
+define|#
+directive|define
+name|RAND_FUNC
+value|rand
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -67,14 +122,14 @@ end_define
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|M_PI
+name|G_PI
 end_ifndef
 
 begin_define
-DECL|macro|M_PI
+DECL|macro|G_PI
 define|#
 directive|define
-name|M_PI
+name|G_PI
 value|3.14159265358979323846
 end_define
 
@@ -83,32 +138,24 @@ endif|#
 directive|endif
 end_endif
 
-begin_comment
-comment|/* M_PI */
-end_comment
-
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|M_PI_2
+name|G_PI_2
 end_ifndef
 
 begin_define
-DECL|macro|M_PI_2
+DECL|macro|G_PI_2
 define|#
 directive|define
-name|M_PI_2
-value|(M_PI / 2.0)
+name|G_PI_2
+value|(G_PI / 2.0)
 end_define
 
 begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_comment
-comment|/* M_PI_2 */
-end_comment
 
 begin_comment
 comment|/* Type declaration and definitions */
@@ -174,7 +221,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon27a01e660108
+DECL|struct|__anon292f63b20108
 typedef|typedef
 struct|struct
 block|{

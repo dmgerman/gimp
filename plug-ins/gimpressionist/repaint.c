@@ -1055,7 +1055,6 @@ name|dev
 operator|/=
 name|thissum
 expr_stmt|;
-comment|/* dev += rand() / (float)RAND_MAX * 0.05; */
 if|if
 condition|(
 operator|(
@@ -1144,7 +1143,7 @@ return|;
 block|}
 name|i
 operator|=
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|%
 name|g_list_length
@@ -2316,15 +2315,12 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|srand
+name|SRAND_FUNC
 argument_list|(
 name|time
 argument_list|(
 name|NULL
 argument_list|)
-operator|+
-name|getpid
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|numbrush
@@ -3857,7 +3853,7 @@ literal|3
 index|]
 operator|=
 operator|(
-name|M_PI
+name|G_PI
 operator|+
 name|atan2
 argument_list|(
@@ -3874,7 +3870,7 @@ operator|*
 literal|255.0
 operator|/
 operator|(
-name|M_PI
+name|G_PI
 operator|*
 literal|2
 operator|)
@@ -4624,7 +4620,7 @@ literal|3
 index|]
 operator|=
 operator|(
-name|M_PI
+name|G_PI
 operator|+
 name|atan2
 argument_list|(
@@ -4641,7 +4637,7 @@ operator|*
 literal|255.0
 operator|/
 operator|(
-name|M_PI
+name|G_PI
 operator|*
 literal|2
 operator|)
@@ -5300,7 +5296,7 @@ name|b
 decl_stmt|;
 name|a
 operator|=
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|%
 name|i
@@ -5507,7 +5503,7 @@ condition|)
 block|{
 name|tx
 operator|=
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|%
 operator|(
@@ -5524,7 +5520,7 @@ literal|2
 expr_stmt|;
 name|ty
 operator|=
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|%
 operator|(
@@ -5579,7 +5575,7 @@ block|{
 name|double
 name|z
 init|=
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|*
 literal|0.75
@@ -5718,7 +5714,7 @@ case|:
 comment|/* Random */
 name|on
 operator|=
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|%
 name|runningvals
@@ -5809,7 +5805,7 @@ case|:
 comment|/* Random */
 name|sn
 operator|=
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|%
 name|runningvals
@@ -6391,7 +6387,7 @@ name|r
 operator|=
 name|r
 operator|+
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|/
 operator|(
@@ -6409,7 +6405,7 @@ name|g
 operator|=
 name|g
 operator|+
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|/
 operator|(
@@ -6427,7 +6423,7 @@ name|b
 operator|=
 name|b
 operator|+
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|/
 operator|(

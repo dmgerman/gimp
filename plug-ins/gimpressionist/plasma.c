@@ -20,6 +20,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpressionist.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"ppmtool.h"
 end_include
 
@@ -221,7 +227,7 @@ operator|+
 name|turb
 operator|*
 operator|(
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|%
 name|xr
@@ -280,7 +286,7 @@ operator|+
 name|turb
 operator|*
 operator|(
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|%
 name|xr
@@ -339,7 +345,7 @@ operator|+
 name|turb
 operator|*
 operator|(
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|%
 name|yr
@@ -398,7 +404,7 @@ operator|+
 name|turb
 operator|*
 operator|(
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|%
 name|yr
@@ -475,7 +481,7 @@ operator|+
 name|turb
 operator|*
 operator|(
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|%
 operator|(
@@ -665,7 +671,7 @@ argument_list|)
 operator|=
 literal|1
 operator|+
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|%
 literal|255
@@ -681,7 +687,7 @@ argument_list|)
 operator|=
 literal|1
 operator|+
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|%
 literal|255
@@ -697,7 +703,7 @@ argument_list|)
 operator|=
 literal|1
 operator|+
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|%
 literal|255
@@ -713,7 +719,7 @@ argument_list|)
 operator|=
 literal|1
 operator|+
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|%
 literal|255
