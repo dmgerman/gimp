@@ -351,7 +351,7 @@ name|GTK_STOCK_SAVE
 argument_list|,
 name|_
 argument_list|(
-literal|"Save current settings to disk"
+literal|"Save current settings as default values"
 argument_list|)
 argument_list|,
 name|NULL
@@ -379,7 +379,7 @@ name|GTK_STOCK_REVERT_TO_SAVED
 argument_list|,
 name|_
 argument_list|(
-literal|"Restore saved settings"
+literal|"Restore saved default values"
 argument_list|)
 argument_list|,
 name|NULL
@@ -407,7 +407,7 @@ name|GIMP_STOCK_RESET
 argument_list|,
 name|_
 argument_list|(
-literal|"Reset"
+literal|"Reset to factory defaults"
 argument_list|)
 argument_list|,
 name|NULL
@@ -898,6 +898,8 @@ name|tool_info
 operator|->
 name|tool_options
 argument_list|,
+literal|"user"
+argument_list|,
 operator|&
 name|error
 argument_list|)
@@ -968,6 +970,8 @@ argument_list|(
 name|tool_info
 operator|->
 name|tool_options
+argument_list|,
+literal|"user"
 argument_list|,
 operator|&
 name|error

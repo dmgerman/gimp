@@ -29,6 +29,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|tool_manager_exit
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|tool_manager_restore
 parameter_list|(
 name|Gimp
@@ -40,7 +51,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tool_manager_exit
+name|tool_manager_save
 parameter_list|(
 name|Gimp
 modifier|*

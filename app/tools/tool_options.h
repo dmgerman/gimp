@@ -166,6 +166,11 @@ name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|extension
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -181,6 +186,11 @@ parameter_list|(
 name|GimpToolOptions
 modifier|*
 name|tool_options
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|extension
 parameter_list|,
 name|GError
 modifier|*
