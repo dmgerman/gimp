@@ -1164,6 +1164,8 @@ name|open_options_imagefile
 operator|=
 name|gimp_imagefile_new
 argument_list|(
+name|gimp
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -1789,9 +1791,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_open_create_thumbnail (const gchar * filename,GimpThumbnailSize size,gboolean always_create)
+DECL|function|file_open_create_thumbnail (Gimp * gimp,const gchar * filename,GimpThumbnailSize size,gboolean always_create)
 name|file_open_create_thumbnail
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -1841,6 +1847,8 @@ name|imagefile
 operator|=
 name|gimp_imagefile_new
 argument_list|(
+name|gimp
+argument_list|,
 name|uri
 argument_list|)
 expr_stmt|;
@@ -2161,6 +2169,8 @@ expr_stmt|;
 block|}
 name|file_open_create_thumbnail
 argument_list|(
+name|gimp
+argument_list|,
 name|selections
 index|[
 name|i
@@ -2275,6 +2285,8 @@ expr_stmt|;
 block|}
 name|file_open_create_thumbnail
 argument_list|(
+name|gimp
+argument_list|,
 name|selections
 index|[
 literal|0

@@ -35,7 +35,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c7baff0103
+DECL|enum|__anon2c37ec980103
 block|{
 DECL|enumerator|GIMP_IMAGEFILE_STATE_UNKNOWN
 name|GIMP_IMAGEFILE_STATE_UNKNOWN
@@ -150,6 +150,11 @@ DECL|member|parent_instance
 name|GimpViewable
 name|parent_instance
 decl_stmt|;
+DECL|member|gimp
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 DECL|member|state
 name|GimpImagefileState
 name|state
@@ -231,6 +236,10 @@ name|GimpImagefile
 modifier|*
 name|gimp_imagefile_new
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

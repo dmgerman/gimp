@@ -202,12 +202,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -285,7 +279,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d286040103
+DECL|enum|__anon2a0944240103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -299,7 +293,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d286040208
+DECL|struct|__anon2a0944240208
 block|{
 DECL|member|dirname
 specifier|const
@@ -987,6 +981,12 @@ parameter_list|)
 block|{
 name|imagefile
 operator|->
+name|gimp
+operator|=
+name|NULL
+expr_stmt|;
+name|imagefile
+operator|->
 name|state
 operator|=
 name|GIMP_IMAGEFILE_STATE_UNKNOWN
@@ -1096,9 +1096,13 @@ end_function
 begin_function
 name|GimpImagefile
 modifier|*
-DECL|function|gimp_imagefile_new (const gchar * uri)
+DECL|function|gimp_imagefile_new (Gimp * gimp,const gchar * uri)
 name|gimp_imagefile_new
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -1109,6 +1113,16 @@ name|GimpImagefile
 modifier|*
 name|imagefile
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|imagefile
 operator|=
 name|GIMP_IMAGEFILE
@@ -1134,6 +1148,12 @@ argument_list|)
 argument_list|,
 name|uri
 argument_list|)
+expr_stmt|;
+name|imagefile
+operator|->
+name|gimp
+operator|=
+name|gimp
 expr_stmt|;
 return|return
 name|imagefile
@@ -1369,7 +1389,9 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|the_gimp
+name|imagefile
+operator|->
+name|gimp
 operator|->
 name|documents
 argument_list|,
@@ -1536,7 +1558,9 @@ name|gimage
 operator|=
 name|file_open_image
 argument_list|(
-name|the_gimp
+name|imagefile
+operator|->
+name|gimp
 argument_list|,
 name|uri
 argument_list|,
@@ -1971,21 +1995,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_GIMP
-argument_list|(
-name|gimage
-operator|->
-name|gimp
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|thumb_size
 operator|=
-name|gimage
+name|imagefile
 operator|->
 name|gimp
 operator|->

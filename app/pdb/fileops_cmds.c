@@ -1379,6 +1379,8 @@ name|imagefile
 operator|=
 name|gimp_imagefile_new
 argument_list|(
+name|gimp
+argument_list|,
 name|uri
 argument_list|)
 expr_stmt|;

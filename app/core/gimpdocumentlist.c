@@ -76,6 +76,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdocumentlist.h"
 end_include
 
@@ -106,7 +112,7 @@ name|gimp_document_list_serialize
 parameter_list|(
 name|GObject
 modifier|*
-name|list
+name|object
 parameter_list|,
 name|gint
 name|fd
@@ -127,7 +133,7 @@ name|gimp_document_list_deserialize
 parameter_list|(
 name|GObject
 modifier|*
-name|list
+name|object
 parameter_list|,
 name|GScanner
 modifier|*
@@ -299,12 +305,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_document_list_serialize (GObject * document_list,gint fd,gint indent_level,gpointer data)
+DECL|function|gimp_document_list_serialize (GObject * object,gint fd,gint indent_level,gpointer data)
 name|gimp_document_list_serialize
 parameter_list|(
 name|GObject
 modifier|*
-name|document_list
+name|object
 parameter_list|,
 name|gint
 name|fd
@@ -337,7 +343,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|document_list
+name|object
 argument_list|)
 operator|->
 name|list
@@ -425,12 +431,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_document_list_deserialize (GObject * document_list,GScanner * scanner,gint nest_level,gpointer data)
+DECL|function|gimp_document_list_deserialize (GObject * object,GScanner * scanner,gint nest_level,gpointer data)
 name|gimp_document_list_deserialize
 parameter_list|(
 name|GObject
 modifier|*
-name|document_list
+name|object
 parameter_list|,
 name|GScanner
 modifier|*
@@ -443,12 +449,23 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|GimpDocumentList
+modifier|*
+name|document_list
+decl_stmt|;
 name|GTokenType
 name|token
 decl_stmt|;
 name|gint
 name|size
 decl_stmt|;
+name|document_list
+operator|=
+name|GIMP_DOCUMENT_LIST
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
 name|size
 operator|=
 name|GPOINTER_TO_INT
@@ -552,6 +569,10 @@ name|imagefile
 operator|=
 name|gimp_imagefile_new
 argument_list|(
+name|document_list
+operator|->
+name|gimp
+argument_list|,
 name|uri
 argument_list|)
 expr_stmt|;
@@ -630,16 +651,28 @@ end_function
 begin_function
 name|GimpContainer
 modifier|*
-DECL|function|gimp_document_list_new (void)
+DECL|function|gimp_document_list_new (Gimp * gimp)
 name|gimp_document_list_new
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
-name|GObject
+name|GimpDocumentList
 modifier|*
 name|document_list
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|document_list
 operator|=
 name|g_object_new
@@ -660,6 +693,12 @@ name|GIMP_CONTAINER_POLICY_STRONG
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|document_list
+operator|->
+name|gimp
+operator|=
+name|gimp
 expr_stmt|;
 return|return
 name|GIMP_CONTAINER
@@ -757,6 +796,10 @@ name|imagefile
 operator|=
 name|gimp_imagefile_new
 argument_list|(
+name|document_list
+operator|->
+name|gimp
+argument_list|,
 name|uri
 argument_list|)
 expr_stmt|;

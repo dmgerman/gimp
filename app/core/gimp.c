@@ -237,7 +237,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27aa19e40103
+DECL|enum|__anon2bf893710103
 block|{
 DECL|enumerator|EXIT
 name|EXIT
@@ -969,7 +969,9 @@ operator|->
 name|documents
 operator|=
 name|gimp_document_list_new
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 name|gimp
 operator|->
