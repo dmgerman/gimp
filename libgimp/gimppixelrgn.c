@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.               *                                                                                * This library is distributed in the hope that it will be useful,                * but WITHOUT ANY WARRANTY; without even the implied warranty of                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU              * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimppixelrgn.c  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
@@ -75,30 +75,30 @@ value|((a< x) ? x : ((a> y) ? y : a))
 end_define
 
 begin_typedef
-DECL|typedef|GPixelRgnHolder
+DECL|typedef|GimpPixelRgnHolder
 typedef|typedef
 name|struct
-name|_GPixelRgnHolder
-name|GPixelRgnHolder
+name|_GimpPixelRgnHolder
+name|GimpPixelRgnHolder
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GPixelRgnIterator
+DECL|typedef|GimpPixelRgnIterator
 typedef|typedef
 name|struct
-name|_GPixelRgnIterator
-name|GPixelRgnIterator
+name|_GimpPixelRgnIterator
+name|GimpPixelRgnIterator
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GPixelRgnHolder
+DECL|struct|_GimpPixelRgnHolder
 struct|struct
-name|_GPixelRgnHolder
+name|_GimpPixelRgnHolder
 block|{
 DECL|member|pr
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pr
 decl_stmt|;
@@ -108,15 +108,15 @@ modifier|*
 name|original_data
 decl_stmt|;
 DECL|member|startx
-name|int
+name|gint
 name|startx
 decl_stmt|;
 DECL|member|starty
-name|int
+name|gint
 name|starty
 decl_stmt|;
 DECL|member|count
-name|int
+name|gint
 name|count
 decl_stmt|;
 block|}
@@ -124,9 +124,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GPixelRgnIterator
+DECL|struct|_GimpPixelRgnIterator
 struct|struct
-name|_GPixelRgnIterator
+name|_GimpPixelRgnIterator
 block|{
 DECL|member|pixel_regions
 name|GSList
@@ -134,23 +134,23 @@ modifier|*
 name|pixel_regions
 decl_stmt|;
 DECL|member|region_width
-name|int
+name|gint
 name|region_width
 decl_stmt|;
 DECL|member|region_height
-name|int
+name|gint
 name|region_height
 decl_stmt|;
 DECL|member|portion_width
-name|int
+name|gint
 name|portion_width
 decl_stmt|;
 DECL|member|portion_height
-name|int
+name|gint
 name|portion_height
 decl_stmt|;
 DECL|member|process_count
-name|int
+name|gint
 name|process_count
 decl_stmt|;
 block|}
@@ -159,10 +159,10 @@ end_struct
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|gimp_get_portion_width
 parameter_list|(
-name|GPixelRgnIterator
+name|GimpPixelRgnIterator
 modifier|*
 name|pri
 parameter_list|)
@@ -171,10 +171,10 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|gimp_get_portion_height
 parameter_list|(
-name|GPixelRgnIterator
+name|GimpPixelRgnIterator
 modifier|*
 name|pri
 parameter_list|)
@@ -186,7 +186,7 @@ specifier|static
 name|gpointer
 name|gimp_pixel_rgns_configure
 parameter_list|(
-name|GPixelRgnIterator
+name|GimpPixelRgnIterator
 modifier|*
 name|pri
 parameter_list|)
@@ -198,11 +198,11 @@ specifier|static
 name|void
 name|gimp_pixel_rgn_configure
 parameter_list|(
-name|GPixelRgnHolder
+name|GimpPixelRgnHolder
 modifier|*
 name|prh
 parameter_list|,
-name|GPixelRgnIterator
+name|GimpPixelRgnIterator
 modifier|*
 name|pri
 parameter_list|)
@@ -225,33 +225,33 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_pixel_rgn_init (GPixelRgn * pr,GDrawable * drawable,int x,int y,int width,int height,int dirty,int shadow)
+DECL|function|gimp_pixel_rgn_init (GimpPixelRgn * pr,GimpDrawable * drawable,gint x,gint y,gint width,gint height,gboolean dirty,gboolean shadow)
 name|gimp_pixel_rgn_init
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pr
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|int
+name|gboolean
 name|dirty
 parameter_list|,
-name|int
+name|gboolean
 name|shadow
 parameter_list|)
 block|{
@@ -326,23 +326,23 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_pixel_rgn_resize (GPixelRgn * pr,int x,int y,int width,int height)
+DECL|function|gimp_pixel_rgn_resize (GimpPixelRgn * pr,gint x,gint y,gint width,gint height)
 name|gimp_pixel_rgn_resize
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pr
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 block|{
@@ -413,10 +413,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_pixel_rgn_get_pixel (GPixelRgn * pr,guchar * buf,int x,int y)
+DECL|function|gimp_pixel_rgn_get_pixel (GimpPixelRgn * pr,guchar * buf,gint x,gint y)
 name|gimp_pixel_rgn_get_pixel
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pr
 parameter_list|,
@@ -424,14 +424,14 @@ name|guchar
 modifier|*
 name|buf
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|)
 block|{
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 decl_stmt|;
@@ -439,7 +439,7 @@ name|guchar
 modifier|*
 name|tile_data
 decl_stmt|;
-name|int
+name|gint
 name|b
 decl_stmt|;
 name|tile
@@ -527,10 +527,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_pixel_rgn_get_row (GPixelRgn * pr,guchar * buf,int x,int y,int width)
+DECL|function|gimp_pixel_rgn_get_row (GimpPixelRgn * pr,guchar * buf,gint x,gint y,gint width)
 name|gimp_pixel_rgn_get_row
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pr
 parameter_list|,
@@ -538,17 +538,17 @@ name|guchar
 modifier|*
 name|buf
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|)
 block|{
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 decl_stmt|;
@@ -556,23 +556,23 @@ name|guchar
 modifier|*
 name|tile_data
 decl_stmt|;
-name|int
+name|gint
 name|bpp
 decl_stmt|,
 name|inc
 decl_stmt|,
 name|min
 decl_stmt|;
-name|int
+name|gint
 name|end
 decl_stmt|;
-name|int
+name|gint
 name|boundary
 decl_stmt|;
 ifndef|#
 directive|ifndef
 name|MEMCPY_IS_NICE
-name|int
+name|gint
 name|b
 decl_stmt|;
 endif|#
@@ -782,10 +782,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_pixel_rgn_get_col (GPixelRgn * pr,guchar * buf,int x,int y,int height)
+DECL|function|gimp_pixel_rgn_get_col (GimpPixelRgn * pr,guchar * buf,gint x,gint y,gint height)
 name|gimp_pixel_rgn_get_col
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pr
 parameter_list|,
@@ -793,17 +793,17 @@ name|guchar
 modifier|*
 name|buf
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 block|{
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 decl_stmt|;
@@ -811,16 +811,16 @@ name|guchar
 modifier|*
 name|tile_data
 decl_stmt|;
-name|int
+name|gint
 name|inc
 decl_stmt|;
-name|int
+name|gint
 name|end
 decl_stmt|;
-name|int
+name|gint
 name|boundary
 decl_stmt|;
-name|int
+name|gint
 name|b
 decl_stmt|;
 name|end
@@ -969,10 +969,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_pixel_rgn_get_rect (GPixelRgn * pr,guchar * buf,int x,int y,int width,int height)
+DECL|function|gimp_pixel_rgn_get_rect (GimpPixelRgn * pr,guchar * buf,gint x,gint y,gint width,gint height)
 name|gimp_pixel_rgn_get_rect
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pr
 parameter_list|,
@@ -980,55 +980,56 @@ name|guchar
 modifier|*
 name|buf
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 block|{
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 decl_stmt|;
 name|guchar
 modifier|*
 name|src
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|dest
 decl_stmt|;
 name|gulong
 name|bufstride
 decl_stmt|;
-name|int
+name|gint
 name|xstart
 decl_stmt|,
 name|ystart
 decl_stmt|;
-name|int
+name|gint
 name|xend
 decl_stmt|,
 name|yend
 decl_stmt|;
-name|int
+name|gint
 name|xboundary
 decl_stmt|;
-name|int
+name|gint
 name|yboundary
 decl_stmt|;
-name|int
+name|gint
 name|xstep
 decl_stmt|,
 name|ystep
 decl_stmt|;
-name|int
+name|gint
 name|ty
 decl_stmt|,
 name|bpp
@@ -1036,7 +1037,7 @@ decl_stmt|;
 ifndef|#
 directive|ifndef
 name|MEMCPY_IS_NICE
-name|int
+name|gint
 name|b
 decl_stmt|,
 name|tx
@@ -1326,10 +1327,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_pixel_rgn_set_pixel (GPixelRgn * pr,guchar * buf,int x,int y)
+DECL|function|gimp_pixel_rgn_set_pixel (GimpPixelRgn * pr,guchar * buf,gint x,gint y)
 name|gimp_pixel_rgn_set_pixel
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pr
 parameter_list|,
@@ -1337,14 +1338,14 @@ name|guchar
 modifier|*
 name|buf
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|)
 block|{
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 decl_stmt|;
@@ -1352,7 +1353,7 @@ name|guchar
 modifier|*
 name|tile_data
 decl_stmt|;
-name|int
+name|gint
 name|b
 decl_stmt|;
 name|tile
@@ -1440,10 +1441,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_pixel_rgn_set_row (GPixelRgn * pr,guchar * buf,int x,int y,int width)
+DECL|function|gimp_pixel_rgn_set_row (GimpPixelRgn * pr,guchar * buf,gint x,gint y,gint width)
 name|gimp_pixel_rgn_set_row
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pr
 parameter_list|,
@@ -1451,17 +1452,17 @@ name|guchar
 modifier|*
 name|buf
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|)
 block|{
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 decl_stmt|;
@@ -1469,21 +1470,21 @@ name|guchar
 modifier|*
 name|tile_data
 decl_stmt|;
-name|int
+name|gint
 name|inc
 decl_stmt|,
 name|min
 decl_stmt|;
-name|int
+name|gint
 name|end
 decl_stmt|;
-name|int
+name|gint
 name|boundary
 decl_stmt|;
 ifndef|#
 directive|ifndef
 name|MEMCPY_IS_NICE
-name|int
+name|gint
 name|b
 decl_stmt|;
 endif|#
@@ -1674,10 +1675,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_pixel_rgn_set_col (GPixelRgn * pr,guchar * buf,int x,int y,int height)
+DECL|function|gimp_pixel_rgn_set_col (GimpPixelRgn * pr,guchar * buf,gint x,gint y,gint height)
 name|gimp_pixel_rgn_set_col
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pr
 parameter_list|,
@@ -1685,17 +1686,17 @@ name|guchar
 modifier|*
 name|buf
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 block|{
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 decl_stmt|;
@@ -1703,16 +1704,16 @@ name|guchar
 modifier|*
 name|tile_data
 decl_stmt|;
-name|int
+name|gint
 name|inc
 decl_stmt|;
-name|int
+name|gint
 name|end
 decl_stmt|;
-name|int
+name|gint
 name|boundary
 decl_stmt|;
-name|int
+name|gint
 name|b
 decl_stmt|;
 name|end
@@ -1861,10 +1862,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_pixel_rgn_set_rect (GPixelRgn * pr,guchar * buf,int x,int y,int width,int height)
+DECL|function|gimp_pixel_rgn_set_rect (GimpPixelRgn * pr,guchar * buf,gint x,gint y,gint width,gint height)
 name|gimp_pixel_rgn_set_rect
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pr
 parameter_list|,
@@ -1872,55 +1873,56 @@ name|guchar
 modifier|*
 name|buf
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 block|{
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 decl_stmt|;
 name|guchar
 modifier|*
 name|src
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|dest
 decl_stmt|;
 name|gulong
 name|bufstride
 decl_stmt|;
-name|int
+name|gint
 name|xstart
 decl_stmt|,
 name|ystart
 decl_stmt|;
-name|int
+name|gint
 name|xend
 decl_stmt|,
 name|yend
 decl_stmt|;
-name|int
+name|gint
 name|xboundary
 decl_stmt|;
-name|int
+name|gint
 name|yboundary
 decl_stmt|;
-name|int
+name|gint
 name|xstep
 decl_stmt|,
 name|ystep
 decl_stmt|;
-name|int
+name|gint
 name|ty
 decl_stmt|,
 name|bpp
@@ -1928,7 +1930,7 @@ decl_stmt|;
 ifndef|#
 directive|ifndef
 name|MEMCPY_IS_NICE
-name|int
+name|gint
 name|b
 decl_stmt|,
 name|tx
@@ -2218,38 +2220,38 @@ end_function
 
 begin_function
 name|gpointer
-DECL|function|gimp_pixel_rgns_register2 (int nrgns,GPixelRgn ** prs)
+DECL|function|gimp_pixel_rgns_register2 (gint nrgns,GimpPixelRgn ** prs)
 name|gimp_pixel_rgns_register2
 parameter_list|(
-name|int
+name|gint
 name|nrgns
 parameter_list|,
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 modifier|*
 name|prs
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|pr
 decl_stmt|;
-name|GPixelRgnHolder
+name|GimpPixelRgnHolder
 modifier|*
 name|prh
 decl_stmt|;
-name|GPixelRgnIterator
+name|GimpPixelRgnIterator
 modifier|*
 name|pri
 decl_stmt|;
-name|int
+name|gboolean
 name|found
 decl_stmt|;
 name|pri
 operator|=
 name|g_new
 argument_list|(
-name|GPixelRgnIterator
+name|GimpPixelRgnIterator
 argument_list|,
 literal|1
 argument_list|)
@@ -2296,7 +2298,7 @@ name|prh
 operator|=
 name|g_new
 argument_list|(
-name|GPixelRgnHolder
+name|GimpPixelRgnHolder
 argument_list|,
 literal|1
 argument_list|)
@@ -2413,16 +2415,16 @@ end_function
 
 begin_function
 name|gpointer
-DECL|function|gimp_pixel_rgns_register (int nrgns,...)
+DECL|function|gimp_pixel_rgns_register (gint nrgns,...)
 name|gimp_pixel_rgns_register
 parameter_list|(
-name|int
+name|gint
 name|nrgns
 parameter_list|,
 modifier|...
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 modifier|*
 name|prs
@@ -2430,7 +2432,7 @@ decl_stmt|;
 name|gpointer
 name|pri
 decl_stmt|;
-name|int
+name|gint
 name|n
 decl_stmt|;
 name|va_list
@@ -2440,7 +2442,7 @@ name|prs
 operator|=
 name|g_new
 argument_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 operator|*
 argument_list|,
 name|nrgns
@@ -2472,7 +2474,7 @@ name|va_arg
 argument_list|(
 name|ap
 argument_list|,
-name|GPixelRgn
+name|GimpPixelRgn
 operator|*
 argument_list|)
 expr_stmt|;
@@ -2514,18 +2516,18 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|GPixelRgnHolder
+name|GimpPixelRgnHolder
 modifier|*
 name|prh
 decl_stmt|;
-name|GPixelRgnIterator
+name|GimpPixelRgnIterator
 modifier|*
 name|pri
 decl_stmt|;
 name|pri
 operator|=
 operator|(
-name|GPixelRgnIterator
+name|GimpPixelRgnIterator
 operator|*
 operator|)
 name|pri_ptr
@@ -2550,7 +2552,7 @@ block|{
 name|prh
 operator|=
 operator|(
-name|GPixelRgnHolder
+name|GimpPixelRgnHolder
 operator|*
 operator|)
 name|list
@@ -2604,7 +2606,7 @@ operator|->
 name|drawable
 condition|)
 block|{
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 init|=
@@ -2710,29 +2712,29 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|gimp_get_portion_width (GPixelRgnIterator * pri)
+name|gint
+DECL|function|gimp_get_portion_width (GimpPixelRgnIterator * pri)
 name|gimp_get_portion_width
 parameter_list|(
-name|GPixelRgnIterator
+name|GimpPixelRgnIterator
 modifier|*
 name|pri
 parameter_list|)
 block|{
+name|GimpPixelRgnHolder
+modifier|*
+name|prh
+decl_stmt|;
 name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|GPixelRgnHolder
-modifier|*
-name|prh
-decl_stmt|;
-name|int
+name|gint
 name|min_width
 init|=
 name|G_MAXINT
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|;
 comment|/* Find the minimum width to the next vertical tile (in the case of a tile manager)    * or to the end of the pixel region (in the case of no tile manager)    */
@@ -2750,7 +2752,7 @@ block|{
 name|prh
 operator|=
 operator|(
-name|GPixelRgnHolder
+name|GimpPixelRgnHolder
 operator|*
 operator|)
 name|list
@@ -2885,28 +2887,28 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|gimp_get_portion_height (GPixelRgnIterator * pri)
+DECL|function|gimp_get_portion_height (GimpPixelRgnIterator * pri)
 name|gimp_get_portion_height
 parameter_list|(
-name|GPixelRgnIterator
+name|GimpPixelRgnIterator
 modifier|*
 name|pri
 parameter_list|)
 block|{
+name|GimpPixelRgnHolder
+modifier|*
+name|prh
+decl_stmt|;
 name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|GPixelRgnHolder
-modifier|*
-name|prh
-decl_stmt|;
-name|int
+name|gint
 name|min_height
 init|=
 name|G_MAXINT
 decl_stmt|;
-name|int
+name|gint
 name|height
 decl_stmt|;
 comment|/* Find the minimum height to the next vertical tile (in the case of a tile manager)    * or to the end of the pixel region (in the case of no tile manager)    */
@@ -2924,7 +2926,7 @@ block|{
 name|prh
 operator|=
 operator|(
-name|GPixelRgnHolder
+name|GimpPixelRgnHolder
 operator|*
 operator|)
 name|list
@@ -3059,15 +3061,15 @@ end_function
 begin_function
 specifier|static
 name|gpointer
-DECL|function|gimp_pixel_rgns_configure (GPixelRgnIterator * pri)
+DECL|function|gimp_pixel_rgns_configure (GimpPixelRgnIterator * pri)
 name|gimp_pixel_rgns_configure
 parameter_list|(
-name|GPixelRgnIterator
+name|GimpPixelRgnIterator
 modifier|*
 name|pri
 parameter_list|)
 block|{
-name|GPixelRgnHolder
+name|GimpPixelRgnHolder
 modifier|*
 name|prh
 decl_stmt|;
@@ -3168,21 +3170,28 @@ operator|->
 name|process_count
 operator|++
 expr_stmt|;
+for|for
+control|(
 name|list
 operator|=
 name|pri
 operator|->
 name|pixel_regions
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|prh
 operator|=
 operator|(
-name|GPixelRgnHolder
+name|GimpPixelRgnHolder
 operator|*
 operator|)
 name|list
@@ -3227,12 +3236,6 @@ name|pri
 argument_list|)
 expr_stmt|;
 block|}
-name|list
-operator|=
-name|list
-operator|->
-name|next
-expr_stmt|;
 block|}
 return|return
 name|pri
@@ -3243,14 +3246,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_pixel_rgn_configure (GPixelRgnHolder * prh,GPixelRgnIterator * pri)
+DECL|function|gimp_pixel_rgn_configure (GimpPixelRgnHolder * prh,GimpPixelRgnIterator * pri)
 name|gimp_pixel_rgn_configure
 parameter_list|(
-name|GPixelRgnHolder
+name|GimpPixelRgnHolder
 modifier|*
 name|prh
 parameter_list|,
-name|GPixelRgnIterator
+name|GimpPixelRgnIterator
 modifier|*
 name|pri
 parameter_list|)
@@ -3265,13 +3268,14 @@ operator|->
 name|drawable
 condition|)
 block|{
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 decl_stmt|;
-name|int
+name|gint
 name|offx
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|offy
 decl_stmt|;
 name|tile

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball   *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpmenu.h  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
@@ -63,12 +63,12 @@ name|data
 parameter_list|)
 function_decl|;
 comment|/* Popup the brush dialog interactively */
-DECL|typedef|GRunBrushCallback
+DECL|typedef|GimpRunBrushCallback
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|GRunBrushCallback
+name|GimpRunBrushCallback
 function_decl|)
 parameter_list|(
 name|gchar
@@ -102,12 +102,12 @@ name|user_data
 parameter_list|)
 function_decl|;
 comment|/* Popup the pattern dialog */
-DECL|typedef|GRunPatternCallback
+DECL|typedef|GimpRunPatternCallback
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|GRunPatternCallback
+name|GimpRunPatternCallback
 function_decl|)
 parameter_list|(
 name|gchar
@@ -135,12 +135,12 @@ name|user_data
 parameter_list|)
 function_decl|;
 comment|/* Popup the gradient dialog */
-DECL|typedef|GRunGradientCallback
+DECL|typedef|GimpRunGradientCallback
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|GRunGradientCallback
+name|GimpRunGradientCallback
 function_decl|)
 parameter_list|(
 name|gchar
@@ -249,7 +249,7 @@ parameter_list|,
 name|gint
 name|paint_mode
 parameter_list|,
-name|GRunBrushCallback
+name|GimpRunBrushCallback
 name|callback
 parameter_list|,
 name|gpointer
@@ -277,7 +277,7 @@ parameter_list|,
 name|gint
 name|paint_mode
 parameter_list|,
-name|GRunBrushCallback
+name|GimpRunBrushCallback
 name|cback
 parameter_list|,
 name|gpointer
@@ -385,7 +385,7 @@ name|gchar
 modifier|*
 name|pattern_name
 parameter_list|,
-name|GRunPatternCallback
+name|GimpRunPatternCallback
 name|callback
 parameter_list|,
 name|gpointer
@@ -404,7 +404,7 @@ name|gchar
 modifier|*
 name|ipattern
 parameter_list|,
-name|GRunPatternCallback
+name|GimpRunPatternCallback
 name|cback
 parameter_list|,
 name|gpointer
@@ -489,7 +489,7 @@ parameter_list|,
 name|gint
 name|sample_sz
 parameter_list|,
-name|GRunGradientCallback
+name|GimpRunGradientCallback
 name|callback
 parameter_list|,
 name|gpointer
@@ -508,7 +508,7 @@ name|gchar
 modifier|*
 name|igradient
 parameter_list|,
-name|GRunGradientCallback
+name|GimpRunGradientCallback
 name|cback
 parameter_list|,
 name|gpointer

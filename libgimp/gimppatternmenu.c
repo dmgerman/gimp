@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  * Copyright (C) 1998 Andy Thomas   *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimppatternmenu.c  * Copyright (C) 1998 Andy Thomas   *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -22,7 +22,7 @@ file|"gimpui.h"
 end_include
 
 begin_comment
-comment|/* Idea is to have a function to call that returns a widget that   * completely controls the selection of a pattern.  * you get a widget returned that you can use in a table say.  * In:- Initial pattern name. Null means use current selection.  *      pointer to func to call when pattern changes (GRubPatternCallback).  * Returned:- Pointer to a widget that you can use in UI.  *   * Widget simply made up of a preview widget (20x20) containing the pattern  * and a button that can be clicked on to change the pattern.  */
+comment|/* Idea is to have a function to call that returns a widget that   * completely controls the selection of a pattern.  * you get a widget returned that you can use in a table say.  * In:- Initial pattern name. Null means use current selection.  *      pointer to func to call when pattern changes (GimpRunPatternCallback).  * Returned:- Pointer to a widget that you can use in UI.  *   * Widget simply made up of a preview widget (20x20) containing the pattern  * and a button that can be clicked on to change the pattern.  */
 end_comment
 
 begin_define
@@ -60,7 +60,7 @@ modifier|*
 name|dname
 decl_stmt|;
 DECL|member|cback
-name|GRunPatternCallback
+name|GimpRunPatternCallback
 name|cback
 decl_stmt|;
 DECL|member|pattern_preview
@@ -1320,7 +1320,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_pattern_select_widget (gchar * dname,gchar * ipattern,GRunPatternCallback cback,gpointer data)
+DECL|function|gimp_pattern_select_widget (gchar * dname,gchar * ipattern,GimpRunPatternCallback cback,gpointer data)
 name|gimp_pattern_select_widget
 parameter_list|(
 name|gchar
@@ -1331,7 +1331,7 @@ name|gchar
 modifier|*
 name|ipattern
 parameter_list|,
-name|GRunPatternCallback
+name|GimpRunPatternCallback
 name|cback
 parameter_list|,
 name|gpointer
@@ -1691,12 +1691,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_pattern_select_widget_close_popup (GtkWidget * w)
+DECL|function|gimp_pattern_select_widget_close_popup (GtkWidget * widget)
 name|gimp_pattern_select_widget_close_popup
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|)
 block|{
 name|gboolean
@@ -1718,7 +1718,7 @@ name|gtk_object_get_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 name|PSEL_DATA_KEY

@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<signal.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdarg.h>
 end_include
 
@@ -147,7 +141,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib.h>
 end_include
 
 begin_ifndef
@@ -402,7 +396,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|gimp_write
 parameter_list|(
 name|GIOChannel
@@ -421,7 +415,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|gimp_flush
 parameter_list|(
 name|GIOChannel
@@ -711,7 +705,7 @@ end_ifdef
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO_PTR
 specifier|static
-name|GPlugInInfo
+name|GimpPlugInInfo
 modifier|*
 name|PLUG_IN_INFO_PTR
 decl_stmt|;
@@ -727,10 +721,10 @@ end_define
 
 begin_function
 name|void
-DECL|function|set_gimp_PLUG_IN_INFO_PTR (GPlugInInfo * p)
+DECL|function|set_gimp_PLUG_IN_INFO_PTR (GimpPlugInInfo * p)
 name|set_gimp_PLUG_IN_INFO_PTR
 parameter_list|(
-name|GPlugInInfo
+name|GimpPlugInInfo
 modifier|*
 name|p
 parameter_list|)
@@ -755,7 +749,7 @@ end_ifndef
 
 begin_decl_stmt
 specifier|extern
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 decl_stmt|;
 end_decl_stmt
@@ -768,18 +762,18 @@ end_else
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
 specifier|static
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|set_gimp_PLUG_IN_INFO (const GPlugInInfo * p)
+DECL|function|set_gimp_PLUG_IN_INFO (const GimpPlugInInfo * p)
 name|void
 name|set_gimp_PLUG_IN_INFO
 parameter_list|(
 specifier|const
-name|GPlugInInfo
+name|GimpPlugInInfo
 modifier|*
 name|p
 parameter_list|)
@@ -1506,7 +1500,7 @@ name|guint32
 name|length
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1557,7 +1551,7 @@ modifier|*
 name|id
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1638,7 +1632,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1738,7 +1732,7 @@ modifier|*
 name|message
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1784,7 +1778,7 @@ name|gdouble
 name|percentage
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1842,7 +1836,7 @@ modifier|*
 name|message
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -1938,7 +1932,7 @@ modifier|*
 name|proc_names
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -2086,7 +2080,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_query_procedure (gchar * proc_name,gchar ** proc_blurb,gchar ** proc_help,gchar ** proc_author,gchar ** proc_copyright,gchar ** proc_date,gint * proc_type,gint * nparams,gint * nreturn_vals,GParamDef ** params,GParamDef ** return_vals)
+DECL|function|gimp_query_procedure (gchar * proc_name,gchar ** proc_blurb,gchar ** proc_help,gchar ** proc_author,gchar ** proc_copyright,gchar ** proc_date,gint * proc_type,gint * nparams,gint * nreturn_vals,GimpParamDef ** params,GimpParamDef ** return_vals)
 name|gimp_query_procedure
 parameter_list|(
 name|gchar
@@ -2130,18 +2124,18 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParamDef
+name|GimpParamDef
 modifier|*
 modifier|*
 name|params
 parameter_list|,
-name|GParamDef
+name|GimpParamDef
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|ret_vals
 decl_stmt|;
@@ -2302,7 +2296,7 @@ name|params
 operator|=
 name|g_new
 argument_list|(
-name|GParamDef
+name|GimpParamDef
 argument_list|,
 operator|*
 name|nparams
@@ -2313,7 +2307,7 @@ name|return_vals
 operator|=
 name|g_new
 argument_list|(
-name|GParamDef
+name|GimpParamDef
 argument_list|,
 operator|*
 name|nreturn_vals
@@ -2334,7 +2328,7 @@ name|i
 operator|++
 control|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|rvals
 decl_stmt|;
@@ -2487,11 +2481,11 @@ name|i
 operator|++
 control|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|rvals
 decl_stmt|;
-name|int
+name|gint
 name|nrvals
 decl_stmt|;
 name|rvals
@@ -2655,7 +2649,7 @@ modifier|*
 name|nimages
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -2753,7 +2747,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_install_procedure (gchar * name,gchar * blurb,gchar * help,gchar * author,gchar * copyright,gchar * date,gchar * menu_path,gchar * image_types,gint type,gint nparams,gint nreturn_vals,GParamDef * params,GParamDef * return_vals)
+DECL|function|gimp_install_procedure (gchar * name,gchar * blurb,gchar * help,gchar * author,gchar * copyright,gchar * date,gchar * menu_path,gchar * image_types,gint type,gint nparams,gint nreturn_vals,GimpParamDef * params,GimpParamDef * return_vals)
 name|gimp_install_procedure
 parameter_list|(
 name|gchar
@@ -2797,11 +2791,11 @@ parameter_list|,
 name|gint
 name|nreturn_vals
 parameter_list|,
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|params
 parameter_list|,
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|return_vals
 parameter_list|)
@@ -2914,7 +2908,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_install_temp_proc (gchar * name,gchar * blurb,gchar * help,gchar * author,gchar * copyright,gchar * date,gchar * menu_path,gchar * image_types,gint type,gint nparams,gint nreturn_vals,GParamDef * params,GParamDef * return_vals,GRunProc run_proc)
+DECL|function|gimp_install_temp_proc (gchar * name,gchar * blurb,gchar * help,gchar * author,gchar * copyright,gchar * date,gchar * menu_path,gchar * image_types,gint type,gint nparams,gint nreturn_vals,GimpParamDef * params,GimpParamDef * return_vals,GimpRunProc run_proc)
 name|gimp_install_temp_proc
 parameter_list|(
 name|gchar
@@ -2958,15 +2952,15 @@ parameter_list|,
 name|gint
 name|nreturn_vals
 parameter_list|,
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|params
 parameter_list|,
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|return_vals
 parameter_list|,
-name|GRunProc
+name|GimpRunProc
 name|run_proc
 parameter_list|)
 block|{
@@ -3117,7 +3111,7 @@ modifier|*
 name|magics
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -3180,7 +3174,7 @@ modifier|*
 name|prefixes
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -3239,7 +3233,7 @@ modifier|*
 name|prefixes
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -3281,7 +3275,7 @@ block|}
 end_function
 
 begin_function
-name|GParam
+name|GimpParam
 modifier|*
 DECL|function|gimp_run_procedure (gchar * name,gint * nreturn_vals,...)
 name|gimp_run_procedure
@@ -3307,10 +3301,10 @@ decl_stmt|;
 name|WireMessage
 name|msg
 decl_stmt|;
-name|GParamType
+name|GimpPDBArgType
 name|param_type
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -3355,7 +3349,7 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|GParamType
+name|GimpPDBArgType
 argument_list|)
 expr_stmt|;
 while|while
@@ -3407,7 +3401,7 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|int
+name|gint
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3421,7 +3415,7 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|int
+name|gint
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3435,7 +3429,7 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|int
+name|gint
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3449,7 +3443,7 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|double
+name|gdouble
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3595,7 +3589,7 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|GParamType
+name|GimpPDBArgType
 argument_list|)
 expr_stmt|;
 block|}
@@ -3653,7 +3647,7 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|GParamType
+name|GimpPDBArgType
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -3689,7 +3683,7 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|int
+name|gint
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3714,7 +3708,7 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|int
+name|gint
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3739,7 +3733,7 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|int
+name|gint
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3764,7 +3758,7 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|double
+name|gdouble
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4161,7 +4155,7 @@ case|:
 block|{
 name|GimpParasite
 modifier|*
-name|p
+name|parasite
 init|=
 name|va_arg
 argument_list|(
@@ -4173,7 +4167,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|p
+name|parasite
 operator|==
 name|NULL
 condition|)
@@ -4224,7 +4218,7 @@ name|d_parasite
 operator|.
 name|name
 operator|=
-name|p
+name|parasite
 operator|->
 name|name
 expr_stmt|;
@@ -4241,7 +4235,7 @@ name|d_parasite
 operator|.
 name|flags
 operator|=
-name|p
+name|parasite
 operator|->
 name|flags
 expr_stmt|;
@@ -4258,7 +4252,7 @@ name|d_parasite
 operator|.
 name|size
 operator|=
-name|p
+name|parasite
 operator|->
 name|size
 expr_stmt|;
@@ -4275,7 +4269,7 @@ name|d_parasite
 operator|.
 name|data
 operator|=
-name|p
+name|parasite
 operator|->
 name|data
 expr_stmt|;
@@ -4353,7 +4347,7 @@ expr_stmt|;
 name|return_vals
 operator|=
 operator|(
-name|GParam
+name|GimpParam
 operator|*
 operator|)
 name|proc_return
@@ -4496,9 +4490,9 @@ block|}
 end_function
 
 begin_function
-name|GParam
+name|GimpParam
 modifier|*
-DECL|function|gimp_run_procedure2 (gchar * name,gint * nreturn_vals,gint nparams,GParam * params)
+DECL|function|gimp_run_procedure2 (gchar * name,gint * nreturn_vals,gint nparams,GimpParam * params)
 name|gimp_run_procedure2
 parameter_list|(
 name|gchar
@@ -4512,7 +4506,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|params
 parameter_list|)
@@ -4527,7 +4521,7 @@ decl_stmt|;
 name|WireMessage
 name|msg
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -4591,7 +4585,7 @@ expr_stmt|;
 name|return_vals
 operator|=
 operator|(
-name|GParam
+name|GimpParam
 operator|*
 operator|)
 name|proc_return
@@ -4649,10 +4643,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_destroy_params (GParam * params,gint nparams)
+DECL|function|gimp_destroy_params (GimpParam * params,gint nparams)
 name|gimp_destroy_params
 parameter_list|(
-name|GParam
+name|GimpParam
 modifier|*
 name|params
 parameter_list|,
@@ -4688,10 +4682,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_destroy_paramdefs (GParamDef * paramdefs,gint nparams)
+DECL|function|gimp_destroy_paramdefs (GimpParamDef * paramdefs,gint nparams)
 name|gimp_destroy_paramdefs
 parameter_list|(
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|paramdefs
 parameter_list|,
@@ -5436,7 +5430,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|gimp_write (GIOChannel * channel,guint8 * buf,gulong count)
 name|gimp_write
 parameter_list|(
@@ -5549,7 +5543,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|gimp_flush (GIOChannel * channel)
 name|gimp_flush
 parameter_list|(
@@ -6106,7 +6100,7 @@ block|{
 name|GPProcReturn
 name|proc_return
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -6136,7 +6130,7 @@ operator|->
 name|nparams
 argument_list|,
 operator|(
-name|GParam
+name|GimpParam
 operator|*
 operator|)
 name|proc_run
@@ -6203,20 +6197,20 @@ modifier|*
 name|proc_run
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|GRunProc
+name|GimpRunProc
 name|run_proc
 decl_stmt|;
 name|run_proc
 operator|=
 operator|(
-name|GRunProc
+name|GimpRunProc
 operator|)
 name|g_hash_table_lookup
 argument_list|(
@@ -6249,7 +6243,7 @@ operator|->
 name|nparams
 argument_list|,
 operator|(
-name|GParam
+name|GimpParam
 operator|*
 operator|)
 name|proc_run
@@ -6283,7 +6277,7 @@ modifier|*
 name|domain_name
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -6334,7 +6328,7 @@ modifier|*
 name|domain_path
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimplayer_pdb.c  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -11,13 +11,13 @@ end_include
 
 begin_function
 name|gint32
-DECL|function|gimp_layer_new (gint32 image_ID,char * name,guint width,guint height,GDrawableType type,gdouble opacity,GLayerMode mode)
+DECL|function|gimp_layer_new (gint32 image_ID,gchar * name,guint width,guint height,GDrawableType type,gdouble opacity,GLayerMode mode)
 name|gimp_layer_new
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -41,7 +41,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -142,7 +142,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -220,7 +220,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -250,78 +250,6 @@ block|}
 end_function
 
 begin_function
-name|guint
-DECL|function|gimp_layer_width (gint32 layer_ID)
-name|gimp_layer_width
-parameter_list|(
-name|gint32
-name|layer_ID
-parameter_list|)
-block|{
-return|return
-name|gimp_drawable_width
-argument_list|(
-name|layer_ID
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-name|guint
-DECL|function|gimp_layer_height (gint32 layer_ID)
-name|gimp_layer_height
-parameter_list|(
-name|gint32
-name|layer_ID
-parameter_list|)
-block|{
-return|return
-name|gimp_drawable_height
-argument_list|(
-name|layer_ID
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-name|guint
-DECL|function|gimp_layer_bpp (gint32 layer_ID)
-name|gimp_layer_bpp
-parameter_list|(
-name|gint32
-name|layer_ID
-parameter_list|)
-block|{
-return|return
-name|gimp_drawable_bpp
-argument_list|(
-name|layer_ID
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-name|GDrawableType
-DECL|function|gimp_layer_type (gint32 layer_ID)
-name|gimp_layer_type
-parameter_list|(
-name|gint32
-name|layer_ID
-parameter_list|)
-block|{
-return|return
-name|gimp_drawable_type
-argument_list|(
-name|layer_ID
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
 name|void
 DECL|function|gimp_layer_add_alpha (gint32 layer_ID)
 name|gimp_layer_add_alpha
@@ -334,7 +262,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -379,7 +307,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -472,7 +400,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -539,7 +467,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -599,7 +527,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -649,10 +577,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gint
 name|result
 decl_stmt|;
 name|return_vals
@@ -743,7 +671,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -820,10 +748,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gint
 name|result
 decl_stmt|;
 name|return_vals
@@ -896,10 +824,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gint
 name|result
 decl_stmt|;
 name|return_vals
@@ -972,10 +900,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gint
 name|result
 decl_stmt|;
 name|return_vals
@@ -1036,7 +964,7 @@ block|}
 end_function
 
 begin_function
-name|char
+name|gchar
 modifier|*
 DECL|function|gimp_layer_get_name (gint32 layer_ID)
 name|gimp_layer_get_name
@@ -1049,10 +977,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|result
 decl_stmt|;
@@ -1129,7 +1057,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gdouble
@@ -1205,10 +1133,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gint
 name|result
 decl_stmt|;
 name|return_vals
@@ -1281,10 +1209,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gint
 name|result
 decl_stmt|;
 name|return_vals
@@ -1357,10 +1285,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gint
 name|result
 decl_stmt|;
 name|return_vals
@@ -1436,7 +1364,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1485,7 +1413,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1534,7 +1462,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1569,13 +1497,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_set_name (gint32 layer_ID,char * name)
+DECL|function|gimp_layer_set_name (gint32 layer_ID,gchar * name)
 name|gimp_layer_set_name
 parameter_list|(
 name|gint32
 name|layer_ID
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -1584,7 +1512,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1619,16 +1547,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_set_offsets (gint32 layer_ID,int offset_x,int offset_y)
+DECL|function|gimp_layer_set_offsets (gint32 layer_ID,gint offset_x,gint offset_y)
 name|gimp_layer_set_offsets
 parameter_list|(
 name|gint32
 name|layer_ID
 parameter_list|,
-name|int
+name|gint
 name|offset_x
 parameter_list|,
-name|int
+name|gint
 name|offset_y
 parameter_list|)
 block|{
@@ -1636,7 +1564,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1689,7 +1617,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1724,13 +1652,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_set_preserve_transparency (gint32 layer_ID,int preserve_transparency)
+DECL|function|gimp_layer_set_preserve_transparency (gint32 layer_ID,gboolean preserve_transparency)
 name|gimp_layer_set_preserve_transparency
 parameter_list|(
 name|gint32
 name|layer_ID
 parameter_list|,
-name|int
+name|gboolean
 name|preserve_transparency
 parameter_list|)
 block|{
@@ -1738,7 +1666,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1773,13 +1701,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_set_show_mask (gint32 layer_ID,gint show_mask)
+DECL|function|gimp_layer_set_show_mask (gint32 layer_ID,gboolean show_mask)
 name|gimp_layer_set_show_mask
 parameter_list|(
 name|gint32
 name|layer_ID
 parameter_list|,
-name|gint
+name|gboolean
 name|show_mask
 parameter_list|)
 block|{
@@ -1787,7 +1715,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1822,13 +1750,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_set_visible (gint32 layer_ID,gint visible)
+DECL|function|gimp_layer_set_visible (gint32 layer_ID,gboolean visible)
 name|gimp_layer_set_visible
 parameter_list|(
 name|gint32
 name|layer_ID
 parameter_list|,
-name|gint
+name|gboolean
 name|visible
 parameter_list|)
 block|{
@@ -1836,7 +1764,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -1882,10 +1810,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gint
 name|tattoo
 decl_stmt|;
 name|return_vals

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  * Copyright (C) 1998 Andy Thomas                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpgradientmenu.c  * Copyright (C) 1998 Andy Thomas                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -22,7 +22,7 @@ file|"gimpui.h"
 end_include
 
 begin_comment
-comment|/* Idea is to have a function to call that returns a widget that   * completely controls the selection of a gradient.  * you get a widget returned that you can use in a table say.  * In:- Initial gradient name. Null means use current selection.  *      pointer to func to call when gradient changes (GRunGradientCallback).  * Returned:- Pointer to a widget that you can use in UI.  *   * Widget simply made up of a preview widget (20x40) containing the gradient  * which can be clicked on to changed the gradient selection.  */
+comment|/* Idea is to have a function to call that returns a widget that   * completely controls the selection of a gradient.  * you get a widget returned that you can use in a table say.  * In:- Initial gradient name. Null means use current selection.  *      pointer to func to call when gradient changes (GimpRunGradientCallback).  * Returned:- Pointer to a widget that you can use in UI.  *   * Widget simply made up of a preview widget (20x40) containing the gradient  * which can be clicked on to changed the gradient selection.  */
 end_comment
 
 begin_define
@@ -60,7 +60,7 @@ modifier|*
 name|dname
 decl_stmt|;
 DECL|member|cback
-name|GRunGradientCallback
+name|GimpRunGradientCallback
 name|cback
 decl_stmt|;
 DECL|member|gradient_preview
@@ -592,14 +592,11 @@ name|gsel
 operator|->
 name|grad_data
 operator|=
-name|g_malloc
-argument_list|(
-name|width
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|gdouble
-argument_list|)
+argument_list|,
+name|width
 argument_list|)
 expr_stmt|;
 comment|/*  printf("name = %s width = %d\n",name,width);*/
@@ -747,7 +744,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_gradient_select_widget (gchar * dname,gchar * igradient,GRunGradientCallback cback,gpointer data)
+DECL|function|gimp_gradient_select_widget (gchar * dname,gchar * igradient,GimpRunGradientCallback cback,gpointer data)
 name|gimp_gradient_select_widget
 parameter_list|(
 name|gchar
@@ -758,7 +755,7 @@ name|gchar
 modifier|*
 name|igradient
 parameter_list|,
-name|GRunGradientCallback
+name|GimpRunGradientCallback
 name|cback
 parameter_list|,
 name|gpointer

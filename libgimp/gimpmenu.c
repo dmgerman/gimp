@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpmenu.c  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -81,7 +81,7 @@ modifier|*
 name|brush_mask_data
 decl_stmt|;
 DECL|member|callback
-name|GRunBrushCallback
+name|GimpRunBrushCallback
 name|callback
 decl_stmt|;
 DECL|member|closing
@@ -141,7 +141,7 @@ modifier|*
 name|pattern_mask_data
 decl_stmt|;
 DECL|member|callback
-name|GRunPatternCallback
+name|GimpRunPatternCallback
 name|callback
 decl_stmt|;
 DECL|member|closing
@@ -193,7 +193,7 @@ modifier|*
 name|gradient_data
 decl_stmt|;
 DECL|member|callback
-name|GRunGradientCallback
+name|GimpRunGradientCallback
 name|callback
 decl_stmt|;
 DECL|member|closing
@@ -293,7 +293,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -301,7 +301,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -475,11 +475,11 @@ name|GtkWidget
 modifier|*
 name|menuitem
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|label
 decl_stmt|;
@@ -487,10 +487,10 @@ name|gint32
 modifier|*
 name|images
 decl_stmt|;
-name|int
+name|gint
 name|nimages
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|k
@@ -584,22 +584,8 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|g_new
+name|g_strdup_printf
 argument_list|(
-name|char
-argument_list|,
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|16
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|label
-argument_list|,
 literal|"%s-%d"
 argument_list|,
 name|g_basename
@@ -790,15 +776,15 @@ name|GtkWidget
 modifier|*
 name|menuitem
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|image_label
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|label
 decl_stmt|;
@@ -813,13 +799,13 @@ decl_stmt|;
 name|gint32
 name|layer
 decl_stmt|;
-name|int
+name|gint
 name|nimages
 decl_stmt|;
-name|int
+name|gint
 name|nlayers
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -920,22 +906,8 @@ argument_list|)
 expr_stmt|;
 name|image_label
 operator|=
-name|g_new
+name|g_strdup_printf
 argument_list|(
-name|char
-argument_list|,
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-operator|+
-literal|16
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|image_label
-argument_list|,
 literal|"%s-%d"
 argument_list|,
 name|g_basename
@@ -1032,27 +1004,8 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|g_new
+name|g_strdup_printf
 argument_list|(
-name|char
-argument_list|,
-name|strlen
-argument_list|(
-name|image_label
-argument_list|)
-operator|+
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-operator|+
-literal|2
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|label
-argument_list|,
 literal|"%s/%s"
 argument_list|,
 name|image_label
@@ -1406,15 +1359,15 @@ name|GtkWidget
 modifier|*
 name|menuitem
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|image_label
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|label
 decl_stmt|;
@@ -1429,13 +1382,13 @@ decl_stmt|;
 name|gint32
 name|channel
 decl_stmt|;
-name|int
+name|gint
 name|nimages
 decl_stmt|;
-name|int
+name|gint
 name|nchannels
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -1536,22 +1489,8 @@ argument_list|)
 expr_stmt|;
 name|image_label
 operator|=
-name|g_new
+name|g_strdup_printf
 argument_list|(
-name|char
-argument_list|,
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-operator|+
-literal|16
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|image_label
-argument_list|,
 literal|"%s-%d"
 argument_list|,
 name|g_basename
@@ -1648,27 +1587,8 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|g_new
+name|g_strdup_printf
 argument_list|(
-name|char
-argument_list|,
-name|strlen
-argument_list|(
-name|image_label
-argument_list|)
-operator|+
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-operator|+
-literal|2
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|label
-argument_list|,
 literal|"%s/%s"
 argument_list|,
 name|image_label
@@ -1695,10 +1615,10 @@ argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|gimp_menu_callback
+argument_list|)
 argument_list|,
 operator|&
 name|channels
@@ -2159,22 +2079,8 @@ argument_list|)
 expr_stmt|;
 name|image_label
 operator|=
-name|g_new
+name|g_strdup_printf
 argument_list|(
-name|char
-argument_list|,
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-operator|+
-literal|16
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|image_label
-argument_list|,
 literal|"%s-%d"
 argument_list|,
 name|g_basename
@@ -2271,27 +2177,8 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|g_new
+name|g_strdup_printf
 argument_list|(
-name|gchar
-argument_list|,
-name|strlen
-argument_list|(
-name|image_label
-argument_list|)
-operator|+
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-operator|+
-literal|2
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|label
-argument_list|,
 literal|"%s/%s"
 argument_list|,
 name|image_label
@@ -2625,27 +2512,8 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|g_new
+name|g_strdup_printf
 argument_list|(
-name|char
-argument_list|,
-name|strlen
-argument_list|(
-name|image_label
-argument_list|)
-operator|+
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-operator|+
-literal|2
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|label
-argument_list|,
 literal|"%s/%s"
 argument_list|,
 name|image_label
@@ -2672,10 +2540,10 @@ argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|gimp_menu_callback
+argument_list|)
 argument_list|,
 operator|&
 name|channels
@@ -3992,7 +3860,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|temp_brush_invoker (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|temp_brush_invoker (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|temp_brush_invoker
 parameter_list|(
 name|gchar
@@ -4002,7 +3870,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -4010,14 +3878,14 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
@@ -4259,7 +4127,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|temp_pattern_invoker (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|temp_pattern_invoker (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|temp_pattern_invoker
 parameter_list|(
 name|gchar
@@ -4269,7 +4137,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -4277,14 +4145,14 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
@@ -4497,7 +4365,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|temp_gradient_invoker (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|temp_gradient_invoker (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|temp_gradient_invoker
 parameter_list|(
 name|gchar
@@ -4507,7 +4375,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -4515,14 +4383,14 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
@@ -4831,7 +4699,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -4904,7 +4772,7 @@ end_comment
 
 begin_function
 name|gpointer
-DECL|function|gimp_interactive_selection_brush (gchar * dialogname,gchar * brush_name,gdouble opacity,gint spacing,gint paint_mode,GRunBrushCallback callback,gpointer data)
+DECL|function|gimp_interactive_selection_brush (gchar * dialogname,gchar * brush_name,gdouble opacity,gint spacing,gint paint_mode,GimpRunBrushCallback callback,gpointer data)
 name|gimp_interactive_selection_brush
 parameter_list|(
 name|gchar
@@ -4924,7 +4792,7 @@ parameter_list|,
 name|gint
 name|paint_mode
 parameter_list|,
-name|GRunBrushCallback
+name|GimpRunBrushCallback
 name|callback
 parameter_list|,
 name|gpointer
@@ -4932,7 +4800,7 @@ name|data
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
@@ -5011,14 +4879,14 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|return_vals
 init|=
 name|NULL
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -5035,7 +4903,7 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nreturn_vals
 init|=
 literal|0
@@ -5043,7 +4911,7 @@ decl_stmt|;
 name|gint
 name|bnreturn_vals
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|pdbreturn_vals
 decl_stmt|;
@@ -5231,7 +5099,7 @@ modifier|*
 name|mask_data
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -5412,7 +5280,7 @@ name|gpointer
 name|popup_pnt
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -5488,7 +5356,7 @@ name|gint
 name|paint_mode
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -5560,7 +5428,7 @@ end_function
 
 begin_function
 name|gpointer
-DECL|function|gimp_interactive_selection_pattern (gchar * dialogname,gchar * pattern_name,GRunPatternCallback callback,gpointer data)
+DECL|function|gimp_interactive_selection_pattern (gchar * dialogname,gchar * pattern_name,GimpRunPatternCallback callback,gpointer data)
 name|gimp_interactive_selection_pattern
 parameter_list|(
 name|gchar
@@ -5571,7 +5439,7 @@ name|gchar
 modifier|*
 name|pattern_name
 parameter_list|,
-name|GRunPatternCallback
+name|GimpRunPatternCallback
 name|callback
 parameter_list|,
 name|gpointer
@@ -5579,7 +5447,7 @@ name|data
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
@@ -5643,14 +5511,14 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|return_vals
 init|=
 name|NULL
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -5667,7 +5535,7 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nreturn_vals
 init|=
 literal|0
@@ -5675,7 +5543,7 @@ decl_stmt|;
 name|gint
 name|bnreturn_vals
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|pdbreturn_vals
 decl_stmt|;
@@ -5837,7 +5705,7 @@ modifier|*
 name|mask_data
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -5994,7 +5862,7 @@ name|gpointer
 name|popup_pnt
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -6061,7 +5929,7 @@ modifier|*
 name|pname
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -6121,7 +5989,7 @@ end_function
 
 begin_function
 name|gpointer
-DECL|function|gimp_interactive_selection_gradient (gchar * dialogname,gchar * gradient_name,gint sample_sz,GRunGradientCallback callback,gpointer data)
+DECL|function|gimp_interactive_selection_gradient (gchar * dialogname,gchar * gradient_name,gint sample_sz,GimpRunGradientCallback callback,gpointer data)
 name|gimp_interactive_selection_gradient
 parameter_list|(
 name|gchar
@@ -6135,7 +6003,7 @@ parameter_list|,
 name|gint
 name|sample_sz
 parameter_list|,
-name|GRunGradientCallback
+name|GimpRunGradientCallback
 name|callback
 parameter_list|,
 name|gpointer
@@ -6143,7 +6011,7 @@ name|data
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
@@ -6183,14 +6051,14 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|return_vals
 init|=
 name|NULL
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -6207,7 +6075,7 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nreturn_vals
 init|=
 literal|0
@@ -6215,7 +6083,7 @@ decl_stmt|;
 name|gint
 name|bnreturn_vals
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|pdbreturn_vals
 decl_stmt|;
@@ -6377,7 +6245,7 @@ modifier|*
 name|grad_data
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -6521,7 +6389,7 @@ name|gpointer
 name|popup_pnt
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -6588,7 +6456,7 @@ modifier|*
 name|gname
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;

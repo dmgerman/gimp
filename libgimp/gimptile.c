@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.               *                                                                                * This library is distributed in the hope that it will be useful,                * but WITHOUT ANY WARRANTY; without even the implied warranty of                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU              * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimptile.c  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -28,7 +28,7 @@ file|"gimpwire.h"
 end_include
 
 begin_comment
-comment|/*  This is the percentage of the maximum cache size that should be cleared  *   from the cache when an eviction is necessary  */
+comment|/*  This is the percentage of the maximum cache size that   *  should be cleared from the cache when an eviction is   *  necessary.  */
 end_comment
 
 begin_define
@@ -47,7 +47,7 @@ name|WireMessage
 modifier|*
 name|msg
 parameter_list|,
-name|int
+name|gint
 name|type
 parameter_list|)
 function_decl|;
@@ -58,7 +58,7 @@ specifier|static
 name|void
 name|gimp_tile_get
 parameter_list|(
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 parameter_list|)
@@ -70,7 +70,7 @@ specifier|static
 name|void
 name|gimp_tile_put
 parameter_list|(
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 parameter_list|)
@@ -82,7 +82,7 @@ specifier|static
 name|void
 name|gimp_tile_cache_insert
 parameter_list|(
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 parameter_list|)
@@ -94,7 +94,7 @@ specifier|static
 name|void
 name|gimp_tile_cache_flush
 parameter_list|(
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 parameter_list|)
@@ -116,7 +116,7 @@ specifier|static
 name|guint
 name|gimp_tile_hash
 parameter_list|(
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 parameter_list|)
@@ -208,10 +208,10 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_tile_ref (GTile * tile)
+DECL|function|gimp_tile_ref (GimpTile * tile)
 name|gimp_tile_ref
 parameter_list|(
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 parameter_list|)
@@ -259,10 +259,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tile_ref_zero (GTile * tile)
+DECL|function|gimp_tile_ref_zero (GimpTile * tile)
 name|gimp_tile_ref_zero
 parameter_list|(
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 parameter_list|)
@@ -341,14 +341,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tile_unref (GTile * tile,int dirty)
+DECL|function|gimp_tile_unref (GimpTile * tile,gboolean dirty)
 name|gimp_tile_unref
 parameter_list|(
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 parameter_list|,
-name|int
+name|gboolean
 name|dirty
 parameter_list|)
 block|{
@@ -403,10 +403,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tile_flush (GTile * tile)
+DECL|function|gimp_tile_flush (GimpTile * tile)
 name|gimp_tile_flush
 parameter_list|(
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 parameter_list|)
@@ -491,9 +491,11 @@ end_function
 
 begin_function
 name|guint
-DECL|function|gimp_tile_width ()
+DECL|function|gimp_tile_width (void)
 name|gimp_tile_width
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 return|return
 name|_gimp_tile_width
@@ -503,9 +505,11 @@ end_function
 
 begin_function
 name|guint
-DECL|function|gimp_tile_height ()
+DECL|function|gimp_tile_height (void)
 name|gimp_tile_height
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 return|return
 name|_gimp_tile_height
@@ -516,10 +520,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tile_get (GTile * tile)
+DECL|function|gimp_tile_get (GimpTile * tile)
 name|gimp_tile_get
 parameter_list|(
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 parameter_list|)
@@ -762,10 +766,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tile_put (GTile * tile)
+DECL|function|gimp_tile_put (GimpTile * tile)
 name|gimp_tile_put
 parameter_list|(
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 parameter_list|)
@@ -978,10 +982,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tile_cache_insert (GTile * tile)
+DECL|function|gimp_tile_cache_insert (GimpTile * tile)
 name|gimp_tile_cache_insert
 parameter_list|(
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 parameter_list|)
@@ -1233,10 +1237,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tile_cache_flush (GTile * tile)
+DECL|function|gimp_tile_cache_flush (GimpTile * tile)
 name|gimp_tile_cache_flush
 parameter_list|(
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 parameter_list|)
@@ -1353,9 +1357,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tile_cache_zorch ()
+DECL|function|gimp_tile_cache_zorch (void)
 name|gimp_tile_cache_zorch
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -1364,7 +1370,7 @@ condition|)
 name|gimp_tile_cache_flush
 argument_list|(
 operator|(
-name|GTile
+name|GimpTile
 operator|*
 operator|)
 name|tile_list_head
@@ -1378,10 +1384,10 @@ end_function
 begin_function
 specifier|static
 name|guint
-DECL|function|gimp_tile_hash (GTile * tile)
+DECL|function|gimp_tile_hash (GimpTile * tile)
 name|gimp_tile_hash
 parameter_list|(
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 parameter_list|)

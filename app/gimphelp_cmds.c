@@ -366,7 +366,7 @@ literal|"gimp_plugin_help_register"
 block|,
 literal|"Register a help path for a plug-in."
 block|,
-literal|"This procedure changes the help rootdir for the plug-in which calls it. All subsequent calls of gimp_help from this plug-in will be interpreted relative to this rootdir."
+literal|"This procedure changes the help rootdir for the plug-in which calls it. All subsequent calls of gimp_help from this plug-in will be interpreted relative to this rootdir. This procedure can only be called in the query function of a plug-in and it has to be called before any procedure is installed."
 block|,
 literal|"Michael Natterer<mitch@gimp.org>"
 block|,

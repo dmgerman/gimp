@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  * Copyright (C) 1998 Andy Thomas                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpbrushmenu.c  * Copyright (C) 1998 Andy Thomas                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -22,7 +22,7 @@ file|"gimpui.h"
 end_include
 
 begin_comment
-comment|/* Idea is to have a function to call that returns a widget that   * completely controls the selection of a brush.  * you get a widget returned that you can use in a table say.  * In:- Initial brush name. Null means use current selection.  *      pointer to func to call when brush changes (GRunBrushCallback).  * Returned:- Pointer to a widget that you can use in UI.  *   * Widget simply made up of a preview widget (20x20) containing the brush mask  * and a button that can be clicked on to change the brush.  */
+comment|/* Idea is to have a function to call that returns a widget that   * completely controls the selection of a brush.  * you get a widget returned that you can use in a table say.  * In:- Initial brush name. Null means use current selection.  *      pointer to func to call when brush changes (GimpRunBrushCallback).  * Returned:- Pointer to a widget that you can use in UI.  *   * Widget simply made up of a preview widget (20x20) containing the brush mask  * and a button that can be clicked on to change the brush.  */
 end_comment
 
 begin_define
@@ -60,7 +60,7 @@ modifier|*
 name|dname
 decl_stmt|;
 DECL|member|cback
-name|GRunBrushCallback
+name|GimpRunBrushCallback
 name|cback
 decl_stmt|;
 DECL|member|brush_preview
@@ -933,7 +933,7 @@ name|y
 operator|++
 control|)
 block|{
-name|int
+name|gint
 name|j
 decl_stmt|;
 name|s
@@ -1284,7 +1284,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_brush_select_widget (gchar * dname,gchar * ibrush,gdouble opacity,gint spacing,gint paint_mode,GRunBrushCallback cback,gpointer data)
+DECL|function|gimp_brush_select_widget (gchar * dname,gchar * ibrush,gdouble opacity,gint spacing,gint paint_mode,GimpRunBrushCallback cback,gpointer data)
 name|gimp_brush_select_widget
 parameter_list|(
 name|gchar
@@ -1304,7 +1304,7 @@ parameter_list|,
 name|gint
 name|paint_mode
 parameter_list|,
-name|GRunBrushCallback
+name|GimpRunBrushCallback
 name|cback
 parameter_list|,
 name|gpointer

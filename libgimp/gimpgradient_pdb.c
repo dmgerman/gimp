@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.               *                                                                                * This library is distributed in the hope that it will be useful,                * but WITHOUT ANY WARRANTY; without even the implied warranty of                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU              * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpgradient_pdb.c  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -10,7 +10,7 @@ file|"gimp.h"
 end_include
 
 begin_function
-name|char
+name|gchar
 modifier|*
 modifier|*
 DECL|function|gimp_gradients_get_list (gint * num_gradients)
@@ -25,15 +25,15 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|gradient_names
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|return_vals
@@ -143,7 +143,7 @@ block|}
 end_function
 
 begin_function
-name|char
+name|gchar
 modifier|*
 DECL|function|gimp_gradients_get_active (void)
 name|gimp_gradients_get_active
@@ -155,10 +155,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|result
 decl_stmt|;
@@ -220,10 +220,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gradients_set_active (char * name)
+DECL|function|gimp_gradients_set_active (gchar * name)
 name|gimp_gradients_set_active
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -232,7 +232,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|return_vals
@@ -275,17 +275,17 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gdouble
 modifier|*
 name|result
 decl_stmt|;
-name|int
+name|gint
 name|nresult
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|return_vals
@@ -404,17 +404,17 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gdouble
 modifier|*
 name|result
 decl_stmt|;
-name|int
+name|gint
 name|nresult
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|return_vals
