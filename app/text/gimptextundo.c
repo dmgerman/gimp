@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptext.h"
 end_include
 
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a21cf080103
+DECL|enum|__anon29aa5f170103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -742,28 +748,25 @@ if|if
 condition|(
 name|undo
 operator|->
-name|pspec
+name|value
 condition|)
-block|{
-comment|/*  this is incorrect, but how can it be done better?  */
 name|memsize
-operator|=
-sizeof|sizeof
+operator|+=
+name|gimp_g_value_get_memsize
 argument_list|(
-name|GValue
+name|undo
+operator|->
+name|value
 argument_list|)
 expr_stmt|;
-block|}
-elseif|else
 if|if
 condition|(
 name|undo
 operator|->
 name|text
 condition|)
-block|{
 name|memsize
-operator|=
+operator|+=
 name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
@@ -776,7 +779,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|memsize
 operator|+

@@ -114,6 +114,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint64
+name|gimp_g_value_get_memsize
+parameter_list|(
+name|GValue
+modifier|*
+name|value
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_get_default_language
