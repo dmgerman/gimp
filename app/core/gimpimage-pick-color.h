@@ -43,13 +43,13 @@ parameter_list|,
 name|gdouble
 name|average_radius
 parameter_list|,
-name|GimpRGB
-modifier|*
-name|color
-parameter_list|,
 name|GimpImageType
 modifier|*
 name|sample_type
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|color
 parameter_list|,
 name|gint
 modifier|*

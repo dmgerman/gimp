@@ -70,7 +70,7 @@ end_typedef
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_pick_color (GimpImage * gimage,GimpDrawable * drawable,gboolean sample_merged,gint x,gint y,gboolean sample_average,gdouble average_radius,GimpRGB * color,GimpImageType * sample_type,gint * color_index)
+DECL|function|gimp_image_pick_color (GimpImage * gimage,GimpDrawable * drawable,gboolean sample_merged,gint x,gint y,gboolean sample_average,gdouble average_radius,GimpImageType * sample_type,GimpRGB * color,gint * color_index)
 name|gimp_image_pick_color
 parameter_list|(
 name|GimpImage
@@ -96,13 +96,13 @@ parameter_list|,
 name|gdouble
 name|average_radius
 parameter_list|,
-name|GimpRGB
-modifier|*
-name|color
-parameter_list|,
 name|GimpImageType
 modifier|*
 name|sample_type
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|color
 parameter_list|,
 name|gint
 modifier|*
@@ -598,21 +598,21 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|color
-condition|)
-operator|*
-name|color
-operator|=
-name|rgb_color
-expr_stmt|;
-if|if
-condition|(
 name|sample_type
 condition|)
 operator|*
 name|sample_type
 operator|=
 name|my_sample_type
+expr_stmt|;
+if|if
+condition|(
+name|color
+condition|)
+operator|*
+name|color
+operator|=
+name|rgb_color
 expr_stmt|;
 if|if
 condition|(

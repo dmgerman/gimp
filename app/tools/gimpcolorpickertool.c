@@ -1289,10 +1289,10 @@ operator|->
 name|average_radius
 argument_list|,
 operator|&
-name|color
+name|sample_type
 argument_list|,
 operator|&
-name|sample_type
+name|color
 argument_list|,
 operator|&
 name|color_index
