@@ -697,10 +697,6 @@ name|FILE
 modifier|*
 name|file
 decl_stmt|;
-name|gchar
-modifier|*
-name|name
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_GIMP

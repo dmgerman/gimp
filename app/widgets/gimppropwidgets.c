@@ -3537,7 +3537,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|G_IS_PARAM_SPEC_ULONG
+name|G_IS_PARAM_SPEC_UINT64
 argument_list|(
 name|param_spec
 argument_list|)
@@ -3631,6 +3631,18 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|g_warning
+argument_list|(
+literal|"%s: unhandled param spec of type %s"
+argument_list|,
+name|G_STRLOC
+argument_list|,
+name|G_PARAM_SPEC_TYPE_NAME
+argument_list|(
+name|param_spec
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 if|if
@@ -3793,7 +3805,7 @@ expr_stmt|;
 ifndef|#
 directive|ifndef
 name|_MSC_VER
-comment|/* avoid getting gimppropwidgets.c(999) : warning C4056:     *   overflow in floating-point constant arithmetic    * and runtime failing (the check seems not the useful to me anyway)     */
+comment|/* avoid getting gimppropwidgets.c(999) : warning C4056:    *   overflow in floating-point constant arithmetic    * and runtime failing (the check seems not useful to me anyway)    */
 name|g_return_val_if_fail
 argument_list|(
 name|uint64_spec
