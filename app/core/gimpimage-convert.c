@@ -417,7 +417,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29119b470103
+DECL|enum|__anon29e972740103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1445,7 +1445,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29119b470208
+DECL|struct|__anon29e972740208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1522,7 +1522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29119b470308
+DECL|struct|__anon29e972740308
 block|{
 DECL|member|ncolors
 name|long
@@ -1682,7 +1682,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29119b470408
+DECL|struct|__anon29e972740408
 block|{
 DECL|member|used_count
 name|signed
@@ -2660,6 +2660,8 @@ block|{
 name|QuantizeObj
 modifier|*
 name|quantobj
+init|=
+name|NULL
 decl_stmt|;
 name|GimpLayer
 modifier|*
@@ -2692,22 +2694,21 @@ name|NULL
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gimage
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|quantobj
-operator|=
-name|NULL
+name|g_return_if_fail
+argument_list|(
+name|new_type
+operator|!=
+name|gimp_image_base_type
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|theCustomPalette
 operator|=
@@ -2808,6 +2809,20 @@ operator|->
 name|base_type
 operator|=
 name|new_type
+expr_stmt|;
+comment|/*  If the image was INDEXED, push its colormap to the undo stack  */
+if|if
+condition|(
+name|old_type
+operator|==
+name|GIMP_INDEXED
+condition|)
+name|gimp_image_undo_push_image_colormap
+argument_list|(
+name|gimage
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 comment|/* initialize the colour conversion routines */
 name|cpercep_init_conversions
@@ -3746,14 +3761,6 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-comment|/* gone in cvs */
-comment|/*  shrink wrap and update all views  */
-block|gimp_image_invalidate_layer_previews (gimage);   gimp_viewable_invalidate_preview (GIMP_VIEWABLE (gimage));   gdisplays_update_title (gimage);   gdisplays_update_full (gimage);    gimp_image_colormap_changed (gimage, -1);
-endif|#
-directive|endif
 name|gimp_image_invalidate_layer_previews
 argument_list|(
 name|gimage
