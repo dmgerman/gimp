@@ -82,7 +82,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294229bc0103
+DECL|enum|__anon2bba399f0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR
@@ -4902,6 +4902,17 @@ name|name
 operator|+=
 name|sig_len
 expr_stmt|;
+if|if
+condition|(
+name|name
+operator|&&
+name|strlen
+argument_list|(
+name|name
+argument_list|)
+operator|>
+literal|2
+condition|)
 name|file_open
 argument_list|(
 name|name
@@ -5027,7 +5038,7 @@ argument_list|(
 name|gimp_dnd_file_drag_data_received
 argument_list|)
 argument_list|,
-name|NULL
+name|widget
 argument_list|)
 expr_stmt|;
 block|}

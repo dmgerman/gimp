@@ -42,7 +42,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e7375c0103
+DECL|enum|__anon2801f1fe0103
 block|{
 DECL|enumerator|INVISIBLE
 name|INVISIBLE
@@ -92,7 +92,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e7375c0203
+DECL|enum|__anon2801f1fe0203
 block|{
 DECL|enumerator|SHOW_ALL
 name|SHOW_ALL
@@ -491,6 +491,12 @@ operator|->
 name|window
 argument_list|,
 name|GDK_WATCH
+argument_list|,
+name|TOOL_TYPE_NONE
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -516,6 +522,12 @@ operator|->
 name|window
 argument_list|,
 name|GDK_WATCH
+argument_list|,
+name|TOOL_TYPE_NONE
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -540,6 +552,12 @@ operator|->
 name|window
 argument_list|,
 name|GDK_WATCH
+argument_list|,
+name|TOOL_TYPE_NONE
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

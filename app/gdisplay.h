@@ -25,6 +25,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimage.h"
 end_include
 
@@ -547,25 +553,40 @@ name|display_areas
 decl_stmt|;
 comment|/*  Display areas list                      */
 DECL|member|current_cursor
-name|gint
+name|GdkCursorType
 name|current_cursor
 decl_stmt|;
 comment|/*  Currently installed cursor              */
+DECL|member|cursor_tool
+name|ToolType
+name|cursor_tool
+decl_stmt|;
+comment|/*  Cursor for which tool?                  */
+DECL|member|cursor_modifier
+name|CursorModifier
+name|cursor_modifier
+decl_stmt|;
+comment|/*  Cursor modifier (plus, minus, ...)      */
+DECL|member|toggle_cursor
+name|gboolean
+name|toggle_cursor
+decl_stmt|;
+comment|/*  Cursor toggled?                         */
 DECL|member|override_cursor
 name|GdkCursorType
 name|override_cursor
 decl_stmt|;
 comment|/*  Overriding cursor (ie. hourglass)       */
-DECL|member|draw_cursor
-name|gboolean
-name|draw_cursor
-decl_stmt|;
-comment|/* should we draw software cursor ?         */
 DECL|member|using_override_cursor
 name|gboolean
 name|using_override_cursor
 decl_stmt|;
 comment|/* is the cursor overridden? (ie. hourglass)*/
+DECL|member|draw_cursor
+name|gboolean
+name|draw_cursor
+decl_stmt|;
+comment|/* should we draw software cursor ?         */
 DECL|member|cursor_x
 name|gint
 name|cursor_x
@@ -781,12 +802,40 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gdisplay_real_install_tool_cursor
+parameter_list|(
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|,
+name|GdkCursorType
+name|cursor_type
+parameter_list|,
+name|ToolType
+name|tool_type
+parameter_list|,
+name|CursorModifier
+name|modifier
+parameter_list|,
+name|gboolean
+name|toggle_cursor
+parameter_list|,
+name|gboolean
+name|always_install
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gdisplay_install_tool_cursor
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|GdkCursorType
+name|cursor_type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -797,6 +846,7 @@ name|gdisplay_remove_tool_cursor
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -807,8 +857,10 @@ name|gdisplay_install_override_cursor
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|GdkCursorType
+name|cursor_type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -819,6 +871,7 @@ name|gdisplay_remove_override_cursor
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl

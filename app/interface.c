@@ -5513,6 +5513,11 @@ argument_list|,
 name|GDK_ACTION_COPY
 argument_list|)
 expr_stmt|;
+name|gimp_dnd_file_dest_set
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -5528,11 +5533,6 @@ name|toolbox_drag_drop
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_dnd_file_dest_set
-argument_list|(
-name|object
 argument_list|)
 expr_stmt|;
 name|gimp_dnd_tool_dest_set

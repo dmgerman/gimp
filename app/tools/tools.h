@@ -49,6 +49,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"toolsF.h"
 end_include
 
@@ -65,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b16cf380103
+DECL|enum|__anon29d902170103
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -96,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b16cf380203
+DECL|enum|__anon29d902170203
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -333,6 +339,14 @@ DECL|member|tool_context
 name|GimpContext
 modifier|*
 name|tool_context
+decl_stmt|;
+DECL|member|tool_cursor
+name|BitmapCursor
+name|tool_cursor
+decl_stmt|;
+DECL|member|toggle_cursor
+name|BitmapCursor
+name|toggle_cursor
 decl_stmt|;
 block|}
 struct|;

@@ -8351,6 +8351,12 @@ operator|->
 name|window
 argument_list|,
 name|cursor_type
+argument_list|,
+name|TOOL_TYPE_NONE
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
