@@ -2795,7 +2795,9 @@ name|bsegs
 argument_list|)
 expr_stmt|;
 name|gimp_remove_busy_cursors
-argument_list|()
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 return|return
 name|segs

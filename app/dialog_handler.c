@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"errors.h"
 end_include
 
@@ -58,7 +64,7 @@ end_decl_stmt
 
 begin_comment
 DECL|variable|active_dialogs
-comment|/* List of dialogs that have  					  been created and are on  					  screen (may be hiddenalready). 				       */
+comment|/* List of dialogs that have  					  been created and are on  					  screen (may be hidden already). 				       */
 end_comment
 
 begin_decl_stmt
@@ -73,7 +79,7 @@ end_decl_stmt
 
 begin_comment
 DECL|variable|doing_update
-comment|/* Prevent multiple keypresse  				      from unsetting me. 				   */
+comment|/* Prevent multiple keypresses  				      from unsetting me. 				   */
 end_comment
 
 begin_comment
@@ -94,7 +100,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ac11a5a0103
+DECL|enum|__anon29fda3550103
 typedef|typedef
 enum|enum
 block|{
@@ -135,11 +141,11 @@ comment|/* This keeps track of the state the dialogs are in */
 end_comment
 
 begin_comment
-comment|/* ie howmany times we have pressed the tab key */
+comment|/* ie how many times we have pressed the tab key */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ac11a5a0203
+DECL|enum|__anon29fda3550203
 typedef|typedef
 enum|enum
 block|{
@@ -187,7 +193,7 @@ end_decl_stmt
 
 begin_comment
 DECL|variable|toolbox_shell
-comment|/* Copy of the shelll for the tool  					      box this has special behavour  					      so is not on the normal list. 					   */
+comment|/* Copy of the shell for the tool  					      box - this has special behaviour  					      so is not on the normal list. 					   */
 end_comment
 
 begin_comment
@@ -422,6 +428,182 @@ comment|/* public */
 end_comment
 
 begin_comment
+comment|/* Set hourglass cursor on all currently registered dialogs */
+end_comment
+
+begin_function
+name|void
+DECL|function|dialog_idle_all ()
+name|dialog_idle_all
+parameter_list|()
+block|{
+name|GSList
+modifier|*
+name|list
+init|=
+name|active_dialogs
+decl_stmt|;
+name|DIALOGSTATEP
+name|dstate
+decl_stmt|;
+while|while
+condition|(
+name|list
+condition|)
+block|{
+name|dstate
+operator|=
+operator|(
+name|DIALOGSTATEP
+operator|)
+name|list
+operator|->
+name|data
+expr_stmt|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|GTK_WIDGET_VISIBLE
+argument_list|(
+name|dstate
+operator|->
+name|d
+argument_list|)
+condition|)
+block|{
+name|change_win_cursor
+argument_list|(
+name|dstate
+operator|->
+name|d
+operator|->
+name|window
+argument_list|,
+name|GDK_WATCH
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+if|if
+condition|(
+name|toolbox_shell
+operator|&&
+name|GTK_WIDGET_VISIBLE
+argument_list|(
+name|toolbox_shell
+operator|->
+name|d
+argument_list|)
+condition|)
+block|{
+name|change_win_cursor
+argument_list|(
+name|toolbox_shell
+operator|->
+name|d
+operator|->
+name|window
+argument_list|,
+name|GDK_WATCH
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_comment
+comment|/* And remove the hourglass again. */
+end_comment
+
+begin_function
+name|void
+DECL|function|dialog_unidle_all ()
+name|dialog_unidle_all
+parameter_list|()
+block|{
+name|GSList
+modifier|*
+name|list
+init|=
+name|active_dialogs
+decl_stmt|;
+name|DIALOGSTATEP
+name|dstate
+decl_stmt|;
+while|while
+condition|(
+name|list
+condition|)
+block|{
+name|dstate
+operator|=
+operator|(
+name|DIALOGSTATEP
+operator|)
+name|list
+operator|->
+name|data
+expr_stmt|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|GTK_WIDGET_VISIBLE
+argument_list|(
+name|dstate
+operator|->
+name|d
+argument_list|)
+condition|)
+block|{
+name|unset_win_cursor
+argument_list|(
+name|dstate
+operator|->
+name|d
+operator|->
+name|window
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+if|if
+condition|(
+name|toolbox_shell
+operator|&&
+name|GTK_WIDGET_VISIBLE
+argument_list|(
+name|toolbox_shell
+operator|->
+name|d
+argument_list|)
+condition|)
+block|{
+name|unset_win_cursor
+argument_list|(
+name|toolbox_shell
+operator|->
+name|d
+operator|->
+name|window
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_comment
 comment|/* Register a dialog that we can handle */
 end_comment
 
@@ -592,11 +774,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|dialog_toggle (gint leavetoolbox)
+DECL|function|dialog_toggle (void)
 name|dialog_toggle
 parameter_list|(
-name|gint
-name|leavetoolbox
+name|void
 parameter_list|)
 block|{
 if|if

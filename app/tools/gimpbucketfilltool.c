@@ -112,7 +112,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc31a330103
+DECL|enum|__anon274c22ea0103
 block|{
 DECL|enumerator|FgColorFill
 name|FgColorFill
@@ -2841,7 +2841,9 @@ name|pat_buf
 argument_list|)
 expr_stmt|;
 name|gimp_remove_busy_cursors
-argument_list|()
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 block|}
 end_function

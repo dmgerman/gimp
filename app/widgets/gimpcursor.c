@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialog_handler.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
 end_include
 
@@ -36,6 +42,16 @@ end_decl_stmt
 begin_comment
 comment|/* It's in gdisplay.c, FYI */
 end_comment
+
+begin_decl_stmt
+DECL|variable|pending_removebusy
+specifier|static
+name|gboolean
+name|pending_removebusy
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
 
 begin_function
 name|void
@@ -104,6 +120,40 @@ end_function
 
 begin_function
 name|void
+DECL|function|gimp_add_busy_cursors_until_idle (void)
+name|gimp_add_busy_cursors_until_idle
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+operator|!
+name|pending_removebusy
+condition|)
+block|{
+name|gimp_add_busy_cursors
+argument_list|()
+expr_stmt|;
+name|gtk_idle_add_priority
+argument_list|(
+name|GTK_PRIORITY_HIGH
+argument_list|,
+name|gimp_remove_busy_cursors
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|pending_removebusy
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|gimp_add_busy_cursors (void)
 name|gimp_add_busy_cursors
 parameter_list|(
@@ -120,6 +170,7 @@ name|list
 init|=
 name|display_list
 decl_stmt|;
+comment|/* Canvases */
 while|while
 condition|(
 name|list
@@ -150,6 +201,10 @@ name|list
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* Dialogs */
+name|dialog_idle_all
+argument_list|()
+expr_stmt|;
 name|gdk_flush
 argument_list|()
 expr_stmt|;
@@ -157,11 +212,12 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|gimp_remove_busy_cursors (void)
+name|int
+DECL|function|gimp_remove_busy_cursors (gpointer data)
 name|gimp_remove_busy_cursors
 parameter_list|(
-name|void
+name|gpointer
+name|data
 parameter_list|)
 block|{
 name|GDisplay
@@ -174,6 +230,7 @@ name|list
 init|=
 name|display_list
 decl_stmt|;
+comment|/* Canvases */
 while|while
 condition|(
 name|list
@@ -202,6 +259,17 @@ name|list
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* Dialogs */
+name|dialog_unidle_all
+argument_list|()
+expr_stmt|;
+name|pending_removebusy
+operator|=
+name|FALSE
+expr_stmt|;
+return|return
+literal|0
+return|;
 block|}
 end_function
 

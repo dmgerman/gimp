@@ -1828,7 +1828,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299b766e0108
+DECL|struct|__anon2aef97700108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1875,7 +1875,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299b766e0208
+DECL|struct|__anon2aef97700208
 block|{
 DECL|member|ncolors
 name|long
@@ -1894,7 +1894,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299b766e0308
+DECL|struct|__anon2aef97700308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -5471,7 +5471,9 @@ literal|1
 argument_list|)
 expr_stmt|;
 name|gimp_remove_busy_cursors
-argument_list|()
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 block|}
 end_function

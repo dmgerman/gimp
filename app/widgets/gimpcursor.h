@@ -40,7 +40,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_add_busy_cursors
+name|gimp_add_busy_cursors_until_idle
 parameter_list|(
 name|void
 parameter_list|)
@@ -49,9 +49,18 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_remove_busy_cursors
+name|gimp_add_busy_cursors
 parameter_list|(
 name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|int
+name|gimp_remove_busy_cursors
+parameter_list|(
+name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl

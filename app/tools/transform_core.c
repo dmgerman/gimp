@@ -1951,7 +1951,9 @@ expr_stmt|;
 block|}
 block|}
 name|gimp_remove_busy_cursors
-argument_list|()
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 name|gdisplays_flush
 argument_list|()

@@ -188,7 +188,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27fe413a0103
+DECL|enum|__anon2a33ace70103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -308,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27fe413a0203
+DECL|enum|__anon2a33ace70203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -1661,7 +1661,9 @@ name|gimage
 argument_list|)
 expr_stmt|;
 name|gimp_remove_busy_cursors
-argument_list|()
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 return|return
 name|return_args
@@ -1866,7 +1868,9 @@ name|success
 argument_list|)
 expr_stmt|;
 name|gimp_remove_busy_cursors
-argument_list|()
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 return|return
 name|return_args

@@ -7896,7 +7896,6 @@ name|display_list
 decl_stmt|;
 comment|/* int x1, y1, x2, y2; */
 comment|/*  int count = 0; */
-comment|/*  printf("GDUA%p:%d,%d:%dx%d ", gimage,x,y,w,h);fflush(stdout);*/
 comment|/*  traverse the linked list of displays  */
 while|while
 condition|(
@@ -8754,34 +8753,6 @@ operator|.
 name|active
 condition|)
 block|{
-name|printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Deleted idlerendering gdisp %p...\n"
-argument_list|)
-argument_list|,
-name|gdisp
-argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-name|_
-argument_list|(
-literal|"\tIdlerender stops now!\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
 name|gtk_idle_remove
 argument_list|(
 name|gdisp
@@ -8798,19 +8769,6 @@ operator|.
 name|active
 operator|=
 name|FALSE
-expr_stmt|;
-name|printf
-argument_list|(
-name|_
-argument_list|(
-literal|"\tDeletion finished.\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
 expr_stmt|;
 block|}
 name|gimage_delete

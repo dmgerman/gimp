@@ -216,7 +216,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c266dbe0103
+DECL|enum|__anon2aee260a0103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -262,7 +262,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c266dbe0203
+DECL|enum|__anon2aee260a0203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -287,7 +287,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c266dbe0303
+DECL|enum|__anon2aee260a0303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -434,7 +434,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2c266dbe0408
+DECL|struct|__anon2aee260a0408
 typedef|typedef
 struct|struct
 block|{
@@ -486,7 +486,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c266dbe0508
+DECL|struct|__anon2aee260a0508
 typedef|typedef
 struct|struct
 block|{
@@ -5083,7 +5083,9 @@ name|buf_tiles
 argument_list|)
 expr_stmt|;
 name|gimp_remove_busy_cursors
-argument_list|()
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 block|}
 end_function

@@ -1045,7 +1045,9 @@ name|offy
 argument_list|)
 expr_stmt|;
 name|gimp_remove_busy_cursors
-argument_list|()
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 return|return
 name|procedural_db_return_args
@@ -11460,6 +11462,9 @@ decl_stmt|;
 name|int
 name|count
 decl_stmt|;
+name|gimp_add_busy_cursors
+argument_list|()
+expr_stmt|;
 comment|/*  Create a new image  */
 name|new_gimage
 operator|=
@@ -11972,9 +11977,17 @@ name|count
 index|]
 expr_stmt|;
 block|}
+warning|#
+directive|warning
+warning|NEED TO COPY GUIDES ALSO
 name|gimage_enable_undo
 argument_list|(
 name|new_gimage
+argument_list|)
+expr_stmt|;
+name|gimp_remove_busy_cursors
+argument_list|(
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return

@@ -491,7 +491,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon27e1090e0103
+DECL|enum|__anon2b8e39810103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -1756,7 +1756,9 @@ index|]
 argument_list|)
 expr_stmt|;
 name|gimp_remove_busy_cursors
-argument_list|()
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -1993,6 +1995,9 @@ name|list
 argument_list|)
 expr_stmt|;
 block|}
+warning|#
+directive|warning
+warning|NEED TO SCALE GUIDES ALSO
 comment|/*  Make sure the projection matches the gimage size  */
 name|gimp_image_projection_realloc
 argument_list|(
@@ -2025,7 +2030,9 @@ index|]
 argument_list|)
 expr_stmt|;
 name|gimp_remove_busy_cursors
-argument_list|()
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -6664,6 +6671,9 @@ name|w
 decl_stmt|,
 name|h
 decl_stmt|;
+name|gimp_add_busy_cursors_until_idle
+argument_list|()
+expr_stmt|;
 comment|/*  Get the gimage from the tilemanager  */
 name|gimage
 operator|=
@@ -9140,7 +9150,9 @@ name|merge_list
 argument_list|)
 expr_stmt|;
 name|gimp_remove_busy_cursors
-argument_list|()
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 return|return
 name|layer
@@ -9261,7 +9273,9 @@ name|merge_list
 argument_list|)
 expr_stmt|;
 name|gimp_remove_busy_cursors
-argument_list|()
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 return|return
 name|layer
@@ -9435,7 +9449,9 @@ name|merge_list
 argument_list|)
 expr_stmt|;
 name|gimp_remove_busy_cursors
-argument_list|()
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 return|return
 name|layer
