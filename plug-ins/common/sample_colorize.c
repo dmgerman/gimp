@@ -354,7 +354,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon2c1be3390108
+DECL|struct|__anon278fcc290108
 typedef|typedef
 struct|struct
 block|{
@@ -423,7 +423,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c1be3390208
+DECL|struct|__anon278fcc290208
 typedef|typedef
 struct|struct
 block|{
@@ -541,7 +541,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c1be3390308
+DECL|struct|__anon278fcc290308
 typedef|typedef
 struct|struct
 block|{
@@ -570,7 +570,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c1be3390408
+DECL|struct|__anon278fcc290408
 typedef|typedef
 struct|struct
 block|{
@@ -597,7 +597,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c1be3390508
+DECL|struct|__anon278fcc290508
 typedef|typedef
 struct|struct
 block|{
@@ -2380,7 +2380,7 @@ name|id_ptr
 decl_stmt|;
 if|if
 condition|(
-name|TRUE
+name|g_Sdebug
 condition|)
 name|printf
 argument_list|(
@@ -7107,7 +7107,7 @@ name|gtk_menu_item_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"** From GRADIENT **"
+literal|"From Gradient"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7150,7 +7150,7 @@ name|gtk_menu_item_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"** From INVERSE GRADIENT **"
+literal|"From Reverse Gradient"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8168,7 +8168,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"In Level:"
+literal|"Input Levels:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8521,7 +8521,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Out Level:"
+literal|"Output Levels:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -9031,7 +9031,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Smooth Samplecolors"
+literal|"Smooth Samples"
 argument_list|)
 argument_list|)
 expr_stmt|;
