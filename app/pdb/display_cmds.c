@@ -230,7 +230,7 @@ name|gimp
 argument_list|,
 name|gimage
 argument_list|,
-literal|0x0101
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|success

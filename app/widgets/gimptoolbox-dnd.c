@@ -580,7 +580,7 @@ name|gimp
 argument_list|,
 name|new_image
 argument_list|,
-literal|0x0101
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|g_object_unref

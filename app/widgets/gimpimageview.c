@@ -762,7 +762,7 @@ name|gimp
 argument_list|,
 name|image
 argument_list|,
-literal|0x0101
+literal|1.0
 argument_list|)
 expr_stmt|;
 block|}

@@ -59,32 +59,6 @@ value|(s->dot_for_dot ? \                            s->gdisp->gimage->yresoluti
 end_define
 
 begin_comment
-comment|/* unpacking the user scale level (char) */
-end_comment
-
-begin_define
-DECL|macro|SCALESRC (s)
-define|#
-directive|define
-name|SCALESRC
-parameter_list|(
-name|s
-parameter_list|)
-value|(s->scale& 0x00ff)
-end_define
-
-begin_define
-DECL|macro|SCALEDEST (s)
-define|#
-directive|define
-name|SCALEDEST
-parameter_list|(
-name|s
-parameter_list|)
-value|(s->scale>> 8)
-end_define
-
-begin_comment
 comment|/* calculate scale factors (double) */
 end_comment
 
@@ -96,7 +70,7 @@ name|SCALEFACTOR_X
 parameter_list|(
 name|s
 parameter_list|)
-value|((SCALEDEST(s) * SCREEN_XRES(s)) / \ 			   (SCALESRC(s) * s->gdisp->gimage->xresolution))
+value|(s->scale * SCREEN_XRES(s) / \ 			   s->gdisp->gimage->xresolution)
 end_define
 
 begin_define
@@ -107,7 +81,7 @@ name|SCALEFACTOR_Y
 parameter_list|(
 name|s
 parameter_list|)
-value|((SCALEDEST(s) * SCREEN_YRES(s)) / \ 			   (SCALESRC(s) * s->gdisp->gimage->yresolution))
+value|(s->scale * SCREEN_YRES(s) / \ 			   s->gdisp->gimage->yresolution)
 end_define
 
 begin_comment
@@ -310,12 +284,12 @@ name|gdouble
 name|monitor_yres
 decl_stmt|;
 DECL|member|scale
-name|gint
+name|gdouble
 name|scale
 decl_stmt|;
 comment|/*  scale factor from original raw image    */
 DECL|member|other_scale
-name|gint
+name|gdouble
 name|other_scale
 decl_stmt|;
 comment|/*  scale factor entered in Zoom->Other     */
@@ -681,7 +655,7 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|guint
+name|gdouble
 name|scale
 parameter_list|,
 name|GimpMenuFactory

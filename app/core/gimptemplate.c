@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf435ff0103
+DECL|enum|__anon28ec1b0d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1669,7 +1669,7 @@ name|gimp
 argument_list|,
 name|gimage
 argument_list|,
-literal|0x0101
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|g_object_unref

@@ -68,7 +68,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|guint
+name|gdouble
 name|scale
 parameter_list|)
 function_decl|;
@@ -1324,7 +1324,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|guint
+name|gdouble
 name|scale
 parameter_list|)
 function_decl|;

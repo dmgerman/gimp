@@ -237,7 +237,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|guint
+name|gdouble
 name|scale
 parameter_list|)
 function_decl|;
@@ -782,14 +782,14 @@ begin_function
 specifier|static
 name|GimpObject
 modifier|*
-DECL|function|gui_display_new (GimpImage * gimage,guint scale)
+DECL|function|gui_display_new (GimpImage * gimage,gdouble scale)
 name|gui_display_new
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|guint
+name|gdouble
 name|scale
 parameter_list|)
 block|{

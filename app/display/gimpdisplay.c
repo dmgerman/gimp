@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be4ab8f0103
+DECL|enum|__anon2c9174970103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -696,14 +696,14 @@ end_function
 begin_function
 name|GimpDisplay
 modifier|*
-DECL|function|gimp_display_new (GimpImage * gimage,guint scale,GimpMenuFactory * menu_factory,GimpItemFactory * popup_factory)
+DECL|function|gimp_display_new (GimpImage * gimage,gdouble scale,GimpMenuFactory * menu_factory,GimpItemFactory * popup_factory)
 name|gimp_display_new
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|guint
+name|gdouble
 name|scale
 parameter_list|,
 name|GimpMenuFactory

@@ -2489,17 +2489,13 @@ name|scale_str
 argument_list|,
 name|MAX_BUF
 argument_list|,
-literal|"%d:%d"
+literal|"%.2f"
 argument_list|,
-name|SCALEDEST
-argument_list|(
 name|shell
-argument_list|)
-argument_list|,
-name|SCALESRC
-argument_list|(
-name|shell
-argument_list|)
+operator|->
+name|scale
+operator|*
+literal|100
 argument_list|)
 expr_stmt|;
 comment|/*  number of layers  */

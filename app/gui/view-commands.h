@@ -70,7 +70,7 @@ name|gpointer
 name|data
 parameter_list|,
 name|guint
-name|action
+name|scale
 parameter_list|)
 function_decl|;
 end_function_decl

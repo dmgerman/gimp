@@ -180,7 +180,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad4d2720108
+DECL|struct|__anon28a6a0e00108
 block|{
 DECL|member|resize
 name|Resize
@@ -1048,7 +1048,7 @@ name|gimp
 argument_list|,
 name|new_gimage
 argument_list|,
-literal|0x0101
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|g_object_unref
