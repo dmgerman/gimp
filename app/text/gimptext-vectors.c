@@ -24,13 +24,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<freetype/ftglyph.h>
+file|<ft2build.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<freetype/ftoutln.h>
+include|FT_GLYPH_H
+end_include
+
+begin_include
+include|#
+directive|include
+include|FT_OUTLINE_H
 end_include
 
 begin_include
