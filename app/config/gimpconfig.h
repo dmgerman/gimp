@@ -66,9 +66,6 @@ name|object
 parameter_list|,
 name|gint
 name|fd
-parameter_list|,
-name|gboolean
-name|put_unknown
 parameter_list|)
 function_decl|;
 DECL|member|deserialize
@@ -141,9 +138,6 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-name|gboolean
-name|put_unknown
 parameter_list|)
 function_decl|;
 end_function_decl

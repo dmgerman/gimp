@@ -209,8 +209,6 @@ argument_list|(
 name|config
 argument_list|,
 name|filename
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_print

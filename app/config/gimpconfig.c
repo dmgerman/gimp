@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<sys/stat.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<sys/types.h>
 end_include
 
@@ -96,9 +102,6 @@ name|object
 parameter_list|,
 name|gint
 name|fd
-parameter_list|,
-name|gboolean
-name|put_unknown
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -221,7 +224,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_config_iface_serialize (GObject * object,gint fd,gboolean put_unknown)
+DECL|function|gimp_config_iface_serialize (GObject * object,gint fd)
 name|gimp_config_iface_serialize
 parameter_list|(
 name|GObject
@@ -230,22 +233,8 @@ name|object
 parameter_list|,
 name|gint
 name|fd
-parameter_list|,
-name|gboolean
-name|put_unknown
 parameter_list|)
 block|{
-if|if
-condition|(
-name|put_unknown
-condition|)
-name|gimp_config_serialize_unknown_tokens
-argument_list|(
-name|object
-argument_list|,
-name|fd
-argument_list|)
-expr_stmt|;
 name|gimp_config_serialize_properties
 argument_list|(
 name|object
@@ -289,7 +278,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_serialize (GObject * object,const gchar * filename,gboolean put_unknown)
+DECL|function|gimp_config_serialize (GObject * object,const gchar * filename)
 name|gimp_config_serialize
 parameter_list|(
 name|GObject
@@ -300,9 +289,6 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-name|gboolean
-name|put_unknown
 parameter_list|)
 block|{
 name|GimpConfigInterface
@@ -356,6 +342,14 @@ argument_list|,
 name|O_WRONLY
 operator||
 name|O_CREAT
+argument_list|,
+name|S_IRUSR
+operator||
+name|S_IWUSR
+operator||
+name|S_IRGRP
+operator||
+name|S_IROTH
 argument_list|)
 expr_stmt|;
 if|if
@@ -392,8 +386,6 @@ argument_list|(
 name|object
 argument_list|,
 name|fd
-argument_list|,
-name|put_unknown
 argument_list|)
 expr_stmt|;
 name|close
@@ -595,7 +587,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fbfeb10108
+DECL|struct|__anon27602ca00108
 block|{
 DECL|member|key
 name|gchar
