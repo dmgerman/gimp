@@ -2578,6 +2578,8 @@ name|widget
 argument_list|,
 operator|!
 name|fs_sensitive
+operator|&&
+name|aux_sensitive
 argument_list|)
 expr_stmt|;
 comment|/* delete channel */
