@@ -845,6 +845,21 @@ argument_list|,
 name|uri
 argument_list|)
 expr_stmt|;
+comment|/*  can only create a thumbnail if the passed uri and the        *  resulting image's uri match.        */
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|uri
+argument_list|,
+name|gimp_image_get_uri
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+condition|)
+block|{
 comment|/* save a thumbnail of every opened image */
 name|gimp_imagefile_save_thumbnail
 argument_list|(
@@ -853,6 +868,7 @@ argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|gimage
