@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"channel_pvt.h"
 end_include
 
@@ -108,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c39057b0108
+DECL|struct|__anon2bd514600108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -424,7 +430,10 @@ operator|->
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Offset"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* handle the wm close signal */
@@ -452,7 +461,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -516,7 +528,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -646,7 +661,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Offset X:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -763,7 +781,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Offset Y:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -886,7 +907,10 @@ name|check
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Wrap-Around"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -917,7 +941,10 @@ name|fill_options
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Fill Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -987,7 +1014,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -1067,7 +1097,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Transparent"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -1139,7 +1172,10 @@ name|push
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Offset by (x/2),(y/2)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

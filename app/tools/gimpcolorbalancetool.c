@@ -2118,7 +2118,7 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Color Balance"
 argument_list|)
@@ -4861,10 +4861,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the drawable"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4872,10 +4869,7 @@ name|PDB_INT32
 block|,
 literal|"transfer_mode"
 block|,
-name|N_
-argument_list|(
 literal|"Transfer mode: { SHADOWS (0), MIDTONES (1), HIGHLIGHTS (2) }"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4883,10 +4877,7 @@ name|PDB_INT32
 block|,
 literal|"preserve_lum"
 block|,
-name|N_
-argument_list|(
 literal|"Preserve luminosity values at each pixel"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4894,10 +4885,7 @@ name|PDB_FLOAT
 block|,
 literal|"cyan_red"
 block|,
-name|N_
-argument_list|(
 literal|"Cyan-Red color balance: (-100<= cyan_red<= 100)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4905,10 +4893,7 @@ name|PDB_FLOAT
 block|,
 literal|"magenta_green"
 block|,
-name|N_
-argument_list|(
 literal|"Magenta-Green color balance: (-100<= magenta_green<= 100)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4916,10 +4901,7 @@ name|PDB_FLOAT
 block|,
 literal|"yellow_blue"
 block|,
-name|N_
-argument_list|(
 literal|"Yellow-Blue color balance: (-100<= yellow_blue<= 100)"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -4933,15 +4915,9 @@ init|=
 block|{
 literal|"gimp_color_balance"
 block|,
-name|N_
-argument_list|(
 literal|"Modify the color balance of the specified drawable"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"Modify the color balance of the specified drawable.  There are three axis which can be modified: cyan-red, magenta-green, and yellow-blue.  Negative values increase the amount of the former, positive values increase the amount of the latter.  Color balance can be controlled with the 'transfer_mode' setting, which allows shadows, midtones, and highlights in an image to be affected differently.  The 'preserve_lum' parameter, if non-zero, ensures that the luminosity of each pixel remains fixed."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

@@ -119,6 +119,12 @@ directive|include
 file|"actionarea.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|G_SAMPLE
 define|#
@@ -290,7 +296,10 @@ index|]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Close"
+argument_list|)
 block|,
 name|grad_select_close_callback
 block|,
@@ -300,7 +309,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Edit"
+argument_list|)
 block|,
 name|grad_select_edit_callback
 block|,
@@ -1653,7 +1665,10 @@ name|PDB_SUCCESS
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"failed to run gradient callback function"
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -2018,7 +2033,10 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Gradient"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_clist_set_column_title
@@ -2032,7 +2050,10 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
+name|_
+argument_list|(
 literal|"Name"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_clist_column_titles_show
@@ -2248,7 +2269,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Gradient Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2432,7 +2456,10 @@ name|gradient_select_dialog
 operator|=
 name|gsel_new_selection
 argument_list|(
+name|_
+argument_list|(
 literal|"Gradients"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

@@ -51,6 +51,12 @@ directive|include
 file|"scale.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_comment
 comment|/*   types of magnify operations  */
 end_comment
@@ -495,7 +501,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Magnify Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -545,7 +554,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Allow Window Resizing"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment

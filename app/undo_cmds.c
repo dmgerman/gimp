@@ -174,10 +174,7 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
-name|N_
-argument_list|(
 literal|"The ID of the image in which to pop an undo group"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -191,25 +188,13 @@ init|=
 block|{
 literal|"gimp_undo_push_group_start"
 block|,
-name|N_
-argument_list|(
 literal|"Starts a group undo"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This function is used to start a group undo--necessary for logically combining two or more undo operations into a single operation.  This call must be used in conjunction with a 'gimp_undo_push_group_end' call."
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"Spencer Kimball& Peter Mattis"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"Spencer Kimball& Peter Mattis"
-argument_list|)
 block|,
 literal|"1997"
 block|,
@@ -334,10 +319,7 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
-name|N_
-argument_list|(
 literal|"The ID of the image in which to pop an undo group"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -351,25 +333,13 @@ init|=
 block|{
 literal|"gimp_undo_push_group_end"
 block|,
-name|N_
-argument_list|(
 literal|"Finish a group undo"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This function must be called once for each undo_push_group call that is made."
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"Spencer Kimball& Peter Mattis"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"Spencer Kimball& Peter Mattis"
-argument_list|)
 block|,
 literal|"1997"
 block|,

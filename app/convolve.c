@@ -90,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b54d57c0103
+DECL|enum|__anon2b41225f0103
 block|{
 DECL|enumerator|Blur
 name|Blur
@@ -1987,10 +1987,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the drawable"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1998,10 +1995,7 @@ name|PDB_FLOAT
 block|,
 literal|"pressure"
 block|,
-name|N_
-argument_list|(
 literal|"the pressure: 0<= pressure<= 100"
-argument_list|)
 block|}
 block|,
 block|{
@@ -2009,10 +2003,7 @@ name|PDB_INT32
 block|,
 literal|"convolve_type"
 block|,
-name|N_
-argument_list|(
 literal|"convolve type: { BLUR (0), SHARPEN (1) }"
-argument_list|)
 block|}
 block|,
 block|{
@@ -2020,10 +2011,7 @@ name|PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
-name|N_
-argument_list|(
 literal|"number of stroke control points (count each coordinate as 2 points)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -2031,10 +2019,7 @@ name|PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
-name|N_
-argument_list|(
 literal|"array of stroke coordinates: {s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y}"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -2048,15 +2033,9 @@ init|=
 block|{
 literal|"gimp_convolve"
 block|,
-name|N_
-argument_list|(
 literal|"Convolve (Blur, Sharpen) using the current brush"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This tool convolves the specified drawable with either a sharpening or blurring kernel.  The pressure parameter controls the magnitude of the operation.  Like the paintbrush, this tool linearly interpolates between the specified stroke coordinates."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

@@ -87,6 +87,12 @@ directive|include
 file|"levels.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|LOW_INPUT
 define|#
@@ -2014,7 +2020,10 @@ name|tools_register_no_options
 argument_list|(
 name|LEVELS
 argument_list|,
+name|_
+argument_list|(
 literal|"Levels Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tool
@@ -2196,7 +2205,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Value"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -2212,7 +2224,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Red"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -2228,7 +2243,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Green"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -2244,7 +2262,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Blue"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -2260,7 +2281,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Alpha"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -2322,7 +2346,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Levels for indexed drawables cannot be adjusted."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2705,7 +2732,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Auto Levels"
+argument_list|)
 block|,
 name|levels_auto_levels_callback
 block|,
@@ -2715,7 +2745,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"OK"
+argument_list|)
 block|,
 name|levels_ok_callback
 block|,
@@ -2725,7 +2758,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|levels_cancel_callback
 block|,
@@ -2856,7 +2892,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Levels"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* handle the wm close signal */
@@ -2951,7 +2990,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Modify Levels for Channel: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3063,7 +3105,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Input Levels: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3742,7 +3787,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Output Levels: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4233,7 +4281,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -5751,7 +5802,10 @@ name|image_map
 condition|)
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"No image map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|active_tool

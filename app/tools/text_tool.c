@@ -4082,10 +4082,7 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
-name|N_
-argument_list|(
 literal|"the image"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4093,10 +4090,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the affected drawable: (-1 for a new text layer)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4104,10 +4098,7 @@ name|PDB_FLOAT
 block|,
 literal|"x"
 block|,
-name|N_
-argument_list|(
 literal|"the x coordinate for the left side of text bounding box"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4115,10 +4106,7 @@ name|PDB_FLOAT
 block|,
 literal|"y"
 block|,
-name|N_
-argument_list|(
 literal|"the y coordinate for the top of text bounding box"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4126,10 +4114,7 @@ name|PDB_STRING
 block|,
 literal|"text"
 block|,
-name|N_
-argument_list|(
 literal|"the text to generate"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4137,10 +4122,7 @@ name|PDB_INT32
 block|,
 literal|"border"
 block|,
-name|N_
-argument_list|(
 literal|"the size of the border: border>= 0"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4148,10 +4130,7 @@ name|PDB_INT32
 block|,
 literal|"antialias"
 block|,
-name|N_
-argument_list|(
 literal|"generate antialiased text"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4159,10 +4138,7 @@ name|PDB_FLOAT
 block|,
 literal|"size"
 block|,
-name|N_
-argument_list|(
 literal|"the size of text in either pixels or points"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4170,10 +4146,7 @@ name|PDB_INT32
 block|,
 literal|"size_type"
 block|,
-name|N_
-argument_list|(
 literal|"the units of the specified size: { PIXELS (0), POINTS (1) }"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4181,10 +4154,7 @@ name|PDB_STRING
 block|,
 literal|"foundry"
 block|,
-name|N_
-argument_list|(
 literal|"the font foundry, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4192,10 +4162,7 @@ name|PDB_STRING
 block|,
 literal|"family"
 block|,
-name|N_
-argument_list|(
 literal|"the font family, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4203,10 +4170,7 @@ name|PDB_STRING
 block|,
 literal|"weight"
 block|,
-name|N_
-argument_list|(
 literal|"the font weight, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4214,10 +4178,7 @@ name|PDB_STRING
 block|,
 literal|"slant"
 block|,
-name|N_
-argument_list|(
 literal|"the font slant, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4225,10 +4186,7 @@ name|PDB_STRING
 block|,
 literal|"set_width"
 block|,
-name|N_
-argument_list|(
 literal|"the font set-width parameter, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4236,10 +4194,7 @@ name|PDB_STRING
 block|,
 literal|"spacing"
 block|,
-name|N_
-argument_list|(
 literal|"the font spacing, \"*\" for any"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -4257,10 +4212,7 @@ name|PDB_LAYER
 block|,
 literal|"text_layer"
 block|,
-name|N_
-argument_list|(
 literal|"the new text layer"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -4274,18 +4226,12 @@ init|=
 block|{
 literal|"gimp_text"
 block|,
-name|N_
-argument_list|(
 literal|"Add text at the specified location as a floating selection or a new layer."
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This tool requires font information in the form of seven parameters: {size, foundry, family, weight, slant, set_width, spacing}.  The font size can either be specified in units of pixels or points, and the appropriate metric is specified using the size_type "
 literal|"argument.  The x and y parameters together control the placement of the new text by specifying the upper left corner of the text bounding box.  If the antialias parameter is non-zero, the generated text will blend more smoothly with underlying layers. "
 literal|"This option requires more time and memory to compute than non-antialiased text; the resulting floating selection or layer, however, will require the same amount of memory with or without antialiasing.  If the specified drawable parameter is valid, the "
 literal|"text will be created as a floating selection attached to the drawable.  If the drawable parameter is not valid (-1), the text will appear as a new layer.  Finally, a border can be specified around the final rendered text.  The border is measured in pixels."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -4335,10 +4281,7 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
-name|N_
-argument_list|(
 literal|"the image"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4346,10 +4289,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the affected drawable: (-1 for a new text layer)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4357,10 +4297,7 @@ name|PDB_FLOAT
 block|,
 literal|"x"
 block|,
-name|N_
-argument_list|(
 literal|"the x coordinate for the left side of text bounding box"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4368,10 +4305,7 @@ name|PDB_FLOAT
 block|,
 literal|"y"
 block|,
-name|N_
-argument_list|(
 literal|"the y coordinate for the top of text bounding box"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4379,10 +4313,7 @@ name|PDB_STRING
 block|,
 literal|"text"
 block|,
-name|N_
-argument_list|(
 literal|"the text to generate"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4390,10 +4321,7 @@ name|PDB_INT32
 block|,
 literal|"border"
 block|,
-name|N_
-argument_list|(
 literal|"the size of the border: border>= 0"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4401,10 +4329,7 @@ name|PDB_INT32
 block|,
 literal|"antialias"
 block|,
-name|N_
-argument_list|(
 literal|"generate antialiased text"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4412,10 +4337,7 @@ name|PDB_FLOAT
 block|,
 literal|"size"
 block|,
-name|N_
-argument_list|(
 literal|"the size of text in either pixels or points"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4423,10 +4345,7 @@ name|PDB_INT32
 block|,
 literal|"size_type"
 block|,
-name|N_
-argument_list|(
 literal|"the units of the specified size: { PIXELS (0), POINTS (1) }"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4434,10 +4353,7 @@ name|PDB_STRING
 block|,
 literal|"foundry"
 block|,
-name|N_
-argument_list|(
 literal|"the font foundry, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4445,10 +4361,7 @@ name|PDB_STRING
 block|,
 literal|"family"
 block|,
-name|N_
-argument_list|(
 literal|"the font family, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4456,10 +4369,7 @@ name|PDB_STRING
 block|,
 literal|"weight"
 block|,
-name|N_
-argument_list|(
 literal|"the font weight, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4467,10 +4377,7 @@ name|PDB_STRING
 block|,
 literal|"slant"
 block|,
-name|N_
-argument_list|(
 literal|"the font slant, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4478,10 +4385,7 @@ name|PDB_STRING
 block|,
 literal|"set_width"
 block|,
-name|N_
-argument_list|(
 literal|"the font set-width parameter, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4489,10 +4393,7 @@ name|PDB_STRING
 block|,
 literal|"spacing"
 block|,
-name|N_
-argument_list|(
 literal|"the font spacing, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4500,10 +4401,7 @@ name|PDB_STRING
 block|,
 literal|"registry"
 block|,
-name|N_
-argument_list|(
 literal|"the font registry, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4511,10 +4409,7 @@ name|PDB_STRING
 block|,
 literal|"encoding"
 block|,
-name|N_
-argument_list|(
 literal|"the font encoding, \"*\" for any"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -4532,10 +4427,7 @@ name|PDB_LAYER
 block|,
 literal|"text_layer"
 block|,
-name|N_
-argument_list|(
 literal|"the new text layer"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -4549,18 +4441,12 @@ init|=
 block|{
 literal|"gimp_text_ext"
 block|,
-name|N_
-argument_list|(
 literal|"Add text at the specified location as a floating selection or a new layer."
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This tool requires font information in the form of nine parameters: {size, foundry, family, weight, slant, set_width, spacing, registry, encoding}.  The font size can either be specified in units of pixels or points, and the appropriate metric is specified using the size_type "
 literal|"argument.  The x and y parameters together control the placement of the new text by specifying the upper left corner of the text bounding box.  If the antialias parameter is non-zero, the generated text will blend more smoothly with underlying layers. "
 literal|"This option requires more time and memory to compute than non-antialiased text; the resulting floating selection or layer, however, will require the same amount of memory with or without antialiasing.  If the specified drawable parameter is valid, the "
 literal|"text will be created as a floating selection attached to the drawable.  If the drawable parameter is not valid (-1), the text will appear as a new layer.  Finally, a border can be specified around the final rendered text.  The border is measured in pixels."
-argument_list|)
 block|,
 literal|"Martin Edlman"
 block|,
@@ -4610,10 +4496,7 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
-name|N_
-argument_list|(
 literal|"the image"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4621,10 +4504,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the affected drawable: (-1 for a new text layer)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4632,10 +4512,7 @@ name|PDB_FLOAT
 block|,
 literal|"x"
 block|,
-name|N_
-argument_list|(
 literal|"the x coordinate for the left side of text bounding box"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4643,10 +4520,7 @@ name|PDB_FLOAT
 block|,
 literal|"y"
 block|,
-name|N_
-argument_list|(
 literal|"the y coordinate for the top of text bounding box"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4654,10 +4528,7 @@ name|PDB_STRING
 block|,
 literal|"text"
 block|,
-name|N_
-argument_list|(
 literal|"the text to generate"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4665,10 +4536,7 @@ name|PDB_INT32
 block|,
 literal|"border"
 block|,
-name|N_
-argument_list|(
 literal|"the size of the border: border>= 0"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4676,10 +4544,7 @@ name|PDB_INT32
 block|,
 literal|"antialias"
 block|,
-name|N_
-argument_list|(
 literal|"generate antialiased text"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4687,10 +4552,7 @@ name|PDB_FLOAT
 block|,
 literal|"size"
 block|,
-name|N_
-argument_list|(
 literal|"the size of text in either pixels or points"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4698,10 +4560,7 @@ name|PDB_INT32
 block|,
 literal|"size_type"
 block|,
-name|N_
-argument_list|(
 literal|"the units of the specified size: { PIXELS (0), POINTS (1) }"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4709,10 +4568,7 @@ name|PDB_STRING
 block|,
 literal|"fontname"
 block|,
-name|N_
-argument_list|(
 literal|"the fontname (conforming to the X Logical Font Description Conventions)"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -4730,10 +4586,7 @@ name|PDB_LAYER
 block|,
 literal|"text_layer"
 block|,
-name|N_
-argument_list|(
 literal|"the new text layer"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -4747,18 +4600,12 @@ init|=
 block|{
 literal|"gimp_text_fontname"
 block|,
-name|N_
-argument_list|(
 literal|"Add text at the specified location as a floating selection or a new layer."
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This tool requires font information as a fontname conforming to the 'X Logical Font Description Conventions'. You can specify the fontsize in units of pixels or points, and the appropriate metric is specified using the size_type argument. The fontsize specified in the fontname is silently ignored."
 literal|"The x and y parameters together control the placement of the new text by specifying the upper left corner of the text bounding box.  If the antialias parameter is non-zero, the generated text will blend more smoothly with underlying layers.  "
 literal|"This option requires more time and memory to compute than non-antialiased text; the resulting floating selection or layer, however, will require the same amount of memory with or without antialiasing.  If the specified drawable parameter is valid, the "
 literal|"text will be created as a floating selection attached to the drawable.  If the drawable parameter is not valid (-1), the text will appear as a new layer.  Finally, a border can be specified around the final rendered text.  The border is measured in pixels."
-argument_list|)
 block|,
 literal|"Martin Edlman, Sven Neumann"
 block|,
@@ -4808,10 +4655,7 @@ name|PDB_STRING
 block|,
 literal|"text"
 block|,
-name|N_
-argument_list|(
 literal|"the text to generate"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4819,10 +4663,7 @@ name|PDB_FLOAT
 block|,
 literal|"size"
 block|,
-name|N_
-argument_list|(
 literal|"the size of text in either pixels or points"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4830,10 +4671,7 @@ name|PDB_INT32
 block|,
 literal|"size_type"
 block|,
-name|N_
-argument_list|(
 literal|"the units of the specified size: { PIXELS (0), POINTS (1) }"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4841,10 +4679,7 @@ name|PDB_STRING
 block|,
 literal|"foundry"
 block|,
-name|N_
-argument_list|(
 literal|"the font foundry, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4852,10 +4687,7 @@ name|PDB_STRING
 block|,
 literal|"family"
 block|,
-name|N_
-argument_list|(
 literal|"the font family, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4863,10 +4695,7 @@ name|PDB_STRING
 block|,
 literal|"weight"
 block|,
-name|N_
-argument_list|(
 literal|"the font weight, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4874,10 +4703,7 @@ name|PDB_STRING
 block|,
 literal|"slant"
 block|,
-name|N_
-argument_list|(
 literal|"the font slant, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4885,10 +4711,7 @@ name|PDB_STRING
 block|,
 literal|"set_width"
 block|,
-name|N_
-argument_list|(
 literal|"the font set-width parameter, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4896,10 +4719,7 @@ name|PDB_STRING
 block|,
 literal|"spacing"
 block|,
-name|N_
-argument_list|(
 literal|"the font spacing, \"*\" for any"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -4917,10 +4737,7 @@ name|PDB_INT32
 block|,
 literal|"width"
 block|,
-name|N_
-argument_list|(
 literal|"the width of the specified text"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4928,10 +4745,7 @@ name|PDB_INT32
 block|,
 literal|"height"
 block|,
-name|N_
-argument_list|(
 literal|"the height of the specified text"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4939,10 +4753,7 @@ name|PDB_INT32
 block|,
 literal|"ascent"
 block|,
-name|N_
-argument_list|(
 literal|"the ascent of the specified font"
-argument_list|)
 block|}
 block|,
 block|{
@@ -4950,10 +4761,7 @@ name|PDB_INT32
 block|,
 literal|"descent"
 block|,
-name|N_
-argument_list|(
 literal|"the descent of the specified font"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -4967,15 +4775,9 @@ init|=
 block|{
 literal|"gimp_text_get_extents"
 block|,
-name|N_
-argument_list|(
 literal|"Get extents of the bounding box for the specified text"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This tool returns the width and height of a bounding box for the specified text string with the specified font information.  Ascent and descent for the specified font are returned as well."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -5025,10 +4827,7 @@ name|PDB_STRING
 block|,
 literal|"text"
 block|,
-name|N_
-argument_list|(
 literal|"the text to generate"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5036,10 +4835,7 @@ name|PDB_FLOAT
 block|,
 literal|"size"
 block|,
-name|N_
-argument_list|(
 literal|"the size of text in either pixels or points"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5047,10 +4843,7 @@ name|PDB_INT32
 block|,
 literal|"size_type"
 block|,
-name|N_
-argument_list|(
 literal|"the units of the specified size: { PIXELS (0), POINTS (1) }"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5058,10 +4851,7 @@ name|PDB_STRING
 block|,
 literal|"foundry"
 block|,
-name|N_
-argument_list|(
 literal|"the font foundry, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5069,10 +4859,7 @@ name|PDB_STRING
 block|,
 literal|"family"
 block|,
-name|N_
-argument_list|(
 literal|"the font family, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5080,10 +4867,7 @@ name|PDB_STRING
 block|,
 literal|"weight"
 block|,
-name|N_
-argument_list|(
 literal|"the font weight, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5091,10 +4875,7 @@ name|PDB_STRING
 block|,
 literal|"slant"
 block|,
-name|N_
-argument_list|(
 literal|"the font slant, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5102,10 +4883,7 @@ name|PDB_STRING
 block|,
 literal|"set_width"
 block|,
-name|N_
-argument_list|(
 literal|"the font set-width parameter, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5113,10 +4891,7 @@ name|PDB_STRING
 block|,
 literal|"spacing"
 block|,
-name|N_
-argument_list|(
 literal|"the font spacing, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5124,10 +4899,7 @@ name|PDB_STRING
 block|,
 literal|"registry"
 block|,
-name|N_
-argument_list|(
 literal|"the font registry, \"*\" for any"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5135,10 +4907,7 @@ name|PDB_STRING
 block|,
 literal|"encoding"
 block|,
-name|N_
-argument_list|(
 literal|"the font encoding, \"*\" for any"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -5156,10 +4925,7 @@ name|PDB_INT32
 block|,
 literal|"width"
 block|,
-name|N_
-argument_list|(
 literal|"the width of the specified text"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5167,10 +4933,7 @@ name|PDB_INT32
 block|,
 literal|"height"
 block|,
-name|N_
-argument_list|(
 literal|"the height of the specified text"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5178,10 +4941,7 @@ name|PDB_INT32
 block|,
 literal|"ascent"
 block|,
-name|N_
-argument_list|(
 literal|"the ascent of the specified font"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5189,10 +4949,7 @@ name|PDB_INT32
 block|,
 literal|"descent"
 block|,
-name|N_
-argument_list|(
 literal|"the descent of the specified font"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -5206,15 +4963,9 @@ init|=
 block|{
 literal|"gimp_text_get_extents_ext"
 block|,
-name|N_
-argument_list|(
 literal|"Get extents of the bounding box for the specified text"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This tool returns the width and height of a bounding box for the specified text string with the specified font information.  Ascent and descent for the specified font are returned as well."
-argument_list|)
 block|,
 literal|"Martin Edlman"
 block|,
@@ -5264,10 +5015,7 @@ name|PDB_STRING
 block|,
 literal|"text"
 block|,
-name|N_
-argument_list|(
 literal|"the text to generate"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5275,10 +5023,7 @@ name|PDB_FLOAT
 block|,
 literal|"size"
 block|,
-name|N_
-argument_list|(
 literal|"the size of text in either pixels or points"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5286,10 +5031,7 @@ name|PDB_INT32
 block|,
 literal|"size_type"
 block|,
-name|N_
-argument_list|(
 literal|"the units of the specified size: { PIXELS (0), POINTS (1) }"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5297,10 +5039,7 @@ name|PDB_STRING
 block|,
 literal|"fontname"
 block|,
-name|N_
-argument_list|(
 literal|"the fontname (conforming to the X Logical Font Description Conventions)"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -5318,10 +5057,7 @@ name|PDB_INT32
 block|,
 literal|"width"
 block|,
-name|N_
-argument_list|(
 literal|"the width of the specified text"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5329,10 +5065,7 @@ name|PDB_INT32
 block|,
 literal|"height"
 block|,
-name|N_
-argument_list|(
 literal|"the height of the specified text"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5340,10 +5073,7 @@ name|PDB_INT32
 block|,
 literal|"ascent"
 block|,
-name|N_
-argument_list|(
 literal|"the ascent of the specified font"
-argument_list|)
 block|}
 block|,
 block|{
@@ -5351,10 +5081,7 @@ name|PDB_INT32
 block|,
 literal|"descent"
 block|,
-name|N_
-argument_list|(
 literal|"the descent of the specified font"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -5368,15 +5095,9 @@ init|=
 block|{
 literal|"gimp_text_get_extents_fontname"
 block|,
-name|N_
-argument_list|(
 literal|"Get extents of the bounding box for the specified text"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This tool returns the width and height of a bounding box for the specified text string with the specified font information.  Ascent and descent for the specified font are returned as well."
-argument_list|)
 block|,
 literal|"Martin Edlman, Sven Neumann"
 block|,

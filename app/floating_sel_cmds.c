@@ -189,10 +189,7 @@ name|PDB_LAYER
 block|,
 literal|"floating_sel"
 block|,
-name|N_
-argument_list|(
 literal|"the floating selection"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -206,15 +203,9 @@ init|=
 block|{
 literal|"gimp_floating_sel_remove"
 block|,
-name|N_
-argument_list|(
 literal|"Remove the specified floating selection from its associated drawable"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure removes the floating selection completely, without any side effects.  The associated drawable is then set to active."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -360,10 +351,7 @@ name|PDB_LAYER
 block|,
 literal|"floating_sel"
 block|,
-name|N_
-argument_list|(
 literal|"the floating selection"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -377,15 +365,9 @@ init|=
 block|{
 literal|"gimp_floating_sel_anchor"
 block|,
-name|N_
-argument_list|(
 literal|"Anchor the specified floating selection to its associated drawable"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure anchors the floating selection to its associated drawable.  This is similar to merging with a merge type of ClipToBottomLayer.  The floating selection layer is no longer valid after this operation."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -531,10 +513,7 @@ name|PDB_LAYER
 block|,
 literal|"floating_sel"
 block|,
-name|N_
-argument_list|(
 literal|"the floating selection"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -548,15 +527,9 @@ init|=
 block|{
 literal|"gimp_floating_sel_to_layer"
 block|,
-name|N_
-argument_list|(
 literal|"Transforms the specified floating selection into a layer"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure transforms the specified floating selection into a layer with the same offsets and extents.  The composited image will look precisely the same, but the floating selection layer will no longer be clipped to the extents of the drawable it was attached to.  The floating selection will become the active layer.  This procedure will not work if the floating selection has a different base type from the underlying image.  This might be the case if the floating selection is above an auxillary channel or a layer mask."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -725,10 +698,7 @@ name|PDB_LAYER
 block|,
 literal|"layer"
 block|,
-name|N_
-argument_list|(
 literal|"the layer (is attached as floating selection)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -736,10 +706,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the drawable (where to attach the floating selection)"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -753,10 +720,7 @@ init|=
 block|{
 literal|"gimp_floating_sel_attach"
 block|,
-name|N_
-argument_list|(
 literal|"Attach the specified layer as floating to the specified drawable"
-argument_list|)
 block|,
 literal|"This procedure attaches the layer as floating selection to the drawable."
 block|,
@@ -930,10 +894,7 @@ name|PDB_LAYER
 block|,
 literal|"floating_sel"
 block|,
-name|N_
-argument_list|(
 literal|"the floating selection"
-argument_list|)
 block|}
 block|,
 block|{
@@ -941,10 +902,7 @@ name|PDB_INT32
 block|,
 literal|"undo"
 block|,
-name|N_
-argument_list|(
 literal|"TRUE or FALSE"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -958,10 +916,7 @@ init|=
 block|{
 literal|"gimp_floating_sel_rigor"
 block|,
-name|N_
-argument_list|(
 literal|"Rigor the floating selection"
-argument_list|)
 block|,
 literal|"This procedure rigors the floating selection."
 block|,
@@ -1135,10 +1090,7 @@ name|PDB_LAYER
 block|,
 literal|"floating_sel"
 block|,
-name|N_
-argument_list|(
 literal|"the floating selection"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1146,10 +1098,7 @@ name|PDB_INT32
 block|,
 literal|"undo"
 block|,
-name|N_
-argument_list|(
 literal|"TRUE or FALSE"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1163,10 +1112,7 @@ init|=
 block|{
 literal|"gimp_floating_sel_relax"
 block|,
-name|N_
-argument_list|(
 literal|"Relax the floating selection"
-argument_list|)
 block|,
 literal|"This procedure relaxes the floating selection."
 block|,

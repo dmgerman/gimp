@@ -6607,10 +6607,7 @@ name|PDB_STRING
 block|,
 literal|"brush_callback"
 block|,
-name|N_
-argument_list|(
 literal|"the callback PDB proc to call when brush selection is made"
-argument_list|)
 block|}
 block|,
 block|{
@@ -6618,10 +6615,7 @@ name|PDB_STRING
 block|,
 literal|"popup title"
 block|,
-name|N_
-argument_list|(
 literal|"title to give the popup window"
-argument_list|)
 block|,   }
 block|,
 block|{
@@ -6629,10 +6623,7 @@ name|PDB_STRING
 block|,
 literal|"initial brush"
 block|,
-name|N_
-argument_list|(
 literal|"The name of the brush to set as the first selected"
-argument_list|)
 block|,   }
 block|,
 block|{
@@ -6640,10 +6631,7 @@ name|PDB_FLOAT
 block|,
 literal|"initial opacity"
 block|,
-name|N_
-argument_list|(
 literal|"The initial opacity of the brush"
-argument_list|)
 block|,   }
 block|,
 block|{
@@ -6651,10 +6639,7 @@ name|PDB_INT32
 block|,
 literal|"initial spacing"
 block|,
-name|N_
-argument_list|(
 literal|"The initial spacing of the brush (if< 0 then use brush default spacing)"
-argument_list|)
 block|,   }
 block|,
 block|{
@@ -6662,10 +6647,7 @@ name|PDB_INT32
 block|,
 literal|"initial paint mode"
 block|,
-name|N_
-argument_list|(
 literal|"The initial paint mode: { NORMAL (0), DISSOLVE (1), BEHIND (2), MULTIPLY/BURN (3), SCREEN (4), OVERLAY (5) DIFFERENCE (6), ADDITION (7), SUBTRACT (8), DARKEN-ONLY (9), LIGHTEN-ONLY (10), HUE (11), SATURATION (12), COLOR (13), VALUE (14), DIVIDE/DODGE (15) }"
-argument_list|)
 block|,   }
 block|, }
 decl_stmt|;
@@ -6679,15 +6661,9 @@ init|=
 block|{
 literal|"gimp_brushes_popup"
 block|,
-name|N_
-argument_list|(
 literal|"Invokes the Gimp brush selection"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure popups the brush selection dialog"
-argument_list|)
 block|,
 literal|"Andy Thomas"
 block|,
@@ -6967,10 +6943,7 @@ name|PDB_STRING
 block|,
 literal|"callback_PDB_entry_name"
 block|,
-name|N_
-argument_list|(
 literal|"The name of the callback registered for this popup"
-argument_list|)
 block|,   }
 block|, }
 decl_stmt|;
@@ -6984,15 +6957,9 @@ init|=
 block|{
 literal|"gimp_brushes_close_popup"
 block|,
-name|N_
-argument_list|(
 literal|"Popdown the Gimp brush selection"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure closes an opened brush selection dialog"
-argument_list|)
 block|,
 literal|"Andy Thomas"
 block|,
@@ -7341,10 +7308,7 @@ name|PDB_STRING
 block|,
 literal|"callback_PDB_entry_name"
 block|,
-name|N_
-argument_list|(
 literal|"The name of the callback registered for this popup"
-argument_list|)
 block|,   }
 block|,
 block|{
@@ -7352,10 +7316,7 @@ name|PDB_STRING
 block|,
 literal|"brushname"
 block|,
-name|N_
-argument_list|(
 literal|"The name of the brush to set as selected"
-argument_list|)
 block|,   }
 block|,
 block|{
@@ -7363,10 +7324,7 @@ name|PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
-name|N_
-argument_list|(
 literal|"The initial opacity of the brush"
-argument_list|)
 block|,   }
 block|,
 block|{
@@ -7374,10 +7332,7 @@ name|PDB_INT32
 block|,
 literal|"spacing"
 block|,
-name|N_
-argument_list|(
 literal|"The initial spacing of the brush (if< 0 then use brush default spacing)"
-argument_list|)
 block|,   }
 block|,
 block|{
@@ -7385,10 +7340,7 @@ name|PDB_INT32
 block|,
 literal|"initial paint mode"
 block|,
-name|N_
-argument_list|(
 literal|"The initial paint mode: { NORMAL (0), DISSOLVE (1), BEHIND (2), MULTIPLY/BURN (3), SCREEN (4), OVERLAY (5) DIFFERENCE (6), ADDITION (7), SUBTRACT (8), DARKEN-ONLY (9), LIGHTEN-ONLY (10), HUE (11), SATURATION (12), COLOR (13), VALUE (14), DIVIDE/DODGE (15) }"
-argument_list|)
 block|,   }
 block|, }
 decl_stmt|;
@@ -7402,15 +7354,9 @@ init|=
 block|{
 literal|"gimp_brushes_set_popup"
 block|,
-name|N_
-argument_list|(
 literal|"Sets the current brush selection in a popup"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"Sets the current brush selection in a popup"
-argument_list|)
 block|,
 literal|"Andy Thomas"
 block|,

@@ -1564,10 +1564,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the affected drawable"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1575,10 +1572,7 @@ name|PDB_INT32
 block|,
 literal|"interpolation"
 block|,
-name|N_
-argument_list|(
 literal|"whether to use interpolation"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1586,10 +1580,7 @@ name|PDB_INT32
 block|,
 literal|"shear_type"
 block|,
-name|N_
-argument_list|(
 literal|"Type of shear: { HORIZONTAL (0), VERTICAL (1) }"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1597,10 +1588,7 @@ name|PDB_FLOAT
 block|,
 literal|"magnitude"
 block|,
-name|N_
-argument_list|(
 literal|"the magnitude of the shear"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1618,10 +1606,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the sheard drawable"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1635,15 +1620,9 @@ init|=
 block|{
 literal|"gimp_shear"
 block|,
-name|N_
-argument_list|(
 literal|"Shear the specified drawable about its center by the specified magnitude"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This tool shears the specified drawable if no selection exists.  If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then sheard by the specified amount.  The interpolation parameter can be set to TRUE to indicate that either linear or cubic interpolation should be used to smooth the resulting sheard drawable.  The return value is the ID of the sheard drawable.  If there was no selection, this will be equal to the drawable ID supplied as input.  Otherwise, this will be the newly created and sheard drawable.  The shear type parameter indicates whether the shear will be applied horizontally or vertically.  The magnitude can be either positive or negative and indicates the extent (in pixels) to shear by."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

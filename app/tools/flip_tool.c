@@ -1456,10 +1456,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the affected drawable"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1467,10 +1464,7 @@ name|PDB_INT32
 block|,
 literal|"flip_type"
 block|,
-name|N_
-argument_list|(
 literal|"Type of flip: { HORIZONTAL (0), VERTICAL (1) }"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1488,10 +1482,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the flipped drawable"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1505,15 +1496,9 @@ init|=
 block|{
 literal|"gimp_flip"
 block|,
-name|N_
-argument_list|(
 literal|"Flip the specified drawable about its center either vertically or horizontally"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This tool flips the specified drawable if no selection exists.  If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then flipd by the specified amount.  The return value is the ID of the flipped drawable.  If there was no selection, this will be equal to the drawable ID supplied as input.  Otherwise, this will be the newly created and flipd drawable.  The flip type parameter indicates whether the flip will be applied horizontally or vertically."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

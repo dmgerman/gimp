@@ -276,7 +276,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3114a70103
+DECL|enum|__anon28b512320103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -960,10 +960,7 @@ name|PDB_STRING
 block|,
 literal|"message"
 block|,
-name|N_
-argument_list|(
 literal|"Message to use in the progress dialog."
-argument_list|)
 block|}
 block|,
 block|{
@@ -971,10 +968,7 @@ name|PDB_INT32
 block|,
 literal|"gdisplay"
 block|,
-name|N_
-argument_list|(
 literal|"GDisplay to update progressbar in, or -1 for a seperate window"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -989,15 +983,9 @@ init|=
 block|{
 literal|"gimp_progress_init"
 block|,
-name|N_
-argument_list|(
 literal|"Initializes the progress bar for the current plug-in"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"Initializes the progress bar for the current plug-in. It is only valid to call this procedure from a plug-in."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1037,10 +1025,7 @@ name|PDB_FLOAT
 block|,
 literal|"percentage"
 block|,
-name|N_
-argument_list|(
 literal|"Percentage of progress completed"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1055,15 +1040,9 @@ init|=
 block|{
 literal|"gimp_progress_update"
 block|,
-name|N_
-argument_list|(
 literal|"Updates the progress bar for the current plug-in"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"Updates the progress bar for the current plug-in. It is only valid to call this procedure from a plug-in."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1103,10 +1082,7 @@ name|PDB_STRING
 block|,
 literal|"message"
 block|,
-name|N_
-argument_list|(
 literal|"Message to display in the dialog."
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1121,15 +1097,9 @@ init|=
 block|{
 literal|"gimp_message"
 block|,
-name|N_
-argument_list|(
 literal|"Displays a dialog box with a message"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"Displays a dialog box with a message. Useful for status or error reporting."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1169,10 +1139,7 @@ name|PDB_INT32
 block|,
 literal|"handler"
 block|,
-name|N_
-argument_list|(
 literal|"the current handler type: { MESSAGE_BOX (0), CONSOLE (1) }"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1187,15 +1154,9 @@ init|=
 block|{
 literal|"gimp_message_handler_get"
 block|,
-name|N_
-argument_list|(
 literal|"Returns the current state of where warning messages are displayed."
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure returns the way g_message warnings are displayed. They can be shown in a dialog box or printed on the console where gimp was started."
-argument_list|)
 block|,
 literal|"Manish Singh"
 block|,
@@ -1235,10 +1196,7 @@ name|PDB_INT32
 block|,
 literal|"handler"
 block|,
-name|N_
-argument_list|(
 literal|"the new handler type: { MESSAGE_BOX (0), CONSOLE (1) }"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1253,15 +1211,9 @@ init|=
 block|{
 literal|"gimp_message_handler_set"
 block|,
-name|N_
-argument_list|(
 literal|"Controls where warning messages are displayed."
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure controls how g_message warnings are displayed. They can be shown in a dialog box or printed on the console where gimp was started."
-argument_list|)
 block|,
 literal|"Manish Singh"
 block|,
@@ -1301,10 +1253,7 @@ name|PDB_STRING
 block|,
 literal|"Temp name"
 block|,
-name|N_
-argument_list|(
 literal|"A unique temporary name for a temporary PDB entry name"
-argument_list|)
 block|,   }
 block|, }
 decl_stmt|;
@@ -1319,15 +1268,9 @@ init|=
 block|{
 literal|"gimp_temp_PDB_name"
 block|,
-name|N_
-argument_list|(
 literal|"Generates a unique temporary PDB name"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure generates a temporary PDB entry name that is guaranteed to be unique. It is many used by the interactive popup dialogs to generate a PDB entry name."
-argument_list|)
 block|,
 literal|"Andy Thomas"
 block|,

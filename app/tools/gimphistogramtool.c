@@ -81,6 +81,12 @@ directive|include
 file|"interface.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|TEXT_WIDTH
 define|#
@@ -485,19 +491,40 @@ literal|7
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Mean: "
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Std Dev: "
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Median: "
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Pixels: "
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Intensity: "
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Count: "
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Percentile: "
+argument_list|)
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -2523,10 +2550,13 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|gettext
+argument_list|(
 name|histogram_info_names
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment

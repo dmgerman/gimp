@@ -45,6 +45,12 @@ directive|include
 file|"session.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_comment
 comment|/*  static functions  */
 end_comment
@@ -175,7 +181,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|gettext
+argument_list|(
 name|title
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -540,7 +549,10 @@ argument_list|(
 name|shell
 argument_list|)
 argument_list|,
+name|gettext
+argument_list|(
 name|title
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|session_set_window_geometry

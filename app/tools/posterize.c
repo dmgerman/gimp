@@ -63,6 +63,12 @@ directive|include
 file|"posterize.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|TEXT_WIDTH
 define|#
@@ -894,7 +900,10 @@ name|tools_register_no_options
 argument_list|(
 name|POSTERIZE
 argument_list|,
+name|_
+argument_list|(
 literal|"Posterize Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  The posterize dialog  */
@@ -1121,7 +1130,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Posterize does not operate on indexed drawables."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1218,7 +1230,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"OK"
+argument_list|)
 block|,
 name|posterize_ok_callback
 block|,
@@ -1228,7 +1243,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|posterize_cancel_callback
 block|,
@@ -1321,7 +1339,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Posterize"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -1415,7 +1436,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Posterize Levels: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1562,7 +1586,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -1698,7 +1725,10 @@ name|image_map
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"posterize_preview(): No image map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|active_tool

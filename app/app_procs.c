@@ -500,10 +500,7 @@ name|PDB_INT32
 block|,
 literal|"kill"
 block|,
-name|N_
-argument_list|(
 literal|"Flag specifying whether to kill the gimp process or exit normally"
-argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -518,25 +515,13 @@ init|=
 block|{
 literal|"gimp_quit"
 block|,
-name|N_
-argument_list|(
 literal|"Causes the gimp to exit gracefully"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"The internal procedure which can either be used to make the gimp quit normally, or to have the gimp clean up its resources and exit immediately. The normaly shutdown process allows for querying the user to save any dirty images."
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"Spencer Kimball& Peter Mattis"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"Spencer Kimball& Peter Mattis"
-argument_list|)
 block|,
 literal|"1995-1996"
 block|,
@@ -1650,7 +1635,10 @@ argument_list|(
 name|win_initstatus
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"GIMP Startup"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

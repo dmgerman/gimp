@@ -855,7 +855,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon291dfdae0103
+DECL|enum|__anon2a44b7930103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -6339,7 +6339,7 @@ name|list
 operator|->
 name|next
 expr_stmt|;
-comment|/*           if (!list) 	    g_message ("cannot properly scanline convert bezier curve: %d", i);           else */
+comment|/*           if (!list) 	    g_message (_("cannot properly scanline convert bezier curve: %d"), i);           else */
 block|{
 comment|/*  bounds checking  */
 name|x
@@ -9685,7 +9685,7 @@ modifier|*
 name|box
 parameter_list|)
 block|{
-DECL|struct|__anon291dfdae0208
+DECL|struct|__anon2a44b7930208
 specifier|static
 struct|struct
 block|{

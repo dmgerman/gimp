@@ -210,7 +210,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf6b0120103
+DECL|enum|__anon2a1e1d540103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -247,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf6b0120203
+DECL|enum|__anon2a1e1d540203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf6b0120303
+DECL|enum|__anon2a1e1d540303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -413,7 +413,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2bf6b0120408
+DECL|struct|__anon2a1e1d540408
 typedef|typedef
 struct|struct
 block|{
@@ -465,7 +465,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bf6b0120508
+DECL|struct|__anon2a1e1d540508
 typedef|typedef
 struct|struct
 block|{
@@ -8910,10 +8910,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"The affected drawable"
-argument_list|)
 block|}
 block|,
 block|{
@@ -8921,10 +8918,7 @@ name|PDB_INT32
 block|,
 literal|"blend_mode"
 block|,
-name|N_
-argument_list|(
 literal|"The type of blend: { FG-BG-RGB (0), FG-BG-HSV (1), FG-TRANS (2), CUSTOM (3) }"
-argument_list|)
 block|}
 block|,
 block|{
@@ -8932,10 +8926,7 @@ name|PDB_INT32
 block|,
 literal|"paint_mode"
 block|,
-name|N_
-argument_list|(
 literal|"the paint application mode: { NORMAL (0), DISSOLVE (1), BEHIND (2), MULTIPLY/BURN (3), SCREEN (4), OVERLAY (5) DIFFERENCE (6), ADDITION (7), SUBTRACT (8), DARKEN-ONLY (9), LIGHTEN-ONLY (10), HUE (11), SATURATION (12), COLOR (13), VALUE (14), DIVIDE/DODGE (15) }"
-argument_list|)
 block|}
 block|,
 block|{
@@ -8943,10 +8934,7 @@ name|PDB_INT32
 block|,
 literal|"gradient_type"
 block|,
-name|N_
-argument_list|(
 literal|"The type of gradient: { LINEAR (0), BILINEAR (1), RADIAL (2), SQUARE (3), CONICAL-SYMMETRIC (4), CONICAL-ASYMMETRIC (5), SHAPEBURST-ANGULAR (6), SHAPEBURST-SPHERICAL (7), SHAPEBURST-DIMPLED (8) }"
-argument_list|)
 block|}
 block|,
 block|{
@@ -8954,10 +8942,7 @@ name|PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
-name|N_
-argument_list|(
 literal|"The opacity of the final blend (0<= opacity<= 100)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -8965,10 +8950,7 @@ name|PDB_FLOAT
 block|,
 literal|"offset"
 block|,
-name|N_
-argument_list|(
 literal|"Offset relates to the starting and ending coordinates specified for the blend.  This parameter is mode depndent (0<= offset)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -8976,10 +8958,7 @@ name|PDB_INT32
 block|,
 literal|"repeat"
 block|,
-name|N_
-argument_list|(
 literal|"Repeat mode: { REPEAT-NONE (0), REPEAT-SAWTOOTH (1), REPEAT-TRIANGULAR (2) }"
-argument_list|)
 block|}
 block|,
 block|{
@@ -8987,10 +8966,7 @@ name|PDB_INT32
 block|,
 literal|"supersample"
 block|,
-name|N_
-argument_list|(
 literal|"Do adaptive supersampling (true / false)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -8998,10 +8974,7 @@ name|PDB_INT32
 block|,
 literal|"max_depth"
 block|,
-name|N_
-argument_list|(
 literal|"Maximum recursion levels for supersampling"
-argument_list|)
 block|}
 block|,
 block|{
@@ -9009,10 +8982,7 @@ name|PDB_FLOAT
 block|,
 literal|"threshold"
 block|,
-name|N_
-argument_list|(
 literal|"Supersampling threshold"
-argument_list|)
 block|}
 block|,
 block|{
@@ -9020,10 +8990,7 @@ name|PDB_FLOAT
 block|,
 literal|"x1"
 block|,
-name|N_
-argument_list|(
 literal|"The x coordinate of this blend's starting point"
-argument_list|)
 block|}
 block|,
 block|{
@@ -9031,10 +8998,7 @@ name|PDB_FLOAT
 block|,
 literal|"y1"
 block|,
-name|N_
-argument_list|(
 literal|"The y coordinate of this blend's starting point"
-argument_list|)
 block|}
 block|,
 block|{
@@ -9042,10 +9006,7 @@ name|PDB_FLOAT
 block|,
 literal|"x2"
 block|,
-name|N_
-argument_list|(
 literal|"The x coordinate of this blend's ending point"
-argument_list|)
 block|}
 block|,
 block|{
@@ -9053,10 +9014,7 @@ name|PDB_FLOAT
 block|,
 literal|"y2"
 block|,
-name|N_
-argument_list|(
 literal|"The y coordinate of this blend's ending point"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -9070,15 +9028,9 @@ init|=
 block|{
 literal|"gimp_blend"
 block|,
-name|N_
-argument_list|(
 literal|"Blend between the starting and ending coordinates with the specified blend mode and gradient type."
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This tool requires information on the paint application mode, the blend mode, and the gradient type.  It creates the specified variety of blend using the starting and ending coordinates as defined for each gradient type."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis& Federico Mena Quintero"
 block|,

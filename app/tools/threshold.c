@@ -2916,10 +2916,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the drawable"
-argument_list|)
 block|}
 block|,
 block|{
@@ -2927,10 +2924,7 @@ name|PDB_INT32
 block|,
 literal|"low_threshold"
 block|,
-name|N_
-argument_list|(
 literal|"the low threshold value: (0<= low_threshold<= 255)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -2938,10 +2932,7 @@ name|PDB_INT32
 block|,
 literal|"high_threshold"
 block|,
-name|N_
-argument_list|(
 literal|"the high threshold value: (0<= high_threshold<= 255)"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -2955,15 +2946,9 @@ init|=
 block|{
 literal|"gimp_threshold"
 block|,
-name|N_
-argument_list|(
 literal|"Threshold the specified drawable"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedures generates a threshold map of the specified drawable.  All pixels between the values of 'low_threshold' and 'high_threshold' are replaced with white, and all other pixels with black."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

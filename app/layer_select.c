@@ -63,6 +63,12 @@ directive|include
 file|"layers_dialogP.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|PREVIEW_EVENT_MASK
 define|#
@@ -433,7 +439,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Layer Select"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_position
@@ -688,7 +697,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

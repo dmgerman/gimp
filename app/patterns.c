@@ -123,6 +123,12 @@ directive|include
 file|"menus.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_comment
 comment|/*  global variables  */
 end_comment
@@ -503,7 +509,10 @@ name|active_pattern
 condition|)
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"Specified default pattern not found!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -811,7 +820,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Unknown GIMP version #%d in \"%s\"\n"
+argument_list|)
 argument_list|,
 name|header
 operator|.
@@ -914,7 +926,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Error in GIMP pattern file...aborting."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -937,7 +952,10 @@ name|name
 operator|=
 name|g_strdup
 argument_list|(
+name|_
+argument_list|(
 literal|"Unnamed"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Read the pattern mask data  */
@@ -986,7 +1004,10 @@ name|bytes
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIMP pattern file appears to be truncated."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Clean up  */

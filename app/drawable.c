@@ -39,6 +39,12 @@ directive|include
 file|"undo.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function
 name|int
 DECL|function|drawable_ID (GimpDrawable * drawable)
@@ -153,7 +159,10 @@ return|return;
 default|default:
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"drawable_fill called with unknown fill type"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|a

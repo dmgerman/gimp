@@ -81,6 +81,12 @@ directive|include
 file|"session.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|MIN_CELL_SIZE
 define|#
@@ -387,7 +393,10 @@ index|]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Close"
+argument_list|)
 block|,
 name|pattern_select_close_callback
 block|,
@@ -397,7 +406,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Refresh"
+argument_list|)
 block|,
 name|pattern_select_refresh_callback
 block|,
@@ -574,7 +586,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Pattern Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|session_set_window_geometry
@@ -793,7 +808,10 @@ name|pattern_name
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Active"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1411,7 +1429,10 @@ name|PDB_SUCCESS
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"failed to run pattern callback function"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|procedural_db_destroy_args

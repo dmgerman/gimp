@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile.h"
 end_include
 
@@ -2455,7 +2461,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"No brushes available for use with this tool."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -5783,7 +5792,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"paint_core_replace only works in INCREMENTAL mode"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -6671,7 +6683,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"set_undo_tiles: undo_tiles is null"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

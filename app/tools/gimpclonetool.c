@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6651210103
+DECL|enum|__anon2c51f2190103
 block|{
 DECL|enumerator|ImageClone
 name|ImageClone
@@ -2685,10 +2685,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the drawable"
-argument_list|)
 block|}
 block|,
 block|{
@@ -2696,10 +2693,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"src_drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the source drawable"
-argument_list|)
 block|}
 block|,
 block|{
@@ -2707,10 +2701,7 @@ name|PDB_INT32
 block|,
 literal|"clone_type"
 block|,
-name|N_
-argument_list|(
 literal|"the type of clone: { IMAGE-CLONE (0), PATTERN-CLONE (1) }"
-argument_list|)
 block|}
 block|,
 block|{
@@ -2718,10 +2709,7 @@ name|PDB_FLOAT
 block|,
 literal|"src_x"
 block|,
-name|N_
-argument_list|(
 literal|"the x coordinate in the source image"
-argument_list|)
 block|}
 block|,
 block|{
@@ -2729,10 +2717,7 @@ name|PDB_FLOAT
 block|,
 literal|"src_y"
 block|,
-name|N_
-argument_list|(
 literal|"the y coordinate in the source image"
-argument_list|)
 block|}
 block|,
 block|{
@@ -2740,10 +2725,7 @@ name|PDB_INT32
 block|,
 literal|"num_strokes"
 block|,
-name|N_
-argument_list|(
 literal|"number of stroke control points (count each coordinate as 2 points)"
-argument_list|)
 block|}
 block|,
 block|{
@@ -2751,10 +2733,7 @@ name|PDB_FLOATARRAY
 block|,
 literal|"strokes"
 block|,
-name|N_
-argument_list|(
 literal|"array of stroke coordinates: {s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y}"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -2768,15 +2747,9 @@ init|=
 block|{
 literal|"gimp_clone"
 block|,
-name|N_
-argument_list|(
 literal|"Clone from the source to the dest drawable using the current brush"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This tool clones (copies) from the source drawable starting at the specified source coordinates to the dest drawable.  If the \"clone_type\" argument is set to PATTERN-CLONE, then the current pattern is used as the source and the \"src_drawable\" argument is ignored.  Pattern cloning assumes a tileable pattern and mods the sum of the src coordinates and subsequent stroke offsets with the width and height of the pattern.  For image cloning, if the sum of the src coordinates and subsequent stroke offsets exceeds the extents of the src drawable, then no paint is transferred.  The clone tool is capable of transforming between any image types including RGB->Indexed--although converting from any type to indexed is significantly slower."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

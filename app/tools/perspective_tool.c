@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile_manager_pvt.h"
 end_include
 
@@ -327,7 +333,10 @@ name|transform_info
 operator|=
 name|info_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Perspective Transform Information"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_field

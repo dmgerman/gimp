@@ -69,6 +69,12 @@ directive|include
 file|"undo.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_typedef
 DECL|typedef|MoveTool
 typedef|typedef
@@ -1946,7 +1952,10 @@ name|tools_register_no_options
 argument_list|(
 name|MOVE
 argument_list|,
+name|_
+argument_list|(
 literal|"Move Tool Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tool

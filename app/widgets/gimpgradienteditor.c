@@ -3600,7 +3600,7 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Close"
 argument_list|)
@@ -4030,7 +4030,7 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"New gradient"
 argument_list|)
@@ -4072,7 +4072,7 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Copy gradient"
 argument_list|)
@@ -4114,7 +4114,7 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Delete gradient"
 argument_list|)
@@ -4156,7 +4156,7 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Save as POV-Ray"
 argument_list|)
@@ -4198,7 +4198,7 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Save Gradients"
 argument_list|)
@@ -4240,7 +4240,7 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Rename Gradient"
 argument_list|)
@@ -4282,7 +4282,7 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Refresh gradients"
 argument_list|)
@@ -4366,7 +4366,7 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Zoom all"
 argument_list|)
@@ -4408,7 +4408,7 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Zoom -"
 argument_list|)
@@ -4450,7 +4450,7 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Zoom +"
 argument_list|)
@@ -8174,7 +8174,7 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Delete"
 argument_list|)
@@ -8236,7 +8236,7 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Cancel"
 argument_list|)
@@ -19159,7 +19159,10 @@ name|gtk_radio_menu_item_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"(Varies)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -19169,10 +19172,13 @@ name|gtk_radio_menu_item_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|gettext
+argument_list|(
 name|blending_types
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -22201,7 +22207,7 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Split"
 argument_list|)
@@ -22263,7 +22269,7 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Cancel"
 argument_list|)
@@ -23719,7 +23725,7 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Replicate"
 argument_list|)
@@ -23781,7 +23787,7 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Cancel"
 argument_list|)

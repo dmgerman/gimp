@@ -1257,10 +1257,7 @@ name|PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-name|N_
-argument_list|(
 literal|"the drawable"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1268,10 +1265,7 @@ name|PDB_INT32
 block|,
 literal|"mask_only"
 block|,
-name|N_
-argument_list|(
 literal|"equalization option"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1285,15 +1279,9 @@ init|=
 block|{
 literal|"gimp_equalize"
 block|,
-name|N_
-argument_list|(
 literal|"Equalize the contents of the specified drawable"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure equalizes the contents of the specified drawable.  Each intensity channel is equalizeed independently.  The equalizeed intensity is given as inten' = (255 - inten).  Indexed color drawables are not valid for this operation.  The 'mask_only' option specifies whether to adjust only the area of the image within the selection bounds, or the entire image based on the histogram of the selected area.  If there is no selection, the entire image is adjusted based on the histogram for the entire image."
-argument_list|)
 block|,
 literal|"Federico Mena Quintero& Spencer Kimball& Peter Mattis"
 block|,

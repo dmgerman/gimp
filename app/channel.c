@@ -749,7 +749,7 @@ name|sprintf
 argument_list|(
 name|channel_name
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"%s copy"
 argument_list|)

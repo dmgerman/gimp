@@ -507,10 +507,7 @@ name|PDB_STRING
 block|,
 literal|"filename"
 block|,
-name|N_
-argument_list|(
 literal|"the dump filename"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -524,15 +521,9 @@ init|=
 block|{
 literal|"gimp_procedural_db_dump"
 block|,
-name|N_
-argument_list|(
 literal|"Dumps the current contents of the procedural database"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure dumps the contents of the procedural database to the specified file.  The file will contain all of the information provided for each registered procedure.  This file is in a format appropriate for use with the supplied \"pdb_self_doc.el\" Elisp script, which generates a texinfo document."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Josh MacDonald"
 block|,
@@ -583,10 +574,7 @@ name|PDB_STRING
 block|,
 literal|"procedure"
 block|,
-name|N_
-argument_list|(
 literal|"the procedure name"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -605,10 +593,7 @@ name|PDB_STRING
 block|,
 literal|"blurb"
 block|,
-name|N_
-argument_list|(
 literal|"a short blurb"
-argument_list|)
 block|}
 block|,
 block|{
@@ -616,10 +601,7 @@ name|PDB_STRING
 block|,
 literal|"help"
 block|,
-name|N_
-argument_list|(
 literal|"detailed procedure help"
-argument_list|)
 block|}
 block|,
 block|{
@@ -627,10 +609,7 @@ name|PDB_STRING
 block|,
 literal|"author"
 block|,
-name|N_
-argument_list|(
 literal|"author(s) of the procedure"
-argument_list|)
 block|}
 block|,
 block|{
@@ -638,10 +617,7 @@ name|PDB_STRING
 block|,
 literal|"copyright"
 block|,
-name|N_
-argument_list|(
 literal|"the copyright"
-argument_list|)
 block|}
 block|,
 block|{
@@ -649,10 +625,7 @@ name|PDB_STRING
 block|,
 literal|"date"
 block|,
-name|N_
-argument_list|(
 literal|"copyright date"
-argument_list|)
 block|}
 block|,
 block|{
@@ -660,10 +633,7 @@ name|PDB_INT32
 block|,
 literal|"proc_type"
 block|,
-name|N_
-argument_list|(
 literal|"the procedure type: { INTERNAL (0), PLUGIN (1), EXTENSION (2) }"
-argument_list|)
 block|,   }
 block|,
 block|{
@@ -671,10 +641,7 @@ name|PDB_INT32
 block|,
 literal|"num_args"
 block|,
-name|N_
-argument_list|(
 literal|"the number of input arguments"
-argument_list|)
 block|}
 block|,
 block|{
@@ -682,10 +649,7 @@ name|PDB_INT32
 block|,
 literal|"num_rvals"
 block|,
-name|N_
-argument_list|(
 literal|"the number of return values"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -699,15 +663,9 @@ init|=
 block|{
 literal|"gimp_procedural_db_proc_info"
 block|,
-name|N_
-argument_list|(
 literal|"Queries the procedural database for information on the specified procedure"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure returns information on the specified procedure.  A short blurb, detailed help, author(s), copyright information, procedure type, number of input, and number of return values are returned.  For specific information on each input argument and return value, use the 'gimp_procedural_db_query_proc_arg' and 'gimp_procedural_db_query_proc_val' procedures"
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -758,10 +716,7 @@ name|PDB_STRING
 block|,
 literal|"procedure"
 block|,
-name|N_
-argument_list|(
 literal|"the procedure name"
-argument_list|)
 block|}
 block|,
 block|{
@@ -769,10 +724,7 @@ name|PDB_INT32
 block|,
 literal|"arg_num"
 block|,
-name|N_
-argument_list|(
 literal|"the argument number"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -791,10 +743,7 @@ name|PDB_INT32
 block|,
 literal|"arg_type"
 block|,
-name|N_
-argument_list|(
 literal|"the type of argument { PDB_INT32 (0), PDB_INT16 (1), PDB_INT8 (2), PDB_FLOAT (3), PDB_STRING (4), PDB_INT32ARRAY (5), PDB_INT16ARRAY (6), PDB_INT8ARRAY (7), PDB_FLOATARRAY (8), PDB_STRINGARRAY (9), PDB_COLOR (10), PDB_REGION (11), PDB_DISPLAY (12), PDB_IMAGE (13), PDB_LAYER (14), PDB_CHANNEL (15), PDB_DRAWABLE (16), PDB_SELECTION (17), PDB_BOUNDARY (18), PDB_PATH (19), PDB_PARASITE (20), PDB_STATUS (21) }"
-argument_list|)
 block|}
 block|,
 block|{
@@ -802,10 +751,7 @@ name|PDB_STRING
 block|,
 literal|"arg_name"
 block|,
-name|N_
-argument_list|(
 literal|"the name of the argument"
-argument_list|)
 block|}
 block|,
 block|{
@@ -813,10 +759,7 @@ name|PDB_STRING
 block|,
 literal|"arg_desc"
 block|,
-name|N_
-argument_list|(
 literal|"a description of the argument"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -830,15 +773,9 @@ init|=
 block|{
 literal|"gimp_procedural_db_proc_arg"
 block|,
-name|N_
-argument_list|(
 literal|"Queries the procedural database for information on the specified procedure's argument"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure returns information on the specified procedure's argument.  The argument type, name, and a description are retrieved."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -889,10 +826,7 @@ name|PDB_STRING
 block|,
 literal|"procedure"
 block|,
-name|N_
-argument_list|(
 literal|"the procedure name"
-argument_list|)
 block|}
 block|,
 block|{
@@ -900,10 +834,7 @@ name|PDB_INT32
 block|,
 literal|"val_num"
 block|,
-name|N_
-argument_list|(
 literal|"the return value number"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -922,10 +853,7 @@ name|PDB_INT32
 block|,
 literal|"val_type"
 block|,
-name|N_
-argument_list|(
 literal|"the type of return value { PDB_INT32 (0), PDB_INT16 (1), PDB_INT8 (2), PDB_FLOAT (3), PDB_STRING (4), PDB_INT32ARRAY (5), PDB_INT16ARRAY (6), PDB_INT8ARRAY (7), PDB_FLOATARRAY (8), PDB_STRINGARRAY (9), PDB_COLOR (10), PDB_REGION (11), PDB_DISPLAY (12), PDB_IMAGE (13), PDB_LAYER (14), PDB_CHANNEL (15), PDB_DRAWABLE (16), PDB_SELECTION (17), PDB_BOUNDARY (18), PDB_PATH (19), PDB_PARASITE (20), PDB_STATUS (21) }"
-argument_list|)
 block|}
 block|,
 block|{
@@ -933,10 +861,7 @@ name|PDB_STRING
 block|,
 literal|"val_name"
 block|,
-name|N_
-argument_list|(
 literal|"the name of the return value"
-argument_list|)
 block|}
 block|,
 block|{
@@ -944,10 +869,7 @@ name|PDB_STRING
 block|,
 literal|"val_desc"
 block|,
-name|N_
-argument_list|(
 literal|"a description of the return value"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -961,15 +883,9 @@ init|=
 block|{
 literal|"gimp_procedural_db_proc_val"
 block|,
-name|N_
-argument_list|(
 literal|"Queries the procedural database for information on the specified procedure's return value"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure returns information on the specified procedure's return value.  The return value type, name, and a description are retrieved."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1020,10 +936,7 @@ name|PDB_STRING
 block|,
 literal|"identifier"
 block|,
-name|N_
-argument_list|(
 literal|"the identifier associated with data"
-argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -1042,10 +955,7 @@ name|PDB_INT32
 block|,
 literal|"bytes"
 block|,
-name|N_
-argument_list|(
 literal|"the number of bytes in the data"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1059,15 +969,9 @@ init|=
 block|{
 literal|"gimp_procedural_db_get_data_size"
 block|,
-name|N_
-argument_list|(
 literal|"Returns size of data associated with the specified identifier"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure returns the size of any data which may have been associated with the specified identifier. If no data has been associated with the identifier, an error is returned."
-argument_list|)
 block|,
 literal|"Nick Lamb"
 block|,
@@ -1118,10 +1022,7 @@ name|PDB_STRING
 block|,
 literal|"identifier"
 block|,
-name|N_
-argument_list|(
 literal|"the identifier associated with data"
-argument_list|)
 block|}
 block|, }
 decl_stmt|;
@@ -1140,10 +1041,7 @@ name|PDB_INT32
 block|,
 literal|"bytes"
 block|,
-name|N_
-argument_list|(
 literal|"the number of bytes in the data"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1151,10 +1049,7 @@ name|PDB_INT8ARRAY
 block|,
 literal|"data"
 block|,
-name|N_
-argument_list|(
 literal|"a byte array containing data"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1168,15 +1063,9 @@ init|=
 block|{
 literal|"gimp_procedural_db_get_data"
 block|,
-name|N_
-argument_list|(
 literal|"Returns data associated with the specified identifier"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure returns any data which may have been associated with the specified identifier.  The data is a variable length array of bytes.  If no data has been associated with the identifier, an error is returned."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1227,10 +1116,7 @@ name|PDB_STRING
 block|,
 literal|"identifier"
 block|,
-name|N_
-argument_list|(
 literal|"the identifier for association with data"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1238,10 +1124,7 @@ name|PDB_INT32
 block|,
 literal|"bytes"
 block|,
-name|N_
-argument_list|(
 literal|"the number of bytes in data"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1249,10 +1132,7 @@ name|PDB_INT8ARRAY
 block|,
 literal|"data"
 block|,
-name|N_
-argument_list|(
 literal|"the data"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1266,15 +1146,9 @@ init|=
 block|{
 literal|"gimp_procedural_db_set_data"
 block|,
-name|N_
-argument_list|(
 literal|"Associates the specified identifier with the supplied data"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure associates the supplied data with the provided identifier.  The data may be subsequently retrieved by a call to 'procedural_db_get_data'."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -1325,10 +1199,7 @@ name|PDB_STRING
 block|,
 literal|"name"
 block|,
-name|N_
-argument_list|(
 literal|"the regex for procedure name"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1336,10 +1207,7 @@ name|PDB_STRING
 block|,
 literal|"blurb"
 block|,
-name|N_
-argument_list|(
 literal|"the regex for procedure blurb"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1347,10 +1215,7 @@ name|PDB_STRING
 block|,
 literal|"help"
 block|,
-name|N_
-argument_list|(
 literal|"the regex for procedure help"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1358,10 +1223,7 @@ name|PDB_STRING
 block|,
 literal|"author"
 block|,
-name|N_
-argument_list|(
 literal|"the regex for procedure author"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1369,10 +1231,7 @@ name|PDB_STRING
 block|,
 literal|"copyright"
 block|,
-name|N_
-argument_list|(
 literal|"the regex for procedure copyright"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1380,10 +1239,7 @@ name|PDB_STRING
 block|,
 literal|"date"
 block|,
-name|N_
-argument_list|(
 literal|"the regex for procedure date"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1391,10 +1247,7 @@ name|PDB_STRING
 block|,
 literal|"proc_type"
 block|,
-name|N_
-argument_list|(
 literal|"the regex for procedure type: {'Internal GIMP procedure', 'GIMP Plug-In', 'GIMP Extension'}"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1413,10 +1266,7 @@ name|PDB_INT32
 block|,
 literal|"num_matches"
 block|,
-name|N_
-argument_list|(
 literal|"the number of matching procedures"
-argument_list|)
 block|}
 block|,
 block|{
@@ -1424,10 +1274,7 @@ name|PDB_STRINGARRAY
 block|,
 literal|"procedure_names"
 block|,
-name|N_
-argument_list|(
 literal|"the list of procedure names"
-argument_list|)
 block|}
 block|}
 decl_stmt|;
@@ -1441,15 +1288,9 @@ init|=
 block|{
 literal|"gimp_procedural_db_query"
 block|,
-name|N_
-argument_list|(
 literal|"Queries the procedural database for its contents using regular expression matching"
-argument_list|)
 block|,
-name|N_
-argument_list|(
 literal|"This procedure queries the contents of the procedural database.  It is supplied with seven arguments matching procedures on {name, blurb, help, author, copyright, date, procedure type}.  This is accomplished using regular expression matching.  For instance, to find all procedures with \"jpeg\" listed in the blurb, all seven arguments can be supplied as \".*\", except for the second, which can be supplied as \".*jpeg.*\".  There are two return arguments for this procedure.  The first is the number of procedures matching the query.  The second is a concatenated list of procedure names corresponding to those matching the query.  If no matching entries are found, then the returned string is NULL and the number of entries is 0."
-argument_list|)
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

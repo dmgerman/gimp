@@ -100,6 +100,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"layer_pvt.h"
 end_include
 
@@ -120,7 +126,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon27cc8b0b0103
+DECL|enum|__anon2aeea17a0103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -904,7 +910,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Zero width or height layers not allowed."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1198,7 +1207,10 @@ operator|-
 literal|4
 index|]
 argument_list|,
+name|_
+argument_list|(
 literal|"copy"
+argument_list|)
 argument_list|)
 operator|==
 literal|0
@@ -1257,7 +1269,10 @@ name|sprintf
 argument_list|(
 name|layer_name
 argument_list|,
+name|_
+argument_list|(
 literal|"%s copy"
+argument_list|)
 argument_list|,
 name|name
 argument_list|)
@@ -1372,7 +1387,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"layer_copy: could not allocate new layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -1799,7 +1817,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"layer_from_tiles: could not allocate new layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2124,7 +2145,10 @@ argument_list|)
 operator|+
 name|strlen
 argument_list|(
+name|_
+argument_list|(
 literal|"mask"
+argument_list|)
 argument_list|)
 operator|+
 literal|2
@@ -2134,7 +2158,10 @@ name|sprintf
 argument_list|(
 name|mask_name
 argument_list|,
+name|_
+argument_list|(
 literal|"%s mask"
+argument_list|)
 argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7031,7 +7058,10 @@ name|sprintf
 argument_list|(
 name|layer_mask_name
 argument_list|,
+name|_
+argument_list|(
 literal|"%s copy"
+argument_list|)
 argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
