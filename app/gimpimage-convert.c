@@ -8,7 +8,7 @@ comment|/*    * TODO for Convert:    *    *   Use palette of another open INDEXE
 end_comment
 
 begin_comment
-comment|/*  * 98/03/23 - fixed a longstanding fencepost - hopefully the *right*  *  way, *again*.  (anyone ELSE want a go?  okay, just kidding... :))  *  [Adam]  *  * 97/11/14 - added a proper pdb interface and support for dithering  *  to custom palettes (based on a patch by Eric Hernes) [Yosh]  *  * 97/11/04 - fixed the accidental use of the colour-counting case  *  when palette_type is WEB or MONO. [Adam]  *  * 97/10/25 - colour-counting implemented (could use some hashing, but  *  performance actually seems okay) - now RGB->INDEXED conversion isn't  *  destructive if it doesn't have to be. [Adam]  *  * 97/10/14 - fixed divide-by-zero when converting a completely transparent  *  RGB image to indexed. [Adam]  *  * 97/07/01 - started todo/revision log.  Put code back in to  *  eliminate full-alpha pixels from RGB histogram.  *  [Adam D. Moss - adam@gimp.org]  */
+comment|/*  * 98/04/13 - avoid a division by zero when converting an empty gray-scale  *  image (who would like to do such a thing anyway??)  [Sven ]   *  * 98/03/23 - fixed a longstanding fencepost - hopefully the *right*  *  way, *again*.  (anyone ELSE want a go?  okay, just kidding... :))  *  [Adam]  *  * 97/11/14 - added a proper pdb interface and support for dithering  *  to custom palettes (based on a patch by Eric Hernes) [Yosh]  *  * 97/11/04 - fixed the accidental use of the colour-counting case  *  when palette_type is WEB or MONO. [Adam]  *  * 97/10/25 - colour-counting implemented (could use some hashing, but  *  performance actually seems okay) - now RGB->INDEXED conversion isn't  *  destructive if it doesn't have to be. [Adam]  *  * 97/10/14 - fixed divide-by-zero when converting a completely transparent  *  RGB image to indexed. [Adam]  *  * 97/07/01 - started todo/revision log.  Put code back in to  *  eliminate full-alpha pixels from RGB histogram.  *  [Adam D. Moss - adam@gimp.org]  */
 end_comment
 
 begin_include
@@ -1816,7 +1816,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baa6e780108
+DECL|struct|__anon2bce076f0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1863,7 +1863,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baa6e780208
+DECL|struct|__anon2bce076f0208
 block|{
 DECL|member|ncolors
 name|long
@@ -1882,7 +1882,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baa6e780308
+DECL|struct|__anon2bce076f0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -8214,6 +8214,13 @@ name|count
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|total
+operator|!=
+literal|0
+condition|)
+block|{
 name|quantobj
 operator|->
 name|cmap
@@ -8271,6 +8278,40 @@ index|]
 operator|.
 name|red
 expr_stmt|;
+block|}
+else|else
+comment|/* The only situation where total==0 is if the image was null or 	*  all-transparent.  In that case we just put a dummy value in 	*  the colourmap. 	*/
+block|{
+name|quantobj
+operator|->
+name|cmap
+index|[
+name|icolor
+index|]
+operator|.
+name|red
+operator|=
+name|quantobj
+operator|->
+name|cmap
+index|[
+name|icolor
+index|]
+operator|.
+name|green
+operator|=
+name|quantobj
+operator|->
+name|cmap
+index|[
+name|icolor
+index|]
+operator|.
+name|blue
+operator|=
+literal|0
+expr_stmt|;
+block|}
 block|}
 end_function
 
