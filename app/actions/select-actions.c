@@ -578,8 +578,6 @@ argument_list|(
 literal|"select-invert"
 argument_list|,
 name|drawable
-operator|&&
-name|sel
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
