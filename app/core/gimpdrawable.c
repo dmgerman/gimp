@@ -162,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"undo_types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"undo.h"
 end_include
 
@@ -173,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5545520103
+DECL|enum|__anon2b5c95e80103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
