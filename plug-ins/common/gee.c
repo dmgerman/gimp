@@ -400,7 +400,7 @@ literal|"drawable"
 block|,
 literal|"Input Drawable"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
@@ -418,7 +418,7 @@ literal|"2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Toys/Gee-_Slime"
+literal|"Gee-_Slime"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -435,6 +435,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_the_slimy_egg"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Toys"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -89,7 +89,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2908f1fa0103
+DECL|enum|__anon277390650103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -137,7 +137,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2908f1fa0208
+DECL|struct|__anon277390650208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -3837,7 +3837,7 @@ literal|"Version 0.14, September 24 1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/_Van Gogh (LIC)..."
+literal|"_Van Gogh (LIC)..."
 argument_list|)
 argument_list|,
 literal|"RGB"
@@ -3854,6 +3854,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_lic"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287cd6f60103
+DECL|enum|__anon29273de10103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287cd6f60203
+DECL|enum|__anon29273de10203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -2145,7 +2145,7 @@ literal|"May 2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Pattern/_Jigsaw..."
+literal|"_Jigsaw..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -2162,6 +2162,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_jigsaw"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Render/Pattern"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -155,7 +155,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb82f8b0108
+DECL|struct|__anon2bb19bd80108
 block|{
 DECL|member|xcenter
 name|gint
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb82f8b0208
+DECL|struct|__anon2bb19bd80208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -595,10 +595,9 @@ literal|"Eiichi Takamori"
 argument_list|,
 literal|"May 2000"
 argument_list|,
-comment|/* don't translate '<Image>' */
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Light Effects/Su_perNova..."
+literal|"Su_perNova..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -615,6 +614,17 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_nova"
+argument_list|,
+comment|/* don't translate '<Image>' */
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Light Effects"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -107,7 +107,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be73cb00108
+DECL|struct|__anon2ad604770108
 block|{
 DECL|member|tilable
 name|gint
@@ -474,7 +474,7 @@ literal|"Apr 1998, v1.03"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Clouds/_Solid Noise..."
+literal|"_Solid Noise..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -491,6 +491,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_solid_noise"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Render/Clouds"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

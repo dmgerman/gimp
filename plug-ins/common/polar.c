@@ -142,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b7f2350108
+DECL|struct|__anon28f679f30108
 block|{
 DECL|member|circle
 name|gdouble
@@ -532,7 +532,8 @@ name|PLUG_IN_NAME
 argument_list|,
 literal|"Converts and image to and from polar coords"
 argument_list|,
-literal|"Remaps and image from rectangular coordinates to polar coordinates "
+literal|"Remaps and image from rectangular coordinates "
+literal|"to polar coordinates "
 literal|"or vice versa"
 argument_list|,
 literal|"Daniel Dunbar and Federico Mena Quintero"
@@ -543,7 +544,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/P_olar Coords..."
+literal|"P_olar Coords..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -560,6 +561,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Distorts"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

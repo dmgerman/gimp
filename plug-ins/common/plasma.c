@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0b2f9f0108
+DECL|struct|__anon278f59bd0108
 block|{
 DECL|member|seed
 name|guint32
@@ -551,7 +551,8 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_plasma"
 argument_list|,
-literal|"Create a plasma cloud like image on the specified drawable"
+literal|"Create a plasma cloud like image on the "
+literal|"specified drawable"
 argument_list|,
 literal|"More help"
 argument_list|,
@@ -563,7 +564,7 @@ literal|"May 2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Clouds/_Plasma..."
+literal|"_Plasma..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -580,6 +581,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_plasma"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Render/Clouds"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29029b680103
+DECL|enum|__anon2798129d0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -132,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29029b680203
+DECL|enum|__anon2798129d0203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -148,7 +148,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29029b680303
+DECL|enum|__anon2798129d0303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -637,7 +637,7 @@ literal|"May 2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/Wi_nd..."
+literal|"Wi_nd..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -654,6 +654,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_wind"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Distorts"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

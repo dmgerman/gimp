@@ -70,7 +70,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a45f7e90108
+DECL|struct|__anon290f26f90108
 block|{
 DECL|member|image
 name|gint32
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a45f7e90203
+DECL|enum|__anon290f26f90203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a45f7e90303
+DECL|enum|__anon290f26f90303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -165,7 +165,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2a45f7e90408
+DECL|struct|__anon290f26f90408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -629,7 +629,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/_Hot..."
+literal|"_Hot..."
 argument_list|)
 argument_list|,
 literal|"RGB"
@@ -646,6 +646,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_hot"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Colors"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

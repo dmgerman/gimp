@@ -747,7 +747,7 @@ literal|"Version 0.2.0, March 15 1998"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Light Effects/_Lighting Effects..."
+literal|"_Lighting Effects..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -764,6 +764,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_lighting"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Light Effects"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

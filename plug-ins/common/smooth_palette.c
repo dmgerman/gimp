@@ -261,7 +261,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Smoo_th Palette..."
+literal|"Smoo_th Palette..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -283,13 +283,23 @@ argument_list|,
 name|return_vals
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_smooth_palette"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Colors"
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b50de920108
+DECL|struct|__anon275b8a920108
 block|{
 DECL|member|width
 name|gint

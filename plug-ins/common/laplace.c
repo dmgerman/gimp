@@ -12,7 +12,7 @@ comment|/* Based on S&P's Gauss and Laplace filters              */
 end_comment
 
 begin_comment
-comment|/* updated 1/30/03:<sjburges@gimp.org>  * fixed an off-by-1 error that was causing an attempt to read a   * get_pixel_by_row at the -1'th row  */
+comment|/* updated 1/30/03:<sjburges@gimp.org>  * fixed an off-by-1 error that was causing an attempt to read a  * get_pixel_by_row at the -1'th row  */
 end_comment
 
 begin_comment
@@ -222,7 +222,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Edge-Detect/_Laplace"
+literal|"_Laplace"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -239,6 +239,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_laplace"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Edge-Detect"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

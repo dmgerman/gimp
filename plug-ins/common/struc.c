@@ -43,10 +43,17 @@ directive|include
 file|<libgimp/gimpui.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|sdata
 specifier|static
-name|char
+specifier|const
+name|gchar
 name|sdata
 index|[]
 init|=
@@ -40866,19 +40873,13 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
-end_include
-
 begin_comment
 comment|/* --- Typedefs --- */
 end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3da0fb0103
+DECL|enum|__anon28c4a9190103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40898,7 +40899,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3da0fb0208
+DECL|struct|__anon28c4a9190208
 block|{
 DECL|member|direction
 name|gint
@@ -41085,7 +41086,7 @@ literal|"depth"
 block|,
 literal|"Texture depth (1 - 50)"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
@@ -41105,7 +41106,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Artistic/_Apply Canvas..."
+literal|"_Apply Canvas..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -41122,6 +41123,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_apply_canvas"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Artistic"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3003960108
+DECL|struct|__anon2c119cc00108
 block|{
 DECL|member|radius
 name|gdouble
@@ -117,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3003960208
+DECL|struct|__anon2c119cc00208
 block|{
 DECL|member|run
 name|gboolean
@@ -426,7 +426,6 @@ literal|"Threshold"
 block|}
 block|}
 decl_stmt|;
-comment|/* Install a procedure in the procedure database. */
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_unsharp_mask"
@@ -448,7 +447,7 @@ literal|"1999"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Enhance/_Unsharp Mask..."
+literal|"_Unsharp Mask..."
 argument_list|)
 argument_list|,
 literal|"GRAY*, RGB*"
@@ -467,12 +466,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_unsharp_mask"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Enhance"
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* this is the actual function */
-end_comment
 
 begin_function
 specifier|static

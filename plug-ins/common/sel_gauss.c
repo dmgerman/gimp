@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279e26b30108
+DECL|struct|__anon2952d6c50108
 block|{
 DECL|member|radius
 name|gdouble
@@ -239,7 +239,8 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_sel_gauss"
 argument_list|,
-literal|"Applies a selective gaussian blur to the specified drawable."
+literal|"Applies a selective gaussian blur to the "
+literal|"specified drawable."
 argument_list|,
 literal|"This filter functions similar to the regular "
 literal|"gaussian blur filter except that neighbouring "
@@ -257,7 +258,7 @@ literal|"1999"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Blur/_Selective Gaussian Blur..."
+literal|"_Selective Gaussian Blur..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -274,6 +275,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_sel_gauss"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Blur"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

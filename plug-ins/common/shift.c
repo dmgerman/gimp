@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd5ae3c0108
+DECL|struct|__anon28a3aab00108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -295,9 +295,11 @@ literal|"plug_in_shift"
 argument_list|,
 literal|"Shift the contents of the specified drawable"
 argument_list|,
-literal|"Shifts the pixels of the specified drawable. Each row will be displaced a random value of pixels."
+literal|"Shifts the pixels of the specified drawable. "
+literal|"Each row will be displaced a random value of pixels."
 argument_list|,
-literal|"Spencer Kimball and Peter Mattis, ported by Brian Degenhardt and Federico Mena Quintero"
+literal|"Spencer Kimball and Peter Mattis, ported by Brian "
+literal|"Degenhardt and Federico Mena Quintero"
 argument_list|,
 literal|"Brian Degenhardt"
 argument_list|,
@@ -305,7 +307,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/_Shift..."
+literal|"_Shift..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -322,6 +324,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_shift"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Distorts"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -85,7 +85,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2d976d0103
+DECL|enum|__anon2c4a955e0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -105,7 +105,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2d976d0208
+DECL|struct|__anon2c4a955e0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -764,7 +764,8 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_warp"
 argument_list|,
-literal|"Twist or smear an image. (only first six arguments are required)"
+literal|"Twist or smear an image. (only first six "
+literal|"arguments are required)"
 argument_list|,
 literal|"Smears an image along vector paths calculated as "
 literal|"the gradient of a separate control matrix. The "
@@ -779,7 +780,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/_Warp..."
+literal|"_Warp..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -796,6 +797,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_warp"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

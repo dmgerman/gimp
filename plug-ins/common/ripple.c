@@ -124,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad603a30108
+DECL|struct|__anon288996730108
 block|{
 DECL|member|period
 name|gint
@@ -483,7 +483,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/_Ripple..."
+literal|"_Ripple..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -500,6 +500,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_ripple"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Distorts"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -904,7 +914,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2ad603a30208
+DECL|struct|__anon288996730208
 typedef|typedef
 struct|struct
 block|{

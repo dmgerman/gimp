@@ -709,7 +709,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4fd2010108
+DECL|struct|__anon28b0385e0108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -861,7 +861,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4fd2010208
+DECL|struct|__anon28b0385e0208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1200,7 +1200,7 @@ literal|"1996-1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/_Value Propagate..."
+literal|"_Value Propagate..."
 argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
@@ -1235,7 +1235,7 @@ literal|"1996-1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Generic/E_rode"
+literal|"E_rode"
 argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
@@ -1270,7 +1270,7 @@ literal|"1996-1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Generic/_Dilate"
+literal|"_Dilate"
 argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
@@ -1287,6 +1287,36 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|DEFAULT_PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Distorts"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|ERODE_PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Generic"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|DILATE_PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Generic"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3904,7 +3934,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4fd2010308
+DECL|struct|__anon28b0385e0308
 block|{
 DECL|member|min_modified
 name|gshort

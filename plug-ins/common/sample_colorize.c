@@ -370,7 +370,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b448d80108
+DECL|struct|__anon27a9209b0108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -439,7 +439,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b448d80208
+DECL|struct|__anon27a9209b0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b448d80308
+DECL|struct|__anon27a9209b0308
 block|{
 DECL|member|color
 name|guchar
@@ -576,7 +576,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b448d80408
+DECL|struct|__anon27a9209b0408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -603,7 +603,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b448d80508
+DECL|struct|__anon27a9209b0508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1365,7 +1365,8 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-literal|"Colorize the contents of the specified drawable similar to sample drawable"
+literal|"Colorize the contents of the specified drawable "
+literal|"similar to sample drawable"
 argument_list|,
 name|help_string
 argument_list|,
@@ -1377,7 +1378,7 @@ literal|"02/2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Map/_Sample Colorize..."
+literal|"_Sample Colorize..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -1394,6 +1395,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Colors/Map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

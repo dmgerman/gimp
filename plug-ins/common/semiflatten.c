@@ -170,7 +170,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"Input image (unused)"
+literal|"  Input image (unused)"
 block|}
 block|,
 block|{
@@ -202,7 +202,7 @@ literal|"27th January 1998"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/_Semi-Flatten"
+literal|"_Semi-Flatten"
 argument_list|)
 argument_list|,
 literal|"RGBA"
@@ -219,6 +219,26 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_semiflatten"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Colors"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_semiflatten"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Layer/Transparency/Modify"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

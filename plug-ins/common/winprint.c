@@ -65,7 +65,7 @@ end_define
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27741a1c0108
+DECL|struct|__anon2c3c16c10108
 block|{
 DECL|member|prDlg
 name|PRINTDLG
@@ -691,7 +691,7 @@ literal|"$Id$"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/File/Send/_Print"
+literal|"_Print"
 argument_list|)
 argument_list|,
 literal|"RGB*,GRAY*,INDEXED*"
@@ -726,7 +726,7 @@ literal|"$Id$"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/File/Send/Page Setup"
+literal|"Page Setup"
 argument_list|)
 argument_list|,
 literal|"RGB*,GRAY*,INDEXED*"
@@ -743,6 +743,26 @@ argument_list|,
 name|pagesetup_args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|NAME_PRINT
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/File/Send"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|NAME_PAGE_SETUP
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/File/Send"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

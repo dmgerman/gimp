@@ -601,7 +601,7 @@ literal|"1998-2002"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Web/_ImageMap..."
+literal|"_ImageMap..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
@@ -618,6 +618,16 @@ argument_list|,
 name|args
 argument_list|,
 name|return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_imagemap"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Web"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

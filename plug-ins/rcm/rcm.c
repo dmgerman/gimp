@@ -217,7 +217,7 @@ literal|"04th April 1999"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Map/Colormap _Rotation..."
+literal|"Colormap _Rotation..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -234,6 +234,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_rotate_colormap"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Colors/Map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

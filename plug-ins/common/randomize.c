@@ -217,7 +217,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274fa3000108
+DECL|struct|__anon2b19225e0108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -492,21 +492,27 @@ name|gchar
 modifier|*
 name|hurl_help
 init|=
-literal|"This plug-in ``hurls'' randomly-valued pixels onto the selection or image.  You may select the percentage of pixels to modify and the number of times to repeat the process."
+literal|"This plug-in ``hurls'' randomly-valued pixels onto the selection or "
+literal|"image.  You may select the percentage of pixels to modify and the number "
+literal|"of times to repeat the process."
 decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|pick_help
 init|=
-literal|"This plug-in replaces a pixel with a random adjacent pixel.  You may select the percentage of pixels to modify and the number of times to repeat the process."
+literal|"This plug-in replaces a pixel with a random adjacent pixel.  You may "
+literal|"select the percentage of pixels to modify and the number of times to "
+literal|"repeat the process."
 decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|slur_help
 init|=
-literal|"This plug-in slurs (melts like a bunch of icicles) an image.  You may select the percentage of pixels to modify and the number of times to repeat the process."
+literal|"This plug-in slurs (melts like a bunch of icicles) an image.  You may "
+literal|"select the percentage of pixels to modify and the number of times to "
+literal|"repeat the process."
 decl_stmt|;
 specifier|const
 name|gchar
@@ -520,7 +526,9 @@ name|gchar
 modifier|*
 name|copyrights
 init|=
-literal|"Miles O'Neal, Spencer Kimball, Peter Mattis, Torsten Martinsen, Brian Degenhardt, Federico Mena Quintero, Stephen Norris, Daniel Cotting"
+literal|"Miles O'Neal, Spencer Kimball, Peter Mattis, "
+literal|"Torsten Martinsen, Brian Degenhardt, Federico Mena Quintero, Stephen "
+literal|"Norris, Daniel Cotting"
 decl_stmt|;
 specifier|const
 name|gchar
@@ -536,39 +544,19 @@ index|[
 literal|0
 index|]
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
 name|hurl_blurb
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
 name|hurl_help
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
 name|author
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
 name|copyrights
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
 name|copyright_date
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Noise/_Hurl..."
+literal|"_Hurl..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
@@ -594,39 +582,19 @@ index|[
 literal|1
 index|]
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
 name|pick_blurb
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
 name|pick_help
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
 name|author
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
 name|copyrights
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
 name|copyright_date
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Noise/_Pick..."
+literal|"_Pick..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
@@ -652,39 +620,19 @@ index|[
 literal|2
 index|]
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
 name|slur_blurb
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
 name|slur_help
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
 name|author
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
 name|copyrights
 argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
 name|copyright_date
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Noise/_Slur..."
+literal|"_Slur..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
@@ -701,6 +649,45 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+index|[
+literal|0
+index|]
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Noise"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+index|[
+literal|1
+index|]
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Noise"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+index|[
+literal|2
+index|]
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Noise"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

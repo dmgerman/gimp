@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290034c40108
+DECL|struct|__anon2918eaef0108
 block|{
 DECL|member|receipt
 name|gchar
@@ -551,7 +551,7 @@ literal|"1995-1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/File/Send/_Mail Image..."
+literal|"_Mail Image..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
@@ -568,6 +568,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_mail_image"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/File/Send"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

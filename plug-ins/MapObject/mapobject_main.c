@@ -1096,7 +1096,7 @@ literal|"Version 1.2.0, July 16 1998"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/Map _Object..."
+literal|"Map _Object..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -1113,6 +1113,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_map_object"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

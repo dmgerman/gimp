@@ -181,7 +181,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b94e97c0103
+DECL|enum|__anon29db63fc0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b94e97c0203
+DECL|enum|__anon29db63fc0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b94e97c0308
+DECL|struct|__anon29db63fc0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -239,7 +239,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2b94e97c040a
+DECL|union|__anon29db63fc040a
 block|{
 DECL|member|d
 name|gdouble
@@ -264,7 +264,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b94e97c0508
+DECL|struct|__anon29db63fc0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -294,7 +294,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b94e97c0608
+DECL|struct|__anon29db63fc0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -329,7 +329,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b94e97c0708
+DECL|struct|__anon29db63fc0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b94e97c0808
+DECL|struct|__anon29db63fc0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -432,7 +432,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b94e97c0908
+DECL|struct|__anon29db63fc0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -634,7 +634,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b94e97c0a08
+DECL|struct|__anon29db63fc0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -1599,7 +1599,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Nature/Ifs_Compose..."
+literal|"Ifs_Compose..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -1616,6 +1616,16 @@ argument_list|,
 name|args
 argument_list|,
 name|return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_ifs_compose"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Render/Nature"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

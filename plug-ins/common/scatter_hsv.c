@@ -330,7 +330,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c179bae0108
+DECL|struct|__anon2795265e0108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -564,7 +564,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Noise/S_catter HSV..."
+literal|"S_catter HSV..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -581,6 +581,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Noise"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -129,7 +129,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e1afdd0103
+DECL|enum|__anon292e1b7d0103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e1afdd0208
+DECL|struct|__anon292e1b7d0208
 block|{
 DECL|member|run
 name|gboolean
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e1afdd0308
+DECL|struct|__anon292e1b7d0308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -1021,7 +1021,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/_IWarp..."
+literal|"_IWarp..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -1038,6 +1038,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_iwarp"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Distorts"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

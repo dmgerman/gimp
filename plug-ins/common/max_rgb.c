@@ -181,7 +181,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4e6b390103
+DECL|enum|__anon2c7f96a70103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -199,7 +199,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4e6b390208
+DECL|struct|__anon2c7f96a70208
 block|{
 DECL|member|max_p
 name|gint
@@ -312,7 +312,7 @@ literal|"May 2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/_Max RGB..."
+literal|"_Max RGB..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -329,6 +329,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Colors"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -572,7 +582,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c4e6b390308
+DECL|struct|__anon2c7f96a70308
 typedef|typedef
 struct|struct
 block|{

@@ -137,7 +137,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296decd30108
+DECL|struct|__anon2afac8f30108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -519,7 +519,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296decd30203
+DECL|enum|__anon2afac8f30203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -538,7 +538,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296decd30308
+DECL|struct|__anon2afac8f30308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -608,7 +608,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296decd30408
+DECL|struct|__anon2afac8f30408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -831,7 +831,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/_Small Tiles..."
+literal|"_Small Tiles..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -848,6 +848,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_small_tiles"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -166,7 +166,7 @@ literal|"23th june 1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/Xtns/Extensions/_DB Browser"
+literal|"_DB Browser"
 argument_list|)
 argument_list|,
 literal|""
@@ -183,6 +183,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_db_browser"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Toolbox>/Xtns/Extensions"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

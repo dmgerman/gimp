@@ -1066,7 +1066,7 @@ literal|"December, 1998"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/_Fractal Explorer..."
+literal|"_Fractal Explorer..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -1083,6 +1083,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_fractalexplorer"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Render"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

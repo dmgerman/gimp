@@ -127,7 +127,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c63493f0108
+DECL|struct|__anon2c4a513e0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -641,7 +641,9 @@ argument_list|,
 literal|"Uses a percentage based luminoisty threhsold to find "
 literal|"candidate pixels for adding some sparkles (spikes). "
 argument_list|,
-literal|"John Beale,& (ported to GIMP v0.54) Michael J. Hammel& ted to GIMP v1.0)& Seth Burgess& Spencer Kimball"
+literal|"John Beale,& (ported to GIMP v0.54) Michael "
+literal|"J. Hammel& ted to GIMP v1.0)& Seth Burgess& "
+literal|"Spencer Kimball"
 argument_list|,
 literal|"John Beale"
 argument_list|,
@@ -649,7 +651,7 @@ literal|"Version 1.27, September 2003"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Light Effects/_Sparkle..."
+literal|"_Sparkle..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -666,6 +668,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_sparkle"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Light Effects"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

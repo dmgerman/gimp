@@ -723,7 +723,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/File/Send/_Print..."
+literal|"_Print..."
 argument_list|)
 argument_list|,
 name|types
@@ -740,6 +740,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_print_gimp"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/File/Send"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

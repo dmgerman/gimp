@@ -49,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c115cb0103
+DECL|enum|__anon28dcbef50103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -170,7 +170,7 @@ end_macro
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c115cb0208
+DECL|struct|__anon28dcbef50208
 block|{
 DECL|member|title
 specifier|const
@@ -347,7 +347,7 @@ literal|"2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/Xtns/Extensions/_Unit Editor"
+literal|"_Unit Editor"
 argument_list|)
 argument_list|,
 literal|""
@@ -364,6 +364,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_unit_editor"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Toolbox>/Xtns/Extensions"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

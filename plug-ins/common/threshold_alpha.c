@@ -179,7 +179,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e43f20108
+DECL|struct|__anon28830ce00108
 block|{
 DECL|member|threshold
 name|gint
@@ -272,7 +272,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Layer/Transparency/Modify/_Threshold Alpha..."
+literal|"_Threshold Alpha..."
 argument_list|)
 argument_list|,
 literal|"RGBA,GRAYA"
@@ -289,6 +289,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Layer/Transparency/Modify"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

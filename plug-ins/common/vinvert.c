@@ -204,7 +204,8 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_vinvert"
 argument_list|,
-literal|"Invert the 'value' component of an indexed/RGB image in HSV colorspace"
+literal|"Invert the 'value' component of an indexed/RGB "
+literal|"image in HSV colorspace"
 argument_list|,
 literal|"This function takes an indexed/RGB image and "
 literal|"inverts its 'value' in HSV space.  The upshot of "
@@ -222,7 +223,7 @@ literal|"27th March 1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/_Value Invert"
+literal|"_Value Invert"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*"
@@ -239,6 +240,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_vinvert"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Colors"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

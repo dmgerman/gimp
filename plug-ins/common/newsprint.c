@@ -384,7 +384,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c071a0c0108
+DECL|struct|__anon299a614e0108
 block|{
 DECL|member|name
 specifier|const
@@ -644,7 +644,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c071a0c0208
+DECL|struct|__anon299a614e0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -717,7 +717,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c071a0c0308
+DECL|struct|__anon299a614e0308
 block|{
 DECL|member|input_spi
 name|gint
@@ -747,7 +747,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c071a0c0408
+DECL|struct|__anon299a614e0408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -854,7 +854,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c071a0c0508
+DECL|struct|__anon299a614e0508
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1025,7 +1025,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c071a0c0608
+DECL|struct|__anon299a614e0608
 block|{
 DECL|member|name
 specifier|const
@@ -1851,7 +1851,7 @@ literal|")"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/Newsprin_t..."
+literal|"Newsprin_t..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -1868,6 +1868,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_newsprint"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Distorts"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -6596,7 +6606,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c071a0c0708
+DECL|struct|__anon299a614e0708
 block|{
 DECL|member|index
 name|gint

@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286f7e4f0108
+DECL|struct|__anon2b06c25c0108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286f7e4f0208
+DECL|struct|__anon2b06c25c0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -452,9 +452,11 @@ literal|"plug_in_pixelize"
 argument_list|,
 literal|"Pixelize the contents of the specified drawable"
 argument_list|,
-literal|"Pixelize the contents of the specified drawable with speficied pixelizing width."
+literal|"Pixelize the contents of the specified drawable "
+literal|"with speficied pixelizing width."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis, Tracy Scott, (ported to 1.0 by) Eiichi Takamori"
+literal|"Spencer Kimball& Peter Mattis, Tracy Scott, "
+literal|"(ported to 1.0 by) Eiichi Takamori"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis, Tracy Scott"
 argument_list|,
@@ -462,7 +464,7 @@ literal|"1995"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Blur/_Pixelize..."
+literal|"_Pixelize..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -481,15 +483,27 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_pixelize"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Blur"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_pixelize2"
 argument_list|,
 literal|"Pixelize the contents of the specified drawable"
 argument_list|,
-literal|"Pixelize the contents of the specified drawable with speficied pixelizing width."
+literal|"Pixelize the contents of the specified drawable "
+literal|"with speficied pixelizing width."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis, Tracy Scott, (ported to 1.0 by) Eiichi Takamori"
+literal|"Spencer Kimball& Peter Mattis, Tracy Scott, "
+literal|"(ported to 1.0 by) Eiichi Takamori"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis, Tracy Scott"
 argument_list|,

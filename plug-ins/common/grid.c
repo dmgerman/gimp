@@ -261,7 +261,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298979d30108
+DECL|struct|__anon2b5413900108
 block|{
 DECL|member|hwidth
 name|gint
@@ -560,7 +560,7 @@ literal|"1997 - 2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Pattern/_Grid..."
+literal|"_Grid..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
@@ -577,6 +577,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_grid"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Render/Pattern"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b7a1fa0108
+DECL|struct|__anon2ba7bcad0108
 block|{
 DECL|member|new_width
 name|gint
@@ -316,7 +316,7 @@ literal|"1996-1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/_Tile..."
+literal|"_Tile..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
@@ -336,6 +336,16 @@ argument_list|,
 name|args
 argument_list|,
 name|return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_tile"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

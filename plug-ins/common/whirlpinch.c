@@ -152,7 +152,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295b38bd0108
+DECL|struct|__anon2b23aa140108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295b38bd0208
+DECL|struct|__anon2b23aa140208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -599,7 +599,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/W_hirl and Pinch..."
+literal|"W_hirl and Pinch..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -616,6 +616,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Distorts"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

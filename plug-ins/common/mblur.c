@@ -119,7 +119,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbfda040108
+DECL|struct|__anon2960ddda0108
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -451,7 +451,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Blur/_Motion Blur..."
+literal|"_Motion Blur..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -468,6 +468,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Blur"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

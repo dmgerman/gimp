@@ -158,7 +158,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b28cbcc0108
+DECL|struct|__anon2894e2590108
 block|{
 DECL|member|division
 name|gint32
@@ -312,7 +312,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/_Illusion..."
+literal|"_Illusion..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -329,6 +329,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -650,7 +660,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b28cbcc0208
+DECL|struct|__anon2894e2590208
 typedef|typedef
 struct|struct
 block|{

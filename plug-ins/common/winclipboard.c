@@ -238,7 +238,7 @@ literal|"1999"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Edit/Copy to Clipboard"
+literal|"Copy to Clipboard"
 argument_list|)
 argument_list|,
 literal|"INDEXED*, RGB*"
@@ -273,7 +273,7 @@ literal|"1999"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Edit/Paste from Clipboard"
+literal|"Paste from Clipboard"
 argument_list|)
 argument_list|,
 literal|"INDEXED*, RGB*"
@@ -308,7 +308,7 @@ literal|"1999"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/File/Acquire/From Clipboard"
+literal|"From Clipboard"
 argument_list|)
 argument_list|,
 literal|""
@@ -322,6 +322,36 @@ argument_list|,
 name|copy_args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_clipboard_copy"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Edit"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_clipboard_paste"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Edit"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_clipboard_paste_as_new"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Toolbox>/File/Acquire"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

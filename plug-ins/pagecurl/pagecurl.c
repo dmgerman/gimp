@@ -144,7 +144,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a396ae20108
+DECL|struct|__anon29a14b390108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -709,7 +709,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/_Pagecurl..."
+literal|"_Pagecurl..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -729,6 +729,16 @@ argument_list|,
 name|args
 argument_list|,
 name|return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Distorts"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -60925,7 +60925,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2e3fed0108
+DECL|struct|__anon2a47955a0108
 block|{
 DECL|member|pattern_number
 name|gint
@@ -61219,9 +61219,12 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_video"
 argument_list|,
-literal|"Apply low-dotpitch RGB simulation to the specified drawable"
+literal|"Apply low-dotpitch RGB simulation to the "
+literal|"specified drawable"
 argument_list|,
-literal|"This function simulates the degradation of being on an old low-dotpitch RGB video monitor to the specified drawable."
+literal|"This function simulates the degradation of "
+literal|"being on an old low-dotpitch RGB video monitor "
+literal|"to the specified drawable."
 argument_list|,
 literal|"Adam D. Moss (adam@foxbox.org)"
 argument_list|,
@@ -61231,7 +61234,7 @@ literal|"2nd March 1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/Vi_deo..."
+literal|"Vi_deo..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -61248,6 +61251,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"plug_in_video"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Distorts"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

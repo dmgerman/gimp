@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d928df0103
+DECL|enum|__anon291a25680103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -233,7 +233,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d928df0208
+DECL|struct|__anon291a25680208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -272,7 +272,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d928df0308
+DECL|struct|__anon291a25680308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -2315,7 +2315,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Pattern/_Qbist..."
+literal|"_Qbist..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -2332,6 +2332,16 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Render/Pattern"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
