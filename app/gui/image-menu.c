@@ -1841,7 +1841,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Display _Filters"
+literal|"/View/Display _Filters..."
 argument_list|)
 block|,
 name|NULL
@@ -2546,7 +2546,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Image/Configure G_rid"
+literal|"/Image/Configure G_rid..."
 argument_list|)
 block|,
 name|NULL
@@ -6732,7 +6732,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/View/Display Filters"
+literal|"/View/Display Filters..."
 argument_list|,
 name|gdisp
 argument_list|)
@@ -7084,7 +7084,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Image/Configure Grid"
+literal|"/Image/Configure Grid..."
 argument_list|,
 name|gdisp
 argument_list|)
