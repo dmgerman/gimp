@@ -4464,10 +4464,7 @@ block|{
 name|MaskBuf
 modifier|*
 name|brush_mask
-decl_stmt|;
-comment|/*  get the brush mask  */
-name|brush_mask
-operator|=
+init|=
 name|gimp_paint_core_get_brush_mask
 argument_list|(
 name|core
@@ -4476,8 +4473,11 @@ name|brush_hardness
 argument_list|,
 name|brush_scale
 argument_list|)
-expr_stmt|;
-comment|/*  paste the canvas buf  */
+decl_stmt|;
+if|if
+condition|(
+name|brush_mask
+condition|)
 name|gimp_paint_core_paste
 argument_list|(
 name|core
@@ -4534,10 +4534,7 @@ block|{
 name|MaskBuf
 modifier|*
 name|brush_mask
-decl_stmt|;
-comment|/*  get the brush mask  */
-name|brush_mask
-operator|=
+init|=
 name|gimp_paint_core_get_brush_mask
 argument_list|(
 name|core
@@ -4546,8 +4543,11 @@ name|brush_hardness
 argument_list|,
 name|brush_scale
 argument_list|)
-expr_stmt|;
-comment|/*  paste the canvas buf  */
+decl_stmt|;
+if|if
+condition|(
+name|brush_mask
+condition|)
 name|gimp_paint_core_replace
 argument_list|(
 name|core
@@ -6163,6 +6163,14 @@ name|brush
 operator|->
 name|mask
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|mask
+condition|)
+return|return
+name|NULL
+return|;
 switch|switch
 condition|(
 name|brush_hardness
@@ -8259,6 +8267,12 @@ argument_list|,
 name|scale
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|pixmap_mask
+condition|)
+return|return;
 if|if
 condition|(
 name|mode
