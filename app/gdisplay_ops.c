@@ -91,7 +91,7 @@ name|gchar
 modifier|*
 name|image_name
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -104,10 +104,10 @@ end_comment
 
 begin_function
 name|gulong
-DECL|function|gdisplay_white_pixel (GDisplay * gdisp)
+DECL|function|gdisplay_white_pixel (GimpDisplay * gdisp)
 name|gdisplay_white_pixel
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -120,10 +120,10 @@ end_function
 
 begin_function
 name|gulong
-DECL|function|gdisplay_gray_pixel (GDisplay * gdisp)
+DECL|function|gdisplay_gray_pixel (GimpDisplay * gdisp)
 name|gdisplay_gray_pixel
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -136,10 +136,10 @@ end_function
 
 begin_function
 name|gulong
-DECL|function|gdisplay_black_pixel (GDisplay * gdisp)
+DECL|function|gdisplay_black_pixel (GimpDisplay * gdisp)
 name|gdisplay_black_pixel
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -152,10 +152,10 @@ end_function
 
 begin_function
 name|gulong
-DECL|function|gdisplay_color_pixel (GDisplay * gdisp)
+DECL|function|gdisplay_color_pixel (GimpDisplay * gdisp)
 name|gdisplay_color_pixel
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -248,15 +248,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_new_view (GDisplay * gdisp)
+DECL|function|gdisplay_new_view (GimpDisplay * gdisp)
 name|gdisplay_new_view
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|new_gdisp
 decl_stmt|;
@@ -287,10 +287,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_close_window (GDisplay * gdisp,gboolean kill_it)
+DECL|function|gdisplay_close_window (GimpDisplay * gdisp,gboolean kill_it)
 name|gdisplay_close_window
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -381,10 +381,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_shrink_wrap (GDisplay * gdisp)
+DECL|function|gdisplay_shrink_wrap (GimpDisplay * gdisp)
 name|gdisplay_shrink_wrap
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -965,14 +965,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|data
@@ -1000,7 +1000,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_close_warning_dialog (const gchar * image_name,GDisplay * gdisp)
+DECL|function|gdisplay_close_warning_dialog (const gchar * image_name,GimpDisplay * gdisp)
 name|gdisplay_close_warning_dialog
 parameter_list|(
 specifier|const
@@ -1008,7 +1008,7 @@ name|gchar
 modifier|*
 name|image_name
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)

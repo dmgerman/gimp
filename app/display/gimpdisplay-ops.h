@@ -26,7 +26,7 @@ begin_function_decl
 name|gulong
 name|gdisplay_black_pixel
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -37,7 +37,7 @@ begin_function_decl
 name|gulong
 name|gdisplay_gray_pixel
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -48,7 +48,7 @@ begin_function_decl
 name|gulong
 name|gdisplay_white_pixel
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -59,7 +59,7 @@ begin_function_decl
 name|gulong
 name|gdisplay_color_pixel
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -85,7 +85,7 @@ begin_function_decl
 name|void
 name|gdisplay_new_view
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -96,7 +96,7 @@ begin_function_decl
 name|void
 name|gdisplay_close_window
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -110,7 +110,7 @@ begin_function_decl
 name|void
 name|gdisplay_shrink_wrap
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)

@@ -344,49 +344,51 @@ struct|;
 end_struct
 
 begin_comment
-comment|/* variable declarations */
-end_comment
-
-begin_decl_stmt
-DECL|variable|display_list
-name|GSList
-modifier|*
-name|display_list
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|display_num
-specifier|static
-name|gint
-name|display_num
-init|=
-literal|1
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|default_gdisplay_cursor
-specifier|static
-name|GdkCursorType
-name|default_gdisplay_cursor
-init|=
-name|GDK_TOP_LEFT_ARROW
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/*  Local functions  */
 end_comment
 
 begin_function_decl
 specifier|static
 name|void
+name|gimp_display_class_init
+parameter_list|(
+name|GimpDisplayClass
+modifier|*
+name|klass
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_display_init
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_display_finalize
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|gdisplay_format_title
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -405,7 +407,7 @@ specifier|static
 name|void
 name|gdisplay_delete
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -447,7 +449,7 @@ specifier|static
 name|void
 name|gdisplay_add_update_area
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -471,7 +473,7 @@ specifier|static
 name|void
 name|gdisplay_add_display_area
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -495,7 +497,7 @@ specifier|static
 name|void
 name|gdisplay_paint_area
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -519,7 +521,7 @@ specifier|static
 name|void
 name|gdisplay_draw_cursor
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -531,7 +533,7 @@ specifier|static
 name|void
 name|gdisplay_display_area
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -555,7 +557,7 @@ specifier|static
 name|guint
 name|gdisplay_hash
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -578,6 +580,47 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
+DECL|variable|parent_class
+specifier|static
+name|GimpObjectClass
+modifier|*
+name|parent_class
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|display_list
+name|GSList
+modifier|*
+name|display_list
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|display_num
+specifier|static
+name|gint
+name|display_num
+init|=
+literal|1
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|default_gdisplay_cursor
+specifier|static
+name|GdkCursorType
+name|default_gdisplay_cursor
+init|=
+name|GDK_TOP_LEFT_ARROW
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|display_ht
 specifier|static
 name|GHashTable
@@ -588,52 +631,142 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/* FIXME: GDisplays really need to be GtkObjects */
-end_comment
-
 begin_function
-name|GDisplay
-modifier|*
-DECL|function|gdisplay_new (GimpImage * gimage,guint scale)
-name|gdisplay_new
+name|GType
+DECL|function|gimp_display_get_type (void)
+name|gimp_display_get_type
 parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|guint
-name|scale
+name|void
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|gdisp
+specifier|static
+name|GType
+name|display_type
+init|=
+literal|0
 decl_stmt|;
-name|gchar
-name|title
-index|[
-name|MAX_TITLE_BUF
-index|]
-decl_stmt|;
-comment|/*  If there isn't an interface, never create a gdisplay  */
 if|if
 condition|(
-name|no_interface
+operator|!
+name|display_type
 condition|)
-return|return
-name|NULL
-return|;
-comment|/*    *  Set all GDisplay parameters...    */
-name|gdisp
-operator|=
-name|g_new0
+block|{
+specifier|static
+specifier|const
+name|GTypeInfo
+name|display_info
+init|=
+block|{
+sizeof|sizeof
 argument_list|(
-name|GDisplay
+name|GimpDisplayClass
+argument_list|)
+block|,
+operator|(
+name|GBaseInitFunc
+operator|)
+name|NULL
+block|,
+operator|(
+name|GBaseFinalizeFunc
+operator|)
+name|NULL
+block|,
+operator|(
+name|GClassInitFunc
+operator|)
+name|gimp_display_class_init
+block|,
+name|NULL
+block|,
+comment|/* class_finalize */
+name|NULL
+block|,
+comment|/* class_data     */
+sizeof|sizeof
+argument_list|(
+name|GimpDisplay
+argument_list|)
+block|,
+literal|0
+block|,
+comment|/* n_preallocs    */
+operator|(
+name|GInstanceInitFunc
+operator|)
+name|gimp_display_init
+block|,       }
+decl_stmt|;
+name|display_type
+operator|=
+name|g_type_register_static
+argument_list|(
+name|GIMP_TYPE_OBJECT
 argument_list|,
-literal|1
+literal|"GimpDisplay"
+argument_list|,
+operator|&
+name|display_info
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
+block|}
+return|return
+name|display_type
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_display_class_init (GimpDisplayClass * klass)
+name|gimp_display_class_init
+parameter_list|(
+name|GimpDisplayClass
+modifier|*
+name|klass
+parameter_list|)
+block|{
+name|GObjectClass
+modifier|*
+name|object_class
+decl_stmt|;
+name|object_class
+operator|=
+name|G_OBJECT_CLASS
+argument_list|(
+name|klass
+argument_list|)
+expr_stmt|;
+name|parent_class
+operator|=
+name|g_type_class_peek_parent
+argument_list|(
+name|klass
+argument_list|)
+expr_stmt|;
+name|object_class
+operator|->
+name|finalize
+operator|=
+name|gimp_display_finalize
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_display_init (GimpDisplay * gdisp)
+name|gimp_display_init
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+block|{
 name|gdisp
 operator|->
 name|ID
@@ -816,15 +949,13 @@ name|gdisp
 operator|->
 name|gimage
 operator|=
-name|gimage
+name|NULL
 expr_stmt|;
 name|gdisp
 operator|->
 name|instance
 operator|=
-name|gimage
-operator|->
-name|instance_count
+literal|0
 expr_stmt|;
 name|gdisp
 operator|->
@@ -866,7 +997,7 @@ name|gdisp
 operator|->
 name|scale
 operator|=
-name|scale
+literal|0
 expr_stmt|;
 name|gdisp
 operator|->
@@ -1023,6 +1154,168 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* DISPLAY_FILTERS */
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_display_finalize (GObject * object)
+name|gimp_display_finalize
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+block|{
+name|GimpDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|object
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gdisp
+operator|=
+name|GIMP_DISPLAY
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
+name|G_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|finalize
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|GimpDisplay
+modifier|*
+DECL|function|gdisplay_new (GimpImage * gimage,guint scale)
+name|gdisplay_new
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|guint
+name|scale
+parameter_list|)
+block|{
+name|GimpDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
+name|gchar
+name|title
+index|[
+name|MAX_TITLE_BUF
+index|]
+decl_stmt|;
+comment|/*  If there isn't an interface, never create a gdisplay  */
+if|if
+condition|(
+name|no_interface
+condition|)
+return|return
+name|NULL
+return|;
+comment|/*    *  Set all GimpDisplay parameters...    */
+name|gdisp
+operator|=
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_DISPLAY
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gdisp
+operator|->
+name|gimage
+operator|=
+name|gimage
+expr_stmt|;
+name|gdisp
+operator|->
+name|instance
+operator|=
+name|gimage
+operator|->
+name|instance_count
+expr_stmt|;
+name|gdisp
+operator|->
+name|scale
+operator|=
+name|scale
+expr_stmt|;
+name|gimage
+operator|->
+name|instance_count
+operator|++
+expr_stmt|;
+comment|/* this is obsolete */
+name|gimage
+operator|->
+name|disp_count
+operator|++
+expr_stmt|;
+name|g_object_ref
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/* We're interested in clean and dirty signals so we can update the    * title if need be.    */
+name|g_signal_connect
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+literal|"dirty"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gdisplay_cleandirty_handler
+argument_list|)
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+literal|"clean"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gdisplay_cleandirty_handler
+argument_list|)
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
 comment|/* format the title */
 name|gdisplay_format_title
 argument_list|(
@@ -1126,60 +1419,6 @@ argument_list|,
 name|GIMP_TOOL_CURSOR_NONE
 argument_list|,
 name|GIMP_CURSOR_MODIFIER_NONE
-argument_list|)
-expr_stmt|;
-name|gimage
-operator|->
-name|instance_count
-operator|++
-expr_stmt|;
-comment|/* this is obsolete */
-name|gimage
-operator|->
-name|disp_count
-operator|++
-expr_stmt|;
-name|g_object_ref
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/* We're interested in clean and dirty signals so we can update the    * title if need be.    */
-name|g_signal_connect
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|,
-literal|"dirty"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gdisplay_cleandirty_handler
-argument_list|)
-argument_list|,
-name|gdisp
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|,
-literal|"clean"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gdisplay_cleandirty_handler
-argument_list|)
-argument_list|,
-name|gdisp
 argument_list|)
 expr_stmt|;
 return|return
@@ -1298,10 +1537,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_format_title (GDisplay * gdisp,gchar * title,gint title_len)
+DECL|function|gdisplay_format_title (GimpDisplay * gdisp,gchar * title,gint title_len)
 name|gdisplay_format_title
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -1331,6 +1570,14 @@ name|gchar
 modifier|*
 name|format
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimage
 operator|=
 name|gdisp
@@ -1773,10 +2020,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_delete (GDisplay * gdisp)
+DECL|function|gdisplay_delete (GimpDisplay * gdisp)
 name|gdisplay_delete
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1785,6 +2032,14 @@ name|GimpTool
 modifier|*
 name|active_tool
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_hash_table_remove
 argument_list|(
 name|display_ht
@@ -1853,7 +2108,13 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/*  free the selection structure  */
+if|if
+condition|(
+name|gdisp
+operator|->
+name|select
+condition|)
+block|{
 name|selection_free
 argument_list|(
 name|gdisp
@@ -1861,6 +2122,13 @@ operator|->
 name|select
 argument_list|)
 expr_stmt|;
+name|gdisp
+operator|->
+name|select
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 comment|/* If this gdisplay was idlerendering at the time when it was deleted,      deactivate the idlerendering thread before deletion! */
 if|if
 condition|(
@@ -1871,7 +2139,7 @@ operator|.
 name|active
 condition|)
 block|{
-name|gtk_idle_remove
+name|g_source_remove
 argument_list|(
 name|gdisp
 operator|->
@@ -1920,6 +2188,7 @@ name|gdisp
 operator|->
 name|scroll_gc
 condition|)
+block|{
 name|gdk_gc_unref
 argument_list|(
 name|gdisp
@@ -1927,6 +2196,13 @@ operator|->
 name|scroll_gc
 argument_list|)
 expr_stmt|;
+name|gdisp
+operator|->
+name|scroll_gc
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 comment|/*  free the area lists  */
 name|gdisplay_free_area_list
 argument_list|(
@@ -1952,7 +2228,13 @@ name|update_areas
 argument_list|)
 expr_stmt|;
 comment|/*  remove dialogs before removing the image because they may want to    *  disconnect from image signals    */
-comment|/*  insure that if a window information dialog exists, it is removed  */
+if|if
+condition|(
+name|gdisp
+operator|->
+name|window_info_dialog
+condition|)
+block|{
 name|info_window_free
 argument_list|(
 name|gdisp
@@ -1960,7 +2242,20 @@ operator|->
 name|window_info_dialog
 argument_list|)
 expr_stmt|;
-comment|/* Remove navigation dialog */
+name|gdisp
+operator|->
+name|window_info_dialog
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|gdisp
+operator|->
+name|window_nav_dialog
+condition|)
+block|{
 name|nav_dialog_free
 argument_list|(
 name|gdisp
@@ -1970,6 +2265,13 @@ operator|->
 name|window_nav_dialog
 argument_list|)
 expr_stmt|;
+name|gdisp
+operator|->
+name|window_nav_dialog
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 comment|/*  free the gimage  */
 name|gdisp
 operator|->
@@ -1994,6 +2296,7 @@ name|gdisp
 operator|->
 name|nav_popup
 condition|)
+block|{
 name|nav_dialog_free
 argument_list|(
 name|gdisp
@@ -2003,12 +2306,20 @@ operator|->
 name|nav_popup
 argument_list|)
 expr_stmt|;
+name|gdisp
+operator|->
+name|nav_popup
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|gdisp
 operator|->
 name|icon_timeout_id
 condition|)
+block|{
 name|g_source_remove
 argument_list|(
 name|gdisp
@@ -2016,12 +2327,20 @@ operator|->
 name|icon_timeout_id
 argument_list|)
 expr_stmt|;
+name|gdisp
+operator|->
+name|icon_timeout_id
+operator|=
+literal|0
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|gdisp
 operator|->
 name|icon_idle_id
 condition|)
+block|{
 name|g_source_remove
 argument_list|(
 name|gdisp
@@ -2029,6 +2348,20 @@ operator|->
 name|icon_idle_id
 argument_list|)
 expr_stmt|;
+name|gdisp
+operator|->
+name|icon_idle_id
+operator|=
+literal|0
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|gdisp
+operator|->
+name|icon
+condition|)
+block|{
 name|gdk_drawable_unref
 argument_list|(
 name|gdisp
@@ -2036,6 +2369,20 @@ operator|->
 name|icon
 argument_list|)
 expr_stmt|;
+name|gdisp
+operator|->
+name|icon
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|gdisp
+operator|->
+name|iconmask
+condition|)
+block|{
 name|gdk_drawable_unref
 argument_list|(
 name|gdisp
@@ -2043,6 +2390,20 @@ operator|->
 name|iconmask
 argument_list|)
 expr_stmt|;
+name|gdisp
+operator|->
+name|iconmask
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|gdisp
+operator|->
+name|shell
+condition|)
+block|{
 name|gtk_widget_destroy
 argument_list|(
 name|gdisp
@@ -2050,9 +2411,19 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-name|g_free
+name|gdisp
+operator|->
+name|shell
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+name|g_object_unref
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|gdisp
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2070,55 +2441,29 @@ modifier|*
 name|list
 parameter_list|)
 block|{
-name|GSList
-modifier|*
-name|l
-decl_stmt|;
-name|GimpArea
-modifier|*
-name|ga
-decl_stmt|;
-for|for
-control|(
-name|l
-operator|=
-name|list
-init|;
-name|l
-condition|;
-name|l
-operator|=
-name|g_slist_next
-argument_list|(
-name|l
-argument_list|)
-control|)
-block|{
-name|ga
-operator|=
-operator|(
-name|GimpArea
-operator|*
-operator|)
-name|l
-operator|->
-name|data
-expr_stmt|;
-name|g_free
-argument_list|(
-name|ga
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|list
 condition|)
+block|{
+name|g_slist_foreach
+argument_list|(
+name|list
+argument_list|,
+operator|(
+name|GFunc
+operator|)
+name|g_free
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_slist_free
 argument_list|(
 name|list
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|NULL
 return|;
@@ -2152,8 +2497,6 @@ decl_stmt|;
 name|GSList
 modifier|*
 name|l
-init|=
-name|list
 decl_stmt|;
 name|gint
 name|area1
@@ -2176,12 +2519,22 @@ argument_list|,
 name|ga1
 argument_list|)
 expr_stmt|;
-while|while
-condition|(
+for|for
+control|(
 name|l
-condition|)
+operator|=
+name|list
+init|;
+name|l
+condition|;
+name|l
+operator|=
+name|g_slist_next
+argument_list|(
+name|l
+argument_list|)
+control|)
 block|{
-comment|/*  process the data  */
 name|ga2
 operator|=
 operator|(
@@ -2302,6 +2655,7 @@ operator|)
 operator|<
 name|area3
 condition|)
+block|{
 name|new_list
 operator|=
 name|g_slist_prepend
@@ -2311,6 +2665,7 @@ argument_list|,
 name|ga2
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 block|{
 name|ga1
@@ -2379,13 +2734,6 @@ name|ga2
 argument_list|)
 expr_stmt|;
 block|}
-name|l
-operator|=
-name|g_slist_next
-argument_list|(
-name|l
-argument_list|)
-expr_stmt|;
 block|}
 if|if
 condition|(
@@ -2404,11 +2752,11 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|idle_render_next_area (GDisplay * gdisp)
+name|gint
+DECL|function|idle_render_next_area (GimpDisplay * gdisp)
 name|idle_render_next_area
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2437,10 +2785,8 @@ name|NULL
 condition|)
 block|{
 return|return
-operator|(
 operator|-
 literal|1
-operator|)
 return|;
 block|}
 name|ga
@@ -2536,20 +2882,18 @@ name|ga
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/* Unless specified otherwise, display re-rendering is organised  by IdleRender, which amalgamates areas to be re-rendered and  breaks them into bite-sized chunks which are chewed on in a low-  priority idle thread.  This greatly improves responsiveness for  many GIMP operations.  -- Adam */
+comment|/* Unless specified otherwise, display re-rendering is organised by  * IdleRender, which amalgamates areas to be re-rendered and breaks  * them into bite-sized chunks which are chewed on in a low- priority  * idle thread.  This greatly improves responsiveness for many GIMP  * operations.  -- Adam  */
 end_comment
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|idlerender_callback (gpointer data)
 name|idlerender_callback
 parameter_list|(
@@ -2578,7 +2922,7 @@ name|workw
 decl_stmt|,
 name|workh
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 init|=
@@ -2803,10 +3147,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_idlerender_init (GDisplay * gdisp)
+DECL|function|gdisplay_idlerender_init (GimpDisplay * gdisp)
 name|gdisplay_idlerender_init
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2823,7 +3167,7 @@ modifier|*
 name|new_ga
 decl_stmt|;
 comment|/*  gdisplay_install_override_cursor(gdisp, GDK_CIRCLE); */
-comment|/* We need to merge the IdleRender's and the GDisplay's update_areas list      to keep track of which of the updates have been flushed and hence need      to be drawn.   */
+comment|/* We need to merge the IdleRender's and the GimpDisplay's update_areas list      to keep track of which of the updates have been flushed and hence need      to be drawn.   */
 name|list
 operator|=
 name|gdisp
@@ -3058,10 +3402,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_flush_displays_only (GDisplay * gdisp)
+DECL|function|gdisplay_flush_displays_only (GimpDisplay * gdisp)
 name|gdisplay_flush_displays_only
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -3074,6 +3418,14 @@ name|GimpArea
 modifier|*
 name|ga
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|list
 operator|=
 name|gdisp
@@ -3217,10 +3569,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_flush_whenever (GDisplay * gdisp,gboolean now)
+DECL|function|gdisplay_flush_whenever (GimpDisplay * gdisp,gboolean now)
 name|gdisplay_flush_whenever
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -3417,14 +3769,22 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_flush (GDisplay * gdisp)
+DECL|function|gdisplay_flush (GimpDisplay * gdisp)
 name|gdisplay_flush
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Redraw on idle time */
 name|gdisplay_flush_whenever
 argument_list|(
@@ -3438,14 +3798,22 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_flush_now (GDisplay * gdisp)
+DECL|function|gdisplay_flush_now (GimpDisplay * gdisp)
 name|gdisplay_flush_now
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Redraw NOW */
 name|gdisplay_flush_whenever
 argument_list|(
@@ -3475,7 +3843,7 @@ name|list
 init|=
 name|display_list
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -3487,7 +3855,7 @@ block|{
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|list
@@ -3534,10 +3902,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_update_icon (GDisplay * gdisp)
+DECL|function|gdisplay_update_icon (GimpDisplay * gdisp)
 name|gdisplay_update_icon
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -3596,6 +3964,14 @@ decl_stmt|;
 name|gdouble
 name|factor
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -4298,14 +4674,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|data
@@ -4393,7 +4769,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -4401,7 +4777,7 @@ comment|/* we should check this for validity... */
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|data
@@ -4449,7 +4825,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -4457,7 +4833,7 @@ comment|/* we should check this for validity... */
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|data
@@ -4481,10 +4857,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_draw_guides (GDisplay * gdisp)
+DECL|function|gdisplay_draw_guides (GimpDisplay * gdisp)
 name|gdisplay_draw_guides
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -4497,6 +4873,14 @@ name|GimpGuide
 modifier|*
 name|guide
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gdisp
@@ -4550,10 +4934,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_draw_guide (GDisplay * gdisp,GimpGuide * guide,gboolean active)
+DECL|function|gdisplay_draw_guide (GimpDisplay * gdisp,GimpGuide * guide,gboolean active)
 name|gdisplay_draw_guide
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -4619,6 +5003,14 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|guide
@@ -5121,10 +5513,10 @@ end_function
 begin_function
 name|GimpGuide
 modifier|*
-DECL|function|gdisplay_find_guide (GDisplay * gdisp,gdouble x,gdouble y)
+DECL|function|gdisplay_find_guide (GimpDisplay * gdisp,gdouble x,gdouble y)
 name|gdisplay_find_guide
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -5156,6 +5548,16 @@ decl_stmt|;
 name|gdouble
 name|pos
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gdisp
@@ -5343,10 +5745,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gdisplay_snap_point (GDisplay * gdisp,gdouble x,gdouble y,gdouble * tx,gdouble * ty)
+DECL|function|gdisplay_snap_point (GimpDisplay * gdisp,gdouble x,gdouble y,gdouble * tx,gdouble * ty)
 name|gdisplay_snap_point
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -5399,6 +5801,16 @@ name|snapped
 init|=
 name|FALSE
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 operator|*
 name|tx
 operator|=
@@ -5668,10 +6080,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_snap_rectangle (GDisplay * gdisp,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gdouble * tx1,gdouble * ty1)
+DECL|function|gdisplay_snap_rectangle (GimpDisplay * gdisp,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gdouble * tx1,gdouble * ty1)
 name|gdisplay_snap_rectangle
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -5711,6 +6123,14 @@ name|snap1
 decl_stmt|,
 name|snap2
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 operator|*
 name|tx1
 operator|=
@@ -5826,10 +6246,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_draw_cursor (GDisplay * gdisp)
+DECL|function|gdisplay_draw_cursor (GimpDisplay * gdisp)
 name|gdisplay_draw_cursor
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -5848,6 +6268,14 @@ name|gdisp
 operator|->
 name|cursor_y
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gdk_draw_line
 argument_list|(
 name|gdisp
@@ -6043,10 +6471,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_update_cursor (GDisplay * gdisp,gint x,gint y)
+DECL|function|gdisplay_update_cursor (GimpDisplay * gdisp,gint x,gint y)
 name|gdisplay_update_cursor
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -6072,6 +6500,14 @@ decl_stmt|;
 name|gint
 name|t_y
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|new_cursor
 operator|=
 name|gdisp
@@ -6357,10 +6793,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_set_dot_for_dot (GDisplay * gdisp,gboolean dot_for_dot)
+DECL|function|gdisplay_set_dot_for_dot (GimpDisplay * gdisp,gboolean dot_for_dot)
 name|gdisplay_set_dot_for_dot
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -6368,6 +6804,14 @@ name|gboolean
 name|dot_for_dot
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|dot_for_dot
@@ -6409,10 +6853,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gdisplay_resize_cursor_label (GDisplay * gdisp)
+DECL|function|gdisplay_resize_cursor_label (GimpDisplay * gdisp)
 name|gdisplay_resize_cursor_label
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -6436,6 +6880,14 @@ decl_stmt|;
 name|gint
 name|label_frame_size_difference
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gdisp
@@ -6711,14 +7163,22 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_remove_and_delete (GDisplay * gdisp)
+DECL|function|gdisplay_remove_and_delete (GimpDisplay * gdisp)
 name|gdisplay_remove_and_delete
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* remove the display from the list */
 name|display_list
 operator|=
@@ -6744,10 +7204,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_add_update_area (GDisplay * gdisp,gint x,gint y,gint w,gint h)
+DECL|function|gdisplay_add_update_area (GimpDisplay * gdisp,gint x,gint y,gint w,gint h)
 name|gdisplay_add_update_area
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -6768,18 +7228,21 @@ name|GimpArea
 modifier|*
 name|ga
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|ga
 operator|=
-operator|(
-name|GimpArea
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|GimpArea
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|ga
@@ -6873,10 +7336,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_add_display_area (GDisplay * gdisp,gint x,gint y,gint w,gint h)
+DECL|function|gdisplay_add_display_area (GimpDisplay * gdisp,gint x,gint y,gint w,gint h)
 name|gdisplay_add_display_area
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -6897,6 +7360,14 @@ name|GimpArea
 modifier|*
 name|ga
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|ga
 operator|=
 name|g_new
@@ -6989,10 +7460,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_paint_area (GDisplay * gdisp,gint x,gint y,gint w,gint h)
+DECL|function|gdisplay_paint_area (GimpDisplay * gdisp,gint x,gint y,gint w,gint h)
 name|gdisplay_paint_area
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -7239,10 +7710,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_display_area (GDisplay * gdisp,gint x,gint y,gint w,gint h)
+DECL|function|gdisplay_display_area (GimpDisplay * gdisp,gint x,gint y,gint w,gint h)
 name|gdisplay_display_area
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -7807,10 +8278,10 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gdisplay_mask_value (GDisplay * gdisp,gint x,gint y)
+DECL|function|gdisplay_mask_value (GimpDisplay * gdisp,gint x,gint y)
 name|gdisplay_mask_value
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -7821,6 +8292,16 @@ name|gint
 name|y
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 comment|/*  move the coordinates from screen space to image space  */
 name|gdisplay_untransform_coords
 argument_list|(
@@ -7857,11 +8338,11 @@ block|}
 end_function
 
 begin_function
-name|gint
-DECL|function|gdisplay_mask_bounds (GDisplay * gdisp,gint * x1,gint * y1,gint * x2,gint * y2)
+name|gboolean
+DECL|function|gdisplay_mask_bounds (GimpDisplay * gdisp,gint * x1,gint * y1,gint * x2,gint * y2)
 name|gdisplay_mask_bounds
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -7892,6 +8373,16 @@ decl_stmt|;
 name|gint
 name|off_y
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 comment|/*  If there is a floating selection, handle things differently  */
 if|if
 condition|(
@@ -8172,10 +8663,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_transform_coords (GDisplay * gdisp,gint x,gint y,gint * nx,gint * ny,gboolean use_offsets)
+DECL|function|gdisplay_transform_coords (GimpDisplay * gdisp,gint x,gint y,gint * nx,gint * ny,gboolean use_offsets)
 name|gdisplay_transform_coords
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -8209,6 +8700,14 @@ decl_stmt|;
 name|gint
 name|offset_y
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  transform from image coordinates to screen coordinates  */
 name|scalex
 operator|=
@@ -8312,10 +8811,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_untransform_coords (GDisplay * gdisp,gint x,gint y,gint * nx,gint * ny,gboolean round,gboolean use_offsets)
+DECL|function|gdisplay_untransform_coords (GimpDisplay * gdisp,gint x,gint y,gint * nx,gint * ny,gboolean round,gboolean use_offsets)
 name|gdisplay_untransform_coords
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -8352,6 +8851,14 @@ decl_stmt|;
 name|gint
 name|offset_y
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|x
 operator|-=
 name|gdisp
@@ -8498,10 +9005,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_transform_coords_f (GDisplay * gdisp,gdouble x,gdouble y,gdouble * nx,gdouble * ny,gboolean use_offsets)
+DECL|function|gdisplay_transform_coords_f (GimpDisplay * gdisp,gdouble x,gdouble y,gdouble * nx,gdouble * ny,gboolean use_offsets)
 name|gdisplay_transform_coords_f
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -8535,6 +9042,14 @@ decl_stmt|;
 name|gint
 name|offset_y
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  transform from gimp coordinates to screen coordinates  */
 name|scalex
 operator|=
@@ -8628,10 +9143,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_untransform_coords_f (GDisplay * gdisp,gdouble x,gdouble y,gdouble * nx,gdouble * ny,gboolean use_offsets)
+DECL|function|gdisplay_untransform_coords_f (GimpDisplay * gdisp,gdouble x,gdouble y,gdouble * nx,gdouble * ny,gboolean use_offsets)
 name|gdisplay_untransform_coords_f
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -8665,6 +9180,14 @@ decl_stmt|;
 name|gint
 name|offset_y
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|x
 operator|-=
 name|gdisp
@@ -8760,10 +9283,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gdisplay_real_install_tool_cursor (GDisplay * gdisp,GdkCursorType cursor_type,GimpToolCursorType tool_cursor,GimpCursorModifier modifier,gboolean always_install)
+DECL|function|gdisplay_real_install_tool_cursor (GimpDisplay * gdisp,GdkCursorType cursor_type,GimpToolCursorType tool_cursor,GimpCursorModifier modifier,gboolean always_install)
 name|gdisplay_real_install_tool_cursor
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -8780,6 +9303,14 @@ name|gboolean
 name|always_install
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|cursor_type
@@ -8902,10 +9433,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_install_tool_cursor (GDisplay * gdisp,GdkCursorType cursor_type,GimpToolCursorType tool_cursor,GimpCursorModifier modifier)
+DECL|function|gdisplay_install_tool_cursor (GimpDisplay * gdisp,GdkCursorType cursor_type,GimpToolCursorType tool_cursor,GimpCursorModifier modifier)
 name|gdisplay_install_tool_cursor
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -8919,6 +9450,14 @@ name|GimpCursorModifier
 name|modifier
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -8944,10 +9483,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_install_override_cursor (GDisplay * gdisp,GdkCursorType cursor_type)
+DECL|function|gdisplay_install_override_cursor (GimpDisplay * gdisp,GdkCursorType cursor_type)
 name|gdisplay_install_override_cursor
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -8955,6 +9494,14 @@ name|GdkCursorType
 name|cursor_type
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -9026,14 +9573,22 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_remove_override_cursor (GDisplay * gdisp)
+DECL|function|gdisplay_remove_override_cursor (GimpDisplay * gdisp)
 name|gdisplay_remove_override_cursor
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gdisp
@@ -9072,14 +9627,22 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_remove_tool_cursor (GDisplay * gdisp)
+DECL|function|gdisplay_remove_tool_cursor (GimpDisplay * gdisp)
 name|gdisplay_remove_tool_cursor
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gdk_window_set_cursor
 argument_list|(
 name|gdisp
@@ -9096,10 +9659,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_set_menu_sensitivity (GDisplay * gdisp)
+DECL|function|gdisplay_set_menu_sensitivity (GimpDisplay * gdisp)
 name|gdisplay_set_menu_sensitivity
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -9164,6 +9727,17 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+operator|!
+name|gdisp
+operator|||
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gdisp
@@ -10134,10 +10708,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_expose_area (GDisplay * gdisp,gint x,gint y,gint w,gint h)
+DECL|function|gdisplay_expose_area (GimpDisplay * gdisp,gint x,gint y,gint w,gint h)
 name|gdisplay_expose_area
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -10154,6 +10728,14 @@ name|gint
 name|h
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gdisplay_add_display_area
 argument_list|(
 name|gdisp
@@ -10172,10 +10754,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_expose_guide (GDisplay * gdisp,GimpGuide * guide)
+DECL|function|gdisplay_expose_guide (GimpDisplay * gdisp,GimpGuide * guide)
 name|gdisplay_expose_guide
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -10190,6 +10772,14 @@ decl_stmt|;
 name|gint
 name|y
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|guide
@@ -10273,14 +10863,22 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_expose_full (GDisplay * gdisp)
+DECL|function|gdisplay_expose_full (GimpDisplay * gdisp)
 name|gdisplay_expose_full
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gdisplay_add_display_area
 argument_list|(
 name|gdisp
@@ -10303,17 +10901,25 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_selection_visibility (GDisplay * gdisp,SelectionControl function)
+DECL|function|gdisplay_selection_visibility (GimpDisplay * gdisp,GimpSelectionControl control)
 name|gdisplay_selection_visibility
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|SelectionControl
-name|function
+name|GimpSelectionControl
+name|control
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gdisp
@@ -10323,11 +10929,11 @@ condition|)
 block|{
 switch|switch
 condition|(
-name|function
+name|control
 condition|)
 block|{
 case|case
-name|SELECTION_OFF
+name|GIMP_SELECTION_OFF
 case|:
 name|selection_invis
 argument_list|(
@@ -10338,7 +10944,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SELECTION_LAYER_OFF
+name|GIMP_SELECTION_LAYER_OFF
 case|:
 name|selection_layer_invis
 argument_list|(
@@ -10349,7 +10955,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SELECTION_ON
+name|GIMP_SELECTION_ON
 case|:
 name|selection_start
 argument_list|(
@@ -10362,7 +10968,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SELECTION_PAUSE
+name|GIMP_SELECTION_PAUSE
 case|:
 name|selection_pause
 argument_list|(
@@ -10373,7 +10979,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SELECTION_RESUME
+name|GIMP_SELECTION_RESUME
 case|:
 name|selection_resume
 argument_list|(
@@ -10401,7 +11007,7 @@ comment|/**************************************************/
 end_comment
 
 begin_function
-name|GDisplay
+name|GimpDisplay
 modifier|*
 DECL|function|gdisplay_active (void)
 name|gdisplay_active
@@ -10445,7 +11051,7 @@ block|}
 end_function
 
 begin_function
-name|GDisplay
+name|GimpDisplay
 modifier|*
 DECL|function|gdisplay_get_by_ID (Gimp * gimp,gint ID)
 name|gdisplay_get_by_ID
@@ -10458,7 +11064,7 @@ name|gint
 name|ID
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -10486,7 +11092,7 @@ block|{
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|list
@@ -10513,10 +11119,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_update_title (GDisplay * gdisp)
+DECL|function|gdisplay_update_title (GimpDisplay * gdisp)
 name|gdisplay_update_title
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -10530,6 +11136,14 @@ decl_stmt|;
 name|guint
 name|context_id
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|gdisp
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* format the title */
 name|gdisplay_format_title
 argument_list|(
@@ -10605,7 +11219,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -10633,7 +11247,7 @@ block|{
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|list
@@ -10667,7 +11281,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -10695,7 +11309,7 @@ block|{
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|list
@@ -10729,7 +11343,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -10757,7 +11371,7 @@ block|{
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|list
@@ -10803,7 +11417,7 @@ name|gint
 name|h
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -10831,7 +11445,7 @@ block|{
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|list
@@ -10873,7 +11487,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -10905,7 +11519,7 @@ block|{
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|list
@@ -10970,7 +11584,7 @@ modifier|*
 name|guide
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -10998,7 +11612,7 @@ block|{
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|list
@@ -11034,7 +11648,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -11062,7 +11676,7 @@ block|{
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|list
@@ -11112,7 +11726,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -11140,7 +11754,7 @@ block|{
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|list
@@ -11172,7 +11786,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -11200,7 +11814,7 @@ block|{
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|list
@@ -11224,7 +11838,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -11252,7 +11866,7 @@ block|{
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|list
@@ -11301,18 +11915,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplays_selection_visibility (GimpImage * gimage,SelectionControl function)
+DECL|function|gdisplays_selection_visibility (GimpImage * gimage,GimpSelectionControl control)
 name|gdisplays_selection_visibility
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|SelectionControl
-name|function
+name|GimpSelectionControl
+name|control
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -11340,7 +11954,7 @@ block|{
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|list
@@ -11359,7 +11973,7 @@ name|gdisplay_selection_visibility
 argument_list|(
 name|gdisp
 argument_list|,
-name|function
+name|control
 argument_list|)
 expr_stmt|;
 block|}
@@ -11404,7 +12018,7 @@ if|if
 condition|(
 operator|(
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|list
@@ -11437,11 +12051,11 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-comment|/*  destroying the shell removes the GDisplay from the list, so    *  do a while loop "around" the first element to get them all    */
+comment|/*  destroying the shell removes the GimpDisplay from the list, so    *  do a while loop "around" the first element to get them all    */
 while|while
 condition|(
 name|display_list
@@ -11450,7 +12064,7 @@ block|{
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|display_list
@@ -11469,12 +12083,12 @@ block|}
 end_function
 
 begin_function
-name|GDisplay
+name|GimpDisplay
 modifier|*
-DECL|function|gdisplays_check_valid (GDisplay * gtest,GimpImage * gimage)
+DECL|function|gdisplays_check_valid (GimpDisplay * gtest,GimpImage * gimage)
 name|gdisplays_check_valid
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gtest
 parameter_list|,
@@ -11484,11 +12098,11 @@ name|gimage
 parameter_list|)
 block|{
 comment|/* Give a gdisp check that it is still valid and points to the required    * GimpImage. If not return the first gDisplay that does point to the     * gimage. If none found return NULL;    */
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp_found
 init|=
@@ -11518,7 +12132,7 @@ block|{
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|list
@@ -11621,7 +12235,7 @@ block|{
 name|gdisplay_flush_whenever
 argument_list|(
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|list
@@ -11674,10 +12288,10 @@ end_function
 begin_function
 specifier|static
 name|guint
-DECL|function|gdisplay_hash (GDisplay * display)
+DECL|function|gdisplay_hash (GimpDisplay * display)
 name|gdisplay_hash
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
@@ -11693,10 +12307,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_reconnect (GDisplay * gdisp,GimpImage * gimage)
+DECL|function|gdisplay_reconnect (GimpDisplay * gdisp,GimpImage * gimage)
 name|gdisplay_reconnect
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -11710,13 +12324,18 @@ name|instance
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
 name|gdisp
-operator|!=
-name|NULL
-operator|&&
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
 name|gimage
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -11803,17 +12422,9 @@ name|instance
 operator|=
 name|instance
 expr_stmt|;
-name|gtk_object_ref
+name|g_object_ref
 argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_object_sink
-argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gimage
 argument_list|)
@@ -11890,7 +12501,7 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -11965,7 +12576,7 @@ modifier|*
 name|data
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 init|=

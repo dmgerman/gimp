@@ -245,7 +245,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c8e5660103
+DECL|enum|__anon27eb5eea0103
 block|{
 DECL|enumerator|PAINT
 name|PAINT
@@ -1863,13 +1863,13 @@ operator|=
 literal|0
 expr_stmt|;
 comment|/*  pause the current selection and grab the pointer  */
-name|gdisplays_selection_visibility
+name|gimp_image_selection_control
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|SELECTION_PAUSE
+name|GIMP_SELECTION_PAUSE
 argument_list|)
 expr_stmt|;
 comment|/* add motion memory if perfectmouse is set */
@@ -2226,13 +2226,13 @@ name|tool
 argument_list|)
 expr_stmt|;
 comment|/*  resume the current selection and ungrab the pointer  */
-name|gdisplays_selection_visibility
+name|gimp_image_selection_control
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|SELECTION_RESUME
+name|GIMP_SELECTION_RESUME
 argument_list|)
 expr_stmt|;
 name|gdk_pointer_ungrab

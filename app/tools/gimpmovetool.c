@@ -1592,7 +1592,7 @@ name|gdisplay_selection_visibility
 argument_list|(
 name|gdisp
 argument_list|,
-name|SELECTION_RESUME
+name|GIMP_SELECTION_RESUME
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush
@@ -2226,7 +2226,7 @@ name|gdisplay_selection_visibility
 argument_list|(
 name|gdisp
 argument_list|,
-name|SELECTION_PAUSE
+name|GIMP_SELECTION_PAUSE
 argument_list|)
 expr_stmt|;
 name|tool
@@ -2336,7 +2336,7 @@ name|gdisplay_selection_visibility
 argument_list|(
 name|gdisp
 argument_list|,
-name|SELECTION_PAUSE
+name|GIMP_SELECTION_PAUSE
 argument_list|)
 expr_stmt|;
 name|tool

@@ -1229,7 +1229,7 @@ name|gdisplay_selection_visibility
 argument_list|(
 name|gdisp
 argument_list|,
-name|SELECTION_PAUSE
+name|GIMP_SELECTION_PAUSE
 argument_list|)
 expr_stmt|;
 comment|/* initialize the statusbar display */
@@ -1330,7 +1330,7 @@ name|gdisplay_selection_visibility
 argument_list|(
 name|gdisp
 argument_list|,
-name|SELECTION_RESUME
+name|GIMP_SELECTION_RESUME
 argument_list|)
 expr_stmt|;
 name|gdk_pointer_ungrab

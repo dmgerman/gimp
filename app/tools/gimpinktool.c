@@ -4838,13 +4838,13 @@ operator|=
 literal|0
 expr_stmt|;
 comment|/*  pause the current selection and grab the pointer  */
-name|gdisplays_selection_visibility
+name|gimp_image_selection_control
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|SELECTION_PAUSE
+name|GIMP_SELECTION_PAUSE
 argument_list|)
 expr_stmt|;
 comment|/* add motion memory if you press mod1 first ^ perfectmouse */
@@ -5063,13 +5063,13 @@ operator|->
 name|gimage
 expr_stmt|;
 comment|/*  resume the current selection and ungrab the pointer  */
-name|gdisplays_selection_visibility
+name|gimp_image_selection_control
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|SELECTION_RESUME
+name|GIMP_SELECTION_RESUME
 argument_list|)
 expr_stmt|;
 name|gdk_pointer_ungrab
@@ -6451,7 +6451,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon29d7bef10103
+DECL|enum|__anon2c9b4b3d0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

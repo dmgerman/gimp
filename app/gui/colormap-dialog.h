@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtkdialog.h>
+file|<gtk/gtkvbox.h>
 end_include
 
 begin_define
@@ -38,7 +38,7 @@ name|GIMP_COLORMAP_DIALOG
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST((obj), GIMP_TYPE_COLORMAP_DIALOG, GimpColormapDialog))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_COLORMAP_DIALOG, GimpColormapDialog))
 end_define
 
 begin_define
@@ -49,7 +49,7 @@ name|GIMP_COLORMAP_DIALOG_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST((klass), GIMP_TYPE_COLORMAP_DIALOG, GimpColormapDialogClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_COLORMAP_DIALOG, GimpColormapDialogClass))
 end_define
 
 begin_define
@@ -60,7 +60,7 @@ name|GIMP_IS_COLORMAP_DIALOG
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE((obj), GIMP_TYPE_COLORMAP_DIALOG))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_COLORMAP_DIALOG))
 end_define
 
 begin_define
@@ -71,7 +71,18 @@ name|GIMP_IS_COLORMAP_DIALOG_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE((klass), GIMP_TYPE_COLORMAP_DIALOG))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_COLORMAP_DIALOG))
+end_define
+
+begin_define
+DECL|macro|GIMP_COLORMAP_DIALOG_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_COLORMAP_DIALOG_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_COLORMAP_DIALOG, GimpColormapDialogClass))
 end_define
 
 begin_typedef
@@ -97,9 +108,9 @@ DECL|struct|_GimpColormapDialog
 struct|struct
 name|_GimpColormapDialog
 block|{
-DECL|member|parent
+DECL|member|parent_instance
 name|GtkVBox
-name|parent
+name|parent_instance
 decl_stmt|;
 DECL|member|image
 name|GimpImage
@@ -201,7 +212,7 @@ struct|;
 end_struct
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_colormap_dialog_get_type
 parameter_list|(
 name|void

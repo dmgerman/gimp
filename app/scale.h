@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|change_scale
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -34,7 +34,7 @@ begin_function_decl
 name|void
 name|resize_display
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -51,7 +51,7 @@ begin_function_decl
 name|void
 name|shrink_wrap_display
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -62,7 +62,7 @@ begin_function_decl
 name|void
 name|setup_scale
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -73,7 +73,7 @@ begin_function_decl
 name|void
 name|bounds_checking
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)

@@ -26,7 +26,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2ba23e340103
+DECL|enum|__anon2c84adba0103
 block|{
 DECL|enumerator|CURSOR_MODE_TOOL_ICON
 name|CURSOR_MODE_TOOL_ICON
@@ -42,12 +42,29 @@ name|CursorMode
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GDisplay
+define|#
+directive|define
+name|GDisplay
+value|GimpDisplay
+end_define
+
 begin_typedef
-DECL|typedef|GDisplay
+DECL|typedef|GimpDisplay
 typedef|typedef
 name|struct
-name|_GDisplay
-name|GDisplay
+name|_GimpDisplay
+name|GimpDisplay
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpDisplayShell
+typedef|typedef
+name|struct
+name|_GimpDisplayShell
+name|GimpDisplayShell
 typedef|;
 end_typedef
 

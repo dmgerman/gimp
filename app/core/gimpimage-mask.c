@@ -123,12 +123,6 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"display/display-funcs.h"
-end_include
-
 begin_comment
 comment|/*  local variables  */
 end_comment
@@ -516,12 +510,11 @@ modifier|*
 name|mask
 decl_stmt|;
 comment|/*  Turn the current selection off  */
-name|gdisplays_selection_visibility
+name|gimp_image_selection_control
 argument_list|(
 name|gimage
 argument_list|,
-literal|0
-comment|/* SELECTION_OFF */
+name|GIMP_SELECTION_OFF
 argument_list|)
 expr_stmt|;
 name|mask

@@ -16,22 +16,6 @@ directive|define
 name|__GIMP_DRAWABLE_OFFSET_H__
 end_define
 
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2b9eef9e0103
-block|{
-DECL|enumerator|OFFSET_BACKGROUND
-name|OFFSET_BACKGROUND
-block|,
-DECL|enumerator|OFFSET_TRANSPARENT
-name|OFFSET_TRANSPARENT
-DECL|typedef|GimpOffsetType
-block|}
-name|GimpOffsetType
-typedef|;
-end_typedef
-
 begin_function_decl
 name|void
 name|gimp_drawable_offset

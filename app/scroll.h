@@ -24,7 +24,7 @@ begin_function_decl
 name|void
 name|start_grab_and_scroll
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -39,7 +39,7 @@ begin_function_decl
 name|void
 name|end_grab_and_scroll
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -54,7 +54,7 @@ begin_function_decl
 name|void
 name|grab_and_scroll
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -69,7 +69,7 @@ begin_function_decl
 name|void
 name|scroll_to_pointer_position
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -88,7 +88,7 @@ begin_function_decl
 name|gboolean
 name|scroll_display
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,

@@ -1007,7 +1007,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon296971d20103
+DECL|enum|__anon2a0a42cd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1053,7 +1053,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296971d20203
+DECL|enum|__anon2a0a42cd0203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -5138,8 +5138,12 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon296971d20308
+DECL|struct|__anon2a0a42cd0308
 block|{
+DECL|member|foobar
+name|GimpObject
+name|foobar
+decl_stmt|;
 DECL|member|shell
 name|GObject
 modifier|*

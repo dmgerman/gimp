@@ -121,15 +121,9 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"display/display-funcs.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon27edb1df0103
+DECL|enum|__anon29125bda0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -5383,21 +5377,19 @@ operator|)
 condition|)
 return|return;
 comment|/*  Turn the current selection off  */
-name|gdisplays_selection_visibility
+name|gimp_image_selection_control
 argument_list|(
 name|gimage
 argument_list|,
-literal|0
-comment|/* SELECTION_OFF */
+name|GIMP_SELECTION_OFF
 argument_list|)
 expr_stmt|;
 comment|/*  clear the affected region surrounding the layer  */
-name|gdisplays_selection_visibility
+name|gimp_image_selection_control
 argument_list|(
 name|gimage
 argument_list|,
-literal|1
-comment|/* SELECTION_LAYER_OFF */
+name|GIMP_SELECTION_LAYER_OFF
 argument_list|)
 expr_stmt|;
 comment|/*  get the selection mask channel  */

@@ -228,10 +228,10 @@ end_include
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_redraw (GDisplay * gdisp,gint x,gint y,gint w,gint h)
+DECL|function|gdisplay_redraw (GimpDisplay * gdisp,gint x,gint y,gint w,gint h)
 name|gdisplay_redraw
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -382,10 +382,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_check_device_cursor (GDisplay * gdisp)
+DECL|function|gdisplay_check_device_cursor (GimpDisplay * gdisp)
 name|gdisplay_check_device_cursor
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -499,14 +499,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_vscrollbar_update (GtkAdjustment * adjustment,GDisplay * gdisp)
+DECL|function|gdisplay_vscrollbar_update (GtkAdjustment * adjustment,GimpDisplay * gdisp)
 name|gdisplay_vscrollbar_update
 parameter_list|(
 name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -534,14 +534,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_hscrollbar_update (GtkAdjustment * adjustment,GDisplay * gdisp)
+DECL|function|gdisplay_hscrollbar_update (GtkAdjustment * adjustment,GimpDisplay * gdisp)
 name|gdisplay_hscrollbar_update
 parameter_list|(
 name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -568,7 +568,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gdisplay_shell_events (GtkWidget * widget,GdkEvent * event,GDisplay * gdisp)
+DECL|function|gdisplay_shell_events (GtkWidget * widget,GdkEvent * event,GimpDisplay * gdisp)
 name|gdisplay_shell_events
 parameter_list|(
 name|GtkWidget
@@ -579,7 +579,7 @@ name|GdkEvent
 modifier|*
 name|event
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -624,7 +624,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gdisplay_canvas_events (GtkWidget * canvas,GdkEvent * event,GDisplay * gdisp)
+DECL|function|gdisplay_canvas_events (GtkWidget * canvas,GdkEvent * event,GimpDisplay * gdisp)
 name|gdisplay_canvas_events
 parameter_list|(
 name|GtkWidget
@@ -635,7 +635,7 @@ name|GdkEvent
 modifier|*
 name|event
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2488,14 +2488,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|data
@@ -2618,14 +2618,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|data
@@ -2914,14 +2914,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|data
@@ -3021,7 +3021,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -3076,7 +3076,7 @@ decl_stmt|;
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|data
@@ -3453,10 +3453,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_bucket_fill (GDisplay * gdisp,BucketFillMode fill_mode,guchar orig_color[],TempBuf * orig_pat_buf)
+DECL|function|gdisplay_bucket_fill (GimpDisplay * gdisp,BucketFillMode fill_mode,guchar orig_color[],TempBuf * orig_pat_buf)
 name|gdisplay_bucket_fill
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -4028,14 +4028,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|data
@@ -4086,7 +4086,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -4099,7 +4099,7 @@ decl_stmt|;
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|data
@@ -4168,14 +4168,14 @@ name|GimpBuffer
 modifier|*
 name|buffer
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|data

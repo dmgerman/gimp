@@ -113,10 +113,10 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|start_grab_and_scroll (GDisplay * gdisp,GdkEventButton * bevent)
+DECL|function|start_grab_and_scroll (GimpDisplay * gdisp,GdkEventButton * bevent)
 name|start_grab_and_scroll
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -181,10 +181,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|end_grab_and_scroll (GDisplay * gdisp,GdkEventButton * bevent)
+DECL|function|end_grab_and_scroll (GimpDisplay * gdisp,GdkEventButton * bevent)
 name|end_grab_and_scroll
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -215,10 +215,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|grab_and_scroll (GDisplay * gdisp,GdkEventMotion * mevent)
+DECL|function|grab_and_scroll (GimpDisplay * gdisp,GdkEventMotion * mevent)
 name|grab_and_scroll
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -272,10 +272,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|scroll_to_pointer_position (GDisplay * gdisp,GdkEventMotion * mevent)
+DECL|function|scroll_to_pointer_position (GimpDisplay * gdisp,GdkEventMotion * mevent)
 name|scroll_to_pointer_position
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -405,10 +405,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|scroll_display (GDisplay * gdisp,gint x_offset,gint y_offset)
+DECL|function|scroll_display (GimpDisplay * gdisp,gint x_offset,gint y_offset)
 name|scroll_display
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,

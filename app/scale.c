@@ -89,10 +89,10 @@ end_include
 
 begin_function
 name|void
-DECL|function|bounds_checking (GDisplay * gdisp)
+DECL|function|bounds_checking (GimpDisplay * gdisp)
 name|bounds_checking
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -177,10 +177,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|resize_display (GDisplay * gdisp,gboolean resize_window,gboolean redisplay)
+DECL|function|resize_display (GimpDisplay * gdisp,gboolean resize_window,gboolean redisplay)
 name|resize_display
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -265,10 +265,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|shrink_wrap_display (GDisplay * gdisp)
+DECL|function|shrink_wrap_display (GimpDisplay * gdisp)
 name|shrink_wrap_display
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -329,10 +329,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|change_scale (GDisplay * gdisp,GimpZoomType zoom_type)
+DECL|function|change_scale (GimpDisplay * gdisp,GimpZoomType zoom_type)
 name|change_scale
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -684,10 +684,10 @@ end_comment
 begin_function
 specifier|static
 name|gdouble
-DECL|function|img2real (GDisplay * gdisp,gboolean xdir,gdouble a)
+DECL|function|img2real (GimpDisplay * gdisp,gboolean xdir,gdouble a)
 name|img2real
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -750,10 +750,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|setup_scale (GDisplay * gdisp)
+DECL|function|setup_scale (GimpDisplay * gdisp)
 name|setup_scale
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -926,32 +926,18 @@ name|step_increment
 operator|=
 name|stepy
 expr_stmt|;
-name|g_signal_emit_by_name
-argument_list|(
-name|G_OBJECT
+name|gtk_adjustment_changed
 argument_list|(
 name|gdisp
 operator|->
 name|hsbdata
 argument_list|)
-argument_list|,
-literal|"changed"
-argument_list|,
-literal|0
-argument_list|)
 expr_stmt|;
-name|g_signal_emit_by_name
-argument_list|(
-name|G_OBJECT
+name|gtk_adjustment_changed
 argument_list|(
 name|gdisp
 operator|->
 name|vsbdata
-argument_list|)
-argument_list|,
-literal|"changed"
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|hruler

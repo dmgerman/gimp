@@ -16,6 +16,12 @@ directive|define
 name|__GDISPLAY_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"core/gimpobject.h"
+end_include
+
 begin_comment
 comment|/* FIXME: move the display stuff to display/ */
 end_comment
@@ -25,31 +31,6 @@ include|#
 directive|include
 file|"display/display-types.h"
 end_include
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2aaae9540103
-block|{
-DECL|enumerator|SELECTION_OFF
-name|SELECTION_OFF
-block|,
-DECL|enumerator|SELECTION_LAYER_OFF
-name|SELECTION_LAYER_OFF
-block|,
-DECL|enumerator|SELECTION_ON
-name|SELECTION_ON
-block|,
-DECL|enumerator|SELECTION_PAUSE
-name|SELECTION_PAUSE
-block|,
-DECL|enumerator|SELECTION_RESUME
-name|SELECTION_RESUME
-DECL|typedef|SelectionControl
-block|}
-name|SelectionControl
-typedef|;
-end_typedef
 
 begin_comment
 comment|/*  some useful macros  */
@@ -322,11 +303,87 @@ block|}
 struct|;
 end_struct
 
+begin_define
+DECL|macro|GIMP_TYPE_DISPLAY
+define|#
+directive|define
+name|GIMP_TYPE_DISPLAY
+value|(gimp_display_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_DISPLAY (obj)
+define|#
+directive|define
+name|GIMP_DISPLAY
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DISPLAY, GimpDisplay))
+end_define
+
+begin_define
+DECL|macro|GIMP_DISPLAY_CLASS (klass)
+define|#
+directive|define
+name|GIMP_DISPLAY_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DISPLAY, GimpDisplayClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_DISPLAY (obj)
+define|#
+directive|define
+name|GIMP_IS_DISPLAY
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DISPLAY))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_DISPLAY_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_DISPLAY_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DISPLAY))
+end_define
+
+begin_define
+DECL|macro|GIMP_DISPLAY_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_DISPLAY_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DISPLAY, GimpDisplayClass))
+end_define
+
+begin_typedef
+DECL|typedef|GimpDisplayClass
+typedef|typedef
+name|struct
+name|_GimpDisplayClass
+name|GimpDisplayClass
+typedef|;
+end_typedef
+
 begin_struct
-DECL|struct|_GDisplay
+DECL|struct|_GimpDisplay
 struct|struct
-name|_GDisplay
+name|_GimpDisplay
 block|{
+DECL|member|parent_instance
+name|GimpObject
+name|parent_instance
+decl_stmt|;
 DECL|member|shell
 name|GtkWidget
 modifier|*
@@ -661,12 +718,34 @@ block|}
 struct|;
 end_struct
 
+begin_struct
+DECL|struct|_GimpDisplayClass
+struct|struct
+name|_GimpDisplayClass
+block|{
+DECL|member|parent_class
+name|GimpObjectClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_comment
 comment|/* member function declarations */
 end_comment
 
 begin_function_decl
-name|GDisplay
+name|GType
+name|gimp_display_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpDisplay
 modifier|*
 name|gdisplay_new
 parameter_list|(
@@ -684,7 +763,7 @@ begin_function_decl
 name|void
 name|gdisplay_reconnect
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -699,7 +778,7 @@ begin_function_decl
 name|void
 name|gdisplay_remove_and_delete
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -710,7 +789,7 @@ begin_function_decl
 name|gint
 name|gdisplay_mask_value
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -727,7 +806,7 @@ begin_function_decl
 name|gint
 name|gdisplay_mask_bounds
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -754,7 +833,7 @@ begin_function_decl
 name|void
 name|gdisplay_transform_coords
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -782,7 +861,7 @@ begin_function_decl
 name|void
 name|gdisplay_untransform_coords
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -813,7 +892,7 @@ begin_function_decl
 name|void
 name|gdisplay_transform_coords_f
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -841,7 +920,7 @@ begin_function_decl
 name|void
 name|gdisplay_untransform_coords_f
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -869,7 +948,7 @@ begin_function_decl
 name|void
 name|gdisplay_real_install_tool_cursor
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -892,7 +971,7 @@ begin_function_decl
 name|void
 name|gdisplay_install_tool_cursor
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -912,7 +991,7 @@ begin_function_decl
 name|void
 name|gdisplay_remove_tool_cursor
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -923,7 +1002,7 @@ begin_function_decl
 name|void
 name|gdisplay_install_override_cursor
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -937,7 +1016,7 @@ begin_function_decl
 name|void
 name|gdisplay_remove_override_cursor
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -948,7 +1027,7 @@ begin_function_decl
 name|void
 name|gdisplay_set_menu_sensitivity
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -959,7 +1038,7 @@ begin_function_decl
 name|void
 name|gdisplay_expose_area
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -982,7 +1061,7 @@ begin_function_decl
 name|void
 name|gdisplay_expose_guide
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -997,7 +1076,7 @@ begin_function_decl
 name|void
 name|gdisplay_expose_full
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1008,12 +1087,12 @@ begin_function_decl
 name|void
 name|gdisplay_selection_visibility
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|SelectionControl
-name|function
+name|GimpSelectionControl
+name|control
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1022,7 +1101,7 @@ begin_function_decl
 name|void
 name|gdisplay_flush
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1033,7 +1112,7 @@ begin_function_decl
 name|void
 name|gdisplay_flush_now
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1044,7 +1123,7 @@ begin_function_decl
 name|void
 name|gdisplay_update_icon
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1089,7 +1168,7 @@ begin_function_decl
 name|void
 name|gdisplay_draw_guides
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1100,7 +1179,7 @@ begin_function_decl
 name|void
 name|gdisplay_draw_guide
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -1119,7 +1198,7 @@ name|GimpGuide
 modifier|*
 name|gdisplay_find_guide
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -1136,7 +1215,7 @@ begin_function_decl
 name|gboolean
 name|gdisplay_snap_point
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -1161,7 +1240,7 @@ begin_function_decl
 name|void
 name|gdisplay_snap_rectangle
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -1192,7 +1271,7 @@ begin_function_decl
 name|void
 name|gdisplay_update_cursor
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -1209,7 +1288,7 @@ begin_function_decl
 name|void
 name|gdisplay_set_dot_for_dot
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -1223,7 +1302,7 @@ begin_function_decl
 name|void
 name|gdisplay_resize_cursor_label
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1234,7 +1313,7 @@ begin_function_decl
 name|void
 name|gdisplay_update_title
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1245,7 +1324,7 @@ begin_function_decl
 name|void
 name|gdisplay_flush_displays_only
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1257,7 +1336,7 @@ comment|/* no rerender! */
 end_comment
 
 begin_function_decl
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisplay_active
 parameter_list|(
@@ -1267,7 +1346,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisplay_get_by_ID
 parameter_list|(
@@ -1286,11 +1365,11 @@ comment|/*  function declarations  */
 end_comment
 
 begin_function_decl
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisplays_check_valid
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -1437,8 +1516,8 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|SelectionControl
-name|function
+name|GimpSelectionControl
+name|control
 parameter_list|)
 function_decl|;
 end_function_decl

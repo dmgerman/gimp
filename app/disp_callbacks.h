@@ -36,7 +36,7 @@ name|GdkEvent
 modifier|*
 name|event
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -55,7 +55,7 @@ name|GdkEvent
 modifier|*
 name|event
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -75,7 +75,7 @@ modifier|*
 name|bevent
 parameter_list|,
 name|gpointer
-name|dtata
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
