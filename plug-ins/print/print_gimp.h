@@ -22,6 +22,18 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_define
+DECL|macro|GIMP_ENABLE_COMPAT_CRUFT
+define|#
+directive|define
+name|GIMP_ENABLE_COMPAT_CRUFT
+end_define
+
+begin_comment
+DECL|macro|GIMP_ENABLE_COMPAT_CRUFT
+comment|/*  should go away soon  */
+end_comment
+
 begin_include
 include|#
 directive|include

@@ -30,9 +30,9 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* some compatibility defines for older plug-ins */
-ifndef|#
-directive|ifndef
-name|GIMP_DISABLE_COMPAT_H
+ifdef|#
+directive|ifdef
+name|GIMP_ENABLE_COMPAT_CRUFT
 DECL|macro|gimp_attach_parasite
 define|#
 directive|define
@@ -370,7 +370,7 @@ name|GParam
 value|GimpParam
 endif|#
 directive|endif
-comment|/* GIMP_DISABLE_COMPAT_H */
+comment|/* GIMP_ENABLE_COMPAT_CRUFT */
 ifdef|#
 directive|ifdef
 name|__cplusplus
