@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf8f62c0103
+DECL|enum|__anon2a30bfe80103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -2502,7 +2502,7 @@ operator|->
 name|strokes
 argument_list|,
 operator|(
-name|Gfunc
+name|GFunc
 operator|)
 name|g_object_unref
 argument_list|,
