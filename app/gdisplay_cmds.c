@@ -346,9 +346,11 @@ name|int_value
 argument_list|)
 operator|)
 condition|)
-name|gdisplay_remove_and_delete
+name|gtk_widget_destroy
 argument_list|(
 name|gdisplay
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 else|else

@@ -1151,7 +1151,7 @@ name|popup_shell
 operator|=
 name|NULL
 expr_stmt|;
-name|gtk_widget_destroy
+name|gtk_widget_unref
 argument_list|(
 name|gdisp
 operator|->
