@@ -4439,7 +4439,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Filters/Colors/_Map"
+literal|"/Filters/Colors/Ma_p"
 argument_list|)
 argument_list|)
 block|,

@@ -101,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292338730103
+DECL|enum|__anon2a479c450103
 block|{
 DECL|enumerator|RED
 name|RED
@@ -543,7 +543,7 @@ literal|"June 20th, 1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Colorcube Analysis..."
+literal|"<Image>/Filters/Colors/Colorcube A_nalysis..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"

@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon277768640103
+DECL|enum|__anon2c8f07910103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277768640203
+DECL|enum|__anon2c8f07910203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277768640303
+DECL|enum|__anon2c8f07910303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277768640403
+DECL|enum|__anon2c8f07910403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -275,7 +275,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277768640508
+DECL|struct|__anon2c8f07910508
 block|{
 DECL|member|h_style
 name|gint
@@ -338,7 +338,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277768640608
+DECL|struct|__anon2c8f07910608
 block|{
 DECL|member|run
 name|gboolean
@@ -439,7 +439,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Layer/Align Visible Layers..."
+literal|"<Image>/Layer/Align _Visible Layers..."
 argument_list|)
 argument_list|,
 literal|"RGB*,GRAY*"
