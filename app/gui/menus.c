@@ -837,6 +837,10 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
@@ -845,22 +849,6 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|GIMP_GUI_CONFIG
-argument_list|(
-name|gimp
-operator|->
-name|config
-argument_list|)
-operator|->
-name|restore_accels
-condition|)
-block|{
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
 name|filename
 operator|=
 name|gimp_personal_rc_file
@@ -879,7 +867,6 @@ name|filename
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 end_function
 
 begin_function
@@ -892,6 +879,10 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
@@ -900,22 +891,6 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|GIMP_GUI_CONFIG
-argument_list|(
-name|gimp
-operator|->
-name|config
-argument_list|)
-operator|->
-name|save_accels
-condition|)
-block|{
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
 name|filename
 operator|=
 name|gimp_personal_rc_file
@@ -933,7 +908,6 @@ argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
