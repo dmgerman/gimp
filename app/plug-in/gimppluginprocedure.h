@@ -249,6 +249,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|plug_in_proc_def_get_sensitive
+parameter_list|(
+specifier|const
+name|PlugInProcDef
+modifier|*
+name|proc_def
+parameter_list|,
+name|GimpImageType
+name|image_type
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
