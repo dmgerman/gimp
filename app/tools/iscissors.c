@@ -34,12 +34,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"bezier_selectP.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"draw_core.h"
 end_include
 
@@ -113,6 +107,12 @@ begin_include
 include|#
 directive|include
 file|"tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"bezier_selectP.h"
 end_include
 
 begin_include

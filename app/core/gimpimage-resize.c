@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pathsP.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -497,7 +503,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2aceb1230103
+DECL|enum|__anon2967d54a0103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -919,6 +925,12 @@ expr_stmt|;
 name|gimage
 operator|->
 name|save_proc
+operator|=
+name|NULL
+expr_stmt|;
+name|gimage
+operator|->
+name|paths
 operator|=
 name|NULL
 expr_stmt|;
@@ -4889,6 +4901,48 @@ argument_list|,
 name|col
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_image_set_paths (GimpImage * gimage,PathsList * paths)
+name|gimp_image_set_paths
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|PathsList
+modifier|*
+name|paths
+parameter_list|)
+block|{
+name|gimage
+operator|->
+name|paths
+operator|=
+name|paths
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|PathsList
+modifier|*
+DECL|function|gimp_image_get_paths (GimpImage * gimage)
+name|gimp_image_get_paths
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+block|{
+return|return
+name|gimage
+operator|->
+name|paths
+return|;
 block|}
 end_function
 

@@ -79,6 +79,22 @@ block|}
 struct|;
 end_struct
 
+begin_typedef
+DECL|enum|__anon2a507a750103
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|OPS_BUTTON_NORMAL
+name|OPS_BUTTON_NORMAL
+block|,
+DECL|enumerator|OPS_BUTTON_RADIO
+name|OPS_BUTTON_RADIO
+block|, }
+DECL|typedef|OpsButtonType
+name|OpsButtonType
+typedef|;
+end_typedef
+
 begin_comment
 comment|/* Function declarations */
 end_comment
@@ -97,6 +113,8 @@ modifier|*
 parameter_list|,
 name|OpsButton
 modifier|*
+parameter_list|,
+name|OpsButtonType
 parameter_list|)
 function_decl|;
 end_function_decl

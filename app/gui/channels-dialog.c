@@ -1376,6 +1376,8 @@ argument_list|,
 name|tool_tips
 argument_list|,
 name|channels_ops_buttons
+argument_list|,
+name|OPS_BUTTON_NORMAL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

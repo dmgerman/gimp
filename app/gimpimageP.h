@@ -57,6 +57,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pathsP.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpmatrix.h"
 end_include
 
@@ -248,6 +254,12 @@ modifier|*
 name|parasites
 decl_stmt|;
 comment|/*  Plug-in parasite data        */
+DECL|member|paths
+name|PathsList
+modifier|*
+name|paths
+decl_stmt|;
+comment|/*  Paths data for this image    */
 DECL|member|transform
 name|GimpMatrix
 name|transform

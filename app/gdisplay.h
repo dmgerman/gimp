@@ -977,6 +977,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GDisplay
+modifier|*
+name|gdisplays_check_valid
+parameter_list|(
+name|GDisplay
+modifier|*
+parameter_list|,
+name|GimpImage
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  function declarations  */
 end_comment
