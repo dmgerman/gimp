@@ -173,9 +173,9 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_print
+name|g_printerr
 argument_list|(
-literal|"helpbrowser: registering help domain \"%s\" with base uri \"%s\"\n"
+literal|"help: registering help domain \"%s\" with base uri \"%s\"\n"
 argument_list|,
 name|domain_name
 argument_list|,
@@ -238,8 +238,6 @@ block|{
 name|g_return_val_if_fail
 argument_list|(
 name|domain_name
-operator|!=
-name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -575,7 +573,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acccf070103
+DECL|enum|__anon2af31bf00103
 block|{
 DECL|enumerator|DOMAIN_START
 name|DOMAIN_START
@@ -597,7 +595,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acccf070208
+DECL|struct|__anon2af31bf00208
 block|{
 DECL|member|filename
 specifier|const
@@ -1614,9 +1612,9 @@ operator|+
 literal|6
 argument_list|)
 expr_stmt|;
-name|g_print
+name|g_printerr
 argument_list|(
-literal|"domain parser: id attribute name for \"%s\" is \"%s\"\n"
+literal|"help: id attribute name for \"%s\" is \"%s\"\n"
 argument_list|,
 name|parser
 operator|->
@@ -1779,9 +1777,9 @@ name|ref
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_print
+name|g_printerr
 argument_list|(
-literal|"domain parser: added mapping \"%s\" -> \"%s\"\n"
+literal|"help: added mapping \"%s\" -> \"%s\"\n"
 argument_list|,
 name|id
 argument_list|,
