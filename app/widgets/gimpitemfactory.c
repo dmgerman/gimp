@@ -9766,6 +9766,10 @@ name|gchar
 modifier|*
 name|factory
 decl_stmt|;
+name|gchar
+modifier|*
+name|translation
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -9875,7 +9879,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|retval
+comment|/*         * We compare the start of the translated string with the original menu         * entry. This is not really necessary, but it helps to suppress badly        * translated menu_entries which tend to crash the app         */
+name|translation
 operator|=
 name|dgettext
 argument_list|(
@@ -9887,6 +9892,26 @@ index|]
 argument_list|,
 name|menupath
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|strncmp
+argument_list|(
+name|factory
+argument_list|,
+name|translation
+argument_list|,
+name|strlen
+argument_list|(
+name|factory
+argument_list|)
+argument_list|)
+operator|==
+literal|0
+condition|)
+name|retval
+operator|=
+name|translation
 operator|+
 name|strlen
 argument_list|(
