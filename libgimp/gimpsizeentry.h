@@ -22,6 +22,12 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpunit.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -72,28 +78,6 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(GTK_CHECK_CLASS_TYPE ((klass), GTK_TYPE_ENTRY))
-typedef|typedef
-enum|enum
-DECL|enum|__anon28818aad0103
-block|{
-DECL|enumerator|PIXELS
-name|PIXELS
-init|=
-literal|0
-block|,
-DECL|enumerator|INCHES
-name|INCHES
-init|=
-literal|1
-block|,
-DECL|enumerator|CM
-name|CM
-init|=
-literal|2
-DECL|typedef|GSizeUnit
-block|}
-name|GSizeUnit
-typedef|;
 DECL|typedef|GimpSizeEntry
 typedef|typedef
 name|struct
@@ -119,13 +103,13 @@ name|GtkWidget
 modifier|*
 name|spinbutton
 decl_stmt|;
-DECL|member|optionmenu
+DECL|member|unitmenu
 name|GtkWidget
 modifier|*
-name|optionmenu
+name|unitmenu
 decl_stmt|;
 DECL|member|unit
-name|GSizeUnit
+name|GUnit
 name|unit
 decl_stmt|;
 DECL|member|resolution
@@ -173,7 +157,7 @@ parameter_list|(
 name|gfloat
 name|value
 parameter_list|,
-name|GSizeUnit
+name|GUnit
 name|unit
 parameter_list|,
 name|gfloat
@@ -228,11 +212,11 @@ name|GimpSizeEntry
 modifier|*
 name|gse
 parameter_list|,
-name|GSizeUnit
+name|GUnit
 name|unit
 parameter_list|)
 function_decl|;
-name|GSizeUnit
+name|GUnit
 name|gimp_size_entry_get_unit
 parameter_list|(
 name|GimpSizeEntry
@@ -251,6 +235,7 @@ name|gfloat
 name|resolution
 parameter_list|)
 function_decl|;
+comment|/* This function does NOT change the value of the size_entry                for you! You have to take care of that yourself.           */
 ifdef|#
 directive|ifdef
 name|__cplusplus
