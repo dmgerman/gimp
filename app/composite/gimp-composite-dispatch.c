@@ -41,225 +41,318 @@ end_include
 
 begin_function_decl
 specifier|extern
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_unsupported
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_addition_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_anti_erase_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_blend_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_burn_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_color_erase_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_color_only_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_convert_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_darken_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_difference_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_dissolve_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_divide_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_dodge_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_erase_rgba8_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_grain_extract_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_grain_merge_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_hardlight_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_hue_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_lighten_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_multiply_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_normal_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_normal_rgba8_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_overlay_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_replace_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_saturation_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_scale_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_screen_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_softlight_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_subtract_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_swap_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_value_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 DECL|variable|gimp_composite_generic
-name|GimpCompositeFunction
+name|void
 function_decl|(
 modifier|*
 name|gimp_composite_generic
@@ -276,7 +369,10 @@ index|[
 name|GIMP_PIXELFORMAT_N
 index|]
 function_decl|)
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 init|=
 block|{
 block|{
@@ -7075,220 +7171,528 @@ begin_operator
 operator|,
 end_operator
 
+begin_block
+block|{
+comment|/* GIMP_COMPOSITE_XOR */
+block|{
+comment|/* A = v8 */
+comment|/* v8     */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* va8    */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* rgb8   */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* rgba8  */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+block|}
+operator|,
+block|{
+comment|/* A = va8 */
+comment|/* v8     */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* va8    */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* rgb8   */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* rgba8  */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+block|}
+operator|,
+block|{
+comment|/* A = rgb8 */
+comment|/* v8     */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* va8    */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* rgb8   */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* rgba8  */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+block|}
+operator|,
+block|{
+comment|/* A = rgba8 */
+comment|/* v8     */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* va8    */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* rgb8   */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* rgba8  */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+block|}
+operator|,
+block|}
+end_block
+
+begin_operator
+operator|,
+end_operator
+
 begin_function_decl
 unit|};
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_addition_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_anti_erase_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_blend_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_burn_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_color_erase_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_color_only_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_convert_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_darken_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_difference_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_dissolve_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_divide_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_dodge_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_erase_rgba8_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_grain_extract_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_grain_merge_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_hardlight_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_hue_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_lighten_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_multiply_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_normal_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_normal_rgba8_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_overlay_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_replace_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_saturation_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_scale_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_screen_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_softlight_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_subtract_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_swap_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCompositeFunction
+name|void
 name|gimp_composite_value_any_any_any_generic
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 DECL|variable|gimp_composite_function
-name|GimpCompositeFunction
+name|void
 function_decl|(
 modifier|*
 name|gimp_composite_function
@@ -7305,7 +7709,10 @@ index|[
 name|GIMP_PIXELFORMAT_N
 index|]
 function_decl|)
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 init|=
 block|{
 block|{
@@ -14092,6 +14499,224 @@ operator|,
 name|gimp_composite_convert_any_any_any_generic
 operator|,
 name|gimp_composite_convert_any_any_any_generic
+operator|,
+block|}
+operator|,
+block|}
+operator|,
+block|}
+end_block
+
+begin_operator
+operator|,
+end_operator
+
+begin_block
+block|{
+comment|/* GIMP_COMPOSITE_XOR */
+block|{
+comment|/* A = v8 */
+comment|/* v8     */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* va8    */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* rgb8   */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* rgba8  */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+block|}
+operator|,
+block|{
+comment|/* A = va8 */
+comment|/* v8     */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* va8    */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* rgb8   */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* rgba8  */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+block|}
+operator|,
+block|{
+comment|/* A = rgb8 */
+comment|/* v8     */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* va8    */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* rgb8   */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* rgba8  */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+block|}
+operator|,
+block|{
+comment|/* A = rgba8 */
+comment|/* v8     */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* va8    */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* rgb8   */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+block|}
+operator|,
+comment|/* rgba8  */
+block|{
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
 operator|,
 block|}
 operator|,
@@ -20041,6 +20666,197 @@ block|,
 literal|"gimp_composite_convert_any_any_any_generic"
 block|,
 literal|"gimp_composite_convert_any_any_any_generic"
+block|,  }
+block|,   }
+block|,  }
+block|,
+block|{
+comment|/* GIMP_COMPOSITE_XOR */
+block|{
+comment|/* A = v8 */
+comment|/* v8     */
+block|{
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,  }
+block|,
+comment|/* va8    */
+block|{
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,  }
+block|,
+comment|/* rgb8   */
+block|{
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,  }
+block|,
+comment|/* rgba8  */
+block|{
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,  }
+block|,   }
+block|,
+block|{
+comment|/* A = va8 */
+comment|/* v8     */
+block|{
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,  }
+block|,
+comment|/* va8    */
+block|{
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,  }
+block|,
+comment|/* rgb8   */
+block|{
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,  }
+block|,
+comment|/* rgba8  */
+block|{
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,  }
+block|,   }
+block|,
+block|{
+comment|/* A = rgb8 */
+comment|/* v8     */
+block|{
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,  }
+block|,
+comment|/* va8    */
+block|{
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,  }
+block|,
+comment|/* rgb8   */
+block|{
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,  }
+block|,
+comment|/* rgba8  */
+block|{
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,  }
+block|,   }
+block|,
+block|{
+comment|/* A = rgba8 */
+comment|/* v8     */
+block|{
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,  }
+block|,
+comment|/* va8    */
+block|{
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,  }
+block|,
+comment|/* rgb8   */
+block|{
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,  }
+block|,
+comment|/* rgba8  */
+block|{
+literal|""
+block|,
+literal|""
+block|,
+literal|""
+block|,
+literal|""
 block|,  }
 block|,   }
 block|,  }

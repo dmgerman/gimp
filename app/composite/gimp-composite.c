@@ -570,7 +570,7 @@ block|}
 end_function
 
 begin_struct
-DECL|struct|__anon2bf137ac0108
+DECL|struct|__anon2761ffe70108
 struct|struct
 block|{
 DECL|member|announce_function
@@ -627,7 +627,10 @@ function_decl|(
 modifier|*
 name|function
 function_decl|)
-parameter_list|()
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+parameter_list|)
 function_decl|;
 name|function
 operator|=

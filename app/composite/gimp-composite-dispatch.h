@@ -6,7 +6,7 @@ end_comment
 begin_typedef
 DECL|typedef|GimpCompositeFunctionTable
 typedef|typedef
-name|GimpCompositeFunction
+name|void
 argument_list|(
 operator|*
 name|GimpCompositeFunctionTable

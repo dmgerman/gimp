@@ -12,6 +12,16 @@ directive|define
 name|gimp_composite_context_h
 end_define
 
+begin_function_decl
+specifier|extern
+name|void
+name|gimp_composite_mmx_init
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  *  */
 end_comment

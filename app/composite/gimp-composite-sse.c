@@ -1253,9 +1253,11 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|op_overlay ()
+DECL|function|op_overlay (void)
 name|op_overlay
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 asm|asm("movq      %mm2, %mm1");
 asm|asm("punpcklbw %mm6, %mm1");
@@ -1955,9 +1957,11 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_composite_sse_init ()
+DECL|function|gimp_composite_sse_init (void)
 name|gimp_composite_sse_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{  }
 end_function
 
