@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2c584a0103
+DECL|enum|__anon295308180103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -656,12 +656,13 @@ name|str
 argument_list|,
 name|_
 argument_list|(
-literal|"Move Current Layer / Path"
+literal|"Move Current Layer or Path"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Pick a Layer / Path to Move"
+literal|"Pick a Layer, Path\n"
+literal|"or Guide to Move"
 argument_list|)
 argument_list|)
 expr_stmt|;
