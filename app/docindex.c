@@ -91,7 +91,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2ace826b0103
+DECL|enum|__anon2c49fe980103
 enum|enum
 block|{
 DECL|enumerator|TARGET_URI_LIST
@@ -1126,7 +1126,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Add the main vbox to the window */
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
