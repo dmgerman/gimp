@@ -440,15 +440,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|usage (void)
+DECL|function|usage (const gchar * name)
 name|usage
 parameter_list|(
-name|void
+specifier|const
+name|gchar
+modifier|*
+name|name
 parameter_list|)
 block|{
 name|g_print
 argument_list|(
-literal|"gimp-remote version %s\n"
+literal|"gimp-remote version %s\n\n"
 argument_list|,
 name|GIMP_VERSION
 argument_list|)
@@ -456,13 +459,27 @@ expr_stmt|;
 name|g_print
 argument_list|(
 literal|"Tells a running Gimp to open a (local or remote) image file.\n\n"
-literal|"Usage: gimp-remote [options] [FILE|URI]...\n"
+literal|"Usage: %s [options] [FILE|URI]...\n\n"
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
 literal|"Valid options are:\n"
 literal|"  -h --help       Output this help.\n"
 literal|"  -v --version    Output version info.\n"
 literal|"  -n --new        Start gimp if no active gimp window was found.\n\n"
-literal|"Example:  gimp-remote http://www.gimp.org/icons/frontpage-small.gif\n"
-literal|"     or:  gimp-remote localfile.png\n"
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"Example:  %s http://www.gimp.org/icons/frontpage-small.gif\n"
+literal|"     or:  %s localfile.png\n\n"
+argument_list|,
+name|name
+argument_list|,
+name|name
 argument_list|)
 expr_stmt|;
 block|}
@@ -557,7 +574,7 @@ expr_stmt|;
 block|}
 name|execvp
 argument_list|(
-literal|"gimp"
+literal|"gimp-1.3"
 argument_list|,
 name|argv
 argument_list|)
@@ -585,9 +602,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|parse_option (gchar * arg)
+DECL|function|parse_option (const gchar * progname,const gchar * arg)
 name|parse_option
 parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|progname
+parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|arg
@@ -668,7 +691,9 @@ literal|0
 condition|)
 block|{
 name|usage
-argument_list|()
+argument_list|(
+name|progname
+argument_list|)
 expr_stmt|;
 name|exit
 argument_list|(
@@ -858,6 +883,11 @@ name|parse_option
 argument_list|(
 name|argv
 index|[
+literal|0
+index|]
+argument_list|,
+name|argv
+index|[
 name|i
 index|]
 argument_list|)
@@ -1011,7 +1041,12 @@ literal|0
 condition|)
 block|{
 name|usage
-argument_list|()
+argument_list|(
+name|argv
+index|[
+literal|0
+index|]
+argument_list|)
 expr_stmt|;
 name|exit
 argument_list|(
@@ -1142,16 +1177,16 @@ argument_list|(
 name|GTK_WINDOW_TOPLEVEL
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|source
 argument_list|)
 argument_list|,
 literal|"selection_get"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|source_selection_get
 argument_list|)

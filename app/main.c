@@ -1479,6 +1479,8 @@ directive|endif
 if|if
 condition|(
 name|show_version
+operator|||
+name|show_help
 condition|)
 block|{
 name|g_print
