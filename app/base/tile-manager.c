@@ -773,7 +773,46 @@ literal|"WRITE-ONLY TILE... UNTESTED!"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*   if ((*tile_ptr)->share_count&&       (*tile_ptr)->write_count)     fprintf(stderr,">> MEEPITY %d,%d<< ", 	    (*tile_ptr)->share_count, 	    (*tile_ptr)->write_count 	    ); */
+ifdef|#
+directive|ifdef
+name|DEBUG_TILE_MANAGER
+if|if
+condition|(
+operator|(
+operator|*
+name|tile_ptr
+operator|)
+operator|->
+name|share_count
+operator|&&
+operator|(
+operator|*
+name|tile_ptr
+operator|)
+operator|->
+name|write_count
+condition|)
+name|g_printerr
+argument_list|(
+literal|">> MEEPITY %d,%d<<\n"
+argument_list|,
+operator|(
+operator|*
+name|tile_ptr
+operator|)
+operator|->
+name|share_count
+argument_list|,
+operator|(
+operator|*
+name|tile_ptr
+operator|)
+operator|->
+name|write_count
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|wantread
@@ -882,7 +921,8 @@ name|valid
 condition|)
 name|g_warning
 argument_list|(
-literal|"Oh boy, r/w tile is invalid... we suck.  Please report."
+literal|"Oh boy, r/w tile is invalid... we suck. "
+literal|"Please report."
 argument_list|)
 expr_stmt|;
 if|if
@@ -925,8 +965,6 @@ name|tile_ptr
 operator|)
 operator|->
 name|data
-operator|!=
-name|NULL
 condition|)
 block|{
 name|memcpy
@@ -1033,7 +1071,35 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-comment|/*       else 	{ 	  if ((*tile_ptr)->write_count) 	    fprintf(stderr,"STINK! r/o on r/w tile /%d\007  ",(*tile_ptr)->write_count); 	} */
+ifdef|#
+directive|ifdef
+name|DEBUG_TILE_MANAGER
+else|else
+block|{
+if|if
+condition|(
+operator|(
+operator|*
+name|tile_ptr
+operator|)
+operator|->
+name|write_count
+condition|)
+name|g_printerr
+argument_list|(
+literal|"STINK! r/o on r/w tile (%d)\n"
+argument_list|,
+operator|(
+operator|*
+name|tile_ptr
+operator|)
+operator|->
+name|write_count
+argument_list|)
+expr_stmt|;
+block|}
+endif|#
+directive|endif
 name|TILE_MUTEX_UNLOCK
 argument_list|(
 operator|*
@@ -1171,7 +1237,24 @@ argument_list|,
 name|tile
 argument_list|)
 expr_stmt|;
-comment|/* DEBUG STUFF ->  if (tm->user_data)     {             fprintf(stderr,"V%p  ",tm->user_data);       fprintf(stderr,"V");     }   else     {       fprintf(stderr,"v");     } */
+ifdef|#
+directive|ifdef
+name|DEBUG_TILE_MANAGER
+name|g_printerr
+argument_list|(
+literal|"%c"
+argument_list|,
+name|tm
+operator|->
+name|user_data
+condition|?
+literal|'V'
+else|:
+literal|'v'
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -1243,6 +1326,7 @@ expr_stmt|;
 name|x
 operator|=
 operator|(
+operator|(
 name|col
 operator|*
 name|TILE_WIDTH
@@ -1260,9 +1344,11 @@ operator|)
 name|tm
 operator|->
 name|width
+operator|)
 expr_stmt|;
 name|y
 operator|=
+operator|(
 operator|(
 name|row
 operator|*
@@ -1281,6 +1367,7 @@ operator|)
 name|tm
 operator|->
 name|height
+operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -1921,7 +2008,16 @@ name|k
 operator|++
 control|)
 block|{
-comment|/*	      printf(",");fflush(stdout);*/
+ifdef|#
+directive|ifdef
+name|DEBUG_TILE_MANAGER
+name|g_printerr
+argument_list|(
+literal|","
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|tiles
 index|[
 name|k
@@ -1998,7 +2094,6 @@ name|bottom_tile
 expr_stmt|;
 block|}
 block|}
-comment|/*      g_warning ("tile_manager_map: empty tile level - done.");*/
 block|}
 name|tile_ptr
 operator|=
@@ -2010,7 +2105,16 @@ index|[
 name|tile_num
 index|]
 expr_stmt|;
-comment|/*  printf(")");fflush(stdout);*/
+ifdef|#
+directive|ifdef
+name|DEBUG_TILE_MANAGER
+name|g_printerr
+argument_list|(
+literal|")"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 operator|!
@@ -2086,13 +2190,37 @@ argument_list|,
 name|tile_num
 argument_list|)
 expr_stmt|;
-comment|/*  printf(">");fflush(stdout);*/
+ifdef|#
+directive|ifdef
+name|DEBUG_TILE_MANAGER
+name|g_printerr
+argument_list|(
+literal|">"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|TILE_MUTEX_LOCK
 argument_list|(
 name|srctile
 argument_list|)
 expr_stmt|;
-comment|/*  printf(" [src:%p tm:%p tn:%d] ", srctile, tm, tile_num); fflush(stdout);*/
+ifdef|#
+directive|ifdef
+name|DEBUG_TILE_MANAGER
+name|g_printerr
+argument_list|(
+literal|" [src:%p tm:%p tn:%d] "
+argument_list|,
+name|srctile
+argument_list|,
+name|tm
+argument_list|,
+name|tile_num
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|tile_attach
 argument_list|(
 name|srctile
@@ -2112,7 +2240,16 @@ argument_list|(
 name|srctile
 argument_list|)
 expr_stmt|;
-comment|/*  printf("}");fflush(stdout);*/
+ifdef|#
+directive|ifdef
+name|DEBUG_TILE_MANAGER
+name|g_printerr
+argument_list|(
+literal|"}\n"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -2598,7 +2735,8 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"tile_manager_get_tile_coordinates: tile not attached to manager"
+literal|"tile_manager_get_tile_coordinates: "
+literal|"tile not attached to manager"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -3168,6 +3306,17 @@ name|guint
 name|stride
 parameter_list|)
 block|{
+name|Tile
+modifier|*
+name|t
+decl_stmt|;
+name|guchar
+modifier|*
+name|s
+decl_stmt|,
+modifier|*
+name|d
+decl_stmt|;
 name|guint
 name|x
 decl_stmt|,
@@ -3180,17 +3329,6 @@ name|cols
 decl_stmt|;
 name|guint
 name|srcstride
-decl_stmt|;
-name|Tile
-modifier|*
-name|t
-decl_stmt|;
-name|guchar
-modifier|*
-name|s
-decl_stmt|,
-modifier|*
-name|d
 decl_stmt|;
 for|for
 control|(
@@ -3427,6 +3565,17 @@ name|guint
 name|stride
 parameter_list|)
 block|{
+name|Tile
+modifier|*
+name|t
+decl_stmt|;
+name|guchar
+modifier|*
+name|s
+decl_stmt|,
+modifier|*
+name|d
+decl_stmt|;
 name|guint
 name|x
 decl_stmt|,
@@ -3439,17 +3588,6 @@ name|cols
 decl_stmt|;
 name|guint
 name|dststride
-decl_stmt|;
-name|Tile
-modifier|*
-name|t
-decl_stmt|;
-name|guchar
-modifier|*
-name|s
-decl_stmt|,
-modifier|*
-name|d
 decl_stmt|;
 for|for
 control|(

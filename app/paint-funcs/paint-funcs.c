@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293dc7aa0103
+DECL|enum|__anon2c2d4a400103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -14930,7 +14930,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|fprintf(stderr, "subsample_region: (%d x %d) -> (%d x %d)\n",           orig_width, orig_height, width, height);
+block|g_printerr ("subsample_region: (%d x %d) -> (%d x %d)\n",               orig_width, orig_height, width, height);
 endif|#
 directive|endif
 comment|/*  Some calculations...  */
@@ -14949,12 +14949,10 @@ expr_stmt|;
 comment|/*  the data pointers...  */
 name|src
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|orig_width
 operator|*
 name|bytes
