@@ -2222,10 +2222,6 @@ block|{
 case|case
 name|GTK_ORIENTATION_HORIZONTAL
 case|:
-name|d
-operator|=
-name|buf
-expr_stmt|;
 for|for
 control|(
 name|x
