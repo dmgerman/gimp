@@ -531,30 +531,6 @@ name|GIMP_HELP_VIEW_SHOW_GUIDES
 block|}
 block|,
 block|{
-literal|"view-snap-to-guides"
-block|,
-name|NULL
-block|,
-name|N_
-argument_list|(
-literal|"Sn_ap to Guides"
-argument_list|)
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|G_CALLBACK
-argument_list|(
-name|view_snap_to_guides_cmd_callback
-argument_list|)
-block|,
-name|TRUE
-block|,
-name|GIMP_HELP_VIEW_SNAP_TO_GUIDES
-block|}
-block|,
-block|{
 literal|"view-show-grid"
 block|,
 name|NULL
@@ -576,6 +552,30 @@ block|,
 name|FALSE
 block|,
 name|GIMP_HELP_VIEW_SHOW_GRID
+block|}
+block|,
+block|{
+literal|"view-snap-to-guides"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Sn_ap to Guides"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|G_CALLBACK
+argument_list|(
+name|view_snap_to_guides_cmd_callback
+argument_list|)
+block|,
+name|TRUE
+block|,
+name|GIMP_HELP_VIEW_SNAP_TO_GUIDES
 block|}
 block|,
 block|{
@@ -609,7 +609,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"S_nap to Canvas Edges"
+literal|"Snap to _Canvas Edges"
 argument_list|)
 block|,
 name|NULL
@@ -633,7 +633,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Snap to Active Pat_h"
+literal|"Snap t_o Active Path"
 argument_list|)
 block|,
 name|NULL
@@ -2078,17 +2078,6 @@ argument_list|)
 expr_stmt|;
 name|SET_ACTIVE
 argument_list|(
-literal|"view-snap-to-guides"
-argument_list|,
-name|gdisp
-operator|&&
-name|shell
-operator|->
-name|snap_to_guides
-argument_list|)
-expr_stmt|;
-name|SET_ACTIVE
-argument_list|(
 literal|"view-show-grid"
 argument_list|,
 name|gdisp
@@ -2096,6 +2085,17 @@ operator|&&
 name|options
 operator|->
 name|show_grid
+argument_list|)
+expr_stmt|;
+name|SET_ACTIVE
+argument_list|(
+literal|"view-snap-to-guides"
+argument_list|,
+name|gdisp
+operator|&&
+name|shell
+operator|->
+name|snap_to_guides
 argument_list|)
 expr_stmt|;
 name|SET_ACTIVE
