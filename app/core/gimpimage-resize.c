@@ -675,7 +675,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2878daea0103
+DECL|enum|__anon29f8c7900103
 block|{
 DECL|enumerator|CLEAN
 name|CLEAN
@@ -4418,16 +4418,27 @@ modifier|*
 name|fg
 parameter_list|)
 block|{
+name|GimpRGB
+name|color
+decl_stmt|;
 name|guchar
 name|pfg
 index|[
 literal|3
 index|]
 decl_stmt|;
-comment|/*  Get the palette color  */
 name|gimp_context_get_foreground
 argument_list|(
 name|NULL
+argument_list|,
+operator|&
+name|color
+argument_list|)
+expr_stmt|;
+name|gimp_rgb_get_uchar
+argument_list|(
+operator|&
+name|color
 argument_list|,
 operator|&
 name|pfg
@@ -4484,6 +4495,9 @@ modifier|*
 name|bg
 parameter_list|)
 block|{
+name|GimpRGB
+name|color
+decl_stmt|;
 name|guchar
 name|pbg
 index|[
@@ -4494,6 +4508,15 @@ comment|/*  Get the palette color  */
 name|gimp_context_get_background
 argument_list|(
 name|NULL
+argument_list|,
+operator|&
+name|color
+argument_list|)
+expr_stmt|;
+name|gimp_rgb_get_uchar
+argument_list|(
+operator|&
+name|color
 argument_list|,
 operator|&
 name|pbg

@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948b56d0103
+DECL|enum|__anon278e73350103
 block|{
 DECL|enumerator|DEVICE_MODE
 name|DEVICE_MODE
@@ -205,13 +205,13 @@ parameter_list|,
 name|ToolType
 name|tool
 parameter_list|,
-name|guchar
+name|GimpRGB
+modifier|*
 name|foreground
-index|[]
 parameter_list|,
-name|guchar
+name|GimpRGB
+modifier|*
 name|background
-index|[]
 parameter_list|,
 name|gchar
 modifier|*

@@ -38,11 +38,8 @@ name|color_panel_widget
 decl_stmt|;
 comment|/*  The actual color  */
 DECL|member|color
-name|guchar
+name|GimpRGB
 name|color
-index|[
-literal|4
-index|]
 decl_stmt|;
 comment|/*  Don't touch this :)  */
 DECL|member|private_part
@@ -58,17 +55,9 @@ name|ColorPanel
 modifier|*
 name|color_panel_new
 parameter_list|(
-name|guchar
-name|r
-parameter_list|,
-name|guchar
-name|g
-parameter_list|,
-name|guchar
-name|b
-parameter_list|,
-name|guchar
-name|a
+name|GimpRGB
+modifier|*
+name|color
 parameter_list|,
 name|gboolean
 name|show_alpha
@@ -90,17 +79,9 @@ name|ColorPanel
 modifier|*
 name|color_panel
 parameter_list|,
-name|guchar
-name|r
-parameter_list|,
-name|guchar
-name|g
-parameter_list|,
-name|guchar
-name|b
-parameter_list|,
-name|guchar
-name|a
+name|GimpRGB
+modifier|*
+name|color
 parameter_list|)
 function_decl|;
 end_function_decl
