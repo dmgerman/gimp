@@ -1006,7 +1006,7 @@ argument_list|(
 name|toggle
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_object
 argument_list|(
 name|tool_info
 operator|->
@@ -1020,6 +1020,8 @@ name|gimp_image_map_tool_notify_preview
 argument_list|)
 argument_list|,
 name|image_map_tool
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
