@@ -17,24 +17,24 @@ name|__GDISPLAYP_H__
 end_define
 
 begin_typedef
-DECL|typedef|GArea
+DECL|typedef|GimpArea
 typedef|typedef
 name|struct
-name|_GArea
-name|GArea
+name|_GimpArea
+name|GimpArea
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GArea
+DECL|struct|_GimpArea
 struct|struct
-name|_GArea
+name|_GimpArea
 block|{
 DECL|member|x1
 DECL|member|y1
 DECL|member|x2
 DECL|member|y2
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1

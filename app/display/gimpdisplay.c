@@ -251,7 +251,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|display_num
 specifier|static
-name|int
+name|gint
 name|display_num
 init|=
 literal|1
@@ -320,7 +320,7 @@ parameter_list|(
 name|GSList
 modifier|*
 parameter_list|,
-name|GArea
+name|GimpArea
 modifier|*
 parameter_list|)
 function_decl|;
@@ -456,15 +456,14 @@ end_comment
 begin_function
 name|GDisplay
 modifier|*
-DECL|function|gdisplay_new (GimpImage * gimage,unsigned int scale)
+DECL|function|gdisplay_new (GimpImage * gimage,guint scale)
 name|gdisplay_new
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|unsigned
-name|int
+name|guint
 name|scale
 parameter_list|)
 block|{
@@ -472,7 +471,7 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|char
+name|gchar
 name|title
 index|[
 name|MAX_TITLE_BUF
@@ -972,18 +971,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_format_title (GDisplay * gdisp,char * title,int title_len)
+DECL|function|gdisplay_format_title (GDisplay * gdisp,gchar * title,gint title_len)
 name|gdisplay_format_title
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|title
 parameter_list|,
-name|int
+name|gint
 name|title_len
 parameter_list|)
 block|{
@@ -1665,7 +1664,7 @@ name|l
 init|=
 name|list
 decl_stmt|;
-name|GArea
+name|GimpArea
 modifier|*
 name|ga
 decl_stmt|;
@@ -1678,7 +1677,7 @@ comment|/*  free the data  */
 name|ga
 operator|=
 operator|(
-name|GArea
+name|GimpArea
 operator|*
 operator|)
 name|l
@@ -1714,21 +1713,21 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * As far as I can tell, this function takes a GArea and unifies it with  *  an existing list of GAreas, trying to avoid overdraw.  [adam]  */
+comment|/*  * As far as I can tell, this function takes a GimpArea and unifies it with  *  an existing list of GimpAreas, trying to avoid overdraw.  [adam]  */
 end_comment
 
 begin_function
 specifier|static
 name|GSList
 modifier|*
-DECL|function|gdisplay_process_area_list (GSList * list,GArea * ga1)
+DECL|function|gdisplay_process_area_list (GSList * list,GimpArea * ga1)
 name|gdisplay_process_area_list
 parameter_list|(
 name|GSList
 modifier|*
 name|list
 parameter_list|,
-name|GArea
+name|GimpArea
 modifier|*
 name|ga1
 parameter_list|)
@@ -1743,14 +1742,14 @@ name|l
 init|=
 name|list
 decl_stmt|;
-name|int
+name|gint
 name|area1
 decl_stmt|,
 name|area2
 decl_stmt|,
 name|area3
 decl_stmt|;
-name|GArea
+name|GimpArea
 modifier|*
 name|ga2
 decl_stmt|;
@@ -1773,7 +1772,7 @@ comment|/*  process the data  */
 name|ga2
 operator|=
 operator|(
-name|GArea
+name|GimpArea
 operator|*
 operator|)
 name|l
@@ -2001,7 +2000,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|GArea
+name|GimpArea
 modifier|*
 name|ga
 decl_stmt|;
@@ -2034,7 +2033,7 @@ block|}
 name|ga
 operator|=
 operator|(
-name|GArea
+name|GimpArea
 operator|*
 operator|)
 name|list
@@ -2146,18 +2145,18 @@ name|data
 parameter_list|)
 block|{
 specifier|const
-name|int
+name|gint
 name|CHUNK_WIDTH
 init|=
 literal|256
 decl_stmt|;
 specifier|const
-name|int
+name|gint
 name|CHUNK_HEIGHT
 init|=
 literal|128
 decl_stmt|;
-name|int
+name|gint
 name|workx
 decl_stmt|,
 name|worky
@@ -2403,7 +2402,7 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|GArea
+name|GimpArea
 modifier|*
 name|ga
 decl_stmt|,
@@ -2426,7 +2425,7 @@ block|{
 name|ga
 operator|=
 operator|(
-name|GArea
+name|GimpArea
 operator|*
 operator|)
 name|list
@@ -2439,7 +2438,7 @@ name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|GArea
+name|GimpArea
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2451,7 +2450,7 @@ name|ga
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|GArea
+name|GimpArea
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2496,7 +2495,7 @@ name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|GArea
+name|GimpArea
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2658,7 +2657,7 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|GArea
+name|GimpArea
 modifier|*
 name|ga
 decl_stmt|;
@@ -2690,11 +2689,11 @@ condition|(
 name|list
 condition|)
 block|{
-comment|/*  Paint the area specified by the GArea  */
+comment|/*  Paint the area specified by the GimpArea  */
 name|ga
 operator|=
 operator|(
-name|GArea
+name|GimpArea
 operator|*
 operator|)
 name|list
@@ -2816,7 +2815,7 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|GArea
+name|GimpArea
 modifier|*
 name|ga
 decl_stmt|;
@@ -2847,11 +2846,11 @@ condition|(
 name|list
 condition|)
 block|{
-comment|/*  Paint the area specified by the GArea  */
+comment|/*  Paint the area specified by the GimpArea  */
 name|ga
 operator|=
 operator|(
-name|GArea
+name|GimpArea
 operator|*
 operator|)
 name|list
@@ -3174,7 +3173,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_draw_guide (GDisplay * gdisp,Guide * guide,int active)
+DECL|function|gdisplay_draw_guide (GDisplay * gdisp,Guide * guide,gboolean active)
 name|gdisplay_draw_guide
 parameter_list|(
 name|GDisplay
@@ -3185,7 +3184,7 @@ name|Guide
 modifier|*
 name|guide
 parameter_list|,
-name|int
+name|gboolean
 name|active
 parameter_list|)
 block|{
@@ -3223,22 +3222,22 @@ name|initialize
 init|=
 name|TRUE
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|x2
 decl_stmt|;
-name|int
+name|gint
 name|y1
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|w
 decl_stmt|,
 name|h
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -3745,17 +3744,17 @@ end_function
 begin_function
 name|Guide
 modifier|*
-DECL|function|gdisplay_find_guide (GDisplay * gdisp,int x,int y)
+DECL|function|gdisplay_find_guide (GDisplay * gdisp,gdouble x,gdouble y)
 name|gdisplay_find_guide
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gdouble
 name|x
 parameter_list|,
-name|int
+name|gdouble
 name|y
 parameter_list|)
 block|{
@@ -3767,17 +3766,17 @@ name|Guide
 modifier|*
 name|guide
 decl_stmt|;
-name|double
-name|scalex
-decl_stmt|,
-name|scaley
-decl_stmt|;
-name|int
+name|gint
 name|offset_x
 decl_stmt|,
 name|offset_y
 decl_stmt|;
-name|int
+name|gdouble
+name|scalex
+decl_stmt|,
+name|scaley
+decl_stmt|;
+name|gdouble
 name|pos
 decl_stmt|;
 if|if
@@ -3858,10 +3857,6 @@ name|ORIENTATION_HORIZONTAL
 case|:
 name|pos
 operator|=
-call|(
-name|int
-call|)
-argument_list|(
 name|scaley
 operator|*
 name|guide
@@ -3869,7 +3864,6 @@ operator|->
 name|position
 operator|-
 name|offset_y
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -3911,10 +3905,6 @@ name|ORIENTATION_VERTICAL
 case|:
 name|pos
 operator|=
-call|(
-name|int
-call|)
-argument_list|(
 name|scalex
 operator|*
 name|guide
@@ -3922,7 +3912,6 @@ operator|->
 name|position
 operator|-
 name|offset_x
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -3969,7 +3958,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gdisplay_snap_point (GDisplay * gdisp,gdouble x,gdouble y,gdouble * tx,gdouble * ty)
 name|gdisplay_snap_point
 parameter_list|(
@@ -4000,25 +3989,31 @@ name|Guide
 modifier|*
 name|guide
 decl_stmt|;
-name|double
+name|gdouble
 name|scalex
 decl_stmt|,
 name|scaley
 decl_stmt|;
-name|int
+name|gdouble
+name|pos
+decl_stmt|;
+name|gint
 name|offset_x
 decl_stmt|,
 name|offset_y
 decl_stmt|;
-name|int
+name|gint
 name|minhdist
 decl_stmt|,
 name|minvdist
 decl_stmt|;
-name|int
-name|pos
-decl_stmt|,
+name|gint
 name|dist
+decl_stmt|;
+name|gboolean
+name|snapped
+init|=
+name|FALSE
 decl_stmt|;
 operator|*
 name|tx
@@ -4126,10 +4121,6 @@ name|ORIENTATION_HORIZONTAL
 case|:
 name|pos
 operator|=
-call|(
-name|int
-call|)
-argument_list|(
 name|scaley
 operator|*
 name|guide
@@ -4137,7 +4128,6 @@ operator|->
 name|position
 operator|-
 name|offset_y
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -4164,6 +4154,9 @@ condition|)
 block|{
 name|dist
 operator|=
+operator|(
+name|int
+operator|)
 name|pos
 operator|-
 name|y
@@ -4191,6 +4184,10 @@ name|ty
 operator|=
 name|pos
 expr_stmt|;
+name|snapped
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 block|}
 break|break;
@@ -4199,10 +4196,6 @@ name|ORIENTATION_VERTICAL
 case|:
 name|pos
 operator|=
-call|(
-name|int
-call|)
-argument_list|(
 name|scalex
 operator|*
 name|guide
@@ -4210,7 +4203,6 @@ operator|->
 name|position
 operator|-
 name|offset_x
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -4237,6 +4229,9 @@ condition|)
 block|{
 name|dist
 operator|=
+operator|(
+name|int
+operator|)
 name|pos
 operator|-
 name|x
@@ -4264,54 +4259,66 @@ name|tx
 operator|=
 name|pos
 expr_stmt|;
+name|snapped
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 block|}
 break|break;
 block|}
 block|}
 block|}
+return|return
+name|snapped
+return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_snap_rectangle (GDisplay * gdisp,int x1,int y1,int x2,int y2,int * tx1,int * ty1)
+DECL|function|gdisplay_snap_rectangle (GDisplay * gdisp,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gdouble * tx1,gdouble * ty1)
 name|gdisplay_snap_rectangle
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gdouble
 name|x1
 parameter_list|,
-name|int
+name|gdouble
 name|y1
 parameter_list|,
-name|int
+name|gdouble
 name|x2
 parameter_list|,
-name|int
+name|gdouble
 name|y2
 parameter_list|,
-name|int
+name|gdouble
 modifier|*
 name|tx1
 parameter_list|,
-name|int
+name|gdouble
 modifier|*
 name|ty1
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|nx1
 decl_stmt|,
 name|ny1
 decl_stmt|;
-name|double
+name|gdouble
 name|nx2
 decl_stmt|,
 name|ny2
+decl_stmt|;
+name|gboolean
+name|snap1
+decl_stmt|,
+name|snap2
 decl_stmt|;
 operator|*
 name|tx1
@@ -4323,23 +4330,8 @@ name|ty1
 operator|=
 name|y1
 expr_stmt|;
-if|if
-condition|(
-name|gdisp
-operator|->
-name|draw_guides
-operator|&&
-name|gdisp
-operator|->
-name|snap_to_guides
-operator|&&
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|guides
-condition|)
-block|{
+name|snap1
+operator|=
 name|gdisplay_snap_point
 argument_list|(
 name|gdisp
@@ -4355,6 +4347,8 @@ operator|&
 name|ny1
 argument_list|)
 expr_stmt|;
+name|snap2
+operator|=
 name|gdisplay_snap_point
 argument_list|(
 name|gdisp
@@ -4372,11 +4366,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|snap1
+operator|||
+name|snap2
+condition|)
+block|{
+if|if
+condition|(
 name|x1
 operator|!=
-operator|(
-name|int
-operator|)
 name|nx1
 condition|)
 operator|*
@@ -4389,9 +4387,6 @@ if|if
 condition|(
 name|x2
 operator|!=
-operator|(
-name|int
-operator|)
 name|nx2
 condition|)
 operator|*
@@ -4409,9 +4404,6 @@ if|if
 condition|(
 name|y1
 operator|!=
-operator|(
-name|int
-operator|)
 name|ny1
 condition|)
 operator|*
@@ -4424,9 +4416,6 @@ if|if
 condition|(
 name|y2
 operator|!=
-operator|(
-name|int
-operator|)
 name|ny2
 condition|)
 operator|*
@@ -4663,37 +4652,33 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_update_cursor (GDisplay * gdisp,int x,int y)
+DECL|function|gdisplay_update_cursor (GDisplay * gdisp,gint x,gint y)
 name|gdisplay_update_cursor
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|)
 block|{
-name|int
+name|gint
 name|new_cursor
 decl_stmt|;
-name|char
+name|gchar
 name|buffer
 index|[
 name|CURSOR_STR_LENGTH
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|t_x
 decl_stmt|,
 name|t_y
-decl_stmt|;
-name|GimpDrawable
-modifier|*
-name|active_drawable
 decl_stmt|;
 name|new_cursor
 operator|=
@@ -4789,20 +4774,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|active_drawable
-operator|=
-name|gimp_image_active_drawable
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|active_drawable
-condition|)
-block|{
 if|if
 condition|(
 name|t_x
@@ -4815,13 +4786,17 @@ literal|0
 operator|||
 name|t_x
 operator|>=
-name|active_drawable
+name|gdisp
+operator|->
+name|gimage
 operator|->
 name|width
 operator|||
 name|t_y
 operator|>=
-name|active_drawable
+name|gdisp
+operator|->
+name|gimage
 operator|->
 name|height
 condition|)
@@ -4882,7 +4857,7 @@ block|}
 else|else
 comment|/* show real world units */
 block|{
-name|double
+name|gdouble
 name|unit_factor
 init|=
 name|gimp_unit_get_factor
@@ -4907,7 +4882,7 @@ argument_list|,
 literal|""
 argument_list|,
 operator|(
-name|double
+name|gdouble
 operator|)
 name|t_x
 operator|*
@@ -4922,7 +4897,7 @@ argument_list|,
 literal|", "
 argument_list|,
 operator|(
-name|double
+name|gdouble
 operator|)
 name|t_y
 operator|*
@@ -4958,7 +4933,6 @@ name|t_y
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 name|gdisp
 operator|->
 name|have_cursor
@@ -4991,14 +4965,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_set_dot_for_dot (GDisplay * gdisp,int value)
+DECL|function|gdisplay_set_dot_for_dot (GDisplay * gdisp,gboolean value)
 name|gdisplay_set_dot_for_dot
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gboolean
 name|value
 parameter_list|)
 block|{
@@ -5046,16 +5020,16 @@ name|gdisp
 parameter_list|)
 block|{
 comment|/* Set a proper size for the coordinates display in the statusbar. */
-name|char
+name|gchar
 name|buffer
 index|[
 name|CURSOR_STR_LENGTH
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|cursor_label_width
 decl_stmt|;
-name|int
+name|gint
 name|label_frame_size_difference
 decl_stmt|;
 if|if
@@ -5344,41 +5318,41 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_add_update_area (GDisplay * gdisp,int x,int y,int w,int h)
+DECL|function|gdisplay_add_update_area (GDisplay * gdisp,gint x,gint y,gint w,gint h)
 name|gdisplay_add_update_area
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
-name|GArea
+name|GimpArea
 modifier|*
 name|ga
 decl_stmt|;
 name|ga
 operator|=
 operator|(
-name|GArea
+name|GimpArea
 operator|*
 operator|)
 name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|GArea
+name|GimpArea
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5473,41 +5447,41 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_add_display_area (GDisplay * gdisp,int x,int y,int w,int h)
+DECL|function|gdisplay_add_display_area (GDisplay * gdisp,gint x,gint y,gint w,gint h)
 name|gdisplay_add_display_area
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
-name|GArea
+name|GimpArea
 modifier|*
 name|ga
 decl_stmt|;
 name|ga
 operator|=
 operator|(
-name|GArea
+name|GimpArea
 operator|*
 operator|)
 name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|GArea
+name|GimpArea
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5594,27 +5568,27 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_paint_area (GDisplay * gdisp,int x,int y,int w,int h)
+DECL|function|gdisplay_paint_area (GDisplay * gdisp,gint x,gint y,gint w,gint h)
 name|gdisplay_paint_area
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -5844,47 +5818,47 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_display_area (GDisplay * gdisp,int x,int y,int w,int h)
+DECL|function|gdisplay_display_area (GDisplay * gdisp,gint x,gint y,gint w,gint h)
 name|gdisplay_display_area
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
-name|int
+name|gint
 name|sx
 decl_stmt|,
 name|sy
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
 decl_stmt|;
-name|int
+name|gint
 name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|dx
 decl_stmt|,
 name|dy
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -5897,7 +5871,7 @@ name|guchar
 modifier|*
 name|buf
 decl_stmt|;
-name|int
+name|gint
 name|bpp
 decl_stmt|,
 name|bpl
@@ -6399,18 +6373,18 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|gdisplay_mask_value (GDisplay * gdisp,int x,int y)
+name|gint
+DECL|function|gdisplay_mask_value (GDisplay * gdisp,gint x,gint y)
 name|gdisplay_mask_value
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|)
 block|{
@@ -6450,27 +6424,27 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|gdisplay_mask_bounds (GDisplay * gdisp,int * x1,int * y1,int * x2,int * y2)
+name|gint
+DECL|function|gdisplay_mask_bounds (GDisplay * gdisp,gint * x1,gint * y1,gint * x2,gint * y2)
 name|gdisplay_mask_bounds
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|x1
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|y1
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|x2
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|y2
 parameter_list|)
@@ -6479,7 +6453,7 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
@@ -6764,38 +6738,38 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_transform_coords (GDisplay * gdisp,int x,int y,int * nx,int * ny,int use_offsets)
+DECL|function|gdisplay_transform_coords (GDisplay * gdisp,gint x,gint y,gint * nx,gint * ny,gboolean use_offsets)
 name|gdisplay_transform_coords
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nx
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|ny
 parameter_list|,
-name|int
+name|gboolean
 name|use_offsets
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|scalex
 decl_stmt|;
-name|double
+name|gdouble
 name|scaley
 decl_stmt|;
-name|int
+name|gint
 name|offset_x
 decl_stmt|,
 name|offset_y
@@ -6903,41 +6877,41 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_untransform_coords (GDisplay * gdisp,int x,int y,int * nx,int * ny,int round,int use_offsets)
+DECL|function|gdisplay_untransform_coords (GDisplay * gdisp,gint x,gint y,gint * nx,gint * ny,gboolean round,gboolean use_offsets)
 name|gdisplay_untransform_coords
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nx
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|ny
 parameter_list|,
-name|int
+name|gboolean
 name|round
 parameter_list|,
-name|int
+name|gboolean
 name|use_offsets
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|scalex
 decl_stmt|;
-name|double
+name|gdouble
 name|scaley
 decl_stmt|;
-name|int
+name|gint
 name|offset_x
 decl_stmt|,
 name|offset_y
@@ -7088,38 +7062,38 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_transform_coords_f (GDisplay * gdisp,double x,double y,double * nx,double * ny,int use_offsets)
+DECL|function|gdisplay_transform_coords_f (GDisplay * gdisp,gdouble x,gdouble y,gdouble * nx,gdouble * ny,gboolean use_offsets)
 name|gdisplay_transform_coords_f
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|nx
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|ny
 parameter_list|,
-name|int
+name|gboolean
 name|use_offsets
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|scalex
 decl_stmt|;
-name|double
+name|gdouble
 name|scaley
 decl_stmt|;
-name|int
+name|gint
 name|offset_x
 decl_stmt|,
 name|offset_y
@@ -7217,38 +7191,38 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_untransform_coords_f (GDisplay * gdisp,double x,double y,double * nx,double * ny,int use_offsets)
+DECL|function|gdisplay_untransform_coords_f (GDisplay * gdisp,gdouble x,gdouble y,gdouble * nx,gdouble * ny,gboolean use_offsets)
 name|gdisplay_untransform_coords_f
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|nx
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|ny
 parameter_list|,
-name|int
+name|gboolean
 name|use_offsets
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|scalex
 decl_stmt|;
-name|double
+name|gdouble
 name|scaley
 decl_stmt|;
-name|int
+name|gint
 name|offset_x
 decl_stmt|,
 name|offset_y
@@ -8529,23 +8503,23 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_expose_area (GDisplay * gdisp,int x,int y,int w,int h)
+DECL|function|gdisplay_expose_area (GDisplay * gdisp,gint x,gint y,gint w,gint h)
 name|gdisplay_expose_area
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
@@ -8579,7 +8553,7 @@ modifier|*
 name|guide
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -8749,10 +8723,10 @@ end_function
 begin_function
 name|GDisplay
 modifier|*
-DECL|function|gdisplay_get_ID (int ID)
+DECL|function|gdisplay_get_ID (gint ID)
 name|gdisplay_get_ID
 parameter_list|(
-name|int
+name|gint
 name|ID
 parameter_list|)
 block|{
@@ -8818,7 +8792,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|char
+name|gchar
 name|title
 index|[
 name|MAX_TITLE_BUF
@@ -9074,23 +9048,23 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplays_update_area (GimpImage * gimage,int x,int y,int w,int h)
+DECL|function|gdisplays_update_area (GimpImage * gimage,gint x,gint y,gint w,gint h)
 name|gdisplays_update_area
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
@@ -9342,7 +9316,7 @@ name|list
 init|=
 name|display_list
 decl_stmt|;
-name|int
+name|gint
 name|count
 init|=
 literal|0
@@ -9636,7 +9610,7 @@ name|list
 init|=
 name|display_list
 decl_stmt|;
-name|int
+name|gint
 name|count
 init|=
 literal|0
@@ -9749,17 +9723,17 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gdisplays_dirty (void)
 name|gdisplays_dirty
 parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|int
+name|gboolean
 name|dirty
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 name|GSList
 modifier|*
@@ -9793,7 +9767,7 @@ literal|0
 condition|)
 name|dirty
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|list
 operator|=
@@ -9968,7 +9942,7 @@ name|now
 parameter_list|)
 block|{
 specifier|static
-name|int
+name|gboolean
 name|flushing
 init|=
 name|FALSE
@@ -10108,7 +10082,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|int
+name|gint
 name|instance
 decl_stmt|;
 if|if

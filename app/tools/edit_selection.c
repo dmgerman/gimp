@@ -99,6 +99,12 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
+end_include
+
 begin_define
 DECL|macro|EDIT_SELECT_SCROLL_LOCK
 define|#
@@ -139,7 +145,7 @@ name|_EditSelection
 block|{
 DECL|member|origx
 DECL|member|origy
-name|int
+name|gint
 name|origx
 decl_stmt|,
 name|origy
@@ -147,7 +153,7 @@ decl_stmt|;
 comment|/*  last x and y coords             */
 DECL|member|cumlx
 DECL|member|cumly
-name|int
+name|gint
 name|cumlx
 decl_stmt|,
 name|cumly
@@ -155,7 +161,7 @@ decl_stmt|;
 comment|/*  cumulative changes to x and yed */
 DECL|member|x
 DECL|member|y
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -163,7 +169,7 @@ decl_stmt|;
 comment|/*  current x and y coords          */
 DECL|member|x1
 DECL|member|y1
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -171,7 +177,7 @@ decl_stmt|;
 comment|/*  bounding box of selection mask  */
 DECL|member|x2
 DECL|member|y2
-name|int
+name|gint
 name|x2
 decl_stmt|,
 name|y2
@@ -246,36 +252,36 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|edit_selection_snap (GDisplay * gdisp,int x,int y)
+DECL|function|edit_selection_snap (GDisplay * gdisp,gdouble x,gdouble y)
 name|edit_selection_snap
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gdouble
 name|x
 parameter_list|,
-name|int
+name|gdouble
 name|y
 parameter_list|)
 block|{
-name|int
+name|gdouble
 name|x1
 decl_stmt|,
 name|y1
 decl_stmt|;
-name|int
+name|gdouble
 name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gdouble
 name|dx
 decl_stmt|,
 name|dy
 decl_stmt|;
-name|gdisplay_untransform_coords
+name|gdisplay_untransform_coords_f
 argument_list|(
 name|gdisp
 argument_list|,
@@ -288,8 +294,6 @@ name|x
 argument_list|,
 operator|&
 name|y
-argument_list|,
-name|FALSE
 argument_list|,
 name|TRUE
 argument_list|)
@@ -326,6 +330,23 @@ name|y1
 operator|+
 name|dy
 expr_stmt|;
+if|if
+condition|(
+name|gdisp
+operator|->
+name|draw_guides
+operator|&&
+name|gdisp
+operator|->
+name|snap_to_guides
+operator|&&
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|guides
+condition|)
+block|{
 name|x2
 operator|=
 name|edit_select
@@ -342,7 +363,7 @@ name|y2
 operator|+
 name|dy
 expr_stmt|;
-name|gdisplay_transform_coords
+name|gdisplay_transform_coords_f
 argument_list|(
 name|gdisp
 argument_list|,
@@ -359,7 +380,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gdisplay_transform_coords
+name|gdisplay_transform_coords_f
 argument_list|(
 name|gdisp
 argument_list|,
@@ -395,7 +416,7 @@ operator|&
 name|y1
 argument_list|)
 expr_stmt|;
-name|gdisplay_untransform_coords
+name|gdisplay_untransform_coords_f
 argument_list|(
 name|gdisp
 argument_list|,
@@ -409,15 +430,17 @@ argument_list|,
 operator|&
 name|y1
 argument_list|,
-name|FALSE
-argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 name|edit_select
 operator|.
 name|x
 operator|=
+operator|(
+name|int
+operator|)
 name|x1
 operator|-
 operator|(
@@ -434,6 +457,9 @@ name|edit_select
 operator|.
 name|y
 operator|=
+operator|(
+name|int
+operator|)
 name|y1
 operator|-
 operator|(
@@ -477,7 +503,7 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -831,7 +857,7 @@ name|gpointer
 name|gdisp_ptr
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -996,7 +1022,7 @@ name|edit_select
 operator|.
 name|y
 expr_stmt|;
-comment|/* move the selection -- whether there has been net movement or not!      * (to ensure that there's something on the undo stack)      */
+comment|/* move the selection -- whether there has been net movement or not!        * (to ensure that there's something on the undo stack)        */
 name|gimage_mask_translate
 argument_list|(
 name|gdisp
@@ -1058,33 +1084,7 @@ literal|0
 condition|)
 block|{
 comment|/* The user either didn't actually move the selection, 	 or moved it around and eventually just put it back in 	 exactly the same spot. */
-if|if
-condition|(
-operator|(
-name|edit_select
-operator|.
-name|edit_type
-operator|==
-name|MaskTranslate
-operator|)
-operator|||
-operator|(
-name|edit_select
-operator|.
-name|edit_type
-operator|==
-name|MaskToLayerTranslate
-operator|)
-condition|)
-name|gimage_mask_clear
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
-comment|/*  if no movement occured and the type is LayerTranslate, 	  check if the layer is a floating selection.  If so, anchor. */
-elseif|else
+comment|/*  If no movement occured and the type is FloatingSelTranslate, 	  check if the layer is a floating selection.  If so, anchor. */
 if|if
 condition|(
 name|edit_select
@@ -1263,19 +1263,6 @@ name|GSList
 modifier|*
 name|layer_list
 decl_stmt|;
-name|edit_selection_snap
-argument_list|(
-name|gdisp
-argument_list|,
-name|mevent
-operator|->
-name|x
-argument_list|,
-name|mevent
-operator|->
-name|y
-argument_list|)
-expr_stmt|;
 name|x
 operator|=
 name|edit_select
@@ -1496,13 +1483,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|edit_select
-operator|.
-name|first_move
-condition|)
-block|{
+comment|/* this is always the first move, since we switch to FloatingSelTranslate */
 name|gimp_image_undo_freeze
 argument_list|(
 name|gdisp
@@ -1515,13 +1496,6 @@ operator|.
 name|first_move
 operator|=
 name|FALSE
-expr_stmt|;
-block|}
-name|edit_select
-operator|.
-name|edit_type
-operator|=
-name|FloatingSelTranslate
 expr_stmt|;
 name|edit_select
 operator|.
@@ -1538,6 +1512,40 @@ operator|-=
 name|edit_select
 operator|.
 name|y1
+expr_stmt|;
+name|edit_select
+operator|.
+name|x2
+operator|-=
+name|edit_select
+operator|.
+name|x1
+expr_stmt|;
+name|edit_select
+operator|.
+name|y2
+operator|-=
+name|edit_select
+operator|.
+name|y1
+expr_stmt|;
+name|edit_select
+operator|.
+name|x1
+operator|=
+literal|0
+expr_stmt|;
+name|edit_select
+operator|.
+name|y1
+operator|=
+literal|0
+expr_stmt|;
+name|edit_select
+operator|.
+name|edit_type
+operator|=
+name|FloatingSelTranslate
 expr_stmt|;
 break|break;
 case|case
@@ -1761,10 +1769,10 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|diff_x
 decl_stmt|,
 name|diff_y
@@ -1789,10 +1797,10 @@ name|GSList
 modifier|*
 name|layer_list
 decl_stmt|;
-name|int
+name|gint
 name|floating_sel
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -1801,7 +1809,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|x3
 decl_stmt|,
 name|y3
@@ -1810,7 +1818,7 @@ name|x4
 decl_stmt|,
 name|y4
 decl_stmt|;
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
@@ -1867,17 +1875,6 @@ name|edit_select
 operator|.
 name|cumly
 argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|diff_x
-operator|=
-literal|0
-expr_stmt|;
-name|diff_y
-operator|=
-literal|0
 expr_stmt|;
 block|}
 switch|switch
@@ -2222,20 +2219,20 @@ argument_list|,
 literal|0
 argument_list|,
 name|x1
-operator|+
-name|diff_x
 argument_list|,
 name|y1
-operator|+
-name|diff_y
 argument_list|,
 name|x2
 operator|-
 name|x1
+operator|+
+literal|1
 argument_list|,
 name|y2
 operator|-
 name|y1
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2470,12 +2467,8 @@ argument_list|,
 literal|0
 argument_list|,
 name|x1
-operator|+
-name|diff_x
 argument_list|,
 name|y1
-operator|+
-name|diff_y
 argument_list|,
 name|x2
 operator|-
@@ -2734,7 +2727,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|process_event_queue_keys (GdkEventKey * kevent,...)
 name|process_event_queue_keys
 parameter_list|(
@@ -2776,13 +2769,13 @@ index|[
 name|FILTER_MAX_KEYS
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|values
 index|[
 name|FILTER_MAX_KEYS
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|i
 init|=
 literal|0
@@ -3145,7 +3138,7 @@ name|gpointer
 name|gdisp_ptr
 parameter_list|)
 block|{
-name|int
+name|gint
 name|inc_x
 decl_stmt|,
 name|inc_y

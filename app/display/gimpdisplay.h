@@ -272,27 +272,27 @@ struct|struct
 name|_IdleRenderStruct
 block|{
 DECL|member|width
-name|int
+name|gint
 name|width
 decl_stmt|;
 DECL|member|height
-name|int
+name|gint
 name|height
 decl_stmt|;
 DECL|member|x
-name|int
+name|gint
 name|x
 decl_stmt|;
 DECL|member|y
-name|int
+name|gint
 name|y
 decl_stmt|;
 DECL|member|basex
-name|int
+name|gint
 name|basex
 decl_stmt|;
 DECL|member|basey
-name|int
+name|gint
 name|basey
 decl_stmt|;
 DECL|member|idleid
@@ -322,7 +322,7 @@ struct|struct
 name|_GDisplay
 block|{
 DECL|member|ID
-name|int
+name|gint
 name|ID
 decl_stmt|;
 comment|/*  unique identifier for this gdisplay     */
@@ -405,13 +405,13 @@ name|cursor_label
 decl_stmt|;
 comment|/*  widget for cursor position              */
 DECL|member|cursor_format_str
-name|char
+name|gchar
 name|cursor_format_str
 index|[
 name|CURSOR_FORMAT_LENGTH
 index|]
 decl_stmt|;
-comment|/* we need a variable format 						  * string because different 						  * units have different number 						  * of decimals               */
+comment|/* we need a variable format 						   * string because different 						   * units have different number 						   * of decimals              */
 DECL|member|cancelbutton
 name|GtkWidget
 modifier|*
@@ -442,7 +442,7 @@ name|nav_popup
 decl_stmt|;
 comment|/*  widget for the popup navigation window  */
 DECL|member|color_type
-name|int
+name|gint
 name|color_type
 decl_stmt|;
 comment|/*  is this an RGB or GRAY colormap         */
@@ -465,59 +465,60 @@ name|gimage
 decl_stmt|;
 comment|/*  pointer to the associated gimage struct */
 DECL|member|instance
-name|int
+name|gint
 name|instance
 decl_stmt|;
 comment|/*  the instance # of this gdisplay as      */
 comment|/*  taken from the gimage at creation       */
 DECL|member|depth
-name|int
+name|gint
 name|depth
 decl_stmt|;
 comment|/*  depth of our drawables                  */
 DECL|member|disp_width
-name|int
+name|gint
 name|disp_width
 decl_stmt|;
 comment|/*  width of drawing area in the window     */
 DECL|member|disp_height
-name|int
+name|gint
 name|disp_height
 decl_stmt|;
 comment|/*  height of drawing area in the window    */
 DECL|member|disp_xoffset
-name|int
+name|gint
 name|disp_xoffset
 decl_stmt|;
 DECL|member|disp_yoffset
-name|int
+name|gint
 name|disp_yoffset
 decl_stmt|;
 DECL|member|offset_x
-DECL|member|offset_y
-name|int
+name|gint
 name|offset_x
-decl_stmt|,
-name|offset_y
 decl_stmt|;
 comment|/*  offset of display image into raw image  */
+DECL|member|offset_y
+name|gint
+name|offset_y
+decl_stmt|;
 DECL|member|scale
-name|int
+name|gint
 name|scale
 decl_stmt|;
 comment|/*  scale factor from original raw image    */
 DECL|member|dot_for_dot
-name|int
+name|gboolean
 name|dot_for_dot
 decl_stmt|;
 comment|/*  is monitor resolution being ignored?    */
 DECL|member|draw_guides
-name|short
+name|gboolean
 name|draw_guides
 decl_stmt|;
 comment|/*  should the guides be drawn?             */
 DECL|member|snap_to_guides
-name|short
+name|gboolean
 name|snap_to_guides
 decl_stmt|;
 comment|/*  should the guides be snapped to?        */
@@ -546,7 +547,7 @@ name|display_areas
 decl_stmt|;
 comment|/*  Display areas list                      */
 DECL|member|current_cursor
-name|int
+name|gint
 name|current_cursor
 decl_stmt|;
 comment|/*  Currently installed cursor              */
@@ -556,32 +557,32 @@ name|override_cursor
 decl_stmt|;
 comment|/*  Overriding cursor (ie. hourglass)       */
 DECL|member|draw_cursor
-name|short
+name|gboolean
 name|draw_cursor
 decl_stmt|;
 comment|/* should we draw software cursor ?         */
 DECL|member|using_override_cursor
-name|short
+name|gboolean
 name|using_override_cursor
 decl_stmt|;
 comment|/* is the cursor overridden? (ie. hourglass)*/
 DECL|member|cursor_x
-name|int
+name|gint
 name|cursor_x
 decl_stmt|;
 comment|/* software cursor X value                  */
 DECL|member|cursor_y
-name|int
+name|gint
 name|cursor_y
 decl_stmt|;
 comment|/* software cursor Y value                  */
 DECL|member|proximity
-name|short
+name|gboolean
 name|proximity
 decl_stmt|;
 comment|/* is a device in proximity of gdisplay ?   */
 DECL|member|have_cursor
-name|short
+name|gboolean
 name|have_cursor
 decl_stmt|;
 comment|/* is cursor currently drawn ?              */
@@ -618,8 +619,7 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|unsigned
-name|int
+name|guint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -654,9 +654,9 @@ parameter_list|(
 name|GDisplay
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -668,16 +668,16 @@ parameter_list|(
 name|GDisplay
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|)
 function_decl|;
@@ -690,17 +690,17 @@ parameter_list|(
 name|GDisplay
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -712,19 +712,19 @@ parameter_list|(
 name|GDisplay
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gboolean
 parameter_list|,
-name|int
+name|gboolean
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -736,17 +736,17 @@ parameter_list|(
 name|GDisplay
 modifier|*
 parameter_list|,
-name|double
+name|gdouble
 parameter_list|,
-name|double
+name|gdouble
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 parameter_list|,
-name|int
+name|gboolean
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -758,17 +758,17 @@ parameter_list|(
 name|GDisplay
 modifier|*
 parameter_list|,
-name|double
+name|gdouble
 parameter_list|,
-name|double
+name|gdouble
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 parameter_list|,
-name|int
+name|gboolean
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -792,7 +792,7 @@ parameter_list|(
 name|GDisplay
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -846,13 +846,13 @@ parameter_list|(
 name|GDisplay
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -929,7 +929,7 @@ parameter_list|,
 name|Guide
 modifier|*
 parameter_list|,
-name|int
+name|gboolean
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -942,28 +942,28 @@ parameter_list|(
 name|GDisplay
 modifier|*
 parameter_list|,
-name|int
+name|gdouble
 parameter_list|,
-name|int
+name|double
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gdisplay_snap_point
 parameter_list|(
 name|GDisplay
 modifier|*
 parameter_list|,
-name|double
+name|gdouble
 parameter_list|,
-name|double
+name|gdouble
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 parameter_list|)
 function_decl|;
@@ -976,18 +976,18 @@ parameter_list|(
 name|GDisplay
 modifier|*
 parameter_list|,
-name|int
+name|gdouble
 parameter_list|,
-name|int
+name|gdouble
 parameter_list|,
-name|int
+name|gdouble
 parameter_list|,
-name|int
+name|gdouble
 parameter_list|,
-name|int
+name|gdouble
 modifier|*
 parameter_list|,
-name|int
+name|gdouble
 modifier|*
 parameter_list|)
 function_decl|;
@@ -1000,9 +1000,9 @@ parameter_list|(
 name|GDisplay
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1014,7 +1014,7 @@ parameter_list|(
 name|GDisplay
 modifier|*
 parameter_list|,
-name|int
+name|gboolean
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1062,7 +1062,7 @@ name|GDisplay
 modifier|*
 name|gdisplay_get_ID
 parameter_list|(
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1114,13 +1114,13 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1190,7 +1190,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gdisplays_dirty
 parameter_list|(
 name|void
