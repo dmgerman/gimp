@@ -622,6 +622,10 @@ DECL|member|button_press_before_focus
 name|gboolean
 name|button_press_before_focus
 decl_stmt|;
+DECL|member|last_motion_time
+name|guint32
+name|last_motion_time
+decl_stmt|;
 block|}
 struct|;
 end_struct
