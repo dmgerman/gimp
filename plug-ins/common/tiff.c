@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274eaa6f0108
+DECL|struct|__anon27ce90a30108
 block|{
 DECL|member|compression
 name|gint
@@ -59,7 +59,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274eaa6f0208
+DECL|struct|__anon27ce90a30208
 block|{
 DECL|member|run
 name|gint
@@ -72,7 +72,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon274eaa6f0308
+DECL|struct|__anon27ce90a30308
 typedef|typedef
 struct|struct
 block|{
@@ -6921,7 +6921,7 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
-literal|"LSB to MSB"
+literal|"LSB to MSB (PC)"
 argument_list|)
 expr_stmt|;
 name|group
@@ -6989,7 +6989,7 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
-literal|"MSB to LSB"
+literal|"MSB to LSB (Mac)"
 argument_list|)
 expr_stmt|;
 name|group
