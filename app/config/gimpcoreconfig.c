@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimprc-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcoreconfig.h"
 end_include
 
@@ -252,7 +258,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291d394a0103
+DECL|enum|__anon2bba518a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

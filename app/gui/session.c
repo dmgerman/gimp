@@ -88,7 +88,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpconfig-utils.h"
+file|"config/gimpconfig-file.h"
 end_include
 
 begin_include
@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b534b2e0103
+DECL|enum|__anon2b4ba20f0103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO

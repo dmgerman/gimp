@@ -110,7 +110,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpconfig-utils.h"
+file|"config/gimpconfig-file.h"
 end_include
 
 begin_include
@@ -203,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6080c90103
+DECL|enum|__anon294a63890103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -228,7 +228,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6080c90203
+DECL|enum|__anon294a63890203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -440,7 +440,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6080c90303
+DECL|enum|__anon294a63890303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -462,7 +462,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c6080c90408
+DECL|struct|__anon294a63890408
 block|{
 DECL|member|directory
 name|gboolean
