@@ -68,24 +68,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  functions for the global paint options  */
-end_comment
-
-begin_comment
-comment|/*  switch between global and per-tool paint options  */
-end_comment
-
-begin_function_decl
-name|void
-name|paint_options_set_global
-parameter_list|(
-name|gboolean
-name|global
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

@@ -151,6 +151,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimppalettes_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimppaletteselect_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpparasite_pdb.h>
 end_include
 

@@ -46,6 +46,16 @@ DECL|struct|_PaletteSelect
 struct|struct
 name|_PaletteSelect
 block|{
+DECL|member|context
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
+DECL|member|callback_name
+name|gchar
+modifier|*
+name|callback_name
+decl_stmt|;
 DECL|member|shell
 name|GtkWidget
 modifier|*
@@ -55,16 +65,6 @@ DECL|member|view
 name|GtkWidget
 modifier|*
 name|view
-decl_stmt|;
-DECL|member|callback_name
-name|gchar
-modifier|*
-name|callback_name
-decl_stmt|;
-DECL|member|context
-name|GimpContext
-modifier|*
-name|context
 decl_stmt|;
 block|}
 struct|;
@@ -78,6 +78,10 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar
@@ -108,25 +112,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  the main palette selection  */
-end_comment
-
 begin_function_decl
-name|GtkWidget
+name|PaletteSelect
 modifier|*
-name|palette_dialog_create
+name|palette_select_get_by_callback
 parameter_list|(
-name|Gimp
+specifier|const
+name|gchar
 modifier|*
-name|gimp
+name|callback_name
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|palette_dialog_free
+name|palette_select_dialogs_check
 parameter_list|(
 name|void
 parameter_list|)

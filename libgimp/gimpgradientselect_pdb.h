@@ -28,7 +28,7 @@ name|gimp_gradients_popup
 parameter_list|(
 name|gchar
 modifier|*
-name|gradients_callback
+name|gradient_callback
 parameter_list|,
 name|gchar
 modifier|*
@@ -50,7 +50,7 @@ name|gimp_gradients_close_popup
 parameter_list|(
 name|gchar
 modifier|*
-name|gradients_callback
+name|gradient_callback
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -61,7 +61,7 @@ name|gimp_gradients_set_popup
 parameter_list|(
 name|gchar
 modifier|*
-name|gradients_callback
+name|gradient_callback
 parameter_list|,
 name|gchar
 modifier|*

@@ -39,20 +39,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|tool_manager_set_global_paint_options
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|gboolean
-name|global
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|GimpTool
 modifier|*
 name|tool_manager_get_active

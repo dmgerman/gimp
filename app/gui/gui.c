@@ -126,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brush-select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"color-select.h"
 end_include
 
@@ -168,12 +162,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gradient-select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gui.h"
 end_include
 
@@ -181,18 +169,6 @@ begin_include
 include|#
 directive|include
 file|"menus.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"palette-select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pattern-select.h"
 end_include
 
 begin_include
@@ -1069,18 +1045,6 @@ name|gimp_devices_save
 argument_list|(
 name|gimp
 argument_list|)
-expr_stmt|;
-name|brush_dialog_free
-argument_list|()
-expr_stmt|;
-name|pattern_dialog_free
-argument_list|()
-expr_stmt|;
-name|palette_dialog_free
-argument_list|()
-expr_stmt|;
-name|gradient_dialog_free
-argument_list|()
 expr_stmt|;
 name|gdisplays_delete
 argument_list|()

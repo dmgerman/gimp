@@ -256,7 +256,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28928b540103
+DECL|enum|__anon2935bb390103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -1207,9 +1207,6 @@ block|,
 comment|/* image_status_format       */
 name|NULL
 block|,
-comment|/* global_paint_options      */
-name|FALSE
-block|,
 comment|/* max_new_image_size        */
 literal|33554432
 block|,
@@ -1794,32 +1791,6 @@ operator|.
 name|image_status_format
 block|,
 name|NULL
-block|}
-block|,
-block|{
-literal|"global-paint-options"
-block|,
-name|TT_BOOLEAN
-block|,
-operator|&
-name|gimprc
-operator|.
-name|global_paint_options
-block|,
-name|NULL
-block|}
-block|,
-block|{
-literal|"no-global-paint-options"
-block|,
-name|TT_BOOLEAN
-block|,
-name|NULL
-block|,
-operator|&
-name|gimprc
-operator|.
-name|global_paint_options
 block|}
 block|,
 block|{

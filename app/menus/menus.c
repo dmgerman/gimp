@@ -676,84 +676,7 @@ argument_list|)
 block|,
 block|{
 block|{
-literal|"/File/Dialogs/Old + Testing/Brushes..."
-block|,
-name|NULL
-block|,
-name|dialogs_create_toplevel_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-literal|"gimp:brush-select-dialog"
-block|,
-literal|"file/dialogs/brush_selection.html"
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-literal|"/File/Dialogs/Old + Testing/Patterns..."
-block|,
-name|NULL
-block|,
-name|dialogs_create_toplevel_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-literal|"gimp:pattern-select-dialog"
-block|,
-literal|"file/dialogs/pattern_selection.html"
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-literal|"/File/Dialogs/Old + Testing/Gradients..."
-block|,
-name|NULL
-block|,
-name|dialogs_create_toplevel_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-literal|"gimp:gradient-select-dialog"
-block|,
-literal|"file/dialogs/gradient_selection.html"
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-literal|"/File/Dialogs/Old + Testing/Palette..."
-block|,
-name|NULL
-block|,
-name|dialogs_create_toplevel_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-literal|"gimp:palette-select-dialog"
-block|,
-literal|"file/dialogs/palette_selection.html"
-block|,
-name|NULL
-block|}
-block|,
-name|SEPARATOR
-argument_list|(
-literal|"/File/Dialogs/Old + Testing/---"
-argument_list|)
-block|,
-block|{
-block|{
-literal|"/File/Dialogs/Old + Testing/Multi List..."
+literal|"/File/Dialogs/Testing/Multi List..."
 block|,
 name|NULL
 block|,
@@ -771,7 +694,7 @@ block|}
 block|,
 block|{
 block|{
-literal|"/File/Dialogs/Old + Testing/Multi Grid..."
+literal|"/File/Dialogs/Testing/Multi Grid..."
 block|,
 name|NULL
 block|,

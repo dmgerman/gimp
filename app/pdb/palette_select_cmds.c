@@ -76,43 +76,37 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpgradient.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/gradient-select.h"
+file|"gui/palette-select.h"
 end_include
 
 begin_decl_stmt
-DECL|variable|gradients_popup_proc
+DECL|variable|palettes_popup_proc
 specifier|static
 name|ProcRecord
-name|gradients_popup_proc
+name|palettes_popup_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gradients_close_popup_proc
+DECL|variable|palettes_close_popup_proc
 specifier|static
 name|ProcRecord
-name|gradients_close_popup_proc
+name|palettes_close_popup_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gradients_set_popup_proc
+DECL|variable|palettes_set_popup_proc
 specifier|static
 name|ProcRecord
-name|gradients_set_popup_proc
+name|palettes_set_popup_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_gradient_select_procs (Gimp * gimp)
-name|register_gradient_select_procs
+DECL|function|register_palette_select_procs (Gimp * gimp)
+name|register_palette_select_procs
 parameter_list|(
 name|Gimp
 modifier|*
@@ -124,7 +118,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|gradients_popup_proc
+name|palettes_popup_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -132,7 +126,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|gradients_close_popup_proc
+name|palettes_close_popup_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -140,7 +134,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|gradients_set_popup_proc
+name|palettes_set_popup_proc
 argument_list|)
 expr_stmt|;
 block|}
@@ -150,8 +144,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_popup_invoker (Gimp * gimp,Argument * args)
-name|gradients_popup_invoker
+DECL|function|palettes_popup_invoker (Gimp * gimp,Argument * args)
+name|palettes_popup_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -169,7 +163,7 @@ name|TRUE
 decl_stmt|;
 name|gchar
 modifier|*
-name|gradient_callback
+name|palette_callback
 decl_stmt|;
 name|gchar
 modifier|*
@@ -177,20 +171,17 @@ name|popup_title
 decl_stmt|;
 name|gchar
 modifier|*
-name|initial_gradient
-decl_stmt|;
-name|gint32
-name|sample_size
+name|initial_palette
 decl_stmt|;
 name|ProcRecord
 modifier|*
 name|prec
 decl_stmt|;
-name|GradientSelect
+name|PaletteSelect
 modifier|*
 name|newdialog
 decl_stmt|;
-name|gradient_callback
+name|palette_callback
 operator|=
 operator|(
 name|gchar
@@ -207,7 +198,7 @@ name|pdb_pointer
 expr_stmt|;
 if|if
 condition|(
-name|gradient_callback
+name|palette_callback
 operator|==
 name|NULL
 condition|)
@@ -240,7 +231,7 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
-name|initial_gradient
+name|initial_palette
 operator|=
 operator|(
 name|gchar
@@ -254,31 +245,6 @@ operator|.
 name|value
 operator|.
 name|pdb_pointer
-expr_stmt|;
-name|sample_size
-operator|=
-name|args
-index|[
-literal|3
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_int
-expr_stmt|;
-if|if
-condition|(
-name|sample_size
-operator|<=
-literal|0
-operator|||
-name|sample_size
-operator|>
-literal|10000
-condition|)
-name|sample_size
-operator|=
-name|GIMP_GRADIENT_DEFAULT_SAMPLE_SIZE
 expr_stmt|;
 if|if
 condition|(
@@ -294,23 +260,23 @@ name|procedural_db_lookup
 argument_list|(
 name|gimp
 argument_list|,
-name|gradient_callback
+name|palette_callback
 argument_list|)
 operator|)
 condition|)
 block|{
 if|if
 condition|(
-name|initial_gradient
+name|initial_palette
 operator|&&
 name|strlen
 argument_list|(
-name|initial_gradient
+name|initial_palette
 argument_list|)
 condition|)
 name|newdialog
 operator|=
-name|gradient_select_new
+name|palette_select_new
 argument_list|(
 name|gimp
 argument_list|,
@@ -318,17 +284,15 @@ name|NULL
 argument_list|,
 name|popup_title
 argument_list|,
-name|initial_gradient
+name|initial_palette
 argument_list|,
-name|gradient_callback
-argument_list|,
-name|sample_size
+name|palette_callback
 argument_list|)
 expr_stmt|;
 else|else
 name|newdialog
 operator|=
-name|gradient_select_new
+name|palette_select_new
 argument_list|(
 name|gimp
 argument_list|,
@@ -338,9 +302,7 @@ name|popup_title
 argument_list|,
 name|NULL
 argument_list|,
-name|gradient_callback
-argument_list|,
-name|sample_size
+name|palette_callback
 argument_list|)
 expr_stmt|;
 block|}
@@ -356,7 +318,7 @@ return|return
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|gradients_popup_proc
+name|palettes_popup_proc
 argument_list|,
 name|success
 argument_list|)
@@ -365,19 +327,19 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|gradients_popup_inargs
+DECL|variable|palettes_popup_inargs
 specifier|static
 name|ProcArg
-name|gradients_popup_inargs
+name|palettes_popup_inargs
 index|[]
 init|=
 block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"gradient_callback"
+literal|"palette_callback"
 block|,
-literal|"The callback PDB proc to call when gradient selection is made"
+literal|"The callback PDB proc to call when palette selection is made"
 block|}
 block|,
 block|{
@@ -385,52 +347,44 @@ name|GIMP_PDB_STRING
 block|,
 literal|"popup_title"
 block|,
-literal|"Title to give the gradient popup window"
+literal|"Title to give the palette popup window"
 block|}
 block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"initial_gradient"
+literal|"initial_palette"
 block|,
-literal|"The name of the pattern to set as the first selected"
-block|}
-block|,
-block|{
-name|GIMP_PDB_INT32
-block|,
-literal|"sample_size"
-block|,
-literal|"Size of the sample to return when the gradient is changed (0< sample_size<= 10000)"
+literal|"The name of the palette to set as the first selected"
 block|}
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gradients_popup_proc
+DECL|variable|palettes_popup_proc
 specifier|static
 name|ProcRecord
-name|gradients_popup_proc
+name|palettes_popup_proc
 init|=
 block|{
-literal|"gimp_gradients_popup"
+literal|"gimp_palettes_popup"
 block|,
-literal|"Invokes the Gimp gradients selection."
+literal|"Invokes the Gimp palette selection."
 block|,
-literal|"This procedure popups the gradients selection dialog."
+literal|"This procedure popups the palette selection dialog."
 block|,
-literal|"Andy Thomas"
+literal|"Michael Natterer"
 block|,
-literal|"Andy Thomas"
+literal|"Michael Natterer"
 block|,
-literal|"1998"
+literal|"2002"
 block|,
 name|GIMP_INTERNAL
 block|,
-literal|4
+literal|3
 block|,
-name|gradients_popup_inargs
+name|palettes_popup_inargs
 block|,
 literal|0
 block|,
@@ -438,7 +392,7 @@ name|NULL
 block|,
 block|{
 block|{
-name|gradients_popup_invoker
+name|palettes_popup_invoker
 block|}
 block|}
 block|}
@@ -449,8 +403,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_close_popup_invoker (Gimp * gimp,Argument * args)
-name|gradients_close_popup_invoker
+DECL|function|palettes_close_popup_invoker (Gimp * gimp,Argument * args)
+name|palettes_close_popup_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -468,17 +422,17 @@ name|TRUE
 decl_stmt|;
 name|gchar
 modifier|*
-name|gradient_callback
+name|palette_callback
 decl_stmt|;
 name|ProcRecord
 modifier|*
 name|prec
 decl_stmt|;
-name|GradientSelect
+name|PaletteSelect
 modifier|*
-name|gsp
+name|psp
 decl_stmt|;
-name|gradient_callback
+name|palette_callback
 operator|=
 operator|(
 name|gchar
@@ -495,7 +449,7 @@ name|pdb_pointer
 expr_stmt|;
 if|if
 condition|(
-name|gradient_callback
+name|palette_callback
 operator|==
 name|NULL
 condition|)
@@ -517,23 +471,23 @@ name|procedural_db_lookup
 argument_list|(
 name|gimp
 argument_list|,
-name|gradient_callback
+name|palette_callback
 argument_list|)
 operator|)
 operator|&&
 operator|(
-name|gsp
+name|psp
 operator|=
-name|gradient_select_get_by_callback
+name|palette_select_get_by_callback
 argument_list|(
-name|gradient_callback
+name|palette_callback
 argument_list|)
 operator|)
 condition|)
 block|{
-name|gradient_select_free
+name|palette_select_free
 argument_list|(
-name|gsp
+name|psp
 argument_list|)
 expr_stmt|;
 block|}
@@ -549,7 +503,7 @@ return|return
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|gradients_close_popup_proc
+name|palettes_close_popup_proc
 argument_list|,
 name|success
 argument_list|)
@@ -558,17 +512,17 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|gradients_close_popup_inargs
+DECL|variable|palettes_close_popup_inargs
 specifier|static
 name|ProcArg
-name|gradients_close_popup_inargs
+name|palettes_close_popup_inargs
 index|[]
 init|=
 block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"gradient_callback"
+literal|"palette_callback"
 block|,
 literal|"The name of the callback registered for this popup"
 block|}
@@ -577,29 +531,29 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gradients_close_popup_proc
+DECL|variable|palettes_close_popup_proc
 specifier|static
 name|ProcRecord
-name|gradients_close_popup_proc
+name|palettes_close_popup_proc
 init|=
 block|{
-literal|"gimp_gradients_close_popup"
+literal|"gimp_palettes_close_popup"
 block|,
-literal|"Popdown the Gimp gradient selection."
+literal|"Popdown the Gimp palette selection."
 block|,
-literal|"This procedure closes an opened gradient selection dialog."
+literal|"This procedure closes an opened palette selection dialog."
 block|,
-literal|"Andy Thomas"
+literal|"Michael Natterer"
 block|,
-literal|"Andy Thomas"
+literal|"Michael Natterer"
 block|,
-literal|"1998"
+literal|"2002"
 block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
-name|gradients_close_popup_inargs
+name|palettes_close_popup_inargs
 block|,
 literal|0
 block|,
@@ -607,7 +561,7 @@ name|NULL
 block|,
 block|{
 block|{
-name|gradients_close_popup_invoker
+name|palettes_close_popup_invoker
 block|}
 block|}
 block|}
@@ -618,8 +572,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_set_popup_invoker (Gimp * gimp,Argument * args)
-name|gradients_set_popup_invoker
+DECL|function|palettes_set_popup_invoker (Gimp * gimp,Argument * args)
+name|palettes_set_popup_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -637,21 +591,21 @@ name|TRUE
 decl_stmt|;
 name|gchar
 modifier|*
-name|gradient_callback
+name|palette_callback
 decl_stmt|;
 name|gchar
 modifier|*
-name|gradient_name
+name|palette_name
 decl_stmt|;
 name|ProcRecord
 modifier|*
 name|prec
 decl_stmt|;
-name|GradientSelect
+name|PaletteSelect
 modifier|*
-name|gsp
+name|psp
 decl_stmt|;
-name|gradient_callback
+name|palette_callback
 operator|=
 operator|(
 name|gchar
@@ -668,7 +622,7 @@ name|pdb_pointer
 expr_stmt|;
 if|if
 condition|(
-name|gradient_callback
+name|palette_callback
 operator|==
 name|NULL
 condition|)
@@ -676,7 +630,7 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
-name|gradient_name
+name|palette_name
 operator|=
 operator|(
 name|gchar
@@ -693,7 +647,7 @@ name|pdb_pointer
 expr_stmt|;
 if|if
 condition|(
-name|gradient_name
+name|palette_name
 operator|==
 name|NULL
 condition|)
@@ -715,60 +669,53 @@ name|procedural_db_lookup
 argument_list|(
 name|gimp
 argument_list|,
-name|gradient_callback
+name|palette_callback
 argument_list|)
 operator|)
 operator|&&
 operator|(
-name|gsp
+name|psp
 operator|=
-name|gradient_select_get_by_callback
+name|palette_select_get_by_callback
 argument_list|(
-name|gradient_callback
+name|palette_callback
 argument_list|)
 operator|)
 condition|)
 block|{
-name|GimpGradient
+name|GimpPalette
 modifier|*
 name|active
 init|=
-name|NULL
-decl_stmt|;
-name|active
-operator|=
 operator|(
-name|GimpGradient
+name|GimpPalette
 operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
 name|gimp
 operator|->
-name|gradient_factory
+name|palette_factory
 operator|->
 name|container
 argument_list|,
-name|gradient_name
+name|palette_name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|active
 condition|)
 block|{
-name|gimp_context_set_gradient
+comment|/* Must alter the wigdets on screen as well */
+name|gimp_context_set_palette
 argument_list|(
-name|gsp
+name|psp
 operator|->
 name|context
 argument_list|,
 name|active
 argument_list|)
-expr_stmt|;
-name|success
-operator|=
-name|TRUE
 expr_stmt|;
 block|}
 else|else
@@ -787,7 +734,7 @@ return|return
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|gradients_set_popup_proc
+name|palettes_set_popup_proc
 argument_list|,
 name|success
 argument_list|)
@@ -796,17 +743,17 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|gradients_set_popup_inargs
+DECL|variable|palettes_set_popup_inargs
 specifier|static
 name|ProcArg
-name|gradients_set_popup_inargs
+name|palettes_set_popup_inargs
 index|[]
 init|=
 block|{
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"gradient_callback"
+literal|"palette_callback"
 block|,
 literal|"The name of the callback registered for this popup"
 block|}
@@ -814,38 +761,38 @@ block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
-literal|"gradient_name"
+literal|"palette_name"
 block|,
-literal|"The name of the gradient to set as selected"
+literal|"The name of the palette to set as selected"
 block|}
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gradients_set_popup_proc
+DECL|variable|palettes_set_popup_proc
 specifier|static
 name|ProcRecord
-name|gradients_set_popup_proc
+name|palettes_set_popup_proc
 init|=
 block|{
-literal|"gimp_gradients_set_popup"
+literal|"gimp_palettes_set_popup"
 block|,
-literal|"Sets the current gradient selection in a popup."
+literal|"Sets the current palette selection in a popup."
 block|,
-literal|"Sets the current gradient selection in a popup."
+literal|"Sets the current palette selection in a popup."
 block|,
-literal|"Andy Thomas"
+literal|"Michael Natterer"
 block|,
-literal|"Andy Thomas"
+literal|"Michael Natterer"
 block|,
-literal|"1998"
+literal|"2002"
 block|,
 name|GIMP_INTERNAL
 block|,
 literal|2
 block|,
-name|gradients_set_popup_inargs
+name|palettes_set_popup_inargs
 block|,
 literal|0
 block|,
@@ -853,7 +800,7 @@ name|NULL
 block|,
 block|{
 block|{
-name|gradients_set_popup_invoker
+name|palettes_set_popup_invoker
 block|}
 block|}
 block|}

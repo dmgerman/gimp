@@ -247,18 +247,6 @@ DECL|member|tool_options
 name|GimpToolOptions
 name|tool_options
 decl_stmt|;
-comment|/*  vbox for the common paint options  */
-DECL|member|paint_vbox
-name|GtkWidget
-modifier|*
-name|paint_vbox
-decl_stmt|;
-comment|/*  a widget to be shown if we are in global mode  */
-DECL|member|global
-name|GtkWidget
-modifier|*
-name|global
-decl_stmt|;
 comment|/*  options used by all paint tools  */
 DECL|member|opacity_w
 name|GtkObject

@@ -445,6 +445,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/palette-select.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui/pattern-select.h"
 end_include
 
@@ -5360,10 +5366,13 @@ comment|/* Close any dialogs that this plugin might have opened */
 name|brush_select_dialogs_check
 argument_list|()
 expr_stmt|;
-name|pattern_select_dialogs_check
+name|gradient_select_dialogs_check
 argument_list|()
 expr_stmt|;
-name|gradient_select_dialogs_check
+name|palette_select_dialogs_check
+argument_list|()
+expr_stmt|;
+name|pattern_select_dialogs_check
 argument_list|()
 expr_stmt|;
 name|open_plug_ins

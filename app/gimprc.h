@@ -160,10 +160,6 @@ name|gchar
 modifier|*
 name|image_status_format
 decl_stmt|;
-DECL|member|global_paint_options
-name|gboolean
-name|global_paint_options
-decl_stmt|;
 DECL|member|max_new_image_size
 name|guint
 name|max_new_image_size

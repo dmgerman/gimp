@@ -46,12 +46,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -76,53 +70,59 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimppattern.h"
+file|"core/gimppalette.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpcolor/gimpcolor.h"
 end_include
 
 begin_decl_stmt
-DECL|variable|patterns_refresh_proc
+DECL|variable|palettes_refresh_proc
 specifier|static
 name|ProcRecord
-name|patterns_refresh_proc
+name|palettes_refresh_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|patterns_get_pattern_proc
+DECL|variable|palettes_get_palette_proc
 specifier|static
 name|ProcRecord
-name|patterns_get_pattern_proc
+name|palettes_get_palette_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|patterns_set_pattern_proc
+DECL|variable|palettes_set_palette_proc
 specifier|static
 name|ProcRecord
-name|patterns_set_pattern_proc
+name|palettes_set_palette_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|patterns_get_list_proc
+DECL|variable|palettes_get_list_proc
 specifier|static
 name|ProcRecord
-name|patterns_get_list_proc
+name|palettes_get_list_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|patterns_get_pattern_data_proc
+DECL|variable|palettes_get_palette_entry_proc
 specifier|static
 name|ProcRecord
-name|patterns_get_pattern_data_proc
+name|palettes_get_palette_entry_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_patterns_procs (Gimp * gimp)
-name|register_patterns_procs
+DECL|function|register_palettes_procs (Gimp * gimp)
+name|register_palettes_procs
 parameter_list|(
 name|Gimp
 modifier|*
@@ -134,7 +134,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|patterns_refresh_proc
+name|palettes_refresh_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -142,7 +142,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|patterns_get_pattern_proc
+name|palettes_get_palette_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -150,7 +150,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|patterns_set_pattern_proc
+name|palettes_set_palette_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -158,7 +158,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|patterns_get_list_proc
+name|palettes_get_list_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -166,7 +166,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|patterns_get_pattern_data_proc
+name|palettes_get_palette_entry_proc
 argument_list|)
 expr_stmt|;
 block|}
@@ -176,8 +176,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_refresh_invoker (Gimp * gimp,Argument * args)
-name|patterns_refresh_invoker
+DECL|function|palettes_refresh_invoker (Gimp * gimp,Argument * args)
+name|palettes_refresh_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -188,18 +188,12 @@ modifier|*
 name|args
 parameter_list|)
 block|{
-name|gimp_data_factory_data_save
-argument_list|(
-name|gimp
-operator|->
-name|pattern_factory
-argument_list|)
-expr_stmt|;
+comment|/* FIXME: I've hardcoded success to be TRUE, because brushes_init() is a     *        void function right now.  It'd be nice if it returned a value at     *        some future date, so we could tell if things blew up when reparsing    *        the list (for whatever reason).     *                       - Seth "Yes, this is a kludge" Burgess    *<sjburges@ou.edu>    *   -and shamelessly stolen by Adrian Likins for use here...    */
 name|gimp_data_factory_data_init
 argument_list|(
 name|gimp
 operator|->
-name|pattern_factory
+name|palette_factory
 argument_list|,
 name|FALSE
 argument_list|)
@@ -208,7 +202,7 @@ return|return
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|patterns_refresh_proc
+name|palettes_refresh_proc
 argument_list|,
 name|TRUE
 argument_list|)
@@ -217,23 +211,23 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|patterns_refresh_proc
+DECL|variable|palettes_refresh_proc
 specifier|static
 name|ProcRecord
-name|patterns_refresh_proc
+name|palettes_refresh_proc
 init|=
 block|{
-literal|"gimp_patterns_refresh"
+literal|"gimp_palettes_refresh"
 block|,
-literal|"Refresh current patterns."
+literal|"Refreshes current palettes."
 block|,
-literal|"This procedure retrieves all patterns currently in the user's pattern path and updates the pattern dialogs accordingly."
+literal|"This procedure incorporates all palettes currently in the users palette path."
 block|,
-literal|"Michael Natterer"
+literal|"Adrian Likins<adrian@gimp.org>"
 block|,
-literal|"Michael Natterer"
+literal|"Adrian Likins"
 block|,
-literal|"2002"
+literal|"1998"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -247,7 +241,7 @@ name|NULL
 block|,
 block|{
 block|{
-name|patterns_refresh_invoker
+name|palettes_refresh_invoker
 block|}
 block|}
 block|}
@@ -258,8 +252,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_get_pattern_invoker (Gimp * gimp,Argument * args)
-name|patterns_get_pattern_invoker
+DECL|function|palettes_get_palette_invoker (Gimp * gimp,Argument * args)
+name|palettes_get_palette_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -279,16 +273,16 @@ name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|GimpPattern
+name|GimpPalette
 modifier|*
-name|pattern
+name|palette
 decl_stmt|;
 name|success
 operator|=
 operator|(
-name|pattern
+name|palette
 operator|=
-name|gimp_context_get_pattern
+name|gimp_context_get_palette
 argument_list|(
 name|gimp_get_current_context
 argument_list|(
@@ -304,7 +298,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|patterns_get_pattern_proc
+name|palettes_get_palette_proc
 argument_list|,
 name|success
 argument_list|)
@@ -327,7 +321,7 @@ name|g_strdup
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|pattern
+name|palette
 argument_list|)
 operator|->
 name|name
@@ -342,26 +336,9 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|pattern
+name|palette
 operator|->
-name|mask
-operator|->
-name|width
-expr_stmt|;
-name|return_args
-index|[
-literal|3
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_int
-operator|=
-name|pattern
-operator|->
-name|mask
-operator|->
-name|height
+name|n_colors
 expr_stmt|;
 block|}
 return|return
@@ -371,10 +348,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|patterns_get_pattern_outargs
+DECL|variable|palettes_get_palette_outargs
 specifier|static
 name|ProcArg
-name|patterns_get_pattern_outargs
+name|palettes_get_palette_outargs
 index|[]
 init|=
 block|{
@@ -383,46 +360,38 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The pattern name"
+literal|"The palette name"
 block|}
 block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"width"
+literal|"num_colors"
 block|,
-literal|"The pattern width"
-block|}
-block|,
-block|{
-name|GIMP_PDB_INT32
-block|,
-literal|"height"
-block|,
-literal|"The pattern height"
+literal|"The palette num_colors"
 block|}
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|patterns_get_pattern_proc
+DECL|variable|palettes_get_palette_proc
 specifier|static
 name|ProcRecord
-name|patterns_get_pattern_proc
+name|palettes_get_palette_proc
 init|=
 block|{
-literal|"gimp_patterns_get_pattern"
+literal|"gimp_palettes_get_palette"
 block|,
-literal|"Retrieve information about the currently active pattern."
+literal|"Retrieve information about the currently active palette."
 block|,
-literal|"This procedure retrieves information about the currently active pattern. This includes the pattern name, and the pattern extents (width and height). All clone and bucket-fill operations with patterns will use this pattern to control the application of paint to the image."
+literal|"This procedure retrieves information about the currently active palette. This includes the name, and the number of colors."
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"Nathan Summers<rock@gimp.org>"
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"Nathan Summers"
 block|,
-literal|"1995-1996"
+literal|"2001"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -430,13 +399,13 @@ literal|0
 block|,
 name|NULL
 block|,
-literal|3
+literal|2
 block|,
-name|patterns_get_pattern_outargs
+name|palettes_get_palette_outargs
 block|,
 block|{
 block|{
-name|patterns_get_pattern_invoker
+name|palettes_get_palette_invoker
 block|}
 block|}
 block|}
@@ -447,8 +416,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_set_pattern_invoker (Gimp * gimp,Argument * args)
-name|patterns_set_pattern_invoker
+DECL|function|palettes_set_palette_invoker (Gimp * gimp,Argument * args)
+name|palettes_set_palette_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -468,9 +437,9 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|GimpPattern
+name|GimpPalette
 modifier|*
-name|pattern
+name|palette
 decl_stmt|;
 name|name
 operator|=
@@ -502,17 +471,17 @@ condition|(
 name|success
 condition|)
 block|{
-name|pattern
+name|palette
 operator|=
 operator|(
-name|GimpPattern
+name|GimpPalette
 operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
 name|gimp
 operator|->
-name|pattern_factory
+name|palette_factory
 operator|->
 name|container
 argument_list|,
@@ -522,7 +491,7 @@ expr_stmt|;
 name|success
 operator|=
 operator|(
-name|pattern
+name|palette
 operator|!=
 name|NULL
 operator|)
@@ -531,14 +500,14 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_context_set_pattern
+name|gimp_context_set_palette
 argument_list|(
 name|gimp_get_current_context
 argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
-name|pattern
+name|palette
 argument_list|)
 expr_stmt|;
 block|}
@@ -546,7 +515,7 @@ return|return
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|patterns_set_pattern_proc
+name|palettes_set_palette_proc
 argument_list|,
 name|success
 argument_list|)
@@ -555,10 +524,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|patterns_set_pattern_inargs
+DECL|variable|palettes_set_palette_inargs
 specifier|static
 name|ProcArg
-name|patterns_set_pattern_inargs
+name|palettes_set_palette_inargs
 index|[]
 init|=
 block|{
@@ -567,36 +536,36 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The pattern name"
+literal|"The palette name"
 block|}
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|patterns_set_pattern_proc
+DECL|variable|palettes_set_palette_proc
 specifier|static
 name|ProcRecord
-name|patterns_set_pattern_proc
+name|palettes_set_palette_proc
 init|=
 block|{
-literal|"gimp_patterns_set_pattern"
+literal|"gimp_palettes_set_palette"
 block|,
-literal|"Set the specified pattern as the active pattern."
+literal|"Set the specified palette as the active palette."
 block|,
-literal|"This procedure allows the active pattern mask to be set by specifying its name. The name is simply a string which corresponds to one of the names of the installed patterns. If there is no matching pattern found, this procedure will return an error. Otherwise, the specified pattern becomes active and will be used in all subsequent paint operations."
+literal|"This procedure allows the active palette to be set by specifying its name. The name is simply a string which corresponds to one of the names of the installed palettes. If no matching palette is found, this procedure will return an error. Otherwise, the specified palette becomes active and will be used in all subsequent palette operations."
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"Nathan Summers<rock@gimp.org>"
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"Nathan Summers"
 block|,
-literal|"1995-1996"
+literal|"2001"
 block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
-name|patterns_set_pattern_inargs
+name|palettes_set_palette_inargs
 block|,
 literal|0
 block|,
@@ -604,7 +573,7 @@ name|NULL
 block|,
 block|{
 block|{
-name|patterns_set_pattern_invoker
+name|palettes_set_palette_invoker
 block|}
 block|}
 block|}
@@ -615,8 +584,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_get_list_invoker (Gimp * gimp,Argument * args)
-name|patterns_get_list_invoker
+DECL|function|palettes_get_list_invoker (Gimp * gimp,Argument * args)
+name|palettes_get_list_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -639,7 +608,7 @@ decl_stmt|;
 name|gchar
 modifier|*
 modifier|*
-name|patterns
+name|palettes
 decl_stmt|;
 name|GList
 modifier|*
@@ -650,7 +619,7 @@ name|i
 init|=
 literal|0
 decl_stmt|;
-name|patterns
+name|palettes
 operator|=
 name|g_new
 argument_list|(
@@ -659,7 +628,7 @@ operator|*
 argument_list|,
 name|gimp
 operator|->
-name|pattern_factory
+name|palette_factory
 operator|->
 name|container
 operator|->
@@ -674,7 +643,7 @@ name|GIMP_LIST
 argument_list|(
 name|gimp
 operator|->
-name|pattern_factory
+name|palette_factory
 operator|->
 name|container
 argument_list|)
@@ -691,7 +660,7 @@ name|list
 argument_list|)
 control|)
 block|{
-name|patterns
+name|palettes
 index|[
 name|i
 operator|++
@@ -723,7 +692,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|patterns_get_list_proc
+name|palettes_get_list_proc
 argument_list|,
 name|success
 argument_list|)
@@ -744,7 +713,7 @@ name|pdb_int
 operator|=
 name|gimp
 operator|->
-name|pattern_factory
+name|palette_factory
 operator|->
 name|container
 operator|->
@@ -759,7 +728,7 @@ name|value
 operator|.
 name|pdb_pointer
 operator|=
-name|patterns
+name|palettes
 expr_stmt|;
 block|}
 return|return
@@ -769,50 +738,50 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|patterns_get_list_outargs
+DECL|variable|palettes_get_list_outargs
 specifier|static
 name|ProcArg
-name|patterns_get_list_outargs
+name|palettes_get_list_outargs
 index|[]
 init|=
 block|{
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"num_patterns"
+literal|"num_palettes"
 block|,
-literal|"The number of patterns in the pattern list"
+literal|"The number of palettes in the list"
 block|}
 block|,
 block|{
 name|GIMP_PDB_STRINGARRAY
 block|,
-literal|"pattern_list"
+literal|"palette_list"
 block|,
-literal|"The list of pattern names"
+literal|"The list of palette names"
 block|}
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|patterns_get_list_proc
+DECL|variable|palettes_get_list_proc
 specifier|static
 name|ProcRecord
-name|patterns_get_list_proc
+name|palettes_get_list_proc
 init|=
 block|{
-literal|"gimp_patterns_get_list"
+literal|"gimp_palettes_get_list"
 block|,
-literal|"Retrieve a complete listing of the available patterns."
+literal|"Retrieves a list of all of the available palettes"
 block|,
-literal|"This procedure returns a complete listing of available GIMP patterns. Each name returned can be used as input to the 'gimp_patterns_set_pattern'."
+literal|"This procedure returns a complete listing of available palettes. Each name returned can be used as input to the command 'gimp_palette_set_palette'."
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"Nathan Summers<rock@gimp.org>"
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"Nathan Summers"
 block|,
-literal|"1995-1996"
+literal|"2001"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -822,11 +791,11 @@ name|NULL
 block|,
 literal|2
 block|,
-name|patterns_get_list_outargs
+name|palettes_get_list_outargs
 block|,
 block|{
 block|{
-name|patterns_get_list_invoker
+name|palettes_get_list_invoker
 block|}
 block|}
 block|}
@@ -837,8 +806,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_get_pattern_data_invoker (Gimp * gimp,Argument * args)
-name|patterns_get_pattern_data_invoker
+DECL|function|palettes_get_palette_entry_invoker (Gimp * gimp,Argument * args)
+name|palettes_get_palette_entry_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -863,19 +832,14 @@ modifier|*
 name|name
 decl_stmt|;
 name|gint32
-name|length
-init|=
-literal|0
+name|entry_num
 decl_stmt|;
-name|guint8
-modifier|*
-name|mask_data
-init|=
-name|NULL
+name|GimpRGB
+name|color
 decl_stmt|;
-name|GimpPattern
+name|GimpPalette
 modifier|*
-name|pattern
+name|palette
 init|=
 name|NULL
 decl_stmt|;
@@ -904,6 +868,17 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
+name|entry_num
+operator|=
+name|args
+index|[
+literal|1
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_int
+expr_stmt|;
 if|if
 condition|(
 name|success
@@ -917,17 +892,17 @@ name|name
 argument_list|)
 condition|)
 block|{
-name|pattern
+name|palette
 operator|=
 operator|(
-name|GimpPattern
+name|GimpPalette
 operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
 name|gimp
 operator|->
-name|pattern_factory
+name|palette_factory
 operator|->
 name|container
 argument_list|,
@@ -937,9 +912,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|pattern
+name|palette
 operator|=
-name|gimp_context_get_pattern
+name|gimp_context_get_palette
 argument_list|(
 name|gimp_get_current_context
 argument_list|(
@@ -951,7 +926,7 @@ block|}
 name|success
 operator|=
 operator|(
-name|pattern
+name|palette
 operator|!=
 name|NULL
 operator|)
@@ -961,49 +936,52 @@ condition|(
 name|success
 condition|)
 block|{
-name|length
+if|if
+condition|(
+name|entry_num
+operator|<
+literal|0
+operator|||
+name|entry_num
+operator|>=
+name|palette
+operator|->
+name|n_colors
+condition|)
+block|{
+name|success
 operator|=
-name|pattern
-operator|->
-name|mask
-operator|->
-name|height
-operator|*
-name|pattern
-operator|->
-name|mask
-operator|->
-name|width
-operator|*
-name|pattern
-operator|->
-name|mask
-operator|->
-name|bytes
+name|FALSE
 expr_stmt|;
-name|mask_data
+block|}
+else|else
+block|{
+name|GimpPaletteEntry
+modifier|*
+name|entry
+decl_stmt|;
+name|entry
 operator|=
-name|g_new
+operator|(
+name|GimpPaletteEntry
+operator|*
+operator|)
+name|g_list_nth_data
 argument_list|(
-name|guint8
-argument_list|,
-name|length
-argument_list|)
-expr_stmt|;
-name|g_memmove
-argument_list|(
-name|mask_data
-argument_list|,
-name|temp_buf_data
-argument_list|(
-name|pattern
+name|palette
 operator|->
-name|mask
-argument_list|)
+name|colors
 argument_list|,
-name|length
+name|entry_num
 argument_list|)
 expr_stmt|;
+name|color
+operator|=
+name|entry
+operator|->
+name|color
+expr_stmt|;
+block|}
 block|}
 block|}
 name|return_args
@@ -1011,7 +989,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|patterns_get_pattern_data_proc
+name|palettes_get_palette_entry_proc
 argument_list|,
 name|success
 argument_list|)
@@ -1034,7 +1012,7 @@ name|g_strdup
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|pattern
+name|palette
 argument_list|)
 operator|->
 name|name
@@ -1049,11 +1027,9 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|pattern
+name|palette
 operator|->
-name|mask
-operator|->
-name|width
+name|n_colors
 expr_stmt|;
 name|return_args
 index|[
@@ -1062,50 +1038,9 @@ index|]
 operator|.
 name|value
 operator|.
-name|pdb_int
+name|pdb_color
 operator|=
-name|pattern
-operator|->
-name|mask
-operator|->
-name|height
-expr_stmt|;
-name|return_args
-index|[
-literal|4
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_int
-operator|=
-name|pattern
-operator|->
-name|mask
-operator|->
-name|bytes
-expr_stmt|;
-name|return_args
-index|[
-literal|5
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_int
-operator|=
-name|length
-expr_stmt|;
-name|return_args
-index|[
-literal|6
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_pointer
-operator|=
-name|mask_data
+name|color
 expr_stmt|;
 block|}
 return|return
@@ -1115,10 +1050,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|patterns_get_pattern_data_inargs
+DECL|variable|palettes_get_palette_entry_inargs
 specifier|static
 name|ProcArg
-name|patterns_get_pattern_data_inargs
+name|palettes_get_palette_entry_inargs
 index|[]
 init|=
 block|{
@@ -1127,17 +1062,25 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"the pattern name (\"\" means currently active pattern)"
+literal|"the palette name (\"\" means currently active palette)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"entry_num"
+block|,
+literal|"The entry to retrieve"
 block|}
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|patterns_get_pattern_data_outargs
+DECL|variable|palettes_get_palette_entry_outargs
 specifier|static
 name|ProcArg
-name|patterns_get_pattern_data_outargs
+name|palettes_get_palette_entry_outargs
 index|[]
 init|=
 block|{
@@ -1146,84 +1089,60 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The pattern name"
+literal|"The palette name"
 block|}
 block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"width"
+literal|"num_colors"
 block|,
-literal|"The pattern width"
+literal|"The palette num_colors"
 block|}
 block|,
 block|{
-name|GIMP_PDB_INT32
+name|GIMP_PDB_COLOR
 block|,
-literal|"height"
+literal|"color"
 block|,
-literal|"The pattern height"
-block|}
-block|,
-block|{
-name|GIMP_PDB_INT32
-block|,
-literal|"mask_bpp"
-block|,
-literal|"Pattern bytes per pixel"
-block|}
-block|,
-block|{
-name|GIMP_PDB_INT32
-block|,
-literal|"length"
-block|,
-literal|"Length of pattern mask data"
-block|}
-block|,
-block|{
-name|GIMP_PDB_INT8ARRAY
-block|,
-literal|"mask_data"
-block|,
-literal|"The pattern mask data"
+literal|"The color requested"
 block|}
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|patterns_get_pattern_data_proc
+DECL|variable|palettes_get_palette_entry_proc
 specifier|static
 name|ProcRecord
-name|patterns_get_pattern_data_proc
+name|palettes_get_palette_entry_proc
 init|=
 block|{
-literal|"gimp_patterns_get_pattern_data"
+literal|"gimp_palettes_get_palette_entry"
 block|,
-literal|"Retrieve information about the currently active pattern (including data)."
+literal|"Gets the specified palette entry from the currently active palette."
 block|,
-literal|"This procedure retrieves information about the currently active pattern. This includes the pattern name, and the pattern extents (width and height). It also returns the pattern data."
+literal|"This procedure retrieves the color of the zero-based entry specifed for the current palette. It returns an error if the entry does not exist."
 block|,
-literal|"Andy Thomas"
+literal|"Nathan Summers<rock@gimp.org>"
 block|,
-literal|"Andy Thomas"
+literal|"Nathan Summers"
 block|,
-literal|"1998"
+literal|"2001"
 block|,
 name|GIMP_INTERNAL
 block|,
-literal|1
+literal|2
 block|,
-name|patterns_get_pattern_data_inargs
+name|palettes_get_palette_entry_inargs
 block|,
-literal|6
+literal|3
 block|,
-name|patterns_get_pattern_data_outargs
+name|palettes_get_palette_entry_outargs
 block|,
 block|{
 block|{
-name|patterns_get_pattern_data_invoker
+name|palettes_get_palette_entry_invoker
 block|}
 block|}
 block|}

@@ -209,12 +209,6 @@ argument_list|)
 expr_stmt|;
 name|options
 operator|->
-name|global
-operator|=
-name|NULL
-expr_stmt|;
-name|options
-operator|->
 name|opacity_w
 operator|=
 name|NULL
