@@ -114,22 +114,6 @@ name|gboolean
 name|visible
 decl_stmt|;
 comment|/* controls visibility            */
-DECL|member|width
-DECL|member|height
-name|gint
-name|width
-decl_stmt|,
-name|height
-decl_stmt|;
-comment|/* size of drawable               */
-DECL|member|offset_x
-DECL|member|offset_y
-name|gint
-name|offset_x
-decl_stmt|,
-name|offset_y
-decl_stmt|;
-comment|/* offset of layer in image       */
 DECL|member|bytes
 name|gint
 name|bytes

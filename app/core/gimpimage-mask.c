@@ -604,14 +604,14 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
 operator|->
 name|width
 argument_list|,
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -1553,7 +1553,7 @@ operator|&
 name|y1
 argument_list|)
 expr_stmt|;
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -1564,7 +1564,7 @@ name|x1
 operator|+
 name|off_x
 expr_stmt|;
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)

@@ -125,6 +125,22 @@ modifier|*
 name|parasites
 decl_stmt|;
 comment|/*  Plug-in parasite data    */
+DECL|member|width
+DECL|member|height
+name|gint
+name|width
+decl_stmt|,
+name|height
+decl_stmt|;
+comment|/*  size in pixels           */
+DECL|member|offset_x
+DECL|member|offset_y
+name|gint
+name|offset_x
+decl_stmt|,
+name|offset_y
+decl_stmt|;
+comment|/*  pixel offset in image    */
 block|}
 struct|;
 end_struct

@@ -851,11 +851,20 @@ name|drawable
 argument_list|)
 condition|)
 block|{
+name|GimpItem
+modifier|*
+name|item
+init|=
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+decl_stmt|;
 name|coords
 operator|->
 name|x
 operator|-=
-name|drawable
+name|item
 operator|->
 name|offset_x
 expr_stmt|;
@@ -863,7 +872,7 @@ name|coords
 operator|->
 name|y
 operator|-=
-name|drawable
+name|item
 operator|->
 name|offset_y
 expr_stmt|;
@@ -879,7 +888,7 @@ name|coords
 operator|->
 name|x
 operator|<
-name|drawable
+name|item
 operator|->
 name|width
 operator|&&
@@ -893,7 +902,7 @@ name|coords
 operator|->
 name|y
 operator|<
-name|drawable
+name|item
 operator|->
 name|height
 condition|)
@@ -1159,7 +1168,7 @@ literal|"Add Text Layer"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -1170,7 +1179,7 @@ name|text_tool
 operator|->
 name|x1
 expr_stmt|;
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)

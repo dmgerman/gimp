@@ -2979,7 +2979,7 @@ argument_list|,
 operator|(
 name|offx
 operator|-
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -2990,7 +2990,7 @@ argument_list|,
 operator|(
 name|offy
 operator|-
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)

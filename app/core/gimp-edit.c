@@ -734,7 +734,7 @@ operator|>>
 literal|1
 expr_stmt|;
 block|}
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -744,7 +744,7 @@ operator|=
 name|cx
 operator|-
 operator|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -754,7 +754,7 @@ operator|>>
 literal|1
 operator|)
 expr_stmt|;
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -764,7 +764,7 @@ operator|=
 name|cy
 operator|-
 operator|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)

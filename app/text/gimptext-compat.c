@@ -359,7 +359,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Set the layer offsets  */
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -368,7 +368,7 @@ name|offset_x
 operator|=
 name|text_x
 expr_stmt|;
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)

@@ -2554,7 +2554,10 @@ operator|<
 operator|(
 name|off_x
 operator|+
+name|GIMP_ITEM
+argument_list|(
 name|drawable
+argument_list|)
 operator|->
 name|width
 operator|)
@@ -2566,7 +2569,10 @@ operator|<
 operator|(
 name|off_y
 operator|+
+name|GIMP_ITEM
+argument_list|(
 name|drawable
+argument_list|)
 operator|->
 name|height
 operator|)

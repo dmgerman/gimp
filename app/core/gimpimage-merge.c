@@ -1334,7 +1334,7 @@ return|return
 name|NULL
 return|;
 block|}
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|merge_layer
 argument_list|)
@@ -1343,7 +1343,7 @@ name|offset_x
 operator|=
 name|x1
 expr_stmt|;
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|merge_layer
 argument_list|)
@@ -1461,7 +1461,7 @@ return|return
 name|NULL
 return|;
 block|}
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|merge_layer
 argument_list|)
@@ -1470,7 +1470,7 @@ name|offset_x
 operator|=
 name|x1
 expr_stmt|;
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|merge_layer
 argument_list|)

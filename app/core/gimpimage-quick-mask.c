@@ -549,14 +549,14 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|qmask
 argument_list|)
 operator|->
 name|width
 argument_list|,
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|qmask
 argument_list|)
