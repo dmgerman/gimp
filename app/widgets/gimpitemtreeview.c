@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b015b20103
+DECL|enum|__anon2891f1020103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -189,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b015b20203
+DECL|enum|__anon2891f1020203
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -6001,6 +6001,14 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|gimp_undo_refresh_preview
+argument_list|(
+name|undo
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 name|setter
 argument_list|(
@@ -6156,6 +6164,16 @@ operator|!
 name|active
 argument_list|,
 name|push_undo
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|push_undo
+condition|)
+name|gimp_undo_refresh_preview
+argument_list|(
+name|undo
 argument_list|)
 expr_stmt|;
 block|}

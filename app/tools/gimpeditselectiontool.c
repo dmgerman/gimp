@@ -4803,6 +4803,7 @@ operator|->
 name|undo_stack
 argument_list|)
 expr_stmt|;
+comment|/* compress undo */
 if|if
 condition|(
 operator|!
@@ -5120,6 +5121,12 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
+expr_stmt|;
+else|else
+name|gimp_undo_refresh_preview
+argument_list|(
+name|undo
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
