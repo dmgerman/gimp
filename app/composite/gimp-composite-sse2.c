@@ -99,8 +99,7 @@ begin_decl_stmt
 DECL|variable|rgba8_alpha_mask_128
 specifier|const
 specifier|static
-name|unsigned
-name|long
+name|guint32
 name|rgba8_alpha_mask_128
 index|[
 literal|4

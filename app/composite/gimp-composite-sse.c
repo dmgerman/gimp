@@ -241,8 +241,7 @@ begin_decl_stmt
 DECL|variable|rgba8_alpha_mask
 specifier|const
 specifier|static
-name|unsigned
-name|long
+name|guint32
 name|rgba8_alpha_mask
 index|[
 literal|2
@@ -260,8 +259,7 @@ begin_decl_stmt
 DECL|variable|rgba8_b1
 specifier|const
 specifier|static
-name|unsigned
-name|long
+name|guint32
 name|rgba8_b1
 index|[
 literal|2
@@ -279,8 +277,7 @@ begin_decl_stmt
 DECL|variable|rgba8_b255
 specifier|const
 specifier|static
-name|unsigned
-name|long
+name|guint32
 name|rgba8_b255
 index|[
 literal|2
@@ -298,8 +295,7 @@ begin_decl_stmt
 DECL|variable|rgba8_w1
 specifier|const
 specifier|static
-name|unsigned
-name|long
+name|guint32
 name|rgba8_w1
 index|[
 literal|2
@@ -317,8 +313,7 @@ begin_decl_stmt
 DECL|variable|rgba8_w2
 specifier|const
 specifier|static
-name|unsigned
-name|long
+name|guint32
 name|rgba8_w2
 index|[
 literal|2
@@ -336,8 +331,7 @@ begin_decl_stmt
 DECL|variable|rgba8_w128
 specifier|const
 specifier|static
-name|unsigned
-name|long
+name|guint32
 name|rgba8_w128
 index|[
 literal|2
@@ -355,8 +349,7 @@ begin_decl_stmt
 DECL|variable|rgba8_w256
 specifier|const
 specifier|static
-name|unsigned
-name|long
+name|guint32
 name|rgba8_w256
 index|[
 literal|2
@@ -374,8 +367,7 @@ begin_decl_stmt
 DECL|variable|rgba8_w255
 specifier|const
 specifier|static
-name|unsigned
-name|long
+name|guint32
 name|rgba8_w255
 index|[
 literal|2
@@ -393,8 +385,7 @@ begin_decl_stmt
 DECL|variable|va8_alpha_mask
 specifier|const
 specifier|static
-name|unsigned
-name|long
+name|guint32
 name|va8_alpha_mask
 index|[
 literal|2
@@ -412,8 +403,7 @@ begin_decl_stmt
 DECL|variable|va8_b255
 specifier|const
 specifier|static
-name|unsigned
-name|long
+name|guint32
 name|va8_b255
 index|[
 literal|2
@@ -431,8 +421,7 @@ begin_decl_stmt
 DECL|variable|va8_w1
 specifier|const
 specifier|static
-name|unsigned
-name|long
+name|guint32
 name|va8_w1
 index|[
 literal|2
@@ -450,8 +439,7 @@ begin_decl_stmt
 DECL|variable|va8_w255
 specifier|const
 specifier|static
-name|unsigned
-name|long
+name|guint32
 name|va8_w255
 index|[
 literal|2
@@ -1784,7 +1772,7 @@ literal|0
 end_if
 
 begin_comment
-unit|const static unsigned long v8_alpha_mask[2] = { 0xFF00FF00, 0xFF00FF00}; const static unsigned long v8_mul_shift[2] = { 0x00800080, 0x00800080 };  void xxxgimp_composite_addition_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");    asm("subl $ 4, %ecx");   asm("jl .add_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".add_pixels_1a_1a_loop:");    asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("paddusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .add_pixels_1a_1a_loop");    asm(".add_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .add_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("paddusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".add_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .add_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("paddusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".add_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_burn_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("movq   %0,%%mm1"       :       : "m" (*va8_alpha_mask)       : "%mm1");    for (; op.n_pixels>= 4; op.n_pixels -= 4) 				{     asm volatile ("  movq      (%0),%%mm0; addl $8,%0\n"                   "\tmovq      (%1),%%mm1; addl $8,%1\n"                    "\tmovq      %3,%%mm2\n"                   "\tpsubb     %%mm0,%%mm2\n"
+unit|const static guint32 v8_alpha_mask[2] = { 0xFF00FF00, 0xFF00FF00}; const static guint32 v8_mul_shift[2] = { 0x00800080, 0x00800080 };  void xxxgimp_composite_addition_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");    asm("subl $ 4, %ecx");   asm("jl .add_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".add_pixels_1a_1a_loop:");    asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("paddusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .add_pixels_1a_1a_loop");    asm(".add_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .add_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("paddusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".add_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .add_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("paddusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".add_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_burn_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("movq   %0,%%mm1"       :       : "m" (*va8_alpha_mask)       : "%mm1");    for (; op.n_pixels>= 4; op.n_pixels -= 4) 				{     asm volatile ("  movq      (%0),%%mm0; addl $8,%0\n"                   "\tmovq      (%1),%%mm1; addl $8,%1\n"                    "\tmovq      %3,%%mm2\n"                   "\tpsubb     %%mm0,%%mm2\n"
 comment|/* mm2 = 255 - A */
 end_comment
 
