@@ -96,9 +96,11 @@ name|n_items
 operator|*
 name|data_size
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|WORDS_BIGENDIAN
+if|#
+directive|if
+name|G_BYTE_ORDER
+operator|==
+name|G_BIG_ENDIAN
 name|memcpy
 argument_list|(
 name|dest
@@ -379,7 +381,7 @@ expr_stmt|;
 block|}
 endif|#
 directive|endif
-comment|/* !WORDS_BIGENDIAN */
+comment|/* G_BYTE_ORDER != G_BIG_ENDIAN */
 return|return
 name|length
 return|;
