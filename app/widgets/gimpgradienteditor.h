@@ -43,7 +43,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2902e2840103
+DECL|enum|__anon29d334b80103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -159,6 +159,11 @@ DECL|member|hint_label3
 name|GtkWidget
 modifier|*
 name|hint_label3
+decl_stmt|;
+DECL|member|hint_label4
+name|GtkWidget
+modifier|*
+name|hint_label4
 decl_stmt|;
 DECL|member|scrollbar
 name|GtkWidget
