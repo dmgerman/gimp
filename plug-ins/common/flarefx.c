@@ -158,7 +158,7 @@ comment|/* --- Typedefs --- */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27f11e510108
+DECL|struct|__anon2893c57d0108
 typedef|typedef
 struct|struct
 block|{
@@ -177,7 +177,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27f11e510208
+DECL|struct|__anon2893c57d0208
 typedef|typedef
 struct|struct
 block|{
@@ -250,7 +250,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f11e510308
+DECL|struct|__anon2893c57d0308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -937,7 +937,7 @@ literal|"plug_in_flarefx"
 argument_list|,
 name|_
 argument_list|(
-literal|"Add lens flare effetcs"
+literal|"Add lens flare effects"
 argument_list|)
 argument_list|,
 name|_
