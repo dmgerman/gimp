@@ -519,6 +519,12 @@ name|FALSE
 expr_stmt|;
 name|gimp
 operator|->
+name|use_shm
+operator|=
+name|FALSE
+expr_stmt|;
+name|gimp
+operator|->
 name|message_handler
 operator|=
 name|GIMP_CONSOLE
@@ -1804,7 +1810,7 @@ end_function
 begin_function
 name|Gimp
 modifier|*
-DECL|function|gimp_new (gboolean be_verbose,gboolean no_data,gboolean no_interface,GimpStackTraceMode stack_trace_mode)
+DECL|function|gimp_new (gboolean be_verbose,gboolean no_data,gboolean no_interface,gboolean use_shm,GimpStackTraceMode stack_trace_mode)
 name|gimp_new
 parameter_list|(
 name|gboolean
@@ -1815,6 +1821,9 @@ name|no_data
 parameter_list|,
 name|gboolean
 name|no_interface
+parameter_list|,
+name|gboolean
+name|use_shm
 parameter_list|,
 name|GimpStackTraceMode
 name|stack_trace_mode
@@ -1858,6 +1867,16 @@ operator|->
 name|no_interface
 operator|=
 name|no_interface
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+name|gimp
+operator|->
+name|use_shm
+operator|=
+name|use_shm
 condition|?
 name|TRUE
 else|:

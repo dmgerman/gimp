@@ -210,6 +210,10 @@ DECL|member|no_interface
 name|gboolean
 name|no_interface
 decl_stmt|;
+DECL|member|use_shm
+name|gboolean
+name|use_shm
+decl_stmt|;
 DECL|member|message_handler
 name|GimpMessageHandlerType
 name|message_handler
@@ -469,6 +473,9 @@ name|no_data
 parameter_list|,
 name|gboolean
 name|no_interface
+parameter_list|,
+name|gboolean
+name|use_shm
 parameter_list|,
 name|GimpStackTraceMode
 name|stack_trace_mode

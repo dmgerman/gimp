@@ -451,18 +451,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -1202,6 +1190,8 @@ expr_stmt|;
 comment|/* allocate a piece of shared memory for use in transporting tiles    *  to plug-ins. if we can't allocate a piece of shared memory then    *  we'll fall back on sending the data over the pipe.    */
 if|if
 condition|(
+name|gimp
+operator|->
 name|use_shm
 condition|)
 name|plug_in_init_shm

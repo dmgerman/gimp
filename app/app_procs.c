@@ -294,6 +294,8 @@ name|no_data
 argument_list|,
 name|no_interface
 argument_list|,
+name|use_shm
+argument_list|,
 name|stack_trace_mode
 argument_list|)
 expr_stmt|;
