@@ -326,7 +326,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon2be389c70108
+DECL|struct|__anon2804bde60108
 typedef|typedef
 struct|struct
 block|{
@@ -450,7 +450,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2be389c70208
+DECL|struct|__anon2804bde60208
 typedef|typedef
 struct|struct
 block|{
@@ -479,7 +479,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2be389c70308
+DECL|struct|__anon2804bde60308
 typedef|typedef
 struct|struct
 block|{
@@ -498,7 +498,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2be389c70408
+DECL|struct|__anon2804bde60408
 typedef|typedef
 struct|struct
 block|{
@@ -893,23 +893,6 @@ literal|0
 block|}
 block|,
 block|{
-name|delete_xpm
-block|,
-name|paths_dialog_delete_path_callback
-block|,
-name|NULL
-block|,
-name|N_
-argument_list|(
-literal|"Delete Path"
-argument_list|)
-block|,
-name|NULL
-block|,
-literal|0
-block|}
-block|,
-block|{
 name|toselection_xpm
 block|,
 name|paths_dialog_path_to_sel_callback
@@ -936,6 +919,23 @@ block|,
 name|N_
 argument_list|(
 literal|"Stroke Path"
+argument_list|)
+block|,
+name|NULL
+block|,
+literal|0
+block|}
+block|,
+block|{
+name|delete_xpm
+block|,
+name|paths_dialog_delete_path_callback
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Delete Path"
 argument_list|)
 block|,
 name|NULL
@@ -1160,7 +1160,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|DEL_PATH_BUTTON
+name|PATH_TO_SEL_BUTTON
 case|:
 name|menus_set_sensitive_locale
 argument_list|(
@@ -1168,7 +1168,7 @@ literal|"<Paths>"
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Delete Path"
+literal|"/Path to Selection"
 argument_list|)
 argument_list|,
 name|sensitive
@@ -1188,7 +1188,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PATH_TO_SEL_BUTTON
+name|STROKE_PATH_BUTTON
 case|:
 name|menus_set_sensitive_locale
 argument_list|(
@@ -1196,7 +1196,7 @@ literal|"<Paths>"
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Path to Selection"
+literal|"/Stroke Path"
 argument_list|)
 argument_list|,
 name|sensitive
@@ -1216,7 +1216,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|STROKE_PATH_BUTTON
+name|DEL_PATH_BUTTON
 case|:
 name|menus_set_sensitive_locale
 argument_list|(
@@ -1224,7 +1224,7 @@ literal|"<Paths>"
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Stroke Path"
+literal|"/Delete Path"
 argument_list|)
 argument_list|,
 name|sensitive

@@ -892,23 +892,6 @@ literal|0
 block|}
 block|,
 block|{
-name|delete_xpm
-block|,
-name|channels_dialog_delete_channel_callback
-block|,
-name|NULL
-block|,
-name|N_
-argument_list|(
-literal|"Delete Channel"
-argument_list|)
-block|,
-name|NULL
-block|,
-literal|0
-block|}
-block|,
-block|{
 name|toselection_xpm
 block|,
 name|channels_dialog_channel_to_sel_callback
@@ -921,6 +904,23 @@ literal|"Channel to Selection \n"
 literal|"<Shift> Add          "
 literal|"<Ctrl> Subtract      "
 literal|"<Shift><Ctrl> Intersect"
+argument_list|)
+block|,
+name|NULL
+block|,
+literal|0
+block|}
+block|,
+block|{
+name|delete_xpm
+block|,
+name|channels_dialog_delete_channel_callback
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Delete Channel"
 argument_list|)
 block|,
 name|NULL
@@ -2674,6 +2674,30 @@ literal|"<Channels>"
 argument_list|,
 name|N_
 argument_list|(
+literal|"/Channel to Selection"
+argument_list|)
+argument_list|,
+name|aux_sens
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|channels_ops_buttons
+index|[
+literal|4
+index|]
+operator|.
+name|widget
+argument_list|,
+name|aux_sens
+argument_list|)
+expr_stmt|;
+name|menus_set_sensitive_locale
+argument_list|(
+literal|"<Channels>"
+argument_list|,
+name|N_
+argument_list|(
 literal|"/Delete Channel"
 argument_list|)
 argument_list|,
@@ -2687,7 +2711,7 @@ name|gtk_widget_set_sensitive
 argument_list|(
 name|channels_ops_buttons
 index|[
-literal|4
+literal|5
 index|]
 operator|.
 name|widget
@@ -2695,30 +2719,6 @@ argument_list|,
 operator|!
 name|fs_sens
 operator|&&
-name|aux_sens
-argument_list|)
-expr_stmt|;
-name|menus_set_sensitive_locale
-argument_list|(
-literal|"<Channels>"
-argument_list|,
-name|N_
-argument_list|(
-literal|"/Channel to Selection"
-argument_list|)
-argument_list|,
-name|aux_sens
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_sensitive
-argument_list|(
-name|channels_ops_buttons
-index|[
-literal|5
-index|]
-operator|.
-name|widget
-argument_list|,
 name|aux_sens
 argument_list|)
 expr_stmt|;
