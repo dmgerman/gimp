@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ee07580108
+DECL|struct|__anon2952471d0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ee07580208
+DECL|struct|__anon2952471d0208
 block|{
 DECL|member|cinfo
 name|struct
@@ -1703,12 +1703,7 @@ operator|.
 name|preview
 condition|)
 block|{
-comment|/* we start an undo_group and immediately freeze undo saving                  so that we can avoid sucking up tile cache with our unneeded                  preview steps. */
-name|gimp_image_undo_group_start
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
+comment|/* we freeze undo saving so that we can avoid sucking up                * tile cache with our unneeded preview steps. */
 name|gimp_image_undo_freeze
 argument_list|(
 name|image_ID
@@ -1743,16 +1738,14 @@ condition|(
 name|undo_touched
 condition|)
 block|{
-comment|/* thaw undo saving and end the undo_group. */
+comment|/* thaw undo saving and flush the displays to have them                * reflect the current shortcuts */
 name|gimp_image_undo_thaw
 argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
-name|gimp_image_undo_group_end
-argument_list|(
-name|image_ID
-argument_list|)
+name|gimp_displays_flush
+argument_list|()
 expr_stmt|;
 block|}
 if|if
@@ -5834,12 +5827,7 @@ operator|!
 name|undo_touched
 condition|)
 block|{
-comment|/* we start an undo_group and immediately freeze undo saving              so that we can avoid sucking up tile cache with our unneeded              preview steps. */
-name|gimp_image_undo_group_start
-argument_list|(
-name|image_ID_global
-argument_list|)
-expr_stmt|;
+comment|/* we freeze undo saving so that we can avoid sucking up            * tile cache with our unneeded preview steps. */
 name|gimp_image_undo_freeze
 argument_list|(
 name|image_ID_global
