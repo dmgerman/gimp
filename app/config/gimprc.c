@@ -123,7 +123,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27917dba0103
+DECL|enum|__anon279d02d20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1957,7 +1957,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rc_save:  * @rc: a #GimpRc object.  *   * Saves any settings that differ from the system-wide defined  * defaults to the users personal gimprc file.  **/
+comment|/**  * gimp_rc_save:  * @gimprc: a #GimpRc object.  *   * Saves any settings that differ from the system-wide defined  * defaults to the users personal gimprc file.  **/
 end_comment
 
 begin_function

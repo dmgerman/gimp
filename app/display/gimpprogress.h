@@ -106,13 +106,13 @@ name|void
 name|gimp_progress_update_and_flush
 parameter_list|(
 name|gint
-name|ymin
+name|min
 parameter_list|,
 name|gint
-name|ymax
+name|max
 parameter_list|,
 name|gint
-name|curr_x
+name|current
 parameter_list|,
 name|gpointer
 name|data

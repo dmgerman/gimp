@@ -1098,7 +1098,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_deserialize_string:  * @object: a #GObject that implements the #GimpConfigInterface.  * @text: string to deserialize (in UTF-8 encoding)  * @text_len: length of @text in bytes or -1  * @error:  *  * Configures @object from @text. Basically this function creates a  * properly configured #GScanner for you and calls the deserialize  * function of the @object's #GimpConfigInterface.  *  * Return value: %TRUE if deserialization succeeded, %FALSE otherwise.  **/
+comment|/**  * gimp_config_deserialize_string:  * @object: a #GObject that implements the #GimpConfigInterface.  * @text: string to deserialize (in UTF-8 encoding)  * @text_len: length of @text in bytes or -1  * @data:  * @error:  *  * Configures @object from @text. Basically this function creates a  * properly configured #GScanner for you and calls the deserialize  * function of the @object's #GimpConfigInterface.  *  * Returns: %TRUE if deserialization succeeded, %FALSE otherwise.  **/
 end_comment
 
 begin_function
@@ -1584,7 +1584,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2953766c0108
+DECL|struct|__anon2b786b0b0108
 block|{
 DECL|member|key
 name|gchar
@@ -1864,7 +1864,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_lookup_unknown_token:  * @object: a #GObject.  * @key: a nul-terminated string to identify the value.  *  * This function retrieves data that was previously attached using  * gimp_config_add_unknown_token(). You should not free or modify  * the returned string.  **/
+comment|/**  * gimp_config_lookup_unknown_token:  * @object: a #GObject.  * @key: a nul-terminated string to identify the value.  *  * This function retrieves data that was previously attached using  * gimp_config_add_unknown_token(). You should not free or modify  * the returned string.  *  * Returns: a pointer to a constant string.  **/
 end_comment
 
 begin_function

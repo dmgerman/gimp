@@ -1847,7 +1847,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_stock_box_new:  * @enum_type: the #GType of an enum.  * @stock_prefix: the prefix of the group of stock ids to use.  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Creates a horizontal box of radio buttons with stock icons.  The  * stock_id for each icon is created by appending the enum_value's  * nick to the given @stock_prefix.  *   * Return value: a new #GtkHbox holding a group of #GtkRadioButtons.  **/
+comment|/**  * gimp_enum_stock_box_new:  * @enum_type: the #GType of an enum.  * @stock_prefix: the prefix of the group of stock ids to use.  * @icon_size:  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Creates a horizontal box of radio buttons with stock icons.  The  * stock_id for each icon is created by appending the enum_value's  * nick to the given @stock_prefix.  *   * Return value: a new #GtkHbox holding a group of #GtkRadioButtons.  **/
 end_comment
 
 begin_function

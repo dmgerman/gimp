@@ -1042,12 +1042,12 @@ comment|/*  This function's prototype is conveniently  *  the same as progress_f
 end_comment
 
 begin_comment
-comment|/**  * gimp_progress_update_and_flush:  * @min:  The minimum, ...  * @max:  ... the maximum, ...  * @curr: ... and the current progress of your operation.  * @data: The #GimpProgress you want to update.  *   * This function's prototype is conveniently  * the same as #GimpProgressFunc from libgimpcolor.  **/
+comment|/**  * gimp_progress_update_and_flush:  * @min:  The minimum, ...  * @max:  ... the maximum, ...  * @current: ... and the current progress of your operation.  * @data: The #GimpProgress you want to update.  *   * This function's prototype is conveniently  * the same as #GimpProgressFunc from libgimpcolor.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_progress_update_and_flush (gint min,gint max,gint curr,gpointer data)
+DECL|function|gimp_progress_update_and_flush (gint min,gint max,gint current,gpointer data)
 name|gimp_progress_update_and_flush
 parameter_list|(
 name|gint
@@ -1057,7 +1057,7 @@ name|gint
 name|max
 parameter_list|,
 name|gint
-name|curr
+name|current
 parameter_list|,
 name|gpointer
 name|data
@@ -1075,7 +1075,7 @@ call|(
 name|gfloat
 call|)
 argument_list|(
-name|curr
+name|current
 operator|-
 name|min
 argument_list|)

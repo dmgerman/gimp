@@ -549,7 +549,7 @@ parameter_list|(
 specifier|const
 name|GimpItem
 modifier|*
-name|layer
+name|item
 parameter_list|,
 name|gint
 name|new_width
@@ -581,7 +581,7 @@ name|gint
 name|new_offset_y
 parameter_list|,
 name|GimpInterpolationType
-name|interp_type
+name|interpolation
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -601,7 +601,7 @@ name|gdouble
 name|h_factor
 parameter_list|,
 name|GimpInterpolationType
-name|interp_type
+name|interpolation
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -621,7 +621,7 @@ name|gint
 name|new_height
 parameter_list|,
 name|GimpInterpolationType
-name|interp_type
+name|interpolation
 parameter_list|,
 name|gboolean
 name|local_origin

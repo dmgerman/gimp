@@ -2184,18 +2184,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_get_gdk_color:  * @color: the source color as #GimpRGB  * @gdk_color: pointer to a #GdkColor  *   * Initializes @gdk_color from a #GimpRGB. This function does not  * allocate the color for you. Depending on how you want to use it,  * you may have to call gdk_colormap_alloc_color().  **/
+comment|/**  * gimp_rgb_get_gdk_color:  * @rgb: the source color as #GimpRGB  * @gdk_color: pointer to a #GdkColor  *   * Initializes @gdk_color from a #GimpRGB. This function does not  * allocate the color for you. Depending on how you want to use it,  * you may have to call gdk_colormap_alloc_color().  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_rgb_get_gdk_color (const GimpRGB * color,GdkColor * gdk_color)
+DECL|function|gimp_rgb_get_gdk_color (const GimpRGB * rgb,GdkColor * gdk_color)
 name|gimp_rgb_get_gdk_color
 parameter_list|(
 specifier|const
 name|GimpRGB
 modifier|*
-name|color
+name|rgb
 parameter_list|,
 name|GdkColor
 modifier|*
@@ -2211,7 +2211,7 @@ name|b
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|color
+name|rgb
 operator|!=
 name|NULL
 argument_list|)
@@ -2225,7 +2225,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_rgb_get_uchar
 argument_list|(
-name|color
+name|rgb
 argument_list|,
 operator|&
 name|r

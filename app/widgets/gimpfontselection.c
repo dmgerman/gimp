@@ -215,7 +215,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1105b60103
+DECL|enum|__anon2a3e637e0103
 block|{
 DECL|enumerator|FONT_CHANGED
 name|FONT_CHANGED
@@ -1055,12 +1055,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_font_selection_set_font_desc:  * @fontsel:   * @new_desc:   *   * This function does not check if there is a font matching the   * new font description. It should only be used with validated  * font descriptions.  **/
+comment|/**  * gimp_font_selection_set_font_desc:  * @fontsel:   * @font_desc:   *   * This function does not check if there is a font matching the   * new font description. It should only be used with validated  * font descriptions.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_font_selection_set_font_desc (GimpFontSelection * fontsel,const PangoFontDescription * new_desc)
+DECL|function|gimp_font_selection_set_font_desc (GimpFontSelection * fontsel,const PangoFontDescription * font_desc)
 name|gimp_font_selection_set_font_desc
 parameter_list|(
 name|GimpFontSelection
@@ -1070,7 +1070,7 @@ parameter_list|,
 specifier|const
 name|PangoFontDescription
 modifier|*
-name|new_desc
+name|font_desc
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1083,7 +1083,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|new_desc
+name|font_desc
 operator|!=
 name|NULL
 argument_list|)
@@ -1102,7 +1102,7 @@ name|font_desc
 operator|=
 name|pango_font_description_copy
 argument_list|(
-name|new_desc
+name|font_desc
 argument_list|)
 expr_stmt|;
 name|gimp_font_selection_font_changed
@@ -1120,7 +1120,7 @@ name|fontsel
 operator|->
 name|font_desc
 argument_list|,
-name|new_desc
+name|font_desc
 argument_list|)
 condition|)
 return|return;
@@ -1130,7 +1130,7 @@ name|fontsel
 operator|->
 name|font_desc
 argument_list|,
-name|new_desc
+name|font_desc
 argument_list|,
 name|TRUE
 argument_list|)
