@@ -146,26 +146,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_paintbrush_motion
-parameter_list|(
-name|GimpPaintCore
-modifier|*
-name|paint_core
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|GimpPaintOptions
-modifier|*
-name|paint_options
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
@@ -396,13 +376,15 @@ block|{
 case|case
 name|MOTION_PAINT
 case|:
-name|gimp_paintbrush_motion
+name|_gimp_paintbrush_motion
 argument_list|(
 name|paint_core
 argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -413,10 +395,9 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
-DECL|function|gimp_paintbrush_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
-name|gimp_paintbrush_motion
+DECL|function|_gimp_paintbrush_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,gdouble opacity)
+name|_gimp_paintbrush_motion
 parameter_list|(
 name|GimpPaintCore
 modifier|*
@@ -429,11 +410,18 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+name|gdouble
+name|opacity
 parameter_list|)
 block|{
 name|GimpPressureOptions
 modifier|*
 name|pressure_options
+decl_stmt|;
+name|GimpFadeOptions
+modifier|*
+name|fade_options
 decl_stmt|;
 name|GimpGradientOptions
 modifier|*
@@ -455,18 +443,10 @@ name|gdouble
 name|gradient_length
 decl_stmt|;
 name|guchar
-name|local_blend
-init|=
-name|OPAQUE_OPACITY
-decl_stmt|;
-name|guchar
 name|col
 index|[
 name|MAX_CHANNELS
 index|]
-decl_stmt|;
-name|gdouble
-name|opacity
 decl_stmt|;
 name|gdouble
 name|scale
@@ -503,6 +483,12 @@ name|paint_options
 operator|->
 name|pressure_options
 expr_stmt|;
+name|fade_options
+operator|=
+name|paint_options
+operator|->
+name|fade_options
+expr_stmt|;
 name|gradient_options
 operator|=
 name|paint_options
@@ -517,7 +503,7 @@ name|application_mode
 expr_stmt|;
 if|if
 condition|(
-name|gradient_options
+name|fade_options
 operator|->
 name|use_fade
 condition|)
@@ -532,7 +518,7 @@ name|unit_factor
 decl_stmt|;
 switch|switch
 condition|(
-name|gradient_options
+name|fade_options
 operator|->
 name|fade_unit
 condition|)
@@ -542,7 +528,7 @@ name|GIMP_UNIT_PIXEL
 case|:
 name|fade_out
 operator|=
-name|gradient_options
+name|fade_options
 operator|->
 name|fade_length
 expr_stmt|;
@@ -564,7 +550,7 @@ operator|->
 name|height
 argument_list|)
 operator|*
-name|gradient_options
+name|fade_options
 operator|->
 name|fade_length
 operator|/
@@ -577,7 +563,7 @@ name|unit_factor
 operator|=
 name|gimp_unit_get_factor
 argument_list|(
-name|gradient_options
+name|fade_options
 operator|->
 name|fade_unit
 argument_list|)
@@ -585,7 +571,7 @@ expr_stmt|;
 name|fade_out
 operator|=
 operator|(
-name|gradient_options
+name|fade_options
 operator|->
 name|fade_length
 operator|*
@@ -613,8 +599,6 @@ condition|)
 block|{
 name|gdouble
 name|x
-decl_stmt|,
-name|paint_left
 decl_stmt|;
 comment|/*  Model the amount of paint left as a gaussian curve  */
 name|x
@@ -630,7 +614,7 @@ operator|/
 name|fade_out
 operator|)
 expr_stmt|;
-name|paint_left
+name|opacity
 operator|=
 name|exp
 argument_list|(
@@ -643,17 +627,6 @@ literal|5.541
 argument_list|)
 expr_stmt|;
 comment|/*  ln (1/255)  */
-name|local_blend
-operator|=
-call|(
-name|gint
-call|)
-argument_list|(
-literal|255
-operator|*
-name|paint_left
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 if|if
@@ -799,17 +772,11 @@ condition|)
 return|return;
 if|if
 condition|(
-name|local_blend
+name|opacity
+operator|>
+literal|0.0
 condition|)
 block|{
-name|guchar
-name|temp_blend
-decl_stmt|;
-comment|/*  set the alpha channel  */
-name|temp_blend
-operator|=
-name|local_blend
-expr_stmt|;
 if|if
 condition|(
 name|gradient_length
@@ -866,20 +833,11 @@ operator|->
 name|gradient_type
 argument_list|)
 expr_stmt|;
-name|temp_blend
-operator|=
-call|(
-name|gint
-call|)
-argument_list|(
-operator|(
+name|opacity
+operator|*=
 name|color
 operator|.
 name|a
-operator|*
-name|local_blend
-operator|)
-argument_list|)
 expr_stmt|;
 name|gimp_rgb_get_uchar
 argument_list|(
@@ -939,7 +897,6 @@ operator|=
 name|GIMP_PAINT_INCREMENTAL
 expr_stmt|;
 block|}
-comment|/* we check to see if this is a pixmap, if so composite the        * pixmap image into the area instead of the color        */
 elseif|else
 if|if
 condition|(
@@ -1023,15 +980,6 @@ name|bytes
 argument_list|)
 expr_stmt|;
 block|}
-name|opacity
-operator|=
-operator|(
-name|gdouble
-operator|)
-name|temp_blend
-operator|/
-literal|255.0
-expr_stmt|;
 if|if
 condition|(
 name|pressure_options
@@ -1039,9 +987,7 @@ operator|->
 name|opacity
 condition|)
 name|opacity
-operator|=
-name|opacity
-operator|*
+operator|*=
 literal|2.0
 operator|*
 name|paint_core

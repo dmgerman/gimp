@@ -16,14 +16,10 @@ directive|define
 name|__GIMP_PENCIL_TOOL_H__
 end_define
 
-begin_comment
-comment|/* FIXME: This whole tool should probably just be a paintbrush tool that  *        has an option of hard edge.  It'll give the "pencil tool" all the  *        flashy stuff the paintbrush tool has, and not duplicate code.  */
-end_comment
-
 begin_include
 include|#
 directive|include
-file|"gimppainttool.h"
+file|"gimppaintbrushtool.h"
 end_include
 
 begin_define
@@ -113,7 +109,7 @@ struct|struct
 name|_GimpPencilTool
 block|{
 DECL|member|parent_instance
-name|GimpPaintTool
+name|GimpPaintbrushTool
 name|parent_instance
 decl_stmt|;
 block|}
@@ -126,7 +122,7 @@ struct|struct
 name|_GimpPencilToolClass
 block|{
 DECL|member|parent_class
-name|GimpPaintToolClass
+name|GimpPaintbrushToolClass
 name|parent_class
 decl_stmt|;
 block|}

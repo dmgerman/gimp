@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimppainttool.h"
+file|"gimppaintbrushtool.h"
 end_include
 
 begin_define
@@ -109,7 +109,7 @@ struct|struct
 name|_GimpAirbrushTool
 block|{
 DECL|member|parent_instance
-name|GimpPaintTool
+name|GimpPaintbrushTool
 name|parent_instance
 decl_stmt|;
 block|}
@@ -122,7 +122,7 @@ struct|struct
 name|_GimpAirbrushToolClass
 block|{
 DECL|member|parent_class
-name|GimpPaintToolClass
+name|GimpPaintbrushToolClass
 name|parent_class
 decl_stmt|;
 block|}

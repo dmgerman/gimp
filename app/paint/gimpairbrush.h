@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimppaintcore.h"
+file|"gimppaintbrush.h"
 end_include
 
 begin_define
@@ -109,8 +109,22 @@ struct|struct
 name|_GimpAirbrush
 block|{
 DECL|member|parent_instance
-name|GimpPaintCore
+name|GimpPaintbrush
 name|parent_instance
+decl_stmt|;
+DECL|member|timeout_id
+name|guint
+name|timeout_id
+decl_stmt|;
+DECL|member|drawable
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
+DECL|member|paint_options
+name|GimpPaintOptions
+modifier|*
+name|paint_options
 decl_stmt|;
 block|}
 struct|;
@@ -122,7 +136,7 @@ struct|struct
 name|_GimpAirbrushClass
 block|{
 DECL|member|parent_class
-name|GimpPaintCoreClass
+name|GimpPaintbrushClass
 name|parent_class
 decl_stmt|;
 block|}

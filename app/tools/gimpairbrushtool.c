@@ -115,7 +115,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GimpPaintToolClass
+name|GimpPaintbrushToolClass
 modifier|*
 name|parent_class
 init|=
@@ -253,7 +253,7 @@ name|tool_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GIMP_TYPE_PAINT_TOOL
+name|GIMP_TYPE_PAINTBRUSH_TOOL
 argument_list|,
 literal|"GimpAirbrushTool"
 argument_list|,

@@ -40,6 +40,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpFadeOptions
+typedef|typedef
+name|struct
+name|_GimpFadeOptions
+name|GimpFadeOptions
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpGradientOptions
 typedef|typedef
 name|struct
@@ -78,9 +87,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpGradientOptions
+DECL|struct|_GimpFadeOptions
 struct|struct
-name|_GimpGradientOptions
+name|_GimpFadeOptions
 block|{
 DECL|member|use_fade
 name|gboolean
@@ -94,6 +103,15 @@ DECL|member|fade_unit
 name|GimpUnit
 name|fade_unit
 decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpGradientOptions
+struct|struct
+name|_GimpGradientOptions
+block|{
 DECL|member|use_gradient
 name|gboolean
 name|use_gradient
@@ -211,6 +229,11 @@ DECL|member|pressure_options
 name|GimpPressureOptions
 modifier|*
 name|pressure_options
+decl_stmt|;
+DECL|member|fade_options
+name|GimpFadeOptions
+modifier|*
+name|fade_options
 decl_stmt|;
 DECL|member|gradient_options
 name|GimpGradientOptions

@@ -153,6 +153,32 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/*  protected  */
+end_comment
+
+begin_function_decl
+name|void
+name|_gimp_paintbrush_motion
+parameter_list|(
+name|GimpPaintCore
+modifier|*
+name|paint_core
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|GimpPaintOptions
+modifier|*
+name|paint_options
+parameter_list|,
+name|gdouble
+name|opacity
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
