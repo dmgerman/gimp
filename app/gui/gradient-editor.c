@@ -334,7 +334,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon292714400103
+DECL|enum|__anon2acef9a70103
 typedef|typedef
 enum|enum
 block|{
@@ -361,7 +361,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon292714400203
+DECL|enum|__anon2acef9a70203
 typedef|typedef
 enum|enum
 block|{
@@ -506,7 +506,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon292714400303
+DECL|enum|__anon2acef9a70303
 typedef|typedef
 enum|enum
 block|{
@@ -530,7 +530,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon292714400408
+DECL|struct|__anon2acef9a70408
 typedef|typedef
 struct|struct
 block|{
@@ -810,7 +810,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon292714400508
+DECL|struct|__anon2acef9a70508
 struct|struct
 block|{
 DECL|member|r
@@ -2161,6 +2161,9 @@ name|ok_callback
 parameter_list|,
 name|GtkSignalFunc
 name|cancel_callback
+parameter_list|,
+name|GtkSignalFunc
+name|delete_callback
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2262,6 +2265,25 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|int
+name|cpopup_left_color_dialog_delete
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|void
 name|cpopup_set_right_color_callback
 parameter_list|(
@@ -2316,6 +2338,25 @@ name|widget
 parameter_list|,
 name|gpointer
 name|client_data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|int
+name|cpopup_right_color_dialog_delete
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -19285,7 +19326,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|cpopup_create_color_dialog (char * title,double r,double g,double b,double a,GtkSignalFunc color_changed_callback,GtkSignalFunc ok_callback,GtkSignalFunc cancel_callback)
+DECL|function|cpopup_create_color_dialog (char * title,double r,double g,double b,double a,GtkSignalFunc color_changed_callback,GtkSignalFunc ok_callback,GtkSignalFunc cancel_callback,GtkSignalFunc delete_callback)
 name|cpopup_create_color_dialog
 parameter_list|(
 name|char
@@ -19312,6 +19353,9 @@ name|ok_callback
 parameter_list|,
 name|GtkSignalFunc
 name|cancel_callback
+parameter_list|,
+name|GtkSignalFunc
+name|delete_callback
 parameter_list|)
 block|{
 name|GtkWidget
@@ -19394,6 +19438,20 @@ argument_list|,
 name|b
 argument_list|,
 name|a
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|csd
+argument_list|)
+argument_list|,
+literal|"delete_event"
+argument_list|,
+name|delete_callback
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -19821,6 +19879,11 @@ operator|(
 name|GtkSignalFunc
 operator|)
 name|cpopup_left_color_dialog_cancel
+argument_list|,
+operator|(
+name|GtkSignalFunc
+operator|)
+name|cpopup_left_color_dialog_delete
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -20159,6 +20222,67 @@ end_comment
 
 begin_function
 specifier|static
+name|int
+DECL|function|cpopup_left_color_dialog_delete (GtkWidget * widget,GdkEvent * event,gpointer data)
+name|cpopup_left_color_dialog_delete
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|curr_gradient
+operator|->
+name|dirty
+operator|=
+name|g_editor
+operator|->
+name|left_saved_dirty
+expr_stmt|;
+name|cpopup_replace_selection
+argument_list|(
+name|g_editor
+operator|->
+name|left_saved_segments
+argument_list|)
+expr_stmt|;
+name|ed_update_editor
+argument_list|(
+name|GRAD_UPDATE_PREVIEW
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|g_editor
+operator|->
+name|shell
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/* cpopup_left_color_dialog_delete */
+end_comment
+
+begin_comment
+comment|/*****/
+end_comment
+
+begin_function
+specifier|static
 name|void
 DECL|function|cpopup_set_right_color_callback (GtkWidget * widget,gpointer data)
 name|cpopup_set_right_color_callback
@@ -20228,6 +20352,11 @@ operator|(
 name|GtkSignalFunc
 operator|)
 name|cpopup_right_color_dialog_cancel
+argument_list|,
+operator|(
+name|GtkSignalFunc
+operator|)
+name|cpopup_right_color_dialog_delete
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -20558,6 +20687,67 @@ end_function
 
 begin_comment
 comment|/* cpopup_right_color_dialog_cancel */
+end_comment
+
+begin_comment
+comment|/*****/
+end_comment
+
+begin_function
+specifier|static
+name|int
+DECL|function|cpopup_right_color_dialog_delete (GtkWidget * widget,GdkEvent * event,gpointer data)
+name|cpopup_right_color_dialog_delete
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|curr_gradient
+operator|->
+name|dirty
+operator|=
+name|g_editor
+operator|->
+name|right_saved_dirty
+expr_stmt|;
+name|cpopup_replace_selection
+argument_list|(
+name|g_editor
+operator|->
+name|right_saved_segments
+argument_list|)
+expr_stmt|;
+name|ed_update_editor
+argument_list|(
+name|GRAD_UPDATE_PREVIEW
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|g_editor
+operator|->
+name|shell
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/* cpopup_right_color_dialog_delete */
 end_comment
 
 begin_comment
