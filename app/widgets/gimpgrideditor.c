@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ec38fa0103
+DECL|enum|__anon27c3fd6c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -899,7 +899,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"_Background Color:"
+literal|"_Background color:"
 argument_list|)
 argument_list|,
 literal|0.0
