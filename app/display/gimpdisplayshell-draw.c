@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpcolorpanel.h"
 end_include
 
@@ -155,6 +149,12 @@ begin_include
 include|#
 directive|include
 file|"gui/info-window.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/plug-in-menus.h"
 end_include
 
 begin_include

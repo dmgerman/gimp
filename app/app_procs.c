@@ -106,7 +106,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in.h"
+file|"plug-in/plug-ins.h"
 end_include
 
 begin_include
@@ -433,7 +433,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  Initialize the plug-in structures    */
-name|plug_in_init
+name|plug_ins_init
 argument_list|(
 name|the_gimp
 argument_list|,
@@ -780,8 +780,10 @@ name|the_gimp
 argument_list|)
 expr_stmt|;
 block|}
-name|plug_in_kill
-argument_list|()
+name|plug_ins_exit
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

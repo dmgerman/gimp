@@ -52,7 +52,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in.h"
+file|"plug-in/plug-ins.h"
 end_include
 
 begin_decl_stmt
@@ -169,7 +169,7 @@ name|success
 condition|)
 name|gimp_help
 argument_list|(
-name|plug_in_help_path
+name|plug_ins_help_path
 argument_list|(
 name|prog_name
 argument_list|)

@@ -116,7 +116,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/plug-in-proc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in/plug-in.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/plug-ins.h"
 end_include
 
 begin_decl_stmt
@@ -1824,7 +1836,7 @@ goto|;
 block|}
 name|file_proc
 operator|=
-name|plug_in_file_handler
+name|plug_ins_file_handler
 argument_list|(
 name|name
 argument_list|,
@@ -2337,7 +2349,7 @@ goto|;
 block|}
 name|file_proc
 operator|=
-name|plug_in_file_handler
+name|plug_ins_file_handler
 argument_list|(
 name|name
 argument_list|,

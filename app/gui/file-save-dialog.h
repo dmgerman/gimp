@@ -23,6 +23,10 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpItemFactory
+modifier|*
+name|item_factory
 parameter_list|)
 function_decl|;
 end_function_decl

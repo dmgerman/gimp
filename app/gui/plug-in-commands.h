@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__COMMANDS_H__
+name|__PLUG_IN_COMMANDS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__COMMANDS_H__
+DECL|macro|__PLUG_IN_COMMANDS_H__
 define|#
 directive|define
-name|__COMMANDS_H__
+name|__PLUG_IN_COMMANDS_H__
 end_define
 
 begin_function_decl
 name|void
-name|help_help_cmd_callback
+name|plug_in_run_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -26,13 +26,16 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|guint
+name|action
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|help_context_help_cmd_callback
+name|plug_in_repeat_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -40,20 +43,9 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|debug_mem_profile_cmd_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
 parameter_list|,
-name|gpointer
-name|data
+name|guint
+name|action
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -64,7 +56,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __COMMANDS_H__ */
+comment|/* __PLUG_IN_COMMANDS_H__ */
 end_comment
 
 end_unit

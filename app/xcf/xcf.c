@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in.h"
+file|"plug-in/plug-ins.h"
 end_include
 
 begin_include
@@ -487,7 +487,7 @@ name|xcf_plug_in_save_proc
 operator|.
 name|image_types_val
 operator|=
-name|plug_in_image_types_parse
+name|plug_ins_image_types_parse
 argument_list|(
 name|xcf_plug_in_save_proc
 operator|.
@@ -498,20 +498,20 @@ name|xcf_plug_in_load_proc
 operator|.
 name|image_types_val
 operator|=
-name|plug_in_image_types_parse
+name|plug_ins_image_types_parse
 argument_list|(
 name|xcf_plug_in_load_proc
 operator|.
 name|image_types
 argument_list|)
 expr_stmt|;
-name|plug_in_add_internal
+name|plug_ins_add_internal
 argument_list|(
 operator|&
 name|xcf_plug_in_save_proc
 argument_list|)
 expr_stmt|;
-name|plug_in_add_internal
+name|plug_ins_add_internal
 argument_list|(
 operator|&
 name|xcf_plug_in_load_proc

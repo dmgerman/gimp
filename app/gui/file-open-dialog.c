@@ -395,12 +395,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|file_open_dialog_menu_init (Gimp * gimp)
+DECL|function|file_open_dialog_menu_init (Gimp * gimp,GimpItemFactory * item_factory)
 name|file_open_dialog_menu_init
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpItemFactory
+modifier|*
+name|item_factory
 parameter_list|)
 block|{
 name|GimpItemFactoryEntry
@@ -419,6 +423,14 @@ argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_ITEM_FACTORY
+argument_list|(
+name|item_factory
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -521,9 +533,14 @@ name|entry
 operator|.
 name|path
 operator|=
+name|strstr
+argument_list|(
 name|file_proc
 operator|->
 name|menu_path
+argument_list|,
+literal|"/"
+argument_list|)
 expr_stmt|;
 name|entry
 operator|.
@@ -575,14 +592,20 @@ name|description
 operator|=
 name|NULL
 expr_stmt|;
-name|gimp_menu_item_create
+name|gimp_item_factory_create_item
 argument_list|(
+name|item_factory
+argument_list|,
 operator|&
 name|entry
 argument_list|,
-name|NULL
-argument_list|,
 name|file_proc
+argument_list|,
+literal|2
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

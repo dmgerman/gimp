@@ -88,6 +88,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-ins.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in-def.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in-proc.h"
 end_include
 
@@ -270,7 +282,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4c2dda0103
+DECL|enum|__anon29029f890103
 block|{
 DECL|enumerator|PLUG_IN_DEF
 name|PLUG_IN_DEF
@@ -854,7 +866,7 @@ name|token
 argument_list|)
 condition|)
 block|{
-name|plug_in_def_add
+name|plug_ins_def_add
 argument_list|(
 name|plug_in_def
 argument_list|)
@@ -1112,7 +1124,7 @@ name|proc_def
 operator|->
 name|image_types_val
 operator|=
-name|plug_in_image_types_parse
+name|plug_ins_image_types_parse
 argument_list|(
 name|proc_def
 operator|->

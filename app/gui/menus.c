@@ -204,6 +204,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"qmask-commands.h"
 end_include
 
@@ -340,9 +346,9 @@ name|GimpRGB
 modifier|*
 name|unused
 parameter_list|,
-name|Gimp
+name|GimpItemFactory
 modifier|*
-name|gimp
+name|item_factory
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3883,7 +3889,7 @@ argument_list|)
 block|,
 literal|"<alt>F"
 block|,
-name|filters_repeat_cmd_callback
+name|plug_in_repeat_cmd_callback
 block|,
 operator|(
 name|guint
@@ -3911,7 +3917,7 @@ argument_list|)
 block|,
 literal|"<alt><shift>F"
 block|,
-name|filters_repeat_cmd_callback
+name|plug_in_repeat_cmd_callback
 block|,
 operator|(
 name|guint
@@ -9360,7 +9366,7 @@ argument_list|(
 name|menus_color_changed
 argument_list|)
 argument_list|,
-name|gimp
+name|image_factory
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -9377,7 +9383,7 @@ argument_list|(
 name|menus_color_changed
 argument_list|)
 argument_list|,
-name|gimp
+name|image_factory
 argument_list|)
 expr_stmt|;
 name|menus_color_changed
@@ -9386,7 +9392,7 @@ name|user_context
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp
+name|image_factory
 argument_list|)
 expr_stmt|;
 block|}
@@ -11101,7 +11107,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|menus_color_changed (GimpContext * context,const GimpRGB * unused,Gimp * gimp)
+DECL|function|menus_color_changed (GimpContext * context,const GimpRGB * unused,GimpItemFactory * item_factory)
 name|menus_color_changed
 parameter_list|(
 name|GimpContext
@@ -11113,9 +11119,9 @@ name|GimpRGB
 modifier|*
 name|unused
 parameter_list|,
-name|Gimp
+name|GimpItemFactory
 modifier|*
-name|gimp
+name|item_factory
 parameter_list|)
 block|{
 name|GimpRGB
@@ -11140,9 +11146,14 @@ operator|&
 name|bg
 argument_list|)
 expr_stmt|;
-name|gimp_menu_item_set_color
+name|gimp_item_factory_set_color
 argument_list|(
-literal|"<Image>/Edit/Fill with FG Color"
+name|GTK_ITEM_FACTORY
+argument_list|(
+name|item_factory
+argument_list|)
+argument_list|,
+literal|"/Edit/Fill with FG Color"
 argument_list|,
 operator|&
 name|fg
@@ -11150,9 +11161,14 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_menu_item_set_color
+name|gimp_item_factory_set_color
 argument_list|(
-literal|"<Image>/Edit/Fill with BG Color"
+name|GTK_ITEM_FACTORY
+argument_list|(
+name|item_factory
+argument_list|)
+argument_list|,
+literal|"/Edit/Fill with BG Color"
 argument_list|,
 operator|&
 name|bg

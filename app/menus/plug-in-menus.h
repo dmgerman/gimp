@@ -6,54 +6,67 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__COMMANDS_H__
+name|__PLUG_IN_MENUS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__COMMANDS_H__
+DECL|macro|__PLUG_IN_MENUS_H__
 define|#
 directive|define
-name|__COMMANDS_H__
+name|__PLUG_IN_MENUS_H__
 end_define
 
 begin_function_decl
 name|void
-name|help_help_cmd_callback
+name|plug_in_make_menu
 parameter_list|(
-name|GtkWidget
+name|GSList
 modifier|*
-name|widget
+name|plug_in_defs
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|std_plugins_domain
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|plug_in_make_menu_entry
+parameter_list|(
+name|gpointer
+name|foo
+parameter_list|,
+name|PlugInMenuEntry
+modifier|*
+name|menu_entry
 parameter_list|,
 name|gpointer
-name|data
+name|bar
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|help_context_help_cmd_callback
+name|plug_in_delete_menu_entry
 parameter_list|(
-name|GtkWidget
+specifier|const
+name|gchar
 modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
+name|menu_path
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|debug_mem_profile_cmd_callback
+name|plug_in_set_menu_sensitivity
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
+name|GimpImageType
+name|type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -64,7 +77,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __COMMANDS_H__ */
+comment|/* __PLUG_IN_MENUS_H__ */
 end_comment
 
 end_unit

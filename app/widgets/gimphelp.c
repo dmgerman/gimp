@@ -65,6 +65,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/procedural_db.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/plug-ins.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in/plug-in.h"
 end_include
 
@@ -795,6 +807,8 @@ name|help_data
 expr_stmt|;
 name|plug_in_run
 argument_list|(
+name|the_gimp
+argument_list|,
 name|proc_rec
 argument_list|,
 name|args

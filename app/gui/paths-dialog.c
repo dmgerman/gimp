@@ -932,6 +932,10 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|GtkItemFactory
+modifier|*
+name|item_factory
+decl_stmt|;
 name|gboolean
 name|gimage
 init|=
@@ -989,6 +993,16 @@ name|cpp
 operator|=
 name|TRUE
 expr_stmt|;
+name|item_factory
+operator|=
+name|GTK_ITEM_FACTORY
+argument_list|(
+name|gimp_item_factory_from_path
+argument_list|(
+literal|"<Paths>"
+argument_list|)
+argument_list|)
+expr_stmt|;
 DECL|macro|SET_SENSITIVE (menu,condition)
 define|#
 directive|define
@@ -999,7 +1013,7 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|gimp_menu_item_set_sensitive ("<Paths>/" menu, (condition) != 0)
+value|gimp_item_factory_set_sensitive (item_factory, menu, (condition) != 0)
 DECL|macro|SET_OPS_SENSITIVE (button,condition)
 define|#
 directive|define
@@ -1024,7 +1038,7 @@ define|\
 value|gtk_widget_set_sensitive (point_ops_buttons[(button)].widget, \                                  (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"New Path"
+literal|"/New Path"
 argument_list|,
 name|gimage
 argument_list|)
@@ -1038,7 +1052,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Duplicate Path"
+literal|"/Duplicate Path"
 argument_list|,
 name|pp
 argument_list|)
@@ -1052,7 +1066,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Path to Selection"
+literal|"/Path to Selection"
 argument_list|,
 name|pp
 argument_list|)
@@ -1066,7 +1080,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Selection to Path"
+literal|"/Selection to Path"
 argument_list|,
 name|gimage
 argument_list|)
@@ -1080,7 +1094,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Stroke Path"
+literal|"/Stroke Path"
 argument_list|,
 name|pp
 argument_list|)
@@ -1094,7 +1108,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Delete Path"
+literal|"/Delete Path"
 argument_list|,
 name|pp
 argument_list|)
@@ -1108,14 +1122,14 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Copy Path"
+literal|"/Copy Path"
 argument_list|,
 name|pp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Paste Path"
+literal|"/Paste Path"
 argument_list|,
 name|pp
 operator|&&
@@ -1124,21 +1138,21 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Import Path..."
+literal|"/Import Path..."
 argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Export Path..."
+literal|"/Export Path..."
 argument_list|,
 name|pp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Edit Path Attributes..."
+literal|"/Edit Path Attributes..."
 argument_list|,
 name|pp
 argument_list|)
@@ -5682,6 +5696,10 @@ argument_list|)
 expr_stmt|;
 name|plug_in_run
 argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|proc_rec
 argument_list|,
 name|args
@@ -5878,6 +5896,10 @@ argument_list|)
 expr_stmt|;
 name|plug_in_run
 argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|proc_rec
 argument_list|,
 name|args

@@ -46,37 +46,6 @@ file|"commands.h"
 end_include
 
 begin_comment
-comment|/*****  Filters  *****/
-end_comment
-
-begin_function
-name|void
-DECL|function|filters_repeat_cmd_callback (GtkWidget * widget,gpointer data,guint action)
-name|filters_repeat_cmd_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|,
-name|guint
-name|action
-parameter_list|)
-block|{
-name|plug_in_repeat
-argument_list|(
-operator|(
-name|gboolean
-operator|)
-name|action
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
 comment|/*****  Help  *****/
 end_comment
 
