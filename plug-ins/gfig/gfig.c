@@ -25,6 +25,12 @@ directive|include
 file|<stdlib.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<errno.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -961,7 +967,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf127110103
+DECL|enum|__anon2acbb90b0103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1013,7 +1019,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf127110203
+DECL|enum|__anon2acbb90b0203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1034,7 +1040,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf127110303
+DECL|enum|__anon2acbb90b0303
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -1055,7 +1061,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf127110403
+DECL|enum|__anon2acbb90b0403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1082,7 +1088,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf127110503
+DECL|enum|__anon2acbb90b0503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1103,7 +1109,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf127110603
+DECL|enum|__anon2acbb90b0603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1271,7 +1277,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf127110708
+DECL|struct|__anon2acbb90b0708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1310,7 +1316,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf127110808
+DECL|struct|__anon2acbb90b0808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1359,7 +1365,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf127110908
+DECL|struct|__anon2acbb90b0908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1529,7 +1535,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf127110a03
+DECL|enum|__anon2acbb90b0a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1553,7 +1559,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf127110b03
+DECL|enum|__anon2acbb90b0b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1571,7 +1577,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf127110c03
+DECL|enum|__anon2acbb90b0c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1592,7 +1598,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf127110d03
+DECL|enum|__anon2acbb90b0d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -6615,21 +6621,19 @@ condition|)
 block|{
 name|message
 operator|=
-name|g_strconcat
+name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Error opening: %s"
-argument_list|)
-argument_list|,
-literal|"\n"
-argument_list|,
-name|_
-argument_list|(
-literal|"Could not save."
+literal|"Error opening file '%s':\n%s"
 argument_list|)
 argument_list|,
 name|savename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_message
