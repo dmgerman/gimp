@@ -148,10 +148,10 @@ name|GimpHistogram
 modifier|*
 name|hist
 decl_stmt|;
-DECL|member|histogram
-name|GimpHistogramView
+DECL|member|hist_view
+name|GtkWidget
 modifier|*
-name|histogram
+name|hist_view
 decl_stmt|;
 DECL|member|low_input_data
 name|GtkAdjustment

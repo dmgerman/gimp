@@ -119,6 +119,11 @@ DECL|member|parent_instance
 name|GtkDrawingArea
 name|parent_instance
 decl_stmt|;
+DECL|member|range_gc
+name|GdkGC
+modifier|*
+name|range_gc
+decl_stmt|;
 DECL|member|histogram
 name|GimpHistogram
 modifier|*
@@ -182,7 +187,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|GimpHistogramView
+name|GtkWidget
 modifier|*
 name|gimp_histogram_view_new
 parameter_list|(
@@ -191,13 +196,16 @@ name|width
 parameter_list|,
 name|gint
 name|height
+parameter_list|,
+name|gboolean
+name|range
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_histogram_view_update
+name|gimp_histogram_view_set_histogram
 parameter_list|(
 name|GimpHistogramView
 modifier|*
@@ -206,6 +214,18 @@ parameter_list|,
 name|GimpHistogram
 modifier|*
 name|histogram
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpHistogram
+modifier|*
+name|gimp_histogram_view_get_histogram
+parameter_list|(
+name|GimpHistogramView
+modifier|*
+name|view
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -229,7 +249,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_histogram_view_channel
+name|gimp_histogram_view_set_channel
 parameter_list|(
 name|GimpHistogramView
 modifier|*
@@ -237,18 +257,6 @@ name|view
 parameter_list|,
 name|gint
 name|channel
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpHistogram
-modifier|*
-name|gimp_histogram_view_get_histogram
-parameter_list|(
-name|GimpHistogramView
-modifier|*
-name|view
 parameter_list|)
 function_decl|;
 end_function_decl
