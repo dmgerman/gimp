@@ -226,7 +226,7 @@ value|GDK_EXPOSURE_MASK | \                        GDK_BUTTON_PRESS_MASK | \    
 end_define
 
 begin_typedef
-DECL|struct|__anon29927fac0108
+DECL|struct|__anon2afaeafe0108
 typedef|typedef
 struct|struct
 block|{
@@ -263,7 +263,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29927fac0208
+DECL|struct|__anon2afaeafe0208
 typedef|typedef
 struct|struct
 block|{
@@ -278,7 +278,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29927fac0308
+DECL|struct|__anon2afaeafe0308
 typedef|typedef
 struct|struct
 block|{
@@ -305,7 +305,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29927fac0408
+DECL|struct|__anon2afaeafe0408
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -1274,7 +1274,7 @@ block|{
 comment|/*  Make sure that the drawable is gray or RGB color  */
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

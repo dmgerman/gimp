@@ -2457,7 +2457,7 @@ name|drawable_ID
 parameter_list|)
 function_decl|;
 name|gint
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 parameter_list|(
 name|gint32
 name|drawable_ID

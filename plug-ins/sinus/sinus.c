@@ -223,7 +223,7 @@ value|1L
 end_define
 
 begin_typedef
-DECL|struct|__anon28bcf1b40108
+DECL|struct|__anon29d49c680108
 typedef|typedef
 struct|struct
 block|{
@@ -324,7 +324,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon28bcf1b40208
+DECL|struct|__anon29d49c680208
 typedef|typedef
 struct|struct
 block|{
@@ -1373,7 +1373,7 @@ name|STATUS_SUCCESS
 operator|)
 operator|&&
 operator|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
@@ -1472,7 +1472,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-DECL|struct|__anon28bcf1b40308
+DECL|struct|__anon29d49c680308
 DECL|member|r
 DECL|member|g
 DECL|member|b

@@ -633,7 +633,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b07122d0108
+DECL|struct|__anon27b9c21d0108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -679,7 +679,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b07122d0208
+DECL|struct|__anon27b9c21d0208
 block|{
 DECL|member|run
 name|gint
@@ -1059,7 +1059,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable_id
 argument_list|)

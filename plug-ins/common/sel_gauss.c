@@ -73,7 +73,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278ddb880108
+DECL|struct|__anon27df4f080108
 block|{
 DECL|member|radius
 name|gdouble
@@ -92,7 +92,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278ddb880208
+DECL|struct|__anon27df4f080208
 block|{
 DECL|member|run
 name|gint
@@ -682,7 +682,7 @@ expr_stmt|;
 comment|/* Make sure that the drawable is gray or RGB color */
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

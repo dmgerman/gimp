@@ -292,7 +292,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d169490108
+DECL|struct|__anon2c3aa5130108
 block|{
 DECL|member|r
 DECL|member|g
@@ -379,7 +379,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon28d169490208
+DECL|struct|__anon2c3aa5130208
 typedef|typedef
 struct|struct
 block|{
@@ -5299,7 +5299,7 @@ operator|)
 return|;
 return|return
 operator|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable_id
 argument_list|)
@@ -7636,7 +7636,7 @@ comment|/* Make sure that the drawable is RGBA or RGB color */
 comment|/* ================================================ */
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

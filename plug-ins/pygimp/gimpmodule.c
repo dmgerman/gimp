@@ -95,7 +95,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c9154cd0108
+DECL|struct|__anon2977f0a10108
 typedef|typedef
 struct|struct
 block|{
@@ -135,7 +135,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c9154cd0208
+DECL|struct|__anon2977f0a10208
 typedef|typedef
 struct|struct
 block|{
@@ -244,7 +244,7 @@ comment|/* Declarations for objects of type Image */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c9154cd0308
+DECL|struct|__anon2977f0a10308
 typedef|typedef
 struct|struct
 block|{
@@ -298,7 +298,7 @@ comment|/* Declarations for objects of type Display */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c9154cd0408
+DECL|struct|__anon2977f0a10408
 typedef|typedef
 struct|struct
 block|{
@@ -352,7 +352,7 @@ comment|/* Declarations for objects of type Layer and channel */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c9154cd0508
+DECL|struct|__anon2977f0a10508
 typedef|typedef
 struct|struct
 block|{
@@ -476,7 +476,7 @@ comment|/* Declarations for objects of type Tile */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c9154cd0608
+DECL|struct|__anon2977f0a10608
 typedef|typedef
 struct|struct
 block|{
@@ -542,7 +542,7 @@ comment|/* Declarations for objects of type PixelRegion */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c9154cd0708
+DECL|struct|__anon2977f0a10708
 typedef|typedef
 struct|struct
 block|{
@@ -622,7 +622,7 @@ comment|/* Declarations for objects of type Parasite */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c9154cd0808
+DECL|struct|__anon2977f0a10808
 typedef|typedef
 struct|struct
 block|{
@@ -12468,7 +12468,7 @@ condition|)
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|self
 operator|->
@@ -14349,7 +14349,7 @@ condition|)
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|self
 operator|->

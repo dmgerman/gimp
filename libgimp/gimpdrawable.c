@@ -1052,8 +1052,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_drawable_color (gint32 drawable_ID)
-name|gimp_drawable_color
+DECL|function|gimp_drawable_is_rgb (gint32 drawable_ID)
+name|gimp_drawable_is_rgb
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -1073,7 +1073,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_color"
+literal|"gimp_drawable_is_rgb"
 argument_list|,
 operator|&
 name|nreturn_vals

@@ -191,7 +191,7 @@ comment|/*********************************  *  *  PLUGIN-SPECIFIC STRUCTURES AND
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b81c5af0108
+DECL|struct|__anon290809cf0108
 typedef|typedef
 struct|struct
 block|{
@@ -240,7 +240,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b81c5af0208
+DECL|struct|__anon290809cf0208
 typedef|typedef
 struct|struct
 block|{
@@ -905,7 +905,7 @@ expr_stmt|;
 comment|/*  *  Make sure the drawable type is appropriate.  */
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

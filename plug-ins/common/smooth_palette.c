@@ -274,7 +274,7 @@ block|}
 end_function
 
 begin_struct
-DECL|struct|__anon287c7e390108
+DECL|struct|__anon2c216da80108
 specifier|static
 struct|struct
 block|{
@@ -598,7 +598,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

@@ -212,7 +212,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon29fbd3540108
+DECL|struct|__anon2c7cf1f80108
 typedef|typedef
 struct|struct
 block|{
@@ -289,7 +289,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29fbd3540208
+DECL|struct|__anon2c7cf1f80208
 typedef|typedef
 struct|struct
 block|{
@@ -509,7 +509,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon29fbd3540308
+DECL|struct|__anon2c7cf1f80308
 typedef|typedef
 struct|struct
 block|{
@@ -552,7 +552,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29fbd3540408
+DECL|struct|__anon2c7cf1f80408
 typedef|typedef
 struct|struct
 block|{
@@ -808,7 +808,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
@@ -1102,7 +1102,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29fbd3540508
+DECL|struct|__anon2c7cf1f80508
 typedef|typedef
 struct|struct
 block|{
@@ -3627,7 +3627,7 @@ value|200
 end_define
 
 begin_typedef
-DECL|struct|__anon29fbd3540608
+DECL|struct|__anon2c7cf1f80608
 typedef|typedef
 struct|struct
 block|{

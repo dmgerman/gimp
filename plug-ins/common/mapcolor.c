@@ -115,7 +115,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278ccf5f0108
+DECL|struct|__anon2a4720b90108
 block|{
 DECL|member|colors
 name|guchar
@@ -140,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278ccf5f0208
+DECL|struct|__anon2a4720b90208
 block|{
 DECL|member|activate
 name|GtkWidget
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278ccf5f0308
+DECL|struct|__anon2a4720b90308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -879,7 +879,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

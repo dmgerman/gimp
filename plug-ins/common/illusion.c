@@ -159,7 +159,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c03e6670108
+DECL|struct|__anon2b27692a0108
 typedef|typedef
 struct|struct
 block|{
@@ -686,7 +686,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

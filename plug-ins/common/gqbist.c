@@ -2320,7 +2320,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

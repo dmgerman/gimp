@@ -6745,13 +6745,13 @@ operator|)
 operator|&&
 operator|(
 operator|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawableId
 argument_list|)
 operator|&&
 operator|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|dm
 operator|->

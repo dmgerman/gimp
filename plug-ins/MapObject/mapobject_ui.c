@@ -3028,7 +3028,7 @@ operator|)
 return|;
 return|return
 operator|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable_id
 argument_list|)
@@ -3114,7 +3114,7 @@ operator|)
 return|;
 return|return
 operator|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable_id
 argument_list|)

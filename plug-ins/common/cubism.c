@@ -129,7 +129,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29909ada0108
+DECL|struct|__anon2bbea3ce0108
 block|{
 DECL|member|x
 DECL|member|y
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29909ada0208
+DECL|struct|__anon2bbea3ce0208
 block|{
 DECL|member|npts
 name|gint
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29909ada0308
+DECL|struct|__anon2bbea3ce0308
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29909ada0408
+DECL|struct|__anon2bbea3ce0408
 block|{
 DECL|member|run
 name|gint
@@ -995,7 +995,7 @@ name|STATUS_SUCCESS
 operator|)
 operator|&&
 operator|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|active_drawable
 operator|->

@@ -220,7 +220,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 parameter_list|(
 name|GimpDrawable
 modifier|*

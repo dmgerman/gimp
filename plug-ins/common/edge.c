@@ -122,7 +122,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|struct|__anon2a31193c0108
+DECL|struct|__anon2935bec30108
 typedef|typedef
 struct|struct
 block|{
@@ -141,7 +141,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a31193c0208
+DECL|struct|__anon2935bec30208
 typedef|typedef
 struct|struct
 block|{
@@ -156,7 +156,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a31193c0308
+DECL|struct|__anon2935bec30308
 typedef|typedef
 struct|struct
 block|{
@@ -794,7 +794,7 @@ block|}
 comment|/* make sure the drawable exist and is not indexed */
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
@@ -922,7 +922,7 @@ literal|0
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

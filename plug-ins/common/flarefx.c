@@ -140,7 +140,7 @@ comment|/* --- Typedefs --- */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bddcbb10108
+DECL|struct|__anon2801cc780108
 typedef|typedef
 struct|struct
 block|{
@@ -159,7 +159,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bddcbb10208
+DECL|struct|__anon2801cc780208
 typedef|typedef
 struct|struct
 block|{
@@ -232,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bddcbb10308
+DECL|struct|__anon2801cc780308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -1175,7 +1175,7 @@ block|{
 comment|/*  Make sure that the drawable is gray or RGB color  */
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

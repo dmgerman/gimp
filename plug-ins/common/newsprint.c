@@ -540,7 +540,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2aa24aa40108
+DECL|struct|__anon2bde11bd0108
 typedef|typedef
 struct|struct
 block|{
@@ -785,7 +785,7 @@ comment|/* Some of these are here merely to save them across calls.  They are  *
 end_comment
 
 begin_typedef
-DECL|struct|__anon2aa24aa40208
+DECL|struct|__anon2bde11bd0208
 typedef|typedef
 struct|struct
 block|{
@@ -858,7 +858,7 @@ comment|/* bits of state used by the UI, but not visible from the PDB */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2aa24aa40308
+DECL|struct|__anon2bde11bd0308
 typedef|typedef
 struct|struct
 block|{
@@ -884,7 +884,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2aa24aa40408
+DECL|struct|__anon2bde11bd0408
 typedef|typedef
 struct|struct
 block|{
@@ -917,7 +917,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2aa24aa40503
+DECL|enum|__anon2bde11bd0503
 typedef|typedef
 enum|enum
 block|{
@@ -933,7 +933,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2aa24aa40608
+DECL|struct|__anon2bde11bd0608
 typedef|typedef
 struct|struct
 block|{
@@ -991,7 +991,7 @@ comment|/* state for the preview widgets */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2aa24aa40708
+DECL|struct|__anon2bde11bd0708
 typedef|typedef
 struct|struct
 block|{
@@ -1093,7 +1093,7 @@ comment|/* State associated with the configuration dialog and passed to its  * c
 end_comment
 
 begin_typedef
-DECL|struct|__anon2aa24aa40808
+DECL|struct|__anon2bde11bd0808
 typedef|typedef
 struct|struct
 block|{
@@ -1281,7 +1281,7 @@ comment|/* channel templates */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2aa24aa40908
+DECL|struct|__anon2bde11bd0908
 typedef|typedef
 struct|struct
 block|{
@@ -2626,7 +2626,7 @@ block|{
 comment|/*  Make sure that the drawable is gray or RGB color  */
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
@@ -7363,7 +7363,7 @@ comment|/* Each call of the spot function results in one of these */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2aa24aa40a08
+DECL|struct|__anon2bde11bd0a08
 typedef|typedef
 struct|struct
 block|{

@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2757ef940108
+DECL|struct|__anon2b55c5aa0108
 block|{
 DECL|member|horizontal
 name|gint
@@ -75,7 +75,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2757ef940208
+DECL|struct|__anon2b55c5aa0208
 block|{
 DECL|member|run
 name|gint
@@ -648,7 +648,7 @@ expr_stmt|;
 comment|/*  Make sure that the drawable is gray or RGB color  */
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

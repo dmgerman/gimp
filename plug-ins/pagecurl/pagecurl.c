@@ -151,7 +151,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a227c8f0108
+DECL|struct|__anon28f034ef0108
 typedef|typedef
 struct|struct
 block|{
@@ -169,7 +169,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a227c8f0208
+DECL|struct|__anon28f034ef0208
 typedef|typedef
 struct|struct
 block|{
@@ -1573,7 +1573,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
@@ -4401,7 +4401,7 @@ name|NULL
 decl_stmt|;
 name|color_image
 operator|=
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
@@ -6245,7 +6245,7 @@ argument_list|)
 expr_stmt|;
 name|color
 operator|=
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

@@ -1693,7 +1693,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 argument_list|)
@@ -2385,7 +2385,7 @@ name|cd
 operator|.
 name|color
 operator|=
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 argument_list|)
@@ -2918,7 +2918,7 @@ name|cd
 operator|.
 name|color
 operator|=
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 argument_list|)
@@ -3979,7 +3979,7 @@ name|htd
 operator|.
 name|color
 operator|=
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 argument_list|)
@@ -5100,7 +5100,7 @@ name|td
 operator|.
 name|color
 operator|=
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 argument_list|)

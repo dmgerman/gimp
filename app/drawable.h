@@ -161,7 +161,7 @@ DECL|macro|drawable_color
 define|#
 directive|define
 name|drawable_color
-value|gimp_drawable_color
+value|gimp_drawable_is_rgb
 end_define
 
 begin_define

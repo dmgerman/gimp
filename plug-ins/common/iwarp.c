@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1f48af0108
+DECL|struct|__anon2bc2742f0108
 block|{
 DECL|member|x
 name|gfloat
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1f48af0208
+DECL|struct|__anon2bc2742f0208
 block|{
 DECL|member|run
 name|gint
@@ -144,7 +144,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1f48af0308
+DECL|struct|__anon2bc2742f0308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -1264,7 +1264,7 @@ expr_stmt|;
 comment|/*  Make sure that the drawable is gray or RGB color  */
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

@@ -175,7 +175,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a347d120108
+DECL|struct|__anon29a9d7e80108
 block|{
 DECL|member|width
 name|gint
@@ -600,7 +600,7 @@ block|{
 comment|/*  Make sure that the drawable is gray or RGB color  */
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

@@ -75,7 +75,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2ba6a4310103
+DECL|enum|__anon2888784c0103
 typedef|typedef
 enum|enum
 block|{
@@ -293,7 +293,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2ba6a4310208
+DECL|struct|__anon2888784c0208
 typedef|typedef
 struct|struct
 block|{
@@ -449,7 +449,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2ba6a4310308
+DECL|struct|__anon2888784c0308
 struct|struct
 block|{
 DECL|member|matrix
@@ -933,7 +933,7 @@ block|{
 comment|/*  Make sure that the drawable is gray or RGB color  */
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
@@ -1971,7 +1971,7 @@ name|bpp
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
@@ -3221,7 +3221,7 @@ literal|0
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

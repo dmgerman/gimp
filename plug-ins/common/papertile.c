@@ -101,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278571ab0103
+DECL|enum|__anon2c1571170103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278571ab0203
+DECL|enum|__anon2c1571170203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -218,7 +218,7 @@ comment|/*======================================================================
 end_comment
 
 begin_struct
-DECL|struct|__anon278571ab0308
+DECL|struct|__anon2c1571170308
 specifier|static
 struct|struct
 block|{
@@ -239,7 +239,7 @@ DECL|member|drawable_has_alpha
 name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
-DECL|struct|__anon278571ab0408
+DECL|struct|__anon2c1571170408
 struct|struct
 block|{
 DECL|member|x0
@@ -608,7 +608,7 @@ comment|/*======================================================================
 end_comment
 
 begin_struct
-DECL|struct|__anon278571ab0508
+DECL|struct|__anon2c1571170508
 specifier|static
 struct|struct
 block|{
@@ -637,7 +637,7 @@ name|GtkAdjustment
 modifier|*
 name|move_max_rate_adj
 decl_stmt|;
-DECL|struct|__anon278571ab0608
+DECL|struct|__anon2c1571170608
 struct|struct
 block|{
 DECL|member|widget
@@ -7457,7 +7457,7 @@ name|y0
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|p
 operator|.

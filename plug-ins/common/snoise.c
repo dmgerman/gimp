@@ -122,7 +122,7 @@ comment|/*---- Typedefs ----*/
 end_comment
 
 begin_typedef
-DECL|struct|__anon299ca0db0108
+DECL|struct|__anon28e6bbc50108
 typedef|typedef
 struct|struct
 block|{
@@ -162,7 +162,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon299ca0db0208
+DECL|struct|__anon28e6bbc50208
 typedef|typedef
 struct|struct
 block|{
@@ -177,7 +177,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon299ca0db0308
+DECL|struct|__anon28e6bbc50308
 typedef|typedef
 struct|struct
 block|{
@@ -913,7 +913,7 @@ name|STATUS_SUCCESS
 operator|)
 operator|&&
 operator|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

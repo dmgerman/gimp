@@ -75,7 +75,7 @@ value|(r * 0.30 + g * 0.59 + b * 0.11)
 end_define
 
 begin_typedef
-DECL|struct|__anon2922e3780108
+DECL|struct|__anon2b40bfa30108
 typedef|typedef
 struct|struct
 block|{
@@ -94,7 +94,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2922e3780208
+DECL|struct|__anon2b40bfa30208
 typedef|typedef
 struct|struct
 block|{
@@ -1464,7 +1464,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
@@ -2030,7 +2030,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2922e3780308
+DECL|struct|__anon2b40bfa30308
 typedef|typedef
 struct|struct
 block|{
@@ -2205,7 +2205,7 @@ name|bpp
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

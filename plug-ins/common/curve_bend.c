@@ -879,7 +879,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e9bc7a0108
+DECL|struct|__anon2b543fc20108
 typedef|typedef
 struct|struct
 block|{
@@ -908,7 +908,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e9bc7a0208
+DECL|struct|__anon2b543fc20208
 typedef|typedef
 struct|struct
 block|{
@@ -994,7 +994,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e9bc7a0308
+DECL|struct|__anon2b543fc20308
 typedef|typedef
 struct|struct
 block|{
@@ -6587,7 +6587,7 @@ name|cd
 operator|->
 name|color
 operator|=
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|cd
 operator|->

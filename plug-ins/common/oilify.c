@@ -97,7 +97,7 @@ value|((unsigned int) (p[0]*77+p[1]*150+p[2]*29)>> 8)
 end_define
 
 begin_typedef
-DECL|struct|__anon2aeb53530108
+DECL|struct|__anon29c878a20108
 typedef|typedef
 struct|struct
 block|{
@@ -116,7 +116,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2aeb53530208
+DECL|struct|__anon29c878a20208
 typedef|typedef
 struct|struct
 block|{
@@ -744,7 +744,7 @@ name|STATUS_SUCCESS
 operator|)
 operator|&&
 operator|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
@@ -786,7 +786,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

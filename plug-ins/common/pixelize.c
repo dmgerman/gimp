@@ -92,7 +92,7 @@ value|40
 end_define
 
 begin_typedef
-DECL|struct|__anon2931a61c0108
+DECL|struct|__anon2bb818750108
 typedef|typedef
 struct|struct
 block|{
@@ -107,7 +107,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2931a61c0208
+DECL|struct|__anon2bb818750208
 typedef|typedef
 struct|struct
 block|{
@@ -122,7 +122,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2931a61c0308
+DECL|struct|__anon2bb818750308
 typedef|typedef
 struct|struct
 block|{
@@ -173,7 +173,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2931a61c0408
+DECL|struct|__anon2bb818750408
 typedef|typedef
 struct|struct
 block|{
@@ -824,7 +824,7 @@ block|{
 comment|/*  Make sure that the drawable is gray or RGB color  */
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

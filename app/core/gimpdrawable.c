@@ -76,7 +76,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2bf0688c0103
+DECL|enum|__anon2784498a0103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -2238,8 +2238,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_color (GimpDrawable * drawable)
-name|gimp_drawable_color
+DECL|function|gimp_drawable_is_rgb (GimpDrawable * drawable)
+name|gimp_drawable_is_rgb
 parameter_list|(
 name|GimpDrawable
 modifier|*

@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27951e570108
+DECL|struct|__anon2c6fead30108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27951e570208
+DECL|struct|__anon2c6fead30208
 block|{
 DECL|member|run
 name|gint
@@ -1434,7 +1434,7 @@ expr_stmt|;
 comment|/*  Make sure that the drawable is gray or RGB color  */
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

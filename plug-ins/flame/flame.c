@@ -444,7 +444,7 @@ value|(-4)
 end_define
 
 begin_struct
-DECL|struct|__anon29ac939a0108
+DECL|struct|__anon2bed512c0108
 struct|struct
 block|{
 DECL|member|randomize
@@ -943,7 +943,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
@@ -3591,7 +3591,7 @@ name|button
 argument_list|)
 expr_stmt|;
 block|{
-DECL|struct|__anon29ac939a0208
+DECL|struct|__anon2bed512c0208
 specifier|static
 struct|struct
 block|{

@@ -161,7 +161,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon27d458da0108
+DECL|struct|__anon2957c50f0108
 typedef|typedef
 struct|struct
 block|{
@@ -212,7 +212,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27d458da0208
+DECL|struct|__anon2957c50f0208
 typedef|typedef
 struct|struct
 block|{
@@ -2047,7 +2047,7 @@ block|{
 comment|/*  Make sure that the drawable is indexed or RGB_MODEL color  */
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

@@ -438,7 +438,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a3959b0108
+DECL|struct|__anon29d2a11a0108
 block|{
 DECL|member|max_p
 name|gint
@@ -466,7 +466,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a3959b0208
+DECL|struct|__anon29d2a11a0208
 block|{
 DECL|member|run
 name|gint
@@ -750,7 +750,7 @@ comment|/* Since a channel might be selected, we must check wheter RGB or not. *
 if|if
 condition|(
 operator|!
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable_id
 argument_list|)

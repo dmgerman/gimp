@@ -487,7 +487,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275ed9500108
+DECL|struct|__anon298a07bf0108
 block|{
 DECL|member|threshold
 name|gint
@@ -514,7 +514,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275ed9500208
+DECL|struct|__anon298a07bf0208
 block|{
 DECL|member|run
 name|gint
@@ -797,7 +797,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable_id
 argument_list|)
@@ -1021,7 +1021,7 @@ name|STATUS_EXECUTION_ERROR
 return|;
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable_id
 argument_list|)

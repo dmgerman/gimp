@@ -469,7 +469,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1446d20103
+DECL|enum|__anon2c5370920103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -496,7 +496,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1446d20203
+DECL|enum|__anon2c5370920203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -515,7 +515,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c1446d20308
+DECL|struct|__anon2c5370920308
 typedef|typedef
 struct|struct
 block|{
@@ -652,7 +652,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c1446d20408
+DECL|struct|__anon2c5370920408
 typedef|typedef
 struct|struct
 block|{
@@ -672,7 +672,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c1446d20503
+DECL|enum|__anon2c5370920503
 typedef|typedef
 enum|enum
 block|{
@@ -700,7 +700,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c1446d20608
+DECL|struct|__anon2c5370920608
 typedef|typedef
 struct|struct
 block|{
@@ -723,7 +723,7 @@ name|Preview
 modifier|*
 name|preview
 decl_stmt|;
-DECL|struct|__anon2c1446d20708
+DECL|struct|__anon2c5370920708
 struct|struct
 block|{
 DECL|member|x0
@@ -809,7 +809,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c1446d20808
+DECL|struct|__anon2c5370920808
 typedef|typedef
 struct|struct
 block|{
@@ -881,7 +881,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1446d20908
+DECL|struct|__anon2c5370920908
 block|{
 DECL|member|x0
 name|gdouble
@@ -908,7 +908,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1446d20a08
+DECL|struct|__anon2c5370920a08
 block|{
 DECL|member|init
 name|gint
@@ -1078,7 +1078,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1446d20b08
+DECL|struct|__anon2c5370920b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1105,7 +1105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1446d20c08
+DECL|struct|__anon2c5370920c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1146,7 +1146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1446d20d08
+DECL|struct|__anon2c5370920d08
 block|{
 DECL|member|tile
 name|GTile
@@ -1376,7 +1376,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1446d20e08
+DECL|struct|__anon2c5370920e08
 block|{
 DECL|member|tag
 name|gint
@@ -1451,7 +1451,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon2c1446d20f03
+DECL|enum|__anon2c5370920f03
 typedef|typedef
 enum|enum
 block|{
@@ -1485,7 +1485,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c1446d21008
+DECL|struct|__anon2c5370921008
 typedef|typedef
 struct|struct
 block|{
@@ -1529,7 +1529,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c1446d21108
+DECL|struct|__anon2c5370921108
 typedef|typedef
 struct|struct
 block|{
@@ -1587,7 +1587,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c1446d21208
+DECL|struct|__anon2c5370921208
 typedef|typedef
 struct|struct
 block|{
@@ -4750,7 +4750,7 @@ name|dinfo
 operator|.
 name|is_color
 operator|=
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
@@ -5077,7 +5077,7 @@ block|{
 comment|/*  Make sure that the drawable is gray or RGB color  */
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
@@ -9665,7 +9665,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon2c1446d21308
+DECL|struct|__anon2c5370921308
 specifier|static
 struct|struct
 block|{
@@ -17081,7 +17081,7 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-DECL|struct|__anon2c1446d21408
+DECL|struct|__anon2c5370921408
 specifier|static
 struct|struct
 block|{

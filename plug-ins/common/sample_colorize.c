@@ -401,7 +401,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon289572380108
+DECL|struct|__anon27fa6f270108
 typedef|typedef
 struct|struct
 block|{
@@ -470,7 +470,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289572380208
+DECL|struct|__anon27fa6f270208
 typedef|typedef
 struct|struct
 block|{
@@ -588,7 +588,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289572380308
+DECL|struct|__anon27fa6f270308
 typedef|typedef
 struct|struct
 block|{
@@ -617,7 +617,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289572380408
+DECL|struct|__anon27fa6f270408
 typedef|typedef
 struct|struct
 block|{
@@ -644,7 +644,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289572380508
+DECL|struct|__anon27fa6f270508
 typedef|typedef
 struct|struct
 block|{
@@ -1674,7 +1674,7 @@ expr_stmt|;
 comment|/*  Make sure that the dst_drawable is gray or RGB color	*/
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|dst_drawable
 operator|->

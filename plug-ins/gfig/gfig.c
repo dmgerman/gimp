@@ -4335,7 +4335,7 @@ break|break;
 block|}
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->
@@ -8313,7 +8313,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27727b8a0108
+DECL|struct|__anon2c540af70108
 block|{
 DECL|member|color_string
 name|gchar

@@ -136,7 +136,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b16c4d30108
+DECL|struct|__anon2a8f8c250108
 typedef|typedef
 struct|struct
 block|{
@@ -601,7 +601,7 @@ comment|/* The "explict tile"& family */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b16c4d30203
+DECL|enum|__anon2a8f8c250203
 typedef|typedef
 enum|enum
 block|{
@@ -620,7 +620,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b16c4d30308
+DECL|struct|__anon2a8f8c250308
 typedef|typedef
 struct|struct
 block|{
@@ -706,7 +706,7 @@ comment|/* The reset button needs to know some toggle widgets.. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b16c4d30408
+DECL|struct|__anon2a8f8c250408
 typedef|typedef
 struct|struct
 block|{
@@ -1268,7 +1268,7 @@ break|break;
 block|}
 if|if
 condition|(
-name|gimp_drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 operator|->

@@ -108,26 +108,26 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_color_proc
+DECL|variable|drawable_is_rgb_proc
 specifier|static
 name|ProcRecord
-name|drawable_color_proc
+name|drawable_is_rgb_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_gray_proc
+DECL|variable|drawable_is_gray_proc
 specifier|static
 name|ProcRecord
-name|drawable_gray_proc
+name|drawable_is_gray_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_indexed_proc
+DECL|variable|drawable_is_indexed_proc
 specifier|static
 name|ProcRecord
-name|drawable_indexed_proc
+name|drawable_is_indexed_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -278,19 +278,19 @@ expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|drawable_color_proc
+name|drawable_is_rgb_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|drawable_gray_proc
+name|drawable_is_gray_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|drawable_indexed_proc
+name|drawable_is_indexed_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -1723,8 +1723,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_color_invoker (Argument * args)
-name|drawable_color_invoker
+DECL|function|drawable_is_rgb_invoker (Argument * args)
+name|drawable_is_rgb_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -1758,7 +1758,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_color_proc
+name|drawable_is_rgb_proc
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1784,10 +1784,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_color_inargs
+DECL|variable|drawable_is_rgb_inargs
 specifier|static
 name|ProcArg
-name|drawable_color_inargs
+name|drawable_is_rgb_inargs
 index|[]
 init|=
 block|{
@@ -1803,10 +1803,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_color_outargs
+DECL|variable|drawable_is_rgb_outargs
 specifier|static
 name|ProcArg
-name|drawable_color_outargs
+name|drawable_is_rgb_outargs
 index|[]
 init|=
 block|{
@@ -1822,13 +1822,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_color_proc
+DECL|variable|drawable_is_rgb_proc
 specifier|static
 name|ProcRecord
-name|drawable_color_proc
+name|drawable_is_rgb_proc
 init|=
 block|{
-literal|"gimp_drawable_color"
+literal|"gimp_drawable_is_rgb"
 block|,
 literal|"Returns whether the drawable is an RGB type."
 block|,
@@ -1844,15 +1844,15 @@ name|PDB_INTERNAL
 block|,
 literal|1
 block|,
-name|drawable_color_inargs
+name|drawable_is_rgb_inargs
 block|,
 literal|1
 block|,
-name|drawable_color_outargs
+name|drawable_is_rgb_outargs
 block|,
 block|{
 block|{
-name|drawable_color_invoker
+name|drawable_is_rgb_invoker
 block|}
 block|}
 block|}
@@ -1863,8 +1863,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_gray_invoker (Argument * args)
-name|drawable_gray_invoker
+DECL|function|drawable_is_gray_invoker (Argument * args)
+name|drawable_is_gray_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -1898,7 +1898,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_gray_proc
+name|drawable_is_gray_proc
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1924,10 +1924,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_gray_inargs
+DECL|variable|drawable_is_gray_inargs
 specifier|static
 name|ProcArg
-name|drawable_gray_inargs
+name|drawable_is_gray_inargs
 index|[]
 init|=
 block|{
@@ -1943,10 +1943,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_gray_outargs
+DECL|variable|drawable_is_gray_outargs
 specifier|static
 name|ProcArg
-name|drawable_gray_outargs
+name|drawable_is_gray_outargs
 index|[]
 init|=
 block|{
@@ -1962,13 +1962,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_gray_proc
+DECL|variable|drawable_is_gray_proc
 specifier|static
 name|ProcRecord
-name|drawable_gray_proc
+name|drawable_is_gray_proc
 init|=
 block|{
-literal|"gimp_drawable_gray"
+literal|"gimp_drawable_is_gray"
 block|,
 literal|"Returns whether the drawable is a grayscale type."
 block|,
@@ -1984,15 +1984,15 @@ name|PDB_INTERNAL
 block|,
 literal|1
 block|,
-name|drawable_gray_inargs
+name|drawable_is_gray_inargs
 block|,
 literal|1
 block|,
-name|drawable_gray_outargs
+name|drawable_is_gray_outargs
 block|,
 block|{
 block|{
-name|drawable_gray_invoker
+name|drawable_is_gray_invoker
 block|}
 block|}
 block|}
@@ -2003,8 +2003,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_indexed_invoker (Argument * args)
-name|drawable_indexed_invoker
+DECL|function|drawable_is_indexed_invoker (Argument * args)
+name|drawable_is_indexed_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -2038,7 +2038,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_indexed_proc
+name|drawable_is_indexed_proc
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2064,10 +2064,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_indexed_inargs
+DECL|variable|drawable_is_indexed_inargs
 specifier|static
 name|ProcArg
-name|drawable_indexed_inargs
+name|drawable_is_indexed_inargs
 index|[]
 init|=
 block|{
@@ -2083,10 +2083,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_indexed_outargs
+DECL|variable|drawable_is_indexed_outargs
 specifier|static
 name|ProcArg
-name|drawable_indexed_outargs
+name|drawable_is_indexed_outargs
 index|[]
 init|=
 block|{
@@ -2102,13 +2102,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_indexed_proc
+DECL|variable|drawable_is_indexed_proc
 specifier|static
 name|ProcRecord
-name|drawable_indexed_proc
+name|drawable_is_indexed_proc
 init|=
 block|{
-literal|"gimp_drawable_indexed"
+literal|"gimp_drawable_is_indexed"
 block|,
 literal|"Returns whether the drawable is an indexed type."
 block|,
@@ -2124,15 +2124,15 @@ name|PDB_INTERNAL
 block|,
 literal|1
 block|,
-name|drawable_indexed_inargs
+name|drawable_is_indexed_inargs
 block|,
 literal|1
 block|,
-name|drawable_indexed_outargs
+name|drawable_is_indexed_outargs
 block|,
 block|{
 block|{
-name|drawable_indexed_invoker
+name|drawable_is_indexed_invoker
 block|}
 block|}
 block|}
