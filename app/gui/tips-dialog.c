@@ -315,7 +315,10 @@ name|tips
 argument_list|,
 name|gimp_tip_new
 argument_list|(
-name|NULL
+name|_
+argument_list|(
+literal|"The GIMP tips file could not be parsed correctly!"
+argument_list|)
 argument_list|,
 name|error
 operator|->

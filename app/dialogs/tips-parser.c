@@ -42,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29cd60520103
+DECL|enum|__anon2c861e670103
 block|{
 DECL|enumerator|TIPS_START
 name|TIPS_START
@@ -70,7 +70,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29cd60520203
+DECL|enum|__anon2c861e670203
 block|{
 DECL|enumerator|TIPS_LOCALE_NONE
 name|TIPS_LOCALE_NONE
@@ -100,6 +100,12 @@ DECL|struct|_TipsParser
 struct|struct
 name|_TipsParser
 block|{
+DECL|member|filename
+specifier|const
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 DECL|member|state
 name|TipsParserState
 name|state
@@ -484,12 +490,29 @@ name|tips
 init|=
 name|NULL
 decl_stmt|;
-name|GError
-modifier|*
-name|parse_error
-init|=
+name|g_return_val_if_fail
+argument_list|(
+name|filename
+operator|!=
 name|NULL
-decl_stmt|;
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|fp
 operator|=
 name|fopen
@@ -515,8 +538,8 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Your GIMP tips file appears to be missing!\n"
-literal|"There should be a file called '%s'.\n"
+literal|"Your GIMP tips file appears to be missing! "
+literal|"There should be a file called '%s'. "
 literal|"Please check your installation."
 argument_list|)
 argument_list|,
@@ -535,6 +558,12 @@ name|TipsParser
 argument_list|,
 literal|1
 argument_list|)
+expr_stmt|;
+name|parser
+operator|->
+name|filename
+operator|=
+name|filename
 expr_stmt|;
 name|parser
 operator|->
@@ -641,39 +670,26 @@ name|buf
 argument_list|,
 name|bytes
 argument_list|,
-operator|&
-name|parse_error
+name|error
 argument_list|)
 condition|)
 empty_stmt|;
-comment|/* FIXME */
 if|if
 condition|(
-name|parse_error
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
 condition|)
-name|g_clear_error
-argument_list|(
-operator|&
-name|parse_error
-argument_list|)
-expr_stmt|;
 name|g_markup_parse_context_end_parse
 argument_list|(
 name|context
 argument_list|,
-operator|&
-name|parse_error
-argument_list|)
-expr_stmt|;
-comment|/* FIXME */
-if|if
-condition|(
-name|parse_error
-condition|)
-name|g_clear_error
-argument_list|(
-operator|&
-name|parse_error
+name|error
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -686,31 +702,6 @@ argument_list|(
 name|context
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|parser
-operator|->
-name|state
-operator|!=
-name|TIPS_START
-condition|)
-block|{
-name|g_set_error
-argument_list|(
-name|error
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|_
-argument_list|(
-literal|"Your GIMP tips file could not be parsed correctly!\n"
-literal|"Please check your installation."
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
 name|tips
 operator|=
 name|g_list_reverse
@@ -1331,6 +1322,12 @@ parameter_list|)
 block|{
 name|g_warning
 argument_list|(
+literal|"%s: %s"
+argument_list|,
+name|parser
+operator|->
+name|filename
+argument_list|,
 name|error
 operator|->
 name|message
