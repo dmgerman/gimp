@@ -225,7 +225,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8a31540103
+DECL|enum|__anon2a98ee9f0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -244,7 +244,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8a31540203
+DECL|enum|__anon2a98ee9f0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -3167,13 +3167,13 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-literal|2
+name|MNG_CHANGEDELAY_DEFAULT
 argument_list|,
-literal|0
+name|MNG_CHANGETIMOUT_NO
 argument_list|,
-literal|2
+name|MNG_CHANGECLIPPING_DEFAULT
 argument_list|,
-literal|0
+name|MNG_CHANGESYNCID_NO
 argument_list|,
 name|frame_delay
 argument_list|,
@@ -3233,13 +3233,13 @@ if|if
 condition|(
 operator|(
 name|layer_offset_x
-operator|>
+operator|!=
 literal|0
 operator|)
 operator|||
 operator|(
 name|layer_offset_y
-operator|>
+operator|!=
 literal|0
 operator|)
 condition|)
