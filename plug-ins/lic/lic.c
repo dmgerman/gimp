@@ -299,7 +299,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276e13c00108
+DECL|struct|__anon27b8ff580108
 block|{
 DECL|member|r
 DECL|member|g
@@ -386,7 +386,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon276e13c00208
+DECL|struct|__anon27b8ff580208
 typedef|typedef
 struct|struct
 block|{
@@ -5099,14 +5099,8 @@ expr_stmt|;
 name|compute_image
 argument_list|()
 expr_stmt|;
-name|gtk_widget_destroy
-argument_list|(
-operator|(
-name|GtkWidget
-operator|*
-operator|)
-name|client_data
-argument_list|)
+name|gtk_main_quit
+argument_list|()
 expr_stmt|;
 block|}
 end_function
@@ -5124,26 +5118,24 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|gtk_widget_destroy
-argument_list|(
-operator|(
-name|GtkWidget
-operator|*
-operator|)
-name|client_data
-argument_list|)
+name|gtk_main_quit
+argument_list|()
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|dialog_destroy (GtkWidget * widget,gpointer client_data)
+DECL|function|dialog_destroy (GtkWidget * widget,GdkEvent * ev,gpointer client_data)
 name|void
 name|dialog_destroy
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|ev
 parameter_list|,
 name|gpointer
 name|client_data
@@ -5465,7 +5457,7 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-literal|"destroy"
+literal|"delete_event"
 argument_list|,
 operator|(
 name|GtkSignalFunc

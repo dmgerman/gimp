@@ -931,7 +931,7 @@ operator|(
 name|guchar
 operator|*
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 name|drw
 operator|->
@@ -1075,7 +1075,7 @@ operator|)
 expr_stmt|;
 block|}
 block|}
-name|free
+name|g_free
 argument_list|(
 name|drwBits
 argument_list|)

@@ -347,14 +347,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|_LIGHTNING_UNUSED_CODE
+end_ifdef
+
 begin_function_decl
 name|void
 name|xyzval_update
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
 name|GtkEntry
 modifier|*
 name|entry
@@ -362,14 +364,15 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_function_decl
 name|void
 name|entry_update
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
 name|GtkEntry
 modifier|*
 name|entry
@@ -381,10 +384,6 @@ begin_function_decl
 name|void
 name|scale_update
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
 name|GtkScale
 modifier|*
 name|scale
@@ -399,9 +398,6 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|button
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -413,9 +409,6 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|button
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -427,9 +420,6 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|button
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -441,9 +431,6 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|button
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -455,9 +442,6 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|button
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -469,9 +453,6 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|button
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -483,9 +464,6 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|button
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -511,9 +489,6 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|gpointer
-name|client_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -525,9 +500,6 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|gpointer
-name|client_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -539,9 +511,6 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|gpointer
-name|client_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -710,6 +679,12 @@ begin_comment
 comment|/******************/
 end_comment
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|_LIGHTNING_UNUSED_CODE
+end_ifdef
+
 begin_comment
 comment|/**********************************************************/
 end_comment
@@ -723,14 +698,10 @@ comment|/**********************************************************/
 end_comment
 
 begin_function
-DECL|function|xyzval_update (GtkWidget * widget,GtkEntry * entry)
+DECL|function|xyzval_update (GtkEntry * entry)
 name|void
 name|xyzval_update
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
 name|GtkEntry
 modifier|*
 name|entry
@@ -753,7 +724,7 @@ name|gtk_object_get_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|widget
+name|entry
 argument_list|)
 argument_list|,
 literal|"ValuePtr"
@@ -777,6 +748,11 @@ expr_stmt|;
 block|}
 end_function
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
 comment|/*********************/
 end_comment
@@ -790,14 +766,10 @@ comment|/*********************/
 end_comment
 
 begin_function
-DECL|function|entry_update (GtkWidget * widget,GtkEntry * entry)
+DECL|function|entry_update (GtkEntry * entry)
 name|void
 name|entry_update
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
 name|GtkEntry
 modifier|*
 name|entry
@@ -820,7 +792,7 @@ name|gtk_object_get_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|widget
+name|entry
 argument_list|)
 argument_list|,
 literal|"ValuePtr"
@@ -857,14 +829,10 @@ comment|/*********************/
 end_comment
 
 begin_function
-DECL|function|scale_update (GtkWidget * widget,GtkScale * scale)
+DECL|function|scale_update (GtkScale * scale)
 name|void
 name|scale_update
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
 name|GtkScale
 modifier|*
 name|scale
@@ -888,7 +856,7 @@ name|gtk_object_get_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|widget
+name|scale
 argument_list|)
 argument_list|,
 literal|"ValuePtr"
@@ -930,16 +898,13 @@ comment|/**********************/
 end_comment
 
 begin_function
-DECL|function|toggle_update (GtkWidget * button,gpointer data)
+DECL|function|toggle_update (GtkWidget * button)
 name|void
 name|toggle_update
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|button
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|gint
@@ -975,16 +940,13 @@ block|}
 end_function
 
 begin_function
-DECL|function|togglestretch_update (GtkWidget * button,gpointer data)
+DECL|function|togglestretch_update (GtkWidget * button)
 name|void
 name|togglestretch_update
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|button
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|gint
@@ -1020,16 +982,13 @@ block|}
 end_function
 
 begin_function
-DECL|function|togglequality_update (GtkWidget * button,gpointer data)
+DECL|function|togglequality_update (GtkWidget * button)
 name|void
 name|togglequality_update
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|button
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|gint
@@ -1082,16 +1041,13 @@ comment|/**********************************/
 end_comment
 
 begin_function
-DECL|function|togglerefraction_update (GtkWidget * button,gpointer data)
+DECL|function|togglerefraction_update (GtkWidget * button)
 name|void
 name|togglerefraction_update
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|button
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|gint
@@ -1139,16 +1095,13 @@ comment|/*****************************/
 end_comment
 
 begin_function
-DECL|function|togglebump_update (GtkWidget * button,gpointer data)
+DECL|function|togglebump_update (GtkWidget * button)
 name|void
 name|togglebump_update
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|button
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|gint
@@ -1259,16 +1212,13 @@ comment|/*************************************/
 end_comment
 
 begin_function
-DECL|function|toggleenvironment_update (GtkWidget * button,gpointer data)
+DECL|function|toggleenvironment_update (GtkWidget * button)
 name|void
 name|toggleenvironment_update
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|button
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|gint
@@ -1379,16 +1329,13 @@ comment|/******************************/
 end_comment
 
 begin_function
-DECL|function|toggleanti_update (GtkWidget * button,gpointer data)
+DECL|function|toggleanti_update (GtkWidget * button)
 name|void
 name|toggleanti_update
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|button
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|gint
@@ -1436,16 +1383,13 @@ comment|/**************************/
 end_comment
 
 begin_function
-DECL|function|toggletips_update (GtkWidget * button,gpointer data)
+DECL|function|toggletips_update (GtkWidget * button)
 name|void
 name|toggletips_update
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|button
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|gint
@@ -1520,16 +1464,13 @@ comment|/****************************************/
 end_comment
 
 begin_function
-DECL|function|toggletrans_update (GtkWidget * button,gpointer data)
+DECL|function|toggletrans_update (GtkWidget * button)
 name|void
 name|toggletrans_update
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|button
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|gint
@@ -1752,16 +1693,13 @@ comment|/******************************************/
 end_comment
 
 begin_function
-DECL|function|preview_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|preview_callback (GtkWidget * widget)
 name|void
 name|preview_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|gpointer
-name|client_data
 parameter_list|)
 block|{
 name|draw_preview_image
@@ -1785,16 +1723,13 @@ comment|/*********************************************/
 end_comment
 
 begin_function
-DECL|function|zoomout_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|zoomout_callback (GtkWidget * widget)
 name|void
 name|zoomout_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|gpointer
-name|client_data
 parameter_list|)
 block|{
 name|mapvals
@@ -1824,16 +1759,13 @@ comment|/*********************************************/
 end_comment
 
 begin_function
-DECL|function|zoomin_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|zoomin_callback (GtkWidget * widget)
 name|void
 name|zoomin_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|gpointer
-name|client_data
 parameter_list|)
 block|{
 name|mapvals
@@ -1867,16 +1799,13 @@ comment|/**********************************************/
 end_comment
 
 begin_function
-DECL|function|apply_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|apply_callback (GtkWidget * widget)
 name|void
 name|apply_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|gpointer
-name|client_data
 parameter_list|)
 block|{
 if|if
@@ -1939,16 +1868,13 @@ comment|/*************************************************************/
 end_comment
 
 begin_function
-DECL|function|exit_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|exit_callback (GtkWidget * widget)
 name|void
 name|exit_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|gpointer
-name|client_data
 parameter_list|)
 block|{
 if|if

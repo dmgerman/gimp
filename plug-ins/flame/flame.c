@@ -433,7 +433,7 @@ value|(-4)
 end_define
 
 begin_struct
-DECL|struct|__anon28ee17ca0108
+DECL|struct|__anon2bd3da460108
 struct|struct
 block|{
 DECL|member|randomize
@@ -1197,7 +1197,7 @@ operator|+
 name|j
 index|]
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|g
 argument_list|)
@@ -1229,7 +1229,7 @@ operator|(
 name|guchar
 operator|*
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 name|d
 operator|->
@@ -1350,7 +1350,7 @@ literal|255.0
 operator|)
 expr_stmt|;
 block|}
-name|free
+name|g_free
 argument_list|(
 name|p
 argument_list|)
@@ -1428,7 +1428,7 @@ operator|(
 name|guchar
 operator|*
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 name|width
 operator|*
@@ -1592,7 +1592,7 @@ operator|(
 name|guchar
 operator|*
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 literal|3
 operator|*
@@ -1816,7 +1816,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-name|free
+name|g_free
 argument_list|(
 name|sl
 argument_list|)
@@ -1828,7 +1828,7 @@ argument_list|(
 literal|"oops\n"
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|tmp
 argument_list|)
@@ -2576,7 +2576,7 @@ condition|)
 return|return;
 name|b
 operator|=
-name|malloc
+name|g_malloc
 argument_list|(
 name|nbytes
 argument_list|)
@@ -2822,7 +2822,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|free
+name|g_free
 argument_list|(
 name|b
 argument_list|)
@@ -3622,7 +3622,7 @@ name|button
 argument_list|)
 expr_stmt|;
 block|{
-DECL|struct|__anon28ee17ca0208
+DECL|struct|__anon2bd3da460208
 specifier|static
 struct|struct
 block|{
@@ -4146,7 +4146,7 @@ condition|)
 return|return;
 name|b
 operator|=
-name|malloc
+name|g_malloc
 argument_list|(
 name|preview_width
 operator|*
@@ -4276,7 +4276,7 @@ argument_list|,
 name|preview_width
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|b
 argument_list|)

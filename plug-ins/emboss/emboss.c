@@ -1678,7 +1678,7 @@ operator|(
 name|guchar
 operator|*
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 name|rowsize
 operator|*
@@ -1691,7 +1691,7 @@ operator|(
 name|guchar
 operator|*
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 name|rowsize
 argument_list|)
@@ -2012,12 +2012,12 @@ name|width
 argument_list|)
 expr_stmt|;
 block|}
-name|free
+name|g_free
 argument_list|(
 name|srcbuf
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|dstbuf
 argument_list|)
@@ -2612,14 +2612,14 @@ name|bpp
 expr_stmt|;
 name|dst
 operator|=
-name|malloc
+name|g_malloc
 argument_list|(
 name|rowsize
 argument_list|)
 expr_stmt|;
 name|c
 operator|=
-name|malloc
+name|g_malloc
 argument_list|(
 name|rowsize
 operator|*
@@ -2825,7 +2825,7 @@ operator|->
 name|width
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|c
 argument_list|)
@@ -2916,7 +2916,7 @@ expr_stmt|;
 name|gdk_flush
 argument_list|()
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|dst
 argument_list|)

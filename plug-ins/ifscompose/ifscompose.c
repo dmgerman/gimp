@@ -119,7 +119,7 @@ value|10
 end_define
 
 begin_typedef
-DECL|enum|__anon2962b6dc0103
+DECL|enum|__anon27904a8f0103
 typedef|typedef
 enum|enum
 block|{
@@ -139,7 +139,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2962b6dc0203
+DECL|enum|__anon27904a8f0203
 typedef|typedef
 enum|enum
 block|{
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962b6dc0308
+DECL|struct|__anon27904a8f0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -178,7 +178,7 @@ DECL|member|type
 name|ValuePairType
 name|type
 decl_stmt|;
-DECL|union|__anon2962b6dc040a
+DECL|union|__anon27904a8f040a
 union|union
 block|{
 DECL|member|d
@@ -208,7 +208,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962b6dc0508
+DECL|struct|__anon27904a8f0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -238,7 +238,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962b6dc0608
+DECL|struct|__anon27904a8f0608
 block|{
 DECL|member|color
 name|IfsColor
@@ -287,7 +287,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962b6dc0708
+DECL|struct|__anon27904a8f0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -323,7 +323,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962b6dc0808
+DECL|struct|__anon27904a8f0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -390,7 +390,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962b6dc0908
+DECL|struct|__anon27904a8f0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -561,7 +561,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962b6dc0a08
+DECL|struct|__anon27904a8f0a08
 block|{
 DECL|member|run
 name|gint
@@ -12587,25 +12587,6 @@ operator|)
 name|value_pair_button_release
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_events
-argument_list|(
-name|value_pair
-operator|->
-name|scale
-argument_list|,
-name|gtk_widget_get_events
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|value_pair
-operator|->
-name|scale
-argument_list|)
-argument_list|)
-operator||
-name|GDK_BUTTON_RELEASE_MASK
 argument_list|)
 expr_stmt|;
 block|}

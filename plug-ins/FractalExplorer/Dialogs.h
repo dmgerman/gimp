@@ -9532,7 +9532,7 @@ operator|=
 name|bl
 expr_stmt|;
 block|}
-name|free
+name|g_free
 argument_list|(
 name|g
 argument_list|)

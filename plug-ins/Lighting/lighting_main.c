@@ -1507,6 +1507,24 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|xpostab
+condition|)
+name|g_free
+argument_list|(
+name|xpostab
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|ypostab
+condition|)
+name|g_free
+argument_list|(
+name|ypostab
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

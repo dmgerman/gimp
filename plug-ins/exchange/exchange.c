@@ -66,7 +66,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29420a0f0108
+DECL|struct|__anon2bd0b6810108
 block|{
 DECL|member|fromred
 DECL|member|fromgreen
@@ -3001,12 +3001,12 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
-name|free
+name|g_free
 argument_list|(
 name|src_row
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|dest_row
 argument_list|)

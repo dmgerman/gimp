@@ -56,7 +56,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_ENTER_NOTIFY_MASK | \   
 end_define
 
 begin_typedef
-DECL|struct|__anon276054100108
+DECL|struct|__anon27d28af60108
 typedef|typedef
 struct|struct
 block|{
@@ -79,7 +79,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon276054100208
+DECL|struct|__anon27d28af60208
 typedef|typedef
 struct|struct
 block|{
@@ -113,7 +113,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon276054100303
+DECL|enum|__anon27d28af60303
 typedef|typedef
 enum|enum
 block|{
@@ -135,7 +135,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon276054100403
+DECL|enum|__anon27d28af60403
 enum|enum
 block|{
 DECL|enumerator|NONEATALL
@@ -167,7 +167,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon276054100503
+DECL|enum|__anon27d28af60503
 enum|enum
 block|{
 DECL|enumerator|RED
@@ -195,7 +195,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon276054100603
+DECL|enum|__anon27d28af60603
 enum|enum
 block|{
 DECL|enumerator|DOWN
@@ -213,7 +213,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon276054100703
+DECL|enum|__anon27d28af60703
 enum|enum
 block|{
 DECL|enumerator|BY_HUE
@@ -232,7 +232,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon276054100808
+DECL|struct|__anon27d28af60808
 typedef|typedef
 struct|struct
 block|{
@@ -278,7 +278,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon276054100908
+DECL|struct|__anon27d28af60908
 typedef|typedef
 struct|struct
 block|{
@@ -810,6 +810,30 @@ name|func
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|int
+name|clicked
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|Frames_Check_Button_In_A_Box
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|guchar
+modifier|*
+name|label
+parameter_list|,
+name|GtkSignalFunc
+name|func
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|frame
 parameter_list|,
 name|int
 name|clicked

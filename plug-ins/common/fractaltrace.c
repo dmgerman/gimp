@@ -212,7 +212,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b3a99b10108
+DECL|struct|__anon2a9859a70108
 typedef|typedef
 struct|struct
 block|{
@@ -289,7 +289,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b3a99b10208
+DECL|struct|__anon2a9859a70208
 typedef|typedef
 struct|struct
 block|{
@@ -509,7 +509,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b3a99b10308
+DECL|struct|__anon2a9859a70308
 typedef|typedef
 struct|struct
 block|{
@@ -552,7 +552,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b3a99b10408
+DECL|struct|__anon2a9859a70408
 typedef|typedef
 struct|struct
 block|{
@@ -1102,7 +1102,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b3a99b10508
+DECL|struct|__anon2a9859a70508
 typedef|typedef
 struct|struct
 block|{
@@ -1347,7 +1347,7 @@ name|y
 operator|++
 control|)
 block|{
-name|free
+name|g_free
 argument_list|(
 name|spixels
 index|[
@@ -1355,7 +1355,7 @@ name|y
 index|]
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|dpixels
 index|[
@@ -1364,12 +1364,12 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
-name|free
+name|g_free
 argument_list|(
 name|spixels
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|dpixels
 argument_list|)
@@ -3627,7 +3627,7 @@ value|200
 end_define
 
 begin_typedef
-DECL|struct|__anon2b3a99b10608
+DECL|struct|__anon2a9859a70608
 typedef|typedef
 struct|struct
 block|{
@@ -4749,7 +4749,7 @@ argument_list|(
 literal|"OK"
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect_object
+name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -4814,7 +4814,7 @@ argument_list|(
 literal|"Cancel"
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect_object
+name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -4867,7 +4867,7 @@ argument_list|(
 literal|"Help"
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect_object
+name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(

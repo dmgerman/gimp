@@ -172,7 +172,7 @@ value|"The effect is applied at both edges of objects"
 end_define
 
 begin_typedef
-DECL|enum|__anon2bce08e70103
+DECL|enum|__anon28bf7cb10103
 DECL|enumerator|LEFT
 DECL|enumerator|RIGHT
 DECL|typedef|direction_t
@@ -188,7 +188,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2bce08e70203
+DECL|enum|__anon28bf7cb10203
 DECL|enumerator|RENDER_WIND
 DECL|enumerator|RENDER_BLAST
 DECL|typedef|algorithm_t
@@ -204,7 +204,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2bce08e70303
+DECL|enum|__anon28bf7cb10303
 DECL|enumerator|BOTH
 DECL|enumerator|LEADING
 DECL|enumerator|TRAILING
@@ -1418,7 +1418,11 @@ argument_list|)
 expr_stmt|;
 name|buffer
 operator|=
-name|malloc
+operator|(
+name|guchar
+operator|*
+operator|)
+name|g_malloc
 argument_list|(
 name|row_stride
 argument_list|)
@@ -1621,7 +1625,7 @@ expr_stmt|;
 block|}
 block|}
 comment|/* for */
-name|free
+name|g_free
 argument_list|(
 name|buffer
 argument_list|)
@@ -1933,7 +1937,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|free
+name|g_free
 argument_list|(
 name|sb
 argument_list|)

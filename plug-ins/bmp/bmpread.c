@@ -1360,7 +1360,7 @@ argument_list|,
 name|name_buf
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|name_buf
 argument_list|)

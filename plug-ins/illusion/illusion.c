@@ -159,7 +159,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon277081b90108
+DECL|struct|__anon2bcd8b1e0108
 typedef|typedef
 struct|struct
 block|{
@@ -1596,7 +1596,7 @@ argument_list|(
 literal|"OK"
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect_object
+name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -1662,7 +1662,7 @@ argument_list|(
 literal|"Cancel"
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect_object
+name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(

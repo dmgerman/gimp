@@ -180,9 +180,29 @@ name|int
 name|height
 parameter_list|)
 function_decl|;
+comment|/* returns a static storage */
 name|GdkColor
 modifier|*
 name|gck_rgb_to_gdkcolor
+parameter_list|(
+name|GckVisualInfo
+modifier|*
+name|visinfo
+parameter_list|,
+name|guchar
+name|r
+parameter_list|,
+name|guchar
+name|g
+parameter_list|,
+name|guchar
+name|b
+parameter_list|)
+function_decl|;
+comment|/* returns a malloc'ed area */
+name|GdkColor
+modifier|*
+name|gck_rgb_to_gdkcolor_r
 parameter_list|(
 name|GckVisualInfo
 modifier|*
