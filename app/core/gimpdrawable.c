@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b99c9da0103
+DECL|enum|__anon292dd82c0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1050,6 +1050,12 @@ modifier|*
 name|pickable_iface
 parameter_list|)
 block|{
+name|pickable_iface
+operator|->
+name|get_image
+operator|=
+name|gimp_item_get_image
+expr_stmt|;
 name|pickable_iface
 operator|->
 name|get_image_type

@@ -265,6 +265,19 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpImage
+modifier|*
+name|gimp_projection_get_image
+parameter_list|(
+specifier|const
+name|GimpProjection
+modifier|*
+name|proj
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpImageType
 name|gimp_projection_get_image_type
 parameter_list|(

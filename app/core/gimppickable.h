@@ -76,6 +76,19 @@ name|GTypeInterface
 name|base_iface
 decl_stmt|;
 comment|/*  virtual functions  */
+DECL|member|get_image
+name|GimpImage
+modifier|*
+function_decl|(
+modifier|*
+name|get_image
+function_decl|)
+parameter_list|(
+name|GimpPickable
+modifier|*
+name|pickable
+parameter_list|)
+function_decl|;
 DECL|member|get_image_type
 name|GimpImageType
 function_decl|(
@@ -133,6 +146,18 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|GimpImage
+modifier|*
+name|gimp_pickable_get_image
+parameter_list|(
+name|GimpPickable
+modifier|*
+name|pickable
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|GimpImageType
