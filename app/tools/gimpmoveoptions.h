@@ -120,10 +120,6 @@ DECL|member|move_current
 name|gboolean
 name|move_current
 decl_stmt|;
-DECL|member|change_active
-name|gboolean
-name|change_active
-decl_stmt|;
 block|}
 struct|;
 end_struct

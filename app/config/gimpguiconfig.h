@@ -102,6 +102,10 @@ DECL|member|default_threshold
 name|gint
 name|default_threshold
 decl_stmt|;
+DECL|member|move_tool_changes_active
+name|gboolean
+name|move_tool_changes_active
+decl_stmt|;
 DECL|member|info_window_per_display
 name|gboolean
 name|info_window_per_display

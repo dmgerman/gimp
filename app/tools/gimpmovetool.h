@@ -148,10 +148,6 @@ name|GimpVectors
 modifier|*
 name|old_active_vectors
 decl_stmt|;
-DECL|member|change_active
-name|gboolean
-name|change_active
-decl_stmt|;
 block|}
 struct|;
 end_struct

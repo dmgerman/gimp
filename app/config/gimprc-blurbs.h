@@ -516,6 +516,15 @@ value|N_("Sets the monitor's vertical resolution, in dots per inch.  If set to "
 end_define
 
 begin_define
+DECL|macro|MOVE_TOOL_CHANGES_ACTIVE_BLURB
+define|#
+directive|define
+name|MOVE_TOOL_CHANGES_ACTIVE_BLURB
+define|\
+value|N_("If enabled, the move tool changes the active layer or path when a layer " \    "or path is being picked. This used to be the default behaviour in older " \    "versions.")
+end_define
+
+begin_define
 DECL|macro|NAVIGATION_PREVIEW_SIZE_BLURB
 define|#
 directive|define
