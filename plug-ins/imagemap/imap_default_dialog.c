@@ -602,7 +602,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -612,7 +612,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -622,7 +622,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
