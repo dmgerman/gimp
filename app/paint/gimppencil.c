@@ -475,15 +475,9 @@ argument_list|)
 expr_stmt|;
 name|paint_appl_mode
 operator|=
-operator|(
 name|paint_options
 operator|->
-name|incremental
-condition|?
-name|GIMP_PAINT_INCREMENTAL
-else|:
-name|GIMP_PAINT_CONSTANT
-operator|)
+name|application_mode
 expr_stmt|;
 if|if
 condition|(

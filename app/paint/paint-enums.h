@@ -78,7 +78,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948a8080103
+DECL|enum|__anon28cb40c30103
 block|{
 DECL|enumerator|GIMP_IMAGE_CLONE
 name|GIMP_IMAGE_CLONE
@@ -115,7 +115,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2948a8080203
+DECL|enum|__anon28cb40c30203
 block|{
 DECL|enumerator|GIMP_CLONE_ALIGN_NO
 name|GIMP_CLONE_ALIGN_NO
@@ -155,7 +155,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948a8080303
+DECL|enum|__anon28cb40c30303
 block|{
 DECL|enumerator|GIMP_DODGE
 name|GIMP_DODGE
@@ -191,7 +191,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948a8080403
+DECL|enum|__anon28cb40c30403
 block|{
 DECL|enumerator|GIMP_GRADIENT_ONCE_FORWARD
 name|GIMP_GRADIENT_ONCE_FORWARD
@@ -235,7 +235,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948a8080503
+DECL|enum|__anon28cb40c30503
 block|{
 DECL|enumerator|GIMP_BLUR_CONVOLVE
 name|GIMP_BLUR_CONVOLVE
@@ -276,7 +276,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2948a8080603
+DECL|enum|__anon28cb40c30603
 block|{
 DECL|enumerator|GIMP_INK_BLOB_TYPE_ELLIPSE
 name|GIMP_INK_BLOB_TYPE_ELLIPSE
@@ -292,6 +292,42 @@ name|GimpInkBlobType
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_PAINT_APPLICATION_MODE
+define|#
+directive|define
+name|GIMP_TYPE_PAINT_APPLICATION_MODE
+value|(gimp_paint_application_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_paint_application_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon28cb40c30703
+block|{
+DECL|enumerator|GIMP_PAINT_CONSTANT
+name|GIMP_PAINT_CONSTANT
+block|,
+comment|/*< desc="Constant">*/
+DECL|enumerator|GIMP_PAINT_INCREMENTAL
+name|GIMP_PAINT_INCREMENTAL
+comment|/*< desc="Incremental">*/
+DECL|typedef|GimpPaintApplicationMode
+block|}
+name|GimpPaintApplicationMode
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  * non-registered enums; register them if needed  */
 end_comment
@@ -300,7 +336,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2948a8080703
+DECL|enum|__anon28cb40c30803
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -314,23 +350,6 @@ comment|/*< skip>*/
 DECL|typedef|GimpBrushApplicationMode
 block|}
 name|GimpBrushApplicationMode
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon2948a8080803
-block|{
-DECL|enumerator|GIMP_PAINT_CONSTANT
-name|GIMP_PAINT_CONSTANT
-block|,
-DECL|enumerator|GIMP_PAINT_INCREMENTAL
-name|GIMP_PAINT_INCREMENTAL
-DECL|typedef|GimpPaintApplicationMode
-block|}
-name|GimpPaintApplicationMode
 typedef|;
 end_typedef
 
