@@ -500,11 +500,11 @@ name|pattern_sel
 operator|->
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Browse... "
+literal|"_Browse..."
 argument_list|)
 argument_list|)
 expr_stmt|;
