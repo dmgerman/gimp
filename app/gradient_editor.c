@@ -356,7 +356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d73e060103
+DECL|enum|__anon2762385b0103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -380,7 +380,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d73e060208
+DECL|struct|__anon2762385b0208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -663,7 +663,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon29d73e060308
+DECL|struct|__anon2762385b0308
 block|{
 DECL|member|r
 DECL|member|g
@@ -863,6 +863,10 @@ parameter_list|(
 name|gchar
 modifier|*
 name|label
+parameter_list|,
+name|gchar
+modifier|*
+name|help_data
 parameter_list|,
 name|gdouble
 name|xalign
@@ -4551,6 +4555,8 @@ argument_list|(
 literal|"New Gradient"
 argument_list|)
 argument_list|,
+literal|"dialogs/gradient_editor/new_gradient.html"
+argument_list|,
 literal|0.5
 argument_list|,
 literal|0.5
@@ -4599,6 +4605,8 @@ name|_
 argument_list|(
 literal|"Copy Gradient"
 argument_list|)
+argument_list|,
+literal|"dialogs/gradient_editor/copy_gradient.html"
 argument_list|,
 literal|0.5
 argument_list|,
@@ -4649,6 +4657,8 @@ argument_list|(
 literal|"Delete Gradient"
 argument_list|)
 argument_list|,
+literal|"dialogs/gradient_editor/delete_gradient.html"
+argument_list|,
 literal|0.5
 argument_list|,
 literal|0.5
@@ -4698,6 +4708,8 @@ argument_list|(
 literal|"Rename Gradient"
 argument_list|)
 argument_list|,
+literal|"dialogs/gradient_editor/rename_gradient.html"
+argument_list|,
 literal|0.5
 argument_list|,
 literal|0.5
@@ -4746,6 +4758,8 @@ name|_
 argument_list|(
 literal|"Save as POV-Ray"
 argument_list|)
+argument_list|,
+literal|"dialogs/gradient_editor/save_as_pov_ray.html"
 argument_list|,
 literal|0.5
 argument_list|,
@@ -4847,6 +4861,8 @@ name|_
 argument_list|(
 literal|"Zoom all"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 literal|0.5
 argument_list|,
@@ -6512,12 +6528,16 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|ed_create_button (gchar * label,gdouble xalign,gdouble yalign,GtkSignalFunc signal_func,gpointer data)
+DECL|function|ed_create_button (gchar * label,gchar * help_data,gdouble xalign,gdouble yalign,GtkSignalFunc signal_func,gpointer data)
 name|ed_create_button
 parameter_list|(
 name|gchar
 modifier|*
 name|label
+parameter_list|,
+name|gchar
+modifier|*
+name|help_data
 parameter_list|,
 name|gdouble
 name|xalign
@@ -6609,6 +6629,19 @@ argument_list|,
 name|signal_func
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|help_data
+condition|)
+name|gimp_help_set_help_data
+argument_list|(
+name|button
+argument_list|,
+name|NULL
+argument_list|,
+name|help_data
 argument_list|)
 expr_stmt|;
 return|return
@@ -8985,7 +9018,7 @@ name|GTK_WIN_POS_MOUSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
