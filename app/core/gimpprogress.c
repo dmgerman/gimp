@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278050d50103
+DECL|enum|__anon2767cbba0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -592,7 +592,7 @@ name|data
 argument_list|)
 argument_list|,
 call|(
-name|gfloat
+name|gdouble
 call|)
 argument_list|(
 name|current
@@ -601,7 +601,7 @@ name|min
 argument_list|)
 operator|/
 call|(
-name|gfloat
+name|gdouble
 call|)
 argument_list|(
 name|max
