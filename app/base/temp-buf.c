@@ -1219,15 +1219,6 @@ name|size
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|buf
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
 name|width
 operator|>
 literal|0
