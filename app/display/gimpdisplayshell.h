@@ -33,18 +33,18 @@ file|"gui/gui-types.h"
 end_include
 
 begin_typedef
-DECL|typedef|GimpDisplayShellVisibility
+DECL|typedef|GimpDisplayShellAppearance
 typedef|typedef
 name|struct
-name|_GimpDisplayShellVisibility
-name|GimpDisplayShellVisibility
+name|_GimpDisplayShellAppearance
+name|GimpDisplayShellAppearance
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpDisplayShellVisibility
+DECL|struct|_GimpDisplayShellAppearance
 struct|struct
-name|_GimpDisplayShellVisibility
+name|_GimpDisplayShellAppearance
 block|{
 DECL|member|selection
 name|gboolean
@@ -77,6 +77,18 @@ decl_stmt|;
 DECL|member|statusbar
 name|gboolean
 name|statusbar
+decl_stmt|;
+DECL|member|padding_mode
+name|GimpDisplayPaddingMode
+name|padding_mode
+decl_stmt|;
+DECL|member|padding_color
+name|GimpRGB
+name|padding_color
+decl_stmt|;
+DECL|member|padding_mode_set
+name|gboolean
+name|padding_mode_set
 decl_stmt|;
 block|}
 struct|;
@@ -557,19 +569,6 @@ modifier|*
 name|padding_button
 decl_stmt|;
 comment|/* GimpColorPanel in the NE corner     */
-DECL|member|padding_mode
-name|GimpDisplayPaddingMode
-name|padding_mode
-decl_stmt|;
-DECL|member|padding_mode_set
-name|gboolean
-name|padding_mode_set
-decl_stmt|;
-DECL|member|padding_color
-name|GimpRGB
-name|padding_color
-decl_stmt|;
-comment|/* color of the empty around the image */
 DECL|member|nav_ebox
 name|GtkWidget
 modifier|*
@@ -632,13 +631,13 @@ name|GdkWindowState
 name|window_state
 decl_stmt|;
 comment|/* for fullscreen display              */
-DECL|member|visibility
-name|GimpDisplayShellVisibility
-name|visibility
+DECL|member|appearance
+name|GimpDisplayShellAppearance
+name|appearance
 decl_stmt|;
-DECL|member|fullscreen_visibility
-name|GimpDisplayShellVisibility
-name|fullscreen_visibility
+DECL|member|fullscreen_appearance
+name|GimpDisplayShellAppearance
+name|fullscreen_appearance
 decl_stmt|;
 block|}
 struct|;
