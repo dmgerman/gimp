@@ -322,7 +322,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon27724a910108
+DECL|struct|__anon27930f1a0108
 typedef|typedef
 struct|struct
 block|{
@@ -451,7 +451,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon27724a910208
+DECL|struct|__anon27930f1a0208
 typedef|typedef
 struct|struct
 block|{
@@ -480,7 +480,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27724a910308
+DECL|struct|__anon27930f1a0308
 typedef|typedef
 struct|struct
 block|{
@@ -499,7 +499,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27724a910408
+DECL|struct|__anon27930f1a0408
 typedef|typedef
 struct|struct
 block|{
@@ -6269,6 +6269,18 @@ name|paths_dialog
 operator|->
 name|selected_row_num
 decl_stmt|;
+name|BezierSelect
+modifier|*
+name|bsel
+init|=
+name|NULL
+decl_stmt|;
+name|GDisplay
+modifier|*
+name|gdisp
+init|=
+name|NULL
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|paths_dialog
@@ -6424,6 +6436,50 @@ expr_stmt|;
 name|pathimagelist_free
 argument_list|(
 name|plp
+argument_list|)
+expr_stmt|;
+comment|/* Paste an empty BezierSelect to the current display to emulate an empty path list */
+name|bsel
+operator|=
+operator|(
+name|g_new0
+argument_list|(
+name|BezierSelect
+argument_list|,
+literal|1
+argument_list|)
+operator|)
+expr_stmt|;
+name|bezier_select_reset
+argument_list|(
+name|bsel
+argument_list|)
+expr_stmt|;
+name|gdisp
+operator|=
+name|gdisplays_check_valid
+argument_list|(
+name|paths_dialog
+operator|->
+name|current_path_list
+operator|->
+name|gdisp
+argument_list|,
+name|paths_dialog
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
+name|bezier_paste_bezierselect_to_current
+argument_list|(
+name|gdisp
+argument_list|,
+name|bsel
+argument_list|)
+expr_stmt|;
+name|beziersel_free
+argument_list|(
+name|bsel
 argument_list|)
 expr_stmt|;
 name|paths_dialog
