@@ -5142,11 +5142,11 @@ expr_stmt|;
 comment|/*  rle  */
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"RLE compression"
+literal|"_RLE compression"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5206,11 +5206,11 @@ expr_stmt|;
 comment|/*  origin  */
 name|origin
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Origin at bottom left"
+literal|"Or_igin at bottom left"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -141,7 +141,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1ec06c0103
+DECL|enum|__anon28dd86370103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1ec06c0203
+DECL|enum|__anon28dd86370203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1ec06c0303
+DECL|enum|__anon28dd86370303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -4416,28 +4416,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-comment|/* we have to stop the dialog from being closed with strength< 1 */
-comment|/* since we use spinbuttons this should never happen ...          */
-if|if
-condition|(
-name|config
-operator|.
-name|strength
-operator|<
-literal|1
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Wind Strength must be greater than 0."
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
 name|dialog_result
 operator|=
 literal|1
@@ -4450,7 +4428,6 @@ name|data
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -5008,7 +4985,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Wind"
+literal|"_Wind"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -5021,7 +4998,7 @@ name|style1
 argument_list|,
 name|_
 argument_list|(
-literal|"Blast"
+literal|"_Blast"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -5125,7 +5102,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Left"
+literal|"_Left"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -5138,7 +5115,7 @@ name|dir1
 argument_list|,
 name|_
 argument_list|(
-literal|"Right"
+literal|"_Right"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -5242,7 +5219,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Leading"
+literal|"L_eading"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -5255,7 +5232,7 @@ name|edge1
 argument_list|,
 name|_
 argument_list|(
-literal|"Trailing"
+literal|"Tr_ailing"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -5268,7 +5245,7 @@ name|edge2
 argument_list|,
 name|_
 argument_list|(
-literal|"Both"
+literal|"Bot_h"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -5422,7 +5399,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Threshold:"
+literal|"_Threshold:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5510,7 +5487,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Strength:"
+literal|"_Strength:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

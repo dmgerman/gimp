@@ -130,7 +130,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be0c05b0108
+DECL|struct|__anon2acbd95b0108
 block|{
 DECL|member|period
 name|gint
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be0c05b0208
+DECL|struct|__anon2acbd95b0208
 block|{
 DECL|member|run
 name|gint
@@ -3093,11 +3093,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Antialiasing"
+literal|"_Antialiasing"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3156,11 +3156,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Retain Tilability"
+literal|"_Retain Tilability"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3260,7 +3260,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Horizontal"
+literal|"_Horizontal"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -3272,7 +3272,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Vertical"
+literal|"_Vertical"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -3351,7 +3351,7 @@ name|edges
 argument_list|,
 name|_
 argument_list|(
-literal|"Wrap"
+literal|"_Wrap"
 argument_list|)
 argument_list|,
 operator|(
@@ -3363,7 +3363,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Smear"
+literal|"_Smear"
 argument_list|)
 argument_list|,
 operator|(
@@ -3375,7 +3375,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Black"
+literal|"_Black"
 argument_list|)
 argument_list|,
 operator|(
@@ -3454,7 +3454,7 @@ name|waveform
 argument_list|,
 name|_
 argument_list|(
-literal|"Sawtooth"
+literal|"Saw_tooth"
 argument_list|)
 argument_list|,
 operator|(
@@ -3466,7 +3466,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Sine"
+literal|"S_ine"
 argument_list|)
 argument_list|,
 operator|(
@@ -3623,7 +3623,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Period:"
+literal|"_Period:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3691,7 +3691,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Amplitude:"
+literal|"A_mplitude:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

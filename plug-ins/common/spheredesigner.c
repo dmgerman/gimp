@@ -5,6 +5,7 @@ end_comment
 
 begin_define
 DECL|macro|PLUG_IN_NAME
+DECL|macro|PLUG_IN_NAME
 define|#
 directive|define
 name|PLUG_IN_NAME
@@ -118,6 +119,7 @@ end_ifndef
 
 begin_define
 DECL|macro|SRAND_FUNC
+DECL|macro|SRAND_FUNC
 define|#
 directive|define
 name|SRAND_FUNC
@@ -137,6 +139,7 @@ end_ifndef
 
 begin_define
 DECL|macro|RAND_FUNC
+DECL|macro|RAND_FUNC
 define|#
 directive|define
 name|RAND_FUNC
@@ -150,6 +153,7 @@ end_endif
 
 begin_define
 DECL|macro|PREVIEWSIZE
+DECL|macro|PREVIEWSIZE
 define|#
 directive|define
 name|PREVIEWSIZE
@@ -162,6 +166,7 @@ end_comment
 
 begin_define
 DECL|macro|MAXOBJECT
+DECL|macro|MAXOBJECT
 define|#
 directive|define
 name|MAXOBJECT
@@ -169,6 +174,7 @@ value|5
 end_define
 
 begin_define
+DECL|macro|MAXLIGHT
 DECL|macro|MAXLIGHT
 define|#
 directive|define
@@ -178,6 +184,7 @@ end_define
 
 begin_define
 DECL|macro|MAXTEXTURE
+DECL|macro|MAXTEXTURE
 define|#
 directive|define
 name|MAXTEXTURE
@@ -185,6 +192,7 @@ value|20
 end_define
 
 begin_define
+DECL|macro|MAXTEXTUREPEROBJ
 DECL|macro|MAXTEXTUREPEROBJ
 define|#
 directive|define
@@ -194,6 +202,7 @@ end_define
 
 begin_define
 DECL|macro|MAXNORMAL
+DECL|macro|MAXNORMAL
 define|#
 directive|define
 name|MAXNORMAL
@@ -201,6 +210,7 @@ value|20
 end_define
 
 begin_define
+DECL|macro|MAXNORMALPEROBJ
 DECL|macro|MAXNORMALPEROBJ
 define|#
 directive|define
@@ -210,6 +220,7 @@ end_define
 
 begin_define
 DECL|macro|MAXATMOS
+DECL|macro|MAXATMOS
 define|#
 directive|define
 name|MAXATMOS
@@ -217,6 +228,7 @@ value|1
 end_define
 
 begin_define
+DECL|macro|MAXCOLPERGRADIENT
 DECL|macro|MAXCOLPERGRADIENT
 define|#
 directive|define
@@ -264,6 +276,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+DECL|variable|PLUG_IN_INFO
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -285,9 +298,16 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2a52acd70103
+DECL|enum|__anon278394520103
+DECL|enum|__anon278394521403
 enum|enum
 block|{
+DECL|enumerator|TRIANGLE
+DECL|enumerator|DISC
+DECL|enumerator|PLANE
+DECL|enumerator|SPHERE
+DECL|enumerator|CYLINDER
+DECL|enumerator|LIGHT
 DECL|enumerator|TRIANGLE
 DECL|enumerator|DISC
 DECL|enumerator|PLANE
@@ -310,9 +330,19 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2a52acd70203
+DECL|enum|__anon278394520203
+DECL|enum|__anon278394521503
 enum|enum
 block|{
+DECL|enumerator|SOLID
+DECL|enumerator|CHECKER
+DECL|enumerator|MARBLE
+DECL|enumerator|LIZARD
+DECL|enumerator|IMAGE
+DECL|enumerator|PHONG
+DECL|enumerator|REFLECTION
+DECL|enumerator|REFRACTION
+DECL|enumerator|PERLIN
 DECL|enumerator|SOLID
 DECL|enumerator|CHECKER
 DECL|enumerator|MARBLE
@@ -345,6 +375,11 @@ DECL|enumerator|TRANSPARENT
 DECL|enumerator|SPIRAL
 DECL|enumerator|SPOTS
 DECL|enumerator|SMOKE
+DECL|enumerator|WOOD
+DECL|enumerator|TRANSPARENT
+DECL|enumerator|SPIRAL
+DECL|enumerator|SPOTS
+DECL|enumerator|SMOKE
 name|WOOD
 block|,
 name|TRANSPARENT
@@ -359,9 +394,13 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2a52acd70303
+DECL|enum|__anon278394520303
+DECL|enum|__anon278394521603
 enum|enum
 block|{
+DECL|enumerator|PERSPECTIVE
+DECL|enumerator|ORTHOGONAL
+DECL|enumerator|FISHEYE
 DECL|enumerator|PERSPECTIVE
 DECL|enumerator|ORTHOGONAL
 DECL|enumerator|FISHEYE
@@ -375,9 +414,11 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2a52acd70403
+DECL|enum|__anon278394520403
+DECL|enum|__anon278394521703
 enum|enum
 block|{
+DECL|enumerator|FOG
 DECL|enumerator|FOG
 name|FOG
 block|}
@@ -389,6 +430,7 @@ comment|/* World-flags */
 end_comment
 
 begin_define
+DECL|macro|SMARTAMBIENT
 DECL|macro|SMARTAMBIENT
 define|#
 directive|define
@@ -402,6 +444,7 @@ end_comment
 
 begin_define
 DECL|macro|NOSHADOW
+DECL|macro|NOSHADOW
 define|#
 directive|define
 name|NOSHADOW
@@ -414,6 +457,7 @@ end_comment
 
 begin_define
 DECL|macro|GRADIENT
+DECL|macro|GRADIENT
 define|#
 directive|define
 name|GRADIENT
@@ -421,10 +465,15 @@ value|0x00000001
 end_define
 
 begin_typedef
-DECL|struct|__anon2a52acd70508
+DECL|struct|__anon278394520508
+DECL|struct|__anon278394521808
 typedef|typedef
 struct|struct
 block|{
+DECL|member|x
+DECL|member|y
+DECL|member|z
+DECL|member|w
 DECL|member|x
 DECL|member|y
 DECL|member|z
@@ -439,16 +488,20 @@ decl_stmt|,
 name|w
 decl_stmt|;
 DECL|typedef|vector
+DECL|typedef|vector
 block|}
 name|vector
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a52acd70608
+DECL|struct|__anon278394520608
+DECL|struct|__anon278394521908
 typedef|typedef
 struct|struct
 block|{
+DECL|member|xsize
+DECL|member|ysize
 DECL|member|xsize
 DECL|member|ysize
 name|short
@@ -457,11 +510,13 @@ decl_stmt|,
 name|ysize
 decl_stmt|;
 DECL|member|rgb
+DECL|member|rgb
 name|unsigned
 name|char
 modifier|*
 name|rgb
 decl_stmt|;
+DECL|typedef|image
 DECL|typedef|image
 block|}
 name|image
@@ -469,14 +524,17 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a52acd70708
+DECL|struct|__anon278394520708
+DECL|struct|__anon278394521a08
 typedef|typedef
 struct|struct
 block|{
 DECL|member|numcol
+DECL|member|numcol
 name|short
 name|numcol
 decl_stmt|;
+DECL|member|pos
 DECL|member|pos
 name|double
 name|pos
@@ -485,6 +543,7 @@ name|MAXCOLPERGRADIENT
 index|]
 decl_stmt|;
 DECL|member|color
+DECL|member|color
 name|vector
 name|color
 index|[
@@ -492,29 +551,36 @@ name|MAXCOLPERGRADIENT
 index|]
 decl_stmt|;
 DECL|typedef|gradient
+DECL|typedef|gradient
 block|}
 name|gradient
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a52acd70808
+DECL|struct|__anon278394520808
+DECL|struct|__anon278394521b08
 typedef|typedef
 struct|struct
 block|{
+DECL|member|majtype
 DECL|member|majtype
 name|int
 name|majtype
 decl_stmt|;
 DECL|member|type
+DECL|member|type
 name|int
 name|type
 decl_stmt|;
+DECL|member|flags
 DECL|member|flags
 name|unsigned
 name|long
 name|flags
 decl_stmt|;
+DECL|member|color1
+DECL|member|color2
 DECL|member|color1
 DECL|member|color2
 name|vector
@@ -523,9 +589,12 @@ decl_stmt|,
 name|color2
 decl_stmt|;
 DECL|member|gradient
+DECL|member|gradient
 name|gradient
 name|gradient
 decl_stmt|;
+DECL|member|ambient
+DECL|member|diffuse
 DECL|member|ambient
 DECL|member|diffuse
 name|vector
@@ -534,9 +603,13 @@ decl_stmt|,
 name|diffuse
 decl_stmt|;
 DECL|member|oscale
+DECL|member|oscale
 name|double
 name|oscale
 decl_stmt|;
+DECL|member|scale
+DECL|member|translate
+DECL|member|rotate
 DECL|member|scale
 DECL|member|translate
 DECL|member|rotate
@@ -548,45 +621,56 @@ decl_stmt|,
 name|rotate
 decl_stmt|;
 DECL|member|image
+DECL|member|image
 name|image
 name|image
 decl_stmt|;
+DECL|member|reflection
 DECL|member|reflection
 name|vector
 name|reflection
 decl_stmt|;
 DECL|member|refraction
+DECL|member|refraction
 name|vector
 name|refraction
 decl_stmt|;
+DECL|member|transparent
 DECL|member|transparent
 name|vector
 name|transparent
 decl_stmt|;
 DECL|member|ior
+DECL|member|ior
 name|double
 name|ior
 decl_stmt|;
+DECL|member|phongcolor
 DECL|member|phongcolor
 name|vector
 name|phongcolor
 decl_stmt|;
 DECL|member|phongsize
+DECL|member|phongsize
 name|double
 name|phongsize
 decl_stmt|;
+DECL|member|amount
 DECL|member|amount
 name|double
 name|amount
 decl_stmt|;
 DECL|member|exp
+DECL|member|exp
 name|double
 name|exp
 decl_stmt|;
 DECL|member|turbulence
+DECL|member|turbulence
 name|vector
 name|turbulence
 decl_stmt|;
+DECL|typedef|texture
 DECL|typedef|texture
 block|}
 name|texture
@@ -594,26 +678,32 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a52acd70908
+DECL|struct|__anon278394520908
+DECL|struct|__anon278394521c08
 typedef|typedef
 struct|struct
 block|{
+DECL|member|type
 DECL|member|type
 name|short
 name|type
 decl_stmt|;
 DECL|member|density
+DECL|member|density
 name|double
 name|density
 decl_stmt|;
+DECL|member|color
 DECL|member|color
 name|vector
 name|color
 decl_stmt|;
 DECL|member|turbulence
+DECL|member|turbulence
 name|double
 name|turbulence
 decl_stmt|;
+DECL|typedef|atmos
 DECL|typedef|atmos
 block|}
 name|atmos
@@ -621,23 +711,28 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a52acd70a08
+DECL|struct|__anon278394520a08
+DECL|struct|__anon278394521d08
 typedef|typedef
 struct|struct
 block|{
 DECL|member|type
+DECL|member|type
 name|short
 name|type
 decl_stmt|;
+DECL|member|flags
 DECL|member|flags
 name|unsigned
 name|long
 name|flags
 decl_stmt|;
 DECL|member|numtexture
+DECL|member|numtexture
 name|short
 name|numtexture
 decl_stmt|;
+DECL|member|texture
 DECL|member|texture
 name|texture
 name|texture
@@ -646,9 +741,11 @@ name|MAXTEXTUREPEROBJ
 index|]
 decl_stmt|;
 DECL|member|numnormal
+DECL|member|numnormal
 name|short
 name|numnormal
 decl_stmt|;
+DECL|member|normal
 DECL|member|normal
 name|texture
 name|normal
@@ -657,20 +754,26 @@ name|MAXNORMALPEROBJ
 index|]
 decl_stmt|;
 DECL|typedef|common
+DECL|typedef|common
 block|}
 name|common
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a52acd70b08
+DECL|struct|__anon278394520b08
+DECL|struct|__anon278394521e08
 typedef|typedef
 struct|struct
 block|{
 DECL|member|com
+DECL|member|com
 name|common
 name|com
 decl_stmt|;
+DECL|member|a
+DECL|member|b
+DECL|member|c
 DECL|member|a
 DECL|member|b
 DECL|member|c
@@ -682,24 +785,30 @@ decl_stmt|,
 name|c
 decl_stmt|;
 DECL|typedef|triangle
+DECL|typedef|triangle
 block|}
 name|triangle
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a52acd70c08
+DECL|struct|__anon278394520c08
+DECL|struct|__anon278394521f08
 typedef|typedef
 struct|struct
 block|{
+DECL|member|com
 DECL|member|com
 name|common
 name|com
 decl_stmt|;
 DECL|member|a
+DECL|member|a
 name|vector
 name|a
 decl_stmt|;
+DECL|member|b
+DECL|member|r
 DECL|member|b
 DECL|member|r
 name|double
@@ -708,28 +817,34 @@ decl_stmt|,
 name|r
 decl_stmt|;
 DECL|typedef|disc
+DECL|typedef|disc
 block|}
 name|disc
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a52acd70d08
+DECL|struct|__anon278394520d08
+DECL|struct|__anon278394522008
 typedef|typedef
 struct|struct
 block|{
+DECL|member|com
 DECL|member|com
 name|common
 name|com
 decl_stmt|;
 DECL|member|a
+DECL|member|a
 name|vector
 name|a
 decl_stmt|;
 DECL|member|r
+DECL|member|r
 name|double
 name|r
 decl_stmt|;
+DECL|typedef|sphere
 DECL|typedef|sphere
 block|}
 name|sphere
@@ -737,14 +852,19 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a52acd70e08
+DECL|struct|__anon278394520e08
+DECL|struct|__anon278394522108
 typedef|typedef
 struct|struct
 block|{
 DECL|member|com
+DECL|member|com
 name|common
 name|com
 decl_stmt|;
+DECL|member|a
+DECL|member|b
+DECL|member|c
 DECL|member|a
 DECL|member|b
 DECL|member|c
@@ -756,28 +876,34 @@ decl_stmt|,
 name|c
 decl_stmt|;
 DECL|typedef|cylinder
+DECL|typedef|cylinder
 block|}
 name|cylinder
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a52acd70f08
+DECL|struct|__anon278394520f08
+DECL|struct|__anon278394522208
 typedef|typedef
 struct|struct
 block|{
+DECL|member|com
 DECL|member|com
 name|common
 name|com
 decl_stmt|;
 DECL|member|a
+DECL|member|a
 name|vector
 name|a
 decl_stmt|;
 DECL|member|b
+DECL|member|b
 name|double
 name|b
 decl_stmt|;
+DECL|typedef|plane
 DECL|typedef|plane
 block|}
 name|plane
@@ -785,22 +911,27 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a52acd71008
+DECL|struct|__anon278394521008
+DECL|struct|__anon278394522308
 typedef|typedef
 struct|struct
 block|{
+DECL|member|com
 DECL|member|com
 name|common
 name|com
 decl_stmt|;
 DECL|member|color
+DECL|member|color
 name|vector
 name|color
 decl_stmt|;
 DECL|member|a
+DECL|member|a
 name|vector
 name|a
 decl_stmt|;
+DECL|typedef|light
 DECL|typedef|light
 block|}
 name|light
@@ -808,10 +939,13 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a52acd71108
+DECL|struct|__anon278394521108
+DECL|struct|__anon278394522408
 typedef|typedef
 struct|struct
 block|{
+DECL|member|v1
+DECL|member|v2
 DECL|member|v1
 DECL|member|v2
 name|vector
@@ -820,13 +954,16 @@ decl_stmt|,
 name|v2
 decl_stmt|;
 DECL|member|inside
+DECL|member|inside
 name|short
 name|inside
 decl_stmt|;
 DECL|member|ior
+DECL|member|ior
 name|double
 name|ior
 decl_stmt|;
+DECL|typedef|ray
 DECL|typedef|ray
 block|}
 name|ray
@@ -834,34 +971,42 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|union|__anon2a52acd7120a
+DECL|union|__anon27839452120a
+DECL|union|__anon27839452250a
 typedef|typedef
 union|union
 block|{
+DECL|member|com
 DECL|member|com
 name|common
 name|com
 decl_stmt|;
 DECL|member|tri
+DECL|member|tri
 name|triangle
 name|tri
 decl_stmt|;
+DECL|member|disc
 DECL|member|disc
 name|disc
 name|disc
 decl_stmt|;
 DECL|member|plane
+DECL|member|plane
 name|plane
 name|plane
 decl_stmt|;
+DECL|member|sphere
 DECL|member|sphere
 name|sphere
 name|sphere
 decl_stmt|;
 DECL|member|cylinder
+DECL|member|cylinder
 name|cylinder
 name|cylinder
 decl_stmt|;
+DECL|typedef|object
 DECL|typedef|object
 block|}
 name|object
@@ -870,13 +1015,16 @@ end_typedef
 
 begin_struct
 DECL|struct|world_t
+DECL|struct|world_t
 struct|struct
 name|world_t
 block|{
 DECL|member|numobj
+DECL|member|numobj
 name|int
 name|numobj
 decl_stmt|;
+DECL|member|obj
 DECL|member|obj
 name|object
 name|obj
@@ -885,9 +1033,11 @@ name|MAXOBJECT
 index|]
 decl_stmt|;
 DECL|member|numlight
+DECL|member|numlight
 name|int
 name|numlight
 decl_stmt|;
+DECL|member|light
 DECL|member|light
 name|light
 name|light
@@ -896,9 +1046,11 @@ name|MAXLIGHT
 index|]
 decl_stmt|;
 DECL|member|numtexture
+DECL|member|numtexture
 name|int
 name|numtexture
 decl_stmt|;
+DECL|member|texture
 DECL|member|texture
 name|texture
 name|texture
@@ -907,22 +1059,27 @@ name|MAXTEXTURE
 index|]
 decl_stmt|;
 DECL|member|flags
+DECL|member|flags
 name|unsigned
 name|long
 name|flags
 decl_stmt|;
 DECL|member|quality
+DECL|member|quality
 name|short
 name|quality
 decl_stmt|;
+DECL|member|smartambient
 DECL|member|smartambient
 name|double
 name|smartambient
 decl_stmt|;
 DECL|member|numatmos
+DECL|member|numatmos
 name|short
 name|numatmos
 decl_stmt|;
+DECL|member|atmos
 DECL|member|atmos
 name|atmos
 name|atmos
@@ -936,9 +1093,14 @@ end_struct
 
 begin_struct
 DECL|struct|camera_t
+DECL|struct|camera_t
 struct|struct
 name|camera_t
 block|{
+DECL|member|location
+DECL|member|lookat
+DECL|member|up
+DECL|member|right
 DECL|member|location
 DECL|member|lookat
 DECL|member|up
@@ -953,9 +1115,12 @@ decl_stmt|,
 name|right
 decl_stmt|;
 DECL|member|type
+DECL|member|type
 name|short
 name|type
 decl_stmt|;
+DECL|member|fov
+DECL|member|tilt
 DECL|member|fov
 DECL|member|tilt
 name|double
@@ -990,6 +1155,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|drawarea
+DECL|variable|drawarea
 name|GtkWidget
 modifier|*
 name|drawarea
@@ -999,6 +1165,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|img
 DECL|variable|img
 name|unsigned
 name|char
@@ -1015,6 +1182,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|running
+DECL|variable|running
 name|int
 name|running
 init|=
@@ -1024,6 +1192,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|s
+DECL|variable|s
 name|sphere
 name|s
 decl_stmt|;
@@ -1031,18 +1200,22 @@ end_decl_stmt
 
 begin_struct
 DECL|struct|textures_t
+DECL|struct|textures_t
 struct|struct
 name|textures_t
 block|{
+DECL|member|index
 DECL|member|index
 name|int
 name|index
 decl_stmt|;
 DECL|member|s
+DECL|member|s
 name|char
 modifier|*
 name|s
 decl_stmt|;
+DECL|member|n
 DECL|member|n
 name|long
 name|n
@@ -1052,6 +1225,7 @@ struct|;
 end_struct
 
 begin_decl_stmt
+DECL|variable|textures
 DECL|variable|textures
 name|struct
 name|textures_t
@@ -1170,9 +1344,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2a52acd71308
+DECL|struct|__anon278394521308
+DECL|struct|__anon278394522608
 struct|struct
 block|{
+DECL|member|solid
+DECL|member|phong
+DECL|member|light
 DECL|member|solid
 DECL|member|phong
 DECL|member|light
@@ -1183,6 +1361,7 @@ name|phong
 decl_stmt|,
 name|light
 decl_stmt|;
+DECL|variable|settings
 DECL|variable|settings
 block|}
 name|settings
@@ -1280,6 +1459,7 @@ end_function_decl
 
 begin_define
 DECL|macro|COLORBUTTONWIDTH
+DECL|macro|COLORBUTTONWIDTH
 define|#
 directive|define
 name|COLORBUTTONWIDTH
@@ -1288,6 +1468,7 @@ end_define
 
 begin_define
 DECL|macro|COLORBUTTONHEIGHT
+DECL|macro|COLORBUTTONHEIGHT
 define|#
 directive|define
 name|COLORBUTTONHEIGHT
@@ -1295,6 +1476,7 @@ value|20
 end_define
 
 begin_decl_stmt
+DECL|variable|texturelist
 DECL|variable|texturelist
 name|GtkWidget
 modifier|*
@@ -1305,6 +1487,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|scalexscale
+DECL|variable|scaleyscale
+DECL|variable|scalezscale
 DECL|variable|scalexscale
 DECL|variable|scaleyscale
 DECL|variable|scalezscale
@@ -1324,6 +1509,9 @@ begin_decl_stmt
 DECL|variable|rotxscale
 DECL|variable|rotyscale
 DECL|variable|rotzscale
+DECL|variable|rotxscale
+DECL|variable|rotyscale
+DECL|variable|rotzscale
 name|GtkObject
 modifier|*
 name|rotxscale
@@ -1337,6 +1525,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|posxscale
+DECL|variable|posyscale
+DECL|variable|poszscale
 DECL|variable|posxscale
 DECL|variable|posyscale
 DECL|variable|poszscale
@@ -1354,6 +1545,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|scalescale
+DECL|variable|scalescale
 name|GtkObject
 modifier|*
 name|scalescale
@@ -1361,6 +1553,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|turbulencescale
 DECL|variable|turbulencescale
 name|GtkObject
 modifier|*
@@ -1370,6 +1563,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|amountscale
+DECL|variable|amountscale
 name|GtkObject
 modifier|*
 name|amountscale
@@ -1377,6 +1571,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|expscale
 DECL|variable|expscale
 name|GtkObject
 modifier|*
@@ -1386,6 +1581,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|typemenu_menu
+DECL|variable|typemenu_menu
 name|GtkWidget
 modifier|*
 name|typemenu_menu
@@ -1393,6 +1589,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|texturemenu_menu
 DECL|variable|texturemenu_menu
 name|GtkWidget
 modifier|*
@@ -1402,6 +1599,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|typemenu
+DECL|variable|typemenu
 name|GtkWidget
 modifier|*
 name|typemenu
@@ -1410,6 +1608,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|texturemenu
+DECL|variable|texturemenu
 name|GtkWidget
 modifier|*
 name|texturemenu
@@ -1417,6 +1616,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_define
+DECL|macro|DOT (a,b)
 DECL|macro|DOT (a,b)
 define|#
 directive|define
@@ -1431,6 +1631,7 @@ end_define
 
 begin_define
 DECL|macro|B
+DECL|macro|B
 define|#
 directive|define
 name|B
@@ -1438,6 +1639,7 @@ value|256
 end_define
 
 begin_decl_stmt
+DECL|variable|p
 DECL|variable|p
 specifier|static
 name|int
@@ -1453,6 +1655,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|g
 DECL|variable|g
 specifier|static
 name|double
@@ -1472,6 +1675,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|start
+DECL|variable|start
 specifier|static
 name|int
 name|start
@@ -1481,6 +1685,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
+DECL|function|init (void)
 DECL|function|init (void)
 name|void
 name|init
@@ -1752,6 +1957,7 @@ end_function
 
 begin_define
 DECL|macro|setup (i,b0,b1,r0,r1)
+DECL|macro|setup (i,b0,b1,r0,r1)
 define|#
 directive|define
 name|setup
@@ -1771,6 +1977,7 @@ value|t = vec[i] + 10000.; \         b0 = ((int)t)& (B-1); \         b1 = (b0+1)
 end_define
 
 begin_function
+DECL|function|noise3 (double * vec)
 DECL|function|noise3 (double * vec)
 name|double
 name|noise3
@@ -1945,6 +2152,7 @@ name|by1
 index|]
 expr_stmt|;
 DECL|macro|at (rx,ry,rz)
+DECL|macro|at (rx,ry,rz)
 define|#
 directive|define
 name|at
@@ -1957,6 +2165,7 @@ name|rz
 parameter_list|)
 value|( rx * q[0] + ry * q[1] + rz * q[2] )
 DECL|macro|surve (t)
+DECL|macro|surve (t)
 define|#
 directive|define
 name|surve
@@ -1964,6 +2173,7 @@ parameter_list|(
 name|t
 parameter_list|)
 value|( t * t * (3. - 2. * t) )
+DECL|macro|lerp (t,a,b)
 DECL|macro|lerp (t,a,b)
 define|#
 directive|define
@@ -2243,6 +2453,7 @@ end_function
 
 begin_function
 DECL|function|turbulence (double * point,double lofreq,double hifreq)
+DECL|function|turbulence (double * point,double lofreq,double hifreq)
 name|double
 name|turbulence
 parameter_list|(
@@ -2367,6 +2578,7 @@ end_function
 
 begin_decl_stmt
 DECL|variable|camera
+DECL|variable|camera
 name|struct
 name|camera_t
 name|camera
@@ -2375,6 +2587,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|world
+DECL|variable|world
 name|struct
 name|world_t
 name|world
@@ -2382,6 +2595,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
+DECL|function|vcopy (vector * a,vector * b)
 DECL|function|vcopy (vector * a,vector * b)
 specifier|inline
 name|void
@@ -2432,6 +2646,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|vcross (vector * r,vector * a,vector * b)
 DECL|function|vcross (vector * r,vector * a,vector * b)
 specifier|inline
 name|void
@@ -2529,6 +2744,7 @@ end_function
 
 begin_function
 DECL|function|vdot (vector * a,vector * b)
+DECL|function|vdot (vector * a,vector * b)
 specifier|inline
 name|double
 name|vdot
@@ -2582,6 +2798,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|vdist (vector * a,vector * b)
 DECL|function|vdist (vector * a,vector * b)
 specifier|inline
 name|double
@@ -2654,6 +2871,7 @@ end_function
 
 begin_function
 DECL|function|vlen (vector * a)
+DECL|function|vlen (vector * a)
 specifier|inline
 name|double
 name|vlen
@@ -2702,6 +2920,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|vnorm (vector * a,double v)
 DECL|function|vnorm (vector * a,double v)
 specifier|inline
 name|void
@@ -2775,6 +2994,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|vrotate (vector * axis,double ang,vector * vector)
 DECL|function|vrotate (vector * axis,double ang,vector * vector)
 specifier|inline
 name|void
@@ -3030,6 +3250,7 @@ end_function
 
 begin_function
 DECL|function|vset (vector * v,double a,double b,double c)
+DECL|function|vset (vector * v,double a,double b,double c)
 specifier|inline
 name|void
 name|vset
@@ -3076,6 +3297,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|vcset (vector * v,double a,double b,double c,double d)
 DECL|function|vcset (vector * v,double a,double b,double c,double d)
 specifier|inline
 name|void
@@ -3126,6 +3348,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|vvrotate (vector * p,vector * rot)
 DECL|function|vvrotate (vector * p,vector * rot)
 specifier|inline
 name|void
@@ -3250,6 +3473,7 @@ end_function
 
 begin_function
 DECL|function|vsub (vector * a,vector * b)
+DECL|function|vsub (vector * a,vector * b)
 specifier|inline
 name|void
 name|vsub
@@ -3299,6 +3523,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|vadd (vector * a,vector * b)
 DECL|function|vadd (vector * a,vector * b)
 specifier|inline
 name|void
@@ -3350,6 +3575,7 @@ end_function
 
 begin_function
 DECL|function|vneg (vector * a)
+DECL|function|vneg (vector * a)
 specifier|inline
 name|void
 name|vneg
@@ -3400,6 +3626,7 @@ end_function
 
 begin_function
 DECL|function|vmul (vector * v,double a)
+DECL|function|vmul (vector * v,double a)
 specifier|inline
 name|void
 name|vmul
@@ -3440,6 +3667,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|vvmul (vector * a,vector * b)
 DECL|function|vvmul (vector * a,vector * b)
 specifier|inline
 name|void
@@ -3491,6 +3719,7 @@ end_function
 
 begin_function
 DECL|function|vvdiv (vector * a,vector * b)
+DECL|function|vvdiv (vector * a,vector * b)
 specifier|inline
 name|void
 name|vvdiv
@@ -3532,6 +3761,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|vmix (vector * r,vector * a,vector * b,double v)
 DECL|function|vmix (vector * r,vector * a,vector * b,double v)
 name|void
 name|vmix
@@ -3628,6 +3858,7 @@ end_function
 
 begin_function
 DECL|function|vmax (vector * a)
+DECL|function|vmax (vector * a)
 name|double
 name|vmax
 parameter_list|(
@@ -3714,6 +3945,7 @@ end_function
 
 begin_function
 DECL|function|vavg (vector * a)
+DECL|function|vavg (vector * a)
 name|void
 name|vavg
 parameter_list|(
@@ -3759,6 +3991,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|trianglenormal (vector * n,double * t,triangle * tri)
 DECL|function|trianglenormal (vector * n,double * t,triangle * tri)
 name|void
 name|trianglenormal
@@ -3884,6 +4117,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|checkdisc (ray * r,disc * disc)
 DECL|function|checkdisc (ray * r,disc * disc)
 name|double
 name|checkdisc
@@ -4092,6 +4326,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|checksphere (ray * r,sphere * sphere)
 DECL|function|checksphere (ray * r,sphere * sphere)
 name|double
 name|checksphere
@@ -4392,6 +4627,7 @@ end_function
 
 begin_function
 DECL|function|checkcylinder (ray * r,cylinder * cylinder)
+DECL|function|checkcylinder (ray * r,cylinder * cylinder)
 name|double
 name|checkcylinder
 parameter_list|(
@@ -4412,6 +4648,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|checkplane (ray * r,plane * plane)
 DECL|function|checkplane (ray * r,plane * plane)
 name|double
 name|checkplane
@@ -4553,6 +4790,7 @@ end_function
 
 begin_function
 DECL|function|checktri (ray * r,triangle * tri)
+DECL|function|checktri (ray * r,triangle * tri)
 name|double
 name|checktri
 parameter_list|(
@@ -4601,21 +4839,11 @@ name|r
 operator|->
 name|v1
 expr_stmt|;
-name|memcpy
-argument_list|(
-operator|&
 name|dir
-argument_list|,
-operator|&
+operator|=
 name|r
 operator|->
 name|v2
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|vector
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|vsub
 argument_list|(
@@ -4898,6 +5126,7 @@ end_function_decl
 
 begin_function
 DECL|function|transformpoint (vector * p,texture * t)
+DECL|function|transformpoint (vector * p,texture * t)
 name|void
 name|transformpoint
 parameter_list|(
@@ -5092,6 +5321,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|checker (vector * q,vector * col,texture * t)
 DECL|function|checker (vector * q,vector * col,texture * t)
 name|void
 name|checker
@@ -5309,6 +5539,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|gradcolor (vector * col,gradient * t,double val)
 DECL|function|gradcolor (vector * col,gradient * t,double val)
 name|void
 name|gradcolor
@@ -5532,6 +5763,7 @@ end_function
 
 begin_function
 DECL|function|marble (vector * q,vector * col,texture * t)
+DECL|function|marble (vector * q,vector * col,texture * t)
 name|void
 name|marble
 parameter_list|(
@@ -5638,6 +5870,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|lizard (vector * q,vector * col,texture * t)
 DECL|function|lizard (vector * q,vector * col,texture * t)
 name|void
 name|lizard
@@ -5777,6 +6010,7 @@ end_function
 
 begin_function
 DECL|function|wood (vector * q,vector * col,texture * t)
+DECL|function|wood (vector * q,vector * col,texture * t)
 name|void
 name|wood
 parameter_list|(
@@ -5886,6 +6120,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|spiral (vector * q,vector * col,texture * t)
 DECL|function|spiral (vector * q,vector * col,texture * t)
 name|void
 name|spiral
@@ -6013,6 +6248,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|spots (vector * q,vector * col,texture * t)
 DECL|function|spots (vector * q,vector * col,texture * t)
 name|void
 name|spots
@@ -6206,6 +6442,7 @@ end_function
 
 begin_function
 DECL|function|perlin (vector * q,vector * col,texture * t)
+DECL|function|perlin (vector * q,vector * col,texture * t)
 name|void
 name|perlin
 parameter_list|(
@@ -6344,6 +6581,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|imagepixel (vector * q,vector * col,texture * t)
 DECL|function|imagepixel (vector * q,vector * col,texture * t)
 name|void
 name|imagepixel
@@ -6531,6 +6769,7 @@ end_function
 
 begin_function
 DECL|function|frand (double v)
+DECL|function|frand (double v)
 name|double
 name|frand
 parameter_list|(
@@ -6578,6 +6817,7 @@ function_decl|;
 end_function_decl
 
 begin_function
+DECL|function|objcolor (vector * col,vector * p,common * obj)
 DECL|function|objcolor (vector * col,vector * p,common * obj)
 name|void
 name|objcolor
@@ -6882,6 +7122,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|objnormal (vector * res,common * obj,vector * p)
 DECL|function|objnormal (vector * res,common * obj,vector * p)
 name|void
 name|objnormal
@@ -7559,6 +7800,7 @@ end_comment
 
 begin_function
 DECL|function|calclight (vector * col,vector * point,common * obj)
+DECL|function|calclight (vector * col,vector * point,common * obj)
 name|void
 name|calclight
 parameter_list|(
@@ -8078,6 +8320,7 @@ end_function
 
 begin_function
 DECL|function|calcphong (common * obj,ray * r2,vector * col)
+DECL|function|calcphong (common * obj,ray * r2,vector * col)
 name|void
 name|calcphong
 parameter_list|(
@@ -8434,6 +8677,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|traceray (ray * r,vector * col,int level,double imp)
 DECL|function|traceray (ray * r,vector * col,int level,double imp)
 name|int
 name|traceray
@@ -10377,6 +10621,7 @@ end_function
 
 begin_function
 DECL|function|setdefaults (texture * t)
+DECL|function|setdefaults (texture * t)
 name|void
 name|setdefaults
 parameter_list|(
@@ -10531,6 +10776,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|mklabel (texture * t)
 DECL|function|mklabel (texture * t)
 name|char
 modifier|*
@@ -10695,6 +10941,7 @@ end_function
 
 begin_function
 DECL|function|currentitem (GtkWidget * list)
+DECL|function|currentitem (GtkWidget * list)
 name|GtkWidget
 modifier|*
 name|currentitem
@@ -10742,6 +10989,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|currenttexture (void)
 DECL|function|currenttexture (void)
 name|texture
 modifier|*
@@ -10792,6 +11040,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|relabel (void)
 DECL|function|relabel (void)
 name|void
 name|relabel
@@ -10851,6 +11100,7 @@ end_function
 
 begin_decl_stmt
 DECL|variable|noupdate
+DECL|variable|noupdate
 name|int
 name|noupdate
 init|=
@@ -10859,6 +11109,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
+DECL|function|setvals (texture * t)
 DECL|function|setvals (texture * t)
 name|void
 name|setvals
@@ -11130,6 +11381,7 @@ end_function
 
 begin_function
 DECL|function|selectitem (GtkWidget * wg,GtkWidget * p)
+DECL|function|selectitem (GtkWidget * wg,GtkWidget * p)
 name|void
 name|selectitem
 parameter_list|(
@@ -11152,6 +11404,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|addtexture (void)
 DECL|function|addtexture (void)
 name|void
 name|addtexture
@@ -11272,6 +11525,7 @@ end_function
 
 begin_function
 DECL|function|duptexture (void)
+DECL|function|duptexture (void)
 name|void
 name|duptexture
 parameter_list|(
@@ -11313,9 +11567,6 @@ operator|!
 name|t
 condition|)
 return|return;
-name|memcpy
-argument_list|(
-operator|&
 name|s
 operator|.
 name|com
@@ -11324,14 +11575,9 @@ name|texture
 index|[
 name|n
 index|]
-argument_list|,
+operator|=
+operator|*
 name|t
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|texture
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|item
 operator|=
@@ -11411,6 +11657,7 @@ end_function
 
 begin_function
 DECL|function|rebuildlist (void)
+DECL|function|rebuildlist (void)
 name|void
 name|rebuildlist
 parameter_list|(
@@ -11488,9 +11735,6 @@ condition|;
 name|i
 operator|++
 control|)
-name|memcpy
-argument_list|(
-operator|&
 name|s
 operator|.
 name|com
@@ -11499,8 +11743,7 @@ name|texture
 index|[
 name|i
 index|]
-argument_list|,
-operator|&
+operator|=
 name|s
 operator|.
 name|com
@@ -11511,12 +11754,6 @@ name|i
 operator|+
 literal|1
 index|]
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|texture
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|s
 operator|.
@@ -11609,6 +11846,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|sphere_reset (void)
 DECL|function|sphere_reset (void)
 name|void
 name|sphere_reset
@@ -11801,6 +12039,7 @@ end_function
 
 begin_function
 DECL|function|deltexture (void)
+DECL|function|deltexture (void)
 name|void
 name|deltexture
 parameter_list|(
@@ -11855,6 +12094,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|loadit (char * fn)
 DECL|function|loadit (char * fn)
 name|void
 name|loadit
@@ -12121,6 +12361,7 @@ end_function
 
 begin_function
 DECL|function|loadpreset_ok (GtkWidget * w,GtkFileSelection * fs)
+DECL|function|loadpreset_ok (GtkWidget * w,GtkFileSelection * fs)
 name|void
 name|loadpreset_ok
 parameter_list|(
@@ -12181,6 +12422,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|saveit (char * fn)
 DECL|function|saveit (char * fn)
 name|void
 name|saveit
@@ -12393,6 +12635,7 @@ end_function
 
 begin_function
 DECL|function|savepreset_ok (GtkWidget * w,GtkFileSelection * fs)
+DECL|function|savepreset_ok (GtkWidget * w,GtkFileSelection * fs)
 name|void
 name|savepreset_ok
 parameter_list|(
@@ -12435,6 +12678,7 @@ end_function
 
 begin_function
 DECL|function|loadpreset (void)
+DECL|function|loadpreset (void)
 name|void
 name|loadpreset
 parameter_list|(
@@ -12451,6 +12695,7 @@ end_function
 
 begin_function
 DECL|function|savepreset (void)
+DECL|function|savepreset (void)
 name|void
 name|savepreset
 parameter_list|(
@@ -12466,6 +12711,7 @@ block|}
 end_function
 
 begin_function
+DECL|function|fileselect (int action)
 DECL|function|fileselect (int action)
 name|void
 name|fileselect
@@ -12690,6 +12936,7 @@ end_function
 
 begin_function
 DECL|function|initworld (void)
+DECL|function|initworld (void)
 name|void
 name|initworld
 parameter_list|(
@@ -12746,24 +12993,14 @@ name|r
 operator|=
 literal|4.0
 expr_stmt|;
-name|memcpy
-argument_list|(
-operator|&
 name|world
 operator|.
 name|obj
 index|[
 literal|0
 index|]
-argument_list|,
-operator|&
+operator|=
 name|s
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|s
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|world
 operator|.
@@ -12888,25 +13125,13 @@ operator|==
 name|PHONG
 condition|)
 block|{
-name|memcpy
-argument_list|(
-operator|&
 name|t
 operator|->
 name|phongcolor
-argument_list|,
-operator|&
+operator|=
 name|t
 operator|->
 name|color1
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|t
-operator|->
-name|color1
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|t
 operator|->
@@ -12919,9 +13144,6 @@ operator|/
 literal|25.0
 expr_stmt|;
 block|}
-name|memcpy
-argument_list|(
-operator|&
 name|d
 operator|->
 name|texture
@@ -12930,14 +13152,9 @@ name|d
 operator|->
 name|numtexture
 index|]
-argument_list|,
+operator|=
+operator|*
 name|t
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|texture
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|vmul
 argument_list|(
@@ -12982,9 +13199,6 @@ literal|1
 condition|)
 block|{
 comment|/* Bumpmap */
-name|memcpy
-argument_list|(
-operator|&
 name|d
 operator|->
 name|normal
@@ -12993,14 +13207,9 @@ name|d
 operator|->
 name|numnormal
 index|]
-argument_list|,
+operator|=
+operator|*
 name|t
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|texture
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|vmul
 argument_list|(
@@ -13086,9 +13295,6 @@ operator|->
 name|amount
 argument_list|)
 expr_stmt|;
-name|memcpy
-argument_list|(
-operator|&
 name|world
 operator|.
 name|light
@@ -13096,17 +13302,9 @@ index|[
 name|world
 operator|.
 name|numlight
-index|]
-argument_list|,
-operator|&
+operator|=
 name|l
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|l
-argument_list|)
-argument_list|)
-expr_stmt|;
+expr|;
 name|world
 operator|.
 name|numlight
@@ -13136,7 +13334,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|drawit (gpointer data)
 name|void
 name|drawit
 parameter_list|(
@@ -13185,7 +13382,6 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|expose_event (GtkWidget * widget,GdkEventExpose * event)
 name|expose_event
 parameter_list|(
 name|GtkWidget
@@ -13209,7 +13405,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|restartrender (void)
 name|gint
 name|restartrender
 parameter_list|(
@@ -13239,7 +13434,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|destroy_window (GtkWidget * widget,GtkWidget ** window)
 name|void
 name|destroy_window
 parameter_list|(
@@ -13262,7 +13456,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|selecttexture (GtkWidget * wg,gpointer data)
 name|void
 name|selecttexture
 parameter_list|(
@@ -13318,7 +13511,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|selecttype (GtkWidget * wg,gpointer data)
 name|void
 name|selecttype
 parameter_list|(
@@ -13374,7 +13566,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|getscales (GtkWidget * wg,gpointer data)
 name|void
 name|getscales
 parameter_list|(
@@ -13586,7 +13777,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|mktexturemenu (GtkWidget * texturemenu_menu)
 name|void
 name|mktexturemenu
 parameter_list|(
@@ -13673,7 +13863,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|drawcolor1 (GtkWidget * w)
 name|void
 name|drawcolor1
 parameter_list|(
@@ -13840,7 +14029,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|drawcolor2 (GtkWidget * w)
 name|void
 name|drawcolor2
 parameter_list|(
@@ -14007,7 +14195,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|selectcolor1_ok (GtkWidget * w,gpointer d)
 name|void
 name|selectcolor1_ok
 parameter_list|(
@@ -14121,7 +14308,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|selectcolor2_ok (GtkWidget * w,gpointer d)
 name|void
 name|selectcolor2_ok
 parameter_list|(
@@ -14235,7 +14421,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|selectcolor1 (vector * col)
 name|void
 name|selectcolor1
 parameter_list|(
@@ -14447,7 +14632,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|selectcolor2 (vector * col)
 name|void
 name|selectcolor2
 parameter_list|(
@@ -14659,7 +14843,6 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|do_run
 name|int
 name|do_run
 init|=
@@ -14668,7 +14851,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|sphere_ok (GtkWidget * widget,gpointer data)
 name|void
 name|sphere_ok
 parameter_list|(
@@ -14704,7 +14886,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|sphere_cancel (GtkWidget * widget,gpointer data)
 name|void
 name|sphere_cancel
 parameter_list|(
@@ -14731,7 +14912,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|makewindow (void)
 name|GtkWidget
 modifier|*
 name|makewindow
@@ -19092,7 +19272,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|pixelval (double v)
 name|unsigned
 name|char
 name|pixelval
@@ -19130,7 +19309,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|render (void)
 name|void
 name|render
 parameter_list|(
@@ -19561,7 +19739,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|realrender (GimpDrawable * drawable)
 name|void
 name|realrender
 parameter_list|(
@@ -20144,7 +20321,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|query (void)
 name|query
 parameter_list|(
 name|void
@@ -20220,7 +20396,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|sphere_main (GimpDrawable * drawable)
 name|int
 name|sphere_main
 parameter_list|(
@@ -20291,7 +20466,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar

@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9fc8580108
+DECL|struct|__anon2b6f03480108
 block|{
 DECL|member|interlaced
 name|gint
@@ -4254,11 +4254,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Interlacing (Adam7)"
+literal|"_Interlacing (Adam7)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4328,11 +4328,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save background color"
+literal|"Save _background color"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4401,11 +4401,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save gamma"
+literal|"Save _gamma"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4474,11 +4474,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save layer offset"
+literal|"Save _layer offset"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4547,11 +4547,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save resolution"
+literal|"Save _resolution"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4620,11 +4620,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save creation time"
+literal|"Save creation _time"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4773,7 +4773,7 @@ literal|6
 argument_list|,
 name|_
 argument_list|(
-literal|"Compression Level:"
+literal|"Co_mpression Level:"
 argument_list|)
 argument_list|,
 literal|1.0
