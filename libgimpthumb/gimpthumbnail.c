@@ -219,7 +219,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae16b590103
+DECL|enum|__anon2b68a4740103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2378,6 +2378,15 @@ name|thumbnail
 operator|->
 name|thumb_state
 condition|)
+block|{
+name|g_object_freeze_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|thumbnail
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_object_set
 argument_list|(
 name|thumbnail
@@ -2389,6 +2398,20 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_thumbnail_reset_info
+argument_list|(
+name|thumbnail
+argument_list|)
+expr_stmt|;
+name|g_object_thaw_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|thumbnail
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
