@@ -162,7 +162,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27a3688b0108
+DECL|struct|__anon2c10abce0108
 typedef|typedef
 struct|struct
 block|{
@@ -202,7 +202,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27a3688b0208
+DECL|struct|__anon2c10abce0208
 typedef|typedef
 struct|struct
 block|{
@@ -311,7 +311,7 @@ comment|/* Declarations for objects of type Image */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27a3688b0308
+DECL|struct|__anon2c10abce0308
 typedef|typedef
 struct|struct
 block|{
@@ -365,7 +365,7 @@ comment|/* Declarations for objects of type Display */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27a3688b0408
+DECL|struct|__anon2c10abce0408
 typedef|typedef
 struct|struct
 block|{
@@ -419,7 +419,7 @@ comment|/* Declarations for objects of type Layer and channel */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27a3688b0508
+DECL|struct|__anon2c10abce0508
 typedef|typedef
 struct|struct
 block|{
@@ -543,7 +543,7 @@ comment|/* Declarations for objects of type Tile */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27a3688b0608
+DECL|struct|__anon2c10abce0608
 typedef|typedef
 struct|struct
 block|{
@@ -609,7 +609,7 @@ comment|/* Declarations for objects of type PixelRegion */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27a3688b0708
+DECL|struct|__anon2c10abce0708
 typedef|typedef
 struct|struct
 block|{
@@ -689,7 +689,7 @@ comment|/* Declarations for objects of type Parasite */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27a3688b0808
+DECL|struct|__anon2c10abce0808
 typedef|typedef
 struct|struct
 block|{
@@ -800,7 +800,7 @@ name|type
 condition|)
 block|{
 case|case
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 case|:
 name|fprintf
 argument_list|(
@@ -822,7 +822,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT16
+name|GIMP_PDB_INT16
 case|:
 name|fprintf
 argument_list|(
@@ -844,7 +844,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 case|:
 name|fprintf
 argument_list|(
@@ -866,7 +866,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 case|:
 name|fprintf
 argument_list|(
@@ -888,7 +888,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 case|:
 name|fprintf
 argument_list|(
@@ -910,19 +910,19 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT32ARRAY
+name|GIMP_PDB_INT32ARRAY
 case|:
 case|case
-name|PARAM_INT16ARRAY
+name|GIMP_PDB_INT16ARRAY
 case|:
 case|case
-name|PARAM_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 case|:
 case|case
-name|PARAM_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 case|:
 case|case
-name|PARAM_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 case|:
 name|fprintf
 argument_list|(
@@ -957,7 +957,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 case|:
 name|fprintf
 argument_list|(
@@ -1061,7 +1061,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PARAM_END
+name|GIMP_PDB_END
 condition|;
 name|i
 operator|++
@@ -1078,7 +1078,7 @@ name|type
 condition|)
 block|{
 case|case
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 case|:
 name|PyTuple_SetItem
 argument_list|(
@@ -1104,7 +1104,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT16
+name|GIMP_PDB_INT16
 case|:
 name|PyTuple_SetItem
 argument_list|(
@@ -1130,7 +1130,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 case|:
 name|PyTuple_SetItem
 argument_list|(
@@ -1156,7 +1156,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 case|:
 name|PyTuple_SetItem
 argument_list|(
@@ -1182,7 +1182,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 case|:
 if|if
 condition|(
@@ -1236,7 +1236,7 @@ expr_stmt|;
 break|break;
 comment|/* For these to work, the previous argument must have 	     * been an integer 	     */
 case|case
-name|PARAM_INT32ARRAY
+name|GIMP_PDB_INT32ARRAY
 case|:
 if|if
 condition|(
@@ -1381,7 +1381,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT16ARRAY
+name|GIMP_PDB_INT16ARRAY
 case|:
 if|if
 condition|(
@@ -1526,7 +1526,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 case|:
 if|if
 condition|(
@@ -1671,7 +1671,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 case|:
 if|if
 condition|(
@@ -1816,7 +1816,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 case|:
 if|if
 condition|(
@@ -1975,7 +1975,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_COLOR
+name|GIMP_PDB_COLOR
 case|:
 name|PyTuple_SetItem
 argument_list|(
@@ -2033,7 +2033,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_REGION
+name|GIMP_PDB_REGION
 case|:
 name|PyTuple_SetItem
 argument_list|(
@@ -2105,7 +2105,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_DISPLAY
+name|GIMP_PDB_DISPLAY
 case|:
 name|PyTuple_SetItem
 argument_list|(
@@ -2132,7 +2132,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 case|:
 name|PyTuple_SetItem
 argument_list|(
@@ -2159,7 +2159,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_LAYER
+name|GIMP_PDB_LAYER
 case|:
 name|PyTuple_SetItem
 argument_list|(
@@ -2186,7 +2186,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_CHANNEL
+name|GIMP_PDB_CHANNEL
 case|:
 name|PyTuple_SetItem
 argument_list|(
@@ -2213,7 +2213,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 case|:
 name|PyTuple_SetItem
 argument_list|(
@@ -2242,7 +2242,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_SELECTION
+name|GIMP_PDB_SELECTION
 case|:
 name|PyTuple_SetItem
 argument_list|(
@@ -2269,7 +2269,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_BOUNDARY
+name|GIMP_PDB_BOUNDARY
 case|:
 name|PyTuple_SetItem
 argument_list|(
@@ -2292,7 +2292,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_PATH
+name|GIMP_PDB_PATH
 case|:
 name|PyTuple_SetItem
 argument_list|(
@@ -2318,7 +2318,7 @@ ifdef|#
 directive|ifdef
 name|GIMP_HAVE_PARASITES
 case|case
-name|PARAM_PARASITE
+name|GIMP_PDB_PARASITE
 case|:
 name|PyTuple_SetItem
 argument_list|(
@@ -2353,7 +2353,7 @@ break|break;
 endif|#
 directive|endif
 case|case
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 case|:
 name|PyTuple_SetItem
 argument_list|(
@@ -2376,7 +2376,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_END
+name|GIMP_PDB_END
 case|:
 break|break;
 block|}
@@ -2585,7 +2585,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 DECL|macro|check (expr)
 define|#
@@ -2643,7 +2643,7 @@ name|type
 condition|)
 block|{
 case|case
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 case|:
 name|check
 argument_list|(
@@ -2670,7 +2670,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT16
+name|GIMP_PDB_INT16
 case|:
 name|check
 argument_list|(
@@ -2697,7 +2697,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 case|:
 name|check
 argument_list|(
@@ -2724,7 +2724,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 case|:
 name|check
 argument_list|(
@@ -2751,7 +2751,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 case|:
 name|check
 argument_list|(
@@ -2781,7 +2781,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT32ARRAY
+name|GIMP_PDB_INT32ARRAY
 case|:
 name|check
 argument_list|(
@@ -2871,7 +2871,7 @@ name|i32a
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT16ARRAY
+name|GIMP_PDB_INT16ARRAY
 case|:
 name|check
 argument_list|(
@@ -2961,7 +2961,7 @@ name|i16a
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 case|:
 name|check
 argument_list|(
@@ -3051,7 +3051,7 @@ name|i8a
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 case|:
 name|check
 argument_list|(
@@ -3141,7 +3141,7 @@ name|fa
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 case|:
 name|check
 argument_list|(
@@ -3235,7 +3235,7 @@ name|sa
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_COLOR
+name|GIMP_PDB_COLOR
 case|:
 name|check
 argument_list|(
@@ -3323,7 +3323,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_REGION
+name|GIMP_PDB_REGION
 case|:
 name|check
 argument_list|(
@@ -3436,7 +3436,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_DISPLAY
+name|GIMP_PDB_DISPLAY
 case|:
 name|check
 argument_list|(
@@ -3463,7 +3463,7 @@ name|ID
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 case|:
 if|if
 condition|(
@@ -3511,7 +3511,7 @@ name|ID
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_LAYER
+name|GIMP_PDB_LAYER
 case|:
 if|if
 condition|(
@@ -3559,7 +3559,7 @@ name|ID
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_CHANNEL
+name|GIMP_PDB_CHANNEL
 case|:
 if|if
 condition|(
@@ -3607,7 +3607,7 @@ name|ID
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 case|:
 if|if
 condition|(
@@ -3655,7 +3655,7 @@ name|ID
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_SELECTION
+name|GIMP_PDB_SELECTION
 case|:
 name|check
 argument_list|(
@@ -3682,7 +3682,7 @@ name|ID
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_BOUNDARY
+name|GIMP_PDB_BOUNDARY
 case|:
 name|check
 argument_list|(
@@ -3704,7 +3704,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_PATH
+name|GIMP_PDB_PATH
 case|:
 name|check
 argument_list|(
@@ -3729,14 +3729,14 @@ ifdef|#
 directive|ifdef
 name|GIMP_HAVE_PARASITES
 case|case
-name|PARAM_PARASITE
+name|GIMP_PDB_PARASITE
 case|:
 comment|/* can't do anything, since size of Parasite is not known */
 break|break;
 endif|#
 directive|endif
 case|case
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 case|:
 name|check
 argument_list|(
@@ -3758,7 +3758,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_END
+name|GIMP_PDB_END
 case|:
 break|break;
 block|}
@@ -4844,7 +4844,7 @@ name|nr
 decl_stmt|,
 name|i
 decl_stmt|;
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|p
 decl_stmt|,
@@ -5170,10 +5170,10 @@ end_ifndef
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_destroy_paramdefs (GParamDef * paramdefs,int nparams)
+DECL|function|gimp_destroy_paramdefs (GimpParamDef * paramdefs,int nparams)
 name|gimp_destroy_paramdefs
 parameter_list|(
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|paramdefs
 parameter_list|,
@@ -6557,7 +6557,7 @@ condition|)
 return|return
 name|NULL
 return|;
-comment|/*return_vals = gimp_run_procedure("gimp_undo_push_group_start",&nreturn_vals, PARAM_IMAGE, self->ID, 				     PARAM_END);     gimp_destroy_params(return_vals, nreturn_vals);*/
+comment|/*return_vals = gimp_run_procedure("gimp_undo_push_group_start",&nreturn_vals, GIMP_PDB_IMAGE, self->ID, 				     GIMP_PDB_END);     gimp_destroy_params(return_vals, nreturn_vals);*/
 name|gimp_image_undo_disable
 argument_list|(
 name|self
@@ -6610,7 +6610,7 @@ condition|)
 return|return
 name|NULL
 return|;
-comment|/*return_vals = gimp_run_procedure("gimp_undo_push_group_start",&nreturn_vals, PARAM_IMAGE, self->ID, 				     PARAM_END);     gimp_destroy_params(return_vals, nreturn_vals);*/
+comment|/*return_vals = gimp_run_procedure("gimp_undo_push_group_start",&nreturn_vals, GIMP_PDB_IMAGE, self->ID, 				     GIMP_PDB_END);     gimp_destroy_params(return_vals, nreturn_vals);*/
 name|gimp_image_undo_enable
 argument_list|(
 name|self
@@ -11539,17 +11539,17 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_LAYER
+name|GIMP_PDB_LAYER
 argument_list|,
 name|self
 operator|->
 name|ID
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|add_alpha
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -20064,7 +20064,7 @@ decl_stmt|,
 modifier|*
 name|ret
 decl_stmt|;
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|pd
 decl_stmt|,
@@ -20226,7 +20226,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 operator|(
 operator|*
@@ -20303,7 +20303,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 operator|(
 operator|*
@@ -20374,7 +20374,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 operator|(
 operator|*
@@ -20414,7 +20414,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 operator|(
 operator|*
@@ -20907,19 +20907,19 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|id
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|bytes
 argument_list|,
-name|PARAM_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 argument_list|,
 name|data
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -21026,11 +21026,11 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|id
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
