@@ -133,7 +133,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_progress_set_text
 parameter_list|(
 specifier|const

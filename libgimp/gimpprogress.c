@@ -468,7 +468,7 @@ comment|/**  * gimp_progress_set_text:  * @format: a standard printf() format st
 end_comment
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_progress_set_text (const gchar * format,...)
 name|gimp_progress_set_text
 parameter_list|(
