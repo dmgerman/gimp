@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<time.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -270,7 +276,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aea9b4e0103
+DECL|enum|__anon2780d3e70103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -340,7 +346,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aea9b4e0203
+DECL|enum|__anon2780d3e70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2148,6 +2154,12 @@ operator|->
 name|dirty
 operator|=
 literal|1
+expr_stmt|;
+name|gimage
+operator|->
+name|dirty_time
+operator|=
+literal|0
 expr_stmt|;
 name|gimage
 operator|->
@@ -7192,6 +7204,22 @@ operator|->
 name|dirty
 operator|++
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimage
+operator|->
+name|dirty_time
+condition|)
+name|gimage
+operator|->
+name|dirty_time
+operator|=
+name|time
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_signal_emit
 argument_list|(
 name|gimage
@@ -7319,6 +7347,12 @@ expr_stmt|;
 name|gimage
 operator|->
 name|dirty
+operator|=
+literal|0
+expr_stmt|;
+name|gimage
+operator|->
+name|dirty_time
 operator|=
 literal|0
 expr_stmt|;

@@ -289,6 +289,11 @@ name|gint
 name|dirty
 decl_stmt|;
 comment|/*  dirty flag -- # of ops       */
+DECL|member|dirty_time
+name|guint
+name|dirty_time
+decl_stmt|;
+comment|/*  time when image became dirty */
 DECL|member|undo_freeze_count
 name|gint
 name|undo_freeze_count
