@@ -605,7 +605,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_sync:  * @src: a #GimpConfig  * @dest: another #GimpConfig of the same type as @src  * @flags: a mask of GParamFlags  *  * Compares all read- and write-able properties from @src and @dest  * that have all @flags set. Differing values are then copied from  * @src to @dest. If @flags is 0, all differing read/write properties  * are synced.  **/
+comment|/**  * gimp_config_sync:  * @src: a #GimpConfig  * @dest: another #GimpConfig of the same type as @src  * @flags: a mask of GParamFlags  *  * Compares all read- and write-able properties from @src and @dest  * that have all @flags set. Differing values are then copied from  * @src to @dest. If @flags is 0, all differing read/write properties  * are synced.  *  * Return value: %TRUE if @dest was modified, %FALSE otherwise  **/
 end_comment
 
 begin_function
