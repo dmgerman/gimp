@@ -251,7 +251,7 @@ modifier|*
 name|save_proc
 parameter_list|,
 name|gboolean
-name|set_uri
+name|set_uri_and_proc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -290,10 +290,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|set_uri
+DECL|variable|set_uri_and_proc
 specifier|static
 name|gboolean
-name|set_uri
+name|set_uri_and_proc
 init|=
 name|TRUE
 decl_stmt|;
@@ -385,7 +385,7 @@ name|the_gimage
 operator|=
 name|gimage
 expr_stmt|;
-name|set_uri
+name|set_uri_and_proc
 operator|=
 name|TRUE
 expr_stmt|;
@@ -561,7 +561,7 @@ name|the_gimage
 operator|=
 name|gimage
 expr_stmt|;
-name|set_uri
+name|set_uri_and_proc
 operator|=
 name|FALSE
 expr_stmt|;
@@ -1150,7 +1150,7 @@ name|raw_filename
 argument_list|,
 name|save_file_proc
 argument_list|,
-name|set_uri
+name|set_uri_and_proc
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -1231,7 +1231,11 @@ name|query_box
 decl_stmt|;
 name|gchar
 modifier|*
-name|overwrite_text
+name|filename
+decl_stmt|;
+name|gchar
+modifier|*
+name|message
 decl_stmt|;
 name|overwrite_data
 operator|=
@@ -1266,7 +1270,14 @@ argument_list|(
 name|raw_filename
 argument_list|)
 expr_stmt|;
-name|overwrite_text
+name|filename
+operator|=
+name|file_utils_uri_to_utf8_filename
+argument_list|(
+name|uri
+argument_list|)
+expr_stmt|;
+name|message
 operator|=
 name|g_strdup_printf
 argument_list|(
@@ -1276,7 +1287,12 @@ literal|"File '%s' exists.\n"
 literal|"Overwrite it?"
 argument_list|)
 argument_list|,
-name|uri
+name|filename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 name|query_box
@@ -1294,7 +1310,7 @@ literal|"save/file_exists.html"
 argument_list|,
 name|GTK_STOCK_DIALOG_QUESTION
 argument_list|,
-name|overwrite_text
+name|message
 argument_list|,
 name|GTK_STOCK_YES
 argument_list|,
@@ -1311,7 +1327,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|overwrite_text
+name|message
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1381,7 +1397,7 @@ name|raw_filename
 argument_list|,
 name|save_file_proc
 argument_list|,
-name|set_uri
+name|set_uri_and_proc
 argument_list|)
 expr_stmt|;
 block|}
@@ -1419,7 +1435,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_save_dialog_save_image (GtkWidget * save_dialog,GimpImage * gimage,const gchar * uri,const gchar * raw_filename,PlugInProcDef * save_proc,gboolean set_uri)
+DECL|function|file_save_dialog_save_image (GtkWidget * save_dialog,GimpImage * gimage,const gchar * uri,const gchar * raw_filename,PlugInProcDef * save_proc,gboolean set_uri_and_proc)
 name|file_save_dialog_save_image
 parameter_list|(
 name|GtkWidget
@@ -1445,7 +1461,7 @@ modifier|*
 name|save_proc
 parameter_list|,
 name|gboolean
-name|set_uri
+name|set_uri_and_proc
 parameter_list|)
 block|{
 name|GimpPDBStatusType
@@ -1453,7 +1469,7 @@ name|status
 decl_stmt|;
 name|status
 operator|=
-name|file_save
+name|file_save_as
 argument_list|(
 name|gimage
 argument_list|,
@@ -1465,7 +1481,7 @@ name|save_proc
 argument_list|,
 name|GIMP_RUN_INTERACTIVE
 argument_list|,
-name|set_uri
+name|set_uri_and_proc
 argument_list|)
 expr_stmt|;
 if|if

@@ -635,15 +635,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|uri
-argument_list|,
-name|uri
-argument_list|,
-name|NULL
-argument_list|,
 name|GIMP_RUN_WITH_LAST_VALS
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
@@ -657,6 +649,17 @@ operator|!=
 name|GIMP_PDB_CANCEL
 condition|)
 block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
+name|filename
+operator|=
+name|file_utils_uri_to_utf8_basename
+argument_list|(
+name|uri
+argument_list|)
+expr_stmt|;
 comment|/* Error message should be added. --bex */
 name|g_message
 argument_list|(
@@ -665,7 +668,12 @@ argument_list|(
 literal|"Saving '%s' failed."
 argument_list|)
 argument_list|,
-name|uri
+name|filename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 block|}
