@@ -4354,7 +4354,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon288cfe830108
+DECL|struct|__anon2c4a96660108
 typedef|typedef
 struct|struct
 block|{
@@ -10404,12 +10404,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|GIMP_DRAWABLE
+name|layer_get_name
 argument_list|(
 name|layer
 argument_list|)
-operator|->
-name|name
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -14229,14 +14227,12 @@ expr_stmt|;
 else|else
 name|name
 operator|=
-name|GIMP_DRAWABLE
+name|layer_get_name
 argument_list|(
 name|layer_widget
 operator|->
 name|layer
 argument_list|)
-operator|->
-name|name
 expr_stmt|;
 comment|/*  we need to set the name label if necessary  */
 name|gtk_label_get
@@ -15963,7 +15959,7 @@ operator|->
 name|name
 condition|)
 block|{
-comment|/*  If the layer is a floating selection, make it a channel  */
+comment|/*  If the layer is a floating selection, make it a layer  */
 if|if
 condition|(
 name|layer_is_floating_sel
@@ -15978,26 +15974,11 @@ name|layer
 argument_list|)
 expr_stmt|;
 block|}
-name|g_free
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-operator|->
-name|name
-argument_list|)
-expr_stmt|;
 block|}
-name|GIMP_DRAWABLE
+name|layer_set_name
 argument_list|(
 name|layer
-argument_list|)
-operator|->
-name|name
-operator|=
-name|g_strdup
-argument_list|(
+argument_list|,
 name|gtk_entry_get_text
 argument_list|(
 name|GTK_ENTRY
@@ -16387,14 +16368,12 @@ argument_list|)
 condition|?
 literal|"Floating Selection"
 else|:
-name|GIMP_DRAWABLE
+name|layer_get_name
 argument_list|(
 name|layer_widget
 operator|->
 name|layer
 argument_list|)
-operator|->
-name|name
 operator|)
 operator|)
 argument_list|)

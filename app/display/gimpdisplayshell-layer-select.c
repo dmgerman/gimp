@@ -1417,7 +1417,7 @@ operator|->
 name|label
 argument_list|)
 argument_list|,
-name|drawable_name
+name|drawable_get_name
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

@@ -245,11 +245,19 @@ value|gimp_drawable_cmap
 end_define
 
 begin_define
-DECL|macro|drawable_name
+DECL|macro|drawable_get_name
 define|#
 directive|define
-name|drawable_name
-value|gimp_drawable_name
+name|drawable_get_name
+value|gimp_drawable_get_name
+end_define
+
+begin_define
+DECL|macro|drawable_set_name
+define|#
+directive|define
+name|drawable_set_name
+value|gimp_drawable_set_name
 end_define
 
 begin_define

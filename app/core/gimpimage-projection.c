@@ -455,7 +455,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2bf24c570103
+DECL|enum|__anon278d11200103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -8799,7 +8799,7 @@ operator|)
 argument_list|,
 name|type
 argument_list|,
-name|drawable_name
+name|drawable_get_name
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -8930,7 +8930,7 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_name
+name|drawable_get_name
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
