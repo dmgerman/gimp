@@ -5963,11 +5963,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
-name|count
-init|=
-literal|0
-decl_stmt|;
+comment|/*  int count = 0; */
 comment|/*  traverse the linked list of displays  */
 while|while
 condition|(
@@ -5996,11 +5992,8 @@ name|ID
 condition|)
 block|{
 comment|/*  We only need to update the first instance that 	      we find of this gimage ID.  Otherwise, we would 	      be reconverting the same region unnecessarily.   */
-if|if
-condition|(
-operator|!
-name|count
-condition|)
+comment|/* Um.. I don't think so. If you only do this to the first 	     instance, you don't update other gdisplays pointing to this 	     gimage.  I'm going to comment this out to show how it was in 	     case we need to change it back.  msw 4/15/1998 	  */
+comment|/* 	  if (! count) 	    gdisplay_add_update_area (gdisp, x, y, w, h); 	  else 	    { 	      gdisplay_transform_coords (gdisp, x, y,&x1,&y1, 0); 	      gdisplay_transform_coords (gdisp, x + w, y + h,&x2,&y2, 0); 	      gdisplay_add_display_area (gdisp, x1, y1, (x2 - x1), (y2 - y1)); 	    } 	  */
 name|gdisplay_add_update_area
 argument_list|(
 name|gdisp
@@ -6014,8 +6007,6 @@ argument_list|,
 name|h
 argument_list|)
 expr_stmt|;
-else|else
-block|{
 name|gdisplay_transform_coords
 argument_list|(
 name|gdisp
@@ -6074,10 +6065,6 @@ operator|-
 name|y1
 operator|)
 argument_list|)
-expr_stmt|;
-block|}
-name|count
-operator|++
 expr_stmt|;
 block|}
 name|list
