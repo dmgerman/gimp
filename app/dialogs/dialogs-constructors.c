@@ -258,6 +258,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimptooloptionseditor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpundoeditor.h"
 end_include
 
@@ -355,12 +361,6 @@ begin_include
 include|#
 directive|include
 file|"tips-dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool-options-dialog.h"
 end_include
 
 begin_include
@@ -999,11 +999,15 @@ name|NULL
 return|;
 name|view
 operator|=
-name|tool_options_dialog_create
+name|gimp_tool_options_editor_new
 argument_list|(
 name|context
 operator|->
 name|gimp
+argument_list|,
+name|factory
+operator|->
+name|menu_factory
 argument_list|)
 expr_stmt|;
 name|g_object_add_weak_pointer
@@ -1046,7 +1050,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|dialogs_get_view_menu_func
 argument_list|)
 return|;
 block|}

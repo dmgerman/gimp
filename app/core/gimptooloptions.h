@@ -159,6 +159,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gchar
+modifier|*
+name|gimp_tool_options_build_filename
+parameter_list|(
+name|GimpToolOptions
+modifier|*
+name|tool_options
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|extension
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_tool_options_serialize
 parameter_list|(

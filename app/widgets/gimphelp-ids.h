@@ -2241,6 +2241,22 @@ value|"gimp-tool-options-dialog"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_OPTIONS_SAVE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_OPTIONS_SAVE
+value|"gimp-tool-options-save"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_OPTIONS_RESTORE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_OPTIONS_RESTORE
+value|"gimp-tool-options-restore"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_OPTIONS_RESET
 define|#
 directive|define

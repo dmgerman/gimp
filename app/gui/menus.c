@@ -210,6 +210,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tool-options-menu.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"toolbox-menu.h"
 end_include
 
@@ -886,6 +892,30 @@ argument_list|,
 name|n_error_console_menu_entries
 argument_list|,
 name|error_console_menu_entries
+argument_list|)
+expr_stmt|;
+name|gimp_menu_factory_menu_register
+argument_list|(
+name|global_menu_factory
+argument_list|,
+literal|"<ToolOptions>"
+argument_list|,
+name|_
+argument_list|(
+literal|"Tool Options Menu"
+argument_list|)
+argument_list|,
+name|GIMP_HELP_TOOL_OPTIONS_DIALOG
+argument_list|,
+name|NULL
+argument_list|,
+name|tool_options_menu_update
+argument_list|,
+name|TRUE
+argument_list|,
+name|n_tool_options_menu_entries
+argument_list|,
+name|tool_options_menu_entries
 argument_list|)
 expr_stmt|;
 block|}

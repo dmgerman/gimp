@@ -164,6 +164,11 @@ name|GimpPaintInfo
 modifier|*
 name|paint_info
 decl_stmt|;
+DECL|member|options_presets
+name|GimpContainer
+modifier|*
+name|options_presets
+decl_stmt|;
 block|}
 struct|;
 end_struct

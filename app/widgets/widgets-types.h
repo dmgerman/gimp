@@ -340,6 +340,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpToolOptionsEditor
+typedef|typedef
+name|struct
+name|_GimpToolOptionsEditor
+name|GimpToolOptionsEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpUndoEditor
 typedef|typedef
 name|struct
