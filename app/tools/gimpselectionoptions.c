@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpfuzzyselecttool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprectselecttool.h"
 end_include
 

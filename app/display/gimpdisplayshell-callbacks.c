@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tools/gimpfuzzyselecttool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/gimpmovetool.h"
 end_include
 
@@ -1504,7 +1510,7 @@ name|gimp_busy
 operator|&&
 operator|!
 operator|(
-name|GIMP_IS_FUZZY_SELECT
+name|GIMP_IS_FUZZY_SELECT_TOOL
 argument_list|(
 name|active_tool
 argument_list|)
@@ -1741,7 +1747,7 @@ name|gimp_busy
 operator|&&
 operator|!
 operator|(
-name|GIMP_IS_FUZZY_SELECT
+name|GIMP_IS_FUZZY_SELECT_TOOL
 argument_list|(
 name|active_tool
 argument_list|)
@@ -1756,7 +1762,7 @@ condition|)
 return|return
 name|TRUE
 return|;
-comment|/* Ask for the pointer position, but ignore it except for cursor       * handling, so motion events sync with the button press/release events        */
+comment|/* Ask for the pointer position, but ignore it except for cursor        * handling, so motion events sync with the button press/release events         */
 if|if
 condition|(
 name|mevent

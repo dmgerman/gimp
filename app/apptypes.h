@@ -269,6 +269,15 @@ name|GimpDrawTool
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpTransformTool
+typedef|typedef
+name|struct
+name|_GimpTransformTool
+name|GimpTransformTool
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  undo objects  */
 end_comment
@@ -789,15 +798,6 @@ typedef|typedef
 name|struct
 name|_SelectionOptions
 name|SelectionOptions
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpTransformTool
-typedef|typedef
-name|struct
-name|_GimpTransformTool
-name|GimpTransformTool
 typedef|;
 end_typedef
 

@@ -6,19 +6,148 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__FREE_SELECT_H__
+name|__GIMP_FREE_SELECT_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__FREE_SELECT_H__
+DECL|macro|__GIMP_FREE_SELECT_TOOL_H__
 define|#
 directive|define
-name|__FREE_SELECT_H__
+name|__GIMP_FREE_SELECT_TOOL_H__
 end_define
 
-begin_comment
-comment|/*  free select functions  */
-end_comment
+begin_include
+include|#
+directive|include
+file|"gimpselectiontool.h"
+end_include
+
+begin_define
+DECL|macro|GIMP_TYPE_FREE_SELECT_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_FREE_SELECT_TOOL
+value|(gimp_free_select_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_FREE_SELECT_TOOL (obj)
+define|#
+directive|define
+name|GIMP_FREE_SELECT_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_FREE_SELECT_TOOL, GimpFreeSelectTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_FREE_SELECT_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_FREE_SELECT_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_FREE_SELECT_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_FREE_SELECT_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_FREE_SELECT_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_FREE_SELECT_TOOL, GimpFreeSelectToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_FREE_SELECT_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_FREE_SELECT_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_FREE_SELECT_TOOL))
+end_define
+
+begin_typedef
+DECL|typedef|GimpFreeSelectTool
+typedef|typedef
+name|struct
+name|_GimpFreeSelectTool
+name|GimpFreeSelectTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpFreeSelectToolClass
+typedef|typedef
+name|struct
+name|_GimpFreeSelectToolClass
+name|GimpFreeSelectToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpFreeSelectTool
+struct|struct
+name|_GimpFreeSelectTool
+block|{
+DECL|member|parent_instance
+name|GimpSelectionTool
+name|parent_instance
+decl_stmt|;
+DECL|member|points
+name|GdkPoint
+modifier|*
+name|points
+decl_stmt|;
+DECL|member|num_points
+name|gint
+name|num_points
+decl_stmt|;
+DECL|member|max_segs
+name|gint
+name|max_segs
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpFreeSelectToolClass
+struct|struct
+name|_GimpFreeSelectToolClass
+block|{
+DECL|member|parent_class
+name|GimpSelectionToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_function_decl
+name|void
+name|gimp_free_select_tool_register
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkType
+name|gimp_free_select_tool_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void
@@ -50,45 +179,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|free_select_draw
-parameter_list|(
-name|Tool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|Tool
-modifier|*
-name|tools_new_free_select
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|tools_free_free_select
-parameter_list|(
-name|Tool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*  __FREE_SELECT_H__  */
+comment|/*  __GIMP_FREE_SELECT_TOOL_H__  */
 end_comment
 
 end_unit
