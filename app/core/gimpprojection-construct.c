@@ -435,7 +435,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b6e964c0103
+DECL|enum|__anon28ac42500103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -7900,6 +7900,12 @@ name|merge_list
 argument_list|,
 name|merge_type
 argument_list|)
+expr_stmt|;
+name|layer
+operator|->
+name|opacity
+operator|=
+literal|255
 expr_stmt|;
 name|g_slist_free
 argument_list|(
