@@ -1087,7 +1087,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2aa7560103
+DECL|enum|__anon2c39a33e0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1101,7 +1101,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2aa7560203
+DECL|enum|__anon2c39a33e0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -1652,6 +1652,8 @@ argument_list|,
 literal|1
 argument_list|,
 name|GIMP_TYPE_COLOR
+operator||
+name|G_SIGNAL_TYPE_STATIC_SCOPE
 argument_list|)
 expr_stmt|;
 name|gimp_context_signals
@@ -1688,6 +1690,8 @@ argument_list|,
 literal|1
 argument_list|,
 name|GIMP_TYPE_COLOR
+operator||
+name|G_SIGNAL_TYPE_STATIC_SCOPE
 argument_list|)
 expr_stmt|;
 name|gimp_context_signals

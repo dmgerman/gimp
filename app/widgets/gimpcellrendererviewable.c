@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2925632d0103
+DECL|enum|__anon28d2df200103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2925632d0203
+DECL|enum|__anon28d2df200203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -443,7 +443,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__STRING_UINT
+name|gimp_marshal_VOID__STRING_FLAGS
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -451,7 +451,7 @@ literal|2
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
-name|G_TYPE_UINT
+name|GDK_TYPE_MODIFIER_TYPE
 argument_list|)
 expr_stmt|;
 name|object_class

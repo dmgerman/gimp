@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27de8bfe0103
+DECL|enum|__anon2bae15c20103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -547,13 +547,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__UINT
+name|gimp_marshal_VOID__FLAGS
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_UINT
+name|GDK_TYPE_MODIFIER_TYPE
 argument_list|)
 expr_stmt|;
 name|preview_signals

@@ -113,7 +113,7 @@ name|parent_instance
 decl_stmt|;
 comment|/*< private>*/
 DECL|member|press_state
-name|guint
+name|GdkModifierType
 name|press_state
 decl_stmt|;
 block|}
@@ -140,7 +140,7 @@ name|GimpButton
 modifier|*
 name|preview
 parameter_list|,
-name|guint
+name|GdkModifierType
 name|modifier_state
 parameter_list|)
 function_decl|;
@@ -176,7 +176,7 @@ name|GimpButton
 modifier|*
 name|button
 parameter_list|,
-name|guint
+name|GdkModifierType
 name|state
 parameter_list|)
 function_decl|;

@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2ba6040103
+DECL|enum|__anon2c6d36e30103
 block|{
 DECL|enumerator|EXTENDED_CLICKED
 name|EXTENDED_CLICKED
@@ -276,13 +276,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__UINT
+name|g_cclosure_marshal_VOID__FLAGS
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_UINT
+name|GDK_TYPE_MODIFIER_TYPE
 argument_list|)
 expr_stmt|;
 name|widget_class
@@ -361,14 +361,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_button_extended_clicked (GimpButton * button,guint state)
+DECL|function|gimp_button_extended_clicked (GimpButton * button,GdkModifierType state)
 name|gimp_button_extended_clicked
 parameter_list|(
 name|GimpButton
 modifier|*
 name|button
 parameter_list|,
-name|guint
+name|GdkModifierType
 name|state
 parameter_list|)
 block|{
