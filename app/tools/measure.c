@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_options_ui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -106,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd3fd9c0103
+DECL|enum|__anon2ba6ab8d0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -158,17 +152,17 @@ name|function
 decl_stmt|;
 comment|/*  what are we doing?         */
 DECL|member|point
-name|int
+name|gint
 name|point
 decl_stmt|;
 comment|/*  what are we manipulating?  */
 DECL|member|num_points
-name|int
+name|gint
 name|num_points
 decl_stmt|;
 comment|/*  how many points?           */
 DECL|member|x
-name|int
+name|gint
 name|x
 index|[
 literal|3
@@ -176,7 +170,7 @@ index|]
 decl_stmt|;
 comment|/*  three x coordinates        */
 DECL|member|y
-name|int
+name|gint
 name|y
 index|[
 literal|3
@@ -184,12 +178,12 @@ index|]
 decl_stmt|;
 comment|/*  three y coordinates        */
 DECL|member|angle1
-name|double
+name|gdouble
 name|angle1
 decl_stmt|;
 comment|/*  first angle                */
 DECL|member|angle2
-name|double
+name|gdouble
 name|angle2
 decl_stmt|;
 comment|/*  second angle               */
@@ -556,10 +550,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_toggle_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -891,7 +885,7 @@ name|bevent
 operator|->
 name|x
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|bevent
 operator|->
@@ -916,7 +910,7 @@ name|bevent
 operator|->
 name|y
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|bevent
 operator|->
@@ -971,7 +965,7 @@ index|[
 name|i
 index|]
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|measure_tool
 operator|->
@@ -1046,7 +1040,7 @@ index|[
 name|i
 index|]
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|measure_tool
 operator|->
@@ -1407,7 +1401,7 @@ name|state
 operator|=
 name|ACTIVE
 expr_stmt|;
-comment|/*  set the pointer to the crosshair, so one actually sees the cursor position  */
+comment|/*  set the pointer to the crosshair,    *  so one actually sees the cursor position    */
 name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp

@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdk/gdkkeysyms.h"
+file|<gdk/gdkkeysyms.h>
 end_include
 
 begin_include
@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint_funcs.h"
 end_include
 
@@ -79,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool_options_ui.h"
 end_include
 
 begin_include
@@ -329,16 +329,11 @@ decl_stmt|;
 comment|/*  the new eraser tool options structure  */
 name|options
 operator|=
-operator|(
-name|EraserOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|EraserOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|paint_options_init
@@ -429,10 +424,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_toggle_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -503,10 +498,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_toggle_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|options

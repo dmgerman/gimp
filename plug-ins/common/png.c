@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Portable Network Graphics (PNG) plug-in for The GIMP -- an image  *   manipulation program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com) and  *   Daniel Skarda (0rfelyus@atrey.karlin.mff.cuni.cz).  *   and 1999 Nick Lamb (njl195@zepler.org.uk)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   save_image()                - Save the specified image to a PNG file.  *   save_close_callback()       - Close the save dialog window.  *   save_ok_callback()          - Destroy the save dialog and save the image.  *   save_compression_callback() - Update the image compression level.  *   save_interlace_update()     - Update the interlacing option.  *   save_dialog()               - Pop up the save dialog.  *  * Revision History:  *  *   see ChangeLog  */
+comment|/*  * "$Id$"  *  *   Portable Network Graphics (PNG) plug-in for The GIMP -- an image  *   manipulation program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com) and  *   Daniel Skarda (0rfelyus@atrey.karlin.mff.cuni.cz).  *   and 1999 Nick Lamb (njl195@zepler.org.uk)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   save_image()                - Save the specified image to a PNG file.  *   save_ok_callback()          - Destroy the save dialog and save the image.  *   save_compression_callback() - Update the image compression level.  *   save_interlace_update()     - Update the interlacing option.  *   save_dialog()               - Pop up the save dialog.  *  * Revision History:  *  *   see ChangeLog  */
 end_comment
 
 begin_include
@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e800840108
+DECL|struct|__anon28b27a1f0108
 block|{
 DECL|member|interlaced
 name|gint
@@ -135,20 +135,25 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
+name|name
 parameter_list|,
-name|int
-parameter_list|,
-name|GParam
-modifier|*
-parameter_list|,
-name|int
-modifier|*
+name|gint
+name|nparams
 parameter_list|,
 name|GParam
 modifier|*
+name|param
+parameter_list|,
+name|gint
 modifier|*
+name|nreturn_vals
+parameter_list|,
+name|GParam
+modifier|*
+modifier|*
+name|return_vals
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -158,8 +163,9 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
+name|filename
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -169,14 +175,18 @@ specifier|static
 name|gint
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
+name|filename
 parameter_list|,
 name|gint32
+name|image_ID
 parameter_list|,
 name|gint32
+name|drawable_ID
 parameter_list|,
 name|gint32
+name|orig_image_ID
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -208,8 +218,10 @@ name|save_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -221,8 +233,10 @@ name|save_compression_update
 parameter_list|(
 name|GtkAdjustment
 modifier|*
+name|adjustment
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -234,8 +248,10 @@ name|save_interlace_update
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -577,15 +593,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
 comment|/* I - Name of filter program. */
-name|int
+name|gint
 name|nparams
 parameter_list|,
 comment|/* I - Number of parameters passed in */
@@ -594,7 +610,7 @@ modifier|*
 name|param
 parameter_list|,
 comment|/* I - Parameter values */
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -871,7 +887,7 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
-comment|/*           * Possibly retrieve data...           */
+comment|/* 	   * Possibly retrieve data... 	   */
 name|gimp_get_data
 argument_list|(
 literal|"file_png_save"
@@ -880,19 +896,21 @@ operator|&
 name|pngvals
 argument_list|)
 expr_stmt|;
-comment|/*           * Then acquire information with a dialog...           */
+comment|/* 	   * Then acquire information with a dialog... 	   */
 if|if
 condition|(
 operator|!
 name|save_dialog
 argument_list|()
 condition|)
-return|return;
+goto|goto
+name|finish
+goto|;
 break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
-comment|/*           * Make sure all the arguments are there!           */
+comment|/* 	   * Make sure all the arguments are there! 	   */
 if|if
 condition|(
 name|nparams
@@ -982,7 +1000,7 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
-comment|/*           * Possibly retrieve data...           */
+comment|/* 	   * Possibly retrieve data... 	   */
 name|gimp_get_data
 argument_list|(
 literal|"file_png_save"
@@ -992,7 +1010,7 @@ name|pngvals
 argument_list|)
 expr_stmt|;
 break|break;
-default|default :
+default|default:
 break|break;
 block|}
 empty_stmt|;
@@ -1057,6 +1075,8 @@ name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 block|}
 empty_stmt|;
+name|finish
+label|:
 if|if
 condition|(
 name|export
@@ -1091,10 +1111,10 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (char * filename)
+DECL|function|load_image (gchar * filename)
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -2305,10 +2325,10 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (char * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID)
+DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID)
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -3381,10 +3401,6 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/*  * 'save_ok_callback()' - Destroy the save dialog and save the image.  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -3395,11 +3411,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-comment|/* I - OK button */
 name|gpointer
 name|data
 parameter_list|)
-comment|/* I - Callback data */
 block|{
 name|runme
 operator|=
@@ -3416,10 +3430,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  * 'save_compression_callback()' - Update the image compression level.  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -3430,11 +3440,9 @@ name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|,
-comment|/* I - Scale adjustment */
 name|gpointer
 name|data
 parameter_list|)
-comment|/* I - Callback data */
 block|{
 name|pngvals
 operator|.
@@ -3450,10 +3458,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  * 'save_interlace_update()' - Update the interlacing option.  */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -3464,11 +3468,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-comment|/* I - Interlace toggle button */
 name|gpointer
 name|data
 parameter_list|)
-comment|/* I - Callback data  */
 block|{
 name|pngvals
 operator|.
@@ -3494,11 +3496,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-comment|/* I - Interlace toggle button */
 name|gpointer
 name|data
 parameter_list|)
-comment|/* I - Callback data  */
 block|{
 name|pngvals
 operator|.
@@ -3573,10 +3573,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  * 'save_dialog()' - Pop up the save dialog.  */
-end_comment
-
 begin_function
 specifier|static
 name|gint
@@ -3589,34 +3585,31 @@ block|{
 name|GtkWidget
 modifier|*
 name|dlg
-decl_stmt|,
-comment|/* Dialog window */
+decl_stmt|;
+name|GtkWidget
 modifier|*
 name|frame
-decl_stmt|,
-comment|/* Frame for dialog */
+decl_stmt|;
+name|GtkWidget
 modifier|*
 name|table
-decl_stmt|,
-comment|/* Table for dialog options */
+decl_stmt|;
+name|GtkWidget
 modifier|*
 name|toggle
-decl_stmt|,
-comment|/* Interlace toggle button */
+decl_stmt|;
+name|GtkWidget
 modifier|*
 name|label
-decl_stmt|,
-comment|/* Label for controls */
+decl_stmt|;
+name|GtkWidget
 modifier|*
 name|scale
 decl_stmt|;
-comment|/* Compression level scale */
 name|GtkObject
 modifier|*
 name|scale_data
 decl_stmt|;
-comment|/* Scale data */
-comment|/*   * Open a dialog window...   */
 name|dlg
 operator|=
 name|gimp_dialog_new
@@ -3694,7 +3687,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*   * Compression level, interlacing controls...   */
 name|frame
 operator|=
 name|gtk_frame_new
@@ -3744,6 +3736,11 @@ argument_list|,
 name|TRUE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|frame
 argument_list|)
 expr_stmt|;
 name|table
@@ -3797,6 +3794,11 @@ argument_list|,
 name|table
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|table
+argument_list|)
+expr_stmt|;
 name|toggle
 operator|=
 name|gtk_check_button_new_with_label
@@ -3842,10 +3844,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|save_interlace_update
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3873,7 +3875,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Skip ancillary chunks"
+literal|"Skip Ancillary Chunks"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3912,10 +3914,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|save_noextras_update
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3983,6 +3985,11 @@ argument_list|,
 literal|0
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|label
 argument_list|)
 expr_stmt|;
 name|scale_data
@@ -4088,32 +4095,17 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|save_compression_update
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
 name|scale
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|table
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -4128,9 +4120,7 @@ name|gdk_flush
 argument_list|()
 expr_stmt|;
 return|return
-operator|(
 name|runme
-operator|)
 return|;
 block|}
 end_function

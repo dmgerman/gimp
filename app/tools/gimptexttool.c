@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"global_edit.h"
 end_include
 
@@ -91,12 +97,6 @@ begin_include
 include|#
 directive|include
 file|"text_tool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool_options_ui.h"
 end_include
 
 begin_include
@@ -671,16 +671,11 @@ decl_stmt|;
 comment|/*  the new text tool options structure  */
 name|options
 operator|=
-operator|(
-name|TextOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|TextOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|tool_options_init
@@ -762,10 +757,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_toggle_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -901,10 +896,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_int_adjustment_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_int_adjustment_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -1033,10 +1028,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_toggle_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|options

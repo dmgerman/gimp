@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdk/gdkkeysyms.h"
+file|<gdk/gdkkeysyms.h>
 end_include
 
 begin_include
@@ -79,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"info_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool_options_ui.h"
 end_include
 
 begin_include
@@ -194,28 +188,28 @@ name|core
 decl_stmt|;
 comment|/*  Core select object          */
 DECL|member|startx
-name|int
+name|gint
 name|startx
 decl_stmt|;
 comment|/*  starting x coord            */
 DECL|member|starty
-name|int
+name|gint
 name|starty
 decl_stmt|;
 comment|/*  starting y coord            */
 DECL|member|lastx
-name|int
+name|gint
 name|lastx
 decl_stmt|;
 comment|/*  previous x coord            */
 DECL|member|lasty
-name|int
+name|gint
 name|lasty
 decl_stmt|;
 comment|/*  previous y coord            */
 DECL|member|x1
 DECL|member|y1
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -223,7 +217,7 @@ decl_stmt|;
 comment|/*  upper left hand coordinate  */
 DECL|member|x2
 DECL|member|y2
-name|int
+name|gint
 name|x2
 decl_stmt|,
 name|y2
@@ -231,7 +225,7 @@ decl_stmt|;
 comment|/*  lower right hand coords     */
 DECL|member|srw
 DECL|member|srh
-name|int
+name|gint
 name|srw
 decl_stmt|,
 name|srh
@@ -239,7 +233,7 @@ decl_stmt|;
 comment|/*  width and height of corners */
 DECL|member|tx1
 DECL|member|ty1
-name|int
+name|gint
 name|tx1
 decl_stmt|,
 name|ty1
@@ -247,14 +241,14 @@ decl_stmt|;
 comment|/*  transformed coords          */
 DECL|member|tx2
 DECL|member|ty2
-name|int
+name|gint
 name|tx2
 decl_stmt|,
 name|ty2
 decl_stmt|;
 comment|/*                              */
 DECL|member|function
-name|int
+name|gint
 name|function
 decl_stmt|;
 comment|/*  moving or resizing          */
@@ -639,7 +633,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd9acd20103
+DECL|enum|__anon2ad4ab130103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -906,50 +900,14 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
-name|gchar
-modifier|*
-name|type_label
-index|[
-literal|2
-index|]
-init|=
-block|{
-name|N_
-argument_list|(
-literal|"Crop"
-argument_list|)
-block|,
-name|N_
-argument_list|(
-literal|"Resize"
-argument_list|)
-block|}
-decl_stmt|;
-name|gint
-name|type_value
-index|[
-literal|2
-index|]
-init|=
-block|{
-name|CROP_CROP
-block|,
-name|RESIZE_CROP
-block|}
-decl_stmt|;
 comment|/*  the new crop tool options structure  */
 name|options
 operator|=
-operator|(
-name|CropOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|CropOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|tool_options_init
@@ -1049,10 +1007,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_toggle_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -1123,10 +1081,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_toggle_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -1158,44 +1116,66 @@ expr_stmt|;
 comment|/*  tool toggle  */
 name|frame
 operator|=
-name|tool_options_radio_buttons_new
+name|gimp_radio_group_new2
 argument_list|(
+name|TRUE
+argument_list|,
 name|_
 argument_list|(
 literal|"Tool Toggle"
 argument_list|)
+argument_list|,
+name|gimp_radio_button_update
 argument_list|,
 operator|&
 name|options
 operator|->
 name|type
 argument_list|,
+operator|(
+name|gpointer
+operator|)
 name|options
 operator|->
-name|type_w
+name|type
 argument_list|,
-name|type_label
-argument_list|,
-name|type_value
-argument_list|,
-literal|2
+name|_
+argument_list|(
+literal|"Crop"
 argument_list|)
-expr_stmt|;
-name|gtk_toggle_button_set_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|CROP_CROP
+argument_list|,
+operator|&
 name|options
 operator|->
 name|type_w
 index|[
-name|options
-operator|->
-name|type_d
+literal|0
 index|]
+argument_list|,
+name|_
+argument_list|(
+literal|"Resize"
 argument_list|)
 argument_list|,
-name|TRUE
+operator|(
+name|gpointer
+operator|)
+name|RESIZE_CROP
+argument_list|,
+operator|&
+name|options
+operator|->
+name|type_w
+index|[
+literal|1
+index|]
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gradient.h"
 end_include
 
@@ -97,12 +103,6 @@ begin_include
 include|#
 directive|include
 file|"selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool_options_ui.h"
 end_include
 
 begin_include
@@ -342,7 +342,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|non_gui_fade_out
 specifier|static
-name|double
+name|gdouble
 name|non_gui_fade_out
 decl_stmt|;
 end_decl_stmt
@@ -350,7 +350,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|non_gui_gradient_length
 specifier|static
-name|double
+name|gdouble
 name|non_gui_gradient_length
 decl_stmt|;
 end_decl_stmt
@@ -358,7 +358,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|non_gui_gradient_type
 specifier|static
-name|int
+name|gint
 name|non_gui_gradient_type
 decl_stmt|;
 end_decl_stmt
@@ -366,7 +366,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|non_gui_incremental
 specifier|static
-name|double
+name|gdouble
 name|non_gui_incremental
 decl_stmt|;
 end_decl_stmt
@@ -446,7 +446,7 @@ name|incremental_save
 init|=
 name|FALSE
 decl_stmt|;
-name|tool_options_toggle_update
+name|gimp_toggle_button_update
 argument_list|(
 name|widget
 argument_list|,
@@ -1207,7 +1207,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|tool_options_toggle_update
+name|gimp_toggle_button_update
 argument_list|)
 argument_list|,
 operator|&
@@ -1301,10 +1301,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_double_adjustment_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_double_adjustment_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -1366,10 +1366,10 @@ argument_list|)
 argument_list|,
 literal|"unit_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_unitmenu_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_unit_menu_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -1659,10 +1659,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_double_adjustment_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_double_adjustment_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -1724,10 +1724,10 @@ argument_list|)
 argument_list|,
 literal|"unit_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_unitmenu_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_unit_menu_update
+argument_list|)
 argument_list|,
 operator|&
 name|options

@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_options_ui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools.h"
 end_include
 
@@ -760,10 +754,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_toggle_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -885,10 +879,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_toggle_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -1139,7 +1133,7 @@ literal|"value_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|tool_options_double_adjustment_update
+name|gimp_double_adjustment_update
 argument_list|)
 argument_list|,
 operator|&
@@ -1216,7 +1210,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|tool_options_toggle_update
+name|gimp_toggle_button_update
 argument_list|)
 argument_list|,
 operator|&

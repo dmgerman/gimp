@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_options_ui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools.h"
 end_include
 
@@ -245,7 +239,7 @@ case|case
 name|FINISH_PAINT
 case|:
 break|break;
-default|default :
+default|default:
 break|break;
 block|}
 return|return
@@ -270,16 +264,11 @@ name|options
 decl_stmt|;
 name|options
 operator|=
-operator|(
-name|PencilOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|PencilOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|paint_options_init

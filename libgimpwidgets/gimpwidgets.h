@@ -235,6 +235,17 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+name|void
+name|gimp_unit_menu_update
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
 comment|/*  *  Helper Functions  */
 comment|/*  add aligned label& widget to a two-column table  */
 name|void

@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -42,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"airbrush_blob.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -49,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"draw_core.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
 end_include
 
 begin_include
@@ -66,19 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"xinput_airbrush.h"
+file|"gimpui.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"paint_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool_options_ui.h"
 end_include
 
 begin_include
@@ -96,13 +96,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"airbrush_blob.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
+file|"xinput_airbrush.h"
 end_include
 
 begin_include
@@ -1460,10 +1454,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_double_adjustment_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_double_adjustment_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -1626,10 +1620,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_double_adjustment_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_double_adjustment_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -1782,10 +1776,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_double_adjustment_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_double_adjustment_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -1988,10 +1982,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_double_adjustment_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_double_adjustment_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -2184,10 +2178,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_double_adjustment_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_double_adjustment_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -2343,10 +2337,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_double_adjustment_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_double_adjustment_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -2509,10 +2503,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_double_adjustment_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_double_adjustment_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -2677,10 +2671,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_double_adjustment_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_double_adjustment_update
+argument_list|)
 argument_list|,
 operator|&
 name|options

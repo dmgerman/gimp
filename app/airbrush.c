@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_options_ui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools.h"
 end_include
 
@@ -427,16 +421,11 @@ decl_stmt|;
 comment|/*  the new airbrush tool options structure  */
 name|options
 operator|=
-operator|(
-name|AirbrushOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|AirbrushOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|paint_options_init
@@ -599,10 +588,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_double_adjustment_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_double_adjustment_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -698,10 +687,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_double_adjustment_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_double_adjustment_update
+argument_list|)
 argument_list|,
 operator|&
 name|options

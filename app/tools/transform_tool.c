@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -19,12 +25,6 @@ begin_include
 include|#
 directive|include
 file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool_options_ui.h"
 end_include
 
 begin_include
@@ -67,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"transform_tool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
 end_include
 
 begin_include
@@ -266,7 +260,7 @@ name|first_call
 init|=
 name|TRUE
 decl_stmt|;
-comment|/* eek, this hack avoids a segfult */
+comment|/* eek, this hack avoids a segfault */
 if|if
 condition|(
 name|first_call
@@ -278,7 +272,7 @@ name|FALSE
 expr_stmt|;
 return|return;
 block|}
-name|tool_options_toggle_update
+name|gimp_toggle_button_update
 argument_list|(
 name|widget
 argument_list|,
@@ -311,7 +305,7 @@ name|first_call
 init|=
 name|TRUE
 decl_stmt|;
-comment|/* eek, this hack avoids a segfult */
+comment|/* eek, this hack avoids a segfault */
 if|if
 condition|(
 name|first_call
@@ -329,7 +323,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 comment|/* pause */
-name|tool_options_toggle_update
+name|gimp_toggle_button_update
 argument_list|(
 name|widget
 argument_list|,
@@ -712,16 +706,11 @@ decl_stmt|;
 comment|/*  the new transform tool options structure  */
 name|options
 operator|=
-operator|(
-name|TransformOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|TransformOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|tool_options_init
@@ -1473,7 +1462,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|tool_options_toggle_update
+name|gimp_toggle_button_update
 argument_list|)
 argument_list|,
 operator|&
@@ -1602,7 +1591,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|tool_options_toggle_update
+name|gimp_toggle_button_update
 argument_list|)
 argument_list|,
 operator|&

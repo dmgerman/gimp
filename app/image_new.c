@@ -108,15 +108,17 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|image_new_init ()
+DECL|function|image_new_init (void)
 name|image_new_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|gboolean
 name|image_new_inited
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 name|GimpImageBaseTypeName
 modifier|*
@@ -134,7 +136,7 @@ return|return;
 else|else
 name|image_new_inited
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 comment|/* Available Image Base Types */
 name|new_type
@@ -391,9 +393,11 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|image_new_get_image_base_type_names ()
+DECL|function|image_new_get_image_base_type_names (void)
 name|image_new_get_image_base_type_names
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|image_new_init
 argument_list|()
@@ -407,9 +411,11 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|image_new_get_fill_type_names ()
+DECL|function|image_new_get_fill_type_names (void)
 name|image_new_get_fill_type_names
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|image_new_init
 argument_list|()
@@ -1149,9 +1155,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_new_reset_current_cut_buffer ()
+DECL|function|image_new_reset_current_cut_buffer (void)
 name|image_new_reset_current_cut_buffer
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 comment|/* This function just changes the status of current_cut_buffer      if there hass been a cut/copy since the last file new */
 name|current_cut_buffer

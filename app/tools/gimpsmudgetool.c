@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint_funcs.h"
 end_include
 
@@ -85,12 +91,6 @@ begin_include
 include|#
 directive|include
 file|"selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool_options_ui.h"
 end_include
 
 begin_include
@@ -152,11 +152,11 @@ name|PaintOptions
 name|paint_options
 decl_stmt|;
 DECL|member|rate
-name|double
+name|gdouble
 name|rate
 decl_stmt|;
 DECL|member|rate_d
-name|double
+name|gdouble
 name|rate_d
 decl_stmt|;
 DECL|member|rate_w
@@ -179,8 +179,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|accum_data
 specifier|static
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|accum_data
 decl_stmt|;
@@ -387,16 +386,11 @@ decl_stmt|;
 comment|/*  the new smudge tool options structure  */
 name|options
 operator|=
-operator|(
-name|SmudgeOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|SmudgeOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|paint_options_init
@@ -584,10 +578,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_double_adjustment_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_double_adjustment_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -1310,9 +1304,11 @@ end_function
 begin_function
 name|Tool
 modifier|*
-DECL|function|tools_new_smudge ()
+DECL|function|tools_new_smudge (void)
 name|tools_new_smudge
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|Tool
 modifier|*
@@ -2004,7 +2000,7 @@ modifier|*
 name|stroke_array
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if

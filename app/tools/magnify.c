@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"info_window.h"
 end_include
 
@@ -49,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"scale.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool_options_ui.h"
 end_include
 
 begin_include
@@ -109,7 +109,7 @@ decl_stmt|;
 comment|/*  Core select object          */
 DECL|member|x
 DECL|member|y
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -117,14 +117,14 @@ decl_stmt|;
 comment|/*  upper left hand coordinate  */
 DECL|member|w
 DECL|member|h
-name|int
+name|gint
 name|w
 decl_stmt|,
 name|h
 decl_stmt|;
 comment|/*  width and height            */
 DECL|member|op
-name|int
+name|gint
 name|op
 decl_stmt|;
 comment|/*  magnify operation           */
@@ -150,9 +150,9 @@ DECL|member|tool_options
 name|ToolOptions
 name|tool_options
 decl_stmt|;
-comment|/* int       allow_resize_windows; (from gimprc) */
+comment|/* gint      allow_resize_windows; (from gimprc) */
 DECL|member|allow_resize_d
-name|int
+name|gint
 name|allow_resize_d
 decl_stmt|;
 DECL|member|allow_resize_w
@@ -355,16 +355,11 @@ decl_stmt|;
 comment|/*  the new magnify tool options structure  */
 name|options
 operator|=
-operator|(
-name|MagnifyOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|MagnifyOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|tool_options_init
@@ -422,10 +417,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|tool_options_toggle_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|allow_resize_windows
@@ -481,18 +476,18 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|zoom_in (int * src,int * dest,int scale)
+DECL|function|zoom_in (gint * src,gint * dest,gint scale)
 name|zoom_in
 parameter_list|(
-name|int
+name|gint
 modifier|*
 name|src
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|dest
 parameter_list|,
-name|int
+name|gint
 name|scale
 parameter_list|)
 block|{
@@ -536,18 +531,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|zoom_out (int * src,int * dest,int scale)
+DECL|function|zoom_out (gint * src,gint * dest,gint scale)
 name|zoom_out
 parameter_list|(
-name|int
+name|gint
 modifier|*
 name|src
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|dest
 parameter_list|,
-name|int
+name|gint
 name|scale
 parameter_list|)
 block|{
@@ -618,7 +613,7 @@ name|Magnify
 modifier|*
 name|magnify
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -791,25 +786,25 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|int
+name|gint
 name|win_width
 decl_stmt|,
 name|win_height
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|int
+name|gint
 name|scalesrc
 decl_stmt|,
 name|scaledest
 decl_stmt|;
-name|int
+name|gint
 name|scale
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -1191,7 +1186,7 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -1349,7 +1344,7 @@ name|Magnify
 modifier|*
 name|magnify
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -1380,7 +1375,7 @@ name|private
 expr_stmt|;
 name|x1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|magnify
 operator|->
@@ -1397,7 +1392,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|magnify
 operator|->
@@ -1414,7 +1409,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|magnify
 operator|->
@@ -1431,7 +1426,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|magnify
 operator|->
