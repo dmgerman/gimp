@@ -146,6 +146,10 @@ name|gchar
 modifier|*
 name|help_data
 decl_stmt|;
+DECL|member|in_toolbox
+name|gboolean
+name|in_toolbox
+decl_stmt|;
 DECL|member|use_context
 name|gboolean
 name|use_context

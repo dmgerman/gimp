@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimagemaptool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppaintbrushtool.h"
 end_include
 
@@ -2082,6 +2088,21 @@ name|paint_core_name
 argument_list|,
 name|stock_id
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|g_type_is_a
+argument_list|(
+name|tool_type
+argument_list|,
+name|GIMP_TYPE_IMAGE_MAP_TOOL
+argument_list|)
+condition|)
+name|tool_info
+operator|->
+name|in_toolbox
+operator|=
+name|FALSE
 expr_stmt|;
 name|g_object_set_data
 argument_list|(
