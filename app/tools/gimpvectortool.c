@@ -4287,10 +4287,7 @@ name|VECTORS_FINISHED
 case|:
 name|new_status
 operator|=
-name|_
-argument_list|(
-literal|"Nothing to see here. Move along."
-argument_list|)
+literal|" "
 expr_stmt|;
 break|break;
 block|}
