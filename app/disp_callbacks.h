@@ -160,15 +160,15 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplay_drop_pattern
+name|gdisplay_drop_viewable
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpPattern
+name|GimpViewable
 modifier|*
-name|pattern
+name|viewable
 parameter_list|,
 name|gpointer
 name|data

@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppattern.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -746,13 +752,15 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_pattern_dest_set
+name|gimp_dnd_viewable_dest_set
 argument_list|(
 name|gdisp
 operator|->
 name|shell
 argument_list|,
-name|gdisplay_drop_pattern
+name|GIMP_TYPE_PATTERN
+argument_list|,
+name|gdisplay_drop_viewable
 argument_list|,
 name|gdisp
 argument_list|)

@@ -4141,20 +4141,28 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_drop_pattern (GtkWidget * widget,GimpPattern * pattern,gpointer data)
-name|gdisplay_drop_pattern
+DECL|function|gdisplay_drop_viewable (GtkWidget * widget,GimpViewable * viewable,gpointer data)
+name|gdisplay_drop_viewable
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpPattern
+name|GimpViewable
 modifier|*
-name|pattern
+name|viewable
 parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
+block|{
+if|if
+condition|(
+name|GIMP_IS_PATTERN
+argument_list|(
+name|viewable
+argument_list|)
+condition|)
 block|{
 name|gdisplay_bucket_fill
 argument_list|(
@@ -4164,13 +4172,17 @@ name|PATTERN_BUCKET_FILL
 argument_list|,
 name|NULL
 argument_list|,
-name|pattern
+name|GIMP_PATTERN
+argument_list|(
+name|viewable
+argument_list|)
 operator|->
 name|mask
 argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
