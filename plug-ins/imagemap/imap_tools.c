@@ -9,29 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|GTK_DISABLE_DEPRECATED
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_undef
-undef|#
-directive|undef
-name|GTK_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -281,6 +258,12 @@ block|}
 block|}
 end_function
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|_NOT_READY_YET_
+end_ifdef
+
 begin_function
 specifier|static
 name|void
@@ -310,10 +293,20 @@ block|{
 name|set_fuzzy_select_func
 argument_list|()
 expr_stmt|;
-comment|/*       menu_select_fuzzy_select();       popup_select_fuzzy_select(); */
+name|menu_select_fuzzy_select
+argument_list|()
+expr_stmt|;
+name|popup_select_fuzzy_select
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static
@@ -653,12 +646,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_toolbar_append_space
-argument_list|(
-name|GTK_TOOLBAR
+name|toolbar_add_space
 argument_list|(
 name|toolbar
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|_tools
@@ -689,12 +679,9 @@ operator|.
 name|cmd_edit
 argument_list|)
 expr_stmt|;
-name|gtk_toolbar_append_space
-argument_list|(
-name|GTK_TOOLBAR
+name|toolbar_add_space
 argument_list|(
 name|toolbar
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|_tools
@@ -765,9 +752,9 @@ name|_callback_lock
 operator|=
 name|TRUE
 expr_stmt|;
-name|gtk_toggle_button_set_active
+name|gtk_toggle_tool_button_set_active
 argument_list|(
-name|GTK_TOGGLE_BUTTON
+name|GTK_TOGGLE_TOOL_BUTTON
 argument_list|(
 name|widget
 argument_list|)
