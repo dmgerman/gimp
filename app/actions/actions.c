@@ -1591,7 +1591,9 @@ name|n_children
 operator|==
 literal|0
 condition|)
-return|return;
+return|return
+name|NULL
+return|;
 switch|switch
 condition|(
 name|select_type
