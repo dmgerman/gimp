@@ -215,6 +215,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpprogress_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpselection_pdb.h>
 end_include
 
