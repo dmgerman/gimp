@@ -2157,7 +2157,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"    (position %d %d)\n"
+literal|"    (position %d %d)"
 argument_list|,
 name|info
 operator|->
@@ -2186,7 +2186,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"    (size %d %d)"
+literal|"\n    (size %d %d)"
 argument_list|,
 name|info
 operator|->
