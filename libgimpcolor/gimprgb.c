@@ -67,7 +67,7 @@ comment|/*  RGB functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_rgb_set:  * @rgb: a #GimpRGB struct  * @r: red  * @g: green  * @b: blue  *  * Sets the red, green and blue components of @rgb and leaves the  * alpha component unchanged. The color values should be between 0.0  * and 1.0 but there is no check to enforce this and the values are  * set exactly as they are passed in.  **/
+comment|/**  * gimp_rgb_set:  * @rgb: a #GimpRGB struct  * @red:  * @green:  * @blue:  *  * Sets the red, green and blue components of @rgb and leaves the  * alpha component unchanged. The color values should be between 0.0  * and 1.0 but there is no check to enforce this and the values are  * set exactly as they are passed in.  **/
 end_comment
 
 begin_function
@@ -118,7 +118,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_set_alpha:  * @rgb: a #GimpRGB struct  * @a: alpha  *  * Sets the alpha component of @rgb and leaves the RGB components unchanged.  **/
+comment|/**  * gimp_rgb_set_alpha:  * @rgb: a #GimpRGB struct  * @alpha:  *  * Sets the alpha component of @rgb and leaves the RGB components unchanged.  **/
 end_comment
 
 begin_function
@@ -151,7 +151,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_set_uchar:  * @rgb: a #GimpRGB struct  * @r: red  * @g: green  * @b: blue  *  * Sets the red, green and blue components of @rgb from 8bit values  * (0 to 255) and leaves the alpha component unchanged.  **/
+comment|/**  * gimp_rgb_set_uchar:  * @rgb: a #GimpRGB struct  * @red:  * @green:  * @blue:  *  * Sets the red, green and blue components of @rgb from 8bit values  * (0 to 255) and leaves the alpha component unchanged.  **/
 end_comment
 
 begin_function
@@ -319,7 +319,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_parse_name:  * @rgb:  a #GimpRGB struct used to return the parsed color  * @name: a color name (in UTF-8 encoding)  * @len:  the length of @name, in bytes. or -1 if @name is nul-terminated  *  * Attempts to parse a color name. This function accepts RGB hex  * values or<link  * linkend="http://www.w3.org/TR/SVG/types.html#ColorKeywords">SVG 1.0  * color keywords</link>.  The format of an RGB value in hexadecimal  * notation is a '#' immediately followed by either three or six  * hexadecimal characters.  *  * This funcion does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @name was parsed successfully and @rgb has been  *               set, %FALSE otherwise  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_rgb_parse_name:  * @rgb:  a #GimpRGB struct used to return the parsed color  * @name: a color name (in UTF-8 encoding)  * @len:  the length of @name, in bytes. or -1 if @name is nul-terminated  *  * Attempts to parse a color name. This function accepts RGB hex  * values or<ulink url="http://www.w3.org/TR/SVG/types.html">SVG 1.0  * color keywords</ulink>.  The format of an RGB value in hexadecimal  * notation is a '#' immediately followed by either three or six  * hexadecimal characters.  *  * This funcion does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @name was parsed successfully and @rgb has been  *               set, %FALSE otherwise  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1275,7 +1275,7 @@ comment|/*  RGBA functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_rgba_set:  * @rgba: a #GimpRGB struct  * @r: red  * @g: green  * @b: blue  * @a: alpha  *  * Sets the red, green, blue and alpha components of @rgb. The values  * should be between 0.0 and 1.0 but there is no check to enforce this  * and the values are set exactly as they are passed in.  **/
+comment|/**  * gimp_rgba_set:  * @rgba: a #GimpRGB struct  * @red:  * @green:  * @blue:  * @alpha:  *  * Sets the red, green, blue and alpha components of @rgb. The values  * should be between 0.0 and 1.0 but there is no check to enforce this  * and the values are set exactly as they are passed in.  **/
 end_comment
 
 begin_function
@@ -1335,7 +1335,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_set_uchar:  * @rgb: a #GimpRGB struct  * @r: red  * @g: green  * @b: blue  * @a: alpha  *  * Sets the red, green, blue and alpha components of @rgb from 8bit  * values (0 to 255).  **/
+comment|/**  * gimp_rgba_set_uchar:  * @rgba: a #GimpRGB struct  * @red:  * @green:  * @blue:  * @alpha:  *  * Sets the red, green, blue and alpha components of @rgb from 8bit  * values (0 to 255).  **/
 end_comment
 
 begin_function
@@ -1958,7 +1958,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2910cb3c0108
+DECL|struct|__anon27d6f4d50108
 block|{
 DECL|member|name
 specifier|const
