@@ -120,16 +120,16 @@ name|gfloat
 name|hardness
 decl_stmt|;
 comment|/* 0.0 - 1.0  */
-DECL|member|angle
-name|gfloat
-name|angle
-decl_stmt|;
-comment|/* in degrees */
 DECL|member|aspect_ratio
 name|gfloat
 name|aspect_ratio
 decl_stmt|;
 comment|/* y/x        */
+DECL|member|angle
+name|gfloat
+name|angle
+decl_stmt|;
+comment|/* in degrees */
 block|}
 struct|;
 end_struct
@@ -174,10 +174,10 @@ name|gfloat
 name|hardness
 parameter_list|,
 name|gfloat
-name|angle
+name|aspect_ratio
 parameter_list|,
 name|gfloat
-name|aspect_ratio
+name|angle
 parameter_list|,
 name|gboolean
 name|stingy_memory_use
@@ -236,20 +236,6 @@ end_function_decl
 
 begin_function_decl
 name|gfloat
-name|gimp_brush_generated_set_angle
-parameter_list|(
-name|GimpBrushGenerated
-modifier|*
-name|brush
-parameter_list|,
-name|gfloat
-name|angle
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gfloat
 name|gimp_brush_generated_set_aspect_ratio
 parameter_list|(
 name|GimpBrushGenerated
@@ -258,6 +244,20 @@ name|brush
 parameter_list|,
 name|gfloat
 name|ratio
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gfloat
+name|gimp_brush_generated_set_angle
+parameter_list|(
+name|GimpBrushGenerated
+modifier|*
+name|brush
+parameter_list|,
+name|gfloat
+name|angle
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -288,7 +288,7 @@ end_function_decl
 
 begin_function_decl
 name|gfloat
-name|gimp_brush_generated_get_angle
+name|gimp_brush_generated_get_aspect_ratio
 parameter_list|(
 specifier|const
 name|GimpBrushGenerated
@@ -300,7 +300,7 @@ end_function_decl
 
 begin_function_decl
 name|gfloat
-name|gimp_brush_generated_get_aspect_ratio
+name|gimp_brush_generated_get_angle
 parameter_list|(
 specifier|const
 name|GimpBrushGenerated
