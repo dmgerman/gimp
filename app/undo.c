@@ -217,7 +217,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|enum|__anon29fa1b000103
+DECL|enum|__anon27949c8f0103
 typedef|typedef
 enum|enum
 block|{
@@ -8293,6 +8293,16 @@ name|tiles
 operator|->
 name|height
 expr_stmt|;
+name|GIMP_CHANNEL
+argument_list|(
+name|channel
+argument_list|)
+operator|->
+name|bounds_known
+operator|=
+name|FALSE
+expr_stmt|;
+comment|/* #4840. set to False because bounds                                                    reflect previous tile set */
 comment|/*  Set the new buffer  */
 name|data
 index|[
@@ -11425,7 +11435,7 @@ comment|/* Layer re-position */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29fa1b000208
+DECL|struct|__anon27949c8f0208
 typedef|typedef
 struct|struct
 block|{
@@ -11655,7 +11665,7 @@ comment|/* Layer name change */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29fa1b000308
+DECL|struct|__anon27949c8f0308
 typedef|typedef
 struct|struct
 block|{
