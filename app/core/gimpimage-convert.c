@@ -417,7 +417,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29c8bac00103
+DECL|enum|__anon290ddb2c0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1445,7 +1445,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c8bac00208
+DECL|struct|__anon290ddb2c0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1522,7 +1522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c8bac00308
+DECL|struct|__anon290ddb2c0308
 block|{
 DECL|member|ncolors
 name|long
@@ -1693,7 +1693,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c8bac00408
+DECL|struct|__anon290ddb2c0408
 block|{
 DECL|member|used_count
 name|signed
@@ -12165,6 +12165,7 @@ name|layer
 argument_list|)
 argument_list|)
 condition|)
+block|{
 name|red_pix
 operator|=
 name|green_pix
@@ -12173,6 +12174,11 @@ name|blue_pix
 operator|=
 name|GRAY_PIX
 expr_stmt|;
+name|alpha_pix
+operator|=
+name|ALPHA_G_PIX
+expr_stmt|;
+block|}
 name|has_alpha
 operator|=
 name|gimp_drawable_has_alpha
@@ -12630,6 +12636,7 @@ name|layer
 argument_list|)
 argument_list|)
 condition|)
+block|{
 name|red_pix
 operator|=
 name|green_pix
@@ -12638,6 +12645,11 @@ name|blue_pix
 operator|=
 name|GRAY_PIX
 expr_stmt|;
+name|alpha_pix
+operator|=
+name|ALPHA_G_PIX
+expr_stmt|;
+block|}
 name|has_alpha
 operator|=
 name|gimp_drawable_has_alpha
