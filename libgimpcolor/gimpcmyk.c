@@ -37,6 +37,10 @@ begin_comment
 comment|/*  CMYK functions  */
 end_comment
 
+begin_comment
+comment|/**  * gimp_cmyk_set:  * @cmyk: A GimpCMYK structure which will hold the specified cmyk value.  * @c:    The Cyan channel of the CMYK value   * @m:    The Magenta channel  * @y:    The Yellow channel  * @k:    The blacK channel  *  * Very basic initialiser for the internal GimpCMYK structure. Channel   * values are doubles in the range 0 to 1.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_cmyk_set (GimpCMYK * cmyk,gdouble c,gdouble m,gdouble y,gdouble k)
@@ -92,6 +96,10 @@ name|k
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_cmyk_set_uchar:  *  * The same as gimp_cmyk_set, except that channel values are unsigned   * chars in the range 0 to 255.  **/
+end_comment
 
 begin_function
 name|void
@@ -168,6 +176,10 @@ literal|255.0
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_cmyk_get_uchar:  * @cmyk: A GimpCMYK structure which will hold the specified cmyk value.  * @c:    The Cyan channel of the CMYK value   * @m:    The Magenta channel  * @y:    The Yellow channel  * @k:    The blacK channel  *  * Retrieve individual channel values from a GimpCMYK structure. Channel   * values are pointers to unsigned chars in the range 0 to 255.  **/
+end_comment
 
 begin_function
 name|void
@@ -302,6 +314,10 @@ begin_comment
 comment|/*  CMYKA functions  */
 end_comment
 
+begin_comment
+comment|/**  * gimp_cmyka_set:  * @cmyka: A GimpCMYK structure which will hold the specified cmyka value.  * @c:    The Cyan channel of the CMYK value   * @m:    The Magenta channel  * @y:    The Yellow channel  * @k:    The blacK channel  * @a:    The Alpha channel  *  * Initialiser for the internal GimpCMYK structure. Channel values are   * doubles in the range 0 to 1.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_cmyka_set (GimpCMYK * cmyka,gdouble c,gdouble m,gdouble y,gdouble k,gdouble a)
@@ -366,6 +382,10 @@ name|a
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_cmyka_set_uchar:  *  * The same as gimp_cmyka_set, except that channel values are unsigned chars  * in the range 0 to 255.  **/
+end_comment
 
 begin_function
 name|void
@@ -456,6 +476,10 @@ literal|255.0
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_cmyka_get_uchar:  * @cmyk: A GimpCMYK structure which will hold the specified cmyka value.  * @c:    The Cyan channel of the CMYK value   * @m:    The Magenta channel  * @y:    The Yellow channel  * @k:    The blacK channel  * @a:    The Alpha channel  *  * Retrieve individual channel values from a GimpCMYK structure. Channel   * values are pointers to unsigned chars in the range 0 to 255.  **/
+end_comment
 
 begin_function
 name|void
