@@ -684,17 +684,16 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
+name|g_return_if_fail
+argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
 argument_list|)
-condition|)
-return|return;
+argument_list|)
+expr_stmt|;
 comment|/*  Only save if the gimage has been modified  */
 if|if
 condition|(
