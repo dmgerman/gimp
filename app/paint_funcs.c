@@ -207,7 +207,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf70e2c0103
+DECL|enum|__anon27bf5b670103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -796,8 +796,6 @@ name|int
 name|bpp
 decl_stmt|,
 name|ewidth
-decl_stmt|,
-name|eheight
 decl_stmt|;
 name|int
 name|x
@@ -841,13 +839,6 @@ expr_stmt|;
 name|ewidth
 operator|=
 name|tile_ewidth
-argument_list|(
-name|tile
-argument_list|)
-expr_stmt|;
-name|eheight
-operator|=
-name|tile_eheight
 argument_list|(
 name|tile
 argument_list|)
@@ -17695,13 +17686,13 @@ call|)
 argument_list|(
 operator|(
 name|x
-operator|-
-literal|0.5
 operator|)
 operator|*
 name|ratio
 operator|+
 literal|2.0
+operator|-
+literal|0.5
 argument_list|)
 operator|)
 operator|-
@@ -17713,11 +17704,11 @@ operator|=
 operator|(
 operator|(
 name|x
-operator|-
-literal|0.5
 operator|)
 operator|*
 name|ratio
+operator|-
+literal|0.5
 operator|)
 operator|-
 name|src_col
@@ -17815,13 +17806,13 @@ call|)
 argument_list|(
 operator|(
 name|x
-operator|-
-literal|0.5
 operator|)
 operator|*
 name|ratio
 operator|+
 literal|2.0
+operator|-
+literal|0.5
 argument_list|)
 operator|)
 operator|-
@@ -17833,11 +17824,11 @@ operator|=
 operator|(
 operator|(
 name|x
-operator|-
-literal|0.5
 operator|)
 operator|*
 name|ratio
+operator|-
+literal|0.5
 operator|)
 operator|-
 name|src_col
@@ -18401,8 +18392,6 @@ decl_stmt|,
 name|orig_height
 decl_stmt|;
 name|double
-name|x_rat
-decl_stmt|,
 name|y_rat
 decl_stmt|;
 name|int
@@ -18412,7 +18401,7 @@ name|int
 name|old_y
 init|=
 operator|-
-literal|3
+literal|4
 decl_stmt|,
 name|new_y
 decl_stmt|;
@@ -18461,19 +18450,7 @@ name|destPR
 operator|->
 name|h
 expr_stmt|;
-comment|/*  find the ratios of old x to new x and old y to new y  */
-name|x_rat
-operator|=
-operator|(
-name|double
-operator|)
-name|orig_width
-operator|/
-operator|(
-name|double
-operator|)
-name|width
-expr_stmt|;
+comment|/*  find the ratios of old y to new y  */
 name|y_rat
 operator|=
 operator|(
@@ -18486,7 +18463,6 @@ name|double
 operator|)
 name|height
 expr_stmt|;
-comment|/*  Some calculations...  */
 name|bytes
 operator|=
 name|destPR
@@ -18890,17 +18866,18 @@ operator|>
 name|orig_height
 condition|)
 block|{
+comment|//      new_y = floor((y - 0.5) * y_rat);
 name|new_y
 operator|=
 name|floor
 argument_list|(
 operator|(
 name|y
-operator|-
-literal|0.5
 operator|)
 operator|*
 name|y_rat
+operator|-
+literal|.5
 argument_list|)
 expr_stmt|;
 while|while
@@ -18959,17 +18936,18 @@ name|p2
 decl_stmt|,
 name|p3
 decl_stmt|;
+comment|//	 double dy = ((y - 0.5) * y_rat) - new_y;
 name|double
 name|dy
 init|=
 operator|(
 operator|(
 name|y
-operator|-
-literal|0.5
 operator|)
 operator|*
 name|y_rat
+operator|-
+literal|.5
 operator|)
 operator|-
 name|new_y
@@ -19106,11 +19084,11 @@ init|=
 operator|(
 operator|(
 name|y
-operator|-
-literal|0.5
 operator|)
 operator|*
 name|y_rat
+operator|-
+literal|0.5
 operator|)
 operator|-
 name|new_y
