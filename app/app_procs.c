@@ -1299,6 +1299,7 @@ name|font
 init|=
 name|NULL
 decl_stmt|;
+comment|/* this is a font, provide only one single font definition */
 name|font
 operator|=
 name|gdk_font_load
@@ -1309,6 +1310,11 @@ literal|"-*-helvetica-bold-r-normal--*-140-*-*-*-*-*-*"
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|font
+condition|)
+block|{
 name|gdk_draw_string
 argument_list|(
 name|widget
@@ -1361,6 +1367,7 @@ argument_list|(
 name|font
 argument_list|)
 expr_stmt|;
+comment|/* this is a fontset, e.g. multiple comma-separated font definitions */
 name|font
 operator|=
 name|gdk_fontset_load
@@ -1505,6 +1512,7 @@ argument_list|(
 name|font
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

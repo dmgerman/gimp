@@ -422,7 +422,7 @@ name|GdkFont
 modifier|*
 name|font
 decl_stmt|;
-DECL|struct|__anon274e89970108
+DECL|struct|__anon29e927ec0108
 specifier|static
 specifier|const
 struct|struct
@@ -1139,6 +1139,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+comment|/* this is a fontset, e.g. multiple comma-separated font definitions */
 name|font_strong
 operator|=
 name|gdk_fontset_load
@@ -1149,6 +1150,7 @@ literal|"-*-helvetica-bold-r-normal-*-*-120-*-*-*-*-*-*,*"
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* this is a font, provide only one single font definition */
 name|font_emphasis
 operator|=
 name|gdk_font_load
@@ -1159,6 +1161,7 @@ literal|"-*-helvetica-medium-o-normal-*-*-100-*-*-*-*-*-*"
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* this is a fontset, e.g. multiple comma-separated font definitions */
 name|font
 operator|=
 name|gdk_fontset_load
@@ -1168,6 +1171,15 @@ argument_list|(
 literal|"-*-helvetica-medium-r-normal-*-*-100-*-*-*-*-*-*,*"
 argument_list|)
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|font_emphasis
+condition|)
+name|font_emphasis
+operator|=
+name|font
 expr_stmt|;
 comment|/*  Realize the widget before allowing new text to be inserted  */
 name|gtk_widget_realize
@@ -1309,6 +1321,27 @@ name|vadj
 argument_list|)
 argument_list|,
 literal|0.0
+argument_list|)
+expr_stmt|;
+name|gdk_font_unref
+argument_list|(
+name|font_strong
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|font_emphasis
+operator|!=
+name|font
+condition|)
+name|gdk_font_unref
+argument_list|(
+name|font_emphasis
+argument_list|)
+expr_stmt|;
+name|gdk_font_unref
+argument_list|(
+name|font
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1860,6 +1893,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+comment|/* this is a fontset, e.g. multiple comma-separated font definitions */
 name|font_strong
 operator|=
 name|gdk_fontset_load
@@ -1870,6 +1904,7 @@ literal|"-*-helvetica-bold-r-normal-*-*-120-*-*-*-*-*-*,*"
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* this is a fontset, e.g. multiple comma-separated font definitions */
 name|font
 operator|=
 name|gdk_fontset_load
