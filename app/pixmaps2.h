@@ -968,27 +968,27 @@ comment|/*  Image name: horizflip  */
 end_comment
 
 begin_define
-DECL|macro|horizflip_width
+DECL|macro|flip_width
 define|#
 directive|define
-name|horizflip_width
+name|flip_width
 value|22
 end_define
 
 begin_define
-DECL|macro|horizflip_height
+DECL|macro|flip_height
 define|#
 directive|define
-name|horizflip_height
+name|flip_height
 value|22
 end_define
 
 begin_decl_stmt
-DECL|variable|horizflip_bits
+DECL|variable|flip_bits
 specifier|static
 name|char
 modifier|*
-name|horizflip_bits
+name|flip_bits
 index|[]
 init|=
 block|{
@@ -1750,18 +1750,6 @@ literal|"......................"
 block|}
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
-
-begin_comment
-comment|/*  Image name: vertflip  */
-end_comment
-
-begin_comment
-comment|/* #define vertflip_width 22 #define vertflip_height 22 static char *vertflip_bits [] = {   "......................",   "......................",   "......................",   "..........a...........",   ".........aaa..........",   "........aaaaa.........",   ".......aaaeaaa........",   ".........aeaeee.......",   ".........aeae.........",   ".........aeae.........",   ".........aeae.........",   ".........aeae.........",   ".........aeae.........",   ".........aeae.........",   ".........aeae.........",   ".......aaaeaaa........",   "........aaaaaee.......",   ".........aaaee........",   "..........aee.........",   "...........e..........",   "......................",   "......................" }; */
-end_comment
 
 begin_comment
 comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */

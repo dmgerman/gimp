@@ -4131,28 +4131,13 @@ case|case
 literal|0
 case|:
 comment|/* horz */
-name|new_tiles
-operator|=
-name|flip_tool_flip_horz
-argument_list|(
-name|gimage
-argument_list|,
-name|drawable
-argument_list|,
-name|float_tiles
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-break|break;
 case|case
 literal|1
 case|:
 comment|/* vert */
 name|new_tiles
 operator|=
-name|flip_tool_flip_vert
+name|flip_tool_flip
 argument_list|(
 name|gimage
 argument_list|,
@@ -4162,6 +4147,8 @@ name|float_tiles
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|flip_type
 argument_list|)
 expr_stmt|;
 break|break;

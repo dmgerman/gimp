@@ -294,7 +294,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon29fd8dc20108
+DECL|struct|__anon2b5c22cf0108
 typedef|typedef
 struct|struct
 block|{
@@ -320,7 +320,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29fd8dc20208
+DECL|struct|__anon2b5c22cf0208
 typedef|typedef
 struct|struct
 block|{
@@ -1066,6 +1066,12 @@ operator|->
 name|arrow_keys_func
 operator|=
 name|standard_arrow_keys_func
+expr_stmt|;
+name|tool
+operator|->
+name|toggle_key_func
+operator|=
+name|standard_toggle_key_func
 expr_stmt|;
 name|tool
 operator|->

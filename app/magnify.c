@@ -1754,6 +1754,12 @@ name|standard_arrow_keys_func
 expr_stmt|;
 name|tool
 operator|->
+name|toggle_key_func
+operator|=
+name|standard_toggle_key_func
+expr_stmt|;
+name|tool
+operator|->
 name|cursor_update_func
 operator|=
 name|magnify_cursor_update

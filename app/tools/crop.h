@@ -28,6 +28,22 @@ directive|include
 file|"tools.h"
 end_include
 
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b45b0b60103
+block|{
+DECL|enumerator|CROP_CROP
+name|CROP_CROP
+block|,
+DECL|enumerator|RESIZE_CROP
+name|RESIZE_CROP
+DECL|typedef|CropType
+block|}
+name|CropType
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  select functions  */
 end_comment

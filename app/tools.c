@@ -885,7 +885,7 @@ name|char
 operator|*
 operator|*
 operator|)
-name|horizflip_bits
+name|flip_bits
 block|,
 name|N_
 argument_list|(
@@ -894,7 +894,7 @@ argument_list|)
 block|,
 literal|"ContextHelp/flip"
 block|,
-name|FLIP_HORZ
+name|FLIP
 block|,
 name|tools_new_flip
 block|,
@@ -903,37 +903,6 @@ block|,
 name|NULL
 block|}
 block|,
-comment|/* horizontal */
-block|{
-name|NULL
-block|,
-name|N_
-argument_list|(
-literal|"Flip"
-argument_list|)
-block|,
-literal|10
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|FLIP_VERT
-block|,
-name|tools_new_flip
-block|,
-name|tools_free_flip_tool
-block|,
-name|NULL
-block|}
-block|,
-comment|/* vertical */
 block|{
 name|NULL
 block|,
@@ -2939,6 +2908,25 @@ begin_function
 name|void
 DECL|function|standard_arrow_keys_func (Tool * tool,GdkEventKey * kevent,gpointer gdisp_ptr)
 name|standard_arrow_keys_func
+parameter_list|(
+name|Tool
+modifier|*
+name|tool
+parameter_list|,
+name|GdkEventKey
+modifier|*
+name|kevent
+parameter_list|,
+name|gpointer
+name|gdisp_ptr
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+name|void
+DECL|function|standard_toggle_key_func (Tool * tool,GdkEventKey * kevent,gpointer gdisp_ptr)
+name|standard_toggle_key_func
 parameter_list|(
 name|Tool
 modifier|*

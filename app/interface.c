@@ -1155,17 +1155,6 @@ name|type
 operator|=
 name|ROTATE
 expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|type
-operator|==
-name|FLIP_VERT
-condition|)
-name|type
-operator|=
-name|FLIP_HORZ
-expr_stmt|;
 if|if
 condition|(
 name|tool_info
