@@ -58,7 +58,7 @@ file|"imap_table.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2a075ac70108
+DECL|struct|__anon2a2b36280108
 typedef|typedef
 struct|struct
 block|{
@@ -688,7 +688,10 @@ name|dialog
 operator|=
 name|make_default_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Create Guides"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|default_dialog_set_ok_cb
@@ -1599,7 +1602,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2a075ac70208
+DECL|struct|__anon2a2b36280208
 typedef|typedef
 struct|struct
 block|{

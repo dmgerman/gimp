@@ -280,7 +280,7 @@ decl_stmt|;
 name|char
 name|l_skip_txt
 index|[
-literal|20
+literal|32
 index|]
 decl_stmt|;
 name|p_init_arr_arg
@@ -398,7 +398,10 @@ argument_list|(
 name|l_skip_txt
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Skip %d"
+argument_list|)
 argument_list|,
 operator|(
 name|int

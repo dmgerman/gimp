@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -37,6 +43,12 @@ begin_include
 include|#
 directive|include
 file|"pxl-outline.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_function_decl
@@ -243,7 +255,10 @@ decl_stmt|;
 comment|/*   printf("width = %d, height = %d\n",BITMAP_WIDTH(marked),BITMAP_HEIGHT(marked)); */
 name|gimp_progress_init
 argument_list|(
-literal|"Selection to path..."
+name|_
+argument_list|(
+literal|"Selection to Path..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|O_LIST_LENGTH

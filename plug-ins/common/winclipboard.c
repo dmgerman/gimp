@@ -1877,7 +1877,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Unsupported format or Clipboard empty!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|bRet
@@ -1907,7 +1910,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Can't get Clipboard data"
+name|_
+argument_list|(
+literal|"Can't get Clipboard data."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|bRet
