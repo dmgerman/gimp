@@ -1249,6 +1249,8 @@ decl_stmt|;
 name|GimpBrush
 modifier|*
 name|current_brush
+init|=
+name|NULL
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -1551,6 +1553,13 @@ name|INIT_PAINT
 argument_list|)
 expr_stmt|;
 comment|/*  store the current brush pointer  */
+if|if
+condition|(
+name|GIMP_IS_BRUSH_CORE
+argument_list|(
+name|core
+argument_list|)
+condition|)
 name|current_brush
 operator|=
 name|GIMP_BRUSH_CORE
@@ -1636,6 +1645,13 @@ name|POSTTRACE_PAINT
 argument_list|)
 expr_stmt|;
 comment|/*  restore the current brush pointer  */
+if|if
+condition|(
+name|GIMP_IS_BRUSH_CORE
+argument_list|(
+name|core
+argument_list|)
+condition|)
 name|GIMP_BRUSH_CORE
 argument_list|(
 name|core
