@@ -373,6 +373,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|register_transform_tools_procs
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|register_undo_procs
 parameter_list|(
 name|Gimp
@@ -1024,6 +1035,26 @@ literal|0.885
 argument_list|)
 expr_stmt|;
 name|register_tools_procs
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+call|(
+modifier|*
+name|status_callback
+call|)
+argument_list|(
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Tool procedures"
+argument_list|)
+argument_list|,
+literal|0.939
+argument_list|)
+expr_stmt|;
+name|register_transform_tools_procs
 argument_list|(
 name|gimp
 argument_list|)
