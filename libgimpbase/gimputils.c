@@ -421,6 +421,30 @@ name|guint64
 name|memsize
 parameter_list|)
 block|{
+if|#
+directive|if
+name|defined
+name|_MSC_VER
+operator|&&
+operator|(
+name|_MSC_VER
+operator|<
+literal|1200
+operator|)
+comment|/* sorry, error C2520: conversion from unsigned __int64 to double not   *                     implemented, use signed __int64  */
+DECL|macro|CAST_DOUBLE
+define|#
+directive|define
+name|CAST_DOUBLE
+value|(gdouble)(gint64)
+else|#
+directive|else
+define|#
+directive|define
+name|CAST_DOUBLE
+value|(gdouble)
+endif|#
+directive|endif
 if|if
 condition|(
 name|memsize
@@ -455,16 +479,11 @@ block|{
 return|return
 name|g_strdup_printf
 argument_list|(
-name|_
-argument_list|(
+argument|_(
 literal|"%.2f KB"
-argument_list|)
+argument|)
 argument_list|,
-operator|(
-name|gdouble
-operator|)
-name|memsize
-operator|/
+argument|CAST_DOUBLE memsize /
 literal|1024.0
 argument_list|)
 return|;
@@ -482,16 +501,11 @@ block|{
 return|return
 name|g_strdup_printf
 argument_list|(
-name|_
-argument_list|(
+argument|_(
 literal|"%.1f KB"
-argument_list|)
+argument|)
 argument_list|,
-operator|(
-name|gdouble
-operator|)
-name|memsize
-operator|/
+argument|CAST_DOUBLE memsize /
 literal|1024.0
 argument_list|)
 return|;
@@ -539,16 +553,11 @@ block|{
 return|return
 name|g_strdup_printf
 argument_list|(
-name|_
-argument_list|(
+argument|_(
 literal|"%.2f MB"
-argument_list|)
+argument|)
 argument_list|,
-operator|(
-name|gdouble
-operator|)
-name|memsize
-operator|/
+argument|CAST_DOUBLE memsize /
 literal|1024.0
 argument_list|)
 return|;
@@ -566,16 +575,11 @@ block|{
 return|return
 name|g_strdup_printf
 argument_list|(
-name|_
-argument_list|(
+argument|_(
 literal|"%.1f MB"
-argument_list|)
+argument|)
 argument_list|,
-operator|(
-name|gdouble
-operator|)
-name|memsize
-operator|/
+argument|CAST_DOUBLE memsize /
 literal|1024.0
 argument_list|)
 return|;
@@ -623,16 +627,11 @@ block|{
 return|return
 name|g_strdup_printf
 argument_list|(
-name|_
-argument_list|(
+argument|_(
 literal|"%.2f GB"
-argument_list|)
+argument|)
 argument_list|,
-operator|(
-name|gdouble
-operator|)
-name|memsize
-operator|/
+argument|CAST_DOUBLE memsize /
 literal|1024.0
 argument_list|)
 return|;
@@ -650,16 +649,11 @@ block|{
 return|return
 name|g_strdup_printf
 argument_list|(
-name|_
-argument_list|(
+argument|_(
 literal|"%.1f GB"
-argument_list|)
+argument|)
 argument_list|,
-operator|(
-name|gdouble
-operator|)
-name|memsize
-operator|/
+argument|CAST_DOUBLE memsize /
 literal|1024.0
 argument_list|)
 return|;
@@ -683,6 +677,9 @@ literal|1024
 argument_list|)
 return|;
 block|}
+undef|#
+directive|undef
+name|CAST_DOUBLE
 block|}
 end_function
 
