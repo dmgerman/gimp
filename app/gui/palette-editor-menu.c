@@ -165,18 +165,18 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Zoom In"
+literal|"/Zoom Out"
 argument_list|)
 block|,
 literal|""
 block|,
-name|palette_editor_zoom_in_cmd_callback
+name|palette_editor_zoom_out_cmd_callback
 block|,
 literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GTK_STOCK_ZOOM_IN
+name|GTK_STOCK_ZOOM_OUT
 block|}
 block|,
 name|NULL
@@ -190,18 +190,18 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Zoom Out"
+literal|"/Zoom In"
 argument_list|)
 block|,
 literal|""
 block|,
-name|palette_editor_zoom_out_cmd_callback
+name|palette_editor_zoom_in_cmd_callback
 block|,
 literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GTK_STOCK_ZOOM_OUT
+name|GTK_STOCK_ZOOM_IN
 block|}
 block|,
 name|NULL
@@ -346,7 +346,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Zoom In"
+literal|"/Zoom Out"
 argument_list|,
 name|data_editor
 operator|->
@@ -355,7 +355,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Zoom Out"
+literal|"/Zoom In"
 argument_list|,
 name|data_editor
 operator|->
