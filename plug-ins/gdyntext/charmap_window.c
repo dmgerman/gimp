@@ -1,13 +1,7 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * GIMP Dynamic Text -- This is a plug-in for The GIMP 1.0  * Copyright (C) 1998,1999 Marco Lamberto<lm@geocities.com>  * Web page: http://www.geocities.com/Tokyo/1474/gimp/  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * $Id$  */
+comment|/*  * GIMP Dynamic Text -- This is a plug-in for The GIMP 1.0  * Copyright (C) 1998,1999,2000 Marco Lamberto<lm@geocities.com>  * Web page: http://www.geocities.com/Tokyo/1474/gimp/  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * $Id$  */
 end_comment
-
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
 
 begin_include
 include|#
@@ -24,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"charmap.h"
 end_include
 
@@ -31,12 +31,6 @@ begin_include
 include|#
 directive|include
 file|"charmap_window.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_function_decl
@@ -237,10 +231,6 @@ name|hbbox1
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|hseparator
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|frame
 decl_stmt|;
 name|GtkWidget
@@ -408,32 +398,6 @@ argument_list|(
 name|cmw
 operator|->
 name|charmap
-argument_list|)
-expr_stmt|;
-name|hseparator
-operator|=
-name|gtk_hseparator_new
-argument_list|()
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|hseparator
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hseparator
 argument_list|)
 expr_stmt|;
 name|hbox1

@@ -1,13 +1,7 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * GIMP Dynamic Text -- This is a plug-in for The GIMP 1.0  * Copyright (C) 1998,1999 Marco Lamberto<lm@geocities.com>  * Web page: http://www.geocities.com/Tokyo/1474/gimp/  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * $Id$  */
+comment|/*  * GIMP Dynamic Text -- This is a plug-in for The GIMP 1.0  * Copyright (C) 1998,1999,2000 Marco Lamberto<lm@geocities.com>  * Web page: http://www.geocities.com/Tokyo/1474/gimp/  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * $Id$  */
 end_comment
-
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
 
 begin_include
 include|#
@@ -24,13 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"charmap.h"
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
+file|"charmap.h"
 end_include
 
 begin_function_decl
@@ -72,7 +66,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon2bf787ed0103
+DECL|enum|__anon2bd0700c0103
 enum|enum
 block|{
 DECL|enumerator|CHAR_SELECTED
@@ -416,14 +410,7 @@ literal|0
 index|]
 operator|=
 name|i
-operator|<
-literal|32
-condition|?
-literal|' '
-else|:
-name|i
 expr_stmt|;
-comment|/* skips control chars 0< c< 32 */
 name|button
 operator|=
 name|cm
@@ -442,6 +429,19 @@ operator|=
 name|gtk_toggle_button_new_with_label
 argument_list|(
 name|clabel
+argument_list|)
+expr_stmt|;
+name|gtk_button_set_relief
+argument_list|(
+operator|&
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|button
+argument_list|)
+operator|->
+name|button
+argument_list|,
+name|GTK_RELIEF_HALF
 argument_list|)
 expr_stmt|;
 if|if

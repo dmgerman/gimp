@@ -6,23 +6,38 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|_GDYNTEXT_UI_H_
+name|_GDYNTEXTUTIL_H_
 end_ifndef
 
 begin_define
-DECL|macro|_GDYNTEXT_UI_H_
+DECL|macro|_GDYNTEXTUTIL_H_
 define|#
 directive|define
-name|_GDYNTEXT_UI_H_
+name|_GDYNTEXTUTIL_H_
 end_define
 
 begin_function_decl
-name|gboolean
-name|gdt_create_ui
-parameter_list|(
-name|GdtVals
+name|gchar
 modifier|*
-name|data
+name|strunescape
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|text
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gchar
+modifier|*
+name|strescape
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|text
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -33,7 +48,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* _GDYNTEXT_UI_H_ */
+comment|/* _GDYNTEXTUTIL_H_ */
 end_comment
 
 begin_comment
