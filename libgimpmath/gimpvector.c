@@ -524,7 +524,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector2_normalize_val:  *  * @vector: a #GimpVector2 (by value)  *  * Computes and returns the normalized vector corresponding with the one  * passed in argument.  *  * Returns: a #GimpVector2 parallel to @vector, pointing in the same  *          direction but with a length of 1.0.  **/
+comment|/**  * gimp_vector2_normalize_val:  * @vector: a #GimpVector2 (by value)  *  * Computes and returns the normalized vector corresponding with the one  * passed in argument.  *  * Returns: a #GimpVector2 parallel to @vector, pointing in the same  *          direction but with a length of 1.0.  **/
 end_comment
 
 begin_function
@@ -1604,7 +1604,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector3_normalize_val:  *  * @vector: a #GimpVector3 (by value)  *  * Computes and returns the normalized vector corresponding with the one  * passed in argument.  *  * Returns: a #GimpVector2 parallel to @vector, pointing in the same  *          direction but with a length of 1.0.  **/
+comment|/**  * gimp_vector3_normalize_val:  * @vector: a #GimpVector3 (by value)  *  * Computes and returns the normalized vector corresponding with the one  * passed in argument.  *  * Returns: a #GimpVector2 parallel to @vector, pointing in the same  *          direction but with a length of 1.0.  **/
 end_comment
 
 begin_function
