@@ -95,10 +95,18 @@ name|COLOR_SAMPLE_HEIGHT
 value|15
 end_define
 
+begin_define
+DECL|macro|MAX_STRING_LENGTH
+define|#
+directive|define
+name|MAX_STRING_LENGTH
+value|4096
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be650870108
+DECL|struct|__anon298ef88f0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -133,7 +141,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2be65087020a
+DECL|union|__anon298ef88f020a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -178,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be650870308
+DECL|struct|__anon298ef88f0308
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -259,7 +267,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be650870408
+DECL|struct|__anon298ef88f0408
 block|{
 DECL|member|status
 name|GtkWidget
@@ -2876,7 +2884,7 @@ decl_stmt|;
 name|char
 name|buffer
 index|[
-literal|32
+name|MAX_STRING_LENGTH
 index|]
 decl_stmt|;
 name|int
@@ -3211,9 +3219,11 @@ break|break;
 case|case
 name|SF_STRING
 case|:
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+name|MAX_STRING_LENGTH
 argument_list|,
 literal|"\"%s\""
 argument_list|,
@@ -5396,7 +5406,7 @@ decl_stmt|;
 name|char
 name|buffer
 index|[
-literal|32
+name|MAX_STRING_LENGTH
 index|]
 decl_stmt|;
 name|int
@@ -5778,9 +5788,11 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+name|MAX_STRING_LENGTH
 argument_list|,
 literal|"\"%s\""
 argument_list|,
