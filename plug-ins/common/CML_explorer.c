@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<sys/types.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<sys/stat.h>
 end_include
 
@@ -290,7 +296,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291d425d0108
+DECL|struct|__anon28c69a730108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -318,7 +324,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291d425d0208
+DECL|struct|__anon28c69a730208
 block|{
 DECL|member|name
 name|gchar
@@ -1544,7 +1550,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291d425d0308
+DECL|struct|__anon28c69a730308
 block|{
 DECL|member|function
 name|gint
@@ -1617,7 +1623,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291d425d0408
+DECL|struct|__anon28c69a730408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -2383,7 +2389,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291d425d0508
+DECL|struct|__anon28c69a730508
 block|{
 DECL|member|run
 name|gint
@@ -2431,7 +2437,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291d425d0608
+DECL|struct|__anon28c69a730608
 block|{
 DECL|member|widget
 name|GtkWidget
