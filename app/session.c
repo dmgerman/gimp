@@ -438,6 +438,11 @@ operator|->
 name|y
 argument_list|)
 expr_stmt|;
+comment|/* It seems that usizing the dialogs is a bad thing, because you can't      make them smaller then. Until a better solution is found, we don't set      the size ...    */
+name|set_size
+operator|=
+name|FALSE
+expr_stmt|;
 if|if
 condition|(
 operator|(
