@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"actions-types.h"
 end_include
 
 begin_include
@@ -156,7 +156,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"convert-dialog.h"
+file|"gui/convert-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/grid-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/resize-dialog.h"
 end_include
 
 begin_include
@@ -168,25 +180,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"grid-dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"resize-dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a43de730108
+DECL|struct|__anon2c49f2ed0108
 block|{
 DECL|member|resize
 name|Resize

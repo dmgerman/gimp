@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/images-commands.h"
+file|"images-commands.h"
 end_include
 
 begin_include

@@ -78,19 +78,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/select-commands.h"
+file|"select-commands.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/tools-commands.h"
+file|"tools-commands.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/vectors-commands.h"
+file|"vectors-commands.h"
 end_include
 
 begin_include

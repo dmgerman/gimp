@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/palette-editor-commands.h"
+file|"palette-editor-commands.h"
 end_include
 
 begin_include

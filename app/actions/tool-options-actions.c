@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/tool-options-commands.h"
+file|"tool-options-commands.h"
 end_include
 
 begin_include

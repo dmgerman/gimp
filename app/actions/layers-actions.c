@@ -90,7 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/layers-commands.h"
+file|"layers-commands.h"
 end_include
 
 begin_include

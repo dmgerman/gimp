@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/vectors-commands.h"
+file|"vectors-commands.h"
 end_include
 
 begin_include

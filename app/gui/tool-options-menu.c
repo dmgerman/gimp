@@ -66,13 +66,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"menus.h"
+file|"actions/tool-options-commands.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tool-options-commands.h"
+file|"menus.h"
 end_include
 
 begin_include

@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file-commands.h"
+file|"actions/file-commands.h"
 end_include
 
 begin_include

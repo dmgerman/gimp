@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"actions-types.h"
 end_include
 
 begin_include
@@ -90,13 +90,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in-commands.h"
+file|"gui/plug-in-menus.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"plug-in-menus.h"
+file|"plug-in-commands.h"
 end_include
 
 begin_define

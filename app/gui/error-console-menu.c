@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"error-console-commands.h"
+file|"actions/error-console-commands.h"
 end_include
 
 begin_include

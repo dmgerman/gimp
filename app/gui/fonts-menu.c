@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"fonts-commands.h"
+file|"actions/fonts-commands.h"
 end_include
 
 begin_include

@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"vectors-commands.h"
+file|"actions/vectors-commands.h"
 end_include
 
 begin_include

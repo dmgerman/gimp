@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"actions-types.h"
 end_include
 
 begin_include
@@ -72,13 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"color-notebook.h"
+file|"gui/color-notebook.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"dialogs.h"
+file|"gui/dialogs.h"
 end_include
 
 begin_include

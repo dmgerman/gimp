@@ -90,7 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/image-commands.h"
+file|"image-commands.h"
 end_include
 
 begin_include

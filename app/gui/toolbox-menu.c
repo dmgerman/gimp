@@ -54,25 +54,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"debug-commands.h"
+file|"actions/debug-commands.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"dialogs-commands.h"
+file|"actions/dialogs-commands.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"file-commands.h"
+file|"actions/file-commands.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"help-commands.h"
+file|"actions/help-commands.h"
 end_include
 
 begin_include

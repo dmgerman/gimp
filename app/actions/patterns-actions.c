@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/data-commands.h"
+file|"data-commands.h"
 end_include
 
 begin_include

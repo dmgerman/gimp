@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"actions-types.h"
 end_include
 
 begin_include
@@ -108,19 +108,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs.h"
+file|"gui/dialogs.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"info-dialog.h"
+file|"gui/info-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"info-window.h"
+file|"gui/info-window.h"
 end_include
 
 begin_include

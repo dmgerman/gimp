@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/fonts-commands.h"
+file|"fonts-commands.h"
 end_include
 
 begin_include

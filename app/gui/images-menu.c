@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"images-commands.h"
+file|"actions/images-commands.h"
 end_include
 
 begin_include

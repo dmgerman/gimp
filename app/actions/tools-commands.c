@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"actions-types.h"
 end_include
 
 begin_include
@@ -73,6 +73,12 @@ begin_include
 include|#
 directive|include
 file|"tools/tool_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools-commands.h"
 end_include
 
 begin_define

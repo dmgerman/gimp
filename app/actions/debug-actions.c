@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/debug-commands.h"
+file|"debug-commands.h"
 end_include
 
 begin_decl_stmt

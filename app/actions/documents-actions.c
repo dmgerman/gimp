@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/documents-commands.h"
+file|"documents-commands.h"
 end_include
 
 begin_include

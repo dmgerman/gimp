@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"qmask-commands.h"
+file|"actions/qmask-commands.h"
 end_include
 
 begin_include

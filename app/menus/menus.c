@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"actions/file-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"brushes-menu.h"
 end_include
 
@@ -133,12 +139,6 @@ begin_include
 include|#
 directive|include
 file|"file-save-menu.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file-commands.h"
 end_include
 
 begin_include

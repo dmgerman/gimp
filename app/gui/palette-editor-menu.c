@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"menus.h"
+file|"actions/palette-editor-commands.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"palette-editor-commands.h"
+file|"menus.h"
 end_include
 
 begin_include

@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"buffers-commands.h"
+file|"actions/buffers-commands.h"
 end_include
 
 begin_include

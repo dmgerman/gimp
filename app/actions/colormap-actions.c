@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/colormap-editor-commands.h"
+file|"colormap-editor-commands.h"
 end_include
 
 begin_include

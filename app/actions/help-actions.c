@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/help-commands.h"
+file|"help-commands.h"
 end_include
 
 begin_include

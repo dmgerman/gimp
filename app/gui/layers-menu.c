@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layers-commands.h"
+file|"actions/layers-commands.h"
 end_include
 
 begin_include

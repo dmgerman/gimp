@@ -174,6 +174,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"actions/dialogs-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"color-history.h"
 end_include
 
@@ -181,12 +187,6 @@ begin_include
 include|#
 directive|include
 file|"dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"dialogs-commands.h"
 end_include
 
 begin_include

@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"templates-commands.h"
+file|"actions/templates-commands.h"
 end_include
 
 begin_include

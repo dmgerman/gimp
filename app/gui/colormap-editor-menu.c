@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"colormap-editor-commands.h"
+file|"actions/colormap-editor-commands.h"
 end_include
 
 begin_include

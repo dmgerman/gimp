@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/buffers-commands.h"
+file|"buffers-commands.h"
 end_include
 
 begin_include

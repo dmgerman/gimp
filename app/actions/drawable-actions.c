@@ -90,7 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/drawable-commands.h"
+file|"drawable-commands.h"
 end_include
 
 begin_include

@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"actions-types.h"
 end_include
 
 begin_include
@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"palette-import-dialog.h"
+file|"gui/palette-import-dialog.h"
 end_include
 
 begin_include

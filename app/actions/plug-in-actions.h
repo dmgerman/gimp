@@ -6,23 +6,23 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__DATA_COMMANDS_H__
+name|__PLUG_IN_ACTIONS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__DATA_COMMANDS_H__
+DECL|macro|__PLUG_IN_ACTIONS_H__
 define|#
 directive|define
-name|__DATA_COMMANDS_H__
+name|__PLUG_IN_ACTIONS_H__
 end_define
 
 begin_function_decl
 name|void
-name|data_new_data_cmd_callback
+name|plug_in_actions_setup
 parameter_list|(
-name|GtkWidget
+name|GimpActionGroup
 modifier|*
-name|widget
+name|group
 parameter_list|,
 name|gpointer
 name|data
@@ -32,53 +32,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|data_duplicate_data_cmd_callback
+name|plug_in_actions_update
 parameter_list|(
-name|GtkWidget
+name|GimpActionGroup
 modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|data_edit_data_cmd_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|data_delete_data_cmd_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|data_refresh_data_cmd_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
+name|group
 parameter_list|,
 name|gpointer
 name|data
@@ -92,7 +50,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __DATA_COMMANDS_H__ */
+comment|/* __PLUG_IN_ACTIONS_H__ */
 end_comment
 
 end_unit

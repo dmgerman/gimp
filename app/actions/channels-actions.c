@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/channels-commands.h"
+file|"channels-commands.h"
 end_include
 
 begin_include

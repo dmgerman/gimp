@@ -72,13 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brushes-menu.h"
+file|"actions/data-commands.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"data-commands.h"
+file|"brushes-menu.h"
 end_include
 
 begin_include

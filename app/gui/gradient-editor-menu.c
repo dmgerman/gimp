@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gradient-editor-commands.h"
+file|"actions/gradient-editor-commands.h"
 end_include
 
 begin_include

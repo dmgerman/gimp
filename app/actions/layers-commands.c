@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"actions-types.h"
 end_include
 
 begin_include
@@ -192,6 +192,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/resize-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"layers-commands.h"
 end_include
 
@@ -199,12 +205,6 @@ begin_include
 include|#
 directive|include
 file|"image-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"resize-dialog.h"
 end_include
 
 begin_include

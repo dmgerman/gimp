@@ -102,7 +102,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/view-commands.h"
+file|"view-commands.h"
 end_include
 
 begin_include

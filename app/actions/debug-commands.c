@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"actions-types.h"
 end_include
 
 begin_include
@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"menus.h"
+file|"gui/menus.h"
 end_include
 
 begin_ifdef

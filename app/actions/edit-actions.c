@@ -120,7 +120,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/edit-commands.h"
+file|"edit-commands.h"
 end_include
 
 begin_include

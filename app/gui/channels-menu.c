@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channels-commands.h"
+file|"actions/channels-commands.h"
 end_include
 
 begin_include

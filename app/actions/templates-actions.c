@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/templates-commands.h"
+file|"templates-commands.h"
 end_include
 
 begin_include

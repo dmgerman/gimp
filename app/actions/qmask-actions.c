@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/qmask-commands.h"
+file|"qmask-commands.h"
 end_include
 
 begin_include
