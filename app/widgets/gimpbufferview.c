@@ -859,7 +859,6 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
-empty_stmt|;
 if|if
 condition|(
 name|gdisp

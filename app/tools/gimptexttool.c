@@ -707,7 +707,6 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-empty_stmt|;
 switch|switch
 condition|(
 name|action
@@ -803,7 +802,6 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-empty_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable

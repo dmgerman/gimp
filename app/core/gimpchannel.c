@@ -2904,7 +2904,6 @@ argument_list|(
 name|stroke_desc
 argument_list|)
 decl_stmt|;
-empty_stmt|;
 name|GimpPaintOptions
 modifier|*
 name|paint_options

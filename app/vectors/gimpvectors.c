@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2783c1090103
+DECL|enum|__anon29ea36910103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -2287,7 +2287,6 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-empty_stmt|;
 name|gboolean
 name|retval
 init|=
@@ -2365,7 +2364,6 @@ argument_list|(
 name|stroke_desc
 argument_list|)
 decl_stmt|;
-empty_stmt|;
 name|GimpPaintOptions
 modifier|*
 name|paint_options
