@@ -143,7 +143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acf2f490103
+DECL|enum|__anon29e8f0800103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf2f490208
+DECL|struct|__anon29e8f0800208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -580,7 +580,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2acf2f490308
+DECL|struct|__anon29e8f0800308
 block|{
 DECL|member|signature
 name|gchar
@@ -7365,6 +7365,8 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|dest
+init|=
+name|NULL
 decl_stmt|,
 modifier|*
 name|temp
@@ -8505,10 +8507,15 @@ name|height
 argument_list|)
 expr_stmt|;
 block|{
+if|#
+directive|if
+name|PANOTOOLS_FIX
 name|guchar
 modifier|*
 name|tmp
 decl_stmt|;
+endif|#
+directive|endif
 name|seek_to_and_unpack_pixeldata
 argument_list|(
 name|fd
