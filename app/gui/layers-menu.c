@@ -101,7 +101,7 @@ argument_list|(
 literal|"/_New Layer..."
 argument_list|)
 block|,
-literal|"<control>N"
+literal|""
 block|,
 name|layers_new_cmd_callback
 block|,
@@ -126,7 +126,7 @@ argument_list|(
 literal|"/_Raise Layer"
 argument_list|)
 block|,
-literal|"<control>F"
+literal|""
 block|,
 name|layers_raise_cmd_callback
 block|,
@@ -151,7 +151,7 @@ argument_list|(
 literal|"/Layer to _Top"
 argument_list|)
 block|,
-literal|"<control><shift>F"
+literal|""
 block|,
 name|layers_raise_to_top_cmd_callback
 block|,
@@ -176,7 +176,7 @@ argument_list|(
 literal|"/_Lower Layer"
 argument_list|)
 block|,
-literal|"<control>B"
+literal|""
 block|,
 name|layers_lower_cmd_callback
 block|,
@@ -201,7 +201,7 @@ argument_list|(
 literal|"/Layer to _Bottom"
 argument_list|)
 block|,
-literal|"<control><shift>B"
+literal|""
 block|,
 name|layers_lower_to_bottom_cmd_callback
 block|,
@@ -226,7 +226,7 @@ argument_list|(
 literal|"/D_uplicate Layer"
 argument_list|)
 block|,
-literal|"<control>C"
+name|NULL
 block|,
 name|layers_duplicate_cmd_callback
 block|,
@@ -251,7 +251,7 @@ argument_list|(
 literal|"/_Anchor Layer"
 argument_list|)
 block|,
-literal|"<control>H"
+name|NULL
 block|,
 name|layers_anchor_cmd_callback
 block|,
@@ -276,7 +276,7 @@ argument_list|(
 literal|"/Merge Do_wn"
 argument_list|)
 block|,
-literal|"<control><shift>M"
+name|NULL
 block|,
 name|layers_merge_down_cmd_callback
 block|,
@@ -301,7 +301,7 @@ argument_list|(
 literal|"/_Delete Layer"
 argument_list|)
 block|,
-literal|"<control>X"
+literal|""
 block|,
 name|layers_delete_cmd_callback
 block|,
@@ -331,7 +331,7 @@ argument_list|(
 literal|"/Layer B_oundary Size..."
 argument_list|)
 block|,
-literal|"<control>R"
+name|NULL
 block|,
 name|layers_resize_cmd_callback
 block|,
@@ -381,7 +381,7 @@ argument_list|(
 literal|"/_Scale Layer..."
 argument_list|)
 block|,
-literal|"<control>S"
+name|NULL
 block|,
 name|layers_scale_cmd_callback
 block|,

@@ -101,7 +101,7 @@ argument_list|(
 literal|"/_New Path..."
 argument_list|)
 block|,
-literal|"<control>N"
+literal|""
 block|,
 name|vectors_new_cmd_callback
 block|,
@@ -126,7 +126,7 @@ argument_list|(
 literal|"/_Raise Path"
 argument_list|)
 block|,
-literal|"<control>F"
+literal|""
 block|,
 name|vectors_raise_cmd_callback
 block|,
@@ -151,7 +151,7 @@ argument_list|(
 literal|"/_Lower Path"
 argument_list|)
 block|,
-literal|"<control>B"
+literal|""
 block|,
 name|vectors_lower_cmd_callback
 block|,
@@ -176,7 +176,7 @@ argument_list|(
 literal|"/D_uplicate Path"
 argument_list|)
 block|,
-literal|"<control>U"
+name|NULL
 block|,
 name|vectors_duplicate_cmd_callback
 block|,
@@ -201,7 +201,7 @@ argument_list|(
 literal|"/_Delete Path"
 argument_list|)
 block|,
-literal|"<control>X"
+literal|""
 block|,
 name|vectors_delete_cmd_callback
 block|,
@@ -231,7 +231,7 @@ argument_list|(
 literal|"/Path to Sele_ction"
 argument_list|)
 block|,
-literal|"<control>S"
+name|NULL
 block|,
 name|vectors_to_selection_cmd_callback
 block|,
@@ -331,7 +331,7 @@ argument_list|(
 literal|"/Selecti_on to Path"
 argument_list|)
 block|,
-literal|"<control>P"
+name|NULL
 block|,
 name|vectors_selection_to_vectors_cmd_callback
 block|,
@@ -356,7 +356,7 @@ argument_list|(
 literal|"/Stro_ke Path"
 argument_list|)
 block|,
-literal|"<control>T"
+name|NULL
 block|,
 name|vectors_stroke_cmd_callback
 block|,
@@ -386,7 +386,7 @@ argument_list|(
 literal|"/Co_py Path"
 argument_list|)
 block|,
-literal|"<control>C"
+literal|""
 block|,
 name|vectors_copy_cmd_callback
 block|,
@@ -411,7 +411,7 @@ argument_list|(
 literal|"/Paste Pat_h"
 argument_list|)
 block|,
-literal|"<control>V"
+literal|""
 block|,
 name|vectors_paste_cmd_callback
 block|,
@@ -436,7 +436,7 @@ argument_list|(
 literal|"/I_mport Path..."
 argument_list|)
 block|,
-literal|"<control>I"
+literal|""
 block|,
 name|vectors_import_cmd_callback
 block|,
@@ -461,7 +461,7 @@ argument_list|(
 literal|"/E_xport Path..."
 argument_list|)
 block|,
-literal|"<control>E"
+literal|""
 block|,
 name|vectors_export_cmd_callback
 block|,

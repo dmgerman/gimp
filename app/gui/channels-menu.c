@@ -101,7 +101,7 @@ argument_list|(
 literal|"/_New Channel..."
 argument_list|)
 block|,
-literal|"<control>N"
+literal|""
 block|,
 name|channels_new_cmd_callback
 block|,
@@ -126,7 +126,7 @@ argument_list|(
 literal|"/_Raise Channel"
 argument_list|)
 block|,
-literal|"<control>F"
+literal|""
 block|,
 name|channels_raise_cmd_callback
 block|,
@@ -151,7 +151,7 @@ argument_list|(
 literal|"/_Lower Channel"
 argument_list|)
 block|,
-literal|"<control>B"
+literal|""
 block|,
 name|channels_lower_cmd_callback
 block|,
@@ -176,7 +176,7 @@ argument_list|(
 literal|"/D_uplicate Channel"
 argument_list|)
 block|,
-literal|"<control>C"
+name|NULL
 block|,
 name|channels_duplicate_cmd_callback
 block|,
@@ -201,7 +201,7 @@ argument_list|(
 literal|"/_Delete Channel"
 argument_list|)
 block|,
-literal|"<control>X"
+literal|""
 block|,
 name|channels_delete_cmd_callback
 block|,
@@ -231,7 +231,7 @@ argument_list|(
 literal|"/Channel to Sele_ction"
 argument_list|)
 block|,
-literal|"<control>S"
+name|NULL
 block|,
 name|channels_to_selection_cmd_callback
 block|,
