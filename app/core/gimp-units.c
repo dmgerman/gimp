@@ -198,7 +198,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c251f50103
+DECL|enum|__anon2b50da940103
 block|{
 DECL|enumerator|UNIT_INFO
 name|UNIT_INFO
@@ -447,6 +447,12 @@ argument_list|,
 name|gimp
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|token
+operator|==
+name|G_TOKEN_LEFT_PAREN
+condition|)
 name|g_scanner_set_scope
 argument_list|(
 name|scanner
@@ -498,6 +504,14 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|scanner
+operator|->
+name|scope_id
+operator|==
+literal|0
+condition|?
+literal|"unit-info"
+else|:
 name|NULL
 argument_list|,
 name|_
@@ -578,6 +592,7 @@ argument_list|(
 name|fp
 argument_list|,
 literal|"# GIMP unitrc\n"
+literal|"#\n"
 literal|"# This file contains your user unit database. You can\n"
 literal|"# modify this list with the unit editor. You are not\n"
 literal|"# supposed to edit it manually, but of course you can do.\n"
@@ -680,6 +695,13 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|fprintf
+argument_list|(
+name|fp
+argument_list|,
+literal|"# end of unitrc\n"
+argument_list|)
+expr_stmt|;
 name|fclose
 argument_list|(
 name|fp

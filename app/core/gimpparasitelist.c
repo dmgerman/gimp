@@ -82,7 +82,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf035cb0103
+DECL|enum|__anon29419d480103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -301,6 +301,18 @@ modifier|*
 name|parent_class
 init|=
 name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|parasite_symbol
+specifier|static
+specifier|const
+name|gchar
+modifier|*
+name|parasite_symbol
+init|=
+literal|"parasite"
 decl_stmt|;
 end_decl_stmt
 
@@ -791,6 +803,7 @@ operator|->
 name|table
 condition|)
 block|{
+comment|/* FIXME */
 name|memsize
 operator|+=
 operator|(
@@ -809,7 +822,6 @@ name|gpointer
 argument_list|)
 operator|)
 expr_stmt|;
-comment|/* FIXME */
 name|g_hash_table_foreach
 argument_list|(
 name|list
@@ -921,12 +933,12 @@ name|scanner
 argument_list|,
 literal|0
 argument_list|,
-literal|"parasite"
+name|parasite_symbol
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
-literal|1
-argument_list|)
+operator|(
+name|gpointer
+operator|)
+name|parasite_symbol
 argument_list|)
 expr_stmt|;
 name|token
@@ -976,10 +988,7 @@ name|value
 operator|.
 name|v_symbol
 operator|==
-name|GINT_TO_POINTER
-argument_list|(
-literal|1
-argument_list|)
+name|parasite_symbol
 condition|)
 block|{
 name|gchar
@@ -1159,9 +1168,9 @@ name|token
 argument_list|,
 name|NULL
 argument_list|,
-literal|"`parasite'"
-argument_list|,
 name|NULL
+argument_list|,
+name|parasite_symbol
 argument_list|,
 name|_
 argument_list|(
@@ -1712,7 +1721,9 @@ name|g_string_printf
 argument_list|(
 name|str
 argument_list|,
-literal|"(parasite \"%s\" %lu \""
+literal|"(%s \"%s\" %lu \""
+argument_list|,
+name|parasite_symbol
 argument_list|,
 name|gimp_parasite_name
 argument_list|(

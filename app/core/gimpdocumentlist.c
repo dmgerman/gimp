@@ -125,6 +125,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_decl_stmt
+DECL|variable|document_symbol
+specifier|static
+specifier|const
+name|gchar
+modifier|*
+name|document_symbol
+init|=
+literal|"document"
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 name|GType
 DECL|function|gimp_document_list_get_type (void)
@@ -343,7 +355,9 @@ name|g_string_printf
 argument_list|(
 name|str
 argument_list|,
-literal|"(document \"%s\")\n"
+literal|"(%s \"%s\")\n"
+argument_list|,
+name|document_symbol
 argument_list|,
 name|escaped
 argument_list|)
@@ -425,12 +439,12 @@ name|scanner
 argument_list|,
 literal|0
 argument_list|,
-literal|"document"
+name|document_symbol
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
-literal|1
-argument_list|)
+operator|(
+name|gpointer
+operator|)
+name|document_symbol
 argument_list|)
 expr_stmt|;
 name|token
@@ -484,10 +498,7 @@ name|value
 operator|.
 name|v_symbol
 operator|==
-name|GINT_TO_POINTER
-argument_list|(
-literal|1
-argument_list|)
+name|document_symbol
 condition|)
 block|{
 name|gchar
@@ -613,9 +624,9 @@ name|token
 argument_list|,
 name|NULL
 argument_list|,
-literal|"`document_list'"
-argument_list|,
 name|NULL
+argument_list|,
+name|document_symbol
 argument_list|,
 name|_
 argument_list|(
