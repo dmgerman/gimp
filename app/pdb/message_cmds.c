@@ -158,6 +158,33 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|g_utf8_validate
+argument_list|(
+name|message
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|)
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"Strings passed to g_message() must be in UTF-8 encoding."
+argument_list|)
+expr_stmt|;
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
+else|else
+block|{
 name|g_message
 argument_list|(
 literal|"%s"
@@ -165,6 +192,8 @@ argument_list|,
 name|message
 argument_list|)
 expr_stmt|;
+block|}
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -207,7 +236,7 @@ literal|"gimp_message"
 block|,
 literal|"Displays a dialog box with a message."
 block|,
-literal|"Displays a dialog box with a message. Useful for status or error reporting."
+literal|"Displays a dialog box with a message. Useful for status or error reporting. The message must be in UTF-8 encoding."
 block|,
 literal|"Manish Singh"
 block|,

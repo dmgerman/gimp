@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_message:  * @message: Message to display in the dialog.  *  * Displays a dialog box with a message.  *  * Displays a dialog box with a message. Useful for status or error  * reporting.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_message:  * @message: Message to display in the dialog.  *  * Displays a dialog box with a message.  *  * Displays a dialog box with a message. Useful for status or error  * reporting. The message must be in UTF-8 encoding.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
