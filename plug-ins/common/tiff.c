@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7c5ad10108
+DECL|struct|__anon2a4080e40108
 block|{
 DECL|member|compression
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7c5ad10208
+DECL|struct|__anon2a4080e40208
 block|{
 DECL|member|ID
 name|gint32
