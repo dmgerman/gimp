@@ -1152,6 +1152,8 @@ decl_stmt|;
 name|GimpImage
 modifier|*
 name|gimage
+init|=
+name|NULL
 decl_stmt|;
 name|drawable
 operator|=
@@ -3377,9 +3379,9 @@ name|tile_data_pointer
 argument_list|(
 name|tile
 argument_list|,
-name|y
-argument_list|,
 name|x
+argument_list|,
+name|y
 argument_list|)
 expr_stmt|;
 for|for
@@ -3761,9 +3763,9 @@ name|tile_data_pointer
 argument_list|(
 name|tile
 argument_list|,
-name|y
-argument_list|,
 name|x
+argument_list|,
+name|y
 argument_list|)
 expr_stmt|;
 for|for
