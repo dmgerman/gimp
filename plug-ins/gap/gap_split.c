@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history  * 0.96.00; 1998/07/01   hof: - added scale, resize and crop   *                              (affects full range == all anim frames)  *                            - now using gap_arr_dialog.h  * 0.94.01; 1998/04/28   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.92.00  1998.01.10   hof: bugfix in p_frames_to_multilayer  *                            layers need alpha (to be raise/lower able)   * 0.90.00               first development release  */
+comment|/* revision history  * gimp   1.1.15.1;  1999/05/08  hof: bugix (dont mix GDrawableType with GImageType)  * 0.96.00; 1998/07/01   hof: - added scale, resize and crop   *                              (affects full range == all anim frames)  *                            - now using gap_arr_dialog.h  * 0.94.01; 1998/04/28   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.92.00  1998.01.10   hof: bugfix in p_frames_to_multilayer  *                            layers need alpha (to be raise/lower able)   * 0.90.00               first development release  */
 end_comment
 
 begin_comment
@@ -411,8 +411,17 @@ argument_list|,
 literal|4
 argument_list|,
 comment|/* width, height */
+operator|(
+operator|(
 name|l_type
+operator|*
+literal|2
+operator|)
+operator|+
+literal|1
+operator|)
 argument_list|,
+comment|/* convert from GImageType to GDrawableType, and add alpha */
 literal|0.0
 argument_list|,
 comment|/* Opacity full transparent */

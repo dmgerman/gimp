@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * version 0.96.03; 1998/08/15  hof: p_arr_gtk_init   * version 0.96.01; 1998/07/09  hof: Bugfix: gtk_init should be called only  *                                           once in a plugin process   * version 0.96.00; 1998/07/09  hof: 1.st release   *                                   (re-implementation of gap_sld_dialog.c)  */
+comment|/* revision history:  * gimp   1.1.15.1; 1999/05/08  hof: call fileselect in gtk+1.2 style   * version 0.96.03; 1998/08/15  hof: p_arr_gtk_init   * version 0.96.01; 1998/07/09  hof: Bugfix: gtk_init should be called only  *                                           once in a plugin process   * version 0.96.00; 1998/07/09  hof: 1.st release   *                                   (re-implementation of gap_sld_dialog.c)  */
 end_comment
 
 begin_include
@@ -88,7 +88,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c2937c60108
+DECL|struct|__anon27ddef5e0108
 typedef|typedef
 struct|struct
 block|{
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2937c60208
+DECL|struct|__anon27ddef5e0208
 block|{
 DECL|member|arr_ptr
 name|t_arr_arg
@@ -134,7 +134,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c2937c60308
+DECL|struct|__anon27ddef5e0308
 typedef|typedef
 struct|struct
 block|{
@@ -1211,23 +1211,6 @@ name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|filesel
-argument_list|)
-argument_list|,
-literal|"destroy"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|filesel_close_cb
-argument_list|,
-name|arr_ptr
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
 name|GTK_FILE_SELECTION
 argument_list|(
 name|filesel
@@ -1246,7 +1229,7 @@ argument_list|,
 name|arr_ptr
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect_object
+name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -1265,10 +1248,24 @@ name|GtkSignalFunc
 operator|)
 name|filesel_close_cb
 argument_list|,
+name|arr_ptr
+argument_list|)
+expr_stmt|;
+comment|/* "destroy" has to be the last signal,     * (otherwise the other callbacks are never called)    */
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|filesel
+argument_list|)
+argument_list|,
+literal|"destroy"
+argument_list|,
 operator|(
-name|GtkObject
-operator|*
+name|GtkSignalFunc
 operator|)
+name|filesel_close_cb
+argument_list|,
 name|arr_ptr
 argument_list|)
 expr_stmt|;

@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * version 0.98.00   1998.11.27  hof: - use new module gap_pdb_calls.h  * version 0.97.00   1998.10.19  hof: - created module  */
+comment|/* revision history:  * gimp   1.1.15.1;  1999/05/08  hof: bugix (dont mix GDrawableType with GImageType)  * version 0.98.00   1998.11.27  hof: - use new module gap_pdb_calls.h  * version 0.97.00   1998.10.19  hof: - created module  */
 end_comment
 
 begin_comment
@@ -1539,6 +1539,15 @@ argument_list|(
 name|image_id
 argument_list|)
 expr_stmt|;
+name|l_type
+operator|=
+operator|(
+name|l_type
+operator|*
+literal|2
+operator|)
+expr_stmt|;
+comment|/* convert from GImageType to GDrawableType */
 comment|/* add a transparent dummy layer */
 name|l_layer_id
 operator|=
