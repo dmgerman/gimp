@@ -719,7 +719,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon275e799a0103
+DECL|enum|__anon2c74e4ca0103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -826,7 +826,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon275e799a0203
+DECL|enum|__anon2c74e4ca0203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -4745,7 +4745,7 @@ modifier|*
 name|dest
 parameter_list|)
 block|{
-name|gimp_context_real_set_foreground
+name|gimp_context_real_set_background
 argument_list|(
 name|dest
 argument_list|,
