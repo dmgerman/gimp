@@ -10299,11 +10299,11 @@ name|mbox
 decl_stmt|;
 name|gchar
 modifier|*
-name|title_buf
+name|title
 decl_stmt|;
 name|gchar
 modifier|*
-name|warning_buf
+name|warning
 decl_stmt|;
 if|if
 condition|(
@@ -10323,25 +10323,26 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|warning_buf
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Changes were made to %s.\nClose anyway?"
-argument_list|)
-argument_list|,
-name|image_name
-argument_list|)
-expr_stmt|;
-name|title_buf
+name|title
 operator|=
 name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
 literal|"Close %s?"
+argument_list|)
+argument_list|,
+name|image_name
+argument_list|)
+expr_stmt|;
+name|warning
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Changes were made to %s.\n"
+literal|"Close anyway?"
 argument_list|)
 argument_list|,
 name|image_name
@@ -10355,15 +10356,15 @@ name|mbox
 operator|=
 name|gimp_query_boolean_box
 argument_list|(
-name|title_buf
+name|title
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"dialogs/really_close.html"
 argument_list|,
-name|FALSE
+name|GTK_STOCK_DIALOG_QUESTION
 argument_list|,
-name|warning_buf
+name|warning
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,
@@ -10380,12 +10381,12 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|title_buf
+name|title
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|warning_buf
+name|warning
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -1724,7 +1724,8 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%s exists. Overwrite?"
+literal|"File '%s' exists.\n"
+literal|"Overwrite it?"
 argument_list|)
 argument_list|,
 name|filename
