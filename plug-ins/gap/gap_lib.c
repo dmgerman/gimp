@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * 0.99.00; 1999/03/15   hof: prepared for win/dos filename conventions  * 0.98.00; 1998/11/30   hof: started Port to GIMP 1.1:  *                               exchange of Images (by next frame) is now handled in the  *                               new module: gap_exchange_image.c  * 0.96.02; 1998/07/30   hof: extended gap_dup (duplicate range instead of singele frame)  *                            added gap_shift  * 0.96.00               hof: - now using gap_arr_dialog.h  * 0.95.00               hof:  increased duplicate frames limit from 50 to 99  * 0.93.01               hof: fixup bug when frames are not in the current directory  * 0.90.00;              hof: 1.st (pre) release  */
+comment|/* revision history:  * 1.1.8a;  1999/08/31   hof: for AnimFrame Filtypes != XCF:  *                            p_decide_save_as does save INTERACTIVE at 1.st time  *                            and uses RUN_WITH_LAST_VALS for subsequent calls  *                            (this enables to set Fileformat specific save-Parameters  *                            at least at the 1.st call, using the save dialog  *                            of the selected (by gimp_file_save) file_save procedure.  *                            in NONINTERACTIVE mode we have no access to  *                            the Fileformat specific save-Parameters  *          1999/07/22   hof: accept anim framenames without underscore '_'  *                            (suggested by Samuel Meder)  * 0.99.00; 1999/03/15   hof: prepared for win/dos filename conventions  * 0.98.00; 1998/11/30   hof: started Port to GIMP 1.1:  *                               exchange of Images (by next frame) is now handled in the  *                               new module: gap_exchange_image.c  * 0.96.02; 1998/07/30   hof: extended gap_dup (duplicate range instead of singele frame)  *                            added gap_shift  * 0.96.00               hof: - now using gap_arr_dialog.h  * 0.95.00               hof:  increased duplicate frames limit from 50 to 99  * 0.93.01               hof: fixup bug when frames are not in the current directory  * 0.90.00;              hof: 1.st (pre) release  */
 end_comment
 
 begin_comment
@@ -231,9 +231,205 @@ name|p_decide_save_as
 parameter_list|(
 name|gint32
 name|image_id
+parameter_list|,
+name|char
+modifier|*
+name|sav_name
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/* ============================================================================  * p_strdup_*_underscore  *   duplicate string and if last char is no underscore add one at end.  *   duplicate string and delete last char if it is the underscore  * ============================================================================  */
+end_comment
+
+begin_function
+name|char
+modifier|*
+DECL|function|p_strdup_add_underscore (char * name)
+name|p_strdup_add_underscore
+parameter_list|(
+name|char
+modifier|*
+name|name
+parameter_list|)
+block|{
+name|int
+name|l_len
+decl_stmt|;
+name|char
+modifier|*
+name|l_str
+decl_stmt|;
+if|if
+condition|(
+name|name
+operator|==
+name|NULL
+condition|)
+block|{
+return|return
+operator|(
+name|g_strdup
+argument_list|(
+literal|"\0"
+argument_list|)
+operator|)
+return|;
+block|}
+name|l_len
+operator|=
+name|strlen
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
+name|l_str
+operator|=
+name|g_malloc
+argument_list|(
+name|l_len
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
+name|strcpy
+argument_list|(
+name|l_str
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|l_len
+operator|>
+literal|0
+condition|)
+block|{
+if|if
+condition|(
+name|name
+index|[
+name|l_len
+operator|-
+literal|1
+index|]
+operator|!=
+literal|'_'
+condition|)
+block|{
+name|l_str
+index|[
+name|l_len
+index|]
+operator|=
+literal|'_'
+expr_stmt|;
+name|l_str
+index|[
+name|l_len
+operator|+
+literal|1
+index|]
+operator|=
+literal|'\0'
+expr_stmt|;
+block|}
+block|}
+return|return
+operator|(
+name|l_str
+operator|)
+return|;
+block|}
+end_function
+
+begin_function
+name|char
+modifier|*
+DECL|function|p_strdup_del_underscore (char * name)
+name|p_strdup_del_underscore
+parameter_list|(
+name|char
+modifier|*
+name|name
+parameter_list|)
+block|{
+name|int
+name|l_len
+decl_stmt|;
+name|char
+modifier|*
+name|l_str
+decl_stmt|;
+if|if
+condition|(
+name|name
+operator|==
+name|NULL
+condition|)
+block|{
+return|return
+operator|(
+name|g_strdup
+argument_list|(
+literal|"\0"
+argument_list|)
+operator|)
+return|;
+block|}
+name|l_len
+operator|=
+name|strlen
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
+name|l_str
+operator|=
+name|g_strdup
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|l_len
+operator|>
+literal|0
+condition|)
+block|{
+if|if
+condition|(
+name|l_str
+index|[
+name|l_len
+operator|-
+literal|1
+index|]
+operator|==
+literal|'_'
+condition|)
+block|{
+name|l_str
+index|[
+name|l_len
+operator|-
+literal|1
+index|]
+operator|=
+literal|'\0'
+expr_stmt|;
+block|}
+block|}
+return|return
+operator|(
+name|l_str
+operator|)
+return|;
+block|}
+end_function
 
 begin_comment
 comment|/* ============================================================================  * p_msg_win  *   print a message both to stderr  *   and to a gimp info window with OK button (only when run INTERACTIVE)  * ============================================================================  */
@@ -920,7 +1116,7 @@ comment|/* end p_rename_frame */
 end_comment
 
 begin_comment
-comment|/* ============================================================================  * p_alloc_basename  *  * build the basename from an images name  * Extension and trailing "_0000" are cut off.  * return name or NULL (if malloc fails)  * Output: number contains the integer representation of the stripped off  *         number String. (or 0 if there was none)  * ============================================================================  */
+comment|/* ============================================================================  * p_alloc_basename  *  * build the basename from an images name  * Extension and trailing digits ("0000.xcf") are cut off.  * return name or NULL (if malloc fails)  * Output: number contains the integer representation of the stripped off  *         number String. (or 0 if there was none)  * ============================================================================  */
 end_comment
 
 begin_function
@@ -1084,7 +1280,7 @@ argument_list|,
 name|l_fname
 argument_list|)
 expr_stmt|;
-comment|/* cut off trailing digits and underscore (_0000) */
+comment|/* cut off trailing digits (0000) */
 name|l_ptr
 operator|=
 operator|&
@@ -1164,20 +1360,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-if|if
-condition|(
-operator|*
-name|l_ptr
-operator|==
-literal|'_'
-condition|)
-block|{
-operator|*
-name|l_ptr
-operator|=
-literal|'\0'
-expr_stmt|;
-block|}
+comment|/* do not cut off underscore any longer */
+comment|/*        * if(*l_ptr == '_')        * {         *    *l_ptr = '\0';        * }        */
 break|break;
 block|}
 block|}
@@ -1410,7 +1594,7 @@ name|sprintf
 argument_list|(
 name|l_fname
 argument_list|,
-literal|"%s_%04ld%s"
+literal|"%s%04ld%s"
 argument_list|,
 name|basename
 argument_list|,
@@ -2081,7 +2265,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-comment|/* check for files, with equal basename (frames)                 * (length must be greater than basepart+extension                 * because of the frame_nr part "_0000")                 */
+comment|/* check for files, with equal basename (frames)                 * (length must be greater than basepart+extension                 * because of the frame_nr part "0000")                 */
 if|if
 condition|(
 operator|(
@@ -2621,12 +2805,16 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_decide_save_as (gint32 image_id)
+DECL|function|p_decide_save_as (gint32 image_id,char * sav_name)
 name|int
 name|p_decide_save_as
 parameter_list|(
 name|gint32
 name|image_id
+parameter_list|,
+name|char
+modifier|*
+name|sav_name
 parameter_list|)
 block|{
 specifier|static
@@ -2655,6 +2843,9 @@ name|l_argc
 decl_stmt|;
 name|int
 name|l_save_as_mode
+decl_stmt|;
+name|GRunModeType
+name|l_run_mode
 decl_stmt|;
 comment|/* check if there are SAVE_AS_MODE settings (from privious calls within one gimp session) */
 name|l_save_as_mode
@@ -2788,6 +2979,17 @@ return|return
 operator|-
 literal|1
 return|;
+name|l_run_mode
+operator|=
+name|RUN_INTERACTIVE
+expr_stmt|;
+block|}
+else|else
+block|{
+name|l_run_mode
+operator|=
+name|RUN_WITH_LAST_VALS
+expr_stmt|;
 block|}
 name|gimp_set_data
 argument_list|(
@@ -2816,7 +3018,16 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-literal|0
+operator|(
+name|p_save_named_image
+argument_list|(
+name|image_id
+argument_list|,
+name|sav_name
+argument_list|,
+name|l_run_mode
+argument_list|)
+operator|)
 return|;
 block|}
 end_function
@@ -2983,7 +3194,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-literal|"DEBUG: after    p_save_named_image: '%s' nlayers=%d\n"
+literal|"DEBUG: after    p_save_named_image: '%s' nlayers=%d image=%d drw=%d run_mode=%d\n"
 argument_list|,
 name|sav_name
 argument_list|,
@@ -2991,6 +3202,23 @@ operator|(
 name|int
 operator|)
 name|l_nlayers
+argument_list|,
+operator|(
+name|int
+operator|)
+name|image_id
+argument_list|,
+operator|(
+name|int
+operator|)
+name|l_drawable
+operator|->
+name|id
+argument_list|,
+operator|(
+name|int
+operator|)
+name|run_mode
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -3448,27 +3676,10 @@ operator|=
 name|p_decide_save_as
 argument_list|(
 name|image_id
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|l_rc
-operator|>=
-literal|0
-condition|)
-block|{
-name|l_rc
-operator|=
-name|p_save_named_image
-argument_list|(
-name|image_id
 argument_list|,
 name|l_tmpname
-argument_list|,
-name|RUN_NONINTERACTIVE
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 if|if
 condition|(
@@ -4572,7 +4783,7 @@ argument_list|,
 name|l_curr_name
 argument_list|)
 expr_stmt|;
-comment|/* use a new name (_0001.xcf Konvention) */
+comment|/* use a new name (0001.xcf Konvention) */
 name|gimp_image_set_filename
 argument_list|(
 name|ainfo_ptr

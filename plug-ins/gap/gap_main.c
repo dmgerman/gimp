@@ -14,12 +14,12 @@ name|char
 modifier|*
 name|gap_main_version
 init|=
-literal|"0.99.00; 1999/03/17"
+literal|"1.1.8a; 1999/08/31"
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* revision history:  * version 0.99.00; 1999/03/17  hof: updated main version  * version 0.98.02; 1999/01/27  hof: updated main version  * version 0.98.01; 1998/12/21  hof: updated main version, e-mail adress  * version 0.98.00; 1998/11/27  hof: updated main version, started port to GIMP 1.1 interfaces  *                                   Use no '_' (underscore) in menunames. (has special function in 1.1)  * version 0.96.03; 1998/08/31  hof: updated main version,  *                                         gap_range_to_multilayer now returns image_id  *                                         gap_split_image now returns image_id  * version 0.96.02; 1998/08/05  hof: updated main version,   *                                   added gap_shift  * version 0.96.00; 1998/06/27  hof: added gap animation sizechange plugins  *                                         gap_split_image  *                                         gap_mpeg_encode  * version 0.94.01; 1998/04/28  hof: updated main version,  *                                   added flatten_mode to plugin: gap_range_to_multilayer  * version 0.94.00; 1998/04/25  hof: updated main version  * version 0.93.01; 1998/02/03  hof:  * version 0.92.00;             hof: set gap_debug from environment   * version 0.91.00; 1997/12/22  hof:   * version 0.90.00;             hof: 1.st (pre) release  */
+comment|/* revision history:  * gimp    1.1.8a;  1999/08/31  hof: updated main version  * version 0.99.00; 1999/03/17  hof: updated main version  * version 0.98.02; 1999/01/27  hof: updated main version  * version 0.98.01; 1998/12/21  hof: updated main version, e-mail adress  * version 0.98.00; 1998/11/27  hof: updated main version, started port to GIMP 1.1 interfaces  *                                   Use no '_' (underscore) in menunames. (has special function in 1.1)  * version 0.96.03; 1998/08/31  hof: updated main version,  *                                         gap_range_to_multilayer now returns image_id  *                                         gap_split_image now returns image_id  * version 0.96.02; 1998/08/05  hof: updated main version,   *                                   added gap_shift  * version 0.96.00; 1998/06/27  hof: added gap animation sizechange plugins  *                                         gap_split_image  *                                         gap_mpeg_encode  * version 0.94.01; 1998/04/28  hof: updated main version,  *                                   added flatten_mode to plugin: gap_range_to_multilayer  * version 0.94.00; 1998/04/25  hof: updated main version  * version 0.93.01; 1998/02/03  hof:  * version 0.92.00;             hof: set gap_debug from environment   * version 0.91.00; 1997/12/22  hof:   * version 0.90.00;             hof: 1.st (pre) release  */
 end_comment
 
 begin_comment
@@ -2096,7 +2096,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a5274ee0108
+DECL|struct|__anon291285a80108
 block|{
 DECL|member|lock
 name|long

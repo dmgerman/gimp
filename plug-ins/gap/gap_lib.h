@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * 0.99.00; 1999/03/15   hof: prepared for win/dos filename conventions  * 0.96.02; 1998/08/05   hof: extended gap_dup (duplicate range instead of singele frame)  *                            added gap_shift (framesequence shift)  * 0.96.00; 1998/06/27   hof: added gap animation sizechange plugins  *                            (moved range_ops to seperate .h file)  * 0.94.01; 1998/04/27   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.90.00;              hof: 1.st (pre) release  */
+comment|/* revision history:  * 1.1.8a;  1999/08/31   hof: new: p_strdup_del_underscore and p_strdup_add_underscore  * 0.99.00; 1999/03/15   hof: prepared for win/dos filename conventions  * 0.96.02; 1998/08/05   hof: extended gap_dup (duplicate range instead of singele frame)  *                            added gap_shift (framesequence shift)  * 0.96.00; 1998/06/27   hof: added gap animation sizechange plugins  *                            (moved range_ops to seperate .h file)  * 0.94.01; 1998/04/27   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.90.00;              hof: 1.st (pre) release  */
 end_comment
 
 begin_ifndef
@@ -401,6 +401,30 @@ parameter_list|,
 name|char
 modifier|*
 name|zip
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|char
+modifier|*
+name|p_strdup_add_underscore
+parameter_list|(
+name|char
+modifier|*
+name|name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|char
+modifier|*
+name|p_strdup_del_underscore
+parameter_list|(
+name|char
+modifier|*
+name|name
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history  * 0.99.00; 1999/03/15   hof: prepared for win/dos filename conventions  * 0.96.00; 1998/07/08   hof: first release  */
+comment|/* revision history  * 1.1.8a;  1999/08/31   hof: accept anim framenames without underscore '_'  * 0.99.00; 1999/03/15   hof: prepared for win/dos filename conventions  * 0.96.00; 1998/07/08   hof: first release  */
 end_comment
 
 begin_comment
@@ -740,6 +740,10 @@ decl_stmt|;
 name|gint
 name|l_idx
 decl_stmt|;
+name|char
+modifier|*
+name|l_str
+decl_stmt|;
 specifier|static
 name|char
 name|l_buf
@@ -942,15 +946,22 @@ name|but_val
 operator|=
 literal|1
 expr_stmt|;
+name|l_str
+operator|=
+name|p_strdup_del_underscore
+argument_list|(
+name|ainfo_ptr
+operator|->
+name|basename
+argument_list|)
+expr_stmt|;
 name|sprintf
 argument_list|(
 name|l_outfile
 argument_list|,
 literal|"%s.mpg"
 argument_list|,
-name|ainfo_ptr
-operator|->
-name|basename
+name|l_str
 argument_list|)
 expr_stmt|;
 name|sprintf
@@ -959,9 +970,7 @@ name|l_parfile
 argument_list|,
 literal|"%s.par_mpg"
 argument_list|,
-name|ainfo_ptr
-operator|->
-name|basename
+name|l_str
 argument_list|)
 expr_stmt|;
 name|sprintf
@@ -970,9 +979,12 @@ name|l_startscript
 argument_list|,
 literal|"%s.sh"
 argument_list|,
-name|ainfo_ptr
-operator|->
-name|basename
+name|l_str
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|l_str
 argument_list|)
 expr_stmt|;
 name|p_init_arr_arg
@@ -2941,7 +2953,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"%s_%%04d   /* name of source files */\n"
+literal|"%s%%04d   /* name of source files */\n"
 argument_list|,
 name|ainfo_ptr
 operator|->
@@ -4373,7 +4385,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"%s_*.%s  [%04d-%04d]\n"
+literal|"%s*.%s  [%04d-%04d]\n"
 argument_list|,
 name|l_basename_ptr
 argument_list|,

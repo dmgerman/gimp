@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history  * gimp   1.1.15.1;  1999/05/08  hof: bugix (dont mix GDrawableType with GImageType)  * 0.96.00; 1998/07/01   hof: - added scale, resize and crop   *                              (affects full range == all anim frames)  *                            - now using gap_arr_dialog.h  * 0.94.01; 1998/04/28   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.92.00  1998.01.10   hof: bugfix in p_frames_to_multilayer  *                            layers need alpha (to be raise/lower able)   * 0.90.00               first development release  */
+comment|/* revision history  * 1.1.8a;  1999/08/31   hof: accept anim framenames without underscore '_'  * 1.1.5a;  1999/05/08   hof: bugix (dont mix GDrawableType with GImageType)  * 0.96.00; 1998/07/01   hof: - added scale, resize and crop   *                              (affects full range == all anim frames)  *                            - now using gap_arr_dialog.h  * 0.94.01; 1998/04/28   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.92.00  1998.01.10   hof: bugfix in p_frames_to_multilayer  *                            layers need alpha (to be raise/lower able)   * 0.90.00               first development release  */
 end_comment
 
 begin_comment
@@ -166,6 +166,10 @@ decl_stmt|;
 name|char
 modifier|*
 name|l_sav_name
+decl_stmt|;
+name|char
+modifier|*
+name|l_str
 decl_stmt|;
 name|gint32
 name|l_rc
@@ -445,13 +449,20 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* build the name for output image */
-name|l_sav_name
+name|l_str
 operator|=
-name|p_alloc_fname
+name|p_strdup_add_underscore
 argument_list|(
 name|ainfo_ptr
 operator|->
 name|basename
+argument_list|)
+expr_stmt|;
+name|l_sav_name
+operator|=
+name|p_alloc_fname
+argument_list|(
+name|l_str
 argument_list|,
 operator|(
 name|l_idx
@@ -461,6 +472,11 @@ operator|)
 argument_list|,
 comment|/* start at 1 (not at 0) */
 name|new_extension
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|l_str
 argument_list|)
 expr_stmt|;
 if|if
