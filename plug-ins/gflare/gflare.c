@@ -468,7 +468,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295336de0103
+DECL|enum|__anon2770875a0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -495,7 +495,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295336de0203
+DECL|enum|__anon2770875a0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -514,7 +514,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon295336de0308
+DECL|struct|__anon2770875a0308
 typedef|typedef
 struct|struct
 block|{
@@ -651,7 +651,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon295336de0408
+DECL|struct|__anon2770875a0408
 typedef|typedef
 struct|struct
 block|{
@@ -671,7 +671,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon295336de0503
+DECL|enum|__anon2770875a0503
 typedef|typedef
 enum|enum
 block|{
@@ -699,7 +699,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon295336de0608
+DECL|struct|__anon2770875a0608
 typedef|typedef
 struct|struct
 block|{
@@ -722,7 +722,7 @@ name|Preview
 modifier|*
 name|preview
 decl_stmt|;
-DECL|struct|__anon295336de0708
+DECL|struct|__anon2770875a0708
 struct|struct
 block|{
 DECL|member|x0
@@ -808,7 +808,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon295336de0808
+DECL|struct|__anon2770875a0808
 typedef|typedef
 struct|struct
 block|{
@@ -880,7 +880,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295336de0908
+DECL|struct|__anon2770875a0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -907,7 +907,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295336de0a08
+DECL|struct|__anon2770875a0a08
 block|{
 DECL|member|init
 name|gint
@@ -1077,7 +1077,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295336de0b08
+DECL|struct|__anon2770875a0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1104,7 +1104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295336de0c08
+DECL|struct|__anon2770875a0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1145,7 +1145,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295336de0d08
+DECL|struct|__anon2770875a0d08
 block|{
 DECL|member|tile
 name|GTile
@@ -1375,7 +1375,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295336de0e08
+DECL|struct|__anon2770875a0e08
 block|{
 DECL|member|tag
 name|gint
@@ -1450,7 +1450,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon295336de0f03
+DECL|enum|__anon2770875a0f03
 typedef|typedef
 enum|enum
 block|{
@@ -1484,7 +1484,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon295336de1008
+DECL|struct|__anon2770875a1008
 typedef|typedef
 struct|struct
 block|{
@@ -1528,7 +1528,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon295336de1108
+DECL|struct|__anon2770875a1108
 typedef|typedef
 struct|struct
 block|{
@@ -1586,7 +1586,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon295336de1208
+DECL|struct|__anon2770875a1208
 typedef|typedef
 struct|struct
 block|{
@@ -4612,19 +4612,13 @@ name|gchar
 modifier|*
 name|help_string
 init|=
-name|_
-argument_list|(
 literal|" This plug-in produces a lense flare effect using custom gradients."
 literal|" In interactive call, the user can edit his/her own favorite lense flare"
 literal|" (GFlare) and render it. Edited gflare is saved automatically to"
 literal|" the directory in gflare-path, if it is defined in gimprc."
 literal|" In non-interactive call, the user can only render one of GFlare"
 literal|" which has been stored in gflare-path already."
-argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gflare"
@@ -7611,7 +7605,7 @@ name|g_warning
 argument_list|(
 name|_
 argument_list|(
-literal|"invalid formatted GFlare file: %s\n)"
+literal|"invalid formatted GFlare file: %s\n"
 argument_list|)
 argument_list|,
 name|filename
@@ -9700,7 +9694,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon295336de1308
+DECL|struct|__anon2770875a1308
 specifier|static
 struct|struct
 block|{
@@ -16575,7 +16569,7 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-DECL|struct|__anon295336de1408
+DECL|struct|__anon2770875a1408
 specifier|static
 struct|struct
 block|{
