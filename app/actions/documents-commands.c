@@ -82,22 +82,6 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
-comment|/*  local function prototypes  */
-end_comment
-
-begin_function_decl
-specifier|static
-name|void
-name|documents_menu_set_sensitivity
-parameter_list|(
-name|GimpContainerEditor
-modifier|*
-name|editor
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  public functionss */
 end_comment
 
@@ -342,59 +326,32 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_show_context_menu (GimpContainerEditor * editor)
-name|documents_show_context_menu
+DECL|function|documents_menu_update (GtkItemFactory * factory,gpointer data)
+name|documents_menu_update
 parameter_list|(
-name|GimpContainerEditor
-modifier|*
-name|editor
-parameter_list|)
-block|{
 name|GtkItemFactory
 modifier|*
-name|item_factory
-decl_stmt|;
-name|documents_menu_set_sensitivity
-argument_list|(
-name|editor
-argument_list|)
-expr_stmt|;
-name|item_factory
-operator|=
-name|gtk_item_factory_from_path
-argument_list|(
-literal|"<Documents>"
-argument_list|)
-expr_stmt|;
-name|gimp_item_factory_popup_with_data
-argument_list|(
-name|item_factory
-argument_list|,
-name|editor
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*  private functions  */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|documents_menu_set_sensitivity (GimpContainerEditor * editor)
-name|documents_menu_set_sensitivity
-parameter_list|(
+name|factory
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
 name|GimpContainerEditor
 modifier|*
 name|editor
-parameter_list|)
-block|{
+decl_stmt|;
 name|GimpImagefile
 modifier|*
 name|imagefile
 decl_stmt|;
+name|editor
+operator|=
+name|GIMP_CONTAINER_EDITOR
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 name|imagefile
 operator|=
 name|gimp_context_get_imagefile
@@ -416,38 +373,38 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|gimp_menu_item_set_sensitive ("<Documents>/" menu, (condition) != 0)
+value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"Open Image"
+literal|"/Open Image"
 argument_list|,
 name|imagefile
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Raise or Open Image"
+literal|"/Raise or Open Image"
 argument_list|,
 name|imagefile
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"File Open Dialog..."
+literal|"/File Open Dialog..."
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Remove Entry"
+literal|"/Remove Entry"
 argument_list|,
 name|imagefile
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Refresh History"
+literal|"/Refresh History"
 argument_list|,
 name|TRUE
 argument_list|)

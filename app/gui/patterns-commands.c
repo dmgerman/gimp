@@ -70,80 +70,37 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
-comment|/*  local function prototypes  */
-end_comment
-
-begin_function_decl
-specifier|static
-name|void
-name|patterns_menu_set_sensitivity
-parameter_list|(
-name|GimpContainerEditor
-modifier|*
-name|editor
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  public functions  */
 end_comment
 
 begin_function
 name|void
-DECL|function|patterns_show_context_menu (GimpContainerEditor * editor)
-name|patterns_show_context_menu
+DECL|function|patterns_menu_update (GtkItemFactory * factory,gpointer data)
+name|patterns_menu_update
 parameter_list|(
-name|GimpContainerEditor
-modifier|*
-name|editor
-parameter_list|)
-block|{
 name|GtkItemFactory
 modifier|*
-name|item_factory
-decl_stmt|;
-name|patterns_menu_set_sensitivity
-argument_list|(
-name|editor
-argument_list|)
-expr_stmt|;
-name|item_factory
-operator|=
-name|gtk_item_factory_from_path
-argument_list|(
-literal|"<Patterns>"
-argument_list|)
-expr_stmt|;
-name|gimp_item_factory_popup_with_data
-argument_list|(
-name|item_factory
-argument_list|,
-name|editor
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*  private functions  */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|patterns_menu_set_sensitivity (GimpContainerEditor * editor)
-name|patterns_menu_set_sensitivity
-parameter_list|(
+name|factory
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
 name|GimpContainerEditor
 modifier|*
 name|editor
-parameter_list|)
-block|{
+decl_stmt|;
 name|GimpPattern
 modifier|*
 name|pattern
 decl_stmt|;
+name|editor
+operator|=
+name|GIMP_CONTAINER_EDITOR
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 name|pattern
 operator|=
 name|gimp_context_get_pattern
@@ -165,10 +122,10 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|gimp_menu_item_set_sensitive ("<Patterns>/" menu, (condition) != 0)
+value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"Duplicate Pattern"
+literal|"/Duplicate Pattern"
 argument_list|,
 name|pattern
 operator|&&
@@ -182,7 +139,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Edit Pattern..."
+literal|"/Edit Pattern..."
 argument_list|,
 name|pattern
 operator|&&
@@ -196,7 +153,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Delete Pattern..."
+literal|"/Delete Pattern..."
 argument_list|,
 name|pattern
 argument_list|)

@@ -156,12 +156,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"indicator-area.h"
 end_include
 

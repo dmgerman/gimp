@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpwidgets-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"brushes-commands.h"
 end_include
 
@@ -69,69 +63,34 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_function_decl
-specifier|static
-name|void
-name|brushes_menu_set_sensitivity
-parameter_list|(
-name|GimpContainerEditor
-modifier|*
-name|editor
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function
 name|void
-DECL|function|brushes_show_context_menu (GimpContainerEditor * editor)
-name|brushes_show_context_menu
+DECL|function|brushes_menu_update (GtkItemFactory * factory,gpointer data)
+name|brushes_menu_update
 parameter_list|(
-name|GimpContainerEditor
-modifier|*
-name|editor
-parameter_list|)
-block|{
 name|GtkItemFactory
 modifier|*
-name|item_factory
-decl_stmt|;
-name|brushes_menu_set_sensitivity
-argument_list|(
-name|editor
-argument_list|)
-expr_stmt|;
-name|item_factory
-operator|=
-name|gtk_item_factory_from_path
-argument_list|(
-literal|"<Brushes>"
-argument_list|)
-expr_stmt|;
-name|gimp_item_factory_popup_with_data
-argument_list|(
-name|item_factory
-argument_list|,
-name|editor
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|brushes_menu_set_sensitivity (GimpContainerEditor * editor)
-name|brushes_menu_set_sensitivity
-parameter_list|(
+name|factory
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
 name|GimpContainerEditor
 modifier|*
 name|editor
-parameter_list|)
-block|{
+decl_stmt|;
 name|GimpBrush
 modifier|*
 name|brush
 decl_stmt|;
+name|editor
+operator|=
+name|GIMP_CONTAINER_EDITOR
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 name|brush
 operator|=
 name|gimp_context_get_brush
@@ -153,10 +112,10 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|gimp_menu_item_set_sensitive ("<Brushes>/" menu, (condition) != 0)
+value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"Duplicate Brush"
+literal|"/Duplicate Brush"
 argument_list|,
 name|brush
 operator|&&
@@ -170,7 +129,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Edit Brush..."
+literal|"/Edit Brush..."
 argument_list|,
 name|brush
 operator|&&
@@ -182,7 +141,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Delete Brush..."
+literal|"/Delete Brush..."
 argument_list|,
 name|brush
 argument_list|)

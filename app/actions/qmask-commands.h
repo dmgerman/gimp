@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__DOCUMENTS_COMMANDS_H__
+name|__QMASK_COMMANDS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__DOCUMENTS_COMMANDS_H__
+DECL|macro|__QMASK_COMMANDS_H__
 define|#
 directive|define
-name|__DOCUMENTS_COMMANDS_H__
+name|__QMASK_COMMANDS_H__
 end_define
 
 begin_function_decl
 name|void
-name|documents_open_document_cmd_callback
+name|qmask_toggle_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -26,13 +26,16 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|guint
+name|action
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|documents_raise_or_open_document_cmd_callback
+name|qmask_invert_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -40,13 +43,16 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|guint
+name|action
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|documents_file_open_dialog_cmd_callback
+name|qmask_configure_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -54,41 +60,16 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|documents_delete_document_cmd_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
 parameter_list|,
-name|gpointer
-name|data
+name|guint
+name|action
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|documents_refresh_documents_cmd_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|documents_menu_update
+name|qmask_menu_update
 parameter_list|(
 name|GtkItemFactory
 modifier|*
@@ -106,7 +87,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __DOCUMENTS_COMMANDS_H__ */
+comment|/* __QMASK_COMMANDS_H__ */
 end_comment
 
 end_unit

@@ -88,11 +88,14 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|documents_show_context_menu
+name|documents_menu_update
 parameter_list|(
-name|GimpContainerEditor
+name|GtkItemFactory
 modifier|*
-name|editor
+name|factory
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl

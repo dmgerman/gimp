@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-handlers.h"
+file|"gimpdisplayshell-callbacks.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-qmask.h"
+file|"gimpdisplayshell-handlers.h"
 end_include
 
 begin_include

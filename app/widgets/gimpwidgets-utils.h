@@ -77,20 +77,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_item_factory_popup_with_data
-parameter_list|(
-name|GtkItemFactory
-modifier|*
-name|item_factory
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_window_add_accel_group
 parameter_list|(
 name|GtkWindow

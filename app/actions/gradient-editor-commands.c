@@ -88,18 +88,6 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|gradient_editor_menu_set_sensitivity
-parameter_list|(
-name|GradientEditor
-modifier|*
-name|editor
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|gradient_editor_left_color_changed
 parameter_list|(
 name|ColorNotebook
@@ -3538,55 +3526,21 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_show_context_menu (GradientEditor * editor)
-name|gradient_editor_show_context_menu
+DECL|function|gradient_editor_menu_update (GtkItemFactory * factory,gpointer data)
+name|gradient_editor_menu_update
 parameter_list|(
-name|GradientEditor
-modifier|*
-name|editor
-parameter_list|)
-block|{
 name|GtkItemFactory
 modifier|*
-name|item_factory
-decl_stmt|;
-name|gradient_editor_menu_set_sensitivity
-argument_list|(
-name|editor
-argument_list|)
-expr_stmt|;
-name|item_factory
-operator|=
-name|gtk_item_factory_from_path
-argument_list|(
-literal|"<GradientEditor>"
-argument_list|)
-expr_stmt|;
-name|gimp_item_factory_popup_with_data
-argument_list|(
-name|item_factory
-argument_list|,
-name|editor
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*  private functions  */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|gradient_editor_menu_set_sensitivity (GradientEditor * editor)
-name|gradient_editor_menu_set_sensitivity
-parameter_list|(
+name|factory
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
 name|GradientEditor
 modifier|*
 name|editor
-parameter_list|)
-block|{
+decl_stmt|;
 name|GimpGradientSegment
 modifier|*
 name|left_seg
@@ -3617,6 +3571,14 @@ decl_stmt|;
 name|gboolean
 name|delete
 decl_stmt|;
+name|editor
+operator|=
+operator|(
+name|GradientEditor
+operator|*
+operator|)
+name|data
+expr_stmt|;
 if|if
 condition|(
 name|editor
@@ -3820,7 +3782,7 @@ parameter_list|,
 name|active
 parameter_list|)
 define|\
-value|gimp_menu_item_set_active ("<GradientEditor>/" menu, (active))
+value|gimp_item_factory_set_active (factory, menu, (active))
 DECL|macro|SET_COLOR (menu,color,set_label)
 define|#
 directive|define
@@ -3833,7 +3795,7 @@ parameter_list|,
 name|set_label
 parameter_list|)
 define|\
-value|gimp_menu_item_set_color ("<GradientEditor>/" menu, (color), (set_label))
+value|gimp_item_factory_set_color (factory, menu, (color), (set_label))
 DECL|macro|SET_LABEL (menu,label)
 define|#
 directive|define
@@ -3844,7 +3806,7 @@ parameter_list|,
 name|label
 parameter_list|)
 define|\
-value|gimp_menu_item_set_label ("<GradientEditor>/" menu, (label))
+value|gimp_item_factory_set_label (factory, menu, (label))
 DECL|macro|SET_SENSITIVE (menu,condition)
 define|#
 directive|define
@@ -3855,7 +3817,7 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|gimp_menu_item_set_sensitive ("<GradientEditor>/" menu, (condition) != 0)
+value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 DECL|macro|SET_VISIBLE (menu,condition)
 define|#
 directive|define
@@ -3866,10 +3828,10 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|gimp_menu_item_set_visible ("<GradientEditor>/" menu, (condition) != 0)
+value|gimp_item_factory_set_visible (factory, menu, (condition) != 0)
 name|SET_COLOR
 argument_list|(
-literal|"Left Endpoint's Color..."
+literal|"/Left Endpoint's Color..."
 argument_list|,
 operator|&
 name|editor
@@ -3883,7 +3845,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Left Color From/Left Neighbor's Right Endpoint"
+literal|"/Load Left Color From/Left Neighbor's Right Endpoint"
 argument_list|,
 operator|&
 name|left_seg
@@ -3895,7 +3857,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Left Color From/Right Endpoint"
+literal|"/Load Left Color From/Right Endpoint"
 argument_list|,
 operator|&
 name|editor
@@ -3909,7 +3871,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Left Color From/FG Color"
+literal|"/Load Left Color From/FG Color"
 argument_list|,
 operator|&
 name|fg
@@ -3919,7 +3881,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Left Color From/BG Color"
+literal|"/Load Left Color From/BG Color"
 argument_list|,
 operator|&
 name|bg
@@ -3929,7 +3891,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Left Color From/01"
+literal|"/Load Left Color From/01"
 argument_list|,
 operator|&
 name|editor
@@ -3944,7 +3906,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Left Color From/02"
+literal|"/Load Left Color From/02"
 argument_list|,
 operator|&
 name|editor
@@ -3959,7 +3921,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Left Color From/03"
+literal|"/Load Left Color From/03"
 argument_list|,
 operator|&
 name|editor
@@ -3974,7 +3936,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Left Color From/04"
+literal|"/Load Left Color From/04"
 argument_list|,
 operator|&
 name|editor
@@ -3989,7 +3951,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Left Color From/05"
+literal|"/Load Left Color From/05"
 argument_list|,
 operator|&
 name|editor
@@ -4004,7 +3966,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Left Color From/06"
+literal|"/Load Left Color From/06"
 argument_list|,
 operator|&
 name|editor
@@ -4019,7 +3981,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Left Color From/07"
+literal|"/Load Left Color From/07"
 argument_list|,
 operator|&
 name|editor
@@ -4034,7 +3996,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Left Color From/08"
+literal|"/Load Left Color From/08"
 argument_list|,
 operator|&
 name|editor
@@ -4049,7 +4011,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Left Color From/09"
+literal|"/Load Left Color From/09"
 argument_list|,
 operator|&
 name|editor
@@ -4064,7 +4026,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Left Color From/10"
+literal|"/Load Left Color From/10"
 argument_list|,
 operator|&
 name|editor
@@ -4079,7 +4041,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Left Color To/01"
+literal|"/Save Left Color To/01"
 argument_list|,
 operator|&
 name|editor
@@ -4094,7 +4056,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Left Color To/02"
+literal|"/Save Left Color To/02"
 argument_list|,
 operator|&
 name|editor
@@ -4109,7 +4071,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Left Color To/03"
+literal|"/Save Left Color To/03"
 argument_list|,
 operator|&
 name|editor
@@ -4124,7 +4086,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Left Color To/04"
+literal|"/Save Left Color To/04"
 argument_list|,
 operator|&
 name|editor
@@ -4139,7 +4101,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Left Color To/05"
+literal|"/Save Left Color To/05"
 argument_list|,
 operator|&
 name|editor
@@ -4154,7 +4116,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Left Color To/06"
+literal|"/Save Left Color To/06"
 argument_list|,
 operator|&
 name|editor
@@ -4169,7 +4131,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Left Color To/07"
+literal|"/Save Left Color To/07"
 argument_list|,
 operator|&
 name|editor
@@ -4184,7 +4146,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Left Color To/08"
+literal|"/Save Left Color To/08"
 argument_list|,
 operator|&
 name|editor
@@ -4199,7 +4161,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Left Color To/09"
+literal|"/Save Left Color To/09"
 argument_list|,
 operator|&
 name|editor
@@ -4214,7 +4176,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Left Color To/10"
+literal|"/Save Left Color To/10"
 argument_list|,
 operator|&
 name|editor
@@ -4229,7 +4191,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Right Endpoint's Color..."
+literal|"/Right Endpoint's Color..."
 argument_list|,
 operator|&
 name|editor
@@ -4243,7 +4205,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Right Color From/Right Neighbor's Left Endpoint"
+literal|"/Load Right Color From/Right Neighbor's Left Endpoint"
 argument_list|,
 operator|&
 name|right_seg
@@ -4255,7 +4217,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Right Color From/Left Endpoint"
+literal|"/Load Right Color From/Left Endpoint"
 argument_list|,
 operator|&
 name|editor
@@ -4269,7 +4231,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Right Color From/FG Color"
+literal|"/Load Right Color From/FG Color"
 argument_list|,
 operator|&
 name|fg
@@ -4279,7 +4241,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Right Color From/BG Color"
+literal|"/Load Right Color From/BG Color"
 argument_list|,
 operator|&
 name|bg
@@ -4289,7 +4251,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Right Color From/01"
+literal|"/Load Right Color From/01"
 argument_list|,
 operator|&
 name|editor
@@ -4304,7 +4266,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Right Color From/02"
+literal|"/Load Right Color From/02"
 argument_list|,
 operator|&
 name|editor
@@ -4319,7 +4281,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Right Color From/03"
+literal|"/Load Right Color From/03"
 argument_list|,
 operator|&
 name|editor
@@ -4334,7 +4296,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Right Color From/04"
+literal|"/Load Right Color From/04"
 argument_list|,
 operator|&
 name|editor
@@ -4349,7 +4311,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Right Color From/05"
+literal|"/Load Right Color From/05"
 argument_list|,
 operator|&
 name|editor
@@ -4364,7 +4326,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Right Color From/06"
+literal|"/Load Right Color From/06"
 argument_list|,
 operator|&
 name|editor
@@ -4379,7 +4341,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Right Color From/07"
+literal|"/Load Right Color From/07"
 argument_list|,
 operator|&
 name|editor
@@ -4394,7 +4356,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Right Color From/08"
+literal|"/Load Right Color From/08"
 argument_list|,
 operator|&
 name|editor
@@ -4409,7 +4371,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Right Color From/09"
+literal|"/Load Right Color From/09"
 argument_list|,
 operator|&
 name|editor
@@ -4424,7 +4386,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Load Right Color From/10"
+literal|"/Load Right Color From/10"
 argument_list|,
 operator|&
 name|editor
@@ -4439,7 +4401,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Right Color To/01"
+literal|"/Save Right Color To/01"
 argument_list|,
 operator|&
 name|editor
@@ -4454,7 +4416,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Right Color To/02"
+literal|"/Save Right Color To/02"
 argument_list|,
 operator|&
 name|editor
@@ -4469,7 +4431,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Right Color To/03"
+literal|"/Save Right Color To/03"
 argument_list|,
 operator|&
 name|editor
@@ -4484,7 +4446,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Right Color To/04"
+literal|"/Save Right Color To/04"
 argument_list|,
 operator|&
 name|editor
@@ -4499,7 +4461,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Right Color To/05"
+literal|"/Save Right Color To/05"
 argument_list|,
 operator|&
 name|editor
@@ -4514,7 +4476,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Right Color To/06"
+literal|"/Save Right Color To/06"
 argument_list|,
 operator|&
 name|editor
@@ -4529,7 +4491,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Right Color To/07"
+literal|"/Save Right Color To/07"
 argument_list|,
 operator|&
 name|editor
@@ -4544,7 +4506,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Right Color To/08"
+literal|"/Save Right Color To/08"
 argument_list|,
 operator|&
 name|editor
@@ -4559,7 +4521,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Right Color To/09"
+literal|"/Save Right Color To/09"
 argument_list|,
 operator|&
 name|editor
@@ -4574,7 +4536,7 @@ argument_list|)
 expr_stmt|;
 name|SET_COLOR
 argument_list|(
-literal|"Save Right Color To/10"
+literal|"/Save Right Color To/10"
 argument_list|,
 operator|&
 name|editor
@@ -4595,7 +4557,7 @@ condition|)
 block|{
 name|SET_LABEL
 argument_list|(
-literal|"flip"
+literal|"/flip"
 argument_list|,
 name|_
 argument_list|(
@@ -4605,7 +4567,7 @@ argument_list|)
 expr_stmt|;
 name|SET_LABEL
 argument_list|(
-literal|"replicate"
+literal|"/replicate"
 argument_list|,
 name|_
 argument_list|(
@@ -4615,7 +4577,7 @@ argument_list|)
 expr_stmt|;
 name|SET_LABEL
 argument_list|(
-literal|"blendingfunction"
+literal|"/blendingfunction"
 argument_list|,
 name|_
 argument_list|(
@@ -4625,7 +4587,7 @@ argument_list|)
 expr_stmt|;
 name|SET_LABEL
 argument_list|(
-literal|"coloringtype"
+literal|"/coloringtype"
 argument_list|,
 name|_
 argument_list|(
@@ -4635,7 +4597,7 @@ argument_list|)
 expr_stmt|;
 name|SET_LABEL
 argument_list|(
-literal|"splitmidpoint"
+literal|"/splitmidpoint"
 argument_list|,
 name|_
 argument_list|(
@@ -4645,7 +4607,7 @@ argument_list|)
 expr_stmt|;
 name|SET_LABEL
 argument_list|(
-literal|"splituniformly"
+literal|"/splituniformly"
 argument_list|,
 name|_
 argument_list|(
@@ -4655,7 +4617,7 @@ argument_list|)
 expr_stmt|;
 name|SET_LABEL
 argument_list|(
-literal|"delete"
+literal|"/delete"
 argument_list|,
 name|_
 argument_list|(
@@ -4665,7 +4627,7 @@ argument_list|)
 expr_stmt|;
 name|SET_LABEL
 argument_list|(
-literal|"recenter"
+literal|"/recenter"
 argument_list|,
 name|_
 argument_list|(
@@ -4675,7 +4637,7 @@ argument_list|)
 expr_stmt|;
 name|SET_LABEL
 argument_list|(
-literal|"redistribute"
+literal|"/redistribute"
 argument_list|,
 name|_
 argument_list|(
@@ -4688,7 +4650,7 @@ else|else
 block|{
 name|SET_LABEL
 argument_list|(
-literal|"flip"
+literal|"/flip"
 argument_list|,
 name|_
 argument_list|(
@@ -4698,7 +4660,7 @@ argument_list|)
 expr_stmt|;
 name|SET_LABEL
 argument_list|(
-literal|"replicate"
+literal|"/replicate"
 argument_list|,
 name|_
 argument_list|(
@@ -4708,7 +4670,7 @@ argument_list|)
 expr_stmt|;
 name|SET_LABEL
 argument_list|(
-literal|"blendingfunction"
+literal|"/blendingfunction"
 argument_list|,
 name|_
 argument_list|(
@@ -4718,7 +4680,7 @@ argument_list|)
 expr_stmt|;
 name|SET_LABEL
 argument_list|(
-literal|"coloringtype"
+literal|"/coloringtype"
 argument_list|,
 name|_
 argument_list|(
@@ -4728,7 +4690,7 @@ argument_list|)
 expr_stmt|;
 name|SET_LABEL
 argument_list|(
-literal|"splitmidpoint"
+literal|"/splitmidpoint"
 argument_list|,
 name|_
 argument_list|(
@@ -4738,7 +4700,7 @@ argument_list|)
 expr_stmt|;
 name|SET_LABEL
 argument_list|(
-literal|"splituniformly"
+literal|"/splituniformly"
 argument_list|,
 name|_
 argument_list|(
@@ -4748,7 +4710,7 @@ argument_list|)
 expr_stmt|;
 name|SET_LABEL
 argument_list|(
-literal|"delete"
+literal|"/delete"
 argument_list|,
 name|_
 argument_list|(
@@ -4758,7 +4720,7 @@ argument_list|)
 expr_stmt|;
 name|SET_LABEL
 argument_list|(
-literal|"recenter"
+literal|"/recenter"
 argument_list|,
 name|_
 argument_list|(
@@ -4768,7 +4730,7 @@ argument_list|)
 expr_stmt|;
 name|SET_LABEL
 argument_list|(
-literal|"redistribute"
+literal|"/redistribute"
 argument_list|,
 name|_
 argument_list|(
@@ -4779,14 +4741,14 @@ expr_stmt|;
 block|}
 name|SET_SENSITIVE
 argument_list|(
-literal|"blendingfunction/(Varies)"
+literal|"/blendingfunction/(Varies)"
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"coloringtype/(Varies)"
+literal|"/coloringtype/(Varies)"
 argument_list|,
 name|FALSE
 argument_list|)
@@ -4798,7 +4760,7 @@ condition|)
 block|{
 name|SET_VISIBLE
 argument_list|(
-literal|"blendingfunction/(Varies)"
+literal|"/blendingfunction/(Varies)"
 argument_list|,
 name|FALSE
 argument_list|)
@@ -4817,7 +4779,7 @@ name|GRAD_LINEAR
 case|:
 name|SET_ACTIVE
 argument_list|(
-literal|"blendingfunction/Linear"
+literal|"/blendingfunction/Linear"
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4828,7 +4790,7 @@ name|GRAD_CURVED
 case|:
 name|SET_ACTIVE
 argument_list|(
-literal|"blendingfunction/Curved"
+literal|"/blendingfunction/Curved"
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4839,7 +4801,7 @@ name|GRAD_SINE
 case|:
 name|SET_ACTIVE
 argument_list|(
-literal|"blendingfunction/Sinusodial"
+literal|"/blendingfunction/Sinusodial"
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4850,7 +4812,7 @@ name|GRAD_SPHERE_INCREASING
 case|:
 name|SET_ACTIVE
 argument_list|(
-literal|"blendingfunction/Spherical (increasing)"
+literal|"/blendingfunction/Spherical (increasing)"
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4861,7 +4823,7 @@ name|GRAD_SPHERE_DECREASING
 case|:
 name|SET_ACTIVE
 argument_list|(
-literal|"blendingfunction/Spherical (decreasing)"
+literal|"/blendingfunction/Spherical (decreasing)"
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4873,14 +4835,14 @@ else|else
 block|{
 name|SET_VISIBLE
 argument_list|(
-literal|"blendingfunction/(Varies)"
+literal|"/blendingfunction/(Varies)"
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|SET_ACTIVE
 argument_list|(
-literal|"blendingfunction/(Varies)"
+literal|"/blendingfunction/(Varies)"
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4893,7 +4855,7 @@ condition|)
 block|{
 name|SET_VISIBLE
 argument_list|(
-literal|"coloringtype/(Varies)"
+literal|"/coloringtype/(Varies)"
 argument_list|,
 name|FALSE
 argument_list|)
@@ -4912,7 +4874,7 @@ name|GRAD_RGB
 case|:
 name|SET_ACTIVE
 argument_list|(
-literal|"coloringtype/RGB"
+literal|"/coloringtype/RGB"
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4923,7 +4885,7 @@ name|GRAD_HSV_CCW
 case|:
 name|SET_ACTIVE
 argument_list|(
-literal|"coloringtype/HSV (counter-clockwise hue)"
+literal|"/coloringtype/HSV (counter-clockwise hue)"
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4934,7 +4896,7 @@ name|GRAD_HSV_CW
 case|:
 name|SET_ACTIVE
 argument_list|(
-literal|"coloringtype/HSV (clockwise hue)"
+literal|"/coloringtype/HSV (clockwise hue)"
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4946,14 +4908,14 @@ else|else
 block|{
 name|SET_VISIBLE
 argument_list|(
-literal|"coloringtype/(Varies)"
+literal|"/coloringtype/(Varies)"
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|SET_ACTIVE
 argument_list|(
-literal|"coloringtype/(Varies)"
+literal|"/coloringtype/(Varies)"
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4961,21 +4923,21 @@ expr_stmt|;
 block|}
 name|SET_SENSITIVE
 argument_list|(
-literal|"Blend Endpoints' Colors"
+literal|"/Blend Endpoints' Colors"
 argument_list|,
 name|selection
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Blend Endpoints' Opacity"
+literal|"/Blend Endpoints' Opacity"
 argument_list|,
 name|selection
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"delete"
+literal|"/delete"
 argument_list|,
 name|delete
 argument_list|)

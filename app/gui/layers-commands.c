@@ -141,6 +141,10 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_comment
+comment|/*  local function prototypes  */
+end_comment
+
 begin_function_decl
 specifier|static
 name|void
@@ -185,17 +189,9 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|layers_menu_set_sensitivity
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_comment
+comment|/*  public functions  */
+end_comment
 
 begin_function
 name|void
@@ -4871,51 +4867,21 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_show_context_menu (GimpImage * gimage)
-name|layers_show_context_menu
+DECL|function|layers_menu_update (GtkItemFactory * factory,gpointer data)
+name|layers_menu_update
 parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-block|{
 name|GtkItemFactory
 modifier|*
-name|item_factory
-decl_stmt|;
-name|layers_menu_set_sensitivity
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-name|item_factory
-operator|=
-name|gtk_item_factory_from_path
-argument_list|(
-literal|"<Layers>"
-argument_list|)
-expr_stmt|;
-name|gimp_item_factory_popup_with_data
-argument_list|(
-name|item_factory
-argument_list|,
-name|gimage
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|layers_menu_set_sensitivity (GimpImage * gimage)
-name|layers_menu_set_sensitivity
-parameter_list|(
+name|factory
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
 name|GimpImage
 modifier|*
 name|gimage
-parameter_list|)
-block|{
+decl_stmt|;
 name|GimpLayer
 modifier|*
 name|layer
@@ -4977,19 +4943,11 @@ name|prev
 init|=
 name|NULL
 decl_stmt|;
-name|g_return_if_fail
-argument_list|(
 name|gimage
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
+operator|=
+name|GIMP_IMAGE
 argument_list|(
-name|GIMP_IS_IMAGE
-argument_list|(
-name|gimage
-argument_list|)
+name|data
 argument_list|)
 expr_stmt|;
 name|layer
@@ -5150,55 +5108,17 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|gimp_menu_item_set_sensitive ("<Layers>/" menu, (condition) != 0)
+value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"New Layer..."
+literal|"/New Layer..."
 argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Stack/Raise Layer"
-argument_list|,
-operator|!
-name|fs
-operator|&&
-operator|!
-name|ac
-operator|&&
-name|gimage
-operator|&&
-name|lp
-operator|&&
-name|alpha
-operator|&&
-name|prev
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"Stack/Lower Layer"
-argument_list|,
-operator|!
-name|fs
-operator|&&
-operator|!
-name|ac
-operator|&&
-name|gimage
-operator|&&
-name|lp
-operator|&&
-name|next
-operator|&&
-name|next_alpha
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"Stack/Layer to Top"
+literal|"/Stack/Raise Layer"
 argument_list|,
 operator|!
 name|fs
@@ -5217,7 +5137,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Stack/Layer to Bottom"
+literal|"/Stack/Lower Layer"
 argument_list|,
 operator|!
 name|fs
@@ -5236,7 +5156,45 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Duplicate Layer"
+literal|"/Stack/Layer to Top"
+argument_list|,
+operator|!
+name|fs
+operator|&&
+operator|!
+name|ac
+operator|&&
+name|gimage
+operator|&&
+name|lp
+operator|&&
+name|alpha
+operator|&&
+name|prev
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Stack/Layer to Bottom"
+argument_list|,
+operator|!
+name|fs
+operator|&&
+operator|!
+name|ac
+operator|&&
+name|gimage
+operator|&&
+name|lp
+operator|&&
+name|next
+operator|&&
+name|next_alpha
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Duplicate Layer"
 argument_list|,
 operator|!
 name|fs
@@ -5251,7 +5209,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Anchor Layer"
+literal|"/Anchor Layer"
 argument_list|,
 operator|!
 name|fs
@@ -5266,7 +5224,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Delete Layer"
+literal|"/Delete Layer"
 argument_list|,
 operator|!
 name|ac
@@ -5278,7 +5236,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Layer Boundary Size..."
+literal|"/Layer Boundary Size..."
 argument_list|,
 operator|!
 name|ac
@@ -5290,7 +5248,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Layer to Imagesize"
+literal|"/Layer to Imagesize"
 argument_list|,
 operator|!
 name|ac
@@ -5302,7 +5260,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Scale Layer..."
+literal|"/Scale Layer..."
 argument_list|,
 operator|!
 name|ac
@@ -5314,7 +5272,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Merge Visible Layers..."
+literal|"/Merge Visible Layers..."
 argument_list|,
 operator|!
 name|fs
@@ -5329,7 +5287,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Merge Down"
+literal|"/Merge Down"
 argument_list|,
 operator|!
 name|fs
@@ -5346,7 +5304,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Flatten Image"
+literal|"/Flatten Image"
 argument_list|,
 operator|!
 name|fs
@@ -5361,7 +5319,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Add Layer Mask..."
+literal|"/Add Layer Mask..."
 argument_list|,
 operator|!
 name|fs
@@ -5384,7 +5342,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Apply Layer Mask"
+literal|"/Apply Layer Mask"
 argument_list|,
 operator|!
 name|fs
@@ -5401,7 +5359,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Delete Layer Mask"
+literal|"/Delete Layer Mask"
 argument_list|,
 operator|!
 name|fs
@@ -5418,7 +5376,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Mask to Selection"
+literal|"/Mask to Selection"
 argument_list|,
 operator|!
 name|fs
@@ -5435,7 +5393,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Add Alpha Channel"
+literal|"/Add Alpha Channel"
 argument_list|,
 operator|!
 name|fs
@@ -5446,7 +5404,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Alpha to Selection"
+literal|"/Alpha to Selection"
 argument_list|,
 operator|!
 name|fs
@@ -5463,7 +5421,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Edit Layer Attributes..."
+literal|"/Edit Layer Attributes..."
 argument_list|,
 operator|!
 name|fs

@@ -175,8 +175,10 @@ parameter_list|,
 name|gint
 name|min_items_y
 parameter_list|,
-name|GimpContainerContextFunc
-name|context_func
+specifier|const
+name|gchar
+modifier|*
+name|item_factory
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -100,22 +100,6 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
-comment|/*  local function prototypes  */
-end_comment
-
-begin_function_decl
-specifier|static
-name|void
-name|channels_menu_set_sensitivity
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  public functions  */
 end_comment
 
@@ -2578,51 +2562,21 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_show_context_menu (GimpImage * gimage)
-name|channels_show_context_menu
+DECL|function|channels_menu_update (GtkItemFactory * factory,gpointer data)
+name|channels_menu_update
 parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-block|{
 name|GtkItemFactory
 modifier|*
-name|item_factory
-decl_stmt|;
-name|channels_menu_set_sensitivity
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-name|item_factory
-operator|=
-name|gtk_item_factory_from_path
-argument_list|(
-literal|"<Channels>"
-argument_list|)
-expr_stmt|;
-name|gimp_item_factory_popup_with_data
-argument_list|(
-name|item_factory
-argument_list|,
-name|gimage
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|channels_menu_set_sensitivity (GimpImage * gimage)
-name|channels_menu_set_sensitivity
-parameter_list|(
+name|factory
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
 name|GimpImage
 modifier|*
 name|gimage
-parameter_list|)
-block|{
+decl_stmt|;
 name|GimpChannel
 modifier|*
 name|channel
@@ -2646,19 +2600,11 @@ name|prev
 init|=
 name|NULL
 decl_stmt|;
-name|g_return_if_fail
-argument_list|(
 name|gimage
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
+operator|=
+name|GIMP_IMAGE
 argument_list|(
-name|GIMP_IS_IMAGE
-argument_list|(
-name|gimage
-argument_list|)
+name|data
 argument_list|)
 expr_stmt|;
 name|channel
@@ -2742,10 +2688,10 @@ parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|gimp_menu_item_set_sensitive ("<Channels>/" menu, (condition) != 0)
+value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"New Channel..."
+literal|"/New Channel..."
 argument_list|,
 operator|!
 name|fs
@@ -2753,7 +2699,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Raise Channel"
+literal|"/Raise Channel"
 argument_list|,
 operator|!
 name|fs
@@ -2765,7 +2711,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Lower Channel"
+literal|"/Lower Channel"
 argument_list|,
 operator|!
 name|fs
@@ -2777,7 +2723,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Duplicate Channel"
+literal|"/Duplicate Channel"
 argument_list|,
 operator|!
 name|fs
@@ -2787,7 +2733,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Channel to Selection"
+literal|"/Channel to Selection"
 argument_list|,
 operator|!
 name|fs
@@ -2797,7 +2743,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Add to Selection"
+literal|"/Add to Selection"
 argument_list|,
 operator|!
 name|fs
@@ -2807,7 +2753,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Subtract from Selection"
+literal|"/Subtract from Selection"
 argument_list|,
 operator|!
 name|fs
@@ -2817,7 +2763,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Intersect with Selection"
+literal|"/Intersect with Selection"
 argument_list|,
 operator|!
 name|fs
@@ -2827,7 +2773,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Delete Channel"
+literal|"/Delete Channel"
 argument_list|,
 operator|!
 name|fs
@@ -2837,7 +2783,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Edit Channel Attributes..."
+literal|"/Edit Channel Attributes..."
 argument_list|,
 operator|!
 name|fs

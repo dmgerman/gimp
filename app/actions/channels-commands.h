@@ -180,11 +180,14 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channels_show_context_menu
+name|channels_menu_update
 parameter_list|(
-name|GimpImage
+name|GtkItemFactory
 modifier|*
-name|gimage
+name|factory
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -385,7 +385,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae0095e0108
+DECL|struct|__anon2b5c9c520108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -1505,7 +1505,7 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
-name|brushes_show_context_menu
+literal|"<Brushes>"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1569,7 +1569,7 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
-name|patterns_show_context_menu
+literal|"<Patterns>"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1633,7 +1633,7 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
-name|gradients_show_context_menu
+literal|"<Gradients>"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1697,7 +1697,7 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
-name|palettes_show_context_menu
+literal|"<Palettes>"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1819,7 +1819,7 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
-name|buffers_show_context_menu
+literal|"<Buffers>"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1949,7 +1949,7 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
-name|brushes_show_context_menu
+literal|"<Brushes>"
 argument_list|)
 expr_stmt|;
 return|return
@@ -2013,7 +2013,7 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
-name|patterns_show_context_menu
+literal|"<Patterns>"
 argument_list|)
 expr_stmt|;
 return|return
@@ -2077,7 +2077,7 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
-name|gradients_show_context_menu
+literal|"<Gradients>"
 argument_list|)
 expr_stmt|;
 return|return
@@ -2141,7 +2141,7 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
-name|palettes_show_context_menu
+literal|"<Gradients>"
 argument_list|)
 expr_stmt|;
 return|return
@@ -2263,7 +2263,7 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
-name|buffers_show_context_menu
+literal|"<Buffers>"
 argument_list|)
 expr_stmt|;
 return|return
@@ -2381,10 +2381,7 @@ name|GimpEditDrawableFunc
 operator|)
 name|layers_edit_layer_query
 argument_list|,
-operator|(
-name|GimpDrawableContextFunc
-operator|)
-name|layers_show_context_menu
+literal|"<Layers>"
 argument_list|)
 expr_stmt|;
 name|dockable
@@ -2512,10 +2509,7 @@ name|GimpEditDrawableFunc
 operator|)
 name|channels_edit_channel_query
 argument_list|,
-operator|(
-name|GimpDrawableContextFunc
-operator|)
-name|channels_show_context_menu
+literal|"<Channels>"
 argument_list|)
 expr_stmt|;
 name|dockable
@@ -2774,7 +2768,7 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
-name|documents_show_context_menu
+literal|"<Documents>"
 argument_list|)
 expr_stmt|;
 return|return

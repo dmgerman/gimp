@@ -202,12 +202,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-qmask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell-render.h"
 end_include
 
