@@ -558,7 +558,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon28c3c71a0103
+DECL|enum|__anon2951fe160103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -2243,7 +2243,7 @@ name|list
 decl_stmt|;
 name|GSList
 modifier|*
-name|marklist
+name|remove
 init|=
 name|NULL
 decl_stmt|;
@@ -2259,16 +2259,6 @@ name|gint
 name|old_width
 decl_stmt|,
 name|old_height
-decl_stmt|;
-name|gint
-name|old_offset_x
-decl_stmt|,
-name|old_offset_y
-decl_stmt|;
-name|gint
-name|layer_width
-decl_stmt|,
-name|layer_height
 decl_stmt|;
 name|gdouble
 name|img_scale_w
@@ -2297,10 +2287,9 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
-literal|"gimp_image_scale: Layer with zero width or height has been rejected."
-argument_list|)
+operator|(
+literal|"gimp_image_scale: Scaling to zero width or height has been rejected."
+operator|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2391,16 +2380,23 @@ operator|)
 name|old_height
 expr_stmt|;
 comment|/*  Scale all channels  */
+for|for
+control|(
 name|list
 operator|=
 name|gimage
 operator|->
 name|channels
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|channel
 operator|=
@@ -2419,13 +2415,6 @@ argument_list|,
 name|new_width
 argument_list|,
 name|new_height
-argument_list|)
-expr_stmt|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
 argument_list|)
 expr_stmt|;
 block|}
@@ -2453,10 +2442,23 @@ name|gimage
 operator|->
 name|layers
 expr_stmt|;
-while|while
-condition|(
+for|for
+control|(
 name|list
-condition|)
+operator|=
+name|gimage
+operator|->
+name|layers
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|layer
 operator|=
@@ -2470,8 +2472,6 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|FALSE
-operator|==
 name|layer_scale_by_factors
 argument_list|(
 name|layer
@@ -2480,48 +2480,47 @@ name|img_scale_w
 argument_list|,
 name|img_scale_h
 argument_list|)
+operator|==
+name|FALSE
 condition|)
 block|{
 comment|/* Since 0< img_scale_w, img_scale_h, failure due to one or more     */
 comment|/* vanishing scaled layer dimensions. Implicit delete implemented     */
 comment|/* here. Upstream warning implemented in resize_check_layer_scaling() */
 comment|/* [resize.c line 1295], which offers the user the chance to bail out.*/
-name|marklist
+name|remove
 operator|=
-name|g_list_append
+name|g_slist_append
 argument_list|(
-name|marklist
+name|remove
 argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+comment|/* We defer removing layers lost to scaling until now            */
+comment|/* so as not to mix the operations of iterating over and removal */
+comment|/* from gimage->layers.                                          */
+for|for
+control|(
+name|list
+operator|=
+name|remove
+init|;
+name|list
+condition|;
 name|list
 operator|=
 name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
-expr_stmt|;
-block|}
-comment|/* We defer removing layers lost to scaling until now            */
-comment|/* so as not to mix the operations of iterating over and removal */
-comment|/* from gimage->layers.                                          */
-if|if
-condition|(
-name|marklist
-operator|!=
-name|NULL
-condition|)
-block|{
-while|while
-condition|(
-name|marklist
-condition|)
+control|)
 block|{
 name|layer
 operator|=
-name|marklist
+name|remove
 operator|->
 name|data
 expr_stmt|;
@@ -2532,28 +2531,30 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
-name|marklist
-operator|=
-name|g_slist_remove
+block|}
+name|g_slist_free
 argument_list|(
-name|marklist
-argument_list|,
-name|layer
+name|remove
 argument_list|)
 expr_stmt|;
-block|}
-block|}
 comment|/*  Scale any Guides  */
+for|for
+control|(
 name|glist
 operator|=
 name|gimage
 operator|->
 name|guides
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|glist
-condition|)
+condition|;
+name|glist
+operator|=
+name|g_list_next
+argument_list|(
+name|glist
+argument_list|)
+control|)
 block|{
 name|guide
 operator|=
@@ -2564,13 +2565,6 @@ operator|)
 name|glist
 operator|->
 name|data
-expr_stmt|;
-name|glist
-operator|=
-name|g_list_next
-argument_list|(
-name|glist
-argument_list|)
 expr_stmt|;
 switch|switch
 condition|(

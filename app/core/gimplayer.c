@@ -150,7 +150,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2bdd65530103
+DECL|enum|__anon2b27c2030103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -1429,10 +1429,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"layer_copy: could not allocate new layer"
-argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -1858,10 +1855,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"layer_new_from_tiles: could not allocate new layer"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3633,12 +3627,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * layer_check_scaling:  * @layer:      Layer to check  * @new_width:  proposed width of layer, in pixels  * @new_height: proposed height of layer, in pixels  * Scales layer dimensions, then snaps them to pixel centers  * Returns FALSE if any dimension reduces to zero as a result   * of this; otherwise, returns TRUE.  */
+comment|/**  * layer_check_scaling:  * @layer:      Layer to check  * @new_width:  proposed width of layer, in pixels  * @new_height: proposed height of layer, in pixels  *  * Scales layer dimensions, then snaps them to pixel centers  *  * Returns FALSE if any dimension reduces to zero as a result   *         of this; otherwise, returns TRUE.  */
 end_comment
 
 begin_function
-DECL|function|layer_check_scaling (Layer * layer,gint new_width,gint new_height)
 name|gboolean
+DECL|function|layer_check_scaling (Layer * layer,gint new_width,gint new_height)
 name|layer_check_scaling
 parameter_list|(
 name|Layer
@@ -3752,7 +3746,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * layer_scale_by_factors:  * @layer: Layer to be transformed by explicit width and height factors.  * @w_factor: scale factor to apply to width and horizontal offset  * @h_factor: scale factor to apply to height and vertical offset  *   * Scales layer dimensions and offsets by uniform width and  * height factors.  *   * Use layer_scale_by_factors() in circumstances when the  * same width and height scaling factors are to be uniformly  * applied to a set of layers. In this context, the layer's  * dimensions and offsets from the sides of the containing  * image all change by these predetermined factors. By fiat,  * the fixed point of the transform is the upper left hand  * corner of the image. Returns gboolean FALSE if a requested  * scale factor is zero or if a scaling zero's out a layer  * dimension; returns TRUE otherwise.  *  * Use layer_scale() in circumstances where new layer width  * and height dimensions are predetermined instead.  *  * #Returns: TRUE, if the scaled layer has positive dimensions  *           FALSE if the scaled layer has at least one zero dimension  *  * #Side effects: undo set created for layer.  *                Old layer imagery scaled   *& painted to new layer tiles   */
+comment|/**  * layer_scale_by_factors:  * @layer: Layer to be transformed by explicit width and height factors.  * @w_factor: scale factor to apply to width and horizontal offset  * @h_factor: scale factor to apply to height and vertical offset  *   * Scales layer dimensions and offsets by uniform width and  * height factors.  *   * Use layer_scale_by_factors() in circumstances when the  * same width and height scaling factors are to be uniformly  * applied to a set of layers. In this context, the layer's  * dimensions and offsets from the sides of the containing  * image all change by these predetermined factors. By fiat,  * the fixed point of the transform is the upper left hand  * corner of the image. Returns gboolean FALSE if a requested  * scale factor is zero or if a scaling zero's out a layer  * dimension; returns TRUE otherwise.  *  * Use layer_scale() in circumstances where new layer width  * and height dimensions are predetermined instead.  *  * Side effects: Undo set created for layer. Old layer imagery   *               scaled& painted to new layer tiles.   *  * Returns: TRUE, if the scaled layer has positive dimensions  *          FALSE if the scaled layer has at least one zero dimension  */
 end_comment
 
 begin_function
@@ -3775,7 +3769,8 @@ name|gint
 name|new_width
 decl_stmt|,
 name|new_height
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|new_offset_x
 decl_stmt|,
 name|new_offset_y
@@ -3793,10 +3788,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"layer_scale_by_factors: Error. Requested width or height scale equals zero."
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3963,10 +3955,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"layer_scale: Error. Requested width or height equals zero."
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
