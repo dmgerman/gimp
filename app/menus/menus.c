@@ -1399,7 +1399,7 @@ argument_list|(
 literal|"/File/Save as..."
 argument_list|)
 block|,
-name|NULL
+literal|"<control><shift>S"
 block|,
 name|file_save_as_cmd_callback
 block|,
@@ -2097,7 +2097,7 @@ argument_list|(
 literal|"/Select/Border..."
 argument_list|)
 block|,
-literal|"<control><shift>B"
+name|NULL
 block|,
 name|select_border_cmd_callback
 block|,
@@ -2720,7 +2720,7 @@ argument_list|(
 literal|"/View/Toggle Statusbar"
 argument_list|)
 block|,
-literal|"<control><shift>S"
+name|NULL
 block|,
 name|view_toggle_statusbar_cmd_callback
 block|,
@@ -2748,7 +2748,7 @@ argument_list|(
 literal|"/View/New View"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|view_new_view_cmd_callback
 block|,
@@ -3195,7 +3195,7 @@ argument_list|(
 literal|"/Layer/New Layer..."
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|layers_new_cmd_callback
 block|,
