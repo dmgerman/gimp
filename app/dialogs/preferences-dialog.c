@@ -6102,7 +6102,10 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  Web Browser  */
+comment|/*  Web Browser  (unused on win32)  */
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
 name|vbox2
 operator|=
 name|prefs_frame_new
@@ -6179,6 +6182,8 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 comment|/******************************/
 comment|/*  Interface / Tool Options  */
 comment|/******************************/
@@ -7134,7 +7139,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29d0262e0108
+DECL|struct|__anon2bbe32ef0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9575,7 +9580,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29d0262e0208
+DECL|struct|__anon2bbe32ef0208
 block|{
 DECL|member|label
 specifier|const
@@ -9734,7 +9739,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29d0262e0308
+DECL|struct|__anon2bbe32ef0308
 block|{
 DECL|member|tree_label
 specifier|const
