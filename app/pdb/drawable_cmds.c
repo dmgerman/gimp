@@ -3727,6 +3727,8 @@ if|if
 condition|(
 name|success
 condition|)
+name|success
+operator|=
 name|gimp_item_rename
 argument_list|(
 name|GIMP_ITEM

@@ -232,7 +232,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_text_layer_rename
 parameter_list|(
 name|GimpItem
@@ -872,7 +872,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_text_layer_rename (GimpItem * item,const gchar * new_name,const gchar * undo_desc)
 name|gimp_text_layer_rename
 parameter_list|(
@@ -891,15 +891,8 @@ modifier|*
 name|undo_desc
 parameter_list|)
 block|{
-name|GIMP_TEXT_LAYER
-argument_list|(
-name|item
-argument_list|)
-operator|->
-name|auto_rename
-operator|=
-name|FALSE
-expr_stmt|;
+if|if
+condition|(
 name|GIMP_ITEM_CLASS
 argument_list|(
 name|parent_class
@@ -913,7 +906,24 @@ name|new_name
 argument_list|,
 name|undo_desc
 argument_list|)
+condition|)
+block|{
+name|GIMP_TEXT_LAYER
+argument_list|(
+name|item
+argument_list|)
+operator|->
+name|auto_rename
+operator|=
+name|FALSE
 expr_stmt|;
+return|return
+name|TRUE
+return|;
+block|}
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 

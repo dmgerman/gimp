@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aefcf780103
+DECL|enum|__anon2ab1122d0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -272,7 +272,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_item_real_rename
 parameter_list|(
 name|GimpItem
@@ -938,6 +938,11 @@ block|{
 name|GimpItem
 modifier|*
 name|item
+init|=
+name|GIMP_ITEM
+argument_list|(
+name|object
+argument_list|)
 decl_stmt|;
 name|GimpList
 modifier|*
@@ -945,13 +950,6 @@ name|list
 init|=
 name|NULL
 decl_stmt|;
-name|item
-operator|=
-name|GIMP_ITEM
-argument_list|(
-name|object
-argument_list|)
-expr_stmt|;
 comment|/*  if no other items to check name against  */
 if|if
 condition|(
@@ -1052,19 +1050,17 @@ block|{
 name|GimpItem
 modifier|*
 name|item
+init|=
+name|GIMP_ITEM
+argument_list|(
+name|object
+argument_list|)
 decl_stmt|;
 name|gint64
 name|memsize
 init|=
 literal|0
 decl_stmt|;
-name|item
-operator|=
-name|GIMP_ITEM
-argument_list|(
-name|object
-argument_list|)
-expr_stmt|;
 name|memsize
 operator|+=
 name|gimp_object_get_memsize
@@ -1427,7 +1423,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_item_real_rename (GimpItem * item,const gchar * new_name,const gchar * undo_desc)
 name|gimp_item_real_rename
 parameter_list|(
@@ -1448,9 +1444,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|gimp_item_is_attached
+argument_list|(
 name|item
-operator|->
-name|gimage
+argument_list|)
 condition|)
 name|gimp_image_undo_push_item_rename
 argument_list|(
@@ -1473,6 +1470,9 @@ argument_list|,
 name|new_name
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -2084,7 +2084,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_item_rename (GimpItem * item,const gchar * new_name)
 name|gimp_item_rename
 parameter_list|(
@@ -2102,12 +2102,14 @@ name|GimpItemClass
 modifier|*
 name|item_class
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_ITEM
 argument_list|(
 name|item
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|item_class
@@ -2147,6 +2149,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 condition|)
+return|return
 name|item_class
 operator|->
 name|rename
@@ -2159,7 +2162,10 @@ name|item_class
 operator|->
 name|rename_desc
 argument_list|)
-expr_stmt|;
+return|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 

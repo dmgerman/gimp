@@ -262,7 +262,7 @@ name|add_alpha
 parameter_list|)
 function_decl|;
 DECL|member|rename
-name|void
+name|gboolean
 function_decl|(
 modifier|*
 name|rename
@@ -599,7 +599,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_item_rename
 parameter_list|(
 name|GimpItem
