@@ -122,6 +122,28 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|PlugInProcDef
+modifier|*
+name|plug_ins_file_register_thumb_loader
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|load_proc
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|thumb_proc
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* Add a plug-in definition. */
 end_comment

@@ -431,6 +431,13 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|proc_def
+operator|->
+name|thumb_loader
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|proc_def
 argument_list|)
 expr_stmt|;
 block|}

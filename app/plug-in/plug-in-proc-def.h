@@ -133,6 +133,11 @@ name|GSList
 modifier|*
 name|magics_list
 decl_stmt|;
+DECL|member|thumb_loader
+name|gchar
+modifier|*
+name|thumb_loader
+decl_stmt|;
 block|}
 struct|;
 end_struct
