@@ -283,7 +283,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon29e8cbe40108
+DECL|struct|__anon29b13be10108
 typedef|typedef
 struct|struct
 block|{
@@ -320,7 +320,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e8cbe40208
+DECL|struct|__anon29b13be10208
 typedef|typedef
 struct|struct
 block|{
@@ -375,7 +375,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e8cbe40308
+DECL|struct|__anon29b13be10308
 typedef|typedef
 struct|struct
 block|{
@@ -13626,9 +13626,6 @@ decl_stmt|;
 name|int
 name|nreturn_vals
 decl_stmt|;
-name|int
-name|redraw
-decl_stmt|;
 name|BezierRenderPnts
 modifier|*
 name|next_rpnts
@@ -13654,8 +13651,6 @@ argument_list|,
 name|PAINT_CORE_UNDO
 argument_list|)
 expr_stmt|;
-name|redraw
-operator|=
 name|bezier_gen_points
 argument_list|(
 name|bezier_sel
@@ -13803,22 +13798,9 @@ operator|.
 name|value
 operator|.
 name|pdb_int
-operator|==
+operator|!=
 name|PDB_SUCCESS
 condition|)
-block|{
-if|if
-condition|(
-name|redraw
-condition|)
-block|{
-comment|/* FIXME: how to update the image? */
-block|}
-name|gdisplays_flush
-argument_list|()
-expr_stmt|;
-block|}
-else|else
 name|g_message
 argument_list|(
 name|_
@@ -13886,6 +13868,9 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
+expr_stmt|;
+name|gdisplays_flush
+argument_list|()
 expr_stmt|;
 block|}
 end_function
