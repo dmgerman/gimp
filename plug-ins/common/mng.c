@@ -1216,12 +1216,9 @@ decl_stmt|;
 name|int
 name|frame_delay
 decl_stmt|;
-name|int
-name|pipe_fd
-decl_stmt|;
 name|gchar
 modifier|*
-name|template
+name|temp_file_name
 decl_stmt|;
 name|png_structp
 name|png_ptr
@@ -1442,7 +1439,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to allocate a user data buffer in mng_save_image()\n"
+literal|"Unable to allocate a user data buffer in mng_save_image()"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1469,7 +1466,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to open output file %s in mng_save_image()\n"
+literal|"Unable to open output file %s in mng_save_image()"
 argument_list|,
 name|filename
 argument_list|)
@@ -1508,7 +1505,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to mng_initialize() in mng_save_image()\n"
+literal|"Unable to mng_initialize() in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -1577,7 +1574,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to setup callbacks in mng_save_image()\n"
+literal|"Unable to setup callbacks in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -1618,7 +1615,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to mng_create() image in mng_save_image()\n"
+literal|"Unable to mng_create() image in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -1675,7 +1672,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to mng_putchunk_mhdr() in mng_save_image()\n"
+literal|"Unable to mng_putchunk_mhdr() in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -1728,7 +1725,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to mng_putchunk_text() in mng_save_image()\n"
+literal|"Unable to mng_putchunk_text() in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -1801,7 +1798,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to mng_putchunk_term() in mng_save_image()\n"
+literal|"Unable to mng_putchunk_term() in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -1862,7 +1859,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to mng_putchunk_term() in mng_save_image()\n"
+literal|"Unable to mng_putchunk_term() in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -1888,7 +1885,7 @@ literal|0
 return|;
 block|}
 block|}
-comment|/*	how do we get this to work? 	 	if (mng_data.bkgd) 	{ 		GimpRGB bgcolor; 		guchar red, green, blue; 		 		gimp_palette_get_background(&bgcolor); 		gimp_rgb_get_uchar(&bgcolor,&red,&green,&blue);  		if ((ret = mng_putchunk_back(handle, red, green, blue, MNG_BACKGROUNDCOLOR_MANDATORY, 0, MNG_BACKGROUNDIMAGE_NOTILE)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_back() in mng_save_image()\n"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		} 		 		if ((ret = mng_putchunk_bkgd(handle, MNG_FALSE, 2, 0, gimp_rgb_intensity_uchar(&bgcolor), red, green, blue)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_bkgd() in mng_save_image()\n"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		} 	} */
+comment|/*	how do we get this to work? 	 	if (mng_data.bkgd) 	{ 		GimpRGB bgcolor; 		guchar red, green, blue; 		 		gimp_palette_get_background(&bgcolor); 		gimp_rgb_get_uchar(&bgcolor,&red,&green,&blue);  		if ((ret = mng_putchunk_back(handle, red, green, blue, MNG_BACKGROUNDCOLOR_MANDATORY, 0, MNG_BACKGROUNDIMAGE_NOTILE)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_back() in mng_save_image()"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		} 		 		if ((ret = mng_putchunk_bkgd(handle, MNG_FALSE, 2, 0, gimp_rgb_intensity_uchar(&bgcolor), red, green, blue)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_bkgd() in mng_save_image()"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		} 	} */
 if|if
 condition|(
 name|mng_data
@@ -1937,7 +1934,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to mng_putchunk_gama() in mng_save_image()\n"
+literal|"Unable to mng_putchunk_gama() in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -1963,7 +1960,7 @@ literal|0
 return|;
 block|}
 block|}
-comment|/*	how do we get this to work?  	if (mng_data.phys) 	{ 		gimp_image_get_resolution(original_image_id,&xres,&yres); 		 		if ((ret = mng_putchunk_phyg(handle, MNG_FALSE, (mng_uint32) (xres * 39.37), (mng_uint32) (yres * 39.37), 1)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_phyg() in mng_save_image()\n"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		} 		 		if ((ret = mng_putchunk_phys(handle, MNG_FALSE, (mng_uint32) (xres * 39.37), (mng_uint32) (yres * 39.37), 1)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_phys() in mng_save_image()\n"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		} 	} */
+comment|/*	how do we get this to work?  	if (mng_data.phys) 	{ 		gimp_image_get_resolution(original_image_id,&xres,&yres); 		 		if ((ret = mng_putchunk_phyg(handle, MNG_FALSE, (mng_uint32) (xres * 39.37), (mng_uint32) (yres * 39.37), 1)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_phyg() in mng_save_image()"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		} 		 		if ((ret = mng_putchunk_phys(handle, MNG_FALSE, (mng_uint32) (xres * 39.37), (mng_uint32) (yres * 39.37), 1)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_phys() in mng_save_image()"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		} 	} */
 if|if
 condition|(
 name|mng_data
@@ -2030,7 +2027,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to mng_putchunk_time() in mng_save_image()\n"
+literal|"Unable to mng_putchunk_time() in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -2219,7 +2216,7 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"Unsupported GimpImageType in mng_save_image()\n"
+literal|"Unsupported GimpImageType in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -2377,7 +2374,7 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"Huh? Programmer stupidity error with 'layer_chunks_type'\n"
+literal|"Huh? Programmer stupidity error with 'layer_chunks_type'"
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -2493,7 +2490,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to mng_putchunk_fram() in mng_save_image()\n"
+literal|"Unable to mng_putchunk_fram() in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -2574,7 +2571,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to mng_putchunk_defi() in mng_save_image()\n"
+literal|"Unable to mng_putchunk_defi() in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -2599,39 +2596,23 @@ return|return
 literal|0
 return|;
 block|}
-name|template
-operator|=
-name|g_strdup
-argument_list|(
-name|g_strconcat
-argument_list|(
-name|g_get_current_dir
-argument_list|()
-argument_list|,
-literal|"/.gimp-mng-XXXXXX"
-argument_list|,
-name|NULL
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|(
-name|pipe_fd
+name|temp_file_name
 operator|=
-name|mkstemp
+name|gimp_temp_name
 argument_list|(
-name|template
+literal|"mng"
 argument_list|)
 operator|)
 operator|==
-operator|-
-literal|1
+name|NULL
 condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to mkstemp() in mng_save_image()\n"
+literal|"gimp_temp_name() failed in mng_save_image("
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -2661,9 +2642,9 @@ condition|(
 operator|(
 name|outfile
 operator|=
-name|fdopen
+name|fopen
 argument_list|(
-name|pipe_fd
+name|temp_file_name
 argument_list|,
 literal|"wb"
 argument_list|)
@@ -2674,17 +2655,14 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to fdopen(out) in mng_save_image()\n"
-argument_list|)
-expr_stmt|;
-name|close
-argument_list|(
-name|pipe_fd
+literal|"fopen() failed for '%s' in mng_save_image()"
+argument_list|,
+name|temp_file_name
 argument_list|)
 expr_stmt|;
 name|unlink
 argument_list|(
-name|template
+name|temp_file_name
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -2740,7 +2718,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to png_create_write_struct() in mng_save_image()\n"
+literal|"Unable to png_create_write_struct() in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -2748,14 +2726,9 @@ argument_list|(
 name|outfile
 argument_list|)
 expr_stmt|;
-name|close
-argument_list|(
-name|pipe_fd
-argument_list|)
-expr_stmt|;
 name|unlink
 argument_list|(
-name|template
+name|temp_file_name
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -2796,7 +2769,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to png_create_info_struct() in mng_save_image()\n"
+literal|"Unable to png_create_info_struct() in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|png_destroy_write_struct
@@ -2815,14 +2788,9 @@ argument_list|(
 name|outfile
 argument_list|)
 expr_stmt|;
-name|close
-argument_list|(
-name|pipe_fd
-argument_list|)
-expr_stmt|;
 name|unlink
 argument_list|(
-name|template
+name|temp_file_name
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -2861,7 +2829,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"HRM saving PNG in mng_save_image()\n"
+literal|"HRM saving PNG in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|png_destroy_write_struct
@@ -2880,14 +2848,9 @@ argument_list|(
 name|outfile
 argument_list|)
 expr_stmt|;
-name|close
-argument_list|(
-name|pipe_fd
-argument_list|)
-expr_stmt|;
 name|unlink
 argument_list|(
-name|template
+name|temp_file_name
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -3522,11 +3485,6 @@ argument_list|(
 name|outfile
 argument_list|)
 expr_stmt|;
-name|close
-argument_list|(
-name|pipe_fd
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -3534,7 +3492,7 @@ name|infile
 operator|=
 name|fopen
 argument_list|(
-name|template
+name|temp_file_name
 argument_list|,
 literal|"rb"
 argument_list|)
@@ -3545,12 +3503,12 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to fopen(in) in mng_save_image()\n"
+literal|"Unable to fopen(in) in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|unlink
 argument_list|(
-name|template
+name|temp_file_name
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -3850,7 +3808,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to mng_putchunk_ihdr() in mng_save_image()\n"
+literal|"Unable to mng_putchunk_ihdr() in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -3911,7 +3869,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to mng_putchunk_idat() in mng_save_image()\n"
+literal|"Unable to mng_putchunk_idat() in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -3968,7 +3926,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to mng_putchunk_iend() in mng_save_image()\n"
+literal|"Unable to mng_putchunk_iend() in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -4037,7 +3995,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to mng_putchunk_plte() in mng_save_image()\n"
+literal|"Unable to mng_putchunk_plte() in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -4124,7 +4082,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to mng_putchunk_trns() in mng_save_image()\n"
+literal|"Unable to mng_putchunk_trns() in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -4181,7 +4139,7 @@ argument_list|)
 expr_stmt|;
 name|unlink
 argument_list|(
-name|template
+name|temp_file_name
 argument_list|)
 expr_stmt|;
 block|}
@@ -4201,7 +4159,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to mng_putchunk_mend() in mng_save_image()\n"
+literal|"Unable to mng_putchunk_mend() in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
@@ -4242,7 +4200,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Unable to mng_write() the image in mng_save_image()\n"
+literal|"Unable to mng_write() the image in mng_save_image()"
 argument_list|)
 expr_stmt|;
 name|mng_cleanup
