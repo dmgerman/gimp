@@ -375,7 +375,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291cde510108
+DECL|struct|__anon2c35cd260108
 block|{
 DECL|member|url
 name|gchar
@@ -1172,7 +1172,8 @@ name|entry
 argument_list|,
 literal|200
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|g_snprintf
