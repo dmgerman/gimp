@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dd231c0103
+DECL|enum|__anon2a2347710103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1619,6 +1619,13 @@ block|}
 comment|/*  First the updates...  */
 if|if
 condition|(
+name|gdisp
+operator|->
+name|update_areas
+condition|)
+block|{
+if|if
+condition|(
 name|now
 condition|)
 block|{
@@ -1722,12 +1729,6 @@ block|}
 else|else
 block|{
 comment|/* Asynchronous */
-if|if
-condition|(
-name|gdisp
-operator|->
-name|update_areas
-condition|)
 name|gimp_display_idlerender_init
 argument_list|(
 name|gdisp
@@ -1746,6 +1747,18 @@ operator|->
 name|update_areas
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+comment|/*  if there was nothing to update, we still need to start the        *  selection  --mitch        */
+name|gimp_display_shell_selection_visibility
+argument_list|(
+name|shell
+argument_list|,
+name|GIMP_SELECTION_ON
+argument_list|)
+expr_stmt|;
+block|}
 comment|/*  Next the displays...  */
 name|gimp_display_shell_flush
 argument_list|(

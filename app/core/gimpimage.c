@@ -246,7 +246,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acfbb260103
+DECL|enum|__anon28b5d61e0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -8864,6 +8864,15 @@ expr_stmt|;
 if|if
 condition|(
 name|layer
+operator|!=
+name|gimage
+operator|->
+name|active_layer
+condition|)
+block|{
+if|if
+condition|(
+name|layer
 condition|)
 block|{
 comment|/*  Configure the layer stack to reflect this change  */
@@ -8893,22 +8902,13 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
-comment|/*  invalidate the selection boundary because of a layer modification  */
+comment|/*  Don't cache selection info for the previous active layer  */
 name|gimp_layer_invalidate_boundary
 argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|layer
-operator|!=
-name|gimage
-operator|->
-name|active_layer
-condition|)
-block|{
 name|gimage
 operator|->
 name|active_layer
@@ -9072,6 +9072,14 @@ operator|->
 name|active_layer
 condition|)
 block|{
+comment|/*  Don't cache selection info for the previous active layer  */
+name|gimp_layer_invalidate_boundary
+argument_list|(
+name|gimage
+operator|->
+name|active_layer
+argument_list|)
+expr_stmt|;
 name|gimage
 operator|->
 name|active_layer
