@@ -4323,7 +4323,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"New Image"
+literal|"Defaults for New Images"
 argument_list|)
 argument_list|,
 literal|"new-image.png"
@@ -4553,7 +4553,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Default Comment"
+literal|"Default Image Comment"
 argument_list|)
 argument_list|,
 literal|"default-comment.png"
@@ -4718,7 +4718,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Default Grid"
+literal|"Default Image Grid"
 argument_list|)
 argument_list|,
 literal|"default-grid.png"
@@ -4798,7 +4798,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Interface"
+literal|"User Interface"
 argument_list|)
 argument_list|,
 literal|"interface.png"
@@ -6849,7 +6849,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b287dd20108
+DECL|struct|__anon29b4c39d0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7559,7 +7559,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Monitor"
+literal|"Monitor Resolution"
 argument_list|)
 argument_list|,
 literal|"monitor.png"
@@ -8209,7 +8209,6 @@ name|page_index
 operator|++
 argument_list|)
 expr_stmt|;
-comment|/*  Resource Consumption  */
 name|vbox2
 operator|=
 name|prefs_frame_new
@@ -8225,23 +8224,6 @@ name|vbox
 argument_list|)
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|prefs_check_button_add
-argument_list|(
-name|object
-argument_list|,
-literal|"stingy-memory-use"
-argument_list|,
-name|_
-argument_list|(
-literal|"Conservative Memory Usage"
-argument_list|)
-argument_list|,
-name|GTK_BOX
-argument_list|(
-name|vbox2
-argument_list|)
 argument_list|)
 expr_stmt|;
 ifdef|#
@@ -8374,6 +8356,24 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* ENABLE_MP */
+comment|/*  Resource Consumption  */
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
+literal|"stingy-memory-use"
+argument_list|,
+name|_
+argument_list|(
+literal|"Conservative Memory Usage"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  File Saving  */
 name|vbox2
 operator|=
@@ -8701,7 +8701,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b287dd20208
+DECL|struct|__anon29b4c39d0208
 block|{
 DECL|member|label
 specifier|const
@@ -8860,7 +8860,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b287dd20308
+DECL|struct|__anon29b4c39d0308
 block|{
 DECL|member|tree_label
 specifier|const
