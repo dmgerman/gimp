@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fdb33e0103
+DECL|enum|__anon27dc508d0103
 block|{
 DECL|enumerator|GIMP_CONFIG_ERROR_OPEN
 name|GIMP_CONFIG_ERROR_OPEN
@@ -338,7 +338,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_config_equal
+name|gimp_config_is_equal_to
 parameter_list|(
 name|GObject
 modifier|*
