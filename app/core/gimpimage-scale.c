@@ -83,7 +83,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_image_scale (GimpImage * gimage,gint new_width,gint new_height,GimpProgressFunc progress_func,gpointer progress_data)
+DECL|function|gimp_image_scale (GimpImage * gimage,gint new_width,gint new_height,GimpInterpolationType interpolation_type,GimpProgressFunc progress_func,gpointer progress_data)
 name|gimp_image_scale
 parameter_list|(
 name|GimpImage
@@ -95,6 +95,9 @@ name|new_width
 parameter_list|,
 name|gint
 name|new_height
+parameter_list|,
+name|GimpInterpolationType
+name|interpolation_type
 parameter_list|,
 name|GimpProgressFunc
 name|progress_func
@@ -325,6 +328,8 @@ argument_list|,
 name|new_width
 argument_list|,
 name|new_height
+argument_list|,
+name|interpolation_type
 argument_list|)
 expr_stmt|;
 if|if
@@ -362,6 +367,8 @@ argument_list|,
 name|new_width
 argument_list|,
 name|new_height
+argument_list|,
+name|interpolation_type
 argument_list|)
 expr_stmt|;
 name|gimp_image_mask_invalidate
@@ -413,6 +420,8 @@ argument_list|,
 name|img_scale_w
 argument_list|,
 name|img_scale_h
+argument_list|,
+name|interpolation_type
 argument_list|)
 condition|)
 block|{

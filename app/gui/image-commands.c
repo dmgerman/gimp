@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2beb2cbb0108
+DECL|struct|__anon2b66368c0108
 block|{
 DECL|member|resize
 name|Resize
@@ -1256,6 +1256,12 @@ operator|->
 name|resize
 operator|->
 name|height
+argument_list|,
+name|image_scale
+operator|->
+name|resize
+operator|->
+name|interpolation
 argument_list|,
 name|progress_update_and_flush
 argument_list|,

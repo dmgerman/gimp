@@ -1042,7 +1042,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_scale (GimpChannel * channel,gint new_width,gint new_height)
+DECL|function|gimp_channel_scale (GimpChannel * channel,gint new_width,gint new_height,GimpInterpolationType interpolation_type)
 name|gimp_channel_scale
 parameter_list|(
 name|GimpChannel
@@ -1054,6 +1054,9 @@ name|new_width
 parameter_list|,
 name|gint
 name|new_height
+parameter_list|,
+name|GimpInterpolationType
+name|interpolation_type
 parameter_list|)
 block|{
 name|PixelRegion
@@ -1183,6 +1186,8 @@ name|srcPR
 argument_list|,
 operator|&
 name|destPR
+argument_list|,
+name|interpolation_type
 argument_list|)
 expr_stmt|;
 comment|/*  Push the channel on the undo stack  */

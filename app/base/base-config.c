@@ -110,13 +110,6 @@ argument_list|)
 block|,
 name|INIT_MEMBER
 argument_list|(
-name|interpolation_type
-argument_list|,
-name|GIMP_LINEAR_INTERPOLATION
-argument_list|)
-block|,
-name|INIT_MEMBER
-argument_list|(
 argument|num_processors
 argument_list|,
 literal|1

@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278b61fd0103
+DECL|enum|__anon27e8b7b00103
 block|{
 DECL|enumerator|ScaleWidget
 name|ScaleWidget
@@ -35,7 +35,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278b61fd0203
+DECL|enum|__anon27e8b7b00203
 block|{
 DECL|enumerator|ResizeImage
 name|ResizeImage
@@ -66,6 +66,11 @@ DECL|member|resize_shell
 name|GtkWidget
 modifier|*
 name|resize_shell
+decl_stmt|;
+DECL|member|gimage
+name|GimpImage
+modifier|*
+name|gimage
 decl_stmt|;
 DECL|member|type
 name|ResizeType
@@ -110,6 +115,10 @@ decl_stmt|;
 DECL|member|offset_y
 name|gint
 name|offset_y
+decl_stmt|;
+DECL|member|interpolation
+name|GimpInterpolationType
+name|interpolation
 decl_stmt|;
 block|}
 struct|;

@@ -398,6 +398,9 @@ name|new_width
 parameter_list|,
 name|gint
 name|new_height
+parameter_list|,
+name|GimpInterpolationType
+name|interpolation_type
 parameter_list|)
 function_decl|;
 end_function_decl

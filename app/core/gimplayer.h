@@ -131,7 +131,7 @@ decl_stmt|;
 comment|/*  possible layer mask        */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2bf8a40e0108
+DECL|struct|__anon28ace3e70108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -517,6 +517,9 @@ name|w_factor
 parameter_list|,
 name|gdouble
 name|h_factor
+parameter_list|,
+name|GimpInterpolationType
+name|interpolation_type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -534,6 +537,9 @@ name|new_width
 parameter_list|,
 name|gint
 name|new_height
+parameter_list|,
+name|GimpInterpolationType
+name|interpolation_type
 parameter_list|,
 name|gboolean
 name|local_origin

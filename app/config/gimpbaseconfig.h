@@ -123,10 +123,6 @@ DECL|member|tile_cache_size
 name|guint
 name|tile_cache_size
 decl_stmt|;
-DECL|member|interpolation_type
-name|GimpInterpolationType
-name|interpolation_type
-decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -21,6 +21,10 @@ DECL|struct|_GimpCoreConfig
 struct|struct
 name|_GimpCoreConfig
 block|{
+DECL|member|interpolation_type
+name|GimpInterpolationType
+name|interpolation_type
+decl_stmt|;
 DECL|member|plug_in_path
 name|gchar
 modifier|*

@@ -107,6 +107,10 @@ DECL|member|parent_instance
 name|GimpBaseConfig
 name|parent_instance
 decl_stmt|;
+DECL|member|interpolation_type
+name|GimpInterpolationType
+name|interpolation_type
+decl_stmt|;
 DECL|member|plug_in_path
 name|gchar
 modifier|*

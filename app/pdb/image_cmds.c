@@ -82,6 +82,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -2349,6 +2355,12 @@ argument_list|,
 name|new_width
 argument_list|,
 name|new_height
+argument_list|,
+name|gimp
+operator|->
+name|config
+operator|->
+name|interpolation_type
 argument_list|,
 name|NULL
 argument_list|,

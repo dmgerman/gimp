@@ -112,7 +112,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f2d1330103
+DECL|enum|__anon2b51ae9a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -131,9 +131,6 @@ name|PROP_NUM_PROCESSORS
 block|,
 DECL|enumerator|PROP_TILE_CACHE_SIZE
 name|PROP_TILE_CACHE_SIZE
-block|,
-DECL|enumerator|PROP_INTERPOLATION_TYPE
-name|PROP_INTERPOLATION_TYPE
 block|, }
 enum|;
 end_enum
@@ -354,19 +351,6 @@ operator|<<
 literal|25
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_INTERPOLATION_TYPE
-argument_list|,
-literal|"interpolation-type"
-argument_list|,
-name|GIMP_TYPE_INTERPOLATION_TYPE
-argument_list|,
-name|GIMP_LINEAR_INTERPOLATION
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -537,19 +521,6 @@ name|value
 argument_list|)
 expr_stmt|;
 break|break;
-case|case
-name|PROP_INTERPOLATION_TYPE
-case|:
-name|base_config
-operator|->
-name|interpolation_type
-operator|=
-name|g_value_get_enum
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
@@ -665,19 +636,6 @@ argument_list|,
 name|base_config
 operator|->
 name|tile_cache_size
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|PROP_INTERPOLATION_TYPE
-case|:
-name|g_value_set_enum
-argument_list|(
-name|value
-argument_list|,
-name|base_config
-operator|->
-name|interpolation_type
 argument_list|)
 expr_stmt|;
 break|break;

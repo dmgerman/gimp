@@ -4140,6 +4140,12 @@ name|resize
 operator|->
 name|height
 argument_list|,
+name|options
+operator|->
+name|resize
+operator|->
+name|interpolation
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;

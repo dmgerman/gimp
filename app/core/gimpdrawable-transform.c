@@ -239,7 +239,7 @@ end_comment
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_drawable_transform_tiles_affine (GimpDrawable * drawable,TileManager * float_tiles,gboolean interpolation,gboolean clip_result,GimpMatrix3 matrix,GimpTransformDirection direction,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_drawable_transform_tiles_affine (GimpDrawable * drawable,TileManager * float_tiles,GimpInterpolationType interpolation_type,gboolean clip_result,GimpMatrix3 matrix,GimpTransformDirection direction,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_drawable_transform_tiles_affine
 parameter_list|(
 name|GimpDrawable
@@ -250,8 +250,8 @@ name|TileManager
 modifier|*
 name|float_tiles
 parameter_list|,
-name|gboolean
-name|interpolation
+name|GimpInterpolationType
+name|interpolation_type
 parameter_list|,
 name|gboolean
 name|clip_result
@@ -444,17 +444,13 @@ name|gimp_matrix3_is_simple
 argument_list|(
 name|matrix
 argument_list|)
-operator|||
-name|base_config
-operator|->
-name|interpolation_type
-operator|==
-name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
 condition|)
-name|interpolation
+block|{
+name|interpolation_type
 operator|=
-name|FALSE
+name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
 expr_stmt|;
+block|}
 comment|/*  Get the background color  */
 name|gimp_image_get_background
 argument_list|(
@@ -521,9 +517,9 @@ operator|=
 name|ALPHA_I_PIX
 expr_stmt|;
 comment|/*  If the gimage is indexed color, ignore smoothing value  */
-name|interpolation
+name|interpolation_type
 operator|=
-name|FALSE
+name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
 expr_stmt|;
 break|break;
 default|default:
@@ -914,20 +910,14 @@ name|ty1
 argument_list|)
 expr_stmt|;
 comment|/* initialise the pixel_surround accessor */
-if|if
+switch|switch
 condition|(
-name|interpolation
-condition|)
-block|{
-if|if
-condition|(
-name|base_config
-operator|->
 name|interpolation_type
-operator|==
-name|GIMP_CUBIC_INTERPOLATION
 condition|)
 block|{
+case|case
+name|GIMP_CUBIC_INTERPOLATION
+case|:
 name|pixel_surround_init
 argument_list|(
 operator|&
@@ -942,9 +932,10 @@ argument_list|,
 name|bg_col
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
+break|break;
+case|case
+name|GIMP_LINEAR_INTERPOLATION
+case|:
 name|pixel_surround_init
 argument_list|(
 operator|&
@@ -959,10 +950,10 @@ argument_list|,
 name|bg_col
 argument_list|)
 expr_stmt|;
-block|}
-block|}
-else|else
-block|{
+break|break;
+case|case
+name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
+case|:
 comment|/* not actually useful, keeps the code cleaner */
 name|pixel_surround_init
 argument_list|(
@@ -978,6 +969,7 @@ argument_list|,
 name|bg_col
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 name|width
 operator|=
@@ -1219,21 +1211,15 @@ name|ty
 expr_stmt|;
 block|}
 comment|/*  Set the destination pixels  */
-if|if
+switch|switch
 condition|(
-name|interpolation
-condition|)
-block|{
-if|if
-condition|(
-name|base_config
-operator|->
 name|interpolation_type
-operator|==
-name|GIMP_CUBIC_INTERPOLATION
 condition|)
 block|{
-comment|/*  ttx& tty are the subpixel coordinates of the point in 		   *  the original selection's floating buffer. 		   *  We need the four integer pixel coords around them: 		   *  itx to itx + 3, ity to ity + 3                    */
+case|case
+name|GIMP_CUBIC_INTERPOLATION
+case|:
+comment|/*  ttx& tty are the subpixel coordinates of the point in                *  the original selection's floating buffer.                *  We need the four integer pixel coords around them:                *  itx to itx + 3, ity to ity + 3                */
 name|itx
 operator|=
 name|floor
@@ -1466,7 +1452,7 @@ name|a_val
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  for colour channels c, 		       *  result = bicubic (c * alpha) / bicubic (alpha) 		       * 		       *  never entered for alpha == 0 		       */
+comment|/*  for colour channels c,                    *  result = bicubic (c * alpha) / bicubic (alpha)                    *                    *  never entered for alpha == 0                    */
 for|for
 control|(
 name|i
@@ -1635,10 +1621,10 @@ name|b
 index|]
 expr_stmt|;
 block|}
-block|}
-else|else
-comment|/*  linear  */
-block|{
+break|break;
+case|case
+name|GIMP_LINEAR_INTERPOLATION
+case|:
 name|itx
 operator|=
 name|floor
@@ -1653,7 +1639,7 @@ argument_list|(
 name|tty
 argument_list|)
 expr_stmt|;
-comment|/*  expand source area to cover interpolation region 		   *  (which runs from itx to itx + 1, same in y) 		   */
+comment|/*  expand source area to cover interpolation region                *  (which runs from itx to itx + 1, same in y)                */
 if|if
 condition|(
 operator|(
@@ -1835,7 +1821,7 @@ name|a_val
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  for colour channels c, 		       *  result = bilinear (c * alpha) / bilinear (alpha) 		       * 		       *  never entered for alpha == 0 		       */
+comment|/*  for colour channels c,                    *  result = bilinear (c * alpha) / bilinear (alpha)                    *                    *  never entered for alpha == 0                    */
 for|for
 control|(
 name|i
@@ -2000,11 +1986,10 @@ name|b
 index|]
 expr_stmt|;
 block|}
-block|}
-block|}
-else|else
-comment|/*  no interpolation  */
-block|{
+break|break;
+case|case
+name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
+case|:
 name|itx
 operator|=
 name|floor
@@ -2123,6 +2108,7 @@ name|b
 index|]
 expr_stmt|;
 block|}
+break|break;
 block|}
 comment|/*  increment the transformed coordinates  */
 name|tx
@@ -2457,15 +2443,15 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_transform_affine (GimpDrawable * drawable,gboolean interpolation,gboolean clip_result,GimpMatrix3 matrix,GimpTransformDirection direction)
+DECL|function|gimp_drawable_transform_affine (GimpDrawable * drawable,GimpInterpolationType interpolation_type,gboolean clip_result,GimpMatrix3 matrix,GimpTransformDirection direction)
 name|gimp_drawable_transform_affine
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gboolean
-name|interpolation
+name|GimpInterpolationType
+name|interpolation_type
 parameter_list|,
 name|gboolean
 name|clip_result
@@ -2557,7 +2543,7 @@ name|drawable
 argument_list|,
 name|float_tiles
 argument_list|,
-name|interpolation
+name|interpolation_type
 argument_list|,
 name|FALSE
 argument_list|,

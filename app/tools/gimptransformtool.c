@@ -3228,7 +3228,7 @@ name|original
 argument_list|,
 name|options
 operator|->
-name|smoothing
+name|interpolation
 argument_list|,
 name|options
 operator|->

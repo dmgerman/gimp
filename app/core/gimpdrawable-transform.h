@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc3f4a90103
+DECL|enum|__anon28d84c100103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -63,8 +63,8 @@ name|TileManager
 modifier|*
 name|float_tiles
 parameter_list|,
-name|gboolean
-name|interpolation
+name|GimpInterpolationType
+name|interpolation_type
 parameter_list|,
 name|gboolean
 name|clip_result
@@ -111,8 +111,8 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gboolean
-name|interpolation
+name|GimpInterpolationType
+name|interpolation_type
 parameter_list|,
 name|gboolean
 name|clip_result

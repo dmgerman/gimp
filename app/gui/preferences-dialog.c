@@ -185,7 +185,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2b85460103
+DECL|enum|__anon2bdeeb5d0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -2707,7 +2707,9 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|base_config
+name|gimp
+operator|->
+name|config
 operator|->
 name|interpolation_type
 operator|!=
@@ -4183,15 +4185,17 @@ expr_stmt|;
 comment|/*  restore ordinary gimprc variables  */
 name|base_config
 operator|->
-name|interpolation_type
-operator|=
-name|old_interpolation_type
-expr_stmt|;
-name|base_config
-operator|->
 name|num_processors
 operator|=
 name|old_num_processors
+expr_stmt|;
+name|gimp
+operator|->
+name|config
+operator|->
+name|interpolation_type
+operator|=
+name|old_interpolation_type
 expr_stmt|;
 name|gimp
 operator|->
@@ -4902,7 +4906,9 @@ condition|(
 name|data
 operator|==
 operator|&
-name|base_config
+name|gimp
+operator|->
+name|config
 operator|->
 name|interpolation_type
 operator|||
@@ -6985,17 +6991,19 @@ operator|->
 name|tile_cache_size
 expr_stmt|;
 comment|/*  remember all old values  */
-name|old_interpolation_type
-operator|=
-name|base_config
-operator|->
-name|interpolation_type
-expr_stmt|;
 name|old_num_processors
 operator|=
 name|base_config
 operator|->
 name|num_processors
+expr_stmt|;
+name|old_interpolation_type
+operator|=
+name|gimp
+operator|->
+name|config
+operator|->
+name|interpolation_type
 expr_stmt|;
 name|old_default_type
 operator|=
@@ -12681,20 +12689,24 @@ name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
-name|base_config
+name|gimp
+operator|->
+name|config
 operator|->
 name|interpolation_type
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|base_config
+name|gimp
+operator|->
+name|config
 operator|->
 name|interpolation_type
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Nearest Neighbor (Fast)"
+literal|"Nearest Neighbor (Fastest)"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -12718,7 +12730,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Cubic (Slow)"
+literal|"Cubic (Slowest& Best)"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -14184,7 +14196,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b2b85460208
+DECL|struct|__anon2bdeeb5d0208
 block|{
 DECL|member|label
 name|gchar
@@ -14402,7 +14414,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b2b85460308
+DECL|struct|__anon2bdeeb5d0308
 block|{
 DECL|member|tree_label
 name|gchar

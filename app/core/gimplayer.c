@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a2ef720103
+DECL|enum|__anon2c3017510103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -3531,7 +3531,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_scale_lowlevel (GimpLayer * layer,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y)
+DECL|function|gimp_layer_scale_lowlevel (GimpLayer * layer,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y,GimpInterpolationType interpolation_type)
 name|gimp_layer_scale_lowlevel
 parameter_list|(
 name|GimpLayer
@@ -3549,6 +3549,9 @@ name|new_offset_x
 parameter_list|,
 name|gint
 name|new_offset_y
+parameter_list|,
+name|GimpInterpolationType
+name|interpolation_type
 parameter_list|)
 block|{
 name|PixelRegion
@@ -3659,38 +3662,17 @@ expr_stmt|;
 comment|/*  Scale the layer -    *   If the layer is of type INDEXED, then we don't use pixel-value    *   resampling because that doesn't necessarily make sense for INDEXED    *   images.    */
 if|if
 condition|(
-operator|(
+name|GIMP_IMAGE_TYPE_IS_INDEXED
+argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
 operator|->
 name|type
-operator|==
-name|GIMP_INDEXED_IMAGE
-operator|)
-operator|||
-operator|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
 argument_list|)
-operator|->
-name|type
-operator|==
-name|GIMP_INDEXEDA_IMAGE
-operator|)
 condition|)
-name|scale_region_no_resample
-argument_list|(
-operator|&
-name|srcPR
-argument_list|,
-operator|&
-name|destPR
-argument_list|)
-expr_stmt|;
-else|else
+block|{
 name|scale_region
 argument_list|(
 operator|&
@@ -3698,8 +3680,25 @@ name|srcPR
 argument_list|,
 operator|&
 name|destPR
+argument_list|,
+name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|scale_region
+argument_list|(
+operator|&
+name|srcPR
+argument_list|,
+operator|&
+name|destPR
+argument_list|,
+name|interpolation_type
+argument_list|)
+expr_stmt|;
+block|}
 comment|/*  Push the layer on the undo stack  */
 name|undo_push_layer_mod
 argument_list|(
@@ -3811,6 +3810,8 @@ argument_list|,
 name|new_width
 argument_list|,
 name|new_height
+argument_list|,
+name|interpolation_type
 argument_list|)
 expr_stmt|;
 block|}
@@ -3978,7 +3979,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_layer_scale_by_factors (GimpLayer * layer,gdouble w_factor,gdouble h_factor)
+DECL|function|gimp_layer_scale_by_factors (GimpLayer * layer,gdouble w_factor,gdouble h_factor,GimpInterpolationType interpolation_type)
 name|gimp_layer_scale_by_factors
 parameter_list|(
 name|GimpLayer
@@ -3990,6 +3991,9 @@ name|w_factor
 parameter_list|,
 name|gdouble
 name|h_factor
+parameter_list|,
+name|GimpInterpolationType
+name|interpolation_type
 parameter_list|)
 block|{
 name|gint
@@ -4112,6 +4116,8 @@ argument_list|,
 name|new_offset_x
 argument_list|,
 name|new_offset_y
+argument_list|,
+name|interpolation_type
 argument_list|)
 expr_stmt|;
 return|return
@@ -4130,7 +4136,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_layer_scale (GimpLayer * layer,gint new_width,gint new_height,gboolean local_origin)
+DECL|function|gimp_layer_scale (GimpLayer * layer,gint new_width,gint new_height,GimpInterpolationType interpolation_type,gboolean local_origin)
 name|gimp_layer_scale
 parameter_list|(
 name|GimpLayer
@@ -4142,6 +4148,9 @@ name|new_width
 parameter_list|,
 name|gint
 name|new_height
+parameter_list|,
+name|GimpInterpolationType
+name|interpolation_type
 parameter_list|,
 name|gboolean
 name|local_origin
@@ -4300,6 +4309,8 @@ argument_list|,
 name|new_offset_x
 argument_list|,
 name|new_offset_y
+argument_list|,
+name|interpolation_type
 argument_list|)
 expr_stmt|;
 block|}

@@ -48,10 +48,6 @@ DECL|member|stingy_memory_use
 name|gboolean
 name|stingy_memory_use
 decl_stmt|;
-DECL|member|interpolation_type
-name|GimpInterpolationType
-name|interpolation_type
-decl_stmt|;
 DECL|member|num_processors
 name|gint
 name|num_processors

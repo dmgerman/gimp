@@ -1288,6 +1288,8 @@ modifier|*
 parameter_list|,
 name|PixelRegion
 modifier|*
+parameter_list|,
+name|GimpInterpolationType
 parameter_list|)
 function_decl|;
 end_function_decl

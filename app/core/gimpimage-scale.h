@@ -30,6 +30,9 @@ parameter_list|,
 name|gint
 name|new_height
 parameter_list|,
+name|GimpInterpolationType
+name|interpolation_type
+parameter_list|,
 name|GimpProgressFunc
 name|progress_func
 parameter_list|,

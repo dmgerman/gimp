@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac290a10103
+DECL|enum|__anon2c1c51910103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -13074,7 +13074,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|get_scaled_row (void ** src,gint y,gint new_width,PixelRegion * srcPR,gdouble * row,guchar * src_tmp)
+DECL|function|get_scaled_row (void ** src,gint y,gint new_width,PixelRegion * srcPR,gdouble * row,guchar * src_tmp,GimpInterpolationType interpolation_type)
 name|get_scaled_row
 parameter_list|(
 name|void
@@ -13099,6 +13099,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|src_tmp
+parameter_list|,
+name|GimpInterpolationType
+name|interpolation_type
 parameter_list|)
 block|{
 comment|/* get the necesary lines from the source image, scale them,    and put them into src[] */
@@ -13174,8 +13177,6 @@ name|w
 argument_list|,
 name|new_width
 argument_list|,
-name|base_config
-operator|->
 name|interpolation_type
 argument_list|)
 expr_stmt|;
@@ -13207,8 +13208,6 @@ name|w
 argument_list|,
 name|new_width
 argument_list|,
-name|base_config
-operator|->
 name|interpolation_type
 argument_list|)
 expr_stmt|;
@@ -13266,7 +13265,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|scale_region (PixelRegion * srcPR,PixelRegion * destPR)
+DECL|function|scale_region (PixelRegion * srcPR,PixelRegion * destPR,GimpInterpolationType interpolation_type)
 name|scale_region
 parameter_list|(
 name|PixelRegion
@@ -13276,6 +13275,9 @@ parameter_list|,
 name|PixelRegion
 modifier|*
 name|destPR
+parameter_list|,
+name|GimpInterpolationType
+name|interpolation_type
 parameter_list|)
 block|{
 name|gdouble
@@ -13336,8 +13338,6 @@ name|y
 decl_stmt|;
 if|if
 condition|(
-name|base_config
-operator|->
 name|interpolation_type
 operator|==
 name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
@@ -13564,6 +13564,8 @@ argument_list|,
 name|row
 argument_list|,
 name|src_tmp
+argument_list|,
+name|interpolation_type
 argument_list|)
 expr_stmt|;
 name|new_y
@@ -13668,6 +13670,8 @@ argument_list|,
 name|row
 argument_list|,
 name|src_tmp
+argument_list|,
+name|interpolation_type
 argument_list|)
 expr_stmt|;
 while|while
@@ -13728,6 +13732,8 @@ argument_list|,
 name|row
 argument_list|,
 name|src_tmp
+argument_list|,
+name|interpolation_type
 argument_list|)
 expr_stmt|;
 name|max
@@ -13852,6 +13858,8 @@ argument_list|,
 name|row
 argument_list|,
 name|src_tmp
+argument_list|,
+name|interpolation_type
 argument_list|)
 expr_stmt|;
 name|old_y
@@ -13860,8 +13868,6 @@ expr_stmt|;
 block|}
 switch|switch
 condition|(
-name|base_config
-operator|->
 name|interpolation_type
 condition|)
 block|{
@@ -14120,6 +14126,8 @@ argument_list|,
 name|row
 argument_list|,
 name|src_tmp
+argument_list|,
+name|interpolation_type
 argument_list|)
 expr_stmt|;
 name|memcpy

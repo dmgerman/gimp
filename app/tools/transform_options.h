@@ -57,18 +57,15 @@ literal|2
 index|]
 decl_stmt|;
 comment|/* 2 radio buttons */
-DECL|member|smoothing
-name|gboolean
-name|smoothing
+DECL|member|interpolation
+name|GimpInterpolationType
+name|interpolation
 decl_stmt|;
-DECL|member|smoothing_d
-name|gboolean
-name|smoothing_d
-decl_stmt|;
-DECL|member|smoothing_w
+comment|/* GimpInterpolationType interpolation_d; (from gimprc) */
+DECL|member|interpolation_w
 name|GtkWidget
 modifier|*
-name|smoothing_w
+name|interpolation_w
 decl_stmt|;
 DECL|member|clip
 name|gboolean
