@@ -98,7 +98,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_Edit Channel Attributes"
+literal|"/_Edit Channel Attributes..."
 argument_list|)
 block|,
 name|NULL
@@ -563,7 +563,7 @@ define|\
 value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Edit Channel Attributes"
+literal|"/Edit Channel Attributes..."
 argument_list|,
 operator|!
 name|fs

@@ -123,7 +123,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_Edit Path Attributes"
+literal|"/_Edit Path Attributes..."
 argument_list|)
 block|,
 name|NULL
@@ -408,7 +408,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Stro_ke Path"
+literal|"/Stro_ke Path..."
 argument_list|)
 block|,
 name|NULL
@@ -706,7 +706,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Edit Path Attributes"
+literal|"/Edit Path Attributes..."
 argument_list|,
 name|vectors
 argument_list|)
@@ -788,7 +788,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Stroke Path"
+literal|"/Stroke Path..."
 argument_list|,
 name|vectors
 argument_list|)

@@ -1025,7 +1025,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Edit/_Stroke Selection"
+literal|"/Edit/_Stroke Selection..."
 argument_list|)
 block|,
 name|NULL
@@ -1050,7 +1050,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Edit/St_roke Active Path"
+literal|"/Edit/St_roke Active Path..."
 argument_list|)
 block|,
 name|NULL
@@ -6458,7 +6458,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Edit/Stroke Selection"
+literal|"/Edit/Stroke Selection..."
 argument_list|,
 name|lp
 operator|&&
@@ -6467,7 +6467,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Edit/Stroke Active Path"
+literal|"/Edit/Stroke Active Path..."
 argument_list|,
 name|lp
 operator|&&

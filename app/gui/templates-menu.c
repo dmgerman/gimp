@@ -172,7 +172,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_Edit Template"
+literal|"/_Edit Template..."
 argument_list|)
 block|,
 literal|""
@@ -305,7 +305,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Edit Template"
+literal|"/Edit Template..."
 argument_list|,
 name|template
 argument_list|)
