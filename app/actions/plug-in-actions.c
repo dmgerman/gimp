@@ -1263,9 +1263,7 @@ name|entry
 operator|.
 name|accelerator
 operator|=
-name|proc_def
-operator|->
-name|accelerator
+name|NULL
 expr_stmt|;
 name|entry
 operator|.

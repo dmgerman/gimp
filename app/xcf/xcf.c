@@ -244,8 +244,6 @@ literal|"XCF (GIMP)"
 block|,
 name|NULL
 block|,
-name|NULL
-block|,
 literal|"xcf"
 block|,
 literal|""
@@ -363,8 +361,6 @@ block|{
 literal|"gimp_xcf_save"
 block|,
 literal|"XCF (GIMP)"
-block|,
-name|NULL
 block|,
 name|NULL
 block|,

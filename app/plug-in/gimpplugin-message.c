@@ -2864,12 +2864,6 @@ argument_list|)
 expr_stmt|;
 name|proc_def
 operator|->
-name|accelerator
-operator|=
-name|NULL
-expr_stmt|;
-name|proc_def
-operator|->
 name|extensions
 operator|=
 name|NULL

@@ -299,9 +299,7 @@ name|entry
 operator|.
 name|accelerator
 operator|=
-name|file_proc
-operator|->
-name|accelerator
+name|NULL
 expr_stmt|;
 name|entry
 operator|.

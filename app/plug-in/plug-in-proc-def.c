@@ -310,13 +310,6 @@ name|g_free
 argument_list|(
 name|proc_def
 operator|->
-name|accelerator
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|proc_def
-operator|->
 name|extensions
 argument_list|)
 expr_stmt|;

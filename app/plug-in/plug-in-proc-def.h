@@ -56,11 +56,6 @@ name|GList
 modifier|*
 name|menu_paths
 decl_stmt|;
-DECL|member|accelerator
-name|gchar
-modifier|*
-name|accelerator
-decl_stmt|;
 DECL|member|extensions
 name|gchar
 modifier|*
