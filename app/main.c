@@ -1113,23 +1113,6 @@ literal|"The GIMP"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* do some sanity checks */
-name|abort_message
-operator|=
-name|sanity_check
-argument_list|()
-expr_stmt|;
-if|if
-condition|(
-name|abort_message
-condition|)
-name|app_abort
-argument_list|(
-name|no_interface
-argument_list|,
-name|abort_message
-argument_list|)
-expr_stmt|;
 comment|/* Check argv[] for "--no-interface" before trying to initialize gtk+. */
 for|for
 control|(
@@ -1274,6 +1257,23 @@ name|EXIT_FAILURE
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* do some sanity checks */
+name|abort_message
+operator|=
+name|sanity_check
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
+name|abort_message
+condition|)
+name|app_abort
+argument_list|(
+name|no_interface
+argument_list|,
+name|abort_message
+argument_list|)
+expr_stmt|;
 comment|/* parse the command-line options */
 name|context
 operator|=
