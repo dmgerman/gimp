@@ -202,7 +202,7 @@ decl_stmt|;
 comment|/*  layer combination mode         */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon297e2dcb0108
+DECL|struct|__anon2795c36f0108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -710,16 +710,15 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gint
-name|opacity
-parameter_list|,
-name|guchar
+specifier|const
+name|GimpRGB
 modifier|*
-name|col
+name|color
 parameter_list|)
 function_decl|;
 end_function_decl

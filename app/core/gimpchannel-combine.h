@@ -112,19 +112,11 @@ DECL|member|parent_instance
 name|GimpDrawable
 name|parent_instance
 decl_stmt|;
-DECL|member|col
-name|guchar
-name|col
-index|[
-literal|3
-index|]
+DECL|member|color
+name|GimpRGB
+name|color
 decl_stmt|;
-comment|/*  RGB triplet for channel color  */
-DECL|member|opacity
-name|gint
-name|opacity
-decl_stmt|;
-comment|/*  Channel opacity                */
+comment|/*  Also stored the opacity        */
 DECL|member|show_masked
 name|gboolean
 name|show_masked
@@ -310,13 +302,10 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gint
-name|opacity
-parameter_list|,
 specifier|const
-name|guchar
+name|GimpRGB
 modifier|*
-name|col
+name|color
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -392,7 +381,7 @@ end_function_decl
 
 begin_function_decl
 specifier|const
-name|guchar
+name|GimpRGB
 modifier|*
 name|channel_get_color
 parameter_list|(
@@ -413,7 +402,7 @@ modifier|*
 name|channel
 parameter_list|,
 specifier|const
-name|guchar
+name|GimpRGB
 modifier|*
 name|color
 parameter_list|)

@@ -353,19 +353,11 @@ name|gboolean
 name|qmask_state
 decl_stmt|;
 comment|/*  TRUE if qmask is on          */
-DECL|member|qmask_opacity
-name|gdouble
-name|qmask_opacity
-decl_stmt|;
-comment|/*  opacity of the qmask channel */
 DECL|member|qmask_color
-name|guchar
+name|GimpRGB
 name|qmask_color
-index|[
-literal|3
-index|]
 decl_stmt|;
-comment|/*  rgb triplet of the color     */
+comment|/*  rgba triplet of the color    */
 comment|/*  Undo apparatus  */
 DECL|member|undo_stack
 name|GSList
@@ -535,7 +527,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c1e4530103
+DECL|enum|__anon2c0502f20103
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -563,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c1e4530203
+DECL|enum|__anon2c0502f20203
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
