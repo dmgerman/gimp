@@ -170,7 +170,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2757f98c0103
+DECL|enum|__anon2955311a0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2757f98c0203
+DECL|enum|__anon2955311a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1370,7 +1370,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2757f98c0308
+DECL|struct|__anon2955311a0308
 block|{
 DECL|member|fd
 name|gint
@@ -3157,15 +3157,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
+if|if
+condition|(
+operator|!
 name|name
-operator|!=
+condition|)
+return|return
 name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
+return|;
 return|return
 name|GIMP_CONTAINER_GET_CLASS
 argument_list|(
