@@ -37,7 +37,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * Rummage through the compile-time environment to ensure this file  * can actually be compiled like we expect it to.  If all is okay,  * define the manifest constant COMPILE_IS_OKAY.  */
+comment|/*  * Rummage through the compile-time environment to ensure this file  * can actually be compiled like we expect it to.  If all is okay,  * define the manifest constant COMPILE_IS_OKAY.  */
 end_comment
 
 begin_if
