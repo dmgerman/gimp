@@ -2839,6 +2839,15 @@ name|we_are_exiting
 operator|=
 name|TRUE
 expr_stmt|;
+comment|/*  do this here before brushes and patterns are freed  */
+if|if
+condition|(
+operator|!
+name|no_interface
+condition|)
+name|device_status_free
+argument_list|()
+expr_stmt|;
 name|module_db_free
 argument_list|()
 expr_stmt|;
@@ -2920,14 +2929,10 @@ expr_stmt|;
 comment|/*  Things to do only if there is an interface  */
 if|if
 condition|(
+operator|!
 name|no_interface
-operator|==
-name|FALSE
 condition|)
 block|{
-name|device_status_free
-argument_list|()
-expr_stmt|;
 name|toolbox_free
 argument_list|()
 expr_stmt|;

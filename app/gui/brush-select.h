@@ -246,8 +246,8 @@ parameter_list|(
 name|BrushSelectP
 name|bsp
 parameter_list|,
-name|int
-name|index
+name|GimpBrushP
+name|brush
 parameter_list|)
 function_decl|;
 end_function_decl

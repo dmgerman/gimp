@@ -894,12 +894,7 @@ name|brush_select_select
 argument_list|(
 name|bsp
 argument_list|,
-name|gimp_brush_list_get_brush_index
-argument_list|(
-name|brush_list
-argument_list|,
 name|active
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|bsp
