@@ -101,7 +101,7 @@ operator|>=
 literal|0
 operator|&&
 name|position
-operator|<
+operator|<=
 name|gimage
 operator|->
 name|height
@@ -222,7 +222,7 @@ operator|>=
 literal|0
 operator|&&
 name|position
-operator|<
+operator|<=
 name|gimage
 operator|->
 name|width
@@ -424,7 +424,7 @@ condition|)
 name|g_return_if_fail
 argument_list|(
 name|position
-operator|<
+operator|<=
 name|gimage
 operator|->
 name|height
@@ -434,7 +434,7 @@ else|else
 name|g_return_if_fail
 argument_list|(
 name|position
-operator|<
+operator|<=
 name|gimage
 operator|->
 name|width
@@ -610,7 +610,7 @@ condition|)
 name|g_return_if_fail
 argument_list|(
 name|position
-operator|<
+operator|<=
 name|gimage
 operator|->
 name|height
@@ -620,7 +620,7 @@ else|else
 name|g_return_if_fail
 argument_list|(
 name|position
-operator|<
+operator|<=
 name|gimage
 operator|->
 name|width

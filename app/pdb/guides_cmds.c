@@ -274,7 +274,7 @@ block|{
 if|if
 condition|(
 name|offset
-operator|<
+operator|<=
 name|gimage
 operator|->
 name|height
@@ -517,7 +517,7 @@ block|{
 if|if
 condition|(
 name|offset
-operator|<
+operator|<=
 name|gimage
 operator|->
 name|width
