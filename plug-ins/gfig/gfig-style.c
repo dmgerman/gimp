@@ -2131,6 +2131,16 @@ expr_stmt|;
 name|gfig_paint_callback
 argument_list|()
 expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|data
+argument_list|)
+argument_list|,
+name|paint_type
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
