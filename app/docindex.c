@@ -73,12 +73,20 @@ DECL|variable|height
 specifier|static
 name|gint
 name|x
+init|=
+literal|0
 decl_stmt|,
 name|y
+init|=
+literal|0
 decl_stmt|,
 name|width
+init|=
+literal|0
 decl_stmt|,
 name|height
+init|=
+literal|0
 decl_stmt|;
 end_decl_stmt
 
@@ -100,7 +108,9 @@ begin_function_decl
 specifier|static
 name|void
 name|create_idea_list
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -377,6 +387,16 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+if|if
+condition|(
+name|ideas
+operator|||
+name|idea_list
+operator|||
+name|width
+operator|||
+name|height
+condition|)
 name|save_idea_manager
 argument_list|(
 name|ideas
@@ -419,9 +439,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|open_idea_window ()
+DECL|function|open_idea_window (void)
 name|open_idea_window
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|make_idea_window
 argument_list|(
@@ -573,33 +595,6 @@ operator|->
 name|menubar
 operator|->
 name|accel_group
-expr_stmt|;
-comment|/* Setup the window_menu widget for additions and removals */
-name|ideas
-operator|->
-name|window_menu
-operator|=
-name|GTK_WIDGET
-argument_list|(
-name|GTK_MENU_ITEM
-argument_list|(
-name|g_list_nth
-argument_list|(
-name|GTK_MENU_SHELL
-argument_list|(
-name|menu
-argument_list|)
-operator|->
-name|children
-argument_list|,
-literal|1
-argument_list|)
-operator|->
-name|data
-argument_list|)
-operator|->
-name|submenu
-argument_list|)
 expr_stmt|;
 comment|/* Add accelerators to window widget */
 name|gtk_window_add_accel_group
@@ -1534,9 +1529,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|create_idea_list ()
+DECL|function|create_idea_list (void)
 name|create_idea_list
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gdk_window_get_geometry
 argument_list|(
@@ -2784,9 +2781,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|close_idea_window ()
+DECL|function|close_idea_window (void)
 name|close_idea_window
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|idea_hide_callback
 argument_list|(

@@ -224,7 +224,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"<Main>/File/Hide Index"
+literal|"<Main>/File/Close Index"
 block|,
 literal|"<control>W"
 block|,
@@ -232,27 +232,7 @@ name|idea_hide_callback
 block|,
 name|NULL
 block|}
-block|,
-block|{
-literal|"<Main>/File/Quit"
-block|,
-literal|"<control>Q"
-block|,
-name|file_quit_cmd_callback
-block|,
-name|NULL
-block|}
-block|,
-block|{
-literal|"<Main>/Help/About..."
-block|,
-name|NULL
-block|,
-name|about_dialog_cmd_callback
-block|,
-name|NULL
-block|}
-block|}
+block|, }
 decl_stmt|;
 end_decl_stmt
 
@@ -391,7 +371,7 @@ argument_list|(
 name|toolbar
 argument_list|)
 argument_list|,
-literal|"Open File"
+literal|"Open"
 argument_list|,
 literal|"Open a file"
 argument_list|,
@@ -483,9 +463,9 @@ argument_list|(
 name|toolbar
 argument_list|)
 argument_list|,
-literal|"Hide"
+literal|"Close"
 argument_list|,
-literal|"Hide the Document Index"
+literal|"Close the Document Index"
 argument_list|,
 literal|"Toolbar/Hide"
 argument_list|,
@@ -495,29 +475,6 @@ operator|(
 name|GtkSignalFunc
 operator|)
 name|idea_hide_callback
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_toolbar_append_item
-argument_list|(
-name|GTK_TOOLBAR
-argument_list|(
-name|toolbar
-argument_list|)
-argument_list|,
-literal|"Quit"
-argument_list|,
-literal|"Duh"
-argument_list|,
-literal|"Toolbar/Quit"
-argument_list|,
-name|NULL
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|file_quit_cmd_callback
 argument_list|,
 name|NULL
 argument_list|)
