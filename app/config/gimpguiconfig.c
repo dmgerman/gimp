@@ -192,7 +192,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2965a8800103
+DECL|enum|__anon294296a50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -779,7 +779,7 @@ name|DOCK_WINDOW_TYPE_BLURB
 argument_list|,
 name|GIMP_TYPE_WINDOW_TYPE_HINT
 argument_list|,
-name|GIMP_WINDOW_TYPE_HINT_UTILITY
+name|GIMP_WINDOW_TYPE_HINT_NORMAL
 argument_list|,
 name|GIMP_PARAM_RESTART
 argument_list|)
