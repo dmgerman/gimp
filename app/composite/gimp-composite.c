@@ -570,7 +570,7 @@ block|}
 end_function
 
 begin_struct
-DECL|struct|__anon27928ee80108
+DECL|struct|__anon2b2cd8460108
 struct|struct
 block|{
 DECL|member|announce_function
@@ -613,7 +613,7 @@ empty_stmt|;
 end_empty_stmt
 
 begin_function
-name|void
+name|GimpCompositeFunction
 DECL|function|gimp_composite_dispatch (GimpCompositeContext * ctx)
 name|gimp_composite_dispatch
 parameter_list|(
