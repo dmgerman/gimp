@@ -102,7 +102,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291a18b60103
+DECL|enum|__anon2c3008c00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1431,8 +1431,13 @@ name|length
 decl_stmt|;
 name|gint
 name|width
-decl_stmt|,
+init|=
+literal|0
+decl_stmt|;
+name|gint
 name|height
+init|=
+literal|0
 decl_stmt|;
 name|guchar
 modifier|*
@@ -1734,6 +1739,10 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
+default|default:
+name|g_return_if_reached
+argument_list|()
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -2973,6 +2982,11 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|name
 argument_list|)
 expr_stmt|;
 return|return
