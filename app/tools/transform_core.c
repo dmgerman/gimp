@@ -352,6 +352,17 @@ name|tool
 operator|->
 name|private
 expr_stmt|;
+name|tool
+operator|->
+name|drawable
+operator|=
+name|gimage_active_drawable
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
 comment|/*  Save the current transformation info  */
 for|for
 control|(
@@ -2548,12 +2559,6 @@ operator|->
 name|auto_snap_to
 operator|=
 name|TRUE
-expr_stmt|;
-name|tool
-operator|->
-name|gdisp_ptr
-operator|=
-name|NULL
 expr_stmt|;
 name|tool
 operator|->

@@ -22,6 +22,12 @@ directive|include
 file|"layer.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
+end_include
+
 begin_comment
 comment|/*  The possible states for tools  */
 end_comment
@@ -137,7 +143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b92df730103
+DECL|enum|__anon2883c23a0103
 block|{
 DECL|enumerator|RECT_SELECT
 name|RECT_SELECT
@@ -447,6 +453,12 @@ modifier|*
 name|gdisp_ptr
 decl_stmt|;
 comment|/*  pointer to currently active gdisp  */
+DECL|member|drawable
+name|void
+modifier|*
+name|drawable
+decl_stmt|;
+comment|/*  pointer to the drawable that was 					   active when the tool was created */
 DECL|member|ID
 name|int
 name|ID
@@ -546,6 +558,18 @@ name|void
 name|tools_select
 parameter_list|(
 name|ToolType
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|tools_initialize
+parameter_list|(
+name|ToolType
+parameter_list|,
+name|GDisplay
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl

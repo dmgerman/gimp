@@ -1450,7 +1450,27 @@ parameter_list|,
 name|gpointer
 name|gdisp_ptr
 parameter_list|)
-block|{ }
+block|{
+name|GDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
+name|gdisp
+operator|=
+name|gdisp_ptr
+expr_stmt|;
+name|tool
+operator|->
+name|drawable
+operator|=
+name|gimage_active_drawable
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -1755,7 +1775,7 @@ if|if
 condition|(
 name|histogram_tool_dialog
 condition|)
-name|histogram_tool_ok_callback
+name|histogram_tool_cancel_callback
 argument_list|(
 name|NULL
 argument_list|,

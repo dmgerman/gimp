@@ -1550,7 +1550,27 @@ parameter_list|,
 name|gpointer
 name|gdisp_ptr
 parameter_list|)
-block|{ }
+block|{
+name|GDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
+name|gdisp
+operator|=
+name|gdisp_ptr
+expr_stmt|;
+name|tool
+operator|->
+name|drawable
+operator|=
+name|gimage_active_drawable
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -1861,6 +1881,18 @@ name|preserve
 operator|=
 name|FALSE
 expr_stmt|;
+name|tool
+operator|->
+name|gdisp_ptr
+operator|=
+name|NULL
+expr_stmt|;
+name|tool
+operator|->
+name|drawable
+operator|=
+name|NULL
+expr_stmt|;
 return|return
 name|tool
 return|;
@@ -1896,7 +1928,7 @@ if|if
 condition|(
 name|hue_saturation_dialog
 condition|)
-name|hue_saturation_ok_callback
+name|hue_saturation_cancel_callback
 argument_list|(
 name|NULL
 argument_list|,
