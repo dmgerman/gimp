@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<locale.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -274,6 +280,17 @@ literal|0
 index|]
 expr_stmt|;
 comment|/* Initialize Gtk toolkit */
+name|gtk_set_locale
+argument_list|()
+expr_stmt|;
+name|setlocale
+argument_list|(
+name|LC_NUMERIC
+argument_list|,
+literal|"C"
+argument_list|)
+expr_stmt|;
+comment|/* must use dot, not comma, as decimal separator */
 name|gtk_init
 argument_list|(
 operator|&
