@@ -54,6 +54,10 @@ parameter_list|,
 name|GdkEvent
 modifier|*
 name|event
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl

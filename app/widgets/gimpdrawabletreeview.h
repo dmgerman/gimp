@@ -339,11 +339,6 @@ DECL|member|drawable_context_func
 name|GimpDrawableContextFunc
 name|drawable_context_func
 decl_stmt|;
-DECL|member|button_box
-name|GtkWidget
-modifier|*
-name|button_box
-decl_stmt|;
 DECL|member|new_button
 name|GtkWidget
 modifier|*

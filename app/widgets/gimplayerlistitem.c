@@ -81,12 +81,6 @@ directive|include
 file|"gdisplay.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"pixmaps/linked.xpm"
-end_include
-
 begin_function_decl
 specifier|static
 name|void
@@ -593,7 +587,7 @@ name|abox
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|pixmap
+name|image
 decl_stmt|;
 name|abox
 operator|=
@@ -727,11 +721,13 @@ argument_list|,
 name|list_item
 argument_list|)
 expr_stmt|;
-name|pixmap
+name|image
 operator|=
-name|gimp_pixmap_new
+name|gtk_image_new_from_stock
 argument_list|(
-name|linked_xpm
+name|GIMP_STOCK_LINKED
+argument_list|,
+name|GTK_ICON_SIZE_BUTTON
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -743,12 +739,12 @@ operator|->
 name|linked_button
 argument_list|)
 argument_list|,
-name|pixmap
+name|image
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|pixmap
+name|image
 argument_list|)
 expr_stmt|;
 name|list_item

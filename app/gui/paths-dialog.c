@@ -1270,16 +1270,6 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
@@ -1318,7 +1308,7 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|2
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1360,7 +1350,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|2
+literal|0
 argument_list|)
 expr_stmt|;
 name|paths_dialog
@@ -1593,7 +1583,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|2
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

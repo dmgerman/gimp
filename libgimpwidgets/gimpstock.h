@@ -50,6 +50,11 @@ define|#
 directive|define
 name|GIMP_STOCK_EDIT
 value|"gimp-edit"
+DECL|macro|GIMP_STOCK_LINKED
+define|#
+directive|define
+name|GIMP_STOCK_LINKED
+value|"gimp-linked"
 DECL|macro|GIMP_STOCK_LOWER
 define|#
 directive|define
@@ -90,6 +95,11 @@ define|#
 directive|define
 name|GIMP_STOCK_RESET
 value|"gimp-reset"
+DECL|macro|GIMP_STOCK_STROKE
+define|#
+directive|define
+name|GIMP_STOCK_STROKE
+value|"gimp-stroke"
 DECL|macro|GIMP_STOCK_TO_PATH
 define|#
 directive|define
@@ -100,6 +110,11 @@ define|#
 directive|define
 name|GIMP_STOCK_TO_SELECTION
 value|"gimp-to-selection"
+DECL|macro|GIMP_STOCK_VISIBLE
+define|#
+directive|define
+name|GIMP_STOCK_VISIBLE
+value|"gimp-visible"
 DECL|macro|GIMP_STOCK_ZOOM_IN
 define|#
 directive|define
