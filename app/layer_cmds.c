@@ -16,6 +16,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"channel.h"
 end_include
 
@@ -34,31 +40,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"layer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layerF.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"layer_pvt.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_funcs.h"
 end_include
 
 begin_include

@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"brush_select.h"
 end_include
 
@@ -29,12 +35,6 @@ begin_include
 include|#
 directive|include
 file|"gimpbrushlist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_funcs.h"
 end_include
 
 begin_decl_stmt
