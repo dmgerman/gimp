@@ -824,7 +824,7 @@ name|frame
 operator|=
 name|tool_options_radio_buttons_new
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Fill Type"
 argument_list|)

@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<math.h>
 end_include
 
@@ -94,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291ed8800103
+DECL|enum|__anon2bf817450103
 block|{
 DECL|enumerator|CREATING
 name|CREATING

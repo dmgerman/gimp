@@ -148,7 +148,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3f08200103
+DECL|enum|__anon2c1aedab0103
 block|{
 DECL|enumerator|AlignNo
 name|AlignNo
@@ -1059,10 +1059,13 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|gettext
+argument_list|(
 name|align_names
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
