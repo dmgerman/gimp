@@ -2132,6 +2132,10 @@ name|GIMP_TYPE_CONVOLVE_TOOL
 operator|||
 name|tool_type
 operator|==
+name|GIMP_TYPE_DODGEBURN_TOOL
+operator|||
+name|tool_type
+operator|==
 name|GIMP_TYPE_ERASER_TOOL
 operator|||
 name|tool_type
