@@ -219,7 +219,7 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  because setting the sensitivity in the layers_dialog lock call    *  redraws the previews, we need to lock the dialogs before the    *  floating sel is actually added.  however, they won't lock unless    *  we set the gimage's floating sel pointer    */
+comment|/*  Set gimage->floating_sel *before* adding the floating layer to    *  the image so views can recognize the newly added floating layer    *  and treat it accordingly.    */
 name|gimage
 operator|->
 name|floating_sel
