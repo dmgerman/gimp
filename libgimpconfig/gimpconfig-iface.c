@@ -118,9 +118,6 @@ parameter_list|,
 name|GScanner
 modifier|*
 name|scanner
-parameter_list|,
-name|gboolean
-name|store_unknown
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -248,7 +245,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_config_iface_deserialize (GObject * object,GScanner * scanner,gboolean store_unknown)
+DECL|function|gimp_config_iface_deserialize (GObject * object,GScanner * scanner)
 name|gimp_config_iface_deserialize
 parameter_list|(
 name|GObject
@@ -258,9 +255,6 @@ parameter_list|,
 name|GScanner
 modifier|*
 name|scanner
-parameter_list|,
-name|gboolean
-name|store_unknown
 parameter_list|)
 block|{
 return|return
@@ -270,7 +264,7 @@ name|object
 argument_list|,
 name|scanner
 argument_list|,
-name|store_unknown
+name|FALSE
 argument_list|)
 return|;
 block|}
@@ -401,7 +395,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_deserialize (GObject * object,const gchar * filename,gboolean store_unknown)
+DECL|function|gimp_config_deserialize (GObject * object,const gchar * filename)
 name|gimp_config_deserialize
 parameter_list|(
 name|GObject
@@ -412,9 +406,6 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-name|gboolean
-name|store_unknown
 parameter_list|)
 block|{
 name|GimpConfigInterface
@@ -552,8 +543,6 @@ argument_list|(
 name|object
 argument_list|,
 name|scanner
-argument_list|,
-name|store_unknown
 argument_list|)
 expr_stmt|;
 name|g_scanner_destroy
@@ -587,7 +576,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27602ca00108
+DECL|struct|__anon29c6bb5e0108
 block|{
 DECL|member|key
 name|gchar

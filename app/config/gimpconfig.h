@@ -82,9 +82,6 @@ parameter_list|,
 name|GScanner
 modifier|*
 name|scanner
-parameter_list|,
-name|gboolean
-name|store_unknown
 parameter_list|)
 function_decl|;
 block|}
@@ -154,9 +151,6 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-name|gboolean
-name|store_unknown
 parameter_list|)
 function_decl|;
 end_function_decl

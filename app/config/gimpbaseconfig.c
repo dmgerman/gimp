@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpconfig-params.h"
 end_include
 
@@ -106,7 +100,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c951aa60103
+DECL|enum|__anon291a19cb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -192,19 +186,6 @@ name|NULL
 comment|/* instance_init  */
 block|}
 decl_stmt|;
-specifier|static
-specifier|const
-name|GInterfaceInfo
-name|config_iface_info
-init|=
-block|{
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-decl_stmt|;
 name|config_type
 operator|=
 name|g_type_register_static
@@ -217,16 +198,6 @@ operator|&
 name|config_info
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|g_type_add_interface_static
-argument_list|(
-name|config_type
-argument_list|,
-name|GIMP_TYPE_CONFIG_INTERFACE
-argument_list|,
-operator|&
-name|config_iface_info
 argument_list|)
 expr_stmt|;
 block|}

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpconfig-deserialize.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -64,6 +70,22 @@ name|object
 parameter_list|,
 name|gint
 name|fd
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gboolean
+name|gimp_rc_deserialize
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|,
+name|GScanner
+modifier|*
+name|scanner
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -201,6 +223,12 @@ name|serialize
 operator|=
 name|gimp_rc_serialize
 expr_stmt|;
+name|config_iface
+operator|->
+name|deserialize
+operator|=
+name|gimp_rc_deserialize
+expr_stmt|;
 block|}
 end_function
 
@@ -232,6 +260,34 @@ argument_list|,
 name|fd
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|gimp_rc_deserialize (GObject * object,GScanner * scanner)
+name|gimp_rc_deserialize
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|,
+name|GScanner
+modifier|*
+name|scanner
+parameter_list|)
+block|{
+return|return
+name|gimp_config_deserialize_properties
+argument_list|(
+name|object
+argument_list|,
+name|scanner
+argument_list|,
+name|TRUE
+argument_list|)
+return|;
 block|}
 end_function
 

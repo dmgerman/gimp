@@ -247,8 +247,6 @@ name|gimprc
 argument_list|)
 argument_list|,
 name|filename
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|header
@@ -283,7 +281,7 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"Done.\n"
+literal|"Done.\n\n"
 argument_list|)
 expr_stmt|;
 return|return
