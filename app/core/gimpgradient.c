@@ -284,6 +284,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|gdouble
 name|gimp_gradient_calc_linear_factor
 parameter_list|(
@@ -298,6 +299,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|gdouble
 name|gimp_gradient_calc_curved_factor
 parameter_list|(
@@ -312,6 +314,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|gdouble
 name|gimp_gradient_calc_sine_factor
 parameter_list|(
@@ -326,6 +329,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|gdouble
 name|gimp_gradient_calc_sphere_increasing_factor
 parameter_list|(
@@ -340,6 +344,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|gdouble
 name|gimp_gradient_calc_sphere_decreasing_factor
 parameter_list|(
@@ -3829,6 +3834,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|gdouble
 DECL|function|gimp_gradient_calc_linear_factor (gdouble middle,gdouble pos)
 name|gimp_gradient_calc_linear_factor
@@ -3902,6 +3908,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|gdouble
 DECL|function|gimp_gradient_calc_curved_factor (gdouble middle,gdouble pos)
 name|gimp_gradient_calc_curved_factor
@@ -3944,6 +3951,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|gdouble
 DECL|function|gimp_gradient_calc_sine_factor (gdouble middle,gdouble pos)
 name|gimp_gradient_calc_sine_factor
@@ -3990,6 +3998,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|gdouble
 DECL|function|gimp_gradient_calc_sphere_increasing_factor (gdouble middle,gdouble pos)
 name|gimp_gradient_calc_sphere_increasing_factor
@@ -4028,6 +4037,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|gdouble
 DECL|function|gimp_gradient_calc_sphere_decreasing_factor (gdouble middle,gdouble pos)
 name|gimp_gradient_calc_sphere_decreasing_factor
