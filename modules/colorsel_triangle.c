@@ -253,7 +253,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e699fd0103
+DECL|enum|__anon278657e10103
 block|{
 DECL|enumerator|HUE
 name|HUE
@@ -653,6 +653,16 @@ argument_list|(
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+literal|4
 argument_list|)
 expr_stmt|;
 name|hbox
