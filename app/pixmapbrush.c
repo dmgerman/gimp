@@ -131,12 +131,6 @@ modifier|*
 parameter_list|,
 name|GimpDrawable
 modifier|*
-parameter_list|,
-name|double
-parameter_list|,
-name|double
-parameter_list|,
-name|gboolean
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -152,20 +146,6 @@ end_comment
 begin_comment
 comment|/* static Argument *   pixmapbrush_extended_gradient_invoker     (Argument *); */
 end_comment
-
-begin_decl_stmt
-DECL|variable|non_gui_fade_out
-DECL|variable|non_gui_gradient_length
-DECL|variable|non_gui_incremental
-specifier|static
-name|double
-name|non_gui_fade_out
-decl_stmt|,
-name|non_gui_gradient_length
-decl_stmt|,
-name|non_gui_incremental
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -191,6 +171,9 @@ name|d
 parameter_list|,
 name|int
 name|x
+parameter_list|,
+name|int
+name|offset_x
 parameter_list|,
 name|int
 name|y
@@ -271,121 +254,6 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|pixmapbrush_toggle_update (GtkWidget * w,gpointer data)
-name|pixmapbrush_toggle_update
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gboolean
-modifier|*
-name|toggle_val
-decl_stmt|;
-name|toggle_val
-operator|=
-operator|(
-name|gboolean
-operator|*
-operator|)
-name|data
-expr_stmt|;
-if|if
-condition|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|w
-argument_list|)
-operator|->
-name|active
-condition|)
-operator|*
-name|toggle_val
-operator|=
-name|TRUE
-expr_stmt|;
-else|else
-operator|*
-name|toggle_val
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|pixmapbrush_scale_update (GtkAdjustment * adjustment,PixmapPaintOptions * options)
-name|pixmapbrush_scale_update
-parameter_list|(
-name|GtkAdjustment
-modifier|*
-name|adjustment
-parameter_list|,
-name|PixmapPaintOptions
-modifier|*
-name|options
-parameter_list|)
-block|{
-name|options
-operator|->
-name|gradient_length
-operator|=
-name|adjustment
-operator|->
-name|value
-expr_stmt|;
-if|if
-condition|(
-name|options
-operator|->
-name|gradient_length
-operator|>
-literal|0.0
-condition|)
-name|options
-operator|->
-name|incremental
-operator|=
-name|INCREMENTAL
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|pixmapbrush_fade_update (GtkAdjustment * adjustment,PixmapPaintOptions * options)
-name|pixmapbrush_fade_update
-parameter_list|(
-name|GtkAdjustment
-modifier|*
-name|adjustment
-parameter_list|,
-name|PixmapPaintOptions
-modifier|*
-name|options
-parameter_list|)
-block|{
-name|options
-operator|->
-name|fade_out
-operator|=
-name|adjustment
-operator|->
-name|value
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|pixmapbrush_options_reset (void)
 name|pixmapbrush_options_reset
 parameter_list|(
@@ -435,26 +303,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|label
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|fade_out_scale
-decl_stmt|;
-name|GtkObject
-modifier|*
-name|fade_out_scale_data
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|gradient_length_scale
-decl_stmt|;
-name|GtkObject
-modifier|*
-name|gradient_length_scale_data
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|incremental_toggle
 decl_stmt|;
 comment|/*  the new options structure  */
 name|options
@@ -718,18 +566,6 @@ argument_list|(
 name|paint_core
 argument_list|,
 name|drawable
-argument_list|,
-name|pixmap_paint_options
-operator|->
-name|fade_out
-argument_list|,
-name|pixmap_paint_options
-operator|->
-name|gradient_length
-argument_list|,
-name|pixmap_paint_options
-operator|->
-name|incremental
 argument_list|)
 expr_stmt|;
 break|break;
@@ -878,7 +714,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|pixmapbrush_motion (PaintCore * paint_core,GimpDrawable * drawable,double fade_out,double gradient_length,gboolean incremental)
+DECL|function|pixmapbrush_motion (PaintCore * paint_core,GimpDrawable * drawable)
 name|pixmapbrush_motion
 parameter_list|(
 name|PaintCore
@@ -888,15 +724,6 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-parameter_list|,
-name|double
-name|fade_out
-parameter_list|,
-name|double
-name|gradient_length
-parameter_list|,
-name|gboolean
-name|incremental
 parameter_list|)
 block|{
 name|GImage
@@ -928,13 +755,7 @@ decl_stmt|;
 name|int
 name|y
 decl_stmt|;
-name|unsigned
-name|char
-name|col
-index|[
-name|MAX_CHANNELS
-index|]
-decl_stmt|;
+comment|/*  unsigned char col[MAX_CHANNELS]; */
 name|void
 modifier|*
 name|pr
@@ -942,11 +763,39 @@ decl_stmt|;
 name|PixelRegion
 name|destPR
 decl_stmt|;
+name|int
+name|opacity
+decl_stmt|;
+name|int
+name|offset_x
+init|=
+literal|0
+decl_stmt|;
+name|int
+name|offset_y
+init|=
+literal|0
+decl_stmt|;
 name|pr
 operator|=
 name|NULL
 expr_stmt|;
 comment|/* FIXME: this code doesnt work quite right at the far top and      and left sides. need to handle those cases better */
+comment|/* if we dont get a pixmap brush, aieeee!  */
+comment|/* FIXME */
+if|if
+condition|(
+operator|!
+operator|(
+name|GIMP_IS_BRUSH_PIXMAP
+argument_list|(
+name|paint_core
+operator|->
+name|brush
+argument_list|)
+operator|)
+condition|)
+return|return;
 name|brush
 operator|=
 name|GIMP_BRUSH_PIXMAP
@@ -1105,7 +954,8 @@ name|y
 operator|++
 control|)
 block|{
-comment|/*  printf("y: %i destPR.h: %i\n", y, destPR.h); */
+comment|/* 	  printf(" brush->width: %i offset_x: %i", brush->pixmap_mask->width, offset_x); */
+comment|/* 	  printf(" area->y: %i destPR.h: %i area->x: %i destPR.w: %i ",area->y, destPR.h, area->x, destPR.w);  */
 name|paint_line_pixmap_mask
 argument_list|(
 name|gimage
@@ -1119,6 +969,8 @@ argument_list|,
 name|area
 operator|->
 name|x
+argument_list|,
+name|offset_x
 argument_list|,
 name|area
 operator|->
@@ -1143,19 +995,45 @@ name|rowstride
 expr_stmt|;
 block|}
 block|}
-comment|/* this will eventually get replaced with the code to merge  	 the brush mask and the pixmap data into one temp_buf */
-comment|/*  color the pixels  */
 comment|/*          printf("temp_blend: %u grad_len: %f distance: %f \n",temp_blend, gradient_length, distance); */
 comment|/* remove these once things are stable */
 comment|/* printf("opacity: %i ", (int) (gimp_context_get_opacity (NULL) * 255)); */
 comment|/*    printf("r: %i g: %i b: %i a: %i\n", col[0], col[1], col[2], col[3]); */
+comment|/* steal the pressure sensiteive code from clone.c */
+name|opacity
+operator|=
+literal|255
+operator|*
+name|gimp_context_get_opacity
+argument_list|(
+name|NULL
+argument_list|)
+operator|*
+operator|(
+name|paint_core
+operator|->
+name|curpressure
+operator|/
+literal|0.5
+operator|)
+expr_stmt|;
+if|if
+condition|(
+name|opacity
+operator|>
+literal|255
+condition|)
+name|opacity
+operator|=
+literal|255
+expr_stmt|;
 name|paint_core_paste_canvas
 argument_list|(
 name|paint_core
 argument_list|,
 name|drawable
 argument_list|,
-literal|255
+name|opacity
 argument_list|,
 call|(
 name|int
@@ -1206,12 +1084,6 @@ argument_list|(
 name|paint_core
 argument_list|,
 name|drawable
-argument_list|,
-name|non_gui_fade_out
-argument_list|,
-name|non_gui_gradient_length
-argument_list|,
-name|non_gui_incremental
 argument_list|)
 expr_stmt|;
 return|return
@@ -1223,7 +1095,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paint_line_pixmap_mask (GImage * dest,GimpDrawable * drawable,GimpBrushPixmap * brush,unsigned char * d,int x,int y,int y2,int bytes,int width)
+DECL|function|paint_line_pixmap_mask (GImage * dest,GimpDrawable * drawable,GimpBrushPixmap * brush,unsigned char * d,int x,int offset_x,int y,int y2,int bytes,int width)
 name|paint_line_pixmap_mask
 parameter_list|(
 name|GImage
@@ -1247,6 +1119,9 @@ name|int
 name|x
 parameter_list|,
 name|int
+name|offset_x
+parameter_list|,
+name|int
 name|y
 parameter_list|,
 name|int
@@ -1267,11 +1142,6 @@ decl_stmt|,
 modifier|*
 name|p
 decl_stmt|;
-name|unsigned
-name|char
-modifier|*
-name|dp
-decl_stmt|;
 name|int
 name|color
 decl_stmt|,
@@ -1280,13 +1150,35 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-name|unsigned
-name|char
-name|rgb
-index|[
-literal|3
-index|]
-decl_stmt|;
+comment|/*  Make sure x, y are positive  */
+while|while
+condition|(
+name|x
+operator|<
+literal|0
+condition|)
+name|x
+operator|+=
+name|brush
+operator|->
+name|pixmap_mask
+operator|->
+name|width
+expr_stmt|;
+while|while
+condition|(
+name|y
+operator|<
+literal|0
+condition|)
+name|y
+operator|+=
+name|brush
+operator|->
+name|pixmap_mask
+operator|->
+name|height
+expr_stmt|;
 comment|/* point to the approriate scanline */
 comment|/* use "pat" here because i'm c&p from pattern clone */
 name|pat
@@ -1325,6 +1217,7 @@ name|bytes
 operator|-
 literal|1
 expr_stmt|;
+comment|/*  printf("x: %i y: %i y2: %i   \n",x,y,y2); */
 for|for
 control|(
 name|i
@@ -1344,7 +1237,11 @@ operator|=
 name|pat
 operator|+
 operator|(
+operator|(
 name|i
+operator|+
+name|offset_x
+operator|)
 operator|%
 name|brush
 operator|->
@@ -1359,7 +1256,6 @@ name|pixmap_mask
 operator|->
 name|bytes
 expr_stmt|;
-comment|/* printf("x: %i y: %i y2: %i i: %i  \n",x,y,y2,i); */
 comment|/* printf("d->r: %i d->g: %i d->b: %i d->a: %i\n",(int)d[0], (int)d[1], (int)d[2], (int)d[3]); */
 name|gimage_transform_color
 argument_list|(
@@ -1376,7 +1272,7 @@ argument_list|)
 expr_stmt|;
 name|d
 index|[
-literal|3
+name|alpha
 index|]
 operator|=
 literal|255
