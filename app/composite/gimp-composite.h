@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2931ba4c0103
+DECL|enum|__anon2ad713190103
 block|{
 DECL|enumerator|GIMP_PIXELFORMAT_V8
 name|GIMP_PIXELFORMAT_V8
@@ -110,7 +110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2931ba4c0203
+DECL|enum|__anon2ad713190203
 block|{
 DECL|enumerator|GIMP_COMPOSITE_NORMAL
 name|GIMP_COMPOSITE_NORMAL
@@ -305,7 +305,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2931ba4c0308
+DECL|struct|__anon2ad713190308
 block|{
 DECL|member|A
 name|guchar
@@ -351,7 +351,7 @@ DECL|member|pixelformat_M
 name|GimpPixelFormat
 name|pixelformat_M
 decl_stmt|;
-DECL|struct|__anon2931ba4c0408
+DECL|struct|__anon2ad713190408
 DECL|member|opacity
 DECL|member|affect
 DECL|member|replace
@@ -366,7 +366,7 @@ decl_stmt|;
 block|}
 name|replace
 struct|;
-DECL|struct|__anon2931ba4c0508
+DECL|struct|__anon2ad713190508
 DECL|member|scale
 DECL|member|scale
 struct|struct
@@ -377,7 +377,7 @@ decl_stmt|;
 block|}
 name|scale
 struct|;
-DECL|struct|__anon2931ba4c0608
+DECL|struct|__anon2ad713190608
 DECL|member|blend
 DECL|member|blend
 struct|struct
@@ -388,7 +388,7 @@ decl_stmt|;
 block|}
 name|blend
 struct|;
-DECL|struct|__anon2931ba4c0708
+DECL|struct|__anon2ad713190708
 DECL|member|x
 DECL|member|y
 DECL|member|opacity
@@ -529,6 +529,7 @@ end_function_decl
 
 begin_decl_stmt
 specifier|extern
+specifier|const
 name|gchar
 modifier|*
 name|gimp_composite_function_name
