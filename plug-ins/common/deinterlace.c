@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c18c0ca0103
+DECL|enum|__anon2abb30e90103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -1158,7 +1158,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Keep _Odd Fields"
+literal|"Keep O_dd Fields"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
