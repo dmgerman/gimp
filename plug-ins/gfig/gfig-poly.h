@@ -46,7 +46,7 @@ name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 function_decl|;
@@ -60,7 +60,7 @@ name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 function_decl|;
@@ -70,7 +70,7 @@ begin_function_decl
 name|void
 name|d_paint_poly
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -81,7 +81,7 @@ begin_function_decl
 name|void
 name|d_poly2lines
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -92,7 +92,7 @@ begin_function_decl
 name|void
 name|d_star2lines
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)

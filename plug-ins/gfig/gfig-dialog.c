@@ -465,7 +465,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291011040108
+DECL|struct|__anon2a0ef72a0108
 block|{
 DECL|member|gridspacing
 name|void
@@ -6478,7 +6478,7 @@ end_function
 
 begin_function
 specifier|static
-name|Dobject
+name|GfigObject
 modifier|*
 DECL|function|gfig_select_obj_by_number (gint count)
 name|gfig_select_obj_by_number
@@ -6491,7 +6491,7 @@ name|GList
 modifier|*
 name|objs
 decl_stmt|;
-name|Dobject
+name|GfigObject
 modifier|*
 name|object
 init|=
@@ -7494,7 +7494,7 @@ name|Style
 modifier|*
 name|style0
 decl_stmt|;
-name|Dobject
+name|GfigObject
 modifier|*
 name|object
 decl_stmt|;

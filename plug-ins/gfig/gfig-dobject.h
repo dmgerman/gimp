@@ -37,7 +37,7 @@ modifier|*
 name|DobjFunc
 function_decl|)
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 parameter_list|)
 function_decl|;
@@ -46,14 +46,14 @@ end_typedef
 begin_typedef
 DECL|typedef|DobjGenFunc
 typedef|typedef
-name|Dobject
+name|GfigObject
 modifier|*
 function_decl|(
 modifier|*
 name|DobjGenFunc
 function_decl|)
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 parameter_list|)
 function_decl|;
@@ -88,7 +88,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0730580108
+DECL|struct|__anon298cb8580108
 block|{
 DECL|member|type
 name|DobjType
@@ -115,15 +115,15 @@ name|DobjGenFunc
 name|copyfunc
 decl_stmt|;
 comment|/* copy */
-DECL|typedef|DobjClass
+DECL|typedef|GfigObjectClass
 block|}
-name|DobjClass
+name|GfigObjectClass
 typedef|;
 end_typedef
 
 begin_decl_stmt
 DECL|variable|dobj_class
-name|DobjClass
+name|GfigObjectClass
 name|dobj_class
 index|[
 literal|10
@@ -136,9 +136,9 @@ comment|/* The object itself */
 end_comment
 
 begin_struct
-DECL|struct|_Dobject
+DECL|struct|_GfigObject
 struct|struct
-name|_Dobject
+name|_GfigObject
 block|{
 DECL|member|type
 name|DobjType
@@ -146,7 +146,7 @@ name|type
 decl_stmt|;
 comment|/* What is the type? */
 DECL|member|class
-name|DobjClass
+name|GfigObjectClass
 modifier|*
 name|class
 decl_stmt|;
@@ -206,7 +206,7 @@ end_define
 
 begin_decl_stmt
 specifier|extern
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj_creating
 decl_stmt|;
@@ -214,7 +214,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|Dobject
+name|GfigObject
 modifier|*
 name|tmp_line
 decl_stmt|;
@@ -224,7 +224,7 @@ begin_function_decl
 name|void
 name|d_pnt_add_line
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|,
@@ -258,7 +258,7 @@ begin_function_decl
 name|void
 name|do_save_obj
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|,
@@ -285,7 +285,7 @@ begin_function_decl
 name|void
 name|free_one_obj
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -341,7 +341,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Dobject
+name|GfigObject
 modifier|*
 name|d_load_object
 parameter_list|(
@@ -357,7 +357,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Dobject
+name|GfigObject
 modifier|*
 name|d_new_object
 parameter_list|(
@@ -377,7 +377,7 @@ begin_function_decl
 name|void
 name|d_save_object
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|,

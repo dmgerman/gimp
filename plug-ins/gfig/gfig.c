@@ -270,7 +270,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|obj_creating
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj_creating
 decl_stmt|;
@@ -283,7 +283,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|tmp_line
-name|Dobject
+name|GfigObject
 modifier|*
 name|tmp_line
 decl_stmt|;
@@ -296,7 +296,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|need_to_scale
-name|gint
+name|gboolean
 name|need_to_scale
 decl_stmt|;
 end_decl_stmt
@@ -1329,7 +1329,7 @@ modifier|*
 name|fp
 parameter_list|)
 block|{
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 decl_stmt|;
@@ -2067,10 +2067,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gfig_save_obj_start (Dobject * obj,GString * string)
+DECL|function|gfig_save_obj_start (GfigObject * obj,GString * string)
 name|gfig_save_obj_start
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|,
@@ -2115,10 +2115,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gfig_save_obj_end (Dobject * obj,GString * string)
+DECL|function|gfig_save_obj_end (GfigObject * obj,GString * string)
 name|gfig_save_obj_end
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|,
@@ -2780,7 +2780,7 @@ name|objs
 argument_list|)
 control|)
 block|{
-name|Dobject
+name|GfigObject
 modifier|*
 name|object
 init|=

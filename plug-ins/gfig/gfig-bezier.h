@@ -18,7 +18,7 @@ end_define
 
 begin_decl_stmt
 specifier|extern
-name|Dobject
+name|GfigObject
 modifier|*
 name|tmp_bezier
 decl_stmt|;
@@ -28,7 +28,7 @@ begin_function_decl
 name|void
 name|d_draw_bezier
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -54,7 +54,7 @@ name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 function_decl|;
@@ -68,7 +68,7 @@ name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 function_decl|;

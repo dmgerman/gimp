@@ -95,7 +95,7 @@ specifier|static
 name|void
 name|d_draw_poly
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -104,11 +104,11 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|Dobject
+name|GfigObject
 modifier|*
 name|d_copy_poly
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -166,10 +166,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|d_draw_poly (Dobject * obj)
+DECL|function|d_draw_poly (GfigObject * obj)
 name|d_draw_poly
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -510,10 +510,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|d_paint_poly (Dobject * obj)
+DECL|function|d_paint_poly (GfigObject * obj)
 name|d_paint_poly
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -972,10 +972,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|d_poly2lines (Dobject * obj)
+DECL|function|d_poly2lines (GfigObject * obj)
 name|d_poly2lines
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -1347,10 +1347,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|d_star2lines (Dobject * obj)
+DECL|function|d_star2lines (GfigObject * obj)
 name|d_star2lines
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -1856,17 +1856,17 @@ end_function
 
 begin_function
 specifier|static
-name|Dobject
+name|GfigObject
 modifier|*
-DECL|function|d_copy_poly (Dobject * obj)
+DECL|function|d_copy_poly (GfigObject * obj)
 name|d_copy_poly
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
 block|{
-name|Dobject
+name|GfigObject
 modifier|*
 name|np
 decl_stmt|;
@@ -1939,7 +1939,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|DobjClass
+name|GfigObjectClass
 modifier|*
 name|class
 init|=
@@ -2129,14 +2129,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|d_poly_start (GdkPoint * pnt,gint shift_down)
+DECL|function|d_poly_start (GdkPoint * pnt,gboolean shift_down)
 name|d_poly_start
 parameter_list|(
 name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 block|{
@@ -2166,14 +2166,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|d_poly_end (GdkPoint * pnt,gint shift_down)
+DECL|function|d_poly_end (GdkPoint * pnt,gboolean shift_down)
 name|d_poly_end
 parameter_list|(
 name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 block|{

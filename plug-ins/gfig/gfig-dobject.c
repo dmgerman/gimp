@@ -143,7 +143,7 @@ end_include
 begin_decl_stmt
 DECL|variable|operation_obj
 specifier|static
-name|Dobject
+name|GfigObject
 modifier|*
 name|operation_obj
 init|=
@@ -170,7 +170,7 @@ specifier|static
 name|void
 name|draw_one_obj
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -182,7 +182,7 @@ specifier|static
 name|void
 name|do_move_obj
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|,
@@ -210,7 +210,7 @@ specifier|static
 name|void
 name|do_move_obj_pnt
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|,
@@ -230,7 +230,7 @@ name|GFigObj
 modifier|*
 name|obj
 parameter_list|,
-name|Dobject
+name|GfigObject
 modifier|*
 name|del_obj
 parameter_list|)
@@ -255,10 +255,10 @@ end_function_decl
 
 begin_function
 name|void
-DECL|function|d_save_object (Dobject * obj,GString * string)
+DECL|function|d_save_object (GfigObject * obj,GString * string)
 name|d_save_object
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|,
@@ -392,7 +392,7 @@ block|}
 end_function
 
 begin_function
-name|Dobject
+name|GfigObject
 modifier|*
 DECL|function|d_load_object (gchar * desc,FILE * fp)
 name|d_load_object
@@ -406,7 +406,7 @@ modifier|*
 name|fp
 parameter_list|)
 block|{
-name|Dobject
+name|GfigObject
 modifier|*
 name|new_obj
 init|=
@@ -621,7 +621,7 @@ block|}
 end_function
 
 begin_function
-name|Dobject
+name|GfigObject
 modifier|*
 DECL|function|d_new_object (DobjType type,gint x,gint y)
 name|d_new_object
@@ -636,13 +636,13 @@ name|gint
 name|y
 parameter_list|)
 block|{
-name|Dobject
+name|GfigObject
 modifier|*
 name|nobj
 init|=
 name|g_new0
 argument_list|(
-name|Dobject
+name|GfigObject
 argument_list|,
 literal|1
 argument_list|)
@@ -977,10 +977,10 @@ begin_function
 specifier|static
 name|DobjPoints
 modifier|*
-DECL|function|get_diffs (Dobject * obj,gint * xdiff,gint * ydiff,GdkPoint * to_pnt)
+DECL|function|get_diffs (GfigObject * obj,gint * xdiff,gint * ydiff,GdkPoint * to_pnt)
 name|get_diffs
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|,
@@ -1201,7 +1201,7 @@ end_function
 
 begin_function
 specifier|static
-name|Dobject
+name|GfigObject
 modifier|*
 DECL|function|get_nearest_objs (GFigObj * obj,GdkPoint * pnt)
 name|get_nearest_objs
@@ -1220,7 +1220,7 @@ name|GList
 modifier|*
 name|all
 decl_stmt|;
-name|Dobject
+name|GfigObject
 modifier|*
 name|test_obj
 decl_stmt|;
@@ -1311,7 +1311,7 @@ name|gint
 name|shift_down
 parameter_list|)
 block|{
-name|Dobject
+name|GfigObject
 modifier|*
 name|new_obj
 decl_stmt|;
@@ -1508,7 +1508,7 @@ comment|/* Then bung us into "copy/move" mode */
 name|new_obj
 operator|=
 operator|(
-name|Dobject
+name|GfigObject
 operator|*
 operator|)
 name|operation_obj
@@ -1898,10 +1898,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|update_pnts (Dobject * obj,gint xdiff,gint ydiff)
+DECL|function|update_pnts (GfigObject * obj,gint xdiff,gint ydiff)
 name|update_pnts
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|,
@@ -1964,14 +1964,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|remove_obj_from_list (GFigObj * obj,Dobject * del_obj)
+DECL|function|remove_obj_from_list (GFigObj * obj,GfigObject * del_obj)
 name|remove_obj_from_list
 parameter_list|(
 name|GFigObj
 modifier|*
 name|obj
 parameter_list|,
-name|Dobject
+name|GfigObject
 modifier|*
 name|del_obj
 parameter_list|)
@@ -2030,7 +2030,7 @@ operator|->
 name|obj_list
 condition|)
 block|{
-name|Dobject
+name|GfigObject
 modifier|*
 name|new_current
 init|=
@@ -2155,7 +2155,7 @@ operator|->
 name|next
 control|)
 block|{
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 init|=
@@ -2197,10 +2197,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|do_save_obj (Dobject * obj,GString * string)
+DECL|function|do_save_obj (GfigObject * obj,GString * string)
 name|do_save_obj
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|,
@@ -2256,10 +2256,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_move_obj (Dobject * obj,GdkPoint * to_pnt)
+DECL|function|do_move_obj (GfigObject * obj,GdkPoint * to_pnt)
 name|do_move_obj
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|,
@@ -2328,10 +2328,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_move_obj_pnt (Dobject * obj,GdkPoint * to_pnt)
+DECL|function|do_move_obj_pnt (GfigObject * obj,GdkPoint * to_pnt)
 name|do_move_obj_pnt
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|,
@@ -2454,7 +2454,7 @@ condition|(
 name|objs
 condition|)
 block|{
-name|Dobject
+name|GfigObject
 modifier|*
 name|object
 init|=
@@ -2462,12 +2462,12 @@ name|objs
 operator|->
 name|data
 decl_stmt|;
-name|Dobject
+name|GfigObject
 modifier|*
 name|new_object
 init|=
 operator|(
-name|Dobject
+name|GfigObject
 operator|*
 operator|)
 name|object
@@ -2508,10 +2508,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|draw_one_obj (Dobject * obj)
+DECL|function|draw_one_obj (GfigObject * obj)
 name|draw_one_obj
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -2693,14 +2693,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|add_to_all_obj (GFigObj * fobj,Dobject * obj)
+DECL|function|add_to_all_obj (GFigObj * fobj,GfigObject * obj)
 name|add_to_all_obj
 parameter_list|(
 name|GFigObj
 modifier|*
 name|fobj
 parameter_list|,
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -3273,10 +3273,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|free_one_obj (Dobject * obj)
+DECL|function|free_one_obj (GfigObject * obj)
 name|free_one_obj
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)

@@ -64,17 +64,17 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_function
-name|Dobject
+name|GfigObject
 modifier|*
-DECL|function|d_copy_line (Dobject * obj)
+DECL|function|d_copy_line (GfigObject * obj)
 name|d_copy_line
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
 block|{
-name|Dobject
+name|GfigObject
 modifier|*
 name|nl
 decl_stmt|;
@@ -133,10 +133,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|d_draw_line (Dobject * obj)
+DECL|function|d_draw_line (GfigObject * obj)
 name|d_draw_line
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -235,10 +235,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|d_paint_line (Dobject * obj)
+DECL|function|d_paint_line (GfigObject * obj)
 name|d_paint_line
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -477,7 +477,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|DobjClass
+name|GfigObjectClass
 modifier|*
 name|class
 init|=
@@ -534,10 +534,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|d_pnt_add_line (Dobject * obj,gint x,gint y,gint pos)
+DECL|function|d_pnt_add_line (GfigObject * obj,gint x,gint y,gint pos)
 name|d_pnt_add_line
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|,

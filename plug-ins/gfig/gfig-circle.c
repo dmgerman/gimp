@@ -127,10 +127,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|d_draw_circle (Dobject * obj)
+DECL|function|d_draw_circle (GfigObject * obj)
 name|d_draw_circle
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -237,10 +237,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|d_paint_circle (Dobject * obj)
+DECL|function|d_paint_circle (GfigObject * obj)
 name|d_paint_circle
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -473,17 +473,17 @@ end_function
 
 begin_function
 specifier|static
-name|Dobject
+name|GfigObject
 modifier|*
-DECL|function|d_copy_circle (Dobject * obj)
+DECL|function|d_copy_circle (GfigObject * obj)
 name|d_copy_circle
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
 block|{
-name|Dobject
+name|GfigObject
 modifier|*
 name|nc
 decl_stmt|;
@@ -548,7 +548,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|DobjClass
+name|GfigObjectClass
 modifier|*
 name|class
 init|=

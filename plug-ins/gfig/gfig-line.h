@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|d_save_line
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|,
@@ -35,7 +35,7 @@ begin_function_decl
 name|void
 name|d_draw_line
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -46,7 +46,7 @@ begin_function_decl
 name|void
 name|d_paint_line
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -54,11 +54,11 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Dobject
+name|GfigObject
 modifier|*
 name|d_copy_line
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)

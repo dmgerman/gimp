@@ -1275,10 +1275,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|arc_drawing_details (Dobject * obj,gdouble * minang,GdkPoint * center_pnt,gdouble * arcang,gdouble * radius,gint draw_cnts,gint do_scale)
+DECL|function|arc_drawing_details (GfigObject * obj,gdouble * minang,GdkPoint * center_pnt,gdouble * arcang,gdouble * radius,gint draw_cnts,gint do_scale)
 name|arc_drawing_details
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|,
@@ -1700,10 +1700,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|d_draw_arc (Dobject * obj)
+DECL|function|d_draw_arc (GfigObject * obj)
 name|d_draw_arc
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -1777,10 +1777,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|d_paint_arc (Dobject * obj)
+DECL|function|d_paint_arc (GfigObject * obj)
 name|d_paint_arc
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -2193,17 +2193,17 @@ end_function
 
 begin_function
 specifier|static
-name|Dobject
+name|GfigObject
 modifier|*
-DECL|function|d_copy_arc (Dobject * obj)
+DECL|function|d_copy_arc (GfigObject * obj)
 name|d_copy_arc
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
 block|{
-name|Dobject
+name|GfigObject
 modifier|*
 name|nc
 decl_stmt|;
@@ -2268,7 +2268,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|DobjClass
+name|GfigObjectClass
 modifier|*
 name|class
 init|=

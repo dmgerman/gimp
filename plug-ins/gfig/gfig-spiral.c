@@ -80,7 +80,7 @@ specifier|static
 name|void
 name|d_draw_spiral
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -92,7 +92,7 @@ specifier|static
 name|void
 name|d_paint_spiral
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -101,11 +101,11 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|Dobject
+name|GfigObject
 modifier|*
 name|d_copy_spiral
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -194,10 +194,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|d_draw_spiral (Dobject * obj)
+DECL|function|d_draw_spiral (GfigObject * obj)
 name|d_draw_spiral
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -585,10 +585,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|d_paint_spiral (Dobject * obj)
+DECL|function|d_paint_spiral (GfigObject * obj)
 name|d_paint_spiral
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -1083,17 +1083,17 @@ end_function
 
 begin_function
 specifier|static
-name|Dobject
+name|GfigObject
 modifier|*
-DECL|function|d_copy_spiral (Dobject * obj)
+DECL|function|d_copy_spiral (GfigObject * obj)
 name|d_copy_spiral
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
 block|{
-name|Dobject
+name|GfigObject
 modifier|*
 name|np
 decl_stmt|;
@@ -1166,7 +1166,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|DobjClass
+name|GfigObjectClass
 modifier|*
 name|class
 init|=

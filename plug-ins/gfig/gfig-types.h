@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3869400103
+DECL|enum|__anon28a1d4ec0103
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -40,7 +40,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3869400203
+DECL|enum|__anon28a1d4ec0203
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -64,7 +64,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3869400303
+DECL|enum|__anon28a1d4ec0303
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3869400403
+DECL|enum|__anon28a1d4ec0403
 block|{
 DECL|enumerator|FILL_NONE
 name|FILL_NONE
@@ -106,7 +106,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3869400503
+DECL|enum|__anon28a1d4ec0503
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -127,7 +127,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3869400603
+DECL|enum|__anon28a1d4ec0603
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -154,7 +154,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3869400703
+DECL|enum|__anon28a1d4ec0703
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3869400803
+DECL|enum|__anon28a1d4ec0803
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -199,7 +199,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3869400903
+DECL|enum|__anon28a1d4ec0903
 block|{
 DECL|enumerator|OBJ_TYPE_NONE
 name|OBJ_TYPE_NONE
@@ -269,11 +269,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|Dobject
+DECL|typedef|GfigObject
 typedef|typedef
 name|struct
-name|_Dobject
-name|Dobject
+name|_GfigObject
+name|GfigObject
 typedef|;
 end_typedef
 

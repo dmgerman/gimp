@@ -78,10 +78,10 @@ end_include
 begin_function
 specifier|static
 name|void
-DECL|function|d_draw_ellipse (Dobject * obj)
+DECL|function|d_draw_ellipse (GfigObject * obj)
 name|d_draw_ellipse
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -294,10 +294,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|d_paint_approx_ellipse (Dobject * obj)
+DECL|function|d_paint_approx_ellipse (GfigObject * obj)
 name|d_paint_approx_ellipse
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -783,10 +783,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|d_paint_ellipse (Dobject * obj)
+DECL|function|d_paint_ellipse (GfigObject * obj)
 name|d_paint_ellipse
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
@@ -1114,17 +1114,17 @@ end_function
 
 begin_function
 specifier|static
-name|Dobject
+name|GfigObject
 modifier|*
-DECL|function|d_copy_ellipse (Dobject * obj)
+DECL|function|d_copy_ellipse (GfigObject * obj)
 name|d_copy_ellipse
 parameter_list|(
-name|Dobject
+name|GfigObject
 modifier|*
 name|obj
 parameter_list|)
 block|{
-name|Dobject
+name|GfigObject
 modifier|*
 name|nc
 decl_stmt|;
@@ -1189,7 +1189,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|DobjClass
+name|GfigObjectClass
 modifier|*
 name|class
 init|=
