@@ -141,6 +141,12 @@ directive|include
 file|"plug-in-menus.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"themes.h"
+end_include
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
