@@ -487,7 +487,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279d7d960108
+DECL|struct|__anon2bc272540108
 block|{
 DECL|member|gridspacing
 name|void
