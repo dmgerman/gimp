@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27947d4f0103
+DECL|enum|__anon2b1fcbf20103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -381,7 +381,9 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+specifier|const
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|,
 name|GimpTransformDirection
@@ -2093,14 +2095,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_transform (GimpItem * item,GimpMatrix3 matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_drawable_transform (GimpItem * item,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_drawable_transform
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+specifier|const
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|,
 name|GimpTransformDirection

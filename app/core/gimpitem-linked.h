@@ -87,7 +87,9 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+specifier|const
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|,
 name|GimpTransformDirection

@@ -36,6 +36,7 @@ name|gdouble
 name|angle
 parameter_list|,
 name|GimpMatrix3
+modifier|*
 name|result
 parameter_list|)
 function_decl|;
@@ -55,6 +56,7 @@ name|gdouble
 name|angle
 parameter_list|,
 name|GimpMatrix3
+modifier|*
 name|result
 parameter_list|)
 function_decl|;
@@ -89,6 +91,7 @@ name|gdouble
 name|ty2
 parameter_list|,
 name|GimpMatrix3
+modifier|*
 name|result
 parameter_list|)
 function_decl|;
@@ -117,6 +120,7 @@ name|gdouble
 name|amount
 parameter_list|,
 name|GimpMatrix3
+modifier|*
 name|result
 parameter_list|)
 function_decl|;
@@ -163,6 +167,7 @@ name|gdouble
 name|ty5
 parameter_list|,
 name|GimpMatrix3
+modifier|*
 name|result
 parameter_list|)
 function_decl|;

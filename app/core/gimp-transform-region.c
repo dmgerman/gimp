@@ -345,7 +345,7 @@ end_comment
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_drawable_transform_tiles_affine (GimpDrawable * drawable,TileManager * orig_tiles,GimpMatrix3 matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_drawable_transform_tiles_affine (GimpDrawable * drawable,TileManager * orig_tiles,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_drawable_transform_tiles_affine
 parameter_list|(
 name|GimpDrawable
@@ -356,7 +356,9 @@ name|TileManager
 modifier|*
 name|orig_tiles
 parameter_list|,
+specifier|const
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|,
 name|GimpTransformDirection
@@ -388,9 +390,15 @@ name|new_tiles
 decl_stmt|;
 name|GimpMatrix3
 name|m
+init|=
+operator|*
+name|matrix
 decl_stmt|;
 name|GimpMatrix3
-name|im
+name|inv
+init|=
+operator|*
+name|matrix
 decl_stmt|;
 name|PixelSurround
 name|surround
@@ -661,23 +669,11 @@ name|GIMP_TRANSFORM_BACKWARD
 condition|)
 block|{
 comment|/*  keep the original matrix here, so we dont need to recalculate        *  the inverse later        */
-name|gimp_matrix3_duplicate
-argument_list|(
-name|matrix
-argument_list|,
-name|m
-argument_list|)
-expr_stmt|;
 name|gimp_matrix3_invert
 argument_list|(
-name|matrix
-argument_list|,
-name|im
+operator|&
+name|inv
 argument_list|)
-expr_stmt|;
-name|matrix
-operator|=
-name|im
 expr_stmt|;
 block|}
 else|else
@@ -685,8 +681,7 @@ block|{
 comment|/*  Find the inverse of the transformation matrix  */
 name|gimp_matrix3_invert
 argument_list|(
-name|matrix
-argument_list|,
+operator|&
 name|m
 argument_list|)
 expr_stmt|;
@@ -785,7 +780,8 @@ name|dy4
 decl_stmt|;
 name|gimp_matrix3_transform_point
 argument_list|(
-name|matrix
+operator|&
+name|inv
 argument_list|,
 name|u1
 argument_list|,
@@ -800,7 +796,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_matrix3_transform_point
 argument_list|(
-name|matrix
+operator|&
+name|inv
 argument_list|,
 name|u2
 argument_list|,
@@ -815,7 +812,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_matrix3_transform_point
 argument_list|(
-name|matrix
+operator|&
+name|inv
 argument_list|,
 name|u1
 argument_list|,
@@ -830,7 +828,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_matrix3_transform_point
 argument_list|(
-name|matrix
+operator|&
+name|inv
 argument_list|,
 name|u2
 argument_list|,
@@ -1036,6 +1035,8 @@ expr_stmt|;
 name|uinc
 operator|=
 name|m
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -1046,6 +1047,8 @@ expr_stmt|;
 name|vinc
 operator|=
 name|m
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -1056,6 +1059,8 @@ expr_stmt|;
 name|winc
 operator|=
 name|m
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -1130,6 +1135,8 @@ literal|0.5
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -1144,6 +1151,8 @@ literal|0.5
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -1167,6 +1176,8 @@ literal|0.5
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -1181,6 +1192,8 @@ literal|0.5
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -1204,6 +1217,8 @@ literal|0.5
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -1218,6 +1233,8 @@ literal|0.5
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -1260,6 +1277,8 @@ literal|1
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -1272,6 +1291,8 @@ name|yy
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -1295,6 +1316,8 @@ literal|1
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -1307,6 +1330,8 @@ name|yy
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -1330,6 +1355,8 @@ literal|1
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -1342,6 +1369,8 @@ name|yy
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -1361,6 +1390,8 @@ name|xx
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -1375,6 +1406,8 @@ literal|1
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -1396,6 +1429,8 @@ name|xx
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -1410,6 +1445,8 @@ literal|1
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -1431,6 +1468,8 @@ name|xx
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -1445,6 +1484,8 @@ literal|1
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -1466,6 +1507,8 @@ literal|1
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -1478,6 +1521,8 @@ name|yy
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -1501,6 +1546,8 @@ literal|1
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -1513,6 +1560,8 @@ name|yy
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -1536,6 +1585,8 @@ literal|1
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -1548,6 +1599,8 @@ name|yy
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -1567,6 +1620,8 @@ name|xx
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -1581,6 +1636,8 @@ literal|1
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -1602,6 +1659,8 @@ name|xx
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -1616,6 +1675,8 @@ literal|1
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -1637,6 +1698,8 @@ name|xx
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -1651,6 +1714,8 @@ literal|1
 operator|)
 operator|+
 name|m
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -4050,14 +4115,16 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_transform_affine (GimpDrawable * drawable,GimpMatrix3 matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean clip_result)
+DECL|function|gimp_drawable_transform_affine (GimpDrawable * drawable,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean clip_result)
 name|gimp_drawable_transform_affine
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
+specifier|const
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|,
 name|GimpTransformDirection

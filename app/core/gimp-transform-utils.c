@@ -35,7 +35,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_drawable_transform_matrix_rotate (gint x1,gint y1,gint x2,gint y2,gdouble angle,GimpMatrix3 result)
+DECL|function|gimp_drawable_transform_matrix_rotate (gint x1,gint y1,gint x2,gint y2,gdouble angle,GimpMatrix3 * result)
 name|gimp_drawable_transform_matrix_rotate
 parameter_list|(
 name|gint
@@ -54,6 +54,7 @@ name|gdouble
 name|angle
 parameter_list|,
 name|GimpMatrix3
+modifier|*
 name|result
 parameter_list|)
 block|{
@@ -128,7 +129,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_transform_matrix_rotate_center (gdouble cx,gdouble cy,gdouble angle,GimpMatrix3 result)
+DECL|function|gimp_drawable_transform_matrix_rotate_center (gdouble cx,gdouble cy,gdouble angle,GimpMatrix3 * result)
 name|gimp_drawable_transform_matrix_rotate_center
 parameter_list|(
 name|gdouble
@@ -141,6 +142,7 @@ name|gdouble
 name|angle
 parameter_list|,
 name|GimpMatrix3
+modifier|*
 name|result
 parameter_list|)
 block|{
@@ -183,7 +185,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_transform_matrix_scale (gint x1,gint y1,gint x2,gint y2,gdouble tx1,gdouble ty1,gdouble tx2,gdouble ty2,GimpMatrix3 result)
+DECL|function|gimp_drawable_transform_matrix_scale (gint x1,gint y1,gint x2,gint y2,gdouble tx1,gdouble ty1,gdouble tx2,gdouble ty2,GimpMatrix3 * result)
 name|gimp_drawable_transform_matrix_scale
 parameter_list|(
 name|gint
@@ -211,6 +213,7 @@ name|gdouble
 name|ty2
 parameter_list|,
 name|GimpMatrix3
+modifier|*
 name|result
 parameter_list|)
 block|{
@@ -319,7 +322,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_transform_matrix_shear (gint x1,gint y1,gint x2,gint y2,GimpOrientationType orientation,gdouble amount,GimpMatrix3 result)
+DECL|function|gimp_drawable_transform_matrix_shear (gint x1,gint y1,gint x2,gint y2,GimpOrientationType orientation,gdouble amount,GimpMatrix3 * result)
 name|gimp_drawable_transform_matrix_shear
 parameter_list|(
 name|gint
@@ -341,6 +344,7 @@ name|gdouble
 name|amount
 parameter_list|,
 name|GimpMatrix3
+modifier|*
 name|result
 parameter_list|)
 block|{
@@ -471,7 +475,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_transform_matrix_perspective (gint x1,gint y1,gint x2,gint y2,gdouble tx1,gdouble ty1,gdouble tx2,gdouble ty2,gdouble tx3,gdouble ty3,gdouble tx4,gdouble ty4,GimpMatrix3 result)
+DECL|function|gimp_drawable_transform_matrix_perspective (gint x1,gint y1,gint x2,gint y2,gdouble tx1,gdouble ty1,gdouble tx2,gdouble ty2,gdouble tx3,gdouble ty3,gdouble tx4,gdouble ty4,GimpMatrix3 * result)
 name|gimp_drawable_transform_matrix_perspective
 parameter_list|(
 name|gint
@@ -511,6 +515,7 @@ name|gdouble
 name|ty4
 parameter_list|,
 name|GimpMatrix3
+modifier|*
 name|result
 parameter_list|)
 block|{
@@ -651,6 +656,8 @@ operator|)
 condition|)
 block|{
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -663,6 +670,8 @@ operator|-
 name|tx1
 expr_stmt|;
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -675,6 +684,8 @@ operator|-
 name|tx2
 expr_stmt|;
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -685,6 +696,8 @@ operator|=
 name|tx1
 expr_stmt|;
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -697,6 +710,8 @@ operator|-
 name|ty1
 expr_stmt|;
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -709,6 +724,8 @@ operator|-
 name|ty2
 expr_stmt|;
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -719,6 +736,8 @@ operator|=
 name|ty1
 expr_stmt|;
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -729,6 +748,8 @@ operator|=
 literal|0.0
 expr_stmt|;
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -767,6 +788,8 @@ operator|*
 name|dx2
 expr_stmt|;
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -789,6 +812,8 @@ operator|*
 name|dx3
 expr_stmt|;
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -801,6 +826,8 @@ operator|/
 name|det2
 expr_stmt|;
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -813,6 +840,8 @@ operator|-
 name|tx1
 operator|+
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -823,6 +852,8 @@ operator|*
 name|tx2
 expr_stmt|;
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -835,6 +866,8 @@ operator|-
 name|tx1
 operator|+
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -845,6 +878,8 @@ operator|*
 name|tx3
 expr_stmt|;
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -855,6 +890,8 @@ operator|=
 name|tx1
 expr_stmt|;
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -867,6 +904,8 @@ operator|-
 name|ty1
 operator|+
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -877,6 +916,8 @@ operator|*
 name|ty2
 expr_stmt|;
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -889,6 +930,8 @@ operator|-
 name|ty1
 operator|+
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -899,6 +942,8 @@ operator|*
 name|ty3
 expr_stmt|;
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -910,6 +955,8 @@ name|ty1
 expr_stmt|;
 block|}
 name|matrix
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -947,6 +994,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_matrix3_mult
 argument_list|(
+operator|&
 name|matrix
 argument_list|,
 name|result

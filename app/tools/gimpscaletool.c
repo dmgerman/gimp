@@ -1814,6 +1814,7 @@ index|[
 name|Y1
 index|]
 argument_list|,
+operator|&
 name|tr_tool
 operator|->
 name|transform

@@ -12,16 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_comment
-comment|/* memcmp */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|<glib.h>
 end_include
 
@@ -45,10 +35,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix3_transform_point (GimpMatrix3 matrix,gdouble x,gdouble y,gdouble * newx,gdouble * newy)
+DECL|function|gimp_matrix3_transform_point (const GimpMatrix3 * matrix,gdouble x,gdouble y,gdouble * newx,gdouble * newy)
 name|gimp_matrix3_transform_point
 parameter_list|(
+specifier|const
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|,
 name|gdouble
@@ -72,6 +64,8 @@ decl_stmt|;
 name|w
 operator|=
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -82,6 +76,8 @@ operator|*
 name|x
 operator|+
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -92,6 +88,8 @@ operator|*
 name|y
 operator|+
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -121,6 +119,8 @@ name|newx
 operator|=
 operator|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -131,6 +131,8 @@ operator|*
 name|x
 operator|+
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -141,6 +143,8 @@ operator|*
 name|y
 operator|+
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -156,6 +160,8 @@ name|newy
 operator|=
 operator|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -166,6 +172,8 @@ operator|*
 name|x
 operator|+
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -176,6 +184,8 @@ operator|*
 name|y
 operator|+
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -190,18 +200,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix3_mult:  * @matrix1: The first input matrix.  * @matrix2: The second input matrix which will be oeverwritten ba the result.  *   * Multiplies two matrices and puts the result into the second one.  */
+comment|/**  * gimp_matrix3_mult:  * @matrix1: The first input matrix.  * @matrix2: The second input matrix which will be oeverwritten by the result.  *   * Multiplies two matrices and puts the result into the second one.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix3_mult (GimpMatrix3 matrix1,GimpMatrix3 matrix2)
+DECL|function|gimp_matrix3_mult (const GimpMatrix3 * matrix1,GimpMatrix3 * matrix2)
 name|gimp_matrix3_mult
 parameter_list|(
+specifier|const
 name|GimpMatrix3
+modifier|*
 name|matrix1
 parameter_list|,
 name|GimpMatrix3
+modifier|*
 name|matrix2
 parameter_list|)
 block|{
@@ -237,6 +250,8 @@ block|{
 name|t1
 operator|=
 name|matrix1
+operator|->
+name|coeff
 index|[
 name|i
 index|]
@@ -247,6 +262,8 @@ expr_stmt|;
 name|t2
 operator|=
 name|matrix1
+operator|->
+name|coeff
 index|[
 name|i
 index|]
@@ -257,6 +274,8 @@ expr_stmt|;
 name|t3
 operator|=
 name|matrix1
+operator|->
+name|coeff
 index|[
 name|i
 index|]
@@ -279,6 +298,8 @@ operator|++
 control|)
 block|{
 name|tmp
+operator|.
+name|coeff
 index|[
 name|i
 index|]
@@ -289,6 +310,8 @@ operator|=
 name|t1
 operator|*
 name|matrix2
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -297,6 +320,8 @@ name|j
 index|]
 expr_stmt|;
 name|tmp
+operator|.
+name|coeff
 index|[
 name|i
 index|]
@@ -307,6 +332,8 @@ operator|+=
 name|t2
 operator|*
 name|matrix2
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -315,6 +342,8 @@ name|j
 index|]
 expr_stmt|;
 name|tmp
+operator|.
+name|coeff
 index|[
 name|i
 index|]
@@ -325,6 +354,8 @@ operator|+=
 name|t3
 operator|*
 name|matrix2
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -334,32 +365,10 @@ index|]
 expr_stmt|;
 block|}
 block|}
-comment|/*  put the results in matrix2 */
-name|memcpy
-argument_list|(
-operator|&
+operator|*
 name|matrix2
-index|[
-literal|0
-index|]
-index|[
-literal|0
-index|]
-argument_list|,
-operator|&
+operator|=
 name|tmp
-index|[
-literal|0
-index|]
-index|[
-literal|0
-index|]
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpMatrix3
-argument_list|)
-argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -370,10 +379,11 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix3_identity (GimpMatrix3 matrix)
+DECL|function|gimp_matrix3_identity (GimpMatrix3 * matrix)
 name|gimp_matrix3_identity
 parameter_list|(
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|)
 block|{
@@ -383,6 +393,7 @@ name|identity
 init|=
 block|{
 block|{
+block|{
 literal|1.0
 block|,
 literal|0.0
@@ -404,34 +415,14 @@ block|,
 literal|0.0
 block|,
 literal|1.0
+block|}
 block|}
 block|}
 decl_stmt|;
-name|memcpy
-argument_list|(
-operator|&
+operator|*
 name|matrix
-index|[
-literal|0
-index|]
-index|[
-literal|0
-index|]
-argument_list|,
-operator|&
+operator|=
 name|identity
-index|[
-literal|0
-index|]
-index|[
-literal|0
-index|]
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpMatrix3
-argument_list|)
-argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -442,10 +433,11 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix3_translate (GimpMatrix3 matrix,gdouble x,gdouble y)
+DECL|function|gimp_matrix3_translate (GimpMatrix3 * matrix,gdouble x,gdouble y)
 name|gimp_matrix3_translate
 parameter_list|(
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|,
 name|gdouble
@@ -465,6 +457,8 @@ decl_stmt|;
 name|g
 operator|=
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -475,6 +469,8 @@ expr_stmt|;
 name|h
 operator|=
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -485,6 +481,8 @@ expr_stmt|;
 name|i
 operator|=
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -493,6 +491,8 @@ literal|2
 index|]
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -505,6 +505,8 @@ operator|*
 name|g
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -517,6 +519,8 @@ operator|*
 name|h
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -529,6 +533,8 @@ operator|*
 name|i
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -541,6 +547,8 @@ operator|*
 name|g
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -553,6 +561,8 @@ operator|*
 name|h
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -573,10 +583,11 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix3_scale (GimpMatrix3 matrix,gdouble x,gdouble y)
+DECL|function|gimp_matrix3_scale (GimpMatrix3 * matrix,gdouble x,gdouble y)
 name|gimp_matrix3_scale
 parameter_list|(
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|,
 name|gdouble
@@ -587,6 +598,8 @@ name|y
 parameter_list|)
 block|{
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -597,6 +610,8 @@ operator|*=
 name|x
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -607,6 +622,8 @@ operator|*=
 name|x
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -617,6 +634,8 @@ operator|*=
 name|x
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -627,6 +646,8 @@ operator|*=
 name|y
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -637,6 +658,8 @@ operator|*=
 name|y
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -655,10 +678,11 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix3_rotate (GimpMatrix3 matrix,gdouble theta)
+DECL|function|gimp_matrix3_rotate (GimpMatrix3 * matrix,gdouble theta)
 name|gimp_matrix3_rotate
 parameter_list|(
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|,
 name|gdouble
@@ -692,6 +716,8 @@ expr_stmt|;
 name|t1
 operator|=
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -702,6 +728,8 @@ expr_stmt|;
 name|t2
 operator|=
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -710,6 +738,8 @@ literal|0
 index|]
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -726,6 +756,8 @@ operator|*
 name|t2
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -744,6 +776,8 @@ expr_stmt|;
 name|t1
 operator|=
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -754,6 +788,8 @@ expr_stmt|;
 name|t2
 operator|=
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -762,6 +798,8 @@ literal|1
 index|]
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -778,6 +816,8 @@ operator|*
 name|t2
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -796,6 +836,8 @@ expr_stmt|;
 name|t1
 operator|=
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -806,6 +848,8 @@ expr_stmt|;
 name|t2
 operator|=
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -814,6 +858,8 @@ literal|2
 index|]
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -830,6 +876,8 @@ operator|*
 name|t2
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -854,10 +902,11 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix3_xshear (GimpMatrix3 matrix,gdouble amount)
+DECL|function|gimp_matrix3_xshear (GimpMatrix3 * matrix,gdouble amount)
 name|gimp_matrix3_xshear
 parameter_list|(
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|,
 name|gdouble
@@ -865,6 +914,8 @@ name|amount
 parameter_list|)
 block|{
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -875,6 +926,8 @@ operator|+=
 name|amount
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -883,6 +936,8 @@ literal|0
 index|]
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -893,6 +948,8 @@ operator|+=
 name|amount
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -901,6 +958,8 @@ literal|1
 index|]
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -911,6 +970,8 @@ operator|+=
 name|amount
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -927,10 +988,11 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix3_yshear (GimpMatrix3 matrix,gdouble amount)
+DECL|function|gimp_matrix3_yshear (GimpMatrix3 * matrix,gdouble amount)
 name|gimp_matrix3_yshear
 parameter_list|(
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|,
 name|gdouble
@@ -938,6 +1000,8 @@ name|amount
 parameter_list|)
 block|{
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -948,6 +1012,8 @@ operator|+=
 name|amount
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -956,6 +1022,8 @@ literal|0
 index|]
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -966,6 +1034,8 @@ operator|+=
 name|amount
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -974,6 +1044,8 @@ literal|1
 index|]
 expr_stmt|;
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -984,6 +1056,8 @@ operator|+=
 name|amount
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -1000,10 +1074,12 @@ end_comment
 
 begin_function
 name|gdouble
-DECL|function|gimp_matrix3_determinant (GimpMatrix3 matrix)
+DECL|function|gimp_matrix3_determinant (const GimpMatrix3 * matrix)
 name|gimp_matrix3_determinant
 parameter_list|(
+specifier|const
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|)
 block|{
@@ -1012,7 +1088,10 @@ name|determinant
 decl_stmt|;
 name|determinant
 operator|=
+operator|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -1022,6 +1101,8 @@ index|]
 operator|*
 operator|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -1030,6 +1111,8 @@ literal|1
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -1038,6 +1121,8 @@ literal|2
 index|]
 operator|-
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -1046,17 +1131,23 @@ literal|2
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
 index|[
 literal|1
 index|]
+operator|)
 operator|)
 expr_stmt|;
 name|determinant
 operator|-=
+operator|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -1066,6 +1157,8 @@ index|]
 operator|*
 operator|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -1074,6 +1167,8 @@ literal|1
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -1082,6 +1177,8 @@ literal|2
 index|]
 operator|-
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -1090,6 +1187,8 @@ literal|2
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -1097,10 +1196,14 @@ index|[
 literal|1
 index|]
 operator|)
+operator|)
 expr_stmt|;
 name|determinant
 operator|+=
+operator|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -1110,6 +1213,8 @@ index|]
 operator|*
 operator|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -1118,6 +1223,8 @@ literal|1
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -1126,6 +1233,8 @@ literal|2
 index|]
 operator|-
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -1134,12 +1243,15 @@ literal|2
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
 index|[
 literal|1
 index|]
+operator|)
 operator|)
 expr_stmt|;
 return|return
@@ -1149,25 +1261,26 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix3_invert:  * @matrix: The matrix that is to be inverted.  * @matrix_inv: A matrix the inverted matrix should be written into.   *   * Inverts the given matrix.  */
+comment|/**  * gimp_matrix3_invert:  * @matrix: The matrix that is to be inverted.  *   * Inverts the given matrix.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_matrix3_invert (GimpMatrix3 matrix,GimpMatrix3 matrix_inv)
+DECL|function|gimp_matrix3_invert (GimpMatrix3 * matrix)
 name|gimp_matrix3_invert
 parameter_list|(
 name|GimpMatrix3
+modifier|*
 name|matrix
-parameter_list|,
-name|GimpMatrix3
-name|matrix_inv
 parameter_list|)
 block|{
-name|gdouble
-name|det_1
+name|GimpMatrix3
+name|inv
 decl_stmt|;
-name|det_1
+name|gdouble
+name|det
+decl_stmt|;
+name|det
 operator|=
 name|gimp_matrix3_determinant
 argument_list|(
@@ -1176,18 +1289,20 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|det_1
+name|det
 operator|==
 literal|0.0
 condition|)
 return|return;
-name|det_1
+name|det
 operator|=
 literal|1.0
 operator|/
-name|det_1
+name|det
 expr_stmt|;
-name|matrix_inv
+name|inv
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -1197,6 +1312,8 @@ index|]
 operator|=
 operator|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -1205,6 +1322,8 @@ literal|1
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -1213,6 +1332,8 @@ literal|2
 index|]
 operator|-
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -1221,6 +1342,8 @@ literal|2
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -1229,9 +1352,11 @@ literal|1
 index|]
 operator|)
 operator|*
-name|det_1
+name|det
 expr_stmt|;
-name|matrix_inv
+name|inv
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -1242,6 +1367,8 @@ operator|=
 operator|-
 operator|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -1250,6 +1377,8 @@ literal|0
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -1258,6 +1387,8 @@ literal|2
 index|]
 operator|-
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -1266,6 +1397,8 @@ literal|2
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -1274,9 +1407,11 @@ literal|0
 index|]
 operator|)
 operator|*
-name|det_1
+name|det
 expr_stmt|;
-name|matrix_inv
+name|inv
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -1286,6 +1421,8 @@ index|]
 operator|=
 operator|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -1294,6 +1431,8 @@ literal|0
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -1302,6 +1441,8 @@ literal|1
 index|]
 operator|-
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -1310,6 +1451,8 @@ literal|1
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -1318,9 +1461,11 @@ literal|0
 index|]
 operator|)
 operator|*
-name|det_1
+name|det
 expr_stmt|;
-name|matrix_inv
+name|inv
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -1331,6 +1476,8 @@ operator|=
 operator|-
 operator|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -1339,6 +1486,8 @@ literal|1
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -1347,6 +1496,8 @@ literal|2
 index|]
 operator|-
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -1355,6 +1506,8 @@ literal|2
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -1363,9 +1516,11 @@ literal|1
 index|]
 operator|)
 operator|*
-name|det_1
+name|det
 expr_stmt|;
-name|matrix_inv
+name|inv
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -1375,6 +1530,8 @@ index|]
 operator|=
 operator|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -1383,6 +1540,8 @@ literal|0
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -1391,6 +1550,8 @@ literal|2
 index|]
 operator|-
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -1399,6 +1560,8 @@ literal|2
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -1407,9 +1570,11 @@ literal|0
 index|]
 operator|)
 operator|*
-name|det_1
+name|det
 expr_stmt|;
-name|matrix_inv
+name|inv
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -1420,6 +1585,8 @@ operator|=
 operator|-
 operator|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -1428,6 +1595,8 @@ literal|0
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -1436,6 +1605,8 @@ literal|1
 index|]
 operator|-
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -1444,6 +1615,8 @@ literal|1
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -1452,9 +1625,11 @@ literal|0
 index|]
 operator|)
 operator|*
-name|det_1
+name|det
 expr_stmt|;
-name|matrix_inv
+name|inv
+operator|.
+name|coeff
 index|[
 literal|0
 index|]
@@ -1464,6 +1639,8 @@ index|]
 operator|=
 operator|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -1472,6 +1649,8 @@ literal|1
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -1480,6 +1659,8 @@ literal|2
 index|]
 operator|-
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -1488,6 +1669,8 @@ literal|2
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -1496,9 +1679,11 @@ literal|1
 index|]
 operator|)
 operator|*
-name|det_1
+name|det
 expr_stmt|;
-name|matrix_inv
+name|inv
+operator|.
+name|coeff
 index|[
 literal|1
 index|]
@@ -1509,6 +1694,8 @@ operator|=
 operator|-
 operator|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -1517,6 +1704,8 @@ literal|0
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -1525,6 +1714,8 @@ literal|2
 index|]
 operator|-
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -1533,6 +1724,8 @@ literal|2
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -1541,9 +1734,11 @@ literal|0
 index|]
 operator|)
 operator|*
-name|det_1
+name|det
 expr_stmt|;
-name|matrix_inv
+name|inv
+operator|.
+name|coeff
 index|[
 literal|2
 index|]
@@ -1553,6 +1748,8 @@ index|]
 operator|=
 operator|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -1561,6 +1758,8 @@ literal|0
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -1569,6 +1768,8 @@ literal|1
 index|]
 operator|-
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|0
 index|]
@@ -1577,6 +1778,8 @@ literal|1
 index|]
 operator|*
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -1585,52 +1788,12 @@ literal|0
 index|]
 operator|)
 operator|*
-name|det_1
+name|det
 expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_matrix3_duplicate:  * @src: The source matrix.  * @target: The destination matrix.   *   * Copies the source matrix to the destination matrix.  */
-end_comment
-
-begin_function
-name|void
-DECL|function|gimp_matrix3_duplicate (GimpMatrix3 src,GimpMatrix3 target)
-name|gimp_matrix3_duplicate
-parameter_list|(
-name|GimpMatrix3
-name|src
-parameter_list|,
-name|GimpMatrix3
-name|target
-parameter_list|)
-block|{
-name|memcpy
-argument_list|(
-operator|&
-name|target
-index|[
-literal|0
-index|]
-index|[
-literal|0
-index|]
-argument_list|,
-operator|&
-name|src
-index|[
-literal|0
-index|]
-index|[
-literal|0
-index|]
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GimpMatrix3
-argument_list|)
-argument_list|)
+operator|*
+name|matrix
+operator|=
+name|inv
 expr_stmt|;
 block|}
 end_function
@@ -1645,10 +1808,12 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_matrix3_is_diagonal (GimpMatrix3 matrix)
+DECL|function|gimp_matrix3_is_diagonal (const GimpMatrix3 * matrix)
 name|gimp_matrix3_is_diagonal
 parameter_list|(
+specifier|const
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|)
 block|{
@@ -1694,6 +1859,8 @@ operator|&&
 name|fabs
 argument_list|(
 name|matrix
+operator|->
+name|coeff
 index|[
 name|i
 index|]
@@ -1721,10 +1888,12 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_matrix3_is_identity (GimpMatrix3 matrix)
+DECL|function|gimp_matrix3_is_identity (const GimpMatrix3 * matrix)
 name|gimp_matrix3_is_identity
 parameter_list|(
+specifier|const
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|)
 block|{
@@ -1773,6 +1942,8 @@ condition|(
 name|fabs
 argument_list|(
 name|matrix
+operator|->
+name|coeff
 index|[
 name|i
 index|]
@@ -1796,6 +1967,8 @@ condition|(
 name|fabs
 argument_list|(
 name|matrix
+operator|->
+name|coeff
 index|[
 name|i
 index|]
@@ -1828,10 +2001,12 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_matrix3_is_simple (GimpMatrix3 matrix)
+DECL|function|gimp_matrix3_is_simple (const GimpMatrix3 * matrix)
 name|gimp_matrix3_is_simple
 parameter_list|(
+specifier|const
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|)
 block|{
@@ -1876,6 +2051,8 @@ operator|=
 name|fabs
 argument_list|(
 name|matrix
+operator|->
+name|coeff
 index|[
 name|i
 index|]
@@ -1912,10 +2089,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_matrix4_to_deg (GimpMatrix4 matrix,gdouble * a,gdouble * b,gdouble * c)
+DECL|function|gimp_matrix4_to_deg (const GimpMatrix4 * matrix,gdouble * a,gdouble * b,gdouble * c)
 name|gimp_matrix4_to_deg
 parameter_list|(
+specifier|const
 name|GimpMatrix4
+modifier|*
 name|matrix
 parameter_list|,
 name|gdouble
@@ -1940,6 +2119,8 @@ operator|(
 name|asin
 argument_list|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|1
 index|]
@@ -1960,6 +2141,8 @@ operator|(
 name|asin
 argument_list|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]
@@ -1980,6 +2163,8 @@ operator|(
 name|asin
 argument_list|(
 name|matrix
+operator|->
+name|coeff
 index|[
 literal|2
 index|]

@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c9a3d50103
+DECL|enum|__anon2b71d62a0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -284,7 +284,9 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+specifier|const
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|,
 name|GimpTransformDirection
@@ -1890,6 +1892,7 @@ name|center_y
 argument_list|,
 name|angle
 argument_list|,
+operator|&
 name|matrix
 argument_list|)
 expr_stmt|;
@@ -1978,6 +1981,7 @@ name|data
 decl_stmt|;
 name|gimp_matrix3_transform_point
 argument_list|(
+operator|&
 name|matrix
 argument_list|,
 name|anchor
@@ -2020,14 +2024,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vectors_transform (GimpItem * item,GimpMatrix3 matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_vectors_transform (GimpItem * item,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_vectors_transform
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+specifier|const
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|,
 name|GimpTransformDirection

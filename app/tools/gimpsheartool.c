@@ -1111,6 +1111,7 @@ index|]
 argument_list|,
 name|amount
 argument_list|,
+operator|&
 name|tr_tool
 operator|->
 name|transform

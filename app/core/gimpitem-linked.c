@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288d47820103
+DECL|enum|__anon2b8db7fd0103
 block|{
 DECL|enumerator|GIMP_ITEM_LINKED_LAYERS
 name|GIMP_ITEM_LINKED_LAYERS
@@ -515,14 +515,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_linked_transform (GimpItem * item,GimpMatrix3 matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_item_linked_transform (GimpItem * item,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_item_linked_transform
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+specifier|const
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|,
 name|GimpTransformDirection

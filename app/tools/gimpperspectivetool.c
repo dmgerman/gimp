@@ -1012,6 +1012,7 @@ index|[
 name|Y3
 index|]
 argument_list|,
+operator|&
 name|tr_tool
 operator|->
 name|transform
@@ -1108,6 +1109,8 @@ argument_list|,
 name|tr_tool
 operator|->
 name|transform
+operator|.
+name|coeff
 index|[
 name|i
 index|]

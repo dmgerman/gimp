@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a357ae60103
+DECL|enum|__anon28fbe49c0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -2630,14 +2630,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_transform (GimpItem * item,GimpMatrix3 matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_item_transform (GimpItem * item,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_item_transform
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+specifier|const
 name|GimpMatrix3
+modifier|*
 name|matrix
 parameter_list|,
 name|GimpTransformDirection

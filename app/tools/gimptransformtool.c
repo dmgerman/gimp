@@ -979,6 +979,7 @@ expr_stmt|;
 block|}
 name|gimp_matrix3_identity
 argument_list|(
+operator|&
 name|tr_tool
 operator|->
 name|transform
@@ -2887,56 +2888,12 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|tr_tool
-operator|->
-name|type
-operator|==
-name|GIMP_TRANSFORM_TYPE_PATH
-condition|)
-block|{
-name|GimpMatrix3
-name|tmp_matrix
-decl_stmt|;
-if|if
-condition|(
-name|options
-operator|->
-name|direction
-operator|==
-name|GIMP_TRANSFORM_BACKWARD
-condition|)
-block|{
-name|gimp_matrix3_invert
-argument_list|(
-name|tr_tool
-operator|->
-name|transform
-argument_list|,
-name|tmp_matrix
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|gimp_matrix3_duplicate
-argument_list|(
-name|tr_tool
-operator|->
-name|transform
-argument_list|,
-name|tmp_matrix
-argument_list|)
-expr_stmt|;
-block|}
 if|#
 directive|if
 literal|0
-block|path_transform_draw_current (tool->gdisp,                                    draw_tool, tmp_matrix);
+block|if (tr_tool->type == GIMP_TRANSFORM_TYPE_PATH)     {       if (options->direction == GIMP_TRANSFORM_BACKWARD) 	{           GimpMatrix3  inv_matrix = tr_tool->transform; 	             gimp_matrix3_invert (&inv_matrix);           path_transform_draw_current (tool->gdisp,                                        draw_tool, inv_matrix); 	}       else         {           path_transform_draw_current (tool->gdisp,                                        draw_tool, tr_tool->transform);         }     }
 endif|#
 directive|endif
-block|}
 block|}
 end_function
 
@@ -3044,6 +3001,7 @@ name|gimp_item_linked_transform
 argument_list|(
 name|active_item
 argument_list|,
+operator|&
 name|tr_tool
 operator|->
 name|transform
@@ -3124,6 +3082,7 @@ name|tr_tool
 operator|->
 name|original
 argument_list|,
+operator|&
 name|tr_tool
 operator|->
 name|transform
@@ -3619,6 +3578,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_matrix3_transform_point
 argument_list|(
+operator|&
 name|tr_tool
 operator|->
 name|transform
@@ -3644,6 +3604,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_matrix3_transform_point
 argument_list|(
+operator|&
 name|tr_tool
 operator|->
 name|transform
@@ -3669,6 +3630,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_matrix3_transform_point
 argument_list|(
+operator|&
 name|tr_tool
 operator|->
 name|transform
@@ -3694,6 +3656,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_matrix3_transform_point
 argument_list|(
+operator|&
 name|tr_tool
 operator|->
 name|transform
@@ -3719,6 +3682,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_matrix3_transform_point
 argument_list|(
+operator|&
 name|tr_tool
 operator|->
 name|transform
@@ -3799,6 +3763,7 @@ control|)
 block|{
 name|gimp_matrix3_transform_point
 argument_list|(
+operator|&
 name|tr_tool
 operator|->
 name|transform

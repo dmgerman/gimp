@@ -692,6 +692,7 @@ index|[
 name|Y3
 index|]
 argument_list|,
+operator|&
 name|matrix
 argument_list|)
 expr_stmt|;
@@ -719,6 +720,7 @@ name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
 argument_list|,
+operator|&
 name|matrix
 argument_list|,
 name|GIMP_TRANSFORM_FORWARD
@@ -1058,6 +1060,7 @@ name|y2
 argument_list|,
 name|angle
 argument_list|,
+operator|&
 name|matrix
 argument_list|)
 expr_stmt|;
@@ -1085,6 +1088,7 @@ name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
 argument_list|,
+operator|&
 name|matrix
 argument_list|,
 name|GIMP_TRANSFORM_FORWARD
@@ -1456,6 +1460,7 @@ index|[
 name|Y1
 index|]
 argument_list|,
+operator|&
 name|matrix
 argument_list|)
 expr_stmt|;
@@ -1483,6 +1488,7 @@ name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
 argument_list|,
+operator|&
 name|matrix
 argument_list|,
 name|GIMP_TRANSFORM_FORWARD
@@ -1827,6 +1833,7 @@ name|shear_type
 argument_list|,
 name|magnitude
 argument_list|,
+operator|&
 name|matrix
 argument_list|)
 expr_stmt|;
@@ -1854,6 +1861,7 @@ name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
 argument_list|,
+operator|&
 name|matrix
 argument_list|,
 name|GIMP_TRANSFORM_FORWARD
@@ -2192,11 +2200,13 @@ block|{
 comment|/* Assemble the transformation matrix */
 name|gimp_matrix3_identity
 argument_list|(
+operator|&
 name|matrix
 argument_list|)
 expr_stmt|;
 name|gimp_matrix3_translate
 argument_list|(
+operator|&
 name|matrix
 argument_list|,
 operator|-
@@ -2208,6 +2218,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_matrix3_scale
 argument_list|(
+operator|&
 name|matrix
 argument_list|,
 name|scale_x
@@ -2217,6 +2228,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_matrix3_rotate
 argument_list|(
+operator|&
 name|matrix
 argument_list|,
 name|angle
@@ -2224,6 +2236,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_matrix3_translate
 argument_list|(
+operator|&
 name|matrix
 argument_list|,
 name|dest_x
@@ -2255,6 +2268,7 @@ name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
 argument_list|,
+operator|&
 name|matrix
 argument_list|,
 name|GIMP_TRANSFORM_FORWARD
