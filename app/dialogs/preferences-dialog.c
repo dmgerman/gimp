@@ -7695,7 +7695,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon299af2d90108
+DECL|struct|__anon29d0ffa90108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9018,7 +9018,7 @@ modifier|*
 name|list
 decl_stmt|;
 enum|enum
-DECL|enum|__anon299af2d90203
+DECL|enum|__anon29d0ffa90203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -10284,6 +10284,57 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* ENABLE_MP */
+comment|/*  File Opening  */
+name|vbox2
+operator|=
+name|prefs_frame_new
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening Images"
+argument_list|)
+argument_list|,
+name|GTK_CONTAINER
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|table
+operator|=
+name|prefs_table_new
+argument_list|(
+literal|1
+argument_list|,
+name|GTK_CONTAINER
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|prefs_memsize_entry_add
+argument_list|(
+name|object
+argument_list|,
+literal|"thumbnail-filesize-limit"
+argument_list|,
+name|_
+argument_list|(
+literal|"Filesize limit for thumbnailing:"
+argument_list|)
+argument_list|,
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|size_group
+argument_list|)
+expr_stmt|;
 comment|/*  File Saving  */
 name|vbox2
 operator|=
@@ -10291,7 +10342,7 @@ name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"File Saving"
+literal|"Saving Images"
 argument_list|)
 argument_list|,
 name|GTK_CONTAINER
@@ -10343,7 +10394,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Size of thumbnail files:"
+literal|"Create thumbnails:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -10411,7 +10462,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon299af2d90308
+DECL|struct|__anon29d0ffa90308
 block|{
 DECL|member|label
 specifier|const
@@ -10568,7 +10619,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon299af2d90408
+DECL|struct|__anon29d0ffa90408
 block|{
 DECL|member|tree_label
 specifier|const

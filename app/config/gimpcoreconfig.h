@@ -251,6 +251,10 @@ DECL|member|thumbnail_size
 name|GimpThumbnailSize
 name|thumbnail_size
 decl_stmt|;
+DECL|member|thumbnail_filesize_limit
+name|guint64
+name|thumbnail_filesize_limit
+decl_stmt|;
 DECL|member|install_cmap
 name|gboolean
 name|install_cmap

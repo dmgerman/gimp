@@ -874,6 +874,15 @@ value|N_("Sets the size of the thumbnail saved with each image. Note that GIMP "
 end_define
 
 begin_define
+DECL|macro|THUMBNAIL_FILESIZE_LIMIT_BLURB
+define|#
+directive|define
+name|THUMBNAIL_FILESIZE_LIMIT_BLURB
+define|\
+value|N_("The preview thumbnail in the Open dialog will be updated on demand " \    "unless the file being previewed is larger than the size set here.")
+end_define
+
+begin_define
 DECL|macro|TILE_CACHE_SIZE_BLURB
 define|#
 directive|define
