@@ -612,7 +612,7 @@ name|position
 parameter_list|,
 name|gdouble
 modifier|*
-name|gradient
+name|slope
 parameter_list|)
 function_decl|;
 DECL|member|interpolate
@@ -1277,7 +1277,7 @@ name|position
 parameter_list|,
 name|gdouble
 modifier|*
-name|gradient
+name|slope
 parameter_list|)
 function_decl|;
 end_function_decl

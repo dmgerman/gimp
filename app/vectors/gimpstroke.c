@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8c42690103
+DECL|enum|__anon2a43e8300103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -786,7 +786,7 @@ name|position
 parameter_list|,
 name|gdouble
 modifier|*
-name|gradient
+name|slope
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -5110,7 +5110,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_stroke_get_point_at_dist (const GimpStroke * stroke,const gdouble dist,const gdouble precision,GimpCoords * position,gdouble * gradient)
+DECL|function|gimp_stroke_get_point_at_dist (const GimpStroke * stroke,const gdouble dist,const gdouble precision,GimpCoords * position,gdouble * slope)
 name|gimp_stroke_get_point_at_dist
 parameter_list|(
 specifier|const
@@ -5132,7 +5132,7 @@ name|position
 parameter_list|,
 name|gdouble
 modifier|*
-name|gradient
+name|slope
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -5161,7 +5161,7 @@ name|precision
 argument_list|,
 name|position
 argument_list|,
-name|gradient
+name|slope
 argument_list|)
 return|;
 block|}
@@ -5170,7 +5170,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_stroke_real_get_point_at_dist (const GimpStroke * stroke,const gdouble dist,const gdouble precision,GimpCoords * position,gdouble * gradient)
+DECL|function|gimp_stroke_real_get_point_at_dist (const GimpStroke * stroke,const gdouble dist,const gdouble precision,GimpCoords * position,gdouble * slope)
 name|gimp_stroke_real_get_point_at_dist
 parameter_list|(
 specifier|const
@@ -5192,7 +5192,7 @@ name|position
 parameter_list|,
 name|gdouble
 modifier|*
-name|gradient
+name|slope
 parameter_list|)
 block|{
 name|GArray
@@ -5382,26 +5382,26 @@ if|if
 condition|(
 name|difference
 operator|.
-name|y
+name|x
 operator|==
 literal|0
 condition|)
 operator|*
-name|gradient
+name|slope
 operator|=
 name|G_MAXDOUBLE
 expr_stmt|;
 else|else
 operator|*
-name|gradient
+name|slope
 operator|=
 name|difference
 operator|.
-name|x
+name|y
 operator|/
 name|difference
 operator|.
-name|y
+name|x
 expr_stmt|;
 name|ret
 operator|=

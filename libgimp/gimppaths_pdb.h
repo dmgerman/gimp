@@ -159,7 +159,7 @@ name|y_point
 parameter_list|,
 name|gdouble
 modifier|*
-name|gradient
+name|slope
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -2390,7 +2390,7 @@ init|=
 literal|0
 decl_stmt|;
 name|gdouble
-name|gradient
+name|slope
 init|=
 literal|0
 decl_stmt|;
@@ -2546,7 +2546,7 @@ operator|&
 name|position
 argument_list|,
 operator|&
-name|gradient
+name|slope
 argument_list|)
 condition|)
 block|{
@@ -2648,7 +2648,7 @@ name|value
 operator|.
 name|pdb_float
 operator|=
-name|gradient
+name|slope
 expr_stmt|;
 block|}
 return|return
@@ -2711,9 +2711,9 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"gradient"
+literal|"slope"
 block|,
-literal|"The gradient at the specified point."
+literal|"The slope (dy / dx) at the specified point."
 block|}
 block|}
 decl_stmt|;
