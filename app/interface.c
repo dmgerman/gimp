@@ -1790,6 +1790,14 @@ argument_list|,
 literal|"#nav_window_button"
 argument_list|)
 expr_stmt|;
+comment|/* We need to realize the shell so that we have a GdkWindow for    * the pixmap creation.  */
+name|gtk_widget_realize
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
 comment|/*  create the pixmaps  ****************************************************/
 if|if
 condition|(
@@ -1801,13 +1809,6 @@ name|GtkStyle
 modifier|*
 name|style
 decl_stmt|;
-name|gtk_widget_realize
-argument_list|(
-name|gdisp
-operator|->
-name|shell
-argument_list|)
-expr_stmt|;
 name|style
 operator|=
 name|gtk_widget_get_style
@@ -1889,6 +1890,7 @@ argument_list|,
 name|navbutton_xpm
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  Icon stuff  */
 name|gdisp
 operator|->
@@ -1945,7 +1947,6 @@ name|icon_needs_update
 operator|=
 literal|1
 expr_stmt|;
-block|}
 comment|/*  create the GtkPixmaps  */
 name|pixmap
 operator|=
