@@ -91,7 +91,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2c49fe980103
+DECL|enum|__anon2b9a0fb20103
 enum|enum
 block|{
 DECL|enumerator|TARGET_URI_LIST
@@ -845,9 +845,9 @@ argument_list|,
 name|GTK_POLICY_ALWAYS
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_scrolled_window_add_with_viewport
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_SCROLLED_WINDOW
 argument_list|(
 name|scrolled_win
 argument_list|)
