@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad772d20103
+DECL|enum|__anon27bc13fb0103
 block|{
 DECL|enumerator|DIR_CHANGED
 name|DIR_CHANGED
@@ -596,17 +596,11 @@ literal|"title"
 argument_list|,
 name|title
 argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_window_set_role
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|editor
-argument_list|)
+literal|"role"
 argument_list|,
 literal|"gimp-text-editor"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_help_connect
