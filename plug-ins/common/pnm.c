@@ -321,7 +321,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a18ca4c0108
+DECL|struct|__anon2bbd27860108
 block|{
 DECL|member|raw
 name|gint
@@ -337,7 +337,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a18ca4c0208
+DECL|struct|__anon2bbd27860208
 block|{
 DECL|member|run
 name|gint
@@ -1862,7 +1862,7 @@ name|jmpbuf
 argument_list|,
 name|_
 argument_list|(
-literal|"PNM: %s is not a valid file."
+literal|"PNM: Invalid file."
 argument_list|)
 argument_list|)
 expr_stmt|;
