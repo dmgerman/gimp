@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af0d7b30103
+DECL|enum|__anon28d9bd230103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -2123,12 +2123,24 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|gtk_tree_selection_select_iter (tree_view->selection, iter);
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: remove this hack as soon as #115871 is fixed
 endif|#
 directive|endif
+comment|/*  gtk_tree_view_set_cursor() should be sufficient actually...  */
+name|gtk_tree_selection_select_iter
+argument_list|(
+name|tree_view
+operator|->
+name|selection
+argument_list|,
+name|iter
+argument_list|)
+expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|tree_view
