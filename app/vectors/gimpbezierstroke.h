@@ -192,7 +192,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCoords
+name|GArray
 modifier|*
 name|gimp_bezier_stroke_interpolate
 parameter_list|(
@@ -204,10 +204,6 @@ parameter_list|,
 specifier|const
 name|gdouble
 name|precision
-parameter_list|,
-name|gint
-modifier|*
-name|ret_numcoords
 parameter_list|,
 name|gboolean
 modifier|*

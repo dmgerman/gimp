@@ -277,7 +277,7 @@ name|coord
 parameter_list|)
 function_decl|;
 DECL|member|interpolate
-name|GimpCoords
+name|GArray
 modifier|*
 function_decl|(
 modifier|*
@@ -292,10 +292,6 @@ parameter_list|,
 specifier|const
 name|gdouble
 name|precision
-parameter_list|,
-name|gint
-modifier|*
-name|ret_numcoords
 parameter_list|,
 name|gboolean
 modifier|*
@@ -527,7 +523,7 @@ comment|/* returns the number of valid coordinates */
 end_comment
 
 begin_function_decl
-name|GimpCoords
+name|GArray
 modifier|*
 name|gimp_stroke_interpolate
 parameter_list|(
@@ -538,10 +534,6 @@ name|stroke
 parameter_list|,
 name|gdouble
 name|precision
-parameter_list|,
-name|gint
-modifier|*
-name|ret_numcoords
 parameter_list|,
 name|gboolean
 modifier|*

@@ -1246,9 +1246,9 @@ block|}
 end_function
 
 begin_function
-name|GimpCoords
+name|GArray
 modifier|*
-DECL|function|gimp_stroke_interpolate (const GimpStroke * stroke,const gdouble precision,gint * ret_numcoords,gboolean * ret_closed)
+DECL|function|gimp_stroke_interpolate (const GimpStroke * stroke,const gdouble precision,gboolean * ret_closed)
 name|gimp_stroke_interpolate
 parameter_list|(
 specifier|const
@@ -1259,10 +1259,6 @@ parameter_list|,
 specifier|const
 name|gdouble
 name|precision
-parameter_list|,
-name|gint
-modifier|*
-name|ret_numcoords
 parameter_list|,
 name|gboolean
 modifier|*
@@ -1304,8 +1300,6 @@ argument_list|(
 name|stroke
 argument_list|,
 name|precision
-argument_list|,
-name|ret_numcoords
 argument_list|,
 name|ret_closed
 argument_list|)
