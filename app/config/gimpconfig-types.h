@@ -24,9 +24,27 @@ name|GIMP_TYPE_MEMSIZE
 value|(gimp_memsize_get_type ())
 end_define
 
+begin_define
+DECL|macro|GIMP_TYPE_PATH
+define|#
+directive|define
+name|GIMP_TYPE_PATH
+value|(gimp_path_get_type ())
+end_define
+
 begin_decl_stmt
 name|GType
 name|gimp_memsize_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+name|GType
+name|gimp_path_get_type
 argument_list|(
 name|void
 argument_list|)

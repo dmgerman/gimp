@@ -106,7 +106,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2ba0840103
+DECL|enum|__anon29d8b24f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -301,7 +301,7 @@ name|object_class
 argument_list|,
 name|PROP_TEMP_PATH
 argument_list|,
-name|g_param_spec_string
+name|gimp_param_spec_path
 argument_list|(
 literal|"temp-path"
 argument_list|,
@@ -309,7 +309,9 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|"${gimp_dir}"
+name|G_DIR_SEPARATOR_S
+literal|"tmp"
 argument_list|,
 name|G_PARAM_READWRITE
 operator||
@@ -323,7 +325,7 @@ name|object_class
 argument_list|,
 name|PROP_SWAP_PATH
 argument_list|,
-name|g_param_spec_string
+name|gimp_param_spec_path
 argument_list|(
 literal|"swap-path"
 argument_list|,
@@ -331,7 +333,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|"${gimp_dir}"
 argument_list|,
 name|G_PARAM_READWRITE
 operator||
