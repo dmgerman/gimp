@@ -3096,6 +3096,12 @@ expr_stmt|;
 block|}
 end_function
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|_NOT_READY_YET_
+end_ifdef
+
 begin_function
 specifier|static
 name|void
@@ -3169,6 +3175,11 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static
