@@ -100,7 +100,7 @@ file|"drawable_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon28ef41d50103
+DECL|enum|__anon28a5c9510103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -360,56 +360,6 @@ end_comment
 begin_comment
 comment|/*  Function definitions  */
 end_comment
-
-begin_function
-specifier|static
-name|guint
-DECL|function|drawable_hash (gpointer v)
-name|drawable_hash
-parameter_list|(
-name|gpointer
-name|v
-parameter_list|)
-block|{
-return|return
-operator|(
-name|guint
-operator|)
-name|v
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|gint
-DECL|function|drawable_hash_compare (gpointer v1,gpointer v2)
-name|drawable_hash_compare
-parameter_list|(
-name|gpointer
-name|v1
-parameter_list|,
-name|gpointer
-name|v2
-parameter_list|)
-block|{
-return|return
-operator|(
-operator|(
-name|guint
-operator|)
-name|v1
-operator|)
-operator|==
-operator|(
-operator|(
-name|guint
-operator|)
-name|v2
-operator|)
-return|;
-block|}
-end_function
 
 begin_function
 name|GimpDrawable
@@ -2239,9 +2189,9 @@ name|drawable_table
 operator|=
 name|g_hash_table_new
 argument_list|(
-name|drawable_hash
+name|g_direct_hash
 argument_list|,
-name|drawable_hash_compare
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_hash_table_insert

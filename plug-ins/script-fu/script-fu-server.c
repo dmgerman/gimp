@@ -325,7 +325,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28de53260108
+DECL|struct|__anon2b7094e10108
 block|{
 DECL|member|command
 name|gchar
@@ -349,7 +349,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28de53260208
+DECL|struct|__anon2b7094e10208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -1096,7 +1096,7 @@ name|clientname_ht
 operator|=
 name|g_hash_table_new
 argument_list|(
-name|clientname_hash
+name|g_direct_hash
 argument_list|,
 name|NULL
 argument_list|)
@@ -1963,25 +1963,6 @@ expr_stmt|;
 block|}
 return|return
 name|sock
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|guint
-DECL|function|clientname_hash (gpointer key)
-name|clientname_hash
-parameter_list|(
-name|gpointer
-name|key
-parameter_list|)
-block|{
-return|return
-operator|(
-name|int
-operator|)
-name|key
 return|;
 block|}
 end_function

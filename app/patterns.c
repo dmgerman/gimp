@@ -246,9 +246,9 @@ specifier|static
 name|gint
 name|pattern_compare_func
 parameter_list|(
-name|gpointer
+name|gconstpointer
 parameter_list|,
-name|gpointer
+name|gconstpointer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -369,13 +369,13 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|pattern_compare_func (gpointer first,gpointer second)
+DECL|function|pattern_compare_func (gconstpointer first,gconstpointer second)
 name|pattern_compare_func
 parameter_list|(
-name|gpointer
+name|gconstpointer
 name|first
 parameter_list|,
-name|gpointer
+name|gconstpointer
 name|second
 parameter_list|)
 block|{
@@ -384,6 +384,7 @@ name|strcmp
 argument_list|(
 operator|(
 operator|(
+specifier|const
 name|GPatternP
 operator|)
 name|first
@@ -393,6 +394,7 @@ name|name
 argument_list|,
 operator|(
 operator|(
+specifier|const
 name|GPatternP
 operator|)
 name|second

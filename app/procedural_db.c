@@ -313,22 +313,8 @@ specifier|static
 name|guint
 name|procedural_db_hash_func
 parameter_list|(
-name|gpointer
+name|gconstpointer
 name|key
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gint
-name|procedural_db_compare_func
-parameter_list|(
-name|gpointer
-name|a
-parameter_list|,
-name|gpointer
-name|b
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1221,7 +1207,7 @@ name|g_hash_table_new
 argument_list|(
 name|procedural_db_hash_func
 argument_list|,
-name|procedural_db_compare_func
+name|g_str_equal
 argument_list|)
 expr_stmt|;
 block|}
@@ -4514,16 +4500,21 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* We could just use g_str_hash() here ... that uses a different  * hash function, though  */
+end_comment
+
 begin_function
 specifier|static
 name|guint
-DECL|function|procedural_db_hash_func (gpointer key)
+DECL|function|procedural_db_hash_func (gconstpointer key)
 name|procedural_db_hash_func
 parameter_list|(
-name|gpointer
+name|gconstpointer
 name|key
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|string
@@ -4538,6 +4529,7 @@ comment|/*    * I tried a zillion different hash functions and asked many other 
 name|string
 operator|=
 operator|(
+specifier|const
 name|gchar
 operator|*
 operator|)
@@ -4580,42 +4572,6 @@ expr_stmt|;
 block|}
 return|return
 name|result
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|gint
-DECL|function|procedural_db_compare_func (gpointer a,gpointer b)
-name|procedural_db_compare_func
-parameter_list|(
-name|gpointer
-name|a
-parameter_list|,
-name|gpointer
-name|b
-parameter_list|)
-block|{
-return|return
-operator|(
-name|strcmp
-argument_list|(
-operator|(
-name|char
-operator|*
-operator|)
-name|a
-argument_list|,
-operator|(
-name|char
-operator|*
-operator|)
-name|b
-argument_list|)
-operator|==
-literal|0
-operator|)
 return|;
 block|}
 end_function
