@@ -4209,7 +4209,7 @@ name|int
 operator|)
 name|pts
 index|[
-name|indicies
+name|indices
 index|[
 name|i
 index|]
