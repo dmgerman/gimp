@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Autocrop plug-in version 1.00  * by Tim Newsome<drz@froody.bloke.com>  * thanks to quartic for finding a nasty bug for me  */
+comment|/*  * Autocrop plug-in version 1.00  * by Tim Newsome<drz@froody.bloke.com>  */
 end_comment
 
 begin_comment
-comment|/* 1999/04/09 -- Sven Neumann<sven@gimp.org>  * Fixed bad crash that occured when running on an entirely blank image.  * Cleaned up the code a bit, while I was at it.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -16,25 +16,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<time.h>
 end_include
 
 begin_include
@@ -95,13 +77,15 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|colors_equal
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|col1
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|col2
@@ -1468,14 +1452,16 @@ end_function
 
 begin_function
 specifier|static
-name|gint
-DECL|function|colors_equal (guchar * col1,guchar * col2,gint bytes)
+name|gboolean
+DECL|function|colors_equal (const guchar * col1,const guchar * col2,gint bytes)
 name|colors_equal
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|col1
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|col2
@@ -1484,10 +1470,10 @@ name|gint
 name|bytes
 parameter_list|)
 block|{
-name|gint
+name|gboolean
 name|equal
 init|=
-literal|1
+name|TRUE
 decl_stmt|;
 name|gint
 name|b
@@ -1525,7 +1511,7 @@ literal|0
 condition|)
 block|{
 return|return
-literal|1
+name|TRUE
 return|;
 comment|/* handle zero alpha */
 block|}
@@ -1558,7 +1544,7 @@ condition|)
 block|{
 name|equal
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 break|break;
 block|}

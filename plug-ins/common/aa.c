@@ -3,22 +3,14 @@ begin_comment
 comment|/**  * aa.c version 1.0  * A plugin that uses libaa (ftp://ftp.ta.jcu.cz/pub/aa) to save images as  * ASCII.  * NOTE: This plugin *requires* aalib 1.2 or later. Earlier versions will  * not work.  * Code copied from all over the GIMP source.  * Tim Newsome<nuisance@cmu.edu>  */
 end_comment
 
+begin_comment
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+end_comment
+
 begin_include
 include|#
 directive|include
 file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
 end_include
 
 begin_include
@@ -1308,10 +1300,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  * User Interface dialog thingie.  */
-end_comment
-
 begin_function
 specifier|static
 name|gint
@@ -1376,7 +1364,7 @@ expr_stmt|;
 comment|/*  file save type  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -1391,7 +1379,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1607,10 +1595,6 @@ name|selected_type
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*  * Callbacks for the dialog.  */
-end_comment
 
 begin_function
 specifier|static
