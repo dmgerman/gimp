@@ -381,7 +381,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28937dca0108
+DECL|struct|__anon2a1fb2590108
 block|{
 DECL|member|quality
 name|gdouble
@@ -436,7 +436,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28937dca0208
+DECL|struct|__anon2a1fb2590208
 block|{
 DECL|member|cinfo
 name|struct
@@ -5047,6 +5047,9 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_EXIF
 name|gchar
 modifier|*
 name|thumbnail_buffer
@@ -5058,6 +5061,8 @@ name|thumbnail_buffer_length
 init|=
 literal|0
 decl_stmt|;
+endif|#
+directive|endif
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -8516,7 +8521,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28937dca0308
+DECL|struct|__anon2a1fb2590308
 block|{
 DECL|member|pub
 name|struct
@@ -10024,7 +10029,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28937dca0408
+DECL|struct|__anon2a1fb2590408
 block|{
 DECL|member|pub
 name|struct
