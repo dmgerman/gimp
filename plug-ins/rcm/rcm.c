@@ -298,8 +298,8 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Exchanges two color ranges."
-literal|"Based on code from Pavel Grinfeld (pavel@ml.com)."
+literal|"Exchanges two color ranges. "
+literal|"Based on code from Pavel Grinfeld (pavel@ml.com). "
 literal|"This version written by Sven Anders (anderss@fmi.uni-passau.de)."
 argument_list|)
 argument_list|,
