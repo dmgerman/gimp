@@ -359,6 +359,13 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|bytes
+operator|=
+name|gimp_image_projection_bytes
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -396,7 +403,6 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|gimp_drawable_is_indexed
@@ -420,6 +426,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+block|}
 name|mask
 operator|=
 name|gimp_channel_new_mask
