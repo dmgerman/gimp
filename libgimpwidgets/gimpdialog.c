@@ -286,7 +286,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_new:  * @title:        The dialog's title which will be set with  *                gtk_window_set_title().  * @wmclass_name: The dialog's @wmclass_name which will be set with  *                gtk_window_set_wmclass(). The @wmclass_class will be  *                automatically set to "Gimp".  * @help_func:    The function which will be called if the user presses "F1".  * @help_data:    The data pointer which will be passed to @help_func.  * @position:     The dialog's initial position which will be set with  *                gtk_window_set_position().  * @allow_shrink: The dialog's @allow_shrink flag, ...  * @allow_grow:   ... it't @allow_grow flag and ...  * @auto_shrink:  ... it's @auto_shrink flag which will all be set with  *                gtk_window_set_policy().  * @...:          A #NULL terminated @va_list destribing the  *                action_area buttons.  *  * This function simply packs the action_area arguments passed in "..."  * into a @va_list variable and passes everything to gimp_dialog_newv().  *  * For a description of the format of the @va_list describing the  * action_area buttons see gimp_dialog_create_action_areav().  *  * Returns: A #GimpDialog.  **/
+comment|/**  * gimp_dialog_new:  * @title:        The dialog's title which will be set with  *                gtk_window_set_title().  * @wmclass_name: The dialog's @wmclass_name which will be set with  *                gtk_window_set_wmclass(). The @wmclass_class will be  *                automatically set to "Gimp".  * @help_func:    The function which will be called if the user presses "F1".  * @help_data:    The data pointer which will be passed to @help_func.  * @position:     The dialog's initial position which will be set with  *                gtk_window_set_position().  * @allow_shrink: The dialog's @allow_shrink flag, ...  * @allow_grow:   ... it't @allow_grow flag and ...  * @auto_shrink:  ... it's @auto_shrink flag which will all be set with  *                gtk_window_set_policy().  * @...:          A %NULL-terminated @va_list destribing the  *                action_area buttons.  *  * This function simply packs the action_area arguments passed in "..."  * into a @va_list variable and passes everything to gimp_dialog_newv().  *  * For a description of the format of the @va_list describing the  * action_area buttons see gimp_dialog_create_action_areav().  *  * Returns: A #GimpDialog.  **/
 end_comment
 
 begin_function
@@ -538,7 +538,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_create_action_area:  * @dialog: The #GimpDialog you want to create the action_area for.  * @...:    A #NULL terminated @va_list destribing the action_area buttons.  *  * This function simply packs the action_area arguments passed in "..."  * into a @va_list variable and passes everything to  * gimp_dialog_create_action_areav().  **/
+comment|/**  * gimp_dialog_create_action_area:  * @dialog: The #GimpDialog you want to create the action_area for.  * @...:    A %NULL-terminated @va_list destribing the action_area buttons.  *  * This function simply packs the action_area arguments passed in "..."  * into a @va_list variable and passes everything to  * gimp_dialog_create_action_areav().  **/
 end_comment
 
 begin_function

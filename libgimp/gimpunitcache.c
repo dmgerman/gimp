@@ -46,7 +46,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9d59680108
+DECL|struct|__anon2c5182450108
 block|{
 DECL|member|factor
 name|gdouble
@@ -365,7 +365,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_new:  * @identifier: The unit's identifier string.  * @factor: The unit's factor (how many units are in one inch).  * @digits: The unit's suggested number of digits (see gimp_unit_get_digits()).  * @symbol: The symbol of the unit (e.g. "''" for inch).  * @abbreviation: The abbreviation of the unit.  * @singular: The singular form of the unit.  * @plural: The plural form of the unit.  *  * Returns the integer ID of the new #GimpUnit.  *  * Note that a new unit is always created with it's deletion flag  * set to #TRUE. You will have to set it to #FALSE with  * gimp_unit_set_deletion_flag() to make the unit definition persistent.  *  * Returns: The ID of the new unit.  */
+comment|/**  * gimp_unit_new:  * @identifier: The unit's identifier string.  * @factor: The unit's factor (how many units are in one inch).  * @digits: The unit's suggested number of digits (see gimp_unit_get_digits()).  * @symbol: The symbol of the unit (e.g. "''" for inch).  * @abbreviation: The abbreviation of the unit.  * @singular: The singular form of the unit.  * @plural: The plural form of the unit.  *  * Returns the integer ID of the new #GimpUnit.  *  * Note that a new unit is always created with it's deletion flag  * set to %TRUE. You will have to set it to %FALSE with  * gimp_unit_set_deletion_flag() to make the unit definition persistent.  *  * Returns: The ID of the new unit.  */
 end_comment
 
 begin_function
@@ -462,7 +462,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_set_deletion_flag:  * @unit: The unit you want to set the @deletion_flag for.  * @deletion_flag: The new deletion_flag.  *  * Sets a #GimpUnit's @deletion_flag. If the @deletion_flag of a unit is  * #TRUE when GIMP exits, this unit will not be saved in the uses's  * "unitrc" file.  *  * Trying to change the @deletion_flag of a built-in unit will be silently  * ignored.  */
+comment|/**  * gimp_unit_set_deletion_flag:  * @unit: The unit you want to set the @deletion_flag for.  * @deletion_flag: The new deletion_flag.  *  * Sets a #GimpUnit's @deletion_flag. If the @deletion_flag of a unit is  * %TRUE when GIMP exits, this unit will not be saved in the uses's  * "unitrc" file.  *  * Trying to change the @deletion_flag of a built-in unit will be silently  * ignored.  */
 end_comment
 
 begin_function

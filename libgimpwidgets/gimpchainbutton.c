@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27984d120103
+DECL|enum|__anon2b0b80b10103
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -696,7 +696,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**   * gimp_chain_button_set_active:  * @button:    Pointer to a #GimpChainButton.  * @active: The new state.  *   * Sets the state of the #GimpChainButton to be either locked (#TRUE) or   * unlocked (#FALSE) and changes the showed pixmap to reflect the new state.  */
+comment|/**   * gimp_chain_button_set_active:  * @button: Pointer to a #GimpChainButton.  * @active: The new state.  *   * Sets the state of the #GimpChainButton to be either locked (%TRUE) or   * unlocked (%FALSE) and changes the showed pixmap to reflect the new state.  */
 end_comment
 
 begin_function
@@ -729,6 +729,9 @@ operator|!=
 name|active
 condition|)
 block|{
+name|guint
+name|num
+decl_stmt|;
 name|button
 operator|->
 name|active
@@ -739,17 +742,8 @@ name|TRUE
 else|:
 name|FALSE
 expr_stmt|;
-name|gtk_image_set_from_stock
-argument_list|(
-name|GTK_IMAGE
-argument_list|(
-name|button
-operator|->
-name|image
-argument_list|)
-argument_list|,
-name|gimp_chain_stock_items
-index|[
+name|num
+operator|=
 operator|(
 operator|(
 name|button
@@ -762,10 +756,26 @@ operator|<<
 literal|1
 operator|)
 operator|+
-operator|!
+operator|(
+name|active
+condition|?
+literal|0
+else|:
+literal|1
+operator|)
+expr_stmt|;
+name|gtk_image_set_from_stock
+argument_list|(
+name|GTK_IMAGE
+argument_list|(
 name|button
 operator|->
-name|active
+name|image
+argument_list|)
+argument_list|,
+name|gimp_chain_stock_items
+index|[
+name|num
 index|]
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
@@ -776,7 +786,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_chain_button_get_active  * @button: Pointer to a #GimpChainButton.  *   * Checks the state of the #GimpChainButton.   *  * Returns: TRUE if the #GimpChainButton is active (locked).  */
+comment|/**  * gimp_chain_button_get_active  * @button: Pointer to a #GimpChainButton.  *   * Checks the state of the #GimpChainButton.   *  * Returns: %TRUE if the #GimpChainButton is active (locked).  */
 end_comment
 
 begin_function

@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6fc6230103
+DECL|enum|__anon2be83f3c0103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -808,7 +808,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_module_new:  * @filename:     The filename of a loadable module.  * @load_inhibit: Pass #TRUE to exclude this module from auto-loading.  * @verbose:      Pass #TRUE to enable debugging output.  *   * Creates a new #GimpModule instance.  *   * Return value: The new #GimpModule object.  **/
+comment|/**  * gimp_module_new:  * @filename:     The filename of a loadable module.  * @load_inhibit: Pass %TRUE to exclude this module from auto-loading.  * @verbose:      Pass %TRUE to enable debugging output.  *   * Creates a new #GimpModule instance.  *   * Return value: The new #GimpModule object.  **/
 end_comment
 
 begin_function
@@ -943,7 +943,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_query_module:  * @module: A #GimpModule.  *   * Queries the module without actually registering any of the types it  * may implement. After successful query, the @info field of the  * #GimpModule struct will be available for further inspection.  *   * Return value: #TRUE on success.  **/
+comment|/**  * gimp_module_query_module:  * @module: A #GimpModule.  *   * Queries the module without actually registering any of the types it  * may implement. After successful query, the @info field of the  * #GimpModule struct will be available for further inspection.  *   * Return value: %TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1226,7 +1226,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_set_load_inhibit:  * @module:       A #GimpModule.  * @load_inhibit: Pass #TRUE to exclude this module from auto-loading.  *   * Sets the @load_inhibit property if the module. Emits "modified".  **/
+comment|/**  * gimp_module_set_load_inhibit:  * @module:       A #GimpModule.  * @load_inhibit: Pass %TRUE to exclude this module from auto-loading.  *   * Sets the @load_inhibit property if the module. Emits "modified".  **/
 end_comment
 
 begin_function

@@ -135,7 +135,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon299fe2870103
+DECL|enum|__anon29d85d270103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -702,7 +702,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_selection_new:  * @title: The title of the #GtkFileSelection dialog.  * @filename: The initial filename.  * @dir_only: #TRUE if the file selection should accept directories only.  * @check_valid: #TRUE if the widget should check if the entered file  *               really exists.  *  * Creates a new #GimpFileSelection widget.  *  * Returns: A pointer to the new #GimpFileSelection widget.  **/
+comment|/**  * gimp_file_selection_new:  * @title: The title of the #GtkFileSelection dialog.  * @filename: The initial filename.  * @dir_only: %TRUE if the file selection should accept directories only.  * @check_valid: %TRUE if the widget should check if the entered file  *               really exists.  *  * Creates a new #GimpFileSelection widget.  *  * Returns: A pointer to the new #GimpFileSelection widget.  **/
 end_comment
 
 begin_function
@@ -865,7 +865,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_selection_set_filename:  * @selection: The file selection you want to set the filename for.  * @filename: The new filename.  *  * If you specified @check_valid as #TRUE in gimp_file_selection_new()  * the #GimpFileSelection will immediately check the validity of the file  * name.  *  */
+comment|/**  * gimp_file_selection_set_filename:  * @selection: The file selection you want to set the filename for.  * @filename: The new filename.  *  * If you specified @check_valid as %TRUE in gimp_file_selection_new()  * the #GimpFileSelection will immediately check the validity of the file  * name.  *  */
 end_comment
 
 begin_function

@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b826a460103
+DECL|enum|__anon2742ebf80103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b826a460203
+DECL|enum|__anon2742ebf80203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -458,7 +458,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_menu_new:  * @format:       A printf-like format string which is used to create the unit  *                strings.  * @unit:         The initially selected unit.  * @show_pixels:  #TRUE if the unit menu should contain an item for  *                GIMP_UNIT_PIXEL.  * @show_percent: #TRUE in the unit menu should contain an item for  *                GIMP_UNIT_PERCENT.  * @show_custom:  #TRUE if the unit menu should contain a "More..." item for  *                opening the user-defined-unit selection dialog.  *  * Creates a new #GimpUnitMenu widget.  *  * The @format string supports the following percent expansions:  *  * Returns: A pointer to the new #GimpUnitMenu widget.  **/
+comment|/**  * gimp_unit_menu_new:  * @format:       A printf-like format string which is used to create the unit  *                strings.  * @unit:         The initially selected unit.  * @show_pixels:  %TRUE if the unit menu should contain an item for  *                GIMP_UNIT_PIXEL.  * @show_percent: %TRUE in the unit menu should contain an item for  *                GIMP_UNIT_PERCENT.  * @show_custom:  %TRUE if the unit menu should contain a "More..." item for  *                opening the user-defined-unit selection dialog.  *  * Creates a new #GimpUnitMenu widget.  *  * The @format string supports the following percent expansions:  *  * Returns: A pointer to the new #GimpUnitMenu widget.  **/
 end_comment
 
 begin_function

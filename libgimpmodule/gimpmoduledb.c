@@ -76,7 +76,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c19b2360103
+DECL|enum|__anon2acbc4400103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -621,7 +621,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_db_new:  * @verbose: Pass #TRUE to enable debugging output.  *   * Creates a new #GimpModuleDB instance. The @verbose parameter will be  * passed to the created #GimpModule instances using gimp_module_new().  *   * Return value: The new #GimpModuleDB instance.  **/
+comment|/**  * gimp_module_db_new:  * @verbose: Pass %TRUE to enable debugging output.  *   * Creates a new #GimpModuleDB instance. The @verbose parameter will be  * passed to the created #GimpModule instances using gimp_module_new().  *   * Return value: The new #GimpModuleDB instance.  **/
 end_comment
 
 begin_function

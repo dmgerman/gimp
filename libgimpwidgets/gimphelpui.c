@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29249d630103
+DECL|enum|__anon28fb60df0103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -459,7 +459,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_help_set_help_data:  * @widget: The #GtkWidget you want to set a @tooltip and/or @help_data for.  * @tooltip: The text for this widget's tooltip.  * @help_data: The @help_data for the #GtkTipsQuery tooltips inspector.  *  * The reason why we don't use gtk_tooltips_set_tip() is that it's  * impossible to set a @private_tip (aka @help_data) without a visible  * @tooltip.  *  * This function can be called with @tooltip == #NULL. Use this feature  * if you want to set a HTML help link for a widget which shouldn't have  * a visible tooltip.  *  * You can e.g. set a @help_data string to a complete HTML page for a  * container widget (e.g. a #GtkBox). For the widgets inside the box  * you can set HTML anchors which point inside the container widget's  * help page by setting @help_data strings starting with "#".  *  * If the tooltips inspector (Shift + "F1") is invoked and the user  * clicks on one of the widgets which only contain a "#" link, the  * help system will automatically ascend the widget hierarchy until it  * finds another widget with @help_data attached and concatenates both  * to a complete help path.  **/
+comment|/**  * gimp_help_set_help_data:  * @widget: The #GtkWidget you want to set a @tooltip and/or @help_data for.  * @tooltip: The text for this widget's tooltip (or %NULL).  * @help_data: The @help_data for the #GtkTipsQuery tooltips inspector.  *  * The reason why we don't use gtk_tooltips_set_tip() is that it's  * impossible to set a @private_tip (aka @help_data) without a visible  * @tooltip.  *  * This function can be called with %NULL for @tooltip. Use this feature  * if you want to set a HTML help link for a widget which shouldn't have  * a visible tooltip.  *  * You can e.g. set a @help_data string to a complete HTML page for a  * container widget (e.g. a #GtkBox). For the widgets inside the box  * you can set HTML anchors which point inside the container widget's  * help page by setting @help_data strings starting with "#".  *  * If the tooltips inspector (Shift + "F1") is invoked and the user  * clicks on one of the widgets which only contain a "#" link, the  * help system will automatically ascend the widget hierarchy until it  * finds another widget with @help_data attached and concatenates both  * to a complete help path.  **/
 end_comment
 
 begin_function
