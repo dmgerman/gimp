@@ -144,7 +144,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2c3cf20f0103
+DECL|enum|__anon27e75b930103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -1755,12 +1755,15 @@ end_function
 begin_function
 name|Layer
 modifier|*
-DECL|function|layer_new_from_tiles (GimpImage * gimage,TileManager * tiles,gchar * name,gint opacity,LayerModeEffects mode)
+DECL|function|layer_new_from_tiles (GimpImage * gimage,GimpImageType layer_type,TileManager * tiles,gchar * name,gint opacity,LayerModeEffects mode)
 name|layer_new_from_tiles
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpImageType
+name|layer_type
 parameter_list|,
 name|TileManager
 modifier|*
@@ -1781,9 +1784,6 @@ name|Layer
 modifier|*
 name|new_layer
 decl_stmt|;
-name|GimpImageType
-name|layer_type
-decl_stmt|;
 name|PixelRegion
 name|layerPR
 decl_stmt|,
@@ -1802,13 +1802,6 @@ condition|)
 return|return
 name|NULL
 return|;
-name|layer_type
-operator|=
-name|gimp_image_base_type_with_alpha
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 comment|/*  Create the new layer  */
 name|new_layer
 operator|=

@@ -1323,6 +1323,14 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+if|if
+condition|(
+name|paths_dialog
+operator|!=
+name|NULL
+condition|)
+comment|/* Bug #5049: Clients may call this because it is possible */
+comment|/* to create a path before the L&C dialog exists.          */
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON

@@ -346,6 +346,8 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
+name|GimpImageType
+parameter_list|,
 name|TileManager
 modifier|*
 parameter_list|,

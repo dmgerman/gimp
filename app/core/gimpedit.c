@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad7dc820103
+DECL|enum|__anon2b98415b0103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
@@ -1192,6 +1192,11 @@ name|layer_new_from_tiles
 argument_list|(
 name|gimage
 argument_list|,
+name|gimp_drawable_type_with_alpha
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
 name|paste
 argument_list|,
 name|_
@@ -1490,6 +1495,11 @@ operator|=
 name|layer_new_from_tiles
 argument_list|(
 name|gimage
+argument_list|,
+name|gimp_image_base_type_with_alpha
+argument_list|(
+name|gimage
+argument_list|)
 argument_list|,
 name|paste
 argument_list|,
