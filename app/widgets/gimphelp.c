@@ -1279,14 +1279,14 @@ argument_list|)
 expr_stmt|;
 name|locale
 operator|=
+name|g_strdup
+argument_list|(
 name|language
+argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|g_strdup
-argument_list|(
 name|locale
-argument_list|)
 return|;
 block|}
 end_function
