@@ -272,7 +272,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279ee5b30108
+DECL|struct|__anon2974516c0108
 block|{
 DECL|member|root
 name|gboolean
@@ -1093,27 +1093,26 @@ block|}
 end_function
 
 begin_comment
-comment|/* Allow the user to select a window with the mouse */
+comment|/* Allow the user to select a window or a region with the mouse */
 end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|GDK_WINDOWING_X11
+end_ifdef
 
 begin_function
 specifier|static
 name|GdkNativeWindow
-DECL|function|select_window (GdkScreen * screen)
-name|select_window
+DECL|function|select_window_x11 (GdkScreen * screen)
+name|select_window_x11
 parameter_list|(
 name|GdkScreen
 modifier|*
 name|screen
 parameter_list|)
 block|{
-if|#
-directive|if
-name|defined
-argument_list|(
-name|GDK_WINDOWING_X11
-argument_list|)
-comment|/* X11 specific code */
 name|Display
 modifier|*
 name|x_dpy
@@ -1832,12 +1831,31 @@ expr_stmt|;
 return|return
 name|x_win
 return|;
-elif|#
-directive|elif
-name|defined
-argument_list|(
+block|}
+end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifdef
+ifdef|#
+directive|ifdef
 name|GDK_WINDOWING_WIN32
-argument_list|)
+end_ifdef
+
+begin_function
+specifier|static
+name|GdkNativeWindow
+DECL|function|select_window_x11 (GdkScreen * screen)
+name|select_window_x11
+parameter_list|(
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|)
+block|{
 comment|/* MS Windows specific code goes here (yet to be written) */
 comment|/* basically the code should grab the pointer using a crosshair    * cursor, allow the user to click on a window and return the    * obtained HWND (as a GdkNativeWindow) - for more details consult    * the X11 specific code above    */
 comment|/* note to self: take a look at the winsnap plug-in for example code */
@@ -1858,9 +1876,51 @@ directive|endif
 return|return
 literal|0
 return|;
+block|}
+end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_function
+specifier|static
+name|GdkNativeWindow
+DECL|function|select_window (GdkScreen * screen)
+name|select_window
+parameter_list|(
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|)
+block|{
+if|#
+directive|if
+name|defined
+argument_list|(
+name|GDK_WINDOWING_X11
+argument_list|)
+return|return
+name|select_window_x11
+argument_list|(
+name|screen
+argument_list|)
+return|;
+elif|#
+directive|elif
+name|defined
+argument_list|(
+name|GDK_WINDOWING_WIN32
+argument_list|)
+return|return
+name|select_window_win32
+argument_list|(
+name|screen
+argument_list|)
+return|;
 else|#
 directive|else
-comment|/* GDK_WINDOWING_WIN32 */
 warning|#
 directive|warning
 warning|screenshot window chooser not implemented yet for this GDK backend
