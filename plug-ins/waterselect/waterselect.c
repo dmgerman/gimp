@@ -3,10 +3,6 @@ begin_comment
 comment|/* Watercolor color selector, Raph Levien<raph@acm.org>, February 1998  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
 end_comment
 
-begin_comment
-comment|/* This simple plug-in does an automatic contrast stretch.  For each    channel in the image, it finds the minimum and maximum values... it    uses those values to stretch the individual histograms to the full    contrast range.  For some images it may do just what you want; for    others it may be total crap :) */
-end_comment
-
 begin_include
 include|#
 directive|include
@@ -1476,7 +1472,7 @@ name|dummy
 parameter_list|)
 block|{
 return|return
-name|TRUE
+name|FALSE
 return|;
 block|}
 end_function
@@ -1979,6 +1975,16 @@ name|gdouble
 name|much
 decl_stmt|;
 comment|/* how much pigment to mix in */
+if|if
+condition|(
+name|pressure
+operator|<
+name|last_pressure
+condition|)
+name|last_pressure
+operator|=
+name|pressure
+expr_stmt|;
 name|much
 operator|=
 name|sqrt
@@ -2380,13 +2386,14 @@ expr_stmt|;
 name|erase
 operator|=
 operator|(
-operator|!
-operator|(
 name|event
 operator|->
 name|state
 operator|&
-name|GDK_BUTTON1_MASK
+operator|(
+name|GDK_BUTTON3_MASK
+operator||
+name|GDK_BUTTON4_MASK
 operator|)
 operator|)
 operator|||
