@@ -295,6 +295,14 @@ modifier|*
 name|tgrid_coords
 decl_stmt|;
 comment|/*  transformed grid_coords          */
+DECL|member|notify_connected
+name|gboolean
+name|notify_connected
+decl_stmt|;
+DECL|member|show_path
+name|gboolean
+name|show_path
+decl_stmt|;
 comment|/*  transform info dialog  */
 DECL|member|shell_desc
 specifier|const
@@ -425,31 +433,6 @@ parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_transform_tool_grid_density_changed
-parameter_list|(
-name|GimpTransformTool
-modifier|*
-name|tr_tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_transform_tool_show_path_changed
-parameter_list|(
-name|GimpTransformTool
-modifier|*
-name|tr_tool
-parameter_list|,
-name|gint
-name|type
 parameter_list|)
 function_decl|;
 end_function_decl

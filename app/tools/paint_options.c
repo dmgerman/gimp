@@ -102,18 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpairbrushtool.h"
 end_include
 
@@ -181,6 +169,12 @@ begin_include
 include|#
 directive|include
 file|"gimpconvolvetool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_options.h"
 end_include
 
 begin_include
