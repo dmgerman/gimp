@@ -18,11 +18,10 @@ end_define
 
 begin_function_decl
 name|GType
-name|gimp_preview_type_from_viewable
+name|gimp_preview_type_from_viewable_type
 parameter_list|(
-name|GimpViewable
-modifier|*
-name|viewable
+name|GType
+name|viewable_type
 parameter_list|)
 function_decl|;
 end_function_decl

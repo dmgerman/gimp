@@ -259,6 +259,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpSelectionEditor
+typedef|typedef
+name|struct
+name|_GimpSelectionEditor
+name|GimpSelectionEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpContainerView
 typedef|typedef
 name|struct

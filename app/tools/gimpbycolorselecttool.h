@@ -85,10 +85,6 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_BY_COLOR_SELECT_TOOL, GimpByColorSelectToolClass))
 end_define
 
-begin_comment
-comment|/*  the by color selection structures  */
-end_comment
-
 begin_typedef
 DECL|typedef|GimpByColorSelectTool
 typedef|typedef
@@ -133,9 +129,9 @@ DECL|struct|_GimpByColorSelectToolClass
 struct|struct
 name|_GimpByColorSelectToolClass
 block|{
-DECL|member|klass
+DECL|member|parent_class
 name|GimpSelectionToolClass
-name|klass
+name|parent_class
 decl_stmt|;
 block|}
 struct|;

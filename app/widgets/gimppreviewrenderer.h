@@ -390,6 +390,26 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_preview_new_by_type
+parameter_list|(
+name|GType
+name|viewable_type
+parameter_list|,
+name|gint
+name|size
+parameter_list|,
+name|gint
+name|border_width
+parameter_list|,
+name|gboolean
+name|is_popup
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_preview_set_viewable
 parameter_list|(
