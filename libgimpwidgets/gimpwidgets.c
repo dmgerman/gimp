@@ -3494,15 +3494,33 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|w
+name|spinbutton
 init|=
 name|data
 decl_stmt|;
+comment|/* Generate a new seed if the "New Seed" button was clicked or    * of the "Randomize" toggle is activated    */
+if|if
+condition|(
+operator|!
+name|GTK_IS_TOGGLE_BUTTON
+argument_list|(
+name|widget
+argument_list|)
+operator|||
+name|gtk_toggle_button_get_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
+condition|)
+block|{
 name|gtk_spin_button_set_value
 argument_list|(
 name|GTK_SPIN_BUTTON
 argument_list|(
-name|w
+name|spinbutton
 argument_list|)
 argument_list|,
 operator|(
@@ -3513,10 +3531,11 @@ argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_random_seed_new:  * @seed:        A pointer to the variable which stores the random seed.  * @random_seed: A pointer to a boolean indicating whether seed should be   *               initialised randomly or not.  *  * Creates a widget that allows the user to control how the random number  * generator is initialized.  *  * Returns: A #GtkHBox containing a #GtkSpinButton for the seed and  *          a #GtkButton for setting a random seed.  **/
+comment|/**  * gimp_random_seed_new:  * @seed:        A pointer to the variable which stores the random seed.  * @random_seed: A pointer to a boolean indicating whether seed should be  *               initialised randomly or not.  *  * Creates a widget that allows the user to control how the random number  * generator is initialized.  *  * Returns: A #GtkHBox containing a #GtkSpinButton for the seed and  *          a #GtkButton for setting a random seed.  **/
 end_comment
 
 begin_function
@@ -3554,6 +3573,24 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|seed
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|random_seed
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|hbox
 operator|=
 name|gtk_hbox_new
@@ -3564,7 +3601,17 @@ literal|4
 argument_list|)
 expr_stmt|;
 comment|/* If we're being asked to generate a random seed, generate one. */
-comment|/* I'm not sure this should be here   if (*random_seed)     {       *seed = g_random_int ();     }   */
+if|if
+condition|(
+operator|*
+name|random_seed
+condition|)
+operator|*
+name|seed
+operator|=
+name|g_random_int
+argument_list|()
+expr_stmt|;
 name|spinbutton
 operator|=
 name|gimp_spin_button_new
@@ -3610,6 +3657,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|spinbutton
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|adj
@@ -3622,11 +3674,6 @@ name|gimp_uint_adjustment_update
 argument_list|)
 argument_list|,
 name|seed
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|spinbutton
 argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data
@@ -3649,7 +3696,7 @@ name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_New seed"
+literal|"_New Seed"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3668,21 +3715,6 @@ argument_list|,
 literal|2
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-comment|/* Send spinbutton as data so that we can change the value in    * gimp_random_seed_update() */
-name|g_signal_connect
-argument_list|(
-name|button
-argument_list|,
-literal|"clicked"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gimp_random_seed_update
-argument_list|)
-argument_list|,
-name|spinbutton
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3706,13 +3738,29 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
+comment|/* Send spinbutton as data so that we can change the value in    * gimp_random_seed_update()    */
+name|g_signal_connect
+argument_list|(
+name|button
+argument_list|,
+literal|"clicked"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_random_seed_update
+argument_list|)
+argument_list|,
+name|spinbutton
+argument_list|)
+expr_stmt|;
 name|gimp_help_set_help_data
 argument_list|(
 name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Seed random number generator with a generated random number"
+literal|"Seed random number generator with a generated "
+literal|"random number"
 argument_list|)
 argument_list|,
 name|NULL
@@ -3774,6 +3822,21 @@ argument_list|,
 name|random_seed
 argument_list|)
 expr_stmt|;
+comment|/* Need to create a new seed when the "Randomize" toggle is activated  */
+name|g_signal_connect
+argument_list|(
+name|toggle
+argument_list|,
+literal|"toggled"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_random_seed_update
+argument_list|)
+argument_list|,
+name|spinbutton
+argument_list|)
+expr_stmt|;
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
@@ -3810,7 +3873,7 @@ argument_list|,
 name|toggle
 argument_list|)
 expr_stmt|;
-comment|/* Set sensitivity data for the toggle, this stuff makes     * gimp_toggle_button_sensitive_update work */
+comment|/* Set sensitivity data for the toggle, this stuff makes    * gimp_toggle_button_sensitive_update work    */
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
@@ -3835,7 +3898,6 @@ argument_list|,
 name|button
 argument_list|)
 expr_stmt|;
-comment|// g_object_set_data (G_OBJECT (button), "inverse_sensitive", adj);
 comment|/* Initialise sensitivity */
 name|gimp_toggle_button_update
 argument_list|(
@@ -3853,7 +3915,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2891aaeb0108
+DECL|struct|__anon2bab10970108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton

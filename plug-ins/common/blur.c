@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29462fbc0108
+DECL|struct|__anon2c35a6d90108
 block|{
 DECL|member|blur_pct
 name|gdouble
@@ -864,6 +864,19 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+if|if
+condition|(
+name|pivals
+operator|.
+name|blur_randomize
+condition|)
+name|pivals
+operator|.
+name|blur_seed
+operator|=
+name|g_random_int
+argument_list|()
+expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -938,6 +951,19 @@ operator|&
 name|pivals
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|pivals
+operator|.
+name|blur_randomize
+condition|)
+name|pivals
+operator|.
+name|blur_seed
+operator|=
+name|g_random_int
+argument_list|()
+expr_stmt|;
 break|break;
 comment|/*            *  Hopefully we never get here!            */
 default|default:
@@ -975,13 +1001,6 @@ literal|1
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/*            *  Initialize the rand() function seed            */
-if|if
-condition|(
-name|pivals
-operator|.
-name|blur_randomize
-condition|)
 name|g_random_set_seed
 argument_list|(
 name|pivals

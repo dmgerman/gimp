@@ -452,7 +452,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3f92c40103
+DECL|enum|__anon28a527b00103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -479,7 +479,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3f92c40203
+DECL|enum|__anon28a527b00203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -500,7 +500,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3f92c40308
+DECL|struct|__anon28a527b00308
 block|{
 DECL|member|name
 name|gchar
@@ -641,7 +641,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3f92c40408
+DECL|struct|__anon28a527b00408
 block|{
 DECL|member|fp
 name|FILE
@@ -661,7 +661,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3f92c40503
+DECL|enum|__anon28a527b00503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -689,7 +689,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3f92c40608
+DECL|struct|__anon28a527b00608
 block|{
 DECL|member|init
 name|gint
@@ -711,7 +711,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b3f92c40708
+DECL|struct|__anon28a527b00708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -785,7 +785,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3f92c40808
+DECL|struct|__anon28a527b00808
 block|{
 DECL|member|init
 name|gint
@@ -855,7 +855,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3f92c40908
+DECL|struct|__anon28a527b00908
 block|{
 DECL|member|x0
 name|gdouble
@@ -882,7 +882,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3f92c40a08
+DECL|struct|__anon28a527b00a08
 block|{
 DECL|member|init
 name|gint
@@ -1052,7 +1052,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3f92c40b08
+DECL|struct|__anon28a527b00b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1079,7 +1079,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3f92c40c08
+DECL|struct|__anon28a527b00c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1314,7 +1314,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3f92c40d08
+DECL|struct|__anon28a527b00d08
 block|{
 DECL|member|tag
 name|gint
@@ -1391,7 +1391,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3f92c40e08
+DECL|struct|__anon28a527b00e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -4429,12 +4429,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-if|#
-directive|if
-literal|0
-block|printf("Currently non interactive call of gradient flare is not supported\n");       status = GIMP_PDB_CALLING_ERROR;       break;
-endif|#
-directive|endif
 if|if
 condition|(
 name|nparams
@@ -8598,7 +8592,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-DECL|struct|__anon2b3f92c40f08
+DECL|struct|__anon28a527b00f08
 specifier|static
 struct|struct
 block|{
@@ -9330,13 +9324,6 @@ operator|/
 name|sum
 expr_stmt|;
 block|}
-if|if
-condition|(
-operator|!
-name|gflare
-operator|->
-name|random_seed
-condition|)
 name|g_rand_set_seed
 argument_list|(
 name|gr
@@ -14535,7 +14522,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2b3f92c41008
+DECL|struct|__anon28a527b01008
 block|{
 DECL|member|label
 specifier|const
@@ -18679,11 +18666,6 @@ decl_stmt|;
 name|gint
 name|row
 decl_stmt|;
-name|gboolean
-name|randomize
-init|=
-name|FALSE
-decl_stmt|;
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -19700,16 +19682,6 @@ operator|->
 name|random_seed
 argument_list|)
 expr_stmt|;
-name|entry
-operator|=
-name|GTK_WIDGET
-argument_list|(
-name|GIMP_RANDOM_SEED_SPINBUTTON
-argument_list|(
-name|seed
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -19733,12 +19705,10 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|GTK_SPIN_BUTTON
+name|GIMP_RANDOM_SEED_SPINBUTTON_ADJ
 argument_list|(
-name|entry
+name|seed
 argument_list|)
-operator|->
-name|adjustment
 argument_list|,
 literal|"value_changed"
 argument_list|,

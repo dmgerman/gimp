@@ -217,7 +217,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba475f70108
+DECL|struct|__anon274fa3000108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -1036,6 +1036,19 @@ name|d_int32
 expr_stmt|;
 if|if
 condition|(
+name|pivals
+operator|.
+name|randomize
+condition|)
+name|pivals
+operator|.
+name|seed
+operator|=
+name|g_random_int
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
 operator|(
 name|rndm_type
 operator|!=
@@ -1102,6 +1115,19 @@ argument_list|,
 operator|&
 name|pivals
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|pivals
+operator|.
+name|randomize
+condition|)
+name|pivals
+operator|.
+name|seed
+operator|=
+name|g_random_int
+argument_list|()
 expr_stmt|;
 break|break;
 comment|/* 	   *  Hopefully we never get here! 	   */
@@ -1190,13 +1216,6 @@ operator|)
 argument_list|)
 expr_stmt|;
 comment|/* 	   *  Initialize the g_rand() function seed 	   */
-if|if
-condition|(
-operator|!
-name|pivals
-operator|.
-name|randomize
-condition|)
 name|g_rand_set_seed
 argument_list|(
 name|gr
