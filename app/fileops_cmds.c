@@ -1718,9 +1718,9 @@ block|{
 name|g_message
 argument_list|(
 literal|"attempt to register non-existant load handler \"%s\""
-argument_list|)
-operator|,
+argument_list|,
 name|name
+argument_list|)
 expr_stmt|;
 goto|goto
 name|done
