@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
+file|"gimpview.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpNavigationPreview
 block|{
 DECL|member|parent_instance
-name|GimpPreview
+name|GimpView
 name|parent_instance
 decl_stmt|;
 comment|/*  values in image coordinates  */
@@ -164,7 +164,7 @@ struct|struct
 name|_GimpNavigationPreviewClass
 block|{
 DECL|member|parent_class
-name|GimpPreviewClass
+name|GimpViewClass
 name|parent_class
 decl_stmt|;
 DECL|member|marker_changed

@@ -108,7 +108,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimppreview.h"
+file|"widgets/gimpview.h"
 end_include
 
 begin_include
@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29433e6d0103
+DECL|enum|__anon29d7a6f60103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -1741,9 +1741,9 @@ name|import_dialog
 operator|->
 name|preview
 operator|=
-name|gimp_preview_new_full_by_types
+name|gimp_view_new_full_by_types
 argument_list|(
-name|GIMP_TYPE_PREVIEW
+name|GIMP_TYPE_VIEW
 argument_list|,
 name|GIMP_TYPE_PALETTE
 argument_list|,
@@ -3292,9 +3292,9 @@ name|n_columns
 operator|=
 name|n_columns
 expr_stmt|;
-name|gimp_preview_set_viewable
+name|gimp_view_set_viewable
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|import_dialog
 operator|->

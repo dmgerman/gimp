@@ -1,97 +1,97 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimppreview.h  * Copyright (C) 2001 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpview.h  * Copyright (C) 2001 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_PREVIEW_H__
+name|__GIMP_VIEW_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_PREVIEW_H__
+DECL|macro|__GIMP_VIEW_H__
 define|#
 directive|define
-name|__GIMP_PREVIEW_H__
+name|__GIMP_VIEW_H__
 end_define
 
 begin_define
-DECL|macro|GIMP_TYPE_PREVIEW
+DECL|macro|GIMP_TYPE_VIEW
 define|#
 directive|define
-name|GIMP_TYPE_PREVIEW
-value|(gimp_preview_get_type ())
+name|GIMP_TYPE_VIEW
+value|(gimp_view_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_PREVIEW (obj)
+DECL|macro|GIMP_VIEW (obj)
 define|#
 directive|define
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PREVIEW, GimpPreview))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_VIEW, GimpView))
 end_define
 
 begin_define
-DECL|macro|GIMP_PREVIEW_CLASS (klass)
+DECL|macro|GIMP_VIEW_CLASS (klass)
 define|#
 directive|define
-name|GIMP_PREVIEW_CLASS
+name|GIMP_VIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PREVIEW, GimpPreviewClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_VIEW, GimpViewClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PREVIEW (obj)
+DECL|macro|GIMP_IS_VIEW (obj)
 define|#
 directive|define
-name|GIMP_IS_PREVIEW
+name|GIMP_IS_VIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_PREVIEW))
+value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_VIEW))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PREVIEW_CLASS (klass)
+DECL|macro|GIMP_IS_VIEW_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_PREVIEW_CLASS
+name|GIMP_IS_VIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PREVIEW))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_VIEW))
 end_define
 
 begin_define
-DECL|macro|GIMP_PREVIEW_GET_CLASS (obj)
+DECL|macro|GIMP_VIEW_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_PREVIEW_GET_CLASS
+name|GIMP_VIEW_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PREVIEW, GimpPreviewClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_VIEW, GimpViewClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpPreviewClass
+DECL|typedef|GimpViewClass
 typedef|typedef
 name|struct
-name|_GimpPreviewClass
-name|GimpPreviewClass
+name|_GimpViewClass
+name|GimpViewClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpPreview
+DECL|struct|_GimpView
 struct|struct
-name|_GimpPreview
+name|_GimpView
 block|{
 DECL|member|parent_instance
 name|GtkWidget
@@ -146,9 +146,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpPreviewClass
+DECL|struct|_GimpViewClass
 struct|struct
-name|_GimpPreviewClass
+name|_GimpViewClass
 block|{
 DECL|member|parent_class
 name|GtkWidgetClass
@@ -162,9 +162,9 @@ modifier|*
 name|clicked
 function_decl|)
 parameter_list|(
-name|GimpPreview
+name|GimpView
 modifier|*
-name|preview
+name|view
 parameter_list|,
 name|GdkModifierType
 name|modifier_state
@@ -177,9 +177,9 @@ modifier|*
 name|double_clicked
 function_decl|)
 parameter_list|(
-name|GimpPreview
+name|GimpView
 modifier|*
-name|preview
+name|view
 parameter_list|)
 function_decl|;
 DECL|member|context
@@ -189,9 +189,9 @@ modifier|*
 name|context
 function_decl|)
 parameter_list|(
-name|GimpPreview
+name|GimpView
 modifier|*
-name|preview
+name|view
 parameter_list|)
 function_decl|;
 block|}
@@ -200,7 +200,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_preview_get_type
+name|gimp_view_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -211,7 +211,7 @@ end_decl_stmt
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_preview_new
+name|gimp_view_new
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -232,7 +232,7 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_preview_new_full
+name|gimp_view_new_full
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -262,10 +262,10 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_preview_new_by_types
+name|gimp_view_new_by_types
 parameter_list|(
 name|GType
-name|preview_type
+name|view_type
 parameter_list|,
 name|GType
 name|viewable_type
@@ -285,10 +285,10 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_preview_new_full_by_types
+name|gimp_view_new_full_by_types
 parameter_list|(
 name|GType
-name|preview_type
+name|view_type
 parameter_list|,
 name|GType
 name|viewable_type
@@ -316,11 +316,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_preview_set_viewable
+name|gimp_view_set_viewable
 parameter_list|(
-name|GimpPreview
+name|GimpView
 modifier|*
-name|preview
+name|view
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -331,11 +331,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_preview_set_expand
+name|gimp_view_set_expand
 parameter_list|(
-name|GimpPreview
+name|GimpView
 modifier|*
-name|preview
+name|view
 parameter_list|,
 name|gboolean
 name|expand
@@ -349,7 +349,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_PREVIEW_H__ */
+comment|/* __GIMP_VIEW_H__ */
 end_comment
 
 end_unit

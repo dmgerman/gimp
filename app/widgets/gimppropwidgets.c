@@ -102,7 +102,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
+file|"gimpview.h"
 end_include
 
 begin_include
@@ -10728,9 +10728,9 @@ return|;
 block|}
 name|preview
 operator|=
-name|gimp_preview_new_by_types
+name|gimp_view_new_by_types
 argument_list|(
-name|GIMP_TYPE_PREVIEW
+name|GIMP_TYPE_VIEW
 argument_list|,
 name|param_spec
 operator|->
@@ -10784,9 +10784,9 @@ condition|(
 name|viewable
 condition|)
 block|{
-name|gimp_preview_set_viewable
+name|gimp_view_set_viewable
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|preview
 argument_list|)
@@ -10947,9 +10947,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_preview_set_viewable
+name|gimp_view_set_viewable
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|preview
 argument_list|)

@@ -126,7 +126,7 @@ name|gint
 name|visible_rows
 decl_stmt|;
 DECL|member|selected_item
-name|GimpPreview
+name|GimpView
 modifier|*
 name|selected_item
 decl_stmt|;

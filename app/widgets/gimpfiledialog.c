@@ -96,7 +96,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
+file|"gimpview.h"
 end_include
 
 begin_include
@@ -1835,7 +1835,7 @@ directive|ifdef
 name|ENABLE_FILE_SYSTEM_ICONS
 name|GIMP_PREVIEW_RENDERER_IMAGEFILE
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|GIMP_THUMB_BOX
 argument_list|(

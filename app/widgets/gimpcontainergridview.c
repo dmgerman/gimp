@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
+file|"gimpview.h"
 end_include
 
 begin_include
@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c25bb1a0103
+DECL|enum|__anon2b17f4400103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -1050,7 +1050,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_container_grid_view_new (GimpContainer * container,GimpContext * context,gint preview_size,gint preview_border_width)
+DECL|function|gimp_container_grid_view_new (GimpContainer * container,GimpContext * context,gint view_size,gint view_border_width)
 name|gimp_container_grid_view_new
 parameter_list|(
 name|GimpContainer
@@ -1062,10 +1062,10 @@ modifier|*
 name|context
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|,
 name|gint
-name|preview_border_width
+name|view_border_width
 parameter_list|)
 block|{
 name|GimpContainerGridView
@@ -1106,11 +1106,11 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|preview_size
+name|view_size
 operator|>
 literal|0
 operator|&&
-name|preview_size
+name|view_size
 operator|<=
 name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
@@ -1119,11 +1119,11 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|preview_border_width
+name|view_border_width
 operator|>=
 literal|0
 operator|&&
-name|preview_border_width
+name|view_border_width
 operator|<=
 name|GIMP_PREVIEW_MAX_BORDER_WIDTH
 argument_list|,
@@ -1150,9 +1150,9 @@ name|gimp_container_view_set_preview_size
 argument_list|(
 name|view
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
-name|preview_border_width
+name|view_border_width
 argument_list|)
 expr_stmt|;
 if|if
@@ -1799,7 +1799,7 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_preview_new_full
+name|gimp_view_new_full
 argument_list|(
 name|viewable
 argument_list|,
@@ -1818,7 +1818,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_renderer_set_border_type
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|preview
 argument_list|)
@@ -1830,7 +1830,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_renderer_remove_idle
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|preview
 argument_list|)
@@ -2300,11 +2300,11 @@ operator|->
 name|next
 control|)
 block|{
-name|GimpPreview
+name|GimpView
 modifier|*
-name|preview
+name|view
 init|=
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|child
 operator|->
@@ -2313,13 +2313,13 @@ argument_list|)
 decl_stmt|;
 name|gimp_preview_renderer_set_size
 argument_list|(
-name|preview
+name|view
 operator|->
 name|renderer
 argument_list|,
 name|preview_size
 argument_list|,
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -2398,7 +2398,7 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|widget
 argument_list|)
@@ -2434,7 +2434,7 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|widget
 argument_list|)
@@ -2474,7 +2474,7 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|widget
 argument_list|)
@@ -2490,7 +2490,7 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|widget
 argument_list|)
@@ -2547,7 +2547,7 @@ name|GimpContainer
 modifier|*
 name|container
 decl_stmt|;
-name|GimpPreview
+name|GimpView
 modifier|*
 name|preview
 init|=
@@ -2566,7 +2566,7 @@ name|insert_data
 condition|)
 name|preview
 operator|=
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|insert_data
 argument_list|)
@@ -3009,7 +3009,7 @@ operator|->
 name|selected_item
 condition|)
 block|{
-name|GimpPreview
+name|GimpView
 modifier|*
 name|preview
 init|=

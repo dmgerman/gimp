@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2793efdf0103
+DECL|enum|__anon2b0b58920103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -290,7 +290,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GimpPreviewClass
+name|GimpViewClass
 modifier|*
 name|parent_class
 init|=
@@ -364,7 +364,7 @@ name|preview_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GIMP_TYPE_PREVIEW
+name|GIMP_TYPE_VIEW
 argument_list|,
 literal|"GimpNavigationPreview"
 argument_list|,
@@ -862,7 +862,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|widget
 argument_list|)
@@ -963,9 +963,9 @@ name|gint
 name|ty
 parameter_list|)
 block|{
-name|GimpPreview
+name|GimpView
 modifier|*
-name|preview
+name|view
 decl_stmt|;
 name|GimpImage
 modifier|*
@@ -981,9 +981,9 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|preview
+name|view
 operator|=
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|nav_preview
 argument_list|)
@@ -991,7 +991,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -1006,7 +1006,7 @@ name|tx
 argument_list|,
 literal|0
 argument_list|,
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -1025,7 +1025,7 @@ name|ty
 argument_list|,
 literal|0
 argument_list|,
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -1040,7 +1040,7 @@ name|gimage
 operator|=
 name|GIMP_IMAGE
 argument_list|(
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -1050,7 +1050,7 @@ expr_stmt|;
 comment|/*  transform to image coordinates  */
 if|if
 condition|(
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -1076,7 +1076,7 @@ literal|1.0
 operator|)
 operator|/
 operator|(
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -1095,7 +1095,7 @@ literal|1.0
 expr_stmt|;
 if|if
 condition|(
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -1121,7 +1121,7 @@ literal|1.0
 operator|)
 operator|/
 operator|(
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -1152,7 +1152,7 @@ name|ratioy
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|preview
+name|view
 argument_list|,
 name|preview_signals
 index|[
@@ -1231,7 +1231,7 @@ argument_list|)
 expr_stmt|;
 name|window
 operator|=
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|nav_preview
 argument_list|)
@@ -1429,7 +1429,7 @@ argument_list|)
 expr_stmt|;
 name|gdk_window_set_cursor
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|widget
 argument_list|)
@@ -1708,9 +1708,9 @@ name|GimpNavigationPreview
 modifier|*
 name|nav_preview
 decl_stmt|;
-name|GimpPreview
+name|GimpView
 modifier|*
-name|preview
+name|view
 decl_stmt|;
 name|gint
 name|tx
@@ -1727,9 +1727,9 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
-name|preview
+name|view
 operator|=
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|widget
 argument_list|)
@@ -1775,7 +1775,7 @@ name|nav_preview
 operator|->
 name|p_width
 operator|==
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -1785,7 +1785,7 @@ name|nav_preview
 operator|->
 name|p_height
 operator|==
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -1794,7 +1794,7 @@ condition|)
 block|{
 name|gdk_window_set_cursor
 argument_list|(
-name|preview
+name|view
 operator|->
 name|event_window
 argument_list|,
@@ -1873,7 +1873,7 @@ expr_stmt|;
 block|}
 name|gdk_window_set_cursor
 argument_list|(
-name|preview
+name|view
 operator|->
 name|event_window
 argument_list|,
@@ -1891,7 +1891,7 @@ return|;
 block|}
 name|gdk_window_get_pointer
 argument_list|(
-name|preview
+name|view
 operator|->
 name|event_window
 argument_list|,
@@ -2057,9 +2057,9 @@ modifier|*
 name|nav_preview
 parameter_list|)
 block|{
-name|GimpPreview
+name|GimpView
 modifier|*
-name|preview
+name|view
 decl_stmt|;
 name|GimpImage
 modifier|*
@@ -2070,9 +2070,9 @@ name|ratiox
 decl_stmt|,
 name|ratioy
 decl_stmt|;
-name|preview
+name|view
 operator|=
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|nav_preview
 argument_list|)
@@ -2081,7 +2081,7 @@ name|gimage
 operator|=
 name|GIMP_IMAGE
 argument_list|(
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -2094,7 +2094,7 @@ operator|(
 operator|(
 name|gdouble
 operator|)
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -2114,7 +2114,7 @@ operator|(
 operator|(
 name|gdouble
 operator|)
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -2198,20 +2198,20 @@ modifier|*
 name|area
 parameter_list|)
 block|{
-name|GimpPreview
+name|GimpView
 modifier|*
-name|preview
+name|view
 decl_stmt|;
-name|preview
+name|view
 operator|=
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|nav_preview
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -2234,7 +2234,7 @@ name|gimage
 operator|=
 name|GIMP_IMAGE
 argument_list|(
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -2278,7 +2278,7 @@ name|widget
 init|=
 name|GTK_WIDGET
 argument_list|(
-name|preview
+name|view
 argument_list|)
 decl_stmt|;
 if|if
@@ -2393,9 +2393,9 @@ name|gdouble
 name|height
 parameter_list|)
 block|{
-name|GimpPreview
+name|GimpView
 modifier|*
-name|preview
+name|view
 decl_stmt|;
 name|GimpImage
 modifier|*
@@ -2409,16 +2409,16 @@ name|nav_preview
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|preview
+name|view
 operator|=
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|nav_preview
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -2429,7 +2429,7 @@ name|gimage
 operator|=
 name|GIMP_IMAGE
 argument_list|(
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -2441,7 +2441,7 @@ if|if
 condition|(
 name|GTK_WIDGET_DRAWABLE
 argument_list|(
-name|preview
+name|view
 argument_list|)
 condition|)
 name|gimp_navigation_preview_draw_marker
@@ -2557,7 +2557,7 @@ if|if
 condition|(
 name|GTK_WIDGET_DRAWABLE
 argument_list|(
-name|preview
+name|view
 argument_list|)
 condition|)
 name|gimp_navigation_preview_draw_marker

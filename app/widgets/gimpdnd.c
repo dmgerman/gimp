@@ -144,7 +144,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
+file|"gimpview.h"
 end_include
 
 begin_include
@@ -2181,7 +2181,7 @@ argument_list|,
 name|get_data_data
 argument_list|)
 expr_stmt|;
-comment|/*  remember the first set source type for drag preview creation  */
+comment|/*  remember the first set source type for drag view creation  */
 if|if
 condition|(
 operator|!
@@ -3842,7 +3842,7 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|preview
+name|view
 decl_stmt|;
 name|GimpViewable
 modifier|*
@@ -3871,9 +3871,9 @@ condition|)
 return|return
 name|NULL
 return|;
-name|preview
+name|view
 operator|=
-name|gimp_preview_new
+name|gimp_view_new
 argument_list|(
 name|viewable
 argument_list|,
@@ -3885,7 +3885,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 return|return
-name|preview
+name|view
 return|;
 block|}
 end_function

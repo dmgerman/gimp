@@ -108,7 +108,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
+file|"gimpview.h"
 end_include
 
 begin_include
@@ -133,7 +133,7 @@ end_define
 
 begin_comment
 DECL|macro|CELL_SIZE
-comment|/* The size of the preview cells */
+comment|/* The size of the view cells */
 end_comment
 
 begin_struct
@@ -900,7 +900,7 @@ argument_list|,
 name|CELL_SIZE
 argument_list|)
 expr_stmt|;
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|entry
 operator|->
@@ -1104,7 +1104,7 @@ argument_list|,
 name|CELL_SIZE
 argument_list|)
 expr_stmt|;
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|entry
 operator|->
@@ -1115,7 +1115,7 @@ name|clickable
 operator|=
 name|TRUE
 expr_stmt|;
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|entry
 operator|->
@@ -1191,7 +1191,7 @@ argument_list|,
 name|CELL_SIZE
 argument_list|)
 expr_stmt|;
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|entry
 operator|->
@@ -1202,7 +1202,7 @@ name|clickable
 operator|=
 name|TRUE
 expr_stmt|;
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|entry
 operator|->
@@ -1280,7 +1280,7 @@ operator|*
 name|CELL_SIZE
 argument_list|)
 expr_stmt|;
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|entry
 operator|->
@@ -1291,7 +1291,7 @@ name|clickable
 operator|=
 name|TRUE
 expr_stmt|;
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|entry
 operator|->

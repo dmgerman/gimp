@@ -116,7 +116,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
+file|"gimpview.h"
 end_include
 
 begin_include
@@ -209,7 +209,7 @@ DECL|macro|GRAD_PREVIEW_EVENT_MASK
 define|#
 directive|define
 name|GRAD_PREVIEW_EVENT_MASK
-value|(GDK_EXPOSURE_MASK            | \                                  GDK_LEAVE_NOTIFY_MASK        | \ 				 GDK_POINTER_MOTION_MASK      | \                                  GDK_POINTER_MOTION_HINT_MASK | \ 				 GDK_BUTTON_PRESS_MASK        | \                                  GDK_BUTTON_RELEASE_MASK)
+value|(GDK_EXPOSURE_MASK            | \                                  GDK_LEAVE_NOTIFY_MASK        | \                                  GDK_POINTER_MOTION_MASK      | \                                  GDK_POINTER_MOTION_HINT_MASK | \                                  GDK_BUTTON_PRESS_MASK        | \                                  GDK_BUTTON_RELEASE_MASK)
 end_define
 
 begin_define
@@ -217,7 +217,7 @@ DECL|macro|GRAD_CONTROL_EVENT_MASK
 define|#
 directive|define
 name|GRAD_CONTROL_EVENT_MASK
-value|(GDK_EXPOSURE_MASK            | \ 				 GDK_LEAVE_NOTIFY_MASK        | \ 				 GDK_POINTER_MOTION_MASK      | \ 				 GDK_POINTER_MOTION_HINT_MASK | \ 				 GDK_BUTTON_PRESS_MASK        | \ 				 GDK_BUTTON_RELEASE_MASK      | \ 				 GDK_BUTTON1_MOTION_MASK)
+value|(GDK_EXPOSURE_MASK            | \                                  GDK_LEAVE_NOTIFY_MASK        | \                                  GDK_POINTER_MOTION_MASK      | \                                  GDK_POINTER_MOTION_HINT_MASK | \                                  GDK_BUTTON_PRESS_MASK        | \                                  GDK_BUTTON_RELEASE_MASK      | \                                  GDK_BUTTON1_MOTION_MASK)
 end_define
 
 begin_comment
@@ -1099,9 +1099,9 @@ name|editor
 operator|->
 name|preview
 operator|=
-name|gimp_preview_new_full_by_types
+name|gimp_view_new_full_by_types
 argument_list|(
-name|GIMP_TYPE_PREVIEW
+name|GIMP_TYPE_VIEW
 argument_list|,
 name|GIMP_TYPE_GRADIENT
 argument_list|,
@@ -1138,9 +1138,9 @@ argument_list|,
 name|GRAD_PREVIEW_EVENT_MASK
 argument_list|)
 expr_stmt|;
-name|gimp_preview_set_expand
+name|gimp_view_set_expand
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
@@ -2109,9 +2109,9 @@ argument_list|,
 name|gradient_editor
 argument_list|)
 expr_stmt|;
-name|gimp_preview_set_viewable
+name|gimp_view_set_viewable
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|gradient_editor
 operator|->
@@ -2569,7 +2569,7 @@ name|renderer
 operator|=
 name|GIMP_PREVIEW_RENDERER_GRADIENT
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->

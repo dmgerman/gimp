@@ -84,7 +84,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
+file|"gimpview.h"
 end_include
 
 begin_include
@@ -998,7 +998,7 @@ name|screen
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|preview
+name|view
 decl_stmt|;
 name|gint
 name|width
@@ -1032,7 +1032,7 @@ operator|&
 name|height
 argument_list|)
 expr_stmt|;
-name|preview
+name|view
 operator|=
 name|gimp_prop_preview_new
 argument_list|(
@@ -1046,9 +1046,9 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
-name|preview
+name|view
 argument_list|)
 operator|->
 name|renderer
@@ -1060,9 +1060,9 @@ literal|1
 expr_stmt|;
 name|gimp_preview_renderer_set_size_full
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
-name|preview
+name|view
 argument_list|)
 operator|->
 name|renderer
@@ -1075,7 +1075,7 @@ literal|0
 argument_list|)
 expr_stmt|;
 return|return
-name|preview
+name|view
 return|;
 block|}
 end_function

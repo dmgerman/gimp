@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpstringaction.h"
 end_include
 
@@ -89,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28add52d0103
+DECL|enum|__anon2910a7aa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

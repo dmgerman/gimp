@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
+file|"gimpview.h"
 end_include
 
 begin_include
@@ -621,7 +621,7 @@ name|frame
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|preview
+name|view
 decl_stmt|;
 name|GdkScreen
 modifier|*
@@ -713,9 +713,9 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|preview
+name|view
 operator|=
-name|gimp_preview_new_full
+name|gimp_view_new_full
 argument_list|(
 name|popup
 operator|->
@@ -740,9 +740,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_renderer_set_dot_for_dot
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
-name|preview
+name|view
 argument_list|)
 operator|->
 name|renderer
@@ -759,12 +759,12 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 name|gdk_window_get_origin

@@ -689,7 +689,7 @@ name|view
 operator|->
 name|preview
 operator|=
-name|gimp_preview_new_by_types
+name|gimp_view_new_by_types
 argument_list|(
 name|GIMP_TYPE_NAVIGATION_PREVIEW
 argument_list|,
@@ -1152,9 +1152,9 @@ operator|->
 name|shell
 condition|)
 block|{
-name|gimp_preview_set_viewable
+name|gimp_view_set_viewable
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|view
 operator|->
@@ -1231,9 +1231,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_preview_set_viewable
+name|gimp_view_set_viewable
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|view
 operator|->
@@ -1585,7 +1585,7 @@ argument_list|(
 name|screen
 argument_list|)
 operator|-
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|preview
 argument_list|)
@@ -1618,7 +1618,7 @@ argument_list|(
 name|screen
 argument_list|)
 operator|-
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|preview
 argument_list|)
@@ -1779,11 +1779,11 @@ condition|(
 name|popup
 condition|)
 block|{
-name|GimpPreview
+name|GimpView
 modifier|*
 name|preview
 init|=
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|view
 operator|->
@@ -1827,9 +1827,9 @@ argument_list|,
 name|GIMP_PREVIEW_SIZE_HUGE
 argument_list|)
 expr_stmt|;
-name|gimp_preview_set_expand
+name|gimp_view_set_expand
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|view
 operator|->
@@ -2205,7 +2205,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_renderer_set_background
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|view
 operator|->
@@ -2981,9 +2981,9 @@ modifier|*
 name|view
 parameter_list|)
 block|{
-name|gimp_preview_set_viewable
+name|gimp_view_set_viewable
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|view
 operator|->
@@ -3026,7 +3026,7 @@ name|yratio
 decl_stmt|;
 name|renderer
 operator|=
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|view
 operator|->

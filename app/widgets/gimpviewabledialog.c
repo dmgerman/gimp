@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
+file|"gimpview.h"
 end_include
 
 begin_include
@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb07a090103
+DECL|enum|__anon27b1d57a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1149,7 +1149,7 @@ name|old_viewable
 decl_stmt|;
 name|old_viewable
 operator|=
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|dialog
 operator|->
@@ -1227,7 +1227,7 @@ name|dialog
 operator|->
 name|preview
 operator|=
-name|gimp_preview_new
+name|gimp_view_new
 argument_list|(
 name|viewable
 argument_list|,

@@ -137,7 +137,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
+file|"gimpview.h"
 end_include
 
 begin_include
@@ -479,9 +479,9 @@ name|editor
 operator|->
 name|preview
 operator|=
-name|gimp_preview_new_by_types
+name|gimp_view_new_by_types
 argument_list|(
-name|GIMP_TYPE_PREVIEW
+name|GIMP_TYPE_VIEW
 argument_list|,
 name|GIMP_TYPE_SELECTION
 argument_list|,
@@ -494,7 +494,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_renderer_set_background
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
@@ -517,9 +517,9 @@ argument_list|,
 name|GIMP_PREVIEW_SIZE_HUGE
 argument_list|)
 expr_stmt|;
-name|gimp_preview_set_expand
+name|gimp_view_set_expand
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
@@ -865,9 +865,9 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
-name|gimp_preview_set_viewable
+name|gimp_view_set_viewable
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
@@ -886,9 +886,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_preview_set_viewable
+name|gimp_view_set_viewable
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
@@ -1062,7 +1062,7 @@ name|TRUE
 return|;
 name|renderer
 operator|=
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
@@ -1462,7 +1462,7 @@ parameter_list|)
 block|{
 name|gimp_preview_renderer_invalidate
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->

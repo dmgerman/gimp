@@ -858,15 +858,15 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/*  previews  */
+comment|/*  views  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpPreview
+DECL|typedef|GimpView
 typedef|typedef
 name|struct
-name|_GimpPreview
-name|GimpPreview
+name|_GimpView
+name|GimpView
 typedef|;
 end_typedef
 
@@ -880,7 +880,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/*  preview rednerers  */
+comment|/*  preview renderers  */
 end_comment
 
 begin_typedef

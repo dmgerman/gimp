@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimppreview.h"
+file|"widgets/gimpview.h"
 end_include
 
 begin_include
@@ -618,9 +618,9 @@ name|layer_select
 operator|->
 name|preview
 operator|=
-name|gimp_preview_new_by_types
+name|gimp_view_new_by_types
 argument_list|(
-name|GIMP_TYPE_PREVIEW
+name|GIMP_TYPE_VIEW
 argument_list|,
 name|GIMP_TYPE_LAYER
 argument_list|,
@@ -631,9 +631,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_preview_set_viewable
+name|gimp_view_set_viewable
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|layer_select
 operator|->
@@ -930,9 +930,9 @@ condition|(
 name|current_layer
 condition|)
 block|{
-name|gimp_preview_set_viewable
+name|gimp_view_set_viewable
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|layer_select
 operator|->

@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
+file|"gimpview.h"
 end_include
 
 begin_include
@@ -70,18 +70,18 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
-DECL|macro|BRUSH_PREVIEW_WIDTH
+DECL|macro|BRUSH_VIEW_WIDTH
 define|#
 directive|define
-name|BRUSH_PREVIEW_WIDTH
+name|BRUSH_VIEW_WIDTH
 value|128
 end_define
 
 begin_define
-DECL|macro|BRUSH_PREVIEW_HEIGHT
+DECL|macro|BRUSH_VIEW_HEIGHT
 define|#
 directive|define
-name|BRUSH_PREVIEW_HEIGHT
+name|BRUSH_VIEW_HEIGHT
 value|96
 end_define
 
@@ -371,15 +371,15 @@ name|editor
 operator|->
 name|preview
 operator|=
-name|gimp_preview_new_full_by_types
+name|gimp_view_new_full_by_types
 argument_list|(
-name|GIMP_TYPE_PREVIEW
+name|GIMP_TYPE_VIEW
 argument_list|,
 name|GIMP_TYPE_BRUSH
 argument_list|,
-name|BRUSH_PREVIEW_WIDTH
+name|BRUSH_VIEW_WIDTH
 argument_list|,
-name|BRUSH_PREVIEW_HEIGHT
+name|BRUSH_VIEW_HEIGHT
 argument_list|,
 literal|0
 argument_list|,
@@ -396,14 +396,14 @@ name|editor
 operator|->
 name|preview
 argument_list|,
-name|BRUSH_PREVIEW_WIDTH
+name|BRUSH_VIEW_WIDTH
 argument_list|,
-name|BRUSH_PREVIEW_HEIGHT
+name|BRUSH_VIEW_HEIGHT
 argument_list|)
 expr_stmt|;
-name|gimp_preview_set_expand
+name|gimp_view_set_expand
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
@@ -1019,9 +1019,9 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
-name|gimp_preview_set_viewable
+name|gimp_view_set_viewable
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|brush_editor
 operator|->

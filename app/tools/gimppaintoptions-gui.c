@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimppreview.h"
+file|"widgets/gimpview.h"
 end_include
 
 begin_include
@@ -272,9 +272,9 @@ name|GParamSpec
 modifier|*
 name|pspec
 parameter_list|,
-name|GimpPreview
+name|GimpView
 modifier|*
-name|preview
+name|view
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -898,7 +898,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|preview
 argument_list|)
@@ -2240,7 +2240,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_options_reverse_notify (GimpPaintOptions * paint_options,GParamSpec * pspec,GimpPreview * preview)
+DECL|function|gradient_options_reverse_notify (GimpPaintOptions * paint_options,GParamSpec * pspec,GimpView * view)
 name|gradient_options_reverse_notify
 parameter_list|(
 name|GimpPaintOptions
@@ -2251,9 +2251,9 @@ name|GParamSpec
 modifier|*
 name|pspec
 parameter_list|,
-name|GimpPreview
+name|GimpView
 modifier|*
-name|preview
+name|view
 parameter_list|)
 block|{
 name|GimpPreviewRendererGradient
@@ -2264,7 +2264,7 @@ name|rendergrad
 operator|=
 name|GIMP_PREVIEW_RENDERER_GRADIENT
 argument_list|(
-name|preview
+name|view
 operator|->
 name|renderer
 argument_list|)

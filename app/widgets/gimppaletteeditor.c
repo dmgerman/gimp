@@ -131,12 +131,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpsessioninfo.h"
 end_include
 

@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
+file|"gimpview.h"
 end_include
 
 begin_include
@@ -914,7 +914,7 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|preview
 argument_list|)
@@ -928,7 +928,7 @@ literal|1
 expr_stmt|;
 name|gimp_preview_renderer_set_size_full
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_VIEW
 argument_list|(
 name|preview
 argument_list|)

@@ -84,7 +84,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
+file|"gimpview.h"
 end_include
 
 begin_define
@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28edb2fe0103
+DECL|enum|__anon2a1c7e520103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -1569,7 +1569,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|GIMP_IS_PREVIEW
+name|GIMP_IS_VIEW
 argument_list|(
 name|tab_widget
 argument_list|)
@@ -1930,7 +1930,7 @@ name|frame
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|preview
+name|view
 decl_stmt|;
 name|dockable
 operator|=
@@ -1978,7 +1978,7 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|preview
+name|view
 operator|=
 name|gimp_dockable_get_tab_widget
 argument_list|(
@@ -2000,12 +2000,12 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -82,7 +82,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
+file|"gimpview.h"
 end_include
 
 begin_include
@@ -1406,7 +1406,7 @@ name|box
 operator|->
 name|preview
 operator|=
-name|gimp_preview_new
+name|gimp_view_new
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
