@@ -581,7 +581,7 @@ block|}
 block|,
 name|MENU_SEPARATOR
 argument_list|(
-literal|"/---"
+literal|"/properties-separator"
 argument_list|)
 block|,
 name|MENU_BRANCH
@@ -948,6 +948,14 @@ literal|1
 decl_stmt|;
 name|GimpTabStyle
 name|tab_style
+init|=
+operator|-
+literal|1
+decl_stmt|;
+name|gint
+name|n_pages
+init|=
+literal|0
 decl_stmt|;
 if|if
 condition|(
@@ -1178,6 +1186,16 @@ name|dockable
 operator|->
 name|tab_style
 expr_stmt|;
+name|n_pages
+operator|=
+name|gtk_notebook_get_n_pages
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|dockbook
+argument_list|)
+argument_list|)
+expr_stmt|;
 DECL|macro|SET_ACTIVE (path,active)
 define|#
 directive|define
@@ -1211,6 +1229,25 @@ name|sensitive
 parameter_list|)
 define|\
 value|gimp_item_factory_set_sensitive (factory, (path), (sensitive) != 0)
+name|SET_VISIBLE
+argument_list|(
+literal|"/properties-separator"
+argument_list|,
+name|preview_size
+operator|!=
+operator|-
+literal|1
+operator|||
+name|n_pages
+operator|>
+literal|1
+operator|||
+name|view_type
+operator|!=
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 name|SET_VISIBLE
 argument_list|(
 literal|"/Preview Size"
@@ -1373,6 +1410,38 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|SET_VISIBLE
+argument_list|(
+literal|"/Tab Style"
+argument_list|,
+name|n_pages
+operator|>
+literal|1
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|n_pages
+operator|>
+literal|1
+condition|)
+block|{
+name|GimpDockedInterface
+modifier|*
+name|docked_iface
+decl_stmt|;
+name|docked_iface
+operator|=
+name|GIMP_DOCKED_GET_INTERFACE
+argument_list|(
+name|GTK_BIN
+argument_list|(
+name|dockable
+argument_list|)
+operator|->
+name|child
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|tab_style
@@ -1446,15 +1515,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Tab Style/Current Status"
 argument_list|,
-name|GIMP_DOCKED_GET_INTERFACE
-argument_list|(
-name|GTK_BIN
-argument_list|(
-name|dockable
-argument_list|)
-operator|->
-name|child
-argument_list|)
+name|docked_iface
 operator|->
 name|get_preview
 argument_list|)
@@ -1463,19 +1524,12 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Tab Style/Status& Text"
 argument_list|,
-name|GIMP_DOCKED_GET_INTERFACE
-argument_list|(
-name|GTK_BIN
-argument_list|(
-name|dockable
-argument_list|)
-operator|->
-name|child
-argument_list|)
+name|docked_iface
 operator|->
 name|get_preview
 argument_list|)
 expr_stmt|;
+block|}
 name|SET_VISIBLE
 argument_list|(
 literal|"/View as Grid"
@@ -1550,6 +1604,17 @@ name|dock
 argument_list|)
 condition|)
 block|{
+name|GimpImageDock
+modifier|*
+name|image_dock
+init|=
+name|GIMP_IMAGE_DOCK
+argument_list|(
+name|dockbook
+operator|->
+name|dock
+argument_list|)
+decl_stmt|;
 name|SET_VISIBLE
 argument_list|(
 literal|"/image-menu-separator"
@@ -1575,12 +1640,7 @@ name|SET_ACTIVE
 argument_list|(
 literal|"/Show Image Menu"
 argument_list|,
-name|GIMP_IMAGE_DOCK
-argument_list|(
-name|dockbook
-operator|->
-name|dock
-argument_list|)
+name|image_dock
 operator|->
 name|show_image_menu
 argument_list|)
@@ -1589,12 +1649,7 @@ name|SET_ACTIVE
 argument_list|(
 literal|"/Auto Follow Active Image"
 argument_list|,
-name|GIMP_IMAGE_DOCK
-argument_list|(
-name|dockbook
-operator|->
-name|dock
-argument_list|)
+name|image_dock
 operator|->
 name|auto_follow_active
 argument_list|)
