@@ -121,7 +121,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gint
 name|gimp_chain_button_draw_lines
 parameter_list|(
 name|GtkWidget
@@ -880,13 +880,6 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|gcb
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
 name|GIMP_IS_CHAIN_BUTTON
 argument_list|(
 name|gcb
@@ -981,15 +974,6 @@ modifier|*
 name|gcb
 parameter_list|)
 block|{
-name|g_return_val_if_fail
-argument_list|(
-name|gcb
-operator|!=
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_CHAIN_BUTTON
@@ -1192,13 +1176,6 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|gcb
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
 name|GIMP_IS_CHAIN_BUTTON
 argument_list|(
 name|gcb
@@ -1276,7 +1253,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gint
 DECL|function|gimp_chain_button_draw_lines (GtkWidget * widget,GdkEvent * event,GimpChainButton * gcb)
 name|gimp_chain_button_draw_lines
 parameter_list|(
@@ -1314,44 +1291,17 @@ directive|define
 name|SHORT_LINE
 value|4
 comment|/* don't set this too high, there's no check against drawing outside       the widgets bounds yet (and probably never will be) */
-name|g_return_if_fail
-argument_list|(
-name|gcb
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_CHAIN_BUTTON
 argument_list|(
 name|gcb
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|gdk_window_clear_area
-argument_list|(
-name|widget
-operator|->
-name|window
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|widget
-operator|->
-name|allocation
-operator|.
-name|width
-argument_list|,
-name|widget
-operator|->
-name|allocation
-operator|.
-name|height
-argument_list|)
-expr_stmt|;
+comment|/*   gdk_window_clear_area (widget->window, 			 0, 0, 			 widget->allocation.width, 			 widget->allocation.height);   */
 name|points
 index|[
 literal|0
@@ -1741,7 +1691,9 @@ name|GTK_SHADOW_ETCHED_IN
 expr_stmt|;
 break|break;
 default|default:
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 if|if
 condition|(
@@ -1821,6 +1773,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 

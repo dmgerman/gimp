@@ -2354,7 +2354,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2e9b480108
+DECL|struct|__anon279cdc890108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -2909,9 +2909,17 @@ argument_list|(
 name|sizeentry
 argument_list|)
 argument_list|,
+operator|(
 name|update_policy
 operator|==
 name|GIMP_SIZE_ENTRY_UPDATE_RESOLUTION
+operator|)
+operator|||
+operator|(
+name|menu_show_pixels
+operator|==
+name|FALSE
+operator|)
 condition|?
 name|GIMP_UNIT_INCH
 else|:
@@ -3227,7 +3235,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2e9b480208
+DECL|struct|__anon279cdc890208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
