@@ -75,6 +75,10 @@ name|PaletteSelect
 modifier|*
 name|palette_select_new
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -84,6 +88,11 @@ specifier|const
 name|gchar
 modifier|*
 name|initial_palette
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|callback_name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -108,7 +117,9 @@ name|GtkWidget
 modifier|*
 name|palette_dialog_create
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

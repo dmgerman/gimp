@@ -220,30 +220,13 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_decl_stmt
-DECL|variable|the_gimp
-name|Gimp
-modifier|*
-name|the_gimp
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
+begin_comment
+comment|/*  local prototypes  */
+end_comment
 
-begin_decl_stmt
-DECL|variable|is_app_exit_finish_done
-specifier|static
-name|gboolean
-name|is_app_exit_finish_done
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
-begin_function
+begin_function_decl
 specifier|static
 name|void
-DECL|function|app_init_update_status (const gchar * text1,const gchar * text2,gdouble percentage)
 name|app_init_update_status
 parameter_list|(
 specifier|const
@@ -259,28 +242,36 @@ parameter_list|,
 name|gdouble
 name|percentage
 parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|no_interface
-operator|&&
-operator|!
-name|no_splash
-condition|)
-block|{
-name|splash_update
-argument_list|(
-name|text1
-argument_list|,
-name|text2
-argument_list|,
-name|percentage
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-end_function
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|app_exit_finish
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  global variables  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|the_gimp
+name|Gimp
+modifier|*
+name|the_gimp
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  public functions  */
+end_comment
 
 begin_function
 name|void
@@ -311,6 +302,8 @@ operator|=
 name|gimp_new
 argument_list|(
 name|be_verbose
+argument_list|,
+name|no_data
 argument_list|)
 expr_stmt|;
 comment|/*  Check if the user's gimp_directory exists    */
@@ -521,6 +514,8 @@ expr_stmt|;
 name|gui_restore
 argument_list|(
 name|the_gimp
+argument_list|,
+name|restore_session
 argument_list|)
 expr_stmt|;
 block|}
@@ -569,6 +564,9 @@ name|the_gimp
 argument_list|)
 expr_stmt|;
 block|}
+name|gtk_main
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 
@@ -594,7 +592,12 @@ operator|!
 name|no_interface
 condition|)
 name|gui_really_quit_dialog
-argument_list|()
+argument_list|(
+name|G_CALLBACK
+argument_list|(
+name|app_exit_finish
+argument_list|)
+argument_list|)
 expr_stmt|;
 else|else
 name|app_exit_finish
@@ -603,7 +606,54 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  private functions  */
+end_comment
+
 begin_function
+specifier|static
+name|void
+DECL|function|app_init_update_status (const gchar * text1,const gchar * text2,gdouble percentage)
+name|app_init_update_status
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|text1
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|text2
+parameter_list|,
+name|gdouble
+name|percentage
+parameter_list|)
+block|{
+if|if
+condition|(
+operator|!
+name|no_interface
+operator|&&
+operator|!
+name|no_splash
+condition|)
+block|{
+name|splash_update
+argument_list|(
+name|text1
+argument_list|,
+name|text2
+argument_list|,
+name|percentage
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+specifier|static
 name|void
 DECL|function|app_exit_finish (void)
 name|app_exit_finish
@@ -611,16 +661,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-if|if
-condition|(
-name|app_exit_finish_done
-argument_list|()
-condition|)
-return|return;
-name|is_app_exit_finish_done
-operator|=
-name|TRUE
-expr_stmt|;
 name|message_handler
 operator|=
 name|CONSOLE
@@ -683,20 +723,6 @@ argument_list|(
 literal|0
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|gboolean
-DECL|function|app_exit_finish_done (void)
-name|app_exit_finish_done
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|is_app_exit_finish_done
-return|;
 block|}
 end_function
 

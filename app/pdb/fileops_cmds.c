@@ -104,19 +104,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file-open.h"
+file|"file/file-open.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"file-save.h"
+file|"file/file-save.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"file-utils.h"
+file|"file/file-utils.h"
 end_include
 
 begin_include

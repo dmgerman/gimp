@@ -198,18 +198,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -460,22 +448,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  global variables  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|GSList
-modifier|*
-name|display_list
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  from gdisplay.c  */
-end_comment
-
-begin_comment
 comment|/*  private variables  */
 end_comment
 
@@ -589,18 +561,18 @@ name|gpointer
 name|loader_data
 parameter_list|)
 block|{
-name|GHashTable
+name|Gimp
 modifier|*
-name|hash
+name|gimp
 decl_stmt|;
 name|gchar
 modifier|*
 name|basename
 decl_stmt|;
-name|hash
+name|gimp
 operator|=
 operator|(
-name|GHashTable
+name|Gimp
 operator|*
 operator|)
 name|loader_data
@@ -614,6 +586,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp
+operator|->
 name|be_verbose
 condition|)
 name|g_print
@@ -630,7 +604,7 @@ argument_list|)
 expr_stmt|;
 name|g_hash_table_insert
 argument_list|(
-name|hash
+name|themes_hash
 argument_list|,
 name|basename
 argument_list|,
@@ -712,7 +686,7 @@ name|TYPE_DIRECTORY
 argument_list|,
 name|gui_themes_dir_foreach_func
 argument_list|,
-name|themes_hash
+name|gimp
 argument_list|)
 expr_stmt|;
 block|}
@@ -774,6 +748,8 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|gimp
+operator|->
 name|be_verbose
 condition|)
 name|g_print
@@ -806,6 +782,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp
+operator|->
 name|be_verbose
 condition|)
 name|g_print
@@ -866,16 +844,6 @@ operator|->
 name|gui_unset_busy_func
 operator|=
 name|gui_unset_busy
-expr_stmt|;
-if|if
-condition|(
-name|gimprc
-operator|.
-name|always_restore_session
-condition|)
-name|restore_session
-operator|=
-name|TRUE
 expr_stmt|;
 name|image_disconnect_handler_id
 operator|=
@@ -1128,12 +1096,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gui_restore (Gimp * gimp)
+DECL|function|gui_restore (Gimp * gimp,gboolean restore_session)
 name|gui_restore
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|restore_session
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1170,6 +1141,10 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
+name|gimprc
+operator|.
+name|always_restore_session
+operator|||
 name|restore_session
 condition|)
 name|session_restore
@@ -1299,7 +1274,9 @@ name|tool_options_dialog_free
 argument_list|()
 expr_stmt|;
 name|toolbox_free
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 name|gimp_help_free
 argument_list|()
@@ -1428,10 +1405,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|gui_really_quit_dialog (void)
+DECL|function|gui_really_quit_dialog (GCallback quit_func)
 name|gui_really_quit_dialog
 parameter_list|(
-name|void
+name|GCallback
+name|quit_func
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1482,7 +1460,7 @@ name|NULL
 argument_list|,
 name|gui_really_quit_callback
 argument_list|,
-name|NULL
+name|quit_func
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1496,6 +1474,15 @@ end_function
 begin_comment
 comment|/*  private functions  */
 end_comment
+
+begin_decl_stmt
+DECL|variable|double_speed
+name|gboolean
+name|double_speed
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
 
 begin_function
 specifier|static
@@ -1570,54 +1557,10 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
-name|GSList
-modifier|*
-name|list
-decl_stmt|;
-comment|/* Canvases */
-for|for
-control|(
-name|list
-operator|=
-name|display_list
-init|;
-name|list
-condition|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-control|)
-block|{
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-expr_stmt|;
-name|gdisplay_install_override_cursor
-argument_list|(
-name|gdisp
-argument_list|,
-name|GDK_WATCH
-argument_list|)
-expr_stmt|;
-block|}
-comment|/* Dialogs */
-name|gimp_dialog_factories_idle
+name|gdisplays_set_busy
 argument_list|()
 expr_stmt|;
-name|gdk_flush
+name|gimp_dialog_factories_idle
 argument_list|()
 expr_stmt|;
 block|}
@@ -1634,48 +1577,9 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
-name|GSList
-modifier|*
-name|list
-decl_stmt|;
-comment|/* Canvases */
-for|for
-control|(
-name|list
-operator|=
-name|display_list
-init|;
-name|list
-condition|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-control|)
-block|{
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|list
-operator|->
-name|data
+name|gdisplays_unset_busy
+argument_list|()
 expr_stmt|;
-name|gdisplay_remove_override_cursor
-argument_list|(
-name|gdisp
-argument_list|)
-expr_stmt|;
-block|}
-comment|/* Dialogs */
 name|gimp_dialog_factories_unidle
 argument_list|()
 expr_stmt|;
@@ -1922,12 +1826,25 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|GCallback
+name|quit_func
+decl_stmt|;
+name|quit_func
+operator|=
+name|G_CALLBACK
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|quit
 condition|)
 block|{
-name|app_exit_finish
+call|(
+modifier|*
+name|quit_func
+call|)
 argument_list|()
 expr_stmt|;
 block|}

@@ -96,18 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -186,6 +174,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|palette_select_dialog
+specifier|static
 name|PaletteSelect
 modifier|*
 name|palette_select_dialog
@@ -201,12 +190,24 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|palette_dialog_create (void)
+DECL|function|palette_dialog_create (Gimp * gimp)
 name|palette_dialog_create
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -217,6 +218,10 @@ name|palette_select_dialog
 operator|=
 name|palette_select_new
 argument_list|(
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -260,9 +265,13 @@ end_function
 begin_function
 name|PaletteSelect
 modifier|*
-DECL|function|palette_select_new (const gchar * title,const gchar * initial_palette)
+DECL|function|palette_select_new (Gimp * gimp,const gchar * title,const gchar * initial_palette,const gchar * callback_name)
 name|palette_select_new
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -272,6 +281,11 @@ specifier|const
 name|gchar
 modifier|*
 name|initial_palette
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|callback_name
 parameter_list|)
 block|{
 name|PaletteSelect
@@ -294,6 +308,16 @@ name|first_call
 init|=
 name|TRUE
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|psp
 operator|=
 name|g_new0
@@ -307,7 +331,10 @@ name|psp
 operator|->
 name|callback_name
 operator|=
-name|NULL
+name|g_strdup
+argument_list|(
+name|callback_name
+argument_list|)
 expr_stmt|;
 comment|/*  The shell and main vbox  */
 name|psp
@@ -391,7 +418,7 @@ name|context
 operator|=
 name|gimp_create_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|title
 argument_list|,
@@ -407,19 +434,21 @@ name|context
 operator|=
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 block|}
 if|if
 condition|(
+name|gimp
+operator|->
 name|no_data
 operator|&&
 name|first_call
 condition|)
 name|gimp_data_factory_data_init
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|palette_factory
 argument_list|,
@@ -450,7 +479,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|palette_factory
 operator|->
@@ -468,7 +497,7 @@ name|gimp_context_get_palette
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -484,7 +513,7 @@ name|gimp_context_get_palette
 argument_list|(
 name|gimp_get_standard_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -547,7 +576,7 @@ name|gimp_data_factory_view_new
 argument_list|(
 name|GIMP_VIEW_TYPE_LIST
 argument_list|,
-name|the_gimp
+name|gimp
 operator|->
 name|palette_factory
 argument_list|,

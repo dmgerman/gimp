@@ -155,6 +155,10 @@ DECL|member|be_verbose
 name|gboolean
 name|be_verbose
 decl_stmt|;
+DECL|member|no_data
+name|gboolean
+name|no_data
+decl_stmt|;
 DECL|member|create_display_func
 name|GimpCreateDisplayFunc
 name|create_display_func
@@ -358,6 +362,9 @@ name|gimp_new
 parameter_list|(
 name|gboolean
 name|be_verbose
+parameter_list|,
+name|gboolean
+name|no_data
 parameter_list|)
 function_decl|;
 end_function_decl

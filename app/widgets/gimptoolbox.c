@@ -235,16 +235,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
-name|toolbox_destroy
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|gint
 name|toolbox_delete
 parameter_list|(
@@ -574,21 +564,6 @@ expr_stmt|;
 return|return
 name|TRUE
 return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|toolbox_destroy (void)
-name|toolbox_destroy
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|app_exit_finish
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -1303,10 +1278,12 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|toolbox_create (void)
+DECL|function|toolbox_create (Gimp * gimp)
 name|toolbox_create
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|GimpContext
@@ -1333,11 +1310,21 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|context
 operator|=
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|window
@@ -1398,23 +1385,6 @@ argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|toolbox_delete
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|window
-argument_list|)
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|toolbox_destroy
 argument_list|)
 argument_list|,
 name|NULL
@@ -1801,12 +1771,22 @@ end_function
 
 begin_function
 name|void
-DECL|function|toolbox_free (void)
+DECL|function|toolbox_free (Gimp * gimp)
 name|toolbox_free
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|toolbox_shell

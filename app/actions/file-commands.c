@@ -60,6 +60,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-open.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"file/file-save.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -103,18 +115,6 @@ begin_include
 include|#
 directive|include
 file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file-open.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file-save.h"
 end_include
 
 begin_include

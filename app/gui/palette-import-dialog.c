@@ -142,7 +142,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e3c9fd0103
+DECL|enum|__anon2bac87930103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -305,7 +305,9 @@ parameter_list|)
 block|{
 comment|/*  Popup grad edit box ....  */
 name|gradient_dialog_create
-argument_list|()
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 block|}
 end_function

@@ -423,6 +423,12 @@ name|FALSE
 expr_stmt|;
 name|gimp
 operator|->
+name|no_data
+operator|=
+name|FALSE
+expr_stmt|;
+name|gimp
+operator|->
 name|create_display_func
 operator|=
 name|NULL
@@ -1138,11 +1144,14 @@ end_function
 begin_function
 name|Gimp
 modifier|*
-DECL|function|gimp_new (gboolean be_verbose)
+DECL|function|gimp_new (gboolean be_verbose,gboolean no_data)
 name|gimp_new
 parameter_list|(
 name|gboolean
 name|be_verbose
+parameter_list|,
+name|gboolean
+name|no_data
 parameter_list|)
 block|{
 name|Gimp
@@ -1163,6 +1172,16 @@ operator|->
 name|be_verbose
 operator|=
 name|be_verbose
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+name|gimp
+operator|->
+name|no_data
+operator|=
+name|no_data
 condition|?
 name|TRUE
 else|:

@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -259,6 +253,13 @@ name|data
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_decl_stmt
+specifier|extern
+name|gboolean
+name|double_speed
+decl_stmt|;
+end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|about_dialog

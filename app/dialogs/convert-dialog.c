@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a3bd0d0108
+DECL|struct|__anon29c39dfa0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -3152,6 +3152,8 @@ name|palette_select
 operator|=
 name|palette_select_new
 argument_list|(
+name|the_gimp
+argument_list|,
 name|_
 argument_list|(
 literal|"Select Custom Palette"
@@ -3163,6 +3165,8 @@ name|theCustomPalette
 argument_list|)
 operator|->
 name|name
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

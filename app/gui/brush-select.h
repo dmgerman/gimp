@@ -75,40 +75,22 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/*  list of active dialogs  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|GSList
-modifier|*
-name|brush_active_dialogs
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  the main brush dialog */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|BrushSelect
-modifier|*
-name|brush_select_dialog
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 name|BrushSelect
 modifier|*
 name|brush_select_new
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|title
 parameter_list|,
-comment|/*  These are the required initial vals 					   *  If init_name == NULL then use 					   *  current brush 					   */
+comment|/*  These are the required                                                 *   initial vals                                                 *  If init_name == NULL then use                                                 *  current brush                                                 */
+specifier|const
 name|gchar
 modifier|*
 name|init_name
@@ -121,6 +103,11 @@ name|init_spacing
 parameter_list|,
 name|gint
 name|init_mode
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|callback_name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -132,6 +119,19 @@ parameter_list|(
 name|BrushSelect
 modifier|*
 name|bsp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|BrushSelect
+modifier|*
+name|brush_select_get_by_callback
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|callback_name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -172,7 +172,9 @@ name|GtkWidget
 modifier|*
 name|brush_dialog_create
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

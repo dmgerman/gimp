@@ -331,15 +331,6 @@ name|CONSOLE
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|double_speed
-name|gboolean
-name|double_speed
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/*  *  argv processing:   *      Arguments are either switches, their associated  *      values, or image files.  As switches and their  *      associated values are processed, those slots in  *      the argv[] array are NULLed. We do this because  *      unparsed args are treated as images to load on  *      startup.  *  *      The GTK switches are processed first (X switches are  *      processed here, not by any X routines).  Then the  *      general GIMP switches are processed.  Any args  *      left are assumed to be image files the GIMP should  *      display.  *  *      The exception is the batch switch.  When this is  *      encountered, all remaining args are treated as batch  *      commands.  */
 end_comment
@@ -1582,6 +1573,17 @@ argument_list|)
 expr_stmt|;
 name|g_log_set_handler
 argument_list|(
+literal|"Gimp-Paint-Funcs"
+argument_list|,
+name|G_LOG_LEVEL_MESSAGE
+argument_list|,
+name|gimp_message_log_func
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_log_set_handler
+argument_list|(
 literal|"Gimp-Core"
 argument_list|,
 name|G_LOG_LEVEL_MESSAGE
@@ -1593,7 +1595,7 @@ argument_list|)
 expr_stmt|;
 name|g_log_set_handler
 argument_list|(
-literal|"Gimp-PDB"
+literal|"Gimp-File"
 argument_list|,
 name|G_LOG_LEVEL_MESSAGE
 argument_list|,
@@ -1605,6 +1607,17 @@ expr_stmt|;
 name|g_log_set_handler
 argument_list|(
 literal|"Gimp-XCF"
+argument_list|,
+name|G_LOG_LEVEL_MESSAGE
+argument_list|,
+name|gimp_message_log_func
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_log_set_handler
+argument_list|(
+literal|"Gimp-PDB"
 argument_list|,
 name|G_LOG_LEVEL_MESSAGE
 argument_list|,
@@ -1627,6 +1640,17 @@ expr_stmt|;
 name|g_log_set_handler
 argument_list|(
 literal|"Gimp-Tools"
+argument_list|,
+name|G_LOG_LEVEL_MESSAGE
+argument_list|,
+name|gimp_message_log_func
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_log_set_handler
+argument_list|(
+literal|"Gimp-Display"
 argument_list|,
 name|G_LOG_LEVEL_MESSAGE
 argument_list|,
@@ -1770,16 +1794,6 @@ name|argv
 operator|+
 literal|1
 argument_list|)
-expr_stmt|;
-comment|/* Main application loop */
-if|if
-condition|(
-operator|!
-name|app_exit_finish_done
-argument_list|()
-condition|)
-name|gtk_main
-argument_list|()
 expr_stmt|;
 return|return
 literal|0

@@ -142,6 +142,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-open.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file-dialog-utils.h"
 end_include
 
@@ -161,18 +173,6 @@ begin_include
 include|#
 directive|include
 file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file-open.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file-utils.h"
 end_include
 
 begin_include

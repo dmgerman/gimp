@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bc7f7d0103
+DECL|enum|__anon289accdf0103
 block|{
 DECL|enumerator|MESSAGE_BOX
 name|MESSAGE_BOX
@@ -38,7 +38,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bc7f7d0203
+DECL|enum|__anon289accdf0203
 block|{
 DECL|enumerator|STACK_TRACE_NEVER
 name|STACK_TRACE_NEVER
@@ -162,13 +162,6 @@ begin_decl_stmt
 specifier|extern
 name|MessageHandlerType
 name|message_handler
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gboolean
-name|double_speed
 decl_stmt|;
 end_decl_stmt
 

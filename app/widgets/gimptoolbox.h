@@ -21,7 +21,9 @@ name|GtkWidget
 modifier|*
 name|toolbox_create
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -30,7 +32,9 @@ begin_function_decl
 name|void
 name|toolbox_free
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
