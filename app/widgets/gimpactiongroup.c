@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4ba6f50103
+DECL|enum|__anon289b6eb80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1069,6 +1069,14 @@ operator|->
 name|user_data
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: remove this has as soon as we depend on GTK+ 2.4.3
+endif|#
+directive|endif
 if|if
 condition|(
 name|entries
@@ -1088,6 +1096,15 @@ name|accelerator
 index|[
 literal|0
 index|]
+operator|&&
+name|gtk_check_version
+argument_list|(
+literal|2
+argument_list|,
+literal|4
+argument_list|,
+literal|3
+argument_list|)
 condition|)
 name|gtk_action_group_add_action
 argument_list|(
@@ -1308,6 +1325,14 @@ operator|->
 name|user_data
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: remove this has as soon as we depend on GTK+ 2.4.3
+endif|#
+directive|endif
 if|if
 condition|(
 name|entries
@@ -1327,6 +1352,15 @@ name|accelerator
 index|[
 literal|0
 index|]
+operator|&&
+name|gtk_check_version
+argument_list|(
+literal|2
+argument_list|,
+literal|4
+argument_list|,
+literal|3
+argument_list|)
 condition|)
 name|gtk_action_group_add_action
 argument_list|(
@@ -1578,6 +1612,14 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: remove this has as soon as we depend on GTK+ 2.4.3
+endif|#
+directive|endif
 if|if
 condition|(
 name|entries
@@ -1597,6 +1639,15 @@ name|accelerator
 index|[
 literal|0
 index|]
+operator|&&
+name|gtk_check_version
+argument_list|(
+literal|2
+argument_list|,
+literal|4
+argument_list|,
+literal|3
+argument_list|)
 condition|)
 name|gtk_action_group_add_action
 argument_list|(
@@ -1824,6 +1875,14 @@ operator|->
 name|user_data
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: remove this has as soon as we depend on GTK+ 2.4.3
+endif|#
+directive|endif
 if|if
 condition|(
 name|entries
@@ -1843,6 +1902,15 @@ name|accelerator
 index|[
 literal|0
 index|]
+operator|&&
+name|gtk_check_version
+argument_list|(
+literal|2
+argument_list|,
+literal|4
+argument_list|,
+literal|3
+argument_list|)
 condition|)
 name|gtk_action_group_add_action
 argument_list|(
@@ -2051,6 +2119,14 @@ operator|->
 name|user_data
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: remove this has as soon as we depend on GTK+ 2.4.3
+endif|#
+directive|endif
 if|if
 condition|(
 name|entries
@@ -2070,6 +2146,15 @@ name|accelerator
 index|[
 literal|0
 index|]
+operator|&&
+name|gtk_check_version
+argument_list|(
+literal|2
+argument_list|,
+literal|4
+argument_list|,
+literal|3
+argument_list|)
 condition|)
 name|gtk_action_group_add_action
 argument_list|(
@@ -2254,6 +2339,14 @@ operator|->
 name|user_data
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: remove this has as soon as we depend on GTK+ 2.4.3
+endif|#
+directive|endif
 if|if
 condition|(
 name|entries
@@ -2273,6 +2366,15 @@ name|accelerator
 index|[
 literal|0
 index|]
+operator|&&
+name|gtk_check_version
+argument_list|(
+literal|2
+argument_list|,
+literal|4
+argument_list|,
+literal|3
+argument_list|)
 condition|)
 name|gtk_action_group_add_action
 argument_list|(
