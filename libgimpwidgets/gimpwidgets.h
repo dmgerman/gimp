@@ -55,6 +55,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpcolornotebook.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpcolorselector.h>
 end_include
 
