@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -4470,7 +4464,7 @@ elseif|else
 if|if
 condition|(
 operator|!
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 name|c
 argument_list|)
@@ -4496,7 +4490,7 @@ literal|1
 case|:
 if|if
 condition|(
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 name|c
 argument_list|)

@@ -75,12 +75,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<glib.h>
 end_include
 
@@ -185,7 +179,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2aafdedb0108
+DECL|struct|__anon27dd6ee90108
 block|{
 DECL|member|spacing
 name|guint
@@ -232,7 +226,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aafdedb0208
+DECL|struct|__anon27dd6ee90208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -3000,7 +2994,7 @@ condition|(
 operator|*
 name|paramstring
 operator|&&
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 operator|*
 name|paramstring

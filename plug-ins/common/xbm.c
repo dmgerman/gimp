@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -1651,7 +1645,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|isalnum
+name|g_ascii_isalnum
 argument_list|(
 operator|*
 name|temp
@@ -2068,7 +2062,11 @@ block|}
 elseif|else
 if|if
 condition|(
-name|isspace
+name|c
+operator|!=
+name|EOF
+operator|&&
+name|g_ascii_isspace
 argument_list|(
 name|c
 argument_list|)
@@ -2361,7 +2359,7 @@ operator|!=
 name|EOF
 operator|&&
 operator|!
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 name|c
 argument_list|)
@@ -2417,7 +2415,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 name|c
 argument_list|)
@@ -2681,7 +2679,7 @@ do|do
 block|{
 if|if
 condition|(
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 name|c
 argument_list|)
@@ -2706,7 +2704,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 name|c
 argument_list|)
@@ -2739,7 +2737,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 name|c
 argument_list|)
@@ -2779,7 +2777,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 name|c
 argument_list|)
@@ -2815,7 +2813,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 name|c
 argument_list|)
@@ -2851,7 +2849,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 name|c
 argument_list|)
@@ -2887,7 +2885,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 name|c
 argument_list|)

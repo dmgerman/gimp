@@ -26,12 +26,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<setjmp.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<sys/types.h>
 end_include
 
@@ -63,12 +57,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_include
-include|#
-directive|include
-file|<ctype.h>
-end_include
 
 begin_include
 include|#
@@ -176,7 +164,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ecc7c80108
+DECL|struct|__anon2bcbe9f80108
 block|{
 DECL|member|run
 name|gboolean

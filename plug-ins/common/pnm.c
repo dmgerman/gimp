@@ -67,12 +67,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
 end_include
 
@@ -315,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abdf7d70108
+DECL|struct|__anon2b0c78c40108
 block|{
 DECL|member|raw
 name|gint
@@ -1898,7 +1892,7 @@ name|pnminfo
 operator|->
 name|xres
 operator|=
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 operator|*
 name|buf
@@ -1959,7 +1953,7 @@ name|pnminfo
 operator|->
 name|yres
 operator|=
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 operator|*
 name|buf
@@ -2030,7 +2024,7 @@ name|pnminfo
 operator|->
 name|maxval
 operator|=
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 operator|*
 name|buf
@@ -2465,7 +2459,7 @@ index|[
 name|b
 index|]
 operator|=
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 operator|*
 name|buf
@@ -2505,20 +2499,16 @@ index|[
 name|b
 index|]
 operator|=
-call|(
-name|unsigned
-name|char
-call|)
-argument_list|(
+operator|(
 literal|255.0
 operator|*
 operator|(
 operator|(
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 operator|*
 name|buf
@@ -2534,7 +2524,7 @@ argument_list|)
 operator|)
 operator|/
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|info
@@ -2542,7 +2532,7 @@ operator|->
 name|maxval
 argument_list|)
 operator|)
-argument_list|)
+operator|)
 expr_stmt|;
 block|}
 block|}
@@ -4761,14 +4751,12 @@ expr_stmt|;
 while|while
 condition|(
 operator|!
-operator|(
 name|s
 operator|->
 name|eof
-operator|)
 operator|&&
 operator|!
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 name|s
 operator|->
@@ -4850,7 +4838,7 @@ name|eof
 operator|)
 operator|&&
 operator|!
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 name|s
 operator|->
@@ -5068,7 +5056,7 @@ elseif|else
 if|if
 condition|(
 operator|!
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 name|s
 operator|->

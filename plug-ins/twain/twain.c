@@ -44,12 +44,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<windows.h>
 end_include
 
@@ -503,7 +497,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon297f3fb60108
+DECL|struct|__anon2b40f13f0108
 typedef|typedef
 struct|struct
 block|{
@@ -1867,7 +1861,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon297f3fb60208
+DECL|struct|__anon2b40f13f0208
 typedef|typedef
 struct|struct
 block|{

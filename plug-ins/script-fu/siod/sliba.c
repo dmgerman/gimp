@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<math.h>
 end_include
 
@@ -3856,7 +3850,7 @@ index|[
 name|j
 index|]
 operator|=
-name|toupper
+name|g_ascii_toupper
 argument_list|(
 name|s2
 index|[
@@ -3944,7 +3938,7 @@ index|[
 name|j
 index|]
 operator|=
-name|tolower
+name|g_ascii_tolower
 argument_list|(
 name|s2
 index|[
@@ -9219,7 +9213,7 @@ name|str
 control|)
 if|if
 condition|(
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 operator|*
 name|str
@@ -9239,7 +9233,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|isxdigit
+name|g_ascii_isxdigit
 argument_list|(
 operator|*
 name|str
@@ -9251,7 +9245,7 @@ name|result
 operator|*
 name|base
 operator|+
-name|toupper
+name|g_ascii_toupper
 argument_list|(
 operator|*
 name|str
@@ -14788,7 +14782,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 name|c
 argument_list|)
@@ -14802,14 +14796,14 @@ operator|)
 return|;
 if|if
 condition|(
-name|isxdigit
+name|g_ascii_isxdigit
 argument_list|(
 name|c
 argument_list|)
 condition|)
 return|return
 operator|(
-name|toupper
+name|g_ascii_toupper
 argument_list|(
 name|c
 argument_list|)

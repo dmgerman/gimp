@@ -34,12 +34,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<windows.h>
 end_include
 
@@ -355,7 +349,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28f040ed0108
+DECL|struct|__anon2901c0360108
 typedef|typedef
 struct|struct
 block|{
@@ -402,7 +396,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28f040ed0208
+DECL|struct|__anon2901c0360208
 typedef|typedef
 struct|struct
 block|{

@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -80,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ab107200103
+DECL|enum|__anon28a03ee50103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -904,10 +898,6 @@ name|status
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* static int parse_ms_tag (char *str) {   gint sum = 0;   gint offset = 0;   gint length;    length = strlen(str);  find_another_bra:    while ((offset<length)&& (str[offset]!='('))     offset++;    if (offset>=length)     return(-1);    if (!isdigit(str[++offset]))     goto find_another_bra;    do     {       sum *= 10;       sum += str[offset] - '0';       offset++;     }   while ((offset<length)&& (isdigit(str[offset])));    if (length-offset<= 2)     return(-3);    if ((toupper(str[offset]) != 'M') || (toupper(str[offset+1]) != 'S'))     return(-4);    return (sum); }   static DisposeType parse_disposal_tag (char *str) {   gint offset = 0;   gint length;    length = strlen(str);    while ((offset+9)<=length)     {       if (strncmp(&str[offset],"(combine)",9)==0) 	return(DISPOSE_COMBINE);       if (strncmp(&str[offset],"(replace)",9)==0) 	return(DISPOSE_REPLACE);       offset++;     }    return (DISPOSE_UNDEFINED); }*/
-end_comment
 
 begin_function
 specifier|static
@@ -6272,7 +6262,7 @@ operator|)
 operator|||
 operator|(
 operator|!
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 name|str
 index|[
@@ -6312,7 +6302,7 @@ name|length
 operator|)
 operator|&&
 operator|(
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 name|str
 index|[

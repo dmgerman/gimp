@@ -63,12 +63,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
 end_include
 
@@ -169,7 +163,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5458bc0108
+DECL|struct|__anon293766270108
 block|{
 DECL|member|description
 name|gchar
@@ -1802,7 +1796,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2b5458bc020a
+DECL|union|__anon29376627020a
 block|{
 DECL|member|u
 name|guint16

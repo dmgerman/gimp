@@ -57,12 +57,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
 end_include
 
@@ -81,13 +75,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<libgimpmath/gimpmath.h>
 end_include
 
 begin_include
@@ -111,7 +105,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5c81e0108
+DECL|struct|__anon2b211fbb0108
 block|{
 DECL|member|icon_name
 name|gchar

@@ -46,12 +46,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -64,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1963520103
+DECL|enum|__anon28cae7080103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -89,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1963520203
+DECL|enum|__anon28cae7080203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -4632,7 +4626,7 @@ operator|)
 operator|||
 operator|(
 operator|!
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 name|str
 index|[
@@ -4672,7 +4666,7 @@ name|length
 operator|)
 operator|&&
 operator|(
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 name|str
 index|[
@@ -4725,7 +4719,7 @@ literal|2
 operator|)
 operator|||
 operator|(
-name|toupper
+name|g_ascii_toupper
 argument_list|(
 name|str
 index|[
@@ -4737,7 +4731,7 @@ literal|'M'
 operator|)
 operator|||
 operator|(
-name|toupper
+name|g_ascii_toupper
 argument_list|(
 name|str
 index|[

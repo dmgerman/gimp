@@ -46,12 +46,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<unistd.h>
 end_include
 
@@ -359,7 +353,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf850130108
+DECL|struct|__anon2c03d4a00108
 block|{
 DECL|member|command
 name|gchar
@@ -383,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf850130208
+DECL|struct|__anon2c03d4a00208
 block|{
 DECL|member|port_entry
 name|GtkWidget

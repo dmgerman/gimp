@@ -28,12 +28,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<setjmp.h>
 end_include
 
@@ -14650,7 +14644,7 @@ elseif|else
 if|if
 condition|(
 operator|!
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 name|c
 argument_list|)
@@ -15152,7 +15146,7 @@ operator|)
 return|;
 if|if
 condition|(
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 name|c
 argument_list|)
@@ -15415,7 +15409,7 @@ literal|0
 expr_stmt|;
 while|while
 condition|(
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 operator|*
 name|p
@@ -15445,7 +15439,7 @@ literal|1
 expr_stmt|;
 while|while
 condition|(
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 operator|*
 name|p
@@ -15501,7 +15495,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 operator|*
 name|p
@@ -15517,7 +15511,7 @@ literal|1
 expr_stmt|;
 while|while
 condition|(
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 operator|*
 name|p
@@ -16456,7 +16450,7 @@ init|;
 operator|*
 name|end
 operator|&&
-name|isalnum
+name|g_ascii_isalnum
 argument_list|(
 operator|*
 name|end

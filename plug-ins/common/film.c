@@ -49,12 +49,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -115,7 +109,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b11d6bc0108
+DECL|struct|__anon2c25d5060108
 block|{
 DECL|member|film_height
 name|gint
@@ -219,7 +213,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b11d6bc0208
+DECL|struct|__anon2c25d5060208
 block|{
 DECL|member|advanced_adj
 name|GtkObject

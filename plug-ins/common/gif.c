@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -131,7 +125,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3388c00103
+DECL|enum|__anon2be3527a0103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -148,7 +142,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3388c00208
+DECL|struct|__anon2be3527a0208
 block|{
 DECL|member|interlace
 name|gint
@@ -1980,7 +1974,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 name|str
 index|[
@@ -2020,7 +2014,7 @@ name|length
 operator|)
 operator|&&
 operator|(
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 name|str
 index|[
@@ -2047,7 +2041,7 @@ return|;
 if|if
 condition|(
 operator|(
-name|toupper
+name|g_ascii_toupper
 argument_list|(
 name|str
 index|[
@@ -2059,7 +2053,7 @@ literal|'M'
 operator|)
 operator|||
 operator|(
-name|toupper
+name|g_ascii_toupper
 argument_list|(
 name|str
 index|[
@@ -2073,15 +2067,11 @@ literal|'S'
 operator|)
 condition|)
 return|return
-operator|(
 operator|-
 literal|4
-operator|)
 return|;
 return|return
-operator|(
 name|sum
-operator|)
 return|;
 block|}
 end_function
@@ -6482,12 +6472,6 @@ end_comment
 begin_comment
 comment|/*   * GIF Image compression - modified 'compress'  *  * Based on: compress.c - File compression ala IEEE Computer, June 1984.  *  * By Authors:  Spencer W. Thomas       (decvax!harpo!utah-cs!utah-gr!thomas)  *              Jim McKie               (decvax!mcvax!jim)  *              Steve Davies            (decvax!vax135!petsd!peora!srd)  *              Ken Turkowski           (decvax!decwrl!turtlevax!ken)  *              James A. Woods          (decvax!ihnp4!ames!jaw)  *              Joe Orost               (decvax!vax135!petsd!joe)  *  */
 end_comment
-
-begin_include
-include|#
-directive|include
-file|<ctype.h>
-end_include
 
 begin_define
 DECL|macro|ARGVAL ()

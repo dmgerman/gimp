@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -716,7 +710,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ae210b70108
+DECL|struct|__anon28fb58ad0108
 block|{
 DECL|member|Width
 name|unsigned
@@ -766,7 +760,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ae210b70208
+DECL|struct|__anon28fb58ad0208
 block|{
 DECL|member|transparent
 name|int
@@ -4915,12 +4909,6 @@ end_comment
 begin_comment
 comment|/*   * GIF Image compression - modified 'compress'  *  * Based on: compress.c - File compression ala IEEE Computer, June 1984.  *  * By Authors:  Spencer W. Thomas       (decvax!harpo!utah-cs!utah-gr!thomas)  *              Jim McKie               (decvax!mcvax!jim)  *              Steve Davies            (decvax!vax135!petsd!peora!srd)  *              Ken Turkowski           (decvax!decwrl!turtlevax!ken)  *              James A. Woods          (decvax!ihnp4!ames!jaw)  *              Joe Orost               (decvax!vax135!petsd!joe)  *  */
 end_comment
-
-begin_include
-include|#
-directive|include
-file|<ctype.h>
-end_include
 
 begin_define
 DECL|macro|ARGVAL ()
