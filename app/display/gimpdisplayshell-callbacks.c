@@ -847,7 +847,7 @@ name|resize_display
 argument_list|(
 name|gdisp
 argument_list|,
-literal|0
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)
