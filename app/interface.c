@@ -536,7 +536,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon298ea6e80103
+DECL|enum|__anon2bb82d3b0103
 enum|enum
 block|{
 DECL|enumerator|TARGET_URI_LIST
@@ -544,8 +544,11 @@ name|TARGET_URI_LIST
 block|,
 DECL|enumerator|TARGET_TEXT_PLAIN
 name|TARGET_TEXT_PLAIN
-block|, }
+block|,
+DECL|enumerator|TARGET_URL
+name|TARGET_URL
 DECL|variable|TargetType
+block|}
 name|TargetType
 enum|;
 end_enum
@@ -572,6 +575,14 @@ block|,
 literal|0
 block|,
 name|TARGET_TEXT_PLAIN
+block|}
+block|,
+block|{
+literal|"_NETSCAPE_URL"
+block|,
+literal|0
+block|,
+name|TARGET_URL
 block|}
 block|}
 decl_stmt|;
