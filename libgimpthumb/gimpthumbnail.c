@@ -86,12 +86,9 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
-begin_define
-DECL|macro|GIMP_THUMB_DEBUG
-define|#
-directive|define
-name|GIMP_THUMB_DEBUG
-end_define
+begin_comment
+comment|/*   #define GIMP_THUMB_DEBUG   */
+end_comment
 
 begin_if
 if|#
@@ -222,7 +219,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2765ab870103
+DECL|enum|__anon2ae16b590103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
