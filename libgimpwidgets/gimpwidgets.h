@@ -61,6 +61,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpcolorscale.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpcolorscales.h>
 end_include
 
