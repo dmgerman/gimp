@@ -178,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c50a2490103
+DECL|enum|__anon2c4b11f70103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -3151,6 +3151,8 @@ operator||
 name|GDK_POINTER_MOTION_HINT_MASK
 operator||
 name|GDK_BUTTON_MOTION_MASK
+operator||
+name|GDK_EXTENSION_EVENTS_ALL
 argument_list|,
 name|widget
 operator|->

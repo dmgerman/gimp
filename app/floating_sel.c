@@ -367,6 +367,16 @@ argument_list|,
 name|FS_ANCHOR_UNDO
 argument_list|)
 expr_stmt|;
+comment|/* Invalidate the previews of the layer that will be composited with the floating section. */
+name|drawable_invalidate_preview
+argument_list|(
+name|layer
+operator|->
+name|fs
+operator|.
+name|drawable
+argument_list|)
+expr_stmt|;
 comment|/*  Relax the floating selection  */
 name|floating_sel_relax
 argument_list|(
