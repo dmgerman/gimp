@@ -7898,12 +7898,6 @@ name|Path
 modifier|*
 name|bzpath
 decl_stmt|;
-name|GSList
-modifier|*
-name|pts_list
-init|=
-name|NULL
-decl_stmt|;
 name|PathList
 modifier|*
 name|plp
@@ -7975,6 +7969,12 @@ name|f
 argument_list|)
 condition|)
 block|{
+name|GSList
+modifier|*
+name|pts_list
+init|=
+name|NULL
+decl_stmt|;
 name|gchar
 modifier|*
 name|txt
