@@ -151,7 +151,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2977c7a00108
+DECL|struct|__anon2c865b880108
 typedef|typedef
 struct|struct
 block|{
@@ -170,7 +170,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2977c7a00208
+DECL|struct|__anon2c865b880208
 typedef|typedef
 struct|struct
 block|{
@@ -505,7 +505,7 @@ name|PLUG_IN_COPYRIGHT
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Image/Transforms/Rotate"
 argument_list|)
