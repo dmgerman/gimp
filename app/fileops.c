@@ -3952,6 +3952,20 @@ argument_list|,
 name|raw_filename
 argument_list|)
 expr_stmt|;
+name|g_string_append
+argument_list|(
+name|s
+argument_list|,
+literal|"\nYou might have tried to save an RGB image with"
+argument_list|)
+expr_stmt|;
+name|g_string_append
+argument_list|(
+name|s
+argument_list|,
+literal|"\na plug-in that only supports Indexed or Gray images"
+argument_list|)
+expr_stmt|;
 block|}
 name|message_box
 argument_list|(
@@ -4464,6 +4478,20 @@ argument_list|,
 name|overwrite_box
 operator|->
 name|raw_filename
+argument_list|)
+expr_stmt|;
+name|g_string_append
+argument_list|(
+name|s
+argument_list|,
+literal|"\nYou might have tried to save an RGB image with"
+argument_list|)
+expr_stmt|;
+name|g_string_append
+argument_list|(
+name|s
+argument_list|,
+literal|"\na plug-in that only supports Indexed or Gray images"
 argument_list|)
 expr_stmt|;
 name|message_box
