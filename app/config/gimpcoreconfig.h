@@ -193,7 +193,15 @@ name|gchar
 modifier|*
 name|plug_in_rc_path
 decl_stmt|;
-comment|/* the remaining fields are not yet implemented as properties    gchar               *module_db_load_inhibit;   gint                 thumbnail_mode;    */
+DECL|member|module_load_inhibit
+name|gchar
+modifier|*
+name|module_load_inhibit
+decl_stmt|;
+DECL|member|write_thumbnails
+name|gboolean
+name|write_thumbnails
+decl_stmt|;
 block|}
 struct|;
 end_struct

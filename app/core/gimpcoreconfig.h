@@ -118,9 +118,9 @@ name|gchar
 modifier|*
 name|module_db_load_inhibit
 decl_stmt|;
-DECL|member|thumbnail_mode
-name|gint
-name|thumbnail_mode
+DECL|member|write_thumbnails
+name|gboolean
+name|write_thumbnails
 decl_stmt|;
 block|}
 struct|;

@@ -270,7 +270,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c66ef9a0103
+DECL|enum|__anon29c6a44f0103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -2945,7 +2945,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|thumbnail_mode
+name|write_thumbnails
 expr_stmt|;
 name|parse_func_hash
 operator|=

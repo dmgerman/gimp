@@ -241,9 +241,9 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|thumbnail_mode
+name|write_thumbnails
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 block|}
 end_function

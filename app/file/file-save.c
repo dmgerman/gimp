@@ -561,7 +561,7 @@ comment|/*  use the same plug-in for this image next time  */
 comment|/* DISABLED - gets stuck on first saved format... needs 	 attention --Adam */
 comment|/* gimage_set_save_proc(gimage, file_proc); */
 comment|/* Write a thumbnail for the saved image, where appropriate */
-switch|switch
+if|if
 condition|(
 name|gimage
 operator|->
@@ -569,14 +569,8 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|thumbnail_mode
+name|write_thumbnails
 condition|)
-block|{
-case|case
-literal|0
-case|:
-break|break;
-default|default:
 block|{
 name|TempBuf
 modifier|*
@@ -598,7 +592,6 @@ argument_list|,
 name|tempbuf
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 if|if
 condition|(

@@ -2425,35 +2425,15 @@ expr_stmt|;
 block|}
 else|else
 block|{
-switch|switch
+if|if
 condition|(
 name|gimp
 operator|->
 name|config
 operator|->
-name|thumbnail_mode
+name|write_thumbnails
 condition|)
 block|{
-case|case
-literal|0
-case|:
-name|gtk_label_set_text
-argument_list|(
-name|GTK_LABEL
-argument_list|(
-name|open_options_label
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"Thumbnail saving is disabled."
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-literal|1
-case|:
 name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
@@ -2467,8 +2447,9 @@ literal|"Could not write thumbnail file."
 argument_list|)
 argument_list|)
 expr_stmt|;
-break|break;
-default|default:
+block|}
+else|else
+block|{
 name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
@@ -2478,7 +2459,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Thumbnail file not written."
+literal|"Thumbnail saving is disabled."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2940,7 +2921,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|thumbnail_mode
+name|write_thumbnails
 condition|)
 block|{
 name|file_save_thumbnail

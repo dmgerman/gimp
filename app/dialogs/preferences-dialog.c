@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb07f3a0103
+DECL|enum|__anon29e9e8990103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -857,10 +857,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|old_thumbnail_mode
+DECL|variable|old_write_thumbnails
 specifier|static
-name|gint
-name|old_thumbnail_mode
+name|gboolean
+name|old_write_thumbnails
 decl_stmt|;
 end_decl_stmt
 
@@ -3170,9 +3170,9 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|thumbnail_mode
+name|write_thumbnails
 operator|!=
-name|old_thumbnail_mode
+name|old_write_thumbnails
 condition|)
 block|{
 name|update
@@ -4099,9 +4099,9 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|thumbnail_mode
+name|write_thumbnails
 operator|=
-name|old_thumbnail_mode
+name|old_write_thumbnails
 expr_stmt|;
 name|gimprc
 operator|.
@@ -4742,7 +4742,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|thumbnail_mode
+name|write_thumbnails
 operator|||
 name|data
 operator|==
@@ -6870,13 +6870,13 @@ name|config
 operator|->
 name|levels_of_undo
 expr_stmt|;
-name|old_thumbnail_mode
+name|old_write_thumbnails
 operator|=
 name|gimp
 operator|->
 name|config
 operator|->
-name|thumbnail_mode
+name|write_thumbnails
 expr_stmt|;
 name|old_perfectmouse
 operator|=
@@ -12508,7 +12508,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|thumbnail_mode
+name|write_thumbnails
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
@@ -12516,7 +12516,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|thumbnail_mode
+name|write_thumbnails
 argument_list|)
 argument_list|,
 name|_
@@ -13811,7 +13811,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bb07f3a0208
+DECL|struct|__anon29e9e8990208
 block|{
 DECL|member|label
 name|gchar
@@ -14029,7 +14029,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bb07f3a0308
+DECL|struct|__anon29e9e8990308
 block|{
 DECL|member|tree_label
 name|gchar
