@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -785,14 +779,12 @@ block|{
 name|GimpBrush
 modifier|*
 name|brush
-decl_stmt|;
-name|brush
-operator|=
+init|=
 name|GIMP_BRUSH
 argument_list|(
 name|viewable
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|spacing_sensitive
 operator|=
 name|TRUE
@@ -931,9 +923,7 @@ block|{
 name|GimpBrush
 modifier|*
 name|brush
-decl_stmt|;
-name|brush
-operator|=
+init|=
 name|GIMP_CONTAINER_EDITOR
 argument_list|(
 name|view
@@ -944,7 +934,7 @@ operator|->
 name|context
 operator|->
 name|brush
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|brush

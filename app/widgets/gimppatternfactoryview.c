@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -42,19 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimppattern.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpviewable.h"
 end_include
 
 begin_include
@@ -74,47 +62,6 @@ include|#
 directive|include
 file|"gimppreviewrenderer.h"
 end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp-intl.h"
-end_include
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_pattern_factory_view_class_init
-parameter_list|(
-name|GimpPatternFactoryViewClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_pattern_factory_view_init
-parameter_list|(
-name|GimpPatternFactoryView
-modifier|*
-name|view
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpDataFactoryViewClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_function
 name|GType
@@ -149,21 +96,19 @@ argument_list|)
 block|,
 name|NULL
 block|,
-comment|/* base_init */
+comment|/* base_init      */
 name|NULL
 block|,
-comment|/* base_finalize */
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_pattern_factory_view_class_init
+comment|/* base_finalize  */
+name|NULL
 block|,
+comment|/* class_init     */
 name|NULL
 block|,
 comment|/* class_finalize */
 name|NULL
 block|,
-comment|/* class_data */
+comment|/* class_data     */
 sizeof|sizeof
 argument_list|(
 name|GimpPatternFactoryView
@@ -171,12 +116,10 @@ argument_list|)
 block|,
 literal|0
 block|,
-comment|/* n_preallocs */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|gimp_pattern_factory_view_init
-block|,       }
+comment|/* n_preallocs    */
+name|NULL
+comment|/* instance_init  */
+block|}
 decl_stmt|;
 name|view_type
 operator|=
@@ -197,40 +140,6 @@ return|return
 name|view_type
 return|;
 block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_pattern_factory_view_class_init (GimpPatternFactoryViewClass * klass)
-name|gimp_pattern_factory_view_class_init
-parameter_list|(
-name|GimpPatternFactoryViewClass
-modifier|*
-name|klass
-parameter_list|)
-block|{
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_pattern_factory_view_init (GimpPatternFactoryView * view)
-name|gimp_pattern_factory_view_init
-parameter_list|(
-name|GimpPatternFactoryView
-modifier|*
-name|view
-parameter_list|)
-block|{ }
 end_function
 
 begin_function
@@ -267,10 +176,6 @@ block|{
 name|GimpPatternFactoryView
 modifier|*
 name|factory_view
-decl_stmt|;
-name|GimpContainerEditor
-modifier|*
-name|editor
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -362,13 +267,6 @@ name|factory_view
 argument_list|)
 operator|->
 name|duplicate_button
-argument_list|)
-expr_stmt|;
-name|editor
-operator|=
-name|GIMP_CONTAINER_EDITOR
-argument_list|(
-name|factory_view
 argument_list|)
 expr_stmt|;
 return|return
