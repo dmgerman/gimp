@@ -68,6 +68,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"orientmap.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -709,6 +715,9 @@ name|brush_free
 argument_list|()
 expr_stmt|;
 name|preset_free
+argument_list|()
+expr_stmt|;
+name|orientation_map_free_resources
 argument_list|()
 expr_stmt|;
 name|values

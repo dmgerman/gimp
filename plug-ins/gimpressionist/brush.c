@@ -1006,7 +1006,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-specifier|static
 name|GtkWidget
 modifier|*
 name|dialog
