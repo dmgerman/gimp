@@ -1981,7 +1981,7 @@ name|class
 operator|->
 name|name
 operator|=
-literal|"Poly"
+literal|"POLY"
 expr_stmt|;
 name|class
 operator|->

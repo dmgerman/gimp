@@ -462,7 +462,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279529030108
+DECL|struct|__anon2c7e9bdd0108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -8104,6 +8104,7 @@ argument_list|,
 name|GIMP_TRANSPARENT_FILL
 argument_list|)
 expr_stmt|;
+comment|/* gimp_drawable_fill (gfig_context->drawable_id, GIMP_PATTERN_FILL); */
 comment|/* remember current style because it will be changed while painting */
 name|style0
 operator|=

@@ -1170,7 +1170,7 @@ name|class
 operator|->
 name|name
 operator|=
-literal|"Spiral"
+literal|"SPIRAL"
 expr_stmt|;
 name|class
 operator|->

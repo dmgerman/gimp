@@ -1439,7 +1439,7 @@ name|class
 operator|->
 name|name
 operator|=
-literal|"Bezier"
+literal|"BEZIER"
 expr_stmt|;
 name|class
 operator|->

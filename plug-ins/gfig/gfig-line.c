@@ -479,7 +479,7 @@ name|class
 operator|->
 name|name
 operator|=
-literal|"Line"
+literal|"LINE"
 expr_stmt|;
 name|class
 operator|->

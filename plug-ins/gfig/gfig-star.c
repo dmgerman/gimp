@@ -1360,7 +1360,7 @@ name|class
 operator|->
 name|name
 operator|=
-literal|"Star"
+literal|"STAR"
 expr_stmt|;
 name|class
 operator|->

@@ -570,7 +570,7 @@ name|class
 operator|->
 name|name
 operator|=
-literal|"Circle"
+literal|"CIRCLE"
 expr_stmt|;
 name|class
 operator|->

@@ -728,7 +728,7 @@ name|class
 operator|->
 name|name
 operator|=
-literal|"Ellipse"
+literal|"ELLIPSE"
 expr_stmt|;
 name|class
 operator|->

@@ -2249,7 +2249,7 @@ name|class
 operator|->
 name|name
 operator|=
-literal|"Arc"
+literal|"ARC"
 expr_stmt|;
 name|class
 operator|->
