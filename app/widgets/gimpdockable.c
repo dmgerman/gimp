@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpuimanager.h"
 end_include
 
@@ -934,7 +940,7 @@ argument_list|(
 literal|"Close this Tab"
 argument_list|)
 argument_list|,
-literal|"gimp-dockable-close-tab"
+name|GIMP_HELP_DOCK_TAB_CLOSE
 argument_list|)
 expr_stmt|;
 name|image

@@ -2777,6 +2777,14 @@ value|"gimp-dock-change-screen"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_DOCK_SEPARATOR
+define|#
+directive|define
+name|GIMP_HELP_DOCK_SEPARATOR
+value|"gimp-dock-separator"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_ABOUT_DIALOG
 define|#
 directive|define

@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwidgets-utils.h"
 end_include
 
@@ -111,7 +117,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d376060103
+DECL|enum|__anon2a165a1c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -127,7 +133,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d376060203
+DECL|enum|__anon2a165a1c0203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -1699,7 +1705,7 @@ argument_list|(
 literal|"You can drop dockable dialogs here."
 argument_list|)
 argument_list|,
-literal|"gimp-dock-separator"
+name|GIMP_HELP_DOCK_SEPARATOR
 argument_list|)
 expr_stmt|;
 name|gtk_drag_dest_set
