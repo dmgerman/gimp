@@ -482,14 +482,12 @@ condition|)
 block|{
 name|success
 operator|=
-operator|(
 name|gimage_base_type
 argument_list|(
 name|gimage
 argument_list|)
 operator|!=
 name|INDEXED
-operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -820,10 +818,9 @@ name|list
 condition|;
 name|list
 operator|=
-name|g_slist_next
-argument_list|(
 name|list
-argument_list|)
+operator|->
+name|next
 control|)
 block|{
 name|entries
@@ -837,6 +834,7 @@ name|data
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|strcmp
 argument_list|(
 name|palette_name
@@ -845,8 +843,6 @@ name|entries
 operator|->
 name|name
 argument_list|)
-operator|==
-literal|0
 condition|)
 block|{
 name|the_palette
@@ -942,7 +938,7 @@ name|PDB_INT32
 block|,
 literal|"palette_type"
 block|,
-literal|"The type of palette to use: MAKE_PALETTE (0), REUSE_PALETTE (1), WEB_PALETTE (2), MONO_PALETTE (3), CUSTOM_PALETTE (4)"
+literal|"The type of palette to use: { MAKE_PALETTE (0), REUSE_PALETTE (1), WEB_PALETTE (2), MONO_PALETTE (3), CUSTOM_PALETTE (4) }"
 block|}
 block|,
 block|{

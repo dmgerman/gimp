@@ -581,6 +581,7 @@ name|data
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|strcmp
 argument_list|(
 name|pname
@@ -591,8 +592,6 @@ name|name
 operator|->
 name|str
 argument_list|)
-operator|==
-literal|0
 condition|)
 break|break;
 comment|/* Found the path */
@@ -1826,6 +1825,15 @@ name|gradient
 init|=
 literal|0
 decl_stmt|;
+name|PathsList
+modifier|*
+name|plist
+decl_stmt|;
+name|PATHP
+name|pptr
+init|=
+name|NULL
+decl_stmt|;
 name|gimage
 operator|=
 name|pdb_id_to_image
@@ -1867,14 +1875,12 @@ name|success
 condition|)
 block|{
 comment|/* Get the path with the given name */
-name|PathsList
-modifier|*
 name|plist
-init|=
+operator|=
 name|gimage
 operator|->
 name|paths
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|plist
@@ -1882,15 +1888,7 @@ operator|&&
 name|plist
 operator|->
 name|bz_paths
-condition|)
-block|{
-name|PATHP
-name|pptr
-init|=
-name|NULL
-decl_stmt|;
-if|if
-condition|(
+operator|&&
 name|plist
 operator|->
 name|last_selected_row
@@ -1934,20 +1932,10 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
-block|}
-block|}
-else|else
-block|{
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
 block|}
 name|return_args
 operator|=
@@ -2075,7 +2063,7 @@ init|=
 block|{
 literal|"gimp_path_get_point_at_dist"
 block|,
-literal|"Get point on a path at a specified distance along the path"
+literal|"Get point on a path at a specified distance along the path."
 block|,
 literal|"This will return the x,y position of a point at a given distance along the bezier curve. The distance will the obtained by first digitizing the curve internally an then walking along the curve. For a closed curve the start of the path is the first point on the path that was created. This might not be obvious. Note the current path is used."
 block|,
@@ -2142,6 +2130,11 @@ name|PathsList
 modifier|*
 name|plist
 decl_stmt|;
+name|PATHP
+name|pptr
+init|=
+name|NULL
+decl_stmt|;
 name|gimage
 operator|=
 name|pdb_id_to_image
@@ -2196,11 +2189,6 @@ condition|(
 name|success
 condition|)
 block|{
-name|PATHP
-name|pptr
-init|=
-name|NULL
-decl_stmt|;
 comment|/* Get the path with the given name */
 name|plist
 operator|=
@@ -2238,6 +2226,7 @@ name|data
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|strcmp
 argument_list|(
 name|pname
@@ -2248,8 +2237,6 @@ name|name
 operator|->
 name|str
 argument_list|)
-operator|==
-literal|0
 condition|)
 break|break;
 comment|/* Found the path */
@@ -2270,7 +2257,6 @@ name|pl
 operator|&&
 name|pptr
 condition|)
-block|{
 name|tattoo
 operator|=
 name|paths_get_tattoo
@@ -2278,13 +2264,17 @@ argument_list|(
 name|pptr
 argument_list|)
 expr_stmt|;
-block|}
 else|else
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
 block|}
+else|else
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 name|return_args
 operator|=
@@ -2330,7 +2320,7 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The ID of the image"
+literal|"The image"
 block|}
 block|,
 block|{
@@ -2372,7 +2362,7 @@ init|=
 block|{
 literal|"gimp_path_get_tattoo"
 block|,
-literal|"Returns the tattoo associated with the name path"
+literal|"Returns the tattoo associated with the name path."
 block|,
 literal|"This procedure returns the tattoo associated with the specified path. A tattoo is a unique and permenant identifier attached to a path that can be used to uniquely identify a path within an image even between sessions."
 block|,
@@ -2571,7 +2561,7 @@ name|PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"The ID of the image"
+literal|"The image"
 block|}
 block|,
 block|{
@@ -2613,7 +2603,7 @@ init|=
 block|{
 literal|"gimp_get_path_by_tattoo"
 block|,
-literal|"Return the name of the path with the given tattoo"
+literal|"Return the name of the path with the given tattoo."
 block|,
 literal|"The procedure returns the name of the path in the specified image which has the passed tattoo. The tattoos are unique within the image and will be preserved across sessions and through renaming of the path. An error is returned if no path woth the specified tattoo can be found."
 block|,

@@ -742,9 +742,10 @@ modifier|*
 name|p_s
 parameter_list|)
 block|{
-name|int
-name|i
-decl_stmt|;
+name|IF_THREAD
+argument_list|(
+argument|int i;
+argument_list|)
 name|IF_THREAD
 argument_list|(
 argument|int nthreads;

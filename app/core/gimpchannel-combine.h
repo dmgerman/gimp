@@ -50,37 +50,27 @@ begin_comment
 comment|/* OPERATIONS */
 end_comment
 
-begin_define
-DECL|macro|ADD
-define|#
-directive|define
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b8dd4650103
+block|{
+DECL|enumerator|ADD
 name|ADD
-value|0
-end_define
-
-begin_define
-DECL|macro|SUB
-define|#
-directive|define
+block|,
+DECL|enumerator|SUB
 name|SUB
-value|1
-end_define
-
-begin_define
-DECL|macro|REPLACE
-define|#
-directive|define
+block|,
+DECL|enumerator|REPLACE
 name|REPLACE
-value|2
-end_define
-
-begin_define
-DECL|macro|INTERSECT
-define|#
-directive|define
+block|,
+DECL|enumerator|INTERSECT
 name|INTERSECT
-value|3
-end_define
+DECL|typedef|ChannelOps
+block|}
+name|ChannelOps
+typedef|;
+end_typedef
 
 begin_comment
 comment|/*  Half way point where a region is no longer visible in a selection  */

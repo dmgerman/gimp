@@ -110,25 +110,6 @@ comment|/*  the bucket fill structures  */
 end_comment
 
 begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon292d41180103
-block|{
-DECL|enumerator|FgColorFill
-name|FgColorFill
-block|,
-DECL|enumerator|BgColorFill
-name|BgColorFill
-block|,
-DECL|enumerator|PatternFill
-name|PatternFill
-DECL|typedef|FillMode
-block|}
-name|FillMode
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|BucketTool
 typedef|typedef
 name|struct

@@ -4171,9 +4171,6 @@ name|h
 parameter_list|)
 block|{
 name|int
-name|i
-decl_stmt|;
-name|int
 name|x2
 decl_stmt|,
 name|y2

@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29384af70103
+DECL|enum|__anon2a270b6b0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1113,8 +1113,6 @@ name|p
 decl_stmt|;
 name|guint32
 name|num
-decl_stmt|,
-name|version
 decl_stmt|;
 name|num
 operator|=

@@ -34,6 +34,22 @@ directive|include
 file|"tools.h"
 end_include
 
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon297f04030103
+block|{
+DECL|enumerator|ImageClone
+name|ImageClone
+block|,
+DECL|enumerator|PatternClone
+name|PatternClone
+DECL|typedef|CloneType
+block|}
+name|CloneType
+typedef|;
+end_typedef
+
 begin_function_decl
 name|void
 modifier|*

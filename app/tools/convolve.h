@@ -34,6 +34,25 @@ directive|include
 file|"tools.h"
 end_include
 
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon28ca821d0103
+block|{
+DECL|enumerator|Blur
+name|Blur
+block|,
+DECL|enumerator|Sharpen
+name|Sharpen
+block|,
+DECL|enumerator|Custom
+name|Custom
+DECL|typedef|ConvolveType
+block|}
+name|ConvolveType
+typedef|;
+end_typedef
+
 begin_function_decl
 name|void
 modifier|*

@@ -28,6 +28,25 @@ directive|include
 file|"procedural_db.h"
 end_include
 
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b03d58d0103
+block|{
+DECL|enumerator|FgColorFill
+name|FgColorFill
+block|,
+DECL|enumerator|BgColorFill
+name|BgColorFill
+block|,
+DECL|enumerator|PatternFill
+name|PatternFill
+DECL|typedef|FillMode
+block|}
+name|FillMode
+typedef|;
+end_typedef
+
 begin_function_decl
 name|Tool
 modifier|*

@@ -88,74 +88,50 @@ begin_comment
 comment|/* brush application types  */
 end_comment
 
-begin_define
-DECL|macro|HARD
-define|#
-directive|define
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon27fdea370103
+block|{
+DECL|enumerator|HARD
 name|HARD
-value|0
-end_define
-
-begin_comment
-DECL|macro|HARD
+block|,
 comment|/* pencil */
-end_comment
-
-begin_define
-DECL|macro|SOFT
-define|#
-directive|define
+DECL|enumerator|SOFT
 name|SOFT
-value|1
-end_define
-
-begin_comment
-DECL|macro|SOFT
+block|,
 comment|/* paintbrush */
-end_comment
-
-begin_define
-DECL|macro|PRESSURE
-define|#
-directive|define
+DECL|enumerator|PRESSURE
 name|PRESSURE
-value|2
-end_define
-
-begin_comment
-DECL|macro|PRESSURE
 comment|/* paintbrush with variable pressure */
-end_comment
+DECL|typedef|BrushApplicationMode
+block|}
+name|BrushApplicationMode
+typedef|;
+end_typedef
 
 begin_comment
 comment|/* paint application modes  */
 end_comment
 
-begin_define
-DECL|macro|CONSTANT
-define|#
-directive|define
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon27fdea370203
+block|{
+DECL|enumerator|CONSTANT
 name|CONSTANT
-value|0
-end_define
-
-begin_comment
-DECL|macro|CONSTANT
+block|,
+comment|/*< nick=CONTINUOUS>*/
 comment|/* pencil, paintbrush, airbrush, clone */
-end_comment
-
-begin_define
-DECL|macro|INCREMENTAL
-define|#
-directive|define
+DECL|enumerator|INCREMENTAL
 name|INCREMENTAL
-value|1
-end_define
-
-begin_comment
-DECL|macro|INCREMENTAL
 comment|/* convolve, smudge */
-end_comment
+DECL|typedef|PaintApplicationMode
+block|}
+name|PaintApplicationMode
+typedef|;
+end_typedef
 
 begin_comment
 comment|/* gradient paint modes */

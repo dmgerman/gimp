@@ -142,25 +142,6 @@ comment|/*  the convolve structures  */
 end_comment
 
 begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon29c595130103
-block|{
-DECL|enumerator|Blur
-name|Blur
-block|,
-DECL|enumerator|Sharpen
-name|Sharpen
-block|,
-DECL|enumerator|Custom
-name|Custom
-DECL|typedef|ConvolveType
-block|}
-name|ConvolveType
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|ConvolveOptions
 typedef|typedef
 name|struct

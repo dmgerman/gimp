@@ -262,8 +262,6 @@ modifier|*
 name|fp
 decl_stmt|;
 name|guint32
-name|num
-decl_stmt|,
 name|version
 init|=
 literal|1
@@ -356,8 +354,6 @@ modifier|*
 name|fp
 decl_stmt|;
 name|guint32
-name|num
-decl_stmt|,
 name|version
 decl_stmt|;
 if|if
