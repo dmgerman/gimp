@@ -1106,6 +1106,17 @@ name|FALSE
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|std_plugins_domain
+specifier|static
+name|gchar
+modifier|*
+name|std_plugins_domain
+init|=
+literal|"gimp-std-plugins"
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 specifier|static
 name|void
@@ -8771,7 +8782,7 @@ argument_list|(
 operator|&
 name|entry
 argument_list|,
-literal|"gimp-std-plugins"
+name|std_plugins_domain
 argument_list|,
 name|proc
 argument_list|)
@@ -10629,11 +10640,21 @@ directive|ifdef
 name|ENABLE_NLS
 name|bindtextdomain
 argument_list|(
-literal|"gimp-std-plugins"
+name|std_plugins_domain
 argument_list|,
 name|LOCALEDIR
 argument_list|)
 expr_stmt|;
+name|domains
+operator|=
+name|g_slist_append
+argument_list|(
+name|domains
+argument_list|,
+name|std_plugins_domain
+argument_list|)
+expr_stmt|;
+comment|/* this will go away */
 name|bindtextdomain
 argument_list|(
 literal|"gimp-perl"
@@ -10641,7 +10662,15 @@ argument_list|,
 name|LOCALEDIR
 argument_list|)
 expr_stmt|;
-comment|/* this will go away */
+name|domains
+operator|=
+name|g_slist_append
+argument_list|(
+name|domains
+argument_list|,
+literal|"gimp-perl"
+argument_list|)
+expr_stmt|;
 endif|#
 directive|endif
 name|tmp
@@ -10980,7 +11009,7 @@ argument_list|(
 operator|&
 name|entry
 argument_list|,
-literal|"gimp-std-plugins"
+name|std_plugins_domain
 argument_list|,
 operator|&
 name|proc_def
