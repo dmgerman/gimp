@@ -115,7 +115,11 @@ value|(a | ((a& 256) - ((a& 256)>> 8)))
 end_define
 
 begin_comment
-comment|/* clamp a int32-range int between 0 and 255 inclusive */
+comment|/* clamp a>>int32<<-range int between 0 and 255 inclusive */
+end_comment
+
+begin_comment
+comment|/* broken! -> #define CLAMP0255(a)  ((a& 0xFFFFFF00)? (~(a>>31)) : a) */
 end_comment
 
 begin_define
@@ -126,11 +130,11 @@ name|CLAMP0255
 parameter_list|(
 name|a
 parameter_list|)
-value|((a&256)? (~(a>>31)) : a)
+value|CLAMP(a,0,255)
 end_define
 
 begin_typedef
-DECL|enum|__anon27c7c2670103
+DECL|enum|__anon29483a310103
 typedef|typedef
 enum|enum
 block|{
