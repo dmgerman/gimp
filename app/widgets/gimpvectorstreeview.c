@@ -211,7 +211,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gchar
+name|guchar
 modifier|*
 name|gimp_vectors_tree_view_drag_svg
 parameter_list|(
@@ -1200,7 +1200,7 @@ end_function
 
 begin_function
 specifier|static
-name|gchar
+name|guchar
 modifier|*
 DECL|function|gimp_vectors_tree_view_drag_svg (GtkWidget * widget,gsize * svg_data_len,gpointer data)
 name|gimp_vectors_tree_view_drag_svg
@@ -1294,6 +1294,10 @@ literal|1
 expr_stmt|;
 block|}
 return|return
+operator|(
+name|guchar
+operator|*
+operator|)
 name|svg_data
 return|;
 block|}
