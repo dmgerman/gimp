@@ -1791,6 +1791,7 @@ name|y
 operator|==
 name|sel_y1
 condition|)
+comment|/* first row */
 name|gimp_pixel_rgn_set_row
 argument_list|(
 operator|&
@@ -1809,6 +1810,7 @@ name|sel_width
 argument_list|)
 expr_stmt|;
 else|else
+comment|/* last row  */
 name|gimp_pixel_rgn_set_row
 argument_list|(
 operator|&
@@ -1816,7 +1818,13 @@ name|dst_rgn
 argument_list|,
 name|src_rows
 index|[
-literal|2
+operator|(
+name|sel_height
+operator|-
+literal|1
+operator|)
+operator|&
+literal|3
 index|]
 argument_list|,
 name|sel_x1
