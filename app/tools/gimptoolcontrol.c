@@ -392,6 +392,9 @@ name|control
 argument_list|)
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
 name|g_return_if_fail
 argument_list|(
 name|control
@@ -401,6 +404,8 @@ operator|==
 name|FALSE
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|control
 operator|->
 name|active
@@ -428,6 +433,9 @@ name|control
 argument_list|)
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
 name|g_return_if_fail
 argument_list|(
 name|control
@@ -437,6 +445,8 @@ operator|==
 name|TRUE
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|control
 operator|->
 name|active
