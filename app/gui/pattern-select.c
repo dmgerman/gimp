@@ -1886,6 +1886,7 @@ if|if
 condition|(
 name|pattern
 condition|)
+block|{
 name|pattern_select_select
 argument_list|(
 name|psp
@@ -1895,6 +1896,20 @@ operator|->
 name|index
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|psp
+operator|->
+name|callback_name
+condition|)
+name|pattern_change_callbacks
+argument_list|(
+name|psp
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -2068,7 +2083,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5f732c0108
+DECL|struct|__anon2a29f83e0108
 block|{
 DECL|member|psp
 name|PatternSelect
@@ -4665,14 +4680,6 @@ comment|/*  Close the brush popup window  */
 name|pattern_popup_close
 argument_list|(
 name|psp
-argument_list|)
-expr_stmt|;
-comment|/* Call any callbacks registered */
-name|pattern_change_callbacks
-argument_list|(
-name|psp
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

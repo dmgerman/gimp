@@ -4018,6 +4018,7 @@ if|if
 condition|(
 name|brush
 condition|)
+block|{
 name|brush_select_select
 argument_list|(
 name|bsp
@@ -4025,6 +4026,20 @@ argument_list|,
 name|brush
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|bsp
+operator|->
+name|callback_name
+condition|)
+name|brush_change_callbacks
+argument_list|(
+name|bsp
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -4084,6 +4099,19 @@ argument_list|,
 name|bsp
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|bsp
+operator|->
+name|callback_name
+condition|)
+name|brush_change_callbacks
+argument_list|(
+name|bsp
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -4115,6 +4143,19 @@ name|option_menu
 argument_list|)
 argument_list|,
 name|paint_mode
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|bsp
+operator|->
+name|callback_name
+condition|)
+name|brush_change_callbacks
+argument_list|(
+name|bsp
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -5081,7 +5122,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acb99750108
+DECL|struct|__anon298ec0480108
 block|{
 DECL|member|bsp
 name|BrushSelect
@@ -8322,14 +8363,6 @@ argument_list|(
 name|bsp
 argument_list|)
 expr_stmt|;
-comment|/*  Call any callbacks registered  */
-name|brush_change_callbacks
-argument_list|(
-name|bsp
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 block|}
 break|break;
 case|case
@@ -8521,21 +8554,6 @@ operator|/
 literal|100.0
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|bsp
-operator|!=
-name|brush_select_dialog
-condition|)
-block|{
-name|brush_change_callbacks
-argument_list|(
-name|bsp
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -8583,21 +8601,6 @@ operator|)
 name|data
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|bsp
-operator|!=
-name|brush_select_dialog
-condition|)
-block|{
-name|brush_change_callbacks
-argument_list|(
-name|bsp
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 

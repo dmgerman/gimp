@@ -1872,7 +1872,7 @@ argument_list|)
 argument_list|,
 name|tool_info
 index|[
-name|i
+name|j
 index|]
 operator|.
 name|private_tip
