@@ -689,6 +689,12 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* update the title to correct the initially displayed scale */
+name|gdisplay_update_title
+argument_list|(
+name|gdisp
+argument_list|)
+expr_stmt|;
 comment|/*  set the gdisplay colormap type and install the appropriate colormap  */
 name|gdisp
 operator|->
