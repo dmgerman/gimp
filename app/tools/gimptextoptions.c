@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b67f6e80103
+DECL|enum|__anon294787ff0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1579,7 +1579,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"_Font:"
+literal|"Font:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -1624,7 +1624,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"_Size:"
+literal|"Size:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -1657,7 +1657,7 @@ literal|"hinting"
 argument_list|,
 name|_
 argument_list|(
-literal|"_Hinting"
+literal|"Hinting"
 argument_list|)
 argument_list|)
 expr_stmt|;
