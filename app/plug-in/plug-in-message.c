@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af20d3e0103
+DECL|enum|__anon277a2f830103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -5654,6 +5654,10 @@ operator|->
 name|tile_num
 argument_list|,
 literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
@@ -5676,13 +5680,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|tile_ref2
-argument_list|(
-name|tile
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|tile_data
@@ -5720,7 +5717,7 @@ name|tile
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|tile_unref
+name|tile_release
 argument_list|(
 name|tile
 argument_list|,
@@ -5821,6 +5818,10 @@ operator|->
 name|tile_num
 argument_list|,
 literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -5906,13 +5907,6 @@ name|FALSE
 else|:
 name|TRUE
 expr_stmt|;
-name|tile_ref2
-argument_list|(
-name|tile
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|tile_data
@@ -5968,7 +5962,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|tile_unref
+name|tile_release
 argument_list|(
 name|tile
 argument_list|,

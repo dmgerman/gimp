@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c84c31c0103
+DECL|enum|__anon2bceaf510103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -237,7 +237,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c84c31c0203
+DECL|enum|__anon2bceaf510203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -259,7 +259,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c84c31c0303
+DECL|enum|__anon2bceaf510303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -398,7 +398,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2c84c31c0408
+DECL|struct|__anon2bceaf510408
 typedef|typedef
 struct|struct
 block|{
@@ -450,7 +450,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c84c31c0508
+DECL|struct|__anon2bceaf510508
 typedef|typedef
 struct|struct
 block|{
@@ -5515,11 +5515,8 @@ argument_list|,
 name|iy
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|tile_ref2
-argument_list|(
-name|tile
+argument_list|,
+name|TRUE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -5559,7 +5556,7 @@ operator|)
 operator|)
 operator|)
 expr_stmt|;
-name|tile_unref
+name|tile_release
 argument_list|(
 name|tile
 argument_list|,
@@ -5642,11 +5639,8 @@ argument_list|,
 name|iy
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|tile_ref2
-argument_list|(
-name|tile
+argument_list|,
+name|TRUE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -5697,7 +5691,7 @@ operator|*
 name|value
 argument_list|)
 expr_stmt|;
-name|tile_unref
+name|tile_release
 argument_list|(
 name|tile
 argument_list|,
@@ -5780,11 +5774,8 @@ argument_list|,
 name|iy
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|tile_ref2
-argument_list|(
-name|tile
+argument_list|,
+name|TRUE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -5833,7 +5824,7 @@ operator|*
 name|value
 argument_list|)
 expr_stmt|;
-name|tile_unref
+name|tile_release
 argument_list|(
 name|tile
 argument_list|,

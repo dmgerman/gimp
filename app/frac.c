@@ -1634,7 +1634,7 @@ name|layer_type
 index|]
 argument_list|)
 expr_stmt|;
-name|tile_unref
+name|tile_release
 argument_list|(
 name|tile
 argument_list|,
@@ -2199,7 +2199,7 @@ argument_list|(
 name|frac_file
 argument_list|)
 expr_stmt|;
-name|tile_unref
+name|tile_release
 argument_list|(
 name|tile
 argument_list|,

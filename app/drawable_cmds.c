@@ -3683,11 +3683,8 @@ argument_list|,
 name|y
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|tile_ref2
-argument_list|(
-name|tile
+argument_list|,
+name|TRUE
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3741,7 +3738,7 @@ operator|*
 name|pixel
 operator|++
 expr_stmt|;
-name|tile_unref
+name|tile_release
 argument_list|(
 name|tile
 argument_list|,
@@ -4055,11 +4052,8 @@ argument_list|,
 name|y
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|tile_ref2
-argument_list|(
-name|tile
+argument_list|,
+name|TRUE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -4115,7 +4109,7 @@ index|[
 name|b
 index|]
 expr_stmt|;
-name|tile_unref
+name|tile_release
 argument_list|(
 name|tile
 argument_list|,

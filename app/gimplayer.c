@@ -96,7 +96,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon296283420103
+DECL|enum|__anon27ea60cb0103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -4676,11 +4676,8 @@ argument_list|,
 name|y
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|tile_ref2
-argument_list|(
-name|tile
+argument_list|,
+name|TRUE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -4743,11 +4740,8 @@ argument_list|,
 name|y
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|tile_ref2
-argument_list|(
-name|mask_tile
+argument_list|,
+name|TRUE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -4781,7 +4775,7 @@ operator|)
 operator|/
 literal|255
 expr_stmt|;
-name|tile_unref
+name|tile_release
 argument_list|(
 name|mask_tile
 argument_list|,
@@ -4789,7 +4783,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
-name|tile_unref
+name|tile_release
 argument_list|(
 name|tile
 argument_list|,

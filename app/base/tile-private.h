@@ -47,6 +47,40 @@ directive|include
 file|"config.h"
 end_include
 
+begin_typedef
+DECL|typedef|TileLink
+typedef|typedef
+name|struct
+name|_TileLink
+name|TileLink
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_TileLink
+struct|struct
+name|_TileLink
+block|{
+DECL|member|next
+name|TileLink
+modifier|*
+name|next
+decl_stmt|;
+DECL|member|tile_num
+name|int
+name|tile_num
+decl_stmt|;
+comment|/* the number of this tile within the drawable */
+DECL|member|tm
+name|void
+modifier|*
+name|tm
+decl_stmt|;
+comment|/* A pointer to the tile manager for this tile. 		       *  We need this in order to call the tile managers  		       *  validate proc whenever the tile is referenced yet  		       *  invalid. 		       */
+block|}
+struct|;
+end_struct
+
 begin_struct
 DECL|struct|_Tile
 struct|struct
@@ -57,6 +91,16 @@ name|short
 name|ref_count
 decl_stmt|;
 comment|/* reference count. when the reference count is  		       *  non-zero then the "data" for this tile must 		       *  be valid. when the reference count for a tile 		       *  is 0 then the "data" for this tile must be 		       *  NULL. 		       */
+DECL|member|write_count
+name|short
+name|write_count
+decl_stmt|;
+comment|/* write count: number of references that are 			 for write access */
+DECL|member|share_count
+name|short
+name|share_count
+decl_stmt|;
+comment|/* share count: number of tile managers that 			 hold this tile */
 DECL|member|dirty
 name|guint
 name|dirty
@@ -77,18 +121,6 @@ modifier|*
 name|data
 decl_stmt|;
 comment|/* the data for the tile. this may be NULL in which 		       *  case the tile data is on disk. 		       */
-DECL|member|real_tile_ptr
-name|Tile
-modifier|*
-name|real_tile_ptr
-decl_stmt|;
-comment|/* if this tile's 'data' pointer is just a copy-on-write 		       *  mirror of another's, this is that source tile. 		       *  (real_tile itself can actually be a virtual tile 		       *  too.)  This is NULL if this tile is not a virtual 		       *  tile. 		       */
-DECL|member|mirrored_by
-name|Tile
-modifier|*
-name|mirrored_by
-decl_stmt|;
-comment|/* If another tile is mirroring this one, this is 		       *  a pointer to that tile, otherwise this is NULL. 		       *  Note that only one tile may be _directly_ mirroring 		       *  another given tile.  This ensures that the graph 		       *  of mirrorings is no more complex than a linked 		       *  list. 		       */
 DECL|member|ewidth
 name|int
 name|ewidth
@@ -105,11 +137,6 @@ name|int
 name|bpp
 decl_stmt|;
 comment|/* the bytes per pixel (1, 2, 3 or 4) */
-DECL|member|tile_num
-name|int
-name|tile_num
-decl_stmt|;
-comment|/* the number of this tile within the drawable */
 DECL|member|swap_num
 name|int
 name|swap_num
@@ -120,12 +147,11 @@ name|off_t
 name|swap_offset
 decl_stmt|;
 comment|/* the offset within the swap file of the tile data. 		       *  if the tile data is in memory this will be set to -1. 		       */
-DECL|member|tm
-name|void
+DECL|member|tlink
+name|TileLink
 modifier|*
-name|tm
+name|tlink
 decl_stmt|;
-comment|/* A pointer to the tile manager for this tile. 		       *  We need this in order to call the tile managers validate 		       *  proc whenever the tile is referenced yet invalid. 		       */
 DECL|member|next
 name|Tile
 modifier|*
@@ -155,6 +181,74 @@ directive|endif
 block|}
 struct|;
 end_struct
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|USE_PTHREADS
+end_ifdef
+
+begin_define
+DECL|macro|TILE_MUTEX_LOCK (tile)
+define|#
+directive|define
+name|TILE_MUTEX_LOCK
+parameter_list|(
+name|tile
+parameter_list|)
+value|pthread_mutex_lock(&((tile)->mutex))
+end_define
+
+begin_define
+DECL|macro|TILE_MUTEX_UNLOCK (tile)
+define|#
+directive|define
+name|TILE_MUTEX_UNLOCK
+parameter_list|(
+name|tile
+parameter_list|)
+value|pthread_mutex_unlock(&((tile)->mutex))
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|TILE_MUTEX_LOCK (tile)
+define|#
+directive|define
+name|TILE_MUTEX_LOCK
+parameter_list|(
+name|tile
+parameter_list|)
+end_define
+
+begin_comment
+DECL|macro|TILE_MUTEX_LOCK (tile)
+comment|/* nothing */
+end_comment
+
+begin_define
+DECL|macro|TILE_MUTEX_UNLOCK (tile)
+define|#
+directive|define
+name|TILE_MUTEX_UNLOCK
+parameter_list|(
+name|tile
+parameter_list|)
+end_define
+
+begin_comment
+DECL|macro|TILE_MUTEX_UNLOCK (tile)
+comment|/* nothing */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_endif
 endif|#

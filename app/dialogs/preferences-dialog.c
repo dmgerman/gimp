@@ -296,7 +296,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28def22d0108
+DECL|struct|__anon2c76f6300108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -394,18 +394,9 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|file_prefs_text_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_comment
+comment|/* static void file_prefs_text_callback (GtkWidget *, gpointer); */
+end_comment
 
 begin_function_decl
 specifier|static
@@ -2457,44 +2448,9 @@ block|}
 block|}
 end_function
 
-begin_function
-specifier|static
-name|void
-DECL|function|file_prefs_text_callback (GtkWidget * widget,gpointer data)
-name|file_prefs_text_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|int
-modifier|*
-name|val
-decl_stmt|;
-name|val
-operator|=
-name|data
-expr_stmt|;
-operator|*
-name|val
-operator|=
-name|atoi
-argument_list|(
-name|gtk_entry_get_text
-argument_list|(
-name|GTK_ENTRY
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
+begin_comment
+comment|/*  commented out because it's not used  static void file_prefs_text_callback (GtkWidget *widget, 			  gpointer   data) {   int *val;      val = data;   *val = atoi (gtk_entry_get_text (GTK_ENTRY (widget))); } */
+end_comment
 
 begin_function
 specifier|static
@@ -2740,7 +2696,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon28def22d0208
+DECL|struct|__anon2c76f6300208
 struct|struct
 block|{
 DECL|member|label
@@ -2780,7 +2736,7 @@ operator|)
 block|}
 block|}
 struct|;
-DECL|struct|__anon28def22d0308
+DECL|struct|__anon2c76f6300308
 struct|struct
 block|{
 DECL|member|label
@@ -2849,7 +2805,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon28def22d0408
+DECL|struct|__anon2c76f6300408
 struct|struct
 block|{
 DECL|member|label

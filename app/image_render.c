@@ -13073,6 +13073,10 @@ operator|->
 name|src_y
 argument_list|,
 literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -13083,13 +13087,6 @@ condition|)
 return|return
 name|NULL
 return|;
-name|tile_ref2
-argument_list|(
-name|tile
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|data
 operator|=
 operator|(
@@ -13216,7 +13213,7 @@ operator|!=
 name|tilex
 condition|)
 block|{
-name|tile_unref
+name|tile_release
 argument_list|(
 name|tile
 argument_list|,
@@ -13242,6 +13239,10 @@ operator|->
 name|src_y
 argument_list|,
 literal|0
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -13252,13 +13253,6 @@ condition|)
 return|return
 name|tile_buf
 return|;
-name|tile_ref2
-argument_list|(
-name|tile
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|data
 operator|=
 operator|(
@@ -13294,7 +13288,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|tile_unref
+name|tile_release
 argument_list|(
 name|tile
 argument_list|,

@@ -287,7 +287,7 @@ parameter_list|,
 name|y
 parameter_list|)
 define|\
-value|tile[i] = tile_manager_get_tile (float_tiles, x, y, 0); \      tile_ref2 (tile[i], FALSE); \      src[i] = tile[i]->data + tile[i]->bpp * (tile[i]->ewidth * ((y) % TILE_HEIGHT) + ((x) % TILE_WIDTH));
+value|tile[i] = tile_manager_get_tile (float_tiles, x, y, 0, TRUE, FALSE); \      src[i] = tile[i]->data + tile[i]->bpp * (tile[i]->ewidth * ((y) % TILE_HEIGHT) + ((x) % TILE_WIDTH));
 end_define
 
 begin_function
@@ -6291,7 +6291,7 @@ condition|;
 name|b
 operator|++
 control|)
-name|tile_unref
+name|tile_release
 argument_list|(
 name|tile
 index|[
@@ -6725,7 +6725,7 @@ condition|;
 name|b
 operator|++
 control|)
-name|tile_unref
+name|tile_release
 argument_list|(
 name|tile
 index|[
@@ -6774,7 +6774,7 @@ index|[
 name|b
 index|]
 expr_stmt|;
-name|tile_unref
+name|tile_release
 argument_list|(
 name|tile
 index|[

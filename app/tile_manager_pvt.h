@@ -55,6 +55,7 @@ comment|/* the number of tiles in each columns */
 DECL|member|tiles
 name|Tile
 modifier|*
+modifier|*
 name|tiles
 decl_stmt|;
 comment|/* the tiles for this level */

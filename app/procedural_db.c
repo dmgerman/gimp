@@ -4836,21 +4836,9 @@ name|next_image_id
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|next_drawable_id
-specifier|static
-name|gint
-name|next_drawable_id
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|next_display_id
-specifier|static
-name|gint
-name|next_display_id
-decl_stmt|;
-end_decl_stmt
+begin_comment
+comment|/* static gint next_drawable_id; static gint next_display_id; */
+end_comment
 
 begin_decl_stmt
 DECL|variable|image_hash

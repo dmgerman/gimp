@@ -439,7 +439,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2ab211d90103
+DECL|enum|__anon288d89930103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -5888,6 +5888,10 @@ argument_list|,
 name|i
 argument_list|,
 literal|0
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  invalidate all lower level tiles  */
@@ -6209,6 +6213,8 @@ operator|*
 operator|(
 name|tile
 operator|->
+name|tlink
+operator|->
 name|tile_num
 operator|%
 name|tm
@@ -6227,6 +6233,8 @@ name|TILE_HEIGHT
 operator|*
 operator|(
 name|tile
+operator|->
+name|tlink
 operator|->
 name|tile_num
 operator|/
