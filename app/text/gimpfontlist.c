@@ -95,6 +95,24 @@ endif|#
 directive|endif
 end_endif
 
+begin_typedef
+DECL|typedef|GimpFontDescToStringFunc
+typedef|typedef
+name|char
+modifier|*
+function_decl|(
+modifier|*
+name|GimpFontDescToStringFunc
+function_decl|)
+parameter_list|(
+specifier|const
+name|PangoFontDescription
+modifier|*
+name|desc
+parameter_list|)
+function_decl|;
+end_typedef
+
 begin_function_decl
 specifier|static
 name|void
@@ -165,6 +183,16 @@ specifier|static
 name|GimpListClass
 modifier|*
 name|parent_class
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|font_desc_to_string
+specifier|static
+name|GimpFontDescToStringFunc
+name|font_desc_to_string
 init|=
 name|NULL
 decl_stmt|;
@@ -390,6 +418,83 @@ name|list
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|font_desc_to_string
+operator|==
+name|NULL
+condition|)
+block|{
+name|PangoFontDescription
+modifier|*
+name|desc
+decl_stmt|;
+name|gchar
+modifier|*
+name|name
+decl_stmt|;
+name|gchar
+name|last_char
+decl_stmt|;
+name|desc
+operator|=
+name|pango_font_description_new
+argument_list|()
+expr_stmt|;
+name|pango_font_description_set_family
+argument_list|(
+name|desc
+argument_list|,
+literal|"Wilber 12"
+argument_list|)
+expr_stmt|;
+name|name
+operator|=
+name|pango_font_description_to_string
+argument_list|(
+name|desc
+argument_list|)
+expr_stmt|;
+name|last_char
+operator|=
+name|name
+index|[
+name|strlen
+argument_list|(
+name|name
+argument_list|)
+operator|-
+literal|1
+index|]
+expr_stmt|;
+name|g_free
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
+name|pango_font_description_free
+argument_list|(
+name|desc
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|last_char
+operator|!=
+literal|','
+condition|)
+name|font_desc_to_string
+operator|=
+operator|&
+name|gimp_font_util_pango_font_description_to_string
+expr_stmt|;
+else|else
+name|font_desc_to_string
+operator|=
+operator|&
+name|pango_font_description_to_string
+expr_stmt|;
+block|}
 name|fontmap
 operator|=
 name|pango_ft2_font_map_new
@@ -502,7 +607,7 @@ condition|)
 return|return;
 name|name
 operator|=
-name|gimp_font_util_pango_font_description_to_string
+name|font_desc_to_string
 argument_list|(
 name|desc
 argument_list|)
@@ -948,7 +1053,7 @@ directive|else
 end_else
 
 begin_comment
-comment|/* ! USE_FONTCONFIG_DIRECTLY  */
+comment|/* ! USE_FONTCONFIG_DIRECTLY */
 end_comment
 
 begin_function
@@ -1086,6 +1191,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* USE_FONTCONFIG_DIRECTLY */
+end_comment
 
 end_unit
 

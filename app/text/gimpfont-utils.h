@@ -17,7 +17,7 @@ name|__GIMP_FONT_UTILS_H__
 end_define
 
 begin_comment
-comment|/* This is solely to workaround pango bug #166540, by tacking on a ',' to  * font names that end in numbers, so pango_font_description_from_string  * doesn't interpret it as a size  */
+comment|/* This is solely to workaround pango bug #166540, by tacking on a ',' to  * font names that end in numbers, so pango_font_description_from_string  * doesn't interpret it as a size. Note that this doesn't fully workaround  * problems pango has with font name serialization, just only the bad size  * interpretation. Family names that end with style names are still  * processed wrongly.  */
 end_comment
 
 begin_function_decl
@@ -25,6 +25,7 @@ name|gchar
 modifier|*
 name|gimp_font_util_pango_font_description_to_string
 parameter_list|(
+specifier|const
 name|PangoFontDescription
 modifier|*
 name|desc
