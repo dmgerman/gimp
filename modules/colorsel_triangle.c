@@ -202,7 +202,7 @@ value|GDK_EXPOSURE_MASK | \                        GDK_BUTTON_PRESS_MASK | \    
 end_define
 
 begin_typedef
-DECL|enum|__anon2b8aade00103
+DECL|enum|__anon28ad45df0103
 typedef|typedef
 enum|enum
 block|{
@@ -4593,6 +4593,16 @@ operator|=
 name|gtk_preview_new
 argument_list|(
 name|GTK_PREVIEW_COLOR
+argument_list|)
+expr_stmt|;
+name|gtk_preview_set_dither
+argument_list|(
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+argument_list|,
+name|GDK_RGB_DITHER_MAX
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_events
