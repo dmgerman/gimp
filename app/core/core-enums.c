@@ -3115,28 +3115,6 @@ literal|"group-misc"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_IMAGE
-block|,
-name|N_
-argument_list|(
-literal|"Image"
-argument_list|)
-block|,
-literal|"image"
-block|}
-block|,
-block|{
-name|GIMP_UNDO_IMAGE_MOD
-block|,
-name|N_
-argument_list|(
-literal|"Image Mod"
-argument_list|)
-block|,
-literal|"image-mod"
-block|}
-block|,
-block|{
 name|GIMP_UNDO_IMAGE_TYPE
 block|,
 name|N_
@@ -3200,6 +3178,17 @@ literal|"Change Indexed Palette"
 argument_list|)
 block|,
 literal|"image-colormap"
+block|}
+block|,
+block|{
+name|GIMP_UNDO_DRAWABLE
+block|,
+name|N_
+argument_list|(
+literal|"Drawable Mod"
+argument_list|)
+block|,
+literal|"drawable"
 block|}
 block|,
 block|{
