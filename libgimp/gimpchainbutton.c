@@ -491,7 +491,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_chain_button_new:  * @position: The position you are going to use for the button  *            with respect to the widgets you want to chain.  *   * Creates a new #GimpChainButton widget. This returns a button  * showing either a broken or a linked chain and small clamps  * attached to both sides that visually group the two widgets   * you want to connect. This widget looks best when attached  * to a table taking up two columns (or rows respectively) next  * to the widgets that it is supposed to connect. It may work  * for more than two widgets, but the look is optimized for two.  *  * Returns: Pointer to the new #GimpChainButton, which is inactive  *          by default. Use gimp_chain_button_set_active() to   *          change its state.  */
+comment|/**  * gimp_chain_button_new:  * @position: The position you are going to use for the button  *            with respect to the widgets you want to chain.  *   * Creates a new #GimpChainButton widget.  *  * This returns a button showing either a broken or a linked chain and  * small clamps attached to both sides that visually group the two widgets   * you want to connect. This widget looks best when attached  * to a table taking up two columns (or rows respectively) next  * to the widgets that it is supposed to connect. It may work  * for more than two widgets, but the look is optimized for two.  *  * Returns: Pointer to the new #GimpChainButton, which is inactive  *          by default. Use gimp_chain_button_set_active() to   *          change its state.  */
 end_comment
 
 begin_function
