@@ -1026,6 +1026,10 @@ argument_list|(
 literal|"EXIT: app_exit_after_callback\n"
 argument_list|)
 expr_stmt|;
+comment|/*    *  In stable releases, we simply call exit() here. This speeds up    *  the process of quitting GIMP and also works around the problem    *  that plug-ins might still be running.    *    *  In unstable releases, we shut down GIMP properly in an attempt    *  to catch possible problems in our finalizers.    */
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
 if|if
 condition|(
 name|loop
@@ -1039,6 +1043,15 @@ else|else
 name|gtk_main_quit
 argument_list|()
 expr_stmt|;
+else|#
+directive|else
+name|exit
+argument_list|(
+name|EXIT_SUCCESS
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 return|return
 name|FALSE
 return|;

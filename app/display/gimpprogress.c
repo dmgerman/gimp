@@ -588,9 +588,7 @@ block|{
 name|GimpDisplayShell
 modifier|*
 name|shell
-decl_stmt|;
-name|shell
-operator|=
+init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|progress
@@ -599,7 +597,7 @@ name|gdisp
 operator|->
 name|shell
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_statusbar_pop
 argument_list|(
 name|GIMP_STATUSBAR
@@ -743,9 +741,7 @@ block|{
 name|GimpDisplayShell
 modifier|*
 name|shell
-decl_stmt|;
-name|shell
-operator|=
+init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|progress
@@ -754,7 +750,7 @@ name|gdisp
 operator|->
 name|shell
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|bar
 operator|=
 name|GIMP_STATUSBAR
@@ -844,9 +840,7 @@ block|{
 name|GimpDisplayShell
 modifier|*
 name|shell
-decl_stmt|;
-name|shell
-operator|=
+init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|progress
@@ -855,7 +849,7 @@ name|gdisp
 operator|->
 name|shell
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|bar
 operator|=
 name|GIMP_STATUSBAR
@@ -930,6 +924,21 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/*  We might get called from gimp_exit() and at that time    *  the display shell has been destroyed already.    */
+if|if
+condition|(
+name|progress
+operator|->
+name|gdisp
+operator|&&
+operator|!
+name|progress
+operator|->
+name|gdisp
+operator|->
+name|shell
+condition|)
+return|return;
 comment|/* remove all callbacks so they don't get called while we're    * destroying widgets    */
 name|gimp_progress_signal_setup
 argument_list|(
@@ -950,13 +959,7 @@ block|{
 name|GimpDisplayShell
 modifier|*
 name|shell
-decl_stmt|;
-name|GtkProgressBar
-modifier|*
-name|bar
-decl_stmt|;
-name|shell
-operator|=
+init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|progress
@@ -965,7 +968,11 @@ name|gdisp
 operator|->
 name|shell
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GtkProgressBar
+modifier|*
+name|bar
+decl_stmt|;
 name|gimp_statusbar_pop
 argument_list|(
 name|GIMP_STATUSBAR
@@ -1164,9 +1171,7 @@ block|{
 name|GimpDisplayShell
 modifier|*
 name|shell
-decl_stmt|;
-name|shell
-operator|=
+init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|progress
@@ -1175,7 +1180,7 @@ name|gdisp
 operator|->
 name|shell
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|dialog
 operator|=
 name|NULL
@@ -1374,9 +1379,7 @@ block|{
 name|GimpDisplayShell
 modifier|*
 name|shell
-decl_stmt|;
-name|shell
-operator|=
+init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|progress
@@ -1385,7 +1388,7 @@ name|gdisp
 operator|->
 name|shell
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|button
 operator|=
 name|GIMP_STATUSBAR
