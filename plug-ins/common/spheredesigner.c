@@ -243,7 +243,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c53d4d0103
+DECL|enum|__anon2bc926de0103
 block|{
 DECL|enumerator|TRIANGLE
 name|TRIANGLE
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c53d4d0203
+DECL|enum|__anon2bc926de0203
 block|{
 DECL|enumerator|SOLID
 name|SOLID
@@ -317,7 +317,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c53d4d0303
+DECL|enum|__anon2bc926de0303
 block|{
 DECL|enumerator|PERSPECTIVE
 name|PERSPECTIVE
@@ -333,7 +333,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c53d4d0403
+DECL|enum|__anon2bc926de0403
 block|{
 DECL|enumerator|FOG
 name|FOG
@@ -380,7 +380,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c53d4d0508
+DECL|struct|__anon2bc926de0508
 block|{
 DECL|member|x
 DECL|member|y
@@ -404,7 +404,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c53d4d0608
+DECL|struct|__anon2bc926de0608
 block|{
 DECL|member|xsize
 DECL|member|ysize
@@ -427,7 +427,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c53d4d0708
+DECL|struct|__anon2bc926de0708
 block|{
 DECL|member|numcol
 name|gshort
@@ -456,7 +456,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c53d4d0808
+DECL|struct|__anon2bc926de0808
 block|{
 DECL|member|majtype
 name|gint
@@ -551,7 +551,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c53d4d0908
+DECL|struct|__anon2bc926de0908
 block|{
 DECL|member|type
 name|gshort
@@ -578,7 +578,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c53d4d0a08
+DECL|struct|__anon2bc926de0a08
 block|{
 DECL|member|type
 name|gshort
@@ -619,7 +619,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c53d4d0b08
+DECL|struct|__anon2bc926de0b08
 block|{
 DECL|member|com
 name|common
@@ -644,7 +644,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c53d4d0c08
+DECL|struct|__anon2bc926de0c08
 block|{
 DECL|member|com
 name|common
@@ -670,7 +670,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c53d4d0d08
+DECL|struct|__anon2bc926de0d08
 block|{
 DECL|member|com
 name|common
@@ -693,7 +693,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c53d4d0e08
+DECL|struct|__anon2bc926de0e08
 block|{
 DECL|member|com
 name|common
@@ -718,7 +718,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c53d4d0f08
+DECL|struct|__anon2bc926de0f08
 block|{
 DECL|member|com
 name|common
@@ -741,7 +741,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c53d4d1008
+DECL|struct|__anon2bc926de1008
 block|{
 DECL|member|com
 name|common
@@ -764,7 +764,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c53d4d1108
+DECL|struct|__anon2bc926de1108
 block|{
 DECL|member|v1
 DECL|member|v2
@@ -790,7 +790,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon29c53d4d120a
+DECL|union|__anon2bc926de120a
 block|{
 DECL|member|com
 name|common
@@ -1146,7 +1146,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon29c53d4d1308
+DECL|struct|__anon2bc926de1308
 block|{
 DECL|member|solid
 DECL|member|phong
@@ -13741,7 +13741,31 @@ modifier|*
 name|event
 parameter_list|)
 block|{
-name|gdk_draw_rgb_image
+name|guchar
+modifier|*
+name|data
+init|=
+name|img
+operator|+
+name|event
+operator|->
+name|area
+operator|.
+name|y
+operator|*
+literal|3
+operator|*
+name|PREVIEWSIZE
+operator|+
+name|event
+operator|->
+name|area
+operator|.
+name|x
+operator|*
+literal|3
+decl_stmt|;
+name|gdk_draw_rgb_image_dithalign
 argument_list|(
 name|widget
 operator|->
@@ -13779,11 +13803,25 @@ name|height
 argument_list|,
 name|GDK_RGB_DITHER_MAX
 argument_list|,
-name|img
+name|data
 argument_list|,
 name|PREVIEWSIZE
 operator|*
 literal|3
+argument_list|,
+operator|-
+name|event
+operator|->
+name|area
+operator|.
+name|x
+argument_list|,
+operator|-
+name|event
+operator|->
+name|area
+operator|.
+name|y
 argument_list|)
 expr_stmt|;
 return|return
@@ -18329,6 +18367,9 @@ block|{
 break|break;
 block|}
 block|}
+if|#
+directive|if
+name|CONTINOUS_UPDATE
 name|drawit
 argument_list|()
 expr_stmt|;
@@ -18340,6 +18381,8 @@ condition|)
 name|gtk_main_iteration
 argument_list|()
 expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|running
@@ -19078,9 +19121,6 @@ argument_list|()
 expr_stmt|;
 else|else
 name|rebuildlist
-argument_list|()
-expr_stmt|;
-name|drawit
 argument_list|()
 expr_stmt|;
 name|gtk_main
