@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4e49d50103
+DECL|enum|__anon298eeb9a0103
 block|{
 DECL|enumerator|COLUMN_ACTION
 name|COLUMN_ACTION
@@ -1556,7 +1556,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4e49d50208
+DECL|struct|__anon298eeb9a0208
 block|{
 DECL|member|accel_path
 name|gchar
@@ -1806,7 +1806,7 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|_
 argument_list|(
-literal|"_Resassign shortcut"
+literal|"_Reassign shortcut"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
