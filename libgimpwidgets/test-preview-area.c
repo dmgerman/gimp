@@ -862,7 +862,7 @@ expr_stmt|;
 name|g_print
 argument_list|(
 literal|"%-16s "
-literal|"fill:  %5.2fs, %8.1f fps, %8.2f megapixels/s\n"
+literal|"fill  :  %5.2fs, %8.1f fps, %8.2f megapixels/s\n"
 argument_list|,
 literal|"Color fill"
 argument_list|,
@@ -883,6 +883,11 @@ literal|1e-6
 operator|)
 operator|/
 name|total_time
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"\n"
 argument_list|)
 expr_stmt|;
 name|g_free
