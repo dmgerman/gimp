@@ -1279,7 +1279,7 @@ name|options
 operator|->
 name|height_d
 operator|=
-literal|35.0
+literal|45.0
 expr_stmt|;
 endif|#
 directive|endif
@@ -2605,9 +2605,9 @@ name|options
 operator|->
 name|height_d
 argument_list|,
-literal|5.0
+literal|25.0
 argument_list|,
-literal|61.0
+literal|81.0
 argument_list|,
 literal|1.0
 argument_list|,
