@@ -213,7 +213,7 @@ end_struct
 begin_function_decl
 specifier|static
 name|void
-name|make_dialog
+name|color_display_dialog_create
 parameter_list|(
 name|ColorDisplayDialog
 modifier|*
@@ -400,8 +400,8 @@ end_function_decl
 begin_function
 specifier|static
 name|void
-DECL|function|make_dialog (ColorDisplayDialog * cdd)
-name|make_dialog
+DECL|function|color_display_dialog_create (ColorDisplayDialog * cdd)
+name|color_display_dialog_create
 parameter_list|(
 name|ColorDisplayDialog
 modifier|*
@@ -436,6 +436,16 @@ name|GtkWidget
 modifier|*
 name|image
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GTK_IS_WINDOW
+argument_list|(
+name|cdd
+operator|->
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|cdd
 operator|->
 name|dialog
@@ -449,9 +459,14 @@ argument_list|)
 argument_list|,
 literal|"display_filters"
 argument_list|,
-name|NULL
+name|GTK_WIDGET
+argument_list|(
+name|cdd
+operator|->
+name|shell
+argument_list|)
 argument_list|,
-literal|0
+name|GTK_DIALOG_DESTROY_WITH_PARENT
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -2437,7 +2452,13 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|make_dialog
+name|cdd
+operator|->
+name|shell
+operator|=
+name|shell
+expr_stmt|;
+name|color_display_dialog_create
 argument_list|(
 name|cdd
 argument_list|)
@@ -2561,12 +2582,6 @@ name|cdd
 operator|->
 name|old_nodes
 argument_list|)
-expr_stmt|;
-name|cdd
-operator|->
-name|shell
-operator|=
-name|shell
 expr_stmt|;
 name|shell
 operator|->
