@@ -51,6 +51,12 @@ directive|include
 file|"gimprc.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"session.h"
+end_include
+
 begin_define
 DECL|macro|XY_DEF_WIDTH
 define|#
@@ -108,7 +114,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_BUTTON_PRESS_MASK | GDK_
 end_define
 
 begin_typedef
-DECL|enum|__anon28d24d350103
+DECL|enum|__anon279783240103
 typedef|typedef
 enum|enum
 block|{
@@ -156,7 +162,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28d24d350203
+DECL|enum|__anon279783240203
 typedef|typedef
 enum|enum
 block|{
@@ -1088,17 +1094,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_uposition
-argument_list|(
-name|csp
-operator|->
-name|shell
-argument_list|,
-name|color_select_x
-argument_list|,
-name|color_select_y
 argument_list|)
 expr_stmt|;
 comment|/*  handle the wm close signal */

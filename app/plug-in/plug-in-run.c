@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2936054b0103
+DECL|enum|__anon27c72c030103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -13763,17 +13763,6 @@ index|[
 literal|0
 index|]
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_uposition
-argument_list|(
-name|plug_in
-operator|->
-name|progress
-argument_list|,
-name|progress_x
-argument_list|,
-name|progress_y
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
