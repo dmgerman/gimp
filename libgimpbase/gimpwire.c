@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *               * This library is distributed in the hope that it will be useful,                * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -160,7 +160,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|wire_compare
 parameter_list|(
 name|guint32
@@ -218,7 +218,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|wire_error_val
 specifier|static
-name|int
+name|gboolean
 name|wire_error_val
 init|=
 name|FALSE
@@ -367,7 +367,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|wire_read (GIOChannel * channel,guint8 * buf,gulong count)
 name|wire_read
 parameter_list|(
@@ -463,9 +463,21 @@ expr_stmt|;
 block|}
 do|while
 condition|(
+operator|(
 name|error
 operator|==
 name|G_IO_ERROR_AGAIN
+operator|)
+operator|||
+operator|(
+name|error
+operator|==
+name|G_IO_ERROR_UNKNOWN
+operator|&&
+name|errno
+operator|==
+name|EINTR
+operator|)
 condition|)
 do|;
 if|if
@@ -531,7 +543,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|wire_write (GIOChannel * channel,guint8 * buf,gulong count)
 name|wire_write
 parameter_list|(
@@ -627,9 +639,21 @@ expr_stmt|;
 block|}
 do|while
 condition|(
+operator|(
 name|error
 operator|==
 name|G_IO_ERROR_AGAIN
+operator|)
+operator|||
+operator|(
+name|error
+operator|==
+name|G_IO_ERROR_UNKNOWN
+operator|&&
+name|errno
+operator|==
+name|EINTR
+operator|)
 condition|)
 do|;
 if|if
@@ -672,7 +696,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|wire_flush (GIOChannel * channel)
 name|wire_flush
 parameter_list|(
@@ -701,10 +725,12 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|wire_error ()
+name|gboolean
+DECL|function|wire_error (void)
 name|wire_error
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 return|return
 name|wire_error_val
@@ -714,9 +740,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|wire_clear_error ()
+DECL|function|wire_clear_error (void)
 name|wire_clear_error
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|wire_error_val
 operator|=
@@ -726,7 +754,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|wire_read_msg (GIOChannel * channel,WireMessage * msg)
 name|wire_read_msg
 parameter_list|(
@@ -815,7 +843,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|wire_write_msg (GIOChannel * channel,WireMessage * msg)
 name|wire_write_msg
 parameter_list|(
@@ -957,7 +985,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|wire_read_int32 (GIOChannel * channel,guint32 * data,gint count)
 name|wire_read_int32
 parameter_list|(
@@ -1028,7 +1056,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|wire_read_int16 (GIOChannel * channel,guint16 * data,gint count)
 name|wire_read_int16
 parameter_list|(
@@ -1099,7 +1127,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|wire_read_int8 (GIOChannel * channel,guint8 * data,gint count)
 name|wire_read_int8
 parameter_list|(
@@ -1129,7 +1157,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|wire_read_double (GIOChannel * channel,gdouble * data,gint count)
 name|wire_read_double
 parameter_list|(
@@ -1145,11 +1173,11 @@ name|gint
 name|count
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|str
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 for|for
@@ -1208,7 +1236,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|wire_read_string (GIOChannel * channel,gchar ** data,gint count)
 name|wire_read_string
 parameter_list|(
@@ -1228,7 +1256,7 @@ block|{
 name|guint32
 name|tmp
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 for|for
@@ -1331,7 +1359,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|wire_write_int32 (GIOChannel * channel,guint32 * data,gint count)
 name|wire_write_int32
 parameter_list|(
@@ -1350,7 +1378,7 @@ block|{
 name|guint32
 name|tmp
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if
@@ -1413,7 +1441,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|wire_write_int16 (GIOChannel * channel,guint16 * data,gint count)
 name|wire_write_int16
 parameter_list|(
@@ -1432,7 +1460,7 @@ block|{
 name|guint16
 name|tmp
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if
@@ -1495,7 +1523,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|wire_write_int8 (GIOChannel * channel,guint8 * data,gint count)
 name|wire_write_int8
 parameter_list|(
@@ -1525,7 +1553,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|wire_write_double (GIOChannel * channel,gdouble * data,gint count)
 name|wire_write_double
 parameter_list|(
@@ -1544,13 +1572,14 @@ block|{
 name|gchar
 modifier|*
 name|t
-decl_stmt|,
+decl_stmt|;
+name|gchar
 name|buf
 index|[
 literal|128
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|t
@@ -1571,9 +1600,14 @@ name|i
 operator|++
 control|)
 block|{
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%0.50e"
 argument_list|,
@@ -1607,7 +1641,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|wire_write_string (GIOChannel * channel,gchar ** data,gint count)
 name|wire_write_string
 parameter_list|(
@@ -1627,7 +1661,7 @@ block|{
 name|guint32
 name|tmp
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 for|for
@@ -1722,9 +1756,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|wire_init ()
+DECL|function|wire_init (void)
 name|wire_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -1771,7 +1807,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|wire_compare (guint32 * a,guint32 * b)
 name|wire_compare
 parameter_list|(
