@@ -648,7 +648,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ac138320108
+DECL|struct|__anon2a1bc65e0108
 block|{
 DECL|member|directory
 name|gboolean
@@ -4044,6 +4044,9 @@ name|quoted_data_dir
 decl_stmt|,
 modifier|*
 name|quoted_user_dir
+decl_stmt|,
+modifier|*
+name|quoted_sysconf_dir
 decl_stmt|;
 comment|/* On Windows, it is common for the GIMP data directory        * to have spaces in it ("c:\Program Files\GIMP"). Put spaces in quotes.        */
 name|quoted_data_dir
@@ -4062,6 +4065,12 @@ name|gimp_directory
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|quoted_sysconf_dir
+operator|=
+name|quote_spaces
+argument_list|(
+argument|gimp_sysconf_directory ()
+argument_list|)
 comment|/* The Microsoft _popen doesn't work in Windows applications, sigh.        * Do the installation by calling system(). The user_install.bat        * ends with a pause command, so the user has to press enter in        * the console window to continue, and thus has a chance to read        * at the window contents.        */
 name|AllocConsole
 argument_list|()
@@ -4074,13 +4083,15 @@ argument|sizeof(buffer)
 argument_list|,
 literal|"%s"
 argument|G_DIR_SEPARATOR_S USER_INSTALL
-literal|" %s %s"
+literal|" %s %s %s"
 argument_list|,
 argument|quoted_data_dir
 argument_list|,
 argument|quoted_data_dir
 argument_list|,
 argument|quoted_user_dir
+argument_list|,
+argument|quoted_sysconf_dir
 argument_list|)
 empty_stmt|;
 if|if
@@ -4105,6 +4116,11 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|quoted_user_dir
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|quoted_sysconf_dir
 argument_list|)
 expr_stmt|;
 if|if
@@ -4139,7 +4155,7 @@ argument|sizeof(buffer)
 argument_list|,
 literal|"%s"
 argument|G_DIR_SEPARATOR_S USER_INSTALL
-literal|" %s %s %s"
+literal|" %s %s %s %s"
 argument_list|,
 argument|gimp_data_directory ()
 argument_list|,
@@ -4148,6 +4164,8 @@ argument_list|,
 argument|gimp_data_directory()
 argument_list|,
 argument|gimp_directory ()
+argument_list|,
+argument|gimp_sysconf_directory()
 argument_list|)
 empty_stmt|;
 else|#
@@ -4160,13 +4178,15 @@ argument|sizeof(buffer)
 argument_list|,
 literal|"cmd.exe /c %s"
 argument|G_DIR_SEPARATOR_S USER_INSTALL
-literal|" %s %s"
+literal|" %s %s %s"
 argument_list|,
 argument|gimp_data_directory ()
 argument_list|,
 argument|gimp_data_directory()
 argument_list|,
 argument|gimp_directory ()
+argument_list|,
+argument|gimp_sysconf_directory()
 argument_list|)
 empty_stmt|;
 block|{

@@ -55,6 +55,13 @@ parameter_list|)
 function_decl|;
 name|gchar
 modifier|*
+name|gimp_sysconf_directory
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+name|gchar
+modifier|*
 name|gimp_gtkrc
 parameter_list|(
 name|void

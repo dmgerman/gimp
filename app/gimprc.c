@@ -236,7 +236,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9ed3e50103
+DECL|enum|__anon2b20cae30103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -2989,7 +2989,7 @@ name|value
 operator|=
 name|g_strconcat
 argument_list|(
-name|gimp_data_directory
+name|gimp_sysconf_directory
 argument_list|()
 argument_list|,
 name|G_DIR_SEPARATOR_S
