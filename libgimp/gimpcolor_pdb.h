@@ -93,6 +93,16 @@ end_comment
 
 begin_function_decl
 name|gboolean
+name|gimp_levels_stretch
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_posterize
 parameter_list|(
 name|gint32
