@@ -34,7 +34,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1b0dff0108
+DECL|struct|__anon2bef06970108
 block|{
 DECL|member|delete_on_exit
 name|gboolean
@@ -327,7 +327,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_get_number_of_built_in_units:  *  * Returns the number of #GimpUnit's which are hardcoded in the unit system  * (UNIT_INCH, UNIT_MM, UNIT_POINT, UNIT_PICA and the two "pseudo units"  *  UNIT_PIXEL and UNIT_PERCENT).  *  * Returns: The number of built-in units.  *  */
+comment|/**  * gimp_unit_get_number_of_built_in_units:  *  * Returns the number of #GimpUnit's which are hardcoded in the unit system  * (UNIT_INCH, UNIT_MM, UNIT_POINT, UNIT_PICA and the two "pseudo unit"  *  UNIT_PIXEL).  *  * Returns: The number of built-in units.  *  */
 end_comment
 
 begin_function

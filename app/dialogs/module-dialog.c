@@ -128,7 +128,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|module_db_load_inhibit
-name|char
+name|gchar
 modifier|*
 name|module_db_load_inhibit
 init|=
@@ -137,9 +137,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|enum|__anon2abf345d0103
 typedef|typedef
 enum|enum
+DECL|enum|__anon28efc6f40103
 block|{
 DECL|enumerator|ST_MODULE_ERROR
 name|ST_MODULE_ERROR
@@ -170,7 +170,7 @@ begin_decl_stmt
 DECL|variable|statename
 specifier|static
 specifier|const
-name|char
+name|gchar
 modifier|*
 specifier|const
 name|statename
@@ -339,9 +339,9 @@ comment|/* one of these objects is kept per-module */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2abf345d0208
 typedef|typedef
 struct|struct
+DECL|struct|__anon28efc6f40208
 block|{
 DECL|member|object
 name|GtkObject
@@ -393,17 +393,15 @@ name|last_module_error
 decl_stmt|;
 DECL|member|init
 name|GimpModuleInitFunc
-modifier|*
 name|init
 decl_stmt|;
 DECL|member|unload
 name|GimpModuleUnloadFunc
-modifier|*
 name|unload
 decl_stmt|;
-DECL|typedef|module_info
+DECL|typedef|ModuleInfo
 block|}
-name|module_info
+name|ModuleInfo
 typedef|;
 end_typedef
 
@@ -433,7 +431,7 @@ name|MODULE_INFO
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_CAST (obj, MODULE_INFO_TYPE, module_info)
+value|GTK_CHECK_CAST (obj, MODULE_INFO_TYPE, ModuleInfo)
 end_define
 
 begin_define
@@ -456,9 +454,9 @@ value|7
 end_define
 
 begin_typedef
-DECL|struct|__anon2abf345d0308
 typedef|typedef
 struct|struct
+DECL|struct|__anon28efc6f40308
 block|{
 DECL|member|table
 name|GtkWidget
@@ -479,7 +477,7 @@ modifier|*
 name|button_label
 decl_stmt|;
 DECL|member|last_update
-name|module_info
+name|ModuleInfo
 modifier|*
 name|last_update
 decl_stmt|;
@@ -498,9 +496,9 @@ name|GtkWidget
 modifier|*
 name|load_inhibit_check
 decl_stmt|;
-DECL|typedef|browser_st
+DECL|typedef|BrowserState
 block|}
-name|browser_st
+name|BrowserState
 typedef|;
 end_typedef
 
@@ -610,7 +608,7 @@ specifier|static
 name|void
 name|module_initialize
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -622,7 +620,7 @@ specifier|static
 name|void
 name|mod_load
 parameter_list|(
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 parameter_list|,
@@ -637,7 +635,7 @@ specifier|static
 name|void
 name|mod_unload
 parameter_list|(
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 parameter_list|,
@@ -649,12 +647,12 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|module_info
+name|ModuleInfo
 modifier|*
 name|module_find_by_path
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|fullpath
 parameter_list|)
@@ -693,10 +691,10 @@ name|browser_popdown_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -708,10 +706,10 @@ name|browser_destroy_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -721,11 +719,13 @@ specifier|static
 name|void
 name|browser_info_update
 parameter_list|(
-name|module_info
+name|ModuleInfo
 modifier|*
+name|mod
 parameter_list|,
-name|browser_st
+name|BrowserState
 modifier|*
+name|st
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -737,12 +737,15 @@ name|browser_info_add
 parameter_list|(
 name|GimpSet
 modifier|*
+name|set
 parameter_list|,
-name|module_info
+name|ModuleInfo
 modifier|*
+name|mod
 parameter_list|,
-name|browser_st
+name|BrowserState
 modifier|*
+name|st
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -754,12 +757,15 @@ name|browser_info_remove
 parameter_list|(
 name|GimpSet
 modifier|*
+name|set
 parameter_list|,
-name|module_info
+name|ModuleInfo
 modifier|*
+name|mod
 parameter_list|,
-name|browser_st
+name|BrowserState
 modifier|*
+name|st
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -769,7 +775,7 @@ specifier|static
 name|void
 name|browser_info_init
 parameter_list|(
-name|browser_st
+name|BrowserState
 modifier|*
 name|st
 parameter_list|,
@@ -845,7 +851,7 @@ specifier|static
 name|void
 name|gimp_module_ref
 parameter_list|(
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 parameter_list|)
@@ -857,7 +863,7 @@ specifier|static
 name|void
 name|gimp_module_unref
 parameter_list|(
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 parameter_list|)
@@ -880,7 +886,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
@@ -957,7 +963,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 init|=
@@ -1004,7 +1010,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 init|=
@@ -1064,7 +1070,7 @@ name|gchar
 modifier|*
 name|p
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
@@ -1240,7 +1246,7 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|browser_st
+name|BrowserState
 modifier|*
 name|st
 decl_stmt|;
@@ -1381,7 +1387,7 @@ name|st
 operator|=
 name|g_new0
 argument_list|(
-name|browser_st
+name|BrowserState
 argument_list|,
 literal|1
 argument_list|)
@@ -1742,27 +1748,27 @@ comment|/**************************************************************/
 end_comment
 
 begin_comment
-comment|/* module_info object glue */
+comment|/* ModuleInfo object glue */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2abf345d0408
 typedef|typedef
 struct|struct
+DECL|struct|__anon28efc6f40408
 block|{
 DECL|member|parent_class
 name|GtkObjectClass
 name|parent_class
 decl_stmt|;
-DECL|typedef|module_infoClass
+DECL|typedef|ModuleInfoClass
 block|}
-name|module_infoClass
+name|ModuleInfoClass
 typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2abf345d0503
 enum|enum
+DECL|enum|__anon28efc6f40503
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -1795,7 +1801,7 @@ modifier|*
 name|object
 parameter_list|)
 block|{
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 init|=
@@ -1840,10 +1846,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|module_info_class_init (module_infoClass * klass)
+DECL|function|module_info_class_init (ModuleInfoClass * klass)
 name|module_info_class_init
 parameter_list|(
-name|module_infoClass
+name|ModuleInfoClass
 modifier|*
 name|klass
 parameter_list|)
@@ -1907,10 +1913,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|module_info_init (module_info * mod)
+DECL|function|module_info_init (ModuleInfo * mod)
 name|module_info_init
 parameter_list|(
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 parameter_list|)
@@ -1946,16 +1952,16 @@ name|GtkTypeInfo
 name|module_info_info
 init|=
 block|{
-literal|"module_info"
+literal|"ModuleInfo"
 block|,
 sizeof|sizeof
 argument_list|(
-name|module_info
+name|ModuleInfo
 argument_list|)
 block|,
 sizeof|sizeof
 argument_list|(
-name|module_infoClass
+name|ModuleInfoClass
 argument_list|)
 block|,
 operator|(
@@ -2005,10 +2011,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|module_info_modified (module_info * mod)
+DECL|function|module_info_modified (ModuleInfo * mod)
 name|module_info_modified
 parameter_list|(
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 parameter_list|)
@@ -2031,7 +2037,7 @@ end_function
 
 begin_function
 specifier|static
-name|module_info
+name|ModuleInfo
 modifier|*
 DECL|function|module_info_new (void)
 name|module_info_new
@@ -2055,10 +2061,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|module_info_free (module_info * mod)
+DECL|function|module_info_free (ModuleInfo * mod)
 name|module_info_free
 parameter_list|(
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 parameter_list|)
@@ -2089,21 +2095,21 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|valid_module_name (const char * filename)
+DECL|function|valid_module_name (const gchar * filename)
 name|valid_module_name
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
 block|{
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|basename
 decl_stmt|;
-name|int
+name|gint
 name|len
 decl_stmt|;
 name|basename
@@ -2222,32 +2228,34 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|module_inhibited (const char * fullpath,const char * inhibit_list)
+DECL|function|module_inhibited (const gchar * fullpath,const gchar * inhibit_list)
 name|module_inhibited
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|fullpath
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|inhibit_list
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|p
 decl_stmt|;
-name|int
+name|gint
 name|pathlen
 decl_stmt|;
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|start
-decl_stmt|,
+decl_stmt|;
+specifier|const
+name|gchar
 modifier|*
 name|end
 decl_stmt|;
@@ -2364,15 +2372,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|module_initialize (char * filename)
+DECL|function|module_initialize (gchar * filename)
 name|module_initialize
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
 block|{
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 decl_stmt|;
@@ -2556,10 +2564,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|mod_load (module_info * mod,gboolean verbose)
+DECL|function|mod_load (ModuleInfo * mod,gboolean verbose)
 name|mod_load
 parameter_list|(
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 parameter_list|,
@@ -2877,7 +2885,7 @@ modifier|*
 name|data
 parameter_list|)
 block|{
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 init|=
@@ -2930,10 +2938,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|mod_unload (module_info * mod,gboolean verbose)
+DECL|function|mod_unload (ModuleInfo * mod,gboolean verbose)
 name|mod_unload
 parameter_list|(
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 parameter_list|,
@@ -3031,13 +3039,13 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|module_info
+name|ModuleInfo
 modifier|*
 name|i
 init|=
 name|data
 decl_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"\n%s: %s\n"
 argument_list|,
@@ -3053,7 +3061,7 @@ name|state
 index|]
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"  module:%p  lasterr:%s  init:%p  unload:%p\n"
 argument_list|,
@@ -3087,7 +3095,7 @@ operator|->
 name|info
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"  shutdown_data: %p\n"
 literal|"  purpose:   %s\n"
@@ -3153,22 +3161,22 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|browser_popdown_callback (GtkWidget * w,gpointer client_data)
+DECL|function|browser_popdown_callback (GtkWidget * widget,gpointer data)
 name|browser_popdown_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|gtk_widget_destroy
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|client_data
+name|data
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3178,15 +3186,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|browser_destroy_callback (GtkWidget * w,gpointer client_data)
+DECL|function|browser_destroy_callback (GtkWidget * widget,gpointer data)
 name|browser_destroy_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|gtk_signal_disconnect_by_data
@@ -3196,7 +3204,7 @@ argument_list|(
 name|modules
 argument_list|)
 argument_list|,
-name|client_data
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_set_remove_handler
@@ -3208,7 +3216,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|client_data
+name|data
 argument_list|)
 expr_stmt|;
 block|}
@@ -3217,18 +3225,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|browser_load_inhibit_callback (GtkWidget * w,gpointer data)
+DECL|function|browser_load_inhibit_callback (GtkWidget * widget,gpointer data)
 name|browser_load_inhibit_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
 block|{
-name|browser_st
+name|BrowserState
 modifier|*
 name|st
 init|=
@@ -3251,7 +3259,7 @@ operator|=
 operator|!
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|w
+name|widget
 argument_list|)
 operator|->
 name|active
@@ -3292,23 +3300,23 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|browser_info_update (module_info * mod,browser_st * st)
+DECL|function|browser_info_update (ModuleInfo * mod,BrowserState * st)
 name|browser_info_update
 parameter_list|(
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 parameter_list|,
-name|browser_st
+name|BrowserState
 modifier|*
 name|st
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|text
 index|[
@@ -3317,7 +3325,7 @@ operator|-
 literal|1
 index|]
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|status
 decl_stmt|;
@@ -3790,10 +3798,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|browser_info_init (browser_st * st,GtkWidget * table)
+DECL|function|browser_info_init (BrowserState * st,GtkWidget * table)
 name|browser_info_init
 parameter_list|(
-name|browser_st
+name|BrowserState
 modifier|*
 name|st
 parameter_list|,
@@ -3806,10 +3814,10 @@ name|GtkWidget
 modifier|*
 name|label
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|text
 index|[]
@@ -4102,11 +4110,11 @@ modifier|*
 name|child
 parameter_list|)
 block|{
-name|module_info
+name|ModuleInfo
 modifier|*
 name|i
 decl_stmt|;
-name|browser_st
+name|BrowserState
 modifier|*
 name|st
 decl_stmt|;
@@ -4171,7 +4179,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|browser_st
+name|BrowserState
 modifier|*
 name|st
 init|=
@@ -4229,13 +4237,13 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|module_info
+name|ModuleInfo
 modifier|*
 name|info
 init|=
 name|data
 decl_stmt|;
-name|browser_st
+name|BrowserState
 modifier|*
 name|st
 init|=
@@ -4300,18 +4308,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|browser_info_add (GimpSet * set,module_info * mod,browser_st * st)
+DECL|function|browser_info_add (GimpSet * set,ModuleInfo * mod,BrowserState * st)
 name|browser_info_add
 parameter_list|(
 name|GimpSet
 modifier|*
 name|set
 parameter_list|,
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 parameter_list|,
-name|browser_st
+name|BrowserState
 modifier|*
 name|st
 parameter_list|)
@@ -4329,18 +4337,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|browser_info_remove (GimpSet * set,module_info * mod,browser_st * st)
+DECL|function|browser_info_remove (GimpSet * set,ModuleInfo * mod,BrowserState * st)
 name|browser_info_remove
 parameter_list|(
 name|GimpSet
 modifier|*
 name|set
 parameter_list|,
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 parameter_list|,
-name|browser_st
+name|BrowserState
 modifier|*
 name|st
 parameter_list|)
@@ -4356,7 +4364,7 @@ name|GtkWidget
 modifier|*
 name|list_item
 decl_stmt|;
-name|module_info
+name|ModuleInfo
 modifier|*
 name|i
 decl_stmt|;
@@ -4463,7 +4471,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 init|=
@@ -4473,10 +4481,10 @@ name|struct
 name|stat
 name|statbuf
 decl_stmt|;
-name|int
+name|gint
 name|ret
 decl_stmt|;
-name|int
+name|gint
 name|old_ondisk
 init|=
 name|mod
@@ -4582,7 +4590,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 init|=
@@ -4604,18 +4612,18 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2abf345d0608
 typedef|typedef
 struct|struct
+DECL|struct|__anon28efc6f40608
 block|{
 DECL|member|search_key
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|search_key
 decl_stmt|;
 DECL|member|found
-name|module_info
+name|ModuleInfo
 modifier|*
 name|found
 decl_stmt|;
@@ -4638,7 +4646,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 init|=
@@ -4675,7 +4683,7 @@ end_function
 
 begin_function
 specifier|static
-name|module_info
+name|ModuleInfo
 modifier|*
 DECL|function|module_find_by_path (const char * fullpath)
 name|module_find_by_path
@@ -4785,10 +4793,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_module_ref (module_info * mod)
+DECL|function|gimp_module_ref (ModuleInfo * mod)
 name|gimp_module_ref
 parameter_list|(
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 parameter_list|)
@@ -4822,10 +4830,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_module_unref (module_info * mod)
+DECL|function|gimp_module_unref (ModuleInfo * mod)
 name|gimp_module_unref
 parameter_list|(
-name|module_info
+name|ModuleInfo
 modifier|*
 name|mod
 parameter_list|)

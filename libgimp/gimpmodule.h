@@ -22,10 +22,14 @@ directive|include
 file|<gmodule.h>
 end_include
 
+begin_comment
+comment|/* For information look at the html documentation */
+end_comment
+
 begin_typedef
-DECL|enum|__anon273d93e20103
 typedef|typedef
 enum|enum
+DECL|enum|__anon2bfe55480103
 block|{
 DECL|enumerator|GIMP_MODULE_OK
 name|GIMP_MODULE_OK
@@ -39,53 +43,59 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon273d93e20208
+DECL|typedef|GimpModuleInfo
 typedef|typedef
+name|struct
+name|_GimpModuleInfo
+name|GimpModuleInfo
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpModuleInfo
 struct|struct
+name|_GimpModuleInfo
 block|{
 DECL|member|shutdown_data
-name|void
-modifier|*
+name|gpointer
 name|shutdown_data
 decl_stmt|;
 DECL|member|purpose
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|purpose
 decl_stmt|;
 DECL|member|author
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|author
 decl_stmt|;
 DECL|member|version
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|version
 decl_stmt|;
 DECL|member|copyright
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|copyright
 decl_stmt|;
 DECL|member|date
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|date
 decl_stmt|;
-DECL|typedef|GimpModuleInfo
 block|}
-name|GimpModuleInfo
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_comment
-comment|/* GIMP modules should G_MODULE_EXPORT a function named "module_init"  * of the following type: */
+comment|/*  Module initialization  */
 end_comment
 
 begin_typedef
@@ -93,12 +103,14 @@ DECL|typedef|GimpModuleInitFunc
 typedef|typedef
 name|GimpModuleStatus
 function_decl|(
+modifier|*
 name|GimpModuleInitFunc
 function_decl|)
 parameter_list|(
 name|GimpModuleInfo
 modifier|*
 modifier|*
+name|module_info
 parameter_list|)
 function_decl|;
 end_typedef
@@ -110,7 +122,7 @@ name|MODULE_COMPILATION
 end_ifndef
 
 begin_comment
-comment|/* On Win32 this declaration clashes with 				 * the definition (which uses G_MODULE_EXPORT) 				 * and thus should be bypassed when compiling 				 * the module itself. 				 */
+comment|/*  On Win32 this declaration clashes with the definition  *  (which uses G_MODULE_EXPORT) and thus should be bypassed  *  when compiling the module itself.  */
 end_comment
 
 begin_decl_stmt
@@ -126,37 +138,44 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* This function is called by the GIMP at startup, and should return  * either GIMP_MODULE_OK if it sucessfully initialised or  * GIMP_MODULE_UNLOAD if the module failed to hook whatever functions  * it wanted.  GIMP_MODULE_UNLOAD causes the module to be closed, so  * the module must not have registered any internal functions or given  * out pointers to its data to anyone.  *  * If the module returns GIMP_MODULE_OK, it should also return a  * GimpModuleInfo structure describing itself.  */
+comment|/* ! MODULE_COMPILATION */
 end_comment
 
 begin_comment
-comment|/* If GIMP modules want to allow themselves to be unloaded, they  * should G_MODULE_EXPORT a function named "module_unload" with the  * following type: */
+comment|/*  Module unload  */
 end_comment
+
+begin_typedef
+DECL|typedef|GimpModuleCompletedCB
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|GimpModuleCompletedCB
+function_decl|)
+parameter_list|(
+name|gpointer
+name|completed_data
+parameter_list|)
+function_decl|;
+end_typedef
 
 begin_typedef
 DECL|typedef|GimpModuleUnloadFunc
 typedef|typedef
 name|void
 function_decl|(
+modifier|*
 name|GimpModuleUnloadFunc
 function_decl|)
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|shutdown_data
 parameter_list|,
-name|void
-function_decl|(
-modifier|*
+name|GimpModuleCompletedCB
 name|completed_cb
-function_decl|)
-parameter_list|(
-name|void
-modifier|*
-parameter_list|)
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|completed_data
 parameter_list|)
 function_decl|;
@@ -169,7 +188,7 @@ name|MODULE_COMPILATION
 end_ifndef
 
 begin_comment
-comment|/* The same as for module_init */
+comment|/*  The same as for module_init.  */
 end_comment
 
 begin_decl_stmt
@@ -185,7 +204,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* GIMP calls this unload request function to ask a module to  * prepare itself to be unloaded.  It is called with the value of  * shutdown_data supplied in the GimpModuleInfo struct.  The module  * should ensure that none of its code or data are being used, and  * then call the supplied "completed_cb" callback function with the  * data provided.  Typically the shutdown request function will queue  * de-registration activities then return.  Only when the  * de-registration has finished should the completed_cb be invoked. */
+comment|/* ! MODULE_COMPILATION */
 end_comment
 
 begin_endif

@@ -274,7 +274,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*   * The following two functions are implemted and exported by gimp/app  * but need to be marked for it here too ...  */
+comment|/*  The following two functions are implemted and exported by gimp/app  *  but need to be marked for it here too ...  */
 end_comment
 
 begin_function_decl
@@ -283,7 +283,7 @@ name|gboolean
 name|gimp_color_display_register
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -300,7 +300,7 @@ name|gboolean
 name|gimp_color_display_unregister
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
