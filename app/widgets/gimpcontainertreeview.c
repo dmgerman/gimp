@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4e70b70103
+DECL|enum|__anon295883170103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -3365,13 +3365,9 @@ begin_function
 specifier|static
 name|GtkCellRenderer
 modifier|*
-DECL|function|gimp_container_tree_view_find_click_cell (GtkWidget * view,GList * cells,GtkTreeViewColumn * column,GdkRectangle * column_area,gint tree_x,gint tree_y)
+DECL|function|gimp_container_tree_view_find_click_cell (GList * cells,GtkTreeViewColumn * column,GdkRectangle * column_area,gint tree_x,gint tree_y)
 name|gimp_container_tree_view_find_click_cell
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|view
-parameter_list|,
 name|GList
 modifier|*
 name|cells
@@ -3454,12 +3450,6 @@ name|column_area
 operator|->
 name|x
 decl_stmt|;
-if|#
-directive|if
-literal|0
-block|g_print ("cell at %d (%d width) (%d column->x) (%d tree_x)\n",                    start, width, column_area->x, tree_x);
-endif|#
-directive|endif
 if|if
 condition|(
 name|tree_x
@@ -3480,9 +3470,11 @@ name|renderer
 operator|->
 name|xpad
 condition|)
+block|{
 return|return
 name|renderer
 return|;
+block|}
 block|}
 block|}
 return|return
@@ -3527,6 +3519,9 @@ name|GtkTreePath
 modifier|*
 name|path
 decl_stmt|;
+name|gint
+name|x
+decl_stmt|;
 name|tree_view
 operator|->
 name|dnd_viewable
@@ -3548,6 +3543,34 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gtk_widget_get_direction
+argument_list|(
+name|widget
+argument_list|)
+operator|==
+name|GTK_TEXT_DIR_RTL
+condition|)
+name|x
+operator|=
+name|widget
+operator|->
+name|allocation
+operator|.
+name|width
+operator|-
+name|bevent
+operator|->
+name|x
+expr_stmt|;
+else|else
+name|x
+operator|=
+name|bevent
+operator|->
+name|x
+expr_stmt|;
+if|if
+condition|(
 name|gtk_tree_view_get_path_at_pos
 argument_list|(
 name|GTK_TREE_VIEW
@@ -3555,8 +3578,6 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-name|bevent
-operator|->
 name|x
 argument_list|,
 name|bevent
@@ -3706,8 +3727,6 @@ operator|*
 operator|)
 name|gimp_container_tree_view_find_click_cell
 argument_list|(
-name|widget
-argument_list|,
 name|tree_view
 operator|->
 name|toggle_cells
@@ -3735,8 +3754,6 @@ operator|*
 operator|)
 name|gimp_container_tree_view_find_click_cell
 argument_list|(
-name|widget
-argument_list|,
 name|tree_view
 operator|->
 name|renderer_cells
@@ -3763,8 +3780,6 @@ name|edit_cell
 operator|=
 name|gimp_container_tree_view_find_click_cell
 argument_list|(
-name|widget
-argument_list|,
 name|tree_view
 operator|->
 name|editable_cells
