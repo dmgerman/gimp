@@ -188,6 +188,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|resize_window
+operator|||
 name|redisplay
 condition|)
 block|{

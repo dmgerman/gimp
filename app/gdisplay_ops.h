@@ -22,18 +22,13 @@ directive|include
 file|"gdisplay.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
-end_include
-
 begin_function_decl
 name|gulong
 name|gdisplay_black_pixel
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -44,6 +39,7 @@ name|gdisplay_gray_pixel
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -54,6 +50,7 @@ name|gdisplay_white_pixel
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -64,6 +61,7 @@ name|gdisplay_color_pixel
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -74,9 +72,11 @@ name|gdisplay_xserver_resolution
 parameter_list|(
 name|gdouble
 modifier|*
+name|xres
 parameter_list|,
 name|gdouble
 modifier|*
+name|yres
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -87,6 +87,7 @@ name|gdisplay_new_view
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -97,8 +98,10 @@ name|gdisplay_close_window
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
-name|int
+name|gboolean
+name|kill_it
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -109,16 +112,7 @@ name|gdisplay_shrink_wrap
 parameter_list|(
 name|GDisplay
 modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|int
-name|gdisplay_resize_image
-parameter_list|(
-name|GDisplay
-modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
