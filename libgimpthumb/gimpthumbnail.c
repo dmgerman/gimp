@@ -160,7 +160,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c6a7690103
+DECL|enum|__anon2b2950250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -322,6 +322,9 @@ parameter_list|(
 name|GimpThumbnail
 modifier|*
 name|thumbnail
+parameter_list|,
+name|GimpThumbSize
+name|size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1530,6 +1533,8 @@ expr_stmt|;
 name|gimp_thumbnail_update_thumb
 argument_list|(
 name|thumbnail
+argument_list|,
+name|size
 argument_list|)
 expr_stmt|;
 name|g_object_thaw_notify
@@ -1808,19 +1813,22 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_thumbnail_update_thumb (GimpThumbnail * thumbnail)
+DECL|function|gimp_thumbnail_update_thumb (GimpThumbnail * thumbnail,GimpThumbSize size)
 name|gimp_thumbnail_update_thumb
 parameter_list|(
 name|GimpThumbnail
 modifier|*
 name|thumbnail
+parameter_list|,
+name|GimpThumbSize
+name|size
 parameter_list|)
 block|{
 name|GimpThumbState
 name|state
 decl_stmt|;
 name|GimpThumbSize
-name|size
+name|s
 decl_stmt|;
 name|gint64
 name|filesize
@@ -1833,6 +1841,10 @@ operator|=
 name|thumbnail
 operator|->
 name|thumb_state
+expr_stmt|;
+name|s
+operator|=
+name|size
 expr_stmt|;
 switch|switch
 condition|(
@@ -1874,7 +1886,7 @@ operator|->
 name|image_uri
 argument_list|,
 operator|&
-name|size
+name|s
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1898,6 +1910,10 @@ block|{
 default|default:
 if|if
 condition|(
+name|thumbnail
+operator|->
+name|thumb_filename
+operator|&&
 name|gimp_thumb_file_test
 argument_list|(
 name|thumbnail
@@ -1911,15 +1927,19 @@ operator|&
 name|filesize
 argument_list|)
 condition|)
+block|{
 name|state
 operator|=
 name|GIMP_THUMB_STATE_EXISTS
 expr_stmt|;
+block|}
 else|else
+block|{
 name|state
 operator|=
 name|GIMP_THUMB_STATE_NOT_FOUND
 expr_stmt|;
+block|}
 break|break;
 block|}
 if|if
@@ -2646,7 +2666,6 @@ name|thumbnail
 operator|->
 name|image_uri
 argument_list|,
-operator|&
 name|size
 argument_list|)
 expr_stmt|;
@@ -2925,11 +2944,6 @@ name|GdkPixbuf
 modifier|*
 name|pixbuf
 decl_stmt|;
-name|GimpThumbSize
-name|size
-init|=
-name|GIMP_THUMB_SIZE_FAIL
-decl_stmt|;
 name|gchar
 modifier|*
 name|name
@@ -2987,8 +3001,7 @@ name|thumbnail
 operator|->
 name|image_uri
 argument_list|,
-operator|&
-name|size
+name|GIMP_THUMB_SIZE_FAIL
 argument_list|)
 expr_stmt|;
 if|if
@@ -3004,7 +3017,7 @@ condition|(
 operator|!
 name|gimp_thumb_ensure_thumb_dir
 argument_list|(
-name|size
+name|GIMP_THUMB_SIZE_FAIL
 argument_list|,
 name|error
 argument_list|)

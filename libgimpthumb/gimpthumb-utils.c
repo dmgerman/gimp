@@ -198,6 +198,10 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/**  * gimp_thumb_init:  * @creator: an ASCII string that identifies the thumbnail creator  * @thumb_basedir: an absolute path or %NULL to use the default  *  * This function initializes the thumbnail system. It must be called  * before any other functions from libgimpthumb are used. You may call  * it more than once if you want to change the @thumb_basedir but if  * you do that, you should make sure that no thread is still using the  * library. Apart from this function, libgimpthumb is multi-thread  * safe.  *  * The @creator string must be 7bit ASCII and should contain the name  * of the software that creates the thumbnails. It is used to handle  * thumbnail creation failures. See the spec for more details.  *  * Usually you will pass %NULL for @thumb_basedir. Thumbnails will  * then be stored in the user's personal thumbnail directory as  * defined in the spec. If you wish to use libgimpthumb to store  * application-specific thumbnails, you can specify a different base  * directory here.  *  * Return value: %TRUE if the library was successfully initialized.  **/
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_thumb_init (const gchar * creator,const gchar * thumb_basedir)
@@ -230,6 +234,20 @@ argument_list|(
 name|creator
 operator|!=
 name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|thumb_basedir
+operator|==
+name|NULL
+operator|||
+name|g_path_is_absolute
+argument_list|(
+name|thumb_basedir
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -376,7 +394,12 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_thumb_get_thumb_dir:  * @size: a GimpThumbSize  *  * Retrieve the name of a thumbnail folder for a specific size. The  * returned pointer will become invalid if gimp_thumb_init() is used  * again. It must not be changed or freed.  *  * Return value: the thumbnail directory in the encoding of the filesystem  **/
+end_comment
+
 begin_function
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_thumb_get_thumb_dir (GimpThumbSize size)
@@ -408,6 +431,10 @@ index|]
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_thumb_ensure_thumb_dir:  * @size: a GimpThumbSize  * @error: return location for possible errors  *  * This function checks if the directory that is required to store  * thumbnails for a particular @size exist and attempts to create it  * if necessary.  *  * You shouldn't have to call this function directly since  * gimp_thumbnail_save_thumb() and gimp_thumbnail_save_failure() will  * do this for you.  *  * Return value: %TRUE is the directory exists, %FALSE if it could not  *               be created  **/
+end_comment
 
 begin_function
 name|gboolean
@@ -566,10 +593,14 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_thumb_name_from_uri:  * @uri: an escaped URI in UTF-8 encoding  * @size: a #GimpThumbSize  *  * Creates the name of the thumbnail file of the specified @size that  * belongs to an image file located at the given @uri.  *  * Return value: a newly allocated filename in the encoding of the  *               filesystem or %NULL if you attempt to create thumbnails  *               for files in the thumbnail directory.  **/
+end_comment
+
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_thumb_name_from_uri (const gchar * uri,GimpThumbSize * size)
+DECL|function|gimp_thumb_name_from_uri (const gchar * uri,GimpThumbSize size)
 name|gimp_thumb_name_from_uri
 parameter_list|(
 specifier|const
@@ -578,15 +609,9 @@ modifier|*
 name|uri
 parameter_list|,
 name|GimpThumbSize
-modifier|*
 name|size
 parameter_list|)
 block|{
-specifier|const
-name|gchar
-modifier|*
-name|name
-decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -599,7 +624,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|size
+name|uri
 operator|!=
 name|NULL
 argument_list|,
@@ -618,28 +643,12 @@ condition|)
 return|return
 name|NULL
 return|;
-name|name
-operator|=
-name|gimp_thumb_png_name
-argument_list|(
-name|uri
-argument_list|)
-expr_stmt|;
 name|i
 operator|=
 name|gimp_thumb_size
 argument_list|(
-operator|*
 name|size
 argument_list|)
-expr_stmt|;
-operator|*
-name|size
-operator|=
-name|thumb_sizes
-index|[
-name|i
-index|]
 expr_stmt|;
 return|return
 name|g_build_filename
@@ -649,13 +658,20 @@ index|[
 name|i
 index|]
 argument_list|,
-name|name
+name|gimp_thumb_png_name
+argument_list|(
+name|uri
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_thumb_find_thumb:  * @uri: an escaped URI in UTF-8 encoding  * @size: pointer to a #GimpThumbSize  *  * This function attempts to locate a thumbnail for the given  * @url. First it tries the size that is stored at @size. If no  * thumbnail of that size is found, it will look for a larger  * thumbnail, then falling back to a smaller size. If a thumbnail is  * found, it's size is written to the variable pointer to by @size  * and the file location is returned.  *  * Return value: a newly allocated string in the encoding of the  *               filesystem or %NULL if no thumbnail for @uri was found  **/
+end_comment
 
 begin_function
 name|gchar
@@ -690,6 +706,24 @@ decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|gimp_thumb_initialized
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|uri
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|size
+operator|!=
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -842,6 +876,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_thumb_file_test:  * @filename: a filename in the encoding of the filesystem  * @mtime: return location for modification time  * @size: return location for file size  *  * This is a convenience and portability wrapper around stat(). It  * checks if the given @filename exists and returns modification time  * and file size in 64bit integer values.  *  * Return value: %TRUE if the file exists, %FALSE otherwise  **/
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_thumb_file_test (const gchar * filename,gint64 * mtime,gint64 * size)
@@ -865,6 +903,15 @@ name|struct
 name|stat
 name|s
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|filename
+operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|stat

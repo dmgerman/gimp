@@ -21,6 +21,10 @@ directive|include
 file|"gimpthumb-error.h"
 end_include
 
+begin_comment
+comment|/**  * gimp_thumb_error_quark:  *  * This function is never called directly. Use GIMP_THUMB_ERROR() instead.  *  * Return value: the #GQuark that defines the GimpThumb error domain.  **/
+end_comment
+
 begin_function
 name|GQuark
 DECL|function|gimp_thumb_error_quark (void)

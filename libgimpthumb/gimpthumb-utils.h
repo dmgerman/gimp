@@ -35,6 +35,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|gchar
 modifier|*
 name|gimp_thumb_get_thumb_dir
@@ -71,7 +72,6 @@ modifier|*
 name|uri
 parameter_list|,
 name|GimpThumbSize
-modifier|*
 name|size
 parameter_list|)
 function_decl|;
