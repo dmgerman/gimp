@@ -68,7 +68,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1c11380103
+DECL|enum|__anon29a0008b0103
 block|{
 DECL|enumerator|GIMP_IMAGE_CLONE
 name|GIMP_IMAGE_CLONE
@@ -105,7 +105,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c1c11380203
+DECL|enum|__anon29a0008b0203
 block|{
 DECL|enumerator|GIMP_CLONE_ALIGN_NO
 name|GIMP_CLONE_ALIGN_NO
@@ -145,7 +145,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1c11380303
+DECL|enum|__anon29a0008b0303
 block|{
 DECL|enumerator|GIMP_DODGE
 name|GIMP_DODGE
@@ -181,7 +181,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1c11380403
+DECL|enum|__anon29a0008b0403
 block|{
 DECL|enumerator|GIMP_BLUR_CONVOLVE
 name|GIMP_BLUR_CONVOLVE
@@ -222,7 +222,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c1c11380503
+DECL|enum|__anon29a0008b0503
 block|{
 DECL|enumerator|GIMP_INK_BLOB_TYPE_ELLIPSE
 name|GIMP_INK_BLOB_TYPE_ELLIPSE
@@ -259,7 +259,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1c11380603
+DECL|enum|__anon29a0008b0603
 block|{
 DECL|enumerator|GIMP_PAINT_CONSTANT
 name|GIMP_PAINT_CONSTANT
@@ -282,7 +282,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c1c11380703
+DECL|enum|__anon29a0008b0703
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -296,6 +296,29 @@ comment|/*< pdb-skip, skip>*/
 DECL|typedef|GimpBrushApplicationMode
 block|}
 name|GimpBrushApplicationMode
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< skip, pdb-skip>*/
+DECL|enum|__anon29a0008b0803
+block|{
+DECL|enumerator|GIMP_PAINT_STATE_INIT
+name|GIMP_PAINT_STATE_INIT
+block|,
+comment|/*  Setup PaintFunc internals                    */
+DECL|enumerator|GIMP_PAINT_STATE_MOTION
+name|GIMP_PAINT_STATE_MOTION
+block|,
+comment|/*  PaintFunc performs motion-related rendering  */
+DECL|enumerator|GIMP_PAINT_STATE_FINISH
+name|GIMP_PAINT_STATE_FINISH
+comment|/*  Cleanup and/or reset PaintFunc operation     */
+DECL|typedef|GimpPaintState
+block|}
+name|GimpPaintState
 typedef|;
 end_typedef
 

@@ -140,7 +140,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -347,7 +347,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paintbrush_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state,guint32 time)
+DECL|function|gimp_paintbrush_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
 name|gimp_paintbrush_paint
 parameter_list|(
 name|GimpPaintCore
@@ -362,7 +362,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -375,7 +375,7 @@ name|paint_state
 condition|)
 block|{
 case|case
-name|MOTION_PAINT
+name|GIMP_PAINT_STATE_MOTION
 case|:
 name|_gimp_paintbrush_motion
 argument_list|(

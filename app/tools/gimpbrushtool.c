@@ -1184,7 +1184,7 @@ operator|->
 name|tool_options
 argument_list|)
 argument_list|,
-name|FINISH_PAINT
+name|GIMP_PAINT_STATE_FINISH
 argument_list|,
 literal|0
 argument_list|)
@@ -1684,7 +1684,7 @@ name|drawable
 argument_list|,
 name|paint_options
 argument_list|,
-name|INIT_PAINT
+name|GIMP_PAINT_STATE_INIT
 argument_list|,
 name|time
 argument_list|)
@@ -1719,7 +1719,7 @@ name|drawable
 argument_list|,
 name|paint_options
 argument_list|,
-name|MOTION_PAINT
+name|GIMP_PAINT_STATE_MOTION
 argument_list|,
 name|time
 argument_list|)
@@ -1838,7 +1838,7 @@ name|drawable
 argument_list|,
 name|paint_options
 argument_list|,
-name|FINISH_PAINT
+name|GIMP_PAINT_STATE_FINISH
 argument_list|,
 name|time
 argument_list|)

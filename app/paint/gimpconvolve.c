@@ -144,7 +144,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2781183f0103
+DECL|enum|__anon27a6b4df0103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -204,7 +204,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -669,7 +669,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_convolve_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state,guint32 time)
+DECL|function|gimp_convolve_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
 name|gimp_convolve_paint
 parameter_list|(
 name|GimpPaintCore
@@ -684,7 +684,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -697,7 +697,7 @@ name|paint_state
 condition|)
 block|{
 case|case
-name|MOTION_PAINT
+name|GIMP_PAINT_STATE_MOTION
 case|:
 name|gimp_convolve_motion
 argument_list|(

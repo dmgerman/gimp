@@ -104,8 +104,8 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2998d0380103
-DECL|enum|__anon2998d0380203
+DECL|enum|__anon2941a4a00103
+DECL|enum|__anon2941a4a00203
 block|{
 DECL|enumerator|SET_BRUSH
 DECL|enumerator|SET_BRUSH
@@ -199,7 +199,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -225,7 +225,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -1321,8 +1321,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_brush_core_pre_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state,guint32 time)
-DECL|function|gimp_brush_core_pre_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state,guint32 time)
+DECL|function|gimp_brush_core_pre_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
+DECL|function|gimp_brush_core_pre_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
 name|gimp_brush_core_pre_paint
 parameter_list|(
 name|GimpPaintCore
@@ -1337,7 +1337,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -1357,7 +1357,7 @@ if|if
 condition|(
 name|paint_state
 operator|==
-name|MOTION_PAINT
+name|GIMP_PAINT_STATE_MOTION
 condition|)
 block|{
 comment|/* If we current point == last point, check if the brush        * wants to be painted in that case. (Direction dependent        * pixmap brush pipes don't, as they don't know which        * pixmap to select.)        */
@@ -1452,8 +1452,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_core_post_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state,guint32 time)
-DECL|function|gimp_brush_core_post_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state,guint32 time)
+DECL|function|gimp_brush_core_post_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
+DECL|function|gimp_brush_core_post_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
 name|gimp_brush_core_post_paint
 parameter_list|(
 name|GimpPaintCore
@@ -1468,7 +1468,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -1488,7 +1488,7 @@ if|if
 condition|(
 name|paint_state
 operator|==
-name|MOTION_PAINT
+name|GIMP_PAINT_STATE_MOTION
 condition|)
 block|{
 name|core
@@ -2773,7 +2773,7 @@ name|drawable
 argument_list|,
 name|paint_options
 argument_list|,
-name|MOTION_PAINT
+name|GIMP_PAINT_STATE_MOTION
 argument_list|,
 name|time
 argument_list|)

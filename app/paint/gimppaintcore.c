@@ -204,7 +204,7 @@ name|GimpPaintOptions
 modifier|*
 name|options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -230,7 +230,7 @@ name|GimpPaintOptions
 modifier|*
 name|options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -256,7 +256,7 @@ name|GimpPaintOptions
 modifier|*
 name|options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -696,7 +696,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_paint_core_real_pre_paint (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state,guint32 time)
+DECL|function|gimp_paint_core_real_pre_paint (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
 name|gimp_paint_core_real_pre_paint
 parameter_list|(
 name|GimpPaintCore
@@ -711,7 +711,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -727,7 +727,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_core_real_paint (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state,guint32 time)
+DECL|function|gimp_paint_core_real_paint (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
 name|gimp_paint_core_real_paint
 parameter_list|(
 name|GimpPaintCore
@@ -742,7 +742,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -754,7 +754,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_core_real_post_paint (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state,guint32 time)
+DECL|function|gimp_paint_core_real_post_paint (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
 name|gimp_paint_core_real_post_paint
 parameter_list|(
 name|GimpPaintCore
@@ -769,7 +769,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -808,7 +808,7 @@ name|drawable
 argument_list|,
 name|paint_options
 argument_list|,
-name|MOTION_PAINT
+name|GIMP_PAINT_STATE_MOTION
 argument_list|,
 name|time
 argument_list|)
@@ -852,7 +852,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_paint_core_paint (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state,guint32 time)
+DECL|function|gimp_paint_core_paint (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
 name|gimp_paint_core_paint
 parameter_list|(
 name|GimpPaintCore
@@ -867,7 +867,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -942,7 +942,7 @@ if|if
 condition|(
 name|paint_state
 operator|==
-name|MOTION_PAINT
+name|GIMP_PAINT_STATE_MOTION
 condition|)
 block|{
 comment|/* Save coordinates for gimp_paint_core_interpolate() */

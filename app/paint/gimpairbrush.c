@@ -140,7 +140,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -439,7 +439,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_airbrush_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state,guint32 time)
+DECL|function|gimp_airbrush_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
 name|gimp_airbrush_paint
 parameter_list|(
 name|GimpPaintCore
@@ -454,7 +454,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -485,7 +485,7 @@ name|paint_state
 condition|)
 block|{
 case|case
-name|INIT_PAINT
+name|GIMP_PAINT_STATE_INIT
 case|:
 if|if
 condition|(
@@ -528,7 +528,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|MOTION_PAINT
+name|GIMP_PAINT_STATE_MOTION
 case|:
 if|if
 condition|(
@@ -636,7 +636,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|FINISH_PAINT
+name|GIMP_PAINT_STATE_FINISH
 case|:
 if|if
 condition|(
@@ -659,26 +659,6 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-name|GIMP_PAINT_CORE_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|paint
-argument_list|(
-name|paint_core
-argument_list|,
-name|drawable
-argument_list|,
-name|paint_options
-argument_list|,
-name|paint_state
-argument_list|,
-name|time
-argument_list|)
-expr_stmt|;
-break|break;
-default|default:
 name|GIMP_PAINT_CORE_CLASS
 argument_list|(
 name|parent_class
@@ -830,7 +810,7 @@ name|airbrush
 operator|->
 name|paint_options
 argument_list|,
-name|MOTION_PAINT
+name|GIMP_PAINT_STATE_MOTION
 argument_list|,
 literal|0
 argument_list|)

@@ -22,32 +22,6 @@ directive|include
 file|"core/gimpobject.h"
 end_include
 
-begin_comment
-comment|/* the different states that the painting function can be called with  */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2c2b169f0103
-block|{
-DECL|enumerator|INIT_PAINT
-name|INIT_PAINT
-block|,
-comment|/*  Setup PaintFunc internals                    */
-DECL|enumerator|MOTION_PAINT
-name|MOTION_PAINT
-block|,
-comment|/*  PaintFunc performs motion-related rendering  */
-DECL|enumerator|FINISH_PAINT
-name|FINISH_PAINT
-comment|/*  Cleanup and/or reset PaintFunc operation     */
-DECL|typedef|GimpPaintCoreState
-block|}
-name|GimpPaintCoreState
-typedef|;
-end_typedef
-
 begin_define
 DECL|macro|GIMP_TYPE_PAINT_CORE
 define|#
@@ -266,7 +240,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -292,7 +266,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -318,7 +292,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|paint_state
 parameter_list|,
 name|guint32
@@ -399,7 +373,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-name|GimpPaintCoreState
+name|GimpPaintState
 name|state
 parameter_list|,
 name|guint32
