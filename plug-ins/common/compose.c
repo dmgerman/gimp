@@ -511,7 +511,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af76c620108
+DECL|struct|__anon298d48ee0108
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1008,7 +1008,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af76c620208
+DECL|struct|__anon298d48ee0208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -1048,7 +1048,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af76c620308
+DECL|struct|__anon298d48ee0308
 block|{
 DECL|member|width
 DECL|member|height
@@ -1515,7 +1515,7 @@ literal|"2004"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Recompose"
+literal|"R_ecompose"
 argument_list|)
 argument_list|,
 literal|"GRAY*"

@@ -415,7 +415,7 @@ name|GIMP_STOCK_RESET
 block|,
 name|N_
 argument_list|(
-literal|"Reset all Filters..."
+literal|"Reset all _Filters..."
 argument_list|)
 block|,
 name|NULL
@@ -448,7 +448,7 @@ name|GTK_STOCK_EXECUTE
 block|,
 name|N_
 argument_list|(
-literal|"Repeat Last"
+literal|"Re_peat Last"
 argument_list|)
 block|,
 literal|"<control>F"
@@ -469,7 +469,7 @@ name|GIMP_STOCK_RESHOW_FILTER
 block|,
 name|N_
 argument_list|(
-literal|"Re-Show Last"
+literal|"R_e-Show Last"
 argument_list|)
 block|,
 literal|"<control><shift>F"

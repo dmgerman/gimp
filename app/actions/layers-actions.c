@@ -746,7 +746,7 @@ name|GIMP_STOCK_TRANSPARENCY
 block|,
 name|N_
 argument_list|(
-literal|"Keep Transparency"
+literal|"Kee_p Transparency"
 argument_list|)
 block|,
 name|NULL
@@ -770,7 +770,7 @@ name|GIMP_STOCK_EDIT
 block|,
 name|N_
 argument_list|(
-literal|"Edit Layer Mask"
+literal|"_Edit Layer Mask"
 argument_list|)
 block|,
 name|NULL
@@ -794,7 +794,7 @@ name|GIMP_STOCK_VISIBLE
 block|,
 name|N_
 argument_list|(
-literal|"Show Layer Mask"
+literal|"S_how Layer Mask"
 argument_list|)
 block|,
 name|NULL
@@ -818,7 +818,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Disable Layer Mask"
+literal|"_Disable Layer Mask"
 argument_list|)
 block|,
 name|NULL

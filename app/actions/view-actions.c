@@ -317,7 +317,7 @@ name|GTK_STOCK_ZOOM_FIT
 block|,
 name|N_
 argument_list|(
-literal|"Fit Image to Window"
+literal|"Fit Image _to Window"
 argument_list|)
 block|,
 name|NULL
@@ -964,7 +964,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"16:1  (1600%)"
+literal|"1_6:1  (1600%)"
 argument_list|)
 block|,
 name|NULL
@@ -983,7 +983,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"8:1  (800%)"
+literal|"_8:1  (800%)"
 argument_list|)
 block|,
 name|NULL
@@ -1002,7 +1002,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"4:1  (400%)"
+literal|"_4:1  (400%)"
 argument_list|)
 block|,
 name|NULL
@@ -1021,7 +1021,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"2:1  (200%)"
+literal|"_2:1  (200%)"
 argument_list|)
 block|,
 name|NULL
@@ -1040,7 +1040,7 @@ name|GTK_STOCK_ZOOM_100
 block|,
 name|N_
 argument_list|(
-literal|"1:1  (100%)"
+literal|"_1:1  (100%)"
 argument_list|)
 block|,
 literal|"1"
@@ -1062,7 +1062,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"1:2  (50%)"
+literal|"1:_2  (50%)"
 argument_list|)
 block|,
 name|NULL
@@ -1081,7 +1081,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"1:4  (25%)"
+literal|"1:_4  (25%)"
 argument_list|)
 block|,
 name|NULL
@@ -1100,7 +1100,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"1:8  (12.5%)"
+literal|"1:_8  (12.5%)"
 argument_list|)
 block|,
 name|NULL
@@ -1119,7 +1119,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"1:16  (6.25%)"
+literal|"1:1_6  (6.25%)"
 argument_list|)
 block|,
 name|NULL
@@ -1138,7 +1138,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"O_ther..."
+literal|"Othe_r..."
 argument_list|)
 block|,
 name|NULL
@@ -2528,7 +2528,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Other (%s) ..."
+literal|"Othe_r (%s) ..."
 argument_list|)
 argument_list|,
 name|buf
