@@ -1097,7 +1097,7 @@ name|NULL
 block|,
 literal|0
 block|,
-literal|"<LastBranch>"
+literal|"<Branch>"
 block|}
 block|,
 name|NULL
