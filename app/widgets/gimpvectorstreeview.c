@@ -415,15 +415,6 @@ name|gimp_image_remove_vectors
 expr_stmt|;
 name|item_view_class
 operator|->
-name|convert_item
-operator|=
-operator|(
-name|GimpConvertItemFunc
-operator|)
-name|gimp_vectors_convert
-expr_stmt|;
-name|item_view_class
-operator|->
 name|new_desc
 operator|=
 name|_

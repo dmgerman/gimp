@@ -852,15 +852,6 @@ name|gimp_layer_tree_view_remove_item
 expr_stmt|;
 name|item_view_class
 operator|->
-name|convert_item
-operator|=
-operator|(
-name|GimpConvertItemFunc
-operator|)
-name|gimp_layer_new_from_drawable
-expr_stmt|;
-name|item_view_class
-operator|->
 name|new_desc
 operator|=
 name|_

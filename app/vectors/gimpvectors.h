@@ -386,22 +386,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpVectors
-modifier|*
-name|gimp_vectors_convert
-parameter_list|(
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|,
-name|GimpImage
-modifier|*
-name|dest_image
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_vectors_freeze
 parameter_list|(

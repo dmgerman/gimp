@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a20f9b50103
+DECL|enum|__anon28c23d8a0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -915,12 +915,6 @@ expr_stmt|;
 name|klass
 operator|->
 name|remove_item
-operator|=
-name|NULL
-expr_stmt|;
-name|klass
-operator|->
-name|convert_item
 operator|=
 name|NULL
 expr_stmt|;
@@ -2936,16 +2930,6 @@ condition|)
 block|{
 if|if
 condition|(
-name|GIMP_ITEM_TREE_VIEW_GET_CLASS
-argument_list|(
-name|item_view
-argument_list|)
-operator|->
-name|convert_item
-condition|)
-block|{
-if|if
-condition|(
 name|drag_action
 condition|)
 operator|*
@@ -2955,10 +2939,6 @@ name|GDK_ACTION_COPY
 expr_stmt|;
 return|return
 name|TRUE
-return|;
-block|}
-return|return
-name|FALSE
 return|;
 block|}
 return|return
@@ -3118,9 +3098,7 @@ operator|++
 expr_stmt|;
 name|new_item
 operator|=
-name|item_view_class
-operator|->
-name|convert_item
+name|gimp_item_convert
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -3130,6 +3108,13 @@ argument_list|,
 name|item_view
 operator|->
 name|gimage
+argument_list|,
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|src_viewable
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|item_view_class

@@ -153,27 +153,6 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpConvertItemFunc
-typedef|typedef
-name|GimpItem
-modifier|*
-function_decl|(
-modifier|*
-name|GimpConvertItemFunc
-function_decl|)
-parameter_list|(
-name|GimpItem
-modifier|*
-name|item
-parameter_list|,
-name|GimpImage
-modifier|*
-name|dest_gimage
-parameter_list|)
-function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpNewItemFunc
 typedef|typedef
 name|void
@@ -433,10 +412,6 @@ decl_stmt|;
 DECL|member|remove_item
 name|GimpRemoveItemFunc
 name|remove_item
-decl_stmt|;
-DECL|member|convert_item
-name|GimpConvertItemFunc
-name|convert_item
 decl_stmt|;
 comment|/*  various descriptive strings for tooltips and undo steps  */
 DECL|member|new_desc
