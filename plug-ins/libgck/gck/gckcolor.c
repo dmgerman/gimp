@@ -173,7 +173,7 @@ value|((val) + 0.5)
 end_define
 
 begin_typedef
-DECL|struct|__anon2b064d440108
+DECL|struct|__anon28024efd0108
 typedef|typedef
 struct|struct
 block|{
@@ -20309,7 +20309,11 @@ literal|0
 operator|,
 name|xt
 operator|=
+operator|(
 name|x
+operator|-
+name|x1
+operator|)
 operator|*
 name|sub_pixel_size
 init|;
@@ -20393,6 +20397,8 @@ name|top_row
 index|[
 operator|(
 name|x
+operator|-
+name|x1
 operator|+
 literal|1
 operator|)
@@ -20416,7 +20422,11 @@ literal|0
 operator|,
 name|xt
 operator|=
+operator|(
 name|x
+operator|-
+name|x1
+operator|)
 operator|*
 name|sub_pixel_size
 init|;

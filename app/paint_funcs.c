@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c744fc20103
+DECL|enum|__anon28d2c19b0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -1332,7 +1332,7 @@ name|j
 operator|++
 control|)
 block|{
-comment|//rows
+comment|/* rows */
 for|for
 control|(
 name|k
@@ -1347,14 +1347,14 @@ name|k
 operator|++
 control|)
 block|{
-comment|//column
+comment|/* column */
 name|tmp_sum
 operator|=
 name|j
 operator|+
 name|k
 expr_stmt|;
-comment|//	  printf("tmp_sum: %d", tmp_sum);
+comment|/* printf("tmp_sum: %d", tmp_sum); */
 if|if
 condition|(
 name|tmp_sum
@@ -1365,7 +1365,7 @@ name|tmp_sum
 operator|=
 literal|255
 expr_stmt|;
-comment|//	  printf("  max: %d  \n", add_lut[j][k]);
+comment|/* printf("  max: %d  \n", add_lut[j][k]); */
 name|add_lut
 index|[
 name|j
@@ -3583,9 +3583,7 @@ name|alpha
 decl_stmt|,
 name|b
 decl_stmt|;
-name|int
-name|sum
-decl_stmt|;
+comment|/* int sum; */
 name|alpha
 operator|=
 operator|(
@@ -3625,7 +3623,7 @@ name|b
 operator|++
 control|)
 block|{
-comment|//	  sum = src1[b] + src2[b];
+comment|/* sum = src1[b] + src2[b]; */
 name|dest
 index|[
 name|b
@@ -3649,7 +3647,7 @@ index|]
 operator|)
 index|]
 expr_stmt|;
-comment|//	  dest[b] = MAX255 (sum);
+comment|/* dest[b] = MAX255 (sum); */
 comment|/* dest[b] = sum | ((sum&256) - ((sum&256)>> 8)); */
 comment|/* dest[b] = (sum> 255) ? 255 : sum; */
 comment|/* older, little slower */

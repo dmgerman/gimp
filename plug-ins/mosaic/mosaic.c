@@ -227,7 +227,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab9368d0108
+DECL|struct|__anon296b1f400108
 block|{
 DECL|member|x
 DECL|member|y
@@ -245,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab9368d0208
+DECL|struct|__anon296b1f400208
 block|{
 DECL|member|npts
 name|gint
@@ -267,7 +267,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab9368d0308
+DECL|struct|__anon296b1f400308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -296,7 +296,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab9368d0408
+DECL|struct|__anon296b1f400408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -351,7 +351,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab9368d0508
+DECL|struct|__anon296b1f400508
 block|{
 DECL|member|run
 name|gint
@@ -4817,9 +4817,6 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|gdouble
-name|gradient
-decl_stmt|;
 name|guchar
 modifier|*
 name|gr
@@ -5385,9 +5382,6 @@ name|gint
 name|i
 decl_stmt|,
 name|j
-decl_stmt|;
-name|gint
-name|b
 decl_stmt|;
 name|gint
 name|val

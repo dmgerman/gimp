@@ -33,6 +33,12 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
 begin_comment
 comment|/* Some useful macros */
 end_comment
@@ -161,7 +167,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297f86bf0108
+DECL|struct|__anon2b5ec22c0108
 block|{
 DECL|member|x
 DECL|member|y
@@ -179,7 +185,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297f86bf0208
+DECL|struct|__anon2b5ec22c0208
 block|{
 DECL|member|npts
 name|gint
@@ -201,7 +207,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297f86bf0308
+DECL|struct|__anon2b5ec22c0308
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -224,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297f86bf0408
+DECL|struct|__anon2b5ec22c0408
 block|{
 DECL|member|run
 name|gint
@@ -2799,7 +2805,8 @@ block|}
 end_function
 
 begin_function
-name|G_INLINE_FUNC
+specifier|static
+specifier|inline
 name|gdouble
 DECL|function|calc_alpha_blend (gdouble * vec,gdouble one_over_dist,gdouble x,gdouble y)
 name|calc_alpha_blend
@@ -2942,9 +2949,6 @@ name|max_scanlines
 decl_stmt|,
 modifier|*
 name|max_scanlines_iter
-decl_stmt|,
-modifier|*
-name|max_scanlines_end
 decl_stmt|;
 name|gint
 modifier|*
@@ -2952,9 +2956,6 @@ name|min_scanlines
 decl_stmt|,
 modifier|*
 name|min_scanlines_iter
-decl_stmt|,
-modifier|*
-name|min_scanlines_end
 decl_stmt|;
 name|gint
 name|val
@@ -3030,12 +3031,6 @@ name|vals_iter
 decl_stmt|,
 modifier|*
 name|vals_end
-decl_stmt|;
-name|gint
-name|pixel_gen_on_next_pass
-init|=
-operator|-
-literal|1
 decl_stmt|;
 name|sx
 operator|=
