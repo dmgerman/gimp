@@ -5611,36 +5611,6 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Stack/Previous Layer"
-argument_list|,
-name|fs
-operator|&&
-name|ac
-operator|&&
-name|gimage
-operator|&&
-name|lp
-operator|&&
-name|prev
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"Stack/Next Layer"
-argument_list|,
-name|fs
-operator|&&
-name|ac
-operator|&&
-name|gimage
-operator|&&
-name|lp
-operator|&&
-name|next
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
 literal|"Stack/Raise Layer"
 argument_list|,
 name|fs

@@ -142,7 +142,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a188ea40108
+DECL|struct|__anon2ae58e480108
 typedef|typedef
 struct|struct
 block|{
@@ -177,7 +177,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a188ea40208
+DECL|struct|__anon2ae58e480208
 typedef|typedef
 struct|struct
 block|{
@@ -6777,8 +6777,6 @@ argument_list|)
 expr_stmt|;
 name|text
 operator|=
-name|_
-argument_list|(
 literal|"\nCotting Software Productions\n"
 literal|"Bahnhofstrasse 31\n"
 literal|"CH-3066 Stettlen (Switzerland)\n\n"
@@ -6786,7 +6784,6 @@ literal|"cotting@mygale.org\n"
 literal|"http://www.mygale.org/~cotting\n\n"
 literal|"AlienMap Plug-In for the GIMP\n"
 literal|"Version 1.01\n"
-argument_list|)
 expr_stmt|;
 name|xlabel
 operator|=

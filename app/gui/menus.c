@@ -4724,48 +4724,10 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Stack/Previous Layer"
-argument_list|)
-block|,
-literal|"Prior"
-block|,
-name|layers_dialog_previous_layer_callback
-block|,
-literal|0
-block|}
-block|,
-literal|"stack/stack.html#previous_layer"
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Stack/Next Layer"
-argument_list|)
-block|,
-literal|"Next"
-block|,
-name|layers_dialog_next_layer_callback
-block|,
-literal|0
-block|}
-block|,
-literal|"stack/stack.html#next_layer"
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
 literal|"/Stack/Raise Layer"
 argument_list|)
 block|,
-literal|"<shift>Prior"
+literal|"<control>F"
 block|,
 name|layers_dialog_raise_layer_callback
 block|,
@@ -4784,7 +4746,7 @@ argument_list|(
 literal|"/Stack/Lower Layer"
 argument_list|)
 block|,
-literal|"<shift>Next"
+literal|"<control>B"
 block|,
 name|layers_dialog_lower_layer_callback
 block|,
@@ -4803,7 +4765,7 @@ argument_list|(
 literal|"/Stack/Layer to Top"
 argument_list|)
 block|,
-literal|"<control>Prior"
+literal|"<shift><control>F"
 block|,
 name|layers_dialog_raise_layer_to_top_callback
 block|,
@@ -4822,7 +4784,7 @@ argument_list|(
 literal|"/Stack/Layer to Bottom"
 argument_list|)
 block|,
-literal|"<control>Next"
+literal|"<shift><control>B"
 block|,
 name|layers_dialog_lower_layer_to_bottom_callback
 block|,

@@ -161,7 +161,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b3cd6990108
+DECL|struct|__anon27f144d90108
 typedef|typedef
 struct|struct
 block|{
@@ -212,7 +212,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b3cd6990208
+DECL|struct|__anon27f144d90208
 typedef|typedef
 struct|struct
 block|{
@@ -6272,14 +6272,11 @@ argument_list|)
 expr_stmt|;
 name|text
 operator|=
-name|_
-argument_list|(
 literal|"\nMartin Weber\n"
 literal|"martin.weber@usa.net\n"
 literal|"http://diverse.freepage.de/martin.weber\n\n"
 literal|"AlienMap2 Plug-In for the GIMP\n"
 literal|"Version 1.0\n"
-argument_list|)
 expr_stmt|;
 name|xlabel
 operator|=
