@@ -4850,7 +4850,7 @@ name|NULL
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
@@ -4880,6 +4880,7 @@ if|if
 condition|(
 name|list
 condition|)
+block|{
 name|view
 operator|=
 name|gimp_container_list_view_new
@@ -4889,9 +4890,15 @@ argument_list|,
 name|preview_width
 argument_list|,
 name|preview_height
+argument_list|,
+literal|4
+argument_list|,
+literal|4
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|view
 operator|=
 name|gimp_container_grid_view_new
@@ -4901,8 +4908,13 @@ argument_list|,
 name|preview_width
 argument_list|,
 name|preview_height
+argument_list|,
+literal|4
+argument_list|,
+literal|4
 argument_list|)
 expr_stmt|;
+block|}
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER

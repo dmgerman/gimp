@@ -142,6 +142,12 @@ name|preview_width
 parameter_list|,
 name|gint
 name|preview_height
+parameter_list|,
+name|gint
+name|min_items_x
+parameter_list|,
+name|gint
+name|min_items_y
 parameter_list|)
 function_decl|;
 end_function_decl

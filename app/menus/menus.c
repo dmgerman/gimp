@@ -824,10 +824,7 @@ directive|endif
 comment|/* DISPLAY_FILTERS */
 block|{
 block|{
-name|N_
-argument_list|(
 literal|"/File/Test Dialogs/List of all Images..."
-argument_list|)
 block|,
 name|NULL
 block|,
@@ -843,10 +840,7 @@ block|}
 block|,
 block|{
 block|{
-name|N_
-argument_list|(
 literal|"/File/Test Dialogs/List of all Brushes..."
-argument_list|)
 block|,
 name|NULL
 block|,
@@ -862,10 +856,7 @@ block|}
 block|,
 block|{
 block|{
-name|N_
-argument_list|(
 literal|"/File/Test Dialogs/List of all Patterns..."
-argument_list|)
 block|,
 name|NULL
 block|,
@@ -881,10 +872,25 @@ block|}
 block|,
 block|{
 block|{
-name|N_
-argument_list|(
+literal|"/File/Test Dialogs/---"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|0
+block|,
+literal|"<Separator>"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
 literal|"/File/Test Dialogs/Grid of all Images..."
-argument_list|)
 block|,
 name|NULL
 block|,
@@ -900,10 +906,7 @@ block|}
 block|,
 block|{
 block|{
-name|N_
-argument_list|(
 literal|"/File/Test Dialogs/Grid of all Brushes..."
-argument_list|)
 block|,
 name|NULL
 block|,
@@ -919,10 +922,7 @@ block|}
 block|,
 block|{
 block|{
-name|N_
-argument_list|(
 literal|"/File/Test Dialogs/Grid of all Patterns..."
-argument_list|)
 block|,
 name|NULL
 block|,
