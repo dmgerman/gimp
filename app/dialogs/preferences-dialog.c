@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275f05dd0103
+DECL|enum|__anon2aaaf18f0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -6459,7 +6459,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"New File Settings"
+literal|"New File"
 argument_list|)
 argument_list|,
 name|GTK_CTREE
@@ -7571,7 +7571,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Display Settings"
+literal|"Display"
 argument_list|)
 argument_list|,
 name|GTK_CTREE
@@ -8084,7 +8084,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Interface Settings"
+literal|"Interface"
 argument_list|)
 argument_list|,
 name|GTK_CTREE
@@ -8682,7 +8682,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Help System Settings"
+literal|"Help System"
 argument_list|)
 argument_list|,
 name|GTK_CTREE
@@ -8995,7 +8995,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Image Windows Settings"
+literal|"Image Windows"
 argument_list|)
 argument_list|,
 name|GTK_CTREE
@@ -9859,7 +9859,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Tool Options Settings"
+literal|"Tool Options"
 argument_list|)
 argument_list|,
 name|GTK_CTREE
@@ -9987,7 +9987,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Environment Settings"
+literal|"Environment"
 argument_list|)
 argument_list|,
 name|GTK_CTREE
@@ -11375,7 +11375,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Monitor Information"
+literal|"Monitor"
 argument_list|)
 argument_list|,
 name|GTK_CTREE
@@ -11934,7 +11934,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Directories Settings"
+literal|"Directories"
 argument_list|)
 argument_list|,
 name|GTK_CTREE
@@ -11969,7 +11969,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon275f05dd0208
+DECL|struct|__anon2aaaf18f0208
 block|{
 DECL|member|label
 name|gchar
@@ -12198,7 +12198,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon275f05dd0308
+DECL|struct|__anon2aaaf18f0308
 block|{
 DECL|member|tree_label
 name|gchar
