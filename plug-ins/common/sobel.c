@@ -50,7 +50,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c52bbe0108
+DECL|struct|__anon278e968a0108
 block|{
 DECL|member|horizontal
 name|gint
@@ -141,7 +141,7 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|sobel_dialog
 parameter_list|(
 name|void
@@ -680,7 +680,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|sobel_dialog (void)
 name|sobel_dialog
 parameter_list|(
@@ -746,7 +746,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width

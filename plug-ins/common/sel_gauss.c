@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1cb4560108
+DECL|struct|__anon27e42cf90108
 block|{
 DECL|member|radius
 name|gdouble
@@ -800,7 +800,7 @@ argument_list|(
 literal|"_Blur Radius:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,

@@ -124,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288996730108
+DECL|struct|__anon2bed5b8a0108
 block|{
 DECL|member|period
 name|gint
@@ -218,7 +218,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|ripple_dialog
 parameter_list|(
 name|void
@@ -914,7 +914,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon288996730208
+DECL|struct|__anon2bed5b8a0208
 typedef|typedef
 struct|struct
 block|{
@@ -1810,7 +1810,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|ripple_dialog (void)
 name|ripple_dialog
 parameter_list|(
@@ -1892,7 +1892,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -1902,7 +1902,7 @@ argument_list|(
 name|main_vbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1945,7 +1945,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -1955,7 +1955,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1977,7 +1977,7 @@ expr_stmt|;
 comment|/*  Options section  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -2015,23 +2015,18 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|frame
+argument_list|)
+expr_stmt|;
 name|toggle_vbox
 operator|=
 name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|toggle_vbox
-argument_list|)
-argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2041,6 +2036,11 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
+name|toggle_vbox
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
 name|toggle_vbox
 argument_list|)
 expr_stmt|;
@@ -2164,16 +2164,6 @@ operator|&
 name|rvals
 operator|.
 name|tile
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle_vbox
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
 argument_list|)
 expr_stmt|;
 comment|/*  Orientation toggle box  */
@@ -2436,33 +2426,6 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-comment|/*  Parameter Settings  */
-name|frame
-operator|=
-name|gtk_frame_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Parameter Settings"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|main_vbox
-argument_list|)
-argument_list|,
-name|frame
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 name|table
 operator|=
 name|gtk_table_new
@@ -2481,7 +2444,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -2491,27 +2454,23 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
+name|main_vbox
 argument_list|)
 argument_list|,
 name|table
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 comment|/*  Period  */

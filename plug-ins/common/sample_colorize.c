@@ -370,7 +370,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a9209b0108
+DECL|struct|__anon27f1f8d00108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -439,7 +439,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a9209b0208
+DECL|struct|__anon27f1f8d00208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a9209b0308
+DECL|struct|__anon27f1f8d00308
 block|{
 DECL|member|color
 name|guchar
@@ -576,7 +576,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a9209b0408
+DECL|struct|__anon27f1f8d00408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -603,7 +603,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a9209b0508
+DECL|struct|__anon27f1f8d00508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -6416,10 +6416,6 @@ name|frame
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|pframe
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|table
 decl_stmt|;
 name|GtkWidget
@@ -6437,10 +6433,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|spinbutton
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|sep
 decl_stmt|;
 name|GtkObject
 modifier|*
@@ -6567,48 +6559,6 @@ argument_list|,
 name|dialog
 argument_list|)
 expr_stmt|;
-comment|/*  parameter settings  */
-name|frame
-operator|=
-name|gtk_frame_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Settings"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-literal|6
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|vbox
-argument_list|)
-argument_list|,
-name|frame
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 comment|/* table for values */
 name|table
 operator|=
@@ -6628,7 +6578,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -6638,7 +6588,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -6648,46 +6598,28 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
-name|frame
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+operator|->
+name|vbox
 argument_list|)
 argument_list|,
 name|table
-argument_list|)
-expr_stmt|;
-comment|/* separator */
-name|sep
-operator|=
-name|gtk_vseparator_new
-argument_list|()
-expr_stmt|;
-name|gtk_table_attach_defaults
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|table
-argument_list|)
 argument_list|,
-name|sep
+name|TRUE
 argument_list|,
-literal|2
-argument_list|,
-literal|3
+name|TRUE
 argument_list|,
 literal|0
-argument_list|,
-literal|7
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|sep
 argument_list|)
 expr_stmt|;
 name|l_ty
@@ -6997,7 +6929,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -7161,7 +7093,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -7323,7 +7255,7 @@ name|l_ty
 operator|++
 expr_stmt|;
 comment|/* Preview (Dst) */
-name|pframe
+name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
@@ -7334,7 +7266,7 @@ name|gtk_frame_set_shadow_type
 argument_list|(
 name|GTK_FRAME
 argument_list|(
-name|pframe
+name|frame
 argument_list|)
 argument_list|,
 name|GTK_SHADOW_IN
@@ -7347,7 +7279,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|pframe
+name|frame
 argument_list|,
 literal|0
 argument_list|,
@@ -7370,7 +7302,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|pframe
+name|frame
 argument_list|)
 expr_stmt|;
 name|g_di
@@ -7400,7 +7332,7 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|pframe
+name|frame
 argument_list|)
 argument_list|,
 name|g_di
@@ -7416,7 +7348,7 @@ name|dst_preview
 argument_list|)
 expr_stmt|;
 comment|/* Preview (Sample)*/
-name|pframe
+name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
@@ -7427,7 +7359,7 @@ name|gtk_frame_set_shadow_type
 argument_list|(
 name|GTK_FRAME
 argument_list|(
-name|pframe
+name|frame
 argument_list|)
 argument_list|,
 name|GTK_SHADOW_IN
@@ -7440,7 +7372,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|pframe
+name|frame
 argument_list|,
 literal|3
 argument_list|,
@@ -7463,7 +7395,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|pframe
+name|frame
 argument_list|)
 expr_stmt|;
 name|g_di
@@ -7493,7 +7425,7 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|pframe
+name|frame
 argument_list|)
 argument_list|,
 name|g_di
@@ -7512,7 +7444,7 @@ name|l_ty
 operator|++
 expr_stmt|;
 comment|/*  The levels graylevel prevev  */
-name|pframe
+name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
@@ -7532,7 +7464,7 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|pframe
+name|frame
 argument_list|)
 argument_list|,
 name|vbox2
@@ -7545,7 +7477,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|pframe
+name|frame
 argument_list|,
 literal|0
 argument_list|,
@@ -7717,11 +7649,11 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|pframe
+name|frame
 argument_list|)
 expr_stmt|;
 comment|/*  The sample_colortable prevev  */
-name|pframe
+name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
@@ -7741,7 +7673,7 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|pframe
+name|frame
 argument_list|)
 argument_list|,
 name|vbox2
@@ -7754,7 +7686,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|pframe
+name|frame
 argument_list|,
 literal|3
 argument_list|,
@@ -7900,7 +7832,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|pframe
+name|frame
 argument_list|)
 expr_stmt|;
 name|l_ty
@@ -7913,7 +7845,7 @@ name|gtk_hbox_new
 argument_list|(
 name|TRUE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -8528,7 +8460,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach

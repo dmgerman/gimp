@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2912595a0108
+DECL|struct|__anon29763e400108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -118,7 +118,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|spread_dialog
 parameter_list|(
 name|gint32
@@ -652,7 +652,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2912595a0208
+DECL|struct|__anon29763e400208
 typedef|typedef
 struct|struct
 block|{
@@ -1004,7 +1004,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|spread_dialog (gint32 image_ID,GimpDrawable * drawable)
 name|spread_dialog
 parameter_list|(
@@ -1077,7 +1077,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  parameter settings  */
 name|frame
 operator|=
 name|gimp_frame_new
@@ -1095,7 +1094,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1226,16 +1225,6 @@ argument_list|,
 literal|0
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|size
-argument_list|)
-argument_list|,
-literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

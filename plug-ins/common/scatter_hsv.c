@@ -188,7 +188,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|scatter_hsv_dialog
 parameter_list|(
 name|void
@@ -198,7 +198,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|preview_event_handler
 parameter_list|(
 name|GtkWidget
@@ -330,7 +330,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2795265e0108
+DECL|struct|__anon2afc992b0108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -1463,7 +1463,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|scatter_hsv_dialog (void)
 name|scatter_hsv_dialog
 parameter_list|(
@@ -1544,7 +1544,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -1554,7 +1554,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1572,13 +1572,18 @@ argument_list|,
 name|vbox
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|vbox
+argument_list|)
+expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Preview (1:4) - Right Click to Jump"
+literal|"Right-Click Preview to Jump"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1607,9 +1612,9 @@ name|abox
 operator|=
 name|gtk_alignment_new
 argument_list|(
-literal|0.5
+literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|,
 literal|0.0
 argument_list|,
@@ -1646,16 +1651,6 @@ name|pframe
 argument_list|)
 argument_list|,
 name|GTK_SHADOW_IN
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|pframe
-argument_list|)
-argument_list|,
-literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1786,37 +1781,6 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|frame
-operator|=
-name|gtk_frame_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Parameter Settings"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|frame
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
 name|table
 operator|=
 name|gtk_table_new
@@ -1835,7 +1799,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -1845,27 +1809,23 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
+name|vbox
 argument_list|)
 argument_list|,
 name|table
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2131,21 +2091,6 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|table
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|vbox
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
 name|dlg
 argument_list|)
 expr_stmt|;
@@ -2176,7 +2121,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|preview_event_handler (GtkWidget * widget,GdkEvent * event)
 name|preview_event_handler
 parameter_list|(
