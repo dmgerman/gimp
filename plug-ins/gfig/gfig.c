@@ -8250,7 +8250,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b137650108
+DECL|struct|__anon292d4de70108
 block|{
 DECL|member|color_string
 name|gchar
@@ -17292,6 +17292,12 @@ literal|"Gfig brush selection"
 argument_list|,
 name|mygimp_brush_get
 argument_list|()
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|gfig_brush_invoker
 argument_list|,
