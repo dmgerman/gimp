@@ -165,6 +165,11 @@ parameter_list|,
 name|GtkAction
 modifier|*
 name|action
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|label
 parameter_list|)
 function_decl|;
 end_function_decl

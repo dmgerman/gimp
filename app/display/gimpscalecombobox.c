@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0c96730103
+DECL|enum|__anon2b8909200103
 block|{
 DECL|enumerator|SCALE
 name|SCALE
@@ -1188,7 +1188,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_scale_combo_box_add_action (GimpScaleComboBox * combo_box,GtkAction * action)
+DECL|function|gimp_scale_combo_box_add_action (GimpScaleComboBox * combo_box,GtkAction * action,const gchar * label)
 name|gimp_scale_combo_box_add_action
 parameter_list|(
 name|GimpScaleComboBox
@@ -1198,6 +1198,11 @@ parameter_list|,
 name|GtkAction
 modifier|*
 name|action
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|label
 parameter_list|)
 block|{
 name|GtkTreeModel
@@ -1210,14 +1215,6 @@ name|store
 decl_stmt|;
 name|GtkTreeIter
 name|iter
-decl_stmt|;
-name|gchar
-modifier|*
-name|label
-decl_stmt|;
-name|gchar
-modifier|*
-name|stripped_label
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1294,30 +1291,6 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-name|g_object_get
-argument_list|(
-name|action
-argument_list|,
-literal|"label"
-argument_list|,
-operator|&
-name|label
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|stripped_label
-operator|=
-name|gimp_strip_uline
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
 name|gtk_list_store_append
 argument_list|(
 name|store
@@ -1335,7 +1308,7 @@ name|iter
 argument_list|,
 name|LABEL
 argument_list|,
-name|stripped_label
+name|label
 argument_list|,
 name|LABEL_ALIGN
 argument_list|,
@@ -1351,11 +1324,6 @@ name|action
 argument_list|,
 operator|-
 literal|1
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|stripped_label
 argument_list|)
 expr_stmt|;
 block|}

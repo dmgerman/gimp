@@ -1809,6 +1809,11 @@ argument_list|(
 name|combo
 argument_list|,
 name|action
+argument_list|,
+name|_
+argument_list|(
+literal|"Other..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
