@@ -220,7 +220,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d469ae0103
+DECL|enum|__anon27b3d5c60103
 block|{
 DECL|enumerator|TRIANGLE
 name|TRIANGLE
@@ -245,7 +245,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d469ae0203
+DECL|enum|__anon27b3d5c60203
 block|{
 DECL|enumerator|SOLID
 name|SOLID
@@ -294,7 +294,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d469ae0303
+DECL|enum|__anon27b3d5c60303
 block|{
 DECL|enumerator|PERSPECTIVE
 name|PERSPECTIVE
@@ -310,7 +310,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d469ae0403
+DECL|enum|__anon27b3d5c60403
 block|{
 DECL|enumerator|FOG
 name|FOG
@@ -320,7 +320,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d469ae0503
+DECL|enum|__anon27b3d5c60503
 block|{
 DECL|enumerator|TYPE
 name|TYPE
@@ -373,31 +373,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d469ae0608
-block|{
-DECL|member|x
-DECL|member|y
-DECL|member|z
-DECL|member|w
-name|gdouble
-name|x
-decl_stmt|,
-name|y
-decl_stmt|,
-name|z
-decl_stmt|,
-name|w
-decl_stmt|;
-DECL|typedef|vector
-block|}
-name|vector
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon27d469ae0708
+DECL|struct|__anon27b3d5c60608
 block|{
 DECL|member|xsize
 DECL|member|ysize
@@ -420,7 +396,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d469ae0808
+DECL|struct|__anon27b3d5c60708
 block|{
 DECL|member|numcol
 name|gshort
@@ -434,7 +410,7 @@ name|MAXCOLPERGRADIENT
 index|]
 decl_stmt|;
 DECL|member|color
-name|vector
+name|GimpVector4
 name|color
 index|[
 name|MAXCOLPERGRADIENT
@@ -449,7 +425,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d469ae0908
+DECL|struct|__anon27b3d5c60808
 block|{
 DECL|member|majtype
 name|gint
@@ -465,7 +441,7 @@ name|flags
 decl_stmt|;
 DECL|member|color1
 DECL|member|color2
-name|vector
+name|GimpVector4
 name|color1
 decl_stmt|,
 name|color2
@@ -476,7 +452,7 @@ name|gradient
 decl_stmt|;
 DECL|member|ambient
 DECL|member|diffuse
-name|vector
+name|GimpVector4
 name|ambient
 decl_stmt|,
 name|diffuse
@@ -488,7 +464,7 @@ decl_stmt|;
 DECL|member|scale
 DECL|member|translate
 DECL|member|rotate
-name|vector
+name|GimpVector4
 name|scale
 decl_stmt|,
 name|translate
@@ -500,15 +476,15 @@ name|image
 name|image
 decl_stmt|;
 DECL|member|reflection
-name|vector
+name|GimpVector4
 name|reflection
 decl_stmt|;
 DECL|member|refraction
-name|vector
+name|GimpVector4
 name|refraction
 decl_stmt|;
 DECL|member|transparent
-name|vector
+name|GimpVector4
 name|transparent
 decl_stmt|;
 DECL|member|ior
@@ -516,7 +492,7 @@ name|gdouble
 name|ior
 decl_stmt|;
 DECL|member|phongcolor
-name|vector
+name|GimpVector4
 name|phongcolor
 decl_stmt|;
 DECL|member|phongsize
@@ -532,7 +508,7 @@ name|gdouble
 name|exp
 decl_stmt|;
 DECL|member|turbulence
-name|vector
+name|GimpVector4
 name|turbulence
 decl_stmt|;
 DECL|typedef|texture
@@ -544,7 +520,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d469ae0a08
+DECL|struct|__anon27b3d5c60908
 block|{
 DECL|member|type
 name|gshort
@@ -555,7 +531,7 @@ name|gdouble
 name|density
 decl_stmt|;
 DECL|member|color
-name|vector
+name|GimpVector4
 name|color
 decl_stmt|;
 DECL|member|turbulence
@@ -571,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d469ae0b08
+DECL|struct|__anon27b3d5c60a08
 block|{
 DECL|member|type
 name|gshort
@@ -612,7 +588,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d469ae0c08
+DECL|struct|__anon27b3d5c60b08
 block|{
 DECL|member|com
 name|common
@@ -621,7 +597,7 @@ decl_stmt|;
 DECL|member|a
 DECL|member|b
 DECL|member|c
-name|vector
+name|GimpVector4
 name|a
 decl_stmt|,
 name|b
@@ -637,14 +613,14 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d469ae0d08
+DECL|struct|__anon27b3d5c60c08
 block|{
 DECL|member|com
 name|common
 name|com
 decl_stmt|;
 DECL|member|a
-name|vector
+name|GimpVector4
 name|a
 decl_stmt|;
 DECL|member|b
@@ -663,14 +639,14 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d469ae0e08
+DECL|struct|__anon27b3d5c60d08
 block|{
 DECL|member|com
 name|common
 name|com
 decl_stmt|;
 DECL|member|a
-name|vector
+name|GimpVector4
 name|a
 decl_stmt|;
 DECL|member|r
@@ -686,7 +662,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d469ae0f08
+DECL|struct|__anon27b3d5c60e08
 block|{
 DECL|member|com
 name|common
@@ -695,7 +671,7 @@ decl_stmt|;
 DECL|member|a
 DECL|member|b
 DECL|member|c
-name|vector
+name|GimpVector4
 name|a
 decl_stmt|,
 name|b
@@ -711,14 +687,14 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d469ae1008
+DECL|struct|__anon27b3d5c60f08
 block|{
 DECL|member|com
 name|common
 name|com
 decl_stmt|;
 DECL|member|a
-name|vector
+name|GimpVector4
 name|a
 decl_stmt|;
 DECL|member|b
@@ -734,18 +710,18 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d469ae1108
+DECL|struct|__anon27b3d5c61008
 block|{
 DECL|member|com
 name|common
 name|com
 decl_stmt|;
 DECL|member|color
-name|vector
+name|GimpVector4
 name|color
 decl_stmt|;
 DECL|member|a
-name|vector
+name|GimpVector4
 name|a
 decl_stmt|;
 DECL|typedef|light
@@ -757,11 +733,11 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d469ae1208
+DECL|struct|__anon27b3d5c61108
 block|{
 DECL|member|v1
 DECL|member|v2
-name|vector
+name|GimpVector4
 name|v1
 decl_stmt|,
 name|v2
@@ -783,7 +759,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon27d469ae130a
+DECL|union|__anon27b3d5c6120a
 block|{
 DECL|member|com
 name|common
@@ -889,7 +865,7 @@ DECL|member|location
 DECL|member|lookat
 DECL|member|up
 DECL|member|right
-name|vector
+name|GimpVector4
 name|location
 decl_stmt|,
 name|lookat
@@ -1099,7 +1075,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon27d469ae1408
+DECL|struct|__anon27b3d5c61308
 block|{
 DECL|member|solid
 DECL|member|phong
@@ -1131,7 +1107,7 @@ specifier|inline
 name|void
 name|vset
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|v
 parameter_list|,
@@ -1222,7 +1198,7 @@ name|ray
 modifier|*
 name|r
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|col
 parameter_list|,
@@ -2382,49 +2358,23 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|vcopy (vector * a,vector * b)
+DECL|function|vcopy (GimpVector4 * a,GimpVector4 * b)
 name|vcopy
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|a
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|b
 parameter_list|)
 block|{
+operator|*
 name|a
-operator|->
-name|x
 operator|=
+operator|*
 name|b
-operator|->
-name|x
-expr_stmt|;
-name|a
-operator|->
-name|y
-operator|=
-name|b
-operator|->
-name|y
-expr_stmt|;
-name|a
-operator|->
-name|z
-operator|=
-name|b
-operator|->
-name|z
-expr_stmt|;
-name|a
-operator|->
-name|w
-operator|=
-name|b
-operator|->
-name|w
 expr_stmt|;
 block|}
 end_function
@@ -2433,27 +2383,24 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|vcross (vector * r,vector * a,vector * b)
+DECL|function|vcross (GimpVector4 * r,GimpVector4 * a,GimpVector4 * b)
 name|vcross
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|r
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|a
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|b
 parameter_list|)
 block|{
-name|vector
-name|t
-decl_stmt|;
-name|t
-operator|.
+name|r
+operator|->
 name|x
 operator|=
 name|a
@@ -2472,8 +2419,8 @@ name|b
 operator|->
 name|y
 expr_stmt|;
-name|t
-operator|.
+name|r
+operator|->
 name|y
 operator|=
 operator|-
@@ -2495,8 +2442,8 @@ operator|->
 name|x
 operator|)
 expr_stmt|;
-name|t
-operator|.
+name|r
+operator|->
 name|z
 operator|=
 name|a
@@ -2515,14 +2462,6 @@ name|b
 operator|->
 name|x
 expr_stmt|;
-name|vcopy
-argument_list|(
-name|r
-argument_list|,
-operator|&
-name|t
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -2530,53 +2469,42 @@ begin_function
 specifier|static
 specifier|inline
 name|gdouble
-DECL|function|vdot (vector * a,vector * b)
+DECL|function|vdot (GimpVector4 * a,GimpVector4 * b)
 name|vdot
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|a
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|b
 parameter_list|)
 block|{
-name|gdouble
-name|s
-decl_stmt|;
-name|s
-operator|=
-name|a
-operator|->
-name|x
-operator|*
-name|b
-operator|->
-name|x
-expr_stmt|;
-name|s
-operator|+=
-name|a
-operator|->
-name|y
-operator|*
-name|b
-operator|->
-name|y
-expr_stmt|;
-name|s
-operator|+=
-name|a
-operator|->
-name|z
-operator|*
-name|b
-operator|->
-name|z
-expr_stmt|;
 return|return
-name|s
+name|a
+operator|->
+name|x
+operator|*
+name|b
+operator|->
+name|x
+operator|+
+name|a
+operator|->
+name|y
+operator|*
+name|b
+operator|->
+name|y
+operator|+
+name|a
+operator|->
+name|z
+operator|*
+name|b
+operator|->
+name|z
 return|;
 block|}
 end_function
@@ -2585,14 +2513,14 @@ begin_function
 specifier|static
 specifier|inline
 name|gdouble
-DECL|function|vdist (vector * a,vector * b)
+DECL|function|vdist (GimpVector4 * a,GimpVector4 * b)
 name|vdist
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|a
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|b
 parameter_list|)
@@ -2657,19 +2585,15 @@ begin_function
 specifier|static
 specifier|inline
 name|gdouble
-DECL|function|vlen (vector * a)
+DECL|function|vlen (GimpVector4 * a)
 name|vlen
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|a
 parameter_list|)
 block|{
-name|gdouble
-name|l
-decl_stmt|;
-name|l
-operator|=
+return|return
 name|sqrt
 argument_list|(
 name|a
@@ -2696,9 +2620,6 @@ name|a
 operator|->
 name|z
 argument_list|)
-expr_stmt|;
-return|return
-name|l
 return|;
 block|}
 end_function
@@ -2707,10 +2628,10 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|vnorm (vector * a,gdouble v)
+DECL|function|vnorm (GimpVector4 * a,gdouble v)
 name|vnorm
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|a
 parameter_list|,
@@ -2723,31 +2644,9 @@ name|d
 decl_stmt|;
 name|d
 operator|=
-name|sqrt
+name|vlen
 argument_list|(
 name|a
-operator|->
-name|x
-operator|*
-name|a
-operator|->
-name|x
-operator|+
-name|a
-operator|->
-name|y
-operator|*
-name|a
-operator|->
-name|y
-operator|+
-name|a
-operator|->
-name|z
-operator|*
-name|a
-operator|->
-name|z
 argument_list|)
 expr_stmt|;
 name|a
@@ -2781,17 +2680,17 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|vrotate (vector * axis,gdouble ang,vector * vector)
+DECL|function|vrotate (GimpVector4 * axis,gdouble ang,GimpVector4 * vector)
 name|vrotate
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|axis
 parameter_list|,
 name|gdouble
 name|ang
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|vector
 parameter_list|)
@@ -3036,10 +2935,10 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|vset (vector * v,gdouble a,gdouble b,gdouble c)
+DECL|function|vset (GimpVector4 * v,gdouble a,gdouble b,gdouble c)
 name|vset
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|v
 parameter_list|,
@@ -3084,10 +2983,10 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|vcset (vector * v,gdouble a,gdouble b,gdouble c,gdouble d)
+DECL|function|vcset (GimpVector4 * v,gdouble a,gdouble b,gdouble c,gdouble d)
 name|vcset
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|v
 parameter_list|,
@@ -3135,19 +3034,19 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|vvrotate (vector * p,vector * rot)
+DECL|function|vvrotate (GimpVector4 * p,GimpVector4 * rot)
 name|vvrotate
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|p
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|rot
 parameter_list|)
 block|{
-name|vector
+name|GimpVector4
 name|axis
 decl_stmt|;
 if|if
@@ -3259,14 +3158,14 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|vsub (vector * a,vector * b)
+DECL|function|vsub (GimpVector4 * a,GimpVector4 * b)
 name|vsub
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|a
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|b
 parameter_list|)
@@ -3310,14 +3209,14 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|vadd (vector * a,vector * b)
+DECL|function|vadd (GimpVector4 * a,GimpVector4 * b)
 name|vadd
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|a
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|b
 parameter_list|)
@@ -3361,10 +3260,10 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|vneg (vector * a)
+DECL|function|vneg (GimpVector4 * a)
 name|vneg
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|a
 parameter_list|)
@@ -3412,10 +3311,10 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|vmul (vector * v,gdouble a)
+DECL|function|vmul (GimpVector4 * v,gdouble a)
 name|vmul
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|v
 parameter_list|,
@@ -3454,14 +3353,14 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|vvmul (vector * a,vector * b)
+DECL|function|vvmul (GimpVector4 * a,GimpVector4 * b)
 name|vvmul
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|a
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|b
 parameter_list|)
@@ -3505,14 +3404,14 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|vvdiv (vector * a,vector * b)
+DECL|function|vvdiv (GimpVector4 * a,GimpVector4 * b)
 name|vvdiv
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|a
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|b
 parameter_list|)
@@ -3547,18 +3446,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|vmix (vector * r,vector * a,vector * b,gdouble v)
+DECL|function|vmix (GimpVector4 * r,GimpVector4 * a,GimpVector4 * b,gdouble v)
 name|vmix
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|r
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|a
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|b
 parameter_list|,
@@ -3643,10 +3542,10 @@ end_function
 begin_function
 specifier|static
 name|double
-DECL|function|vmax (vector * a)
+DECL|function|vmax (GimpVector4 * a)
 name|vmax
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|a
 parameter_list|)
@@ -3734,7 +3633,7 @@ literal|0
 end_if
 
 begin_endif
-unit|static void vavg (vector * a) {   gdouble s;    s = (a->x + a->y + a->z) / 3.0;   a->x = a->y = a->z = s; }
+unit|static void vavg (GimpVector4 * a) {   gdouble s;    s = (a->x + a->y + a->z) / 3.0;   a->x = a->y = a->z = s; }
 endif|#
 directive|endif
 end_endif
@@ -3742,10 +3641,10 @@ end_endif
 begin_function
 specifier|static
 name|void
-DECL|function|trianglenormal (vector * n,gdouble * t,triangle * tri)
+DECL|function|trianglenormal (GimpVector4 * n,gdouble * t,triangle * tri)
 name|trianglenormal
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|n
 parameter_list|,
@@ -3880,7 +3779,7 @@ modifier|*
 name|disc
 parameter_list|)
 block|{
-name|vector
+name|GimpVector4
 name|p
 decl_stmt|,
 modifier|*
@@ -4089,7 +3988,7 @@ modifier|*
 name|sphere
 parameter_list|)
 block|{
-name|vector
+name|GimpVector4
 name|cendir
 decl_stmt|,
 name|rdir
@@ -4411,7 +4310,7 @@ modifier|*
 name|plane
 parameter_list|)
 block|{
-name|vector
+name|GimpVector4
 modifier|*
 name|v
 init|=
@@ -4552,12 +4451,12 @@ modifier|*
 name|tri
 parameter_list|)
 block|{
-name|vector
+name|GimpVector4
 name|ed1
 decl_stmt|,
 name|ed2
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|tvec
 decl_stmt|,
 name|pvec
@@ -4575,7 +4474,7 @@ name|u
 decl_stmt|,
 name|v
 decl_stmt|;
-name|vector
+name|GimpVector4
 modifier|*
 name|orig
 decl_stmt|,
@@ -4859,10 +4758,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|transformpoint (vector * p,texture * t)
+DECL|function|transformpoint (GimpVector4 * p,texture * t)
 name|transformpoint
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|p
 parameter_list|,
@@ -5055,14 +4954,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|checker (vector * q,vector * col,texture * t)
+DECL|function|checker (GimpVector4 * q,GimpVector4 * col,texture * t)
 name|checker
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|q
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|col
 parameter_list|,
@@ -5076,16 +4975,13 @@ name|c
 init|=
 literal|0
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|p
 decl_stmt|;
-name|vcopy
-argument_list|(
-operator|&
 name|p
-argument_list|,
+operator|=
+operator|*
 name|q
-argument_list|)
 expr_stmt|;
 name|transformpoint
 argument_list|(
@@ -5238,45 +5134,31 @@ name|c
 operator|^=
 literal|1
 expr_stmt|;
-if|if
-condition|(
-name|c
-condition|)
-block|{
-name|vcopy
-argument_list|(
+operator|*
 name|col
-argument_list|,
-operator|&
+operator|=
+operator|(
+name|c
+operator|)
+condition|?
 name|t
 operator|->
 name|color1
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|vcopy
-argument_list|(
-name|col
-argument_list|,
-operator|&
+else|:
 name|t
 operator|->
 name|color2
-argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|gradcolor (vector * col,gradient * t,gdouble val)
+DECL|function|gradcolor (GimpVector4 * col,gradient * t,gdouble val)
 name|gradcolor
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|col
 parameter_list|,
@@ -5294,28 +5176,19 @@ decl_stmt|;
 name|gdouble
 name|d
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|tmpcol
 decl_stmt|;
-if|if
-condition|(
-name|val
-operator|<
-literal|0.0
-condition|)
 name|val
 operator|=
+name|CLAMP
+argument_list|(
+name|val
+argument_list|,
 literal|0.0
-expr_stmt|;
-if|if
-condition|(
-name|val
-operator|>
+argument_list|,
 literal|1.0
-condition|)
-name|val
-operator|=
-literal|1.0
+argument_list|)
 expr_stmt|;
 for|for
 control|(
@@ -5345,18 +5218,15 @@ operator|==
 name|val
 condition|)
 block|{
-name|vcopy
-argument_list|(
+operator|*
 name|col
-argument_list|,
-operator|&
+operator|=
 name|t
 operator|->
 name|color
 index|[
 name|i
 index|]
-argument_list|)
 expr_stmt|;
 return|return;
 block|}
@@ -5496,14 +5366,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|marble (vector * q,vector * col,texture * t)
+DECL|function|marble (GimpVector4 * q,GimpVector4 * col,texture * t)
 name|marble
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|q
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|col
 parameter_list|,
@@ -5515,16 +5385,13 @@ block|{
 name|gdouble
 name|f
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|p
 decl_stmt|;
-name|vcopy
-argument_list|(
-operator|&
 name|p
-argument_list|,
+operator|=
+operator|*
 name|q
-argument_list|)
 expr_stmt|;
 name|transformpoint
 argument_list|(
@@ -5604,14 +5471,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lizard (vector * q,vector * col,texture * t)
+DECL|function|lizard (GimpVector4 * q,GimpVector4 * col,texture * t)
 name|lizard
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|q
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|col
 parameter_list|,
@@ -5623,16 +5490,13 @@ block|{
 name|gdouble
 name|f
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|p
 decl_stmt|;
-name|vcopy
-argument_list|(
-operator|&
 name|p
-argument_list|,
+operator|=
+operator|*
 name|q
-argument_list|)
 expr_stmt|;
 name|transformpoint
 argument_list|(
@@ -5743,14 +5607,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|wood (vector * q,vector * col,texture * t)
+DECL|function|wood (GimpVector4 * q,GimpVector4 * col,texture * t)
 name|wood
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|q
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|col
 parameter_list|,
@@ -5762,16 +5626,13 @@ block|{
 name|gdouble
 name|f
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|p
 decl_stmt|;
-name|vcopy
-argument_list|(
-operator|&
 name|p
-argument_list|,
+operator|=
+operator|*
 name|q
-argument_list|)
 expr_stmt|;
 name|transformpoint
 argument_list|(
@@ -5854,14 +5715,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|spiral (vector * q,vector * col,texture * t)
+DECL|function|spiral (GimpVector4 * q,GimpVector4 * col,texture * t)
 name|spiral
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|q
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|col
 parameter_list|,
@@ -5873,16 +5734,13 @@ block|{
 name|gdouble
 name|f
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|p
 decl_stmt|;
-name|vcopy
-argument_list|(
-operator|&
 name|p
-argument_list|,
+operator|=
+operator|*
 name|q
-argument_list|)
 expr_stmt|;
 name|transformpoint
 argument_list|(
@@ -5982,14 +5840,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|spots (vector * q,vector * col,texture * t)
+DECL|function|spots (GimpVector4 * q,GimpVector4 * col,texture * t)
 name|spots
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|q
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|col
 parameter_list|,
@@ -6001,18 +5859,15 @@ block|{
 name|gdouble
 name|f
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|p
 decl_stmt|,
 name|r
 decl_stmt|;
-name|vcopy
-argument_list|(
-operator|&
 name|p
-argument_list|,
+operator|=
+operator|*
 name|q
-argument_list|)
 expr_stmt|;
 name|transformpoint
 argument_list|(
@@ -6099,26 +5954,16 @@ operator|*
 name|G_PI
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|f
-operator|<
-literal|0.0
-condition|)
 name|f
 operator|=
+name|CLAMP
+argument_list|(
+name|f
+argument_list|,
 literal|0.0
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|f
-operator|>
+argument_list|,
 literal|1.0
-condition|)
-name|f
-operator|=
-literal|1.0
+argument_list|)
 expr_stmt|;
 name|f
 operator|=
@@ -6175,14 +6020,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|perlin (vector * q,vector * col,texture * t)
+DECL|function|perlin (GimpVector4 * q,GimpVector4 * col,texture * t)
 name|perlin
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|q
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|col
 parameter_list|,
@@ -6199,16 +6044,13 @@ index|[
 literal|3
 index|]
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|p
 decl_stmt|;
-name|vcopy
-argument_list|(
-operator|&
 name|p
-argument_list|,
+operator|=
+operator|*
 name|q
-argument_list|)
 expr_stmt|;
 name|transformpoint
 argument_list|(
@@ -6315,14 +6157,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|imagepixel (vector * q,vector * col,texture * t)
+DECL|function|imagepixel (GimpVector4 * q,GimpVector4 * col,texture * t)
 name|imagepixel
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|q
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|col
 parameter_list|,
@@ -6331,7 +6173,7 @@ modifier|*
 name|t
 parameter_list|)
 block|{
-name|vector
+name|GimpVector4
 name|p
 decl_stmt|;
 name|gint
@@ -6343,13 +6185,10 @@ name|guchar
 modifier|*
 name|rgb
 decl_stmt|;
-name|vcopy
-argument_list|(
-operator|&
 name|p
-argument_list|,
+operator|=
+operator|*
 name|q
-argument_list|)
 expr_stmt|;
 name|transformpoint
 argument_list|(
@@ -6501,14 +6340,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|objcolor (vector * col,vector * p,common * obj)
+DECL|function|objcolor (GimpVector4 * col,GimpVector4 * p,common * obj)
 name|objcolor
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|col
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|p
 parameter_list|,
@@ -6524,7 +6363,7 @@ name|texture
 modifier|*
 name|t
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|tmpcol
 decl_stmt|;
 name|vcset
@@ -6806,10 +6645,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|objnormal (vector * res,common * obj,vector * p)
+DECL|function|objnormal (GimpVector4 * res,common * obj,GimpVector4 * p)
 name|objnormal
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|res
 parameter_list|,
@@ -6817,7 +6656,7 @@ name|common
 modifier|*
 name|obj
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|p
 parameter_list|)
@@ -6972,13 +6811,13 @@ block|{
 name|gint
 name|k
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|tmpcol
 index|[
 literal|6
 index|]
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|q
 index|[
 literal|6
@@ -7483,14 +7322,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|calclight (vector * col,vector * point,common * obj)
+DECL|function|calclight (GimpVector4 * col,GimpVector4 * point,common * obj)
 name|calclight
 parameter_list|(
-name|vector
+name|GimpVector4
 modifier|*
 name|col
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|point
 parameter_list|,
@@ -7514,13 +7353,13 @@ name|b
 decl_stmt|,
 name|a
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|lcol
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|norm
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|pcol
 decl_stmt|;
 name|vcset
@@ -8001,7 +7840,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|calcphong (common * obj,ray * r2,vector * col)
+DECL|function|calcphong (common * obj,ray * r2,GimpVector4 * col)
 name|calcphong
 parameter_list|(
 name|common
@@ -8012,7 +7851,7 @@ name|ray
 modifier|*
 name|r2
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|col
 parameter_list|)
@@ -8032,13 +7871,13 @@ name|d
 decl_stmt|,
 name|b
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|lcol
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|norm
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|pcol
 decl_stmt|;
 name|gdouble
@@ -8359,14 +8198,14 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|traceray (ray * r,vector * col,gint level,gdouble imp)
+DECL|function|traceray (ray * r,GimpVector4 * col,gint level,gdouble imp)
 name|traceray
 parameter_list|(
 name|ray
 modifier|*
 name|r
 parameter_list|,
-name|vector
+name|GimpVector4
 modifier|*
 name|col
 parameter_list|,
@@ -8415,7 +8254,7 @@ name|hits
 init|=
 literal|0
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|p
 decl_stmt|;
 if|if
@@ -8810,7 +8649,7 @@ operator|.
 name|smartambient
 argument_list|)
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|lcol
 decl_stmt|;
 name|objcolor
@@ -8896,7 +8735,7 @@ operator|)
 operator|)
 condition|)
 block|{
-name|vector
+name|GimpVector4
 name|refcol
 decl_stmt|,
 name|norm
@@ -9224,7 +9063,7 @@ literal|1.0
 operator|)
 condition|)
 block|{
-name|vector
+name|GimpVector4
 name|refcol
 decl_stmt|;
 name|ray
@@ -9377,7 +9216,7 @@ name|TRANSPARENT
 operator|)
 condition|)
 block|{
-name|vector
+name|GimpVector4
 name|refcol
 decl_stmt|;
 name|ray
@@ -9537,7 +9376,7 @@ name|SMOKE
 operator|)
 condition|)
 block|{
-name|vector
+name|GimpVector4
 name|smcol
 decl_stmt|,
 name|raydir
@@ -9726,7 +9565,7 @@ name|REFRACTION
 operator|)
 condition|)
 block|{
-name|vector
+name|GimpVector4
 name|refcol
 decl_stmt|,
 name|norm
@@ -10140,7 +9979,7 @@ name|i
 operator|++
 control|)
 block|{
-name|vector
+name|GimpVector4
 name|tmpcol
 decl_stmt|;
 if|if
@@ -14374,10 +14213,9 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-operator|!
 name|t
 condition|)
-return|return;
+block|{
 name|gimp_color_button_get_color
 argument_list|(
 name|button
@@ -14392,6 +14230,7 @@ operator|->
 name|color1
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -14418,10 +14257,9 @@ argument_list|()
 decl_stmt|;
 if|if
 condition|(
-operator|!
 name|t
 condition|)
-return|return;
+block|{
 name|gimp_color_button_get_color
 argument_list|(
 name|button
@@ -14436,6 +14274,7 @@ operator|->
 name|color2
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -18151,7 +17990,7 @@ decl_stmt|;
 name|ray
 name|r
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|col
 decl_stmt|;
 name|gint
@@ -18584,7 +18423,7 @@ decl_stmt|;
 name|ray
 name|r
 decl_stmt|;
-name|vector
+name|GimpVector4
 name|rcol
 decl_stmt|;
 name|gint
@@ -19120,17 +18959,13 @@ name|x1
 argument_list|,
 name|y1
 argument_list|,
-operator|(
 name|x2
 operator|-
 name|x1
-operator|)
 argument_list|,
-operator|(
 name|y2
 operator|-
 name|y1
-operator|)
 argument_list|)
 expr_stmt|;
 block|}

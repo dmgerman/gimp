@@ -57,6 +57,22 @@ value|"imap_grid"
 end_define
 
 begin_define
+DECL|macro|IMAP_STOCK_JAVA
+define|#
+directive|define
+name|IMAP_STOCK_JAVA
+value|"imap_java"
+end_define
+
+begin_define
+DECL|macro|IMAP_STOCK_LINK
+define|#
+directive|define
+name|IMAP_STOCK_LINK
+value|"imap_link"
+end_define
+
+begin_define
 DECL|macro|IMAP_STOCK_MAP_INFO
 define|#
 directive|define
