@@ -392,7 +392,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0f44820103
+DECL|enum|__anon27a4a4500103
 block|{
 DECL|enumerator|CONTROLLER
 name|CONTROLLER
@@ -1504,6 +1504,10 @@ else|else
 block|{
 name|error
 label|:
+if|if
+condition|(
+name|info
+condition|)
 name|gimp_controller_info_free
 argument_list|(
 name|info
