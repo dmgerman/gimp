@@ -1496,11 +1496,11 @@ parameter_list|,
 name|guchar
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
 name|GimpLayerModeEffects
 parameter_list|,
-name|int
+name|gboolean
 modifier|*
 parameter_list|,
 name|CombinationMode
@@ -1531,7 +1531,7 @@ name|guint
 parameter_list|,
 name|GimpLayerModeEffects
 parameter_list|,
-name|int
+name|gboolean
 modifier|*
 parameter_list|,
 name|CombinationMode
@@ -1560,7 +1560,7 @@ modifier|*
 parameter_list|,
 name|guint
 parameter_list|,
-name|int
+name|gboolean
 modifier|*
 parameter_list|,
 name|CombinationMode

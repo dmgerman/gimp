@@ -613,9 +613,6 @@ block|{
 name|glong
 name|i
 decl_stmt|;
-name|gint
-name|j
-decl_stmt|;
 name|guchar
 modifier|*
 name|data

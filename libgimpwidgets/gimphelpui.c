@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28feb1bf0103
+DECL|enum|__anon2a111f100103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -96,7 +96,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkWidgetHelpType
+name|GimpWidgetHelpType
 name|help_type
 parameter_list|,
 name|GimpHelpFunc
