@@ -2164,7 +2164,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"offx"
 block|,
-literal|"x offset between upper left corner of old and new layers: (new - old)"
+literal|"x offset between upper left corner of old and new layers: (old - new)"
 block|}
 block|,
 block|{
@@ -2172,7 +2172,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"offy"
 block|,
-literal|"y offset between upper left corner of old and new layers: (new - old)"
+literal|"y offset between upper left corner of old and new layers: (old - new)"
 block|}
 block|}
 decl_stmt|;

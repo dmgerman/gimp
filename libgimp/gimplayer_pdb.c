@@ -470,7 +470,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_resize:  * @layer_ID: The layer.  * @new_width: New layer width.  * @new_height: New layer height.  * @offx: x offset between upper left corner of old and new layers: (new - old).  * @offy: y offset between upper left corner of old and new layers: (new - old).  *  * Resize the layer to the specified extents.  *  * This procedure resizes the layer so that it's new width and height  * are equal to the supplied parameters. Offsets are also provided  * which describe the position of the previous layer's content. This  * operation only works if the layer has been added to an image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_layer_resize:  * @layer_ID: The layer.  * @new_width: New layer width.  * @new_height: New layer height.  * @offx: x offset between upper left corner of old and new layers: (old - new).  * @offy: y offset between upper left corner of old and new layers: (old - new).  *  * Resize the layer to the specified extents.  *  * This procedure resizes the layer so that it's new width and height  * are equal to the supplied parameters. Offsets are also provided  * which describe the position of the previous layer's content. This  * operation only works if the layer has been added to an image.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
