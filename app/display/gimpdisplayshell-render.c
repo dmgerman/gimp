@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-projection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplay.h"
 end_include
 

@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-projection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayer.h"
 end_include
 
@@ -239,7 +245,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296a56980103
+DECL|enum|__anon2b873d6f0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -9279,7 +9285,7 @@ name|base_type
 operator|=
 name|tmp
 expr_stmt|;
-name|gimp_image_projection_realloc
+name|gimp_image_projection_allocate
 argument_list|(
 name|gimage
 argument_list|)

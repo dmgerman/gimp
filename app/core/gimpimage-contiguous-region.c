@@ -69,6 +69,12 @@ directive|include
 file|"gimpimage-contiguous-region.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpimage-projection.h"
+end_include
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -320,7 +326,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|gimp_image_composite
+name|gimp_image_projection
 argument_list|(
 name|gimage
 argument_list|)
@@ -342,7 +348,7 @@ argument_list|)
 expr_stmt|;
 name|type
 operator|=
-name|gimp_image_composite_type
+name|gimp_image_projection_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -714,14 +720,14 @@ condition|)
 block|{
 name|bytes
 operator|=
-name|gimp_image_composite_bytes
+name|gimp_image_projection_bytes
 argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
 name|d_type
 operator|=
-name|gimp_image_composite_type
+name|gimp_image_projection_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -769,7 +775,7 @@ argument_list|(
 operator|&
 name|imagePR
 argument_list|,
-name|gimp_image_composite
+name|gimp_image_projection
 argument_list|(
 name|gimage
 argument_list|)

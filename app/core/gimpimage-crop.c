@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-projection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -96,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb14c670103
+DECL|enum|__anon2c03995f0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -806,7 +812,7 @@ name|next
 expr_stmt|;
 block|}
 comment|/*  Make sure the projection matches the gimage size  */
-name|gimp_image_projection_realloc
+name|gimp_image_projection_allocate
 argument_list|(
 name|gimage
 argument_list|)
@@ -1143,7 +1149,7 @@ name|TRUE
 expr_stmt|;
 name|bytes
 operator|=
-name|gimp_image_composite_bytes
+name|gimp_image_projection_bytes
 argument_list|(
 name|gimage
 argument_list|)
@@ -1160,7 +1166,7 @@ operator|=
 operator|(
 name|GetColorFunc
 operator|)
-name|gimp_image_get_color_at
+name|gimp_image_projection_get_color_at
 expr_stmt|;
 block|}
 switch|switch
@@ -1262,7 +1268,7 @@ argument_list|(
 operator|&
 name|PR
 argument_list|,
-name|gimp_image_composite
+name|gimp_image_projection
 argument_list|(
 name|gimage
 argument_list|)

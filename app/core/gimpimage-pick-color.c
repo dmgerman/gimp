@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-projection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -2226,7 +2232,7 @@ else|else
 block|{
 name|sample_type
 operator|=
-name|gimp_image_composite_type
+name|gimp_image_projection_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -2240,7 +2246,7 @@ operator|=
 operator|(
 name|GetColorFunc
 operator|)
-name|gimp_image_get_color_at
+name|gimp_image_projection_get_color_at
 expr_stmt|;
 name|get_color_obj
 operator|=

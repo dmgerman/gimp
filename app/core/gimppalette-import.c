@@ -64,6 +64,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-projection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppalette.h"
 end_include
 
@@ -1132,14 +1138,14 @@ expr_stmt|;
 comment|/*  Get the image information  */
 name|bytes
 operator|=
-name|gimp_image_composite_bytes
+name|gimp_image_projection_bytes
 argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
 name|d_type
 operator|=
-name|gimp_image_composite_type
+name|gimp_image_projection_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -1178,7 +1184,7 @@ argument_list|(
 operator|&
 name|imagePR
 argument_list|,
-name|gimp_image_composite
+name|gimp_image_projection
 argument_list|(
 name|gimage
 argument_list|)

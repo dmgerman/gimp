@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-projection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpscanconvert.h"
 end_include
 
@@ -7305,7 +7311,7 @@ name|srctile
 operator|=
 name|tile_manager_get_tile
 argument_list|(
-name|gimp_image_composite
+name|gimp_image_projection
 argument_list|(
 name|gimage
 argument_list|)
@@ -7365,7 +7371,7 @@ name|srcPR
 operator|.
 name|bytes
 operator|=
-name|gimp_image_composite_bytes
+name|gimp_image_projection_bytes
 argument_list|(
 name|gimage
 argument_list|)

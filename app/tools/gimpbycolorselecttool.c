@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-contiguous-region.h"
 end_include
 
@@ -102,7 +108,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
+file|"core/gimpimage-projection.h"
 end_include
 
 begin_include
@@ -1468,7 +1474,7 @@ operator|!
 operator|(
 name|col
 operator|=
-name|gimp_image_get_color_at
+name|gimp_image_projection_get_color_at
 argument_list|(
 name|gdisp
 operator|->
@@ -3819,7 +3825,7 @@ condition|)
 return|return;
 name|col
 operator|=
-name|gimp_image_get_color_at
+name|gimp_image_projection_get_color_at
 argument_list|(
 name|bcd
 operator|->
