@@ -1242,26 +1242,6 @@ parameter_list|)
 value|_finite(x)
 end_define
 
-begin_elif
-elif|#
-directive|elif
-name|defined
-argument_list|(
-name|__EMX__
-argument_list|)
-end_elif
-
-begin_define
-DECL|macro|FINITE (x)
-define|#
-directive|define
-name|FINITE
-parameter_list|(
-name|x
-parameter_list|)
-value|isfinite(x)
-end_define
-
 begin_else
 else|#
 directive|else

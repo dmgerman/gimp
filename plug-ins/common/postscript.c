@@ -170,7 +170,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b13cc0108
+DECL|struct|__anon278f3a4d0108
 block|{
 DECL|member|resolution
 name|guint
@@ -259,7 +259,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b13cc0208
+DECL|struct|__anon278f3a4d0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -851,7 +851,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b13cc0308
+DECL|struct|__anon278f3a4d0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1707,7 +1707,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b13cc0408
+DECL|struct|__anon278f3a4d0408
 block|{
 DECL|member|eol
 name|long
@@ -6432,9 +6432,6 @@ ifndef|#
 directive|ifndef
 name|USE_REAL_OUTPUTFILE
 comment|/* Start the command and use a pipe for reading the PNM-file. */
-ifndef|#
-directive|ifndef
-name|__EMX__
 name|fd_popen
 operator|=
 name|popen
@@ -6444,19 +6441,6 @@ argument_list|,
 literal|"r"
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-name|fd_popen
-operator|=
-name|popen
-argument_list|(
-name|cmd
-argument_list|,
-literal|"rb"
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 else|#
 directive|else
 comment|/* If someone does not like the pipe (or it does not work), just start */
@@ -6753,11 +6737,6 @@ operator|)
 return|;
 if|#
 directive|if
-name|defined
-argument_list|(
-name|__EMX__
-argument_list|)
-operator|||
 name|defined
 argument_list|(
 name|WIN32

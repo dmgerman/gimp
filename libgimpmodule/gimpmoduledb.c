@@ -76,7 +76,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c492be80103
+DECL|enum|__anon2bf266da0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1137,12 +1137,6 @@ operator|!
 name|defined
 argument_list|(
 name|G_WITH_CYGWIN
-argument_list|)
-operator|&&
-operator|!
-name|defined
-argument_list|(
-name|__EMX__
 argument_list|)
 if|if
 condition|(

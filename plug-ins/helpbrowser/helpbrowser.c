@@ -61,25 +61,6 @@ begin_comment
 comment|/*  defines  */
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__EMX__
-end_ifdef
-
-begin_define
-DECL|macro|chdir
-define|#
-directive|define
-name|chdir
-value|_chdir2
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_define
 DECL|macro|GIMP_HELP_EXT_NAME
 define|#
@@ -115,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4512be0108
+DECL|struct|__anon2760a5710108
 block|{
 DECL|member|help_domain
 name|gchar
