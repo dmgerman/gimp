@@ -594,7 +594,7 @@ name|gtk_image_new_from_stock
 argument_list|(
 name|stock_id
 argument_list|,
-name|GTK_ICON_SIZE_BUTTON
+name|GTK_ICON_SIZE_MENU
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
