@@ -121,7 +121,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4ba0390103
+DECL|enum|__anon2b8291f00103
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -230,7 +230,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4ba0390203
+DECL|enum|__anon2b8291f00203
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -255,11 +255,10 @@ value|768
 end_define
 
 begin_typedef
-DECL|enum|__anon2b4ba0390303
+DECL|enum|__anon2b8291f00303
 typedef|typedef
 enum|enum
 block|{
-comment|/*< chop=ORIENTATION_>*/
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
 block|,
@@ -277,7 +276,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4ba0390403
+DECL|enum|__anon2b8291f00403
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -305,7 +304,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4ba0390503
+DECL|enum|__anon2b8291f00503
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY

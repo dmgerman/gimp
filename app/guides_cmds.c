@@ -1460,7 +1460,7 @@ name|PDB_INT32
 block|,
 literal|"orientation"
 block|,
-literal|"The guide's orientation: { HORIZONTAL (1), VERTICAL (2) }"
+literal|"The guide's orientation: { ORIENTATION_HORIZONTAL (1), ORIENTATION_VERTICAL (2) }"
 block|}
 block|}
 decl_stmt|;
