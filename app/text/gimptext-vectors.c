@@ -383,6 +383,9 @@ decl_stmt|;
 name|GimpCoords
 name|coords
 decl_stmt|;
+if|#
+directive|if
+name|TEXT_DEBUG
 name|g_printerr
 argument_list|(
 literal|"moveto  %f, %f\n"
@@ -400,6 +403,8 @@ operator|/
 literal|64.0
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|gimp_text_vector_coords
 argument_list|(
 name|context
@@ -535,6 +540,9 @@ decl_stmt|;
 name|GimpCoords
 name|coords
 decl_stmt|;
+if|#
+directive|if
+name|TEXT_DEBUG
 name|g_printerr
 argument_list|(
 literal|"lineto  %f, %f\n"
@@ -552,6 +560,8 @@ operator|/
 literal|64.0
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 operator|!
@@ -678,6 +688,9 @@ decl_stmt|;
 name|GimpCoords
 name|coords
 decl_stmt|;
+if|#
+directive|if
+name|TEXT_DEBUG
 name|g_printerr
 argument_list|(
 literal|"conicto %f, %f\n"
@@ -695,6 +708,8 @@ operator|/
 literal|64.0
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 operator|!
@@ -835,6 +850,9 @@ decl_stmt|;
 name|GimpCoords
 name|coords
 decl_stmt|;
+if|#
+directive|if
+name|TEXT_DEBUG
 name|g_printerr
 argument_list|(
 literal|"cubicto %f, %f\n"
@@ -852,6 +870,8 @@ operator|/
 literal|64.0
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 operator|!

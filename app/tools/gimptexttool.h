@@ -115,6 +115,14 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
+DECL|member|offset_x
+name|gint
+name|offset_x
+decl_stmt|;
+DECL|member|offset_y
+name|gint
+name|offset_y
+decl_stmt|;
 DECL|member|gdisp
 name|GimpDisplay
 modifier|*
