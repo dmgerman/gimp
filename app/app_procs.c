@@ -2013,7 +2013,7 @@ argument_list|)
 expr_stmt|;
 name|max_label_length
 operator|=
-literal|0.95
+literal|0.8
 operator|*
 operator|(
 name|float
