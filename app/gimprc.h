@@ -391,6 +391,14 @@ name|num_processors
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|char
+modifier|*
+name|image_title_format
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  function prototypes  */
 end_comment

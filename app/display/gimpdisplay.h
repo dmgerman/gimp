@@ -983,6 +983,16 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gdisplay_update_title
+parameter_list|(
+name|GDisplay
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gdisplays_update_title
 parameter_list|(
 name|GimpImage

@@ -619,6 +619,12 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* title may have changed if it includes the zoom ratio */
+name|gdisplay_update_title
+argument_list|(
+name|gdisp
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

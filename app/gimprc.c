@@ -160,7 +160,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2a2a55bc0103
+DECL|enum|__anon2952004c0103
 typedef|typedef
 enum|enum
 block|{
@@ -812,6 +812,16 @@ name|int
 name|num_processors
 init|=
 literal|1
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|image_title_format
+name|char
+modifier|*
+name|image_title_format
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -2154,7 +2164,18 @@ name|num_processors
 block|,
 name|NULL
 block|}
+block|,
+block|{
+literal|"image-title-format"
+block|,
+name|TT_STRING
+block|,
+operator|&
+name|image_title_format
+block|,
+name|NULL
 block|}
+block|, }
 decl_stmt|;
 end_decl_stmt
 
@@ -2264,6 +2285,14 @@ define|#
 directive|define
 name|MAX_GIMPDIR_LEN
 value|500
+end_define
+
+begin_define
+DECL|macro|DEFAULT_IMAGE_TITLE_FORMAT
+define|#
+directive|define
+name|DEFAULT_IMAGE_TITLE_FORMAT
+value|"%f-%p.%i (%t)"
 end_define
 
 begin_function
@@ -2679,6 +2708,15 @@ name|filename
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|!
+name|image_title_format
+condition|)
+name|image_title_format
+operator|=
+name|DEFAULT_IMAGE_TITLE_FORMAT
+expr_stmt|;
 block|}
 end_function
 
