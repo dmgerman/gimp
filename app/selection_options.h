@@ -111,6 +111,16 @@ name|GtkWidget
 modifier|*
 name|sample_merged_w
 decl_stmt|;
+DECL|member|threshold
+name|gdouble
+name|threshold
+decl_stmt|;
+comment|/* gdouble   threshold_d; (from gimprc) */
+DECL|member|threshold_w
+name|GtkObject
+modifier|*
+name|threshold_w
+decl_stmt|;
 comment|/*  used by rect., ellipse selection  */
 DECL|member|fixed_size
 name|gboolean
