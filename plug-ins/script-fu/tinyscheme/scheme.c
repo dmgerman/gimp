@@ -7486,6 +7486,37 @@ break|break;
 case|case
 name|array_string
 case|:
+if|if
+condition|(
+operator|(
+operator|(
+name|gchar
+operator|*
+operator|*
+operator|)
+name|elem
+operator|)
+index|[
+name|ielem
+index|]
+operator|!=
+name|NULL
+condition|)
+name|free
+argument_list|(
+operator|(
+operator|(
+name|gchar
+operator|*
+operator|*
+operator|)
+name|elem
+operator|)
+index|[
+name|ielem
+index|]
+argument_list|)
+expr_stmt|;
 operator|(
 operator|(
 name|gchar
@@ -7498,6 +7529,8 @@ index|[
 name|ielem
 index|]
 operator|=
+name|strdup
+argument_list|(
 name|sc
 operator|->
 name|vptr
@@ -7505,6 +7538,7 @@ operator|->
 name|string_value
 argument_list|(
 name|v
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -10803,7 +10837,7 @@ name|c1
 init|=
 literal|0
 decl_stmt|;
-DECL|enum|__anon2c024a010103
+DECL|enum|__anon290fb7720103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -27608,7 +27642,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2c024a010208
+DECL|struct|__anon290fb7720208
 specifier|static
 struct|struct
 block|{
@@ -27857,7 +27891,7 @@ value|"\017"
 end_define
 
 begin_typedef
-DECL|struct|__anon2c024a010308
+DECL|struct|__anon290fb7720308
 typedef|typedef
 struct|struct
 block|{
