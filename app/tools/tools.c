@@ -1844,7 +1844,7 @@ argument_list|(
 name|options_shell
 argument_list|,
 operator|&
-name|tool_options_geometry
+name|tool_options_session_info
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1979,12 +1979,12 @@ DECL|function|tools_options_dialog_free ()
 name|tools_options_dialog_free
 parameter_list|()
 block|{
-name|session_get_window_geometry
+name|session_get_window_info
 argument_list|(
 name|options_shell
 argument_list|,
 operator|&
-name|tool_options_geometry
+name|tool_options_session_info
 argument_list|)
 expr_stmt|;
 name|gtk_widget_destroy

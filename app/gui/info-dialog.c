@@ -390,7 +390,7 @@ argument_list|(
 name|shell
 argument_list|,
 operator|&
-name|info_dialog_geometry
+name|info_dialog_session_info
 argument_list|,
 name|FALSE
 argument_list|)
@@ -656,14 +656,14 @@ operator|->
 name|field_list
 argument_list|)
 expr_stmt|;
-name|session_get_window_geometry
+name|session_get_window_info
 argument_list|(
 name|idialog
 operator|->
 name|shell
 argument_list|,
 operator|&
-name|info_dialog_geometry
+name|info_dialog_session_info
 argument_list|)
 expr_stmt|;
 comment|/*  Destroy the associated widgets  */

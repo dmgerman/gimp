@@ -88,7 +88,7 @@ value|((x> y) ? x : y)
 end_define
 
 begin_typedef
-DECL|enum|__anon2a4090c50103
+DECL|enum|__anon2bb79e480103
 typedef|typedef
 enum|enum
 block|{
@@ -151,6 +151,24 @@ name|int
 name|console_messages
 decl_stmt|;
 end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|int
+name|restore_session
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|int
+name|we_are_exiting
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/* this is used in session_get_window_info() */
+end_comment
 
 begin_decl_stmt
 specifier|extern

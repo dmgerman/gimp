@@ -1053,7 +1053,7 @@ operator|->
 name|shell
 argument_list|,
 operator|&
-name|palette_geometry
+name|palette_session_info
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1844,14 +1844,14 @@ operator|->
 name|color_select
 argument_list|)
 expr_stmt|;
-name|session_get_window_geometry
+name|session_get_window_info
 argument_list|(
 name|palette
 operator|->
 name|shell
 argument_list|,
 operator|&
-name|palette_geometry
+name|palette_session_info
 argument_list|)
 expr_stmt|;
 name|g_free

@@ -449,6 +449,15 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|we_are_exiting
+name|int
+name|we_are_exiting
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|quit_args
 specifier|static
 name|ProcArg
@@ -2211,6 +2220,14 @@ name|parse_gimprc
 argument_list|()
 expr_stmt|;
 comment|/*  parse the local GIMP configuration file  */
+if|if
+condition|(
+name|always_restore_session
+condition|)
+name|restore_session
+operator|=
+name|TRUE
+expr_stmt|;
 comment|/* Now we are ready to draw the splash-screen-image to the start-up window */
 if|if
 condition|(
@@ -2450,6 +2467,15 @@ expr_stmt|;
 name|paint_funcs_setup
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|no_interface
+operator|==
+name|FALSE
+condition|)
+name|session_restore
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 
@@ -2488,6 +2514,10 @@ expr_stmt|;
 name|message_handler
 operator|=
 name|CONSOLE
+expr_stmt|;
+name|we_are_exiting
+operator|=
+name|TRUE
 expr_stmt|;
 name|lc_dialog_free
 argument_list|()

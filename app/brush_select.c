@@ -1124,7 +1124,7 @@ operator|->
 name|shell
 argument_list|,
 operator|&
-name|brush_select_geometry
+name|brush_select_session_info
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2386,14 +2386,14 @@ condition|(
 name|bsp
 condition|)
 block|{
-name|session_get_window_geometry
+name|session_get_window_info
 argument_list|(
 name|bsp
 operator|->
 name|shell
 argument_list|,
 operator|&
-name|brush_select_geometry
+name|brush_select_session_info
 argument_list|)
 expr_stmt|;
 if|if

@@ -195,6 +195,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|restore_session
+name|int
+name|restore_session
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|image_context
 name|GimpSet
 modifier|*
@@ -418,6 +425,10 @@ operator|=
 name|TRUE
 expr_stmt|;
 name|use_debug_handler
+operator|=
+name|FALSE
+expr_stmt|;
+name|restore_session
 operator|=
 name|FALSE
 expr_stmt|;
@@ -917,6 +928,43 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
+elseif|else
+if|if
+condition|(
+operator|(
+name|strcmp
+argument_list|(
+name|argv
+index|[
+name|i
+index|]
+argument_list|,
+literal|"--restore-session"
+argument_list|)
+operator|==
+literal|0
+operator|)
+operator|||
+operator|(
+name|strcmp
+argument_list|(
+name|argv
+index|[
+name|i
+index|]
+argument_list|,
+literal|"-r"
+argument_list|)
+operator|==
+literal|0
+operator|)
+condition|)
+block|{
+name|restore_session
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 comment|/*  *    ANYTHING ELSE starting with a '-' is an error.  */
 elseif|else
 if|if
@@ -992,6 +1040,11 @@ expr_stmt|;
 name|g_print
 argument_list|(
 literal|"  -n --no-interface        Run without a user interface.\n"
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"  -r --restore-session     Try to restore saved session.\n"
 argument_list|)
 expr_stmt|;
 name|g_print

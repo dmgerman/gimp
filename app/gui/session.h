@@ -27,18 +27,18 @@ comment|/* Structures */
 end_comment
 
 begin_typedef
-DECL|typedef|SessionGeometry
+DECL|typedef|SessionInfo
 typedef|typedef
 name|struct
-name|_SessionGeometry
-name|SessionGeometry
+name|_SessionInfo
+name|SessionInfo
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_SessionGeometry
+DECL|struct|_SessionInfo
 struct|struct
-name|_SessionGeometry
+name|_SessionInfo
 block|{
 DECL|member|name
 name|char
@@ -46,6 +46,10 @@ name|name
 index|[
 literal|16
 index|]
+decl_stmt|;
+DECL|member|open_callback
+name|GtkItemFactoryCallback
+name|open_callback
 decl_stmt|;
 DECL|member|x
 name|int
@@ -63,6 +67,10 @@ DECL|member|height
 name|int
 name|height
 decl_stmt|;
+DECL|member|open
+name|int
+name|open
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -73,57 +81,57 @@ end_comment
 
 begin_decl_stmt
 specifier|extern
-name|SessionGeometry
-name|toolbox_geometry
+name|SessionInfo
+name|toolbox_session_info
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|SessionGeometry
-name|lc_dialog_geometry
+name|SessionInfo
+name|lc_dialog_session_info
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|SessionGeometry
-name|info_dialog_geometry
+name|SessionInfo
+name|info_dialog_session_info
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|SessionGeometry
-name|tool_options_geometry
+name|SessionInfo
+name|tool_options_session_info
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|SessionGeometry
-name|palette_geometry
+name|SessionInfo
+name|palette_session_info
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|SessionGeometry
-name|brush_select_geometry
+name|SessionInfo
+name|brush_select_session_info
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|SessionGeometry
-name|pattern_select_geometry
+name|SessionInfo
+name|pattern_select_session_info
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|SessionGeometry
-name|gradient_editor_geometry
+name|SessionInfo
+name|gradient_editor_session_info
 decl_stmt|;
 end_decl_stmt
 
@@ -131,12 +139,12 @@ begin_decl_stmt
 specifier|extern
 name|GList
 modifier|*
-name|session_geometry_updates
+name|session_info_updates
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* This list holds all geometries 					    that should be written to the 					    sessionrc on exit.             */
+comment|/* This list holds all session_infos 					that should be written to the 					sessionrc on exit.             */
 end_comment
 
 begin_comment
@@ -145,15 +153,15 @@ end_comment
 
 begin_function_decl
 name|void
-name|session_get_window_geometry
+name|session_get_window_info
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|window
 parameter_list|,
-name|SessionGeometry
+name|SessionInfo
 modifier|*
-name|geometry
+name|info
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -166,9 +174,9 @@ name|GtkWidget
 modifier|*
 name|window
 parameter_list|,
-name|SessionGeometry
+name|SessionInfo
 modifier|*
-name|geometry
+name|info
 parameter_list|,
 name|int
 name|set_size
@@ -179,6 +187,15 @@ end_function_decl
 begin_function_decl
 name|void
 name|session_init
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|session_restore
 parameter_list|(
 name|void
 parameter_list|)

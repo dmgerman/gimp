@@ -300,7 +300,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b049c00108
+DECL|struct|__anon29ea78400108
 block|{
 DECL|member|shell
 name|GtkWidget

@@ -2234,7 +2234,7 @@ argument_list|(
 name|window
 argument_list|,
 operator|&
-name|toolbox_geometry
+name|toolbox_session_info
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2540,12 +2540,12 @@ block|{
 name|int
 name|i
 decl_stmt|;
-name|session_get_window_geometry
+name|session_get_window_info
 argument_list|(
 name|toolbox_shell
 argument_list|,
 operator|&
-name|toolbox_geometry
+name|toolbox_session_info
 argument_list|)
 expr_stmt|;
 name|gtk_widget_destroy

@@ -340,7 +340,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ba565780103
+DECL|enum|__anon2c86f2b20103
 typedef|typedef
 enum|enum
 block|{
@@ -367,7 +367,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ba565780203
+DECL|enum|__anon2c86f2b20203
 typedef|typedef
 enum|enum
 block|{
@@ -512,7 +512,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ba565780303
+DECL|enum|__anon2c86f2b20303
 typedef|typedef
 enum|enum
 block|{
@@ -536,7 +536,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ba565780408
+DECL|struct|__anon2c86f2b20408
 typedef|typedef
 struct|struct
 block|{
@@ -816,7 +816,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon2ba565780508
+DECL|struct|__anon2c86f2b20508
 struct|struct
 block|{
 DECL|member|r
@@ -4070,7 +4070,7 @@ operator|->
 name|shell
 argument_list|,
 operator|&
-name|gradient_editor_geometry
+name|gradient_editor_session_info
 argument_list|,
 name|TRUE
 argument_list|)
@@ -5762,14 +5762,14 @@ if|if
 condition|(
 name|g_editor
 condition|)
-name|session_get_window_geometry
+name|session_get_window_info
 argument_list|(
 name|g_editor
 operator|->
 name|shell
 argument_list|,
 operator|&
-name|gradient_editor_geometry
+name|gradient_editor_session_info
 argument_list|)
 expr_stmt|;
 block|}

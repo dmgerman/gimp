@@ -265,13 +265,6 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|int
-name|save_window_positions_on_exit
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|int
 name|default_width
 decl_stmt|,
 name|default_height
@@ -296,6 +289,20 @@ begin_decl_stmt
 specifier|extern
 name|int
 name|default_resolution_units
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|int
+name|save_session_info
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|int
+name|always_restore_session
 decl_stmt|;
 end_decl_stmt
 

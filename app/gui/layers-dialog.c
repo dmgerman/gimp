@@ -2243,7 +2243,7 @@ argument_list|(
 name|lc_shell
 argument_list|,
 operator|&
-name|lc_dialog_geometry
+name|lc_dialog_session_info
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2941,12 +2941,12 @@ operator|==
 name|NULL
 condition|)
 return|return;
-name|session_get_window_geometry
+name|session_get_window_info
 argument_list|(
 name|lc_shell
 argument_list|,
 operator|&
-name|lc_dialog_geometry
+name|lc_dialog_session_info
 argument_list|)
 expr_stmt|;
 name|layers_dialog_free
@@ -4315,7 +4315,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon274e1da50108
+DECL|struct|__anon2af201980108
 typedef|typedef
 struct|struct
 block|{
