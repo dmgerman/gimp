@@ -2051,10 +2051,6 @@ if|if
 condition|(
 name|file_proc
 operator|->
-name|menu_paths
-operator|&&
-name|file_proc
-operator|->
 name|extensions_list
 condition|)
 block|{
