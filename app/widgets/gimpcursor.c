@@ -190,7 +190,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcbadf30108
+DECL|struct|__anon28b964960108
 block|{
 DECL|member|bits
 name|unsigned
@@ -279,9 +279,9 @@ name|mouse1_m_width
 block|,
 name|mouse1_m_height
 block|,
-name|mouse1_u_x_hot
+name|mouse1_m_x_hot
 block|,
-name|mouse1_u_y_hot
+name|mouse1_m_y_hot
 block|,
 name|NULL
 block|}

@@ -202,7 +202,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* Loca varibles */
+comment|/*  local variables */
 end_comment
 
 begin_decl_stmt
@@ -212,6 +212,10 @@ name|double
 name|non_gui_pressure
 decl_stmt|;
 end_decl_stmt
+
+begin_comment
+comment|/*  function prototypes */
+end_comment
 
 begin_function_decl
 specifier|static
@@ -302,15 +306,12 @@ parameter_list|,
 name|gint
 name|bytes
 parameter_list|,
-name|gint
+name|guchar
+modifier|*
 name|do_fill
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* functions  */
-end_comment
 
 begin_function
 specifier|static
@@ -855,6 +856,12 @@ decl_stmt|;
 name|gint
 name|was_clipped
 decl_stmt|;
+name|guchar
+modifier|*
+name|do_fill
+init|=
+name|NULL
+decl_stmt|;
 comment|/*  adjust the x and y coordinates to the upper left corner of the brush  */
 name|smudge_nonclipped_painthit_coords
 argument_list|(
@@ -964,6 +971,38 @@ name|was_clipped
 operator|=
 name|FALSE
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|area
+condition|)
+return|return;
+comment|/* When clipped, accum_data may contain pixels that map to      off-canvas pixels of the under-the- brush image, particularly      when the brush image contains an edge or corner of the      image. These off-canvas pixels are not a part of the current      composite, but may be composited in later generations. do_fill      contains a copy of the color of the pixel at the center of the      brush; assumed this is a reasonable choice for off- canvas pixels      that may enter into the blend */
+if|if
+condition|(
+name|was_clipped
+condition|)
+name|do_fill
+operator|=
+name|gimp_drawable_get_color_at
+argument_list|(
+name|drawable
+argument_list|,
+operator|(
+name|gint
+operator|)
+name|paint_core
+operator|->
+name|curx
+argument_list|,
+operator|(
+name|gint
+operator|)
+name|paint_core
+operator|->
+name|cury
+argument_list|)
+expr_stmt|;
 name|smudge_allocate_accum_buffer
 argument_list|(
 name|w
@@ -975,15 +1014,9 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|was_clipped
+name|do_fill
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|area
-condition|)
-return|return;
 name|accumPR
 operator|.
 name|x
@@ -1095,13 +1128,21 @@ name|accumPR
 operator|.
 name|x
 operator|=
-literal|0
+name|area
+operator|->
+name|x
+operator|-
+name|x
 expr_stmt|;
 name|accumPR
 operator|.
 name|y
 operator|=
-literal|0
+name|area
+operator|->
+name|y
+operator|-
+name|y
 expr_stmt|;
 name|accumPR
 operator|.
@@ -1127,8 +1168,6 @@ name|accumPR
 operator|.
 name|bytes
 operator|*
-name|accumPR
-operator|.
 name|w
 expr_stmt|;
 name|accumPR
@@ -1136,6 +1175,31 @@ operator|.
 name|data
 operator|=
 name|accum_data
+operator|+
+name|accumPR
+operator|.
+name|rowstride
+operator|*
+name|accumPR
+operator|.
+name|y
+operator|+
+name|accumPR
+operator|.
+name|x
+operator|*
+name|accumPR
+operator|.
+name|bytes
+expr_stmt|;
+if|if
+condition|(
+name|do_fill
+condition|)
+name|g_free
+argument_list|(
+name|do_fill
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -1143,7 +1207,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|smudge_allocate_accum_buffer (gint w,gint h,gint bytes,gint do_fill)
+DECL|function|smudge_allocate_accum_buffer (gint w,gint h,gint bytes,guchar * do_fill)
 name|smudge_allocate_accum_buffer
 parameter_list|(
 name|gint
@@ -1155,7 +1219,8 @@ parameter_list|,
 name|gint
 name|bytes
 parameter_list|,
-name|gint
+name|guchar
+modifier|*
 name|do_fill
 parameter_list|)
 block|{
@@ -1180,22 +1245,11 @@ expr_stmt|;
 if|if
 condition|(
 name|do_fill
+operator|!=
+name|NULL
 condition|)
 block|{
-name|guchar
-name|color
-index|[
-literal|3
-index|]
-init|=
-block|{
-literal|0
-block|,
-literal|0
-block|,
-literal|0
-block|}
-decl_stmt|;
+comment|/* guchar color[3] = {0,0,0}; */
 name|accumPR
 operator|.
 name|x
@@ -1246,8 +1300,7 @@ specifier|const
 name|guchar
 operator|*
 operator|)
-operator|&
-name|color
+name|do_fill
 argument_list|)
 expr_stmt|;
 block|}
@@ -1911,14 +1964,12 @@ if|if
 condition|(
 name|options
 condition|)
-block|{
 name|pressure
 operator|=
 name|options
 operator|->
 name|pressure
 expr_stmt|;
-block|}
 return|return
 name|smudge_non_gui
 argument_list|(
