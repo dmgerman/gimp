@@ -40,17 +40,19 @@ file|"gimppreviewarea.h"
 end_include
 
 begin_define
-DECL|macro|CHECK_COLOR (row,col)
+DECL|macro|CHECK_COLOR (area,row,col)
 define|#
 directive|define
 name|CHECK_COLOR
 parameter_list|(
+name|area
+parameter_list|,
 name|row
 parameter_list|,
 name|col
 parameter_list|)
 define|\
-value|((((row)& GIMP_CHECK_SIZE) ^ ((col)& GIMP_CHECK_SIZE)) ? \    (GIMP_CHECK_LIGHT * 255) :                                \    (GIMP_CHECK_DARK  * 255))
+value|(((((area)->offset_x + (row))& GIMP_CHECK_SIZE) ^    \     (((area)->offset_y + (col))& GIMP_CHECK_SIZE)) ?   \    (GIMP_CHECK_LIGHT * 255) :                           \    (GIMP_CHECK_DARK  * 255))
 end_define
 
 begin_function_decl
@@ -297,13 +299,13 @@ name|NULL
 expr_stmt|;
 name|area
 operator|->
-name|dither_x
+name|offset_x
 operator|=
 literal|0
 expr_stmt|;
 name|area
 operator|->
-name|dither_y
+name|offset_y
 operator|=
 literal|0
 expr_stmt|;
@@ -647,7 +649,7 @@ name|rowstride
 argument_list|,
 name|area
 operator|->
-name|dither_x
+name|offset_x
 operator|-
 name|event
 operator|->
@@ -657,7 +659,7 @@ name|x
 argument_list|,
 name|area
 operator|->
-name|dither_y
+name|offset_y
 operator|-
 name|event
 operator|->
@@ -1137,6 +1139,8 @@ index|]
 operator|=
 name|CHECK_COLOR
 argument_list|(
+name|area
+argument_list|,
 name|row
 argument_list|,
 name|col
@@ -1196,6 +1200,8 @@ name|check
 init|=
 name|CHECK_COLOR
 argument_list|(
+name|area
+argument_list|,
 name|row
 argument_list|,
 name|col
@@ -1463,6 +1469,8 @@ index|]
 operator|=
 name|CHECK_COLOR
 argument_list|(
+name|area
+argument_list|,
 name|row
 argument_list|,
 name|col
@@ -1512,6 +1520,8 @@ name|check
 init|=
 name|CHECK_COLOR
 argument_list|(
+name|area
+argument_list|,
 name|row
 argument_list|,
 name|col
@@ -1797,6 +1807,8 @@ index|]
 operator|=
 name|CHECK_COLOR
 argument_list|(
+name|area
+argument_list|,
 name|row
 argument_list|,
 name|col
@@ -1856,6 +1868,8 @@ name|check
 init|=
 name|CHECK_COLOR
 argument_list|(
+name|area
+argument_list|,
 name|row
 argument_list|,
 name|col
@@ -2280,6 +2294,49 @@ name|width
 argument_list|,
 name|height
 argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_preview_area_set_offsets:  * @area: a #GimpPreviewArea  * @x:    horizontal offset  * @y:    vertical offset  *  * Sets the offsets of the previewed area. This information is used  * when drawing the checkerboard and to determine the dither offsets.  *  * Since: GIMP 2.2  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_preview_area_set_offsets (GimpPreviewArea * area,gint x,gint y)
+name|gimp_preview_area_set_offsets
+parameter_list|(
+name|GimpPreviewArea
+modifier|*
+name|area
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_PREVIEW_AREA
+argument_list|(
+name|area
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|area
+operator|->
+name|offset_x
+operator|=
+name|x
+expr_stmt|;
+name|area
+operator|->
+name|offset_y
+operator|=
+name|y
 expr_stmt|;
 block|}
 end_function
