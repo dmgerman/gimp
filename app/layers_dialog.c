@@ -2007,7 +2007,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2028,7 +2028,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+literal|2
 argument_list|)
 expr_stmt|;
 comment|/*  The hbox to hold the image option menu box  */
@@ -2175,7 +2175,7 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|5
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2265,6 +2265,21 @@ argument_list|(
 name|lc_subshell
 argument_list|)
 expr_stmt|;
+name|gtk_container_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|lc_shell
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
 comment|/*  The close button  */
 name|button
 operator|=
@@ -2282,16 +2297,16 @@ argument_list|(
 name|lc_shell
 argument_list|)
 operator|->
-name|vbox
+name|action_area
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-literal|2
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect_object
@@ -2319,7 +2334,7 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-name|gtk_widget_hide
+name|gtk_widget_show
 argument_list|(
 name|GTK_DIALOG
 argument_list|(

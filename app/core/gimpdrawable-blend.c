@@ -190,7 +190,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fc78d00103
+DECL|enum|__anon291dd6ca0103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -227,7 +227,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fc78d00203
+DECL|enum|__anon291dd6ca0203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -249,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fc78d00303
+DECL|enum|__anon291dd6ca0303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -361,6 +361,11 @@ DECL|member|repeat
 name|RepeatMode
 name|repeat
 decl_stmt|;
+DECL|member|repeat_mode_menu
+name|GtkWidget
+modifier|*
+name|repeat_mode_menu
+decl_stmt|;
 DECL|member|supersample
 name|int
 name|supersample
@@ -383,7 +388,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon28fc78d00408
+DECL|struct|__anon291dd6ca0408
 typedef|typedef
 struct|struct
 block|{
@@ -435,7 +440,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28fc78d00508
+DECL|struct|__anon291dd6ca0508
 typedef|typedef
 struct|struct
 block|{
@@ -1604,6 +1609,21 @@ name|GradientType
 operator|)
 name|client_data
 expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|blend_options
+operator|->
+name|repeat_mode_menu
+argument_list|,
+operator|(
+name|blend_options
+operator|->
+name|gradient_type
+operator|<
+literal|6
+operator|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -2768,6 +2788,12 @@ name|gtk_widget_show
 argument_list|(
 name|rt_option_menu
 argument_list|)
+expr_stmt|;
+name|options
+operator|->
+name|repeat_mode_menu
+operator|=
+name|rt_option_menu
 expr_stmt|;
 comment|/* show the whole table */
 name|gtk_widget_show
