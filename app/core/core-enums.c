@@ -1034,7 +1034,7 @@ name|GIMP_GRADIENT_CONICAL_SYMMETRIC
 block|,
 name|N_
 argument_list|(
-literal|"Conical (symmetric)"
+literal|"Conical (sym)"
 argument_list|)
 block|,
 literal|"conical-symmetric"
@@ -1045,7 +1045,7 @@ name|GIMP_GRADIENT_CONICAL_ASYMMETRIC
 block|,
 name|N_
 argument_list|(
-literal|"Conical (asymmetric)"
+literal|"Conical (asym)"
 argument_list|)
 block|,
 literal|"conical-asymmetric"
@@ -1056,7 +1056,7 @@ name|GIMP_GRADIENT_SHAPEBURST_ANGULAR
 block|,
 name|N_
 argument_list|(
-literal|"Shapeburst (angular)"
+literal|"Shaped (angular)"
 argument_list|)
 block|,
 literal|"shapeburst-angular"
@@ -1067,7 +1067,7 @@ name|GIMP_GRADIENT_SHAPEBURST_SPHERICAL
 block|,
 name|N_
 argument_list|(
-literal|"Shapeburst (spherical)"
+literal|"Shaped (spherical)"
 argument_list|)
 block|,
 literal|"shapeburst-spherical"
@@ -1078,7 +1078,7 @@ name|GIMP_GRADIENT_SHAPEBURST_DIMPLED
 block|,
 name|N_
 argument_list|(
-literal|"Shapeburst (dimpled)"
+literal|"Shaped (dimpled)"
 argument_list|)
 block|,
 literal|"shapeburst-dimpled"
@@ -1089,7 +1089,7 @@ name|GIMP_GRADIENT_SPIRAL_CLOCKWISE
 block|,
 name|N_
 argument_list|(
-literal|"Spiral (clockwise)"
+literal|"Spiral (cw)"
 argument_list|)
 block|,
 literal|"spiral-clockwise"
@@ -1100,7 +1100,7 @@ name|GIMP_GRADIENT_SPIRAL_ANTICLOCKWISE
 block|,
 name|N_
 argument_list|(
-literal|"Spiral (anticlockwise)"
+literal|"Spiral (ccw)"
 argument_list|)
 block|,
 literal|"spiral-anticlockwise"
