@@ -1019,6 +1019,13 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
+name|gimp_display_shell_selection_visibility
+argument_list|(
+name|shell
+argument_list|,
+name|GIMP_SELECTION_PAUSE
+argument_list|)
+expr_stmt|;
 name|gimp_draw_tool_start
 argument_list|(
 name|GIMP_DRAW_TOOL
