@@ -1301,6 +1301,17 @@ if|if
 condition|(
 name|PLUG_IN_INFO
 operator|.
+name|init_proc
+condition|)
+name|gp_has_init_write
+argument_list|(
+name|_writechannel
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|PLUG_IN_INFO
+operator|.
 name|query_proc
 condition|)
 call|(
@@ -3388,6 +3399,15 @@ literal|"unexpected proc install message received (should not happen)\n"
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|GP_HAS_INIT
+case|:
+name|g_warning
+argument_list|(
+literal|"unexpected has init message received (should not happen)\n"
+argument_list|)
+expr_stmt|;
+break|break;
 block|}
 block|}
 end_function
@@ -4278,6 +4298,15 @@ case|:
 name|g_warning
 argument_list|(
 literal|"unexpected proc install message received (should not happen)\n"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GP_HAS_INIT
+case|:
+name|g_warning
+argument_list|(
+literal|"unexpected has init message received (should not happen)\n"
 argument_list|)
 expr_stmt|;
 break|break;

@@ -230,6 +230,11 @@ DECL|member|query
 name|gboolean
 name|query
 decl_stmt|;
+DECL|member|has_init
+name|gboolean
+name|has_init
+decl_stmt|;
+comment|/* Does the plug-in need to be initialized? */
 block|}
 struct|;
 end_struct

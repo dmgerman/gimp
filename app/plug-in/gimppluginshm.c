@@ -741,6 +741,16 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|plug_in_handle_has_init
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|plug_in_init_file
 parameter_list|(
 specifier|const
@@ -1984,8 +1994,12 @@ name|tmp
 operator|->
 name|next
 expr_stmt|;
-comment|/* FIXME: only initialize when needed */
-comment|/* if (plug_in_def->init) */
+if|if
+condition|(
+name|plug_in_def
+operator|->
+name|has_init
+condition|)
 block|{
 if|if
 condition|(
@@ -6838,6 +6852,12 @@ name|the_gimp
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|GP_HAS_INIT
+case|:
+name|plug_in_handle_has_init
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -9655,6 +9675,26 @@ expr_stmt|;
 break|break;
 block|}
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|plug_in_handle_has_init (void)
+name|plug_in_handle_has_init
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|current_plug_in
+operator|->
+name|user_data
+operator|->
+name|has_init
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 end_function
 

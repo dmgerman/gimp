@@ -24,9 +24,9 @@ DECL|macro|GP_VERSION
 define|#
 directive|define
 name|GP_VERSION
-value|0x000B
+value|0x000C
 name|enum
-DECL|enum|__anon29a9bffc0103
+DECL|enum|__anon2888127b0103
 type|{
 DECL|enumerator|GP_QUIT
 name|GP_QUIT
@@ -63,6 +63,9 @@ name|GP_PROC_UNINSTALL
 decl_stmt|,
 DECL|enumerator|GP_EXTENSION_ACK
 name|GP_EXTENSION_ACK
+decl_stmt|,
+DECL|enumerator|GP_HAS_INIT
+name|GP_HAS_INIT
 end_decl_stmt
 
 begin_typedef
@@ -275,7 +278,7 @@ name|guint32
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon29a9bffc020a
+DECL|union|__anon2888127b020a
 block|{
 DECL|member|d_int32
 name|gint32
@@ -329,7 +332,7 @@ name|GimpRGB
 name|d_color
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29a9bffc0308
+DECL|struct|__anon2888127b0308
 block|{
 DECL|member|x
 name|gint32
@@ -384,7 +387,7 @@ name|gint32
 name|d_path
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29a9bffc0408
+DECL|struct|__anon2888127b0408
 block|{
 DECL|member|name
 name|gchar
@@ -742,6 +745,17 @@ end_function_decl
 begin_function_decl
 name|gboolean
 name|gp_extension_ack_write
+parameter_list|(
+name|GIOChannel
+modifier|*
+name|channel
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gp_has_init_write
 parameter_list|(
 name|GIOChannel
 modifier|*
