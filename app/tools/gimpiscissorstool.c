@@ -2868,14 +2868,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|gimp_tool_control_is_active
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-operator|||
 name|iscissors
 operator|->
 name|state

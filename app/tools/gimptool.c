@@ -1313,6 +1313,16 @@ name|gdisp
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|gimp_tool_control_is_active
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|GIMP_TOOL_GET_CLASS
 argument_list|(
 name|tool

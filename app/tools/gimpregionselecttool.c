@@ -1252,17 +1252,6 @@ operator|->
 name|tool_options
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|gimp_tool_control_is_active
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-condition|)
-return|return;
 comment|/* don't let the events come in too fast, ignore below a delay of 100 ms */
 if|if
 condition|(

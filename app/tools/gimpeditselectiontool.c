@@ -1899,24 +1899,6 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|gimp_tool_control_is_active
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-condition|)
-block|{
-name|g_warning
-argument_list|(
-literal|"BUG: Tracking motion while !ACTIVE"
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
 name|gdk_flush
 argument_list|()
 expr_stmt|;

@@ -1309,17 +1309,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|gimp_tool_control_is_active
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-condition|)
-return|return;
-if|if
-condition|(
 name|sel_tool
 operator|->
 name|op

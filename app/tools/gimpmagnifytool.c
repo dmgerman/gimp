@@ -1246,17 +1246,6 @@ name|GimpMagnifyTool
 modifier|*
 name|magnify
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|gimp_tool_control_is_active
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-condition|)
-return|return;
 name|magnify
 operator|=
 name|GIMP_MAGNIFY_TOOL
