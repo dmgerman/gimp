@@ -446,6 +446,21 @@ DECL|member|parent_class
 name|GimpObjectClass
 name|parent_class
 decl_stmt|;
+DECL|member|exit
+name|gboolean
+function_decl|(
+modifier|*
+name|exit
+function_decl|)
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|gboolean
+name|kill_it
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
@@ -531,11 +546,14 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_shutdown
+name|gimp_exit
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|kill_it
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -100,12 +100,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdatafactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpunits.h"
 end_include
 
@@ -125,12 +119,6 @@ begin_include
 include|#
 directive|include
 file|"file/file-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpdisplay-foreach.h"
 end_include
 
 begin_include
@@ -178,12 +166,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -214,10 +196,30 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
-name|app_exit_finish
+name|gboolean
+name|app_exit_callback
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|gboolean
+name|kill_it
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gboolean
+name|app_exit_finish_callback
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|gboolean
+name|kill_it
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -543,6 +545,41 @@ name|restore_session
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  connext our "exit" callbacks after gui_restore() so they are    *  invoked after the GUI's "exit" callbacks    */
+name|g_signal_connect
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|the_gimp
+argument_list|)
+argument_list|,
+literal|"exit"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|app_exit_callback
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_signal_connect_after
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|the_gimp
+argument_list|)
+argument_list|,
+literal|"exit"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|app_exit_finish_callback
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/*  Parse the rest of the command line arguments as images to load    */
 if|if
 condition|(
@@ -677,44 +714,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function
-name|void
-DECL|function|app_exit (gboolean kill_it)
-name|app_exit
-parameter_list|(
-name|gboolean
-name|kill_it
-parameter_list|)
-block|{
-comment|/*  If it's the user's perogative, and there are dirty images  */
-if|if
-condition|(
-operator|!
-name|kill_it
-operator|&&
-name|gimp_displays_dirty
-argument_list|(
-name|the_gimp
-argument_list|)
-operator|&&
-operator|!
-name|no_interface
-condition|)
-name|gui_really_quit_dialog
-argument_list|(
-name|G_CALLBACK
-argument_list|(
-name|app_exit_finish
-argument_list|)
-argument_list|)
-expr_stmt|;
-else|else
-name|app_exit_finish
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
 begin_comment
 comment|/*  private functions  */
 end_comment
@@ -763,28 +762,32 @@ end_function
 
 begin_function
 specifier|static
-name|void
-DECL|function|app_exit_finish (void)
-name|app_exit_finish
+name|gboolean
+DECL|function|app_exit_callback (Gimp * gimp,gboolean kill_it)
+name|app_exit_callback
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|gboolean
+name|kill_it
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|!
-name|no_interface
-condition|)
-block|{
-name|gui_shutdown
+name|g_print
 argument_list|(
-name|the_gimp
+literal|"EXIT: app_exit_callback(%s)\n"
+argument_list|,
+name|kill_it
+condition|?
+literal|"TRUE"
+else|:
+literal|"FALSE"
 argument_list|)
 expr_stmt|;
-block|}
 name|plug_ins_exit
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 if|if
@@ -792,28 +795,48 @@ condition|(
 operator|!
 name|no_interface
 condition|)
-block|{
 name|tool_manager_exit
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
-name|gui_exit
-argument_list|(
-name|the_gimp
-argument_list|)
-expr_stmt|;
+return|return
+name|FALSE
+return|;
+comment|/* continue exiting */
 block|}
-name|gimp_shutdown
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|app_exit_finish_callback (Gimp * gimp,gboolean kill_it)
+name|app_exit_finish_callback
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|gboolean
+name|kill_it
+parameter_list|)
+block|{
+name|g_print
 argument_list|(
-name|the_gimp
+literal|"EXIT: app_exit_finish_callback(%s)\n"
+argument_list|,
+name|kill_it
+condition|?
+literal|"TRUE"
+else|:
+literal|"FALSE"
 argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -830,6 +853,9 @@ argument_list|(
 literal|0
 argument_list|)
 expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 

@@ -126,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -923,8 +917,13 @@ name|guint
 name|action
 parameter_list|)
 block|{
-name|app_exit
+name|gimp_exit
 argument_list|(
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;

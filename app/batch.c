@@ -65,7 +65,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -308,8 +308,10 @@ if|if
 condition|(
 name|read_from_stdin
 condition|)
-name|app_exit
+name|gimp_exit
 argument_list|(
+name|gimp
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -355,8 +357,10 @@ operator|==
 literal|0
 condition|)
 block|{
-name|app_exit
+name|gimp_exit
 argument_list|(
+name|gimp
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;

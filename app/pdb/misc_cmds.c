@@ -40,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -235,8 +235,10 @@ name|TRUE
 else|:
 name|FALSE
 expr_stmt|;
-name|app_exit
+name|gimp_exit
 argument_list|(
+name|gimp
+argument_list|,
 name|kill_it
 argument_list|)
 expr_stmt|;

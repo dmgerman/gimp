@@ -144,12 +144,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -936,8 +930,17 @@ modifier|*
 name|event
 parameter_list|)
 block|{
-name|app_exit
+name|gimp_exit
 argument_list|(
+name|GIMP_DOCK
+argument_list|(
+name|widget
+argument_list|)
+operator|->
+name|context
+operator|->
+name|gimp
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
