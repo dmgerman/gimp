@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb-types.h"
 end_include
 
@@ -149,12 +155,6 @@ begin_include
 include|#
 directive|include
 file|"paint/paint-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpmath/gimpmath.h"
 end_include
 
 begin_decl_stmt
@@ -2727,7 +2727,7 @@ literal|"gimp_dodgeburn"
 block|,
 literal|"Dodgeburn image with varying exposure."
 block|,
-literal|"Dodgebure. More details here later."
+literal|"Dodgeburn. More details here later."
 block|,
 literal|"Andy Thomas"
 block|,

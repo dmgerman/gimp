@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmodule/gimpmodule.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb-types.h"
 end_include
 
@@ -71,12 +77,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimptemplate.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpmodule/gimpmodule.h"
 end_include
 
 begin_decl_stmt

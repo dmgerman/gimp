@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb-types.h"
 end_include
 
@@ -112,12 +118,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpbase.h"
-end_include
 
 begin_decl_stmt
 DECL|variable|progress_init_proc

@@ -86,6 +86,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpthumb/gimpthumb.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb-types.h"
 end_include
 
@@ -153,12 +159,6 @@ begin_include
 include|#
 directive|include
 file|"plug-in/plug-ins.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpthumb/gimpthumb.h"
 end_include
 
 begin_decl_stmt
