@@ -849,11 +849,29 @@ argument_list|)
 expr_stmt|;
 name|image_map_tool_class
 operator|->
+name|load_button_tip
+operator|=
+name|_
+argument_list|(
+literal|"Load curves settings from file"
+argument_list|)
+expr_stmt|;
+name|image_map_tool_class
+operator|->
 name|save_dialog_title
 operator|=
 name|_
 argument_list|(
 literal|"Save Curves"
+argument_list|)
+expr_stmt|;
+name|image_map_tool_class
+operator|->
+name|save_button_tip
+operator|=
+name|_
+argument_list|(
+literal|"Save curves settings to file"
 argument_list|)
 expr_stmt|;
 name|image_map_tool_class
@@ -2956,20 +2974,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|image_map_tool
-operator|->
-name|load_button
-argument_list|,
-name|_
-argument_list|(
-literal|"Read curves settings from file"
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|image_map_tool
@@ -2993,20 +2997,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|image_map_tool
-operator|->
-name|save_button
-argument_list|,
-name|_
-argument_list|(
-literal|"Save curves settings to file"
-argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
