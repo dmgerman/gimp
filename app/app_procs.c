@@ -109,12 +109,6 @@ directive|include
 file|"file/file-utils.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"tools/gimp-tools.h"
-end_include
-
 begin_ifndef
 ifndef|#
 directive|ifndef
