@@ -295,7 +295,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273aa7ac0108
+DECL|struct|__anon2b3b7c070108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273aa7ac0208
+DECL|struct|__anon2b3b7c070208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273aa7ac0308
+DECL|struct|__anon2b3b7c070308
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -386,7 +386,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273aa7ac0408
+DECL|struct|__anon2b3b7c070408
 block|{
 DECL|member|name
 name|gchar
@@ -414,7 +414,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273aa7ac0508
+DECL|struct|__anon2b3b7c070508
 block|{
 DECL|member|list
 name|GSList
@@ -434,7 +434,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon273aa7ac060a
+DECL|union|__anon2b3b7c07060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -504,7 +504,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273aa7ac0708
+DECL|struct|__anon2b3b7c070708
 block|{
 DECL|member|script_name
 name|gchar
@@ -572,7 +572,7 @@ modifier|*
 name|arg_values
 decl_stmt|;
 DECL|member|image_based
-name|gint32
+name|gboolean
 name|image_based
 decl_stmt|;
 DECL|member|args
@@ -590,7 +590,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273aa7ac0808
+DECL|struct|__anon2b3b7c070808
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -653,7 +653,7 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|script_fu_install_script
 parameter_list|(
 name|gpointer
@@ -671,7 +671,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|script_fu_remove_script
 parameter_list|(
 name|gpointer
@@ -897,7 +897,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|script_fu_font_dialog_delete
 parameter_list|(
 name|GtkWidget
@@ -952,7 +952,7 @@ name|gchar
 modifier|*
 name|mask_data
 parameter_list|,
-name|gint
+name|gboolean
 name|closing
 parameter_list|,
 name|gpointer
@@ -977,7 +977,7 @@ name|gdouble
 modifier|*
 name|mask_data
 parameter_list|,
-name|gint
+name|gboolean
 name|closing
 parameter_list|,
 name|gpointer
@@ -1014,7 +1014,7 @@ name|gchar
 modifier|*
 name|mask_data
 parameter_list|,
-name|gint
+name|gboolean
 name|closing
 parameter_list|,
 name|gpointer
@@ -4155,7 +4155,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|script_fu_install_script (gpointer foo,SFScript * script,gpointer bar)
 name|script_fu_install_script
 parameter_list|(
@@ -4274,7 +4274,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|script_fu_remove_script (gpointer foo,SFScript * script,gpointer bar)
 name|script_fu_remove_script
 parameter_list|(
@@ -4376,10 +4376,12 @@ name|name
 argument_list|)
 operator|)
 condition|)
+block|{
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
+block|}
 else|else
 block|{
 if|if
@@ -5230,7 +5232,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|script_fu_lookup_script (gpointer * foo,SFScript * script,gchar ** name)
 name|script_fu_lookup_script
 parameter_list|(
@@ -8248,7 +8250,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_pattern_preview (gchar * name,gint width,gint height,gint bytes,gchar * mask_data,gint closing,gpointer data)
+DECL|function|script_fu_pattern_preview (gchar * name,gint width,gint height,gint bytes,gchar * mask_data,gboolean closing,gpointer data)
 name|script_fu_pattern_preview
 parameter_list|(
 name|gchar
@@ -8268,7 +8270,7 @@ name|gchar
 modifier|*
 name|mask_data
 parameter_list|,
-name|gint
+name|gboolean
 name|closing
 parameter_list|,
 name|gpointer
@@ -8309,7 +8311,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_gradient_preview (gchar * name,gint width,gdouble * mask_data,gint closing,gpointer data)
+DECL|function|script_fu_gradient_preview (gchar * name,gint width,gdouble * mask_data,gboolean closing,gpointer data)
 name|script_fu_gradient_preview
 parameter_list|(
 name|gchar
@@ -8323,7 +8325,7 @@ name|gdouble
 modifier|*
 name|mask_data
 parameter_list|,
-name|gint
+name|gboolean
 name|closing
 parameter_list|,
 name|gpointer
@@ -8364,7 +8366,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_brush_preview (gchar * name,gdouble opacity,gint spacing,gint paint_mode,gint width,gint height,gchar * mask_data,gint closing,gpointer data)
+DECL|function|script_fu_brush_preview (gchar * name,gdouble opacity,gint spacing,gint paint_mode,gint width,gint height,gchar * mask_data,gboolean closing,gpointer data)
 name|script_fu_brush_preview
 parameter_list|(
 name|gchar
@@ -8390,7 +8392,7 @@ name|gchar
 modifier|*
 name|mask_data
 parameter_list|,
-name|gint
+name|gboolean
 name|closing
 parameter_list|,
 name|gpointer
@@ -8753,7 +8755,7 @@ name|length
 operator|+=
 literal|12
 expr_stmt|;
-comment|/*  Maximum size of integer value will not exceed this many characters  */
+comment|/*  Maximum size of integer value  */
 break|break;
 case|case
 name|SF_COLOR
@@ -8840,7 +8842,7 @@ name|length
 operator|+=
 literal|24
 expr_stmt|;
-comment|/*  Maximum size of float value should not exceed this many characters  */
+comment|/*  Maximum size of float value  */
 break|break;
 case|case
 name|SF_FILENAME
@@ -8963,7 +8965,8 @@ name|length
 operator|+=
 literal|36
 expr_stmt|;
-comment|/* Maximum size of three ints for opacity, spacing,mode*/
+comment|/*  Maximum size of three ints  */
+comment|/*  for opacity, spacing, mode  */
 break|break;
 case|case
 name|SF_OPTION
@@ -8972,7 +8975,7 @@ name|length
 operator|+=
 literal|12
 expr_stmt|;
-comment|/*  Maximum size of integer value will not exceed this many characters  */
+comment|/*  Maximum size of integer value  */
 break|break;
 default|default:
 break|break;
@@ -11649,7 +11652,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|script_fu_font_dialog_delete (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|script_fu_font_dialog_delete
 parameter_list|(

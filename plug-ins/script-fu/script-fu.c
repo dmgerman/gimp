@@ -302,15 +302,14 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|sputs_fcn
 parameter_list|(
 name|gchar
 modifier|*
 name|st
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|dest
 parameter_list|)
 function_decl|;
@@ -467,19 +466,18 @@ name|server_mode
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/*  declared extern in script-fu-server.c  */
+end_comment
+
 begin_decl_stmt
 DECL|variable|script_fu_done
-name|gint
+name|gboolean
 name|script_fu_done
 init|=
 name|FALSE
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-DECL|variable|script_fu_done
-comment|/*  declared extern in script-fu-server.c  */
-end_comment
 
 begin_macro
 DECL|function|MAIN ()
@@ -1008,7 +1006,7 @@ argument_list|)
 operator|/
 sizeof|sizeof
 argument_list|(
-name|char
+name|gchar
 operator|*
 argument_list|)
 argument_list|,
@@ -2204,16 +2202,15 @@ end_function
 
 begin_function
 specifier|static
-name|gint
-DECL|function|sputs_fcn (gchar * st,void * dest)
+name|gboolean
+DECL|function|sputs_fcn (gchar * st,gpointer dest)
 name|sputs_fcn
 parameter_list|(
 name|gchar
 modifier|*
 name|st
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|dest
 parameter_list|)
 block|{
@@ -2248,9 +2245,7 @@ name|st
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
-literal|1
-operator|)
+name|TRUE
 return|;
 block|}
 end_function
@@ -4247,7 +4242,7 @@ block|{
 name|LISP
 name|array
 decl_stmt|;
-name|int
+name|gint
 name|j
 decl_stmt|;
 name|array
@@ -4345,7 +4340,7 @@ block|{
 name|LISP
 name|array
 decl_stmt|;
-name|int
+name|gint
 name|j
 decl_stmt|;
 name|array
@@ -4431,7 +4426,7 @@ block|{
 name|LISP
 name|array
 decl_stmt|;
-name|int
+name|gint
 name|j
 decl_stmt|;
 name|array
@@ -4515,10 +4510,10 @@ name|GIMP_PDB_STRINGARRAY
 case|:
 comment|/*  string arrays are always implemented such that the previous 	       *  return value contains the number of strings in the array 	       */
 block|{
-name|int
+name|gint
 name|j
 decl_stmt|;
-name|int
+name|gint
 name|num_strings
 init|=
 name|values
@@ -4535,13 +4530,13 @@ name|string_array
 init|=
 name|NIL
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|array
 init|=
 operator|(
-name|char
+name|gchar
 operator|*
 operator|*
 operator|)

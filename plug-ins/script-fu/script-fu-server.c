@@ -184,7 +184,7 @@ name|a
 parameter_list|,
 name|b
 parameter_list|)
-value|(((double)(a)) - ((double)(b)))
+value|(((gdouble)(a)) - ((gdouble)(b)))
 end_define
 
 begin_endif
@@ -337,7 +337,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f89900108
+DECL|struct|__anon28c84b430108
 block|{
 DECL|member|command
 name|gchar
@@ -361,7 +361,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f89900208
+DECL|struct|__anon28c84b430208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -383,7 +383,7 @@ modifier|*
 name|logfile
 decl_stmt|;
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 DECL|typedef|ServerInterface
@@ -413,7 +413,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|execute_command
 parameter_list|(
 name|SFCommand
@@ -471,7 +471,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|server_interface
 parameter_list|(
 name|void
@@ -574,11 +574,16 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|server_active
-DECL|variable|server_read
 specifier|static
 name|SELECT_MASK
 name|server_active
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|server_read
+specifier|static
+name|SELECT_MASK
 name|server_read
 decl_stmt|;
 end_decl_stmt
@@ -610,14 +615,14 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint
+name|gboolean
 name|script_fu_done
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 name|siod_err_msg
 index|[]
 decl_stmt|;
@@ -636,21 +641,21 @@ end_comment
 
 begin_function
 name|void
-DECL|function|script_fu_server_run (char * name,int nparams,GimpParam * params,int * nreturn_vals,GimpParam ** return_vals)
+DECL|function|script_fu_server_run (gchar * name,gint nparams,GimpParam * params,gint * nreturn_vals,GimpParam ** return_vals)
 name|script_fu_server_run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GimpParam
 modifier|*
 name|params
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -1224,7 +1229,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|execute_command (SFCommand * cmd)
 name|execute_command
 parameter_list|(
@@ -1245,13 +1250,14 @@ name|response
 decl_stmt|;
 name|time_t
 name|clock1
-decl_stmt|,
+decl_stmt|;
+name|time_t
 name|clock2
 decl_stmt|;
 name|gint
 name|response_len
 decl_stmt|;
-name|gint
+name|gboolean
 name|error
 decl_stmt|;
 name|gint
@@ -1390,13 +1396,11 @@ index|[
 name|ERROR
 index|]
 operator|=
-operator|(
 name|error
-operator|)
 condition|?
-literal|1
+name|TRUE
 else|:
-literal|0
+name|FALSE
 expr_stmt|;
 name|buffer
 index|[
@@ -1465,7 +1469,7 @@ literal|"write"
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 for|for
@@ -1506,11 +1510,11 @@ literal|"write"
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 end_function
@@ -1773,7 +1777,8 @@ argument_list|)
 expr_stmt|;
 name|server_log
 argument_list|(
-literal|"Received request #%d from IP address %s: %s on %s, [Request queue length: %d]"
+literal|"Received request #%d from IP address %s: %s on %s,"
+literal|"[Request queue length: %d]"
 argument_list|,
 name|cmd
 operator|->
@@ -1810,12 +1815,12 @@ name|guint
 name|port
 parameter_list|)
 block|{
-name|gint
-name|sock
-decl_stmt|;
 name|struct
 name|sockaddr_in
 name|name
+decl_stmt|;
+name|gint
+name|sock
 decl_stmt|;
 name|gint
 name|v
@@ -1948,7 +1953,7 @@ block|{
 name|va_list
 name|args
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|buf
 decl_stmt|;
@@ -2003,7 +2008,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 for|for
@@ -2041,7 +2046,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|server_interface (void)
 name|server_interface
 parameter_list|(

@@ -179,7 +179,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c9dc0f0108
+DECL|struct|__anon28b49b480108
 block|{
 DECL|member|console
 name|GtkWidget
@@ -290,7 +290,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|script_fu_cc_is_empty
 parameter_list|(
 name|void
@@ -300,7 +300,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|script_fu_cc_key_function
 parameter_list|(
 name|GtkWidget
@@ -380,7 +380,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|read_buffer
 specifier|static
-name|char
+name|gchar
 name|read_buffer
 index|[
 name|BUFSIZE
@@ -402,7 +402,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|history_len
 specifier|static
-name|int
+name|gint
 name|history_len
 init|=
 literal|0
@@ -412,7 +412,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|history_cur
 specifier|static
-name|int
+name|gint
 name|history_cur
 init|=
 literal|0
@@ -422,7 +422,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|history_max
 specifier|static
-name|int
+name|gint
 name|history_max
 init|=
 literal|50
@@ -432,7 +432,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|siod_output_pipe
 specifier|static
-name|int
+name|gint
 name|siod_output_pipe
 index|[
 literal|2
@@ -442,14 +442,14 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|siod_verbose_level
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 name|siod_err_msg
 index|[]
 decl_stmt|;
@@ -480,21 +480,21 @@ end_comment
 
 begin_function
 name|void
-DECL|function|script_fu_console_run (char * name,int nparams,GimpParam * params,int * nreturn_vals,GimpParam ** return_vals)
+DECL|function|script_fu_console_run (gchar * name,gint nparams,GimpParam * params,gint * nreturn_vals,GimpParam ** return_vals)
 name|script_fu_console_run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GimpParam
 modifier|*
 name|params
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -1678,7 +1678,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*    gtk_widget_set_usize (cint.cc, (ENTRY_WIDTH*5)/6, 0);  */
 name|GTK_WIDGET_SET_FLAGS
 argument_list|(
 name|cint
@@ -1724,7 +1723,6 @@ literal|"Browse..."
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*    gtk_widget_set_usize (button, (ENTRY_WIDTH)/6, 0); */
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -2044,7 +2042,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|script_fu_console_scroll_end (gpointer data)
 name|script_fu_console_scroll_end
 parameter_list|(
@@ -2142,14 +2140,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|int
-name|count
-decl_stmt|;
 specifier|static
-name|int
+name|gboolean
 name|hack
 init|=
-literal|0
+name|FALSE
+decl_stmt|;
+name|gint
+name|count
 decl_stmt|;
 name|GIOError
 name|error
@@ -2194,7 +2192,7 @@ comment|/* this is a stupid hack, but as of 10/27/98 		 * the script-fu-console 
 block|{
 name|hack
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 return|return
 name|TRUE
@@ -2266,14 +2264,14 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|script_fu_cc_is_empty (void)
 name|script_fu_cc_is_empty
 parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|str
 decl_stmt|;
@@ -2336,7 +2334,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|script_fu_cc_key_function (GtkWidget * widget,GdkEventKey * event,gpointer data)
 name|script_fu_cc_key_function
 parameter_list|(
@@ -2356,7 +2354,7 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|int
+name|gint
 name|direction
 init|=
 literal|0
@@ -2858,7 +2856,7 @@ name|cc
 argument_list|)
 argument_list|,
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 operator|(
@@ -3008,21 +3006,21 @@ end_function
 
 begin_function
 name|void
-DECL|function|script_fu_eval_run (char * name,int nparams,GimpParam * params,int * nreturn_vals,GimpParam ** return_vals)
+DECL|function|script_fu_eval_run (gchar * name,gint nparams,GimpParam * params,gint * nreturn_vals,GimpParam ** return_vals)
 name|script_fu_eval_run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GimpParam
 modifier|*
 name|params
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
