@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   SGI image file plug-in for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   save_image()                - Save the specified image to a PNG file.  *   save_close_callback()       - Close the save dialog window.  *   save_ok_callback()          - Destroy the save dialog and save the image.  *   save_compression_callback() - Update the image compression level.  *   save_dialog()               - Pop up the save dialog.  *  * Revision History:  *  *   $Log$  *   Revision 1.13  1999/10/20 01:45:41  neo  *   the rest of the save plug-ins !?  *  *  *   --Sven  *  *   Revision 1.12  1999/04/23 06:32:41  asbjoer  *   use MAIN macro  *  *   Revision 1.11  1999/04/15 21:49:06  yosh  *   * applied gimp-lecorfec-99041[02]-0, changes follow  *  *   * plug-ins/FractalExplorer/Dialogs.h (make_color_map):  *   replaced free with g_free to fix segfault.  *  *   * plug-ins/Lighting/lighting_preview.c (compute_preview):  *   allocate xpostab and ypostab only when needed (it could also be  *   allocated on stack with a compilation-fixed size like MapObject).  *   It avoids to lose some Kb on each preview :)  *   Also reindented (unfortunate C-c C-q) some other lines.  *  *   * plug-ins/Lighting/lighting_main.c (run):  *   release allocated postabs.  *  *   * plug-ins/Lighting/lighting_ui.c:  *   callbacks now have only one argument because gck widget use  *   gtk_signal_connect_object. Caused segfault for scale widget.  *  *   * plug-ins/autocrop/autocrop.c (doit):  *   return if image has only background (thus fixing a segfault).  *  *   * plug-ins/emboss/emboss.c (pluginCore, emboss_do_preview):  *   replaced malloc/free with g_malloc/g_free (unneeded, but  *   shouldn't everyone use glib calls ? :)  *  *   * plug-ins/flame/flame.c :  *   replaced a segfaulting free, and several harmless malloc/free pairs.  *  *   * plug-ins/flame/megawidget.c (mw_preview_build):  *   replaced harmless malloc/free pair.  *   Note : mwp->bits is malloc'ed but seems to be never freed.  *  *   * plug-ins/fractaltrace/fractaltrace.c (pixels_free):  *   replaced a bunch of segfaulting free.  *   (pixels_get, dialog_show): replaced gtk_signal_connect_object  *   with gtk_signal_connect to accomodate callbacks (caused STRANGE  *   dialog behaviour, coz you destroyed buttons one by one).  *  *   * plug-ins/illusion/illusion.c (dialog):  *   same gtk_signal_connect_object replacement for same reasons.  *  *   * plug-ins/libgck/gck/gckcolor.c :  *   changed all gck_rgb_to_color* functions to use a static GdkColor  *   instead of a malloc'ed area. Provided reentrant functions with  *   the old behaviour (gck_rgb_to_color*_r). Made some private functions  *   static, too.  *   gck_rgb_to_gdkcolor now use the new functions while  *   gck_rgb_to_gdkcolor_r is the reentrant version.  *   Also affected by this change: gck_gc_set_foreground and  *   gck_gc_set_background (no more free(color)).  *  *   * plug-ins/libgck/gck/gckcolor.h :  *   added the gck_rgb_to_gdkcolor_r proto.  *  *   * plug-ins/lic/lic.c (ok_button_clicked, cancel_button_clicked) :  *   segfault on gtk_widget_destroy, now calls gtk_main_quit.  *   (dialog_destroy) : segfault on window closure when called by  *   "destroy" event. Now called by "delete_event".  *  *   * plug-ins/megawidget/megawidget.c (mw_preview_build):  *   replaced harmless malloc/free pair.  *   Note : mwp->bits is malloc'ed but seems to be never freed.  *  *   * plug-ins/png/png.c (load_image):  *   replaced 2 segfaulting free.  *  *   * plug-ins/print/print-ps.c (ps_print):  *   replaced a segfaulting free (called many times :).  *  *   * plug-ins/sgi/sgi.c (load_image, save_image):  *   replaced a bunch of segfaulting free, and did some harmless  *   inits to avoid a few gcc warnings.  *  *   * plug-ins/wind/wind.c (render_wind):  *   replaced a segfaulting free.  *   (render_blast): replaced harmless malloc/free pair.  *  *   * plug-ins/bmp/bmpread.c (ReadImage):  *   yet another free()/g_free() problem fixed.  *  *   * plug-ins/exchange/exchange.c (real_exchange):  *   ditto.  *  *   * plug-ins/fp/fp.h: added Frames_Check_Button_In_A_Box proto.  *   * plug-ins/fp/fp_gtk.c: closing subdialogs via window manager  *   wasn't handled, thus leading to errors and crashes.  *   Now delete_event signals the dialog control button  *   to close a dialog with the good way.  *  *   * plug-ins/ifscompose/ifscompose.c (value_pair_create):  *   tried to set events mask on scale widget (a NO_WINDOW widget).  *  *   * plug-ins/png/png.c (save_image):  *   Replaced 2 free() with g_free() for g_malloc'ed memory.  *   Mysteriously I corrected the loading bug but not the saving one :)  *  *   -Yosh  *  *   Revision 1.10  1999/01/15 17:34:37  unammx  *   1999-01-15  Federico Mena Quintero<federico@nuclecu.unam.mx>  *  *   	* Updated gtk_toggle_button_set_state() to  *   	gtk_toggle_button_set_active() in all the files.  *  *   Revision 1.9  1998/06/06 23:22:19  yosh  *   * adding Lighting plugin  *  *   * updated despeckle, png, sgi, and sharpen  *  *   -Yosh  *  *   Revision 1.5  1998/05/17 16:01:33  mike  *   Removed signal handler stuff used for debugging.  *   Added gtk_rc_parse().  *   Removed extra variables.  *  *   Revision 1.4  1998/04/23  17:40:49  mike  *   Updated to support 16-bit<unsigned> image data.  *  *   Revision 1.3  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *   Added warning message about advanced RLE compression not being supported  *   by SGI.  *  *   Revision 1.2  1997/07/25  20:44:05  mike  *   Fixed image_load_sgi load error bug (causes GIMP hang/crash).  *  *   Revision 1.1  1997/06/18  00:55:28  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   SGI image file plug-in for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   save_image()                - Save the specified image to a PNG file.  *   save_close_callback()       - Close the save dialog window.  *   save_ok_callback()          - Destroy the save dialog and save the image.  *   save_compression_callback() - Update the image compression level.  *   save_dialog()               - Pop up the save dialog.  *  * Revision History:  *  *   $Log$  *   Revision 1.14  1999/11/26 20:58:26  neo  *   more action_area beautifiction  *  *  *   --Sven  *  *   Revision 1.13  1999/10/20 01:45:41  neo  *   the rest of the save plug-ins !?  *  *  *   --Sven  *  *   Revision 1.12  1999/04/23 06:32:41  asbjoer  *   use MAIN macro  *  *   Revision 1.11  1999/04/15 21:49:06  yosh  *   * applied gimp-lecorfec-99041[02]-0, changes follow  *  *   * plug-ins/FractalExplorer/Dialogs.h (make_color_map):  *   replaced free with g_free to fix segfault.  *  *   * plug-ins/Lighting/lighting_preview.c (compute_preview):  *   allocate xpostab and ypostab only when needed (it could also be  *   allocated on stack with a compilation-fixed size like MapObject).  *   It avoids to lose some Kb on each preview :)  *   Also reindented (unfortunate C-c C-q) some other lines.  *  *   * plug-ins/Lighting/lighting_main.c (run):  *   release allocated postabs.  *  *   * plug-ins/Lighting/lighting_ui.c:  *   callbacks now have only one argument because gck widget use  *   gtk_signal_connect_object. Caused segfault for scale widget.  *  *   * plug-ins/autocrop/autocrop.c (doit):  *   return if image has only background (thus fixing a segfault).  *  *   * plug-ins/emboss/emboss.c (pluginCore, emboss_do_preview):  *   replaced malloc/free with g_malloc/g_free (unneeded, but  *   shouldn't everyone use glib calls ? :)  *  *   * plug-ins/flame/flame.c :  *   replaced a segfaulting free, and several harmless malloc/free pairs.  *  *   * plug-ins/flame/megawidget.c (mw_preview_build):  *   replaced harmless malloc/free pair.  *   Note : mwp->bits is malloc'ed but seems to be never freed.  *  *   * plug-ins/fractaltrace/fractaltrace.c (pixels_free):  *   replaced a bunch of segfaulting free.  *   (pixels_get, dialog_show): replaced gtk_signal_connect_object  *   with gtk_signal_connect to accomodate callbacks (caused STRANGE  *   dialog behaviour, coz you destroyed buttons one by one).  *  *   * plug-ins/illusion/illusion.c (dialog):  *   same gtk_signal_connect_object replacement for same reasons.  *  *   * plug-ins/libgck/gck/gckcolor.c :  *   changed all gck_rgb_to_color* functions to use a static GdkColor  *   instead of a malloc'ed area. Provided reentrant functions with  *   the old behaviour (gck_rgb_to_color*_r). Made some private functions  *   static, too.  *   gck_rgb_to_gdkcolor now use the new functions while  *   gck_rgb_to_gdkcolor_r is the reentrant version.  *   Also affected by this change: gck_gc_set_foreground and  *   gck_gc_set_background (no more free(color)).  *  *   * plug-ins/libgck/gck/gckcolor.h :  *   added the gck_rgb_to_gdkcolor_r proto.  *  *   * plug-ins/lic/lic.c (ok_button_clicked, cancel_button_clicked) :  *   segfault on gtk_widget_destroy, now calls gtk_main_quit.  *   (dialog_destroy) : segfault on window closure when called by  *   "destroy" event. Now called by "delete_event".  *  *   * plug-ins/megawidget/megawidget.c (mw_preview_build):  *   replaced harmless malloc/free pair.  *   Note : mwp->bits is malloc'ed but seems to be never freed.  *  *   * plug-ins/png/png.c (load_image):  *   replaced 2 segfaulting free.  *  *   * plug-ins/print/print-ps.c (ps_print):  *   replaced a segfaulting free (called many times :).  *  *   * plug-ins/sgi/sgi.c (load_image, save_image):  *   replaced a bunch of segfaulting free, and did some harmless  *   inits to avoid a few gcc warnings.  *  *   * plug-ins/wind/wind.c (render_wind):  *   replaced a segfaulting free.  *   (render_blast): replaced harmless malloc/free pair.  *  *   * plug-ins/bmp/bmpread.c (ReadImage):  *   yet another free()/g_free() problem fixed.  *  *   * plug-ins/exchange/exchange.c (real_exchange):  *   ditto.  *  *   * plug-ins/fp/fp.h: added Frames_Check_Button_In_A_Box proto.  *   * plug-ins/fp/fp_gtk.c: closing subdialogs via window manager  *   wasn't handled, thus leading to errors and crashes.  *   Now delete_event signals the dialog control button  *   to close a dialog with the good way.  *  *   * plug-ins/ifscompose/ifscompose.c (value_pair_create):  *   tried to set events mask on scale widget (a NO_WINDOW widget).  *  *   * plug-ins/png/png.c (save_image):  *   Replaced 2 free() with g_free() for g_malloc'ed memory.  *   Mysteriously I corrected the loading bug but not the saving one :)  *  *   -Yosh  *  *   Revision 1.10  1999/01/15 17:34:37  unammx  *   1999-01-15  Federico Mena Quintero<federico@nuclecu.unam.mx>  *  *   	* Updated gtk_toggle_button_set_state() to  *   	gtk_toggle_button_set_active() in all the files.  *  *   Revision 1.9  1998/06/06 23:22:19  yosh  *   * adding Lighting plugin  *  *   * updated despeckle, png, sgi, and sharpen  *  *   -Yosh  *  *   Revision 1.5  1998/05/17 16:01:33  mike  *   Removed signal handler stuff used for debugging.  *   Added gtk_rc_parse().  *   Removed extra variables.  *  *   Revision 1.4  1998/04/23  17:40:49  mike  *   Updated to support 16-bit<unsigned> image data.  *  *   Revision 1.3  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *   Added warning message about advanced RLE compression not being supported  *   by SGI.  *  *   Revision 1.2  1997/07/25  20:44:05  mike  *   Fixed image_load_sgi load error bug (causes GIMP hang/crash).  *  *   Revision 1.1  1997/06/18  00:55:28  mike  *   Initial revision  */
 end_comment
 
 begin_include
@@ -1719,7 +1719,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * 'save_image()' - Save the specified image to a PNG file.  */
+comment|/*  * 'save_image()' - Save the specified image to a SGI file.  */
 end_comment
 
 begin_function
@@ -1754,12 +1754,6 @@ comment|/* Current X coordinate */
 name|y
 decl_stmt|,
 comment|/* Current Y coordinate */
-name|image_type
-decl_stmt|,
-comment|/* Type of image */
-name|layer_type
-decl_stmt|,
-comment|/* Type of drawable/layer */
 name|tile_height
 decl_stmt|,
 comment|/* Height of tile in GIMP */
@@ -1885,6 +1879,13 @@ case|:
 name|zsize
 operator|=
 literal|4
+expr_stmt|;
+break|break;
+default|default:
+name|g_error
+argument_list|(
+literal|"Image must be of type RGB or GRAY\n"
+argument_list|)
 expr_stmt|;
 break|break;
 block|}
@@ -2480,6 +2481,10 @@ name|dlg
 decl_stmt|,
 comment|/* Dialog window */
 modifier|*
+name|hbbox
+decl_stmt|,
+comment|/* button_box for OK/cancel buttons */
+modifier|*
 name|button
 decl_stmt|,
 comment|/* OK/cancel/compression buttons */
@@ -2567,7 +2572,78 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*   * OK/cancel buttons...   */
+comment|/*  Action area  */
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_box_set_homogeneous
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|hbbox
+operator|=
+name|gtk_hbutton_box_new
+argument_list|()
+expr_stmt|;
+name|gtk_button_box_set_spacing
+argument_list|(
+name|GTK_BUTTON_BOX
+argument_list|(
+name|hbbox
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_end
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+name|hbbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbbox
+argument_list|)
+expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new_with_label
@@ -2603,19 +2679,14 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
-name|action_area
+name|hbbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -2668,19 +2739,14 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
-name|action_area
+name|hbbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
