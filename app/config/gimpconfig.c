@@ -908,7 +908,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_deserialize:  * @object: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to read configuration from.  * @data: user data passed to the serialize implementation.  * @error:   *   * Opens the file specified by @filename, reads configuration data  * from it and configures @object accordingly. Basically this function  * creates a properly configured #GScanner for you and calls the  * deserialize function of the @object's #GimpConfigInterface.  *   * Return value: %TRUE if deserialization succeeded, %FALSE otherwise.   **/
+comment|/**  * gimp_config_deserialize:  * @object: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to read configuration from.  * @data: user data passed to the deserialize implementation.  * @error:   *   * Opens the file specified by @filename, reads configuration data  * from it and configures @object accordingly. Basically this function  * creates a properly configured #GScanner for you and calls the  * deserialize function of the @object's #GimpConfigInterface.  *   * Return value: %TRUE if deserialization succeeded, %FALSE otherwise.   **/
 end_comment
 
 begin_function
@@ -1379,7 +1379,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fa5b1b0108
+DECL|struct|__anon2ab3fb070108
 block|{
 DECL|member|key
 name|gchar

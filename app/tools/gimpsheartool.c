@@ -353,7 +353,7 @@ argument_list|(
 literal|"/Tools/Transform Tools/Shear"
 argument_list|)
 argument_list|,
-literal|"<shift>F"
+literal|"<shift>S"
 argument_list|,
 name|NULL
 argument_list|,

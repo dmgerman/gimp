@@ -130,7 +130,7 @@ argument_list|(
 literal|"/Tools/Paint Tools/Pencil"
 argument_list|)
 argument_list|,
-literal|"P"
+literal|"N"
 argument_list|,
 name|NULL
 argument_list|,
