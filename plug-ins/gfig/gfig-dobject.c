@@ -1364,6 +1364,12 @@ name|operation_obj
 condition|)
 return|return;
 comment|/* None to work on */
+name|gfig_context
+operator|->
+name|selected_obj
+operator|=
+name|operation_obj
+expr_stmt|;
 name|setup_undo
 argument_list|()
 expr_stmt|;
@@ -1580,6 +1586,11 @@ argument_list|,
 name|operation_obj
 argument_list|)
 expr_stmt|;
+break|break;
+case|case
+name|SELECT_OBJ
+case|:
+comment|/* don't need to do anything */
 break|break;
 case|case
 name|MOVE_COPY_OBJ
@@ -1854,6 +1865,9 @@ break|break;
 case|case
 name|DEL_OBJ
 case|:
+case|case
+name|SELECT_OBJ
+case|:
 break|break;
 case|case
 name|COPY_OBJ
@@ -1954,11 +1968,11 @@ block|{
 comment|/* Nearest object to given point or NULL */
 name|DAllObjs
 modifier|*
-name|all
+name|entry
 decl_stmt|;
 name|DAllObjs
 modifier|*
-name|prev_all
+name|prev_entry
 init|=
 name|NULL
 decl_stmt|;
@@ -1969,7 +1983,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|all
+name|entry
 operator|=
 name|obj
 operator|->
@@ -1977,12 +1991,12 @@ name|obj_list
 expr_stmt|;
 while|while
 condition|(
-name|all
+name|entry
 condition|)
 block|{
 if|if
 condition|(
-name|all
+name|entry
 operator|->
 name|obj
 operator|==
@@ -1992,13 +2006,13 @@ block|{
 comment|/* Found the one to delete */
 if|if
 condition|(
-name|prev_all
+name|prev_entry
 condition|)
-name|prev_all
+name|prev_entry
 operator|->
 name|next
 operator|=
-name|all
+name|entry
 operator|->
 name|next
 expr_stmt|;
@@ -2007,7 +2021,7 @@ name|obj
 operator|->
 name|obj_list
 operator|=
-name|all
+name|entry
 operator|->
 name|next
 expr_stmt|;
@@ -2028,7 +2042,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|all
+name|entry
 argument_list|)
 expr_stmt|;
 if|if
@@ -2048,17 +2062,17 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-comment|/* Show all again */
+comment|/* Show entry again */
 block|}
 return|return;
 block|}
-name|prev_all
+name|prev_entry
 operator|=
-name|all
+name|entry
 expr_stmt|;
-name|all
+name|entry
 operator|=
-name|all
+name|entry
 operator|->
 name|next
 expr_stmt|;

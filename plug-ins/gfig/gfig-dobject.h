@@ -115,6 +115,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|raise_selected_obj_to_top
+parameter_list|(
+name|GFigObj
+modifier|*
+name|obj
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
