@@ -6712,35 +6712,7 @@ operator|.
 name|y1
 expr_stmt|;
 comment|/*  transform from screen to image coordinates  */
-name|gdisplay_untransform_coords
-argument_list|(
-name|gdisp
-argument_list|,
-name|kinks
-index|[
-name|j
-index|]
-operator|.
-name|x
-argument_list|,
-name|kinks
-index|[
-name|j
-index|]
-operator|.
-name|y
-argument_list|,
-operator|&
-name|x
-argument_list|,
-operator|&
-name|y
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
+comment|/*gdisplay_untransform_coords (gdisp, kinks[j].x, kinks[j].y,&x,&y, FALSE, TRUE);*/
 name|kinks
 index|[
 name|j
@@ -6750,6 +6722,11 @@ name|x
 operator|=
 name|BOUNDS
 argument_list|(
+name|kinks
+index|[
+name|j
+index|]
+operator|.
 name|x
 argument_list|,
 literal|0
@@ -6774,6 +6751,11 @@ name|y
 operator|=
 name|BOUNDS
 argument_list|(
+name|kinks
+index|[
+name|j
+index|]
+operator|.
 name|y
 argument_list|,
 literal|0
@@ -7458,8 +7440,8 @@ name|i
 operator|++
 control|)
 block|{
-comment|/*  transform from screen to image coordinates  */
-comment|/*      gdisplay_untransform_coords (gdisp, kinks[i].x, kinks[i].y,&x,&y, FALSE, TRUE); */
+comment|/* transform from screen to image coordinates  */
+comment|/*gdisplay_untransform_coords (gdisp, kinks[i].x, kinks[i].y,&x,&y, FALSE, TRUE); */
 name|kinks
 index|[
 name|i
@@ -11196,10 +11178,7 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|FILE
-modifier|*
-name|dump
-decl_stmt|;
+comment|/* FILE *dump; */
 comment|/*  init some variables  */
 name|srcPR
 operator|.
@@ -11541,7 +11520,19 @@ name|x
 operator|)
 condition|?
 operator|(
-literal|0
+operator|(
+name|srcPR
+operator|.
+name|x
+operator|-
+name|edge_buf
+operator|->
+name|x
+operator|)
+operator|*
+name|destPR
+operator|.
+name|bytes
 operator|)
 else|:
 operator|(
@@ -11604,57 +11595,7 @@ name|BLOCK_HEIGHT
 expr_stmt|;
 block|}
 comment|/*  dump the edge buffer for debugging*/
-name|dump
-operator|=
-name|fopen
-argument_list|(
-literal|"dump"
-argument_list|,
-literal|"w"
-argument_list|)
-expr_stmt|;
-name|fprintf
-argument_list|(
-name|dump
-argument_list|,
-literal|"P5\n%d %d\n255\n"
-argument_list|,
-name|edge_buf
-operator|->
-name|width
-argument_list|,
-name|edge_buf
-operator|->
-name|height
-argument_list|)
-expr_stmt|;
-name|fwrite
-argument_list|(
-name|edge_buf
-operator|->
-name|data
-argument_list|,
-name|edge_buf
-operator|->
-name|width
-operator|*
-name|edge_buf
-operator|->
-name|height
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|guchar
-argument_list|)
-argument_list|,
-name|dump
-argument_list|)
-expr_stmt|;
-name|fclose
-argument_list|(
-name|dump
-argument_list|)
-expr_stmt|;
+comment|/*dump=fopen("dump", "w");     fprintf(dump, "P5\n%d %d\n255\n", edge_buf->width, edge_buf->height);     fwrite(edge_buf->data, edge_buf->width * edge_buf->height, sizeof (guchar), dump);     fclose (dump);*/
 block|}
 end_function
 
@@ -12031,11 +11972,6 @@ operator|=
 name|vert_blocks
 operator|*
 name|horz_blocks
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"\n"
-argument_list|)
 expr_stmt|;
 for|for
 control|(
