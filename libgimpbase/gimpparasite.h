@@ -31,7 +31,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/parasiteF.h>
+file|"libgimp/parasiteF.h"
 end_include
 
 begin_ifdef
@@ -92,7 +92,7 @@ modifier|*
 name|parasite_new
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -103,8 +103,7 @@ name|guint32
 name|size
 parameter_list|,
 specifier|const
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 function_decl|;
@@ -126,7 +125,7 @@ modifier|*
 name|parasite
 parameter_list|)
 function_decl|;
-name|int
+name|gboolean
 name|parasite_compare
 parameter_list|(
 specifier|const
@@ -140,7 +139,7 @@ modifier|*
 name|b
 parameter_list|)
 function_decl|;
-name|int
+name|gboolean
 name|parasite_is_type
 parameter_list|(
 specifier|const
@@ -149,12 +148,12 @@ modifier|*
 name|parasite
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
 function_decl|;
-name|int
+name|gboolean
 name|parasite_is_persistent
 parameter_list|(
 specifier|const
@@ -163,7 +162,7 @@ modifier|*
 name|p
 parameter_list|)
 function_decl|;
-name|int
+name|gboolean
 name|parasite_is_undoable
 parameter_list|(
 specifier|const
@@ -172,7 +171,7 @@ modifier|*
 name|p
 parameter_list|)
 function_decl|;
-name|int
+name|gboolean
 name|parasite_has_flag
 parameter_list|(
 specifier|const
@@ -194,7 +193,7 @@ name|p
 parameter_list|)
 function_decl|;
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|parasite_name
 parameter_list|(
@@ -214,7 +213,7 @@ modifier|*
 name|p
 parameter_list|)
 function_decl|;
-name|long
+name|glong
 name|parasite_data_size
 parameter_list|(
 specifier|const

@@ -47,7 +47,7 @@ name|void
 name|gimp_parasite_detach
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -60,7 +60,7 @@ modifier|*
 name|gimp_parasite_find
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -68,7 +68,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|gimp_parasite_list

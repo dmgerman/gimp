@@ -188,11 +188,11 @@ end_endif
 begin_function
 name|Parasite
 modifier|*
-DECL|function|parasite_new (const char * name,guint32 flags,guint32 size,const void * data)
+DECL|function|parasite_new (const gchar * name,guint32 flags,guint32 size,const gpointer data)
 name|parasite_new
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -203,8 +203,7 @@ name|guint32
 name|size
 parameter_list|,
 specifier|const
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 block|{
@@ -342,7 +341,7 @@ end_function
 
 begin_function
 name|int
-DECL|function|parasite_is_type (const Parasite * parasite,const char * name)
+DECL|function|parasite_is_type (const Parasite * parasite,const gchar * name)
 name|parasite_is_type
 parameter_list|(
 specifier|const
@@ -351,7 +350,7 @@ modifier|*
 name|parasite
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -431,7 +430,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|parasite_compare (const Parasite * a,const Parasite * b)
 name|parasite_compare
 parameter_list|(
@@ -574,7 +573,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|parasite_is_persistent (const Parasite * p)
 name|parasite_is_persistent
 parameter_list|(
@@ -606,7 +605,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|parasite_is_undoable (const Parasite * p)
 name|parasite_is_undoable
 parameter_list|(
@@ -638,7 +637,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|parasite_has_flag (const Parasite * p,gulong flag)
 name|parasite_has_flag
 parameter_list|(
@@ -674,7 +673,7 @@ end_function
 
 begin_function
 specifier|const
-name|char
+name|gchar
 modifier|*
 DECL|function|parasite_name (const Parasite * p)
 name|parasite_name
@@ -728,7 +727,7 @@ block|}
 end_function
 
 begin_function
-name|long
+name|glong
 DECL|function|parasite_data_size (const Parasite * p)
 name|parasite_data_size
 parameter_list|(
