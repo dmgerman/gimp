@@ -84,7 +84,12 @@ block|{
 name|Ostream
 modifier|*
 name|x
-init|=
+decl_stmt|;
+name|gtk_type_init
+argument_list|()
+expr_stmt|;
+name|x
+operator|=
 name|OSTREAM
 argument_list|(
 name|file_ostream_open
@@ -92,7 +97,7 @@ argument_list|(
 literal|"foo"
 argument_list|)
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|ostream_connect_putstring
 argument_list|(
 name|putstring_handler
