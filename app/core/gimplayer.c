@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7873a30103
+DECL|enum|__anon27e862d30103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -2292,7 +2292,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot add layer mask to layer\n"
+literal|"Cannot add layer mask to layer "
 literal|"which is not part of an image."
 argument_list|)
 argument_list|)
@@ -2312,32 +2312,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unable to add a layer mask since\n"
+literal|"Unable to add a layer mask since "
 literal|"the layer already has one."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|NULL
-return|;
-block|}
-if|if
-condition|(
-name|gimp_drawable_is_indexed
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Unable to add a layer mask to a\n"
-literal|"layer in an indexed image."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2361,7 +2337,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot add layer mask to a layer\n"
+literal|"Cannot add layer mask to a layer "
 literal|"with no alpha channel."
 argument_list|)
 argument_list|)
@@ -2413,7 +2389,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot add layer mask of different\n"
+literal|"Cannot add layer mask of different "
 literal|"dimensions than specified layer."
 argument_list|)
 argument_list|)

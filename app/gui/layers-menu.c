@@ -1029,9 +1029,6 @@ operator|&&
 name|lp
 operator|&&
 name|alpha
-operator|&&
-operator|!
-name|indexed
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

@@ -6330,15 +6330,15 @@ argument_list|,
 name|lp
 operator|&&
 operator|!
+name|fs
+operator|&&
+operator|!
 name|aux
 operator|&&
 operator|!
 name|lm
 operator|&&
 name|alpha
-operator|&&
-operator|!
-name|is_indexed
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -6346,6 +6346,9 @@ argument_list|(
 literal|"/Layer/Mask/Apply Layer Mask"
 argument_list|,
 name|lp
+operator|&&
+operator|!
+name|fs
 operator|&&
 operator|!
 name|aux
@@ -6360,6 +6363,9 @@ argument_list|,
 name|lp
 operator|&&
 operator|!
+name|fs
+operator|&&
+operator|!
 name|aux
 operator|&&
 name|lm
@@ -6370,6 +6376,9 @@ argument_list|(
 literal|"/Layer/Mask/Mask to Selection"
 argument_list|,
 name|lp
+operator|&&
+operator|!
+name|fs
 operator|&&
 operator|!
 name|aux
