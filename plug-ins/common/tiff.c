@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276783b50108
+DECL|struct|__anon2af9fef30108
 block|{
 DECL|member|compression
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276783b50208
+DECL|struct|__anon2af9fef30208
 block|{
 DECL|member|ID
 name|gint32
@@ -440,7 +440,8 @@ specifier|static
 name|gboolean
 name|save_dialog
 parameter_list|(
-name|void
+name|gboolean
+name|alpha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1170,7 +1171,12 @@ if|if
 condition|(
 operator|!
 name|save_dialog
-argument_list|()
+argument_list|(
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
 condition|)
 name|status
 operator|=
@@ -8799,10 +8805,11 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_dialog (void)
+DECL|function|save_dialog (gboolean alpha)
 name|save_dialog
 parameter_list|(
-name|void
+name|gboolean
+name|alpha
 parameter_list|)
 block|{
 name|GtkWidget
@@ -9019,9 +9026,18 @@ argument_list|(
 name|toggle
 argument_list|)
 argument_list|,
+name|alpha
+operator|&&
 name|tsvals
 operator|.
 name|save_transp_pixels
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|toggle
+argument_list|,
+name|alpha
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
