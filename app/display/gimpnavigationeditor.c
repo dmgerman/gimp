@@ -188,10 +188,10 @@ name|GimpNavigationPreview
 modifier|*
 name|preview
 parameter_list|,
-name|gint
+name|gdouble
 name|x
 parameter_list|,
-name|gint
+name|gdouble
 name|y
 parameter_list|,
 name|GimpNavigationView
@@ -1913,17 +1913,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_navigation_view_marker_changed (GimpNavigationPreview * preview,gint x,gint y,GimpNavigationView * view)
+DECL|function|gimp_navigation_view_marker_changed (GimpNavigationPreview * preview,gdouble x,gdouble y,GimpNavigationView * view)
 name|gimp_navigation_view_marker_changed
 parameter_list|(
 name|GimpNavigationPreview
 modifier|*
 name|preview
 parameter_list|,
-name|gint
+name|gdouble
 name|x
 parameter_list|,
-name|gint
+name|gdouble
 name|y
 parameter_list|,
 name|GimpNavigationView
@@ -1970,6 +1970,8 @@ argument_list|)
 expr_stmt|;
 name|xoffset
 operator|=
+name|RINT
+argument_list|(
 name|x
 operator|*
 name|xratio
@@ -1979,9 +1981,12 @@ operator|->
 name|shell
 operator|->
 name|offset_x
+argument_list|)
 expr_stmt|;
 name|yoffset
 operator|=
+name|RINT
+argument_list|(
 name|y
 operator|*
 name|yratio
@@ -1991,6 +1996,7 @@ operator|->
 name|shell
 operator|->
 name|offset_y
+argument_list|)
 expr_stmt|;
 name|gimp_display_shell_scroll
 argument_list|(
@@ -2767,8 +2773,6 @@ operator|->
 name|preview
 argument_list|)
 argument_list|,
-name|RINT
-argument_list|(
 name|view
 operator|->
 name|shell
@@ -2776,10 +2780,7 @@ operator|->
 name|offset_x
 operator|/
 name|xratio
-argument_list|)
 argument_list|,
-name|RINT
-argument_list|(
 name|view
 operator|->
 name|shell
@@ -2787,10 +2788,7 @@ operator|->
 name|offset_y
 operator|/
 name|yratio
-argument_list|)
 argument_list|,
-name|RINT
-argument_list|(
 name|view
 operator|->
 name|shell
@@ -2798,10 +2796,7 @@ operator|->
 name|disp_width
 operator|/
 name|xratio
-argument_list|)
 argument_list|,
-name|RINT
-argument_list|(
 name|view
 operator|->
 name|shell
@@ -2809,7 +2804,6 @@ operator|->
 name|disp_height
 operator|/
 name|yratio
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

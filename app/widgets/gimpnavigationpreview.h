@@ -105,19 +105,19 @@ name|parent_instance
 decl_stmt|;
 comment|/*  values in image coordinates  */
 DECL|member|x
-name|gint
+name|gdouble
 name|x
 decl_stmt|;
 DECL|member|y
-name|gint
+name|gdouble
 name|y
 decl_stmt|;
 DECL|member|width
-name|gint
+name|gdouble
 name|width
 decl_stmt|;
 DECL|member|height
-name|gint
+name|gdouble
 name|height
 decl_stmt|;
 comment|/*  values in preview coordinates  */
@@ -178,10 +178,10 @@ name|GimpNavigationPreview
 modifier|*
 name|preview
 parameter_list|,
-name|gint
+name|gdouble
 name|x
 parameter_list|,
-name|gint
+name|gdouble
 name|y
 parameter_list|)
 function_decl|;
@@ -237,16 +237,16 @@ name|GimpNavigationPreview
 modifier|*
 name|preview
 parameter_list|,
-name|gint
+name|gdouble
 name|x
 parameter_list|,
-name|gint
+name|gdouble
 name|y
 parameter_list|,
-name|gint
+name|gdouble
 name|width
 parameter_list|,
-name|gint
+name|gdouble
 name|height
 parameter_list|)
 function_decl|;
