@@ -743,7 +743,7 @@ comment|/* Description of an extraction */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bdbab300108
+DECL|struct|__anon2a2312570108
 typedef|typedef
 struct|struct
 block|{
@@ -1214,7 +1214,7 @@ value|(sizeof (extract)/sizeof (extract[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon2bdbab300208
+DECL|struct|__anon2a2312570208
 typedef|typedef
 struct|struct
 block|{
@@ -1232,7 +1232,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bdbab300308
+DECL|struct|__anon2a2312570308
 typedef|typedef
 struct|struct
 block|{
@@ -1794,10 +1794,7 @@ condition|)
 block|{
 name|show_message
 argument_list|(
-name|_
-argument_list|(
 literal|"plug_in_decompose: Can only work on RGB*_IMAGE"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|status
@@ -2135,10 +2132,7 @@ condition|)
 block|{
 name|show_message
 argument_list|(
-name|_
-argument_list|(
 literal|"decompose: not an RGB image"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2172,10 +2166,7 @@ condition|)
 block|{
 name|show_message
 argument_list|(
-name|_
-argument_list|(
 literal|"decompose: No alpha channel available"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2360,10 +2351,7 @@ condition|)
 block|{
 name|show_message
 argument_list|(
-name|_
-argument_list|(
 literal|"decompose: out of memory"
-argument_list|)
 argument_list|)
 expr_stmt|;
 for|for

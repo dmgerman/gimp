@@ -477,7 +477,7 @@ comment|/* Description of a composition */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c7d4070108
+DECL|struct|__anon2c5f66fd0108
 typedef|typedef
 struct|struct
 block|{
@@ -753,7 +753,7 @@ value|(sizeof (compose_dsc) / sizeof (compose_dsc[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon28c7d4070208
+DECL|struct|__anon2c5f66fd0208
 typedef|typedef
 struct|struct
 block|{
@@ -784,7 +784,7 @@ comment|/* Dialog structure */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c7d4070308
+DECL|struct|__anon2c5f66fd0308
 typedef|typedef
 struct|struct
 block|{
@@ -1480,10 +1480,7 @@ name|sprintf
 argument_list|(
 name|msg
 argument_list|,
-name|_
-argument_list|(
 literal|"compose: Could not get layers for image %d"
-argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -2055,10 +2052,7 @@ condition|)
 block|{
 name|show_message
 argument_list|(
-name|_
-argument_list|(
 literal|"compose: drawables have different size"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2166,10 +2160,7 @@ condition|)
 block|{
 name|show_message
 argument_list|(
-name|_
-argument_list|(
 literal|"compose: images have different size"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2228,10 +2219,7 @@ condition|)
 block|{
 name|show_message
 argument_list|(
-name|_
-argument_list|(
 literal|"compose: error in getting layer IDs"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

@@ -183,7 +183,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291e67920103
+DECL|enum|__anon2b9ef7bf0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -4006,10 +4006,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-name|_
-argument_list|(
 literal|"playback: Asked for frame number %d in a %d-frame animation!\n"
-argument_list|)
 argument_list|,
 call|(
 name|int
