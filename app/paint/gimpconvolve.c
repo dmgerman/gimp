@@ -1181,6 +1181,18 @@ block|}
 block|}
 break|break;
 block|}
+name|tool
+operator|->
+name|toggled
+operator|=
+operator|(
+name|convolve_options
+operator|->
+name|type
+operator|==
+name|SHARPEN_CONVOLVE
+operator|)
+expr_stmt|;
 block|}
 end_function
 

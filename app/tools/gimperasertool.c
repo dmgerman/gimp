@@ -628,6 +628,14 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+name|tool
+operator|->
+name|toggled
+operator|=
+name|eraser_options
+operator|->
+name|anti_erase
+expr_stmt|;
 block|}
 end_function
 

@@ -4721,6 +4721,12 @@ name|NULL
 expr_stmt|;
 name|tool
 operator|->
+name|toggled
+operator|=
+name|FALSE
+expr_stmt|;
+name|tool
+operator|->
 name|private
 operator|=
 name|NULL

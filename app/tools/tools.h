@@ -71,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d902170103
+DECL|enum|__anon2acab6740103
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -102,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d902170203
+DECL|enum|__anon2acab6740203
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -220,6 +220,12 @@ modifier|*
 name|drawable
 decl_stmt|;
 comment|/*  pointer to the tool's current drawable      */
+DECL|member|toggled
+name|gboolean
+name|toggled
+decl_stmt|;
+comment|/*  Bad hack to let the paint_core show the     */
+comment|/*  right toggle cursors                        */
 DECL|member|private
 name|void
 modifier|*

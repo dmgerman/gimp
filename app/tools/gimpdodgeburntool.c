@@ -1413,6 +1413,18 @@ block|}
 block|}
 break|break;
 block|}
+name|tool
+operator|->
+name|toggled
+operator|=
+operator|(
+name|dodgeburn_options
+operator|->
+name|type
+operator|==
+name|BURN
+operator|)
+expr_stmt|;
 block|}
 end_function
 
