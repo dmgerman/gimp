@@ -87,7 +87,7 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
-comment|/*  #define GIMP_THUMB_DEBUG  */
+comment|/*  #define GIMP_THUMB_DEBUG   */
 end_comment
 
 begin_if
@@ -211,7 +211,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e20aae0103
+DECL|enum|__anon2c42706b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2544,6 +2544,14 @@ condition|)
 return|return
 name|NULL
 return|;
+name|g_object_freeze_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|thumbnail
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* URI and mtime from the thumbnail need to match our file */
 name|option
 operator|=
@@ -2697,6 +2705,13 @@ name|finish
 label|:
 if|if
 condition|(
+name|thumbnail
+operator|->
+name|thumb_size
+operator|==
+name|GIMP_THUMB_SIZE_FAIL
+operator|||
+operator|(
 name|state
 operator|!=
 name|GIMP_THUMB_STATE_OLD
@@ -2704,6 +2719,7 @@ operator|&&
 name|state
 operator|!=
 name|GIMP_THUMB_STATE_OK
+operator|)
 condition|)
 block|{
 name|g_object_unref
@@ -2725,6 +2741,14 @@ argument_list|,
 name|state
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_thaw_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|thumbnail
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3074,9 +3098,20 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|success
 condition|)
+name|g_object_set
+argument_list|(
+name|thumbnail
+argument_list|,
+literal|"thumb-state"
+argument_list|,
+name|GIMP_THUMB_STATE_OK
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+else|else
 name|g_set_error
 argument_list|(
 name|error
@@ -3370,9 +3405,20 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|success
 condition|)
+name|g_object_set
+argument_list|(
+name|thumbnail
+argument_list|,
+literal|"thumb-state"
+argument_list|,
+name|GIMP_THUMB_STATE_FAILED
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+else|else
 name|g_set_error
 argument_list|(
 name|error
