@@ -126,7 +126,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2870ad120103
+DECL|enum|__anon28f600a20103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -4728,6 +4728,14 @@ argument_list|,
 name|SelectionOff
 argument_list|)
 expr_stmt|;
+comment|/*  clear the affected region surrounding the layer  */
+name|gdisplays_selection_visibility
+argument_list|(
+name|gimage
+argument_list|,
+name|SelectionLayerOff
+argument_list|)
+expr_stmt|;
 name|mask
 operator|=
 name|gimage_get_mask
@@ -4770,8 +4778,6 @@ argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
-comment|/*  clear the affected region surrounding the layer  */
-comment|/* gdisplays_selection_visibility (GIMP_DRAWABLE(layer)->gimage,      SelectionLayerOff); */
 block|}
 end_function
 

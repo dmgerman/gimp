@@ -3179,6 +3179,7 @@ operator|&
 name|y2
 argument_list|)
 condition|)
+block|{
 name|gdisplay_expose_area
 argument_list|(
 name|gdisp
@@ -3200,7 +3201,9 @@ name|y1
 operator|)
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|selection_start
 argument_list|(
 name|select
@@ -3208,6 +3211,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
