@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad639170103
+DECL|enum|__anon27fcf0600103
 block|{
 DECL|enumerator|GIMP_VECTORS_COMPAT_ANCHOR
 name|GIMP_VECTORS_COMPAT_ANCHOR
@@ -239,25 +239,25 @@ name|curr_coord
 operator|->
 name|pressure
 operator|=
-literal|1.0
+name|GIMP_COORDS_DEFAULT_PRESSURE
 expr_stmt|;
 name|curr_coord
 operator|->
 name|xtilt
 operator|=
-literal|0.5
+name|GIMP_COORDS_DEFAULT_TILT
 expr_stmt|;
 name|curr_coord
 operator|->
 name|ytilt
 operator|=
-literal|0.5
+name|GIMP_COORDS_DEFAULT_TILT
 expr_stmt|;
 name|curr_coord
 operator|->
 name|wheel
 operator|=
-literal|0.5
+name|GIMP_COORDS_DEFAULT_WHEEL
 expr_stmt|;
 comment|/*  copy the first anchor to be the first control point  */
 if|if
