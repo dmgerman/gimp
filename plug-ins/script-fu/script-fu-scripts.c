@@ -97,12 +97,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpfileselection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -348,7 +342,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cb70c20108
+DECL|struct|__anon289330ae0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -383,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cb70c20208
+DECL|struct|__anon289330ae0208
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -427,7 +421,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cb70c20308
+DECL|struct|__anon289330ae0308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -453,7 +447,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cb70c20408
+DECL|struct|__anon289330ae0408
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -474,7 +468,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cb70c20508
+DECL|struct|__anon289330ae0508
 block|{
 DECL|member|name
 name|gchar
@@ -502,7 +496,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon28cb70c2060a
+DECL|union|__anon289330ae060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -568,7 +562,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cb70c20708
+DECL|struct|__anon289330ae0708
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -649,7 +643,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cb70c20808
+DECL|struct|__anon289330ae0808
 block|{
 DECL|member|status
 name|GtkWidget

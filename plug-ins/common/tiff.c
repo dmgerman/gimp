@@ -37,27 +37,10 @@ directive|include
 file|"libgimp/gimpui.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_RESOLUTION_INFO
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpunit.h"
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac6b5140108
+DECL|struct|__anon2c895f770108
 block|{
 DECL|member|compression
 name|gint
@@ -76,7 +59,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac6b5140208
+DECL|struct|__anon2c895f770208
 block|{
 DECL|member|run
 name|gint
@@ -89,7 +72,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ac6b5140308
+DECL|struct|__anon2c895f770308
 typedef|typedef
 struct|struct
 block|{

@@ -71,13 +71,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmenu.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpwire.h"
+file|"libgimp/gimpui.h"
 end_include
 
 begin_include
@@ -444,7 +438,7 @@ value|(-4)
 end_define
 
 begin_struct
-DECL|struct|__anon2bed512c0108
+DECL|struct|__anon2783b3e30108
 struct|struct
 block|{
 DECL|member|randomize
@@ -3591,7 +3585,7 @@ name|button
 argument_list|)
 expr_stmt|;
 block|{
-DECL|struct|__anon2bed512c0208
+DECL|struct|__anon2783b3e30208
 specifier|static
 struct|struct
 block|{

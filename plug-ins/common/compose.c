@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmenu.h"
+file|"libgimp/gimpui.h"
 end_include
 
 begin_include
@@ -477,7 +477,7 @@ comment|/* Description of a composition */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b8b0f9c0108
+DECL|struct|__anon27dfde570108
 typedef|typedef
 struct|struct
 block|{
@@ -753,7 +753,7 @@ value|(sizeof (compose_dsc) / sizeof (compose_dsc[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon2b8b0f9c0208
+DECL|struct|__anon27dfde570208
 typedef|typedef
 struct|struct
 block|{
@@ -784,7 +784,7 @@ comment|/* Dialog structure */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b8b0f9c0308
+DECL|struct|__anon27dfde570308
 typedef|typedef
 struct|struct
 block|{

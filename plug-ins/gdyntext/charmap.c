@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -66,7 +66,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon2b4efbf90103
+DECL|enum|__anon297e45580103
 enum|enum
 block|{
 DECL|enumerator|CHAR_SELECTED

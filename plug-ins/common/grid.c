@@ -34,25 +34,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/gimpui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpchainbutton.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpcolorbutton.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpsizeentry.h"
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
@@ -190,7 +178,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acddd270108
+DECL|struct|__anon2a33a4780108
 block|{
 DECL|member|hwidth
 name|gint
