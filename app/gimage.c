@@ -8377,6 +8377,10 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
+name|Layer
+modifier|*
+name|bottom
+decl_stmt|;
 name|unsigned
 name|char
 name|bg
@@ -8987,26 +8991,15 @@ name|layer
 operator|->
 name|name
 argument_list|,
-name|OPAQUE
+name|layer
+operator|->
+name|opacity
 argument_list|,
-name|NORMAL_MODE
+name|layer
+operator|->
+name|mode
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|merge_layer
-condition|)
-block|{
-name|warning
-argument_list|(
-literal|"gimage_merge_layers: could not allocate merge layer"
-argument_list|)
-expr_stmt|;
-return|return
-name|NULL
-return|;
-block|}
 if|if
 condition|(
 operator|!
@@ -9103,6 +9096,17 @@ name|layer
 operator|->
 name|ID
 argument_list|)
+expr_stmt|;
+comment|/* set the mode of the bottom layer to normal so that the contents        *  aren't lost when merging with the all-alpha merge_layer        *  Keep a pointer to it so that we can set the mode right after it's been        *  merged so that undo works correctly.        */
+name|layer
+operator|->
+name|mode
+operator|=
+name|NORMAL
+expr_stmt|;
+name|bottom
+operator|=
+name|layer
 expr_stmt|;
 block|}
 while|while
@@ -9394,6 +9398,15 @@ name|reverse_list
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* Save old mode in undo */
+name|bottom
+operator|->
+name|mode
+operator|=
+name|merge_layer
+operator|->
+name|mode
+expr_stmt|;
 name|free_list
 argument_list|(
 name|reverse_list

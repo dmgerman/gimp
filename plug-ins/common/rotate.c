@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*    *  Rotate plug-in v0.4 by Sven Neumann, neumanns@uni-duesseldorf.de    *  1997/10/17  *  *  Any suggestions, bug-reports or patches are very welcome.  *   *  A lot of changes in version 0.3 were inspired by (or even simply   *  copied from) the similar rotators-plug-in by Adam D. Moss.   *  *  As I still prefer my version I have not stopped developing it.  *  Probably this will result in one plug-in that includes the advantages   *  of both approaches.  */
+comment|/*    *  Rotate plug-in v0.5 by Sven Neumann, neumanns@uni-duesseldorf.de    *  1998/01/09  *  *  Any suggestions, bug-reports or patches are very welcome.  *   *  A lot of changes in version 0.3 were inspired by (or even simply   *  copied from) the similar rotators-plug-in by Adam D. Moss.   *  *  As I still prefer my version I have not stopped developing it.  *  Probably this will result in one plug-in that includes the advantages   *  of both approaches.  */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Revision history  *  (09/28/97)  v0.1   first development release   *  (09/29/97)  v0.2   nicer dialog,  *                     changed the menu-location to Filters/Transforms  *  (10/01/97)  v0.3   now handles layered images and undo  *  (10/13/97)  v0.3a  small bugfix, no real changes  *  (10/17/97)  v0.4   now handles selections  */
+comment|/* Revision history  *  (09/28/97)  v0.1   first development release   *  (09/29/97)  v0.2   nicer dialog,  *                     changed the menu-location to Filters/Transforms  *  (10/01/97)  v0.3   now handles layered images and undo  *  (10/13/97)  v0.3a  small bugfix, no real changes  *  (10/17/97)  v0.4   now handles selections  *  (01/09/98)  v0.5   a few fixes to support portability  *                    */
 end_comment
 
 begin_comment
@@ -58,7 +58,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"v0.4 (10/17/97)"
+value|"v0.5 (01/09/98)"
 end_define
 
 begin_define
@@ -122,7 +122,7 @@ DECL|macro|IN_ARGS
 define|#
 directive|define
 name|IN_ARGS
-value|{ PARAM_INT32,    "run_mode", "Interactive, non-interactive"},\ 		{ PARAM_IMAGE,    "image", "Input image" },\ 		{ PARAM_DRAWABLE, "drawable", "Input drawable"},\                 { PARAM_INT32,    "angle", "Angle { 90° (1), 180° (2), 270° (3) }"},\                 { PARAM_INT32,    "everything", "Rotate the whole image? { TRUE, FALSE }"}
+value|{ PARAM_INT32,    "run_mode", "Interactive, non-interactive"},\ 		{ PARAM_IMAGE,    "image", "Input image" },\ 		{ PARAM_DRAWABLE, "drawable", "Input drawable"},\                 { PARAM_INT32,    "angle", "Angle { 90 (1), 180 (2), 270 (3) } degrees"},\                 { PARAM_INT32,    "everything", "Rotate the whole image? { TRUE, FALSE }"}
 end_define
 
 begin_define
@@ -151,7 +151,7 @@ end_define
 
 begin_decl_stmt
 DECL|variable|angle_label
-name|char
+name|gchar
 modifier|*
 name|angle_label
 index|[
@@ -159,19 +159,19 @@ name|NUM_ANGLES
 index|]
 init|=
 block|{
-literal|"0°"
+literal|"0"
 block|,
-literal|"90°"
+literal|"90"
 block|,
-literal|"180°"
+literal|"180"
 block|,
-literal|"270°"
+literal|"270"
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon291d4af50108
+DECL|struct|__anon291474a80108
 typedef|typedef
 struct|struct
 block|{
@@ -190,7 +190,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon291d4af50208
+DECL|struct|__anon291474a80208
 typedef|typedef
 struct|struct
 block|{
@@ -213,7 +213,7 @@ init|=
 block|{
 literal|1
 block|,
-comment|/* default to 90° */
+comment|/* default to 90 degrees */
 literal|1
 comment|/* default to whole image */
 block|}
@@ -248,11 +248,11 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 comment|/* number of parameters passed in */
@@ -261,7 +261,7 @@ modifier|*
 name|param
 parameter_list|,
 comment|/* parameters passed in */
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -495,7 +495,7 @@ name|IN_ARGS
 block|}
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 name|NUMBER_IN_ARGS
@@ -508,7 +508,7 @@ init|=
 name|OUT_ARGS
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nreturn_vals
 init|=
 name|NUMBER_OUT_ARGS
@@ -549,15 +549,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
 comment|/* name of plugin */
-name|int
+name|gint
 name|nparams
 parameter_list|,
 comment|/* number of in-paramters */
@@ -566,7 +566,7 @@ modifier|*
 name|param
 parameter_list|,
 comment|/* in-parameters */
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -785,6 +785,7 @@ break|break;
 default|default:
 break|break;
 block|}
+comment|/* switch */
 if|if
 condition|(
 name|status
@@ -860,7 +861,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -940,7 +941,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint32
@@ -2300,6 +2301,10 @@ name|radio_label
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|unit_label
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|hbox
 decl_stmt|;
 name|GtkWidget
@@ -2638,9 +2643,9 @@ name|table
 operator|=
 name|gtk_table_new
 argument_list|(
-literal|5
+literal|6
 argument_list|,
-literal|5
+literal|6
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2686,7 +2691,7 @@ name|table
 argument_list|)
 expr_stmt|;
 comment|/* radio buttons */
-comment|/* 0° */
+comment|/* 0 degrees */
 name|radio_label
 operator|=
 name|gtk_label_new
@@ -2810,7 +2815,7 @@ argument_list|(
 name|radio_button
 argument_list|)
 expr_stmt|;
-comment|/* 90° */
+comment|/* 90 degrees */
 name|radio_label
 operator|=
 name|gtk_label_new
@@ -2934,7 +2939,7 @@ argument_list|(
 name|radio_button
 argument_list|)
 expr_stmt|;
-comment|/* 180° */
+comment|/* 180 degrees */
 name|radio_label
 operator|=
 name|gtk_label_new
@@ -3058,7 +3063,7 @@ argument_list|(
 name|radio_button
 argument_list|)
 expr_stmt|;
-comment|/* 270° */
+comment|/* 270 degrees */
 name|radio_label
 operator|=
 name|gtk_label_new
@@ -3180,6 +3185,45 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|radio_button
+argument_list|)
+expr_stmt|;
+comment|/* label: degrees */
+name|unit_label
+operator|=
+name|gtk_label_new
+argument_list|(
+literal|"degrees"
+argument_list|)
+expr_stmt|;
+name|gtk_table_attach
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+name|unit_label
+argument_list|,
+literal|5
+argument_list|,
+literal|6
+argument_list|,
+literal|5
+argument_list|,
+literal|6
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|unit_label
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3437,7 +3481,7 @@ decl_stmt|;
 name|toggle_val
 operator|=
 operator|(
-name|int
+name|gint
 operator|*
 operator|)
 name|data

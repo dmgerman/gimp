@@ -503,6 +503,9 @@ block|{
 name|data
 index|[
 operator|-
+operator|(
+name|gint
+operator|)
 name|pixel_rgn
 operator|->
 name|bpp

@@ -144,7 +144,7 @@ comment|/*********************************  *  *  PLUGIN-SPECIFIC STRUCTURES AND
 end_comment
 
 begin_typedef
-DECL|struct|__anon289174520108
+DECL|struct|__anon2b4edfcc0108
 typedef|typedef
 struct|struct
 block|{
@@ -200,7 +200,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon289174520208
+DECL|struct|__anon2b4edfcc0208
 typedef|typedef
 struct|struct
 block|{
@@ -1313,6 +1313,9 @@ block|{
 name|data
 index|[
 operator|-
+operator|(
+name|gint
+operator|)
 name|pixel_rgn
 operator|->
 name|bpp
@@ -1379,7 +1382,7 @@ parameter_list|)
 define|\
 value|{ \     int b; \  \     if (y == 0) { \       gimp_pixel_rgn_get_row(pixel_rgn, data, x, (y + 1), w); \     } else if (y == (pixel_rgn)->h) { \       gimp_pixel_rgn_get_row(pixel_rgn, data, x, (y - 1), w); \     } else { \       gimp_pixel_rgn_get_row(pixel_rgn, data, x, y, w); \     } \
 comment|/* \  *  Fill in edge pixels \  */
-value|\     for (b = 0; b< (pixel_rgn)->bpp; b++) { \ 	data[-(pixel_rgn)->bpp + b] = data[b]; \ 	data[w * (pixel_rgn)->bpp + b] = data[(w - 1) * (pixel_rgn)->bpp + b]; \     } \ }
+value|\     for (b = 0; b< (pixel_rgn)->bpp; b++) { \ 	data[-(gint)(pixel_rgn)->bpp + b] = data[b]; \ 	data[w * (pixel_rgn)->bpp + b] = data[(w - 1) * (pixel_rgn)->bpp + b]; \     } \ }
 end_define
 
 begin_endif

@@ -933,7 +933,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29022aa10108
+DECL|struct|__anon2945747e0108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -1077,7 +1077,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29022aa10208
+DECL|struct|__anon2945747e0208
 block|{
 DECL|member|applicable_image_type
 name|int
@@ -1298,7 +1298,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29022aa10308
+DECL|struct|__anon2945747e0308
 block|{
 DECL|member|run
 name|gint
@@ -2935,6 +2935,9 @@ block|{
 name|data
 index|[
 operator|-
+operator|(
+name|gint
+operator|)
 name|pixel_rgn
 operator|->
 name|bpp
@@ -3946,7 +3949,7 @@ end_block
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29022aa10408
+DECL|struct|__anon2945747e0408
 block|{
 DECL|member|min_modified
 name|short

@@ -114,7 +114,7 @@ value|3
 end_define
 
 begin_typedef
-DECL|struct|__anon2aefbb800108
+DECL|struct|__anon2b271c160108
 typedef|typedef
 struct|struct
 block|{
@@ -157,7 +157,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2aefbb800208
+DECL|struct|__anon2b271c160208
 typedef|typedef
 struct|struct
 block|{
@@ -3384,6 +3384,9 @@ block|{
 name|data
 index|[
 operator|-
+operator|(
+name|gint
+operator|)
 name|pixel_rgn
 operator|->
 name|bpp
