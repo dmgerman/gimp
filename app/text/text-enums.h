@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bae44b80103
+DECL|enum|__anon27fdf8c40103
 block|{
 DECL|enumerator|GIMP_TEXT_BOX_DYNAMIC
 name|GIMP_TEXT_BOX_DYNAMIC
@@ -71,15 +71,15 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bae44b80203
+DECL|enum|__anon27fdf8c40203
 block|{
 DECL|enumerator|GIMP_TEXT_DIRECTION_LTR
 name|GIMP_TEXT_DIRECTION_LTR
 block|,
-comment|/*< desc="From Left to Right">*/
+comment|/*< desc="From left to right">*/
 DECL|enumerator|GIMP_TEXT_DIRECTION_RTL
 name|GIMP_TEXT_DIRECTION_RTL
-comment|/*< desc="From Right to Left">*/
+comment|/*< desc="From right to left">*/
 DECL|typedef|GimpTextDirection
 block|}
 name|GimpTextDirection
@@ -107,16 +107,16 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bae44b80303
+DECL|enum|__anon27fdf8c40303
 block|{
 DECL|enumerator|GIMP_TEXT_JUSTIFY_LEFT
 name|GIMP_TEXT_JUSTIFY_LEFT
 block|,
-comment|/*< desc="Left Justified">*/
+comment|/*< desc="Left justified">*/
 DECL|enumerator|GIMP_TEXT_JUSTIFY_RIGHT
 name|GIMP_TEXT_JUSTIFY_RIGHT
 block|,
-comment|/*< desc="Right Justified">*/
+comment|/*< desc="Right justified">*/
 DECL|enumerator|GIMP_TEXT_JUSTIFY_CENTER
 name|GIMP_TEXT_JUSTIFY_CENTER
 block|,
@@ -151,7 +151,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bae44b80403
+DECL|enum|__anon27fdf8c40403
 block|{
 DECL|enumerator|GIMP_TEXT_OUTLINE_NONE
 name|GIMP_TEXT_OUTLINE_NONE

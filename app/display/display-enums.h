@@ -37,16 +37,16 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28eff21a0103
+DECL|enum|__anon27561ee40103
 block|{
 DECL|enumerator|GIMP_CURSOR_MODE_TOOL_ICON
 name|GIMP_CURSOR_MODE_TOOL_ICON
 block|,
-comment|/*< desc="Tool Icon">*/
+comment|/*< desc="Tool icon">*/
 DECL|enumerator|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
 name|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
 block|,
-comment|/*< desc="Tool Icon with Crosshair">*/
+comment|/*< desc="Tool icon with crosshair">*/
 DECL|enumerator|GIMP_CURSOR_MODE_CROSSHAIR
 name|GIMP_CURSOR_MODE_CROSSHAIR
 comment|/*< desc="Crosshair only">*/
@@ -77,24 +77,24 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28eff21a0203
+DECL|enum|__anon27561ee40203
 block|{
 DECL|enumerator|GIMP_CANVAS_PADDING_MODE_DEFAULT
 name|GIMP_CANVAS_PADDING_MODE_DEFAULT
 block|,
-comment|/*< desc="From Theme">*/
+comment|/*< desc="From theme">*/
 DECL|enumerator|GIMP_CANVAS_PADDING_MODE_LIGHT_CHECK
 name|GIMP_CANVAS_PADDING_MODE_LIGHT_CHECK
 block|,
-comment|/*< desc="Light Check Color">*/
+comment|/*< desc="Light check color">*/
 DECL|enumerator|GIMP_CANVAS_PADDING_MODE_DARK_CHECK
 name|GIMP_CANVAS_PADDING_MODE_DARK_CHECK
 block|,
-comment|/*< desc="Dark Check Color">*/
+comment|/*< desc="Dark check color">*/
 DECL|enumerator|GIMP_CANVAS_PADDING_MODE_CUSTOM
 name|GIMP_CANVAS_PADDING_MODE_CUSTOM
 block|,
-comment|/*< desc="Custom Color">*/
+comment|/*< desc="Custom color">*/
 DECL|enumerator|GIMP_CANVAS_PADDING_MODE_RESET
 name|GIMP_CANVAS_PADDING_MODE_RESET
 init|=
