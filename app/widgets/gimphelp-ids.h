@@ -2849,6 +2849,22 @@ value|"gimp-dock-auto-button"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_DOCK_CHANGE_SCREEN
+define|#
+directive|define
+name|GIMP_HELP_DOCK_CHANGE_SCREEN
+value|"gimp-dock-change-screen"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_DOCK_SEPARATOR
+define|#
+directive|define
+name|GIMP_HELP_DOCK_SEPARATOR
+value|"gimp-dock-separator"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_DOCK_TAB_ADD
 define|#
 directive|define
@@ -2902,22 +2918,6 @@ define|#
 directive|define
 name|GIMP_HELP_DOCK_VIEW_AS_GRID
 value|"gimp-dock-view-as-grid"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_DOCK_CHANGE_SCREEN
-define|#
-directive|define
-name|GIMP_HELP_DOCK_CHANGE_SCREEN
-value|"gimp-dock-change-screen"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_DOCK_SEPARATOR
-define|#
-directive|define
-name|GIMP_HELP_DOCK_SEPARATOR
-value|"gimp-dock-separator"
 end_define
 
 begin_define

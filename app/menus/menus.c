@@ -418,6 +418,8 @@ literal|"<Dockable>"
 argument_list|,
 literal|"dockable"
 argument_list|,
+literal|"dock"
+argument_list|,
 name|NULL
 argument_list|,
 literal|"/dockable-popup"
