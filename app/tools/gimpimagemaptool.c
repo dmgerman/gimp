@@ -1546,22 +1546,6 @@ name|NULL
 expr_stmt|;
 break|break;
 block|}
-if|if
-condition|(
-name|gimp_tool_control_is_active
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-condition|)
-name|gimp_tool_control_halt
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
