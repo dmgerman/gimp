@@ -14329,12 +14329,6 @@ name|gdouble
 name|min_ppi_scaling2
 decl_stmt|;
 comment|/* Minimum PPI for current page size */
-name|gint
-name|paper_left
-decl_stmt|;
-name|gint
-name|paper_top
-decl_stmt|;
 name|gdouble
 name|unit_scaler
 init|=

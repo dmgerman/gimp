@@ -420,8 +420,17 @@ name|i
 argument_list|)
 argument_list|)
 expr_stmt|;
-break|break;
+return|return;
 block|}
+name|stp_set_dither_algorithm
+argument_list|(
+operator|*
+name|pv
+argument_list|,
+name|stp_default_dither_algorithm
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
