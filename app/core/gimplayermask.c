@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae9e3b20103
+DECL|enum|__anon296aa6cf0103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -466,6 +466,15 @@ operator|->
 name|rename
 operator|=
 name|gimp_layer_mask_rename
+expr_stmt|;
+name|item_class
+operator|->
+name|translate_desc
+operator|=
+name|_
+argument_list|(
+literal|"Move Layer Mask"
+argument_list|)
 expr_stmt|;
 block|}
 end_function
