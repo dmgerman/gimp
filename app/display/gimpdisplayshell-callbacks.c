@@ -1229,17 +1229,6 @@ name|shell
 operator|->
 name|gdisp
 expr_stmt|;
-name|active_tool
-operator|=
-name|tool_manager_get_active
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|gimp
-argument_list|)
-expr_stmt|;
 comment|/*  Find out what device the event occurred upon  */
 if|if
 condition|(
@@ -1260,6 +1249,17 @@ condition|)
 name|gimp_display_shell_check_device_cursor
 argument_list|(
 name|shell
+argument_list|)
+expr_stmt|;
+name|active_tool
+operator|=
+name|tool_manager_get_active
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_get_coords
