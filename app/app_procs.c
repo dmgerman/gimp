@@ -2393,6 +2393,12 @@ argument_list|(
 name|RECT_SELECT
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|console_messages
+operator|==
+name|FALSE
+condition|)
 name|g_set_message_handler
 argument_list|(
 operator|&
@@ -2446,6 +2452,12 @@ return|return;
 name|is_app_exit_finish_done
 operator|=
 name|TRUE
+expr_stmt|;
+name|g_set_message_handler
+argument_list|(
+operator|&
+name|message_console_func
+argument_list|)
 expr_stmt|;
 name|lc_dialog_free
 argument_list|()

@@ -928,7 +928,7 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"bz2: fork failed: %s\n"
 argument_list|,
@@ -966,7 +966,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"bz2: fopen failed: %s\n"
 argument_list|,
@@ -1001,7 +1001,7 @@ name|stdout
 argument_list|)
 argument_list|)
 condition|)
-name|g_warning
+name|g_message
 argument_list|(
 literal|"bz2: dup2 failed: %s\n"
 argument_list|,
@@ -1025,7 +1025,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_warning
+name|g_message
 argument_list|(
 literal|"bz2: exec failed: bzip2: %s\n"
 argument_list|,
@@ -1069,7 +1069,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"bz2: bzip2 exited abnormally on file %s\n"
 argument_list|,
@@ -1187,7 +1187,7 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"bz2: fork failed: %s\n"
 argument_list|,
@@ -1230,7 +1230,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"bz2: fopen failed: %s\n"
 argument_list|,
@@ -1265,7 +1265,7 @@ name|stdout
 argument_list|)
 argument_list|)
 condition|)
-name|g_warning
+name|g_message
 argument_list|(
 literal|"bz2: dup2 failed: %s\n"
 argument_list|,
@@ -1289,7 +1289,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_warning
+name|g_message
 argument_list|(
 literal|"bz2: exec failed: bunzip2: %s\n"
 argument_list|,
@@ -1334,7 +1334,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"bz2: bzip2 exited abnormally on file %s\n"
 argument_list|,
@@ -1553,7 +1553,7 @@ literal|'/'
 argument_list|)
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"bz2: can't open bzip2ed file without a sensible extension\n"
 argument_list|)

@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"appenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"app_procs.h"
 end_include
 
@@ -83,13 +89,6 @@ name|prog_name
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-specifier|extern
-name|int
-name|use_debug_handler
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 name|void
 DECL|function|message_console_func (char * str)
@@ -100,8 +99,10 @@ modifier|*
 name|str
 parameter_list|)
 block|{
-name|g_print
+name|fprintf
 argument_list|(
+name|stderr
+argument_list|,
 literal|"%s: %s\n"
 argument_list|,
 name|prog_name

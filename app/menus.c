@@ -2183,7 +2183,7 @@ name|sensitive
 argument_list|)
 expr_stmt|;
 else|else
-name|g_warning
+name|g_message
 argument_list|(
 literal|"Unable to set sensitivity for menu which doesn't exist: %s"
 argument_list|,
@@ -2254,7 +2254,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-name|g_warning
+name|g_message
 argument_list|(
 literal|"Unable to set state for menu which doesn't exist: %s"
 argument_list|,

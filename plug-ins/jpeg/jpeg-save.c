@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289fb9ee0108
+DECL|struct|__anon2b7b41750108
 block|{
 DECL|member|quality
 name|gdouble
@@ -83,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289fb9ee0208
+DECL|struct|__anon2b7b41750208
 block|{
 DECL|member|run
 name|gint
@@ -1855,10 +1855,8 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
 literal|"can't open %s\n"
 argument_list|,
 name|filename

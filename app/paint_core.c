@@ -4668,7 +4668,7 @@ operator|!=
 name|INCREMENTAL
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"paint_core_replace only works in INCREMENTAL mode"
 argument_list|)

@@ -106,7 +106,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962e6d60108
+DECL|struct|__anon2ac2f1a20108
 block|{
 DECL|member|resolution
 name|guint
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962e6d60208
+DECL|struct|__anon2ac2f1a20208
 block|{
 DECL|member|run
 name|gint
@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962e6d60308
+DECL|struct|__anon2ac2f1a20308
 block|{
 DECL|member|width
 DECL|member|height
@@ -281,7 +281,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962e6d60408
+DECL|struct|__anon2ac2f1a20408
 block|{
 DECL|member|run
 name|gint
@@ -774,7 +774,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962e6d60508
+DECL|struct|__anon2ac2f1a20508
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -878,7 +878,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962e6d60608
+DECL|struct|__anon2ac2f1a20608
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1000,17 +1000,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|show_message
-parameter_list|(
-name|char
-modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2448,7 +2437,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 literal|"can't open file for reading"
 argument_list|)
@@ -2541,7 +2530,7 @@ operator|!
 name|ifp
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 literal|"can't interprete file"
 argument_list|)
@@ -2576,7 +2565,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 literal|"out of memory"
 argument_list|)
@@ -2958,7 +2947,7 @@ name|drawable_ID
 argument_list|)
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 literal|"PostScript save cannot handle images with alpha channels"
 argument_list|)
@@ -2983,7 +2972,7 @@ name|RGB_IMAGE
 case|:
 break|break;
 default|default:
-name|show_message
+name|g_message
 argument_list|(
 literal|"cannot operate on unknown image types"
 argument_list|)
@@ -3011,7 +3000,7 @@ operator|!
 name|ofp
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 literal|"cant open file for writing"
 argument_list|)
@@ -6560,7 +6549,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|show_message
+name|g_message
 argument_list|(
 literal|"EOF encountered on reading"
 argument_list|)
@@ -9028,7 +9017,7 @@ name|ofp
 argument_list|)
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 literal|"write error occured"
 argument_list|)
@@ -9573,7 +9562,7 @@ name|ofp
 argument_list|)
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 literal|"write error occured"
 argument_list|)
@@ -9991,7 +9980,7 @@ name|ofp
 argument_list|)
 condition|)
 block|{
-name|show_message
+name|g_message
 argument_list|(
 literal|"write error occured"
 argument_list|)
@@ -14297,52 +14286,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-block|}
-end_function
-
-begin_comment
-comment|/* Show a message. Where to show it, depends on the runmode */
-end_comment
-
-begin_function
-DECL|function|show_message (char * message)
-specifier|static
-name|void
-name|show_message
-parameter_list|(
-name|char
-modifier|*
-name|message
-parameter_list|)
-block|{
-ifdef|#
-directive|ifdef
-name|Simple_Message_Box_Available
-comment|/* If there would be a simple message box like the one */
-comment|/* used in ../app/interface.h, I would like to use it. */
-if|if
-condition|(
-name|l_run_mode
-operator|==
-name|RUN_INTERACTIVE
-condition|)
-name|gtk_message_box
-argument_list|(
-name|message
-argument_list|)
-expr_stmt|;
-else|else
-endif|#
-directive|endif
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"ps: %s\n"
-argument_list|,
-name|message
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

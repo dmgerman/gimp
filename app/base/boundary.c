@@ -2268,9 +2268,9 @@ name|y
 operator|!=
 name|starty
 condition|)
-name|g_warning
+name|g_message
 argument_list|(
-literal|"Unconnected boundary group!"
+literal|"sort_boundary(): Unconnected boundary group!"
 argument_list|)
 expr_stmt|;
 comment|/*  Mark the end of a group  */

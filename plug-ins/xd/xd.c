@@ -874,7 +874,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"xd: unrecognized extension %s\n"
 argument_list|,
@@ -905,7 +905,7 @@ operator|!
 name|ext2
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"xd: unrecognized extension %s\n"
 argument_list|,
@@ -963,7 +963,7 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"xd: illegal version number %s\n"
 argument_list|,
@@ -997,7 +997,7 @@ operator|!
 name|ext3
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"xd: unrecognized extension %s\n"
 argument_list|,
@@ -1072,7 +1072,7 @@ operator|*
 name|xd
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"xd: open failed: %s\n"
 argument_list|,
@@ -1107,7 +1107,7 @@ operator|)
 operator|)
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"xd: version number too high\n"
 argument_list|)
@@ -1467,7 +1467,7 @@ argument_list|(
 name|tmpname
 argument_list|)
 expr_stmt|;
-name|g_warning
+name|g_message
 argument_list|(
 literal|"xd: checkin failed\n"
 argument_list|)
@@ -1598,7 +1598,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"xd: checkout failed\n"
 argument_list|)
@@ -2137,7 +2137,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"xd: checkout failed\n"
 argument_list|)
@@ -2408,7 +2408,7 @@ name|dat
 return|;
 name|bail
 label|:
-name|g_warning
+name|g_message
 argument_list|(
 literal|"xd: save failed in preview generation\n"
 argument_list|)
@@ -2457,7 +2457,7 @@ name|FILE
 modifier|*
 name|f
 decl_stmt|;
-name|g_warning
+name|g_print
 argument_list|(
 literal|"gdk_pixmap_create_from_xpm: this proceedure is slow because Peter is a wuss.  it should be rewritten."
 argument_list|)

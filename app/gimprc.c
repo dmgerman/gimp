@@ -124,7 +124,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2b64ac8e0103
+DECL|enum|__anon2bccbb0d0103
 typedef|typedef
 enum|enum
 block|{
@@ -1983,9 +1983,9 @@ literal|'/'
 expr_stmt|;
 block|}
 else|else
-name|g_warning
+name|g_message
 argument_list|(
-literal|"No home directory."
+literal|"warning: no home directory."
 argument_list|)
 expr_stmt|;
 name|strncpy
@@ -2036,9 +2036,9 @@ literal|'/'
 expr_stmt|;
 block|}
 else|else
-name|g_warning
+name|g_message
 argument_list|(
-literal|"No home directory."
+literal|"warning: no home directory."
 argument_list|)
 expr_stmt|;
 name|strncpy
@@ -5474,7 +5474,7 @@ name|OK
 return|;
 name|error
 label|:
-name|g_warning
+name|g_message
 argument_list|(
 literal|"error parsing pluginrc"
 argument_list|)

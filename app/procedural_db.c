@@ -1621,7 +1621,7 @@ name|pdb_int
 operator|=
 name|PDB_CALLING_ERROR
 expr_stmt|;
-name|g_warning
+name|g_message
 argument_list|(
 literal|"PDB calling error %s"
 argument_list|,
@@ -1969,7 +1969,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"Incorrect arguments passed to procedural_db_run_proc"
 argument_list|)

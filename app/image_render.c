@@ -1369,7 +1369,7 @@ literal|5
 operator|)
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"unknown gimage projection type: %d"
 argument_list|,
@@ -1402,7 +1402,7 @@ literal|4
 operator|)
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"unsupported destination bytes per pixel: %d"
 argument_list|,

@@ -156,7 +156,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f8cbc60103
+DECL|enum|__anon29ff39850103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -261,7 +261,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f8cbc60203
+DECL|enum|__anon29ff39850203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -1746,7 +1746,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"open failed on %s: %s\n"
 argument_list|,
@@ -6545,7 +6545,7 @@ name|COMPRESS_FRACTAL
 operator|)
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"unknown compression type: %d"
 argument_list|,
@@ -6699,7 +6699,7 @@ expr_stmt|;
 block|}
 break|break;
 default|default:
-name|g_warning
+name|g_message
 argument_list|(
 literal|"unexpected/unknown image property: %d (skipping)"
 argument_list|,
@@ -7133,7 +7133,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_warning
+name|g_message
 argument_list|(
 literal|"unexpected/unknown layer property: %d (skipping)"
 argument_list|,
@@ -7405,7 +7405,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_warning
+name|g_message
 argument_list|(
 literal|"unexpected/unknown channel property: %d (skipping)"
 argument_list|,
@@ -8655,7 +8655,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"not enough levels found in hierarchy"
 argument_list|)
@@ -8735,7 +8735,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"encountered garbage after reading hierarchy: %d"
 argument_list|,
@@ -8920,7 +8920,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"not enough tiles found in level"
 argument_list|)
@@ -9050,7 +9050,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"encountered garbage after reading level: %d"
 argument_list|,
@@ -9502,7 +9502,7 @@ name|size
 operator|<
 literal|0
 condition|)
-name|g_warning
+name|g_message
 argument_list|(
 literal|"xcf: uh oh! xcf rle tile loading error: %d"
 argument_list|,
@@ -9697,7 +9697,7 @@ operator|<=
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"unable to read tile data from xcf file: %d ( %d ) bytes read"
 argument_list|,

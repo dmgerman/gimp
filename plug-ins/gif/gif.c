@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad746a40108
+DECL|struct|__anon2b5d6d340108
 block|{
 DECL|member|interlace
 name|int
@@ -137,7 +137,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad746a40208
+DECL|struct|__anon2b5d6d340208
 block|{
 DECL|member|run
 name|gint
@@ -912,7 +912,7 @@ name|d_string
 argument_list|)
 expr_stmt|;
 comment|/* The GIF format only tells you how many bits per pixel        *  are in the image, not the actual number of used indices (D'OH!)        *        * So if we're not careful, repeated load/save of a transparent GIF        *  without intermediate indexed->RGB->indexed pumps up the number of        *  bits used, as we add an index each time for the transparent        *  colour.  Ouch.  We either do some heavier analysis at save-time,        *  or trim down the number of GIMP colours at load-time.  We do the        *  latter for now.        */
-name|printf
+name|g_print
 argument_list|(
 literal|"GIF: Highest used index is %d\n"
 argument_list|,
@@ -1522,7 +1522,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ad746a40308
+DECL|struct|__anon2b5d6d340308
 block|{
 DECL|member|Width
 name|unsigned
@@ -1572,7 +1572,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ad746a40408
+DECL|struct|__anon2b5d6d340408
 block|{
 DECL|member|transparent
 name|int
@@ -1832,7 +1832,7 @@ operator|!
 name|fd
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: can't open \"%s\"\n"
 argument_list|,
@@ -1888,7 +1888,7 @@ literal|6
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: error reading magic number\n"
 argument_list|)
@@ -1916,7 +1916,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: not a GIF file\n"
 argument_list|)
@@ -1973,7 +1973,7 @@ literal|0
 operator|)
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: bad version number, not '87a' or '89a'\n"
 argument_list|)
@@ -1996,7 +1996,7 @@ literal|7
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: failed to read screen descriptor\n"
 argument_list|)
@@ -2129,7 +2129,7 @@ name|GrayScale
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: error reading global colormap\n"
 argument_list|)
@@ -2155,7 +2155,7 @@ operator|!=
 literal|49
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: warning - non-square pixels\n"
 argument_list|)
@@ -2185,7 +2185,7 @@ literal|1
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: EOF / read error on image data\n"
 argument_list|)
@@ -2229,7 +2229,7 @@ literal|1
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: OF / read error on extention function code\n"
 argument_list|)
@@ -2256,7 +2256,7 @@ literal|','
 condition|)
 block|{
 comment|/* Not a valid start character */
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: bogus character 0x%02x, ignoring\n"
 argument_list|,
@@ -2284,7 +2284,7 @@ literal|9
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: couldn't read left/top/width/height\n"
 argument_list|)
@@ -2345,7 +2345,7 @@ name|grayScale
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: error reading local colormap\n"
 argument_list|)
@@ -2626,7 +2626,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: bad colormap\n"
 argument_list|)
@@ -2964,7 +2964,7 @@ if|if
 condition|(
 name|showComment
 condition|)
-name|printf
+name|g_print
 argument_list|(
 literal|"GIF: gif comment: %s\n"
 argument_list|,
@@ -3119,7 +3119,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-name|printf
+name|g_print
 argument_list|(
 literal|"GIF: got a '%s' extension\n"
 argument_list|,
@@ -3192,7 +3192,7 @@ literal|1
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: error in getting DataBlock size\n"
 argument_list|)
@@ -3229,7 +3229,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: error in reading DataBlock\n"
 argument_list|)
@@ -3335,7 +3335,7 @@ operator|>=
 name|lastbit
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: ran off the end of by bits\n"
 argument_list|)
@@ -3926,7 +3926,7 @@ name|count
 operator|!=
 literal|0
 condition|)
-name|printf
+name|g_print
 argument_list|(
 literal|"GIF: missing EOD in data stream (common occurence)"
 argument_list|)
@@ -3990,7 +3990,7 @@ name|code
 index|]
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: circular table entry BIG ERROR\n"
 argument_list|)
@@ -4250,7 +4250,7 @@ literal|1
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: EOF / read error on image data\n"
 argument_list|)
@@ -4274,7 +4274,7 @@ operator|<
 literal|0
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: error while reading\n"
 argument_list|)
@@ -4582,7 +4582,7 @@ operator|=
 name|TRUE
 expr_stmt|;
 comment|/* Promote everything we have so far into RGB(A) */
-name|printf
+name|g_print
 argument_list|(
 literal|"GIF: Promoting image to RGB...\n"
 argument_list|)
@@ -4700,7 +4700,7 @@ argument_list|,
 literal|" (unknown disposal)"
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: Hmm... please forward this GIF to the "
 literal|"GIF plugin author!\n  (adam@foxbox.org)\n"
@@ -4708,7 +4708,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: Something got corrupted.\n"
 argument_list|)
@@ -4834,7 +4834,7 @@ if|if
 condition|(
 name|verbose
 condition|)
-name|printf
+name|g_print
 argument_list|(
 literal|"GIF: reading %d by %d%s GIF image, ncols=%d\n"
 argument_list|,
@@ -4859,7 +4859,7 @@ operator|&&
 name|promote_to_rgb
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: Ouchie!  Can't handle non-alpha RGB frames.\n     Please mail the plugin author.  (adam@gimp.org)\n"
 argument_list|)
@@ -5264,7 +5264,7 @@ argument_list|)
 operator|>=
 literal|0
 condition|)
-name|printf
+name|g_print
 argument_list|(
 literal|"GIF: too much input data, ignoring extra...\n"
 argument_list|)
@@ -5858,7 +5858,7 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-comment|/*   fprintf(stderr,"GIF: Image has>=256 colors - attempting to reduce...\n");   */
+comment|/*   g_message ("GIF: Image has>=256 colors - attempting to reduce...\n");   */
 for|for
 control|(
 name|i
@@ -5947,10 +5947,8 @@ operator|)
 name|FALSE
 condition|)
 block|{
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
 literal|"GIF: Found unused colour index %d.\n"
 argument_list|,
 operator|(
@@ -5963,10 +5961,8 @@ return|return
 name|i
 return|;
 block|}
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
 literal|"GIF: Couldn't simply reduce colours further.  Saving as opaque.\n"
 argument_list|)
 expr_stmt|;
@@ -6912,11 +6908,8 @@ expr_stmt|;
 block|}
 break|break;
 default|default:
-comment|/* FIXME: should be a popup (or, of course, ideally GIMP shouldn't 	 let RGB images through in the first place :) ) */
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
 literal|"GIF: Sorry, can't save RGB images as GIFs - convert to INDEXED\nor GRAY first.\n"
 argument_list|)
 expr_stmt|;
@@ -6973,10 +6966,8 @@ operator|!
 name|outfile
 condition|)
 block|{
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
 literal|"GIF: can't open %s\n"
 argument_list|,
 name|filename
@@ -7023,10 +7014,8 @@ argument_list|(
 literal|256
 argument_list|)
 expr_stmt|;
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
 literal|"GIF: Too many colours?\n"
 argument_list|)
 expr_stmt|;
@@ -9253,7 +9242,7 @@ literal|8
 expr_stmt|;
 else|else
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: too many colors: %d\n"
 argument_list|,
@@ -10565,7 +10554,7 @@ operator|<
 literal|1
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: warning: no comment given - comment block not written.\n"
 argument_list|)
@@ -12017,7 +12006,7 @@ DECL|function|writeerr ()
 name|writeerr
 parameter_list|()
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF: error writing output file\n"
 argument_list|)
@@ -12412,7 +12401,7 @@ operator|>
 literal|240
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"GIF save: Your comment string is too long.\n"
 argument_list|)
@@ -12452,7 +12441,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* printf("COMMENT: %s\n",globalcomment); */
+comment|/* g_print ("COMMENT: %s\n",globalcomment); */
 block|}
 end_function
 

@@ -194,6 +194,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|console_messages
+name|int
+name|console_messages
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|prog_name
 name|char
 modifier|*
@@ -382,6 +389,10 @@ operator|=
 name|TRUE
 expr_stmt|;
 name|use_debug_handler
+operator|=
+name|FALSE
+expr_stmt|;
+name|console_messages
 operator|=
 name|FALSE
 expr_stmt|;
@@ -748,6 +759,27 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|argv
+index|[
+name|i
+index|]
+argument_list|,
+literal|"--console-messages"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|console_messages
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 comment|/*  *    ANYTHING ELSE starting with a '-' is an error.  */
 elseif|else
 if|if
@@ -848,6 +880,11 @@ expr_stmt|;
 name|g_print
 argument_list|(
 literal|"  --no-xshm              Do not use the X Shared Memory extension.\n"
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"  --console-messages     Display warnings to console instead of a dialog box.\n"
 argument_list|)
 expr_stmt|;
 name|g_print

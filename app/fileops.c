@@ -1538,7 +1538,7 @@ operator|)
 operator|)
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"load handler \"%s\" does not take the standard load handler args"
 argument_list|,
@@ -1623,7 +1623,7 @@ operator|!
 name|file_proc
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"attempt to register non-existant load handler \"%s\""
 argument_list|,
@@ -1805,7 +1805,7 @@ operator|)
 operator|)
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"save handler \"%s\" does not take the standard save handler args"
 argument_list|,
@@ -1879,7 +1879,7 @@ operator|!
 name|file_proc
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"attempt to register non-existant save handler \"%s\""
 argument_list|,

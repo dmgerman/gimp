@@ -4179,11 +4179,7 @@ break|break;
 case|case
 name|GDK_DELETE
 case|:
-name|g_warning
-argument_list|(
-literal|"test"
-argument_list|)
-expr_stmt|;
+comment|/* g_warning ("test"); */
 break|break;
 default|default:
 break|break;

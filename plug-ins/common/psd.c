@@ -114,7 +114,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b29743c0103
+DECL|enum|__anon29229cc30103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -433,7 +433,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2b29743c0208
+DECL|struct|__anon29229cc30208
 specifier|static
 struct|struct
 block|{
@@ -1615,7 +1615,7 @@ name|INDEXED
 operator|)
 return|;
 default|default:
-name|printf
+name|g_message
 argument_list|(
 literal|"PSD: Error: Can't convert PSD imagetype to GIMP imagetype\n"
 argument_list|)
@@ -1671,7 +1671,7 @@ name|RGB
 operator|)
 return|;
 default|default:
-name|printf
+name|g_message
 argument_list|(
 literal|"PSD: Error: Can't convert PSD mode to GIMP base imagetype\n"
 argument_list|)
@@ -2846,7 +2846,7 @@ operator|>
 name|MAX_CHANNELS
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"\nPSD: Sorry - this image has too many channels.  Tell Adam!\n"
 argument_list|)
@@ -3032,7 +3032,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"PSD: Error - layer blend signature is incorrect. :-(\n"
 argument_list|)
@@ -3800,7 +3800,7 @@ operator|>
 name|MAX_LAYERS
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
 literal|"\nPSD: Sorry - this image has too many layers.  Tell Adam!\n"
 argument_list|)
@@ -4265,7 +4265,7 @@ block|}
 break|break;
 default|default:
 comment|/* *unknown* */
-name|printf
+name|g_message
 argument_list|(
 literal|"*** Unknown compression type in channel.\n"
 argument_list|)

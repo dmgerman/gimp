@@ -4580,7 +4580,7 @@ name|layersD
 operator|->
 name|layer_widgets
 condition|)
-name|g_warning
+name|g_message
 argument_list|(
 literal|"layersD->layer_widgets not empty!"
 argument_list|)

@@ -259,7 +259,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b329a5b0108
+DECL|struct|__anon2ba709610108
 block|{
 DECL|member|raw
 name|gint
@@ -275,7 +275,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b329a5b0208
+DECL|struct|__anon2ba709610208
 block|{
 DECL|member|run
 name|gint
@@ -3765,10 +3765,8 @@ operator|-
 literal|1
 condition|)
 block|{
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
 literal|"pnm: can't open \"%s\"\n"
 argument_list|,
 name|filename

@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf5a28c0103
+DECL|enum|__anon2973ef330103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -4085,7 +4085,7 @@ operator|!=
 name|b2
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"replace_pixels only works on commensurate pixel regions"
 argument_list|)

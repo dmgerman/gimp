@@ -1403,7 +1403,7 @@ operator|.
 name|bytes
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"image depth change, unable to restore original image"
 argument_list|)

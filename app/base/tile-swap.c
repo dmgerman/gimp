@@ -1026,7 +1026,7 @@ operator|!
 name|swap_file
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"could not find swap file for tile"
 argument_list|)
@@ -1183,7 +1183,7 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"unable to open swap file...BAD THINGS WILL HAPPEN SOON"
 argument_list|)
@@ -1289,7 +1289,7 @@ break|break;
 case|case
 name|SWAP_COMPRESS
 case|:
-name|g_warning
+name|g_message
 argument_list|(
 literal|"tile_swap_default: SWAP_COMPRESS: UNFINISHED"
 argument_list|)
@@ -1377,7 +1377,7 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"unable to seek to tile location on disk: %d"
 argument_list|,
@@ -1461,7 +1461,7 @@ operator|<=
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"unable to read tile data from disk: %d ( %d ) bytes read"
 argument_list|,
@@ -1601,7 +1601,7 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"unable to seek to tile location on disk: %d"
 argument_list|,
@@ -1646,7 +1646,7 @@ operator|<=
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"unable to write tile data to disk: %d ( %d ) bytes written"
 argument_list|,

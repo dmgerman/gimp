@@ -839,7 +839,7 @@ operator|*
 name|ext
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"gz: no sensible extension, saving as gzip'd xcf\n"
 argument_list|)
@@ -958,7 +958,7 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"gz: fork failed: %s\n"
 argument_list|,
@@ -996,7 +996,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"gz: fopen failed: %s\n"
 argument_list|,
@@ -1031,7 +1031,7 @@ name|stdout
 argument_list|)
 argument_list|)
 condition|)
-name|g_warning
+name|g_message
 argument_list|(
 literal|"gz: dup2 failed: %s\n"
 argument_list|,
@@ -1055,7 +1055,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_warning
+name|g_message
 argument_list|(
 literal|"gz: exec failed: gzip: %s\n"
 argument_list|,
@@ -1099,7 +1099,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"gz: gzip exited abnormally on file %s\n"
 argument_list|,
@@ -1172,7 +1172,7 @@ operator|*
 name|ext
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"gz: no sensible extension, attempting to load with file magic\n"
 argument_list|)
@@ -1221,7 +1221,7 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"gz: fork failed: %s\n"
 argument_list|,
@@ -1264,7 +1264,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"gz: fopen failed: %s\n"
 argument_list|,
@@ -1299,7 +1299,7 @@ name|stdout
 argument_list|)
 argument_list|)
 condition|)
-name|g_warning
+name|g_message
 argument_list|(
 literal|"gz: dup2 failed: %s\n"
 argument_list|,
@@ -1323,7 +1323,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_warning
+name|g_message
 argument_list|(
 literal|"gz: exec failed: gunzip: %s\n"
 argument_list|,
@@ -1368,7 +1368,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"gz: gzip exited abnormally on file %s\n"
 argument_list|,

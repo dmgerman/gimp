@@ -501,7 +501,7 @@ literal|'/'
 argument_list|)
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"url: can't open URL without an extension\n"
 argument_list|)
@@ -552,7 +552,7 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"url: fork failed: %s\n"
 argument_list|,
@@ -590,7 +590,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_warning
+name|g_message
 argument_list|(
 literal|"url: exec failed: wget: %s\n"
 argument_list|,
@@ -634,7 +634,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"url: wget exited abnormally on URL %s\n"
 argument_list|,

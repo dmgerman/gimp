@@ -1708,9 +1708,9 @@ name|pd
 operator|->
 name|image_map
 condition|)
-name|g_warning
+name|g_message
 argument_list|(
-literal|"No image map"
+literal|"posterize_preview(): No image map"
 argument_list|)
 expr_stmt|;
 name|active_tool

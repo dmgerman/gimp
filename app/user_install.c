@@ -197,7 +197,7 @@ literal|0
 index|]
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"No home directory--skipping GIMP user installation."
 argument_list|)

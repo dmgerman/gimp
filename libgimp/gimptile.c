@@ -591,7 +591,7 @@ operator|!=
 name|GP_TILE_DATA
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"unexpected message: %d\n"
 argument_list|,
@@ -675,7 +675,7 @@ name|bpp
 operator|)
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"received tile info did not match computed tile info\n"
 argument_list|)
@@ -864,7 +864,7 @@ operator|!=
 name|GP_TILE_DATA
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"unexpected message: %d\n"
 argument_list|,
@@ -1020,7 +1020,7 @@ operator|!=
 name|GP_TILE_ACK
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"unexpected message: %d\n"
 argument_list|,

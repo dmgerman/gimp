@@ -116,6 +116,20 @@ name|be_verbose
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|int
+name|use_debug_handler
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|int
+name|console_messages
+decl_stmt|;
+end_decl_stmt
+
 begin_endif
 endif|#
 directive|endif
