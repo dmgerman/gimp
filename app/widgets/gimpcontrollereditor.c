@@ -21,6 +21,13 @@ directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
+begin_define
+DECL|macro|GIMP_ENABLE_CONTROLLER_UNDER_CONSTRUCTION
+define|#
+directive|define
+name|GIMP_ENABLE_CONTROLLER_UNDER_CONSTRUCTION
+end_define
+
 begin_include
 include|#
 directive|include
@@ -83,7 +90,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fb51920103
+DECL|enum|__anon29f3dcfd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -96,7 +103,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fb51920203
+DECL|enum|__anon29f3dcfd0203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -915,7 +922,7 @@ name|table
 operator|=
 name|gtk_table_new
 argument_list|(
-literal|1
+literal|2
 argument_list|,
 literal|2
 argument_list|,
@@ -996,6 +1003,42 @@ name|controller
 argument_list|)
 argument_list|,
 literal|"name"
+argument_list|)
+argument_list|,
+literal|1
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_table_attach_aligned
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|row
+operator|++
+argument_list|,
+name|_
+argument_list|(
+literal|"State:"
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.5
+argument_list|,
+name|gimp_prop_label_new
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|controller
+argument_list|)
+argument_list|,
+literal|"state"
 argument_list|)
 argument_list|,
 literal|1

@@ -16,6 +16,13 @@ directive|define
 name|__GIMP_CONTROLLER_WHEEL_H__
 end_define
 
+begin_define
+DECL|macro|GIMP_ENABLE_CONTROLLER_UNDER_CONSTRUCTION
+define|#
+directive|define
+name|GIMP_ENABLE_CONTROLLER_UNDER_CONSTRUCTION
+end_define
+
 begin_include
 include|#
 directive|include

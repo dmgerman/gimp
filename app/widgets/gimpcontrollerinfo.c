@@ -27,6 +27,13 @@ directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
+begin_define
+DECL|macro|GIMP_ENABLE_CONTROLLER_UNDER_CONSTRUCTION
+define|#
+directive|define
+name|GIMP_ENABLE_CONTROLLER_UNDER_CONSTRUCTION
+end_define
+
 begin_include
 include|#
 directive|include
@@ -89,7 +96,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c075f8b0103
+DECL|enum|__anon2999af8c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +118,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c075f8b0203
+DECL|enum|__anon2999af8c0203
 block|{
 DECL|enumerator|EVENT_MAPPED
 name|EVENT_MAPPED

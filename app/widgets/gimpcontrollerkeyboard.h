@@ -6,7 +6,7 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_CONTROLLER_WHELL_H__
+name|__GIMP_CONTROLLER_KEYBOARD_H__
 end_ifndef
 
 begin_define
@@ -14,6 +14,13 @@ DECL|macro|__GIMP_CONTROLLER_KEYBOARD_H__
 define|#
 directive|define
 name|__GIMP_CONTROLLER_KEYBOARD_H__
+end_define
+
+begin_define
+DECL|macro|GIMP_ENABLE_CONTROLLER_UNDER_CONSTRUCTION
+define|#
+directive|define
+name|GIMP_ENABLE_CONTROLLER_UNDER_CONSTRUCTION
 end_define
 
 begin_include

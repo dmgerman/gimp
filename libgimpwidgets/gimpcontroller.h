@@ -6,6 +6,23 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
+name|GIMP_ENABLE_CONTROLLER_UNDER_CONSTRUCTION
+end_ifndef
+
+begin_error
+error|#
+directive|error
+error|GimpController is unstable API under construction
+end_error
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
 name|__GIMP_CONTROLLER_H__
 end_ifndef
 
@@ -27,7 +44,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baf84f10103
+DECL|enum|__anon2c286faa0103
 block|{
 DECL|enumerator|GIMP_CONTROLLER_EVENT_TRIGGER
 name|GIMP_CONTROLLER_EVENT_TRIGGER
@@ -257,6 +274,11 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
+DECL|member|state
+name|gchar
+modifier|*
+name|state
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -275,6 +297,12 @@ specifier|const
 name|gchar
 modifier|*
 name|name
+decl_stmt|;
+DECL|member|help_domain
+specifier|const
+name|gchar
+modifier|*
+name|help_domain
 decl_stmt|;
 DECL|member|help_id
 specifier|const

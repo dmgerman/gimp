@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -785,6 +791,12 @@ argument_list|)
 expr_stmt|;
 name|controller_class
 operator|->
+name|help_id
+operator|=
+name|GIMP_HELP_CONTROLLER_WHEEL
+expr_stmt|;
+name|controller_class
+operator|->
 name|get_n_events
 operator|=
 name|gimp_controller_wheel_get_n_events
@@ -863,7 +875,14 @@ literal|"name"
 argument_list|,
 name|_
 argument_list|(
-literal|"Main Mouse Wheel"
+literal|"Mouse Wheel Events"
+argument_list|)
+argument_list|,
+literal|"state"
+argument_list|,
+name|_
+argument_list|(
+literal|"Ready"
 argument_list|)
 argument_list|,
 name|NULL

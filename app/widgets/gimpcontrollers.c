@@ -27,6 +27,13 @@ directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
+begin_define
+DECL|macro|GIMP_ENABLE_CONTROLLER_UNDER_CONSTRUCTION
+define|#
+directive|define
+name|GIMP_ENABLE_CONTROLLER_UNDER_CONSTRUCTION
+end_define
+
 begin_include
 include|#
 directive|include
