@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*******************************************************************************    fractaltrace.c  -- This is a plug-in for the GIMP 1.0    Copyright (C) 1997  Hirotsuna Mizuno                       s1041150@u-aizu.ac.jp    This program is free software; you can redistribute it and/or modify it   under the terms of the GNU General Public License as published by the Free   Software Foundation; either version 2 of the License, or (at your option)   any later version.    This program is distributed in the hope that it will be useful, but WITHOUT   ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or   FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for   more details.    You should have received a copy of the GNU General Public License along with   this program; if not, write to the Free Software Foundation, Inc.,   59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *******************************************************************************/
+comment|/******************************************************************************    fractaltrace.c  -- This is a plug-in for the GIMP 1.0    Copyright (C) 1997  Hirotsuna Mizuno                       s1041150@u-aizu.ac.jp    This program is free software; you can redistribute it and/or modify it   under the terms of the GNU General Public License as published by the Free   Software Foundation; either version 2 of the License, or (at your option)   any later version.    This program is distributed in the hope that it will be useful, but WITHOUT   ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or   FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for   more details.    You should have received a copy of the GNU General Public License along with   this program; if not, write to the Free Software Foundation, Inc.,   59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  ******************************************************************************/
 end_comment
 
 begin_define
@@ -28,7 +28,7 @@ value|"plug-in-fractal-trace"
 end_define
 
 begin_comment
-comment|/******************************************************************************/
+comment|/*****************************************************************************/
 end_comment
 
 begin_include
@@ -224,7 +224,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2943092e0103
+DECL|enum|__anon274e8afe0103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -244,7 +244,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2943092e0208
+DECL|struct|__anon274e8afe0208
 block|{
 DECL|member|x1
 name|gdouble
@@ -450,7 +450,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2943092e0308
+DECL|struct|__anon274e8afe0308
 block|{
 DECL|member|x1
 name|gint
@@ -493,7 +493,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2943092e0408
+DECL|struct|__anon274e8afe0408
 block|{
 DECL|member|width
 name|gint
@@ -1048,7 +1048,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2943092e0508
+DECL|struct|__anon274e8afe0508
 block|{
 DECL|member|r
 name|guchar
@@ -2932,7 +2932,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2943092e0608
+DECL|struct|__anon274e8afe0608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -4064,7 +4064,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|dialog_show (void)
 name|dialog_show
 parameter_list|(
@@ -4094,10 +4094,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|abox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|pframe
 decl_stmt|;
 name|GtkObject
 modifier|*
@@ -4149,7 +4145,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -4159,7 +4155,7 @@ argument_list|(
 name|mainbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -4188,7 +4184,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4213,14 +4209,17 @@ name|hbox
 argument_list|)
 expr_stmt|;
 comment|/*  Preview  */
-name|frame
+name|abox
 operator|=
-name|gtk_frame_new
+name|gtk_alignment_new
 argument_list|(
-name|_
-argument_list|(
-literal|"Preview"
-argument_list|)
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4230,7 +4229,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-name|frame
+name|abox
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4241,48 +4240,10 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|abox
+argument_list|)
+expr_stmt|;
 name|frame
-argument_list|)
-expr_stmt|;
-name|abox
-operator|=
-name|gtk_alignment_new
-argument_list|(
-literal|0.5
-argument_list|,
-literal|0.5
-argument_list|,
-literal|0.0
-argument_list|,
-literal|0.0
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|abox
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|abox
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|abox
-argument_list|)
-expr_stmt|;
-name|pframe
 operator|=
 name|gtk_frame_new
 argument_list|(
@@ -4293,7 +4254,7 @@ name|gtk_frame_set_shadow_type
 argument_list|(
 name|GTK_FRAME
 argument_list|(
-name|pframe
+name|frame
 argument_list|)
 argument_list|,
 name|GTK_SHADOW_IN
@@ -4306,12 +4267,12 @@ argument_list|(
 name|abox
 argument_list|)
 argument_list|,
-name|pframe
+name|frame
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|pframe
+name|frame
 argument_list|)
 expr_stmt|;
 name|dialog_preview_init
@@ -4321,7 +4282,7 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|pframe
+name|frame
 argument_list|)
 argument_list|,
 name|preview
@@ -4424,7 +4385,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -4471,7 +4432,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -4481,17 +4442,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
