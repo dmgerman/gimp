@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Event history:  * V 0.90, PK, 28-Mar-97: Creation.  * V 0.91, PK, 03-Apr-97: Clip everything outside BoundingBox.  *             24-Apr-97: Multi page read support.  * V 1.00, PK, 30-Apr-97: PDF support.  * V 1.01, PK, 05-Oct-97: Parse rc-file.  * V 1.02, GW, 09-Oct-97: Antialiasing support.  *         PK, 11-Oct-97: No progress bars when running non-interactive.  *                        New procedure file_ps_load_setargs to set  *                        load-arguments non-interactively.  *                        If GS_OPTIONS are not set, use at least "-dSAFER"  * V 1.03, nn, 20-Dec-97: Initialize some variables  * V 1.04, PK, 20-Dec-97: Add Encapsulated PostScript output and preview  * V 1.05, PK, 21-Sep-98: Write b/w-images (indexed) using image-operator  * V 1.06, PK, 22-Dec-98: Fix problem with writing color PS files.  *                        Ghostview may hang when displaying the files.  * V 1.07, PK, 14-Sep-99: Add resolution to image  * V 1.08, PK, 16-Jan-2000: Add PostScript-Level 2 by Austin Donnelly  * V 1.09, PK, 15-Feb-2000: Force showpage on EPS-files  *                          Add "RunLength" compression  *                          Fix problem with "Level 2" toggle  * V 1.10, PK, 15-Mar-2000: For load EPSF, allow negative Bounding Box Values  *                          Save PS: dont start lines of image data with %%  *                          to prevent problems with stupid PostScript  *                          analyzer programs (Stanislav Brabec)  *                          Add BeginData/EndData comments  *                          Save PS: Set default rotation to 0  */
+comment|/* Event history:  * V 0.90, PK, 28-Mar-97: Creation.  * V 0.91, PK, 03-Apr-97: Clip everything outside BoundingBox.  *             24-Apr-97: Multi page read support.  * V 1.00, PK, 30-Apr-97: PDF support.  * V 1.01, PK, 05-Oct-97: Parse rc-file.  * V 1.02, GW, 09-Oct-97: Antialiasing support.  *         PK, 11-Oct-97: No progress bars when running non-interactive.  *                        New procedure file_ps_load_setargs to set  *                        load-arguments non-interactively.  *                        If GS_OPTIONS are not set, use at least "-dSAFER"  * V 1.03, nn, 20-Dec-97: Initialize some variables  * V 1.04, PK, 20-Dec-97: Add Encapsulated PostScript output and preview  * V 1.05, PK, 21-Sep-98: Write b/w-images (indexed) using image-operator  * V 1.06, PK, 22-Dec-98: Fix problem with writing color PS files.  *                        Ghostview may hang when displaying the files.  * V 1.07, PK, 14-Sep-99: Add resolution to image  * V 1.08, PK, 16-Jan-2000: Add PostScript-Level 2 by Austin Donnelly  * V 1.09, PK, 15-Feb-2000: Force showpage on EPS-files  *                          Add "RunLength" compression  *                          Fix problem with "Level 2" toggle  * V 1.10, PK, 15-Mar-2000: For load EPSF, allow negative Bounding Box Values  *                          Save PS: dont start lines of image data with %%  *                          to prevent problems with stupid PostScript  *                          analyzer programs (Stanislav Brabec)  *                          Add BeginData/EndData comments  *                          Save PS: Set default rotation to 0  * V 1.11, PK, 20-Aug-2000: Fix problem with BoundingBox recognition  *                          for Mac files.  *                          Fix problem with loop when reading not all  *                          images of a multi page file.  */
 end_comment
 
 begin_define
@@ -12,7 +12,7 @@ DECL|macro|VERSIO
 define|#
 directive|define
 name|VERSIO
-value|1.10
+value|1.11
 end_define
 
 begin_decl_stmt
@@ -22,7 +22,7 @@ name|char
 name|dversio
 index|[]
 init|=
-literal|"v1.10  15-Mar-2000"
+literal|"v1.11  20-Aug-2000"
 decl_stmt|;
 end_decl_stmt
 
@@ -33,7 +33,7 @@ name|char
 name|ident
 index|[]
 init|=
-literal|"@(#) GIMP PostScript/PDF file-plugin v1.10  15-Mar-2000"
+literal|"@(#) GIMP PostScript/PDF file-plugin v1.11  20-Aug-2000"
 decl_stmt|;
 end_decl_stmt
 
@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3fea130108
+DECL|struct|__anon298086a10108
 block|{
 DECL|member|resolution
 name|guint
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3fea130208
+DECL|struct|__anon298086a10208
 block|{
 DECL|member|run
 name|gint
@@ -252,7 +252,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3fea130308
+DECL|struct|__anon298086a10308
 block|{
 DECL|member|width
 DECL|member|height
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3fea130408
+DECL|struct|__anon298086a10408
 block|{
 DECL|member|run
 name|gint
@@ -854,7 +854,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3fea130508
+DECL|struct|__anon298086a10508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1725,7 +1725,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3fea130608
+DECL|struct|__anon298086a10608
 block|{
 DECL|member|eol
 name|long
@@ -5137,6 +5137,225 @@ block|}
 end_function
 
 begin_comment
+comment|/* A function like fgets, but treats single CR-character as line break. */
+end_comment
+
+begin_comment
+comment|/* As a line break the newline-character is returned. */
+end_comment
+
+begin_function
+DECL|function|psfgets (char * s,int size,FILE * stream)
+specifier|static
+name|char
+modifier|*
+name|psfgets
+parameter_list|(
+name|char
+modifier|*
+name|s
+parameter_list|,
+name|int
+name|size
+parameter_list|,
+name|FILE
+modifier|*
+name|stream
+parameter_list|)
+block|{
+name|int
+name|c
+decl_stmt|;
+name|char
+modifier|*
+name|sptr
+init|=
+name|s
+decl_stmt|;
+if|if
+condition|(
+name|size
+operator|<=
+literal|0
+condition|)
+return|return
+name|NULL
+return|;
+if|if
+condition|(
+name|size
+operator|==
+literal|1
+condition|)
+block|{
+operator|*
+name|s
+operator|=
+literal|'\0'
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
+name|c
+operator|=
+name|getc
+argument_list|(
+name|stream
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|c
+operator|==
+name|EOF
+condition|)
+return|return
+name|NULL
+return|;
+for|for
+control|(
+init|;
+condition|;
+control|)
+block|{
+comment|/* At this point we have space in sptr for at least two characters */
+if|if
+condition|(
+name|c
+operator|==
+literal|'\n'
+condition|)
+comment|/* Got end of line (UNIX line end) ? */
+block|{
+operator|*
+operator|(
+name|sptr
+operator|++
+operator|)
+operator|=
+literal|'\n'
+expr_stmt|;
+break|break;
+block|}
+elseif|else
+if|if
+condition|(
+name|c
+operator|==
+literal|'\r'
+condition|)
+comment|/* Got a carriage return. Check next charcater */
+block|{
+name|c
+operator|=
+name|getc
+argument_list|(
+name|stream
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|(
+name|c
+operator|==
+name|EOF
+operator|)
+operator|||
+operator|(
+name|c
+operator|==
+literal|'\n'
+operator|)
+condition|)
+comment|/* EOF or DOS line end ? */
+block|{
+operator|*
+operator|(
+name|sptr
+operator|++
+operator|)
+operator|=
+literal|'\n'
+expr_stmt|;
+comment|/* Return UNIX line end */
+break|break;
+block|}
+else|else
+comment|/* Single carriage return. Return UNIX line end. */
+block|{
+name|ungetc
+argument_list|(
+name|c
+argument_list|,
+name|stream
+argument_list|)
+expr_stmt|;
+comment|/* Save the extra character */
+operator|*
+operator|(
+name|sptr
+operator|++
+operator|)
+operator|=
+literal|'\n'
+expr_stmt|;
+break|break;
+block|}
+block|}
+else|else
+comment|/* no line end character */
+block|{
+operator|*
+operator|(
+name|sptr
+operator|++
+operator|)
+operator|=
+operator|(
+name|char
+operator|)
+name|c
+expr_stmt|;
+name|size
+operator|--
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|size
+operator|==
+literal|1
+condition|)
+break|break;
+comment|/* Only space for the nul-character ? */
+name|c
+operator|=
+name|getc
+argument_list|(
+name|stream
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|c
+operator|==
+name|EOF
+condition|)
+break|break;
+block|}
+operator|*
+name|sptr
+operator|=
+literal|'\0'
+expr_stmt|;
+return|return
+name|s
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/* Get the BoundingBox of a PostScript file. On success, 0 is returned. */
 end_comment
 
@@ -5219,7 +5438,7 @@ control|)
 block|{
 if|if
 condition|(
-name|fgets
+name|psfgets
 argument_list|(
 name|line
 argument_list|,
@@ -6418,6 +6637,18 @@ block|{
 ifndef|#
 directive|ifndef
 name|USE_REAL_OUTPUTFILE
+comment|/* Even if we dont want all images, we have to read the pipe until EOF. */
+comment|/* Otherwise the subprocess and therefore pclose() may not finish. */
+while|while
+condition|(
+name|getc
+argument_list|(
+name|ifp
+argument_list|)
+operator|!=
+name|EOF
+condition|)
+empty_stmt|;
 comment|/* Finish reading from pipe. */
 name|pclose
 argument_list|(
