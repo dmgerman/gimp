@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b72e41a0103
+DECL|enum|__anon275aad890103
 block|{
 DECL|enumerator|OPS_BUTTON_NORMAL
 name|OPS_BUTTON_NORMAL
@@ -54,16 +54,16 @@ name|xpm_data
 decl_stmt|;
 comment|/*  xpm data for the button  */
 DECL|member|callback
-name|GtkSignalFunc
+name|GCallback
 name|callback
 decl_stmt|;
 comment|/*  callback function        */
 DECL|member|ext_callbacks
-name|GtkSignalFunc
+name|GCallback
 modifier|*
 name|ext_callbacks
 decl_stmt|;
-comment|/*  callback functions when 				   *  modifiers are pressed    */
+comment|/*  callback functions when  *                                *  modifiers are pressed    */
 DECL|member|tooltip
 name|gchar
 modifier|*
