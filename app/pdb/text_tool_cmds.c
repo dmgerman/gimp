@@ -502,16 +502,6 @@ argument_list|,
 name|antialias
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|text_layer
-operator|==
-name|NULL
-condition|)
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
 name|g_free
 argument_list|(
 name|real_fontname
@@ -542,6 +532,8 @@ name|value
 operator|.
 name|pdb_int
 operator|=
+name|text_layer
+condition|?
 name|gimp_item_get_ID
 argument_list|(
 name|GIMP_ITEM
@@ -549,6 +541,9 @@ argument_list|(
 name|text_layer
 argument_list|)
 argument_list|)
+else|:
+operator|-
+literal|1
 expr_stmt|;
 return|return
 name|return_args
@@ -660,7 +655,7 @@ name|GIMP_PDB_LAYER
 block|,
 literal|"text_layer"
 block|,
-literal|"The new text layer"
+literal|"The new text layer or -1 if no layer was created."
 block|}
 block|}
 decl_stmt|;
@@ -1681,16 +1676,6 @@ argument_list|,
 name|antialias
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|text_layer
-operator|==
-name|NULL
-condition|)
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
 name|g_free
 argument_list|(
 name|real_fontname
@@ -1721,6 +1706,8 @@ name|value
 operator|.
 name|pdb_int
 operator|=
+name|text_layer
+condition|?
 name|gimp_item_get_ID
 argument_list|(
 name|GIMP_ITEM
@@ -1728,6 +1715,9 @@ argument_list|(
 name|text_layer
 argument_list|)
 argument_list|)
+else|:
+operator|-
+literal|1
 expr_stmt|;
 return|return
 name|return_args
@@ -1895,7 +1885,7 @@ name|GIMP_PDB_LAYER
 block|,
 literal|"text_layer"
 block|,
-literal|"The new text layer"
+literal|"The new text layer or -1 if no layer was created."
 block|}
 block|}
 decl_stmt|;
