@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293fccdf0103
+DECL|enum|__anon2958100b0103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
@@ -1908,7 +1908,7 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|gimage_get_foreground
+name|gimage_get_background
 argument_list|(
 name|gimage
 argument_list|,
