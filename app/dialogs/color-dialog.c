@@ -333,6 +333,11 @@ name|GtkWidget
 modifier|*
 name|arrow
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|role
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -423,6 +428,14 @@ name|wants_updates
 operator|=
 name|wants_updates
 expr_stmt|;
+name|role
+operator|=
+name|dialog_identifier
+condition|?
+name|dialog_identifier
+else|:
+literal|"gimp-color-selector"
+expr_stmt|;
 if|if
 condition|(
 name|desc
@@ -438,7 +451,7 @@ name|viewable
 argument_list|,
 name|title
 argument_list|,
-name|dialog_identifier
+name|role
 argument_list|,
 name|stock_id
 argument_list|,
@@ -476,7 +489,7 @@ name|gimp_dialog_new
 argument_list|(
 name|title
 argument_list|,
-name|dialog_identifier
+name|role
 argument_list|,
 name|parent
 argument_list|,
