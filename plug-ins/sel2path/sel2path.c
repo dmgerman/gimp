@@ -212,6 +212,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|gint
 name|gimp_selection_bounds
 parameter_list|(
@@ -236,6 +237,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|gint
 name|gimp_selection_is_empty
 parameter_list|(
@@ -245,6 +247,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
+name|gint
+name|gimp_selection_none
+parameter_list|(
+name|gint32
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|gint
 name|gimp_path_set_points
 parameter_list|(
@@ -2693,6 +2706,14 @@ argument_list|(
 name|olt
 argument_list|)
 expr_stmt|;
+name|gimp_selection_none
+argument_list|(
+name|image_ID
+argument_list|)
+expr_stmt|;
+name|gimp_displays_flush
+argument_list|()
+expr_stmt|;
 name|do_points
 argument_list|(
 name|splines
@@ -2707,6 +2728,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gint
 DECL|function|gimp_selection_bounds (gint32 image_ID,gint * has_sel,gint * x1,gint * y1,gint * x2,gint * y2)
 name|gimp_selection_bounds
@@ -2858,6 +2880,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gint
 DECL|function|gimp_path_set_points (gint32 image_ID,gchar * name,gint ptype,gint num_path_points,gdouble * point_pairs)
 name|gimp_path_set_points
@@ -2966,6 +2989,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gint
 DECL|function|gimp_selection_is_empty (gint32 image_ID)
 name|gimp_selection_is_empty
@@ -2989,6 +3013,85 @@ operator|=
 name|gimp_run_procedure
 argument_list|(
 literal|"gimp_selection_is_empty"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|PARAM_IMAGE
+argument_list|,
+name|image_ID
+argument_list|,
+name|PARAM_END
+argument_list|)
+expr_stmt|;
+name|result
+operator|=
+name|FALSE
+expr_stmt|;
+if|if
+condition|(
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|STATUS_SUCCESS
+condition|)
+block|{
+name|result
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+block|}
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|result
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gint
+DECL|function|gimp_selection_none (gint32 image_ID)
+name|gimp_selection_none
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|)
+block|{
+name|GParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gint
+name|result
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp_selection_none"
 argument_list|,
 operator|&
 name|nreturn_vals

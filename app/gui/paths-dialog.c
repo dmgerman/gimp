@@ -350,7 +350,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon27854b7d0108
+DECL|struct|__anon28944fc30108
 typedef|typedef
 struct|struct
 block|{
@@ -479,7 +479,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon27854b7d0208
+DECL|struct|__anon28944fc30208
 typedef|typedef
 struct|struct
 block|{
@@ -508,7 +508,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27854b7d0308
+DECL|struct|__anon28944fc30308
 typedef|typedef
 struct|struct
 block|{
@@ -527,7 +527,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27854b7d0408
+DECL|struct|__anon28944fc30408
 typedef|typedef
 struct|struct
 block|{
@@ -11676,6 +11676,10 @@ decl_stmt|;
 name|PATHP
 name|bzpath
 decl_stmt|;
+name|BezierSelect
+modifier|*
+name|bezier_sel
+decl_stmt|;
 name|gint
 name|pcount
 init|=
@@ -12034,18 +12038,18 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|bezier_sel
+operator|=
+name|path_to_beziersel
+argument_list|(
+name|bzpath
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|paths_dialog
 condition|)
 block|{
-name|gint
-name|tmprow
-decl_stmt|;
-name|BezierSelect
-modifier|*
-name|bezier_sel
-decl_stmt|;
 name|paths_dialog
 operator|->
 name|current_path_list
@@ -12073,21 +12077,6 @@ literal|0
 argument_list|)
 expr_stmt|;
 comment|/* Update the preview */
-name|bezier_sel
-operator|=
-name|path_to_beziersel
-argument_list|(
-name|bzpath
-argument_list|)
-expr_stmt|;
-name|tmprow
-operator|=
-name|paths_dialog
-operator|->
-name|current_path_list
-operator|->
-name|last_selected_row
-expr_stmt|;
 name|paths_dialog
 operator|->
 name|current_path_list
@@ -12100,25 +12089,6 @@ name|paths_update_preview
 argument_list|(
 name|bezier_sel
 argument_list|)
-expr_stmt|;
-name|beziersel_free
-argument_list|(
-name|bezier_sel
-argument_list|)
-expr_stmt|;
-name|paths_dialog
-operator|->
-name|current_path_list
-operator|->
-name|last_selected_row
-operator|=
-name|tmprow
-expr_stmt|;
-name|paths_dialog
-operator|->
-name|selected_row_num
-operator|=
-name|tmprow
 expr_stmt|;
 name|gtk_clist_select_row
 argument_list|(
@@ -12217,6 +12187,20 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|GDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
+comment|/* This is a little HACK.. we need to find a display        * to put the path image on.        */
+name|gdisp
+operator|=
+name|gdisplays_check_valid
+argument_list|(
+name|NULL
+argument_list|,
+name|gimage
+argument_list|)
+expr_stmt|;
 comment|/* Mark this path as selected */
 name|plist
 operator|->
@@ -12224,7 +12208,19 @@ name|last_selected_row
 operator|=
 literal|0
 expr_stmt|;
+name|bezier_paste_bezierselect_to_current
+argument_list|(
+name|gdisp
+argument_list|,
+name|bezier_sel
+argument_list|)
+expr_stmt|;
 block|}
+name|beziersel_free
+argument_list|(
+name|bezier_sel
+argument_list|)
+expr_stmt|;
 return|return
 name|TRUE
 return|;
