@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Animation Playback plug-in version 0.98.7  *  * (c) Adam D. Moss : 1997-2000 : adam@gimp.org : adam@foxbox.org  *  *  * This is part of the GIMP package and is released under the GNU  * Public License.  */
+comment|/*  * Animation Playback plug-in version 0.98.8  *  * (c) Adam D. Moss : 1997-2000 : adam@gimp.org : adam@foxbox.org  *  *  * This is part of the GIMP package and is released under the GNU  * Public License.  */
 end_comment
 
 begin_comment
-comment|/*  * REVISION HISTORY:  *  * 2000-06-05 : version 0.98.7  *              Fix old bug which could cause errors in evaluating the  *              final pixel of each composed layer.  *  * 2000-01-13 : version 0.98.6  *              Looser parsing of (XXXXX) layer-name tags  *  * 98.07.27 : version 0.98.5  *            UI tweaks, fix for pseudocolor displays w/gdkrgb.  *  * 98.07.20 : version 0.98.4  *            User interface improvements.  *  * 98.07.19 : version 0.98.2  *            Another speedup for some kinds of shaped animations.  *  * 98.07.19 : version 0.98.0  *            Adapted to use GDKRGB (from recent GTK>= 1.1) if  *            available - good speed and reliability improvement.  *            Plus some minor tweaks.  *  * 98.04.28 : version 0.94.2  *            Fixed a time-parsing bug.  *  * 98.04.05 : version 0.94.0  *            Improved performance and removed flicker when shaped.  *            Shaped mode also works with RGB* images now.  *            Fixed some longstanding potential visual debris.  *  * 98.04.04 : version 0.92.0  *            Improved responsiveness and performance for the new  *            shaped-animation mode.  Still some flicker.  *  * 98.04.02 : version 0.90.0  *            EXPERIMENTAL wackyness - try dragging the animation  *            out of the plugin dialog's preview box...  *            (only works on non-RGB* images for now)  *  * 98.03.16 : version 0.85.0  *            Implemented some more rare opaque/alpha combinations.  *  * 98.03.15 : version 0.84.0  *            Tried to clear up the GTK object/cast warnings.  Only  *            partially successful.  Could use some help.  *  * 97.12.11 : version 0.83.0  *            GTK's timer logic changed a little... adjusted  *            plugin to fit.  *  * 97.09.16 : version 0.81.7  *            Fixed progress bar's off-by-one problem with  *            the new timing.  Fixed erroneous black bars which  *            were sometimes visible when the first frame was  *            smaller than the image itself.  Made playback  *            controls inactive when image doesn't have multiple  *            frames.  Moved progress bar above control buttons,  *            it's less distracting there.  More cosmetic stuff.  *  * 97.09.15 : version 0.81.0  *            Now plays INDEXED and GRAY animations.  *  * 97.09.15 : version 0.75.0  *            Next frame is generated ahead of time - results  *            in more precise timing.  *  * 97.09.14 : version 0.70.0  *            Initial release.  RGB only.  */
+comment|/*  * REVISION HISTORY:  *  * 2000-08-30 : version 0.98.8  *              Default frame timing is now 100ms instead of 125ms.  *  * 2000-06-05 : version 0.98.7  *              Fix old bug which could cause errors in evaluating the  *              final pixel of each composed layer.  *  * 2000-01-13 : version 0.98.6  *              Looser parsing of (XXXXX) layer-name tags  *  * 98.07.27 : version 0.98.5  *            UI tweaks, fix for pseudocolor displays w/gdkrgb.  *  * 98.07.20 : version 0.98.4  *            User interface improvements.  *  * 98.07.19 : version 0.98.2  *            Another speedup for some kinds of shaped animations.  *  * 98.07.19 : version 0.98.0  *            Adapted to use GDKRGB (from recent GTK>= 1.1) if  *            available - good speed and reliability improvement.  *            Plus some minor tweaks.  *  * 98.04.28 : version 0.94.2  *            Fixed a time-parsing bug.  *  * 98.04.05 : version 0.94.0  *            Improved performance and removed flicker when shaped.  *            Shaped mode also works with RGB* images now.  *            Fixed some longstanding potential visual debris.  *  * 98.04.04 : version 0.92.0  *            Improved responsiveness and performance for the new  *            shaped-animation mode.  Still some flicker.  *  * 98.04.02 : version 0.90.0  *            EXPERIMENTAL wackyness - try dragging the animation  *            out of the plugin dialog's preview box...  *            (only works on non-RGB* images for now)  *  * 98.03.16 : version 0.85.0  *            Implemented some more rare opaque/alpha combinations.  *  * 98.03.15 : version 0.84.0  *            Tried to clear up the GTK object/cast warnings.  Only  *            partially successful.  Could use some help.  *  * 97.12.11 : version 0.83.0  *            GTK's timer logic changed a little... adjusted  *            plugin to fit.  *  * 97.09.16 : version 0.81.7  *            Fixed progress bar's off-by-one problem with  *            the new timing.  Fixed erroneous black bars which  *            were sometimes visible when the first frame was  *            smaller than the image itself.  Made playback  *            controls inactive when image doesn't have multiple  *            frames.  Moved progress bar above control buttons,  *            it's less distracting there.  More cosmetic stuff.  *  * 97.09.15 : version 0.81.0  *            Now plays INDEXED and GRAY animations.  *  * 97.09.15 : version 0.75.0  *            Next frame is generated ahead of time - results  *            in more precise timing.  *  * 97.09.14 : version 0.70.0  *            Initial release.  RGB only.  */
 end_comment
 
 begin_comment
@@ -189,7 +189,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2cd7c10103
+DECL|enum|__anon290de4060103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -7646,9 +7646,10 @@ literal|0
 condition|)
 name|duration
 operator|=
-literal|125
+literal|100
 expr_stmt|;
 comment|/* FIXME for default-if-not-said  */
+elseif|else
 if|if
 condition|(
 name|duration
@@ -7657,7 +7658,7 @@ literal|0
 condition|)
 name|duration
 operator|=
-literal|125
+literal|100
 expr_stmt|;
 comment|/* FIXME - 0-wait is nasty */
 return|return
