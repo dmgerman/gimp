@@ -119,7 +119,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/color-area.h"
+file|"gimptoolbox-color-area.h"
 end_include
 
 begin_include

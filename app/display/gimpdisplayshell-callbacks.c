@@ -3053,9 +3053,7 @@ block|{
 comment|/* Hide or show all dialogs */
 name|gimp_dialog_factories_toggle
 argument_list|(
-name|global_dialog_factory
-argument_list|,
-literal|"gimp:toolbox"
+name|global_toolbox_factory
 argument_list|)
 expr_stmt|;
 block|}

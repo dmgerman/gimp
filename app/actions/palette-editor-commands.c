@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"color-area.h"
+file|"widgets/gimptoolbox-color-area.h"
 end_include
 
 begin_include

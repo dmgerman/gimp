@@ -165,7 +165,7 @@ name|gimp_image_dock_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
-name|factory
+name|dialog_factory
 parameter_list|,
 name|GimpContainer
 modifier|*

@@ -6,21 +6,167 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__TOOLBOX_H__
+name|__GIMP_TOOLBOX_H__
 end_ifndef
 
 begin_define
-DECL|macro|__TOOLBOX_H__
+DECL|macro|__GIMP_TOOLBOX_H__
 define|#
 directive|define
-name|__TOOLBOX_H__
+name|__GIMP_TOOLBOX_H__
 end_define
+
+begin_include
+include|#
+directive|include
+file|"gimpdock.h"
+end_include
+
+begin_define
+DECL|macro|GIMP_TYPE_TOOLBOX
+define|#
+directive|define
+name|GIMP_TYPE_TOOLBOX
+value|(gimp_toolbox_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_TOOLBOX (obj)
+define|#
+directive|define
+name|GIMP_TOOLBOX
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_TOOLBOX, GimpToolbox))
+end_define
+
+begin_define
+DECL|macro|GIMP_TOOLBOX_CLASS (klass)
+define|#
+directive|define
+name|GIMP_TOOLBOX_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_TOOLBOX, GimpToolboxClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_TOOLBOX (obj)
+define|#
+directive|define
+name|GIMP_IS_TOOLBOX
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_TOOLBOX))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_TOOLBOX_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_TOOLBOX_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_TOOLBOX))
+end_define
+
+begin_define
+DECL|macro|GIMP_TOOLBOX_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_TOOLBOX_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_TOOLBOX, GimpToolboxClass))
+end_define
+
+begin_typedef
+DECL|typedef|GimpToolboxClass
+typedef|typedef
+name|struct
+name|_GimpToolboxClass
+name|GimpToolboxClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpToolbox
+struct|struct
+name|_GimpToolbox
+block|{
+DECL|member|parent_instance
+name|GimpDock
+name|parent_instance
+decl_stmt|;
+DECL|member|menu_bar
+name|GtkWidget
+modifier|*
+name|menu_bar
+decl_stmt|;
+DECL|member|wbox
+name|GtkWidget
+modifier|*
+name|wbox
+decl_stmt|;
+DECL|member|color_area
+name|GtkWidget
+modifier|*
+name|color_area
+decl_stmt|;
+DECL|member|indicator_area
+name|GtkWidget
+modifier|*
+name|indicator_area
+decl_stmt|;
+DECL|member|tool_rows
+name|gint
+name|tool_rows
+decl_stmt|;
+DECL|member|tool_columns
+name|gint
+name|tool_columns
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpToolboxClass
+struct|struct
+name|_GimpToolboxClass
+block|{
+DECL|member|parent_class
+name|GimpDockClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_decl_stmt
+name|GType
+name|gimp_toolbox_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|toolbox_create
+name|gimp_toolbox_new
 parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
@@ -34,7 +180,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __TOOLBOX_H__ */
+comment|/* __GIMP_TOOLBOX_H__ */
 end_comment
 
 end_unit

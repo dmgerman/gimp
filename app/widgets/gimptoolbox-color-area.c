@@ -57,7 +57,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"widgets-types.h"
 end_include
 
 begin_include
@@ -75,19 +75,35 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpdnd.h"
+file|"gimpdnd.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"color-area.h"
+file|"gimptoolbox.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"color-notebook.h"
+file|"gimptoolbox-color-area.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/gui-types.h"
+end_include
+
+begin_comment
+comment|/* temp hack */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"gui/color-notebook.h"
 end_include
 
 begin_ifdef
@@ -120,7 +136,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27cc3f650103
+DECL|enum|__anon294fb39c0103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -531,12 +547,12 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|color_area_create (GimpContext * context,gint width,gint height,GdkPixmap * default_pmap,GdkBitmap * default_msk,GdkPixmap * swap_pmap,GdkBitmap * swap_msk)
-name|color_area_create
+DECL|function|gimp_toolbox_color_area_create (GimpToolbox * toolbox,gint width,gint height,GdkPixmap * default_pmap,GdkBitmap * default_msk,GdkPixmap * swap_pmap,GdkBitmap * swap_msk)
+name|gimp_toolbox_color_area_create
 parameter_list|(
-name|GimpContext
+name|GimpToolbox
 modifier|*
-name|context
+name|toolbox
 parameter_list|,
 name|gint
 name|width
@@ -561,15 +577,28 @@ modifier|*
 name|swap_msk
 parameter_list|)
 block|{
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_CONTEXT
+name|GIMP_IS_TOOLBOX
 argument_list|(
-name|context
+name|toolbox
 argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|context
+operator|=
+name|GIMP_DOCK
+argument_list|(
+name|toolbox
+argument_list|)
+operator|->
+name|context
 expr_stmt|;
 name|color_area
 operator|=

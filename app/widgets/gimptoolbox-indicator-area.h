@@ -6,24 +6,24 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__INDICATOR_AREA_H__
+name|__GIMP_TOOLBOX_INDICATOR_AREA_H__
 end_ifndef
 
 begin_define
-DECL|macro|__INDICATOR_AREA_H__
+DECL|macro|__GIMP_TOOLBOX_INDICATOR_AREA_H__
 define|#
 directive|define
-name|__INDICATOR_AREA_H__
+name|__GIMP_TOOLBOX_INDICATOR_AREA_H__
 end_define
 
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|indicator_area_create
+name|gimp_toolbox_indicator_area_create
 parameter_list|(
-name|GimpContext
+name|GimpToolbox
 modifier|*
-name|context
+name|toolbox
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -34,7 +34,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __INDICATOR_AREA_H__  */
+comment|/*  __GIMP_TOOLBOX_INDICATOR_AREA_H__  */
 end_comment
 
 end_unit

@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"color-area.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"color-notebook.h"
 end_include
 
@@ -106,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5cff850103
+DECL|enum|__anon27d399000103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK

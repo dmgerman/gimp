@@ -210,6 +210,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimptoolbox.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimptoolbox-color-area.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpvectorslistview.h"
 end_include
 
@@ -235,12 +247,6 @@ begin_include
 include|#
 directive|include
 file|"channels-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"color-area.h"
 end_include
 
 begin_include
@@ -337,12 +343,6 @@ begin_include
 include|#
 directive|include
 file|"tool-options-dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"toolbox.h"
 end_include
 
 begin_include
@@ -714,35 +714,6 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_toolbox_get (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
-name|dialogs_toolbox_get
-parameter_list|(
-name|GimpDialogFactory
-modifier|*
-name|factory
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-name|gint
-name|preview_size
-parameter_list|)
-block|{
-return|return
-name|toolbox_create
-argument_list|(
-name|context
-operator|->
-name|gimp
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-name|GtkWidget
-modifier|*
 DECL|function|dialogs_device_status_get (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
 name|dialogs_device_status_get
 parameter_list|(
@@ -1042,6 +1013,38 @@ end_comment
 begin_comment
 comment|/***********/
 end_comment
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|dialogs_toolbox_get (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
+name|dialogs_toolbox_get
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|gint
+name|preview_size
+parameter_list|)
+block|{
+comment|/*  we pass "global_dock_factory", _not_ "global_toolbox_factory" to    *  the toolbox constructor, because the toolbox_factory has no    *  dockables registered    */
+return|return
+name|gimp_toolbox_new
+argument_list|(
+name|global_dock_factory
+argument_list|,
+name|context
+operator|->
+name|gimp
+argument_list|)
+return|;
+block|}
+end_function
 
 begin_function
 name|GtkWidget

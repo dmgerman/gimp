@@ -427,6 +427,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpToolbox
+typedef|typedef
+name|struct
+name|_GimpToolbox
+name|GimpToolbox
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpImageDock
 typedef|typedef
 name|struct

@@ -131,12 +131,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"color-area.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -146,7 +140,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d66a3a0103
+DECL|enum|__anon2c4c81640103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED

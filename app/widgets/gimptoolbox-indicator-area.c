@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"widgets-types.h"
 end_include
 
 begin_include
@@ -66,31 +66,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpdialogfactory.h"
+file|"gimpdialogfactory.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"widgets/gimpdnd.h"
+file|"gimpdnd.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"widgets/gimppreview.h"
+file|"gimppreview.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"dialogs.h"
+file|"gimptoolbox.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"indicator-area.h"
+file|"gimptoolbox-indicator-area.h"
 end_include
 
 begin_include
@@ -151,54 +151,29 @@ DECL|macro|CELL_PADDING
 comment|/*  How much between brush and pattern cells  */
 end_comment
 
-begin_comment
-comment|/*  Static variables  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|brush_preview
-specifier|static
-name|GtkWidget
-modifier|*
-name|brush_preview
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|pattern_preview
-specifier|static
-name|GtkWidget
-modifier|*
-name|pattern_preview
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|gradient_preview
-specifier|static
-name|GtkWidget
-modifier|*
-name|gradient_preview
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 specifier|static
 name|void
-DECL|function|brush_preview_clicked (GtkWidget * widget,gpointer data)
+DECL|function|brush_preview_clicked (GtkWidget * widget,GimpToolbox * toolbox)
 name|brush_preview_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
-name|data
+name|GimpToolbox
+modifier|*
+name|toolbox
 parameter_list|)
 block|{
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
-name|global_dock_factory
+name|GIMP_DOCK
+argument_list|(
+name|toolbox
+argument_list|)
+operator|->
+name|dialog_factory
 argument_list|,
 literal|"gimp:brush-grid"
 argument_list|,
@@ -254,20 +229,26 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|pattern_preview_clicked (GtkWidget * widget,gpointer data)
+DECL|function|pattern_preview_clicked (GtkWidget * widget,GimpToolbox * toolbox)
 name|pattern_preview_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
-name|data
+name|GimpToolbox
+modifier|*
+name|toolbox
 parameter_list|)
 block|{
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
-name|global_dock_factory
+name|GIMP_DOCK
+argument_list|(
+name|toolbox
+argument_list|)
+operator|->
+name|dialog_factory
 argument_list|,
 literal|"gimp:pattern-grid"
 argument_list|,
@@ -323,20 +304,26 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_preview_clicked (GtkWidget * widget,gpointer data)
+DECL|function|gradient_preview_clicked (GtkWidget * widget,GimpToolbox * toolbox)
 name|gradient_preview_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
-name|data
+name|GimpToolbox
+modifier|*
+name|toolbox
 parameter_list|)
 block|{
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
-name|global_dock_factory
+name|GIMP_DOCK
+argument_list|(
+name|toolbox
+argument_list|)
+operator|->
+name|dialog_factory
 argument_list|,
 literal|"gimp:gradient-list"
 argument_list|,
@@ -389,30 +376,59 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  public functions  */
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|indicator_area_create (GimpContext * context)
-name|indicator_area_create
+DECL|function|gimp_toolbox_indicator_area_create (GimpToolbox * toolbox)
+name|gimp_toolbox_indicator_area_create
 parameter_list|(
+name|GimpToolbox
+modifier|*
+name|toolbox
+parameter_list|)
+block|{
 name|GimpContext
 modifier|*
 name|context
-parameter_list|)
-block|{
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|indicator_table
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|brush_preview
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|pattern_preview
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|gradient_preview
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_CONTEXT
+name|GIMP_IS_TOOLBOX
 argument_list|(
-name|context
+name|toolbox
 argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|context
+operator|=
+name|GIMP_DOCK
+argument_list|(
+name|toolbox
+argument_list|)
+operator|->
+name|context
 expr_stmt|;
 name|indicator_table
 operator|=
@@ -543,7 +559,7 @@ argument_list|(
 name|brush_preview_clicked
 argument_list|)
 argument_list|,
-name|NULL
+name|toolbox
 argument_list|)
 expr_stmt|;
 name|gimp_gtk_drag_dest_set_by_type
@@ -666,7 +682,7 @@ argument_list|(
 name|pattern_preview_clicked
 argument_list|)
 argument_list|,
-name|NULL
+name|toolbox
 argument_list|)
 expr_stmt|;
 name|gimp_gtk_drag_dest_set_by_type
@@ -789,7 +805,7 @@ argument_list|(
 name|gradient_preview_clicked
 argument_list|)
 argument_list|,
-name|NULL
+name|toolbox
 argument_list|)
 expr_stmt|;
 name|gimp_gtk_drag_dest_set_by_type

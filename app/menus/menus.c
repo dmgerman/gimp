@@ -3391,12 +3391,12 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_create_toplevel_cmd_callback
+name|dialogs_show_toolbox_cmd_callback
 block|,
 literal|0
 block|}
 block|,
-literal|"gimp:toolbox"
+name|NULL
 block|,
 literal|"toolbox/toolbox.html"
 block|,
@@ -6099,7 +6099,7 @@ block|}
 block|,
 name|SEPARATOR
 argument_list|(
-literal|"/---"
+literal|"/image-menu-separator"
 argument_list|)
 block|,
 block|{

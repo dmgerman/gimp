@@ -547,11 +547,6 @@ parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|toolbox_factory
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|toolbox_identifier
 parameter_list|)
 function_decl|;
 end_function_decl

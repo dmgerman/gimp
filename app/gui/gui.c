@@ -144,6 +144,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialogs-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"error-console-dialog.h"
 end_include
 
@@ -933,16 +939,6 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_factory_dialog_new
-argument_list|(
-name|global_dialog_factory
-argument_list|,
-literal|"gimp:toolbox"
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
 name|color_select_init
 argument_list|()
 expr_stmt|;
@@ -963,6 +959,9 @@ name|session_restore
 argument_list|(
 name|gimp
 argument_list|)
+expr_stmt|;
+name|dialogs_show_toolbox
+argument_list|()
 expr_stmt|;
 block|}
 end_function
@@ -1977,15 +1976,8 @@ operator|==
 literal|1
 condition|)
 block|{
-name|gimp_dialog_factory_dialog_raise
-argument_list|(
-name|global_dialog_factory
-argument_list|,
-literal|"gimp:toolbox"
-argument_list|,
-operator|-
-literal|1
-argument_list|)
+name|dialogs_show_toolbox
+argument_list|()
 expr_stmt|;
 block|}
 block|}

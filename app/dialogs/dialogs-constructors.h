@@ -23,25 +23,6 @@ end_comment
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|dialogs_toolbox_get
-parameter_list|(
-name|GimpDialogFactory
-modifier|*
-name|factory
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-name|gint
-name|preview_size
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GtkWidget
-modifier|*
 name|dialogs_device_status_get
 parameter_list|(
 name|GimpDialogFactory
@@ -173,8 +154,27 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  docks& dockables  */
+comment|/*  docks  */
 end_comment
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|dialogs_toolbox_get
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|gint
+name|preview_size
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|GtkWidget
@@ -194,6 +194,10 @@ name|preview_size
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  dockables  */
+end_comment
 
 begin_function_decl
 name|GtkWidget
