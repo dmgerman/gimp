@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<sys/types.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<sys/stat.h>
 end_include
 
@@ -468,7 +474,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2a2253cd0108
+DECL|struct|__anon2c6fdc2c0108
 typedef|typedef
 struct|struct
 block|{
