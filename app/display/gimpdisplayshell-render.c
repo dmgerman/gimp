@@ -1486,9 +1486,7 @@ block|{
 name|GimpColorDisplay
 modifier|*
 name|filter
-decl_stmt|;
-name|filter
-operator|=
+init|=
 operator|(
 name|GimpColorDisplay
 operator|*
@@ -1496,7 +1494,7 @@ operator|)
 name|list
 operator|->
 name|data
-expr_stmt|;
+decl_stmt|;
 name|gimp_color_display_convert
 argument_list|(
 name|filter
@@ -1518,22 +1516,16 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  put it to the screen  */
-name|gdk_draw_rgb_image_dithalign
+name|gimp_canvas_draw_rgb
 argument_list|(
-name|shell
-operator|->
-name|canvas
-operator|->
-name|window
-argument_list|,
 name|GIMP_CANVAS
 argument_list|(
 name|shell
 operator|->
 name|canvas
 argument_list|)
-operator|->
-name|render_gc
+argument_list|,
+name|GIMP_CANVAS_STYLE_RENDER
 argument_list|,
 name|x
 operator|+
@@ -1550,8 +1542,6 @@ argument_list|,
 name|w
 argument_list|,
 name|h
-argument_list|,
-name|GDK_RGB_DITHER_MAX
 argument_list|,
 name|shell
 operator|->

@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c369bbf0103
+DECL|enum|__anon2afb17770103
 block|{
 DECL|enumerator|GIMP_HANDLE_SQUARE
 name|GIMP_HANDLE_SQUARE
@@ -134,43 +134,11 @@ modifier|*
 name|gdisp
 decl_stmt|;
 comment|/*  The display we are drawing to (may be                                *  a different one than tool->gdisp)                                */
-DECL|member|win
-name|GdkWindow
-modifier|*
-name|win
-decl_stmt|;
-comment|/*  Window to draw draw operation to       */
-DECL|member|gc
-name|GdkGC
-modifier|*
-name|gc
-decl_stmt|;
-comment|/*  Graphics context for draw functions    */
 DECL|member|paused_count
 name|gint
 name|paused_count
 decl_stmt|;
 comment|/*  count to keep track of multiple pauses */
-DECL|member|line_width
-name|gint
-name|line_width
-decl_stmt|;
-comment|/*  line attributes                        */
-DECL|member|line_style
-name|GdkLineStyle
-name|line_style
-decl_stmt|;
-comment|/**/
-DECL|member|cap_style
-name|GdkCapStyle
-name|cap_style
-decl_stmt|;
-comment|/**/
-DECL|member|join_style
-name|GdkJoinStyle
-name|join_style
-decl_stmt|;
-comment|/**/
 DECL|member|vectors
 name|GList
 modifier|*
