@@ -24,7 +24,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon279d03370103
+DECL|enum|__anon2bf749720103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -63,7 +63,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon279d03370203
+DECL|enum|__anon2bf749720203
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -565,21 +565,9 @@ parameter_list|,
 name|gdouble
 name|gradient_length
 parameter_list|,
-name|gdouble
+name|GimpRGB
 modifier|*
-name|r
-parameter_list|,
-name|gdouble
-modifier|*
-name|g
-parameter_list|,
-name|gdouble
-modifier|*
-name|b
-parameter_list|,
-name|gdouble
-modifier|*
-name|a
+name|color
 parameter_list|,
 name|GradientPaintMode
 name|mode

@@ -4912,7 +4912,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_get_color_from_gradient (PaintCore * paint_core,gdouble gradient_length,gdouble * r,gdouble * g,gdouble * b,gdouble * a,GradientPaintMode mode)
+DECL|function|paint_core_get_color_from_gradient (PaintCore * paint_core,gdouble gradient_length,GimpRGB * color,GradientPaintMode mode)
 name|paint_core_get_color_from_gradient
 parameter_list|(
 name|PaintCore
@@ -4922,21 +4922,9 @@ parameter_list|,
 name|gdouble
 name|gradient_length
 parameter_list|,
-name|gdouble
+name|GimpRGB
 modifier|*
-name|r
-parameter_list|,
-name|gdouble
-modifier|*
-name|g
-parameter_list|,
-name|gdouble
-modifier|*
-name|b
-parameter_list|,
-name|gdouble
-modifier|*
-name|a
+name|color
 parameter_list|,
 name|GradientPaintMode
 name|mode
@@ -5040,13 +5028,7 @@ argument_list|)
 argument_list|,
 name|y
 argument_list|,
-name|r
-argument_list|,
-name|g
-argument_list|,
-name|b
-argument_list|,
-name|a
+name|color
 argument_list|)
 expr_stmt|;
 block|}

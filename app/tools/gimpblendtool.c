@@ -400,7 +400,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c03e850108
+DECL|struct|__anon28d861f20108
 block|{
 DECL|member|offset
 name|gdouble
@@ -452,7 +452,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c03e850208
+DECL|struct|__anon28d861f20208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -6724,6 +6724,7 @@ name|blend_mode
 operator|==
 name|CUSTOM_MODE
 condition|)
+block|{
 name|gradient_get_color_at
 argument_list|(
 name|gimp_context_get_gradient
@@ -6733,27 +6734,10 @@ argument_list|)
 argument_list|,
 name|factor
 argument_list|,
-operator|&
 name|color
-operator|->
-name|r
-argument_list|,
-operator|&
-name|color
-operator|->
-name|g
-argument_list|,
-operator|&
-name|color
-operator|->
-name|b
-argument_list|,
-operator|&
-name|color
-operator|->
-name|a
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 block|{
 comment|/* Blend values */
