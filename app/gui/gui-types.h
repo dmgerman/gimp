@@ -40,15 +40,6 @@ name|InfoDialog
 typedef|;
 end_typedef
 
-begin_typedef
-DECL|typedef|NavigationDialog
-typedef|typedef
-name|struct
-name|_NavigationDialog
-name|NavigationDialog
-typedef|;
-end_typedef
-
 begin_endif
 endif|#
 directive|endif

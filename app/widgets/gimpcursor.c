@@ -1860,6 +1860,15 @@ name|cursor_type
 argument_list|)
 return|;
 block|}
+name|g_return_val_if_fail
+argument_list|(
+name|cursor_type
+operator|>=
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/*  allow the small tool cursor only with the standard mouse,    *  the small crosshair and the bad cursor    */
 if|if
 condition|(

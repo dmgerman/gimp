@@ -267,6 +267,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_navigation_preview_grab_pointer
+parameter_list|(
+name|GimpNavigationPreview
+modifier|*
+name|preview
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

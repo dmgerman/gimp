@@ -22,26 +22,6 @@ directive|include
 file|"core/gimpobject.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"tools/tools-types.h"
-end_include
-
-begin_comment
-comment|/* temp hack */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"tools/paint_options.h"
-end_include
-
-begin_comment
-comment|/* temp hack */
-end_comment
-
 begin_define
 DECL|macro|PAINT_CORE_SUBSAMPLE
 define|#
@@ -58,7 +38,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon292011cf0103
+DECL|enum|__anon2b3d581b0103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -97,7 +77,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon292011cf0203
+DECL|enum|__anon2b3d581b0203
 block|{
 comment|/*  Set for tools that don't mind if    *  the brush changes while painting.    */
 DECL|enumerator|CORE_HANDLES_CHANGING_BRUSH

@@ -33,18 +33,6 @@ directive|include
 file|"tools/tools-types.h"
 end_include
 
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "gui/gui-types.h"
-end_warning
-
-begin_include
-include|#
-directive|include
-file|"gui/gui-types.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -85,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"tools/tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/info-window.h"
 end_include
 
 begin_include
@@ -2154,12 +2136,6 @@ name|gdisp
 operator|->
 name|shell
 argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/*  update the gdisplay's info dialog  */
-name|info_window_update
-argument_list|(
-name|gdisp
 argument_list|)
 expr_stmt|;
 comment|/*  ensure the consistency of the tear-off menus  */

@@ -2935,7 +2935,7 @@ argument_list|,
 name|dialogs_set_indexed_palette_context_func
 argument_list|)
 expr_stmt|;
-name|dialogs_set_indexed_palette_context_func
+name|gimp_dockable_set_context
 argument_list|(
 name|GIMP_DOCKABLE
 argument_list|(

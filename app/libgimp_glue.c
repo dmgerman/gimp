@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"widgets/widgets-types.h"
 end_include
 
 begin_include
@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
+file|"widgets/gimphelp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimphelp.h"
+file|"app_procs.h"
 end_include
 
 begin_define

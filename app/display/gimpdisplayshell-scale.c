@@ -762,7 +762,7 @@ name|vruler
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|nav_dialog_update_window_marker
+name|nav_dialog_update
 argument_list|(
 name|shell
 operator|->
@@ -775,7 +775,7 @@ name|shell
 operator|->
 name|nav_popup
 condition|)
-name|nav_dialog_update_window_marker
+name|nav_dialog_update
 argument_list|(
 name|shell
 operator|->

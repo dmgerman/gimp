@@ -59,7 +59,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"widgets-types.h"
 end_include
 
 begin_include
@@ -374,7 +374,7 @@ name|gimprc
 operator|.
 name|help_browser
 operator|!=
-name|HELP_BROWSER_GIMP
+name|GIMP_HELP_BROWSER_GIMP
 condition|)
 name|idle_help
 operator|->
@@ -446,7 +446,7 @@ name|help_browser
 condition|)
 block|{
 case|case
-name|HELP_BROWSER_GIMP
+name|GIMP_HELP_BROWSER_GIMP
 case|:
 if|if
 condition|(
@@ -469,7 +469,7 @@ argument_list|)
 condition|)
 break|break;
 case|case
-name|HELP_BROWSER_NETSCAPE
+name|GIMP_HELP_BROWSER_NETSCAPE
 case|:
 name|gimp_help_netscape
 argument_list|(
@@ -567,7 +567,7 @@ name|gimprc
 operator|.
 name|help_browser
 operator|=
-name|HELP_BROWSER_NETSCAPE
+name|GIMP_HELP_BROWSER_NETSCAPE
 expr_stmt|;
 name|update
 operator|=
@@ -717,7 +717,7 @@ name|gimprc
 operator|.
 name|help_browser
 operator|!=
-name|HELP_BROWSER_NETSCAPE
+name|GIMP_HELP_BROWSER_NETSCAPE
 operator|)
 return|;
 block|}

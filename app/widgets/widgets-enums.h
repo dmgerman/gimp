@@ -25,6 +25,42 @@ comment|/*   * these enums that are registered with the type system  */
 end_comment
 
 begin_define
+DECL|macro|GIMP_TYPE_HELP_BROWSER_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_HELP_BROWSER_TYPE
+value|(gimp_help_browser_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_help_browser_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon27a411dd0103
+block|{
+DECL|enumerator|GIMP_HELP_BROWSER_GIMP
+name|GIMP_HELP_BROWSER_GIMP
+block|,
+comment|/*< desc="Internal">*/
+DECL|enumerator|GIMP_HELP_BROWSER_NETSCAPE
+name|GIMP_HELP_BROWSER_NETSCAPE
+comment|/*< desc="Netscape">*/
+DECL|typedef|GimpHelpBrowserType
+block|}
+name|GimpHelpBrowserType
+typedef|;
+end_typedef
+
+begin_define
 DECL|macro|GIMP_TYPE_ZOOM_TYPE
 define|#
 directive|define
@@ -45,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c95f8f00103
+DECL|enum|__anon27a411dd0203
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN
@@ -68,7 +104,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c95f8f00203
+DECL|enum|__anon27a411dd0303
 block|{
 DECL|enumerator|GIMP_VIEW_TYPE_GRID
 name|GIMP_VIEW_TYPE_GRID
@@ -85,7 +121,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c95f8f00303
+DECL|enum|__anon27a411dd0403
 block|{
 DECL|enumerator|GIMP_DROP_NONE
 name|GIMP_DROP_NONE
@@ -105,16 +141,13 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c95f8f00403
+DECL|enum|__anon27a411dd0503
 block|{
 DECL|enumerator|GIMP_MOUSE_CURSOR
 name|GIMP_MOUSE_CURSOR
 init|=
-operator|(
-name|GDK_LAST_CURSOR
-operator|+
-literal|2
-operator|)
+literal|1024
+comment|/* (GDK_LAST_CURSOR + 2) yes, this is insane */
 block|,
 DECL|enumerator|GIMP_CROSSHAIR_CURSOR
 name|GIMP_CROSSHAIR_CURSOR
@@ -143,7 +176,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip, proxy-resume>*/
-DECL|enum|__anon2c95f8f00503
+DECL|enum|__anon27a411dd0603
 block|{
 DECL|enumerator|GIMP_TOOL_CURSOR_NONE
 name|GIMP_TOOL_CURSOR_NONE
@@ -250,7 +283,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c95f8f00603
+DECL|enum|__anon27a411dd0703
 block|{
 DECL|enumerator|GIMP_CURSOR_MODIFIER_NONE
 name|GIMP_CURSOR_MODIFIER_NONE
@@ -300,7 +333,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip, proxy-skip>*/
-DECL|enum|__anon2c95f8f00703
+DECL|enum|__anon27a411dd0803
 block|{
 DECL|enumerator|GIMP_DEVICE_VALUE_MODE
 name|GIMP_DEVICE_VALUE_MODE

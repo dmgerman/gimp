@@ -1289,18 +1289,10 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|shell
-operator|->
-name|nav_dialog
-condition|)
-block|{
+comment|/*  free the nav_dialog unconditionally because nav_dialog_free(shell,NULL)    *  acts as notification for the global nav dialog    */
 name|nav_dialog_free
 argument_list|(
 name|shell
-operator|->
-name|gdisp
 argument_list|,
 name|shell
 operator|->
@@ -1313,7 +1305,6 @@ name|nav_dialog
 operator|=
 name|NULL
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|shell
@@ -1324,8 +1315,6 @@ block|{
 name|nav_dialog_free
 argument_list|(
 name|shell
-operator|->
-name|gdisp
 argument_list|,
 name|shell
 operator|->
@@ -2772,10 +2761,10 @@ literal|"button_press_event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|nav_popup_click_handler
+name|gimp_display_shell_nav_button_press
 argument_list|)
 argument_list|,
-name|gdisp
+name|shell
 argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data
@@ -6278,6 +6267,14 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+comment|/*  update the gdisplay's info dialog  */
+name|info_window_update
+argument_list|(
+name|shell
+operator|->
+name|gdisp
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|shell

@@ -176,12 +176,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimphelp.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -242,7 +236,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f99e000103
+DECL|enum|__anon2bcc87ae0103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -1192,7 +1186,7 @@ comment|/* info_window_follows_mouse */
 name|TRUE
 block|,
 comment|/* help_browser              */
-name|HELP_BROWSER_GIMP
+name|GIMP_HELP_BROWSER_GIMP
 block|,
 comment|/* cursor_mode               */
 name|GIMP_CURSOR_MODE_TOOL_ICON
@@ -10411,7 +10405,7 @@ operator|)
 name|val1p
 operator|)
 operator|=
-name|HELP_BROWSER_GIMP
+name|GIMP_HELP_BROWSER_GIMP
 expr_stmt|;
 elseif|else
 if|if
@@ -10434,7 +10428,7 @@ operator|)
 name|val1p
 operator|)
 operator|=
-name|HELP_BROWSER_NETSCAPE
+name|GIMP_HELP_BROWSER_NETSCAPE
 expr_stmt|;
 name|token
 operator|=
@@ -11984,7 +11978,7 @@ if|if
 condition|(
 name|browser
 operator|==
-name|HELP_BROWSER_NETSCAPE
+name|GIMP_HELP_BROWSER_NETSCAPE
 condition|)
 return|return
 name|g_strdup

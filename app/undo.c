@@ -36,13 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimptool/gimptooltypes.h"
+file|"tools/tools-types.h"
 end_include
 
 begin_include
@@ -165,16 +159,6 @@ directive|include
 file|"tools/gimpbycolorselecttool.h"
 end_include
 
-begin_comment
-comment|/*#include "tools/gimptool.h"*/
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"tools/gimpdrawtool.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -261,7 +245,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2794c83e0103
+DECL|enum|__anon2acf0d800103
 block|{
 DECL|enumerator|UNDO
 name|UNDO

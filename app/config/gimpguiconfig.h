@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"widgets/widgets-enums.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"config/gimpdisplayconfig.h"
 end_include
 
@@ -180,10 +186,9 @@ name|gboolean
 name|use_help
 decl_stmt|;
 DECL|member|help_browser
-name|gint
+name|GimpHelpBrowserType
 name|help_browser
 decl_stmt|;
-comment|/* FIXME: not yet a property */
 block|}
 struct|;
 end_struct

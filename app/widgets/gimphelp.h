@@ -16,19 +16,6 @@ directive|define
 name|__GIMP_HELP_H__
 end_define
 
-begin_enum
-enum|enum
-DECL|enum|__anon29dbfea70103
-block|{
-DECL|enumerator|HELP_BROWSER_GIMP
-name|HELP_BROWSER_GIMP
-block|,
-DECL|enumerator|HELP_BROWSER_NETSCAPE
-name|HELP_BROWSER_NETSCAPE
-block|}
-enum|;
-end_enum
-
 begin_comment
 comment|/*  the main help function  *  *  there should be no need to use it in the common case  */
 end_comment

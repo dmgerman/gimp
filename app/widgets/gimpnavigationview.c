@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3db9e10103
+DECL|enum|__anon2c7906fa0103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -1106,7 +1106,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|gimp_navigation_preview_grab_pointer (GimpNavigationPreview * nav_preview)
 name|gimp_navigation_preview_grab_pointer
@@ -1997,15 +1996,6 @@ name|preview
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|gimage
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
@@ -2105,13 +2095,6 @@ name|ratiox
 decl_stmt|,
 name|ratioy
 decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|nav_preview
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_NAVIGATION_PREVIEW
