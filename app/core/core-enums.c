@@ -3357,6 +3357,17 @@ literal|"layer-preserve-trans"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_TEXT_LAYER
+block|,
+name|N_
+argument_list|(
+literal|"Text"
+argument_list|)
+block|,
+literal|"text-layer"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_CHANNEL_ADD
 block|,
 name|N_

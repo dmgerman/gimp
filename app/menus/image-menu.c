@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"text/gimptextlayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -2722,6 +2728,31 @@ block|,
 name|NULL
 block|,
 name|GIMP_HELP_LAYER_DELETE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Discard _Text Information"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_text_discard_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_TOOL_TEXT
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_LAYER_TEXT_DISCARD
 block|,
 name|NULL
 block|}
@@ -5902,6 +5933,11 @@ name|alpha
 init|=
 name|FALSE
 decl_stmt|;
+name|gboolean
+name|text_layer
+init|=
+name|FALSE
+decl_stmt|;
 name|gint
 name|lind
 init|=
@@ -6102,6 +6138,22 @@ name|gimage
 argument_list|,
 name|layer
 argument_list|)
+expr_stmt|;
+name|text_layer
+operator|=
+operator|(
+name|GIMP_IS_TEXT_LAYER
+argument_list|(
+name|layer
+argument_list|)
+operator|&&
+name|GIMP_TEXT_LAYER
+argument_list|(
+name|layer
+argument_list|)
+operator|->
+name|text
+operator|)
 expr_stmt|;
 block|}
 name|lnum
@@ -7147,6 +7199,16 @@ argument_list|(
 literal|"/Layer/Delete Layer"
 argument_list|,
 name|lp
+operator|&&
+operator|!
+name|aux
+argument_list|)
+expr_stmt|;
+name|SET_VISIBLE
+argument_list|(
+literal|"/Layer/Discard Text Information"
+argument_list|,
+name|text_layer
 operator|&&
 operator|!
 name|aux

@@ -233,7 +233,7 @@ argument_list|,
 literal|"transformation"
 argument_list|)
 expr_stmt|;
-name|gimp_text_layer_render
+name|gimp_text_layer_flush
 argument_list|(
 name|GIMP_TEXT_LAYER
 argument_list|(
@@ -477,7 +477,7 @@ argument_list|,
 literal|"transformation"
 argument_list|)
 expr_stmt|;
-name|gimp_text_layer_render
+name|gimp_text_layer_flush
 argument_list|(
 name|GIMP_TEXT_LAYER
 argument_list|(
@@ -557,7 +557,7 @@ parameter_list|,
 name|gpointer
 name|progress_data
 parameter_list|)
-block|{    }
+block|{  }
 end_function
 
 end_unit

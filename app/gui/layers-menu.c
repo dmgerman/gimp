@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"text/gimptextlayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -345,6 +351,31 @@ block|,
 name|NULL
 block|,
 name|GIMP_HELP_LAYER_DELETE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/_Discard Text Information"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_text_discard_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_TOOL_TEXT
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_LAYER_TEXT_DISCARD
 block|,
 name|NULL
 block|}
@@ -708,6 +739,11 @@ name|next_alpha
 init|=
 name|FALSE
 decl_stmt|;
+name|gboolean
+name|text_layer
+init|=
+name|FALSE
+decl_stmt|;
 name|GList
 modifier|*
 name|next
@@ -881,6 +917,24 @@ name|next_alpha
 operator|=
 name|FALSE
 expr_stmt|;
+name|text_layer
+operator|=
+operator|(
+name|layer
+operator|&&
+name|GIMP_IS_TEXT_LAYER
+argument_list|(
+name|layer
+argument_list|)
+operator|&&
+name|GIMP_TEXT_LAYER
+argument_list|(
+name|layer
+argument_list|)
+operator|->
+name|text
+operator|)
+expr_stmt|;
 block|}
 DECL|macro|SET_SENSITIVE (menu,condition)
 define|#
@@ -893,6 +947,17 @@ name|condition
 parameter_list|)
 define|\
 value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
+DECL|macro|SET_VISIBLE (menu,condition)
+define|#
+directive|define
+name|SET_VISIBLE
+parameter_list|(
+name|menu
+parameter_list|,
+name|condition
+parameter_list|)
+define|\
+value|gimp_item_factory_set_visible (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Edit Layer Attributes..."
@@ -1026,6 +1091,16 @@ argument_list|(
 literal|"/Delete Layer"
 argument_list|,
 name|layer
+operator|&&
+operator|!
+name|ac
+argument_list|)
+expr_stmt|;
+name|SET_VISIBLE
+argument_list|(
+literal|"/Discard Text Information"
+argument_list|,
+name|text_layer
 operator|&&
 operator|!
 name|ac

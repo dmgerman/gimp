@@ -195,7 +195,18 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_text_layer_render
+name|gimp_text_layer_discard
+parameter_list|(
+name|GimpTextLayer
+modifier|*
+name|layer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_text_layer_flush
 parameter_list|(
 name|GimpTextLayer
 modifier|*

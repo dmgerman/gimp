@@ -785,6 +785,14 @@ value|"gimp-layer-delete"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_LAYER_TEXT_DISCARD
+define|#
+directive|define
+name|GIMP_HELP_LAYER_TEXT_DISCARD
+value|"gimp-layer-text-discard"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_LAYER_PREVIOUS
 define|#
 directive|define

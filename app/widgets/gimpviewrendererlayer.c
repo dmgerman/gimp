@@ -247,6 +247,15 @@ name|renderer
 operator|->
 name|viewable
 argument_list|)
+operator|&&
+name|GIMP_TEXT_LAYER
+argument_list|(
+name|renderer
+operator|->
+name|viewable
+argument_list|)
+operator|->
+name|text
 condition|)
 block|{
 name|stock_id
