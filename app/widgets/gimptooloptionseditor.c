@@ -713,22 +713,6 @@ name|options_vbox
 argument_list|)
 expr_stmt|;
 comment|/*  dnd stuff  */
-name|gtk_drag_dest_set
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|editor
-argument_list|)
-argument_list|,
-name|GTK_DEST_DEFAULT_ALL
-argument_list|,
-name|NULL
-argument_list|,
-literal|0
-argument_list|,
-name|GDK_ACTION_COPY
-argument_list|)
-expr_stmt|;
 name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|GTK_WIDGET
