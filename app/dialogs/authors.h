@@ -244,9 +244,9 @@ literal|"Tim Newsome"
 block|,
 literal|"Erik Nygren"
 block|,
-literal|"Tomas Ãgren"
-block|,
 literal|"Miles O'Neal"
+block|,
+literal|"David Odin "
 block|,
 literal|"Thom van Os"
 block|,

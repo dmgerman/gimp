@@ -924,11 +924,25 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+warning|#
+directive|warning
+warning|FIXME: remove this hack when GTK+-1.3.8 is released
+ifdef|#
+directive|ifdef
+name|gdk_core_pointer
+name|current_device
+operator|=
+name|gdk_core_pointer
+expr_stmt|;
+else|#
+directive|else
 name|current_device
 operator|=
 name|gdk_device_get_core_pointer
 argument_list|()
 expr_stmt|;
+endif|#
+directive|endif
 comment|/*  create device info structures for present devices */
 for|for
 control|(

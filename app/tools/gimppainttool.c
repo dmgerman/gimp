@@ -245,7 +245,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c8e5660103
+DECL|enum|__anon2c8884930103
 block|{
 DECL|enumerator|PAINT
 name|PAINT
@@ -6033,6 +6033,20 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
+warning|#
+directive|warning
+warning|FIXME: remove this hack when GTK+-1.3.8 is released
+ifdef|#
+directive|ifdef
+name|gdk_core_pointer
+if|if
+condition|(
+name|current_device
+operator|==
+name|gdk_core_pointer
+condition|)
+else|#
+directive|else
 if|if
 condition|(
 name|current_device
@@ -6040,6 +6054,8 @@ operator|==
 name|gdk_device_get_core_pointer
 argument_list|()
 condition|)
+endif|#
+directive|endif
 block|{
 operator|*
 name|width
@@ -7433,6 +7449,20 @@ name|MaskBuf
 modifier|*
 name|mask
 decl_stmt|;
+warning|#
+directive|warning
+warning|FIXME: remove this hack when GTK+-1.3.8 is released
+ifdef|#
+directive|ifdef
+name|gdk_core_pointer
+if|if
+condition|(
+name|current_device
+operator|==
+name|gdk_core_pointer
+condition|)
+else|#
+directive|else
 if|if
 condition|(
 name|current_device
@@ -7440,6 +7470,8 @@ operator|==
 name|gdk_device_get_core_pointer
 argument_list|()
 condition|)
+endif|#
+directive|endif
 name|mask
 operator|=
 name|paint_tool
