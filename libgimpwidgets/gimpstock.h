@@ -661,6 +661,16 @@ define|#
 directive|define
 name|GIMP_STOCK_GRID
 value|"gimp-grid"
+DECL|macro|GIMP_STOCK_PORTRAIT
+define|#
+directive|define
+name|GIMP_STOCK_PORTRAIT
+value|"gimp-portrait"
+DECL|macro|GIMP_STOCK_LANDSCAPE
+define|#
+directive|define
+name|GIMP_STOCK_LANDSCAPE
+value|"gimp-landscape"
 comment|/*  in dialog size:  */
 DECL|macro|GIMP_STOCK_ERROR
 define|#
