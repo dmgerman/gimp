@@ -545,6 +545,20 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_size_entry_set_activates_default
+parameter_list|(
+name|GimpSizeEntry
+modifier|*
+name|gse
+parameter_list|,
+name|gboolean
+name|setting
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_size_entry_get_help_widget
