@@ -528,6 +528,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|UndoType
+name|undo_get_undo_top_type
+parameter_list|(
+name|GImage
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* Not really appropriate here, since undo_history_new is not defined  * in undo.c, but it saves on having a full header file for just one  * function prototype. */
 end_comment
@@ -549,7 +559,7 @@ comment|/* Argument to undo_event signal emitted by gimages: */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a23483a0103
+DECL|enum|__anon2b88dd680103
 typedef|typedef
 enum|enum
 block|{

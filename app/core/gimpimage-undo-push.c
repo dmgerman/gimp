@@ -213,7 +213,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|enum|__anon276007e60103
+DECL|enum|__anon28b7c0dd0103
 typedef|typedef
 enum|enum
 block|{
@@ -2365,6 +2365,48 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* Return the type of the top undo action */
+end_comment
+
+begin_function
+specifier|static
+name|UndoType
+DECL|function|undo_get_topitem_type (GSList * stack)
+name|undo_get_topitem_type
+parameter_list|(
+name|GSList
+modifier|*
+name|stack
+parameter_list|)
+block|{
+name|Undo
+modifier|*
+name|object
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|stack
+condition|)
+return|return
+literal|0
+return|;
+name|object
+operator|=
+name|stack
+operator|->
+name|data
+expr_stmt|;
+comment|/* For group boundaries, the type of the boundary marker is the      * type of the whole group (but each individual action in the      * group retains its own type so layer/channel unrefs work      * correctly). */
+return|return
+name|object
+operator|->
+name|type
+return|;
+block|}
+end_function
+
 begin_function
 specifier|const
 name|char
@@ -2400,6 +2442,48 @@ name|NULL
 return|;
 return|return
 name|undo_get_topitem_name
+argument_list|(
+name|gimage
+operator|->
+name|undo_stack
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|UndoType
+DECL|function|undo_get_undo_top_type (GImage * gimage)
+name|undo_get_undo_top_type
+parameter_list|(
+name|GImage
+modifier|*
+name|gimage
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|gimage
+operator|!=
+name|NULL
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+comment|/* don't want to encourage undo while a group is open */
+if|if
+condition|(
+name|gimage
+operator|->
+name|pushing_undo_group
+operator|!=
+literal|0
+condition|)
+return|return
+literal|0
+return|;
+return|return
+name|undo_get_topitem_type
 argument_list|(
 name|gimage
 operator|->
@@ -11334,7 +11418,7 @@ comment|/* Layer re-position */
 end_comment
 
 begin_typedef
-DECL|struct|__anon276007e60208
+DECL|struct|__anon28b7c0dd0208
 typedef|typedef
 struct|struct
 block|{
@@ -11564,7 +11648,7 @@ comment|/* Layer name change */
 end_comment
 
 begin_typedef
-DECL|struct|__anon276007e60308
+DECL|struct|__anon28b7c0dd0308
 typedef|typedef
 struct|struct
 block|{

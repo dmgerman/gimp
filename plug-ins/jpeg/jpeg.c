@@ -279,7 +279,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c3e38b0108
+DECL|struct|__anon297628d30108
 block|{
 DECL|member|quality
 name|gdouble
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c3e38b0208
+DECL|struct|__anon297628d30208
 block|{
 DECL|member|run
 name|gint
@@ -341,7 +341,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c3e38b0308
+DECL|struct|__anon297628d30308
 block|{
 DECL|member|cinfo
 name|struct
@@ -1812,13 +1812,7 @@ block|}
 endif|#
 directive|endif
 comment|/* GIMP_HAVE_PARASITES */
-if|if
-condition|(
-operator|!
-name|export
-condition|)
-block|{
-comment|/* we start an undo_group and immediately freeze undo saving 		 so that we can avoid sucking up tile cache with our unneeded 		 preview steps. */
+comment|/* we start an undo_group and immediately freeze undo saving 	     so that we can avoid sucking up tile cache with our unneeded 	     preview steps. */
 name|gimp_undo_push_group_start
 argument_list|(
 name|image_ID
@@ -1829,7 +1823,6 @@ argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
-block|}
 comment|/* prepare for the preview */
 name|image_ID_global
 operator|=
@@ -1849,13 +1842,6 @@ operator|=
 name|save_dialog
 argument_list|()
 expr_stmt|;
-if|if
-condition|(
-name|export
-operator|!=
-name|EXPORT_EXPORT
-condition|)
-block|{
 comment|/* thaw undo saving and end the undo_group. */
 name|gimp_image_undo_thaw
 argument_list|(
@@ -1867,7 +1853,6 @@ argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 operator|!
