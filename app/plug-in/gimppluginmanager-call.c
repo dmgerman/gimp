@@ -311,6 +311,8 @@ name|gimp
 argument_list|,
 name|context
 argument_list|,
+name|progress
+argument_list|,
 name|proc_rec
 argument_list|,
 name|proc_rec
@@ -354,19 +356,6 @@ goto|goto
 name|done
 goto|;
 block|}
-if|if
-condition|(
-name|progress
-condition|)
-name|plug_in
-operator|->
-name|progress
-operator|=
-name|g_object_ref
-argument_list|(
-name|progress
-argument_list|)
-expr_stmt|;
 name|config
 operator|.
 name|version
@@ -1072,6 +1061,8 @@ argument_list|(
 name|plug_in
 argument_list|,
 name|context
+argument_list|,
+name|progress
 argument_list|,
 name|proc_rec
 argument_list|)

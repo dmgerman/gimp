@@ -26,6 +26,12 @@ begin_comment
 comment|/* pid_t  */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|"plug-in-proc-frame.h"
+end_include
+
 begin_define
 DECL|macro|WRITE_BUFFER_SIZE
 define|#
@@ -33,39 +39,6 @@ directive|define
 name|WRITE_BUFFER_SIZE
 value|512
 end_define
-
-begin_struct
-DECL|struct|_PlugInProcFrame
-struct|struct
-name|_PlugInProcFrame
-block|{
-DECL|member|context
-name|GimpContext
-modifier|*
-name|context
-decl_stmt|;
-DECL|member|proc_rec
-name|ProcRecord
-modifier|*
-name|proc_rec
-decl_stmt|;
-DECL|member|main_loop
-name|GMainLoop
-modifier|*
-name|main_loop
-decl_stmt|;
-DECL|member|return_vals
-name|Argument
-modifier|*
-name|return_vals
-decl_stmt|;
-DECL|member|n_return_vals
-name|gint
-name|n_return_vals
-decl_stmt|;
-block|}
-struct|;
-end_struct
 
 begin_struct
 DECL|struct|_PlugIn
@@ -187,21 +160,6 @@ name|GList
 modifier|*
 name|temp_proc_frames
 decl_stmt|;
-DECL|member|progress
-name|GimpProgress
-modifier|*
-name|progress
-decl_stmt|;
-comment|/*  Progress dialog                         */
-DECL|member|progress_created
-name|gboolean
-name|progress_created
-decl_stmt|;
-comment|/*  Was the progress created by the plug-in */
-DECL|member|progress_cancel_id
-name|gulong
-name|progress_cancel_id
-decl_stmt|;
 DECL|member|plug_in_def
 name|PlugInDef
 modifier|*
@@ -284,6 +242,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|ProcRecord
 modifier|*
@@ -381,6 +343,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|ProcRecord
 modifier|*

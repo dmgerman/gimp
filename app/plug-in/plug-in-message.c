@@ -1552,7 +1552,7 @@ name|proc_frame
 operator|->
 name|context
 argument_list|,
-name|plug_in
+name|proc_frame
 operator|->
 name|progress
 argument_list|,
