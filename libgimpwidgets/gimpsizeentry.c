@@ -66,7 +66,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd204270103
+DECL|enum|__anon295cafff0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -2467,7 +2467,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_get_value;  * @gse:   The sizeentry you want to know a value of.  * @field: The index of the filed you want to know the value of.  *  * Returns the value of field # @field of the #GimpSizeEntry.  *  * The @value returned is a distance or resolution  * in the #GimpUnit the user has selected in the #GimpSizeEntry's  * #GimpUnitMenu.  *  * NOTE: In most cases you won't be interested in this value because the  *       #GimpSizeEntry's purpose is to shield the programmer from unit  *       calculations. Use gimp_size_entry_get_refval() instead.  *  * Returns: The value of the chosen @field.  **/
+comment|/**  * gimp_size_entry_get_value;  * @gse:   The sizeentry you want to know a value of.  * @field: The index of the field you want to know the value of.  *  * Returns the value of field # @field of the #GimpSizeEntry.  *  * The @value returned is a distance or resolution  * in the #GimpUnit the user has selected in the #GimpSizeEntry's  * #GimpUnitMenu.  *  * NOTE: In most cases you won't be interested in this value because the  *       #GimpSizeEntry's purpose is to shield the programmer from unit  *       calculations. Use gimp_size_entry_get_refval() instead.  *  * Returns: The value of the chosen @field.  **/
 end_comment
 
 begin_function
@@ -4379,6 +4379,94 @@ operator|->
 name|value_spinbutton
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_size_entry_get_help_widget:  * @gse: a #GimpSizeEntry  * @field: the index of the widget you want to get a pointer to  *  * You shouldn't fiddle with the internals of a #GimpSizeEntry but  * if you want to set tooltips using gimp_help_set_help_data() you  * can use this function to get a pointer to the spinbuttons.  *  * Return value: a #GtkWidget pointer that you can attach a tooltip to.  **/
+end_comment
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|gimp_size_entry_get_help_widget (GimpSizeEntry * gse,gint field)
+name|gimp_size_entry_get_help_widget
+parameter_list|(
+name|GimpSizeEntry
+modifier|*
+name|gse
+parameter_list|,
+name|gint
+name|field
+parameter_list|)
+block|{
+name|GimpSizeEntryField
+modifier|*
+name|gsef
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_SIZE_ENTRY
+argument_list|(
+name|gse
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+operator|(
+name|field
+operator|>=
+literal|0
+operator|)
+operator|&&
+operator|(
+name|field
+operator|<
+name|gse
+operator|->
+name|number_of_fields
+operator|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gsef
+operator|=
+name|g_slist_nth_data
+argument_list|(
+name|gse
+operator|->
+name|fields
+argument_list|,
+name|field
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gsef
+condition|)
+return|return
+name|NULL
+return|;
+return|return
+operator|(
+name|gsef
+operator|->
+name|refval_spinbutton
+condition|?
+name|gsef
+operator|->
+name|refval_spinbutton
+else|:
+name|gsef
+operator|->
+name|value_spinbutton
+operator|)
+return|;
 block|}
 end_function
 
