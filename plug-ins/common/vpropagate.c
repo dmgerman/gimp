@@ -714,7 +714,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afa723f0108
+DECL|struct|__anon2743732d0108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -866,7 +866,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afa723f0208
+DECL|struct|__anon2743732d0208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1091,7 +1091,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afa723f0308
+DECL|struct|__anon2743732d0308
 block|{
 DECL|member|run
 name|gint
@@ -1868,7 +1868,7 @@ name|name
 argument_list|,
 name|DEFAULT_PLUG_IN_NAME
 argument_list|)
-operator|!=
+operator|==
 literal|0
 condition|)
 name|gimp_set_data
@@ -2943,7 +2943,7 @@ decl_stmt|;
 if|if
 condition|(
 name|y
-operator|==
+operator|<=
 literal|0
 condition|)
 name|gimp_pixel_rgn_get_row
@@ -2967,7 +2967,7 @@ elseif|else
 if|if
 condition|(
 name|y
-operator|==
+operator|>=
 name|pixel_rgn
 operator|->
 name|h
@@ -3946,7 +3946,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afa723f0408
+DECL|struct|__anon2743732d0408
 block|{
 DECL|member|min_modified
 name|gshort

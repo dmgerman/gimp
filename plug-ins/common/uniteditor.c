@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c83e3640103
+DECL|enum|__anon2aeb7c8c0103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -1452,10 +1452,6 @@ name|GtkListStore
 modifier|*
 name|list_store
 decl_stmt|;
-name|GtkTreeSelection
-modifier|*
-name|sel
-decl_stmt|;
 name|GtkTreeIter
 name|iter
 decl_stmt|;
@@ -1476,13 +1472,6 @@ name|gtk_tree_view_get_model
 argument_list|(
 name|tv
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|sel
-operator|=
-name|gtk_tree_view_get_selection
-argument_list|(
-name|tv
 argument_list|)
 expr_stmt|;
 name|gtk_list_store_clear
@@ -1649,7 +1638,10 @@ argument_list|)
 condition|)
 name|gtk_tree_selection_select_iter
 argument_list|(
-name|sel
+name|gtk_tree_view_get_selection
+argument_list|(
+name|tv
+argument_list|)
 argument_list|,
 operator|&
 name|iter
