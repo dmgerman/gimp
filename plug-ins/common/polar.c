@@ -4,6 +4,10 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
+comment|/* Version 1.0:  * This is the follow-up release.  It contains a few minor changes, the  * most major being that the first time I released the wrong version of  * the code, and this time the changes have been fixed.  I also added  * tooltips to the dialog.  *  * Feel free to email me if you have any comments or suggestions on this  * plugin.  *               --Daniel Dunbar  *                 ddunbar@diads.com  */
+end_comment
+
+begin_comment
 comment|/* Version .5:  * This is the first version publicly released, it will probably be the  * last also unless i can think of some features i want to add.  *  * This plug-in was created with loads of help from quartic (Frederico  * Mena Quintero), and would surely not have come about without it.  *  * The polar algorithms is copied from Marc Bless' polar plug-in for  * .54, many thanks to him also.  *   * If you can think of a neat addition to this plug-in, or any other  * info about it, please email me at ddunbar@diads.com.  *                                     - Daniel Dunbar  */
 end_comment
 
@@ -142,7 +146,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b1d0c710108
+DECL|struct|__anon2b9a68af0108
 typedef|typedef
 struct|struct
 block|{
@@ -155,15 +159,15 @@ name|gdouble
 name|angle
 decl_stmt|;
 DECL|member|backwards
-name|gint8
+name|gint
 name|backwards
 decl_stmt|;
 DECL|member|inverse
-name|gint8
+name|gint
 name|inverse
 decl_stmt|;
 DECL|member|polrec
-name|gint8
+name|gint
 name|polrec
 decl_stmt|;
 DECL|typedef|polarize_vals_t
@@ -173,7 +177,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b1d0c710208
+DECL|struct|__anon2b9a68af0208
 typedef|typedef
 struct|struct
 block|{
@@ -213,7 +217,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b1d0c710308
+DECL|struct|__anon2b9a68af0308
 typedef|typedef
 struct|struct
 block|{
@@ -572,7 +576,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|backwards_toggled
+name|polar_toggle_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -587,29 +591,20 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|top_toggled
+name|set_tooltip
 parameter_list|(
+name|GtkTooltips
+modifier|*
+name|tooltips
+parameter_list|,
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|pr_toggled
-parameter_list|(
-name|GtkWidget
+specifier|const
+name|char
 modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
+name|desc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -644,10 +639,10 @@ comment|/* PLUG_IN_INFO */
 end_comment
 
 begin_decl_stmt
-DECL|variable|wpvals
+DECL|variable|pcvals
 specifier|static
 name|polarize_vals_t
-name|wpvals
+name|pcvals
 init|=
 block|{
 literal|100.0
@@ -669,14 +664,14 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* wpvals */
+comment|/* pcvals */
 end_comment
 
 begin_decl_stmt
-DECL|variable|wpint
+DECL|variable|pcint
 specifier|static
 name|polarize_interface_t
-name|wpint
+name|pcint
 init|=
 block|{
 name|NULL
@@ -701,7 +696,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* wpint */
+comment|/* pcint */
 end_comment
 
 begin_decl_stmt
@@ -1323,7 +1318,7 @@ argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
 operator|&
-name|wpvals
+name|pcvals
 argument_list|)
 expr_stmt|;
 comment|/* Get information from the dialog */
@@ -1356,7 +1351,7 @@ operator|==
 name|STATUS_SUCCESS
 condition|)
 block|{
-name|wpvals
+name|pcvals
 operator|.
 name|circle
 operator|=
@@ -1369,7 +1364,7 @@ name|data
 operator|.
 name|d_float
 expr_stmt|;
-name|wpvals
+name|pcvals
 operator|.
 name|angle
 operator|=
@@ -1382,7 +1377,7 @@ name|data
 operator|.
 name|d_float
 expr_stmt|;
-name|wpvals
+name|pcvals
 operator|.
 name|backwards
 operator|=
@@ -1395,7 +1390,7 @@ name|data
 operator|.
 name|d_int8
 expr_stmt|;
-name|wpvals
+name|pcvals
 operator|.
 name|inverse
 operator|=
@@ -1408,7 +1403,7 @@ name|data
 operator|.
 name|d_int8
 expr_stmt|;
-name|wpvals
+name|pcvals
 operator|.
 name|polrec
 operator|=
@@ -1433,7 +1428,7 @@ argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
 operator|&
-name|wpvals
+name|pcvals
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1513,7 +1508,7 @@ argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
 operator|&
-name|wpvals
+name|pcvals
 argument_list|,
 sizeof|sizeof
 argument_list|(
@@ -2263,13 +2258,13 @@ literal|2.0
 expr_stmt|;
 name|circle
 operator|=
-name|wpvals
+name|pcvals
 operator|.
 name|circle
 expr_stmt|;
 name|angle
 operator|=
-name|wpvals
+name|pcvals
 operator|.
 name|angle
 expr_stmt|;
@@ -2286,7 +2281,7 @@ name|M_PI
 expr_stmt|;
 if|if
 condition|(
-name|wpvals
+name|pcvals
 operator|.
 name|polrec
 condition|)
@@ -2763,7 +2758,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|wpvals
+name|pcvals
 operator|.
 name|backwards
 condition|)
@@ -2812,7 +2807,7 @@ name|x1
 expr_stmt|;
 if|if
 condition|(
-name|wpvals
+name|pcvals
 operator|.
 name|inverse
 condition|)
@@ -2919,7 +2914,7 @@ else|else
 block|{
 if|if
 condition|(
-name|wpvals
+name|pcvals
 operator|.
 name|backwards
 condition|)
@@ -3183,7 +3178,7 @@ name|t
 expr_stmt|;
 if|if
 condition|(
-name|wpvals
+name|pcvals
 operator|.
 name|inverse
 condition|)
@@ -4176,7 +4171,7 @@ name|pixel_fetcher_t
 modifier|*
 name|pf
 decl_stmt|;
-name|wpint
+name|pcint
 operator|.
 name|check_row_0
 operator|=
@@ -4190,7 +4185,7 @@ name|guchar
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|wpint
+name|pcint
 operator|.
 name|check_row_1
 operator|=
@@ -4204,7 +4199,7 @@ name|guchar
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|wpint
+name|pcint
 operator|.
 name|image
 operator|=
@@ -4222,7 +4217,7 @@ name|guchar
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|wpint
+name|pcint
 operator|.
 name|dimage
 operator|=
@@ -4301,7 +4296,7 @@ argument_list|)
 expr_stmt|;
 name|p
 operator|=
-name|wpint
+name|pcint
 operator|.
 name|image
 expr_stmt|;
@@ -4349,7 +4344,7 @@ operator|&
 literal|1
 condition|)
 block|{
-name|wpint
+name|pcint
 operator|.
 name|check_row_0
 index|[
@@ -4358,7 +4353,7 @@ index|]
 operator|=
 name|CHECK_DARK
 expr_stmt|;
-name|wpint
+name|pcint
 operator|.
 name|check_row_1
 index|[
@@ -4370,7 +4365,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|wpint
+name|pcint
 operator|.
 name|check_row_0
 index|[
@@ -4379,7 +4374,7 @@ index|]
 operator|=
 name|CHECK_LIGHT
 expr_stmt|;
-name|wpint
+name|pcint
 operator|.
 name|check_row_1
 index|[
@@ -4571,6 +4566,15 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|hbox
+decl_stmt|;
+name|GtkTooltips
+modifier|*
+name|tips
+decl_stmt|;
+name|GdkColor
+name|tips_fg
+decl_stmt|,
+name|tips_bg
 decl_stmt|;
 name|gint
 name|argc
@@ -4799,6 +4803,83 @@ argument_list|(
 name|top_table
 argument_list|)
 expr_stmt|;
+comment|/* Initialize Tooltips */
+comment|/* use black as foreground: */
+name|tips
+operator|=
+name|gtk_tooltips_new
+argument_list|()
+expr_stmt|;
+name|tips_fg
+operator|.
+name|red
+operator|=
+literal|0
+expr_stmt|;
+name|tips_fg
+operator|.
+name|green
+operator|=
+literal|0
+expr_stmt|;
+name|tips_fg
+operator|.
+name|blue
+operator|=
+literal|0
+expr_stmt|;
+comment|/* postit yellow (khaki) as background: */
+name|gdk_color_alloc
+argument_list|(
+name|gtk_widget_get_colormap
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+operator|&
+name|tips_fg
+argument_list|)
+expr_stmt|;
+name|tips_bg
+operator|.
+name|red
+operator|=
+literal|61669
+expr_stmt|;
+name|tips_bg
+operator|.
+name|green
+operator|=
+literal|59113
+expr_stmt|;
+name|tips_bg
+operator|.
+name|blue
+operator|=
+literal|35979
+expr_stmt|;
+name|gdk_color_alloc
+argument_list|(
+name|gtk_widget_get_colormap
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+operator|&
+name|tips_bg
+argument_list|)
+expr_stmt|;
+name|gtk_tooltips_set_colors
+argument_list|(
+name|tips
+argument_list|,
+operator|&
+name|tips_bg
+argument_list|,
+operator|&
+name|tips_fg
+argument_list|)
+expr_stmt|;
 comment|/* Preview */
 name|frame
 operator|=
@@ -4848,7 +4929,7 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|wpint
+name|pcint
 operator|.
 name|preview
 operator|=
@@ -4861,7 +4942,7 @@ name|gtk_preview_size
 argument_list|(
 name|GTK_PREVIEW
 argument_list|(
-name|wpint
+name|pcint
 operator|.
 name|preview
 argument_list|)
@@ -4878,14 +4959,14 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-name|wpint
+name|pcint
 operator|.
 name|preview
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|wpint
+name|pcint
 operator|.
 name|preview
 argument_list|)
@@ -4957,7 +5038,7 @@ argument_list|,
 literal|0
 argument_list|,
 operator|&
-name|wpvals
+name|pcvals
 operator|.
 name|circle
 argument_list|,
@@ -4980,7 +5061,7 @@ argument_list|,
 literal|1
 argument_list|,
 operator|&
-name|wpvals
+name|pcvals
 operator|.
 name|angle
 argument_list|,
@@ -5029,7 +5110,7 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_toggle_button_new_with_label
+name|gtk_check_button_new_with_label
 argument_list|(
 literal|"Map Backwards"
 argument_list|)
@@ -5041,7 +5122,7 @@ argument_list|(
 name|toggle
 argument_list|)
 argument_list|,
-name|wpvals
+name|pcvals
 operator|.
 name|backwards
 argument_list|)
@@ -5058,9 +5139,12 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|backwards_toggled
+name|polar_toggle_callback
 argument_list|,
-name|NULL
+operator|&
+name|pcvals
+operator|.
+name|backwards
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5084,9 +5168,18 @@ argument_list|(
 name|toggle
 argument_list|)
 expr_stmt|;
+name|set_tooltip
+argument_list|(
+name|tips
+argument_list|,
+name|toggle
+argument_list|,
+literal|"If checked the mapping will begin at the right side, as opposed to beginning at the left."
+argument_list|)
+expr_stmt|;
 name|toggle
 operator|=
-name|gtk_toggle_button_new_with_label
+name|gtk_check_button_new_with_label
 argument_list|(
 literal|"Map from Top"
 argument_list|)
@@ -5098,7 +5191,7 @@ argument_list|(
 name|toggle
 argument_list|)
 argument_list|,
-name|wpvals
+name|pcvals
 operator|.
 name|inverse
 argument_list|)
@@ -5115,9 +5208,12 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|top_toggled
+name|polar_toggle_callback
 argument_list|,
-name|NULL
+operator|&
+name|pcvals
+operator|.
+name|inverse
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5141,9 +5237,18 @@ argument_list|(
 name|toggle
 argument_list|)
 expr_stmt|;
+name|set_tooltip
+argument_list|(
+name|tips
+argument_list|,
+name|toggle
+argument_list|,
+literal|"If unchecked the mapping will put the bottom row in the middle and the top row on the outside.  If checked it will be the opposite."
+argument_list|)
+expr_stmt|;
 name|toggle
 operator|=
-name|gtk_toggle_button_new_with_label
+name|gtk_check_button_new_with_label
 argument_list|(
 literal|"Polar to Rectangular"
 argument_list|)
@@ -5155,7 +5260,7 @@ argument_list|(
 name|toggle
 argument_list|)
 argument_list|,
-name|wpvals
+name|pcvals
 operator|.
 name|polrec
 argument_list|)
@@ -5172,9 +5277,12 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|pr_toggled
+name|polar_toggle_callback
 argument_list|,
-name|NULL
+operator|&
+name|pcvals
+operator|.
+name|polrec
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5196,6 +5304,15 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|toggle
+argument_list|)
+expr_stmt|;
+name|set_tooltip
+argument_list|(
+name|tips
+argument_list|,
+name|toggle
+argument_list|,
+literal|"If unchecked the image will be circularly mapped onto a rectangle.  If checked the image will be mapped onto a circle."
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -5350,39 +5467,47 @@ expr_stmt|;
 name|gtk_main
 argument_list|()
 expr_stmt|;
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|tips
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gdk_flush
 argument_list|()
 expr_stmt|;
 name|g_free
 argument_list|(
-name|wpint
+name|pcint
 operator|.
 name|check_row_0
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|wpint
+name|pcint
 operator|.
 name|check_row_1
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|wpint
+name|pcint
 operator|.
 name|image
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|wpint
+name|pcint
 operator|.
 name|dimage
 argument_list|)
 expr_stmt|;
 return|return
-name|wpint
+name|pcint
 operator|.
 name|run
 return|;
@@ -5615,11 +5740,11 @@ name|top
 expr_stmt|;
 name|p_ul
 operator|=
-name|wpint
+name|pcint
 operator|.
 name|dimage
 expr_stmt|;
-comment|/*	p_lr = wpint.dimage + 3 * (preview_width * preview_height - 1);*/
+comment|/*	p_lr = pcint.dimage + 3 * (preview_width * preview_height - 1);*/
 for|for
 control|(
 name|y
@@ -5650,14 +5775,14 @@ literal|1
 condition|)
 name|check_ul
 operator|=
-name|wpint
+name|pcint
 operator|.
 name|check_row_0
 expr_stmt|;
 else|else
 name|check_ul
 operator|=
-name|wpint
+name|pcint
 operator|.
 name|check_row_1
 expr_stmt|;
@@ -5765,7 +5890,7 @@ operator|)
 condition|)
 name|i
 operator|=
-name|wpint
+name|pcint
 operator|.
 name|image
 operator|+
@@ -5877,7 +6002,7 @@ block|}
 comment|/* for */
 name|p
 operator|=
-name|wpint
+name|pcint
 operator|.
 name|dimage
 expr_stmt|;
@@ -5899,7 +6024,7 @@ name|gtk_preview_draw_row
 argument_list|(
 name|GTK_PREVIEW
 argument_list|(
-name|wpint
+name|pcint
 operator|.
 name|preview
 argument_list|)
@@ -5923,7 +6048,7 @@ block|}
 comment|/* for */
 name|gtk_widget_draw
 argument_list|(
-name|wpint
+name|pcint
 operator|.
 name|preview
 argument_list|,
@@ -6535,7 +6660,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|wpint
+name|pcint
 operator|.
 name|run
 operator|=
@@ -6590,10 +6715,10 @@ comment|/* dialog_cancel_callback */
 end_comment
 
 begin_function
+DECL|function|polar_toggle_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
-DECL|function|backwards_toggled (GtkWidget * widget,gpointer data)
-name|backwards_toggled
+name|polar_toggle_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -6603,11 +6728,37 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|wpvals
-operator|.
-name|backwards
-operator|^=
-literal|1
+name|int
+modifier|*
+name|toggle_val
+decl_stmt|;
+name|toggle_val
+operator|=
+operator|(
+name|int
+operator|*
+operator|)
+name|data
+expr_stmt|;
+if|if
+condition|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|widget
+argument_list|)
+operator|->
+name|active
+condition|)
+operator|*
+name|toggle_val
+operator|=
+name|TRUE
+expr_stmt|;
+else|else
+operator|*
+name|toggle_val
+operator|=
+name|FALSE
 expr_stmt|;
 name|dialog_update_preview
 argument_list|()
@@ -6618,51 +6769,44 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|top_toggled (GtkWidget * widget,gpointer data)
-name|top_toggled
+DECL|function|set_tooltip (GtkTooltips * tooltips,GtkWidget * widget,const char * desc)
+name|set_tooltip
 parameter_list|(
+name|GtkTooltips
+modifier|*
+name|tooltips
+parameter_list|,
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|wpvals
-operator|.
-name|inverse
-operator|^=
-literal|1
-expr_stmt|;
-name|dialog_update_preview
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|pr_toggled (GtkWidget * widget,gpointer data)
-name|pr_toggled
-parameter_list|(
-name|GtkWidget
+specifier|const
+name|char
 modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
+name|desc
 parameter_list|)
 block|{
-name|wpvals
-operator|.
-name|polrec
-operator|^=
-literal|1
-expr_stmt|;
-name|dialog_update_preview
-argument_list|()
+if|if
+condition|(
+name|desc
+operator|&&
+name|desc
+index|[
+literal|0
+index|]
+condition|)
+name|gtk_tooltips_set_tips
+argument_list|(
+name|tooltips
+argument_list|,
+name|widget
+argument_list|,
+operator|(
+name|char
+operator|*
+operator|)
+name|desc
+argument_list|)
 expr_stmt|;
 block|}
 end_function
