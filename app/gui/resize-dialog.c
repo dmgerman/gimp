@@ -4101,7 +4101,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Interpolation Type:"
+literal|"Interpolation:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4153,7 +4153,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Nearest Neighbor (Fastest)"
+literal|"None (Fastest)"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER

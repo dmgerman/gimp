@@ -185,7 +185,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ffc6a40103
+DECL|enum|__anon29b6658c0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -12706,7 +12706,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Nearest Neighbor (Fastest)"
+literal|"None (Fastest)"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -12756,7 +12756,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Interpolation Type:"
+literal|"Default Interpolation:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -14196,7 +14196,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29ffc6a40208
+DECL|struct|__anon29b6658c0208
 block|{
 DECL|member|label
 name|gchar
@@ -14414,7 +14414,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29ffc6a40308
+DECL|struct|__anon29b6658c0308
 block|{
 DECL|member|tree_label
 name|gchar
