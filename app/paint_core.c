@@ -370,53 +370,11 @@ name|MaskBuf
 modifier|*
 name|kernel_brushes
 index|[
-literal|4
+literal|5
 index|]
 index|[
-literal|4
+literal|5
 index|]
-init|=
-block|{
-block|{
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -464,10 +422,10 @@ specifier|static
 name|int
 name|subsample
 index|[
-literal|4
+literal|5
 index|]
 index|[
-literal|4
+literal|5
 index|]
 index|[
 literal|9
@@ -476,6 +434,128 @@ init|=
 block|{
 block|{
 block|{
+literal|64
+block|,
+literal|64
+block|,
+literal|0
+block|,
+literal|64
+block|,
+literal|64
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|, }
+block|,
+block|{
+literal|32
+block|,
+literal|96
+block|,
+literal|0
+block|,
+literal|32
+block|,
+literal|96
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|, }
+block|,
+block|{
+literal|0
+block|,
+literal|128
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|128
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|, }
+block|,
+block|{
+literal|0
+block|,
+literal|96
+block|,
+literal|32
+block|,
+literal|0
+block|,
+literal|96
+block|,
+literal|32
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|, }
+block|,
+block|{
+literal|0
+block|,
+literal|64
+block|,
+literal|64
+block|,
+literal|0
+block|,
+literal|64
+block|,
+literal|64
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|, }
+block|, 	}
+block|,
+block|{
+block|{
+literal|32
+block|,
+literal|32
+block|,
+literal|0
+block|,
+literal|96
+block|,
+literal|96
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|, }
+block|,
+block|{
 literal|16
 block|,
 literal|48
@@ -493,7 +573,7 @@ block|,
 literal|0
 block|,
 literal|0
-block|}
+block|, }
 block|,
 block|{
 literal|0
@@ -513,7 +593,7 @@ block|,
 literal|0
 block|,
 literal|0
-block|}
+block|, }
 block|,
 block|{
 literal|0
@@ -533,7 +613,7 @@ block|,
 literal|0
 block|,
 literal|0
-block|}
+block|, }
 block|,
 block|{
 literal|0
@@ -553,10 +633,30 @@ block|,
 literal|0
 block|,
 literal|0
-block|}
-block|,   }
+block|, }
+block|, 	}
 block|,
 block|{
+block|{
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|128
+block|,
+literal|128
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|, }
+block|,
 block|{
 literal|0
 block|,
@@ -575,7 +675,7 @@ block|,
 literal|0
 block|,
 literal|0
-block|}
+block|, }
 block|,
 block|{
 literal|0
@@ -595,7 +695,7 @@ block|,
 literal|0
 block|,
 literal|0
-block|}
+block|, }
 block|,
 block|{
 literal|0
@@ -615,7 +715,7 @@ block|,
 literal|0
 block|,
 literal|0
-block|}
+block|, }
 block|,
 block|{
 literal|0
@@ -635,10 +735,30 @@ block|,
 literal|0
 block|,
 literal|0
-block|}
-block|,   }
+block|, }
+block|, 	}
 block|,
 block|{
+block|{
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|96
+block|,
+literal|96
+block|,
+literal|0
+block|,
+literal|32
+block|,
+literal|32
+block|,
+literal|0
+block|, }
+block|,
 block|{
 literal|0
 block|,
@@ -657,7 +777,7 @@ block|,
 literal|48
 block|,
 literal|0
-block|}
+block|, }
 block|,
 block|{
 literal|0
@@ -677,7 +797,7 @@ block|,
 literal|64
 block|,
 literal|0
-block|}
+block|, }
 block|,
 block|{
 literal|0
@@ -697,7 +817,7 @@ block|,
 literal|48
 block|,
 literal|16
-block|}
+block|, }
 block|,
 block|{
 literal|0
@@ -717,10 +837,30 @@ block|,
 literal|32
 block|,
 literal|32
-block|}
-block|,   }
+block|, }
+block|, 	}
 block|,
 block|{
+block|{
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|64
+block|,
+literal|64
+block|,
+literal|0
+block|,
+literal|64
+block|,
+literal|64
+block|,
+literal|0
+block|, }
+block|,
 block|{
 literal|0
 block|,
@@ -739,7 +879,7 @@ block|,
 literal|96
 block|,
 literal|0
-block|}
+block|, }
 block|,
 block|{
 literal|0
@@ -759,7 +899,7 @@ block|,
 literal|128
 block|,
 literal|0
-block|}
+block|, }
 block|,
 block|{
 literal|0
@@ -779,7 +919,7 @@ block|,
 literal|96
 block|,
 literal|32
-block|}
+block|, }
 block|,
 block|{
 literal|0
@@ -799,8 +939,8 @@ block|,
 literal|64
 block|,
 literal|64
-block|}
-block|,   }
+block|, }
+block|, 	}
 block|, }
 decl_stmt|;
 end_decl_stmt
@@ -3526,12 +3666,12 @@ name|left
 operator|=
 name|x
 operator|-
-operator|(
-operator|(
-name|int
-operator|)
+name|floor
+argument_list|(
 name|x
-operator|)
+argument_list|)
+operator|+
+literal|0.125
 expr_stmt|;
 name|index1
 operator|=
@@ -3543,18 +3683,6 @@ name|left
 operator|*
 literal|4
 argument_list|)
-expr_stmt|;
-name|index1
-operator|=
-operator|(
-name|index1
-operator|<
-literal|0
-operator|)
-condition|?
-literal|0
-else|:
-name|index1
 expr_stmt|;
 name|y
 operator|+=
@@ -3574,12 +3702,12 @@ name|left
 operator|=
 name|y
 operator|-
-operator|(
-operator|(
-name|int
-operator|)
+name|floor
+argument_list|(
 name|y
-operator|)
+argument_list|)
+operator|+
+literal|0.125
 expr_stmt|;
 name|index2
 operator|=
@@ -3591,18 +3719,6 @@ name|left
 operator|*
 literal|4
 argument_list|)
-expr_stmt|;
-name|index2
-operator|=
-operator|(
-name|index2
-operator|<
-literal|0
-operator|)
-condition|?
-literal|0
-else|:
-name|index2
 expr_stmt|;
 name|kernel
 operator|=
@@ -3654,7 +3770,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|4
+literal|5
 condition|;
 name|i
 operator|++
@@ -3667,7 +3783,7 @@ literal|0
 init|;
 name|j
 operator|<
-literal|4
+literal|5
 condition|;
 name|j
 operator|++

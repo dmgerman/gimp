@@ -2419,7 +2419,7 @@ DECL|macro|ERASE_MODE
 define|#
 directive|define
 name|ERASE_MODE
-value|20
+value|15
 end_define
 
 begin_define
@@ -2427,7 +2427,7 @@ DECL|macro|REPLACE_MODE
 define|#
 directive|define
 name|REPLACE_MODE
-value|21
+value|16
 end_define
 
 begin_comment
