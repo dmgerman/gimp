@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gdisplayF.h"
+file|<gdisplayF.h>
 end_include
 
 begin_function_decl
