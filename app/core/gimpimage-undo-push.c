@@ -7381,19 +7381,6 @@ argument_list|(
 name|TextUndo
 argument_list|)
 expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"gimp_image_undo_push_text_layer (%s)\n"
-argument_list|,
-name|pspec
-condition|?
-name|pspec
-operator|->
-name|name
-else|:
-name|NULL
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|pspec
