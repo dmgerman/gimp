@@ -87,7 +87,7 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
-comment|/*  #define GIMP_THUMB_DEBUG   */
+comment|/*  #define GIMP_THUMB_DEBUG  */
 end_comment
 
 begin_if
@@ -211,7 +211,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c42706b0103
+DECL|enum|__anon295a05440103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2136,6 +2136,9 @@ case|case
 name|GIMP_THUMB_STATE_OLD
 case|:
 case|case
+name|GIMP_THUMB_STATE_FAILED
+case|:
+case|case
 name|GIMP_THUMB_STATE_OK
 case|:
 name|g_return_if_fail
@@ -2204,7 +2207,15 @@ name|filename
 condition|)
 name|state
 operator|=
+operator|(
+name|size
+operator|>
+name|GIMP_THUMB_SIZE_FAIL
+condition|?
 name|GIMP_THUMB_STATE_EXISTS
+else|:
+name|GIMP_THUMB_STATE_FAILED
+operator|)
 expr_stmt|;
 name|thumbnail
 operator|->
@@ -3100,15 +3111,11 @@ if|if
 condition|(
 name|success
 condition|)
-name|g_object_set
+name|gimp_thumbnail_update_thumb
 argument_list|(
 name|thumbnail
 argument_list|,
-literal|"thumb-state"
-argument_list|,
-name|GIMP_THUMB_STATE_OK
-argument_list|,
-name|NULL
+name|size
 argument_list|)
 expr_stmt|;
 else|else
@@ -3407,15 +3414,11 @@ if|if
 condition|(
 name|success
 condition|)
-name|g_object_set
+name|gimp_thumbnail_update_thumb
 argument_list|(
 name|thumbnail
 argument_list|,
-literal|"thumb-state"
-argument_list|,
-name|GIMP_THUMB_STATE_FAILED
-argument_list|,
-name|NULL
+name|GIMP_THUMB_SIZE_NORMAL
 argument_list|)
 expr_stmt|;
 else|else
