@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295a7fc20103
+DECL|enum|__anon2c7772a20103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -2117,14 +2117,21 @@ name|type
 operator|==
 name|GDK_BUTTON_PRESS
 condition|)
-name|gimp_image_set_component_active
-argument_list|(
+block|{
+name|GimpImage
+modifier|*
+name|image
+init|=
 name|GIMP_IMAGE_EDITOR
 argument_list|(
 name|editor
 argument_list|)
 operator|->
 name|gimage
+decl_stmt|;
+name|gimp_image_set_component_active
+argument_list|(
+name|image
 argument_list|,
 name|channel
 argument_list|,
@@ -2132,6 +2139,12 @@ operator|!
 name|active
 argument_list|)
 expr_stmt|;
+name|gimp_image_flush
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+block|}
 break|break;
 case|case
 literal|2
