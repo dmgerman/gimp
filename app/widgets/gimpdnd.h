@@ -18,7 +18,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon287b76280103
+DECL|enum|__anon2b7777aa0103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_URI_LIST
 name|GIMP_DND_TYPE_URI_LIST
@@ -71,7 +71,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287b76280203
+DECL|enum|__anon2b7777aa0203
 block|{
 DECL|enumerator|GIMP_DROP_NONE
 name|GIMP_DROP_NONE
@@ -455,6 +455,18 @@ name|widget
 parameter_list|,
 name|GtkType
 name|type
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpViewable
+modifier|*
+name|gimp_dnd_get_drag_data
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|)
 function_decl|;
 end_function_decl

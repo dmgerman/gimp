@@ -399,6 +399,24 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpListItem
+typedef|typedef
+name|struct
+name|_GimpListItem
+name|GimpListItem
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpDrawableListItem
+typedef|typedef
+name|struct
+name|_GimpDrawableListItem
+name|GimpDrawableListItem
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|HistogramWidget
 typedef|typedef
 name|struct
