@@ -7250,7 +7250,7 @@ modifier|*
 name|filesel
 parameter_list|)
 block|{
-name|gtk_widget_hide
+name|gimp_dialog_hide
 argument_list|(
 name|filesel
 argument_list|)

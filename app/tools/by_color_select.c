@@ -3444,7 +3444,7 @@ literal|"unmap_event"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gtk_widget_hide
+name|gimp_dialog_hide
 argument_list|)
 argument_list|,
 operator|(
@@ -4369,16 +4369,7 @@ operator|*
 operator|)
 name|data
 expr_stmt|;
-if|if
-condition|(
-name|GTK_WIDGET_VISIBLE
-argument_list|(
-name|bcd
-operator|->
-name|shell
-argument_list|)
-condition|)
-name|gtk_widget_hide
+name|gimp_dialog_hide
 argument_list|(
 name|bcd
 operator|->

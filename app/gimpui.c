@@ -650,5 +650,47 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*    * A workaround for what I think is a GTK+ bug:  *  If a dialog is hidden using gtk_widget_hide(),  *  and was iconified before, it is still present   *  in the window_list and can be deiconified by  *  the user later. All subsequent calls to   *  gtk_widget_hide() will then fail since the state  *  of the widget is still INVISIBLE.  *  Calling gdk_window_withdraw() seems to solve this.  *                                         --Sven  */
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_dialog_hide (GtkWidget * dialog)
+name|gimp_dialog_hide
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|dialog
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|dialog
+operator|!=
+name|NULL
+operator|&&
+operator|!
+name|GTK_WIDGET_NO_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_hide
+argument_list|(
+name|dialog
+argument_list|)
+expr_stmt|;
+name|gdk_window_withdraw
+argument_list|(
+name|dialog
+operator|->
+name|window
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 end_unit
 
