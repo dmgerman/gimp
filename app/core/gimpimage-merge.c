@@ -301,6 +301,11 @@ argument_list|,
 name|merge_list
 argument_list|,
 name|merge_type
+argument_list|,
+name|_
+argument_list|(
+literal|"Merge Visible Layers"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_slist_free
@@ -470,6 +475,11 @@ argument_list|,
 name|merge_list
 argument_list|,
 name|GIMP_FLATTEN_IMAGE
+argument_list|,
+name|_
+argument_list|(
+literal|"Flatten Image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_slist_free
@@ -673,6 +683,11 @@ argument_list|,
 name|merge_list
 argument_list|,
 name|merge_type
+argument_list|,
+name|_
+argument_list|(
+literal|"Merge Down"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_slist_free
@@ -711,7 +726,7 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_merge_layers (GimpImage * gimage,GSList * merge_list,GimpMergeType merge_type)
+DECL|function|gimp_image_merge_layers (GimpImage * gimage,GSList * merge_list,GimpMergeType merge_type,const gchar * undo_desc)
 name|gimp_image_merge_layers
 parameter_list|(
 name|GimpImage
@@ -724,6 +739,11 @@ name|merge_list
 parameter_list|,
 name|GimpMergeType
 name|merge_type
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|)
 block|{
 name|GList
@@ -1221,10 +1241,7 @@ name|gimage
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_LAYERS_MERGE
 argument_list|,
-name|_
-argument_list|(
-literal|"Merge Layers"
-argument_list|)
+name|undo_desc
 argument_list|)
 expr_stmt|;
 name|name
