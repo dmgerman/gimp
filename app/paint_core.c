@@ -3779,13 +3779,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|tile_lock
-argument_list|(
-name|undo_tile
-operator|->
-name|valid
-argument_list|)
-expr_stmt|;
 name|s
 operator|=
 name|undo_tile
@@ -3819,6 +3812,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|refd
+operator|=
+literal|0
+expr_stmt|;
 name|s
 operator|=
 name|srcPR
