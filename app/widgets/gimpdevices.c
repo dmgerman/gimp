@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"indicator_area.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -3056,6 +3062,7 @@ operator|->
 name|next
 expr_stmt|;
 block|}
+comment|/* devices table */
 name|deviceD
 operator|->
 name|table
@@ -6750,6 +6757,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|brush_area_update
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 
