@@ -343,10 +343,11 @@ name|gimp_histogram_tool_register
 block|,
 name|gimp_color_picker_tool_register
 block|,
+comment|/*  path tool */
+name|gimp_vector_tool_register
+block|,
 comment|/*  selection tools */
 name|gimp_iscissors_tool_register
-block|,
-name|gimp_vector_tool_register
 block|,
 name|gimp_by_color_select_tool_register
 block|,
