@@ -100,7 +100,7 @@ file|"channel_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon29f789370103
+DECL|enum|__anon2b5606680103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -216,7 +216,12 @@ operator|)
 name|gimp_channel_init
 block|,
 operator|(
-name|GtkArgFunc
+name|GtkArgSetFunc
+operator|)
+name|NULL
+block|,
+operator|(
+name|GtkArgGetFunc
 operator|)
 name|NULL
 block|,       }

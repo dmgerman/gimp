@@ -100,7 +100,7 @@ file|"drawable_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2bf3cf2b0103
+DECL|enum|__anon275722770103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -219,7 +219,12 @@ operator|)
 name|gimp_drawable_init
 block|,
 operator|(
-name|GtkArgFunc
+name|GtkArgSetFunc
+operator|)
+name|NULL
+block|,
+operator|(
+name|GtkArgGetFunc
 operator|)
 name|NULL
 block|,       }
