@@ -1255,7 +1255,7 @@ argument_list|)
 expr_stmt|;
 name|g_log_set_handler
 argument_list|(
-literal|""
+name|NULL
 argument_list|,
 name|G_LOG_LEVEL_MESSAGE
 argument_list|,
