@@ -678,12 +678,7 @@ block|{
 case|case
 literal|0
 case|:
-name|g_warning
-argument_list|(
-literal|"image-title-format string ended within %%-sequence"
-argument_list|)
-expr_stmt|;
-break|break;
+comment|/* format string ends within %-sequence, print literal '%' */
 case|case
 literal|'%'
 case|:
@@ -1030,10 +1025,18 @@ operator|==
 literal|0
 condition|)
 block|{
-name|g_warning
+comment|/* format string ends within %D-sequence, print literal '%D' */
+name|i
+operator|+=
+name|print
 argument_list|(
-literal|"image-title-format string ended within "
-literal|"%%D-sequence"
+name|title
+argument_list|,
+name|title_len
+argument_list|,
+name|i
+argument_list|,
+literal|"%%D"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1073,10 +1076,18 @@ operator|==
 literal|0
 condition|)
 block|{
-name|g_warning
+comment|/* format string ends within %C-sequence, print literal '%C' */
+name|i
+operator|+=
+name|print
 argument_list|(
-literal|"image-title-format string ended within "
-literal|"%%C-sequence"
+name|title
+argument_list|,
+name|title_len
+argument_list|,
+name|i
+argument_list|,
+literal|"%%C"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1657,10 +1668,18 @@ expr_stmt|;
 break|break;
 comment|/* Other cool things to be added: 	       * %r = xresolution                * %R = yresolution                * %ø = image's fractal dimension                * %þ = the answer to everything 	       */
 default|default:
-name|g_warning
+comment|/* format string contains unknown %-sequence, print it literally */
+name|i
+operator|+=
+name|print
 argument_list|(
-literal|"image-title-format contains unknown "
-literal|"format sequence '%%%c'"
+name|title
+argument_list|,
+name|title_len
+argument_list|,
+name|i
+argument_list|,
+literal|"%%%c"
 argument_list|,
 operator|*
 name|format
