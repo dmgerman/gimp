@@ -95,7 +95,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpunit.h"
+file|"core/gimpunits.h"
 end_include
 
 begin_include
@@ -531,7 +531,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bedd10f0108
+DECL|struct|__anon28eaa8250108
 block|{
 DECL|member|directory
 name|gboolean
