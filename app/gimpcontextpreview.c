@@ -6,6 +6,24 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"appenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"brush_scale.h"
 end_include
 
@@ -395,7 +413,7 @@ comment|/*  signals  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2aaed88b0103
+DECL|enum|__anon2b5452850103
 enum|enum
 block|{
 DECL|enumerator|CLICKED

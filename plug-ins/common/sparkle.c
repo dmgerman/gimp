@@ -28,12 +28,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -42,29 +36,6 @@ include|#
 directive|include
 file|"libgimp/gimp.h"
 end_include
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
-end_comment
 
 begin_define
 DECL|macro|SCALE_WIDTH
@@ -141,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b07b6e0108
+DECL|struct|__anon2974e32f0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -204,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b07b6e0208
+DECL|struct|__anon2974e32f0208
 block|{
 DECL|member|run
 name|gint
@@ -6364,7 +6335,7 @@ name|cos
 argument_list|(
 name|theta
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 argument_list|)
@@ -6377,7 +6348,7 @@ name|sin
 argument_list|(
 name|theta
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 argument_list|)
