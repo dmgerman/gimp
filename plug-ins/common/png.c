@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Portable Network Graphics (PNG) plug-in for The GIMP -- an image  *   manipulation program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com) and  *   Daniel Skarda (0rfelyus@atrey.karlin.mff.cuni.cz).  *   and 1999 Nick Lamb (njl195@zepler.org.uk)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   respin_cmap()               - Re-order a Gimp colormap for PNG tRNS  *   save_image()                - Save the specified image to a PNG file.  *   save_ok_callback()          - Destroy the save dialog and save the image.  *   save_compression_callback() - Update the image compression level.  *   save_interlace_update()     - Update the interlacing option.  *   save_dialog()               - Pop up the save dialog.  *  * Revision History:  *  *   see ChangeLog  */
+comment|/*  * "$Id$"  *  *   Portable Network Graphics (PNG) plug-in for The GIMP -- an image  *   manipulation program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com) and  *   Daniel Skarda (0rfelyus@atrey.karlin.mff.cuni.cz).  *   and 1999-2000 Nick Lamb (njl195@zepler.org.uk)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   respin_cmap()               - Re-order a Gimp colormap for PNG tRNS  *   save_image()                - Save the specified image to a PNG file.  *   save_ok_callback()          - Destroy the save dialog and save the image.  *   save_compression_callback() - Update the image compression level.  *   save_interlace_update()     - Update the interlacing option.  *   save_dialog()               - Pop up the save dialog.  *  * Revision History:  *  *   see ChangeLog  */
 end_comment
 
 begin_include
@@ -70,7 +70,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"1.2.1 - 2 April 2000"
+value|"1.2.2 - 14 April 2000"
 end_define
 
 begin_define
@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad4ecdd0108
+DECL|struct|__anon2a18f3d00108
 block|{
 DECL|member|interlaced
 name|gint
@@ -1076,28 +1076,18 @@ name|i
 decl_stmt|,
 comment|/* Looping var */
 name|trns
-init|=
-literal|0
 decl_stmt|,
 comment|/* Transparency present */
 name|bpp
-init|=
-literal|0
 decl_stmt|,
 comment|/* Bytes per pixel */
 name|image_type
-init|=
-literal|0
 decl_stmt|,
 comment|/* Type of image */
 name|layer_type
-init|=
-literal|0
 decl_stmt|,
 comment|/* Type of drawable/layer */
 name|empty
-init|=
-literal|0
 decl_stmt|,
 comment|/* Number of fully transparent indices */
 name|num_passes
@@ -1125,9 +1115,6 @@ decl_stmt|;
 comment|/* File pointer */
 name|gint32
 name|image
-init|=
-operator|-
-literal|1
 decl_stmt|,
 comment|/* Image */
 name|layer
@@ -1268,6 +1255,12 @@ return|return
 name|image
 return|;
 block|}
+comment|/* initialise variables here, thus avoiding compiler warnings */
+name|image
+operator|=
+operator|-
+literal|1
+expr_stmt|;
 comment|/*   * Open the file and initialize the PNG read "engine"...   */
 name|fp
 operator|=
@@ -1509,6 +1502,13 @@ operator|=
 literal|1
 expr_stmt|;
 block|}
+else|else
+block|{
+name|trns
+operator|=
+literal|0
+expr_stmt|;
+block|}
 comment|/*   * Update the info structures after the transformations take effect   */
 name|png_read_update_info
 argument_list|(
@@ -1609,6 +1609,22 @@ operator|=
 name|INDEXED_IMAGE
 expr_stmt|;
 break|break;
+default|default:
+comment|/* Aie! Unknown type */
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"%s\nPNG unknown color model"
+argument_list|)
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 block|}
 empty_stmt|;
 name|image
@@ -1735,6 +1751,11 @@ name|filename
 argument_list|)
 expr_stmt|;
 comment|/*   * Load the colormap as necessary...   */
+name|empty
+operator|=
+literal|0
+expr_stmt|;
+comment|/* by default assume no full transparent palette entries */
 if|if
 condition|(
 name|info
@@ -3798,14 +3819,6 @@ literal|3
 operator|*
 literal|256
 index|]
-init|=
-block|{
-literal|0xff
-block|,
-literal|0
-block|,
-literal|0xff
-block|}
 decl_stmt|;
 name|guchar
 modifier|*
@@ -3841,6 +3854,22 @@ operator|*
 name|colors
 operator|*
 literal|3
+argument_list|)
+expr_stmt|;
+comment|/* Apps with no natural background will use this instead, see        elsewhere for the bKGD chunk being written to use index 0 */
+name|gimp_palette_get_background
+argument_list|(
+name|after
+operator|+
+literal|0
+argument_list|,
+name|after
+operator|+
+literal|1
+argument_list|,
+name|after
+operator|+
+literal|2
 argument_list|)
 expr_stmt|;
 block|}
