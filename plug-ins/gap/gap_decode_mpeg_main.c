@@ -2754,7 +2754,7 @@ operator|=
 name|_
 argument_list|(
 literal|"\nWARNING: do not attempt to split other files than MPEG1 videos\n"
-literal|"before yo proceed, you should save all open images"
+literal|"before you proceed, you should save all open images"
 argument_list|)
 expr_stmt|;
 if|if

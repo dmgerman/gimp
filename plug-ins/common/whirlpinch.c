@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c52c560108
+DECL|struct|__anon29d98a060108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c52c560208
+DECL|struct|__anon29d98a060208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c52c560308
+DECL|struct|__anon29d98a060308
 block|{
 DECL|member|col
 DECL|member|row
@@ -733,22 +733,13 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|_
-argument_list|(
 literal|"Distort an image by whirling and pinching"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Distorts the image by whirling and pinching, which are two common center-based, circular distortions.  Whirling is like projecting the image onto the surface of water in a toilet and flushing.  Pinching is similar to projecting the image onto an elastic surface and pressing or pulling on the center of the surface."
-argument_list|)
 argument_list|,
 literal|"Federico Mena Quintero and Scott Goehring"
 argument_list|,
