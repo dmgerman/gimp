@@ -18,6 +18,12 @@ directive|include
 file|"vars.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"builtins.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -64,13 +70,23 @@ endif|#
 directive|endif
 end_endif
 
+begin_define
+DECL|macro|MAX_IDENT_LENGTH
+define|#
+directive|define
+name|MAX_IDENT_LENGTH
+value|63
+end_define
+
 begin_typedef
 DECL|typedef|ident
 typedef|typedef
 name|char
 name|ident
 index|[
-literal|64
+name|MAX_IDENT_LENGTH
+operator|+
+literal|1
 index|]
 typedef|;
 end_typedef
@@ -86,7 +102,7 @@ name|int
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon294404bc010a
+DECL|union|__anon29ae94b3010a
 block|{
 DECL|member|number
 name|double
@@ -98,7 +114,7 @@ modifier|*
 name|var
 decl_stmt|;
 struct|struct
-DECL|struct|__anon294404bc0208
+DECL|struct|__anon29ae94b30208
 block|{
 DECL|member|numArgs
 name|int
@@ -119,7 +135,7 @@ block|}
 name|func
 struct|;
 struct|struct
-DECL|struct|__anon294404bc0308
+DECL|struct|__anon29ae94b30308
 block|{
 DECL|member|left
 name|struct
@@ -138,7 +154,7 @@ block|}
 name|operator
 struct|;
 struct|struct
-DECL|struct|__anon294404bc0408
+DECL|struct|__anon29ae94b30408
 block|{
 DECL|member|var
 name|variable
@@ -156,7 +172,7 @@ block|}
 name|assignment
 struct|;
 struct|struct
-DECL|struct|__anon294404bc0508
+DECL|struct|__anon29ae94b30508
 block|{
 DECL|member|condition
 name|struct
@@ -189,7 +205,7 @@ block|}
 name|ifExpr
 struct|;
 struct|struct
-DECL|struct|__anon294404bc0608
+DECL|struct|__anon29ae94b30608
 block|{
 DECL|member|invariant
 name|struct
@@ -312,11 +328,19 @@ value|10
 end_define
 
 begin_define
+DECL|macro|EXPR_VAR_T
+define|#
+directive|define
+name|EXPR_VAR_T
+value|11
+end_define
+
+begin_define
 DECL|macro|EXPR_VAR_R
 define|#
 directive|define
 name|EXPR_VAR_R
-value|11
+value|12
 end_define
 
 begin_define
@@ -324,7 +348,7 @@ DECL|macro|EXPR_VAR_A
 define|#
 directive|define
 name|EXPR_VAR_A
-value|12
+value|13
 end_define
 
 begin_define
@@ -332,7 +356,7 @@ DECL|macro|EXPR_VAR_W
 define|#
 directive|define
 name|EXPR_VAR_W
-value|13
+value|14
 end_define
 
 begin_define
@@ -340,7 +364,7 @@ DECL|macro|EXPR_VAR_H
 define|#
 directive|define
 name|EXPR_VAR_H
-value|14
+value|15
 end_define
 
 begin_define
@@ -348,7 +372,7 @@ DECL|macro|EXPR_VAR_BIG_R
 define|#
 directive|define
 name|EXPR_VAR_BIG_R
-value|15
+value|16
 end_define
 
 begin_define
@@ -356,7 +380,7 @@ DECL|macro|EXPR_VAR_BIG_X
 define|#
 directive|define
 name|EXPR_VAR_BIG_X
-value|16
+value|17
 end_define
 
 begin_define
@@ -364,7 +388,7 @@ DECL|macro|EXPR_VAR_BIG_Y
 define|#
 directive|define
 name|EXPR_VAR_BIG_Y
-value|17
+value|18
 end_define
 
 begin_define
@@ -372,7 +396,7 @@ DECL|macro|EXPR_SEQUENCE
 define|#
 directive|define
 name|EXPR_SEQUENCE
-value|18
+value|19
 end_define
 
 begin_define
@@ -380,7 +404,7 @@ DECL|macro|EXPR_ASSIGNMENT
 define|#
 directive|define
 name|EXPR_ASSIGNMENT
-value|19
+value|20
 end_define
 
 begin_define
@@ -388,7 +412,7 @@ DECL|macro|EXPR_VARIABLE
 define|#
 directive|define
 name|EXPR_VARIABLE
-value|20
+value|21
 end_define
 
 begin_define
@@ -396,7 +420,7 @@ DECL|macro|EXPR_IF_THEN
 define|#
 directive|define
 name|EXPR_IF_THEN
-value|21
+value|22
 end_define
 
 begin_define
@@ -404,7 +428,7 @@ DECL|macro|EXPR_IF_THEN_ELSE
 define|#
 directive|define
 name|EXPR_IF_THEN_ELSE
-value|22
+value|23
 end_define
 
 begin_define
@@ -412,7 +436,7 @@ DECL|macro|EXPR_WHILE
 define|#
 directive|define
 name|EXPR_WHILE
-value|23
+value|24
 end_define
 
 begin_define
@@ -420,7 +444,7 @@ DECL|macro|EXPR_DO_WHILE
 define|#
 directive|define
 name|EXPR_DO_WHILE
-value|24
+value|25
 end_define
 
 begin_function_decl
@@ -470,9 +494,9 @@ name|exprtree
 modifier|*
 name|make_function
 parameter_list|(
-name|char
+name|builtin
 modifier|*
-name|name
+name|theBuiltin
 parameter_list|,
 name|exprtree
 modifier|*

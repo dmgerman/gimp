@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* align_layers.c -- This is a plug-in for the GIMP (1.0's API)  * Author: Shuji Narazaki<narazaki@InetQ.or.jp>  * Time-stamp:<1997/10/23 23:44:11 narazaki@InetQ.or.jp>  * Version:  0.25  *  * Copyright (C) 1997 Shuji Narazaki<narazaki@InetQ.or.jp>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
+comment|/* align_layers.c -- This is a plug-in for the GIMP (1.0's API)  * Author: Shuji Narazaki<narazaki@InetQ.or.jp>  * Time-stamp:<1998/01/17 00:32:23 narazaki@InetQ.or.jp>  * Version:  0.26  *  * Copyright (C) 1997-1998 Shuji Narazaki<narazaki@InetQ.or.jp>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
 end_comment
 
 begin_include
@@ -411,7 +411,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c96c6190108
+DECL|struct|__anon2c7e32a50108
 block|{
 DECL|member|name
 name|guchar
@@ -900,7 +900,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c96c6190208
+DECL|struct|__anon2c7e32a50208
 block|{
 DECL|member|h_style
 name|gint
@@ -963,7 +963,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c96c6190308
+DECL|struct|__anon2c7e32a50308
 block|{
 DECL|member|run
 name|gint
@@ -1089,7 +1089,7 @@ literal|"Align visible layers"
 argument_list|,
 literal|"align visible layers"
 argument_list|,
-literal|"Shuji Narazaki (narazaki@InetQ.or.jp)"
+literal|"Shuji Narazaki<narazaki@InetQ.or.jp>"
 argument_list|,
 literal|"Shuji Narazaki"
 argument_list|,
@@ -1349,6 +1349,13 @@ name|gint32
 name|image_id
 parameter_list|)
 block|{
+name|GParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|retvals
+decl_stmt|;
 name|gint
 name|layer_num
 init|=
@@ -1774,6 +1781,29 @@ operator|=
 name|min_y
 expr_stmt|;
 block|}
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp_undo_push_group_start"
+argument_list|,
+operator|&
+name|retvals
+argument_list|,
+name|PARAM_IMAGE
+argument_list|,
+name|image_id
+argument_list|,
+name|PARAM_END
+argument_list|)
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|retvals
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|vindex
@@ -2039,6 +2069,29 @@ name|y
 argument_list|)
 expr_stmt|;
 block|}
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp_undo_push_group_end"
+argument_list|,
+operator|&
+name|retvals
+argument_list|,
+name|PARAM_IMAGE
+argument_list|,
+name|image_id
+argument_list|,
+name|PARAM_END
+argument_list|)
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|retvals
+argument_list|)
+expr_stmt|;
 return|return
 name|STATUS_SUCCESS
 return|;

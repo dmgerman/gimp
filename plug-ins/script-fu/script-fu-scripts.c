@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29567cd00108
+DECL|struct|__anon2c4c7cdb0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -133,7 +133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon29567cd0020a
+DECL|union|__anon2c4c7cdb020a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29567cd00308
+DECL|struct|__anon2c4c7cdb0308
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -254,7 +254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29567cd00408
+DECL|struct|__anon2c4c7cdb0408
 block|{
 DECL|member|cc
 name|GtkWidget
@@ -2540,6 +2540,9 @@ name|SFScript
 modifier|*
 name|script
 decl_stmt|;
+name|int
+name|min_args
+decl_stmt|;
 name|run_mode
 operator|=
 name|params
@@ -2648,12 +2651,35 @@ operator|=
 name|FALSE
 expr_stmt|;
 comment|/*  First acquire information with a dialog  */
+comment|/*  Skip this part if the script takes no parameters */
+name|min_args
+operator|=
+operator|(
+name|script
+operator|->
+name|image_based
+operator|)
+condition|?
+literal|2
+else|:
+literal|0
+expr_stmt|;
+if|if
+condition|(
+name|script
+operator|->
+name|num_args
+operator|>
+name|min_args
+condition|)
+block|{
 name|script_fu_interface
 argument_list|(
 name|script
 argument_list|)
 expr_stmt|;
 break|break;
+block|}
 case|case
 name|RUN_NONINTERACTIVE
 case|:

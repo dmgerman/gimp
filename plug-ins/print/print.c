@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Print plug-in for the GIMP.  *  *   Copyright 1997 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Contents:  *  *   main()                   - Main entry - just call gimp_main()...  *   query()                  - Respond to a plug-in query...  *   run()                    - Run the plug-in...  *   print_dialog()           - Pop up the print dialog...  *   dialog_create_ivalue()   - Create an integer value control...  *   dialog_iscale_update()   - Update the value field using the scale.  *   dialog_ientry_update()   - Update the value field using the text entry.  *   print_driver_callback()  - Update the current printer driver...  *   media_size_callback()    - Update the current media size...  *   print_command_callback() - Update the print command...  *   output_type_callback()   - Update the current output type...  *   print_callback()         - Start the print...  *   cancel_callback()        - Cancel the print...  *   close_callback()         - Exit the print dialog application.  *  * Revision History:  *  *   $Log$  *   Revision 1.1.1.1  1997/11/24 22:04:34  sopwith  *   Let's try this import one last time.  *  *   Revision 1.3  1997/11/18 03:04:27  nobody  *   fixed ugly comment-bugs introduced by evil darkwing  *   keep out configuration empty dirs  *   	--darkwing  *  *   Revision 1.2  1997/11/17 05:43:57  nobody  *   updated ChangeLog  *   dropped non-working doc/Makefile entries  *   applied many fixes from the registry as well as the devel ML  *   applied missing patches by Art Haas  *  *   	--darkwing  *  *   Revision 1.11  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.10  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.9  1997/10/22  13:07:20  mike  *   Fixed typo in run() return status (thanks Michael Schubart!)  *  *   Revision 1.8  1997/10/02  17:57:26  mike  *   Added printrc support.  *   Added printer list (spooler support).  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.8  1997/10/02  17:57:26  mike  *   Added printrc support.  *   Added printer list (spooler support).  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.7  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.6  1997/07/30  18:47:39  mike  *   Added scaling, orientation, and offset options.  *   Added first cut at preview window.  *  *   Revision 1.5  1997/07/26  18:38:23  mike  *   Whoops - wasn't grabbing the colormap for indexed images properly...  *  *   Revision 1.4  1997/07/03  13:13:26  mike  *   Updated documentation for 1.0 release.  *  *   Revision 1.3  1997/07/03  13:07:05  mike  *   Updated EPSON driver short names.  *   Changed brightness lut formula for better control.  *  *   Revision 1.2  1997/07/02  15:22:17  mike  *   Added GUI with printer/media/output selection controls.  *  *   Revision 1.1  1997/07/02  13:51:53  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   Print plug-in for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Contents:  *  *   main()                   - Main entry - just call gimp_main()...  *   query()                  - Respond to a plug-in query...  *   run()                    - Run the plug-in...  *   print_dialog()           - Pop up the print dialog...  *   dialog_create_ivalue()   - Create an integer value control...  *   dialog_iscale_update()   - Update the value field using the scale.  *   dialog_ientry_update()   - Update the value field using the text entry.  *   print_driver_callback()  - Update the current printer driver...  *   media_size_callback()    - Update the current media size...  *   print_command_callback() - Update the print command...  *   output_type_callback()   - Update the current output type...  *   print_callback()         - Start the print...  *   cancel_callback()        - Cancel the print...  *   close_callback()         - Exit the print dialog application.  *  * Revision History:  *  *   $Log$  *   Revision 1.2  1998/01/25 09:29:27  yosh  *   Plugin updates  *   Properly generated aa Makefile (still not built by default)  *   Sven's no args script patch  *  *   -Yosh  *  *   Revision 1.13  1998/01/22  15:06:31  mike  *   Added "file" printer for printing to file.  *   Now you don't need the "|" in front of print commands.  *   Now "remembers" last selected printer.  *  *   Revision 1.12  1998/01/21  21:33:47  mike  *   Added Level 2 PostScript driver.  *   Fixed bug in dialog - didn't display correct output file/command  *   and driver for the default printer.  *  *   Revision 1.11  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.10  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.9  1997/10/22  13:07:20  mike  *   Fixed typo in run() return status (thanks Michael Schubart!)  *  *   Revision 1.8  1997/10/02  17:57:26  mike  *   Added printrc support.  *   Added printer list (spooler support).  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.8  1997/10/02  17:57:26  mike  *   Added printrc support.  *   Added printer list (spooler support).  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.7  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.6  1997/07/30  18:47:39  mike  *   Added scaling, orientation, and offset options.  *   Added first cut at preview window.  *  *   Revision 1.5  1997/07/26  18:38:23  mike  *   Whoops - wasn't grabbing the colormap for indexed images properly...  *  *   Revision 1.4  1997/07/03  13:13:26  mike  *   Updated documentation for 1.0 release.  *  *   Revision 1.3  1997/07/03  13:07:05  mike  *   Updated EPSON driver short names.  *   Changed brightness lut formula for better control.  *  *   Revision 1.2  1997/07/02  15:22:17  mike  *   Added GUI with printer/media/output selection controls.  *  *   Revision 1.1  1997/07/02  13:51:53  mike  *   Initial revision  */
 end_comment
 
 begin_include
@@ -70,7 +70,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/**** Printer List ****/
-DECL|struct|__anon2affb1c80108
+DECL|struct|__anon2b5417880108
 block|{
 DECL|member|name
 name|char
@@ -434,7 +434,7 @@ end_decl_stmt
 begin_struct
 struct|struct
 comment|/* Plug-in variables */
-DECL|struct|__anon2affb1c80208
+DECL|struct|__anon2b5417880208
 block|{
 DECL|member|output_to
 name|char
@@ -485,10 +485,10 @@ block|}
 name|vars
 init|=
 block|{
-literal|"|lp"
+literal|""
 block|,
 comment|/* Name of file or command to print to */
-literal|"ps"
+literal|"ps2"
 block|,
 comment|/* Name of printer "driver" */
 name|MEDIA_LETTER
@@ -692,6 +692,28 @@ block|,
 literal|1
 block|,
 literal|0
+block|,
+literal|1.000
+block|,
+literal|1.000
+block|,
+name|ps_print
+block|}
+block|,
+block|{
+literal|"PostScript Printer (Level 2)"
+block|,
+literal|"ps2"
+block|,
+literal|72
+block|,
+literal|72
+block|,
+literal|1
+block|,
+literal|1
+block|,
+literal|1
 block|,
 literal|1.000
 block|,
@@ -1981,14 +2003,9 @@ expr_stmt|;
 comment|/*     * Open the file/execute the print command...     */
 if|if
 condition|(
-name|vars
-operator|.
-name|output_to
-index|[
+name|plist_current
+operator|>
 literal|0
-index|]
-operator|==
-literal|'|'
 condition|)
 name|prn
 operator|=
@@ -1997,8 +2014,6 @@ argument_list|(
 name|vars
 operator|.
 name|output_to
-operator|+
-literal|1
 argument_list|,
 literal|"w"
 argument_list|)
@@ -2217,14 +2232,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|vars
-operator|.
-name|output_to
-index|[
+name|plist_current
+operator|>
 literal|0
-index|]
-operator|==
-literal|'|'
 condition|)
 name|pclose
 argument_list|(
@@ -2442,7 +2452,8 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-literal|"Print"
+literal|"Print "
+name|PLUG_IN_VERSION
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2769,28 +2780,6 @@ name|i
 operator|++
 control|)
 block|{
-if|if
-condition|(
-name|strcmp
-argument_list|(
-name|plist
-index|[
-name|i
-index|]
-operator|.
-name|command
-argument_list|,
-name|vars
-operator|.
-name|output_to
-argument_list|)
-operator|==
-literal|0
-condition|)
-name|plist_current
-operator|=
-name|i
-expr_stmt|;
 name|item
 operator|=
 name|gtk_menu_item_new_with_label
@@ -3767,7 +3756,7 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|"File/|Command:"
+literal|"File/Command:"
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4016,6 +4005,13 @@ name|button
 argument_list|)
 expr_stmt|;
 comment|/*   * Show it and wait for the user to do something...   */
+name|plist_callback
+argument_list|(
+name|NULL
+argument_list|,
+name|plist_current
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|dialog
@@ -5888,6 +5884,32 @@ argument_list|)
 operator|==
 literal|4
 condition|)
+block|{
+comment|/*         * Check to see if this is an old printrc file...         */
+if|if
+condition|(
+name|key
+operator|.
+name|command
+index|[
+literal|0
+index|]
+operator|==
+literal|'|'
+condition|)
+name|strcpy
+argument_list|(
+name|key
+operator|.
+name|command
+argument_list|,
+name|key
+operator|.
+name|command
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -5899,8 +5921,12 @@ operator|&
 name|key
 argument_list|,
 name|plist
+operator|+
+literal|1
 argument_list|,
 name|plist_count
+operator|-
+literal|1
 argument_list|,
 sizeof|sizeof
 argument_list|(
@@ -5941,6 +5967,8 @@ name|plist_t
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+empty_stmt|;
 block|}
 empty_stmt|;
 name|fclose
@@ -6047,11 +6075,13 @@ for|for
 control|(
 name|i
 operator|=
-literal|0
+literal|1
 operator|,
 name|p
 operator|=
 name|plist
+operator|+
+literal|1
 init|;
 name|i
 operator|<
@@ -6189,27 +6219,69 @@ name|plist
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|plist_count
+operator|=
+literal|1
+expr_stmt|;
+name|strcpy
+argument_list|(
+name|plist
+index|[
+literal|0
+index|]
+operator|.
+name|name
+argument_list|,
+literal|"File"
+argument_list|)
+expr_stmt|;
+name|sprintf
+argument_list|(
+name|plist
+index|[
+literal|0
+index|]
+operator|.
+name|command
+argument_list|,
+literal|"file.ps"
+argument_list|,
+name|line
+argument_list|)
+expr_stmt|;
+name|strcpy
+argument_list|(
+name|plist
+index|[
+literal|0
+index|]
+operator|.
+name|driver
+argument_list|,
+literal|"ps2"
+argument_list|)
+expr_stmt|;
+name|plist
+index|[
+literal|0
+index|]
+operator|.
+name|output_type
+operator|=
+name|OUTPUT_COLOR
+expr_stmt|;
 ifndef|#
 directive|ifndef
 name|sun
 comment|/* Sun Solaris merges LPR and LP queues */
 if|if
 condition|(
-name|access
-argument_list|(
-literal|"/usr/etc/lpc"
-argument_list|,
-literal|0
-argument_list|)
-operator|==
-literal|0
-operator|&&
 operator|(
 name|pfile
 operator|=
 name|popen
 argument_list|(
-literal|"/usr/etc/lpc status"
+literal|"lpc status"
 argument_list|,
 literal|"r"
 argument_list|)
@@ -6281,7 +6353,7 @@ index|]
 operator|.
 name|command
 argument_list|,
-literal|"|lpr -P%s -l"
+literal|"lpr -P%s -l"
 argument_list|,
 name|line
 argument_list|)
@@ -6295,7 +6367,7 @@ index|]
 operator|.
 name|driver
 argument_list|,
-literal|"ps"
+literal|"ps2"
 argument_list|)
 expr_stmt|;
 name|plist
@@ -6324,21 +6396,12 @@ directive|endif
 comment|/* !sun */
 if|if
 condition|(
-name|access
-argument_list|(
-literal|"/usr/bin/lpstat"
-argument_list|,
-literal|0
-argument_list|)
-operator|==
-literal|0
-operator|&&
 operator|(
 name|pfile
 operator|=
 name|popen
 argument_list|(
-literal|"/usr/bin/lpstat -d -p"
+literal|"lpstat -d -p"
 argument_list|,
 literal|"r"
 argument_list|)
@@ -6407,7 +6470,7 @@ index|]
 operator|.
 name|command
 argument_list|,
-literal|"|lp -s -oraw -d%s"
+literal|"lp -s -d%s"
 argument_list|,
 name|name
 argument_list|)
@@ -6423,7 +6486,7 @@ index|]
 operator|.
 name|command
 argument_list|,
-literal|"|lp -s -oraw -d %s"
+literal|"lp -s -d %s"
 argument_list|,
 name|name
 argument_list|)
@@ -6440,7 +6503,7 @@ index|]
 operator|.
 name|driver
 argument_list|,
-literal|"ps"
+literal|"ps2"
 argument_list|)
 expr_stmt|;
 name|plist
@@ -6479,13 +6542,17 @@ if|if
 condition|(
 name|plist_count
 operator|>
-literal|1
+literal|2
 condition|)
 name|qsort
 argument_list|(
 name|plist
+operator|+
+literal|1
 argument_list|,
 name|plist_count
+operator|-
+literal|1
 argument_list|,
 sizeof|sizeof
 argument_list|(
@@ -6518,6 +6585,15 @@ literal|0
 index|]
 operator|!=
 literal|'\0'
+operator|&&
+name|vars
+operator|.
+name|output_to
+index|[
+literal|0
+index|]
+operator|==
+literal|'\0'
 condition|)
 block|{
 for|for
@@ -6545,6 +6621,62 @@ name|i
 index|]
 operator|.
 name|name
+argument_list|)
+operator|==
+literal|0
+condition|)
+break|break;
+if|if
+condition|(
+name|i
+operator|<
+name|plist_count
+condition|)
+name|plist_current
+operator|=
+name|i
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|vars
+operator|.
+name|output_to
+index|[
+literal|0
+index|]
+operator|!=
+literal|'\0'
+condition|)
+block|{
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|plist_count
+condition|;
+name|i
+operator|++
+control|)
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|vars
+operator|.
+name|output_to
+argument_list|,
+name|plist
+index|[
+name|i
+index|]
+operator|.
+name|command
 argument_list|)
 operator|==
 literal|0
