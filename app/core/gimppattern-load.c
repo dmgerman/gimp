@@ -1601,7 +1601,47 @@ name|error
 goto|;
 block|}
 comment|/*  Check for supported bit depths  */
-comment|/*   if (header.bytes != 1&& header.bytes != 3)     {       g_set_error (error, GIMP_DATA_ERROR, GIMP_DATA_ERROR_READ,                    _("Unsupported pattern depth %d\n"                      "in file '%s'.\n"                      "GIMP Patterns must be GRAY or RGB.\n"),                    header.bytes, filename);       goto error;     }   */
+if|if
+condition|(
+name|header
+operator|.
+name|bytes
+operator|<
+literal|1
+operator|||
+name|header
+operator|.
+name|bytes
+operator|>
+literal|3
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
+name|_
+argument_list|(
+literal|"Unsupported pattern depth %d\n"
+literal|"in file '%s'.\n"
+literal|"GIMP Patterns must be GRAY or RGB.\n"
+argument_list|)
+argument_list|,
+name|header
+operator|.
+name|bytes
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+goto|goto
+name|error
+goto|;
+block|}
 comment|/*  Read in the pattern name  */
 if|if
 condition|(

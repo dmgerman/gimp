@@ -51,37 +51,37 @@ struct|struct
 name|_BrushHeader
 block|{
 DECL|member|header_size
-name|guint
+name|guint32
 name|header_size
 decl_stmt|;
 comment|/*  header_size = sizeof (BrushHeader) + brush name  */
 DECL|member|version
-name|guint
+name|guint32
 name|version
 decl_stmt|;
 comment|/*  brush file version #  */
 DECL|member|width
-name|guint
+name|guint32
 name|width
 decl_stmt|;
 comment|/*  width of brush  */
 DECL|member|height
-name|guint
+name|guint32
 name|height
 decl_stmt|;
 comment|/*  height of brush  */
 DECL|member|bytes
-name|guint
+name|guint32
 name|bytes
 decl_stmt|;
 comment|/*  depth of brush in bytes--always 1 */
 DECL|member|magic_number
-name|guint
+name|guint32
 name|magic_number
 decl_stmt|;
 comment|/*  GIMP brush magic number  */
 DECL|member|spacing
-name|guint
+name|guint32
 name|spacing
 decl_stmt|;
 comment|/*  brush spacing  */

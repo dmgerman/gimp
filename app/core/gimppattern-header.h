@@ -51,32 +51,32 @@ struct|struct
 name|_PatternHeader
 block|{
 DECL|member|header_size
-name|guint
+name|guint32
 name|header_size
 decl_stmt|;
 comment|/*  header_size = sizeof(PatternHeader) + pattern name  */
 DECL|member|version
-name|guint
+name|guint32
 name|version
 decl_stmt|;
 comment|/*  pattern file version #  */
 DECL|member|width
-name|guint
+name|guint32
 name|width
 decl_stmt|;
 comment|/*  width of pattern  */
 DECL|member|height
-name|guint
+name|guint32
 name|height
 decl_stmt|;
 comment|/*  height of pattern  */
 DECL|member|bytes
-name|guint
+name|guint32
 name|bytes
 decl_stmt|;
 comment|/*  depth of pattern in bytes  */
 DECL|member|magic_number
-name|guint
+name|guint32
 name|magic_number
 decl_stmt|;
 comment|/*  GIMP pattern magic number  */
