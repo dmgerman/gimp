@@ -9739,7 +9739,7 @@ name|p
 argument_list|,
 name|d
 argument_list|,
-name|RGB
+name|GIMP_RGB
 argument_list|)
 expr_stmt|;
 name|d
@@ -9811,7 +9811,7 @@ name|p
 argument_list|,
 name|d
 argument_list|,
-name|RGB
+name|GIMP_RGB
 argument_list|)
 expr_stmt|;
 name|d

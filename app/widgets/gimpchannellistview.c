@@ -1402,7 +1402,7 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 name|n_components
 operator|=
@@ -1431,7 +1431,7 @@ name|BLUE_CHANNEL
 expr_stmt|;
 break|break;
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 name|n_components
 operator|=
@@ -1446,7 +1446,7 @@ name|GRAY_CHANNEL
 expr_stmt|;
 break|break;
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 name|n_components
 operator|=

@@ -5065,7 +5065,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 expr_stmt|;
 for|for

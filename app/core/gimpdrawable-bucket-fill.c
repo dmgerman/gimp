@@ -615,7 +615,7 @@ name|tmp_col
 argument_list|,
 name|col
 argument_list|,
-name|RGB
+name|GIMP_RGB
 argument_list|)
 expr_stmt|;
 block|}
@@ -801,9 +801,9 @@ operator|==
 literal|3
 operator|)
 condition|?
-name|RGB
+name|GIMP_RGB
 else|:
-name|GRAY
+name|GIMP_GRAY
 argument_list|)
 expr_stmt|;
 name|d1

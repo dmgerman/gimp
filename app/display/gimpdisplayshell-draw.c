@@ -4553,7 +4553,7 @@ argument_list|,
 operator|(
 name|base_type
 operator|!=
-name|RGB
+name|GIMP_RGB
 operator|)
 argument_list|)
 expr_stmt|;
@@ -4564,7 +4564,7 @@ argument_list|,
 operator|(
 name|base_type
 operator|!=
-name|GRAY
+name|GIMP_GRAY
 operator|)
 argument_list|)
 expr_stmt|;
@@ -4575,7 +4575,7 @@ argument_list|,
 operator|(
 name|base_type
 operator|!=
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 argument_list|)
 expr_stmt|;
@@ -4884,7 +4884,7 @@ argument_list|,
 operator|(
 name|base_type
 operator|==
-name|RGB
+name|GIMP_RGB
 operator|)
 argument_list|)
 expr_stmt|;
@@ -4895,7 +4895,7 @@ argument_list|,
 operator|(
 name|base_type
 operator|==
-name|RGB
+name|GIMP_RGB
 operator|)
 argument_list|)
 expr_stmt|;
@@ -4906,7 +4906,7 @@ argument_list|,
 operator|(
 name|base_type
 operator|!=
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 argument_list|)
 expr_stmt|;
@@ -4917,7 +4917,7 @@ argument_list|,
 operator|(
 name|base_type
 operator|!=
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 argument_list|)
 expr_stmt|;
@@ -4928,7 +4928,7 @@ argument_list|,
 operator|(
 name|base_type
 operator|!=
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 argument_list|)
 expr_stmt|;
@@ -4939,7 +4939,7 @@ argument_list|,
 operator|(
 name|base_type
 operator|!=
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 argument_list|)
 expr_stmt|;
@@ -4950,7 +4950,7 @@ argument_list|,
 operator|(
 name|base_type
 operator|==
-name|RGB
+name|GIMP_RGB
 operator|)
 argument_list|)
 expr_stmt|;
@@ -4961,7 +4961,7 @@ argument_list|,
 operator|(
 name|base_type
 operator|!=
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 argument_list|)
 expr_stmt|;
@@ -4972,7 +4972,7 @@ argument_list|,
 operator|(
 name|base_type
 operator|!=
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 argument_list|)
 expr_stmt|;
@@ -4983,7 +4983,7 @@ argument_list|,
 operator|(
 name|base_type
 operator|!=
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 argument_list|)
 expr_stmt|;
@@ -5014,7 +5014,7 @@ operator|&&
 operator|(
 name|base_type
 operator|!=
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 argument_list|)
 expr_stmt|;
@@ -10255,7 +10255,7 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 name|image_type_str
 operator|=
@@ -10273,7 +10273,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 name|image_type_str
 operator|=
@@ -10291,7 +10291,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 name|image_type_str
 operator|=

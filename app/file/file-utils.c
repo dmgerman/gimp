@@ -2799,7 +2799,7 @@ argument_list|,
 operator|(
 name|basetype
 operator|==
-name|RGB
+name|GIMP_RGB
 operator|)
 condition|?
 literal|"RGB"
@@ -2807,7 +2807,7 @@ else|:
 operator|(
 name|basetype
 operator|==
-name|GRAY
+name|GIMP_GRAY
 operator|)
 condition|?
 literal|"Greyscale"
@@ -2815,7 +2815,7 @@ else|:
 operator|(
 name|basetype
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 condition|?
 literal|"Indexed"
@@ -2852,10 +2852,10 @@ name|basetype
 condition|)
 block|{
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 for|for
 control|(
@@ -3102,7 +3102,7 @@ block|}
 block|}
 break|break;
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 for|for
 control|(

@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f53cfc0108
+DECL|struct|__anon29d776eb0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -410,7 +410,7 @@ name|gimp_image_convert
 argument_list|(
 name|gimage
 argument_list|,
-name|RGB
+name|GIMP_RGB
 argument_list|,
 literal|0
 argument_list|,
@@ -445,7 +445,7 @@ name|gimp_image_convert
 argument_list|(
 name|gimage
 argument_list|,
-name|GRAY
+name|GIMP_GRAY
 argument_list|,
 literal|0
 argument_list|,
@@ -2332,10 +2332,10 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"You are attempting to convert an image with an alpha channel or layers "
-literal|"from RGB or GRAY to INDEXED.\nDo not generate a "
-literal|"palette of more than 255 colors if you intend to create "
-literal|"a transparent or animated GIF file from this image."
+literal|"You are attempting to convert an image with an alpha channel "
+literal|"or layers from RGB or GRAY to INDEXED.\nDo not generate a "
+literal|"palette of more than 255 colors if you intend to create a "
+literal|"transparent or animated GIF file from this image."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2811,7 +2811,7 @@ name|dialog
 operator|->
 name|gimage
 argument_list|,
-name|INDEXED
+name|GIMP_INDEXED
 argument_list|,
 name|dialog
 operator|->

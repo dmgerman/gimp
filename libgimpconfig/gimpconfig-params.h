@@ -144,10 +144,10 @@ comment|/* some convenience macros to install object properties */
 end_comment
 
 begin_define
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_UINT (class,id,name,min,max,default)
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_BOOLEAN (class,id,name,default)
 define|#
 directive|define
-name|GIMP_CONFIG_INSTALL_PROP_UINT
+name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 parameter_list|(
 name|class
 parameter_list|,
@@ -155,11 +155,7 @@ name|id
 parameter_list|,
 name|name
 parameter_list|,
-name|min
-parameter_list|,
-name|max
-parameter_list|,
-define|default)\   g_object_class_install_property (class, id,\                                    g_param_spec_uint (name, NULL, NULL,\                                    min, max, default,\                                    G_PARAM_READWRITE | G_PARAM_CONSTRUCT))
+define|default)\   g_object_class_install_property (class, id,\                                    g_param_spec_boolean (name, NULL, NULL,\                                    default,\                                    G_PARAM_READWRITE | G_PARAM_CONSTRUCT))
 end_define
 
 begin_define
@@ -180,10 +176,10 @@ define|default)\   g_object_class_install_property (class, id,\                 
 end_define
 
 begin_define
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_BOOLEAN (class,id,name,default)
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_INT (class,id,name,min,max,default)
 define|#
 directive|define
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+name|GIMP_CONFIG_INSTALL_PROP_INT
 parameter_list|(
 name|class
 parameter_list|,
@@ -191,7 +187,11 @@ name|id
 parameter_list|,
 name|name
 parameter_list|,
-define|default)\   g_object_class_install_property (class, id,\                                    g_param_spec_boolean (name, NULL, NULL,\                                    default,\                                    G_PARAM_READWRITE | G_PARAM_CONSTRUCT))
+name|min
+parameter_list|,
+name|max
+parameter_list|,
+define|default)\   g_object_class_install_property (class, id,\                                    g_param_spec_int (name, NULL, NULL,\                                    min, max, default,\                                    G_PARAM_READWRITE | G_PARAM_CONSTRUCT))
 end_define
 
 begin_define
@@ -226,6 +226,40 @@ parameter_list|,
 name|name
 parameter_list|,
 define|default)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_path (name, NULL, NULL,\                                    default,\                                    G_PARAM_READWRITE | G_PARAM_CONSTRUCT))
+end_define
+
+begin_define
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_STRING (class,id,name,default)
+define|#
+directive|define
+name|GIMP_CONFIG_INSTALL_PROP_STRING
+parameter_list|(
+name|class
+parameter_list|,
+name|id
+parameter_list|,
+name|name
+parameter_list|,
+define|default)\   g_object_class_install_property (class, id,\                                    g_param_spec_string (name, NULL, NULL,\                                    default,\                                    G_PARAM_READWRITE | G_PARAM_CONSTRUCT))
+end_define
+
+begin_define
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_UINT (class,id,name,min,max,default)
+define|#
+directive|define
+name|GIMP_CONFIG_INSTALL_PROP_UINT
+parameter_list|(
+name|class
+parameter_list|,
+name|id
+parameter_list|,
+name|name
+parameter_list|,
+name|min
+parameter_list|,
+name|max
+parameter_list|,
+define|default)\   g_object_class_install_property (class, id,\                                    g_param_spec_uint (name, NULL, NULL,\                                    min, max, default,\                                    G_PARAM_READWRITE | G_PARAM_CONSTRUCT))
 end_define
 
 begin_endif

@@ -35087,7 +35087,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baa3b2e0108
+DECL|struct|__anon2b2e6a470108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35164,7 +35164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baa3b2e0208
+DECL|struct|__anon2b2e6a470208
 block|{
 DECL|member|ncolors
 name|long
@@ -35355,7 +35355,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baa3b2e0308
+DECL|struct|__anon2b2e6a470308
 block|{
 DECL|member|used_count
 name|signed
@@ -36455,7 +36455,7 @@ if|if
 condition|(
 name|new_type
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 block|{
 name|int
@@ -36466,7 +36466,7 @@ if|if
 condition|(
 name|old_type
 operator|==
-name|GRAY
+name|GIMP_GRAY
 operator|&&
 name|num_cols
 operator|==
@@ -36506,7 +36506,7 @@ if|if
 condition|(
 name|old_type
 operator|==
-name|GRAY
+name|GIMP_GRAY
 condition|)
 name|zero_histogram_gray
 argument_list|(
@@ -36570,7 +36570,7 @@ if|if
 condition|(
 name|old_type
 operator|==
-name|GRAY
+name|GIMP_GRAY
 condition|)
 name|generate_histogram_gray
 argument_list|(
@@ -36605,7 +36605,7 @@ condition|(
 operator|(
 name|old_type
 operator|==
-name|RGB
+name|GIMP_RGB
 operator|)
 operator|&&
 operator|(
@@ -36738,7 +36738,7 @@ name|new_type
 condition|)
 block|{
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 if|if
 condition|(
@@ -36807,7 +36807,7 @@ name|new_type
 condition|)
 block|{
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 name|new_layer_type
 operator|=
@@ -36831,7 +36831,7 @@ literal|3
 expr_stmt|;
 break|break;
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 name|new_layer_type
 operator|=
@@ -36855,7 +36855,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 name|new_layer_type
 operator|=
@@ -36908,7 +36908,7 @@ name|new_type
 condition|)
 block|{
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 name|rgb_converter
 argument_list|(
@@ -36921,7 +36921,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 name|grayscale_converter
 argument_list|(
@@ -36934,7 +36934,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 call|(
 modifier|*
@@ -37007,7 +37007,7 @@ if|if
 condition|(
 name|new_type
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 block|{
 if|if
@@ -37635,7 +37635,7 @@ name|old_type
 condition|)
 block|{
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 for|for
 control|(
@@ -37736,7 +37736,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 name|cmap
 operator|=
@@ -38044,7 +38044,7 @@ name|old_type
 condition|)
 block|{
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 for|for
 control|(
@@ -38148,7 +38148,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 name|cmap
 operator|=
@@ -49692,7 +49692,7 @@ if|if
 condition|(
 name|type
 operator|==
-name|GRAY
+name|GIMP_GRAY
 operator|&&
 name|palette_type
 operator|==
@@ -49749,7 +49749,7 @@ name|type
 condition|)
 block|{
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 switch|switch
 condition|(
@@ -50000,7 +50000,7 @@ break|break;
 block|}
 break|break;
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 switch|switch
 condition|(

@@ -21,6 +21,43 @@ comment|/* These enums that are registered with the type system. */
 end_comment
 
 begin_define
+DECL|macro|GIMP_TYPE_IMAGE_BASE_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_IMAGE_BASE_TYPE
+value|(gimp_image_base_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_image_base_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2778950e0103
+block|{
+DECL|enumerator|GIMP_RGB
+name|GIMP_RGB
+block|,
+DECL|enumerator|GIMP_GRAY
+name|GIMP_GRAY
+block|,
+DECL|enumerator|GIMP_INDEXED
+name|GIMP_INDEXED
+DECL|typedef|GimpImageBaseType
+block|}
+name|GimpImageBaseType
+typedef|;
+end_typedef
+
+begin_define
 DECL|macro|GIMP_TYPE_PREVIEW_SIZE
 define|#
 directive|define
@@ -41,7 +78,8 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a46ecfe0103
+comment|/*< pdb-skip>*/
+DECL|enum|__anon2778950e0203
 block|{
 DECL|enumerator|GIMP_PREVIEW_SIZE_NONE
 name|GIMP_PREVIEW_SIZE_NONE

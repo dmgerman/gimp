@@ -1429,7 +1429,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 argument_list|,
 name|NULL
 argument_list|)
@@ -1454,7 +1454,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 condition|)
 return|return

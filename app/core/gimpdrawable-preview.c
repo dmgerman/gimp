@@ -300,7 +300,7 @@ name|ret_buf
 decl_stmt|;
 name|type
 operator|=
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 name|bytes
 operator|=
@@ -353,7 +353,7 @@ name|RGBA_GIMAGE
 case|:
 name|type
 operator|=
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 name|bytes
 operator|=
@@ -371,7 +371,7 @@ name|GRAYA_GIMAGE
 case|:
 name|type
 operator|=
-name|GRAY
+name|GIMP_GRAY
 expr_stmt|;
 name|bytes
 operator|=
@@ -389,7 +389,7 @@ name|INDEXEDA_GIMAGE
 case|:
 name|type
 operator|=
-name|INDEXED
+name|GIMP_INDEXED
 expr_stmt|;
 name|bytes
 operator|=
@@ -1132,7 +1132,7 @@ if|if
 condition|(
 name|type
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 block|{
 name|map_to_color

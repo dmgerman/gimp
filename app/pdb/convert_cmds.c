@@ -206,7 +206,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|!=
-name|RGB
+name|GIMP_RGB
 operator|)
 operator|)
 condition|)
@@ -218,7 +218,7 @@ operator|*
 operator|)
 name|gimage
 argument_list|,
-name|RGB
+name|GIMP_RGB
 argument_list|,
 literal|0
 argument_list|,
@@ -275,7 +275,7 @@ literal|"gimp_convert_rgb"
 block|,
 literal|"Convert specified image to RGB color"
 block|,
-literal|"This procedure converts the specified image to RGB color. This process requires an image of type GRAY or INDEXED. No image content is lost in this process aside from the colormap for an indexed image."
+literal|"This procedure converts the specified image to RGB color. This process requires an image of type GIMP_GRAY or GIMP_INDEXED. No image content is lost in this process aside from the colormap for an indexed image."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -368,7 +368,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|!=
-name|GRAY
+name|GIMP_GRAY
 operator|)
 operator|)
 condition|)
@@ -380,7 +380,7 @@ operator|*
 operator|)
 name|gimage
 argument_list|,
-name|GRAY
+name|GIMP_GRAY
 argument_list|,
 literal|0
 argument_list|,
@@ -437,7 +437,7 @@ literal|"gimp_convert_grayscale"
 block|,
 literal|"Convert specified image to grayscale (256 intensity levels)"
 block|,
-literal|"This procedure converts the specified image to grayscale with 8 bits per pixel (256 intensity levels). This process requires an image of type RGB or INDEXED."
+literal|"This procedure converts the specified image to grayscale with 8 bits per pixel (256 intensity levels). This process requires an image of type GIMP_RGB or GIMP_INDEXED."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -658,7 +658,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|!=
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 operator|)
 condition|)
@@ -791,7 +791,7 @@ operator|*
 operator|)
 name|gimage
 argument_list|,
-name|INDEXED
+name|GIMP_INDEXED
 argument_list|,
 name|num_cols
 argument_list|,
@@ -897,7 +897,7 @@ literal|"gimp_convert_indexed"
 block|,
 literal|"Convert specified image to and Indexed image"
 block|,
-literal|"This procedure converts the specified image to 'indexed' color. This process requires an image of type GRAY or RGB. The 'palette_type' specifies what kind of palette to use, A type of '0' means to use an optimal palette of 'num_cols' generated from the colors in the image. A type of '1' means to re-use the previous palette (not currently implemented). A type of '2' means to use the so-called WWW-optimized palette. Type '3' means to use only black and white colors. A type of '4' means to use a palette from the gimp palettes directories. The 'dither type' specifies what kind of dithering to use. '0' means no dithering, '1' means standard Floyd-Steinberg error diffusion, '2' means Floyd-Steinberg error diffusion with reduced bleeding, '3' means dithering based on pixel location ('Fixed' dithering)."
+literal|"This procedure converts the specified image to 'indexed' color. This process requires an image of type GIMP_GRAY or GIMP_RGB. The 'palette_type' specifies what kind of palette to use, A type of '0' means to use an optimal palette of 'num_cols' generated from the colors in the image. A type of '1' means to re-use the previous palette (not currently implemented). A type of '2' means to use the so-called WWW-optimized palette. Type '3' means to use only black and white colors. A type of '4' means to use a palette from the gimp palettes directories. The 'dither type' specifies what kind of dithering to use. '0' means no dithering, '1' means standard Floyd-Steinberg error diffusion, '2' means Floyd-Steinberg error diffusion with reduced bleeding, '3' means dithering based on pixel location ('Fixed' dithering)."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

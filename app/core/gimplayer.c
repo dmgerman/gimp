@@ -135,7 +135,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1053480103
+DECL|enum|__anon27e073870103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -1966,6 +1966,7 @@ name|new_layer
 argument_list|)
 argument_list|,
 operator|(
+operator|(
 name|tile_manager_bpp
 argument_list|(
 name|tiles
@@ -1974,9 +1975,10 @@ operator|==
 literal|4
 operator|)
 condition|?
-name|RGB
+name|GIMP_RGB
 else|:
-name|GRAY
+name|GIMP_GRAY
+operator|)
 argument_list|)
 expr_stmt|;
 return|return

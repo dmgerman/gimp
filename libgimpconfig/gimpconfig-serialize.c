@@ -404,9 +404,29 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* FIXME: emit warning but try to continue */
-name|g_assert_not_reached
-argument_list|()
+name|g_warning
+argument_list|(
+literal|"couldn't serialize property %s::%s of type %s"
+argument_list|,
+name|g_type_name
+argument_list|(
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|object
+argument_list|)
+argument_list|)
+argument_list|,
+name|prop_spec
+operator|->
+name|name
+argument_list|,
+name|g_type_name
+argument_list|(
+name|prop_spec
+operator|->
+name|value_type
+argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 name|g_value_unset

@@ -123,7 +123,7 @@ name|new_type
 operator|->
 name|type
 operator|=
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 name|new_type
 operator|->
@@ -160,7 +160,7 @@ name|new_type
 operator|->
 name|type
 operator|=
-name|GRAY
+name|GIMP_GRAY
 expr_stmt|;
 name|new_type
 operator|->
@@ -630,13 +630,13 @@ name|values
 operator|->
 name|type
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 name|values
 operator|->
 name|type
 operator|=
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 comment|/* no indexed images */
 block|}
@@ -816,7 +816,7 @@ name|values
 operator|->
 name|type
 operator|==
-name|RGB
+name|GIMP_RGB
 condition|?
 literal|3
 else|:
@@ -1077,7 +1077,7 @@ name|values
 operator|->
 name|type
 operator|==
-name|RGB
+name|GIMP_RGB
 operator|)
 condition|?
 name|RGB_GIMAGE
@@ -1095,7 +1095,7 @@ name|values
 operator|->
 name|type
 operator|==
-name|RGB
+name|GIMP_RGB
 operator|)
 condition|?
 name|RGBA_GIMAGE

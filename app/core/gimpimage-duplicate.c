@@ -735,7 +735,7 @@ name|new_gimage
 operator|->
 name|base_type
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 name|memcpy
 argument_list|(

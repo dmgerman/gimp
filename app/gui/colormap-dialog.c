@@ -123,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8ce4110103
+DECL|enum|__anon2b3f817a0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -1350,7 +1350,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|!=
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 condition|)
 block|{
@@ -1466,7 +1466,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 block|{
 name|ipal_draw
@@ -1750,7 +1750,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 condition|)
 block|{
@@ -1858,7 +1858,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 operator|&&
 name|gimage
@@ -1969,7 +1969,7 @@ operator|->
 name|image
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 condition|)
 name|ipal_draw
@@ -3539,7 +3539,7 @@ operator|->
 name|image
 argument_list|)
 operator|!=
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 condition|)
 block|{
@@ -3981,7 +3981,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 block|{
 if|if
@@ -4513,7 +4513,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 operator|)
 condition|)

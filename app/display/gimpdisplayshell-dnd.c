@@ -282,7 +282,7 @@ literal|4
 expr_stmt|;
 name|type
 operator|=
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 break|break;
 case|case
@@ -297,7 +297,7 @@ literal|2
 expr_stmt|;
 name|type
 operator|=
-name|GRAY
+name|GIMP_GRAY
 expr_stmt|;
 break|break;
 case|case
@@ -312,7 +312,7 @@ literal|4
 expr_stmt|;
 name|type
 operator|=
-name|INDEXED
+name|GIMP_INDEXED
 expr_stmt|;
 break|break;
 default|default:
@@ -322,7 +322,7 @@ literal|3
 expr_stmt|;
 name|type
 operator|=
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 break|break;
 block|}
@@ -389,7 +389,7 @@ if|if
 condition|(
 name|type
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 block|{
 comment|/*  If the layer is indexed...we need to extract pixels  */

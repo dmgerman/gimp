@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c77a1d30103
+DECL|enum|__anon2bb07f3a0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -8394,7 +8394,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|RGB
+name|GIMP_RGB
 argument_list|)
 argument_list|,
 name|NULL
@@ -8406,7 +8406,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|GRAY
+name|GIMP_GRAY
 argument_list|)
 argument_list|,
 name|NULL
@@ -13811,7 +13811,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c77a1d30208
+DECL|struct|__anon2bb07f3a0208
 block|{
 DECL|member|label
 name|gchar
@@ -14029,7 +14029,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c77a1d30308
+DECL|struct|__anon2bb07f3a0308
 block|{
 DECL|member|tree_label
 name|gchar

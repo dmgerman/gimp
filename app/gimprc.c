@@ -270,7 +270,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2ecb4e0103
+DECL|enum|__anon2c66ef9a0103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -6471,7 +6471,7 @@ condition|)
 operator|*
 name|typep
 operator|=
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 elseif|else
 if|if
@@ -6499,7 +6499,7 @@ condition|)
 operator|*
 name|typep
 operator|=
-name|GRAY
+name|GIMP_GRAY
 expr_stmt|;
 else|else
 return|return
@@ -14025,7 +14025,7 @@ if|if
 condition|(
 name|type
 operator|==
-name|GRAY
+name|GIMP_GRAY
 condition|)
 return|return
 name|g_strdup

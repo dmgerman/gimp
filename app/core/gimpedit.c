@@ -829,7 +829,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-comment|/*  create a new image  (always of type RGB)  */
+comment|/*  create a new image  (always of type GIMP_RGB)  */
 name|gimage
 operator|=
 name|gimp_create_image
@@ -846,7 +846,7 @@ argument_list|(
 name|paste
 argument_list|)
 argument_list|,
-name|RGB
+name|GIMP_RGB
 argument_list|,
 name|TRUE
 argument_list|)

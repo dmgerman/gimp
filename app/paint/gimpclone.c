@@ -178,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ad8b170103
+DECL|enum|__anon292b750e0103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -2899,7 +2899,7 @@ name|rgb
 argument_list|,
 name|d
 argument_list|,
-name|RGB
+name|GIMP_RGB
 argument_list|)
 expr_stmt|;
 if|if
@@ -3059,9 +3059,9 @@ operator|==
 literal|3
 operator|)
 condition|?
-name|RGB
+name|GIMP_RGB
 else|:
-name|GRAY
+name|GIMP_GRAY
 expr_stmt|;
 name|alpha
 operator|=

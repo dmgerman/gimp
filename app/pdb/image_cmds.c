@@ -52,6 +52,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/core-enums.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -1498,11 +1504,11 @@ if|if
 condition|(
 name|type
 operator|<
-name|RGB
+name|GIMP_RGB
 operator|||
 name|type
 operator|>
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 name|success
 operator|=
@@ -1596,7 +1602,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"type"
 block|,
-literal|"The type of image: { RGB (0), GRAY (1), INDEXED (2) }"
+literal|"The type of image: { GIMP_RGB (0), GIMP_GRAY (1), GIMP_INDEXED (2) }"
 block|}
 block|}
 decl_stmt|;
@@ -1941,7 +1947,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"base_type"
 block|,
-literal|"The image's base type: { RGB (0), GRAY (1), INDEXED (2) }"
+literal|"The image's base type: { GIMP_RGB (0), GIMP_GRAY (1), GIMP_INDEXED (2) }"
 block|}
 block|}
 decl_stmt|;
@@ -5502,7 +5508,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|!=
-name|RGB
+name|GIMP_RGB
 operator|)
 operator|||
 operator|(
@@ -5519,7 +5525,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|!=
-name|GRAY
+name|GIMP_GRAY
 operator|)
 operator|||
 operator|(
@@ -5536,7 +5542,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|!=
-name|INDEXED
+name|GIMP_INDEXED
 operator|)
 condition|)
 name|success
@@ -7182,7 +7188,7 @@ literal|"gimp_image_get_cmap"
 block|,
 literal|"Returns the image's colormap"
 block|,
-literal|"This procedure returns an actual pointer to the image's colormap, as well as the number of bytes contained in the colormap. The actual number of colors in the transmitted colormap will be \"num_bytes\" / 3. If the image is not of base type INDEXED, this pointer will be NULL."
+literal|"This procedure returns an actual pointer to the image's colormap, as well as the number of bytes contained in the colormap. The actual number of colors in the transmitted colormap will be \"num_bytes\" / 3. If the image is not of base type GIMP_INDEXED, this pointer will be NULL."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -11212,7 +11218,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|GRAY
+name|GIMP_GRAY
 expr_stmt|;
 elseif|else
 if|if
@@ -11228,7 +11234,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 expr_stmt|;
 else|else
 name|success
@@ -11238,7 +11244,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 block|}
 name|return_args
@@ -11476,7 +11482,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|GRAY
+name|GIMP_GRAY
 expr_stmt|;
 elseif|else
 if|if
@@ -11492,7 +11498,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 expr_stmt|;
 else|else
 name|success
@@ -11502,7 +11508,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 if|if
 condition|(
@@ -11704,7 +11710,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|GRAY
+name|GIMP_GRAY
 expr_stmt|;
 elseif|else
 if|if
@@ -11720,7 +11726,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 expr_stmt|;
 else|else
 name|success
@@ -11730,7 +11736,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 block|}
 name|return_args
@@ -11968,7 +11974,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|GRAY
+name|GIMP_GRAY
 expr_stmt|;
 elseif|else
 if|if
@@ -11984,7 +11990,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 expr_stmt|;
 else|else
 name|success
@@ -11994,7 +12000,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 if|if
 condition|(

@@ -163,7 +163,7 @@ name|config
 operator|->
 name|default_type
 operator|=
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 name|gimp
 operator|->

@@ -222,7 +222,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon297a0a3a0103
+DECL|enum|__anon276ba3930103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -1535,7 +1535,7 @@ name|gimage
 operator|->
 name|base_type
 operator|=
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 name|gimage
 operator|->
@@ -2594,10 +2594,10 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 name|bytes
 operator|=
@@ -2605,7 +2605,7 @@ literal|4
 expr_stmt|;
 break|break;
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 name|bytes
 operator|=
@@ -3356,7 +3356,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 block|{
 comment|/* A colormap alteration affects the whole image */
@@ -3529,14 +3529,14 @@ name|base_type
 condition|)
 block|{
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 break|break;
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 comment|/* always allocate 256 colors for the colormap */
 name|gimage
@@ -3680,19 +3680,19 @@ name|base_type
 condition|)
 block|{
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 return|return
 name|RGBA_GIMAGE
 return|;
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 return|return
 name|GRAYA_GIMAGE
 return|;
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 return|return
 name|INDEXEDA_GIMAGE
@@ -4668,7 +4668,7 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 name|pixel
 operator|=
@@ -4676,7 +4676,7 @@ name|ALPHA_PIX
 expr_stmt|;
 break|break;
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 name|pixel
 operator|=
@@ -4684,7 +4684,7 @@ name|ALPHA_G_PIX
 expr_stmt|;
 break|break;
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 name|pixel
 operator|=
@@ -4845,7 +4845,7 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 return|return
 name|gimage
@@ -4857,7 +4857,7 @@ index|]
 return|;
 break|break;
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 return|return
 name|gimage
@@ -4869,7 +4869,7 @@ index|]
 return|;
 break|break;
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 return|return
 name|gimage
@@ -5093,7 +5093,7 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 name|pixel
 operator|=
@@ -5101,7 +5101,7 @@ name|ALPHA_PIX
 expr_stmt|;
 break|break;
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 name|pixel
 operator|=
@@ -5109,7 +5109,7 @@ name|ALPHA_G_PIX
 expr_stmt|;
 break|break;
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 name|pixel
 operator|=
@@ -5281,7 +5281,7 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 return|return
 name|gimage
@@ -5293,7 +5293,7 @@ index|]
 return|;
 break|break;
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 return|return
 name|gimage
@@ -5305,7 +5305,7 @@ index|]
 return|;
 break|break;
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 return|return
 name|gimage
@@ -6065,7 +6065,7 @@ name|pfg
 argument_list|,
 name|fg
 argument_list|,
-name|RGB
+name|GIMP_RGB
 argument_list|)
 expr_stmt|;
 block|}
@@ -6173,7 +6173,7 @@ name|pbg
 argument_list|,
 name|bg
 argument_list|,
-name|RGB
+name|GIMP_RGB
 argument_list|)
 expr_stmt|;
 block|}
@@ -6336,7 +6336,7 @@ name|type
 condition|)
 block|{
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 switch|switch
 condition|(
@@ -6438,7 +6438,7 @@ break|break;
 block|}
 break|break;
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 switch|switch
 condition|(

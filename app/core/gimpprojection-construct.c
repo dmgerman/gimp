@@ -376,10 +376,10 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 name|gimage
 operator|->
@@ -395,7 +395,7 @@ name|RGBA_GIMAGE
 expr_stmt|;
 break|break;
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 name|gimage
 operator|->

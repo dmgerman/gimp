@@ -136,7 +136,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8d3f780103
+DECL|enum|__anon2c5190850103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -632,7 +632,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 block|{
 name|l
@@ -2169,7 +2169,7 @@ argument_list|(
 name|gimage
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 block|{
 name|gtk_widget_set_sensitive

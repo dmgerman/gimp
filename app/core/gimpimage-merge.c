@@ -1280,7 +1280,7 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 name|type
 operator|=
@@ -1288,7 +1288,7 @@ name|RGB_GIMAGE
 expr_stmt|;
 break|break;
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 name|type
 operator|=
@@ -1296,7 +1296,7 @@ name|GRAY_GIMAGE
 expr_stmt|;
 break|break;
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 name|type
 operator|=

@@ -867,7 +867,7 @@ name|bytes
 expr_stmt|;
 name|type
 operator|=
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 break|break;
 case|case
@@ -888,7 +888,7 @@ name|bytes
 expr_stmt|;
 name|type
 operator|=
-name|GRAY
+name|GIMP_GRAY
 expr_stmt|;
 break|break;
 case|case
@@ -914,7 +914,7 @@ name|bytes
 expr_stmt|;
 name|type
 operator|=
-name|GRAY
+name|GIMP_GRAY
 expr_stmt|;
 block|}
 else|else
@@ -931,7 +931,7 @@ name|bytes
 expr_stmt|;
 name|type
 operator|=
-name|INDEXED
+name|GIMP_INDEXED
 expr_stmt|;
 block|}
 break|break;
@@ -942,7 +942,7 @@ literal|3
 expr_stmt|;
 name|type
 operator|=
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 break|break;
 block|}
@@ -1228,7 +1228,7 @@ if|if
 condition|(
 name|type
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 operator|&&
 operator|!
 name|keep_indexed

@@ -1994,7 +1994,7 @@ name|RGBA_GIMAGE
 case|:
 name|type
 operator|=
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 break|break;
 case|case
@@ -2005,7 +2005,7 @@ name|GRAYA_GIMAGE
 case|:
 name|type
 operator|=
-name|GRAY
+name|GIMP_GRAY
 expr_stmt|;
 break|break;
 case|case
@@ -2016,13 +2016,13 @@ name|INDEXEDA_GIMAGE
 case|:
 name|type
 operator|=
-name|INDEXED
+name|GIMP_INDEXED
 expr_stmt|;
 break|break;
 default|default:
 name|type
 operator|=
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 break|break;
 block|}
@@ -2052,7 +2052,7 @@ if|if
 condition|(
 name|type
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 comment|/* copy the colormap */
 block|{

@@ -524,7 +524,7 @@ operator|->
 name|gimage
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 name|gimp_display_add_update_area
 argument_list|(
