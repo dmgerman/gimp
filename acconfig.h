@@ -124,6 +124,18 @@ directive|undef
 name|TIME_WITH_SYS_TIME
 end_undef
 
+begin_undef
+undef|#
+directive|undef
+name|RAND_FUNC
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|SRAND_FUNC
+end_undef
+
 begin_comment
 comment|/* #undef PACKAGE */
 end_comment

@@ -58,7 +58,7 @@ file|"dbbrowser.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2c89895b0108
+DECL|struct|__anon2af56dad0108
 typedef|typedef
 struct|struct
 block|{
@@ -92,10 +92,10 @@ name|GtkWidget
 modifier|*
 name|descr_table
 decl_stmt|;
-DECL|member|list
+DECL|member|clist
 name|GtkWidget
 modifier|*
-name|list
+name|clist
 decl_stmt|;
 comment|/* the currently selected procedure */
 DECL|member|selected_proc_name
@@ -234,15 +234,21 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gint
-name|dialog_list_button
+name|procedure_select_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gint
+name|row
+parameter_list|,
+name|gint
+name|column
+parameter_list|,
 name|GdkEventButton
 modifier|*
-name|event
+name|bevent
 parameter_list|,
 name|gpointer
 name|data
@@ -295,14 +301,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|dialog_selection_free_filename
+name|convert_string
 parameter_list|(
-name|GtkWidget
+name|gchar
 modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|client_data
+name|str
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -310,9 +313,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|convert_string
+name|unconvert_string
 parameter_list|(
-name|gchar
+name|char
 modifier|*
 name|str
 parameter_list|)

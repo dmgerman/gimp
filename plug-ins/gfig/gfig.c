@@ -8134,7 +8134,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6eb1200108
+DECL|struct|__anon2b57ebe90108
 block|{
 DECL|member|color_string
 name|gchar
@@ -59098,6 +59098,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
+break|break;
 block|}
 comment|/* Re calc which object point we are lookin at */
 name|scan_obj_points
