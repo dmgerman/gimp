@@ -1169,7 +1169,7 @@ operator|->
 name|hex_entry
 argument_list|)
 argument_list|,
-literal|7
+literal|8
 argument_list|)
 expr_stmt|;
 name|gtk_entry_set_max_length
@@ -2583,8 +2583,21 @@ argument_list|(
 name|selector
 argument_list|)
 expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 block|}
+name|gtk_entry_set_text
+argument_list|(
+name|GTK_ENTRY
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|buffer
+argument_list|)
+expr_stmt|;
 break|break;
 default|default:
 comment|/*  do nothing  */
