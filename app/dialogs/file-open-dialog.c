@@ -29,12 +29,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
 end_include
 
@@ -722,7 +716,7 @@ name|file_sel
 decl_stmt|;
 name|GtkTreeSelection
 modifier|*
-name|sel
+name|tree_sel
 decl_stmt|;
 name|fileload
 operator|=
@@ -862,7 +856,7 @@ name|fileload
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|sel
+name|tree_sel
 operator|=
 name|gtk_tree_view_get_selection
 argument_list|(
@@ -877,19 +871,13 @@ name|file_list
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_tree_selection_set_mode
-argument_list|(
-name|sel
-argument_list|,
-name|GTK_SELECTION_MULTIPLE
-argument_list|)
-expr_stmt|;
+comment|/* disabled until fixed in GTK+    *    *  gtk_tree_selection_set_mode (tree_sel, GTK_SELECTION_MULTIPLE);    */
 comment|/* Catch file-list clicks so we can update the preview thumbnail */
 name|g_signal_connect
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sel
+name|tree_sel
 argument_list|)
 argument_list|,
 literal|"changed"

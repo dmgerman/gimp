@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<errno.h>
 end_include
 
@@ -82,7 +76,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b813ccc0103
+DECL|enum|__anon2c3ee26a0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -1149,7 +1143,7 @@ index|]
 operator|==
 name|G_DIR_SEPARATOR
 operator|||
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 name|safe_name
 index|[

@@ -29,12 +29,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
 end_include
 
@@ -381,13 +375,13 @@ condition|)
 block|{
 if|if
 condition|(
-name|tolower
+name|g_ascii_tolower
 argument_list|(
 operator|*
 name|p1
 argument_list|)
 operator|!=
-name|tolower
+name|g_ascii_tolower
 argument_list|(
 operator|*
 name|p2
@@ -854,7 +848,7 @@ operator|)
 operator|||
 operator|(
 operator|!
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 operator|*
 name|uin
@@ -1291,7 +1285,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 name|num_operator_ptr
 index|[
@@ -1419,7 +1413,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 name|value
 index|[

@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<sys/types.h>
 end_include
 
@@ -1616,7 +1610,7 @@ condition|(
 operator|*
 name|paramstring
 operator|&&
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 operator|*
 name|paramstring
@@ -2224,7 +2218,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Fatal parsing error:\nBrush pipe file '%s' is corrupt."
+literal|"Fatal parsing error:\n"
+literal|"Brush pipe file '%s' is corrupt."
 argument_list|)
 argument_list|,
 name|filename

@@ -6,13 +6,13 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|"config.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<ctype.h>
+file|<glib.h>
 end_include
 
 begin_include
@@ -464,7 +464,7 @@ operator|==
 literal|'-'
 operator|)
 operator|||
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 name|buffer
 index|[
@@ -949,7 +949,7 @@ literal|3
 case|:
 if|if
 condition|(
-name|isdigit
+name|g_ascii_isdigit
 argument_list|(
 name|buffer
 index|[
