@@ -113,24 +113,19 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  move tool options  */
+comment|/*  the move tool options  */
 end_comment
 
 begin_decl_stmt
 DECL|variable|move_options
 specifier|static
-name|void
+name|ToolOptions
 modifier|*
 name|move_options
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-DECL|variable|move_options
-comment|/* dummy */
-end_comment
 
 begin_comment
 comment|/*  local variables  */
@@ -1990,33 +1985,33 @@ name|MoveTool
 modifier|*
 name|private
 decl_stmt|;
+comment|/*  The tool options  */
 if|if
 condition|(
 operator|!
 name|move_options
 condition|)
 block|{
-name|tools_register
+name|move_options
+operator|=
+name|tool_options_new
 argument_list|(
-name|MOVE
-argument_list|,
-name|NULL
-argument_list|,
 name|_
 argument_list|(
 literal|"Move Tool Options"
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
-name|move_options
-operator|=
+name|tools_register
+argument_list|(
+name|MOVE
+argument_list|,
 operator|(
-name|void
+name|ToolOptions
 operator|*
 operator|)
-literal|1
+name|move_options
+argument_list|)
 expr_stmt|;
 block|}
 name|tool

@@ -328,18 +328,13 @@ end_comment
 begin_decl_stmt
 DECL|variable|color_balance_options
 specifier|static
-name|void
+name|ToolOptions
 modifier|*
 name|color_balance_options
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-DECL|variable|color_balance_options
-comment|/* dummy */
-end_comment
 
 begin_comment
 comment|/*  the color balance dialog  */
@@ -1213,27 +1208,22 @@ operator|!
 name|color_balance_options
 condition|)
 block|{
-name|tools_register
+name|color_balance_options
+operator|=
+name|tool_options_new
 argument_list|(
-name|COLOR_BALANCE
-argument_list|,
-name|NULL
-argument_list|,
 name|_
 argument_list|(
 literal|"Color Balance Options"
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
+name|tools_register
+argument_list|(
+name|COLOR_BALANCE
+argument_list|,
 name|color_balance_options
-operator|=
-operator|(
-name|void
-operator|*
-operator|)
-literal|1
+argument_list|)
 expr_stmt|;
 block|}
 name|tool

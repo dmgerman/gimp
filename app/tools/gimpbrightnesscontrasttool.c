@@ -165,6 +165,10 @@ name|ALL
 value|0xF
 end_define
 
+begin_comment
+comment|/*  the brightness-contrast structures  */
+end_comment
+
 begin_typedef
 DECL|typedef|BrightnessContrast
 typedef|typedef
@@ -264,6 +268,36 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/*  the brightness-contrast tool options  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|brightness_contrast_options
+specifier|static
+name|ToolOptions
+modifier|*
+name|brightness_contrast_options
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  the brightness-contrast dialog  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|brightness_contrast_dialog
+specifier|static
+name|BrightnessContrastDialog
+modifier|*
+name|brightness_contrast_dialog
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  brightness contrast action functions  */
@@ -490,28 +524,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|brightness_contrast_options
-specifier|static
-name|void
-modifier|*
-name|brightness_contrast_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|brightness_contrast_dialog
-specifier|static
-name|BrightnessContrastDialog
-modifier|*
-name|brightness_contrast_dialog
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/*  by_color select action functions  */
 end_comment
@@ -737,27 +749,22 @@ operator|!
 name|brightness_contrast_options
 condition|)
 block|{
-name|tools_register
+name|brightness_contrast_options
+operator|=
+name|tool_options_new
 argument_list|(
-name|BRIGHTNESS_CONTRAST
-argument_list|,
-name|NULL
-argument_list|,
 name|_
 argument_list|(
 literal|"Brightness-Contrast Options"
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
+name|tools_register
+argument_list|(
+name|BRIGHTNESS_CONTRAST
+argument_list|,
 name|brightness_contrast_options
-operator|=
-operator|(
-name|void
-operator|*
-operator|)
-literal|1
+argument_list|)
 expr_stmt|;
 block|}
 name|tool
@@ -1308,7 +1315,7 @@ argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
-literal|0.5
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -1574,7 +1581,7 @@ argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
-literal|0.5
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach

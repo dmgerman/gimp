@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tool_options_ui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools.h"
 end_include
 
@@ -99,6 +105,10 @@ DECL|struct|_EraserOptions
 struct|struct
 name|_EraserOptions
 block|{
+DECL|member|tool_options
+name|ToolOptions
+name|tool_options
+decl_stmt|;
 DECL|member|hard
 name|gboolean
 name|hard
@@ -130,7 +140,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  eraser tool options  */
+comment|/*  the eraser tool options  */
 end_comment
 
 begin_decl_stmt
@@ -217,57 +227,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|eraser_toggle_update (GtkWidget * w,gpointer data)
-name|eraser_toggle_update
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gboolean
-modifier|*
-name|toggle_val
-decl_stmt|;
-name|toggle_val
-operator|=
-operator|(
-name|gboolean
-operator|*
-operator|)
-name|data
-expr_stmt|;
-if|if
-condition|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|w
-argument_list|)
-operator|->
-name|active
-condition|)
-operator|*
-name|toggle_val
-operator|=
-name|TRUE
-expr_stmt|;
-else|else
-operator|*
-name|toggle_val
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|reset_eraser_options (void)
-name|reset_eraser_options
+DECL|function|eraser_options_reset (void)
+name|eraser_options_reset
 parameter_list|(
 name|void
 parameter_list|)
@@ -313,8 +274,8 @@ begin_function
 specifier|static
 name|EraserOptions
 modifier|*
-DECL|function|create_eraser_options (void)
-name|create_eraser_options
+DECL|function|eraser_options_new (void)
+name|eraser_options_new
 parameter_list|(
 name|void
 parameter_list|)
@@ -327,6 +288,7 @@ name|GtkWidget
 modifier|*
 name|vbox
 decl_stmt|;
+comment|/*  the new eraser tool options structure  */
 name|options
 operator|=
 operator|(
@@ -339,6 +301,22 @@ sizeof|sizeof
 argument_list|(
 name|EraserOptions
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|tool_options_init
+argument_list|(
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|options
+argument_list|,
+name|_
+argument_list|(
+literal|"Eraser Options"
+argument_list|)
+argument_list|,
+name|eraser_options_reset
 argument_list|)
 expr_stmt|;
 name|options
@@ -364,12 +342,11 @@ expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
 operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|1
-argument_list|)
+name|options
+operator|->
+name|tool_options
+operator|.
+name|main_vbox
 expr_stmt|;
 comment|/* the hard toggle */
 name|options
@@ -416,7 +393,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|eraser_toggle_update
+name|tool_options_toggle_update
 argument_list|,
 operator|&
 name|options
@@ -490,7 +467,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|eraser_toggle_update
+name|tool_options_toggle_update
 argument_list|,
 operator|&
 name|options
@@ -517,21 +494,6 @@ argument_list|(
 name|options
 operator|->
 name|incremental_w
-argument_list|)
-expr_stmt|;
-comment|/*  Register this eraser options widget with the main tools options dialog  */
-name|tools_register
-argument_list|(
-name|ERASER
-argument_list|,
-name|vbox
-argument_list|,
-name|_
-argument_list|(
-literal|"Eraser Options"
-argument_list|)
-argument_list|,
-name|reset_eraser_options
 argument_list|)
 expr_stmt|;
 return|return
@@ -614,16 +576,30 @@ name|PaintCore
 modifier|*
 name|private
 decl_stmt|;
+comment|/*  The tool options  */
 if|if
 condition|(
 operator|!
 name|eraser_options
 condition|)
+block|{
 name|eraser_options
 operator|=
-name|create_eraser_options
+name|eraser_options_new
 argument_list|()
 expr_stmt|;
+name|tools_register
+argument_list|(
+name|ERASER
+argument_list|,
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|eraser_options
+argument_list|)
+expr_stmt|;
+block|}
 name|tool
 operator|=
 name|paint_core_new

@@ -58,11 +58,17 @@ end_include
 begin_include
 include|#
 directive|include
+file|"selection_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
-comment|/*  ellipse select tool options  */
+comment|/*  the ellipse selection tool options  */
 end_comment
 
 begin_decl_stmt
@@ -521,13 +527,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ellipse_select_reset_options (void)
-name|ellipse_select_reset_options
+DECL|function|ellipse_select_options_reset (void)
+name|ellipse_select_options_reset
 parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|reset_selection_options
+name|selection_options_reset
 argument_list|(
 name|ellipse_options
 argument_list|)
@@ -558,15 +564,28 @@ condition|(
 operator|!
 name|ellipse_options
 condition|)
+block|{
 name|ellipse_options
 operator|=
-name|create_selection_options
+name|selection_options_new
 argument_list|(
 name|ELLIPSE_SELECT
 argument_list|,
-name|ellipse_select_reset_options
+name|ellipse_select_options_reset
 argument_list|)
 expr_stmt|;
+name|tools_register
+argument_list|(
+name|ELLIPSE_SELECT
+argument_list|,
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|ellipse_options
+argument_list|)
+expr_stmt|;
+block|}
 name|tool
 operator|=
 operator|(

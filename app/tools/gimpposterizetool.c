@@ -204,18 +204,13 @@ end_comment
 begin_decl_stmt
 DECL|variable|posterize_options
 specifier|static
-name|void
+name|ToolOptions
 modifier|*
 name|posterize_options
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-DECL|variable|posterize_options
-comment|/* dummy */
-end_comment
 
 begin_comment
 comment|/* the posterize tool dialog  */
@@ -406,7 +401,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  by_color select action functions  */
+comment|/*  posterize select action functions  */
 end_comment
 
 begin_function
@@ -644,27 +639,21 @@ operator|!
 name|posterize_options
 condition|)
 block|{
+name|posterize_options
+operator|=
+name|tool_options_new
+argument_list|(
+operator|(
+literal|"Posterize Options"
+operator|)
+argument_list|)
+expr_stmt|;
 name|tools_register
 argument_list|(
 name|POSTERIZE
 argument_list|,
-name|NULL
-argument_list|,
-name|_
-argument_list|(
-literal|"Posterize Options"
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|posterize_options
-operator|=
-operator|(
-name|void
-operator|*
-operator|)
-literal|1
+argument_list|)
 expr_stmt|;
 block|}
 comment|/*  The posterize dialog  */

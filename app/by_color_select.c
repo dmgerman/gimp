@@ -84,7 +84,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"rect_select.h"
+file|"selection_options.h"
 end_include
 
 begin_include
@@ -220,7 +220,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  by color selection tool options  */
+comment|/*  the by color selection tool options  */
 end_comment
 
 begin_decl_stmt
@@ -2074,11 +2074,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|by_color_select_reset_options ()
-name|by_color_select_reset_options
+DECL|function|by_color_select_options_reset ()
+name|by_color_select_options_reset
 parameter_list|()
 block|{
-name|reset_selection_options
+name|selection_options_reset
 argument_list|(
 name|by_color_options
 argument_list|)
@@ -2107,15 +2107,28 @@ condition|(
 operator|!
 name|by_color_options
 condition|)
+block|{
 name|by_color_options
 operator|=
-name|create_selection_options
+name|selection_options_new
 argument_list|(
 name|BY_COLOR_SELECT
 argument_list|,
-name|by_color_select_reset_options
+name|by_color_select_options_reset
 argument_list|)
 expr_stmt|;
+name|tools_register
+argument_list|(
+name|BY_COLOR_SELECT
+argument_list|,
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|by_color_options
+argument_list|)
+expr_stmt|;
+block|}
 comment|/*  The "by color" dialog  */
 if|if
 condition|(

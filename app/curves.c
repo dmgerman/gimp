@@ -436,18 +436,13 @@ end_comment
 begin_decl_stmt
 DECL|variable|curves_options
 specifier|static
-name|void
+name|ToolOptions
 modifier|*
 name|curves_options
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-DECL|variable|curves_options
-comment|/* dummy */
-end_comment
 
 begin_comment
 comment|/*  the curves dialog  */
@@ -1828,27 +1823,22 @@ operator|!
 name|curves_options
 condition|)
 block|{
-name|tools_register
+name|curves_options
+operator|=
+name|tool_options_new
 argument_list|(
-name|CURVES
-argument_list|,
-name|NULL
-argument_list|,
 name|_
 argument_list|(
 literal|"Curves Options"
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
+name|tools_register
+argument_list|(
+name|CURVES
+argument_list|,
 name|curves_options
-operator|=
-operator|(
-name|void
-operator|*
-operator|)
-literal|1
+argument_list|)
 expr_stmt|;
 block|}
 name|tool

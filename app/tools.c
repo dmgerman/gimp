@@ -375,10 +375,6 @@ block|{
 block|{
 name|NULL
 block|,
-name|NULL
-block|,
-name|NULL
-block|,
 name|N_
 argument_list|(
 literal|"Rect Select"
@@ -417,10 +413,6 @@ name|NULL
 block|}
 block|,
 block|{
-name|NULL
-block|,
-name|NULL
-block|,
 name|NULL
 block|,
 name|N_
@@ -463,10 +455,6 @@ block|,
 block|{
 name|NULL
 block|,
-name|NULL
-block|,
-name|NULL
-block|,
 name|N_
 argument_list|(
 literal|"Free Select"
@@ -505,10 +493,6 @@ name|NULL
 block|}
 block|,
 block|{
-name|NULL
-block|,
-name|NULL
-block|,
 name|NULL
 block|,
 name|N_
@@ -551,10 +535,6 @@ block|,
 block|{
 name|NULL
 block|,
-name|NULL
-block|,
-name|NULL
-block|,
 name|N_
 argument_list|(
 literal|"Bezier Select"
@@ -593,10 +573,6 @@ name|NULL
 block|}
 block|,
 block|{
-name|NULL
-block|,
-name|NULL
-block|,
 name|NULL
 block|,
 name|N_
@@ -639,10 +615,6 @@ block|,
 block|{
 name|NULL
 block|,
-name|NULL
-block|,
-name|NULL
-block|,
 name|N_
 argument_list|(
 literal|"Move"
@@ -681,10 +653,6 @@ name|NULL
 block|}
 block|,
 block|{
-name|NULL
-block|,
-name|NULL
-block|,
 name|NULL
 block|,
 name|N_
@@ -727,10 +695,6 @@ block|,
 block|{
 name|NULL
 block|,
-name|NULL
-block|,
-name|NULL
-block|,
 name|N_
 argument_list|(
 literal|"Crop"
@@ -769,10 +733,6 @@ name|NULL
 block|}
 block|,
 block|{
-name|NULL
-block|,
-name|NULL
-block|,
 name|NULL
 block|,
 name|N_
@@ -816,10 +776,6 @@ comment|/* rotate */
 block|{
 name|NULL
 block|,
-name|NULL
-block|,
-name|NULL
-block|,
 name|N_
 argument_list|(
 literal|"Transform"
@@ -848,10 +804,6 @@ block|}
 block|,
 comment|/* scale */
 block|{
-name|NULL
-block|,
-name|NULL
-block|,
 name|NULL
 block|,
 name|N_
@@ -884,10 +836,6 @@ comment|/* shear */
 block|{
 name|NULL
 block|,
-name|NULL
-block|,
-name|NULL
-block|,
 name|N_
 argument_list|(
 literal|"Transform"
@@ -916,10 +864,6 @@ block|}
 block|,
 comment|/* perspective */
 block|{
-name|NULL
-block|,
-name|NULL
-block|,
 name|NULL
 block|,
 name|N_
@@ -963,10 +907,6 @@ comment|/* horizontal */
 block|{
 name|NULL
 block|,
-name|NULL
-block|,
-name|NULL
-block|,
 name|N_
 argument_list|(
 literal|"Flip"
@@ -995,10 +935,6 @@ block|}
 block|,
 comment|/* vertical */
 block|{
-name|NULL
-block|,
-name|NULL
-block|,
 name|NULL
 block|,
 name|N_
@@ -1041,10 +977,6 @@ block|,
 block|{
 name|NULL
 block|,
-name|NULL
-block|,
-name|NULL
-block|,
 name|N_
 argument_list|(
 literal|"Color Picker"
@@ -1083,10 +1015,6 @@ name|NULL
 block|}
 block|,
 block|{
-name|NULL
-block|,
-name|NULL
-block|,
 name|NULL
 block|,
 name|N_
@@ -1129,10 +1057,6 @@ block|,
 block|{
 name|NULL
 block|,
-name|NULL
-block|,
-name|NULL
-block|,
 name|N_
 argument_list|(
 literal|"Blend"
@@ -1171,10 +1095,6 @@ name|NULL
 block|}
 block|,
 block|{
-name|NULL
-block|,
-name|NULL
-block|,
 name|NULL
 block|,
 name|N_
@@ -1217,10 +1137,6 @@ block|,
 block|{
 name|NULL
 block|,
-name|NULL
-block|,
-name|NULL
-block|,
 name|N_
 argument_list|(
 literal|"Paintbrush"
@@ -1259,10 +1175,6 @@ name|NULL
 block|}
 block|,
 block|{
-name|NULL
-block|,
-name|NULL
-block|,
 name|NULL
 block|,
 name|N_
@@ -1305,10 +1217,6 @@ block|,
 block|{
 name|NULL
 block|,
-name|NULL
-block|,
-name|NULL
-block|,
 name|N_
 argument_list|(
 literal|"Airbrush"
@@ -1347,10 +1255,6 @@ name|NULL
 block|}
 block|,
 block|{
-name|NULL
-block|,
-name|NULL
-block|,
 name|NULL
 block|,
 name|N_
@@ -1393,10 +1297,6 @@ block|,
 block|{
 name|NULL
 block|,
-name|NULL
-block|,
-name|NULL
-block|,
 name|N_
 argument_list|(
 literal|"Convolve"
@@ -1435,10 +1335,6 @@ name|NULL
 block|}
 block|,
 block|{
-name|NULL
-block|,
-name|NULL
-block|,
 name|NULL
 block|,
 name|N_
@@ -1482,10 +1378,6 @@ comment|/*  Non-toolbox tools  */
 block|{
 name|NULL
 block|,
-name|NULL
-block|,
-name|NULL
-block|,
 name|N_
 argument_list|(
 literal|"By Color Select"
@@ -1516,10 +1408,6 @@ name|by_color_select_initialize
 block|}
 block|,
 block|{
-name|NULL
-block|,
-name|NULL
-block|,
 name|NULL
 block|,
 name|N_
@@ -1554,10 +1442,6 @@ block|,
 block|{
 name|NULL
 block|,
-name|NULL
-block|,
-name|NULL
-block|,
 name|N_
 argument_list|(
 literal|"Brightness-Contrast"
@@ -1588,10 +1472,6 @@ name|brightness_contrast_initialize
 block|}
 block|,
 block|{
-name|NULL
-block|,
-name|NULL
-block|,
 name|NULL
 block|,
 name|N_
@@ -1626,10 +1506,6 @@ block|,
 block|{
 name|NULL
 block|,
-name|NULL
-block|,
-name|NULL
-block|,
 name|N_
 argument_list|(
 literal|"Posterize"
@@ -1660,10 +1536,6 @@ name|posterize_initialize
 block|}
 block|,
 block|{
-name|NULL
-block|,
-name|NULL
-block|,
 name|NULL
 block|,
 name|N_
@@ -1698,10 +1570,6 @@ block|,
 block|{
 name|NULL
 block|,
-name|NULL
-block|,
-name|NULL
-block|,
 name|N_
 argument_list|(
 literal|"Curves"
@@ -1734,10 +1602,6 @@ block|,
 block|{
 name|NULL
 block|,
-name|NULL
-block|,
-name|NULL
-block|,
 name|N_
 argument_list|(
 literal|"Levels"
@@ -1768,10 +1632,6 @@ name|levels_initialize
 block|}
 block|,
 block|{
-name|NULL
-block|,
-name|NULL
-block|,
 name|NULL
 block|,
 name|N_
@@ -1870,7 +1730,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Function definitions */
+comment|/*  Function definitions  */
 end_comment
 
 begin_function
@@ -1915,6 +1775,8 @@ name|type
 index|]
 operator|.
 name|tool_options
+operator|->
+name|main_vbox
 argument_list|)
 expr_stmt|;
 operator|(
@@ -1998,6 +1860,8 @@ name|type
 index|]
 operator|.
 name|tool_options
+operator|->
+name|main_vbox
 condition|)
 name|gtk_widget_show
 argument_list|(
@@ -2012,6 +1876,8 @@ name|type
 index|]
 operator|.
 name|tool_options
+operator|->
+name|main_vbox
 argument_list|)
 expr_stmt|;
 if|if
@@ -2026,7 +1892,9 @@ operator|->
 name|type
 index|]
 operator|.
-name|tool_options_title
+name|tool_options
+operator|->
+name|title
 condition|)
 name|gtk_label_set_text
 argument_list|(
@@ -2045,7 +1913,9 @@ operator|->
 name|type
 index|]
 operator|.
-name|tool_options_title
+name|tool_options
+operator|->
+name|title
 argument_list|)
 expr_stmt|;
 if|if
@@ -2060,7 +1930,9 @@ operator|->
 name|type
 index|]
 operator|.
-name|tool_options_reset_func
+name|tool_options
+operator|->
+name|reset_func
 condition|)
 name|gtk_widget_set_sensitive
 argument_list|(
@@ -2246,6 +2118,8 @@ name|type
 index|]
 operator|.
 name|tool_options
+operator|->
+name|main_vbox
 argument_list|)
 expr_stmt|;
 if|if
@@ -2260,7 +2134,9 @@ operator|->
 name|type
 index|]
 operator|.
-name|tool_options_title
+name|tool_options
+operator|->
+name|title
 condition|)
 name|gtk_label_set_text
 argument_list|(
@@ -2279,7 +2155,9 @@ operator|->
 name|type
 index|]
 operator|.
-name|tool_options_title
+name|tool_options
+operator|->
+name|title
 argument_list|)
 expr_stmt|;
 if|if
@@ -2294,7 +2172,9 @@ operator|->
 name|type
 index|]
 operator|.
-name|tool_options_reset_func
+name|tool_options
+operator|->
+name|reset_func
 condition|)
 name|gtk_widget_set_sensitive
 argument_list|(
@@ -2792,54 +2672,24 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_register (ToolType tool_type,GtkWidget * tool_options,gchar * tool_options_title,ToolOptionsResetFunc tool_options_reset_func)
+DECL|function|tools_register (ToolType tool_type,ToolOptions * tool_options)
 name|tools_register
 parameter_list|(
 name|ToolType
 name|tool_type
 parameter_list|,
-name|GtkWidget
+name|ToolOptions
 modifier|*
 name|tool_options
-parameter_list|,
-name|gchar
-modifier|*
-name|tool_options_title
-parameter_list|,
-name|ToolOptionsResetFunc
-name|tool_options_reset_func
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|!
-name|tool_options
-condition|)
-block|{
-comment|/*  this tool has no special options  */
-name|tool_options
-operator|=
-name|gtk_label_new
+name|g_return_if_fail
 argument_list|(
-name|_
-argument_list|(
-literal|"This tool has no options."
-argument_list|)
+name|tool_options
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_padding
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|tool_options
-argument_list|)
-argument_list|,
-literal|2
-argument_list|,
-literal|6
-argument_list|)
-expr_stmt|;
-block|}
 name|tool_info
 index|[
 operator|(
@@ -2859,6 +2709,8 @@ operator|!
 name|GTK_WIDGET_VISIBLE
 argument_list|(
 name|tool_options
+operator|->
+name|main_vbox
 argument_list|)
 condition|)
 block|{
@@ -2870,6 +2722,8 @@ name|options_vbox
 argument_list|)
 argument_list|,
 name|tool_options
+operator|->
+name|main_vbox
 argument_list|,
 name|TRUE
 argument_list|,
@@ -2881,51 +2735,11 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|tool_options
+operator|->
+name|main_vbox
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-operator|!
-name|tool_options_title
-condition|)
-block|{
-comment|/*  this tool didn't pass a title string  */
-name|tool_options_title
-operator|=
-name|g_strconcat
-argument_list|(
-name|tool_info
-index|[
-operator|(
-name|int
-operator|)
-name|tool_type
-index|]
-operator|.
-name|tool_name
-argument_list|,
-name|_
-argument_list|(
-literal|" Tool Options"
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-block|}
-name|tool_info
-index|[
-operator|(
-name|int
-operator|)
-name|tool_type
-index|]
-operator|.
-name|tool_options_title
-operator|=
-name|tool_options_title
-expr_stmt|;
 name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
@@ -2933,20 +2747,10 @@ argument_list|(
 name|options_label
 argument_list|)
 argument_list|,
-name|tool_options_title
+name|tool_options
+operator|->
+name|title
 argument_list|)
-expr_stmt|;
-name|tool_info
-index|[
-operator|(
-name|int
-operator|)
-name|tool_type
-index|]
-operator|.
-name|tool_options_reset_func
-operator|=
-name|tool_options_reset_func
 expr_stmt|;
 block|}
 end_function
@@ -3262,7 +3066,9 @@ operator|)
 name|active_tool_type
 index|]
 operator|.
-name|tool_options_reset_func
+name|tool_options
+operator|->
+name|reset_func
 condition|)
 operator|(
 operator|*
@@ -3274,7 +3080,9 @@ operator|)
 name|active_tool_type
 index|]
 operator|.
-name|tool_options_reset_func
+name|tool_options
+operator|->
+name|reset_func
 operator|)
 operator|(
 operator|)

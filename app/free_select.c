@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"selection_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -105,7 +111,7 @@ value|9
 end_define
 
 begin_comment
-comment|/* the free select structures  */
+comment|/*  the free selection structures  */
 end_comment
 
 begin_typedef
@@ -168,7 +174,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  free select tool options  */
+comment|/*  the free selection tool options  */
 end_comment
 
 begin_decl_stmt
@@ -2372,11 +2378,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|free_select_reset_options ()
-name|free_select_reset_options
+DECL|function|free_select_options_reset ()
+name|free_select_options_reset
 parameter_list|()
 block|{
-name|reset_selection_options
+name|selection_options_reset
 argument_list|(
 name|free_options
 argument_list|)
@@ -2407,15 +2413,28 @@ condition|(
 operator|!
 name|free_options
 condition|)
+block|{
 name|free_options
 operator|=
-name|create_selection_options
+name|selection_options_new
 argument_list|(
 name|FREE_SELECT
 argument_list|,
-name|free_select_reset_options
+name|free_select_options_reset
 argument_list|)
 expr_stmt|;
+name|tools_register
+argument_list|(
+name|FREE_SELECT
+argument_list|,
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|free_options
+argument_list|)
+expr_stmt|;
+block|}
 name|tool
 operator|=
 operator|(

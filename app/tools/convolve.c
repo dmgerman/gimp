@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tool_options_ui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools.h"
 end_include
 
@@ -155,6 +161,10 @@ DECL|struct|_ConvolveOptions
 struct|struct
 name|_ConvolveOptions
 block|{
+DECL|member|tool_options
+name|ToolOptions
+name|tool_options
+decl_stmt|;
 DECL|member|type
 name|ConvolveType
 name|type
@@ -186,7 +196,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  convolve tool options  */
+comment|/*  the convolve tool options  */
 end_comment
 
 begin_decl_stmt
@@ -516,40 +526,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|convolve_scale_update (GtkAdjustment * adjustment,double * scale_val)
-name|convolve_scale_update
-parameter_list|(
-name|GtkAdjustment
-modifier|*
-name|adjustment
-parameter_list|,
-name|double
-modifier|*
-name|scale_val
-parameter_list|)
-block|{
-operator|*
-name|scale_val
-operator|=
-name|adjustment
-operator|->
-name|value
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|convolve_type_callback (GtkWidget * w,gpointer client_data)
+DECL|function|convolve_type_callback (GtkWidget * widget,gpointer data)
 name|convolve_type_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|convolve_options
@@ -559,7 +544,7 @@ operator|=
 operator|(
 name|ConvolveType
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 block|}
 end_function
@@ -567,8 +552,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|reset_convolve_options (void)
-name|reset_convolve_options
+DECL|function|convolve_options_reset (void)
+name|convolve_options_reset
 parameter_list|(
 name|void
 parameter_list|)
@@ -612,8 +597,8 @@ begin_function
 specifier|static
 name|ConvolveOptions
 modifier|*
-DECL|function|create_convolve_options (void)
-name|create_convolve_options
+DECL|function|convolve_options_new (void)
+name|convolve_options_new
 parameter_list|(
 name|void
 parameter_list|)
@@ -638,15 +623,15 @@ name|GtkWidget
 modifier|*
 name|scale
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|frame
-decl_stmt|;
 name|GSList
 modifier|*
 name|group
 init|=
 name|NULL
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|frame
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -683,7 +668,7 @@ literal|"Custom"
 argument_list|)
 block|}
 decl_stmt|;
-comment|/*  the new options structure  */
+comment|/*  the new convolve tool options structure  */
 name|options
 operator|=
 operator|(
@@ -696,6 +681,22 @@ sizeof|sizeof
 argument_list|(
 name|ConvolveOptions
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|tool_options_init
+argument_list|(
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|options
+argument_list|,
+name|_
+argument_list|(
+literal|"Convolver Options"
+argument_list|)
+argument_list|,
+name|convolve_options_reset
 argument_list|)
 expr_stmt|;
 name|options
@@ -721,12 +722,11 @@ expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
 operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|3
-argument_list|)
+name|options
+operator|->
+name|tool_options
+operator|.
+name|main_vbox
 expr_stmt|;
 comment|/*  the pressure scale  */
 name|hbox
@@ -880,7 +880,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|convolve_scale_update
+name|tool_options_double_adjustment_update
 argument_list|,
 operator|&
 name|options
@@ -1064,21 +1064,6 @@ argument_list|(
 name|radio_box
 argument_list|)
 expr_stmt|;
-comment|/*  Register this selection options widget with the main tools options dialog    */
-name|tools_register
-argument_list|(
-name|CONVOLVE
-argument_list|,
-name|vbox
-argument_list|,
-name|_
-argument_list|(
-literal|"Convolver Options"
-argument_list|)
-argument_list|,
-name|reset_convolve_options
-argument_list|)
-expr_stmt|;
 return|return
 name|options
 return|;
@@ -1141,16 +1126,30 @@ name|PaintCore
 modifier|*
 name|private
 decl_stmt|;
+comment|/*  The tool options  */
 if|if
 condition|(
 operator|!
 name|convolve_options
 condition|)
+block|{
 name|convolve_options
 operator|=
-name|create_convolve_options
+name|convolve_options_new
 argument_list|()
 expr_stmt|;
+name|tools_register
+argument_list|(
+name|CONVOLVE
+argument_list|,
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|convolve_options
+argument_list|)
+expr_stmt|;
+block|}
 name|tool
 operator|=
 name|paint_core_new

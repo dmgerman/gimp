@@ -88,24 +88,19 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
-comment|/*  pencil tool options  */
+comment|/*  the pencil tool options  */
 end_comment
 
 begin_decl_stmt
 DECL|variable|pencil_options
 specifier|static
-name|void
+name|ToolOptions
 modifier|*
 name|pencil_options
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-DECL|variable|pencil_options
-comment|/* dummy */
-end_comment
 
 begin_comment
 comment|/*  forward function declarations  */
@@ -207,33 +202,29 @@ name|PaintCore
 modifier|*
 name|private
 decl_stmt|;
+comment|/*  The tool options  */
 if|if
 condition|(
 operator|!
 name|pencil_options
 condition|)
 block|{
-name|tools_register
+name|pencil_options
+operator|=
+name|tool_options_new
 argument_list|(
-name|PENCIL
-argument_list|,
-name|NULL
-argument_list|,
 name|_
 argument_list|(
 literal|"Pencil Options"
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
+name|tools_register
+argument_list|(
+name|PENCIL
+argument_list|,
 name|pencil_options
-operator|=
-operator|(
-name|void
-operator|*
-operator|)
-literal|1
+argument_list|)
 expr_stmt|;
 block|}
 name|tool

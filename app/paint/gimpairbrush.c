@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tool_options_ui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools.h"
 end_include
 
@@ -161,6 +167,10 @@ DECL|struct|_AirbrushOptions
 struct|struct
 name|_AirbrushOptions
 block|{
+DECL|member|tool_options
+name|ToolOptions
+name|tool_options
+decl_stmt|;
 DECL|member|rate
 name|double
 name|rate
@@ -192,7 +202,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  airbrush tool options  */
+comment|/*  the airbrush tool options  */
 end_comment
 
 begin_decl_stmt
@@ -303,33 +313,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|airbrush_scale_update (GtkAdjustment * adjustment,double * scale_val)
-name|airbrush_scale_update
-parameter_list|(
-name|GtkAdjustment
-modifier|*
-name|adjustment
-parameter_list|,
-name|double
-modifier|*
-name|scale_val
-parameter_list|)
-block|{
-operator|*
-name|scale_val
-operator|=
-name|adjustment
-operator|->
-name|value
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|reset_airbrush_options (void)
-name|reset_airbrush_options
+DECL|function|airbrush_options_reset (void)
+name|airbrush_options_reset
 parameter_list|(
 name|void
 parameter_list|)
@@ -375,8 +360,8 @@ begin_function
 specifier|static
 name|AirbrushOptions
 modifier|*
-DECL|function|create_airbrush_options (void)
-name|create_airbrush_options
+DECL|function|airbrush_options_new (void)
+name|airbrush_options_new
 parameter_list|(
 name|void
 parameter_list|)
@@ -401,7 +386,7 @@ name|GtkWidget
 modifier|*
 name|scale
 decl_stmt|;
-comment|/*  the new options structure  */
+comment|/*  the new airbrush tool options structure  */
 name|options
 operator|=
 operator|(
@@ -414,6 +399,22 @@ sizeof|sizeof
 argument_list|(
 name|AirbrushOptions
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|tool_options_init
+argument_list|(
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|options
+argument_list|,
+name|_
+argument_list|(
+literal|"Airbrush Options"
+argument_list|)
+argument_list|,
+name|airbrush_options_reset
 argument_list|)
 expr_stmt|;
 name|options
@@ -439,12 +440,11 @@ expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
 operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|2
-argument_list|)
+name|options
+operator|->
+name|tool_options
+operator|.
+name|main_vbox
 expr_stmt|;
 comment|/*  the rate scale  */
 name|table
@@ -638,7 +638,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|airbrush_scale_update
+name|tool_options_double_adjustment_update
 argument_list|,
 operator|&
 name|options
@@ -794,7 +794,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|airbrush_scale_update
+name|tool_options_double_adjustment_update
 argument_list|,
 operator|&
 name|options
@@ -812,23 +812,76 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-comment|/*  Register this selection options widget with the main tools options dialog    */
+return|return
+name|options
+return|;
+block|}
+end_function
+
+begin_function
+name|Tool
+modifier|*
+DECL|function|tools_new_airbrush ()
+name|tools_new_airbrush
+parameter_list|()
+block|{
+name|Tool
+modifier|*
+name|tool
+decl_stmt|;
+name|PaintCore
+modifier|*
+name|private
+decl_stmt|;
+comment|/*  The tool options  */
+if|if
+condition|(
+operator|!
+name|airbrush_options
+condition|)
+block|{
+name|airbrush_options
+operator|=
+name|airbrush_options_new
+argument_list|()
+expr_stmt|;
 name|tools_register
 argument_list|(
 name|AIRBRUSH
 argument_list|,
-name|vbox
-argument_list|,
-name|_
-argument_list|(
-literal|"Airbrush Options"
-argument_list|)
-argument_list|,
-name|reset_airbrush_options
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|airbrush_options
 argument_list|)
 expr_stmt|;
+block|}
+name|tool
+operator|=
+name|paint_core_new
+argument_list|(
+name|AIRBRUSH
+argument_list|)
+expr_stmt|;
+name|private
+operator|=
+operator|(
+name|PaintCore
+operator|*
+operator|)
+name|tool
+operator|->
+name|private
+expr_stmt|;
+name|private
+operator|->
+name|paint_func
+operator|=
+name|airbrush_paint_func
+expr_stmt|;
 return|return
-name|options
+name|tool
 return|;
 block|}
 end_function
@@ -999,60 +1052,6 @@ break|break;
 block|}
 return|return
 name|NULL
-return|;
-block|}
-end_function
-
-begin_function
-name|Tool
-modifier|*
-DECL|function|tools_new_airbrush ()
-name|tools_new_airbrush
-parameter_list|()
-block|{
-name|Tool
-modifier|*
-name|tool
-decl_stmt|;
-name|PaintCore
-modifier|*
-name|private
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|airbrush_options
-condition|)
-name|airbrush_options
-operator|=
-name|create_airbrush_options
-argument_list|()
-expr_stmt|;
-name|tool
-operator|=
-name|paint_core_new
-argument_list|(
-name|AIRBRUSH
-argument_list|)
-expr_stmt|;
-name|private
-operator|=
-operator|(
-name|PaintCore
-operator|*
-operator|)
-name|tool
-operator|->
-name|private
-expr_stmt|;
-name|private
-operator|->
-name|paint_func
-operator|=
-name|airbrush_paint_func
-expr_stmt|;
-return|return
-name|tool
 return|;
 block|}
 end_function

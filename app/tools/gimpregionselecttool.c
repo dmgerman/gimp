@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"selection_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile.h"
 end_include
 
@@ -2930,13 +2936,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|fuzzy_select_reset_options (void)
-name|fuzzy_select_reset_options
+DECL|function|fuzzy_select_options_reset (void)
+name|fuzzy_select_options_reset
 parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|reset_selection_options
+name|selection_options_reset
 argument_list|(
 name|fuzzy_options
 argument_list|)
@@ -2967,15 +2973,28 @@ condition|(
 operator|!
 name|fuzzy_options
 condition|)
+block|{
 name|fuzzy_options
 operator|=
-name|create_selection_options
+name|selection_options_new
 argument_list|(
 name|FUZZY_SELECT
 argument_list|,
-name|fuzzy_select_reset_options
+name|fuzzy_select_options_reset
 argument_list|)
 expr_stmt|;
+name|tools_register
+argument_list|(
+name|FUZZY_SELECT
+argument_list|,
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|fuzzy_options
+argument_list|)
+expr_stmt|;
+block|}
 name|tool
 operator|=
 operator|(

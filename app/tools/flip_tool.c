@@ -105,6 +105,10 @@ DECL|struct|_FlipOptions
 struct|struct
 name|_FlipOptions
 block|{
+DECL|member|tool_options
+name|ToolOptions
+name|tool_options
+decl_stmt|;
 DECL|member|type
 name|ToolType
 name|type
@@ -257,8 +261,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|reset_flip_options (void)
-name|reset_flip_options
+DECL|function|flip_options_reset (void)
+name|flip_options_reset
 parameter_list|(
 name|void
 parameter_list|)
@@ -288,8 +292,8 @@ begin_function
 specifier|static
 name|FlipOptions
 modifier|*
-DECL|function|create_flip_options (void)
-name|create_flip_options
+DECL|function|flip_options_new (void)
+name|flip_options_new
 parameter_list|(
 name|void
 parameter_list|)
@@ -302,6 +306,12 @@ name|GtkWidget
 modifier|*
 name|vbox
 decl_stmt|;
+name|GSList
+modifier|*
+name|group
+init|=
+name|NULL
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|radio_box
@@ -310,13 +320,7 @@ name|GtkWidget
 modifier|*
 name|radio_button
 decl_stmt|;
-name|GSList
-modifier|*
-name|group
-init|=
-name|NULL
-decl_stmt|;
-comment|/*  the new options structure  */
+comment|/*  the new flip tool options structure  */
 name|options
 operator|=
 operator|(
@@ -329,6 +333,22 @@ sizeof|sizeof
 argument_list|(
 name|FlipOptions
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|tool_options_init
+argument_list|(
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|options
+argument_list|,
+name|_
+argument_list|(
+literal|"Flip Tool Options"
+argument_list|)
+argument_list|,
+name|flip_options_reset
 argument_list|)
 expr_stmt|;
 name|options
@@ -344,12 +364,11 @@ expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
 operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|1
-argument_list|)
+name|options
+operator|->
+name|tool_options
+operator|.
+name|main_vbox
 expr_stmt|;
 name|radio_box
 operator|=
@@ -530,35 +549,6 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|radio_box
-argument_list|)
-expr_stmt|;
-comment|/*  Register this selection options widget with the main tools options dialog    */
-name|tools_register
-argument_list|(
-name|FLIP_HORZ
-argument_list|,
-name|vbox
-argument_list|,
-name|_
-argument_list|(
-literal|"Flip Tool Options"
-argument_list|)
-argument_list|,
-name|reset_flip_options
-argument_list|)
-expr_stmt|;
-name|tools_register
-argument_list|(
-name|FLIP_VERT
-argument_list|,
-name|vbox
-argument_list|,
-name|_
-argument_list|(
-literal|"Flip Tool Options"
-argument_list|)
-argument_list|,
-name|reset_flip_options
 argument_list|)
 expr_stmt|;
 return|return
@@ -780,16 +770,41 @@ DECL|function|tools_new_flip ()
 name|tools_new_flip
 parameter_list|()
 block|{
+comment|/*  The tool options  */
 if|if
 condition|(
 operator|!
 name|flip_options
 condition|)
+block|{
 name|flip_options
 operator|=
-name|create_flip_options
+name|flip_options_new
 argument_list|()
 expr_stmt|;
+name|tools_register
+argument_list|(
+name|FLIP_HORZ
+argument_list|,
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|flip_options
+argument_list|)
+expr_stmt|;
+name|tools_register
+argument_list|(
+name|FLIP_VERT
+argument_list|,
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|flip_options
+argument_list|)
+expr_stmt|;
+block|}
 switch|switch
 condition|(
 name|flip_options

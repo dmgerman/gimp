@@ -122,7 +122,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27706ca90103
+DECL|enum|__anon28dcb1bd0103
 block|{
 DECL|enumerator|AlignNo
 name|AlignNo
@@ -152,6 +152,10 @@ DECL|struct|_CloneOptions
 struct|struct
 name|_CloneOptions
 block|{
+DECL|member|tool_options
+name|ToolOptions
+name|tool_options
+decl_stmt|;
 DECL|member|type
 name|CloneType
 name|type
@@ -183,7 +187,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  clone tool options  */
+comment|/*  the clone tool options  */
 end_comment
 
 begin_decl_stmt
@@ -504,15 +508,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|clone_type_callback (GtkWidget * w,gpointer client_data)
+DECL|function|clone_type_callback (GtkWidget * widget,gpointer data)
 name|clone_type_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|clone_options
@@ -522,7 +526,7 @@ operator|=
 operator|(
 name|CloneType
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 block|}
 end_function
@@ -530,15 +534,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|align_type_callback (GtkWidget * w,gpointer client_data)
+DECL|function|align_type_callback (GtkWidget * widget,gpointer data)
 name|align_type_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|clone_options
@@ -548,7 +552,7 @@ operator|=
 operator|(
 name|AlignType
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 block|}
 end_function
@@ -556,8 +560,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|reset_clone_options (void)
-name|reset_clone_options
+DECL|function|clone_options_reset (void)
+name|clone_options_reset
 parameter_list|(
 name|void
 parameter_list|)
@@ -599,8 +603,8 @@ begin_function
 specifier|static
 name|CloneOptions
 modifier|*
-DECL|function|create_clone_options (void)
-name|create_clone_options
+DECL|function|clone_options_new (void)
+name|clone_options_new
 parameter_list|(
 name|void
 parameter_list|)
@@ -613,6 +617,12 @@ name|GtkWidget
 modifier|*
 name|vbox
 decl_stmt|;
+name|GSList
+modifier|*
+name|group
+init|=
+name|NULL
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|radio_frame
@@ -624,12 +634,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|radio_button
-decl_stmt|;
-name|GSList
-modifier|*
-name|group
-init|=
-name|NULL
 decl_stmt|;
 name|int
 name|i
@@ -677,7 +681,7 @@ literal|"Registered"
 argument_list|)
 block|}
 decl_stmt|;
-comment|/*  the new options structure  */
+comment|/*  the new clone tool options structure  */
 name|options
 operator|=
 operator|(
@@ -690,6 +694,22 @@ sizeof|sizeof
 argument_list|(
 name|CloneOptions
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|tool_options_init
+argument_list|(
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|options
+argument_list|,
+name|_
+argument_list|(
+literal|"Clone Tool Options"
+argument_list|)
+argument_list|,
+name|clone_options_reset
 argument_list|)
 expr_stmt|;
 name|options
@@ -715,12 +735,11 @@ expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
 operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|2
-argument_list|)
+name|options
+operator|->
+name|tool_options
+operator|.
+name|main_vbox
 expr_stmt|;
 comment|/*  the radio frame and box  */
 name|radio_frame
@@ -1057,21 +1076,6 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|radio_frame
-argument_list|)
-expr_stmt|;
-comment|/*  Register this selection options widget with the main tools options dialog    */
-name|tools_register
-argument_list|(
-name|CLONE
-argument_list|,
-name|vbox
-argument_list|,
-name|_
-argument_list|(
-literal|"Clone Tool Options"
-argument_list|)
-argument_list|,
-name|reset_clone_options
 argument_list|)
 expr_stmt|;
 return|return
@@ -1600,16 +1604,30 @@ name|PaintCore
 modifier|*
 name|private
 decl_stmt|;
+comment|/*  The tool options  */
 if|if
 condition|(
 operator|!
 name|clone_options
 condition|)
+block|{
 name|clone_options
 operator|=
-name|create_clone_options
+name|clone_options_new
 argument_list|()
 expr_stmt|;
+name|tools_register
+argument_list|(
+name|CLONE
+argument_list|,
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|clone_options
+argument_list|)
+expr_stmt|;
+block|}
 name|tool
 operator|=
 name|paint_core_new

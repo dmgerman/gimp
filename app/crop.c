@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"crop.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -60,13 +66,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"crop.h"
+file|"info_dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"info_dialog.h"
+file|"tool_options_ui.h"
 end_include
 
 begin_include
@@ -271,6 +277,10 @@ DECL|struct|_CropOptions
 struct|struct
 name|_CropOptions
 block|{
+DECL|member|tool_options
+name|ToolOptions
+name|tool_options
+decl_stmt|;
 DECL|member|layer_only
 name|int
 name|layer_only
@@ -657,23 +667,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  Options callbacks */
-end_comment
-
-begin_function_decl
-specifier|static
-name|void
-name|crop_checkbutton_update
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function_decl
 specifier|static
 name|Argument
@@ -693,8 +686,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|reset_crop_options (void)
-name|reset_crop_options
+DECL|function|crop_options_reset (void)
+name|crop_options_reset
 parameter_list|(
 name|void
 parameter_list|)
@@ -754,8 +747,8 @@ begin_function
 specifier|static
 name|CropOptions
 modifier|*
-DECL|function|init_crop_options (void)
-name|init_crop_options
+DECL|function|crop_options_new (void)
+name|crop_options_new
 parameter_list|(
 name|void
 parameter_list|)
@@ -776,6 +769,7 @@ name|GtkWidget
 modifier|*
 name|defaults_vbox
 decl_stmt|;
+comment|/*  the new crop tool options structure  */
 name|options
 operator|=
 operator|(
@@ -788,6 +782,22 @@ sizeof|sizeof
 argument_list|(
 name|CropOptions
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|tool_options_init
+argument_list|(
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|options
+argument_list|,
+name|_
+argument_list|(
+literal|"Crop Options"
+argument_list|)
+argument_list|,
+name|crop_options_reset
 argument_list|)
 expr_stmt|;
 name|options
@@ -823,14 +833,13 @@ expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
 operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|2
-argument_list|)
+name|options
+operator|->
+name|tool_options
+operator|.
+name|main_vbox
 expr_stmt|;
-comment|/* layer toggle */
+comment|/*  layer toggle  */
 name|options
 operator|->
 name|layer_only_w
@@ -875,7 +884,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|crop_checkbutton_update
+name|tool_options_toggle_update
 argument_list|,
 operator|&
 name|options
@@ -904,7 +913,7 @@ operator|->
 name|layer_only_w
 argument_list|)
 expr_stmt|;
-comment|/* defaults */
+comment|/*  defaults  */
 name|defaults_frame
 operator|=
 name|gtk_frame_new
@@ -960,7 +969,7 @@ argument_list|,
 name|defaults_vbox
 argument_list|)
 expr_stmt|;
-comment|/* enlarge toggle */
+comment|/*  enlarge toggle  */
 name|options
 operator|->
 name|default_to_enlarge_w
@@ -1005,7 +1014,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|crop_checkbutton_update
+name|tool_options_toggle_update
 argument_list|,
 operator|&
 name|options
@@ -1034,7 +1043,7 @@ operator|->
 name|default_to_enlarge_w
 argument_list|)
 expr_stmt|;
-comment|/* crop toggle */
+comment|/*  crop toggle  */
 name|options
 operator|->
 name|default_to_crop_w
@@ -1079,7 +1088,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|crop_checkbutton_update
+name|tool_options_toggle_update
 argument_list|,
 operator|&
 name|options
@@ -1118,73 +1127,9 @@ argument_list|(
 name|defaults_frame
 argument_list|)
 expr_stmt|;
-comment|/* Register this selection options widget with the main tools    * options dialog */
-name|tools_register
-argument_list|(
-name|CROP
-argument_list|,
-name|vbox
-argument_list|,
-name|_
-argument_list|(
-literal|"Crop Options"
-argument_list|)
-argument_list|,
-name|reset_crop_options
-argument_list|)
-expr_stmt|;
 return|return
 name|options
 return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|crop_checkbutton_update (GtkWidget * w,gpointer data)
-name|crop_checkbutton_update
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|int
-modifier|*
-name|toggle_val
-decl_stmt|;
-name|toggle_val
-operator|=
-operator|(
-name|int
-operator|*
-operator|)
-name|data
-expr_stmt|;
-if|if
-condition|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|w
-argument_list|)
-operator|->
-name|active
-condition|)
-operator|*
-name|toggle_val
-operator|=
-name|TRUE
-expr_stmt|;
-else|else
-operator|*
-name|toggle_val
-operator|=
-name|FALSE
-expr_stmt|;
 block|}
 end_function
 
@@ -4365,16 +4310,30 @@ name|Crop
 modifier|*
 name|private
 decl_stmt|;
+comment|/*  The tool options  */
 if|if
 condition|(
 operator|!
 name|crop_options
 condition|)
+block|{
 name|crop_options
 operator|=
-name|init_crop_options
+name|crop_options_new
 argument_list|()
 expr_stmt|;
+name|tools_register
+argument_list|(
+name|CROP
+argument_list|,
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|crop_options
+argument_list|)
+expr_stmt|;
+block|}
 name|tool
 operator|=
 operator|(

@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"selection_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -201,7 +207,7 @@ value|((int) ((x) + 0.5))
 end_define
 
 begin_comment
-comment|/* bezier select type definitions */
+comment|/*  the bezier select structures  */
 end_comment
 
 begin_typedef
@@ -219,7 +225,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/* The named paste dialog */
+comment|/*  The named paste dialog  */
 end_comment
 
 begin_typedef
@@ -256,7 +262,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/* The named buffer structure... */
+comment|/*  The named buffer structure...  */
 end_comment
 
 begin_typedef
@@ -288,7 +294,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2c1873120108
+DECL|struct|__anon287f61aa0108
 typedef|typedef
 struct|struct
 block|{
@@ -314,7 +320,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c1873120208
+DECL|struct|__anon287f61aa0208
 typedef|typedef
 struct|struct
 block|{
@@ -362,6 +368,151 @@ block|}
 name|BezierDistance
 typedef|;
 end_typedef
+
+begin_comment
+comment|/*  the bezier selection tool options  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|bezier_options
+specifier|static
+name|SelectionOptions
+modifier|*
+name|bezier_options
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  local variables  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|basis
+specifier|static
+name|BezierMatrix
+name|basis
+init|=
+block|{
+block|{
+operator|-
+literal|1
+block|,
+literal|3
+block|,
+operator|-
+literal|3
+block|,
+literal|1
+block|}
+block|,
+block|{
+literal|3
+block|,
+operator|-
+literal|6
+block|,
+literal|3
+block|,
+literal|0
+block|}
+block|,
+block|{
+operator|-
+literal|3
+block|,
+literal|3
+block|,
+literal|0
+block|,
+literal|0
+block|}
+block|,
+block|{
+literal|1
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|}
+block|, }
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/* static BezierMatrix basis = {   { -1/6.0,  3/6.0, -3/6.0,  1/6.0 },   {  3/6.0, -6/6.0,  3/6.0,  0 },   { -3/6.0,  0,  3/6.0,  0 },   {  1/6.0,  4/6.0,  1,  0 }, }; */
+end_comment
+
+begin_comment
+comment|/*  The named buffer list  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|bezier_named_buffers
+name|GSList
+modifier|*
+name|bezier_named_buffers
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  Global Static Variable to maintain informations about the "contexte"  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|curSel
+specifier|static
+name|BezierSelect
+modifier|*
+name|curSel
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|curTool
+specifier|static
+name|Tool
+modifier|*
+name|curTool
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|curGdisp
+specifier|static
+name|GDisplay
+modifier|*
+name|curGdisp
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|curCore
+specifier|static
+name|DrawCore
+modifier|*
+name|curCore
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|ModeEdit
+specifier|static
+name|int
+name|ModeEdit
+init|=
+name|EXTEND_NEW
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  local function prototypes  */
+end_comment
 
 begin_function_decl
 specifier|static
@@ -749,147 +900,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|basis
-specifier|static
-name|BezierMatrix
-name|basis
-init|=
-block|{
-block|{
-operator|-
-literal|1
-block|,
-literal|3
-block|,
-operator|-
-literal|3
-block|,
-literal|1
-block|}
-block|,
-block|{
-literal|3
-block|,
-operator|-
-literal|6
-block|,
-literal|3
-block|,
-literal|0
-block|}
-block|,
-block|{
-operator|-
-literal|3
-block|,
-literal|3
-block|,
-literal|0
-block|,
-literal|0
-block|}
-block|,
-block|{
-literal|1
-block|,
-literal|0
-block|,
-literal|0
-block|,
-literal|0
-block|}
-block|, }
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
-comment|/* static BezierMatrix basis = {   { -1/6.0,  3/6.0, -3/6.0,  1/6.0 },   {  3/6.0, -6/6.0,  3/6.0,  0 },   { -3/6.0,  0,  3/6.0,  0 },   {  1/6.0,  4/6.0,  1,  0 }, }; */
+comment|/*  functions  */
 end_comment
-
-begin_comment
-comment|/*  The named buffer list  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|bezier_named_buffers
-name|GSList
-modifier|*
-name|bezier_named_buffers
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|bezier_options
-specifier|static
-name|SelectionOptions
-modifier|*
-name|bezier_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/* Global Static Variable to maintain informations about rhe "contexte" */
-end_comment
-
-begin_decl_stmt
-DECL|variable|curSel
-specifier|static
-name|BezierSelect
-modifier|*
-name|curSel
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|curTool
-specifier|static
-name|Tool
-modifier|*
-name|curTool
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|curGdisp
-specifier|static
-name|GDisplay
-modifier|*
-name|curGdisp
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|curCore
-specifier|static
-name|DrawCore
-modifier|*
-name|curCore
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|ModeEdit
-specifier|static
-name|int
-name|ModeEdit
-init|=
-name|EXTEND_NEW
-decl_stmt|;
-end_decl_stmt
 
 begin_function
 specifier|static
 name|void
-DECL|function|bezier_select_reset_options ()
-name|bezier_select_reset_options
+DECL|function|bezier_select_options_reset ()
+name|bezier_select_options_reset
 parameter_list|()
 block|{
-name|reset_selection_options
+name|selection_options_reset
 argument_list|(
 name|bezier_options
 argument_list|)
@@ -918,15 +940,28 @@ condition|(
 operator|!
 name|bezier_options
 condition|)
+block|{
 name|bezier_options
 operator|=
-name|create_selection_options
+name|selection_options_new
 argument_list|(
 name|BEZIER_SELECT
 argument_list|,
-name|bezier_select_reset_options
+name|bezier_select_options_reset
 argument_list|)
 expr_stmt|;
+name|tools_register
+argument_list|(
+name|BEZIER_SELECT
+argument_list|,
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|bezier_options
+argument_list|)
+expr_stmt|;
+block|}
 name|tool
 operator|=
 name|g_malloc

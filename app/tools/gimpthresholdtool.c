@@ -210,18 +210,13 @@ end_comment
 begin_decl_stmt
 DECL|variable|threshold_options
 specifier|static
-name|void
+name|ToolOptions
 modifier|*
 name|threshold_options
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-DECL|variable|threshold_options
-comment|/* dummy */
-end_comment
 
 begin_comment
 comment|/*  the threshold tool dialog  */
@@ -1134,27 +1129,22 @@ operator|!
 name|threshold_options
 condition|)
 block|{
-name|tools_register
+name|threshold_options
+operator|=
+name|tool_options_new
 argument_list|(
-name|THRESHOLD
-argument_list|,
-name|NULL
-argument_list|,
 name|_
 argument_list|(
 literal|"Threshold Options"
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
+name|tools_register
+argument_list|(
+name|THRESHOLD
+argument_list|,
 name|threshold_options
-operator|=
-operator|(
-name|void
-operator|*
-operator|)
-literal|1
+argument_list|)
 expr_stmt|;
 block|}
 comment|/*  The threshold dialog  */

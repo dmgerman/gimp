@@ -1,4 +1,8 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_comment
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995-1999 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+end_comment
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -27,7 +31,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c28fcf40103
+DECL|enum|__anon2c5ea4b50103
 block|{
 DECL|enumerator|FIRST_TOOLBOX_TOOL
 name|FIRST_TOOLBOX_TOOL
@@ -340,28 +344,14 @@ parameter_list|)
 function_decl|;
 end_typedef
 
-begin_comment
-comment|/*  Tool options function declarations  */
-end_comment
-
-begin_typedef
-DECL|typedef|ToolOptionsResetFunc
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|ToolOptionsResetFunc
-function_decl|)
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_typedef
-
 begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __TOOLS_F_H__ */
+end_comment
 
 end_unit
 
