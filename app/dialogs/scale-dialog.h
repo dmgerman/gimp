@@ -45,6 +45,15 @@ parameter_list|,
 name|GimpInterpolationType
 name|interpolation
 parameter_list|,
+name|gdouble
+name|xresolution
+parameter_list|,
+name|gdouble
+name|yresolution
+parameter_list|,
+name|GimpUnit
+name|resolution_unit
+parameter_list|,
 name|gpointer
 name|user_data
 parameter_list|)

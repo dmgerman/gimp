@@ -410,6 +410,15 @@ parameter_list|,
 name|GimpInterpolationType
 name|interpolation
 parameter_list|,
+name|gdouble
+name|xresolution
+parameter_list|,
+name|gdouble
+name|yresolution
+parameter_list|,
+name|GimpUnit
+name|resolution_unit
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -3658,7 +3667,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_scale_layer_callback (GtkWidget * dialog,GimpViewable * viewable,gint width,gint height,GimpUnit unit,GimpInterpolationType interpolation,gpointer data)
+DECL|function|layers_scale_layer_callback (GtkWidget * dialog,GimpViewable * viewable,gint width,gint height,GimpUnit unit,GimpInterpolationType interpolation,gdouble xresolution,gdouble yresolution,GimpUnit resolution_unit,gpointer data)
 name|layers_scale_layer_callback
 parameter_list|(
 name|GtkWidget
@@ -3681,6 +3690,18 @@ parameter_list|,
 name|GimpInterpolationType
 name|interpolation
 parameter_list|,
+name|gdouble
+name|xresolution
+parameter_list|,
+comment|/* unused */
+name|gdouble
+name|yresolution
+parameter_list|,
+comment|/* unused */
+name|GimpUnit
+name|resolution_unit
+parameter_list|,
+comment|/* unused */
 name|gpointer
 name|data
 parameter_list|)

@@ -121,6 +121,14 @@ DECL|member|yresolution
 name|gdouble
 name|yresolution
 decl_stmt|;
+DECL|member|resolution_unit
+name|GimpUnit
+name|resolution_unit
+decl_stmt|;
+DECL|member|edit_resolution
+name|gboolean
+name|edit_resolution
+decl_stmt|;
 block|}
 struct|;
 end_struct
