@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpcolormapeditor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpcontainerlistview.h"
 end_include
 
@@ -270,12 +276,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"colormap-dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"device-status-dialog.h"
 end_include
 
@@ -396,9 +396,9 @@ specifier|static
 name|void
 name|dialogs_indexed_palette_selected
 parameter_list|(
-name|GimpColormapDialog
+name|GimpColormapEditor
 modifier|*
-name|dialog
+name|editor
 parameter_list|,
 name|GimpDockable
 modifier|*
@@ -689,9 +689,9 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|GimpColormapDialog
+name|GimpColormapEditor
 modifier|*
-name|ipal
+name|editor
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2789,7 +2789,7 @@ argument_list|)
 expr_stmt|;
 name|view
 operator|=
-name|gimp_colormap_dialog_new
+name|gimp_colormap_editor_new
 argument_list|(
 name|gimage
 argument_list|)
@@ -3198,12 +3198,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|dialogs_indexed_palette_selected (GimpColormapDialog * dialog,GimpDockable * dockable)
+DECL|function|dialogs_indexed_palette_selected (GimpColormapEditor * editor,GimpDockable * dockable)
 name|dialogs_indexed_palette_selected
 parameter_list|(
-name|GimpColormapDialog
+name|GimpColormapEditor
 modifier|*
-name|dialog
+name|editor
 parameter_list|,
 name|GimpDockable
 modifier|*
@@ -3224,7 +3224,7 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|dialog
+name|editor
 argument_list|)
 argument_list|,
 literal|"gimp-dialogs-context"
@@ -3247,16 +3247,16 @@ name|index
 decl_stmt|;
 name|gimage
 operator|=
-name|gimp_colormap_dialog_get_image
+name|gimp_colormap_editor_get_image
 argument_list|(
-name|dialog
+name|editor
 argument_list|)
 expr_stmt|;
 name|index
 operator|=
-name|gimp_colormap_dialog_col_index
+name|gimp_colormap_editor_col_index
 argument_list|(
-name|dialog
+name|editor
 argument_list|)
 expr_stmt|;
 name|gimp_rgba_set_uchar
@@ -4411,14 +4411,14 @@ modifier|*
 name|context
 parameter_list|)
 block|{
-name|GimpColormapDialog
+name|GimpColormapEditor
 modifier|*
 name|view
 decl_stmt|;
 name|view
 operator|=
 operator|(
-name|GimpColormapDialog
+name|GimpColormapEditor
 operator|*
 operator|)
 name|g_object_get_data
@@ -4646,7 +4646,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dialogs_indexed_palette_image_changed (GimpContext * context,GimpImage * gimage,GimpColormapDialog * ipal)
+DECL|function|dialogs_indexed_palette_image_changed (GimpContext * context,GimpImage * gimage,GimpColormapEditor * editor)
 name|dialogs_indexed_palette_image_changed
 parameter_list|(
 name|GimpContext
@@ -4657,14 +4657,14 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|GimpColormapDialog
+name|GimpColormapEditor
 modifier|*
-name|ipal
+name|editor
 parameter_list|)
 block|{
-name|gimp_colormap_dialog_set_image
+name|gimp_colormap_editor_set_image
 argument_list|(
-name|ipal
+name|editor
 argument_list|,
 name|gimage
 argument_list|)

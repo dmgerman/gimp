@@ -6,110 +6,111 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__COLORMAP_DIALOG_H__
+name|__GIMP_COLORMAP_EDITOR_H__
 end_ifndef
 
 begin_define
-DECL|macro|__COLORMAP_DIALOG_H__
+DECL|macro|__GIMP_COLORMAP_EDITOR_H__
 define|#
 directive|define
-name|__COLORMAP_DIALOG_H__
+name|__GIMP_COLORMAP_EDITOR_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|<gtk/gtkvbox.h>
+file|"gimpeditor.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gui/gui-types.h"
+end_include
+
+begin_comment
+comment|/* temp hack */
+end_comment
+
 begin_define
-DECL|macro|GIMP_TYPE_COLORMAP_DIALOG
+DECL|macro|GIMP_TYPE_COLORMAP_EDITOR
 define|#
 directive|define
-name|GIMP_TYPE_COLORMAP_DIALOG
-value|(gimp_colormap_dialog_get_type ())
+name|GIMP_TYPE_COLORMAP_EDITOR
+value|(gimp_colormap_editor_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_COLORMAP_DIALOG (obj)
+DECL|macro|GIMP_COLORMAP_EDITOR (obj)
 define|#
 directive|define
-name|GIMP_COLORMAP_DIALOG
+name|GIMP_COLORMAP_EDITOR
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_COLORMAP_DIALOG, GimpColormapDialog))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_COLORMAP_EDITOR, GimpColormapEditor))
 end_define
 
 begin_define
-DECL|macro|GIMP_COLORMAP_DIALOG_CLASS (klass)
+DECL|macro|GIMP_COLORMAP_EDITOR_CLASS (klass)
 define|#
 directive|define
-name|GIMP_COLORMAP_DIALOG_CLASS
+name|GIMP_COLORMAP_EDITOR_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_COLORMAP_DIALOG, GimpColormapDialogClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_COLORMAP_EDITOR, GimpColormapEditorClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_COLORMAP_DIALOG (obj)
+DECL|macro|GIMP_IS_COLORMAP_EDITOR (obj)
 define|#
 directive|define
-name|GIMP_IS_COLORMAP_DIALOG
+name|GIMP_IS_COLORMAP_EDITOR
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_COLORMAP_DIALOG))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_COLORMAP_EDITOR))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_COLORMAP_DIALOG_CLASS (klass)
+DECL|macro|GIMP_IS_COLORMAP_EDITOR_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_COLORMAP_DIALOG_CLASS
+name|GIMP_IS_COLORMAP_EDITOR_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_COLORMAP_DIALOG))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_COLORMAP_EDITOR))
 end_define
 
 begin_define
-DECL|macro|GIMP_COLORMAP_DIALOG_GET_CLASS (obj)
+DECL|macro|GIMP_COLORMAP_EDITOR_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_COLORMAP_DIALOG_GET_CLASS
+name|GIMP_COLORMAP_EDITOR_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_COLORMAP_DIALOG, GimpColormapDialogClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_COLORMAP_EDITOR, GimpColormapEditorClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpColormapDialog
+DECL|typedef|GimpColormapEditorClass
 typedef|typedef
 name|struct
-name|_GimpColormapDialog
-name|GimpColormapDialog
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpColormapDialogClass
-typedef|typedef
-name|struct
-name|_GimpColormapDialogClass
-name|GimpColormapDialogClass
+name|_GimpColormapEditorClass
+name|GimpColormapEditorClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpColormapDialog
+DECL|struct|_GimpColormapEditor
 struct|struct
-name|_GimpColormapDialog
+name|_GimpColormapEditor
 block|{
 DECL|member|parent_instance
-name|GtkVBox
+name|GimpEditor
 name|parent_instance
 decl_stmt|;
 DECL|member|image
@@ -187,12 +188,12 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpColormapDialogClass
+DECL|struct|_GimpColormapEditorClass
 struct|struct
-name|_GimpColormapDialogClass
+name|_GimpColormapEditorClass
 block|{
 DECL|member|parent_class
-name|GtkVBoxClass
+name|GimpEditorClass
 name|parent_class
 decl_stmt|;
 DECL|member|selected
@@ -202,7 +203,7 @@ modifier|*
 name|selected
 function_decl|)
 parameter_list|(
-name|GimpColormapDialog
+name|GimpColormapEditor
 modifier|*
 name|gcd
 parameter_list|)
@@ -213,7 +214,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_colormap_dialog_get_type
+name|gimp_colormap_editor_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -224,7 +225,7 @@ end_decl_stmt
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_colormap_dialog_new
+name|gimp_colormap_editor_new
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -235,22 +236,22 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_colormap_dialog_selected
+name|gimp_colormap_editor_selected
 parameter_list|(
-name|GimpColormapDialog
+name|GimpColormapEditor
 modifier|*
-name|gcd
+name|editor
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_colormap_dialog_set_image
+name|gimp_colormap_editor_set_image
 parameter_list|(
-name|GimpColormapDialog
+name|GimpColormapEditor
 modifier|*
-name|gcd
+name|editor
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -262,22 +263,22 @@ end_function_decl
 begin_function_decl
 name|GimpImage
 modifier|*
-name|gimp_colormap_dialog_get_image
+name|gimp_colormap_editor_get_image
 parameter_list|(
-name|GimpColormapDialog
+name|GimpColormapEditor
 modifier|*
-name|gcd
+name|editor
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_colormap_dialog_col_index
+name|gimp_colormap_editor_col_index
 parameter_list|(
-name|GimpColormapDialog
+name|GimpColormapEditor
 modifier|*
-name|gcd
+name|editor
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -288,7 +289,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __COLORMAP_DIALOG_H__ */
+comment|/* __GIMP_COLORMAP_EDITOR_H__ */
 end_comment
 
 end_unit
