@@ -211,6 +211,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimppropwidgets.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpquerybox.h>
 end_include
 
