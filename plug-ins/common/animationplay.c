@@ -45,6 +45,25 @@ directive|include
 file|<ctype.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<glib.h>
+end_include
+
+begin_if
+if|#
+directive|if
+name|defined
+argument_list|(
+name|G_OS_WIN32
+argument_list|)
+end_if
+
+begin_comment
+comment|/* This just to be able to include windows.h and undef RGB */
+end_comment
+
 begin_define
 DECL|macro|WinMain
 define|#
@@ -53,15 +72,10 @@ name|WinMain
 value|WinMain_foo
 end_define
 
-begin_comment
-DECL|macro|WinMain
-comment|/* Kludge for Win32*/
-end_comment
-
 begin_include
 include|#
 directive|include
-file|<gdk/gdkx.h>
+file|<windows.h>
 end_include
 
 begin_undef
@@ -76,15 +90,44 @@ directive|undef
 name|RGB
 end_undef
 
-begin_comment
-comment|/* On Windows from<windows.h> */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
 directive|include
 file|<gtk/gtk.h>
 end_include
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GDK_WINDOWING_WIN32
+end_ifndef
+
+begin_include
+include|#
+directive|include
+file|<gdk/gdkx.h>
+end_include
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_include
+include|#
+directive|include
+file|<gdk/win32/gdkwin32.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -140,7 +183,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b61cc510103
+DECL|enum|__anon2a1cb15e0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
