@@ -828,12 +828,11 @@ argument_list|(
 name|bezier_stroke
 argument_list|,
 operator|&
-operator|(
 name|coords
 index|[
 name|count
+operator|++
 index|]
-operator|)
 argument_list|,
 name|last_anchor
 argument_list|,
