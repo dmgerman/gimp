@@ -124,7 +124,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2c0539b10103
+DECL|enum|__anon2c8024320103
 typedef|typedef
 enum|enum
 block|{
@@ -8011,7 +8011,7 @@ argument_list|(
 name|file_prefs_toggle_callback
 argument_list|,
 operator|&
-name|transparency_type
+name|transparency_size
 argument_list|,
 operator|(
 name|gpointer
@@ -12068,7 +12068,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c0539b10208
+DECL|struct|__anon2c8024320208
 block|{
 DECL|member|label
 name|gchar
@@ -12293,7 +12293,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c0539b10308
+DECL|struct|__anon2c8024320308
 block|{
 DECL|member|tree_label
 name|gchar
