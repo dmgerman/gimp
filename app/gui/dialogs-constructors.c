@@ -391,7 +391,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5d41960108
+DECL|struct|__anon2c8a31b00108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2386,6 +2386,11 @@ operator|)
 name|gimp_layer_copy
 argument_list|,
 operator|(
+name|GimpConvertDrawableFunc
+operator|)
+name|gimp_layer_new_from_drawable
+argument_list|,
+operator|(
 name|GimpNewDrawableFunc
 operator|)
 name|layers_new_layer_query
@@ -2512,6 +2517,11 @@ operator|(
 name|GimpCopyDrawableFunc
 operator|)
 name|gimp_channel_copy
+argument_list|,
+operator|(
+name|GimpConvertDrawableFunc
+operator|)
+name|NULL
 argument_list|,
 operator|(
 name|GimpNewDrawableFunc

@@ -130,7 +130,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_function
-name|TileManager
+name|GimpBuffer
 modifier|*
 DECL|function|gimp_edit_cut (GimpImage * gimage,GimpDrawable * drawable)
 name|gimp_edit_cut
@@ -288,13 +288,16 @@ name|gimp
 operator|->
 name|global_buffer
 condition|)
-name|tile_manager_destroy
+name|g_object_unref
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|gimage
 operator|->
 name|gimp
 operator|->
 name|global_buffer
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Set the global edit buffer  */
@@ -304,17 +307,31 @@ name|gimp
 operator|->
 name|global_buffer
 operator|=
+name|gimp_buffer_new
+argument_list|(
 name|cropped_cut
+argument_list|,
+literal|"Global Buffer"
+argument_list|,
+name|TRUE
+argument_list|)
 expr_stmt|;
 block|}
 return|return
+name|gimp_buffer_new
+argument_list|(
 name|cropped_cut
+argument_list|,
+literal|"Cut Pixels"
+argument_list|,
+name|FALSE
+argument_list|)
 return|;
 block|}
 end_function
 
 begin_function
-name|TileManager
+name|GimpBuffer
 modifier|*
 DECL|function|gimp_edit_copy (GimpImage * gimage,GimpDrawable * drawable)
 name|gimp_edit_copy
@@ -458,13 +475,16 @@ name|gimp
 operator|->
 name|global_buffer
 condition|)
-name|tile_manager_destroy
+name|g_object_unref
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|gimage
 operator|->
 name|gimp
 operator|->
 name|global_buffer
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Set the global edit buffer  */
@@ -474,11 +494,25 @@ name|gimp
 operator|->
 name|global_buffer
 operator|=
+name|gimp_buffer_new
+argument_list|(
 name|cropped_copy
+argument_list|,
+literal|"Global Buffer"
+argument_list|,
+name|TRUE
+argument_list|)
 expr_stmt|;
 block|}
 return|return
+name|gimp_buffer_new
+argument_list|(
 name|cropped_copy
+argument_list|,
+literal|"Copied Pixels"
+argument_list|,
+name|FALSE
+argument_list|)
 return|;
 block|}
 end_function
@@ -486,7 +520,7 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_edit_paste (GimpImage * gimage,GimpDrawable * drawable,TileManager * paste,gboolean paste_into)
+DECL|function|gimp_edit_paste (GimpImage * gimage,GimpDrawable * drawable,GimpBuffer * paste,gboolean paste_into)
 name|gimp_edit_paste
 parameter_list|(
 name|GimpImage
@@ -497,7 +531,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|TileManager
+name|GimpBuffer
 modifier|*
 name|paste
 parameter_list|,
@@ -559,12 +593,9 @@ name|gimp_layer_new_from_tiles
 argument_list|(
 name|gimage
 argument_list|,
-name|gimp_drawable_type_with_alpha
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|,
 name|paste
+operator|->
+name|tiles
 argument_list|,
 name|_
 argument_list|(
@@ -583,12 +614,9 @@ name|gimp_layer_new_from_tiles
 argument_list|(
 name|gimage
 argument_list|,
-name|gimp_image_base_type_with_alpha
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|,
 name|paste
+operator|->
+name|tiles
 argument_list|,
 name|_
 argument_list|(
@@ -620,8 +648,6 @@ comment|/*  Set the offsets to the center of the image  */
 if|if
 condition|(
 name|drawable
-operator|!=
-name|NULL
 condition|)
 block|{
 name|gimp_drawable_offsets
@@ -805,7 +831,7 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|gimp_edit_paste_as_new (Gimp * gimp,GimpImage * invoke,TileManager * paste)
+DECL|function|gimp_edit_paste_as_new (Gimp * gimp,GimpImage * invoke,GimpBuffer * paste)
 name|gimp_edit_paste_as_new
 parameter_list|(
 name|Gimp
@@ -816,7 +842,7 @@ name|GimpImage
 modifier|*
 name|invoke
 parameter_list|,
-name|TileManager
+name|GimpBuffer
 modifier|*
 name|paste
 parameter_list|)
@@ -836,12 +862,12 @@ name|gimp_create_image
 argument_list|(
 name|gimp
 argument_list|,
-name|tile_manager_width
+name|gimp_buffer_get_width
 argument_list|(
 name|paste
 argument_list|)
 argument_list|,
-name|tile_manager_height
+name|gimp_buffer_get_height
 argument_list|(
 name|paste
 argument_list|)
@@ -890,12 +916,9 @@ name|gimp_layer_new_from_tiles
 argument_list|(
 name|gimage
 argument_list|,
-name|gimp_image_base_type_with_alpha
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|,
 name|paste
+operator|->
+name|tiles
 argument_list|,
 name|_
 argument_list|(

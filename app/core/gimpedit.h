@@ -17,7 +17,7 @@ name|__GIMP_EDIT_H__
 end_define
 
 begin_function_decl
-name|TileManager
+name|GimpBuffer
 modifier|*
 name|gimp_edit_cut
 parameter_list|(
@@ -33,7 +33,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TileManager
+name|GimpBuffer
 modifier|*
 name|gimp_edit_copy
 parameter_list|(
@@ -61,7 +61,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|TileManager
+name|GimpBuffer
 modifier|*
 name|paste
 parameter_list|,
@@ -84,9 +84,9 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|TileManager
+name|GimpBuffer
 modifier|*
-name|tiles
+name|paste
 parameter_list|)
 function_decl|;
 end_function_decl

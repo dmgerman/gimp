@@ -40,12 +40,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/tile-manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint-funcs/paint-funcs.h"
 end_include
 
@@ -53,6 +47,12 @@ begin_include
 include|#
 directive|include
 file|"gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpbuffer.h"
 end_include
 
 begin_include
@@ -673,7 +673,7 @@ name|values
 operator|->
 name|width
 operator|=
-name|tile_manager_width
+name|gimp_buffer_get_width
 argument_list|(
 name|gimp
 operator|->
@@ -684,7 +684,7 @@ name|values
 operator|->
 name|height
 operator|=
-name|tile_manager_height
+name|gimp_buffer_get_height
 argument_list|(
 name|gimp
 operator|->

@@ -300,7 +300,7 @@ modifier|*
 name|drawable_table
 decl_stmt|;
 DECL|member|global_buffer
-name|TileManager
+name|GimpBuffer
 modifier|*
 name|global_buffer
 decl_stmt|;

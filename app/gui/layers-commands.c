@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint-funcs/paint-funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -620,6 +614,11 @@ operator|=
 name|gimp_layer_copy
 argument_list|(
 name|active_layer
+argument_list|,
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|active_layer
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)

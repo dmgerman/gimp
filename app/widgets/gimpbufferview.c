@@ -788,8 +788,6 @@ name|gimage
 argument_list|)
 argument_list|,
 name|buffer
-operator|->
-name|tiles
 argument_list|,
 name|FALSE
 argument_list|)
@@ -892,8 +890,6 @@ name|gimage
 argument_list|)
 argument_list|,
 name|buffer
-operator|->
-name|tiles
 argument_list|,
 name|TRUE
 argument_list|)
@@ -995,8 +991,6 @@ argument_list|,
 name|gimage
 argument_list|,
 name|buffer
-operator|->
-name|tiles
 argument_list|)
 expr_stmt|;
 block|}

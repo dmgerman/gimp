@@ -3436,6 +3436,14 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|gimp_image_get_mask
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;

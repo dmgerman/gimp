@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/tile-manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpbrush.h"
 end_include
 
@@ -1234,18 +1228,14 @@ argument_list|)
 operator|->
 name|name
 argument_list|,
-name|tile_manager_width
+name|gimp_buffer_get_width
 argument_list|(
 name|buffer
-operator|->
-name|tiles
 argument_list|)
 argument_list|,
-name|tile_manager_height
+name|gimp_buffer_get_height
 argument_list|(
 name|buffer
-operator|->
-name|tiles
 argument_list|)
 argument_list|)
 return|;

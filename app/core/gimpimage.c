@@ -222,7 +222,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c83b130103
+DECL|enum|__anon27d695130103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -6302,7 +6302,7 @@ name|type
 parameter_list|)
 block|{
 name|GimpImageType
-name|d_type
+name|drawable_type
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -6312,13 +6312,10 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|d_type
+name|drawable_type
 operator|=
 operator|(
 name|drawable
-operator|!=
-name|NULL
-operator|)
 condition|?
 name|gimp_drawable_type
 argument_list|(
@@ -6329,6 +6326,7 @@ name|gimp_image_base_type_with_alpha
 argument_list|(
 name|gimage
 argument_list|)
+operator|)
 expr_stmt|;
 switch|switch
 condition|(
@@ -6340,7 +6338,7 @@ name|GIMP_RGB
 case|:
 switch|switch
 condition|(
-name|d_type
+name|drawable_type
 condition|)
 block|{
 case|case
@@ -6442,7 +6440,7 @@ name|GIMP_GRAY
 case|:
 switch|switch
 condition|(
-name|d_type
+name|drawable_type
 condition|)
 block|{
 case|case

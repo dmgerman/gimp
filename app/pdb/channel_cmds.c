@@ -788,6 +788,11 @@ name|gimp_channel_copy
 argument_list|(
 name|channel
 argument_list|,
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|channel
+argument_list|)
+argument_list|,
 name|TRUE
 argument_list|)
 operator|)

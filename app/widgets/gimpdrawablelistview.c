@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be560330103
+DECL|enum|__anon2b1b13de0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1049,7 +1049,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_drawable_list_view_new (gint preview_size,GimpImage * gimage,GType drawable_type,const gchar * signal_name,GimpGetContainerFunc get_container_func,GimpGetDrawableFunc get_drawable_func,GimpSetDrawableFunc set_drawable_func,GimpReorderDrawableFunc reorder_drawable_func,GimpAddDrawableFunc add_drawable_func,GimpRemoveDrawableFunc remove_drawable_func,GimpCopyDrawableFunc copy_drawable_func,GimpNewDrawableFunc new_drawable_func,GimpEditDrawableFunc edit_drawable_func,const gchar * item_factory)
+DECL|function|gimp_drawable_list_view_new (gint preview_size,GimpImage * gimage,GType drawable_type,const gchar * signal_name,GimpGetContainerFunc get_container_func,GimpGetDrawableFunc get_drawable_func,GimpSetDrawableFunc set_drawable_func,GimpReorderDrawableFunc reorder_drawable_func,GimpAddDrawableFunc add_drawable_func,GimpRemoveDrawableFunc remove_drawable_func,GimpCopyDrawableFunc copy_drawable_func,GimpConvertDrawableFunc convert_drawable_func,GimpNewDrawableFunc new_drawable_func,GimpEditDrawableFunc edit_drawable_func,const gchar * item_factory)
 name|gimp_drawable_list_view_new
 parameter_list|(
 name|gint
@@ -1087,6 +1087,9 @@ name|remove_drawable_func
 parameter_list|,
 name|GimpCopyDrawableFunc
 name|copy_drawable_func
+parameter_list|,
+name|GimpConvertDrawableFunc
+name|convert_drawable_func
 parameter_list|,
 name|GimpNewDrawableFunc
 name|new_drawable_func
@@ -1206,6 +1209,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/*  convert_drawable_func may be NULL  */
 name|g_return_val_if_fail
 argument_list|(
 name|new_drawable_func
@@ -1355,6 +1359,12 @@ operator|->
 name|copy_drawable_func
 operator|=
 name|copy_drawable_func
+expr_stmt|;
+name|list_view
+operator|->
+name|convert_drawable_func
+operator|=
+name|convert_drawable_func
 expr_stmt|;
 name|list_view
 operator|->
@@ -2332,6 +2342,11 @@ operator|->
 name|copy_drawable_func
 argument_list|(
 name|drawable
+argument_list|,
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)

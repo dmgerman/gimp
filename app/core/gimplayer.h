@@ -131,7 +131,7 @@ decl_stmt|;
 comment|/*  possible layer mask        */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2abc92f30108
+DECL|struct|__anon2c3549140108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -349,9 +349,13 @@ name|GimpLayer
 modifier|*
 name|gimp_layer_copy
 parameter_list|(
+specifier|const
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|GType
+name|new_type
 parameter_list|,
 name|gboolean
 name|add_alpha
@@ -368,13 +372,11 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|GimpImageType
-name|layer_type
-parameter_list|,
 name|TileManager
 modifier|*
 name|tiles
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -389,9 +391,26 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpLayer
+modifier|*
+name|gimp_layer_new_from_drawable
+parameter_list|(
+name|GimpImage
+modifier|*
+name|dest_image
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_layer_check_scaling
 parameter_list|(
+specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -410,12 +429,13 @@ name|GimpLayerMask
 modifier|*
 name|gimp_layer_create_mask
 parameter_list|(
+specifier|const
 name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
 name|AddMaskType
-name|add_mask_type
+name|mask_type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -604,6 +624,7 @@ name|GimpLayerMask
 modifier|*
 name|gimp_layer_get_mask
 parameter_list|(
+specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -615,6 +636,7 @@ begin_function_decl
 name|gboolean
 name|gimp_layer_has_alpha
 parameter_list|(
+specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -626,6 +648,7 @@ begin_function_decl
 name|gboolean
 name|gimp_layer_is_floating_sel
 parameter_list|(
+specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -651,6 +674,7 @@ begin_function_decl
 name|gdouble
 name|gimp_layer_get_opacity
 parameter_list|(
+specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -676,6 +700,7 @@ begin_function_decl
 name|GimpLayerModeEffects
 name|gimp_layer_get_mode
 parameter_list|(
+specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -701,6 +726,7 @@ begin_function_decl
 name|gboolean
 name|gimp_layer_get_preserve_trans
 parameter_list|(
+specifier|const
 name|GimpLayer
 modifier|*
 name|layer
@@ -726,6 +752,7 @@ begin_function_decl
 name|gboolean
 name|gimp_layer_get_linked
 parameter_list|(
+specifier|const
 name|GimpLayer
 modifier|*
 name|layer

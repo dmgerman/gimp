@@ -46,12 +46,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/tile-manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -1089,11 +1083,14 @@ operator|->
 name|global_buffer
 condition|)
 block|{
-name|tile_manager_destroy
+name|g_object_unref
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|gimp
 operator|->
 name|global_buffer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp

@@ -253,6 +253,7 @@ name|GimpLayerMask
 modifier|*
 name|gimp_layer_mask_copy
 parameter_list|(
+specifier|const
 name|GimpLayerMask
 modifier|*
 name|layer_mask
@@ -280,6 +281,7 @@ name|GimpLayer
 modifier|*
 name|gimp_layer_mask_get_layer
 parameter_list|(
+specifier|const
 name|GimpLayerMask
 modifier|*
 name|layer_mask
@@ -305,6 +307,7 @@ begin_function_decl
 name|gboolean
 name|gimp_layer_mask_get_apply
 parameter_list|(
+specifier|const
 name|GimpLayerMask
 modifier|*
 name|layer_mask
@@ -330,6 +333,7 @@ begin_function_decl
 name|gboolean
 name|gimp_layer_mask_get_edit
 parameter_list|(
+specifier|const
 name|GimpLayerMask
 modifier|*
 name|layer_mask
@@ -355,6 +359,7 @@ begin_function_decl
 name|gboolean
 name|gimp_layer_mask_get_show
 parameter_list|(
+specifier|const
 name|GimpLayerMask
 modifier|*
 name|layer_mask

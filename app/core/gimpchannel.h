@@ -320,6 +320,9 @@ name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
+name|GType
+name|new_type
+parameter_list|,
 name|gboolean
 name|dummy
 parameter_list|)

@@ -38,7 +38,40 @@ name|GIMP_IMAGE_TYPE_HAS_ALPHA
 parameter_list|(
 name|t
 parameter_list|)
-value|((t) == GIMP_RGBA_IMAGE  || \ 				      (t) == GIMP_GRAYA_IMAGE || \ 				      (t) == GIMP_INDEXEDA_IMAGE)
+value|((t) == GIMP_RGBA_IMAGE  ||       \ 				            (t) == GIMP_GRAYA_IMAGE ||       \ 				            (t) == GIMP_INDEXEDA_IMAGE)
+end_define
+
+begin_define
+DECL|macro|GIMP_IMAGE_TYPE_WITH_ALPHA (t)
+define|#
+directive|define
+name|GIMP_IMAGE_TYPE_WITH_ALPHA
+parameter_list|(
+name|t
+parameter_list|)
+value|(((t) == GIMP_RGB_IMAGE ||         \                                             (t) == GIMP_RGBA_IMAGE) ?        \                                            GIMP_RGBA_IMAGE :                 \                                            ((t) == GIMP_GRAY_IMAGE ||        \                                             (t) == GIMP_GRAYA_IMAGE) ?       \                                            GIMP_GRAYA_IMAGE :                \                                            ((t) == GIMP_INDEXED_IMAGE ||     \                                             (t) == GIMP_INDEXEDA_IMAGE) ?    \                                            GIMP_INDEXEDA_IMAGE : -1)
+end_define
+
+begin_define
+DECL|macro|GIMP_IMAGE_TYPE_BYTES (t)
+define|#
+directive|define
+name|GIMP_IMAGE_TYPE_BYTES
+parameter_list|(
+name|t
+parameter_list|)
+value|((t) == GIMP_RGBA_IMAGE     ? 4 : \                                             (t) == GIMP_RGB_IMAGE      ? 3 : \                                             (t) == GIMP_GRAYA_IMAGE    ? 2 : \                                             (t) == GIMP_GRAY_IMAGE     ? 1 : \                                             (t) == GIMP_INDEXEDA_IMAGE ? 2 : \                                             (t) == GIMP_INDEXED_IMAGE  ? 1 : -1)
+end_define
+
+begin_define
+DECL|macro|GIMP_IMAGE_TYPE_FROM_BASE_TYPE (b)
+define|#
+directive|define
+name|GIMP_IMAGE_TYPE_FROM_BASE_TYPE
+parameter_list|(
+name|b
+parameter_list|)
+value|((b) == GIMP_RGB ?                \                                             GIMP_RGB_IMAGE :                 \                                             (b) == GIMP_GRAY ?               \                                             GIMP_GRAY_IMAGE :                \                                             (b) == GIMP_INDEXED ?            \                                             GIMP_INDEXED_IMAGE : -1)
 end_define
 
 begin_struct

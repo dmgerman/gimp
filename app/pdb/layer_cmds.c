@@ -1130,6 +1130,11 @@ name|gimp_layer_copy
 argument_list|(
 name|layer
 argument_list|,
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
 name|add_alpha
 argument_list|)
 operator|)
