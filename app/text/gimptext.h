@@ -119,6 +119,10 @@ DECL|member|hinting
 name|gboolean
 name|hinting
 decl_stmt|;
+DECL|member|autohint
+name|gboolean
+name|autohint
+decl_stmt|;
 DECL|member|antialias
 name|gboolean
 name|antialias

@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a235cfa0103
+DECL|enum|__anon2b1f225c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -96,6 +96,9 @@ name|PROP_FONT_SIZE_UNIT
 block|,
 DECL|enumerator|PROP_HINTING
 name|PROP_HINTING
+block|,
+DECL|enumerator|PROP_AUTOHINT
+name|PROP_AUTOHINT
 block|,
 DECL|enumerator|PROP_ANTIALIAS
 name|PROP_ANTIALIAS
@@ -484,11 +487,26 @@ literal|"hinting"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Hinting alters the font outline to"
+literal|"Hinting alters the font outline to "
 literal|"produce a crisp bitmap at small sizes"
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_AUTOHINT
+argument_list|,
+literal|"autohint"
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -879,6 +897,19 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PROP_AUTOHINT
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|text
+operator|->
+name|autohint
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_ANTIALIAS
 case|:
 name|g_value_set_boolean
@@ -1111,6 +1142,19 @@ case|:
 name|text
 operator|->
 name|hinting
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_AUTOHINT
+case|:
+name|text
+operator|->
+name|autohint
 operator|=
 name|g_value_get_boolean
 argument_list|(

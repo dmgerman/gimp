@@ -284,6 +284,10 @@ literal|"font-size"
 argument_list|,
 name|size
 argument_list|,
+literal|"antialias"
+argument_list|,
+name|antialias
+argument_list|,
 literal|"border"
 argument_list|,
 name|border
