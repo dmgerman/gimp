@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * PSD Plugin version 3.0.10  * This GIMP plug-in is designed to load Adobe Photoshop(tm) files (.PSD)  *  * Adam D. Moss<adam@gimp.org><adam@foxbox.org>  *  *     If this plug-in fails to load a file which you think it should,  *     please tell me what seemed to go wrong, and anything you know  *     about the image you tried to load.  Please don't send big PSD  *     files to me without asking first.  *  *          Copyright (C) 1997-2003 Adam D. Moss  *          Copyright (C) 1996      Torsten Martinsen  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
+comment|/*  * PSD Plugin version 3.0.14  * This GIMP plug-in is designed to load Adobe Photoshop(tm) files (.PSD)  *  * Adam D. Moss<adam@gimp.org><adam@foxbox.org>  *  *     If this plug-in fails to load a file which you think it should,  *     please file a Bugzilla bug describing what seemed to go wrong,  *     and anything you know about the image you tried to load.  Attach a  *     problematic PSD file to the bug report.  *  *          Copyright (C) 1997-2004 Adam D. Moss  *          Copyright (C) 1996      Torsten Martinsen  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/*  * Adobe and Adobe Photoshop are trademarks of Adobe Systems  * Incor
 end_comment
 
 begin_comment
-comment|/*  * Revision history:  *  *  2003-11-27 / v3.0.10 / Adam D. Moss  *       GIMP 1.3/2.0 needs its layer/channel names to be UTF8 or it  *       fails wackily, so convert the strings from the PSD file to  *       UTF8 instead of using them raw.  *  *  2003-10-05 / v3.0.9 / Morten Eriksen  *       Fixed memory corruption bug: too little memory was allocated  *       for the bitmap image buffer if (imgwidth % 8 != 0) for  *       monocolor PSD images.  *  *  2003-08-31 / v3.0.8 / applied (modified) patch from Andy Wallis  *       Fix for handling of layer masks. See bug #68538.  *  *  2003-06-16 / v3.0.7 / Adam D. Moss  *       Avoid memory corruption when things get shot to hell in the  *       image unpacking phase.  Major version bumped to distinguish  *       GIMP 1.3 development thread.  *  *  2000-08-23 / v2.0.6 / Adam D. Moss  *       Eliminate more debugging output (don't people have more  *       substantial problems to report?  I'm poised at my keyboard).  *  *  1999-11-14 / v2.0.5 / Adam D. Moss  *       Applied patch by Andy Hefner to load 1-bit images.  *  *  1999-08-13 / v2.0.4 / Adam D. Moss  *       Allowed NULL layer names again, whee.  (Also fixed the time machine.)  *  *  1999-08-20 / v2.0.3 / Adam D. Moss  *       Ensure that NULL name does not get passed to gimp_layer_new(),  *       or it will fail to create the layer and cause problems down  *       the line (only since April 1999).  *  *  1999-01-18 / v2.0.2 / Adam D. Moss  *       Better guess at how PSD files store Guide position precision.  *  *  1999-01-10 / v2.0.1 / Adam D. Moss  *       Greatly reduced memory requirements for layered image loading -  *       we now do just-in-time channel unpacking.  Some little  *       cleanups too.  *  *  1998-09-04 / v2.0.0 / Adam D. Moss  *       Now recognises and loads the new Guides extensions written  *       by Photoshop 4 and 5.  *  *  1998-07-31 / v1.9.9.9f / Adam D. Moss  *       Use GIMP_OVERLAY_MODE if available.  *  *  1998-07-31 / v1.9.9.9e / Adam D. Moss  *       Worked around some buggy PSD savers (suspect PS4 on Mac) - ugh.  *       Fixed a bug when loading layer masks of certain dimensions.  *  *  1998-05-04 / v1.9.9.9b / Adam D. Moss  *       Changed the Pascal-style string-reading stuff.  That fixed  *       some file-padding problems.  Made all debugging output  *       compile-time optional (please leave it enabled for now).  *       Reduced memory requirements; still much room for improvement.  *  *  1998-04-28 / v1.9.9.9 / Adam D. Moss  *       Fixed the correct channel interlacing of 'raw' flat images.  *       Thanks to Christian Kirsch and Jay Cox for spotting this.  *       Changed some of the I/O routines.  *  *  1998-04-26 / v1.9.9.8 / Adam D. Moss  *       Implemented Aux-channels for layered files.  Got rid  *       of<endian.h> nonsense.  Improved Layer Mask padding.  *       Enforced num_layers/num_channels limit checks.  *  *  1998-04-23 / v1.9.9.5 / Adam D. Moss  *       Got Layer Masks working, got Aux-channels working  *       for unlayered files, fixed 'raw' channel loading, fixed  *       some other mini-bugs, slightly better progress meters.  *       Thanks to everyone who is helping with the testing!  *  *  1998-04-21 / v1.9.9.1 / Adam D. Moss  *       A little cleanup.  Implemented Layer Masks but disabled  *       them again - PS masks can be a different size to their  *       owning layer, unlike those in GIMP.  *  *  1998-04-19 / v1.9.9.0 / Adam D. Moss  *       Much happier now.  *  *  1997-03-13 / v1.9.0 / Adam D. Moss  *       Layers, channels and masks, oh my.  *       + Bugfixes& rearchitecturing.  *  *  1997-01-30 / v1.0.12 / Torsten Martinsen  *       Flat PSD image loading.  */
+comment|/*  * Revision history:  *  *  2004-02-12 / v3.0.14 / Adam D. Moss  *       Fix a twisted utf8-obsessive bug diagnosed by  *       Piotr Krysiuk<KrysiukP@prokom.pl>  *  *  2004-01-06 / v3.0.13 / Adam D. Moss  *       Disable one of the PanoTools fixes by default, since it causes  *       regressions in some ordinary PSD file loading.  *  *  2004-01-06 / v3.0.12 / Adam D. Moss  *       Try to avoid 0-sized drawables (including channels) in all  *       circumstances under GIMP 2.  *  *  2004-01-01 / v3.0.11 / Daniel Rogers<dsrogers@phaseveloctiy.org>  *       GIMP crashes on 0x0 layers, so we skip them.  *         *  2003-11-27 / v3.0.10 / Adam D. Moss  *       GIMP 1.3/2.0 needs its layer/channel names to be UTF8 or it  *       fails wackily, so convert the strings from the PSD file to  *       UTF8 instead of using them raw.  *  *  2003-10-05 / v3.0.9 / Morten Eriksen  *       Fixed memory corruption bug: too little memory was allocated  *       for the bitmap image buffer if (imgwidth % 8 != 0) for  *       monocolor PSD images.  *  *  2003-08-31 / v3.0.8 / applied (modified) patch from Andy Wallis  *       Fix for handling of layer masks. See bug #68538.  *  *  2003-06-16 / v3.0.7 / Adam D. Moss  *       Avoid memory corruption when things get shot to hell in the  *       image unpacking phase.  Major version bumped to distinguish  *       GIMP 1.3 development thread.  *  *  2000-08-23 / v2.0.6 / Adam D. Moss  *       Eliminate more debugging output (don't people have more  *       substantial problems to report?  I'm poised at my keyboard).  *  *  1999-11-14 / v2.0.5 / Adam D. Moss  *       Applied patch by Andy Hefner to load 1-bit images.  *  *  1999-08-13 / v2.0.4 / Adam D. Moss  *       Allowed NULL layer names again, whee.  (Also fixed the time machine.)  *  *  1999-08-20 / v2.0.3 / Adam D. Moss  *       Ensure that NULL name does not get passed to gimp_layer_new(),  *       or it will fail to create the layer and cause problems down  *       the line (only since April 1999).  *  *  1999-01-18 / v2.0.2 / Adam D. Moss  *       Better guess at how PSD files store Guide position precision.  *  *  1999-01-10 / v2.0.1 / Adam D. Moss  *       Greatly reduced memory requirements for layered image loading -  *       we now do just-in-time channel unpacking.  Some little  *       cleanups too.  *  *  1998-09-04 / v2.0.0 / Adam D. Moss  *       Now recognises and loads the new Guides extensions written  *       by Photoshop 4 and 5.  *  *  1998-07-31 / v1.9.9.9f / Adam D. Moss  *       Use GIMP_OVERLAY_MODE if available.  *  *  1998-07-31 / v1.9.9.9e / Adam D. Moss  *       Worked around some buggy PSD savers (suspect PS4 on Mac) - ugh.  *       Fixed a bug when loading layer masks of certain dimensions.  *  *  1998-05-04 / v1.9.9.9b / Adam D. Moss  *       Changed the Pascal-style string-reading stuff.  That fixed  *       some file-padding problems.  Made all debugging output  *       compile-time optional (please leave it enabled for now).  *       Reduced memory requirements; still much room for improvement.  *  *  1998-04-28 / v1.9.9.9 / Adam D. Moss  *       Fixed the correct channel interlacing of 'raw' flat images.  *       Thanks to Christian Kirsch and Jay Cox for spotting this.  *       Changed some of the I/O routines.  *  *  1998-04-26 / v1.9.9.8 / Adam D. Moss  *       Implemented Aux-channels for layered files.  Got rid  *       of<endian.h> nonsense.  Improved Layer Mask padding.  *       Enforced num_layers/num_channels limit checks.  *  *  1998-04-23 / v1.9.9.5 / Adam D. Moss  *       Got Layer Masks working, got Aux-channels working  *       for unlayered files, fixed 'raw' channel loading, fixed  *       some other mini-bugs, slightly better progress meters.  *       Thanks to everyone who is helping with the testing!  *  *  1998-04-21 / v1.9.9.1 / Adam D. Moss  *       A little cleanup.  Implemented Layer Masks but disabled  *       them again - PS masks can be a different size to their  *       owning layer, unlike those in GIMP.  *  *  1998-04-19 / v1.9.9.0 / Adam D. Moss  *       Much happier now.  *  *  1997-03-13 / v1.9.0 / Adam D. Moss  *       Layers, channels and masks, oh my.  *       + Bugfixes& rearchitecturing.  *  *  1997-01-30 / v1.0.12 / Torsten Martinsen  *       Flat PSD image loading.  */
 end_comment
 
 begin_comment
@@ -45,6 +45,18 @@ define|#
 directive|define
 name|MAX_CHANNELS
 value|30
+end_define
+
+begin_comment
+comment|/* set to TRUE to allow a fix for transparency in PSD files    generated by PanoTools that unfortunately causes regressions    in some other ordinary files saved by Photoshop. */
+end_comment
+
+begin_define
+DECL|macro|PANOTOOLS_FIX
+define|#
+directive|define
+name|PANOTOOLS_FIX
+value|FALSE
 end_define
 
 begin_comment
@@ -131,7 +143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad4289e0103
+DECL|enum|__anon2acf2f490103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -319,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad4289e0208
+DECL|struct|__anon2acf2f490208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -568,7 +580,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ad4289e0308
+DECL|struct|__anon2acf2f490308
 block|{
 DECL|member|signature
 name|gchar
@@ -2237,10 +2249,6 @@ block|{
 name|guchar
 name|slen
 decl_stmt|;
-name|gchar
-modifier|*
-name|sname
-decl_stmt|;
 name|slen
 operator|=
 name|getguchar
@@ -2289,8 +2297,13 @@ condition|(
 name|slen
 condition|)
 block|{
+name|guint32
+name|alpha_name_len
+decl_stmt|;
+name|gchar
+modifier|*
 name|sname
-operator|=
+init|=
 name|getstring
 argument_list|(
 name|slen
@@ -2299,6 +2312,24 @@ name|fd
 argument_list|,
 literal|"alpha channel name"
 argument_list|)
+decl_stmt|;
+name|alpha_name_len
+operator|=
+name|strlen
+argument_list|(
+name|sname
+argument_list|)
+expr_stmt|;
+operator|(
+operator|*
+name|offset
+operator|)
+operator|+=
+name|alpha_name_len
+expr_stmt|;
+name|remaining
+operator|-=
+name|alpha_name_len
 expr_stmt|;
 name|sname
 operator|=
@@ -2320,90 +2351,6 @@ name|name
 operator|=
 name|sname
 expr_stmt|;
-block|}
-else|else
-block|{
-name|psd_image
-operator|.
-name|aux_channel
-index|[
-name|psd_image
-operator|.
-name|num_aux_channels
-index|]
-operator|.
-name|name
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|psd_image
-operator|.
-name|aux_channel
-index|[
-name|psd_image
-operator|.
-name|num_aux_channels
-index|]
-operator|.
-name|name
-operator|==
-name|NULL
-condition|)
-block|{
-name|IFDBG
-block|{
-name|printf
-argument_list|(
-literal|"\t\t\tNull channel name %d.\n"
-argument_list|,
-name|psd_image
-operator|.
-name|num_aux_channels
-argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-if|if
-condition|(
-name|psd_image
-operator|.
-name|aux_channel
-index|[
-name|psd_image
-operator|.
-name|num_aux_channels
-index|]
-operator|.
-name|name
-condition|)
-block|{
-name|guint32
-name|alpha_name_len
-decl_stmt|;
-name|alpha_name_len
-operator|=
-name|strlen
-argument_list|(
-name|psd_image
-operator|.
-name|aux_channel
-index|[
-name|psd_image
-operator|.
-name|num_aux_channels
-index|]
-operator|.
-name|name
-argument_list|)
-expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
@@ -2421,17 +2368,39 @@ operator|.
 name|name
 argument_list|)
 decl_stmt|;
-operator|(
-operator|*
-name|offset
-operator|)
-operator|+=
-name|alpha_name_len
+block|}
+else|else
+block|{
+name|psd_image
+operator|.
+name|aux_channel
+index|[
+name|psd_image
+operator|.
+name|num_aux_channels
+index|]
+operator|.
+name|name
+operator|=
+name|NULL
 expr_stmt|;
-name|remaining
-operator|-=
-name|alpha_name_len
+name|IFDBG
+block|{
+name|printf
+argument_list|(
+literal|"\t\t\tNull channel name %d.\n"
+argument_list|,
+name|psd_image
+operator|.
+name|num_aux_channels
+argument_list|)
 expr_stmt|;
+name|fflush
+argument_list|(
+name|stdout
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 name|psd_image
 operator|.
@@ -3891,6 +3860,13 @@ operator|->
 name|num_channels
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|layer
+operator|->
+name|num_channels
+condition|)
+block|{
 name|layer
 operator|->
 name|channel
@@ -3996,6 +3972,16 @@ name|compressedsize
 argument_list|)
 decl_stmt|;
 block|}
+block|}
+else|else
+block|{
+name|IFDBG
+name|printf
+argument_list|(
+literal|"\t\t\t\tOo-er, layer has no channels.  Hmm.\n"
+argument_list|)
+decl_stmt|;
+block|}
 name|xfread
 argument_list|(
 name|fd
@@ -4028,6 +4014,32 @@ operator|!=
 literal|0
 condition|)
 block|{
+name|IFDBG
+name|printf
+argument_list|(
+literal|"\t\t\t(layer blend signature '%c%c%c%c' is incorrect: quitting)\n"
+argument_list|,
+name|sig
+index|[
+literal|0
+index|]
+argument_list|,
+name|sig
+index|[
+literal|1
+index|]
+argument_list|,
+name|sig
+index|[
+literal|2
+index|]
+argument_list|,
+name|sig
+index|[
+literal|3
+index|]
+argument_list|)
+decl_stmt|;
 name|g_message
 argument_list|(
 literal|"Error: layer blend signature is incorrect. :-("
@@ -4472,17 +4484,6 @@ argument_list|,
 literal|"layer name"
 argument_list|)
 expr_stmt|;
-name|layer
-operator|->
-name|name
-operator|=
-name|sanitise_string
-argument_list|(
-name|layer
-operator|->
-name|name
-argument_list|)
-expr_stmt|;
 operator|(
 operator|*
 name|offset
@@ -4518,6 +4519,17 @@ operator|->
 name|name
 argument_list|)
 decl_stmt|;
+name|layer
+operator|->
+name|name
+operator|=
+name|sanitise_string
+argument_list|(
+name|layer
+operator|->
+name|name
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -5786,6 +5798,12 @@ comment|/*  if (offset != PSDheader.imgreslen)     {       printf("\tSucking ima
 block|}
 end_function
 
+begin_if
+if|#
+directive|if
+name|PANOTOOLS_FIX
+end_if
+
 begin_comment
 comment|/* Convert RGB data to RGBA data */
 end_comment
@@ -5914,6 +5932,15 @@ name|rtn
 return|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* PANOTOOLS_FIX */
+end_comment
 
 begin_function
 specifier|static
@@ -6514,6 +6541,30 @@ operator|-
 name|gimpstep
 argument_list|)
 decl_stmt|;
+comment|/* gimp doesn't like 0 width/height drawables. */
+if|if
+condition|(
+operator|(
+name|width
+operator|==
+literal|0
+operator|)
+operator|||
+operator|(
+name|height
+operator|==
+literal|0
+operator|)
+condition|)
+block|{
+name|IFDBG
+name|printf
+argument_list|(
+literal|"(bad channel dimensions -- skipping)"
+argument_list|)
+decl_stmt|;
+return|return;
+block|}
 name|primary_data
 operator|=
 name|g_malloc
@@ -6886,6 +6937,30 @@ argument_list|,
 name|psstep
 argument_list|)
 decl_stmt|;
+comment|/* gimp doesn't like 0 width/height drawables. */
+if|if
+condition|(
+operator|(
+name|width
+operator|==
+literal|0
+operator|)
+operator|||
+operator|(
+name|height
+operator|==
+literal|0
+operator|)
+condition|)
+block|{
+name|IFDBG
+name|printf
+argument_list|(
+literal|"(bad channel dimensions -- skipping)"
+argument_list|)
+decl_stmt|;
+return|return;
+block|}
 name|aux_data
 operator|=
 name|g_malloc
@@ -7560,6 +7635,34 @@ name|layer
 operator|+
 name|lnum
 decl_stmt|;
+comment|/* 	   * since ps supports sloppy bounding boxes it is possible to 	   * have a 0x0 or Xx0 or 0xY layer.  Gimp doesn't support a 	   * 0x0 layer so we will just skip these.  We might be able 	   * to do something better here. 	   */
+if|if
+condition|(
+operator|(
+name|layer
+operator|->
+name|width
+operator|==
+literal|0
+operator|)
+operator|||
+operator|(
+name|layer
+operator|->
+name|height
+operator|==
+literal|0
+operator|)
+condition|)
+block|{
+name|IFDBG
+name|printf
+argument_list|(
+literal|"(bad layer dimensions -- skipping)"
+argument_list|)
+decl_stmt|;
+continue|continue;
+block|}
 name|numc
 operator|=
 name|layer
@@ -8485,6 +8588,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+name|PANOTOOLS_FIX
 comment|/* Convert the layer RGB data (not the mask) to RGBA */
 name|tmp
 operator|=
@@ -8534,6 +8640,9 @@ argument_list|,
 name|mask_id
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
+comment|/* PANOTOOLS_FIX */
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -9050,6 +9159,41 @@ operator|!
 name|want_aux
 condition|)
 block|{
+comment|/* gimp doesn't like 0 width/height drawables. */
+if|if
+condition|(
+operator|(
+name|PSDheader
+operator|.
+name|columns
+operator|==
+literal|0
+operator|)
+operator|||
+operator|(
+name|PSDheader
+operator|.
+name|rows
+operator|==
+literal|0
+operator|)
+condition|)
+block|{
+name|IFDBG
+name|printf
+argument_list|(
+literal|"(bad psd2-style image dimensions -- skipping)"
+argument_list|)
+decl_stmt|;
+name|image_ID
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+goto|goto
+name|finish_up
+goto|;
+block|}
 name|image_ID
 operator|=
 name|gimp_image_new
