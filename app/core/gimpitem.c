@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba46b8e0103
+DECL|enum|__anon2b88db870103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -475,36 +475,30 @@ block|{
 name|GObjectClass
 modifier|*
 name|object_class
-decl_stmt|;
-name|GimpObjectClass
-modifier|*
-name|gimp_object_class
-decl_stmt|;
-name|GimpViewableClass
-modifier|*
-name|viewable_class
-decl_stmt|;
-name|object_class
-operator|=
+init|=
 name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GimpObjectClass
+modifier|*
 name|gimp_object_class
-operator|=
+init|=
 name|GIMP_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GimpViewableClass
+modifier|*
 name|viewable_class
-operator|=
+init|=
 name|GIMP_VIEWABLE_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -1706,7 +1700,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_configure:  * @item: The #GimpItem to configure.  * @gimage: The #GimpImage to which the item belongs.  * @offset_x: The X offset to assign the item.  * @offset_y: The Y offset to assign the item.  * @width: The width to assign the item.  * @height: The height to assign the item.  * @name: The name to assign the item.  *  * This function is used to configure a new item.  First, if the item   * does not already have an ID, it is assigned the next available  * one, and then inserted into the Item Hash Table.  Next, it is  * given basic item properties as specified by the arguments.  */
+comment|/**  * gimp_item_configure:  * @item: The #GimpItem to configure.  * @gimage: The #GimpImage to which the item belongs.  * @offset_x: The X offset to assign the item.  * @offset_y: The Y offset to assign the item.  * @width: The width to assign the item.  * @height: The height to assign the item.  * @name: The name to assign the item.  *  * This function is used to configure a new item.  First, if the item  * does not already have an ID, it is assigned the next available  * one, and then inserted into the Item Hash Table.  Next, it is  * given basic item properties as specified by the arguments.  */
 end_comment
 
 begin_function
@@ -1847,7 +1841,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_is_attached:  * @item: The #GimpItem to check.  *  * Calls the type-specific 'is_attached' function for the item,  * the returns the value that this yields.  */
+comment|/**  * gimp_item_is_attached:  * @item: The #GimpItem to check.  *  * Returns: %TRUE if the item is attached to an image, %FALSE otherwise.  */
 end_comment
 
 begin_function
@@ -1885,7 +1879,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_duplicate:  * @item: The #GimpItem to duplicate.  * @new_type: The type to make the new item.  * @add_alpha: #TRUE if an alpha channel should be added to the new item.  *  * Calls the type-specific 'duplicate' function for the item, with the specified  * arguments passed on unchanged.  *  * Returns: the newly created item.  */
+comment|/**  * gimp_item_duplicate:  * @item: The #GimpItem to duplicate.  * @new_type: The type to make the new item.  * @add_alpha: #TRUE if an alpha channel should be added to the new item.  *  * Returns: the newly created item.  */
 end_comment
 
 begin_function
@@ -1958,7 +1952,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_convert:  * @item: The @GimpItem to convert.  * @dest_image: The #GimpImage in which to place the converted item.  * @new_type: The type to convert the item to.  * @add_alpha: #TRUE if an alpha channel should be added to the converted item.  *  * Calls the type-specific 'convert' function for the item, with the specified  * arguments passed on unchanged.  *  * Returns: the new item that results from the conversion.  */
+comment|/**  * gimp_item_convert:  * @item: The @GimpItem to convert.  * @dest_image: The #GimpImage in which to place the converted item.  * @new_type: The type to convert the item to.  * @add_alpha: #TRUE if an alpha channel should be added to the converted item.  *  * Returns: the new item that results from the conversion.  */
 end_comment
 
 begin_function
@@ -2070,7 +2064,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_rename:  * @item: The #GimpItem to rename.  * @new_name: The new name to give the item.  *  * This function assigns a new name to the item, if the desired name is  * different from the name it already has, and pushes an entry onto the  * undo stack for the item's image.  If @new_name is NULL or empty, the  * default name for the item's class is used.  If the name is changed,  * the "name_changed" signal is emitted for the item.  *  * The contents of @new_name are copied, so it is okay to free them  * afterward.  *  * Returns: #TRUE if @item is a valid #GimpItem.  */
+comment|/**  * gimp_item_rename:  * @item: The #GimpItem to rename.  * @new_name: The new name to give the item.  *  * This function assigns a new name to the item, if the desired name is  * different from the name it already has, and pushes an entry onto the  * undo stack for the item's image.  If @new_name is NULL or empty, the  * default name for the item's class is used.  If the name is changed,  * the "name_changed" signal is emitted for the item.  *  * Returns: %TRUE if the @item could be renamed, %FALSE otherwise.  */
 end_comment
 
 begin_function
@@ -2160,7 +2154,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_width:  * @item: The #GimpItem to check.  *  * Returns: The width of the item, as recorded in its #GimpItem struct.   */
+comment|/**  * gimp_item_width:  * @item: The #GimpItem to check.  *  * Returns: The width of the item.  */
 end_comment
 
 begin_function
@@ -2194,7 +2188,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_height:  * @item: The #GimpItem to check.  *  * Returns: The height of the item, as recorded in its #GimpItem struct.   */
+comment|/**  * gimp_item_height:  * @item: The #GimpItem to check.  *  * Returns: The height of the item.  */
 end_comment
 
 begin_function
@@ -2228,7 +2222,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_offsets:  * @item: The #GimpItem to check.  * @off_x: Pointer to a location in which to return the X offset of the item.  * @off_y: Pointer to a location in which to return the Y offset of the item.  *  * Reveals the X and Y offsets of the item, as recorded in its #GimpItem struct.   */
+comment|/**  * gimp_item_offsets:  * @item: The #GimpItem to check.  * @off_x: Return location for the item's X offset.  * @off_y: Return location for the item's Y offset.  *  * Reveals the X and Y offsets of the item.  */
 end_comment
 
 begin_function
@@ -2284,7 +2278,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_translate:  * @item: The #GimpItem to move.  * @off_x: Increment to the X offset of the item.  * @off_y: Increment to the Y offset of the item.  * @push_undo: If #TRUE, create an entry in the image's undo stack for this action.  *  * Adds the specified increments to the X and Y offsets for the item, as stored  * in its #GimpItem struct.  */
+comment|/**  * gimp_item_translate:  * @item: The #GimpItem to move.  * @off_x: Increment to the X offset of the item.  * @off_y: Increment to the Y offset of the item.  * @push_undo: If #TRUE, create an entry in the image's undo stack  *             for this action.  *  * Adds the specified increments to the X and Y offsets for the item.  */
 end_comment
 
 begin_function
