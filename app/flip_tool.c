@@ -992,7 +992,7 @@ name|i
 operator|<
 name|orig
 operator|->
-name|width
+name|height
 condition|;
 name|i
 operator|++
