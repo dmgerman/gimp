@@ -223,7 +223,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1c1f810103
+DECL|enum|__anon2ad2b7360103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -25326,6 +25326,9 @@ decl_stmt|;
 name|gboolean
 name|opacity_quickskip_possible
 decl_stmt|;
+name|gboolean
+name|transparency_quickskip_possible
+decl_stmt|;
 name|TileRowHint
 name|hint
 decl_stmt|;
@@ -25401,7 +25404,7 @@ name|data
 else|:
 name|NULL
 expr_stmt|;
-comment|/* cheap and easy when the row of src2 is completely opaque */
+comment|/* cheap and easy when the row of src2 is completely opaque/transparent */
 name|opacity_quickskip_possible
 operator|=
 operator|(
@@ -25417,7 +25420,22 @@ literal|255
 operator|)
 operator|)
 expr_stmt|;
-comment|/*  if (src2->tiles)       s2 = tile_data_pointer(src2->curtile,       src2->offx,       src2->offy);*/
+name|transparency_quickskip_possible
+operator|=
+operator|(
+operator|(
+name|src2
+operator|->
+name|tiles
+operator|)
+operator|&&
+operator|(
+name|mode
+operator|!=
+name|REPLACE_MODE
+operator|)
+operator|)
+expr_stmt|;
 if|if
 condition|(
 name|src1
@@ -25524,9 +25542,7 @@ name|TILEROWHINT_UNDEFINED
 expr_stmt|;
 if|if
 condition|(
-name|src2
-operator|->
-name|tiles
+name|transparency_quickskip_possible
 operator|&&
 operator|(
 operator|(
