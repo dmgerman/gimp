@@ -275,7 +275,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c803e3b0103
+DECL|enum|__anon2b4ccb000103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -15400,7 +15400,6 @@ name|proc_def
 operator|->
 name|menu_path
 condition|)
-empty_stmt|;
 block|{
 name|ProcRecord
 modifier|*
