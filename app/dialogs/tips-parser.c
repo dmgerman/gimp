@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2901fc090103
+DECL|enum|__anon27dfa09f0103
 block|{
 DECL|enumerator|TIPS_START
 name|TIPS_START
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2901fc090203
+DECL|enum|__anon27dfa09f0203
 block|{
 DECL|enumerator|TIPS_LOCALE_NONE
 name|TIPS_LOCALE_NONE
@@ -86,8 +86,8 @@ name|TIPS_LOCALE_MATCH
 block|,
 DECL|enumerator|TIPS_LOCALE_MISMATCH
 name|TIPS_LOCALE_MISMATCH
-block|, }
 DECL|typedef|TipsParserLocaleState
+block|}
 name|TipsParserLocaleState
 typedef|;
 end_typedef

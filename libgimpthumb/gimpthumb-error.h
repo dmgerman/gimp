@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1d7cd70103
+DECL|enum|__anon290a97830103
 block|{
 DECL|enumerator|GIMP_THUMB_ERROR_OPEN
 name|GIMP_THUMB_ERROR_OPEN
@@ -31,7 +31,6 @@ block|,
 comment|/*  file does not exist                    */
 DECL|enumerator|GIMP_THUMB_ERROR_MKDIR
 name|GIMP_THUMB_ERROR_MKDIR
-block|,
 comment|/*  mkdir failed                           */
 DECL|typedef|GimpThumbError
 block|}

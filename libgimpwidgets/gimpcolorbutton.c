@@ -122,7 +122,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c32a280103
+DECL|enum|__anon2bcf6fec0103
 block|{
 DECL|enumerator|GIMP_COLOR_BUTTON_COLOR_FG
 name|GIMP_COLOR_BUTTON_COLOR_FG
@@ -135,15 +135,15 @@ name|GIMP_COLOR_BUTTON_COLOR_BLACK
 block|,
 DECL|enumerator|GIMP_COLOR_BUTTON_COLOR_WHITE
 name|GIMP_COLOR_BUTTON_COLOR_WHITE
-block|, }
 DECL|typedef|GimpColorButtonColor
+block|}
 name|GimpColorButtonColor
 typedef|;
 end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c32a280203
+DECL|enum|__anon2bcf6fec0203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED

@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4722310103
+DECL|enum|__anon2ac35fa10103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -124,14 +124,14 @@ name|DIFFERENTIAL
 block|,
 DECL|enumerator|LAPLACE
 name|LAPLACE
-block|, }
+block|}
 enum|;
 end_enum
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4722310208
+DECL|struct|__anon2ac35fa10208
 block|{
 DECL|member|amount
 name|gdouble

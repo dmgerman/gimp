@@ -118,13 +118,13 @@ struct|struct
 name|apply_layer_mode_struct
 block|{
 DECL|member|bytes1
-name|guchar
+name|guint
 name|bytes1
 range|:
 literal|3
 decl_stmt|;
 DECL|member|bytes2
-name|guchar
+name|guint
 name|bytes2
 range|:
 literal|3

@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27440c1f0103
+DECL|enum|__anon27eeb6270103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -144,21 +144,21 @@ struct|struct
 name|_LayerMode
 block|{
 DECL|member|affect_alpha
-name|guchar
+name|guint
 name|affect_alpha
 range|:
 literal|1
 decl_stmt|;
 comment|/*  does the layer mode affect the alpha channel  */
 DECL|member|increase_opacity
-name|guchar
+name|guint
 name|increase_opacity
 range|:
 literal|1
 decl_stmt|;
 comment|/*  layer mode can increase opacity */
 DECL|member|decrease_opacity
-name|guchar
+name|guint
 name|decrease_opacity
 range|:
 literal|1

@@ -83,7 +83,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b2b990a0108
+DECL|struct|__anon27d586870108
 typedef|typedef
 struct|struct
 block|{
@@ -768,7 +768,7 @@ name|obj_y
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//   preview_thaw();
+comment|/*   preview_thaw(); */
 block|}
 end_function
 
@@ -803,7 +803,7 @@ name|preview
 operator|->
 name|preview
 decl_stmt|;
-comment|//   preview_freeze();
+comment|/*   preview_freeze(); */
 name|g_signal_connect
 argument_list|(
 name|widget

@@ -85,18 +85,18 @@ value|128
 end_define
 
 begin_define
-DECL|macro|SIZE_MIN
+DECL|macro|MIN_SIZE
 define|#
 directive|define
-name|SIZE_MIN
+name|MIN_SIZE
 value|0.1
 end_define
 
 begin_define
-DECL|macro|SIZE_MAX
+DECL|macro|MAX_SIZE
 define|#
 directive|define
-name|SIZE_MAX
+name|MAX_SIZE
 value|16.0
 end_define
 
@@ -115,7 +115,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e26ad50108
+DECL|struct|__anon2c91b0da0108
 block|{
 DECL|member|tilable
 name|gint
@@ -1591,9 +1591,9 @@ name|snvals
 operator|.
 name|xsize
 argument_list|,
-name|SIZE_MIN
+name|MIN_SIZE
 argument_list|,
-name|SIZE_MAX
+name|MAX_SIZE
 argument_list|)
 expr_stmt|;
 name|snvals
@@ -1606,9 +1606,9 @@ name|snvals
 operator|.
 name|ysize
 argument_list|,
-name|SIZE_MIN
+name|MIN_SIZE
 argument_list|,
-name|SIZE_MAX
+name|MAX_SIZE
 argument_list|)
 expr_stmt|;
 comment|/*  Set scaling factors  */
@@ -2936,9 +2936,9 @@ name|snvals
 operator|.
 name|xsize
 argument_list|,
-name|SIZE_MIN
+name|MIN_SIZE
 argument_list|,
-name|SIZE_MAX
+name|MAX_SIZE
 argument_list|,
 literal|0.1
 argument_list|,
@@ -3015,9 +3015,9 @@ name|snvals
 operator|.
 name|ysize
 argument_list|,
-name|SIZE_MIN
+name|MIN_SIZE
 argument_list|,
-name|SIZE_MAX
+name|MAX_SIZE
 argument_list|,
 literal|0.1
 argument_list|,
