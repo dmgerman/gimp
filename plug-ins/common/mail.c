@@ -466,7 +466,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f273e30108
+DECL|struct|__anon298893ee0108
 block|{
 DECL|member|receipt
 name|char
@@ -2105,7 +2105,7 @@ name|gtk_table_new
 argument_list|(
 literal|7
 argument_list|,
-literal|3
+literal|2
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2117,7 +2117,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2153,7 +2153,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -2163,7 +2163,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 comment|/*  To:  Label */
@@ -2172,6 +2172,18 @@ operator|=
 name|gtk_label_new
 argument_list|(
 literal|"To:"
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2191,11 +2203,11 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
@@ -2226,7 +2238,7 @@ name|entry
 argument_list|,
 literal|1
 argument_list|,
-literal|3
+literal|2
 argument_list|,
 literal|0
 argument_list|,
@@ -2236,7 +2248,7 @@ name|GTK_EXPAND
 operator||
 name|GTK_FILL
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
@@ -2300,12 +2312,24 @@ argument_list|(
 name|entry
 argument_list|)
 expr_stmt|;
-comment|/*  From:  Label */
+comment|/*  From Label */
 name|label
 operator|=
 name|gtk_label_new
 argument_list|(
 literal|"From:"
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2325,11 +2349,11 @@ literal|1
 argument_list|,
 literal|2
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
@@ -2343,7 +2367,7 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-comment|/* from: dialog */
+comment|/* From entry */
 name|entry
 operator|=
 name|gtk_entry_new
@@ -2360,7 +2384,7 @@ name|entry
 argument_list|,
 literal|1
 argument_list|,
-literal|3
+literal|2
 argument_list|,
 literal|1
 argument_list|,
@@ -2370,7 +2394,7 @@ name|GTK_EXPAND
 operator||
 name|GTK_FILL
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
@@ -2434,12 +2458,24 @@ argument_list|(
 name|entry
 argument_list|)
 expr_stmt|;
-comment|/*  subject Label */
+comment|/* Subject Label */
 name|label
 operator|=
 name|gtk_label_new
 argument_list|(
 literal|"Subject:"
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2459,11 +2495,11 @@ literal|2
 argument_list|,
 literal|3
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
@@ -2494,7 +2530,7 @@ name|entry
 argument_list|,
 literal|1
 argument_list|,
-literal|3
+literal|2
 argument_list|,
 literal|2
 argument_list|,
@@ -2504,7 +2540,7 @@ name|GTK_EXPAND
 operator||
 name|GTK_FILL
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
@@ -2576,6 +2612,18 @@ argument_list|(
 literal|"Comment:"
 argument_list|)
 expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.5
+argument_list|)
+expr_stmt|;
 name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
@@ -2593,11 +2641,11 @@ literal|3
 argument_list|,
 literal|4
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
@@ -2611,7 +2659,7 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-comment|/* Comment dialog */
+comment|/* Comment entry */
 name|entry
 operator|=
 name|gtk_entry_new
@@ -2628,7 +2676,7 @@ name|entry
 argument_list|,
 literal|1
 argument_list|,
-literal|3
+literal|2
 argument_list|,
 literal|3
 argument_list|,
@@ -2638,7 +2686,7 @@ name|GTK_EXPAND
 operator||
 name|GTK_FILL
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
@@ -2702,7 +2750,7 @@ argument_list|(
 name|entry
 argument_list|)
 expr_stmt|;
-comment|/* filename label  */
+comment|/* Filename label  */
 name|label
 operator|=
 name|gtk_label_new
@@ -2711,6 +2759,18 @@ name|_
 argument_list|(
 literal|"Filename:"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2730,11 +2790,11 @@ literal|4
 argument_list|,
 literal|5
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
@@ -2748,7 +2808,7 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-comment|/* Filename dialog */
+comment|/* Filename entry */
 name|entry
 operator|=
 name|gtk_entry_new
@@ -2765,7 +2825,7 @@ name|entry
 argument_list|,
 literal|1
 argument_list|,
-literal|3
+literal|2
 argument_list|,
 literal|4
 argument_list|,
@@ -2775,7 +2835,7 @@ name|GTK_EXPAND
 operator||
 name|GTK_FILL
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
@@ -2875,7 +2935,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-comment|/*   gtk_box_pack_start (GTK_BOX (box2), table2, TRUE, TRUE, 0); 	gtk_widget_show (table2); */
+comment|/*   gtk_box_pack_start (GTK_BOX (box2), table2, TRUE, TRUE, 0);        gtk_widget_show (table2); */
 name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
@@ -2887,7 +2947,7 @@ name|table2
 argument_list|,
 literal|0
 argument_list|,
-literal|3
+literal|2
 argument_list|,
 literal|5
 argument_list|,
@@ -3049,6 +3109,18 @@ literal|"Encapsulation:"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.5
+argument_list|)
+expr_stmt|;
 name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
@@ -3062,15 +3134,15 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
+literal|6
+argument_list|,
 literal|7
 argument_list|,
-literal|8
-argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
@@ -3209,11 +3281,11 @@ literal|6
 argument_list|,
 literal|7
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
@@ -3236,19 +3308,19 @@ argument_list|)
 argument_list|,
 name|button2
 argument_list|,
+literal|1
+argument_list|,
 literal|2
-argument_list|,
-literal|3
-argument_list|,
-literal|6
 argument_list|,
 literal|7
 argument_list|,
-name|GTK_EXPAND
+literal|8
+argument_list|,
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
