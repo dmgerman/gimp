@@ -14,24 +14,8 @@ parameter_list|)
 value|((x) * (x))
 end_define
 
-begin_define
-DECL|macro|TRUE
-define|#
-directive|define
-name|TRUE
-value|1
-end_define
-
-begin_define
-DECL|macro|FALSE
-define|#
-directive|define
-name|FALSE
-value|0
-end_define
-
 begin_typedef
-DECL|struct|__anon2ba42b270108
+DECL|struct|__anon289d5b5e0108
 typedef|typedef
 struct|struct
 block|{
@@ -61,7 +45,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ba42b270208
+DECL|struct|__anon289d5b5e0208
 typedef|typedef
 struct|struct
 block|{
@@ -82,7 +66,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ba42b270308
+DECL|struct|__anon289d5b5e0308
 typedef|typedef
 struct|struct
 block|{
@@ -102,7 +86,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ba42b270408
+DECL|struct|__anon289d5b5e0408
 typedef|typedef
 struct|struct
 block|{
@@ -120,7 +104,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ba42b270508
+DECL|struct|__anon289d5b5e0508
 typedef|typedef
 struct|struct
 block|{
@@ -196,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba42b270608
+DECL|struct|__anon289d5b5e0608
 block|{
 DECL|member|num_elements
 name|gint
@@ -237,7 +221,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ba42b270708
+DECL|struct|__anon289d5b5e0708
 typedef|typedef
 struct|struct
 block|{
