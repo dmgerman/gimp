@@ -7571,7 +7571,7 @@ literal|"gimp_image_clean_all"
 block|,
 literal|"Set the image dirty count to 0."
 block|,
-literal|"This procedure sets the specified image's dirty count to 0, allowing operations to occur without having a 'dirtied' image. This is especially useful for cre ating and loading images which should not initially be considered dirty, even though layers must be created, filled, and installed in the image."
+literal|"This procedure sets the specified image's dirty count to 0, allowing operations to occur without having a 'dirtied' image. This is especially useful for creating and loading images which should not initially be considered dirty, even though layers must be created, filled, and installed in the image."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

@@ -132,7 +132,7 @@ value|0xF
 end_define
 
 begin_enum
-DECL|enum|__anon295ce5ed0103
+DECL|enum|__anon2934dfde0103
 enum|enum
 block|{
 DECL|enumerator|RANGED
@@ -189,9 +189,11 @@ end_comment
 
 begin_function
 name|guint
-DECL|function|histogram_widget_get_type ()
+DECL|function|histogram_widget_get_type (void)
 name|histogram_widget_get_type
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|guint
@@ -330,9 +332,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|histogram_widget_init (HistogramWidget * histogram)
 specifier|static
 name|void
+DECL|function|histogram_widget_init (HistogramWidget * histogram)
 name|histogram_widget_init
 parameter_list|(
 name|HistogramWidget
@@ -779,6 +781,39 @@ operator|*
 operator|)
 name|event
 expr_stmt|;
+if|if
+condition|(
+name|bevent
+operator|->
+name|button
+operator|!=
+literal|1
+condition|)
+break|break;
+name|gdk_pointer_grab
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|histogram
+argument_list|)
+operator|->
+name|window
+argument_list|,
+name|FALSE
+argument_list|,
+name|GDK_BUTTON_RELEASE_MASK
+operator||
+name|GDK_BUTTON1_MOTION_MASK
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|bevent
+operator|->
+name|time
+argument_list|)
+expr_stmt|;
 name|width
 operator|=
 name|GTK_WIDGET
@@ -845,6 +880,21 @@ break|break;
 case|case
 name|GDK_BUTTON_RELEASE
 case|:
+name|bevent
+operator|=
+operator|(
+name|GdkEventButton
+operator|*
+operator|)
+name|event
+expr_stmt|;
+name|gdk_pointer_ungrab
+argument_list|(
+name|bevent
+operator|->
+name|time
+argument_list|)
+expr_stmt|;
 name|gtk_signal_emit
 argument_list|(
 name|GTK_OBJECT

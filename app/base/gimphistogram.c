@@ -87,9 +87,11 @@ end_comment
 begin_function
 name|GimpHistogram
 modifier|*
-DECL|function|gimp_histogram_new ()
+DECL|function|gimp_histogram_new (void)
 name|gimp_histogram_new
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GimpHistogram
 modifier|*
@@ -1114,9 +1116,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp_histogram_alloc (GimpHistogram * histogram,int bytes)
 specifier|static
 name|void
+DECL|function|gimp_histogram_alloc (GimpHistogram * histogram,int bytes)
 name|gimp_histogram_alloc
 parameter_list|(
 name|GimpHistogram

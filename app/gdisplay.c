@@ -9792,7 +9792,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-comment|/* Give a gdisp check that it is still valid and points to the require    * GimpImage. If not return the first gDisplay that does point to the     * gimage. If none found return NULL;    */
+comment|/* Give a gdisp check that it is still valid and points to the required    * GimpImage. If not return the first gDisplay that does point to the     * gimage. If none found return NULL;    */
 name|GSList
 modifier|*
 name|list
