@@ -143,6 +143,12 @@ operator|&
 name|center_pnt
 operator|->
 name|pnt
+argument_list|,
+name|obj
+operator|==
+name|gfig_context
+operator|->
+name|selected_obj
 argument_list|)
 expr_stmt|;
 name|draw_sqr
@@ -151,6 +157,12 @@ operator|&
 name|edge_pnt
 operator|->
 name|pnt
+argument_list|,
+name|obj
+operator|==
+name|gfig_context
+operator|->
+name|selected_obj
 argument_list|)
 expr_stmt|;
 name|bound_wx
@@ -916,6 +928,8 @@ operator|&
 name|edge_pnt
 operator|->
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gdk_draw_arc
@@ -949,6 +963,8 @@ block|}
 name|draw_circle
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|edge_pnt
@@ -1183,6 +1199,8 @@ block|{
 name|draw_circle
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|add_to_all_obj

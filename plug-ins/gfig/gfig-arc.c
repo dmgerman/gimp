@@ -1389,6 +1389,12 @@ operator|&
 name|pnt1
 operator|->
 name|pnt
+argument_list|,
+name|obj
+operator|==
+name|gfig_context
+operator|->
+name|selected_obj
 argument_list|)
 expr_stmt|;
 name|draw_sqr
@@ -1397,6 +1403,12 @@ operator|&
 name|pnt2
 operator|->
 name|pnt
+argument_list|,
+name|obj
+operator|==
+name|gfig_context
+operator|->
+name|selected_obj
 argument_list|)
 expr_stmt|;
 name|draw_sqr
@@ -1405,6 +1417,12 @@ operator|&
 name|pnt3
 operator|->
 name|pnt
+argument_list|,
+name|obj
+operator|==
+name|gfig_context
+operator|->
+name|selected_obj
 argument_list|)
 expr_stmt|;
 block|}
@@ -2348,6 +2366,8 @@ condition|)
 name|draw_sqr
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|d_line_start

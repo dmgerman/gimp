@@ -998,6 +998,12 @@ operator|&
 name|spnt
 operator|->
 name|pnt
+argument_list|,
+name|obj
+operator|==
+name|gfig_context
+operator|->
+name|selected_obj
 argument_list|)
 expr_stmt|;
 name|line_pnts
@@ -1536,6 +1542,8 @@ operator|&
 name|l_pnt
 operator|->
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|selvals
@@ -1615,6 +1623,8 @@ operator|&
 name|l_pnt
 operator|->
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1734,6 +1744,8 @@ operator|&
 name|l_pnt
 operator|->
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|draw_sqr
@@ -1742,6 +1754,8 @@ operator|&
 name|l_pnt
 operator|->
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1868,6 +1882,8 @@ operator|->
 name|points
 operator|->
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|draw_sqr
@@ -1878,6 +1894,8 @@ operator|->
 name|points
 operator|->
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}

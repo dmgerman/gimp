@@ -248,6 +248,12 @@ operator|&
 name|center_pnt
 operator|->
 name|pnt
+argument_list|,
+name|obj
+operator|==
+name|gfig_context
+operator|->
+name|selected_obj
 argument_list|)
 expr_stmt|;
 comment|/* Next point defines the radius */
@@ -310,6 +316,12 @@ operator|&
 name|outer_radius_pnt
 operator|->
 name|pnt
+argument_list|,
+name|obj
+operator|==
+name|gfig_context
+operator|->
+name|selected_obj
 argument_list|)
 expr_stmt|;
 name|draw_sqr
@@ -318,6 +330,12 @@ operator|&
 name|inner_radius_pnt
 operator|->
 name|pnt
+argument_list|,
+name|obj
+operator|==
+name|gfig_context
+operator|->
+name|selected_obj
 argument_list|)
 expr_stmt|;
 comment|/* Have center and radius - draw star */
@@ -1434,6 +1452,8 @@ operator|&
 name|inner_pnt
 operator|->
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|draw_circle
@@ -1442,6 +1462,8 @@ operator|&
 name|outer_pnt
 operator|->
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|selvals
@@ -1636,6 +1658,8 @@ operator|&
 name|outer_pnt
 operator|->
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|draw_circle
@@ -1644,6 +1668,8 @@ operator|&
 name|inner_pnt
 operator|->
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1702,6 +1728,8 @@ block|{
 name|draw_circle
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|add_to_all_obj

@@ -181,6 +181,12 @@ operator|&
 name|spnt
 operator|->
 name|pnt
+argument_list|,
+name|obj
+operator|==
+name|gfig_context
+operator|->
+name|selected_obj
 argument_list|)
 expr_stmt|;
 comment|/* Go around all the points drawing a line from one to the next */
@@ -228,6 +234,12 @@ operator|&
 name|spnt
 operator|->
 name|pnt
+argument_list|,
+name|obj
+operator|=
+name|gfig_context
+operator|->
+name|selected_obj
 argument_list|)
 expr_stmt|;
 block|}
@@ -682,6 +694,8 @@ operator|&
 name|epnt
 operator|->
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gdk_draw_line
@@ -731,6 +745,8 @@ comment|/* Draw circle on point */
 name|draw_circle
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|epnt
@@ -860,6 +876,8 @@ comment|/* Undraw the last circle */
 name|draw_circle
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 if|if

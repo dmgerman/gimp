@@ -2829,6 +2829,8 @@ condition|)
 name|draw_sqr
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|d_line_start
@@ -2845,6 +2847,8 @@ case|:
 name|draw_sqr
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|d_circle_start
@@ -2861,6 +2865,8 @@ case|:
 name|draw_sqr
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|d_ellipse_start
@@ -2877,6 +2883,8 @@ case|:
 name|draw_sqr
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|d_poly_start
@@ -2904,6 +2912,8 @@ case|:
 name|draw_sqr
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|d_star_start
@@ -2920,6 +2930,8 @@ case|:
 name|draw_sqr
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|d_spiral_start
@@ -2941,6 +2953,8 @@ condition|)
 name|draw_sqr
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|d_bezier_start
@@ -3030,6 +3044,8 @@ expr_stmt|;
 name|draw_sqr
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3039,6 +3055,8 @@ case|:
 name|draw_sqr
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|d_circle_end
@@ -3055,6 +3073,8 @@ case|:
 name|draw_sqr
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|d_ellipse_end
@@ -3071,6 +3091,8 @@ case|:
 name|draw_sqr
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|d_poly_end
@@ -3087,6 +3109,8 @@ case|:
 name|draw_sqr
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|d_star_end
@@ -3103,6 +3127,8 @@ case|:
 name|draw_sqr
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|d_arc_end
@@ -3119,6 +3145,8 @@ case|:
 name|draw_sqr
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|d_spiral_end

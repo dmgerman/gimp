@@ -271,6 +271,12 @@ operator|&
 name|center_pnt
 operator|->
 name|pnt
+argument_list|,
+name|obj
+operator|==
+name|gfig_context
+operator|->
+name|selected_obj
 argument_list|)
 expr_stmt|;
 comment|/* Next point defines the radius */
@@ -307,6 +313,12 @@ operator|&
 name|radius_pnt
 operator|->
 name|pnt
+argument_list|,
+name|obj
+operator|==
+name|gfig_context
+operator|->
+name|selected_obj
 argument_list|)
 expr_stmt|;
 comment|/* Have center and radius - draw spiral */
@@ -1242,6 +1254,8 @@ operator|&
 name|edge_pnt
 operator|->
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|selvals
@@ -1321,6 +1335,8 @@ operator|&
 name|edge_pnt
 operator|->
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1392,6 +1408,8 @@ block|{
 name|draw_circle
 argument_list|(
 name|pnt
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|add_to_all_obj

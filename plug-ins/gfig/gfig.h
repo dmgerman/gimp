@@ -47,7 +47,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9b06730108
+DECL|struct|__anon29c8453b0108
 block|{
 DECL|member|gridspacing
 name|gint
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9b06730208
+DECL|struct|__anon29c8453b0208
 block|{
 DECL|member|type
 name|SelectionType
@@ -282,7 +282,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9b06730308
+DECL|struct|__anon29c8453b0308
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -477,7 +477,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9b06730408
+DECL|struct|__anon29c8453b0408
 block|{
 DECL|member|debug_styles
 name|gboolean
@@ -730,6 +730,9 @@ parameter_list|(
 name|GdkPoint
 modifier|*
 name|p
+parameter_list|,
+name|gboolean
+name|selected
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -741,6 +744,9 @@ parameter_list|(
 name|GdkPoint
 modifier|*
 name|p
+parameter_list|,
+name|gboolean
+name|selected
 parameter_list|)
 function_decl|;
 end_function_decl
