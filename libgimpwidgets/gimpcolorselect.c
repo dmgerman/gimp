@@ -124,7 +124,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_BUTTON_PRESS_MASK | GDK_
 end_define
 
 begin_typedef
-DECL|enum|__anon2ba4767c0103
+DECL|enum|__anon2c83286e0103
 typedef|typedef
 enum|enum
 block|{
@@ -172,7 +172,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ba4767c0203
+DECL|enum|__anon2c83286e0203
 typedef|typedef
 enum|enum
 block|{
@@ -7617,6 +7617,8 @@ argument_list|,
 name|y
 argument_list|,
 name|width
+operator|-
+literal|1
 argument_list|,
 name|y
 argument_list|)
@@ -7853,6 +7855,8 @@ argument_list|,
 name|y
 argument_list|,
 name|width
+operator|-
+literal|1
 argument_list|,
 name|y
 argument_list|)
@@ -7886,6 +7890,8 @@ argument_list|,
 name|x
 argument_list|,
 name|height
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gdk_gc_set_function
