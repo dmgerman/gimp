@@ -221,6 +221,27 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_file_dialog_set_image
+parameter_list|(
+name|GimpFileDialog
+modifier|*
+name|dialog
+parameter_list|,
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|gboolean
+name|set_uri_and_proc
+parameter_list|,
+name|gboolean
+name|set_image_clean
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
