@@ -1192,7 +1192,7 @@ name|gint
 name|cursor_label_width
 decl_stmt|;
 name|gint
-name|label_frame_size_difference
+name|diff
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1399,8 +1399,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|cursor_label_width
+operator|+=
+literal|2
+expr_stmt|;
 comment|/*  find out how many pixels the label's parent frame is bigger than    *  the label itself    */
-name|label_frame_size_difference
+name|diff
 operator|=
 operator|(
 name|statusbar
@@ -1435,7 +1439,7 @@ expr_stmt|;
 comment|/* don't resize if this is a new display */
 if|if
 condition|(
-name|label_frame_size_difference
+name|diff
 condition|)
 name|gtk_widget_set_size_request
 argument_list|(
@@ -1445,7 +1449,7 @@ name|cursor_frame
 argument_list|,
 name|cursor_label_width
 operator|+
-name|label_frame_size_difference
+name|diff
 argument_list|,
 operator|-
 literal|1
