@@ -119,6 +119,10 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_INT_COMBO_BOX
 argument_list|,
+literal|"ellipsize"
+argument_list|,
+name|PANGO_ELLIPSIZE_MIDDLE
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -316,6 +320,10 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_INT_COMBO_BOX
 argument_list|,
+literal|"ellipsize"
+argument_list|,
+name|PANGO_ELLIPSIZE_MIDDLE
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -473,6 +481,10 @@ operator|=
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_INT_COMBO_BOX
+argument_list|,
+literal|"ellipsize"
+argument_list|,
+name|PANGO_ELLIPSIZE_MIDDLE
 argument_list|,
 name|NULL
 argument_list|)
