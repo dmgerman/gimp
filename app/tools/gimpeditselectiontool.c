@@ -3217,6 +3217,8 @@ operator|->
 name|cumly
 operator|+
 name|off_y
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -3249,6 +3251,8 @@ operator|->
 name|cumly
 operator|+
 name|off_y
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3792,6 +3796,8 @@ argument_list|,
 name|edit_select
 operator|->
 name|cumly
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 break|break;

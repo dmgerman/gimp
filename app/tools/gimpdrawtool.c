@@ -4722,7 +4722,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_draw_boundary (GimpDrawTool * draw_tool,const BoundSeg * bound_segs,gint n_bound_segs,gdouble offset_x,gdouble offset_y)
+DECL|function|gimp_draw_tool_draw_boundary (GimpDrawTool * draw_tool,const BoundSeg * bound_segs,gint n_bound_segs,gdouble offset_x,gdouble offset_y,gboolean use_offsets)
 name|gimp_draw_tool_draw_boundary
 parameter_list|(
 name|GimpDrawTool
@@ -4742,6 +4742,9 @@ name|offset_x
 parameter_list|,
 name|gdouble
 name|offset_y
+parameter_list|,
+name|gboolean
+name|use_offsets
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -4869,7 +4872,7 @@ argument_list|,
 operator|&
 name|y
 argument_list|,
-name|FALSE
+name|use_offsets
 argument_list|)
 expr_stmt|;
 name|gdk_segs
@@ -4940,7 +4943,7 @@ argument_list|,
 operator|&
 name|y
 argument_list|,
-name|FALSE
+name|use_offsets
 argument_list|)
 expr_stmt|;
 name|gdk_segs
