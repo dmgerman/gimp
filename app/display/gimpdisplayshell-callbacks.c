@@ -262,6 +262,10 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
+comment|/* #define DEBUG_MOVE_PUSH 1 */
+end_comment
+
+begin_comment
 comment|/*  local function prototypes  */
 end_comment
 
@@ -2746,13 +2750,18 @@ operator|->
 name|space_release_pending
 condition|)
 block|{
-name|g_print
+ifdef|#
+directive|ifdef
+name|DEBUG_MOVE_PUSH
+name|g_printerr
 argument_list|(
 literal|"%s: popping move tool\n"
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|gimp_context_set_tool
 argument_list|(
 name|gimp_get_user_context
@@ -3828,13 +3837,18 @@ name|move_tool_info
 argument_list|)
 condition|)
 block|{
-name|g_print
+ifdef|#
+directive|ifdef
+name|DEBUG_MOVE_PUSH
+name|g_printerr
 argument_list|(
 literal|"%s: pushing move tool\n"
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|space_shaded_tool
 operator|=
 name|active_tool
@@ -4087,13 +4101,18 @@ operator|->
 name|space_pressed
 condition|)
 block|{
-name|g_print
+ifdef|#
+directive|ifdef
+name|DEBUG_MOVE_PUSH
+name|g_printerr
 argument_list|(
 literal|"%s: popping move tool\n"
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|gimp_context_set_tool
 argument_list|(
 name|gimp_get_user_context
