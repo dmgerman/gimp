@@ -1104,6 +1104,7 @@ name|gimage
 argument_list|)
 operator|)
 condition|)
+block|{
 if|if
 condition|(
 name|active_tool
@@ -1170,6 +1171,7 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 break|break;
 case|case

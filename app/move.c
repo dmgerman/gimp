@@ -835,6 +835,12 @@ name|y2
 argument_list|)
 expr_stmt|;
 break|break;
+default|default:
+name|g_warning
+argument_list|(
+literal|"mdg / BAD FALLTHROUGH"
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
