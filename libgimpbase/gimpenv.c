@@ -587,7 +587,7 @@ argument_list|(
 literal|"GetModuleFilename failed"
 argument_list|)
 expr_stmt|;
-comment|/* If the executable file name is of the format    *<foobar>\bin\*.exe or    *<foobar>\lib\gimp\GIMP_MAJOR_VERSION.GIMP_MINOR_VERSION\plug-ins\*.exe,    * use<foobar>. Otherwise, use the directory where the    * executable is.    */
+comment|/* If the executable file name is of the format    *<foobar>\bin\*.exe or    *<foobar>\lib\gimp\GIMP_API_VERSION\plug-ins\*.exe, use<foobar>.    * Otherwise, use the directory where the executable is.    */
 name|sep1
 operator|=
 name|strrchr
@@ -646,15 +646,20 @@ index|[
 name|MAX_PATH
 index|]
 decl_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|test
 argument_list|,
-literal|"\\lib\\gimp\\%d.%d\\plug-ins"
+sizeof|sizeof
+argument_list|(
+name|test
+argument_list|)
+operator|-
+literal|1
 argument_list|,
-name|GIMP_MAJOR_VERSION
+literal|"\\lib\\gimp\\%s\\plug-ins"
 argument_list|,
-name|GIMP_MINOR_VERSION
+name|GIMP_API_VERSION
 argument_list|)
 expr_stmt|;
 if|if
