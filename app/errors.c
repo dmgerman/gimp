@@ -24,59 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_SYS_TIME_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<sys/time.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_SYS_TIMES_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<sys/times.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
 directive|include
 file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<time.h>
 end_include
 
 begin_ifdef
@@ -157,6 +111,15 @@ name|prog_name
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|stack_trace_mode
+name|StackTraceMode
+name|stack_trace_mode
+init|=
+name|STACK_TRACE_QUERY
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 name|void
 DECL|function|gimp_message_func (gchar * str)
@@ -173,6 +136,7 @@ name|console_messages
 operator|==
 name|FALSE
 condition|)
+block|{
 switch|switch
 condition|(
 name|message_handler
@@ -201,10 +165,8 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"%s: %s\n"
 argument_list|,
 name|prog_name
@@ -214,11 +176,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+block|}
 else|else
-name|fprintf
+block|{
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"%s: %s\n"
 argument_list|,
 name|prog_name
@@ -226,6 +188,7 @@ argument_list|,
 name|str
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -241,12 +204,12 @@ parameter_list|,
 modifier|...
 parameter_list|)
 block|{
-ifndef|#
-directive|ifndef
-name|G_OS_WIN32
 name|va_list
 name|args
 decl_stmt|;
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
 name|va_start
 argument_list|(
 name|args
@@ -254,7 +217,7 @@ argument_list|,
 name|fmt
 argument_list|)
 expr_stmt|;
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"%s: fatal error: %s\n"
 argument_list|,
@@ -273,10 +236,18 @@ argument_list|(
 name|args
 argument_list|)
 expr_stmt|;
-if|if
+switch|switch
 condition|(
-name|TRUE
+name|stack_trace_mode
 condition|)
+block|{
+case|case
+name|STACK_TRACE_NEVER
+case|:
+break|break;
+case|case
+name|STACK_TRACE_QUERY
+case|:
 block|{
 name|sigset_t
 name|sigset
@@ -303,12 +274,43 @@ name|prog_name
 argument_list|)
 expr_stmt|;
 block|}
+break|break;
+case|case
+name|STACK_TRACE_ALWAYS
+case|:
+block|{
+name|sigset_t
+name|sigset
+decl_stmt|;
+name|sigemptyset
+argument_list|(
+operator|&
+name|sigset
+argument_list|)
+expr_stmt|;
+name|sigprocmask
+argument_list|(
+name|SIG_SETMASK
+argument_list|,
+operator|&
+name|sigset
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_on_error_stack_trace
+argument_list|(
+name|prog_name
+argument_list|)
+expr_stmt|;
+block|}
+break|break;
+default|default:
+break|break;
+block|}
 else|#
 directive|else
-comment|/* g_on_error_query doesn't do anything reasonable on Win32. */
-name|va_list
-name|args
-decl_stmt|;
+comment|/* g_on_error_* don't do anything reasonable on Win32. */
 name|gchar
 modifier|*
 name|msg
@@ -355,6 +357,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+comment|/* ! G_OS_WIN32 */
 name|app_exit
 argument_list|(
 name|TRUE
@@ -375,12 +378,12 @@ parameter_list|,
 modifier|...
 parameter_list|)
 block|{
-ifndef|#
-directive|ifndef
-name|G_OS_WIN32
 name|va_list
 name|args
 decl_stmt|;
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
 name|va_start
 argument_list|(
 name|args
@@ -388,7 +391,7 @@ argument_list|,
 name|fmt
 argument_list|)
 expr_stmt|;
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"%s terminated: %s\n"
 argument_list|,
@@ -439,10 +442,7 @@ expr_stmt|;
 block|}
 else|#
 directive|else
-comment|/* g_on_error_query doesn't do anything reasonable on Win32. */
-name|va_list
-name|args
-decl_stmt|;
+comment|/* g_on_error_* don't do anything reasonable on Win32. */
 name|gchar
 modifier|*
 name|msg
@@ -483,6 +483,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+comment|/* ! G_OS_WIN32 */
 name|gdk_exit
 argument_list|(
 literal|1

@@ -365,6 +365,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"errors.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
 end_include
 
@@ -1337,9 +1343,14 @@ name|GetCurrentProcessId
 argument_list|()
 expr_stmt|;
 comment|/* From the id, derive the file map name */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|fileMapName
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|fileMapName
+argument_list|)
 argument_list|,
 literal|"GIMP%d.SHM"
 argument_list|,
@@ -1450,7 +1461,8 @@ decl_stmt|;
 name|GSList
 modifier|*
 name|tmp
-decl_stmt|,
+decl_stmt|;
+name|GSList
 modifier|*
 name|tmp2
 decl_stmt|;
@@ -1464,7 +1476,8 @@ name|proc_def
 decl_stmt|;
 name|gfloat
 name|nplugins
-decl_stmt|,
+decl_stmt|;
+name|gfloat
 name|nth
 decl_stmt|;
 comment|/* initialize the gimp protocol library and set the read and    *  write handlers.    */
@@ -1486,11 +1499,9 @@ if|if
 condition|(
 name|use_shm
 condition|)
-block|{
 name|plug_in_init_shm
 argument_list|()
 expr_stmt|;
-block|}
 comment|/* search for binaries in the plug-in directory path */
 name|datafiles_read_directories
 argument_list|(
@@ -3190,7 +3201,7 @@ operator|->
 name|prog
 argument_list|)
 expr_stmt|;
-comment|/* If this is a file load or save plugin, make sure we have    * something for one of the extensions, prefixes, or magic number.    * Other bits of code rely on detecting file plugins by the presence    * of one of these things, but Nick Lamb's alien/unknown format    * loader needs to be able to register no extensions, prefixes or    * magics. -- austin 13/Feb/99 */
+comment|/*  If this is a file load or save plugin, make sure we have    *  something for one of the extensions, prefixes, or magic number.    *  Other bits of code rely on detecting file plugins by the presence    *  of one of these things, but Nick Lamb's alien/unknown format    *  loader needs to be able to register no extensions, prefixes or    *  magics. -- austin 13/Feb/99    */
 for|for
 control|(
 name|tmp
@@ -3776,12 +3787,7 @@ index|[
 literal|2
 index|]
 operator|=
-name|g_new
-argument_list|(
-name|gchar
-argument_list|,
-literal|32
-argument_list|)
+name|NULL
 expr_stmt|;
 name|plug_in
 operator|->
@@ -3790,12 +3796,7 @@ index|[
 literal|3
 index|]
 operator|=
-name|g_new
-argument_list|(
-name|gchar
-argument_list|,
-literal|32
-argument_list|)
+name|NULL
 expr_stmt|;
 name|plug_in
 operator|->
@@ -4533,15 +4534,15 @@ comment|/* Remember the file descriptors for the pipes.        */
 ifndef|#
 directive|ifndef
 name|G_OS_WIN32
-name|sprintf
-argument_list|(
 name|plug_in
 operator|->
 name|args
 index|[
 literal|2
 index|]
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 literal|"%d"
 argument_list|,
 name|g_io_channel_unix_get_fd
@@ -4552,15 +4553,15 @@ name|his_read
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|sprintf
-argument_list|(
 name|plug_in
 operator|->
 name|args
 index|[
 literal|3
 index|]
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 literal|"%d"
 argument_list|,
 name|g_io_channel_unix_get_fd
@@ -4573,15 +4574,15 @@ argument_list|)
 expr_stmt|;
 else|#
 directive|else
-name|sprintf
-argument_list|(
 name|plug_in
 operator|->
 name|args
 index|[
 literal|2
 index|]
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 literal|"%d"
 argument_list|,
 name|g_io_channel_win32_get_fd
@@ -4592,15 +4593,15 @@ name|his_read
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|sprintf
-argument_list|(
 name|plug_in
 operator|->
 name|args
 index|[
 literal|3
 index|]
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 literal|"%d:%u:%d"
 argument_list|,
 name|g_io_channel_win32_get_fd
@@ -4653,13 +4654,12 @@ index|[
 literal|4
 index|]
 operator|=
-name|g_new
+name|g_strdup
 argument_list|(
-name|gchar
-argument_list|,
-literal|16
+literal|"-run"
 argument_list|)
 expr_stmt|;
+block|}
 name|plug_in
 operator|->
 name|args
@@ -4667,42 +4667,16 @@ index|[
 literal|5
 index|]
 operator|=
-name|g_new
+name|g_strdup_printf
 argument_list|(
-name|gchar
-argument_list|,
-literal|16
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|plug_in
-operator|->
-name|args
-index|[
-literal|4
-index|]
-argument_list|,
 literal|"%d"
 argument_list|,
-name|TILE_WIDTH
+operator|(
+name|gint
+operator|)
+name|stack_trace_mode
 argument_list|)
 expr_stmt|;
-name|sprintf
-argument_list|(
-name|plug_in
-operator|->
-name|args
-index|[
-literal|5
-index|]
-argument_list|,
-literal|"%d"
-argument_list|,
-name|TILE_WIDTH
-argument_list|)
-expr_stmt|;
-block|}
 comment|/* Fork another process. We'll remember the process id        *  so that we can later use it to kill the filter if        *  necessary.        */
 ifdef|#
 directive|ifdef
@@ -5149,7 +5123,7 @@ expr_stmt|;
 endif|#
 directive|endif
 block|}
-comment|/* If necessary, kill the filter.        */
+comment|/* If necessary, kill the filter. */
 ifndef|#
 directive|ifndef
 name|G_OS_WIN32
@@ -5285,7 +5259,7 @@ block|}
 block|}
 endif|#
 directive|endif
-comment|/* Remove the input handler.        */
+comment|/* Remove the input handler. */
 if|if
 condition|(
 name|plug_in
@@ -5299,7 +5273,7 @@ operator|->
 name|input_id
 argument_list|)
 expr_stmt|;
-comment|/* Close the pipes.        */
+comment|/* Close the pipes. */
 if|if
 condition|(
 name|plug_in
@@ -5423,7 +5397,7 @@ block|}
 name|wire_clear_error
 argument_list|()
 expr_stmt|;
-comment|/* Destroy the progress dialog if it exists        */
+comment|/* Destroy the progress dialog if it exists. */
 if|if
 condition|(
 name|plug_in
@@ -5443,7 +5417,7 @@ name|progress
 operator|=
 name|NULL
 expr_stmt|;
-comment|/* Set the fields to null values.        */
+comment|/* Set the fields to null values. */
 name|plug_in
 operator|->
 name|pid
@@ -5501,7 +5475,7 @@ name|recurse
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/* Unregister any temporary procedures        */
+comment|/* Unregister any temporary procedures. */
 if|if
 condition|(
 name|plug_in
@@ -5624,10 +5598,12 @@ name|current_return_nvals
 operator|==
 name|nargs
 condition|)
+block|{
 name|return_vals
 operator|=
 name|current_return_vals
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -5975,7 +5951,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* 	   *  If this is an automatically installed extension, wait for an 	   *   installation-confirmation message 	   */
+comment|/*  If this is an automatically installed extension, wait for an 	   *  installation-confirmation message 	   */
 if|if
 condition|(
 operator|(
@@ -6636,7 +6612,8 @@ name|GP_CONFIG
 case|:
 name|g_warning
 argument_list|(
-literal|"plug_in_handle_message(): received a config message (should not happen)"
+literal|"plug_in_handle_message(): "
+literal|"received a config message (should not happen)"
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6663,7 +6640,8 @@ name|GP_TILE_ACK
 case|:
 name|g_warning
 argument_list|(
-literal|"plug_in_handle_message(): received a tile ack message (should not happen)"
+literal|"plug_in_handle_message(): "
+literal|"received a tile ack message (should not happen)"
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6679,7 +6657,8 @@ name|GP_TILE_DATA
 case|:
 name|g_warning
 argument_list|(
-literal|"plug_in_handle_message(): received a tile data message (should not happen)"
+literal|"plug_in_handle_message(): "
+literal|"received a tile data message (should not happen)"
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6724,7 +6703,8 @@ name|GP_TEMP_PROC_RUN
 case|:
 name|g_warning
 argument_list|(
-literal|"plug_in_handle_message(): received a temp proc run message (should not happen)"
+literal|"plug_in_handle_message(): "
+literal|"received a temp proc run message (should not happen)"
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -7950,7 +7930,7 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-comment|/*    *  Argument checking    *   --only sanity check arguments when the procedure requests a menu path    */
+comment|/*  Argument checking    *   --only sanity check arguments when the procedure requests a menu path    */
 if|if
 condition|(
 name|proc_install
@@ -8384,7 +8364,7 @@ expr_stmt|;
 return|return;
 block|}
 block|}
-comment|/*    *  Sanity check for array arguments    */
+comment|/*  Sanity check for array arguments  */
 for|for
 control|(
 name|i
@@ -8497,7 +8477,7 @@ expr_stmt|;
 return|return;
 block|}
 block|}
-comment|/*    *  Initialization    */
+comment|/*  Initialization  */
 name|proc_def
 operator|=
 name|NULL
@@ -8720,7 +8700,7 @@ name|proc_def
 operator|->
 name|db_info
 expr_stmt|;
-comment|/*    *  The procedural database procedure    */
+comment|/*  The procedural database procedure  */
 name|proc
 operator|->
 name|name
@@ -9093,7 +9073,7 @@ name|proc_def
 operator|=
 name|proc_def
 expr_stmt|;
-comment|/* Below we use a hack to allow translations of Script-Fu paths.              Would be nice if we could solve this properly, but I haven't               found a way yet ...  (Sven) */
+comment|/*  Below we use a hack to allow translations of Script-Fu paths.            *  Would be nice if we could solve this properly, but I haven't             *  found a way yet ...  (Sven) 	   */
 if|if
 condition|(
 name|plug_in_def
@@ -9835,7 +9815,8 @@ decl_stmt|;
 name|GSList
 modifier|*
 name|tmp
-decl_stmt|,
+decl_stmt|;
+name|GSList
 modifier|*
 name|tmp2
 decl_stmt|;
@@ -10966,7 +10947,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   *  The following function has to be a GTraverseFunction,   *  but is also called directly. Please note that it frees the  *  menu_entry strcuture.                --Sven   */
+comment|/*  The following function has to be a GTraverseFunction,   *  but is also called directly. Please note that it frees the  *  menu_entry strcuture.                --Sven   */
 end_comment
 
 begin_function
@@ -11567,31 +11548,13 @@ expr_stmt|;
 comment|/* construct the procedures arguments */
 name|args
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|Argument
 argument_list|,
 name|proc_rec
 operator|->
 name|num_args
-argument_list|)
-expr_stmt|;
-name|memset
-argument_list|(
-name|args
-argument_list|,
-literal|0
-argument_list|,
-operator|(
-sizeof|sizeof
-argument_list|(
-name|Argument
-argument_list|)
-operator|*
-name|proc_rec
-operator|->
-name|num_args
-operator|)
 argument_list|)
 expr_stmt|;
 comment|/* initialize the argument types */
@@ -11927,7 +11890,8 @@ decl_stmt|;
 name|GSList
 modifier|*
 name|tmp
-decl_stmt|,
+decl_stmt|;
+name|GSList
 modifier|*
 name|prev
 decl_stmt|;
@@ -12143,7 +12107,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* called when plug_in_proc_def_insert causes a proc_def to be  * overridden and thus g_free()d. */
+comment|/* called when plug_in_proc_def_insert causes a proc_def to be  * overridden and thus g_free()d.  */
 end_comment
 
 begin_function
@@ -12182,15 +12146,22 @@ operator|.
 name|name
 argument_list|)
 expr_stmt|;
-comment|/* search the plugin list to see if any plugins had references to     * the recently freed proc_def. */
+comment|/* search the plugin list to see if any plugins had references to     * the recently freed proc_def.    */
+for|for
+control|(
 name|tmp
 operator|=
 name|plug_in_defs
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|tmp
-condition|)
+condition|;
+name|tmp
+operator|=
+name|g_slist_next
+argument_list|(
+name|tmp
+argument_list|)
+control|)
 block|{
 name|plug_in_def
 operator|=
@@ -12210,12 +12181,6 @@ name|proc_defs
 argument_list|,
 name|freed_proc_def
 argument_list|)
-expr_stmt|;
-name|tmp
-operator|=
-name|tmp
-operator|->
-name|next
 expr_stmt|;
 block|}
 block|}

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is a plug-in for the GIMP.  *  * Copyright (C) 1999 Andy Thomas  alt@picnic.demon.co.uk  *  * Note some portions of th UI comes from the dbbrowser plugin.  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is a plug-in for the GIMP.  *  * Copyright (C) 1999 Andy Thomas  alt@picnic.demon.co.uk  *  * Note some portions of the UI comes from the dbbrowser plugin.  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -139,7 +139,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -147,7 +147,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -215,7 +215,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -250,13 +250,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -287,7 +287,12 @@ literal|"plug_in_details"
 argument_list|,
 literal|"Displays plugin details"
 argument_list|,
-literal|"Helps browse the plugin menus system. You can search for plugin names, sort by name or menu location and you can view a tree representation of the plugin menus. Can also be of help to find where new plugins have installed themselves in the menuing system"
+literal|"Helps browse the plugin menus system. You can "
+literal|"search for plugin names, sort by name or menu "
+literal|"location and you can view a tree representation "
+literal|"of the plugin menus. Can also be of help to find "
+literal|"where new plugins have installed themselves in "
+literal|"the menuing system"
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -319,7 +324,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -329,7 +334,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -337,20 +342,20 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|2
 index|]
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
 name|GtkWidget
@@ -385,7 +390,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -396,7 +401,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 name|INIT_I18N_UI
 argument_list|()
@@ -427,7 +432,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 expr_stmt|;
 name|plugin_dialog
 operator|=
@@ -447,7 +452,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b1d7320108
+DECL|struct|__anon274ecf600108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -553,7 +558,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b1d7320208
+DECL|struct|__anon274ecf600208
 block|{
 DECL|member|menu
 name|gchar
@@ -2699,10 +2704,10 @@ operator|->
 name|ctree
 argument_list|)
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|procedure_ctree_select_callback
+argument_list|)
 argument_list|,
 name|pdesc
 argument_list|)
@@ -2761,10 +2766,10 @@ operator|->
 name|ctree
 argument_list|)
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|procedure_ctree_select_callback
+argument_list|)
 argument_list|,
 name|pdesc
 argument_list|)
@@ -3025,10 +3030,10 @@ operator|->
 name|clist
 argument_list|)
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|procedure_clist_select_callback
+argument_list|)
 argument_list|,
 name|pdesc
 argument_list|)
@@ -3089,10 +3094,10 @@ operator|->
 name|clist
 argument_list|)
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|procedure_clist_select_callback
+argument_list|)
 argument_list|,
 name|pdesc
 argument_list|)
@@ -4782,10 +4787,10 @@ argument_list|)
 argument_list|,
 literal|"click_column"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|clist_click_column
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4855,10 +4860,10 @@ argument_list|)
 argument_list|,
 literal|"select_row"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|procedure_clist_select_callback
+argument_list|)
 argument_list|,
 name|plugindesc
 argument_list|)
@@ -5009,22 +5014,12 @@ argument_list|)
 argument_list|,
 literal|"tree_select_row"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|procedure_ctree_select_callback
+argument_list|)
 argument_list|,
 name|plugindesc
-argument_list|)
-expr_stmt|;
-name|label
-operator|=
-name|gtk_label_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Tree View"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_clist_set_column_auto_resize
@@ -5067,6 +5062,26 @@ argument_list|,
 literal|2
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_clist_column_titles_passive
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|plugindesc
+operator|->
+name|ctree
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|label
+operator|=
+name|gtk_label_new
+argument_list|(
+name|_
+argument_list|(
+literal|"Tree View"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page
@@ -5114,10 +5129,10 @@ argument_list|)
 argument_list|,
 literal|"switch_page"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|page_select_callback
+argument_list|)
 argument_list|,
 name|plugindesc
 argument_list|)
@@ -5260,11 +5275,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -5274,10 +5284,10 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|details_callback
+argument_list|)
 argument_list|,
 name|plugindesc
 argument_list|)
@@ -5298,6 +5308,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|button
+argument_list|)
+expr_stmt|;
 comment|/* right = description */
 comment|/* the right description is build on first click of the Details button */
 comment|/* now build the list */
@@ -5309,6 +5324,18 @@ operator|(
 name|gpointer
 operator|)
 name|plugindesc
+argument_list|)
+expr_stmt|;
+name|gtk_clist_set_selection_mode
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|plugindesc
+operator|->
+name|ctree
+argument_list|)
+argument_list|,
+name|GTK_SELECTION_BROWSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
