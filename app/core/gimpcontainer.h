@@ -22,30 +22,6 @@ directive|include
 file|"gimpobject.h"
 end_include
 
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2c18667d0103
-block|{
-DECL|enumerator|GIMP_CONTAINER_POLICY_STRONG
-name|GIMP_CONTAINER_POLICY_STRONG
-block|,
-DECL|enumerator|GIMP_CONTAINER_POLICY_WEAK
-name|GIMP_CONTAINER_POLICY_WEAK
-DECL|typedef|GimpContainerPolicy
-block|}
-name|GimpContainerPolicy
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_CONTAINER_POLICY
-define|#
-directive|define
-name|GIMP_TYPE_CONTAINER_POLICY
-value|(gimp_container_policy_get_type ())
-end_define
-
 begin_define
 DECL|macro|GIMP_TYPE_CONTAINER
 define|#
@@ -240,6 +216,18 @@ name|container
 parameter_list|)
 function_decl|;
 comment|/*  virtual functions  */
+DECL|member|clear
+name|void
+function_decl|(
+modifier|*
+name|clear
+function_decl|)
+parameter_list|(
+name|GimpContainer
+modifier|*
+name|container
+parameter_list|)
+function_decl|;
 DECL|member|have
 name|gboolean
 function_decl|(
@@ -334,16 +322,6 @@ function_decl|;
 block|}
 struct|;
 end_struct
-
-begin_decl_stmt
-name|GType
-name|gimp_container_policy_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
 
 begin_decl_stmt
 name|GType
@@ -482,6 +460,17 @@ end_function_decl
 begin_function_decl
 name|gboolean
 name|gimp_container_frozen
+parameter_list|(
+name|GimpContainer
+modifier|*
+name|container
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_container_clear
 parameter_list|(
 name|GimpContainer
 modifier|*

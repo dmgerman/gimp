@@ -33,12 +33,12 @@ comment|/*< skip>*/
 end_comment
 
 begin_comment
-unit|are registered with the GType system.     If you want the enum to be skipped by both scripts, you have to use
+unit|are registered with the GType system.    If you want the enum to be skipped by both scripts, you have to use
 comment|/*< pdb-skip, skip>*/
 end_comment
 
 begin_comment
-unit|.      All enum values that are marked with
+unit|.     All enum values that are marked with
 comment|/*< skip>*/
 end_comment
 
@@ -49,7 +49,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*   * these enums that are registered with the type system  */
+comment|/*  * these enums that are registered with the type system  */
 end_comment
 
 begin_define
@@ -73,7 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a19b65b0103
+DECL|enum|__anon298e74100103
 block|{
 DECL|enumerator|GIMP_ADD_WHITE_MASK
 name|GIMP_ADD_WHITE_MASK
@@ -121,7 +121,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a19b65b0203
+DECL|enum|__anon298e74100203
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB_MODE
 name|GIMP_FG_BG_RGB_MODE
@@ -165,7 +165,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a19b65b0303
+DECL|enum|__anon298e74100303
 block|{
 DECL|enumerator|GIMP_FG_BUCKET_FILL
 name|GIMP_FG_BUCKET_FILL
@@ -205,7 +205,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a19b65b0403
+DECL|enum|__anon298e74100403
 block|{
 DECL|enumerator|GIMP_CHANNEL_OP_ADD
 name|GIMP_CHANNEL_OP_ADD
@@ -249,7 +249,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a19b65b0503
+DECL|enum|__anon298e74100503
 block|{
 DECL|enumerator|GIMP_RED_CHANNEL
 name|GIMP_RED_CHANNEL
@@ -281,6 +281,41 @@ typedef|;
 end_typedef
 
 begin_define
+DECL|macro|GIMP_TYPE_CONTAINER_POLICY
+define|#
+directive|define
+name|GIMP_TYPE_CONTAINER_POLICY
+value|(gimp_container_policy_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_container_policy_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon298e74100603
+block|{
+DECL|enumerator|GIMP_CONTAINER_POLICY_STRONG
+name|GIMP_CONTAINER_POLICY_STRONG
+block|,
+DECL|enumerator|GIMP_CONTAINER_POLICY_WEAK
+name|GIMP_CONTAINER_POLICY_WEAK
+DECL|typedef|GimpContainerPolicy
+block|}
+name|GimpContainerPolicy
+typedef|;
+end_typedef
+
+begin_define
 DECL|macro|GIMP_TYPE_CONVERT_DITHER_TYPE
 define|#
 directive|define
@@ -301,7 +336,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a19b65b0603
+DECL|enum|__anon298e74100703
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -350,7 +385,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a19b65b0703
+DECL|enum|__anon298e74100803
 block|{
 DECL|enumerator|GIMP_GRAVITY_NONE
 name|GIMP_GRAVITY_NONE
@@ -408,7 +443,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a19b65b0803
+DECL|enum|__anon298e74100903
 block|{
 DECL|enumerator|GIMP_FOREGROUND_FILL
 name|GIMP_FOREGROUND_FILL
@@ -456,7 +491,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a19b65b0903
+DECL|enum|__anon298e74100a03
 block|{
 DECL|enumerator|GIMP_LINEAR
 name|GIMP_LINEAR
@@ -529,7 +564,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a19b65b0a03
+DECL|enum|__anon298e74100b03
 block|{
 DECL|enumerator|GIMP_GRID_TYPE_DOTS
 name|GIMP_GRID_TYPE_DOTS
@@ -577,7 +612,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a19b65b0b03
+DECL|enum|__anon298e74100c03
 block|{
 DECL|enumerator|GIMP_RGB
 name|GIMP_RGB
@@ -617,7 +652,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a19b65b0c03
+DECL|enum|__anon298e74100d03
 block|{
 DECL|enumerator|GIMP_RGB_IMAGE
 name|GIMP_RGB_IMAGE
@@ -669,7 +704,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a19b65b0d03
+DECL|enum|__anon298e74100e03
 block|{
 DECL|enumerator|GIMP_ORIENTATION_HORIZONTAL
 name|GIMP_ORIENTATION_HORIZONTAL
@@ -710,7 +745,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a19b65b0e03
+DECL|enum|__anon298e74100f03
 block|{
 DECL|enumerator|GIMP_ROTATE_90
 name|GIMP_ROTATE_90
@@ -748,7 +783,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a19b65b0f03
+DECL|enum|__anon298e74101003
 block|{
 DECL|enumerator|GIMP_PREVIEW_SIZE_TINY
 name|GIMP_PREVIEW_SIZE_TINY
@@ -830,7 +865,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a19b65b1003
+DECL|enum|__anon298e74101103
 block|{
 DECL|enumerator|GIMP_REPEAT_NONE
 name|GIMP_REPEAT_NONE
@@ -871,7 +906,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a19b65b1103
+DECL|enum|__anon298e74101203
 block|{
 DECL|enumerator|GIMP_SELECTION_OFF
 name|GIMP_SELECTION_OFF
@@ -915,7 +950,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a19b65b1203
+DECL|enum|__anon298e74101303
 block|{
 DECL|enumerator|GIMP_THUMBNAIL_SIZE_NONE
 name|GIMP_THUMBNAIL_SIZE_NONE
@@ -962,7 +997,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a19b65b1303
+DECL|enum|__anon298e74101403
 block|{
 DECL|enumerator|GIMP_TRANSFORM_FORWARD
 name|GIMP_TRANSFORM_FORWARD
@@ -999,7 +1034,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a19b65b1403
+DECL|enum|__anon298e74101503
 block|{
 DECL|enumerator|GIMP_UNDO_MODE_UNDO
 name|GIMP_UNDO_MODE_UNDO
@@ -1034,7 +1069,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a19b65b1503
+DECL|enum|__anon298e74101603
 block|{
 DECL|enumerator|GIMP_UNDO_EVENT_UNDO_PUSHED
 name|GIMP_UNDO_EVENT_UNDO_PUSHED
@@ -1087,7 +1122,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a19b65b1603
+DECL|enum|__anon298e74101703
 block|{
 comment|/* Type NO_UNDO_GROUP (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */
 DECL|enumerator|GIMP_UNDO_GROUP_NONE
@@ -1402,7 +1437,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2a19b65b1703
+DECL|enum|__anon298e74101803
 block|{
 DECL|enumerator|GIMP_CONTEXT_FIRST_PROP
 name|GIMP_CONTEXT_FIRST_PROP
@@ -1498,7 +1533,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2a19b65b1803
+DECL|enum|__anon298e74101903
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -1657,7 +1692,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a19b65b1903
+DECL|enum|__anon298e74101a03
 block|{
 DECL|enumerator|GIMP_MAKE_PALETTE
 name|GIMP_MAKE_PALETTE
@@ -1683,7 +1718,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2a19b65b1a03
+DECL|enum|__anon298e74101b03
 block|{
 DECL|enumerator|GIMP_GRAD_LINEAR
 name|GIMP_GRAD_LINEAR
@@ -1711,7 +1746,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon2a19b65b1b03
+DECL|enum|__anon298e74101c03
 block|{
 DECL|enumerator|GIMP_GRAD_RGB
 name|GIMP_GRAD_RGB
@@ -1734,7 +1769,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a19b65b1c03
+DECL|enum|__anon298e74101d03
 block|{
 DECL|enumerator|GIMP_MASK_APPLY
 name|GIMP_MASK_APPLY
@@ -1751,7 +1786,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a19b65b1d03
+DECL|enum|__anon298e74101e03
 block|{
 DECL|enumerator|GIMP_EXPAND_AS_NECESSARY
 name|GIMP_EXPAND_AS_NECESSARY
@@ -1774,7 +1809,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a19b65b1e03
+DECL|enum|__anon298e74101f03
 block|{
 DECL|enumerator|GIMP_OFFSET_BACKGROUND
 name|GIMP_OFFSET_BACKGROUND
