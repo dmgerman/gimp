@@ -8354,12 +8354,12 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Refresh History"
+literal|"/Recreate Preview"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|documents_refresh_documents_cmd_callback
+name|documents_recreate_preview_cmd_callback
 block|,
 literal|0
 block|,
@@ -8374,7 +8374,57 @@ name|NULL
 block|,
 name|NULL
 block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Reload all Previews"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|documents_reload_previews_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_REFRESH
 block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Remove Dangling Entries"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|documents_delete_dangling_documents_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_REFRESH
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|, }
 decl_stmt|;
 end_decl_stmt
 

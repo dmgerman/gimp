@@ -1364,7 +1364,19 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|" \n "
+literal|" \n \n "
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|0.5
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_justify
@@ -1398,6 +1410,32 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
+comment|/* eek */
+block|{
+name|GtkRequisition
+name|requisition
+decl_stmt|;
+name|gtk_widget_size_request
+argument_list|(
+name|label
+argument_list|,
+operator|&
+name|requisition
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_size_request
+argument_list|(
+name|label
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|requisition
+operator|.
+name|height
+argument_list|)
+expr_stmt|;
+block|}
 name|g_signal_connect
 argument_list|(
 name|G_OBJECT

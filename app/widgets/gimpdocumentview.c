@@ -606,7 +606,8 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Recreate preview\n"
-literal|"<Shift> Reload all previews"
+literal|"<Shift> Reload all previews\n"
+literal|"<Ctrl> Remove Dangling Entries"
 argument_list|)
 argument_list|,
 name|NULL
@@ -1235,6 +1236,49 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_document_view_delete_dangling_foreach (GimpImagefile * imagefile,GimpContainer * container)
+name|gimp_document_view_delete_dangling_foreach
+parameter_list|(
+name|GimpImagefile
+modifier|*
+name|imagefile
+parameter_list|,
+name|GimpContainer
+modifier|*
+name|container
+parameter_list|)
+block|{
+name|gimp_imagefile_update
+argument_list|(
+name|imagefile
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|imagefile
+operator|->
+name|state
+operator|==
+name|GIMP_IMAGEFILE_STATE_NOT_FOUND
+condition|)
+block|{
+name|gimp_container_remove
+argument_list|(
+name|container
+argument_list|,
+name|GIMP_OBJECT
+argument_list|(
+name|imagefile
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|gimp_document_view_refresh_extended_clicked (GtkWidget * widget,guint state,GimpDocumentView * view)
 name|gimp_document_view_refresh_extended_clicked
 parameter_list|(
@@ -1261,6 +1305,35 @@ argument_list|(
 name|view
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|state
+operator|&
+name|GDK_CONTROL_MASK
+condition|)
+block|{
+name|gimp_container_foreach
+argument_list|(
+name|editor
+operator|->
+name|view
+operator|->
+name|container
+argument_list|,
+operator|(
+name|GFunc
+operator|)
+name|gimp_document_view_delete_dangling_foreach
+argument_list|,
+name|editor
+operator|->
+name|view
+operator|->
+name|container
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
 if|if
 condition|(
 name|state

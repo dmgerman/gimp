@@ -122,6 +122,12 @@ DECL|member|parent_class
 name|GimpObjectClass
 name|parent_class
 decl_stmt|;
+DECL|member|name_changed_signal
+specifier|const
+name|gchar
+modifier|*
+name|name_changed_signal
+decl_stmt|;
 comment|/*  signals  */
 DECL|member|invalidate_preview
 name|void

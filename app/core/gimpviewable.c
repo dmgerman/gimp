@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac27ca00103
+DECL|enum|__anon2795ddbe0103
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -314,6 +314,12 @@ operator|->
 name|get_memsize
 operator|=
 name|gimp_viewable_get_memsize
+expr_stmt|;
+name|klass
+operator|->
+name|name_changed_signal
+operator|=
+literal|"name_changed"
 expr_stmt|;
 name|klass
 operator|->
