@@ -134,6 +134,9 @@ name|GScanner
 modifier|*
 name|scanner
 parameter_list|,
+name|gint
+name|nest_level
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -405,7 +408,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_rc_deserialize (GObject * object,GScanner * scanner,gpointer data)
+DECL|function|gimp_rc_deserialize (GObject * object,GScanner * scanner,gint nest_level,gpointer data)
 name|gimp_rc_deserialize
 parameter_list|(
 name|GObject
@@ -415,6 +418,9 @@ parameter_list|,
 name|GScanner
 modifier|*
 name|scanner
+parameter_list|,
+name|gint
+name|nest_level
 parameter_list|,
 name|gpointer
 name|data
@@ -426,6 +432,8 @@ argument_list|(
 name|object
 argument_list|,
 name|scanner
+argument_list|,
+name|nest_level
 argument_list|,
 name|TRUE
 argument_list|)

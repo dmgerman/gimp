@@ -28,6 +28,9 @@ name|GScanner
 modifier|*
 name|scanner
 parameter_list|,
+name|gint
+name|nest_level
+parameter_list|,
 name|gboolean
 name|store_unknown_tokens
 parameter_list|)
