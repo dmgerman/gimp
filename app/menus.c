@@ -6138,6 +6138,37 @@ operator|++
 expr_stmt|;
 block|}
 block|}
+name|menu_item
+operator|=
+name|gtk_item_factory_get_widget
+argument_list|(
+name|image_factory
+argument_list|,
+literal|"/Filters/Filter all Layers..."
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|menu_item
+operator|&&
+name|menu_item
+operator|->
+name|parent
+condition|)
+name|gtk_menu_reorder_child
+argument_list|(
+name|GTK_MENU
+argument_list|(
+name|menu_item
+operator|->
+name|parent
+argument_list|)
+argument_list|,
+name|menu_item
+argument_list|,
+literal|3
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

@@ -274,7 +274,7 @@ name|gap_filter_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/Filters/Animation/Filter all Layers"
+literal|"<Image>/Filters/Filter all Layers..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
