@@ -48,8 +48,7 @@ modifier|*
 name|ProgressReportFunc
 function_decl|)
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 parameter_list|,
 name|gint
 parameter_list|,
@@ -111,6 +110,7 @@ name|pixel_processor_free
 parameter_list|(
 name|PixelProcessor
 modifier|*
+name|pp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -121,6 +121,7 @@ name|pixel_processor_stop
 parameter_list|(
 name|PixelProcessor
 modifier|*
+name|pp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -132,6 +133,7 @@ name|pixel_processor_cont
 parameter_list|(
 name|PixelProcessor
 modifier|*
+name|pp
 parameter_list|)
 function_decl|;
 end_function_decl

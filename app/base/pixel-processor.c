@@ -69,19 +69,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"base-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pixel_processor.h"
+file|"pixel-processor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pixel_region.h"
+file|"pixel-region.h"
 end_include
 
 begin_ifdef
@@ -238,20 +238,20 @@ struct|;
 end_struct
 
 begin_macro
-DECL|function|IF_THREAD (static void * do_parallel_regions (PixelProcessor * p_s){ PixelRegion tr[4]; int ntiles = 0; int i; int cont = 1; pthread_mutex_lock(&p_s->mutex); if (p_s->nthreads != 0 && p_s->PRI) p_s->PRI = (PixelRegionIterator*)pixel_regions_process(p_s->PRI); if (p_s->PRI == NULL) { pthread_mutex_unlock(&p_s->mutex); return NULL; } p_s->nthreads++; do { for (i = 0; i < p_s->n_regions; i++) if (p_s->r[i]) { memcpy(&tr[i], p_s->r[i], sizeof(PixelRegion)); if (tr[i].tiles) tile_lock(tr[i].curtile); } pthread_mutex_unlock(&p_s->mutex); ntiles++; switch(p_s->n_regions) { case 1: ((p1_func)p_s->f)(p_s->data, p_s->r[0] ? &tr[0] : NULL); break; case 2: ((p2_func)p_s->f)(p_s->data, p_s->r[0] ? &tr[0] : NULL, p_s->r[1] ? &tr[1] : NULL); break; case 3: ((p3_func)p_s->f)(p_s->data, p_s->r[0] ? &tr[0] : NULL, p_s->r[1] ? &tr[1] : NULL, p_s->r[2] ? &tr[2] : NULL); break; case 4: ((p4_func)p_s->f)(p_s->data, p_s->r[0] ? &tr[0] : NULL, p_s->r[1] ? &tr[1] : NULL, p_s->r[2] ? &tr[2] : NULL, p_s->r[3] ? &tr[3] : NULL); break; default: g_message("", p_s->n_regions); } pthread_mutex_lock(&p_s->mutex); for (i = 0; i < p_s->n_regions; i++) if (p_s->r[i]) { if (tr[i].tiles) tile_release(tr[i].curtile, tr[i].dirty); } if (p_s->progress_report_func && !p_s->progress_report_func(p_s->progress_report_data, p_s->r[0]->x, p_s->r[0]->y, p_s->r[0]->w, p_s->r[0]->h)) cont = 0; } while (cont && p_s->PRI && (p_s->PRI = (PixelRegionIterator*)pixel_regions_process(p_s->PRI))); p_s->nthreads--; pthread_mutex_unlock(&p_s->mutex); return NULL; } )
+DECL|function|IF_THREAD (static void * do_parallel_regions (PixelProcessor * p_s){ PixelRegion tr[4]; gint n tiles = 0; gint i; gint cont = 1; pthread_mutex_lock (&p_s->mutex); if (p_s->nthreads != 0 && p_s->PRI) p_s->PRI = (PixelRegionIterator*)pixel_regions_process(p_s->PRI); if (p_s->PRI == NULL) { pthread_mutex_unlock (&p_s->mutex); return NULL; } p_s->nthreads++; do { for (i = 0; i < p_s->n_regions; i++) if (p_s->r[i]) { memcpy(&tr[i], p_s->r[i], sizeof(PixelRegion)); if (tr[i].tiles) tile_lock(tr[i].curtile); } pthread_mutex_unlock (&p_s->mutex); ntiles++; switch(p_s->n_regions) { case 1: ((p1_func)p_s->f)(p_s->data, p_s->r[0] ? &tr[0] : NULL); break; case 2: ((p2_func)p_s->f)(p_s->data, p_s->r[0] ? &tr[0] : NULL, p_s->r[1] ? &tr[1] : NULL); break; case 3: ((p3_func)p_s->f)(p_s->data, p_s->r[0] ? &tr[0] : NULL, p_s->r[1] ? &tr[1] : NULL, p_s->r[2] ? &tr[2] : NULL); break; case 4: ((p4_func)p_s->f)(p_s->data, p_s->r[0] ? &tr[0] : NULL, p_s->r[1] ? &tr[1] : NULL, p_s->r[2] ? &tr[2] : NULL, p_s->r[3] ? &tr[3] : NULL); break; default: g_message("", p_s->n_regions); } pthread_mutex_lock (&p_s->mutex); for (i = 0; i < p_s->n_regions; i++) if (p_s->r[i]) { if (tr[i].tiles) tile_release(tr[i].curtile, tr[i].dirty); } if (p_s->progress_report_func && !p_s->progress_report_func(p_s->progress_report_data, p_s->r[0]->x, p_s->r[0]->y, p_s->r[0]->w, p_s->r[0]->h)) cont = 0; } while (cont && p_s->PRI && (p_s->PRI = (PixelRegionIterator*)pixel_regions_process(p_s->PRI))); p_s->nthreads--; pthread_mutex_unlock (&p_s->mutex); return NULL; } )
 name|IF_THREAD
 argument_list|(
 argument|static void * do_parallel_regions (PixelProcessor *p_s) {   PixelRegion tr[
 literal|4
-argument|];   int ntiles =
+argument|];   gint       n tiles =
 literal|0
-argument|;   int i;   int cont =
+argument|;   gint        i;   gint        cont =
 literal|1
-argument|;    pthread_mutex_lock(&p_s->mutex);    if (p_s->nthreads !=
+argument|;    pthread_mutex_lock (&p_s->mutex);    if (p_s->nthreads !=
 literal|0
-argument|&& p_s->PRI)     p_s->PRI =  (PixelRegionIterator*)pixel_regions_process(p_s->PRI);    if (p_s->PRI == NULL)     {       pthread_mutex_unlock(&p_s->mutex);       return NULL;     }    p_s->nthreads++;    do     {       for (i =
+argument|&& p_s->PRI)     p_s->PRI =  (PixelRegionIterator*)pixel_regions_process(p_s->PRI);    if (p_s->PRI == NULL)     {       pthread_mutex_unlock (&p_s->mutex);       return NULL;     }    p_s->nthreads++;    do     {       for (i =
 literal|0
-argument|; i< p_s->n_regions; i++) 	if (p_s->r[i]) 	  { 	    memcpy(&tr[i], p_s->r[i], sizeof(PixelRegion)); 	    if (tr[i].tiles) 	      tile_lock(tr[i].curtile); 	  }        pthread_mutex_unlock(&p_s->mutex);       ntiles++;        switch(p_s->n_regions) 	{ 	case
+argument|; i< p_s->n_regions; i++) 	if (p_s->r[i]) 	  { 	    memcpy(&tr[i], p_s->r[i], sizeof(PixelRegion)); 	    if (tr[i].tiles) 	      tile_lock(tr[i].curtile); 	  }        pthread_mutex_unlock (&p_s->mutex);       ntiles++;        switch(p_s->n_regions) 	{ 	case
 literal|1
 argument|: 	  ((p1_func)p_s->f)(p_s->data, 			    p_s->r[
 literal|0
@@ -301,7 +301,7 @@ argument|] ?&tr[
 literal|3
 argument|] : NULL); 	  break;  	default: 	  g_message(
 literal|"do_parallel_regions: Bad number of regions %d\n"
-argument|, 		    p_s->n_regions);     }      pthread_mutex_lock(&p_s->mutex);      for (i =
+argument|, 		    p_s->n_regions);     }      pthread_mutex_lock (&p_s->mutex);      for (i =
 literal|0
 argument|; i< p_s->n_regions; i++)       if (p_s->r[i]) 	{ 	  if (tr[i].tiles) 	    tile_release(tr[i].curtile, tr[i].dirty); 	}      if (p_s->progress_report_func&&  	!p_s->progress_report_func(p_s->progress_report_data, 				   p_s->r[
 literal|0
@@ -313,7 +313,7 @@ argument|]->w, p_s->r[
 literal|0
 argument|]->h))       cont =
 literal|0
-argument|;      }    while (cont&& p_s->PRI&& 	 (p_s->PRI = (PixelRegionIterator*)pixel_regions_process(p_s->PRI)));    p_s->nthreads--;    pthread_mutex_unlock(&p_s->mutex);    return NULL; }
+argument|;      }    while (cont&& p_s->PRI&& 	 (p_s->PRI = (PixelRegionIterator*)pixel_regions_process(p_s->PRI)));    p_s->nthreads--;    pthread_mutex_unlock (&p_s->mutex);    return NULL; }
 argument_list|)
 end_macro
 

@@ -54,6 +54,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/pixel-region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/tile.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/tile-manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint-funcs/paint-funcs.h"
 end_include
 
@@ -120,24 +138,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pixel_region.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a3626f0103
+DECL|enum|__anon2b5df5d60103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED

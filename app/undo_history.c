@@ -34,6 +34,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/pixel-region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/temp-buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint-funcs/paint-funcs.h"
 end_include
 
@@ -65,18 +77,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixel_region.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
 end_include
 
 begin_include
@@ -124,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d2097d0108
+DECL|struct|__anon2c6096bf0108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d2097d0208
+DECL|struct|__anon2c6096bf0208
 block|{
 DECL|member|clist
 name|GtkCList

@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"base-types.h"
 end_include
 
 begin_include
@@ -36,13 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"errors.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixel_region.h"
+file|"pixel-region.h"
 end_include
 
 begin_include
@@ -54,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tile_manager.h"
+file|"tile-manager.h"
 end_include
 
 begin_comment
@@ -1002,16 +996,6 @@ operator|*
 name|max_segs
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|tmp_segs
-condition|)
-name|gimp_fatal_error
-argument_list|(
-literal|"make_seg(): Unable to reallocate segments array for mask boundary."
-argument_list|)
-expr_stmt|;
 block|}
 name|tmp_segs
 index|[
@@ -1225,22 +1209,6 @@ name|gint
 argument_list|)
 operator|*
 name|max_empty_segs
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|empty_segs_n
-operator|||
-operator|!
-name|empty_segs_l
-operator|||
-operator|!
-name|empty_segs_c
-condition|)
-name|gimp_fatal_error
-argument_list|(
-literal|"allocate_empty_segs(): Unable to reallocate empty segments array for mask boundary."
 argument_list|)
 expr_stmt|;
 block|}

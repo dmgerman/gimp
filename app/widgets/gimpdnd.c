@@ -156,12 +156,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdnd.h"
 end_include
 
@@ -190,7 +184,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ebd94f0103
+DECL|enum|__anon2b30bd070103
 block|{
 DECL|enumerator|GIMP_DND_DATA_NONE
 name|GIMP_DND_DATA_NONE

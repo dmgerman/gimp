@@ -40,7 +40,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenums.h"
+file|"base/base-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/temp-buf.h"
 end_include
 
 begin_include
@@ -71,12 +77,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimplist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
 end_include
 
 begin_decl_stmt

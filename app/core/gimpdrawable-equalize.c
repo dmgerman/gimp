@@ -24,6 +24,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/gimplut.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/pixel-processor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/pixel-region.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -48,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplut.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"lut_funcs.h"
 end_include
 
@@ -61,18 +73,6 @@ begin_include
 include|#
 directive|include
 file|"gimphistogram.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixel_processor.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixel_region.h"
 end_include
 
 begin_function

@@ -134,6 +134,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/temp-buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -147,12 +153,6 @@ begin_include
 include|#
 directive|include
 file|"plug_in.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
 end_include
 
 begin_function

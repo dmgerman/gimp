@@ -86,6 +86,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/base-config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -105,12 +111,6 @@ begin_include
 include|#
 directive|include
 file|"file-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_include
@@ -1418,6 +1418,8 @@ literal|"%s"
 name|G_DIR_SEPARATOR_S
 literal|"gimp_temp.%d%d.%s"
 argument_list|,
+name|base_config
+operator|->
 name|temp_path
 argument_list|,
 name|pid

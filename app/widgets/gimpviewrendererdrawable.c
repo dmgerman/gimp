@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/temp-buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -43,12 +49,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdrawablepreview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
 end_include
 
 begin_function_decl

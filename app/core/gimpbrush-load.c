@@ -123,7 +123,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brush_scale.h"
+file|"base/base-config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/brush-scale.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/temp-buf.h"
 end_include
 
 begin_include
@@ -144,18 +156,6 @@ directive|include
 file|"gimpbrushgenerated.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
-end_include
-
 begin_comment
 comment|/*  this needs to go away  */
 end_comment
@@ -170,12 +170,6 @@ begin_include
 include|#
 directive|include
 file|"tools/gimppainttool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"brush_scale.h"
 end_include
 
 begin_include
@@ -1342,6 +1336,8 @@ expr_stmt|;
 comment|/*  Swap the brush to disk (if we're being stingy with memory) */
 if|if
 condition|(
+name|base_config
+operator|->
 name|stingy_memory_use
 condition|)
 block|{

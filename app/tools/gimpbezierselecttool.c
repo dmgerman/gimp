@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/pixel-region.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpchannel.h"
 end_include
 
@@ -115,12 +121,6 @@ begin_include
 include|#
 directive|include
 file|"floating_sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixel_region.h"
 end_include
 
 begin_include
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292f01580108
+DECL|struct|__anon2796c7d30108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -305,7 +305,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292f01580208
+DECL|struct|__anon2796c7d30208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -360,7 +360,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292f01580308
+DECL|struct|__anon2796c7d30308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -526,7 +526,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon292f01580403
+DECL|enum|__anon2796c7d30403
 block|{
 DECL|enumerator|BEZIER_SELECT
 name|BEZIER_SELECT

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/temp-buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpbrushgenerated.h"
 end_include
 
@@ -49,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"brush-editor.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
 end_include
 
 begin_include

@@ -24,25 +24,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"base-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pixel_region.h"
+file|"pixel-region.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tile_manager.h"
+file|"tile-manager.h"
 end_include
 
 begin_include

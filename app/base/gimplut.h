@@ -36,11 +36,11 @@ struct|;
 end_struct
 
 begin_comment
-comment|/* TODO: the GimpLutFunc should really be passed the ColorModel of the region,    not just the number of channels */
+comment|/* TODO: the GimpLutFunc should really be passed the ColorModel of the region,  * not just the number of channels  */
 end_comment
 
 begin_comment
-comment|/* GimpLutFuncs should assume that the input and output gamma are 1.0    and do no correction as this will be handled by gimp_lut_setup */
+comment|/* GimpLutFuncs should assume that the input and output gamma are 1.0  * and do no correction as this will be handled by gimp_lut_setup  */
 end_comment
 
 begin_typedef
@@ -109,7 +109,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* gimp_lut_setup_exact is currently identical to gimp_lut_setup.  It    however is guaranteed to never perform any interpolation or gamma    correction on the lut */
+comment|/* gimp_lut_setup_exact is currently identical to gimp_lut_setup.  It  * however is guaranteed to never perform any interpolation or gamma  * correction on the lut  */
 end_comment
 
 begin_function_decl
@@ -152,7 +152,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* gimp_lut_process_inline is like gimp_lut_process except it uses a    single PixelRegion as both the source and destination */
+comment|/* gimp_lut_process_inline is like gimp_lut_process except it uses a  * single PixelRegion as both the source and destination  */
 end_comment
 
 begin_function_decl
@@ -171,7 +171,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* gimp_lut_process_2 is the same as gimp_lut_process but the lut    perameter is last instead of first.  this is necesary because    pixel_region_process_paralell sends the user_data as the 1st    parameter, and the image_map functions send user_data as the last    parameter */
+comment|/* gimp_lut_process_2 is the same as gimp_lut_process but the lut  * parameter is last instead of first.  this is necesary because  * pixel_region_process_paralell sends the user_data as the 1st  * parameter, and the image_map functions send user_data as the last  * parameter  */
 end_comment
 
 begin_function_decl

@@ -42,6 +42,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/pixel-region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/temp-buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint-funcs/paint-funcs.h"
 end_include
 
@@ -120,31 +132,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplut.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pixel_region.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
 end_include
 
 begin_include
@@ -209,7 +203,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c73c0930103
+DECL|enum|__anon2c0ff06a0103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO

@@ -106,6 +106,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/tile.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/tile-manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/tile-manager-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpchannel.h"
 end_include
 
@@ -190,24 +208,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tile.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_manager_pvt.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"xcf.h"
 end_include
 
@@ -236,7 +236,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ef71550103
+DECL|enum|__anon2a339fc20103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -371,7 +371,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ef71550203
+DECL|enum|__anon2a339fc20203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE

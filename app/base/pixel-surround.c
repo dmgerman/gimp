@@ -12,37 +12,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"base-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
+file|"pixel-region.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pixel_region.h"
+file|"pixel-surround.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pixel_surround.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_manager.h"
+file|"tile-manager.h"
 end_include
 
 begin_include

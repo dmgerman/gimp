@@ -29,19 +29,19 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"base-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
+file|"base-config.h"
 end_include
 
 begin_include
@@ -53,19 +53,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tile_cache.h"
+file|"tile-cache.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tile_swap.h"
+file|"tile-swap.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tile_pvt.h"
+file|"tile-private.h"
 end_include
 
 begin_comment
@@ -144,7 +144,7 @@ end_else
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|tile_idle_preswap
 parameter_list|(
 name|gpointer
@@ -161,7 +161,7 @@ end_endif
 begin_decl_stmt
 DECL|variable|initialize
 specifier|static
-name|int
+name|gboolean
 name|initialize
 init|=
 name|TRUE
@@ -193,8 +193,7 @@ end_typedef
 begin_decl_stmt
 DECL|variable|max_tile_size
 specifier|static
-name|unsigned
-name|long
+name|gulong
 name|max_tile_size
 init|=
 name|TILE_WIDTH
@@ -208,8 +207,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|cur_cache_size
 specifier|static
-name|unsigned
-name|long
+name|gulong
 name|cur_cache_size
 init|=
 literal|0
@@ -219,8 +217,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|max_cache_size
 specifier|static
-name|unsigned
-name|long
+name|gulong
 name|max_cache_size
 init|=
 literal|0
@@ -230,8 +227,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|cur_cache_dirty
 specifier|static
-name|unsigned
-name|long
+name|gulong
 name|cur_cache_dirty
 init|=
 literal|0
@@ -334,7 +330,7 @@ end_else
 begin_decl_stmt
 DECL|variable|idle_swapper
 specifier|static
-name|gint
+name|guint
 name|idle_swapper
 init|=
 literal|0
@@ -350,7 +346,7 @@ end_define
 
 begin_comment
 DECL|macro|CACHE_LOCK
-comment|/*nothing*/
+comment|/* nothing */
 end_comment
 
 begin_define
@@ -362,7 +358,7 @@ end_define
 
 begin_comment
 DECL|macro|CACHE_UNLOCK
-comment|/*nothing*/
+comment|/* nothing */
 end_comment
 
 begin_endif
@@ -906,6 +902,8 @@ name|NULL
 expr_stmt|;
 name|max_cache_size
 operator|=
+name|base_config
+operator|->
 name|tile_cache_size
 expr_stmt|;
 ifdef|#
@@ -928,19 +926,13 @@ else|#
 directive|else
 name|idle_swapper
 operator|=
-name|gtk_timeout_add
+name|g_timeout_add
 argument_list|(
 name|IDLE_SWAPPER_TIMEOUT
 argument_list|,
-operator|(
-name|GtkFunction
-operator|)
 name|tile_idle_preswap
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-literal|0
+name|NULL
 argument_list|)
 expr_stmt|;
 endif|#
@@ -1343,7 +1335,7 @@ end_else
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|tile_idle_preswap (gpointer data)
 name|tile_idle_preswap
 parameter_list|(

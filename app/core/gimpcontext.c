@@ -27,6 +27,18 @@ directive|include
 file|"core-types.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"base/base-config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/temp-buf.h"
+end_include
+
 begin_comment
 comment|/* FIXME: make a GimpToolFactory out of the tool_manager and put it here */
 end_comment
@@ -119,12 +131,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
 end_include
 
 begin_typedef
@@ -959,7 +965,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon298a00170103
+DECL|enum|__anon2a3d57580103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -1002,7 +1008,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298a00170203
+DECL|enum|__anon2a3d57580203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -7155,6 +7161,8 @@ block|}
 comment|/*  make sure the active brush is swapped before we get a new one...  */
 if|if
 condition|(
+name|base_config
+operator|->
 name|stingy_memory_use
 operator|&&
 name|context
@@ -7276,6 +7284,8 @@ expr_stmt|;
 comment|/*  Make sure the active brush is unswapped... */
 if|if
 condition|(
+name|base_config
+operator|->
 name|stingy_memory_use
 operator|&&
 name|brush
@@ -7821,6 +7831,8 @@ block|}
 comment|/*  make sure the active pattern is swapped before we get a new one...  */
 if|if
 condition|(
+name|base_config
+operator|->
 name|stingy_memory_use
 operator|&&
 name|context
@@ -7925,6 +7937,8 @@ expr_stmt|;
 comment|/*  Make sure the active pattern is unswapped... */
 if|if
 condition|(
+name|base_config
+operator|->
 name|stingy_memory_use
 operator|&&
 name|pattern

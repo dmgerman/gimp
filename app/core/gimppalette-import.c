@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/pixel-region.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontainer.h"
 end_include
 
@@ -59,18 +65,6 @@ begin_include
 include|#
 directive|include
 file|"gimppalette.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixel_region.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
 end_include
 
 begin_include

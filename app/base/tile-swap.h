@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0a8d740103
+DECL|enum|__anon2b06c1fe0103
 block|{
 DECL|enumerator|SWAP_IN
 name|SWAP_IN

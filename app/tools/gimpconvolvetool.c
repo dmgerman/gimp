@@ -36,6 +36,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/pixel-region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/temp-buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpbrush.h"
 end_include
 
@@ -96,19 +108,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pixel_region.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
 end_include
 
 begin_include
@@ -207,7 +207,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb8f8530103
+DECL|enum|__anon28e2aadd0103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP

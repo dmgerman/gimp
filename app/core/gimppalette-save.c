@@ -71,6 +71,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/temp-buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppalette.h"
 end_include
 
@@ -78,12 +84,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
 end_include
 
 begin_include

@@ -83,6 +83,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/base-config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -661,7 +667,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a5001840108
+DECL|struct|__anon299e7d2f0108
 block|{
 DECL|member|directory
 name|gboolean
@@ -1248,7 +1254,7 @@ argument_list|()
 expr_stmt|;
 endif|#
 directive|endif
-name|parse_buffers_init
+name|gimprc_init
 argument_list|()
 expr_stmt|;
 name|parse_unitrc
@@ -3739,6 +3745,7 @@ name|G_OS_WIN32
 end_ifdef
 
 begin_function
+specifier|static
 name|char
 modifier|*
 DECL|function|quote_spaces (char * string)
@@ -4654,6 +4661,8 @@ name|tile_cache_adj
 operator|=
 name|gtk_adjustment_new
 argument_list|(
+name|base_config
+operator|->
 name|tile_cache_size
 argument_list|,
 literal|0
@@ -4822,6 +4831,8 @@ argument_list|(
 literal|"Select Swap Dir"
 argument_list|)
 argument_list|,
+name|base_config
+operator|->
 name|swap_path
 argument_list|,
 name|TRUE
@@ -5635,11 +5646,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|base_config
+operator|->
 name|tile_cache_size
 operator|!=
 name|new_tile_cache_size
 condition|)
 block|{
+name|base_config
+operator|->
 name|tile_cache_size
 operator|=
 name|new_tile_cache_size
@@ -5656,12 +5671,16 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|base_config
+operator|->
 name|swap_path
 operator|&&
 name|new_swap_path
 operator|&&
 name|strcmp
 argument_list|(
+name|base_config
+operator|->
 name|swap_path
 argument_list|,
 name|new_swap_path
@@ -5670,9 +5689,13 @@ condition|)
 block|{
 name|g_free
 argument_list|(
+name|base_config
+operator|->
 name|swap_path
 argument_list|)
 expr_stmt|;
+name|base_config
+operator|->
 name|swap_path
 operator|=
 name|new_swap_path

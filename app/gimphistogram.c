@@ -45,13 +45,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpwidgets/gimpwidgets.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"base/pixel-processor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/pixel-region.h"
 end_include
 
 begin_include
@@ -76,18 +82,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixel_processor.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixel_region.h"
 end_include
 
 begin_struct

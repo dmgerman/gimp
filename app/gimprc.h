@@ -32,22 +32,6 @@ begin_decl_stmt
 specifier|extern
 name|gchar
 modifier|*
-name|temp_path
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gchar
-modifier|*
-name|swap_path
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gchar
-modifier|*
 name|brush_path
 decl_stmt|;
 end_decl_stmt
@@ -121,13 +105,6 @@ specifier|extern
 name|gchar
 modifier|*
 name|module_path
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|guint
-name|tile_cache_size
 decl_stmt|;
 end_decl_stmt
 
@@ -211,13 +188,6 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|gboolean
-name|stingy_memory_use
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gboolean
 name|allow_resize_windows
 decl_stmt|;
 end_decl_stmt
@@ -268,13 +238,6 @@ begin_decl_stmt
 specifier|extern
 name|gboolean
 name|auto_save
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|InterpolationType
-name|interpolation_type
 decl_stmt|;
 end_decl_stmt
 
@@ -506,7 +469,7 @@ end_comment
 
 begin_function_decl
 name|gboolean
-name|parse_buffers_init
+name|gimprc_init
 parameter_list|(
 name|void
 parameter_list|)

@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint-funcs/paint-funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -519,11 +513,6 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|gdisplays_update_full
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gimp_image_base_type
@@ -533,11 +522,9 @@ argument_list|)
 operator|==
 name|INDEXED
 condition|)
-name|paint_funcs_invalidate_color_hash_table
+name|gdisplays_update_full
 argument_list|(
 name|gimage
-argument_list|,
-name|ncol
 argument_list|)
 expr_stmt|;
 block|}

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/temp-buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -120,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -196,7 +196,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e62cec0103
+DECL|enum|__anon2afbe8190103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW

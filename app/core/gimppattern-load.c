@@ -119,6 +119,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/base-config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/temp-buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -132,18 +144,6 @@ begin_include
 include|#
 directive|include
 file|"gimppattern-header.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
 end_include
 
 begin_include
@@ -712,6 +712,8 @@ expr_stmt|;
 comment|/*  Swap the pattern to disk (if we're being stingy with memory) */
 if|if
 condition|(
+name|base_config
+operator|->
 name|stingy_memory_use
 condition|)
 name|temp_buf_swap
@@ -878,6 +880,8 @@ block|}
 comment|/*  Swap the pattern to disk (if we're being stingy with memory) */
 if|if
 condition|(
+name|base_config
+operator|->
 name|stingy_memory_use
 condition|)
 name|temp_buf_swap
@@ -1496,6 +1500,8 @@ expr_stmt|;
 comment|/*  Swap the pattern to disk (if we're being stingy with memory) */
 if|if
 condition|(
+name|base_config
+operator|->
 name|stingy_memory_use
 condition|)
 name|temp_buf_swap

@@ -46,6 +46,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/base-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/tile-manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -59,12 +71,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_manager.h"
 end_include
 
 begin_include

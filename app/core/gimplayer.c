@@ -46,13 +46,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint-funcs/paint-funcs.h"
+file|"base/boundary.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"boundary.h"
+file|"base/pixel-region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/tile-manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/tile.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint-funcs/paint-funcs.h"
 end_include
 
 begin_include
@@ -106,31 +124,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pixel_region.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile.h"
 end_include
 
 begin_include
@@ -147,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290d73930103
+DECL|enum|__anon2a3cc96c0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED

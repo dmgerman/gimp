@@ -282,7 +282,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1e804f0103
+DECL|enum|__anon2beec5d40103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -2998,8 +2998,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|parse_buffers_init (void)
-name|parse_buffers_init
+DECL|function|gimprc_init (void)
+name|gimprc_init
 parameter_list|(
 name|void
 parameter_list|)

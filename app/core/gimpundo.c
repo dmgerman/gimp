@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/temp-buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -39,15 +45,9 @@ directive|include
 file|"gimprc.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon2aafd8c60103
+DECL|enum|__anon2b42d7fd0103
 block|{
 DECL|enumerator|PUSH
 name|PUSH

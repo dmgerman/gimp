@@ -21,6 +21,30 @@ directive|include
 file|"core-types.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"base/boundary.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/pixel-region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/tile-manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint-funcs/paint-funcs.h"
+end_include
+
 begin_comment
 comment|/* FIXME: move the "stroke" stuff into the core entirely */
 end_comment
@@ -29,12 +53,6 @@ begin_include
 include|#
 directive|include
 file|"tools/tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint-funcs/paint-funcs.h"
 end_include
 
 begin_include
@@ -76,12 +94,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"boundary.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
 end_include
 
@@ -101,18 +113,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixel_region.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_manager.h"
 end_include
 
 begin_include

@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"base-types.h"
 end_include
 
 begin_include
@@ -36,31 +36,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tile_pvt.h"
+file|"tile-private.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tile_cache.h"
+file|"tile-cache.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tile_manager.h"
+file|"tile-manager.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tile_manager_pvt.h"
+file|"tile-manager-private.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tile_swap.h"
+file|"tile-swap.h"
 end_include
 
 begin_function_decl

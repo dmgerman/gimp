@@ -62,6 +62,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/pixel-region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/tile-manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"app_procs.h"
 end_include
 
@@ -117,18 +129,6 @@ begin_include
 include|#
 directive|include
 file|"gimppalette.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixel_region.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_manager.h"
 end_include
 
 begin_include
@@ -35088,7 +35088,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2defff0108
+DECL|struct|__anon2c8fcdcc0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35165,7 +35165,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2defff0208
+DECL|struct|__anon2c8fcdcc0208
 block|{
 DECL|member|ncolors
 name|long
@@ -35356,7 +35356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2defff0308
+DECL|struct|__anon2c8fcdcc0308
 block|{
 DECL|member|used_count
 name|signed

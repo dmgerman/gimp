@@ -36,13 +36,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core-types.h"
+file|"base/pixel-region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint-funcs/paint-funcs.h"
 end_include
 
 begin_comment
@@ -53,12 +59,6 @@ begin_include
 include|#
 directive|include
 file|"tools/tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint-funcs/paint-funcs.h"
 end_include
 
 begin_include
@@ -137,18 +137,6 @@ begin_include
 include|#
 directive|include
 file|"path.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixel_region.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_manager.h"
 end_include
 
 begin_include

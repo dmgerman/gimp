@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/temp-buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpmarshal.h"
 end_include
 
@@ -33,15 +39,9 @@ directive|include
 file|"gimpviewable.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon28c3e46b0103
+DECL|enum|__anon278b79610103
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW

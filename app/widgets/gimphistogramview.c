@@ -36,19 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimphistogram.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_manager.h"
 end_include
 
 begin_define
@@ -109,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0c3dc90103
+DECL|enum|__anon2a57986f0103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED

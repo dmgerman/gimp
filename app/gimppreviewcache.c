@@ -12,13 +12,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"base/base-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/temp-buf.h"
 end_include
 
 begin_include

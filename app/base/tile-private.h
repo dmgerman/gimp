@@ -1,15 +1,19 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_comment
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+end_comment
+
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__TILE_PVT_H__
+name|__TILE_PRIVATE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__TILE_PVT_H__
+DECL|macro|__TILE_PRIVATE_H__
 define|#
 directive|define
-name|__TILE_PVT_H__
+name|__TILE_PRIVATE_H__
 end_define
 
 begin_include
@@ -90,17 +94,17 @@ DECL|member|ref_count
 name|gshort
 name|ref_count
 decl_stmt|;
-comment|/* reference count. when the reference count is  		       *  non-zero then the "data" for this tile must 		       *  be valid. when the reference count for a tile 		       *  is 0 then the "data" for this tile must be 		       *  NULL. 		       */
+comment|/* reference count. when the reference count is  		        *  non-zero then the "data" for this tile must 		        *  be valid. when the reference count for a tile 		        *  is 0 then the "data" for this tile must be 		        *  NULL. 		        */
 DECL|member|write_count
 name|gshort
 name|write_count
 decl_stmt|;
-comment|/* write count: number of references that are 			 for write access */
+comment|/* write count: number of references that are 			  for write access */
 DECL|member|share_count
 name|gshort
 name|share_count
 decl_stmt|;
-comment|/* share count: number of tile managers that 			 hold this tile */
+comment|/* share count: number of tile managers that 			  hold this tile */
 DECL|member|dirty
 name|guint
 name|dirty
@@ -129,7 +133,7 @@ DECL|member|eheight
 name|gushort
 name|eheight
 decl_stmt|;
-comment|/* the effective height of the tile 		       *  a tile's effective width and height may be smaller 		       *  (but not larger) than TILE_WIDTH and TILE_HEIGHT. 		       *  this is to handle edge tiles of a drawable. 		       */
+comment|/* the effective height of the tile 		        *  a tile's effective width and height may be smaller 		        *  (but not larger) than TILE_WIDTH and TILE_HEIGHT. 		        *  this is to handle edge tiles of a drawable. 		        */
 DECL|member|rowhint
 name|TileRowHint
 modifier|*
@@ -260,7 +264,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __TILE_PVT_H__ */
+comment|/* __TILE_PRIVATE_H__ */
 end_comment
 
 end_unit

@@ -16,12 +16,6 @@ directive|define
 name|__GIMPPREVIEWCACHE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
-end_include
-
 begin_define
 DECL|macro|PREVIEW_CACHE_PRIME_WIDTH
 define|#

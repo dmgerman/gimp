@@ -48,13 +48,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimplimits.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"errors.h"
+file|"base/temp-buf.h"
 end_include
 
 begin_include
@@ -72,19 +78,13 @@ end_include
 begin_include
 include|#
 directive|include
+file|"errors.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimplimits.h"
 end_include
 
 begin_include

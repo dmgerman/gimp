@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/pixel-region.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpchannel.h"
 end_include
 
@@ -133,12 +139,6 @@ begin_include
 include|#
 directive|include
 file|"floating_sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixel_region.h"
 end_include
 
 begin_include
@@ -711,7 +711,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289f3f530103
+DECL|enum|__anon2c54aa880103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING

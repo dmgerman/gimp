@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tile_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 

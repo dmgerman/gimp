@@ -48,6 +48,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/pixel-region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/temp-buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/tile-manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint-funcs/paint-funcs.h"
 end_include
 
@@ -174,12 +192,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pixel_region.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"scale.h"
 end_include
 
@@ -193,18 +205,6 @@ begin_include
 include|#
 directive|include
 file|"selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_manager.h"
 end_include
 
 begin_include

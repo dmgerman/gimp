@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0d5c130103
+DECL|enum|__anon2af1add40103
 block|{
 DECL|enumerator|WithinBounds
 name|WithinBounds

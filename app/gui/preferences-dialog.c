@@ -48,6 +48,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/base-config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/tile-cache.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -120,12 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tile_cache.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -144,7 +150,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f5ec710103
+DECL|enum|__anon2948f50f0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -1881,6 +1887,8 @@ operator|!=
 name|old_tile_cache_size
 condition|)
 block|{
+name|base_config
+operator|->
 name|tile_cache_size
 operator|=
 name|edit_tile_cache_size
@@ -2077,6 +2085,8 @@ expr_stmt|;
 comment|/*  Save variables so that we can restore them later  */
 name|save_stingy_memory_use
 operator|=
+name|base_config
+operator|->
 name|stingy_memory_use
 expr_stmt|;
 name|save_min_colors
@@ -2109,10 +2119,14 @@ name|info_window_follows_mouse
 expr_stmt|;
 name|save_temp_path
 operator|=
+name|base_config
+operator|->
 name|temp_path
 expr_stmt|;
 name|save_swap_path
 operator|=
+name|base_config
+operator|->
 name|swap_path
 expr_stmt|;
 name|save_brush_path
@@ -2331,6 +2345,8 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|base_config
+operator|->
 name|interpolation_type
 operator|!=
 name|old_interpolation_type
@@ -2963,6 +2979,8 @@ operator|!=
 name|old_stingy_memory_use
 condition|)
 block|{
+name|base_config
+operator|->
 name|stingy_memory_use
 operator|=
 name|edit_stingy_memory_use
@@ -3182,6 +3200,8 @@ name|edit_temp_path
 argument_list|)
 condition|)
 block|{
+name|base_config
+operator|->
 name|temp_path
 operator|=
 name|edit_temp_path
@@ -3206,6 +3226,8 @@ name|edit_swap_path
 argument_list|)
 condition|)
 block|{
+name|base_config
+operator|->
 name|swap_path
 operator|=
 name|edit_swap_path
@@ -3372,6 +3394,8 @@ operator|!=
 name|old_tile_cache_size
 condition|)
 block|{
+name|base_config
+operator|->
 name|tile_cache_size
 operator|=
 name|edit_tile_cache_size
@@ -3409,6 +3433,8 @@ name|monitor_yres
 argument_list|)
 expr_stmt|;
 comment|/*  restore variables which must not change  */
+name|base_config
+operator|->
 name|stingy_memory_use
 operator|=
 name|save_stingy_memory_use
@@ -3441,10 +3467,14 @@ name|info_window_follows_mouse
 operator|=
 name|save_info_window_follows_mouse
 expr_stmt|;
+name|base_config
+operator|->
 name|temp_path
 operator|=
 name|save_temp_path
 expr_stmt|;
+name|base_config
+operator|->
 name|swap_path
 operator|=
 name|save_swap_path
@@ -3512,6 +3542,12 @@ operator|=
 name|NULL
 expr_stmt|;
 comment|/*  restore ordinary gimprc variables  */
+name|base_config
+operator|->
+name|interpolation_type
+operator|=
+name|old_interpolation_type
+expr_stmt|;
 name|levels_of_undo
 operator|=
 name|old_levels_of_undo
@@ -3547,10 +3583,6 @@ expr_stmt|;
 name|show_statusbar
 operator|=
 name|old_show_statusbar
-expr_stmt|;
-name|interpolation_type
-operator|=
-name|old_interpolation_type
 expr_stmt|;
 name|confirm_on_close
 operator|=
@@ -4008,6 +4040,8 @@ operator|||
 name|data
 operator|==
 operator|&
+name|base_config
+operator|->
 name|interpolation_type
 operator|||
 name|data
@@ -5740,6 +5774,8 @@ block|{
 comment|/*  first time dialog is opened -        *  copy config vals to edit variables.        */
 name|edit_stingy_memory_use
 operator|=
+name|base_config
+operator|->
 name|stingy_memory_use
 expr_stmt|;
 name|edit_min_colors
@@ -5778,6 +5814,8 @@ name|edit_temp_path
 operator|=
 name|prefs_strdup
 argument_list|(
+name|base_config
+operator|->
 name|temp_path
 argument_list|)
 expr_stmt|;
@@ -5785,6 +5823,8 @@ name|edit_swap_path
 operator|=
 name|prefs_strdup
 argument_list|(
+name|base_config
+operator|->
 name|swap_path
 argument_list|)
 expr_stmt|;
@@ -5834,9 +5874,17 @@ block|}
 comment|/*  assign edit variables for values which get changed on "OK" and "Save"    *  but not on the fly.    */
 name|edit_tile_cache_size
 operator|=
+name|base_config
+operator|->
 name|tile_cache_size
 expr_stmt|;
 comment|/*  remember all old values  */
+name|old_interpolation_type
+operator|=
+name|base_config
+operator|->
+name|interpolation_type
+expr_stmt|;
 name|old_perfectmouse
 operator|=
 name|perfectmouse
@@ -5888,10 +5936,6 @@ expr_stmt|;
 name|old_show_statusbar
 operator|=
 name|show_statusbar
-expr_stmt|;
-name|old_interpolation_type
-operator|=
-name|interpolation_type
 expr_stmt|;
 name|old_confirm_on_close
 operator|=
@@ -10968,11 +11012,15 @@ argument_list|,
 name|prefs_toggle_callback
 argument_list|,
 operator|&
+name|base_config
+operator|->
 name|interpolation_type
 argument_list|,
 operator|(
 name|gpointer
 operator|)
+name|base_config
+operator|->
 name|interpolation_type
 argument_list|,
 name|_
@@ -12423,7 +12471,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27f5ec710208
+DECL|struct|__anon2948f50f0208
 block|{
 DECL|member|label
 name|gchar
@@ -12652,7 +12700,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27f5ec710308
+DECL|struct|__anon2948f50f0308
 block|{
 DECL|member|tree_label
 name|gchar

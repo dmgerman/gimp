@@ -36,6 +36,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/tile-manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/tile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -72,25 +84,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pixel_region.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"scale.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_manager.h"
 end_include
 
 begin_define

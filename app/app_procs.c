@@ -150,6 +150,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/base-config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/temp-buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/tile-swap.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint-funcs/paint-funcs.h"
 end_include
 
@@ -283,18 +301,6 @@ begin_include
 include|#
 directive|include
 file|"module_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_swap.h"
 end_include
 
 begin_include
@@ -602,7 +608,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|parse_buffers_init
+name|gimprc_init
 argument_list|()
 condition|)
 block|{
@@ -836,10 +842,14 @@ expr_stmt|;
 comment|/* Add the swap file  */
 if|if
 condition|(
+name|base_config
+operator|->
 name|swap_path
 operator|==
 name|NULL
 condition|)
+name|base_config
+operator|->
 name|swap_path
 operator|=
 name|g_get_tmp_dir
@@ -856,6 +866,8 @@ literal|"%s"
 name|G_DIR_SEPARATOR_S
 literal|"gimpswap.%lu"
 argument_list|,
+name|base_config
+operator|->
 name|swap_path
 argument_list|,
 operator|(
@@ -1203,6 +1215,8 @@ name|dir
 operator|=
 name|opendir
 argument_list|(
+name|base_config
+operator|->
 name|swap_path
 argument_list|)
 expr_stmt|;
@@ -1277,6 +1291,8 @@ literal|"%s"
 name|G_DIR_SEPARATOR_S
 literal|"%s"
 argument_list|,
+name|base_config
+operator|->
 name|swap_path
 argument_list|,
 name|entry

@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/boundary.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -73,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimplist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"boundary.h"
 end_include
 
 begin_include

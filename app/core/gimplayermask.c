@@ -42,19 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/pixel-region.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint-funcs/paint-funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"boundary.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"drawable.h"
 end_include
 
 begin_include
@@ -66,25 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pixel_region.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile.h"
+file|"drawable.h"
 end_include
 
 begin_include
@@ -107,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ab7ef10103
+DECL|enum|__anon2c774c6b0103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED

@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplut.h"
+file|"base/gimplut.h"
 end_include
 
 begin_include
@@ -943,7 +943,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7ac3c60108
+DECL|struct|__anon2ad1ec740108
 block|{
 DECL|member|gamma
 name|double

@@ -17,7 +17,7 @@ name|__TILE_MANAGER_H__
 end_define
 
 begin_comment
-comment|/* Creates a new tile manager with the specified  *  width for the toplevel. The toplevel sizes is  *  used to compute the number of levels and there  *  size. Each level is 1/2 the width and height of  *  the level above it.  * The toplevel is level 0. The smallest level in the  *  hierarchy is "nlevels - 1". That level will be smaller  *  than TILE_WIDTH x TILE_HEIGHT  */
+comment|/* Creates a new tile manager with the specified  *  width for the toplevel. The toplevel sizes is  *  used to compute the number of levels and there  *  size. Each level is 1/2 the width and height of  *  the level above it.  *  * The toplevel is level 0. The smallest level in the  *  hierarchy is "nlevels - 1". That level will be smaller  *  than TILE_WIDTH x TILE_HEIGHT  */
 end_comment
 
 begin_function_decl

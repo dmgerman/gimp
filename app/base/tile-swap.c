@@ -141,7 +141,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"base-types.h"
 end_include
 
 begin_include
@@ -153,13 +153,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tile_pvt.h"
+file|"tile-private.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tile_swap.h"
+file|"tile-swap.h"
 end_include
 
 begin_define
@@ -689,18 +689,28 @@ end_endif
 
 begin_decl_stmt
 DECL|variable|seek_err_msg
-DECL|variable|read_err_msg
-DECL|variable|write_err_msg
 specifier|static
 name|gboolean
 name|seek_err_msg
 init|=
 name|TRUE
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|read_err_msg
+specifier|static
+name|gboolean
 name|read_err_msg
 init|=
 name|TRUE
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|write_err_msg
+specifier|static
+name|gboolean
 name|write_err_msg
 init|=
 name|TRUE

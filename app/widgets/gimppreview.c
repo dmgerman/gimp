@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/temp-buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpbrush.h"
 end_include
 
@@ -156,12 +162,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimplimits.h"
 end_include
 
@@ -183,7 +183,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bdc9340103
+DECL|enum|__anon2772bcbc0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED

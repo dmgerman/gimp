@@ -16,12 +16,6 @@ directive|define
 name|__TEMP_BUF_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimpchecks.h"
-end_include
-
 begin_struct
 DECL|struct|_TempBuf
 struct|struct

@@ -23,7 +23,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64b3010103
+DECL|enum|__anon2aa705880103
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -51,122 +51,13 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/* Layer modes  */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2b64b3010203
-block|{
-DECL|enumerator|NORMAL_MODE
-name|NORMAL_MODE
-block|,
-DECL|enumerator|DISSOLVE_MODE
-name|DISSOLVE_MODE
-block|,
-DECL|enumerator|BEHIND_MODE
-name|BEHIND_MODE
-block|,
-DECL|enumerator|MULTIPLY_MODE
-name|MULTIPLY_MODE
-block|,
-DECL|enumerator|SCREEN_MODE
-name|SCREEN_MODE
-block|,
-DECL|enumerator|OVERLAY_MODE
-name|OVERLAY_MODE
-block|,
-DECL|enumerator|DIFFERENCE_MODE
-name|DIFFERENCE_MODE
-block|,
-DECL|enumerator|ADDITION_MODE
-name|ADDITION_MODE
-block|,
-DECL|enumerator|SUBTRACT_MODE
-name|SUBTRACT_MODE
-block|,
-DECL|enumerator|DARKEN_ONLY_MODE
-name|DARKEN_ONLY_MODE
-block|,
-DECL|enumerator|LIGHTEN_ONLY_MODE
-name|LIGHTEN_ONLY_MODE
-block|,
-DECL|enumerator|HUE_MODE
-name|HUE_MODE
-block|,
-DECL|enumerator|SATURATION_MODE
-name|SATURATION_MODE
-block|,
-DECL|enumerator|COLOR_MODE
-name|COLOR_MODE
-block|,
-DECL|enumerator|VALUE_MODE
-name|VALUE_MODE
-block|,
-DECL|enumerator|DIVIDE_MODE
-name|DIVIDE_MODE
-block|,
-DECL|enumerator|DODGE_MODE
-name|DODGE_MODE
-block|,
-DECL|enumerator|BURN_MODE
-name|BURN_MODE
-block|,
-DECL|enumerator|HARDLIGHT_MODE
-name|HARDLIGHT_MODE
-block|,
-DECL|enumerator|ERASE_MODE
-name|ERASE_MODE
-block|,
-comment|/*< skip>*/
-DECL|enumerator|REPLACE_MODE
-name|REPLACE_MODE
-block|,
-comment|/*< skip>*/
-DECL|enumerator|ANTI_ERASE_MODE
-name|ANTI_ERASE_MODE
-comment|/*< skip>*/
-DECL|typedef|LayerModeEffects
-block|}
-name|LayerModeEffects
-typedef|;
-end_typedef
-
-begin_comment
-comment|/* Types of convolutions  */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2b64b3010303
-block|{
-DECL|enumerator|NORMAL_CONVOL
-name|NORMAL_CONVOL
-block|,
-comment|/*  Negative numbers truncated  */
-DECL|enumerator|ABSOLUTE_CONVOL
-name|ABSOLUTE_CONVOL
-block|,
-comment|/*  Absolute value              */
-DECL|enumerator|NEGATIVE_CONVOL
-name|NEGATIVE_CONVOL
-comment|/*  add 127 to values           */
-DECL|typedef|ConvolutionType
-block|}
-name|ConvolutionType
-typedef|;
-end_typedef
-
-begin_comment
 comment|/* Brush application types  */
 end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64b3010403
+DECL|enum|__anon2aa705880203
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -192,7 +83,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64b3010503
+DECL|enum|__anon2aa705880303
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -212,7 +103,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon2b64b3010603
+DECL|enum|__anon2aa705880403
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -241,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64b3010703
+DECL|enum|__anon2aa705880503
 block|{
 DECL|enumerator|ONCE_FORWARD
 name|ONCE_FORWARD
@@ -271,27 +162,8 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64b3010803
-block|{
-DECL|enumerator|LINEAR_INTERPOLATION
-name|LINEAR_INTERPOLATION
-block|,
-DECL|enumerator|CUBIC_INTERPOLATION
-name|CUBIC_INTERPOLATION
-block|,
-DECL|enumerator|NEAREST_NEIGHBOR_INTERPOLATION
-name|NEAREST_NEIGHBOR_INTERPOLATION
-DECL|typedef|InterpolationType
-block|}
-name|InterpolationType
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b64b3010903
+DECL|enum|__anon2aa705880603
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -310,7 +182,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64b3010a03
+DECL|enum|__anon2aa705880703
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -330,7 +202,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b64b3010b03
+DECL|enum|__anon2aa705880803
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN
@@ -350,7 +222,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64b3010c03
+DECL|enum|__anon2aa705880903
 block|{
 DECL|enumerator|PDB_INT32
 name|PDB_INT32
@@ -433,7 +305,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64b3010d03
+DECL|enum|__anon2aa705880a03
 block|{
 DECL|enumerator|PDB_EXECUTION_ERROR
 name|PDB_EXECUTION_ERROR
@@ -463,7 +335,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=PDB_>*/
-DECL|enum|__anon2b64b3010e03
+DECL|enum|__anon2aa705880b03
 block|{
 DECL|enumerator|PDB_INTERNAL
 name|PDB_INTERNAL
@@ -490,7 +362,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=CHANNEL_OP_>*/
-DECL|enum|__anon2b64b3010f03
+DECL|enum|__anon2aa705880c03
 block|{
 DECL|enumerator|CHANNEL_OP_ADD
 name|CHANNEL_OP_ADD
@@ -513,7 +385,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b64b3011003
+DECL|enum|__anon2aa705880d03
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -556,7 +428,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64b3011103
+DECL|enum|__anon2aa705880e03
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -582,7 +454,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b64b3011203
+DECL|enum|__anon2aa705880f03
 block|{
 DECL|enumerator|CURSOR_MODE_TOOL_ICON
 name|CURSOR_MODE_TOOL_ICON
@@ -602,7 +474,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b64b3011303
+DECL|enum|__anon2aa705881003
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE

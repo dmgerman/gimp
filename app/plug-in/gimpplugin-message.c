@@ -369,6 +369,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/tile.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/tile-manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -454,18 +466,6 @@ begin_include
 include|#
 directive|include
 file|"plug_in.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_manager.h"
 end_include
 
 begin_include

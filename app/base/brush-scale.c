@@ -18,19 +18,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"base-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"brush_scale.h"
+file|"brush-scale.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"temp_buf.h"
+file|"temp-buf.h"
 end_include
 
 begin_function
