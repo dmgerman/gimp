@@ -334,7 +334,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c52cbe50103
+DECL|enum|__anon2bd3fd2b0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2523,6 +2523,33 @@ condition|)
 name|gtk_widget_show
 argument_list|(
 name|menubar
+argument_list|)
+expr_stmt|;
+comment|/*  make sure we can activate accels even if the menubar is invisible    *  (see http://bugzilla.gnome.org/show_bug.cgi?id=137151)    */
+if|if
+condition|(
+operator|!
+name|gtk_check_version
+argument_list|(
+literal|2
+argument_list|,
+literal|4
+argument_list|,
+literal|0
+argument_list|)
+condition|)
+name|g_signal_connect
+argument_list|(
+name|menubar
+argument_list|,
+literal|"can-activate-accel"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gtk_true
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  active display callback  */
