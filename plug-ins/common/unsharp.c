@@ -102,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2890e07b0108
+DECL|struct|__anon2871b84e0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -125,7 +125,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2890e07b0208
+DECL|struct|__anon2871b84e0208
 block|{
 DECL|member|run
 name|gboolean
@@ -284,6 +284,9 @@ name|y1
 parameter_list|,
 name|gint
 name|y2
+parameter_list|,
+name|gboolean
+name|show_progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1028,14 +1031,6 @@ operator|&
 name|y2
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-operator|)
-condition|)
 name|gimp_progress_init
 argument_list|(
 name|_
@@ -1126,6 +1121,8 @@ argument_list|,
 name|y1
 argument_list|,
 name|y2
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_flush
@@ -1175,7 +1172,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|unsharp_region (GimpPixelRgn srcPR,GimpPixelRgn destPR,gint width,gint height,gint bytes,gdouble radius,gdouble amount,gint x1,gint x2,gint y1,gint y2)
+DECL|function|unsharp_region (GimpPixelRgn srcPR,GimpPixelRgn destPR,gint width,gint height,gint bytes,gdouble radius,gdouble amount,gint x1,gint x2,gint y1,gint y2,gboolean show_progress)
 name|unsharp_region
 parameter_list|(
 name|GimpPixelRgn
@@ -1210,6 +1207,9 @@ name|y1
 parameter_list|,
 name|gint
 name|y2
+parameter_list|,
+name|gboolean
+name|show_progress
 parameter_list|)
 block|{
 name|guchar
@@ -1487,6 +1487,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|show_progress
+operator|&&
 name|row
 operator|%
 literal|5
@@ -1613,6 +1615,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|show_progress
+operator|&&
 name|col
 operator|%
 literal|5
@@ -1638,11 +1642,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-operator|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-operator|)
+name|show_progress
 condition|)
 name|gimp_progress_init
 argument_list|(
@@ -1817,6 +1817,8 @@ block|}
 comment|/* update progress bar every five rows */
 if|if
 condition|(
+name|show_progress
+operator|&&
 name|row
 operator|%
 literal|5
@@ -1856,6 +1858,10 @@ name|x
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|show_progress
+condition|)
 name|gimp_progress_update
 argument_list|(
 literal|0.0
@@ -4331,23 +4337,6 @@ name|preview_buf_y2
 operator|-
 name|preview_buf_y1
 expr_stmt|;
-comment|/* If radius/amount/treshold changed render*/
-if|if
-condition|(
-operator|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-operator|)
-condition|)
-name|gimp_progress_init
-argument_list|(
-name|_
-argument_list|(
-literal|"Blurring..."
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/* initialize pixel regions */
 name|gimp_pixel_rgn_init
 argument_list|(
@@ -4435,6 +4424,8 @@ argument_list|,
 name|preview_buf_y1
 argument_list|,
 name|preview_buf_y2
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_get_rect
