@@ -25,23 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2abb7d900103
-block|{
-DECL|enumerator|GIMP_DRAW_TOOL_STATE_INVISIBLE
-name|GIMP_DRAW_TOOL_STATE_INVISIBLE
-block|,
-DECL|enumerator|GIMP_DRAW_TOOL_STATE_VISIBLE
-name|GIMP_DRAW_TOOL_STATE_VISIBLE
-DECL|typedef|GimpDrawToolState
-block|}
-name|GimpDrawToolState
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2abb7d900203
+DECL|enum|__anon2c480f140103
 block|{
 DECL|enumerator|GIMP_HANDLE_SQUARE
 name|GIMP_HANDLE_SQUARE
@@ -149,7 +133,7 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-comment|/*  The display we are drawing to (may be                                     *  a different one than tool->gdisp)                                     */
+comment|/*  The display we are drawing to (may be                                *  a different one than tool->gdisp)                                */
 DECL|member|win
 name|GdkWindow
 modifier|*
@@ -162,11 +146,6 @@ modifier|*
 name|gc
 decl_stmt|;
 comment|/*  Graphics context for draw functions    */
-DECL|member|draw_state
-name|GimpDrawToolState
-name|draw_state
-decl_stmt|;
-comment|/*  Current state in the draw process      */
 DECL|member|paused_count
 name|gint
 name|paused_count
@@ -178,17 +157,17 @@ name|line_width
 decl_stmt|;
 comment|/*  line attributes                        */
 DECL|member|line_style
-name|gint
+name|GdkLineStyle
 name|line_style
 decl_stmt|;
 comment|/**/
 DECL|member|cap_style
-name|gint
+name|GdkCapStyle
 name|cap_style
 decl_stmt|;
 comment|/**/
 DECL|member|join_style
-name|gint
+name|GdkJoinStyle
 name|join_style
 decl_stmt|;
 comment|/**/
@@ -655,6 +634,30 @@ name|filled
 parameter_list|,
 name|gboolean
 name|use_offsets
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_draw_tool_draw_boundary
+parameter_list|(
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+parameter_list|,
+name|BoundSeg
+modifier|*
+name|bound_segs
+parameter_list|,
+name|gint
+name|n_bound_segs
+parameter_list|,
+name|gint
+name|offset_x
+parameter_list|,
+name|gint
+name|offset_y
 parameter_list|)
 function_decl|;
 end_function_decl
