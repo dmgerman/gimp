@@ -63,7 +63,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_snap_x (GimpImage * gimage,gdouble x,gint * tx,gdouble epsilon_x,gboolean snap_to_guides,gboolean snap_to_grid)
+DECL|function|gimp_image_snap_x (GimpImage * gimage,gdouble x,gdouble * tx,gdouble epsilon_x,gboolean snap_to_guides,gboolean snap_to_grid)
 name|gimp_image_snap_x
 parameter_list|(
 name|GimpImage
@@ -73,7 +73,7 @@ parameter_list|,
 name|gdouble
 name|x
 parameter_list|,
-name|gint
+name|gdouble
 modifier|*
 name|tx
 parameter_list|,
@@ -154,10 +154,7 @@ return|;
 operator|*
 name|tx
 operator|=
-name|ROUND
-argument_list|(
 name|x
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -377,7 +374,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_snap_y (GimpImage * gimage,gdouble y,gint * ty,gdouble epsilon_y,gboolean snap_to_guides,gboolean snap_to_grid)
+DECL|function|gimp_image_snap_y (GimpImage * gimage,gdouble y,gdouble * ty,gdouble epsilon_y,gboolean snap_to_guides,gboolean snap_to_grid)
 name|gimp_image_snap_y
 parameter_list|(
 name|GimpImage
@@ -387,7 +384,7 @@ parameter_list|,
 name|gdouble
 name|y
 parameter_list|,
-name|gint
+name|gdouble
 modifier|*
 name|ty
 parameter_list|,
@@ -468,10 +465,7 @@ return|;
 operator|*
 name|ty
 operator|=
-name|ROUND
-argument_list|(
 name|y
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -691,7 +685,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_snap_point (GimpImage * gimage,gdouble x,gdouble y,gint * tx,gint * ty,gdouble epsilon_x,gdouble epsilon_y,gboolean snap_to_guides,gboolean snap_to_grid)
+DECL|function|gimp_image_snap_point (GimpImage * gimage,gdouble x,gdouble y,gdouble * tx,gdouble * ty,gdouble epsilon_x,gdouble epsilon_y,gboolean snap_to_guides,gboolean snap_to_grid)
 name|gimp_image_snap_point
 parameter_list|(
 name|GimpImage
@@ -704,11 +698,11 @@ parameter_list|,
 name|gdouble
 name|y
 parameter_list|,
-name|gint
+name|gdouble
 modifier|*
 name|tx
 parameter_list|,
-name|gint
+name|gdouble
 modifier|*
 name|ty
 parameter_list|,
@@ -805,18 +799,12 @@ return|;
 operator|*
 name|tx
 operator|=
-name|ROUND
-argument_list|(
 name|x
-argument_list|)
 expr_stmt|;
 operator|*
 name|ty
 operator|=
-name|ROUND
-argument_list|(
 name|y
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1173,7 +1161,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_snap_rectangle (GimpImage * gimage,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gint * tx1,gint * ty1,gdouble epsilon_x,gdouble epsilon_y,gboolean snap_to_guides,gboolean snap_to_grid)
+DECL|function|gimp_image_snap_rectangle (GimpImage * gimage,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gdouble * tx1,gdouble * ty1,gdouble epsilon_x,gdouble epsilon_y,gboolean snap_to_guides,gboolean snap_to_grid)
 name|gimp_image_snap_rectangle
 parameter_list|(
 name|GimpImage
@@ -1192,11 +1180,11 @@ parameter_list|,
 name|gdouble
 name|y2
 parameter_list|,
-name|gint
+name|gdouble
 modifier|*
 name|tx1
 parameter_list|,
-name|gint
+name|gdouble
 modifier|*
 name|ty1
 parameter_list|,
@@ -1213,12 +1201,12 @@ name|gboolean
 name|snap_to_grid
 parameter_list|)
 block|{
-name|gint
+name|gdouble
 name|nx1
 decl_stmt|,
 name|ny1
 decl_stmt|;
-name|gint
+name|gdouble
 name|nx2
 decl_stmt|,
 name|ny2
@@ -1274,18 +1262,12 @@ return|;
 operator|*
 name|tx1
 operator|=
-name|ROUND
-argument_list|(
 name|x1
-argument_list|)
 expr_stmt|;
 operator|*
 name|ty1
 operator|=
-name|ROUND
-argument_list|(
 name|y1
-argument_list|)
 expr_stmt|;
 name|snap1
 operator|=
@@ -1409,7 +1391,7 @@ condition|)
 operator|*
 name|tx1
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 name|x1
 operator|+
@@ -1470,7 +1452,7 @@ condition|)
 operator|*
 name|ty1
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 name|y1
 operator|+

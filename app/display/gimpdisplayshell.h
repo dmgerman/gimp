@@ -717,7 +717,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_display_shell_snap_coords
 parameter_list|(
 name|GimpDisplayShell

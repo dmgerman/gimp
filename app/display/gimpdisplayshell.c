@@ -334,7 +334,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ca82bc0103
+DECL|enum|__anon2c9c26f90103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4230,7 +4230,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_display_shell_snap_coords (GimpDisplayShell * shell,GimpCoords * coords,GimpCoords * snapped_coords,gint snap_offset_x,gint snap_offset_y,gint snap_width,gint snap_height)
 name|gimp_display_shell_snap_coords
 parameter_list|(
@@ -4269,26 +4269,37 @@ name|snap_to_grid
 init|=
 name|FALSE
 decl_stmt|;
-name|g_return_if_fail
+name|gboolean
+name|snapped
+init|=
+name|FALSE
+decl_stmt|;
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
 argument_list|(
 name|shell
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|coords
 operator|!=
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|snapped_coords
 operator|!=
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 operator|*
@@ -4345,10 +4356,7 @@ operator|||
 name|snap_to_grid
 condition|)
 block|{
-name|gboolean
-name|snapped
-decl_stmt|;
-name|gint
+name|gdouble
 name|tx
 decl_stmt|,
 name|ty
@@ -4521,6 +4529,9 @@ name|snap_offset_y
 expr_stmt|;
 block|}
 block|}
+return|return
+name|snapped
+return|;
 block|}
 end_function
 

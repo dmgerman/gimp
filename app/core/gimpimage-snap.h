@@ -27,7 +27,7 @@ parameter_list|,
 name|gdouble
 name|x
 parameter_list|,
-name|gint
+name|gdouble
 modifier|*
 name|tx
 parameter_list|,
@@ -54,7 +54,7 @@ parameter_list|,
 name|gdouble
 name|y
 parameter_list|,
-name|gint
+name|gdouble
 modifier|*
 name|ty
 parameter_list|,
@@ -84,11 +84,11 @@ parameter_list|,
 name|gdouble
 name|y
 parameter_list|,
-name|gint
+name|gdouble
 modifier|*
 name|tx
 parameter_list|,
-name|gint
+name|gdouble
 modifier|*
 name|ty
 parameter_list|,
@@ -127,11 +127,11 @@ parameter_list|,
 name|gdouble
 name|y2
 parameter_list|,
-name|gint
+name|gdouble
 modifier|*
 name|tx1
 parameter_list|,
-name|gint
+name|gdouble
 modifier|*
 name|ty1
 parameter_list|,
