@@ -43,6 +43,25 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_drawable_transform_matrix_rotate_center
+parameter_list|(
+name|gdouble
+name|cx
+parameter_list|,
+name|gdouble
+name|cy
+parameter_list|,
+name|gdouble
+name|angle
+parameter_list|,
+name|GimpMatrix3
+name|result
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_drawable_transform_matrix_scale
 parameter_list|(
 name|gint

@@ -145,37 +145,37 @@ name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
 DECL|member|startx
-name|gint
+name|gdouble
 name|startx
 decl_stmt|;
 comment|/*  starting x coord                 */
 DECL|member|starty
-name|gint
+name|gdouble
 name|starty
 decl_stmt|;
 comment|/*  starting y coord                 */
 DECL|member|curx
-name|gint
+name|gdouble
 name|curx
 decl_stmt|;
 comment|/*  current x coord                  */
 DECL|member|cury
-name|gint
+name|gdouble
 name|cury
 decl_stmt|;
 comment|/*  current y coord                  */
 DECL|member|lastx
-name|gint
+name|gdouble
 name|lastx
 decl_stmt|;
 comment|/*  last x coord                     */
 DECL|member|lasty
-name|gint
+name|gdouble
 name|lasty
 decl_stmt|;
 comment|/*  last y coord                     */
 DECL|member|state
-name|gint
+name|GdkModifierType
 name|state
 decl_stmt|;
 comment|/*  state of buttons and keys        */
@@ -197,7 +197,7 @@ decl_stmt|;
 comment|/*  lower right hand coords          */
 DECL|member|cx
 DECL|member|cy
-name|gint
+name|gdouble
 name|cx
 decl_stmt|,
 name|cy
