@@ -3339,6 +3339,13 @@ operator|->
 name|list_item
 argument_list|)
 expr_stmt|;
+name|gtk_widget_unref
+argument_list|(
+name|channel_widget
+operator|->
+name|list_item
+argument_list|)
+expr_stmt|;
 name|suspend_gimage_notify
 operator|--
 expr_stmt|;
@@ -4137,6 +4144,14 @@ name|list_item
 operator|=
 name|gtk_list_item_new
 argument_list|()
+expr_stmt|;
+name|gtk_widget_ref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|list_item
+argument_list|)
+argument_list|)
 expr_stmt|;
 comment|/*  create the channel widget and add it to the list  */
 name|channel_widget
