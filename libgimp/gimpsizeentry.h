@@ -92,7 +92,7 @@ name|GimpSizeEntryClass
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad57d850103
+DECL|enum|__anon2a4da73b0103
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -372,6 +372,15 @@ name|gse
 parameter_list|,
 name|GUnit
 name|unit
+parameter_list|)
+function_decl|;
+comment|/* this makes the first spinbutton grab the focus  */
+name|void
+name|gimp_size_entry_grab_focus
+parameter_list|(
+name|GimpSizeEntry
+modifier|*
+name|gse
 parameter_list|)
 function_decl|;
 ifdef|#

@@ -102,11 +102,6 @@ name|GtkWidget
 modifier|*
 name|new_button
 decl_stmt|;
-DECL|member|delete_button
-name|GtkWidget
-modifier|*
-name|delete_button
-decl_stmt|;
 DECL|member|up_button
 name|GtkWidget
 modifier|*
@@ -116,6 +111,11 @@ DECL|member|down_button
 name|GtkWidget
 modifier|*
 name|down_button
+decl_stmt|;
+DECL|member|delete_button
+name|GtkWidget
+modifier|*
+name|delete_button
 decl_stmt|;
 DECL|member|file_selection
 name|GtkWidget

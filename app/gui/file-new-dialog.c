@@ -102,7 +102,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2b3e8e400108
+DECL|struct|__anon2a0d73410108
 typedef|typedef
 struct|struct
 block|{
@@ -1368,7 +1368,7 @@ name|vals
 operator|->
 name|res_unit
 operator|=
-name|UNIT_INCH
+name|last_res_unit
 expr_stmt|;
 block|}
 else|else
@@ -1970,6 +1970,16 @@ argument_list|,
 name|TRUE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gimp_size_entry_grab_focus
+argument_list|(
+name|GIMP_SIZE_ENTRY
+argument_list|(
+name|vals
+operator|->
+name|size_sizeentry
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

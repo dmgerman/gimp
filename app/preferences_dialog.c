@@ -774,6 +774,15 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|old_module_path
+specifier|static
+name|char
+modifier|*
+name|old_module_path
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|old_gradient_path
 specifier|static
 name|char
@@ -884,6 +893,17 @@ specifier|static
 name|char
 modifier|*
 name|edit_plug_in_path
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|edit_module_path
+specifier|static
+name|char
+modifier|*
+name|edit_module_path
 init|=
 name|NULL
 decl_stmt|;
@@ -1558,6 +1578,10 @@ name|save_plug_in_path
 decl_stmt|;
 name|gchar
 modifier|*
+name|save_module_path
+decl_stmt|;
+name|gchar
+modifier|*
 name|save_gradient_path
 decl_stmt|;
 name|int
@@ -1616,6 +1640,10 @@ expr_stmt|;
 name|save_plug_in_path
 operator|=
 name|plug_in_path
+expr_stmt|;
+name|save_module_path
+operator|=
+name|module_path
 expr_stmt|;
 name|save_gradient_path
 operator|=
@@ -2458,6 +2486,34 @@ if|if
 condition|(
 name|file_prefs_strcmp
 argument_list|(
+name|module_path
+argument_list|,
+name|edit_module_path
+argument_list|)
+condition|)
+block|{
+name|update
+operator|=
+name|g_list_append
+argument_list|(
+name|update
+argument_list|,
+literal|"module-path"
+argument_list|)
+expr_stmt|;
+name|module_path
+operator|=
+name|edit_module_path
+expr_stmt|;
+name|restart_notification
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|file_prefs_strcmp
+argument_list|(
 name|gradient_path
 argument_list|,
 name|edit_gradient_path
@@ -2581,6 +2637,10 @@ expr_stmt|;
 name|plug_in_path
 operator|=
 name|save_plug_in_path
+expr_stmt|;
+name|module_path
+operator|=
+name|save_module_path
 expr_stmt|;
 name|gradient_path
 operator|=
@@ -2920,6 +2980,14 @@ operator|&
 name|edit_plug_in_path
 argument_list|,
 name|old_plug_in_path
+argument_list|)
+expr_stmt|;
+name|file_prefs_strset
+argument_list|(
+operator|&
+name|edit_module_path
+argument_list|,
+name|old_module_path
 argument_list|)
 expr_stmt|;
 name|file_prefs_strset
@@ -4321,7 +4389,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2b683bf40108
+DECL|struct|__anon2b08a6810108
 specifier|static
 specifier|const
 struct|struct
@@ -4372,7 +4440,7 @@ operator|)
 block|}
 block|}
 struct|;
-DECL|struct|__anon2b683bf40208
+DECL|struct|__anon2b08a6810208
 specifier|static
 specifier|const
 struct|struct
@@ -4429,7 +4497,7 @@ name|edit_swap_path
 block|}
 block|,     }
 struct|;
-DECL|struct|__anon2b683bf40308
+DECL|struct|__anon2b08a6810308
 specifier|static
 specifier|const
 struct|struct
@@ -4508,7 +4576,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Select Palette Dir"
+literal|"Select Palettes Dir"
 argument_list|)
 block|,
 operator|&
@@ -4523,15 +4591,30 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Select Plug-in Dir"
+literal|"Select Plug-ins Dir"
 argument_list|)
 block|,
 operator|&
 name|edit_plug_in_path
 block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"Modules"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Select Modules Dir"
+argument_list|)
+block|,
+operator|&
+name|edit_module_path
+block|}
 block|}
 struct|;
-DECL|struct|__anon2b683bf40408
+DECL|struct|__anon2b08a6810408
 specifier|static
 specifier|const
 struct|struct
@@ -4740,6 +4823,13 @@ operator|=
 name|file_prefs_strdup
 argument_list|(
 name|plug_in_path
+argument_list|)
+expr_stmt|;
+name|edit_module_path
+operator|=
+name|file_prefs_strdup
+argument_list|(
+name|module_path
 argument_list|)
 expr_stmt|;
 name|edit_gradient_path
@@ -4955,6 +5045,14 @@ operator|&
 name|old_plug_in_path
 argument_list|,
 name|edit_plug_in_path
+argument_list|)
+expr_stmt|;
+name|file_prefs_strset
+argument_list|(
+operator|&
+name|old_module_path
+argument_list|,
+name|edit_module_path
 argument_list|)
 expr_stmt|;
 name|file_prefs_strset
