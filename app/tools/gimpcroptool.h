@@ -63,6 +63,25 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/*   tool options  */
+end_comment
+
+begin_typedef
+DECL|struct|__anon297e75230108
+typedef|typedef
+struct|struct
+block|{
+DECL|member|layer_only
+name|int
+name|layer_only
+decl_stmt|;
+DECL|typedef|CropToolOptions
+block|}
+name|CropToolOptions
+typedef|;
+end_typedef
+
+begin_comment
 comment|/*  Procedure definition and marshalling function  */
 end_comment
 
