@@ -791,6 +791,10 @@ if|if
 condition|(
 operator|!
 name|merge
+operator|&&
+name|paths
+operator|->
+name|next
 condition|)
 block|{
 name|gimp_image_add_vectors
@@ -2431,7 +2435,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2754578b0108
+DECL|struct|__anon27617ce70108
 block|{
 DECL|member|strokes
 name|GList
