@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimppropwidgets.h"
 end_include
 
@@ -71,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a39ce240103
+DECL|enum|__anon278223570103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -237,7 +243,7 @@ name|type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GIMP_TYPE_SELECTION_OPTIONS
+name|GIMP_TYPE_TOOL_OPTIONS
 argument_list|,
 literal|"GimpVectorOptions"
 argument_list|,
@@ -532,6 +538,10 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
+name|gchar
+modifier|*
+name|str
+decl_stmt|;
 name|config
 operator|=
 name|G_OBJECT
@@ -621,10 +631,46 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
+name|str
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Path to Selection\n"
+literal|"%s  Add\n"
+literal|"%s  Subtract\n"
+literal|"%s%s%s  Intersect"
+argument_list|)
+argument_list|,
+name|gimp_get_mod_name_shift
+argument_list|()
+argument_list|,
+name|gimp_get_mod_name_control
+argument_list|()
+argument_list|,
+name|gimp_get_mod_name_shift
+argument_list|()
+argument_list|,
+name|gimp_get_mod_separator
+argument_list|()
+argument_list|,
+name|gimp_get_mod_name_control
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gimp_button_new
+argument_list|()
+expr_stmt|;
+name|gtk_button_set_label
 argument_list|(
+name|GTK_BUTTON
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Create Selection from Path"
@@ -654,9 +700,23 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|button
+argument_list|,
+name|str
+argument_list|,
+name|GIMP_HELP_PATH_SELECTION_REPLACE
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|button
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str
 argument_list|)
 expr_stmt|;
 name|g_object_set_data
@@ -702,6 +762,15 @@ argument_list|(
 name|button
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|button
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_HELP_PATH_STROKE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
