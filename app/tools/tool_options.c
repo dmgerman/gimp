@@ -3032,10 +3032,23 @@ argument_list|(
 literal|"Smudge Options"
 argument_list|)
 else|:
+operator|(
+operator|(
+name|tool_type
+operator|==
+name|PIXMAPBRUSH
+operator|)
+condition|?
+name|_
+argument_list|(
+literal|"Pixmap Brush Ootions"
+argument_list|)
+else|:
 name|_
 argument_list|(
 literal|"ERROR: Unknown Paint Type"
 argument_list|)
+operator|)
 operator|)
 operator|)
 operator|)
@@ -3328,6 +3341,9 @@ name|CLONE
 case|:
 case|case
 name|INK
+case|:
+case|case
+name|PIXMAPBRUSH
 case|:
 name|gtk_table_set_row_spacing
 argument_list|(
