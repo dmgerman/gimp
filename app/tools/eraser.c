@@ -751,8 +751,10 @@ name|opacity
 operator|=
 literal|255
 operator|*
-name|paint_options_get_opacity
-argument_list|()
+name|gimp_context_get_opacity
+argument_list|(
+name|NULL
+argument_list|)
 operator|*
 operator|(
 name|paint_core
@@ -785,9 +787,9 @@ call|(
 name|int
 call|)
 argument_list|(
-name|PAINT_OPTIONS_GET_OPACITY
+name|gimp_context_get_opacity
 argument_list|(
-name|eraser_options
+name|NULL
 argument_list|)
 operator|*
 literal|255

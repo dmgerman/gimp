@@ -6431,7 +6431,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon28c965490103
+DECL|enum|__anon27ef02ea0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -7538,17 +7538,17 @@ call|(
 name|int
 call|)
 argument_list|(
-name|PAINT_OPTIONS_GET_OPACITY
+name|gimp_context_get_opacity
 argument_list|(
-name|ink_options
+name|NULL
 argument_list|)
 operator|*
 literal|255
 argument_list|)
 argument_list|,
-name|PAINT_OPTIONS_GET_PAINT_MODE
+name|gimp_context_get_paint_mode
 argument_list|(
-name|ink_options
+name|NULL
 argument_list|)
 argument_list|,
 name|undo_tiles

@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"context_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"convolve.h"
 end_include
 
@@ -1840,6 +1846,12 @@ name|ToolType
 name|type
 parameter_list|)
 block|{
+comment|/*  Care for switching to the tool's private context  */
+name|context_manager_set_tool
+argument_list|(
+name|type
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|active_tool

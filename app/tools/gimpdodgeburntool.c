@@ -1716,9 +1716,9 @@ name|temp_data
 expr_stmt|;
 name|brush_opacity
 operator|=
-name|PAINT_OPTIONS_GET_OPACITY
+name|gimp_context_get_opacity
 argument_list|(
-name|dodgeburn_options
+name|NULL
 argument_list|)
 expr_stmt|;
 name|exposure

@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplist.h"
 end_include
 
@@ -41,12 +47,6 @@ begin_include
 include|#
 directive|include
 file|"paint_funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_options.h"
 end_include
 
 begin_decl_stmt
@@ -663,8 +663,10 @@ name|value
 operator|.
 name|pdb_float
 operator|=
-name|paint_options_get_opacity
-argument_list|()
+name|gimp_context_get_opacity
+argument_list|(
+name|NULL
+argument_list|)
 operator|*
 literal|100.0
 expr_stmt|;
@@ -780,8 +782,10 @@ if|if
 condition|(
 name|success
 condition|)
-name|paint_options_set_opacity
+name|gimp_context_set_opacity
 argument_list|(
+name|NULL
+argument_list|,
 name|opacity
 operator|/
 literal|100.0
@@ -1121,8 +1125,10 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|paint_options_get_paint_mode
-argument_list|()
+name|gimp_context_get_paint_mode
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 return|return
 name|return_args
@@ -1236,8 +1242,10 @@ if|if
 condition|(
 name|success
 condition|)
-name|paint_options_set_paint_mode
+name|gimp_context_set_paint_mode
 argument_list|(
+name|NULL
+argument_list|,
 name|paint_mode
 argument_list|)
 expr_stmt|;

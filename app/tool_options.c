@@ -58,30 +58,6 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
-comment|/*  the global paint options  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|global_opacity
-specifier|static
-name|double
-name|global_opacity
-init|=
-literal|1.0
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|global_paint_mode
-specifier|static
-name|int
-name|global_paint_mode
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/*  a list of all PaintOptions  */
 end_comment
 
@@ -321,21 +297,13 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|double
-modifier|*
-name|val
-decl_stmt|;
-name|val
-operator|=
-operator|(
-name|double
-operator|*
-operator|)
+name|gimp_context_set_opacity
+argument_list|(
+name|GIMP_CONTEXT
+argument_list|(
 name|data
-expr_stmt|;
-operator|*
-name|val
-operator|=
+argument_list|)
+argument_list|,
 name|GTK_ADJUSTMENT
 argument_list|(
 name|widget
@@ -344,6 +312,55 @@ operator|->
 name|value
 operator|/
 literal|100
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|tool_options_paint_mode_update (GtkWidget * widget,gpointer data)
+name|tool_options_paint_mode_update
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
+name|context
+operator|=
+operator|(
+name|GimpContext
+operator|*
+operator|)
+name|gtk_object_get_user_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_context_set_paint_mode
+argument_list|(
+name|GIMP_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+operator|(
+name|long
+operator|)
+name|data
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -473,54 +490,6 @@ literal|"set_digits"
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|tool_options_paint_mode_update (GtkWidget * widget,gpointer data)
-name|tool_options_paint_mode_update
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|PaintOptions
-modifier|*
-name|options
-decl_stmt|;
-name|options
-operator|=
-operator|(
-name|PaintOptions
-operator|*
-operator|)
-name|gtk_object_get_user_data
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|options
-condition|)
-name|options
-operator|->
-name|paint_mode
-operator|=
-operator|(
-name|long
-operator|)
-name|data
-expr_stmt|;
 block|}
 end_function
 
@@ -872,16 +841,11 @@ name|label
 decl_stmt|;
 name|options
 operator|=
-operator|(
-name|ToolOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|ToolOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|tool_options_init
@@ -992,7 +956,7 @@ operator|==
 name|RECT_SELECT
 operator|)
 condition|?
-name|N_
+name|_
 argument_list|(
 literal|"Rectangular Select Options"
 argument_list|)
@@ -1004,7 +968,7 @@ operator|==
 name|ELLIPSE_SELECT
 operator|)
 condition|?
-name|N_
+name|_
 argument_list|(
 literal|"Elliptical Selection Options"
 argument_list|)
@@ -1016,7 +980,7 @@ operator|==
 name|FREE_SELECT
 operator|)
 condition|?
-name|N_
+name|_
 argument_list|(
 literal|"Free-hand Selection Options"
 argument_list|)
@@ -1028,7 +992,7 @@ operator|==
 name|FUZZY_SELECT
 operator|)
 condition|?
-name|N_
+name|_
 argument_list|(
 literal|"Fuzzy Selection Options"
 argument_list|)
@@ -1040,7 +1004,7 @@ operator|==
 name|BEZIER_SELECT
 operator|)
 condition|?
-name|N_
+name|_
 argument_list|(
 literal|"Bezier Selection Options"
 argument_list|)
@@ -1052,7 +1016,7 @@ operator|==
 name|ISCISSORS
 operator|)
 condition|?
-name|N_
+name|_
 argument_list|(
 literal|"Intelligent Scissors Options"
 argument_list|)
@@ -1064,12 +1028,12 @@ operator|==
 name|BY_COLOR_SELECT
 operator|)
 condition|?
-name|N_
+name|_
 argument_list|(
 literal|"By-Color Select Options"
 argument_list|)
 else|:
-name|N_
+name|_
 argument_list|(
 literal|"ERROR: Unknown Selection Type"
 argument_list|)
@@ -2591,16 +2555,11 @@ name|options
 decl_stmt|;
 name|options
 operator|=
-operator|(
-name|SelectionOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|SelectionOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|selection_options_init
@@ -2921,6 +2880,17 @@ name|GtkWidget
 modifier|*
 name|separator
 decl_stmt|;
+name|GimpContext
+modifier|*
+name|tool_context
+init|=
+name|tool_info
+index|[
+name|tool_type
+index|]
+operator|.
+name|tool_context
+decl_stmt|;
 comment|/*  initialize the tool options structure  */
 name|tool_options_init
 argument_list|(
@@ -2937,7 +2907,7 @@ operator|==
 name|BUCKET_FILL
 operator|)
 condition|?
-name|N_
+name|_
 argument_list|(
 literal|"Bucket Fill Options"
 argument_list|)
@@ -2949,7 +2919,7 @@ operator|==
 name|BLEND
 operator|)
 condition|?
-name|N_
+name|_
 argument_list|(
 literal|"Blend Options"
 argument_list|)
@@ -2961,7 +2931,7 @@ operator|==
 name|PENCIL
 operator|)
 condition|?
-name|N_
+name|_
 argument_list|(
 literal|"Pencil Options"
 argument_list|)
@@ -2973,7 +2943,7 @@ operator|==
 name|PAINTBRUSH
 operator|)
 condition|?
-name|N_
+name|_
 argument_list|(
 literal|"Paintbrush Options"
 argument_list|)
@@ -2985,7 +2955,7 @@ operator|==
 name|ERASER
 operator|)
 condition|?
-name|N_
+name|_
 argument_list|(
 literal|"Erazer Options"
 argument_list|)
@@ -2997,7 +2967,7 @@ operator|==
 name|AIRBRUSH
 operator|)
 condition|?
-name|N_
+name|_
 argument_list|(
 literal|"Airbrush Options"
 argument_list|)
@@ -3009,7 +2979,7 @@ operator|==
 name|CLONE
 operator|)
 condition|?
-name|N_
+name|_
 argument_list|(
 literal|"Clone Tool Options"
 argument_list|)
@@ -3021,7 +2991,7 @@ operator|==
 name|CONVOLVE
 operator|)
 condition|?
-name|N_
+name|_
 argument_list|(
 literal|"Convolver Options"
 argument_list|)
@@ -3033,7 +3003,7 @@ operator|==
 name|INK
 operator|)
 condition|?
-name|N_
+name|_
 argument_list|(
 literal|"Ink Options"
 argument_list|)
@@ -3045,7 +3015,7 @@ operator|==
 name|DODGEBURN
 operator|)
 condition|?
-name|N_
+name|_
 argument_list|(
 literal|"Dodge or Burn Options"
 argument_list|)
@@ -3057,12 +3027,12 @@ operator|==
 name|SMUDGE
 operator|)
 condition|?
-name|N_
+name|_
 argument_list|(
 literal|"Smudge Options"
 argument_list|)
 else|:
-name|N_
+name|_
 argument_list|(
 literal|"ERROR: Unknown Paint Type"
 argument_list|)
@@ -3082,26 +3052,6 @@ name|reset_func
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the paint options structure  */
-name|options
-operator|->
-name|opacity
-operator|=
-name|options
-operator|->
-name|opacity_d
-operator|=
-literal|1.0
-expr_stmt|;
-name|options
-operator|->
-name|paint_mode
-operator|=
-name|options
-operator|->
-name|paint_mode_d
-operator|=
-literal|0
-expr_stmt|;
 name|options
 operator|->
 name|global
@@ -3260,9 +3210,10 @@ name|opacity_w
 operator|=
 name|gtk_adjustment_new
 argument_list|(
-name|options
-operator|->
-name|opacity_d
+name|gimp_context_get_opacity
+argument_list|(
+name|tool_context
+argument_list|)
 operator|*
 literal|100
 argument_list|,
@@ -3293,10 +3244,7 @@ name|GtkSignalFunc
 operator|)
 name|tool_options_opacity_adjustment_update
 argument_list|,
-operator|&
-name|options
-operator|->
-name|opacity
+name|tool_context
 argument_list|)
 expr_stmt|;
 name|scale
@@ -3512,16 +3460,33 @@ operator|->
 name|paint_mode_w
 argument_list|)
 expr_stmt|;
+comment|/* eek */
+name|gtk_object_set_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|options
+operator|->
+name|paint_mode_w
+argument_list|)
+argument_list|,
+literal|"tool_context"
+argument_list|,
+name|tool_info
+index|[
+name|tool_type
+index|]
+operator|.
+name|tool_context
+argument_list|)
+expr_stmt|;
 name|menu
 operator|=
 name|paint_mode_menu_new
 argument_list|(
 name|tool_options_paint_mode_update
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|options
+name|tool_context
 argument_list|)
 expr_stmt|;
 name|gtk_option_menu_set_menu
@@ -3536,12 +3501,33 @@ argument_list|,
 name|menu
 argument_list|)
 expr_stmt|;
+name|gtk_option_menu_set_history
+argument_list|(
+name|GTK_OPTION_MENU
+argument_list|(
+name|options
+operator|->
+name|paint_mode_w
+argument_list|)
+argument_list|,
+name|gimp_context_get_paint_mode
+argument_list|(
+name|tool_context
+argument_list|)
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|CONVOLVE
 case|:
 case|case
 name|ERASER
+case|:
+case|case
+name|DODGEBURN
+case|:
+case|case
+name|SMUDGE
 case|:
 break|break;
 default|default:
@@ -3634,16 +3620,11 @@ name|label
 decl_stmt|;
 name|options
 operator|=
-operator|(
-name|PaintOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|PaintOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|paint_options_init
@@ -3752,6 +3733,15 @@ modifier|*
 name|options
 parameter_list|)
 block|{
+name|GimpContext
+modifier|*
+name|default_context
+decl_stmt|;
+name|default_context
+operator|=
+name|gimp_context_get_default
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|options
@@ -3768,9 +3758,10 @@ operator|->
 name|opacity_w
 argument_list|)
 argument_list|,
-name|options
-operator|->
-name|opacity_d
+name|gimp_context_get_opacity
+argument_list|(
+name|default_context
+argument_list|)
 operator|*
 literal|100
 argument_list|)
@@ -3783,13 +3774,40 @@ operator|->
 name|paint_mode_w
 condition|)
 block|{
-name|options
-operator|->
-name|paint_mode
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
+name|context
 operator|=
+operator|(
+name|GimpContext
+operator|*
+operator|)
+name|gtk_object_get_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
 name|options
 operator|->
-name|paint_mode_d
+name|paint_mode_w
+argument_list|)
+argument_list|,
+literal|"tool_context"
+argument_list|)
+expr_stmt|;
+name|gimp_context_set_paint_mode
+argument_list|(
+name|GIMP_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|gimp_context_get_paint_mode
+argument_list|(
+name|default_context
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_option_menu_set_history
 argument_list|(
@@ -3800,9 +3818,10 @@ operator|->
 name|paint_mode_w
 argument_list|)
 argument_list|,
-name|options
-operator|->
-name|paint_mode_d
+name|gimp_context_get_paint_mode
+argument_list|(
+name|default_context
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3973,66 +3992,6 @@ name|NULL
 argument_list|,
 name|global
 argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|double
-DECL|function|paint_options_get_opacity (void)
-name|paint_options_get_opacity
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|global_opacity
-return|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|paint_options_set_opacity (double opacity)
-name|paint_options_set_opacity
-parameter_list|(
-name|double
-name|opacity
-parameter_list|)
-block|{
-name|global_opacity
-operator|=
-name|opacity
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|int
-DECL|function|paint_options_get_paint_mode (void)
-name|paint_options_get_paint_mode
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|global_paint_mode
-return|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|paint_options_set_paint_mode (int paint_mode)
-name|paint_options_set_paint_mode
-parameter_list|(
-name|int
-name|paint_mode
-parameter_list|)
-block|{
-name|global_paint_mode
-operator|=
-name|paint_mode
 expr_stmt|;
 block|}
 end_function

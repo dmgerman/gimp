@@ -1707,9 +1707,9 @@ call|(
 name|int
 call|)
 argument_list|(
-name|PAINT_OPTIONS_GET_OPACITY
+name|gimp_context_get_opacity
 argument_list|(
-name|convolve_options
+name|NULL
 argument_list|)
 operator|*
 literal|255

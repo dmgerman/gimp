@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"context_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay_ops.h"
 end_include
 
@@ -55,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"layer_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_options.h"
 end_include
 
 begin_include
@@ -2809,7 +2809,7 @@ argument_list|,
 name|old_image_title_format
 argument_list|)
 expr_stmt|;
-name|paint_options_set_global
+name|context_manager_set_global_paint_options
 argument_list|(
 name|old_global_paint_options
 argument_list|)
@@ -3183,7 +3183,7 @@ operator|==
 operator|&
 name|global_paint_options
 condition|)
-name|paint_options_set_global
+name|context_manager_set_global_paint_options
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -9556,49 +9556,6 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-name|label
-operator|=
-name|gtk_label_new
-argument_list|(
-name|_
-argument_list|(
-literal|"(Switching this off does not yet work consistently.)"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_misc_set_alignment
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|label
-argument_list|)
-argument_list|,
-literal|1.0
-argument_list|,
-literal|0.5
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox2
-argument_list|)
-argument_list|,
-name|label
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
 comment|/* Indicators */
 name|vbox2
 operator|=
@@ -12047,7 +12004,7 @@ name|page_index
 operator|++
 expr_stmt|;
 block|{
-DECL|struct|__anon287a3ad80108
+DECL|struct|__anon27ed6c220108
 specifier|static
 specifier|const
 struct|struct
@@ -12272,7 +12229,7 @@ block|}
 block|}
 comment|/* Directories /<paths> */
 block|{
-DECL|struct|__anon287a3ad80208
+DECL|struct|__anon27ed6c220208
 specifier|static
 specifier|const
 struct|struct

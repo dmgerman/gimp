@@ -889,6 +889,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  bucket fill action functions  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -1126,9 +1130,9 @@ argument_list|,
 operator|(
 name|gint32
 operator|)
-name|PAINT_OPTIONS_GET_PAINT_MODE
+name|gimp_context_get_paint_mode
 argument_list|(
-name|bucket_options
+name|NULL
 argument_list|)
 argument_list|,
 name|PDB_FLOAT
@@ -1136,9 +1140,9 @@ argument_list|,
 operator|(
 name|gdouble
 operator|)
-name|PAINT_OPTIONS_GET_OPACITY
+name|gimp_context_get_opacity
 argument_list|(
-name|bucket_options
+name|NULL
 argument_list|)
 operator|*
 literal|100

@@ -422,7 +422,6 @@ if|if
 condition|(
 name|gimage
 condition|)
-block|{
 name|lc_dialog_update
 argument_list|(
 name|gimage
@@ -431,13 +430,6 @@ expr_stmt|;
 name|lc_dialog_update_image_list
 argument_list|()
 expr_stmt|;
-block|}
-else|else
-block|{
-name|lc_dialog_update_image_list
-argument_list|()
-expr_stmt|;
-block|}
 return|return;
 block|}
 name|lc_dialog
@@ -768,7 +760,7 @@ argument_list|(
 name|auto_button
 argument_list|)
 expr_stmt|;
-comment|/*  State will be set, when the sub-dialogs exists (see below)  */
+comment|/*  State will be set when the sub-dialogs exists (see below)  */
 name|gtk_widget_show
 argument_list|(
 name|util_box
@@ -1706,7 +1698,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d7e79a0108
+DECL|struct|__anon29622de60108
 block|{
 DECL|member|def
 name|GImage

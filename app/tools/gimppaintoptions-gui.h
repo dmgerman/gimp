@@ -25,12 +25,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools.h"
 end_include
 
@@ -39,34 +33,6 @@ include|#
 directive|include
 file|"tool_options.h"
 end_include
-
-begin_comment
-comment|/*  these macros return the global or tool-specific values, according  *  to the current mode  */
-end_comment
-
-begin_define
-DECL|macro|PAINT_OPTIONS_GET_OPACITY (options)
-define|#
-directive|define
-name|PAINT_OPTIONS_GET_OPACITY
-parameter_list|(
-name|options
-parameter_list|)
-define|\
-value|(global_paint_options ? \ 				  paint_options_get_opacity () : \ 				  ((PaintOptions *)(options))->opacity)
-end_define
-
-begin_define
-DECL|macro|PAINT_OPTIONS_GET_PAINT_MODE (options)
-define|#
-directive|define
-name|PAINT_OPTIONS_GET_PAINT_MODE
-parameter_list|(
-name|options
-parameter_list|)
-define|\
-value|(global_paint_options ? \ 				     paint_options_get_paint_mode () : \ 				     ((PaintOptions *)(options))->paint_mode)
-end_define
 
 begin_comment
 comment|/*  the paint options structures  */
@@ -103,26 +69,10 @@ modifier|*
 name|global
 decl_stmt|;
 comment|/*  options used by all paint tools  */
-DECL|member|opacity
-name|double
-name|opacity
-decl_stmt|;
-DECL|member|opacity_d
-name|double
-name|opacity_d
-decl_stmt|;
 DECL|member|opacity_w
 name|GtkObject
 modifier|*
 name|opacity_w
-decl_stmt|;
-DECL|member|paint_mode
-name|int
-name|paint_mode
-decl_stmt|;
-DECL|member|paint_mode_d
-name|int
-name|paint_mode_d
 decl_stmt|;
 DECL|member|paint_mode_w
 name|GtkWidget
@@ -197,48 +147,6 @@ name|paint_options_set_global
 parameter_list|(
 name|gboolean
 name|global
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/*  global paint options access functions  */
-end_comment
-
-begin_function_decl
-name|double
-name|paint_options_get_opacity
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|paint_options_set_opacity
-parameter_list|(
-name|double
-name|opacity
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|int
-name|paint_options_get_paint_mode
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|paint_options_set_paint_mode
-parameter_list|(
-name|int
-name|paint_mode
 parameter_list|)
 function_decl|;
 end_function_decl
