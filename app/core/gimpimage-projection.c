@@ -455,7 +455,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b2a37720103
+DECL|enum|__anon2bf24c570103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -10472,6 +10472,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|gdisplays_flush
+argument_list|()
+expr_stmt|;
 return|return
 name|NULL
 return|;
