@@ -42,17 +42,6 @@ value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_TOOL_INFO, GimpToolInfo))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_TOOL_INFO (obj)
-define|#
-directive|define
-name|GIMP_IS_TOOL_INFO
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_TOOL_INFO))
-end_define
-
-begin_define
 DECL|macro|GIMP_TOOL_INFO_CLASS (klass)
 define|#
 directive|define
@@ -64,6 +53,17 @@ value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_TOOL_INFO, GimpToolInfoClass)
 end_define
 
 begin_define
+DECL|macro|GIMP_IS_TOOL_INFO (obj)
+define|#
+directive|define
+name|GIMP_IS_TOOL_INFO
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_TOOL_INFO))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_TOOL_INFO_CLASS (klass)
 define|#
 directive|define
@@ -72,6 +72,17 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_TOOL_INFO))
+end_define
+
+begin_define
+DECL|macro|GIMP_TOOL_INFO_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_TOOL_INFO_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_TOOL_INFO, GimpToolInfoClass))
 end_define
 
 begin_typedef
@@ -93,7 +104,7 @@ name|GimpData
 name|parent_instance
 decl_stmt|;
 DECL|member|tool_type
-name|GtkType
+name|GType
 name|tool_type
 decl_stmt|;
 DECL|member|blurb
@@ -170,7 +181,7 @@ struct|;
 end_struct
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_tool_info_get_type
 parameter_list|(
 name|void
@@ -187,7 +198,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|,
 name|gboolean

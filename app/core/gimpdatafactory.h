@@ -219,7 +219,7 @@ struct|;
 end_struct
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_data_factory_get_type
 parameter_list|(
 name|void
@@ -232,7 +232,7 @@ name|GimpDataFactory
 modifier|*
 name|gimp_data_factory_new
 parameter_list|(
-name|GtkType
+name|GType
 name|data_type
 parameter_list|,
 specifier|const

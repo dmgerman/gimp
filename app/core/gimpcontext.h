@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb870740103
+DECL|enum|__anon2c5be4eb0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_ARG_IMAGE
 name|GIMP_CONTEXT_ARG_IMAGE
@@ -74,7 +74,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb870740203
+DECL|enum|__anon2c5be4eb0203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -252,6 +252,17 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONTEXT))
+end_define
+
+begin_define
+DECL|macro|GIMP_CONTEXT_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_CONTEXT_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS (obj, GIMP_TYPE_CONTEXT, GimpContextClass))
 end_define
 
 begin_typedef

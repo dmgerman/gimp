@@ -74,6 +74,17 @@ parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_UNDO))
 end_define
 
+begin_define
+DECL|macro|GIMP_UNDO_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_UNDO_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_UNDO, GimpUndoClass))
+end_define
+
 begin_typedef
 DECL|typedef|GimpUndoPopFunc
 typedef|typedef

@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8d47950103
+DECL|enum|__anon2992fac70103
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -650,7 +650,7 @@ comment|/* function declarations */
 end_comment
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_image_get_type
 parameter_list|(
 name|void

@@ -74,6 +74,17 @@ parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_LAYER_MASK))
 end_define
 
+begin_define
+DECL|macro|GIMP_LAYER_MASK_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_LAYER_MASK_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_LAYER_MASK, GimpLayerMaskClass))
+end_define
+
 begin_typedef
 DECL|typedef|GimpLayerMaskClass
 typedef|typedef
@@ -200,7 +211,7 @@ comment|/*  function declarations  */
 end_comment
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_layer_mask_get_type
 parameter_list|(
 name|void

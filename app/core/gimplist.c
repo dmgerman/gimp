@@ -64,9 +64,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_list_destroy
+name|gimp_list_dispose
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -129,10 +129,12 @@ specifier|static
 name|gboolean
 name|gimp_list_have
 parameter_list|(
+specifier|const
 name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
+specifier|const
 name|GimpObject
 modifier|*
 name|object
@@ -145,6 +147,7 @@ specifier|static
 name|void
 name|gimp_list_foreach
 parameter_list|(
+specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -164,10 +167,12 @@ name|GimpObject
 modifier|*
 name|gimp_list_get_child_by_name
 parameter_list|(
+specifier|const
 name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -181,6 +186,7 @@ name|GimpObject
 modifier|*
 name|gimp_list_get_child_by_index
 parameter_list|(
+specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -196,10 +202,12 @@ specifier|static
 name|gint
 name|gimp_list_get_child_index
 parameter_list|(
+specifier|const
 name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
+specifier|const
 name|GimpObject
 modifier|*
 name|object
@@ -238,52 +246,64 @@ operator|!
 name|list_type
 condition|)
 block|{
-name|GtkTypeInfo
+specifier|static
+specifier|const
+name|GTypeInfo
 name|list_info
 init|=
 block|{
-literal|"GimpList"
-block|,
-sizeof|sizeof
-argument_list|(
-name|GimpList
-argument_list|)
-block|,
 sizeof|sizeof
 argument_list|(
 name|GimpListClass
 argument_list|)
 block|,
 operator|(
-name|GtkClassInitFunc
+name|GBaseInitFunc
+operator|)
+name|NULL
+block|,
+operator|(
+name|GBaseFinalizeFunc
+operator|)
+name|NULL
+block|,
+operator|(
+name|GClassInitFunc
 operator|)
 name|gimp_list_class_init
 block|,
+name|NULL
+block|,
+comment|/* class_finalize */
+name|NULL
+block|,
+comment|/* class_data     */
+sizeof|sizeof
+argument_list|(
+name|GimpList
+argument_list|)
+block|,
+literal|0
+block|,
+comment|/* n_preallocs    */
 operator|(
-name|GtkObjectInitFunc
+name|GInstanceInitFunc
 operator|)
 name|gimp_list_init
-block|,
-comment|/* reserved_1 */
-name|NULL
-block|,
-comment|/* reserved_2 */
-name|NULL
-block|,
-operator|(
-name|GtkClassInitFunc
-operator|)
-name|NULL
-block|}
+block|,       }
 decl_stmt|;
 name|list_type
 operator|=
-name|gtk_type_unique
+name|g_type_register_static
 argument_list|(
 name|GIMP_TYPE_CONTAINER
 argument_list|,
+literal|"GimpList"
+argument_list|,
 operator|&
 name|list_info
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -304,7 +324,7 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GtkObjectClass
+name|GObjectClass
 modifier|*
 name|object_class
 decl_stmt|;
@@ -314,19 +334,17 @@ name|container_class
 decl_stmt|;
 name|object_class
 operator|=
-operator|(
-name|GtkObjectClass
-operator|*
-operator|)
+name|G_OBJECT_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|container_class
 operator|=
-operator|(
-name|GimpContainerClass
-operator|*
-operator|)
+name|GIMP_CONTAINER_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|parent_class
 operator|=
@@ -337,9 +355,9 @@ argument_list|)
 expr_stmt|;
 name|object_class
 operator|->
-name|destroy
+name|dispose
 operator|=
-name|gimp_list_destroy
+name|gimp_list_dispose
 expr_stmt|;
 name|container_class
 operator|->
@@ -415,10 +433,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_list_destroy (GtkObject * object)
-name|gimp_list_destroy
+DECL|function|gimp_list_dispose (GObject * object)
+name|gimp_list_dispose
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -459,21 +477,12 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|GTK_OBJECT_CLASS
+name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|destroy
-condition|)
-name|GTK_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|destroy
+name|dispose
 argument_list|(
 name|object
 argument_list|)
@@ -657,13 +666,15 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_list_have (GimpContainer * container,GimpObject * object)
+DECL|function|gimp_list_have (const GimpContainer * container,const GimpObject * object)
 name|gimp_list_have
 parameter_list|(
+specifier|const
 name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
+specifier|const
 name|GimpObject
 modifier|*
 name|object
@@ -700,9 +711,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_list_foreach (GimpContainer * container,GFunc func,gpointer user_data)
+DECL|function|gimp_list_foreach (const GimpContainer * container,GFunc func,gpointer user_data)
 name|gimp_list_foreach
 parameter_list|(
+specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -758,7 +770,7 @@ name|list
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|gtk_type_is_a
+name|g_type_is_a
 argument_list|(
 name|children_type
 argument_list|,
@@ -821,13 +833,15 @@ begin_function
 specifier|static
 name|GimpObject
 modifier|*
-DECL|function|gimp_list_get_child_by_name (GimpContainer * container,gchar * name)
+DECL|function|gimp_list_get_child_by_name (const GimpContainer * container,const gchar * name)
 name|gimp_list_get_child_by_name
 parameter_list|(
+specifier|const
 name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -906,9 +920,10 @@ begin_function
 specifier|static
 name|GimpObject
 modifier|*
-DECL|function|gimp_list_get_child_by_index (GimpContainer * container,gint index)
+DECL|function|gimp_list_get_child_by_index (const GimpContainer * container,gint index)
 name|gimp_list_get_child_by_index
 parameter_list|(
+specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -965,13 +980,15 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|gimp_list_get_child_index (GimpContainer * container,GimpObject * object)
+DECL|function|gimp_list_get_child_index (const GimpContainer * container,const GimpObject * object)
 name|gimp_list_get_child_index
 parameter_list|(
+specifier|const
 name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
+specifier|const
 name|GimpObject
 modifier|*
 name|object

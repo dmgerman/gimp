@@ -42,6 +42,17 @@ value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PARASITE_LIST, GimpParasiteL
 end_define
 
 begin_define
+DECL|macro|GIMP_PARASITE_LIST_CLASS (klass)
+define|#
+directive|define
+name|GIMP_PARASITE_LIST_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PARASITE_LIST, GimpParasiteListClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_PARASITE_LIST (obj)
 define|#
 directive|define
@@ -53,14 +64,25 @@ value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_PARASITE_LIST))
 end_define
 
 begin_define
-DECL|macro|PARASITE_LIST_CLASS (class)
+DECL|macro|GIMP_IS_PARASITE_LIST_CLASS (klass)
 define|#
 directive|define
-name|PARASITE_LIST_CLASS
+name|GIMP_IS_PARASITE_LIST_CLASS
 parameter_list|(
-name|class
+name|klass
 parameter_list|)
-value|GIMP_CHECK_CLASS_CAST (class, GIMP_TYPE_PARASITE_LIST, GimpParasiteListClass)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PARASITE_LIST))
+end_define
+
+begin_define
+DECL|macro|GIMP_PARASITE_LIST_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_PARASITE_LIST_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PARASITE_LIST, GimpParasiteListClass))
 end_define
 
 begin_typedef

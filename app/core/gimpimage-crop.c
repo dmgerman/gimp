@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2abb4d880103
+DECL|enum|__anon2b29d6bf0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -128,7 +128,7 @@ modifier|*
 name|GetColorFunc
 function_decl|)
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|crop_object
 parameter_list|,
@@ -192,7 +192,7 @@ specifier|static
 name|AutoCropType
 name|gimp_image_crop_guess_bgcolor
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|get_color_obj
 parameter_list|,
@@ -948,7 +948,7 @@ decl_stmt|;
 name|ColorsEqualFunc
 name|colors_equal_func
 decl_stmt|;
-name|GtkObject
+name|GObject
 modifier|*
 name|get_color_obj
 decl_stmt|;
@@ -1105,7 +1105,7 @@ argument_list|)
 expr_stmt|;
 name|get_color_obj
 operator|=
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|active_drawable
 argument_list|)
@@ -1133,7 +1133,7 @@ argument_list|)
 expr_stmt|;
 name|get_color_obj
 operator|=
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gimage
 argument_list|)
@@ -1846,10 +1846,10 @@ end_function
 begin_function
 specifier|static
 name|AutoCropType
-DECL|function|gimp_image_crop_guess_bgcolor (GtkObject * get_color_obj,GetColorFunc get_color_func,gint bytes,gboolean has_alpha,guchar * color,gint x1,gint x2,gint y1,gint y2)
+DECL|function|gimp_image_crop_guess_bgcolor (GObject * get_color_obj,GetColorFunc get_color_func,gint bytes,gboolean has_alpha,guchar * color,gint x1,gint x2,gint y1,gint y2)
 name|gimp_image_crop_guess_bgcolor
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|get_color_obj
 parameter_list|,
