@@ -255,7 +255,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0ad6a10103
+DECL|enum|__anon2b14c5da0103
 block|{
 DECL|enumerator|EXIT
 name|EXIT
@@ -2201,7 +2201,7 @@ end_function
 begin_function
 name|Gimp
 modifier|*
-DECL|function|gimp_new (gboolean be_verbose,gboolean no_data,gboolean no_interface,gboolean use_shm,GimpStackTraceMode stack_trace_mode)
+DECL|function|gimp_new (gboolean be_verbose,gboolean no_data,gboolean no_interface,gboolean use_shm,gboolean console_messages,GimpStackTraceMode stack_trace_mode)
 name|gimp_new
 parameter_list|(
 name|gboolean
@@ -2215,6 +2215,9 @@ name|no_interface
 parameter_list|,
 name|gboolean
 name|use_shm
+parameter_list|,
+name|gboolean
+name|console_messages
 parameter_list|,
 name|GimpStackTraceMode
 name|stack_trace_mode
@@ -2268,6 +2271,16 @@ operator|->
 name|use_shm
 operator|=
 name|use_shm
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+name|gimp
+operator|->
+name|console_messages
+operator|=
+name|console_messages
 condition|?
 name|TRUE
 else|:
@@ -3754,6 +3767,14 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp
+operator|->
+name|console_messages
+condition|)
+block|{
 switch|switch
 condition|(
 name|gimp
@@ -3790,6 +3811,7 @@ block|}
 break|break;
 default|default:
 break|break;
+block|}
 block|}
 name|g_printerr
 argument_list|(

@@ -296,6 +296,11 @@ init|=
 name|TRUE
 decl_stmt|;
 name|gboolean
+name|console_messages
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
 name|restore_session
 init|=
 name|FALSE
@@ -1605,6 +1610,8 @@ argument_list|,
 name|use_shm
 argument_list|,
 name|use_mmx
+argument_list|,
+name|console_messages
 argument_list|,
 name|restore_session
 argument_list|)

@@ -139,6 +139,9 @@ name|gboolean
 name|use_mmx
 parameter_list|,
 name|gboolean
+name|console_messages
+parameter_list|,
+name|gboolean
 name|restore_session
 parameter_list|)
 function_decl|;

@@ -233,6 +233,10 @@ DECL|member|message_handler
 name|GimpMessageHandlerType
 name|message_handler
 decl_stmt|;
+DECL|member|console_messages
+name|gboolean
+name|console_messages
+decl_stmt|;
 DECL|member|stack_trace_mode
 name|GimpStackTraceMode
 name|stack_trace_mode
@@ -566,6 +570,9 @@ name|no_interface
 parameter_list|,
 name|gboolean
 name|use_shm
+parameter_list|,
+name|gboolean
+name|console_messages
 parameter_list|,
 name|GimpStackTraceMode
 name|stack_trace_mode

@@ -46,13 +46,6 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gboolean
-name|console_messages
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
 name|GimpStackTraceMode
 name|stack_trace_mode
 decl_stmt|;

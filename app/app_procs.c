@@ -279,15 +279,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|console_messages
-name|gboolean
-name|console_messages
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|stack_trace_mode
 name|GimpStackTraceMode
 name|stack_trace_mode
@@ -348,7 +339,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|app_init (gint gimp_argc,gchar ** gimp_argv,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,const gchar ** batch_cmds,gboolean no_interface,gboolean no_data,gboolean no_splash,gboolean no_splash_image,gboolean be_verbose,gboolean use_shm,gboolean use_mmx,gboolean restore_session)
+DECL|function|app_init (gint gimp_argc,gchar ** gimp_argv,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,const gchar ** batch_cmds,gboolean no_interface,gboolean no_data,gboolean no_splash,gboolean no_splash_image,gboolean be_verbose,gboolean use_shm,gboolean use_mmx,gboolean console_messages,gboolean restore_session)
 name|app_init
 parameter_list|(
 name|gint
@@ -397,6 +388,9 @@ name|gboolean
 name|use_mmx
 parameter_list|,
 name|gboolean
+name|console_messages
+parameter_list|,
+name|gboolean
 name|restore_session
 parameter_list|)
 block|{
@@ -439,6 +433,8 @@ argument_list|,
 name|no_interface
 argument_list|,
 name|use_shm
+argument_list|,
+name|console_messages
 argument_list|,
 name|stack_trace_mode
 argument_list|)
