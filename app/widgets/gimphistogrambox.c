@@ -94,7 +94,7 @@ DECL|macro|HISTOGRAM_EVENT_MASK
 define|#
 directive|define
 name|HISTOGRAM_EVENT_MASK
-value|(GDK_BUTTON_PRESS_MASK   | \ 			    GDK_BUTTON_RELEASE_MASK | \ 			    GDK_BUTTON_MOTION_MASK)
+value|(GDK_BUTTON_PRESS_MASK   | \                                GDK_BUTTON_RELEASE_MASK | \                                GDK_BUTTON_MOTION_MASK)
 end_define
 
 begin_comment
@@ -828,40 +828,6 @@ argument_list|,
 name|box
 argument_list|)
 expr_stmt|;
-name|box
-operator|->
-name|label
-operator|=
-name|gtk_label_new
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-name|box
-operator|->
-name|label
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|box
-operator|->
-name|label
-argument_list|)
-expr_stmt|;
 comment|/*  high spinbutton  */
 name|spinbutton
 operator|=
@@ -1344,42 +1310,21 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_histogram_box_new (const gchar * label)
+DECL|function|gimp_histogram_box_new (void)
 name|gimp_histogram_box_new
 parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|label
+name|void
 parameter_list|)
 block|{
-name|GimpHistogramBox
-modifier|*
-name|box
-init|=
+return|return
+name|GTK_WIDGET
+argument_list|(
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_HISTOGRAM_BOX
 argument_list|,
 name|NULL
 argument_list|)
-decl_stmt|;
-name|gtk_label_set_text
-argument_list|(
-name|GTK_LABEL
-argument_list|(
-name|box
-operator|->
-name|label
-argument_list|)
-argument_list|,
-name|label
-argument_list|)
-expr_stmt|;
-return|return
-name|GTK_WIDGET
-argument_list|(
-name|box
 argument_list|)
 return|;
 block|}

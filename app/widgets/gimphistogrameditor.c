@@ -513,12 +513,7 @@ operator|->
 name|box
 operator|=
 name|gimp_histogram_box_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Intensity Range:"
-argument_list|)
-argument_list|)
+argument_list|()
 expr_stmt|;
 name|editor
 operator|->

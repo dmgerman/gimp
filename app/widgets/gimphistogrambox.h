@@ -97,11 +97,6 @@ DECL|member|parent_instance
 name|GtkVBox
 name|parent_instance
 decl_stmt|;
-DECL|member|label
-name|GtkWidget
-modifier|*
-name|label
-decl_stmt|;
 DECL|member|slider_area
 name|GtkWidget
 modifier|*
@@ -173,10 +168,7 @@ name|GtkWidget
 modifier|*
 name|gimp_histogram_box_new
 parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|label
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
