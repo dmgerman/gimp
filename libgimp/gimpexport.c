@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad2ff4d0108
+DECL|struct|__anon2c58e49d0108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -2038,7 +2038,7 @@ expr_stmt|;
 else|else
 name|dialog_return
 operator|=
-name|EXPORT_EXPORT
+name|EXPORT_IGNORE
 expr_stmt|;
 if|if
 condition|(
