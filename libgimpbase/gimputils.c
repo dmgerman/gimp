@@ -357,6 +357,10 @@ operator|*
 literal|10
 condition|)
 block|{
+name|memsize
+operator|/=
+literal|1024
+expr_stmt|;
 return|return
 name|g_strdup_printf
 argument_list|(
@@ -371,13 +375,15 @@ operator|)
 name|memsize
 operator|/
 literal|1024.0
-operator|/
-literal|1024.0
 argument_list|)
 return|;
 block|}
 else|else
 block|{
+name|memsize
+operator|/=
+literal|1024
+expr_stmt|;
 return|return
 name|g_strdup_printf
 argument_list|(
@@ -390,8 +396,6 @@ operator|(
 name|gdouble
 operator|)
 name|memsize
-operator|/
-literal|1024.0
 operator|/
 literal|1024.0
 argument_list|)
