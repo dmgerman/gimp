@@ -228,7 +228,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c758a50103
+DECL|enum|__anon287ef78e0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -12571,12 +12571,6 @@ name|gint
 name|position
 parameter_list|)
 block|{
-if|#
-directive|if
-literal|0
-block|VectorsUndo *vu;
-endif|#
-directive|endif
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -12629,13 +12623,20 @@ return|return
 name|FALSE
 return|;
 block|}
-if|#
-directive|if
+name|undo_push_vectors_add
+argument_list|(
+name|gimage
+argument_list|,
+name|vectors
+argument_list|,
 literal|0
-comment|/*  Push a vectors undo  */
-block|vu = g_new (VectorsUndo, 1);   vu->vectors       = vectors;   vu->prev_position = 0;   vu->prev_vectors  = gimp_image_get_active_vectors (gimage);   undo_push_vectors (gimage, VECTORS_ADD_UNDO, vu);
-endif|#
-directive|endif
+argument_list|,
+name|gimp_image_get_active_vectors
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  add the vectors to the list  */
 name|gimp_container_add
 argument_list|(
@@ -12685,12 +12686,6 @@ modifier|*
 name|vectors
 parameter_list|)
 block|{
-if|#
-directive|if
-literal|0
-block|VectorsUndo *vu;
-endif|#
-directive|endif
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -12722,13 +12717,30 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-comment|/*  Prepare a channel undo--push it below  */
-block|vu = g_new (VectorsUndo, 1);   vu->vectors       = vectors;   vu->prev_position = gimp_container_get_child_index (gimage->vectors, 						      GIMP_OBJECT (vectors));   vu->prev_vectors  = gimp_image_get_active_vectors (gimage);   undo_push_vectors (gimage, VECTORS_REMOVE_UNDO, vu);
-endif|#
-directive|endif
+name|undo_push_vectors_remove
+argument_list|(
+name|gimage
+argument_list|,
+name|vectors
+argument_list|,
+name|gimp_container_get_child_index
+argument_list|(
+name|gimage
+operator|->
+name|vectors
+argument_list|,
+name|GIMP_OBJECT
+argument_list|(
+name|vectors
+argument_list|)
+argument_list|)
+argument_list|,
+name|gimp_image_get_active_vectors
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_object_ref
 argument_list|(
 name|G_OBJECT
@@ -13007,7 +13019,6 @@ name|new_index
 parameter_list|,
 name|gboolean
 name|push_undo
-comment|/* FIXME unused */
 parameter_list|)
 block|{
 name|gint
@@ -13090,6 +13101,17 @@ condition|)
 return|return
 name|TRUE
 return|;
+if|if
+condition|(
+name|push_undo
+condition|)
+name|undo_push_vectors_reposition
+argument_list|(
+name|gimage
+argument_list|,
+name|vectors
+argument_list|)
+expr_stmt|;
 name|gimp_container_reorder
 argument_list|(
 name|gimage

@@ -23,7 +23,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274bd9d90103
+DECL|enum|__anon279529920103
 block|{
 DECL|enumerator|IMAGE_UNDO
 name|IMAGE_UNDO
@@ -88,6 +88,18 @@ name|CHANNEL_MOD_UNDO
 block|,
 DECL|enumerator|CHANNEL_REPOSITION_UNDO
 name|CHANNEL_REPOSITION_UNDO
+block|,
+DECL|enumerator|VECTORS_ADD_UNDO
+name|VECTORS_ADD_UNDO
+block|,
+DECL|enumerator|VECTORS_REMOVE_UNDO
+name|VECTORS_REMOVE_UNDO
+block|,
+DECL|enumerator|VECTORS_MOD_UNDO
+name|VECTORS_MOD_UNDO
+block|,
+DECL|enumerator|VECTORS_REPOSITION_UNDO
+name|VECTORS_REPOSITION_UNDO
 block|,
 DECL|enumerator|FS_TO_LAYER_UNDO
 name|FS_TO_LAYER_UNDO
