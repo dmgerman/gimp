@@ -30523,7 +30523,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb6e8e00108
+DECL|struct|__anon2afc30bf0108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -30574,7 +30574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb6e8e00208
+DECL|struct|__anon2afc30bf0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -35247,16 +35247,12 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gtk_widget_show
+name|gtk_window_present
+argument_list|(
+name|GTK_WINDOW
 argument_list|(
 name|logodlg
 argument_list|)
-expr_stmt|;
-name|gdk_window_raise
-argument_list|(
-name|logodlg
-operator|->
-name|window
 argument_list|)
 expr_stmt|;
 block|}

@@ -689,11 +689,14 @@ condition|(
 name|query_box
 condition|)
 block|{
-name|gdk_window_raise
+name|gtk_window_present
+argument_list|(
+name|GTK_WINDOW
 argument_list|(
 name|query_box
 operator|->
 name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

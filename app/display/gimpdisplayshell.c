@@ -288,7 +288,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2cd45d0103
+DECL|enum|__anon27a4e9db0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -11356,13 +11356,14 @@ operator|->
 name|warning_dialog
 condition|)
 block|{
-name|gdk_window_raise
+name|gtk_window_present
+argument_list|(
+name|GTK_WINDOW
 argument_list|(
 name|shell
 operator|->
 name|warning_dialog
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

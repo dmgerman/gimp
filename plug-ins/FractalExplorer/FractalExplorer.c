@@ -6119,11 +6119,12 @@ condition|(
 name|dlg
 condition|)
 block|{
-name|gdk_window_raise
+name|gtk_window_present
+argument_list|(
+name|GTK_WINDOW
 argument_list|(
 name|dlg
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
