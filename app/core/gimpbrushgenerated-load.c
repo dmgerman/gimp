@@ -102,7 +102,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3008c00103
+DECL|enum|__anon2bc181b80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1890,7 +1890,7 @@ operator|->
 name|hardness
 operator|)
 operator|<
-literal|0.000001
+literal|0.0000004
 condition|)
 name|exponent
 operator|=
@@ -1899,7 +1899,7 @@ expr_stmt|;
 else|else
 name|exponent
 operator|=
-literal|1.0
+literal|0.4
 operator|/
 operator|(
 literal|1.0
