@@ -7350,7 +7350,7 @@ literal|0
 operator|||
 name|req_width
 operator|>
-literal|256
+literal|512
 condition|)
 name|success
 operator|=
@@ -7375,7 +7375,7 @@ literal|0
 operator|||
 name|req_height
 operator|>
-literal|256
+literal|512
 condition|)
 name|success
 operator|=
@@ -7750,7 +7750,7 @@ literal|"gimp_drawable_thumbnail"
 block|,
 literal|"Get a thumbnail of a drawable."
 block|,
-literal|"This function gets data from which a thumbnail of a drawable preview can be created. Maximum x or y dimension is 256 pixels. The pixels are returned in the RGB[A] format. The bpp return value gives the number of bytes in the image. The alpha channel is also returned if the drawable has one."
+literal|"This function gets data from which a thumbnail of a drawable preview can be created. Maximum x or y dimension is 512 pixels. The pixels are returned in the RGB[A] format. The bpp return value gives the number of bytes in the image. The alpha channel is also returned if the drawable has one."
 block|,
 literal|"Andy Thomas"
 block|,
