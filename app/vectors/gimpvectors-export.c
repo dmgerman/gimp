@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -379,6 +385,19 @@ modifier|*
 name|file
 parameter_list|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|name
+init|=
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|vectors
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|gchar
 modifier|*
 name|data
@@ -388,14 +407,38 @@ argument_list|(
 name|vectors
 argument_list|)
 decl_stmt|;
+name|gchar
+modifier|*
+name|esc_name
+decl_stmt|;
+name|esc_name
+operator|=
+name|g_markup_escape_text
+argument_list|(
+name|name
+argument_list|,
+name|strlen
+argument_list|(
+name|name
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"<path fill=\"none\" stroke=\"black\" stroke-width=\"1\"\n"
+literal|"<path id=\"%s\"\n"
+literal|"        fill=\"none\" stroke=\"black\" stroke-width=\"1\"\n"
 literal|"        d=\"%s\"/>\n"
 argument_list|,
+name|esc_name
+argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|esc_name
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -427,11 +470,6 @@ name|GList
 modifier|*
 name|strokes
 decl_stmt|;
-name|gboolean
-name|first_stroke
-init|=
-name|TRUE
-decl_stmt|;
 name|gchar
 name|x_string
 index|[
@@ -443,6 +481,11 @@ name|y_string
 index|[
 name|G_ASCII_DTOSTR_BUF_SIZE
 index|]
+decl_stmt|;
+name|gboolean
+name|closed
+init|=
+name|FALSE
 decl_stmt|;
 name|str
 operator|=
@@ -484,12 +527,20 @@ name|GimpAnchor
 modifier|*
 name|anchor
 decl_stmt|;
-name|gboolean
-name|closed
-decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+if|if
+condition|(
+name|closed
+condition|)
+name|g_string_append_printf
+argument_list|(
+name|str
+argument_list|,
+literal|"\n           "
+argument_list|)
+expr_stmt|;
 name|control_points
 operator|=
 name|gimp_stroke_control_points_get
@@ -499,22 +550,6 @@ argument_list|,
 operator|&
 name|closed
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|first_stroke
-condition|)
-name|g_string_append_printf
-argument_list|(
-name|str
-argument_list|,
-literal|"\n           "
-argument_list|)
-expr_stmt|;
-name|first_stroke
-operator|=
-name|FALSE
 expr_stmt|;
 if|if
 condition|(
@@ -700,7 +735,7 @@ name|g_string_append_printf
 argument_list|(
 name|str
 argument_list|,
-literal|"\n          "
+literal|"\n           "
 argument_list|)
 expr_stmt|;
 block|}
@@ -718,7 +753,7 @@ name|g_string_append_printf
 argument_list|(
 name|str
 argument_list|,
-literal|" Z"
+literal|"Z"
 argument_list|)
 expr_stmt|;
 block|}
