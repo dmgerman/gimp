@@ -165,7 +165,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fe71050103
+DECL|enum|__anon2780e0090103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -4276,9 +4276,12 @@ argument_list|)
 operator|->
 name|name
 argument_list|,
+name|GIMP_VIEWABLE
+argument_list|(
 name|tool
 operator|->
 name|tool_info
+argument_list|)
 operator|->
 name|stock_id
 argument_list|,

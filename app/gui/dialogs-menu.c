@@ -385,7 +385,7 @@ argument_list|(
 literal|"/Add Tab/Document History..."
 argument_list|)
 argument_list|,
-literal|"gimp-document-history"
+literal|"gimp-document-list"
 argument_list|,
 literal|"<StockItem>"
 argument_list|,

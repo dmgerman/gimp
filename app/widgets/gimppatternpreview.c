@@ -336,7 +336,7 @@ operator|==
 name|pattern_height
 condition|)
 block|{
-name|gimp_preview_render_and_flush
+name|gimp_preview_render_preview
 argument_list|(
 name|preview
 argument_list|,
@@ -346,6 +346,10 @@ name|mask
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|GIMP_PREVIEW_BG_WHITE
+argument_list|,
+name|GIMP_PREVIEW_BG_WHITE
 argument_list|)
 expr_stmt|;
 return|return;
@@ -362,7 +366,7 @@ operator|<=
 name|pattern_height
 condition|)
 block|{
-name|gimp_preview_render_and_flush
+name|gimp_preview_render_preview
 argument_list|(
 name|preview
 argument_list|,
@@ -372,6 +376,10 @@ name|mask
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|GIMP_PREVIEW_BG_WHITE
+argument_list|,
+name|GIMP_PREVIEW_BG_WHITE
 argument_list|)
 expr_stmt|;
 return|return;
@@ -389,7 +397,7 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-name|gimp_preview_render_and_flush
+name|gimp_preview_render_preview
 argument_list|(
 name|preview
 argument_list|,
@@ -397,6 +405,10 @@ name|temp_buf
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|GIMP_PREVIEW_BG_WHITE
+argument_list|,
+name|GIMP_PREVIEW_BG_WHITE
 argument_list|)
 expr_stmt|;
 name|temp_buf_free

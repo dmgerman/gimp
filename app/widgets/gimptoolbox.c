@@ -2766,7 +2766,10 @@ name|image
 operator|=
 name|gtk_image_new_from_stock
 argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
 name|tool_info
+argument_list|)
 operator|->
 name|stock_id
 argument_list|,

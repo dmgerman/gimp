@@ -74,6 +74,15 @@ name|GimpMenuFactory
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpCellRendererViewable
+typedef|typedef
+name|struct
+name|_GimpCellRendererViewable
+name|GimpCellRendererViewable
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  widgets  */
 end_comment
@@ -133,15 +142,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpImagefilePreview
-typedef|typedef
-name|struct
-name|_GimpImagefilePreview
-name|GimpImagefilePreview
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpNavigationPreview
 typedef|typedef
 name|struct
@@ -165,24 +165,6 @@ typedef|typedef
 name|struct
 name|_GimpPatternPreview
 name|GimpPatternPreview
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpToolInfoPreview
-typedef|typedef
-name|struct
-name|_GimpToolInfoPreview
-name|GimpToolInfoPreview
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpUndoPreview
-typedef|typedef
-name|struct
-name|_GimpUndoPreview
-name|GimpUndoPreview
 typedef|;
 end_typedef
 

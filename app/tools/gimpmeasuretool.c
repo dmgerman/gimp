@@ -1469,9 +1469,12 @@ argument_list|)
 operator|->
 name|name
 argument_list|,
+name|GIMP_VIEWABLE
+argument_list|(
 name|tool
 operator|->
 name|tool_info
+argument_list|)
 operator|->
 name|stock_id
 argument_list|,

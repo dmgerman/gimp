@@ -101,6 +101,14 @@ begin_decl_stmt
 specifier|extern
 name|guchar
 modifier|*
+name|render_white_buf
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|guchar
+modifier|*
 name|render_temp_buf
 decl_stmt|;
 end_decl_stmt
@@ -118,6 +126,14 @@ specifier|extern
 name|guchar
 modifier|*
 name|render_blend_light_check
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|guchar
+modifier|*
+name|render_blend_white
 decl_stmt|;
 end_decl_stmt
 

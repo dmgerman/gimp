@@ -4540,6 +4540,10 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|gchar
+modifier|*
+name|stock_id
+decl_stmt|;
 name|tool_info
 operator|=
 name|GIMP_TOOL
@@ -4548,6 +4552,15 @@ name|tr_tool
 argument_list|)
 operator|->
 name|tool_info
+expr_stmt|;
+name|stock_id
+operator|=
+name|GIMP_VIEWABLE
+argument_list|(
+name|tool_info
+argument_list|)
+operator|->
+name|stock_id
 expr_stmt|;
 name|tr_tool
 operator|->
@@ -4568,8 +4581,6 @@ argument_list|)
 operator|->
 name|name
 argument_list|,
-name|tool_info
-operator|->
 name|stock_id
 argument_list|,
 name|tr_tool
@@ -4620,8 +4631,6 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
-name|tool_info
-operator|->
 name|stock_id
 argument_list|,
 name|transform_ok_callback

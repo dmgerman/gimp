@@ -682,7 +682,7 @@ block|,
 name|GTK_STOCK_OPEN
 block|}
 block|,
-literal|"gimp-document-history"
+literal|"gimp-document-list"
 block|,
 literal|"file/dialogs/document_index.html"
 block|,

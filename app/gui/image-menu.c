@@ -3280,7 +3280,7 @@ block|,
 name|GTK_STOCK_OPEN
 block|}
 block|,
-literal|"gimp-document-history"
+literal|"gimp-document-list"
 block|,
 literal|"dialogs/document_index.html"
 block|,
@@ -3732,7 +3732,10 @@ name|entry
 operator|.
 name|extra_data
 operator|=
+name|GIMP_VIEWABLE
+argument_list|(
 name|tool_info
+argument_list|)
 operator|->
 name|stock_id
 expr_stmt|;

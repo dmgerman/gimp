@@ -203,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a230f5b0103
+DECL|enum|__anon2b6f41970103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -231,7 +231,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a230f5b0203
+DECL|enum|__anon2b6f41970203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -476,7 +476,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a230f5b0303
+DECL|enum|__anon2b6f41970303
 block|{
 DECL|enumerator|TREE_ITEM_DONT
 name|TREE_ITEM_DONT
@@ -502,7 +502,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a230f5b0408
+DECL|struct|__anon2b6f41970408
 block|{
 DECL|member|directory
 name|gboolean
@@ -819,6 +819,21 @@ literal|"to reduce memory usage.  If The GIMP is unceremoniously\n"
 literal|"killed, files of the form: gimp<#>.<#> may persist in\n"
 literal|"this folder.  These files are useless across GIMP\n"
 literal|"sessions and can be destroyed with impunity."
+argument_list|)
+block|,
+name|TREE_ITEM_MKDIR_ONLY
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|TRUE
+block|,
+literal|"tool-options"
+block|,
+name|N_
+argument_list|(
+literal|"This folder is used to store tool options."
 argument_list|)
 block|,
 name|TREE_ITEM_MKDIR_ONLY
