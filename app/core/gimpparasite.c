@@ -339,6 +339,7 @@ name|p
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*        * the current methodology is: never move the parasiterc from one        * system to another. If you want to do this you should probably        * write out parasites which contain any non-alphanumeric(+some)        * characters as \xHH sequences altogether.        */
 for|for
 control|(
 name|s
@@ -374,6 +375,17 @@ operator|*
 name|s
 condition|)
 block|{
+case|case
+literal|'\\'
+case|:
+name|fputs
+argument_list|(
+literal|"\\\\"
+argument_list|,
+name|fp
+argument_list|)
+expr_stmt|;
+break|break;
 case|case
 literal|'\0'
 case|:
