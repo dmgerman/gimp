@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Event history:  * V 0.90, PK, 28-Mar-97: Creation.  * V 0.91, PK, 03-Apr-97: Clip everything outside BoundingBox.  *             24-Apr-97: Multi page read support.  * V 1.00, PK, 30-Apr-97: PDF support.  * V 1.01, PK, 05-Oct-97: Parse rc-file.  * V 1.02, GW, 09-Oct-97: Antialiasing support.  *         PK, 11-Oct-97: No progress bars when running non-interactive.  *                        New procedure file_ps_load_setargs to set  *                        load-arguments non-interactively.  *                        If GS_OPTIONS are not set, use at least "-dSAFER"  * V 1.03, nn, 20-Dec-97: Initialize some variables  * V 1.04, PK, 20-Dec-97: Add Encapsulated PostScript output and preview  * V 1.05, PK, 21-Sep-98: Write b/w-images (indexed) using image-operator  * V 1.06, PK, 22-Dec-98: Fix problem with writing color PS files.  *                        Ghostview may hang when displaying the files.  * V 1.07, PK, 14-Sep-99: Add resolution to image  * V 1.08, PK, 16-Jan-2000: Add PostScript-Level 2 by Austin Donnelly  * V 1.09, PK, 15-Feb-2000: Force showpage on EPS-files  *                          Add "RunLength" compression  *                          Fix problem with "Level 2" toggle  * V 1.10, PK, 15-Mar-2000: For load EPSF, allow negative Bounding Box Values  *                          Save PS: dont start lines of image data with %%  *                          to prevent problems with stupid PostScript  *                          analyzer programs (Stanislav Brabec)  *                          Add BeginData/EndData comments  *                          Save PS: Set default rotation to 0  * V 1.11, PK, 20-Aug-2000: Fix problem with BoundingBox recognition  *                          for Mac files.  *                          Fix problem with loop when reading not all  *                          images of a multi page file.  *         PK, 31-Aug-2000: Load PS: Add checks for space in filename.  * V 1.12  PK, 19-Jun-2001: Fix problem with command line switch --  *                          (reported by Ferenc Wagner)  */
+comment|/* Event history:  * V 0.90, PK, 28-Mar-97: Creation.  * V 0.91, PK, 03-Apr-97: Clip everything outside BoundingBox.  *             24-Apr-97: Multi page read support.  * V 1.00, PK, 30-Apr-97: PDF support.  * V 1.01, PK, 05-Oct-97: Parse rc-file.  * V 1.02, GW, 09-Oct-97: Antialiasing support.  *         PK, 11-Oct-97: No progress bars when running non-interactive.  *                        New procedure file_ps_load_setargs to set  *                        load-arguments non-interactively.  *                        If GS_OPTIONS are not set, use at least "-dSAFER"  * V 1.03, nn, 20-Dec-97: Initialize some variables  * V 1.04, PK, 20-Dec-97: Add Encapsulated PostScript output and preview  * V 1.05, PK, 21-Sep-98: Write b/w-images (indexed) using image-operator  * V 1.06, PK, 22-Dec-98: Fix problem with writing color PS files.  *                        Ghostview may hang when displaying the files.  * V 1.07, PK, 14-Sep-99: Add resolution to image  * V 1.08, PK, 16-Jan-2000: Add PostScript-Level 2 by Austin Donnelly  * V 1.09, PK, 15-Feb-2000: Force showpage on EPS-files  *                          Add "RunLength" compression  *                          Fix problem with "Level 2" toggle  * V 1.10, PK, 15-Mar-2000: For load EPSF, allow negative Bounding Box Values  *                          Save PS: dont start lines of image data with %%  *                          to prevent problems with stupid PostScript  *                          analyzer programs (Stanislav Brabec)  *                          Add BeginData/EndData comments  *                          Save PS: Set default rotation to 0  * V 1.11, PK, 20-Aug-2000: Fix problem with BoundingBox recognition  *                          for Mac files.  *                          Fix problem with loop when reading not all  *                          images of a multi page file.  *         PK, 31-Aug-2000: Load PS: Add checks for space in filename.  * V 1.12  PK, 19-Jun-2001: Fix problem with command line switch --  *                          (reported by Ferenc Wagner)  * V 1.13  PK, 07-Apr-2002: Fix problem with DOS binary EPS files  */
 end_comment
 
 begin_define
@@ -12,7 +12,7 @@ DECL|macro|VERSIO
 define|#
 directive|define
 name|VERSIO
-value|1.12
+value|1.13
 end_define
 
 begin_decl_stmt
@@ -22,7 +22,7 @@ name|char
 name|dversio
 index|[]
 init|=
-literal|"v1.12  19-Jun-2001"
+literal|"v1.13  07-Apr-2002"
 decl_stmt|;
 end_decl_stmt
 
@@ -33,7 +33,7 @@ name|char
 name|ident
 index|[]
 init|=
-literal|"@(#) GIMP PostScript/PDF file-plugin v1.12  19-Jun-2001"
+literal|"@(#) GIMP PostScript/PDF file-plugin v1.13  07-Apr-2002"
 decl_stmt|;
 end_decl_stmt
 
@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68b0990108
+DECL|struct|__anon2b0a29e80108
 block|{
 DECL|member|resolution
 name|guint
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68b0990208
+DECL|struct|__anon2b0a29e80208
 block|{
 DECL|member|run
 name|gint
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68b0990308
+DECL|struct|__anon2b0a29e80308
 block|{
 DECL|member|width
 DECL|member|height
@@ -308,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68b0990408
+DECL|struct|__anon2b0a29e80408
 block|{
 DECL|member|run
 name|gint
@@ -848,7 +848,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68b0990508
+DECL|struct|__anon2b0a29e80508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1719,7 +1719,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68b0990608
+DECL|struct|__anon2b0a29e80608
 block|{
 DECL|member|eol
 name|long
@@ -2298,7 +2298,7 @@ literal|"ps,eps,pdf"
 argument_list|,
 literal|""
 argument_list|,
-literal|"0,string,%!,0,string,%PDF"
+literal|"0,string,%!,0,string,%PDF,0,long,0xc5d0d3c6"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
@@ -5782,6 +5782,26 @@ name|ds
 init|=
 literal|0
 decl_stmt|;
+specifier|static
+name|unsigned
+name|char
+name|doseps
+index|[
+literal|5
+index|]
+init|=
+block|{
+literal|0xc5
+block|,
+literal|0xd0
+block|,
+literal|0xd3
+block|,
+literal|0xc6
+block|,
+literal|0
+block|}
+decl_stmt|;
 name|hdr
 index|[
 sizeof|sizeof
@@ -5848,6 +5868,37 @@ operator|<=
 literal|15
 operator|)
 operator|)
+expr_stmt|;
+comment|/* Check DOS EPS binary file */
+if|if
+condition|(
+operator|(
+operator|!
+operator|*
+name|is_epsf
+operator|)
+operator|&&
+operator|(
+name|strncmp
+argument_list|(
+name|hdr
+argument_list|,
+operator|(
+name|char
+operator|*
+operator|)
+name|doseps
+argument_list|,
+literal|4
+argument_list|)
+operator|==
+literal|0
+operator|)
+condition|)
+operator|*
+name|is_epsf
+operator|=
+literal|1
 expr_stmt|;
 block|}
 name|fclose

@@ -3954,7 +3954,7 @@ name|preview_group
 argument_list|,
 name|_
 argument_list|(
-literal|"Entire Image"
+literal|"Entire Layer"
 argument_list|)
 argument_list|)
 expr_stmt|;
