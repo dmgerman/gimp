@@ -223,7 +223,7 @@ value|256
 end_define
 
 begin_typedef
-DECL|struct|__anon2acc4b260108
+DECL|struct|__anon29ec76410108
 typedef|typedef
 struct|struct
 block|{
@@ -238,7 +238,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2acc4b260208
+DECL|struct|__anon29ec76410208
 typedef|typedef
 struct|struct
 block|{
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acc4b260308
+DECL|struct|__anon29ec76410308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -443,7 +443,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2acc4b260408
+DECL|struct|__anon29ec76410408
 typedef|typedef
 struct|struct
 block|{
@@ -538,7 +538,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acc4b260503
+DECL|enum|__anon29ec76410503
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -2668,24 +2668,6 @@ expr_stmt|;
 name|gtk_rc_parse
 argument_list|(
 name|gimp_gtkrc
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_preview_set_gamma
-argument_list|(
-name|gimp_gamma
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_preview_set_install_cmap
-argument_list|(
-name|gimp_install_cmap
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_default_colormap
-argument_list|(
-name|gtk_preview_get_cmap
 argument_list|()
 argument_list|)
 expr_stmt|;
