@@ -10557,7 +10557,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-literal|"invalidate_pr"
+literal|"invalidate_preview"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
@@ -10983,7 +10983,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b3ceb00108
+DECL|struct|__anon28a843600108
 block|{
 DECL|member|gimage
 name|GimpImage

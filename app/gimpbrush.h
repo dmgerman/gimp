@@ -22,6 +22,47 @@ directive|include
 file|"gimpobject.h"
 end_include
 
+begin_define
+DECL|macro|GIMP_TYPE_BRUSH
+define|#
+directive|define
+name|GIMP_TYPE_BRUSH
+value|(gimp_brush_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_BRUSH (obj)
+define|#
+directive|define
+name|GIMP_BRUSH
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_BRUSH, GimpBrush))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_BRUSH (obj)
+define|#
+directive|define
+name|GIMP_IS_BRUSH
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_BRUSH))
+end_define
+
+begin_define
+DECL|macro|GIMP_BRUSH_CLASS (klass)
+define|#
+directive|define
+name|GIMP_BRUSH_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), gimp_brush_get_type(), GimpBrushClass))
+end_define
+
 begin_typedef
 DECL|typedef|GimpBrushClass
 typedef|typedef
@@ -92,6 +133,31 @@ DECL|member|parent_class
 name|GimpObjectClass
 name|parent_class
 decl_stmt|;
+DECL|member|dirty
+name|void
+function_decl|(
+modifier|*
+name|dirty
+function_decl|)
+parameter_list|(
+name|GimpBrush
+modifier|*
+name|brush
+parameter_list|)
+function_decl|;
+DECL|member|rename
+name|void
+function_decl|(
+modifier|*
+name|rename
+function_decl|)
+parameter_list|(
+name|GimpBrush
+modifier|*
+name|brush
+parameter_list|)
+function_decl|;
+comment|/* FIXME: these are no virtual function pointers but bad hacks: */
 DECL|member|select_brush
 name|GimpBrush
 modifier|*
@@ -120,47 +186,6 @@ function_decl|;
 block|}
 struct|;
 end_struct
-
-begin_define
-DECL|macro|GIMP_BRUSH_CLASS (klass)
-define|#
-directive|define
-name|GIMP_BRUSH_CLASS
-parameter_list|(
-name|klass
-parameter_list|)
-value|GTK_CHECK_CLASS_CAST (klass, gimp_brush_get_type(), GimpBrushClass)
-end_define
-
-begin_define
-DECL|macro|GIMP_TYPE_BRUSH
-define|#
-directive|define
-name|GIMP_TYPE_BRUSH
-value|(gimp_brush_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_BRUSH (obj)
-define|#
-directive|define
-name|GIMP_BRUSH
-parameter_list|(
-name|obj
-parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_BRUSH, GimpBrush))
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_BRUSH (obj)
-define|#
-directive|define
-name|GIMP_IS_BRUSH
-parameter_list|(
-name|obj
-parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_BRUSH))
-end_define
 
 begin_function_decl
 name|GtkType

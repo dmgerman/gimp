@@ -38,7 +38,7 @@ name|GIMP_OBJECT
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST (obj, GIMP_TYPE_OBJECT, GimpObject))
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_OBJECT, GimpObject))
 end_define
 
 begin_define
@@ -49,7 +49,7 @@ name|GIMP_IS_OBJECT
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE (obj, GIMP_TYPE_OBJECT))
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_OBJECT))
 end_define
 
 begin_define
@@ -60,7 +60,7 @@ name|GIMP_OBJECT_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST (klass, GIMP_TYPE_OBJECT, GimpObjectClass))
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_OBJECT, GimpObjectClass))
 end_define
 
 begin_typedef
@@ -97,28 +97,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_define
-DECL|macro|GIMP_TYPE_INIT (typevar,obtype,classtype,obinit,classinit,parent)
-define|#
-directive|define
-name|GIMP_TYPE_INIT
-parameter_list|(
-name|typevar
-parameter_list|,
-name|obtype
-parameter_list|,
-name|classtype
-parameter_list|,
-name|obinit
-parameter_list|,
-name|classinit
-parameter_list|,
-name|parent
-parameter_list|)
-define|\
-value|if(!typevar){ \ 	GtkTypeInfo _info={#obtype, \ 			   sizeof(obtype), \ 			   sizeof(classtype), \ 			   (GtkClassInitFunc)classinit, \ 			   (GtkObjectInitFunc)obinit, \ 			   NULL, NULL, NULL}; \ 	typevar=gtk_type_unique(parent,&_info); \ }
-end_define
 
 begin_function_decl
 name|GtkType

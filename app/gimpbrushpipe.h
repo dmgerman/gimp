@@ -55,7 +55,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e97a200103
+DECL|enum|__anon2991d5ec0103
 block|{
 DECL|enumerator|PIPE_SELECT_CONSTANT
 name|PIPE_SELECT_CONSTANT
@@ -166,15 +166,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_function_decl
-name|GtkType
-name|gimp_brush_pixmap_get_type
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|GtkType

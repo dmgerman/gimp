@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpsignal.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppreviewcache.h"
 end_include
 
@@ -167,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2985a3030103
+DECL|enum|__anon29daec650103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -337,12 +331,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_class_init (GimpChannelClass * class)
+DECL|function|gimp_channel_class_init (GimpChannelClass * klass)
 name|gimp_channel_class_init
 parameter_list|(
 name|GimpChannelClass
 modifier|*
-name|class
+name|klass
 parameter_list|)
 block|{
 name|GtkObjectClass
@@ -355,14 +349,13 @@ operator|(
 name|GtkObjectClass
 operator|*
 operator|)
-name|class
+name|klass
 expr_stmt|;
 name|parent_class
 operator|=
 name|gtk_type_class
 argument_list|(
-name|gimp_drawable_get_type
-argument_list|()
+name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|channel_signals
@@ -370,19 +363,28 @@ index|[
 name|REMOVED
 index|]
 operator|=
-name|gimp_signal_new
+name|gtk_signal_new
 argument_list|(
 literal|"removed"
 argument_list|,
-literal|0
+name|GTK_RUN_FIRST
 argument_list|,
 name|object_class
 operator|->
 name|type
 argument_list|,
-literal|0
+name|GTK_SIGNAL_OFFSET
+argument_list|(
+name|GimpChannelClass
 argument_list|,
-name|gimp_sigtype_void
+name|removed
+argument_list|)
+argument_list|,
+name|gtk_signal_default_marshaller
+argument_list|,
+name|GTK_TYPE_NONE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_object_class_add_signals
@@ -399,6 +401,12 @@ operator|->
 name|destroy
 operator|=
 name|gimp_channel_destroy
+expr_stmt|;
+name|klass
+operator|->
+name|removed
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 end_function

@@ -31,7 +31,7 @@ DECL|macro|GIMP_TYPE_LIST
 define|#
 directive|define
 name|GIMP_TYPE_LIST
-value|gimp_list_get_type ()
+value|(gimp_list_get_type ())
 end_define
 
 begin_define
@@ -42,7 +42,7 @@ name|GIMP_LIST
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_CAST (obj, GIMP_TYPE_LIST, GimpList)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_LIST, GimpList))
 end_define
 
 begin_define
@@ -53,7 +53,7 @@ name|GIMP_IS_LIST
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_TYPE (obj, gimp_list_get_type())
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_LIST))
 end_define
 
 begin_define
@@ -64,8 +64,17 @@ name|GIMP_LIST_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|GTK_CHECK_CLASS_CAST (klass, gimp_list_get_type(), GimpListClass)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_LIST, GimpListClass))
 end_define
+
+begin_typedef
+DECL|typedef|GimpListClass
+typedef|typedef
+name|struct
+name|_GimpListClass
+name|GimpListClass
+typedef|;
+end_typedef
 
 begin_struct
 DECL|struct|_GimpList
@@ -113,9 +122,8 @@ name|GimpList
 modifier|*
 name|list
 parameter_list|,
-name|void
-modifier|*
-name|data
+name|gpointer
+name|object
 parameter_list|)
 function_decl|;
 DECL|member|remove
@@ -129,23 +137,13 @@ name|GimpList
 modifier|*
 name|list
 parameter_list|,
-name|void
-modifier|*
-name|data
+name|gpointer
+name|object
 parameter_list|)
 function_decl|;
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|GimpListClass
-typedef|typedef
-name|struct
-name|_GimpListClass
-name|GimpListClass
-typedef|;
-end_typedef
 
 begin_function_decl
 name|GtkType
@@ -236,17 +234,6 @@ name|func
 parameter_list|,
 name|gpointer
 name|user_data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gint
-name|gimp_list_size
-parameter_list|(
-name|GimpList
-modifier|*
-name|list
 parameter_list|)
 function_decl|;
 end_function_decl

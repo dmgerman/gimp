@@ -31,7 +31,7 @@ DECL|macro|GIMP_TYPE_SET
 define|#
 directive|define
 name|GIMP_TYPE_SET
-value|gimp_set_get_type ()
+value|(gimp_set_get_type ())
 end_define
 
 begin_define
@@ -42,7 +42,7 @@ name|GIMP_SET
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_CAST (obj, GIMP_TYPE_SET, GimpSet)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_SET, GimpSet))
 end_define
 
 begin_define
@@ -53,7 +53,7 @@ name|GIMP_IS_SET
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_TYPE (obj, gimp_set_get_type())
+value|(GTK_CHECK_TYPE ((obj), gimp_set_get_type()))
 end_define
 
 begin_define
@@ -64,7 +64,7 @@ name|GIMP_SET_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|GTK_CHECK_CLASS_CAST (klass, gimp_set_get_type(), GimpSetClass)
+value|(GTK_CHECK_CLASS_CAST ((klass), gimp_set_get_type(), GimpSetClass))
 end_define
 
 begin_typedef

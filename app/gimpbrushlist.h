@@ -60,7 +60,7 @@ name|GIMP_BRUSH_LIST_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST (klass, gimp_brush_list_get_type(), GimpBrushListClass))
+value|(GTK_CHECK_CLASS_CAST (klass, GIMP_TYPE_BRUSH_LIST, GimpBrushListClass))
 end_define
 
 begin_typedef

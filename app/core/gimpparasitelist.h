@@ -63,6 +63,15 @@ parameter_list|)
 value|GIMP_CHECK_CLASS_CAST (class, parasite_list_get_type(), ParasiteListClass)
 end_define
 
+begin_typedef
+DECL|typedef|ParasiteListClass
+typedef|typedef
+name|struct
+name|_ParasiteListClass
+name|ParasiteListClass
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_ParasiteList
 struct|struct
@@ -81,9 +90,8 @@ block|}
 struct|;
 end_struct
 
-begin_typedef
+begin_struct
 DECL|struct|_ParasiteListClass
-typedef|typedef
 struct|struct
 name|_ParasiteListClass
 block|{
@@ -123,11 +131,9 @@ modifier|*
 name|parasite
 parameter_list|)
 function_decl|;
-DECL|typedef|ParasiteListClass
 block|}
-name|ParasiteListClass
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_comment
 comment|/* function declarations */

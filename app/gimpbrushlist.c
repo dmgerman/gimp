@@ -232,7 +232,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GimpObjectClass
+name|GimpListClass
 modifier|*
 name|parent_class
 init|=
@@ -335,9 +335,17 @@ name|gimp_list_class
 decl_stmt|;
 name|gimp_list_class
 operator|=
-name|GIMP_LIST_CLASS
-argument_list|(
+operator|(
+name|GimpListClass
+operator|*
+operator|)
 name|klass
+expr_stmt|;
+name|parent_class
+operator|=
+name|gtk_type_class
+argument_list|(
+name|GIMP_TYPE_LIST
 argument_list|)
 expr_stmt|;
 name|gimp_list_class
@@ -351,14 +359,6 @@ operator|->
 name|remove
 operator|=
 name|gimp_brush_list_remove_func
-expr_stmt|;
-name|parent_class
-operator|=
-name|gtk_type_class
-argument_list|(
-name|gimp_list_get_type
-argument_list|()
-argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -444,8 +444,7 @@ name|type
 operator|=
 name|gtk_type_unique
 argument_list|(
-name|gimp_list_get_type
-argument_list|()
+name|GIMP_TYPE_LIST
 argument_list|,
 operator|&
 name|info
@@ -477,8 +476,7 @@ name|GIMP_BRUSH_LIST
 argument_list|(
 name|gtk_type_new
 argument_list|(
-name|gimp_brush_list_get_type
-argument_list|()
+name|GIMP_TYPE_BRUSH_LIST
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1230,18 +1228,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|static GSList * insert_brush_in_list (GSList    *list, 		      GimpBrush *brush) {   return g_slist_insert_sorted (list, brush, brush_compare_func); }
-endif|#
-directive|endif
-end_endif
 
 begin_function
 name|gint

@@ -112,12 +112,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpsignal.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppreviewcache.h"
 end_include
 
@@ -153,7 +147,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2902c95f0103
+DECL|enum|__anon2ad5cc4c0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -449,19 +443,28 @@ index|[
 name|REMOVED
 index|]
 operator|=
-name|gimp_signal_new
+name|gtk_signal_new
 argument_list|(
 literal|"removed"
 argument_list|,
-literal|0
+name|GTK_RUN_FIRST
 argument_list|,
 name|object_class
 operator|->
 name|type
 argument_list|,
-literal|0
+name|GTK_SIGNAL_OFFSET
+argument_list|(
+name|GimpLayerClass
 argument_list|,
-name|gimp_sigtype_void
+name|removed
+argument_list|)
+argument_list|,
+name|gtk_signal_default_marshaller
+argument_list|,
+name|GTK_TYPE_NONE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_object_class_add_signals
@@ -610,8 +613,7 @@ name|layer_mask_parent_class
 operator|=
 name|gtk_type_class
 argument_list|(
-name|gimp_channel_get_type
-argument_list|()
+name|GIMP_TYPE_CHANNEL
 argument_list|)
 expr_stmt|;
 comment|/*   gtk_object_class_add_signals (object_class, layer_mask_signals, LAST_SIGNAL);   */
