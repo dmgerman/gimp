@@ -294,7 +294,8 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2936dd930108
+DECL|struct|__anon27c8d4130108
+DECL|member|__uint64
 DECL|typedef|uint128
 typedef|typedef
 struct|struct
@@ -304,6 +305,7 @@ name|__uint64
 index|[
 literal|2
 index|]
+decl_stmt|;
 block|}
 name|uint128
 typedef|;
