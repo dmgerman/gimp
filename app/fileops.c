@@ -4532,6 +4532,13 @@ operator|*
 operator|)
 name|client_data
 expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|overwrite_box
+operator|->
+name|obox
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -4630,13 +4637,6 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_widget_destroy
-argument_list|(
-name|overwrite_box
-operator|->
-name|obox
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|overwrite_box
