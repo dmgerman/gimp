@@ -1433,7 +1433,7 @@ name|strrchr
 argument_list|(
 name|fname
 argument_list|,
-name|G_DIR_SEPARATOR
+literal|'/'
 argument_list|)
 expr_stmt|;
 if|if
@@ -1600,7 +1600,7 @@ name|strrchr
 argument_list|(
 name|selected
 argument_list|,
-name|G_DIR_SEPARATOR
+literal|'/'
 argument_list|)
 expr_stmt|;
 if|if
