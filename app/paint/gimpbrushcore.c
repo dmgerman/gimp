@@ -104,8 +104,8 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2941a4a00103
-DECL|enum|__anon2941a4a00203
+DECL|enum|__anon2c2d11fe0103
+DECL|enum|__anon2c2d11fe0203
 block|{
 DECL|enumerator|SET_BRUSH
 DECL|enumerator|SET_BRUSH
@@ -4609,6 +4609,8 @@ while|while
 condition|(
 name|s
 operator|--
+operator|>
+name|dest_offset_x
 condition|)
 block|{
 name|accum
