@@ -1569,6 +1569,16 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|merge_layer
+argument_list|)
+operator|->
+name|parasites
+argument_list|)
+expr_stmt|;
 name|GIMP_ITEM
 argument_list|(
 name|merge_layer
@@ -1868,7 +1878,7 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/* DISSOLVE_MODE is special since it is the only mode that does not        *  work on the projection with the lower layer, but only locally on        *  the layers alpha channel.         */
+comment|/* DISSOLVE_MODE is special since it is the only mode that does not        *  work on the projection with the lower layer, but only locally on        *  the layers alpha channel.        */
 name|mode
 operator|=
 name|layer
