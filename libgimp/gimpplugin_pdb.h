@@ -75,6 +75,23 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_plugin_menu_branch_register
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|menu_path
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|menu_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|_gimp_plugin_icon_register
 parameter_list|(
 specifier|const

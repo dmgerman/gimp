@@ -205,6 +205,11 @@ name|GSList
 modifier|*
 name|plug_in_proc_defs
 decl_stmt|;
+DECL|member|plug_in_menu_branches
+name|GSList
+modifier|*
+name|plug_in_menu_branches
+decl_stmt|;
 DECL|member|plug_in_locale_domains
 name|GSList
 modifier|*

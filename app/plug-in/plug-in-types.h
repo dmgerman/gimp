@@ -47,6 +47,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|PlugInMenuBranch
+typedef|typedef
+name|struct
+name|_PlugInMenuBranch
+name|PlugInMenuBranch
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|PlugInProcDef
 typedef|typedef
 name|struct
