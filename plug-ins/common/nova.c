@@ -155,7 +155,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1f7d8c0108
+DECL|struct|__anon293583dc0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1f7d8c0208
+DECL|struct|__anon293583dc0208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1223,6 +1223,16 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_drawable_is_rgb
+argument_list|(
+name|drawable
+operator|->
+name|drawable_id
+argument_list|)
+condition|)
+block|{
 name|button
 operator|=
 name|gimp_color_button_new
@@ -1304,6 +1314,7 @@ argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
+block|}
 name|adj
 operator|=
 name|gimp_scale_entry_new
@@ -1460,6 +1471,16 @@ argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_drawable_is_rgb
+argument_list|(
+name|drawable
+operator|->
+name|drawable_id
+argument_list|)
+condition|)
+block|{
 name|adj
 operator|=
 name|gimp_scale_entry_new
@@ -1538,6 +1559,7 @@ argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
+block|}
 name|gtk_widget_show
 argument_list|(
 name|dlg
