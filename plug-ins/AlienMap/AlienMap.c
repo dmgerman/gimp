@@ -114,7 +114,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bae56590108
+DECL|struct|__anon287f71560108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -149,7 +149,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bae56590208
+DECL|struct|__anon287f71560208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -202,7 +202,7 @@ parameter_list|,
 name|int
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -210,7 +210,7 @@ name|int
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -223,7 +223,7 @@ specifier|static
 name|void
 name|alienmap
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -414,7 +414,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -481,7 +481,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable
 specifier|static
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -554,7 +554,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|the_tile
 specifier|static
-name|GTile
+name|GimpTile
 modifier|*
 name|the_tile
 init|=
@@ -603,7 +603,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
@@ -682,7 +682,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|return_vals
 init|=
@@ -1067,7 +1067,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (char * name,int nparams,GimpParam * param,int * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|char
@@ -1077,7 +1077,7 @@ parameter_list|,
 name|int
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -1085,14 +1085,14 @@ name|int
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
@@ -1100,7 +1100,7 @@ index|]
 decl_stmt|;
 comment|/*   GDrawable *drawable; */
 comment|/*   gint32 image_ID; */
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
 name|double
@@ -2108,15 +2108,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|alienmap (GDrawable * drawable)
+DECL|function|alienmap (GimpDrawable * drawable)
 name|alienmap
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPR
 decl_stmt|,
 name|destPR

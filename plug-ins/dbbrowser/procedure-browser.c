@@ -81,7 +81,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -89,7 +89,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -99,7 +99,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -134,7 +134,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
@@ -203,7 +203,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -213,7 +213,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -221,14 +221,14 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1

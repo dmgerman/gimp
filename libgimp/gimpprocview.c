@@ -16,6 +16,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -78,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2995750108
+DECL|struct|__anon2a0e957a0108
 block|{
 DECL|member|label
 name|gchar
@@ -99,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2995750208
+DECL|struct|__anon2a0e957a0208
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -3553,7 +3559,7 @@ name|query_text
 operator|++
 expr_stmt|;
 block|}
-name|gimp_query_database
+name|gimp_procedural_db_query
 argument_list|(
 name|query
 operator|->
@@ -3613,7 +3619,7 @@ literal|"DB Browser (by blurb - please wait)"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_query_database
+name|gimp_procedural_db_query
 argument_list|(
 literal|".*"
 argument_list|,
@@ -3662,7 +3668,7 @@ literal|"DB Browser (please wait)"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_query_database
+name|gimp_procedural_db_query
 argument_list|(
 literal|".*"
 argument_list|,
