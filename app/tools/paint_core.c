@@ -3531,6 +3531,14 @@ operator|=
 name|y
 expr_stmt|;
 comment|/* Set up some defaults for non-gui use */
+if|if
+condition|(
+name|paint_core
+operator|==
+operator|&
+name|non_gui_paint_core
+condition|)
+block|{
 name|paint_core
 operator|->
 name|startpressure
@@ -3573,6 +3581,7 @@ name|curytilt
 operator|=
 literal|0
 expr_stmt|;
+block|}
 comment|/*  Each buffer is the same size as the maximum bounds of the active brush... */
 if|if
 condition|(
