@@ -114,7 +114,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287f71560108
+DECL|struct|__anon2b69af330108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -149,7 +149,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287f71560208
+DECL|struct|__anon2b69af330208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -609,7 +609,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -617,7 +617,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -625,7 +625,7 @@ literal|"Input image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -633,7 +633,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"redstretch"
 block|,
@@ -641,7 +641,7 @@ literal|"Red component stretching factor (0-128)"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"greenstretch"
 block|,
@@ -649,7 +649,7 @@ literal|"Green component stretching factor (0-128)"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"bluestretch"
 block|,
@@ -657,7 +657,7 @@ literal|"Blue component stretching factor (0-128)"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"redmode"
 block|,
@@ -665,7 +665,7 @@ literal|"Red application mode (0:SIN;1:COS;2:NONE)"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"greenmode"
 block|,
@@ -673,7 +673,7 @@ literal|"Green application mode (0:SIN;1:COS;2:NONE)"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"bluemode"
 block|,
@@ -735,7 +735,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -1113,10 +1113,10 @@ name|pwidth
 decl_stmt|,
 name|pheight
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|INIT_I18N_UI
 argument_list|()
@@ -1139,7 +1139,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -1422,7 +1422,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 comment|/* Possibly retrieve data */
 name|gimp_get_data
@@ -1443,7 +1443,7 @@ condition|)
 return|return;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 comment|/* Make sure all the arguments are present */
 if|if
@@ -1454,13 +1454,13 @@ literal|9
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|wvals
@@ -1544,7 +1544,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 comment|/* Possibly retrieve data */
 name|gimp_get_data
@@ -1563,7 +1563,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 comment|/*  Make sure that the drawable is indexed or RGB color  */
@@ -1603,7 +1603,6 @@ operator|)
 argument_list|)
 expr_stmt|;
 comment|/* Run! */
-comment|/*          gimp_tile_cache_ntiles (2 * (drawable->width / gimp_tile_width ()         			       + 1));*/
 name|alienmap
 argument_list|(
 name|drawable
@@ -1613,7 +1612,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -1623,7 +1622,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -1641,10 +1640,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*           gimp_message("This filter only applies on RGB-images"); */
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}

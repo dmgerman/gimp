@@ -140,7 +140,7 @@ index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -186,7 +186,7 @@ argument_list|)
 argument_list|,
 literal|""
 argument_list|,
-name|PROC_EXTENSION
+name|GIMP_EXTENSION
 argument_list|,
 name|nargs
 argument_list|,
@@ -234,7 +234,7 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
 name|run_mode
@@ -265,7 +265,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -276,7 +276,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 expr_stmt|;
 switch|switch
 condition|(
@@ -284,7 +284,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 block|{
 name|INIT_I18N_UI
@@ -320,10 +320,10 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 name|g_warning
 argument_list|(
@@ -339,7 +339,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
 default|default:
