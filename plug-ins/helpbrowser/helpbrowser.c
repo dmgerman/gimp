@@ -142,7 +142,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bd14420103
+DECL|enum|__anon2c7cc72d0103
 block|{
 DECL|enumerator|BUTTON_HOME
 name|BUTTON_HOME
@@ -162,7 +162,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bd14420208
+DECL|struct|__anon2c7cc72d0208
 block|{
 DECL|member|title
 specifier|const
@@ -185,42 +185,6 @@ block|}
 name|HistoryItem
 typedef|;
 end_typedef
-
-begin_comment
-comment|/* please make sure the translation is a valid and complete HTML snippet */
-end_comment
-
-begin_decl_stmt
-DECL|variable|doc_not_found_format_string
-specifier|static
-specifier|const
-name|gchar
-modifier|*
-name|doc_not_found_format_string
-init|=
-name|N_
-argument_list|(
-literal|"<html><head><title>Document Not Found</title></head>"
-literal|"<body bgcolor=\"white\">"
-literal|"<div align=\"center\">"
-literal|"<div>%s</div>"
-literal|"<h3>Could not locate help documentation</h3>"
-literal|"<tt>%s</tt>"
-literal|"</div>"
-literal|"<br /><br />"
-literal|"<div align=\"justify\">"
-literal|"<small>"
-literal|"The requested document could not be found in your GIMP-Help path as "
-literal|"shown above. This means that the topic has not yet been written or your "
-literal|"installation is not complete. Ensure that your installation is complete "
-literal|"before reporting this error as a bug."
-literal|"</small>"
-literal|"</div>"
-literal|"</body>"
-literal|"</html>"
-argument_list|)
-decl_stmt|;
-end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|eek_png_tag
@@ -1703,20 +1667,70 @@ condition|)
 block|{
 name|gchar
 modifier|*
+name|name
+decl_stmt|;
+name|gchar
+modifier|*
 name|msg
-init|=
+decl_stmt|;
+name|name
+operator|=
+name|g_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|msg
+operator|=
 name|g_strdup_printf
 argument_list|(
-name|gettext
+literal|"<html>"
+literal|"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />"
+literal|"<head><title>%s</title></head>"
+literal|"<body bgcolor=\"white\">"
+literal|"<div align=\"center\">"
+literal|"<div>%s</div>"
+literal|"<h3>%s</h3>"
+literal|"<tt>%s</tt>"
+literal|"</div>"
+literal|"<br /><br />"
+literal|"<div align=\"justify\">%s</div>"
+literal|"</body>"
+literal|"</html>"
+argument_list|,
+name|_
 argument_list|(
-name|doc_not_found_format_string
+literal|"Document Not Found"
 argument_list|)
 argument_list|,
 name|eek_png_tag
 argument_list|,
-name|filename
+name|_
+argument_list|(
+literal|"Could not locate help documentation"
 argument_list|)
-decl_stmt|;
+argument_list|,
+name|name
+argument_list|,
+name|_
+argument_list|(
+literal|"The requested document could not be found in your GIMP help "
+literal|"path as shown above. This means that the topic has not yet "
+literal|"been written or your installation is not complete. Ensure "
+literal|"that your installation is complete before reporting this "
+literal|"error as a bug."
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|html_document_write_stream
 argument_list|(
 name|doc
@@ -1727,6 +1741,16 @@ name|strlen
 argument_list|(
 name|msg
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|msg
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|name
 argument_list|)
 expr_stmt|;
 block|}

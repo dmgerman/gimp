@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291ed6240103
+DECL|enum|__anon2b7a42f90103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -160,7 +160,7 @@ end_macro
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291ed6240208
+DECL|struct|__anon2b7a42f90208
 block|{
 DECL|member|title
 specifier|const
@@ -238,7 +238,7 @@ argument_list|(
 literal|"This field is a hint for numerical input "
 literal|"fields. It specifies how many decimal digits "
 literal|"the input field should provide to get "
-literal|"approximately  the same accuracy as an "
+literal|"approximately the same accuracy as an "
 literal|"\"inch\" input field with two decimal digits."
 argument_list|)
 block|}
