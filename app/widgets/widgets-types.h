@@ -250,6 +250,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpColorBar
+typedef|typedef
+name|struct
+name|_GimpColorBar
+name|GimpColorBar
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorEditor
 typedef|typedef
 name|struct

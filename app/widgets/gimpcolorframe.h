@@ -116,9 +116,9 @@ DECL|struct|_GimpColorFrame
 struct|struct
 name|_GimpColorFrame
 block|{
-DECL|member|parent_class
+DECL|member|parent_instance
 name|GtkFrame
-name|parent_class
+name|parent_instance
 decl_stmt|;
 DECL|member|sample_valid
 name|gboolean
