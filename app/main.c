@@ -2115,7 +2115,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a30f73b0108
+DECL|struct|__anon2c5579b90108
 block|{
 DECL|member|test_gint32
 name|gint32
@@ -2533,16 +2533,6 @@ literal|1
 index|]
 argument_list|)
 expr_stmt|;
-ifndef|#
-directive|ifndef
-name|G_OS_WIN32
-name|g_message
-argument_list|(
-literal|"Passed serialization test\n"
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 comment|/*  free the memory  */
 name|g_free
 argument_list|(

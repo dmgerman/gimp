@@ -9383,7 +9383,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"             (proc-def \"%s\" %d\n"
+literal|"\t(proc-def \"%s\" %d\n"
 argument_list|,
 name|proc_def
 operator|->
@@ -9402,7 +9402,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"                       "
+literal|"\t\t"
 argument_list|)
 expr_stmt|;
 name|plug_in_write_rc_string
@@ -9420,7 +9420,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n                       "
+literal|"\n\t\t"
 argument_list|)
 expr_stmt|;
 name|plug_in_write_rc_string
@@ -9438,7 +9438,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n                       "
+literal|"\n\t\t"
 argument_list|)
 expr_stmt|;
 name|plug_in_write_rc_string
@@ -9456,7 +9456,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n                       "
+literal|"\n\t\t"
 argument_list|)
 expr_stmt|;
 name|plug_in_write_rc_string
@@ -9474,7 +9474,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n                       "
+literal|"\n\t\t"
 argument_list|)
 expr_stmt|;
 name|plug_in_write_rc_string
@@ -9492,7 +9492,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n                       "
+literal|"\n\t\t"
 argument_list|)
 expr_stmt|;
 name|plug_in_write_rc_string
@@ -9508,7 +9508,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n                       "
+literal|"\n\t\t"
 argument_list|)
 expr_stmt|;
 name|plug_in_write_rc_string
@@ -9524,7 +9524,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n                       "
+literal|"\n\t\t"
 argument_list|)
 expr_stmt|;
 name|plug_in_write_rc_string
@@ -9540,7 +9540,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n                       "
+literal|"\n\t\t"
 argument_list|)
 expr_stmt|;
 name|plug_in_write_rc_string
@@ -9556,7 +9556,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n                       "
+literal|"\n\t\t"
 argument_list|)
 expr_stmt|;
 name|plug_in_write_rc_string
@@ -9572,7 +9572,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n                       %d %d\n"
+literal|"\n\t\t%d %d\n"
 argument_list|,
 name|proc_def
 operator|->
@@ -9609,7 +9609,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"                       (proc-arg %d "
+literal|"\t\t(proc-arg %d "
 argument_list|,
 name|proc_def
 operator|->
@@ -9711,7 +9711,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"                       (proc-arg %d "
+literal|"\t\t(proc-arg %d "
 argument_list|,
 name|proc_def
 operator|->
