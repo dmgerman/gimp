@@ -4807,7 +4807,7 @@ name|sprintf
 argument_list|(
 name|buf
 argument_list|,
-literal|"gfig-path miss configured - \nPath `%.100s' not found\n"
+literal|"gfig-path misconfigured - \nPath `%.100s' not found\n"
 argument_list|,
 name|path
 argument_list|)
@@ -8134,7 +8134,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3d96ab0108
+DECL|struct|__anon2b6eb1200108
 block|{
 DECL|member|color_string
 name|gchar
