@@ -196,7 +196,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a6e1170108
+DECL|struct|__anon27ead3ba0108
 block|{
 DECL|member|division
 name|gint32
@@ -3463,6 +3463,9 @@ name|dlg
 argument_list|)
 expr_stmt|;
 name|gtk_main
+argument_list|()
+expr_stmt|;
+name|gimp_help_free
 argument_list|()
 expr_stmt|;
 name|gdk_flush

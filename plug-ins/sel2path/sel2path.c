@@ -1320,6 +1320,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gimp_help_init
+argument_list|()
+expr_stmt|;
 name|dlg
 operator|=
 name|gimp_dialog_new
@@ -1451,6 +1454,9 @@ name|dlg
 argument_list|)
 expr_stmt|;
 name|gtk_main
+argument_list|()
+expr_stmt|;
+name|gimp_help_free
 argument_list|()
 expr_stmt|;
 return|return

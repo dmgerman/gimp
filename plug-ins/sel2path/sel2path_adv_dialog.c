@@ -242,9 +242,6 @@ decl_stmt|;
 name|gint
 name|row
 decl_stmt|;
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
 name|table
 operator|=
 name|gtk_table_new

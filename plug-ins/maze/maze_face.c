@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b1d4570108
+DECL|struct|__anon2bf3f1ef0108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1565,6 +1565,9 @@ name|dlg
 argument_list|)
 expr_stmt|;
 name|gtk_main
+argument_list|()
+expr_stmt|;
+name|gimp_help_free
 argument_list|()
 expr_stmt|;
 name|gdk_flush

@@ -119,7 +119,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288c93880108
+DECL|struct|__anon2c3885fe0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -182,7 +182,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288c93880208
+DECL|struct|__anon2c3885fe0208
 block|{
 DECL|member|run
 name|gint
@@ -2808,6 +2808,9 @@ name|dlg
 argument_list|)
 expr_stmt|;
 name|gtk_main
+argument_list|()
+expr_stmt|;
+name|gimp_help_free
 argument_list|()
 expr_stmt|;
 name|gdk_flush

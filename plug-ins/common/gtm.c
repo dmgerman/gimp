@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c6b56f0108
+DECL|struct|__anon2bb9a5e40108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -135,7 +135,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c6b56f0208
+DECL|struct|__anon2bb9a5e40208
 block|{
 DECL|member|run
 name|gint
@@ -3120,6 +3120,9 @@ name|dlg
 argument_list|)
 expr_stmt|;
 name|gtk_main
+argument_list|()
+expr_stmt|;
+name|gimp_help_free
 argument_list|()
 expr_stmt|;
 name|gdk_flush
