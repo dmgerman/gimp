@@ -317,6 +317,8 @@ argument_list|,
 literal|"swap_path"
 argument_list|,
 literal|"${gimp_dir}"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|swapdir
