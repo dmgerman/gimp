@@ -1431,8 +1431,13 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"\nInvalid option.\n"
+literal|"\nInvalid option \"%s\"\n"
 argument_list|)
+argument_list|,
+name|argv
+index|[
+name|i
+index|]
 argument_list|)
 expr_stmt|;
 name|show_help
