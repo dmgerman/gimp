@@ -179,12 +179,6 @@ name|GimpGradientSegment
 modifier|*
 name|segments
 decl_stmt|;
-comment|/*< private>*/
-DECL|member|last_visited
-name|GimpGradientSegment
-modifier|*
-name|last_visited
-decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -239,12 +233,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpGradientSegment
+modifier|*
 name|gimp_gradient_get_color_at
 parameter_list|(
 name|GimpGradient
 modifier|*
 name|gradient
+parameter_list|,
+name|GimpGradientSegment
+modifier|*
+name|seg
 parameter_list|,
 name|gdouble
 name|pos

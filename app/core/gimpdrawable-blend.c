@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28be92320108
+DECL|struct|__anon2b3d52900108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28be92320208
+DECL|struct|__anon2b3d52900208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -2836,13 +2836,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_render_pixel (double x,double y,GimpRGB * color,gpointer render_data)
+DECL|function|gradient_render_pixel (gdouble x,gdouble y,GimpRGB * color,gpointer render_data)
 name|gradient_render_pixel
 parameter_list|(
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|,
 name|GimpRGB
@@ -3275,6 +3275,8 @@ argument_list|(
 name|rbd
 operator|->
 name|gradient
+argument_list|,
+name|NULL
 argument_list|,
 name|factor
 argument_list|,

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29af36b30103
+DECL|enum|__anon29e591cd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -529,6 +529,12 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+name|GimpGradientSegment
+modifier|*
+name|seg
+init|=
+name|NULL
+decl_stmt|;
 name|gdouble
 modifier|*
 name|values
@@ -591,9 +597,13 @@ name|i
 operator|--
 condition|)
 block|{
+name|seg
+operator|=
 name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
+argument_list|,
+name|seg
 argument_list|,
 name|pos
 argument_list|,

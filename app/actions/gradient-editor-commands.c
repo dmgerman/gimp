@@ -3219,13 +3219,6 @@ name|control_sel_r
 operator|=
 name|replace_last
 expr_stmt|;
-name|gradient
-operator|->
-name|last_visited
-operator|=
-name|NULL
-expr_stmt|;
-comment|/* Force re-search */
 block|}
 end_function
 

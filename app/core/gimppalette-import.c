@@ -181,6 +181,12 @@ name|GimpPalette
 modifier|*
 name|palette
 decl_stmt|;
+name|GimpGradientSegment
+modifier|*
+name|seg
+init|=
+name|NULL
+decl_stmt|;
 name|gdouble
 name|dx
 decl_stmt|,
@@ -190,7 +196,7 @@ name|GimpRGB
 name|color
 decl_stmt|;
 name|gint
-name|loop
+name|i
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -244,7 +250,7 @@ operator|)
 expr_stmt|;
 for|for
 control|(
-name|loop
+name|i
 operator|=
 literal|0
 operator|,
@@ -252,11 +258,11 @@ name|cur_x
 operator|=
 literal|0
 init|;
-name|loop
+name|i
 operator|<
 name|n_colors
 condition|;
-name|loop
+name|i
 operator|++
 operator|,
 name|cur_x
@@ -264,9 +270,13 @@ operator|+=
 name|dx
 control|)
 block|{
+name|seg
+operator|=
 name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
+argument_list|,
+name|seg
 argument_list|,
 name|cur_x
 argument_list|,
@@ -1619,7 +1629,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b69e3f0103
+DECL|enum|__anon293278bc0103
 block|{
 DECL|enumerator|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
 name|GIMP_PALETTE_FILE_FORMAT_UNKNOWN

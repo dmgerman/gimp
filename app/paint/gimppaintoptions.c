@@ -201,7 +201,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd293c30103
+DECL|enum|__anon290d80970103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1994,6 +1994,8 @@ name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
 argument_list|,
+name|NULL
+argument_list|,
 name|pressure
 argument_list|,
 name|gradient_options
@@ -2178,6 +2180,8 @@ expr_stmt|;
 name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
+argument_list|,
+name|NULL
 argument_list|,
 name|pos
 argument_list|,

@@ -426,6 +426,12 @@ name|GimpGradient
 modifier|*
 name|gradient
 decl_stmt|;
+name|GimpGradientSegment
+modifier|*
+name|seg
+init|=
+name|NULL
+decl_stmt|;
 name|guchar
 modifier|*
 name|even
@@ -603,9 +609,13 @@ name|b
 decl_stmt|,
 name|a
 decl_stmt|;
+name|seg
+operator|=
 name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
+argument_list|,
+name|seg
 argument_list|,
 name|cur_x
 argument_list|,

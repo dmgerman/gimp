@@ -3384,6 +3384,8 @@ operator|->
 name|data
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|xpos
 argument_list|,
 name|FALSE
@@ -3599,6 +3601,8 @@ name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
 argument_list|,
+name|NULL
+argument_list|,
 name|xpos
 argument_list|,
 name|FALSE
@@ -3780,6 +3784,8 @@ expr_stmt|;
 name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
+argument_list|,
+name|NULL
 argument_list|,
 name|xpos
 argument_list|,

@@ -202,18 +202,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
-name|gimp_gradient_dirty
-parameter_list|(
-name|GimpData
-modifier|*
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|gchar
 modifier|*
 name|gimp_gradient_get_extension
@@ -237,6 +225,26 @@ name|data
 parameter_list|,
 name|gboolean
 name|stingy_memory_use
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|GimpGradientSegment
+modifier|*
+name|gimp_gradient_get_segment_at_internal
+parameter_list|(
+name|GimpGradient
+modifier|*
+name|gradient
+parameter_list|,
+name|GimpGradientSegment
+modifier|*
+name|seg
+parameter_list|,
+name|gdouble
+name|pos
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -516,6 +524,7 @@ argument_list|)
 operator|-
 literal|1.0
 expr_stmt|;
+comment|/* Works for convex increasing and concave decreasing */
 return|return
 name|sqrt
 argument_list|(
@@ -526,7 +535,6 @@ operator|*
 name|pos
 argument_list|)
 return|;
-comment|/* Works for convex increasing and concave decreasing */
 block|}
 end_function
 
@@ -553,6 +561,7 @@ argument_list|,
 name|pos
 argument_list|)
 expr_stmt|;
+comment|/* Works for convex decreasing and concave increasing */
 return|return
 literal|1.0
 operator|-
@@ -565,7 +574,6 @@ operator|*
 name|pos
 argument_list|)
 return|;
-comment|/* Works for convex decreasing and concave increasing */
 block|}
 end_function
 
@@ -748,12 +756,6 @@ name|gimp_gradient_get_new_preview
 expr_stmt|;
 name|data_class
 operator|->
-name|dirty
-operator|=
-name|gimp_gradient_dirty
-expr_stmt|;
-name|data_class
-operator|->
 name|save
 operator|=
 name|gimp_gradient_save
@@ -787,12 +789,6 @@ block|{
 name|gradient
 operator|->
 name|segments
-operator|=
-name|NULL
-expr_stmt|;
-name|gradient
-operator|->
-name|last_visited
 operator|=
 name|NULL
 expr_stmt|;
@@ -1056,6 +1052,12 @@ argument_list|(
 name|viewable
 argument_list|)
 decl_stmt|;
+name|GimpGradientSegment
+modifier|*
+name|seg
+init|=
+name|NULL
+decl_stmt|;
 name|TempBuf
 modifier|*
 name|temp_buf
@@ -1125,9 +1127,13 @@ name|x
 operator|++
 control|)
 block|{
+name|seg
+operator|=
 name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
+argument_list|,
+name|seg
 argument_list|,
 name|cur_x
 argument_list|,
@@ -1501,54 +1507,6 @@ end_function
 
 begin_function
 specifier|static
-name|void
-DECL|function|gimp_gradient_dirty (GimpData * data)
-name|gimp_gradient_dirty
-parameter_list|(
-name|GimpData
-modifier|*
-name|data
-parameter_list|)
-block|{
-name|GimpGradient
-modifier|*
-name|gradient
-init|=
-name|GIMP_GRADIENT
-argument_list|(
-name|data
-argument_list|)
-decl_stmt|;
-name|gradient
-operator|->
-name|last_visited
-operator|=
-name|NULL
-expr_stmt|;
-if|if
-condition|(
-name|GIMP_DATA_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|dirty
-condition|)
-name|GIMP_DATA_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|dirty
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
 name|gchar
 modifier|*
 DECL|function|gimp_gradient_get_extension (GimpData * data)
@@ -1565,14 +1523,23 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_gradient_get_color_at:  * @gradient: a gradient  * @seg: a segment to seed the search with (or %NULL)  * @pos: position in the gradient (between 0.0 and 1.0)  * @reverse:  * @color: returns the color  *  * If you are iterating over an gradient, you should pass the the  * return value from the last call for @seg.  *  * Return value: the gradient segment the color is from  **/
+end_comment
+
 begin_function
-name|void
-DECL|function|gimp_gradient_get_color_at (GimpGradient * gradient,gdouble pos,gboolean reverse,GimpRGB * color)
+name|GimpGradientSegment
+modifier|*
+DECL|function|gimp_gradient_get_color_at (GimpGradient * gradient,GimpGradientSegment * seg,gdouble pos,gboolean reverse,GimpRGB * color)
 name|gimp_gradient_get_color_at
 parameter_list|(
 name|GimpGradient
 modifier|*
 name|gradient
+parameter_list|,
+name|GimpGradientSegment
+modifier|*
+name|seg
 parameter_list|,
 name|gdouble
 name|pos
@@ -1590,10 +1557,6 @@ name|factor
 init|=
 literal|0.0
 decl_stmt|;
-name|GimpGradientSegment
-modifier|*
-name|seg
-decl_stmt|;
 name|gdouble
 name|seg_len
 decl_stmt|;
@@ -1603,18 +1566,22 @@ decl_stmt|;
 name|GimpRGB
 name|rgb
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_GRADIENT
 argument_list|(
 name|gradient
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|color
 operator|!=
+name|NULL
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -1641,9 +1608,11 @@ name|pos
 expr_stmt|;
 name|seg
 operator|=
-name|gimp_gradient_get_segment_at
+name|gimp_gradient_get_segment_at_internal
 argument_list|(
 name|gradient
+argument_list|,
+name|seg
 argument_list|,
 name|pos
 argument_list|)
@@ -2152,37 +2121,31 @@ name|color
 operator|=
 name|rgb
 expr_stmt|;
+return|return
+name|seg
+return|;
 block|}
 end_function
 
 begin_function
+specifier|static
 name|GimpGradientSegment
 modifier|*
-DECL|function|gimp_gradient_get_segment_at (GimpGradient * gradient,gdouble pos)
-name|gimp_gradient_get_segment_at
+DECL|function|gimp_gradient_get_segment_at_internal (GimpGradient * gradient,GimpGradientSegment * seg,gdouble pos)
+name|gimp_gradient_get_segment_at_internal
 parameter_list|(
 name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,
+name|GimpGradientSegment
+modifier|*
+name|seg
+parameter_list|,
 name|gdouble
 name|pos
 parameter_list|)
 block|{
-name|GimpGradientSegment
-modifier|*
-name|seg
-decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_GRADIENT
-argument_list|(
-name|gradient
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 comment|/* handle FP imprecision at the edges of the gradient */
 name|pos
 operator|=
@@ -2197,17 +2160,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gradient
-operator|->
-name|last_visited
-condition|)
+operator|!
 name|seg
-operator|=
-name|gradient
-operator|->
-name|last_visited
-expr_stmt|;
-else|else
+condition|)
 name|seg
 operator|=
 name|gradient
@@ -2237,13 +2192,6 @@ operator|->
 name|right
 condition|)
 block|{
-name|gradient
-operator|->
-name|last_visited
-operator|=
-name|seg
-expr_stmt|;
-comment|/* for speed */
 return|return
 name|seg
 return|;
@@ -2280,6 +2228,43 @@ argument_list|)
 expr_stmt|;
 return|return
 name|NULL
+return|;
+block|}
+end_function
+
+begin_function
+name|GimpGradientSegment
+modifier|*
+DECL|function|gimp_gradient_get_segment_at (GimpGradient * gradient,gdouble pos)
+name|gimp_gradient_get_segment_at
+parameter_list|(
+name|GimpGradient
+modifier|*
+name|gradient
+parameter_list|,
+name|gdouble
+name|pos
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GRADIENT
+argument_list|(
+name|gradient
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|gimp_gradient_get_segment_at_internal
+argument_list|(
+name|gradient
+argument_list|,
+name|NULL
+argument_list|,
+name|pos
+argument_list|)
 return|;
 block|}
 end_function
@@ -2676,6 +2661,8 @@ comment|/* Get color at original segment's midpoint */
 name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
+argument_list|,
+name|lseg
 argument_list|,
 name|lseg
 operator|->
@@ -3083,6 +3070,8 @@ argument_list|(
 name|gradient
 argument_list|,
 name|seg
+argument_list|,
+name|seg
 operator|->
 name|left
 argument_list|,
@@ -3097,6 +3086,8 @@ expr_stmt|;
 name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
+argument_list|,
+name|seg
 argument_list|,
 name|seg
 operator|->
@@ -3240,13 +3231,6 @@ name|prev
 operator|=
 name|seg
 expr_stmt|;
-name|gradient
-operator|->
-name|last_visited
-operator|=
-name|NULL
-expr_stmt|;
-comment|/* Force re-search */
 comment|/* Done */
 operator|*
 name|newl
