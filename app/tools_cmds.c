@@ -5956,7 +5956,7 @@ argument_list|,
 name|num_segs
 argument_list|,
 operator|(
-name|FreeSelectPoint
+name|ScanConvertPoint
 operator|*
 operator|)
 name|segs

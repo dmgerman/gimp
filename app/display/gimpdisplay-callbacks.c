@@ -3332,6 +3332,12 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|drawable
+condition|)
+return|return;
 name|gimp_add_busy_cursors
 argument_list|()
 expr_stmt|;

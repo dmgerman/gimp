@@ -22,14 +22,11 @@ directive|include
 file|"gimpimageF.h"
 end_include
 
-begin_typedef
-DECL|typedef|FreeSelectPoint
-typedef|typedef
-name|struct
-name|_FreeSelectPoint
-name|FreeSelectPoint
-typedef|;
-end_typedef
+begin_include
+include|#
+directive|include
+file|"scan_convert.h"
+end_include
 
 begin_function_decl
 name|void
@@ -40,7 +37,7 @@ modifier|*
 parameter_list|,
 name|int
 parameter_list|,
-name|FreeSelectPoint
+name|ScanConvertPoint
 modifier|*
 parameter_list|,
 name|int
