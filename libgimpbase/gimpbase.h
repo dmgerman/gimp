@@ -25,6 +25,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpbase/gimpbaseparams.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpbase/gimpchecks.h>
 end_include
 

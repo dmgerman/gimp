@@ -42,13 +42,77 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
+comment|/*  * GIMP_TYPE_PARAM_RGB  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_TYPE_PARAM_RGB
+define|#
+directive|define
+name|GIMP_TYPE_PARAM_RGB
+value|(gimp_param_rgb_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_PARAM_SPEC_RGB (pspec)
+define|#
+directive|define
+name|GIMP_IS_PARAM_SPEC_RGB
+parameter_list|(
+name|pspec
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_RGB))
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_param_rgb_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
+name|GParamSpec
+modifier|*
+name|gimp_param_spec_rgb
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|nick
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|blurb
+parameter_list|,
+specifier|const
+name|GimpRGB
+modifier|*
+name|default_value
+parameter_list|,
+name|GParamFlags
+name|flags
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  RGB and RGBA color types and operations taken from LibGCK  */
 end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bbe9460103
+DECL|enum|__anon2b6107240103
 block|{
 DECL|enumerator|GIMP_RGB_COMPOSITE_NONE
 name|GIMP_RGB_COMPOSITE_NONE

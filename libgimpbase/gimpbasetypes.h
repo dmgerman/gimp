@@ -225,6 +225,35 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_define
+DECL|macro|GIMP_TYPE_PATH
+define|#
+directive|define
+name|GIMP_TYPE_PATH
+value|(gimp_path_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUE_HOLDS_PATH (value)
+define|#
+directive|define
+name|GIMP_VALUE_HOLDS_PATH
+parameter_list|(
+name|value
+parameter_list|)
+value|(G_TYPE_CHECK_VALUE_TYPE ((value), GIMP_TYPE_PATH))
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_path_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_macro
 name|G_END_DECLS
 end_macro
