@@ -121,7 +121,7 @@ DECL|macro|SCALE_WIDTH
 define|#
 directive|define
 name|SCALE_WIDTH
-value|0
+value|100
 end_define
 
 begin_comment
@@ -130,7 +130,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2964a4140103
+DECL|enum|__anon28e6d17d0103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -148,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2964a4140203
+DECL|enum|__anon28e6d17d0203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -164,7 +164,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2964a4140308
+DECL|struct|__anon28e6d17d0308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -223,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2964a4140408
+DECL|struct|__anon28e6d17d0408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -268,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2964a4140508
+DECL|struct|__anon28e6d17d0508
 block|{
 DECL|member|mouse_x
 name|gint

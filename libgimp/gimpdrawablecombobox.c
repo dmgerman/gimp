@@ -40,11 +40,19 @@ file|"gimppixbuf.h"
 end_include
 
 begin_define
-DECL|macro|MENU_THUMBNAIL_SIZE
+DECL|macro|THUMBNAIL_SIZE
 define|#
 directive|define
-name|MENU_THUMBNAIL_SIZE
+name|THUMBNAIL_SIZE
 value|24
+end_define
+
+begin_define
+DECL|macro|WIDTH_REQUEST
+define|#
+directive|define
+name|WIDTH_REQUEST
+value|200
 end_define
 
 begin_function_decl
@@ -118,6 +126,10 @@ operator|=
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_INT_COMBO_BOX
+argument_list|,
+literal|"width-request"
+argument_list|,
+name|WIDTH_REQUEST
 argument_list|,
 literal|"ellipsize"
 argument_list|,
@@ -320,6 +332,10 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_INT_COMBO_BOX
 argument_list|,
+literal|"width-request"
+argument_list|,
+name|WIDTH_REQUEST
+argument_list|,
 literal|"ellipsize"
 argument_list|,
 name|PANGO_ELLIPSIZE_MIDDLE
@@ -481,6 +497,10 @@ operator|=
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_INT_COMBO_BOX
+argument_list|,
+literal|"width-request"
+argument_list|,
+name|WIDTH_REQUEST
 argument_list|,
 literal|"ellipsize"
 argument_list|,
@@ -739,9 +759,9 @@ index|[
 name|i
 index|]
 argument_list|,
-name|MENU_THUMBNAIL_SIZE
+name|THUMBNAIL_SIZE
 argument_list|,
-name|MENU_THUMBNAIL_SIZE
+name|THUMBNAIL_SIZE
 argument_list|,
 name|GIMP_PIXBUF_SMALL_CHECKS
 argument_list|)
