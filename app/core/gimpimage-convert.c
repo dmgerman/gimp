@@ -1816,7 +1816,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa7bd670108
+DECL|struct|__anon2b18fa140108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1863,7 +1863,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa7bd670208
+DECL|struct|__anon2b18fa140208
 block|{
 DECL|member|ncolors
 name|long
@@ -1882,7 +1882,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa7bd670308
+DECL|struct|__anon2b18fa140308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -3873,6 +3873,8 @@ name|entries
 decl_stmt|;
 name|int
 name|i
+decl_stmt|,
+name|item
 decl_stmt|;
 name|UserHasWebPal
 operator|=
@@ -3910,6 +3912,10 @@ expr_stmt|;
 for|for
 control|(
 name|i
+operator|=
+literal|0
+operator|,
+name|item
 operator|=
 literal|0
 operator|,
@@ -4035,10 +4041,15 @@ name|theCustomPalette
 operator|==
 name|entries
 condition|)
+block|{
 operator|*
 name|default_palette
 operator|=
-name|i
+name|item
+expr_stmt|;
+block|}
+name|item
+operator|++
 expr_stmt|;
 block|}
 block|}
