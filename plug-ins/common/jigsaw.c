@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c28e3450103
+DECL|enum|__anon273a4cf40103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -72,7 +72,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c28e3450203
+DECL|enum|__anon273a4cf40203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -276,6 +276,9 @@ name|blend_lines
 parameter_list|,
 name|gdouble
 name|blend_amount
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -306,6 +309,9 @@ name|blend_lines
 parameter_list|,
 name|gdouble
 name|blend_amount
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -336,6 +342,9 @@ name|py
 index|[
 literal|2
 index|]
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -366,6 +375,9 @@ name|py
 index|[
 literal|2
 index|]
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -395,6 +407,9 @@ name|py
 parameter_list|,
 name|gdouble
 name|delta
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -424,6 +439,9 @@ name|py
 parameter_list|,
 name|gdouble
 name|delta
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -453,6 +471,9 @@ name|py
 parameter_list|,
 name|gdouble
 name|delta
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -482,6 +503,9 @@ name|py
 parameter_list|,
 name|gdouble
 name|delta
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -509,6 +533,9 @@ name|curve_start_offset
 parameter_list|,
 name|gint
 name|steps
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -536,6 +563,9 @@ name|curve_start_offset
 parameter_list|,
 name|gint
 name|steps
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -563,6 +593,9 @@ name|curve_start_offset
 parameter_list|,
 name|gint
 name|steps
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -590,6 +623,9 @@ name|curve_start_offset
 parameter_list|,
 name|gint
 name|steps
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -623,6 +659,9 @@ name|delta
 parameter_list|,
 name|gint
 name|counter
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -656,6 +695,9 @@ name|delta
 parameter_list|,
 name|gint
 name|counter
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -689,6 +731,9 @@ name|delta
 parameter_list|,
 name|gint
 name|counter
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -722,6 +767,9 @@ name|delta
 parameter_list|,
 name|gint
 name|counter
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -755,6 +803,9 @@ name|delta
 parameter_list|,
 name|gint
 name|counter
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -788,6 +839,9 @@ name|delta
 parameter_list|,
 name|gint
 name|counter
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -821,6 +875,9 @@ name|delta
 parameter_list|,
 name|gint
 name|counter
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -854,6 +911,9 @@ name|delta
 parameter_list|,
 name|gint
 name|counter
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1018,6 +1078,9 @@ parameter_list|,
 name|gint
 modifier|*
 name|cy
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1056,6 +1119,9 @@ name|cy
 parameter_list|,
 name|gdouble
 name|delta
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1094,6 +1160,9 @@ name|cy
 parameter_list|,
 name|gdouble
 name|delta
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1133,6 +1202,9 @@ name|blend_amount
 parameter_list|,
 name|gint
 name|steps
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1172,6 +1244,9 @@ name|blend_amount
 parameter_list|,
 name|gint
 name|steps
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2562,6 +2637,17 @@ argument_list|)
 operator|->
 name|bpp
 expr_stmt|;
+name|buffer_size
+operator|=
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+operator|*
+name|height
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -2583,8 +2669,6 @@ name|drawable
 operator|->
 name|bpp
 expr_stmt|;
-block|}
-comment|/* setup image buffer */
 name|buffer_size
 operator|=
 name|bytes
@@ -2593,6 +2677,8 @@ name|width
 operator|*
 name|height
 expr_stmt|;
+block|}
+comment|/* setup image buffer */
 name|buffer
 operator|=
 name|g_malloc
@@ -3162,13 +3248,10 @@ name|globals
 operator|.
 name|gridx
 operator|=
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|gint
-argument_list|)
-operator|*
+argument_list|,
 name|xtiles
 argument_list|)
 expr_stmt|;
@@ -3176,13 +3259,10 @@ name|globals
 operator|.
 name|gridy
 operator|=
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|gint
-argument_list|)
-operator|*
+argument_list|,
 name|ytiles
 argument_list|)
 expr_stmt|;
@@ -3286,6 +3366,8 @@ argument_list|,
 name|blend_lines
 argument_list|,
 name|blend_amount
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 if|if
@@ -3339,6 +3421,8 @@ argument_list|,
 name|blend_lines
 argument_list|,
 name|blend_amount
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 if|if
@@ -3411,6 +3495,8 @@ argument_list|,
 name|blend_amount
 argument_list|,
 name|steps
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 if|if
@@ -3470,6 +3556,8 @@ argument_list|,
 name|blend_amount
 argument_list|,
 name|steps
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 if|if
@@ -3530,7 +3618,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_vertical_border (guchar * buffer,gint width,gint height,gint bytes,gint x_offset,gint ytiles,gint blend_lines,gdouble blend_amount)
+DECL|function|draw_vertical_border (guchar * buffer,gint width,gint height,gint bytes,gint x_offset,gint ytiles,gint blend_lines,gdouble blend_amount,gboolean preview_mode)
 name|draw_vertical_border
 parameter_list|(
 name|guchar
@@ -3557,6 +3645,9 @@ name|blend_lines
 parameter_list|,
 name|gdouble
 name|blend_amount
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -3717,6 +3808,8 @@ argument_list|,
 name|px
 argument_list|,
 name|py
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -3831,6 +3924,8 @@ argument_list|,
 name|dy
 argument_list|,
 name|delta
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|px
@@ -3857,6 +3952,8 @@ argument_list|,
 name|ly
 argument_list|,
 name|delta
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -3890,6 +3987,8 @@ name|steps
 index|[
 name|RIGHT
 index|]
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -3935,6 +4034,8 @@ argument_list|,
 name|delta
 argument_list|,
 name|j
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 comment|/* use to be +j + 1 */
@@ -3962,6 +4063,8 @@ argument_list|,
 name|delta
 argument_list|,
 name|j
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -3992,6 +4095,8 @@ name|steps
 index|[
 name|LEFT
 index|]
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -4037,6 +4142,8 @@ argument_list|,
 name|delta
 argument_list|,
 name|j
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 comment|/* use to be -j - 1 */
@@ -4064,6 +4171,8 @@ argument_list|,
 name|delta
 argument_list|,
 name|j
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -4117,6 +4226,8 @@ argument_list|,
 name|px
 argument_list|,
 name|py
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -4230,6 +4341,8 @@ argument_list|,
 name|dy
 argument_list|,
 name|delta
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|px
@@ -4256,6 +4369,8 @@ argument_list|,
 name|ly
 argument_list|,
 name|delta
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -4285,7 +4400,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|draw_horizontal_border (guchar * buffer,gint width,gint bytes,gint y_offset,gint xtiles,gint blend_lines,gdouble blend_amount)
+DECL|function|draw_horizontal_border (guchar * buffer,gint width,gint bytes,gint y_offset,gint xtiles,gint blend_lines,gdouble blend_amount,gboolean preview_mode)
 name|draw_horizontal_border
 parameter_list|(
 name|guchar
@@ -4309,6 +4424,9 @@ name|blend_lines
 parameter_list|,
 name|gdouble
 name|blend_amount
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -4449,6 +4567,8 @@ argument_list|,
 name|px
 argument_list|,
 name|py
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -4562,6 +4682,8 @@ argument_list|,
 name|py
 argument_list|,
 name|delta
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|py
@@ -4588,6 +4710,8 @@ argument_list|,
 name|py
 argument_list|,
 name|delta
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -4620,6 +4744,8 @@ name|steps
 index|[
 name|UP
 index|]
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -4665,6 +4791,8 @@ argument_list|,
 name|delta
 argument_list|,
 name|j
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 comment|/* use to be +j + 1 */
@@ -4692,6 +4820,8 @@ argument_list|,
 name|delta
 argument_list|,
 name|j
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -4722,6 +4852,8 @@ name|steps
 index|[
 name|DOWN
 index|]
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -4767,6 +4899,8 @@ argument_list|,
 name|delta
 argument_list|,
 name|j
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 comment|/* use to be -j -1 */
@@ -4794,6 +4928,8 @@ argument_list|,
 name|delta
 argument_list|,
 name|j
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -4847,6 +4983,8 @@ argument_list|,
 name|px
 argument_list|,
 name|py
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -4961,6 +5099,8 @@ argument_list|,
 name|py
 argument_list|,
 name|delta
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|py
@@ -4987,6 +5127,8 @@ argument_list|,
 name|py
 argument_list|,
 name|delta
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -5015,7 +5157,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|draw_vertical_line (guchar * buffer,gint width,gint bytes,gint px[2],gint py[2])
+DECL|function|draw_vertical_line (guchar * buffer,gint width,gint bytes,gint px[2],gint py[2],gboolean preview_mode)
 name|draw_vertical_line
 parameter_list|(
 name|guchar
@@ -5039,6 +5181,9 @@ name|py
 index|[
 literal|2
 index|]
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -5046,14 +5191,30 @@ name|i
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|bytes
-operator|*
-name|width
 decl_stmt|;
 name|gint
 name|index
-init|=
+decl_stmt|;
+name|gint
+name|length
+decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
+name|index
+operator|=
 name|px
 index|[
 literal|0
@@ -5067,10 +5228,9 @@ name|py
 index|[
 literal|0
 index|]
-decl_stmt|;
-name|gint
+expr_stmt|;
 name|length
-init|=
+operator|=
 name|py
 index|[
 literal|1
@@ -5082,7 +5242,7 @@ literal|0
 index|]
 operator|+
 literal|1
-decl_stmt|;
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -5119,7 +5279,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|draw_horizontal_line (guchar * buffer,gint width,gint bytes,gint px[2],gint py[2])
+DECL|function|draw_horizontal_line (guchar * buffer,gint width,gint bytes,gint px[2],gint py[2],gboolean preview_mode)
 name|draw_horizontal_line
 parameter_list|(
 name|guchar
@@ -5143,6 +5303,9 @@ name|py
 index|[
 literal|2
 index|]
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -5150,14 +5313,30 @@ name|i
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|bytes
-operator|*
-name|width
 decl_stmt|;
 name|gint
 name|index
-init|=
+decl_stmt|;
+name|gint
+name|length
+decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
+name|index
+operator|=
 name|px
 index|[
 literal|0
@@ -5165,16 +5344,15 @@ index|]
 operator|*
 name|bytes
 operator|+
+name|rowstride
+operator|*
 name|py
 index|[
 literal|0
 index|]
-operator|*
-name|rowstride
-decl_stmt|;
-name|gint
+expr_stmt|;
 name|length
-init|=
+operator|=
 name|px
 index|[
 literal|1
@@ -5186,7 +5364,7 @@ literal|0
 index|]
 operator|+
 literal|1
-decl_stmt|;
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -5219,7 +5397,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_right_bump (guchar * buffer,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps)
+DECL|function|draw_right_bump (guchar * buffer,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gboolean preview_mode)
 name|draw_right_bump
 parameter_list|(
 name|guchar
@@ -5240,6 +5418,9 @@ name|curve_start_offset
 parameter_list|,
 name|gint
 name|steps
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -5255,11 +5436,22 @@ name|index
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|width
-operator|*
-name|bytes
 decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -5379,7 +5571,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_left_bump (guchar * buffer,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps)
+DECL|function|draw_left_bump (guchar * buffer,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gboolean preview_mode)
 name|draw_left_bump
 parameter_list|(
 name|guchar
@@ -5400,6 +5592,9 @@ name|curve_start_offset
 parameter_list|,
 name|gint
 name|steps
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -5415,11 +5610,22 @@ name|index
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|width
-operator|*
-name|bytes
 decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -5539,7 +5745,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_up_bump (guchar * buffer,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps)
+DECL|function|draw_up_bump (guchar * buffer,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gboolean preview_mode)
 name|draw_up_bump
 parameter_list|(
 name|guchar
@@ -5560,6 +5766,9 @@ name|curve_start_offset
 parameter_list|,
 name|gint
 name|steps
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -5575,11 +5784,22 @@ name|index
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|width
-operator|*
-name|bytes
 decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -5699,7 +5919,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_down_bump (guchar * buffer,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps)
+DECL|function|draw_down_bump (guchar * buffer,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gboolean preview_mode)
 name|draw_down_bump
 parameter_list|(
 name|guchar
@@ -5720,6 +5940,9 @@ name|curve_start_offset
 parameter_list|,
 name|gint
 name|steps
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -5735,11 +5958,22 @@ name|index
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|width
-operator|*
-name|bytes
 decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -9384,7 +9618,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|darken_vertical_line (guchar * buffer,gint width,gint bytes,gint px[2],gint py[2],gdouble delta)
+DECL|function|darken_vertical_line (guchar * buffer,gint width,gint bytes,gint px[2],gint py[2],gdouble delta,gboolean preview_mode)
 name|darken_vertical_line
 parameter_list|(
 name|guchar
@@ -9411,6 +9645,9 @@ index|]
 parameter_list|,
 name|gdouble
 name|delta
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -9418,14 +9655,33 @@ name|i
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|width
-operator|*
-name|bytes
 decl_stmt|;
 name|gint
 name|index
-init|=
+decl_stmt|;
+name|gint
+name|length
+decl_stmt|;
+name|gint
+name|temp
+decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
+name|index
+operator|=
 name|px
 index|[
 literal|0
@@ -9439,10 +9695,9 @@ literal|0
 index|]
 operator|*
 name|rowstride
-decl_stmt|;
-name|gint
+expr_stmt|;
 name|length
-init|=
+operator|=
 name|py
 index|[
 literal|1
@@ -9454,10 +9709,7 @@ literal|0
 index|]
 operator|+
 literal|1
-decl_stmt|;
-name|gint
-name|temp
-decl_stmt|;
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -9502,7 +9754,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|lighten_vertical_line (guchar * buffer,gint width,gint bytes,gint px[2],gint py[2],gdouble delta)
+DECL|function|lighten_vertical_line (guchar * buffer,gint width,gint bytes,gint px[2],gint py[2],gdouble delta,gboolean preview_mode)
 name|lighten_vertical_line
 parameter_list|(
 name|guchar
@@ -9529,6 +9781,9 @@ index|]
 parameter_list|,
 name|gdouble
 name|delta
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -9536,14 +9791,33 @@ name|i
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|width
-operator|*
-name|bytes
 decl_stmt|;
 name|gint
 name|index
-init|=
+decl_stmt|;
+name|gint
+name|length
+decl_stmt|;
+name|gint
+name|temp
+decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
+name|index
+operator|=
 name|px
 index|[
 literal|0
@@ -9557,10 +9831,9 @@ literal|0
 index|]
 operator|*
 name|rowstride
-decl_stmt|;
-name|gint
+expr_stmt|;
 name|length
-init|=
+operator|=
 name|py
 index|[
 literal|1
@@ -9572,10 +9845,7 @@ literal|0
 index|]
 operator|+
 literal|1
-decl_stmt|;
-name|gint
-name|temp
-decl_stmt|;
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -9620,7 +9890,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|darken_horizontal_line (guchar * buffer,gint width,gint bytes,gint px[2],gint py[2],gdouble delta)
+DECL|function|darken_horizontal_line (guchar * buffer,gint width,gint bytes,gint px[2],gint py[2],gdouble delta,gboolean preview_mode)
 name|darken_horizontal_line
 parameter_list|(
 name|guchar
@@ -9647,6 +9917,9 @@ index|]
 parameter_list|,
 name|gdouble
 name|delta
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -9654,14 +9927,33 @@ name|i
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|width
-operator|*
-name|bytes
 decl_stmt|;
 name|gint
 name|index
-init|=
+decl_stmt|;
+name|gint
+name|length
+decl_stmt|;
+name|gint
+name|temp
+decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
+name|index
+operator|=
 name|px
 index|[
 literal|0
@@ -9675,10 +9967,9 @@ literal|0
 index|]
 operator|*
 name|rowstride
-decl_stmt|;
-name|gint
+expr_stmt|;
 name|length
-init|=
+operator|=
 name|px
 index|[
 literal|1
@@ -9690,10 +9981,7 @@ literal|0
 index|]
 operator|+
 literal|1
-decl_stmt|;
-name|gint
-name|temp
-decl_stmt|;
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -9738,7 +10026,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|lighten_horizontal_line (guchar * buffer,gint width,gint bytes,gint px[2],gint py[2],gdouble delta)
+DECL|function|lighten_horizontal_line (guchar * buffer,gint width,gint bytes,gint px[2],gint py[2],gdouble delta,gboolean preview_mode)
 name|lighten_horizontal_line
 parameter_list|(
 name|guchar
@@ -9765,6 +10053,9 @@ index|]
 parameter_list|,
 name|gdouble
 name|delta
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -9772,14 +10063,33 @@ name|i
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|width
-operator|*
-name|bytes
 decl_stmt|;
 name|gint
 name|index
-init|=
+decl_stmt|;
+name|gint
+name|length
+decl_stmt|;
+name|gint
+name|temp
+decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
+name|index
+operator|=
 name|px
 index|[
 literal|0
@@ -9793,10 +10103,9 @@ literal|0
 index|]
 operator|*
 name|rowstride
-decl_stmt|;
-name|gint
+expr_stmt|;
 name|length
-init|=
+operator|=
 name|px
 index|[
 literal|1
@@ -9808,10 +10117,7 @@ literal|0
 index|]
 operator|+
 literal|1
-decl_stmt|;
-name|gint
-name|temp
-decl_stmt|;
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -9848,7 +10154,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|darken_right_bump (guchar * buffer,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter)
+DECL|function|darken_right_bump (guchar * buffer,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
 name|darken_right_bump
 parameter_list|(
 name|guchar
@@ -9875,6 +10181,9 @@ name|delta
 parameter_list|,
 name|gint
 name|counter
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -9902,10 +10211,6 @@ literal|1
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|width
-operator|*
-name|bytes
 decl_stmt|;
 name|gint
 name|temp
@@ -9915,6 +10220,21 @@ name|j
 init|=
 name|counter
 decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -10110,7 +10430,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lighten_right_bump (guchar * buffer,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter)
+DECL|function|lighten_right_bump (guchar * buffer,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
 name|lighten_right_bump
 parameter_list|(
 name|guchar
@@ -10137,6 +10457,9 @@ name|delta
 parameter_list|,
 name|gint
 name|counter
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -10164,10 +10487,6 @@ literal|1
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|width
-operator|*
-name|bytes
 decl_stmt|;
 name|gint
 name|temp
@@ -10177,6 +10496,21 @@ name|j
 init|=
 name|counter
 decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -10372,7 +10706,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|darken_left_bump (guchar * buffer,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter)
+DECL|function|darken_left_bump (guchar * buffer,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
 name|darken_left_bump
 parameter_list|(
 name|guchar
@@ -10399,6 +10733,9 @@ name|delta
 parameter_list|,
 name|gint
 name|counter
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -10426,10 +10763,6 @@ literal|1
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|width
-operator|*
-name|bytes
 decl_stmt|;
 name|gint
 name|temp
@@ -10439,6 +10772,21 @@ name|j
 init|=
 name|counter
 decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -10634,7 +10982,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lighten_left_bump (guchar * buffer,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter)
+DECL|function|lighten_left_bump (guchar * buffer,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
 name|lighten_left_bump
 parameter_list|(
 name|guchar
@@ -10661,6 +11009,9 @@ name|delta
 parameter_list|,
 name|gint
 name|counter
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -10688,10 +11039,6 @@ literal|1
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|width
-operator|*
-name|bytes
 decl_stmt|;
 name|gint
 name|temp
@@ -10701,6 +11048,21 @@ name|j
 init|=
 name|counter
 decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -10896,7 +11258,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|darken_up_bump (guchar * buffer,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter)
+DECL|function|darken_up_bump (guchar * buffer,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
 name|darken_up_bump
 parameter_list|(
 name|guchar
@@ -10923,6 +11285,9 @@ name|delta
 parameter_list|,
 name|gint
 name|counter
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -10950,10 +11315,6 @@ literal|1
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|width
-operator|*
-name|bytes
 decl_stmt|;
 name|gint
 name|temp
@@ -10963,6 +11324,21 @@ name|j
 init|=
 name|counter
 decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -11158,7 +11534,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lighten_up_bump (guchar * buffer,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter)
+DECL|function|lighten_up_bump (guchar * buffer,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
 name|lighten_up_bump
 parameter_list|(
 name|guchar
@@ -11185,6 +11561,9 @@ name|delta
 parameter_list|,
 name|gint
 name|counter
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -11212,10 +11591,6 @@ literal|1
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|width
-operator|*
-name|bytes
 decl_stmt|;
 name|gint
 name|temp
@@ -11225,6 +11600,21 @@ name|j
 init|=
 name|counter
 decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -11420,7 +11810,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|darken_down_bump (guchar * buffer,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter)
+DECL|function|darken_down_bump (guchar * buffer,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
 name|darken_down_bump
 parameter_list|(
 name|guchar
@@ -11447,6 +11837,9 @@ name|delta
 parameter_list|,
 name|gint
 name|counter
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -11474,10 +11867,6 @@ literal|1
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|width
-operator|*
-name|bytes
 decl_stmt|;
 name|gint
 name|temp
@@ -11487,6 +11876,21 @@ name|j
 init|=
 name|counter
 decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -11682,7 +12086,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lighten_down_bump (guchar * buffer,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter)
+DECL|function|lighten_down_bump (guchar * buffer,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
 name|lighten_down_bump
 parameter_list|(
 name|guchar
@@ -11709,6 +12113,9 @@ name|delta
 parameter_list|,
 name|gint
 name|counter
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -11736,10 +12143,6 @@ literal|1
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|width
-operator|*
-name|bytes
 decl_stmt|;
 name|gint
 name|temp
@@ -11749,6 +12152,21 @@ name|j
 init|=
 name|counter
 decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -11944,7 +12362,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_bezier_line (guchar * buffer,gint width,gint bytes,gint steps,gint * cx,gint * cy)
+DECL|function|draw_bezier_line (guchar * buffer,gint width,gint bytes,gint steps,gint * cx,gint * cy,gboolean preview_mode)
 name|draw_bezier_line
 parameter_list|(
 name|guchar
@@ -11967,6 +12385,9 @@ parameter_list|,
 name|gint
 modifier|*
 name|cy
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -11982,11 +12403,22 @@ name|index
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|width
-operator|*
-name|bytes
 decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -12039,7 +12471,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|darken_bezier_line (guchar * buffer,gint width,gint bytes,gint x_offset,gint y_offset,gint steps,gint * cx,gint * cy,gdouble delta)
+DECL|function|darken_bezier_line (guchar * buffer,gint width,gint bytes,gint x_offset,gint y_offset,gint steps,gint * cx,gint * cy,gdouble delta,gboolean preview_mode)
 name|darken_bezier_line
 parameter_list|(
 name|guchar
@@ -12071,6 +12503,9 @@ name|cy
 parameter_list|,
 name|gdouble
 name|delta
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -12092,14 +12527,25 @@ literal|1
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|width
-operator|*
-name|bytes
 decl_stmt|;
 name|gint
 name|temp
 decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -12172,7 +12618,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lighten_bezier_line (guchar * buffer,gint width,gint bytes,gint x_offset,gint y_offset,gint steps,gint * cx,gint * cy,gdouble delta)
+DECL|function|lighten_bezier_line (guchar * buffer,gint width,gint bytes,gint x_offset,gint y_offset,gint steps,gint * cx,gint * cy,gdouble delta,gboolean preview_mode)
 name|lighten_bezier_line
 parameter_list|(
 name|guchar
@@ -12204,6 +12650,9 @@ name|cy
 parameter_list|,
 name|gdouble
 name|delta
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -12225,14 +12674,25 @@ literal|1
 decl_stmt|;
 name|gint
 name|rowstride
-init|=
-name|width
-operator|*
-name|bytes
 decl_stmt|;
 name|gint
 name|temp
 decl_stmt|;
+name|rowstride
+operator|=
+name|preview_mode
+condition|?
+name|GTK_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|rowstride
+else|:
+name|bytes
+operator|*
+name|width
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -12305,7 +12765,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_bezier_vertical_border (guchar * buffer,gint width,gint height,gint bytes,gint x_offset,gint xtiles,gint ytiles,gint blend_lines,gdouble blend_amount,gint steps)
+DECL|function|draw_bezier_vertical_border (guchar * buffer,gint width,gint height,gint bytes,gint x_offset,gint xtiles,gint ytiles,gint blend_lines,gdouble blend_amount,gint steps,gboolean preview_mode)
 name|draw_bezier_vertical_border
 parameter_list|(
 name|guchar
@@ -12338,6 +12798,9 @@ name|blend_amount
 parameter_list|,
 name|gint
 name|steps
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -12423,26 +12886,20 @@ name|cachey
 decl_stmt|;
 name|cachex
 operator|=
-name|g_malloc
-argument_list|(
-name|steps
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|gint
-argument_list|)
+argument_list|,
+name|steps
 argument_list|)
 expr_stmt|;
 name|cachey
 operator|=
-name|g_malloc
-argument_list|(
-name|steps
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|gint
-argument_list|)
+argument_list|,
+name|steps
 argument_list|)
 expr_stmt|;
 for|for
@@ -12613,6 +13070,8 @@ argument_list|,
 name|cachex
 argument_list|,
 name|cachey
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -12665,6 +13124,8 @@ argument_list|,
 name|cachey
 argument_list|,
 name|delta
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|px
@@ -12698,6 +13159,8 @@ argument_list|,
 name|cachey
 argument_list|,
 name|delta
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -12730,6 +13193,8 @@ name|steps
 index|[
 name|RIGHT
 index|]
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -12775,6 +13240,8 @@ argument_list|,
 name|delta
 argument_list|,
 name|j
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 comment|/* use to be +j + 1 */
@@ -12802,6 +13269,8 @@ argument_list|,
 name|delta
 argument_list|,
 name|j
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -12832,6 +13301,8 @@ name|steps
 index|[
 name|LEFT
 index|]
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -12877,6 +13348,8 @@ argument_list|,
 name|delta
 argument_list|,
 name|j
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 comment|/* use to be -j - 1 */
@@ -12904,6 +13377,8 @@ argument_list|,
 name|delta
 argument_list|,
 name|j
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -13051,6 +13526,8 @@ argument_list|,
 name|cachex
 argument_list|,
 name|cachey
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -13103,6 +13580,8 @@ argument_list|,
 name|cachey
 argument_list|,
 name|delta
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|px
@@ -13136,6 +13615,8 @@ argument_list|,
 name|cachey
 argument_list|,
 name|delta
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -13170,7 +13651,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_bezier_horizontal_border (guchar * buffer,gint width,gint height,gint bytes,gint y_offset,gint xtiles,gint ytiles,gint blend_lines,gdouble blend_amount,gint steps)
+DECL|function|draw_bezier_horizontal_border (guchar * buffer,gint width,gint height,gint bytes,gint y_offset,gint xtiles,gint ytiles,gint blend_lines,gdouble blend_amount,gint steps,gboolean preview_mode)
 name|draw_bezier_horizontal_border
 parameter_list|(
 name|guchar
@@ -13203,6 +13684,9 @@ name|blend_amount
 parameter_list|,
 name|gint
 name|steps
+parameter_list|,
+name|gboolean
+name|preview_mode
 parameter_list|)
 block|{
 name|gint
@@ -13479,6 +13963,8 @@ argument_list|,
 name|cachex
 argument_list|,
 name|cachey
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -13531,6 +14017,8 @@ argument_list|,
 name|cachey
 argument_list|,
 name|delta
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|py
@@ -13564,6 +14052,8 @@ argument_list|,
 name|cachey
 argument_list|,
 name|delta
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -13597,6 +14087,8 @@ name|steps
 index|[
 name|UP
 index|]
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -13642,6 +14134,8 @@ argument_list|,
 name|delta
 argument_list|,
 name|j
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 comment|/* use to be +j + 1 */
@@ -13669,6 +14163,8 @@ argument_list|,
 name|delta
 argument_list|,
 name|j
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -13699,6 +14195,8 @@ name|steps
 index|[
 name|DOWN
 index|]
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -13744,6 +14242,8 @@ argument_list|,
 name|delta
 argument_list|,
 name|j
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 comment|/* use to be -j -1 */
@@ -13771,6 +14271,8 @@ argument_list|,
 name|delta
 argument_list|,
 name|j
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -13920,6 +14422,8 @@ argument_list|,
 name|cachex
 argument_list|,
 name|cachey
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -13972,6 +14476,8 @@ argument_list|,
 name|cachey
 argument_list|,
 name|delta
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|py
@@ -14005,6 +14511,8 @@ argument_list|,
 name|cachey
 argument_list|,
 name|delta
+argument_list|,
+name|preview_mode
 argument_list|)
 expr_stmt|;
 name|delta
@@ -15544,32 +16052,19 @@ argument_list|)
 expr_stmt|;
 name|size
 operator|=
-operator|(
 name|GTK_PREVIEW
 argument_list|(
 name|preview
 argument_list|)
 operator|->
-name|buffer_width
-operator|)
+name|rowstride
 operator|*
-operator|(
 name|GTK_PREVIEW
 argument_list|(
 name|preview
 argument_list|)
 operator|->
 name|buffer_height
-operator|)
-operator|*
-operator|(
-name|GTK_PREVIEW
-argument_list|(
-name|preview
-argument_list|)
-operator|->
-name|bpp
-operator|)
 expr_stmt|;
 name|preview_bits
 operator|=
