@@ -593,7 +593,7 @@ operator|*
 operator|)
 name|options
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Color Picker Options"
 argument_list|)

@@ -326,7 +326,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon29de647e0108
+DECL|struct|__anon2be389c70108
 typedef|typedef
 struct|struct
 block|{
@@ -450,7 +450,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29de647e0208
+DECL|struct|__anon2be389c70208
 typedef|typedef
 struct|struct
 block|{
@@ -479,7 +479,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29de647e0308
+DECL|struct|__anon2be389c70308
 typedef|typedef
 struct|struct
 block|{
@@ -498,7 +498,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29de647e0408
+DECL|struct|__anon2be389c70408
 typedef|typedef
 struct|struct
 block|{
@@ -5483,12 +5483,12 @@ argument_list|)
 expr_stmt|;
 name|query_string_box
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Rename path"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Enter a new name for the path"
 argument_list|)

@@ -375,7 +375,7 @@ operator|*
 operator|)
 name|options
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Magnify Options"
 argument_list|)

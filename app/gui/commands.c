@@ -306,7 +306,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29836ec40108
+DECL|struct|__anon2991b0b70108
 block|{
 DECL|member|resize
 name|Resize
@@ -1304,12 +1304,12 @@ argument_list|()
 expr_stmt|;
 name|query_size_box
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Border Selection"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Border selection by:"
 argument_list|)
@@ -1390,12 +1390,12 @@ argument_list|()
 expr_stmt|;
 name|query_size_box
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Feather Selection"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Feather selection by:"
 argument_list|)
@@ -1476,12 +1476,12 @@ argument_list|()
 expr_stmt|;
 name|query_size_box
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Grow Selection"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Grow selection by:"
 argument_list|)
@@ -1562,12 +1562,12 @@ argument_list|()
 expr_stmt|;
 name|query_size_box
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Shrink Selection"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Shrink selection by:"
 argument_list|)

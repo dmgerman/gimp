@@ -878,7 +878,7 @@ name|frame
 operator|=
 name|tool_options_radio_buttons_new
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Convolve Type"
 argument_list|)

@@ -3276,12 +3276,12 @@ argument_list|)
 expr_stmt|;
 name|query_string_box
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Cut Named"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Enter a name for this buffer"
 argument_list|)
@@ -3410,12 +3410,12 @@ name|gdisp_ptr
 expr_stmt|;
 name|query_string_box
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Copy Named"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Enter a name for this buffer"
 argument_list|)

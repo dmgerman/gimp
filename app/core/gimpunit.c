@@ -66,7 +66,7 @@ comment|/* internal structures */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c331df40108
+DECL|struct|__anon2b424c590108
 typedef|typedef
 struct|struct
 block|{
@@ -1031,12 +1031,15 @@ name|singular
 argument_list|)
 return|;
 return|return
+name|gettext
+argument_list|(
 name|gimp_unit_get_user_unit
 argument_list|(
 name|unit
 argument_list|)
 operator|->
 name|singular
+argument_list|)
 return|;
 block|}
 end_function
@@ -1118,12 +1121,15 @@ name|plural
 argument_list|)
 return|;
 return|return
+name|gettext
+argument_list|(
 name|gimp_unit_get_user_unit
 argument_list|(
 name|unit
 argument_list|)
 operator|->
 name|plural
+argument_list|)
 return|;
 block|}
 end_function

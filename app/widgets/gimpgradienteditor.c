@@ -7111,17 +7111,17 @@ parameter_list|)
 block|{
 name|query_string_box
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"New gradient"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Enter a name for the new gradient"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"untitled"
 argument_list|)
@@ -7568,12 +7568,12 @@ argument_list|)
 expr_stmt|;
 name|query_string_box
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Copy gradient"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Enter a name for the copied gradient"
 argument_list|)
@@ -8544,12 +8544,12 @@ condition|)
 return|return;
 name|query_string_box
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Rename gradient"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Enter a new name for the gradient"
 argument_list|)

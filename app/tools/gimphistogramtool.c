@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -1165,7 +1171,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Histogram does not operate on indexed drawables."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1381,7 +1390,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Close"
+argument_list|)
 block|,
 name|histogram_tool_close_callback
 block|,
@@ -1443,7 +1455,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Value"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1459,7 +1474,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Red"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1475,7 +1493,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Green"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1491,7 +1512,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Blue"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1606,7 +1630,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Histogram"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* handle the wm close signal */
@@ -1725,7 +1752,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Information on Channel:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

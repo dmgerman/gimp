@@ -267,7 +267,7 @@ operator|*
 operator|)
 name|options
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Flip Tool Options"
 argument_list|)
@@ -299,7 +299,7 @@ name|frame
 operator|=
 name|tool_options_radio_buttons_new
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Tool Toggle"
 argument_list|)

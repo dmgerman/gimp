@@ -631,7 +631,7 @@ comment|/* Crop area-select functions */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b0d11870103
+DECL|enum|__anon2ae7cfaf0103
 typedef|typedef
 enum|enum
 block|{
@@ -950,7 +950,7 @@ operator|*
 operator|)
 name|options
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Crop& Resize Options"
 argument_list|)
@@ -1150,7 +1150,7 @@ name|frame
 operator|=
 name|tool_options_radio_buttons_new
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"Tool Toggle"
 argument_list|)

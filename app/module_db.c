@@ -107,12 +107,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpenv.h"
 end_include
 
@@ -120,6 +114,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpmodule.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
@@ -137,7 +137,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|enum|__anon28a0d3a60103
+DECL|enum|__anon2bb943db0103
 typedef|typedef
 enum|enum
 block|{
@@ -268,7 +268,7 @@ comment|/* one of these objects is kept per-module */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28a0d3a60208
+DECL|struct|__anon2bb943db0208
 typedef|typedef
 struct|struct
 block|{
@@ -385,7 +385,7 @@ value|7
 end_define
 
 begin_typedef
-DECL|struct|__anon28a0d3a60308
+DECL|struct|__anon2bb943db0308
 typedef|typedef
 struct|struct
 block|{
@@ -1702,7 +1702,7 @@ comment|/* module_info object glue */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28a0d3a60408
+DECL|struct|__anon2bb943db0408
 typedef|typedef
 struct|struct
 block|{
@@ -1717,7 +1717,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon28a0d3a60503
+DECL|enum|__anon2bb943db0503
 enum|enum
 block|{
 DECL|enumerator|MODIFIED
@@ -4579,7 +4579,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28a0d3a60608
+DECL|struct|__anon2bb943db0608
 typedef|typedef
 struct|struct
 block|{

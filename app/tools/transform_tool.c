@@ -790,7 +790,7 @@ operator|*
 operator|)
 name|options
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Transform Tool Options"
 argument_list|)
