@@ -181,26 +181,22 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  If there is already a floating selection, anchor it  */
-if|if
-condition|(
-name|gimage
-operator|->
-name|floating_sel
-condition|)
-block|{
 name|floating_sel
 operator|=
-name|gimage
-operator|->
-name|floating_sel
-expr_stmt|;
-name|floating_sel_anchor
-argument_list|(
 name|gimp_image_floating_sel
 argument_list|(
 name|gimage
 argument_list|)
+expr_stmt|;
+comment|/*  If there is already a floating selection, anchor it  */
+if|if
+condition|(
+name|floating_sel
+condition|)
+block|{
+name|floating_sel_anchor
+argument_list|(
+name|floating_sel
 argument_list|)
 expr_stmt|;
 comment|/*  if we were pasting to the old floating selection, paste now        *  to the drawable        */

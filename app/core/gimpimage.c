@@ -270,7 +270,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c90245c0103
+DECL|enum|__anon28e11d160103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -5528,18 +5528,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimage
-operator|->
-name|floating_sel
-operator|==
-name|NULL
-condition|)
-return|return
-name|NULL
-return|;
-else|else
 return|return
 name|gimage
 operator|->
