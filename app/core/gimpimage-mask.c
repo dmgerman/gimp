@@ -613,6 +613,16 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
+comment|/*  invalidate the preview  */
+name|GIMP_DRAWABLE
+argument_list|(
+name|mask
+argument_list|)
+operator|->
+name|preview_valid
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 end_function
 
@@ -1622,16 +1632,6 @@ name|gimp_image_mask_invalidate
 argument_list|(
 name|gimage
 argument_list|)
-expr_stmt|;
-comment|/*  invalidate the preview  */
-name|GIMP_DRAWABLE
-argument_list|(
-name|mask
-argument_list|)
-operator|->
-name|preview_valid
-operator|=
-name|FALSE
 expr_stmt|;
 block|}
 end_function
