@@ -7281,6 +7281,10 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|floating_sel
+condition|)
 name|drawable
 operator|=
 name|GIMP_DRAWABLE
@@ -7294,6 +7298,11 @@ name|fs
 operator|.
 name|drawable
 argument_list|)
+expr_stmt|;
+else|else
+name|drawable
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 name|return_args

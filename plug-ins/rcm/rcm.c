@@ -280,7 +280,7 @@ literal|0
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"Colormap rotation plug-in"
+literal|"plug-in-rotate-colormap"
 argument_list|,
 literal|"Colormap rotation as in xv"
 argument_list|,
