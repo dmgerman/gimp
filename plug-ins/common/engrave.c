@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a4b6b90108
+DECL|struct|__anon2b54c1350108
 block|{
 DECL|member|height
 name|gint
@@ -723,16 +723,6 @@ name|_
 argument_list|(
 literal|"Parameter Settings"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -1737,7 +1727,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a4b6b90208
+DECL|struct|__anon2b54c1350208
 block|{
 DECL|member|x
 DECL|member|y

@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2888061b0103
+DECL|enum|__anon2a19e2890103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -67,7 +67,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2888061b0208
+DECL|struct|__anon2a19e2890208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -1505,16 +1505,6 @@ literal|"Parameter Settings"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -2066,16 +2056,6 @@ name|_
 argument_list|(
 literal|"Preview"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

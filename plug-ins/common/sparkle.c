@@ -127,7 +127,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299b8e6d0108
+DECL|struct|__anon2b1e6de10108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -1486,16 +1486,6 @@ name|_
 argument_list|(
 literal|"Parameter Settings"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width

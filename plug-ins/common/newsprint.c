@@ -395,7 +395,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2373b0108
+DECL|struct|__anon29cf8a360108
 block|{
 DECL|member|name
 specifier|const
@@ -655,7 +655,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2373b0208
+DECL|struct|__anon29cf8a360208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -728,7 +728,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2373b0308
+DECL|struct|__anon29cf8a360308
 block|{
 DECL|member|input_spi
 name|gint
@@ -758,7 +758,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2373b0408
+DECL|struct|__anon29cf8a360408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -865,7 +865,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2373b0508
+DECL|struct|__anon29cf8a360508
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1036,7 +1036,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2373b0608
+DECL|struct|__anon29cf8a360608
 block|{
 DECL|member|name
 specifier|const
@@ -4885,16 +4885,6 @@ literal|"Resolution"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -5202,16 +5192,6 @@ name|_
 argument_list|(
 literal|"Screen"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -6000,16 +5980,6 @@ literal|"Antialiasing"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -6723,7 +6693,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2373b0708
+DECL|struct|__anon29cf8a360708
 block|{
 DECL|member|index
 name|gint

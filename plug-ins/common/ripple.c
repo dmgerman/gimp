@@ -124,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c108a8b0108
+DECL|struct|__anon2be274fa0108
 block|{
 DECL|member|period
 name|gint
@@ -904,7 +904,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c108a8b0208
+DECL|struct|__anon2be274fa0208
 typedef|typedef
 struct|struct
 block|{
@@ -1973,16 +1973,6 @@ literal|"Options"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
-argument_list|)
-expr_stmt|;
 name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
@@ -2443,16 +2433,6 @@ name|_
 argument_list|(
 literal|"Parameter Settings"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

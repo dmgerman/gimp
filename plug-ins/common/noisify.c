@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29566bed0108
+DECL|struct|__anon2b5f1b420108
 block|{
 DECL|member|independent
 name|gint
@@ -103,7 +103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29566bed0208
+DECL|struct|__anon2b5f1b420208
 block|{
 DECL|member|channels
 name|gint
@@ -1301,16 +1301,6 @@ name|_
 argument_list|(
 literal|"Parameter Settings"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width

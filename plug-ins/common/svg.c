@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fbe72d0108
+DECL|struct|__anon297e71230108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -2653,16 +2653,6 @@ name|frame
 argument_list|)
 argument_list|,
 literal|6
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

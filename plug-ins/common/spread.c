@@ -70,7 +70,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c5228f0108
+DECL|struct|__anon2b41b6fe0108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -1241,16 +1241,6 @@ name|_
 argument_list|(
 literal|"Spread Amount"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width

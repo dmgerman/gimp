@@ -349,7 +349,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2901c0360108
+DECL|struct|__anon27a967200108
 typedef|typedef
 struct|struct
 block|{
@@ -396,7 +396,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2901c0360208
+DECL|struct|__anon27a967200208
 typedef|typedef
 struct|struct
 block|{
@@ -3064,16 +3064,6 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
-argument_list|)
-expr_stmt|;
 name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
@@ -3409,16 +3399,6 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
-argument_list|)
-expr_stmt|;
 name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
@@ -3607,16 +3587,6 @@ operator|=
 name|gtk_frame_new
 argument_list|(
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width

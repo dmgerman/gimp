@@ -149,7 +149,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27696ca40108
+DECL|struct|__anon2a324a490108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -1006,16 +1006,6 @@ name|_
 argument_list|(
 literal|"Color"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width

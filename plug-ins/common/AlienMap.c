@@ -30525,7 +30525,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aaa214f0108
+DECL|struct|__anon2ac0243f0108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -30560,7 +30560,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aaa214f0208
+DECL|struct|__anon2ac0243f0208
 block|{
 DECL|member|run
 name|gint
@@ -32931,16 +32931,6 @@ operator|=
 name|gtk_frame_new
 argument_list|(
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|xframe
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width

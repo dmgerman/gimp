@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9732a10108
+DECL|struct|__anon2ba770a10108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -2301,16 +2301,6 @@ name|_
 argument_list|(
 literal|"Curl Orientation"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

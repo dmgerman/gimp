@@ -173,7 +173,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2907cea40103
+DECL|enum|__anon2af095040103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -193,7 +193,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2907cea40203
+DECL|enum|__anon2af095040203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2907cea40308
+DECL|struct|__anon2af095040308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -231,7 +231,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2907cea4040a
+DECL|union|__anon2af09504040a
 block|{
 DECL|member|d
 name|gdouble
@@ -260,7 +260,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2907cea40508
+DECL|struct|__anon2af095040508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -290,7 +290,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2907cea40608
+DECL|struct|__anon2af095040608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -325,7 +325,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2907cea40708
+DECL|struct|__anon2af095040708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -361,7 +361,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2907cea40808
+DECL|struct|__anon2af095040808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -428,7 +428,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2907cea40908
+DECL|struct|__anon2af095040908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -630,7 +630,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2907cea40a08
+DECL|struct|__anon2af095040a08
 block|{
 DECL|member|run
 name|gboolean
@@ -5371,18 +5371,6 @@ operator|=
 name|gtk_frame_new
 argument_list|(
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|ifsD
-operator|->
-name|current_frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

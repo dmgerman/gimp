@@ -519,7 +519,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0f94c10108
+DECL|struct|__anon2c73cc5a0108
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1013,7 +1013,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0f94c10208
+DECL|struct|__anon2c73cc5a0208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -1044,7 +1044,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0f94c10308
+DECL|struct|__anon2c73cc5a0308
 block|{
 DECL|member|width
 DECL|member|height
@@ -6192,16 +6192,6 @@ literal|"Compose Channels"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|left_frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -6259,16 +6249,6 @@ name|_
 argument_list|(
 literal|"Channel Representations"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|right_frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
