@@ -221,6 +221,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|MaskBuf
+modifier|*
+name|brush_scale_pixmap
+parameter_list|(
+name|MaskBuf
+modifier|*
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
