@@ -297,7 +297,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"New layer dialog"
+literal|"New layer..."
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -309,7 +309,7 @@ name|GIMP_HELP_LAYER_NEW
 block|}
 block|,
 block|{
-literal|"layers-new-default"
+literal|"layers-new-last-values"
 block|,
 name|GTK_STOCK_NEW
 block|,
@@ -322,12 +322,12 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"New layer"
+literal|"New layer with last values"
 argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|layers_new_default_cmd_callback
+name|layers_new_last_vals_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_LAYER_NEW
@@ -1801,7 +1801,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"layers-new-default"
+literal|"layers-new-last-values"
 argument_list|,
 name|gimage
 argument_list|)

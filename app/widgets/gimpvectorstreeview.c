@@ -529,7 +529,7 @@ name|item_view_class
 operator|->
 name|new_default_action
 operator|=
-literal|"vectors-new-default"
+literal|"vectors-new-last-values"
 expr_stmt|;
 name|item_view_class
 operator|->
@@ -809,6 +809,10 @@ argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"vectors-stroke"
+argument_list|,
+literal|"vectors-stroke-last-values"
+argument_list|,
+name|GDK_SHIFT_MASK
 argument_list|,
 name|NULL
 argument_list|)

@@ -365,7 +365,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Stroke selection"
+literal|"Stroke selection..."
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -377,15 +377,21 @@ name|GIMP_HELP_SELECTION_STROKE
 block|}
 block|,
 block|{
-literal|"select-stroke-last-vals"
+literal|"select-stroke-last-values"
 block|,
 name|GIMP_STOCK_SELECTION_STROKE
 block|,
-literal|"Stroke Selection with last Values"
+name|N_
+argument_list|(
+literal|"_Stroke Selection"
+argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Stroke selection with last values"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -605,7 +611,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"select-stroke-last-vals"
+literal|"select-stroke-last-values"
 argument_list|,
 name|drawable
 operator|&&

@@ -931,8 +931,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_new_default_cmd_callback (GtkAction * action,gpointer data)
-name|layers_new_default_cmd_callback
+DECL|function|layers_new_last_vals_cmd_callback (GtkAction * action,gpointer data)
+name|layers_new_last_vals_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -1136,9 +1136,13 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
+name|layer_name
+condition|?
+name|layer_name
+else|:
 name|_
 argument_list|(
-literal|"Empty Layer"
+literal|"New Layer"
 argument_list|)
 argument_list|,
 name|opacity
@@ -1158,7 +1162,7 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
-name|GIMP_TRANSPARENT_FILL
+name|fill_type
 argument_list|)
 expr_stmt|;
 name|gimp_item_translate

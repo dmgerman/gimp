@@ -60,7 +60,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|layers_new_default_cmd_callback
+name|layers_new_last_vals_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

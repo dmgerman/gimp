@@ -147,7 +147,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"New channel dialog"
+literal|"New channel..."
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -159,7 +159,7 @@ name|GIMP_HELP_CHANNEL_NEW
 block|}
 block|,
 block|{
-literal|"channels-new-default"
+literal|"channels-new-last-values"
 block|,
 name|GTK_STOCK_NEW
 block|,
@@ -172,12 +172,12 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"New channel"
+literal|"New channel with last values"
 argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|channels_new_default_cmd_callback
+name|channels_new_last_vals_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_CHANNEL_NEW
@@ -658,7 +658,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"channels-new-default"
+literal|"channels-new-last-values"
 argument_list|,
 operator|!
 name|fs

@@ -169,7 +169,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"New path dialog"
+literal|"New path..."
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -181,7 +181,7 @@ name|GIMP_HELP_PATH_NEW
 block|}
 block|,
 block|{
-literal|"vectors-new-default"
+literal|"vectors-new-last-values"
 block|,
 name|GTK_STOCK_NEW
 block|,
@@ -194,12 +194,12 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"New path"
+literal|"New path with last values"
 argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|vectors_new_default_cmd_callback
+name|vectors_new_last_vals_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_PATH_NEW
@@ -391,7 +391,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Stroke path"
+literal|"Stroke path..."
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -403,15 +403,21 @@ name|GIMP_HELP_PATH_STROKE
 block|}
 block|,
 block|{
-literal|"vectors-stroke-last-vals"
+literal|"vectors-stroke-last-values"
 block|,
 name|GIMP_STOCK_PATH_STROKE
 block|,
-literal|"Stroke Path with last Values"
+name|N_
+argument_list|(
+literal|"Stro_ke Path"
+argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Stroke path with last values"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -1049,7 +1055,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"vectors-new-default"
+literal|"vectors-new-last-values"
 argument_list|,
 name|gimage
 argument_list|)
@@ -1208,7 +1214,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"vectors-stroke-last-vals"
+literal|"vectors-stroke-last-values"
 argument_list|,
 name|vectors
 argument_list|)

@@ -46,7 +46,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channels_new_default_cmd_callback
+name|channels_new_last_vals_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

@@ -473,7 +473,7 @@ name|item_view_class
 operator|->
 name|new_default_action
 operator|=
-literal|"channels-new-default"
+literal|"channels-new-last-values"
 expr_stmt|;
 name|item_view_class
 operator|->

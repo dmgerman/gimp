@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad72d620103
+DECL|enum|__anon291f775c0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1732,11 +1732,11 @@ name|action_group
 argument_list|,
 name|item_view_class
 operator|->
-name|new_default_action
+name|new_action
 argument_list|,
 name|item_view_class
 operator|->
-name|new_action
+name|new_default_action
 argument_list|,
 name|GDK_SHIFT_MASK
 argument_list|,

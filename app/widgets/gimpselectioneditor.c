@@ -746,6 +746,10 @@ literal|"select"
 argument_list|,
 literal|"select-stroke"
 argument_list|,
+literal|"select-stroke-last-values"
+argument_list|,
+name|GDK_SHIFT_MASK
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;

@@ -1097,7 +1097,7 @@ name|item_view_class
 operator|->
 name|new_default_action
 operator|=
-literal|"layers-new-default"
+literal|"layers-new-last-values"
 expr_stmt|;
 name|item_view_class
 operator|->

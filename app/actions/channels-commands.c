@@ -449,8 +449,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_new_default_cmd_callback (GtkAction * action,gpointer data)
-name|channels_new_default_cmd_callback
+DECL|function|channels_new_last_vals_cmd_callback (GtkAction * action,gpointer data)
+name|channels_new_last_vals_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -553,19 +553,9 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_rgba_set
-argument_list|(
-operator|&
 name|color
-argument_list|,
-literal|0.0
-argument_list|,
-literal|0.0
-argument_list|,
-literal|0.0
-argument_list|,
-literal|0.5
-argument_list|)
+operator|=
+name|channel_color
 expr_stmt|;
 block|}
 name|gimp_image_undo_group_start
@@ -590,9 +580,13 @@ name|width
 argument_list|,
 name|height
 argument_list|,
+name|channel_name
+condition|?
+name|channel_name
+else|:
 name|_
 argument_list|(
-literal|"Empty Channel"
+literal|"New Channel"
 argument_list|)
 argument_list|,
 operator|&

@@ -625,8 +625,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_new_default_cmd_callback (GtkAction * action,gpointer data)
-name|vectors_new_default_cmd_callback
+DECL|function|vectors_new_last_vals_cmd_callback (GtkAction * action,gpointer data)
+name|vectors_new_last_vals_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -657,9 +657,13 @@ name|gimp_vectors_new
 argument_list|(
 name|gimage
 argument_list|,
+name|vectors_name
+condition|?
+name|vectors_name
+else|:
 name|_
 argument_list|(
-literal|"Empty Path"
+literal|"New Path"
 argument_list|)
 argument_list|)
 expr_stmt|;
