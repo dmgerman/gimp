@@ -531,6 +531,17 @@ ifdef|#
 directive|ifdef
 name|G_OS_WIN32
 comment|/*  work around missing GDK_BUTTON*_MASK bits in GdkEventKey::state          *  (see http://bugzilla.gnome.org/show_bug.cgi?id=136636)          */
+if|if
+condition|(
+name|gtk_check_version
+argument_list|(
+literal|2
+argument_list|,
+literal|2
+argument_list|,
+literal|5
+argument_list|)
+condition|)
 block|{
 name|GdkModifierType
 name|mouse_mask
