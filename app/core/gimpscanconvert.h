@@ -40,7 +40,7 @@ parameter_list|,
 name|guint
 name|height
 parameter_list|,
-name|guint
+name|gboolean
 name|antialias
 parameter_list|)
 function_decl|;

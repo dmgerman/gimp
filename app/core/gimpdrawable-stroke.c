@@ -296,10 +296,6 @@ argument_list|,
 name|h
 argument_list|,
 name|antialias
-condition|?
-literal|1
-else|:
-literal|0
 argument_list|)
 expr_stmt|;
 comment|/* For each Stroke in the vector, interpolate it, and add it to the    * ScanConvert */

@@ -162,7 +162,7 @@ end_comment
 begin_function
 name|GimpScanConvert
 modifier|*
-DECL|function|gimp_scan_convert_new (guint width,guint height,guint antialias)
+DECL|function|gimp_scan_convert_new (guint width,guint height,gboolean antialias)
 name|gimp_scan_convert_new
 parameter_list|(
 name|guint
@@ -171,7 +171,7 @@ parameter_list|,
 name|guint
 name|height
 parameter_list|,
-name|guint
+name|gboolean
 name|antialias
 parameter_list|)
 block|{
@@ -197,15 +197,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|antialias
-operator|>
-literal|0
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|sc
 operator|=
 name|g_new0
@@ -219,15 +210,7 @@ name|sc
 operator|->
 name|antialias
 operator|=
-operator|(
 name|antialias
-operator|!=
-literal|0
-condition|?
-name|TRUE
-else|:
-name|FALSE
-operator|)
 expr_stmt|;
 name|sc
 operator|->

@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b33ea260103
+DECL|enum|__anon2c5b5dec0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -591,7 +591,7 @@ name|options
 operator|->
 name|cap_style
 operator|=
-name|g_value_get_int
+name|g_value_get_enum
 argument_list|(
 name|value
 argument_list|)
@@ -604,7 +604,7 @@ name|options
 operator|->
 name|join_style
 operator|=
-name|g_value_get_int
+name|g_value_get_enum
 argument_list|(
 name|value
 argument_list|)
@@ -851,7 +851,7 @@ break|break;
 case|case
 name|PROP_CAP_STYLE
 case|:
-name|g_value_set_int
+name|g_value_set_enum
 argument_list|(
 name|value
 argument_list|,
@@ -864,7 +864,7 @@ break|break;
 case|case
 name|PROP_JOIN_STYLE
 case|:
-name|g_value_set_int
+name|g_value_set_enum
 argument_list|(
 name|value
 argument_list|,

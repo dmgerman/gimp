@@ -2200,7 +2200,7 @@ name|gimage
 operator|->
 name|height
 argument_list|,
-literal|1
+name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* go over the curves in reverse order, adding the points we have */
