@@ -711,7 +711,10 @@ name|button
 argument_list|,
 literal|"label"
 argument_list|,
+name|_
+argument_list|(
 literal|"_Discard Changes"
+argument_list|)
 argument_list|,
 literal|"use-stock"
 argument_list|,
