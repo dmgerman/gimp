@@ -732,7 +732,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_scale_check:  * @gimage:     A #GimpImage.  * @new_width:  The new width.  * @new_height: The new height.  *  * Inventory the layer list in gimage and check that it may be  * scaled to @new_height and @new_width without problems.  *  * Return value: #GIMP_IMAGE_SCALE_OK if scaling the image will shrink none  *               of its layers completely away, and the new image size  *               is smaller than the maximum specified in the  *               preferences.  *               #GIMP_IMAGE_SCALE_TOO_SMALL if scaling would remove some  *               existing layers.  *               #GIMP_IMAGE_SCALE_TOO_BIG if the new image size would  *               exceed the maximum specified in the preferences.  **/
+comment|/**  * gimp_image_scale_check:  * @gimage:      A #GimpImage.  * @new_width:   The new width.  * @new_height:  The new height.  * @new_memsize: The new memory size.  *  * Inventory the layer list in gimage and check that it may be  * scaled to @new_height and @new_width without problems.  *  * Return value: #GIMP_IMAGE_SCALE_OK if scaling the image will shrink none  *               of its layers completely away, and the new image size  *               is smaller than the maximum specified in the  *               preferences.  *               #GIMP_IMAGE_SCALE_TOO_SMALL if scaling would remove some  *               existing layers.  *               #GIMP_IMAGE_SCALE_TOO_BIG if the new image size would  *               exceed the maximum specified in the preferences.  **/
 end_comment
 
 begin_function
