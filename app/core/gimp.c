@@ -532,6 +532,18 @@ argument_list|,
 name|GIMP_CONTAINER_POLICY_WEAK
 argument_list|)
 expr_stmt|;
+name|gimp_object_set_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|gimp
+operator|->
+name|images
+argument_list|)
+argument_list|,
+literal|"images"
+argument_list|)
+expr_stmt|;
 name|gimp
 operator|->
 name|next_image_ID
@@ -589,6 +601,18 @@ argument_list|,
 name|GIMP_CONTAINER_POLICY_STRONG
 argument_list|)
 expr_stmt|;
+name|gimp_object_set_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|gimp
+operator|->
+name|named_buffers
+argument_list|)
+argument_list|,
+literal|"named buffers"
+argument_list|)
+expr_stmt|;
 name|gimp
 operator|->
 name|brush_factory
@@ -644,6 +668,18 @@ argument_list|(
 name|GIMP_TYPE_TOOL_INFO
 argument_list|,
 name|GIMP_CONTAINER_POLICY_STRONG
+argument_list|)
+expr_stmt|;
+name|gimp_object_set_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|gimp
+operator|->
+name|tool_info_list
+argument_list|)
+argument_list|,
+literal|"tool infos"
 argument_list|)
 expr_stmt|;
 name|gimp
@@ -1345,9 +1381,14 @@ argument_list|)
 operator|)
 expr_stmt|;
 comment|/* FIXME */
+if|if
+condition|(
+name|gimp
+operator|->
+name|global_buffer
+condition|)
 name|memsize
 operator|+=
-operator|(
 name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
@@ -1357,7 +1398,10 @@ operator|->
 name|global_buffer
 argument_list|)
 argument_list|)
-operator|+
+expr_stmt|;
+name|memsize
+operator|+=
+operator|(
 name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
@@ -1572,7 +1616,7 @@ operator|)
 expr_stmt|;
 return|return
 name|memsize
-operator|=
+operator|+
 name|GIMP_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -1813,6 +1857,18 @@ argument_list|,
 name|gimp_brush_get_standard
 argument_list|)
 expr_stmt|;
+name|gimp_object_set_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|gimp
+operator|->
+name|brush_factory
+argument_list|)
+argument_list|,
+literal|"brush factory"
+argument_list|)
+expr_stmt|;
 name|gimp
 operator|->
 name|pattern_factory
@@ -1844,6 +1900,18 @@ argument_list|,
 name|gimp_pattern_new
 argument_list|,
 name|gimp_pattern_get_standard
+argument_list|)
+expr_stmt|;
+name|gimp_object_set_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|gimp
+operator|->
+name|pattern_factory
+argument_list|)
+argument_list|,
+literal|"pattern factory"
 argument_list|)
 expr_stmt|;
 name|gimp
@@ -1879,6 +1947,18 @@ argument_list|,
 name|gimp_gradient_get_standard
 argument_list|)
 expr_stmt|;
+name|gimp_object_set_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|gimp
+operator|->
+name|gradient_factory
+argument_list|)
+argument_list|,
+literal|"gradient factory"
+argument_list|)
+expr_stmt|;
 name|gimp
 operator|->
 name|palette_factory
@@ -1910,6 +1990,18 @@ argument_list|,
 name|gimp_palette_new
 argument_list|,
 name|gimp_palette_get_standard
+argument_list|)
+expr_stmt|;
+name|gimp_object_set_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|gimp
+operator|->
+name|palette_factory
+argument_list|)
+argument_list|,
+literal|"palette factory"
 argument_list|)
 expr_stmt|;
 name|gimp_image_new_init

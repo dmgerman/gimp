@@ -118,6 +118,18 @@ argument_list|,
 name|GIMP_CONTAINER_POLICY_STRONG
 argument_list|)
 expr_stmt|;
+name|gimp_object_set_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|gimp
+operator|->
+name|documents
+argument_list|)
+argument_list|,
+literal|"documents"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

@@ -264,6 +264,18 @@ argument_list|,
 name|GIMP_CONTAINER_POLICY_WEAK
 argument_list|)
 expr_stmt|;
+name|gimp_object_set_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|gimp
+operator|->
+name|modules
+argument_list|)
+argument_list|,
+literal|"modules"
+argument_list|)
+expr_stmt|;
 name|gimp
 operator|->
 name|write_modulerc
@@ -1047,7 +1059,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf6a9a60108
+DECL|struct|__anon29bb277b0108
 block|{
 DECL|member|search_key
 specifier|const

@@ -614,7 +614,7 @@ expr_stmt|;
 block|}
 return|return
 name|memsize
-operator|+=
+operator|+
 name|GIMP_OBJECT_CLASS
 argument_list|(
 name|parent_class
