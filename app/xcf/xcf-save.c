@@ -4815,14 +4815,8 @@ name|xcf_write_int32_check_error
 argument_list|(
 name|info
 argument_list|,
-operator|(
-name|guint32
-operator|*
-operator|)
 operator|&
-name|info
-operator|->
-name|cp
+name|saved_pos
 argument_list|,
 literal|1
 argument_list|)
@@ -6379,7 +6373,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2941af930108
+DECL|struct|__anon28a73a770108
 block|{
 DECL|member|info
 name|XcfInfo
