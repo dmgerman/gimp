@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b764320103
+DECL|enum|__anon2b0c5fd40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1136,6 +1136,20 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
+comment|/*  stop any active tool  */
+name|tool_manager_control_active
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
+name|HALT
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_disconnect
 argument_list|(
 name|GIMP_DISPLAY_SHELL
