@@ -1385,11 +1385,12 @@ name|write
 argument_list|(
 name|fd
 argument_list|,
-literal|"\\"
+literal|"\\&"
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
+comment|/*  this represents a zero width space  */
 for|for
 control|(
 name|t
