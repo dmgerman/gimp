@@ -232,11 +232,11 @@ file|"gimp-intl.h"
 end_include
 
 begin_decl_stmt
-DECL|variable|paint_modes
+DECL|variable|layer_modes
 specifier|static
 specifier|const
 name|GimpLayerModeEffects
-name|paint_modes
+name|layer_modes
 index|[]
 init|=
 block|{
@@ -360,10 +360,10 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gint
-name|layers_paint_mode_index
+name|layers_mode_index
 parameter_list|(
 name|GimpLayerModeEffects
-name|paint_mode
+name|layer_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2129,8 +2129,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_paint_mode_cmd_callback (GtkAction * action,gint value,gpointer data)
-name|layers_paint_mode_cmd_callback
+DECL|function|layers_mode_cmd_callback (GtkAction * action,gint value,gpointer data)
+name|layers_mode_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -2152,7 +2152,7 @@ modifier|*
 name|layer
 decl_stmt|;
 name|GimpLayerModeEffects
-name|paint_mode
+name|layer_mode
 decl_stmt|;
 name|gint
 name|index
@@ -2183,7 +2183,7 @@ name|gimage
 argument_list|,
 name|GIMP_TYPE_ITEM_UNDO
 argument_list|,
-name|GIMP_UNDO_LAYER_OPACITY
+name|GIMP_UNDO_LAYER_MODE
 argument_list|)
 expr_stmt|;
 if|if
@@ -2206,7 +2206,7 @@ name|push_undo
 operator|=
 name|FALSE
 expr_stmt|;
-name|paint_mode
+name|layer_mode
 operator|=
 name|gimp_layer_get_mode
 argument_list|(
@@ -2222,16 +2222,16 @@ name|GimpActionSelectType
 operator|)
 name|value
 argument_list|,
-name|layers_paint_mode_index
+name|layers_mode_index
 argument_list|(
-name|paint_mode
+name|layer_mode
 argument_list|)
 argument_list|,
 literal|0
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
-name|paint_modes
+name|layer_modes
 argument_list|)
 operator|-
 literal|1
@@ -2247,7 +2247,7 @@ name|gimp_layer_set_mode
 argument_list|(
 name|layer
 argument_list|,
-name|paint_modes
+name|layer_modes
 index|[
 name|index
 index|]
@@ -4069,36 +4069,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|edit_layer_query_activate (GtkWidget * widget,EditLayerOptions * options)
-name|edit_layer_query_activate
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|EditLayerOptions
-modifier|*
-name|options
-parameter_list|)
-block|{
-name|gtk_dialog_response
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|options
-operator|->
-name|query_box
-argument_list|)
-argument_list|,
-name|GTK_RESPONSE_OK
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|edit_layer_toggle_rename (GtkWidget * widget,EditLayerOptions * options)
 name|edit_layer_toggle_rename
 parameter_list|(
@@ -4445,6 +4415,18 @@ operator|=
 name|gtk_entry_new
 argument_list|()
 expr_stmt|;
+name|gtk_entry_set_activates_default
+argument_list|(
+name|GTK_ENTRY
+argument_list|(
+name|options
+operator|->
+name|name_entry
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
@@ -4504,22 +4486,6 @@ argument_list|,
 literal|1
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|options
-operator|->
-name|name_entry
-argument_list|,
-literal|"activate"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|edit_layer_query_activate
-argument_list|)
-argument_list|,
-name|options
 argument_list|)
 expr_stmt|;
 comment|/*  For text layers add a toggle to control "auto-rename"  */
@@ -5818,11 +5784,11 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|layers_paint_mode_index (GimpLayerModeEffects paint_mode)
-name|layers_paint_mode_index
+DECL|function|layers_mode_index (GimpLayerModeEffects layer_mode)
+name|layers_mode_index
 parameter_list|(
 name|GimpLayerModeEffects
-name|paint_mode
+name|layer_mode
 parameter_list|)
 block|{
 name|gint
@@ -5837,18 +5803,18 @@ operator|<
 operator|(
 name|G_N_ELEMENTS
 argument_list|(
-name|paint_modes
+name|layer_modes
 argument_list|)
 operator|-
 literal|1
 operator|)
 operator|&&
-name|paint_modes
+name|layer_modes
 index|[
 name|i
 index|]
 operator|!=
-name|paint_mode
+name|layer_mode
 condition|)
 name|i
 operator|++

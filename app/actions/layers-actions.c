@@ -204,6 +204,39 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"layers-properties-menu"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"_Properties"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"layers-opacity-menu"
+block|,
+name|GIMP_STOCK_TRANSPARENCY
+block|,
+name|N_
+argument_list|(
+literal|"_Opacity"
+argument_list|)
+block|}
+block|,
+block|{
+literal|"layers-mode-menu"
+block|,
+name|GIMP_STOCK_TOOL_PENCIL
+block|,
+name|N_
+argument_list|(
+literal|"Layer _Mode"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"layers-text-tool"
 block|,
 name|GIMP_STOCK_TOOL_TEXT
@@ -664,7 +697,7 @@ name|GIMP_STOCK_TRANSPARENCY
 block|,
 name|N_
 argument_list|(
-literal|"Preserve Transparency"
+literal|"Keep Transparency"
 argument_list|)
 block|,
 name|NULL
@@ -678,7 +711,7 @@ argument_list|)
 block|,
 name|FALSE
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_KEEP_TRANSPARENCY
 block|}
 block|,
 block|{
@@ -702,7 +735,7 @@ argument_list|)
 block|,
 name|FALSE
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_MASK_EDIT
 block|}
 block|,
 block|{
@@ -726,7 +759,7 @@ argument_list|)
 block|,
 name|FALSE
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_MASK_SHOW
 block|}
 block|,
 block|{
@@ -750,7 +783,7 @@ argument_list|)
 block|,
 name|FALSE
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_MASK_DISABLE
 block|}
 block|}
 decl_stmt|;
@@ -1090,13 +1123,13 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SET
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_OPACITY
 block|}
 block|,
 block|{
 literal|"layers-opacity-transparent"
 block|,
-name|GTK_STOCK_GOTO_FIRST
+name|GIMP_STOCK_TRANSPARENCY
 block|,
 literal|"Completely Transparent"
 block|,
@@ -1106,13 +1139,13 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_OPACITY
 block|}
 block|,
 block|{
 literal|"layers-opacity-opaque"
 block|,
-name|GTK_STOCK_GOTO_LAST
+name|GIMP_STOCK_TRANSPARENCY
 block|,
 literal|"Completely Opaque"
 block|,
@@ -1122,13 +1155,13 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_OPACITY
 block|}
 block|,
 block|{
 literal|"layers-opacity-decrease"
 block|,
-name|GTK_STOCK_REMOVE
+name|GIMP_STOCK_TRANSPARENCY
 block|,
 literal|"More Transparent"
 block|,
@@ -1138,13 +1171,13 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_OPACITY
 block|}
 block|,
 block|{
 literal|"layers-opacity-increase"
 block|,
-name|GTK_STOCK_ADD
+name|GIMP_STOCK_TRANSPARENCY
 block|,
 literal|"More Opaque"
 block|,
@@ -1154,13 +1187,13 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_OPACITY
 block|}
 block|,
 block|{
 literal|"layers-opacity-decrease-skip"
 block|,
-name|GTK_STOCK_REMOVE
+name|GIMP_STOCK_TRANSPARENCY
 block|,
 literal|"10% More Transparent"
 block|,
@@ -1170,13 +1203,13 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_OPACITY
 block|}
 block|,
 block|{
 literal|"layers-opacity-increase-skip"
 block|,
-name|GTK_STOCK_ADD
+name|GIMP_STOCK_TRANSPARENCY
 block|,
 literal|"10% More Opaque"
 block|,
@@ -1186,26 +1219,26 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_SKIP_NEXT
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_OPACITY
 block|}
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|layers_paint_mode_actions
+DECL|variable|layers_mode_actions
 specifier|static
 name|GimpEnumActionEntry
-name|layers_paint_mode_actions
+name|layers_mode_actions
 index|[]
 init|=
 block|{
 block|{
-literal|"layers-paint-mode-first"
+literal|"layers-mode-first"
 block|,
 name|GIMP_STOCK_TOOL_PENCIL
 block|,
-literal|"First Paint Mode"
+literal|"First Layer Mode"
 block|,
 name|NULL
 block|,
@@ -1213,15 +1246,15 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_MODE
 block|}
 block|,
 block|{
-literal|"layers-paint-mode-last"
+literal|"layers-mode-last"
 block|,
 name|GIMP_STOCK_TOOL_PENCIL
 block|,
-literal|"Last Paint Mode"
+literal|"Last Layer Mode"
 block|,
 name|NULL
 block|,
@@ -1229,15 +1262,15 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_MODE
 block|}
 block|,
 block|{
-literal|"layers-paint-mode-previous"
+literal|"layers-mode-previous"
 block|,
 name|GIMP_STOCK_TOOL_PENCIL
 block|,
-literal|"Previous Paint Mode"
+literal|"Previous Layer Mode"
 block|,
 name|NULL
 block|,
@@ -1245,15 +1278,15 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_PREVIOUS
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_MODE
 block|}
 block|,
 block|{
-literal|"layers-paint-mode-next"
+literal|"layers-mode-next"
 block|,
 name|GIMP_STOCK_TOOL_PENCIL
 block|,
-literal|"Next Paint Mode"
+literal|"Next Layer Mode"
 block|,
 name|NULL
 block|,
@@ -1261,7 +1294,7 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_NEXT
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_MODE
 block|}
 block|}
 decl_stmt|;
@@ -1390,16 +1423,16 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
-name|layers_paint_mode_actions
+name|layers_mode_actions
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
-name|layers_paint_mode_actions
+name|layers_mode_actions
 argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|layers_paint_mode_cmd_callback
+name|layers_mode_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -221,7 +221,7 @@ argument_list|)
 block|,
 name|FALSE
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_VISIBLE
 block|}
 block|,
 block|{
@@ -245,7 +245,7 @@ argument_list|)
 block|,
 name|FALSE
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_LINKED
 block|}
 block|}
 decl_stmt|;

@@ -397,7 +397,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|layers_paint_mode_cmd_callback
+name|layers_mode_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

@@ -473,7 +473,7 @@ argument_list|)
 block|,
 name|FALSE
 block|,
-name|NULL
+name|GIMP_HELP_PATH_VISIBLE
 block|}
 block|,
 block|{
@@ -497,7 +497,7 @@ argument_list|)
 block|,
 name|FALSE
 block|,
-name|NULL
+name|GIMP_HELP_PATH_LINKED
 block|}
 block|}
 decl_stmt|;
