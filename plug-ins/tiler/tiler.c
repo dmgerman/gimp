@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* Tiler v0.3  * 22 May 1997  * Tim Rowley<tor@cs.brown.edu>  */
+comment|/* Tiler v0.31  * 22 May 1997  * Tim Rowley<tor@cs.brown.edu>  */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/* TODO:  * + better basis function  * + optimize  */
 end_comment
 
 begin_comment
-comment|/* History:  * v0.1: initial version  * v0.2: fix edge conditions  * v0.3: port to 0.99 API  */
+comment|/* History:  * v0.1: initial version  * v0.2: fix edge conditions  * v0.3: port to 0.99 API  * v0.31: small bugfix  */
 end_comment
 
 begin_include
@@ -970,7 +970,7 @@ name|dest_cur
 argument_list|,
 literal|0
 argument_list|,
-name|y
+name|x
 operator|*
 name|bytes
 argument_list|)

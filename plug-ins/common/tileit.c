@@ -146,7 +146,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29d2485f0108
+DECL|struct|__anon2b6515ff0108
 typedef|typedef
 struct|struct
 block|{
@@ -611,7 +611,7 @@ comment|/* The "explict tile"& family */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29d2485f0203
+DECL|enum|__anon2b6515ff0203
 typedef|typedef
 enum|enum
 block|{
@@ -630,7 +630,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29d2485f0308
+DECL|struct|__anon2b6515ff0308
 typedef|typedef
 struct|struct
 block|{
@@ -716,7 +716,7 @@ comment|/* The reset button needs to know some toggle widgets.. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29d2485f0408
+DECL|struct|__anon2b6515ff0408
 typedef|typedef
 struct|struct
 block|{
@@ -1948,16 +1948,6 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|table
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|xframe
 argument_list|)
 expr_stmt|;
 comment|/* Area for buttons etc */

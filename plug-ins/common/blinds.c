@@ -193,7 +193,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2aa18d3d0108
+DECL|struct|__anon28dc07560108
 typedef|typedef
 struct|struct
 block|{
@@ -1661,16 +1661,6 @@ name|frame
 argument_list|)
 expr_stmt|;
 comment|/* ALT-I */
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|xframe
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|table

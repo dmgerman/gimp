@@ -58,7 +58,7 @@ file|<unistd.h>
 end_include
 
 begin_typedef
-DECL|enum|__anon290d3d060103
+DECL|enum|__anon2c77607d0103
 typedef|typedef
 enum|enum
 block|{
@@ -252,7 +252,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon290d3d060208
+DECL|struct|__anon2c77607d0208
 typedef|typedef
 struct|struct
 block|{
@@ -408,7 +408,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon290d3d060308
+DECL|struct|__anon2c77607d0308
 struct|struct
 block|{
 DECL|member|matrix
@@ -4292,16 +4292,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|entry
-argument_list|)
-expr_stmt|;
 name|gtk_widget_set_usize
 argument_list|(
 name|entry
@@ -4388,16 +4378,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|entry
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_usize
