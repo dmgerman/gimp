@@ -783,7 +783,10 @@ block|,
 block|{
 name|GIMP_STOCK_SELECTION_STROKE
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"_Stroke"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -819,7 +822,10 @@ block|,
 block|{
 name|GIMP_STOCK_PATH_STROKE
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"_Stroke"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -2349,7 +2355,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b9fbaa40108
+DECL|struct|__anon2b8611940108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3033,7 +3039,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b9fbaa40208
+DECL|struct|__anon2b8611940208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3807,7 +3813,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b9fbaa40308
+DECL|struct|__anon2b8611940308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3903,7 +3909,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b9fbaa40408
+DECL|struct|__anon2b8611940408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4047,7 +4053,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b9fbaa40508
+DECL|struct|__anon2b8611940508
 block|{
 DECL|member|stock_id
 specifier|const

@@ -1128,6 +1128,11 @@ name|gimage
 argument_list|)
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
+literal|"Stroke Selection"
+argument_list|)
+argument_list|,
 name|GIMP_STOCK_SELECTION_STROKE
 argument_list|,
 name|GIMP_HELP_SELECTION_STROKE

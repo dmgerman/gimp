@@ -1397,6 +1397,11 @@ argument_list|(
 name|vectors
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
+literal|"Stroke Path"
+argument_list|)
+argument_list|,
 name|GIMP_STOCK_PATH_STROKE
 argument_list|,
 name|GIMP_HELP_PATH_STROKE
