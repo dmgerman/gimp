@@ -205,6 +205,12 @@ expr_stmt|;
 name|gdisplays_flush
 argument_list|()
 expr_stmt|;
+comment|/* title may have changed if it includes the zoom ratio */
+name|gdisplay_update_title
+argument_list|(
+name|gdisp
+argument_list|)
+expr_stmt|;
 block|}
 comment|/* re-enable the active tool */
 name|active_tool_control
@@ -619,12 +625,6 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* title may have changed if it includes the zoom ratio */
-name|gdisplay_update_title
-argument_list|(
-name|gdisp
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
