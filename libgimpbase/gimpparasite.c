@@ -12,18 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"parasiteP.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"parasite.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
 end_include
 
@@ -76,6 +64,12 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_include
+include|#
+directive|include
+file|"gimpparasite.h"
+end_include
 
 begin_ifdef
 ifdef|#

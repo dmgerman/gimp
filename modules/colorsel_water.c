@@ -34,7 +34,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/color_selector.h>
+file|<libgimp/gimpcolorselector.h>
 end_include
 
 begin_include
@@ -52,7 +52,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"modregister.h"
+file|"gimpmodregister.h"
 end_include
 
 begin_include
@@ -485,7 +485,7 @@ value|40
 end_define
 
 begin_typedef
-DECL|struct|__anon2ad6aaa30108
+DECL|struct|__anon2af9fcbd0108
 typedef|typedef
 struct|struct
 block|{

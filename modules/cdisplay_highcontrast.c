@@ -24,7 +24,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/color_display.h>
+file|"app/dialog_handler.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpmodregister.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpcolordisplay.h>
 end_include
 
 begin_include
@@ -36,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/parasite.h>
+file|<libgimp/gimpparasite.h>
 end_include
 
 begin_include
@@ -49,18 +61,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpmath.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"app/dialog_handler.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"modregister.h"
 end_include
 
 begin_include

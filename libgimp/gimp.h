@@ -25,73 +25,67 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpenums.h"
+file|<libgimp/gimpenums.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpcolorspace.h"
+file|<libgimp/gimpcolorspace.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpfeatures.h"
+file|<libgimp/gimpfeatures.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpenv.h"
+file|<libgimp/gimpenv.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimplimits.h"
+file|<libgimp/gimplimits.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmath.h"
+file|<libgimp/gimpmath.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpparasite.h"
+file|<libgimp/gimpparasite.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpparasiteP.h"
+file|<libgimp/gimpunit.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpunit.h"
+file|<libgimp/gimputils.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimputils.h"
+file|<libgimp/gimpvector.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpvector.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpcompat.h"
+file|<libgimp/gimpcompat.h>
 end_include
 
 begin_comment

@@ -445,18 +445,8 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/parasite.h"
+file|"libgimp/gimpparasite.h"
 end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/parasiteP.h"
-end_include
-
-begin_comment
-comment|/* ick */
-end_comment
 
 begin_include
 include|#

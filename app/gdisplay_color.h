@@ -19,13 +19,13 @@ end_define
 begin_include
 include|#
 directive|include
-file|"libgimp/color_display.h"
+file|"gdisplayF.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdisplayF.h"
+file|"libgimp/gimpcolordisplay.h"
 end_include
 
 begin_typedef

@@ -71,7 +71,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/parasiteio.h>
+file|<libgimp/gimpparasiteio.h>
 end_include
 
 begin_include
@@ -115,7 +115,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29d148d70108
+DECL|struct|__anon2ab9fc530108
 block|{
 comment|/* Use by both gpb and gih: */
 DECL|member|spacing
@@ -173,7 +173,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d148d70208
+DECL|struct|__anon2ab9fc530208
 block|{
 DECL|member|orientation
 name|GOrientation

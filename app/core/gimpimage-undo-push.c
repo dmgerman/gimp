@@ -166,7 +166,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"libgimp/parasite.h"
+file|"libgimp/gimpparasite.h"
 end_include
 
 begin_include
@@ -219,7 +219,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274ff8280103
+DECL|enum|__anon29426ecc0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO

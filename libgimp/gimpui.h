@@ -25,79 +25,79 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpchainbutton.h"
+file|<libgimp/gimpchainbutton.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpcolorbutton.h"
+file|<libgimp/gimpcolorbutton.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpdialog.h"
+file|<libgimp/gimpdialog.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpexport.h"
+file|<libgimp/gimpexport.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpfileselection.h"
+file|<libgimp/gimpfileselection.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimphelpui.h"
+file|<libgimp/gimphelpui.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpmenu.h"
+file|<libgimp/gimpmenu.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppatheditor.h"
+file|<libgimp/gimppatheditor.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppixmap.h"
+file|<libgimp/gimppixmap.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpquerybox.h"
+file|<libgimp/gimpquerybox.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpsizeentry.h"
+file|<libgimp/gimpsizeentry.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpunitmenu.h"
+file|<libgimp/gimpunitmenu.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpwidgets.h"
+file|<libgimp/gimpwidgets.h>
 end_include
 
 begin_function_decl

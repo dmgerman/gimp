@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/parasite.h"
+file|"libgimp/gimpparasite.h"
 end_include
 
 begin_include
@@ -72,7 +72,7 @@ struct|struct
 name|_ColorDisplayInfo
 block|{
 DECL|member|name
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
@@ -146,7 +146,7 @@ modifier|*
 name|node
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -166,11 +166,11 @@ end_function
 begin_function
 name|G_MODULE_EXPORT
 name|gboolean
-DECL|function|gimp_color_display_register (const char * name,GimpColorDisplayMethods * methods)
+DECL|function|gimp_color_display_register (const gchar * name,GimpColorDisplayMethods * methods)
 name|gimp_color_display_register
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -270,11 +270,11 @@ end_function
 begin_function
 name|G_MODULE_EXPORT
 name|gboolean
-DECL|function|gimp_color_display_unregister (const char * name)
+DECL|function|gimp_color_display_unregister (const gchar * name)
 name|gimp_color_display_unregister
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -525,7 +525,7 @@ end_function
 begin_function
 name|ColorDisplayNode
 modifier|*
-DECL|function|gdisplay_color_attach (GDisplay * gdisp,const char * name)
+DECL|function|gdisplay_color_attach (GDisplay * gdisp,const gchar * name)
 name|gdisplay_color_attach
 parameter_list|(
 name|GDisplay
@@ -533,7 +533,7 @@ modifier|*
 name|gdisp
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)

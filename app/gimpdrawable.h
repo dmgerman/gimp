@@ -55,7 +55,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/parasiteF.h>
+file|"libgimp/gimpparasite.h"
 end_include
 
 begin_define

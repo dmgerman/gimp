@@ -36,18 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/parasite.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/parasiteP.h"
+file|"libgimp/gimpparasite.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29195ae40103
+DECL|enum|__anon28d575000103
 block|{
 DECL|enumerator|ADD
 name|ADD

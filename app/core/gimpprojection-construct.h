@@ -61,18 +61,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/parasiteF.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpunit.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug_in.h"
 end_include
 
@@ -92,6 +80,18 @@ begin_include
 include|#
 directive|include
 file|"path.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpparasite.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpunit.h"
 end_include
 
 begin_define
@@ -211,7 +211,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b8715190103
+DECL|enum|__anon2b1fb48f0103
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8715190203
+DECL|enum|__anon2b1fb48f0203
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -249,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8715190303
+DECL|enum|__anon2b1fb48f0303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -277,7 +277,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8715190403
+DECL|enum|__anon2b1fb48f0403
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY

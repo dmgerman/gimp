@@ -30,7 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/color_selector.h>
+file|"gimpmodregister.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpcolorselector.h>
 end_include
 
 begin_include
@@ -48,13 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"modregister.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpintl.h>
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
@@ -336,7 +336,7 @@ value|GDK_EXPOSURE_MASK | \                        GDK_BUTTON_PRESS_MASK | \    
 end_define
 
 begin_typedef
-DECL|enum|__anon291949a00103
+DECL|enum|__anon2b12ec630103
 typedef|typedef
 enum|enum
 block|{

@@ -40,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"parasiteio.h"
+file|"gimpparasiteio.h"
 end_include
 
 begin_function

@@ -142,7 +142,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/parasite.h"
+file|"libgimp/gimpparasite.h"
 end_include
 
 begin_include
@@ -552,7 +552,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2ae964860103
+DECL|enum|__anon2bd4f34a0103
 enum|enum
 block|{
 DECL|enumerator|CLEAN

@@ -16,24 +16,6 @@ directive|define
 name|__GIMP_PARASITE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpparasiteF.h"
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -87,6 +69,39 @@ define|#
 directive|define
 name|GIMP_PARASITE_GRANDPARENT_UNDOABLE
 value|(GIMP_PARASITE_UNDOABLE<< 16)
+DECL|typedef|GimpParasite
+typedef|typedef
+name|struct
+name|_GimpParasite
+name|GimpParasite
+typedef|;
+DECL|struct|_GimpParasite
+struct|struct
+name|_GimpParasite
+block|{
+DECL|member|name
+name|gchar
+modifier|*
+name|name
+decl_stmt|;
+comment|/* The name of the parasite. USE A UNIQUE PREFIX! */
+DECL|member|flags
+name|guint32
+name|flags
+decl_stmt|;
+comment|/* save Parasite in XCF file, etc.                */
+DECL|member|size
+name|guint32
+name|size
+decl_stmt|;
+comment|/* amount of data                                 */
+DECL|member|data
+name|gpointer
+name|data
+decl_stmt|;
+comment|/* a pointer to the data.  plugin is              * 		     * responsible for tracking byte order            */
+block|}
+struct|;
 name|GimpParasite
 modifier|*
 name|gimp_parasite_new

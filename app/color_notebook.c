@@ -41,10 +41,6 @@ directive|include
 file|<string.h>
 end_include
 
-begin_comment
-comment|/*#include "appenv.h"*/
-end_comment
-
 begin_include
 include|#
 directive|include
@@ -60,7 +56,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/color_selector.h"
+file|"libgimp/gimpcolorselector.h"
 end_include
 
 begin_include
@@ -274,7 +270,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b63ee250103
+DECL|enum|__anon276b57c10103
 block|{
 DECL|enumerator|RED
 name|RED

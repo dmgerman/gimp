@@ -128,7 +128,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/parasite.h"
+file|"libgimp/gimpparasite.h"
 end_include
 
 begin_include
@@ -138,8 +138,8 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2b4bd9790103
 enum|enum
+DECL|enum|__anon2bb9a1830103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED

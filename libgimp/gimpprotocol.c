@@ -12,7 +12,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpenums.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpparasite.h"
 end_include
 
 begin_include
@@ -25,18 +37,6 @@ begin_include
 include|#
 directive|include
 file|"gimpwire.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"parasite.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"parasiteP.h"
 end_include
 
 begin_function_decl

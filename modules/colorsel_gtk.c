@@ -24,25 +24,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/color_selector.h>
+file|"gimpmodregister.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpintl.h>
+file|"libgimp/gimpcolorselector.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmodule.h>
+file|"libgimp/gimpmodule.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"modregister.h"
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
@@ -303,7 +303,7 @@ comment|/* GTK colour selector methods */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a3a83bd0108
+DECL|struct|__anon2a1023a40108
 typedef|typedef
 struct|struct
 block|{

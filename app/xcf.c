@@ -210,13 +210,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/parasiteP.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/parasite.h>
+file|<libgimp/gimpparasite.h>
 end_include
 
 begin_include
@@ -232,7 +226,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0833900103
+DECL|enum|__anon2af130d70103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -367,7 +361,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0833900203
+DECL|enum|__anon2af130d70203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE

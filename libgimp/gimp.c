@@ -175,12 +175,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"parasiteP.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpenv.h"
 end_include
 
