@@ -680,6 +680,11 @@ name|height
 init|=
 literal|0
 decl_stmt|;
+name|gint32
+name|num_bytes
+init|=
+literal|0
+decl_stmt|;
 name|guint8
 modifier|*
 name|thumb_data
@@ -803,15 +808,19 @@ condition|(
 name|raw_thumb
 condition|)
 block|{
-name|thumb_data
+name|num_bytes
 operator|=
-name|g_malloc
-argument_list|(
 literal|3
 operator|*
 name|width
 operator|*
 name|height
+expr_stmt|;
+name|thumb_data
+operator|=
+name|g_malloc
+argument_list|(
+name|num_bytes
 argument_list|)
 expr_stmt|;
 for|for
@@ -967,6 +976,17 @@ index|]
 operator|.
 name|value
 operator|.
+name|pdb_int
+operator|=
+name|num_bytes
+expr_stmt|;
+name|return_args
+index|[
+literal|4
+index|]
+operator|.
+name|value
+operator|.
 name|pdb_pointer
 operator|=
 name|thumb_data
@@ -1022,6 +1042,14 @@ literal|"The height of the thumbnail"
 block|}
 block|,
 block|{
+name|PDB_INT32
+block|,
+literal|"thumbnail_data_count"
+block|,
+literal|"The number of bytes in thumbnail data"
+block|}
+block|,
+block|{
 name|PDB_INT8ARRAY
 block|,
 literal|"thumb_data"
@@ -1049,7 +1077,7 @@ literal|"Adam D. Moss, Sven Neumann"
 block|,
 literal|"Adam D. Moss, Sven Neumann"
 block|,
-literal|"1999"
+literal|"1999-2000"
 block|,
 name|PDB_INTERNAL
 block|,
@@ -1057,7 +1085,7 @@ literal|1
 block|,
 name|file_load_thumbnail_inargs
 block|,
-literal|3
+literal|4
 block|,
 name|file_load_thumbnail_outargs
 block|,
