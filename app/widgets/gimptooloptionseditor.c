@@ -649,7 +649,7 @@ argument_list|(
 name|scrolled_win
 argument_list|)
 argument_list|,
-name|GTK_POLICY_NEVER
+name|GTK_POLICY_AUTOMATIC
 argument_list|,
 name|GTK_POLICY_AUTOMATIC
 argument_list|)
