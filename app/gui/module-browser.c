@@ -137,7 +137,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|enum|__anon2bdd59630103
+DECL|enum|__anon2c768de40103
 typedef|typedef
 enum|enum
 block|{
@@ -283,7 +283,7 @@ comment|/* one of these objects is kept per-module */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bdd59630208
+DECL|struct|__anon2c768de40208
 typedef|typedef
 struct|struct
 block|{
@@ -400,7 +400,7 @@ value|7
 end_define
 
 begin_typedef
-DECL|struct|__anon2bdd59630308
+DECL|struct|__anon2c768de40308
 typedef|typedef
 struct|struct
 block|{
@@ -993,7 +993,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|module_db_write_modulerc (void)
 name|module_db_write_modulerc
 parameter_list|(
@@ -1016,12 +1016,11 @@ name|FILE
 modifier|*
 name|fp
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|need_to_rewrite_modulerc
-condition|)
-return|return;
+name|gboolean
+name|saved
+init|=
+name|FALSE
+decl_stmt|;
 name|str
 operator|=
 name|g_string_new
@@ -1072,7 +1071,7 @@ name|fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"w"
+literal|"wt"
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1099,9 +1098,9 @@ argument_list|(
 name|fp
 argument_list|)
 expr_stmt|;
-name|need_to_rewrite_modulerc
+name|saved
 operator|=
-name|FALSE
+name|TRUE
 expr_stmt|;
 block|}
 name|g_string_free
@@ -1111,6 +1110,11 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+return|return
+operator|(
+name|saved
+operator|)
+return|;
 block|}
 end_function
 
@@ -1122,9 +1126,23 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+if|if
+condition|(
+name|need_to_rewrite_modulerc
+condition|)
+block|{
+if|if
+condition|(
 name|module_db_write_modulerc
 argument_list|()
+condition|)
+block|{
+name|need_to_rewrite_modulerc
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
+block|}
 name|gimp_set_foreach
 argument_list|(
 name|modules
@@ -1658,7 +1676,7 @@ comment|/* module_info object glue */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bdd59630408
+DECL|struct|__anon2c768de40408
 typedef|typedef
 struct|struct
 block|{
@@ -1673,7 +1691,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2bdd59630503
+DECL|enum|__anon2c768de40503
 enum|enum
 block|{
 DECL|enumerator|MODIFIED
@@ -4519,7 +4537,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bdd59630608
+DECL|struct|__anon2c768de40608
 typedef|typedef
 struct|struct
 block|{
