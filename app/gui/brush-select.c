@@ -2045,6 +2045,7 @@ decl_stmt|,
 modifier|*
 name|buf
 decl_stmt|;
+comment|/* make sure the popup exists and is not visible */
 if|if
 condition|(
 name|bsp
@@ -2147,6 +2148,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|gtk_widget_hide
 argument_list|(
 name|bsp
@@ -2154,6 +2156,8 @@ operator|->
 name|brush_popup
 argument_list|)
 expr_stmt|;
+block|}
+comment|/* decide where to put the popup */
 name|gdk_window_get_origin
 argument_list|(
 name|bsp
@@ -2414,6 +2418,11 @@ operator|->
 name|width
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|buf
+argument_list|)
+expr_stmt|;
 comment|/*  Draw the brush preview  */
 name|gtk_widget_draw
 argument_list|(
