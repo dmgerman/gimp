@@ -34,7 +34,7 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
-name|void
+name|gboolean
 name|gimp_palette_get_foreground
 parameter_list|(
 name|guchar
@@ -50,7 +50,7 @@ modifier|*
 name|blue
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_palette_get_background
 parameter_list|(
 name|guchar
@@ -66,7 +66,7 @@ modifier|*
 name|blue
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_palette_set_foreground
 parameter_list|(
 name|guchar
@@ -79,7 +79,7 @@ name|guchar
 name|blue
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_palette_set_background
 parameter_list|(
 name|guchar
@@ -92,19 +92,19 @@ name|guchar
 name|blue
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_palette_set_default_colors
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_palette_swap_colors
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_palette_refresh
 parameter_list|(
 name|void

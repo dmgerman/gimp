@@ -34,28 +34,28 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
-name|void
+name|gboolean
 name|gimp_floating_sel_remove
 parameter_list|(
 name|gint32
 name|floating_sel_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_floating_sel_anchor
 parameter_list|(
 name|gint32
 name|floating_sel_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_floating_sel_to_layer
 parameter_list|(
 name|gint32
 name|floating_sel_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_floating_sel_attach
 parameter_list|(
 name|gint32
@@ -65,7 +65,7 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_floating_sel_rigor
 parameter_list|(
 name|gint32
@@ -75,7 +75,7 @@ name|gboolean
 name|undo
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_floating_sel_relax
 parameter_list|(
 name|gint32

@@ -34,7 +34,7 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
-name|void
+name|gboolean
 name|gimp_airbrush
 parameter_list|(
 name|gint32
@@ -51,7 +51,7 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_airbrush_default
 parameter_list|(
 name|gint32
@@ -65,7 +65,7 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_blend
 parameter_list|(
 name|gint32
@@ -111,7 +111,7 @@ name|gdouble
 name|y2
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_bucket_fill
 parameter_list|(
 name|gint32
@@ -139,7 +139,7 @@ name|gdouble
 name|y
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_by_color_select
 parameter_list|(
 name|gint32
@@ -173,7 +173,7 @@ name|gboolean
 name|sample_merged
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_clone
 parameter_list|(
 name|gint32
@@ -199,7 +199,7 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_clone_default
 parameter_list|(
 name|gint32
@@ -213,7 +213,7 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_color_picker
 parameter_list|(
 name|gint32
@@ -253,7 +253,7 @@ modifier|*
 name|blue
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_convolve
 parameter_list|(
 name|gint32
@@ -273,7 +273,7 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_convolve_default
 parameter_list|(
 name|gint32
@@ -287,7 +287,7 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_crop
 parameter_list|(
 name|gint32
@@ -306,7 +306,7 @@ name|gint
 name|offy
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_dodgeburn
 parameter_list|(
 name|gint32
@@ -329,7 +329,7 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_dodgeburn_default
 parameter_list|(
 name|gint32
@@ -343,7 +343,7 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_ellipse_select
 parameter_list|(
 name|gint32
@@ -374,7 +374,7 @@ name|gdouble
 name|feather_radius
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_eraser
 parameter_list|(
 name|gint32
@@ -394,7 +394,7 @@ name|GimpPaintApplicationMode
 name|method
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_eraser_default
 parameter_list|(
 name|gint32
@@ -418,7 +418,7 @@ name|GimpOrientationType
 name|flip_type
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_free_select
 parameter_list|(
 name|gint32
@@ -444,7 +444,7 @@ name|gdouble
 name|feather_radius
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_fuzzy_select
 parameter_list|(
 name|gint32
@@ -475,7 +475,7 @@ name|gboolean
 name|sample_merged
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_paintbrush
 parameter_list|(
 name|gint32
@@ -498,7 +498,7 @@ name|gdouble
 name|gradient_length
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_paintbrush_default
 parameter_list|(
 name|gint32
@@ -512,7 +512,7 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_pencil
 parameter_list|(
 name|gint32
@@ -560,7 +560,7 @@ name|gdouble
 name|y3
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_rect_select
 parameter_list|(
 name|gint32
@@ -639,7 +639,7 @@ name|gdouble
 name|magnitude
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_smudge
 parameter_list|(
 name|gint32
@@ -656,7 +656,7 @@ modifier|*
 name|strokes
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_smudge_default
 parameter_list|(
 name|gint32

@@ -34,7 +34,7 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
-name|void
+name|gboolean
 name|gimp_register_magic_load_handler
 parameter_list|(
 name|gchar
@@ -54,7 +54,7 @@ modifier|*
 name|magics
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_register_load_handler
 parameter_list|(
 name|gchar
@@ -70,7 +70,7 @@ modifier|*
 name|prefixes
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_register_save_handler
 parameter_list|(
 name|gchar

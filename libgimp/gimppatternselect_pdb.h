@@ -34,7 +34,7 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
-name|void
+name|gboolean
 name|gimp_patterns_popup
 parameter_list|(
 name|gchar
@@ -50,7 +50,7 @@ modifier|*
 name|initial_pattern
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_patterns_close_popup
 parameter_list|(
 name|gchar
@@ -58,7 +58,7 @@ modifier|*
 name|pattern_callback
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_patterns_set_popup
 parameter_list|(
 name|gchar

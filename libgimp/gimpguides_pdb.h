@@ -54,7 +54,7 @@ name|gint
 name|xposition
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_image_delete_guide
 parameter_list|(
 name|gint32

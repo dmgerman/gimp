@@ -41,14 +41,14 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_display_delete
 parameter_list|(
 name|gint32
 name|display_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_displays_flush
 parameter_list|(
 name|void

@@ -51,7 +51,7 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_gradients_set_active
 parameter_list|(
 name|gchar

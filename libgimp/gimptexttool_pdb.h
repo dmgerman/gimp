@@ -70,7 +70,7 @@ modifier|*
 name|fontname
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_text_get_extents_fontname
 parameter_list|(
 name|gchar
@@ -168,7 +168,7 @@ modifier|*
 name|encoding
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_text_get_extents
 parameter_list|(
 name|gchar

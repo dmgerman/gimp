@@ -34,7 +34,7 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
-name|void
+name|gboolean
 name|gimp_message
 parameter_list|(
 name|gchar
@@ -48,7 +48,7 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_message_set_handler
 parameter_list|(
 name|GimpMessageHandlerType

@@ -34,14 +34,14 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
-name|void
+name|gboolean
 name|gimp_edit_cut
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_edit_copy
 parameter_list|(
 name|gint32
@@ -58,14 +58,14 @@ name|gboolean
 name|paste_into
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_edit_clear
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_edit_fill
 parameter_list|(
 name|gint32
@@ -75,7 +75,7 @@ name|GimpFillType
 name|fill_type
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_edit_stroke
 parameter_list|(
 name|gint32

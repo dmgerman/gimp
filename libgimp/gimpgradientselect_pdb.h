@@ -34,7 +34,7 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
-name|void
+name|gboolean
 name|gimp_gradients_popup
 parameter_list|(
 name|gchar
@@ -53,7 +53,7 @@ name|gint
 name|sample_size
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_gradients_close_popup
 parameter_list|(
 name|gchar
@@ -61,7 +61,7 @@ modifier|*
 name|gradients_callback
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_gradients_set_popup
 parameter_list|(
 name|gchar

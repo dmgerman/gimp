@@ -14,7 +14,7 @@ file|"gimp.h"
 end_include
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_airbrush (gint32 drawable_ID,gdouble pressure,gint num_strokes,gdouble * strokes)
 name|gimp_airbrush
 parameter_list|(
@@ -38,6 +38,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -67,6 +72,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -74,11 +92,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_airbrush_default (gint32 drawable_ID,gint num_strokes,gdouble * strokes)
 name|gimp_airbrush_default
 parameter_list|(
@@ -99,6 +120,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -124,6 +150,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -131,11 +170,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_blend (gint32 drawable_ID,GimpBlendMode blend_mode,GimpLayerModeEffects paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gboolean supersample,gint max_depth,gdouble threshold,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
 name|gimp_blend
 parameter_list|(
@@ -188,6 +230,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -257,6 +304,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -264,11 +324,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_bucket_fill (gint32 drawable_ID,GimpBucketFillMode fill_mode,GimpLayerModeEffects paint_mode,gdouble opacity,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y)
 name|gimp_bucket_fill
 parameter_list|(
@@ -303,6 +366,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -348,6 +416,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -355,11 +436,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_by_color_select (gint32 drawable_ID,guchar red,guchar green,guchar blue,gint threshold,GimpChannelOps operation,gboolean antialias,gboolean feather,gdouble feather_radius,gboolean sample_merged)
 name|gimp_by_color_select
 parameter_list|(
@@ -400,6 +484,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|guchar
 name|color
@@ -472,6 +561,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -479,11 +581,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_clone (gint32 drawable_ID,gint32 src_drawable_ID,GimpCloneType clone_type,gdouble src_x,gdouble src_y,gint num_strokes,gdouble * strokes)
 name|gimp_clone
 parameter_list|(
@@ -516,6 +621,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -557,6 +667,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -564,11 +687,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_clone_default (gint32 drawable_ID,gint num_strokes,gdouble * strokes)
 name|gimp_clone_default
 parameter_list|(
@@ -589,6 +715,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -614,6 +745,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -621,11 +765,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_color_picker (gint32 image_ID,gint32 drawable_ID,gdouble x,gdouble y,gboolean sample_merged,gboolean sample_average,gdouble average_radius,gboolean save_color,guchar * red,guchar * green,guchar * blue)
 name|gimp_color_picker
 parameter_list|(
@@ -673,6 +820,11 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
 name|return_vals
 operator|=
 name|gimp_run_procedure
@@ -717,8 +869,8 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
+name|success
+operator|=
 name|return_vals
 index|[
 literal|0
@@ -729,6 +881,10 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+expr_stmt|;
+if|if
+condition|(
+name|success
 condition|)
 block|{
 operator|*
@@ -781,11 +937,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_convolve (gint32 drawable_ID,gdouble pressure,GimpConvolveType convolve_type,gint num_strokes,gdouble * strokes)
 name|gimp_convolve
 parameter_list|(
@@ -812,6 +971,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -845,6 +1009,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -852,11 +1029,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_convolve_default (gint32 drawable_ID,gint num_strokes,gdouble * strokes)
 name|gimp_convolve_default
 parameter_list|(
@@ -877,6 +1057,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -902,6 +1087,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -909,11 +1107,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_crop (gint32 image_ID,gint new_width,gint new_height,gint offx,gint offy)
 name|gimp_crop
 parameter_list|(
@@ -939,6 +1140,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -972,6 +1178,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -979,11 +1198,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_dodgeburn (gint32 drawable_ID,gdouble exposure,GimpDodgeBurnType dodgeburn_type,GimpDodgeBurnMode dodgeburn_mode,gint num_strokes,gdouble * strokes)
 name|gimp_dodgeburn
 parameter_list|(
@@ -1013,6 +1235,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1050,6 +1277,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -1057,11 +1297,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_dodgeburn_default (gint32 drawable_ID,gint num_strokes,gdouble * strokes)
 name|gimp_dodgeburn_default
 parameter_list|(
@@ -1082,6 +1325,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1107,6 +1355,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -1114,11 +1375,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_ellipse_select (gint32 image_ID,gdouble x,gdouble y,gdouble width,gdouble height,GimpChannelOps operation,gboolean antialias,gboolean feather,gdouble feather_radius)
 name|gimp_ellipse_select
 parameter_list|(
@@ -1156,6 +1420,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1205,6 +1474,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -1212,11 +1494,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_eraser (gint32 drawable_ID,gint num_strokes,gdouble * strokes,GimpBrushApplicationMode hardness,GimpPaintApplicationMode method)
 name|gimp_eraser
 parameter_list|(
@@ -1243,6 +1528,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1276,6 +1566,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -1283,11 +1586,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_eraser_default (gint32 drawable_ID,gint num_strokes,gdouble * strokes)
 name|gimp_eraser_default
 parameter_list|(
@@ -1308,6 +1614,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1333,6 +1644,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -1340,6 +1664,9 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
@@ -1426,7 +1753,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_free_select (gint32 image_ID,gint num_segs,gdouble * segs,GimpChannelOps operation,gboolean antialias,gboolean feather,gdouble feather_radius)
 name|gimp_free_select
 parameter_list|(
@@ -1459,6 +1786,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1500,6 +1832,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -1507,11 +1852,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_fuzzy_select (gint32 drawable_ID,gdouble x,gdouble y,gint threshold,GimpChannelOps operation,gboolean antialias,gboolean feather,gdouble feather_radius,gboolean sample_merged)
 name|gimp_fuzzy_select
 parameter_list|(
@@ -1549,6 +1897,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1598,6 +1951,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -1605,11 +1971,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_paintbrush (gint32 drawable_ID,gdouble fade_out,gint num_strokes,gdouble * strokes,GimpPaintApplicationMode method,gdouble gradient_length)
 name|gimp_paintbrush
 parameter_list|(
@@ -1639,6 +2008,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1676,6 +2050,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -1683,11 +2070,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_paintbrush_default (gint32 drawable_ID,gint num_strokes,gdouble * strokes)
 name|gimp_paintbrush_default
 parameter_list|(
@@ -1708,6 +2098,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1733,6 +2128,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -1740,11 +2148,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_pencil (gint32 drawable_ID,gint num_strokes,gdouble * strokes)
 name|gimp_pencil
 parameter_list|(
@@ -1765,6 +2176,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1790,6 +2206,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -1797,6 +2226,9 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
@@ -1939,7 +2371,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_rect_select (gint32 image_ID,gdouble x,gdouble y,gdouble width,gdouble height,GimpChannelOps operation,gboolean feather,gdouble feather_radius)
 name|gimp_rect_select
 parameter_list|(
@@ -1974,6 +2406,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -2019,6 +2456,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -2026,6 +2476,9 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
@@ -2325,7 +2778,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_smudge (gint32 drawable_ID,gdouble pressure,gint num_strokes,gdouble * strokes)
 name|gimp_smudge
 parameter_list|(
@@ -2349,6 +2802,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -2378,6 +2836,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -2385,11 +2856,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_smudge_default (gint32 drawable_ID,gint num_strokes,gdouble * strokes)
 name|gimp_smudge_default
 parameter_list|(
@@ -2410,6 +2884,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -2435,6 +2914,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -2442,6 +2934,9 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 

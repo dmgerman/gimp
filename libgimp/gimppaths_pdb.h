@@ -79,7 +79,7 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_path_set_current
 parameter_list|(
 name|gint32
@@ -90,7 +90,7 @@ modifier|*
 name|set_current_path_name
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_path_set_points
 parameter_list|(
 name|gint32
@@ -111,7 +111,7 @@ modifier|*
 name|points_pairs
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_path_stroke_current
 parameter_list|(
 name|gint32
@@ -158,7 +158,7 @@ name|gint
 name|tattoo
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_path_delete
 parameter_list|(
 name|gint32
@@ -180,7 +180,7 @@ modifier|*
 name|pathname
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_path_set_locked
 parameter_list|(
 name|gint32
@@ -194,7 +194,7 @@ name|gint
 name|lockstatus
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_path_set_tattoo
 parameter_list|(
 name|gint32

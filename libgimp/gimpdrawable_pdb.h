@@ -34,7 +34,7 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
-name|void
+name|gboolean
 name|gimp_drawable_merge_shadow
 parameter_list|(
 name|gint32
@@ -44,7 +44,7 @@ name|gboolean
 name|undo
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_drawable_fill
 parameter_list|(
 name|gint32
@@ -54,7 +54,7 @@ name|GimpFillType
 name|fill_type
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_drawable_update
 parameter_list|(
 name|gint32
@@ -166,7 +166,7 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_drawable_offsets
 parameter_list|(
 name|gint32
@@ -202,7 +202,7 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|_gimp_drawable_thumbnail
 parameter_list|(
 name|gint32

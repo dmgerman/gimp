@@ -34,21 +34,21 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
-name|void
+name|gboolean
 name|gimp_convert_rgb
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_convert_grayscale
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_convert_indexed
 parameter_list|(
 name|gint32

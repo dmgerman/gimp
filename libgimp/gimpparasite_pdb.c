@@ -95,7 +95,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_parasite_attach (GimpParasite * parasite)
 name|gimp_parasite_attach
 parameter_list|(
@@ -110,6 +110,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -127,6 +132,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -134,11 +152,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_parasite_detach (gchar * name)
 name|gimp_parasite_detach
 parameter_list|(
@@ -153,6 +174,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -170,6 +196,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -177,11 +216,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_parasite_list (gint * num_parasites,gchar *** parasites)
 name|gimp_parasite_list
 parameter_list|(
@@ -202,6 +244,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|gint
 name|i
@@ -228,8 +275,8 @@ name|parasites
 operator|=
 name|NULL
 expr_stmt|;
-if|if
-condition|(
+name|success
+operator|=
 name|return_vals
 index|[
 literal|0
@@ -240,6 +287,10 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+expr_stmt|;
+if|if
+condition|(
+name|success
 condition|)
 block|{
 operator|*
@@ -311,6 +362,9 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
@@ -403,7 +457,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_drawable_parasite_attach (gint32 drawable_ID,GimpParasite * parasite)
 name|gimp_drawable_parasite_attach
 parameter_list|(
@@ -421,6 +475,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -442,6 +501,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -449,11 +521,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_drawable_parasite_detach (gint32 drawable_ID,gchar * name)
 name|gimp_drawable_parasite_detach
 parameter_list|(
@@ -471,6 +546,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -492,6 +572,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -499,11 +592,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_drawable_parasite_list (gint32 drawable_ID,gint * num_parasites,gchar *** parasites)
 name|gimp_drawable_parasite_list
 parameter_list|(
@@ -527,6 +623,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|gint
 name|i
@@ -557,8 +658,8 @@ name|parasites
 operator|=
 name|NULL
 expr_stmt|;
-if|if
-condition|(
+name|success
+operator|=
 name|return_vals
 index|[
 literal|0
@@ -569,6 +670,10 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+expr_stmt|;
+if|if
+condition|(
+name|success
 condition|)
 block|{
 operator|*
@@ -640,6 +745,9 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
@@ -732,7 +840,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_image_parasite_attach (gint32 image_ID,GimpParasite * parasite)
 name|gimp_image_parasite_attach
 parameter_list|(
@@ -750,6 +858,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -771,6 +884,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -778,11 +904,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_image_parasite_detach (gint32 image_ID,gchar * name)
 name|gimp_image_parasite_detach
 parameter_list|(
@@ -800,6 +929,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -821,6 +955,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -828,11 +975,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_image_parasite_list (gint32 image_ID,gint * num_parasites,gchar *** parasites)
 name|gimp_image_parasite_list
 parameter_list|(
@@ -856,6 +1006,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|gint
 name|i
@@ -886,8 +1041,8 @@ name|parasites
 operator|=
 name|NULL
 expr_stmt|;
-if|if
-condition|(
+name|success
+operator|=
 name|return_vals
 index|[
 literal|0
@@ -898,6 +1053,10 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+expr_stmt|;
+if|if
+condition|(
+name|success
 condition|)
 block|{
 operator|*
@@ -969,6 +1128,9 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 

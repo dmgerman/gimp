@@ -14,7 +14,7 @@ file|"gimp.h"
 end_include
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_procedural_db_dump (gchar * filename)
 name|gimp_procedural_db_dump
 parameter_list|(
@@ -29,6 +29,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -46,6 +51,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -53,11 +71,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_procedural_db_query (gchar * name,gchar * blurb,gchar * help,gchar * author,gchar * copyright,gchar * date,gchar * proc_type,gint * num_matches,gchar *** procedure_names)
 name|gimp_procedural_db_query
 parameter_list|(
@@ -106,6 +127,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|gint
 name|i
@@ -160,8 +186,8 @@ name|procedure_names
 operator|=
 name|NULL
 expr_stmt|;
-if|if
-condition|(
+name|success
+operator|=
 name|return_vals
 index|[
 literal|0
@@ -172,6 +198,10 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+expr_stmt|;
+if|if
+condition|(
+name|success
 condition|)
 block|{
 operator|*
@@ -243,11 +273,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|_gimp_procedural_db_proc_info (gchar * procedure,gchar ** blurb,gchar ** help,gchar ** author,gchar ** copyright,gchar ** date,GimpPDBProcType * proc_type,gint * num_args,gint * num_values)
 name|_gimp_procedural_db_proc_info
 parameter_list|(
@@ -299,6 +332,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -356,8 +394,8 @@ name|num_values
 operator|=
 literal|0
 expr_stmt|;
-if|if
-condition|(
+name|success
+operator|=
 name|return_vals
 index|[
 literal|0
@@ -368,6 +406,10 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+expr_stmt|;
+if|if
+condition|(
+name|success
 condition|)
 block|{
 operator|*
@@ -489,13 +531,16 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
-DECL|function|_gimp_procedural_db_proc_arg (gchar * procedure,gint arg_num,GimpPDBArgType * arg_type,gchar ** arg_name,gchar ** arg_desc)
-name|_gimp_procedural_db_proc_arg
+name|gboolean
+DECL|function|gimp_procedural_db_proc_arg (gchar * procedure,gint arg_num,GimpPDBArgType * arg_type,gchar ** arg_name,gchar ** arg_desc)
+name|gimp_procedural_db_proc_arg
 parameter_list|(
 name|gchar
 modifier|*
@@ -525,6 +570,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -561,8 +611,8 @@ name|arg_desc
 operator|=
 name|NULL
 expr_stmt|;
-if|if
-condition|(
+name|success
+operator|=
 name|return_vals
 index|[
 literal|0
@@ -573,6 +623,10 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+expr_stmt|;
+if|if
+condition|(
+name|success
 condition|)
 block|{
 operator|*
@@ -625,13 +679,16 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
-DECL|function|_gimp_procedural_db_proc_val (gchar * procedure,gint val_num,GimpPDBArgType * val_type,gchar ** val_name,gchar ** val_desc)
-name|_gimp_procedural_db_proc_val
+name|gboolean
+DECL|function|gimp_procedural_db_proc_val (gchar * procedure,gint val_num,GimpPDBArgType * val_type,gchar ** val_name,gchar ** val_desc)
+name|gimp_procedural_db_proc_val
 parameter_list|(
 name|gchar
 modifier|*
@@ -661,6 +718,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -697,8 +759,8 @@ name|val_desc
 operator|=
 name|NULL
 expr_stmt|;
-if|if
-condition|(
+name|success
+operator|=
 name|return_vals
 index|[
 literal|0
@@ -709,6 +771,10 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+expr_stmt|;
+if|if
+condition|(
+name|success
 condition|)
 block|{
 operator|*
@@ -761,11 +827,14 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|_gimp_procedural_db_get_data (gchar * identifier,gint * bytes,guint8 ** data)
 name|_gimp_procedural_db_get_data
 parameter_list|(
@@ -789,6 +858,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -816,8 +890,8 @@ name|data
 operator|=
 name|NULL
 expr_stmt|;
-if|if
-condition|(
+name|success
+operator|=
 name|return_vals
 index|[
 literal|0
@@ -828,6 +902,10 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+expr_stmt|;
+if|if
+condition|(
+name|success
 condition|)
 block|{
 operator|*
@@ -884,6 +962,9 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
@@ -963,7 +1044,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|_gimp_procedural_db_set_data (gchar * identifier,gint bytes,guint8 * data)
 name|_gimp_procedural_db_set_data
 parameter_list|(
@@ -985,6 +1066,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -1010,6 +1096,19 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -1017,6 +1116,9 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 

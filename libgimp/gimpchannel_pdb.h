@@ -70,7 +70,7 @@ name|gint32
 name|channel_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_channel_delete
 parameter_list|(
 name|gint32
@@ -85,7 +85,7 @@ name|gint32
 name|channel_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_channel_set_name
 parameter_list|(
 name|gint32
@@ -103,7 +103,7 @@ name|gint32
 name|channel_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_channel_set_visible
 parameter_list|(
 name|gint32
@@ -120,7 +120,7 @@ name|gint32
 name|channel_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_channel_set_show_masked
 parameter_list|(
 name|gint32
@@ -137,7 +137,7 @@ name|gint32
 name|channel_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_channel_set_opacity
 parameter_list|(
 name|gint32
@@ -147,7 +147,7 @@ name|gdouble
 name|opacity
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_channel_get_color
 parameter_list|(
 name|gint32
@@ -166,7 +166,7 @@ modifier|*
 name|blue
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_channel_set_color
 parameter_list|(
 name|gint32
@@ -189,7 +189,7 @@ name|gint32
 name|channel_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_channel_set_tattoo
 parameter_list|(
 name|gint32

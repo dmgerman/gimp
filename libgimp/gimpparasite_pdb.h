@@ -43,7 +43,7 @@ modifier|*
 name|name
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_parasite_attach
 parameter_list|(
 name|GimpParasite
@@ -51,7 +51,7 @@ modifier|*
 name|parasite
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_parasite_detach
 parameter_list|(
 name|gchar
@@ -59,7 +59,7 @@ modifier|*
 name|name
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_parasite_list
 parameter_list|(
 name|gint
@@ -85,7 +85,7 @@ modifier|*
 name|name
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_drawable_parasite_attach
 parameter_list|(
 name|gint32
@@ -96,7 +96,7 @@ modifier|*
 name|parasite
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_drawable_parasite_detach
 parameter_list|(
 name|gint32
@@ -107,7 +107,7 @@ modifier|*
 name|name
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_drawable_parasite_list
 parameter_list|(
 name|gint32
@@ -136,7 +136,7 @@ modifier|*
 name|name
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_image_parasite_attach
 parameter_list|(
 name|gint32
@@ -147,7 +147,7 @@ modifier|*
 name|parasite
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_image_parasite_detach
 parameter_list|(
 name|gint32
@@ -158,7 +158,7 @@ modifier|*
 name|name
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_image_parasite_list
 parameter_list|(
 name|gint32

@@ -34,7 +34,7 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
-name|void
+name|gboolean
 name|gimp_progress_init
 parameter_list|(
 name|gchar
@@ -42,7 +42,7 @@ modifier|*
 name|message
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_progress_update
 parameter_list|(
 name|gdouble
@@ -56,7 +56,7 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_plugin_domain_register
 parameter_list|(
 name|gchar
@@ -68,7 +68,7 @@ modifier|*
 name|domain_path
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_plugin_help_register
 parameter_list|(
 name|gchar

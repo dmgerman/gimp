@@ -43,7 +43,7 @@ modifier|*
 name|token
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_gimprc_set
 parameter_list|(
 name|gchar
@@ -55,7 +55,7 @@ modifier|*
 name|value
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_get_monitor_resolution
 parameter_list|(
 name|gdouble

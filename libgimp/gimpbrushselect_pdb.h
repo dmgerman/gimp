@@ -34,7 +34,7 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
-name|void
+name|gboolean
 name|gimp_brushes_popup
 parameter_list|(
 name|gchar
@@ -59,7 +59,7 @@ name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_brushes_close_popup
 parameter_list|(
 name|gchar
@@ -67,7 +67,7 @@ modifier|*
 name|brush_callback
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_brushes_set_popup
 parameter_list|(
 name|gchar

@@ -83,7 +83,7 @@ name|GimpUnit
 name|unit_id
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|_gimp_unit_set_deletion_flag
 parameter_list|(
 name|GimpUnit

@@ -34,7 +34,7 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
-name|void
+name|gboolean
 name|gimp_procedural_db_dump
 parameter_list|(
 name|gchar
@@ -42,7 +42,7 @@ modifier|*
 name|filename
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_procedural_db_query
 parameter_list|(
 name|gchar
@@ -84,7 +84,7 @@ modifier|*
 name|procedure_names
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|_gimp_procedural_db_proc_info
 parameter_list|(
 name|gchar
@@ -129,8 +129,8 @@ modifier|*
 name|num_values
 parameter_list|)
 function_decl|;
-name|void
-name|_gimp_procedural_db_proc_arg
+name|gboolean
+name|gimp_procedural_db_proc_arg
 parameter_list|(
 name|gchar
 modifier|*
@@ -154,8 +154,8 @@ modifier|*
 name|arg_desc
 parameter_list|)
 function_decl|;
-name|void
-name|_gimp_procedural_db_proc_val
+name|gboolean
+name|gimp_procedural_db_proc_val
 parameter_list|(
 name|gchar
 modifier|*
@@ -179,7 +179,7 @@ modifier|*
 name|val_desc
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|_gimp_procedural_db_get_data
 parameter_list|(
 name|gchar
@@ -204,7 +204,7 @@ modifier|*
 name|identifier
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|_gimp_procedural_db_set_data
 parameter_list|(
 name|gchar

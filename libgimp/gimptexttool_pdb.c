@@ -154,7 +154,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_text_get_extents_fontname (gchar * text,gdouble size,GimpSizeType size_type,gchar * fontname,gint * width,gint * height,gint * ascent,gint * descent)
 name|gimp_text_get_extents_fontname
 parameter_list|(
@@ -195,6 +195,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -244,8 +249,8 @@ name|descent
 operator|=
 literal|0
 expr_stmt|;
-if|if
-condition|(
+name|success
+operator|=
 name|return_vals
 index|[
 literal|0
@@ -256,6 +261,10 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+expr_stmt|;
+if|if
+condition|(
+name|success
 condition|)
 block|{
 operator|*
@@ -314,6 +323,9 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 
@@ -514,7 +526,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_text_get_extents (gchar * text,gdouble size,GimpSizeType size_type,gchar * foundry,gchar * family,gchar * weight,gchar * slant,gchar * set_width,gchar * spacing,gchar * registry,gchar * encoding,gint * width,gint * height,gint * ascent,gint * descent)
 name|gimp_text_get_extents
 parameter_list|(
@@ -583,6 +595,11 @@ name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -660,8 +677,8 @@ name|descent
 operator|=
 literal|0
 expr_stmt|;
-if|if
-condition|(
+name|success
+operator|=
 name|return_vals
 index|[
 literal|0
@@ -672,6 +689,10 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+expr_stmt|;
+if|if
+condition|(
+name|success
 condition|)
 block|{
 operator|*
@@ -730,6 +751,9 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 

@@ -34,7 +34,7 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
-name|void
+name|gboolean
 name|gimp_selection_bounds
 parameter_list|(
 name|gint32
@@ -81,7 +81,7 @@ name|gint
 name|offy
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_selection_none
 parameter_list|(
 name|gint32

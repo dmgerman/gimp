@@ -80,7 +80,7 @@ name|GimpAddMaskType
 name|mask_type
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_layer_scale
 parameter_list|(
 name|gint32
@@ -96,7 +96,7 @@ name|gboolean
 name|local_origin
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_layer_resize
 parameter_list|(
 name|gint32
@@ -115,14 +115,14 @@ name|gint
 name|offy
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_layer_delete
 parameter_list|(
 name|gint32
 name|layer_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_layer_translate
 parameter_list|(
 name|gint32
@@ -135,14 +135,14 @@ name|gint
 name|offy
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_layer_add_alpha
 parameter_list|(
 name|gint32
 name|layer_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_layer_set_offsets
 parameter_list|(
 name|gint32
@@ -177,7 +177,7 @@ name|gint32
 name|layer_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_layer_set_name
 parameter_list|(
 name|gint32
@@ -195,7 +195,7 @@ name|gint32
 name|layer_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_layer_set_visible
 parameter_list|(
 name|gint32
@@ -212,7 +212,7 @@ name|gint32
 name|layer_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_layer_set_preserve_trans
 parameter_list|(
 name|gint32
@@ -229,7 +229,7 @@ name|gint32
 name|layer_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_layer_set_apply_mask
 parameter_list|(
 name|gint32
@@ -246,7 +246,7 @@ name|gint32
 name|layer_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_layer_set_show_mask
 parameter_list|(
 name|gint32
@@ -263,7 +263,7 @@ name|gint32
 name|layer_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_layer_set_edit_mask
 parameter_list|(
 name|gint32
@@ -280,7 +280,7 @@ name|gint32
 name|layer_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_layer_set_opacity
 parameter_list|(
 name|gint32
@@ -297,7 +297,7 @@ name|gint32
 name|layer_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_layer_set_mode
 parameter_list|(
 name|gint32
@@ -314,7 +314,7 @@ name|gint32
 name|layer_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_layer_set_linked
 parameter_list|(
 name|gint32
@@ -331,7 +331,7 @@ name|gint32
 name|layer_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_layer_set_tattoo
 parameter_list|(
 name|gint32

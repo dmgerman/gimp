@@ -34,7 +34,7 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
-name|void
+name|gboolean
 name|gimp_brightness_contrast
 parameter_list|(
 name|gint32
@@ -47,7 +47,7 @@ name|gint
 name|contrast
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_levels
 parameter_list|(
 name|gint32
@@ -72,7 +72,7 @@ name|gint
 name|high_output
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_posterize
 parameter_list|(
 name|gint32
@@ -82,14 +82,14 @@ name|gint
 name|levels
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_desaturate
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_equalize
 parameter_list|(
 name|gint32
@@ -99,14 +99,14 @@ name|gboolean
 name|mask_only
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_invert
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_curves_spline
 parameter_list|(
 name|gint32
@@ -123,7 +123,7 @@ modifier|*
 name|control_pts
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_curves_explicit
 parameter_list|(
 name|gint32
@@ -140,7 +140,7 @@ modifier|*
 name|curve
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_color_balance
 parameter_list|(
 name|gint32
@@ -162,7 +162,7 @@ name|gdouble
 name|yellow_blue
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_histogram
 parameter_list|(
 name|gint32
@@ -202,7 +202,7 @@ modifier|*
 name|percentile
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_hue_saturation
 parameter_list|(
 name|gint32
@@ -221,7 +221,7 @@ name|gdouble
 name|saturation
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_threshold
 parameter_list|(
 name|gint32

@@ -34,14 +34,14 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
-name|void
+name|gboolean
 name|gimp_undo_push_group_start
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_undo_push_group_end
 parameter_list|(
 name|gint32
