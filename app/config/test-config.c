@@ -24,16 +24,8 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbaseconfig.h"
+file|"gimpcoreconfig.h"
 end_include
-
-begin_define
-DECL|macro|FILENAME
-define|#
-directive|define
-name|FILENAME
-value|"foorc"
-end_define
 
 begin_function_decl
 specifier|static
@@ -90,6 +82,13 @@ name|GimpBaseConfig
 modifier|*
 name|config
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|filename
+init|=
+literal|"foorc"
+decl_stmt|;
 name|gboolean
 name|header
 init|=
@@ -107,16 +106,24 @@ name|config
 operator|=
 name|g_object_new
 argument_list|(
-name|GIMP_TYPE_BASE_CONFIG
+name|GIMP_TYPE_CORE_CONFIG
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|" Serializing default properties of GimpBaseConfig to '"
-name|FILENAME
-literal|"' ...\n"
+literal|" Serializing default properties of %s to '%s' ...\n"
+argument_list|,
+name|g_type_name
+argument_list|(
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|config
+argument_list|)
+argument_list|)
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 name|gimp_config_serialize
@@ -126,14 +133,14 @@ argument_list|(
 name|config
 argument_list|)
 argument_list|,
-name|FILENAME
+name|filename
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|" Deserializing from '"
-name|FILENAME
-literal|"' ...\n"
+literal|" Deserializing from '%s' ...\n"
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -160,7 +167,7 @@ argument_list|(
 name|config
 argument_list|)
 argument_list|,
-name|FILENAME
+name|filename
 argument_list|,
 name|TRUE
 argument_list|)
@@ -291,15 +298,7 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"  %s::%s -> %s\n"
-argument_list|,
-name|g_type_name
-argument_list|(
-name|G_TYPE_FROM_INSTANCE
-argument_list|(
-name|object
-argument_list|)
-argument_list|)
+literal|"  %s -> %s\n"
 argument_list|,
 name|pspec
 operator|->
@@ -329,15 +328,7 @@ else|else
 block|{
 name|g_print
 argument_list|(
-literal|"  %s::%s changed\n"
-argument_list|,
-name|g_type_name
-argument_list|(
-name|G_TYPE_FROM_INSTANCE
-argument_list|(
-name|object
-argument_list|)
-argument_list|)
+literal|"  %s changed\n"
 argument_list|,
 name|pspec
 operator|->
