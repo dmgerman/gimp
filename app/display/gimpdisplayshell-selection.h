@@ -91,16 +91,6 @@ name|gint
 name|index_in
 decl_stmt|;
 comment|/*  index of current stipple pattern  */
-DECL|member|index_out
-name|gint
-name|index_out
-decl_stmt|;
-comment|/*  index of current stipple pattern  */
-DECL|member|index_layer
-name|gint
-name|index_layer
-decl_stmt|;
-comment|/*  index of current stipple pattern  */
 DECL|member|state
 name|gint
 name|state
@@ -131,11 +121,6 @@ name|guint
 name|timeout_id
 decl_stmt|;
 comment|/*  timer for successive draws        */
-DECL|member|cycle
-name|gint
-name|cycle
-decl_stmt|;
-comment|/*  color cycling turned on           */
 DECL|member|cycle_pix
 name|GdkPixmap
 modifier|*

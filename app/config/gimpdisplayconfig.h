@@ -102,10 +102,6 @@ DECL|member|marching_ants_speed
 name|gint
 name|marching_ants_speed
 decl_stmt|;
-DECL|member|colormap_cycling
-name|gboolean
-name|colormap_cycling
-decl_stmt|;
 DECL|member|resize_windows_on_zoom
 name|gboolean
 name|resize_windows_on_zoom

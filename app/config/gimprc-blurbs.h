@@ -48,15 +48,6 @@ value|N_("Sets the canvas padding color used if the padding mode is set to " \  
 end_define
 
 begin_define
-DECL|macro|COLORMAP_CYCLING_BLURB
-define|#
-directive|define
-name|COLORMAP_CYCLING_BLURB
-define|\
-value|N_("Specify that marching ants for selected regions will be drawn with " \    "colormap cycling as opposed to be drawn as animated lines.  This color " \    "cycling option works only with 8-bit displays.")
-end_define
-
-begin_define
 DECL|macro|CONFIRM_ON_CLOSE_BLURB
 define|#
 directive|define

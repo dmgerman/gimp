@@ -6245,7 +6245,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon28f29b2d0108
+DECL|struct|__anon2bca17ed0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -6900,23 +6900,6 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Install Colormap"
-argument_list|)
-argument_list|,
-name|GTK_BOX
-argument_list|(
-name|vbox2
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|prefs_check_button_add
-argument_list|(
-name|object
-argument_list|,
-literal|"colormap-cycling"
-argument_list|,
-name|_
-argument_list|(
-literal|"Colormap Cycling"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -8559,7 +8542,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28f29b2d0208
+DECL|struct|__anon2bca17ed0208
 block|{
 DECL|member|label
 specifier|const
@@ -8718,7 +8701,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28f29b2d0308
+DECL|struct|__anon2bca17ed0308
 block|{
 DECL|member|tree_label
 specifier|const
