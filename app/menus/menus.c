@@ -699,6 +699,10 @@ block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_TOOL_PAINTBRUSH
 block|}
 block|,
 literal|"gimp-brush-grid"
@@ -720,6 +724,10 @@ block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_TOOL_BUCKET_FILL
 block|}
 block|,
 literal|"gimp-pattern-grid"
@@ -741,6 +749,10 @@ block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_TOOL_BLEND
 block|}
 block|,
 literal|"gimp-gradient-list"
@@ -807,11 +819,15 @@ argument_list|(
 literal|"/File/Dialogs/Buffers..."
 argument_list|)
 block|,
-name|NULL
+literal|"foo"
 block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_PASTE
 block|}
 block|,
 literal|"gimp-buffer-list"
@@ -3592,7 +3608,7 @@ argument_list|(
 literal|"/Tools/Swap Contexts"
 argument_list|)
 block|,
-literal|"<shift>X"
+literal|"<alt>X"
 block|,
 name|tools_swap_contexts_cmd_callback
 block|,
@@ -3737,6 +3753,10 @@ block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_TOOL_PAINTBRUSH
 block|}
 block|,
 literal|"gimp-brush-grid"
@@ -3758,6 +3778,10 @@ block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_TOOL_BUCKET_FILL
 block|}
 block|,
 literal|"gimp-pattern-grid"
@@ -3779,6 +3803,10 @@ block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_TOOL_BLEND
 block|}
 block|,
 literal|"gimp-gradient-list"
@@ -3845,11 +3873,15 @@ argument_list|(
 literal|"/Dialogs/Buffers..."
 argument_list|)
 block|,
-name|NULL
+literal|"foo"
 block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_PASTE
 block|}
 block|,
 literal|"gimp-buffer-list"
@@ -5786,7 +5818,7 @@ parameter_list|,
 name|stock_id
 parameter_list|)
 define|\
-value|{ { (path), NULL, dialogs_add_tab_cmd_callback, 0, (type), (stock_id) }, \     (id), NULL, NULL }
+value|{ { (path), "foo", dialogs_add_tab_cmd_callback, 0, (type), (stock_id) }, \     (id), NULL, NULL }
 end_define
 
 begin_define
@@ -5888,14 +5920,33 @@ argument_list|,
 name|NULL
 argument_list|)
 block|,
+name|SEPARATOR
+argument_list|(
+literal|"/Add Tab/---"
+argument_list|)
+block|,
 name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Document History..."
+literal|"/Add Tab/Navigation..."
 argument_list|)
 argument_list|,
-literal|"gimp-document-history"
+literal|"gimp-navigation-view"
+argument_list|,
+literal|"<StockItem>"
+argument_list|,
+name|GIMP_STOCK_TOOL_MOVE
+argument_list|)
+block|,
+name|ADD_TAB
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Add Tab/Images..."
+argument_list|)
+argument_list|,
+literal|"gimp-image-list"
 argument_list|,
 name|NULL
 argument_list|,
@@ -5906,10 +5957,10 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Error Console..."
+literal|"/Add Tab/Document History..."
 argument_list|)
 argument_list|,
-literal|"gimp-error-console"
+literal|"gimp-document-history"
 argument_list|,
 name|NULL
 argument_list|,
@@ -5930,9 +5981,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-brush-grid"
 argument_list|,
-name|NULL
+literal|"<StockItem>"
 argument_list|,
-name|NULL
+name|GIMP_STOCK_TOOL_PAINTBRUSH
 argument_list|)
 block|,
 name|ADD_TAB
@@ -5944,9 +5995,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-pattern-grid"
 argument_list|,
-name|NULL
+literal|"<StockItem>"
 argument_list|,
-name|NULL
+name|GIMP_STOCK_TOOL_BUCKET_FILL
 argument_list|)
 block|,
 name|ADD_TAB
@@ -5958,9 +6009,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-gradient-list"
 argument_list|,
-name|NULL
+literal|"<StockItem>"
 argument_list|,
-name|NULL
+name|GIMP_STOCK_TOOL_BLEND
 argument_list|)
 block|,
 name|ADD_TAB
@@ -6000,37 +6051,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-buffer-list"
 argument_list|,
-name|NULL
+literal|"<StockItem>"
 argument_list|,
-name|NULL
-argument_list|)
-block|,
-name|ADD_TAB
-argument_list|(
-name|N_
-argument_list|(
-literal|"/Add Tab/Images..."
-argument_list|)
-argument_list|,
-literal|"gimp-image-list"
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-block|,
-name|ADD_TAB
-argument_list|(
-name|N_
-argument_list|(
-literal|"/Add Tab/Navigation..."
-argument_list|)
-argument_list|,
-literal|"gimp-navigation-view"
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
+name|GTK_STOCK_PASTE
 argument_list|)
 block|,
 name|SEPARATOR
@@ -6052,9 +6075,18 @@ argument_list|,
 name|NULL
 argument_list|)
 block|,
-name|SEPARATOR
+name|ADD_TAB
 argument_list|(
-literal|"/---"
+name|N_
+argument_list|(
+literal|"/Add Tab/Error Console..."
+argument_list|)
+argument_list|,
+literal|"gimp-error-console"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 block|,
 block|{
@@ -6077,6 +6109,16 @@ name|NULL
 block|,
 name|NULL
 block|}
+block|,
+name|SEPARATOR
+argument_list|(
+literal|"/view-type-separator"
+argument_list|)
+block|,
+name|BRANCH
+argument_list|(
+literal|"/Preview Size"
+argument_list|)
 block|,
 block|{
 block|{

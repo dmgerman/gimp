@@ -108,6 +108,11 @@ name|GimpContainer
 modifier|*
 name|image_container
 decl_stmt|;
+DECL|member|display_container
+name|GimpContainer
+modifier|*
+name|display_container
+decl_stmt|;
 DECL|member|show_image_menu
 name|gboolean
 name|show_image_menu
@@ -170,6 +175,10 @@ parameter_list|,
 name|GimpContainer
 modifier|*
 name|image_container
+parameter_list|,
+name|GimpContainer
+modifier|*
+name|display_container
 parameter_list|)
 function_decl|;
 end_function_decl
