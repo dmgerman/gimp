@@ -155,7 +155,7 @@ name|gint32
 name|offset
 decl_stmt|;
 name|gint32
-name|guide_id
+name|guide_ID
 init|=
 literal|0
 decl_stmt|;
@@ -242,7 +242,7 @@ name|position
 operator|=
 name|offset
 expr_stmt|;
-name|guide_id
+name|guide_ID
 operator|=
 name|guide
 operator|->
@@ -278,7 +278,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|guide_id
+name|guide_ID
 expr_stmt|;
 return|return
 name|return_args
@@ -324,7 +324,7 @@ block|{
 block|{
 name|PDB_INT32
 block|,
-literal|"guide_id"
+literal|"guide"
 block|,
 literal|"The new guide"
 block|}
@@ -399,7 +399,7 @@ name|gint32
 name|offset
 decl_stmt|;
 name|gint32
-name|guide_id
+name|guide_ID
 init|=
 literal|0
 decl_stmt|;
@@ -486,7 +486,7 @@ name|position
 operator|=
 name|offset
 expr_stmt|;
-name|guide_id
+name|guide_ID
 operator|=
 name|guide
 operator|->
@@ -522,7 +522,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|guide_id
+name|guide_ID
 expr_stmt|;
 return|return
 name|return_args
@@ -568,7 +568,7 @@ block|{
 block|{
 name|PDB_INT32
 block|,
-literal|"guide_id"
+literal|"guide"
 block|,
 literal|"The new guide"
 block|}
