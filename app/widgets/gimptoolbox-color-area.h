@@ -16,37 +16,6 @@ directive|define
 name|__GIMP_TOOLBOX_COLOR_AREA_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|DISPLAY_FILTERS
-end_ifdef
-
-begin_decl_stmt
-specifier|extern
-name|GimpDisplay
-modifier|*
-name|color_area_gdisp
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/* hack for color displays */
-end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* DISPLAY_FILTERS */
-end_comment
-
-begin_comment
-comment|/*  *  Functions  */
-end_comment
-
 begin_function_decl
 name|GtkWidget
 modifier|*
