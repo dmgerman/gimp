@@ -9,10 +9,37 @@ directive|include
 file|"config.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ENABLE_MP
+end_ifdef
+
 begin_include
 include|#
 directive|include
-file|"gimphistogramP.h"
+file|<pthread.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* ENABLE_MP */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpmath.h>
 end_include
 
 begin_include
@@ -51,38 +78,54 @@ directive|include
 file|"gimprc.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
-end_include
-
-begin_ifdef
+begin_struct
+DECL|struct|_GimpHistogram
+struct|struct
+name|_GimpHistogram
+block|{
+DECL|member|bins
+name|gint
+name|bins
+decl_stmt|;
+DECL|member|values
+name|gdouble
+modifier|*
+modifier|*
+name|values
+decl_stmt|;
+DECL|member|nchannels
+name|gint
+name|nchannels
+decl_stmt|;
 ifdef|#
 directive|ifdef
 name|ENABLE_MP
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<pthread.h>
-end_include
-
-begin_endif
+DECL|member|mutex
+name|pthread_mutex_t
+name|mutex
+decl_stmt|;
+DECL|member|nthreads
+name|gint
+name|nthreads
+decl_stmt|;
+DECL|member|tmp_values
+name|gdouble
+modifier|*
+modifier|*
+modifier|*
+name|tmp_values
+decl_stmt|;
+DECL|member|tmp_slots
+name|gchar
+modifier|*
+name|tmp_slots
+decl_stmt|;
 endif|#
 directive|endif
-end_endif
-
-begin_comment
 comment|/* ENABLE_MP */
-end_comment
+block|}
+struct|;
+end_struct
 
 begin_function
 name|GimpHistogram
@@ -99,12 +142,18 @@ name|histogram
 decl_stmt|;
 name|histogram
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GimpHistogram
 argument_list|,
 literal|1
 argument_list|)
+expr_stmt|;
+name|histogram
+operator|->
+name|bins
+operator|=
+literal|0
 expr_stmt|;
 name|histogram
 operator|->
@@ -118,6 +167,30 @@ name|nchannels
 operator|=
 literal|0
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|ENABLE_MP
+name|histogram
+operator|->
+name|nthreads
+operator|=
+literal|0
+expr_stmt|;
+name|histogram
+operator|->
+name|tmp_values
+operator|=
+name|NULL
+expr_stmt|;
+name|histogram
+operator|->
+name|tmp_slot
+operator|=
+name|NULL
+expr_stmt|;
+endif|#
+directive|endif
+comment|/* ENABLE_MP */
 return|return
 name|histogram
 return|;
@@ -134,7 +207,7 @@ modifier|*
 name|histogram
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if
@@ -186,6 +259,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_histogram_calculate_sub_region (GimpHistogram * histogram,PixelRegion * region,PixelRegion * mask)
 name|gimp_histogram_calculate_sub_region
@@ -204,8 +278,7 @@ name|mask
 parameter_list|)
 block|{
 specifier|const
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|src
 decl_stmt|,
@@ -213,20 +286,19 @@ modifier|*
 name|msrc
 decl_stmt|;
 specifier|const
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|m
 decl_stmt|,
 modifier|*
 name|s
 decl_stmt|;
-name|double
+name|gdouble
 modifier|*
 modifier|*
 name|values
 decl_stmt|;
-name|int
+name|gint
 name|h
 decl_stmt|,
 name|w
@@ -236,7 +308,7 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|ENABLE_MP
-name|int
+name|gint
 name|slot
 init|=
 literal|0
@@ -318,7 +390,7 @@ condition|(
 name|mask
 condition|)
 block|{
-name|double
+name|gdouble
 name|masked
 decl_stmt|;
 name|src
@@ -1118,18 +1190,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_histogram_alloc (GimpHistogram * histogram,int bytes)
+DECL|function|gimp_histogram_alloc (GimpHistogram * histogram,gint bytes)
 name|gimp_histogram_alloc
 parameter_list|(
 name|GimpHistogram
 modifier|*
 name|histogram
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if
@@ -1195,9 +1267,9 @@ name|histogram
 operator|->
 name|values
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
-name|double
+name|gdouble
 operator|*
 argument_list|,
 name|histogram
@@ -1256,7 +1328,7 @@ modifier|*
 name|mask
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -1264,7 +1336,7 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|ENABLE_MP
-name|int
+name|gint
 name|k
 decl_stmt|;
 endif|#
@@ -1295,9 +1367,9 @@ name|histogram
 operator|->
 name|tmp_slots
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
-name|char
+name|gchar
 argument_list|,
 name|num_processors
 argument_list|)
@@ -1306,9 +1378,9 @@ name|histogram
 operator|->
 name|tmp_values
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
-name|double
+name|gdouble
 operator|*
 operator|*
 argument_list|,
@@ -1336,7 +1408,7 @@ index|[
 name|i
 index|]
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|double
 operator|*
@@ -1381,9 +1453,9 @@ index|[
 name|j
 index|]
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
-name|double
+name|gdouble
 argument_list|,
 literal|256
 argument_list|)
@@ -1610,7 +1682,7 @@ decl_stmt|;
 name|PixelRegion
 name|mask
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -1619,12 +1691,12 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|int
+name|gboolean
 name|no_mask
 decl_stmt|;
 name|no_mask
@@ -1767,6 +1839,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|gimp_histogram_calculate
 argument_list|(
 name|histogram
@@ -1778,27 +1851,28 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_function
-name|double
-DECL|function|gimp_histogram_get_maximum (GimpHistogram * histogram,int channel)
+name|gdouble
+DECL|function|gimp_histogram_get_maximum (GimpHistogram * histogram,GimpHistogramChannel channel)
 name|gimp_histogram_get_maximum
 parameter_list|(
 name|GimpHistogram
 modifier|*
 name|histogram
 parameter_list|,
-name|int
+name|GimpHistogramChannel
 name|channel
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|max
 init|=
 literal|0.0
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|;
 for|for
@@ -1847,18 +1921,18 @@ block|}
 end_function
 
 begin_function
-name|double
-DECL|function|gimp_histogram_get_value (GimpHistogram * histogram,int channel,int bin)
+name|gdouble
+DECL|function|gimp_histogram_get_value (GimpHistogram * histogram,GimpHistogramChannel channel,gint bin)
 name|gimp_histogram_get_value
 parameter_list|(
 name|GimpHistogram
 modifier|*
 name|histogram
 parameter_list|,
-name|int
+name|GimpHistogramChannel
 name|channel
 parameter_list|,
-name|int
+name|gint
 name|bin
 parameter_list|)
 block|{
@@ -1896,18 +1970,18 @@ block|}
 end_function
 
 begin_function
-name|double
-DECL|function|gimp_histogram_get_channel (GimpHistogram * histogram,int channel,int bin)
+name|gdouble
+DECL|function|gimp_histogram_get_channel (GimpHistogram * histogram,GimpHistogramChannel channel,gint bin)
 name|gimp_histogram_get_channel
 parameter_list|(
 name|GimpHistogram
 modifier|*
 name|histogram
 parameter_list|,
-name|int
+name|GimpHistogramChannel
 name|channel
 parameter_list|,
-name|int
+name|gint
 name|bin
 parameter_list|)
 block|{
@@ -1946,7 +2020,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|gimp_histogram_nchannels (GimpHistogram * histogram)
 name|gimp_histogram_nchannels
 parameter_list|(
@@ -1966,25 +2040,25 @@ block|}
 end_function
 
 begin_function
-name|double
-DECL|function|gimp_histogram_get_count (GimpHistogram * histogram,int start,int end)
+name|gdouble
+DECL|function|gimp_histogram_get_count (GimpHistogram * histogram,gint start,gint end)
 name|gimp_histogram_get_count
 parameter_list|(
 name|GimpHistogram
 modifier|*
 name|histogram
 parameter_list|,
-name|int
+name|gint
 name|start
 parameter_list|,
-name|int
+name|gint
 name|end
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|double
+name|gdouble
 name|count
 init|=
 literal|0.0
@@ -2021,33 +2095,33 @@ block|}
 end_function
 
 begin_function
-name|double
-DECL|function|gimp_histogram_get_mean (GimpHistogram * histogram,int channel,int start,int end)
+name|gdouble
+DECL|function|gimp_histogram_get_mean (GimpHistogram * histogram,GimpHistogramChannel channel,gint start,gint end)
 name|gimp_histogram_get_mean
 parameter_list|(
 name|GimpHistogram
 modifier|*
 name|histogram
 parameter_list|,
-name|int
+name|GimpHistogramChannel
 name|channel
 parameter_list|,
-name|int
+name|gint
 name|start
 parameter_list|,
-name|int
+name|gint
 name|end
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|double
+name|gdouble
 name|mean
 init|=
 literal|0.0
 decl_stmt|;
-name|double
+name|gdouble
 name|count
 decl_stmt|;
 for|for
@@ -2106,33 +2180,33 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|gimp_histogram_get_median (GimpHistogram * histogram,int channel,int start,int end)
+name|gint
+DECL|function|gimp_histogram_get_median (GimpHistogram * histogram,GimpHistogramChannel channel,gint start,gint end)
 name|gimp_histogram_get_median
 parameter_list|(
 name|GimpHistogram
 modifier|*
 name|histogram
 parameter_list|,
-name|int
+name|GimpHistogramChannel
 name|channel
 parameter_list|,
-name|int
+name|gint
 name|start
 parameter_list|,
-name|int
+name|gint
 name|end
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|double
+name|gdouble
 name|sum
 init|=
 literal|0.0
 decl_stmt|;
-name|double
+name|gdouble
 name|count
 decl_stmt|;
 name|count
@@ -2194,36 +2268,36 @@ block|}
 end_function
 
 begin_function
-name|double
-DECL|function|gimp_histogram_get_std_dev (GimpHistogram * histogram,int channel,int start,int end)
+name|gdouble
+DECL|function|gimp_histogram_get_std_dev (GimpHistogram * histogram,GimpHistogramChannel channel,gint start,gint end)
 name|gimp_histogram_get_std_dev
 parameter_list|(
 name|GimpHistogram
 modifier|*
 name|histogram
 parameter_list|,
-name|int
+name|GimpHistogramChannel
 name|channel
 parameter_list|,
-name|int
+name|gint
 name|start
 parameter_list|,
-name|int
+name|gint
 name|end
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|double
+name|gdouble
 name|dev
 init|=
 literal|0.0
 decl_stmt|;
-name|double
+name|gdouble
 name|count
 decl_stmt|;
-name|double
+name|gdouble
 name|mean
 decl_stmt|;
 name|mean

@@ -1126,7 +1126,7 @@ name|levels_dialog
 operator|->
 name|channel
 operator|=
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 expr_stmt|;
 for|for
 control|(
@@ -1505,7 +1505,7 @@ name|data
 decl_stmt|;
 name|ld
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|LevelsDialog
 argument_list|,
@@ -1516,7 +1516,7 @@ name|ld
 operator|->
 name|channel
 operator|=
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 expr_stmt|;
 name|ld
 operator|->
@@ -1798,7 +1798,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 argument_list|,
 operator|&
 name|color_option_items
@@ -1814,7 +1814,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|HISTOGRAM_RED
+name|GIMP_HISTOGRAM_RED
 argument_list|,
 operator|&
 name|color_option_items
@@ -1830,7 +1830,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|HISTOGRAM_GREEN
+name|GIMP_HISTOGRAM_GREEN
 argument_list|,
 operator|&
 name|color_option_items
@@ -1846,7 +1846,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|HISTOGRAM_BLUE
+name|GIMP_HISTOGRAM_BLUE
 argument_list|,
 operator|&
 name|color_option_items
@@ -1862,7 +1862,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|HISTOGRAM_ALPHA
+name|GIMP_HISTOGRAM_ALPHA
 argument_list|,
 operator|&
 name|color_option_items
@@ -3958,12 +3958,12 @@ literal|2
 condition|)
 name|sel_channel
 operator|=
-name|HISTOGRAM_ALPHA
+name|GIMP_HISTOGRAM_ALPHA
 expr_stmt|;
 else|else
 name|sel_channel
 operator|=
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 expr_stmt|;
 block|}
 comment|/*  Recalculate the transfer arrays  */
@@ -4155,10 +4155,10 @@ argument_list|)
 expr_stmt|;
 comment|/* fall through */
 case|case
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 case|:
 case|case
-name|HISTOGRAM_ALPHA
+name|GIMP_HISTOGRAM_ALPHA
 case|:
 for|for
 control|(
@@ -4234,13 +4234,13 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|HISTOGRAM_RED
+name|GIMP_HISTOGRAM_RED
 case|:
 case|case
-name|HISTOGRAM_GREEN
+name|GIMP_HISTOGRAM_GREEN
 case|:
 case|case
-name|HISTOGRAM_BLUE
+name|GIMP_HISTOGRAM_BLUE
 case|:
 for|for
 control|(
@@ -4269,7 +4269,7 @@ name|ld
 operator|->
 name|input
 index|[
-name|HISTOGRAM_RED
+name|GIMP_HISTOGRAM_RED
 index|]
 index|[
 name|i
@@ -4288,7 +4288,7 @@ name|ld
 operator|->
 name|input
 index|[
-name|HISTOGRAM_GREEN
+name|GIMP_HISTOGRAM_GREEN
 index|]
 index|[
 name|i
@@ -4307,7 +4307,7 @@ name|ld
 operator|->
 name|input
 index|[
-name|HISTOGRAM_BLUE
+name|GIMP_HISTOGRAM_BLUE
 index|]
 index|[
 name|i
@@ -4498,10 +4498,10 @@ argument_list|)
 expr_stmt|;
 comment|/* fall through */
 case|case
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 case|:
 case|case
-name|HISTOGRAM_ALPHA
+name|GIMP_HISTOGRAM_ALPHA
 case|:
 name|r
 operator|=
@@ -4513,7 +4513,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|HISTOGRAM_RED
+name|GIMP_HISTOGRAM_RED
 case|:
 name|r
 operator|=
@@ -4521,7 +4521,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|HISTOGRAM_GREEN
+name|GIMP_HISTOGRAM_GREEN
 case|:
 name|g
 operator|=
@@ -4529,7 +4529,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|HISTOGRAM_BLUE
+name|GIMP_HISTOGRAM_BLUE
 case|:
 name|b
 operator|=
@@ -6001,7 +6001,7 @@ name|ld
 operator|->
 name|low_input
 index|[
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 index|]
 operator|=
 literal|0
@@ -6010,7 +6010,7 @@ name|ld
 operator|->
 name|gamma
 index|[
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 index|]
 operator|=
 literal|1.0
@@ -6019,7 +6019,7 @@ name|ld
 operator|->
 name|high_input
 index|[
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 index|]
 operator|=
 literal|255
@@ -6028,7 +6028,7 @@ name|ld
 operator|->
 name|low_output
 index|[
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 index|]
 operator|=
 literal|0
@@ -6037,7 +6037,7 @@ name|ld
 operator|->
 name|high_output
 index|[
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 index|]
 operator|=
 literal|255
@@ -6078,7 +6078,7 @@ name|ld
 operator|->
 name|hist
 argument_list|,
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 argument_list|)
 expr_stmt|;
 name|levels_update

@@ -1181,7 +1181,7 @@ name|htd
 operator|->
 name|channel
 operator|=
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 expr_stmt|;
 name|htd
 operator|->
@@ -1415,7 +1415,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 argument_list|,
 name|NULL
 argument_list|,
@@ -1427,7 +1427,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|HISTOGRAM_RED
+name|GIMP_HISTOGRAM_RED
 argument_list|,
 name|NULL
 argument_list|,
@@ -1439,7 +1439,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|HISTOGRAM_GREEN
+name|GIMP_HISTOGRAM_GREEN
 argument_list|,
 name|NULL
 argument_list|,
@@ -1451,7 +1451,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|HISTOGRAM_BLUE
+name|GIMP_HISTOGRAM_BLUE
 argument_list|,
 name|NULL
 argument_list|,
@@ -1557,7 +1557,7 @@ operator|->
 name|histogram
 argument_list|)
 argument_list|,
-literal|"rangechanged"
+literal|"range_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
@@ -1702,7 +1702,7 @@ name|htd
 operator|->
 name|gradient
 argument_list|,
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2101,10 +2101,10 @@ name|channel
 condition|)
 block|{
 case|case
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 case|:
 case|case
-name|HISTOGRAM_ALPHA
+name|GIMP_HISTOGRAM_ALPHA
 case|:
 name|r
 operator|=
@@ -2116,7 +2116,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|HISTOGRAM_RED
+name|GIMP_HISTOGRAM_RED
 case|:
 name|r
 operator|=
@@ -2124,7 +2124,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|HISTOGRAM_GREEN
+name|GIMP_HISTOGRAM_GREEN
 case|:
 name|g
 operator|=
@@ -2132,7 +2132,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|HISTOGRAM_BLUE
+name|GIMP_HISTOGRAM_BLUE
 case|:
 name|b
 operator|=

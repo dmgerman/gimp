@@ -1092,7 +1092,7 @@ name|curves_dialog
 operator|->
 name|col_value
 index|[
-name|HISTOGRAM_RED
+name|GIMP_HISTOGRAM_RED
 index|]
 operator|=
 name|color
@@ -1104,7 +1104,7 @@ name|curves_dialog
 operator|->
 name|col_value
 index|[
-name|HISTOGRAM_GREEN
+name|GIMP_HISTOGRAM_GREEN
 index|]
 operator|=
 name|color
@@ -1116,7 +1116,7 @@ name|curves_dialog
 operator|->
 name|col_value
 index|[
-name|HISTOGRAM_BLUE
+name|GIMP_HISTOGRAM_BLUE
 index|]
 operator|=
 name|color
@@ -1133,7 +1133,7 @@ name|curves_dialog
 operator|->
 name|col_value
 index|[
-name|HISTOGRAM_ALPHA
+name|GIMP_HISTOGRAM_ALPHA
 index|]
 operator|=
 name|color
@@ -1150,7 +1150,7 @@ name|curves_dialog
 operator|->
 name|col_value
 index|[
-name|HISTOGRAM_ALPHA
+name|GIMP_HISTOGRAM_ALPHA
 index|]
 operator|=
 name|color
@@ -1177,7 +1177,7 @@ name|curves_dialog
 operator|->
 name|col_value
 index|[
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 index|]
 operator|=
 name|MAX
@@ -1728,7 +1728,7 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 argument_list|)
 expr_stmt|;
 name|curves_add_point
@@ -1739,7 +1739,7 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-name|HISTOGRAM_RED
+name|GIMP_HISTOGRAM_RED
 argument_list|)
 expr_stmt|;
 name|curves_add_point
@@ -1750,7 +1750,7 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-name|HISTOGRAM_GREEN
+name|GIMP_HISTOGRAM_GREEN
 argument_list|)
 expr_stmt|;
 name|curves_add_point
@@ -1761,7 +1761,7 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-name|HISTOGRAM_BLUE
+name|GIMP_HISTOGRAM_BLUE
 argument_list|)
 expr_stmt|;
 name|curves_add_point
@@ -1772,7 +1772,7 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-name|HISTOGRAM_ALPHA
+name|GIMP_HISTOGRAM_ALPHA
 argument_list|)
 expr_stmt|;
 name|curves_calculate_curve
@@ -2172,7 +2172,7 @@ name|curves_dialog
 operator|->
 name|channel
 operator|=
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 expr_stmt|;
 for|for
 control|(
@@ -2609,7 +2609,7 @@ name|cd
 operator|->
 name|channel
 operator|=
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 expr_stmt|;
 for|for
 control|(
@@ -2917,7 +2917,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 argument_list|,
 operator|&
 name|channel_items
@@ -2933,7 +2933,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|HISTOGRAM_RED
+name|GIMP_HISTOGRAM_RED
 argument_list|,
 operator|&
 name|channel_items
@@ -2949,7 +2949,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|HISTOGRAM_GREEN
+name|GIMP_HISTOGRAM_GREEN
 argument_list|,
 operator|&
 name|channel_items
@@ -2965,7 +2965,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|HISTOGRAM_BLUE
+name|GIMP_HISTOGRAM_BLUE
 argument_list|,
 operator|&
 name|channel_items
@@ -2981,7 +2981,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|HISTOGRAM_ALPHA
+name|GIMP_HISTOGRAM_ALPHA
 argument_list|,
 operator|&
 name|channel_items
@@ -4138,12 +4138,12 @@ literal|2
 condition|)
 name|sel_channel
 operator|=
-name|HISTOGRAM_ALPHA
+name|GIMP_HISTOGRAM_ALPHA
 expr_stmt|;
 else|else
 name|sel_channel
 operator|=
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 expr_stmt|;
 block|}
 if|if
@@ -4167,10 +4167,10 @@ name|sel_channel
 condition|)
 block|{
 case|case
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 case|:
 case|case
-name|HISTOGRAM_ALPHA
+name|GIMP_HISTOGRAM_ALPHA
 case|:
 for|for
 control|(
@@ -4281,13 +4281,13 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|HISTOGRAM_RED
+name|GIMP_HISTOGRAM_RED
 case|:
 case|case
-name|HISTOGRAM_GREEN
+name|GIMP_HISTOGRAM_GREEN
 case|:
 case|case
-name|HISTOGRAM_BLUE
+name|GIMP_HISTOGRAM_BLUE
 case|:
 block|{
 for|for
@@ -4333,7 +4333,7 @@ name|cd
 operator|->
 name|curve
 index|[
-name|HISTOGRAM_RED
+name|GIMP_HISTOGRAM_RED
 index|]
 index|[
 name|j
@@ -4352,7 +4352,7 @@ name|cd
 operator|->
 name|curve
 index|[
-name|HISTOGRAM_GREEN
+name|GIMP_HISTOGRAM_GREEN
 index|]
 index|[
 name|j
@@ -4371,7 +4371,7 @@ name|cd
 operator|->
 name|curve
 index|[
-name|HISTOGRAM_BLUE
+name|GIMP_HISTOGRAM_BLUE
 index|]
 index|[
 name|j
@@ -4640,10 +4640,10 @@ name|sel_channel
 condition|)
 block|{
 case|case
-name|HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 case|:
 case|case
-name|HISTOGRAM_ALPHA
+name|GIMP_HISTOGRAM_ALPHA
 case|:
 name|pix
 index|[
@@ -4668,13 +4668,13 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|HISTOGRAM_RED
+name|GIMP_HISTOGRAM_RED
 case|:
 case|case
-name|HISTOGRAM_GREEN
+name|GIMP_HISTOGRAM_GREEN
 case|:
 case|case
-name|HISTOGRAM_BLUE
+name|GIMP_HISTOGRAM_BLUE
 case|:
 name|pix
 index|[

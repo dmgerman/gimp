@@ -29,6 +29,14 @@ file|"gimphistogram.h"
 end_include
 
 begin_define
+DECL|macro|HISTOGRAM_WIDGET_TYPE
+define|#
+directive|define
+name|HISTOGRAM_WIDGET_TYPE
+value|(histogram_widget_get_type ())
+end_define
+
+begin_define
 DECL|macro|HISTOGRAM_WIDGET (obj)
 define|#
 directive|define
@@ -36,7 +44,6 @@ name|HISTOGRAM_WIDGET
 parameter_list|(
 name|obj
 parameter_list|)
-define|\
 value|GTK_CHECK_CAST (obj, histogram_widget_get_type (), HistogramWidget)
 end_define
 
@@ -48,7 +55,6 @@ name|HISTOGRAM_WIDGET_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-define|\
 value|GTK_CHECK_CLASS_CAST (klass, histogram_widget_get_type (), HistogramWidget)
 end_define
 
@@ -60,7 +66,6 @@ name|IS_HISTOGRAM_WIDGET
 parameter_list|(
 name|obj
 parameter_list|)
-define|\
 value|GTK_CHECK_TYPE (obj, histogram_widget_get_type ())
 end_define
 
@@ -82,17 +87,8 @@ name|HistogramWidgetClass
 typedef|;
 end_typedef
 
-begin_typedef
-DECL|typedef|Histogram
-typedef|typedef
-name|struct
-name|_hist
-name|Histogram
-typedef|;
-end_typedef
-
 begin_comment
-comment|/* HistogramWidget signals:      rangechanged */
+comment|/* HistogramWidget signals:      range_changed */
 end_comment
 
 begin_struct
@@ -104,21 +100,21 @@ DECL|member|drawingarea
 name|GtkDrawingArea
 name|drawingarea
 decl_stmt|;
-DECL|member|channel
-name|int
-name|channel
-decl_stmt|;
 DECL|member|histogram
 name|GimpHistogram
 modifier|*
 name|histogram
 decl_stmt|;
+DECL|member|channel
+name|GimpHistogramChannel
+name|channel
+decl_stmt|;
 DECL|member|start
-name|int
+name|gint
 name|start
 decl_stmt|;
 DECL|member|end
-name|int
+name|gint
 name|end
 decl_stmt|;
 block|}
@@ -134,6 +130,24 @@ DECL|member|parent_class
 name|GtkDrawingAreaClass
 name|parent_class
 decl_stmt|;
+DECL|member|range_changed
+name|void
+function_decl|(
+modifier|*
+name|range_changed
+function_decl|)
+parameter_list|(
+name|HistogramWidget
+modifier|*
+name|hw
+parameter_list|,
+name|gint
+name|start
+parameter_list|,
+name|gint
+name|end
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
@@ -143,9 +157,11 @@ comment|/*  Histogram functions  */
 end_comment
 
 begin_function_decl
-name|guint
+name|GtkType
 name|histogram_widget_get_type
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -154,10 +170,10 @@ name|HistogramWidget
 modifier|*
 name|histogram_widget_new
 parameter_list|(
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 function_decl|;
@@ -169,9 +185,11 @@ name|histogram_widget_update
 parameter_list|(
 name|HistogramWidget
 modifier|*
+name|hw
 parameter_list|,
 name|GimpHistogram
 modifier|*
+name|histogram
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -182,10 +200,13 @@ name|histogram_widget_range
 parameter_list|(
 name|HistogramWidget
 modifier|*
+name|hw
 parameter_list|,
-name|int
+name|gint
+name|start
 parameter_list|,
-name|int
+name|gint
+name|end
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -196,8 +217,10 @@ name|histogram_widget_channel
 parameter_list|(
 name|HistogramWidget
 modifier|*
+name|hw
 parameter_list|,
-name|int
+name|gint
+name|channel
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -209,6 +232,7 @@ name|histogram_widget_histogram
 parameter_list|(
 name|HistogramWidget
 modifier|*
+name|hw
 parameter_list|)
 function_decl|;
 end_function_decl
