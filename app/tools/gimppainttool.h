@@ -22,6 +22,70 @@ directive|include
 file|"tools/gimpdrawtool.h"
 end_include
 
+begin_comment
+comment|/* the different states that the painting function can be called with  */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< skip>*/
+DECL|enum|__anon291271a00103
+block|{
+DECL|enumerator|INIT_PAINT
+name|INIT_PAINT
+block|,
+comment|/* Setup PaintFunc internals */
+DECL|enumerator|MOTION_PAINT
+name|MOTION_PAINT
+block|,
+comment|/* PaintFunc performs motion-related rendering */
+DECL|enumerator|PAUSE_PAINT
+name|PAUSE_PAINT
+block|,
+comment|/* Unused. Reserved */
+DECL|enumerator|RESUME_PAINT
+name|RESUME_PAINT
+block|,
+comment|/* Unused. Reserved */
+DECL|enumerator|FINISH_PAINT
+name|FINISH_PAINT
+block|,
+comment|/* Cleanup and/or reset PaintFunc operation */
+DECL|enumerator|PRETRACE_PAINT
+name|PRETRACE_PAINT
+block|,
+comment|/* PaintFunc performs window tracing activity prior to rendering */
+DECL|enumerator|POSTTRACE_PAINT
+name|POSTTRACE_PAINT
+comment|/* PaintFunc performs window tracing activity following rendering */
+DECL|typedef|PaintState
+block|}
+name|PaintState
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< skip>*/
+DECL|enum|__anon291271a00203
+block|{
+DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
+name|TOOL_CAN_HANDLE_CHANGING_BRUSH
+init|=
+literal|0x0001
+block|,
+comment|/* Set for tools that don't mind 					    * if the brush changes while 					    * painting. 					    */
+DECL|enumerator|TOOL_TRACES_ON_WINDOW
+name|TOOL_TRACES_ON_WINDOW
+comment|/* Set for tools that perform temporary                                             * rendering directly to the window. These                                             * require sequencing with gdisplay_flush()                                             * routines. See clone.c for example.                                             */
+DECL|typedef|ToolFlags
+block|}
+name|ToolFlags
+typedef|;
+end_typedef
+
 begin_define
 DECL|macro|GIMP_TYPE_PAINT_TOOL
 define|#
@@ -74,100 +138,13 @@ parameter_list|)
 value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PAINT_TOOL))
 end_define
 
-begin_function_decl
-name|GtkType
-name|gimp_paint_tool_get_type
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* the different states that the painting function can be called with  */
-end_comment
-
 begin_typedef
+DECL|typedef|GimpPaintToolClass
 typedef|typedef
-enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon2a067c790103
-block|{
-DECL|enumerator|INIT_PAINT
-name|INIT_PAINT
-block|,
-comment|/* Setup PaintFunc internals */
-DECL|enumerator|MOTION_PAINT
-name|MOTION_PAINT
-block|,
-comment|/* PaintFunc performs motion-related rendering */
-DECL|enumerator|PAUSE_PAINT
-name|PAUSE_PAINT
-block|,
-comment|/* Unused. Reserved */
-DECL|enumerator|RESUME_PAINT
-name|RESUME_PAINT
-block|,
-comment|/* Unused. Reserved */
-DECL|enumerator|FINISH_PAINT
-name|FINISH_PAINT
-block|,
-comment|/* Cleanup and/or reset PaintFunc operation */
-DECL|enumerator|PRETRACE_PAINT
-name|PRETRACE_PAINT
-block|,
-comment|/* PaintFunc performs window tracing activity prior to rendering */
-DECL|enumerator|POSTTRACE_PAINT
-name|POSTTRACE_PAINT
-comment|/* PaintFunc performs window tracing activity following rendering */
-DECL|typedef|PaintState
-block|}
-name|PaintState
+name|struct
+name|_GimpPaintToolClass
+name|GimpPaintToolClass
 typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon2a067c790203
-block|{
-DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
-name|TOOL_CAN_HANDLE_CHANGING_BRUSH
-init|=
-literal|0x0001
-block|,
-comment|/* Set for tools that don't mind 					    * if the brush changes while 					    * painting. 					    */
-DECL|enumerator|TOOL_TRACES_ON_WINDOW
-name|TOOL_TRACES_ON_WINDOW
-comment|/* Set for tools that perform temporary                                             * rendering directly to the window. These                                             * require sequencing with gdisplay_flush()                                             * routines. See clone.c for example.                                             */
-DECL|typedef|ToolFlags
-block|}
-name|ToolFlags
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|PaintFunc
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|PaintFunc
-function_decl|)
-parameter_list|(
-name|GimpPaintTool
-modifier|*
-name|tool
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|PaintState
-name|paint_state
-parameter_list|)
-function_decl|;
 end_typedef
 
 begin_struct
@@ -362,43 +339,28 @@ DECL|member|parent_class
 name|GimpDrawToolClass
 name|parent_class
 decl_stmt|;
-DECL|member|paint_func
-name|PaintFunc
-name|paint_func
-decl_stmt|;
-comment|/*  painting function          */
+DECL|member|paint
+name|void
+function_decl|(
+modifier|*
+name|paint
+function_decl|)
+parameter_list|(
+name|GimpPaintTool
+modifier|*
+name|tool
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|PaintState
+name|paint_state
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|GimpPaintToolClass
-typedef|typedef
-name|struct
-name|_GimpPaintToolClass
-name|GimpPaintToolClass
-typedef|;
-end_typedef
-
-begin_comment
-comment|/* this should change */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|GimpPaintTool
-modifier|*
-name|non_gui_paint_tool
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|GimpPaintToolClass
-modifier|*
-name|non_gui_paint_tool_class
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/*  Special undo type  */
@@ -457,100 +419,11 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/*  paint tool action functions  */
-end_comment
-
 begin_function_decl
-name|void
-name|gimp_paint_tool_button_press
+name|GtkType
+name|gimp_paint_tool_get_type
 parameter_list|(
-name|GimpTool
-modifier|*
-name|tool
-parameter_list|,
-name|GdkEventButton
-modifier|*
-name|bevent
-parameter_list|,
-name|GDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
-name|gimp_paint_tool_button_release
-parameter_list|(
-name|GimpTool
-modifier|*
-name|tool
-parameter_list|,
-name|GdkEventButton
-modifier|*
-name|bevent
-parameter_list|,
-name|GDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_paint_tool_motion
-parameter_list|(
-name|GimpTool
-modifier|*
-name|tool
-parameter_list|,
-name|GdkEventMotion
-modifier|*
-name|mevent
-parameter_list|,
-name|GDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_paint_tool_cursor_update
-parameter_list|(
-name|GimpTool
-modifier|*
-name|tool
-parameter_list|,
-name|GdkEventMotion
-modifier|*
-name|mevent
-parameter_list|,
-name|GDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_paint_tool_control
-parameter_list|(
-name|GimpTool
-modifier|*
-name|tool
-parameter_list|,
-name|ToolAction
-name|action
-parameter_list|,
-name|GDisplay
-modifier|*
-name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -573,36 +446,11 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  paint tool functions  */
-end_comment
-
 begin_function_decl
 name|void
 name|gimp_paint_tool_no_draw
 parameter_list|(
 name|GimpPaintTool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpPaintTool
-modifier|*
-name|gimp_paint_tool_new
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_paint_tool_destroy
-parameter_list|(
-name|GimpTool
 modifier|*
 name|tool
 parameter_list|)

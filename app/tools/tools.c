@@ -189,21 +189,11 @@ directive|include
 file|"smudge.h"
 end_include
 
-begin_decl_stmt
-DECL|variable|non_gui_paint_tool
-name|GimpPaintTool
-modifier|*
-name|non_gui_paint_tool
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|non_gui_paint_tool_class
-name|GimpPaintToolClass
-modifier|*
-name|non_gui_paint_tool_class
-decl_stmt|;
-end_decl_stmt
+begin_include
+include|#
+directive|include
+file|"text_tool.h"
+end_include
 
 begin_function
 name|void
@@ -219,26 +209,14 @@ expr_stmt|;
 name|gimp_paintbrush_tool_register
 argument_list|()
 expr_stmt|;
-comment|/*FIXME gimp_measure_tool_register (); */
+name|gimp_measure_tool_register
+argument_list|()
+expr_stmt|;
 name|gimp_move_tool_register
 argument_list|()
 expr_stmt|;
-comment|/*FIXME gimp_text_tool_register (); */
-comment|/* EEEEEEK! */
-name|non_gui_paint_tool
-operator|=
-name|gimp_paint_tool_new
+name|gimp_text_tool_register
 argument_list|()
-expr_stmt|;
-name|non_gui_paint_tool_class
-operator|=
-name|GIMP_PAINT_TOOL_CLASS
-argument_list|(
-name|gtk_type_class
-argument_list|(
-name|GIMP_TYPE_PAINT_TOOL
-argument_list|)
-argument_list|)
 expr_stmt|;
 comment|/*   snatched from the pdb.  For inspiration only.  ;)    procedural_db_register (&airbrush_proc);   procedural_db_register (&airbrush_default_proc);   procedural_db_register (&blend_proc);   procedural_db_register (&bucket_fill_proc);   procedural_db_register (&by_color_select_proc);   procedural_db_register (&clone_proc);   procedural_db_register (&clone_default_proc);   procedural_db_register (&color_picker_proc);   procedural_db_register (&convolve_proc);   procedural_db_register (&convolve_default_proc);   procedural_db_register (&crop_proc);   procedural_db_register (&dodgeburn_proc);   procedural_db_register (&dodgeburn_default_proc);   procedural_db_register (&ellipse_select_proc);   procedural_db_register (&eraser_proc);   procedural_db_register (&eraser_default_proc);   procedural_db_register (&flip_proc);   procedural_db_register (&free_select_proc);   procedural_db_register (&fuzzy_select_proc);   procedural_db_register (&pencil_proc);   procedural_db_register (&perspective_proc);   procedural_db_register (&rect_select_proc);   procedural_db_register (&rotate_proc);   procedural_db_register (&scale_proc);   procedural_db_register (&shear_proc);   procedural_db_register (&smudge_proc);   procedural_db_register (&smudge_default_proc);   procedural_db_register (&transform_2d_proc); */
 block|}

@@ -6,20 +6,20 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__MEASURE_H__
+name|__GIMP_MEASURE_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__MEASURE_H__
+DECL|macro|__GIMP_MEASURE_TOOL_H__
 define|#
 directive|define
-name|__MEASURE_H__
+name|__GIMP_MEASURE_TOOL_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"tool.h"
+file|"gimpdrawtool.h"
 end_include
 
 begin_comment
@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f8c4bb0103
+DECL|enum|__anon2aef7d420103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -133,7 +133,6 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
-comment|/*  Core select object  */
 DECL|member|function
 name|MeasureFunction
 name|function
@@ -200,7 +199,7 @@ struct|struct
 name|_GimpMeasureToolClass
 block|{
 DECL|member|parent_class
-name|GimpToolClass
+name|GimpDrawToolClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -208,8 +207,8 @@ struct|;
 end_struct
 
 begin_function_decl
-name|GtkType
-name|gimp_measure_tool_get_type
+name|void
+name|gimp_measure_tool_register
 parameter_list|(
 name|void
 parameter_list|)
@@ -217,8 +216,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_measure_tool_register
+name|GtkType
+name|gimp_measure_tool_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -231,7 +230,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __MEASURE_H__  */
+comment|/*  __GIMP_MEASURE_TOOL_H__  */
 end_comment
 
 end_unit
