@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<sys/types.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<dirent.h>
 end_include
 
@@ -156,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abfbee20108
+DECL|struct|__anon29905c120108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -191,7 +197,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abfbee20208
+DECL|struct|__anon29905c120208
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -235,7 +241,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abfbee20308
+DECL|struct|__anon29905c120308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -261,7 +267,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abfbee20408
+DECL|struct|__anon29905c120408
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -287,7 +293,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abfbee20508
+DECL|struct|__anon29905c120508
 block|{
 DECL|member|name
 name|gchar
@@ -315,7 +321,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2abfbee2060a
+DECL|union|__anon29905c12060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -381,7 +387,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abfbee20708
+DECL|struct|__anon29905c120708
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -462,7 +468,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abfbee20808
+DECL|struct|__anon29905c120808
 block|{
 DECL|member|status
 name|GtkWidget
@@ -1348,7 +1354,7 @@ name|strtok
 argument_list|(
 name|next_token
 argument_list|,
-literal|":"
+name|G_SEARCHPATH_SEPARATOR_S
 argument_list|)
 expr_stmt|;
 while|while
@@ -1572,6 +1578,16 @@ name|st_mode
 argument_list|)
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|__EMX__
+name|_fnslashify
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|command
 operator|=
 name|g_new
@@ -1645,7 +1661,7 @@ name|strtok
 argument_list|(
 name|NULL
 argument_list|,
-literal|":"
+name|G_SEARCHPATH_SEPARATOR_S
 argument_list|)
 expr_stmt|;
 block|}

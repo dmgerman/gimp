@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<sys/types.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<dirent.h>
 end_include
 
@@ -116,7 +122,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3f9c5d0108
+DECL|struct|__anon291ca02a0108
 block|{
 DECL|member|console
 name|GtkWidget
