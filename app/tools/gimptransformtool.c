@@ -3575,6 +3575,10 @@ name|options
 operator|->
 name|interpolation
 argument_list|,
+name|options
+operator|->
+name|supersample
+argument_list|,
 name|clip_result
 argument_list|,
 name|progress

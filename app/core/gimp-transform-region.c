@@ -179,16 +179,12 @@ begin_comment
 comment|/* recursion level should be a usersettable parameter,    3 seems to be a reasonable default */
 end_comment
 
-begin_comment
-comment|/* temporarily set to 0 - http://bugzilla.gnome.org/show_bug.cgi?id=136702 */
-end_comment
-
 begin_define
 DECL|macro|RECURSION_LEVEL
 define|#
 directive|define
 name|RECURSION_LEVEL
-value|0
+value|3
 end_define
 
 begin_comment
@@ -349,7 +345,7 @@ end_comment
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_drawable_transform_tiles_affine (GimpDrawable * drawable,TileManager * orig_tiles,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_drawable_transform_tiles_affine (GimpDrawable * drawable,TileManager * orig_tiles,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_drawable_transform_tiles_affine
 parameter_list|(
 name|GimpDrawable
@@ -370,6 +366,9 @@ name|direction
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
+parameter_list|,
+name|gboolean
+name|supersample
 parameter_list|,
 name|gboolean
 name|clip_result
@@ -2124,7 +2123,7 @@ index|]
 decl_stmt|;
 if|if
 condition|(
-name|RECURSION_LEVEL
+name|supersample
 operator|&&
 name|supersample_dtest
 argument_list|(
@@ -4119,7 +4118,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_transform_affine (GimpDrawable * drawable,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean clip_result)
+DECL|function|gimp_drawable_transform_affine (GimpDrawable * drawable,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gboolean clip_result)
 name|gimp_drawable_transform_affine
 parameter_list|(
 name|GimpDrawable
@@ -4136,6 +4135,9 @@ name|direction
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
+parameter_list|,
+name|gboolean
+name|supersample
 parameter_list|,
 name|gboolean
 name|clip_result
@@ -4265,6 +4267,8 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
+argument_list|,
+name|supersample
 argument_list|,
 name|FALSE
 argument_list|,

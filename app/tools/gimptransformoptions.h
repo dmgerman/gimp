@@ -124,6 +124,10 @@ DECL|member|interpolation
 name|GimpInterpolationType
 name|interpolation
 decl_stmt|;
+DECL|member|supersample
+name|gboolean
+name|supersample
+decl_stmt|;
 DECL|member|clip
 name|gboolean
 name|clip
