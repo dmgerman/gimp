@@ -8211,9 +8211,11 @@ if|if
 condition|(
 name|flush
 condition|)
+block|{
 name|gdisplays_flush
 argument_list|()
 expr_stmt|;
+block|}
 else|else
 block|{
 name|LayerWidget
@@ -8233,6 +8235,9 @@ name|list_item
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|layers_dialog_set_menu_sensitivity
+argument_list|()
 expr_stmt|;
 block|}
 block|}
@@ -8324,9 +8329,11 @@ if|if
 condition|(
 name|flush
 condition|)
+block|{
 name|gdisplays_flush
 argument_list|()
 expr_stmt|;
+block|}
 else|else
 block|{
 name|LayerWidget
@@ -8346,6 +8353,9 @@ name|list_item
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|layers_dialog_set_menu_sensitivity
+argument_list|()
 expr_stmt|;
 block|}
 block|}
@@ -10893,7 +10903,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cea7ac0108
+DECL|struct|__anon2bcbe91c0108
 block|{
 DECL|member|gimage
 name|GimpImage
