@@ -183,6 +183,11 @@ define|#
 directive|define
 name|gimp_query_database
 value|gimp_procedural_db_query
+DECL|macro|gimp_query_procedure
+define|#
+directive|define
+name|gimp_query_procedure
+value|gimp_procedural_db_proc_info
 DECL|macro|gimp_query_images
 define|#
 directive|define

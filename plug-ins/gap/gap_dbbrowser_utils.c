@@ -1510,7 +1510,7 @@ operator|->
 name|selected_return_vals
 argument_list|)
 expr_stmt|;
-name|gimp_query_procedure
+name|gimp_procedural_db_proc_info
 argument_list|(
 name|proc_name
 argument_list|,

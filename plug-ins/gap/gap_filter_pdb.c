@@ -248,9 +248,8 @@ comment|/* use the background layer */
 comment|/* query for plugin_name to get its argument types */
 if|if
 condition|(
-name|FALSE
-operator|==
-name|gimp_query_procedure
+operator|!
+name|gimp_procedural_db_proc_info
 argument_list|(
 name|plugin_name
 argument_list|,
@@ -912,7 +911,7 @@ expr_stmt|;
 comment|/* Query the gimp application's procedural database    *  regarding a particular procedure.    */
 if|if
 condition|(
-name|gimp_query_procedure
+name|gimp_procedural_db_proc_info
 argument_list|(
 name|proc_name
 argument_list|,

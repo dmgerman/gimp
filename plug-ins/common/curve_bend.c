@@ -771,7 +771,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e07bd50108
+DECL|struct|__anon2ae0032b0108
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -857,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e07bd50208
+DECL|struct|__anon2ae0032b0208
 block|{
 DECL|member|y
 name|gint32
@@ -1950,7 +1950,7 @@ expr_stmt|;
 comment|/* Query the gimp application's procedural database    *  regarding a particular procedure.    */
 if|if
 condition|(
-name|gimp_query_procedure
+name|gimp_procedural_db_proc_info
 argument_list|(
 name|proc_name
 argument_list|,

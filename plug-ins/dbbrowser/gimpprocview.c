@@ -78,7 +78,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc3c200108
+DECL|struct|__anon2c2995750108
 block|{
 DECL|member|label
 name|gchar
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc3c200208
+DECL|struct|__anon2c2995750208
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1405,7 +1405,7 @@ operator|->
 name|selected_return_vals
 argument_list|)
 expr_stmt|;
-name|gimp_query_procedure
+name|gimp_procedural_db_proc_info
 argument_list|(
 name|proc_name
 argument_list|,

@@ -295,7 +295,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff08fc0108
+DECL|struct|__anon2a1f80140108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff08fc0208
+DECL|struct|__anon2a1f80140208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff08fc0308
+DECL|struct|__anon2a1f80140308
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -386,7 +386,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff08fc0408
+DECL|struct|__anon2a1f80140408
 block|{
 DECL|member|name
 name|gchar
@@ -414,7 +414,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff08fc0508
+DECL|struct|__anon2a1f80140508
 block|{
 DECL|member|list
 name|GSList
@@ -434,7 +434,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon28ff08fc060a
+DECL|union|__anon2a1f8014060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -507,7 +507,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff08fc0708
+DECL|struct|__anon2a1f80140708
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -585,7 +585,7 @@ name|gint32
 name|image_based
 decl_stmt|;
 DECL|member|args
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|args
 decl_stmt|;
@@ -599,7 +599,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff08fc0808
+DECL|struct|__anon2a1f80140808
 block|{
 DECL|member|status
 name|GtkWidget
@@ -689,7 +689,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|params
 parameter_list|,
@@ -697,7 +697,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -1648,7 +1648,7 @@ name|LISP
 name|a
 parameter_list|)
 block|{
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|args
 decl_stmt|;
@@ -1979,7 +1979,7 @@ name|args
 operator|=
 name|g_new
 argument_list|(
-name|GParamDef
+name|GimpParamDef
 argument_list|,
 name|script
 operator|->
@@ -1995,7 +1995,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 expr_stmt|;
 name|args
 index|[
@@ -2329,7 +2329,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 expr_stmt|;
 name|args
 index|[
@@ -2355,7 +2355,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 expr_stmt|;
 name|args
 index|[
@@ -2381,7 +2381,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_LAYER
+name|GIMP_PDB_LAYER
 expr_stmt|;
 name|args
 index|[
@@ -2407,7 +2407,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_CHANNEL
+name|GIMP_PDB_CHANNEL
 expr_stmt|;
 name|args
 index|[
@@ -2612,7 +2612,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_COLOR
+name|GIMP_PDB_COLOR
 expr_stmt|;
 name|args
 index|[
@@ -2716,7 +2716,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 expr_stmt|;
 name|args
 index|[
@@ -2820,7 +2820,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 expr_stmt|;
 name|args
 index|[
@@ -2924,7 +2924,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 expr_stmt|;
 name|args
 index|[
@@ -3204,7 +3204,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 expr_stmt|;
 name|args
 index|[
@@ -3368,7 +3368,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 expr_stmt|;
 name|args
 index|[
@@ -3504,7 +3504,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 expr_stmt|;
 name|args
 index|[
@@ -3608,7 +3608,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 expr_stmt|;
 name|args
 index|[
@@ -3822,7 +3822,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 expr_stmt|;
 name|args
 index|[
@@ -3926,7 +3926,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 expr_stmt|;
 name|args
 index|[
@@ -4071,7 +4071,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 expr_stmt|;
 name|args
 index|[
@@ -4444,7 +4444,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_script_proc (gchar * name,gint nparams,GParam * params,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|script_fu_script_proc (gchar * name,gint nparams,GimpParam * params,gint * nreturn_vals,GimpParam ** return_vals)
 name|script_fu_script_proc
 parameter_list|(
 name|gchar
@@ -4454,7 +4454,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|params
 parameter_list|,
@@ -4462,25 +4462,25 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
 name|SFScript
@@ -5352,7 +5352,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[

@@ -155,7 +155,7 @@ file|<libgimp/gimpcompat.h>
 end_include
 
 begin_comment
-comment|/* to be removed in 1.3 */
+comment|/* to be removed before 1.2 */
 end_comment
 
 begin_ifdef
@@ -264,11 +264,6 @@ define|#
 directive|define
 name|gimp_set_data
 value|gimp_procedural_db_set_data
-DECL|macro|gimp_query_procedure
-define|#
-directive|define
-name|gimp_query_procedure
-value|gimp_procedural_db_proc_info
 DECL|variable|gimp_major_version
 name|GIMPVAR
 name|guint

@@ -118,7 +118,7 @@ expr_stmt|;
 comment|/* Query the gimp application's procedural database    *  regarding a particular procedure.    */
 if|if
 condition|(
-name|gimp_query_procedure
+name|gimp_procedural_db_proc_info
 argument_list|(
 name|proc_name
 argument_list|,

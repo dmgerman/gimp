@@ -232,7 +232,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -240,7 +240,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -386,7 +386,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|params
 parameter_list|,
@@ -394,7 +394,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -404,7 +404,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -502,13 +502,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|console_args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -534,13 +534,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|eval_args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -548,7 +548,7 @@ literal|"[Interactive], non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"code"
 block|,
@@ -574,13 +574,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|server_args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -588,7 +588,7 @@ literal|"[Interactive], non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"port"
 block|,
@@ -596,7 +596,7 @@ literal|"The port on which to listen for requests"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"logfile"
 block|,
@@ -646,7 +646,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|PROC_EXTENSION
+name|GIMP_EXTENSION
 argument_list|,
 literal|0
 argument_list|,
@@ -678,7 +678,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|PROC_EXTENSION
+name|GIMP_EXTENSION
 argument_list|,
 name|nconsole_args
 argument_list|,
@@ -713,7 +713,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|PROC_EXTENSION
+name|GIMP_EXTENSION
 argument_list|,
 name|nserver_args
 argument_list|,
@@ -744,7 +744,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|PROC_EXTENSION
+name|GIMP_EXTENSION
 argument_list|,
 name|neval_args
 argument_list|,
@@ -761,7 +761,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -771,7 +771,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -779,7 +779,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -838,16 +838,16 @@ literal|0
 condition|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 comment|/*  Acknowledge that the extension is properly initialized  */
 name|gimp_extension_ack
@@ -879,7 +879,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -1189,7 +1189,7 @@ expr_stmt|;
 comment|/*  lookup the procedure  */
 if|if
 condition|(
-name|gimp_query_procedure
+name|gimp_procedural_db_proc_info
 argument_list|(
 name|proc_name
 argument_list|,
@@ -1223,8 +1223,6 @@ argument_list|,
 operator|&
 name|return_vals
 argument_list|)
-operator|==
-name|TRUE
 condition|)
 block|{
 name|LISP
@@ -2463,7 +2461,8 @@ expr_stmt|;
 comment|/*  Attempt to fetch the procedure from the database  */
 if|if
 condition|(
-name|gimp_query_procedure
+operator|!
+name|gimp_procedural_db_proc_info
 argument_list|(
 name|proc_name
 argument_list|,
@@ -2497,8 +2496,6 @@ argument_list|,
 operator|&
 name|return_vals
 argument_list|)
-operator|==
-name|FALSE
 condition|)
 return|return
 name|my_err
@@ -2560,12 +2557,12 @@ condition|)
 name|args
 operator|=
 operator|(
-name|GParam
+name|GimpParam
 operator|*
 operator|)
 name|g_new
 argument_list|(
-name|GParam
+name|GimpParam
 argument_list|,
 name|nparams
 argument_list|)
@@ -2607,7 +2604,7 @@ name|type
 condition|)
 block|{
 case|case
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 case|:
 if|if
 condition|(
@@ -2638,7 +2635,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 expr_stmt|;
 name|args
 index|[
@@ -2660,7 +2657,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_INT16
+name|GIMP_PDB_INT16
 case|:
 if|if
 condition|(
@@ -2691,7 +2688,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_INT16
+name|GIMP_PDB_INT16
 expr_stmt|;
 name|args
 index|[
@@ -2716,7 +2713,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 case|:
 if|if
 condition|(
@@ -2747,7 +2744,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 expr_stmt|;
 name|args
 index|[
@@ -2772,7 +2769,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 case|:
 if|if
 condition|(
@@ -2803,7 +2800,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 expr_stmt|;
 name|args
 index|[
@@ -2825,7 +2822,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 case|:
 if|if
 condition|(
@@ -2856,7 +2853,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 expr_stmt|;
 name|args
 index|[
@@ -2878,7 +2875,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_INT32ARRAY
+name|GIMP_PDB_INT32ARRAY
 case|:
 if|if
 condition|(
@@ -2909,7 +2906,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_INT32ARRAY
+name|GIMP_PDB_INT32ARRAY
 expr_stmt|;
 name|args
 index|[
@@ -2940,7 +2937,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_INT16ARRAY
+name|GIMP_PDB_INT16ARRAY
 case|:
 if|if
 condition|(
@@ -2971,7 +2968,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_INT16ARRAY
+name|GIMP_PDB_INT16ARRAY
 expr_stmt|;
 name|args
 index|[
@@ -3002,7 +2999,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 case|:
 if|if
 condition|(
@@ -3033,7 +3030,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 expr_stmt|;
 name|args
 index|[
@@ -3064,7 +3061,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 case|:
 if|if
 condition|(
@@ -3095,7 +3092,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 expr_stmt|;
 name|args
 index|[
@@ -3122,7 +3119,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 case|:
 if|if
 condition|(
@@ -3153,7 +3150,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 expr_stmt|;
 comment|/*  Set the array  */
 block|{
@@ -3266,7 +3263,7 @@ block|}
 block|}
 break|break;
 case|case
-name|PARAM_COLOR
+name|GIMP_PDB_COLOR
 case|:
 if|if
 condition|(
@@ -3297,7 +3294,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_COLOR
+name|GIMP_PDB_COLOR
 expr_stmt|;
 name|color_list
 operator|=
@@ -3380,7 +3377,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_REGION
+name|GIMP_PDB_REGION
 case|:
 return|return
 name|my_err
@@ -3395,7 +3392,7 @@ argument_list|)
 return|;
 break|break;
 case|case
-name|PARAM_DISPLAY
+name|GIMP_PDB_DISPLAY
 case|:
 if|if
 condition|(
@@ -3426,7 +3423,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_DISPLAY
+name|GIMP_PDB_DISPLAY
 expr_stmt|;
 name|args
 index|[
@@ -3448,7 +3445,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 case|:
 if|if
 condition|(
@@ -3479,7 +3476,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 expr_stmt|;
 name|args
 index|[
@@ -3501,7 +3498,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_LAYER
+name|GIMP_PDB_LAYER
 case|:
 if|if
 condition|(
@@ -3532,7 +3529,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_LAYER
+name|GIMP_PDB_LAYER
 expr_stmt|;
 name|args
 index|[
@@ -3554,7 +3551,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_CHANNEL
+name|GIMP_PDB_CHANNEL
 case|:
 if|if
 condition|(
@@ -3585,7 +3582,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_CHANNEL
+name|GIMP_PDB_CHANNEL
 expr_stmt|;
 name|args
 index|[
@@ -3607,7 +3604,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 case|:
 if|if
 condition|(
@@ -3638,7 +3635,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 expr_stmt|;
 name|args
 index|[
@@ -3660,7 +3657,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_SELECTION
+name|GIMP_PDB_SELECTION
 case|:
 if|if
 condition|(
@@ -3691,7 +3688,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_SELECTION
+name|GIMP_PDB_SELECTION
 expr_stmt|;
 name|args
 index|[
@@ -3713,7 +3710,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_BOUNDARY
+name|GIMP_PDB_BOUNDARY
 case|:
 return|return
 name|my_err
@@ -3728,7 +3725,7 @@ argument_list|)
 return|;
 break|break;
 case|case
-name|PARAM_PATH
+name|GIMP_PDB_PATH
 case|:
 return|return
 name|my_err
@@ -3743,7 +3740,7 @@ argument_list|)
 return|;
 break|break;
 case|case
-name|PARAM_PARASITE
+name|GIMP_PDB_PARASITE
 case|:
 if|if
 condition|(
@@ -3774,7 +3771,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_PARASITE
+name|GIMP_PDB_PARASITE
 expr_stmt|;
 comment|/* parasite->name */
 name|intermediate_val
@@ -3894,7 +3891,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 case|:
 return|return
 name|my_err
@@ -4001,7 +3998,7 @@ name|d_status
 condition|)
 block|{
 case|case
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 case|:
 name|strcpy
 argument_list|(
@@ -4032,7 +4029,7 @@ argument_list|)
 return|;
 break|break;
 case|case
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 case|:
 name|strcpy
 argument_list|(
@@ -4063,7 +4060,7 @@ argument_list|)
 return|;
 break|break;
 case|case
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 case|:
 name|return_val
 operator|=
@@ -4096,7 +4093,7 @@ name|type
 condition|)
 block|{
 case|case
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 case|:
 name|return_val
 operator|=
@@ -4121,7 +4118,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT16
+name|GIMP_PDB_INT16
 case|:
 name|return_val
 operator|=
@@ -4146,7 +4143,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 case|:
 name|return_val
 operator|=
@@ -4171,7 +4168,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 case|:
 name|return_val
 operator|=
@@ -4196,7 +4193,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 case|:
 name|string
 operator|=
@@ -4238,7 +4235,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT32ARRAY
+name|GIMP_PDB_INT32ARRAY
 case|:
 block|{
 name|LISP
@@ -4322,7 +4319,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_INT16ARRAY
+name|GIMP_PDB_INT16ARRAY
 case|:
 return|return
 name|my_err
@@ -4334,7 +4331,7 @@ argument_list|)
 return|;
 break|break;
 case|case
-name|PARAM_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 case|:
 block|{
 name|LISP
@@ -4418,7 +4415,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 case|:
 block|{
 name|LISP
@@ -4502,7 +4499,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 case|:
 comment|/*  string arrays are always implemented such that the previous 	       *  return value contains the number of strings in the array 	       */
 block|{
@@ -4604,7 +4601,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|PARAM_COLOR
+name|GIMP_PDB_COLOR
 case|:
 name|intermediate_val
 operator|=
@@ -4687,7 +4684,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_REGION
+name|GIMP_PDB_REGION
 case|:
 return|return
 name|my_err
@@ -4699,7 +4696,7 @@ argument_list|)
 return|;
 break|break;
 case|case
-name|PARAM_DISPLAY
+name|GIMP_PDB_DISPLAY
 case|:
 name|return_val
 operator|=
@@ -4724,7 +4721,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 case|:
 name|return_val
 operator|=
@@ -4749,7 +4746,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_LAYER
+name|GIMP_PDB_LAYER
 case|:
 name|return_val
 operator|=
@@ -4774,7 +4771,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_CHANNEL
+name|GIMP_PDB_CHANNEL
 case|:
 name|return_val
 operator|=
@@ -4799,7 +4796,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 case|:
 name|return_val
 operator|=
@@ -4824,7 +4821,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_SELECTION
+name|GIMP_PDB_SELECTION
 case|:
 name|return_val
 operator|=
@@ -4849,7 +4846,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_BOUNDARY
+name|GIMP_PDB_BOUNDARY
 case|:
 return|return
 name|my_err
@@ -4861,7 +4858,7 @@ argument_list|)
 return|;
 break|break;
 case|case
-name|PARAM_PATH
+name|GIMP_PDB_PATH
 case|:
 return|return
 name|my_err
@@ -4873,7 +4870,7 @@ argument_list|)
 return|;
 break|break;
 case|case
-name|PARAM_PARASITE
+name|GIMP_PDB_PARASITE
 case|:
 block|{
 name|LISP
@@ -5060,7 +5057,7 @@ block|}
 block|}
 break|break;
 case|case
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 case|:
 return|return
 name|my_err
@@ -5238,13 +5235,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -5299,7 +5296,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|PROC_TEMPORARY
+name|GIMP_TEMPORARY
 argument_list|,
 name|nargs
 argument_list|,
@@ -5318,7 +5315,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_refresh_proc (gchar * name,gint nparams,GParam * params,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|script_fu_refresh_proc (gchar * name,gint nparams,GimpParam * params,gint * nreturn_vals,GimpParam ** return_vals)
 name|script_fu_refresh_proc
 parameter_list|(
 name|gchar
@@ -5328,7 +5325,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|params
 parameter_list|,
@@ -5336,23 +5333,23 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 comment|/*  Reload all of the available scripts  */
 name|script_fu_find_scripts
@@ -5375,7 +5372,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[

@@ -162,7 +162,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c857e240108
+DECL|struct|__anon2b4229ca0108
 typedef|typedef
 struct|struct
 block|{
@@ -202,7 +202,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c857e240208
+DECL|struct|__anon2b4229ca0208
 typedef|typedef
 struct|struct
 block|{
@@ -311,7 +311,7 @@ comment|/* Declarations for objects of type Image */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c857e240308
+DECL|struct|__anon2b4229ca0308
 typedef|typedef
 struct|struct
 block|{
@@ -365,7 +365,7 @@ comment|/* Declarations for objects of type Display */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c857e240408
+DECL|struct|__anon2b4229ca0408
 typedef|typedef
 struct|struct
 block|{
@@ -419,7 +419,7 @@ comment|/* Declarations for objects of type Layer and channel */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c857e240508
+DECL|struct|__anon2b4229ca0508
 typedef|typedef
 struct|struct
 block|{
@@ -543,7 +543,7 @@ comment|/* Declarations for objects of type Tile */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c857e240608
+DECL|struct|__anon2b4229ca0608
 typedef|typedef
 struct|struct
 block|{
@@ -609,7 +609,7 @@ comment|/* Declarations for objects of type PixelRegion */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c857e240708
+DECL|struct|__anon2b4229ca0708
 typedef|typedef
 struct|struct
 block|{
@@ -689,7 +689,7 @@ comment|/* Declarations for objects of type Parasite */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c857e240808
+DECL|struct|__anon2b4229ca0808
 typedef|typedef
 struct|struct
 block|{
@@ -4854,7 +4854,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_query_procedure
+name|gimp_procedural_db_proc_info
 argument_list|(
 name|name
 argument_list|,

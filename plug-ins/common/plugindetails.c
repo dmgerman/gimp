@@ -452,7 +452,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274ecf600108
+DECL|struct|__anon2c7e14f20108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -558,7 +558,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274ecf600208
+DECL|struct|__anon2c7e14f20208
 block|{
 DECL|member|menu
 name|gchar
@@ -1142,7 +1142,7 @@ name|selected_return_vals
 operator|=
 name|NULL
 expr_stmt|;
-name|gimp_query_procedure
+name|gimp_procedural_db_proc_info
 argument_list|(
 name|pinfo
 operator|->
