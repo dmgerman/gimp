@@ -45,6 +45,12 @@ end_undef
 begin_undef
 undef|#
 directive|undef
+name|HAVE_GLIBC_REGEX
+end_undef
+
+begin_undef
+undef|#
+directive|undef
 name|HAVE_IPC_H
 end_undef
 
