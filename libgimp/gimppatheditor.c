@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * gimppatheditor.c  * Copyright (C) 1999 Michael Natterer<mitschel@cs.tu-berlin.de>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *   * This library is distributed in the hope that it will be useful,   * but WITHOUT ANY WARRANTY; without even the implied warranty of   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU    * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * gimppatheditor.c  * Copyright (C) 1999 Michael Natterer<mitch@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *   * This library is distributed in the hope that it will be useful,   * but WITHOUT ANY WARRANTY; without even the implied warranty of   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU    * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -157,13 +157,9 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* static void gimp_path_editor_check_path (GimpPathEditor *gpe, 					 GtkWidget      *list_item); */
-end_comment
-
 begin_enum
 enum|enum
-DECL|enum|__anon297c57160103
+DECL|enum|__anon2aa4f3720103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -1196,6 +1192,16 @@ operator|->
 name|new_button
 argument_list|)
 expr_stmt|;
+name|gdk_pixmap_unref
+argument_list|(
+name|pixmap
+argument_list|)
+expr_stmt|;
+name|gdk_bitmap_unref
+argument_list|(
+name|mask
+argument_list|)
+expr_stmt|;
 name|pixmap
 operator|=
 name|gdk_pixmap_create_from_xpm_d
@@ -1249,6 +1255,16 @@ argument_list|(
 name|gpe
 operator|->
 name|up_button
+argument_list|)
+expr_stmt|;
+name|gdk_pixmap_unref
+argument_list|(
+name|pixmap
+argument_list|)
+expr_stmt|;
+name|gdk_bitmap_unref
+argument_list|(
+name|mask
 argument_list|)
 expr_stmt|;
 name|pixmap
@@ -1306,6 +1322,16 @@ operator|->
 name|down_button
 argument_list|)
 expr_stmt|;
+name|gdk_pixmap_unref
+argument_list|(
+name|pixmap
+argument_list|)
+expr_stmt|;
+name|gdk_bitmap_unref
+argument_list|(
+name|mask
+argument_list|)
+expr_stmt|;
 name|pixmap
 operator|=
 name|gdk_pixmap_create_from_xpm_d
@@ -1361,7 +1387,16 @@ operator|->
 name|delete_button
 argument_list|)
 expr_stmt|;
-comment|/*   for (list = GTK_LIST (gpe->dir_list)->children; list; list = list->next)     {       gimp_path_editor_check_path (gpe, GTK_WIDGET (list->data));     }   */
+name|gdk_pixmap_unref
+argument_list|(
+name|pixmap
+argument_list|)
+expr_stmt|;
+name|gdk_bitmap_unref
+argument_list|(
+name|mask
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -2505,7 +2540,6 @@ name|g_free
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* gimp_path_editor_check_path (gpe, gpe->selected_item); */
 name|gtk_signal_emit
 argument_list|(
 name|GTK_OBJECT
@@ -2521,10 +2555,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* static void gimp_path_editor_check_path (GimpPathEditor *gpe, 					 GtkWidget      *list_item) {   g_print ("check path\n"); } */
-end_comment
 
 end_unit
 
