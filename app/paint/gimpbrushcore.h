@@ -127,6 +127,11 @@ DECL|member|parent_instance
 name|GimpPaintCore
 name|parent_instance
 decl_stmt|;
+DECL|member|main_brush
+name|GimpBrush
+modifier|*
+name|main_brush
+decl_stmt|;
 DECL|member|brush
 name|GimpBrush
 modifier|*
@@ -227,11 +232,6 @@ name|gboolean
 name|cache_invalid
 decl_stmt|;
 comment|/*  don't use these...  */
-DECL|member|grr_brush
-name|GimpBrush
-modifier|*
-name|grr_brush
-decl_stmt|;
 DECL|member|brush_bound_segs
 name|BoundSeg
 modifier|*

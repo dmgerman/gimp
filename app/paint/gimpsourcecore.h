@@ -129,6 +129,14 @@ DECL|member|src_y
 name|gint
 name|src_y
 decl_stmt|;
+DECL|member|orig_src_x
+name|gint
+name|orig_src_x
+decl_stmt|;
+DECL|member|orig_src_y
+name|gint
+name|orig_src_y
+decl_stmt|;
 DECL|member|offset_x
 name|gint
 name|offset_x
