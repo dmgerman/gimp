@@ -978,7 +978,7 @@ operator|->
 name|name
 argument_list|)
 condition|)
-name|g_value_set_string
+name|g_value_set_static_string
 argument_list|(
 name|value
 argument_list|,
@@ -1608,7 +1608,7 @@ argument_list|,
 name|G_TYPE_STRING
 argument_list|)
 expr_stmt|;
-name|g_value_set_string
+name|g_value_set_static_string
 argument_list|(
 operator|&
 name|src
@@ -1626,6 +1626,12 @@ operator|&
 name|src
 argument_list|,
 name|value
+argument_list|)
+expr_stmt|;
+name|g_value_unset
+argument_list|(
+operator|&
+name|src
 argument_list|)
 expr_stmt|;
 return|return
