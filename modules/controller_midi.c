@@ -72,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5cdd280108
+DECL|struct|__anon289941490108
 block|{
 DECL|member|name
 name|gchar
@@ -92,7 +92,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5cdd280203
+DECL|enum|__anon289941490203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1937,7 +1937,7 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-name|g_free_error
+name|g_clear_error
 argument_list|(
 operator|&
 name|error
