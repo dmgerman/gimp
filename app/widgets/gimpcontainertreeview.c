@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon286ff7cb0103
+DECL|enum|__anon28de3f960103
 block|{
 DECL|enumerator|COLUMN_VIEWABLE
 name|COLUMN_VIEWABLE
@@ -1084,7 +1084,10 @@ name|renderer
 operator|=
 name|gimp_preview_renderer_new
 argument_list|(
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
 name|viewable
+argument_list|)
 argument_list|,
 name|view
 operator|->
@@ -1093,6 +1096,18 @@ argument_list|,
 literal|1
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_preview_renderer_set_viewable
+argument_list|(
+name|renderer
+argument_list|,
+name|viewable
+argument_list|)
+expr_stmt|;
+name|gimp_preview_renderer_remove_idle
+argument_list|(
+name|renderer
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

@@ -592,8 +592,10 @@ name|selection_editor
 operator|->
 name|preview
 operator|=
-name|gimp_preview_new_by_type
+name|gimp_preview_new_by_types
 argument_list|(
+name|GIMP_TYPE_PREVIEW
+argument_list|,
 name|GIMP_TYPE_DRAWABLE
 argument_list|,
 name|nav_preview_size
@@ -1997,7 +1999,7 @@ modifier|*
 name|editor
 parameter_list|)
 block|{
-name|gimp_preview_update
+name|gimp_preview_renderer_invalidate
 argument_list|(
 name|GIMP_PREVIEW
 argument_list|(
@@ -2005,6 +2007,8 @@ name|editor
 operator|->
 name|preview
 argument_list|)
+operator|->
+name|renderer
 argument_list|)
 expr_stmt|;
 block|}

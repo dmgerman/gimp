@@ -111,11 +111,6 @@ DECL|member|pipe_animation_index
 name|gint
 name|pipe_animation_index
 decl_stmt|;
-DECL|member|pipe_animation_widget
-name|GtkWidget
-modifier|*
-name|pipe_animation_widget
-decl_stmt|;
 block|}
 struct|;
 end_struct

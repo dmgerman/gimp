@@ -7805,8 +7805,10 @@ return|;
 block|}
 name|preview
 operator|=
-name|gimp_preview_new_by_type
+name|gimp_preview_new_by_types
 argument_list|(
+name|GIMP_TYPE_PREVIEW
+argument_list|,
 name|param_spec
 operator|->
 name|value_type
