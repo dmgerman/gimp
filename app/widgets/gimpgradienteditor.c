@@ -122,7 +122,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderergradient.h"
+file|"gimpviewrenderergradient.h"
 end_include
 
 begin_include
@@ -168,18 +168,18 @@ value|0.75
 end_define
 
 begin_define
-DECL|macro|GRAD_PREVIEW_WIDTH
+DECL|macro|GRAD_VIEW_WIDTH
 define|#
 directive|define
-name|GRAD_PREVIEW_WIDTH
+name|GRAD_VIEW_WIDTH
 value|128
 end_define
 
 begin_define
-DECL|macro|GRAD_PREVIEW_HEIGHT
+DECL|macro|GRAD_VIEW_HEIGHT
 define|#
 directive|define
-name|GRAD_PREVIEW_HEIGHT
+name|GRAD_VIEW_HEIGHT
 value|96
 end_define
 
@@ -205,11 +205,11 @@ comment|/* ms between mouse click and detection of movement in gradient control 
 end_comment
 
 begin_define
-DECL|macro|GRAD_PREVIEW_EVENT_MASK
+DECL|macro|GRAD_VIEW_EVENT_MASK
 define|#
 directive|define
-name|GRAD_PREVIEW_EVENT_MASK
-value|(GDK_EXPOSURE_MASK            | \                                  GDK_LEAVE_NOTIFY_MASK        | \                                  GDK_POINTER_MOTION_MASK      | \                                  GDK_POINTER_MOTION_HINT_MASK | \                                  GDK_BUTTON_PRESS_MASK        | \                                  GDK_BUTTON_RELEASE_MASK)
+name|GRAD_VIEW_EVENT_MASK
+value|(GDK_EXPOSURE_MASK            | \                               GDK_LEAVE_NOTIFY_MASK        | \                               GDK_POINTER_MOTION_MASK      | \                               GDK_POINTER_MOTION_HINT_MASK | \                               GDK_BUTTON_PRESS_MASK        | \                               GDK_BUTTON_RELEASE_MASK)
 end_define
 
 begin_define
@@ -412,13 +412,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Gradient preview functions */
+comment|/* Gradient view functions */
 end_comment
 
 begin_function_decl
 specifier|static
 name|gint
-name|preview_events
+name|view_events
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -438,7 +438,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|preview_set_hint
+name|view_set_hint
 parameter_list|(
 name|GimpGradientEditor
 modifier|*
@@ -453,7 +453,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|preview_set_foreground
+name|view_set_foreground
 parameter_list|(
 name|GimpGradientEditor
 modifier|*
@@ -468,7 +468,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|preview_set_background
+name|view_set_background
 parameter_list|(
 name|GimpGradientEditor
 modifier|*
@@ -1019,7 +1019,7 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-comment|/* Frame for gradient preview and gradient control */
+comment|/* Frame for gradient view and gradient control */
 name|frame
 operator|=
 name|gtk_frame_new
@@ -1105,9 +1105,9 @@ name|GIMP_TYPE_VIEW
 argument_list|,
 name|GIMP_TYPE_GRADIENT
 argument_list|,
-name|GRAD_PREVIEW_WIDTH
+name|GRAD_VIEW_WIDTH
 argument_list|,
-name|GRAD_PREVIEW_HEIGHT
+name|GRAD_VIEW_HEIGHT
 argument_list|,
 literal|0
 argument_list|,
@@ -1124,9 +1124,9 @@ name|editor
 operator|->
 name|preview
 argument_list|,
-name|GRAD_PREVIEW_WIDTH
+name|GRAD_VIEW_WIDTH
 argument_list|,
-name|GRAD_PREVIEW_HEIGHT
+name|GRAD_VIEW_HEIGHT
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_events
@@ -1135,7 +1135,7 @@ name|editor
 operator|->
 name|preview
 argument_list|,
-name|GRAD_PREVIEW_EVENT_MASK
+name|GRAD_VIEW_EVENT_MASK
 argument_list|)
 expr_stmt|;
 name|gimp_view_set_expand
@@ -1185,7 +1185,7 @@ literal|"event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|preview_events
+name|view_events
 argument_list|)
 argument_list|,
 name|editor
@@ -1281,7 +1281,7 @@ name|editor
 operator|->
 name|control
 argument_list|,
-name|GRAD_PREVIEW_WIDTH
+name|GRAD_VIEW_WIDTH
 argument_list|,
 name|GRAD_CONTROL_HEIGHT
 argument_list|)
@@ -2494,7 +2494,7 @@ modifier|*
 name|editor
 parameter_list|)
 block|{
-name|GimpPreviewRendererGradient
+name|GimpViewRendererGradient
 modifier|*
 name|renderer
 decl_stmt|;
@@ -2567,7 +2567,7 @@ argument_list|)
 expr_stmt|;
 name|renderer
 operator|=
-name|GIMP_PREVIEW_RENDERER_GRADIENT
+name|GIMP_VIEW_RENDERER_GRADIENT
 argument_list|(
 name|GIMP_VIEW
 argument_list|(
@@ -2579,7 +2579,7 @@ operator|->
 name|renderer
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_gradient_set_offsets
+name|gimp_view_renderer_gradient_set_offsets
 argument_list|(
 name|renderer
 argument_list|,
@@ -3095,14 +3095,14 @@ block|}
 end_function
 
 begin_comment
-comment|/***** Gradient preview functions *****/
+comment|/***** Gradient view functions *****/
 end_comment
 
 begin_function
 specifier|static
 name|gboolean
-DECL|function|preview_events (GtkWidget * widget,GdkEvent * event,GimpGradientEditor * editor)
-name|preview_events
+DECL|function|view_events (GtkWidget * widget,GdkEvent * event,GimpGradientEditor * editor)
+name|view_events
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -3225,7 +3225,7 @@ name|state
 operator|&
 name|GDK_CONTROL_MASK
 condition|)
-name|preview_set_background
+name|view_set_background
 argument_list|(
 name|editor
 argument_list|,
@@ -3233,7 +3233,7 @@ name|x
 argument_list|)
 expr_stmt|;
 else|else
-name|preview_set_foreground
+name|view_set_foreground
 argument_list|(
 name|editor
 argument_list|,
@@ -3243,7 +3243,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|preview_set_hint
+name|view_set_hint
 argument_list|(
 name|editor
 argument_list|,
@@ -3307,7 +3307,7 @@ name|state
 operator|&
 name|GDK_CONTROL_MASK
 condition|)
-name|preview_set_background
+name|view_set_background
 argument_list|(
 name|editor
 argument_list|,
@@ -3315,7 +3315,7 @@ name|x
 argument_list|)
 expr_stmt|;
 else|else
-name|preview_set_foreground
+name|view_set_foreground
 argument_list|(
 name|editor
 argument_list|,
@@ -3518,7 +3518,7 @@ name|state
 operator|&
 name|GDK_CONTROL_MASK
 condition|)
-name|preview_set_background
+name|view_set_background
 argument_list|(
 name|editor
 argument_list|,
@@ -3526,7 +3526,7 @@ name|x
 argument_list|)
 expr_stmt|;
 else|else
-name|preview_set_foreground
+name|view_set_foreground
 argument_list|(
 name|editor
 argument_list|,
@@ -3550,8 +3550,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|preview_set_hint (GimpGradientEditor * editor,gint x)
-name|preview_set_hint
+DECL|function|view_set_hint (GimpGradientEditor * editor,gint x)
+name|view_set_hint
 parameter_list|(
 name|GimpGradientEditor
 modifier|*
@@ -3758,8 +3758,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|preview_set_foreground (GimpGradientEditor * editor,gint x)
-name|preview_set_foreground
+DECL|function|view_set_foreground (GimpGradientEditor * editor,gint x)
+name|view_set_foreground
 parameter_list|(
 name|GimpGradientEditor
 modifier|*
@@ -3940,8 +3940,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|preview_set_background (GimpGradientEditor * editor,gint x)
-name|preview_set_background
+DECL|function|view_set_background (GimpGradientEditor * editor,gint x)
+name|view_set_background
 parameter_list|(
 name|GimpGradientEditor
 modifier|*
@@ -6468,7 +6468,7 @@ name|control
 argument_list|)
 condition|)
 return|return;
-comment|/*  See whether we have to re-create the control pixmap    *  depending on the preview's width    */
+comment|/*  See whether we have to re-create the control pixmap    *  depending on the view's width    */
 name|cwidth
 operator|=
 name|editor
@@ -7262,7 +7262,7 @@ name|GtkAdjustment
 modifier|*
 name|adjustment
 decl_stmt|;
-comment|/* Calculate the position (in widget's coordinates) of the    * requested point from the gradient.  Rounding is done to    * minimize mismatches between the rendered gradient preview    * and the gradient control's handles.    */
+comment|/* Calculate the position (in widget's coordinates) of the    * requested point from the gradient.  Rounding is done to    * minimize mismatches between the rendered gradient view    * and the gradient control's handles.    */
 name|adjustment
 operator|=
 name|GTK_ADJUSTMENT

@@ -889,7 +889,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/*  preview renderers  */
+comment|/*  view renderers  */
 end_comment
 
 begin_typedef
@@ -902,65 +902,65 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPreviewRendererBrush
+DECL|typedef|GimpViewRendererBrush
 typedef|typedef
 name|struct
-name|_GimpPreviewRendererBrush
-name|GimpPreviewRendererBrush
+name|_GimpViewRendererBrush
+name|GimpViewRendererBrush
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPreviewRendererDrawable
+DECL|typedef|GimpViewRendererDrawable
 typedef|typedef
 name|struct
-name|_GimpPreviewRendererDrawable
-name|GimpPreviewRendererDrawable
+name|_GimpViewRendererDrawable
+name|GimpViewRendererDrawable
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPreviewRendererGradient
+DECL|typedef|GimpViewRendererGradient
 typedef|typedef
 name|struct
-name|_GimpPreviewRendererGradient
-name|GimpPreviewRendererGradient
+name|_GimpViewRendererGradient
+name|GimpViewRendererGradient
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPreviewRendererLayer
+DECL|typedef|GimpViewRendererLayer
 typedef|typedef
 name|struct
-name|_GimpPreviewRendererLayer
-name|GimpPreviewRendererLayer
+name|_GimpViewRendererLayer
+name|GimpViewRendererLayer
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPreviewRendererImage
+DECL|typedef|GimpViewRendererImage
 typedef|typedef
 name|struct
-name|_GimpPreviewRendererImage
-name|GimpPreviewRendererImage
+name|_GimpViewRendererImage
+name|GimpViewRendererImage
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPreviewRendererImagefile
+DECL|typedef|GimpViewRendererImagefile
 typedef|typedef
 name|struct
-name|_GimpPreviewRendererImagefile
-name|GimpPreviewRendererImagefile
+name|_GimpViewRendererImagefile
+name|GimpViewRendererImagefile
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPreviewRendererVectors
+DECL|typedef|GimpViewRendererVectors
 typedef|typedef
 name|struct
-name|_GimpPreviewRendererVectors
-name|GimpPreviewRendererVectors
+name|_GimpViewRendererVectors
+name|GimpViewRendererVectors
 typedef|;
 end_typedef
 

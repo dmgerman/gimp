@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimppreviewrendererimagefile.c  * Copyright (C) 2004 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpviewrendererimagefile.c  * Copyright (C) 2004 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrendererimagefile.h"
+file|"gimpviewrendererimagefile.h"
 end_include
 
 begin_ifdef
@@ -84,9 +84,9 @@ end_endif
 begin_function_decl
 specifier|static
 name|void
-name|gimp_preview_renderer_imagefile_class_init
+name|gimp_view_renderer_imagefile_class_init
 parameter_list|(
-name|GimpPreviewRendererImagefileClass
+name|GimpViewRendererImagefileClass
 modifier|*
 name|klass
 parameter_list|)
@@ -96,9 +96,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_preview_renderer_imagefile_init
+name|gimp_view_renderer_imagefile_init
 parameter_list|(
-name|GimpPreviewRendererImagefile
+name|GimpViewRendererImagefile
 modifier|*
 name|renderer
 parameter_list|)
@@ -108,7 +108,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_preview_renderer_imagefile_render
+name|gimp_view_renderer_imagefile_render
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
@@ -134,8 +134,8 @@ end_decl_stmt
 
 begin_function
 name|GType
-DECL|function|gimp_preview_renderer_imagefile_get_type (void)
-name|gimp_preview_renderer_imagefile_get_type
+DECL|function|gimp_view_renderer_imagefile_get_type (void)
+name|gimp_view_renderer_imagefile_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -160,7 +160,7 @@ init|=
 block|{
 sizeof|sizeof
 argument_list|(
-name|GimpPreviewRendererImagefileClass
+name|GimpViewRendererImagefileClass
 argument_list|)
 block|,
 name|NULL
@@ -172,7 +172,7 @@ comment|/* base_finalize */
 operator|(
 name|GClassInitFunc
 operator|)
-name|gimp_preview_renderer_imagefile_class_init
+name|gimp_view_renderer_imagefile_class_init
 block|,
 name|NULL
 block|,
@@ -182,7 +182,7 @@ block|,
 comment|/* class_data */
 sizeof|sizeof
 argument_list|(
-name|GimpPreviewRendererImagefile
+name|GimpViewRendererImagefile
 argument_list|)
 block|,
 literal|0
@@ -191,7 +191,7 @@ comment|/* n_preallocs */
 operator|(
 name|GInstanceInitFunc
 operator|)
-name|gimp_preview_renderer_imagefile_init
+name|gimp_view_renderer_imagefile_init
 block|,       }
 decl_stmt|;
 name|renderer_type
@@ -200,7 +200,7 @@ name|g_type_register_static
 argument_list|(
 name|GIMP_TYPE_VIEW_RENDERER
 argument_list|,
-literal|"GimpPreviewRendererImagefile"
+literal|"GimpViewRendererImagefile"
 argument_list|,
 operator|&
 name|renderer_info
@@ -218,10 +218,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_renderer_imagefile_class_init (GimpPreviewRendererImagefileClass * klass)
-name|gimp_preview_renderer_imagefile_class_init
+DECL|function|gimp_view_renderer_imagefile_class_init (GimpViewRendererImagefileClass * klass)
+name|gimp_view_renderer_imagefile_class_init
 parameter_list|(
-name|GimpPreviewRendererImagefileClass
+name|GimpViewRendererImagefileClass
 modifier|*
 name|klass
 parameter_list|)
@@ -248,7 +248,7 @@ name|renderer_class
 operator|->
 name|render
 operator|=
-name|gimp_preview_renderer_imagefile_render
+name|gimp_view_renderer_imagefile_render
 expr_stmt|;
 block|}
 end_function
@@ -256,10 +256,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_renderer_imagefile_init (GimpPreviewRendererImagefile * renderer)
-name|gimp_preview_renderer_imagefile_init
+DECL|function|gimp_view_renderer_imagefile_init (GimpViewRendererImagefile * renderer)
+name|gimp_view_renderer_imagefile_init
 parameter_list|(
-name|GimpPreviewRendererImagefile
+name|GimpViewRendererImagefile
 modifier|*
 name|renderer
 parameter_list|)
@@ -281,8 +281,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_renderer_imagefile_render (GimpViewRenderer * renderer,GtkWidget * widget)
-name|gimp_preview_renderer_imagefile_render
+DECL|function|gimp_view_renderer_imagefile_render (GimpViewRenderer * renderer,GtkWidget * widget)
+name|gimp_view_renderer_imagefile_render
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
@@ -340,7 +340,7 @@ directive|ifdef
 name|ENABLE_FILE_SYSTEM_ICONS
 if|if
 condition|(
-name|GIMP_PREVIEW_RENDERER_IMAGEFILE
+name|GIMP_VIEW_RENDERER_IMAGEFILE
 argument_list|(
 name|renderer
 argument_list|)
@@ -359,7 +359,7 @@ name|uri
 decl_stmt|;
 name|file_system
 operator|=
-name|GIMP_PREVIEW_RENDERER_IMAGEFILE
+name|GIMP_VIEW_RENDERER_IMAGEFILE
 argument_list|(
 name|renderer
 argument_list|)

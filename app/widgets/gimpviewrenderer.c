@@ -107,7 +107,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderer-utils.h"
+file|"gimpviewrenderer-utils.h"
 end_include
 
 begin_include
@@ -118,7 +118,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2adddd730103
+DECL|enum|__anon2be50a5d0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -864,7 +864,7 @@ name|renderer
 operator|=
 name|g_object_new
 argument_list|(
-name|gimp_preview_renderer_type_from_viewable_type
+name|gimp_view_renderer_type_from_viewable_type
 argument_list|(
 name|viewable_type
 argument_list|)

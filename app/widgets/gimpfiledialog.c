@@ -102,7 +102,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrendererimagefile.h"
+file|"gimpviewrendererimagefile.h"
 end_include
 
 begin_include
@@ -1833,7 +1833,7 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|ENABLE_FILE_SYSTEM_ICONS
-name|GIMP_PREVIEW_RENDERER_IMAGEFILE
+name|GIMP_VIEW_RENDERER_IMAGEFILE
 argument_list|(
 name|GIMP_VIEW
 argument_list|(

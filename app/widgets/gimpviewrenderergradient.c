@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimppreviewrenderergradient.c  * Copyright (C) 2003 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpviewrenderergradient.c  * Copyright (C) 2003 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -77,15 +77,15 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderergradient.h"
+file|"gimpviewrenderergradient.h"
 end_include
 
 begin_function_decl
 specifier|static
 name|void
-name|gimp_preview_renderer_gradient_class_init
+name|gimp_view_renderer_gradient_class_init
 parameter_list|(
-name|GimpPreviewRendererGradientClass
+name|GimpViewRendererGradientClass
 modifier|*
 name|klass
 parameter_list|)
@@ -95,9 +95,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_preview_renderer_gradient_init
+name|gimp_view_renderer_gradient_init
 parameter_list|(
-name|GimpPreviewRendererGradient
+name|GimpViewRendererGradient
 modifier|*
 name|renderer
 parameter_list|)
@@ -107,7 +107,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_preview_renderer_gradient_finalize
+name|gimp_view_renderer_gradient_finalize
 parameter_list|(
 name|GObject
 modifier|*
@@ -119,7 +119,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_preview_renderer_gradient_render
+name|gimp_view_renderer_gradient_render
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
@@ -145,8 +145,8 @@ end_decl_stmt
 
 begin_function
 name|GType
-DECL|function|gimp_preview_renderer_gradient_get_type (void)
-name|gimp_preview_renderer_gradient_get_type
+DECL|function|gimp_view_renderer_gradient_get_type (void)
+name|gimp_view_renderer_gradient_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -171,7 +171,7 @@ init|=
 block|{
 sizeof|sizeof
 argument_list|(
-name|GimpPreviewRendererGradientClass
+name|GimpViewRendererGradientClass
 argument_list|)
 block|,
 name|NULL
@@ -183,7 +183,7 @@ comment|/* base_finalize */
 operator|(
 name|GClassInitFunc
 operator|)
-name|gimp_preview_renderer_gradient_class_init
+name|gimp_view_renderer_gradient_class_init
 block|,
 name|NULL
 block|,
@@ -193,7 +193,7 @@ block|,
 comment|/* class_data */
 sizeof|sizeof
 argument_list|(
-name|GimpPreviewRendererGradient
+name|GimpViewRendererGradient
 argument_list|)
 block|,
 literal|0
@@ -202,7 +202,7 @@ comment|/* n_preallocs */
 operator|(
 name|GInstanceInitFunc
 operator|)
-name|gimp_preview_renderer_gradient_init
+name|gimp_view_renderer_gradient_init
 block|,       }
 decl_stmt|;
 name|renderer_type
@@ -211,7 +211,7 @@ name|g_type_register_static
 argument_list|(
 name|GIMP_TYPE_VIEW_RENDERER
 argument_list|,
-literal|"GimpPreviewRendererGradient"
+literal|"GimpViewRendererGradient"
 argument_list|,
 operator|&
 name|renderer_info
@@ -229,10 +229,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_renderer_gradient_class_init (GimpPreviewRendererGradientClass * klass)
-name|gimp_preview_renderer_gradient_class_init
+DECL|function|gimp_view_renderer_gradient_class_init (GimpViewRendererGradientClass * klass)
+name|gimp_view_renderer_gradient_class_init
 parameter_list|(
-name|GimpPreviewRendererGradientClass
+name|GimpViewRendererGradientClass
 modifier|*
 name|klass
 parameter_list|)
@@ -270,13 +270,13 @@ name|object_class
 operator|->
 name|finalize
 operator|=
-name|gimp_preview_renderer_gradient_finalize
+name|gimp_view_renderer_gradient_finalize
 expr_stmt|;
 name|renderer_class
 operator|->
 name|render
 operator|=
-name|gimp_preview_renderer_gradient_render
+name|gimp_view_renderer_gradient_render
 expr_stmt|;
 block|}
 end_function
@@ -284,10 +284,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_renderer_gradient_init (GimpPreviewRendererGradient * renderer)
-name|gimp_preview_renderer_gradient_init
+DECL|function|gimp_view_renderer_gradient_init (GimpViewRendererGradient * renderer)
+name|gimp_view_renderer_gradient_init
 parameter_list|(
-name|GimpPreviewRendererGradient
+name|GimpViewRendererGradient
 modifier|*
 name|renderer
 parameter_list|)
@@ -335,21 +335,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_renderer_gradient_finalize (GObject * object)
-name|gimp_preview_renderer_gradient_finalize
+DECL|function|gimp_view_renderer_gradient_finalize (GObject * object)
+name|gimp_view_renderer_gradient_finalize
 parameter_list|(
 name|GObject
 modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpPreviewRendererGradient
+name|GimpViewRendererGradient
 modifier|*
 name|renderer
 decl_stmt|;
 name|renderer
 operator|=
-name|GIMP_PREVIEW_RENDERER_GRADIENT
+name|GIMP_VIEW_RENDERER_GRADIENT
 argument_list|(
 name|object
 argument_list|)
@@ -412,8 +412,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_renderer_gradient_render (GimpViewRenderer * renderer,GtkWidget * widget)
-name|gimp_preview_renderer_gradient_render
+DECL|function|gimp_view_renderer_gradient_render (GimpViewRenderer * renderer,GtkWidget * widget)
+name|gimp_view_renderer_gradient_render
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
@@ -424,7 +424,7 @@ modifier|*
 name|widget
 parameter_list|)
 block|{
-name|GimpPreviewRendererGradient
+name|GimpViewRendererGradient
 modifier|*
 name|rendergrad
 decl_stmt|;
@@ -463,7 +463,7 @@ name|color
 decl_stmt|;
 name|rendergrad
 operator|=
-name|GIMP_PREVIEW_RENDERER_GRADIENT
+name|GIMP_VIEW_RENDERER_GRADIENT
 argument_list|(
 name|renderer
 argument_list|)
@@ -901,10 +901,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_preview_renderer_gradient_set_offsets (GimpPreviewRendererGradient * renderer,gdouble left,gdouble right,gboolean instant_update)
-name|gimp_preview_renderer_gradient_set_offsets
+DECL|function|gimp_view_renderer_gradient_set_offsets (GimpViewRendererGradient * renderer,gdouble left,gdouble right,gboolean instant_update)
+name|gimp_view_renderer_gradient_set_offsets
 parameter_list|(
-name|GimpPreviewRendererGradient
+name|GimpViewRendererGradient
 modifier|*
 name|renderer
 parameter_list|,
@@ -920,7 +920,7 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_PREVIEW_RENDERER_GRADIENT
+name|GIMP_IS_VIEW_RENDERER_GRADIENT
 argument_list|(
 name|renderer
 argument_list|)
@@ -1001,10 +1001,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_preview_renderer_gradient_set_reverse (GimpPreviewRendererGradient * renderer,gboolean reverse)
-name|gimp_preview_renderer_gradient_set_reverse
+DECL|function|gimp_view_renderer_gradient_set_reverse (GimpViewRendererGradient * renderer,gboolean reverse)
+name|gimp_view_renderer_gradient_set_reverse
 parameter_list|(
-name|GimpPreviewRendererGradient
+name|GimpViewRendererGradient
 modifier|*
 name|renderer
 parameter_list|,
@@ -1014,7 +1014,7 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_PREVIEW_RENDERER_GRADIENT
+name|GIMP_IS_VIEW_RENDERER_GRADIENT
 argument_list|(
 name|renderer
 argument_list|)

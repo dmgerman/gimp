@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimppreviewrenderer-utils.c  * Copyright (C) 2003 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpviewrenderer-utils.c  * Copyright (C) 2003 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -66,43 +66,43 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrendererbrush.h"
+file|"gimpviewrendererbrush.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppreviewrendererlayer.h"
+file|"gimpviewrendererlayer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderergradient.h"
+file|"gimpviewrenderergradient.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppreviewrendererimage.h"
+file|"gimpviewrendererimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppreviewrendererimagefile.h"
+file|"gimpviewrendererimagefile.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderervectors.h"
+file|"gimpviewrenderervectors.h"
 end_include
 
 begin_function
 name|GType
-DECL|function|gimp_preview_renderer_type_from_viewable_type (GType viewable_type)
-name|gimp_preview_renderer_type_from_viewable_type
+DECL|function|gimp_view_renderer_type_from_viewable_type (GType viewable_type)
+name|gimp_view_renderer_type_from_viewable_type
 parameter_list|(
 name|GType
 name|viewable_type
@@ -137,7 +137,7 @@ condition|)
 block|{
 name|type
 operator|=
-name|GIMP_TYPE_PREVIEW_RENDERER_BRUSH
+name|GIMP_TYPE_VIEW_RENDERER_BRUSH
 expr_stmt|;
 block|}
 elseif|else
@@ -153,7 +153,7 @@ condition|)
 block|{
 name|type
 operator|=
-name|GIMP_TYPE_PREVIEW_RENDERER_IMAGE
+name|GIMP_TYPE_VIEW_RENDERER_IMAGE
 expr_stmt|;
 block|}
 elseif|else
@@ -169,7 +169,7 @@ condition|)
 block|{
 name|type
 operator|=
-name|GIMP_TYPE_PREVIEW_RENDERER_LAYER
+name|GIMP_TYPE_VIEW_RENDERER_LAYER
 expr_stmt|;
 block|}
 elseif|else
@@ -185,7 +185,7 @@ condition|)
 block|{
 name|type
 operator|=
-name|GIMP_TYPE_PREVIEW_RENDERER_DRAWABLE
+name|GIMP_TYPE_VIEW_RENDERER_DRAWABLE
 expr_stmt|;
 block|}
 elseif|else
@@ -201,7 +201,7 @@ condition|)
 block|{
 name|type
 operator|=
-name|GIMP_TYPE_PREVIEW_RENDERER_GRADIENT
+name|GIMP_TYPE_VIEW_RENDERER_GRADIENT
 expr_stmt|;
 block|}
 elseif|else
@@ -217,7 +217,7 @@ condition|)
 block|{
 name|type
 operator|=
-name|GIMP_TYPE_PREVIEW_RENDERER_VECTORS
+name|GIMP_TYPE_VIEW_RENDERER_VECTORS
 expr_stmt|;
 block|}
 elseif|else
@@ -233,7 +233,7 @@ condition|)
 block|{
 name|type
 operator|=
-name|GIMP_TYPE_PREVIEW_RENDERER_IMAGEFILE
+name|GIMP_TYPE_VIEW_RENDERER_IMAGEFILE
 expr_stmt|;
 block|}
 return|return

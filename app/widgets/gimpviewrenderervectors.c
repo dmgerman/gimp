@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimppreviewrenderervectors.c  * Copyright (C) 2003 Michael Natterer<mitch@gimp.org>  *                    Simon Budig<simon@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpviewrenderervectors.c  * Copyright (C) 2003 Michael Natterer<mitch@gimp.org>  *                    Simon Budig<simon@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -54,15 +54,15 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderervectors.h"
+file|"gimpviewrenderervectors.h"
 end_include
 
 begin_function_decl
 specifier|static
 name|void
-name|gimp_preview_renderer_vectors_class_init
+name|gimp_view_renderer_vectors_class_init
 parameter_list|(
-name|GimpPreviewRendererVectorsClass
+name|GimpViewRendererVectorsClass
 modifier|*
 name|klass
 parameter_list|)
@@ -72,7 +72,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_preview_renderer_vectors_draw
+name|gimp_view_renderer_vectors_draw
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
@@ -112,8 +112,8 @@ end_decl_stmt
 
 begin_function
 name|GType
-DECL|function|gimp_preview_renderer_vectors_get_type (void)
-name|gimp_preview_renderer_vectors_get_type
+DECL|function|gimp_view_renderer_vectors_get_type (void)
+name|gimp_view_renderer_vectors_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -138,7 +138,7 @@ init|=
 block|{
 sizeof|sizeof
 argument_list|(
-name|GimpPreviewRendererVectorsClass
+name|GimpViewRendererVectorsClass
 argument_list|)
 block|,
 name|NULL
@@ -150,7 +150,7 @@ comment|/* base_finalize */
 operator|(
 name|GClassInitFunc
 operator|)
-name|gimp_preview_renderer_vectors_class_init
+name|gimp_view_renderer_vectors_class_init
 block|,
 name|NULL
 block|,
@@ -160,7 +160,7 @@ block|,
 comment|/* class_data */
 sizeof|sizeof
 argument_list|(
-name|GimpPreviewRendererVectors
+name|GimpViewRendererVectors
 argument_list|)
 block|,
 literal|0
@@ -177,7 +177,7 @@ name|g_type_register_static
 argument_list|(
 name|GIMP_TYPE_VIEW_RENDERER
 argument_list|,
-literal|"GimpPreviewRendererVectors"
+literal|"GimpViewRendererVectors"
 argument_list|,
 operator|&
 name|renderer_info
@@ -195,10 +195,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_renderer_vectors_class_init (GimpPreviewRendererVectorsClass * klass)
-name|gimp_preview_renderer_vectors_class_init
+DECL|function|gimp_view_renderer_vectors_class_init (GimpViewRendererVectorsClass * klass)
+name|gimp_view_renderer_vectors_class_init
 parameter_list|(
-name|GimpPreviewRendererVectorsClass
+name|GimpViewRendererVectorsClass
 modifier|*
 name|klass
 parameter_list|)
@@ -225,7 +225,7 @@ name|renderer_class
 operator|->
 name|draw
 operator|=
-name|gimp_preview_renderer_vectors_draw
+name|gimp_view_renderer_vectors_draw
 expr_stmt|;
 block|}
 end_function
@@ -233,8 +233,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_renderer_vectors_draw (GimpViewRenderer * renderer,GdkWindow * window,GtkWidget * widget,const GdkRectangle * draw_area,const GdkRectangle * expose_area)
-name|gimp_preview_renderer_vectors_draw
+DECL|function|gimp_view_renderer_vectors_draw (GimpViewRenderer * renderer,GdkWindow * window,GtkWidget * widget,const GdkRectangle * draw_area,const GdkRectangle * expose_area)
+name|gimp_view_renderer_vectors_draw
 parameter_list|(
 name|GimpViewRenderer
 modifier|*

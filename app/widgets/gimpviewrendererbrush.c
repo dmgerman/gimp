@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimppreviewrendererbrush.c  * Copyright (C) 2003 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpviewrendererbrush.c  * Copyright (C) 2003 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -42,15 +42,15 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrendererbrush.h"
+file|"gimpviewrendererbrush.h"
 end_include
 
 begin_function_decl
 specifier|static
 name|void
-name|gimp_preview_renderer_brush_class_init
+name|gimp_view_renderer_brush_class_init
 parameter_list|(
-name|GimpPreviewRendererBrushClass
+name|GimpViewRendererBrushClass
 modifier|*
 name|klass
 parameter_list|)
@@ -60,9 +60,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_preview_renderer_brush_init
+name|gimp_view_renderer_brush_init
 parameter_list|(
-name|GimpPreviewRendererBrush
+name|GimpViewRendererBrush
 modifier|*
 name|renderer
 parameter_list|)
@@ -72,7 +72,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_preview_renderer_brush_finalize
+name|gimp_view_renderer_brush_finalize
 parameter_list|(
 name|GObject
 modifier|*
@@ -84,7 +84,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_preview_renderer_brush_render
+name|gimp_view_renderer_brush_render
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
@@ -100,7 +100,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_preview_renderer_brush_render_timeout
+name|gimp_view_renderer_brush_render_timeout
 parameter_list|(
 name|gpointer
 name|data
@@ -121,8 +121,8 @@ end_decl_stmt
 
 begin_function
 name|GType
-DECL|function|gimp_preview_renderer_brush_get_type (void)
-name|gimp_preview_renderer_brush_get_type
+DECL|function|gimp_view_renderer_brush_get_type (void)
+name|gimp_view_renderer_brush_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -147,7 +147,7 @@ init|=
 block|{
 sizeof|sizeof
 argument_list|(
-name|GimpPreviewRendererBrushClass
+name|GimpViewRendererBrushClass
 argument_list|)
 block|,
 name|NULL
@@ -159,7 +159,7 @@ comment|/* base_finalize */
 operator|(
 name|GClassInitFunc
 operator|)
-name|gimp_preview_renderer_brush_class_init
+name|gimp_view_renderer_brush_class_init
 block|,
 name|NULL
 block|,
@@ -169,7 +169,7 @@ block|,
 comment|/* class_data */
 sizeof|sizeof
 argument_list|(
-name|GimpPreviewRendererBrush
+name|GimpViewRendererBrush
 argument_list|)
 block|,
 literal|0
@@ -178,7 +178,7 @@ comment|/* n_preallocs */
 operator|(
 name|GInstanceInitFunc
 operator|)
-name|gimp_preview_renderer_brush_init
+name|gimp_view_renderer_brush_init
 block|,       }
 decl_stmt|;
 name|renderer_type
@@ -187,7 +187,7 @@ name|g_type_register_static
 argument_list|(
 name|GIMP_TYPE_VIEW_RENDERER
 argument_list|,
-literal|"GimpPreviewRendererBrush"
+literal|"GimpViewRendererBrush"
 argument_list|,
 operator|&
 name|renderer_info
@@ -205,10 +205,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_renderer_brush_class_init (GimpPreviewRendererBrushClass * klass)
-name|gimp_preview_renderer_brush_class_init
+DECL|function|gimp_view_renderer_brush_class_init (GimpViewRendererBrushClass * klass)
+name|gimp_view_renderer_brush_class_init
 parameter_list|(
-name|GimpPreviewRendererBrushClass
+name|GimpViewRendererBrushClass
 modifier|*
 name|klass
 parameter_list|)
@@ -246,13 +246,13 @@ name|object_class
 operator|->
 name|finalize
 operator|=
-name|gimp_preview_renderer_brush_finalize
+name|gimp_view_renderer_brush_finalize
 expr_stmt|;
 name|renderer_class
 operator|->
 name|render
 operator|=
-name|gimp_preview_renderer_brush_render
+name|gimp_view_renderer_brush_render
 expr_stmt|;
 block|}
 end_function
@@ -260,10 +260,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_renderer_brush_init (GimpPreviewRendererBrush * renderer)
-name|gimp_preview_renderer_brush_init
+DECL|function|gimp_view_renderer_brush_init (GimpViewRendererBrush * renderer)
+name|gimp_view_renderer_brush_init
 parameter_list|(
-name|GimpPreviewRendererBrush
+name|GimpViewRendererBrush
 modifier|*
 name|renderer
 parameter_list|)
@@ -286,19 +286,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_renderer_brush_finalize (GObject * object)
-name|gimp_preview_renderer_brush_finalize
+DECL|function|gimp_view_renderer_brush_finalize (GObject * object)
+name|gimp_view_renderer_brush_finalize
 parameter_list|(
 name|GObject
 modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpPreviewRendererBrush
+name|GimpViewRendererBrush
 modifier|*
 name|renderer
 init|=
-name|GIMP_PREVIEW_RENDERER_BRUSH
+name|GIMP_VIEW_RENDERER_BRUSH
 argument_list|(
 name|object
 argument_list|)
@@ -340,8 +340,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_renderer_brush_render (GimpViewRenderer * renderer,GtkWidget * widget)
-name|gimp_preview_renderer_brush_render
+DECL|function|gimp_view_renderer_brush_render (GimpViewRenderer * renderer,GtkWidget * widget)
+name|gimp_view_renderer_brush_render
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
@@ -352,7 +352,7 @@ modifier|*
 name|widget
 parameter_list|)
 block|{
-name|GimpPreviewRendererBrush
+name|GimpViewRendererBrush
 modifier|*
 name|renderbrush
 decl_stmt|;
@@ -372,7 +372,7 @@ name|brush_height
 decl_stmt|;
 name|renderbrush
 operator|=
-name|GIMP_PREVIEW_RENDERER_BRUSH
+name|GIMP_VIEW_RENDERER_BRUSH
 argument_list|(
 name|renderer
 argument_list|)
@@ -540,7 +540,7 @@ name|g_timeout_add
 argument_list|(
 literal|300
 argument_list|,
-name|gimp_preview_renderer_brush_render_timeout
+name|gimp_view_renderer_brush_render_timeout
 argument_list|,
 name|renderbrush
 argument_list|)
@@ -1340,14 +1340,14 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_preview_renderer_brush_render_timeout (gpointer data)
-name|gimp_preview_renderer_brush_render_timeout
+DECL|function|gimp_view_renderer_brush_render_timeout (gpointer data)
+name|gimp_view_renderer_brush_render_timeout
 parameter_list|(
 name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpPreviewRendererBrush
+name|GimpViewRendererBrush
 modifier|*
 name|renderbrush
 decl_stmt|;
@@ -1369,7 +1369,7 @@ name|temp_buf
 decl_stmt|;
 name|renderbrush
 operator|=
-name|GIMP_PREVIEW_RENDERER_BRUSH
+name|GIMP_VIEW_RENDERER_BRUSH
 argument_list|(
 name|data
 argument_list|)

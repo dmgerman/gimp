@@ -90,7 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderer-utils.h"
+file|"gimpviewrenderer-utils.h"
 end_include
 
 begin_define
@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon288e54f80103
+DECL|enum|__anon27e935540103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED

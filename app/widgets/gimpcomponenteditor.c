@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrendererimage.h"
+file|"gimpviewrendererimage.h"
 end_include
 
 begin_include
@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb661bd0103
+DECL|enum|__anon275882b30103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -1057,11 +1057,11 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_component_editor_new (gint preview_size,GimpMenuFactory * menu_factory)
+DECL|function|gimp_component_editor_new (gint view_size,GimpMenuFactory * menu_factory)
 name|gimp_component_editor_new
 parameter_list|(
 name|gint
-name|preview_size
+name|view_size
 parameter_list|,
 name|GimpMenuFactory
 modifier|*
@@ -1074,11 +1074,11 @@ name|editor
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|preview_size
+name|view_size
 operator|>
 literal|0
 operator|&&
-name|preview_size
+name|view_size
 operator|<=
 name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
@@ -1120,7 +1120,7 @@ name|gimp_component_editor_set_preview_size
 argument_list|(
 name|editor
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|)
 expr_stmt|;
 return|return
@@ -1134,7 +1134,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_component_editor_set_preview_size (GimpComponentEditor * editor,gint preview_size)
+DECL|function|gimp_component_editor_set_preview_size (GimpComponentEditor * editor,gint view_size)
 name|gimp_component_editor_set_preview_size
 parameter_list|(
 name|GimpComponentEditor
@@ -1142,7 +1142,7 @@ modifier|*
 name|editor
 parameter_list|,
 name|gint
-name|preview_size
+name|view_size
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1168,11 +1168,11 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|preview_size
+name|view_size
 operator|>
 literal|0
 operator|&&
-name|preview_size
+name|view_size
 operator|<=
 name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|)
@@ -1196,7 +1196,7 @@ name|GIMP_STOCK_VISIBLE
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|,
-name|preview_size
+name|view_size
 operator|-
 literal|2
 operator|*
@@ -1206,7 +1206,7 @@ name|style
 operator|->
 name|xthickness
 argument_list|,
-name|preview_size
+name|view_size
 operator|-
 literal|2
 operator|*
@@ -1285,7 +1285,7 @@ name|gimp_view_renderer_set_size
 argument_list|(
 name|renderer
 argument_list|,
-name|preview_size
+name|view_size
 argument_list|,
 literal|1
 argument_list|)
@@ -1300,7 +1300,7 @@ name|editor
 operator|->
 name|preview_size
 operator|=
-name|preview_size
+name|view_size
 expr_stmt|;
 name|gtk_tree_view_columns_autosize
 argument_list|(
@@ -1517,7 +1517,7 @@ argument_list|(
 name|renderer
 argument_list|)
 expr_stmt|;
-name|GIMP_PREVIEW_RENDERER_IMAGE
+name|GIMP_VIEW_RENDERER_IMAGE
 argument_list|(
 name|renderer
 argument_list|)
@@ -2177,7 +2177,7 @@ operator|->
 name|viewable
 argument_list|)
 argument_list|,
-name|GIMP_PREVIEW_RENDERER_IMAGE
+name|GIMP_VIEW_RENDERER_IMAGE
 argument_list|(
 name|renderer
 argument_list|)

@@ -84,7 +84,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimppreviewrenderergradient.h"
+file|"widgets/gimpviewrenderergradient.h"
 end_include
 
 begin_include
@@ -551,7 +551,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  the brush preview  */
+comment|/*  the brush view  */
 if|if
 condition|(
 name|tool_type
@@ -626,7 +626,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  the pattern preview  */
+comment|/*  the pattern view  */
 if|if
 condition|(
 name|tool_type
@@ -697,7 +697,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  the gradient preview  */
+comment|/*  the gradient view  */
 if|if
 condition|(
 name|g_type_is_a
@@ -2256,20 +2256,20 @@ modifier|*
 name|view
 parameter_list|)
 block|{
-name|GimpPreviewRendererGradient
+name|GimpViewRendererGradient
 modifier|*
 name|rendergrad
 decl_stmt|;
 name|rendergrad
 operator|=
-name|GIMP_PREVIEW_RENDERER_GRADIENT
+name|GIMP_VIEW_RENDERER_GRADIENT
 argument_list|(
 name|view
 operator|->
 name|renderer
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_gradient_set_reverse
+name|gimp_view_renderer_gradient_set_reverse
 argument_list|(
 name|rendergrad
 argument_list|,
