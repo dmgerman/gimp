@@ -36,7 +36,7 @@ comment|/* Typedefs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c5ef03c0108
+DECL|struct|__anon2953c3bc0108
 typedef|typedef
 struct|struct
 block|{
@@ -103,7 +103,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c5ef03c0208
+DECL|struct|__anon2953c3bc0208
 typedef|typedef
 struct|struct
 block|{
@@ -3633,7 +3633,7 @@ index|[
 literal|0
 index|]
 condition|)
-name|gtk_tooltips_set_tips
+name|gtk_tooltips_set_tip
 argument_list|(
 name|tooltips
 argument_list|,
@@ -3644,6 +3644,8 @@ name|char
 operator|*
 operator|)
 name|desc
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
