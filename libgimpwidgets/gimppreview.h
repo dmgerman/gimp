@@ -192,6 +192,11 @@ DECL|member|timeout_id
 name|guint
 name|timeout_id
 decl_stmt|;
+DECL|member|cursor
+name|GdkCursor
+modifier|*
+name|cursor
+decl_stmt|;
 block|}
 struct|;
 end_struct
