@@ -112,7 +112,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4e64df0108
+DECL|struct|__anon2c70321b0108
 block|{
 DECL|member|root
 name|gboolean
@@ -799,6 +799,9 @@ name|gint
 name|pid
 decl_stmt|;
 name|gint
+name|wret
+decl_stmt|;
+name|gint
 name|status
 decl_stmt|;
 name|gint
@@ -1003,6 +1006,13 @@ block|}
 endif|#
 directive|endif
 block|{
+name|status
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+name|wret
+operator|=
 name|waitpid
 argument_list|(
 name|pid
@@ -1015,6 +1025,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|(
+name|wret
+operator|<
+literal|0
+operator|)
+operator|||
 operator|!
 name|WIFEXITED
 argument_list|(
@@ -1022,6 +1038,17 @@ name|status
 argument_list|)
 condition|)
 block|{
+comment|/*  the tmpfile may have been created even if xwd failed  */
+name|unlink
+argument_list|(
+name|tmpname
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|tmpname
+argument_list|)
+expr_stmt|;
 name|g_message
 argument_list|(
 literal|"screenshot: xwd didn't work\n"
