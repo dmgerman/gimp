@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* tiff loading and saving for the GIMP  *  -Peter Mattis  *  * The code for this filter is based on "tifftopnm" and "pnmtotiff",  *  2 programs that are a part of the netpbm package.  */
+comment|/* tiff loading and saving for the GIMP  *  -Peter Mattis  * various fixes along the route to GIMP 1.0  *  -Nick Lamb and others (list yourselves here people)  *  * The code for this filter is based on "tifftopnm" and "pnmtotiff",  *  2 programs that are a part of the netpbm package.  */
 end_comment
 
 begin_comment
@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28feaec90108
+DECL|struct|__anon2bd470b20108
 block|{
 DECL|member|compression
 name|gint
@@ -59,7 +59,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28feaec90208
+DECL|struct|__anon2bd470b20208
 block|{
 DECL|member|run
 name|gint
@@ -1056,7 +1056,7 @@ name|char
 modifier|*
 name|name
 decl_stmt|;
-DECL|struct|__anon28feaec90308
+DECL|struct|__anon2bd470b20308
 typedef|typedef
 struct|struct
 block|{
@@ -1263,6 +1263,17 @@ name|alpha
 operator|=
 literal|0
 expr_stmt|;
+if|if
+condition|(
+name|spp
+operator|>
+literal|3
+condition|)
+name|alpha
+operator|=
+literal|1
+expr_stmt|;
+comment|/* Kludge - like all the rest of this -- njl195 */
 name|TIFFGetField
 argument_list|(
 name|tif
