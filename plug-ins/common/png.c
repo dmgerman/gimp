@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29725cf20108
+DECL|struct|__anon2ba4de1c0108
 block|{
 DECL|member|interlaced
 name|gint
@@ -715,7 +715,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 operator|*

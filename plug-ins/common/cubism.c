@@ -173,7 +173,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27958eb50108
+DECL|struct|__anon2c7939940108
 block|{
 DECL|member|x
 DECL|member|y
@@ -191,7 +191,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27958eb50208
+DECL|struct|__anon2c7939940208
 block|{
 DECL|member|npts
 name|gint
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27958eb50308
+DECL|struct|__anon2c7939940308
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -236,7 +236,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27958eb50408
+DECL|struct|__anon2c7939940408
 block|{
 DECL|member|run
 name|gint
@@ -842,7 +842,7 @@ name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 name|run_mode

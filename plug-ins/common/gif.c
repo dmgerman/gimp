@@ -145,7 +145,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297f8c8d0108
+DECL|struct|__anon2b824dcd0108
 block|{
 DECL|member|interlace
 name|int
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297f8c8d0208
+DECL|struct|__anon2b824dcd0208
 block|{
 DECL|member|run
 name|gint
@@ -847,7 +847,7 @@ argument_list|(
 literal|"gif"
 argument_list|)
 expr_stmt|;
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 name|gtk_init

@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291c344d0108
+DECL|struct|__anon291c54370108
 block|{
 DECL|member|resolution
 name|guint
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291c344d0208
+DECL|struct|__anon291c54370208
 block|{
 DECL|member|run
 name|gint
@@ -252,7 +252,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291c344d0308
+DECL|struct|__anon291c54370308
 block|{
 DECL|member|width
 DECL|member|height
@@ -309,7 +309,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291c344d0408
+DECL|struct|__anon291c54370408
 block|{
 DECL|member|run
 name|gint
@@ -820,7 +820,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291c344d0508
+DECL|struct|__anon291c54370508
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -924,7 +924,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291c344d0608
+DECL|struct|__anon291c54370608
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1634,7 +1634,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 operator|*
@@ -1823,7 +1823,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 switch|switch

@@ -141,7 +141,7 @@ comment|/*********************************  *  *  PLUGIN-SPECIFIC STRUCTURES AND
 end_comment
 
 begin_typedef
-DECL|struct|__anon27f1bd390108
+DECL|struct|__anon27c1bfdd0108
 typedef|typedef
 struct|struct
 block|{
@@ -190,7 +190,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon27f1bd390208
+DECL|struct|__anon27c1bfdd0208
 typedef|typedef
 struct|struct
 block|{
@@ -708,7 +708,7 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 comment|/*  *  Get the specified drawable, do standard initialization.  */

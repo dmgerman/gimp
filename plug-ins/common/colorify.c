@@ -104,7 +104,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2960ca1b0108
+DECL|struct|__anon2c18a23a0108
 typedef|typedef
 struct|struct
 block|{
@@ -122,7 +122,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2960ca1b0208
+DECL|struct|__anon2c18a23a0208
 typedef|typedef
 struct|struct
 block|{
@@ -137,7 +137,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2960ca1b0308
+DECL|struct|__anon2c18a23a0308
 typedef|typedef
 struct|struct
 block|{
@@ -609,7 +609,7 @@ name|GDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 name|status

@@ -97,7 +97,7 @@ value|((unsigned int) (p[0]*77+p[1]*150+p[2]*29)>> 8)
 end_define
 
 begin_typedef
-DECL|struct|__anon2afc705a0108
+DECL|struct|__anon2be6e00d0108
 typedef|typedef
 struct|struct
 block|{
@@ -116,7 +116,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2afc705a0208
+DECL|struct|__anon2be6e00d0208
 typedef|typedef
 struct|struct
 block|{
@@ -540,7 +540,7 @@ name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 name|run_mode

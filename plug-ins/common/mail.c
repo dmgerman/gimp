@@ -466,7 +466,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a52ba60108
+DECL|struct|__anon2b05da1d0108
 block|{
 DECL|member|receipt
 name|char
@@ -770,7 +770,7 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 name|run_mode

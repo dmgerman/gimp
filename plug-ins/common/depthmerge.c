@@ -1063,7 +1063,7 @@ decl_stmt|;
 name|DepthMerge
 name|dm
 decl_stmt|;
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 name|runMode

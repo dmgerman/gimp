@@ -743,7 +743,7 @@ comment|/* Description of an extraction */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28d5a85a0108
+DECL|struct|__anon29649b3b0108
 typedef|typedef
 struct|struct
 block|{
@@ -1214,7 +1214,7 @@ value|(sizeof (extract)/sizeof (extract[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon28d5a85a0208
+DECL|struct|__anon29649b3b0208
 typedef|typedef
 struct|struct
 block|{
@@ -1232,7 +1232,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28d5a85a0308
+DECL|struct|__anon29649b3b0308
 typedef|typedef
 struct|struct
 block|{
@@ -1572,7 +1572,7 @@ decl_stmt|;
 name|gint
 name|j
 decl_stmt|;
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 name|run_mode

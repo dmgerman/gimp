@@ -107,7 +107,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/**** Printer List ****/
-DECL|struct|__anon288af72c0108
+DECL|struct|__anon2bbe08e90108
 block|{
 DECL|member|name
 name|char
@@ -597,7 +597,7 @@ end_decl_stmt
 begin_struct
 struct|struct
 comment|/* Plug-in variables */
-DECL|struct|__anon288af72c0208
+DECL|struct|__anon2bbe08e90208
 block|{
 DECL|member|output_to
 name|char
@@ -2236,7 +2236,7 @@ decl_stmt|;
 comment|/* temp filename */
 endif|#
 directive|endif
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 comment|/*   * Initialize parameter data...   */

@@ -204,7 +204,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_enum
-DECL|enum|__anon2925dfc00103
+DECL|enum|__anon2b4c1db30103
 enum|enum
 block|{
 DECL|enumerator|LINEAR
@@ -222,7 +222,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2925dfc00203
+DECL|enum|__anon2b4c1db30203
 enum|enum
 block|{
 DECL|enumerator|DRAG_NONE
@@ -240,7 +240,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2925dfc00308
+DECL|struct|__anon2b4c1db30308
 typedef|typedef
 struct|struct
 block|{
@@ -295,7 +295,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2925dfc00408
+DECL|struct|__anon2b4c1db30408
 typedef|typedef
 struct|struct
 block|{
@@ -340,7 +340,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2925dfc00508
+DECL|struct|__anon2b4c1db30508
 typedef|typedef
 struct|struct
 block|{
@@ -1517,7 +1517,7 @@ decl_stmt|;
 name|GStatusType
 name|status
 decl_stmt|;
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 name|status

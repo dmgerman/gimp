@@ -457,7 +457,7 @@ name|gint8
 modifier|*
 name|result_color
 decl_stmt|;
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 name|run_mode

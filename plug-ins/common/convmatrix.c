@@ -75,7 +75,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2b31435d0103
+DECL|enum|__anon2a1f31f30103
 typedef|typedef
 enum|enum
 block|{
@@ -293,7 +293,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b31435d0208
+DECL|struct|__anon2a1f31f30208
 typedef|typedef
 struct|struct
 block|{
@@ -449,7 +449,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2b31435d0308
+DECL|struct|__anon2a1f31f30308
 struct|struct
 block|{
 DECL|member|matrix
@@ -678,7 +678,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 operator|(

@@ -847,7 +847,7 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 name|strncpy

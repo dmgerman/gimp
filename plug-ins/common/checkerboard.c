@@ -64,7 +64,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28c9714a0108
+DECL|struct|__anon297d37100108
 typedef|typedef
 struct|struct
 block|{
@@ -437,7 +437,7 @@ name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 name|run_mode

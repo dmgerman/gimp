@@ -179,7 +179,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278021300108
+DECL|struct|__anon29be1e340108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -224,7 +224,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278021300208
+DECL|struct|__anon29be1e340208
 block|{
 DECL|member|run
 name|gint
@@ -446,7 +446,7 @@ name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 name|run_mode
