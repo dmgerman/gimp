@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * PSD Plugin version 1.9.9.8 (BETA)  * This GIMP plug-in is designed to load Adobe Photoshop(tm) files (.PSD)  *  * Adam D. Moss<adam@gimp.org><adam@foxbox.org>  *  *     If this plug-in fails to load a file which you think it should,  *     please tell me what seemed to go wrong, and anything you know  *     about the image you tried to load.  Please don't send big PSD  *     files to me without asking first.  *  *          Copyright (C) 1997-98 Adam D. Moss  *          Copyright (C) 1996    Torsten Martinsen  * Portions Copyright (C) 1995    Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/*  * PSD Plugin version 1.9.9.9 (BETA)  * This GIMP plug-in is designed to load Adobe Photoshop(tm) files (.PSD)  *  * Adam D. Moss<adam@gimp.org><adam@foxbox.org>  *  *     If this plug-in fails to load a file which you think it should,  *     please tell me what seemed to go wrong, and anything you know  *     about the image you tried to load.  Please don't send big PSD  *     files to me without asking first.  *  *          Copyright (C) 1997-98 Adam D. Moss  *          Copyright (C) 1996    Torsten Martinsen  * Portions Copyright (C) 1995    Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/*  * Adobe and Adobe Photoshop are trademarks of Adobe Systems  * Incor
 end_comment
 
 begin_comment
-comment|/*  * Revision history:  *  *  98.04.26 / v1.9.9.8 / Adam D. Moss  *       Implemented Aux-channels for layered files.  Got rid  *       of<endian.h> nonsense.  Improved Layer Mask padding.  *       Enforced num_layers/num_channels limit checks.  *  *  98.04.23 / v1.9.9.5 / Adam D. Moss  *       Got Layer Masks working, got Aux-channels working  *       for unlayered files, fixed 'raw' channel loading, fixed  *       some other mini-bugs, slightly better progress meters.  *       Thanks to everyone who is helping with the testing!  *  *  98.04.21 / v1.9.9.1 / Adam D. Moss  *       A little cleanup.  Implemented Layer Masks but disabled  *       them again - PS masks can be a different size to their  *       owning layer, unlike those in GIMP.  *  *  98.04.19 / v1.9.9.0 / Adam D. Moss  *       Much happier now.  *  *  97.03.13 / v1.9.0 / Adam D. Moss  *       Layers, channels and masks, oh my.  *       + Bugfixes& rearchitecturing.  *  *  97.01.30 / v1.0.12 / Torsten Martinsen  *       Flat PSD image loading.  */
+comment|/*  * Revision history:  *  *  98.04.28 / v1.9.9.9 / Adam D. Moss  *       Fixed the correct channel interlacing of 'raw' flat images.  *       Thanks to Christian Kirsch and Jay Cox for spotting this.  *       Changed some of the I/O routines.  *  *  98.04.26 / v1.9.9.8 / Adam D. Moss  *       Implemented Aux-channels for layered files.  Got rid  *       of<endian.h> nonsense.  Improved Layer Mask padding.  *       Enforced num_layers/num_channels limit checks.  *  *  98.04.23 / v1.9.9.5 / Adam D. Moss  *       Got Layer Masks working, got Aux-channels working  *       for unlayered files, fixed 'raw' channel loading, fixed  *       some other mini-bugs, slightly better progress meters.  *       Thanks to everyone who is helping with the testing!  *  *  98.04.21 / v1.9.9.1 / Adam D. Moss  *       A little cleanup.  Implemented Layer Masks but disabled  *       them again - PS masks can be a different size to their  *       owning layer, unlike those in GIMP.  *  *  98.04.19 / v1.9.9.0 / Adam D. Moss  *       Much happier now.  *  *  97.03.13 / v1.9.0 / Adam D. Moss  *       Layers, channels and masks, oh my.  *       + Bugfixes& rearchitecturing.  *  *  97.01.30 / v1.0.12 / Torsten Martinsen  *       Flat PSD image loading.  */
 end_comment
 
 begin_comment
@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27de7ed70103
+DECL|enum|__anon2afa67e50103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -318,7 +318,7 @@ name|gboolean
 name|visible
 decl_stmt|;
 DECL|member|name
-name|gchar
+name|guchar
 modifier|*
 name|name
 decl_stmt|;
@@ -413,12 +413,12 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon27de7ed70208
+DECL|struct|__anon2afa67e50208
 specifier|static
 struct|struct
 block|{
 DECL|member|signature
-name|gchar
+name|guchar
 name|signature
 index|[
 literal|4
@@ -566,7 +566,7 @@ name|gchar
 modifier|*
 name|src
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|dst
 parameter_list|,
@@ -592,7 +592,7 @@ name|gchar
 modifier|*
 name|src
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|dst
 parameter_list|,
@@ -750,6 +750,32 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|xfread_interlaced
+parameter_list|(
+name|FILE
+modifier|*
+name|fd
+parameter_list|,
+name|guchar
+modifier|*
+name|buf
+parameter_list|,
+name|long
+name|len
+parameter_list|,
+name|gchar
+modifier|*
+name|why
+parameter_list|,
+name|gint
+name|step
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 modifier|*
 name|xmalloc
 parameter_list|(
@@ -785,7 +811,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gchar
+name|guchar
 modifier|*
 name|getpascalstring
 parameter_list|(
@@ -793,7 +819,7 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|why
 parameter_list|)
@@ -811,7 +837,7 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|why
 parameter_list|)
@@ -829,7 +855,7 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|why
 parameter_list|)
@@ -5918,9 +5944,7 @@ decl_stmt|;
 name|char
 modifier|*
 name|name_buf
-decl_stmt|;
-name|unsigned
-name|char
+decl_stmt|,
 modifier|*
 name|cmykbuf
 decl_stmt|;
@@ -5930,13 +5954,13 @@ name|number
 init|=
 literal|1
 decl_stmt|;
+name|unsigned
 name|char
 modifier|*
-name|temp
-decl_stmt|;
-name|guchar
-modifier|*
 name|dest
+decl_stmt|,
+modifier|*
+name|temp
 decl_stmt|;
 name|long
 name|channels
@@ -7783,7 +7807,7 @@ operator|)
 literal|0.50
 argument_list|)
 expr_stmt|;
-name|xfread
+name|xfread_interlaced
 argument_list|(
 name|fd
 argument_list|,
@@ -7793,7 +7817,9 @@ name|PSDheader
 operator|.
 name|imgdatalen
 argument_list|,
-literal|"image data"
+literal|"raw image data"
+argument_list|,
+name|step
 argument_list|)
 expr_stmt|;
 block|}
@@ -7816,7 +7842,7 @@ operator|.
 name|imgdatalen
 argument_list|)
 expr_stmt|;
-name|xfread
+name|xfread_interlaced
 argument_list|(
 name|fd
 argument_list|,
@@ -7826,7 +7852,9 @@ name|PSDheader
 operator|.
 name|imgdatalen
 argument_list|,
-literal|"image data"
+literal|"raw cmyk image data"
+argument_list|,
+name|step
 argument_list|)
 expr_stmt|;
 name|gimp_progress_update
@@ -7891,6 +7919,7 @@ expr_stmt|;
 goto|goto
 name|finish_up
 goto|;
+comment|/* Haha!  Look!  A goto! */
 block|}
 else|else
 block|{
@@ -7922,7 +7951,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"@@@@ Didn't know about this.\n"
+literal|"@@@@ Didn't know that this could happen...\n"
 argument_list|)
 expr_stmt|;
 for|for
@@ -8102,7 +8131,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|decode (long clen,long uclen,char * src,guchar * dst,int step)
+DECL|function|decode (long clen,long uclen,char * src,char * dst,int step)
 name|decode
 parameter_list|(
 name|long
@@ -8115,7 +8144,7 @@ name|char
 modifier|*
 name|src
 parameter_list|,
-name|guchar
+name|char
 modifier|*
 name|dst
 parameter_list|,
@@ -8272,7 +8301,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|packbitsdecode (long * clenp,long uclen,char * src,guchar * dst,int step)
+DECL|function|packbitsdecode (long * clenp,long uclen,char * src,char * dst,int step)
 name|packbitsdecode
 parameter_list|(
 name|long
@@ -8286,7 +8315,7 @@ name|char
 modifier|*
 name|src
 parameter_list|,
-name|guchar
+name|char
 modifier|*
 name|dst
 parameter_list|,
@@ -8893,7 +8922,7 @@ decl_stmt|;
 name|long
 name|n
 decl_stmt|;
-name|guchar
+name|char
 modifier|*
 name|rp
 decl_stmt|,
@@ -9116,7 +9145,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|dumpchunk (size_t n,FILE * fd,gchar * why)
+DECL|function|dumpchunk (size_t n,FILE * fd,guchar * why)
 name|dumpchunk
 parameter_list|(
 name|size_t
@@ -9126,7 +9155,7 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|why
 parameter_list|)
@@ -9179,7 +9208,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|throwchunk (size_t n,FILE * fd,gchar * why)
+DECL|function|throwchunk (size_t n,FILE * fd,guchar * why)
 name|throwchunk
 parameter_list|(
 name|size_t
@@ -9189,12 +9218,12 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|why
 parameter_list|)
 block|{
-name|gchar
+name|guchar
 modifier|*
 name|tmpchunk
 decl_stmt|;
@@ -9252,21 +9281,21 @@ end_endif
 
 begin_function
 specifier|static
-name|gchar
+name|guchar
 modifier|*
-DECL|function|getpascalstring (FILE * fd,gchar * why)
+DECL|function|getpascalstring (FILE * fd,guchar * why)
 name|getpascalstring
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|why
 parameter_list|)
 block|{
-name|gchar
+name|guchar
 modifier|*
 name|tmpchunk
 decl_stmt|;
@@ -9356,21 +9385,36 @@ modifier|*
 name|why
 parameter_list|)
 block|{
-name|guchar
+name|gint
 name|tmp
 decl_stmt|;
-name|xfread
+name|tmp
+operator|=
+name|fgetc
 argument_list|(
 name|fd
-argument_list|,
-operator|&
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
 name|tmp
+operator|==
+name|EOF
+condition|)
+block|{
+name|printf
+argument_list|(
+literal|"%s: unexpected EOF while reading '%s' chunk\n"
 argument_list|,
-literal|1
+name|prog_name
 argument_list|,
 name|why
 argument_list|)
 expr_stmt|;
+name|gimp_quit
+argument_list|()
+expr_stmt|;
+block|}
 return|return
 operator|(
 name|tmp
@@ -9402,26 +9446,20 @@ name|b1
 decl_stmt|,
 name|b2
 decl_stmt|;
-name|xfread
+name|b1
+operator|=
+name|getguchar
 argument_list|(
 name|fd
-argument_list|,
-operator|&
-name|b1
-argument_list|,
-literal|1
 argument_list|,
 name|why
 argument_list|)
 expr_stmt|;
-name|xfread
+name|b2
+operator|=
+name|getguchar
 argument_list|(
 name|fd
-argument_list|,
-operator|&
-name|b2
-argument_list|,
-literal|1
 argument_list|,
 name|why
 argument_list|)
@@ -9475,50 +9513,38 @@ decl_stmt|;
 name|gulong
 name|w
 decl_stmt|;
-name|xfread
-argument_list|(
-name|fd
-argument_list|,
-operator|&
 name|s1
-argument_list|,
-literal|1
+operator|=
+name|getguchar
+argument_list|(
+name|fd
 argument_list|,
 name|why
 argument_list|)
 expr_stmt|;
-name|xfread
-argument_list|(
-name|fd
-argument_list|,
-operator|&
 name|s2
-argument_list|,
-literal|1
+operator|=
+name|getguchar
+argument_list|(
+name|fd
 argument_list|,
 name|why
 argument_list|)
 expr_stmt|;
-name|xfread
-argument_list|(
-name|fd
-argument_list|,
-operator|&
 name|s3
-argument_list|,
-literal|1
+operator|=
+name|getguchar
+argument_list|(
+name|fd
 argument_list|,
 name|why
 argument_list|)
 expr_stmt|;
-name|xfread
+name|s4
+operator|=
+name|getguchar
 argument_list|(
 name|fd
-argument_list|,
-operator|&
-name|s4
-argument_list|,
-literal|1
 argument_list|,
 name|why
 argument_list|)
@@ -9610,6 +9636,116 @@ expr_stmt|;
 name|gimp_quit
 argument_list|()
 expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|xfread_interlaced (FILE * fd,guchar * buf,long len,gchar * why,gint step)
+name|xfread_interlaced
+parameter_list|(
+name|FILE
+modifier|*
+name|fd
+parameter_list|,
+name|guchar
+modifier|*
+name|buf
+parameter_list|,
+name|long
+name|len
+parameter_list|,
+name|gchar
+modifier|*
+name|why
+parameter_list|,
+name|gint
+name|step
+parameter_list|)
+block|{
+name|guchar
+modifier|*
+name|dest
+decl_stmt|;
+name|gint
+name|pix
+decl_stmt|,
+name|pos
+decl_stmt|,
+name|bpplane
+decl_stmt|;
+name|bpplane
+operator|=
+name|len
+operator|/
+name|step
+expr_stmt|;
+if|if
+condition|(
+name|len
+operator|%
+name|step
+operator|!=
+literal|0
+condition|)
+block|{
+name|printf
+argument_list|(
+literal|"PSD: Stern warning: data size is not a factor of step size.\n"
+argument_list|)
+expr_stmt|;
+block|}
+for|for
+control|(
+name|pix
+operator|=
+literal|0
+init|;
+name|pix
+operator|<
+name|step
+condition|;
+name|pix
+operator|++
+control|)
+block|{
+name|dest
+operator|=
+name|buf
+operator|+
+name|pix
+expr_stmt|;
+for|for
+control|(
+name|pos
+operator|=
+literal|0
+init|;
+name|pos
+operator|<
+name|bpplane
+condition|;
+name|pos
+operator|++
+control|)
+block|{
+operator|*
+name|dest
+operator|=
+name|getguchar
+argument_list|(
+name|fd
+argument_list|,
+name|why
+argument_list|)
+expr_stmt|;
+name|dest
+operator|+=
+name|step
+expr_stmt|;
+block|}
 block|}
 block|}
 end_function
