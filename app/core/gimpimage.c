@@ -264,7 +264,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon274dfdf90103
+DECL|enum|__anon2bcedef90103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -4014,6 +4014,23 @@ argument_list|,
 name|gimage
 operator|->
 name|height
+argument_list|)
+expr_stmt|;
+name|g_object_ref
+argument_list|(
+name|gimage
+operator|->
+name|selection_mask
+argument_list|)
+expr_stmt|;
+name|gimp_item_sink
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|gimage
+operator|->
+name|selection_mask
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -9893,9 +9910,12 @@ argument_list|,
 name|position
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|gimp_item_sink
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  notify the layers dialog of the currently active layer  */
@@ -10952,6 +10972,17 @@ return|return
 name|FALSE
 return|;
 block|}
+comment|/*  let the channel know about the gimage  */
+name|gimp_item_set_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|channel
+argument_list|)
+argument_list|,
+name|gimage
+argument_list|)
+expr_stmt|;
 name|gimp_image_undo_push_channel_add
 argument_list|(
 name|gimage
@@ -11054,9 +11085,12 @@ argument_list|,
 name|position
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|gimp_item_sink
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|channel
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  notify this gimage of the currently active channel  */
@@ -11830,9 +11864,12 @@ argument_list|,
 name|position
 argument_list|)
 expr_stmt|;
-name|g_object_unref
+name|gimp_item_sink
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|vectors
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  notify this gimage of the currently active vectors  */

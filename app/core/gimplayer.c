@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2918da400103
+DECL|enum|__anon2ade6df40103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -3850,6 +3850,16 @@ operator|=
 name|g_object_ref
 argument_list|(
 name|mask
+argument_list|)
+expr_stmt|;
+name|gimp_item_sink
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|layer
+operator|->
+name|mask
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_layer_mask_set_layer

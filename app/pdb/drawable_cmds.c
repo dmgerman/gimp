@@ -698,8 +698,7 @@ condition|)
 block|{
 if|if
 condition|(
-operator|!
-name|gimp_item_get_image
+name|gimp_item_is_floating
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -707,9 +706,12 @@ name|drawable
 argument_list|)
 argument_list|)
 condition|)
-name|g_object_unref
+name|gimp_item_sink
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else

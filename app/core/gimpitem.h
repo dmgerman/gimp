@@ -151,6 +151,11 @@ name|gboolean
 name|linked
 decl_stmt|;
 comment|/*  control linkage          */
+DECL|member|floating
+name|gboolean
+name|floating
+decl_stmt|;
+comment|/*  added to an image?       */
 block|}
 struct|;
 end_struct
@@ -460,6 +465,29 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|gboolean
+name|gimp_item_is_floating
+parameter_list|(
+specifier|const
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_item_sink
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void

@@ -3837,11 +3837,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|mask
-argument_list|)
-expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
