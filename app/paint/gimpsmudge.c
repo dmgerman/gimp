@@ -742,7 +742,7 @@ operator|.
 name|bytes
 argument_list|)
 expr_stmt|;
-comment|/*  If clipped, fill the smudge buffer with the color at the brush position.  */
+comment|/*  If clipped, prefill the smudge buffer       with the color at the brush position.  */
 if|if
 condition|(
 name|x
@@ -755,12 +755,13 @@ name|y
 operator|!=
 name|area
 operator|->
-expr|||
+name|y
+operator|||
 name|w
 operator|!=
 name|area
 operator|->
-name|widht
+name|width
 operator|||
 name|h
 operator|!=
