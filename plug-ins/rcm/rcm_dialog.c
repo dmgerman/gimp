@@ -64,12 +64,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"rcm_pixmaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"rcm_gdk.h"
 end_include
 
@@ -83,6 +77,24 @@ begin_include
 include|#
 directive|include
 file|"rcm_dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixmaps/rcm_360.xpm"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixmaps/rcm_a_b.xpm"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixmaps/rcm_cw.xpm"
 end_include
 
 begin_comment
@@ -779,7 +791,7 @@ name|circle
 operator|->
 name|cw_ccw_box
 argument_list|,
-name|rcm_cw
+name|rcm_cw_xpm
 argument_list|)
 expr_stmt|;
 name|rcm_set_pixmap
@@ -799,7 +811,7 @@ name|circle
 operator|->
 name|a_b_box
 argument_list|,
-name|rcm_a_b
+name|rcm_a_b_xpm
 argument_list|)
 expr_stmt|;
 name|rcm_set_pixmap
@@ -819,7 +831,7 @@ name|circle
 operator|->
 name|f360_box
 argument_list|,
-name|rcm_360
+name|rcm_360_xpm
 argument_list|)
 expr_stmt|;
 block|}

@@ -76,13 +76,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"rcm_pixmaps.h"
+file|"rcm_callback.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rcm_callback.h"
+file|"pixmaps/rcm_ccw.xpm"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixmaps/rcm_cw.xpm"
 end_include
 
 begin_comment
@@ -494,9 +500,9 @@ operator|>
 literal|0
 operator|)
 condition|?
-name|rcm_cw
+name|rcm_cw_xpm
 else|:
-name|rcm_ccw
+name|rcm_ccw_xpm
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text
