@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is a plug-in for the GIMP.  *  * Generates images containing vector type drawings.  *  * Copyright (C) 1997 Andy Thomas  alt@picnic.demon.co.uk  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *   * Some of this code was taken from the Whirl plug-in  * which was copyrighted by Federico Mena Quintero (as below).  *   * Whirl plug-in --- distort an image into a whirlpool  * Copyright (C) 1997 Federico Mena Quintero             *  */
+comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is a plug-in for the GIMP.  *  * Generates images containing vector type drawings.  *  * Copyright (C) 1997 Andy Thomas  alt@picnic.demon.co.uk  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Some of this code was taken from the Whirl plug-in  * which was copyrighted by Federico Mena Quintero (as below).  *  * Whirl plug-in --- distort an image into a whirlpool  * Copyright (C) 1997 Federico Mena Quintero  *  */
 end_comment
 
 begin_comment
-comment|/* Change log:  * 0.9 First public release.   * 0.95 Second release.  *   * 0.96 Added patch from  Rob Saunders that introduces a isometric type grid  *      Removed use of gtk_idle* stuff on position update. Not required.  *  * 1.0  Fixed to work with the new gtk+-0.99.4 (tooltips stuff has changed).    *   * 1.1  Fixed crashes when objects not fully defined  *   * 1.2  More bug fixes and prevent gtk warning when creating new figs  *   * 1.3  Portability fixes and fixed bug reports 257 and 258 from and 81& 101& 133  *      http://www.wilberworks.com/bugs.cgi  *  * 1.4  Fixed isometric grid so that its mathematical properties can be  *      exploited. Close wasn't good enough.  */
+comment|/* Change log:  * 0.9 First public release.  * 0.95 Second release.  *  * 0.96 Added patch from  Rob Saunders that introduces a isometric type grid  *      Removed use of gtk_idle* stuff on position update. Not required.  *  * 1.0  Fixed to work with the new gtk+-0.99.4 (tooltips stuff has changed).  *  * 1.1  Fixed crashes when objects not fully defined  *  * 1.2  More bug fixes and prevent gtk warning when creating new figs  *  * 1.3  Portability fixes and fixed bug reports 257 and 258 from and 81& 101& 133  *      http://www.wilberworks.com/bugs.cgi  *  * 1.4  Fixed isometric grid so that its mathematical properties can be  *      exploited. Close wasn't good enough.  */
 end_comment
 
 begin_include
@@ -999,7 +999,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1994050103
+DECL|enum|__anon2a36bd480103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1051,7 +1051,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1994050203
+DECL|enum|__anon2a36bd480203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1072,7 +1072,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1994050303
+DECL|enum|__anon2a36bd480303
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -1093,7 +1093,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1994050403
+DECL|enum|__anon2a36bd480403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1120,7 +1120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1994050503
+DECL|enum|__anon2a36bd480503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1141,7 +1141,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1994050603
+DECL|enum|__anon2a36bd480603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1309,7 +1309,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1994050708
+DECL|struct|__anon2a36bd480708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1348,7 +1348,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1994050808
+DECL|struct|__anon2a36bd480808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1397,7 +1397,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1994050908
+DECL|struct|__anon2a36bd480908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1567,7 +1567,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1994050a03
+DECL|enum|__anon2a36bd480a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1591,7 +1591,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1994050b03
+DECL|enum|__anon2a36bd480b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1609,7 +1609,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1994050c03
+DECL|enum|__anon2a36bd480c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1630,7 +1630,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1994050d03
+DECL|enum|__anon2a36bd480d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -5868,29 +5868,13 @@ name|snap2grid
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|selvals
-operator|.
-name|opts
-operator|.
-name|lockongrid
-operator|!=
-name|current_obj
-operator|->
-name|opts
-operator|.
-name|lockongrid
-condition|)
-block|{
 if|#
 directive|if
 literal|0
 comment|/* Maurits: code not implemented */
-block|gtk_toggle_button_set_active 	(GTK_TOGGLE_BUTTON (gfig_opt_widget.lockongrid), 	 current_obj->opts.lockongrid);
+block|if (selvals.opts.lockongrid != current_obj->opts.lockongrid)     {       gtk_toggle_button_set_active 	(GTK_TOGGLE_BUTTON (gfig_opt_widget.lockongrid), 	 current_obj->opts.lockongrid);     }
 endif|#
 directive|endif
-block|}
 if|if
 condition|(
 name|selvals
@@ -6628,7 +6612,7 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-comment|/*     * draw_name     * version    * obj_list    *    */
+comment|/*    * draw_name    * version    * obj_list    *    */
 name|gfig_name_encode
 argument_list|(
 name|conv_buf
@@ -11282,7 +11266,7 @@ modifier|*
 name|bdesc
 parameter_list|)
 block|{
-comment|/* Given the name of a brush then paint it and return the ID of the image     * the preview can be got from    */
+comment|/* Given the name of a brush then paint it and return the ID of the image    * the preview can be got from    */
 specifier|static
 name|gint32
 name|layer_ID
@@ -12662,7 +12646,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Reverse line"
+literal|"Reverse Line"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -12772,7 +12756,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Scale to image"
+literal|"Scale to Image"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -13015,7 +12999,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Approx. circles/ellipses"
+literal|"Approx. Circles/Ellipses"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -14397,7 +14381,7 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-comment|/* The secltion settings -     * 1) Type (option menu)    * 2) Anti A (toggle)    * 3) Feather (toggle)    * 4) F radius (slider)    * 5) Fill type (option menu)     * 6) Opacity (slider)    * 7) When to fill (toggle)    * 8) Arc as segment/sector     */
+comment|/* The secltion settings -    * 1) Type (option menu)    * 2) Anti A (toggle)    * 3) Feather (toggle)    * 4) F radius (slider)    * 5) Fill type (option menu)    * 6) Opacity (slider)    * 7) When to fill (toggle)    * 8) Arc as segment/sector    */
 comment|/* 1 */
 name|menu
 operator|=
@@ -15287,7 +15271,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Show image"
+literal|"Show Image"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -15488,7 +15472,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Grid type:"
+literal|"Grid Type:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -15626,7 +15610,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Grid color:"
+literal|"Grid Color:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -15655,7 +15639,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Max undo:"
+literal|"Max Undo:"
 argument_list|)
 argument_list|,
 literal|0
@@ -15710,7 +15694,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Show position"
+literal|"Show Position"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -15782,7 +15766,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Hide control points"
+literal|"Hide Control Points"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -16048,7 +16032,63 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Show grid"
+literal|"Snap to Grid"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+name|toggle
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|toggle
+argument_list|,
+literal|"toggled"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
+argument_list|,
+operator|&
+name|selvals
+operator|.
+name|opts
+operator|.
+name|snap2grid
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|toggle
+argument_list|)
+expr_stmt|;
+name|gfig_opt_widget
+operator|.
+name|snap2grid
+operator|=
+name|toggle
+expr_stmt|;
+name|toggle
+operator|=
+name|gtk_check_button_new_with_label
+argument_list|(
+name|_
+argument_list|(
+literal|"Display Grid"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -16101,18 +16141,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|toggle
-argument_list|,
-name|_
-argument_list|(
-literal|"Show grid"
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|toggle
@@ -16124,79 +16152,11 @@ name|drawgrid
 operator|=
 name|toggle
 expr_stmt|;
-name|toggle
-operator|=
-name|gtk_check_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"Snap to grid"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-name|toggle
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|toggle
-argument_list|,
-literal|"toggled"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gimp_toggle_button_update
-argument_list|)
-argument_list|,
-operator|&
-name|selvals
-operator|.
-name|opts
-operator|.
-name|snap2grid
-argument_list|)
-expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|toggle
-argument_list|,
-name|_
-argument_list|(
-literal|"Snap to grid"
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle
-argument_list|)
-expr_stmt|;
-name|gfig_opt_widget
-operator|.
-name|snap2grid
-operator|=
-name|toggle
-expr_stmt|;
 if|#
 directive|if
 literal|0
-comment|/* 17/10/2003 (Maurits): this option is not implemented. Therefore removing      it from the user interface */
-block|toggle = gtk_check_button_new_with_label (_("Lock on Grid"));   gtk_box_pack_start (GTK_BOX (hbox), toggle, FALSE, FALSE, 0);    g_signal_connect (toggle, "toggled",                     G_CALLBACK (gimp_toggle_button_update),&selvals.opts.lockongrid);   gtk_widget_show (toggle);   gfig_opt_widget.lockongrid = toggle;
+comment|/* 17/10/2003 (Maurits): this option is not implemented.      Therefore removing it from the user interface. */
+block|toggle = gtk_check_button_new_with_label ("Lock on Grid");   gtk_box_pack_start (GTK_BOX (hbox), toggle, FALSE, FALSE, 0);   g_signal_connect (toggle, "toggled",                     G_CALLBACK (gimp_toggle_button_update),&selvals.opts.lockongrid);   gtk_widget_show (toggle);   gfig_opt_widget.lockongrid = toggle;
 endif|#
 directive|endif
 name|table
@@ -16266,7 +16226,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Grid spacing:"
+literal|"Grid Spacing:"
 argument_list|)
 argument_list|,
 literal|0
@@ -17203,12 +17163,12 @@ comment|/* NOT USED */
 end_comment
 
 begin_comment
-unit|static void gfig_obj_size_update (gint sz) {   static gchar buf[256];      sprintf (buf, "%6d", sz);   gtk_label_set_text (GTK_LABEL (obj_size_label), buf); }    static GtkWidget * gfig_obj_size_label (void) {   GtkWidget *label;   GtkWidget *hbox;    hbox = gtk_hbox_new (TRUE, 6);
+unit|static void gfig_obj_size_update (gint sz) {   static gchar buf[256];    sprintf (buf, "%6d", sz);   gtk_label_set_text (GTK_LABEL (obj_size_label), buf); }  static GtkWidget * gfig_obj_size_label (void) {   GtkWidget *label;   GtkWidget *hbox;    hbox = gtk_hbox_new (TRUE, 6);
 comment|/* Position labels */
 end_comment
 
 begin_endif
-unit|label = gtk_label_new (_("Size:"));   gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);   gtk_widget_show (label);    obj_size_label = gtk_label_new ("0");   gtk_misc_set_alignment (GTK_MISC (obj_size_label), 0.5, 0.5);       gtk_box_pack_start (GTK_BOX (hbox), obj_size_label, FALSE, FALSE, 0);   gtk_widget_show (obj_size_label);    gtk_widget_show (hbox);    return (hbox); }
+unit|label = gtk_label_new (_("Size:"));   gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);   gtk_widget_show (label);    obj_size_label = gtk_label_new ("0");   gtk_misc_set_alignment (GTK_MISC (obj_size_label), 0.5, 0.5);   gtk_box_pack_start (GTK_BOX (hbox), obj_size_label, FALSE, FALSE, 0);   gtk_widget_show (obj_size_label);    gtk_widget_show (hbox);    return (hbox); }
 endif|#
 directive|endif
 end_endif
@@ -22940,7 +22900,7 @@ argument_list|(
 name|old_current
 argument_list|)
 expr_stmt|;
-comment|/* If have old object and NOT scaleing currently then force     * back to saved coord type.    */
+comment|/* If have old object and NOT scaleing currently then force    * back to saved coord type.    */
 name|gfig_update_stat_labels
 argument_list|()
 expr_stmt|;
@@ -25165,7 +25125,7 @@ operator|==
 name|ISO_GRID
 condition|)
 block|{
-comment|/*        * This really needs a picture to show the math...        *        * Consider an isometric grid with one of the sets of lines parallel to the         * y axis (vertical alignment). Further define that the origin of a Cartesian         * grid is at a isometric vertex.  For simplicity consider the first quadrant only.        *         *  - Let one line segment between vertices be r        *  - Define the value of r as the grid spacing        *  - Assign an integer n identifier to each vertical grid line along the x axis.        *    with n=0 being the y axis. n can be any integer        *  - Let m to be any integer        *  - Let h be the spacing between vertical grid lines measured along the x axis.        *    It follows from the isometric grid that h has a value of r * COS(1/6 Pi Rad)        *         *  Consider a Vertex V at the Cartesian location [Xv, Yv]        *        *   It follows that vertices belong to the set...        *   V[Xv, Yv] = [ [ n * h ] ,        *                 [ m * r + ( 0.5 * r (n % 2) ) ] ]        *   for all integers n and m        *        * Who cares? Me. It's useful in solving this problem:        * Consider an arbitrary point P[Xp,Yp], find the closest vertex in the set V.        *        * Restated this problem is "find values for m and n that are drive V closest to P"        *         * A Solution method (there may be a better one?):        *         * Step 1) bound n to the two closest values for Xp        *         n_lo = (int) (Xp / h)         *         n_hi = n_lo + 1        *         * Step 2) Consider the two closes vertices for each n_lo and n_hi. The further of        *         the vertices in each pair can readily be discarded.        *         m_lo_n_lo = (int) ( (Yp / r) - 0.5 (n_lo % 2) )        *         m_hi_n_lo = m_lo_n_lo + 1        *        *         m_lo_n_hi = (int) ( (Yp / r) - 0.5 (n_hi % 2) )        *         m_hi_n_hi = m_hi_n_hi        *         * Step 3) compute the distance from P to V1 and V2. Snap to the closer point.        */
+comment|/*        * This really needs a picture to show the math...        *        * Consider an isometric grid with one of the sets of lines parallel to the        * y axis (vertical alignment). Further define that the origin of a Cartesian        * grid is at a isometric vertex.  For simplicity consider the first quadrant only.        *        *  - Let one line segment between vertices be r        *  - Define the value of r as the grid spacing        *  - Assign an integer n identifier to each vertical grid line along the x axis.        *    with n=0 being the y axis. n can be any integer        *  - Let m to be any integer        *  - Let h be the spacing between vertical grid lines measured along the x axis.        *    It follows from the isometric grid that h has a value of r * COS(1/6 Pi Rad)        *        *  Consider a Vertex V at the Cartesian location [Xv, Yv]        *        *   It follows that vertices belong to the set...        *   V[Xv, Yv] = [ [ n * h ] ,        *                 [ m * r + ( 0.5 * r (n % 2) ) ] ]        *   for all integers n and m        *        * Who cares? Me. It's useful in solving this problem:        * Consider an arbitrary point P[Xp,Yp], find the closest vertex in the set V.        *        * Restated this problem is "find values for m and n that are drive V closest to P"        *        * A Solution method (there may be a better one?):        *        * Step 1) bound n to the two closest values for Xp        *         n_lo = (int) (Xp / h)        *         n_hi = n_lo + 1        *        * Step 2) Consider the two closes vertices for each n_lo and n_hi. The further of        *         the vertices in each pair can readily be discarded.        *         m_lo_n_lo = (int) ( (Yp / r) - 0.5 (n_lo % 2) )        *         m_hi_n_lo = m_lo_n_lo + 1        *        *         m_lo_n_hi = (int) ( (Yp / r) - 0.5 (n_hi % 2) )        *         m_hi_n_hi = m_hi_n_hi        *        * Step 3) compute the distance from P to V1 and V2. Snap to the closer point.        */
 name|gint
 name|n_lo
 decl_stmt|;
@@ -25417,7 +25377,7 @@ operator|=
 name|m_hi_n_hi
 expr_stmt|;
 block|}
-comment|/* Now, which is closer to [x,y]? we can use a somewhat abbreviated form of the         * distance formula since we only care about relative values. */
+comment|/* Now, which is closer to [x,y]? we can use a somewhat abbreviated form of the        * distance formula since we only care about relative values. */
 name|x1
 operator|=
 call|(
@@ -26809,7 +26769,7 @@ comment|/* Stuff for the generation/deletion of objects. */
 end_comment
 
 begin_comment
-comment|/* Objects are easy one they are created - you just go down the object   * list calling the draw function for each object but... when they   * are been created we have to be a little more careful. When   * the first point is placed on the canvas we create the object,   * the mouse position then defines the next point that can move around.  * careful how we draw this position.  */
+comment|/* Objects are easy one they are created - you just go down the object  * list calling the draw function for each object but... when they  * are been created we have to be a little more careful. When  * the first point is placed on the canvas we create the object,  * the mouse position then defines the next point that can move around.  * careful how we draw this position.  */
 end_comment
 
 begin_function
@@ -29541,7 +29501,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Create a new line object. starting at the x, y point might add styles   * later.  */
+comment|/* Create a new line object. starting at the x, y point might add styles  * later.  */
 end_comment
 
 begin_function
@@ -36438,7 +36398,7 @@ condition|)
 return|return;
 comment|/* No points */
 comment|/* Leave the first pnt alone -    * Edge point defines "radius"    * Only undraw if already have edge point.    */
-comment|/* Hack - turn off cnt points in draw routine     * Looking back over the other update routines I could    * use this trick again and cut down on code size!    */
+comment|/* Hack - turn off cnt points in draw routine    * Looking back over the other update routines I could    * use this trick again and cut down on code size!    */
 if|if
 condition|(
 operator|(
@@ -36555,7 +36515,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* first point is center   * next defines the radius  */
+comment|/* first point is center  * next defines the radius  */
 end_comment
 
 begin_function
@@ -36970,7 +36930,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Arch details   * Given three points get arc radius and the co-ords   * of center point.  */
+comment|/* Arch details  * Given three points get arc radius and the co-ords  * of center point.  */
 end_comment
 
 begin_function
@@ -41681,7 +41641,7 @@ condition|)
 return|return;
 comment|/* No points */
 comment|/* Leave the first pnt alone -    * Edge point defines "radius"    * Only undraw if already have edge point.    */
-comment|/* Hack - turn off cnt points in draw routine     * Looking back over the other update routines I could    * use this trick again and cut down on code size!    */
+comment|/* Hack - turn off cnt points in draw routine    * Looking back over the other update routines I could    * use this trick again and cut down on code size!    */
 if|if
 condition|(
 operator|(
@@ -41935,7 +41895,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* first point is center   * next defines the radius  */
+comment|/* first point is center  * next defines the radius  */
 end_comment
 
 begin_function
@@ -43658,7 +43618,7 @@ condition|)
 return|return;
 comment|/* No points */
 comment|/* Leave the first pnt alone -    * Edge point defines "radius"    * Only undraw if already have edge point.    */
-comment|/* Hack - turn off cnt points in draw routine     * Looking back over the other update routines I could    * use this trick again and cut down on code size!    */
+comment|/* Hack - turn off cnt points in draw routine    * Looking back over the other update routines I could    * use this trick again and cut down on code size!    */
 if|if
 condition|(
 operator|(
@@ -43775,7 +43735,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* first point is center   * next defines the radius  */
+comment|/* first point is center  * next defines the radius  */
 end_comment
 
 begin_function
@@ -45790,7 +45750,7 @@ name|s_pnt
 condition|)
 return|return;
 comment|/* No points */
-comment|/* Hack - turn off cnt points in draw routine     */
+comment|/* Hack - turn off cnt points in draw routine    */
 if|if
 condition|(
 operator|(
@@ -45921,7 +45881,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* first point is center   * next defines the radius  */
+comment|/* first point is center  * next defines the radius  */
 end_comment
 
 begin_function
@@ -46366,7 +46326,7 @@ name|gint
 name|show_single
 parameter_list|)
 block|{
-comment|/* Show_single - only one object to draw Unless shift     * is down in which case show all.    */
+comment|/* Show_single - only one object to draw Unless shift    * is down in which case show all.    */
 name|gint
 name|count
 init|=
