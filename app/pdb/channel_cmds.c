@@ -301,7 +301,6 @@ name|gdouble
 name|opacity
 decl_stmt|;
 name|GimpRGB
-modifier|*
 name|color
 decl_stmt|;
 name|Channel
@@ -428,10 +427,6 @@ name|FALSE
 expr_stmt|;
 name|color
 operator|=
-operator|(
-name|GimpRGB
-operator|*
-operator|)
 name|args
 index|[
 literal|5
@@ -439,7 +434,7 @@ index|]
 operator|.
 name|value
 operator|.
-name|pdb_pointer
+name|pdb_color
 expr_stmt|;
 if|if
 condition|(
@@ -449,7 +444,6 @@ block|{
 name|GimpRGB
 name|rgb_color
 init|=
-operator|*
 name|color
 decl_stmt|;
 name|rgb_color
@@ -2282,10 +2276,7 @@ modifier|*
 name|channel
 decl_stmt|;
 name|GimpRGB
-modifier|*
 name|color
-init|=
-name|NULL
 decl_stmt|;
 name|channel
 operator|=
@@ -2322,16 +2313,6 @@ condition|)
 block|{
 name|color
 operator|=
-name|g_new
-argument_list|(
-name|GimpRGB
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-operator|*
-name|color
-operator|=
 name|channel
 operator|->
 name|color
@@ -2358,7 +2339,7 @@ index|]
 operator|.
 name|value
 operator|.
-name|pdb_pointer
+name|pdb_color
 operator|=
 name|color
 expr_stmt|;

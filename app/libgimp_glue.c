@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib.h>
 end_include
 
 begin_include
@@ -41,18 +41,18 @@ end_include
 
 begin_function
 name|gboolean
-DECL|function|gimp_palette_set_foreground (const GimpRGB * rgb)
+DECL|function|gimp_palette_set_foreground (const GimpRGB * color)
 name|gimp_palette_set_foreground
 parameter_list|(
 specifier|const
 name|GimpRGB
 modifier|*
-name|rgb
+name|color
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
-name|rgb
+name|color
 operator|!=
 name|NULL
 argument_list|,
@@ -63,7 +63,7 @@ name|gimp_context_set_foreground
 argument_list|(
 name|NULL
 argument_list|,
-name|rgb
+name|color
 argument_list|)
 expr_stmt|;
 return|return
@@ -74,17 +74,17 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_palette_get_foreground (GimpRGB * rgb)
+DECL|function|gimp_palette_get_foreground (GimpRGB * color)
 name|gimp_palette_get_foreground
 parameter_list|(
 name|GimpRGB
 modifier|*
-name|rgb
+name|color
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
-name|rgb
+name|color
 operator|!=
 name|NULL
 argument_list|,
@@ -95,7 +95,7 @@ name|gimp_context_get_foreground
 argument_list|(
 name|NULL
 argument_list|,
-name|rgb
+name|color
 argument_list|)
 expr_stmt|;
 return|return
@@ -106,18 +106,18 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_palette_set_background (const GimpRGB * rgb)
+DECL|function|gimp_palette_set_background (const GimpRGB * color)
 name|gimp_palette_set_background
 parameter_list|(
 specifier|const
 name|GimpRGB
 modifier|*
-name|rgb
+name|color
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
-name|rgb
+name|color
 operator|!=
 name|NULL
 argument_list|,
@@ -128,7 +128,7 @@ name|gimp_context_set_background
 argument_list|(
 name|NULL
 argument_list|,
-name|rgb
+name|color
 argument_list|)
 expr_stmt|;
 return|return
@@ -139,17 +139,17 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_palette_get_background (GimpRGB * rgb)
+DECL|function|gimp_palette_get_background (GimpRGB * color)
 name|gimp_palette_get_background
 parameter_list|(
 name|GimpRGB
 modifier|*
-name|rgb
+name|color
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
-name|rgb
+name|color
 operator|!=
 name|NULL
 argument_list|,
@@ -160,7 +160,7 @@ name|gimp_context_get_background
 argument_list|(
 name|NULL
 argument_list|,
-name|rgb
+name|color
 argument_list|)
 expr_stmt|;
 return|return

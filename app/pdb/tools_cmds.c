@@ -2034,7 +2034,6 @@ modifier|*
 name|drawable
 decl_stmt|;
 name|GimpRGB
-modifier|*
 name|color
 decl_stmt|;
 name|gint32
@@ -2091,10 +2090,6 @@ name|FALSE
 expr_stmt|;
 name|color
 operator|=
-operator|(
-name|GimpRGB
-operator|*
-operator|)
 name|args
 index|[
 literal|1
@@ -2102,7 +2097,7 @@ index|]
 operator|.
 name|value
 operator|.
-name|pdb_pointer
+name|pdb_color
 expr_stmt|;
 name|threshold
 operator|=
@@ -2952,10 +2947,7 @@ name|gboolean
 name|save_color
 decl_stmt|;
 name|GimpRGB
-modifier|*
 name|color
-init|=
-name|NULL
 decl_stmt|;
 name|gimage
 operator|=
@@ -3151,17 +3143,9 @@ condition|(
 name|success
 condition|)
 block|{
-name|color
-operator|=
-name|g_new
-argument_list|(
-name|GimpRGB
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
 name|gimp_rgba_set_uchar
 argument_list|(
+operator|&
 name|color
 argument_list|,
 name|col_value
@@ -3208,7 +3192,7 @@ index|]
 operator|.
 name|value
 operator|.
-name|pdb_pointer
+name|pdb_color
 operator|=
 name|color
 expr_stmt|;

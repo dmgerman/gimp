@@ -38,7 +38,7 @@ name|gimp_palette_get_foreground
 parameter_list|(
 name|GimpRGB
 modifier|*
-name|rgb
+name|color
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -61,7 +61,7 @@ name|gimp_palette_get_background
 parameter_list|(
 name|GimpRGB
 modifier|*
-name|rgb
+name|color
 parameter_list|)
 function_decl|;
 end_function_decl
