@@ -1417,6 +1417,16 @@ name|CONVOLVE
 block|}
 block|,
 block|{
+literal|"/Tools/Ink"
+block|,
+literal|"K"
+block|,
+name|tools_select_cmd_callback
+block|,
+name|INK
+block|}
+block|,
+block|{
 literal|"/Tools/Default Colors"
 block|,
 literal|"D"
