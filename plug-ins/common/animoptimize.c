@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c630f1b0103
+DECL|enum|__anon293e98fc0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -126,10 +126,11 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gint32
 name|do_optimizations
 parameter_list|(
-name|void
+name|GRunModeType
+name|run_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -338,10 +339,18 @@ block|,   }
 decl_stmt|;
 specifier|static
 name|GParamDef
-modifier|*
-name|return_vals
+name|return_args
+index|[]
 init|=
-name|NULL
+block|{
+block|{
+name|PARAM_IMAGE
+block|,
+literal|"result"
+block|,
+literal|"Resulting image"
+block|}
+block|,   }
 decl_stmt|;
 specifier|static
 name|int
@@ -362,9 +371,20 @@ argument_list|)
 decl_stmt|;
 specifier|static
 name|int
-name|nreturn_vals
+name|nreturn_args
 init|=
+sizeof|sizeof
+argument_list|(
+name|return_args
+argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|return_args
+index|[
 literal|0
+index|]
+argument_list|)
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -398,11 +418,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+name|nreturn_args
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|return_args
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -437,11 +457,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+name|nreturn_args
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|return_args
 argument_list|)
 expr_stmt|;
 block|}
@@ -478,7 +498,7 @@ specifier|static
 name|GParam
 name|values
 index|[
-literal|1
+literal|2
 index|]
 decl_stmt|;
 name|GRunModeType
@@ -492,7 +512,7 @@ decl_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
-literal|1
+literal|2
 expr_stmt|;
 operator|*
 name|return_vals
@@ -573,8 +593,12 @@ name|data
 operator|.
 name|d_image
 expr_stmt|;
+name|new_image_id
+operator|=
 name|do_optimizations
-argument_list|()
+argument_list|(
+name|run_mode
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -605,6 +629,26 @@ operator|.
 name|d_status
 operator|=
 name|status
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|PARAM_IMAGE
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_image
+operator|=
+name|new_image_id
 expr_stmt|;
 block|}
 end_function
@@ -884,11 +928,12 @@ end_function
 
 begin_function
 specifier|static
-name|void
-DECL|function|do_optimizations (void)
+name|gint32
+DECL|function|do_optimizations (GRunModeType run_mode)
 name|do_optimizations
 parameter_list|(
-name|void
+name|GRunModeType
+name|run_mode
 parameter_list|)
 block|{
 name|GPixelRgn
@@ -3228,6 +3273,12 @@ operator|)
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|run_mode
+operator|!=
+name|RUN_NONINTERACTIVE
+condition|)
 name|gimp_display_new
 argument_list|(
 name|new_image_id
@@ -3269,6 +3320,9 @@ name|opti_frame
 operator|=
 name|NULL
 expr_stmt|;
+return|return
+name|new_image_id
+return|;
 block|}
 end_function
 
