@@ -4460,7 +4460,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2a1806da0108
+DECL|struct|__anon2ac0cfe80108
 typedef|typedef
 struct|struct
 block|{
@@ -10742,10 +10742,6 @@ block|}
 block|}
 end_function
 
-begin_comment
-comment|/* FIXME: idlerender stuff only knows about one gimage at    a time... shouldn't be hard to fix... get rid of those stupid    globals for one.  [Adam] */
-end_comment
-
 begin_function
 DECL|function|idlerender_gimage_destroy_handler (GimpImage * gimage)
 specifier|static
@@ -10818,7 +10814,7 @@ specifier|const
 name|int
 name|CHUNK_WIDTH
 init|=
-literal|128
+literal|256
 decl_stmt|;
 specifier|const
 name|int
@@ -10969,7 +10965,37 @@ block|}
 end_function
 
 begin_comment
-comment|/* ADAM: Unify the desired and current (if any) bounding rectangles    of areas being idle-redrawn, and restart the idle thread if needed. */
+comment|/* Force any outstanding unrendered area in the gimage to be    rendered before we return... this is necessary e.g. if we    are restarting the idlerender thread for a different gimage. */
+end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|idlerender_force_completion (void)
+name|idlerender_force_completion
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|gtk_idle_remove
+argument_list|(
+name|idlerender_idleid
+argument_list|)
+expr_stmt|;
+while|while
+condition|(
+name|idle_active
+condition|)
+name|idlerender_callback
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/* Unify the desired and current (if any) bounding rectangles    of areas being idle-redrawn, and restart the idle thread if needed. */
 end_comment
 
 begin_function
@@ -10995,6 +11021,33 @@ name|int
 name|height
 parameter_list|)
 block|{
+comment|/* If another gimage is already employing the idlerender thread,      force it to finish before starting with this one... */
+if|if
+condition|(
+name|idle_active
+operator|&&
+operator|(
+name|idlerender_gimage
+operator|!=
+name|gimage
+operator|)
+condition|)
+block|{
+name|printf
+argument_list|(
+literal|"Okay, switched gimage... poke Adam if this does anything "
+literal|"funny.\n"
+argument_list|)
+expr_stmt|;
+name|fflush
+argument_list|(
+name|stdout
+argument_list|)
+expr_stmt|;
+name|idlerender_force_completion
+argument_list|()
+expr_stmt|;
+block|}
 name|idlerender_gimage
 operator|=
 name|gimage
@@ -11013,31 +11066,7 @@ name|top
 decl_stmt|,
 name|bottom
 decl_stmt|;
-name|printf
-argument_list|(
-literal|"(%d,%d) @ Region (%d,%d %dx%d) | (%d,%d %dx%d)\n"
-argument_list|,
-name|idlerender_x
-argument_list|,
-name|idlerender_y
-argument_list|,
-name|idlerender_basex
-argument_list|,
-name|idlerender_basey
-argument_list|,
-name|idlerender_width
-argument_list|,
-name|idlerender_height
-argument_list|,
-name|basex
-argument_list|,
-name|basey
-argument_list|,
-name|width
-argument_list|,
-name|height
-argument_list|)
-expr_stmt|;
+comment|/*printf("(%d,%d) @ Region (%d,%d %dx%d) | (%d,%d %dx%d)\n", 	     idlerender_x, idlerender_y, 	     idlerender_basex, idlerender_basey, 	     idlerender_width, idlerender_height,  	     basex, basey, 	     width, height);*/
 name|top
 operator|=
 operator|(
@@ -11126,23 +11155,7 @@ name|bottom
 operator|-
 name|top
 expr_stmt|;
-name|printf
-argument_list|(
-literal|" --> (%d,%d) @ (%d,%d %dx%d)\n"
-argument_list|,
-name|idlerender_x
-argument_list|,
-name|idlerender_y
-argument_list|,
-name|idlerender_basex
-argument_list|,
-name|idlerender_basey
-argument_list|,
-name|idlerender_width
-argument_list|,
-name|idlerender_height
-argument_list|)
-expr_stmt|;
+comment|/*printf(" --> (%d,%d) @ (%d,%d %dx%d)\n", 	     idlerender_x, idlerender_y, 	     idlerender_basex, idlerender_basey, 	     idlerender_width, idlerender_height);*/
 block|}
 else|else
 block|{
@@ -11624,16 +11637,7 @@ condition|(
 name|exclusive
 condition|)
 block|{
-name|printf
-argument_list|(
-literal|"Case 1, kick-ass!\n"
-argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
+comment|/*printf("Case 1, kick-ass!\n");fflush(stdout);*/
 name|gimage_invalidate_preview
 argument_list|(
 name|layer_widget
@@ -11664,14 +11668,12 @@ operator|->
 name|visible
 condition|)
 block|{
-name|printf
+comment|/*printf("Case 2, what incredible irony!\n");fflush(stdout);*/
+name|gimage_invalidate_preview
 argument_list|(
-literal|"Case 2, what incredible irony!\n"
-argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
+name|layer_widget
+operator|->
+name|gimage
 argument_list|)
 expr_stmt|;
 name|reinit_layer_idlerender
