@@ -1796,6 +1796,11 @@ operator|*
 name|sort_ptr
 operator|<
 name|white_level
+operator|&&
+operator|*
+name|sort_ptr
+operator|>
+name|black_level
 condition|)
 name|sort_ptr
 operator|++
@@ -3723,6 +3728,11 @@ operator|*
 name|sort_ptr
 operator|<
 name|white_level
+operator|&&
+operator|*
+name|sort_ptr
+operator|>
+name|black_level
 condition|)
 name|sort_ptr
 operator|++
