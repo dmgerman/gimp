@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpink.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppaintoptions.h"
 end_include
 
@@ -160,7 +166,9 @@ block|,
 name|gimp_paintbrush_register
 block|,
 name|gimp_pencil_register
-block|,   }
+block|,
+name|gimp_ink_register
+block|}
 decl_stmt|;
 name|gint
 name|i

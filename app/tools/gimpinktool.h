@@ -19,34 +19,8 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimptool.h"
+file|"gimppainttool.h"
 end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpinktool-blob.h"
-end_include
-
-begin_comment
-comment|/* only used by ink */
-end_comment
-
-begin_define
-DECL|macro|DIST_SMOOTHER_BUFFER
-define|#
-directive|define
-name|DIST_SMOOTHER_BUFFER
-value|10
-end_define
-
-begin_define
-DECL|macro|TIME_SMOOTHER_BUFFER
-define|#
-directive|define
-name|TIME_SMOOTHER_BUFFER
-value|10
-end_define
 
 begin_define
 DECL|macro|GIMP_TYPE_INK_TOOL
@@ -135,71 +109,8 @@ struct|struct
 name|_GimpInkTool
 block|{
 DECL|member|parent_instance
-name|GimpTool
+name|GimpPaintTool
 name|parent_instance
-decl_stmt|;
-DECL|member|last_blob
-name|Blob
-modifier|*
-name|last_blob
-decl_stmt|;
-comment|/*  blob for last cursor position  */
-DECL|member|x1
-DECL|member|y1
-name|gint
-name|x1
-decl_stmt|,
-name|y1
-decl_stmt|;
-comment|/*  image space coordinate         */
-DECL|member|x2
-DECL|member|y2
-name|gint
-name|x2
-decl_stmt|,
-name|y2
-decl_stmt|;
-comment|/*  image space coords             */
-comment|/* circular distance history buffer */
-DECL|member|dt_buffer
-name|gdouble
-name|dt_buffer
-index|[
-name|DIST_SMOOTHER_BUFFER
-index|]
-decl_stmt|;
-DECL|member|dt_index
-name|gint
-name|dt_index
-decl_stmt|;
-comment|/* circular timing history buffer */
-DECL|member|ts_buffer
-name|guint32
-name|ts_buffer
-index|[
-name|TIME_SMOOTHER_BUFFER
-index|]
-decl_stmt|;
-DECL|member|ts_index
-name|gint
-name|ts_index
-decl_stmt|;
-DECL|member|last_time
-name|gdouble
-name|last_time
-decl_stmt|;
-comment|/*  previous time of a motion event      */
-DECL|member|lastx
-DECL|member|lasty
-name|gdouble
-name|lastx
-decl_stmt|,
-name|lasty
-decl_stmt|;
-comment|/*  previous position of a motion event  */
-DECL|member|init_velocity
-name|gboolean
-name|init_velocity
 decl_stmt|;
 block|}
 struct|;
@@ -211,7 +122,7 @@ struct|struct
 name|_GimpInkToolClass
 block|{
 DECL|member|parent_class
-name|GimpToolClass
+name|GimpPaintToolClass
 name|parent_class
 decl_stmt|;
 block|}

@@ -6,157 +6,15 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_INK_OPTIONS_H__
+name|__GIMP_INK_OPTIONS_GUI_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_INK_OPTIONS_H__
+DECL|macro|__GIMP_INK_OPTIONS_GUI_H__
 define|#
 directive|define
-name|__GIMP_INK_OPTIONS_H__
+name|__GIMP_INK_OPTIONS_GUI_H__
 end_define
-
-begin_include
-include|#
-directive|include
-file|"paint/gimppaintoptions.h"
-end_include
-
-begin_define
-DECL|macro|GIMP_TYPE_INK_OPTIONS
-define|#
-directive|define
-name|GIMP_TYPE_INK_OPTIONS
-value|(gimp_ink_options_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_INK_OPTIONS (obj)
-define|#
-directive|define
-name|GIMP_INK_OPTIONS
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_INK_OPTIONS, GimpInkOptions))
-end_define
-
-begin_define
-DECL|macro|GIMP_INK_OPTIONS_CLASS (klass)
-define|#
-directive|define
-name|GIMP_INK_OPTIONS_CLASS
-parameter_list|(
-name|klass
-parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_INK_OPTIONS, GimpInkOptionsClass))
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_INK_OPTIONS (obj)
-define|#
-directive|define
-name|GIMP_IS_INK_OPTIONS
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_INK_OPTIONS))
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_INK_OPTIONS_CLASS (klass)
-define|#
-directive|define
-name|GIMP_IS_INK_OPTIONS_CLASS
-parameter_list|(
-name|klass
-parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_INK_OPTIONS))
-end_define
-
-begin_define
-DECL|macro|GIMP_INK_OPTIONS_GET_CLASS (obj)
-define|#
-directive|define
-name|GIMP_INK_OPTIONS_GET_CLASS
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_INK_OPTIONS, GimpInkOptionsClass))
-end_define
-
-begin_typedef
-DECL|typedef|GimpInkOptions
-typedef|typedef
-name|struct
-name|_GimpInkOptions
-name|GimpInkOptions
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpInkOptionsClass
-typedef|typedef
-name|struct
-name|_GimpPaintOptionsClass
-name|GimpInkOptionsClass
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_GimpInkOptions
-struct|struct
-name|_GimpInkOptions
-block|{
-DECL|member|paint_options
-name|GimpPaintOptions
-name|paint_options
-decl_stmt|;
-DECL|member|size
-name|gdouble
-name|size
-decl_stmt|;
-DECL|member|tilt_angle
-name|gdouble
-name|tilt_angle
-decl_stmt|;
-DECL|member|size_sensitivity
-name|gdouble
-name|size_sensitivity
-decl_stmt|;
-DECL|member|vel_sensitivity
-name|gdouble
-name|vel_sensitivity
-decl_stmt|;
-DECL|member|tilt_sensitivity
-name|gdouble
-name|tilt_sensitivity
-decl_stmt|;
-DECL|member|blob_type
-name|GimpInkBlobType
-name|blob_type
-decl_stmt|;
-DECL|member|blob_aspect
-name|gdouble
-name|blob_aspect
-decl_stmt|;
-DECL|member|blob_angle
-name|gdouble
-name|blob_angle
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_decl_stmt
-name|GType
-name|gimp_ink_options_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 name|GtkWidget
@@ -176,7 +34,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_INK_OPTIONS_H__  */
+comment|/*  __GIMP_INK_OPTIONS_GUI_H__  */
 end_comment
 
 end_unit

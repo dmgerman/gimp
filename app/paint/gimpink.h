@@ -6,31 +6,27 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_INK_TOOL_H__
+name|__GIMP_INK_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_INK_TOOL_H__
+DECL|macro|__GIMP_INK_H__
 define|#
 directive|define
-name|__GIMP_INK_TOOL_H__
+name|__GIMP_INK_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimptool.h"
+file|"gimppaintcore.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpinktool-blob.h"
+file|"gimpink-blob.h"
 end_include
-
-begin_comment
-comment|/* only used by ink */
-end_comment
 
 begin_define
 DECL|macro|DIST_SMOOTHER_BUFFER
@@ -49,117 +45,107 @@ value|10
 end_define
 
 begin_define
-DECL|macro|GIMP_TYPE_INK_TOOL
+DECL|macro|GIMP_TYPE_INK
 define|#
 directive|define
-name|GIMP_TYPE_INK_TOOL
-value|(gimp_ink_tool_get_type ())
+name|GIMP_TYPE_INK
+value|(gimp_ink_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_INK_TOOL (obj)
+DECL|macro|GIMP_INK (obj)
 define|#
 directive|define
-name|GIMP_INK_TOOL
+name|GIMP_INK
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_INK_TOOL, GimpInkTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_INK, GimpInk))
 end_define
 
 begin_define
-DECL|macro|GIMP_INK_TOOL_CLASS (klass)
+DECL|macro|GIMP_INK_CLASS (klass)
 define|#
 directive|define
-name|GIMP_INK_TOOL_CLASS
+name|GIMP_INK_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_INK_TOOL, GimpInkToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_INK, GimpInkClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_INK_TOOL (obj)
+DECL|macro|GIMP_IS_INK (obj)
 define|#
 directive|define
-name|GIMP_IS_INK_TOOL
+name|GIMP_IS_INK
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_INK_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_INK))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_INK_TOOL_CLASS (klass)
+DECL|macro|GIMP_IS_INK_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_INK_TOOL_CLASS
+name|GIMP_IS_INK_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_INK_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_INK))
 end_define
 
 begin_define
-DECL|macro|GIMP_INK_TOOL_GET_CLASS (obj)
+DECL|macro|GIMP_INK_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_INK_TOOL_GET_CLASS
+name|GIMP_INK_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_INK_TOOL, GimpInkToolClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_INK, GimpInkClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpInkTool
+DECL|typedef|GimpInk
 typedef|typedef
 name|struct
-name|_GimpInkTool
-name|GimpInkTool
+name|_GimpInk
+name|GimpInk
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpInkToolClass
+DECL|typedef|GimpInkClass
 typedef|typedef
 name|struct
-name|_GimpInkToolClass
-name|GimpInkToolClass
+name|_GimpInkClass
+name|GimpInkClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpInkTool
+DECL|struct|_GimpInk
 struct|struct
-name|_GimpInkTool
+name|_GimpInk
 block|{
 DECL|member|parent_instance
-name|GimpTool
+name|GimpPaintCore
 name|parent_instance
 decl_stmt|;
+DECL|member|blob
+name|Blob
+modifier|*
+name|blob
+decl_stmt|;
+comment|/*  current blob                   */
 DECL|member|last_blob
 name|Blob
 modifier|*
 name|last_blob
 decl_stmt|;
 comment|/*  blob for last cursor position  */
-DECL|member|x1
-DECL|member|y1
-name|gint
-name|x1
-decl_stmt|,
-name|y1
-decl_stmt|;
-comment|/*  image space coordinate         */
-DECL|member|x2
-DECL|member|y2
-name|gint
-name|x2
-decl_stmt|,
-name|y2
-decl_stmt|;
-comment|/*  image space coords             */
 comment|/* circular distance history buffer */
 DECL|member|dt_buffer
 name|gdouble
@@ -206,12 +192,12 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpInkToolClass
+DECL|struct|_GimpInkClass
 struct|struct
-name|_GimpInkToolClass
+name|_GimpInkClass
 block|{
 DECL|member|parent_class
-name|GimpToolClass
+name|GimpPaintCoreClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -220,20 +206,21 @@ end_struct
 
 begin_function_decl
 name|void
-name|gimp_ink_tool_register
+name|gimp_ink_register
 parameter_list|(
-name|GimpToolRegisterCallback
-name|callback
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|,
-name|gpointer
-name|data
+name|GimpPaintRegisterCallback
+name|callback
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_decl_stmt
 name|GType
-name|gimp_ink_tool_get_type
+name|gimp_ink_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -247,7 +234,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_INK_TOOL_H__  */
+comment|/*  __GIMP_INK_H__  */
 end_comment
 
 end_unit

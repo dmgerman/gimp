@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"paint/gimppaintoptions.h"
+file|"gimppaintoptions.h"
 end_include
 
 begin_define
@@ -157,18 +157,6 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
-
-begin_function_decl
-name|GtkWidget
-modifier|*
-name|gimp_ink_options_gui
-parameter_list|(
-name|GimpToolOptions
-modifier|*
-name|tool_options
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_endif
 endif|#
