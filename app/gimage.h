@@ -280,7 +280,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a19a4d30103
+DECL|enum|__anon296f57d40103
 block|{
 DECL|enumerator|Red
 name|Red
@@ -308,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a19a4d30203
+DECL|enum|__anon296f57d40203
 block|{
 DECL|enumerator|ExpandAsNecessary
 name|ExpandAsNecessary
@@ -354,6 +354,10 @@ DECL|struct|_Guide
 struct|struct
 name|_Guide
 block|{
+DECL|member|ref_count
+name|int
+name|ref_count
+decl_stmt|;
 DECL|member|position
 name|int
 name|position

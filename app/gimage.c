@@ -3908,6 +3908,12 @@ argument_list|)
 expr_stmt|;
 name|guide
 operator|->
+name|ref_count
+operator|=
+literal|0
+expr_stmt|;
+name|guide
+operator|->
 name|position
 operator|=
 operator|-
@@ -3961,6 +3967,12 @@ name|Guide
 argument_list|,
 literal|1
 argument_list|)
+expr_stmt|;
+name|guide
+operator|->
+name|ref_count
+operator|=
+literal|0
 expr_stmt|;
 name|guide
 operator|->
