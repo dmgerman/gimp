@@ -109,6 +109,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|unsigned
+name|char
+modifier|*
+name|image_map_get_color_at
+parameter_list|(
+name|ImageMap
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
