@@ -552,7 +552,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon27d961910103
+DECL|enum|__anon2b7268930103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -12957,6 +12957,11 @@ literal|"Unable to add a layer mask since\nthe layer already has one."
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
+operator|(
+name|NULL
+operator|)
+return|;
 block|}
 if|if
 condition|(
@@ -12977,6 +12982,11 @@ literal|"Unable to add a layer mask to a\nlayer in an indexed image."
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
+operator|(
+name|NULL
+operator|)
+return|;
 block|}
 if|if
 condition|(
@@ -12995,6 +13005,11 @@ literal|"Cannot add layer mask to a layer\nwith no alpha channel."
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
+operator|(
+name|NULL
+operator|)
+return|;
 block|}
 if|if
 condition|(

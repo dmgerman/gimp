@@ -5223,30 +5223,34 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|gint
+name|gboolean
 name|fs
 decl_stmt|;
 comment|/*  floating sel  */
-name|gint
+name|gboolean
 name|ac
 decl_stmt|;
 comment|/*  active channel  */
-name|gint
+name|gboolean
 name|lm
 decl_stmt|;
 comment|/*  layer mask  */
-name|gint
+name|gboolean
 name|gimage
 decl_stmt|;
 comment|/*  is there a gimage  */
-name|gint
+name|gboolean
 name|lp
 decl_stmt|;
 comment|/*  layers present  */
-name|gint
+name|gboolean
 name|alpha
 decl_stmt|;
 comment|/*  alpha channel present  */
+name|gboolean
+name|indexed
+decl_stmt|;
+comment|/*  is indexed  */
 name|gint
 name|next_alpha
 decl_stmt|;
@@ -5267,6 +5271,10 @@ modifier|*
 name|layer
 decl_stmt|;
 name|lp
+operator|=
+name|FALSE
+expr_stmt|;
+name|indexed
 operator|=
 name|FALSE
 expr_stmt|;
@@ -5351,6 +5359,7 @@ if|if
 condition|(
 name|gimage
 condition|)
+block|{
 name|lp
 operator|=
 operator|(
@@ -5363,6 +5372,20 @@ operator|!=
 name|NULL
 operator|)
 expr_stmt|;
+name|indexed
+operator|=
+operator|(
+name|gimp_image_base_type
+argument_list|(
+name|layersD
+operator|->
+name|gimage
+argument_list|)
+operator|==
+name|INDEXED
+operator|)
+expr_stmt|;
+block|}
 name|list
 operator|=
 name|layersD
@@ -5756,6 +5779,9 @@ operator|&&
 name|lp
 operator|&&
 name|alpha
+operator|&&
+operator|!
+name|indexed
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -10851,7 +10877,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae51c390108
+DECL|struct|__anon2b56a4da0108
 block|{
 DECL|member|gimage
 name|GimpImage
