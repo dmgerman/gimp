@@ -130,7 +130,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b3b3db50108
+DECL|struct|__anon2991c1ec0108
 typedef|typedef
 struct|struct
 block|{
@@ -165,7 +165,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b3b3db50208
+DECL|struct|__anon2991c1ec0208
 typedef|typedef
 struct|struct
 block|{
@@ -3104,6 +3104,12 @@ name|argc
 argument_list|,
 operator|&
 name|argv
+argument_list|)
+expr_stmt|;
+name|gtk_rc_parse
+argument_list|(
+name|gimp_gtkrc
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|gtk_preview_set_gamma

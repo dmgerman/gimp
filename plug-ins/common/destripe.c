@@ -606,7 +606,7 @@ literal|"Marc Lehmann<pcg@goof.com>"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-literal|"<Image>/Filters/Enhance/Destripe..."
+literal|"<Image>/Filters/Enhance/Destripe"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

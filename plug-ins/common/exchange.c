@@ -50,7 +50,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1b60570108
+DECL|struct|__anon28dd4d580108
 block|{
 DECL|member|fromred
 DECL|member|fromgreen
@@ -1619,6 +1619,12 @@ name|argc
 argument_list|,
 operator|&
 name|argv
+argument_list|)
+expr_stmt|;
+name|gtk_rc_parse
+argument_list|(
+name|gimp_gtkrc
+argument_list|()
 argument_list|)
 expr_stmt|;
 comment|/* set up the dialog */

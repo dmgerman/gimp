@@ -152,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb50e60108
+DECL|struct|__anon294b573d0108
 block|{
 DECL|member|width
 DECL|member|height
@@ -1299,6 +1299,12 @@ name|argc
 argument_list|,
 operator|&
 name|argv
+argument_list|)
+expr_stmt|;
+name|gtk_rc_parse
+argument_list|(
+name|gimp_gtkrc
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|dlg

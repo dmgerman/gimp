@@ -100,7 +100,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|struct|__anon2ad8f1ed0108
+DECL|struct|__anon2bed37310108
 typedef|typedef
 struct|struct
 block|{
@@ -139,7 +139,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ad8f1ed0208
+DECL|struct|__anon2bed37310208
 typedef|typedef
 struct|struct
 block|{
@@ -1196,6 +1196,12 @@ name|argc
 argument_list|,
 operator|&
 name|argv
+argument_list|)
+expr_stmt|;
+name|gtk_rc_parse
+argument_list|(
+name|gimp_gtkrc
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|dlg

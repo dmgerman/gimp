@@ -146,7 +146,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_enum
-DECL|enum|__anon28db02770103
+DECL|enum|__anon2b325a980103
 enum|enum
 block|{
 DECL|enumerator|LINEAR
@@ -164,7 +164,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon28db02770203
+DECL|enum|__anon2b325a980203
 enum|enum
 block|{
 DECL|enumerator|DRAG_NONE
@@ -182,7 +182,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon28db02770308
+DECL|struct|__anon2b325a980308
 typedef|typedef
 struct|struct
 block|{
@@ -237,7 +237,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28db02770408
+DECL|struct|__anon2b325a980408
 typedef|typedef
 struct|struct
 block|{
@@ -282,7 +282,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28db02770508
+DECL|struct|__anon2b325a980508
 typedef|typedef
 struct|struct
 block|{
@@ -3627,6 +3627,12 @@ name|argc
 argument_list|,
 operator|&
 name|argv
+argument_list|)
+expr_stmt|;
+name|gtk_rc_parse
+argument_list|(
+name|gimp_gtkrc
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|gdk_set_use_xshm

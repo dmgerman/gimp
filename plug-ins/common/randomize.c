@@ -138,7 +138,7 @@ comment|/*********************************  *  *  PLUGIN-SPECIFIC STRUCTURES AND
 end_comment
 
 begin_typedef
-DECL|struct|__anon295d5a280108
+DECL|struct|__anon2771ebab0108
 typedef|typedef
 struct|struct
 block|{
@@ -194,7 +194,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon295d5a280208
+DECL|struct|__anon2771ebab0208
 typedef|typedef
 struct|struct
 block|{
@@ -2408,6 +2408,12 @@ name|argc
 argument_list|,
 operator|&
 name|argv
+argument_list|)
+expr_stmt|;
+name|gtk_rc_parse
+argument_list|(
+name|gimp_gtkrc
+argument_list|()
 argument_list|)
 expr_stmt|;
 comment|/*  *  Open a new dialog, label it and set up its  *  destroy callback.  */

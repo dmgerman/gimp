@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c01a270108
+DECL|struct|__anon2c70bfdc0108
 block|{
 DECL|member|threshold
 name|gdouble
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c01a270208
+DECL|struct|__anon2c70bfdc0208
 block|{
 DECL|member|run
 name|gint
@@ -106,7 +106,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c01a270308
+DECL|struct|__anon2c70bfdc0308
 block|{
 DECL|member|r
 name|guchar
@@ -3164,6 +3164,12 @@ name|argc
 argument_list|,
 operator|&
 name|argv
+argument_list|)
+expr_stmt|;
+name|gtk_rc_parse
+argument_list|(
+name|gimp_gtkrc
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|dlg
