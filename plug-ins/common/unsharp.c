@@ -141,7 +141,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27acd54d0108
+DECL|struct|__anon28a59e470108
 block|{
 DECL|member|radius
 name|gdouble
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27acd54d0208
+DECL|struct|__anon28a59e470208
 block|{
 DECL|member|run
 name|gint
@@ -1120,19 +1120,6 @@ decl_stmt|,
 name|x2
 decl_stmt|,
 name|y2
-decl_stmt|;
-name|gdouble
-modifier|*
-name|cmatrix
-init|=
-name|NULL
-decl_stmt|;
-name|gint
-name|cmatrix_length
-decl_stmt|;
-name|gdouble
-modifier|*
-name|ctable
 decl_stmt|;
 comment|/* Get the input */
 name|gimp_drawable_mask_bounds
