@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b789cb00103
+DECL|enum|__anon27ef3b600103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -496,22 +496,12 @@ block|{
 name|GimpItem
 modifier|*
 name|item
-decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_ITEM
-argument_list|(
-name|object
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|item
-operator|=
+init|=
 name|GIMP_ITEM
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|item

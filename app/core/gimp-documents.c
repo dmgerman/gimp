@@ -178,16 +178,16 @@ name|gchar
 modifier|*
 name|header
 init|=
-literal|"# GIMP documents\n"
-literal|"#\n"
-literal|"# This file will be entirely rewritten every time you quit the gimp.\n"
+literal|"GIMP documents\n"
+literal|"\n"
+literal|"This file will be entirely rewritten every time you quit the gimp."
 decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|footer
 init|=
-literal|"# end of documents\n"
+literal|"end of documents"
 decl_stmt|;
 name|gchar
 modifier|*

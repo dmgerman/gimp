@@ -88,6 +88,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpconfig.h"
 end_include
 
@@ -719,7 +725,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b356060103
+DECL|enum|__anon2a0e847d0103
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB

@@ -70,6 +70,15 @@ name|GimpRc
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpConfigWriter
+typedef|typedef
+name|struct
+name|_GimpConfigWriter
+name|GimpConfigWriter
+typedef|;
+end_typedef
+
 begin_endif
 endif|#
 directive|endif

@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ee95b70103
+DECL|enum|__anon2aa619650103
 block|{
 DECL|enumerator|GIMP_CONFIG_ERROR_OPEN
 name|GIMP_CONFIG_ERROR_OPEN
@@ -90,11 +90,9 @@ name|GObject
 modifier|*
 name|object
 parameter_list|,
-name|gint
-name|fd
-parameter_list|,
-name|gint
-name|indent_level
+name|GimpConfigWriter
+modifier|*
+name|writer
 parameter_list|,
 name|gpointer
 name|data
@@ -145,9 +143,9 @@ name|GParamSpec
 modifier|*
 name|pspec
 parameter_list|,
-name|GString
+name|GimpConfigWriter
 modifier|*
-name|string
+name|writer
 parameter_list|)
 function_decl|;
 DECL|member|deserialize_property

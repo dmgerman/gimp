@@ -101,13 +101,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpconfigwriter.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295d51710103
+DECL|enum|__anon28a4c7250103
 block|{
 DECL|enumerator|DUMP_NONE
 name|DUMP_NONE
@@ -133,9 +139,6 @@ name|dump_gimprc
 parameter_list|(
 name|DumpFormat
 name|format
-parameter_list|,
-name|gint
-name|fd
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -149,8 +152,9 @@ name|GObject
 modifier|*
 name|rc
 parameter_list|,
-name|gint
-name|fd
+name|GimpConfigWriter
+modifier|*
+name|writer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -164,8 +168,9 @@ name|GObject
 modifier|*
 name|rc
 parameter_list|,
-name|gint
-name|fd
+name|GimpConfigWriter
+modifier|*
+name|writer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -349,8 +354,6 @@ return|return
 name|dump_gimprc
 argument_list|(
 name|format
-argument_list|,
-literal|1
 argument_list|)
 return|;
 block|}
@@ -359,16 +362,17 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|dump_gimprc (DumpFormat format,gint fd)
+DECL|function|dump_gimprc (DumpFormat format)
 name|dump_gimprc
 parameter_list|(
 name|DumpFormat
 name|format
-parameter_list|,
-name|gint
-name|fd
 parameter_list|)
 block|{
+name|GimpConfigWriter
+modifier|*
+name|writer
+decl_stmt|;
 name|GObject
 modifier|*
 name|rc
@@ -399,6 +403,13 @@ comment|/* for completeness */
 name|NULL
 argument_list|)
 expr_stmt|;
+name|writer
+operator|=
+name|gimp_config_writer_new_from_fd
+argument_list|(
+literal|1
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|format
@@ -407,18 +418,23 @@ block|{
 case|case
 name|DUMP_DEFAULT
 case|:
-name|g_print
+name|gimp_config_writer_comment
 argument_list|(
-literal|"# Dump of the GIMP default configuration\n\n"
+name|writer
+argument_list|,
+literal|"Dump of the GIMP default configuration"
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_linefeed
+argument_list|(
+name|writer
 argument_list|)
 expr_stmt|;
 name|gimp_config_serialize_properties
 argument_list|(
 name|rc
 argument_list|,
-literal|1
-argument_list|,
-literal|0
+name|writer
 argument_list|)
 expr_stmt|;
 name|g_print
@@ -434,7 +450,7 @@ name|dump_gimprc_system
 argument_list|(
 name|rc
 argument_list|,
-name|fd
+name|writer
 argument_list|)
 expr_stmt|;
 break|break;
@@ -445,13 +461,22 @@ name|dump_gimprc_manpage
 argument_list|(
 name|rc
 argument_list|,
-name|fd
+name|writer
 argument_list|)
 expr_stmt|;
 break|break;
 default|default:
 break|break;
 block|}
+name|gimp_config_writer_finish
+argument_list|(
+name|writer
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|rc
@@ -471,35 +496,35 @@ name|gchar
 modifier|*
 name|system_gimprc_header
 init|=
-literal|"# This is the system-wide gimprc file.  Any change made in this file\n"
-literal|"# will affect all users of this system, provided that they are not\n"
-literal|"# overriding the default values in their personal gimprc file.\n"
-literal|"#\n"
-literal|"# Lines that start with a '#' are comments. Blank lines are ignored.\n"
-literal|"#\n"
-literal|"# By default everything in this file is commented out. The file then\n"
-literal|"# documents the default values and shows what changes are possible.\n"
+literal|"This is the system-wide gimprc file.  Any change made in this file "
+literal|"will affect all users of this system, provided that they are not "
+literal|"overriding the default values in their personal gimprc file.\n"
 literal|"\n"
-literal|"# The variable ${gimp_dir} is set to the value of the environment\n"
-literal|"# variable GIMP_DIRECTORY or, if that is not set, the compiled-in\n"
-literal|"# default value is used. If GIMP_DIRECTORY is not an absolute path,\n"
-literal|"# it is interpreted relative to your home directory.\n"
+literal|"Lines that start with a '#' are comments. Blank lines are ignored.\n"
 literal|"\n"
+literal|"By default everything in this file is commented out.  The file then "
+literal|"documents the default values and shows what changes are possible.\n"
+literal|"\n"
+literal|"The variable ${gimp_dir} is set to the value of the environment "
+literal|"variable GIMP_DIRECTORY or, if that is not set, the compiled-in "
+literal|"default value is used.  If GIMP_DIRECTORY is not an absolute path, "
+literal|"it is interpreted relative to your home directory."
 decl_stmt|;
 end_decl_stmt
 
 begin_function
 specifier|static
 name|void
-DECL|function|dump_gimprc_system (GObject * rc,gint fd)
+DECL|function|dump_gimprc_system (GObject * rc,GimpConfigWriter * writer)
 name|dump_gimprc_system
 parameter_list|(
 name|GObject
 modifier|*
 name|rc
 parameter_list|,
-name|gint
-name|fd
+name|GimpConfigWriter
+modifier|*
+name|writer
 parameter_list|)
 block|{
 name|GObjectClass
@@ -511,34 +536,22 @@ modifier|*
 modifier|*
 name|property_specs
 decl_stmt|;
-name|GString
-modifier|*
-name|str
-decl_stmt|;
 name|guint
 name|n_property_specs
 decl_stmt|;
 name|guint
 name|i
 decl_stmt|;
-name|str
-operator|=
-name|g_string_new
+name|gimp_config_writer_comment
 argument_list|(
+name|writer
+argument_list|,
 name|system_gimprc_header
 argument_list|)
 expr_stmt|;
-name|write
+name|gimp_config_writer_linefeed
 argument_list|(
-name|fd
-argument_list|,
-name|str
-operator|->
-name|str
-argument_list|,
-name|str
-operator|->
-name|len
+name|writer
 argument_list|)
 expr_stmt|;
 name|klass
@@ -597,13 +610,6 @@ name|GIMP_PARAM_SERIALIZE
 operator|)
 condition|)
 continue|continue;
-name|g_string_truncate
-argument_list|(
-name|str
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 name|comment
 operator|=
 name|dump_describe_param
@@ -616,9 +622,9 @@ condition|(
 name|comment
 condition|)
 block|{
-name|gimp_config_serialize_comment
+name|gimp_config_writer_comment
 argument_list|(
-name|str
+name|writer
 argument_list|,
 name|comment
 argument_list|)
@@ -628,67 +634,48 @@ argument_list|(
 name|comment
 argument_list|)
 expr_stmt|;
-name|g_string_append
+name|write
 argument_list|(
-name|str
+name|writer
+operator|->
+name|fd
 argument_list|,
 literal|"#\n"
+argument_list|,
+literal|2
 argument_list|)
 expr_stmt|;
 block|}
-name|g_string_append
-argument_list|(
-name|str
-argument_list|,
-literal|"# "
-argument_list|)
-expr_stmt|;
+comment|/* kids, don't try this at home! */
 name|write
 argument_list|(
+name|writer
+operator|->
 name|fd
 argument_list|,
-name|str
-operator|->
-name|str
+literal|"# "
 argument_list|,
-name|str
-operator|->
-name|len
+literal|2
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
 name|gimp_config_serialize_property
 argument_list|(
 name|rc
 argument_list|,
 name|prop_spec
 argument_list|,
-name|fd
-argument_list|,
-literal|0
+name|writer
 argument_list|)
-condition|)
-name|write
+expr_stmt|;
+name|gimp_config_writer_linefeed
 argument_list|(
-name|fd
-argument_list|,
-literal|"\n"
-argument_list|,
-literal|1
+name|writer
 argument_list|)
 expr_stmt|;
 block|}
 name|g_free
 argument_list|(
 name|property_specs
-argument_list|)
-expr_stmt|;
-name|g_string_free
-argument_list|(
-name|str
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -809,15 +796,16 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|dump_gimprc_manpage (GObject * rc,gint fd)
+DECL|function|dump_gimprc_manpage (GObject * rc,GimpConfigWriter * writer)
 name|dump_gimprc_manpage
 parameter_list|(
 name|GObject
 modifier|*
 name|rc
 parameter_list|,
-name|gint
-name|fd
+name|GimpConfigWriter
+modifier|*
+name|writer
 parameter_list|)
 block|{
 name|GObjectClass
@@ -837,6 +825,8 @@ name|i
 decl_stmt|;
 name|write
 argument_list|(
+name|writer
+operator|->
 name|fd
 argument_list|,
 name|man_page_header
@@ -905,6 +895,8 @@ condition|)
 continue|continue;
 name|write
 argument_list|(
+name|writer
+operator|->
 name|fd
 argument_list|,
 literal|".TP\n"
@@ -923,14 +915,14 @@ name|rc
 argument_list|,
 name|prop_spec
 argument_list|,
-name|fd
-argument_list|,
-literal|0
+name|writer
 argument_list|)
 condition|)
 block|{
 name|write
 argument_list|(
+name|writer
+operator|->
 name|fd
 argument_list|,
 literal|"\n"
@@ -947,6 +939,8 @@ argument_list|)
 expr_stmt|;
 name|dump_with_linebreaks
 argument_list|(
+name|writer
+operator|->
 name|fd
 argument_list|,
 name|desc
@@ -954,6 +948,8 @@ argument_list|)
 expr_stmt|;
 name|write
 argument_list|(
+name|writer
+operator|->
 name|fd
 argument_list|,
 literal|"\n"
@@ -975,6 +971,8 @@ argument_list|)
 expr_stmt|;
 name|write
 argument_list|(
+name|writer
+operator|->
 name|fd
 argument_list|,
 name|man_page_path
@@ -987,6 +985,8 @@ argument_list|)
 expr_stmt|;
 name|write
 argument_list|(
+name|writer
+operator|->
 name|fd
 argument_list|,
 name|man_page_footer

@@ -76,6 +76,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpconfig.h"
 end_include
 
@@ -103,6 +109,12 @@ directive|include
 file|"gimpconfig-utils.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpconfigwriter.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -125,23 +137,21 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_config_serialize_properties:  * @object: a #GObject.   * @fd: a file descriptor to write to.  *   * This function writes all object properties to the file descriptor @fd.  **/
+comment|/**  * gimp_config_serialize_properties:  * @object: a #GObject.   * @writer: a #GimpConfigWriter.  *   * This function writes all object properties to the @writer.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_serialize_properties (GObject * object,gint fd,gint indent_level)
+DECL|function|gimp_config_serialize_properties (GObject * object,GimpConfigWriter * writer)
 name|gimp_config_serialize_properties
 parameter_list|(
 name|GObject
 modifier|*
 name|object
 parameter_list|,
-name|gint
-name|fd
-parameter_list|,
-name|gint
-name|indent_level
+name|GimpConfigWriter
+modifier|*
+name|writer
 parameter_list|)
 block|{
 name|GObjectClass
@@ -238,9 +248,7 @@ name|object
 argument_list|,
 name|prop_spec
 argument_list|,
-name|fd
-argument_list|,
-name|indent_level
+name|writer
 argument_list|)
 condition|)
 return|return
@@ -259,23 +267,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_changed_properties:  * @object: a #GObject.   * @fd: a file descriptor to write to.  *   * This function writes all object properties that have been changed from  * their default values to the file descriptor @fd.  **/
+comment|/**  * gimp_config_serialize_changed_properties:  * @object: a #GObject.   * @writer: a #GimpConfigWriter.  *   * This function writes all object properties that have been changed from  * their default values to the @writer.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_serialize_changed_properties (GObject * object,gint fd,gint indent_level)
+DECL|function|gimp_config_serialize_changed_properties (GObject * object,GimpConfigWriter * writer)
 name|gimp_config_serialize_changed_properties
 parameter_list|(
 name|GObject
 modifier|*
 name|object
 parameter_list|,
-name|gint
-name|fd
-parameter_list|,
-name|gint
-name|indent_level
+name|GimpConfigWriter
+modifier|*
+name|writer
 parameter_list|)
 block|{
 name|GObjectClass
@@ -413,9 +419,7 @@ name|object
 argument_list|,
 name|prop_spec
 argument_list|,
-name|fd
-argument_list|,
-name|indent_level
+name|writer
 argument_list|)
 condition|)
 return|return
@@ -441,12 +445,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_properties_diff:  * @object: a #GObject.   * @compare: a #GObject of the same type as @object.   * @fd: a file descriptor to write to.  *   * This function compares @object and @compare and writes all  * properties of @object that have different values than @compare to  * the file descriptor @fd.  **/
+comment|/**  * gimp_config_serialize_properties_diff:  * @object: a #GObject.   * @compare: a #GObject of the same type as @object.   * @writer: a #GimpConfigWriter.  *   * This function compares @object and @compare and writes all  * properties of @object that have different values than @compare to  * the @writer.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_serialize_properties_diff (GObject * object,GObject * compare,gint fd,gint indent_level)
+DECL|function|gimp_config_serialize_properties_diff (GObject * object,GObject * compare,GimpConfigWriter * writer)
 name|gimp_config_serialize_properties_diff
 parameter_list|(
 name|GObject
@@ -457,11 +461,9 @@ name|GObject
 modifier|*
 name|compare
 parameter_list|,
-name|gint
-name|fd
-parameter_list|,
-name|gint
-name|indent_level
+name|GimpConfigWriter
+modifier|*
+name|writer
 parameter_list|)
 block|{
 name|GObjectClass
@@ -586,9 +588,7 @@ name|object
 argument_list|,
 name|prop_spec
 argument_list|,
-name|fd
-argument_list|,
-name|indent_level
+name|writer
 argument_list|)
 condition|)
 return|return
@@ -608,7 +608,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_serialize_property (GObject * object,GParamSpec * param_spec,gint fd,gint indent_level)
+DECL|function|gimp_config_serialize_property (GObject * object,GParamSpec * param_spec,GimpConfigWriter * writer)
 name|gimp_config_serialize_property
 parameter_list|(
 name|GObject
@@ -619,11 +619,9 @@ name|GParamSpec
 modifier|*
 name|param_spec
 parameter_list|,
-name|gint
-name|fd
-parameter_list|,
-name|gint
-name|indent_level
+name|GimpConfigWriter
+modifier|*
+name|writer
 parameter_list|)
 block|{
 name|GTypeClass
@@ -639,10 +637,6 @@ modifier|*
 name|parent_iface
 init|=
 name|NULL
-decl_stmt|;
-name|GString
-modifier|*
-name|str
 decl_stmt|;
 name|GValue
 name|value
@@ -670,25 +664,9 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|str
-operator|=
-name|g_string_new
+name|gimp_config_writer_open
 argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_config_string_indent
-argument_list|(
-name|str
-argument_list|,
-name|indent_level
-argument_list|)
-expr_stmt|;
-name|g_string_append_printf
-argument_list|(
-name|str
-argument_list|,
-literal|"(%s "
+name|writer
 argument_list|,
 name|param_spec
 operator|->
@@ -795,7 +773,7 @@ name|value
 argument_list|,
 name|param_spec
 argument_list|,
-name|str
+name|writer
 argument_list|)
 condition|)
 block|{
@@ -858,34 +836,6 @@ if|if
 condition|(
 name|gimp_config_iface
 condition|)
-block|{
-name|g_string_append_c
-argument_list|(
-name|str
-argument_list|,
-literal|'\n'
-argument_list|)
-expr_stmt|;
-name|write
-argument_list|(
-name|fd
-argument_list|,
-name|str
-operator|->
-name|str
-argument_list|,
-name|str
-operator|->
-name|len
-argument_list|)
-expr_stmt|;
-name|g_string_truncate
-argument_list|(
-name|str
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 name|success
 operator|=
 name|gimp_config_iface
@@ -894,23 +844,23 @@ name|serialize
 argument_list|(
 name|prop_object
 argument_list|,
-name|fd
-argument_list|,
-name|indent_level
-operator|+
-literal|1
+name|writer
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|success
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
 block|}
 else|else
 block|{
+name|GString
+modifier|*
+name|str
+init|=
+name|g_string_new
+argument_list|(
+name|NULL
+argument_list|)
+decl_stmt|;
 name|success
 operator|=
 name|gimp_config_serialize_value
@@ -923,25 +873,13 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-block|}
-block|}
 if|if
 condition|(
 name|success
 condition|)
-block|{
-name|g_string_append
+name|gimp_config_writer_print
 argument_list|(
-name|str
-argument_list|,
-literal|")\n"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|write
-argument_list|(
-name|fd
+name|writer
 argument_list|,
 name|str
 operator|->
@@ -951,21 +889,34 @@ name|str
 operator|->
 name|len
 argument_list|)
-operator|==
-operator|-
-literal|1
-condition|)
-name|success
-operator|=
-name|FALSE
 expr_stmt|;
+name|g_string_free
+argument_list|(
+name|str
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
-operator|!
 name|success
 condition|)
 block|{
+name|gimp_config_writer_close
+argument_list|(
+name|writer
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|gimp_config_writer_revert
+argument_list|(
+name|writer
+argument_list|)
+expr_stmt|;
 comment|/* don't warn for empty string properties */
 if|if
 condition|(
@@ -975,11 +926,14 @@ operator|&
 name|value
 argument_list|)
 condition|)
+block|{
 name|success
 operator|=
 name|TRUE
 expr_stmt|;
+block|}
 else|else
+block|{
 name|g_warning
 argument_list|(
 literal|"couldn't serialize property %s::%s of type %s"
@@ -1005,17 +959,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 name|g_value_unset
 argument_list|(
 operator|&
 name|value
-argument_list|)
-expr_stmt|;
-name|g_string_free
-argument_list|(
-name|str
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 return|return
@@ -1590,29 +1538,23 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_unknown_tokens:  * @object: a #GObject.  * @fd: a file descriptor to write to.  *   * Writes all unknown tokens attached to #object to the file descriptor @fd.  * See gimp_config_add_unknown_token().  **/
+comment|/**  * gimp_config_serialize_unknown_tokens:  * @object: a #GObject.  * @writer: a #GimpConfigWriter.  *   * Writes all unknown tokens attached to #object to the @writer.  See  * gimp_config_add_unknown_token().  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_serialize_unknown_tokens (GObject * object,gint fd,gint indent_level)
+DECL|function|gimp_config_serialize_unknown_tokens (GObject * object,GimpConfigWriter * writer)
 name|gimp_config_serialize_unknown_tokens
 parameter_list|(
 name|GObject
 modifier|*
 name|object
 parameter_list|,
-name|gint
-name|fd
-parameter_list|,
-name|gint
-name|indent_level
+name|GimpConfigWriter
+modifier|*
+name|writer
 parameter_list|)
 block|{
-name|GString
-modifier|*
-name|str
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|G_IS_OBJECT
@@ -1623,11 +1565,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|str
-operator|=
-name|g_string_new
+name|gimp_config_writer_linefeed
 argument_list|(
-name|NULL
+name|writer
 argument_list|)
 expr_stmt|;
 name|gimp_config_foreach_unknown_token
@@ -1636,27 +1576,11 @@ name|object
 argument_list|,
 name|serialize_unknown_token
 argument_list|,
-name|str
+name|writer
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
-name|write
-argument_list|(
-name|fd
-argument_list|,
-name|str
-operator|->
-name|str
-argument_list|,
-name|str
-operator|->
-name|len
-argument_list|)
-operator|!=
-operator|-
-literal|1
-operator|)
+name|TRUE
 return|;
 block|}
 end_function
@@ -1844,30 +1768,44 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|GimpConfigWriter
+modifier|*
+name|writer
+init|=
+name|data
+decl_stmt|;
 name|gchar
 modifier|*
 name|escaped
-init|=
+decl_stmt|;
+name|escaped
+operator|=
 name|g_strescape
 argument_list|(
 name|value
 argument_list|,
 name|NULL
 argument_list|)
-decl_stmt|;
-name|g_string_append_printf
+expr_stmt|;
+name|gimp_config_writer_open
 argument_list|(
-operator|(
-name|GString
-operator|*
-operator|)
-name|data
-argument_list|,
-literal|"(%s \"%s\")\n"
+name|writer
 argument_list|,
 name|key
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_printf
+argument_list|(
+name|writer
+argument_list|,
+literal|"\"%s\""
 argument_list|,
 name|escaped
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_close
+argument_list|(
+name|writer
 argument_list|)
 expr_stmt|;
 name|g_free

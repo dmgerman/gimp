@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb728500103
+DECL|enum|__anon2bf8d4d90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -252,11 +252,9 @@ name|GObject
 modifier|*
 name|object
 parameter_list|,
-name|gint
-name|fd
-parameter_list|,
-name|gint
-name|indent_level
+name|GimpConfigWriter
+modifier|*
+name|writer
 parameter_list|,
 name|gpointer
 name|data
@@ -1023,18 +1021,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_rc_serialize (GObject * object,gint fd,gint indent_level,gpointer data)
+DECL|function|gimp_rc_serialize (GObject * object,GimpConfigWriter * writer,gpointer data)
 name|gimp_rc_serialize
 parameter_list|(
 name|GObject
 modifier|*
 name|object
 parameter_list|,
-name|gint
-name|fd
-parameter_list|,
-name|gint
-name|indent_level
+name|GimpConfigWriter
+modifier|*
+name|writer
 parameter_list|,
 name|gpointer
 name|data
@@ -1062,9 +1058,7 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
-name|fd
-argument_list|,
-name|indent_level
+name|writer
 argument_list|)
 condition|)
 return|return
@@ -1080,39 +1074,19 @@ name|gimp_config_serialize_properties
 argument_list|(
 name|object
 argument_list|,
-name|fd
-argument_list|,
-name|indent_level
+name|writer
 argument_list|)
 condition|)
 return|return
 name|FALSE
 return|;
 block|}
-if|if
-condition|(
-name|write
-argument_list|(
-name|fd
-argument_list|,
-literal|"\n"
-argument_list|,
-literal|1
-argument_list|)
-operator|<
-literal|0
-condition|)
-return|return
-name|FALSE
-return|;
 return|return
 name|gimp_config_serialize_unknown_tokens
 argument_list|(
 name|object
 argument_list|,
-name|fd
-argument_list|,
-name|indent_level
+name|writer
 argument_list|)
 return|;
 block|}
@@ -2009,11 +1983,10 @@ name|gchar
 modifier|*
 name|top
 init|=
-literal|"# GIMP gimprc\n"
-literal|"#\n"
-literal|"# This is your personal gimprc file.  Any variable defined in this file\n"
-literal|"# takes precedence over the value defined in the system-wide gimprc:\n"
-literal|"#   "
+literal|"GIMP gimprc\n"
+literal|"\n"
+literal|"This is your personal gimprc file.  Any variable defined in this file "
+literal|"takes precedence over the value defined in the system-wide gimprc: "
 decl_stmt|;
 specifier|const
 name|gchar
@@ -2021,15 +1994,15 @@ modifier|*
 name|bottom
 init|=
 literal|"\n"
-literal|"# Most values can be set within The GIMP by changing some options in\n"
-literal|"# the Preferences dialog.\n"
+literal|"Most values can be set within The GIMP by changing some options in "
+literal|"the Preferences dialog."
 decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|footer
 init|=
-literal|"# end of gimprc\n"
+literal|"end of gimprc"
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(

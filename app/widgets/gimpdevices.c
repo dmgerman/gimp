@@ -605,9 +605,9 @@ argument_list|)
 argument_list|,
 name|filename
 argument_list|,
-literal|"# GIMP devicerc\n"
+literal|"GIMP devicerc"
 argument_list|,
-literal|"# end devicerc"
+literal|"end of devicerc"
 argument_list|,
 name|NULL
 argument_list|,

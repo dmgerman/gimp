@@ -150,6 +150,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpconfigwriter.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"config/gimpscanner.h"
 end_include
 
@@ -344,11 +350,9 @@ name|GObject
 modifier|*
 name|object
 parameter_list|,
-name|gint
-name|fd
-parameter_list|,
-name|gint
-name|indent_level
+name|GimpConfigWriter
+modifier|*
+name|writer
 parameter_list|,
 name|gpointer
 name|data
@@ -377,9 +381,9 @@ name|GParamSpec
 modifier|*
 name|pspec
 parameter_list|,
-name|GString
+name|GimpConfigWriter
 modifier|*
-name|string
+name|writer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1083,7 +1087,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be772f20103
+DECL|enum|__anon2955de790103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1097,7 +1101,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be772f20203
+DECL|enum|__anon2955de790203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -3976,18 +3980,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_context_serialize (GObject * object,gint fd,gint indent_level,gpointer data)
+DECL|function|gimp_context_serialize (GObject * object,GimpConfigWriter * writer,gpointer data)
 name|gimp_context_serialize
 parameter_list|(
 name|GObject
 modifier|*
 name|object
 parameter_list|,
-name|gint
-name|fd
-parameter_list|,
-name|gint
-name|indent_level
+name|GimpConfigWriter
+modifier|*
+name|writer
 parameter_list|,
 name|gpointer
 name|data
@@ -3998,9 +4000,7 @@ name|gimp_config_serialize_changed_properties
 argument_list|(
 name|object
 argument_list|,
-name|fd
-argument_list|,
-name|indent_level
+name|writer
 argument_list|)
 return|;
 block|}
@@ -4009,7 +4009,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_context_serialize_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec,GString * string)
+DECL|function|gimp_context_serialize_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec,GimpConfigWriter * writer)
 name|gimp_context_serialize_property
 parameter_list|(
 name|GObject
@@ -4028,9 +4028,9 @@ name|GParamSpec
 modifier|*
 name|pspec
 parameter_list|,
-name|GString
+name|GimpConfigWriter
 modifier|*
-name|string
+name|writer
 parameter_list|)
 block|{
 name|GimpContext
@@ -4109,9 +4109,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_string_append_printf
+name|gimp_config_writer_printf
 argument_list|(
-name|string
+name|writer
 argument_list|,
 literal|"\"%s\""
 argument_list|,
@@ -4126,11 +4126,13 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_string_append_printf
+name|gimp_config_writer_print
 argument_list|(
-name|string
+name|writer
 argument_list|,
 literal|"NULL"
+argument_list|,
+literal|4
 argument_list|)
 expr_stmt|;
 block|}

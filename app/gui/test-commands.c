@@ -1087,9 +1087,9 @@ argument_list|)
 argument_list|,
 name|filename
 argument_list|,
-literal|"# test-context\n"
+literal|"GIMP test-context"
 argument_list|,
-literal|"# end of test-context\n"
+literal|"end of test-context"
 argument_list|,
 name|NULL
 argument_list|,

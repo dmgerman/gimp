@@ -76,6 +76,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpconfigwriter.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"config/gimpscanner.h"
 end_include
 
@@ -93,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ec83dd0103
+DECL|enum|__anon2c0731ec0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -178,11 +184,9 @@ name|GObject
 modifier|*
 name|list
 parameter_list|,
-name|gint
-name|fd
-parameter_list|,
-name|gint
-name|indent_level
+name|GimpConfigWriter
+modifier|*
+name|writer
 parameter_list|,
 name|gpointer
 name|data
@@ -226,9 +230,9 @@ name|GimpParasite
 modifier|*
 name|parasite
 parameter_list|,
-name|gint
+name|GimpConfigWriter
 modifier|*
-name|fd_ptr
+name|writer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -871,18 +875,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_parasite_list_serialize (GObject * list,gint fd,gint indent_level,gpointer data)
+DECL|function|gimp_parasite_list_serialize (GObject * list,GimpConfigWriter * writer,gpointer data)
 name|gimp_parasite_list_serialize
 parameter_list|(
 name|GObject
 modifier|*
 name|list
 parameter_list|,
-name|gint
-name|fd
-parameter_list|,
-name|gint
-name|indent_level
+name|GimpConfigWriter
+modifier|*
+name|writer
 parameter_list|,
 name|gpointer
 name|data
@@ -911,17 +913,11 @@ name|GHFunc
 operator|)
 name|parasite_serialize
 argument_list|,
-operator|&
-name|fd
+name|writer
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
-name|fd
-operator|!=
-operator|-
-literal|1
-operator|)
+name|TRUE
 return|;
 block|}
 end_function
@@ -1641,7 +1637,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|parasite_serialize (const gchar * key,GimpParasite * parasite,gint * fd_ptr)
+DECL|function|parasite_serialize (const gchar * key,GimpParasite * parasite,GimpConfigWriter * writer)
 name|parasite_serialize
 parameter_list|(
 specifier|const
@@ -1653,9 +1649,9 @@ name|GimpParasite
 modifier|*
 name|parasite
 parameter_list|,
-name|gint
+name|GimpConfigWriter
 modifier|*
-name|fd_ptr
+name|writer
 parameter_list|)
 block|{
 name|GString
@@ -1670,16 +1666,6 @@ decl_stmt|;
 name|guint32
 name|len
 decl_stmt|;
-comment|/* return if write failed earlier */
-if|if
-condition|(
-operator|*
-name|fd_ptr
-operator|==
-operator|-
-literal|1
-condition|)
-return|return;
 if|if
 condition|(
 operator|!
@@ -1689,6 +1675,13 @@ name|parasite
 argument_list|)
 condition|)
 return|return;
+name|gimp_config_writer_open
+argument_list|(
+name|writer
+argument_list|,
+name|parasite_symbol
+argument_list|)
+expr_stmt|;
 name|str
 operator|=
 name|g_string_sized_new
@@ -1700,9 +1693,7 @@ name|g_string_printf
 argument_list|(
 name|str
 argument_list|,
-literal|"(%s \"%s\" %lu \""
-argument_list|,
-name|parasite_symbol
+literal|"\"%s\" %lu \""
 argument_list|,
 name|gimp_parasite_name
 argument_list|(
@@ -1821,19 +1812,9 @@ expr_stmt|;
 break|break;
 block|}
 block|}
-name|g_string_append
+name|gimp_config_writer_print
 argument_list|(
-name|str
-argument_list|,
-literal|"\")\n\n"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|write
-argument_list|(
-operator|*
-name|fd_ptr
+name|writer
 argument_list|,
 name|str
 operator|->
@@ -1843,21 +1824,22 @@ name|str
 operator|->
 name|len
 argument_list|)
-operator|==
-operator|-
-literal|1
-condition|)
-operator|*
-name|fd_ptr
-operator|=
-operator|-
-literal|1
 expr_stmt|;
 name|g_string_free
 argument_list|(
 name|str
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_close
+argument_list|(
+name|writer
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_linefeed
+argument_list|(
+name|writer
 argument_list|)
 expr_stmt|;
 block|}

@@ -274,9 +274,9 @@ argument_list|)
 argument_list|,
 name|filename
 argument_list|,
-literal|"# foorc\n"
+literal|"foorc"
 argument_list|,
-literal|"# end of foorc\n"
+literal|"end of foorc"
 argument_list|,
 name|NULL
 argument_list|,

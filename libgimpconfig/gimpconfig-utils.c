@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpconfig.h"
 end_include
 

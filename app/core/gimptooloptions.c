@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1e146c0103
+DECL|enum|__anon276d4dc20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -694,9 +694,9 @@ argument_list|)
 argument_list|,
 name|filename
 argument_list|,
-literal|"# tool options\n"
+literal|"GIMP tool options"
 argument_list|,
-literal|"# end tool options"
+literal|"end of tool options"
 argument_list|,
 name|NULL
 argument_list|,
