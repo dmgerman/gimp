@@ -791,7 +791,7 @@ name|VALUE_LUT
 operator|||
 name|channel
 operator|>
-name|BLUE_LUT
+name|ALPHA_LUT
 condition|)
 name|success
 operator|=
@@ -935,6 +935,18 @@ name|drawable
 argument_list|)
 operator|||
 operator|(
+operator|!
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
+operator|&&
+name|channel
+operator|==
+name|ALPHA_LUT
+operator|)
+operator|||
+operator|(
 name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
@@ -943,6 +955,10 @@ operator|&&
 name|channel
 operator|!=
 name|GRAY_LUT
+operator|&&
+name|channel
+operator|!=
+name|ALPHA_LUT
 operator|)
 condition|)
 name|success
@@ -1219,7 +1235,7 @@ name|PDB_INT32
 block|,
 literal|"channel"
 block|,
-literal|"The channel to modify: { VALUE_LUT (0), RED_LUT (1), GREEN_LUT (2), BLUE_LUT (3) }"
+literal|"The channel to modify: { VALUE_LUT (0), RED_LUT (1), GREEN_LUT (2), BLUE_LUT (3), ALPHA_LUT (4) }"
 block|}
 block|,
 block|{
