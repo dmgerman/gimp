@@ -4,7 +4,7 @@ comment|/* edge filter for the GIMP  *  -Peter Mattis  *  * This filter performs
 end_comment
 
 begin_comment
-comment|/* pgmedge.c - edge-detect a portable graymap ** ** Copyright (C) 1989 by Jef Poskanzer. */
+comment|/* pgmedge.c - edge-detect a portable graymap  *  * Copyright (C) 1989 by Jef Poskanzer.  */
 end_comment
 
 begin_comment
@@ -19,12 +19,6 @@ begin_include
 include|#
 directive|include
 file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
 end_include
 
 begin_include
@@ -105,7 +99,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ee769d0103
+DECL|enum|__anon27dca9840103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -131,7 +125,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ee769d0208
+DECL|struct|__anon27dca9840208
 block|{
 DECL|member|amount
 name|gdouble
@@ -982,9 +976,11 @@ name|height
 decl_stmt|;
 name|gint
 name|alpha
-decl_stmt|,
+decl_stmt|;
+name|gboolean
 name|has_alpha
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|chan
 decl_stmt|;
 name|gint
@@ -1332,7 +1328,7 @@ operator|-
 literal|2
 condition|)
 block|{
-comment|/*                   ** 3x3 kernel is inside of the tile -- do fast                   ** version                   */
+comment|/*                    * 3x3 kernel is inside of the tile -- do fast                    * version                    */
 for|for
 control|(
 name|chan
@@ -1429,7 +1425,7 @@ block|}
 block|}
 else|else
 block|{
-comment|/*                   ** The kernel is not inside of the tile -- do slow                   ** version                   */
+comment|/*                    * The kernel is not inside of the tile -- do slow                    * version                    */
 name|gimp_pixel_fetcher_get_pixel
 argument_list|(
 name|pft
@@ -3478,11 +3474,11 @@ literal|1.0
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-literal|0
+literal|1.0
 argument_list|,
-literal|0
+name|G_MAXFLOAT
 argument_list|,
 name|NULL
 argument_list|,
