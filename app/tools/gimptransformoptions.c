@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ff08450103
+DECL|enum|__anon28b777960103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -430,7 +430,7 @@ literal|"clip"
 argument_list|,
 name|NULL
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
