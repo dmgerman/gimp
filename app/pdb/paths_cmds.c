@@ -1242,7 +1242,7 @@ init|=
 literal|0
 decl_stmt|;
 name|gint32
-name|num_points
+name|num_point_details
 init|=
 literal|0
 decl_stmt|;
@@ -1343,6 +1343,9 @@ name|GimpVectorsCompatPoint
 modifier|*
 name|points
 decl_stmt|;
+name|gint
+name|num_points
+decl_stmt|;
 name|path_type
 operator|=
 literal|1
@@ -1360,6 +1363,12 @@ argument_list|,
 operator|&
 name|path_closed
 argument_list|)
+expr_stmt|;
+name|num_point_details
+operator|=
+name|num_points
+operator|*
+literal|3
 expr_stmt|;
 if|if
 condition|(
@@ -1379,9 +1388,7 @@ name|g_new0
 argument_list|(
 name|gdouble
 argument_list|,
-name|num_points
-operator|*
-literal|3
+name|num_point_details
 argument_list|)
 expr_stmt|;
 for|for
@@ -1507,7 +1514,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|num_points
+name|num_point_details
 expr_stmt|;
 name|return_args
 index|[
