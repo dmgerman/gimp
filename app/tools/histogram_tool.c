@@ -310,20 +310,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|histogram_tool_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|histogram_tool_cancel_callback
+name|histogram_tool_close_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1590,7 +1577,7 @@ if|if
 condition|(
 name|histogram_tool_dialog
 condition|)
-name|histogram_tool_cancel_callback
+name|histogram_tool_close_callback
 argument_list|(
 name|NULL
 argument_list|,
@@ -1775,7 +1762,7 @@ if|if
 condition|(
 name|histogram_tool_dialog
 condition|)
-name|histogram_tool_cancel_callback
+name|histogram_tool_close_callback
 argument_list|(
 name|NULL
 argument_list|,
@@ -1946,15 +1933,15 @@ block|}
 end_function
 
 begin_comment
-comment|/****************************/
+comment|/***************************/
 end_comment
 
 begin_comment
-comment|/*  Select by Color dialog  */
+comment|/*  Histogram Tool dialog  */
 end_comment
 
 begin_comment
-comment|/****************************/
+comment|/***************************/
 end_comment
 
 begin_comment
@@ -1970,19 +1957,9 @@ index|[]
 init|=
 block|{
 block|{
-literal|"OK"
+literal|"Close"
 block|,
-name|histogram_tool_ok_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-literal|"Cancel"
-block|,
-name|histogram_tool_cancel_callback
+name|histogram_tool_close_callback
 block|,
 name|NULL
 block|,
@@ -2702,15 +2679,6 @@ name|user_data
 operator|=
 name|htd
 expr_stmt|;
-name|action_items
-index|[
-literal|1
-index|]
-operator|.
-name|user_data
-operator|=
-name|htd
-expr_stmt|;
 name|build_action_area
 argument_list|(
 name|GTK_DIALOG
@@ -2722,7 +2690,7 @@ argument_list|)
 argument_list|,
 name|action_items
 argument_list|,
-literal|2
+literal|1
 argument_list|,
 literal|0
 argument_list|)
@@ -2753,8 +2721,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|histogram_tool_ok_callback (GtkWidget * widget,gpointer client_data)
-name|histogram_tool_ok_callback
+DECL|function|histogram_tool_close_callback (GtkWidget * widget,gpointer client_data)
+name|histogram_tool_close_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2813,7 +2781,7 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|histogram_tool_cancel_callback
+name|histogram_tool_close_callback
 argument_list|(
 name|widget
 argument_list|,
@@ -2823,51 +2791,6 @@ expr_stmt|;
 return|return
 name|TRUE
 return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|histogram_tool_cancel_callback (GtkWidget * widget,gpointer client_data)
-name|histogram_tool_cancel_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|client_data
-parameter_list|)
-block|{
-name|HistogramToolDialog
-modifier|*
-name|htd
-decl_stmt|;
-name|htd
-operator|=
-operator|(
-name|HistogramToolDialog
-operator|*
-operator|)
-name|client_data
-expr_stmt|;
-if|if
-condition|(
-name|GTK_WIDGET_VISIBLE
-argument_list|(
-name|htd
-operator|->
-name|shell
-argument_list|)
-condition|)
-name|gtk_widget_hide
-argument_list|(
-name|htd
-operator|->
-name|shell
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
