@@ -625,10 +625,7 @@ name|gimp_transform_tool_info_dialog_connect
 argument_list|(
 name|transform_tool
 argument_list|,
-name|_
-argument_list|(
-literal|"Rotate"
-argument_list|)
+name|GIMP_STOCK_TOOL_ROTATE
 argument_list|)
 expr_stmt|;
 name|widget

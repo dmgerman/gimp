@@ -270,6 +270,11 @@ name|gboolean
 name|use_grid
 decl_stmt|;
 comment|/*  does the tool use the grid       */
+DECL|member|use_center
+name|gboolean
+name|use_center
+decl_stmt|;
+comment|/*  use the center handle            */
 DECL|member|ngx
 DECL|member|ngy
 name|gint

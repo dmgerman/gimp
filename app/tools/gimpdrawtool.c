@@ -2526,8 +2526,12 @@ name|width
 operator|+
 name|height
 operator|)
-operator|>>
-literal|1
+operator|/
+literal|2
+expr_stmt|;
+name|width
+operator|/=
+literal|2
 expr_stmt|;
 return|return
 operator|(
