@@ -347,13 +347,15 @@ argument_list|(
 name|merge_list
 argument_list|)
 expr_stmt|;
-comment|/* If there was a floating selection, we have done something. 	 No need to warn the user. Return the active layer instead */
+comment|/* If there was a floating selection, we have done something.          No need to warn the user. Return the active layer instead */
 if|if
 condition|(
 name|had_floating_sel
 condition|)
 return|return
-name|layer
+name|gimage
+operator|->
+name|active_layer
 return|;
 else|else
 name|g_message
