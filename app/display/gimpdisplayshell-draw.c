@@ -4294,17 +4294,6 @@ name|condition
 parameter_list|)
 define|\
 value|gimp_menu_item_set_active ("<Image>/" menu, (condition) != 0)
-DECL|macro|SET_COLOR (menu,color)
-define|#
-directive|define
-name|SET_COLOR
-parameter_list|(
-name|menu
-parameter_list|,
-name|color
-parameter_list|)
-define|\
-value|gimp_menu_item_set_color ("<Image>/" menu, (color), FALSE)
 DECL|macro|SET_SENSITIVE (menu,condition)
 define|#
 directive|define
@@ -4486,22 +4475,6 @@ argument_list|(
 literal|"Edit/Stroke"
 argument_list|,
 name|lp
-argument_list|)
-expr_stmt|;
-name|SET_COLOR
-argument_list|(
-literal|"Edit/Fill with FG Color"
-argument_list|,
-operator|&
-name|fg
-argument_list|)
-expr_stmt|;
-name|SET_COLOR
-argument_list|(
-literal|"Edit/Fill with BG Color"
-argument_list|,
-operator|&
-name|bg
 argument_list|)
 expr_stmt|;
 block|}
@@ -5139,9 +5112,6 @@ expr_stmt|;
 undef|#
 directive|undef
 name|SET_ACTIVE
-undef|#
-directive|undef
-name|SET_COLOR
 undef|#
 directive|undef
 name|SET_SENSITIVE

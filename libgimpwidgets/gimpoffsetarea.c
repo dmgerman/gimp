@@ -37,7 +37,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1cfc0a0103
+DECL|enum|__anon2b30f7300103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -496,13 +496,6 @@ name|offset_y
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|offset_area
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
 name|GIMP_IS_OFFSET_AREA
 argument_list|(
 name|offset_area
@@ -733,13 +726,6 @@ name|gint
 name|offset_y
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|offset_area
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_OFFSET_AREA

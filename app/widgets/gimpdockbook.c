@@ -63,6 +63,12 @@ directive|include
 file|"gimpimagedock.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpitemfactory.h"
+end_include
+
 begin_comment
 comment|/* EEK, see below  */
 end_comment
@@ -1666,35 +1672,15 @@ name|GimpContainerView
 modifier|*
 name|view
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|list_widget
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|grid_widget
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|size_widget
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|toggle_widget
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|auto_widget
-decl_stmt|;
 name|gboolean
 name|is_grid
 init|=
 name|FALSE
 decl_stmt|;
-name|gint
+name|GimpPreviewSize
 name|preview_size
 init|=
-literal|16
+name|GIMP_PREVIEW_SIZE_NONE
 decl_stmt|;
 name|entry
 operator|=
@@ -1748,43 +1734,17 @@ operator|->
 name|preview_size
 expr_stmt|;
 block|}
-name|list_widget
-operator|=
-name|gtk_item_factory_get_widget
-argument_list|(
-name|ifactory
-argument_list|,
-literal|"/View as List"
-argument_list|)
-expr_stmt|;
-name|grid_widget
-operator|=
-name|gtk_item_factory_get_widget
-argument_list|(
-name|ifactory
-argument_list|,
-literal|"/View as Grid"
-argument_list|)
-expr_stmt|;
-name|toggle_widget
-operator|=
-name|gtk_item_factory_get_widget
-argument_list|(
-name|ifactory
-argument_list|,
-literal|"/Show Image Menu"
-argument_list|)
-expr_stmt|;
-name|auto_widget
-operator|=
-name|gtk_item_factory_get_widget
-argument_list|(
-name|ifactory
-argument_list|,
-literal|"/Auto Follow Active Image"
-argument_list|)
-expr_stmt|;
-comment|/*  yes, this is insane  */
+DECL|macro|SET_ACTIVE (path,active)
+define|#
+directive|define
+name|SET_ACTIVE
+parameter_list|(
+name|path
+parameter_list|,
+name|active
+parameter_list|)
+define|\
+value|gimp_item_factory_set_active (ifactory, (path), (active))
 if|if
 condition|(
 name|preview_size
@@ -1792,16 +1752,15 @@ operator|>=
 name|GIMP_PREVIEW_SIZE_GIGANTIC
 condition|)
 block|{
-name|size_widget
-operator|=
-name|gtk_item_factory_get_widget
+name|SET_ACTIVE
 argument_list|(
-name|ifactory
-argument_list|,
 literal|"/Preview Size/Gigantic"
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
+elseif|else
 if|if
 condition|(
 name|preview_size
@@ -1809,13 +1768,11 @@ operator|>=
 name|GIMP_PREVIEW_SIZE_ENORMOUS
 condition|)
 block|{
-name|size_widget
-operator|=
-name|gtk_item_factory_get_widget
+name|SET_ACTIVE
 argument_list|(
-name|ifactory
-argument_list|,
 literal|"/Preview Size/Enormous"
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1827,13 +1784,11 @@ operator|>=
 name|GIMP_PREVIEW_SIZE_HUGE
 condition|)
 block|{
-name|size_widget
-operator|=
-name|gtk_item_factory_get_widget
+name|SET_ACTIVE
 argument_list|(
-name|ifactory
-argument_list|,
 literal|"/Preview Size/Huge"
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1845,13 +1800,11 @@ operator|>=
 name|GIMP_PREVIEW_SIZE_EXTRA_LARGE
 condition|)
 block|{
-name|size_widget
-operator|=
-name|gtk_item_factory_get_widget
+name|SET_ACTIVE
 argument_list|(
-name|ifactory
-argument_list|,
 literal|"/Preview Size/Extra Large"
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1863,13 +1816,11 @@ operator|>=
 name|GIMP_PREVIEW_SIZE_LARGE
 condition|)
 block|{
-name|size_widget
-operator|=
-name|gtk_item_factory_get_widget
+name|SET_ACTIVE
 argument_list|(
-name|ifactory
-argument_list|,
 literal|"/Preview Size/Large"
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1881,13 +1832,11 @@ operator|>=
 name|GIMP_PREVIEW_SIZE_MEDIUM
 condition|)
 block|{
-name|size_widget
-operator|=
-name|gtk_item_factory_get_widget
+name|SET_ACTIVE
 argument_list|(
-name|ifactory
-argument_list|,
 literal|"/Preview Size/Medium"
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1899,13 +1848,11 @@ operator|>=
 name|GIMP_PREVIEW_SIZE_SMALL
 condition|)
 block|{
-name|size_widget
-operator|=
-name|gtk_item_factory_get_widget
+name|SET_ACTIVE
 argument_list|(
-name|ifactory
-argument_list|,
 literal|"/Preview Size/Small"
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1917,49 +1864,32 @@ operator|>=
 name|GIMP_PREVIEW_SIZE_EXTRA_SMALL
 condition|)
 block|{
-name|size_widget
-operator|=
-name|gtk_item_factory_get_widget
+name|SET_ACTIVE
 argument_list|(
-name|ifactory
-argument_list|,
 literal|"/Preview Size/Extra Small"
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
 else|else
 block|{
-name|size_widget
-operator|=
-name|gtk_item_factory_get_widget
+name|SET_ACTIVE
 argument_list|(
-name|ifactory
-argument_list|,
 literal|"/Preview Size/Tiny"
-argument_list|)
-expr_stmt|;
-block|}
-name|gtk_check_menu_item_set_active
-argument_list|(
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|size_widget
-argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|is_grid
 condition|)
 block|{
-name|gtk_check_menu_item_set_active
+name|SET_ACTIVE
 argument_list|(
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|grid_widget
-argument_list|)
+literal|"/View as Grid"
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1967,23 +1897,17 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gtk_check_menu_item_set_active
+name|SET_ACTIVE
 argument_list|(
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|list_widget
-argument_list|)
+literal|"/View as List"
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_check_menu_item_set_active
+name|SET_ACTIVE
 argument_list|(
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|toggle_widget
-argument_list|)
+literal|"/Show Image Menu"
 argument_list|,
 name|GIMP_IMAGE_DOCK
 argument_list|(
@@ -1995,12 +1919,9 @@ operator|->
 name|show_image_menu
 argument_list|)
 expr_stmt|;
-name|gtk_check_menu_item_set_active
+name|SET_ACTIVE
 argument_list|(
-name|GTK_CHECK_MENU_ITEM
-argument_list|(
-name|auto_widget
-argument_list|)
+literal|"/Auto Follow Active Image"
 argument_list|,
 name|GIMP_IMAGE_DOCK
 argument_list|(
@@ -2012,6 +1933,9 @@ operator|->
 name|auto_follow_active
 argument_list|)
 expr_stmt|;
+undef|#
+directive|undef
+name|SET_ACTIVE
 block|}
 comment|/*  do evil things  */
 block|{
