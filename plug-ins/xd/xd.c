@@ -1977,13 +1977,6 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"%d selected\n"
-argument_list|,
-name|preview_selected_version
-argument_list|)
-expr_stmt|;
 return|return
 literal|0
 return|;
@@ -3287,6 +3280,21 @@ name|dsize
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* Select the most recent version. */
+name|gtk_list_select_item
+argument_list|(
+name|GTK_LIST
+argument_list|(
+name|plist
+argument_list|)
+argument_list|,
+name|xd
+operator|->
+name|versions
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 name|gtk_main
 argument_list|()
 expr_stmt|;
