@@ -935,6 +935,10 @@ argument_list|(
 name|reserved_entries
 argument_list|)
 expr_stmt|;
+comment|/* so we can reinit the colormaps */
+name|gtk_preview_reset
+argument_list|()
+expr_stmt|;
 name|gtk_widget_set_default_visual
 argument_list|(
 name|gtk_preview_get_visual
@@ -946,10 +950,6 @@ argument_list|(
 name|gtk_preview_get_cmap
 argument_list|()
 argument_list|)
-expr_stmt|;
-comment|/* so we can reinit the colormaps */
-name|gtk_preview_reset
-argument_list|()
 expr_stmt|;
 name|info
 operator|=
