@@ -11210,6 +11210,12 @@ operator|.
 name|path
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|i
+operator|<
+literal|9
+condition|)
 name|g_free
 argument_list|(
 name|last_opened_entries
