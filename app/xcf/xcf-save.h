@@ -6,30 +6,42 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__XCF_H__
+name|__XCF_SAVE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__XCF_H__
+DECL|macro|__XCF_SAVE_H__
 define|#
 directive|define
-name|__XCF_H__
+name|__XCF_SAVE_H__
 end_define
 
 begin_function_decl
 name|void
-name|xcf_init
+name|xcf_save_choose_format
 parameter_list|(
-name|void
+name|XcfInfo
+modifier|*
+name|info
+parameter_list|,
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|xcf_exit
+name|gint
+name|xcf_save_image
 parameter_list|(
-name|void
+name|XcfInfo
+modifier|*
+name|info
+parameter_list|,
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -40,7 +52,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __XCF_H__ */
+comment|/* __XCF_SAVE_H__ */
 end_comment
 
 end_unit

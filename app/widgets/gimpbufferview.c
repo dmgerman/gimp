@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpbuffer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -42,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpbuffer.h"
+file|"core/gimpedit.h"
 end_include
 
 begin_include
@@ -73,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"global_edit.h"
 end_include
 
 begin_include

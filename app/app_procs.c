@@ -83,6 +83,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"xcf/xcf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/tools.h"
 end_include
 
@@ -186,12 +192,6 @@ begin_include
 include|#
 directive|include
 file|"unitrc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"xcf.h"
 end_include
 
 begin_include
@@ -847,6 +847,9 @@ name|gui_exit
 argument_list|()
 expr_stmt|;
 block|}
+name|xcf_exit
+argument_list|()
+expr_stmt|;
 name|base_exit
 argument_list|()
 expr_stmt|;

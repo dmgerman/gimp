@@ -46,6 +46,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpedit.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-mask.h"
 end_include
 
@@ -59,12 +65,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"global_edit.h"
 end_include
 
 begin_decl_stmt
