@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a7c6b90103
+DECL|enum|__anon2ad5ab570103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -1827,6 +1827,8 @@ name|preview
 operator|->
 name|viewable
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_debug_memsize

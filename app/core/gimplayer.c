@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a35aab70103
+DECL|enum|__anon2993ed950103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -219,6 +219,10 @@ parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1089,12 +1093,16 @@ end_function
 begin_function
 specifier|static
 name|gsize
-DECL|function|gimp_layer_get_memsize (GimpObject * object)
+DECL|function|gimp_layer_get_memsize (GimpObject * object,gsize * gui_size)
 name|gimp_layer_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 block|{
 name|GimpLayer
@@ -1129,6 +1137,8 @@ name|layer
 operator|->
 name|mask
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 expr_stmt|;
 if|if
@@ -1139,7 +1149,8 @@ name|fs
 operator|.
 name|backing_store
 condition|)
-name|memsize
+operator|*
+name|gui_size
 operator|+=
 name|tile_manager_get_memsize
 argument_list|(
@@ -1150,7 +1161,8 @@ operator|.
 name|backing_store
 argument_list|)
 expr_stmt|;
-name|memsize
+operator|*
+name|gui_size
 operator|+=
 name|layer
 operator|->
@@ -1174,6 +1186,8 @@ operator|->
 name|get_memsize
 argument_list|(
 name|object
+argument_list|,
+name|gui_size
 argument_list|)
 return|;
 block|}

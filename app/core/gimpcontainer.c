@@ -176,7 +176,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd160f90103
+DECL|enum|__anon2af0182f0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd160f90203
+DECL|enum|__anon2af0182f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -322,6 +322,10 @@ parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1273,12 +1277,16 @@ end_function
 begin_function
 specifier|static
 name|gsize
-DECL|function|gimp_container_get_memsize (GimpObject * object)
+DECL|function|gimp_container_get_memsize (GimpObject * object,gsize * gui_size)
 name|gimp_container_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 block|{
 name|GimpContainer
@@ -1366,6 +1374,8 @@ operator|->
 name|get_memsize
 argument_list|(
 name|object
+argument_list|,
+name|gui_size
 argument_list|)
 return|;
 block|}
@@ -1374,7 +1384,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd160f90308
+DECL|struct|__anon2af0182f0308
 block|{
 DECL|member|writer
 name|GimpConfigWriter

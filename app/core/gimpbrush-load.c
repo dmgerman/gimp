@@ -176,7 +176,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2ab40f0103
+DECL|enum|__anon2ac397c60103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -231,6 +231,10 @@ parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -765,12 +769,16 @@ end_function
 begin_function
 specifier|static
 name|gsize
-DECL|function|gimp_brush_get_memsize (GimpObject * object)
+DECL|function|gimp_brush_get_memsize (GimpObject * object,gsize * gui_size)
 name|gimp_brush_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 block|{
 name|GimpBrush
@@ -830,6 +838,8 @@ operator|->
 name|get_memsize
 argument_list|(
 name|object
+argument_list|,
+name|gui_size
 argument_list|)
 return|;
 block|}

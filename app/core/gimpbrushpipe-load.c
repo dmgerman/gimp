@@ -202,6 +202,10 @@ parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -737,12 +741,16 @@ end_function
 begin_function
 specifier|static
 name|gsize
-DECL|function|gimp_brush_pipe_get_memsize (GimpObject * object)
+DECL|function|gimp_brush_pipe_get_memsize (GimpObject * object,gsize * gui_size)
 name|gimp_brush_pipe_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 block|{
 name|GimpBrushPipe
@@ -804,7 +812,6 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
 name|memsize
 operator|+=
 name|gimp_object_get_memsize
@@ -818,9 +825,10 @@ index|[
 name|i
 index|]
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|memsize
 operator|+
@@ -832,6 +840,8 @@ operator|->
 name|get_memsize
 argument_list|(
 name|object
+argument_list|,
+name|gui_size
 argument_list|)
 return|;
 block|}

@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1fcbf20103
+DECL|enum|__anon297fcacc0103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -241,6 +241,10 @@ parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -876,12 +880,16 @@ end_function
 begin_function
 specifier|static
 name|gsize
-DECL|function|gimp_drawable_get_memsize (GimpObject * object)
+DECL|function|gimp_drawable_get_memsize (GimpObject * object,gsize * gui_size)
 name|gimp_drawable_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 block|{
 name|GimpDrawable
@@ -921,7 +929,8 @@ name|drawable
 operator|->
 name|preview_cache
 condition|)
-name|memsize
+operator|*
+name|gui_size
 operator|+=
 name|gimp_preview_cache_get_memsize
 argument_list|(
@@ -941,6 +950,8 @@ operator|->
 name|get_memsize
 argument_list|(
 name|object
+argument_list|,
+name|gui_size
 argument_list|)
 return|;
 block|}

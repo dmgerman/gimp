@@ -246,7 +246,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b5d61e0103
+DECL|enum|__anon2a1176060103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -392,6 +392,10 @@ parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2495,12 +2499,16 @@ end_function
 begin_function
 specifier|static
 name|gsize
-DECL|function|gimp_image_get_memsize (GimpObject * object)
+DECL|function|gimp_image_get_memsize (GimpObject * object,gsize * gui_size)
 name|gimp_image_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 block|{
 name|GimpImage
@@ -2598,6 +2606,8 @@ name|gimage
 operator|->
 name|grid
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 expr_stmt|;
 name|memsize
@@ -2610,6 +2620,8 @@ name|gimage
 operator|->
 name|layers
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 expr_stmt|;
 name|memsize
@@ -2622,6 +2634,8 @@ name|gimage
 operator|->
 name|channels
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 expr_stmt|;
 name|memsize
@@ -2634,6 +2648,8 @@ name|gimage
 operator|->
 name|vectors
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 expr_stmt|;
 name|memsize
@@ -2666,6 +2682,8 @@ name|gimage
 operator|->
 name|selection_mask
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 expr_stmt|;
 name|memsize
@@ -2678,6 +2696,8 @@ name|gimage
 operator|->
 name|parasites
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 expr_stmt|;
 name|memsize
@@ -2690,6 +2710,8 @@ name|gimage
 operator|->
 name|undo_stack
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 expr_stmt|;
 name|memsize
@@ -2702,6 +2724,8 @@ name|gimage
 operator|->
 name|redo_stack
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 expr_stmt|;
 if|if
@@ -2710,7 +2734,8 @@ name|gimage
 operator|->
 name|comp_preview
 condition|)
-name|memsize
+operator|*
+name|gui_size
 operator|+=
 name|temp_buf_get_memsize
 argument_list|(
@@ -2730,6 +2755,8 @@ operator|->
 name|get_memsize
 argument_list|(
 name|object
+argument_list|,
+name|gui_size
 argument_list|)
 return|;
 block|}
@@ -5587,7 +5614,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* NOTE about the gimage->dirty counter:  *   If 0, then the image is clean (ie, copy on disk is the same as the one   *      in memory).  *   If positive, then that's the number of dirtying operations done  *       on the image since the last save.  *   If negative, then user has hit undo and gone back in time prior  *       to the saved copy.  Hitting redo will eventually come back to  *       the saved copy.  *  *   The image is dirty (ie, needs saving) if counter is non-zero.  *  *   If the counter is around 10000, this is due to undo-ing back  *   before a saved version, then mutating the image (thus destroying  *   the redo stack).  Once this has happened, it's impossible to get  *   the image back to the state on disk, since the redo info has been  *   freed.  See undo.c for the gorey details.  */
+comment|/* NOTE about the gimage->dirty counter:  *   If 0, then the image is clean (ie, copy on disk is the same as the one  *      in memory).  *   If positive, then that's the number of dirtying operations done  *       on the image since the last save.  *   If negative, then user has hit undo and gone back in time prior  *       to the saved copy.  Hitting redo will eventually come back to  *       the saved copy.  *  *   The image is dirty (ie, needs saving) if counter is non-zero.  *  *   If the counter is around 10000, this is due to undo-ing back  *   before a saved version, then mutating the image (thus destroying  *   the redo stack).  Once this has happened, it's impossible to get  *   the image back to the state on disk, since the redo info has been  *   freed.  See undo.c for the gorey details.  */
 end_comment
 
 begin_comment
@@ -8046,7 +8073,7 @@ argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
-comment|/*  We used to push an cantundo on te stack here. This made the undo stack       unusable (NULL on the stack) and prevented people from undoing after a        save (since most save plug-ins attach an undoable comment parasite).       Now we simply attach the parasite without pushing an undo. That way it's       undoable but does not block the undo system.   --Sven    */
+comment|/*  We used to push an cantundo on te stack here. This made the undo stack       unusable (NULL on the stack) and prevented people from undoing after a       save (since most save plug-ins attach an undoable comment parasite).       Now we simply attach the parasite without pushing an undo. That way it's       undoable but does not block the undo system.   --Sven    */
 name|gimp_parasite_list_add
 argument_list|(
 name|gimage

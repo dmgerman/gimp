@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eaa5240103
+DECL|enum|__anon2b1df4ac0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -135,6 +135,10 @@ parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1003,12 +1007,16 @@ end_function
 begin_function
 specifier|static
 name|gsize
-DECL|function|gimp_vectors_get_memsize (GimpObject * object)
+DECL|function|gimp_vectors_get_memsize (GimpObject * object,gsize * gui_size)
 name|gimp_vectors_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 block|{
 name|GimpVectors
@@ -1059,6 +1067,8 @@ name|list
 operator|->
 name|data
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 operator|+
 sizeof|sizeof
@@ -1078,6 +1088,8 @@ operator|->
 name|get_memsize
 argument_list|(
 name|object
+argument_list|,
+name|gui_size
 argument_list|)
 return|;
 block|}

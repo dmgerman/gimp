@@ -1127,7 +1127,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|g_print ("undo_steps: %d    undo_bytes: %d\n",            gimp_container_num_children (container),            gimp_object_get_memsize (GIMP_OBJECT (container)));
+block|g_print ("undo_steps: %d    undo_bytes: %d\n",            gimp_container_num_children (container),            gimp_object_get_memsize (GIMP_OBJECT (container), NULL));
 endif|#
 directive|endif
 comment|/*  keep at least min_undo_levels undo steps  */
@@ -1150,6 +1150,8 @@ name|GIMP_OBJECT
 argument_list|(
 name|container
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 operator|>
 name|undo_size
@@ -1183,7 +1185,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|g_print ("freed one step: undo_steps: %d    undo_bytes: %d\n",                gimp_container_num_children (container),                gimp_object_get_memsize (GIMP_OBJECT (container)));
+block|g_print ("freed one step: undo_steps: %d    undo_bytes: %d\n",                gimp_container_num_children (container),                gimp_object_get_memsize (GIMP_OBJECT (container), NULL));
 endif|#
 directive|endif
 name|gimp_image_undo_event
@@ -1240,7 +1242,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|g_print ("redo_steps: %d    redo_bytes: %d\n",            gimp_container_num_children (container),            gimp_object_get_memsize (GIMP_OBJECT (container)));
+block|g_print ("redo_steps: %d    redo_bytes: %d\n",            gimp_container_num_children (container),            gimp_object_get_memsize (GIMP_OBJECT (container)), NULL);
 endif|#
 directive|endif
 while|while
@@ -1271,7 +1273,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|g_print ("freed one step: redo_steps: %d    redo_bytes: %d\n",                gimp_container_num_children (container),                gimp_object_get_memsize (GIMP_OBJECT (container)));
+block|g_print ("freed one step: redo_steps: %d    redo_bytes: %d\n",                gimp_container_num_children (container),                gimp_object_get_memsize (GIMP_OBJECT (container)), NULL);
 endif|#
 directive|endif
 name|gimp_image_undo_event

@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27af825a0103
+DECL|enum|__anon275620420103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -78,7 +78,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27af825a0203
+DECL|enum|__anon275620420203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -195,6 +195,10 @@ parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -879,12 +883,16 @@ end_function
 begin_function
 specifier|static
 name|gsize
-DECL|function|gimp_viewable_get_memsize (GimpObject * object)
+DECL|function|gimp_viewable_get_memsize (GimpObject * object,gsize * gui_size)
 name|gimp_viewable_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 block|{
 name|TempBuf
@@ -894,11 +902,6 @@ decl_stmt|;
 name|GdkPixbuf
 modifier|*
 name|pixbuf
-decl_stmt|;
-name|gsize
-name|memsize
-init|=
-literal|0
 decl_stmt|;
 name|temp_buf
 operator|=
@@ -928,15 +931,14 @@ if|if
 condition|(
 name|temp_buf
 condition|)
-block|{
-name|memsize
+operator|*
+name|gui_size
 operator|+=
 name|temp_buf_get_memsize
 argument_list|(
 name|temp_buf
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|pixbuf
@@ -975,7 +977,8 @@ operator|.
 name|instance_size
 expr_stmt|;
 block|}
-name|memsize
+operator|*
+name|gui_size
 operator|+=
 operator|(
 name|pixbuf_instance_size
@@ -993,8 +996,6 @@ operator|)
 expr_stmt|;
 block|}
 return|return
-name|memsize
-operator|+
 name|GIMP_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -1003,6 +1004,8 @@ operator|->
 name|get_memsize
 argument_list|(
 name|object
+argument_list|,
+name|gui_size
 argument_list|)
 return|;
 block|}

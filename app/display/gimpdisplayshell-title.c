@@ -1010,6 +1010,8 @@ name|GIMP_OBJECT
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|memsize_str

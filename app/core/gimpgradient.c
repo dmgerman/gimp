@@ -139,6 +139,10 @@ parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -650,12 +654,16 @@ end_function
 begin_function
 specifier|static
 name|gsize
-DECL|function|gimp_gradient_get_memsize (GimpObject * object)
+DECL|function|gimp_gradient_get_memsize (GimpObject * object,gsize * gui_size)
 name|gimp_gradient_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 block|{
 name|GimpGradient
@@ -694,7 +702,6 @@ name|segment
 operator|->
 name|next
 control|)
-block|{
 name|memsize
 operator|+=
 sizeof|sizeof
@@ -702,7 +709,6 @@ argument_list|(
 name|GimpGradientSegment
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|memsize
 operator|+
@@ -714,6 +720,8 @@ operator|->
 name|get_memsize
 argument_list|(
 name|object
+argument_list|,
+name|gui_size
 argument_list|)
 return|;
 block|}

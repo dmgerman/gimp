@@ -191,6 +191,10 @@ parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -820,22 +824,21 @@ end_function
 begin_function
 specifier|static
 name|gsize
-DECL|function|gimp_channel_get_memsize (GimpObject * object)
+DECL|function|gimp_channel_get_memsize (GimpObject * object,gsize * gui_size)
 name|gimp_channel_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 block|{
 name|GimpChannel
 modifier|*
 name|channel
-decl_stmt|;
-name|gsize
-name|memsize
-init|=
-literal|0
 decl_stmt|;
 name|channel
 operator|=
@@ -844,7 +847,8 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|memsize
+operator|*
+name|gui_size
 operator|+=
 name|channel
 operator|->
@@ -855,7 +859,8 @@ argument_list|(
 name|BoundSeg
 argument_list|)
 expr_stmt|;
-name|memsize
+operator|*
+name|gui_size
 operator|+=
 name|channel
 operator|->
@@ -867,8 +872,6 @@ name|BoundSeg
 argument_list|)
 expr_stmt|;
 return|return
-name|memsize
-operator|+
 name|GIMP_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -877,6 +880,8 @@ operator|->
 name|get_memsize
 argument_list|(
 name|object
+argument_list|,
+name|gui_size
 argument_list|)
 return|;
 block|}

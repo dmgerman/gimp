@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c546faa0103
+DECL|enum|__anon29feb2520103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -63,7 +63,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c546faa0203
+DECL|enum|__anon29feb2520203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -177,6 +177,10 @@ parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -998,14 +1002,28 @@ end_endif
 
 begin_function
 name|gsize
-DECL|function|gimp_object_get_memsize (GimpObject * object)
+DECL|function|gimp_object_get_memsize (GimpObject * object,gsize * gui_size)
 name|gimp_object_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 block|{
+name|gsize
+name|my_size
+init|=
+literal|0
+decl_stmt|;
+name|gsize
+name|my_gui_size
+init|=
+literal|0
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_OBJECT
@@ -1047,6 +1065,11 @@ decl_stmt|;
 name|gsize
 name|memsize
 decl_stmt|;
+name|gsize
+name|gui_memsize
+init|=
+literal|0
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -1074,6 +1097,9 @@ operator|->
 name|get_memsize
 argument_list|(
 name|object
+argument_list|,
+operator|&
+name|gui_memsize
 argument_list|)
 expr_stmt|;
 name|indent_level
@@ -1123,7 +1149,7 @@ name|object_size
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s%s \"%s\": %u\n"
+literal|"%s%s \"%s\": %u (%u)\n"
 argument_list|,
 name|indent_buf
 argument_list|,
@@ -1143,6 +1169,11 @@ operator|(
 name|guint
 operator|)
 name|memsize
+argument_list|,
+operator|(
+name|guint
+operator|)
+name|gui_memsize
 argument_list|)
 expr_stmt|;
 name|aggregation_tree
@@ -1202,7 +1233,8 @@ block|}
 endif|#
 directive|endif
 comment|/* DEBUG_MEMSIZE */
-return|return
+name|my_size
+operator|=
 name|GIMP_OBJECT_GET_CLASS
 argument_list|(
 name|object
@@ -1211,7 +1243,22 @@ operator|->
 name|get_memsize
 argument_list|(
 name|object
+argument_list|,
+operator|&
+name|my_gui_size
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gui_size
+condition|)
+operator|*
+name|gui_size
+operator|=
+name|my_gui_size
+expr_stmt|;
+return|return
+name|my_size
 return|;
 block|}
 end_function
@@ -1270,12 +1317,16 @@ end_function
 begin_function
 specifier|static
 name|gsize
-DECL|function|gimp_object_real_get_memsize (GimpObject * object)
+DECL|function|gimp_object_real_get_memsize (GimpObject * object,gsize * gui_size)
 name|gimp_object_real_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 block|{
 name|gsize

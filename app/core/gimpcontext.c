@@ -349,6 +349,10 @@ parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1243,7 +1247,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon298ec8780103
+DECL|enum|__anon2c7872ad0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1257,7 +1261,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298ec8780203
+DECL|enum|__anon2c7872ad0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -4402,12 +4406,16 @@ end_function
 begin_function
 specifier|static
 name|gsize
-DECL|function|gimp_context_get_memsize (GimpObject * object)
+DECL|function|gimp_context_get_memsize (GimpObject * object,gsize * gui_size)
 name|gimp_context_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 block|{
 name|GimpContext
@@ -4522,6 +4530,8 @@ operator|->
 name|get_memsize
 argument_list|(
 name|object
+argument_list|,
+name|gui_size
 argument_list|)
 return|;
 block|}

@@ -249,7 +249,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c75f3e50103
+DECL|enum|__anon2bcd13330103
 block|{
 DECL|enumerator|EXIT
 name|EXIT
@@ -316,6 +316,10 @@ parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1695,12 +1699,16 @@ end_function
 begin_function
 specifier|static
 name|gsize
-DECL|function|gimp_get_memsize (GimpObject * object)
+DECL|function|gimp_get_memsize (GimpObject * object,gsize * gui_size)
 name|gimp_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|,
+name|gsize
+modifier|*
+name|gui_size
 parameter_list|)
 block|{
 name|Gimp
@@ -1744,6 +1752,8 @@ name|gimp
 operator|->
 name|parasites
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 expr_stmt|;
 name|memsize
@@ -1806,6 +1816,8 @@ name|gimp
 operator|->
 name|displays
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 expr_stmt|;
 if|if
@@ -1824,6 +1836,8 @@ name|gimp
 operator|->
 name|global_buffer
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 expr_stmt|;
 name|memsize
@@ -1837,6 +1851,8 @@ name|gimp
 operator|->
 name|named_buffers
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 operator|+
 name|gimp_object_get_memsize
@@ -1847,6 +1863,8 @@ name|gimp
 operator|->
 name|fonts
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 operator|+
 name|gimp_object_get_memsize
@@ -1857,6 +1875,8 @@ name|gimp
 operator|->
 name|brush_factory
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 operator|+
 name|gimp_object_get_memsize
@@ -1867,6 +1887,8 @@ name|gimp
 operator|->
 name|pattern_factory
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 operator|+
 name|gimp_object_get_memsize
@@ -1877,6 +1899,8 @@ name|gimp
 operator|->
 name|gradient_factory
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 operator|+
 name|gimp_object_get_memsize
@@ -1887,6 +1911,8 @@ name|gimp
 operator|->
 name|palette_factory
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 operator|)
 expr_stmt|;
@@ -1967,6 +1993,8 @@ name|gimp
 operator|->
 name|tool_info_list
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 operator|+
 name|gimp_object_get_memsize
@@ -1977,6 +2005,8 @@ name|gimp
 operator|->
 name|standard_tool_info
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 operator|+
 name|gimp_object_get_memsize
@@ -1987,6 +2017,8 @@ name|gimp
 operator|->
 name|documents
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 operator|+
 name|gimp_object_get_memsize
@@ -1997,6 +2029,8 @@ name|gimp
 operator|->
 name|templates
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 operator|+
 name|gimp_object_get_memsize
@@ -2007,6 +2041,8 @@ name|gimp
 operator|->
 name|image_new_last_template
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 operator|)
 expr_stmt|;
@@ -2035,6 +2071,8 @@ name|gimp
 operator|->
 name|standard_context
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 operator|+
 name|gimp_object_get_memsize
@@ -2045,6 +2083,8 @@ name|gimp
 operator|->
 name|default_context
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 operator|+
 name|gimp_object_get_memsize
@@ -2055,6 +2095,8 @@ name|gimp
 operator|->
 name|user_context
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 operator|)
 expr_stmt|;
@@ -2069,6 +2111,8 @@ operator|->
 name|get_memsize
 argument_list|(
 name|object
+argument_list|,
+name|gui_size
 argument_list|)
 return|;
 block|}
