@@ -526,7 +526,7 @@ argument_list|(
 literal|"Delete Object"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_WARNING
+name|GIMP_STOCK_QUESTION
 argument_list|,
 name|GTK_WIDGET
 argument_list|(
