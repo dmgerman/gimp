@@ -56,22 +56,11 @@ directive|include
 file|"pixel-region.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|ENABLE_MP
-end_ifdef
-
 begin_include
 include|#
 directive|include
 file|"tile.h"
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_define
 DECL|macro|TILES_PER_THREAD
