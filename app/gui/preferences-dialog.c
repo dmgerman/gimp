@@ -302,7 +302,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2978ff080108
+DECL|struct|__anon2bd4ecbd0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2011,8 +2011,13 @@ argument_list|,
 name|transparency_size
 argument_list|)
 expr_stmt|;
-name|layer_invalidate_previews
+name|gimage_foreach
 argument_list|(
+operator|(
+name|GFunc
+operator|)
+name|layer_invalidate_previews
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -2347,8 +2352,13 @@ argument_list|,
 name|transparency_size
 argument_list|)
 expr_stmt|;
-name|layer_invalidate_previews
+name|gimage_foreach
 argument_list|(
+operator|(
+name|GFunc
+operator|)
+name|layer_invalidate_previews
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -2736,7 +2746,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2978ff080208
+DECL|struct|__anon2bd4ecbd0208
 struct|struct
 block|{
 DECL|member|label
@@ -2776,7 +2786,7 @@ operator|)
 block|}
 block|}
 struct|;
-DECL|struct|__anon2978ff080308
+DECL|struct|__anon2bd4ecbd0308
 struct|struct
 block|{
 DECL|member|label
@@ -2845,7 +2855,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon2978ff080408
+DECL|struct|__anon2bd4ecbd0408
 struct|struct
 block|{
 DECL|member|label

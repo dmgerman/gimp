@@ -96,7 +96,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon29eb69f40103
+DECL|enum|__anon296283420103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -5710,6 +5710,13 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|gimage
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|tmp
 operator|=
 name|gimage
