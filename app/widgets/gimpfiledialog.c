@@ -1251,10 +1251,6 @@ literal|"action"
 argument_list|,
 name|action
 argument_list|,
-literal|"local-only"
-argument_list|,
-name|FALSE
-argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
