@@ -1090,7 +1090,7 @@ parameter_list|,
 name|active
 parameter_list|)
 define|\
-value|gimp_item_factory_set_active (factory, (path), (active))
+value|gimp_item_factory_set_active (factory, (path), (active) != 0)
 DECL|macro|SET_VISIBLE (path,active)
 define|#
 directive|define
@@ -1101,7 +1101,7 @@ parameter_list|,
 name|active
 parameter_list|)
 define|\
-value|gimp_item_factory_set_visible (factory, (path), (active))
+value|gimp_item_factory_set_visible (factory, (path), (active) != 0)
 DECL|macro|SET_SENSITIVE (path,sensitive)
 define|#
 directive|define
@@ -1112,7 +1112,7 @@ parameter_list|,
 name|sensitive
 parameter_list|)
 define|\
-value|gimp_item_factory_set_sensitive (factory, (path), (sensitive))
+value|gimp_item_factory_set_sensitive (factory, (path), (sensitive) != 0)
 name|SET_VISIBLE
 argument_list|(
 literal|"/Preview Size"
