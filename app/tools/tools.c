@@ -243,7 +243,9 @@ comment|/*  transform tools  */
 comment|/* gimp_flip_tool_registrer (); */
 comment|/* gimp_perspective_tool_register (); */
 comment|/* gimp_shear_tool_register (); */
-comment|/* gimp_scale_tool_register (); */
+name|gimp_scale_tool_register
+argument_list|()
+expr_stmt|;
 comment|/* gimp_rotate_tool_register (); */
 name|gimp_crop_tool_register
 argument_list|()

@@ -215,7 +215,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ec2fd60103
+DECL|enum|__anon28d236760103
 block|{
 DECL|enumerator|TRANSFORM
 name|TRANSFORM
@@ -918,7 +918,7 @@ name|gtk_signal_new
 argument_list|(
 literal|"transform"
 argument_list|,
-name|GTK_RUN_FIRST
+name|GTK_RUN_LAST
 argument_list|,
 name|object_class
 operator|->
@@ -1085,6 +1085,71 @@ operator|=
 name|FALSE
 expr_stmt|;
 comment|/*  Don't preserve on drawable change  */
+block|}
+end_function
+
+begin_function
+name|TileManager
+modifier|*
+DECL|function|gimp_transform_tool_transform (GimpTransformTool * tool,GDisplay * gdisp,TransformState state)
+name|gimp_transform_tool_transform
+parameter_list|(
+name|GimpTransformTool
+modifier|*
+name|tool
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|,
+name|TransformState
+name|state
+parameter_list|)
+block|{
+name|TileManager
+modifier|*
+name|retval
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|tool
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_TRANSFORM_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_signal_emit
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|tool
+argument_list|)
+argument_list|,
+name|gimp_transform_tool_signals
+index|[
+name|TRANSFORM
+index|]
+argument_list|,
+name|gdisp
+argument_list|,
+name|state
+argument_list|,
+operator|&
+name|retval
+argument_list|)
+expr_stmt|;
+return|return
+name|retval
+return|;
 block|}
 end_function
 
@@ -5157,7 +5222,7 @@ argument_list|(
 name|tr_tool
 argument_list|)
 expr_stmt|;
-comment|/*  We use the transform_tool_grid_size function only here, even    *  if the user changes the grid size in the middle of an    *  operation, nothing happens.    */
+comment|/*  We use the gimp_transform_tool_grid_size function only here, even    *  if the user changes the grid size in the middle of an    *  operation, nothing happens.    */
 name|tr_tool
 operator|->
 name|ngx

@@ -71,14 +71,6 @@ value|GTK_TYPE_NONE
 end_define
 
 begin_define
-DECL|macro|GIMP_TYPE_SCALE_TOOL
-define|#
-directive|define
-name|GIMP_TYPE_SCALE_TOOL
-value|GTK_TYPE_NONE
-end_define
-
-begin_define
 DECL|macro|GIMP_TYPE_SHEAR_TOOL
 define|#
 directive|define

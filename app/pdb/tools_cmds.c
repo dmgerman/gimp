@@ -184,7 +184,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/transform_core.h"
+file|"tools/gimptransformtool.h"
 end_include
 
 begin_include
@@ -5572,7 +5572,7 @@ expr_stmt|;
 comment|/* Cut/Copy from the specified drawable */
 name|float_tiles
 operator|=
-name|transform_core_cut
+name|gimp_transform_tool_cut
 argument_list|(
 name|gimage
 argument_list|,
@@ -5646,7 +5646,7 @@ name|new_tiles
 condition|)
 name|success
 operator|=
-name|transform_core_paste
+name|gimp_transform_tool_paste
 argument_list|(
 name|gimage
 argument_list|,
@@ -7455,7 +7455,7 @@ expr_stmt|;
 comment|/* Cut/Copy from the specified drawable */
 name|float_tiles
 operator|=
-name|transform_core_cut
+name|gimp_transform_tool_cut
 argument_list|(
 name|gimage
 argument_list|,
@@ -7601,7 +7601,7 @@ name|new_tiles
 condition|)
 name|success
 operator|=
-name|transform_core_paste
+name|gimp_transform_tool_paste
 argument_list|(
 name|gimage
 argument_list|,
@@ -8285,7 +8285,7 @@ expr_stmt|;
 comment|/* Cut/Copy from the specified drawable */
 name|float_tiles
 operator|=
-name|transform_core_cut
+name|gimp_transform_tool_cut
 argument_list|(
 name|gimage
 argument_list|,
@@ -8395,7 +8395,7 @@ name|new_tiles
 condition|)
 name|success
 operator|=
-name|transform_core_paste
+name|gimp_transform_tool_paste
 argument_list|(
 name|gimage
 argument_list|,
@@ -8752,7 +8752,7 @@ expr_stmt|;
 comment|/* Cut/Copy from the specified drawable */
 name|float_tiles
 operator|=
-name|transform_core_cut
+name|gimp_transform_tool_cut
 argument_list|(
 name|gimage
 argument_list|,
@@ -8879,7 +8879,7 @@ expr_stmt|;
 comment|/* Scale the buffer */
 name|new_tiles
 operator|=
-name|scale_tool_scale
+name|gimp_scale_tool_scale
 argument_list|(
 name|gimage
 argument_list|,
@@ -8908,7 +8908,7 @@ name|new_tiles
 condition|)
 name|success
 operator|=
-name|transform_core_paste
+name|gimp_transform_tool_paste
 argument_list|(
 name|gimage
 argument_list|,
@@ -9252,7 +9252,7 @@ expr_stmt|;
 comment|/* Cut/Copy from the specified drawable */
 name|float_tiles
 operator|=
-name|transform_core_cut
+name|gimp_transform_tool_cut
 argument_list|(
 name|gimage
 argument_list|,
@@ -9406,7 +9406,7 @@ name|new_tiles
 condition|)
 name|success
 operator|=
-name|transform_core_paste
+name|gimp_transform_tool_paste
 argument_list|(
 name|gimage
 argument_list|,
@@ -10204,7 +10204,7 @@ expr_stmt|;
 comment|/* Cut/Copy from the specified drawable */
 name|float_tiles
 operator|=
-name|transform_core_cut
+name|gimp_transform_tool_cut
 argument_list|(
 name|gimage
 argument_list|,
@@ -10259,7 +10259,7 @@ expr_stmt|;
 comment|/* Transform the buffer */
 name|new_tiles
 operator|=
-name|transform_core_do
+name|gimp_transform_tool_do
 argument_list|(
 name|gimage
 argument_list|,
@@ -10288,7 +10288,7 @@ name|new_tiles
 condition|)
 name|success
 operator|=
-name|transform_core_paste
+name|gimp_transform_tool_paste
 argument_list|(
 name|gimage
 argument_list|,

@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tools/gimptool.h"
+file|"tools/gimpdrawtool.h"
 end_include
 
 begin_define
@@ -82,26 +82,6 @@ name|_GimpTransformToolClass
 name|GimpTransformToolClass
 typedef|;
 end_typedef
-
-begin_comment
-comment|/*  transform directions  */
-end_comment
-
-begin_define
-DECL|macro|TRANSFORM_TRADITIONAL
-define|#
-directive|define
-name|TRANSFORM_TRADITIONAL
-value|0
-end_define
-
-begin_define
-DECL|macro|TRANSFORM_CORRECTIVE
-define|#
-directive|define
-name|TRANSFORM_CORRECTIVE
-value|1
-end_define
 
 begin_comment
 comment|/* buffer sizes for scaling information strings (for the info dialog) */
@@ -444,6 +424,26 @@ struct|;
 end_struct
 
 begin_comment
+comment|/*  transform directions  */
+end_comment
+
+begin_define
+DECL|macro|TRANSFORM_TRADITIONAL
+define|#
+directive|define
+name|TRANSFORM_TRADITIONAL
+value|0
+end_define
+
+begin_define
+DECL|macro|TRANSFORM_CORRECTIVE
+define|#
+directive|define
+name|TRANSFORM_CORRECTIVE
+value|1
+end_define
+
+begin_comment
 comment|/*  make this variable available to all  */
 end_comment
 
@@ -654,10 +654,6 @@ name|void
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  FIXME These probably should no longer be global  */
-end_comment
 
 begin_function_decl
 name|gboolean
