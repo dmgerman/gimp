@@ -104,7 +104,7 @@ name|GimpPreviewRenderer
 name|parent_instance
 decl_stmt|;
 DECL|member|channel
-name|gint
+name|GimpChannelType
 name|channel
 decl_stmt|;
 block|}

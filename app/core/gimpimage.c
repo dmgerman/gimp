@@ -246,7 +246,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon277a2b330103
+DECL|enum|__anon28ff2a060103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -1490,6 +1490,12 @@ operator|->
 name|get_memsize
 operator|=
 name|gimp_image_get_memsize
+expr_stmt|;
+name|viewable_class
+operator|->
+name|default_stock_id
+operator|=
+literal|"gimp-image"
 expr_stmt|;
 name|viewable_class
 operator|->
