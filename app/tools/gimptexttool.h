@@ -119,6 +119,16 @@ name|PangoContext
 modifier|*
 name|pango_context
 decl_stmt|;
+DECL|member|buffer
+name|GtkTextBuffer
+modifier|*
+name|buffer
+decl_stmt|;
+DECL|member|editor
+name|GtkWidget
+modifier|*
+name|editor
+decl_stmt|;
 block|}
 struct|;
 end_struct
