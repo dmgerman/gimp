@@ -111,7 +111,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3f9ddd0103
+DECL|enum|__anon2a11ecf90103
 block|{
 DECL|enumerator|COLUMN_LABEL
 name|COLUMN_LABEL
@@ -128,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f9ddd0208
+DECL|struct|__anon2a11ecf90208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1284,18 +1284,26 @@ operator|->
 name|proc_date
 argument_list|)
 expr_stmt|;
-name|g_free
+name|gimp_destroy_paramdefs
 argument_list|(
 name|browser
 operator|->
 name|params
+argument_list|,
+name|browser
+operator|->
+name|n_params
 argument_list|)
 expr_stmt|;
-name|g_free
+name|gimp_destroy_paramdefs
 argument_list|(
 name|browser
 operator|->
 name|return_vals
+argument_list|,
+name|browser
+operator|->
+name|n_return_vals
 argument_list|)
 expr_stmt|;
 name|gimp_procedural_db_proc_info
