@@ -144,7 +144,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296e4f2c0108
+DECL|struct|__anon2a396ae20108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -297,7 +297,8 @@ specifier|static
 name|void
 name|init_calculation
 parameter_list|(
-name|void
+name|gint32
+name|drawable_id
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -307,7 +308,8 @@ specifier|static
 name|void
 name|do_curl_effect
 parameter_list|(
-name|void
+name|gint32
+name|drawable_id
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -317,7 +319,8 @@ specifier|static
 name|void
 name|clear_curled_region
 parameter_list|(
-name|void
+name|gint32
+name|drawable_id
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -327,7 +330,8 @@ specifier|static
 name|void
 name|page_curl
 parameter_list|(
-name|void
+name|gint32
+name|drawable_id
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -338,9 +342,8 @@ name|guchar
 modifier|*
 name|get_samples
 parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
+name|gint32
+name|drawable_id
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -396,15 +399,6 @@ specifier|static
 name|GimpDrawable
 modifier|*
 name|curl_layer
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|drawable
-specifier|static
-name|GimpDrawable
-modifier|*
-name|drawable
 decl_stmt|;
 end_decl_stmt
 
@@ -784,6 +778,9 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
+name|gint32
+name|drawable_id
+decl_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -862,10 +859,8 @@ operator|-
 literal|1
 expr_stmt|;
 comment|/*  Get the specified drawable  */
-name|drawable
+name|drawable_id
 operator|=
-name|gimp_drawable_get
-argument_list|(
 name|param
 index|[
 literal|2
@@ -874,7 +869,6 @@ operator|.
 name|data
 operator|.
 name|d_drawable
-argument_list|)
 expr_stmt|;
 name|image_id
 operator|=
@@ -891,15 +885,11 @@ if|if
 condition|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable
-operator|->
 name|drawable_id
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
-name|drawable
-operator|->
 name|drawable_id
 argument_list|)
 condition|)
@@ -1165,7 +1155,9 @@ name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|page_curl
-argument_list|()
+argument_list|(
+name|drawable_id
+argument_list|)
 expr_stmt|;
 name|values
 index|[
@@ -2853,10 +2845,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|init_calculation (void)
+DECL|function|init_calculation (gint32 drawable_id)
 name|init_calculation
 parameter_list|(
-name|void
+name|gint32
+name|drawable_id
 parameter_list|)
 block|{
 name|gdouble
@@ -2887,17 +2880,6 @@ name|color
 decl_stmt|;
 name|gimp_layer_add_alpha
 argument_list|(
-name|drawable
-operator|->
-name|drawable_id
-argument_list|)
-expr_stmt|;
-name|drawable
-operator|=
-name|gimp_drawable_get
-argument_list|(
-name|drawable
-operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
@@ -2928,8 +2910,6 @@ index|[
 name|drawable_position
 index|]
 operator|!=
-name|drawable
-operator|->
 name|drawable_id
 condition|)
 name|drawable_position
@@ -2938,8 +2918,6 @@ expr_stmt|;
 comment|/* Get the bounds of the active selection */
 name|gimp_drawable_mask_bounds
 argument_list|(
-name|drawable
-operator|->
 name|drawable_id
 argument_list|,
 operator|&
@@ -3341,10 +3319,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_curl_effect (void)
+DECL|function|do_curl_effect (gint32 drawable_id)
 name|do_curl_effect
 parameter_list|(
-name|void
+name|gint32
+name|drawable_id
 parameter_list|)
 block|{
 name|gint
@@ -3422,8 +3401,6 @@ name|color_image
 operator|=
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable
-operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
@@ -3467,6 +3444,15 @@ argument_list|,
 name|drawable_position
 argument_list|)
 expr_stmt|;
+name|gimp_drawable_fill
+argument_list|(
+name|curl_layer
+operator|->
+name|drawable_id
+argument_list|,
+name|GIMP_TRANSPARENT_FILL
+argument_list|)
+expr_stmt|;
 name|curl_layer_ID
 operator|=
 name|curl_layer
@@ -3475,8 +3461,6 @@ name|drawable_id
 expr_stmt|;
 name|gimp_drawable_offsets
 argument_list|(
-name|drawable
-operator|->
 name|drawable_id
 argument_list|,
 operator|&
@@ -3673,6 +3657,8 @@ operator|=
 name|get_samples
 argument_list|(
 name|curl_layer
+operator|->
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|max_progress
@@ -4480,10 +4466,11 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|clear_curled_region (void)
+DECL|function|clear_curled_region (gint32 drawable_id)
 name|clear_curled_region
 parameter_list|(
-name|void
+name|gint32
+name|drawable_id
 parameter_list|)
 block|{
 name|GimpPixelRgn
@@ -4526,6 +4513,10 @@ name|progress
 decl_stmt|,
 name|max_progress
 decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
 name|max_progress
 operator|=
 literal|2
@@ -4539,6 +4530,13 @@ operator|=
 name|max_progress
 operator|/
 literal|2
+expr_stmt|;
+name|drawable
+operator|=
+name|gimp_drawable_get
+argument_list|(
+name|drawable_id
+argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
 argument_list|(
@@ -4951,8 +4949,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_merge_shadow
 argument_list|(
-name|drawable
-operator|->
 name|drawable_id
 argument_list|,
 name|TRUE
@@ -4960,8 +4956,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
-name|drawable
-operator|->
 name|drawable_id
 argument_list|,
 name|sel_x1
@@ -4984,10 +4978,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|page_curl (void)
+DECL|function|page_curl (gint32 drawable_id)
 name|page_curl
 parameter_list|(
-name|void
+name|gint32
+name|drawable_id
 parameter_list|)
 block|{
 name|gimp_image_undo_group_start
@@ -5004,13 +4999,19 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 name|init_calculation
-argument_list|()
+argument_list|(
+name|drawable_id
+argument_list|)
 expr_stmt|;
 name|do_curl_effect
-argument_list|()
+argument_list|(
+name|drawable_id
+argument_list|)
 expr_stmt|;
 name|clear_curled_region
-argument_list|()
+argument_list|(
+name|drawable_id
+argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
@@ -5021,19 +5022,18 @@ block|}
 end_function
 
 begin_comment
-comment|/*   Returns NGRADSAMPLES samples of active gradient.   Each sample has (gimp_drawable_bpp (drawable->drawable_id)) bytes.   "ripped" from gradmap.c.  */
+comment|/*   Returns NGRADSAMPLES samples of active gradient.   Each sample has (gimp_drawable_bpp (drawable_id)) bytes.   "ripped" from gradmap.c.  */
 end_comment
 
 begin_function
 specifier|static
 name|guchar
 modifier|*
-DECL|function|get_samples (GimpDrawable * drawable)
+DECL|function|get_samples (gint32 drawable_id)
 name|get_samples
 parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
+name|gint32
+name|drawable_id
 parameter_list|)
 block|{
 name|gdouble
@@ -5087,8 +5087,6 @@ name|bpp
 operator|=
 name|gimp_drawable_bpp
 argument_list|(
-name|drawable
-operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
@@ -5096,8 +5094,6 @@ name|color
 operator|=
 name|gimp_drawable_is_rgb
 argument_list|(
-name|drawable
-operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
@@ -5105,8 +5101,6 @@ name|has_alpha
 operator|=
 name|gimp_drawable_has_alpha
 argument_list|(
-name|drawable
-operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
