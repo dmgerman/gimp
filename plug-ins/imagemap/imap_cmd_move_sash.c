@@ -65,7 +65,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b5566a80108
+DECL|struct|__anon27e715000108
 typedef|typedef
 struct|struct
 block|{
@@ -158,7 +158,10 @@ name|command
 operator|->
 name|obj
 operator|=
+name|object_ref
+argument_list|(
 name|obj
+argument_list|)
 expr_stmt|;
 name|command
 operator|->
