@@ -499,7 +499,10 @@ name|selector_class
 operator|->
 name|name
 operator|=
+name|_
+argument_list|(
 literal|"Scales"
+argument_list|)
 expr_stmt|;
 name|selector_class
 operator|->
