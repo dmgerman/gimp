@@ -1868,29 +1868,13 @@ begin_comment
 comment|/*  Sorting a Boundary  */
 end_comment
 
-begin_function_decl
-specifier|static
-name|int
-name|find_segment
-parameter_list|(
-name|BoundSeg
-modifier|*
-parameter_list|,
-name|int
-parameter_list|,
-name|int
-parameter_list|,
-name|int
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function
 specifier|static
-name|int
-DECL|function|find_segment (BoundSeg * segs,gint ns,gint x,gint y)
+name|gint
+DECL|function|find_segment (const BoundSeg * segs,gint ns,gint x,gint y)
 name|find_segment
 parameter_list|(
+specifier|const
 name|BoundSeg
 modifier|*
 name|segs
@@ -1987,9 +1971,10 @@ end_function
 begin_function
 name|BoundSeg
 modifier|*
-DECL|function|sort_boundary (BoundSeg * segs,gint ns,gint * num_groups)
+DECL|function|sort_boundary (const BoundSeg * segs,gint ns,gint * num_groups)
 name|sort_boundary
 parameter_list|(
+specifier|const
 name|BoundSeg
 modifier|*
 name|segs
@@ -2018,7 +2003,7 @@ name|startx
 decl_stmt|,
 name|starty
 decl_stmt|;
-name|gint
+name|gboolean
 name|empty
 init|=
 operator|(
@@ -2052,7 +2037,13 @@ condition|;
 name|i
 operator|++
 control|)
+operator|(
+operator|(
+name|BoundSeg
+operator|*
+operator|)
 name|segs
+operator|)
 index|[
 name|i
 index|]
@@ -2163,7 +2154,13 @@ operator|.
 name|open
 argument_list|)
 expr_stmt|;
+operator|(
+operator|(
+name|BoundSeg
+operator|*
+operator|)
 name|segs
+operator|)
 index|[
 name|index
 index|]
@@ -2367,7 +2364,13 @@ operator|.
 name|y1
 expr_stmt|;
 block|}
+operator|(
+operator|(
+name|BoundSeg
+operator|*
+operator|)
 name|segs
+operator|)
 index|[
 name|index
 index|]

@@ -3272,18 +3272,20 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_channel_boundary (GimpChannel * mask,BoundSeg ** segs_in,BoundSeg ** segs_out,gint * num_segs_in,gint * num_segs_out,gint x1,gint y1,gint x2,gint y2)
+DECL|function|gimp_channel_boundary (GimpChannel * mask,const BoundSeg ** segs_in,const BoundSeg ** segs_out,gint * num_segs_in,gint * num_segs_out,gint x1,gint y1,gint x2,gint y2)
 name|gimp_channel_boundary
 parameter_list|(
 name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|BoundSeg
 modifier|*
 modifier|*
 name|segs_in
 parameter_list|,
+specifier|const
 name|BoundSeg
 modifier|*
 modifier|*

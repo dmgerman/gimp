@@ -409,11 +409,13 @@ name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|BoundSeg
 modifier|*
 modifier|*
 name|segs_in
 parameter_list|,
+specifier|const
 name|BoundSeg
 modifier|*
 modifier|*

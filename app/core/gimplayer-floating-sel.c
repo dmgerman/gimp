@@ -2301,6 +2301,7 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|BoundSeg
 modifier|*
 DECL|function|floating_sel_boundary (GimpLayer * layer,gint * n_segs)

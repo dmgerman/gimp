@@ -31,7 +31,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8e7bd90103
+DECL|enum|__anon28b5c0bd0103
 block|{
 DECL|enumerator|WithinBounds
 name|WithinBounds
@@ -120,6 +120,7 @@ name|BoundSeg
 modifier|*
 name|sort_boundary
 parameter_list|(
+specifier|const
 name|BoundSeg
 modifier|*
 name|segs

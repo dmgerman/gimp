@@ -3162,13 +3162,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_draw_boundary (GimpDrawTool * draw_tool,BoundSeg * bound_segs,gint n_bound_segs,gdouble offset_x,gdouble offset_y)
+DECL|function|gimp_draw_tool_draw_boundary (GimpDrawTool * draw_tool,const BoundSeg * bound_segs,gint n_bound_segs,gdouble offset_x,gdouble offset_y)
 name|gimp_draw_tool_draw_boundary
 parameter_list|(
 name|GimpDrawTool
 modifier|*
 name|draw_tool
 parameter_list|,
+specifier|const
 name|BoundSeg
 modifier|*
 name|bound_segs

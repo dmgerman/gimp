@@ -232,6 +232,7 @@ name|Selection
 modifier|*
 name|select
 parameter_list|,
+specifier|const
 name|BoundSeg
 modifier|*
 name|src_segs
@@ -2944,13 +2945,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|selection_transform_segs (Selection * select,BoundSeg * src_segs,GdkSegment * dest_segs,gint num_segs)
+DECL|function|selection_transform_segs (Selection * select,const BoundSeg * src_segs,GdkSegment * dest_segs,gint num_segs)
 name|selection_transform_segs
 parameter_list|(
 name|Selection
 modifier|*
 name|select
 parameter_list|,
+specifier|const
 name|BoundSeg
 modifier|*
 name|src_segs
@@ -3222,10 +3224,12 @@ modifier|*
 name|select
 parameter_list|)
 block|{
+specifier|const
 name|BoundSeg
 modifier|*
 name|segs_in
 decl_stmt|;
+specifier|const
 name|BoundSeg
 modifier|*
 name|segs_out

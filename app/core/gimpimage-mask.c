@@ -167,18 +167,20 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_mask_boundary (GimpImage * gimage,BoundSeg ** segs_in,BoundSeg ** segs_out,gint * num_segs_in,gint * num_segs_out)
+DECL|function|gimp_image_mask_boundary (GimpImage * gimage,const BoundSeg ** segs_in,const BoundSeg ** segs_out,gint * num_segs_in,gint * num_segs_out)
 name|gimp_image_mask_boundary
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+specifier|const
 name|BoundSeg
 modifier|*
 modifier|*
 name|segs_in
 parameter_list|,
+specifier|const
 name|BoundSeg
 modifier|*
 modifier|*
@@ -195,21 +197,11 @@ parameter_list|)
 block|{
 name|GimpDrawable
 modifier|*
-name|d
+name|drawable
 decl_stmt|;
 name|GimpLayer
 modifier|*
 name|layer
-decl_stmt|;
-name|gint
-name|x1
-decl_stmt|,
-name|y1
-decl_stmt|;
-name|gint
-name|x2
-decl_stmt|,
-name|y2
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -310,12 +302,11 @@ return|return
 name|TRUE
 return|;
 block|}
-comment|/*  Otherwise, return the boundary...if a channel is active  */
 elseif|else
 if|if
 condition|(
 operator|(
-name|d
+name|drawable
 operator|=
 name|gimp_image_active_drawable
 argument_list|(
@@ -325,10 +316,11 @@ operator|)
 operator|&&
 name|GIMP_IS_CHANNEL
 argument_list|(
-name|d
+name|drawable
 argument_list|)
 condition|)
 block|{
+comment|/*  Otherwise, return the boundary...if a channel is active  */
 return|return
 name|gimp_channel_boundary
 argument_list|(
@@ -359,7 +351,6 @@ name|height
 argument_list|)
 return|;
 block|}
-comment|/* if a layer is active, we return multiple boundaries based on the extents */
 elseif|else
 if|if
 condition|(
@@ -373,6 +364,17 @@ argument_list|)
 operator|)
 condition|)
 block|{
+comment|/*  If a layer is active, we return multiple boundaries based        *  on the extents        */
+name|gint
+name|x1
+decl_stmt|,
+name|y1
+decl_stmt|;
+name|gint
+name|x2
+decl_stmt|,
+name|y2
+decl_stmt|;
 name|gint
 name|off_x
 decl_stmt|,
@@ -2352,10 +2354,12 @@ modifier|*
 name|context
 parameter_list|)
 block|{
+specifier|const
 name|BoundSeg
 modifier|*
 name|bs_in
 decl_stmt|;
+specifier|const
 name|BoundSeg
 modifier|*
 name|bs_out

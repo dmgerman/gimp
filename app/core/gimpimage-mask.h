@@ -24,11 +24,13 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+specifier|const
 name|BoundSeg
 modifier|*
 modifier|*
 name|segs_in
 parameter_list|,
+specifier|const
 name|BoundSeg
 modifier|*
 modifier|*
