@@ -34,7 +34,7 @@ file|<gtk/gtk.h>
 end_include
 
 begin_typedef
-DECL|struct|__anon2b9dd7060108
+DECL|struct|__anon2ba8d16b0108
 typedef|typedef
 struct|struct
 block|{
@@ -764,7 +764,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\"\n   \""
+literal|"\"\n  \""
 argument_list|)
 expr_stmt|;
 name|c
