@@ -273,7 +273,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/_Indexed Palette"
+literal|"/Add Tab/Inde_xed Palette"
 argument_list|)
 argument_list|,
 literal|"gimp-indexed-palette"
@@ -281,6 +281,20 @@ argument_list|,
 name|GIMP_STOCK_INDEXED_PALETTE
 argument_list|,
 name|GIMP_HELP_INDEXED_PALETTE_DIALOG
+argument_list|)
+block|,
+name|ADD_TAB
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Add Tab/Histogra_m"
+argument_list|)
+argument_list|,
+literal|"gimp-histogram-editor"
+argument_list|,
+name|GIMP_STOCK_HISTOGRAM
+argument_list|,
+name|GIMP_HELP_HISTOGRAM_DIALOG
 argument_list|)
 block|,
 name|ADD_TAB
@@ -437,7 +451,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/I_mages"
+literal|"/Add Tab/_Images"
 argument_list|)
 argument_list|,
 literal|"gimp-image-list"

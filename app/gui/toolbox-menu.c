@@ -478,7 +478,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/_Indexed Palette"
+literal|"/File/Dialogs/Inde_xed Palette"
 argument_list|)
 block|,
 name|NULL
@@ -495,6 +495,31 @@ block|,
 literal|"gimp-indexed-palette"
 block|,
 name|GIMP_HELP_INDEXED_PALETTE_DIALOG
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/File/Dialogs/Histogra_m"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_create_dockable_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_HISTOGRAM
+block|}
+block|,
+literal|"gimp-histogram-editor"
+block|,
+name|GIMP_HELP_HISTOGRAM_DIALOG
 block|,
 name|NULL
 block|}
@@ -722,7 +747,7 @@ block|,
 name|GTK_STOCK_SELECT_FONT
 block|}
 block|,
-literal|"gimp-font-list, gimp-font-grid"
+literal|"gimp-font-list|gimp-font-grid"
 block|,
 name|GIMP_HELP_FONT_DIALOG
 block|,
@@ -763,7 +788,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/I_mages"
+literal|"/File/Dialogs/_Images"
 argument_list|)
 block|,
 name|NULL
