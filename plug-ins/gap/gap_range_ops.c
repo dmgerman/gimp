@@ -2339,7 +2339,7 @@ name|help_txt
 operator|=
 name|_
 argument_list|(
-literal|"Convert to, or keep imagetype           \n(most fileformats cant handle all types)"
+literal|"Convert to, or keep imagetype           \n(most fileformats can't handle all types)"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -5719,7 +5719,7 @@ name|run_mode
 argument_list|,
 name|_
 argument_list|(
-literal|"Convert Frames: SAVE operation FAILED\n- desired save plugin cant handle type\n- or desired save plugin not available\n"
+literal|"Convert Frames: SAVE operation FAILED\n- desired save plugin can't handle type\n- or desired save plugin not available\n"
 argument_list|)
 argument_list|)
 expr_stmt|;

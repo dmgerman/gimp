@@ -566,7 +566,7 @@ name|run_mode
 argument_list|,
 name|_
 argument_list|(
-literal|"Split Frames: SAVE operation FAILED\n- desired save plugin cant handle type\n- or desired save plugin not available\n"
+literal|"Split Frames: SAVE operation FAILED\n- desired save plugin can't handle type\n- or desired save plugin not available\n"
 argument_list|)
 argument_list|)
 expr_stmt|;

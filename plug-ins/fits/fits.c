@@ -79,7 +79,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27685a0b0108
+DECL|struct|__anon293504280108
 block|{
 DECL|member|replace
 name|guint
@@ -105,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27685a0b0208
+DECL|struct|__anon293504280208
 block|{
 DECL|member|run
 name|gint
@@ -375,7 +375,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27685a0b0308
+DECL|struct|__anon293504280308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1346,7 +1346,7 @@ name|show_message
 argument_list|(
 name|_
 argument_list|(
-literal|"can't open file for reading"
+literal|"Can't open file for reading"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1382,7 +1382,7 @@ name|show_message
 argument_list|(
 name|_
 argument_list|(
-literal|"error during open of FITS file"
+literal|"Error during open of FITS file"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1438,28 +1438,6 @@ name|gint32
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|image_list
-operator|==
-name|NULL
-condition|)
-block|{
-name|show_message
-argument_list|(
-name|_
-argument_list|(
-literal|"out of memory"
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-operator|(
-operator|-
-literal|1
-operator|)
-return|;
-block|}
 name|n_images
 operator|=
 literal|0
@@ -1828,7 +1806,7 @@ name|show_message
 argument_list|(
 name|_
 argument_list|(
-literal|"cannot operate on unknown image types"
+literal|"Cannot operate on unknown image types"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1859,7 +1837,7 @@ name|show_message
 argument_list|(
 name|_
 argument_list|(
-literal|"cant open file for writing"
+literal|"Can't open file for writing"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3848,7 +3826,7 @@ name|show_message
 argument_list|(
 name|_
 argument_list|(
-literal|"write error occured"
+literal|"Write error occured"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4560,7 +4538,7 @@ name|show_message
 argument_list|(
 name|_
 argument_list|(
-literal|"write error occured"
+literal|"Write error occured"
 argument_list|)
 argument_list|)
 expr_stmt|;

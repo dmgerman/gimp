@@ -138,7 +138,7 @@ comment|/* Fileheader of SunRaster files */
 end_comment
 
 begin_typedef
-DECL|struct|__anon288ae1210108
+DECL|struct|__anon28c8a4fd0108
 typedef|typedef
 struct|struct
 block|{
@@ -227,7 +227,7 @@ comment|/* Runlength compression format */
 end_comment
 
 begin_typedef
-DECL|struct|__anon288ae1210208
+DECL|struct|__anon28c8a4fd0208
 typedef|typedef
 struct|struct
 block|{
@@ -881,7 +881,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288ae1210308
+DECL|struct|__anon28c8a4fd0308
 block|{
 DECL|member|rle
 name|gint
@@ -897,7 +897,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288ae1210408
+DECL|struct|__anon28c8a4fd0408
 block|{
 DECL|member|run
 name|gint
@@ -1699,7 +1699,7 @@ name|show_message
 argument_list|(
 name|_
 argument_list|(
-literal|"cant open file for reading"
+literal|"Can't open file for reading"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1736,7 +1736,7 @@ name|show_message
 argument_list|(
 name|_
 argument_list|(
-literal|"cant open file as SUN-raster-file"
+literal|"Can't open file as SUN-raster-file"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1775,7 +1775,7 @@ name|show_message
 argument_list|(
 name|_
 argument_list|(
-literal|"the type of this SUN-rasterfile is not supported"
+literal|"The type of this SUN-rasterfile is not supported"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1834,7 +1834,7 @@ condition|)
 block|{
 name|show_message
 argument_list|(
-literal|"cant get memory for colour map"
+literal|"Can't get memory for colour map"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -1938,7 +1938,7 @@ condition|)
 block|{
 name|show_message
 argument_list|(
-literal|"cant read colour entries"
+literal|"Can't read colour entries"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -1968,7 +1968,7 @@ name|show_message
 argument_list|(
 name|_
 argument_list|(
-literal|"type of colourmap not supported"
+literal|"Type of colourmap not supported"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2151,7 +2151,7 @@ name|show_message
 argument_list|(
 name|_
 argument_list|(
-literal|"this image depth is not supported"
+literal|"This image depth is not supported"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2249,7 +2249,7 @@ name|show_message
 argument_list|(
 name|_
 argument_list|(
-literal|"cant operate on unknown image types"
+literal|"Can't operate on unknown image types"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2280,7 +2280,7 @@ name|show_message
 argument_list|(
 name|_
 argument_list|(
-literal|"cant open file for writing"
+literal|"Can't open file for writing"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7311,7 +7311,7 @@ name|show_message
 argument_list|(
 name|_
 argument_list|(
-literal|"write error occured"
+literal|"Write error occured"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7914,7 +7914,7 @@ name|show_message
 argument_list|(
 name|_
 argument_list|(
-literal|"write error occured"
+literal|"Write error occured"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8684,7 +8684,7 @@ name|l_run_mode
 operator|==
 name|RUN_INTERACTIVE
 condition|)
-name|gimp_message
+name|g_message
 argument_list|(
 name|message
 argument_list|)
