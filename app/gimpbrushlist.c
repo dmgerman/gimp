@@ -251,18 +251,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
-name|brushes_free_one
-parameter_list|(
-name|gpointer
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|gint
 name|brush_compare_func
 parameter_list|(
@@ -827,30 +815,6 @@ end_function
 
 begin_function
 specifier|static
-name|void
-DECL|function|brushes_free_one (gpointer data,gpointer dummy)
-name|brushes_free_one
-parameter_list|(
-name|gpointer
-name|data
-parameter_list|,
-name|gpointer
-name|dummy
-parameter_list|)
-block|{
-name|gimp_object_unref
-argument_list|(
-name|GIMP_OBJECT
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
 name|gint
 DECL|function|brush_compare_func (gconstpointer first,gconstpointer second)
 name|brush_compare_func
@@ -902,8 +866,7 @@ condition|(
 name|brush_list
 condition|)
 block|{
-comment|/*    gimp_list_foreach (GIMP_LIST(brush_list), brushes_free_one, NULL);*/
-name|gimp_object_destroy
+name|gimp_object_unref
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
@@ -1231,6 +1194,14 @@ name|brush_list
 argument_list|)
 argument_list|,
 name|brush
+argument_list|)
+expr_stmt|;
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|brush
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_brush_list_recalc_indexes

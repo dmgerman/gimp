@@ -438,11 +438,6 @@ name|mask
 argument_list|)
 expr_stmt|;
 block|}
-DECL|macro|D_TO_R
-define|#
-directive|define
-name|D_TO_R
-value|M_PI/180
 comment|/* compute the range of the brush, should do a better job than this */
 name|s
 operator|=
@@ -454,7 +449,7 @@ name|angle
 operator|*
 name|M_PI
 operator|/
-literal|180
+literal|180.0
 argument_list|)
 expr_stmt|;
 name|c
@@ -467,7 +462,7 @@ name|angle
 operator|*
 name|M_PI
 operator|/
-literal|180
+literal|180.0
 argument_list|)
 expr_stmt|;
 name|tx

@@ -2519,6 +2519,14 @@ name|BrushSelectP
 name|bsp
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+name|GTK_OBJECT_DESTROYED
+argument_list|(
+name|brush
+argument_list|)
+condition|)
 name|gtk_signal_disconnect_by_data
 argument_list|(
 name|GTK_OBJECT
