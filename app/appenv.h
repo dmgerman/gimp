@@ -19,13 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"glib.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -34,61 +28,10 @@ directive|include
 file|"gimpsetF.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"colormap_dialog.t.h"
-end_include
-
-begin_comment
-comment|/*   important macros - we reuse the ones from glib */
-end_comment
-
-begin_define
-DECL|macro|BOUNDS (a,x,y)
-define|#
-directive|define
-name|BOUNDS
-parameter_list|(
-name|a
-parameter_list|,
-name|x
-parameter_list|,
-name|y
-parameter_list|)
-value|CLAMP(a,x,y)
-end_define
-
-begin_define
-DECL|macro|MINIMUM (x,y)
-define|#
-directive|define
-name|MINIMUM
-parameter_list|(
-name|x
-parameter_list|,
-name|y
-parameter_list|)
-value|MIN(x,y)
-end_define
-
-begin_define
-DECL|macro|MAXIMUM (x,y)
-define|#
-directive|define
-name|MAXIMUM
-parameter_list|(
-name|x
-parameter_list|,
-name|y
-parameter_list|)
-value|MAX(x,y)
-end_define
-
 begin_typedef
-DECL|enum|__anon2c4eb4980103
 typedef|typedef
 enum|enum
+DECL|enum|__anon27a291eb0103
 block|{
 DECL|enumerator|MESSAGE_BOX
 name|MESSAGE_BOX
@@ -106,63 +49,63 @@ end_typedef
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|no_interface
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|no_splash
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|no_splash_image
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|no_data
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|be_verbose
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|use_debug_handler
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|console_messages
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|restore_session
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|we_are_exiting
 decl_stmt|;
 end_decl_stmt
@@ -193,11 +136,11 @@ name|G_OS_WIN32
 end_ifdef
 
 begin_function_decl
-name|char
+name|gchar
 modifier|*
 name|quote_spaces
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|string
 parameter_list|)
@@ -215,7 +158,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  APPENV_H  */
+comment|/*  __APPENV_H__  */
 end_comment
 
 end_unit
