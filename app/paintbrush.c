@@ -2131,10 +2131,12 @@ decl_stmt|;
 name|double
 name|unit_factor
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|gdisp
 operator|!=
+name|NULL
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;

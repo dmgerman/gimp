@@ -171,6 +171,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* appearantly GIMP_IS_BRUSH_PIPE () returning TRUE is no indication that you really    have a brush_pipe in front of you, so here we introduce a macro that works:        */
+end_comment
+
+begin_define
+DECL|macro|GIMP_IS_REALLY_A_BRUSH_PIPE (obj)
+define|#
+directive|define
+name|GIMP_IS_REALLY_A_BRUSH_PIPE
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GIMP_IS_BRUSH_PIPE (obj)&& GIMP_BRUSH_PIPE (obj)->nbrushes> 1)
+end_define
+
 begin_endif
 endif|#
 directive|endif
