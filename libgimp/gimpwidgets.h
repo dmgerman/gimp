@@ -262,7 +262,7 @@ name|tooltip
 parameter_list|,
 name|gchar
 modifier|*
-name|private_tip
+name|help_data
 parameter_list|)
 function_decl|;
 DECL|macro|GIMP_RANDOM_SEED_SPINBUTTON (hbox)
