@@ -87,7 +87,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 argument_list|)
@@ -460,7 +460,7 @@ name|rowstride
 expr_stmt|;
 block|}
 block|}
-name|drawable_merge_shadow
+name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 argument_list|,

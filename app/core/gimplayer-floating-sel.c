@@ -143,7 +143,7 @@ operator|!
 operator|(
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|drawable
 argument_list|)
@@ -229,7 +229,7 @@ argument_list|)
 operator|->
 name|height
 argument_list|,
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
 argument_list|)
@@ -283,7 +283,7 @@ operator|!
 operator|(
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|layer
 operator|->
@@ -344,7 +344,7 @@ operator|!
 operator|(
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -480,7 +480,7 @@ operator|!
 operator|(
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -640,7 +640,7 @@ operator|!
 operator|(
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -710,7 +710,7 @@ name|height
 argument_list|)
 expr_stmt|;
 comment|/*  determine whether the resulting layer needs an update  */
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|layer
 operator|->
@@ -727,7 +727,7 @@ argument_list|)
 expr_stmt|;
 name|width
 operator|=
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|layer
 operator|->
@@ -738,7 +738,7 @@ argument_list|)
 expr_stmt|;
 name|height
 operator|=
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|layer
 operator|->
@@ -906,7 +906,7 @@ name|backing_store
 operator|->
 name|width
 operator|!=
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -922,7 +922,7 @@ name|backing_store
 operator|->
 name|height
 operator|!=
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -938,7 +938,7 @@ name|backing_store
 operator|->
 name|bpp
 operator|!=
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|layer
 operator|->
@@ -980,7 +980,7 @@ argument_list|)
 operator|->
 name|height
 argument_list|,
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|layer
 operator|->
@@ -992,7 +992,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  What this function does is save the specified area of the    *  drawable that this floating selection obscures.  We do this so    *  that it will be possible to subsequently restore the drawable's area    */
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|layer
 operator|->
@@ -1056,7 +1056,7 @@ name|width
 argument_list|,
 name|offx
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|layer
 operator|->
@@ -1086,7 +1086,7 @@ name|height
 argument_list|,
 name|offy
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|layer
 operator|->
@@ -1169,7 +1169,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|layer
 operator|->
@@ -1309,7 +1309,7 @@ name|y2
 decl_stmt|;
 comment|/*  What this function does is "uncover" the specified area in the    *  drawable that this floating selection obscures.  We do this so    *  that either the floating selection can be removed or it can be    *  translated    */
 comment|/*  Find the minimum area we need to uncover -- in gimage space  */
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|layer
 operator|->
@@ -1372,7 +1372,7 @@ name|width
 argument_list|,
 name|offx
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|layer
 operator|->
@@ -1402,7 +1402,7 @@ name|height
 argument_list|,
 name|offy
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|layer
 operator|->
@@ -1533,7 +1533,7 @@ argument_list|(
 operator|&
 name|destPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|layer
 operator|->
@@ -1834,7 +1834,7 @@ operator|!
 operator|(
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1898,7 +1898,7 @@ name|visible
 condition|)
 block|{
 comment|/*  Find the minimum area we need to composite -- in gimage space  */
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|layer
 operator|->
@@ -1961,7 +1961,7 @@ name|width
 argument_list|,
 name|offx
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|layer
 operator|->
@@ -1991,7 +1991,7 @@ name|height
 argument_list|,
 name|offy
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|layer
 operator|->

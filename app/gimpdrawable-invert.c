@@ -138,7 +138,7 @@ name|nreturn_vals
 argument_list|,
 name|PDB_DRAWABLE
 argument_list|,
-name|drawable_ID
+name|gimp_drawable_get_ID
 argument_list|(
 name|drawable
 argument_list|)
@@ -222,7 +222,7 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|drawable_mask_bounds
+name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 argument_list|,
@@ -244,7 +244,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -273,7 +273,7 @@ argument_list|(
 operator|&
 name|destPR
 argument_list|,
-name|drawable_shadow
+name|gimp_drawable_shadow
 argument_list|(
 name|drawable
 argument_list|)
@@ -320,7 +320,7 @@ argument_list|(
 name|lut
 argument_list|)
 expr_stmt|;
-name|drawable_merge_shadow
+name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 argument_list|,

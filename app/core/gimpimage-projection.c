@@ -675,7 +675,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon287f40280103
+DECL|enum|__anon2878daea0103
 block|{
 DECL|enumerator|CLEAN
 name|CLEAN
@@ -7880,10 +7880,10 @@ comment|/* It's the only layer.  */
 block|(layer_has_alpha((Layer*)(gimage->layers->data)))&&
 comment|/* It's !flat.  */
 comment|/* It's visible.         */
-block|(drawable_visible (GIMP_DRAWABLE ((Layer*)(gimage->layers->data))))&&       (drawable_width (GIMP_DRAWABLE ((Layer*)(gimage->layers->data))) ==        gimage->width)&&       (drawable_height (GIMP_DRAWABLE ((Layer*)(gimage->layers->data))) ==        gimage->height)&&
+block|(gimp_drawable_visible (GIMP_DRAWABLE ((Layer*)(gimage->layers->data))))&&       (gimp_drawable_width (GIMP_DRAWABLE ((Layer*)(gimage->layers->data))) ==        gimage->width)&&       (gimp_drawable_height (GIMP_DRAWABLE ((Layer*)(gimage->layers->data))) ==        gimage->height)&&
 comment|/* Covers all.           */
 comment|/* Not indexed.          */
-block|(!drawable_indexed (GIMP_DRAWABLE ((Layer*)(gimage->layers->data))))&&       (((Layer*)(gimage->layers->data))->opacity == OPAQUE_OPACITY)
+block|(!gimp_drawable_is_indexed (GIMP_DRAWABLE ((Layer*)(gimage->layers->data))))&&       (((Layer*)(gimage->layers->data))->opacity == OPAQUE_OPACITY)
 comment|/*opaq */
 block|)     {       gint xoff;       gint yoff;              gimp_drawable_offsets (GIMP_DRAWABLE ((Layer*)(gimage->layers->data)),&xoff,&yoff);         if ((xoff==0)&& (yoff==0))
 comment|/* Starts at 0,0         */
@@ -10760,7 +10760,7 @@ name|new_index
 argument_list|)
 expr_stmt|;
 comment|/* update the affected area (== area of layer_arg) */
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -10786,7 +10786,7 @@ name|x_max
 operator|=
 name|off_x
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -10798,7 +10798,7 @@ name|y_max
 operator|=
 name|off_y
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -10935,7 +10935,7 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|drawable_visible
+name|gimp_drawable_visible
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -11104,7 +11104,7 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|drawable_visible
+name|gimp_drawable_visible
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -11245,7 +11245,7 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|drawable_visible
+name|gimp_drawable_visible
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -11532,7 +11532,7 @@ name|merge_list
 operator|->
 name|data
 expr_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -11575,7 +11575,7 @@ name|x2
 operator|=
 name|off_x
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -11587,7 +11587,7 @@ name|y2
 operator|=
 name|off_y
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -11623,7 +11623,7 @@ condition|(
 operator|(
 name|off_x
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -11639,7 +11639,7 @@ operator|=
 operator|(
 name|off_x
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -11653,7 +11653,7 @@ condition|(
 operator|(
 name|off_y
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -11669,7 +11669,7 @@ operator|=
 operator|(
 name|off_y
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -11764,7 +11764,7 @@ name|x2
 operator|=
 name|off_x
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -11776,7 +11776,7 @@ name|y2
 operator|=
 name|off_y
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -11889,7 +11889,7 @@ name|merge_type
 operator|==
 name|FLATTEN_IMAGE
 operator|||
-name|drawable_type
+name|gimp_drawable_type
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -12018,7 +12018,7 @@ argument_list|(
 operator|&
 name|src1PR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -12076,7 +12076,7 @@ operator|-
 name|y1
 operator|)
 argument_list|,
-name|drawable_type_with_alpha
+name|gimp_drawable_type_with_alpha
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -12130,7 +12130,7 @@ argument_list|(
 operator|&
 name|src1PR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -12268,7 +12268,7 @@ name|operation
 operator|=
 name|valid_combinations
 index|[
-name|drawable_type
+name|gimp_drawable_type
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -12277,7 +12277,7 @@ argument_list|)
 argument_list|)
 index|]
 index|[
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -12303,7 +12303,7 @@ return|return
 name|NULL
 return|;
 block|}
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -12345,7 +12345,7 @@ name|CLAMP
 argument_list|(
 name|off_x
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -12364,7 +12364,7 @@ name|CLAMP
 argument_list|(
 name|off_y
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -12383,7 +12383,7 @@ argument_list|(
 operator|&
 name|src1PR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -12423,7 +12423,7 @@ argument_list|(
 operator|&
 name|src2PR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -12474,7 +12474,7 @@ argument_list|(
 operator|&
 name|maskPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -12717,7 +12717,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -12725,7 +12725,7 @@ name|merge_layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -13065,7 +13065,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -13073,7 +13073,7 @@ name|float_layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -13342,7 +13342,7 @@ return|;
 block|}
 if|if
 condition|(
-name|drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -13391,7 +13391,7 @@ block|}
 if|if
 condition|(
 operator|(
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -13399,7 +13399,7 @@ name|layer
 argument_list|)
 argument_list|)
 operator|!=
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -13409,7 +13409,7 @@ argument_list|)
 operator|)
 operator|||
 operator|(
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -13417,7 +13417,7 @@ name|layer
 argument_list|)
 argument_list|)
 operator|!=
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -13690,7 +13690,7 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -13720,7 +13720,7 @@ name|off_x
 argument_list|,
 name|off_y
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -13728,7 +13728,7 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -13869,7 +13869,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -13877,7 +13877,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -14056,7 +14056,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -14064,7 +14064,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -14279,7 +14279,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -14287,7 +14287,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -14488,7 +14488,7 @@ expr_stmt|;
 comment|/*  if channel is visible, update the image  */
 if|if
 condition|(
-name|drawable_visible
+name|gimp_drawable_visible
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -14507,7 +14507,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -14515,7 +14515,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -14655,7 +14655,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|drawable_visible
+name|gimp_drawable_visible
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -14674,7 +14674,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -14682,7 +14682,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -15450,7 +15450,7 @@ name|gimage
 parameter_list|)
 block|{
 return|return
-name|drawable_cmap
+name|gimp_drawable_cmap
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
@@ -15945,7 +15945,7 @@ expr_stmt|;
 comment|/*  only add layers that are visible to the list  */
 if|if
 condition|(
-name|drawable_visible
+name|gimp_drawable_visible
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -16023,7 +16023,7 @@ name|reverse_list
 operator|->
 name|data
 expr_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -16070,7 +16070,7 @@ name|RINT
 argument_list|(
 name|ratio
 operator|*
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -16088,7 +16088,7 @@ name|RINT
 argument_list|(
 name|ratio
 operator|*
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -16391,7 +16391,7 @@ expr_stmt|;
 comment|/*  Based on the type of the layer, project the layer onto the        *   composite preview...        *  Indexed images are actually already converted to RGB and RGBA,        *   so just project them as if they were type "intensity"        *  Send in all TRUE for visible since that info doesn't matter        *   for previews        */
 switch|switch
 condition|(
-name|drawable_type
+name|gimp_drawable_type
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

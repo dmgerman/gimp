@@ -6599,7 +6599,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6650,7 +6650,7 @@ name|x2
 operator|=
 name|off_x
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6663,7 +6663,7 @@ name|y2
 operator|=
 name|off_y
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6703,7 +6703,7 @@ name|MAX
 argument_list|(
 name|off_x
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6722,7 +6722,7 @@ name|MAX
 argument_list|(
 name|off_y
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6920,7 +6920,7 @@ if|if
 condition|(
 name|use_offsets
 condition|)
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
@@ -7075,7 +7075,7 @@ if|if
 condition|(
 name|use_offsets
 condition|)
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
@@ -7246,7 +7246,7 @@ if|if
 condition|(
 name|use_offsets
 condition|)
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
@@ -7388,7 +7388,7 @@ if|if
 condition|(
 name|use_offsets
 condition|)
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
@@ -7923,7 +7923,7 @@ name|drawable
 condition|)
 name|type
 operator|=
-name|drawable_type
+name|gimp_drawable_type
 argument_list|(
 name|drawable
 argument_list|)
@@ -9056,8 +9056,8 @@ end_function
 begin_function
 name|GDisplay
 modifier|*
-DECL|function|gdisplay_get_ID (gint ID)
-name|gdisplay_get_ID
+DECL|function|gdisplay_get_by_ID (gint ID)
+name|gdisplay_get_by_ID
 parameter_list|(
 name|gint
 name|ID
@@ -9070,15 +9070,23 @@ decl_stmt|;
 name|GSList
 modifier|*
 name|list
-init|=
-name|display_list
 decl_stmt|;
-comment|/*  Traverse the list of displays, returning the one that matches the ID  */
-comment|/*  If no display in the list is a match, return NULL.                    */
-while|while
-condition|(
+comment|/*  Traverse the list of displays, returning the one that matches the ID    *  If no display in the list is a match, return NULL.    */
+for|for
+control|(
 name|list
-condition|)
+operator|=
+name|display_list
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|gdisp
 operator|=
@@ -9101,13 +9109,6 @@ condition|)
 return|return
 name|gdisp
 return|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-expr_stmt|;
 block|}
 return|return
 name|NULL

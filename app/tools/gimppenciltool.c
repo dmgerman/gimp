@@ -489,8 +489,7 @@ name|TempBuf
 modifier|*
 name|area
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|col
 index|[
 name|MAX_CHANNELS
@@ -517,7 +516,7 @@ operator|!
 operator|(
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|drawable
 argument_list|)

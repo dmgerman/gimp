@@ -418,7 +418,7 @@ name|undo
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -459,7 +459,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|drawable_merge_shadow
+name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 argument_list|,
@@ -569,7 +569,7 @@ name|fill_type
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -742,7 +742,7 @@ name|height
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -970,7 +970,7 @@ name|y2
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -998,7 +998,7 @@ name|success
 condition|)
 name|non_empty
 operator|=
-name|drawable_mask_bounds
+name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 argument_list|,
@@ -1233,7 +1233,7 @@ name|NULL
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1264,7 +1264,7 @@ operator|=
 operator|(
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|drawable
 argument_list|)
@@ -1409,7 +1409,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1454,7 +1454,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_type
+name|gimp_drawable_type
 argument_list|(
 name|drawable
 argument_list|)
@@ -1568,7 +1568,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1613,7 +1613,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)
@@ -1727,7 +1727,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1772,7 +1772,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_type_with_alpha
+name|gimp_drawable_type_with_alpha
 argument_list|(
 name|drawable
 argument_list|)
@@ -1886,7 +1886,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1931,7 +1931,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 argument_list|)
@@ -1972,7 +1972,7 @@ block|{
 block|{
 name|PDB_INT32
 block|,
-literal|"color"
+literal|"is_rgb"
 block|,
 literal|"non-zero if the drawable is an RGB type"
 block|}
@@ -2045,7 +2045,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2090,7 +2090,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 argument_list|)
@@ -2131,7 +2131,7 @@ block|{
 block|{
 name|PDB_INT32
 block|,
-literal|"gray"
+literal|"is_gray"
 block|,
 literal|"non-zero if the drawable is a grayscale type"
 block|}
@@ -2204,7 +2204,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2249,7 +2249,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
@@ -2290,7 +2290,7 @@ block|{
 block|{
 name|PDB_INT32
 block|,
-literal|"indexed"
+literal|"is_indexed"
 block|,
 literal|"non-zero if the drawable is an indexed type"
 block|}
@@ -2363,7 +2363,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2408,7 +2408,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
 argument_list|)
@@ -2522,7 +2522,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2567,7 +2567,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -2681,7 +2681,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2726,7 +2726,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -2846,7 +2846,7 @@ name|offset_y
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2872,7 +2872,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 argument_list|,
@@ -3038,7 +3038,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -3083,7 +3083,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_layer
+name|gimp_drawable_layer
 argument_list|(
 name|drawable
 argument_list|)
@@ -3201,7 +3201,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -3246,7 +3246,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_layer_mask
+name|gimp_drawable_layer_mask
 argument_list|(
 name|drawable
 argument_list|)
@@ -3364,7 +3364,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -3409,7 +3409,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_channel
+name|gimp_drawable_channel
 argument_list|(
 name|drawable
 argument_list|)
@@ -3555,7 +3555,7 @@ name|tile
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -3628,14 +3628,14 @@ if|if
 condition|(
 name|x
 operator|<
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
 operator|&&
 name|y
 operator|<
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -3643,7 +3643,7 @@ condition|)
 block|{
 name|num_channels
 operator|=
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
 argument_list|)
@@ -3661,7 +3661,7 @@ name|tile
 operator|=
 name|tile_manager_get_tile
 argument_list|(
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -3922,7 +3922,7 @@ name|tile
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -4021,21 +4021,21 @@ if|if
 condition|(
 name|x
 operator|<
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
 operator|&&
 name|y
 operator|<
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
 operator|&&
 name|num_channels
 operator|==
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
 argument_list|)
@@ -4045,7 +4045,7 @@ name|tile
 operator|=
 name|tile_manager_get_tile
 argument_list|(
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -4241,7 +4241,7 @@ name|gimage
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -4434,7 +4434,7 @@ name|NULL
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -4526,7 +4526,7 @@ block|{
 comment|/* Adjust the width/height ratio */
 name|dwidth
 operator|=
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4536,7 +4536,7 @@ argument_list|)
 expr_stmt|;
 name|dheight
 operator|=
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

@@ -421,30 +421,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
-modifier|*
-name|channel_get_ID
-parameter_list|(
-name|gint
-name|ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|channel_delete
-parameter_list|(
-name|Channel
-modifier|*
-name|channel
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|channel_removed
 parameter_list|(
 name|Channel
 modifier|*
@@ -1000,10 +978,10 @@ function_decl|;
 end_function_decl
 
 begin_define
-DECL|macro|drawable_channel
+DECL|macro|gimp_drawable_channel
 define|#
 directive|define
-name|drawable_channel
+name|gimp_drawable_channel
 value|GIMP_IS_CHANNEL
 end_define
 

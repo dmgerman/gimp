@@ -933,7 +933,7 @@ operator|!
 operator|(
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|drawable
 argument_list|)
@@ -945,23 +945,10 @@ return|;
 comment|/*  If the image type is indexed, don't smudge  */
 if|if
 condition|(
-operator|(
-name|drawable_type
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
-operator|==
-name|INDEXED_GIMAGE
-operator|)
-operator|||
-operator|(
-name|drawable_type
-argument_list|(
-name|drawable
-argument_list|)
-operator|==
-name|INDEXEDA_GIMAGE
-operator|)
 condition|)
 return|return
 name|FALSE
@@ -1175,7 +1162,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -1546,7 +1533,7 @@ operator|!
 operator|(
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|drawable
 argument_list|)
@@ -1556,23 +1543,10 @@ return|return;
 comment|/*  If the image type is indexed, don't smudge  */
 if|if
 condition|(
-operator|(
-name|drawable_type
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
-operator|==
-name|INDEXED_GIMAGE
-operator|)
-operator|||
-operator|(
-name|drawable_type
-argument_list|(
-name|drawable
-argument_list|)
-operator|==
-name|INDEXEDA_GIMAGE
-operator|)
 condition|)
 return|return;
 name|smudge_nonclipped_painthit_coords
@@ -1617,7 +1591,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -1903,7 +1877,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)

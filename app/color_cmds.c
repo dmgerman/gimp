@@ -363,7 +363,7 @@ name|y2
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -786,7 +786,7 @@ index|]
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1403,7 +1403,7 @@ name|y2
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1716,7 +1716,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1856,7 +1856,7 @@ name|mask_only
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1908,7 +1908,7 @@ argument_list|)
 condition|)
 name|equalize
 argument_list|(
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|drawable
 argument_list|)
@@ -2024,7 +2024,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2194,7 +2194,7 @@ name|destPR
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2814,7 +2814,7 @@ name|destPR
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -3340,7 +3340,7 @@ name|y2
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -3899,7 +3899,7 @@ name|mask
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -4156,7 +4156,7 @@ name|mask
 operator|=
 name|gimp_image_get_mask
 argument_list|(
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4555,7 +4555,7 @@ name|y2
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -5067,7 +5067,7 @@ name|destPR
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[

@@ -8274,7 +8274,7 @@ name|show_mask
 decl_stmt|;
 name|gimp_image_remove_layer_mask
 argument_list|(
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -8392,7 +8392,7 @@ name|show_mask
 decl_stmt|;
 name|gimp_image_remove_layer_mask
 argument_list|(
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -10983,7 +10983,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9d77d10108
+DECL|struct|__anon2afc00de0108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -17978,7 +17978,7 @@ argument_list|)
 argument_list|,
 literal|"removed"
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -17986,7 +17986,7 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -18332,7 +18332,7 @@ argument_list|)
 argument_list|,
 literal|"removed"
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -18340,7 +18340,7 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

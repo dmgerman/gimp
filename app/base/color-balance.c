@@ -908,7 +908,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(

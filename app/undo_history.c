@@ -124,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b661d90108
+DECL|struct|__anon27c806560108
 block|{
 DECL|member|gimage
 name|GImage
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b661d90208
+DECL|struct|__anon27c806560208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -321,7 +321,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -334,7 +334,7 @@ name|pwidth
 operator|)
 operator|||
 operator|(
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -353,7 +353,7 @@ operator|(
 operator|(
 name|gfloat
 operator|)
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -372,7 +372,7 @@ operator|(
 operator|(
 name|gfloat
 operator|)
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -396,7 +396,7 @@ expr_stmt|;
 name|height
 operator|=
 operator|(
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -410,7 +410,7 @@ name|pwidth
 operator|)
 operator|)
 operator|/
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -424,7 +424,7 @@ block|{
 name|width
 operator|=
 operator|(
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -438,7 +438,7 @@ name|pheight
 operator|)
 operator|)
 operator|/
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -461,7 +461,7 @@ else|else
 block|{
 name|width
 operator|=
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -471,7 +471,7 @@ argument_list|)
 expr_stmt|;
 name|height
 operator|=
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -518,7 +518,7 @@ operator|)
 operator|*
 literal|2
 operator|<
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -538,7 +538,7 @@ operator|)
 operator|*
 literal|2
 operator|<
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -558,7 +558,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -570,7 +570,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -578,7 +578,7 @@ name|mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -672,7 +672,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -684,7 +684,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -692,7 +692,7 @@ name|mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

@@ -1847,7 +1847,7 @@ decl_stmt|;
 name|gint
 name|off_y
 decl_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1872,7 +1872,7 @@ name|layer_select
 operator|->
 name|ratio
 operator|*
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1891,7 +1891,7 @@ name|layer_select
 operator|->
 name|ratio
 operator|*
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

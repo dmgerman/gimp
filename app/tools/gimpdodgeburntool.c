@@ -1664,7 +1664,7 @@ operator|!
 operator|(
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|drawable
 argument_list|)
@@ -1675,7 +1675,7 @@ comment|/*  If the image type is indexed, don't dodgeburn  */
 if|if
 condition|(
 operator|(
-name|drawable_type
+name|gimp_drawable_type
 argument_list|(
 name|drawable
 argument_list|)
@@ -1684,7 +1684,7 @@ name|INDEXED_GIMAGE
 operator|)
 operator|||
 operator|(
-name|drawable_type
+name|gimp_drawable_type
 argument_list|(
 name|drawable
 argument_list|)
@@ -1749,7 +1749,7 @@ name|x
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -1765,7 +1765,7 @@ name|y
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -1785,7 +1785,7 @@ name|width
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -1805,7 +1805,7 @@ name|height
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -2050,7 +2050,7 @@ comment|/* Now add an alpha to the dodgeburned region       and put this in area
 if|if
 condition|(
 operator|!
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)

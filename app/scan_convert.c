@@ -1299,7 +1299,7 @@ argument_list|(
 operator|&
 name|maskPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1311,7 +1311,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1319,7 +1319,7 @@ name|mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

@@ -2625,7 +2625,7 @@ name|drawable
 condition|)
 name|layer_type
 operator|=
-name|drawable_type_with_alpha
+name|gimp_drawable_type_with_alpha
 argument_list|(
 name|drawable
 argument_list|)

@@ -845,7 +845,7 @@ name|NULL
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1058,7 +1058,7 @@ name|parasite
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1220,7 +1220,7 @@ name|name
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1392,7 +1392,7 @@ name|NULL
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[

@@ -1376,7 +1376,7 @@ expr_stmt|;
 comment|/*  if the gdisplay is for a color image, the dialog must have RGB  */
 switch|switch
 condition|(
-name|drawable_type
+name|gimp_drawable_type
 argument_list|(
 name|tool
 operator|->
@@ -2443,7 +2443,7 @@ operator|!
 name|sample_merged
 condition|)
 block|{
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 argument_list|,

@@ -360,10 +360,6 @@ directive|include
 file|"brush_select.h"
 end_include
 
-begin_comment
-comment|/* Need for closing dialogs */
-end_comment
-
 begin_include
 include|#
 directive|include
@@ -429,10 +425,6 @@ include|#
 directive|include
 file|"pattern_select.h"
 end_include
-
-begin_comment
-comment|/* Needed for closing pattern dialogs */
-end_comment
 
 begin_include
 include|#
@@ -5970,7 +5962,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_ID
+name|gimp_drawable_get_ID
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
@@ -6800,9 +6792,9 @@ name|shadow
 condition|)
 name|tm
 operator|=
-name|drawable_shadow
+name|gimp_drawable_shadow
 argument_list|(
-name|drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|tile_info
 operator|->
@@ -6813,9 +6805,9 @@ expr_stmt|;
 else|else
 name|tm
 operator|=
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
-name|drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|tile_info
 operator|->
@@ -6972,9 +6964,9 @@ name|shadow
 condition|)
 name|tm
 operator|=
-name|drawable_shadow
+name|gimp_drawable_shadow
 argument_list|(
-name|drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|tile_req
 operator|->
@@ -6985,9 +6977,9 @@ expr_stmt|;
 else|else
 name|tm
 operator|=
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
-name|drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|tile_req
 operator|->
@@ -11482,7 +11474,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_ID
+name|gimp_drawable_get_ID
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
@@ -11597,7 +11589,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_ID
+name|gimp_drawable_get_ID
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
@@ -16087,7 +16079,7 @@ literal|0
 condition|)
 name|gdisp
 operator|=
-name|gdisplay_get_ID
+name|gdisplay_get_by_ID
 argument_list|(
 name|gdisp_ID
 argument_list|)

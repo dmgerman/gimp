@@ -1536,7 +1536,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -1545,12 +1545,12 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -1560,7 +1560,7 @@ argument_list|)
 expr_stmt|;
 name|has_alpha
 operator|=
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)
@@ -1568,14 +1568,14 @@ expr_stmt|;
 block|}
 name|indexed
 operator|=
-name|drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
 name|bytes
 operator|=
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
 argument_list|)
@@ -1614,7 +1614,7 @@ argument_list|(
 operator|&
 name|maskPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1626,7 +1626,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1634,7 +1634,7 @@ name|mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1770,7 +1770,7 @@ condition|(
 name|drawable
 condition|)
 comment|/* NULL if sample_merged is active */
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 argument_list|,
@@ -2553,7 +2553,7 @@ argument_list|(
 operator|&
 name|maskPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2565,7 +2565,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2573,7 +2573,7 @@ name|fuzzy_mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2599,7 +2599,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2607,7 +2607,7 @@ name|fuzzy_mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

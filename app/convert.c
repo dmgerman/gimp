@@ -34951,7 +34951,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d47430108
+DECL|struct|__anon2a4666ea0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35028,7 +35028,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d47430208
+DECL|struct|__anon2a4666ea0208
 block|{
 DECL|member|ncolors
 name|long
@@ -35047,7 +35047,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d47430308
+DECL|struct|__anon2a4666ea0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -38387,7 +38387,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d47430408
+DECL|struct|__anon2a4666ea0408
 block|{
 DECL|member|used_count
 name|signed
@@ -40739,7 +40739,7 @@ name|INDEXED
 case|:
 name|cmap
 operator|=
-name|drawable_cmap
+name|gimp_drawable_cmap
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -41151,7 +41151,7 @@ name|INDEXED
 case|:
 name|cmap
 operator|=
-name|drawable_cmap
+name|gimp_drawable_cmap
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -41600,7 +41600,7 @@ argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -47513,7 +47513,7 @@ name|void
 modifier|*
 name|pr
 decl_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -47915,7 +47915,7 @@ name|void
 modifier|*
 name|pr
 decl_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -48411,7 +48411,7 @@ name|quantobj
 operator|->
 name|index_used_count
 decl_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -48428,7 +48428,7 @@ expr_stmt|;
 comment|/*  In the case of web/mono palettes, we actually force    *   grayscale drawables through the rgb pass2 functions    */
 if|if
 condition|(
-name|drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -48885,7 +48885,7 @@ name|quantobj
 operator|->
 name|index_used_count
 decl_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -48902,7 +48902,7 @@ expr_stmt|;
 comment|/*  In the case of web/mono palettes, we actually force    *   grayscale drawables through the rgb pass2 functions    */
 if|if
 condition|(
-name|drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -49517,7 +49517,7 @@ name|offsetx
 decl_stmt|,
 name|offsety
 decl_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -50357,7 +50357,7 @@ name|quantobj
 operator|->
 name|index_used_count
 decl_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -51441,7 +51441,7 @@ name|quantobj
 operator|->
 name|index_used_count
 decl_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -51458,7 +51458,7 @@ expr_stmt|;
 comment|/*  In the case of web/mono palettes, we actually force    *   grayscale drawables through the rgb pass2 functions    */
 if|if
 condition|(
-name|drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

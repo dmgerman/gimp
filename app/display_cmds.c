@@ -320,7 +320,7 @@ name|gdisp
 decl_stmt|;
 name|gdisp
 operator|=
-name|gdisplay_get_ID
+name|gdisplay_get_by_ID
 argument_list|(
 name|args
 index|[

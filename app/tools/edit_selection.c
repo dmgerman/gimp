@@ -774,7 +774,7 @@ operator|=
 name|TRUE
 expr_stmt|;
 comment|/*  find the bounding box of the selection mask -    *  this is used for the case of a EDIT_MASK_TO_LAYER_TRANSLATE,    *  where the translation will result in floating the selection    *  mask and translating the resulting layer    */
-name|drawable_mask_bounds
+name|gimp_drawable_mask_bounds
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
@@ -2368,7 +2368,7 @@ name|gdisplay_transform_coords
 argument_list|(
 name|gdisp
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2380,7 +2380,7 @@ name|active_layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2452,7 +2452,7 @@ name|layer
 argument_list|)
 condition|)
 block|{
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2489,7 +2489,7 @@ name|gdisp
 argument_list|,
 name|off_x
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2499,7 +2499,7 @@ argument_list|)
 argument_list|,
 name|off_y
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

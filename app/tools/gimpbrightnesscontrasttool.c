@@ -606,7 +606,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(

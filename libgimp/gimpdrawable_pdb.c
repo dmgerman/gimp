@@ -734,7 +734,7 @@ name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gboolean
-name|color
+name|is_rgb
 init|=
 name|FALSE
 decl_stmt|;
@@ -767,7 +767,7 @@ name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|color
+name|is_rgb
 operator|=
 name|return_vals
 index|[
@@ -786,7 +786,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|color
+name|is_rgb
 return|;
 block|}
 end_function
@@ -812,7 +812,7 @@ name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gboolean
-name|gray
+name|is_gray
 init|=
 name|FALSE
 decl_stmt|;
@@ -845,7 +845,7 @@ name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|gray
+name|is_gray
 operator|=
 name|return_vals
 index|[
@@ -864,7 +864,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|gray
+name|is_gray
 return|;
 block|}
 end_function
@@ -890,7 +890,7 @@ name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gboolean
-name|indexed
+name|is_indexed
 init|=
 name|FALSE
 decl_stmt|;
@@ -923,7 +923,7 @@ name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|indexed
+name|is_indexed
 operator|=
 name|return_vals
 index|[
@@ -942,7 +942,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|indexed
+name|is_indexed
 return|;
 block|}
 end_function

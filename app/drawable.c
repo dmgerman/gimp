@@ -46,45 +46,6 @@ file|"undo.h"
 end_include
 
 begin_function
-name|gint
-DECL|function|drawable_ID (GimpDrawable * drawable)
-name|drawable_ID
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|)
-block|{
-name|g_return_val_if_fail
-argument_list|(
-name|drawable
-operator|!=
-name|NULL
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_DRAWABLE
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-return|return
-name|drawable
-operator|->
-name|ID
-return|;
-block|}
-end_function
-
-begin_function
 name|void
 DECL|function|drawable_fill (GimpDrawable * drawable,GimpFillType fill_type)
 name|drawable_fill

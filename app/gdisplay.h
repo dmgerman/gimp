@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fa4b610103
+DECL|enum|__anon2c49e2f20103
 block|{
 DECL|enumerator|SelectionOff
 name|SelectionOff
@@ -1109,9 +1109,10 @@ end_function_decl
 begin_function_decl
 name|GDisplay
 modifier|*
-name|gdisplay_get_ID
+name|gdisplay_get_by_ID
 parameter_list|(
 name|gint
+name|ID
 parameter_list|)
 function_decl|;
 end_function_decl

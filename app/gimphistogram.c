@@ -1726,7 +1726,7 @@ decl_stmt|;
 name|no_mask
 operator|=
 operator|(
-name|drawable_mask_bounds
+name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 argument_list|,
@@ -1803,7 +1803,7 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 argument_list|,

@@ -1617,7 +1617,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 argument_list|,
@@ -1643,7 +1643,7 @@ operator|<
 operator|(
 name|off_x
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -1654,7 +1654,7 @@ operator|<
 operator|(
 name|off_y
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -4554,7 +4554,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 argument_list|,
@@ -4565,7 +4565,7 @@ operator|&
 name|offset_y
 argument_list|)
 expr_stmt|;
-name|drawable_mask_bounds
+name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 argument_list|,
@@ -5416,7 +5416,7 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
-name|drawable_type
+name|gimp_drawable_type
 argument_list|(
 name|drawable
 argument_list|)

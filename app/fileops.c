@@ -5707,7 +5707,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_ID
+name|gimp_drawable_get_ID
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(

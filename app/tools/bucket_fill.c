@@ -1090,7 +1090,7 @@ name|nreturn_vals
 argument_list|,
 name|PDB_DRAWABLE
 argument_list|,
-name|drawable_ID
+name|gimp_drawable_get_ID
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
@@ -1294,7 +1294,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1323,7 +1323,7 @@ operator|<
 operator|(
 name|off_x
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1337,7 +1337,7 @@ operator|<
 operator|(
 name|off_y
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1695,7 +1695,7 @@ literal|3
 operator|)
 operator|&&
 operator|!
-name|drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 argument_list|)
@@ -1713,7 +1713,7 @@ literal|1
 operator|)
 operator|&&
 operator|!
-name|drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 argument_list|)
@@ -1735,7 +1735,7 @@ operator|==
 literal|1
 operator|)
 operator|&&
-name|drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 argument_list|)
@@ -1885,14 +1885,14 @@ argument_list|()
 expr_stmt|;
 name|bytes
 operator|=
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
 name|has_alpha
 operator|=
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)
@@ -1901,7 +1901,7 @@ comment|/*  If there is no selection mask, the do a seed bucket    *  fill...To 
 if|if
 condition|(
 operator|!
-name|drawable_mask_bounds
+name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 argument_list|,
@@ -1976,7 +1976,7 @@ decl_stmt|,
 name|off_y
 decl_stmt|;
 comment|/*  Limit the channel bounds to the drawable's extents  */
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 argument_list|,
@@ -1998,7 +1998,7 @@ argument_list|,
 operator|(
 name|off_x
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -2016,7 +2016,7 @@ argument_list|,
 operator|(
 name|off_y
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -2034,7 +2034,7 @@ argument_list|,
 operator|(
 name|off_x
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -2052,7 +2052,7 @@ argument_list|,
 operator|(
 name|off_y
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -2064,7 +2064,7 @@ argument_list|(
 operator|&
 name|maskPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2115,7 +2115,7 @@ argument_list|(
 operator|&
 name|maskPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

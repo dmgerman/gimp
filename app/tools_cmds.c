@@ -663,7 +663,7 @@ name|strokes
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -894,7 +894,7 @@ name|strokes
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1126,7 +1126,7 @@ name|gimage
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1418,7 +1418,7 @@ condition|)
 block|{
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1685,7 +1685,7 @@ name|gimage
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1851,7 +1851,7 @@ condition|)
 block|{
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2055,7 +2055,7 @@ name|gimage
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2205,7 +2205,7 @@ condition|)
 block|{
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2403,7 +2403,7 @@ name|strokes
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2427,7 +2427,7 @@ name|FALSE
 expr_stmt|;
 name|src_drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2710,7 +2710,7 @@ name|strokes
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2955,7 +2955,7 @@ name|FALSE
 expr_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -3075,7 +3075,7 @@ operator|!
 name|drawable
 operator|||
 operator|(
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|drawable
 argument_list|)
@@ -3363,7 +3363,7 @@ name|strokes
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -3629,7 +3629,7 @@ name|strokes
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -4142,7 +4142,7 @@ name|strokes
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -4443,7 +4443,7 @@ name|strokes
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -5014,7 +5014,7 @@ name|method
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -5282,7 +5282,7 @@ name|strokes
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -5492,7 +5492,7 @@ name|new_layer
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -5546,7 +5546,7 @@ condition|)
 block|{
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -5685,7 +5685,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_ID
+name|gimp_drawable_get_ID
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6157,7 +6157,7 @@ name|old_fuzzy_mask
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -6314,7 +6314,7 @@ condition|)
 block|{
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6548,7 +6548,7 @@ name|gradient_length
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -6841,7 +6841,7 @@ name|strokes
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -7037,7 +7037,7 @@ name|strokes
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -7268,7 +7268,7 @@ name|matrix
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -7424,7 +7424,7 @@ condition|)
 block|{
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7618,7 +7618,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_ID
+name|gimp_drawable_get_ID
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -8177,7 +8177,7 @@ name|matrix
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -8232,7 +8232,7 @@ condition|)
 block|{
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -8398,7 +8398,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_ID
+name|gimp_drawable_get_ID
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -8562,7 +8562,7 @@ name|matrix
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -8685,7 +8685,7 @@ condition|)
 block|{
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -8901,7 +8901,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_ID
+name|gimp_drawable_get_ID
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -9089,7 +9089,7 @@ name|matrix
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -9169,7 +9169,7 @@ condition|)
 block|{
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -9377,7 +9377,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_ID
+name|gimp_drawable_get_ID
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -9524,7 +9524,7 @@ name|strokes
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -9755,7 +9755,7 @@ name|strokes
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -9989,7 +9989,7 @@ name|matrix
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -10110,7 +10110,7 @@ condition|)
 block|{
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -10259,7 +10259,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_ID
+name|gimp_drawable_get_ID
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

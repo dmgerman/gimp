@@ -906,7 +906,7 @@ name|layer
 operator|->
 name|apply_mask
 expr_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -928,7 +928,7 @@ name|off_x
 argument_list|,
 name|off_y
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -936,7 +936,7 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1033,7 +1033,7 @@ name|layer
 operator|->
 name|show_mask
 expr_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1055,7 +1055,7 @@ name|off_x
 argument_list|,
 name|off_y
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1063,7 +1063,7 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

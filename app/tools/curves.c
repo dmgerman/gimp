@@ -1110,7 +1110,7 @@ operator|!=
 name|ACTIVE
 condition|)
 return|return;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 argument_list|,
@@ -1589,7 +1589,7 @@ name|curves_dialog
 operator|->
 name|color
 operator|=
-name|drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 argument_list|)
@@ -2187,7 +2187,7 @@ name|j
 decl_stmt|;
 if|if
 condition|(
-name|drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
@@ -2301,7 +2301,7 @@ name|curves_dialog
 operator|->
 name|color
 operator|=
-name|drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|curves_dialog
 operator|->
@@ -2324,7 +2324,7 @@ expr_stmt|;
 comment|/* check for alpha channel */
 if|if
 condition|(
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|curves_dialog
 operator|->

@@ -5509,7 +5509,7 @@ name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -5538,7 +5538,7 @@ operator|<
 operator|(
 name|off_x
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -5552,7 +5552,7 @@ operator|<
 operator|(
 name|off_y
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -5733,17 +5733,17 @@ name|undo_tiles
 operator|=
 name|tile_manager_new
 argument_list|(
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
 argument_list|)
@@ -5754,12 +5754,12 @@ name|canvas_tiles
 operator|=
 name|tile_manager_new
 argument_list|(
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -5976,17 +5976,17 @@ argument_list|)
 expr_stmt|;
 name|bytes
 operator|=
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)
 condition|?
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
 argument_list|)
 else|:
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
 argument_list|)
@@ -6005,7 +6005,7 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -6023,7 +6023,7 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -6045,7 +6045,7 @@ literal|2
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -6067,7 +6067,7 @@ literal|2
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -6117,7 +6117,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2876b9e70103
+DECL|enum|__anon2ac65f450103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -7028,7 +7028,7 @@ operator|!
 operator|(
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|drawable
 argument_list|)
@@ -7320,7 +7320,7 @@ operator|)
 argument_list|)
 expr_stmt|;
 comment|/*  Update the gimage--it is important to call gdisplays_update_area    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 argument_list|,
@@ -7640,7 +7640,7 @@ name|src_tile
 operator|=
 name|tile_manager_get_tile
 argument_list|(
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)

@@ -400,7 +400,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e6de420108
+DECL|struct|__anon2c92263c0108
 block|{
 DECL|member|offset
 name|gdouble
@@ -452,7 +452,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e6de420208
+DECL|struct|__anon2c92263c0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -2486,7 +2486,7 @@ name|private
 expr_stmt|;
 switch|switch
 condition|(
-name|drawable_type
+name|gimp_drawable_type
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
@@ -3570,7 +3570,7 @@ parameter_list|)
 block|{
 switch|switch
 condition|(
-name|drawable_type
+name|gimp_drawable_type
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
@@ -4119,7 +4119,7 @@ argument_list|()
 expr_stmt|;
 name|has_selection
 operator|=
-name|drawable_mask_bounds
+name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 argument_list|,
@@ -4138,14 +4138,14 @@ argument_list|)
 expr_stmt|;
 name|has_alpha
 operator|=
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
 name|bytes
 operator|=
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
 argument_list|)
@@ -6015,7 +6015,7 @@ name|offx
 decl_stmt|,
 name|offy
 decl_stmt|;
-name|drawable_mask_bounds
+name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 argument_list|,
@@ -6032,7 +6032,7 @@ operator|&
 name|y2
 argument_list|)
 expr_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 argument_list|,
@@ -6056,7 +6056,7 @@ argument_list|(
 operator|&
 name|maskR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6104,7 +6104,7 @@ block|{
 comment|/*  If the intended drawable has an alpha channel, use that  */
 if|if
 condition|(
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)
@@ -6118,7 +6118,7 @@ argument_list|(
 operator|&
 name|drawableR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)

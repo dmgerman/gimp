@@ -1164,7 +1164,7 @@ name|gimage
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1215,7 +1215,7 @@ condition|)
 block|{
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|drawable
 argument_list|)
@@ -1263,7 +1263,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_ID
+name|gimp_drawable_get_ID
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2649,7 +2649,11 @@ name|gimage
 decl_stmt|;
 name|layer
 operator|=
-name|layer_get_ID
+operator|(
+name|GimpLayer
+operator|*
+operator|)
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2678,7 +2682,7 @@ condition|)
 block|{
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2790,7 +2794,11 @@ name|gimage
 decl_stmt|;
 name|channel
 operator|=
-name|channel_get_ID
+operator|(
+name|GimpChannel
+operator|*
+operator|)
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2819,7 +2827,7 @@ condition|)
 block|{
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2829,7 +2837,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2841,7 +2849,7 @@ name|gimage
 operator|->
 name|width
 operator|&&
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3030,7 +3038,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_ID
+name|gimp_drawable_get_ID
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

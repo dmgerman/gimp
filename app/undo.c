@@ -233,7 +233,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64ef5d0103
+DECL|enum|__anon2bd4413a0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -3189,7 +3189,7 @@ name|x1
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -3203,7 +3203,7 @@ name|y1
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -3217,7 +3217,7 @@ name|x2
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -3231,7 +3231,7 @@ name|y2
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -3251,7 +3251,7 @@ operator|-
 name|y1
 operator|)
 operator|*
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
 argument_list|)
@@ -3307,7 +3307,7 @@ operator|-
 name|y1
 operator|)
 argument_list|,
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
 argument_list|)
@@ -3318,7 +3318,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -3511,14 +3511,14 @@ name|FALSE
 return|;
 name|dwidth
 operator|=
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
 name|dheight
 operator|=
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -3815,7 +3815,7 @@ argument_list|(
 operator|&
 name|PR2
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|image_undo
 operator|->
@@ -3975,7 +3975,7 @@ name|dest_tile
 operator|=
 name|tile_manager_get_tile
 argument_list|(
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|image_undo
 operator|->
@@ -4005,7 +4005,7 @@ argument_list|)
 expr_stmt|;
 name|tile_manager_map_tile
 argument_list|(
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|image_undo
 operator|->
@@ -4866,7 +4866,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|drawable_ID
+name|gimp_drawable_get_ID
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4966,7 +4966,11 @@ name|info_ptr
 expr_stmt|;
 name|layer
 operator|=
-name|layer_get_ID
+operator|(
+name|GimpLayer
+operator|*
+operator|)
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|ldu
 operator|->
@@ -8840,7 +8844,11 @@ condition|(
 operator|(
 name|floating_layer
 operator|=
-name|layer_get_ID
+operator|(
+name|GimpLayer
+operator|*
+operator|)
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|layer_ID
 argument_list|)
@@ -9136,7 +9144,11 @@ condition|(
 operator|(
 name|floating_layer
 operator|=
-name|layer_get_ID
+operator|(
+name|GimpLayer
+operator|*
+operator|)
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|layer_ID
 argument_list|)

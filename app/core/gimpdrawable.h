@@ -593,11 +593,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpDrawable
-modifier|*
+name|gint
 name|gimp_drawable_get_ID
 parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpDrawable
+modifier|*
+name|gimp_drawable_get_by_ID
+parameter_list|(
 name|gint
+name|id
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -608,6 +620,7 @@ name|gimp_drawable_deallocate
 parameter_list|(
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl

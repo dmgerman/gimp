@@ -1135,7 +1135,7 @@ name|i
 decl_stmt|;
 if|if
 condition|(
-name|drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
@@ -1267,7 +1267,7 @@ name|levels_dialog
 operator|->
 name|color
 operator|=
-name|drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|levels_dialog
 operator|->
@@ -1295,7 +1295,7 @@ index|[
 literal|4
 index|]
 argument_list|,
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|levels_dialog
 operator|->

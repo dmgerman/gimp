@@ -190,7 +190,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2a75860103
+DECL|enum|__anon2afc2ab60103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -1547,7 +1547,7 @@ name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1576,7 +1576,7 @@ operator|<
 operator|(
 name|off_x
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1590,7 +1590,7 @@ operator|<
 operator|(
 name|off_y
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2042,7 +2042,7 @@ operator|!
 operator|(
 name|src_gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|src_drawable
 argument_list|)
@@ -2052,7 +2052,7 @@ return|return;
 comment|/*  Determine whether the source image has an alpha channel  */
 name|has_alpha
 operator|=
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|src_drawable
 argument_list|)
@@ -2065,7 +2065,7 @@ operator|!
 operator|(
 name|gimage
 operator|=
-name|drawable_gimage
+name|gimp_drawable_gimage
 argument_list|(
 name|drawable
 argument_list|)
@@ -2141,7 +2141,7 @@ name|offset_x
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|src_drawable
 argument_list|)
@@ -2159,7 +2159,7 @@ name|offset_y
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|src_drawable
 argument_list|)
@@ -2181,7 +2181,7 @@ name|width
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|src_drawable
 argument_list|)
@@ -2203,7 +2203,7 @@ name|height
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|src_drawable
 argument_list|)
@@ -2231,7 +2231,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|src_drawable
 argument_list|)
@@ -2270,7 +2270,7 @@ name|offset_x
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -2288,7 +2288,7 @@ name|offset_y
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -2310,7 +2310,7 @@ name|width
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -2332,7 +2332,7 @@ name|height
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -2908,7 +2908,7 @@ name|gimp_image_get_color
 argument_list|(
 name|src
 argument_list|,
-name|drawable_type
+name|gimp_drawable_type
 argument_list|(
 name|s_drawable
 argument_list|)

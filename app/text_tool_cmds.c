@@ -739,7 +739,7 @@ name|FALSE
 expr_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_drawable_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -989,7 +989,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|drawable_ID
+name|gimp_drawable_get_ID
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

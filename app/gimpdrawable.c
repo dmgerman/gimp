@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b21ab200103
+DECL|enum|__anon27de1e410103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -819,10 +819,49 @@ comment|/*  Function definitions  */
 end_comment
 
 begin_function
+name|gint
+DECL|function|gimp_drawable_get_ID (GimpDrawable * drawable)
+name|gimp_drawable_get_ID
+parameter_list|(
 name|GimpDrawable
 modifier|*
-DECL|function|gimp_drawable_get_ID (gint drawable_id)
-name|gimp_drawable_get_ID
+name|drawable
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|drawable
+operator|!=
+name|NULL
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DRAWABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+return|return
+name|drawable
+operator|->
+name|ID
+return|;
+block|}
+end_function
+
+begin_function
+name|GimpDrawable
+modifier|*
+DECL|function|gimp_drawable_get_by_ID (gint drawable_id)
+name|gimp_drawable_get_by_ID
 parameter_list|(
 name|gint
 name|drawable_id

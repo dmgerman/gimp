@@ -944,7 +944,7 @@ name|PR
 decl_stmt|;
 if|if
 condition|(
-name|drawable_indexed
+name|gimp_drawable_is_indexed
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
@@ -1009,7 +1009,7 @@ name|histogram_tool_dialog
 operator|->
 name|color
 operator|=
-name|drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|histogram_tool_dialog
 operator|->
@@ -1044,7 +1044,7 @@ argument_list|(
 operator|&
 name|PR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|histogram_tool_dialog
 operator|->
@@ -1055,14 +1055,14 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|histogram_tool_dialog
 operator|->
 name|drawable
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|histogram_tool_dialog
 operator|->

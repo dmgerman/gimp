@@ -738,7 +738,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3459c30103
+DECL|enum|__anon2b7b5f3b0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -2347,7 +2347,7 @@ operator|)
 operator|->
 name|active_layer
 expr_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2363,7 +2363,7 @@ argument_list|)
 expr_stmt|;
 name|max_x
 operator|=
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2375,7 +2375,7 @@ name|min_x
 expr_stmt|;
 name|max_y
 operator|=
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3501,7 +3501,7 @@ operator|)
 operator|->
 name|active_layer
 expr_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3517,7 +3517,7 @@ argument_list|)
 expr_stmt|;
 name|max_x
 operator|=
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3529,7 +3529,7 @@ name|min_x
 expr_stmt|;
 name|max_y
 operator|=
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4678,7 +4678,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4900,7 +4900,7 @@ operator|-
 name|y1
 argument_list|)
 expr_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4919,7 +4919,7 @@ condition|(
 name|crop_layers
 condition|)
 block|{
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4964,7 +4964,7 @@ operator|=
 name|CLAMP
 argument_list|(
 operator|(
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4987,7 +4987,7 @@ operator|=
 name|CLAMP
 argument_list|(
 operator|(
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6589,7 +6589,7 @@ operator|)
 operator|->
 name|active_layer
 expr_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6611,7 +6611,7 @@ name|crop
 operator|->
 name|tx2
 operator|=
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6627,7 +6627,7 @@ name|crop
 operator|->
 name|ty2
 operator|=
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6849,7 +6849,7 @@ condition|)
 return|return;
 name|width
 operator|=
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6859,7 +6859,7 @@ argument_list|)
 expr_stmt|;
 name|height
 operator|=
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6869,7 +6869,7 @@ argument_list|)
 expr_stmt|;
 name|bytes
 operator|=
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6879,7 +6879,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6905,7 +6905,7 @@ name|GetColorFunc
 operator|)
 name|gimp_drawable_get_color_at
 expr_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7124,7 +7124,7 @@ argument_list|(
 operator|&
 name|PR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|active_drawable
 argument_list|)

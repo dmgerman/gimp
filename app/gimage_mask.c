@@ -314,7 +314,7 @@ name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -360,7 +360,7 @@ name|CLAMP
 argument_list|(
 name|off_x
 operator|+
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -381,7 +381,7 @@ name|CLAMP
 argument_list|(
 name|off_y
 operator|+
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -755,7 +755,7 @@ return|;
 comment|/*  If there are no bounds, then just extract the entire image    *  This may not be the correct behavior, but after getting rid    *  of floating selections, it's still tempting to "cut" or "copy"    *  a small layer and expect it to work, even though there is no    *  actual selection mask    */
 name|non_empty
 operator|=
-name|drawable_mask_bounds
+name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 argument_list|,
@@ -809,7 +809,7 @@ block|}
 comment|/*  How many bytes in the temp buffer?  */
 switch|switch
 condition|(
-name|drawable_type
+name|gimp_drawable_type
 argument_list|(
 name|drawable
 argument_list|)
@@ -962,7 +962,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 argument_list|,
@@ -1015,7 +1015,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -1121,7 +1121,7 @@ argument_list|,
 operator|&
 name|maskPR
 argument_list|,
-name|drawable_cmap
+name|gimp_drawable_cmap
 argument_list|(
 name|drawable
 argument_list|)
@@ -1130,7 +1130,7 @@ name|bg
 argument_list|,
 name|type
 argument_list|,
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)
@@ -1207,7 +1207,7 @@ name|destPR
 argument_list|,
 name|NULL
 argument_list|,
-name|drawable_cmap
+name|gimp_drawable_cmap
 argument_list|(
 name|drawable
 argument_list|)
@@ -1216,7 +1216,7 @@ name|bg
 argument_list|,
 name|type
 argument_list|,
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)
@@ -1404,7 +1404,7 @@ decl_stmt|;
 comment|/*  Make sure there is a region to float...  */
 name|non_empty
 operator|=
-name|drawable_mask_bounds
+name|gimp_drawable_mask_bounds
 argument_list|(
 operator|(
 name|drawable
@@ -1862,7 +1862,7 @@ block|{
 comment|/*  extract the layer's alpha channel  */
 if|if
 condition|(
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2146,7 +2146,7 @@ return|return
 name|TRUE
 return|;
 comment|/*  find the drawable offsets  */
-name|drawable_offsets
+name|gimp_drawable_offsets
 argument_list|(
 name|drawable
 argument_list|,
@@ -2384,7 +2384,7 @@ name|nreturn_vals
 argument_list|,
 name|PDB_DRAWABLE
 argument_list|,
-name|drawable_ID
+name|gimp_drawable_get_ID
 argument_list|(
 name|drawable
 argument_list|)

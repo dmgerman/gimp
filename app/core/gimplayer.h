@@ -202,7 +202,7 @@ decl_stmt|;
 comment|/*  layer combination mode         */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2b6f14090108
+DECL|struct|__anon297e2dcb0108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -519,17 +519,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
-modifier|*
-name|layer_get_ID
-parameter_list|(
-name|gint
-name|ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|layer_delete
 parameter_list|(
@@ -761,17 +750,6 @@ end_function_decl
 begin_function_decl
 name|LayerMask
 modifier|*
-name|layer_mask_get_ID
-parameter_list|(
-name|gint
-name|ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|LayerMask
-modifier|*
 name|layer_mask_ref
 parameter_list|(
 name|LayerMask
@@ -984,18 +962,18 @@ function_decl|;
 end_function_decl
 
 begin_define
-DECL|macro|drawable_layer
+DECL|macro|gimp_drawable_layer
 define|#
 directive|define
-name|drawable_layer
+name|gimp_drawable_layer
 value|GIMP_IS_LAYER
 end_define
 
 begin_define
-DECL|macro|drawable_layer_mask
+DECL|macro|gimp_drawable_layer_mask
 define|#
 directive|define
-name|drawable_layer_mask
+name|gimp_drawable_layer_mask
 value|GIMP_IS_LAYER_MASK
 end_define
 
