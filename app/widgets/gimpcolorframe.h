@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<gtk/gtkframe.h>
 end_include
 
 begin_define
@@ -223,6 +223,7 @@ parameter_list|,
 name|GimpImageType
 name|sample_type
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color

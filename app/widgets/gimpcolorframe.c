@@ -535,6 +535,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_color_frame_new:  *  * Creates a new #GimpColorFrame widget.  *  * Return value: The new #GimpColorFrame widget.  **/
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
@@ -565,6 +569,10 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_color_frame_set_mode:  * @frame: The #GimpColorFrame.  * @mode:  The new @mode.  *  * Sets the #GimpColorFrame's color @mode. Calling this function does  * the same as selecting the @mode from the frame's #GtkOptionMenu.  **/
+end_comment
 
 begin_function
 name|void
@@ -616,9 +624,13 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_color_frame_set_color:  * @frame:       The #GimpColorFrame.  * @sample_type: The type of the #GimpDrawable or #GimpImage the @color  *               was picked from.  * @color:       The @color to set.  * @color_index: The @color's index. This value is ignored unless  *               @sample_type equals to #GIMP_INDEXED_IMAGE or  *               #GIMP_INDEXEDA_IMAGE.  *  * Sets the color sample to display in the #GimpColorFrame.  **/
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_color_frame_set_color (GimpColorFrame * frame,GimpImageType sample_type,GimpRGB * color,gint color_index)
+DECL|function|gimp_color_frame_set_color (GimpColorFrame * frame,GimpImageType sample_type,const GimpRGB * color,gint color_index)
 name|gimp_color_frame_set_color
 parameter_list|(
 name|GimpColorFrame
@@ -628,6 +640,7 @@ parameter_list|,
 name|GimpImageType
 name|sample_type
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -683,6 +696,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_color_frame_set_invalid:  * @frame: The #GimpColorFrame.  *  * Tells the #GimpColorFrame that the current sample is invalid. All labels  * visible for the current color space will show "N/A" (not available).  *  * There is no special API for setting the frame to "valid" again because  * this happens automatically when calling gimp_color_frame_set_color().  **/
+end_comment
 
 begin_function
 name|void
