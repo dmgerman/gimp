@@ -668,10 +668,6 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  functions  */
-end_comment
-
 begin_function
 name|void
 DECL|function|gimp_color_picker_register (void)
@@ -839,62 +835,6 @@ operator|->
 name|destroy
 operator|=
 name|gimp_color_picker_destroy
-expr_stmt|;
-name|tool_class
-operator|->
-name|tool_name
-operator|=
-name|N_
-argument_list|(
-literal|"Color Picker"
-argument_list|)
-expr_stmt|;
-name|tool_class
-operator|->
-name|menu_path
-operator|=
-name|N_
-argument_list|(
-literal|"/Tools/Color Picker"
-argument_list|)
-expr_stmt|;
-name|tool_class
-operator|->
-name|menu_accel
-operator|=
-literal|"O"
-expr_stmt|;
-name|tool_class
-operator|->
-name|icon_data
-operator|=
-operator|(
-name|char
-operator|*
-operator|*
-operator|)
-name|colorpicker_bits
-expr_stmt|;
-name|tool_class
-operator|->
-name|tool_desc
-operator|=
-name|N_
-argument_list|(
-literal|"Pick colors from the image"
-argument_list|)
-operator|,
-name|tool_class
-operator|->
-name|help_data
-operator|=
-literal|"tools/color_picker.html"
-expr_stmt|;
-name|tool_class
-operator|->
-name|tool_id
-operator|=
-name|COLOR_PICKER
 expr_stmt|;
 name|tool_class
 operator|->
@@ -1086,32 +1026,6 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|GimpTool
-modifier|*
-DECL|function|gimp_color_picker_new (void)
-name|gimp_color_picker_new
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|GimpTool
-modifier|*
-name|tool
-decl_stmt|;
-name|tool
-operator|=
-name|gtk_type_new
-argument_list|(
-name|GIMP_TYPE_COLOR_PICKER
-argument_list|)
-expr_stmt|;
-return|return
-name|tool
-return|;
 block|}
 end_function
 
@@ -1918,7 +1832,7 @@ argument_list|(
 literal|"Color Picker"
 argument_list|)
 argument_list|,
-name|gimp_tool_help_func
+name|tool_manager_help_func
 argument_list|,
 name|NULL
 argument_list|)

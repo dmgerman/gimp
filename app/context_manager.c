@@ -350,10 +350,6 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-warning|#
-directive|warning
-warning|FIXME (take care that the correct toolbox button gets re-activated)
-comment|/*       tool_type = active_tool->type;       */
 block|}
 else|else
 block|{
@@ -476,12 +472,6 @@ name|new_tool
 argument_list|)
 expr_stmt|;
 block|}
-if|#
-directive|if
-literal|0
-block|if (tool_type == SCALE ||       tool_type == SHEAR ||       tool_type == PERSPECTIVE)     tool_type = ROTATE;    if (! GTK_TOGGLE_BUTTON (tool_info[tool_type].tool_widget)->active)     {       gtk_signal_handler_block_by_data 	(GTK_OBJECT (tool_info[tool_type].tool_widget), (gpointer) tool_type);        gtk_widget_activate (tool_info[tool_type].tool_widget);        gtk_signal_handler_unblock_by_data 	(GTK_OBJECT (tool_info[tool_type].tool_widget), (gpointer) tool_type);     }
-endif|#
-directive|endif
 block|}
 end_function
 

@@ -19,14 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpdrawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tool.h"
 end_include
+
+begin_comment
+comment|/* EEEEEEEEEEK */
+end_comment
 
 begin_comment
 comment|/*  Function declarations  */
@@ -93,10 +91,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  these should to go their own file  */
-end_comment
-
 begin_function_decl
 name|void
 name|tool_manager_register_tool
@@ -155,9 +149,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpToolInfo
+modifier|*
+name|tool_manager_get_info_by_tool
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
-name|tool_manager_get_active_PDB_string
+name|tool_manager_active_get_PDB_string
 parameter_list|(
 name|void
 parameter_list|)
@@ -170,6 +176,18 @@ modifier|*
 name|tool_manager_active_get_help_data
 parameter_list|(
 name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|tool_manager_help_func
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|help_data
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -2733,10 +2733,6 @@ argument_list|,
 literal|")"
 argument_list|)
 expr_stmt|;
-warning|#
-directive|warning
-warning|FIXME
-comment|/* Fixme: hard coded last tool....  see gimprc   if (gimp_context_get_tool (device_info->context)>= FIRST_TOOLBOX_TOOL&&       gimp_context_get_tool (device_info->context)<= LAST_TOOLBOX_TOOL)     {   */
 if|if
 condition|(
 name|gimp_context_get_tool

@@ -410,7 +410,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2965e0460103
+DECL|enum|__anon2b68f12d0103
 block|{
 DECL|enumerator|GIMP_PLUS_CURSOR
 name|GIMP_PLUS_CURSOR
@@ -1175,7 +1175,7 @@ expr_stmt|;
 block|}
 warning|#
 directive|warning
-warning|Im obsolete
+warning|FIXME (check if toggle tool cursor work)
 if|#
 directive|if
 literal|0

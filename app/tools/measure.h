@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae2c5d10103
+DECL|enum|__anon27b8bf670103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -211,16 +211,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_function_decl
-name|GimpTool
-modifier|*
-name|tools_new_measure_tool
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|GtkType

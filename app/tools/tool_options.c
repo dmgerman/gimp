@@ -72,7 +72,10 @@ name|options
 operator|->
 name|title
 operator|=
+name|g_strdup
+argument_list|(
 name|title
+argument_list|)
 expr_stmt|;
 name|options
 operator|->

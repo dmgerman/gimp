@@ -36,6 +36,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tools/tool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tool_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -120,19 +132,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29146e8c0103
+DECL|enum|__anon2c523ccc0103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
