@@ -16,27 +16,6 @@ directive|define
 name|__PATTERNS_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
-end_include
-
-begin_typedef
-DECL|typedef|GPattern
-typedef|typedef
-name|struct
-name|_GPattern
-name|GPattern
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_GPattern
 struct|struct

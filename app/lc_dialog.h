@@ -16,12 +16,6 @@ directive|define
 name|__LC_DIALOG_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"apptypes.h"
-end_include
-
 begin_function_decl
 name|void
 name|lc_dialog_create

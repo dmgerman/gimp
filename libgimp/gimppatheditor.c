@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -18,19 +24,37 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpuitypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppatheditor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpfileselection.h"
+file|"gimpfileselection.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpwidgets.h"
+file|"gimpsizeentry.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpwidgets.h"
 end_include
 
 begin_include
@@ -153,7 +177,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b2fa0a0103
+DECL|enum|__anon2b7023e90103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED

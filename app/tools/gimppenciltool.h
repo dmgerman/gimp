@@ -16,18 +16,6 @@ directive|define
 name|__PENCIL_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_core.h"
-end_include
-
 begin_function_decl
 name|void
 modifier|*
@@ -39,7 +27,7 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -51,9 +39,9 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 parameter_list|)
 function_decl|;
@@ -75,6 +63,7 @@ name|tools_free_pencil
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl

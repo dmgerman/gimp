@@ -16,22 +16,10 @@ directive|define
 name|__GIMP_HISTOGRAM_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"pixel_region.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdrawable.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27674e040103
+DECL|enum|__anon2a17e7c40103
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE

@@ -34,9 +34,15 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
+DECL|typedef|GimpUnit
 typedef|typedef
+name|enum
+name|_GimpUnit
+name|GimpUnit
+typedef|;
+DECL|enum|_GimpUnit
 enum|enum
-DECL|enum|__anon2a2ad7970103
+name|_GimpUnit
 block|{
 DECL|enumerator|GIMP_UNIT_PIXEL
 name|GIMP_UNIT_PIXEL
@@ -72,10 +78,8 @@ DECL|enumerator|GIMP_UNIT_PERCENT
 name|GIMP_UNIT_PERCENT
 init|=
 literal|65536
-DECL|typedef|GimpUnit
 block|}
-name|GimpUnit
-typedef|;
+enum|;
 name|gint
 name|gimp_unit_get_number_of_units
 parameter_list|(

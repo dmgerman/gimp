@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"draw_core.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -73,6 +79,12 @@ begin_include
 include|#
 directive|include
 file|"gdisplay_ops.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimage.h"
 end_include
 
 begin_include
@@ -126,37 +138,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"pixel_region.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"transform_core.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"drawable_pvt.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"layer_pvt.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"channel_pvt.h"
+file|"tile_manager.h"
 end_include
 
 begin_include
@@ -171,9 +159,23 @@ directive|include
 file|"tile.h"
 end_include
 
-begin_comment
-comment|/* ick. */
-end_comment
+begin_include
+include|#
+directive|include
+file|"tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"transform_core.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"undo.h"
+end_include
 
 begin_include
 include|#
@@ -231,7 +233,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d33e5f0103
+DECL|enum|__anon2b1f31cd0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -4315,7 +4317,7 @@ expr_stmt|;
 comment|/*  save current selection mask  */
 name|sel_mask
 operator|=
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -6092,7 +6094,7 @@ name|lu
 operator|->
 name|prev_position
 operator|=
-name|gimage_get_layer_index
+name|gimp_image_get_layer_index
 argument_list|(
 name|gimage
 argument_list|,
@@ -6102,7 +6104,7 @@ name|layer
 argument_list|)
 expr_stmt|;
 comment|/*  set the previous layer  */
-name|gimage_set_active_layer
+name|gimp_image_set_active_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -7672,7 +7674,7 @@ name|cu
 operator|->
 name|prev_position
 operator|=
-name|gimage_get_channel_index
+name|gimp_image_get_channel_index
 argument_list|(
 name|gimage
 argument_list|,
@@ -7698,7 +7700,7 @@ name|channel
 argument_list|)
 expr_stmt|;
 comment|/*  set the previous channel  */
-name|gimage_set_active_channel
+name|gimp_image_set_active_channel
 argument_list|(
 name|gimage
 argument_list|,
@@ -7774,7 +7776,7 @@ name|prev_position
 argument_list|)
 expr_stmt|;
 comment|/*  set the new channel  */
-name|gimage_set_active_channel
+name|gimp_image_set_active_channel
 argument_list|(
 name|gimage
 argument_list|,
@@ -9508,7 +9510,7 @@ name|base_type
 operator|=
 name|tmp
 expr_stmt|;
-name|gimage_projection_realloc
+name|gimp_image_projection_realloc
 argument_list|(
 name|gimage
 argument_list|)
@@ -9528,7 +9530,7 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimage_invalidate_preview
+name|gimp_image_invalidate_preview
 argument_list|(
 name|gimage
 argument_list|)

@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -36,7 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
 end_include
 
 begin_include
@@ -54,19 +60,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
+file|"nav_window.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"nav_window.h"
 end_include
 
 begin_comment

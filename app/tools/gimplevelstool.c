@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -66,19 +66,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"histogramwidget.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimphistogram.h"
 end_include
 
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"histogramwidget.h"
 end_include
 
 begin_include
@@ -103,6 +109,18 @@ begin_include
 include|#
 directive|include
 file|"lut_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_options.h"
 end_include
 
 begin_include
@@ -1073,7 +1091,7 @@ if|if
 condition|(
 name|drawable_indexed
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -1192,7 +1210,7 @@ name|levels_dialog
 operator|->
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->

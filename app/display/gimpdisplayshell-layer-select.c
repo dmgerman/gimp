@@ -36,13 +36,31 @@ end_include
 begin_include
 include|#
 directive|include
+file|"drawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
 end_include
 
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer.h"
 end_include
 
 begin_include
@@ -55,6 +73,12 @@ begin_include
 include|#
 directive|include
 file|"layers_dialogP.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"temp_buf.h"
 end_include
 
 begin_include
@@ -932,7 +956,7 @@ return|return;
 comment|/*  If there is a floating selection, allow no advancement  */
 if|if
 condition|(
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|layer_select
 operator|->
@@ -1161,7 +1185,7 @@ operator|->
 name|active_layer
 condition|)
 block|{
-name|gimage_set_active_layer
+name|gimp_image_set_active_layer
 argument_list|(
 name|layer_select
 operator|->

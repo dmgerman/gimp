@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -25,6 +25,12 @@ begin_include
 include|#
 directive|include
 file|"brush_select.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcontext.h"
 end_include
 
 begin_include

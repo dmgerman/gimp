@@ -16,24 +16,6 @@ directive|define
 name|__BY_COLOR_SELECT_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplayF.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimage.h"
-end_include
-
 begin_function_decl
 name|Tool
 modifier|*

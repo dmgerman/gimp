@@ -16,17 +16,13 @@ directive|define
 name|__APP_PROCS_H__
 end_define
 
-begin_comment
-comment|/* Function declarations */
-end_comment
-
 begin_function_decl
 name|void
 name|gimp_init
 parameter_list|(
-name|int
+name|gint
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 modifier|*
 parameter_list|)
@@ -61,7 +57,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|app_exit_finish_done
 parameter_list|(
 name|void
@@ -73,15 +69,15 @@ begin_function_decl
 name|void
 name|app_init_update_status
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|label1val
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|label2val
 parameter_list|,
-name|float
+name|gfloat
 name|pct_progress
 parameter_list|)
 function_decl|;

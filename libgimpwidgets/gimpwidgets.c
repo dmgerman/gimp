@@ -18,6 +18,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpuitypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpchainbutton.h"
 end_include
 
@@ -31,6 +43,12 @@ begin_include
 include|#
 directive|include
 file|"gimppixmap.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpsizeentry.h"
 end_include
 
 begin_include
@@ -2391,7 +2409,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288bdfeb0108
+DECL|struct|__anon29eaddc80108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3275,7 +3293,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288bdfeb0208
+DECL|struct|__anon29eaddc80208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment

@@ -16,12 +16,6 @@ directive|define
 name|__SCROLL_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
 begin_comment
 comment|/*  app init and exit routines  */
 end_comment
@@ -54,8 +48,10 @@ name|scrollbar_disconnect
 parameter_list|(
 name|GtkAdjustment
 modifier|*
+name|adjuatment
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -66,8 +62,10 @@ name|scrollbar_vert_update
 parameter_list|(
 name|GtkAdjustment
 modifier|*
+name|adjuatment
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -78,8 +76,10 @@ name|scrollbar_horz_update
 parameter_list|(
 name|GtkAdjustment
 modifier|*
+name|adjuatment
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -94,9 +94,11 @@ name|start_grab_and_scroll
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -107,9 +109,11 @@ name|end_grab_and_scroll
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -120,9 +124,11 @@ name|grab_and_scroll
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -133,9 +139,11 @@ name|scroll_to_pointer_position
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|)
 function_decl|;
 end_function_decl

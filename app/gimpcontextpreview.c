@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gradient.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gradient_header.h"
 end_include
 
@@ -79,6 +85,12 @@ begin_include
 include|#
 directive|include
 file|"temp_buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimphelpui.h"
 end_include
 
 begin_include
@@ -687,7 +699,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1c8ad00103
+DECL|enum|__anon278462320103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -2040,7 +2052,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b1c8ad00208
+DECL|struct|__anon278462320208
 typedef|typedef
 struct|struct
 block|{

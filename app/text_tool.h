@@ -16,16 +16,10 @@ directive|define
 name|__TEXT_TOOL_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac2c92d0103
+DECL|enum|__anon2954026a0103
 block|{
 DECL|enumerator|PIXELS
 name|PIXELS
@@ -46,10 +40,6 @@ name|SUPERSAMPLE
 value|3
 end_define
 
-begin_comment
-comment|/*  text functions  */
-end_comment
-
 begin_function_decl
 name|Tool
 modifier|*
@@ -66,6 +56,7 @@ name|tools_free_text
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl

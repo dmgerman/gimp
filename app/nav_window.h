@@ -16,19 +16,12 @@ directive|define
 name|__NAV_WINDOW_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"info_dialog.h"
-end_include
-
 begin_function_decl
 name|InfoDialog
 modifier|*
 name|nav_window_create
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -39,9 +32,11 @@ name|nav_window_free
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|InfoDialog
 modifier|*
+name|idialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -52,6 +47,7 @@ name|nav_window_update_window_marker
 parameter_list|(
 name|InfoDialog
 modifier|*
+name|idialog
 parameter_list|)
 function_decl|;
 end_function_decl

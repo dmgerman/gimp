@@ -19,58 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"boundary.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_manager.h"
+file|"gimpdrawable.h"
 end_include
 
 begin_comment
 comment|/* OPERATIONS */
 end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon275601050103
-block|{
-DECL|enumerator|ADD
-name|ADD
-block|,
-DECL|enumerator|SUB
-name|SUB
-block|,
-DECL|enumerator|REPLACE
-name|REPLACE
-block|,
-DECL|enumerator|INTERSECT
-name|INTERSECT
-DECL|typedef|ChannelOps
-block|}
-name|ChannelOps
-typedef|;
-end_typedef
 
 begin_comment
 comment|/*  Half way point where a region is no longer visible in a selection  */
@@ -140,14 +94,104 @@ parameter_list|)
 value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CHANNEL))
 end_define
 
-begin_function_decl
-name|GtkType
-name|gimp_channel_get_type
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_struct
+DECL|struct|_GimpChannel
+struct|struct
+name|_GimpChannel
+block|{
+DECL|member|drawable
+name|GimpDrawable
+name|drawable
+decl_stmt|;
+DECL|member|col
+name|guchar
+name|col
+index|[
+literal|3
+index|]
+decl_stmt|;
+comment|/*  RGB triplet for channel color  */
+DECL|member|opacity
+name|gint
+name|opacity
+decl_stmt|;
+comment|/*  Channel opacity                */
+DECL|member|show_masked
+name|gboolean
+name|show_masked
+decl_stmt|;
+comment|/*  Show masked areas--as          */
+comment|/*  opposed to selected areas      */
+comment|/*  Selection mask variables  */
+DECL|member|boundary_known
+name|gboolean
+name|boundary_known
+decl_stmt|;
+comment|/*  is the current boundary valid  */
+DECL|member|segs_in
+name|BoundSeg
+modifier|*
+name|segs_in
+decl_stmt|;
+comment|/*  outline of selected region     */
+DECL|member|segs_out
+name|BoundSeg
+modifier|*
+name|segs_out
+decl_stmt|;
+comment|/*  outline of selected region     */
+DECL|member|num_segs_in
+name|gint
+name|num_segs_in
+decl_stmt|;
+comment|/*  number of lines in boundary    */
+DECL|member|num_segs_out
+name|gint
+name|num_segs_out
+decl_stmt|;
+comment|/*  number of lines in boundary    */
+DECL|member|empty
+name|gboolean
+name|empty
+decl_stmt|;
+comment|/*  is the region empty?           */
+DECL|member|bounds_known
+name|gboolean
+name|bounds_known
+decl_stmt|;
+comment|/*  recalculate the bounds?        */
+DECL|member|x1
+DECL|member|y1
+name|gint
+name|x1
+decl_stmt|,
+name|y1
+decl_stmt|;
+comment|/*  coordinates for bounding box   */
+DECL|member|x2
+DECL|member|y2
+name|gint
+name|x2
+decl_stmt|,
+name|y2
+decl_stmt|;
+comment|/*  lower right hand coordinate    */
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpChannelClass
+struct|struct
+name|_GimpChannelClass
+block|{
+DECL|member|parent_class
+name|GimpDrawableClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_comment
 comment|/*  Special undo type  */
@@ -227,6 +271,15 @@ end_struct
 begin_comment
 comment|/*  function declarations  */
 end_comment
+
+begin_function_decl
+name|GtkType
+name|gimp_channel_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|Channel

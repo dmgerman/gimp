@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon298f6e510103
+DECL|enum|__anon2c7325660103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED

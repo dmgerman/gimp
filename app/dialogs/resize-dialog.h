@@ -16,22 +16,10 @@ directive|define
 name|__RESIZE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpunit.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimage.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8940780103
+DECL|enum|__anon2c76d6e50103
 block|{
 DECL|enumerator|ScaleWidget
 name|ScaleWidget
@@ -47,7 +35,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8940780203
+DECL|enum|__anon2c76d6e50203
 block|{
 DECL|enumerator|ResizeImage
 name|ResizeImage
@@ -136,7 +124,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8940780308
+DECL|struct|__anon2c76d6e50308
 block|{
 DECL|member|resize
 name|Resize

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"draw_core.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -66,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -84,7 +96,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"layer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"path_transform.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
 end_include
 
 begin_include
@@ -114,7 +144,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable_pvt.h"
+file|"tile_manager.h"
 end_include
 
 begin_include
@@ -128,10 +158,6 @@ include|#
 directive|include
 file|"tile.h"
 end_include
-
-begin_comment
-comment|/* ick. */
-end_comment
 
 begin_include
 include|#
@@ -1216,7 +1242,7 @@ expr_stmt|;
 comment|/* ALT */
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -1229,7 +1255,7 @@ name|transform_core
 operator|->
 name|function
 operator|==
-name|CREATING
+name|TRANSFORM_CREATING
 operator|&&
 name|tool
 operator|->
@@ -1333,7 +1359,7 @@ name|transform_core
 operator|->
 name|function
 operator|=
-name|HANDLE_1
+name|TRANSFORM_HANDLE_1
 expr_stmt|;
 name|dist
 operator|=
@@ -1370,7 +1396,7 @@ name|transform_core
 operator|->
 name|function
 operator|=
-name|HANDLE_2
+name|TRANSFORM_HANDLE_2
 expr_stmt|;
 block|}
 name|dist
@@ -1408,7 +1434,7 @@ name|transform_core
 operator|->
 name|function
 operator|=
-name|HANDLE_3
+name|TRANSFORM_HANDLE_3
 expr_stmt|;
 block|}
 name|dist
@@ -1446,7 +1472,7 @@ name|transform_core
 operator|->
 name|function
 operator|=
-name|HANDLE_4
+name|TRANSFORM_HANDLE_4
 expr_stmt|;
 block|}
 if|if
@@ -1484,7 +1510,7 @@ name|transform_core
 operator|->
 name|function
 operator|=
-name|HANDLE_CENTER
+name|TRANSFORM_HANDLE_CENTER
 expr_stmt|;
 block|}
 comment|/*  Save the current pointer position  */
@@ -1786,7 +1812,7 @@ name|tool
 argument_list|,
 name|gdisp_ptr
 argument_list|,
-name|INIT
+name|TRANSFORM_INIT
 argument_list|)
 expr_stmt|;
 if|if
@@ -1943,7 +1969,7 @@ name|transform_core
 operator|->
 name|function
 operator|==
-name|CREATING
+name|TRANSFORM_CREATING
 operator|&&
 name|transform_core
 operator|->
@@ -2214,7 +2240,7 @@ name|tool
 operator|->
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -2262,7 +2288,7 @@ name|tool
 argument_list|,
 name|gdisp_ptr
 argument_list|,
-name|FINISH
+name|TRANSFORM_FINISH
 argument_list|)
 expr_stmt|;
 call|(
@@ -2276,7 +2302,7 @@ name|tool
 argument_list|,
 name|gdisp_ptr
 argument_list|,
-name|INIT
+name|TRANSFORM_INIT
 argument_list|)
 expr_stmt|;
 name|transform_core_recalc
@@ -2376,7 +2402,7 @@ name|tool
 operator|->
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -2626,7 +2652,7 @@ name|transform_core
 operator|->
 name|function
 operator|==
-name|CREATING
+name|TRANSFORM_CREATING
 operator|||
 operator|!
 name|transform_core
@@ -2691,7 +2717,7 @@ name|tool
 argument_list|,
 name|gdisp_ptr
 argument_list|,
-name|MOTION
+name|TRANSFORM_MOTION
 argument_list|)
 expr_stmt|;
 name|transform_core
@@ -2808,7 +2834,7 @@ condition|(
 operator|(
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -3879,7 +3905,7 @@ name|private
 operator|->
 name|function
 operator|=
-name|CREATING
+name|TRANSFORM_CREATING
 expr_stmt|;
 name|private
 operator|->
@@ -4437,7 +4463,7 @@ name|transform_core
 operator|->
 name|function
 operator|=
-name|CREATING
+name|TRANSFORM_CREATING
 expr_stmt|;
 name|draw_core_stop
 argument_list|(
@@ -4536,7 +4562,7 @@ name|original
 expr_stmt|;
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -4722,7 +4748,7 @@ name|transform_core
 operator|->
 name|function
 operator|==
-name|CREATING
+name|TRANSFORM_CREATING
 condition|)
 return|return;
 name|draw_core_pause
@@ -4785,7 +4811,7 @@ name|transform_core
 operator|->
 name|function
 operator|==
-name|CREATING
+name|TRANSFORM_CREATING
 condition|)
 return|return;
 if|if
@@ -5257,7 +5283,7 @@ name|tool
 argument_list|,
 name|gdisp_ptr
 argument_list|,
-name|RECALC
+name|TRANSFORM_RECALC
 argument_list|)
 expr_stmt|;
 block|}
@@ -5443,7 +5469,7 @@ operator|=
 name|FALSE
 expr_stmt|;
 comment|/*  Get the background color  */
-name|gimage_get_background
+name|gimp_image_get_background
 argument_list|(
 name|gimage
 argument_list|,
@@ -7450,7 +7476,7 @@ argument_list|)
 expr_stmt|;
 name|floating_layer
 operator|=
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gimage
 argument_list|)

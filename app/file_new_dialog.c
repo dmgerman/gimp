@@ -18,6 +18,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"image_new.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file_new_dialog.h"
 end_include
 
@@ -48,13 +60,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmath.h"
+file|"libgimp/gimphelpui.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"libgimp/gimplimits.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
@@ -72,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbe4c570108
+DECL|struct|__anon2c08dbcf0108
 block|{
 DECL|member|dlg
 name|GtkWidget

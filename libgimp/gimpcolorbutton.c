@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpuitypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcolorbutton.h"
 end_include
 
@@ -472,7 +478,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a20d8010103
+DECL|enum|__anon2c28ea050103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED

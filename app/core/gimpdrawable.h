@@ -19,31 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpobject.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpparasite.h"
 end_include
 
 begin_define
@@ -75,6 +51,157 @@ name|obj
 parameter_list|)
 value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_DRAWABLE))
 end_define
+
+begin_define
+DECL|macro|GIMP_DRAWABLE_CLASS (klass)
+define|#
+directive|define
+name|GIMP_DRAWABLE_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DRAWABLE, GimpDrawableClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_DRAWABLE_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_DRAWABLE_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DRAWABLE))
+end_define
+
+begin_typedef
+DECL|typedef|GimpDrawableClass
+typedef|typedef
+name|struct
+name|_GimpDrawableClass
+name|GimpDrawableClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpDrawable
+struct|struct
+name|_GimpDrawable
+block|{
+DECL|member|data
+name|GimpObject
+name|data
+decl_stmt|;
+DECL|member|name
+name|gchar
+modifier|*
+name|name
+decl_stmt|;
+comment|/* name of drawable               */
+DECL|member|tiles
+name|TileManager
+modifier|*
+name|tiles
+decl_stmt|;
+comment|/* tiles for drawable data        */
+DECL|member|visible
+name|gboolean
+name|visible
+decl_stmt|;
+comment|/* controls visibility            */
+DECL|member|width
+DECL|member|height
+name|gint
+name|width
+decl_stmt|,
+name|height
+decl_stmt|;
+comment|/* size of drawable               */
+DECL|member|offset_x
+DECL|member|offset_y
+name|gint
+name|offset_x
+decl_stmt|,
+name|offset_y
+decl_stmt|;
+comment|/* offset of layer in image       */
+DECL|member|bytes
+name|gint
+name|bytes
+decl_stmt|;
+comment|/* bytes per pixel                */
+DECL|member|ID
+name|gint
+name|ID
+decl_stmt|;
+comment|/* provides a unique ID           */
+DECL|member|tattoo
+name|guint32
+name|tattoo
+decl_stmt|;
+comment|/* provides a perminant ID        */
+DECL|member|gimage
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
+comment|/* gimage owner                   */
+DECL|member|type
+name|GimpImageType
+name|type
+decl_stmt|;
+comment|/* type of drawable               */
+DECL|member|has_alpha
+name|gboolean
+name|has_alpha
+decl_stmt|;
+comment|/* drawable has alpha             */
+DECL|member|parasites
+name|ParasiteList
+modifier|*
+name|parasites
+decl_stmt|;
+comment|/* Plug-in parasite data          */
+comment|/*  Preview variables  */
+DECL|member|preview_cache
+name|GSList
+modifier|*
+name|preview_cache
+decl_stmt|;
+comment|/* preview caches of the channel  */
+DECL|member|preview_valid
+name|gboolean
+name|preview_valid
+decl_stmt|;
+comment|/* is the preview valid?          */
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpDrawableClass
+struct|struct
+name|_GimpDrawableClass
+block|{
+DECL|member|parent_class
+name|GimpObjectClass
+name|parent_class
+decl_stmt|;
+DECL|member|invalidate_preview
+name|void
+function_decl|(
+modifier|*
+name|invalidate_preview
+function_decl|)
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+block|}
+struct|;
+end_struct
 
 begin_comment
 comment|/*  drawable access functions  */
@@ -519,6 +646,35 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_drawable_configure
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
+parameter_list|,
+name|GimpImageType
+name|type
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|name
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"boundary.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -60,7 +66,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"boundary.h"
+file|"pixel_processor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
 end_include
 
 begin_include
@@ -75,34 +87,16 @@ directive|include
 file|"tile_manager_pvt.h"
 end_include
 
-begin_comment
-comment|/* For copy-on-write */
-end_comment
-
 begin_include
 include|#
 directive|include
 file|"tile_pvt.h"
 end_include
 
-begin_comment
-comment|/* For accessing the tiles directly */
-end_comment
-
 begin_include
 include|#
 directive|include
 file|"tile.h"
-end_include
-
-begin_comment
-comment|/* ick. */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
 end_include
 
 begin_include
@@ -115,6 +109,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpcolorspace.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
@@ -229,7 +229,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4129e90103
+DECL|enum|__anon2a0fa08e0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY

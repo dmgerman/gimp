@@ -16,16 +16,10 @@ directive|define
 name|__EDIT_SELECTION_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a17e41d0103
+DECL|enum|__anon27903fd50103
 block|{
 DECL|enumerator|EDIT_MASK_TRANSLATE
 name|EDIT_MASK_TRANSLATE

@@ -28,7 +28,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"boundary.h"
 end_include
 
 begin_include
@@ -52,13 +64,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage.h"
+file|"gimage_mask.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimage_mask.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -71,6 +83,12 @@ begin_include
 include|#
 directive|include
 file|"paint_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
 end_include
 
 begin_include
@@ -106,13 +124,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layer_pvt.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_manager_pvt.h"
+file|"tile_manager.h"
 end_include
 
 begin_include
@@ -120,10 +132,6 @@ include|#
 directive|include
 file|"tile.h"
 end_include
-
-begin_comment
-comment|/* ick. */
-end_comment
 
 begin_include
 include|#
@@ -145,7 +153,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295976380103
+DECL|enum|__anon2902c95f0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -871,7 +879,7 @@ name|i
 operator|++
 control|)
 block|{
-name|gimage_transform_color
+name|gimp_image_transform_color
 argument_list|(
 name|gimage
 argument_list|,
@@ -1826,13 +1834,15 @@ name|layer_new
 argument_list|(
 literal|0
 argument_list|,
+name|tile_manager_level_width
+argument_list|(
 name|tiles
-operator|->
-name|width
+argument_list|)
 argument_list|,
+name|tile_manager_level_height
+argument_list|(
 name|tiles
-operator|->
-name|height
+argument_list|)
 argument_list|,
 name|layer_type
 argument_list|,
@@ -1923,9 +1933,10 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
+name|tile_manager_level_bpp
+argument_list|(
 name|tiles
-operator|->
-name|bpp
+argument_list|)
 operator|==
 literal|4
 operator|&&
@@ -1940,9 +1951,10 @@ name|RGBA_GIMAGE
 operator|)
 operator|||
 operator|(
+name|tile_manager_level_bpp
+argument_list|(
 name|tiles
-operator|->
-name|bpp
+argument_list|)
 operator|==
 literal|2
 operator|&&
@@ -1984,9 +1996,10 @@ name|new_layer
 argument_list|)
 argument_list|,
 operator|(
+name|tile_manager_level_bpp
+argument_list|(
 name|tiles
-operator|->
-name|bpp
+argument_list|)
 operator|==
 literal|4
 operator|)
@@ -4328,7 +4341,7 @@ index|[
 literal|3
 index|]
 decl_stmt|;
-name|gimage_get_background
+name|gimp_image_get_background
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -5130,7 +5143,7 @@ argument_list|)
 expr_stmt|;
 name|mask
 operator|=
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)

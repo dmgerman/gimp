@@ -18,13 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
+file|"apptypes.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"drawable_pvt.h"
+file|"drawable.h"
 end_include
 
 begin_include

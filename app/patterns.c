@@ -118,13 +118,31 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"datafiles.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimprc.h"
 end_include
 
 begin_include
@@ -142,13 +160,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
+file|"temp_buf.h"
 end_include
 
 begin_include

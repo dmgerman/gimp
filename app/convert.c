@@ -38,7 +38,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -110,6 +110,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpui.h"
 end_include
 
@@ -117,6 +123,12 @@ begin_include
 include|#
 directive|include
 file|"hue_saturation.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer.h"
 end_include
 
 begin_include
@@ -140,7 +152,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"palette_entries.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"palette_select.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
 end_include
 
 begin_include
@@ -158,7 +182,29 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tile_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile_manager_pvt.h"
+end_include
+
+begin_comment
+comment|/* ick ick ick. */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpcolorspace.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimphelpui.h"
 end_include
 
 begin_include
@@ -172,36 +218,6 @@ include|#
 directive|include
 file|"libgimp/gimpintl.h"
 end_include
-
-begin_include
-include|#
-directive|include
-file|"layer_pvt.h"
-end_include
-
-begin_comment
-comment|/* ick. */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"drawable_pvt.h"
-end_include
-
-begin_comment
-comment|/* ick ick. */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"tile_manager_pvt.h"
-end_include
-
-begin_comment
-comment|/* ick ick ick. */
-end_comment
 
 begin_define
 DECL|macro|PRECISION_R
@@ -34935,7 +34951,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291a2bd90108
+DECL|struct|__anon2a0d47430108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35012,7 +35028,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291a2bd90208
+DECL|struct|__anon2a0d47430208
 block|{
 DECL|member|ncolors
 name|long
@@ -35031,7 +35047,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291a2bd90308
+DECL|struct|__anon2a0d47430308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -35989,7 +36005,7 @@ if|if
 condition|(
 operator|(
 operator|!
-name|gimage_is_empty
+name|gimp_image_is_empty
 argument_list|(
 name|gimage
 argument_list|)
@@ -37367,7 +37383,7 @@ if|if
 condition|(
 operator|(
 operator|!
-name|gimage_is_empty
+name|gimp_image_is_empty
 argument_list|(
 name|gimage
 argument_list|)
@@ -38371,7 +38387,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291a2bd90408
+DECL|struct|__anon2a0d47430408
 block|{
 DECL|member|used_count
 name|signed
@@ -39396,7 +39412,7 @@ expr_stmt|;
 comment|/*  Get the floating layer if one exists  */
 name|floating_layer
 operator|=
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gimage
 argument_list|)
@@ -40387,7 +40403,7 @@ name|quantobj
 argument_list|)
 expr_stmt|;
 comment|/*  Make sure the projection is up to date  */
-name|gimage_projection_realloc
+name|gimp_image_projection_realloc
 argument_list|(
 name|gimage
 argument_list|)
@@ -40415,7 +40431,7 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimage_invalidate_preview
+name|gimp_image_invalidate_preview
 argument_list|(
 name|gimage
 argument_list|)

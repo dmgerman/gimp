@@ -47,6 +47,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -272,6 +278,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"channel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -279,6 +291,18 @@ begin_include
 include|#
 directive|include
 file|"dialog_handler.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"docindex.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"drawable.h"
 end_include
 
 begin_include
@@ -302,13 +326,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawableP.h"
+file|"gimpdrawable.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimprc.h"
 end_include
 
 begin_include
@@ -326,19 +356,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"menus.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"layer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"channel.h"
+file|"menus.h"
 end_include
 
 begin_include
@@ -356,19 +380,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"docindex.h"
+file|"temp_buf.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimphelpui.h"
 end_include
 
 begin_include
@@ -2750,7 +2774,7 @@ expr_stmt|;
 block|}
 switch|switch
 condition|(
-name|drawable_type
+name|gimp_drawable_type
 argument_list|(
 name|gimage_active_drawable
 argument_list|(

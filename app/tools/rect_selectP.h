@@ -16,12 +16,6 @@ directive|define
 name|__RECT_SELECTP_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"draw_core.h"
-end_include
-
 begin_typedef
 DECL|typedef|RectSelect
 DECL|typedef|EllipseSelect

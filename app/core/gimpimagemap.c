@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -55,6 +55,24 @@ begin_include
 include|#
 directive|include
 file|"image_map.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile.h"
 end_include
 
 begin_include

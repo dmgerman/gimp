@@ -19,31 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gradient.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"patterns.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"toolsF.h"
+file|"gimpobject.h"
 end_include
 
 begin_define
@@ -101,7 +77,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e5e04b0103
+DECL|enum|__anon2af93b8f0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_ARG_IMAGE
 name|GIMP_CONTEXT_ARG_IMAGE
@@ -144,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e5e04b0203
+DECL|enum|__anon2af93b8f0203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -247,15 +223,6 @@ name|GIMP_CONTEXT_PAINT_ARGS_MASK
 DECL|typedef|GimpContextArgMask
 block|}
 name|GimpContextArgMask
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpContext
-typedef|typedef
-name|struct
-name|_GimpContext
-name|GimpContext
 typedef|;
 end_typedef
 

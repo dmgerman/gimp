@@ -6,7 +6,25 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -45,17 +63,17 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|tile_manager_get_tile_num
 parameter_list|(
 name|TileManager
 modifier|*
 name|tm
 parameter_list|,
-name|int
+name|gint
 name|xpixel
 parameter_list|,
-name|int
+name|gint
 name|ypixel
 parameter_list|)
 function_decl|;
@@ -64,16 +82,16 @@ end_function_decl
 begin_function
 name|TileManager
 modifier|*
-DECL|function|tile_manager_new (int toplevel_width,int toplevel_height,int bpp)
+DECL|function|tile_manager_new (gint toplevel_width,gint toplevel_height,gint bpp)
 name|tile_manager_new
 parameter_list|(
-name|int
+name|gint
 name|toplevel_width
 parameter_list|,
-name|int
+name|gint
 name|toplevel_height
 parameter_list|,
-name|int
+name|gint
 name|bpp
 parameter_list|)
 block|{
@@ -81,9 +99,10 @@ name|TileManager
 modifier|*
 name|tm
 decl_stmt|;
-name|int
+name|gint
 name|width
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|height
 decl_stmt|;
 name|tm
@@ -183,10 +202,10 @@ modifier|*
 name|tm
 parameter_list|)
 block|{
-name|int
+name|gint
 name|ntiles
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if
@@ -286,27 +305,27 @@ end_function
 begin_function
 name|Tile
 modifier|*
-DECL|function|tile_manager_get_tile (TileManager * tm,int xpixel,int ypixel,int wantread,int wantwrite)
+DECL|function|tile_manager_get_tile (TileManager * tm,gint xpixel,gint ypixel,gint wantread,gint wantwrite)
 name|tile_manager_get_tile
 parameter_list|(
 name|TileManager
 modifier|*
 name|tm
 parameter_list|,
-name|int
+name|gint
 name|xpixel
 parameter_list|,
-name|int
+name|gint
 name|ypixel
 parameter_list|,
-name|int
+name|gint
 name|wantread
 parameter_list|,
-name|int
+name|gint
 name|wantwrite
 parameter_list|)
 block|{
-name|int
+name|gint
 name|tile_num
 decl_stmt|;
 name|tile_num
@@ -347,20 +366,20 @@ end_function
 begin_function
 name|Tile
 modifier|*
-DECL|function|tile_manager_get (TileManager * tm,int tile_num,int wantread,int wantwrite)
+DECL|function|tile_manager_get (TileManager * tm,gint tile_num,gint wantread,gint wantwrite)
 name|tile_manager_get
 parameter_list|(
 name|TileManager
 modifier|*
 name|tm
 parameter_list|,
-name|int
+name|gint
 name|tile_num
 parameter_list|,
-name|int
+name|gint
 name|wantread
 parameter_list|,
-name|int
+name|gint
 name|wantwrite
 parameter_list|)
 block|{
@@ -374,21 +393,21 @@ modifier|*
 modifier|*
 name|tile_ptr
 decl_stmt|;
-name|int
+name|gint
 name|ntiles
 decl_stmt|;
-name|int
+name|gint
 name|nrows
 decl_stmt|,
 name|ncols
 decl_stmt|;
-name|int
+name|gint
 name|right_tile
 decl_stmt|;
-name|int
+name|gint
 name|bottom_tile
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -925,17 +944,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_manager_get_async (TileManager * tm,int xpixel,int ypixel)
+DECL|function|tile_manager_get_async (TileManager * tm,gint xpixel,gint ypixel)
 name|tile_manager_get_async
 parameter_list|(
 name|TileManager
 modifier|*
 name|tm
 parameter_list|,
-name|int
+name|gint
 name|xpixel
 parameter_list|,
-name|int
+name|gint
 name|ypixel
 parameter_list|)
 block|{
@@ -943,7 +962,7 @@ name|Tile
 modifier|*
 name|tile_ptr
 decl_stmt|;
-name|int
+name|gint
 name|tile_num
 decl_stmt|;
 name|tile_num
@@ -1037,17 +1056,17 @@ modifier|*
 name|toplevel_tile
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|int
+name|gint
 name|row
 decl_stmt|,
 name|col
 decl_stmt|;
-name|int
+name|gint
 name|num
 decl_stmt|;
 name|col
@@ -1174,7 +1193,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_invalidate_tile (Tile ** tile_ptr,TileManager * tm,int xpixel,int ypixel)
+DECL|function|tile_invalidate_tile (Tile ** tile_ptr,TileManager * tm,gint xpixel,gint ypixel)
 name|tile_invalidate_tile
 parameter_list|(
 name|Tile
@@ -1186,14 +1205,14 @@ name|TileManager
 modifier|*
 name|tm
 parameter_list|,
-name|int
+name|gint
 name|xpixel
 parameter_list|,
-name|int
+name|gint
 name|ypixel
 parameter_list|)
 block|{
-name|int
+name|gint
 name|tile_num
 decl_stmt|;
 name|tile_num
@@ -1228,7 +1247,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_invalidate (Tile ** tile_ptr,TileManager * tm,int tile_num)
+DECL|function|tile_invalidate (Tile ** tile_ptr,TileManager * tm,gint tile_num)
 name|tile_invalidate
 parameter_list|(
 name|Tile
@@ -1240,7 +1259,7 @@ name|TileManager
 modifier|*
 name|tm
 parameter_list|,
-name|int
+name|gint
 name|tile_num
 parameter_list|)
 block|{
@@ -1410,17 +1429,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_manager_map_tile (TileManager * tm,int xpixel,int ypixel,Tile * srctile)
+DECL|function|tile_manager_map_tile (TileManager * tm,gint xpixel,gint ypixel,Tile * srctile)
 name|tile_manager_map_tile
 parameter_list|(
 name|TileManager
 modifier|*
 name|tm
 parameter_list|,
-name|int
+name|gint
 name|xpixel
 parameter_list|,
-name|int
+name|gint
 name|ypixel
 parameter_list|,
 name|Tile
@@ -1428,13 +1447,13 @@ modifier|*
 name|srctile
 parameter_list|)
 block|{
-name|int
+name|gint
 name|tile_row
 decl_stmt|;
-name|int
+name|gint
 name|tile_col
 decl_stmt|;
-name|int
+name|gint
 name|tile_num
 decl_stmt|;
 if|if
@@ -1511,14 +1530,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_manager_map (TileManager * tm,int tile_num,Tile * srctile)
+DECL|function|tile_manager_map (TileManager * tm,gint tile_num,Tile * srctile)
 name|tile_manager_map
 parameter_list|(
 name|TileManager
 modifier|*
 name|tm
 parameter_list|,
-name|int
+name|gint
 name|tile_num
 parameter_list|,
 name|Tile
@@ -1536,21 +1555,21 @@ modifier|*
 modifier|*
 name|tile_ptr
 decl_stmt|;
-name|int
+name|gint
 name|ntiles
 decl_stmt|;
-name|int
+name|gint
 name|nrows
 decl_stmt|,
 name|ncols
 decl_stmt|;
-name|int
+name|gint
 name|right_tile
 decl_stmt|;
-name|int
+name|gint
 name|bottom_tile
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -1897,27 +1916,27 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|tile_manager_get_tile_num (TileManager * tm,int xpixel,int ypixel)
+DECL|function|tile_manager_get_tile_num (TileManager * tm,gint xpixel,gint ypixel)
 name|tile_manager_get_tile_num
 parameter_list|(
 name|TileManager
 modifier|*
 name|tm
 parameter_list|,
-name|int
+name|gint
 name|xpixel
 parameter_list|,
-name|int
+name|gint
 name|ypixel
 parameter_list|)
 block|{
-name|int
+name|gint
 name|tile_row
 decl_stmt|;
-name|int
+name|gint
 name|tile_col
 decl_stmt|;
-name|int
+name|gint
 name|tile_num
 decl_stmt|;
 if|if
@@ -1984,15 +2003,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_manager_set_user_data (TileManager * tm,void * user_data)
+DECL|function|tile_manager_set_user_data (TileManager * tm,gpointer user_data)
 name|tile_manager_set_user_data
 parameter_list|(
 name|TileManager
 modifier|*
 name|tm
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|user_data
 parameter_list|)
 block|{
@@ -2006,11 +2024,11 @@ block|}
 end_function
 
 begin_function
-name|void
-modifier|*
-DECL|function|tile_manager_get_user_data (TileManager * tm)
+name|gpointer
+DECL|function|tile_manager_get_user_data (const TileManager * tm)
 name|tile_manager_get_user_data
 parameter_list|(
+specifier|const
 name|TileManager
 modifier|*
 name|tm
@@ -2026,9 +2044,10 @@ end_function
 
 begin_function
 name|int
-DECL|function|tile_manager_level_width (TileManager * tm)
+DECL|function|tile_manager_level_width (const TileManager * tm)
 name|tile_manager_level_width
 parameter_list|(
+specifier|const
 name|TileManager
 modifier|*
 name|tm
@@ -2044,9 +2063,10 @@ end_function
 
 begin_function
 name|int
-DECL|function|tile_manager_level_height (TileManager * tm)
+DECL|function|tile_manager_level_height (const TileManager * tm)
 name|tile_manager_level_height
 parameter_list|(
+specifier|const
 name|TileManager
 modifier|*
 name|tm
@@ -2062,9 +2082,10 @@ end_function
 
 begin_function
 name|int
-DECL|function|tile_manager_level_bpp (TileManager * tm)
+DECL|function|tile_manager_level_bpp (const TileManager * tm)
 name|tile_manager_level_bpp
 parameter_list|(
+specifier|const
 name|TileManager
 modifier|*
 name|tm
@@ -2080,7 +2101,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_manager_get_tile_coordinates (TileManager * tm,Tile * tile,int * x,int * y)
+DECL|function|tile_manager_get_tile_coordinates (TileManager * tm,Tile * tile,gint * x,gint * y)
 name|tile_manager_get_tile_coordinates
 parameter_list|(
 name|TileManager
@@ -2091,11 +2112,11 @@ name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|x
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|y
 parameter_list|)

@@ -16,18 +16,6 @@ directive|define
 name|__INK_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"procedural_db.h"
-end_include
-
 begin_function_decl
 name|Tool
 modifier|*
@@ -44,6 +32,7 @@ name|tools_free_ink
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl

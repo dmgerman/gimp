@@ -16,15 +16,6 @@ directive|define
 name|__GRADIENT_H__
 end_define
 
-begin_typedef
-DECL|typedef|gradient_t
-typedef|typedef
-name|struct
-name|_gradient_t
-name|gradient_t
-typedef|;
-end_typedef
-
 begin_comment
 comment|/*  global variables  */
 end_comment

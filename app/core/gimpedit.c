@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpui.h"
 end_include
 
@@ -91,6 +97,18 @@ begin_include
 include|#
 directive|include
 file|"paint_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile_manager.h"
 end_include
 
 begin_include
@@ -117,16 +135,10 @@ directive|include
 file|"tile_manager_pvt.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"drawable_pvt.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3357120103
+DECL|enum|__anon29d2c43c0103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
@@ -191,15 +203,15 @@ begin_typedef
 DECL|typedef|NamedBuffer
 typedef|typedef
 name|struct
-name|_named_buffer
+name|_NamedBuffer
 name|NamedBuffer
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_named_buffer
+DECL|struct|_NamedBuffer
 struct|struct
-name|_named_buffer
+name|_NamedBuffer
 block|{
 DECL|member|buf
 name|TileManager

@@ -41,7 +41,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -78,6 +78,12 @@ begin_include
 include|#
 directive|include
 file|"gimpbrush.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"temp_buf.h"
 end_include
 
 begin_include

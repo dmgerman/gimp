@@ -46,7 +46,19 @@ end_endif
 begin_include
 include|#
 directive|include
+file|"sys/types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -83,6 +95,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimphelpui.h"
 end_include
 
 begin_include

@@ -16,12 +16,6 @@ directive|define
 name|__PATTERN_SELECT_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"patterns.h"
-end_include
-
 begin_typedef
 DECL|typedef|PatternSelect
 typedef|typedef

@@ -42,6 +42,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"channel.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"draw_core.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
 end_include
 
@@ -49,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"gimage_mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -84,7 +108,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
+file|"tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_options.h"
 end_include
 
 begin_include
@@ -281,7 +311,7 @@ name|channel_combine_rect
 argument_list|(
 name|new_mask
 argument_list|,
-name|ADD
+name|CHANNEL_OP_ADD
 argument_list|,
 name|x
 argument_list|,
@@ -296,7 +326,7 @@ name|channel_feather
 argument_list|(
 name|new_mask
 argument_list|,
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -345,7 +375,7 @@ name|channel_combine_rect
 argument_list|(
 name|new_mask
 argument_list|,
-name|ADD
+name|CHANNEL_OP_ADD
 argument_list|,
 name|x
 argument_list|,
@@ -358,7 +388,7 @@ argument_list|)
 expr_stmt|;
 name|channel_combine_mask
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -381,7 +411,7 @@ block|}
 else|else
 name|channel_combine_rect
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1119,7 +1149,7 @@ block|{
 comment|/*  If there is a floating selection, anchor it  */
 if|if
 condition|(
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->
@@ -1128,7 +1158,7 @@ argument_list|)
 condition|)
 name|floating_sel_anchor
 argument_list|(
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->
@@ -2359,7 +2389,7 @@ argument_list|)
 expr_stmt|;
 name|layer
 operator|=
-name|gimage_pick_correlate_layer
+name|gimp_image_pick_correlate_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -2372,7 +2402,7 @@ argument_list|)
 expr_stmt|;
 name|floating_sel
 operator|=
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->

@@ -16,24 +16,6 @@ directive|define
 name|__TEMP_BUF_H__
 end_define
 
-begin_typedef
-DECL|typedef|TempBuf
-typedef|typedef
-name|struct
-name|_TempBuf
-name|TempBuf
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|MaskBuf
-typedef|typedef
-name|struct
-name|_TempBuf
-name|MaskBuf
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_TempBuf
 struct|struct

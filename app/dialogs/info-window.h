@@ -16,18 +16,6 @@ directive|define
 name|__INFO_WINDOW_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gdisplayF.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"info_dialog.h"
-end_include
-
 begin_function_decl
 name|InfoDialog
 modifier|*

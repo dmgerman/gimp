@@ -1,4 +1,8 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_comment
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+end_comment
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -39,33 +43,6 @@ end_comment
 begin_comment
 comment|/* #define HINTS_SANITY */
 end_comment
-
-begin_include
-include|#
-directive|include
-file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
-
-begin_typedef
-DECL|typedef|Tile
-typedef|typedef
-name|struct
-name|_Tile
-name|Tile
-typedef|;
-end_typedef
 
 begin_comment
 comment|/*  explicit guchar type rather than enum since gcc chooses an int  *  representation but arrays of TileRowHints are quite space-critical  *  in GIMP.  */
@@ -147,7 +124,7 @@ name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|int
+name|gint
 name|bpp
 parameter_list|)
 function_decl|;
@@ -163,6 +140,7 @@ name|tile_lock
 parameter_list|(
 name|Tile
 modifier|*
+name|tile
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -173,8 +151,9 @@ name|tile_release
 parameter_list|(
 name|Tile
 modifier|*
+name|tile
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -199,7 +178,7 @@ comment|/* Return the size in bytes of the tiles data.  */
 end_comment
 
 begin_function_decl
-name|int
+name|gint
 name|tile_size
 parameter_list|(
 name|Tile
@@ -210,7 +189,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|tile_ewidth
 parameter_list|(
 name|Tile
@@ -221,7 +200,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|tile_eheight
 parameter_list|(
 name|Tile
@@ -232,7 +211,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|tile_bpp
 parameter_list|(
 name|Tile
@@ -243,7 +222,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|tile_is_valid
 parameter_list|(
 name|Tile
@@ -276,7 +255,7 @@ name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|int
+name|gint
 name|yoff
 parameter_list|)
 function_decl|;
@@ -290,7 +269,7 @@ name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|int
+name|gint
 name|yoff
 parameter_list|,
 name|TileRowHint
@@ -319,10 +298,10 @@ name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|int
+name|gint
 name|xoff
 parameter_list|,
-name|int
+name|gint
 name|yoff
 parameter_list|)
 function_decl|;
@@ -344,7 +323,7 @@ name|void
 modifier|*
 name|tm
 parameter_list|,
-name|int
+name|gint
 name|tile_num
 parameter_list|)
 function_decl|;
@@ -362,7 +341,7 @@ name|void
 modifier|*
 name|tm
 parameter_list|,
-name|int
+name|gint
 name|tile_num
 parameter_list|)
 function_decl|;

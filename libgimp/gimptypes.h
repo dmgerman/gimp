@@ -16,6 +16,12 @@ directive|define
 name|__GIMP_TYPES_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"gimpunit.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -83,6 +89,12 @@ typedef|typedef
 name|struct
 name|_GimpParam
 name|GimpParam
+typedef|;
+DECL|typedef|GimpParasite
+typedef|typedef
+name|struct
+name|_GimpParasite
+name|GimpParasite
 typedef|;
 ifdef|#
 directive|ifdef

@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -25,6 +25,12 @@ begin_include
 include|#
 directive|include
 file|"appenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"draw_core.h"
 end_include
 
 begin_include
@@ -48,6 +54,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"info_dialog.h"
 end_include
 
@@ -66,6 +90,30 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tile_manager_pvt.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"transform_core.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"transform_tool.h"
 end_include
 
@@ -78,25 +126,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tile_manager_pvt.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpsizeentry.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmath.h"
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
@@ -326,7 +368,7 @@ name|state
 condition|)
 block|{
 case|case
-name|INIT
+name|TRANSFORM_INIT
 case|:
 name|angle_val
 operator|=
@@ -823,7 +865,7 @@ name|NULL
 return|;
 break|break;
 case|case
-name|MOTION
+name|TRANSFORM_MOTION
 case|:
 name|rotate_tool_motion
 argument_list|(
@@ -841,7 +883,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|RECALC
+name|TRANSFORM_RECALC
 case|:
 name|rotate_tool_recalc
 argument_list|(
@@ -852,7 +894,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|FINISH
+name|TRANSFORM_FINISH
 case|:
 name|gtk_widget_set_sensitive
 argument_list|(
@@ -873,7 +915,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -1421,7 +1463,7 @@ name|transform_core
 operator|->
 name|function
 operator|==
-name|HANDLE_CENTER
+name|TRANSFORM_HANDLE_CENTER
 condition|)
 block|{
 name|transform_core

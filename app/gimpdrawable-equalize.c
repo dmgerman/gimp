@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -54,7 +60,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|"pixel_processor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
 end_include
 
 begin_include
@@ -136,20 +148,19 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|mask
 decl_stmt|;
-name|int
+name|gint
 name|has_alpha
 decl_stmt|;
-name|int
+name|gint
 name|alpha
 decl_stmt|,
 name|bytes
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -172,14 +183,14 @@ name|NULL
 expr_stmt|;
 name|bytes
 operator|=
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
 name|has_alpha
 operator|=
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)
@@ -219,7 +230,7 @@ name|bytes
 argument_list|)
 expr_stmt|;
 comment|/*  Apply the histogram  */
-name|drawable_mask_bounds
+name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 argument_list|,
@@ -241,7 +252,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -270,7 +281,7 @@ argument_list|(
 operator|&
 name|destPR
 argument_list|,
-name|drawable_shadow
+name|gimp_drawable_shadow
 argument_list|(
 name|drawable
 argument_list|)
@@ -322,7 +333,7 @@ argument_list|(
 name|hist
 argument_list|)
 expr_stmt|;
-name|drawable_merge_shadow
+name|gimp_drawable_merge_shadow
 argument_list|(
 name|drawable
 argument_list|,

@@ -6,7 +6,25 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpuitypes.h"
 end_include
 
 begin_include
@@ -48,7 +66,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8b670e0103
+DECL|enum|__anon289c36dd0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED

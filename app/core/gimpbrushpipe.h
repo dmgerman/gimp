@@ -19,35 +19,8 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_core.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbrush.h"
 end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
-end_include
-
-begin_typedef
-DECL|typedef|GimpBrushPipe
-typedef|typedef
-name|struct
-name|_GimpBrushPipe
-name|GimpBrushPipe
-typedef|;
-end_typedef
 
 begin_define
 DECL|macro|GIMP_TYPE_BRUSH_PIPE
@@ -82,7 +55,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1e7fc30103
+DECL|enum|__anon29e97a200103
 block|{
 DECL|enumerator|PIPE_SELECT_CONSTANT
 name|PIPE_SELECT_CONSTANT
@@ -110,6 +83,15 @@ name|PIPE_SELECT_TILT_Y
 DECL|typedef|PipeSelectModes
 block|}
 name|PipeSelectModes
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpBrushPipeClass
+typedef|typedef
+name|struct
+name|_GimpBrushPipeClass
+name|GimpBrushPipeClass
 typedef|;
 end_typedef
 
@@ -171,15 +153,6 @@ comment|/* Currently selected brush */
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|GimpBrushPipeClass
-typedef|typedef
-name|struct
-name|_GimpBrushPipeClass
-name|GimpBrushPipeClass
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpBrushPipeClass

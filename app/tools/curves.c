@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"curves.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -60,13 +66,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"curves.h"
+file|"gimpui.h"
 end_include
 
 begin_include
@@ -78,7 +84,31 @@ end_include
 begin_include
 include|#
 directive|include
+file|"image_map.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimphelpui.h"
 end_include
 
 begin_include
@@ -1458,7 +1488,7 @@ name|gdisp_ptr
 expr_stmt|;
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -1637,7 +1667,7 @@ operator|!
 operator|(
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -1844,7 +1874,7 @@ operator|!
 operator|(
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -2136,7 +2166,7 @@ if|if
 condition|(
 name|drawable_indexed
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -2237,7 +2267,7 @@ name|curves_dialog
 operator|->
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->

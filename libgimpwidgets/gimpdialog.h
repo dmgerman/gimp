@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_DIALOG_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<libgimp/gimphelpui.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef

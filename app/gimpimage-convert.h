@@ -16,18 +16,6 @@ directive|define
 name|__CONVERT_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"palette_entries.h"
-end_include
-
 begin_comment
 comment|/* adam's extra palette stuff */
 end_comment
@@ -35,7 +23,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277358bf0103
+DECL|enum|__anon2a3eab930103
 block|{
 DECL|enumerator|MAKE_PALETTE
 name|MAKE_PALETTE
@@ -74,7 +62,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277358bf0203
+DECL|enum|__anon2a3eab930203
 block|{
 DECL|enumerator|NO_DITHER
 name|NO_DITHER
@@ -125,6 +113,7 @@ name|convert_to_rgb
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -135,6 +124,7 @@ name|convert_to_grayscale
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -145,6 +135,7 @@ name|convert_to_indexed
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -155,6 +146,7 @@ name|convert_image
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|GimpImageBaseType
 parameter_list|,

@@ -17,35 +17,8 @@ name|__TOOL_OPTIONS_H__
 end_define
 
 begin_comment
-comment|/*  tool options function declarations  */
-end_comment
-
-begin_typedef
-DECL|typedef|ToolOptionsResetFunc
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|ToolOptionsResetFunc
-function_decl|)
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_typedef
-
-begin_comment
 comment|/*  the tool options structures  */
 end_comment
-
-begin_typedef
-DECL|typedef|ToolOptions
-typedef|typedef
-name|struct
-name|_ToolOptions
-name|ToolOptions
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_ToolOptions

@@ -56,7 +56,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channel_pvt.h"
+file|"channel.h"
 end_include
 
 begin_include
@@ -86,6 +86,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"iscissors.h"
 end_include
 
@@ -99,6 +105,12 @@ begin_include
 include|#
 directive|include
 file|"paint_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
 end_include
 
 begin_include
@@ -129,6 +141,18 @@ begin_include
 include|#
 directive|include
 file|"scan_convert.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile_manager.h"
 end_include
 
 begin_include
@@ -243,7 +267,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4107ef0103
+DECL|enum|__anon28d4b1210103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -269,7 +293,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4107ef0203
+DECL|enum|__anon28d4b1210203
 block|{
 DECL|enumerator|DRAW_NOTHING
 name|DRAW_NOTHING
@@ -1907,7 +1931,7 @@ name|private
 expr_stmt|;
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -2266,7 +2290,7 @@ name|iscissors
 operator|->
 name|mask
 argument_list|,
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
@@ -2305,7 +2329,7 @@ expr_stmt|;
 else|else
 name|channel_combine_mask
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->

@@ -120,18 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpfeatures.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"apptypes.h"
 end_include
 
@@ -217,6 +205,12 @@ begin_include
 include|#
 directive|include
 file|"gimpbrushlist.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcontext.h"
 end_include
 
 begin_include
@@ -460,6 +454,24 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimplimits.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpfeatures.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimphelpui.h"
 end_include
 
 begin_include

@@ -22,24 +22,6 @@ directive|include
 file|"gimpimage.h"
 end_include
 
-begin_comment
-comment|/* icky.. this is temporary */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"gimpimageP.h"
-end_include
-
-begin_typedef
-DECL|typedef|GImage
-typedef|typedef
-name|GimpImage
-name|GImage
-typedef|;
-end_typedef
-
 begin_function_decl
 name|GImage
 modifier|*

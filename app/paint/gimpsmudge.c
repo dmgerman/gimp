@@ -54,6 +54,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpbrush.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplut.h"
 end_include
 
@@ -78,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint_options.h"
 end_include
 
@@ -90,7 +108,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"temp_buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_options.h"
 end_include
 
 begin_include

@@ -53,15 +53,6 @@ value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_BRUSH_GENERATED))
 end_define
 
 begin_typedef
-DECL|typedef|GimpBrushGenerated
-typedef|typedef
-name|struct
-name|_GimpBrushGenerated
-name|GimpBrushGenerated
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpBrushGeneratedClass
 typedef|typedef
 name|struct

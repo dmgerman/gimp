@@ -14,6 +14,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -48,16 +54,16 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293d13a80103
+DECL|enum|__anon27e53b370103
 block|{
-DECL|enumerator|INVISIBLE
-name|INVISIBLE
+DECL|enumerator|VISIBILITY_INVISIBLE
+name|VISIBILITY_INVISIBLE
 block|,
-DECL|enumerator|VISIBLE
-name|VISIBLE
+DECL|enumerator|VISIBILITY_VISIBLE
+name|VISIBILITY_VISIBLE
 block|,
-DECL|enumerator|UNKNOWN
-name|UNKNOWN
+DECL|enumerator|VISIBILITY_UNKNOWN
+name|VISIBILITY_UNKNOWN
 DECL|typedef|VisibilityState
 block|}
 name|VisibilityState
@@ -98,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293d13a80203
+DECL|enum|__anon27e53b370203
 block|{
 DECL|enumerator|SHOW_ALL
 name|SHOW_ALL
@@ -269,7 +275,7 @@ name|dstate
 operator|->
 name|saved_state
 operator|=
-name|VISIBLE
+name|VISIBILITY_VISIBLE
 expr_stmt|;
 name|gtk_widget_hide
 argument_list|(
@@ -285,7 +291,7 @@ name|dstate
 operator|->
 name|saved_state
 operator|=
-name|INVISIBLE
+name|VISIBILITY_INVISIBLE
 expr_stmt|;
 block|}
 block|}
@@ -345,7 +351,7 @@ name|dstate
 operator|->
 name|saved_state
 operator|==
-name|VISIBLE
+name|VISIBILITY_VISIBLE
 operator|&&
 operator|!
 name|GTK_WIDGET_VISIBLE
@@ -402,7 +408,7 @@ name|toolbox_shell
 operator|->
 name|saved_state
 operator|=
-name|VISIBLE
+name|VISIBILITY_VISIBLE
 expr_stmt|;
 block|}
 block|}
@@ -428,7 +434,7 @@ name|toolbox_shell
 operator|->
 name|saved_state
 operator|==
-name|VISIBLE
+name|VISIBILITY_VISIBLE
 operator|&&
 operator|!
 name|GTK_WIDGET_VISIBLE
@@ -862,7 +868,7 @@ name|dstate
 operator|->
 name|saved_state
 operator|=
-name|UNKNOWN
+name|VISIBILITY_UNKNOWN
 expr_stmt|;
 name|active_dialogs
 operator|=
@@ -905,7 +911,7 @@ name|toolbox_shell
 operator|->
 name|saved_state
 operator|=
-name|UNKNOWN
+name|VISIBILITY_UNKNOWN
 expr_stmt|;
 block|}
 end_function
@@ -939,7 +945,7 @@ name|fileload_shell
 operator|->
 name|saved_state
 operator|=
-name|UNKNOWN
+name|VISIBILITY_UNKNOWN
 expr_stmt|;
 block|}
 end_function

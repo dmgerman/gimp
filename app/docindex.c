@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dialog_handler.h"
 end_include
 
@@ -66,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimageP.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -102,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimphelpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -132,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c37a3960108
+DECL|struct|__anon29b638010108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -153,7 +165,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c37a3960208
+DECL|struct|__anon29b638010208
 block|{
 DECL|member|boole
 name|gboolean

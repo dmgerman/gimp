@@ -16,33 +16,6 @@ directive|define
 name|__FILEOPS_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<process.h>
-end_include
-
-begin_comment
-comment|/* For _getpid() */
-end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|"plug_in.h"
-end_include
-
 begin_decl_stmt
 specifier|extern
 name|GSList

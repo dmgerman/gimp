@@ -16,18 +16,6 @@ directive|define
 name|__BRUSH_SELECT_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimpbrush.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontext.h"
-end_include
-
 begin_typedef
 DECL|typedef|BrushSelect
 typedef|typedef

@@ -48,7 +48,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile_manager.h"
 end_include
 
 begin_comment

@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299f70c40103
+DECL|enum|__anon2b88554c0103
 block|{
 DECL|enumerator|STACK_TRACE_NEVER
 name|STACK_TRACE_NEVER
@@ -34,13 +34,6 @@ block|}
 name|StackTraceMode
 typedef|;
 end_typedef
-
-begin_decl_stmt
-specifier|extern
-name|StackTraceMode
-name|stack_trace_mode
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 name|void
@@ -88,6 +81,13 @@ modifier|...
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_decl_stmt
+specifier|extern
+name|StackTraceMode
+name|stack_trace_mode
+decl_stmt|;
+end_decl_stmt
 
 begin_endif
 endif|#

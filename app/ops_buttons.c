@@ -18,19 +18,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimphelp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"ops_buttons.h"
+file|"gimpui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimppixmap.h"
+file|"ops_buttons.h"
 end_include
 
 begin_include

@@ -16,16 +16,10 @@ directive|define
 name|__CROP_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b1617e0103
+DECL|enum|__anon2c1688d20103
 block|{
 DECL|enumerator|CROP_CROP
 name|CROP_CROP
@@ -38,16 +32,13 @@ name|CropType
 typedef|;
 end_typedef
 
-begin_comment
-comment|/*  select functions  */
-end_comment
-
 begin_function_decl
 name|void
 name|crop_draw
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -60,17 +51,17 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -91,6 +82,7 @@ name|tools_free_crop
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl

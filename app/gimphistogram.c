@@ -33,13 +33,19 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmath.h>
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"drawable.h"
 end_include
 
 begin_include
@@ -76,6 +82,24 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_processor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimphelpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpmath.h>
 end_include
 
 begin_struct

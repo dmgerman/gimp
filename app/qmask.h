@@ -40,7 +40,7 @@ name|qmask_activate
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GDisplay
 modifier|*
@@ -55,7 +55,7 @@ name|qmask_deactivate
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GDisplay
 modifier|*

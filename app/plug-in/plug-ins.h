@@ -22,18 +22,6 @@ directive|include
 file|"procedural_db.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpprogress.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"drawable.h"
-end_include
-
 begin_define
 DECL|macro|WRITE_BUFFER_SIZE
 define|#
@@ -93,7 +81,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad2fe520103
+DECL|enum|__anon2c60c5080103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"draw_core.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -55,6 +61,18 @@ begin_include
 include|#
 directive|include
 file|"gimage_mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -84,6 +102,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"patterns.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"clone.h"
 end_include
 
@@ -91,6 +121,12 @@ begin_include
 include|#
 directive|include
 file|"selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"temp_buf.h"
 end_include
 
 begin_include
@@ -154,7 +190,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27700cab0103
+DECL|enum|__anon29f09a140103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -1466,7 +1502,7 @@ condition|(
 operator|(
 name|layer
 operator|=
-name|gimage_get_active_layer
+name|gimp_image_get_active_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -2854,7 +2890,7 @@ name|width
 operator|--
 condition|)
 block|{
-name|gimage_get_color
+name|gimp_image_get_color
 argument_list|(
 name|src
 argument_list|,
@@ -2868,7 +2904,7 @@ argument_list|,
 name|s
 argument_list|)
 expr_stmt|;
-name|gimage_transform_color
+name|gimp_image_transform_color
 argument_list|(
 name|dest
 argument_list|,
@@ -2951,20 +2987,19 @@ name|int
 name|width
 parameter_list|)
 block|{
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|pat
 decl_stmt|,
 modifier|*
 name|p
 decl_stmt|;
-name|int
+name|gint
 name|color
 decl_stmt|,
 name|alpha
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 comment|/*  Make sure x, y are positive  */
@@ -3088,7 +3123,7 @@ name|mask
 operator|->
 name|bytes
 expr_stmt|;
-name|gimage_transform_color
+name|gimp_image_transform_color
 argument_list|(
 name|dest
 argument_list|,

@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpui.h"
 end_include
 
@@ -61,6 +67,24 @@ begin_include
 include|#
 directive|include
 file|"image_map.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_options.h"
 end_include
 
 begin_include
@@ -861,7 +885,7 @@ condition|(
 operator|!
 name|drawable_color
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -955,7 +979,7 @@ name|color_balance_dialog
 operator|->
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->

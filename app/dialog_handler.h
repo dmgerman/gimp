@@ -6,25 +6,15 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__DIALOG_HANDLER_H_
+name|__DIALOG_HANDLER_H__
 end_ifndef
 
 begin_define
-DECL|macro|__DIALOG_HANDLER_H_
+DECL|macro|__DIALOG_HANDLER_H__
 define|#
 directive|define
-name|__DIALOG_HANDLER_H_
+name|__DIALOG_HANDLER_H__
 end_define
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|__DIALOG_HANDLER_C_
-end_ifndef
-
-begin_comment
-comment|/* Bypass these declarations when compiling the file with the definitions,  * because of the G_MODULE_EXPORT attribute in it.  */
-end_comment
 
 begin_function_decl
 name|void
@@ -47,11 +37,6 @@ name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function_decl
 name|void
@@ -117,7 +102,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __DIALOG_HANDLER_H_ */
+comment|/* __DIALOG_HANDLER_H__ */
 end_comment
 
 end_unit

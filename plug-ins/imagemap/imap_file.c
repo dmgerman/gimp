@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -55,6 +55,12 @@ begin_include
 include|#
 directive|include
 file|"imap_table.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_function
@@ -523,7 +529,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c0c2f2c0108
+DECL|struct|__anon2be578d30108
 typedef|typedef
 struct|struct
 block|{

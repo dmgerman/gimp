@@ -62,13 +62,37 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdnd.h"
 end_include
 
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"procedural_db.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimphelpui.h"
 end_include
 
 begin_include
@@ -4182,7 +4206,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -5034,7 +5058,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b53710108
+DECL|struct|__anon2b63fa9a0108
 block|{
 DECL|member|def
 name|GimpImage
@@ -5122,7 +5146,7 @@ name|menu_item
 decl_stmt|;
 if|if
 condition|(
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -5191,7 +5215,7 @@ name|image_name
 operator|=
 name|g_basename
 argument_list|(
-name|gimage_filename
+name|gimp_image_filename
 argument_list|(
 name|gimage
 argument_list|)
@@ -5241,9 +5265,6 @@ argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
 name|data
 operator|->
 name|callback

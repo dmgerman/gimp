@@ -30,7 +30,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"layer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -7249,7 +7261,7 @@ modifier|*
 name|image_scale
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 init|=
@@ -7265,7 +7277,7 @@ name|display_flush
 init|=
 name|FALSE
 decl_stmt|;
-comment|/* this is a bit ugly:  				       we hijack the flush variable  				       to check if an undo_group was  				       already started */
+comment|/* this is a bit ugly:  					we hijack the flush variable  					to check if an undo_group was  					already started */
 name|g_assert
 argument_list|(
 name|image_scale
@@ -7316,7 +7328,7 @@ argument_list|,
 name|IMAGE_SCALE_UNDO
 argument_list|)
 expr_stmt|;
-name|gimage_set_resolution
+name|gimp_image_set_resolution
 argument_list|(
 name|gimage
 argument_list|,
@@ -7367,7 +7379,7 @@ argument_list|,
 name|IMAGE_SCALE_UNDO
 argument_list|)
 expr_stmt|;
-name|gimage_set_unit
+name|gimp_image_set_unit
 argument_list|(
 name|gimage
 argument_list|,
@@ -7451,7 +7463,7 @@ argument_list|,
 name|IMAGE_SCALE_UNDO
 argument_list|)
 expr_stmt|;
-name|gimage_scale
+name|gimp_image_scale
 argument_list|(
 name|gimage
 argument_list|,

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"channel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -78,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -96,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"rect_select.h"
 end_include
 
@@ -108,12 +126,26 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tile_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile.h"
 end_include
 
-begin_comment
-comment|/* ick. */
-end_comment
+begin_include
+include|#
+directive|include
+file|"tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_options.h"
+end_include
 
 begin_include
 include|#
@@ -1437,7 +1469,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|gimage_composite
+name|gimp_image_composite
 argument_list|(
 name|gimage
 argument_list|)
@@ -1459,7 +1491,7 @@ argument_list|)
 expr_stmt|;
 name|type
 operator|=
-name|gimage_composite_type
+name|gimp_image_composite_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -1704,7 +1736,7 @@ if|if
 condition|(
 name|op
 operator|==
-name|REPLACE
+name|CHANNEL_OP_REPLACE
 condition|)
 name|gimage_mask_clear
 argument_list|(
@@ -1748,7 +1780,7 @@ name|channel_feather
 argument_list|(
 name|fuzzy_mask
 argument_list|,
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1767,7 +1799,7 @@ expr_stmt|;
 else|else
 name|channel_combine_mask
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -2090,7 +2122,7 @@ name|sample_merged
 condition|?
 name|NULL
 else|:
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -2430,7 +2462,7 @@ name|gdisp_ptr
 expr_stmt|;
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->

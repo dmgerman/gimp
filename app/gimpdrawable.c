@@ -36,7 +36,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawableP.h"
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"channel.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdrawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer.h"
 end_include
 
 begin_include
@@ -72,7 +90,31 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"parasitelist.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile_manager.h"
 end_include
 
 begin_include
@@ -101,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c802b00103
+DECL|enum|__anon29f34c9b0103
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW

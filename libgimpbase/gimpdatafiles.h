@@ -16,20 +16,10 @@ directive|define
 name|__DATAFILES_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<time.h>
-end_include
-
-begin_comment
-comment|/***** Types *****/
-end_comment
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276f8ce40103
+DECL|enum|__anon29d92f970103
 block|{
 DECL|enumerator|INCLUDE_TEMP_DIR
 name|INCLUDE_TEMP_DIR

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimage.h"
 end_include
 
@@ -91,6 +97,12 @@ begin_include
 include|#
 directive|include
 file|"layers_dialogP.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"procedural_db.h"
 end_include
 
 begin_include
@@ -1713,7 +1725,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1c67c00108
+DECL|struct|__anon2c3a3c6b0108
 block|{
 DECL|member|def
 name|GImage

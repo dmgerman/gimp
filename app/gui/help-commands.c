@@ -12,7 +12,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<sys/types.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -138,7 +150,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimphelp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -174,7 +198,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"info_dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"info_window.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer.h"
 end_include
 
 begin_include
@@ -240,6 +276,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tips_dialog.h"
 end_include
 
@@ -275,6 +317,12 @@ end_endif
 begin_comment
 comment|/* DISPLAY_FILTERS */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimphelpui.h"
+end_include
 
 begin_include
 include|#
@@ -958,7 +1006,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -1013,7 +1061,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -1057,7 +1105,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -1208,7 +1256,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -3288,7 +3336,7 @@ argument_list|)
 expr_stmt|;
 name|current_layer
 operator|=
-name|gimage_get_layer_index
+name|gimp_image_get_layer_index
 argument_list|(
 name|gdisp
 operator|->
@@ -3303,7 +3351,7 @@ argument_list|)
 expr_stmt|;
 name|new_layer
 operator|=
-name|gimage_get_layer_by_index
+name|gimp_image_get_layer_by_index
 argument_list|(
 name|gdisp
 operator|->
@@ -3319,7 +3367,7 @@ condition|(
 name|new_layer
 condition|)
 block|{
-name|gimage_set_active_layer
+name|gimp_image_set_active_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -3377,7 +3425,7 @@ argument_list|)
 expr_stmt|;
 name|current_layer
 operator|=
-name|gimage_get_layer_index
+name|gimp_image_get_layer_index
 argument_list|(
 name|gdisp
 operator|->
@@ -3392,7 +3440,7 @@ argument_list|)
 expr_stmt|;
 name|new_layer
 operator|=
-name|gimage_get_layer_by_index
+name|gimp_image_get_layer_by_index
 argument_list|(
 name|gdisp
 operator|->
@@ -3408,7 +3456,7 @@ condition|(
 name|new_layer
 condition|)
 block|{
-name|gimage_set_active_layer
+name|gimp_image_set_active_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -3457,7 +3505,7 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|gimage_raise_layer
+name|gimp_image_raise_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -3498,7 +3546,7 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|gimage_lower_layer
+name|gimp_image_lower_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -3539,7 +3587,7 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|gimage_raise_layer_to_top
+name|gimp_image_raise_layer_to_top
 argument_list|(
 name|gdisp
 operator|->
@@ -3580,7 +3628,7 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|gimage_lower_layer_to_bottom
+name|gimp_image_lower_layer_to_bottom
 argument_list|(
 name|gdisp
 operator|->
@@ -3623,7 +3671,7 @@ argument_list|)
 expr_stmt|;
 name|floating_sel_anchor
 argument_list|(
-name|gimage_get_active_layer
+name|gimp_image_get_active_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -3693,7 +3741,7 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|gimage_flatten
+name|gimp_image_flatten
 argument_list|(
 name|gdisp
 operator|->
@@ -3988,7 +4036,7 @@ name|active_tool
 operator|->
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -4762,7 +4810,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|gimage_resize
+name|gimp_image_resize
 argument_list|(
 name|gimage
 argument_list|,

@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -31,6 +31,18 @@ begin_include
 include|#
 directive|include
 file|"appenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"channel.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"draw_core.h"
 end_include
 
 begin_include
@@ -60,12 +72,14 @@ end_include
 begin_include
 include|#
 directive|include
-file|"rect_select.h"
+file|"gimpimage.h"
 end_include
 
-begin_comment
-comment|/*  private header file for rect_select data structure  */
-end_comment
+begin_include
+include|#
+directive|include
+file|"rect_select.h"
+end_include
 
 begin_include
 include|#
@@ -77,6 +91,18 @@ begin_include
 include|#
 directive|include
 file|"selection_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_options.h"
 end_include
 
 begin_comment
@@ -182,7 +208,7 @@ name|channel_combine_ellipse
 argument_list|(
 name|new_mask
 argument_list|,
-name|ADD
+name|CHANNEL_OP_ADD
 argument_list|,
 name|x
 argument_list|,
@@ -199,7 +225,7 @@ name|channel_feather
 argument_list|(
 name|new_mask
 argument_list|,
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -248,7 +274,7 @@ name|channel_combine_ellipse
 argument_list|(
 name|new_mask
 argument_list|,
-name|ADD
+name|CHANNEL_OP_ADD
 argument_list|,
 name|x
 argument_list|,
@@ -263,7 +289,7 @@ argument_list|)
 expr_stmt|;
 name|channel_combine_mask
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -286,7 +312,7 @@ block|}
 else|else
 name|channel_combine_ellipse
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)

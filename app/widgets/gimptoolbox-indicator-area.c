@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontextpreview.h"
 end_include
 
@@ -55,6 +61,12 @@ begin_include
 include|#
 directive|include
 file|"gimpdnd.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpui.h"
 end_include
 
 begin_include

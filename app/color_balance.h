@@ -16,22 +16,10 @@ directive|define
 name|__COLOR_BALANCE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"image_map.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2992bda10103
+DECL|enum|__anon2ae17c920103
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS

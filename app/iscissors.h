@@ -32,6 +32,7 @@ name|tools_free_iscissors
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl

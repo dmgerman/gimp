@@ -16,25 +16,6 @@ directive|define
 name|__PALETTE_ENTRIES_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
-end_include
-
-begin_comment
-comment|/*  eeek  */
-end_comment
-
-begin_typedef
-DECL|typedef|PaletteEntries
-typedef|typedef
-name|struct
-name|_PaletteEntries
-name|PaletteEntries
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_PaletteEntries
 struct|struct
@@ -71,15 +52,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|PaletteEntry
-typedef|typedef
-name|struct
-name|_PaletteEntry
-name|PaletteEntry
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_PaletteEntry

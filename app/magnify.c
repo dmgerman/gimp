@@ -90,7 +90,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|"tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_options.h"
 end_include
 
 begin_include

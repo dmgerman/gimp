@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_QUERY_BOX_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpunit.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef

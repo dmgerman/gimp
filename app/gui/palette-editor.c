@@ -118,6 +118,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialog_handler.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -137,6 +149,12 @@ begin_include
 include|#
 directive|include
 file|"gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gradient.h"
 end_include
 
 begin_include
@@ -184,7 +202,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialog_handler.h"
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"procedural_db.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"temp_buf.h"
 end_include
 
 begin_include
@@ -306,7 +336,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c00a0830103
+DECL|enum|__anon29d8c88e0103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -10295,7 +10325,7 @@ name|l
 decl_stmt|;
 if|if
 condition|(
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -10787,7 +10817,7 @@ literal|"%s-%d"
 argument_list|,
 name|g_basename
 argument_list|(
-name|gimage_filename
+name|gimp_image_filename
 argument_list|(
 name|import_dialog
 operator|->
@@ -10843,7 +10873,7 @@ literal|"%s-%d"
 argument_list|,
 name|g_basename
 argument_list|(
-name|gimage_filename
+name|gimp_image_filename
 argument_list|(
 name|gimage
 argument_list|)
@@ -11267,7 +11297,7 @@ literal|"%s-%d"
 argument_list|,
 name|g_basename
 argument_list|(
-name|gimage_filename
+name|gimp_image_filename
 argument_list|(
 name|import_dialog
 operator|->
@@ -11320,7 +11350,7 @@ literal|"%s-%d"
 argument_list|,
 name|g_basename
 argument_list|(
-name|gimage_filename
+name|gimp_image_filename
 argument_list|(
 name|import_dialog
 operator|->
@@ -11686,7 +11716,7 @@ operator|->
 name|image_menu_item_indexed
 argument_list|)
 operator|&&
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -12935,14 +12965,14 @@ return|return;
 comment|/*  Get the image information  */
 name|bytes
 operator|=
-name|gimage_composite_bytes
+name|gimp_image_composite_bytes
 argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
 name|d_type
 operator|=
-name|gimage_composite_type
+name|gimp_image_composite_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -12990,7 +13020,7 @@ argument_list|(
 operator|&
 name|imagePR
 argument_list|,
-name|gimage_composite
+name|gimp_image_composite
 argument_list|(
 name|gimage
 argument_list|)
@@ -13101,7 +13131,7 @@ operator|++
 control|)
 block|{
 comment|/*  Get the rgb values for the color  */
-name|gimage_get_color
+name|gimp_image_get_color
 argument_list|(
 name|gimage
 argument_list|,
@@ -13255,7 +13285,7 @@ condition|)
 return|return;
 if|if
 condition|(
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)

@@ -16,12 +16,6 @@ directive|define
 name|__IMAGE_RENDER_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
 begin_comment
 comment|/*  Transparency representation  */
 end_comment
@@ -106,10 +100,10 @@ begin_function_decl
 name|void
 name|render_setup
 parameter_list|(
-name|int
+name|gint
 name|check_type
 parameter_list|,
-name|int
+name|gint
 name|check_size
 parameter_list|)
 function_decl|;
@@ -132,16 +126,16 @@ name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 function_decl|;

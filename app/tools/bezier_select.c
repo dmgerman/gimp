@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"channel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -37,6 +43,12 @@ begin_include
 include|#
 directive|include
 file|"draw_core.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"drawable.h"
 end_include
 
 begin_include
@@ -60,7 +72,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimage_mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcontext.h"
 end_include
 
 begin_include
@@ -90,7 +114,31 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"procedural_db.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"selection_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_options.h"
 end_include
 
 begin_include
@@ -200,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8aa4570108
+DECL|struct|__anon2bd655a10108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -236,7 +284,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8aa4570208
+DECL|struct|__anon2bd655a10208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -291,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8aa4570308
+DECL|struct|__anon2bd655a10308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -3445,7 +3493,7 @@ name|tool
 operator|->
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -3630,7 +3678,7 @@ comment|/* 	  init_edit_selection (tool, gdisp_ptr, bevent, EDIT_MASK_TRANSLATE)
 comment|/* 	  break; */
 comment|/* 	} */
 comment|/*       else if (!(bevent->state& GDK_SHIFT_MASK)&& !(bevent->state& GDK_CONTROL_MASK)) */
-comment|/* 	if (! (layer_is_floating_sel (gimage_get_active_layer (gdisp->gimage)))&& */
+comment|/* 	if (! (layer_is_floating_sel (gimp_image_get_active_layer (gdisp->gimage)))&& */
 comment|/* 	    gdisplay_mask_value (gdisp, bevent->x, bevent->y)> HALF_WAY) */
 comment|/* 	  { */
 comment|/* 	    init_edit_selection (tool, gdisp_ptr, bevent, EDIT_MASK_TO_LAYER_TRANSLATE); */
@@ -4589,7 +4637,7 @@ operator|)
 condition|)
 name|op
 operator|=
-name|ADD
+name|CHANNEL_OP_ADD
 expr_stmt|;
 elseif|else
 if|if
@@ -4613,7 +4661,7 @@ operator|)
 condition|)
 name|op
 operator|=
-name|SUB
+name|CHANNEL_OP_SUB
 expr_stmt|;
 elseif|else
 if|if
@@ -4636,13 +4684,13 @@ operator|)
 condition|)
 name|op
 operator|=
-name|INTERSECT
+name|CHANNEL_OP_INTERSECT
 expr_stmt|;
 else|else
 block|{
 name|op
 operator|=
-name|ADD
+name|CHANNEL_OP_ADD
 expr_stmt|;
 name|replace
 operator|=
@@ -9453,7 +9501,7 @@ argument_list|(
 operator|&
 name|maskPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -9467,7 +9515,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -9477,7 +9525,7 @@ name|mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -9744,7 +9792,7 @@ operator|/
 name|SUPERSAMPLE
 operator|)
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -10679,7 +10727,7 @@ name|active_tool
 operator|->
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -11071,7 +11119,7 @@ name|bezier_sel
 operator|->
 name|mask
 argument_list|,
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
@@ -11096,7 +11144,7 @@ expr_stmt|;
 else|else
 name|channel_combine_mask
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
@@ -12465,7 +12513,7 @@ name|curTool
 argument_list|,
 name|gdisp
 argument_list|,
-name|ADD
+name|CHANNEL_OP_ADD
 argument_list|,
 name|TRUE
 argument_list|)
@@ -13743,7 +13791,7 @@ name|ptr
 decl_stmt|;
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->

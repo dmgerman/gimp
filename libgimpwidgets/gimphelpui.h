@@ -30,20 +30,6 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
-DECL|typedef|GimpHelpFunc
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|GimpHelpFunc
-function_decl|)
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|help_data
-parameter_list|)
-function_decl|;
 name|void
 name|gimp_help_init
 parameter_list|(

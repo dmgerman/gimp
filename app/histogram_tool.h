@@ -16,24 +16,6 @@ directive|define
 name|__HISTOGRAM_TOOL_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"histogramwidget.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"image_map.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
 begin_define
 DECL|macro|HISTOGRAM_WIDTH
 define|#

@@ -16,24 +16,12 @@ directive|define
 name|__DISP_CALLBACKS_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"patterns.h"
-end_include
-
 begin_define
 DECL|macro|CANVAS_EVENT_MASK
 define|#
 directive|define
 name|CANVAS_EVENT_MASK
-value|GDK_EXPOSURE_MASK | GDK_POINTER_MOTION_MASK | \                            GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | \ 			   GDK_BUTTON_RELEASE_MASK | GDK_STRUCTURE_MASK | \ 			   GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK | \ 			   GDK_KEY_PRESS_MASK | GDK_KEY_RELEASE_MASK | \ 			   GDK_PROXIMITY_OUT_MASK
+value|(GDK_EXPOSURE_MASK | \ 			   GDK_POINTER_MOTION_MASK | \ 			   GDK_POINTER_MOTION_HINT_MASK | \ 			   GDK_BUTTON_PRESS_MASK | \ 			   GDK_BUTTON_RELEASE_MASK | \ 			   GDK_STRUCTURE_MASK | \ 			   GDK_ENTER_NOTIFY_MASK | \ 			   GDK_LEAVE_NOTIFY_MASK | \ 			   GDK_KEY_PRESS_MASK | \ 			   GDK_KEY_RELEASE_MASK | \ 			   GDK_PROXIMITY_OUT_MASK)
 end_define
 
 begin_function_decl
@@ -42,12 +30,15 @@ name|gdisplay_shell_events
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
+name|event
 parameter_list|,
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -58,9 +49,11 @@ name|gdisplay_canvas_events
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
+name|event
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -71,11 +64,14 @@ name|gdisplay_hruler_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
 name|gpointer
+name|dtata
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -86,11 +82,14 @@ name|gdisplay_vruler_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -101,11 +100,14 @@ name|gdisplay_origin_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl

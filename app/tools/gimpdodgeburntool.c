@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpui.h"
 end_include
 
@@ -84,7 +90,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"temp_buf.h"
 end_include
 
 begin_include

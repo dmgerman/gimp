@@ -16,12 +16,6 @@ directive|define
 name|__COLOR_AREA_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gdisplayF.h"
-end_include
-
 begin_define
 DECL|macro|FOREGROUND
 define|#

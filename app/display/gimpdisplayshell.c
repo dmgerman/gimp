@@ -96,7 +96,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdnd.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdrawable.h"
 end_include
 
 begin_include
@@ -144,6 +156,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"layer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"menus.h"
 end_include
 
@@ -156,6 +174,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"qmask.h"
 end_include
 
@@ -163,6 +193,18 @@ begin_include
 include|#
 directive|include
 file|"session.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile_manager.h"
 end_include
 
 begin_include
@@ -5893,7 +5935,7 @@ argument_list|,
 name|type
 argument_list|)
 expr_stmt|;
-name|gimage_disable_undo
+name|gimp_image_undo_disable
 argument_list|(
 name|new_gimage
 argument_list|)
@@ -5928,7 +5970,7 @@ name|COLORMAP_SIZE
 argument_list|)
 expr_stmt|;
 block|}
-name|gimage_set_resolution
+name|gimp_image_set_resolution
 argument_list|(
 name|new_gimage
 argument_list|,
@@ -5941,7 +5983,7 @@ operator|->
 name|yresolution
 argument_list|)
 expr_stmt|;
-name|gimage_set_unit
+name|gimp_image_set_unit
 argument_list|(
 name|new_gimage
 argument_list|,
@@ -6162,7 +6204,7 @@ operator|-
 name|off_y
 argument_list|)
 expr_stmt|;
-name|gimage_add_layer
+name|gimp_image_add_layer
 argument_list|(
 name|new_gimage
 argument_list|,
@@ -6184,7 +6226,7 @@ literal|0x0101
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage_enable_undo
+name|gimp_image_undo_enable
 argument_list|(
 name|new_gimage
 argument_list|)

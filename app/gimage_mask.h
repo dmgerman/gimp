@@ -16,22 +16,6 @@ directive|define
 name|__GIMAGE_MASK_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"boundary.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimage.h"
-end_include
-
-begin_comment
-comment|/*  mask functions  */
-end_comment
-
 begin_function_decl
 name|gboolean
 name|gimage_mask_boundary

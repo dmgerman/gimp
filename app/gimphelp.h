@@ -16,21 +16,9 @@ directive|define
 name|__GIMP_HELP_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimphelpui.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon29cf81e60103
+DECL|enum|__anon2bf74b1d0103
 block|{
 DECL|enumerator|HELP_BROWSER_GIMP
 name|HELP_BROWSER_GIMP

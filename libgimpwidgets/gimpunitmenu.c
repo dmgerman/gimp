@@ -18,7 +18,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpuitypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimphelpui.h"
 end_include
 
 begin_include
@@ -72,7 +90,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f092f40103
+DECL|enum|__anon279433be0103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED

@@ -16,28 +16,10 @@ directive|define
 name|__INFO_DIALOG_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimphelp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpsizeentry.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpunit.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289eb0400103
+DECL|enum|__anon2a2165390103
 block|{
 DECL|enumerator|INFO_LABEL
 name|INFO_LABEL
@@ -65,15 +47,6 @@ typedef|typedef
 name|struct
 name|_InfoField
 name|InfoField
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|InfoDialog
-typedef|typedef
-name|struct
-name|_InfoDialog
-name|InfoDialog
 typedef|;
 end_typedef
 

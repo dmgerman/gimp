@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"layer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"layers_dialog.h"
 end_include
 
@@ -126,7 +132,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"resize.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"temp_buf.h"
 end_include
 
 begin_include
@@ -217,12 +235,6 @@ begin_include
 include|#
 directive|include
 file|"pixmaps/anchor.xpm"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"layer_pvt.h"
 end_include
 
 begin_define
@@ -10935,7 +10947,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274caffa0108
+DECL|struct|__anon288db05b0108
 block|{
 DECL|member|gimage
 name|GimpImage

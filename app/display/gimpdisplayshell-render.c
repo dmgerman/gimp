@@ -42,6 +42,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -75,9 +87,11 @@ directive|include
 file|"tile.h"
 end_include
 
-begin_comment
-comment|/* ick. */
-end_comment
+begin_include
+include|#
+directive|include
+file|"tile_manager.h"
+end_include
 
 begin_typedef
 DECL|typedef|RenderInfo
@@ -1090,7 +1104,7 @@ argument_list|)
 expr_stmt|;
 name|image_type
 operator|=
-name|gimage_projection_type
+name|gimp_image_projection_type
 argument_list|(
 name|gdisp
 operator|->
@@ -1116,7 +1130,7 @@ name|g_message
 argument_list|(
 literal|"unknown gimage projection type: %d"
 argument_list|,
-name|gimage_projection_type
+name|gimp_image_projection_type
 argument_list|(
 name|gdisp
 operator|->
@@ -1251,7 +1265,7 @@ name|step
 decl_stmt|;
 name|cmap
 operator|=
-name|gimage_cmap
+name|gimp_image_cmap
 argument_list|(
 name|info
 operator|->
@@ -1587,7 +1601,7 @@ name|step
 decl_stmt|;
 name|cmap
 operator|=
-name|gimage_cmap
+name|gimp_image_cmap
 argument_list|(
 name|info
 operator|->
@@ -3439,7 +3453,7 @@ name|info
 operator|->
 name|src_tiles
 operator|=
-name|gimage_projection
+name|gimp_image_projection
 argument_list|(
 name|gdisp
 operator|->
@@ -3526,7 +3540,7 @@ name|info
 operator|->
 name|src_bpp
 operator|=
-name|gimage_projection_bytes
+name|gimp_image_projection_bytes
 argument_list|(
 name|gdisp
 operator|->
@@ -3598,7 +3612,7 @@ name|NULL
 expr_stmt|;
 switch|switch
 condition|(
-name|gimage_projection_type
+name|gimp_image_projection_type
 argument_list|(
 name|gdisp
 operator|->
@@ -3621,7 +3635,7 @@ name|alpha
 operator|=
 name|render_image_init_alpha
 argument_list|(
-name|gimage_projection_opacity
+name|gimp_image_projection_opacity
 argument_list|(
 name|gdisp
 operator|->

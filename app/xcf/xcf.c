@@ -82,12 +82,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -100,7 +94,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"channel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"drawable.h"
 end_include
 
 begin_include
@@ -130,6 +136,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"layer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug_in.h"
 end_include
 
@@ -148,35 +160,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pathP.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"procedural_db.h"
 end_include
 
-begin_comment
-comment|/* #include "tile_swap.h"*/
-end_comment
-
 begin_include
 include|#
 directive|include
-file|"xcf.h"
+file|"tile.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"drawable_pvt.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"layer_pvt.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"channel_pvt.h"
+file|"tile_manager.h"
 end_include
 
 begin_include
@@ -188,35 +190,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pathP.h"
+file|"xcf.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tile.h"
-end_include
-
-begin_comment
-comment|/* ick. */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpunit.h>
+file|"libgimp/gimplimits.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimplimits.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpparasite.h>
+file|"libgimp/gimpparasite.h"
 end_include
 
 begin_include
@@ -232,7 +218,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ced3ac0103
+DECL|enum|__anon28fbc6090103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -367,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ced3ac0203
+DECL|enum|__anon28fbc6090203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -2051,7 +2037,7 @@ index|]
 decl_stmt|;
 name|floating_layer
 operator|=
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gimage
 argument_list|)
@@ -2766,7 +2752,7 @@ if|if
 condition|(
 name|layer
 operator|==
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gimage
 argument_list|)
@@ -8658,7 +8644,7 @@ name|info
 operator|->
 name|floating_sel
 condition|)
-name|gimage_add_layer
+name|gimp_image_add_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -8756,7 +8742,7 @@ name|gimage
 operator|->
 name|selection_mask
 condition|)
-name|gimage_add_channel
+name|gimp_image_add_channel
 argument_list|(
 name|gimage
 argument_list|,
@@ -8781,7 +8767,7 @@ name|info
 operator|->
 name|active_layer
 condition|)
-name|gimage_set_active_layer
+name|gimp_image_set_active_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -8796,7 +8782,7 @@ name|info
 operator|->
 name|active_channel
 condition|)
-name|gimage_set_active_channel
+name|gimp_image_set_active_channel
 argument_list|(
 name|gimage
 argument_list|,
@@ -8805,7 +8791,7 @@ operator|->
 name|active_channel
 argument_list|)
 expr_stmt|;
-name|gimage_set_filename
+name|gimp_image_set_filename
 argument_list|(
 name|gimage
 argument_list|,

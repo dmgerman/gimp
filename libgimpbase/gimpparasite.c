@@ -68,6 +68,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|"gimptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpparasite.h"
 end_include
 

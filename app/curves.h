@@ -16,24 +16,6 @@ directive|define
 name|__CURVES_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"image_map.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"lut_funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
 begin_define
 DECL|macro|SMOOTH
 define|#
@@ -245,7 +227,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|float
+name|gfloat
 name|curves_lut_func
 parameter_list|(
 name|CurvesDialog

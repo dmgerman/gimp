@@ -16,16 +16,10 @@ directive|define
 name|__DEVICES_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e9bebc0103
+DECL|enum|__anon2948b56d0103
 block|{
 DECL|enumerator|DEVICE_MODE
 name|DEVICE_MODE

@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -55,6 +55,18 @@ begin_include
 include|#
 directive|include
 file|"gimage_mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -108,7 +120,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"paint_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"temp_buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile_manager.h"
 end_include
 
 begin_include
@@ -120,12 +156,8 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tile.h"
+file|"libgimp/gimpintl.h"
 end_include
-
-begin_comment
-comment|/* ick. */
-end_comment
 
 begin_define
 DECL|macro|SUBSAMPLE
@@ -4409,7 +4441,7 @@ argument_list|)
 expr_stmt|;
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -4724,7 +4756,7 @@ name|ink_finish
 argument_list|(
 name|ink_tool
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -5158,7 +5190,7 @@ argument_list|)
 expr_stmt|;
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -5487,7 +5519,7 @@ condition|(
 operator|(
 name|layer
 operator|=
-name|gimage_get_active_layer
+name|gimp_image_get_active_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -6108,7 +6140,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2a32d8740103
+DECL|enum|__anon2bab15160103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -7046,7 +7078,7 @@ operator|!
 name|canvas_buf
 condition|)
 return|return;
-name|gimage_get_foreground
+name|gimp_image_get_foreground
 argument_list|(
 name|gimage
 argument_list|,
@@ -7200,7 +7232,7 @@ name|canvas_buf
 argument_list|)
 expr_stmt|;
 comment|/*  apply the paint area to the gimage  */
-name|gimage_apply_image
+name|gimp_image_apply_image
 argument_list|(
 name|gimage
 argument_list|,

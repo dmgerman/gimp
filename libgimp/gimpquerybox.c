@@ -18,6 +18,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpuitypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdialog.h"
 end_include
 

@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_WIDGETS_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpsizeentry.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef

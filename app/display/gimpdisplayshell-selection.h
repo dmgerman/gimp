@@ -16,19 +16,10 @@ directive|define
 name|__SELECTION_H__
 end_define
 
-begin_typedef
-DECL|typedef|Selection
-typedef|typedef
-name|struct
-name|_selection
-name|Selection
-typedef|;
-end_typedef
-
 begin_struct
-DECL|struct|_selection
+DECL|struct|_Selection
 struct|struct
-name|_selection
+name|_Selection
 block|{
 comment|/*  This information is for maintaining the selection's appearance  */
 DECL|member|win
@@ -81,57 +72,57 @@ name|segs_layer
 decl_stmt|;
 comment|/*  gdk segments of area boundary     */
 DECL|member|num_segs_in
-name|int
+name|gint
 name|num_segs_in
 decl_stmt|;
 comment|/*  number of segments in segs1       */
 DECL|member|num_segs_out
-name|int
+name|gint
 name|num_segs_out
 decl_stmt|;
 comment|/*  number of segments in segs2       */
 DECL|member|num_segs_layer
-name|int
+name|gint
 name|num_segs_layer
 decl_stmt|;
 comment|/*  number of segments in segs3       */
 DECL|member|index_in
-name|int
+name|gint
 name|index_in
 decl_stmt|;
 comment|/*  index of current stipple pattern  */
 DECL|member|index_out
-name|int
+name|gint
 name|index_out
 decl_stmt|;
 comment|/*  index of current stipple pattern  */
 DECL|member|index_layer
-name|int
+name|gint
 name|index_layer
 decl_stmt|;
 comment|/*  index of current stipple pattern  */
 DECL|member|state
-name|int
+name|gint
 name|state
 decl_stmt|;
 comment|/*  internal drawing state            */
 DECL|member|paused
-name|int
+name|gint
 name|paused
 decl_stmt|;
 comment|/*  count of pause requests           */
 DECL|member|recalc
-name|int
+name|gint
 name|recalc
 decl_stmt|;
 comment|/*  flag to recalculate the selection */
 DECL|member|speed
-name|int
+name|gint
 name|speed
 decl_stmt|;
 comment|/*  speed of marching ants            */
 DECL|member|hidden
-name|int
+name|gint
 name|hidden
 decl_stmt|;
 comment|/*  is the selection hidden?          */
@@ -141,7 +132,7 @@ name|timer
 decl_stmt|;
 comment|/*  timer for successive draws        */
 DECL|member|cycle
-name|int
+name|gint
 name|cycle
 decl_stmt|;
 comment|/*  color cycling turned on           */
@@ -162,7 +153,7 @@ index|]
 decl_stmt|;
 comment|/*  points of segs_in for fast ants   */
 DECL|member|num_points_in
-name|int
+name|gint
 name|num_points_in
 index|[
 literal|8
@@ -199,11 +190,11 @@ modifier|*
 parameter_list|,
 name|gpointer
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -235,7 +226,7 @@ parameter_list|(
 name|Selection
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -267,8 +258,7 @@ parameter_list|(
 name|Selection
 modifier|*
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl

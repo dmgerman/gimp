@@ -54,6 +54,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"temp_buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimphelpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpmath.h"
 end_include
 

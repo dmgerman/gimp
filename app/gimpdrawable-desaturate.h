@@ -16,10 +16,6 @@ directive|define
 name|__DESATURATE_H__
 end_define
 
-begin_comment
-comment|/*  desaturate functions  */
-end_comment
-
 begin_function_decl
 name|void
 name|image_desaturate

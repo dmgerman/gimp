@@ -16,18 +16,6 @@ directive|define
 name|__FUZZY_SELECT_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
 begin_decl_stmt
 specifier|extern
 name|Channel

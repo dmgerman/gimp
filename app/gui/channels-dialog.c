@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"channel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"channels_dialog.h"
 end_include
 
@@ -132,19 +138,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channel_pvt.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/gimphelpui.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"libgimp/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_include
@@ -4772,7 +4778,7 @@ name|new_channel
 argument_list|,
 name|active_channel
 argument_list|,
-name|ADD
+name|CHANNEL_OP_ADD
 argument_list|,
 literal|0
 argument_list|,
@@ -4867,7 +4873,7 @@ name|new_channel
 argument_list|,
 name|active_channel
 argument_list|,
-name|SUB
+name|CHANNEL_OP_SUB
 argument_list|,
 literal|0
 argument_list|,
@@ -4962,7 +4968,7 @@ name|new_channel
 argument_list|,
 name|active_channel
 argument_list|,
-name|INTERSECT
+name|CHANNEL_OP_INTERSECT
 argument_list|,
 literal|0
 argument_list|,
@@ -6887,7 +6893,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c971da20108
+DECL|struct|__anon2b0274d90108
 block|{
 DECL|member|gimage
 name|GimpImage

@@ -16,30 +16,6 @@ directive|define
 name|__PAINT_CORE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"draw_core.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpbrush.h"
-end_include
-
 begin_comment
 comment|/* the different states that the painting function can be called with  */
 end_comment
@@ -139,7 +115,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29e13a670103
+DECL|enum|__anon2c13d1960103
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -178,9 +154,9 @@ function_decl|;
 end_typedef
 
 begin_struct
-DECL|struct|_paint_core
+DECL|struct|_PaintCore
 struct|struct
-name|_paint_core
+name|_PaintCore
 block|{
 DECL|member|core
 name|DrawCore

@@ -1,8 +1,30 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_comment
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
 begin_include
 include|#
 directive|include
 file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<apptypes.h>
 end_include
 
 begin_include
@@ -66,7 +88,7 @@ modifier|*
 name|tile
 parameter_list|)
 block|{
-name|int
+name|gint
 name|height
 decl_stmt|,
 name|y
@@ -125,14 +147,14 @@ end_function
 
 begin_function
 name|TileRowHint
-DECL|function|tile_get_rowhint (Tile * tile,int yoff)
+DECL|function|tile_get_rowhint (Tile * tile,gint yoff)
 name|tile_get_rowhint
 parameter_list|(
 name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|int
+name|gint
 name|yoff
 parameter_list|)
 block|{
@@ -188,14 +210,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_set_rowhint (Tile * tile,int yoff,TileRowHint rowhint)
+DECL|function|tile_set_rowhint (Tile * tile,gint yoff,TileRowHint rowhint)
 name|tile_set_rowhint
 parameter_list|(
 name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|int
+name|gint
 name|yoff
 parameter_list|,
 name|TileRowHint
@@ -253,14 +275,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_init (Tile * tile,int bpp)
+DECL|function|tile_init (Tile * tile,gint bpp)
 name|tile_init
 parameter_list|(
 name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|int
+name|gint
 name|bpp
 parameter_list|)
 block|{
@@ -341,6 +363,8 @@ name|tile
 operator|->
 name|next
 operator|=
+name|NULL
+expr_stmt|;
 name|tile
 operator|->
 name|prev

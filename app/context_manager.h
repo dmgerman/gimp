@@ -16,18 +16,6 @@ directive|define
 name|__CONTEXT_MANAGER_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"toolsF.h"
-end_include
-
 begin_function_decl
 name|void
 name|context_manager_init

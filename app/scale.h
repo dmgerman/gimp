@@ -16,16 +16,10 @@ directive|define
 name|__SCALE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b854b310103
+DECL|enum|__anon2959bee90103
 block|{
 DECL|enumerator|ZOOMIN
 name|ZOOMIN
@@ -37,10 +31,6 @@ block|}
 name|ZoomType
 typedef|;
 end_typedef
-
-begin_comment
-comment|/*  Functions  */
-end_comment
 
 begin_function_decl
 name|void

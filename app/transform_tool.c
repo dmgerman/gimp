@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -36,13 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
+file|"gimpcontext.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"gimpui.h"
 end_include
 
 begin_include
@@ -67,6 +67,18 @@ begin_include
 include|#
 directive|include
 file|"shear_tool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_options.h"
 end_include
 
 begin_include

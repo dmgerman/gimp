@@ -63,6 +63,15 @@ parameter_list|)
 value|(GTK_CHECK_CLASS_CAST (klass, gimp_brush_list_get_type(), GimpBrushListClass))
 end_define
 
+begin_typedef
+DECL|typedef|GimpBrushListClass
+typedef|typedef
+name|struct
+name|_GimpBrushListClass
+name|GimpBrushListClass
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpBrushList
 struct|struct
@@ -79,15 +88,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|GimpBrushListClass
-typedef|typedef
-name|struct
-name|_GimpBrushListClass
-name|GimpBrushListClass
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpBrushListClass

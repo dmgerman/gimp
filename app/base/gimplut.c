@@ -33,12 +33,20 @@ directive|include
 file|"gimplut.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
+end_include
+
 begin_function
 name|GimpLut
 modifier|*
-DECL|function|gimp_lut_new ()
+DECL|function|gimp_lut_new (void)
 name|gimp_lut_new
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GimpLut
 modifier|*
@@ -81,7 +89,7 @@ modifier|*
 name|lut
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 for|for
@@ -109,12 +117,6 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|lut
-operator|->
-name|luts
-condition|)
 name|g_free
 argument_list|(
 name|lut
@@ -127,7 +129,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_lut_setup (GimpLut * lut,GimpLutFunc func,void * user_data,int nchannels)
+DECL|function|gimp_lut_setup (GimpLut * lut,GimpLutFunc func,void * user_data,gint nchannels)
 name|gimp_lut_setup
 parameter_list|(
 name|GimpLut
@@ -141,16 +143,16 @@ name|void
 modifier|*
 name|user_data
 parameter_list|,
-name|int
+name|gint
 name|nchannels
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|v
 decl_stmt|;
-name|double
+name|gdouble
 name|val
 decl_stmt|;
 if|if
@@ -205,9 +207,12 @@ name|luts
 operator|=
 name|g_new
 argument_list|(
-argument|unsigned char*
+name|guchar
+operator|*
 argument_list|,
-argument|lut->nchannels
+name|lut
+operator|->
+name|nchannels
 argument_list|)
 expr_stmt|;
 for|for
@@ -235,7 +240,7 @@ index|]
 operator|=
 name|g_new
 argument_list|(
-argument|unsigned char
+name|guchar
 argument_list|,
 literal|256
 argument_list|)
@@ -333,7 +338,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_lut_setup_exact (GimpLut * lut,GimpLutFunc func,void * user_data,int nchannels)
+DECL|function|gimp_lut_setup_exact (GimpLut * lut,GimpLutFunc func,void * user_data,gint nchannels)
 name|gimp_lut_setup_exact
 parameter_list|(
 name|GimpLut
@@ -347,7 +352,7 @@ name|void
 modifier|*
 name|user_data
 parameter_list|,
-name|int
+name|gint
 name|nchannels
 parameter_list|)
 block|{
@@ -383,7 +388,7 @@ modifier|*
 name|destPR
 parameter_list|)
 block|{
-name|int
+name|gint
 name|h
 decl_stmt|,
 name|width
@@ -392,16 +397,14 @@ name|src_r_i
 decl_stmt|,
 name|dest_r_i
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|src
 decl_stmt|,
 modifier|*
 name|dest
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|lut0
 init|=
@@ -780,10 +783,8 @@ expr_stmt|;
 block|}
 break|break;
 default|default:
-name|fprintf
+name|g_warning
 argument_list|(
-name|stderr
-argument_list|,
 literal|"gimplut: Error: nchannels = %d\n"
 argument_list|,
 name|lut
@@ -824,20 +825,18 @@ modifier|*
 name|srcPR
 parameter_list|)
 block|{
-name|int
+name|gint
 name|h
 decl_stmt|,
 name|width
 decl_stmt|,
 name|src_r_i
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|src
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|lut0
 init|=
@@ -1175,10 +1174,8 @@ expr_stmt|;
 block|}
 break|break;
 default|default:
-name|fprintf
+name|g_warning
 argument_list|(
-name|stderr
-argument_list|,
 literal|"gimplut: Error: nchannels = %d\n"
 argument_list|,
 name|lut

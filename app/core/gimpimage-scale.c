@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"channel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -66,19 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint_funcs.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"parasitelist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
+file|"gimprc.h"
 end_include
 
 begin_include
@@ -96,13 +96,37 @@ end_include
 begin_include
 include|#
 directive|include
+file|"layer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"parasitelist.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"path.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"temp_buf.h"
 end_include
 
 begin_include
@@ -120,18 +144,8 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layer_pvt.h"
+file|"undo.h"
 end_include
-
-begin_include
-include|#
-directive|include
-file|"drawable_pvt.h"
-end_include
-
-begin_comment
-comment|/* ick ick. */
-end_comment
 
 begin_include
 include|#
@@ -649,7 +663,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a30f7a40103
+DECL|enum|__anon294ad13f0103
 block|{
 DECL|enumerator|CLEAN
 name|CLEAN
@@ -2659,7 +2673,7 @@ name|list
 operator|->
 name|data
 expr_stmt|;
-name|gimage_remove_layer
+name|gimp_image_remove_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -13108,7 +13122,7 @@ name|gimage
 operator|->
 name|layers
 condition|)
-name|gimage_set_active_layer
+name|gimp_image_set_active_layer
 argument_list|(
 name|gimage
 argument_list|,

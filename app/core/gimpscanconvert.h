@@ -16,10 +16,10 @@ directive|define
 name|SCAN_CONVERT_H
 end_define
 
-begin_typedef
-typedef|typedef
+begin_struct
+DECL|struct|_ScanConvertPoint
 struct|struct
-DECL|struct|__anon297c40220108
+name|_ScanConvertPoint
 block|{
 DECL|member|x
 name|gdouble
@@ -29,11 +29,9 @@ DECL|member|y
 name|gdouble
 name|y
 decl_stmt|;
-DECL|typedef|ScanConvertPoint
 block|}
-name|ScanConvertPoint
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_typedef
 DECL|typedef|ScanConverter
@@ -65,6 +63,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|scan_converter_free
+parameter_list|(
+name|ScanConverter
+modifier|*
+name|scan_converter
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* Add "npoints" from "pointlist" to the polygon currently being  * described by "scan_converter".  */
 end_comment
@@ -88,7 +97,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Scan convert the polygon described by the list of points passed to  * scan_convert_add_points, and return a channel with a bits set if  * they fall within the polygon defined.  The polygon is filled  * according to the even-odd rule.  The polygon is closed by  * joining the final point to the initial point. */
+comment|/* Scan convert the polygon described by the list of points passed to  * scan_convert_add_points, and return a channel with a bits set if  * they fall within the polygon defined.  The polygon is filled  * according to the even-odd rule.  The polygon is closed by  * joining the final point to the initial point.  */
 end_comment
 
 begin_function_decl
@@ -103,17 +112,6 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|scan_converter_free
-parameter_list|(
-name|ScanConverter
-modifier|*
-name|scan_converter
 parameter_list|)
 function_decl|;
 end_function_decl

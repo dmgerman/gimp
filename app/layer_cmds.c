@@ -10,13 +10,25 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"procedural_db.h"
 end_include
 
 begin_include
@@ -40,13 +52,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layer.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer_pvt.h"
+file|"layer.h"
 end_include
 
 begin_include
@@ -1501,7 +1513,7 @@ condition|)
 block|{
 name|floating_layer
 operator|=
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gimage
 argument_list|)
@@ -1801,7 +1813,7 @@ condition|)
 block|{
 name|floating_layer
 operator|=
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gimage
 argument_list|)
@@ -2194,7 +2206,7 @@ condition|)
 block|{
 name|floating_layer
 operator|=
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gimage
 argument_list|)
@@ -2607,7 +2619,7 @@ condition|)
 block|{
 name|floating_layer
 operator|=
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gimage
 argument_list|)

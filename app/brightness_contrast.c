@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplut.h"
 end_include
 
@@ -60,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"image_map.h"
 end_include
 
@@ -67,6 +79,18 @@ begin_include
 include|#
 directive|include
 file|"lut_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
 end_include
 
 begin_include
@@ -579,7 +603,7 @@ if|if
 condition|(
 name|drawable_indexed
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -643,7 +667,7 @@ name|brightness_contrast_dialog
 operator|->
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->

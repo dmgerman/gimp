@@ -6,25 +6,15 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMPPROGRESS_H__
+name|__GIMPP_ROGRESS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMPPROGRESS_H__
+DECL|macro|__GIMPP_ROGRESS_H__
 define|#
 directive|define
-name|__GIMPPROGRESS_H__
+name|__GIMPP_ROGRESS_H__
 end_define
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_comment
-comment|/*  eeek  */
-end_comment
 
 begin_comment
 comment|/* Progress bars for use internally by the main GIMP application. */
@@ -39,43 +29,6 @@ struct_decl|struct
 name|gimp_progress_pvt
 struct_decl|;
 end_struct_decl
-
-begin_comment
-comment|/* typedefs */
-end_comment
-
-begin_typedef
-DECL|typedef|gimp_progress
-typedef|typedef
-name|struct
-name|gimp_progress_pvt
-name|gimp_progress
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|progress_func_t
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|progress_func_t
-function_decl|)
-parameter_list|(
-name|gint
-name|ymin
-parameter_list|,
-name|gint
-name|ymax
-parameter_list|,
-name|gint
-name|curr_y
-parameter_list|,
-name|gpointer
-name|progress_data
-parameter_list|)
-function_decl|;
-end_typedef
 
 begin_comment
 comment|/* functions */
@@ -128,7 +81,7 @@ parameter_list|(
 name|gimp_progress
 modifier|*
 parameter_list|,
-name|float
+name|gfloat
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -174,7 +127,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMPPROGRESS_H__ */
+comment|/* __GIMP_PROGRESS_H__ */
 end_comment
 
 end_unit

@@ -16,31 +16,6 @@ directive|define
 name|__PIXEL_REGION_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"tile_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixel_processor.h"
-end_include
-
-begin_comment
-comment|/* this is temporary, */
-end_comment
-
-begin_typedef
-DECL|typedef|PixelRegion
-typedef|typedef
-name|struct
-name|_PixelRegion
-name|PixelRegion
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_PixelRegion
 struct|struct
@@ -118,15 +93,6 @@ block|}
 struct|;
 end_struct
 
-begin_typedef
-DECL|typedef|PixelRegionHolder
-typedef|typedef
-name|struct
-name|_PixelRegionHolder
-name|PixelRegionHolder
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_PixelRegionHolder
 struct|struct
@@ -157,15 +123,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|PixelRegionIterator
-typedef|typedef
-name|struct
-name|_PixelRegionIterator
-name|PixelRegionIterator
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_PixelRegionIterator

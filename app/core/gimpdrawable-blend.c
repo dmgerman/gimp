@@ -84,13 +84,31 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimage_mask.h"
 end_include
 
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdnd.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpprogress.h"
 end_include
 
 begin_include
@@ -108,7 +126,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
 end_include
 
 begin_include
@@ -133,6 +163,12 @@ begin_include
 include|#
 directive|include
 file|"tile.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile_manager.h"
 end_include
 
 begin_include
@@ -364,7 +400,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2944f6960108
+DECL|struct|__anon2b1d0c860108
 block|{
 DECL|member|offset
 name|gdouble
@@ -416,7 +452,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2944f6960208
+DECL|struct|__anon2b1d0c860208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -2438,7 +2474,7 @@ switch|switch
 condition|(
 name|drawable_type
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -2766,7 +2802,7 @@ name|PDB_DRAWABLE
 argument_list|,
 name|drawable_ID
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gimage
 argument_list|)
@@ -2955,7 +2991,7 @@ name|blend
 argument_list|(
 name|gimage
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gimage
 argument_list|)
@@ -3555,7 +3591,7 @@ switch|switch
 condition|(
 name|drawable_type
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -4298,7 +4334,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimage_apply_image
+name|gimp_image_apply_image
 argument_list|(
 name|gimage
 argument_list|,
@@ -6031,7 +6067,7 @@ block|{
 name|PixelRegion
 name|maskR
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -6040,7 +6076,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|offx
 decl_stmt|,
 name|offy
@@ -6076,7 +6112,7 @@ expr_stmt|;
 comment|/*  the selection mask  */
 name|mask
 operator|=
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)

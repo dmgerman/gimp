@@ -16,16 +16,6 @@ directive|define
 name|__MAGNIFY_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
-begin_comment
-comment|/*  magnify functions  */
-end_comment
-
 begin_function_decl
 name|Tool
 modifier|*

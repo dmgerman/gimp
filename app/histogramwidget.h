@@ -70,15 +70,6 @@ value|GTK_CHECK_TYPE (obj, histogram_widget_get_type ())
 end_define
 
 begin_typedef
-DECL|typedef|HistogramWidget
-typedef|typedef
-name|struct
-name|_HistogramWidget
-name|HistogramWidget
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|HistogramWidgetClass
 typedef|typedef
 name|struct
@@ -86,10 +77,6 @@ name|_HistogramWidgetClass
 name|HistogramWidgetClass
 typedef|;
 end_typedef
-
-begin_comment
-comment|/* HistogramWidget signals:      range_changed */
-end_comment
 
 begin_struct
 DECL|struct|_HistogramWidget

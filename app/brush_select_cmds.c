@@ -10,7 +10,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
+file|"config.h"
 end_include
 
 begin_include
@@ -22,7 +22,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"procedural_db.h"
 end_include
 
 begin_include
@@ -35,6 +47,12 @@ begin_include
 include|#
 directive|include
 file|"gimpbrushlist.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcontext.h"
 end_include
 
 begin_decl_stmt

@@ -119,13 +119,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpvector.h"
+file|"brush_header.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"brush_header.h"
+file|"patterns.h"
 end_include
 
 begin_include
@@ -178,7 +178,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b80d12e0103
+DECL|enum|__anon28896aee0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY

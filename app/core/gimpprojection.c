@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"channel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"colormaps.h"
 end_include
 
@@ -79,6 +85,12 @@ begin_include
 include|#
 directive|include
 file|"gdisplay_ops.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimage.h"
 end_include
 
 begin_include
@@ -126,6 +138,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"layer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"lc_dialog.h"
 end_include
 
@@ -168,6 +186,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools.h"
 end_include
 
@@ -203,16 +227,6 @@ include|#
 directive|include
 file|"bezier_selectP.h"
 end_include
-
-begin_include
-include|#
-directive|include
-file|"layer_pvt.h"
-end_include
-
-begin_comment
-comment|/* ick. (not alone either) */
-end_comment
 
 begin_include
 include|#
@@ -333,10 +347,10 @@ parameter_list|(
 name|GDisplay
 modifier|*
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -387,13 +401,13 @@ parameter_list|(
 name|GDisplay
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -406,13 +420,13 @@ parameter_list|(
 name|GDisplay
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -425,13 +439,13 @@ parameter_list|(
 name|GDisplay
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -455,13 +469,13 @@ parameter_list|(
 name|GDisplay
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -485,8 +499,7 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -808,7 +821,7 @@ name|height
 argument_list|,
 name|title
 argument_list|,
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -826,7 +839,7 @@ operator|->
 name|color_type
 operator|=
 operator|(
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -1106,14 +1119,14 @@ name|gimage
 expr_stmt|;
 name|empty
 operator|=
-name|gimage_is_empty
+name|gimp_image_is_empty
 argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -1260,7 +1273,7 @@ literal|"%s"
 argument_list|,
 name|g_basename
 argument_list|(
-name|gimage_filename
+name|gimp_image_filename
 argument_list|(
 name|gimage
 argument_list|)
@@ -1284,7 +1297,7 @@ name|i
 argument_list|,
 literal|"%s"
 argument_list|,
-name|gimage_filename
+name|gimp_image_filename
 argument_list|(
 name|gimage
 argument_list|)
@@ -5829,7 +5842,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimage_invalidate
+name|gimp_image_invalidate
 argument_list|(
 name|gdisp
 operator|->
@@ -6397,7 +6410,7 @@ if|#
 directive|if
 literal|0
 comment|/* Invalidate the projection just after we render it! */
-block|gimage_invalidate_without_render (gdisp->gimage, 					      j - gdisp->disp_xoffset, 					      i - gdisp->disp_yoffset, 					      dx, dy, 					      0, 0, 0, 0);
+block|gimp_image_invalidate_without_render (gdisp->gimage, 						  j - gdisp->disp_xoffset, 						  i - gdisp->disp_yoffset, 						  dx, dy, 						  0, 0, 0, 0);
 endif|#
 directive|endif
 ifdef|#
@@ -6577,7 +6590,7 @@ condition|(
 operator|(
 name|layer
 operator|=
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->
@@ -6605,7 +6618,7 @@ condition|(
 operator|!
 name|channel_bounds
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
@@ -6729,7 +6742,7 @@ condition|(
 operator|!
 name|channel_bounds
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
@@ -6909,7 +6922,7 @@ name|use_offsets
 condition|)
 name|drawable_offsets
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -7064,7 +7077,7 @@ name|use_offsets
 condition|)
 name|drawable_offsets
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -7235,7 +7248,7 @@ name|use_offsets
 condition|)
 name|drawable_offsets
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -7377,7 +7390,7 @@ name|use_offsets
 condition|)
 name|drawable_offsets
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -7850,7 +7863,7 @@ condition|)
 block|{
 name|base_type
 operator|=
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gdisp
 operator|->
@@ -7860,7 +7873,7 @@ expr_stmt|;
 name|fs
 operator|=
 operator|(
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->
@@ -7873,7 +7886,7 @@ expr_stmt|;
 name|aux
 operator|=
 operator|(
-name|gimage_get_active_channel
+name|gimp_image_get_active_channel
 argument_list|(
 name|gdisp
 operator|->
@@ -7897,7 +7910,7 @@ operator|)
 expr_stmt|;
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -7922,7 +7935,7 @@ condition|)
 block|{
 name|layer
 operator|=
-name|gimage_get_active_layer
+name|gimp_image_get_active_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -7955,7 +7968,7 @@ expr_stmt|;
 block|}
 name|lind
 operator|=
-name|gimage_get_layer_index
+name|gimp_image_get_layer_index
 argument_list|(
 name|gdisp
 operator|->

@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -37,6 +37,12 @@ begin_include
 include|#
 directive|include
 file|"appenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"channel.h"
 end_include
 
 begin_include
@@ -78,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
 end_include
 
@@ -97,6 +109,18 @@ begin_include
 include|#
 directive|include
 file|"scan_convert.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_options.h"
 end_include
 
 begin_include
@@ -479,7 +503,7 @@ name|channel_feather
 argument_list|(
 name|mask
 argument_list|,
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -498,7 +522,7 @@ expr_stmt|;
 else|else
 name|channel_combine_mask
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -778,7 +802,7 @@ block|{
 comment|/*  If there is a floating selection, anchor it  */
 if|if
 condition|(
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->
@@ -787,7 +811,7 @@ argument_list|)
 condition|)
 name|floating_sel_anchor
 argument_list|(
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->

@@ -16,12 +16,6 @@ directive|define
 name|__XCF_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
 begin_typedef
 DECL|typedef|XcfInfo
 typedef|typedef

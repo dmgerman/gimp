@@ -136,6 +136,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpparasite.h"
 end_include
 
@@ -242,7 +248,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3f76ca0103
+DECL|enum|__anon2c1792920103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING

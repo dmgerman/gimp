@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -78,7 +78,37 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"move.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_options.h"
 end_include
 
 begin_include
@@ -476,7 +506,7 @@ argument_list|,
 name|guide
 argument_list|)
 expr_stmt|;
-name|gimage_remove_guide
+name|gimp_image_remove_guide
 argument_list|(
 name|gdisp
 operator|->
@@ -490,7 +520,7 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|gimage_add_guide
+name|gimp_image_add_guide
 argument_list|(
 name|gdisp
 operator|->
@@ -539,7 +569,7 @@ condition|(
 operator|(
 name|layer
 operator|=
-name|gimage_pick_correlate_layer
+name|gimp_image_pick_correlate_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -555,7 +585,7 @@ block|{
 comment|/*  If there is a floating selection, and this aint it, 	   *  use the move tool 	   */
 if|if
 condition|(
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->
@@ -573,7 +603,7 @@ name|move
 operator|->
 name|layer
 operator|=
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->
@@ -584,7 +614,7 @@ block|}
 comment|/*  Otherwise, init the edit selection  */
 else|else
 block|{
-name|gimage_set_active_layer
+name|gimp_image_set_active_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -1696,7 +1726,7 @@ condition|(
 operator|(
 name|layer
 operator|=
-name|gimage_pick_correlate_layer
+name|gimp_image_pick_correlate_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -1712,7 +1742,7 @@ block|{
 comment|/*  if there is a floating selection, and this aint it...  */
 if|if
 condition|(
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->
@@ -1997,7 +2027,7 @@ name|private
 operator|->
 name|guide
 operator|=
-name|gimage_add_hguide
+name|gimp_image_add_hguide
 argument_list|(
 name|gdisp
 operator|->
@@ -2106,7 +2136,7 @@ name|private
 operator|->
 name|guide
 operator|=
-name|gimage_add_vguide
+name|gimp_image_add_vguide
 argument_list|(
 name|gdisp
 operator|->

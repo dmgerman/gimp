@@ -16,22 +16,6 @@ directive|define
 name|__UNDO_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo_types.h"
-end_include
-
-begin_comment
-comment|/*  Undo interface functions  */
-end_comment
-
 begin_function_decl
 name|gboolean
 name|undo_push_group_start
@@ -622,7 +606,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba973b50103
+DECL|enum|__anon2795b9300103
 block|{
 DECL|enumerator|UNDO_PUSHED
 name|UNDO_PUSHED

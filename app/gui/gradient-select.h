@@ -16,12 +16,6 @@ directive|define
 name|__GRADIENT_SELECT_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimpcontext.h"
-end_include
-
 begin_define
 DECL|macro|GRADIENT_SAMPLE_SIZE
 define|#

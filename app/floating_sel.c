@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -25,6 +25,12 @@ begin_include
 include|#
 directive|include
 file|"appenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"boundary.h"
 end_include
 
 begin_include
@@ -72,13 +78,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo.h"
+file|"pixel_region.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer_pvt.h"
+file|"tile_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"undo.h"
 end_include
 
 begin_include

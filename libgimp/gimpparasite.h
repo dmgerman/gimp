@@ -70,12 +70,6 @@ define|#
 directive|define
 name|GIMP_PARASITE_GRANDPARENT_UNDOABLE
 value|(GIMP_PARASITE_UNDOABLE<< 16)
-DECL|typedef|GimpParasite
-typedef|typedef
-name|struct
-name|_GimpParasite
-name|GimpParasite
-typedef|;
 DECL|struct|_GimpParasite
 struct|struct
 name|_GimpParasite

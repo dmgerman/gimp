@@ -16,16 +16,6 @@ directive|define
 name|__MEASURE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
-begin_comment
-comment|/*  measure functions  */
-end_comment
-
 begin_function_decl
 name|Tool
 modifier|*
@@ -42,6 +32,7 @@ name|tools_free_measure_tool
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl

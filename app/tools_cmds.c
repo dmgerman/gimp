@@ -10,6 +10,24 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"procedural_db.h"
 end_include
 
@@ -17,12 +35,6 @@ begin_include
 include|#
 directive|include
 file|"airbrush.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"apptypes.h"
 end_include
 
 begin_include
@@ -41,12 +53,6 @@ begin_include
 include|#
 directive|include
 file|"by_color_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"channel.h"
 end_include
 
 begin_include
@@ -167,6 +173,12 @@ begin_include
 include|#
 directive|include
 file|"smudge.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile_manager.h"
 end_include
 
 begin_include
@@ -2120,11 +2132,11 @@ if|if
 condition|(
 name|operation
 operator|<
-name|ADD
+name|CHANNEL_OP_ADD
 operator|||
 name|operation
 operator|>
-name|INTERSECT
+name|CHANNEL_OP_INTERSECT
 condition|)
 name|success
 operator|=
@@ -4745,11 +4757,11 @@ if|if
 condition|(
 name|operation
 operator|<
-name|ADD
+name|CHANNEL_OP_ADD
 operator|||
 name|operation
 operator|>
-name|INTERSECT
+name|CHANNEL_OP_INTERSECT
 condition|)
 name|success
 operator|=
@@ -5894,11 +5906,11 @@ if|if
 condition|(
 name|operation
 operator|<
-name|ADD
+name|CHANNEL_OP_ADD
 operator|||
 name|operation
 operator|>
-name|INTERSECT
+name|CHANNEL_OP_INTERSECT
 condition|)
 name|success
 operator|=
@@ -6229,11 +6241,11 @@ if|if
 condition|(
 name|operation
 operator|<
-name|ADD
+name|CHANNEL_OP_ADD
 operator|||
 name|operation
 operator|>
-name|INTERSECT
+name|CHANNEL_OP_INTERSECT
 condition|)
 name|success
 operator|=
@@ -7914,11 +7926,11 @@ if|if
 condition|(
 name|operation
 operator|<
-name|ADD
+name|CHANNEL_OP_ADD
 operator|||
 name|operation
 operator|>
-name|INTERSECT
+name|CHANNEL_OP_INTERSECT
 condition|)
 name|success
 operator|=

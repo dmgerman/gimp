@@ -12,13 +12,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -43,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"dialog_handler.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpbrush.h"
 end_include
 
 begin_include
@@ -96,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"patterns.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"session.h"
 end_include
 
@@ -109,6 +127,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimphelpui.h"
 end_include
 
 begin_include

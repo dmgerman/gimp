@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<sys/types.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -73,6 +79,12 @@ begin_include
 include|#
 directive|include
 file|"gimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcontext.h"
 end_include
 
 begin_include
@@ -186,13 +198,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo.h"
+file|"plug_in.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"drawable_pvt.h"
+file|"procedural_db.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"undo.h"
 end_include
 
 begin_include

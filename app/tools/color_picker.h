@@ -16,11 +16,15 @@ directive|define
 name|__COLOR_PICKER_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
+begin_decl_stmt
+specifier|extern
+name|gint
+name|col_value
+index|[
+literal|5
+index|]
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|gboolean
@@ -75,16 +79,6 @@ name|tool
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-specifier|extern
-name|gint
-name|col_value
-index|[
-literal|5
-index|]
-decl_stmt|;
-end_decl_stmt
 
 begin_endif
 endif|#

@@ -12,24 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pixel_processor.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixel_region.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdarg.h>
 end_include
 
@@ -96,6 +78,36 @@ begin_comment
 comment|/* ENABLE_MP */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<apptypes.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_processor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimprc.h"
+end_include
+
 begin_typedef
 DECL|typedef|p1_func
 typedef|typedef
@@ -105,8 +117,7 @@ modifier|*
 name|p1_func
 function_decl|)
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -123,8 +134,7 @@ modifier|*
 name|p2_func
 function_decl|)
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -144,8 +154,7 @@ modifier|*
 name|p3_func
 function_decl|)
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -168,8 +177,7 @@ modifier|*
 name|p4_func
 function_decl|)
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -192,8 +200,7 @@ struct|struct
 name|_PixelProcessor
 block|{
 DECL|member|data
-name|void
-modifier|*
+name|gpointer
 name|data
 decl_stmt|;
 DECL|member|f
@@ -209,11 +216,11 @@ name|IF_THREAD
 argument_list|(
 argument|pthread_mutex_t mutex;
 argument_list|)
-name|int
+name|gint
 name|nthreads
 decl_stmt|;
 DECL|member|n_regions
-name|int
+name|gint
 name|n_regions
 decl_stmt|;
 DECL|member|r

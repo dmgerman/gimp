@@ -38,6 +38,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpui.h>
 end_include
 
@@ -558,10 +564,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* dialog_step_in_callback */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -576,10 +578,10 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|xdifferenz
 decl_stmt|;
-name|double
+name|gdouble
 name|ydifferenz
 decl_stmt|;
 if|if
@@ -9293,6 +9295,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|gtk_file_selection_set_filename
 argument_list|(
 name|GTK_FILE_SELECTION
@@ -9303,6 +9306,7 @@ argument_list|,
 literal|"/tmp"
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!

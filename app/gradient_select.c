@@ -68,6 +68,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gradient.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gradient_header.h"
 end_include
 
@@ -86,13 +92,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"session.h"
+file|"procedural_db.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|"session.h"
 end_include
 
 begin_include

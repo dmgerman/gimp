@@ -16,22 +16,6 @@ directive|define
 name|__FLIP_TOOL_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"transform_core.h"
-end_include
-
-begin_comment
-comment|/*  Flip tool functions  */
-end_comment
-
 begin_function_decl
 name|TileManager
 modifier|*

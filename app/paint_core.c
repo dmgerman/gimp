@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -48,7 +48,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"devices.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"draw_core.h"
 end_include
 
 begin_include
@@ -78,6 +90,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -86,10 +110,6 @@ include|#
 directive|include
 file|"gradient.h"
 end_include
-
-begin_comment
-comment|/* for grad_get_color_at() */
-end_comment
 
 begin_include
 include|#
@@ -106,7 +126,31 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"temp_buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile_manager.h"
 end_include
 
 begin_include
@@ -120,22 +164,6 @@ include|#
 directive|include
 file|"undo.h"
 end_include
-
-begin_include
-include|#
-directive|include
-file|"cursorutil.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile.h"
-end_include
-
-begin_comment
-comment|/* ick. */
-end_comment
 
 begin_include
 include|#
@@ -941,7 +969,7 @@ argument_list|)
 expr_stmt|;
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -1921,7 +1949,7 @@ call|)
 argument_list|(
 name|paint_core
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -1957,7 +1985,7 @@ name|paint_core_finish
 argument_list|(
 name|paint_core
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -2058,7 +2086,7 @@ condition|)
 block|{
 name|paint_core_sample_color
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -2130,7 +2158,7 @@ name|paint_core_interpolate
 argument_list|(
 name|paint_core
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -2155,7 +2183,7 @@ call|)
 argument_list|(
 name|paint_core
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -2187,7 +2215,7 @@ call|)
 argument_list|(
 name|paint_core
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -2395,7 +2423,7 @@ condition|(
 operator|(
 name|layer
 operator|=
-name|gimage_get_active_layer
+name|gimp_image_get_active_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -3181,7 +3209,7 @@ name|private
 expr_stmt|;
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -7702,7 +7730,7 @@ name|canvas_buf
 argument_list|)
 expr_stmt|;
 comment|/*  apply the paint area to the gimage  */
-name|gimage_apply_image
+name|gimp_image_apply_image
 argument_list|(
 name|gimage
 argument_list|,
@@ -8147,7 +8175,7 @@ name|canvas_buf
 argument_list|)
 expr_stmt|;
 comment|/*  apply the paint area to the gimage  */
-name|gimage_replace_image
+name|gimp_image_replace_image
 argument_list|(
 name|gimage
 argument_list|,
@@ -9830,7 +9858,7 @@ operator|*=
 name|alpha
 expr_stmt|;
 comment|/* printf("i: %i d->r: %i d->g: %i d->b: %i d->a: %i\n",i,(int)d[0], (int)d[1], (int)d[2], (int)d[3]); */
-name|gimage_transform_color
+name|gimp_image_transform_color
 argument_list|(
 name|dest
 argument_list|,
@@ -9902,7 +9930,7 @@ expr_stmt|;
 comment|/* multiply alpha into the pixmap data */
 comment|/* maybe we could do this at tool creation or brush switch time? */
 comment|/* and compute it for the whole brush at once and cache it?  */
-name|gimage_transform_color
+name|gimp_image_transform_color
 argument_list|(
 name|dest
 argument_list|,

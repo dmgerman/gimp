@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialog_handler.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"disp_callbacks.h"
 end_include
 
@@ -72,7 +78,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"drawable.h"
 end_include
 
 begin_include
@@ -90,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"layer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"layer_select.h"
 end_include
 
@@ -102,7 +126,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"patterns.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
 end_include
 
 begin_include
@@ -120,6 +156,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"temp_buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools.h"
 end_include
 
@@ -127,18 +181,6 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"dialog_handler.h"
 end_include
 
 begin_include
@@ -3203,7 +3245,7 @@ expr_stmt|;
 comment|/*  How many bytes in the temp buffer?  */
 switch|switch
 condition|(
-name|drawable_type
+name|gimp_drawable_type
 argument_list|(
 name|drawable
 argument_list|)
@@ -3290,7 +3332,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -3341,7 +3383,7 @@ name|destPR
 argument_list|,
 name|NULL
 argument_list|,
-name|drawable_cmap
+name|gimp_drawable_cmap
 argument_list|(
 name|drawable
 argument_list|)
@@ -3350,7 +3392,7 @@ name|bg
 argument_list|,
 name|type
 argument_list|,
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)
@@ -3709,7 +3751,7 @@ literal|3
 operator|)
 operator|&&
 operator|!
-name|drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 argument_list|)
@@ -3725,7 +3767,7 @@ literal|1
 operator|)
 operator|&&
 operator|!
-name|drawable_gray
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 argument_list|)
@@ -3752,7 +3794,7 @@ operator|==
 literal|1
 operator|)
 operator|&&
-name|drawable_color
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 argument_list|)
@@ -3879,7 +3921,7 @@ name|orig_pat_buf
 expr_stmt|;
 block|}
 block|}
-name|drawable_mask_bounds
+name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
 argument_list|,
@@ -3898,14 +3940,14 @@ argument_list|)
 expr_stmt|;
 name|bytes
 operator|=
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
 name|has_alpha
 operator|=
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)

@@ -60,19 +60,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"drawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"floating_sel.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdisplayF.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontext.h"
+file|"gdisplay.h"
 end_include
 
 begin_include
@@ -85,6 +85,12 @@ begin_include
 include|#
 directive|include
 file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcontext.h"
 end_include
 
 begin_include
@@ -610,7 +616,7 @@ argument_list|,
 name|gmask
 argument_list|)
 expr_stmt|;
-name|gimage_remove_channel
+name|gimp_image_remove_channel
 argument_list|(
 name|gimg
 argument_list|,
@@ -761,7 +767,7 @@ condition|(
 operator|(
 name|layer
 operator|=
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gimg
 argument_list|)
@@ -838,7 +844,7 @@ name|gmask
 operator|=
 name|channel_copy
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimg
 argument_list|)
@@ -1436,6 +1442,7 @@ name|Channel
 modifier|*
 name|channel
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|tmpcolp

@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_UNIT_MENU_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpunit.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -73,12 +67,6 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_UNIT_MENU))
-DECL|typedef|GimpUnitMenu
-typedef|typedef
-name|struct
-name|_GimpUnitMenu
-name|GimpUnitMenu
-typedef|;
 DECL|typedef|GimpUnitMenuClass
 typedef|typedef
 name|struct

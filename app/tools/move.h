@@ -16,16 +16,6 @@ directive|define
 name|__MOVE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
-begin_comment
-comment|/*  move functions  */
-end_comment
-
 begin_function_decl
 name|void
 name|move_tool_start_hguide

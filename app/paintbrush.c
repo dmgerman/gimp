@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -43,6 +43,24 @@ begin_include
 include|#
 directive|include
 file|"gimpbrushlist.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpbrush.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -90,7 +108,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"temp_buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_options.h"
 end_include
 
 begin_include
@@ -393,9 +423,9 @@ parameter_list|,
 name|PaintPressureOptions
 modifier|*
 parameter_list|,
-name|double
+name|gdouble
 parameter_list|,
-name|double
+name|gdouble
 parameter_list|,
 name|PaintApplicationMode
 parameter_list|,
@@ -2829,7 +2859,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimage_get_foreground
+name|gimp_image_get_foreground
 argument_list|(
 name|gimage
 argument_list|,

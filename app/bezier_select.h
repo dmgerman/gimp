@@ -16,34 +16,6 @@ directive|define
 name|__BEZIER_SELECT_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"toolsF.h"
-end_include
-
-begin_typedef
-DECL|typedef|BezierPoint
-typedef|typedef
-name|struct
-name|_BezierPoint
-name|BezierPoint
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|BezierSelect
-typedef|typedef
-name|struct
-name|_BezierSelect
-name|BezierSelect
-typedef|;
-end_typedef
-
-begin_comment
-comment|/*  bezier select functions  */
-end_comment
-
 begin_function_decl
 name|Tool
 modifier|*

@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<gtk/gtkobject.h>
 end_include
 
 begin_define
@@ -27,7 +27,7 @@ DECL|macro|GIMP_TYPE_OBJECT
 define|#
 directive|define
 name|GIMP_TYPE_OBJECT
-value|gimp_object_get_type ()
+value|(gimp_object_get_type ())
 end_define
 
 begin_define
@@ -38,7 +38,7 @@ name|GIMP_OBJECT
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_CAST (obj, GIMP_TYPE_OBJECT, GimpObject)
+value|(GTK_CHECK_CAST (obj, GIMP_TYPE_OBJECT, GimpObject))
 end_define
 
 begin_define
@@ -49,7 +49,7 @@ name|GIMP_IS_OBJECT
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_TYPE (obj, GIMP_TYPE_OBJECT)
+value|(GTK_CHECK_TYPE (obj, GIMP_TYPE_OBJECT))
 end_define
 
 begin_define
@@ -60,8 +60,17 @@ name|GIMP_OBJECT_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|GTK_CHECK_CLASS_CAST (klass, GIMP_TYPE_OBJECT, GimpObjectClass)
+value|(GTK_CHECK_CLASS_CAST (klass, GIMP_TYPE_OBJECT, GimpObjectClass))
 end_define
+
+begin_typedef
+DECL|typedef|GimpObjectClass
+typedef|typedef
+name|struct
+name|_GimpObjectClass
+name|GimpObjectClass
+typedef|;
+end_typedef
 
 begin_struct
 DECL|struct|_GimpObject
@@ -76,20 +85,18 @@ block|}
 struct|;
 end_struct
 
-begin_typedef
-typedef|typedef
+begin_struct
+DECL|struct|_GimpObjectClass
 struct|struct
-DECL|struct|__anon2c4793a70108
+name|_GimpObjectClass
 block|{
 DECL|member|parent_class
 name|GtkObjectClass
 name|parent_class
 decl_stmt|;
-DECL|typedef|GimpObjectClass
 block|}
-name|GimpObjectClass
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_define
 DECL|macro|GIMP_TYPE_INIT (typevar,obtype,classtype,obinit,classinit,parent)

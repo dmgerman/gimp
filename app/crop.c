@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"channel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"crop.h"
 end_include
 
@@ -78,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimage_mask.h"
 end_include
 
@@ -97,6 +109,30 @@ begin_include
 include|#
 directive|include
 file|"info_dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_options.h"
 end_include
 
 begin_include
@@ -657,7 +693,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b2f5bc0103
+DECL|enum|__anon277b97cb0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -1600,7 +1636,7 @@ name|tool
 operator|->
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -2128,7 +2164,7 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -2137,12 +2173,12 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|curx
 decl_stmt|,
 name|cury
 decl_stmt|;
-name|int
+name|gint
 name|inc_x
 decl_stmt|,
 name|inc_y
@@ -2153,7 +2189,7 @@ index|[
 name|STATUSBAR_SIZE
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|min_x
 decl_stmt|,
 name|min_y
@@ -4719,7 +4755,7 @@ else|else
 block|{
 name|floating_layer
 operator|=
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gimage
 argument_list|)
@@ -5021,7 +5057,7 @@ operator|)
 argument_list|)
 expr_stmt|;
 else|else
-name|gimage_remove_layer
+name|gimp_image_remove_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -5035,7 +5071,7 @@ name|next
 expr_stmt|;
 block|}
 comment|/*  Make sure the projection matches the gimage size  */
-name|gimage_projection_realloc
+name|gimp_image_projection_realloc
 argument_list|(
 name|gimage
 argument_list|)
@@ -5115,7 +5151,7 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimage_invalidate_preview
+name|gimp_image_invalidate_preview
 argument_list|(
 name|gimage
 argument_list|)
@@ -6850,7 +6886,7 @@ operator|!
 operator|(
 name|active_drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->

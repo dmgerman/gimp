@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_LUT_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"pixel_region.h"
-end_include
-
 begin_struct
 DECL|struct|_GimpLut
 struct|struct

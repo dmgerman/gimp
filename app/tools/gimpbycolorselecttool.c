@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"channel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -78,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -102,7 +114,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"selection_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"temp_buf.h"
 end_include
 
 begin_include
@@ -111,9 +141,23 @@ directive|include
 file|"tile.h"
 end_include
 
-begin_comment
-comment|/* ick. */
-end_comment
+begin_include
+include|#
+directive|include
+file|"tile_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_options.h"
+end_include
 
 begin_include
 include|#
@@ -903,14 +947,14 @@ condition|)
 block|{
 name|bytes
 operator|=
-name|gimage_composite_bytes
+name|gimp_image_composite_bytes
 argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
 name|d_type
 operator|=
-name|gimage_composite_type
+name|gimp_image_composite_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -958,7 +1002,7 @@ argument_list|(
 operator|&
 name|imagePR
 argument_list|,
-name|gimage_composite
+name|gimp_image_composite
 argument_list|(
 name|gimage
 argument_list|)
@@ -1186,7 +1230,7 @@ operator|++
 control|)
 block|{
 comment|/*  Get the rgb values for the color  */
-name|gimage_get_color
+name|gimp_image_get_color
 argument_list|(
 name|gimage
 argument_list|,
@@ -1379,7 +1423,7 @@ name|channel_feather
 argument_list|(
 name|new_mask
 argument_list|,
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1398,7 +1442,7 @@ expr_stmt|;
 else|else
 name|channel_combine_mask
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1472,7 +1516,7 @@ name|tool
 operator|->
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -1706,7 +1750,7 @@ name|private
 expr_stmt|;
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -2002,7 +2046,7 @@ operator|(
 operator|(
 name|layer
 operator|=
-name|gimage_pick_correlate_layer
+name|gimp_image_pick_correlate_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -3846,7 +3890,7 @@ name|scale
 decl_stmt|;
 name|mask
 operator|=
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -4499,7 +4543,7 @@ argument_list|)
 argument_list|,
 name|g_basename
 argument_list|(
-name|gimage_filename
+name|gimp_image_filename
 argument_list|(
 name|gimage
 argument_list|)
@@ -4645,7 +4689,7 @@ name|drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|bcd
 operator|->
@@ -4731,7 +4775,7 @@ name|drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|bcd
 operator|->
@@ -4817,7 +4861,7 @@ name|drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|bcd
 operator|->
@@ -4976,7 +5020,7 @@ condition|)
 return|return;
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|bcd
 operator|->
@@ -5160,7 +5204,7 @@ name|tile
 operator|=
 name|tile_manager_get_tile
 argument_list|(
-name|gimage_composite
+name|gimp_image_composite
 argument_list|(
 name|bcd
 operator|->
@@ -5424,7 +5468,7 @@ name|data
 expr_stmt|;
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|bcd
 operator|->

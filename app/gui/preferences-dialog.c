@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -66,6 +66,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimphelp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -79,6 +91,12 @@ begin_include
 include|#
 directive|include
 file|"image_render.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer.h"
 end_include
 
 begin_include
@@ -144,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c8fc22c0103
+DECL|enum|__anon2c0a58840103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -12393,7 +12411,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c8fc22c0208
+DECL|struct|__anon2c0a58840208
 block|{
 DECL|member|label
 name|gchar
@@ -12622,7 +12640,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c8fc22c0308
+DECL|struct|__anon2c0a58840308
 block|{
 DECL|member|tree_label
 name|gchar

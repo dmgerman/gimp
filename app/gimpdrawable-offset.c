@@ -78,7 +78,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_funcs.h"
 end_include
 
 begin_include
@@ -90,13 +108,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channel_pvt.h"
+file|"path.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer_pvt.h"
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimphelpui.h"
 end_include
 
 begin_include
@@ -259,7 +289,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gimage
 argument_list|)
@@ -283,7 +313,7 @@ name|off_d
 operator|->
 name|fill_type
 operator|=
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)
@@ -980,7 +1010,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)
@@ -1181,14 +1211,14 @@ condition|)
 return|return;
 name|width
 operator|=
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -1274,7 +1304,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
 argument_list|)
@@ -1409,7 +1439,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -1474,7 +1504,7 @@ condition|)
 block|{
 name|src_x
 operator|=
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -1483,7 +1513,7 @@ name|offset_x
 expr_stmt|;
 name|src_y
 operator|=
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -1505,7 +1535,7 @@ condition|)
 block|{
 name|src_x
 operator|=
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -1535,7 +1565,7 @@ literal|0
 expr_stmt|;
 name|src_y
 operator|=
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -1572,7 +1602,7 @@ operator|+
 name|offset_x
 operator|)
 operator|%
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -1585,7 +1615,7 @@ literal|0
 condition|)
 name|dest_x
 operator|=
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -1600,7 +1630,7 @@ operator|+
 name|offset_y
 operator|)
 operator|%
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -1613,7 +1643,7 @@ literal|0
 condition|)
 name|dest_y
 operator|=
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -1637,7 +1667,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -1713,7 +1743,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -1727,7 +1757,7 @@ argument_list|(
 name|offset_x
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -1758,7 +1788,7 @@ argument_list|(
 name|offset_x
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -1785,7 +1815,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -1801,7 +1831,7 @@ argument_list|(
 name|offset_x
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -1830,7 +1860,7 @@ argument_list|(
 name|offset_x
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -1874,7 +1904,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -1883,7 +1913,7 @@ literal|0
 argument_list|,
 name|src_y
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -1914,7 +1944,7 @@ name|offset_x
 argument_list|,
 name|dest_y
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -1946,7 +1976,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -1957,7 +1987,7 @@ name|offset_x
 argument_list|,
 name|src_y
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -1986,7 +2016,7 @@ literal|0
 argument_list|,
 name|dest_y
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -2051,14 +2081,14 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|drawable_has_alpha
+name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)
 condition|)
 name|fill
 index|[
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
 argument_list|)
@@ -2107,7 +2137,7 @@ literal|0
 expr_stmt|;
 name|dest_y
 operator|=
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -2129,7 +2159,7 @@ condition|)
 block|{
 name|dest_x
 operator|=
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -2155,7 +2185,7 @@ condition|)
 block|{
 name|dest_x
 operator|=
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -2164,7 +2194,7 @@ name|offset_x
 expr_stmt|;
 name|dest_y
 operator|=
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -2249,7 +2279,7 @@ argument_list|(
 name|offset_x
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -2285,7 +2315,7 @@ argument_list|(
 name|offset_x
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -2334,7 +2364,7 @@ name|offset_x
 argument_list|,
 name|dest_y
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -2370,7 +2400,7 @@ literal|0
 argument_list|,
 name|dest_y
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
@@ -2407,17 +2437,17 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|drawable
 argument_list|)
@@ -2441,12 +2471,12 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|drawable_width
+name|gimp_drawable_width
 argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|drawable_height
+name|gimp_drawable_height
 argument_list|(
 name|drawable
 argument_list|)
@@ -2514,7 +2544,7 @@ condition|)
 block|{
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gimage
 argument_list|)
@@ -2821,7 +2851,7 @@ operator|->
 name|base_type
 argument_list|)
 expr_stmt|;
-name|gimage_disable_undo
+name|gimp_image_undo_disable
 argument_list|(
 name|new_gimage
 argument_list|)
@@ -2854,7 +2884,7 @@ expr_stmt|;
 comment|/*  Copy floating layer  */
 name|floating_layer
 operator|=
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gimage
 argument_list|)
@@ -3033,7 +3063,7 @@ name|floating_layer
 operator|!=
 name|new_layer
 condition|)
-name|gimage_add_layer
+name|gimp_image_add_layer
 argument_list|(
 name|new_gimage
 argument_list|,
@@ -3142,7 +3172,7 @@ name|new_channel
 argument_list|)
 expr_stmt|;
 comment|/*  Add the channel  */
-name|gimage_add_channel
+name|gimp_image_add_channel
 argument_list|(
 name|new_gimage
 argument_list|,
@@ -3159,7 +3189,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3189,7 +3219,7 @@ argument_list|(
 operator|&
 name|destPR
 argument_list|,
-name|drawable_data
+name|gimp_drawable_data
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3583,7 +3613,7 @@ name|new_paths
 argument_list|)
 expr_stmt|;
 block|}
-name|gimage_enable_undo
+name|gimp_image_undo_enable
 argument_list|(
 name|new_gimage
 argument_list|)

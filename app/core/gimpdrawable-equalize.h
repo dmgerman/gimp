@@ -16,10 +16,6 @@ directive|define
 name|__EQUALIZE_H__
 end_define
 
-begin_comment
-comment|/*  equalize functions  */
-end_comment
-
 begin_function_decl
 name|void
 name|image_equalize

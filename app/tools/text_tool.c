@@ -24,13 +24,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gdk/gdkkeysyms.h>
+file|<sys/types.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gdk/gdk.h>
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gdk/gdkkeysyms.h>
 end_include
 
 begin_ifndef
@@ -95,7 +101,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimage_mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -108,6 +126,30 @@ begin_include
 include|#
 directive|include
 file|"global_edit.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug_in.h"
 end_include
 
 begin_include
@@ -131,13 +173,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"undo.h"
+file|"tool_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile_manager.h"
 end_include
 
 begin_include
@@ -149,13 +203,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable_pvt.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
+file|"undo.h"
 end_include
 
 begin_include
@@ -1426,7 +1474,7 @@ operator|=
 operator|(
 name|gint32
 operator|)
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -1550,7 +1598,7 @@ condition|(
 operator|(
 name|layer
 operator|=
-name|gimage_pick_correlate_layer
+name|gimp_image_pick_correlate_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -1720,7 +1768,7 @@ condition|(
 operator|(
 name|layer
 operator|=
-name|gimage_pick_correlate_layer
+name|gimp_image_pick_correlate_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -2092,7 +2140,7 @@ expr_stmt|;
 comment|/* override the user's antialias setting if this is an indexed image */
 if|if
 condition|(
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gdisp
 operator|->
@@ -2161,7 +2209,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -2585,7 +2633,7 @@ expr_stmt|;
 else|else
 name|layer_type
 operator|=
-name|gimage_base_type_with_alpha
+name|gimp_image_base_type_with_alpha
 argument_list|(
 name|gimage
 argument_list|)
@@ -3249,7 +3297,7 @@ operator|)
 condition|)
 block|{
 comment|/*  color the layer buffer  */
-name|gimage_get_foreground
+name|gimp_image_get_foreground
 argument_list|(
 name|gimage
 argument_list|,
@@ -3424,7 +3472,7 @@ argument_list|)
 condition|)
 name|channel_clear
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -3437,7 +3485,7 @@ name|drawable
 operator|==
 name|NULL
 condition|)
-name|gimage_add_layer
+name|gimp_image_add_layer
 argument_list|(
 name|gimage
 argument_list|,

@@ -72,13 +72,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"procedural_db.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"session.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|"temp_buf.h"
 end_include
 
 begin_include
@@ -2213,7 +2219,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297720350108
+DECL|struct|__anon2a9609ac0108
 block|{
 DECL|member|psp
 name|PatternSelect

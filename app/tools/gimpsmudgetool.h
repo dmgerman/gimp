@@ -16,22 +16,10 @@ directive|define
 name|__SMUDGE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"paint_core.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1d17be0103
+DECL|enum|__anon2c535e120103
 block|{
 DECL|enumerator|SMUDGE_TYPE_SMUDGE
 name|SMUDGE_TYPE_SMUDGE
@@ -47,7 +35,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1d17be0203
+DECL|enum|__anon2c535e120203
 block|{
 DECL|enumerator|SMUDGE_MODE_HIGHLIGHTS
 name|SMUDGE_MODE_HIGHLIGHTS
@@ -74,7 +62,7 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -86,11 +74,11 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 parameter_list|,
-name|double
+name|gdouble
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 parameter_list|)
 function_decl|;
@@ -103,9 +91,9 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 parameter_list|)
 function_decl|;
@@ -127,6 +115,7 @@ name|tools_free_smudge
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppreviewcache.h"
 end_include
 
@@ -109,6 +115,12 @@ begin_include
 include|#
 directive|include
 file|"nav_window.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"procedural_db.h"
 end_include
 
 begin_include
@@ -202,7 +214,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28eaa39d0103
+DECL|enum|__anon2c28b7240103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -6007,7 +6019,7 @@ name|title
 operator|=
 name|g_basename
 argument_list|(
-name|gimage_filename
+name|gimp_image_filename
 argument_list|(
 name|gdisp
 operator|->
@@ -6407,7 +6419,7 @@ name|gdisp_ptr
 expr_stmt|;
 name|type
 operator|=
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gdisp
 operator|->

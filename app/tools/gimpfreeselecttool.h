@@ -16,12 +16,6 @@ directive|define
 name|__FREE_SELECT_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"scan_convert.h"
-end_include
-
 begin_comment
 comment|/*  free select action functions  */
 end_comment
@@ -32,11 +26,14 @@ name|free_select_button_press
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
 name|gpointer
+name|gdisp_ptr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -47,11 +44,14 @@ name|free_select_button_release
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
 name|gpointer
+name|gdisp_ptr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -62,11 +62,14 @@ name|free_select_motion
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
 name|gpointer
+name|gdisp_ptr
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -114,13 +114,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"procedural_db.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"session.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|"temp_buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimphelpui.h"
 end_include
 
 begin_include
@@ -5255,7 +5267,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2944d9370108
+DECL|struct|__anon2c2ce4a10108
 block|{
 DECL|member|bsp
 name|BrushSelect

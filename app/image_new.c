@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"image_new.h"
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -31,6 +31,12 @@ begin_include
 include|#
 directive|include
 file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"drawable.h"
 end_include
 
 begin_include
@@ -67,6 +73,24 @@ begin_include
 include|#
 directive|include
 file|"gimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"image_new.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_funcs.h"
 end_include
 
 begin_include

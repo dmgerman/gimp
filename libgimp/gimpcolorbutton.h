@@ -70,12 +70,6 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_COLOR_BUTTON))
-DECL|typedef|GimpColorButton
-typedef|typedef
-name|struct
-name|_GimpColorButton
-name|GimpColorButton
-typedef|;
 DECL|typedef|GimpColorButtonClass
 typedef|typedef
 name|struct

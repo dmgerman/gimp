@@ -20,18 +20,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gmodule.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
 end_include
 
@@ -50,6 +38,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gmodule.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"color_notebook.h"
 end_include
 
@@ -57,6 +63,12 @@ begin_include
 include|#
 directive|include
 file|"gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimphelpui.h"
 end_include
 
 begin_include
@@ -284,7 +296,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2955f6f90103
+DECL|enum|__anon28d4e3220103
 block|{
 DECL|enumerator|RED
 name|RED

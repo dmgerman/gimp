@@ -16,12 +16,6 @@ directive|define
 name|__GLOBAL_EDIT_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimage.h"
-end_include
-
 begin_function_decl
 name|TileManager
 modifier|*

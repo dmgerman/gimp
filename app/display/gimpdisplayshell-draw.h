@@ -16,22 +16,6 @@ directive|define
 name|__INTERFACE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"toolsF.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplayF.h"
-end_include
-
-begin_comment
-comment|/*  function declarations  */
-end_comment
-
 begin_function_decl
 name|GtkWidget
 modifier|*

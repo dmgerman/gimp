@@ -16,12 +16,6 @@ directive|define
 name|__BRUSH_EDIT_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimpbrushgenerated.h"
-end_include
-
 begin_typedef
 DECL|typedef|BrushEditGeneratedWindow
 typedef|typedef

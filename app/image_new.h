@@ -16,18 +16,6 @@ directive|define
 name|__IMAGE_NEW_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdrawable.h"
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -42,7 +30,7 @@ endif|#
 directive|endif
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6f0eac0108
+DECL|struct|__anon274bf08b0108
 block|{
 DECL|member|type
 name|GimpImageBaseType
@@ -59,7 +47,7 @@ name|GimpImageBaseTypeName
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6f0eac0208
+DECL|struct|__anon274bf08b0208
 block|{
 DECL|member|type
 name|GimpFillType
@@ -74,9 +62,9 @@ DECL|typedef|GimpFillTypeName
 block|}
 name|GimpFillTypeName
 typedef|;
-typedef|typedef
+DECL|struct|_GimpImageNewValues
 struct|struct
-DECL|struct|__anon2c6f0eac0308
+name|_GimpImageNewValues
 block|{
 DECL|member|width
 name|gint
@@ -110,10 +98,8 @@ DECL|member|fill_type
 name|GimpFillType
 name|fill_type
 decl_stmt|;
-DECL|typedef|GimpImageNewValues
 block|}
-name|GimpImageNewValues
-typedef|;
+struct|;
 name|GList
 modifier|*
 name|image_new_get_fill_type_names

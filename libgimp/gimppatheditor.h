@@ -67,12 +67,6 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PATH_EDITOR))
-DECL|typedef|GimpPathEditor
-typedef|typedef
-name|struct
-name|_GimpPathEditor
-name|GimpPathEditor
-typedef|;
 DECL|typedef|GimpPathEditorClass
 typedef|typedef
 name|struct

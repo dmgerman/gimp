@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpset.h"
 end_include
 
@@ -79,6 +85,12 @@ begin_include
 include|#
 directive|include
 file|"info_window.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"procedural_db.h"
 end_include
 
 begin_include
@@ -1277,7 +1289,7 @@ name|title
 operator|=
 name|g_basename
 argument_list|(
-name|gimage_filename
+name|gimp_image_filename
 argument_list|(
 name|gdisp
 operator|->
@@ -1287,7 +1299,7 @@ argument_list|)
 expr_stmt|;
 name|type
 operator|=
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gdisp
 operator|->
@@ -1608,7 +1620,7 @@ name|title
 operator|=
 name|g_basename
 argument_list|(
-name|gimage_filename
+name|gimp_image_filename
 argument_list|(
 name|gdisp
 operator|->
@@ -1974,7 +1986,7 @@ operator|==
 name|FALSE
 condition|)
 return|return;
-comment|/* gimage_active_drawable (gdisp->gimage) */
+comment|/* gimp_image_active_drawable (gdisp->gimage) */
 if|if
 condition|(
 operator|!
@@ -2585,7 +2597,7 @@ argument_list|)
 expr_stmt|;
 name|type
 operator|=
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gdisp
 operator|->

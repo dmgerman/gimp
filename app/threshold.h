@@ -16,24 +16,6 @@ directive|define
 name|__THRESHOLD_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"image_map.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"histogramwidget.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
 begin_typedef
 DECL|typedef|ThresholdDialog
 typedef|typedef
@@ -147,8 +129,7 @@ begin_function_decl
 name|void
 name|threshold_2
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|,
 name|PixelRegion

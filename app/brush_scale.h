@@ -16,16 +16,6 @@ directive|define
 name|__BRUSH_SCALE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
-end_include
-
-begin_comment
-comment|/*  functions   */
-end_comment
-
 begin_function_decl
 name|MaskBuf
 modifier|*
@@ -33,10 +23,13 @@ name|brush_scale_mask
 parameter_list|(
 name|MaskBuf
 modifier|*
+name|brush_mask
 parameter_list|,
-name|int
+name|gint
+name|dest_width
 parameter_list|,
-name|int
+name|gint
+name|dest_height
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -48,10 +41,13 @@ name|brush_scale_pixmap
 parameter_list|(
 name|MaskBuf
 modifier|*
+name|pixmap
 parameter_list|,
-name|int
+name|gint
+name|dest_width
 parameter_list|,
-name|int
+name|gint
+name|dest_height
 parameter_list|)
 function_decl|;
 end_function_decl

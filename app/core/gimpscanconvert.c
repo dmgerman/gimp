@@ -12,13 +12,43 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"channel.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"drawable.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
 end_include
 
 begin_include
@@ -31,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
 end_include
 
 begin_ifdef
@@ -134,14 +158,14 @@ begin_function
 specifier|static
 name|GSList
 modifier|*
-DECL|function|insert_into_sorted_list (GSList * list,int x)
+DECL|function|insert_into_sorted_list (GSList * list,gint x)
 name|insert_into_sorted_list
 parameter_list|(
 name|GSList
 modifier|*
 name|list
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|)
 block|{
@@ -263,27 +287,27 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|convert_segment (ScanConverter * sc,int x1,int y1,int x2,int y2)
+DECL|function|convert_segment (ScanConverter * sc,gint x1,gint y1,gint x2,gint y2)
 name|convert_segment
 parameter_list|(
 name|ScanConverter
 modifier|*
 name|sc
 parameter_list|,
-name|int
+name|gint
 name|x1
 parameter_list|,
-name|int
+name|gint
 name|y1
 parameter_list|,
-name|int
+name|gint
 name|x2
 parameter_list|,
-name|int
+name|gint
 name|y2
 parameter_list|)
 block|{
-name|int
+name|gint
 name|ydiff
 decl_stmt|,
 name|y
@@ -301,7 +325,7 @@ modifier|*
 modifier|*
 name|scanlines
 decl_stmt|;
-name|float
+name|gfloat
 name|xinc
 decl_stmt|,
 name|xstart
@@ -641,6 +665,31 @@ return|;
 block|}
 end_function
 
+begin_function
+name|void
+DECL|function|scan_converter_free (ScanConverter * sc)
+name|scan_converter_free
+parameter_list|(
+name|ScanConverter
+modifier|*
+name|sc
+parameter_list|)
+block|{
+name|g_free
+argument_list|(
+name|sc
+operator|->
+name|scanlines
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|sc
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 begin_comment
 comment|/* Add "npoints" from "pointlist" to the polygon currently being  * described by "scan_converter".  */
 end_comment
@@ -662,7 +711,7 @@ modifier|*
 name|pointlist
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|guint
@@ -957,7 +1006,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Scan convert the polygon described by the list of points passed to  * scan_convert_add_points, and return a channel with a bits set if  * they fall within the polygon defined.  The polygon is filled  * according to the even-odd rule.  The polygon is closed by  * joining the final point to the initial point. */
+comment|/* Scan convert the polygon described by the list of points passed to  * scan_convert_add_points, and return a channel with a bits set if  * they fall within the polygon defined.  The polygon is filled  * according to the even-odd rule.  The polygon is closed by  * joining the final point to the initial point.  */
 end_comment
 
 begin_function
@@ -998,28 +1047,29 @@ decl_stmt|;
 name|guint
 name|antialias2
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|buf
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|b
 decl_stmt|;
-name|int
+name|gint
 modifier|*
 name|vals
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|val
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|x2
 decl_stmt|,
 name|w
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -1143,9 +1193,11 @@ name|buf
 operator|=
 name|g_new0
 argument_list|(
-argument|unsigned char
+name|guchar
 argument_list|,
-argument|sc->width
+name|sc
+operator|->
+name|width
 argument_list|)
 expr_stmt|;
 name|widtha
@@ -1169,7 +1221,7 @@ name|vals
 operator|=
 name|g_new
 argument_list|(
-name|int
+name|gint
 argument_list|,
 name|widtha
 argument_list|)
@@ -1525,8 +1577,7 @@ name|b
 operator|++
 operator|=
 call|(
-name|unsigned
-name|char
+name|guchar
 call|)
 argument_list|(
 name|val
@@ -1572,35 +1623,6 @@ name|mask
 return|;
 block|}
 end_function
-
-begin_function
-name|void
-DECL|function|scan_converter_free (ScanConverter * sc)
-name|scan_converter_free
-parameter_list|(
-name|ScanConverter
-modifier|*
-name|sc
-parameter_list|)
-block|{
-name|g_free
-argument_list|(
-name|sc
-operator|->
-name|scanlines
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|sc
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/* End of scan_convert.c */
-end_comment
 
 end_unit
 

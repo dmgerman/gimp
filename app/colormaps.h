@@ -16,12 +16,6 @@ directive|define
 name|__COLORMAPS_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gdk/gdk.h>
-end_include
-
 begin_decl_stmt
 specifier|extern
 name|GdkVisual
@@ -106,13 +100,13 @@ begin_function_decl
 name|gulong
 name|get_color
 parameter_list|(
-name|int
+name|gint
 name|red
 parameter_list|,
-name|int
+name|gint
 name|green
 parameter_list|,
-name|int
+name|gint
 name|blue
 parameter_list|)
 function_decl|;

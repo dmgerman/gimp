@@ -16,12 +16,6 @@ directive|define
 name|__TILE_MANAGER_PVT_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"tile.h"
-end_include
-
 begin_struct
 DECL|struct|_TileManager
 struct|struct
@@ -29,55 +23,54 @@ name|_TileManager
 block|{
 DECL|member|x
 DECL|member|y
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-comment|/* tile manager offsets  */
+comment|/*  tile manager offsets                 */
 DECL|member|width
-name|int
+name|gint
 name|width
 decl_stmt|;
-comment|/* the width of the tiled area */
+comment|/*  the width of the tiled area          */
 DECL|member|height
-name|int
+name|gint
 name|height
 decl_stmt|;
-comment|/* the height of the tiled area */
+comment|/*  the height of the tiled area         */
 DECL|member|bpp
-name|int
+name|gint
 name|bpp
 decl_stmt|;
-comment|/* the bpp of each tile */
+comment|/*  the bpp of each tile                 */
 DECL|member|ntile_rows
-name|int
+name|gint
 name|ntile_rows
 decl_stmt|;
-comment|/* the number of tiles in each row */
+comment|/*  the number of tiles in each row      */
 DECL|member|ntile_cols
-name|int
+name|gint
 name|ntile_cols
 decl_stmt|;
-comment|/* the number of tiles in each columns */
+comment|/*  the number of tiles in each columns  */
 DECL|member|tiles
 name|Tile
 modifier|*
 modifier|*
 name|tiles
 decl_stmt|;
-comment|/* the tiles for this level */
+comment|/*  the tiles for this level             */
 DECL|member|validate_proc
 name|TileValidateProc
 name|validate_proc
 decl_stmt|;
-comment|/* this proc is called when an attempt to get an 				    *  invalid tile is made. 				    */
+comment|/*  this proc is called when an attempt 				     *  to get an invalid tile is made. 				     */
 DECL|member|user_data
-name|void
-modifier|*
+name|gpointer
 name|user_data
 decl_stmt|;
-comment|/* hook for hanging data off of */
+comment|/*  hook for hanging data off of         */
 block|}
 struct|;
 end_struct

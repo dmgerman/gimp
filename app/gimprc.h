@@ -16,18 +16,6 @@ directive|define
 name|__GIMPRC_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpunit.h"
-end_include
-
 begin_comment
 comment|/*  global gimprc variables  */
 end_comment

@@ -25,6 +25,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpuitypes.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpchainbutton.h>
 end_include
 

@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -25,6 +25,12 @@ begin_include
 include|#
 directive|include
 file|"appenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"boundary.h"
 end_include
 
 begin_include
@@ -43,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -72,25 +84,43 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint_options.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"undo.h"
+file|"pixel_region.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"channel_pvt.h"
+file|"procedural_db.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile_manager.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"tile_manager_pvt.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"undo.h"
 end_include
 
 begin_include
@@ -168,7 +198,7 @@ condition|(
 operator|(
 name|layer
 operator|=
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gimage
 argument_list|)
@@ -179,7 +209,7 @@ comment|/*  If there is a floating selection, then        *  we need to do some 
 comment|/*  Find the selection mask boundary  */
 name|channel_boundary
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -223,7 +253,7 @@ condition|(
 operator|(
 name|d
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gimage
 argument_list|)
@@ -238,7 +268,7 @@ block|{
 return|return
 name|channel_boundary
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -272,7 +302,7 @@ condition|(
 operator|(
 name|layer
 operator|=
-name|gimage_get_active_layer
+name|gimp_image_get_active_layer
 argument_list|(
 name|gimage
 argument_list|)
@@ -369,7 +399,7 @@ expr_stmt|;
 return|return
 name|channel_boundary
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -450,7 +480,7 @@ block|{
 return|return
 name|channel_bounds
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -495,7 +525,7 @@ argument_list|)
 expr_stmt|;
 name|mask
 operator|=
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -509,7 +539,7 @@ expr_stmt|;
 comment|/*  If there is a floating selection, update it's area...    *  we need to do this since this selection mask can act as an additional    *  mask in the composition of the floating selection    */
 name|layer
 operator|=
-name|gimage_get_active_layer
+name|gimp_image_get_active_layer
 argument_list|(
 name|gimage
 argument_list|)
@@ -571,7 +601,7 @@ block|{
 return|return
 name|channel_value
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -606,7 +636,7 @@ else|else
 return|return
 name|channel_is_empty
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -633,7 +663,7 @@ parameter_list|)
 block|{
 name|channel_translate
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -889,7 +919,7 @@ name|non_empty
 condition|)
 name|sel_mask
 operator|=
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -899,7 +929,7 @@ name|sel_mask
 operator|=
 name|NULL
 expr_stmt|;
-name|gimage_get_background
+name|gimp_image_get_background
 argument_list|(
 name|gimage
 argument_list|,
@@ -1116,7 +1146,7 @@ block|{
 comment|/*  Clear the region  */
 name|channel_clear
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1254,7 +1284,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
-name|gimage_remove_layer
+name|gimp_image_remove_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -1276,7 +1306,7 @@ name|drawable
 argument_list|)
 condition|)
 block|{
-name|gimage_remove_layer_mask
+name|gimp_image_remove_layer_mask
 argument_list|(
 name|gimage
 argument_list|,
@@ -1302,7 +1332,7 @@ argument_list|(
 name|drawable
 argument_list|)
 condition|)
-name|gimage_remove_channel
+name|gimp_image_remove_channel
 argument_list|(
 name|gimage
 argument_list|,
@@ -1349,7 +1379,7 @@ name|Channel
 modifier|*
 name|mask
 init|=
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1547,7 +1577,7 @@ parameter_list|)
 block|{
 name|channel_clear
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1568,7 +1598,7 @@ parameter_list|)
 block|{
 name|channel_push_undo
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1589,7 +1619,7 @@ parameter_list|)
 block|{
 name|channel_invert
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1611,7 +1641,7 @@ block|{
 comment|/*  No need to play with the selection visibility    *  because sharpen will not change the outline    */
 name|channel_sharpen
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1632,7 +1662,7 @@ parameter_list|)
 block|{
 name|channel_all
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1653,7 +1683,7 @@ parameter_list|)
 block|{
 name|channel_clear
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1681,7 +1711,7 @@ block|{
 comment|/*  push the current mask onto the undo stack--need to do this here because    *  channel_feather doesn't do it    */
 name|channel_push_undo
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1690,12 +1720,12 @@ expr_stmt|;
 comment|/*  feather the region  */
 name|channel_feather
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1704,7 +1734,7 @@ name|feather_radius_x
 argument_list|,
 name|feather_radius_y
 argument_list|,
-name|REPLACE
+name|CHANNEL_OP_REPLACE
 argument_list|,
 literal|0
 argument_list|,
@@ -1733,7 +1763,7 @@ block|{
 comment|/*  feather the region  */
 name|channel_border
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1765,7 +1795,7 @@ block|{
 comment|/*  feather the region  */
 name|channel_grow
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1800,7 +1830,7 @@ block|{
 comment|/*  feather the region  */
 name|channel_shrink
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1844,7 +1874,7 @@ block|{
 comment|/*  load the mask with the given layer's alpha channel  */
 name|channel_layer_alpha
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1895,7 +1925,7 @@ block|{
 comment|/*  load the mask with the given layer's alpha channel  */
 name|channel_layer_mask
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1937,7 +1967,7 @@ block|{
 comment|/*  Load the specified channel to the gimage mask  */
 name|channel_load
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1969,7 +1999,7 @@ name|new_channel
 operator|=
 name|channel_copy
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1985,7 +2015,7 @@ name|visible
 operator|=
 name|FALSE
 expr_stmt|;
-name|gimage_add_channel
+name|gimp_image_add_channel
 argument_list|(
 name|gimage
 argument_list|,

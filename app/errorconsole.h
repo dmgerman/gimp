@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__ERRORCONSOLE_H__
+name|__ERROR_CONSOLE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__ERRORCONSOLE_H__
+DECL|macro|__ERROR_CONSOLE_H__
 define|#
 directive|define
-name|__ERRORCONSOLE_H__
+name|__ERROR_CONSOLE_H__
 end_define
 
 begin_function_decl
@@ -46,7 +46,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __ERRORCONSOLE_H__ */
+comment|/* __ERROR_CONSOLE_H__ */
 end_comment
 
 end_unit

@@ -16,12 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -49,17 +43,25 @@ directive|include
 file|"asupsample.h"
 end_include
 
-begin_comment
-comment|/***** Types *****/
-end_comment
+begin_include
+include|#
+directive|include
+file|"gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
+end_include
 
 begin_typedef
-DECL|struct|__anon27fad8840108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2ac573d40108
 block|{
 DECL|member|ready
-name|char
+name|gchar
 name|ready
 decl_stmt|;
 DECL|member|color
@@ -78,14 +80,13 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|unsigned
-name|long
+name|gulong
 name|render_sub_pixel
 parameter_list|(
-name|int
+name|gint
 name|max_depth
 parameter_list|,
-name|int
+name|gint
 name|depth
 parameter_list|,
 name|sample_t
@@ -93,28 +94,28 @@ modifier|*
 modifier|*
 name|block
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|x1
 parameter_list|,
-name|int
+name|gint
 name|y1
 parameter_list|,
-name|int
+name|gint
 name|x3
 parameter_list|,
-name|int
+name|gint
 name|y3
 parameter_list|,
-name|double
+name|gdouble
 name|threshold
 parameter_list|,
-name|int
+name|gint
 name|sub_pixel_size
 parameter_list|,
 name|render_func_t
@@ -124,8 +125,7 @@ name|color_t
 modifier|*
 name|color
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|render_data
 parameter_list|)
 function_decl|;
@@ -133,7 +133,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|double
+name|gdouble
 name|color_dist
 parameter_list|(
 name|color_t
@@ -149,53 +149,45 @@ begin_comment
 comment|/***** Functions *****/
 end_comment
 
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
-name|unsigned
-name|long
-DECL|function|adaptive_supersample_area (int x1,int y1,int x2,int y2,int max_depth,double threshold,render_func_t render_func,void * render_data,put_pixel_func_t put_pixel_func,void * put_pixel_data,progress_func_t progress_func,void * progress_data)
+name|gulong
+DECL|function|adaptive_supersample_area (gint x1,gint y1,gint x2,gint y2,gint max_depth,gdouble threshold,render_func_t render_func,gpointer render_data,put_pixel_func_t put_pixel_func,gpointer put_pixel_data,progress_func_t progress_func,gpointer progress_data)
 name|adaptive_supersample_area
 parameter_list|(
-name|int
+name|gint
 name|x1
 parameter_list|,
-name|int
+name|gint
 name|y1
 parameter_list|,
-name|int
+name|gint
 name|x2
 parameter_list|,
-name|int
+name|gint
 name|y2
 parameter_list|,
-name|int
+name|gint
 name|max_depth
 parameter_list|,
-name|double
+name|gdouble
 name|threshold
 parameter_list|,
 name|render_func_t
 name|render_func
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|render_data
 parameter_list|,
 name|put_pixel_func_t
 name|put_pixel_func
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|put_pixel_data
 parameter_list|,
 name|progress_func_t
 name|progress_func
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|progress_data
 parameter_list|)
 block|{
@@ -450,7 +442,6 @@ operator|=
 literal|0.0
 expr_stmt|;
 block|}
-comment|/* for */
 comment|/* Allocate block matrix */
 name|block
 operator|=
@@ -956,9 +947,7 @@ operator|=
 name|tmp_sample
 expr_stmt|;
 block|}
-comment|/* for */
 block|}
-comment|/* for */
 comment|/* Swap rows */
 name|tmp_row
 operator|=
@@ -999,7 +988,6 @@ name|progress_data
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* for */
 comment|/* Free memory */
 for|for
 control|(
@@ -1047,25 +1035,16 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/* adaptive_supersample_area */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
-name|unsigned
-name|long
-DECL|function|render_sub_pixel (int max_depth,int depth,sample_t ** block,int x,int y,int x1,int y1,int x3,int y3,double threshold,int sub_pixel_size,render_func_t render_func,color_t * color,void * render_data)
+name|gulong
+DECL|function|render_sub_pixel (gint max_depth,gint depth,sample_t ** block,gint x,gint y,gint x1,gint y1,gint x3,gint y3,double threshold,gint sub_pixel_size,render_func_t render_func,color_t * color,gpointer render_data)
 name|render_sub_pixel
 parameter_list|(
-name|int
+name|gint
 name|max_depth
 parameter_list|,
-name|int
+name|gint
 name|depth
 parameter_list|,
 name|sample_t
@@ -1073,28 +1052,28 @@ modifier|*
 modifier|*
 name|block
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|x1
 parameter_list|,
-name|int
+name|gint
 name|y1
 parameter_list|,
-name|int
+name|gint
 name|x3
 parameter_list|,
-name|int
+name|gint
 name|y3
 parameter_list|,
 name|double
 name|threshold
 parameter_list|,
-name|int
+name|gint
 name|sub_pixel_size
 parameter_list|,
 name|render_func_t
@@ -1104,8 +1083,7 @@ name|color_t
 modifier|*
 name|color
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|render_data
 parameter_list|)
 block|{
@@ -1269,6 +1247,7 @@ name|c1
 expr_stmt|;
 block|}
 else|else
+block|{
 name|c1
 operator|=
 name|block
@@ -1281,6 +1260,7 @@ index|]
 operator|.
 name|color
 expr_stmt|;
+block|}
 comment|/* Render upper right sample */
 if|if
 condition|(
@@ -1344,6 +1324,7 @@ name|c2
 expr_stmt|;
 block|}
 else|else
+block|{
 name|c2
 operator|=
 name|block
@@ -1356,6 +1337,7 @@ index|]
 operator|.
 name|color
 expr_stmt|;
+block|}
 comment|/* Render lower left sample */
 if|if
 condition|(
@@ -1419,6 +1401,7 @@ name|c3
 expr_stmt|;
 block|}
 else|else
+block|{
 name|c3
 operator|=
 name|block
@@ -1431,6 +1414,7 @@ index|]
 operator|.
 name|color
 expr_stmt|;
+block|}
 comment|/* Render lower right sample */
 if|if
 condition|(
@@ -1494,6 +1478,7 @@ name|c4
 expr_stmt|;
 block|}
 else|else
+block|{
 name|c4
 operator|=
 name|block
@@ -1506,6 +1491,7 @@ index|]
 operator|.
 name|color
 expr_stmt|;
+block|}
 comment|/* Check for supersampling */
 if|if
 condition|(
@@ -1751,9 +1737,7 @@ name|render_data
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* if */
 block|}
-comment|/* if */
 name|color
 operator|->
 name|r
@@ -1856,17 +1840,9 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/* render_sub_pixel */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
-name|double
+name|gdouble
 DECL|function|color_dist (color_t c1,color_t c2)
 name|color_dist
 parameter_list|(
@@ -1878,6 +1854,7 @@ name|c2
 parameter_list|)
 block|{
 return|return
+operator|(
 name|fabs
 argument_list|(
 name|c1
@@ -1921,13 +1898,10 @@ name|c2
 operator|.
 name|a
 argument_list|)
+operator|)
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* color_dist */
-end_comment
 
 end_unit
 

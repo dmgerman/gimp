@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"unitrc.h"
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -43,6 +43,12 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"unitrc.h"
 end_include
 
 begin_comment
@@ -74,7 +80,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277b97460108
+DECL|struct|__anon2b9696db0108
 block|{
 DECL|member|delete_on_exit
 name|gboolean

@@ -16,16 +16,13 @@ directive|define
 name|__INVERT_H__
 end_define
 
-begin_comment
-comment|/*  invert functions  */
-end_comment
-
 begin_function_decl
 name|void
 name|image_invert
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -36,6 +33,7 @@ name|invert
 parameter_list|(
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl

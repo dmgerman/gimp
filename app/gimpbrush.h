@@ -22,18 +22,6 @@ directive|include
 file|"gimpobject.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpvector.h"
-end_include
-
 begin_typedef
 DECL|typedef|GimpBrushClass
 typedef|typedef

@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"boundary.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -84,19 +90,13 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimage_mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
 end_include
 
 begin_include
@@ -108,19 +108,43 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"path_transform.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"undo.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"libgimp/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
@@ -661,7 +685,7 @@ name|edit_type
 operator|==
 name|EDIT_MASK_TO_LAYER_TRANSLATE
 operator|&&
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->
@@ -681,7 +705,7 @@ condition|)
 block|{
 name|layer
 operator|=
-name|gimage_get_active_layer
+name|gimp_image_get_active_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -763,7 +787,7 @@ expr_stmt|;
 comment|/*  find the bounding box of the selection mask -    *  this is used for the case of a EDIT_MASK_TO_LAYER_TRANSLATE,    *  where the translation will result in floating the selection    *  mask and translating the resulting layer    */
 name|drawable_mask_bounds
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -1170,7 +1194,7 @@ condition|)
 block|{
 name|layer
 operator|=
-name|gimage_get_active_layer
+name|gimp_image_get_active_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -1210,7 +1234,7 @@ argument_list|)
 expr_stmt|;
 name|layer
 operator|=
-name|gimage_get_active_layer
+name|gimp_image_get_active_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -1493,7 +1517,7 @@ condition|(
 operator|(
 name|floating_layer
 operator|=
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->
@@ -1611,7 +1635,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -1706,7 +1730,7 @@ name|EDIT_FLOATING_SEL_TRANSLATE
 case|:
 name|layer
 operator|=
-name|gimage_get_active_layer
+name|gimp_image_get_active_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -2150,7 +2174,7 @@ name|EDIT_MASK_TRANSLATE
 case|:
 name|layer
 operator|=
-name|gimage_get_active_layer
+name|gimp_image_get_active_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -3501,7 +3525,7 @@ condition|)
 block|{
 name|layer
 operator|=
-name|gimage_get_active_layer
+name|gimp_image_get_active_layer
 argument_list|(
 name|gdisp
 operator|->
@@ -3545,7 +3569,7 @@ condition|(
 operator|(
 name|floating_layer
 operator|=
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gdisp
 operator|->

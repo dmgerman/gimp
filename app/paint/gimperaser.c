@@ -60,6 +60,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpui.h"
 end_include
 
@@ -91,6 +103,12 @@ begin_include
 include|#
 directive|include
 file|"selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"temp_buf.h"
 end_include
 
 begin_include
@@ -861,8 +879,7 @@ name|TempBuf
 modifier|*
 name|area
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|col
 index|[
 name|MAX_CHANNELS
@@ -884,7 +901,7 @@ argument_list|)
 operator|)
 condition|)
 return|return;
-name|gimage_get_background
+name|gimp_image_get_background
 argument_list|(
 name|gimage
 argument_list|,

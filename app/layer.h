@@ -19,42 +19,14 @@ end_define
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"boundary.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"channel.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"temp_buf.h"
+file|"gimpdrawable.h"
 end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_manager.h"
-end_include
-
-begin_comment
-comment|/*  structure declarations  */
-end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_LAYER
@@ -160,23 +132,156 @@ parameter_list|)
 value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_LAYER_MASK))
 end_define
 
-begin_function_decl
-name|GtkType
-name|gimp_layer_get_type
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_struct
+DECL|struct|_GimpLayer
+struct|struct
+name|_GimpLayer
+block|{
+DECL|member|drawable
+name|GimpDrawable
+name|drawable
+decl_stmt|;
+DECL|member|linked
+name|gboolean
+name|linked
+decl_stmt|;
+comment|/*  control linkage                */
+DECL|member|preserve_trans
+name|gboolean
+name|preserve_trans
+decl_stmt|;
+comment|/*  preserve transparency          */
+DECL|member|mask
+name|LayerMask
+modifier|*
+name|mask
+decl_stmt|;
+comment|/*  possible layer mask            */
+DECL|member|apply_mask
+name|gint
+name|apply_mask
+decl_stmt|;
+comment|/*  controls mask application      */
+DECL|member|edit_mask
+name|gboolean
+name|edit_mask
+decl_stmt|;
+comment|/*  edit mask or layer?            */
+DECL|member|show_mask
+name|gboolean
+name|show_mask
+decl_stmt|;
+comment|/*  show mask or layer?            */
+DECL|member|opacity
+name|gint
+name|opacity
+decl_stmt|;
+comment|/*  layer opacity                  */
+DECL|member|mode
+name|LayerModeEffects
+name|mode
+decl_stmt|;
+comment|/*  layer combination mode         */
+comment|/*  Floating selections  */
+struct|struct
+DECL|struct|__anon2a8c97a20108
+block|{
+DECL|member|backing_store
+name|TileManager
+modifier|*
+name|backing_store
+decl_stmt|;
+comment|/*  for obscured regions           */
+DECL|member|drawable
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
+comment|/*  floating sel is attached to    */
+DECL|member|initial
+name|gboolean
+name|initial
+decl_stmt|;
+comment|/*  is fs composited yet?          */
+DECL|member|boundary_known
+name|gboolean
+name|boundary_known
+decl_stmt|;
+comment|/*  is the current boundary valid  */
+DECL|member|segs
+name|BoundSeg
+modifier|*
+name|segs
+decl_stmt|;
+comment|/*  boundary of floating sel       */
+DECL|member|num_segs
+name|gint
+name|num_segs
+decl_stmt|;
+comment|/*  number of segs in boundary     */
+DECL|member|fs
+block|}
+name|fs
+struct|;
+block|}
+struct|;
+end_struct
 
-begin_function_decl
-name|GtkType
-name|gimp_layer_mask_get_type
-parameter_list|(
+begin_struct
+DECL|struct|_GimpLayerClass
+struct|struct
+name|_GimpLayerClass
+block|{
+DECL|member|parent_class
+name|GimpDrawableClass
+name|parent_class
+decl_stmt|;
+DECL|member|removed
 name|void
+function_decl|(
+modifier|*
+name|removed
+function_decl|)
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
 parameter_list|)
 function_decl|;
-end_function_decl
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpLayerMask
+struct|struct
+name|_GimpLayerMask
+block|{
+DECL|member|drawable
+name|GimpChannel
+name|drawable
+decl_stmt|;
+DECL|member|layer
+name|Layer
+modifier|*
+name|layer
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpLayerMaskClass
+struct|struct
+name|_GimpLayerMaskClass
+block|{
+DECL|member|parent_class
+name|GimpChannelClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_comment
 comment|/*  Special undo types  */
@@ -273,6 +378,15 @@ end_struct
 begin_comment
 comment|/*  function declarations  */
 end_comment
+
+begin_function_decl
+name|GtkType
+name|gimp_layer_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|Layer
@@ -587,6 +701,15 @@ name|x
 parameter_list|,
 name|gint
 name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkType
+name|gimp_layer_mask_get_type
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -10,6 +10,24 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"procedural_db.h"
 end_include
 
@@ -58,6 +76,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphistogram.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -76,6 +100,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"histogramwidget.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"hue_saturation.h"
 end_include
 
@@ -89,6 +119,18 @@ begin_include
 include|#
 directive|include
 file|"lut_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_processor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
 end_include
 
 begin_include

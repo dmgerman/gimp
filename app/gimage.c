@@ -24,7 +24,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimageP.h"
+file|"appenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"channel.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"dialog_handler.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"drawable.h"
 end_include
 
 begin_include
@@ -42,37 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"lc_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paletteP.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
+file|"gimpset.h"
 end_include
 
 begin_include
@@ -84,13 +72,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layer_pvt.h"
+file|"lc_dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"channel.h"
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paletteP.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"procedural_db.h"
 end_include
 
 begin_include
@@ -102,23 +108,11 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpset.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"dialog_handler.h"
+file|"undo.h"
 end_include
 
 begin_comment
-comment|/* gimage.c: Junk (ugly dependencies) from gimpimage.c on its way    to proper places. That is, the handlers should be moved to    layers_dialog, gdisplay, tools, etc.. */
+comment|/* gimage.c: Junk (ugly dependencies) from gimpimage.c on its way  * to proper places. That is, the handlers should be moved to  * layers_dialog, gdisplay, tools, etc..  */
 end_comment
 
 begin_function_decl
@@ -222,13 +216,13 @@ end_function_decl
 begin_function
 name|GImage
 modifier|*
-DECL|function|gimage_new (int width,int height,GimpImageBaseType base_type)
+DECL|function|gimage_new (gint width,gint height,GimpImageBaseType base_type)
 name|gimage_new
 parameter_list|(
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
 name|GimpImageBaseType

@@ -16,24 +16,6 @@ directive|define
 name|__GIMP_CONTEXT_PREVIEW_H_
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimpbrush.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gradient.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"patterns.h"
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -84,12 +66,6 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONTEXT_PREVIEW))
-DECL|typedef|GimpContextPreview
-typedef|typedef
-name|struct
-name|_GimpContextPreview
-name|GimpContextPreview
-typedef|;
 DECL|typedef|GimpContextPreviewClass
 typedef|typedef
 name|struct
@@ -98,7 +74,7 @@ name|GimpContextPreviewClass
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon288d946f0103
+DECL|enum|__anon2c6ff4640103
 block|{
 DECL|enumerator|GCP_BRUSH
 name|GCP_BRUSH

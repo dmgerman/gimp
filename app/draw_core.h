@@ -16,12 +16,6 @@ directive|define
 name|__DRAW_CORE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
 begin_comment
 comment|/*  drawing states  */
 end_comment
@@ -47,15 +41,6 @@ comment|/*  Structure definitions  */
 end_comment
 
 begin_typedef
-DECL|typedef|DrawCore
-typedef|typedef
-name|struct
-name|_draw_core
-name|DrawCore
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|DrawCoreDraw
 typedef|typedef
 name|void
@@ -71,9 +56,9 @@ function_decl|;
 end_typedef
 
 begin_struct
-DECL|struct|_draw_core
+DECL|struct|_DrawCore
 struct|struct
-name|_draw_core
+name|_DrawCore
 block|{
 DECL|member|gc
 name|GdkGC
@@ -88,32 +73,32 @@ name|win
 decl_stmt|;
 comment|/*  Window to draw draw operation to      */
 DECL|member|draw_state
-name|int
+name|gint
 name|draw_state
 decl_stmt|;
 comment|/*  Current state in the drawing process    */
 DECL|member|line_width
-name|int
+name|gint
 name|line_width
 decl_stmt|;
 comment|/**/
 DECL|member|line_style
-name|int
+name|gint
 name|line_style
 decl_stmt|;
 comment|/**/
 DECL|member|cap_style
-name|int
+name|gint
 name|cap_style
 decl_stmt|;
 comment|/*  line attributes                         */
 DECL|member|join_style
-name|int
+name|gint
 name|join_style
 decl_stmt|;
 comment|/**/
 DECL|member|paused_count
-name|int
+name|gint
 name|paused_count
 decl_stmt|;
 comment|/*  count to keep track of multiple pauses  */

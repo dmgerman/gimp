@@ -16,22 +16,10 @@ directive|define
 name|__HUE_SATURATION_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"image_map.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1df4900103
+DECL|enum|__anon2942c1d60103
 block|{
 DECL|enumerator|ALL_HUES
 name|ALL_HUES

@@ -19,33 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tool_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpunit.h"
 end_include
 
 begin_comment
 comment|/*  the selection options structures  */
 end_comment
-
-begin_typedef
-DECL|typedef|SelectionOptions
-typedef|typedef
-name|struct
-name|_SelectionOptions
-name|SelectionOptions
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_SelectionOptions
