@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-undo-push.h"
 end_include
 
@@ -149,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d9a5bb0103
+DECL|enum|__anon27d6ebd10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1838,6 +1844,10 @@ parameter_list|,
 modifier|...
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
 name|GimpText
 modifier|*
 name|text
@@ -1870,8 +1880,8 @@ operator|!
 name|text
 condition|)
 return|return;
-name|gimp_image_undo_push_text_layer
-argument_list|(
+name|image
+operator|=
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
@@ -1879,6 +1889,29 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
+expr_stmt|;
+comment|/*  If the layer contains a mask,    *  gimp_text_layer_render() might have to resize it.    */
+if|if
+condition|(
+name|GIMP_LAYER
+argument_list|(
+name|layer
+argument_list|)
+operator|->
+name|mask
+condition|)
+name|gimp_image_undo_group_start
+argument_list|(
+name|image
+argument_list|,
+name|GIMP_UNDO_GROUP_TEXT
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_push_text_layer
+argument_list|(
+name|image
 argument_list|,
 name|undo_desc
 argument_list|,
@@ -1907,6 +1940,20 @@ expr_stmt|;
 name|va_end
 argument_list|(
 name|var_args
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|GIMP_LAYER
+argument_list|(
+name|layer
+argument_list|)
+operator|->
+name|mask
+condition|)
+name|gimp_image_undo_group_end
+argument_list|(
+name|image
 argument_list|)
 expr_stmt|;
 block|}
