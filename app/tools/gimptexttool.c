@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpfontselection.h"
 end_include
 
@@ -1434,6 +1440,20 @@ name|gpointer
 operator|*
 operator|)
 operator|&
+name|text_tool
+operator|->
+name|editor
+argument_list|)
+expr_stmt|;
+name|gimp_dialog_factory_add_foreign
+argument_list|(
+name|gimp_dialog_factory_from_name
+argument_list|(
+literal|"toplevel"
+argument_list|)
+argument_list|,
+literal|"gimp-text-tool-dialog"
+argument_list|,
 name|text_tool
 operator|->
 name|editor
