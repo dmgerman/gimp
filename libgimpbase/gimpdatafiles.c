@@ -568,25 +568,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|dir
 condition|)
-block|{
-name|g_message
-argument_list|(
-literal|"error reading datafiles directory \"%s\""
-argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-argument_list|)
-expr_stmt|;
-block|}
-else|else
 block|{
 while|while
 condition|(

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets-types.h"
 end_include
 
@@ -209,7 +215,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c590d30103
+DECL|enum|__anon293136920103
 block|{
 DECL|enumerator|FONT_CHANGED
 name|FONT_CHANGED
@@ -622,6 +628,18 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|button
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|button
+argument_list|,
+name|_
+argument_list|(
+literal|"Click to open the Font Selection Dialog"
+argument_list|)
+argument_list|,
+literal|"dialogs/font_selection.html"
 argument_list|)
 expr_stmt|;
 name|image
