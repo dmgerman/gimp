@@ -1755,10 +1755,12 @@ argument_list|,
 name|drawable_ID
 argument_list|)
 operator|&&
+operator|(
+operator|!
 name|xsvals
 operator|.
 name|write_mask
-operator|&&
+operator|||
 name|save_image
 argument_list|(
 name|mask_filename
@@ -1775,6 +1777,7 @@ name|image_ID
 argument_list|,
 name|drawable_ID
 argument_list|)
+operator|)
 condition|)
 block|{
 comment|/*  Store xsvals data  */
