@@ -347,7 +347,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b15e240108
+DECL|struct|__anon2c64f9870108
 block|{
 DECL|member|histogram
 name|gboolean
@@ -2006,10 +2006,6 @@ name|frame
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|vbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|scrollbar
 decl_stmt|;
 name|GtkWidget
@@ -2483,6 +2479,11 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+operator|->
 name|vbox
 argument_list|)
 argument_list|,
