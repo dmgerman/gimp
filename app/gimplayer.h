@@ -65,7 +65,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c9bb8da0103
+DECL|enum|__anon2a31e0930103
 block|{
 DECL|enumerator|WhiteMask
 name|WhiteMask
@@ -86,6 +86,14 @@ comment|/* structure declarations */
 end_comment
 
 begin_define
+DECL|macro|GIMP_TYPE_LAYER
+define|#
+directive|define
+name|GIMP_TYPE_LAYER
+value|(gimp_layer_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_LAYER (obj)
 define|#
 directive|define
@@ -93,7 +101,7 @@ name|GIMP_LAYER
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_CAST (obj, gimp_layer_get_type (), GimpLayer)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_LAYER, GimpLayer))
 end_define
 
 begin_define
@@ -104,7 +112,7 @@ name|GIMP_LAYER_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|GTK_CHECK_CLASS_CAST (klass, gimp_layer_get_type(), GimpLayerClass)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_LAYER, GimpLayerClass))
 end_define
 
 begin_define
@@ -115,7 +123,26 @@ name|GIMP_IS_LAYER
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_TYPE (obj, gimp_layer_get_type())
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_LAYER))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_LAYER_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_LAYER_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_LAYER))
+end_define
+
+begin_define
+DECL|macro|GIMP_TYPE_LAYER_MASK
+define|#
+directive|define
+name|GIMP_TYPE_LAYER_MASK
+value|(gimp_layer_mask_get_type ())
 end_define
 
 begin_define
@@ -126,7 +153,7 @@ name|GIMP_LAYER_MASK
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_CAST (obj, gimp_layer_mask_get_type (), GimpLayerMask)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_LAYER_MASK, GimpLayerMask))
 end_define
 
 begin_define
@@ -137,7 +164,7 @@ name|GIMP_LAYER_MASK_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|GTK_CHECK_CLASS_CAST (klass, gimp_layer_mask_get_type(), GimpLayerMaskClass)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_LAYER_MASK, GimpLayerMaskClass))
 end_define
 
 begin_define
@@ -148,7 +175,18 @@ name|GIMP_IS_LAYER_MASK
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_TYPE (obj, gimp_layer_mask_get_type())
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_LAYER_MASK))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_LAYER_MASK_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_LAYER_MASK_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_LAYER_MASK))
 end_define
 
 begin_typedef
@@ -214,7 +252,7 @@ comment|/* convenience */
 end_comment
 
 begin_function_decl
-name|guint
+name|GtkType
 name|gimp_layer_get_type
 parameter_list|(
 name|void
@@ -223,7 +261,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|guint
+name|GtkType
 name|gimp_layer_mask_get_type
 parameter_list|(
 name|void

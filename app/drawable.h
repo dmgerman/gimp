@@ -35,6 +35,14 @@ file|"temp_buf.h"
 end_include
 
 begin_define
+DECL|macro|GIMP_TYPE_DRAWABLE
+define|#
+directive|define
+name|GIMP_TYPE_DRAWABLE
+value|(gimp_drawable_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_DRAWABLE (obj)
 define|#
 directive|define
@@ -42,7 +50,7 @@ name|GIMP_DRAWABLE
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_CAST (obj, gimp_drawable_get_type (), GimpDrawable)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_DRAWABLE, GimpDrawable))
 end_define
 
 begin_define
@@ -53,7 +61,7 @@ name|GIMP_DRAWABLE_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|GTK_CHECK_CLASS_CAST (klass, gimp_drawable_get_type(), GimpDrawableClass)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DRAWABLE, GimpDrawableClass))
 end_define
 
 begin_define
@@ -64,7 +72,18 @@ name|GIMP_IS_DRAWABLE
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_TYPE (obj, gimp_drawable_get_type())
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_DRAWABLE))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_DRAWABLE_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_DRAWABLE_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DRAWABLE))
 end_define
 
 begin_typedef
@@ -86,7 +105,7 @@ typedef|;
 end_typedef
 
 begin_function_decl
-name|guint
+name|GtkType
 name|gimp_drawable_get_type
 parameter_list|(
 name|void

@@ -93,6 +93,14 @@ comment|/* structure declarations */
 end_comment
 
 begin_define
+DECL|macro|GIMP_TYPE_CHANNEL
+define|#
+directive|define
+name|GIMP_TYPE_CHANNEL
+value|(gimp_channel_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_CHANNEL (obj)
 define|#
 directive|define
@@ -100,7 +108,7 @@ name|GIMP_CHANNEL
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_CAST (obj, gimp_channel_get_type (), GimpChannel)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_CHANNEL, GimpChannel))
 end_define
 
 begin_define
@@ -111,7 +119,7 @@ name|GIMP_CHANNEL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|GTK_CHECK_CLASS_CAST (klass, gimp_channel_get_type(), GimpChannelClass)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CHANNEL, GimpChannelClass))
 end_define
 
 begin_define
@@ -122,7 +130,18 @@ name|GIMP_IS_CHANNEL
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_TYPE (obj, gimp_channel_get_type())
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_CHANNEL))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_CHANNEL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_CHANNEL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CHANNEL))
 end_define
 
 begin_typedef
@@ -157,7 +176,7 @@ comment|/* convenience */
 end_comment
 
 begin_function_decl
-name|guint
+name|GtkType
 name|gimp_channel_get_type
 parameter_list|(
 name|void

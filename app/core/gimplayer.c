@@ -122,7 +122,7 @@ file|"tile_manager_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2c4b10ee0103
+DECL|enum|__anon274a1fed0103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -241,13 +241,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|guint
+name|GtkType
 DECL|function|gimp_layer_get_type ()
 name|gimp_layer_get_type
 parameter_list|()
 block|{
 specifier|static
-name|guint
+name|GtkType
 name|layer_type
 init|=
 literal|0
@@ -284,13 +284,14 @@ name|GtkObjectInitFunc
 operator|)
 name|gimp_layer_init
 block|,
-operator|(
-name|GtkArgSetFunc
-operator|)
+comment|/* reversed_1 */
+name|NULL
+block|,
+comment|/* reversed_2 */
 name|NULL
 block|,
 operator|(
-name|GtkArgGetFunc
+name|GtkClassInitFunc
 operator|)
 name|NULL
 block|,       }
@@ -386,13 +387,13 @@ block|{ }
 end_function
 
 begin_function
-name|guint
+name|GtkType
 DECL|function|gimp_layer_mask_get_type ()
 name|gimp_layer_mask_get_type
 parameter_list|()
 block|{
 specifier|static
-name|guint
+name|GtkType
 name|layer_mask_type
 init|=
 literal|0
@@ -429,13 +430,14 @@ name|GtkObjectInitFunc
 operator|)
 name|gimp_layer_mask_init
 block|,
-operator|(
-name|GtkArgSetFunc
-operator|)
+comment|/* reversed_1 */
+name|NULL
+block|,
+comment|/* reversed_2 */
 name|NULL
 block|,
 operator|(
-name|GtkArgGetFunc
+name|GtkClassInitFunc
 operator|)
 name|NULL
 block|,       }

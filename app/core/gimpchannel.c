@@ -149,13 +149,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|guint
+name|GtkType
 DECL|function|gimp_channel_get_type ()
 name|gimp_channel_get_type
 parameter_list|()
 block|{
 specifier|static
-name|guint
+name|GtkType
 name|channel_type
 init|=
 literal|0
@@ -192,13 +192,14 @@ name|GtkObjectInitFunc
 operator|)
 name|gimp_channel_init
 block|,
-operator|(
-name|GtkArgSetFunc
-operator|)
+comment|/* reversed_1 */
+name|NULL
+block|,
+comment|/* reversed_2 */
 name|NULL
 block|,
 operator|(
-name|GtkArgGetFunc
+name|GtkClassInitFunc
 operator|)
 name|NULL
 block|,       }

@@ -100,7 +100,7 @@ file|"drawable_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon28a5c9510103
+DECL|enum|__anon2bc30b6d0103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -175,13 +175,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|guint
+name|GtkType
 DECL|function|gimp_drawable_get_type ()
 name|gimp_drawable_get_type
 parameter_list|()
 block|{
 specifier|static
-name|guint
+name|GtkType
 name|drawable_type
 init|=
 literal|0
@@ -218,13 +218,14 @@ name|GtkObjectInitFunc
 operator|)
 name|gimp_drawable_init
 block|,
-operator|(
-name|GtkArgSetFunc
-operator|)
+comment|/* reversed_1 */
+name|NULL
+block|,
+comment|/* reversed_2 */
 name|NULL
 block|,
 operator|(
-name|GtkArgGetFunc
+name|GtkClassInitFunc
 operator|)
 name|NULL
 block|,       }
