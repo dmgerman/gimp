@@ -44,6 +44,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_config_serialize_value
+parameter_list|(
+specifier|const
+name|GValue
+modifier|*
+name|value
+parameter_list|,
+name|GString
+modifier|*
+name|str
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

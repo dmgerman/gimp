@@ -138,6 +138,26 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_rc_write_changes
+parameter_list|(
+name|GimpRc
+modifier|*
+name|new
+parameter_list|,
+name|GimpRc
+modifier|*
+name|old
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|filename
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

@@ -51,44 +51,6 @@ directive|include
 file|"gimpconfig-types.h"
 end_include
 
-begin_function_decl
-specifier|static
-name|gboolean
-name|gimpconfig_serialize_value
-parameter_list|(
-specifier|const
-name|GValue
-modifier|*
-name|value
-parameter_list|,
-name|GString
-modifier|*
-name|str
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|serialize_unknown_token
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|key
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|value
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function
 name|void
 DECL|function|gimp_config_serialize_properties (GObject * object,gint fd)
@@ -243,7 +205,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimpconfig_serialize_value
+name|gimp_config_serialize_value
 argument_list|(
 operator|&
 name|value
@@ -331,10 +293,9 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|gboolean
-DECL|function|gimpconfig_serialize_value (const GValue * value,GString * str)
-name|gimpconfig_serialize_value
+DECL|function|gimp_config_serialize_value (const GValue * value,GString * str)
+name|gimp_config_serialize_value
 parameter_list|(
 specifier|const
 name|GValue
@@ -592,6 +553,27 @@ name|FALSE
 return|;
 block|}
 end_function
+
+begin_function_decl
+specifier|static
+name|void
+name|serialize_unknown_token
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|key
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|value
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function
 name|void

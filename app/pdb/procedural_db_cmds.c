@@ -468,9 +468,10 @@ condition|(
 operator|!
 name|a
 condition|)
-return|return
-literal|0
-return|;
+name|a
+operator|=
+literal|""
+expr_stmt|;
 return|return
 name|regexec
 argument_list|(
