@@ -122,10 +122,10 @@ name|GtkWidget
 modifier|*
 name|notebook
 decl_stmt|;
-DECL|member|color_area
+DECL|member|fg_bg
 name|GtkWidget
 modifier|*
-name|color_area
+name|fg_bg
 decl_stmt|;
 block|}
 struct|;

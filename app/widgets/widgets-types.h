@@ -755,6 +755,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpFgBgEditor
+typedef|typedef
+name|struct
+name|_GimpFgBgEditor
+name|GimpFgBgEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpGridEditor
 typedef|typedef
 name|struct
