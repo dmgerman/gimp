@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib.h>
 end_include
 
@@ -50,7 +56,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -62,7 +68,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"twain.h"
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -115,7 +121,7 @@ DECL|macro|PLUG_IN_DESCRIPTION
 define|#
 directive|define
 name|PLUG_IN_DESCRIPTION
-value|"Capture an image from a TWAIN datasource"
+value|_("Capture an image from a TWAIN datasource")
 end_define
 
 begin_define
@@ -123,7 +129,7 @@ DECL|macro|PLUG_IN_HELP
 define|#
 directive|define
 name|PLUG_IN_HELP
-value|"This plug-in will capture an image from a TWAIN datasource"
+value|_("This plug-in will capture an image from a TWAIN datasource")
 end_define
 
 begin_define
@@ -155,7 +161,7 @@ DECL|macro|PLUG_IN_MENU_PATH
 define|#
 directive|define
 name|PLUG_IN_MENU_PATH
-value|"<Toolbox>/File/Acquire/TWAIN..."
+value|N_("<Toolbox>/File/Acquire/TWAIN...")
 end_define
 
 begin_ifdef
@@ -504,7 +510,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c6d1bb0108
+DECL|struct|__anon279522740108
 typedef|typedef
 struct|struct
 block|{
@@ -846,7 +852,7 @@ name|Version
 operator|.
 name|Info
 argument_list|,
-literal|"GIMP TWAIN 0.1"
+literal|"GIMP TWAIN 0.5"
 argument_list|)
 expr_stmt|;
 name|appIdentity
@@ -891,7 +897,7 @@ name|appIdentity
 operator|->
 name|ProductName
 argument_list|,
-literal|"GIMP for WIN32"
+literal|"GIMP for Win32"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1410,6 +1416,9 @@ block|{
 name|OUT_ARGS
 block|}
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 ifdef|#
 directive|ifdef
 name|_DEBUG
@@ -1834,7 +1843,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c6d1bb0208
+DECL|struct|__anon279522740208
 typedef|typedef
 struct|struct
 block|{
@@ -1894,7 +1903,10 @@ block|{
 comment|/* Initialize our progress dialog */
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Transferring TWAIN data"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2126,7 +2138,10 @@ name|theClientData
 operator|->
 name|image_id
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|imageInfo
 operator|->

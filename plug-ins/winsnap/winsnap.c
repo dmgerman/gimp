@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -46,13 +52,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -80,7 +92,7 @@ DECL|macro|PLUG_IN_DESCRIPTION
 define|#
 directive|define
 name|PLUG_IN_DESCRIPTION
-value|"Capture a Win32 window or desktop image"
+value|_("Capture a Win32 window or desktop image")
 end_define
 
 begin_define
@@ -88,7 +100,7 @@ DECL|macro|PLUG_IN_HELP
 define|#
 directive|define
 name|PLUG_IN_HELP
-value|"This plug-in will capture an image of a Win32 window or desktop"
+value|_("This plug-in will capture an image of a Win32 window or desktop")
 end_define
 
 begin_define
@@ -120,7 +132,7 @@ DECL|macro|PLUG_IN_MENU_PATH
 define|#
 directive|define
 name|PLUG_IN_MENU_PATH
-value|"<Toolbox>/File/Acquire/Screen Shot..."
+value|N_("<Toolbox>/File/Acquire/Screen Shot...")
 end_define
 
 begin_comment
@@ -358,7 +370,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bcd0df40108
+DECL|struct|__anon2ac265f30108
 typedef|typedef
 struct|struct
 block|{
@@ -399,7 +411,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bcd0df40208
+DECL|struct|__anon2ac265f30208
 typedef|typedef
 struct|struct
 block|{
@@ -2278,7 +2290,7 @@ argument_list|)
 expr_stmt|;
 name|g_error
 argument_list|(
-literal|"Error Registering class: %s"
+literal|"Error registering class: %s"
 argument_list|,
 name|buffer
 argument_list|)
@@ -2936,7 +2948,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Grab"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2998,7 +3013,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3245,7 +3263,10 @@ name|radio_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Grab a single window"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3309,7 +3330,10 @@ name|decor_button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Include decorations"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -3565,7 +3589,10 @@ name|radio_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Grab the whole screen"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3704,6 +3731,9 @@ block|{
 name|OUT_ARGS
 block|}
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* the installation of the plugin */
 name|gimp_install_procedure
 argument_list|(
@@ -4175,7 +4205,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"No data captured"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -4217,7 +4250,10 @@ name|gimp_layer_new
 argument_list|(
 name|image_id
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|ROUND4
 argument_list|(
