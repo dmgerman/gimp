@@ -57,34 +57,14 @@ directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"appenv.h"
-end_include
+begin_comment
+comment|/* FIXME: let the tool options dialog update itself */
+end_comment
 
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"dialog_handler.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpui.h"
+file|"gui/tool-options-dialog.h"
 end_include
 
 begin_include
@@ -103,12 +83,6 @@ begin_include
 include|#
 directive|include
 file|"tool_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool_options_dialog.h"
 end_include
 
 begin_include
@@ -157,6 +131,36 @@ begin_include
 include|#
 directive|include
 file|"gimpsmudgetool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"appenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"context_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"dialog_handler.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpui.h"
 end_include
 
 begin_include

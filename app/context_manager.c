@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tools/tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui/brush-select.h"
 end_include
 
@@ -142,20 +148,6 @@ directive|define
 name|PAINT_OPTIONS_MASK
 value|GIMP_CONTEXT_OPACITY_MASK | \                            GIMP_CONTEXT_PAINT_MODE_MASK
 end_define
-
-begin_comment
-comment|/* HACK: provide prototype without tools/tools.h */
-end_comment
-
-begin_function_decl
-specifier|extern
-name|void
-name|register_tools
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_comment
 comment|/*  *  the list of all images  */
@@ -857,7 +849,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* register internal tools */
-name|register_tools
+name|tools_init
 argument_list|()
 expr_stmt|;
 if|if

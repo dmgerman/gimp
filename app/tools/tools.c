@@ -263,33 +263,33 @@ end_include
 
 begin_function
 name|void
-DECL|function|register_tools (void)
-name|register_tools
+DECL|function|tools_init (void)
+name|tools_init
 parameter_list|(
 name|void
 parameter_list|)
 block|{
 comment|/*  register tools in reverse order  */
 comment|/*  color tools  */
-name|gimp_threshold_tool_register
-argument_list|()
-expr_stmt|;
 name|gimp_posterize_tool_register
-argument_list|()
-expr_stmt|;
-name|gimp_levels_tool_register
-argument_list|()
-expr_stmt|;
-name|gimp_hue_saturation_tool_register
 argument_list|()
 expr_stmt|;
 name|gimp_curves_tool_register
 argument_list|()
 expr_stmt|;
-name|gimp_color_balance_tool_register
+name|gimp_levels_tool_register
+argument_list|()
+expr_stmt|;
+name|gimp_threshold_tool_register
 argument_list|()
 expr_stmt|;
 name|gimp_brightness_contrast_tool_register
+argument_list|()
+expr_stmt|;
+name|gimp_hue_saturation_tool_register
+argument_list|()
+expr_stmt|;
+name|gimp_color_balance_tool_register
 argument_list|()
 expr_stmt|;
 comment|/*  paint tools  */
@@ -387,6 +387,26 @@ name|gimp_ellipse_select_tool_register
 argument_list|()
 expr_stmt|;
 name|gimp_rect_select_tool_register
+argument_list|()
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|tools_exit (void)
+name|tools_exit
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|hue_saturation_free
+argument_list|()
+expr_stmt|;
+name|curves_free
+argument_list|()
+expr_stmt|;
+name|levels_free
 argument_list|()
 expr_stmt|;
 block|}

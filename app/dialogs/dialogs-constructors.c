@@ -160,12 +160,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tool_options_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"about-dialog.h"
 end_include
 
@@ -275,6 +269,12 @@ begin_include
 include|#
 directive|include
 file|"tips-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool-options-dialog.h"
 end_include
 
 begin_include

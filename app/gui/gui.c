@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tool_options_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpdialogfactory.h"
 end_include
 
@@ -157,6 +151,12 @@ begin_include
 include|#
 directive|include
 file|"session.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool-options-dialog.h"
 end_include
 
 begin_include

@@ -83,19 +83,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/gimpcurvestool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimphuesaturationtool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimplevelstool.h"
+file|"tools/tools.h"
 end_include
 
 begin_include
@@ -843,15 +831,6 @@ expr_stmt|;
 name|context_manager_free
 argument_list|()
 expr_stmt|;
-name|hue_saturation_free
-argument_list|()
-expr_stmt|;
-name|curves_free
-argument_list|()
-expr_stmt|;
-name|levels_free
-argument_list|()
-expr_stmt|;
 name|plug_in_kill
 argument_list|()
 expr_stmt|;
@@ -862,6 +841,9 @@ name|save_unitrc
 argument_list|()
 expr_stmt|;
 name|gimp_parasiterc_save
+argument_list|()
+expr_stmt|;
+name|tools_exit
 argument_list|()
 expr_stmt|;
 if|if
