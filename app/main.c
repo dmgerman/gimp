@@ -339,17 +339,6 @@ name|G_GNUC_NORETURN
 decl_stmt|;
 end_decl_stmt
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_sigchld_handler
-parameter_list|(
-name|gint
-name|sig_num
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
@@ -1614,12 +1603,12 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/* Collect dead children */
+comment|/* Restart syscalls on SIGCHLD */
 name|gimp_signal_private
 argument_list|(
 name|SIGCHLD
 argument_list|,
-name|gimp_sigchld_handler
+name|SIG_DFL
 argument_list|,
 name|SA_RESTART
 argument_list|)
@@ -2145,54 +2134,6 @@ name|sig_num
 argument_list|)
 argument_list|)
 expr_stmt|;
-break|break;
-block|}
-block|}
-end_function
-
-begin_comment
-comment|/* gimp core signal handler for death-of-child signals */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_sigchld_handler (gint sig_num)
-name|gimp_sigchld_handler
-parameter_list|(
-name|gint
-name|sig_num
-parameter_list|)
-block|{
-name|gint
-name|pid
-decl_stmt|;
-name|gint
-name|status
-decl_stmt|;
-while|while
-condition|(
-name|TRUE
-condition|)
-block|{
-name|pid
-operator|=
-name|waitpid
-argument_list|(
-name|WAIT_ANY
-argument_list|,
-operator|&
-name|status
-argument_list|,
-name|WNOHANG
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|pid
-operator|<=
-literal|0
-condition|)
 break|break;
 block|}
 block|}

@@ -2106,14 +2106,17 @@ name|open
 operator|=
 name|FALSE
 expr_stmt|;
+if|if
+condition|(
+name|plug_in
+operator|->
+name|pid
+condition|)
+block|{
 comment|/*  Ask the filter to exit gracefully  */
 if|if
 condition|(
 name|kill_it
-operator|&&
-name|plug_in
-operator|->
-name|pid
 condition|)
 block|{
 name|gp_quit_write
@@ -2174,10 +2177,6 @@ name|G_OS_WIN32
 if|if
 condition|(
 name|kill_it
-operator|&&
-name|plug_in
-operator|->
-name|pid
 condition|)
 block|{
 if|if
@@ -2213,13 +2212,7 @@ name|SIGKILL
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Wait for the process to exit. This will happen    *  immediately if it was just killed.    */
-if|if
-condition|(
-name|plug_in
-operator|->
-name|pid
-condition|)
+comment|/* Wait for the process to exit. This will happen        *  immediately if it was just killed.        */
 name|waitpid
 argument_list|(
 name|plug_in
@@ -2234,16 +2227,13 @@ argument_list|)
 expr_stmt|;
 else|#
 directive|else
+comment|/* G_OS_WIN32 */
 if|if
 condition|(
 name|kill_it
-operator|&&
-name|plug_in
-operator|->
-name|pid
 condition|)
 block|{
-comment|/* Trying to avoid TerminateProcess (does mostly work).        * Otherwise some of our needed DLLs may get into an unstable state        * (see Win32 API docs).        */
+comment|/* Trying to avoid TerminateProcess (does mostly work).            * Otherwise some of our needed DLLs may get into an            * unstable state (see Win32 API docs).            */
 name|DWORD
 name|dwExitCode
 init|=
@@ -2256,11 +2246,9 @@ literal|10
 decl_stmt|;
 while|while
 condition|(
-operator|(
-name|STILL_ACTIVE
+name|dwExitCode
 operator|==
 name|dwExitCode
-operator|)
 operator|&&
 name|GetExitCodeProcess
 argument_list|(
@@ -2293,9 +2281,9 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|STILL_ACTIVE
-operator|==
 name|dwExitCode
+operator|==
+name|STILL_ACTIVE
 condition|)
 block|{
 if|if
@@ -2333,32 +2321,23 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* FIXME: Wait for it like on Unix? */
-comment|/* Close handle which is no longer needed */
-if|if
-condition|(
-name|plug_in
-operator|->
-name|pid
-condition|)
-name|CloseHandle
+endif|#
+directive|endif
+comment|/* G_OS_WIN32 */
+name|g_spawn_close_pid
 argument_list|(
-operator|(
-name|HANDLE
-operator|)
 name|plug_in
 operator|->
 name|pid
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|plug_in
 operator|->
 name|pid
 operator|=
 literal|0
 expr_stmt|;
+block|}
 comment|/* Remove the input handler. */
 if|if
 condition|(
