@@ -467,6 +467,21 @@ argument_list|(
 literal|" "
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_selectable
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|frame
+operator|->
+name|value_labels
+index|[
+name|i
+index|]
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_misc_set_alignment
 argument_list|(
 name|GTK_MISC
