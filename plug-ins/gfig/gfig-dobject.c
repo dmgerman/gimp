@@ -2571,7 +2571,7 @@ name|gint
 name|show_single
 parameter_list|)
 block|{
-comment|/* Show_single - only one object to draw Unless shift     * is down in which case show all.    */
+comment|/* Show_single - only one object to draw Unless shift    * is down in which case show all.    */
 name|gint
 name|count
 init|=
@@ -2832,7 +2832,7 @@ comment|/* First button press -- start drawing object */
 end_comment
 
 begin_comment
-comment|/*  * object_start() creates a new object of the type specified in the  * button panel.  It is activated by a button press, and causes  * a small square to be drawn at the initial point.  The style of  * the new object is set to values taken from the style control  * widgets.   */
+comment|/*  * object_start() creates a new object of the type specified in the  * button panel.  It is activated by a button press, and causes  * a small square to be drawn at the initial point.  The style of  * the new object is set to values taken from the style control  * widgets.  */
 end_comment
 
 begin_function

@@ -133,7 +133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c559ad40103
+DECL|enum|__anon2b798ea50103
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -154,7 +154,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c559ad40208
+DECL|struct|__anon2b798ea50208
 block|{
 DECL|member|gridspacing
 name|gint
@@ -189,7 +189,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c559ad40303
+DECL|enum|__anon2b798ea50303
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c559ad40403
+DECL|enum|__anon2b798ea50403
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -231,7 +231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c559ad40503
+DECL|enum|__anon2b798ea50503
 block|{
 DECL|enumerator|FILL_NONE
 name|FILL_NONE
@@ -258,7 +258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c559ad40608
+DECL|struct|__anon2b798ea50608
 block|{
 DECL|member|type
 name|SelectionType
@@ -304,7 +304,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c559ad40703
+DECL|enum|__anon2b798ea50703
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -325,7 +325,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c559ad40803
+DECL|enum|__anon2b798ea50803
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -352,7 +352,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c559ad40903
+DECL|enum|__anon2b798ea50903
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -373,7 +373,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c559ad40a03
+DECL|enum|__anon2b798ea50a03
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -397,7 +397,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c559ad40b08
+DECL|struct|__anon2b798ea50b08
 block|{
 DECL|member|name
 name|gchar
@@ -480,7 +480,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c559ad40c03
+DECL|enum|__anon2b798ea50c03
 block|{
 DECL|enumerator|OBJ_TYPE_NONE
 name|OBJ_TYPE_NONE
@@ -569,7 +569,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c559ad40d08
+DECL|struct|__anon2b798ea50d08
 block|{
 DECL|member|type
 name|DobjType
@@ -1005,7 +1005,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c559ad40e08
+DECL|struct|__anon2b798ea50e08
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1207,7 +1207,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c559ad40f08
+DECL|struct|__anon2b798ea50f08
 block|{
 DECL|member|debug_styles
 name|gboolean
