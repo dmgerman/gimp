@@ -246,27 +246,27 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a2d64680103
+DECL|enum|__anon2c27422f0103
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
 init|=
-name|CHANNEL_OP_ADD
+name|GIMP_CHANNEL_OP_ADD
 block|,
 DECL|enumerator|SELECTION_SUBTRACT
 name|SELECTION_SUBTRACT
 init|=
-name|CHANNEL_OP_SUBTRACT
+name|GIMP_CHANNEL_OP_SUBTRACT
 block|,
 DECL|enumerator|SELECTION_REPLACE
 name|SELECTION_REPLACE
 init|=
-name|CHANNEL_OP_REPLACE
+name|GIMP_CHANNEL_OP_REPLACE
 block|,
 DECL|enumerator|SELECTION_INTERSECT
 name|SELECTION_INTERSECT
 init|=
-name|CHANNEL_OP_INTERSECT
+name|GIMP_CHANNEL_OP_INTERSECT
 block|,
 DECL|enumerator|SELECTION_MOVE_MASK
 name|SELECTION_MOVE_MASK
@@ -290,7 +290,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a2d64680203
+DECL|enum|__anon2c27422f0203
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -311,7 +311,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a2d64680303
+DECL|enum|__anon2c27422f0303
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -335,7 +335,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a2d64680403
+DECL|enum|__anon2c27422f0403
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -368,7 +368,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2a2d64680503
+DECL|enum|__anon2c27422f0503
 block|{
 DECL|enumerator|TRANSFORM_INIT
 name|TRANSFORM_INIT

@@ -206,7 +206,7 @@ name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|operation
 parameter_list|)
 function_decl|;
@@ -1119,7 +1119,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_list_view_to_selection (GimpChannelListView * view,GimpChannel * channel,ChannelOps operation)
+DECL|function|gimp_channel_list_view_to_selection (GimpChannelListView * view,GimpChannel * channel,GimpChannelOps operation)
 name|gimp_channel_list_view_to_selection
 parameter_list|(
 name|GimpChannelListView
@@ -1130,7 +1130,7 @@ name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|operation
 parameter_list|)
 block|{
@@ -1161,7 +1161,7 @@ if|if
 condition|(
 name|operation
 operator|==
-name|CHANNEL_OP_REPLACE
+name|GIMP_CHANNEL_OP_REPLACE
 condition|)
 block|{
 name|new_channel
@@ -1311,10 +1311,10 @@ condition|(
 name|viewable
 condition|)
 block|{
-name|ChannelOps
+name|GimpChannelOps
 name|operation
 init|=
-name|CHANNEL_OP_REPLACE
+name|GIMP_CHANNEL_OP_REPLACE
 decl_stmt|;
 if|if
 condition|(
@@ -1331,12 +1331,12 @@ name|GDK_CONTROL_MASK
 condition|)
 name|operation
 operator|=
-name|CHANNEL_OP_INTERSECT
+name|GIMP_CHANNEL_OP_INTERSECT
 expr_stmt|;
 else|else
 name|operation
 operator|=
-name|CHANNEL_OP_ADD
+name|GIMP_CHANNEL_OP_ADD
 expr_stmt|;
 block|}
 elseif|else
@@ -1349,7 +1349,7 @@ condition|)
 block|{
 name|operation
 operator|=
-name|CHANNEL_OP_SUBTRACT
+name|GIMP_CHANNEL_OP_SUBTRACT
 expr_stmt|;
 block|}
 name|gimp_channel_list_view_to_selection

@@ -36,7 +36,7 @@ parameter_list|,
 name|gint
 name|h
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gboolean
@@ -71,7 +71,7 @@ parameter_list|,
 name|gint
 name|h
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gboolean
@@ -104,7 +104,7 @@ name|GimpVector2
 modifier|*
 name|points
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gboolean
@@ -134,7 +134,7 @@ name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gboolean
@@ -170,7 +170,7 @@ parameter_list|,
 name|gint
 name|offset_y
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gboolean
@@ -212,7 +212,7 @@ parameter_list|,
 name|gboolean
 name|select_transparent
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gboolean
@@ -256,7 +256,7 @@ parameter_list|,
 name|gboolean
 name|select_transparent
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gboolean

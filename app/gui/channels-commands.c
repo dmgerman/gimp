@@ -401,7 +401,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|channels_channel_to_sel (GtkWidget * widget,gpointer data,ChannelOps op)
+DECL|function|channels_channel_to_sel (GtkWidget * widget,gpointer data,GimpChannelOps op)
 name|channels_channel_to_sel
 parameter_list|(
 name|GtkWidget
@@ -411,7 +411,7 @@ parameter_list|,
 name|gpointer
 name|data
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|)
 block|{
@@ -474,7 +474,7 @@ name|widget
 argument_list|,
 name|data
 argument_list|,
-name|CHANNEL_OP_REPLACE
+name|GIMP_CHANNEL_OP_REPLACE
 argument_list|)
 expr_stmt|;
 block|}
@@ -499,7 +499,7 @@ name|widget
 argument_list|,
 name|data
 argument_list|,
-name|CHANNEL_OP_ADD
+name|GIMP_CHANNEL_OP_ADD
 argument_list|)
 expr_stmt|;
 block|}
@@ -524,7 +524,7 @@ name|widget
 argument_list|,
 name|data
 argument_list|,
-name|CHANNEL_OP_SUBTRACT
+name|GIMP_CHANNEL_OP_SUBTRACT
 argument_list|)
 expr_stmt|;
 block|}
@@ -549,7 +549,7 @@ name|widget
 argument_list|,
 name|data
 argument_list|,
-name|CHANNEL_OP_INTERSECT
+name|GIMP_CHANNEL_OP_INTERSECT
 argument_list|)
 expr_stmt|;
 block|}

@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d1c290108
+DECL|struct|__anon2c764de80108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -322,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d1c290208
+DECL|struct|__anon2c764de80208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -377,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d1c290308
+DECL|struct|__anon2c764de80308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -873,7 +873,7 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|)
 function_decl|;
@@ -2635,7 +2635,7 @@ condition|)
 block|{
 name|op
 operator|=
-name|CHANNEL_OP_INTERSECT
+name|GIMP_CHANNEL_OP_INTERSECT
 expr_stmt|;
 block|}
 elseif|else
@@ -2648,7 +2648,7 @@ condition|)
 block|{
 name|op
 operator|=
-name|CHANNEL_OP_ADD
+name|GIMP_CHANNEL_OP_ADD
 expr_stmt|;
 block|}
 elseif|else
@@ -2661,14 +2661,14 @@ condition|)
 block|{
 name|op
 operator|=
-name|CHANNEL_OP_SUBTRACT
+name|GIMP_CHANNEL_OP_SUBTRACT
 expr_stmt|;
 block|}
 else|else
 block|{
 name|op
 operator|=
-name|CHANNEL_OP_REPLACE
+name|GIMP_CHANNEL_OP_REPLACE
 expr_stmt|;
 block|}
 name|bezier_to_sel_internal
@@ -11185,7 +11185,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bezier_to_sel_internal (GimpBezierSelectTool * bezier_sel,GimpTool * tool,GimpDisplay * gdisp,ChannelOps op)
+DECL|function|bezier_to_sel_internal (GimpBezierSelectTool * bezier_sel,GimpTool * tool,GimpDisplay * gdisp,GimpChannelOps op)
 name|bezier_to_sel_internal
 parameter_list|(
 name|GimpBezierSelectTool
@@ -11200,7 +11200,7 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|)
 block|{
@@ -12627,7 +12627,7 @@ name|curTool
 argument_list|,
 name|gdisp
 argument_list|,
-name|CHANNEL_OP_REPLACE
+name|GIMP_CHANNEL_OP_REPLACE
 argument_list|)
 expr_stmt|;
 block|}

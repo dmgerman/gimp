@@ -40,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"core/core-enums.h"
 end_include
 
 begin_include
@@ -1180,11 +1180,11 @@ if|if
 condition|(
 name|operation
 operator|<
-name|CHANNEL_OP_ADD
+name|GIMP_CHANNEL_OP_ADD
 operator|||
 name|operation
 operator|>
-name|CHANNEL_OP_INTERSECT
+name|GIMP_CHANNEL_OP_INTERSECT
 condition|)
 name|success
 operator|=
@@ -1272,7 +1272,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"operation"
 block|,
-literal|"The selection operation: { CHANNEL_OP_ADD (0), CHANNEL_OP_SUBTRACT (1), CHANNEL_OP_REPLACE (2), CHANNEL_OP_INTERSECT (3) }"
+literal|"The selection operation: { GIMP_CHANNEL_OP_ADD (0), GIMP_CHANNEL_OP_SUBTRACT (1), GIMP_CHANNEL_OP_REPLACE (2), GIMP_CHANNEL_OP_INTERSECT (3) }"
 block|}
 block|,
 block|{

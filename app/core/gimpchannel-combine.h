@@ -531,7 +531,7 @@ name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gint
@@ -557,7 +557,7 @@ name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gint
@@ -590,7 +590,7 @@ name|GimpChannel
 modifier|*
 name|add_on
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gint

@@ -190,7 +190,7 @@ name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|operation
 parameter_list|)
 function_decl|;
@@ -653,7 +653,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vectors_list_view_to_selection (GimpVectorsListView * view,GimpVectors * vectors,ChannelOps operation)
+DECL|function|gimp_vectors_list_view_to_selection (GimpVectorsListView * view,GimpVectors * vectors,GimpChannelOps operation)
 name|gimp_vectors_list_view_to_selection
 parameter_list|(
 name|GimpVectorsListView
@@ -664,7 +664,7 @@ name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|operation
 parameter_list|)
 block|{
@@ -778,10 +778,10 @@ condition|(
 name|viewable
 condition|)
 block|{
-name|ChannelOps
+name|GimpChannelOps
 name|operation
 init|=
-name|CHANNEL_OP_REPLACE
+name|GIMP_CHANNEL_OP_REPLACE
 decl_stmt|;
 if|if
 condition|(
@@ -798,12 +798,12 @@ name|GDK_CONTROL_MASK
 condition|)
 name|operation
 operator|=
-name|CHANNEL_OP_INTERSECT
+name|GIMP_CHANNEL_OP_INTERSECT
 expr_stmt|;
 else|else
 name|operation
 operator|=
-name|CHANNEL_OP_ADD
+name|GIMP_CHANNEL_OP_ADD
 expr_stmt|;
 block|}
 elseif|else
@@ -816,7 +816,7 @@ condition|)
 block|{
 name|operation
 operator|=
-name|CHANNEL_OP_SUBTRACT
+name|GIMP_CHANNEL_OP_SUBTRACT
 expr_stmt|;
 block|}
 name|gimp_vectors_list_view_to_selection

@@ -71,7 +71,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_image_mask_select_rectangle (GimpImage * gimage,gint x,gint y,gint w,gint h,ChannelOps op,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_image_mask_select_rectangle (GimpImage * gimage,gint x,gint y,gint w,gint h,GimpChannelOps op,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_image_mask_select_rectangle
 parameter_list|(
 name|GimpImage
@@ -90,7 +90,7 @@ parameter_list|,
 name|gint
 name|h
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gboolean
@@ -116,7 +116,7 @@ if|if
 condition|(
 name|op
 operator|==
-name|CHANNEL_OP_REPLACE
+name|GIMP_CHANNEL_OP_REPLACE
 condition|)
 name|gimp_image_mask_clear
 argument_list|(
@@ -136,7 +136,7 @@ name|feather
 operator|||
 name|op
 operator|==
-name|CHANNEL_OP_INTERSECT
+name|GIMP_CHANNEL_OP_INTERSECT
 condition|)
 block|{
 name|GimpChannel
@@ -162,7 +162,7 @@ name|gimp_channel_combine_rect
 argument_list|(
 name|mask
 argument_list|,
-name|CHANNEL_OP_ADD
+name|GIMP_CHANNEL_OP_ADD
 argument_list|,
 name|x
 argument_list|,
@@ -240,7 +240,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_mask_select_ellipse (GimpImage * gimage,gint x,gint y,gint w,gint h,ChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_image_mask_select_ellipse (GimpImage * gimage,gint x,gint y,gint w,gint h,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_image_mask_select_ellipse
 parameter_list|(
 name|GimpImage
@@ -259,7 +259,7 @@ parameter_list|,
 name|gint
 name|h
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gboolean
@@ -288,7 +288,7 @@ if|if
 condition|(
 name|op
 operator|==
-name|CHANNEL_OP_REPLACE
+name|GIMP_CHANNEL_OP_REPLACE
 condition|)
 name|gimp_image_mask_clear
 argument_list|(
@@ -308,7 +308,7 @@ name|feather
 operator|||
 name|op
 operator|==
-name|CHANNEL_OP_INTERSECT
+name|GIMP_CHANNEL_OP_INTERSECT
 condition|)
 block|{
 name|GimpChannel
@@ -334,7 +334,7 @@ name|gimp_channel_combine_ellipse
 argument_list|(
 name|mask
 argument_list|,
-name|CHANNEL_OP_ADD
+name|GIMP_CHANNEL_OP_ADD
 argument_list|,
 name|x
 argument_list|,
@@ -416,7 +416,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_mask_select_polygon (GimpImage * gimage,gint n_points,GimpVector2 * points,ChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_image_mask_select_polygon (GimpImage * gimage,gint n_points,GimpVector2 * points,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_image_mask_select_polygon
 parameter_list|(
 name|GimpImage
@@ -430,7 +430,7 @@ name|GimpVector2
 modifier|*
 name|points
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gboolean
@@ -467,7 +467,7 @@ if|if
 condition|(
 name|op
 operator|==
-name|CHANNEL_OP_REPLACE
+name|GIMP_CHANNEL_OP_REPLACE
 condition|)
 name|gimp_image_mask_clear
 argument_list|(
@@ -581,7 +581,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_mask_select_vectors (GimpImage * gimage,GimpVectors * vectors,ChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_image_mask_select_vectors (GimpImage * gimage,GimpVectors * vectors,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_image_mask_select_vectors
 parameter_list|(
 name|GimpImage
@@ -592,7 +592,7 @@ name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gboolean
@@ -775,7 +775,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_mask_select_channel (GimpImage * gimage,GimpChannel * channel,gint offset_x,gint offset_y,ChannelOps op,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_image_mask_select_channel (GimpImage * gimage,GimpChannel * channel,gint offset_x,gint offset_y,GimpChannelOps op,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_image_mask_select_channel
 parameter_list|(
 name|GimpImage
@@ -792,7 +792,7 @@ parameter_list|,
 name|gint
 name|offset_y
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gboolean
@@ -826,7 +826,7 @@ if|if
 condition|(
 name|op
 operator|==
-name|CHANNEL_OP_REPLACE
+name|GIMP_CHANNEL_OP_REPLACE
 condition|)
 name|gimp_image_mask_clear
 argument_list|(
@@ -876,7 +876,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_mask_select_fuzzy (GimpImage * gimage,GimpDrawable * drawable,gboolean sample_merged,gint x,gint y,gint threshold,gboolean select_transparent,ChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_image_mask_select_fuzzy (GimpImage * gimage,GimpDrawable * drawable,gboolean sample_merged,gint x,gint y,gint threshold,gboolean select_transparent,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_image_mask_select_fuzzy
 parameter_list|(
 name|GimpImage
@@ -902,7 +902,7 @@ parameter_list|,
 name|gboolean
 name|select_transparent
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gboolean
@@ -1025,7 +1025,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_mask_select_by_color (GimpImage * gimage,GimpDrawable * drawable,gboolean sample_merged,const GimpRGB * color,gint threshold,gboolean select_transparent,ChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_image_mask_select_by_color (GimpImage * gimage,GimpDrawable * drawable,gboolean sample_merged,const GimpRGB * color,gint threshold,gboolean select_transparent,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_image_mask_select_by_color
 parameter_list|(
 name|GimpImage
@@ -1050,7 +1050,7 @@ parameter_list|,
 name|gboolean
 name|select_transparent
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gboolean

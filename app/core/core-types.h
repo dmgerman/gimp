@@ -67,7 +67,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297cffdc0103
+DECL|enum|__anon2791c7960103
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -87,7 +87,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon297cffdc0203
+DECL|enum|__anon2791c7960203
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -103,36 +103,10 @@ name|InternalOrientationType
 typedef|;
 end_typedef
 
-begin_comment
-comment|/*  Selection Boolean operations  */
-end_comment
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297cffdc0303
-block|{
-DECL|enumerator|CHANNEL_OP_ADD
-name|CHANNEL_OP_ADD
-block|,
-DECL|enumerator|CHANNEL_OP_SUBTRACT
-name|CHANNEL_OP_SUBTRACT
-block|,
-DECL|enumerator|CHANNEL_OP_REPLACE
-name|CHANNEL_OP_REPLACE
-block|,
-DECL|enumerator|CHANNEL_OP_INTERSECT
-name|CHANNEL_OP_INTERSECT
-DECL|typedef|ChannelOps
-block|}
-name|ChannelOps
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon297cffdc0403
+DECL|enum|__anon2791c7960303
 block|{
 DECL|enumerator|OFFSET_BACKGROUND
 name|OFFSET_BACKGROUND
@@ -148,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297cffdc0503
+DECL|enum|__anon2791c7960403
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -172,7 +146,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon297cffdc0603
+DECL|enum|__anon2791c7960503
 block|{
 comment|/* NOTE: If you change this list, please update the textual mapping at    *  the bottom of undo.c as well.    */
 comment|/* Type NO_UNDO_GROUP (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */

@@ -3706,14 +3706,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_combine_rect (GimpChannel * mask,ChannelOps op,gint x,gint y,gint w,gint h)
+DECL|function|gimp_channel_combine_rect (GimpChannel * mask,GimpChannelOps op,gint x,gint y,gint w,gint h)
 name|gimp_channel_combine_rect
 parameter_list|(
 name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gint
@@ -3870,11 +3870,11 @@ if|if
 condition|(
 name|op
 operator|==
-name|CHANNEL_OP_ADD
+name|GIMP_CHANNEL_OP_ADD
 operator|||
 name|op
 operator|==
-name|CHANNEL_OP_REPLACE
+name|GIMP_CHANNEL_OP_REPLACE
 condition|)
 name|color
 operator|=
@@ -3904,7 +3904,7 @@ operator|&&
 operator|(
 name|op
 operator|==
-name|CHANNEL_OP_ADD
+name|GIMP_CHANNEL_OP_ADD
 operator|)
 operator|&&
 operator|!
@@ -3991,7 +3991,7 @@ if|if
 condition|(
 name|op
 operator|==
-name|CHANNEL_OP_REPLACE
+name|GIMP_CHANNEL_OP_REPLACE
 operator|||
 name|mask
 operator|->
@@ -4125,14 +4125,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_combine_ellipse (GimpChannel * mask,ChannelOps op,gint x,gint y,gint w,gint h,gboolean antialias)
+DECL|function|gimp_channel_combine_ellipse (GimpChannel * mask,GimpChannelOps op,gint x,gint y,gint w,gint h,gboolean antialias)
 name|gimp_channel_combine_ellipse
 parameter_list|(
 name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gint
@@ -4360,10 +4360,10 @@ name|op
 condition|)
 block|{
 case|case
-name|CHANNEL_OP_ADD
+name|GIMP_CHANNEL_OP_ADD
 case|:
 case|case
-name|CHANNEL_OP_REPLACE
+name|GIMP_CHANNEL_OP_REPLACE
 case|:
 name|gimp_channel_add_segment
 argument_list|(
@@ -4384,7 +4384,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|CHANNEL_OP_SUBTRACT
+name|GIMP_CHANNEL_OP_SUBTRACT
 case|:
 name|gimp_channel_sub_segment
 argument_list|(
@@ -4591,10 +4591,10 @@ name|op
 condition|)
 block|{
 case|case
-name|CHANNEL_OP_ADD
+name|GIMP_CHANNEL_OP_ADD
 case|:
 case|case
-name|CHANNEL_OP_REPLACE
+name|GIMP_CHANNEL_OP_REPLACE
 case|:
 name|gimp_channel_add_segment
 argument_list|(
@@ -4613,7 +4613,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|CHANNEL_OP_SUBTRACT
+name|GIMP_CHANNEL_OP_SUBTRACT
 case|:
 name|gimp_channel_sub_segment
 argument_list|(
@@ -4685,16 +4685,17 @@ condition|(
 name|last
 condition|)
 block|{
-if|if
+switch|switch
 condition|(
 name|op
-operator|==
-name|CHANNEL_OP_ADD
-operator|||
-name|op
-operator|==
-name|CHANNEL_OP_REPLACE
 condition|)
+block|{
+case|case
+name|GIMP_CHANNEL_OP_ADD
+case|:
+case|case
+name|GIMP_CHANNEL_OP_REPLACE
+case|:
 name|gimp_channel_add_segment
 argument_list|(
 name|mask
@@ -4710,13 +4711,10 @@ argument_list|,
 name|last
 argument_list|)
 expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|op
-operator|==
-name|CHANNEL_OP_SUBTRACT
-condition|)
+break|break;
+case|case
+name|GIMP_CHANNEL_OP_SUBTRACT
+case|:
 name|gimp_channel_sub_segment
 argument_list|(
 name|mask
@@ -4732,12 +4730,15 @@ argument_list|,
 name|last
 argument_list|)
 expr_stmt|;
-else|else
+break|break;
+default|default:
 name|g_warning
 argument_list|(
 literal|"Only ADD, REPLACE, and SUBTRACT are valid for channel_combine!"
 argument_list|)
 expr_stmt|;
+break|break;
+block|}
 block|}
 block|}
 block|}
@@ -4752,7 +4753,7 @@ operator|&&
 operator|(
 name|op
 operator|==
-name|CHANNEL_OP_ADD
+name|GIMP_CHANNEL_OP_ADD
 operator|)
 operator|&&
 operator|!
@@ -4839,7 +4840,7 @@ if|if
 condition|(
 name|op
 operator|==
-name|CHANNEL_OP_REPLACE
+name|GIMP_CHANNEL_OP_REPLACE
 operator|||
 name|mask
 operator|->
@@ -5329,7 +5330,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_combine_mask (GimpChannel * mask,GimpChannel * add_on,ChannelOps op,gint off_x,gint off_y)
+DECL|function|gimp_channel_combine_mask (GimpChannel * mask,GimpChannel * add_on,GimpChannelOps op,gint off_x,gint off_y)
 name|gimp_channel_combine_mask
 parameter_list|(
 name|GimpChannel
@@ -5340,7 +5341,7 @@ name|GimpChannel
 modifier|*
 name|add_on
 parameter_list|,
-name|ChannelOps
+name|GimpChannelOps
 name|op
 parameter_list|,
 name|gint
@@ -5539,10 +5540,10 @@ name|op
 condition|)
 block|{
 case|case
-name|CHANNEL_OP_ADD
+name|GIMP_CHANNEL_OP_ADD
 case|:
 case|case
-name|CHANNEL_OP_REPLACE
+name|GIMP_CHANNEL_OP_REPLACE
 case|:
 name|pixel_regions_process_parallel
 argument_list|(
@@ -5564,7 +5565,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|CHANNEL_OP_SUBTRACT
+name|GIMP_CHANNEL_OP_SUBTRACT
 case|:
 name|pixel_regions_process_parallel
 argument_list|(
@@ -5586,7 +5587,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|CHANNEL_OP_INTERSECT
+name|GIMP_CHANNEL_OP_INTERSECT
 case|:
 name|pixel_regions_process_parallel
 argument_list|(
