@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon273a0def0103
+DECL|enum|__anon2be18fd40103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -829,13 +829,6 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|name
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|GIMP_ITEM
 argument_list|(
 name|drawable
@@ -971,6 +964,13 @@ name|drawable
 argument_list|)
 argument_list|,
 name|name
+condition|?
+name|name
+else|:
+name|_
+argument_list|(
+literal|"Unnamed"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  preview variables  */
@@ -1070,6 +1070,15 @@ name|GIMP_OBJECT
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|name
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|ext

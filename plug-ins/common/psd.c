@@ -125,7 +125,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ceea170103
+DECL|enum|__anon2a900e8f0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -313,7 +313,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ceea170208
+DECL|struct|__anon2a900e8f0208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -559,7 +559,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27ceea170308
+DECL|struct|__anon2a900e8f0308
 block|{
 DECL|member|signature
 name|gchar
@@ -4464,12 +4464,6 @@ decl_stmt|;
 block|}
 else|else
 block|{
-name|layer
-operator|->
-name|name
-operator|=
-literal|"unnamed"
-expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
@@ -6462,22 +6456,6 @@ name|gimpstep
 index|]
 operator|.
 name|name
-condition|?
-name|psd_image
-operator|.
-name|aux_channel
-index|[
-name|chan
-operator|-
-name|gimpstep
-index|]
-operator|.
-name|name
-else|:
-name|_
-argument_list|(
-literal|"Unnamed channel"
-argument_list|)
 argument_list|,
 name|width
 argument_list|,
@@ -6729,23 +6707,6 @@ operator|)
 index|]
 operator|.
 name|name
-condition|?
-name|psd_image
-operator|.
-name|aux_channel
-index|[
-name|chan
-operator|-
-operator|(
-name|psstep
-operator|-
-name|num_wanted
-operator|)
-index|]
-operator|.
-name|name
-else|:
-literal|"Unnamed channel"
 argument_list|,
 name|width
 argument_list|,
