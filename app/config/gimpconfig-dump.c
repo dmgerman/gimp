@@ -59,6 +59,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpversion.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"config-types.h"
 end_include
 
@@ -91,6 +97,16 @@ include|#
 directive|include
 file|"gimprc.h"
 end_include
+
+begin_function_decl
+specifier|static
+name|gint
+name|dump_man_page
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -163,11 +179,66 @@ name|dump_system_gimprc
 argument_list|()
 return|;
 block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|argv
+index|[
+literal|1
+index|]
+argument_list|,
+literal|"--man-page"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+return|return
+name|dump_man_page
+argument_list|()
+return|;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|argv
+index|[
+literal|1
+index|]
+argument_list|,
+literal|"--version"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|g_printerr
+argument_list|(
+literal|"gimpconfig-dump version %s\n"
+argument_list|,
+name|GIMP_VERSION
+argument_list|)
+expr_stmt|;
+return|return
+name|EXIT_SUCCESS
+return|;
+block|}
 else|else
 block|{
 name|g_printerr
 argument_list|(
-literal|"%s -- GimpConfig dump utility\n\n"
+literal|"gimpconfig-dump version %s\n\n"
+argument_list|,
+name|GIMP_VERSION
+argument_list|)
+expr_stmt|;
+name|g_printerr
+argument_list|(
+literal|"Usage: %s [option ... ]\n\n"
 argument_list|,
 name|argv
 index|[
@@ -178,9 +249,31 @@ expr_stmt|;
 name|g_printerr
 argument_list|(
 literal|"Options:\n"
+literal|"  --man-page        create a gimprc manual page\n"
 literal|"  --system-gimprc   create a commented system gimprc\n"
+literal|"  --help            output usage information\n"
+literal|"  --version         output version information\n"
+literal|"\n"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|argv
+index|[
+literal|1
+index|]
+argument_list|,
+literal|"--help"
+argument_list|)
+operator|==
+literal|0
+condition|)
+return|return
+name|EXIT_SUCCESS
+return|;
+else|else
 return|return
 name|EXIT_FAILURE
 return|;
@@ -221,6 +314,26 @@ argument_list|)
 expr_stmt|;
 return|return
 name|EXIT_SUCCESS
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gint
+DECL|function|dump_man_page (void)
+name|dump_man_page
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|g_warning
+argument_list|(
+literal|"dump_man_page() is not yet implemented."
+argument_list|)
+expr_stmt|;
+return|return
+name|EXIT_FAILURE
 return|;
 block|}
 end_function
@@ -537,7 +650,8 @@ condition|)
 block|{
 name|values
 operator|=
-literal|"The color is specified as a list of doubles (r g b a)."
+literal|"The color is specified in the form (color-rgba red green blue alpha) "
+literal|"with channel values as floats between 0.0 and 1.0."
 expr_stmt|;
 block|}
 elseif|else
@@ -570,10 +684,30 @@ name|GIMP_TYPE_PATH
 argument_list|)
 condition|)
 block|{
+switch|switch
+condition|(
+name|G_SEARCHPATH_SEPARATOR
+condition|)
+block|{
+case|case
+literal|':'
+case|:
 name|values
 operator|=
 literal|"This is a colon-separated list of directories to search."
 expr_stmt|;
+break|break;
+case|case
+literal|';'
+case|:
+name|values
+operator|=
+literal|"This is a semicolon-separated list of directories to search."
+expr_stmt|;
+break|break;
+default|default:
+break|break;
+block|}
 block|}
 elseif|else
 if|if
