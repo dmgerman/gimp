@@ -47,6 +47,14 @@ name|LIBGIMP_DOMAIN
 value|GETTEXT_PACKAGE "-libgimp"
 end_define
 
+begin_define
+DECL|macro|GIMP_TOILET_PAPER
+define|#
+directive|define
+name|GIMP_TOILET_PAPER
+value|"gimp-toilet-paper"
+end_define
+
 begin_decl_stmt
 DECL|variable|gimp_stock_factory
 specifier|static
@@ -1396,6 +1404,18 @@ name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
+name|GIMP_TOILET_PAPER
+block|,
+name|NULL
+block|,
+literal|0
+block|,
+literal|0
+block|,
+name|LIBGIMP_DOMAIN
+block|}
+block|,
+block|{
 name|GIMP_STOCK_WEB
 block|,
 name|NULL
@@ -1968,7 +1988,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27e035e70108
+DECL|struct|__anon294112360108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -2539,6 +2559,12 @@ name|stock_warning_24
 block|}
 block|,
 block|{
+name|GIMP_TOILET_PAPER
+block|,
+name|stock_toilet_paper_24
+block|}
+block|,
+block|{
 name|GIMP_STOCK_WEB
 block|,
 name|stock_web_24
@@ -2556,7 +2582,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27e035e70208
+DECL|struct|__anon294112360208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3145,6 +3171,12 @@ name|stock_wilber_16
 block|}
 block|,
 block|{
+name|GIMP_TOILET_PAPER
+block|,
+name|stock_toilet_paper_16
+block|}
+block|,
+block|{
 name|GIMP_STOCK_WEB
 block|,
 name|stock_web_16
@@ -3162,7 +3194,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27e035e70308
+DECL|struct|__anon294112360308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3240,7 +3272,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27e035e70408
+DECL|struct|__anon294112360408
 block|{
 DECL|member|stock_id
 specifier|const
