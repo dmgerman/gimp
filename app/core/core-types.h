@@ -3,10 +3,6 @@ begin_comment
 comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
-begin_comment
-comment|/*< proxy-skip>*/
-end_comment
-
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -71,7 +67,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcfbc160103
+DECL|enum|__anon29c4282a0103
 block|{
 DECL|enumerator|GIMP_PIXELS
 name|GIMP_PIXELS
@@ -96,11 +92,6 @@ name|_GimpObject
 name|GimpObject
 typedef|;
 end_typedef
-
-begin_comment
-DECL|typedef|GimpObject
-comment|/*< proxy-include>*/
-end_comment
 
 begin_typedef
 DECL|typedef|Gimp
@@ -210,11 +201,6 @@ name|GimpToolInfo
 typedef|;
 end_typedef
 
-begin_comment
-DECL|typedef|GimpToolInfo
-comment|/*< proxy-include>*/
-end_comment
-
 begin_typedef
 DECL|typedef|GimpToolOptions
 typedef|typedef
@@ -223,11 +209,6 @@ name|_GimpToolOptions
 name|GimpToolOptions
 typedef|;
 end_typedef
-
-begin_comment
-DECL|typedef|GimpToolOptions
-comment|/*< proxy-include>*/
-end_comment
 
 begin_typedef
 DECL|typedef|GimpImagefile
@@ -268,11 +249,6 @@ name|_GimpDrawable
 name|GimpDrawable
 typedef|;
 end_typedef
-
-begin_comment
-DECL|typedef|GimpDrawable
-comment|/*< proxy-resume>*/
-end_comment
 
 begin_typedef
 DECL|typedef|GimpChannel
@@ -322,11 +298,6 @@ name|_GimpData
 name|GimpData
 typedef|;
 end_typedef
-
-begin_comment
-DECL|typedef|GimpData
-comment|/*< proxy-skip>*/
-end_comment
 
 begin_typedef
 DECL|typedef|GimpBrush
@@ -456,11 +427,6 @@ name|_GimpCoords
 name|GimpCoords
 typedef|;
 end_typedef
-
-begin_comment
-DECL|typedef|GimpCoords
-comment|/*< proxy-include>*/
-end_comment
 
 begin_typedef
 DECL|typedef|GimpGuide

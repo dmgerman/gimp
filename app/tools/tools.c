@@ -27,44 +27,6 @@ directive|include
 file|"tools-types.h"
 end_include
 
-begin_comment
-comment|/*FIXME: remove when proper module loading is in place */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"config/gimpcoreconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-path.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimp.h"
-end_include
-
-begin_comment
-comment|/*end remove */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"libgimptool/gimptool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimptool/gimptoolmodule.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -301,32 +263,6 @@ end_include
 
 begin_function
 name|void
-DECL|function|cheesey_module_loading_hack (GimpDatafileData * file_data)
-name|cheesey_module_loading_hack
-parameter_list|(
-name|GimpDatafileData
-modifier|*
-name|file_data
-parameter_list|)
-block|{
-name|gimp_tool_module_new
-argument_list|(
-name|file_data
-operator|->
-name|filename
-argument_list|,
-name|tool_manager_register_tool
-argument_list|,
-name|file_data
-operator|->
-name|user_data
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
 DECL|function|tools_init (Gimp * gimp)
 name|tools_init
 parameter_list|(
@@ -454,14 +390,6 @@ name|gimp
 operator|)
 expr_stmt|;
 block|}
-if|#
-directive|if
-literal|0
-block|if (g_module_supported ())     {       gchar *path = gimp_config_path_expand (gimp->config->tool_plug_in_path,                                              TRUE, NULL);        gimp_datafiles_read_directories (path,                                        0
-comment|/* no flags */
-block|,                                        cheesey_module_loading_hack,                                        gimp);        g_free (path);     }
-endif|#
-directive|endif
 block|}
 end_function
 

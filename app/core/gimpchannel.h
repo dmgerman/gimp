@@ -23,10 +23,6 @@ file|"gimpdrawable.h"
 end_include
 
 begin_comment
-comment|/*< proxy-skip>*/
-end_comment
-
-begin_comment
 comment|/*  Half way point where a region is no longer visible in a selection  */
 end_comment
 
@@ -110,10 +106,6 @@ name|GimpChannelClass
 typedef|;
 end_typedef
 
-begin_comment
-comment|/*< proxy-resume>*/
-end_comment
-
 begin_struct
 DECL|struct|_GimpChannel
 struct|struct
@@ -191,10 +183,6 @@ comment|/*  lower right hand coordinate    */
 block|}
 struct|;
 end_struct
-
-begin_comment
-comment|/*< proxy-skip>*/
-end_comment
 
 begin_struct
 DECL|struct|_GimpChannelClass

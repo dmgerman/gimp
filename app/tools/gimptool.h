@@ -16,55 +16,17 @@ directive|define
 name|__GIMP_TOOL_H__
 end_define
 
-begin_comment
-comment|/* EEEEK! */
-end_comment
-
-begin_comment
-comment|/* #include "app/widgets/widgets-types.h" */
-end_comment
-
-begin_comment
-comment|/* FIXME: what should we do about gimpobject? */
-end_comment
-
-begin_comment
-comment|/*#include "gimpobject.h"*/
-end_comment
+begin_include
+include|#
+directive|include
+file|"core/gimpobject.h"
+end_include
 
 begin_include
 include|#
 directive|include
 file|"gimptoolcontrol.h"
 end_include
-
-begin_comment
-comment|/*  The possibilities for where the cursor lies  */
-end_comment
-
-begin_define
-DECL|macro|ACTIVE_LAYER
-define|#
-directive|define
-name|ACTIVE_LAYER
-value|(1<< 0)
-end_define
-
-begin_define
-DECL|macro|SELECTION
-define|#
-directive|define
-name|SELECTION
-value|(1<< 1)
-end_define
-
-begin_define
-DECL|macro|NON_ACTIVE_LAYER
-define|#
-directive|define
-name|NON_ACTIVE_LAYER
-value|(1<< 2)
-end_define
 
 begin_define
 DECL|macro|GIMP_TYPE_TOOL
@@ -156,7 +118,7 @@ DECL|member|ID
 name|gint
 name|ID
 decl_stmt|;
-comment|/*  unique tool ID                             */
+comment|/*  unique tool ID                         */
 DECL|member|control
 name|GimpToolControl
 modifier|*
@@ -167,34 +129,13 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-comment|/*  pointer to currently active gdisp          */
+comment|/*  pointer to currently active gdisp      */
 DECL|member|drawable
 name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-comment|/*  pointer to the tool's current drawable     */
-comment|/* This will soon go away */
-if|#
-directive|if
-literal|0
-block|GimpToolState  state;
-comment|/*  state of tool activity                     */
-block|gint           paused_count;
-comment|/*  paused control count                       */
-block|gboolean       scroll_lock;
-comment|/*  allow scrolling or not               */
-block|gboolean       auto_snap_to;
-comment|/*  snap to guides automatically         */
-block|gboolean       preserve;
-comment|/*  Preserve this tool across drawable   *                                       *  changes                              */
-block|gboolean       handle_empty_image;
-comment|/*  invoke the tool on images without    *                                       *  active drawable                      */
-block|gboolean       perfectmouse;
-comment|/*  tool is affected by gimprc's         *                                       *  "prefectmouse" setting               */
-block|GdkCursorType      cursor;   GimpToolCursorType tool_cursor;   GimpCursorModifier cursor_modifier;    GdkCursorType      toggle_cursor;   GimpToolCursorType toggle_tool_cursor;   GimpCursorModifier toggle_cursor_modifier;    gboolean           toggled;
-endif|#
-directive|endif
+comment|/*  pointer to the tool's current drawable */
 block|}
 struct|;
 end_struct

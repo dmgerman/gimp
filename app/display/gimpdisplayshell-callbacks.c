@@ -102,13 +102,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimptool/gimptoolcontrol.h"
+file|"tools/gimpmovetool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/gimpmovetool.h"
+file|"tools/gimptoolcontrol.h"
 end_include
 
 begin_include

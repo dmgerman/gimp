@@ -19,13 +19,13 @@ end_define
 begin_include
 include|#
 directive|include
-file|"libgimptool/gimptool.h"
+file|"gimptool.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279f27760103
+DECL|enum|__anon2a23c4b80103
 block|{
 DECL|enumerator|GIMP_DRAW_TOOL_STATE_INVISIBLE
 name|GIMP_DRAW_TOOL_STATE_INVISIBLE
@@ -41,7 +41,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279f27760203
+DECL|enum|__anon2a23c4b80203
 block|{
 DECL|enumerator|GIMP_HANDLE_SQUARE
 name|GIMP_HANDLE_SQUARE

@@ -18,23 +18,23 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpproxy/gimpproxytypes.h"
+file|"core/core-enums.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimptoolenums.h"
+file|"tools-enums.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/libgimp-intl.h"
+file|"gimp-intl.h"
 end_include
 
 begin_comment
-comment|/* enumerations from "./gimptoolenums.h" */
+comment|/* enumerations from "./tools-enums.h" */
 end_comment
 
 begin_decl_stmt

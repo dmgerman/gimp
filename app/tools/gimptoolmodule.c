@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimptool/gimptoolmodule.h"
+file|"gimptoolmodule.h"
 end_include
 
 begin_function_decl
