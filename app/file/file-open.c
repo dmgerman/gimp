@@ -132,7 +132,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimagefile.h"
 end_include
 
 begin_include
@@ -724,6 +736,10 @@ operator|!=
 name|NULL
 condition|)
 block|{
+name|GimpImagefile
+modifier|*
+name|imagefile
+decl_stmt|;
 comment|/* enable& clear all undo steps */
 name|gimp_image_undo_enable
 argument_list|(
@@ -755,6 +771,8 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|imagefile
+operator|=
 name|gimp_documents_add
 argument_list|(
 name|gimp
@@ -762,6 +780,24 @@ argument_list|,
 name|uri
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|config
+operator|->
+name|write_thumbnails
+condition|)
+block|{
+comment|/* save a thumbnail of every opened image */
+name|gimp_imagefile_save_thumbnail
+argument_list|(
+name|imagefile
+argument_list|,
+name|gimage
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 return|return
 name|status

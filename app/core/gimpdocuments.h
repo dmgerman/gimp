@@ -61,7 +61,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpImagefile
+modifier|*
 name|gimp_documents_add
 parameter_list|(
 name|Gimp
@@ -71,7 +72,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|uri
 parameter_list|)
 function_decl|;
 end_function_decl

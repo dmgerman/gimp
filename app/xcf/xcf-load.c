@@ -1584,12 +1584,9 @@ operator|->
 name|active_channel
 argument_list|)
 expr_stmt|;
-name|gimp_object_set_name
-argument_list|(
-name|GIMP_OBJECT
+name|gimp_image_set_filename
 argument_list|(
 name|gimage
-argument_list|)
 argument_list|,
 name|info
 operator|->

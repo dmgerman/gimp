@@ -684,8 +684,9 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|gimp_documents_add (Gimp * gimp,const gchar * filename)
+name|GimpImagefile
+modifier|*
+DECL|function|gimp_documents_add (Gimp * gimp,const gchar * uri)
 name|gimp_documents_add
 parameter_list|(
 name|Gimp
@@ -695,25 +696,29 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|uri
 parameter_list|)
 block|{
 name|GimpImagefile
 modifier|*
 name|imagefile
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
-name|filename
+name|uri
 operator|!=
+name|NULL
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -729,7 +734,7 @@ name|gimp
 operator|->
 name|documents
 argument_list|,
-name|filename
+name|uri
 argument_list|)
 expr_stmt|;
 if|if
@@ -758,7 +763,7 @@ name|imagefile
 operator|=
 name|gimp_imagefile_new
 argument_list|(
-name|filename
+name|uri
 argument_list|)
 expr_stmt|;
 name|gimp_container_add
@@ -782,6 +787,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|imagefile
+return|;
 block|}
 end_function
 
