@@ -329,7 +329,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_fill:  * @drawable_ID: The drawable to fill to.  * @fill_type: The type of fill.  *  * Fill selected area of drawable.  *  * This procedure fills the specified drawable with the fill mode. If  * the fill mode is foreground, the current foreground color is used.  * If the fill mode is background, the current background color is  * used. Other fill modes should not be used. This procedure only  * affects regions within a selection if there is a selection active.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_edit_fill:  * @drawable_ID: The drawable to fill to.  * @fill_type: The type of fill.  *  * Fill selected area of drawable.  *  * This procedure fills the specified drawable with the fill mode. If  * the fill mode is foreground, the current foreground color is used.  * If the fill mode is background, the current background color is  * used. Other fill modes should not be used. This procedure only  * affects regions within a selection if there is a selection active.  * If you want to fill the whole drawable, regardless of the selection,  * use gimp_drawable_fill().  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
