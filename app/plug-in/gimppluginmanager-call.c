@@ -2489,9 +2489,13 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|extension
+decl_stmt|;
+name|gchar
+modifier|*
+name|next_token
 decl_stmt|;
 name|list
 operator|=
@@ -2510,11 +2514,15 @@ argument_list|(
 name|extensions
 argument_list|)
 expr_stmt|;
+name|next_token
+operator|=
+name|extensions
+expr_stmt|;
 name|extension
 operator|=
 name|strtok
 argument_list|(
-name|extensions
+name|next_token
 argument_list|,
 literal|" \t,"
 argument_list|)
