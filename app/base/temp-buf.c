@@ -1130,7 +1130,7 @@ operator|=
 literal|0
 init|;
 name|y
-operator|<=
+operator|<
 name|height
 condition|;
 name|y
@@ -1164,7 +1164,7 @@ operator|=
 literal|0
 init|;
 name|x
-operator|<=
+operator|<
 name|width
 condition|;
 name|x
