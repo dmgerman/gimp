@@ -654,7 +654,11 @@ if|if
 condition|(
 name|cursor_type
 operator|!=
-name|GIMP_BAD_CURSOR
+name|GIMP_CURSOR_NONE
+operator|&&
+name|cursor_type
+operator|!=
+name|GIMP_CURSOR_BAD
 condition|)
 block|{
 switch|switch
@@ -673,7 +677,7 @@ name|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
 case|:
 name|cursor_type
 operator|=
-name|GIMP_CROSSHAIR_SMALL_CURSOR
+name|GIMP_CURSOR_CROSSHAIR_SMALL
 expr_stmt|;
 break|break;
 case|case
@@ -681,7 +685,7 @@ name|GIMP_CURSOR_MODE_CROSSHAIR
 case|:
 name|cursor_type
 operator|=
-name|GIMP_CROSSHAIR_CURSOR
+name|GIMP_CURSOR_CROSSHAIR
 expr_stmt|;
 name|tool_cursor
 operator|=

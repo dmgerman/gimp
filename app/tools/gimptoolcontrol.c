@@ -257,7 +257,7 @@ name|control
 operator|->
 name|cursor
 operator|=
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CURSOR_MOUSE
 expr_stmt|;
 name|control
 operator|->
@@ -275,7 +275,7 @@ name|control
 operator|->
 name|toggle_cursor
 operator|=
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CURSOR_MOUSE
 expr_stmt|;
 name|control
 operator|->

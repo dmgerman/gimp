@@ -494,7 +494,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_FLIP_HORIZONTAL_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_FLIP_HORIZONTAL
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_toggle_cursor
@@ -512,7 +512,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_FLIP_VERTICAL_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_FLIP_VERTICAL
 argument_list|)
 expr_stmt|;
 name|transform_tool
@@ -716,7 +716,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_BAD_CURSOR
+name|GIMP_CURSOR_BAD
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_toggle_cursor
@@ -725,7 +725,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_BAD_CURSOR
+name|GIMP_CURSOR_BAD
 argument_list|)
 expr_stmt|;
 block|}

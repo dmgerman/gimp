@@ -963,7 +963,7 @@ name|SELECTION_MOVE_COPY
 case|:
 name|tool_cursor
 operator|=
-name|GIMP_MOVE_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_MOVE
 expr_stmt|;
 break|break;
 case|case
@@ -981,7 +981,7 @@ name|tool
 argument_list|,
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CURSOR_MOUSE
 argument_list|,
 name|tool_cursor
 argument_list|,

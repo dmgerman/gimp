@@ -658,6 +658,15 @@ value|N_("When enabled, all paint tools will show a preview of the current " \  
 end_define
 
 begin_define
+DECL|macro|SHOW_PAINT_TOOL_CURSOR_BLURB
+define|#
+directive|define
+name|SHOW_PAINT_TOOL_CURSOR_BLURB
+define|\
+value|N_("When enabled, the cursor will be shown over the image while " \     "using a paint tool.")
+end_define
+
+begin_define
 DECL|macro|SHOW_MENUBAR_BLURB
 define|#
 directive|define

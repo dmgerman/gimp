@@ -476,7 +476,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_RECT_SELECT_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_RECT_SELECT
 argument_list|)
 expr_stmt|;
 name|by_color_select
@@ -1138,7 +1138,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_BAD_CURSOR
+name|GIMP_CURSOR_BAD
 argument_list|)
 expr_stmt|;
 block|}
@@ -1150,7 +1150,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CURSOR_MOUSE
 argument_list|)
 expr_stmt|;
 block|}

@@ -2267,7 +2267,7 @@ name|gimp_display_shell_set_cursor
 argument_list|(
 name|shell
 argument_list|,
-name|GIMP_BAD_CURSOR
+name|GIMP_CURSOR_BAD
 argument_list|,
 name|gimp_tool_control_get_tool_cursor
 argument_list|(
@@ -2287,7 +2287,7 @@ name|gimp_display_shell_set_cursor
 argument_list|(
 name|shell
 argument_list|,
-name|GIMP_BAD_CURSOR
+name|GIMP_CURSOR_BAD
 argument_list|,
 name|GIMP_TOOL_CURSOR_NONE
 argument_list|,
@@ -4368,7 +4368,7 @@ name|gimp_display_shell_set_cursor
 argument_list|(
 name|shell
 argument_list|,
-name|GIMP_BAD_CURSOR
+name|GIMP_CURSOR_BAD
 argument_list|,
 name|gimp_tool_control_get_tool_cursor
 argument_list|(
@@ -4388,7 +4388,7 @@ name|gimp_display_shell_set_cursor
 argument_list|(
 name|shell
 argument_list|,
-name|GIMP_BAD_CURSOR
+name|GIMP_CURSOR_BAD
 argument_list|,
 name|GIMP_TOOL_CURSOR_NONE
 argument_list|,

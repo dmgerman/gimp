@@ -561,7 +561,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_BLEND_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_BLEND
 argument_list|)
 expr_stmt|;
 block|}
@@ -1399,7 +1399,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_BAD_CURSOR
+name|GIMP_CURSOR_BAD
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1410,7 +1410,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CURSOR_MOUSE
 argument_list|)
 expr_stmt|;
 break|break;

@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274a94020103
+DECL|enum|__anon2a8f73700103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -997,7 +997,7 @@ block|{
 name|GdkCursorType
 name|cursor
 init|=
-name|GIMP_BAD_CURSOR
+name|GIMP_CURSOR_BAD
 decl_stmt|;
 name|GimpCursorModifier
 name|modifier
@@ -1056,7 +1056,7 @@ condition|)
 block|{
 name|cursor
 operator|=
-name|GIMP_COLOR_PICKER_CURSOR
+name|GIMP_CURSOR_COLOR_PICKER
 expr_stmt|;
 block|}
 switch|switch
@@ -1099,7 +1099,7 @@ name|gdisp
 argument_list|,
 name|cursor
 argument_list|,
-name|GIMP_COLOR_PICKER_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_COLOR_PICKER
 argument_list|,
 name|modifier
 argument_list|)

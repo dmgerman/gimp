@@ -890,7 +890,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_TEXT_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_TEXT
 argument_list|)
 expr_stmt|;
 block|}

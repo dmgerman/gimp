@@ -2493,7 +2493,7 @@ condition|)
 block|{
 name|ctype
 operator|=
-name|GIMP_BAD_CURSOR
+name|GIMP_CURSOR_BAD
 expr_stmt|;
 block|}
 elseif|else
@@ -2530,7 +2530,7 @@ condition|)
 block|{
 name|ctype
 operator|=
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CURSOR_MOUSE
 expr_stmt|;
 block|}
 block|}
@@ -2563,7 +2563,7 @@ condition|)
 block|{
 name|ctype
 operator|=
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CURSOR_MOUSE
 expr_stmt|;
 block|}
 break|break;
@@ -2581,12 +2581,12 @@ argument_list|)
 condition|)
 name|ctype
 operator|=
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CURSOR_MOUSE
 expr_stmt|;
 else|else
 name|ctype
 operator|=
-name|GIMP_BAD_CURSOR
+name|GIMP_CURSOR_BAD
 expr_stmt|;
 break|break;
 block|}

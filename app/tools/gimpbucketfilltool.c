@@ -496,7 +496,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_BUCKET_FILL_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_BUCKET_FILL
 argument_list|)
 expr_stmt|;
 block|}

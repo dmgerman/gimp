@@ -388,7 +388,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_DODGE_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_DODGE
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_toggle_tool_cursor
@@ -397,7 +397,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_BURN_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_BURN
 argument_list|)
 expr_stmt|;
 block|}

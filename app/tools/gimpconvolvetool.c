@@ -386,7 +386,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_BLUR_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_BLUR
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_toggle_tool_cursor
@@ -395,7 +395,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_BLUR_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_BLUR
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_toggle_cursor_modifier

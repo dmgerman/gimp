@@ -489,7 +489,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_PERSPECTIVE_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_PERSPECTIVE
 argument_list|)
 expr_stmt|;
 name|tr_tool

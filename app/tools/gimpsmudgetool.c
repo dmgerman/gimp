@@ -267,7 +267,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_SMUDGE_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_SMUDGE
 argument_list|)
 expr_stmt|;
 name|gimp_paint_tool_enable_color_picker

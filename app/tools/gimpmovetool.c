@@ -696,7 +696,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_MOVE_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_MOVE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2351,12 +2351,12 @@ decl_stmt|;
 name|GdkCursorType
 name|cursor
 init|=
-name|GIMP_BAD_CURSOR
+name|GIMP_CURSOR_BAD
 decl_stmt|;
 name|GimpToolCursorType
 name|tool_cursor
 init|=
-name|GIMP_MOVE_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_MOVE
 decl_stmt|;
 name|GimpCursorModifier
 name|modifier
@@ -2374,7 +2374,7 @@ condition|)
 block|{
 name|tool_cursor
 operator|=
-name|GIMP_BEZIER_SELECT_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_PATHS
 expr_stmt|;
 name|modifier
 operator|=
@@ -2398,7 +2398,7 @@ argument_list|)
 condition|)
 name|cursor
 operator|=
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CURSOR_MOUSE
 expr_stmt|;
 block|}
 else|else
@@ -2440,7 +2440,7 @@ name|GDK_HAND2
 expr_stmt|;
 name|tool_cursor
 operator|=
-name|GIMP_HAND_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_HAND
 expr_stmt|;
 block|}
 block|}
@@ -2457,7 +2457,7 @@ condition|)
 block|{
 name|tool_cursor
 operator|=
-name|GIMP_RECT_SELECT_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_RECT_SELECT
 expr_stmt|;
 name|modifier
 operator|=
@@ -2478,7 +2478,7 @@ argument_list|)
 condition|)
 name|cursor
 operator|=
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CURSOR_MOUSE
 expr_stmt|;
 block|}
 elseif|else
@@ -2500,7 +2500,7 @@ argument_list|)
 condition|)
 name|cursor
 operator|=
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CURSOR_MOUSE
 expr_stmt|;
 block|}
 else|else
@@ -2578,7 +2578,7 @@ name|GDK_HAND2
 expr_stmt|;
 name|tool_cursor
 operator|=
-name|GIMP_HAND_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_HAND
 expr_stmt|;
 name|modifier
 operator|=
@@ -2627,11 +2627,11 @@ condition|)
 block|{
 name|cursor
 operator|=
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CURSOR_MOUSE
 expr_stmt|;
 name|tool_cursor
 operator|=
-name|GIMP_RECT_SELECT_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_RECT_SELECT
 expr_stmt|;
 name|modifier
 operator|=
@@ -2653,7 +2653,7 @@ condition|)
 block|{
 name|cursor
 operator|=
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CURSOR_MOUSE
 expr_stmt|;
 block|}
 else|else
@@ -2664,7 +2664,7 @@ name|GDK_HAND2
 expr_stmt|;
 name|tool_cursor
 operator|=
-name|GIMP_HAND_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_HAND
 expr_stmt|;
 name|modifier
 operator|=
@@ -3033,7 +3033,7 @@ name|gdisp
 argument_list|,
 name|GDK_HAND2
 argument_list|,
-name|GIMP_HAND_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_HAND
 argument_list|,
 name|GIMP_CURSOR_MODIFIER_MOVE
 argument_list|)

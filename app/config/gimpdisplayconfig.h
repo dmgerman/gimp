@@ -134,6 +134,10 @@ DECL|member|show_brush_outline
 name|gboolean
 name|show_brush_outline
 decl_stmt|;
+DECL|member|show_paint_tool_cursor
+name|gboolean
+name|show_paint_tool_cursor
+decl_stmt|;
 DECL|member|image_title_format
 name|gchar
 modifier|*

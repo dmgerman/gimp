@@ -576,7 +576,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_CLONE_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_CLONE
 argument_list|)
 expr_stmt|;
 block|}
@@ -892,7 +892,7 @@ decl_stmt|;
 name|GdkCursorType
 name|ctype
 init|=
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CURSOR_MOUSE
 decl_stmt|;
 name|options
 operator|=
@@ -937,7 +937,7 @@ argument_list|)
 condition|)
 name|ctype
 operator|=
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CURSOR_MOUSE
 expr_stmt|;
 elseif|else
 if|if
@@ -957,7 +957,7 @@ argument_list|)
 condition|)
 name|ctype
 operator|=
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CURSOR_MOUSE
 expr_stmt|;
 block|}
 if|if
@@ -985,7 +985,7 @@ name|GDK_CONTROL_MASK
 condition|)
 name|ctype
 operator|=
-name|GIMP_CROSSHAIR_SMALL_CURSOR
+name|GIMP_CURSOR_CROSSHAIR_SMALL
 expr_stmt|;
 elseif|else
 if|if
@@ -1005,7 +1005,7 @@ name|src_drawable
 condition|)
 name|ctype
 operator|=
-name|GIMP_BAD_CURSOR
+name|GIMP_CURSOR_BAD
 expr_stmt|;
 block|}
 name|gimp_tool_control_set_cursor

@@ -40,6 +40,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"cursors/xbm/cursor-none.xbm"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursors/xbm/cursor-mouse.xbm"
 end_include
 
@@ -681,6 +687,28 @@ index|[]
 init|=
 block|{
 comment|/* these have to match up with enum GimpCursorType in widgets-enums.h */
+block|{
+name|cursor_none_bits
+block|,
+name|cursor_none_bits
+block|,
+name|cursor_none_width
+block|,
+name|cursor_none_height
+block|,
+name|cursor_none_x_hot
+block|,
+name|cursor_none_y_hot
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|cursor_none
+block|,
+name|NULL
+block|}
+block|,
 block|{
 name|cursor_mouse_bits
 block|,
@@ -2023,7 +2051,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|cursor_type
 operator|<
-name|GIMP_LAST_CURSOR_ENTRY
+name|GIMP_CURSOR_LAST
 argument_list|,
 name|NULL
 argument_list|)
@@ -2046,7 +2074,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|cursor_type
 operator|>=
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CURSOR_NONE
 argument_list|,
 name|NULL
 argument_list|)
@@ -2056,15 +2084,15 @@ if|if
 condition|(
 name|cursor_type
 operator|!=
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CURSOR_MOUSE
 operator|&&
 name|cursor_type
 operator|!=
-name|GIMP_CROSSHAIR_SMALL_CURSOR
+name|GIMP_CURSOR_CROSSHAIR_SMALL
 operator|&&
 name|cursor_type
 operator|!=
-name|GIMP_BAD_CURSOR
+name|GIMP_CURSOR_BAD
 condition|)
 block|{
 name|tool_cursor
@@ -2075,7 +2103,7 @@ block|}
 comment|/*  prepare the main cursor  */
 name|cursor_type
 operator|-=
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CURSOR_NONE
 expr_stmt|;
 name|bmcursor
 operator|=
@@ -2090,7 +2118,7 @@ if|if
 condition|(
 name|tool_cursor
 operator|>=
-name|GIMP_LAST_STOCK_TOOL_CURSOR_ENTRY
+name|GIMP_TOOL_CURSOR_LAST
 condition|)
 name|tool_cursor
 operator|=

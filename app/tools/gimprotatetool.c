@@ -531,14 +531,12 @@ block|{
 name|GimpTransformToolClass
 modifier|*
 name|trans_class
-decl_stmt|;
-name|trans_class
-operator|=
+init|=
 name|GIMP_TRANSFORM_TOOL_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -608,7 +606,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_ROTATE_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_ROTATE
 argument_list|)
 expr_stmt|;
 name|tr_tool

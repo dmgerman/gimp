@@ -244,7 +244,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_PAINTBRUSH_TOOL_CURSOR
+name|GIMP_TOOL_CURSOR_PAINTBRUSH
 argument_list|)
 expr_stmt|;
 name|gimp_paint_tool_enable_color_picker
