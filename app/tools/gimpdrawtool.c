@@ -3318,7 +3318,7 @@ index|]
 operator|.
 name|x1
 operator|=
-name|floor
+name|RINT
 argument_list|(
 name|CLAMP
 argument_list|(
@@ -3338,7 +3338,7 @@ index|]
 operator|.
 name|y1
 operator|=
-name|floor
+name|RINT
 argument_list|(
 name|CLAMP
 argument_list|(
@@ -3389,7 +3389,7 @@ index|]
 operator|.
 name|x2
 operator|=
-name|floor
+name|RINT
 argument_list|(
 name|CLAMP
 argument_list|(
@@ -3409,7 +3409,7 @@ index|]
 operator|.
 name|y2
 operator|=
-name|floor
+name|RINT
 argument_list|(
 name|CLAMP
 argument_list|(
