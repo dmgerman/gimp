@@ -141,7 +141,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29869b050103
+DECL|enum|__anon2ab509cd0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -3073,12 +3073,12 @@ operator|&
 literal|0x4
 operator|)
 condition|?
-name|blend_light_check
+name|render_blend_light_check
 index|[
 literal|0
 index|]
 else|:
-name|blend_dark_check
+name|render_blend_dark_check
 index|[
 literal|0
 index|]
@@ -3959,12 +3959,12 @@ operator|&
 literal|0x4
 operator|)
 condition|?
-name|blend_light_check
+name|render_blend_light_check
 index|[
 literal|0
 index|]
 else|:
-name|blend_dark_check
+name|render_blend_dark_check
 index|[
 literal|0
 index|]
@@ -5604,7 +5604,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29869b050208
+DECL|struct|__anon2ab509cd0208
 block|{
 DECL|member|def
 name|GimpImage

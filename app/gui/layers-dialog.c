@@ -3789,7 +3789,7 @@ condition|)
 block|{
 name|buf
 operator|=
-name|check_buf
+name|render_check_buf
 expr_stmt|;
 name|alpha
 operator|=
@@ -3824,7 +3824,7 @@ block|}
 else|else
 name|buf
 operator|=
-name|empty_buf
+name|render_empty_buf
 expr_stmt|;
 name|x1
 operator|=
@@ -4011,7 +4011,7 @@ condition|;
 name|b
 operator|++
 control|)
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4078,7 +4078,7 @@ operator|&
 literal|0x4
 condition|)
 block|{
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4087,7 +4087,7 @@ operator|+
 literal|0
 index|]
 operator|=
-name|blend_dark_check
+name|render_blend_dark_check
 index|[
 operator|(
 name|a
@@ -4099,7 +4099,7 @@ index|]
 operator|)
 index|]
 expr_stmt|;
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4108,7 +4108,7 @@ operator|+
 literal|1
 index|]
 operator|=
-name|blend_dark_check
+name|render_blend_dark_check
 index|[
 operator|(
 name|a
@@ -4120,7 +4120,7 @@ index|]
 operator|)
 index|]
 expr_stmt|;
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4129,7 +4129,7 @@ operator|+
 literal|2
 index|]
 operator|=
-name|blend_dark_check
+name|render_blend_dark_check
 index|[
 operator|(
 name|a
@@ -4144,7 +4144,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4153,7 +4153,7 @@ operator|+
 literal|0
 index|]
 operator|=
-name|blend_light_check
+name|render_blend_light_check
 index|[
 operator|(
 name|a
@@ -4165,7 +4165,7 @@ index|]
 operator|)
 index|]
 expr_stmt|;
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4174,7 +4174,7 @@ operator|+
 literal|1
 index|]
 operator|=
-name|blend_light_check
+name|render_blend_light_check
 index|[
 operator|(
 name|a
@@ -4186,7 +4186,7 @@ index|]
 operator|)
 index|]
 expr_stmt|;
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4195,7 +4195,7 @@ operator|+
 literal|2
 index|]
 operator|=
-name|blend_light_check
+name|render_blend_light_check
 index|[
 operator|(
 name|a
@@ -4211,7 +4211,7 @@ block|}
 block|}
 else|else
 block|{
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4225,7 +4225,7 @@ index|[
 name|RED_PIX
 index|]
 expr_stmt|;
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4239,7 +4239,7 @@ index|[
 name|GREEN_PIX
 index|]
 expr_stmt|;
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4287,7 +4287,7 @@ condition|(
 name|color_buf
 condition|)
 block|{
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4296,7 +4296,7 @@ operator|+
 literal|0
 index|]
 operator|=
-name|blend_dark_check
+name|render_blend_dark_check
 index|[
 operator|(
 name|a
@@ -4308,7 +4308,7 @@ index|]
 operator|)
 index|]
 expr_stmt|;
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4317,7 +4317,7 @@ operator|+
 literal|1
 index|]
 operator|=
-name|blend_dark_check
+name|render_blend_dark_check
 index|[
 operator|(
 name|a
@@ -4329,7 +4329,7 @@ index|]
 operator|)
 index|]
 expr_stmt|;
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4338,7 +4338,7 @@ operator|+
 literal|2
 index|]
 operator|=
-name|blend_dark_check
+name|render_blend_dark_check
 index|[
 operator|(
 name|a
@@ -4352,12 +4352,12 @@ index|]
 expr_stmt|;
 block|}
 else|else
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 index|]
 operator|=
-name|blend_dark_check
+name|render_blend_dark_check
 index|[
 operator|(
 name|a
@@ -4379,7 +4379,7 @@ condition|(
 name|color_buf
 condition|)
 block|{
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4388,7 +4388,7 @@ operator|+
 literal|0
 index|]
 operator|=
-name|blend_light_check
+name|render_blend_light_check
 index|[
 operator|(
 name|a
@@ -4400,7 +4400,7 @@ index|]
 operator|)
 index|]
 expr_stmt|;
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4409,7 +4409,7 @@ operator|+
 literal|1
 index|]
 operator|=
-name|blend_light_check
+name|render_blend_light_check
 index|[
 operator|(
 name|a
@@ -4421,7 +4421,7 @@ index|]
 operator|)
 index|]
 expr_stmt|;
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4430,7 +4430,7 @@ operator|+
 literal|2
 index|]
 operator|=
-name|blend_light_check
+name|render_blend_light_check
 index|[
 operator|(
 name|a
@@ -4444,12 +4444,12 @@ index|]
 expr_stmt|;
 block|}
 else|else
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 index|]
 operator|=
-name|blend_light_check
+name|render_blend_light_check
 index|[
 operator|(
 name|a
@@ -4472,7 +4472,7 @@ condition|(
 name|color_buf
 condition|)
 block|{
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4486,7 +4486,7 @@ index|[
 name|GRAY_PIX
 index|]
 expr_stmt|;
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4500,7 +4500,7 @@ index|[
 name|GRAY_PIX
 index|]
 expr_stmt|;
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4516,7 +4516,7 @@ index|]
 expr_stmt|;
 block|}
 else|else
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 index|]
@@ -4564,7 +4564,7 @@ condition|;
 name|b
 operator|++
 control|)
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4615,7 +4615,7 @@ condition|;
 name|b
 operator|++
 control|)
-name|temp_buf
+name|render_temp_buf
 index|[
 name|j
 operator|*
@@ -4641,7 +4641,7 @@ argument_list|(
 name|preview_widget
 argument_list|)
 argument_list|,
-name|temp_buf
+name|render_temp_buf
 argument_list|,
 literal|0
 argument_list|,
@@ -10989,7 +10989,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274910840108
+DECL|struct|__anon2b2844940108
 block|{
 DECL|member|gimage
 name|GimpImage
