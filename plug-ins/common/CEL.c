@@ -60,6 +60,12 @@ directive|include
 file|<libgimp/gimp.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -391,13 +397,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_cel_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"Loads files in KISS CEL file format"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This plug-in loads individual KISS cell files."
+argument_list|)
 argument_list|,
 literal|"Nick Lamb"
 argument_list|,
@@ -435,9 +450,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_cel_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"Saves files in KISS CEL file format"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This plug-in saves individual KISS cell files."
+argument_list|)
 argument_list|,
 literal|"Nick Lamb"
 argument_list|,
@@ -562,6 +583,23 @@ name|values
 expr_stmt|;
 if|if
 condition|(
+name|run_mode
+operator|==
+name|RUN_INTERACTIVE
+condition|)
+block|{
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+block|}
+if|if
+condition|(
 name|strcmp
 argument_list|(
 name|name
@@ -672,7 +710,10 @@ block|{
 comment|/* Let user choose KCF palette (cancel ignores) */
 name|palette_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Load KISS Palette"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_set_data
@@ -992,7 +1033,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"%s\nis not present or is unreadable"
+argument_list|)
 argument_list|,
 name|file
 argument_list|)
@@ -1017,7 +1061,10 @@ name|sprintf
 argument_list|(
 name|progress
 argument_list|,
+name|_
+argument_list|(
 literal|"Loading %s:"
+argument_list|)
 argument_list|,
 name|brief
 argument_list|)
@@ -1211,7 +1258,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"CEL Can't create a new image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -1232,7 +1282,10 @@ name|gimp_layer_new
 argument_list|(
 name|image
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|width
 argument_list|,
@@ -1603,7 +1656,10 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Unsupported number of colours (%d)"
+argument_list|)
 argument_list|,
 name|colours
 argument_list|)
@@ -2202,7 +2258,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Only an indexed-alpha image can be saved in CEL format"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -2247,7 +2306,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"CEL Couldn't write image to\n%s"
+argument_list|)
 argument_list|,
 name|file
 argument_list|)
@@ -2272,7 +2334,10 @@ name|sprintf
 argument_list|(
 name|progress
 argument_list|,
+name|_
+argument_list|(
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|brief
 argument_list|)

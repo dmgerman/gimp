@@ -1,7 +1,13 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* align_layers.c -- This is a plug-in for the GIMP (1.0's API)  * Author: Shuji Narazaki<narazaki@InetQ.or.jp>  * Time-stamp:<1998/01/17 00:32:23 narazaki@InetQ.or.jp>  * Version:  0.26  *  * Copyright (C) 1997-1998 Shuji Narazaki<narazaki@InetQ.or.jp>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* align_layers.c -- This is a plug-in for the GIMP (1.0's API)  * Author: Shuji Narazaki<narazaki@InetQ.or.jp>  * Time-stamp:<1999-12-18 05:48:38 yasuhiro>  * Version:  0.26  *  * Copyright (C) 1997-1998 Shuji Narazaki<narazaki@InetQ.or.jp>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
 
 begin_include
 include|#
@@ -13,6 +19,12 @@ begin_include
 include|#
 directive|include
 file|"gtk/gtk.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -61,14 +73,6 @@ define|#
 directive|define
 name|PROGRESS_NAME
 value|"align_layers"
-end_define
-
-begin_define
-DECL|macro|MENU_POSITION
-define|#
-directive|define
-name|MENU_POSITION
-value|"<Image>/Layers/Align Visible Layers..."
 end_define
 
 begin_define
@@ -411,7 +415,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c53e70a0108
+DECL|struct|__anon2941a7d90108
 block|{
 DECL|member|name
 name|gchar
@@ -694,7 +698,10 @@ directive|define
 name|H_NONE
 value|0
 block|{
+name|N_
+argument_list|(
 literal|"None"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -705,7 +712,10 @@ directive|define
 name|H_COLLECT
 value|1
 block|{
+name|N_
+argument_list|(
 literal|"Collect"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -716,7 +726,10 @@ directive|define
 name|LEFT2RIGHT
 value|2
 block|{
+name|N_
+argument_list|(
 literal|"Fill (left to right)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -727,7 +740,10 @@ directive|define
 name|RIGHT2LEFT
 value|3
 block|{
+name|N_
+argument_list|(
 literal|"Fill (right to left)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -738,7 +754,10 @@ directive|define
 name|SNAP2HGRID
 value|4
 block|{
+name|N_
+argument_list|(
 literal|"Snap to grid"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -759,7 +778,10 @@ directive|define
 name|H_BASE_LEFT
 value|0
 block|{
+name|N_
+argument_list|(
 literal|"Left edge"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -770,7 +792,10 @@ directive|define
 name|H_BASE_CENTER
 value|1
 block|{
+name|N_
+argument_list|(
 literal|"Center"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -781,7 +806,10 @@ directive|define
 name|H_BASE_RIGHT
 value|2
 block|{
+name|N_
+argument_list|(
 literal|"Right edge"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -802,7 +830,10 @@ directive|define
 name|V_NONE
 value|0
 block|{
+name|N_
+argument_list|(
 literal|"None"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -813,7 +844,10 @@ directive|define
 name|V_COLLECT
 value|1
 block|{
+name|N_
+argument_list|(
 literal|"Collect"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -824,7 +858,10 @@ directive|define
 name|TOP2BOTTOM
 value|2
 block|{
+name|N_
+argument_list|(
 literal|"Fill (top to bottom)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -835,7 +872,10 @@ directive|define
 name|BOTTOM2TOP
 value|3
 block|{
+name|N_
+argument_list|(
 literal|"Fill (bottom to top)"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -846,7 +886,10 @@ directive|define
 name|SNAP2VGRID
 value|4
 block|{
+name|N_
+argument_list|(
 literal|"Snap to grid"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -867,7 +910,10 @@ directive|define
 name|V_BASE_TOP
 value|0
 block|{
+name|N_
+argument_list|(
 literal|"Top edge"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -878,7 +924,10 @@ directive|define
 name|V_BASE_CENTER
 value|1
 block|{
+name|N_
+argument_list|(
 literal|"Center"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -889,7 +938,10 @@ directive|define
 name|V_BASE_BOTTOM
 value|2
 block|{
+name|N_
+argument_list|(
 literal|"Bottom edge"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -900,7 +952,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c53e70a0208
+DECL|struct|__anon2941a7d90208
 block|{
 DECL|member|h_style
 name|gint
@@ -963,7 +1015,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c53e70a0308
+DECL|struct|__anon2941a7d90308
 block|{
 DECL|member|run
 name|gint
@@ -1080,13 +1132,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
+name|_
+argument_list|(
 literal|"Align visible layers"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"align visible layers"
+argument_list|)
 argument_list|,
 literal|"Shuji Narazaki<narazaki@InetQ.or.jp>"
 argument_list|,
@@ -1094,7 +1155,10 @@ literal|"Shuji Narazaki"
 argument_list|,
 literal|"1997"
 argument_list|,
-name|MENU_POSITION
+name|N_
+argument_list|(
+literal|"<Image>/Layers/Align Visible Layers..."
+argument_list|)
 argument_list|,
 literal|"RGB*,GRAY*"
 argument_list|,
@@ -1219,6 +1283,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|gimp_image_get_layers
 argument_list|(
 name|image_id
@@ -1238,7 +1305,10 @@ name|gtkW_message_dialog
 argument_list|(
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Error: there are too few layers."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1262,10 +1332,16 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -2851,7 +2927,10 @@ argument_list|)
 operator|->
 name|vbox
 argument_list|,
+name|_
+argument_list|(
 literal|"Parameter settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|table
@@ -2869,7 +2948,10 @@ name|gtkW_table_add_menu
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Horizontal style"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -2906,7 +2988,10 @@ name|gtkW_table_add_menu
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Horizontal base"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -2943,7 +3028,10 @@ name|gtkW_table_add_menu
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Vertical style"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -2980,7 +3068,10 @@ name|gtkW_table_add_menu
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Vertical base"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -3019,7 +3110,10 @@ name|gtkW_table_add_toggle
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Ignore the bottom layer even if visible"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -3041,7 +3135,10 @@ name|gtkW_table_add_toggle
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Use the (invisible) bottom layer as the base"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -3063,7 +3160,10 @@ name|gtkW_table_add_iscale_entry
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Grid size"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -3520,7 +3620,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3582,7 +3685,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3898,7 +4004,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -5220,12 +5329,15 @@ name|sprintf
 argument_list|(
 name|buf
 argument_list|,
+name|gettext
+argument_list|(
 name|item
 index|[
 name|i
 index|]
 operator|.
 name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|menuitem

@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<aalib.h>
 end_include
 
@@ -43,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -346,13 +358,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_aa_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"Saves files in various text formats"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Saves files in various text formats"
+argument_list|)
 argument_list|,
 literal|"Tim Newsome<nuisance@cmu.edu>"
 argument_list|,
@@ -601,6 +622,9 @@ case|:
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|init_gtk
 argument_list|()
 expr_stmt|;
@@ -645,6 +669,9 @@ return|return;
 block|}
 break|break;
 default|default:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 break|break;
 block|}
 if|if
@@ -1357,7 +1384,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Save as text"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -1463,7 +1493,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1520,7 +1553,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1573,7 +1609,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Data Formatting"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type

@@ -895,7 +895,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Roatation"
+literal|"Rotation"
 argument_list|)
 argument_list|,
 name|transform_type_callback
