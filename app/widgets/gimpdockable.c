@@ -2707,6 +2707,10 @@ modifier|*
 name|widget
 parameter_list|)
 block|{
+name|GimpDockable
+modifier|*
+name|dockable
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GTK_BIN
@@ -2743,6 +2747,23 @@ name|gimp_dockable_title_changed
 argument_list|)
 argument_list|,
 name|container
+argument_list|)
+expr_stmt|;
+comment|/*  not all tab styles are supported by all children  */
+name|dockable
+operator|=
+name|GIMP_DOCKABLE
+argument_list|(
+name|container
+argument_list|)
+expr_stmt|;
+name|gimp_dockable_set_tab_style
+argument_list|(
+name|dockable
+argument_list|,
+name|dockable
+operator|->
+name|tab_style
 argument_list|)
 expr_stmt|;
 block|}
