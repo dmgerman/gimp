@@ -1458,6 +1458,11 @@ operator|&
 name|b2
 argument_list|)
 expr_stmt|;
+comment|/*  Composition should have no effect if saturation is zero.            *  otherwise, black would be painted red (see bug #123296).            */
+if|if
+condition|(
+name|g2
+condition|)
 name|r1
 operator|=
 name|r2
