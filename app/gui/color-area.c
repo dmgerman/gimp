@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1cc8c60103
+DECL|enum|__anon2b1380930103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -2095,6 +2095,9 @@ operator||
 name|GDK_LEAVE_NOTIFY_MASK
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|GDK_WINDOWING_DIRECTFB
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -2112,6 +2115,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT

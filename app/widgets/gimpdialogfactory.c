@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fcef700103
+DECL|enum|__anon278cdc2c0103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -103,7 +103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fcef700203
+DECL|enum|__anon278cdc2c0203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -1485,9 +1485,9 @@ condition|(
 name|dialog
 condition|)
 block|{
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dialog
 argument_list|)
@@ -1497,9 +1497,9 @@ argument_list|,
 name|factory
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dialog
 argument_list|)
@@ -2051,9 +2051,9 @@ condition|(
 name|dock
 condition|)
 block|{
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dock
 argument_list|)
@@ -2160,9 +2160,9 @@ return|return;
 block|}
 name|dialog_factory
 operator|=
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dialog
 argument_list|)
@@ -2203,9 +2203,9 @@ return|return;
 block|}
 name|entry
 operator|=
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dialog
 argument_list|)
@@ -2217,7 +2217,7 @@ if|if
 condition|(
 name|entry
 condition|)
-comment|/*  dialog is a toplevel (but not a GimpDock) or a GimpDockable  */
+comment|/* dialog is a toplevel (but not a GimpDock) or a GimpDockable */
 block|{
 name|gboolean
 name|toplevel

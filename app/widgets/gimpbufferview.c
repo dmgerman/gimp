@@ -660,9 +660,9 @@ name|context_func
 argument_list|)
 condition|)
 block|{
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|buffer_view
 argument_list|)
