@@ -1478,7 +1478,7 @@ name|on_signal
 argument_list|,
 name|SA_RESETHAND
 operator||
-name|SA_NOMASK
+name|SA_NODEFER
 argument_list|)
 expr_stmt|;
 name|gimp_signal_private
@@ -1489,7 +1489,7 @@ name|on_signal
 argument_list|,
 name|SA_RESETHAND
 operator||
-name|SA_NOMASK
+name|SA_NODEFER
 argument_list|)
 expr_stmt|;
 name|gimp_signal_private
@@ -1500,7 +1500,7 @@ name|on_signal
 argument_list|,
 name|SA_RESETHAND
 operator||
-name|SA_NOMASK
+name|SA_NODEFER
 argument_list|)
 expr_stmt|;
 name|gimp_signal_private
@@ -1511,7 +1511,7 @@ name|on_signal
 argument_list|,
 name|SA_RESETHAND
 operator||
-name|SA_NOMASK
+name|SA_NODEFER
 argument_list|)
 expr_stmt|;
 name|gimp_signal_private
@@ -1522,7 +1522,7 @@ name|on_signal
 argument_list|,
 name|SA_RESETHAND
 operator||
-name|SA_NOMASK
+name|SA_NODEFER
 argument_list|)
 expr_stmt|;
 name|gimp_signal_private
@@ -1533,7 +1533,7 @@ name|on_signal
 argument_list|,
 name|SA_RESETHAND
 operator||
-name|SA_NOMASK
+name|SA_NODEFER
 argument_list|)
 expr_stmt|;
 name|gimp_signal_private
@@ -1544,7 +1544,7 @@ name|on_signal
 argument_list|,
 name|SA_RESETHAND
 operator||
-name|SA_NOMASK
+name|SA_NODEFER
 argument_list|)
 expr_stmt|;
 name|gimp_signal_private
@@ -1555,7 +1555,7 @@ name|on_signal
 argument_list|,
 name|SA_RESETHAND
 operator||
-name|SA_NOMASK
+name|SA_NODEFER
 argument_list|)
 expr_stmt|;
 name|gimp_signal_private
@@ -1566,7 +1566,7 @@ name|on_signal
 argument_list|,
 name|SA_RESETHAND
 operator||
-name|SA_NOMASK
+name|SA_NODEFER
 argument_list|)
 expr_stmt|;
 ifndef|#

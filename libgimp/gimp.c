@@ -989,7 +989,7 @@ name|gimp_plugin_signalhandler
 argument_list|,
 name|SA_RESETHAND
 operator||
-name|SA_NOMASK
+name|SA_NODEFER
 argument_list|)
 expr_stmt|;
 name|gimp_signal_private
@@ -1000,7 +1000,7 @@ name|gimp_plugin_signalhandler
 argument_list|,
 name|SA_RESETHAND
 operator||
-name|SA_NOMASK
+name|SA_NODEFER
 argument_list|)
 expr_stmt|;
 name|gimp_signal_private
@@ -1011,7 +1011,7 @@ name|gimp_plugin_signalhandler
 argument_list|,
 name|SA_RESETHAND
 operator||
-name|SA_NOMASK
+name|SA_NODEFER
 argument_list|)
 expr_stmt|;
 name|gimp_signal_private
@@ -1022,7 +1022,7 @@ name|gimp_plugin_signalhandler
 argument_list|,
 name|SA_RESETHAND
 operator||
-name|SA_NOMASK
+name|SA_NODEFER
 argument_list|)
 expr_stmt|;
 name|gimp_signal_private
@@ -1033,7 +1033,7 @@ name|gimp_plugin_signalhandler
 argument_list|,
 name|SA_RESETHAND
 operator||
-name|SA_NOMASK
+name|SA_NODEFER
 argument_list|)
 expr_stmt|;
 name|gimp_signal_private
@@ -1044,7 +1044,7 @@ name|gimp_plugin_signalhandler
 argument_list|,
 name|SA_RESETHAND
 operator||
-name|SA_NOMASK
+name|SA_NODEFER
 argument_list|)
 expr_stmt|;
 name|gimp_signal_private
@@ -1055,7 +1055,7 @@ name|gimp_plugin_signalhandler
 argument_list|,
 name|SA_RESETHAND
 operator||
-name|SA_NOMASK
+name|SA_NODEFER
 argument_list|)
 expr_stmt|;
 name|gimp_signal_private
@@ -1066,7 +1066,7 @@ name|gimp_plugin_signalhandler
 argument_list|,
 name|SA_RESETHAND
 operator||
-name|SA_NOMASK
+name|SA_NODEFER
 argument_list|)
 expr_stmt|;
 endif|#
