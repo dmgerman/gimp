@@ -353,24 +353,42 @@ name|types
 index|[
 name|GIMP_INT_STORE_NUM_COLUMNS
 index|]
-init|=
-block|{
-name|G_TYPE_INT
-block|,
-comment|/*  GIMP_INT_STORE_VALUE      */
-name|G_TYPE_STRING
-block|,
-comment|/*  GIMP_INT_STORE_LABEL      */
-name|G_TYPE_STRING
-block|,
-comment|/*  GIMP_INT_STORE_STOCK_ID   */
-name|GDK_TYPE_PIXBUF
-block|,
-comment|/*  GIMP_INT_STORE_PIXBUF     */
-name|G_TYPE_POINTER
-comment|/*  GIMP_INT_STORE_USER_DATA  */
-block|}
 decl_stmt|;
+name|types
+index|[
+name|GIMP_INT_STORE_VALUE
+index|]
+operator|=
+name|G_TYPE_INT
+expr_stmt|;
+name|types
+index|[
+name|GIMP_INT_STORE_LABEL
+index|]
+operator|=
+name|G_TYPE_STRING
+expr_stmt|;
+name|types
+index|[
+name|GIMP_INT_STORE_STOCK_ID
+index|]
+operator|=
+name|G_TYPE_STRING
+expr_stmt|;
+name|types
+index|[
+name|GIMP_INT_STORE_PIXBUF
+index|]
+operator|=
+name|GDK_TYPE_PIXBUF
+expr_stmt|;
+name|types
+index|[
+name|GIMP_INT_STORE_USER_DATA
+index|]
+operator|=
+name|G_TYPE_POINTER
+expr_stmt|;
 name|store
 operator|->
 name|empty_iter
