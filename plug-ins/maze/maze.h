@@ -70,7 +70,7 @@ file|"glib.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2bd256800103
+DECL|enum|__anon2ab3b05b0103
 typedef|typedef
 enum|enum
 block|{
@@ -86,7 +86,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bd256800208
+DECL|struct|__anon2ab3b05b0208
 typedef|typedef
 struct|struct
 block|{
@@ -99,7 +99,7 @@ name|gint
 name|height
 decl_stmt|;
 DECL|member|seed
-name|guint
+name|guint32
 name|seed
 decl_stmt|;
 DECL|member|tile
@@ -119,10 +119,6 @@ name|MazeAlgoType
 name|algorithm
 decl_stmt|;
 comment|/* Interface options. */
-DECL|member|defaultseed
-name|gboolean
-name|defaultseed
-decl_stmt|;
 DECL|typedef|MazeValues
 block|}
 name|MazeValues

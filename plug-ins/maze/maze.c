@@ -382,9 +382,6 @@ comment|/* offset   * in the maz.c source, so, lets expiriment.  :) */
 name|DEPTH_FIRST
 block|,
 comment|/* Algorithm */
-comment|/* Interface options */
-name|TRUE
-comment|/* Default seed? */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -869,7 +866,7 @@ operator|.
 name|seed
 operator|=
 operator|(
-name|gint32
+name|guint32
 operator|)
 name|param
 index|[
@@ -976,10 +973,6 @@ operator|==
 name|GIMP_RUN_INTERACTIVE
 operator|||
 operator|(
-name|mvals
-operator|.
-name|defaultseed
-operator|&&
 name|run_mode
 operator|==
 name|GIMP_RUN_WITH_LAST_VALS

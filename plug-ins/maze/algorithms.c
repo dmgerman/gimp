@@ -1889,13 +1889,6 @@ operator|/
 literal|4
 expr_stmt|;
 comment|/* Pick someplace to start. */
-if|if
-condition|(
-operator|!
-name|mvals
-operator|.
-name|defaultseed
-condition|)
 name|g_rand_set_seed
 argument_list|(
 name|gr
