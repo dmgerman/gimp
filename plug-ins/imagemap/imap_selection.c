@@ -888,6 +888,9 @@ modifier|*
 name|obj
 parameter_list|)
 block|{
+ifdef|#
+directive|ifdef
+name|_NOT_READY_YET_
 name|GdkBitmap
 modifier|*
 name|mask
@@ -908,9 +911,6 @@ operator|&
 name|mask
 argument_list|)
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|_NOT_READY_YET_
 name|gtk_clist_set_pixtext
 argument_list|(
 name|GTK_CLIST
