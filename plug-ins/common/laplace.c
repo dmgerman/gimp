@@ -12,6 +12,10 @@ comment|/* Based on S&P's Gauss and Laplace filters              */
 end_comment
 
 begin_comment
+comment|/* updated 1/30/03:<sjburges@gimp.org>  * fixed an off-by-1 error that was causing an attempt to read a   * get_pixel_by_row at the -1'th row  */
+end_comment
+
+begin_comment
 comment|/* updated 11/04/97:    Use 8-pixel neighbourhood to create outline,    use min-max operation for local gradient,    don't use rint;    if gamma-channel: set to white if at least one colour channel is>15 */
 end_comment
 
@@ -438,7 +442,7 @@ decl_stmt|;
 if|if
 condition|(
 name|y
-operator|==
+operator|<
 literal|0
 condition|)
 name|gimp_pixel_rgn_get_row
