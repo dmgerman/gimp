@@ -52,7 +52,7 @@ parameter_list|,
 name|col
 parameter_list|)
 define|\
-value|(((((area)->offset_x + (row))& GIMP_CHECK_SIZE) ^    \     (((area)->offset_y + (col))& GIMP_CHECK_SIZE)) ?   \    (GIMP_CHECK_LIGHT * 255) :                           \    (GIMP_CHECK_DARK  * 255))
+value|(((((area)->offset_y + (row))& GIMP_CHECK_SIZE) ^    \     (((area)->offset_x + (col))& GIMP_CHECK_SIZE)) ?   \    (GIMP_CHECK_LIGHT * 255) :                           \    (GIMP_CHECK_DARK  * 255))
 end_define
 
 begin_function_decl
