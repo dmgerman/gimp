@@ -107,6 +107,16 @@ DECL|member|visible_handler_id
 name|GQuark
 name|visible_handler_id
 decl_stmt|;
+DECL|member|raise_button
+name|GtkWidget
+modifier|*
+name|raise_button
+decl_stmt|;
+DECL|member|lower_button
+name|GtkWidget
+modifier|*
+name|lower_button
+decl_stmt|;
 DECL|member|reset_button
 name|GtkWidget
 modifier|*
