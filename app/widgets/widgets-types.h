@@ -840,6 +840,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpSizeBox
+typedef|typedef
+name|struct
+name|_GimpSizeBox
+name|GimpSizeBox
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpStrokeEditor
 typedef|typedef
 name|struct
