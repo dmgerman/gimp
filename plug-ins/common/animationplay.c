@@ -18,6 +18,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -39,10 +45,45 @@ directive|include
 file|<ctype.h>
 end_include
 
+begin_define
+DECL|macro|WinMain
+define|#
+directive|define
+name|WinMain
+value|WinMain_foo
+end_define
+
+begin_comment
+DECL|macro|WinMain
+comment|/* Kludge for Win32*/
+end_comment
+
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|<gdk/gdkx.h>
+end_include
+
+begin_undef
+undef|#
+directive|undef
+name|WinMain
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|RGB
+end_undef
+
+begin_comment
+comment|/* On Windows from<windows.h> */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -55,37 +96,6 @@ begin_include
 include|#
 directive|include
 file|"libgimp/stdplugins-intl.h"
-end_include
-
-begin_define
-DECL|macro|WinMain
-define|#
-directive|define
-name|WinMain
-value|WinMain_foo
-end_define
-
-begin_comment
-DECL|macro|WinMain
-comment|/* Kludge */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"gdk/gdkx.h"
-end_include
-
-begin_undef
-undef|#
-directive|undef
-name|WinMain
-end_undef
-
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
 end_include
 
 begin_comment
@@ -130,7 +140,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c485dfc0103
+DECL|enum|__anon2b8a39960103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED

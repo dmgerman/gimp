@@ -27,13 +27,11 @@ directive|include
 file|<gdk/gdk.h>
 end_include
 
-begin_if
-if|#
-directive|if
-name|GDK_WINDOWING
-operator|==
+begin_ifdef
+ifdef|#
+directive|ifdef
 name|GDK_WINDOWING_WIN32
-end_if
+end_ifdef
 
 begin_define
 DECL|macro|POINTS
@@ -59,13 +57,11 @@ directive|include
 file|<gdk/gdkprivate.h>
 end_include
 
-begin_if
-if|#
-directive|if
-name|GDK_WINDOWING
-operator|==
+begin_ifdef
+ifdef|#
+directive|ifdef
 name|GDK_WINDOWING_WIN32
-end_if
+end_ifdef
 
 begin_undef
 undef|#
@@ -2382,19 +2378,9 @@ operator|*
 name|scale
 expr_stmt|;
 comment|/* GDK_WINDOWING is defined only with GTk+ 1.3 */
-if|#
-directive|if
-operator|!
-name|defined
-argument_list|(
-name|GDK_WINDOWING
-argument_list|)
-operator|||
-operator|(
-name|GDK_WINDOWING
-operator|==
-name|GDK_WINDOWING_X11
-operator|)
+ifndef|#
+directive|ifndef
+name|GDK_WINDOWING_WIN32
 name|black
 operator|.
 name|red
@@ -2964,19 +2950,9 @@ name|blue
 operator|=
 literal|65535
 expr_stmt|;
-if|#
-directive|if
-operator|!
-name|defined
-argument_list|(
-name|GDK_WINDOWING
-argument_list|)
-operator|||
-operator|(
-name|GDK_WINDOWING
-operator|==
-name|GDK_WINDOWING_X11
-operator|)
+ifndef|#
+directive|ifndef
+name|GDK_WINDOWING_WIN32
 name|gdk_colormap_alloc_color
 argument_list|(
 name|gdk_colormap_get_system

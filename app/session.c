@@ -526,18 +526,9 @@ operator|==
 name|NULL
 condition|)
 return|return;
-if|#
-directive|if
-name|defined
-argument_list|(
-name|GDK_WINDOWING
-argument_list|)
-operator|&&
-operator|(
-name|GDK_WINDOWING
-operator|==
+ifdef|#
+directive|ifdef
 name|GDK_WINDOWING_WIN32
-operator|)
 comment|/* We should not position windows so that no decoration is visible */
 if|if
 condition|(

@@ -190,6 +190,12 @@ directive|include
 file|<windows.h>
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|RGB
+end_undef
+
 begin_endif
 endif|#
 directive|endif
