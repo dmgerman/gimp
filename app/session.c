@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -708,6 +714,16 @@ argument_list|,
 literal|"%s/sessionrc"
 argument_list|,
 name|gimp_dir
+argument_list|)
+expr_stmt|;
+name|app_init_update_status
+argument_list|(
+name|NULL
+argument_list|,
+name|filename
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|parse_gimprc_file
