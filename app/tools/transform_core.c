@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -1559,6 +1565,9 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
+name|gimp_add_busy_cursors
+argument_list|()
+expr_stmt|;
 name|gdisp
 operator|=
 operator|(
@@ -1911,6 +1920,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|gimp_remove_busy_cursors
+argument_list|()
+expr_stmt|;
 name|gdisplays_flush
 argument_list|()
 expr_stmt|;

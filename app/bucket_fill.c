@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -106,7 +112,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb92c940103
+DECL|enum|__anon2c74a2fa0103
 block|{
 DECL|enumerator|FgColorFill
 name|FgColorFill
@@ -2364,6 +2370,9 @@ operator|->
 name|mask
 expr_stmt|;
 block|}
+name|gimp_add_busy_cursors
+argument_list|()
+expr_stmt|;
 name|bytes
 operator|=
 name|drawable_bytes
@@ -2830,6 +2839,9 @@ name|temp_buf_free
 argument_list|(
 name|pat_buf
 argument_list|)
+expr_stmt|;
+name|gimp_remove_busy_cursors
+argument_list|()
 expr_stmt|;
 block|}
 end_function

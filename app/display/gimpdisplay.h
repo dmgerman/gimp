@@ -472,11 +472,21 @@ name|GdkCursorType
 name|current_cursor
 decl_stmt|;
 comment|/*  Currently installed cursor              */
+DECL|member|override_cursor
+name|GdkCursorType
+name|override_cursor
+decl_stmt|;
+comment|/*  Overriding cursor (ie. hourglass)       */
 DECL|member|draw_cursor
 name|short
 name|draw_cursor
 decl_stmt|;
 comment|/* should we draw software cursor ?         */
+DECL|member|using_override_cursor
+name|short
+name|using_override_cursor
+decl_stmt|;
+comment|/* is the cursor overridden? (ie. hourglass)*/
 DECL|member|cursor_x
 name|int
 name|cursor_x
@@ -675,6 +685,28 @@ end_function_decl
 begin_function_decl
 name|void
 name|gdisplay_remove_tool_cursor
+parameter_list|(
+name|GDisplay
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gdisplay_install_override_cursor
+parameter_list|(
+name|GDisplay
+modifier|*
+parameter_list|,
+name|GdkCursorType
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gdisplay_remove_override_cursor
 parameter_list|(
 name|GDisplay
 modifier|*

@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"draw_core.h"
 end_include
 
@@ -2482,6 +2488,9 @@ decl_stmt|;
 name|int
 name|use_offsets
 decl_stmt|;
+name|gimp_add_busy_cursors
+argument_list|()
+expr_stmt|;
 name|fuzzy_sel
 operator|=
 operator|(
@@ -2784,6 +2793,9 @@ name|g_free
 argument_list|(
 name|bsegs
 argument_list|)
+expr_stmt|;
+name|gimp_remove_busy_cursors
+argument_list|()
 expr_stmt|;
 return|return
 name|segs

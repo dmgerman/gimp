@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"draw_core.h"
 end_include
 
@@ -210,7 +216,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bab19a90103
+DECL|enum|__anon2af7bb4f0103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -256,7 +262,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bab19a90203
+DECL|enum|__anon2af7bb4f0203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -281,7 +287,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bab19a90303
+DECL|enum|__anon2af7bb4f0303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -428,7 +434,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2bab19a90408
+DECL|struct|__anon2af7bb4f0408
 typedef|typedef
 struct|struct
 block|{
@@ -480,7 +486,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bab19a90508
+DECL|struct|__anon2af7bb4f0508
 typedef|typedef
 struct|struct
 block|{
@@ -4691,6 +4697,9 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
+name|gimp_add_busy_cursors
+argument_list|()
+expr_stmt|;
 name|has_selection
 operator|=
 name|drawable_mask_bounds
@@ -4926,6 +4935,9 @@ name|tile_manager_destroy
 argument_list|(
 name|buf_tiles
 argument_list|)
+expr_stmt|;
+name|gimp_remove_busy_cursors
+argument_list|()
 expr_stmt|;
 block|}
 end_function

@@ -910,6 +910,9 @@ name|offx
 decl_stmt|,
 name|offy
 decl_stmt|;
+name|gimp_add_busy_cursors
+argument_list|()
+expr_stmt|;
 name|success
 operator|=
 name|TRUE
@@ -1034,6 +1037,9 @@ name|offx
 argument_list|,
 name|offy
 argument_list|)
+expr_stmt|;
+name|gimp_remove_busy_cursors
+argument_list|()
 expr_stmt|;
 return|return
 name|procedural_db_return_args

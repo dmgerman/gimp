@@ -68,6 +68,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"floating_sel.h"
 end_include
 
@@ -182,7 +188,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e44b6c0103
+DECL|enum|__anon27fe413a0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -302,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e44b6c0203
+DECL|enum|__anon27fe413a0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -1364,6 +1370,9 @@ index|[
 literal|14
 index|]
 decl_stmt|;
+name|gimp_add_busy_cursors
+argument_list|()
+expr_stmt|;
 name|gimage
 operator|=
 name|NULL
@@ -1651,6 +1660,9 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
+name|gimp_remove_busy_cursors
+argument_list|()
+expr_stmt|;
 return|return
 name|return_args
 return|;
@@ -1687,6 +1699,9 @@ decl_stmt|;
 name|int
 name|success
 decl_stmt|;
+name|gimp_add_busy_cursors
+argument_list|()
+expr_stmt|;
 name|success
 operator|=
 name|FALSE
@@ -1849,6 +1864,9 @@ name|db_info
 argument_list|,
 name|success
 argument_list|)
+expr_stmt|;
+name|gimp_remove_busy_cursors
+argument_list|()
 expr_stmt|;
 return|return
 name|return_args

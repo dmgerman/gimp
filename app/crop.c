@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"draw_core.h"
 end_include
 
@@ -3783,6 +3789,9 @@ operator|&&
 name|height
 condition|)
 block|{
+name|gimp_add_busy_cursors
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|options
@@ -4268,6 +4277,9 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_remove_busy_cursors
+argument_list|()
+expr_stmt|;
 name|gdisplays_flush
 argument_list|()
 expr_stmt|;

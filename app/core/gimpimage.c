@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -485,7 +491,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon29fab7ee0103
+DECL|enum|__anon2c7643140103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -1555,6 +1561,9 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
+name|gimp_add_busy_cursors
+argument_list|()
+expr_stmt|;
 name|g_assert
 argument_list|(
 name|new_width
@@ -1746,6 +1755,9 @@ name|RESIZE
 index|]
 argument_list|)
 expr_stmt|;
+name|gimp_remove_busy_cursors
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 
@@ -1791,6 +1803,9 @@ name|layer_width
 decl_stmt|,
 name|layer_height
 decl_stmt|;
+name|gimp_add_busy_cursors
+argument_list|()
+expr_stmt|;
 comment|/*  Get the floating layer if one exists  */
 name|floating_layer
 operator|=
@@ -2008,6 +2023,9 @@ index|[
 name|RESIZE
 index|]
 argument_list|)
+expr_stmt|;
+name|gimp_remove_busy_cursors
+argument_list|()
 expr_stmt|;
 block|}
 end_function
@@ -9102,6 +9120,9 @@ operator|->
 name|next
 condition|)
 block|{
+name|gimp_add_busy_cursors
+argument_list|()
+expr_stmt|;
 name|layer
 operator|=
 name|gimp_image_merge_layers
@@ -9117,6 +9138,9 @@ name|g_slist_free
 argument_list|(
 name|merge_list
 argument_list|)
+expr_stmt|;
+name|gimp_remove_busy_cursors
+argument_list|()
 expr_stmt|;
 return|return
 name|layer
@@ -9169,6 +9193,9 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
+name|gimp_add_busy_cursors
+argument_list|()
+expr_stmt|;
 name|layer_list
 operator|=
 name|gimage
@@ -9232,6 +9259,9 @@ name|g_slist_free
 argument_list|(
 name|merge_list
 argument_list|)
+expr_stmt|;
+name|gimp_remove_busy_cursors
+argument_list|()
 expr_stmt|;
 return|return
 name|layer
@@ -9385,6 +9415,9 @@ operator|->
 name|next
 condition|)
 block|{
+name|gimp_add_busy_cursors
+argument_list|()
+expr_stmt|;
 name|layer
 operator|=
 name|gimp_image_merge_layers
@@ -9400,6 +9433,9 @@ name|g_slist_free
 argument_list|(
 name|merge_list
 argument_list|)
+expr_stmt|;
+name|gimp_remove_busy_cursors
+argument_list|()
 expr_stmt|;
 return|return
 name|layer

@@ -8,7 +8,7 @@ comment|/*    * TODO for Convert:    *    *   Use palette of another open INDEXE
 end_comment
 
 begin_comment
-comment|/*  * 98/07/25 - Convert-to-indexed now remembers the last invocation's  *  settings.  Also, GRAY->INDEXED more flexible.  [Adam]  *  * 98/07/05 - Sucked the warning about quantizing to too many colours into  *  a text widget embedded in the dialog, improved intelligence of dialog  *  to default 'custom palette' selection to 'Web' if available, and  *  in this case not bother to present the native WWW-palette radio  *  button.  [Adam]  *  * 98/04/13 - avoid a division by zero when converting an empty gray-scale  *  image (who would like to do such a thing anyway??)  [Sven ]   *  * 98/03/23 - fixed a longstanding fencepost - hopefully the *right*  *  way, *again*.  [Adam]  *  * 97/11/14 - added a proper pdb interface and support for dithering  *  to custom palettes (based on a patch by Eric Hernes) [Yosh]  *  * 97/11/04 - fixed the accidental use of the colour-counting case  *  when palette_type is WEB or MONO. [Adam]  *  * 97/10/25 - colour-counting implemented (could use some hashing, but  *  performance actually seems okay) - now RGB->INDEXED conversion isn't  *  destructive if it doesn't have to be. [Adam]  *  * 97/10/14 - fixed divide-by-zero when converting a completely transparent  *  RGB image to indexed. [Adam]  *  * 97/07/01 - started todo/revision log.  Put code back in to  *  eliminate full-alpha pixels from RGB histogram.  *  [Adam D. Moss - adam@gimp.org]  */
+comment|/*  * 99/01/10 - Hourglass... [Adam]  *  * 98/07/25 - Convert-to-indexed now remembers the last invocation's  *  settings.  Also, GRAY->INDEXED more flexible.  [Adam]  *  * 98/07/05 - Sucked the warning about quantizing to too many colours into  *  a text widget embedded in the dialog, improved intelligence of dialog  *  to default 'custom palette' selection to 'Web' if available, and  *  in this case not bother to present the native WWW-palette radio  *  button.  [Adam]  *  * 98/04/13 - avoid a division by zero when converting an empty gray-scale  *  image (who would like to do such a thing anyway??)  [Sven ]   *  * 98/03/23 - fixed a longstanding fencepost - hopefully the *right*  *  way, *again*.  [Adam]  *  * 97/11/14 - added a proper pdb interface and support for dithering  *  to custom palettes (based on a patch by Eric Hernes) [Yosh]  *  * 97/11/04 - fixed the accidental use of the colour-counting case  *  when palette_type is WEB or MONO. [Adam]  *  * 97/10/25 - colour-counting implemented (could use some hashing, but  *  performance actually seems okay) - now RGB->INDEXED conversion isn't  *  destructive if it doesn't have to be. [Adam]  *  * 97/10/14 - fixed divide-by-zero when converting a completely transparent  *  RGB image to indexed. [Adam]  *  * 97/07/01 - started todo/revision log.  Put code back in to  *  eliminate full-alpha pixels from RGB histogram.  *  [Adam D. Moss - adam@gimp.org]  */
 end_comment
 
 begin_include
@@ -51,6 +51,12 @@ begin_include
 include|#
 directive|include
 file|"convert.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"cursorutil.h"
 end_include
 
 begin_include
@@ -1822,7 +1828,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c30000108
+DECL|struct|__anon2c8419060108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1869,7 +1875,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c30000208
+DECL|struct|__anon2c8419060208
 block|{
 DECL|member|ncolors
 name|long
@@ -1888,7 +1894,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c30000308
+DECL|struct|__anon2c8419060308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -4733,6 +4739,9 @@ name|new_layer_bytes
 operator|=
 literal|4
 expr_stmt|;
+name|gimp_add_busy_cursors
+argument_list|()
+expr_stmt|;
 comment|/*  Get the floating layer if one exists  */
 name|floating_layer
 operator|=
@@ -5460,6 +5469,9 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
+expr_stmt|;
+name|gimp_remove_busy_cursors
+argument_list|()
 expr_stmt|;
 block|}
 end_function
