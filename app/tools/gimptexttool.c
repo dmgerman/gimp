@@ -2385,15 +2385,7 @@ expr_stmt|;
 name|pango_context
 operator|=
 name|pango_ft2_get_context
-argument_list|(
-name|gimprc
-operator|.
-name|monitor_xres
-argument_list|,
-name|gimprc
-operator|.
-name|monitor_yres
-argument_list|)
+argument_list|()
 expr_stmt|;
 name|options
 operator|->
