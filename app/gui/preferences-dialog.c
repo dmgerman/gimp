@@ -5336,6 +5336,23 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|prefs_check_button_add
+argument_list|(
+name|config
+argument_list|,
+literal|"show-tips"
+argument_list|,
+name|_
+argument_list|(
+literal|"Show Tips on _Startup"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|vbox2
 operator|=
 name|prefs_frame_new
@@ -7320,7 +7337,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bc203ab0108
+DECL|struct|__anon287bb1670108
 block|{
 DECL|member|label
 specifier|const
@@ -7477,7 +7494,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bc203ab0208
+DECL|struct|__anon287bb1670208
 block|{
 DECL|member|tree_label
 specifier|const
