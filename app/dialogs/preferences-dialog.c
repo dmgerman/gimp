@@ -5800,6 +5800,23 @@ name|prefs_check_button_add
 argument_list|(
 name|config
 argument_list|,
+literal|"show-scrollbars"
+argument_list|,
+name|_
+argument_list|(
+literal|"Show Scrollbars"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|prefs_check_button_add
+argument_list|(
+name|config
+argument_list|,
 literal|"show-statusbar"
 argument_list|,
 name|_
@@ -6216,7 +6233,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c14547a0108
+DECL|struct|__anon2c01dcf90108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7837,7 +7854,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c14547a0208
+DECL|struct|__anon2c01dcf90208
 block|{
 DECL|member|label
 specifier|const
@@ -7996,7 +8013,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c14547a0308
+DECL|struct|__anon2c01dcf90308
 block|{
 DECL|member|tree_label
 specifier|const

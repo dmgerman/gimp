@@ -256,7 +256,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e50f8a0103
+DECL|enum|__anon279557fe0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1881,7 +1881,9 @@ name|visibility
 operator|.
 name|scrollbars
 operator|=
-name|TRUE
+name|config
+operator|->
+name|show_scrollbars
 expr_stmt|;
 name|shell
 operator|->

@@ -152,6 +152,10 @@ DECL|member|show_rulers
 name|gboolean
 name|show_rulers
 decl_stmt|;
+DECL|member|show_scrollbars
+name|gboolean
+name|show_scrollbars
+decl_stmt|;
 DECL|member|show_statusbar
 name|gboolean
 name|show_statusbar

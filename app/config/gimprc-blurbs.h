@@ -578,7 +578,7 @@ define|#
 directive|define
 name|SHOW_MENUBAR_BLURB
 define|\
-value|N_("Sets the default menubar visibility. This can also be toggled with the "\    "\"View->Toggle\" Menubar command.")
+value|N_("When enabled, the menubar is visible by default. This can also be " \    "toggled with the \"View->Show Menubar\" command.")
 end_define
 
 begin_define
@@ -587,7 +587,16 @@ define|#
 directive|define
 name|SHOW_RULERS_BLURB
 define|\
-value|N_("Sets the default ruler visibility. This can also be toggled with the " \    "\"View->Toggle Rulers\" command.")
+value|N_("When enabled, the rulers are visible by default. This can also be " \    "toggled with the \"View->Show Rulers\" command.")
+end_define
+
+begin_define
+DECL|macro|SHOW_SCROLLBARS_BLURB
+define|#
+directive|define
+name|SHOW_SCROLLBARS_BLURB
+define|\
+value|N_("When enabled, the scrollbars are visible by default. This can also be " \    "toggled with the \"View->Show Scrollbars\" command.")
 end_define
 
 begin_define
@@ -596,7 +605,7 @@ define|#
 directive|define
 name|SHOW_STATUSBAR_BLURB
 define|\
-value|N_("When enabled, the statusbar is visible by default. This can also be " \    "toggled with the \"View->Toggle Statusbar\" command.")
+value|N_("When enabled, the statusbar is visible by default. This can also be " \    "toggled with the \"View->Show Statusbar\" command.")
 end_define
 
 begin_define
