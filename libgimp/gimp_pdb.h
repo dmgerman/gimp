@@ -101,6 +101,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpgradientedit_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpgradients_pdb.h>
 end_include
 
