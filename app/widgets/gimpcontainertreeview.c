@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2989d8680103
+DECL|enum|__anon2b2a86b00103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -1533,6 +1533,25 @@ expr_stmt|;
 name|gtk_tree_path_free
 argument_list|(
 name|path
+argument_list|)
+expr_stmt|;
+name|cell_rect
+operator|.
+name|y
+operator|=
+name|CLAMP
+argument_list|(
+name|cell_rect
+operator|.
+name|y
+argument_list|,
+literal|0
+argument_list|,
+name|widget
+operator|->
+name|allocation
+operator|.
+name|height
 argument_list|)
 expr_stmt|;
 operator|*
