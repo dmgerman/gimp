@@ -25,8 +25,8 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon2743dfca0103
+comment|/*< pdb-skip>*/
+DECL|enum|__anon2755ce380103
 block|{
 DECL|enumerator|CURSOR_MODE_TOOL_ICON
 name|CURSOR_MODE_TOOL_ICON

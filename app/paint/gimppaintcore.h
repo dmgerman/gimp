@@ -29,8 +29,8 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon2bcdfdf10103
+comment|/*< pdb-skip>*/
+DECL|enum|__anon275564d40103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -68,8 +68,8 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon2bcdfdf10203
+comment|/*< pdb-skip>*/
+DECL|enum|__anon275564d40203
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
