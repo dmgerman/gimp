@@ -16,15 +16,6 @@ directive|define
 name|__GIMP_CONFIG_WRITER_H__
 end_define
 
-begin_typedef
-DECL|typedef|GimpConfigWriter
-typedef|typedef
-name|struct
-name|_GimpConfigWriter
-name|GimpConfigWriter
-typedef|;
-end_typedef
-
 begin_function_decl
 name|GimpConfigWriter
 modifier|*

@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_CONFIG_UTILS_H__
+name|__APP_GIMP_CONFIG_UTILS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_CONFIG_UTILS_H__
+DECL|macro|__APP_GIMP_CONFIG_UTILS_H__
 define|#
 directive|define
-name|__GIMP_CONFIG_UTILS_H__
+name|__APP_GIMP_CONFIG_UTILS_H__
 end_define
 
 begin_function_decl
@@ -57,7 +57,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_CONFIG_UTILS_H__ */
+comment|/* __APP_GIMP_CONFIG_UTILS_H__ */
 end_comment
 
 end_unit

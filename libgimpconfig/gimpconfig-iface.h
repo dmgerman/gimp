@@ -10,10 +10,10 @@ name|__GIMP_CONFIG_IFACE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_CONFIG__IFACE_H__
+DECL|macro|__GIMP_CONFIG_IFACE_H__
 define|#
 directive|define
-name|__GIMP_CONFIG__IFACE_H__
+name|__GIMP_CONFIG_IFACE_H__
 end_define
 
 begin_define
@@ -56,20 +56,6 @@ name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_INTERFACE ((obj), GIMP_TYPE_CONFIG, GimpConfigInterface))
 end_define
-
-begin_typedef
-DECL|typedef|GimpConfig
-typedef|typedef
-name|struct
-name|_GimpConfig
-name|GimpConfig
-typedef|;
-end_typedef
-
-begin_comment
-DECL|typedef|GimpConfig
-comment|/* dummy typedef */
-end_comment
 
 begin_typedef
 DECL|typedef|GimpConfigInterface

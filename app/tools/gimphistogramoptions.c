@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpconfig-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphistogramview.h"
 end_include
 
@@ -59,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290f6cb30103
+DECL|enum|__anon2a4ea49c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpconfigtypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpconfigwriter.h"
 end_include
 

@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_SESSION_INFO_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"libgimpconfig/gimpconfig.h"
-end_include
-
 begin_struct
 DECL|struct|_GimpSessionInfo
 struct|struct

@@ -16,6 +16,12 @@ directive|define
 name|__CONFIG_TYPES_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"libgimpconfig/gimpconfigtypes.h"
+end_include
+
 begin_typedef
 DECL|typedef|GimpBaseConfig
 typedef|typedef
