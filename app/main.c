@@ -228,15 +228,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|use_stdin
-name|gboolean
-name|use_stdin
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|use_shm
 name|gboolean
 name|use_shm
@@ -301,6 +292,17 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|batch_cmds
+name|gchar
+modifier|*
+modifier|*
+name|batch_cmds
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  other global variables  */
 end_comment
@@ -339,7 +341,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  *  argv processing:   *      Arguments are either switches, their associated  *      values, or image files.  As switches and their  *      associated values are processed, those slots in  *      the argv[] array are NULLed. We do this because  *      unparsed args are treated as images to load on  *      startup.  *  *      The GTK switches are processed first (X switches are  *      processed here, not by any X routines).  Then the  *      general GIMP switches are processed.  Any args  *      left are assumed to be image files the GIMP should  *      display.  *  */
+comment|/*  *  argv processing:   *      Arguments are either switches, their associated  *      values, or image files.  As switches and their  *      associated values are processed, those slots in  *      the argv[] array are NULLed. We do this because  *      unparsed args are treated as images to load on  *      startup.  *  *      The GTK switches are processed first (X switches are  *      processed here, not by any X routines).  Then the  *      general GIMP switches are processed.  Any args  *      left are assumed to be image files the GIMP should  *      display.  *  *      The exception is the batch switch.  When this is  *      encountered, all remaining args are treated as batch  *      commands.  */
 end_comment
 
 begin_function
@@ -459,6 +461,23 @@ name|TRUE
 expr_stmt|;
 endif|#
 directive|endif
+name|batch_cmds
+operator|=
+name|g_new
+argument_list|(
+name|char
+operator|*
+argument_list|,
+name|argc
+argument_list|)
+expr_stmt|;
+name|batch_cmds
+index|[
+literal|0
+index|]
+operator|=
+name|NULL
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -555,7 +574,62 @@ index|]
 operator|=
 name|NULL
 expr_stmt|;
-name|use_stdin
+for|for
+control|(
+name|j
+operator|=
+literal|0
+operator|,
+name|i
+operator|++
+init|;
+name|i
+operator|<
+name|argc
+condition|;
+name|j
+operator|++
+operator|,
+name|i
+operator|++
+control|)
+block|{
+name|batch_cmds
+index|[
+name|j
+index|]
+operator|=
+name|argv
+index|[
+name|i
+index|]
+expr_stmt|;
+name|argv
+index|[
+name|i
+index|]
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+name|batch_cmds
+index|[
+name|j
+index|]
+operator|=
+name|NULL
+expr_stmt|;
+if|if
+condition|(
+name|batch_cmds
+index|[
+literal|0
+index|]
+operator|==
+name|NULL
+condition|)
+comment|/* We need at least one batch command */
+name|show_help
 operator|=
 name|TRUE
 expr_stmt|;
@@ -1286,7 +1360,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"  -b, --batch              Read scheme statements from stdin.\n"
+literal|"  -b, --batch<commands>   Run in batch mode.\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
