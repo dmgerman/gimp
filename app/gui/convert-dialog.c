@@ -90,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b069a2f0108
+DECL|struct|__anon293b84a30108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -1491,7 +1491,7 @@ name|GINT_TO_POINTER
 argument_list|(
 name|dialog
 operator|->
-name|dither_type
+name|palette_type
 argument_list|)
 argument_list|)
 expr_stmt|;
