@@ -174,6 +174,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"actions/actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"actions/dialogs-commands.h"
 end_include
 
@@ -1233,6 +1239,11 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+name|actions_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 name|menus_init
 argument_list|(
 name|gimp
@@ -1647,6 +1658,11 @@ operator|=
 name|NULL
 expr_stmt|;
 name|menus_exit
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|actions_exit
 argument_list|(
 name|gimp
 argument_list|)

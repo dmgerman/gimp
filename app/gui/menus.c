@@ -369,11 +369,6 @@ name|menus_initialized
 operator|=
 name|TRUE
 expr_stmt|;
-name|actions_init
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
 comment|/* We need to make sure the property is installed before using it */
 name|g_type_class_ref
 argument_list|(
@@ -1426,11 +1421,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|actions_exit
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1562,7 +1552,7 @@ block|{
 name|gint
 name|n_entries
 decl_stmt|;
-name|gint
+name|guint
 name|merge_id
 decl_stmt|;
 name|gint
