@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * kernelgen -- Copyright (C) 2000 Sven Neumann<sven@gimp.org>  *  *    Simple hack to create brush subsampling kernels.  If you want to  *    play with it, change some of the #defines at the top and copy  *    the output to app/paint/gimppaintcore-kernels.h.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * kernelgen -- Copyright (C) 2000 Sven Neumann<sven@gimp.org>  *  *    Simple hack to create brush subsampling kernels.  If you want to  *    play with it, change some of the #defines at the top and copy  *    the output to app/paint/gimpbrushcore-kernels.h.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -352,7 +352,7 @@ name|y
 decl_stmt|;
 name|printf
 argument_list|(
-literal|"/* gimppaintcore-kernels.h\n"
+literal|"/* gimpbrushcore-kernels.h\n"
 literal|" *\n"
 literal|" *   This file was generated using kernelgen as found in the tools dir.\n"
 argument_list|)
@@ -371,12 +371,12 @@ argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
-literal|"#ifndef __GIMP_PAINT_CORE_KERNELS_H__\n"
+literal|"#ifndef __GIMP_BRUSH_CORE_KERNELS_H__\n"
 argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
-literal|"#define __GIMP_PAINT_CORE_KERNELS_H__\n\n"
+literal|"#define __GIMP_BRUSH_CORE_KERNELS_H__\n\n"
 argument_list|)
 expr_stmt|;
 name|printf
@@ -535,7 +535,7 @@ argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
-literal|"#endif /* __GIMP_PAINT_CORE_KERNELS_H__ */\n"
+literal|"#endif /* __GIMP_BRUSH_CORE_KERNELS_H__ */\n"
 argument_list|)
 expr_stmt|;
 return|return

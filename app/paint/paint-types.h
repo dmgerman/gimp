@@ -42,6 +42,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpBrushCore
+typedef|typedef
+name|struct
+name|_GimpBrushCore
+name|GimpBrushCore
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPaintOptions
 typedef|typedef
 name|struct

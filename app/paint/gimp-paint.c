@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppaintoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppaintbrush.h"
 end_include
 

@@ -39,41 +39,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_pencil_class_init
-parameter_list|(
-name|GimpPencilClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_pencil_init
-parameter_list|(
-name|GimpPencil
-modifier|*
-name|pencil
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpPaintbrushClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 name|void
 DECL|function|gimp_pencil_register (Gimp * gimp,GimpPaintRegisterCallback callback)
@@ -148,11 +113,9 @@ name|GBaseFinalizeFunc
 operator|)
 name|NULL
 block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_pencil_class_init
+name|NULL
 block|,
+comment|/* class_init     */
 name|NULL
 block|,
 comment|/* class_finalize */
@@ -167,11 +130,9 @@ block|,
 literal|0
 block|,
 comment|/* n_preallocs    */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|gimp_pencil_init
-block|,       }
+name|NULL
+comment|/* instance_init  */
+block|}
 decl_stmt|;
 name|type
 operator|=
@@ -192,40 +153,6 @@ return|return
 name|type
 return|;
 block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_pencil_class_init (GimpPencilClass * klass)
-name|gimp_pencil_class_init
-parameter_list|(
-name|GimpPencilClass
-modifier|*
-name|klass
-parameter_list|)
-block|{
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_pencil_init (GimpPencil * pencil)
-name|gimp_pencil_init
-parameter_list|(
-name|GimpPencil
-modifier|*
-name|pencil
-parameter_list|)
-block|{ }
 end_function
 
 end_unit

@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpbrushcore.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppaintcore.h"
 end_include
 
@@ -154,6 +160,15 @@ index|]
 argument_list|)
 condition|)
 block|{
+name|GimpBrushCore
+modifier|*
+name|brush_core
+init|=
+name|GIMP_BRUSH_CORE
+argument_list|(
+name|core
+argument_list|)
+decl_stmt|;
 name|GimpBrush
 modifier|*
 name|current_brush
@@ -192,7 +207,7 @@ argument_list|)
 expr_stmt|;
 name|current_brush
 operator|=
-name|core
+name|brush_core
 operator|->
 name|brush
 expr_stmt|;
@@ -207,7 +222,7 @@ argument_list|,
 name|MOTION_PAINT
 argument_list|)
 expr_stmt|;
-name|core
+name|brush_core
 operator|->
 name|brush
 operator|=
@@ -561,6 +576,15 @@ name|s
 operator|++
 control|)
 block|{
+name|GimpBrushCore
+modifier|*
+name|brush_core
+init|=
+name|GIMP_BRUSH_CORE
+argument_list|(
+name|core
+argument_list|)
+decl_stmt|;
 name|GimpBrush
 modifier|*
 name|current_brush
@@ -769,7 +793,7 @@ argument_list|)
 expr_stmt|;
 name|current_brush
 operator|=
-name|core
+name|brush_core
 operator|->
 name|brush
 expr_stmt|;
@@ -784,7 +808,7 @@ argument_list|,
 name|MOTION_PAINT
 argument_list|)
 expr_stmt|;
-name|core
+name|brush_core
 operator|->
 name|brush
 operator|=
@@ -1131,6 +1155,15 @@ operator|->
 name|len
 condition|)
 block|{
+name|GimpBrushCore
+modifier|*
+name|brush_core
+init|=
+name|GIMP_BRUSH_CORE
+argument_list|(
+name|core
+argument_list|)
+decl_stmt|;
 name|GimpBrush
 modifier|*
 name|current_brush
@@ -1248,7 +1281,7 @@ argument_list|)
 expr_stmt|;
 name|current_brush
 operator|=
-name|core
+name|brush_core
 operator|->
 name|brush
 expr_stmt|;
@@ -1263,7 +1296,7 @@ argument_list|,
 name|MOTION_PAINT
 argument_list|)
 expr_stmt|;
-name|core
+name|brush_core
 operator|->
 name|brush
 operator|=

@@ -19,13 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimppaintcore.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimppaintoptions.h"
+file|"gimpbrushcore.h"
 end_include
 
 begin_define
@@ -104,7 +98,7 @@ struct|struct
 name|_GimpDodgeBurn
 block|{
 DECL|member|parent_instance
-name|GimpPaintCore
+name|GimpBrushCore
 name|parent_instance
 decl_stmt|;
 DECL|member|lut
@@ -122,7 +116,7 @@ struct|struct
 name|_GimpDodgeBurnClass
 block|{
 DECL|member|parent_class
-name|GimpPaintCoreClass
+name|GimpBrushCoreClass
 name|parent_class
 decl_stmt|;
 block|}
