@@ -359,8 +359,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_zoom_fit_cmd_callback (GtkAction * action,gpointer data)
-name|view_zoom_fit_cmd_callback
+DECL|function|view_zoom_fit_in_cmd_callback (GtkAction * action,gpointer data)
+name|view_zoom_fit_in_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -381,7 +381,44 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_scale_fit
+name|gimp_display_shell_scale_fit_in
+argument_list|(
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|view_zoom_fit_to_cmd_callback (GtkAction * action,gpointer data)
+name|view_zoom_fit_to_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GimpDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
+name|return_if_no_display
+argument_list|(
+name|gdisp
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_scale_fit_to
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(

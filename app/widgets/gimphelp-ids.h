@@ -417,11 +417,19 @@ value|"gimp-view-zoom-100"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_VIEW_ZOOM_FIT
+DECL|macro|GIMP_HELP_VIEW_ZOOM_FIT_IN
 define|#
 directive|define
-name|GIMP_HELP_VIEW_ZOOM_FIT
-value|"gimp-view-zoom-fit"
+name|GIMP_HELP_VIEW_ZOOM_FIT_IN
+value|"gimp-view-zoom-fit-in"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_VIEW_ZOOM_FIT_TO
+define|#
+directive|define
+name|GIMP_HELP_VIEW_ZOOM_FIT_TO
+value|"gimp-view-zoom-fit-to"
 end_define
 
 begin_define

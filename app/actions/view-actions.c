@@ -250,13 +250,13 @@ name|GIMP_HELP_VIEW_ZOOM_IN
 block|}
 block|,
 block|{
-literal|"view-zoom-fit"
+literal|"view-zoom-fit-in"
 block|,
 name|GTK_STOCK_ZOOM_FIT
 block|,
 name|N_
 argument_list|(
-literal|"Zoom to _Fit Window"
+literal|"_Fit Image in Window"
 argument_list|)
 block|,
 literal|"<control><shift>E"
@@ -265,10 +265,32 @@ name|NULL
 block|,
 name|G_CALLBACK
 argument_list|(
-name|view_zoom_fit_cmd_callback
+name|view_zoom_fit_in_cmd_callback
 argument_list|)
 block|,
-name|GIMP_HELP_VIEW_ZOOM_FIT
+name|GIMP_HELP_VIEW_ZOOM_FIT_IN
+block|}
+block|,
+block|{
+literal|"view-zoom-fit-to"
+block|,
+name|GTK_STOCK_ZOOM_FIT
+block|,
+name|N_
+argument_list|(
+literal|"Fit Image to Window"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|G_CALLBACK
+argument_list|(
+name|view_zoom_fit_to_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_VIEW_ZOOM_FIT_TO
 block|}
 block|,
 block|{
@@ -1201,7 +1223,14 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"view-zoom-fit"
+literal|"view-zoom-fit-in"
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"view-zoom-fit-to"
 argument_list|,
 name|gdisp
 argument_list|)

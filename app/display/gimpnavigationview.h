@@ -143,10 +143,15 @@ name|GtkWidget
 modifier|*
 name|zoom_100_button
 decl_stmt|;
-DECL|member|zoom_fit_button
+DECL|member|zoom_fit_in_button
 name|GtkWidget
 modifier|*
-name|zoom_fit_button
+name|zoom_fit_in_button
+decl_stmt|;
+DECL|member|zoom_fit_to_button
+name|GtkWidget
+modifier|*
+name|zoom_fit_to_button
 decl_stmt|;
 DECL|member|shrink_wrap_button
 name|GtkWidget
