@@ -1329,7 +1329,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Sel2Path Advanced Settings"
+literal|"Selection To Path Advanced Settings"
 argument_list|)
 argument_list|,
 literal|"sel2path"
@@ -2219,12 +2219,9 @@ name|y
 expr_stmt|;
 block|}
 else|else
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"print_spline: strange degree (%d)"
-argument_list|)
 argument_list|,
 name|SPLINE_DEGREE
 argument_list|(
@@ -2244,10 +2241,7 @@ name|gimp_path_set_points
 argument_list|(
 name|image_ID
 argument_list|,
-name|_
-argument_list|(
 literal|"selection_to_path"
-argument_list|)
 argument_list|,
 literal|1
 argument_list|,
@@ -2331,12 +2325,9 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"gimp_image_get_selection failed"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2360,12 +2351,9 @@ operator|!=
 literal|1
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"Internal error. Selection bpp> 1"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2454,24 +2442,13 @@ modifier|*
 name|item
 parameter_list|)
 block|{
-if|if
-condition|(
-name|item
-operator|==
-name|NULL
-operator|||
-operator|*
-name|item
-operator|==
-name|NULL
-condition|)
-block|{
-name|g_warning
+name|g_return_if_fail
 argument_list|(
-literal|"safe_free: Attempt to free a null item."
+name|item
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 name|g_free
 argument_list|(
 operator|*
