@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  * This file is supposed to contain the generic (read: C) implementation  * of the pixelfiddeling paint-functions.  */
+comment|/*  * This file is supposed to contain the generic (read: C) implementation  * of the pixel fiddling paint-functions.  */
 end_comment
 
 begin_ifndef
@@ -53,7 +53,7 @@ name|c
 parameter_list|,
 name|t
 parameter_list|)
-value|((t) = (a) * (b) * (c)+ 0x7F5B, \                             ((((t)>> 7) + (t))>> 16))
+value|((t) = (a) * (b) * (c) + 0x7F5B, \                             ((((t)>> 7) + (t))>> 16))
 end_define
 
 begin_comment
@@ -61,7 +61,7 @@ comment|/*   This version of INT_MULT3 always gives the correct result, but runs
 end_comment
 
 begin_comment
-comment|/*  #define INT_MULT3(a,b,c,t) (((a) * (b) * (c)+ 32512) / 65025.0)  */
+comment|/*  #define INT_MULT3(a,b,c,t) (((a) * (b) * (c) + 32512) / 65025.0)  */
 end_comment
 
 begin_define
@@ -78,7 +78,7 @@ name|alpha
 parameter_list|,
 name|tmp
 parameter_list|)
-value|(INT_MULT((a)-(b), alpha, tmp) + (b))
+value|(INT_MULT((a) - (b), alpha, tmp) + (b))
 end_define
 
 begin_define
@@ -3535,6 +3535,8 @@ name|guint
 name|b
 decl_stmt|,
 name|tmp
+decl_stmt|,
+name|tmpM
 decl_stmt|;
 while|while
 condition|(
@@ -3589,7 +3591,7 @@ index|[
 name|b
 index|]
 argument_list|,
-name|tmp
+name|tmpM
 argument_list|)
 argument_list|,
 name|tmp
