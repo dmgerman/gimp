@@ -1459,6 +1459,10 @@ operator|.
 name|width
 operator|>
 name|row_width
+operator|||
+name|child
+operator|->
+name|forced_break
 condition|)
 break|break;
 name|width

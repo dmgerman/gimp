@@ -1459,6 +1459,10 @@ operator|.
 name|height
 operator|>
 name|col_height
+operator|||
+name|child
+operator|->
+name|forced_break
 condition|)
 break|break;
 name|height
