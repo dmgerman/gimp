@@ -122,7 +122,7 @@ end_comment
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|_PARASITE_H_
+name|GIMP_HAVE_PARASITES
 end_ifdef
 
 begin_define
@@ -766,7 +766,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon289171bf0108
+DECL|struct|__anon2992a3e30108
 block|{
 DECL|member|Width
 name|unsigned
@@ -816,7 +816,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon289171bf0208
+DECL|struct|__anon2992a3e30208
 block|{
 DECL|member|transparent
 name|int
