@@ -540,7 +540,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2a2034cd0103
+DECL|enum|__anon2bb798140103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -1468,6 +1468,12 @@ block|{
 name|gchar
 modifier|*
 name|new_filename
+decl_stmt|,
+modifier|*
+name|old_filename
+decl_stmt|;
+name|gboolean
+name|free_old
 decl_stmt|;
 comment|/*     * WARNING: this function will free the current filename even if you are     * setting it to itself so any pointer you hold to the filename will be    * invalid after this call.  So please use with care.    */
 name|new_filename
@@ -1477,18 +1483,17 @@ argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimage
-operator|->
-name|has_filename
-condition|)
-name|g_free
-argument_list|(
+name|old_filename
+operator|=
 name|gimage
 operator|->
 name|filename
-argument_list|)
+expr_stmt|;
+name|free_old
+operator|=
+name|gimage
+operator|->
+name|has_filename
 expr_stmt|;
 if|if
 condition|(
@@ -1528,6 +1533,15 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|free_old
+condition|)
+name|g_free
+argument_list|(
+name|old_filename
+argument_list|)
+expr_stmt|;
 name|gtk_signal_emit
 argument_list|(
 name|GTK_OBJECT
