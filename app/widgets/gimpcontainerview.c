@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac4f08c0103
+DECL|enum|__anon2895f69c0103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -2553,6 +2553,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|viewable
+operator|==
+name|NULL
+operator|||
 name|GIMP_IS_VIEWABLE
 argument_list|(
 name|viewable
@@ -2561,6 +2565,15 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/*  we handle the NULL viewable here as a workaround for bug #149906 */
+if|if
+condition|(
+operator|!
+name|viewable
+condition|)
+return|return
+name|NULL
+return|;
 name|private
 operator|=
 name|GIMP_CONTAINER_VIEW_GET_PRIVATE

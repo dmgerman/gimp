@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac46d010103
+DECL|enum|__anon2b04e9b30103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac46d010203
+DECL|enum|__anon2b04e9b30203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac46d010303
+DECL|enum|__anon2b04e9b30303
 block|{
 DECL|enumerator|XCF_ORIENTATION_HORIZONTAL
 name|XCF_ORIENTATION_HORIZONTAL
@@ -216,7 +216,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac46d010403
+DECL|enum|__anon2b04e9b30403
 block|{
 DECL|enumerator|XCF_STROKETYPE_STROKE
 name|XCF_STROKETYPE_STROKE
@@ -257,6 +257,7 @@ name|guint
 name|cp
 decl_stmt|;
 DECL|member|filename
+specifier|const
 name|gchar
 modifier|*
 name|filename
