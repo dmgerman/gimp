@@ -2416,9 +2416,10 @@ argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
+comment|/* use g_malloc0 to initialize the dest buffer so that unspecified      pixels in RLE bitmaps show up as the zeroth element in the palette.   */
 name|dest
 operator|=
-name|g_malloc
+name|g_malloc0
 argument_list|(
 name|drawable
 operator|->
