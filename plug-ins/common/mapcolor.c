@@ -133,7 +133,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c39d2520108
+DECL|struct|__anon291cca290108
 block|{
 DECL|member|colors
 name|guchar
@@ -564,7 +564,7 @@ name|dversio
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/Filters/Colors/Adjust Fgrd.-Bkgrd."
+literal|"<Image>/Filters/Colors/Map/Adjust Fgrd.-Bkgrd."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -602,7 +602,7 @@ name|dversio
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/Filters/Colors/Color Mapping"
+literal|"<Image>/Filters/Colors/Map/Color Mapping"
 argument_list|)
 argument_list|,
 literal|"RGB*"

@@ -544,7 +544,7 @@ literal|"Kevin Turner"
 argument_list|,
 literal|"1997, 1998"
 argument_list|,
-literal|"<Image>/Filters/Render/Maze"
+literal|"<Image>/Filters/Render/Pattern/Maze"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,

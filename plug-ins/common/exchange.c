@@ -66,7 +66,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2777a6ab0108
+DECL|struct|__anon29ec68000108
 block|{
 DECL|member|fromred
 DECL|member|fromgreen
@@ -541,7 +541,7 @@ literal|"robert@experimental.net"
 argument_list|,
 literal|"June 17th, 1997"
 argument_list|,
-literal|"<Image>/Filters/Colors/Color Exchange"
+literal|"<Image>/Filters/Colors/Map/Color Exchange"
 argument_list|,
 literal|"RGB*"
 argument_list|,

@@ -122,7 +122,7 @@ comment|/*---- Typedefs ----*/
 end_comment
 
 begin_typedef
-DECL|struct|__anon28e6bbc50108
+DECL|struct|__anon28fa505d0108
 typedef|typedef
 struct|struct
 block|{
@@ -162,7 +162,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28e6bbc50208
+DECL|struct|__anon28fa505d0208
 typedef|typedef
 struct|struct
 block|{
@@ -177,7 +177,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28e6bbc50308
+DECL|struct|__anon28fa505d0308
 typedef|typedef
 struct|struct
 block|{
@@ -642,7 +642,7 @@ literal|"Marcelo de Gomensoro Malheiros"
 argument_list|,
 literal|"Apr 1998, v1.03"
 argument_list|,
-literal|"<Image>/Filters/Render/Solid Noise"
+literal|"<Image>/Filters/Render/Clouds/Solid Noise"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

@@ -2107,7 +2107,7 @@ literal|"Jörn Loviscach, Jens Ch. Restemeier"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-literal|"<Image>/Filters/Render/Qbist"
+literal|"<Image>/Filters/Render/Pattern/Qbist"
 argument_list|,
 literal|"RGB*"
 argument_list|,

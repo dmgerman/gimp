@@ -94,7 +94,7 @@ value|32
 end_define
 
 begin_typedef
-DECL|struct|__anon295b03da0108
+DECL|struct|__anon27fd38510108
 typedef|typedef
 struct|struct
 block|{
@@ -118,7 +118,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon295b03da0208
+DECL|struct|__anon27fd38510208
 typedef|typedef
 struct|struct
 block|{
@@ -580,7 +580,7 @@ literal|"Stephen Norris"
 argument_list|,
 literal|"1995"
 argument_list|,
-literal|"<Image>/Filters/Render/Plasma"
+literal|"<Image>/Filters/Render/Clouds/Plasma"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

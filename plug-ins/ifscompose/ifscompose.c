@@ -124,7 +124,7 @@ value|"plug_in_ifscompose"
 end_define
 
 begin_typedef
-DECL|enum|__anon29694dbb0103
+DECL|enum|__anon29ed19870103
 typedef|typedef
 enum|enum
 block|{
@@ -144,7 +144,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29694dbb0203
+DECL|enum|__anon29ed19870203
 typedef|typedef
 enum|enum
 block|{
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29694dbb0308
+DECL|struct|__anon29ed19870308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -183,7 +183,7 @@ DECL|member|type
 name|ValuePairType
 name|type
 decl_stmt|;
-DECL|union|__anon29694dbb040a
+DECL|union|__anon29ed1987040a
 union|union
 block|{
 DECL|member|d
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29694dbb0508
+DECL|struct|__anon29ed19870508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29694dbb0608
+DECL|struct|__anon29ed19870608
 block|{
 DECL|member|color
 name|IfsColor
@@ -292,7 +292,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29694dbb0708
+DECL|struct|__anon29ed19870708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -328,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29694dbb0808
+DECL|struct|__anon29ed19870808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -395,7 +395,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29694dbb0908
+DECL|struct|__anon29ed19870908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -566,7 +566,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29694dbb0a08
+DECL|struct|__anon29ed19870a08
 block|{
 DECL|member|run
 name|gint
@@ -1627,7 +1627,7 @@ literal|"1997"
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/Filters/Render/IfsCompose"
+literal|"<Image>/Filters/Render/Nature/IfsCompose"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

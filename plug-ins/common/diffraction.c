@@ -137,7 +137,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon294229140108
+DECL|struct|__anon2a3dbe2f0108
 typedef|typedef
 struct|struct
 block|{
@@ -196,7 +196,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon294229140208
+DECL|struct|__anon2a3dbe2f0208
 typedef|typedef
 struct|struct
 block|{
@@ -830,7 +830,7 @@ literal|"Federico Mena Quintero& David Bleecker"
 argument_list|,
 literal|"April 1997, 0.5"
 argument_list|,
-literal|"<Image>/Filters/Render/Diffraction Patterns"
+literal|"<Image>/Filters/Render/Pattern/Diffraction Patterns"
 argument_list|,
 literal|"RGB*"
 argument_list|,

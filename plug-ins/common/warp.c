@@ -144,7 +144,7 @@ value|3
 end_define
 
 begin_typedef
-DECL|struct|__anon2909c0bd0108
+DECL|struct|__anon2a34075f0108
 typedef|typedef
 struct|struct
 block|{
@@ -211,7 +211,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2909c0bd0208
+DECL|struct|__anon2a34075f0208
 typedef|typedef
 struct|struct
 block|{
@@ -1158,7 +1158,7 @@ literal|"1997"
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/Filters/Artistic/Warp"
+literal|"<Image>/Filters/Map/Warp"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

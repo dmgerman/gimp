@@ -292,7 +292,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3aa5130108
+DECL|struct|__anon2b7bc8660108
 block|{
 DECL|member|r
 DECL|member|g
@@ -379,7 +379,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c3aa5130208
+DECL|struct|__anon2b7bc8660208
 typedef|typedef
 struct|struct
 block|{
@@ -7471,7 +7471,7 @@ literal|"Version 0.14, September 24 1997"
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/Filters/Artistic/Van Gogh (LIC)"
+literal|"<Image>/Filters/Map/Van Gogh (LIC)"
 argument_list|)
 argument_list|,
 literal|"RGB"

@@ -161,7 +161,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2957c50f0108
+DECL|struct|__anon2b3a26af0108
 typedef|typedef
 struct|struct
 block|{
@@ -212,7 +212,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2957c50f0208
+DECL|struct|__anon2b3a26af0208
 typedef|typedef
 struct|struct
 block|{
@@ -1006,7 +1006,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/Filters/Colors/Alien Map 2"
+literal|"<Image>/Filters/Colors/Map/Alien Map 2"
 argument_list|)
 argument_list|,
 literal|"RGB_MODEL*"

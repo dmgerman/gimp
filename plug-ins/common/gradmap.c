@@ -272,7 +272,7 @@ literal|"Eiichi Takamori"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Colors/Gradient Map"
+literal|"<Image>/Filters/Colors/Map/Gradient Map"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

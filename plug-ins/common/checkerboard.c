@@ -64,7 +64,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b3a2b230108
+DECL|struct|__anon2bffa5750108
 typedef|typedef
 struct|struct
 block|{
@@ -372,7 +372,7 @@ literal|"1997"
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/Filters/Render/Checkerboard"
+literal|"<Image>/Filters/Render/Pattern/Checkerboard"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

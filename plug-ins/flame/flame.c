@@ -438,7 +438,7 @@ value|(-4)
 end_define
 
 begin_struct
-DECL|struct|__anon2783b3e30108
+DECL|struct|__anon27d49af70108
 struct|struct
 block|{
 DECL|member|randomize
@@ -571,7 +571,7 @@ literal|"Scott Draves"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Render/Flame"
+literal|"<Image>/Filters/Render/Nature/Flame"
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -3585,7 +3585,7 @@ name|button
 argument_list|)
 expr_stmt|;
 block|{
-DECL|struct|__anon2783b3e30208
+DECL|struct|__anon27d49af70208
 specifier|static
 struct|struct
 block|{

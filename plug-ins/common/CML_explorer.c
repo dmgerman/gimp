@@ -133,7 +133,7 @@ DECL|macro|MENU_POSITION
 define|#
 directive|define
 name|MENU_POSITION
-value|"<Image>/Filters/Render/CML explorer"
+value|"<Image>/Filters/Render/Pattern/CML explorer"
 end_define
 
 begin_define
@@ -279,7 +279,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5a0490108
+DECL|struct|__anon2b32473b0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -307,7 +307,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5a0490208
+DECL|struct|__anon2b32473b0208
 block|{
 DECL|member|name
 name|gchar
@@ -1677,7 +1677,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5a0490308
+DECL|struct|__anon2b32473b0308
 block|{
 DECL|member|function
 name|gint
@@ -1750,7 +1750,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5a0490408
+DECL|struct|__anon2b32473b0408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -2537,7 +2537,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5a0490508
+DECL|struct|__anon2b32473b0508
 block|{
 DECL|member|run
 name|gint
@@ -2585,7 +2585,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5a0490608
+DECL|struct|__anon2b32473b0608
 block|{
 DECL|member|widget
 name|GtkWidget
