@@ -365,21 +365,21 @@ argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
-literal|"#define KERNEL_WIDTH   %d\n"
+literal|"#define KERNEL_WIDTH     %d\n"
 argument_list|,
 name|KERNEL_WIDTH
 argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
-literal|"#define KERNEL_HEIGHT  %d\n"
+literal|"#define KERNEL_HEIGHT    %d\n"
 argument_list|,
 name|KERNEL_HEIGHT
 argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
-literal|"#define SUBSAMPLE      %d\n"
+literal|"#define KERNEL_SUBSAMPLE %d\n"
 argument_list|,
 name|SUBSAMPLE
 argument_list|)

@@ -20,10 +20,10 @@ value|3
 end_define
 
 begin_define
-DECL|macro|SUBSAMPLE
+DECL|macro|KERNEL_SUBSAMPLE
 define|#
 directive|define
-name|SUBSAMPLE
+name|KERNEL_SUBSAMPLE
 value|4
 end_define
 

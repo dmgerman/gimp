@@ -22,6 +22,14 @@ directive|include
 file|"gimpdrawtool.h"
 end_include
 
+begin_define
+DECL|macro|PAINT_TOOL_SUBSAMPLE
+define|#
+directive|define
+name|PAINT_TOOL_SUBSAMPLE
+value|4
+end_define
+
 begin_comment
 comment|/* the different states that the painting function can be called with  */
 end_comment
@@ -30,7 +38,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2949a93e0103
+DECL|enum|__anon27ae11c10103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -69,7 +77,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2949a93e0203
+DECL|enum|__anon27ae11c10203
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -239,6 +247,79 @@ name|ToolFlags
 name|flags
 decl_stmt|;
 comment|/*  tool flags, see ToolFlags above       */
+comment|/*  undo blocks variables  */
+DECL|member|undo_tiles
+name|TileManager
+modifier|*
+name|undo_tiles
+decl_stmt|;
+DECL|member|canvas_tiles
+name|TileManager
+modifier|*
+name|canvas_tiles
+decl_stmt|;
+comment|/*  paint buffers variables  */
+DECL|member|orig_buf
+name|TempBuf
+modifier|*
+name|orig_buf
+decl_stmt|;
+DECL|member|canvas_buf
+name|TempBuf
+modifier|*
+name|canvas_buf
+decl_stmt|;
+comment|/*  brush buffers  */
+DECL|member|pressure_brush
+name|MaskBuf
+modifier|*
+name|pressure_brush
+decl_stmt|;
+DECL|member|solid_brush
+name|MaskBuf
+modifier|*
+name|solid_brush
+decl_stmt|;
+DECL|member|scale_brush
+name|MaskBuf
+modifier|*
+name|scale_brush
+decl_stmt|;
+DECL|member|scale_pixmap
+name|MaskBuf
+modifier|*
+name|scale_pixmap
+decl_stmt|;
+DECL|member|kernel_brushes
+name|MaskBuf
+modifier|*
+name|kernel_brushes
+index|[
+name|PAINT_TOOL_SUBSAMPLE
+operator|+
+literal|1
+index|]
+index|[
+name|PAINT_TOOL_SUBSAMPLE
+operator|+
+literal|1
+index|]
+decl_stmt|;
+DECL|member|last_brush_mask
+name|MaskBuf
+modifier|*
+name|last_brush_mask
+decl_stmt|;
+DECL|member|cache_invalid
+name|gboolean
+name|cache_invalid
+decl_stmt|;
+comment|/*  don't use this one...  */
+DECL|member|grr_brush
+name|GimpBrush
+modifier|*
+name|grr_brush
+decl_stmt|;
 block|}
 struct|;
 end_struct
