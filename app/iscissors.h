@@ -17,15 +17,6 @@ name|__ISCISSORS_H__
 end_define
 
 begin_function_decl
-name|void
-name|iscissors_dialog
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|Tool
 modifier|*
 name|tools_new_iscissors

@@ -26,10 +26,10 @@ typedef|;
 end_typedef
 
 begin_define
-DECL|macro|FILE_VERSION
+DECL|macro|GPATTERN_FILE_VERSION
 define|#
 directive|define
-name|FILE_VERSION
+name|GPATTERN_FILE_VERSION
 value|1
 end_define
 

@@ -26,10 +26,10 @@ typedef|;
 end_typedef
 
 begin_define
-DECL|macro|FILE_VERSION
+DECL|macro|GBRUSH_FILE_VERSION
 define|#
 directive|define
-name|FILE_VERSION
+name|GBRUSH_FILE_VERSION
 value|2
 end_define
 

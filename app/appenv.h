@@ -154,6 +154,29 @@ end_endif
 begin_ifndef
 ifndef|#
 directive|ifndef
+name|G_PI_2
+end_ifndef
+
+begin_comment
+comment|/* As will G_PI_2 */
+end_comment
+
+begin_define
+DECL|macro|G_PI_2
+define|#
+directive|define
+name|G_PI_2
+value|1.57079632679489661923
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
 name|G_PI_4
 end_ifndef
 
@@ -273,7 +296,7 @@ value|CLAMP(a,0,255)
 end_define
 
 begin_typedef
-DECL|enum|__anon2998b4960103
+DECL|enum|__anon27940e130103
 typedef|typedef
 enum|enum
 block|{

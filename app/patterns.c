@@ -806,7 +806,7 @@ name|header
 operator|.
 name|version
 operator|!=
-name|FILE_VERSION
+name|GPATTERN_FILE_VERSION
 condition|)
 block|{
 name|g_message
