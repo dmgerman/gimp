@@ -107,7 +107,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a223d120108
+DECL|struct|__anon2a994ce10108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -203,7 +203,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a223d120208
+DECL|struct|__anon2a994ce10208
 block|{
 DECL|member|menu
 name|gchar
@@ -459,7 +459,7 @@ literal|"1999"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/Xtns/_Plugin Details..."
+literal|"<Toolbox>/Xtns/_Plugin Details"
 argument_list|)
 argument_list|,
 literal|""
@@ -672,7 +672,7 @@ operator|->
 name|child
 argument_list|)
 decl_stmt|;
-comment|/* This is a lame hack:       We add the description on the right on the first details_callback.      Otherwise the window reacts quite weird on resizes */
+comment|/* This is a lame hack:      We add the description on the right on the first details_callback.      Otherwise the window reacts quite weird on resizes */
 if|if
 condition|(
 name|pdesc
@@ -2682,7 +2682,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* This was an attempt to get around a problem in gtk   * where the scroll windows that contain ctree and clist  * refuse to respond to the moveto funcions unless the  * widgets are visible.  * Still did not work 100% even after this.  * Note the scrollbars are in the correct position but the  * widget needs to be redrawn at the correct location.  */
+comment|/* This was an attempt to get around a problem in gtk  * where the scroll windows that contain ctree and clist  * refuse to respond to the moveto funcions unless the  * widgets are visible.  * Still did not work 100% even after this.  * Note the scrollbars are in the correct position but the  * widget needs to be redrawn at the correct location.  */
 end_comment
 
 begin_function
