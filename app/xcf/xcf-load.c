@@ -160,6 +160,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"text/gimptextlayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"text/gimptextlayer-xcf.h"
 end_include
 
@@ -271,6 +277,10 @@ parameter_list|,
 name|gboolean
 modifier|*
 name|show_mask
+parameter_list|,
+name|guint32
+modifier|*
+name|text_layer_flags
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1752,7 +1762,7 @@ name|prop_size
 condition|)
 name|g_message
 argument_list|(
-literal|"Error detected while loading an image's parasites"
+literal|"Error while loading an image's parasites"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2159,13 +2169,18 @@ block|}
 block|}
 break|break;
 default|default:
-name|g_message
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
+name|g_printerr
 argument_list|(
 literal|"unexpected/unknown image property: %d (skipping)"
 argument_list|,
 name|prop_type
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|{
 name|guint8
 name|buf
@@ -2230,7 +2245,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_load_layer_props (XcfInfo * info,GimpImage * gimage,GimpLayer * layer,gboolean * apply_mask,gboolean * edit_mask,gboolean * show_mask)
+DECL|function|xcf_load_layer_props (XcfInfo * info,GimpImage * gimage,GimpLayer * layer,gboolean * apply_mask,gboolean * edit_mask,gboolean * show_mask,guint32 * text_layer_flags)
 name|xcf_load_layer_props
 parameter_list|(
 name|XcfInfo
@@ -2256,6 +2271,10 @@ parameter_list|,
 name|gboolean
 modifier|*
 name|show_mask
+parameter_list|,
+name|guint32
+modifier|*
+name|text_layer_flags
 parameter_list|)
 block|{
 name|PropType
@@ -2737,10 +2756,29 @@ name|prop_size
 condition|)
 name|g_message
 argument_list|(
-literal|"Error detected while loading a layer's parasites"
+literal|"Error while loading a layer's parasites"
 argument_list|)
 expr_stmt|;
 block|}
+break|break;
+case|case
+name|PROP_TEXT_LAYER_FLAGS
+case|:
+name|info
+operator|->
+name|cp
+operator|+=
+name|xcf_read_int32
+argument_list|(
+name|info
+operator|->
+name|fp
+argument_list|,
+name|text_layer_flags
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
 break|break;
 default|default:
 block|{
@@ -2753,13 +2791,18 @@ decl_stmt|;
 name|guint
 name|amount
 decl_stmt|;
-name|g_message
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
+name|g_printerr
 argument_list|(
 literal|"unexpected/unknown layer property: %d (skipping)"
 argument_list|,
 name|prop_type
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 while|while
 condition|(
 name|prop_size
@@ -3320,19 +3363,24 @@ name|prop_size
 condition|)
 name|g_message
 argument_list|(
-literal|"Error detected while loading a channel's parasites"
+literal|"Error while loading a channel's parasites"
 argument_list|)
 expr_stmt|;
 block|}
 break|break;
 default|default:
-name|g_message
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
+name|g_printerr
 argument_list|(
 literal|"unexpected/unknown channel property: %d (skipping)"
 argument_list|,
 name|prop_type
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|{
 name|guint8
 name|buf
@@ -3502,6 +3550,9 @@ decl_stmt|;
 name|gboolean
 name|floating
 decl_stmt|;
+name|guint32
+name|text_layer_flags
+decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
@@ -3661,6 +3712,9 @@ name|edit_mask
 argument_list|,
 operator|&
 name|show_mask
+argument_list|,
+operator|&
+name|text_layer_flags
 argument_list|)
 condition|)
 goto|goto
@@ -3696,6 +3750,16 @@ name|layer
 argument_list|)
 condition|)
 block|{
+name|gimp_text_layer_set_xcf_flags
+argument_list|(
+name|GIMP_TEXT_LAYER
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+name|text_layer_flags
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|active

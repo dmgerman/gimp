@@ -790,12 +790,12 @@ argument_list|,
 name|pattern
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_image_flush
 argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp_context_set_display
 argument_list|(
 name|gimp_get_user_context
