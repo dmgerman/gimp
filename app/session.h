@@ -71,8 +71,12 @@ DECL|member|height
 name|gint
 name|height
 decl_stmt|;
-DECL|member|open
+DECL|member|count
 name|gint
+name|count
+decl_stmt|;
+DECL|member|open
+name|gboolean
 name|open
 decl_stmt|;
 block|}
