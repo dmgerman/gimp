@@ -34,7 +34,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
-comment|/* History:  *    *   08/07/99 Implementation and release.  *	 08/10/99 Big speed increase by using gimp_tile_cache_size()  *			  Thanks to Kevin Turner's documentation at:  *			  http://www.poboxes.com/kevint/gimp/doc/plugin-doc-2.1.html  *  * TODO (maybe):  *  *   - Support for 4,2,1 bit bitmaps  *   - Unsupported formats could be delegated to GIMP Loader (e.g. wmf)  *   - ...  */
+comment|/* History:  *  *   08/07/99 Implementation and release.  *	 08/10/99 Big speed increase by using gimp_tile_cache_size()  *			  Thanks to Kevin Turner's documentation at:  *			  http://www.poboxes.com/kevint/gimp/doc/plugin-doc-2.1.html  *  * TODO (maybe):  *  *   - Support for 4,2,1 bit bitmaps  *   - Unsupported formats could be delegated to GIMP Loader (e.g. wmf)  *   - ...  */
 end_comment
 
 begin_comment
@@ -2343,7 +2343,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* ??? gimp_convert_rgb (image_ID); 	   */
+comment|/* ??? gimp_image_convert_rgb (image_ID); 	   */
 name|drawable_ID
 operator|=
 name|gimp_layer_new

@@ -179,7 +179,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29d49b540108
+DECL|struct|__anon2c1f53460108
 block|{
 DECL|member|spacing
 name|guint
@@ -226,7 +226,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d49b540208
+DECL|struct|__anon2c1f53460208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -2344,7 +2344,7 @@ argument_list|)
 operator|==
 name|GIMP_GRAY
 condition|)
-name|gimp_convert_rgb
+name|gimp_image_convert_rgb
 argument_list|(
 name|image_ID
 argument_list|)

@@ -370,7 +370,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon2c3f7e750108
+DECL|struct|__anon2c0558b40108
 typedef|typedef
 struct|struct
 block|{
@@ -439,7 +439,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c3f7e750208
+DECL|struct|__anon2c0558b40208
 typedef|typedef
 struct|struct
 block|{
@@ -547,7 +547,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c3f7e750308
+DECL|struct|__anon2c0558b40308
 typedef|typedef
 struct|struct
 block|{
@@ -576,7 +576,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c3f7e750408
+DECL|struct|__anon2c0558b40408
 typedef|typedef
 struct|struct
 block|{
@@ -603,7 +603,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c3f7e750508
+DECL|struct|__anon2c0558b40508
 typedef|typedef
 struct|struct
 block|{
@@ -15610,7 +15610,7 @@ operator|&
 name|MC_DST_REMAP
 condition|)
 block|{
-name|gimp_convert_rgb
+name|gimp_image_convert_rgb
 argument_list|(
 name|gimp_drawable_get_image
 argument_list|(

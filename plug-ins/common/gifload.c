@@ -710,7 +710,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c5ffd620108
+DECL|struct|__anon2baf389b0108
 block|{
 DECL|member|Width
 name|unsigned
@@ -760,7 +760,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c5ffd620208
+DECL|struct|__anon2baf389b0208
 block|{
 DECL|member|transparent
 name|int
@@ -3912,7 +3912,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-name|gimp_convert_rgb
+name|gimp_image_convert_rgb
 argument_list|(
 name|image_ID
 argument_list|)
