@@ -189,7 +189,7 @@ literal|"Elliot Lee"
 block|,
 literal|"Marc Lehmann"
 block|,
-literal|"Ray Lahtiniemi"
+literal|"Ray Lehtiniemi"
 block|,
 literal|"Raph Levien"
 block|,
