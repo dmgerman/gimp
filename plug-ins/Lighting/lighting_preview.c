@@ -969,7 +969,7 @@ comment|/* ======================================= */
 end_comment
 
 begin_comment
-comment|/*  if (mapvals.transparent_background==TRUE)     gck_rgba_set(&background,0.0,0.0,0.0,0.0);   else     {       gimp_palette_get_background(&r,&g,&b);       background.r=(gdouble)r/255.0;       background.g=(gdouble)g/255.0;       background.b=(gdouble)b/255.0;       background.a=1.0;     }    gck_rgb_set(&lightcheck,0.75,0.75,0.75);   gck_rgb_set(&darkcheck, 0.50,0.50,0.50);   gck_vector3_set(&p2,-1.0,-1.0,0.0);    for (ycnt=0;ycnt<ph;ycnt++)     {       for (xcnt=0;xcnt<pw;xcnt++)         {           p1.x=xpostab[xcnt];           p1.y=ypostab[ycnt]; */
+comment|/*  if (mapvals.transparent_background==TRUE)     gck_rgba_set(&background,0.0,0.0,0.0,0.0);   else     {       gimp_palette_get_background_rgb (&background);       gimp_rgb_set_alpha (&background, 1.0);     }    gck_rgb_set(&lightcheck,0.75,0.75,0.75);   gck_rgb_set(&darkcheck, 0.50,0.50,0.50);   gck_vector3_set(&p2,-1.0,-1.0,0.0);    for (ycnt=0;ycnt<ph;ycnt++)     {       for (xcnt=0;xcnt<pw;xcnt++)         {           p1.x=xpostab[xcnt];           p1.y=ypostab[ycnt]; */
 end_comment
 
 begin_comment

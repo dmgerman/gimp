@@ -304,7 +304,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29beb01b0103
+DECL|enum|__anon2be1c0cb0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED

@@ -39,7 +39,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e488f40103
+DECL|enum|__anon28bfac280103
 block|{
 DECL|enumerator|POINT_LIGHT
 name|POINT_LIGHT
@@ -58,7 +58,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e488f40203
+DECL|enum|__anon28bfac280203
 block|{
 DECL|enumerator|MAP_PLANE
 name|MAP_PLANE
@@ -88,7 +88,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e488f40308
+DECL|struct|__anon28bfac280308
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -123,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e488f40408
+DECL|struct|__anon28bfac280408
 block|{
 DECL|member|type
 name|LightType
@@ -154,7 +154,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e488f40508
+DECL|struct|__anon28bfac280508
 block|{
 DECL|member|viewpoint
 DECL|member|firstaxis
@@ -285,13 +285,6 @@ begin_decl_stmt
 specifier|extern
 name|MapObjectValues
 name|mapvals
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|GimpRGB
-name|background
 decl_stmt|;
 end_decl_stmt
 
