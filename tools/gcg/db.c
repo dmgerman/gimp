@@ -100,7 +100,7 @@ name|p
 operator|->
 name|kind
 operator|=
-name|GTK_TYPE_INVALID
+name|TYPE_INVALID
 expr_stmt|;
 name|p
 operator|->
@@ -283,7 +283,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2badbbb20108
+DECL|struct|__anon279cbaeb0108
 typedef|typedef
 struct|struct
 block|{

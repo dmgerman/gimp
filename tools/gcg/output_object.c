@@ -12,6 +12,35 @@ file|"marshall.h"
 end_include
 
 begin_function
+DECL|function|p_self_name (Member * o)
+name|PNode
+modifier|*
+name|p_self_name
+parameter_list|(
+name|Member
+modifier|*
+name|o
+parameter_list|)
+block|{
+return|return
+name|p_c_ident
+argument_list|(
+name|DEF
+argument_list|(
+name|o
+operator|->
+name|my_class
+argument_list|)
+operator|->
+name|type
+operator|->
+name|name
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
 DECL|function|p_object_member (Member * m)
 name|PNode
 modifier|*
@@ -543,68 +572,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|p_signal_id (Method * s)
-name|PNode
-modifier|*
-name|p_signal_id
-parameter_list|(
-name|Method
-modifier|*
-name|s
-parameter_list|)
-block|{
-name|PrimType
-modifier|*
-name|t
-init|=
-name|DEF
-argument_list|(
-name|MEMBER
-argument_list|(
-name|s
-argument_list|)
-operator|->
-name|my_class
-argument_list|)
-operator|->
-name|type
-decl_stmt|;
-return|return
-name|p_fmt
-argument_list|(
-literal|"_~_~_signal_~"
-argument_list|,
-name|p_c_ident
-argument_list|(
-name|t
-operator|->
-name|module
-operator|->
-name|name
-argument_list|)
-argument_list|,
-name|p_c_ident
-argument_list|(
-name|t
-operator|->
-name|name
-argument_list|)
-argument_list|,
-name|p_c_ident
-argument_list|(
-name|MEMBER
-argument_list|(
-name|s
-argument_list|)
-operator|->
-name|name
-argument_list|)
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
 DECL|function|p_signal_handler_type (Method * s)
 name|PNode
 modifier|*
@@ -689,21 +656,12 @@ operator|->
 name|self_const
 index|]
 argument_list|,
-name|p_c_ident
-argument_list|(
-name|DEF
+name|p_self_name
 argument_list|(
 name|MEMBER
 argument_list|(
 name|m
 argument_list|)
-operator|->
-name|my_class
-argument_list|)
-operator|->
-name|type
-operator|->
-name|name
 argument_list|)
 argument_list|,
 name|p_nil
@@ -782,21 +740,12 @@ argument_list|)
 else|:
 name|p_nil
 argument_list|,
-name|p_c_ident
-argument_list|(
-name|DEF
+name|p_self_name
 argument_list|(
 name|MEMBER
 argument_list|(
 name|m
 argument_list|)
-operator|->
-name|my_class
-argument_list|)
-operator|->
-name|type
-operator|->
-name|name
 argument_list|)
 argument_list|,
 name|p_str
@@ -923,11 +872,12 @@ operator|->
 name|self_const
 index|]
 argument_list|,
-name|p_c_ident
+name|p_self_name
 argument_list|(
-name|t
-operator|->
-name|name
+name|MEMBER
+argument_list|(
+name|m
+argument_list|)
 argument_list|)
 argument_list|,
 name|p_nil
@@ -970,7 +920,7 @@ name|NULL
 argument_list|,
 name|p_str
 argument_list|(
-literal|"GtkSignal"
+literal|"GtkSignalID"
 argument_list|)
 argument_list|,
 name|p_signal_id
@@ -999,7 +949,7 @@ literal|"functions"
 argument_list|,
 name|p_fmt
 argument_list|(
-literal|"typedef ~ (*~)(~);\n"
+literal|"typedef ~ (*~)(~, gpointer);\n"
 argument_list|,
 name|p_type
 argument_list|(
@@ -1045,27 +995,9 @@ name|FALSE
 expr_stmt|;
 name|dispatch
 operator|=
-name|p_fmt
-argument_list|(
-literal|"~(~, (GtkObject*)~)"
-argument_list|,
-name|p_signal_marshaller_name
-argument_list|(
-name|sig
-argument_list|)
-argument_list|,
-name|p_signal_id
+name|p_sig_marshalling
 argument_list|(
 name|m
-argument_list|)
-argument_list|,
-name|p_params
-argument_list|(
-name|par
-argument_list|,
-operator|&
-name|o
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1132,7 +1064,20 @@ name|dispatch
 operator|=
 name|p_fmt
 argument_list|(
-literal|"~(~)"
+literal|"\t~ ~(~);\n"
+argument_list|,
+name|m
+operator|->
+name|ret_type
+operator|.
+name|prim
+condition|?
+name|p_str
+argument_list|(
+literal|"return "
+argument_list|)
+else|:
+name|p_nil
 argument_list|,
 name|p_real_varname
 argument_list|(
@@ -1158,7 +1103,20 @@ name|dispatch
 operator|=
 name|p_fmt
 argument_list|(
-literal|"((~*)((GtkObject*)~)->klass)->~(~)"
+literal|"\t~((~*)((GtkObject*)~)->klass)->~(~);\n"
+argument_list|,
+name|m
+operator|->
+name|ret_type
+operator|.
+name|prim
+condition|?
+name|p_str
+argument_list|(
+literal|"return "
+argument_list|)
+else|:
+name|p_nil
 argument_list|,
 name|p_class_name
 argument_list|(
@@ -1225,25 +1183,7 @@ name|p_nil
 argument_list|,
 name|par
 argument_list|,
-name|p_fmt
-argument_list|(
-literal|"\t~~;\n"
-argument_list|,
-name|m
-operator|->
-name|ret_type
-operator|.
-name|prim
-condition|?
-name|p_str
-argument_list|(
-literal|"return "
-argument_list|)
-else|:
-name|p_nil
-argument_list|,
 name|dispatch
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|fparams_free
@@ -1298,6 +1238,18 @@ operator|->
 name|name
 argument_list|)
 decl_stmt|;
+name|PNode
+modifier|*
+name|self
+init|=
+name|p_self_name
+argument_list|(
+name|MEMBER
+argument_list|(
+name|m
+argument_list|)
+argument_list|)
+decl_stmt|;
 switch|switch
 condition|(
 name|m
@@ -1332,10 +1284,7 @@ index|[
 name|FALSE
 index|]
 argument_list|,
-name|p_str
-argument_list|(
-literal|"self"
-argument_list|)
+name|self
 argument_list|,
 name|p_nil
 argument_list|,
@@ -1375,7 +1324,74 @@ name|par
 argument_list|,
 name|p_fmt
 argument_list|(
-literal|"\tself->~ = ~;\n"
+literal|"~"
+literal|"\t~->~ = ~;\n"
+argument_list|,
+operator|(
+name|m
+operator|->
+name|type
+operator|.
+name|prim
+operator|->
+name|kind
+operator|==
+name|TYPE_OBJECT
+operator|&&
+name|m
+operator|->
+name|type
+operator|.
+name|indirection
+operator|==
+literal|1
+operator|)
+condition|?
+name|m
+operator|->
+name|type
+operator|.
+name|notnull
+condition|?
+name|p_fmt
+argument_list|(
+literal|"\tgtk_object_ref "
+literal|"((GtkObject*) ~);\n"
+literal|"\tgtk_object_unref "
+literal|"((GtkObject*) ~->~);\n"
+argument_list|,
+name|name
+argument_list|,
+name|self
+argument_list|,
+name|name
+argument_list|)
+else|:
+name|p_fmt
+argument_list|(
+literal|"\tif(~)\n"
+literal|"\t\tgtk_object_ref "
+literal|"((GtkObject*) ~);\n"
+literal|"\tif(~->~)\n"
+literal|"\t\tgtk_object_unref "
+literal|"((GtkObject*) ~->~);\n"
+argument_list|,
+name|name
+argument_list|,
+name|name
+argument_list|,
+name|self
+argument_list|,
+name|name
+argument_list|,
+name|self
+argument_list|,
+name|name
+argument_list|)
+else|:
+name|p_nil
+argument_list|,
+name|self
 argument_list|,
 name|name
 argument_list|,
@@ -1412,10 +1428,7 @@ index|[
 name|TRUE
 index|]
 argument_list|,
-name|p_str
-argument_list|(
-literal|"self"
-argument_list|)
+name|self
 argument_list|,
 name|p_nil
 argument_list|)
@@ -1444,7 +1457,9 @@ name|par
 argument_list|,
 name|p_fmt
 argument_list|(
-literal|"\treturn self->~;\n"
+literal|"\treturn ~->~;\n"
+argument_list|,
+name|self
 argument_list|,
 name|name
 argument_list|)
@@ -1741,19 +1756,14 @@ decl_stmt|;
 return|return
 name|p_fmt
 argument_list|(
-literal|",\n\t\tGTK_TYPE_~"
+literal|",\n\t\t~"
 argument_list|,
-name|p_gtype_name
-argument_list|(
-name|marshalling_type
+name|p_gtktype
 argument_list|(
 operator|&
 name|param
 operator|->
 name|type
-argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 argument_list|)
 return|;
@@ -1834,18 +1844,27 @@ case|:
 return|return
 name|p_fmt
 argument_list|(
+literal|"\t{\n"
+literal|"\textern void ~ (GtkObject*, GtkSignalFunc, "
+literal|"gpointer, GtkArg*);\n"
 literal|"\t~ =\n"
 literal|"\tgtk_signal_new(\"~\",\n"
 literal|"\t\tGTK_RUN_~,\n"
 literal|"\t\tobklass->type,\n"
 literal|"\t\tGTK_SIGNAL_OFFSET (~, ~),\n"
 literal|"\t\t~,\n"
-literal|"\t\tGTK_TYPE_~,\n"
+literal|"\t\t~,\n"
 literal|"\t\t~"
 literal|"~);\n"
 literal|"\tgtk_object_class_add_signals(obklass,\n"
 literal|"\t\t&~,\n"
 literal|"\t\t1);\n"
+literal|"\t}\n"
+argument_list|,
+name|p_signal_demarshaller_name
+argument_list|(
+name|sig
+argument_list|)
 argument_list|,
 name|p_signal_id
 argument_list|(
@@ -1902,17 +1921,12 @@ argument_list|(
 name|sig
 argument_list|)
 argument_list|,
-name|p_gtype_name
-argument_list|(
-name|marshalling_type
+name|p_gtktype
 argument_list|(
 operator|&
 name|meth
 operator|->
 name|ret_type
-argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 argument_list|,
 name|p_prf
@@ -2078,7 +2092,7 @@ name|NULL
 argument_list|,
 name|p_fmt
 argument_list|(
-literal|"\t\t~ (~);\n"
+literal|"\t~ (~);\n"
 argument_list|,
 name|p_varname
 argument_list|(
@@ -2208,7 +2222,7 @@ argument_list|(
 literal|"\tGtkObjectClass* obklass = \n"
 literal|"\t\t(GtkObjectClass*) klass;\n"
 literal|"~"
-literal|"\t\t~ (klass);\n"
+literal|"\t~ (klass);\n"
 argument_list|,
 name|p_for
 argument_list|(

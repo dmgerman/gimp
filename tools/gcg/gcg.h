@@ -18,12 +18,6 @@ directive|include
 file|<glib.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtktypeutils.h>
-end_include
-
 begin_decl_stmt
 specifier|extern
 name|gboolean
@@ -179,6 +173,43 @@ name|Module
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|enum|__anon2c2437b30103
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|TYPE_INVALID
+name|TYPE_INVALID
+block|,
+DECL|enumerator|TYPE_NONE
+name|TYPE_NONE
+block|,
+DECL|enumerator|TYPE_INT
+name|TYPE_INT
+block|,
+DECL|enumerator|TYPE_LONG
+name|TYPE_LONG
+block|,
+DECL|enumerator|TYPE_DOUBLE
+name|TYPE_DOUBLE
+block|,
+DECL|enumerator|TYPE_ENUM
+name|TYPE_ENUM
+block|,
+DECL|enumerator|TYPE_FLAGS
+name|TYPE_FLAGS
+block|,
+DECL|enumerator|TYPE_FOREIGN
+name|TYPE_FOREIGN
+block|,
+DECL|enumerator|TYPE_OBJECT
+name|TYPE_OBJECT
+DECL|typedef|TypeKind
+block|}
+name|TypeKind
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_Module
 struct|struct
@@ -216,7 +247,7 @@ name|Id
 name|name
 decl_stmt|;
 DECL|member|kind
-name|GtkFundamentalType
+name|TypeKind
 name|kind
 decl_stmt|;
 DECL|member|decl_header
@@ -417,7 +448,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon2c89a6350103
+DECL|enum|__anon2c2437b30203
 typedef|typedef
 enum|enum
 block|{
@@ -436,7 +467,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c89a6350203
+DECL|enum|__anon2c2437b30303
 typedef|typedef
 enum|enum
 block|{
