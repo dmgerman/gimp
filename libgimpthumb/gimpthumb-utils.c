@@ -27,12 +27,6 @@ directive|include
 file|<sys/types.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<sys/stat.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -54,6 +48,12 @@ begin_include
 include|#
 directive|include
 file|<glib-object.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_ifdef

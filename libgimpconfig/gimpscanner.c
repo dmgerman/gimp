@@ -27,12 +27,6 @@ directive|include
 file|<fcntl.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -60,6 +54,12 @@ begin_include
 include|#
 directive|include
 file|<glib-object.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_ifdef
@@ -118,7 +118,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d2a1d0108
+DECL|struct|__anon274582020108
 block|{
 DECL|member|fd
 name|gint
@@ -1119,7 +1119,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6d2a1d0203
+DECL|enum|__anon274582020203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB

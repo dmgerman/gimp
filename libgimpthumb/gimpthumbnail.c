@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<errno.h>
 end_include
 
@@ -31,12 +25,6 @@ begin_include
 include|#
 directive|include
 file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/stat.h>
 end_include
 
 begin_ifdef
@@ -55,6 +43,12 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
+end_include
 
 begin_include
 include|#
@@ -250,7 +244,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f313870103
+DECL|enum|__anon29b761440103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
