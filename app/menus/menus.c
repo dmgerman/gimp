@@ -136,9 +136,9 @@ end_define
 begin_decl_stmt
 DECL|variable|dummyMRU
 specifier|static
-name|G_GNUC_UNUSED
 name|char
 modifier|*
+name|G_GNUC_UNUSED
 name|dummyMRU
 init|=
 name|N_
