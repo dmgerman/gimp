@@ -267,11 +267,19 @@ literal|"/File/_Dialogs"
 argument_list|)
 argument_list|)
 block|,
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/File/Dialogs/_Create New Dock"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/Layers, Channels& Paths..."
+literal|"/File/Dialogs/Create New Dock/Layers, Channels& Paths..."
 argument_list|)
 block|,
 name|NULL
@@ -292,7 +300,28 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/Brushes, Patterns& Stuff..."
+literal|"/File/Dialogs/Create New Dock/Brushes, Patterns& Gradients..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_create_data_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/File/Dialogs/Create New Dock/Misc. Stuff..."
 argument_list|)
 block|,
 name|NULL
