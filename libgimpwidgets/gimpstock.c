@@ -1988,7 +1988,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon294112360108
+DECL|struct|__anon274cf79a0108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -2082,6 +2082,12 @@ block|{
 name|GIMP_STOCK_GRAVITY_SOUTH_WEST
 block|,
 name|stock_gravity_south_west_24
+block|}
+block|,
+block|{
+name|GIMP_STOCK_GRAVITY_WEST
+block|,
+name|stock_gravity_west_24
 block|}
 block|,
 block|{
@@ -2582,7 +2588,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon294112360208
+DECL|struct|__anon274cf79a0208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3194,7 +3200,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon294112360308
+DECL|struct|__anon274cf79a0308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3272,7 +3278,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon294112360408
+DECL|struct|__anon274cf79a0408
 block|{
 DECL|member|stock_id
 specifier|const
