@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2a1f60103
+DECL|enum|__anon29bc56e50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1537,9 +1537,9 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|0
+literal|1
 argument_list|,
-literal|0
+literal|1
 argument_list|,
 name|gimp_image_base_type_with_alpha
 argument_list|(

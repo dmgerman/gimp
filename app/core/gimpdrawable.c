@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9b8c5e0103
+DECL|enum|__anon28ba1fd40103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3006,6 +3006,17 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|width
+operator|>
+literal|0
+operator|&&
+name|height
+operator|>
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_item_configure
