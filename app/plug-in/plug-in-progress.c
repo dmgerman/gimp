@@ -12825,7 +12825,9 @@ goto|goto
 name|done
 goto|;
 block|}
-comment|/*       plug_in_pop (); */
+name|plug_in_pop
+argument_list|()
+expr_stmt|;
 name|plug_in_params_destroy
 argument_list|(
 name|proc_run
