@@ -25,7 +25,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/gui-types.h"
+file|"dialogs/dialogs-types.h"
 end_include
 
 begin_comment
@@ -43,7 +43,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d334b80103
+DECL|enum|__anon2c75752b0103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -195,11 +195,11 @@ DECL|member|instant_update
 name|gboolean
 name|instant_update
 decl_stmt|;
-comment|/*  Color notebook  */
-DECL|member|color_notebook
-name|ColorNotebook
+comment|/*  Color dialog  */
+DECL|member|color_dialog
+name|ColorDialog
 modifier|*
-name|color_notebook
+name|color_dialog
 decl_stmt|;
 comment|/*  Gradient preview  */
 DECL|member|preview_last_x

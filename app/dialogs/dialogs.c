@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"dialogs-types.h"
 end_include
 
 begin_include
@@ -451,9 +451,9 @@ block|}
 block|,
 comment|/*  ordinary toplevels  */
 block|{
-literal|"gimp-file-new-dialog"
+literal|"gimp-image-new-dialog"
 block|,
-name|dialogs_file_new_new
+name|dialogs_image_new_new
 block|,
 literal|0
 block|,
@@ -500,9 +500,9 @@ name|FALSE
 block|}
 block|,
 block|{
-literal|"gimp-module-manager-dialog"
+literal|"gimp-module-dialog"
 block|,
-name|dialogs_module_browser_get
+name|dialogs_module_get
 block|,
 literal|0
 block|,

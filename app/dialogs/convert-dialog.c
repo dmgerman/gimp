@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"dialogs-types.h"
 end_include
 
 begin_include
@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ec8e460108
+DECL|struct|__anon29a2ad2c0108
 block|{
 DECL|member|gimage
 name|GimpImage

@@ -6,20 +6,20 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__FILE_NEW_DIALOG_H__
+name|__IMAGE_NEW_DIALOG_H__
 end_ifndef
 
 begin_define
-DECL|macro|__FILE_NEW_DIALOG_H__
+DECL|macro|__IMAGE_NEW_DIALOG_H__
 define|#
 directive|define
-name|__FILE_NEW_DIALOG_H__
+name|__IMAGE_NEW_DIALOG_H__
 end_define
 
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|file_new_dialog_new
+name|image_new_dialog_new
 parameter_list|(
 name|Gimp
 modifier|*
@@ -30,7 +30,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|file_new_dialog_set
+name|image_new_dialog_set
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -53,7 +53,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __FILE_NEW_DIALOG_H__ */
+comment|/* __IMAGE_NEW_DIALOG_H__ */
 end_comment
 
 end_unit

@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"dialogs-types.h"
 end_include
 
 begin_include
@@ -108,7 +108,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file-new-dialog.h"
+file|"image-new-dialog.h"
 end_include
 
 begin_include
@@ -128,7 +128,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2887c4a00108
+DECL|struct|__anon29f0665e0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -160,9 +160,9 @@ name|GimpTemplate
 modifier|*
 name|template
 decl_stmt|;
-DECL|typedef|FileNewDialog
+DECL|typedef|ImageNewDialog
 block|}
-name|FileNewDialog
+name|ImageNewDialog
 typedef|;
 end_typedef
 
@@ -173,7 +173,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|file_new_response
+name|image_new_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -182,7 +182,7 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|FileNewDialog
+name|ImageNewDialog
 modifier|*
 name|dialog
 parameter_list|)
@@ -192,7 +192,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_new_template_select
+name|image_new_template_select
 parameter_list|(
 name|GimpContainerView
 modifier|*
@@ -205,7 +205,7 @@ parameter_list|,
 name|gpointer
 name|insert_data
 parameter_list|,
-name|FileNewDialog
+name|ImageNewDialog
 modifier|*
 name|dialog
 parameter_list|)
@@ -215,9 +215,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_new_confirm_dialog
+name|image_new_confirm_dialog
 parameter_list|(
-name|FileNewDialog
+name|ImageNewDialog
 modifier|*
 name|dialog
 parameter_list|)
@@ -227,9 +227,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_new_create_image
+name|image_new_create_image
 parameter_list|(
-name|FileNewDialog
+name|ImageNewDialog
 modifier|*
 name|dialog
 parameter_list|)
@@ -243,15 +243,15 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|file_new_dialog_new (Gimp * gimp)
-name|file_new_dialog_new
+DECL|function|image_new_dialog_new (Gimp * gimp)
+name|image_new_dialog_new
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|FileNewDialog
+name|ImageNewDialog
 modifier|*
 name|dialog
 decl_stmt|;
@@ -277,7 +277,7 @@ name|dialog
 operator|=
 name|g_new0
 argument_list|(
-name|FileNewDialog
+name|ImageNewDialog
 argument_list|,
 literal|1
 argument_list|)
@@ -345,7 +345,7 @@ literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|file_new_response
+name|image_new_response
 argument_list|)
 argument_list|,
 name|dialog
@@ -360,7 +360,7 @@ operator|->
 name|dialog
 argument_list|)
 argument_list|,
-literal|"gimp-file-new-dialog"
+literal|"gimp-image-new-dialog"
 argument_list|,
 name|dialog
 argument_list|,
@@ -528,7 +528,7 @@ literal|"select_item"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|file_new_template_select
+name|image_new_template_select
 argument_list|)
 argument_list|,
 name|dialog
@@ -585,8 +585,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_new_dialog_set (GtkWidget * widget,GimpImage * gimage,GimpTemplate * template)
-name|file_new_dialog_set
+DECL|function|image_new_dialog_set (GtkWidget * widget,GimpImage * gimage,GimpTemplate * template)
+name|image_new_dialog_set
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -601,7 +601,7 @@ modifier|*
 name|template
 parameter_list|)
 block|{
-name|FileNewDialog
+name|ImageNewDialog
 modifier|*
 name|dialog
 decl_stmt|;
@@ -646,7 +646,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"gimp-file-new-dialog"
+literal|"gimp-image-new-dialog"
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -723,8 +723,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|file_new_response (GtkWidget * widget,gint response_id,FileNewDialog * dialog)
-name|file_new_response
+DECL|function|image_new_response (GtkWidget * widget,gint response_id,ImageNewDialog * dialog)
+name|image_new_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -733,7 +733,7 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|FileNewDialog
+name|ImageNewDialog
 modifier|*
 name|dialog
 parameter_list|)
@@ -792,13 +792,13 @@ argument_list|)
 operator|->
 name|max_new_image_size
 condition|)
-name|file_new_confirm_dialog
+name|image_new_confirm_dialog
 argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
 else|else
-name|file_new_create_image
+name|image_new_create_image
 argument_list|(
 name|dialog
 argument_list|)
@@ -820,8 +820,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_new_template_select (GimpContainerView * view,GimpTemplate * template,gpointer insert_data,FileNewDialog * dialog)
-name|file_new_template_select
+DECL|function|image_new_template_select (GimpContainerView * view,GimpTemplate * template,gpointer insert_data,ImageNewDialog * dialog)
+name|image_new_template_select
 parameter_list|(
 name|GimpContainerView
 modifier|*
@@ -834,7 +834,7 @@ parameter_list|,
 name|gpointer
 name|insert_data
 parameter_list|,
-name|FileNewDialog
+name|ImageNewDialog
 modifier|*
 name|dialog
 parameter_list|)
@@ -928,8 +928,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|file_new_confirm_dialog_callback (GtkWidget * widget,gboolean create,gpointer data)
-name|file_new_confirm_dialog_callback
+DECL|function|image_new_confirm_dialog_callback (GtkWidget * widget,gboolean create,gpointer data)
+name|image_new_confirm_dialog_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -942,14 +942,10 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|FileNewDialog
+name|ImageNewDialog
 modifier|*
 name|dialog
 init|=
-operator|(
-name|FileNewDialog
-operator|*
-operator|)
 name|data
 decl_stmt|;
 name|dialog
@@ -962,7 +958,7 @@ if|if
 condition|(
 name|create
 condition|)
-name|file_new_create_image
+name|image_new_create_image
 argument_list|(
 name|dialog
 argument_list|)
@@ -983,10 +979,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_new_confirm_dialog (FileNewDialog * dialog)
-name|file_new_confirm_dialog
+DECL|function|image_new_confirm_dialog (ImageNewDialog * dialog)
+name|image_new_confirm_dialog
 parameter_list|(
-name|FileNewDialog
+name|ImageNewDialog
 modifier|*
 name|dialog
 parameter_list|)
@@ -1093,7 +1089,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|file_new_confirm_dialog_callback
+name|image_new_confirm_dialog_callback
 argument_list|,
 name|dialog
 argument_list|)
@@ -1142,10 +1138,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_new_create_image (FileNewDialog * dialog)
-name|file_new_create_image
+DECL|function|image_new_create_image (ImageNewDialog * dialog)
+name|image_new_create_image
 parameter_list|(
-name|FileNewDialog
+name|ImageNewDialog
 modifier|*
 name|dialog
 parameter_list|)

@@ -163,10 +163,10 @@ name|GtkWidget
 modifier|*
 name|color_entry
 decl_stmt|;
-DECL|member|color_notebook
-name|ColorNotebook
+DECL|member|color_dialog
+name|ColorDialog
 modifier|*
-name|color_notebook
+name|color_dialog
 decl_stmt|;
 block|}
 struct|;

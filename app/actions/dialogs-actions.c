@@ -645,7 +645,7 @@ name|GIMP_HELP_PREFS_DIALOG
 block|}
 block|,
 block|{
-literal|"dialogs-module-manager"
+literal|"dialogs-module-dialog"
 block|,
 name|GTK_STOCK_EXECUTE
 block|,
@@ -658,7 +658,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-literal|"gimp-module-manager-dialog"
+literal|"gimp-module-dialog"
 block|,
 name|GIMP_HELP_MODULE_DIALOG
 block|}

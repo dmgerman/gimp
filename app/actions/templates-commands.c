@@ -108,13 +108,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/dialogs.h"
+file|"dialogs/dialogs.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/file-new-dialog.h"
+file|"dialogs/image-new-dialog.h"
 end_include
 
 begin_include
@@ -207,7 +207,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|templates_file_new_dialog
+name|templates_image_new_dialog
 argument_list|(
 name|context
 operator|->
@@ -1462,8 +1462,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_file_new_dialog (Gimp * gimp,GimpTemplate * template,GtkWidget * parent)
-name|templates_file_new_dialog
+DECL|function|templates_image_new_dialog (Gimp * gimp,GimpTemplate * template,GtkWidget * parent)
+name|templates_image_new_dialog
 parameter_list|(
 name|Gimp
 modifier|*
@@ -1493,7 +1493,7 @@ argument_list|(
 name|parent
 argument_list|)
 argument_list|,
-literal|"gimp-file-new-dialog"
+literal|"gimp-image-new-dialog"
 argument_list|,
 operator|-
 literal|1
@@ -1506,7 +1506,7 @@ condition|(
 name|dialog
 condition|)
 block|{
-name|file_new_dialog_set
+name|image_new_dialog_set
 argument_list|(
 name|dialog
 argument_list|,

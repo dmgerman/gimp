@@ -174,7 +174,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/stroke-dialog.h"
+file|"dialogs/stroke-dialog.h"
 end_include
 
 begin_include

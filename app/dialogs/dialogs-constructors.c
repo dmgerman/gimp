@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"dialogs-types.h"
 end_include
 
 begin_include
@@ -330,19 +330,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file-new-dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"file-open-location-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"module-browser.h"
+file|"image-new-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"module-dialog.h"
 end_include
 
 begin_include
@@ -434,8 +434,8 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_file_new_new (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
-name|dialogs_file_new_new
+DECL|function|dialogs_image_new_new (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
+name|dialogs_image_new_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
@@ -450,7 +450,7 @@ name|preview_size
 parameter_list|)
 block|{
 return|return
-name|file_new_dialog_new
+name|image_new_dialog_new
 argument_list|(
 name|context
 operator|->
@@ -521,8 +521,8 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_module_browser_get (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
-name|dialogs_module_browser_get
+DECL|function|dialogs_module_get (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
+name|dialogs_module_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
@@ -537,7 +537,7 @@ name|preview_size
 parameter_list|)
 block|{
 return|return
-name|module_browser_new
+name|module_dialog_new
 argument_list|(
 name|context
 operator|->

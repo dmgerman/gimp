@@ -168,31 +168,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/convert-dialog.h"
+file|"dialogs/convert-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/dialogs.h"
+file|"dialogs/dialogs.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/file-new-dialog.h"
+file|"dialogs/grid-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/grid-dialog.h"
+file|"dialogs/image-new-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/resize-dialog.h"
+file|"dialogs/resize-dialog.h"
 end_include
 
 begin_include
@@ -436,7 +436,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"gimp-file-new-dialog"
+literal|"gimp-image-new-dialog"
 argument_list|,
 operator|-
 literal|1
@@ -449,7 +449,7 @@ condition|(
 name|dialog
 condition|)
 block|{
-name|file_new_dialog_set
+name|image_new_dialog_set
 argument_list|(
 name|dialog
 argument_list|,
@@ -509,7 +509,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"gimp-file-new-dialog"
+literal|"gimp-image-new-dialog"
 argument_list|,
 operator|-
 literal|1
@@ -535,7 +535,7 @@ if|if
 condition|(
 name|gimage
 condition|)
-name|file_new_dialog_set
+name|image_new_dialog_set
 argument_list|(
 name|dialog
 argument_list|,

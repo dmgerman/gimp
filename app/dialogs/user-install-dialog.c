@@ -104,7 +104,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"dialogs-types.h"
 end_include
 
 begin_include
@@ -197,7 +197,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c41985e0103
+DECL|enum|__anon28b656170103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -219,7 +219,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c41985e0203
+DECL|enum|__anon28b656170203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -407,7 +407,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c41985e0303
+DECL|enum|__anon28b656170303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -429,7 +429,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c41985e0408
+DECL|struct|__anon28b656170408
 block|{
 DECL|member|directory
 name|gboolean

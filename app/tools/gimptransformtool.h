@@ -25,7 +25,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/gui-types.h"
+file|"dialogs/dialogs-types.h"
 end_include
 
 begin_comment

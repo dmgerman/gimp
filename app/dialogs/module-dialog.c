@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * module-browser.c  * (C) 1999 Austin Donnelly<austin@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * module-dialog.c  * (C) 1999 Austin Donnelly<austin@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"dialogs-types.h"
 end_include
 
 begin_include
@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"module-browser.h"
+file|"module-dialog.h"
 end_include
 
 begin_include
@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e9b8bc0103
+DECL|enum|__anon2b56a2270103
 block|{
 DECL|enumerator|PATH_COLUMN
 name|PATH_COLUMN
@@ -111,18 +111,18 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|typedef|ModuleBrowser
+DECL|typedef|ModuleDialog
 typedef|typedef
 name|struct
-name|_ModuleBrowser
-name|ModuleBrowser
+name|_ModuleDialog
+name|ModuleDialog
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_ModuleBrowser
+DECL|struct|_ModuleDialog
 struct|struct
-name|_ModuleBrowser
+name|_ModuleDialog
 block|{
 DECL|member|gimp
 name|Gimp
@@ -173,7 +173,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|browser_response
+name|dialog_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -182,9 +182,9 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -192,15 +192,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|browser_destroy_callback
+name|dialog_destroy_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -208,15 +208,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|browser_select_callback
+name|dialog_select_callback
 parameter_list|(
 name|GtkTreeSelection
 modifier|*
 name|sel
 parameter_list|,
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -224,7 +224,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|browser_autoload_toggled
+name|dialog_autoload_toggled
 parameter_list|(
 name|GtkCellRendererToggle
 modifier|*
@@ -234,9 +234,9 @@ name|gchar
 modifier|*
 name|path_string
 parameter_list|,
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -244,15 +244,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|browser_load_unload_callback
+name|dialog_load_unload_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -274,7 +274,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|browser_info_add
+name|dialog_info_add
 parameter_list|(
 name|GimpModuleDB
 modifier|*
@@ -284,9 +284,9 @@ name|GimpModule
 modifier|*
 name|module
 parameter_list|,
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -294,7 +294,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|browser_info_remove
+name|dialog_info_remove
 parameter_list|(
 name|GimpModuleDB
 modifier|*
@@ -304,9 +304,9 @@ name|GimpModule
 modifier|*
 name|module
 parameter_list|,
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -314,7 +314,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|browser_info_update
+name|dialog_info_update
 parameter_list|(
 name|GimpModuleDB
 modifier|*
@@ -324,9 +324,9 @@ name|GimpModule
 modifier|*
 name|module
 parameter_list|,
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -334,11 +334,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|browser_info_init
+name|dialog_info_init
 parameter_list|(
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -354,8 +354,8 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|module_browser_new (Gimp * gimp)
-name|module_browser_new
+DECL|function|module_dialog_new (Gimp * gimp)
+name|module_dialog_new
 parameter_list|(
 name|Gimp
 modifier|*
@@ -382,9 +382,9 @@ name|GtkWidget
 modifier|*
 name|tv
 decl_stmt|;
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 decl_stmt|;
 name|GtkTreeSelection
 modifier|*
@@ -411,16 +411,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|browser
+name|dialog
 operator|=
 name|g_new0
 argument_list|(
-name|ModuleBrowser
+name|ModuleDialog
 argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|browser
+name|dialog
 operator|->
 name|gimp
 operator|=
@@ -471,10 +471,10 @@ literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|browser_response
+name|dialog_response
 argument_list|)
 argument_list|,
-name|browser
+name|dialog
 argument_list|)
 expr_stmt|;
 name|vbox
@@ -577,7 +577,7 @@ argument_list|(
 name|listbox
 argument_list|)
 expr_stmt|;
-name|browser
+name|dialog
 operator|->
 name|list
 operator|=
@@ -598,7 +598,7 @@ name|gtk_tree_view_new_with_model
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|list
 argument_list|)
@@ -606,7 +606,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|list
 argument_list|)
@@ -621,7 +621,7 @@ name|modules
 argument_list|,
 name|make_list_item
 argument_list|,
-name|browser
+name|dialog
 argument_list|)
 expr_stmt|;
 name|rend
@@ -637,10 +637,10 @@ literal|"toggled"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|browser_autoload_toggled
+name|dialog_autoload_toggled
 argument_list|)
 argument_list|,
-name|browser
+name|dialog
 argument_list|)
 expr_stmt|;
 name|col
@@ -727,7 +727,7 @@ argument_list|(
 name|tv
 argument_list|)
 expr_stmt|;
-name|browser
+name|dialog
 operator|->
 name|table
 operator|=
@@ -744,7 +744,7 @@ name|gtk_table_set_col_spacings
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|table
 argument_list|)
@@ -759,7 +759,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|browser
+name|dialog
 operator|->
 name|table
 argument_list|,
@@ -772,7 +772,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|table
 argument_list|)
@@ -813,7 +813,7 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
-name|browser
+name|dialog
 operator|->
 name|button
 operator|=
@@ -822,7 +822,7 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|browser
+name|dialog
 operator|->
 name|button_label
 operator|=
@@ -830,7 +830,7 @@ name|gtk_bin_get_child
 argument_list|(
 name|GTK_BIN
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|button
 argument_list|)
@@ -843,7 +843,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-name|browser
+name|dialog
 operator|->
 name|button
 argument_list|,
@@ -856,14 +856,14 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|button
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|button
 argument_list|,
@@ -871,32 +871,32 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|browser_load_unload_callback
+name|dialog_load_unload_callback
 argument_list|)
 argument_list|,
-name|browser
+name|dialog
 argument_list|)
 expr_stmt|;
-name|browser_info_init
+name|dialog_info_init
 argument_list|(
-name|browser
+name|dialog
 argument_list|,
-name|browser
+name|dialog
 operator|->
 name|table
 argument_list|)
 expr_stmt|;
-name|browser_info_update
+name|dialog_info_update
 argument_list|(
 name|gimp
 operator|->
 name|module_db
 argument_list|,
-name|browser
+name|dialog
 operator|->
 name|last_update
 argument_list|,
-name|browser
+name|dialog
 argument_list|)
 expr_stmt|;
 name|sel
@@ -917,10 +917,10 @@ literal|"changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|browser_select_callback
+name|dialog_select_callback
 argument_list|)
 argument_list|,
-name|browser
+name|dialog
 argument_list|)
 expr_stmt|;
 if|if
@@ -929,7 +929,7 @@ name|gtk_tree_model_get_iter_root
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|list
 argument_list|)
@@ -957,10 +957,10 @@ literal|"add"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|browser_info_add
+name|dialog_info_add
 argument_list|)
 argument_list|,
-name|browser
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -973,10 +973,10 @@ literal|"remove"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|browser_info_remove
+name|dialog_info_remove
 argument_list|)
 argument_list|,
-name|browser
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -989,10 +989,10 @@ literal|"module_modified"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|browser_info_update
+name|dialog_info_update
 argument_list|)
 argument_list|,
-name|browser
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1003,10 +1003,10 @@ literal|"destroy"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|browser_destroy_callback
+name|dialog_destroy_callback
 argument_list|)
 argument_list|,
-name|browser
+name|dialog
 argument_list|)
 expr_stmt|;
 return|return
@@ -1022,8 +1022,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|browser_response (GtkWidget * widget,gint response_id,ModuleBrowser * browser)
-name|browser_response
+DECL|function|dialog_response (GtkWidget * widget,gint response_id,ModuleDialog * dialog)
+name|dialog_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1032,9 +1032,9 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 parameter_list|)
 block|{
 if|if
@@ -1045,7 +1045,7 @@ name|MODULES_RESPONSE_REFRESH
 condition|)
 name|gimp_modules_refresh
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|gimp
 argument_list|)
@@ -1062,60 +1062,60 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|browser_destroy_callback (GtkWidget * widget,ModuleBrowser * browser)
-name|browser_destroy_callback
+DECL|function|dialog_destroy_callback (GtkWidget * widget,ModuleDialog * dialog)
+name|dialog_destroy_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 parameter_list|)
 block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|gimp
 operator|->
 name|module_db
 argument_list|,
-name|browser_info_add
+name|dialog_info_add
 argument_list|,
-name|browser
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|gimp
 operator|->
 name|module_db
 argument_list|,
-name|browser_info_remove
+name|dialog_info_remove
 argument_list|,
-name|browser
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|gimp
 operator|->
 name|module_db
 argument_list|,
-name|browser_info_update
+name|dialog_info_update
 argument_list|,
-name|browser
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|browser
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -1124,16 +1124,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|browser_select_callback (GtkTreeSelection * sel,ModuleBrowser * browser)
-name|browser_select_callback
+DECL|function|dialog_select_callback (GtkTreeSelection * sel,ModuleDialog * dialog)
+name|dialog_select_callback
 parameter_list|(
 name|GtkTreeSelection
 modifier|*
 name|sel
 parameter_list|,
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 parameter_list|)
 block|{
 name|GimpModule
@@ -1157,7 +1157,7 @@ name|gtk_tree_model_get
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|list
 argument_list|)
@@ -1176,32 +1176,32 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|browser
+name|dialog
 operator|->
 name|last_update
 operator|==
 name|module
 condition|)
 return|return;
-name|browser
+name|dialog
 operator|->
 name|last_update
 operator|=
 name|module
 expr_stmt|;
-name|browser_info_update
+name|dialog_info_update
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|gimp
 operator|->
 name|module_db
 argument_list|,
-name|browser
+name|dialog
 operator|->
 name|last_update
 argument_list|,
-name|browser
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -1210,8 +1210,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|browser_autoload_toggled (GtkCellRendererToggle * celltoggle,gchar * path_string,ModuleBrowser * browser)
-name|browser_autoload_toggled
+DECL|function|dialog_autoload_toggled (GtkCellRendererToggle * celltoggle,gchar * path_string,ModuleDialog * dialog)
+name|dialog_autoload_toggled
 parameter_list|(
 name|GtkCellRendererToggle
 modifier|*
@@ -1221,9 +1221,9 @@ name|gchar
 modifier|*
 name|path_string
 parameter_list|,
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 parameter_list|)
 block|{
 name|GtkTreePath
@@ -1258,7 +1258,7 @@ name|gtk_tree_model_get_iter
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|list
 argument_list|)
@@ -1288,7 +1288,7 @@ name|gtk_tree_model_get
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|list
 argument_list|)
@@ -1322,7 +1322,7 @@ argument_list|,
 name|active
 argument_list|)
 expr_stmt|;
-name|browser
+name|dialog
 operator|->
 name|gimp
 operator|->
@@ -1334,7 +1334,7 @@ name|gtk_list_store_set
 argument_list|(
 name|GTK_LIST_STORE
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|list
 argument_list|)
@@ -1358,21 +1358,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|browser_load_unload_callback (GtkWidget * widget,ModuleBrowser * browser)
-name|browser_load_unload_callback
+DECL|function|dialog_load_unload_callback (GtkWidget * widget,ModuleDialog * dialog)
+name|dialog_load_unload_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 parameter_list|)
 block|{
 if|if
 condition|(
-name|browser
+name|dialog
 operator|->
 name|last_update
 operator|->
@@ -1383,7 +1383,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|browser
+name|dialog
 operator|->
 name|last_update
 operator|->
@@ -1396,7 +1396,7 @@ name|g_type_module_use
 argument_list|(
 name|G_TYPE_MODULE
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|last_update
 argument_list|)
@@ -1406,7 +1406,7 @@ name|g_type_module_unuse
 argument_list|(
 name|G_TYPE_MODULE
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|last_update
 argument_list|)
@@ -1417,7 +1417,7 @@ else|else
 block|{
 name|gimp_module_query_module
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|last_update
 argument_list|)
@@ -1426,7 +1426,7 @@ block|}
 block|}
 name|gimp_module_modified
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|last_update
 argument_list|)
@@ -1453,9 +1453,9 @@ name|module
 init|=
 name|data
 decl_stmt|;
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 init|=
 name|user_data
 decl_stmt|;
@@ -1465,11 +1465,11 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|browser
+name|dialog
 operator|->
 name|last_update
 condition|)
-name|browser
+name|dialog
 operator|->
 name|last_update
 operator|=
@@ -1477,7 +1477,7 @@ name|module
 expr_stmt|;
 name|gtk_list_store_append
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|list
 argument_list|,
@@ -1487,7 +1487,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_list_store_set
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|list
 argument_list|,
@@ -1521,8 +1521,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|browser_info_add (GimpModuleDB * db,GimpModule * module,ModuleBrowser * browser)
-name|browser_info_add
+DECL|function|dialog_info_add (GimpModuleDB * db,GimpModule * module,ModuleDialog * dialog)
+name|dialog_info_add
 parameter_list|(
 name|GimpModuleDB
 modifier|*
@@ -1532,16 +1532,16 @@ name|GimpModule
 modifier|*
 name|module
 parameter_list|,
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 parameter_list|)
 block|{
 name|make_list_item
 argument_list|(
 name|module
 argument_list|,
-name|browser
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -1550,8 +1550,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|browser_info_remove (GimpModuleDB * db,GimpModule * mod,ModuleBrowser * browser)
-name|browser_info_remove
+DECL|function|dialog_info_remove (GimpModuleDB * db,GimpModule * mod,ModuleDialog * dialog)
+name|dialog_info_remove
 parameter_list|(
 name|GimpModuleDB
 modifier|*
@@ -1561,9 +1561,9 @@ name|GimpModule
 modifier|*
 name|mod
 parameter_list|,
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 parameter_list|)
 block|{
 name|GtkTreeIter
@@ -1581,7 +1581,7 @@ name|gtk_tree_model_get_iter_root
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|list
 argument_list|)
@@ -1597,7 +1597,7 @@ name|gtk_tree_model_get
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|list
 argument_list|)
@@ -1623,7 +1623,7 @@ condition|)
 block|{
 name|gtk_list_store_remove
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|list
 argument_list|,
@@ -1640,7 +1640,7 @@ name|gtk_tree_model_iter_next
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|list
 argument_list|)
@@ -1652,7 +1652,7 @@ condition|)
 do|;
 name|g_warning
 argument_list|(
-literal|"%s: Tried to remove a module not in the browser's list."
+literal|"%s: Tried to remove a module not in the dialog's list."
 argument_list|,
 name|G_STRFUNC
 argument_list|)
@@ -1663,8 +1663,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|browser_info_update (GimpModuleDB * db,GimpModule * module,ModuleBrowser * browser)
-name|browser_info_update
+DECL|function|dialog_info_update (GimpModuleDB * db,GimpModule * module,ModuleDialog * dialog)
+name|dialog_info_update
 parameter_list|(
 name|GimpModuleDB
 modifier|*
@@ -1674,9 +1674,9 @@ name|GimpModule
 modifier|*
 name|module
 parameter_list|,
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 parameter_list|)
 block|{
 name|GTypeModule
@@ -1706,7 +1706,7 @@ if|if
 condition|(
 name|module
 operator|!=
-name|browser
+name|dialog
 operator|->
 name|last_update
 condition|)
@@ -1734,7 +1734,7 @@ name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|label
 index|[
@@ -1749,7 +1749,7 @@ name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|button_label
 argument_list|)
@@ -1764,7 +1764,7 @@ name|gtk_widget_set_sensitive
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|button
 argument_list|)
@@ -1994,7 +1994,7 @@ name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|label
 index|[
@@ -2019,7 +2019,7 @@ name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|label
 index|[
@@ -2052,7 +2052,7 @@ name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|label
 index|[
@@ -2096,7 +2096,7 @@ name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|button_label
 argument_list|)
@@ -2112,7 +2112,7 @@ name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|button_label
 argument_list|)
@@ -2127,7 +2127,7 @@ name|gtk_widget_set_sensitive
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|button
 argument_list|)
@@ -2145,7 +2145,7 @@ name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|button_label
 argument_list|)
@@ -2160,7 +2160,7 @@ name|gtk_widget_set_sensitive
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|button
 argument_list|)
@@ -2176,12 +2176,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|browser_info_init (ModuleBrowser * browser,GtkWidget * table)
-name|browser_info_init
+DECL|function|dialog_info_init (ModuleDialog * dialog,GtkWidget * table)
+name|dialog_info_init
 parameter_list|(
-name|ModuleBrowser
+name|ModuleDialog
 modifier|*
-name|browser
+name|dialog
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -2329,7 +2329,7 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-name|browser
+name|dialog
 operator|->
 name|label
 index|[
@@ -2345,7 +2345,7 @@ name|gtk_misc_set_alignment
 argument_list|(
 name|GTK_MISC
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|label
 index|[
@@ -2362,12 +2362,12 @@ name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|table
 argument_list|)
 argument_list|,
-name|browser
+name|dialog
 operator|->
 name|label
 index|[
@@ -2399,7 +2399,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|browser
+name|dialog
 operator|->
 name|label
 index|[

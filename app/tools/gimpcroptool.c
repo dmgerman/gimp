@@ -132,7 +132,7 @@ end_ifdef
 begin_warning
 warning|#
 directive|warning
-warning|FIXME #include "gui/gui-types.h"
+warning|FIXME #include "dialogs/dialogs-types.h"
 end_warning
 
 begin_endif
@@ -143,13 +143,13 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"gui/gui-types.h"
+file|"dialogs/dialogs-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/info-dialog.h"
+file|"dialogs/info-dialog.h"
 end_include
 
 begin_include
@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f7e3330103
+DECL|enum|__anon28ea797c0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING

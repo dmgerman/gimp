@@ -96,7 +96,7 @@ end_ifdef
 begin_warning
 warning|#
 directive|warning
-warning|FIXME #include "gui/gui-types.h"
+warning|FIXME #include "dialogs/dialogs-types.h"
 end_warning
 
 begin_endif
@@ -107,13 +107,13 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"gui/gui-types.h"
+file|"dialogs/dialogs-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/info-dialog.h"
+file|"dialogs/info-dialog.h"
 end_include
 
 begin_include

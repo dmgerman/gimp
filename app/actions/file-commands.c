@@ -126,19 +126,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/dialogs.h"
+file|"dialogs/dialogs.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/file-open-dialog.h"
+file|"dialogs/file-open-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/file-save-dialog.h"
+file|"dialogs/file-save-dialog.h"
 end_include
 
 begin_include

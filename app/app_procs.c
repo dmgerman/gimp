@@ -118,13 +118,13 @@ end_ifndef
 begin_include
 include|#
 directive|include
-file|"gui/gui.h"
+file|"dialogs/user-install-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/user-install-dialog.h"
+file|"gui/gui.h"
 end_include
 
 begin_endif

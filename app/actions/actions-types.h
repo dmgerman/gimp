@@ -19,13 +19,13 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gui/gui-types.h"
+file|"tools/tools-types.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297e6e820103
+DECL|enum|__anon27a0eea40103
 block|{
 DECL|enumerator|GIMP_ACTION_SELECT_SET
 name|GIMP_ACTION_SELECT_SET

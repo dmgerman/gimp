@@ -6,45 +6,45 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__COLOR_NOTEBOOK_H__
+name|__COLOR_DIALOG_H__
 end_ifndef
 
 begin_define
-DECL|macro|__COLOR_NOTEBOOK_H__
+DECL|macro|__COLOR_DIALOG_H__
 define|#
 directive|define
-name|__COLOR_NOTEBOOK_H__
+name|__COLOR_DIALOG_H__
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b93ffb00103
+DECL|enum|__anon29f942b00103
 block|{
-DECL|enumerator|COLOR_NOTEBOOK_OK
-name|COLOR_NOTEBOOK_OK
+DECL|enumerator|COLOR_DIALOG_OK
+name|COLOR_DIALOG_OK
 block|,
-DECL|enumerator|COLOR_NOTEBOOK_CANCEL
-name|COLOR_NOTEBOOK_CANCEL
+DECL|enumerator|COLOR_DIALOG_CANCEL
+name|COLOR_DIALOG_CANCEL
 block|,
-DECL|enumerator|COLOR_NOTEBOOK_UPDATE
-name|COLOR_NOTEBOOK_UPDATE
-DECL|typedef|ColorNotebookState
+DECL|enumerator|COLOR_DIALOG_UPDATE
+name|COLOR_DIALOG_UPDATE
+DECL|typedef|ColorDialogState
 block|}
-name|ColorNotebookState
+name|ColorDialogState
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|ColorNotebookCallback
+DECL|typedef|ColorDialogCallback
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|ColorNotebookCallback
+name|ColorDialogCallback
 function_decl|)
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnb
 parameter_list|,
@@ -53,7 +53,7 @@ name|GimpRGB
 modifier|*
 name|color
 parameter_list|,
-name|ColorNotebookState
+name|ColorDialogState
 name|state
 parameter_list|,
 name|gpointer
@@ -63,9 +63,9 @@ function_decl|;
 end_typedef
 
 begin_function_decl
-name|ColorNotebook
+name|ColorDialog
 modifier|*
-name|color_notebook_new
+name|color_dialog_new
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -104,7 +104,7 @@ name|GimpRGB
 modifier|*
 name|color
 parameter_list|,
-name|ColorNotebookCallback
+name|ColorDialogCallback
 name|callback
 parameter_list|,
 name|gpointer
@@ -121,9 +121,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|color_notebook_free
+name|color_dialog_free
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnb
 parameter_list|)
@@ -132,9 +132,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|color_notebook_set_viewable
+name|color_dialog_set_viewable
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnb
 parameter_list|,
@@ -147,9 +147,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|color_notebook_set_title
+name|color_dialog_set_title
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnb
 parameter_list|,
@@ -163,9 +163,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|color_notebook_show
+name|color_dialog_show
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnb
 parameter_list|)
@@ -174,9 +174,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|color_notebook_hide
+name|color_dialog_hide
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnb
 parameter_list|)
@@ -185,9 +185,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|color_notebook_set_color
+name|color_dialog_set_color
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnb
 parameter_list|,
@@ -201,9 +201,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|color_notebook_get_color
+name|color_dialog_get_color
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnb
 parameter_list|,
@@ -220,7 +220,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __COLOR_NOTEBOOK_H__ */
+comment|/* __COLOR_DIALOG_H__ */
 end_comment
 
 end_unit

@@ -23,7 +23,7 @@ end_comment
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|dialogs_file_new_new
+name|dialogs_image_new_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
@@ -80,7 +80,7 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|dialogs_module_browser_get
+name|dialogs_module_get
 parameter_list|(
 name|GimpDialogFactory
 modifier|*

@@ -126,25 +126,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/color-notebook.h"
+file|"dialogs/color-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/dialogs.h"
+file|"dialogs/dialogs.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/info-dialog.h"
+file|"dialogs/info-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/info-window.h"
+file|"dialogs/info-window.h"
 end_include
 
 begin_include
@@ -1766,10 +1766,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|view_padding_color_callback (ColorNotebook * cnb,const GimpRGB * color,ColorNotebookState state,gpointer data)
+DECL|function|view_padding_color_callback (ColorDialog * cnb,const GimpRGB * color,ColorDialogState state,gpointer data)
 name|view_padding_color_callback
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnb
 parameter_list|,
@@ -1778,7 +1778,7 @@ name|GimpRGB
 modifier|*
 name|color
 parameter_list|,
-name|ColorNotebookState
+name|ColorDialogState
 name|state
 parameter_list|,
 name|gpointer
@@ -1831,7 +1831,7 @@ name|state
 condition|)
 block|{
 case|case
-name|COLOR_NOTEBOOK_OK
+name|COLOR_DIALOG_OK
 case|:
 name|options
 operator|->
@@ -1850,7 +1850,7 @@ argument_list|)
 expr_stmt|;
 comment|/* fallthru */
 case|case
-name|COLOR_NOTEBOOK_CANCEL
+name|COLOR_DIALOG_CANCEL
 case|:
 name|g_object_set_data
 argument_list|(
@@ -1859,7 +1859,7 @@ argument_list|(
 name|shell
 argument_list|)
 argument_list|,
-literal|"padding-color-notebook"
+literal|"padding-color-dialog"
 argument_list|,
 name|NULL
 argument_list|)
@@ -1966,7 +1966,7 @@ argument_list|(
 name|shell
 argument_list|)
 argument_list|,
-literal|"padding-color-notebook"
+literal|"padding-color-dialog"
 argument_list|,
 name|NULL
 argument_list|)
@@ -1997,11 +1997,11 @@ case|case
 name|GIMP_CANVAS_PADDING_MODE_CUSTOM
 case|:
 block|{
-name|ColorNotebook
+name|ColorDialog
 modifier|*
-name|color_notebook
+name|color_dialog
 decl_stmt|;
-name|color_notebook
+name|color_dialog
 operator|=
 name|g_object_get_data
 argument_list|(
@@ -2010,18 +2010,18 @@ argument_list|(
 name|shell
 argument_list|)
 argument_list|,
-literal|"padding-color-notebook"
+literal|"padding-color-dialog"
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 operator|!
-name|color_notebook
+name|color_dialog
 condition|)
 block|{
-name|color_notebook
+name|color_dialog
 operator|=
-name|color_notebook_new
+name|color_dialog_new
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
@@ -2068,20 +2068,20 @@ argument_list|(
 name|shell
 argument_list|)
 argument_list|,
-literal|"padding-color-notebook"
+literal|"padding-color-dialog"
 argument_list|,
-name|color_notebook
+name|color_dialog
 argument_list|,
 operator|(
 name|GDestroyNotify
 operator|)
-name|color_notebook_free
+name|color_dialog_free
 argument_list|)
 expr_stmt|;
 block|}
-name|color_notebook_show
+name|color_dialog_show
 argument_list|(
-name|color_notebook
+name|color_dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -2096,7 +2096,7 @@ argument_list|(
 name|shell
 argument_list|)
 argument_list|,
-literal|"padding-color-notebook"
+literal|"padding-color-dialog"
 argument_list|,
 name|NULL
 argument_list|)

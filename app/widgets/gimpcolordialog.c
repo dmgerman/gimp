@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * color_notebook module (C) 1998 Austin Donnelly<austin@greenend.org.uk>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * color_dialog module (C) 1998 Austin Donnelly<austin@greenend.org.uk>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"dialogs-types.h"
 end_include
 
 begin_include
@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"color-history.h"
+file|"gui/color-history.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"color-notebook.h"
+file|"color-dialog.h"
 end_include
 
 begin_include
@@ -86,9 +86,9 @@ value|20
 end_define
 
 begin_struct
-DECL|struct|_ColorNotebook
+DECL|struct|_ColorDialog
 struct|struct
-name|_ColorNotebook
+name|_ColorDialog
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -109,7 +109,7 @@ name|COLOR_HISTORY_SIZE
 index|]
 decl_stmt|;
 DECL|member|callback
-name|ColorNotebookCallback
+name|ColorDialogCallback
 name|callback
 decl_stmt|;
 DECL|member|client_data
@@ -127,7 +127,7 @@ end_struct
 begin_function_decl
 specifier|static
 name|void
-name|color_notebook_help_func
+name|color_dialog_help_func
 parameter_list|(
 specifier|const
 name|gchar
@@ -143,7 +143,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|color_notebook_response
+name|color_dialog_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -152,7 +152,7 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnp
 parameter_list|)
@@ -162,13 +162,13 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|color_notebook_color_changed
+name|color_dialog_color_changed
 parameter_list|(
 name|GimpColorSelection
 modifier|*
 name|selection
 parameter_list|,
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnp
 parameter_list|)
@@ -184,7 +184,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnp
 parameter_list|)
@@ -215,7 +215,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnp
 parameter_list|)
@@ -223,11 +223,11 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
-DECL|variable|color_notebooks
+DECL|variable|color_dialogs
 specifier|static
 name|GList
 modifier|*
-name|color_notebooks
+name|color_dialogs
 init|=
 name|NULL
 decl_stmt|;
@@ -238,10 +238,10 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|ColorNotebook
+name|ColorDialog
 modifier|*
-DECL|function|color_notebook_new (GimpViewable * viewable,const gchar * title,const gchar * stock_id,const gchar * desc,GtkWidget * parent,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const GimpRGB * color,ColorNotebookCallback callback,gpointer client_data,gboolean wants_updates,gboolean show_alpha)
-name|color_notebook_new
+DECL|function|color_dialog_new (GimpViewable * viewable,const gchar * title,const gchar * stock_id,const gchar * desc,GtkWidget * parent,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const GimpRGB * color,ColorDialogCallback callback,gpointer client_data,gboolean wants_updates,gboolean show_alpha)
+name|color_dialog_new
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -280,7 +280,7 @@ name|GimpRGB
 modifier|*
 name|color
 parameter_list|,
-name|ColorNotebookCallback
+name|ColorDialogCallback
 name|callback
 parameter_list|,
 name|gpointer
@@ -293,7 +293,7 @@ name|gboolean
 name|show_alpha
 parameter_list|)
 block|{
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnp
 decl_stmt|;
@@ -381,7 +381,7 @@ name|cnp
 operator|=
 name|g_new0
 argument_list|(
-name|ColorNotebook
+name|ColorDialog
 argument_list|,
 literal|1
 argument_list|)
@@ -435,7 +435,7 @@ name|desc
 argument_list|,
 name|parent
 argument_list|,
-name|color_notebook_help_func
+name|color_dialog_help_func
 argument_list|,
 name|NULL
 argument_list|,
@@ -471,7 +471,7 @@ name|parent
 argument_list|,
 literal|0
 argument_list|,
-name|color_notebook_help_func
+name|color_dialog_help_func
 argument_list|,
 name|NULL
 argument_list|,
@@ -488,7 +488,7 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
-literal|"color-notebook"
+literal|"color-dialog"
 argument_list|,
 name|cnp
 argument_list|)
@@ -539,7 +539,7 @@ literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|color_notebook_response
+name|color_dialog_response
 argument_list|)
 argument_list|,
 name|cnp
@@ -670,7 +670,7 @@ literal|"color_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|color_notebook_color_changed
+name|color_dialog_color_changed
 argument_list|)
 argument_list|,
 name|cnp
@@ -1009,11 +1009,11 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-name|color_notebooks
+name|color_dialogs
 operator|=
 name|g_list_prepend
 argument_list|(
-name|color_notebooks
+name|color_dialogs
 argument_list|,
 name|cnp
 argument_list|)
@@ -1026,10 +1026,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|color_notebook_free (ColorNotebook * cnp)
-name|color_notebook_free
+DECL|function|color_dialog_free (ColorDialog * cnp)
+name|color_dialog_free
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnp
 parameter_list|)
@@ -1041,11 +1041,11 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|color_notebooks
+name|color_dialogs
 operator|=
 name|g_list_remove
 argument_list|(
-name|color_notebooks
+name|color_dialogs
 argument_list|,
 name|cnp
 argument_list|)
@@ -1095,10 +1095,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|color_notebook_set_viewable (ColorNotebook * cnb,GimpViewable * viewable)
-name|color_notebook_set_viewable
+DECL|function|color_dialog_set_viewable (ColorDialog * cnb,GimpViewable * viewable)
+name|color_dialog_set_viewable
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnb
 parameter_list|,
@@ -1140,10 +1140,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|color_notebook_set_title (ColorNotebook * cnb,const gchar * title)
-name|color_notebook_set_title
+DECL|function|color_dialog_set_title (ColorDialog * cnb,const gchar * title)
+name|color_dialog_set_title
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnb
 parameter_list|,
@@ -1184,10 +1184,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|color_notebook_set_color (ColorNotebook * cnp,const GimpRGB * color)
-name|color_notebook_set_color
+DECL|function|color_dialog_set_color (ColorDialog * cnp,const GimpRGB * color)
+name|color_dialog_set_color
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnp
 parameter_list|,
@@ -1217,7 +1217,7 @@ name|cnp
 operator|->
 name|selection
 argument_list|,
-name|color_notebook_color_changed
+name|color_dialog_color_changed
 argument_list|,
 name|cnp
 argument_list|)
@@ -1252,7 +1252,7 @@ name|cnp
 operator|->
 name|selection
 argument_list|,
-name|color_notebook_color_changed
+name|color_dialog_color_changed
 argument_list|,
 name|cnp
 argument_list|)
@@ -1262,10 +1262,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|color_notebook_get_color (ColorNotebook * cnp,GimpRGB * color)
-name|color_notebook_get_color
+DECL|function|color_dialog_get_color (ColorDialog * cnp,GimpRGB * color)
+name|color_dialog_get_color
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnp
 parameter_list|,
@@ -1305,10 +1305,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|color_notebook_show (ColorNotebook * cnp)
-name|color_notebook_show
+DECL|function|color_dialog_show (ColorDialog * cnp)
+name|color_dialog_show
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnp
 parameter_list|)
@@ -1335,10 +1335,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|color_notebook_hide (ColorNotebook * cnp)
-name|color_notebook_hide
+DECL|function|color_dialog_hide (ColorDialog * cnp)
+name|color_dialog_hide
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnp
 parameter_list|)
@@ -1367,8 +1367,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|color_notebook_help_func (const gchar * help_id,gpointer help_data)
-name|color_notebook_help_func
+DECL|function|color_dialog_help_func (const gchar * help_id,gpointer help_data)
+name|color_dialog_help_func
 parameter_list|(
 specifier|const
 name|gchar
@@ -1379,7 +1379,7 @@ name|gpointer
 name|help_data
 parameter_list|)
 block|{
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnp
 decl_stmt|;
@@ -1437,8 +1437,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_notebook_response (GtkWidget * widget,gint response_id,ColorNotebook * cnp)
-name|color_notebook_response
+DECL|function|color_dialog_response (GtkWidget * widget,gint response_id,ColorDialog * cnp)
+name|color_dialog_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1447,7 +1447,7 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnp
 parameter_list|)
@@ -1512,7 +1512,7 @@ argument_list|,
 operator|&
 name|color
 argument_list|,
-name|COLOR_NOTEBOOK_OK
+name|COLOR_DIALOG_OK
 argument_list|,
 name|cnp
 operator|->
@@ -1549,7 +1549,7 @@ argument_list|,
 operator|&
 name|color
 argument_list|,
-name|COLOR_NOTEBOOK_CANCEL
+name|COLOR_DIALOG_CANCEL
 argument_list|,
 name|cnp
 operator|->
@@ -1564,14 +1564,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_notebook_color_changed (GimpColorSelection * selection,ColorNotebook * cnp)
-name|color_notebook_color_changed
+DECL|function|color_dialog_color_changed (GimpColorSelection * selection,ColorDialog * cnp)
+name|color_dialog_color_changed
 parameter_list|(
 name|GimpColorSelection
 modifier|*
 name|selection
 parameter_list|,
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnp
 parameter_list|)
@@ -1606,7 +1606,7 @@ argument_list|,
 operator|&
 name|color
 argument_list|,
-name|COLOR_NOTEBOOK_UPDATE
+name|COLOR_DIALOG_UPDATE
 argument_list|,
 name|cnp
 operator|->
@@ -1623,14 +1623,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|color_history_color_clicked (GtkWidget * widget,ColorNotebook * cnp)
+DECL|function|color_history_color_clicked (GtkWidget * widget,ColorDialog * cnp)
 name|color_history_color_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnp
 parameter_list|)
@@ -1732,7 +1732,7 @@ for|for
 control|(
 name|list
 operator|=
-name|color_notebooks
+name|color_dialogs
 init|;
 name|list
 condition|;
@@ -1744,9 +1744,9 @@ name|list
 argument_list|)
 control|)
 block|{
-name|ColorNotebook
+name|ColorDialog
 modifier|*
-name|notebook
+name|dialog
 init|=
 name|list
 operator|->
@@ -1754,7 +1754,7 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|notebook
+name|dialog
 operator|->
 name|history
 index|[
@@ -1766,7 +1766,7 @@ condition|)
 block|{
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|notebook
+name|dialog
 operator|->
 name|history
 index|[
@@ -1782,7 +1782,7 @@ name|gimp_color_area_set_color
 argument_list|(
 name|GIMP_COLOR_AREA
 argument_list|(
-name|notebook
+name|dialog
 operator|->
 name|history
 index|[
@@ -1796,7 +1796,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|notebook
+name|dialog
 operator|->
 name|history
 index|[
@@ -1816,14 +1816,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_history_add_clicked (GtkWidget * widget,ColorNotebook * cnp)
+DECL|function|color_history_add_clicked (GtkWidget * widget,ColorDialog * cnp)
 name|color_history_add_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnp
 parameter_list|)

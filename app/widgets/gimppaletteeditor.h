@@ -25,7 +25,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/gui-types.h"
+file|"dialogs/dialogs-types.h"
 end_include
 
 begin_comment
@@ -163,10 +163,10 @@ name|GtkWidget
 modifier|*
 name|zoom_all_button
 decl_stmt|;
-DECL|member|color_notebook
-name|ColorNotebook
+DECL|member|color_dialog
+name|ColorDialog
 modifier|*
-name|color_notebook
+name|color_dialog
 decl_stmt|;
 DECL|member|color
 name|GimpPaletteEntry

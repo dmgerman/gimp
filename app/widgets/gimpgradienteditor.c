@@ -134,7 +134,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/color-notebook.h"
+file|"dialogs/color-dialog.h"
 end_include
 
 begin_include
@@ -2129,19 +2129,19 @@ if|if
 condition|(
 name|gradient_editor
 operator|->
-name|color_notebook
+name|color_dialog
 condition|)
 block|{
-name|color_notebook_free
+name|color_dialog_free
 argument_list|(
 name|gradient_editor
 operator|->
-name|color_notebook
+name|color_dialog
 argument_list|)
 expr_stmt|;
 name|gradient_editor
 operator|->
-name|color_notebook
+name|color_dialog
 operator|=
 name|NULL
 expr_stmt|;

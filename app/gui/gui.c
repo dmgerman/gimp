@@ -222,13 +222,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"color-history.h"
+file|"dialogs/dialogs.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"dialogs.h"
+file|"dialogs/quit-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"color-history.h"
 end_include
 
 begin_include
@@ -241,12 +247,6 @@ begin_include
 include|#
 directive|include
 file|"gui-vtable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"quit-dialog.h"
 end_include
 
 begin_include

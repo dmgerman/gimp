@@ -6,45 +6,39 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__FILE_SAVE_DIALOG_H__
+name|__DIALOGS_TYPES_H__
 end_ifndef
 
 begin_define
-DECL|macro|__FILE_SAVE_DIALOG_H__
+DECL|macro|__DIALOGS_TYPES_H__
 define|#
 directive|define
-name|__FILE_SAVE_DIALOG_H__
+name|__DIALOGS_TYPES_H__
 end_define
 
-begin_function_decl
-name|void
-name|file_save_dialog_show
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|parent
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_include
+include|#
+directive|include
+file|"display/display-types.h"
+end_include
 
-begin_function_decl
-name|void
-name|file_save_a_copy_dialog_show
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|parent
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_typedef
+DECL|typedef|ColorDialog
+typedef|typedef
+name|struct
+name|_ColorDialog
+name|ColorDialog
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|InfoDialog
+typedef|typedef
+name|struct
+name|_InfoDialog
+name|InfoDialog
+typedef|;
+end_typedef
 
 begin_endif
 endif|#
@@ -52,7 +46,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __FILE_SAVE_DIALOG_H__ */
+comment|/* __DIALOGS_TYPES_H__ */
 end_comment
 
 end_unit

@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/offset-dialog.h"
+file|"dialogs/offset-dialog.h"
 end_include
 
 begin_include

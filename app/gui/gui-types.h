@@ -25,26 +25,14 @@ end_include
 begin_include
 include|#
 directive|include
-file|"menus/menus-types.h"
+file|"dialogs/dialogs-types.h"
 end_include
 
-begin_typedef
-DECL|typedef|ColorNotebook
-typedef|typedef
-name|struct
-name|_ColorNotebook
-name|ColorNotebook
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|InfoDialog
-typedef|typedef
-name|struct
-name|_InfoDialog
-name|InfoDialog
-typedef|;
-end_typedef
+begin_include
+include|#
+directive|include
+file|"menus/menus-types.h"
+end_include
 
 begin_endif
 endif|#

@@ -33,29 +33,6 @@ directive|include
 file|"display-types.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "gui/gui-types.h"
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|"gui/gui-types.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -98,10 +75,33 @@ directive|include
 file|"file/file-utils.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|FIXME #include "dialogs/dialogs-types.h"
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
-file|"gui/info-window.h"
+file|"dialogs/dialogs-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"dialogs/info-window.h"
 end_include
 
 begin_include

@@ -23,13 +23,13 @@ file|<gtk/gtkwindow.h>
 end_include
 
 begin_comment
-comment|/*  FIXME: remove all gui/ stuff  */
+comment|/*  FIXME: remove all dialogs/ stuff  */
 end_comment
 
 begin_include
 include|#
 directive|include
-file|"gui/gui-types.h"
+file|"dialogs/dialogs-types.h"
 end_include
 
 begin_comment

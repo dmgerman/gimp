@@ -210,7 +210,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/resize-dialog.h"
+file|"dialogs/resize-dialog.h"
 end_include
 
 begin_include

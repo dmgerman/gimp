@@ -126,7 +126,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|templates_file_new_dialog
+name|templates_image_new_dialog
 parameter_list|(
 name|Gimp
 modifier|*

@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"dialogs-types.h"
 end_include
 
 begin_include
@@ -192,19 +192,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/session.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/themes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"resolution-calibrate-dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"session.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"themes.h"
 end_include
 
 begin_include
@@ -7709,7 +7709,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27ec52c30108
+DECL|struct|__anon2b2137840108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9032,7 +9032,7 @@ modifier|*
 name|list
 decl_stmt|;
 enum|enum
-DECL|enum|__anon27ec52c30203
+DECL|enum|__anon2b2137840203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -10425,7 +10425,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27ec52c30308
+DECL|struct|__anon2b2137840308
 block|{
 DECL|member|label
 specifier|const
@@ -10582,7 +10582,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27ec52c30408
+DECL|struct|__anon2b2137840408
 block|{
 DECL|member|tree_label
 specifier|const

@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"dialogs-types.h"
 end_include
 
 begin_include
@@ -168,7 +168,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4129340108
+DECL|struct|__anon2c7f91ba0108
 block|{
 DECL|member|about_dialog
 name|GtkWidget

@@ -240,13 +240,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs.h"
+file|"dialogs/dialogs.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"dialogs-constructors.h"
+file|"dialogs/dialogs-constructors.h"
 end_include
 
 begin_include

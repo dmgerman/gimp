@@ -72,13 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/color-notebook.h"
+file|"dialogs/dialogs.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/dialogs.h"
+file|"dialogs/color-dialog.h"
 end_include
 
 begin_include
@@ -102,7 +102,7 @@ specifier|static
 name|void
 name|gradient_editor_left_color_changed
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnb
 parameter_list|,
@@ -111,7 +111,7 @@ name|GimpRGB
 modifier|*
 name|color
 parameter_list|,
-name|ColorNotebookState
+name|ColorDialogState
 name|state
 parameter_list|,
 name|gpointer
@@ -125,7 +125,7 @@ specifier|static
 name|void
 name|gradient_editor_right_color_changed
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnb
 parameter_list|,
@@ -134,7 +134,7 @@ name|GimpRGB
 modifier|*
 name|color
 parameter_list|,
-name|ColorNotebookState
+name|ColorDialogState
 name|state
 parameter_list|,
 name|gpointer
@@ -274,9 +274,9 @@ argument_list|)
 expr_stmt|;
 name|editor
 operator|->
-name|color_notebook
+name|color_dialog
 operator|=
-name|color_notebook_new
+name|color_dialog_new
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
@@ -650,9 +650,9 @@ argument_list|)
 expr_stmt|;
 name|editor
 operator|->
-name|color_notebook
+name|color_dialog
 operator|=
-name|color_notebook_new
+name|color_dialog_new
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
@@ -2287,10 +2287,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_editor_left_color_changed (ColorNotebook * cnb,const GimpRGB * color,ColorNotebookState state,gpointer data)
+DECL|function|gradient_editor_left_color_changed (ColorDialog * cnb,const GimpRGB * color,ColorDialogState state,gpointer data)
 name|gradient_editor_left_color_changed
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnb
 parameter_list|,
@@ -2299,7 +2299,7 @@ name|GimpRGB
 modifier|*
 name|color
 parameter_list|,
-name|ColorNotebookState
+name|ColorDialogState
 name|state
 parameter_list|,
 name|gpointer
@@ -2337,7 +2337,7 @@ name|state
 condition|)
 block|{
 case|case
-name|COLOR_NOTEBOOK_UPDATE
+name|COLOR_DIALOG_UPDATE
 case|:
 name|gimp_gradient_segment_range_blend
 argument_list|(
@@ -2367,7 +2367,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|COLOR_NOTEBOOK_OK
+name|COLOR_DIALOG_OK
 case|:
 name|gimp_gradient_segment_range_blend
 argument_list|(
@@ -2402,14 +2402,14 @@ operator|->
 name|left_saved_segments
 argument_list|)
 expr_stmt|;
-name|color_notebook_free
+name|color_dialog_free
 argument_list|(
 name|cnb
 argument_list|)
 expr_stmt|;
 name|editor
 operator|->
-name|color_notebook
+name|color_dialog
 operator|=
 name|NULL
 expr_stmt|;
@@ -2425,7 +2425,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|COLOR_NOTEBOOK_CANCEL
+name|COLOR_DIALOG_CANCEL
 case|:
 name|gradient_editor_replace_selection
 argument_list|(
@@ -2455,14 +2455,14 @@ name|gradient
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|color_notebook_free
+name|color_dialog_free
 argument_list|(
 name|cnb
 argument_list|)
 expr_stmt|;
 name|editor
 operator|->
-name|color_notebook
+name|color_dialog
 operator|=
 name|NULL
 expr_stmt|;
@@ -2484,10 +2484,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_editor_right_color_changed (ColorNotebook * cnb,const GimpRGB * color,ColorNotebookState state,gpointer data)
+DECL|function|gradient_editor_right_color_changed (ColorDialog * cnb,const GimpRGB * color,ColorDialogState state,gpointer data)
 name|gradient_editor_right_color_changed
 parameter_list|(
-name|ColorNotebook
+name|ColorDialog
 modifier|*
 name|cnb
 parameter_list|,
@@ -2496,7 +2496,7 @@ name|GimpRGB
 modifier|*
 name|color
 parameter_list|,
-name|ColorNotebookState
+name|ColorDialogState
 name|state
 parameter_list|,
 name|gpointer
@@ -2534,7 +2534,7 @@ name|state
 condition|)
 block|{
 case|case
-name|COLOR_NOTEBOOK_UPDATE
+name|COLOR_DIALOG_UPDATE
 case|:
 name|gimp_gradient_segment_range_blend
 argument_list|(
@@ -2564,7 +2564,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|COLOR_NOTEBOOK_OK
+name|COLOR_DIALOG_OK
 case|:
 name|gimp_gradient_segment_range_blend
 argument_list|(
@@ -2599,14 +2599,14 @@ operator|->
 name|right_saved_segments
 argument_list|)
 expr_stmt|;
-name|color_notebook_free
+name|color_dialog_free
 argument_list|(
 name|cnb
 argument_list|)
 expr_stmt|;
 name|editor
 operator|->
-name|color_notebook
+name|color_dialog
 operator|=
 name|NULL
 expr_stmt|;
@@ -2622,7 +2622,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|COLOR_NOTEBOOK_CANCEL
+name|COLOR_DIALOG_CANCEL
 case|:
 name|gradient_editor_replace_selection
 argument_list|(
@@ -2652,14 +2652,14 @@ name|gradient
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|color_notebook_free
+name|color_dialog_free
 argument_list|(
 name|cnb
 argument_list|)
 expr_stmt|;
 name|editor
 operator|->
-name|color_notebook
+name|color_dialog
 operator|=
 name|NULL
 expr_stmt|;
