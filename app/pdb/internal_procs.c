@@ -64,15 +64,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|register_channel_ops_procs
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|register_color_procs
 parameter_list|(
 name|void
@@ -389,25 +380,10 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Channel Ops"
-argument_list|)
-argument_list|,
-literal|0.094
-argument_list|)
-expr_stmt|;
-name|register_channel_ops_procs
-argument_list|()
-expr_stmt|;
-name|app_init_update_status
-argument_list|(
-name|NULL
-argument_list|,
-name|_
-argument_list|(
 literal|"Color"
 argument_list|)
 argument_list|,
-literal|0.1
+literal|0.094
 argument_list|)
 expr_stmt|;
 name|register_color_procs
@@ -422,7 +398,7 @@ argument_list|(
 literal|"Convert"
 argument_list|)
 argument_list|,
-literal|0.138
+literal|0.132
 argument_list|)
 expr_stmt|;
 name|register_convert_procs
@@ -437,7 +413,7 @@ argument_list|(
 literal|"GDisplay procedures"
 argument_list|)
 argument_list|,
-literal|0.147
+literal|0.141
 argument_list|)
 expr_stmt|;
 name|register_display_procs
@@ -452,7 +428,7 @@ argument_list|(
 literal|"Drawable procedures"
 argument_list|)
 argument_list|,
-literal|0.157
+literal|0.15
 argument_list|)
 expr_stmt|;
 name|register_drawable_procs
@@ -467,7 +443,7 @@ argument_list|(
 literal|"Edit procedures"
 argument_list|)
 argument_list|,
-literal|0.226
+literal|0.223
 argument_list|)
 expr_stmt|;
 name|register_edit_procs
@@ -482,7 +458,7 @@ argument_list|(
 literal|"File Operations"
 argument_list|)
 argument_list|,
-literal|0.245
+literal|0.241
 argument_list|)
 expr_stmt|;
 name|register_fileops_procs
@@ -497,7 +473,7 @@ argument_list|(
 literal|"Floating selections"
 argument_list|)
 argument_list|,
-literal|0.27
+literal|0.266
 argument_list|)
 expr_stmt|;
 name|register_floating_sel_procs
@@ -512,7 +488,7 @@ argument_list|(
 literal|"Gimprc procedures"
 argument_list|)
 argument_list|,
-literal|0.288
+literal|0.285
 argument_list|)
 expr_stmt|;
 name|register_gimprc_procs
@@ -527,7 +503,7 @@ argument_list|(
 literal|"Gradients"
 argument_list|)
 argument_list|,
-literal|0.298
+literal|0.295
 argument_list|)
 expr_stmt|;
 name|register_gradients_procs
@@ -542,7 +518,7 @@ argument_list|(
 literal|"Gradient UI"
 argument_list|)
 argument_list|,
-literal|0.313
+literal|0.31
 argument_list|)
 expr_stmt|;
 name|register_gradient_select_procs
@@ -557,7 +533,7 @@ argument_list|(
 literal|"Guide procedures"
 argument_list|)
 argument_list|,
-literal|0.326
+literal|0.323
 argument_list|)
 expr_stmt|;
 name|register_guides_procs
@@ -572,7 +548,7 @@ argument_list|(
 literal|"Help procedures"
 argument_list|)
 argument_list|,
-literal|0.345
+literal|0.342
 argument_list|)
 expr_stmt|;
 name|register_help_procs
@@ -587,7 +563,7 @@ argument_list|(
 literal|"Image"
 argument_list|)
 argument_list|,
-literal|0.348
+literal|0.345
 argument_list|)
 expr_stmt|;
 name|register_image_procs

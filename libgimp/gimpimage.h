@@ -45,11 +45,6 @@ define|#
 directive|define
 name|gimp_image_convert_indexed
 value|gimp_convert_indexed
-DECL|macro|gimp_image_duplicate
-define|#
-directive|define
-name|gimp_image_duplicate
-value|gimp_channel_ops_duplicate
 name|guchar
 modifier|*
 name|gimp_image_get_cmap

@@ -112,7 +112,7 @@ name|gboolean
 name|wrap_around
 decl_stmt|;
 DECL|member|fill_type
-name|ChannelOffsetType
+name|GimpOffsetType
 name|fill_type
 decl_stmt|;
 DECL|member|gimage

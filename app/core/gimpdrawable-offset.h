@@ -19,16 +19,16 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3cb1700103
+DECL|enum|__anon2b9eef9e0103
 block|{
 DECL|enumerator|OFFSET_BACKGROUND
 name|OFFSET_BACKGROUND
 block|,
 DECL|enumerator|OFFSET_TRANSPARENT
 name|OFFSET_TRANSPARENT
-DECL|typedef|ChannelOffsetType
+DECL|typedef|GimpOffsetType
 block|}
-name|ChannelOffsetType
+name|GimpOffsetType
 typedef|;
 end_typedef
 
@@ -43,7 +43,7 @@ parameter_list|,
 name|gboolean
 name|wrap_around
 parameter_list|,
-name|ChannelOffsetType
+name|GimpOffsetType
 name|fill_type
 parameter_list|,
 name|gint

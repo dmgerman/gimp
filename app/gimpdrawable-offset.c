@@ -95,7 +95,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_drawable_offset (GimpDrawable * drawable,gboolean wrap_around,ChannelOffsetType fill_type,gint offset_x,gint offset_y)
+DECL|function|gimp_drawable_offset (GimpDrawable * drawable,gboolean wrap_around,GimpOffsetType fill_type,gint offset_x,gint offset_y)
 name|gimp_drawable_offset
 parameter_list|(
 name|GimpDrawable
@@ -105,7 +105,7 @@ parameter_list|,
 name|gboolean
 name|wrap_around
 parameter_list|,
-name|ChannelOffsetType
+name|GimpOffsetType
 name|fill_type
 parameter_list|,
 name|gint

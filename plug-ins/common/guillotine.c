@@ -817,7 +817,7 @@ name|new_image
 decl_stmt|;
 name|new_image
 operator|=
-name|gimp_channel_ops_duplicate
+name|gimp_image_duplicate
 argument_list|(
 name|image_ID
 argument_list|)
