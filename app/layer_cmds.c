@@ -368,7 +368,7 @@ name|NORMAL_MODE
 operator|&&
 name|int_value
 operator|<=
-name|VALUE_MODE
+name|DIVIDE_MODE
 condition|)
 name|mode
 operator|=
@@ -514,7 +514,7 @@ name|PDB_INT32
 block|,
 literal|"mode"
 block|,
-literal|"the layer combination mode: { NORMAL (0), DISSOLVE (1), MULTIPLY (3), SCREEN (4), OVERLAY (5) DIFFERENCE (6), ADDITION (7), SUBTRACT (8), DARKEN-ONLY (9), LIGHTEN-ONLY (10), HUE (11), SATURATION (12), COLOR (13), VALUE (14) }"
+literal|"the layer combination mode: { NORMAL (0), DISSOLVE (1), MULTIPLY (3), SCREEN (4), OVERLAY (5) DIFFERENCE (6), ADDITION (7), SUBTRACT (8), DARKEN-ONLY (9), LIGHTEN-ONLY (10), HUE (11), SATURATION (12), COLOR (13), VALUE (14), DIVIDE/DODGE (15) }"
 block|}
 block|}
 decl_stmt|;
@@ -5253,7 +5253,7 @@ name|NORMAL_MODE
 operator|&&
 name|int_value
 operator|<=
-name|VALUE_MODE
+name|DIVIDE_MODE
 condition|)
 name|layer
 operator|->
