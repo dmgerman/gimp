@@ -5118,10 +5118,6 @@ name|private_part
 expr_stmt|;
 name|offset_x
 operator|=
-call|(
-name|gint
-call|)
-argument_list|(
 name|gimp_size_entry_get_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -5132,9 +5128,6 @@ name|offset_se
 argument_list|)
 argument_list|,
 literal|0
-argument_list|)
-operator|+
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|offset_x
@@ -5148,10 +5141,6 @@ argument_list|)
 expr_stmt|;
 name|offset_y
 operator|=
-call|(
-name|gint
-call|)
-argument_list|(
 name|gimp_size_entry_get_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -5162,9 +5151,6 @@ name|offset_se
 argument_list|)
 argument_list|,
 literal|1
-argument_list|)
-operator|+
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|offset_y
