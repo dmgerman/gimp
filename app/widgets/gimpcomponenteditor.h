@@ -132,6 +132,11 @@ name|GtkCellRenderer
 modifier|*
 name|eye_cell
 decl_stmt|;
+DECL|member|renderer_cell
+name|GtkCellRenderer
+modifier|*
+name|renderer_cell
+decl_stmt|;
 DECL|member|clicked_component
 name|GimpChannelType
 name|clicked_component
