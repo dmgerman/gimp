@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae3c7ce0103
+DECL|enum|__anon297d67ef0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -1194,7 +1194,7 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-comment|/* You should always keep in mind that crop->tx2 and crop->ty2 are the NOT the      coordinates of the bottomright corner of the area to be cropped. They point       at the pixel located one to the right and one to the bottom.      */
+comment|/* You should always keep in mind that crop->tx2 and crop->ty2 are the NOT the      coordinates of the bottomright corner of the area to be cropped. They point      at the pixel located one to the right and one to the bottom.    */
 if|if
 condition|(
 name|active_drawable_only
@@ -1883,7 +1883,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
-comment|/* First check if there's transparency to crop. If not, guess the     * background-color to see if at least 2 corners are equal.    */
+comment|/* First check if there's transparency to crop. If not, guess the    * background-color to see if at least 2 corners are equal.    */
 if|if
 condition|(
 operator|!

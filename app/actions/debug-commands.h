@@ -17,17 +17,17 @@ name|__DEBUG_COMMANDS_H__
 end_define
 
 begin_define
-DECL|macro|ENABLE_DEBUG_ENTRIES
+DECL|macro|ENABLE_DEBUG_MENU
 define|#
 directive|define
-name|ENABLE_DEBUG_ENTRIES
-value|1
+name|ENABLE_DEBUG_MENU
+value|GIMP_UNSTABLE
 end_define
 
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|ENABLE_DEBUG_ENTRIES
+name|ENABLE_DEBUG_MENU
 end_ifdef
 
 begin_function_decl
@@ -70,7 +70,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  ENABLE_DEBUG_ENTRIES  */
+comment|/* ENABLE_DEBUG_MENU */
 end_comment
 
 begin_endif

@@ -911,7 +911,7 @@ block|}
 block|,
 ifdef|#
 directive|ifdef
-name|ENABLE_DEBUG_ENTRIES
+name|ENABLE_DEBUG_MENU
 name|MENU_BRANCH
 argument_list|(
 name|N_
@@ -958,6 +958,7 @@ block|}
 block|,
 endif|#
 directive|endif
+comment|/* ENABLE_DEBUG_MENU */
 name|MENU_SEPARATOR
 argument_list|(
 literal|"/File/---"
