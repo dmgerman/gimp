@@ -213,6 +213,14 @@ name|list
 operator|->
 name|data
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|file_proc
+operator|->
+name|menu_path
+condition|)
+continue|continue;
 name|is_xcf
 operator|=
 operator|(

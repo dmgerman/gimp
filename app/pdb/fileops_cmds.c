@@ -2388,7 +2388,7 @@ literal|"gimp_register_magic_load_handler"
 block|,
 literal|"Registers a file load handler procedure."
 block|,
-literal|"Registers a procedural database procedure to be called to load files of a particular file format using magic file information."
+literal|"Registers a procedural database procedure to be called to load files of a particular file format using magic file information. The procedure you use must have a<Load> menu path associated with it."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -2540,7 +2540,7 @@ literal|"gimp_register_load_handler"
 block|,
 literal|"Registers a file load handler procedure."
 block|,
-literal|"Registers a procedural database procedure to be called to load files of a particular file format."
+literal|"Registers a procedural database procedure to be called to load files of a particular file format. The procedure you use must have a<Load> menu path associated with it."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -2906,7 +2906,7 @@ literal|"gimp_register_save_handler"
 block|,
 literal|"Registers a file save handler procedure."
 block|,
-literal|"Registers a procedural database procedure to be called to save files in a particular file format."
+literal|"Registers a procedural database procedure to be called to save files in a particular file format. The procedure you use must have a<Save> menu path associated with it."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
