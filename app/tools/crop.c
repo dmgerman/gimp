@@ -631,7 +631,7 @@ comment|/* Crop area-select functions */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b2dfc850103
+DECL|enum|__anon2af12ffb0103
 typedef|typedef
 enum|enum
 block|{
@@ -976,7 +976,7 @@ name|options
 operator|->
 name|allow_enlarge_d
 operator|=
-name|TRUE
+name|FALSE
 expr_stmt|;
 name|options
 operator|->
@@ -986,7 +986,7 @@ name|options
 operator|->
 name|type_d
 operator|=
-name|RESIZE_CROP
+name|CROP_CROP
 expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox

@@ -3531,12 +3531,6 @@ name|standard_modifier_key_func
 expr_stmt|;
 name|tool
 operator|->
-name|modifier_key_func
-operator|=
-name|standard_modifier_key_func
-expr_stmt|;
-name|tool
-operator|->
 name|cursor_update_func
 operator|=
 name|transform_core_cursor_update

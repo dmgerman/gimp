@@ -1894,14 +1894,14 @@ break|break;
 default|default :
 return|return;
 block|}
-comment|/*  if just the control key is down, affect only the height  */
+comment|/*  if just the mod1 key is down, affect only the height  */
 if|if
 condition|(
 name|transform_core
 operator|->
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|GDK_MOD1_MASK
 operator|&&
 operator|!
 operator|(
@@ -1909,14 +1909,14 @@ name|transform_core
 operator|->
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|GDK_CONTROL_MASK
 operator|)
 condition|)
 name|diff_x
 operator|=
 literal|0
 expr_stmt|;
-comment|/*  if just the shift key is down, affect only the width  */
+comment|/*  if just the control key is down, affect only the width  */
 elseif|else
 if|if
 condition|(
@@ -1924,7 +1924,7 @@ name|transform_core
 operator|->
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|GDK_CONTROL_MASK
 operator|&&
 operator|!
 operator|(
@@ -1932,7 +1932,7 @@ name|transform_core
 operator|->
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|GDK_MOD1_MASK
 operator|)
 condition|)
 name|diff_y
@@ -2035,7 +2035,7 @@ operator|+
 literal|1
 expr_stmt|;
 block|}
-comment|/*  if both the control key& shift keys are down, keep the aspect ratio intact  */
+comment|/*  if both the control key& mod1 keys are down, keep the aspect ratio intact  */
 if|if
 condition|(
 name|transform_core
@@ -2048,7 +2048,7 @@ name|transform_core
 operator|->
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|GDK_MOD1_MASK
 condition|)
 block|{
 name|ratio
