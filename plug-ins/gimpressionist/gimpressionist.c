@@ -2250,7 +2250,7 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"_About..."
+literal|"A_bout..."
 argument_list|)
 argument_list|,
 name|showabout
