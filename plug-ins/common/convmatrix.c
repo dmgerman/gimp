@@ -91,7 +91,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0972060103
+DECL|enum|__anon29cdc54d0103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -302,7 +302,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0972060208
+DECL|struct|__anon29cdc54d0208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -459,7 +459,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2a0972060308
+DECL|struct|__anon29cdc54d0308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -713,12 +713,6 @@ decl_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
-operator|(
-name|void
-operator|)
-name|name
-expr_stmt|;
-comment|/* Shut up warnings about unused parameters. */
 operator|*
 name|nreturn_vals
 operator|=
@@ -823,10 +817,12 @@ name|nparams
 operator|!=
 literal|11
 condition|)
+block|{
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
+block|}
 else|else
 block|{
 if|if
