@@ -1527,7 +1527,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"to"
+literal|"To"
 argument_list|)
 argument_list|)
 expr_stmt|;
