@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293eb0820103
+DECL|enum|__anon2acd83290103
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293eb0820203
+DECL|enum|__anon2acd83290203
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -527,6 +527,18 @@ modifier|*
 name|gimage
 parameter_list|)
 function_decl|;
+DECL|member|alpha_changed
+name|void
+function_decl|(
+modifier|*
+name|alpha_changed
+function_decl|)
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+function_decl|;
 DECL|member|size_changed
 name|void
 function_decl|(
@@ -639,18 +651,6 @@ name|x2
 parameter_list|,
 name|gint
 name|y2
-parameter_list|)
-function_decl|;
-DECL|member|restructure
-name|void
-function_decl|(
-modifier|*
-name|restructure
-function_decl|)
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|)
 function_decl|;
 DECL|member|colormap_changed
@@ -1413,7 +1413,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Temporary hack till colormap manipulation is encapsulated in functions.    Call this whenever you modify an image's colormap. The ncol argument    specifies which color has changed, or negative if there's a bigger change.    Currently, use this also when the image's base type is changed to/from    indexed.  */
+comment|/* Temporary hack till colormap manipulation is encapsulated in functions.  * Call this whenever you modify an image's colormap. The col argument  * specifies which color has changed, or negative if there's a bigger change.  * Currently, use this also when the image's base type is changed to/from  * indexed.  */
 end_comment
 
 begin_function_decl
@@ -1433,6 +1433,17 @@ end_function_decl
 begin_function_decl
 name|void
 name|gimp_image_mode_changed
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_image_alpha_changed
 parameter_list|(
 name|GimpImage
 modifier|*

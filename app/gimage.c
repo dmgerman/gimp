@@ -184,7 +184,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimage_restructure_handler
+name|gimage_alpha_changed_handler
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -321,11 +321,11 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-literal|"restructure"
+literal|"alpha_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gimage_restructure_handler
+name|gimage_alpha_changed_handler
 argument_list|)
 argument_list|,
 name|NULL
@@ -639,8 +639,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimage_restructure_handler (GimpImage * gimage)
-name|gimage_restructure_handler
+DECL|function|gimage_alpha_changed_handler (GimpImage * gimage)
+name|gimage_alpha_changed_handler
 parameter_list|(
 name|GimpImage
 modifier|*

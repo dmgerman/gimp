@@ -458,7 +458,7 @@ argument_list|)
 argument_list|,
 name|GTK_POLICY_AUTOMATIC
 argument_list|,
-name|GTK_POLICY_ALWAYS
+name|GTK_POLICY_AUTOMATIC
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

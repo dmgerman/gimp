@@ -153,7 +153,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2966b8920103
+DECL|enum|__anon27a74f780103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -3552,9 +3552,7 @@ name|preview_valid
 operator|=
 name|FALSE
 expr_stmt|;
-name|gtk_signal_emit_by_name
-argument_list|(
-name|GTK_OBJECT
+name|gimp_image_alpha_changed
 argument_list|(
 name|gimp_drawable_gimage
 argument_list|(
@@ -3563,9 +3561,6 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
-argument_list|)
-argument_list|,
-literal|"restructure"
 argument_list|)
 expr_stmt|;
 block|}
