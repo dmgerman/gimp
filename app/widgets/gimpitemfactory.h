@@ -272,6 +272,11 @@ name|GimpItemFactoryEntry
 modifier|*
 name|entry
 parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|textdomain
+parameter_list|,
 name|gpointer
 name|callback_data
 parameter_list|,

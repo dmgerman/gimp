@@ -9740,6 +9740,8 @@ argument_list|,
 operator|&
 name|entry
 argument_list|,
+name|NULL
+argument_list|,
 name|tool_info
 argument_list|,
 literal|2

@@ -156,6 +156,11 @@ parameter_list|,
 name|GimpItemFactoryEntry
 modifier|*
 name|entry
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|textdomain
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -804,7 +809,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_factory_create_item (GimpItemFactory * item_factory,GimpItemFactoryEntry * entry,gpointer callback_data,guint callback_type,gboolean create_tearoff,gboolean static_entry)
+DECL|function|gimp_item_factory_create_item (GimpItemFactory * item_factory,GimpItemFactoryEntry * entry,const gchar * textdomain,gpointer callback_data,guint callback_type,gboolean create_tearoff,gboolean static_entry)
 name|gimp_item_factory_create_item
 parameter_list|(
 name|GimpItemFactory
@@ -814,6 +819,11 @@ parameter_list|,
 name|GimpItemFactoryEntry
 modifier|*
 name|entry
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|textdomain
 parameter_list|,
 name|gpointer
 name|callback_data
@@ -879,6 +889,8 @@ argument_list|(
 name|item_factory
 argument_list|,
 name|entry
+argument_list|,
+name|textdomain
 argument_list|)
 expr_stmt|;
 block|}
@@ -941,6 +953,25 @@ operator|)
 name|quark
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|textdomain
+condition|)
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|item_factory
+argument_list|)
+argument_list|,
+literal|"textdomain"
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|textdomain
+argument_list|)
+expr_stmt|;
 name|gtk_item_factory_create_item
 argument_list|(
 name|GTK_ITEM_FACTORY
@@ -957,6 +988,22 @@ argument_list|,
 name|callback_data
 argument_list|,
 name|callback_type
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|textdomain
+condition|)
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|item_factory
+argument_list|)
+argument_list|,
+literal|"textdomain"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|menu_item
@@ -1107,6 +1154,8 @@ argument_list|,
 name|entries
 operator|+
 name|i
+argument_list|,
+name|NULL
 argument_list|,
 name|callback_data
 argument_list|,
@@ -2639,7 +2688,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_factory_create_branches (GimpItemFactory * factory,GimpItemFactoryEntry * entry)
+DECL|function|gimp_item_factory_create_branches (GimpItemFactory * factory,GimpItemFactoryEntry * entry,const gchar * textdomain)
 name|gimp_item_factory_create_branches
 parameter_list|(
 name|GimpItemFactory
@@ -2649,6 +2698,11 @@ parameter_list|,
 name|GimpItemFactoryEntry
 modifier|*
 name|entry
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|textdomain
 parameter_list|)
 block|{
 name|GString
@@ -2813,6 +2867,8 @@ argument_list|,
 operator|&
 name|branch_entry
 argument_list|,
+name|textdomain
+argument_list|,
 name|NULL
 argument_list|,
 literal|2
@@ -2890,6 +2946,8 @@ argument_list|,
 operator|&
 name|tearoff_entry
 argument_list|,
+name|textdomain
+argument_list|,
 name|NULL
 argument_list|,
 literal|2
@@ -2946,10 +3004,30 @@ name|parent
 argument_list|)
 condition|)
 block|{
+specifier|static
+name|GQuark
+name|quark_key_press_connected
+init|=
+literal|0
+decl_stmt|;
 if|if
 condition|(
 operator|!
-name|g_object_get_data
+name|quark_key_press_connected
+condition|)
+name|quark_key_press_connected
+operator|=
+name|g_quark_from_static_string
+argument_list|(
+literal|"gimp-menu-item-key-press-connected"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|GPOINTER_TO_INT
+argument_list|(
+name|g_object_get_qdata
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -2958,7 +3036,8 @@ operator|->
 name|parent
 argument_list|)
 argument_list|,
-literal|"menus_key_press_connected"
+name|quark_key_press_connected
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -2981,7 +3060,7 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|g_object_set_data
+name|g_object_set_qdata
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -2990,12 +3069,12 @@ operator|->
 name|parent
 argument_list|)
 argument_list|,
-literal|"menus_key_press_connected"
+name|quark_key_press_connected
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|TRUE
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3090,6 +3169,18 @@ argument_list|,
 literal|"help_page"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|help_page
+operator|&&
+operator|!
+operator|*
+name|help_page
+condition|)
+name|help_page
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 comment|/*  For any key except F1, continue with the standard    *  GtkItemFactory callback and assign a new shortcut, but don't    *  assign a shortcut to the help menu entries...    */
 if|if
@@ -3105,9 +3196,7 @@ if|if
 condition|(
 name|help_page
 operator|&&
-operator|*
-name|help_page
-operator|&&
+operator|(
 name|item_factory
 operator|==
 operator|(
@@ -3118,6 +3207,7 @@ name|gimp_item_factory_from_path
 argument_list|(
 literal|"<Toolbox>"
 argument_list|)
+operator|)
 operator|&&
 operator|(
 name|strcmp
@@ -3171,10 +3261,6 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|help_page
-operator|||
-operator|!
-operator|*
 name|help_page
 condition|)
 name|help_page

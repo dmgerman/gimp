@@ -527,6 +527,8 @@ argument_list|,
 operator|&
 name|entry
 argument_list|,
+name|NULL
+argument_list|,
 name|file_proc
 argument_list|,
 literal|2
