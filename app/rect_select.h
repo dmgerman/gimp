@@ -50,6 +50,10 @@ DECL|member|feather
 name|int
 name|feather
 decl_stmt|;
+DECL|member|extend
+name|int
+name|extend
+decl_stmt|;
 DECL|member|feather_radius
 name|double
 name|feather_radius

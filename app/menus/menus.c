@@ -1141,6 +1141,26 @@ literal|"<Separator>"
 block|}
 block|,
 block|{
+literal|"/Tools/Default Colors"
+block|,
+literal|"D"
+block|,
+name|tools_default_colors_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+block|{
+literal|"/Tools/Swap Colors"
+block|,
+literal|"X"
+block|,
+name|tools_swap_colors_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+block|{
 literal|"/Filters/"
 block|,
 name|NULL
