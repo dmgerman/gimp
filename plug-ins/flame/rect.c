@@ -273,7 +273,7 @@ decl_stmt|;
 name|int
 name|nchan
 decl_stmt|;
-function|void progress
+function|int progress
 parameter_list|(
 name|double
 parameter_list|)

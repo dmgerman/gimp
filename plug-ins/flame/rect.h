@@ -22,7 +22,7 @@ value|256
 end_define
 
 begin_typedef
-DECL|struct|__anon2b42bd640108
+DECL|struct|__anon2bb913560108
 typedef|typedef
 struct|struct
 block|{
@@ -96,7 +96,7 @@ parameter_list|,
 name|int
 name|nchan
 parameter_list|,
-name|void
+name|int
 name|progress
 parameter_list|(
 name|double

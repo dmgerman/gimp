@@ -3094,7 +3094,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_thumbnail:  * @image_ID: The image.  * @width: The thumbnail width.  * @height: The thumbnail height.  * @ret_width: The previews width.  * @ret_height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of an image.  *  * This function gets data from which a thumbnail of an image preview  * can be created. Maximum x or y dimension is 128 pixels. The pixles  * are returned in the RGB[A] format. The bpp return value gives the  * number of bytes in the image. The alpha channel also returned if the  * image has one.  *  * Returns: TRUE on success.  */
+comment|/**  * _gimp_image_thumbnail:  * @image_ID: The image.  * @width: The thumbnail width.  * @height: The thumbnail height.  * @ret_width: The previews width.  * @ret_height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of an image.  *  * This function gets data from which a thumbnail of an image preview  * can be created. Maximum x or y dimension is 128 pixels. The pixels  * are returned in the RGB[A] format. The bpp return value gives the  * number of bits per pixel in the image. If the image has an alpha  * channel, it is also returned.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -3617,7 +3617,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_active_layer:  * @image_ID: The image.  *  * Returns if the specified image's active layer.  *  * If there is an active layer, its ID will be returned, otherwise, -1.  * If a channel is currently active, then no layer will be. If a layer  * mask is active, then this will return the associated layer.  *  * Returns: The active layer.  */
+comment|/**  * gimp_image_get_active_layer:  * @image_ID: The image.  *  * Returns the specified image's active layer.  *  * If there is an active layer, its ID will be returned, otherwise, -1.  * If a channel is currently active, then no layer will be. If a layer  * mask is active, then this will return the associated layer.  *  * Returns: The active layer.  */
 end_comment
 
 begin_function
@@ -3696,7 +3696,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_active_layer:  * @image_ID: The image.  * @active_layer_ID: The new image active layer.  *  * Sets if the specified image's active layer.  *  * If the layer exists, it is set as the active layer in the image. Any  * previous active layer or channel is set to inactive. An exception is  * a previously existing floating selection, in which case this  * procedure will return an execution error.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_active_layer:  * @image_ID: The image.  * @active_layer_ID: The new image active layer.  *  * Sets the specified image's active layer.  *  * If the layer exists, it is set as the active layer in the image. Any  * previous active layer or channel is set to inactive. An exception is  * a previously existing floating selection, in which case this  * procedure will return an execution error.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -3770,7 +3770,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_active_channel:  * @image_ID: The image.  *  * Returns if the specified image's active channel.  *  * If there is an active channel, this will return the channel ID,  * otherwise, -1.  *  * Returns: The active channel.  */
+comment|/**  * gimp_image_get_active_channel:  * @image_ID: The image.  *  * Returns the specified image's active channel.  *  * If there is an active channel, this will return the channel ID,  * otherwise, -1.  *  * Returns: The active channel.  */
 end_comment
 
 begin_function
@@ -3849,7 +3849,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_active_channel:  * @image_ID: The image.  * @active_channel_ID: The new image active channel.  *  * Sets if the specified image's active channel.  *  * If the channel exists, it is set as the active channel in the image.  * Any previous active channel or channel is set to inactive. An  * exception is a previously existing floating selection, in which case  * this procedure will return an execution error.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_active_channel:  * @image_ID: The image.  * @active_channel_ID: The new image active channel.  *  * Sets the specified image's active channel.  *  * If the channel exists, it is set as the active channel in the image.  * Any previous active channel or channel is set to inactive. An  * exception is a previously existing floating selection, in which case  * this procedure will return an execution error.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -3923,7 +3923,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_selection:  * @image_ID: The image.  *  * Returns if the specified image's selection.  *  * This will always return a valid ID for a selection--which is  * represented as a channel internally.  *  * Returns: The selection channel.  */
+comment|/**  * gimp_image_get_selection:  * @image_ID: The image.  *  * Returns the specified image's selection.  *  * This will always return a valid ID for a selection -- which is  * represented as a channel internally.  *  * Returns: The selection channel.  */
 end_comment
 
 begin_function
@@ -4002,7 +4002,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_component_active:  * @image_ID: The image.  * @component: The image component.  *  * Returns if the specified image's image component is active.  *  * This procedure returns if the specified image's image component  * (i.e. Red, Green, Blue intensity channels in an RGB image) is active  * or inactive--whether or not it can be modified. If the specified  * component is not valid for the image type, an error is returned.  *  * Returns: Component is active.  */
+comment|/**  * gimp_image_get_component_active:  * @image_ID: The image.  * @component: The image component.  *  * Returns if the specified image's image component is active.  *  * This procedure returns if the specified image's image component  * (i.e. Red, Green, Blue intensity channels in an RGB image) is active  * or inactive -- whether or not it can be modified. If the specified  * component is not valid for the image type, an error is returned.  *  * Returns: Component is active.  */
 end_comment
 
 begin_function
@@ -4087,7 +4087,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_component_active:  * @image_ID: The image.  * @component: The image component.  * @active: Component is active.  *  * Sets if the specified image's image component is active.  *  * This procedure sets if the specified image's image component (i.e.  * Red, Green, Blue intensity channels in an RGB image) is active or  * inactive--whether or not it can be modified. If the specified  * component is not valid for the image type, an error is returned.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_component_active:  * @image_ID: The image.  * @component: The image component.  * @active: Component is active.  *  * Sets if the specified image's image component is active.  *  * This procedure sets if the specified image's image component (i.e.  * Red, Green, Blue intensity channels in an RGB image) is active or  * inactive -- whether or not it can be modified. If the specified  * component is not valid for the image type, an error is returned.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -4168,7 +4168,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_component_visible:  * @image_ID: The image.  * @component: The image component.  *  * Returns if the specified image's image component is visible.  *  * This procedure returns if the specified image's image component  * (i.e. Red, Green, Blue intensity channels in an RGB image) is  * visible or invisible--whether or not it can be seen. If the  * specified component is not valid for the image type, an error is  * returned.  *  * Returns: Component is visible.  */
+comment|/**  * gimp_image_get_component_visible:  * @image_ID: The image.  * @component: The image component.  *  * Returns if the specified image's image component is visible.  *  * This procedure returns if the specified image's image component  * (i.e. Red, Green, Blue intensity channels in an RGB image) is  * visible or invisible -- whether or not it can be seen. If the  * specified component is not valid for the image type, an error is  * returned.  *  * Returns: Component is visible.  */
 end_comment
 
 begin_function
@@ -4253,7 +4253,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_component_visible:  * @image_ID: The image.  * @component: The image component.  * @visible: Component is visible.  *  * Sets if the specified image's image component is visible.  *  * This procedure sets if the specified image's image component (i.e.  * Red, Green, Blue intensity channels in an RGB image) is visible or  * invisible--whether or not it can be seen. If the specified component  * is not valid for the image type, an error is returned.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_component_visible:  * @image_ID: The image.  * @component: The image component.  * @visible: Component is visible.  *  * Sets if the specified image's image component is visible.  *  * This procedure sets if the specified image's image component (i.e.  * Red, Green, Blue intensity channels in an RGB image) is visible or  * invisible -- whether or not it can be seen. If the specified  * component is not valid for the image type, an error is returned.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -4334,7 +4334,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_filename:  * @image_ID: The image.  *  * Returns if the specified image's filename.  *  * This procedure returns if the specified image's filename--if it was  * loaded or has since been saved. Otherwise, returns NULL.  *  * Returns: The filename.  */
+comment|/**  * gimp_image_get_filename:  * @image_ID: The image.  *  * Returns the specified image's filename.  *  * This procedure returns the specified image's filename -- if it was  * loaded or has since been saved. Otherwise, returns NULL.  *  * Returns: The filename.  */
 end_comment
 
 begin_function
@@ -4417,7 +4417,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_filename:  * @image_ID: The image.  * @filename: The new image filename.  *  * Sets if the specified image's filename.  *  * This procedure sets if the specified image's filename.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_filename:  * @image_ID: The image.  * @filename: The new image filename.  *  * Sets the specified image's filename.  *  * This procedure sets the specified image's filename.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -4492,7 +4492,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_resolution:  * @image_ID: The image.  * @xresolution: The resolutionin the x-axis, in dots per inch.  * @yresolution: The resolutionin the y-axis, in dots per inch.  *  * Returns if the specified image's resolution.  *  * This procedure returns if the specified image's resolution in dots  * per inch. This value is independent of any of the layers in this  * image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_get_resolution:  * @image_ID: The image.  * @xresolution: The resolutionin the x-axis, in dots per inch.  * @yresolution: The resolutionin the y-axis, in dots per inch.  *  * Returns the specified image's resolution.  *  * This procedure returns the specified image's resolution in dots per  * inch. This value is independent of any of the layers in this image.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -4607,7 +4607,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_resolution:  * @image_ID: The image.  * @xresolution: The new image resolution in the x-axis, in dots per inch.  * @yresolution: The new image resolution in the y-axis, in dots per inch.  *  * Sets if the specified image's resolution.  *  * This procedure sets if the specified image's resolution in dots per  * inch. This value is independent of any of the layers in this image.  * No scaling or resizing is performed.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_resolution:  * @image_ID: The image.  * @xresolution: The new image resolution in the x-axis, in dots per inch.  * @yresolution: The new image resolution in the y-axis, in dots per inch.  *  * Sets the specified image's resolution.  *  * This procedure sets the specified image's resolution in dots per  * inch. This value is independent of any of the layers in this image.  * No scaling or resizing is performed.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -4688,7 +4688,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_unit:  * @image_ID: The image.  *  * Returns if the specified image's unit.  *  * This procedure returns if the specified image's unit. This value is  * independent of any of the layers in this image. See the gimp_unit_*  * procedure definitions for the valid range of unit IDs and a  * description of the unit system.  *  * Returns: The unit.  */
+comment|/**  * gimp_image_get_unit:  * @image_ID: The image.  *  * Returns the specified image's unit.  *  * This procedure returns the specified image's unit. This value is  * independent of any of the layers in this image. See the gimp_unit_*  * procedure definitions for the valid range of unit IDs and a  * description of the unit system.  *  * Returns: The unit.  */
 end_comment
 
 begin_function
@@ -4766,7 +4766,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_unit:  * @image_ID: The image.  * @unit: The new image unit.  *  * Sets if the specified image's unit.  *  * This procedure sets if the specified image's unit. No scaling or  * resizing is performed. This value is independent of any of the  * layers in this image. See the gimp_unit_* procedure definitions for  * the valid range of unit IDs and a description of the unit system.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_unit:  * @image_ID: The image.  * @unit: The new image unit.  *  * Sets the specified image's unit.  *  * This procedure sets the specified image's unit. No scaling or  * resizing is performed. This value is independent of any of the  * layers in this image. See the gimp_unit_* procedure definitions for  * the valid range of unit IDs and a description of the unit system.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
