@@ -3061,7 +3061,7 @@ name|tiles
 argument_list|,
 name|gimage
 argument_list|,
-name|gimp_drawable_type
+name|gimp_drawable_type_with_alpha
 argument_list|(
 name|drawable
 argument_list|)
