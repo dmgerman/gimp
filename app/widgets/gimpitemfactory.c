@@ -3802,25 +3802,6 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Scale Layer"
-argument_list|)
-block|,
-literal|"<control>S"
-block|,
-name|layers_dialog_scale_layer_callback
-block|,
-literal|0
-block|}
-block|,
-literal|"dialogs/scale_layer.html"
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
 literal|"/Resize Layer"
 argument_list|)
 block|,
@@ -3832,6 +3813,25 @@ literal|0
 block|}
 block|,
 literal|"dialogs/resize_layer.html"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Scale Layer"
+argument_list|)
+block|,
+literal|"<control>S"
+block|,
+name|layers_dialog_scale_layer_callback
+block|,
+literal|0
+block|}
+block|,
+literal|"dialogs/scale_layer.html"
 block|,
 name|NULL
 block|}

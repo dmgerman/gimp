@@ -470,7 +470,7 @@ literal|"Stephen Robert Norris"
 block|,
 literal|"Erik Nygren"
 block|,
-literal|"Tomas Ogren"
+literal|"Tomas Ögren"
 block|,
 literal|"Balazs Nagy"
 block|,

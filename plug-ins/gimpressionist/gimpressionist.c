@@ -2895,7 +2895,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|" OK "
+literal|"OK"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2972,7 +2972,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|" Cancel "
+literal|"Cancel"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3037,7 +3037,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|" About... "
+literal|"About..."
 argument_list|)
 argument_list|)
 expr_stmt|;

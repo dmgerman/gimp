@@ -839,7 +839,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|" Update "
+literal|"Update"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -910,7 +910,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|" Reset "
+literal|"Reset"
 argument_list|)
 argument_list|)
 expr_stmt|;

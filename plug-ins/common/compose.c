@@ -477,7 +477,7 @@ comment|/* Description of a composition */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2985d2bd0108
+DECL|struct|__anon2b8b0f9c0108
 typedef|typedef
 struct|struct
 block|{
@@ -576,7 +576,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Green:     "
+literal|"Green:"
 argument_list|)
 block|,
 name|N_
@@ -611,7 +611,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Green:     "
+literal|"Green:"
 argument_list|)
 block|,
 name|N_
@@ -684,7 +684,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Magenta:   "
+literal|"Magenta:"
 argument_list|)
 block|,
 name|N_
@@ -719,7 +719,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Magenta:   "
+literal|"Magenta:"
 argument_list|)
 block|,
 name|N_
@@ -753,7 +753,7 @@ value|(sizeof (compose_dsc) / sizeof (compose_dsc[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon2985d2bd0208
+DECL|struct|__anon2b8b0f9c0208
 typedef|typedef
 struct|struct
 block|{
@@ -784,7 +784,7 @@ comment|/* Dialog structure */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2985d2bd0308
+DECL|struct|__anon2b8b0f9c0308
 typedef|typedef
 struct|struct
 block|{

@@ -7539,7 +7539,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|" Update "
+literal|"Update"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7559,7 +7559,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|" Update "
+literal|"Update"
 argument_list|)
 argument_list|)
 expr_stmt|;

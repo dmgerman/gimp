@@ -4063,7 +4063,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|" Save current "
+literal|"Save current"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4335,7 +4335,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|" Apply "
+literal|"Apply"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4400,7 +4400,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|" Delete "
+literal|"Delete"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4465,7 +4465,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|" Refresh "
+literal|"Refresh"
 argument_list|)
 argument_list|)
 expr_stmt|;
