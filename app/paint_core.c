@@ -4230,10 +4230,6 @@ name|double
 name|distance
 decl_stmt|;
 comment|/* distance in current brush stroke */
-name|double
-name|temp_opacity
-decl_stmt|;
-comment|/* so i can blank out stuff */
 name|distance
 operator|=
 name|paint_core
@@ -4251,17 +4247,9 @@ operator|/
 name|gradient_length
 operator|)
 expr_stmt|;
-name|temp_opacity
-operator|=
-literal|1.0
-expr_stmt|;
-comment|/* for the once modes, set alpha to 0.0 after the first chunk */
+comment|/* for the once modes, set y close to 1.0 after the first chunk */
 if|if
 condition|(
-name|y
-operator|>=
-literal|1.0
-operator|&&
 operator|(
 name|mode
 operator|==
@@ -4271,13 +4259,18 @@ name|mode
 operator|==
 name|ONCE_BACKWARDS
 operator|)
+operator|&&
+name|y
+operator|>=
+literal|1.0
 condition|)
-name|temp_opacity
+name|y
 operator|=
-literal|0.0
+literal|0.9999999
 expr_stmt|;
 if|if
 condition|(
+operator|(
 operator|(
 operator|(
 name|int
@@ -4285,6 +4278,7 @@ operator|)
 name|y
 operator|&
 literal|1
+operator|)
 operator|&&
 name|mode
 operator|!=
@@ -4335,16 +4329,6 @@ name|b
 argument_list|,
 name|a
 argument_list|)
-expr_stmt|;
-operator|*
-name|a
-operator|=
-operator|(
-name|temp_opacity
-operator|*
-operator|*
-name|a
-operator|)
 expr_stmt|;
 block|}
 end_function
