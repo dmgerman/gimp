@@ -214,7 +214,6 @@ name|script_fu_query
 block|,
 comment|/* query_proc */
 name|script_fu_run
-block|,
 comment|/* run_proc   */
 block|}
 decl_stmt|;
@@ -563,6 +562,11 @@ parameter_list|)
 block|{
 name|INIT_I18N
 argument_list|()
+expr_stmt|;
+name|siod_set_console_mode
+argument_list|(
+literal|0
+argument_list|)
 expr_stmt|;
 name|siod_set_output_file
 argument_list|(
