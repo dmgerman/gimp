@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae81d380108
+DECL|struct|__anon275e7f690108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -136,18 +136,6 @@ specifier|const
 name|GimpRGB
 modifier|*
 name|color
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|to_alpha
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -400,9 +388,6 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gint32
-name|image_ID
-decl_stmt|;
 name|GimpPDBStatusType
 name|status
 init|=
@@ -410,6 +395,9 @@ name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|GimpRunMode
 name|run_mode
+decl_stmt|;
+name|gint32
+name|image_ID
 decl_stmt|;
 name|run_mode
 operator|=
@@ -455,7 +443,17 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-comment|/*  Get the specified drawable  */
+name|image_ID
+operator|=
+name|param
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_image
+expr_stmt|;
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -469,17 +467,6 @@ name|data
 operator|.
 name|d_drawable
 argument_list|)
-expr_stmt|;
-name|image_ID
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
 expr_stmt|;
 switch|switch
 condition|(
@@ -617,9 +604,16 @@ literal|"Removing color..."
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|to_alpha
+name|gimp_rgn_iterate2
 argument_list|(
 name|drawable
+argument_list|,
+literal|0
+comment|/* unused */
+argument_list|,
+name|to_alpha_func
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1133,7 +1127,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*<clahey>   so if a1> c1, a2> c2, and a3> c2 and a1 - c1> a2-c2, a3-c3,              then a1 = b1 * alpha + c1 * (1-alpha)              So, maximizing alpha without taking b1 above 1 gives              a1 = alpha + c1(1-alpha) and therefore alpha = (a1-c1) / (1-c1).<sjburges> clahey: btw, the ordering of that a2, a3 in the white->alpha didn't              matter<clahey>   sjburges: You mean that it could be either a1, a2, a3 or a1, a3, a2?<sjburges> yeah<sjburges> because neither one uses the other<clahey>   sjburges: That's exactly as it should be.  They are both just getting              reduced to the same amount, limited by the the darkest color.<clahey>   Then a2 = b2 * alpha + c2 * (1- alpha).  Solving for b2 gives              b2 = (a1-c2)/alpha + c2.<sjburges> yeah<clahey>   That gives us are formula for if the background is darker than the              foreground? Yep.<clahey>   Next if a1< c1, a2< c2, a3< c3, and c1-a1> c2-a2, c3-a3, and by our              desired result a1 = b1 * alpha + c1 * (1-alpha), we maximize alpha              without taking b1 negative gives alpha = 1 - a1 / c1.<clahey>   And then again, b2 = (a2-c2) / alpha + c2 by the same formula.              (Actually, I think we can use that formula for all cases, though it              may possibly introduce rounding error.<clahey>   sjburges: I like the idea of using floats to avoid rounding error.              Good call. */
+comment|/*  * An excerpt from a discussion on #gimp that sheds some light on the ideas  * behind the algorithm that is being used here.  *<clahey>   so if a1> c1, a2> c2, and a3> c2 and a1 - c1> a2-c2, a3-c3,              then a1 = b1 * alpha + c1 * (1-alpha)              So, maximizing alpha without taking b1 above 1 gives              a1 = alpha + c1(1-alpha) and therefore alpha = (a1-c1) / (1-c1).<sjburges> clahey: btw, the ordering of that a2, a3 in the white->alpha didn't              matter<clahey>   sjburges: You mean that it could be either a1, a2, a3 or              a1, a3, a2?<sjburges> yeah<sjburges> because neither one uses the other<clahey>   sjburges: That's exactly as it should be.  They are both just              getting reduced to the same amount, limited by the the darkest              color.<clahey>   Then a2 = b2 * alpha + c2 * (1- alpha).  Solving for b2 gives              b2 = (a1-c2)/alpha + c2.<sjburges> yeah<clahey>   That gives us are formula for if the background is darker than the              foreground? Yep.<clahey>   Next if a1< c1, a2< c2, a3< c3, and c1-a1> c2-a2, c3-a3, and              by our desired result a1 = b1 * alpha + c1 * (1-alpha),              we maximize alpha without taking b1 negative gives              alpha = 1 - a1 / c1.<clahey>   And then again, b2 = (a2-c2) / alpha + c2 by the same formula.              (Actually, I think we can use that formula for all cases, though              it may possibly introduce rounding error.<clahey>   sjburges: I like the idea of using floats to avoid rounding error.              Good call.  */
 end_comment
 
 begin_function
@@ -1264,32 +1258,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|to_alpha (GimpDrawable * drawable)
-name|to_alpha
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|)
-block|{
-name|gimp_rgn_iterate2
-argument_list|(
-name|drawable
-argument_list|,
-literal|0
-comment|/* unused */
-argument_list|,
-name|to_alpha_func
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|color_to_alpha_preview (GimpPreview * preview,GimpDrawable * drawable)
 name|color_to_alpha_preview
 parameter_list|(
@@ -1356,19 +1324,6 @@ operator|&
 name|height
 argument_list|)
 expr_stmt|;
-name|src
-operator|=
-name|g_new
-argument_list|(
-name|guchar
-argument_list|,
-name|width
-operator|*
-name|height
-operator|*
-name|bpp
-argument_list|)
-expr_stmt|;
 name|dest
 operator|=
 name|g_new
@@ -1380,6 +1335,19 @@ operator|*
 name|height
 operator|*
 literal|4
+argument_list|)
+expr_stmt|;
+name|src
+operator|=
+name|g_new
+argument_list|(
+name|guchar
+argument_list|,
+name|width
+operator|*
+name|height
+operator|*
+name|bpp
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_init
@@ -1452,6 +1420,34 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|src
+argument_list|)
+expr_stmt|;
+comment|/* Our code assumes that the drawable has an alpha channel (and adds    * one later if the effect is actually performed). For that reason    * we have to take care when drawing the preview.    */
+if|if
+condition|(
+name|bpp
+operator|==
+literal|4
+condition|)
+block|{
+name|gimp_preview_draw_buffer
+argument_list|(
+name|preview
+argument_list|,
+name|dest
+argument_list|,
+name|width
+operator|*
+literal|4
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+comment|/* This is not correct because we ignore the selection, but it        * is the best we can easily do.        */
 name|gimp_preview_area_draw
 argument_list|(
 name|GIMP_PREVIEW_AREA
@@ -1478,11 +1474,7 @@ operator|*
 literal|4
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|src
-argument_list|)
-expr_stmt|;
+block|}
 name|g_free
 argument_list|(
 name|dest
