@@ -693,7 +693,7 @@ expr_stmt|;
 name|free_parsepath_cache
 argument_list|()
 expr_stmt|;
-name|reloadbrush
+name|brush_reload
 argument_list|(
 name|NULL
 argument_list|,

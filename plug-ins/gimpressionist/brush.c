@@ -28,12 +28,6 @@ endif|#
 directive|endif
 end_endif
 
-begin_undef
-undef|#
-directive|undef
-name|GTK_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -95,66 +89,66 @@ file|<libgimp/stdplugins-intl.h>
 end_include
 
 begin_decl_stmt
-DECL|variable|brushprev
+DECL|variable|brush_preview
 specifier|static
 name|GtkWidget
 modifier|*
-name|brushprev
+name|brush_preview
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|brushstore
+DECL|variable|brush_list_store
 specifier|static
 name|GtkListStore
 modifier|*
-name|brushstore
+name|brush_list_store
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|brushlist
+DECL|variable|brush_list
 specifier|static
 name|GtkWidget
 modifier|*
-name|brushlist
+name|brush_list
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|brushreliefadjust
+DECL|variable|brush_relief_adjust
 specifier|static
 name|GtkObject
 modifier|*
-name|brushreliefadjust
+name|brush_relief_adjust
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|brushaspectadjust
+DECL|variable|brush_aspect_adjust
 specifier|static
 name|GtkObject
 modifier|*
-name|brushaspectadjust
+name|brush_aspect_adjust
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|brushgammaadjust
+DECL|variable|brush_gamma_adjust
 specifier|static
 name|GtkObject
 modifier|*
-name|brushgammaadjust
+name|brush_gamma_adjust
 init|=
 name|NULL
 decl_stmt|;
@@ -172,10 +166,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|brushfile
+DECL|variable|brush_from_file
 specifier|static
 name|gint
-name|brushfile
+name|brush_from_file
 init|=
 literal|2
 decl_stmt|;
@@ -207,7 +201,7 @@ parameter_list|)
 block|{
 name|reselect
 argument_list|(
-name|brushlist
+name|brush_list
 argument_list|,
 name|pcvals
 operator|.
@@ -218,7 +212,7 @@ name|gtk_adjustment_set_value
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
-name|brushgammaadjust
+name|brush_gamma_adjust
 argument_list|)
 argument_list|,
 name|pcvals
@@ -230,7 +224,7 @@ name|gtk_adjustment_set_value
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
-name|brushreliefadjust
+name|brush_relief_adjust
 argument_list|)
 argument_list|,
 name|pcvals
@@ -242,7 +236,7 @@ name|gtk_adjustment_set_value
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
-name|brushaspectadjust
+name|brush_aspect_adjust
 argument_list|)
 argument_list|,
 name|pcvals
@@ -267,7 +261,7 @@ name|brushgamma
 operator|=
 name|GTK_ADJUSTMENT
 argument_list|(
-name|brushgammaadjust
+name|brush_gamma_adjust
 argument_list|)
 operator|->
 name|value
@@ -303,9 +297,9 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|brushfile
+name|brush_from_file
 condition|)
-name|reloadbrush
+name|brush_reload
 argument_list|(
 name|pcvals
 operator|.
@@ -329,7 +323,7 @@ end_function
 begin_function_decl
 specifier|static
 name|void
-name|updatebrushprev
+name|update_brush_preview
 parameter_list|(
 specifier|const
 name|char
@@ -471,7 +465,7 @@ condition|)
 return|return;
 if|if
 condition|(
-name|brushfile
+name|brush_from_file
 operator|==
 literal|2
 condition|)
@@ -479,13 +473,13 @@ return|return;
 comment|/* Not finished GUI-building yet */
 if|if
 condition|(
-name|brushfile
+name|brush_from_file
 condition|)
 block|{
 if|#
 directive|if
 literal|0
-block|unselectall(brushlist);
+block|unselectall(brush_list);
 endif|#
 directive|endif
 name|preset_save_button_set_sensitive
@@ -498,7 +492,7 @@ name|gtk_adjustment_set_value
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
-name|brushgammaadjust
+name|brush_gamma_adjust
 argument_list|)
 argument_list|,
 literal|1.0
@@ -508,7 +502,7 @@ name|gtk_adjustment_set_value
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
-name|brushaspectadjust
+name|brush_aspect_adjust
 argument_list|)
 argument_list|,
 literal|0.0
@@ -893,11 +887,11 @@ name|colorbrushes
 operator|=
 literal|0
 expr_stmt|;
-name|brushfile
+name|brush_from_file
 operator|=
 literal|0
 expr_stmt|;
-name|updatebrushprev
+name|update_brush_preview
 argument_list|(
 name|NULL
 argument_list|)
@@ -912,7 +906,7 @@ literal|0
 end_if
 
 begin_endif
-unit|void dummybrushdmenuselect(GtkWidget *w, gpointer data) {   if(brushppm.col)     killppm(&brushppm);   newppm(&brushppm, 10,10);   brushfile = 0;   updatebrushprev(NULL); }
+unit|void dummybrushdmenuselect(GtkWidget *w, gpointer data) {   if(brushppm.col)     killppm(&brushppm);   newppm(&brushppm, 10,10);   brush_from_file = 0;   update_brush_preview(NULL); }
 endif|#
 directive|endif
 end_endif
@@ -928,14 +922,14 @@ parameter_list|)
 block|{
 name|gtk_list_store_clear
 argument_list|(
-name|brushstore
+name|brush_list_store
 argument_list|)
 expr_stmt|;
 name|readdirintolist
 argument_list|(
 literal|"Brushes"
 argument_list|,
-name|brushlist
+name|brush_list
 argument_list|,
 name|NULL
 argument_list|)
@@ -1191,8 +1185,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|reloadbrush (const gchar * fn,ppm_t * p)
-name|reloadbrush
+DECL|function|brush_reload (const gchar * fn,ppm_t * p)
+name|brush_reload
 parameter_list|(
 specifier|const
 name|gchar
@@ -1404,8 +1398,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|updatebrushprev (const gchar * fn)
-name|updatebrushprev
+DECL|function|update_brush_preview (const gchar * fn)
+name|update_brush_preview
 parameter_list|(
 specifier|const
 name|gchar
@@ -1428,7 +1422,7 @@ if|if
 condition|(
 name|fn
 condition|)
-name|brushfile
+name|brush_from_file
 operator|=
 literal|1
 expr_stmt|;
@@ -1437,7 +1431,7 @@ condition|(
 operator|!
 name|fn
 operator|&&
-name|brushfile
+name|brush_from_file
 condition|)
 block|{
 name|memset
@@ -1467,7 +1461,7 @@ name|gtk_preview_draw_row
 argument_list|(
 name|GTK_PREVIEW
 argument_list|(
-name|brushprev
+name|brush_preview
 argument_list|)
 argument_list|,
 name|buf
@@ -1508,9 +1502,9 @@ name|newheight
 decl_stmt|;
 if|if
 condition|(
-name|brushfile
+name|brush_from_file
 condition|)
-name|reloadbrush
+name|brush_reload
 argument_list|(
 name|fn
 argument_list|,
@@ -1543,7 +1537,7 @@ name|sc
 operator|=
 name|GTK_ADJUSTMENT
 argument_list|(
-name|brushgammaadjust
+name|brush_gamma_adjust
 argument_list|)
 operator|->
 name|value
@@ -1616,7 +1610,7 @@ literal|10
 argument_list|,
 name|GTK_ADJUSTMENT
 argument_list|(
-name|brushaspectadjust
+name|brush_aspect_adjust
 argument_list|)
 operator|->
 name|value
@@ -1748,7 +1742,7 @@ name|gtk_preview_draw_row
 argument_list|(
 name|GTK_PREVIEW
 argument_list|(
-name|brushprev
+name|brush_preview
 argument_list|)
 argument_list|,
 name|buf
@@ -1770,17 +1764,17 @@ expr_stmt|;
 block|}
 name|gtk_widget_queue_draw
 argument_list|(
-name|brushprev
+name|brush_preview
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|brushdontupdate
+DECL|variable|brush_dont_update
 specifier|static
 name|gboolean
-name|brushdontupdate
+name|brush_dont_update
 init|=
 name|FALSE
 decl_stmt|;
@@ -1789,8 +1783,8 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|selectbrush (GtkTreeSelection * selection,gpointer data)
-name|selectbrush
+DECL|function|brush_select (GtkTreeSelection * selection,gpointer data)
+name|brush_select
 parameter_list|(
 name|GtkTreeSelection
 modifier|*
@@ -1821,19 +1815,19 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
-name|brushdontupdate
+name|brush_dont_update
 condition|)
 goto|goto
 name|cleanup
 goto|;
 if|if
 condition|(
-name|brushfile
+name|brush_from_file
 operator|==
 literal|0
 condition|)
 block|{
-name|updatebrushprev
+name|update_brush_preview
 argument_list|(
 name|NULL
 argument_list|)
@@ -1919,7 +1913,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|brushdontupdate
+name|brush_dont_update
 operator|=
 name|TRUE
 expr_stmt|;
@@ -1927,7 +1921,7 @@ name|gtk_adjustment_set_value
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
-name|brushgammaadjust
+name|brush_gamma_adjust
 argument_list|)
 argument_list|,
 literal|1.0
@@ -1937,13 +1931,13 @@ name|gtk_adjustment_set_value
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
-name|brushaspectadjust
+name|brush_aspect_adjust
 argument_list|)
 argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
-name|brushdontupdate
+name|brush_dont_update
 operator|=
 name|FALSE
 expr_stmt|;
@@ -1979,7 +1973,7 @@ name|selectedbrush
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|updatebrushprev
+name|update_brush_preview
 argument_list|(
 name|fname
 argument_list|)
@@ -2005,8 +1999,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|selectbrushfile (GtkTreeSelection * selection,gpointer data)
-name|selectbrushfile
+DECL|function|brush_select_file (GtkTreeSelection * selection,gpointer data)
+name|brush_select_file
 parameter_list|(
 name|GtkTreeSelection
 modifier|*
@@ -2016,7 +2010,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|brushfile
+name|brush_from_file
 operator|=
 literal|1
 expr_stmt|;
@@ -2025,7 +2019,7 @@ argument_list|(
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|selectbrush
+name|brush_select
 argument_list|(
 name|selection
 argument_list|,
@@ -2038,8 +2032,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brushaspectadjust_cb (GtkWidget * w,gpointer data)
-name|brushaspectadjust_cb
+DECL|function|brush_asepct_adjust_cb (GtkWidget * w,gpointer data)
+name|brush_asepct_adjust_cb
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2059,7 +2053,7 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|updatebrushprev
+name|update_brush_preview
 argument_list|(
 name|pcvals
 operator|.
@@ -2193,14 +2187,14 @@ name|createonecolumnlist
 argument_list|(
 name|box1
 argument_list|,
-name|selectbrushfile
+name|brush_select_file
 argument_list|)
 expr_stmt|;
-name|brushlist
+name|brush_list
 operator|=
 name|view
 expr_stmt|;
-name|brushstore
+name|brush_list_store
 operator|=
 name|GTK_LIST_STORE
 argument_list|(
@@ -2291,7 +2285,7 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|brushprev
+name|brush_preview
 operator|=
 name|tmpw
 operator|=
@@ -2400,7 +2394,7 @@ argument_list|(
 name|tmpw
 argument_list|)
 expr_stmt|;
-name|brushgammaadjust
+name|brush_gamma_adjust
 operator|=
 name|gtk_adjustment_new
 argument_list|(
@@ -2425,7 +2419,7 @@ name|gtk_hscale_new
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
-name|brushgammaadjust
+name|brush_gamma_adjust
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2484,13 +2478,13 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
-name|brushgammaadjust
+name|brush_gamma_adjust
 argument_list|,
 literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|updatebrushprev
+name|update_brush_preview
 argument_list|)
 argument_list|,
 name|pcvals
@@ -2744,7 +2738,7 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-name|brushaspectadjust
+name|brush_aspect_adjust
 operator|=
 name|gimp_scale_entry_new
 argument_list|(
@@ -2802,19 +2796,19 @@ name|group
 argument_list|,
 name|GIMP_SCALE_ENTRY_LABEL
 argument_list|(
-name|brushaspectadjust
+name|brush_aspect_adjust
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|brushaspectadjust
+name|brush_aspect_adjust
 argument_list|,
 literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|brushaspectadjust_cb
+name|brush_asepct_adjust_cb
 argument_list|)
 argument_list|,
 operator|&
@@ -2823,7 +2817,7 @@ operator|.
 name|brushaspect
 argument_list|)
 expr_stmt|;
-name|brushreliefadjust
+name|brush_relief_adjust
 operator|=
 name|gimp_scale_entry_new
 argument_list|(
@@ -2880,13 +2874,13 @@ name|group
 argument_list|,
 name|GIMP_SCALE_ENTRY_LABEL
 argument_list|(
-name|brushreliefadjust
+name|brush_relief_adjust
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|brushreliefadjust
+name|brush_relief_adjust
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -2901,7 +2895,7 @@ operator|.
 name|brushrelief
 argument_list|)
 expr_stmt|;
-name|selectbrush
+name|brush_select
 argument_list|(
 name|selection
 argument_list|,
@@ -2922,7 +2916,7 @@ expr_stmt|;
 comment|/*     * This is so the "changed signal won't get sent to the brushes' list    * and reset the gamma and stuff.    * */
 name|gtk_widget_grab_focus
 argument_list|(
-name|brushlist
+name|brush_list
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page_menu

@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43c3820108
+DECL|struct|__anon2b6456ca0108
 block|{
 DECL|member|orientnum
 name|int
@@ -724,7 +724,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|reloadbrush
+name|brush_reload
 parameter_list|(
 specifier|const
 name|gchar
