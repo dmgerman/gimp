@@ -185,7 +185,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8a9d540103
+DECL|enum|__anon2b3dad820103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -13902,7 +13902,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* Directories */
+comment|/* Folders */
 name|vbox
 operator|=
 name|prefs_notebook_append_page
@@ -13914,7 +13914,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Directories"
+literal|"Folders"
 argument_list|)
 argument_list|,
 name|GTK_TREE_STORE
@@ -13924,10 +13924,10 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Directories"
+literal|"Folders"
 argument_list|)
 argument_list|,
-literal|"dialogs/preferences/directories.html"
+literal|"dialogs/preferences/folders.html"
 argument_list|,
 name|NULL
 argument_list|,
@@ -13949,7 +13949,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b8a9d540208
+DECL|struct|__anon2b3dad820208
 block|{
 DECL|member|label
 name|gchar
@@ -14162,12 +14162,12 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* Directories /<paths> */
+comment|/* Folders /<paths> */
 block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b8a9d540308
+DECL|struct|__anon2b3dad820308
 block|{
 DECL|member|tree_label
 name|gchar
@@ -14208,14 +14208,14 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Brushes Directories"
+literal|"Brush Folders"
 argument_list|)
 block|,
-literal|"dialogs/preferences/directories.html#brushes"
+literal|"dialogs/preferences/folders.html#brushes"
 block|,
 name|N_
 argument_list|(
-literal|"Select Brushes Dir"
+literal|"Select Brush Folders"
 argument_list|)
 block|,
 operator|&
@@ -14230,14 +14230,14 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Patterns Directories"
+literal|"Pattern Folders"
 argument_list|)
 block|,
-literal|"dialogs/preferences/directories.html#patterns"
+literal|"dialogs/preferences/folders.html#patterns"
 block|,
 name|N_
 argument_list|(
-literal|"Select Patterns Dir"
+literal|"Select Pattern Folders"
 argument_list|)
 block|,
 operator|&
@@ -14252,14 +14252,14 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Palettes Directories"
+literal|"Palette Folders"
 argument_list|)
 block|,
-literal|"dialogs/preferences/directories.html#palettes"
+literal|"dialogs/preferences/folders.html#palettes"
 block|,
 name|N_
 argument_list|(
-literal|"Select Palettes Dir"
+literal|"Select Palette Folders"
 argument_list|)
 block|,
 operator|&
@@ -14274,14 +14274,14 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Gradients Directories"
+literal|"Gradient Folders"
 argument_list|)
 block|,
-literal|"dialogs/preferences/directories.html#gradients"
+literal|"dialogs/preferences/folders.html#gradients"
 block|,
 name|N_
 argument_list|(
-literal|"Select Gradients Dir"
+literal|"Select Gradient Folders"
 argument_list|)
 block|,
 operator|&
@@ -14296,14 +14296,14 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Plug-Ins Directories"
+literal|"Plug-In Folders"
 argument_list|)
 block|,
-literal|"dialogs/preferences/directories.html#plug_ins"
+literal|"dialogs/preferences/folders.html#plug_ins"
 block|,
 name|N_
 argument_list|(
-literal|"Select Plug-Ins Dir"
+literal|"Select Plug-In Folders"
 argument_list|)
 block|,
 operator|&
@@ -14318,14 +14318,14 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Tool Plug-Ins Directories"
+literal|"Tool Plug-In Folders"
 argument_list|)
 block|,
-literal|"dialogs/preferences/directories.html#tool_plug_ins"
+literal|"dialogs/preferences/folders.html#tool_plug_ins"
 block|,
 name|N_
 argument_list|(
-literal|"Select Tool Plug-Ins Dir"
+literal|"Select Tool Plug-In Folders"
 argument_list|)
 block|,
 operator|&
@@ -14340,14 +14340,14 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Modules Directories"
+literal|"Module Folders"
 argument_list|)
 block|,
-literal|"dialogs/preferences/directories.html#modules"
+literal|"dialogs/preferences/folders.html#modules"
 block|,
 name|N_
 argument_list|(
-literal|"Select Modules Dir"
+literal|"Select Module Folders"
 argument_list|)
 block|,
 operator|&
@@ -14362,14 +14362,14 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Themes Directories"
+literal|"Theme Folders"
 argument_list|)
 block|,
-literal|"dialogs/preferences/directories.html#themes"
+literal|"dialogs/preferences/folders.html#themes"
 block|,
 name|N_
 argument_list|(
-literal|"Select Themes Dir"
+literal|"Select Theme Folders"
 argument_list|)
 block|,
 operator|&
