@@ -85,18 +85,10 @@ name|GIMP_HELP_PREFIX
 value|"help"
 end_define
 
-begin_define
-DECL|macro|GIMP_HELP_DEFAULT_DOMAIN
-define|#
-directive|define
-name|GIMP_HELP_DEFAULT_DOMAIN
-value|"http://www.gimp.org/help"
-end_define
-
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2760a5710108
+DECL|struct|__anon276675db0108
 block|{
 DECL|member|help_domain
 name|gchar

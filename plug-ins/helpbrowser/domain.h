@@ -16,6 +16,14 @@ directive|define
 name|__DOMAIN_H__
 end_define
 
+begin_define
+DECL|macro|GIMP_HELP_DEFAULT_DOMAIN
+define|#
+directive|define
+name|GIMP_HELP_DEFAULT_DOMAIN
+value|"http://www.gimp.org/help"
+end_define
+
 begin_typedef
 DECL|typedef|HelpDomain
 typedef|typedef

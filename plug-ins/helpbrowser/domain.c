@@ -39,6 +39,12 @@ directive|include
 file|"domain.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_struct
 DECL|struct|_HelpDomain
 struct|struct
@@ -344,7 +350,10 @@ name|help_id_mapping
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Failed to open help files:\n%s"
+argument_list|)
 argument_list|,
 name|error
 operator|->
@@ -354,8 +363,11 @@ expr_stmt|;
 else|else
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Parse error in help domain:\n%s\n\n"
 literal|"(Added entires before error anyway)"
+argument_list|)
 argument_list|,
 name|error
 operator|->
@@ -403,7 +415,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Help ID \"%s\" unknown"
+name|_
+argument_list|(
+literal|"Help ID '%s' unknown"
+argument_list|)
 argument_list|,
 name|help_id
 argument_list|)
@@ -554,7 +569,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f133720103
+DECL|enum|__anon2c6324c40103
 block|{
 DECL|enumerator|DOMAIN_START
 name|DOMAIN_START
@@ -576,7 +591,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f133720208
+DECL|struct|__anon2c6324c40208
 block|{
 DECL|member|filename
 specifier|const
@@ -905,34 +920,58 @@ operator|!
 name|fp
 condition|)
 block|{
+name|gchar
+modifier|*
+name|msg
+decl_stmt|;
+name|gchar
+modifier|*
+name|msg2
+decl_stmt|;
 if|if
 condition|(
+operator|!
 name|strcmp
 argument_list|(
 name|domain
 operator|->
-name|help_uri
+name|help_domain
 argument_list|,
-literal|"file:///usr/local/share/gimp/1.3/help"
+name|GIMP_HELP_DEFAULT_DOMAIN
 argument_list|)
-operator|==
-literal|0
 condition|)
-block|{
-name|g_set_error
+name|msg
+operator|=
+name|_
 argument_list|(
-name|error
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 literal|"The GIMP help files are not installed."
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
+name|msg
+operator|=
+name|_
+argument_list|(
+literal|"The requested help files are not installed."
+argument_list|)
+expr_stmt|;
+name|msg2
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Could not open '%s' for reading: %s"
+argument_list|)
+argument_list|,
+name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_set_error
 argument_list|(
 name|error
@@ -941,13 +980,23 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|"The requested help file %s could not be opened.\n"
-literal|"Please check your installation."
+literal|"%s\n\n%s\n\n%s"
 argument_list|,
-name|filename
+name|msg
+argument_list|,
+name|msg2
+argument_list|,
+name|_
+argument_list|(
+literal|"Please check your installation."
+argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
+name|g_free
+argument_list|(
+name|msg2
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|filename
@@ -1304,7 +1353,7 @@ name|DOMAIN_START
 case|:
 name|g_warning
 argument_list|(
-literal|"tips_parser: This shouldn't happen."
+literal|"domain_parser: This shouldn't happen."
 argument_list|)
 expr_stmt|;
 break|break;
