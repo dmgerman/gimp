@@ -87,6 +87,17 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|gimp_item_is_attached
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
 name|histogram
 operator|!=
 name|NULL

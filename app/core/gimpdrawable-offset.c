@@ -1415,7 +1415,10 @@ name|gimp_drawable_set_tiles
 argument_list|(
 name|drawable
 argument_list|,
-name|TRUE
+name|gimp_item_is_attached
+argument_list|(
+name|item
+argument_list|)
 argument_list|,
 name|_
 argument_list|(

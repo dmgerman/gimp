@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0a24c60103
+DECL|enum|__anon28ee9dde0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1846,6 +1846,17 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|gimp_item_is_attached
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|text
 operator|=
 name|gimp_text_layer_get_text
@@ -1996,6 +2007,17 @@ argument_list|(
 name|GIMP_IS_TEXT_LAYER
 argument_list|(
 name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|gimp_item_is_attached
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
