@@ -164,6 +164,10 @@ DECL|member|monitor_res_from_gdk
 name|gboolean
 name|monitor_res_from_gdk
 decl_stmt|;
+DECL|member|nav_preview_size
+name|GimpPreviewSize
+name|nav_preview_size
+decl_stmt|;
 block|}
 struct|;
 end_struct

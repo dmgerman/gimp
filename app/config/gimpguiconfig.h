@@ -98,10 +98,6 @@ DECL|member|parent_instance
 name|GimpDisplayConfig
 name|parent_instance
 decl_stmt|;
-DECL|member|last_opened_size
-name|gint
-name|last_opened_size
-decl_stmt|;
 DECL|member|transparency_size
 name|GimpCheckSize
 name|transparency_size
@@ -113,10 +109,6 @@ decl_stmt|;
 DECL|member|default_threshold
 name|gint
 name|default_threshold
-decl_stmt|;
-DECL|member|nav_preview_size
-name|GimpPreviewSize
-name|nav_preview_size
 decl_stmt|;
 DECL|member|info_window_per_display
 name|gboolean
@@ -149,6 +141,10 @@ decl_stmt|;
 DECL|member|tearoff_menus
 name|gboolean
 name|tearoff_menus
+decl_stmt|;
+DECL|member|last_opened_size
+name|gint
+name|last_opened_size
 decl_stmt|;
 DECL|member|max_new_image_size
 name|gulong
