@@ -132,12 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay_color_ui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimage_mask.h"
 end_include
 
@@ -260,6 +254,27 @@ include|#
 directive|include
 file|"undo.h"
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"gdisplay_color_ui.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* DISPLAY_FILTERS */
+end_comment
 
 begin_include
 include|#
@@ -4376,6 +4391,12 @@ expr_stmt|;
 block|}
 end_function
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
+end_ifdef
+
 begin_function
 name|void
 DECL|function|dialogs_display_filters_cmd_callback (GtkWidget * widget,gpointer client_data)
@@ -4448,6 +4469,15 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* DISPLAY_FILTERS */
+end_comment
 
 begin_function
 name|void

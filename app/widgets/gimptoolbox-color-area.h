@@ -53,6 +53,12 @@ begin_comment
 comment|/* foreground (= 0) or background (= 1) */
 end_comment
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
+end_ifdef
+
 begin_decl_stmt
 specifier|extern
 name|GDisplay
@@ -63,6 +69,15 @@ end_decl_stmt
 
 begin_comment
 comment|/* hack for color displays */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* DISPLAY_FILTERS */
 end_comment
 
 begin_comment

@@ -606,6 +606,9 @@ name|IdleRenderStruct
 name|idle_render
 decl_stmt|;
 comment|/* state of this gdisplay's render thread   */
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
 DECL|member|cd_list
 name|GList
 modifier|*
@@ -618,6 +621,9 @@ modifier|*
 name|cd_ui
 decl_stmt|;
 comment|/* color display filter dialog              */
+endif|#
+directive|endif
+comment|/* DISPLAY_FILTERS */
 DECL|member|warning_dialog
 name|GtkWidget
 modifier|*

@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay_color.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay_ops.h"
 end_include
 
@@ -188,6 +182,27 @@ include|#
 directive|include
 file|"undo.h"
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"gdisplay_color.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* DISPLAY_FILTERS */
+end_comment
 
 begin_include
 include|#
@@ -704,6 +719,9 @@ name|active
 operator|=
 name|FALSE
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
 name|gdisp
 operator|->
 name|cd_list
@@ -716,6 +734,9 @@ name|cd_ui
 operator|=
 name|NULL
 expr_stmt|;
+endif|#
+directive|endif
+comment|/* DISPLAY_FILTERS */
 name|gdisp
 operator|->
 name|warning_dialog
@@ -1575,12 +1596,18 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
 comment|/* detach any color displays */
 name|gdisplay_color_detach_all
 argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
+comment|/* DISPLAY_FILTERS */
 comment|/* get rid of signals handled by this display */
 name|gtk_signal_disconnect_by_data
 argument_list|(
@@ -5906,10 +5933,6 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|GList
-modifier|*
-name|list
-decl_stmt|;
 name|guchar
 modifier|*
 name|buf
@@ -5919,6 +5942,16 @@ name|bpp
 decl_stmt|,
 name|bpl
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
+name|GList
+modifier|*
+name|list
+decl_stmt|;
+endif|#
+directive|endif
+comment|/* DISPLAY_FILTERS */
 name|buf
 operator|=
 name|gximage_get_data
@@ -6337,6 +6370,9 @@ comment|/* Invalidate the projection just after we render it! */
 block|gimage_invalidate_without_render (gdisp->gimage, 					      j - gdisp->disp_xoffset, 					      i - gdisp->disp_yoffset, 					      dx, dy, 					      0, 0, 0, 0);
 endif|#
 directive|endif
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
 name|list
 operator|=
 name|gdisp
@@ -6386,6 +6422,9 @@ operator|->
 name|next
 expr_stmt|;
 block|}
+endif|#
+directive|endif
+comment|/* DISPLAY_FILTERS */
 name|gximage_put
 argument_list|(
 name|gdisp

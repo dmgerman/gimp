@@ -65,12 +65,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay_color.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -80,10 +74,31 @@ directive|include
 file|"gimpdnd.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"gdisplay_color.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* DISPLAY_FILTERS */
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292cb26a0103
+DECL|enum|__anon289102190103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -628,10 +643,16 @@ name|guchar
 modifier|*
 name|bp
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
 name|GList
 modifier|*
 name|list
 decl_stmt|;
+endif|#
+directive|endif
+comment|/* DISPLAY_FILTERS */
 name|rowstride
 operator|=
 literal|3
@@ -722,6 +743,9 @@ name|bp
 operator|=
 name|color_area_rgb_buf
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
 for|for
 control|(
 name|list
@@ -772,6 +796,9 @@ name|rowstride
 argument_list|)
 expr_stmt|;
 block|}
+endif|#
+directive|endif
+comment|/* DISPLAY_FILTERS */
 for|for
 control|(
 name|yy
@@ -2204,6 +2231,9 @@ argument_list|,
 name|color_area
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
 comment|/* display filter dummy gdisplay */
 name|color_area_gdisp
 operator|=
@@ -2245,6 +2275,9 @@ name|base_type
 operator|=
 name|RGB
 expr_stmt|;
+endif|#
+directive|endif
+comment|/* DISPLAY_FILTERS */
 return|return
 name|color_area
 return|;

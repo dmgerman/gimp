@@ -210,12 +210,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay_color.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay_ops.h"
 end_include
 
@@ -422,6 +416,27 @@ include|#
 directive|include
 file|"colormap_dialog.h"
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"gdisplay_color.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* DISPLAY_FILTERS */
+end_comment
 
 begin_include
 include|#
@@ -2434,9 +2449,15 @@ expr_stmt|;
 name|internal_procs_init
 argument_list|()
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
 name|color_display_init
 argument_list|()
 expr_stmt|;
+endif|#
+directive|endif
+comment|/* DISPLAY_FILTERS */
 name|RESET_BAR
 argument_list|()
 expr_stmt|;

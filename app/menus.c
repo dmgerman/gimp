@@ -815,6 +815,9 @@ block|,
 name|NULL
 block|}
 block|,
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
 block|{
 block|{
 name|N_
@@ -834,6 +837,9 @@ block|,
 name|NULL
 block|}
 block|,
+endif|#
+directive|endif
+comment|/* DISPLAY_FILTERS */
 block|{
 block|{
 literal|"/File/---"
@@ -3413,6 +3419,9 @@ block|,
 name|NULL
 block|}
 block|,
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
 block|{
 block|{
 name|N_
@@ -3432,6 +3441,9 @@ block|,
 name|NULL
 block|}
 block|,
+endif|#
+directive|endif
+comment|/* DISPLAY_FILTERS */
 block|{
 block|{
 name|N_
