@@ -111,6 +111,26 @@ block|}
 end_function
 
 begin_function
+DECL|function|color_type_input (int in)
+name|int
+name|color_type_input
+parameter_list|(
+name|int
+name|in
+parameter_list|)
+block|{
+return|return
+name|CLAMP_UP_TO
+argument_list|(
+name|in
+argument_list|,
+name|NUMCOLORRADIO
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
 DECL|function|create_colorpage (GtkNotebook * notebook)
 name|void
 name|create_colorpage

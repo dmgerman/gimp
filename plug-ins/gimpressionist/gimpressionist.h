@@ -86,14 +86,6 @@ name|MAXSIZEVECT
 value|50
 end_define
 
-begin_define
-DECL|macro|NUMSIZERADIO
-define|#
-directive|define
-name|NUMSIZERADIO
-value|8
-end_define
-
 begin_comment
 comment|/* Type declaration and definitions */
 end_comment
@@ -166,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f667fb0108
+DECL|struct|__anon2966a3710108
 block|{
 DECL|member|orientnum
 name|int
@@ -784,6 +776,19 @@ name|buttons_array
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_define
+DECL|macro|CLAMP_UP_TO (x,max)
+define|#
+directive|define
+name|CLAMP_UP_TO
+parameter_list|(
+name|x
+parameter_list|,
+name|max
+parameter_list|)
+value|(CLAMP((x),(0),(max-1)))
+end_define
 
 begin_endif
 endif|#

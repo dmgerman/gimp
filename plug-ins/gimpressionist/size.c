@@ -47,6 +47,14 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|NUMSIZERADIO
+define|#
+directive|define
+name|NUMSIZERADIO
+value|8
+end_define
+
 begin_decl_stmt
 DECL|variable|sizenumadjust
 specifier|static
@@ -116,6 +124,26 @@ argument_list|(
 name|d
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+DECL|function|size_type_input (int in)
+name|int
+name|size_type_input
+parameter_list|(
+name|int
+name|in
+parameter_list|)
+block|{
+return|return
+name|CLAMP_UP_TO
+argument_list|(
+name|in
+argument_list|,
+name|NUMSIZERADIO
+argument_list|)
+return|;
 block|}
 end_function
 

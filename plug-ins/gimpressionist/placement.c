@@ -132,6 +132,26 @@ block|}
 end_function
 
 begin_function
+DECL|function|place_type_input (int in)
+name|int
+name|place_type_input
+parameter_list|(
+name|int
+name|in
+parameter_list|)
+block|{
+return|return
+name|CLAMP_UP_TO
+argument_list|(
+name|in
+argument_list|,
+name|NUM_PLACE_RADIO
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
 DECL|function|place_store ()
 name|void
 name|place_store

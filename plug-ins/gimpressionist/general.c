@@ -331,6 +331,26 @@ block|}
 end_function
 
 begin_function
+DECL|function|general_bg_type_input (int in)
+name|int
+name|general_bg_type_input
+parameter_list|(
+name|int
+name|in
+parameter_list|)
+block|{
+return|return
+name|CLAMP_UP_TO
+argument_list|(
+name|in
+argument_list|,
+name|NUMGENERALBGRADIO
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
 DECL|function|general_restore (void)
 name|void
 name|general_restore
