@@ -4,10 +4,6 @@ comment|/* bmpread.c	reads any bitmap I could get for testing */
 end_comment
 
 begin_comment
-comment|/*		except OS2 bitmaps (wrong colors)        */
-end_comment
-
-begin_comment
 comment|/* Alexander.Schulz@stud.uni-karlsruhe.de                */
 end_comment
 
