@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimagefile.h"
 end_include
 
@@ -808,8 +814,8 @@ name|GimpImagefile
 modifier|*
 name|imagefile
 decl_stmt|;
-comment|/* enable& clear all undo steps */
-name|gimp_image_undo_enable
+comment|/* clear all undo steps */
+name|gimp_image_undo_free
 argument_list|(
 name|gimage
 argument_list|)

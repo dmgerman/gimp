@@ -285,11 +285,11 @@ name|gint
 name|dirty
 decl_stmt|;
 comment|/*  dirty flag -- # of ops       */
-DECL|member|undo_on
-name|gboolean
-name|undo_on
+DECL|member|freeze_count
+name|gint
+name|freeze_count
 decl_stmt|;
-comment|/*  Is undo enabled?             */
+comment|/*  counts the _freeze's         */
 DECL|member|instance_count
 name|gint
 name|instance_count
