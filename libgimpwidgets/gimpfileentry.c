@@ -147,7 +147,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon287fc7c90103
+DECL|enum|__anon2921859d0103
 enum|enum
 block|{
 DECL|enumerator|GFS_FILENAME_CHANGED_SIGNAL
@@ -454,7 +454,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|5
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

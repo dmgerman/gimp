@@ -229,19 +229,6 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"Close"
-argument_list|)
-block|,
-name|palette_select_close_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
 literal|"Edit"
 argument_list|)
 block|,
@@ -251,7 +238,20 @@ name|NULL
 block|,
 name|NULL
 block|}
-block|, }
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"Close"
+argument_list|)
+block|,
+name|palette_select_close_callback
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|}
 decl_stmt|;
 end_decl_stmt
 

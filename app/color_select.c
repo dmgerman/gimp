@@ -142,7 +142,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_BUTTON_PRESS_MASK | GDK_
 end_define
 
 begin_typedef
-DECL|enum|__anon296b972f0103
+DECL|enum|__anon2bd1d4850103
 typedef|typedef
 enum|enum
 block|{
@@ -190,7 +190,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon296b972f0203
+DECL|enum|__anon2bd1d4850203
 typedef|typedef
 enum|enum
 block|{
@@ -915,7 +915,7 @@ name|NULL
 block|,
 name|NULL
 block|}
-block|, }
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -10939,7 +10939,7 @@ comment|/* Colour notebook glue      */
 end_comment
 
 begin_typedef
-DECL|struct|__anon296b972f0308
+DECL|struct|__anon2bd1d4850308
 typedef|typedef
 struct|struct
 block|{

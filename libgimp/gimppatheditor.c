@@ -177,7 +177,7 @@ comment|/* static void gimp_path_editor_check_path (GimpPathEditor *gpe, 					 G
 end_comment
 
 begin_enum
-DECL|enum|__anon2b17ce930103
+DECL|enum|__anon2a98b8e90103
 enum|enum
 block|{
 DECL|enumerator|GPE_PATH_CHANGED_SIGNAL
@@ -346,7 +346,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -671,7 +671,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

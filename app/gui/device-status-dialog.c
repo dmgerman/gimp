@@ -537,19 +537,6 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"Close"
-argument_list|)
-block|,
-name|devices_close_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
 literal|"Save"
 argument_list|)
 block|,
@@ -562,7 +549,20 @@ name|NULL
 block|,
 name|NULL
 block|}
-block|, }
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"Close"
+argument_list|)
+block|,
+name|devices_close_callback
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -3648,7 +3648,7 @@ expr_stmt|;
 block|}
 name|action_items
 index|[
-literal|0
+literal|1
 index|]
 operator|.
 name|user_data
@@ -3670,7 +3670,7 @@ name|action_items
 argument_list|,
 literal|2
 argument_list|,
-literal|0
+literal|1
 argument_list|)
 expr_stmt|;
 name|deviceD

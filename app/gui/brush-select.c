@@ -929,10 +929,10 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"Close"
+literal|"Refresh"
 argument_list|)
 block|,
-name|brush_select_close_callback
+name|brush_select_refresh_callback
 block|,
 name|NULL
 block|,
@@ -942,10 +942,10 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Refresh"
+literal|"Close"
 argument_list|)
 block|,
-name|brush_select_refresh_callback
+name|brush_select_close_callback
 block|,
 name|NULL
 block|,
@@ -2441,7 +2441,7 @@ name|action_items
 argument_list|,
 literal|2
 argument_list|,
-literal|0
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

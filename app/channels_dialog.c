@@ -8906,7 +8906,7 @@ name|action_items
 argument_list|,
 literal|2
 argument_list|,
-literal|0
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
