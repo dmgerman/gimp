@@ -918,7 +918,10 @@ name|GtkSignalFunc
 operator|)
 name|tool_options_double_adjustment_update
 argument_list|,
+operator|&
 name|options
+operator|->
+name|fade_out
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
