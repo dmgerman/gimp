@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIF loading file filter for The GIMP version 1.0/1.1  *  *    - Adam D. Moss  *    - Peter Mattis  *    - Spencer Kimball  *  *      Based around original GIF code by David Koblas.  *  *  * Version 1.0.2 - 99/11/20  *                        Adam D. Moss -<adam@gimp.org><adam@foxbox.org>  */
+comment|/* GIF loading file filter for The GIMP version 1.0/1.1  *  *    - Adam D. Moss  *    - Peter Mattis  *    - Spencer Kimball  *  *      Based around original GIF code by David Koblas.  *  *  * Version 1.0.3 - 2000/03/31  *                        Adam D. Moss -<adam@gimp.org><adam@foxbox.org>  */
 end_comment
 
 begin_comment
@@ -12,7 +12,7 @@ comment|/*  *  "The Graphics Interchange Format(c) is the Copyright property of 
 end_comment
 
 begin_comment
-comment|/*  * REVISION HISTORY  *  * 99/11/20  * 1.00.02 - Fixed a couple of possible infinite loops where an  *     error condition was not being checked.  Also changed some g_message()s  *     back to g_warning()s as they should be (don't get carried away with  *     the user feedback fellahs, no-one wants to be told of every single  *     corrupt byte and block in its own little window.  :-( ).  *  * 99/11/11  * 1.00.01 - Fixed an uninitialized variable which has been around  *     forever... thanks to jrb@redhat.com for noticing that there  *     was a problem somewhere!  *  * 99/03/20  * 1.00.00 - GIF load-only code split from main GIF plugin.  *  * For previous revision information, please consult the comments  * in the 'gif' plugin.  */
+comment|/*  * REVISION HISTORY  *  * 2000/03/31  * 1.00.03 - Just mildly more useful comments/messages concerning frame  *     disposals.  *  * 99/11/20  * 1.00.02 - Fixed a couple of possible infinite loops where an  *     error condition was not being checked.  Also changed some g_message()s  *     back to g_warning()s as they should be (don't get carried away with  *     the user feedback fellahs, no-one wants to be told of every single  *     corrupt byte and block in its own little window.  :-( ).  *  * 99/11/11  * 1.00.01 - Fixed an uninitialized variable which has been around  *     forever... thanks to jrb@redhat.com for noticing that there  *     was a problem somewhere!  *  * 99/03/20  * 1.00.00 - GIF load-only code split from main GIF plugin.  *  * For previous revision information, please consult the comments  * in the 'gif' plugin.  */
 end_comment
 
 begin_comment
@@ -769,7 +769,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon296d87150108
+DECL|struct|__anon2b9c85080108
 block|{
 DECL|member|Width
 name|unsigned
@@ -819,7 +819,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon296d87150208
+DECL|struct|__anon2b9c85080208
 block|{
 DECL|member|transparent
 name|int
@@ -4050,6 +4050,7 @@ break|break;
 case|case
 literal|0x03
 case|:
+comment|/* Rarely-used, and unhandled by many 		       loaders/players (including GIMP: we treat as 		       'combine' mode). */
 name|framename_ptr
 operator|=
 name|framename
@@ -4060,7 +4061,7 @@ name|g_strconcat
 argument_list|(
 name|framename
 argument_list|,
-literal|" (combine)"
+literal|" (combine) (!)"
 argument_list|,
 name|NULL
 argument_list|)
@@ -4074,12 +4075,14 @@ break|break;
 case|case
 literal|0x04
 case|:
+comment|/* I've seen a composite of this type. stvo_online_banner2.gif */
 case|case
 literal|0x05
 case|:
 case|case
 literal|0x06
 case|:
+comment|/* I've seen a composite of this type. bn31.Gif */
 case|case
 literal|0x07
 case|:
@@ -4105,8 +4108,11 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"GIF: Hmm... please forward this GIF to the "
+literal|"GIF: Hmm... Composite type %d.  Interesting.\n"
+literal|"Please forward this GIF to the "
 literal|"GIF plugin author!\n  (adam@foxbox.org)\n"
+argument_list|,
+name|previous_disposal
 argument_list|)
 expr_stmt|;
 break|break;
