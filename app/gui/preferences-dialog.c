@@ -197,7 +197,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288b61280103
+DECL|enum|__anon2c08090c0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -13606,7 +13606,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon288b61280208
+DECL|struct|__anon2c08090c0208
 block|{
 DECL|member|label
 name|gchar
@@ -13786,7 +13786,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon288b61280308
+DECL|struct|__anon2c08090c0308
 block|{
 DECL|member|tree_label
 name|gchar
@@ -13797,6 +13797,11 @@ DECL|member|label
 name|gchar
 modifier|*
 name|label
+decl_stmt|;
+DECL|member|icon
+name|gchar
+modifier|*
+name|icon
 decl_stmt|;
 DECL|member|help_data
 name|gchar
@@ -13830,6 +13835,8 @@ argument_list|(
 literal|"Brush Folders"
 argument_list|)
 block|,
+literal|"folders-brushes.png"
+block|,
 literal|"dialogs/preferences/folders.html#brushes"
 block|,
 name|N_
@@ -13851,6 +13858,8 @@ name|N_
 argument_list|(
 literal|"Pattern Folders"
 argument_list|)
+block|,
+literal|"folders-patterns.png"
 block|,
 literal|"dialogs/preferences/folders.html#patterns"
 block|,
@@ -13874,6 +13883,8 @@ argument_list|(
 literal|"Palette Folders"
 argument_list|)
 block|,
+literal|"folders-palettes.png"
+block|,
 literal|"dialogs/preferences/folders.html#palettes"
 block|,
 name|N_
@@ -13895,6 +13906,8 @@ name|N_
 argument_list|(
 literal|"Gradient Folders"
 argument_list|)
+block|,
+literal|"folders-gradients.png"
 block|,
 literal|"dialogs/preferences/folders.html#gradients"
 block|,
@@ -13918,6 +13931,8 @@ argument_list|(
 literal|"Plug-In Folders"
 argument_list|)
 block|,
+literal|"folders-plug-ins.png"
+block|,
 literal|"dialogs/preferences/folders.html#plug_ins"
 block|,
 name|N_
@@ -13939,6 +13954,8 @@ name|N_
 argument_list|(
 literal|"Tool Plug-In Folders"
 argument_list|)
+block|,
+literal|"folders.png"
 block|,
 literal|"dialogs/preferences/folders.html#tool_plug_ins"
 block|,
@@ -13962,6 +13979,8 @@ argument_list|(
 literal|"Module Folders"
 argument_list|)
 block|,
+literal|"folders.png"
+block|,
 literal|"dialogs/preferences/folders.html#modules"
 block|,
 name|N_
@@ -13983,6 +14002,8 @@ name|N_
 argument_list|(
 literal|"Theme Folders"
 argument_list|)
+block|,
+literal|"folders.png"
 block|,
 literal|"dialogs/preferences/folders.html#themes"
 block|,
@@ -14034,7 +14055,12 @@ operator|.
 name|label
 argument_list|)
 argument_list|,
-literal|"folders.png"
+name|paths
+index|[
+name|i
+index|]
+operator|.
+name|icon
 argument_list|,
 name|GTK_TREE_STORE
 argument_list|(
