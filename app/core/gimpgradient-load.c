@@ -830,7 +830,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2490a00103
+DECL|enum|__anon28eed1240103
 block|{
 DECL|enumerator|SVG_STATE_OUT
 name|SVG_STATE_OUT
@@ -852,7 +852,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2490a00208
+DECL|struct|__anon28eed1240208
 block|{
 DECL|member|state
 name|SvgParserState
@@ -877,7 +877,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2490a00308
+DECL|struct|__anon28eed1240308
 block|{
 DECL|member|offset
 name|gdouble
@@ -1169,7 +1169,7 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"No gradients found in '%s'"
+literal|"No linear gradient found in '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
