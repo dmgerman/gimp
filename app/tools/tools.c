@@ -5736,7 +5736,7 @@ operator|*
 operator|)
 name|data
 expr_stmt|;
-name|gtk_widget_hide
+name|gimp_dialog_hide
 argument_list|(
 name|shell
 argument_list|)
