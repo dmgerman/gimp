@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293062e10103
+DECL|enum|__anon2b2a8c070103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -3805,14 +3805,13 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * gimp_vectors_to_art_vpath: Create an ArtVpath from a GimpVectors object.  * @vectors: The source path  *  * Traverses the stroke list of a GimpVector object, adding nodes to an  * ArtVpath as it goes.  * The destination path is allocated inside this function, and must be  * freed after use.  *  * Return value: Newly allocated ArtVpath.  */
+comment|/*  * gimp_vectors_art_stroke: Stroke a GimpVectors object using libart.  * @vectors: The source path  *  * Traverses the stroke list of a GimpVector object, calling art_stroke   * on each stroke as we go. Will eventually take cap type, join type   * and width as arguments.  */
 end_comment
 
 begin_function
-name|ArtVpath
-modifier|*
-DECL|function|gimp_vectors_to_art_vpath (const GimpVectors * vectors)
-name|gimp_vectors_to_art_vpath
+name|void
+DECL|function|gimp_vectors_art_stroke (const GimpVectors * vectors)
+name|gimp_vectors_art_stroke
 parameter_list|(
 specifier|const
 name|GimpVectors
@@ -3820,37 +3819,11 @@ modifier|*
 name|vectors
 parameter_list|)
 block|{
-name|ArtVpath
-modifier|*
-name|vec
-decl_stmt|;
-comment|/* Libart path we're creating */
 name|GimpStroke
 modifier|*
 name|cur_stroke
 decl_stmt|;
-name|guint
-name|num_points
-decl_stmt|;
-name|num_points
-operator|=
-name|g_list_length
-argument_list|(
-name|vectors
-operator|->
-name|strokes
-argument_list|)
-expr_stmt|;
-name|vec
-operator|=
-name|art_new
-argument_list|(
-name|ArtVpath
-argument_list|,
-name|num_points
-argument_list|)
-expr_stmt|;
-comment|/* Get the list of Strokes in the vector, and create the equivalent    * ArtVpath node */
+comment|/* For each Stroke in the vector, stroke it */
 for|for
 control|(
 name|cur_stroke
@@ -3875,17 +3848,19 @@ argument_list|)
 control|)
 block|{
 comment|/* Add this stroke to the art_vpath */
-name|gimp_stroke_to_art_point
+name|GIMP_STROKE_GET_CLASS
 argument_list|(
 name|cur_stroke
-argument_list|,
-name|vec
+argument_list|)
+operator|->
+name|art_stroke
+argument_list|(
+name|cur_stroke
 argument_list|)
 expr_stmt|;
 block|}
-return|return
-name|vec
-return|;
+comment|/* That's it - nothing else to see here */
+return|return;
 block|}
 end_function
 

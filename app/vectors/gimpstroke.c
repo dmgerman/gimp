@@ -762,16 +762,12 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_stroke_real_to_art_point
+name|gimp_stroke_art_stroke
 parameter_list|(
 specifier|const
 name|GimpStroke
 modifier|*
-name|vectors
-parameter_list|,
-name|ArtVpath
-modifier|*
-name|vec
+name|stroke
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1142,9 +1138,9 @@ name|gimp_stroke_real_get_draw_lines
 expr_stmt|;
 name|klass
 operator|->
-name|to_art_point
+name|art_stroke
 operator|=
-name|gimp_stroke_real_to_art_point
+name|gimp_stroke_art_stroke
 expr_stmt|;
 block|}
 end_function
@@ -5029,18 +5025,15 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|gimp_stroke_to_art_point (const GimpStroke * stroke,ArtVpath * vec)
-name|gimp_stroke_to_art_point
+DECL|function|gimp_stroke_art_stroke (const GimpStroke * stroke)
+name|gimp_stroke_art_stroke
 parameter_list|(
 specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
-parameter_list|,
-name|ArtVpath
-modifier|*
-name|vec
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -5056,35 +5049,9 @@ argument_list|(
 name|stroke
 argument_list|)
 operator|->
-name|to_art_point
+name|art_stroke
 argument_list|(
 name|stroke
-argument_list|,
-name|vec
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_stroke_real_to_art_point (const GimpStroke * stroke,ArtVpath * vec)
-name|gimp_stroke_real_to_art_point
-parameter_list|(
-specifier|const
-name|GimpStroke
-modifier|*
-name|stroke
-parameter_list|,
-name|ArtVpath
-modifier|*
-name|vec
-parameter_list|)
-block|{
-name|g_printerr
-argument_list|(
-literal|"gimp_stroke_to_art_point: default implementation\n"
 argument_list|)
 expr_stmt|;
 return|return;

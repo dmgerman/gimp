@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|<libart_lgpl/libart.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpitem.h"
 end_include
 
@@ -756,13 +750,12 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Convert to libart vector path */
+comment|/* Stroke a vector with libart (needs a better name) */
 end_comment
 
 begin_function_decl
-name|ArtVpath
-modifier|*
-name|gimp_vectors_to_art_vpath
+name|void
+name|gimp_vectors_art_stroke
 parameter_list|(
 specifier|const
 name|GimpVectors
