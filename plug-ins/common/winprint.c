@@ -65,7 +65,7 @@ end_define
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29b63a790108
+DECL|struct|__anon2a29dd610108
 block|{
 DECL|member|prDlg
 name|PRINTDLG
@@ -1386,7 +1386,7 @@ operator|.
 name|d_image
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 name|cmap
 operator|=

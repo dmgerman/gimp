@@ -2034,9 +2034,9 @@ name|nBitsPS
 operator|<=
 literal|8
 condition|?
-name|INDEXED
+name|GIMP_INDEXED
 else|:
-name|RGB
+name|GIMP_RGB
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_disable

@@ -307,7 +307,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6642b0108
+DECL|struct|__anon2beda83c0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -354,7 +354,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6642b0208
+DECL|struct|__anon2beda83c0208
 block|{
 DECL|member|run
 name|gint
@@ -369,7 +369,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6642b0308
+DECL|struct|__anon2beda83c0308
 block|{
 DECL|member|cinfo
 name|struct
@@ -2763,7 +2763,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 name|_
 argument_list|(
