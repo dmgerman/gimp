@@ -2197,9 +2197,9 @@ name|radio_button
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|radio_button
 argument_list|)
@@ -4282,9 +4282,9 @@ operator|=
 operator|(
 name|HueRange
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)

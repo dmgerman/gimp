@@ -1530,9 +1530,9 @@ operator|->
 name|use_dyntext_d
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|options
 operator|->
@@ -1544,9 +1544,9 @@ argument_list|,
 name|spinbutton
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|spinbutton
 argument_list|)
@@ -1556,9 +1556,9 @@ argument_list|,
 name|label
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|label
 argument_list|)

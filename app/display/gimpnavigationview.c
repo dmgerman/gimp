@@ -194,7 +194,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ddab540103
+DECL|enum|__anon27a91c560103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -1132,9 +1132,9 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gdisp
 operator|->
@@ -1183,9 +1183,9 @@ argument_list|,
 name|nav_dialog
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gdisp
 operator|->
@@ -2413,6 +2413,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|basename
@@ -7124,9 +7125,9 @@ comment|/* Tie into the dirty signal so we can update the preview        * provi
 if|if
 condition|(
 operator|!
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gimage
 argument_list|)
@@ -7169,9 +7170,9 @@ argument_list|,
 name|nav_dialog
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gimage
 argument_list|)

@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4accf20103
+DECL|enum|__anon2ad44e360103
 block|{
 DECL|enumerator|DRAW
 name|DRAW
@@ -617,9 +617,9 @@ operator|->
 name|join_style
 argument_list|)
 expr_stmt|;
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|core
 argument_list|)
@@ -628,6 +628,8 @@ name|gimp_draw_tool_signals
 index|[
 name|DRAW
 index|]
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|core
@@ -658,9 +660,9 @@ operator|==
 name|INVISIBLE
 condition|)
 return|return;
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|core
 argument_list|)
@@ -669,6 +671,8 @@ name|gimp_draw_tool_signals
 index|[
 name|DRAW
 index|]
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|core
@@ -725,9 +729,9 @@ name|draw_state
 operator|=
 name|VISIBLE
 expr_stmt|;
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|core
 argument_list|)
@@ -736,6 +740,8 @@ name|gimp_draw_tool_signals
 index|[
 name|DRAW
 index|]
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -767,9 +773,9 @@ name|draw_state
 operator|=
 name|INVISIBLE
 expr_stmt|;
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|core
 argument_list|)
@@ -778,6 +784,8 @@ name|gimp_draw_tool_signals
 index|[
 name|DRAW
 index|]
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}

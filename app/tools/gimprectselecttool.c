@@ -152,7 +152,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2610e0103
+DECL|enum|__anon2949264b0103
 block|{
 DECL|enumerator|RECT_SELECT
 name|RECT_SELECT
@@ -568,9 +568,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|new_mask
 argument_list|)
@@ -631,9 +631,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|new_mask
 argument_list|)
@@ -2846,9 +2846,9 @@ name|rect_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|rect_tool
 argument_list|)
@@ -2857,6 +2857,8 @@ name|rect_select_signals
 index|[
 name|RECT_SELECT
 index|]
+argument_list|,
+literal|0
 argument_list|,
 name|x
 argument_list|,

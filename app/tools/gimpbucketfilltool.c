@@ -2741,9 +2741,9 @@ if|if
 condition|(
 name|mask
 condition|)
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|mask
 argument_list|)

@@ -178,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29db7ae50103
+DECL|enum|__anon2ad1b9160103
 block|{
 DECL|enumerator|GIMP_DND_DATA_NONE
 name|GIMP_DND_DATA_NONE

@@ -1096,9 +1096,9 @@ operator|->
 name|show_grid_d
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|options
 operator|->
@@ -1110,9 +1110,9 @@ argument_list|,
 name|grid_density
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|grid_density
 argument_list|)

@@ -1535,9 +1535,9 @@ operator|->
 name|sample_average_d
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|options
 operator|->
@@ -1558,9 +1558,9 @@ operator|->
 name|sample_average_d
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|scale
 argument_list|)

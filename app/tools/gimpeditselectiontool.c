@@ -1253,9 +1253,9 @@ name|state
 operator|=
 name|ACTIVE
 expr_stmt|;
-name|gtk_object_ref
+name|g_object_ref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|edit_select
 argument_list|)
@@ -1635,9 +1635,9 @@ block|}
 name|gdisplays_flush
 argument_list|()
 expr_stmt|;
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|edit_select
 argument_list|)

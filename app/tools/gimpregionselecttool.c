@@ -1909,9 +1909,9 @@ argument_list|,
 name|off_y
 argument_list|)
 expr_stmt|;
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|fuzzy_mask
 argument_list|)
@@ -2818,9 +2818,9 @@ if|if
 condition|(
 name|fuzzy_mask
 condition|)
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|fuzzy_mask
 argument_list|)

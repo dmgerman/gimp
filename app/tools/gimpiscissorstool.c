@@ -2538,9 +2538,9 @@ name|iscissors
 operator|->
 name|mask
 condition|)
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|iscissors
 operator|->
@@ -4914,9 +4914,9 @@ operator|->
 name|mask
 condition|)
 block|{
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|iscissors
 operator|->

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b86dafe0103
+DECL|enum|__anon2793d9120103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1005,9 +1005,9 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|tool
 argument_list|)
@@ -1016,6 +1016,8 @@ name|gimp_tool_signals
 index|[
 name|INITIALIZE
 index|]
+argument_list|,
+literal|0
 argument_list|,
 name|gdisp
 argument_list|)
@@ -1053,9 +1055,9 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|tool
 argument_list|)
@@ -1064,6 +1066,8 @@ name|gimp_tool_signals
 index|[
 name|CONTROL
 index|]
+argument_list|,
+literal|0
 argument_list|,
 name|action
 argument_list|,
@@ -1104,9 +1108,9 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|tool
 argument_list|)
@@ -1115,6 +1119,8 @@ name|gimp_tool_signals
 index|[
 name|BUTTON_PRESS
 index|]
+argument_list|,
+literal|0
 argument_list|,
 name|bevent
 argument_list|,
@@ -1155,9 +1161,9 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|tool
 argument_list|)
@@ -1166,6 +1172,8 @@ name|gimp_tool_signals
 index|[
 name|BUTTON_RELEASE
 index|]
+argument_list|,
+literal|0
 argument_list|,
 name|bevent
 argument_list|,
@@ -1206,9 +1214,9 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|tool
 argument_list|)
@@ -1217,6 +1225,8 @@ name|gimp_tool_signals
 index|[
 name|MOTION
 index|]
+argument_list|,
+literal|0
 argument_list|,
 name|mevent
 argument_list|,
@@ -1257,9 +1267,9 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|tool
 argument_list|)
@@ -1268,6 +1278,8 @@ name|gimp_tool_signals
 index|[
 name|ARROW_KEY
 index|]
+argument_list|,
+literal|0
 argument_list|,
 name|kevent
 argument_list|,
@@ -1308,9 +1320,9 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|tool
 argument_list|)
@@ -1319,6 +1331,8 @@ name|gimp_tool_signals
 index|[
 name|MODIFIER_KEY
 index|]
+argument_list|,
+literal|0
 argument_list|,
 name|kevent
 argument_list|,
@@ -1359,9 +1373,9 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|tool
 argument_list|)
@@ -1370,6 +1384,8 @@ name|gimp_tool_signals
 index|[
 name|CURSOR_UPDATE
 index|]
+argument_list|,
+literal|0
 argument_list|,
 name|mevent
 argument_list|,
@@ -1410,9 +1426,9 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|tool
 argument_list|)
@@ -1421,6 +1437,8 @@ name|gimp_tool_signals
 index|[
 name|OPER_UPDATE
 index|]
+argument_list|,
+literal|0
 argument_list|,
 name|mevent
 argument_list|,

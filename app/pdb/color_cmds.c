@@ -4156,9 +4156,9 @@ argument_list|,
 name|HISTOGRAM_HEIGHT
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|htd
 operator|.
@@ -4167,7 +4167,7 @@ argument_list|)
 argument_list|,
 literal|"range_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|histogram_tool_histogram_range
 argument_list|)

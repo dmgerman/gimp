@@ -348,7 +348,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5a789e0108
+DECL|struct|__anon2b9701eb0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -405,7 +405,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5a789e0208
+DECL|struct|__anon2b9701eb0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -3803,9 +3803,9 @@ operator|->
 name|supersample_d
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|options
 operator|->
