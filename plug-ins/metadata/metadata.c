@@ -54,11 +54,11 @@ end_include
 begin_include
 include|#
 directive|include
-file|"xmp-gen.h"
+file|"xmp-encode.h"
 end_include
 
 begin_comment
-comment|/* FIXME: uncomment when these are working #include "exif-parse.h" #include "exif-gen.h" #include "iptc-parse.h" */
+comment|/* FIXME: uncomment when these are working #include "exif-decode.h" #include "exif-encode.h" #include "iptc-parse.h" */
 end_comment
 
 begin_define

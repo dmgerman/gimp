@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"xmp-gen.h"
+file|"xmp-encode.h"
 end_include
 
 begin_include

@@ -143,7 +143,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"xmp-gen.h"
+file|"xmp-encode.h"
 end_include
 
 begin_define
@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2774ea210108
+DECL|struct|__anon2895c8d80108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1796,7 +1796,10 @@ argument_list|)
 expr_stmt|;
 name|gtk_dialog_set_alternative_button_order
 argument_list|(
+name|GTK_DIALOG
+argument_list|(
 name|dlg
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
@@ -2009,20 +2012,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"\nwriting %d bytes to %s...\n"
-argument_list|,
-name|strlen
-argument_list|(
-name|buffer
-argument_list|)
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
+comment|/*       fprintf (stderr, "\nwriting %d bytes to %s...\n",                strlen (buffer), filename);       */
 if|if
 condition|(
 name|write
@@ -2195,7 +2185,10 @@ argument_list|)
 expr_stmt|;
 name|gtk_dialog_set_alternative_button_order
 argument_list|(
+name|GTK_DIALOG
+argument_list|(
 name|dlg
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
@@ -2410,9 +2403,12 @@ argument_list|)
 expr_stmt|;
 name|gtk_dialog_set_alternative_button_order
 argument_list|(
+name|GTK_DIALOG
+argument_list|(
 name|mgui
 operator|.
 name|dlg
+argument_list|)
 argument_list|,
 name|RESPONSE_IMPORT
 argument_list|,
