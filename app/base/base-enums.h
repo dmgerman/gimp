@@ -79,16 +79,19 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28b7ec410103
+DECL|enum|__anon2b5b67490103
 block|{
 DECL|enumerator|GIMP_INTERPOLATION_NONE
 name|GIMP_INTERPOLATION_NONE
 block|,
+comment|/*< desc="None (Fastest)">*/
 DECL|enumerator|GIMP_INTERPOLATION_LINEAR
 name|GIMP_INTERPOLATION_LINEAR
 block|,
+comment|/*< desc="Linear">*/
 DECL|enumerator|GIMP_INTERPOLATION_CUBIC
 name|GIMP_INTERPOLATION_CUBIC
+comment|/*< desc="Cubic (Best)">*/
 DECL|typedef|GimpInterpolationType
 block|}
 name|GimpInterpolationType
@@ -116,7 +119,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b7ec410203
+DECL|enum|__anon2b5b67490203
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -217,7 +220,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28b7ec410303
+DECL|enum|__anon2b5b67490303
 block|{
 DECL|enumerator|GIMP_SMALL_CHECKS
 name|GIMP_SMALL_CHECKS
@@ -261,7 +264,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28b7ec410403
+DECL|enum|__anon2b5b67490403
 block|{
 DECL|enumerator|GIMP_LIGHT_CHECKS
 name|GIMP_LIGHT_CHECKS
@@ -306,7 +309,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28b7ec410503
+DECL|enum|__anon2b5b67490503
 block|{
 DECL|enumerator|GIMP_NORMAL_CONVOL
 name|GIMP_NORMAL_CONVOL
@@ -329,7 +332,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28b7ec410603
+DECL|enum|__anon2b5b67490603
 block|{
 DECL|enumerator|GIMP_VALUE_LUT
 name|GIMP_VALUE_LUT
@@ -362,7 +365,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon28b7ec410703
+DECL|enum|__anon2b5b67490703
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE

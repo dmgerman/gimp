@@ -202,6 +202,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpEnumMenu
+typedef|typedef
+name|struct
+name|_GimpEnumMenu
+name|GimpEnumMenu
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpEditor
 typedef|typedef
 name|struct
