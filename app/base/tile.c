@@ -12,19 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|<glib.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<apptypes.h>
+file|"apptypes.h"
 end_include
 
 begin_include

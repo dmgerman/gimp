@@ -12,6 +12,12 @@ directive|define
 name|__TILE_PVT_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -41,18 +47,6 @@ directive|include
 file|<glib.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile.h"
-end_include
-
 begin_typedef
 DECL|typedef|TileLink
 typedef|typedef
@@ -73,16 +67,16 @@ modifier|*
 name|next
 decl_stmt|;
 DECL|member|tile_num
-name|int
+name|gint
 name|tile_num
 decl_stmt|;
 comment|/* the number of this tile within the drawable */
 DECL|member|tm
-name|void
+name|TileManager
 modifier|*
 name|tm
 decl_stmt|;
-comment|/* A pointer to the tile manager for this tile. 		       *  We need this in order to call the tile managers  		       *  validate proc whenever the tile is referenced yet  		       *  invalid. 		       */
+comment|/* A pointer to the tile manager for this tile. 			  *  We need this in order to call the tile managers  			  *  validate proc whenever the tile is referenced  			  *  yet invalid. 			  */
 block|}
 struct|;
 end_struct

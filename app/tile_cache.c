@@ -9,12 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -86,6 +80,14 @@ name|FREE_QUANTUM
 value|0.1
 end_define
 
+begin_define
+DECL|macro|IDLE_SWAPPER_TIMEOUT
+define|#
+directive|define
+name|IDLE_SWAPPER_TIMEOUT
+value|250
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -126,12 +128,11 @@ end_ifdef
 
 begin_function_decl
 specifier|static
-name|void
-modifier|*
+name|gpointer
 name|tile_idle_thread
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -147,6 +148,7 @@ name|gint
 name|tile_idle_preswap
 parameter_list|(
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -824,11 +826,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|tile_cache_set_size (unsigned long cache_size)
+DECL|function|tile_cache_set_size (gulong cache_size)
 name|tile_cache_set_size
 parameter_list|(
-name|unsigned
-name|long
+name|gulong
 name|cache_size
 parameter_list|)
 block|{
@@ -868,9 +869,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tile_cache_init ()
+DECL|function|tile_cache_init (void)
 name|tile_cache_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -927,7 +930,7 @@ name|idle_swapper
 operator|=
 name|gtk_timeout_add
 argument_list|(
-literal|250
+name|IDLE_SWAPPER_TIMEOUT
 argument_list|,
 operator|(
 name|GtkFunction
@@ -949,15 +952,16 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|tile_cache_zorch_next ()
+DECL|function|tile_cache_zorch_next (void)
 name|tile_cache_zorch_next
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|Tile
 modifier|*
 name|tile
 decl_stmt|;
-comment|/*  fprintf(stderr, "cache zorch: %u/%u\n", cur_cache_size, cur_cache_dirty);*/
 if|if
 condition|(
 name|clean_list
@@ -1071,13 +1075,11 @@ end_if
 
 begin_function
 specifier|static
-name|void
-modifier|*
-DECL|function|tile_idle_thread (void * data)
+name|gpointer
+DECL|function|tile_idle_thread (gpointer data)
 name|tile_idle_thread
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 block|{
@@ -1089,13 +1091,11 @@ name|TileList
 modifier|*
 name|list
 decl_stmt|;
-name|int
+name|gint
 name|count
 decl_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"starting tile preswapper\n"
 argument_list|)
 expr_stmt|;
@@ -1105,7 +1105,7 @@ literal|0
 expr_stmt|;
 while|while
 condition|(
-literal|1
+name|TRUE
 condition|)
 block|{
 name|CACHE_LOCK

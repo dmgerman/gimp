@@ -9,24 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|<stdarg.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -81,13 +63,13 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<apptypes.h>
+file|"apptypes.h"
 end_include
 
 begin_include
@@ -265,7 +247,7 @@ begin_macro
 DECL|function|IF_THREAD (static void * do_parallel_regions (PixelProcessor * p_s){ PixelRegion tr[4]; int ntiles = 0; int i; int cont = 1; pthread_mutex_lock(&p_s->mutex); if (p_s->nthreads != 0 && p_s->PRI) p_s->PRI = (PixelRegionIterator*)pixel_regions_process(p_s->PRI); if (p_s->PRI == NULL) { pthread_mutex_unlock(&p_s->mutex); return NULL; } p_s->nthreads++; do { for (i = 0; i < p_s->n_regions; i++) if (p_s->r[i]) { memcpy(&tr[i], p_s->r[i], sizeof(PixelRegion)); if (tr[i].tiles) tile_lock(tr[i].curtile); } pthread_mutex_unlock(&p_s->mutex); ntiles++; switch(p_s->n_regions) { case 1: ((p1_func)p_s->f)(p_s->data, p_s->r[0] ? &tr[0] : NULL); break; case 2: ((p2_func)p_s->f)(p_s->data, p_s->r[0] ? &tr[0] : NULL, p_s->r[1] ? &tr[1] : NULL); break; case 3: ((p3_func)p_s->f)(p_s->data, p_s->r[0] ? &tr[0] : NULL, p_s->r[1] ? &tr[1] : NULL, p_s->r[2] ? &tr[2] : NULL); break; case 4: ((p4_func)p_s->f)(p_s->data, p_s->r[0] ? &tr[0] : NULL, p_s->r[1] ? &tr[1] : NULL, p_s->r[2] ? &tr[2] : NULL, p_s->r[3] ? &tr[3] : NULL); break; default: g_message("", p_s->n_regions); } pthread_mutex_lock(&p_s->mutex); for (i = 0; i < p_s->n_regions; i++) if (p_s->r[i]) { if (tr[i].tiles) tile_release(tr[i].curtile, tr[i].dirty); } if (p_s->progress_report_func && !p_s->progress_report_func(p_s->progress_report_data, p_s->r[0]->x, p_s->r[0]->y, p_s->r[0]->w, p_s->r[0]->h)) cont = 0; } while (cont && p_s->PRI && (p_s->PRI = (PixelRegionIterator*)pixel_regions_process(p_s->PRI))); p_s->nthreads--; pthread_mutex_unlock(&p_s->mutex); return NULL; } )
 name|IF_THREAD
 argument_list|(
-argument|static void * do_parallel_regions (PixelProcessor  *p_s) {   PixelRegion tr[
+argument|static void * do_parallel_regions (PixelProcessor *p_s) {   PixelRegion tr[
 literal|4
 argument|];   int ntiles =
 literal|0
@@ -337,9 +319,7 @@ argument|]->w, p_s->r[
 literal|0
 argument|]->h))       cont =
 literal|0
-argument|;      }    while (cont&& p_s->PRI&& 	 (p_s->PRI = (PixelRegionIterator*)pixel_regions_process(p_s->PRI)));    p_s->nthreads--;
-comment|/*  fprintf(stderr, "processed %d tiles\n", ntiles); */
-argument|pthread_mutex_unlock(&p_s->mutex);    return NULL; }
+argument|;      }    while (cont&& p_s->PRI&& 	 (p_s->PRI = (PixelRegionIterator*)pixel_regions_process(p_s->PRI)));    p_s->nthreads--;    pthread_mutex_unlock(&p_s->mutex);    return NULL; }
 argument_list|)
 end_macro
 
@@ -349,8 +329,7 @@ end_comment
 
 begin_function
 specifier|static
-name|void
-modifier|*
+name|gpointer
 name|do_parallel_regions_single
 parameter_list|(
 name|PixelProcessor
@@ -358,7 +337,7 @@ modifier|*
 name|p_s
 parameter_list|)
 block|{
-name|int
+name|gint
 name|cont
 init|=
 literal|1
@@ -637,21 +616,21 @@ parameter_list|)
 block|{
 name|IF_THREAD
 argument_list|(
-argument|int nthreads;     nthreads = MIN(num_processors, MAX_THREADS);
+argument|gint nthreads;     nthreads = MIN (num_processors, MAX_THREADS);
 comment|/* make sure we have at least one tile per thread */
-argument|nthreads = MIN(nthreads, 		   (p_s->PRI->region_width * p_s->PRI->region_height) 		   /(TILE_WIDTH*TILE_HEIGHT));      if (nthreads>
+argument|nthreads = MIN (nthreads, 		  (p_s->PRI->region_width * p_s->PRI->region_height) 		  / (TILE_WIDTH * TILE_HEIGHT));    if (nthreads>
 literal|1
-argument|)     {       int i;       pthread_t threads[MAX_THREADS];       pthread_attr_t pthread_attr;       pthread_attr_init (&pthread_attr);       for (i =
+argument|)     {       gint i;       pthread_t threads[MAX_THREADS];       pthread_attr_t pthread_attr;        pthread_attr_init (&pthread_attr);        for (i =
 literal|0
-argument|; i< nthreads; i++)       { 	pthread_create (&threads[i],&pthread_attr, 			(void *(*)(void *)) do_parallel_regions, 			p_s);       }       for (i =
+argument|; i< nthreads; i++)         { 	  pthread_create (&threads[i],&pthread_attr, 			  (void *(*)(void *)) do_parallel_regions, 			  p_s); 	}       for (i =
 literal|0
-argument|; i< nthreads; i++)       { 	int ret; 	if ((ret = pthread_join(threads[i], NULL))) 	  { 	    fprintf(stderr,
+argument|; i< nthreads; i++) 	{ 	  gint ret;  	  if ((ret = pthread_join(threads[i], NULL))) 	    { 	      g_printerr (
 literal|"pixel_regions_do_parallel:: pthread_join returned: %d\n"
-argument|, ret); 	  }       }       if (p_s->nthreads !=
+argument|, ret); 	    } 	}       if (p_s->nthreads !=
 literal|0
-argument|) 	fprintf(stderr,
+argument|) 	g_printerr (
 literal|"pixel_regions_do_prarallel: we lost a thread\n"
-argument|);     }     else
+argument|);     }   else
 argument_list|)
 name|do_parallel_regions_single
 argument_list|(
@@ -665,31 +644,29 @@ begin_function
 specifier|static
 name|PixelProcessor
 modifier|*
-DECL|function|pixel_regions_real_process_parallel (p_func f,void * data,ProgressReportFunc report_func,void * report_data,int num_regions,va_list ap)
+DECL|function|pixel_regions_real_process_parallel (p_func f,gpointer data,ProgressReportFunc report_func,gpointer report_data,gint num_regions,va_list ap)
 name|pixel_regions_real_process_parallel
 parameter_list|(
 name|p_func
 name|f
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|,
 name|ProgressReportFunc
 name|report_func
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|report_data
 parameter_list|,
-name|int
+name|gint
 name|num_regions
 parameter_list|,
 name|va_list
 name|ap
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|PixelProcessor
@@ -973,17 +950,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|pixel_regions_process_parallel (p_func f,void * data,int num_regions,...)
+DECL|function|pixel_regions_process_parallel (p_func f,gpointer data,gint num_regions,...)
 name|pixel_regions_process_parallel
 parameter_list|(
 name|p_func
 name|f
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|,
-name|int
+name|gint
 name|num_regions
 parameter_list|,
 modifier|...
@@ -1025,24 +1001,22 @@ end_function
 begin_function
 name|PixelProcessor
 modifier|*
-DECL|function|pixel_regions_process_parallel_progress (p_func f,void * data,ProgressReportFunc progress_func,void * progress_data,int num_regions,...)
+DECL|function|pixel_regions_process_parallel_progress (p_func f,gpointer data,ProgressReportFunc progress_func,gpointer progress_data,gint num_regions,...)
 name|pixel_regions_process_parallel_progress
 parameter_list|(
 name|p_func
 name|f
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|,
 name|ProgressReportFunc
 name|progress_func
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|progress_data
 parameter_list|,
-name|int
+name|gint
 name|num_regions
 parameter_list|,
 modifier|...

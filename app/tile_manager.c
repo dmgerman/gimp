@@ -12,19 +12,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
+file|<glib.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile_pvt.h"
 end_include
 
 begin_include
@@ -50,16 +56,6 @@ include|#
 directive|include
 file|"tile_swap.h"
 end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_pvt.h"
-end_include
-
-begin_comment
-comment|/* ick. */
-end_comment
 
 begin_function_decl
 specifier|static
@@ -1187,7 +1183,7 @@ literal|2.0
 operator|)
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|tm
 operator|->
@@ -1208,7 +1204,7 @@ literal|2.0
 operator|)
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|tm
 operator|->

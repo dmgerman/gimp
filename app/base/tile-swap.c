@@ -12,25 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
 end_include
 
 begin_include
@@ -155,18 +143,14 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tile_swap.h"
+file|"tile_pvt.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tile_pvt.h"
+file|"tile_swap.h"
 end_include
-
-begin_comment
-comment|/* ick. */
-end_comment
 
 begin_define
 DECL|macro|MAX_OPEN_SWAP_FILES
@@ -218,12 +202,12 @@ struct|struct
 name|_SwapFile
 block|{
 DECL|member|filename
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
 DECL|member|swap_num
-name|int
+name|gint
 name|swap_num
 decl_stmt|;
 DECL|member|swap_func
@@ -235,7 +219,7 @@ name|gpointer
 name|user_data
 decl_stmt|;
 DECL|member|fd
-name|int
+name|gint
 name|fd
 decl_stmt|;
 block|}
@@ -253,7 +237,7 @@ modifier|*
 name|gaps
 decl_stmt|;
 DECL|member|swap_file_end
-name|long
+name|glong
 name|swap_file_end
 decl_stmt|;
 DECL|member|cur_position
@@ -270,11 +254,11 @@ struct|struct
 name|_Gap
 block|{
 DECL|member|start
-name|long
+name|glong
 name|start
 decl_stmt|;
 DECL|member|end
-name|long
+name|glong
 name|end
 decl_stmt|;
 block|}
@@ -292,7 +276,7 @@ modifier|*
 name|def_swap_file
 decl_stmt|;
 DECL|member|fd
-name|int
+name|gint
 name|fd
 decl_stmt|;
 DECL|member|tile
@@ -319,7 +303,7 @@ specifier|static
 name|guint
 name|tile_swap_hash
 parameter_list|(
-name|int
+name|gint
 modifier|*
 name|key
 parameter_list|)
@@ -331,11 +315,11 @@ specifier|static
 name|gint
 name|tile_swap_compare
 parameter_list|(
-name|int
+name|gint
 modifier|*
 name|a
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|b
 parameter_list|)
@@ -351,7 +335,7 @@ name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|int
+name|gint
 name|command
 parameter_list|)
 function_decl|;
@@ -371,17 +355,17 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|tile_swap_default
 parameter_list|(
-name|int
+name|gint
 name|fd
 parameter_list|,
 name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|int
+name|gint
 name|cmd
 parameter_list|,
 name|gpointer
@@ -399,7 +383,7 @@ name|DefSwapFile
 modifier|*
 name|def_swap_file
 parameter_list|,
-name|int
+name|gint
 name|fd
 parameter_list|,
 name|Tile
@@ -418,7 +402,7 @@ name|DefSwapFile
 modifier|*
 name|def_swap_file
 parameter_list|,
-name|int
+name|gint
 name|fd
 parameter_list|,
 name|Tile
@@ -437,7 +421,7 @@ name|DefSwapFile
 modifier|*
 name|def_swap_file
 parameter_list|,
-name|int
+name|gint
 name|fd
 parameter_list|,
 name|Tile
@@ -456,7 +440,7 @@ name|DefSwapFile
 modifier|*
 name|def_swap_file
 parameter_list|,
-name|int
+name|gint
 name|fd
 parameter_list|,
 name|Tile
@@ -468,17 +452,17 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|long
+name|glong
 name|tile_swap_find_offset
 parameter_list|(
 name|DefSwapFile
 modifier|*
 name|def_swap_file
 parameter_list|,
-name|int
+name|gint
 name|fd
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 function_decl|;
@@ -493,10 +477,10 @@ name|DefSwapFile
 modifier|*
 name|def_swap_file
 parameter_list|,
-name|int
+name|gint
 name|fd
 parameter_list|,
-name|long
+name|glong
 name|new_size
 parameter_list|)
 function_decl|;
@@ -508,10 +492,10 @@ name|Gap
 modifier|*
 name|tile_swap_gap_new
 parameter_list|(
-name|long
+name|glong
 name|start
 parameter_list|,
-name|long
+name|glong
 name|end
 parameter_list|)
 function_decl|;
@@ -537,12 +521,10 @@ end_ifdef
 
 begin_function_decl
 specifier|static
-name|void
-modifier|*
+name|gpointer
 name|tile_swap_in_thread
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -555,7 +537,7 @@ end_endif
 begin_decl_stmt
 DECL|variable|initialize
 specifier|static
-name|int
+name|gboolean
 name|initialize
 init|=
 name|TRUE
@@ -587,7 +569,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|nopen_swap_files
 specifier|static
-name|int
+name|gint
 name|nopen_swap_files
 init|=
 literal|0
@@ -597,7 +579,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|next_swap_num
 specifier|static
-name|int
+name|gint
 name|next_swap_num
 init|=
 literal|1
@@ -607,7 +589,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|swap_file_grow
 specifier|static
-name|long
+name|glong
 name|swap_file_grow
 init|=
 literal|16
@@ -791,7 +773,7 @@ name|data
 parameter_list|)
 block|{
 specifier|extern
-name|int
+name|gint
 name|tile_ref_count
 decl_stmt|;
 name|SwapFile
@@ -909,9 +891,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_swap_exit ()
+DECL|function|tile_swap_exit (void)
 name|tile_swap_exit
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 ifdef|#
 directive|ifdef
@@ -920,10 +904,8 @@ specifier|extern
 name|int
 name|tile_exist_peak
 decl_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Tile exist peak was %d Tile structs (%d bytes)"
 argument_list|,
 name|tile_exist_peak
@@ -955,11 +937,11 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|tile_swap_add (char * filename,SwapFunc swap_func,gpointer user_data)
+name|gint
+DECL|function|tile_swap_add (gchar * filename,SwapFunc swap_func,gpointer user_data)
 name|tile_swap_add
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -1115,10 +1097,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_swap_remove (int swap_num)
+DECL|function|tile_swap_remove (gint swap_num)
 name|tile_swap_remove
 parameter_list|(
-name|int
+name|gint
 name|swap_num
 parameter_list|)
 block|{
@@ -1317,10 +1299,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_swap_compress (int swap_num)
+DECL|function|tile_swap_compress (gint swap_num)
 name|tile_swap_compress
 parameter_list|(
-name|int
+name|gint
 name|swap_num
 parameter_list|)
 block|{
@@ -1337,9 +1319,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tile_swap_init ()
+DECL|function|tile_swap_init (void)
 name|tile_swap_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -1391,22 +1375,20 @@ end_function
 begin_function
 specifier|static
 name|guint
-DECL|function|tile_swap_hash (int * key)
+DECL|function|tile_swap_hash (gint * key)
 name|tile_swap_hash
 parameter_list|(
-name|int
+name|gint
 modifier|*
 name|key
 parameter_list|)
 block|{
 return|return
 operator|(
-operator|(
 name|guint
 operator|)
 operator|*
 name|key
-operator|)
 return|;
 block|}
 end_function
@@ -1414,14 +1396,14 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|tile_swap_compare (int * a,int * b)
+DECL|function|tile_swap_compare (gint * a,gint * b)
 name|tile_swap_compare
 parameter_list|(
-name|int
+name|gint
 modifier|*
 name|a
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|b
 parameter_list|)
@@ -1441,14 +1423,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tile_swap_command (Tile * tile,int command)
+DECL|function|tile_swap_command (Tile * tile,gint command)
 name|tile_swap_command
 parameter_list|(
 name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|int
+name|gint
 name|command
 parameter_list|)
 block|{
@@ -1703,17 +1685,17 @@ end_comment
 begin_function
 specifier|static
 name|int
-DECL|function|tile_swap_default (int fd,Tile * tile,int cmd,gpointer user_data)
+DECL|function|tile_swap_default (gint fd,Tile * tile,gint cmd,gpointer user_data)
 name|tile_swap_default
 parameter_list|(
-name|int
+name|gint
 name|fd
 parameter_list|,
 name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|int
+name|gint
 name|cmd
 parameter_list|,
 name|gpointer
@@ -1808,14 +1790,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tile_swap_default_in_async (DefSwapFile * def_swap_file,int fd,Tile * tile)
+DECL|function|tile_swap_default_in_async (DefSwapFile * def_swap_file,gint fd,Tile * tile)
 name|tile_swap_default_in_async
 parameter_list|(
 name|DefSwapFile
 modifier|*
 name|def_swap_file
 parameter_list|,
-name|int
+name|gint
 name|fd
 parameter_list|,
 name|Tile
@@ -1910,14 +1892,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|tile_swap_default_in (DefSwapFile * def_swap_file,int fd,Tile * tile)
+DECL|function|tile_swap_default_in (DefSwapFile * def_swap_file,gint fd,Tile * tile)
 name|tile_swap_default_in
 parameter_list|(
 name|DefSwapFile
 modifier|*
 name|def_swap_file
 parameter_list|,
-name|int
+name|gint
 name|fd
 parameter_list|,
 name|Tile
@@ -1925,13 +1907,13 @@ modifier|*
 name|tile
 parameter_list|)
 block|{
-name|int
+name|gint
 name|bytes
 decl_stmt|;
-name|int
+name|gint
 name|err
 decl_stmt|;
-name|int
+name|gint
 name|nleft
 decl_stmt|;
 name|off_t
@@ -2089,11 +2071,14 @@ name|read_err_msg
 condition|)
 name|g_message
 argument_list|(
-literal|"unable to read tile data from disk: %d/%d ( %d ) bytes read"
+literal|"unable to read tile data from disk: %s (%d/%d bytes read)"
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|,
 name|err
-argument_list|,
-name|errno
 argument_list|,
 name|nleft
 argument_list|)
@@ -2144,16 +2129,16 @@ modifier|*
 name|tile
 parameter_list|)
 block|{
-name|int
+name|gint
 name|bytes
 decl_stmt|;
-name|int
+name|gint
 name|rbytes
 decl_stmt|;
-name|int
+name|gint
 name|err
 decl_stmt|;
-name|int
+name|gint
 name|nleft
 decl_stmt|;
 name|off_t
@@ -2241,9 +2226,12 @@ name|seek_err_msg
 condition|)
 name|g_message
 argument_list|(
-literal|"unable to seek to tile location on disk: %d"
+literal|"unable to seek to tile location on disk: %s"
 argument_list|,
+name|g_strerror
+argument_list|(
 name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|seek_err_msg
@@ -2300,7 +2288,12 @@ name|write_err_msg
 condition|)
 name|g_message
 argument_list|(
-literal|"unable to write tile data to disk: %d ( %d ) bytes written"
+literal|"unable to write tile data to disk: %s (%d/%d bytes written)"
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|,
 name|err
 argument_list|,
@@ -2349,14 +2342,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tile_swap_default_delete (DefSwapFile * def_swap_file,int fd,Tile * tile)
+DECL|function|tile_swap_default_delete (DefSwapFile * def_swap_file,gint fd,Tile * tile)
 name|tile_swap_default_delete
 parameter_list|(
 name|DefSwapFile
 modifier|*
 name|def_swap_file
 parameter_list|,
-name|int
+name|gint
 name|fd
 parameter_list|,
 name|Tile
@@ -2380,10 +2373,10 @@ name|Gap
 modifier|*
 name|gap2
 decl_stmt|;
-name|long
+name|glong
 name|start
 decl_stmt|;
-name|long
+name|glong
 name|end
 decl_stmt|;
 if|if
@@ -2819,17 +2812,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tile_swap_resize (DefSwapFile * def_swap_file,int fd,long new_size)
+DECL|function|tile_swap_resize (DefSwapFile * def_swap_file,gint fd,glong new_size)
 name|tile_swap_resize
 parameter_list|(
 name|DefSwapFile
 modifier|*
 name|def_swap_file
 parameter_list|,
-name|int
+name|gint
 name|fd
 parameter_list|,
-name|long
+name|glong
 name|new_size
 parameter_list|)
 block|{
@@ -2849,7 +2842,6 @@ argument_list|,
 name|new_size
 argument_list|)
 expr_stmt|;
-comment|/*fprintf(stderr, "TRUNCATED SWAP from %d to %d bytes.\n", 	(int)def_swap_file->swap_file_end, (int) new_size);*/
 block|}
 name|def_swap_file
 operator|->
@@ -2863,17 +2855,17 @@ end_function
 begin_function
 specifier|static
 name|long
-DECL|function|tile_swap_find_offset (DefSwapFile * def_swap_file,int fd,int bytes)
+DECL|function|tile_swap_find_offset (DefSwapFile * def_swap_file,gint fd,gint bytes)
 name|tile_swap_find_offset
 parameter_list|(
 name|DefSwapFile
 modifier|*
 name|def_swap_file
 parameter_list|,
-name|int
+name|gint
 name|fd
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 block|{
@@ -2885,7 +2877,7 @@ name|Gap
 modifier|*
 name|gap
 decl_stmt|;
-name|long
+name|glong
 name|offset
 decl_stmt|;
 name|tmp
@@ -3049,13 +3041,13 @@ begin_function
 specifier|static
 name|Gap
 modifier|*
-DECL|function|tile_swap_gap_new (long start,long end)
+DECL|function|tile_swap_gap_new (glong start,glong end)
 name|tile_swap_gap_new
 parameter_list|(
-name|long
+name|glong
 name|start
 parameter_list|,
-name|long
+name|glong
 name|end
 parameter_list|)
 block|{
@@ -3126,14 +3118,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|tile_swap_in_attempt (DefSwapFile * def_swap_file,int fd,Tile * tile)
+DECL|function|tile_swap_in_attempt (DefSwapFile * def_swap_file,gint fd,Tile * tile)
 name|tile_swap_in_attempt
 parameter_list|(
 name|DefSwapFile
 modifier|*
 name|def_swap_file
 parameter_list|,
-name|int
+name|gint
 name|fd
 parameter_list|,
 name|Tile
@@ -3141,13 +3133,13 @@ modifier|*
 name|tile
 parameter_list|)
 block|{
-name|int
+name|gint
 name|bytes
 decl_stmt|;
-name|int
+name|gint
 name|err
 decl_stmt|;
-name|int
+name|gint
 name|nleft
 decl_stmt|;
 name|off_t
@@ -3334,13 +3326,11 @@ end_function
 
 begin_function
 specifier|static
-name|void
-modifier|*
-DECL|function|tile_swap_in_thread (void * data)
+name|gpointer
+DECL|function|tile_swap_in_thread (gpointer data)
 name|tile_swap_in_thread
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 block|{
@@ -3354,7 +3344,7 @@ name|free_item
 decl_stmt|;
 while|while
 condition|(
-literal|1
+name|TRUE
 condition|)
 block|{
 name|pthread_mutex_lock
