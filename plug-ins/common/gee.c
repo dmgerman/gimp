@@ -1629,7 +1629,7 @@ name|dest
 decl_stmt|;
 name|guint32
 modifier|*
-name|env
+name|environment
 decl_stmt|;
 name|guchar
 modifier|*
@@ -1692,7 +1692,7 @@ value|(((cy)<<19)/bycxmcybx)
 name|frame
 operator|++
 expr_stmt|;
-name|env
+name|environment
 operator|=
 operator|(
 name|guint32
@@ -1828,7 +1828,7 @@ if|#
 directive|if
 literal|0
 comment|/* identity only */
-block|j = IHEIGHT;   while (j--)     {       i = IWIDTH;       while (i--) 	{ 	  *dest++ = *env++; 	}     }   return;
+block|j = IHEIGHT;   while (j--)     {       i = IWIDTH;       while (i--) 	{ 	  *dest++ = *environment++; 	}     }   return;
 endif|#
 directive|endif
 comment|/* MELT DISTORTION MAP, APPLY IT */
@@ -1996,7 +1996,7 @@ operator|)
 operator|=
 operator|*
 operator|(
-name|env
+name|environment
 operator|+
 operator|(
 name|i
@@ -2094,7 +2094,7 @@ operator|++
 operator|=
 operator|*
 operator|(
-name|env
+name|environment
 operator|+
 operator|(
 name|sx
