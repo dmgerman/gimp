@@ -47,6 +47,23 @@ directive|include
 file|<glib.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|USE_PTHREADS
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<pthread.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_typedef
 DECL|typedef|Tile
 typedef|typedef
@@ -123,6 +140,32 @@ modifier|*
 name|tm
 decl_stmt|;
 comment|/* A pointer to the tile manager for this tile. 		       *  We need this in order to call the tile managers validate 		       *  proc whenever the tile is referenced yet invalid. 		       */
+DECL|member|next
+name|Tile
+modifier|*
+name|next
+decl_stmt|;
+DECL|member|prev
+name|Tile
+modifier|*
+name|prev
+decl_stmt|;
+comment|/* List pointers for the tile cache lists */
+DECL|member|listhead
+name|void
+modifier|*
+name|listhead
+decl_stmt|;
+comment|/* Pointer to the head of the list this tile is on */
+ifdef|#
+directive|ifdef
+name|USE_PTHREADS
+DECL|member|mutex
+name|pthread_mutex_t
+name|mutex
+decl_stmt|;
+endif|#
+directive|endif
 block|}
 struct|;
 end_struct

@@ -104,6 +104,39 @@ name|tm
 operator|=
 name|NULL
 expr_stmt|;
+name|tile
+operator|->
+name|next
+operator|=
+name|tile
+operator|->
+name|prev
+operator|=
+name|NULL
+expr_stmt|;
+name|tile
+operator|->
+name|listhead
+operator|=
+name|NULL
+expr_stmt|;
+ifdef|#
+directive|ifdef
+name|USE_PTHREADS
+block|{
+name|pthread_mutex_init
+argument_list|(
+operator|&
+name|tile
+operator|->
+name|mutex
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -151,6 +184,21 @@ parameter_list|)
 endif|#
 directive|endif
 block|{
+ifdef|#
+directive|ifdef
+name|USE_PTHREADS
+name|pthread_mutex_lock
+argument_list|(
+operator|&
+operator|(
+name|tile
+operator|->
+name|mutex
+operator|)
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 comment|/*  g_print ("tile_ref:    0x%08x  %s\n", tile, func_name); */
 name|tile_ref_count
 operator|+=
@@ -213,6 +261,21 @@ argument_list|,
 name|tile
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+name|USE_PTHREADS
+name|pthread_mutex_unlock
+argument_list|(
+operator|&
+operator|(
+name|tile
+operator|->
+name|mutex
+operator|)
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -257,6 +320,21 @@ parameter_list|)
 endif|#
 directive|endif
 block|{
+ifdef|#
+directive|ifdef
+name|USE_PTHREADS
+name|pthread_mutex_lock
+argument_list|(
+operator|&
+operator|(
+name|tile
+operator|->
+name|mutex
+operator|)
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 comment|/*  g_print ("tile_unref:  0x%08x  %s\n", tile, func_name); */
 name|tile_ref_count
 operator|-=
@@ -270,12 +348,28 @@ operator|-=
 literal|1
 expr_stmt|;
 comment|/* Mark the tile dirty if indicated    */
+if|if
+condition|(
+name|dirty
+operator|&&
+operator|!
 name|tile
 operator|->
 name|dirty
-operator||=
+condition|)
+block|{
+name|tile
+operator|->
 name|dirty
+operator|=
+name|TRUE
 expr_stmt|;
+name|tile_cache_insert
+argument_list|(
+name|tile
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* If this was the last reference to the tile, then    *  swap it out to disk.    */
 if|if
 condition|(
@@ -306,8 +400,6 @@ name|tile
 argument_list|)
 expr_stmt|;
 comment|/*  Otherwise, just throw out the data--the same stuff is in swap        */
-else|else
-block|{
 name|g_free
 argument_list|(
 name|tile
@@ -322,7 +414,21 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-block|}
+if|#
+directive|if
+name|USE_PTHREADS
+name|pthread_mutex_unlock
+argument_list|(
+operator|&
+operator|(
+name|tile
+operator|->
+name|mutex
+operator|)
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -342,7 +448,9 @@ name|tile
 operator|->
 name|data
 condition|)
-return|return;
+goto|goto
+name|out
+goto|;
 comment|/* Allocate the data for the tile.    */
 name|tile
 operator|->
@@ -358,6 +466,8 @@ name|tile
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|out
+label|:
 block|}
 end_function
 
@@ -371,8 +481,12 @@ modifier|*
 name|tile
 parameter_list|)
 block|{
+name|int
+name|size
+decl_stmt|;
 comment|/* Return the actual size of the tile data.    *  (Based on its effective width and height).    */
-return|return
+name|size
+operator|=
 name|tile
 operator|->
 name|ewidth
@@ -384,6 +498,9 @@ operator|*
 name|tile
 operator|->
 name|bpp
+expr_stmt|;
+return|return
+name|size
 return|;
 block|}
 end_function
@@ -398,6 +515,21 @@ modifier|*
 name|tile
 parameter_list|)
 block|{
+ifdef|#
+directive|ifdef
+name|USE_PTHREADS
+name|pthread_mutex_lock
+argument_list|(
+operator|&
+operator|(
+name|tile
+operator|->
+name|mutex
+operator|)
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 comment|/* Invalidate the tile. (Must be valid first).    */
 if|if
 condition|(
@@ -470,6 +602,21 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+if|#
+directive|if
+name|USE_PTHREADS
+name|pthread_mutex_unlock
+argument_list|(
+operator|&
+operator|(
+name|tile
+operator|->
+name|mutex
+operator|)
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 

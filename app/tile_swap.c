@@ -35,6 +35,23 @@ directive|include
 file|<unistd.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|USE_PTHREADS
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<pthread.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_define
 DECL|macro|MAX_OPEN_SWAP_FILES
 define|#
@@ -418,6 +435,27 @@ operator|*
 literal|4
 decl_stmt|;
 end_decl_stmt
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|USE_PTHREADS
+end_ifdef
+
+begin_decl_stmt
+DECL|variable|swapfile_mutex
+specifier|static
+name|pthread_mutex_t
+name|swapfile_mutex
+init|=
+name|PTHREAD_MUTEX_INITIALIZER
+decl_stmt|;
+end_decl_stmt
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static
@@ -999,6 +1037,17 @@ name|SwapFile
 modifier|*
 name|swap_file
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|USE_PTHREADS
+name|pthread_mutex_lock
+argument_list|(
+operator|&
+name|swapfile_mutex
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|initialize
@@ -1031,7 +1080,9 @@ argument_list|(
 literal|"could not find swap file for tile"
 argument_list|)
 expr_stmt|;
-return|return;
+goto|goto
+name|out
+goto|;
 block|}
 if|if
 condition|(
@@ -1057,7 +1108,9 @@ operator|==
 operator|-
 literal|1
 condition|)
-return|return;
+goto|goto
+name|out
+goto|;
 block|}
 block|}
 do|while
@@ -1083,6 +1136,19 @@ name|user_data
 argument_list|)
 condition|)
 do|;
+name|out
+label|:
+ifdef|#
+directive|ifdef
+name|USE_PTHREADS
+name|pthread_mutex_unlock
+argument_list|(
+operator|&
+name|swapfile_mutex
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -1463,9 +1529,11 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"unable to read tile data from disk: %d ( %d ) bytes read"
+literal|"unable to read tile data from disk: %d/%d ( %d ) bytes read"
 argument_list|,
 name|err
+argument_list|,
+name|errno
 argument_list|,
 name|nleft
 argument_list|)
@@ -1668,18 +1736,12 @@ name|cur_position
 operator|+=
 name|rbytes
 expr_stmt|;
-name|g_free
-argument_list|(
+comment|/*  g_free (tile->data);   tile->data = NULL; */
 name|tile
 operator|->
-name|data
-argument_list|)
-expr_stmt|;
-name|tile
-operator|->
-name|data
+name|dirty
 operator|=
-name|NULL
+name|FALSE
 expr_stmt|;
 block|}
 end_function
