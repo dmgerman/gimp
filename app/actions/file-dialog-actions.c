@@ -274,6 +274,14 @@ literal|1
 expr_stmt|;
 name|entry
 operator|.
+name|accelerator
+operator|=
+name|file_proc
+operator|->
+name|accelerator
+expr_stmt|;
+name|entry
+operator|.
 name|tooltip
 operator|=
 name|NULL
