@@ -79,18 +79,6 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"app/gimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"app/gdisplay.h"
-end_include
-
 begin_define
 DECL|macro|STR_LENGTH
 define|#
@@ -106,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac2f1a20108
+DECL|struct|__anon27909ff40108
 block|{
 DECL|member|resolution
 name|guint
@@ -158,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac2f1a20208
+DECL|struct|__anon27909ff40208
 block|{
 DECL|member|run
 name|gint
@@ -224,7 +212,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac2f1a20308
+DECL|struct|__anon27909ff40308
 block|{
 DECL|member|width
 DECL|member|height
@@ -281,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac2f1a20408
+DECL|struct|__anon27909ff40408
 block|{
 DECL|member|run
 name|gint
@@ -774,7 +762,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac2f1a20508
+DECL|struct|__anon27909ff40508
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -878,7 +866,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac2f1a20608
+DECL|struct|__anon27909ff40608
 block|{
 DECL|member|dialog
 name|GtkWidget
