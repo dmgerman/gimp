@@ -541,7 +541,7 @@ name|gint32
 name|d_tattoo
 decl_stmt|;
 DECL|member|d_status
-name|gint32
+name|GimpPDBStatusType
 name|d_status
 decl_stmt|;
 block|}
