@@ -208,12 +208,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brushes_callback (GtkWidget * widget,GimpContainerView * view)
+DECL|function|brushes_callback (GtkWidget * widget,GdkModifierType state,GimpContainerView * view)
 name|brushes_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|GdkModifierType
+name|state
 parameter_list|,
 name|GimpContainerView
 modifier|*
@@ -241,12 +244,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|patterns_callback (GtkWidget * widget,GimpContainerView * view)
+DECL|function|patterns_callback (GtkWidget * widget,GdkModifierType state,GimpContainerView * view)
 name|patterns_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|GdkModifierType
+name|state
 parameter_list|,
 name|GimpContainerView
 modifier|*
@@ -274,12 +280,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradients_callback (GtkWidget * widget,GimpContainerView * view)
+DECL|function|gradients_callback (GtkWidget * widget,GdkModifierType state,GimpContainerView * view)
 name|gradients_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|GdkModifierType
+name|state
 parameter_list|,
 name|GimpContainerView
 modifier|*
@@ -307,12 +316,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palettes_callback (GtkWidget * widget,GimpContainerView * view)
+DECL|function|palettes_callback (GtkWidget * widget,GdkModifierType state,GimpContainerView * view)
 name|palettes_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|GdkModifierType
+name|state
 parameter_list|,
 name|GimpContainerView
 modifier|*
@@ -340,12 +352,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|images_callback (GtkWidget * widget,GimpContainerView * view)
+DECL|function|images_callback (GtkWidget * widget,GdkModifierType state,GimpContainerView * view)
 name|images_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|GdkModifierType
+name|state
 parameter_list|,
 name|GimpContainerView
 modifier|*

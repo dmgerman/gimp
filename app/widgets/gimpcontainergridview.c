@@ -211,6 +211,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|GdkModifierType
+name|state
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -1480,12 +1483,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_grid_view_item_selected (GtkWidget * widget,gpointer data)
+DECL|function|gimp_container_grid_view_item_selected (GtkWidget * widget,GdkModifierType state,gpointer data)
 name|gimp_container_grid_view_item_selected
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|GdkModifierType
+name|state
 parameter_list|,
 name|gpointer
 name|data

@@ -154,12 +154,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|brush_preview_clicked (GtkWidget * widget,GimpToolbox * toolbox)
+DECL|function|brush_preview_clicked (GtkWidget * widget,GdkModifierType state,GimpToolbox * toolbox)
 name|brush_preview_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|GdkModifierType
+name|state
 parameter_list|,
 name|GimpToolbox
 modifier|*
@@ -229,12 +232,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|pattern_preview_clicked (GtkWidget * widget,GimpToolbox * toolbox)
+DECL|function|pattern_preview_clicked (GtkWidget * widget,GdkModifierType state,GimpToolbox * toolbox)
 name|pattern_preview_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|GdkModifierType
+name|state
 parameter_list|,
 name|GimpToolbox
 modifier|*
@@ -304,12 +310,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_preview_clicked (GtkWidget * widget,GimpToolbox * toolbox)
+DECL|function|gradient_preview_clicked (GtkWidget * widget,GdkModifierType state,GimpToolbox * toolbox)
 name|gradient_preview_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|GdkModifierType
+name|state
 parameter_list|,
 name|GimpToolbox
 modifier|*
