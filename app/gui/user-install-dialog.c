@@ -203,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a293bd50103
+DECL|enum|__anon2c4ea5ee0103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -231,7 +231,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a293bd50203
+DECL|enum|__anon2c4ea5ee0203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -476,23 +476,20 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a293bd50303
+DECL|enum|__anon2c4ea5ee0303
 block|{
-DECL|enumerator|TREE_ITEM_DONT
-name|TREE_ITEM_DONT
+DECL|enumerator|TREE_ITEM_DO_NOTHING
+name|TREE_ITEM_DO_NOTHING
 block|,
 comment|/* Don't pre-create            */
-DECL|enumerator|TREE_ITEM_MKDIR_ONLY
-name|TREE_ITEM_MKDIR_ONLY
+DECL|enumerator|TREE_ITEM_MKDIR
+name|TREE_ITEM_MKDIR
 block|,
-comment|/* Just mkdir                  */
+comment|/* Create the directory        */
 DECL|enumerator|TREE_ITEM_FROM_SYSCONF_DIR
 name|TREE_ITEM_FROM_SYSCONF_DIR
 block|,
 comment|/* Copy from sysconf directory */
-DECL|enumerator|TREE_ITEM_FROM_DATA_DIR
-name|TREE_ITEM_FROM_DATA_DIR
-comment|/* ... from data directory     */
 DECL|typedef|TreeItemType
 block|}
 name|TreeItemType
@@ -502,16 +499,16 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a293bd50408
+DECL|struct|__anon2c4ea5ee0408
 block|{
 DECL|member|directory
 name|gboolean
 name|directory
 decl_stmt|;
-DECL|member|text
+DECL|member|name
 name|gchar
 modifier|*
-name|text
+name|name
 decl_stmt|;
 DECL|member|description
 name|gchar
@@ -522,12 +519,6 @@ DECL|member|type
 name|TreeItemType
 name|type
 decl_stmt|;
-DECL|member|source_filename
-name|gchar
-modifier|*
-name|source_filename
-decl_stmt|;
-comment|/* If NULL, use text */
 block|}
 DECL|variable|tree_items
 name|tree_items
@@ -548,9 +539,7 @@ literal|"patterns, plug-ins and modules can also configured\n"
 literal|"here."
 argument_list|)
 block|,
-name|TREE_ITEM_DONT
-block|,
-name|NULL
+name|TREE_ITEM_DO_NOTHING
 block|}
 block|,
 block|{
@@ -565,8 +554,6 @@ literal|"configure it to look differently than other GTK apps."
 argument_list|)
 block|,
 name|TREE_ITEM_FROM_SYSCONF_DIR
-block|,
-literal|"gtkrc_user"
 block|}
 block|,
 block|{
@@ -584,9 +571,7 @@ literal|"is cached in this file.  This file is intended to\n"
 literal|"be GIMP-readable only, and should not be edited."
 argument_list|)
 block|,
-name|TREE_ITEM_DONT
-block|,
-name|NULL
+name|TREE_ITEM_DO_NOTHING
 block|}
 block|,
 block|{
@@ -604,9 +589,7 @@ literal|"keys from within The GIMP.  Deleting this file will\n"
 literal|"restore the default shortcuts."
 argument_list|)
 block|,
-name|TREE_ITEM_DONT
-block|,
-name|NULL
+name|TREE_ITEM_DO_NOTHING
 block|}
 block|,
 block|{
@@ -621,9 +604,7 @@ literal|"open the last time you quit The GIMP.  You can configure\n"
 literal|"The GIMP to reopen these dialogs at the saved position."
 argument_list|)
 block|,
-name|TREE_ITEM_FROM_SYSCONF_DIR
-block|,
-name|NULL
+name|TREE_ITEM_DO_NOTHING
 block|}
 block|,
 block|{
@@ -637,9 +618,7 @@ literal|"This file holds a collection of standard media sizes that\n"
 literal|"serve as image templates."
 argument_list|)
 block|,
-name|TREE_ITEM_FROM_SYSCONF_DIR
-block|,
-name|NULL
+name|TREE_ITEM_DO_NOTHING
 block|}
 block|,
 block|{
@@ -656,9 +635,7 @@ literal|"points and picas.  This file is overwritten each time\n"
 literal|"you quit the GIMP."
 argument_list|)
 block|,
-name|TREE_ITEM_FROM_SYSCONF_DIR
-block|,
-name|NULL
+name|TREE_ITEM_DO_NOTHING
 block|}
 block|,
 block|{
@@ -674,9 +651,7 @@ literal|"wide GIMP brushes installation when searching for\n"
 literal|"brushes."
 argument_list|)
 block|,
-name|TREE_ITEM_MKDIR_ONLY
-block|,
-name|NULL
+name|TREE_ITEM_MKDIR
 block|}
 block|,
 block|{
@@ -694,9 +669,7 @@ literal|"want to have GIMP-only fonts, otherwise put things\n"
 literal|"in your global font directory."
 argument_list|)
 block|,
-name|TREE_ITEM_MKDIR_ONLY
-block|,
-name|NULL
+name|TREE_ITEM_MKDIR
 block|}
 block|,
 block|{
@@ -712,9 +685,7 @@ literal|"wide GIMP gradients installation when searching for\n"
 literal|"gradients."
 argument_list|)
 block|,
-name|TREE_ITEM_MKDIR_ONLY
-block|,
-name|NULL
+name|TREE_ITEM_MKDIR
 block|}
 block|,
 block|{
@@ -730,9 +701,7 @@ literal|"wide GIMP palettes installation when searching for\n"
 literal|"palettes."
 argument_list|)
 block|,
-name|TREE_ITEM_MKDIR_ONLY
-block|,
-name|NULL
+name|TREE_ITEM_MKDIR
 block|}
 block|,
 block|{
@@ -748,9 +717,7 @@ literal|"wide GIMP patterns installation when searching for\n"
 literal|"patterns."
 argument_list|)
 block|,
-name|TREE_ITEM_MKDIR_ONLY
-block|,
-name|NULL
+name|TREE_ITEM_MKDIR
 block|}
 block|,
 block|{
@@ -766,9 +733,7 @@ literal|"checks this folder in addition to the system-wide\n"
 literal|"GIMP plug-in folder when searching for plug-ins."
 argument_list|)
 block|,
-name|TREE_ITEM_MKDIR_ONLY
-block|,
-name|NULL
+name|TREE_ITEM_MKDIR
 block|}
 block|,
 block|{
@@ -785,9 +750,7 @@ literal|"GIMP module folder when searching for modules to load\n"
 literal|"during initialization."
 argument_list|)
 block|,
-name|TREE_ITEM_MKDIR_ONLY
-block|,
-name|NULL
+name|TREE_ITEM_MKDIR
 block|}
 block|,
 block|{
@@ -805,9 +768,7 @@ literal|"when searching for plug-in environment modification\n"
 literal|"files."
 argument_list|)
 block|,
-name|TREE_ITEM_MKDIR_ONLY
-block|,
-name|NULL
+name|TREE_ITEM_MKDIR
 block|}
 block|,
 block|{
@@ -823,9 +784,7 @@ literal|"the systemwide GIMP scripts folder when searching for\n"
 literal|"scripts."
 argument_list|)
 block|,
-name|TREE_ITEM_MKDIR_ONLY
-block|,
-name|NULL
+name|TREE_ITEM_MKDIR
 block|}
 block|,
 block|{
@@ -838,9 +797,7 @@ argument_list|(
 literal|"This folder is searched for image templates."
 argument_list|)
 block|,
-name|TREE_ITEM_MKDIR_ONLY
-block|,
-name|NULL
+name|TREE_ITEM_MKDIR
 block|}
 block|,
 block|{
@@ -853,9 +810,7 @@ argument_list|(
 literal|"This folder is searched for user-installed themes."
 argument_list|)
 block|,
-name|TREE_ITEM_MKDIR_ONLY
-block|,
-name|NULL
+name|TREE_ITEM_MKDIR
 block|}
 block|,
 block|{
@@ -872,9 +827,7 @@ literal|"this folder.  These files are useless across GIMP\n"
 literal|"sessions and can be destroyed with impunity."
 argument_list|)
 block|,
-name|TREE_ITEM_MKDIR_ONLY
-block|,
-name|NULL
+name|TREE_ITEM_MKDIR
 block|}
 block|,
 block|{
@@ -887,9 +840,7 @@ argument_list|(
 literal|"This folder is used to store tool options."
 argument_list|)
 block|,
-name|TREE_ITEM_MKDIR_ONLY
-block|,
-name|NULL
+name|TREE_ITEM_MKDIR
 block|}
 block|,
 block|{
@@ -903,9 +854,7 @@ literal|"This folder is used to store parameter files for the\n"
 literal|"Curves tool."
 argument_list|)
 block|,
-name|TREE_ITEM_MKDIR_ONLY
-block|,
-name|NULL
+name|TREE_ITEM_MKDIR
 block|}
 block|,
 block|{
@@ -919,9 +868,7 @@ literal|"This folder is used to store parameter files for the\n"
 literal|"Levels tool."
 argument_list|)
 block|,
-name|TREE_ITEM_MKDIR_ONLY
-block|,
-name|NULL
+name|TREE_ITEM_MKDIR
 block|}
 block|,
 block|{
@@ -931,9 +878,7 @@ literal|"fractalexplorer"
 block|,
 name|NULL
 block|,
-name|TREE_ITEM_MKDIR_ONLY
-block|,
-name|NULL
+name|TREE_ITEM_MKDIR
 block|}
 block|,
 block|{
@@ -943,9 +888,7 @@ literal|"gfig"
 block|,
 name|NULL
 block|,
-name|TREE_ITEM_MKDIR_ONLY
-block|,
-name|NULL
+name|TREE_ITEM_MKDIR
 block|}
 block|,
 block|{
@@ -955,9 +898,7 @@ literal|"gflare"
 block|,
 name|NULL
 block|,
-name|TREE_ITEM_MKDIR_ONLY
-block|,
-name|NULL
+name|TREE_ITEM_MKDIR
 block|}
 block|,
 block|{
@@ -967,9 +908,7 @@ literal|"gimpressionist"
 block|,
 name|NULL
 block|,
-name|TREE_ITEM_MKDIR_ONLY
-block|,
-name|NULL
+name|TREE_ITEM_MKDIR
 block|}
 block|}
 struct|;
@@ -3636,7 +3575,7 @@ index|[
 name|i
 index|]
 operator|.
-name|text
+name|name
 argument_list|,
 name|PIXBUF_COLUMN
 argument_list|,
@@ -3681,7 +3620,7 @@ index|[
 name|i
 index|]
 operator|.
-name|text
+name|name
 argument_list|)
 expr_stmt|;
 name|label
@@ -4206,19 +4145,19 @@ decl_stmt|;
 name|gchar
 name|dest
 index|[
-literal|1000
+literal|1024
 index|]
 decl_stmt|;
 name|gchar
 name|source
 index|[
-literal|1000
+literal|1024
 index|]
 decl_stmt|;
 name|gchar
 name|log_line
 index|[
-literal|1000
+literal|1024
 index|]
 decl_stmt|;
 name|gint
@@ -4467,7 +4406,7 @@ index|[
 name|i
 index|]
 operator|.
-name|text
+name|name
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -4481,11 +4420,11 @@ name|type
 condition|)
 block|{
 case|case
-name|TREE_ITEM_DONT
+name|TREE_ITEM_DO_NOTHING
 case|:
 break|break;
 case|case
-name|TREE_ITEM_MKDIR_ONLY
+name|TREE_ITEM_MKDIR
 case|:
 name|g_snprintf
 argument_list|(
@@ -4599,69 +4538,9 @@ index|[
 name|i
 index|]
 operator|.
-name|source_filename
-condition|?
-name|tree_items
-index|[
-name|i
-index|]
-operator|.
-name|source_filename
-else|:
-name|tree_items
-index|[
-name|i
-index|]
-operator|.
-name|text
+name|name
 argument_list|)
 expr_stmt|;
-goto|goto
-name|do_copy
-goto|;
-case|case
-name|TREE_ITEM_FROM_DATA_DIR
-case|:
-name|g_snprintf
-argument_list|(
-name|source
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|source
-argument_list|)
-argument_list|,
-literal|"%s%c%s"
-argument_list|,
-name|gimp_data_directory
-argument_list|()
-argument_list|,
-name|G_DIR_SEPARATOR
-argument_list|,
-name|tree_items
-index|[
-name|i
-index|]
-operator|.
-name|source_filename
-condition|?
-name|tree_items
-index|[
-name|i
-index|]
-operator|.
-name|source_filename
-else|:
-name|tree_items
-index|[
-name|i
-index|]
-operator|.
-name|text
-argument_list|)
-expr_stmt|;
-name|do_copy
-label|:
 name|g_assert
 argument_list|(
 operator|!
@@ -4742,7 +4621,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|TREE_ITEM_DONT
+name|TREE_ITEM_DO_NOTHING
 condition|)
 name|print_log
 argument_list|(
