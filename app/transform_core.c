@@ -566,7 +566,7 @@ comment|/* strategy: if we are in the middle of a tile, use the tile storage */
 end_comment
 
 begin_comment
-comment|/* otherwise just copy into out own malloced buffer and return that */
+comment|/* otherwise just copy into our own malloced buffer and return that */
 end_comment
 
 begin_function
@@ -3214,7 +3214,7 @@ name|transform_core
 operator|->
 name|sy1
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gdisplay_transform_coords
@@ -3239,7 +3239,7 @@ name|transform_core
 operator|->
 name|sy2
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gdisplay_transform_coords
@@ -3264,7 +3264,7 @@ name|transform_core
 operator|->
 name|sy3
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gdisplay_transform_coords
@@ -3289,7 +3289,7 @@ name|transform_core
 operator|->
 name|sy4
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|x1
@@ -3556,7 +3556,7 @@ argument_list|,
 operator|&
 name|ya
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gdisplay_transform_coords
@@ -3587,7 +3587,7 @@ argument_list|,
 operator|&
 name|yb
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gdk_draw_line
@@ -3800,7 +3800,7 @@ name|transform_core
 operator|->
 name|scy
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gdk_draw_arc
@@ -7053,14 +7053,14 @@ comment|/*  no interpolation  */
 block|{
 name|itx
 operator|=
-name|RINT
+name|floor
 argument_list|(
 name|ttx
 argument_list|)
 expr_stmt|;
 name|ity
 operator|=
-name|RINT
+name|floor
 argument_list|(
 name|tty
 argument_list|)

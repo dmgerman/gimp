@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f541f00103
+DECL|enum|__anon2c3d67700103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -2162,14 +2162,7 @@ else|else
 block|{
 name|bx
 operator|=
-name|ax
-operator|<
 literal|0
-condition|?
-operator|-
-literal|1
-else|:
-literal|1
 expr_stmt|;
 name|by
 operator|=
