@@ -88,6 +88,19 @@ end_function_decl
 
 begin_function_decl
 name|int
+name|edit_paste_as_new
+parameter_list|(
+name|GImage
+modifier|*
+parameter_list|,
+name|TileManager
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|int
 name|edit_clear
 parameter_list|(
 name|GImage
@@ -140,6 +153,16 @@ name|void
 modifier|*
 parameter_list|,
 name|int
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|int
+name|global_edit_paste_as_new
+parameter_list|(
+name|void
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
