@@ -4450,6 +4450,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|device_status_update (GdkDevice * device)
 name|device_status_update

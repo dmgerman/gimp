@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_OBJECT_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gobject/gobject.h>
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_OBJECT
 define|#
