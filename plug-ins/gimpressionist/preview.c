@@ -450,19 +450,11 @@ block|{
 name|gint
 name|i
 decl_stmt|;
-name|guchar
-name|buf
-index|[
-name|PREVIEWSIZE
-operator|*
-literal|3
-index|]
-decl_stmt|;
 comment|/* This portion is remmed out because of the remming out of the    * code below.    *            -- Shlomi Fish    * */
 if|#
 directive|if
 literal|0
-block|if(!infile.col&& d)     grabarea();
+block|guchar buf[PREVIEWSIZE*3];    if(!infile.col&& d)     grabarea();
 endif|#
 directive|endif
 comment|/* It seems that infile.col must be true here. (after grabarea() that is.)    * Thus, I'm removing this entire portion of the code in hope that    * it works OK afterwards.    *            -- Shlomi Fish    * */

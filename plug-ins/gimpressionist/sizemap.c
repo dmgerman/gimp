@@ -67,6 +67,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"infile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"preview.h"
 end_include
 
