@@ -56,6 +56,22 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_scanner_parse_identifier
+parameter_list|(
+name|GScanner
+modifier|*
+name|scanner
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|identifier
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_scanner_parse_string
 parameter_list|(
 name|GScanner

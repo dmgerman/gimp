@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299208510103
+DECL|enum|__anon2c188fd50103
 block|{
 DECL|enumerator|GIMP_CONFIG_ERROR_OPEN
 name|GIMP_CONFIG_ERROR_OPEN
@@ -92,6 +92,9 @@ name|object
 parameter_list|,
 name|gint
 name|fd
+parameter_list|,
+name|gint
+name|indent_level
 parameter_list|,
 name|gpointer
 name|data
@@ -401,6 +404,20 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|void
+name|gimp_config_string_indent
+parameter_list|(
+name|GString
+modifier|*
+name|string
+parameter_list|,
+name|gint
+name|indent_level
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#

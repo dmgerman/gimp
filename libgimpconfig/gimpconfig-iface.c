@@ -126,6 +126,9 @@ parameter_list|,
 name|gint
 name|fd
 parameter_list|,
+name|gint
+name|indent_level
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -322,7 +325,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_config_iface_serialize (GObject * object,gint fd,gpointer data)
+DECL|function|gimp_config_iface_serialize (GObject * object,gint fd,gint indent_level,gpointer data)
 name|gimp_config_iface_serialize
 parameter_list|(
 name|GObject
@@ -331,6 +334,9 @@ name|object
 parameter_list|,
 name|gint
 name|fd
+parameter_list|,
+name|gint
+name|indent_level
 parameter_list|,
 name|gpointer
 name|data
@@ -342,6 +348,8 @@ argument_list|(
 name|object
 argument_list|,
 name|fd
+argument_list|,
+name|indent_level
 argument_list|)
 return|;
 block|}
@@ -808,6 +816,8 @@ name|object
 argument_list|,
 name|fd
 argument_list|,
+literal|0
+argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
@@ -1216,6 +1226,59 @@ block|}
 end_function
 
 begin_function
+name|void
+DECL|function|gimp_config_string_indent (GString * string,gint indent_level)
+name|gimp_config_string_indent
+parameter_list|(
+name|GString
+modifier|*
+name|string
+parameter_list|,
+name|gint
+name|indent_level
+parameter_list|)
+block|{
+name|gint
+name|indent
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|string
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|indent_level
+operator|>
+literal|0
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|indent
+operator|=
+literal|0
+init|;
+name|indent
+operator|<
+name|indent_level
+condition|;
+name|indent
+operator|++
+control|)
+name|g_string_append
+argument_list|(
+name|string
+argument_list|,
+literal|"    "
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 specifier|static
 name|void
 DECL|function|gimp_config_scanner_message (GScanner * scanner,gchar * message,gboolean is_error)
@@ -1432,7 +1495,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2893bb240108
+DECL|struct|__anon27e0cacf0108
 block|{
 DECL|member|key
 name|gchar

@@ -153,7 +153,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_serialize_properties (GObject * object,gint fd)
+DECL|function|gimp_config_serialize_properties (GObject * object,gint fd,gint indent_level)
 name|gimp_config_serialize_properties
 parameter_list|(
 name|GObject
@@ -162,6 +162,9 @@ name|object
 parameter_list|,
 name|gint
 name|fd
+parameter_list|,
+name|gint
+name|indent_level
 parameter_list|)
 block|{
 name|GObjectClass
@@ -182,6 +185,11 @@ decl_stmt|;
 name|GString
 modifier|*
 name|str
+decl_stmt|;
+name|gboolean
+name|property_written
+init|=
+name|FALSE
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -262,7 +270,33 @@ name|GIMP_PARAM_SERIALIZE
 operator|)
 condition|)
 continue|continue;
-name|g_string_printf
+if|if
+condition|(
+name|property_written
+condition|)
+name|g_string_assign
+argument_list|(
+name|str
+argument_list|,
+literal|"\n"
+argument_list|)
+expr_stmt|;
+else|else
+name|g_string_assign
+argument_list|(
+name|str
+argument_list|,
+literal|""
+argument_list|)
+expr_stmt|;
+name|gimp_config_string_indent
+argument_list|(
+name|str
+argument_list|,
+name|indent_level
+argument_list|)
+expr_stmt|;
+name|g_string_append_printf
 argument_list|(
 name|str
 argument_list|,
@@ -291,8 +325,12 @@ name|g_string_append
 argument_list|(
 name|str
 argument_list|,
-literal|")\n"
+literal|")"
 argument_list|)
+expr_stmt|;
+name|property_written
+operator|=
+name|TRUE
 expr_stmt|;
 if|if
 condition|(
@@ -376,7 +414,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_serialize_changed_properties (GObject * new,GObject * old,gint fd)
+DECL|function|gimp_config_serialize_changed_properties (GObject * new,GObject * old,gint fd,gint indent_level)
 name|gimp_config_serialize_changed_properties
 parameter_list|(
 name|GObject
@@ -389,6 +427,9 @@ name|old
 parameter_list|,
 name|gint
 name|fd
+parameter_list|,
+name|gint
+name|indent_level
 parameter_list|)
 block|{
 name|GObjectClass
@@ -409,6 +450,11 @@ decl_stmt|;
 name|GString
 modifier|*
 name|str
+decl_stmt|;
+name|gboolean
+name|property_written
+init|=
+name|FALSE
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -585,7 +631,33 @@ name|old_value
 argument_list|)
 condition|)
 block|{
-name|g_string_printf
+if|if
+condition|(
+name|property_written
+condition|)
+name|g_string_assign
+argument_list|(
+name|str
+argument_list|,
+literal|"\n"
+argument_list|)
+expr_stmt|;
+else|else
+name|g_string_assign
+argument_list|(
+name|str
+argument_list|,
+literal|""
+argument_list|)
+expr_stmt|;
+name|gimp_config_string_indent
+argument_list|(
+name|str
+argument_list|,
+name|indent_level
+argument_list|)
+expr_stmt|;
+name|g_string_append_printf
 argument_list|(
 name|str
 argument_list|,
@@ -615,6 +687,10 @@ name|str
 argument_list|,
 literal|")\n"
 argument_list|)
+expr_stmt|;
+name|property_written
+operator|=
+name|TRUE
 expr_stmt|;
 if|if
 condition|(
@@ -1100,7 +1176,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_serialize_unknown_tokens (GObject * object,gint fd)
+DECL|function|gimp_config_serialize_unknown_tokens (GObject * object,gint fd,gint indent_level)
 name|gimp_config_serialize_unknown_tokens
 parameter_list|(
 name|GObject
@@ -1109,6 +1185,9 @@ name|object
 parameter_list|,
 name|gint
 name|fd
+parameter_list|,
+name|gint
+name|indent_level
 parameter_list|)
 block|{
 name|GString

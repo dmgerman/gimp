@@ -95,6 +95,9 @@ parameter_list|,
 name|gint
 name|fd
 parameter_list|,
+name|gint
+name|indent_level
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -284,7 +287,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_rc_serialize (GObject * object,gint fd,gpointer data)
+DECL|function|gimp_rc_serialize (GObject * object,gint fd,gint indent_level,gpointer data)
 name|gimp_rc_serialize
 parameter_list|(
 name|GObject
@@ -293,6 +296,9 @@ name|object
 parameter_list|,
 name|gint
 name|fd
+parameter_list|,
+name|gint
+name|indent_level
 parameter_list|,
 name|gpointer
 name|data
@@ -322,6 +328,8 @@ name|data
 argument_list|)
 argument_list|,
 name|fd
+argument_list|,
+name|indent_level
 argument_list|)
 expr_stmt|;
 else|else
@@ -332,6 +340,8 @@ argument_list|(
 name|object
 argument_list|,
 name|fd
+argument_list|,
+name|indent_level
 argument_list|)
 expr_stmt|;
 if|if
@@ -345,6 +355,8 @@ argument_list|(
 name|object
 argument_list|,
 name|fd
+argument_list|,
+name|indent_level
 argument_list|)
 expr_stmt|;
 return|return

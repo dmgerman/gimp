@@ -26,6 +26,9 @@ name|object
 parameter_list|,
 name|gint
 name|fd
+parameter_list|,
+name|gint
+name|indent_level
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -44,6 +47,9 @@ name|old
 parameter_list|,
 name|gint
 name|fd
+parameter_list|,
+name|gint
+name|indent_level
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -58,6 +64,9 @@ name|object
 parameter_list|,
 name|gint
 name|fd
+parameter_list|,
+name|gint
+name|indent_level
 parameter_list|)
 function_decl|;
 end_function_decl

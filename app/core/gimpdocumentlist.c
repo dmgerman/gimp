@@ -100,6 +100,9 @@ parameter_list|,
 name|gint
 name|fd
 parameter_list|,
+name|gint
+name|indent_level
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -282,7 +285,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_document_list_serialize (GObject * document_list,gint fd,gpointer data)
+DECL|function|gimp_document_list_serialize (GObject * document_list,gint fd,gint indent_level,gpointer data)
 name|gimp_document_list_serialize
 parameter_list|(
 name|GObject
@@ -291,6 +294,9 @@ name|document_list
 parameter_list|,
 name|gint
 name|fd
+parameter_list|,
+name|gint
+name|indent_level
 parameter_list|,
 name|gpointer
 name|data

@@ -82,7 +82,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29419d480103
+DECL|enum|__anon2c2cd1210103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -169,6 +169,9 @@ name|list
 parameter_list|,
 name|gint
 name|fd
+parameter_list|,
+name|gint
+name|indent_level
 parameter_list|,
 name|gpointer
 name|data
@@ -854,7 +857,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_parasite_list_serialize (GObject * list,gint fd,gpointer data)
+DECL|function|gimp_parasite_list_serialize (GObject * list,gint fd,gint indent_level,gpointer data)
 name|gimp_parasite_list_serialize
 parameter_list|(
 name|GObject
@@ -863,6 +866,9 @@ name|list
 parameter_list|,
 name|gint
 name|fd
+parameter_list|,
+name|gint
+name|indent_level
 parameter_list|,
 name|gpointer
 name|data
