@@ -753,7 +753,7 @@ name|GIMP_CONFIG_ERROR_FILE
 argument_list|,
 name|_
 argument_list|(
-literal|"Failed to open file '%s' to '%s': %s"
+literal|"Failed to rename temporary file '%s' to '%s': %s"
 argument_list|)
 argument_list|,
 name|tmpname
@@ -935,6 +935,13 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_scanner_input_file
+argument_list|(
+name|scanner
+argument_list|,
+name|fd
+argument_list|)
+expr_stmt|;
 name|scanner
 operator|->
 name|user_data
@@ -946,6 +953,12 @@ operator|->
 name|msg_handler
 operator|=
 name|gimp_config_scanner_message
+expr_stmt|;
+name|scanner
+operator|->
+name|input_name
+operator|=
+name|filename
 expr_stmt|;
 name|scanner
 operator|->
@@ -967,19 +980,6 @@ operator|(
 name|G_CSET_a_2_z
 literal|"-_"
 operator|)
-expr_stmt|;
-name|g_scanner_input_file
-argument_list|(
-name|scanner
-argument_list|,
-name|fd
-argument_list|)
-expr_stmt|;
-name|scanner
-operator|->
-name|input_name
-operator|=
-name|filename
 expr_stmt|;
 name|success
 operator|=
@@ -1258,7 +1258,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0bab600108
+DECL|struct|__anon2a9c8b0d0108
 block|{
 DECL|member|key
 name|gchar

@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a2f8880108
+DECL|struct|__anon2c2fa65f0108
 block|{
 DECL|member|resolution
 name|guint
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a2f8880208
+DECL|struct|__anon2c2fa65f0208
 block|{
 DECL|member|run
 name|gint
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a2f8880308
+DECL|struct|__anon2c2fa65f0308
 block|{
 DECL|member|width
 DECL|member|height
@@ -308,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a2f8880408
+DECL|struct|__anon2c2fa65f0408
 block|{
 DECL|member|run
 name|gint
@@ -848,7 +848,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a2f8880508
+DECL|struct|__anon2c2fa65f0508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1719,7 +1719,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a2f8880608
+DECL|struct|__anon2c2fa65f0608
 block|{
 DECL|member|eol
 name|long
@@ -5869,7 +5869,7 @@ literal|15
 operator|)
 operator|)
 expr_stmt|;
-comment|/* Check DOS EPS binary file */
+comment|/* Check DOS EPS binary file (bug #75667) */
 if|if
 condition|(
 operator|(
@@ -5898,7 +5898,28 @@ condition|)
 operator|*
 name|is_epsf
 operator|=
-literal|1
+name|TRUE
+expr_stmt|;
+comment|/* special case for Illustrator brain damage (bug #81606) */
+if|if
+condition|(
+operator|(
+operator|!
+operator|*
+name|is_epsf
+operator|)
+operator|&&
+name|strstr
+argument_list|(
+name|hdr
+argument_list|,
+literal|"%%Creator: Adobe Illustrator(R) 8.0"
+argument_list|)
+condition|)
+operator|*
+name|is_epsf
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 name|fclose
