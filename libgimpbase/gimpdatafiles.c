@@ -747,7 +747,7 @@ operator|&
 name|G_FILE_TEST_IS_SYMLINK
 operator|)
 operator|&&
-name|S_ISLINK
+name|S_ISLNK
 argument_list|(
 name|filestat
 operator|.
