@@ -771,6 +771,11 @@ operator|->
 name|ref_count
 operator|++
 expr_stmt|;
+name|lc_dialog_preview_update
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 return|return
 name|gdisp
 return|;

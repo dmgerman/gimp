@@ -2528,6 +2528,65 @@ end_function
 
 begin_function
 name|void
+DECL|function|layers_dialog_invalidate_previews (GimpImage * gimage)
+name|layers_dialog_invalidate_previews
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+block|{
+name|GSList
+modifier|*
+name|list
+init|=
+name|gimage
+operator|->
+name|layers
+decl_stmt|;
+name|Layer
+modifier|*
+name|layer
+decl_stmt|;
+comment|/* Invalidate all previews ... */
+comment|/* This is called during loading the image */
+while|while
+condition|(
+name|list
+condition|)
+block|{
+name|layer
+operator|=
+operator|(
+name|Layer
+operator|*
+operator|)
+name|list
+operator|->
+name|data
+expr_stmt|;
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+operator|->
+name|preview_valid
+operator|=
+name|FALSE
+expr_stmt|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|layers_dialog_update (GimpImage * gimage)
 name|layers_dialog_update
 parameter_list|(

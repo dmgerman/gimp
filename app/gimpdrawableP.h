@@ -34,6 +34,12 @@ directive|include
 file|"parasitelistF.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimppreviewcache.h"
+end_include
+
 begin_struct
 DECL|struct|_GimpDrawable
 struct|struct
@@ -119,12 +125,12 @@ name|parasites
 decl_stmt|;
 comment|/* Plug-in parasite data   */
 comment|/*  Preview variables  */
-DECL|member|preview
-name|TempBuf
+DECL|member|preview_cache
+name|GSList
 modifier|*
-name|preview
+name|preview_cache
 decl_stmt|;
-comment|/* preview of the channel */
+comment|/* preview caches of the channel */
 DECL|member|preview_valid
 name|int
 name|preview_valid

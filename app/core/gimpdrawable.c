@@ -82,7 +82,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2a27d3240103
+DECL|enum|__anon2c744abc0103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -2781,7 +2781,7 @@ name|FALSE
 expr_stmt|;
 name|drawable
 operator|->
-name|preview
+name|preview_cache
 operator|=
 name|NULL
 expr_stmt|;
@@ -2925,13 +2925,14 @@ if|if
 condition|(
 name|drawable
 operator|->
-name|preview
+name|preview_cache
 condition|)
-name|temp_buf_free
+name|gimp_preview_cache_invalidate
 argument_list|(
+operator|&
 name|drawable
 operator|->
-name|preview
+name|preview_cache
 argument_list|)
 expr_stmt|;
 if|if
@@ -3217,7 +3218,7 @@ expr_stmt|;
 comment|/*  preview variables  */
 name|drawable
 operator|->
-name|preview
+name|preview_cache
 operator|=
 name|NULL
 expr_stmt|;

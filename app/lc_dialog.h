@@ -73,6 +73,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|lc_dialog_preview_update
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
