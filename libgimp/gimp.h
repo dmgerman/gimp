@@ -990,6 +990,18 @@ name|int
 name|nparams
 parameter_list|)
 function_decl|;
+comment|/* Destroy the an array of GParamDef's. This is useful for  *  destroying the return values returned by a call to  *  'gimp_query_procedure'.  */
+name|void
+name|gimp_destroy_paramdefs
+parameter_list|(
+name|GParamDef
+modifier|*
+name|paramdefs
+parameter_list|,
+name|int
+name|nparams
+parameter_list|)
+function_decl|;
 name|gdouble
 name|gimp_gamma
 parameter_list|(
