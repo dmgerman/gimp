@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292213490108
+DECL|struct|__anon275e431f0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292213490208
+DECL|struct|__anon275e431f0208
 block|{
 DECL|member|run
 name|gboolean
@@ -247,12 +247,6 @@ parameter_list|,
 name|GimpPixelRgn
 modifier|*
 name|dstPTR
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
 parameter_list|,
 name|gint
 name|bytes
@@ -1599,10 +1593,6 @@ argument_list|,
 operator|&
 name|destPR
 argument_list|,
-name|width
-argument_list|,
-name|height
-argument_list|,
 name|bytes
 argument_list|,
 name|radius
@@ -1663,7 +1653,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|unsharp_region (GimpPixelRgn * srcPR,GimpPixelRgn * destPR,gint width,gint height,gint bytes,gdouble radius,gdouble amount,gint x1,gint x2,gint y1,gint y2,gboolean show_progress)
+DECL|function|unsharp_region (GimpPixelRgn * srcPR,GimpPixelRgn * destPR,gint bytes,gdouble radius,gdouble amount,gint x1,gint x2,gint y1,gint y2,gboolean show_progress)
 name|unsharp_region
 parameter_list|(
 name|GimpPixelRgn
@@ -1673,12 +1663,6 @@ parameter_list|,
 name|GimpPixelRgn
 modifier|*
 name|destPR
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
 parameter_list|,
 name|gint
 name|bytes
@@ -1707,25 +1691,17 @@ parameter_list|)
 block|{
 name|guchar
 modifier|*
-name|cur_col
+name|src
 decl_stmt|;
 name|guchar
 modifier|*
-name|dest_col
-decl_stmt|;
-name|guchar
-modifier|*
-name|cur_row
-decl_stmt|;
-name|guchar
-modifier|*
-name|dest_row
+name|dest
 decl_stmt|;
 name|gint
-name|x
+name|width
 decl_stmt|;
 name|gint
-name|y
+name|height
 decl_stmt|;
 name|gdouble
 modifier|*
@@ -1745,30 +1721,21 @@ name|row
 decl_stmt|,
 name|col
 decl_stmt|;
-comment|/* these are counters for loops */
-comment|/* these are used for the merging step */
 name|gint
 name|threshold
-decl_stmt|;
-name|gint
-name|diff
-decl_stmt|;
-name|gint
-name|value
-decl_stmt|;
-name|gint
-name|u
-decl_stmt|,
-name|v
+init|=
+name|unsharp_params
+operator|.
+name|threshold
 decl_stmt|;
 comment|/* find height and width of subregion to act on */
-name|x
+name|width
 operator|=
 name|x2
 operator|-
 name|x1
 expr_stmt|;
-name|y
+name|height
 operator|=
 name|y2
 operator|-
@@ -1795,25 +1762,25 @@ argument_list|,
 name|cmatrix_length
 argument_list|)
 expr_stmt|;
-comment|/*  allocate row buffers  */
-name|cur_row
+comment|/* allocate row buffers */
+name|src
 operator|=
 name|g_new
 argument_list|(
 name|guchar
 argument_list|,
-name|x
+name|width
 operator|*
 name|bytes
 argument_list|)
 expr_stmt|;
-name|dest_row
+name|dest
 operator|=
 name|g_new
 argument_list|(
 name|guchar
 argument_list|,
-name|x
+name|width
 operator|*
 name|bytes
 argument_list|)
@@ -1827,7 +1794,7 @@ literal|0
 init|;
 name|row
 operator|<
-name|y
+name|height
 condition|;
 name|row
 operator|++
@@ -1837,7 +1804,7 @@ name|gimp_pixel_rgn_get_row
 argument_list|(
 name|destPR
 argument_list|,
-name|dest_row
+name|dest
 argument_list|,
 name|x1
 argument_list|,
@@ -1854,11 +1821,11 @@ argument_list|)
 expr_stmt|;
 name|memset
 argument_list|(
-name|dest_row
+name|dest
 argument_list|,
 literal|0
 argument_list|,
-name|x
+name|width
 operator|*
 name|bytes
 argument_list|)
@@ -1867,7 +1834,7 @@ name|gimp_pixel_rgn_set_row
 argument_list|(
 name|destPR
 argument_list|,
-name|dest_row
+name|dest
 argument_list|,
 name|x1
 argument_list|,
@@ -1892,7 +1859,7 @@ literal|0
 init|;
 name|row
 operator|<
-name|y
+name|height
 condition|;
 name|row
 operator|++
@@ -1902,7 +1869,7 @@ name|gimp_pixel_rgn_get_row
 argument_list|(
 name|srcPR
 argument_list|,
-name|cur_row
+name|src
 argument_list|,
 name|x1
 argument_list|,
@@ -1910,14 +1877,14 @@ name|y1
 operator|+
 name|row
 argument_list|,
-name|x
+name|width
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_get_row
 argument_list|(
 name|destPR
 argument_list|,
-name|dest_row
+name|dest
 argument_list|,
 name|x1
 argument_list|,
@@ -1925,7 +1892,7 @@ name|y1
 operator|+
 name|row
 argument_list|,
-name|x
+name|width
 argument_list|)
 expr_stmt|;
 name|blur_line
@@ -1936,11 +1903,11 @@ name|cmatrix
 argument_list|,
 name|cmatrix_length
 argument_list|,
-name|cur_row
+name|src
 argument_list|,
-name|dest_row
+name|dest
 argument_list|,
-name|x
+name|width
 argument_list|,
 name|bytes
 argument_list|)
@@ -1949,7 +1916,7 @@ name|gimp_pixel_rgn_set_row
 argument_list|(
 name|destPR
 argument_list|,
-name|dest_row
+name|dest
 argument_list|,
 name|x1
 argument_list|,
@@ -1957,7 +1924,7 @@ name|y1
 operator|+
 name|row
 argument_list|,
-name|x
+name|width
 argument_list|)
 expr_stmt|;
 if|if
@@ -1980,30 +1947,41 @@ operator|/
 operator|(
 literal|3
 operator|*
-name|y
+name|height
 operator|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* free row buffers */
+name|g_free
+argument_list|(
+name|dest
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|src
+argument_list|)
+expr_stmt|;
 comment|/* allocate column buffers */
-name|cur_col
+name|src
 operator|=
 name|g_new
 argument_list|(
 name|guchar
 argument_list|,
-name|y
+name|height
 operator|*
 name|bytes
 argument_list|)
 expr_stmt|;
-name|dest_col
+name|dest
 operator|=
 name|g_new
 argument_list|(
 name|guchar
 argument_list|,
-name|y
+name|height
 operator|*
 name|bytes
 argument_list|)
@@ -2017,7 +1995,7 @@ literal|0
 init|;
 name|col
 operator|<
-name|x
+name|width
 condition|;
 name|col
 operator|++
@@ -2027,7 +2005,7 @@ name|gimp_pixel_rgn_get_col
 argument_list|(
 name|destPR
 argument_list|,
-name|cur_col
+name|src
 argument_list|,
 name|x1
 operator|+
@@ -2035,14 +2013,14 @@ name|col
 argument_list|,
 name|y1
 argument_list|,
-name|y
+name|height
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_get_col
 argument_list|(
 name|destPR
 argument_list|,
-name|dest_col
+name|dest
 argument_list|,
 name|x1
 operator|+
@@ -2050,7 +2028,7 @@ name|col
 argument_list|,
 name|y1
 argument_list|,
-name|y
+name|height
 argument_list|)
 expr_stmt|;
 name|blur_line
@@ -2061,11 +2039,11 @@ name|cmatrix
 argument_list|,
 name|cmatrix_length
 argument_list|,
-name|cur_col
+name|src
 argument_list|,
-name|dest_col
+name|dest
 argument_list|,
-name|y
+name|height
 argument_list|,
 name|bytes
 argument_list|)
@@ -2074,7 +2052,7 @@ name|gimp_pixel_rgn_set_col
 argument_list|(
 name|destPR
 argument_list|,
-name|dest_col
+name|dest
 argument_list|,
 name|x1
 operator|+
@@ -2082,7 +2060,7 @@ name|col
 argument_list|,
 name|y1
 argument_list|,
-name|y
+name|height
 argument_list|)
 expr_stmt|;
 if|if
@@ -2105,7 +2083,7 @@ operator|/
 operator|(
 literal|3
 operator|*
-name|x
+name|width
 operator|)
 operator|+
 literal|0.33
@@ -2124,13 +2102,6 @@ literal|"Merging..."
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* find integer value of threshold */
-name|threshold
-operator|=
-name|unsharp_params
-operator|.
-name|threshold
-expr_stmt|;
 comment|/* merge the source and destination (which currently contains      the blurred version) images */
 for|for
 control|(
@@ -2140,22 +2111,28 @@ literal|0
 init|;
 name|row
 operator|<
-name|y
+name|height
 condition|;
 name|row
 operator|++
 control|)
 block|{
+name|gint
 name|value
-operator|=
+init|=
 literal|0
-expr_stmt|;
+decl_stmt|;
+name|gint
+name|u
+decl_stmt|,
+name|v
+decl_stmt|;
 comment|/* get source row */
 name|gimp_pixel_rgn_get_row
 argument_list|(
 name|srcPR
 argument_list|,
-name|cur_row
+name|src
 argument_list|,
 name|x1
 argument_list|,
@@ -2163,7 +2140,7 @@ name|y1
 operator|+
 name|row
 argument_list|,
-name|x
+name|width
 argument_list|)
 expr_stmt|;
 comment|/* get dest row */
@@ -2171,7 +2148,7 @@ name|gimp_pixel_rgn_get_row
 argument_list|(
 name|destPR
 argument_list|,
-name|dest_row
+name|dest
 argument_list|,
 name|x1
 argument_list|,
@@ -2179,7 +2156,7 @@ name|y1
 operator|+
 name|row
 argument_list|,
-name|x
+name|width
 argument_list|)
 expr_stmt|;
 comment|/* combine the two */
@@ -2191,7 +2168,7 @@ literal|0
 init|;
 name|u
 operator|<
-name|x
+name|width
 condition|;
 name|u
 operator|++
@@ -2211,10 +2188,11 @@ name|v
 operator|++
 control|)
 block|{
+name|gint
 name|diff
-operator|=
+init|=
 operator|(
-name|cur_row
+name|src
 index|[
 name|u
 operator|*
@@ -2223,7 +2201,7 @@ operator|+
 name|v
 index|]
 operator|-
-name|dest_row
+name|dest
 index|[
 name|u
 operator|*
@@ -2232,7 +2210,7 @@ operator|+
 name|v
 index|]
 operator|)
-expr_stmt|;
+decl_stmt|;
 comment|/* do tresholding */
 if|if
 condition|(
@@ -2251,7 +2229,7 @@ literal|0
 expr_stmt|;
 name|value
 operator|=
-name|cur_row
+name|src
 index|[
 name|u
 operator|*
@@ -2264,7 +2242,7 @@ name|amount
 operator|*
 name|diff
 expr_stmt|;
-name|dest_row
+name|dest
 index|[
 name|u
 operator|*
@@ -2305,7 +2283,7 @@ operator|/
 operator|(
 literal|3
 operator|*
-name|y
+name|height
 operator|)
 operator|+
 literal|0.67
@@ -2315,7 +2293,7 @@ name|gimp_pixel_rgn_set_row
 argument_list|(
 name|destPR
 argument_list|,
-name|dest_row
+name|dest
 argument_list|,
 name|x1
 argument_list|,
@@ -2323,7 +2301,7 @@ name|y1
 operator|+
 name|row
 argument_list|,
-name|x
+name|width
 argument_list|)
 expr_stmt|;
 block|}
@@ -2336,6 +2314,17 @@ argument_list|(
 literal|0.0
 argument_list|)
 expr_stmt|;
+comment|/* free col buffers */
+name|g_free
+argument_list|(
+name|dest
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|src
+argument_list|)
+expr_stmt|;
 comment|/* free the memory we took */
 name|g_free
 argument_list|(
@@ -2345,26 +2334,6 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|ctable
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|dest_col
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|cur_col
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|dest_row
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|cur_row
 argument_list|)
 expr_stmt|;
 block|}
@@ -3480,14 +3449,6 @@ name|srcPR
 argument_list|,
 operator|&
 name|destPR
-argument_list|,
-name|x2
-operator|-
-name|x1
-argument_list|,
-name|y2
-operator|-
-name|y1
 argument_list|,
 name|drawable
 operator|->
