@@ -492,7 +492,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b49bcdb0103
+DECL|enum|__anon288bb5a90103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -519,7 +519,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b49bcdb0203
+DECL|enum|__anon288bb5a90203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -538,7 +538,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b49bcdb0308
+DECL|struct|__anon288bb5a90308
 typedef|typedef
 struct|struct
 block|{
@@ -675,7 +675,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b49bcdb0408
+DECL|struct|__anon288bb5a90408
 typedef|typedef
 struct|struct
 block|{
@@ -695,7 +695,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b49bcdb0503
+DECL|enum|__anon288bb5a90503
 typedef|typedef
 enum|enum
 block|{
@@ -723,7 +723,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b49bcdb0608
+DECL|struct|__anon288bb5a90608
 typedef|typedef
 struct|struct
 block|{
@@ -746,7 +746,7 @@ name|Preview
 modifier|*
 name|preview
 decl_stmt|;
-DECL|struct|__anon2b49bcdb0708
+DECL|struct|__anon288bb5a90708
 struct|struct
 block|{
 DECL|member|x0
@@ -832,7 +832,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b49bcdb0808
+DECL|struct|__anon288bb5a90808
 typedef|typedef
 struct|struct
 block|{
@@ -904,7 +904,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b49bcdb0908
+DECL|struct|__anon288bb5a90908
 block|{
 DECL|member|x0
 name|gdouble
@@ -931,7 +931,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b49bcdb0a08
+DECL|struct|__anon288bb5a90a08
 block|{
 DECL|member|init
 name|gint
@@ -1101,7 +1101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b49bcdb0b08
+DECL|struct|__anon288bb5a90b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1128,7 +1128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b49bcdb0c08
+DECL|struct|__anon288bb5a90c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1169,7 +1169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b49bcdb0d08
+DECL|struct|__anon288bb5a90d08
 block|{
 DECL|member|tile
 name|GTile
@@ -1399,7 +1399,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b49bcdb0e08
+DECL|struct|__anon288bb5a90e08
 block|{
 DECL|member|tag
 name|gint
@@ -1474,7 +1474,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon2b49bcdb0f03
+DECL|enum|__anon288bb5a90f03
 typedef|typedef
 enum|enum
 block|{
@@ -1508,7 +1508,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b49bcdb1008
+DECL|struct|__anon288bb5a91008
 typedef|typedef
 struct|struct
 block|{
@@ -1552,7 +1552,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b49bcdb1108
+DECL|struct|__anon288bb5a91108
 typedef|typedef
 struct|struct
 block|{
@@ -1610,7 +1610,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b49bcdb1208
+DECL|struct|__anon288bb5a91208
 typedef|typedef
 struct|struct
 block|{
@@ -8131,7 +8131,7 @@ name|_
 argument_list|(
 literal|"GFlare `%s' is not saved.	If you add a new entry in gimprc, like:\n"
 literal|"(gflare-path \"${gimp_dir}/gflare\")\n"
-literal|"and make a directory ~/.gimp/gflare, then you can save your own GFlare's\n"
+literal|"and make a directory ~/.gimp-1.1/gflare, then you can save your own GFlare's\n"
 literal|"into that directory."
 argument_list|)
 decl_stmt|;
@@ -9778,7 +9778,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon2b49bcdb1308
+DECL|struct|__anon288bb5a91308
 specifier|static
 struct|struct
 block|{
@@ -17245,7 +17245,7 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-DECL|struct|__anon2b49bcdb1408
+DECL|struct|__anon288bb5a91408
 specifier|static
 struct|struct
 block|{
@@ -18380,7 +18380,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Are you sure you want to delete"
+literal|"Are you sure you want to delete "
 literal|"\"%s\" from the list and from disk?"
 argument_list|)
 argument_list|,
