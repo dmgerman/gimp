@@ -303,7 +303,6 @@ name|n_points
 operator|=
 literal|0
 expr_stmt|;
-comment|/* we offset all coordinates by 0.5 to align the brush with the path */
 name|points
 index|[
 name|n_points
@@ -323,8 +322,6 @@ operator|.
 name|x1
 operator|+
 name|offset_y
-operator|+
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|points
@@ -346,8 +343,6 @@ operator|.
 name|y1
 operator|+
 name|offset_y
-operator|+
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|n_points
@@ -429,8 +424,6 @@ operator|.
 name|x1
 operator|+
 name|offset_x
-operator|+
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|points
@@ -452,8 +445,6 @@ operator|.
 name|y1
 operator|+
 name|offset_y
-operator|+
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|n_points
@@ -514,8 +505,6 @@ operator|.
 name|x1
 operator|+
 name|offset_x
-operator|+
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|points
@@ -537,8 +526,6 @@ operator|.
 name|y1
 operator|+
 name|offset_y
-operator|+
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|n_points
