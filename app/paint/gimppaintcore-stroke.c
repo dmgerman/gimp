@@ -515,7 +515,7 @@ index|]
 operator|.
 name|pressure
 operator|=
-literal|1.0
+name|GIMP_COORDS_DEFAULT_PRESSURE
 expr_stmt|;
 name|coords
 index|[
@@ -524,7 +524,7 @@ index|]
 operator|.
 name|xtilt
 operator|=
-literal|0.5
+name|GIMP_COORDS_DEFAULT_TILT
 expr_stmt|;
 name|coords
 index|[
@@ -533,7 +533,7 @@ index|]
 operator|.
 name|ytilt
 operator|=
-literal|0.5
+name|GIMP_COORDS_DEFAULT_TILT
 expr_stmt|;
 name|coords
 index|[
@@ -542,7 +542,7 @@ index|]
 operator|.
 name|wheel
 operator|=
-literal|0.5
+name|GIMP_COORDS_DEFAULT_WHEEL
 expr_stmt|;
 name|n_coords
 operator|++
@@ -661,7 +661,7 @@ index|]
 operator|.
 name|pressure
 operator|=
-literal|1.0
+name|GIMP_COORDS_DEFAULT_PRESSURE
 expr_stmt|;
 name|coords
 index|[
@@ -670,7 +670,7 @@ index|]
 operator|.
 name|xtilt
 operator|=
-literal|0.5
+name|GIMP_COORDS_DEFAULT_TILT
 expr_stmt|;
 name|coords
 index|[
@@ -679,7 +679,7 @@ index|]
 operator|.
 name|ytilt
 operator|=
-literal|0.5
+name|GIMP_COORDS_DEFAULT_TILT
 expr_stmt|;
 name|coords
 index|[
@@ -688,7 +688,7 @@ index|]
 operator|.
 name|wheel
 operator|=
-literal|0.5
+name|GIMP_COORDS_DEFAULT_WHEEL
 expr_stmt|;
 name|n_coords
 operator|++
@@ -895,7 +895,7 @@ index|]
 operator|.
 name|pressure
 operator|=
-literal|1.0
+name|GIMP_COORDS_DEFAULT_PRESSURE
 expr_stmt|;
 name|coords
 index|[
@@ -904,7 +904,7 @@ index|]
 operator|.
 name|xtilt
 operator|=
-literal|0.5
+name|GIMP_COORDS_DEFAULT_TILT
 expr_stmt|;
 name|coords
 index|[
@@ -913,7 +913,7 @@ index|]
 operator|.
 name|ytilt
 operator|=
-literal|0.5
+name|GIMP_COORDS_DEFAULT_TILT
 expr_stmt|;
 name|coords
 index|[
@@ -922,7 +922,7 @@ index|]
 operator|.
 name|wheel
 operator|=
-literal|0.5
+name|GIMP_COORDS_DEFAULT_WHEEL
 expr_stmt|;
 name|n_coords
 operator|++

@@ -5568,7 +5568,7 @@ name|coords
 operator|->
 name|pressure
 operator|=
-literal|1.0
+name|GIMP_COORDS_DEFAULT_PRESSURE
 expr_stmt|;
 if|if
 condition|(
@@ -5605,7 +5605,7 @@ name|coords
 operator|->
 name|xtilt
 operator|=
-literal|0.0
+name|GIMP_COORDS_DEFAULT_TILT
 expr_stmt|;
 if|if
 condition|(
@@ -5642,7 +5642,7 @@ name|coords
 operator|->
 name|ytilt
 operator|=
-literal|0.0
+name|GIMP_COORDS_DEFAULT_TILT
 expr_stmt|;
 if|if
 condition|(
@@ -5678,7 +5678,7 @@ name|coords
 operator|->
 name|wheel
 operator|=
-literal|0.5
+name|GIMP_COORDS_DEFAULT_WHEEL
 expr_stmt|;
 return|return
 name|TRUE
@@ -5804,7 +5804,7 @@ name|coords
 operator|->
 name|pressure
 operator|=
-literal|1.0
+name|GIMP_COORDS_DEFAULT_PRESSURE
 expr_stmt|;
 if|if
 condition|(
@@ -5843,7 +5843,7 @@ name|coords
 operator|->
 name|xtilt
 operator|=
-literal|0.0
+name|GIMP_COORDS_DEFAULT_TILT
 expr_stmt|;
 if|if
 condition|(
@@ -5882,7 +5882,7 @@ name|coords
 operator|->
 name|ytilt
 operator|=
-literal|0.0
+name|GIMP_COORDS_DEFAULT_TILT
 expr_stmt|;
 if|if
 condition|(
@@ -5920,7 +5920,7 @@ name|coords
 operator|->
 name|wheel
 operator|=
-literal|0.5
+name|GIMP_COORDS_DEFAULT_WHEEL
 expr_stmt|;
 block|}
 end_function

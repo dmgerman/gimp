@@ -66,6 +66,30 @@ name|GIMP_OPACITY_OPAQUE
 value|1.0
 end_define
 
+begin_define
+DECL|macro|GIMP_COORDS_DEFAULT_PRESSURE
+define|#
+directive|define
+name|GIMP_COORDS_DEFAULT_PRESSURE
+value|1.0
+end_define
+
+begin_define
+DECL|macro|GIMP_COORDS_DEFAULT_TILT
+define|#
+directive|define
+name|GIMP_COORDS_DEFAULT_TILT
+value|0.0
+end_define
+
+begin_define
+DECL|macro|GIMP_COORDS_DEFAULT_WHEEL
+define|#
+directive|define
+name|GIMP_COORDS_DEFAULT_WHEEL
+value|0.5
+end_define
+
 begin_comment
 comment|/*  enums  */
 end_comment
@@ -73,7 +97,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c64e8470103
+DECL|enum|__anon289aec670103
 block|{
 DECL|enumerator|GIMP_PIXELS
 name|GIMP_PIXELS
