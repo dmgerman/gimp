@@ -540,7 +540,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2c30ce820103
+DECL|enum|__anon2ac71d880103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -13496,6 +13496,24 @@ name|_
 argument_list|(
 literal|"Untitled"
 argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_image_undo_is_enabled (GimpImage * gimage)
+name|gimp_image_undo_is_enabled
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+block|{
+return|return
+name|gimage
+operator|->
+name|undo_on
 return|;
 block|}
 end_function
