@@ -317,7 +317,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plugin_menu_register:  * @procedure_name: The procedure for which to install the menu path.  * @menu_path: The procedure's additional menu path.  *  * Register an additional menu path for a plug-in procedure.  *  * This procedure installs an additional menu entry for the given  * procedure.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_plugin_menu_register:  * @procedure_name: The procedure for which to install the menu path.  * @menu_path: The procedure's additional menu path.  *  * Register an additional menu path for a plug-in procedure.  *  * This procedure installs an additional menu entry for the given  * procedure.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
