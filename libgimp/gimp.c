@@ -2685,6 +2685,9 @@ decl_stmt|;
 name|gpointer
 name|hash_name
 decl_stmt|;
+name|gboolean
+name|found
+decl_stmt|;
 name|proc_uninstall
 operator|.
 name|name
@@ -2705,6 +2708,8 @@ condition|)
 name|gimp_quit
 argument_list|()
 expr_stmt|;
+name|found
+operator|=
 name|g_hash_table_lookup_extended
 argument_list|(
 name|temp_proc_ht
@@ -2717,6 +2722,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|found
+condition|)
+block|{
 name|g_free
 argument_list|(
 name|hash_name
@@ -2732,6 +2742,7 @@ operator|)
 name|name
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
