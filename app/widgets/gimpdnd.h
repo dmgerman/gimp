@@ -333,28 +333,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  standard callback  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_dnd_open_files
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GList
-modifier|*
-name|files
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  color dnd functions  */
 end_comment
 
