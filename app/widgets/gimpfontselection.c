@@ -180,7 +180,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2bea360103
+DECL|enum|__anon2a31bb540103
 block|{
 DECL|enumerator|FONT_CHANGED
 name|FONT_CHANGED
@@ -924,6 +924,8 @@ argument_list|(
 name|new_desc
 argument_list|,
 literal|12
+operator|*
+name|PANGO_SCALE
 argument_list|)
 expr_stmt|;
 comment|/* eeek */
