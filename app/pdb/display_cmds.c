@@ -684,6 +684,32 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
+name|success
+operator|=
+operator|(
+name|old_image
+operator|!=
+name|new_image
+operator|&&
+name|old_image
+operator|->
+name|disp_count
+operator|>
+literal|0
+operator|&&
+name|new_image
+operator|->
+name|disp_count
+operator|==
+literal|0
+operator|)
+expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+block|{
 name|gimp_reconnect_displays
 argument_list|(
 name|gimp
@@ -693,6 +719,22 @@ argument_list|,
 name|new_image
 argument_list|)
 expr_stmt|;
+comment|/* take ownership of the image */
+if|if
+condition|(
+name|new_image
+operator|->
+name|disp_count
+operator|>
+literal|0
+condition|)
+name|g_object_unref
+argument_list|(
+name|new_image
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -718,7 +760,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"old_image"
 block|,
-literal|"The old image (should have at least one display)"
+literal|"The old image (must have at least one display)"
 block|}
 block|,
 block|{
@@ -743,7 +785,7 @@ literal|"gimp_displays_reconnect"
 block|,
 literal|"Reconnect displays from one image to another image."
 block|,
-literal|"This procedure connects all displays of the old_image to the new_image. If the new_image already has a display the reconnect is not performed and the procedure returns without success. You should rarely need to use this function."
+literal|"This procedure connects all displays of the old_image to the new_image. If the old_image has no display or new_image already has a display the reconnect is not performed and the procedure returns without success. You should rarely need to use this function."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

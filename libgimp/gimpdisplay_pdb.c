@@ -228,7 +228,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_displays_reconnect:  * @old_image_ID: The old image (should have at least one display).  * @new_image_ID: The new image (must not have a display).  *  * Reconnect displays from one image to another image.  *  * This procedure connects all displays of the old_image to the  * new_image. If the new_image already has a display the reconnect is  * not performed and the procedure returns without success. You should  * rarely need to use this function.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_displays_reconnect:  * @old_image_ID: The old image (must have at least one display).  * @new_image_ID: The new image (must not have a display).  *  * Reconnect displays from one image to another image.  *  * This procedure connects all displays of the old_image to the  * new_image. If the old_image has no display or new_image already has  * a display the reconnect is not performed and the procedure returns  * without success. You should rarely need to use this function.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
