@@ -138,6 +138,14 @@ DECL|member|popup_timeout_tag
 name|guint
 name|popup_timeout_tag
 decl_stmt|;
+DECL|member|popup_anim_timeout_tag
+name|guint
+name|popup_anim_timeout_tag
+decl_stmt|;
+DECL|member|popup_pipe_index
+name|guint
+name|popup_pipe_index
+decl_stmt|;
 comment|/*  Call back function name  */
 DECL|member|callback_name
 name|gchar

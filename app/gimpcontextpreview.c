@@ -706,7 +706,7 @@ comment|/*  signals  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2c157a400103
+DECL|enum|__anon2c5b4df60103
 enum|enum
 block|{
 DECL|enumerator|CLICKED
@@ -2121,14 +2121,7 @@ name|gcp
 operator|->
 name|height
 condition|)
-block|{
-name|g_print
-argument_list|(
-literal|"no reason\n"
-argument_list|)
-expr_stmt|;
 return|return;
-block|}
 block|}
 break|break;
 case|case
@@ -2519,6 +2512,10 @@ name|gcp
 operator|->
 name|data
 argument_list|)
+operator|&&
+name|gcp_pipe_timer
+operator|==
+literal|0
 condition|)
 block|{
 name|gcp_pipe_index
@@ -2587,6 +2584,10 @@ name|gtk_timeout_remove
 argument_list|(
 name|gcp_pipe_timer
 argument_list|)
+expr_stmt|;
+name|gcp_pipe_timer
+operator|=
+literal|0
 expr_stmt|;
 if|if
 condition|(
@@ -3008,6 +3009,8 @@ name|ratio_x
 argument_list|,
 name|ratio_y
 argument_list|)
+operator|+
+literal|0.5
 expr_stmt|;
 name|brush_height
 operator|=
@@ -3022,6 +3025,8 @@ name|ratio_x
 argument_list|,
 name|ratio_y
 argument_list|)
+operator|+
+literal|0.5
 expr_stmt|;
 name|mask_buf
 operator|=
@@ -3460,16 +3465,12 @@ operator|=
 name|width
 operator|-
 name|indicator_width
-operator|-
-literal|1
 expr_stmt|;
 name|offset_y
 operator|=
 name|height
 operator|-
 name|indicator_height
-operator|-
-literal|1
 expr_stmt|;
 for|for
 control|(
@@ -3568,16 +3569,12 @@ operator|=
 name|width
 operator|-
 name|indicator_width
-operator|-
-literal|1
 expr_stmt|;
 name|offset_y
 operator|=
 name|height
 operator|-
 name|indicator_height
-operator|-
-literal|1
 expr_stmt|;
 for|for
 control|(
@@ -3860,11 +3857,17 @@ argument_list|(
 name|gcp_popup
 argument_list|)
 condition|)
+block|{
+name|gcp_pipe_timer
+operator|=
+literal|0
+expr_stmt|;
 return|return
 operator|(
 name|FALSE
 operator|)
 return|;
+block|}
 name|pipe
 operator|=
 name|GIMP_BRUSH_PIPE
