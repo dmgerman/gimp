@@ -555,6 +555,8 @@ literal|"Gimp-File"
 block|,
 literal|"Gimp-GUI"
 block|,
+literal|"Gimp-Menus"
+block|,
 literal|"Gimp-PDB"
 block|,
 literal|"Gimp-Paint-Funcs"
