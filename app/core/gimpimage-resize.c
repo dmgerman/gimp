@@ -281,6 +281,8 @@ name|FALSE
 decl_stmt|;
 name|gint
 name|new_position
+init|=
+literal|0
 decl_stmt|;
 name|list
 operator|=
