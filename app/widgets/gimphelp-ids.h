@@ -681,6 +681,14 @@ value|"gimp-image-resize"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_IMAGE_RESIZE_TO_LAYERS
+define|#
+directive|define
+name|GIMP_HELP_IMAGE_RESIZE_TO_LAYERS
+value|"gimp-image-resize-to-layers"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_IMAGE_SCALE
 define|#
 directive|define
