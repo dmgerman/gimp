@@ -67,12 +67,6 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_FILE_SELECTION))
-DECL|typedef|GimpFileSelection
-typedef|typedef
-name|struct
-name|_GimpFileSelection
-name|GimpFileSelection
-typedef|;
 DECL|typedef|GimpFileSelectionClass
 typedef|typedef
 name|struct

@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"core-types.h"
 end_include
 
 begin_include
@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable.h"
+file|"gimpdrawable.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
+file|"gimpimage.h"
 end_include
 
 begin_function
