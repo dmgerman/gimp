@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dialogs.h"
 end_include
 
@@ -31,12 +37,6 @@ begin_include
 include|#
 directive|include
 file|"dialogs-constructors.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdialogfactory.h"
 end_include
 
 begin_include

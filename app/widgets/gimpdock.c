@@ -30,17 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/gimpdialogfactory.h"
-end_include
-
-begin_comment
-comment|/* hm, maybe this should live here? */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"gimpdnd.h"
+file|"gimpdialogfactory.h"
 end_include
 
 begin_include
@@ -59,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"gimpdockbook.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdnd.h"
 end_include
 
 begin_function_decl
