@@ -28350,8 +28350,6 @@ name|filename
 operator|=
 name|g_strdup_printf
 argument_list|(
-name|filename
-argument_list|,
 literal|"%s/%s"
 argument_list|,
 name|path

@@ -2158,7 +2158,7 @@ name|gtk_adjustment_new
 argument_list|(
 literal|0.0
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|1000.0
 argument_list|,
@@ -2687,8 +2687,6 @@ name|GIMP_IS_BRUSH_GENERATED
 argument_list|(
 name|active
 argument_list|)
-operator|&&
-name|title
 condition|)
 name|gtk_widget_set_sensitive
 argument_list|(
