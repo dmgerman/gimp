@@ -4032,6 +4032,13 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|options
+operator|->
+name|use_info_window_w
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|G_OBJECT

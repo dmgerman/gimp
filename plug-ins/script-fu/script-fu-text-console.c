@@ -68,21 +68,21 @@ end_function_decl
 
 begin_function
 name|void
-DECL|function|script_fu_text_console_run (char * name,int nparams,GimpParam * params,int * nreturn_vals,GimpParam ** return_vals)
+DECL|function|script_fu_text_console_run (gchar * name,gint nparams,GimpParam * params,gint * nreturn_vals,GimpParam ** return_vals)
 name|script_fu_text_console_run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GimpParam
 modifier|*
 name|params
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -155,7 +155,7 @@ name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
-name|gimp_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -211,18 +211,18 @@ modifier|*
 name|command
 parameter_list|)
 block|{
-name|unsigned
-name|char
+name|guchar
 name|c
 decl_stmt|;
-name|int
+name|gint
 name|next
 decl_stmt|;
-name|int
+name|gint
 name|left
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|right
 init|=
 literal|0
@@ -251,8 +251,7 @@ block|{
 name|c
 operator|=
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|)
 name|next
 expr_stmt|;

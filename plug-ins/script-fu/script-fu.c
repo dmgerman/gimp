@@ -647,7 +647,6 @@ comment|/*  Load all of the available scripts  */
 name|script_fu_find_scripts
 argument_list|()
 expr_stmt|;
-comment|/*    *  The main, automatically installed script fu extension.    *  For things like logos and effects that are runnable from GIMP menus.    */
 if|if
 condition|(
 name|strcmp
@@ -660,6 +659,7 @@ operator|==
 literal|0
 condition|)
 block|{
+comment|/*        *  The main, automatically installed script fu extension.  For        *  things like logos and effects that are runnable from GIMP        *  menus.        */
 specifier|static
 name|GimpParam
 name|values
@@ -716,7 +716,6 @@ operator|=
 name|status
 expr_stmt|;
 block|}
-comment|/*    *  The script-fu consoles for interactive SIOD development    */
 elseif|else
 if|if
 condition|(
@@ -730,6 +729,7 @@ operator|==
 literal|0
 condition|)
 block|{
+comment|/*        *  The script-fu text console for interactive SIOD development        */
 name|script_fu_text_console_run
 argument_list|(
 name|name
@@ -757,6 +757,7 @@ operator|==
 literal|0
 condition|)
 block|{
+comment|/*        *  The script-fu console for interactive SIOD development        */
 name|script_fu_console_run
 argument_list|(
 name|name
@@ -774,7 +775,6 @@ block|}
 ifndef|#
 directive|ifndef
 name|G_OS_WIN32
-comment|/*    *  The script-fu server for remote operation    */
 elseif|else
 if|if
 condition|(
@@ -788,6 +788,7 @@ operator|==
 literal|0
 condition|)
 block|{
+comment|/*        *  The script-fu server for remote operation        */
 name|script_fu_server_run
 argument_list|(
 name|name
@@ -804,7 +805,6 @@ expr_stmt|;
 block|}
 endif|#
 directive|endif
-comment|/*    *  A non-interactive "console" (for batch mode)    */
 elseif|else
 if|if
 condition|(
@@ -818,6 +818,7 @@ operator|==
 literal|0
 condition|)
 block|{
+comment|/*        *  A non-interactive "console" (for batch mode)        */
 name|script_fu_eval_run
 argument_list|(
 name|name

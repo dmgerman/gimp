@@ -49,7 +49,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __SCRIPT_FU_CONSOLE__  */
+comment|/*  __SCRIPT_FU_TEXT_CONSOLE__  */
 end_comment
 
 end_unit

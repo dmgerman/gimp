@@ -7,21 +7,26 @@ begin_comment
 comment|/*   * dbbrowser_utils.h  * 0.08  26th sept 97  by Thomas NOEL<thomas@minet.net>   */
 end_comment
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|__DBBROWSER_UTILS_H__
+end_ifndef
 
-begin_function_decl
-name|GtkWidget
-modifier|*
-name|gimp_db_browser
-parameter_list|(
+begin_define
+DECL|macro|__DBBROWSER_UTILS_H__
+define|#
+directive|define
+name|__DBBROWSER_UTILS_H__
+end_define
+
+begin_typedef
+DECL|typedef|GimpDBBrowserApplyCallback
+typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|apply_callback
+name|GimpDBBrowserApplyCallback
 function_decl|)
 parameter_list|(
 name|gchar
@@ -69,9 +74,28 @@ name|GimpParamDef
 modifier|*
 name|return_vals
 parameter_list|)
+function_decl|;
+end_typedef
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_db_browser
+parameter_list|(
+name|GimpDBBrowserApplyCallback
+name|apply_callback
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* __DBBROWSER_UTILS_H__ */
+end_comment
 
 end_unit
 
