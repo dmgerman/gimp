@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint/gimppaintoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppenciltool.h"
 end_include
 
@@ -109,7 +115,9 @@ call|)
 argument_list|(
 name|GIMP_TYPE_PENCIL_TOOL
 argument_list|,
-name|paint_options_new
+name|GIMP_TYPE_PAINT_OPTIONS
+argument_list|,
+name|gimp_paint_options_gui
 argument_list|,
 name|TRUE
 argument_list|,

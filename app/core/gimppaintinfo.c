@@ -302,7 +302,7 @@ end_function
 begin_function
 name|GimpPaintInfo
 modifier|*
-DECL|function|gimp_paint_info_new (Gimp * gimp,GType paint_type,const gchar * pdb_string)
+DECL|function|gimp_paint_info_new (Gimp * gimp,GType paint_type,GType paint_options_type,const gchar * pdb_string)
 name|gimp_paint_info_new
 parameter_list|(
 name|Gimp
@@ -311,6 +311,9 @@ name|gimp
 parameter_list|,
 name|GType
 name|paint_type
+parameter_list|,
+name|GType
+name|paint_options_type
 parameter_list|,
 specifier|const
 name|gchar
@@ -368,6 +371,12 @@ operator|->
 name|paint_type
 operator|=
 name|paint_type
+expr_stmt|;
+name|paint_info
+operator|->
+name|paint_options_type
+operator|=
+name|paint_options_type
 expr_stmt|;
 name|paint_info
 operator|->

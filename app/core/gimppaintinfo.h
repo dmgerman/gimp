@@ -112,6 +112,10 @@ DECL|member|paint_type
 name|GType
 name|paint_type
 decl_stmt|;
+DECL|member|paint_options_type
+name|GType
+name|paint_options_type
+decl_stmt|;
 DECL|member|pdb_string
 name|gchar
 modifier|*
@@ -160,6 +164,9 @@ name|gimp
 parameter_list|,
 name|GType
 name|paint_type
+parameter_list|,
+name|GType
+name|paint_options_type
 parameter_list|,
 specifier|const
 name|gchar

@@ -198,6 +198,8 @@ argument_list|(
 name|gimp
 argument_list|,
 name|GIMP_TYPE_PAINTBRUSH
+argument_list|,
+name|GIMP_TYPE_PAINT_OPTIONS
 argument_list|)
 expr_stmt|;
 block|}

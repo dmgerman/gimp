@@ -362,7 +362,9 @@ call|)
 argument_list|(
 name|GIMP_TYPE_SCALE_TOOL
 argument_list|,
-name|transform_options_new
+name|GIMP_TYPE_TRANSFORM_OPTIONS
+argument_list|,
+name|gimp_transform_options_gui
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1128,7 +1130,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|TransformOptions
+name|GimpTransformOptions
 modifier|*
 name|options
 decl_stmt|;
@@ -1168,10 +1170,8 @@ name|diff_y
 decl_stmt|;
 name|options
 operator|=
-operator|(
-name|TransformOptions
-operator|*
-operator|)
+name|GIMP_TRANSFORM_OPTIONS
+argument_list|(
 name|GIMP_TOOL
 argument_list|(
 name|tr_tool
@@ -1180,6 +1180,7 @@ operator|->
 name|tool_info
 operator|->
 name|tool_options
+argument_list|)
 expr_stmt|;
 name|diff_x
 operator|=

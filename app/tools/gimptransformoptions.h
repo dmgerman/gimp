@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ae24630103
+DECL|enum|__anon29d722610103
 block|{
 DECL|enumerator|TRANSFORM_GRID_TYPE_NONE
 name|TRANSFORM_GRID_TYPE_NONE
@@ -41,23 +41,95 @@ name|TransformGridType
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_TRANSFORM_OPTIONS
+define|#
+directive|define
+name|GIMP_TYPE_TRANSFORM_OPTIONS
+value|(gimp_transform_options_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_TRANSFORM_OPTIONS (obj)
+define|#
+directive|define
+name|GIMP_TRANSFORM_OPTIONS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_TRANSFORM_OPTIONS, GimpTransformOptions))
+end_define
+
+begin_define
+DECL|macro|GIMP_TRANSFORM_OPTIONS_CLASS (klass)
+define|#
+directive|define
+name|GIMP_TRANSFORM_OPTIONS_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_TRANSFORM_OPTIONS, GimpTransformOptionsClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_TRANSFORM_OPTIONS (obj)
+define|#
+directive|define
+name|GIMP_IS_TRANSFORM_OPTIONS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_TRANSFORM_OPTIONS))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_TRANSFORM_OPTIONS_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_TRANSFORM_OPTIONS_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_TRANSFORM_OPTIONS))
+end_define
+
+begin_define
+DECL|macro|GIMP_TRANSFORM_OPTIONS_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_TRANSFORM_OPTIONS_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_TRANSFORM_OPTIONS, GimpTransformOptionsClass))
+end_define
+
 begin_typedef
-DECL|typedef|TransformOptions
+DECL|typedef|GimpTransformOptions
 typedef|typedef
 name|struct
-name|_TransformOptions
-name|TransformOptions
+name|_GimpTransformOptions
+name|GimpTransformOptions
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpTransformOptionsClass
+typedef|typedef
+name|struct
+name|_GimpToolOptionsClass
+name|GimpTransformOptionsClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_TransformOptions
+DECL|struct|_GimpTransformOptions
 struct|struct
-name|_TransformOptions
+name|_GimpTransformOptions
 block|{
-DECL|member|tool_options
+DECL|member|parent_instance
 name|GimpToolOptions
-name|tool_options
+name|parent_instance
 decl_stmt|;
 DECL|member|direction
 name|GimpTransformDirection
@@ -164,36 +236,30 @@ block|}
 struct|;
 end_struct
 
+begin_decl_stmt
+name|GType
+name|gimp_transform_options_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
+name|void
+name|gimp_transform_options_gui
+parameter_list|(
 name|GimpToolOptions
 modifier|*
-name|transform_options_new
-parameter_list|(
-name|GimpToolInfo
-modifier|*
-name|tool_info
+name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|transform_options_init
-parameter_list|(
-name|TransformOptions
-modifier|*
-name|options
-parameter_list|,
-name|GimpToolInfo
-modifier|*
-name|tool_info
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|transform_options_reset
+name|gimp_transform_options_reset
 parameter_list|(
 name|GimpToolOptions
 modifier|*

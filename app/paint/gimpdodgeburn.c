@@ -81,10 +81,16 @@ directive|include
 file|"gimpdodgeburn.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpdodgeburnoptions.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dodgeburn_class_init
+name|gimp_dodge_burn_class_init
 parameter_list|(
 name|GimpDodgeBurnClass
 modifier|*
@@ -96,7 +102,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dodgeburn_init
+name|gimp_dodge_burn_init
 parameter_list|(
 name|GimpDodgeBurn
 modifier|*
@@ -108,7 +114,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dodgeburn_finalize
+name|gimp_dodge_burn_finalize
 parameter_list|(
 name|GObject
 modifier|*
@@ -120,7 +126,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dodgeburn_paint
+name|gimp_dodge_burn_paint
 parameter_list|(
 name|GimpPaintCore
 modifier|*
@@ -143,7 +149,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dodgeburn_motion
+name|gimp_dodge_burn_motion
 parameter_list|(
 name|GimpPaintCore
 modifier|*
@@ -163,7 +169,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dodgeburn_make_luts
+name|gimp_dodge_burn_make_luts
 parameter_list|(
 name|GimpDodgeBurn
 modifier|*
@@ -188,7 +194,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gfloat
-name|gimp_dodgeburn_highlights_lut_func
+name|gimp_dodge_burn_highlights_lut_func
 parameter_list|(
 name|gpointer
 name|user_data
@@ -208,7 +214,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gfloat
-name|gimp_dodgeburn_midtones_lut_func
+name|gimp_dodge_burn_midtones_lut_func
 parameter_list|(
 name|gpointer
 name|user_data
@@ -228,7 +234,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gfloat
-name|gimp_dodgeburn_shadows_lut_func
+name|gimp_dodge_burn_shadows_lut_func
 parameter_list|(
 name|gpointer
 name|user_data
@@ -258,8 +264,8 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_dodgeburn_register (Gimp * gimp,GimpPaintRegisterCallback callback)
-name|gimp_dodgeburn_register
+DECL|function|gimp_dodge_burn_register (Gimp * gimp,GimpPaintRegisterCallback callback)
+name|gimp_dodge_burn_register
 parameter_list|(
 name|Gimp
 modifier|*
@@ -276,7 +282,9 @@ call|)
 argument_list|(
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DODGEBURN
+name|GIMP_TYPE_DODGE_BURN
+argument_list|,
+name|GIMP_TYPE_DODGE_BURN_OPTIONS
 argument_list|)
 expr_stmt|;
 block|}
@@ -284,8 +292,8 @@ end_function
 
 begin_function
 name|GType
-DECL|function|gimp_dodgeburn_get_type (void)
-name|gimp_dodgeburn_get_type
+DECL|function|gimp_dodge_burn_get_type (void)
+name|gimp_dodge_burn_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -326,7 +334,7 @@ block|,
 operator|(
 name|GClassInitFunc
 operator|)
-name|gimp_dodgeburn_class_init
+name|gimp_dodge_burn_class_init
 block|,
 name|NULL
 block|,
@@ -345,7 +353,7 @@ comment|/* n_preallocs    */
 operator|(
 name|GInstanceInitFunc
 operator|)
-name|gimp_dodgeburn_init
+name|gimp_dodge_burn_init
 block|,       }
 decl_stmt|;
 name|type
@@ -372,8 +380,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dodgeburn_class_init (GimpDodgeBurnClass * klass)
-name|gimp_dodgeburn_class_init
+DECL|function|gimp_dodge_burn_class_init (GimpDodgeBurnClass * klass)
+name|gimp_dodge_burn_class_init
 parameter_list|(
 name|GimpDodgeBurnClass
 modifier|*
@@ -413,13 +421,13 @@ name|object_class
 operator|->
 name|finalize
 operator|=
-name|gimp_dodgeburn_finalize
+name|gimp_dodge_burn_finalize
 expr_stmt|;
 name|paint_core_class
 operator|->
 name|paint
 operator|=
-name|gimp_dodgeburn_paint
+name|gimp_dodge_burn_paint
 expr_stmt|;
 block|}
 end_function
@@ -427,8 +435,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dodgeburn_init (GimpDodgeBurn * dodgeburn)
-name|gimp_dodgeburn_init
+DECL|function|gimp_dodge_burn_init (GimpDodgeBurn * dodgeburn)
+name|gimp_dodge_burn_init
 parameter_list|(
 name|GimpDodgeBurn
 modifier|*
@@ -458,8 +466,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dodgeburn_finalize (GObject * object)
-name|gimp_dodgeburn_finalize
+DECL|function|gimp_dodge_burn_finalize (GObject * object)
+name|gimp_dodge_burn_finalize
 parameter_list|(
 name|GObject
 modifier|*
@@ -472,7 +480,7 @@ name|dodgeburn
 decl_stmt|;
 name|dodgeburn
 operator|=
-name|GIMP_DODGEBURN
+name|GIMP_DODGE_BURN
 argument_list|(
 name|object
 argument_list|)
@@ -514,8 +522,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dodgeburn_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state)
-name|gimp_dodgeburn_paint
+DECL|function|gimp_dodge_burn_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state)
+name|gimp_dodge_burn_paint
 parameter_list|(
 name|GimpPaintCore
 modifier|*
@@ -533,27 +541,26 @@ name|GimpPaintCoreState
 name|paint_state
 parameter_list|)
 block|{
-name|GimpDodgeBurnOptions
-modifier|*
-name|options
-decl_stmt|;
 name|GimpDodgeBurn
 modifier|*
 name|dodgeburn
 decl_stmt|;
-name|options
-operator|=
-operator|(
 name|GimpDodgeBurnOptions
-operator|*
-operator|)
-name|paint_options
-expr_stmt|;
+modifier|*
+name|options
+decl_stmt|;
 name|dodgeburn
 operator|=
-name|GIMP_DODGEBURN
+name|GIMP_DODGE_BURN
 argument_list|(
 name|paint_core
+argument_list|)
+expr_stmt|;
+name|options
+operator|=
+name|GIMP_DODGE_BURN_OPTIONS
+argument_list|(
+name|paint_options
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -571,7 +578,7 @@ operator|=
 name|gimp_lut_new
 argument_list|()
 expr_stmt|;
-name|gimp_dodgeburn_make_luts
+name|gimp_dodge_burn_make_luts
 argument_list|(
 name|dodgeburn
 argument_list|,
@@ -594,7 +601,7 @@ break|break;
 case|case
 name|MOTION_PAINT
 case|:
-name|gimp_dodgeburn_motion
+name|gimp_dodge_burn_motion
 argument_list|(
 name|paint_core
 argument_list|,
@@ -638,8 +645,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dodgeburn_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
-name|gimp_dodgeburn_motion
+DECL|function|gimp_dodge_burn_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
+name|gimp_dodge_burn_motion
 parameter_list|(
 name|GimpPaintCore
 modifier|*
@@ -697,18 +704,17 @@ name|scale
 decl_stmt|;
 name|dodgeburn
 operator|=
-name|GIMP_DODGEBURN
+name|GIMP_DODGE_BURN
 argument_list|(
 name|paint_core
 argument_list|)
 expr_stmt|;
 name|options
 operator|=
-operator|(
-name|GimpDodgeBurnOptions
-operator|*
-operator|)
+name|GIMP_DODGE_BURN_OPTIONS
+argument_list|(
 name|paint_options
+argument_list|)
 expr_stmt|;
 name|pressure_options
 operator|=
@@ -1213,8 +1219,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dodgeburn_make_luts (GimpDodgeBurn * dodgeburn,gdouble db_exposure,GimpDodgeBurnType type,GimpTransferMode mode,GimpDrawable * drawable)
-name|gimp_dodgeburn_make_luts
+DECL|function|gimp_dodge_burn_make_luts (GimpDodgeBurn * dodgeburn,gdouble db_exposure,GimpDodgeBurnType type,GimpTransferMode mode,GimpDrawable * drawable)
+name|gimp_dodge_burn_make_luts
 parameter_list|(
 name|GimpDodgeBurn
 modifier|*
@@ -1277,7 +1283,7 @@ name|GIMP_HIGHLIGHTS
 case|:
 name|lut_func
 operator|=
-name|gimp_dodgeburn_highlights_lut_func
+name|gimp_dodge_burn_highlights_lut_func
 expr_stmt|;
 break|break;
 case|case
@@ -1285,7 +1291,7 @@ name|GIMP_MIDTONES
 case|:
 name|lut_func
 operator|=
-name|gimp_dodgeburn_midtones_lut_func
+name|gimp_dodge_burn_midtones_lut_func
 expr_stmt|;
 break|break;
 case|case
@@ -1293,7 +1299,7 @@ name|GIMP_SHADOWS
 case|:
 name|lut_func
 operator|=
-name|gimp_dodgeburn_shadows_lut_func
+name|gimp_dodge_burn_shadows_lut_func
 expr_stmt|;
 break|break;
 default|default:
@@ -1326,8 +1332,8 @@ end_function
 begin_function
 specifier|static
 name|gfloat
-DECL|function|gimp_dodgeburn_highlights_lut_func (gpointer user_data,gint nchannels,gint channel,gfloat value)
-name|gimp_dodgeburn_highlights_lut_func
+DECL|function|gimp_dodge_burn_highlights_lut_func (gpointer user_data,gint nchannels,gint channel,gfloat value)
+name|gimp_dodge_burn_highlights_lut_func
 parameter_list|(
 name|gpointer
 name|user_data
@@ -1405,8 +1411,8 @@ end_function
 begin_function
 specifier|static
 name|gfloat
-DECL|function|gimp_dodgeburn_midtones_lut_func (gpointer user_data,gint nchannels,gint channel,gfloat value)
-name|gimp_dodgeburn_midtones_lut_func
+DECL|function|gimp_dodge_burn_midtones_lut_func (gpointer user_data,gint nchannels,gint channel,gfloat value)
+name|gimp_dodge_burn_midtones_lut_func
 parameter_list|(
 name|gpointer
 name|user_data
@@ -1506,8 +1512,8 @@ end_function
 begin_function
 specifier|static
 name|gfloat
-DECL|function|gimp_dodgeburn_shadows_lut_func (gpointer user_data,gint nchannels,gint channel,gfloat value)
-name|gimp_dodgeburn_shadows_lut_func
+DECL|function|gimp_dodge_burn_shadows_lut_func (gpointer user_data,gint nchannels,gint channel,gfloat value)
+name|gimp_dodge_burn_shadows_lut_func
 parameter_list|(
 name|gpointer
 name|user_data
@@ -1632,115 +1638,6 @@ expr_stmt|;
 block|}
 return|return
 name|new_value
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/*  paint options stuff  */
-end_comment
-
-begin_define
-DECL|macro|DODGEBURN_DEFAULT_EXPOSURE
-define|#
-directive|define
-name|DODGEBURN_DEFAULT_EXPOSURE
-value|50.0
-end_define
-
-begin_define
-DECL|macro|DODGEBURN_DEFAULT_TYPE
-define|#
-directive|define
-name|DODGEBURN_DEFAULT_TYPE
-value|GIMP_DODGE
-end_define
-
-begin_define
-DECL|macro|DODGEBURN_DEFAULT_MODE
-define|#
-directive|define
-name|DODGEBURN_DEFAULT_MODE
-value|GIMP_MIDTONES
-end_define
-
-begin_function
-name|GimpDodgeBurnOptions
-modifier|*
-DECL|function|gimp_dodgeburn_options_new (GimpContext * context)
-name|gimp_dodgeburn_options_new
-parameter_list|(
-name|GimpContext
-modifier|*
-name|context
-parameter_list|)
-block|{
-name|GimpDodgeBurnOptions
-modifier|*
-name|options
-decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_CONTEXT
-argument_list|(
-name|context
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|options
-operator|=
-name|g_new0
-argument_list|(
-name|GimpDodgeBurnOptions
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|gimp_paint_options_init
-argument_list|(
-operator|(
-name|GimpPaintOptions
-operator|*
-operator|)
-name|options
-argument_list|,
-name|context
-argument_list|)
-expr_stmt|;
-name|options
-operator|->
-name|type
-operator|=
-name|options
-operator|->
-name|type_d
-operator|=
-name|DODGEBURN_DEFAULT_TYPE
-expr_stmt|;
-name|options
-operator|->
-name|exposure
-operator|=
-name|options
-operator|->
-name|exposure_d
-operator|=
-name|DODGEBURN_DEFAULT_EXPOSURE
-expr_stmt|;
-name|options
-operator|->
-name|mode
-operator|=
-name|options
-operator|->
-name|mode_d
-operator|=
-name|DODGEBURN_DEFAULT_MODE
-expr_stmt|;
-return|return
-name|options
 return|;
 block|}
 end_function

@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint/gimpcloneoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -276,13 +282,12 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|void
+name|gimp_clone_options_gui
+parameter_list|(
 name|GimpToolOptions
 modifier|*
-name|clone_options_new
-parameter_list|(
-name|GimpToolInfo
-modifier|*
-name|tool_info
+name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -290,11 +295,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|clone_options_reset
+name|gimp_clone_options_reset
 parameter_list|(
 name|GimpToolOptions
 modifier|*
-name|options
+name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -331,7 +336,9 @@ call|)
 argument_list|(
 name|GIMP_TYPE_CLONE_TOOL
 argument_list|,
-name|clone_options_new
+name|GIMP_TYPE_CLONE_OPTIONS
+argument_list|,
+name|gimp_clone_options_gui
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1339,14 +1346,13 @@ end_comment
 
 begin_function
 specifier|static
+name|void
+DECL|function|gimp_clone_options_gui (GimpToolOptions * tool_options)
+name|gimp_clone_options_gui
+parameter_list|(
 name|GimpToolOptions
 modifier|*
-DECL|function|clone_options_new (GimpToolInfo * tool_info)
-name|clone_options_new
-parameter_list|(
-name|GimpToolInfo
-modifier|*
-name|tool_info
+name|tool_options
 parameter_list|)
 block|{
 name|GimpCloneOptions
@@ -1363,22 +1369,14 @@ name|frame
 decl_stmt|;
 name|options
 operator|=
-name|gimp_clone_options_new
+name|GIMP_CLONE_OPTIONS
 argument_list|(
-name|tool_info
-operator|->
-name|context
+name|tool_options
 argument_list|)
 expr_stmt|;
-name|paint_options_init
+name|gimp_paint_options_gui
 argument_list|(
-operator|(
-name|GimpPaintOptions
-operator|*
-operator|)
-name|options
-argument_list|,
-name|tool_info
+name|tool_options
 argument_list|)
 expr_stmt|;
 operator|(
@@ -1391,7 +1389,7 @@ operator|)
 operator|->
 name|reset_func
 operator|=
-name|clone_options_reset
+name|gimp_clone_options_reset
 expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
@@ -1546,21 +1544,14 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-return|return
-operator|(
-name|GimpToolOptions
-operator|*
-operator|)
-name|options
-return|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|clone_options_reset (GimpToolOptions * tool_options)
-name|clone_options_reset
+DECL|function|gimp_clone_options_reset (GimpToolOptions * tool_options)
+name|gimp_clone_options_reset
 parameter_list|(
 name|GimpToolOptions
 modifier|*
@@ -1573,13 +1564,12 @@ name|options
 decl_stmt|;
 name|options
 operator|=
-operator|(
-name|GimpCloneOptions
-operator|*
-operator|)
+name|GIMP_CLONE_OPTIONS
+argument_list|(
 name|tool_options
+argument_list|)
 expr_stmt|;
-name|paint_options_reset
+name|gimp_paint_options_reset
 argument_list|(
 name|tool_options
 argument_list|)

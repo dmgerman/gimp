@@ -22,18 +22,95 @@ directive|include
 file|"tool_options.h"
 end_include
 
-begin_comment
-comment|/*  the selection options structures  */
-end_comment
+begin_define
+DECL|macro|GIMP_TYPE_SELECTION_OPTIONS
+define|#
+directive|define
+name|GIMP_TYPE_SELECTION_OPTIONS
+value|(gimp_selection_options_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_SELECTION_OPTIONS (obj)
+define|#
+directive|define
+name|GIMP_SELECTION_OPTIONS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_SELECTION_OPTIONS, GimpSelectionOptions))
+end_define
+
+begin_define
+DECL|macro|GIMP_SELECTION_OPTIONS_CLASS (klass)
+define|#
+directive|define
+name|GIMP_SELECTION_OPTIONS_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_SELECTION_OPTIONS, GimpSelectionOptionsClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_SELECTION_OPTIONS (obj)
+define|#
+directive|define
+name|GIMP_IS_SELECTION_OPTIONS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_SELECTION_OPTIONS))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_SELECTION_OPTIONS_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_SELECTION_OPTIONS_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_SELECTION_OPTIONS))
+end_define
+
+begin_define
+DECL|macro|GIMP_SELECTION_OPTIONS_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_SELECTION_OPTIONS_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_SELECTION_OPTIONS, GimpSelectionOptionsClass))
+end_define
+
+begin_typedef
+DECL|typedef|GimpSelectionOptions
+typedef|typedef
+name|struct
+name|_GimpSelectionOptions
+name|GimpSelectionOptions
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpSelectionOptionsClass
+typedef|typedef
+name|struct
+name|_GimpToolOptionsClass
+name|GimpSelectionOptionsClass
+typedef|;
+end_typedef
 
 begin_struct
-DECL|struct|_SelectionOptions
+DECL|struct|_GimpSelectionOptions
 struct|struct
-name|_SelectionOptions
+name|_GimpSelectionOptions
 block|{
-DECL|member|tool_options
+DECL|member|parent_instance
 name|GimpToolOptions
-name|tool_options
+name|parent_instance
 decl_stmt|;
 comment|/*  options used by all selection tools  */
 DECL|member|op
@@ -226,25 +303,19 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/*  selection tool options functions  */
-end_comment
-
-begin_function_decl
-name|GimpToolOptions
-modifier|*
-name|selection_options_new
-parameter_list|(
-name|GimpToolInfo
-modifier|*
-name|tool_info
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_decl_stmt
+name|GType
+name|gimp_selection_options_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|void
-name|selection_options_reset
+name|gimp_selection_options_gui
 parameter_list|(
 name|GimpToolOptions
 modifier|*
@@ -253,21 +324,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  to be used by "derived" selection options only  */
-end_comment
-
 begin_function_decl
 name|void
-name|selection_options_init
+name|gimp_selection_options_reset
 parameter_list|(
-name|SelectionOptions
+name|GimpToolOptions
 modifier|*
-name|options
-parameter_list|,
-name|GimpToolInfo
-modifier|*
-name|tool_info
+name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -756,6 +756,8 @@ call|)
 argument_list|(
 name|GIMP_TYPE_CURVES_TOOL
 argument_list|,
+name|G_TYPE_NONE
+argument_list|,
 name|NULL
 argument_list|,
 name|FALSE

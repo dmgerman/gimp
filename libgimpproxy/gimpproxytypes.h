@@ -29,7 +29,7 @@ typedef|typedef
 enum|enum
 comment|/*< proxy-resume>*/
 comment|/*< skip>*/
-DECL|enum|__anon2b9e7c6c0103
+DECL|enum|__anon2a0e05800103
 block|{
 DECL|enumerator|GIMP_CHANNEL_OP_ADD
 name|GIMP_CHANNEL_OP_ADD
@@ -167,24 +167,23 @@ comment|/*< proxy-include>*/
 end_comment
 
 begin_typedef
-DECL|typedef|GimpToolOptionsNewFunc
+DECL|typedef|GimpToolOptionsGUIFunc
 typedef|typedef
-name|GimpToolOptions
-modifier|*
+name|void
 function_decl|(
 modifier|*
-name|GimpToolOptionsNewFunc
+name|GimpToolOptionsGUIFunc
 function_decl|)
 parameter_list|(
-name|GimpToolInfo
+name|GimpToolOptions
 modifier|*
-name|tool_info
+name|tool_options
 parameter_list|)
 function_decl|;
 end_typedef
 
 begin_comment
-DECL|typedef|GimpToolOptionsNewFunc
+DECL|typedef|GimpToolOptionsGUIFunc
 comment|/*< proxy-include>*/
 end_comment
 
@@ -200,7 +199,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip, proxy-resume>*/
-DECL|enum|__anon2b9e7c6c0203
+DECL|enum|__anon2a0e05800203
 block|{
 DECL|enumerator|GIMP_TOOL_CURSOR_NONE
 name|GIMP_TOOL_CURSOR_NONE
@@ -307,7 +306,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b9e7c6c0303
+DECL|enum|__anon2a0e05800303
 block|{
 DECL|enumerator|GIMP_CURSOR_MODIFIER_NONE
 name|GIMP_CURSOR_MODIFIER_NONE

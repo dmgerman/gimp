@@ -56,23 +56,6 @@ name|GimpBezierSelectTool
 typedef|;
 end_typedef
 
-begin_comment
-comment|/*  stuff  */
-end_comment
-
-begin_typedef
-DECL|typedef|SelectionOptions
-typedef|typedef
-name|struct
-name|_SelectionOptions
-name|SelectionOptions
-typedef|;
-end_typedef
-
-begin_comment
-comment|/*  functions  */
-end_comment
-
 begin_endif
 endif|#
 directive|endif

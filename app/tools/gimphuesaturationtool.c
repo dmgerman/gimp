@@ -443,6 +443,8 @@ call|)
 argument_list|(
 name|GIMP_TYPE_HUE_SATURATION_TOOL
 argument_list|,
+name|G_TYPE_NONE
+argument_list|,
 name|NULL
 argument_list|,
 name|FALSE
@@ -960,7 +962,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon29994c190108
+DECL|struct|__anon2aa5aa6b0108
 block|{
 DECL|member|label
 specifier|const

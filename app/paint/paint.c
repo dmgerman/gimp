@@ -108,6 +108,9 @@ name|gimp
 parameter_list|,
 name|GType
 name|paint_type
+parameter_list|,
+name|GType
+name|paint_options_type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -133,7 +136,7 @@ init|=
 block|{
 name|gimp_smudge_register
 block|,
-name|gimp_dodgeburn_register
+name|gimp_dodge_burn_register
 block|,
 name|gimp_convolve_register
 block|,
@@ -262,7 +265,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|paint_register (Gimp * gimp,GType paint_type)
+DECL|function|paint_register (Gimp * gimp,GType paint_type,GType paint_options_type)
 name|paint_register
 parameter_list|(
 name|Gimp
@@ -271,6 +274,9 @@ name|gimp
 parameter_list|,
 name|GType
 name|paint_type
+parameter_list|,
+name|GType
+name|paint_options_type
 parameter_list|)
 block|{
 name|GimpPaintInfo
@@ -297,6 +303,16 @@ argument_list|(
 name|paint_type
 argument_list|,
 name|GIMP_TYPE_PAINT_CORE
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|g_type_is_a
+argument_list|(
+name|paint_options_type
+argument_list|,
+name|GIMP_TYPE_PAINT_OPTIONS
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -395,7 +411,7 @@ if|if
 condition|(
 name|paint_type
 operator|==
-name|GIMP_TYPE_DODGEBURN
+name|GIMP_TYPE_DODGE_BURN
 condition|)
 block|{
 name|pdb_string
@@ -417,6 +433,8 @@ argument_list|(
 name|gimp
 argument_list|,
 name|paint_type
+argument_list|,
+name|paint_options_type
 argument_list|,
 name|pdb_string
 argument_list|)

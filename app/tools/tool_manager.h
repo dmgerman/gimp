@@ -317,8 +317,11 @@ parameter_list|(
 name|GType
 name|tool_type
 parameter_list|,
-name|GimpToolOptionsNewFunc
-name|options_new_func
+name|GType
+name|tool_options_type
+parameter_list|,
+name|GimpToolOptionsGUIFunc
+name|options_gui_func
 parameter_list|,
 name|gboolean
 name|tool_context

@@ -118,6 +118,10 @@ DECL|member|tool_type
 name|GType
 name|tool_type
 decl_stmt|;
+DECL|member|tool_options_type
+name|GType
+name|tool_options_type
+decl_stmt|;
 DECL|member|blurb
 name|gchar
 modifier|*
@@ -158,15 +162,9 @@ name|GdkPixbuf
 modifier|*
 name|stock_pixbuf
 decl_stmt|;
-comment|/*  temp_hack, will be a GType once tool_options are GimpContext derived  */
-DECL|member|options_new_func
-name|GimpToolOptionsNewFunc
-name|options_new_func
-decl_stmt|;
-DECL|member|context
-name|GimpContext
-modifier|*
-name|context
+DECL|member|use_context
+name|gboolean
+name|use_context
 decl_stmt|;
 DECL|member|tool_options
 name|GimpToolOptions
@@ -214,12 +212,11 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
 name|GType
 name|tool_type
+parameter_list|,
+name|GType
+name|tool_options_type
 parameter_list|,
 name|gboolean
 name|tool_context

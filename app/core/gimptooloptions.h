@@ -16,24 +16,102 @@ directive|define
 name|__TOOL_OPTIONS_H__
 end_define
 
-begin_comment
-comment|/*  the tool options structures  */
-end_comment
+begin_include
+include|#
+directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_define
+DECL|macro|GIMP_TYPE_TOOL_OPTIONS
+define|#
+directive|define
+name|GIMP_TYPE_TOOL_OPTIONS
+value|(gimp_tool_options_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_TOOL_OPTIONS (obj)
+define|#
+directive|define
+name|GIMP_TOOL_OPTIONS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_TOOL_OPTIONS, GimpToolOptions))
+end_define
+
+begin_define
+DECL|macro|GIMP_TOOL_OPTIONS_CLASS (klass)
+define|#
+directive|define
+name|GIMP_TOOL_OPTIONS_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_TOOL_OPTIONS, GimpToolOptionsClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_TOOL_OPTIONS (obj)
+define|#
+directive|define
+name|GIMP_IS_TOOL_OPTIONS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_TOOL_OPTIONS))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_TOOL_OPTIONS_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_TOOL_OPTIONS_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_TOOL_OPTIONS))
+end_define
+
+begin_define
+DECL|macro|GIMP_TOOL_OPTIONS_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_TOOL_OPTIONS_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_TOOL_OPTIONS, GimpToolOptionsClass))
+end_define
+
+begin_typedef
+DECL|typedef|GimpToolOptionsClass
+typedef|typedef
+name|struct
+name|_GimpToolOptionsClass
+name|GimpToolOptionsClass
+typedef|;
+end_typedef
 
 begin_struct
 DECL|struct|_GimpToolOptions
 struct|struct
 name|_GimpToolOptions
 block|{
-DECL|member|main_vbox
-name|GtkWidget
-modifier|*
-name|main_vbox
+DECL|member|parent_instance
+name|GimpContext
+name|parent_instance
 decl_stmt|;
 DECL|member|tool_info
 name|GimpToolInfo
 modifier|*
 name|tool_info
+decl_stmt|;
+DECL|member|main_vbox
+name|GtkWidget
+modifier|*
+name|main_vbox
 decl_stmt|;
 DECL|member|reset_func
 name|GimpToolOptionsResetFunc
@@ -43,37 +121,59 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/*  create a dummy tool options structure  *  (to be used by tools without options)  */
-end_comment
-
-begin_function_decl
+begin_struct
+DECL|struct|_GimpToolOptionsClass
+struct|struct
+name|_GimpToolOptionsClass
+block|{
+DECL|member|parent_class
+name|GimpContextClass
+name|parent_class
+decl_stmt|;
+DECL|member|reset
+name|void
+function_decl|(
+modifier|*
+name|reset
+function_decl|)
+parameter_list|(
 name|GimpToolOptions
 modifier|*
-name|tool_options_new
+name|tool_options
+parameter_list|)
+function_decl|;
+block|}
+struct|;
+end_struct
+
+begin_decl_stmt
+name|GType
+name|gimp_tool_options_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
+name|void
+name|gimp_tool_options_reset
 parameter_list|(
-name|GimpToolInfo
+name|GimpToolOptions
 modifier|*
-name|tool_info
+name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  initialize an already allocated ToolOptions structure  *  (to be used by derived tool options only)  */
-end_comment
-
 begin_function_decl
 name|void
-name|tool_options_init
+name|gimp_tool_options_gui
 parameter_list|(
 name|GimpToolOptions
 modifier|*
-name|options
-parameter_list|,
-name|GimpToolInfo
-modifier|*
-name|tool_info
+name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl

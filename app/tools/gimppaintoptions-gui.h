@@ -16,31 +16,9 @@ directive|define
 name|__PAINT_OPTIONS_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"tool_options.h"
-end_include
-
-begin_comment
-comment|/*  paint tool options functions  */
-end_comment
-
-begin_function_decl
-name|GimpToolOptions
-modifier|*
-name|paint_options_new
-parameter_list|(
-name|GimpToolInfo
-modifier|*
-name|tool_info
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function_decl
 name|void
-name|paint_options_reset
+name|gimp_paint_options_gui
 parameter_list|(
 name|GimpToolOptions
 modifier|*
@@ -49,21 +27,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  to be used by "derived" paint options only  */
-end_comment
-
 begin_function_decl
 name|void
-name|paint_options_init
+name|gimp_paint_options_reset
 parameter_list|(
-name|GimpPaintOptions
+name|GimpToolOptions
 modifier|*
-name|options
-parameter_list|,
-name|GimpToolInfo
-modifier|*
-name|tool_info
+name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl

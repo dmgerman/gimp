@@ -1483,9 +1483,10 @@ name|grr_brush
 operator|!=
 name|gimp_context_get_brush
 argument_list|(
+name|GIMP_CONTEXT
+argument_list|(
 name|paint_options
-operator|->
-name|context
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -1514,9 +1515,10 @@ name|grr_brush
 operator|=
 name|gimp_context_get_brush
 argument_list|(
+name|GIMP_CONTEXT
+argument_list|(
 name|paint_options
-operator|->
-name|context
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

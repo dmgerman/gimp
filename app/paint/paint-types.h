@@ -68,7 +68,10 @@ modifier|*
 name|gimp
 parameter_list|,
 name|GType
-name|tool_type
+name|paint_type
+parameter_list|,
+name|GType
+name|paint_options_type
 parameter_list|)
 function_decl|;
 end_typedef

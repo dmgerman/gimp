@@ -262,7 +262,9 @@ call|)
 argument_list|(
 name|GIMP_TYPE_PERSPECTIVE_TOOL
 argument_list|,
-name|transform_options_new
+name|GIMP_TYPE_TRANSFORM_OPTIONS
+argument_list|,
+name|gimp_transform_options_gui
 argument_list|,
 name|FALSE
 argument_list|,

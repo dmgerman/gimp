@@ -22,19 +22,11 @@ directive|include
 file|"tools/tools-types.h"
 end_include
 
-begin_comment
-comment|/* temp hack */
-end_comment
-
 begin_include
 include|#
 directive|include
 file|"tools/tool_options.h"
 end_include
-
-begin_comment
-comment|/* temp hack */
-end_comment
 
 begin_typedef
 DECL|typedef|GimpPressureOptions
@@ -243,14 +235,86 @@ block|}
 struct|;
 end_struct
 
+begin_define
+DECL|macro|GIMP_TYPE_PAINT_OPTIONS
+define|#
+directive|define
+name|GIMP_TYPE_PAINT_OPTIONS
+value|(gimp_paint_options_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_PAINT_OPTIONS (obj)
+define|#
+directive|define
+name|GIMP_PAINT_OPTIONS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PAINT_OPTIONS, GimpPaintOptions))
+end_define
+
+begin_define
+DECL|macro|GIMP_PAINT_OPTIONS_CLASS (klass)
+define|#
+directive|define
+name|GIMP_PAINT_OPTIONS_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PAINT_OPTIONS, GimpPaintOptionsClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_PAINT_OPTIONS (obj)
+define|#
+directive|define
+name|GIMP_IS_PAINT_OPTIONS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_PAINT_OPTIONS))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_PAINT_OPTIONS_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_PAINT_OPTIONS_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PAINT_OPTIONS))
+end_define
+
+begin_define
+DECL|macro|GIMP_PAINT_OPTIONS_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_PAINT_OPTIONS_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PAINT_OPTIONS, GimpPaintOptionsClass))
+end_define
+
+begin_typedef
+DECL|typedef|GimpPaintOptionsClass
+typedef|typedef
+name|struct
+name|_GimpPaintOptionsClass
+name|GimpPaintOptionsClass
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpPaintOptions
 struct|struct
 name|_GimpPaintOptions
 block|{
-DECL|member|tool_options
+DECL|member|parent_instance
 name|GimpToolOptions
-name|tool_options
+name|parent_instance
 decl_stmt|;
 comment|/*  options used by all paint tools  */
 DECL|member|opacity_w
@@ -262,12 +326,6 @@ DECL|member|paint_mode_w
 name|GtkWidget
 modifier|*
 name|paint_mode_w
-decl_stmt|;
-comment|/*  this tool's private context  */
-DECL|member|context
-name|GimpContext
-modifier|*
-name|context
 decl_stmt|;
 comment|/*  the incremental toggle  */
 DECL|member|incremental
@@ -303,33 +361,40 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/*  paint tool options functions  */
-end_comment
+begin_struct
+DECL|struct|_GimpPaintOptionsClass
+struct|struct
+name|_GimpPaintOptionsClass
+block|{
+DECL|member|parent_instance
+name|GimpToolOptionsClass
+name|parent_instance
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_decl_stmt
+name|GType
+name|gimp_paint_options_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|GimpPaintOptions
 modifier|*
 name|gimp_paint_options_new
 parameter_list|(
-name|GimpContext
+name|Gimp
 modifier|*
-name|context
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_paint_options_init
-parameter_list|(
-name|GimpPaintOptions
-modifier|*
-name|options
+name|gimp
 parameter_list|,
-name|GimpContext
-modifier|*
-name|context
+name|GType
+name|options_type
 parameter_list|)
 function_decl|;
 end_function_decl
