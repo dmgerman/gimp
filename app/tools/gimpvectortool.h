@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9ae1010103
+DECL|enum|__anon2baa779e0103
 block|{
 DECL|enumerator|VECTORS_CREATE_VECTOR
 name|VECTORS_CREATE_VECTOR
@@ -172,22 +172,32 @@ DECL|member|function
 name|VectorFunction
 name|function
 decl_stmt|;
-comment|/*  function we're performing     */
+comment|/* function we're performing      */
 DECL|member|restriction
 name|GimpAnchorFeatureType
 name|restriction
 decl_stmt|;
-comment|/*  movement restriction          */
+comment|/* movement restriction           */
+DECL|member|modifier_lock
+name|gboolean
+name|modifier_lock
+decl_stmt|;
+comment|/* can we toggle the Shift key?   */
+DECL|member|saved_state
+name|GdkModifierType
+name|saved_state
+decl_stmt|;
+comment|/* modifier state at button_press */
 DECL|member|last_x
 name|gint
 name|last_x
 decl_stmt|;
-comment|/*  last x coordinate             */
+comment|/* last x coordinate              */
 DECL|member|last_y
 name|gint
 name|last_y
 decl_stmt|;
-comment|/*  last y coordinate             */
+comment|/* last y coordinate              */
 DECL|member|cur_anchor
 name|GimpAnchor
 modifier|*
