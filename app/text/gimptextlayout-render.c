@@ -231,10 +231,12 @@ argument_list|)
 expr_stmt|;
 name|x
 operator|*=
+operator|-
 name|PANGO_SCALE
 expr_stmt|;
 name|y
 operator|*=
+operator|-
 name|PANGO_SCALE
 expr_stmt|;
 name|iter
