@@ -172,7 +172,7 @@ value|"The effect is applied at both edges of objects"
 end_define
 
 begin_typedef
-DECL|enum|__anon28d585fa0103
+DECL|enum|__anon2bce08e70103
 DECL|enumerator|LEFT
 DECL|enumerator|RIGHT
 DECL|typedef|direction_t
@@ -188,7 +188,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28d585fa0203
+DECL|enum|__anon2bce08e70203
 DECL|enumerator|RENDER_WIND
 DECL|enumerator|RENDER_BLAST
 DECL|typedef|algorithm_t
@@ -204,7 +204,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28d585fa0303
+DECL|enum|__anon2bce08e70303
 DECL|enumerator|BOTH
 DECL|enumerator|LEADING
 DECL|enumerator|TRAILING
@@ -907,6 +907,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
 argument_list|(
+literal|2
+operator|*
+operator|(
 name|drawable
 operator|->
 name|width
@@ -915,6 +918,7 @@ name|gimp_tile_width
 argument_list|()
 operator|+
 literal|1
+operator|)
 argument_list|)
 expr_stmt|;
 switch|switch

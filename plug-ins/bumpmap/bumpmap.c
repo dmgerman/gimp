@@ -175,7 +175,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_enum
-DECL|enum|__anon28da427f0103
+DECL|enum|__anon2b21300e0103
 enum|enum
 block|{
 DECL|enumerator|LINEAR
@@ -193,7 +193,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon28da427f0203
+DECL|enum|__anon2b21300e0203
 enum|enum
 block|{
 DECL|enumerator|DRAG_NONE
@@ -211,7 +211,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon28da427f0308
+DECL|struct|__anon2b21300e0308
 typedef|typedef
 struct|struct
 block|{
@@ -266,7 +266,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28da427f0408
+DECL|struct|__anon2b21300e0408
 typedef|typedef
 struct|struct
 block|{
@@ -311,7 +311,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28da427f0508
+DECL|struct|__anon2b21300e0508
 typedef|typedef
 struct|struct
 block|{
@@ -1831,6 +1831,8 @@ block|{
 comment|/* Set the tile cache size */
 name|gimp_tile_cache_ntiles
 argument_list|(
+literal|2
+operator|*
 operator|(
 name|drawable
 operator|->
