@@ -293,37 +293,38 @@ directive|include
 file|"gimptoolmodule.h"
 end_include
 
-begin_decl_stmt
-DECL|variable|thatgimp
-name|Gimp
-modifier|*
-name|thatgimp
-decl_stmt|;
-end_decl_stmt
-
 begin_function
-DECL|function|cheesey_module_loading_hack (gchar * filename)
 name|void
+DECL|function|cheesey_module_loading_hack (const gchar * filename,gpointer loader_data)
 name|cheesey_module_loading_hack
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gpointer
+name|loader_data
 parameter_list|)
 block|{
-name|GimpToolModule
+name|Gimp
 modifier|*
-name|m
+name|gimp
 init|=
+name|GIMP
+argument_list|(
+name|loader_data
+argument_list|)
+decl_stmt|;
 name|gimp_tool_module_new
 argument_list|(
 name|filename
 argument_list|,
-name|thatgimp
+name|gimp
 argument_list|,
 name|tool_manager_register_tool
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 block|}
 end_function
 
@@ -456,10 +457,6 @@ name|tool_manager_register_tool
 operator|)
 expr_stmt|;
 block|}
-name|thatgimp
-operator|=
-name|gimp
-expr_stmt|;
 if|if
 condition|(
 name|g_module_supported

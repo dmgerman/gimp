@@ -36,6 +36,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpToolModule
+typedef|typedef
+name|struct
+name|_GimpToolModule
+name|GimpToolModule
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPaintTool
 typedef|typedef
 name|struct
@@ -234,7 +243,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29347c330103
+DECL|enum|__anon28ffaaf40103
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -260,7 +269,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29347c330203
+DECL|enum|__anon28ffaaf40203
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -283,7 +292,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29347c330303
+DECL|enum|__anon28ffaaf40303
 block|{
 DECL|enumerator|ONCE_FORWARD
 name|ONCE_FORWARD
@@ -314,7 +323,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29347c330403
+DECL|enum|__anon28ffaaf40403
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -358,7 +367,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29347c330503
+DECL|enum|__anon28ffaaf40503
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -382,7 +391,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29347c330603
+DECL|enum|__anon28ffaaf40603
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -406,7 +415,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29347c330703
+DECL|enum|__anon28ffaaf40703
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -439,7 +448,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29347c330803
+DECL|enum|__anon28ffaaf40803
 block|{
 DECL|enumerator|TRANSFORM_INIT
 name|TRANSFORM_INIT

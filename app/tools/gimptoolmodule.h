@@ -22,40 +22,6 @@ directive|include
 file|<gmodule.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<glib-object.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_comment
-comment|/* for tools-types.h.  This is truly sick */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimp.h"
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_TOOL_MODULE
 define|#
@@ -128,15 +94,6 @@ name|GimpToolModuleClass
 typedef|;
 end_typedef
 
-begin_typedef
-DECL|typedef|GimpToolModule
-typedef|typedef
-name|struct
-name|_GimpToolModule
-name|GimpToolModule
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_GimpToolModule
 struct|struct
@@ -178,7 +135,7 @@ modifier|*
 name|register_type
 function_decl|)
 parameter_list|(
-name|GTypeModule
+name|GimpToolModule
 modifier|*
 name|module
 parameter_list|)
@@ -215,6 +172,7 @@ name|GimpToolModule
 modifier|*
 name|gimp_tool_module_new
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
