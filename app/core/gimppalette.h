@@ -93,15 +93,6 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PALETTE, GimpPaletteClass))
 end_define
 
-begin_typedef
-DECL|typedef|GimpPaletteEntry
-typedef|typedef
-name|struct
-name|_GimpPaletteEntry
-name|GimpPaletteEntry
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_GimpPaletteEntry
 struct|struct

@@ -6,15 +6,21 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GRADIENT_EDITOR_H__
+name|__GIMP_GRADIENT_EDITOR_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GRADIENT_EDITOR_H__
+DECL|macro|__GIMP_GRADIENT_EDITOR_H__
 define|#
 directive|define
-name|__GRADIENT_EDITOR_H__
+name|__GIMP_GRADIENT_EDITOR_H__
 end_define
+
+begin_include
+include|#
+directive|include
+file|"gimpdataeditor.h"
+end_include
 
 begin_define
 DECL|macro|GRAD_NUM_COLORS
@@ -27,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fefe890103
+DECL|enum|__anon2a2c3a140103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -51,7 +57,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fefe890203
+DECL|enum|__anon2a2c3a140203
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -86,25 +92,101 @@ name|GradientEditorUpdateMask
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_GRADIENT_EDITOR
+define|#
+directive|define
+name|GIMP_TYPE_GRADIENT_EDITOR
+value|(gimp_gradient_editor_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_GRADIENT_EDITOR (obj)
+define|#
+directive|define
+name|GIMP_GRADIENT_EDITOR
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_GRADIENT_EDITOR, GimpGradientEditor))
+end_define
+
+begin_define
+DECL|macro|GIMP_GRADIENT_EDITOR_CLASS (klass)
+define|#
+directive|define
+name|GIMP_GRADIENT_EDITOR_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_GRADIENT_EDITOR, GimpGradientEditorClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_GRADIENT_EDITOR (obj)
+define|#
+directive|define
+name|GIMP_IS_GRADIENT_EDITOR
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_GRADIENT_EDITOR))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_GRADIENT_EDITOR_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_GRADIENT_EDITOR_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_GRADIENT_EDITOR))
+end_define
+
+begin_define
+DECL|macro|GIMP_GRADIENT_EDITOR_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_GRADIENT_EDITOR_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_GRADIENT_EDITOR, GimpGradientEditorClass))
+end_define
+
+begin_typedef
+DECL|typedef|GimpGradientEditorClass
+typedef|typedef
+name|struct
+name|_GimpGradientEditorClass
+name|GimpGradientEditorClass
+typedef|;
+end_typedef
+
 begin_struct
-DECL|struct|_GradientEditor
+DECL|struct|_GimpGradientEditor
 struct|struct
-name|_GradientEditor
+name|_GimpGradientEditor
 block|{
-DECL|member|shell
-name|GtkWidget
-modifier|*
-name|shell
+DECL|member|parent_instance
+name|GimpDataEditor
+name|parent_instance
 decl_stmt|;
-DECL|member|name
+DECL|member|hint_label1
 name|GtkWidget
 modifier|*
-name|name
+name|hint_label1
 decl_stmt|;
-DECL|member|hint_label
+DECL|member|hint_label2
 name|GtkWidget
 modifier|*
-name|hint_label
+name|hint_label2
+decl_stmt|;
+DECL|member|hint_label3
+name|GtkWidget
+modifier|*
+name|hint_label3
 decl_stmt|;
 DECL|member|scrollbar
 name|GtkWidget
@@ -120,11 +202,6 @@ DECL|member|control
 name|GtkWidget
 modifier|*
 name|control
-decl_stmt|;
-DECL|member|context
-name|GimpContext
-modifier|*
-name|context
 decl_stmt|;
 comment|/*  Zoom and scrollbar  */
 DECL|member|zoom_factor
@@ -254,10 +331,23 @@ block|}
 struct|;
 end_struct
 
+begin_struct
+DECL|struct|_GimpGradientEditorClass
+struct|struct
+name|_GimpGradientEditorClass
+block|{
+DECL|member|parent_class
+name|GimpDataEditorClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_function_decl
-name|GradientEditor
+name|GimpDataEditor
 modifier|*
-name|gradient_editor_new
+name|gimp_gradient_editor_new
 parameter_list|(
 name|Gimp
 modifier|*
@@ -268,37 +358,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gradient_editor_set_gradient
+name|gimp_gradient_editor_update
 parameter_list|(
-name|GradientEditor
+name|GimpGradientEditor
 modifier|*
-name|gradient_editor
-parameter_list|,
-name|GimpGradient
-modifier|*
-name|gradient
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gradient_editor_free
-parameter_list|(
-name|GradientEditor
-modifier|*
-name|gradient_editor
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gradient_editor_update
-parameter_list|(
-name|GradientEditor
-modifier|*
-name|gradient_editor
+name|editor
 parameter_list|,
 name|GradientEditorUpdateMask
 name|flags
@@ -312,7 +376,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GRADIENT_EDITOR_H__ */
+comment|/* __GIMP_GRADIENT_EDITOR_H__ */
 end_comment
 
 end_unit

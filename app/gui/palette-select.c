@@ -78,13 +78,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs-constructors.h"
+file|"widgets/gimppaletteeditor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"palette-editor.h"
+file|"dialogs-constructors.h"
 end_include
 
 begin_include

@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtkvbox.h>
+file|"gimpeditor.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpContainerView
 block|{
 DECL|member|parent_instance
-name|GtkVBox
+name|GimpEditor
 name|parent_instance
 decl_stmt|;
 DECL|member|container
@@ -130,11 +130,6 @@ DECL|member|get_name_func
 name|GimpItemGetNameFunc
 name|get_name_func
 decl_stmt|;
-DECL|member|button_box
-name|GtkWidget
-modifier|*
-name|button_box
-decl_stmt|;
 comment|/*  initialized by subclass  */
 DECL|member|dnd_widget
 name|GtkWidget
@@ -151,7 +146,7 @@ struct|struct
 name|_GimpContainerViewClass
 block|{
 DECL|member|parent_class
-name|GtkVBoxClass
+name|GimpEditorClass
 name|parent_class
 decl_stmt|;
 comment|/*  signals  */
@@ -381,42 +376,6 @@ name|view
 parameter_list|,
 name|GimpItemGetNameFunc
 name|get_name_func
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GtkWidget
-modifier|*
-name|gimp_container_view_add_button
-parameter_list|(
-name|GimpContainerView
-modifier|*
-name|editor
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|stock_id
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|tooltip
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|help_data
-parameter_list|,
-name|GCallback
-name|callback
-parameter_list|,
-name|GCallback
-name|extended_callback
-parameter_list|,
-name|gpointer
-name|callback_data
 parameter_list|)
 function_decl|;
 end_function_decl

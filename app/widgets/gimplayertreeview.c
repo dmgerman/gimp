@@ -877,9 +877,9 @@ name|view
 operator|->
 name|anchor_button
 operator|=
-name|gimp_container_view_add_button
+name|gimp_editor_add_button
 argument_list|(
-name|GIMP_CONTAINER_VIEW
+name|GIMP_EDITOR
 argument_list|(
 name|view
 argument_list|)
@@ -907,7 +907,7 @@ name|gtk_box_reorder_child
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GIMP_CONTAINER_VIEW
+name|GIMP_EDITOR
 argument_list|(
 name|view
 argument_list|)
