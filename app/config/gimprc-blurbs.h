@@ -422,7 +422,7 @@ define|#
 directive|define
 name|INSTALL_COLORMAP_BLURB
 define|\
-value|N_("Install a private colormap; might be useful on pseudocolor visuals.")
+value|N_("Install a private colormap; might be useful on 8-bit (256 colors) displays.")
 end_define
 
 begin_define
