@@ -2139,9 +2139,10 @@ name|tv
 operator|.
 name|tv_usec
 operator|=
-literal|100
+literal|10
+operator|*
+literal|1000
 expr_stmt|;
-comment|/* But this is 0.1 ms? */
 name|select
 argument_list|(
 literal|0
