@@ -100,7 +100,7 @@ file|"drawable_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2b3033c90103
+DECL|enum|__anon2a1d76a80103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -311,6 +311,10 @@ name|gtk_object_class_add_signals
 argument_list|(
 name|object_class
 argument_list|,
+operator|(
+name|guint
+operator|*
+operator|)
 name|drawable_signals
 argument_list|,
 name|LAST_SIGNAL
