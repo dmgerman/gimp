@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<ctype.h>
 end_include
 
@@ -2448,7 +2442,7 @@ name|data
 operator|->
 name|rotation
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 argument_list|)

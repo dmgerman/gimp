@@ -30,19 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<X11/Xlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gdk/gdkkeysyms.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gdk/gdkx.h>
 end_include
 
 begin_include
@@ -205,7 +193,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon2adf56ed0103
+DECL|enum|__anon296480ab0103
 enum|enum
 block|{
 DECL|enumerator|FONT_CHANGED
