@@ -255,7 +255,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c49c07e0103
+DECL|enum|__anon29fd16480103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -948,6 +948,12 @@ expr_stmt|;
 name|gimp
 operator|->
 name|next_guide_ID
+operator|=
+literal|1
+expr_stmt|;
+name|gimp
+operator|->
+name|next_sample_point_ID
 operator|=
 literal|1
 expr_stmt|;

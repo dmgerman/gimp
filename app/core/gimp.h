@@ -268,6 +268,10 @@ DECL|member|next_guide_ID
 name|guint32
 name|next_guide_ID
 decl_stmt|;
+DECL|member|next_sample_point_ID
+name|guint32
+name|next_sample_point_ID
+decl_stmt|;
 DECL|member|image_table
 name|GHashTable
 modifier|*

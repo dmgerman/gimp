@@ -441,6 +441,14 @@ value|"gimp-view-snap-to-guides"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_VIEW_SHOW_SAMPLE_POINTS
+define|#
+directive|define
+name|GIMP_HELP_VIEW_SHOW_SAMPLE_POINTS
+value|"gimp-view-show-sample-points"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_VIEW_SHOW_GRID
 define|#
 directive|define

@@ -602,6 +602,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpSamplePoint
+typedef|typedef
+name|struct
+name|_GimpSamplePoint
+name|GimpSamplePoint
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpTattoo
 typedef|typedef
 name|guint32

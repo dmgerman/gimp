@@ -135,6 +135,10 @@ DECL|member|show_guides
 name|gboolean
 name|show_guides
 decl_stmt|;
+DECL|member|show_sample_points
+name|gboolean
+name|show_sample_points
+decl_stmt|;
 DECL|member|show_grid
 name|gboolean
 name|show_grid

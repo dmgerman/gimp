@@ -3326,6 +3326,14 @@ literal|"group-image-guide"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_GROUP_IMAGE_SAMPLE_POINT
+block|,
+literal|"GIMP_UNDO_GROUP_IMAGE_SAMPLE_POINT"
+block|,
+literal|"group-image-sample-point"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_GROUP_DRAWABLE
 block|,
 literal|"GIMP_UNDO_GROUP_DRAWABLE"
@@ -3555,6 +3563,14 @@ block|,
 literal|"GIMP_UNDO_IMAGE_GUIDE"
 block|,
 literal|"image-guide"
+block|}
+block|,
+block|{
+name|GIMP_UNDO_IMAGE_SAMPLE_POINT
+block|,
+literal|"GIMP_UNDO_IMAGE_SAMPLE_POINT"
+block|,
+literal|"image-sample-point"
 block|}
 block|,
 block|{
@@ -3986,6 +4002,17 @@ name|NULL
 block|}
 block|,
 block|{
+name|GIMP_UNDO_GROUP_IMAGE_SAMPLE_POINT
+block|,
+name|N_
+argument_list|(
+literal|"Sample Point"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
 name|GIMP_UNDO_GROUP_DRAWABLE
 block|,
 name|N_
@@ -4299,6 +4326,17 @@ block|,
 name|N_
 argument_list|(
 literal|"Guide"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_IMAGE_SAMPLE_POINT
+block|,
+name|N_
+argument_list|(
+literal|"Sample Point"
 argument_list|)
 block|,
 name|NULL

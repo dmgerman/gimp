@@ -880,6 +880,21 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_display_shell_expose_sample_point
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|GimpSamplePoint
+modifier|*
+name|sample_point
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_display_shell_expose_full
 parameter_list|(
 name|GimpDisplayShell

@@ -338,6 +338,12 @@ modifier|*
 name|grid
 decl_stmt|;
 comment|/*  grid                         */
+DECL|member|sample_points
+name|GList
+modifier|*
+name|sample_points
+decl_stmt|;
+comment|/*  color sample points          */
 comment|/*  Layer/Channel attributes  */
 DECL|member|layers
 name|GimpContainer
@@ -745,6 +751,22 @@ parameter_list|,
 name|GimpGuide
 modifier|*
 name|guide
+parameter_list|)
+function_decl|;
+DECL|member|update_sample_point
+name|void
+function_decl|(
+modifier|*
+name|update_sample_point
+function_decl|)
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|GimpSamplePoint
+modifier|*
+name|sample_point
 parameter_list|)
 function_decl|;
 DECL|member|colormap_changed
@@ -1295,6 +1317,21 @@ parameter_list|,
 name|GimpGuide
 modifier|*
 name|guide
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_image_update_sample_point
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|GimpSamplePoint
+modifier|*
+name|sample_point
 parameter_list|)
 function_decl|;
 end_function_decl

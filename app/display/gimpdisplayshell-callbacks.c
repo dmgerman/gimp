@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-sample-points.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-qmask.h"
 end_include
 
@@ -793,6 +799,15 @@ argument_list|,
 name|options
 operator|->
 name|show_guides
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_set_show_sample_points
+argument_list|(
+name|shell
+argument_list|,
+name|options
+operator|->
+name|show_sample_points
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_set_show_grid
@@ -1563,6 +1578,12 @@ argument_list|)
 expr_stmt|;
 comment|/* draw the guides */
 name|gimp_display_shell_draw_guides
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+comment|/* draw the sample points */
+name|gimp_display_shell_draw_sample_points
 argument_list|(
 name|shell
 argument_list|)
