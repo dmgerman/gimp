@@ -272,7 +272,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|visible_tool_options
 specifier|static
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|visible_tool_options
 init|=

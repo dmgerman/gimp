@@ -1080,7 +1080,7 @@ argument_list|(
 name|GIMP_TYPE_PERSPECTIVE_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|perspective_options

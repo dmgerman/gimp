@@ -75,16 +75,6 @@ directive|include
 file|"paint-funcs/paint-funcs.h"
 end_include
 
-begin_comment
-comment|/* FIXME: remove the Path<-> BezierSelect dependency */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"tools/tools-types.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -785,7 +775,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1beb070103
+DECL|enum|__anon2773f1430103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED

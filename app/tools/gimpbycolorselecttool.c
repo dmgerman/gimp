@@ -1239,7 +1239,7 @@ argument_list|(
 name|GIMP_TYPE_BY_COLOR_SELECT_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|by_color_options

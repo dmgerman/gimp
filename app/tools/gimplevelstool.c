@@ -907,7 +907,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|levels_options
 specifier|static
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|levels_options
 init|=
@@ -1209,7 +1209,7 @@ argument_list|(
 name|GIMP_TYPE_LEVELS_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|levels_options

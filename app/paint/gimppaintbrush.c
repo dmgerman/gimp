@@ -488,7 +488,7 @@ argument_list|(
 name|GIMP_TYPE_PAINTBRUSH_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|paintbrush_options

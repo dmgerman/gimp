@@ -346,7 +346,7 @@ struct|struct
 name|_TextOptions
 block|{
 DECL|member|tool_options
-name|ToolOptions
+name|GimpToolOptions
 name|tool_options
 decl_stmt|;
 DECL|member|antialias
@@ -523,7 +523,7 @@ specifier|static
 name|void
 name|text_tool_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)
@@ -936,7 +936,7 @@ argument_list|(
 name|GIMP_TYPE_TEXT_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|text_tool_options
@@ -1004,10 +1004,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|text_tool_options_reset (ToolOptions * tool_options)
+DECL|function|text_tool_options_reset (GimpToolOptions * tool_options)
 name|text_tool_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)
@@ -1115,7 +1115,7 @@ expr_stmt|;
 name|tool_options_init
 argument_list|(
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|options

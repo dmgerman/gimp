@@ -21,9 +21,9 @@ comment|/*  the tool options structures  */
 end_comment
 
 begin_struct
-DECL|struct|_ToolOptions
+DECL|struct|_GimpToolOptions
 struct|struct
-name|_ToolOptions
+name|_GimpToolOptions
 block|{
 DECL|member|main_vbox
 name|GtkWidget
@@ -43,7 +43,7 @@ comment|/*  create a dummy tool options structure  *  (to be used by tools witho
 end_comment
 
 begin_function_decl
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options_new
 parameter_list|(
@@ -60,7 +60,7 @@ begin_function_decl
 name|void
 name|tool_options_init
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|options
 parameter_list|,

@@ -685,7 +685,7 @@ argument_list|(
 name|GIMP_TYPE_ELLIPSE_SELECT_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|ellipse_options

@@ -32,7 +32,7 @@ struct|struct
 name|_SelectionOptions
 block|{
 DECL|member|tool_options
-name|ToolOptions
+name|GimpToolOptions
 name|tool_options
 decl_stmt|;
 comment|/*  options used by all selection tools  */
@@ -193,7 +193,7 @@ begin_function_decl
 name|void
 name|selection_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)

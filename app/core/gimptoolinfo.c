@@ -789,7 +789,7 @@ end_function
 begin_function
 name|GimpToolInfo
 modifier|*
-DECL|function|gimp_tool_info_new (GimpContext * context,GtkType tool_type,gboolean tool_context,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar ** icon_data)
+DECL|function|gimp_tool_info_new (GimpContext * context,GtkType tool_type,gboolean tool_context,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar * pdb_string,const gchar ** icon_data)
 name|gimp_tool_info_new
 parameter_list|(
 name|GimpContext
@@ -836,6 +836,11 @@ specifier|const
 name|gchar
 modifier|*
 name|help_data
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|pdb_string
 parameter_list|,
 specifier|const
 name|gchar
@@ -927,6 +932,21 @@ argument_list|)
 expr_stmt|;
 name|tool_info
 operator|->
+name|pdb_string
+operator|=
+operator|(
+name|pdb_string
+condition|?
+name|g_strdup
+argument_list|(
+name|pdb_string
+argument_list|)
+else|:
+literal|"gimp_paintbrush_default"
+operator|)
+expr_stmt|;
+name|tool_info
+operator|->
 name|icon_data
 operator|=
 name|icon_data
@@ -995,6 +1015,8 @@ argument_list|,
 literal|"Standard Tool"
 argument_list|,
 literal|"Well something must be broken"
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

@@ -2442,7 +2442,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Paintbrush operation failed."
+literal|"Paint operation failed."
 argument_list|)
 argument_list|)
 expr_stmt|;

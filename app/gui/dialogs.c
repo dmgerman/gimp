@@ -96,6 +96,8 @@ block|,
 name|TRUE
 block|,
 name|TRUE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -108,6 +110,8 @@ block|,
 name|TRUE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -120,6 +124,8 @@ block|,
 name|TRUE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -132,6 +138,8 @@ block|,
 name|TRUE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -144,6 +152,8 @@ block|,
 name|TRUE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -156,6 +166,8 @@ block|,
 name|TRUE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -168,12 +180,16 @@ block|,
 name|TRUE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
 literal|"gimp:error-console-dialog"
 block|,
 name|dialogs_error_console_get
+block|,
+name|TRUE
 block|,
 name|TRUE
 block|,
@@ -192,6 +208,8 @@ block|,
 name|TRUE
 block|,
 name|TRUE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -204,6 +222,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -216,6 +236,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -228,6 +250,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -240,6 +264,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -252,6 +278,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -264,6 +292,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -276,6 +306,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -288,6 +320,8 @@ block|,
 name|TRUE
 block|,
 name|TRUE
+block|,
+name|FALSE
 block|}
 block|,
 block|{
@@ -300,6 +334,8 @@ block|,
 name|TRUE
 block|,
 name|TRUE
+block|,
+name|FALSE
 block|}
 block|,
 block|{
@@ -312,6 +348,8 @@ block|,
 name|TRUE
 block|,
 name|TRUE
+block|,
+name|FALSE
 block|}
 block|}
 decl_stmt|;
@@ -360,6 +398,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -372,6 +412,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -384,6 +426,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -396,6 +440,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -408,6 +454,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -420,6 +468,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -432,6 +482,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -444,6 +496,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -456,6 +510,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -468,6 +524,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -480,6 +538,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -492,6 +552,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -504,6 +566,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -516,6 +580,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -528,6 +594,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -540,6 +608,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -552,6 +622,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -564,6 +636,8 @@ block|,
 name|FALSE
 block|,
 name|FALSE
+block|,
+name|TRUE
 block|}
 block|}
 decl_stmt|;
@@ -726,6 +800,13 @@ name|i
 index|]
 operator|.
 name|remember_size
+argument_list|,
+name|toplevel_entries
+index|[
+name|i
+index|]
+operator|.
+name|remember_if_open
 argument_list|)
 expr_stmt|;
 for|for
@@ -779,6 +860,13 @@ name|i
 index|]
 operator|.
 name|remember_size
+argument_list|,
+name|dock_entries
+index|[
+name|i
+index|]
+operator|.
+name|remember_if_open
 argument_list|)
 expr_stmt|;
 block|}

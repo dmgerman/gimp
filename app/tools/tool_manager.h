@@ -233,7 +233,7 @@ parameter_list|(
 name|GtkType
 name|tool_type
 parameter_list|,
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)

@@ -191,7 +191,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a50dcaf0103
+DECL|enum|__anon2c3cb36c0103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -471,7 +471,7 @@ specifier|static
 name|void
 name|clone_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|options
 parameter_list|)
@@ -962,7 +962,7 @@ argument_list|(
 name|GIMP_TYPE_CLONE_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|clone_options
@@ -3197,7 +3197,7 @@ name|vbox
 operator|=
 operator|(
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|options
@@ -3402,10 +3402,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|clone_options_reset (ToolOptions * tool_options)
+DECL|function|clone_options_reset (GimpToolOptions * tool_options)
 name|clone_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)

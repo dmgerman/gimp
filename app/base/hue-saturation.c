@@ -445,7 +445,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|hue_saturation_options
 specifier|static
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|hue_saturation_options
 init|=
@@ -822,7 +822,7 @@ argument_list|(
 name|GIMP_TYPE_HUE_SATURATION_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|hue_saturation_options

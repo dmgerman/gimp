@@ -100,15 +100,6 @@ comment|/*  stuff  */
 end_comment
 
 begin_typedef
-DECL|typedef|ToolOptions
-typedef|typedef
-name|struct
-name|_ToolOptions
-name|ToolOptions
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|SelectionOptions
 typedef|typedef
 name|struct
@@ -130,24 +121,11 @@ modifier|*
 name|ToolOptionsResetFunc
 function_decl|)
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_comment
-comment|/*  EEK  */
-end_comment
-
-begin_typedef
-DECL|typedef|Tool
-typedef|typedef
-name|struct
-name|_Tool
-name|Tool
-typedef|;
 end_typedef
 
 begin_comment
@@ -162,7 +140,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28ca20810103
+DECL|enum|__anon299097e90103
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -186,7 +164,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28ca20810203
+DECL|enum|__anon299097e90203
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -216,7 +194,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28ca20810303
+DECL|enum|__anon299097e90303
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -249,7 +227,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28ca20810403
+DECL|enum|__anon299097e90403
 block|{
 DECL|enumerator|TRANSFORM_INIT
 name|TRANSFORM_INIT

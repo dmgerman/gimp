@@ -207,7 +207,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c24dc090103
+DECL|enum|__anon2bed5d320103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -477,7 +477,7 @@ specifier|static
 name|void
 name|convolve_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|options
 parameter_list|)
@@ -1005,7 +1005,7 @@ argument_list|(
 name|GIMP_TYPE_CONVOLVE_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|convolve_options
@@ -2926,7 +2926,7 @@ name|vbox
 operator|=
 operator|(
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|options
@@ -3198,10 +3198,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|convolve_options_reset (ToolOptions * tool_options)
+DECL|function|convolve_options_reset (GimpToolOptions * tool_options)
 name|convolve_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)

@@ -825,7 +825,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|curves_options
 specifier|static
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|curves_options
 init|=
@@ -1200,7 +1200,7 @@ argument_list|(
 name|GIMP_TYPE_CURVES_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|curves_options

@@ -115,7 +115,7 @@ struct|struct
 name|_MagnifyOptions
 block|{
 DECL|member|tool_options
-name|ToolOptions
+name|GimpToolOptions
 name|tool_options
 decl_stmt|;
 comment|/* gint       allow_resize_windows; (from gimprc) */
@@ -358,7 +358,7 @@ specifier|static
 name|void
 name|magnify_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)
@@ -652,7 +652,7 @@ argument_list|(
 name|GIMP_TYPE_MAGNIFY_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|magnify_options
@@ -740,10 +740,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|magnify_options_reset (ToolOptions * tool_options)
+DECL|function|magnify_options_reset (GimpToolOptions * tool_options)
 name|magnify_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)
@@ -829,7 +829,7 @@ expr_stmt|;
 name|tool_options_init
 argument_list|(
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|options

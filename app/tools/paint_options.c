@@ -554,7 +554,7 @@ comment|/*  initialize the tool options structure  */
 name|tool_options_init
 argument_list|(
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|options
@@ -1282,10 +1282,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_options_reset (ToolOptions * tool_options)
+DECL|function|paint_options_reset (GimpToolOptions * tool_options)
 name|paint_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)

@@ -93,6 +93,10 @@ DECL|member|remember_size
 name|gboolean
 name|remember_size
 decl_stmt|;
+DECL|member|remember_if_open
+name|gboolean
+name|remember_if_open
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -347,6 +351,9 @@ name|session_managed
 parameter_list|,
 name|gboolean
 name|remember_size
+parameter_list|,
+name|gboolean
+name|remember_if_open
 parameter_list|)
 function_decl|;
 end_function_decl

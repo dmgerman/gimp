@@ -33,7 +33,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a045e000103
+DECL|enum|__anon27a5b2f00103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -56,7 +56,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a045e000203
+DECL|enum|__anon27a5b2f00203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a045e000303
+DECL|enum|__anon27a5b2f00303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a045e000403
+DECL|enum|__anon27a5b2f00403
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -142,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a045e000503
+DECL|enum|__anon27a5b2f00503
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -438,6 +438,19 @@ typedef|typedef
 name|struct
 name|_GimpImageNewValues
 name|GimpImageNewValues
+typedef|;
+end_typedef
+
+begin_comment
+comment|/*  stuff which is forward declared here so we don't need to cross-include it  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpToolOptions
+typedef|typedef
+name|struct
+name|_GimpToolOptions
+name|GimpToolOptions
 typedef|;
 end_typedef
 

@@ -410,7 +410,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|color_balance_options
 specifier|static
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|color_balance_options
 init|=
@@ -680,7 +680,7 @@ argument_list|(
 name|GIMP_TYPE_COLOR_BALANCE_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|color_balance_options

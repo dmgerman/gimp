@@ -378,7 +378,7 @@ specifier|static
 name|void
 name|airbrush_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)
@@ -706,7 +706,7 @@ argument_list|(
 name|GIMP_TYPE_AIRBRUSH_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|airbrush_options
@@ -1873,7 +1873,7 @@ name|vbox
 operator|=
 operator|(
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|options
@@ -2150,10 +2150,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|airbrush_options_reset (ToolOptions * tool_options)
+DECL|function|airbrush_options_reset (GimpToolOptions * tool_options)
 name|airbrush_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)

@@ -290,7 +290,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|histogram_options
 specifier|static
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|histogram_options
 init|=
@@ -557,7 +557,7 @@ argument_list|(
 name|GIMP_TYPE_HISTOGRAM_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|histogram_options

@@ -266,7 +266,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|move_options
 specifier|static
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|move_options
 init|=
@@ -554,7 +554,7 @@ argument_list|(
 name|GIMP_TYPE_MOVE_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|move_options

@@ -1511,7 +1511,7 @@ argument_list|(
 name|GIMP_TYPE_ISCISSORS_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|iscissors_options

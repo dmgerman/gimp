@@ -689,7 +689,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dialog_factory_register_entry (GimpDialogFactory * factory,const gchar * identifier,GimpDialogNewFunc new_func,gboolean singleton,gboolean session_managed,gboolean remember_size)
+DECL|function|gimp_dialog_factory_register_entry (GimpDialogFactory * factory,const gchar * identifier,GimpDialogNewFunc new_func,gboolean singleton,gboolean session_managed,gboolean remember_size,gboolean remember_if_open)
 name|gimp_dialog_factory_register_entry
 parameter_list|(
 name|GimpDialogFactory
@@ -712,6 +712,9 @@ name|session_managed
 parameter_list|,
 name|gboolean
 name|remember_size
+parameter_list|,
+name|gboolean
+name|remember_if_open
 parameter_list|)
 block|{
 name|GimpDialogFactoryEntry
@@ -789,6 +792,16 @@ operator|->
 name|remember_size
 operator|=
 name|remember_size
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+name|entry
+operator|->
+name|remember_if_open
+operator|=
+name|remember_if_open
 condition|?
 name|TRUE
 else|:
@@ -3615,6 +3628,19 @@ literal|0
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+operator|!
+name|info
+operator|->
+name|toplevel_entry
+operator|||
+name|info
+operator|->
+name|toplevel_entry
+operator|->
+name|remember_if_open
+condition|)
 name|info
 operator|->
 name|open
@@ -3623,6 +3649,13 @@ name|GTK_WIDGET_VISIBLE
 argument_list|(
 name|window
 argument_list|)
+expr_stmt|;
+else|else
+name|info
+operator|->
+name|open
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 end_function

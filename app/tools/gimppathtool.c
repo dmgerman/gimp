@@ -413,7 +413,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|path_options
 specifier|static
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|path_options
 init|=
@@ -687,7 +687,7 @@ argument_list|(
 name|GIMP_TYPE_PATH_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|path_options

@@ -22,16 +22,6 @@ directive|include
 file|"gimpdata.h"
 end_include
 
-begin_comment
-comment|/* FIXME: the ToolOptions need to be an object living in core/ */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"tools/tools-types.h"
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_TOOL_INFO
 define|#
@@ -136,6 +126,11 @@ name|gchar
 modifier|*
 name|help_data
 decl_stmt|;
+DECL|member|pdb_string
+name|gchar
+modifier|*
+name|pdb_string
+decl_stmt|;
 DECL|member|icon_data
 specifier|const
 name|gchar
@@ -149,7 +144,7 @@ modifier|*
 name|context
 decl_stmt|;
 DECL|member|tool_options
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 decl_stmt|;
@@ -228,6 +223,11 @@ specifier|const
 name|gchar
 modifier|*
 name|help_data
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|pdb_string
 parameter_list|,
 specifier|const
 name|gchar

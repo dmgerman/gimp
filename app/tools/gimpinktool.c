@@ -417,7 +417,7 @@ specifier|static
 name|void
 name|ink_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)
@@ -1261,7 +1261,7 @@ argument_list|(
 name|GIMP_TYPE_INK_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|ink_options
@@ -1270,7 +1270,7 @@ expr_stmt|;
 name|ink_options_reset
 argument_list|(
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|ink_options
@@ -1390,10 +1390,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ink_options_reset (ToolOptions * tool_options)
+DECL|function|ink_options_reset (GimpToolOptions * tool_options)
 name|ink_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)
@@ -1740,7 +1740,7 @@ name|GTK_BOX
 argument_list|(
 operator|(
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|options
@@ -6389,7 +6389,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2bf6bf6b0103
+DECL|enum|__anon28ec88f30103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

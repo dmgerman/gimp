@@ -510,7 +510,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|path_options
 specifier|static
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|path_options
 init|=
@@ -3118,7 +3118,7 @@ comment|/*  The tool options  */
 end_comment
 
 begin_ifdef
-unit|if (! path_options)       {          path_options = tool_options_new (_("Path Tool"));          tools_register (PATH_TOOL, (ToolOptions *) path_options);       }     tool = tools_new_tool (PATH_TOOL);    private = g_new0 (PathTool, 1);     private->click_type       = ON_CANVAS;    private->click_x         = 0;    private->click_y         = 0;    private->click_halfwidth = 0;    private->click_modifier  = 0;    private->click_path      = NULL;    private->click_curve     = NULL;    private->click_segment   = NULL;    private->click_position  = -1;     private->active_count    = 0;    private->single_active_segment = NULL;     private->state           = 0;    private->draw            = PATH_TOOL_REDRAW_ALL;    private->core            = draw_core_new (path_tool_draw);    private->cur_path        = g_new0(NPath, 1);    private->scanlines       = NULL;      tool->private = (void *) private;      tool->button_press_func   = path_tool_button_press;    tool->button_release_func = path_tool_button_release;    tool->motion_func         = path_tool_motion;    tool->cursor_update_func  = path_tool_cursor_update;    tool->control_func        = path_tool_control;     private->cur_path->curves    = NULL;    private->cur_path->cur_curve = NULL;    private->cur_path->name      = g_string_new("Path 0");    private->cur_path->state     = 0;    private->cur_path->path_tool = private;        return tool; }  void tools_free_path_tool (Tool *tool) {    GDisplay * gdisp;    PathTool * path_tool;
+unit|if (! path_options)       {          path_options = tool_options_new (_("Path Tool"));          tools_register (PATH_TOOL, (GimpToolOptions *) path_options);       }     tool = tools_new_tool (PATH_TOOL);    private = g_new0 (PathTool, 1);     private->click_type       = ON_CANVAS;    private->click_x         = 0;    private->click_y         = 0;    private->click_halfwidth = 0;    private->click_modifier  = 0;    private->click_path      = NULL;    private->click_curve     = NULL;    private->click_segment   = NULL;    private->click_position  = -1;     private->active_count    = 0;    private->single_active_segment = NULL;     private->state           = 0;    private->draw            = PATH_TOOL_REDRAW_ALL;    private->core            = draw_core_new (path_tool_draw);    private->cur_path        = g_new0(NPath, 1);    private->scanlines       = NULL;      tool->private = (void *) private;      tool->button_press_func   = path_tool_button_press;    tool->button_release_func = path_tool_button_release;    tool->motion_func         = path_tool_motion;    tool->cursor_update_func  = path_tool_cursor_update;    tool->control_func        = path_tool_control;     private->cur_path->curves    = NULL;    private->cur_path->cur_curve = NULL;    private->cur_path->name      = g_string_new("Path 0");    private->cur_path->state     = 0;    private->cur_path->path_tool = private;        return tool; }  void tools_free_path_tool (Tool *tool) {    GDisplay * gdisp;    PathTool * path_tool;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
@@ -3156,7 +3156,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon299ac1690108
+DECL|struct|__anon292d64490108
 typedef|typedef
 struct|struct
 block|{
@@ -3514,7 +3514,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon299ac1690208
+DECL|struct|__anon292d64490208
 typedef|typedef
 struct|struct
 block|{
@@ -3856,7 +3856,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon299ac1690308
+DECL|struct|__anon292d64490308
 typedef|typedef
 struct|struct
 block|{
@@ -4174,7 +4174,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon299ac1690408
+DECL|struct|__anon292d64490408
 typedef|typedef
 struct|struct
 block|{
@@ -4332,7 +4332,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon299ac1690508
+DECL|struct|__anon292d64490508
 typedef|typedef
 struct|struct
 block|{
@@ -4676,39 +4676,48 @@ directive|endif
 block|}
 end_function
 
-begin_function
-name|void
-DECL|function|path_tool_draw (Tool * tool)
-name|path_tool_draw
-parameter_list|(
-name|Tool
-modifier|*
-name|tool
-parameter_list|)
-block|{
+begin_if
 if|#
 directive|if
 literal|0
-block|GDisplay * gdisp;    NPath * cur_path;    PathTool * path_tool;
+end_if
+
+begin_ifdef
+unit|void path_tool_draw (Tool *tool) {    GDisplay * gdisp;    NPath * cur_path;    PathTool * path_tool;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
-block|fprintf (stderr, "path_tool_draw\n");
+end_ifdef
+
+begin_endif
+unit|fprintf (stderr, "path_tool_draw\n");
 endif|#
 directive|endif
 endif|PATH_TOOL_DEBUG
-block|gdisp = tool->gdisp;    path_tool = tool->private;    cur_path = path_tool->cur_path;        path_traverse_path (cur_path, NULL, path_tool_draw_helper, NULL, tool);
+end_endif
+
+begin_ifdef
+unit|gdisp = tool->gdisp;    path_tool = tool->private;    cur_path = path_tool->cur_path;        path_traverse_path (cur_path, NULL, path_tool_draw_helper, NULL, tool);
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
+end_ifdef
+
+begin_comment
 comment|/* fprintf (stderr, "path_tool_draw end.\n");     */
+end_comment
+
+begin_endif
 endif|#
 directive|endif
 endif|PATH_TOOL_DEBUG
+end_endif
+
+begin_endif
+unit|}
 endif|#
 directive|endif
-block|}
-end_function
+end_endif
 
 end_unit
 

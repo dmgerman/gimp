@@ -343,7 +343,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|posterize_options
 specifier|static
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|posterize_options
 init|=
@@ -610,7 +610,7 @@ argument_list|(
 name|GIMP_TYPE_POSTERIZE_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|posterize_options

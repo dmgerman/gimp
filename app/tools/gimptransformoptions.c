@@ -442,10 +442,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|transform_options_reset (ToolOptions * tool_options)
+DECL|function|transform_options_reset (GimpToolOptions * tool_options)
 name|transform_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)
@@ -627,7 +627,7 @@ decl_stmt|;
 name|tool_options_init
 argument_list|(
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|options
@@ -1378,7 +1378,7 @@ comment|/* Set options to default values */
 name|transform_options_reset
 argument_list|(
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|options

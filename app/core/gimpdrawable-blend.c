@@ -348,7 +348,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cb08e50108
+DECL|struct|__anon289031750108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -405,7 +405,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cb08e50208
+DECL|struct|__anon289031750208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -594,7 +594,7 @@ specifier|static
 name|void
 name|blend_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)
@@ -1384,7 +1384,7 @@ argument_list|(
 name|GIMP_TYPE_BLEND_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|blend_options
@@ -2987,7 +2987,7 @@ name|vbox
 operator|=
 operator|(
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|options
@@ -4029,10 +4029,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|blend_options_reset (ToolOptions * tool_options)
+DECL|function|blend_options_reset (GimpToolOptions * tool_options)
 name|blend_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)

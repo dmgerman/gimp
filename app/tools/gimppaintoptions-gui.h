@@ -239,7 +239,7 @@ struct|struct
 name|_PaintOptions
 block|{
 DECL|member|tool_options
-name|ToolOptions
+name|GimpToolOptions
 name|tool_options
 decl_stmt|;
 comment|/*  vbox for the common paint options  */
@@ -349,7 +349,7 @@ begin_function_decl
 name|void
 name|paint_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)

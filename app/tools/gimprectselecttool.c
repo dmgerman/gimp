@@ -152,7 +152,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29da8d950103
+DECL|enum|__anon28acf2610103
 block|{
 DECL|enumerator|RECT_SELECT
 name|RECT_SELECT
@@ -860,7 +860,7 @@ argument_list|(
 name|GIMP_TYPE_RECT_SELECT_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|rect_options

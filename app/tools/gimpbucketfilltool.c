@@ -315,7 +315,7 @@ specifier|static
 name|void
 name|bucket_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)
@@ -697,7 +697,7 @@ argument_list|(
 name|GIMP_TYPE_BUCKET_FILL_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|bucket_options
@@ -706,7 +706,7 @@ expr_stmt|;
 name|bucket_options_reset
 argument_list|(
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|bucket_options
@@ -765,10 +765,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bucket_options_reset (ToolOptions * tool_options)
+DECL|function|bucket_options_reset (GimpToolOptions * tool_options)
 name|bucket_options_reset
 parameter_list|(
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|tool_options
 parameter_list|)
@@ -927,7 +927,7 @@ name|vbox
 operator|=
 operator|(
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|options

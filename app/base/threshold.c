@@ -421,7 +421,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|threshold_options
 specifier|static
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|threshold_options
 init|=
@@ -688,7 +688,7 @@ argument_list|(
 name|GIMP_TYPE_THRESHOLD_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|threshold_options

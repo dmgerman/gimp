@@ -429,7 +429,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|brightness_contrast_options
 specifier|static
-name|ToolOptions
+name|GimpToolOptions
 modifier|*
 name|brightness_contrast_options
 init|=
@@ -696,7 +696,7 @@ argument_list|(
 name|GIMP_TYPE_BRIGHTNESS_CONTRAST_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|brightness_contrast_options

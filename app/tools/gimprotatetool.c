@@ -720,7 +720,7 @@ argument_list|(
 name|GIMP_TYPE_ROTATE_TOOL
 argument_list|,
 operator|(
-name|ToolOptions
+name|GimpToolOptions
 operator|*
 operator|)
 name|rotate_options

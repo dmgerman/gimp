@@ -53,7 +53,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2901cf3d0103
+DECL|enum|__anon28b589510103
 block|{
 DECL|enumerator|BEZIER
 name|BEZIER
@@ -252,18 +252,6 @@ parameter_list|(
 name|PathList
 modifier|*
 name|plist
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpBezierSelectTool
-modifier|*
-name|path_to_beziersel
-parameter_list|(
-name|Path
-modifier|*
-name|path
 parameter_list|)
 function_decl|;
 end_function_decl
