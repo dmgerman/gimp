@@ -128,7 +128,7 @@ DECL|macro|ENTRY_WIDTH
 define|#
 directive|define
 name|ENTRY_WIDTH
-value|18
+value|14
 end_define
 
 begin_define
@@ -136,7 +136,7 @@ DECL|macro|ENTRY_HEIGHT
 define|#
 directive|define
 name|ENTRY_HEIGHT
-value|14
+value|10
 end_define
 
 begin_define
@@ -152,7 +152,7 @@ DECL|macro|COLUMNS
 define|#
 directive|define
 name|COLUMNS
-value|12
+value|16
 end_define
 
 begin_define
@@ -160,7 +160,7 @@ DECL|macro|ROWS
 define|#
 directive|define
 name|ROWS
-value|8
+value|16
 end_define
 
 begin_define
@@ -1106,6 +1106,22 @@ name|shell
 operator|=
 name|gtk_dialog_new
 argument_list|()
+expr_stmt|;
+name|gtk_window_set_policy
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|palette
+operator|->
+name|shell
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|)
 expr_stmt|;
 name|gtk_window_set_title
 argument_list|(
