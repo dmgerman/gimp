@@ -2151,11 +2151,17 @@ condition|(
 operator|*
 name|buffer
 operator|&&
+operator|(
 name|buffer
 operator|-
+operator|(
+name|gchar
+operator|*
+operator|)
 name|vals
 operator|<
 name|length
+operator|)
 condition|)
 block|{
 name|gchar
