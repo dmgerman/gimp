@@ -85,7 +85,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2df0780108
+DECL|struct|__anon2879ee490108
 block|{
 DECL|member|replace
 name|gint
@@ -4441,7 +4441,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -4460,9 +4460,6 @@ name|plvals
 operator|.
 name|replace
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|plvals
 operator|.
 name|replace
@@ -4472,9 +4469,6 @@ argument_list|(
 literal|"Black"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|0
 argument_list|,
 name|NULL
@@ -4484,9 +4478,6 @@ argument_list|(
 literal|"White"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|255
 argument_list|,
 name|NULL
@@ -4517,7 +4508,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -4536,9 +4527,6 @@ name|plvals
 operator|.
 name|use_datamin
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|plvals
 operator|.
 name|use_datamin
@@ -4548,9 +4536,6 @@ argument_list|(
 literal|"Automatic"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|FALSE
 argument_list|,
 name|NULL
@@ -4560,9 +4545,6 @@ argument_list|(
 literal|"By DATAMIN/DATAMAX"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|TRUE
 argument_list|,
 name|NULL
@@ -4593,7 +4575,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -4612,9 +4594,6 @@ name|plvals
 operator|.
 name|compose
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|plvals
 operator|.
 name|compose
@@ -4624,18 +4603,12 @@ argument_list|(
 literal|"None"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|FALSE
 argument_list|,
 name|NULL
 argument_list|,
 literal|"NAXIS=3, NAXIS3=2,...,4"
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|TRUE
 argument_list|,
 name|NULL

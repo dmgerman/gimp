@@ -143,9 +143,6 @@ comment|/* SELECTION ONLY */
 name|TRUE
 block|,
 comment|/* REAL TIME */
-name|FALSE
-block|,
-comment|/* SUCCESS */
 name|RADIANS_OVER_PI
 block|,
 comment|/* START IN RADIANS OVER PI */

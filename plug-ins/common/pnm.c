@@ -315,7 +315,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af2d75d0108
+DECL|struct|__anon2949ca120108
 block|{
 DECL|member|raw
 name|gint
@@ -4446,7 +4446,7 @@ expr_stmt|;
 comment|/*  file save type  */
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -4465,22 +4465,16 @@ name|psvals
 operator|.
 name|raw
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|psvals
 operator|.
 name|raw
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"Raw"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|TRUE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -4489,10 +4483,7 @@ argument_list|(
 literal|"Ascii"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|FALSE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

@@ -162,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b42ecb20108
+DECL|struct|__anon298444a20108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -265,7 +265,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b42ecb20208
+DECL|struct|__anon298444a20208
 block|{
 DECL|member|height
 DECL|member|width
@@ -347,7 +347,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b42ecb20308
+DECL|struct|__anon298444a20308
 block|{
 DECL|member|width
 name|gint
@@ -4135,7 +4135,7 @@ argument_list|)
 expr_stmt|;
 name|vbox2
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -4151,22 +4151,16 @@ name|svals
 operator|.
 name|perturbation
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|svals
 operator|.
 name|perturbation
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"_Ideal"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|IDEAL
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -4175,10 +4169,7 @@ argument_list|(
 literal|"_Distorted"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|PERTURBED
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -4387,7 +4378,7 @@ else|else
 block|{
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -4406,9 +4397,6 @@ name|svals
 operator|.
 name|colors
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|svals
 operator|.
 name|colors
@@ -4418,9 +4406,6 @@ argument_list|(
 literal|"Bl_ack& White"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|B_W
 argument_list|,
 name|NULL
@@ -4430,9 +4415,6 @@ argument_list|(
 literal|"_Foreground& Background"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|USE_FG_BG
 argument_list|,
 name|NULL
@@ -4442,9 +4424,6 @@ argument_list|(
 literal|"C_hoose here:"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|USE_COLORS
 argument_list|,
 name|NULL
@@ -5037,7 +5016,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -5056,9 +5035,6 @@ name|svals
 operator|.
 name|colorization
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|svals
 operator|.
 name|colorization
@@ -5068,9 +5044,6 @@ argument_list|(
 literal|"L_inear"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|LINEAR
 argument_list|,
 name|NULL
@@ -5080,9 +5053,6 @@ argument_list|(
 literal|"Bili_near"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|BILINEAR
 argument_list|,
 name|NULL
@@ -5092,9 +5062,6 @@ argument_list|(
 literal|"Sin_usoidal"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|SINUS
 argument_list|,
 name|NULL

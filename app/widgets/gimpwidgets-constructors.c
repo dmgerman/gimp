@@ -69,7 +69,7 @@ condition|)
 block|{
 name|menu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -77,9 +77,6 @@ name|callback
 argument_list|,
 name|data
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|initial
 argument_list|,
 name|_
@@ -87,9 +84,6 @@ argument_list|(
 literal|"Normal"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_NORMAL_MODE
 argument_list|,
 name|NULL
@@ -99,9 +93,6 @@ argument_list|(
 literal|"Dissolve"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_DISSOLVE_MODE
 argument_list|,
 name|NULL
@@ -111,9 +102,6 @@ argument_list|(
 literal|"Behind"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_BEHIND_MODE
 argument_list|,
 name|NULL
@@ -123,19 +111,13 @@ argument_list|(
 literal|"Color Erase"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_COLOR_ERASE_MODE
 argument_list|,
 name|NULL
 argument_list|,
 literal|"---"
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|NULL
+literal|0
 argument_list|,
 name|NULL
 argument_list|,
@@ -144,9 +126,6 @@ argument_list|(
 literal|"Multiply"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_MULTIPLY_MODE
 argument_list|,
 name|NULL
@@ -156,9 +135,6 @@ argument_list|(
 literal|"Divide"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_DIVIDE_MODE
 argument_list|,
 name|NULL
@@ -168,9 +144,6 @@ argument_list|(
 literal|"Screen"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_SCREEN_MODE
 argument_list|,
 name|NULL
@@ -180,19 +153,13 @@ argument_list|(
 literal|"Overlay"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_OVERLAY_MODE
 argument_list|,
 name|NULL
 argument_list|,
 literal|"---"
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|NULL
+literal|0
 argument_list|,
 name|NULL
 argument_list|,
@@ -201,9 +168,6 @@ argument_list|(
 literal|"Dodge"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_DODGE_MODE
 argument_list|,
 name|NULL
@@ -213,9 +177,6 @@ argument_list|(
 literal|"Burn"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_BURN_MODE
 argument_list|,
 name|NULL
@@ -225,9 +186,6 @@ argument_list|(
 literal|"Hard Light"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_HARDLIGHT_MODE
 argument_list|,
 name|NULL
@@ -237,9 +195,6 @@ argument_list|(
 literal|"Soft Light"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_SOFTLIGHT_MODE
 argument_list|,
 name|NULL
@@ -249,9 +204,6 @@ argument_list|(
 literal|"Grain Extract"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_GRAIN_EXTRACT_MODE
 argument_list|,
 name|NULL
@@ -261,19 +213,13 @@ argument_list|(
 literal|"Grain Merge"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_GRAIN_MERGE_MODE
 argument_list|,
 name|NULL
 argument_list|,
 literal|"---"
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|NULL
+literal|0
 argument_list|,
 name|NULL
 argument_list|,
@@ -282,9 +228,6 @@ argument_list|(
 literal|"Difference"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_DIFFERENCE_MODE
 argument_list|,
 name|NULL
@@ -294,9 +237,6 @@ argument_list|(
 literal|"Addition"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_ADDITION_MODE
 argument_list|,
 name|NULL
@@ -306,9 +246,6 @@ argument_list|(
 literal|"Subtract"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_SUBTRACT_MODE
 argument_list|,
 name|NULL
@@ -318,9 +255,6 @@ argument_list|(
 literal|"Darken Only"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_DARKEN_ONLY_MODE
 argument_list|,
 name|NULL
@@ -330,19 +264,13 @@ argument_list|(
 literal|"Lighten Only"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_LIGHTEN_ONLY_MODE
 argument_list|,
 name|NULL
 argument_list|,
 literal|"---"
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|NULL
+literal|0
 argument_list|,
 name|NULL
 argument_list|,
@@ -351,9 +279,6 @@ argument_list|(
 literal|"Hue"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_HUE_MODE
 argument_list|,
 name|NULL
@@ -363,9 +288,6 @@ argument_list|(
 literal|"Saturation"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_SATURATION_MODE
 argument_list|,
 name|NULL
@@ -375,9 +297,6 @@ argument_list|(
 literal|"Color"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_COLOR_MODE
 argument_list|,
 name|NULL
@@ -387,9 +306,6 @@ argument_list|(
 literal|"Value"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_VALUE_MODE
 argument_list|,
 name|NULL
@@ -402,7 +318,7 @@ else|else
 block|{
 name|menu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -410,9 +326,6 @@ name|callback
 argument_list|,
 name|data
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|initial
 argument_list|,
 name|_
@@ -420,9 +333,6 @@ argument_list|(
 literal|"Normal"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_NORMAL_MODE
 argument_list|,
 name|NULL
@@ -432,19 +342,13 @@ argument_list|(
 literal|"Dissolve"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_DISSOLVE_MODE
 argument_list|,
 name|NULL
 argument_list|,
 literal|"---"
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|NULL
+literal|0
 argument_list|,
 name|NULL
 argument_list|,
@@ -453,9 +357,6 @@ argument_list|(
 literal|"Multiply"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_MULTIPLY_MODE
 argument_list|,
 name|NULL
@@ -465,9 +366,6 @@ argument_list|(
 literal|"Divide"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_DIVIDE_MODE
 argument_list|,
 name|NULL
@@ -477,9 +375,6 @@ argument_list|(
 literal|"Screen"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_SCREEN_MODE
 argument_list|,
 name|NULL
@@ -489,19 +384,13 @@ argument_list|(
 literal|"Overlay"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_OVERLAY_MODE
 argument_list|,
 name|NULL
 argument_list|,
 literal|"---"
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|NULL
+literal|0
 argument_list|,
 name|NULL
 argument_list|,
@@ -510,9 +399,6 @@ argument_list|(
 literal|"Dodge"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_DODGE_MODE
 argument_list|,
 name|NULL
@@ -522,9 +408,6 @@ argument_list|(
 literal|"Burn"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_BURN_MODE
 argument_list|,
 name|NULL
@@ -534,9 +417,6 @@ argument_list|(
 literal|"Hard Light"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_HARDLIGHT_MODE
 argument_list|,
 name|NULL
@@ -546,9 +426,6 @@ argument_list|(
 literal|"Soft Light"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_SOFTLIGHT_MODE
 argument_list|,
 name|NULL
@@ -558,9 +435,6 @@ argument_list|(
 literal|"Grain Extract"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_GRAIN_EXTRACT_MODE
 argument_list|,
 name|NULL
@@ -570,19 +444,13 @@ argument_list|(
 literal|"Grain Merge"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_GRAIN_MERGE_MODE
 argument_list|,
 name|NULL
 argument_list|,
 literal|"---"
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|NULL
+literal|0
 argument_list|,
 name|NULL
 argument_list|,
@@ -591,9 +459,6 @@ argument_list|(
 literal|"Difference"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_DIFFERENCE_MODE
 argument_list|,
 name|NULL
@@ -603,9 +468,6 @@ argument_list|(
 literal|"Addition"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_ADDITION_MODE
 argument_list|,
 name|NULL
@@ -615,9 +477,6 @@ argument_list|(
 literal|"Subtract"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_SUBTRACT_MODE
 argument_list|,
 name|NULL
@@ -627,9 +486,6 @@ argument_list|(
 literal|"Darken Only"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_DARKEN_ONLY_MODE
 argument_list|,
 name|NULL
@@ -639,19 +495,13 @@ argument_list|(
 literal|"Lighten Only"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_LIGHTEN_ONLY_MODE
 argument_list|,
 name|NULL
 argument_list|,
 literal|"---"
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|NULL
+literal|0
 argument_list|,
 name|NULL
 argument_list|,
@@ -660,9 +510,6 @@ argument_list|(
 literal|"Hue"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_HUE_MODE
 argument_list|,
 name|NULL
@@ -672,9 +519,6 @@ argument_list|(
 literal|"Saturation"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_SATURATION_MODE
 argument_list|,
 name|NULL
@@ -684,9 +528,6 @@ argument_list|(
 literal|"Color"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_COLOR_MODE
 argument_list|,
 name|NULL
@@ -696,9 +537,6 @@ argument_list|(
 literal|"Value"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|GIMP_VALUE_MODE
 argument_list|,
 name|NULL

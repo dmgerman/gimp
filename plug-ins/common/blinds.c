@@ -135,7 +135,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c788a3e0108
+DECL|struct|__anon2a55da5b0108
 block|{
 DECL|member|img_bpp
 name|gint
@@ -1029,7 +1029,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -1048,9 +1048,6 @@ name|bvals
 operator|.
 name|orientation
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|bvals
 operator|.
 name|orientation
@@ -1060,9 +1057,6 @@ argument_list|(
 literal|"_Horizontal"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|HORIZONTAL
 argument_list|,
 name|NULL
@@ -1072,9 +1066,6 @@ argument_list|(
 literal|"_Vertical"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|VERTICAL
 argument_list|,
 name|NULL

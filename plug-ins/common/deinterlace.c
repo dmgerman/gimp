@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3c237c0103
+DECL|enum|__anon2c3ff3c20103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -1211,7 +1211,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -1228,20 +1228,14 @@ argument_list|,
 operator|&
 name|DeinterlaceValue
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|DeinterlaceValue
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"Keep O_dd Fields"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|ODD_FIELDS
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1250,10 +1244,7 @@ argument_list|(
 literal|"Keep _Even Fields"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|EVEN_FIELDS
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

@@ -82,7 +82,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f8fb920103
+DECL|enum|__anon299f55f40103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -100,7 +100,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f8fb920208
+DECL|struct|__anon299f55f40208
 block|{
 DECL|member|img
 name|gint32
@@ -178,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f8fb920308
+DECL|struct|__anon299f55f40308
 block|{
 DECL|member|width
 name|gint
@@ -2393,7 +2393,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -2412,9 +2412,6 @@ name|argp
 operator|->
 name|embossp
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|argp
 operator|->
 name|embossp
@@ -2424,9 +2421,6 @@ argument_list|(
 literal|"_Bumpmap"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|FUNCTION_BUMPMAP
 argument_list|,
 name|NULL
@@ -2436,9 +2430,6 @@ argument_list|(
 literal|"_Emboss"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|FUNCTION_EMBOSS
 argument_list|,
 name|NULL

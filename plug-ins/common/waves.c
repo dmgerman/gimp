@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7e32e80103
+DECL|enum|__anon27ddbf0d0103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -61,7 +61,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7e32e80208
+DECL|struct|__anon27ddbf0d0208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -1329,7 +1329,7 @@ argument_list|()
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -1348,9 +1348,6 @@ name|argp
 operator|->
 name|type
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|argp
 operator|->
 name|type
@@ -1360,9 +1357,6 @@ argument_list|(
 literal|"_Smear"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|MODE_SMEAR
 argument_list|,
 name|NULL
@@ -1372,9 +1366,6 @@ argument_list|(
 literal|"_Blacken"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|MODE_BLACKEN
 argument_list|,
 name|NULL

@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa8d32e0108
+DECL|struct|__anon2bc086f50108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -1229,7 +1229,7 @@ expr_stmt|;
 comment|/*  parameter settings  */
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -1248,22 +1248,16 @@ name|shvals
 operator|.
 name|orientation
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|shvals
 operator|.
 name|orientation
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"Shift _Horizontally"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|HORIZONTAL
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1272,10 +1266,7 @@ argument_list|(
 literal|"Shift _Vertically"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|VERTICAL
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

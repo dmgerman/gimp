@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c09dc930108
+DECL|struct|__anon29489ec90108
 block|{
 DECL|member|quality
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c09dc930208
+DECL|struct|__anon29489ec90208
 block|{
 DECL|member|cinfo
 name|struct
@@ -7342,7 +7342,7 @@ directive|endif
 comment|/* Subsampling */
 name|menu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -7356,37 +7356,25 @@ name|jsvals
 operator|.
 name|subsmp
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|jsvals
 operator|.
 name|subsmp
-argument_list|)
 argument_list|,
 literal|"2x2,1x1,1x1"
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 literal|0
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
 literal|"2x1,1x1,1x1 (4:2:2)"
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 literal|1
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
 literal|"1x1,1x1,1x1"
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 literal|2
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -7423,7 +7411,7 @@ expr_stmt|;
 comment|/* DCT method */
 name|menu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -7437,22 +7425,16 @@ name|jsvals
 operator|.
 name|dct
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|jsvals
 operator|.
 name|dct
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"Fast Integer"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 literal|1
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -7461,10 +7443,7 @@ argument_list|(
 literal|"Integer"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 literal|0
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -7473,10 +7452,7 @@ argument_list|(
 literal|"Floating-Point"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 literal|2
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

@@ -172,7 +172,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278afdd00108
+DECL|struct|__anon2c3912310108
 block|{
 DECL|member|x
 DECL|member|y
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278afdd00208
+DECL|struct|__anon2c3912310208
 block|{
 DECL|member|npts
 name|gint
@@ -212,7 +212,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278afdd00308
+DECL|struct|__anon2c3912310308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -241,7 +241,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278afdd00408
+DECL|struct|__anon2c3912310408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -2861,7 +2861,7 @@ expr_stmt|;
 comment|/*  tiling primitive  */
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -2880,9 +2880,6 @@ name|mvals
 operator|.
 name|tile_type
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|mvals
 operator|.
 name|tile_type
@@ -2892,9 +2889,6 @@ argument_list|(
 literal|"_Squares"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|SQUARES
 argument_list|,
 name|NULL
@@ -2904,9 +2898,6 @@ argument_list|(
 literal|"He_xagons"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|HEXAGONS
 argument_list|,
 name|NULL
@@ -2916,9 +2907,6 @@ argument_list|(
 literal|"Oc_tagons& Squares"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|OCTAGONS
 argument_list|,
 name|NULL

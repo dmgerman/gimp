@@ -3687,7 +3687,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -3704,9 +3704,6 @@ argument_list|,
 operator|&
 name|vector_type
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|0
 argument_list|,
 name|_

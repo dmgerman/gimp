@@ -1680,7 +1680,7 @@ argument_list|)
 expr_stmt|;
 name|optionmenu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -1696,9 +1696,6 @@ name|lightsource
 operator|.
 name|type
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|mapvals
 operator|.
 name|lightsource
@@ -1710,9 +1707,6 @@ argument_list|(
 literal|"None"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|NO_LIGHT
 argument_list|,
 name|NULL
@@ -1722,9 +1716,6 @@ argument_list|(
 literal|"Directional"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|DIRECTIONAL_LIGHT
 argument_list|,
 name|NULL
@@ -1734,14 +1725,11 @@ argument_list|(
 literal|"Point"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|POINT_LIGHT
 argument_list|,
 name|NULL
 argument_list|,
-comment|/*				      _("Spot"), 				      (gpointer) SPOT_LIGHT, NULL, */
+comment|/* _("Spot"),     SPOT_LIGHT,        NULL, */
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -4295,7 +4283,7 @@ argument_list|)
 expr_stmt|;
 name|optionmenu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -4309,9 +4297,6 @@ name|mapvals
 operator|.
 name|bumpmaptype
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|mapvals
 operator|.
 name|bumpmaptype
@@ -4321,9 +4306,6 @@ argument_list|(
 literal|"Linear"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|LINEAR_MAP
 argument_list|,
 name|NULL
@@ -4333,9 +4315,6 @@ argument_list|(
 literal|"Logarithmic"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|LOGARITHMIC_MAP
 argument_list|,
 name|NULL
@@ -4345,9 +4324,6 @@ argument_list|(
 literal|"Sinusoidal"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|SINUSOIDAL_MAP
 argument_list|,
 name|NULL
@@ -4357,9 +4333,6 @@ argument_list|(
 literal|"Spherical"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|SPHERICAL_MAP
 argument_list|,
 name|NULL

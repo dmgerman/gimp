@@ -162,7 +162,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b96010d0108
+DECL|struct|__anon274f03220108
 block|{
 DECL|member|resize
 name|Resize
@@ -1515,7 +1515,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -1541,22 +1541,16 @@ name|options
 operator|->
 name|merge_type
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|options
 operator|->
 name|merge_type
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"Expanded as necessary"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|GIMP_EXPAND_AS_NECESSARY
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1565,10 +1559,7 @@ argument_list|(
 literal|"Clipped to image"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|GIMP_CLIP_TO_IMAGE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1577,10 +1568,7 @@ argument_list|(
 literal|"Clipped to bottom layer"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|GIMP_CLIP_TO_BOTTOM_LAYER
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

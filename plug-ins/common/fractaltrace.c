@@ -216,7 +216,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon28ff9d930103
+DECL|enum|__anon2c89e8390103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -236,7 +236,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff9d930208
+DECL|struct|__anon2c89e8390208
 block|{
 DECL|member|x1
 name|gdouble
@@ -432,7 +432,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff9d930308
+DECL|struct|__anon2c89e8390308
 block|{
 DECL|member|x1
 name|gint
@@ -475,7 +475,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff9d930408
+DECL|struct|__anon2c89e8390408
 block|{
 DECL|member|width
 name|gint
@@ -1030,7 +1030,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff9d930508
+DECL|struct|__anon2c89e8390508
 block|{
 DECL|member|r
 name|guchar
@@ -2914,7 +2914,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff9d930608
+DECL|struct|__anon2c89e8390608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -4321,7 +4321,7 @@ expr_stmt|;
 comment|/*  Settings  */
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -4340,9 +4340,6 @@ name|parameters
 operator|.
 name|outside_type
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|parameters
 operator|.
 name|outside_type
@@ -4352,9 +4349,6 @@ argument_list|(
 literal|"_Warp"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|OUTSIDE_TYPE_WRAP
 argument_list|,
 name|NULL
@@ -4364,9 +4358,6 @@ argument_list|(
 literal|"_Transparent"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|OUTSIDE_TYPE_TRANSPARENT
 argument_list|,
 name|NULL
@@ -4376,9 +4367,6 @@ argument_list|(
 literal|"_Black"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|OUTSIDE_TYPE_BLACK
 argument_list|,
 name|NULL
@@ -4388,9 +4376,6 @@ argument_list|(
 literal|"_White"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|OUTSIDE_TYPE_WHITE
 argument_list|,
 name|NULL

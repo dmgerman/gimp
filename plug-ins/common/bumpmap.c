@@ -161,7 +161,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon275b3c330103
+DECL|enum|__anon2c8376690103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -179,7 +179,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275b3c330203
+DECL|enum|__anon2c8376690203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -198,7 +198,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b3c330308
+DECL|struct|__anon2c8376690308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -257,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b3c330408
+DECL|struct|__anon2c8376690408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -302,7 +302,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b3c330508
+DECL|struct|__anon2c8376690508
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -4172,7 +4172,7 @@ expr_stmt|;
 comment|/* Type of map */
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -4191,9 +4191,6 @@ name|bmvals
 operator|.
 name|type
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|bmvals
 operator|.
 name|type
@@ -4203,9 +4200,6 @@ argument_list|(
 literal|"_Linear Map"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|LINEAR
 argument_list|,
 name|NULL
@@ -4215,9 +4209,6 @@ argument_list|(
 literal|"_Spherical Map"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|SPHERICAL
 argument_list|,
 name|NULL
@@ -4227,9 +4218,6 @@ argument_list|(
 literal|"S_inuosidal Map"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|SINUOSIDAL
 argument_list|,
 name|NULL

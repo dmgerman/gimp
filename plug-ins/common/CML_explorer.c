@@ -214,7 +214,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dbaa720108
+DECL|struct|__anon29acfedc0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -241,7 +241,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dbaa720203
+DECL|enum|__anon29acfedc0203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -364,7 +364,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dbaa720303
+DECL|enum|__anon29acfedc0303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -503,7 +503,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dbaa720403
+DECL|enum|__anon29acfedc0403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -602,7 +602,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dbaa720503
+DECL|enum|__anon29acfedc0503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -694,7 +694,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dbaa720608
+DECL|struct|__anon29acfedc0608
 block|{
 DECL|member|function
 name|gint
@@ -767,7 +767,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dbaa720708
+DECL|struct|__anon29acfedc0708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1305,6 +1305,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
+modifier|*
 name|data
 parameter_list|)
 function_decl|;
@@ -1538,7 +1539,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dbaa720808
+DECL|struct|__anon29acfedc0808
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -7362,7 +7363,7 @@ argument_list|)
 expr_stmt|;
 name|optionmenu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -7376,9 +7377,6 @@ name|VALS
 operator|.
 name|initial_value
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|VALS
 operator|.
 name|initial_value
@@ -7391,9 +7389,6 @@ literal|0
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|0
 argument_list|,
 name|NULL
@@ -7406,9 +7401,6 @@ literal|1
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|1
 argument_list|,
 name|NULL
@@ -7421,9 +7413,6 @@ literal|2
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|2
 argument_list|,
 name|NULL
@@ -7436,9 +7425,6 @@ literal|3
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|3
 argument_list|,
 name|NULL
@@ -7451,9 +7437,6 @@ literal|4
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|4
 argument_list|,
 name|NULL
@@ -7466,9 +7449,6 @@ literal|5
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|5
 argument_list|,
 name|NULL
@@ -7481,9 +7461,6 @@ name|CML_INITIAL_RANDOM_INDEPENDENT
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|CML_INITIAL_RANDOM_INDEPENDENT
 argument_list|,
 name|NULL
@@ -7496,9 +7473,6 @@ name|CML_INITIAL_RANDOM_SHARED
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|CML_INITIAL_RANDOM_SHARED
 argument_list|,
 name|NULL
@@ -7511,9 +7485,6 @@ name|CML_INITIAL_RANDOM_FROM_SEED
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|CML_INITIAL_RANDOM_FROM_SEED
 argument_list|,
 name|NULL
@@ -7526,9 +7497,6 @@ name|CML_INITIAL_RANDOM_FROM_SEED_SHARED
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|CML_INITIAL_RANDOM_FROM_SEED_SHARED
 argument_list|,
 name|NULL
@@ -8121,7 +8089,7 @@ argument_list|)
 expr_stmt|;
 name|optionmenu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -8133,9 +8101,6 @@ argument_list|,
 operator|&
 name|copy_source
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|copy_source
 argument_list|,
 name|gettext
@@ -8146,9 +8111,6 @@ literal|0
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|0
 argument_list|,
 name|NULL
@@ -8161,9 +8123,6 @@ literal|1
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|1
 argument_list|,
 name|NULL
@@ -8176,9 +8135,6 @@ literal|2
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|2
 argument_list|,
 name|NULL
@@ -8215,7 +8171,7 @@ argument_list|)
 expr_stmt|;
 name|optionmenu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -8227,9 +8183,6 @@ argument_list|,
 operator|&
 name|copy_destination
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|copy_destination
 argument_list|,
 name|gettext
@@ -8240,9 +8193,6 @@ literal|0
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|0
 argument_list|,
 name|NULL
@@ -8255,9 +8205,6 @@ literal|1
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|1
 argument_list|,
 name|NULL
@@ -8270,9 +8217,6 @@ literal|2
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|2
 argument_list|,
 name|NULL
@@ -8454,7 +8398,7 @@ argument_list|)
 expr_stmt|;
 name|optionmenu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -8466,9 +8410,6 @@ argument_list|,
 operator|&
 name|selective_load_source
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|selective_load_source
 argument_list|,
 name|_
@@ -8476,9 +8417,6 @@ argument_list|(
 literal|"NULL"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|0
 argument_list|,
 name|NULL
@@ -8491,9 +8429,6 @@ literal|0
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|1
 argument_list|,
 name|NULL
@@ -8506,9 +8441,6 @@ literal|1
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|2
 argument_list|,
 name|NULL
@@ -8521,9 +8453,6 @@ literal|2
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|3
 argument_list|,
 name|NULL
@@ -8560,7 +8489,7 @@ argument_list|)
 expr_stmt|;
 name|optionmenu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -8572,9 +8501,6 @@ argument_list|,
 operator|&
 name|selective_load_destination
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|selective_load_destination
 argument_list|,
 name|_
@@ -8582,9 +8508,6 @@ argument_list|(
 literal|"NULL"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|0
 argument_list|,
 name|NULL
@@ -8597,9 +8520,6 @@ literal|0
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|1
 argument_list|,
 name|NULL
@@ -8612,9 +8532,6 @@ literal|1
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|2
 argument_list|,
 name|NULL
@@ -8627,9 +8544,6 @@ literal|2
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|3
 argument_list|,
 name|NULL
@@ -8817,7 +8731,7 @@ argument_list|)
 expr_stmt|;
 name|optionmenu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -8831,9 +8745,6 @@ name|param
 operator|->
 name|function
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|param
 operator|->
 name|function
@@ -8846,9 +8757,6 @@ name|CML_KEEP_VALUES
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|CML_KEEP_VALUES
 argument_list|,
 name|NULL
@@ -8861,9 +8769,6 @@ name|CML_KEEP_FIRST
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|CML_KEEP_FIRST
 argument_list|,
 name|NULL
@@ -8876,9 +8781,6 @@ name|CML_FILL
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|CML_FILL
 argument_list|,
 name|NULL
@@ -8891,9 +8793,6 @@ name|CML_LOGIST
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|CML_LOGIST
 argument_list|,
 name|NULL
@@ -8906,9 +8805,6 @@ name|CML_LOGIST_STEP
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|CML_LOGIST_STEP
 argument_list|,
 name|NULL
@@ -8921,9 +8817,6 @@ name|CML_POWER
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|CML_POWER
 argument_list|,
 name|NULL
@@ -8936,9 +8829,6 @@ name|CML_POWER_STEP
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|CML_POWER_STEP
 argument_list|,
 name|NULL
@@ -8951,9 +8841,6 @@ name|CML_REV_POWER
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|CML_REV_POWER
 argument_list|,
 name|NULL
@@ -8966,9 +8853,6 @@ name|CML_REV_POWER_STEP
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|CML_REV_POWER_STEP
 argument_list|,
 name|NULL
@@ -8981,9 +8865,6 @@ name|CML_DELTA
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|CML_DELTA
 argument_list|,
 name|NULL
@@ -8996,9 +8877,6 @@ name|CML_DELTA_STEP
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|CML_DELTA_STEP
 argument_list|,
 name|NULL
@@ -9011,9 +8889,6 @@ name|CML_SIN_CURVE
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|CML_SIN_CURVE
 argument_list|,
 name|NULL
@@ -9026,9 +8901,6 @@ name|CML_SIN_CURVE_STEP
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|CML_SIN_CURVE_STEP
 argument_list|,
 name|NULL
@@ -9087,7 +8959,7 @@ operator|++
 expr_stmt|;
 name|optionmenu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -9101,9 +8973,6 @@ name|param
 operator|->
 name|composition
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|param
 operator|->
 name|composition
@@ -9116,9 +8985,6 @@ name|COMP_NONE
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COMP_NONE
 argument_list|,
 name|NULL
@@ -9131,9 +8997,6 @@ name|COMP_MAX_LINEAR
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COMP_MAX_LINEAR
 argument_list|,
 name|NULL
@@ -9146,9 +9009,6 @@ name|COMP_MAX_LINEAR_P1
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COMP_MAX_LINEAR_P1
 argument_list|,
 name|NULL
@@ -9161,9 +9021,6 @@ name|COMP_MAX_LINEAR_M1
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COMP_MAX_LINEAR_M1
 argument_list|,
 name|NULL
@@ -9176,9 +9033,6 @@ name|COMP_MIN_LINEAR
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COMP_MIN_LINEAR
 argument_list|,
 name|NULL
@@ -9191,9 +9045,6 @@ name|COMP_MIN_LINEAR_P1
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COMP_MIN_LINEAR_P1
 argument_list|,
 name|NULL
@@ -9206,9 +9057,6 @@ name|COMP_MIN_LINEAR_M1
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COMP_MIN_LINEAR_M1
 argument_list|,
 name|NULL
@@ -9221,9 +9069,6 @@ name|COMP_MAX_LINEAR_P1L
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COMP_MAX_LINEAR_P1L
 argument_list|,
 name|NULL
@@ -9236,9 +9081,6 @@ name|COMP_MAX_LINEAR_P1U
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COMP_MAX_LINEAR_P1U
 argument_list|,
 name|NULL
@@ -9251,9 +9093,6 @@ name|COMP_MAX_LINEAR_M1L
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COMP_MAX_LINEAR_M1L
 argument_list|,
 name|NULL
@@ -9266,9 +9105,6 @@ name|COMP_MAX_LINEAR_M1U
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COMP_MAX_LINEAR_M1U
 argument_list|,
 name|NULL
@@ -9281,9 +9117,6 @@ name|COMP_MIN_LINEAR_P1L
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COMP_MIN_LINEAR_P1L
 argument_list|,
 name|NULL
@@ -9296,9 +9129,6 @@ name|COMP_MIN_LINEAR_P1U
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COMP_MIN_LINEAR_P1U
 argument_list|,
 name|NULL
@@ -9311,9 +9141,6 @@ name|COMP_MIN_LINEAR_M1L
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COMP_MIN_LINEAR_M1L
 argument_list|,
 name|NULL
@@ -9326,9 +9153,6 @@ name|COMP_MIN_LINEAR_M1U
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COMP_MIN_LINEAR_M1U
 argument_list|,
 name|NULL
@@ -9387,7 +9211,7 @@ operator|++
 expr_stmt|;
 name|optionmenu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -9401,9 +9225,6 @@ name|param
 operator|->
 name|arrange
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|param
 operator|->
 name|arrange
@@ -9416,9 +9237,6 @@ name|STANDARD
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|STANDARD
 argument_list|,
 name|NULL
@@ -9431,9 +9249,6 @@ name|AVERAGE
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|AVERAGE
 argument_list|,
 name|NULL
@@ -9446,9 +9261,6 @@ name|ANTILOG
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|ANTILOG
 argument_list|,
 name|NULL
@@ -9461,9 +9273,6 @@ name|RAND_POWER0
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|RAND_POWER0
 argument_list|,
 name|NULL
@@ -9476,9 +9285,6 @@ name|RAND_POWER1
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|RAND_POWER1
 argument_list|,
 name|NULL
@@ -9491,9 +9297,6 @@ name|RAND_POWER2
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|RAND_POWER2
 argument_list|,
 name|NULL
@@ -9506,9 +9309,6 @@ name|MULTIPLY_RANDOM0
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|MULTIPLY_RANDOM0
 argument_list|,
 name|NULL
@@ -9521,9 +9321,6 @@ name|MULTIPLY_RANDOM1
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|MULTIPLY_RANDOM1
 argument_list|,
 name|NULL
@@ -9536,9 +9333,6 @@ name|MULTIPLY_GRADIENT
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|MULTIPLY_GRADIENT
 argument_list|,
 name|NULL
@@ -9551,9 +9345,6 @@ name|RAND_AND_P
 index|]
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|RAND_AND_P
 argument_list|,
 name|NULL
@@ -10245,19 +10036,16 @@ index|[
 literal|0
 index|]
 operator|=
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|channel_id
+argument_list|)
 expr_stmt|;
 name|chank
 index|[
 literal|1
 index|]
 operator|=
-operator|(
-name|gpointer
-operator|)
 name|param
 expr_stmt|;
 name|button
@@ -10743,7 +10531,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|function_graph_new (GtkWidget * widget,gpointer data)
+DECL|function|function_graph_new (GtkWidget * widget,gpointer * data)
 name|function_graph_new
 parameter_list|(
 name|GtkWidget
@@ -10751,6 +10539,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
+modifier|*
 name|data
 parameter_list|)
 block|{
@@ -10773,31 +10562,22 @@ decl_stmt|;
 name|gint
 name|channel_id
 init|=
-operator|*
-operator|(
-name|int
-operator|*
-operator|)
+name|GPOINTER_TO_INT
+argument_list|(
 name|data
+index|[
+literal|0
+index|]
+argument_list|)
 decl_stmt|;
 name|CML_PARAM
 modifier|*
 name|param
 init|=
-operator|(
-name|CML_PARAM
-operator|*
-operator|)
-operator|*
-operator|(
-operator|(
-name|gpointer
-operator|*
-operator|)
 name|data
-operator|+
+index|[
 literal|1
-operator|)
+index|]
 decl_stmt|;
 name|dlg
 operator|=

@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c107ead0103
+DECL|enum|__anon2a0fd3ec0103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c107ead0203
+DECL|enum|__anon2a0fd3ec0203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c107ead0303
+DECL|enum|__anon2a0fd3ec0303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c107ead0403
+DECL|enum|__anon2a0fd3ec0403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -260,7 +260,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c107ead0508
+DECL|struct|__anon2a0fd3ec0508
 block|{
 DECL|member|h_style
 name|gint
@@ -1586,7 +1586,7 @@ argument_list|)
 expr_stmt|;
 name|optionmenu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -1600,9 +1600,6 @@ name|VALS
 operator|.
 name|h_style
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|VALS
 operator|.
 name|h_style
@@ -1612,9 +1609,6 @@ argument_list|(
 literal|"None"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|H_NONE
 argument_list|,
 name|NULL
@@ -1624,9 +1618,6 @@ argument_list|(
 literal|"Collect"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|H_COLLECT
 argument_list|,
 name|NULL
@@ -1636,9 +1627,6 @@ argument_list|(
 literal|"Fill (left to right)"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|LEFT2RIGHT
 argument_list|,
 name|NULL
@@ -1648,9 +1636,6 @@ argument_list|(
 literal|"Fill (right to left)"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|RIGHT2LEFT
 argument_list|,
 name|NULL
@@ -1660,9 +1645,6 @@ argument_list|(
 literal|"Snap to Grid"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|SNAP2HGRID
 argument_list|,
 name|NULL
@@ -1699,7 +1681,7 @@ argument_list|)
 expr_stmt|;
 name|optionmenu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -1713,9 +1695,6 @@ name|VALS
 operator|.
 name|h_base
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|VALS
 operator|.
 name|h_base
@@ -1725,9 +1704,6 @@ argument_list|(
 literal|"Left Edge"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|H_BASE_LEFT
 argument_list|,
 name|NULL
@@ -1737,9 +1713,6 @@ argument_list|(
 literal|"Center"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|H_BASE_CENTER
 argument_list|,
 name|NULL
@@ -1749,9 +1722,6 @@ argument_list|(
 literal|"Right Edge"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|H_BASE_RIGHT
 argument_list|,
 name|NULL
@@ -1788,7 +1758,7 @@ argument_list|)
 expr_stmt|;
 name|optionmenu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -1802,9 +1772,6 @@ name|VALS
 operator|.
 name|v_style
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|VALS
 operator|.
 name|v_style
@@ -1814,9 +1781,6 @@ argument_list|(
 literal|"None"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|V_NONE
 argument_list|,
 name|NULL
@@ -1826,9 +1790,6 @@ argument_list|(
 literal|"Collect"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|V_COLLECT
 argument_list|,
 name|NULL
@@ -1838,9 +1799,6 @@ argument_list|(
 literal|"Fill (top to bottom)"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|TOP2BOTTOM
 argument_list|,
 name|NULL
@@ -1850,9 +1808,6 @@ argument_list|(
 literal|"Fill (bottom to top)"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|BOTTOM2TOP
 argument_list|,
 name|NULL
@@ -1862,9 +1817,6 @@ argument_list|(
 literal|"Snap to Grid"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|SNAP2VGRID
 argument_list|,
 name|NULL
@@ -1901,7 +1853,7 @@ argument_list|)
 expr_stmt|;
 name|optionmenu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -1915,9 +1867,6 @@ name|VALS
 operator|.
 name|v_base
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|VALS
 operator|.
 name|v_base
@@ -1927,9 +1876,6 @@ argument_list|(
 literal|"Top Edge"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|V_BASE_TOP
 argument_list|,
 name|NULL
@@ -1939,9 +1885,6 @@ argument_list|(
 literal|"Center"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|V_BASE_CENTER
 argument_list|,
 name|NULL
@@ -1951,9 +1894,6 @@ argument_list|(
 literal|"Bottom Edge"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|V_BASE_BOTTOM
 argument_list|,
 name|NULL

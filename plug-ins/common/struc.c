@@ -40878,7 +40878,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7601fd0103
+DECL|enum|__anon2b9861700103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40898,7 +40898,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7601fd0208
+DECL|struct|__anon2b9861700208
 block|{
 DECL|member|direction
 name|gint
@@ -41570,7 +41570,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -41589,22 +41589,16 @@ name|svals
 operator|.
 name|direction
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|svals
 operator|.
 name|direction
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"_Top-Right"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|TOP_RIGHT
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -41613,10 +41607,7 @@ argument_list|(
 literal|"Top-_Left"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|TOP_LEFT
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -41625,10 +41616,7 @@ argument_list|(
 literal|"_Bottom-Left"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|BOTTOM_LEFT
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -41637,10 +41625,7 @@ argument_list|(
 literal|"Bottom-_Right"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|BOTTOM_RIGHT
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

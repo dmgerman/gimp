@@ -75,7 +75,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a033180108
+DECL|struct|__anon2b25c0320108
 block|{
 DECL|member|img
 name|gint32
@@ -106,7 +106,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a033180203
+DECL|enum|__anon2b25c0320203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -1556,7 +1556,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -1575,9 +1575,6 @@ name|argp
 operator|->
 name|filter
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|argp
 operator|->
 name|filter
@@ -1587,9 +1584,6 @@ argument_list|(
 literal|"_Alpha Trimmed Mean"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|filter_alpha_trim
 argument_list|,
 name|NULL
@@ -1599,9 +1593,6 @@ argument_list|(
 literal|"Op_timal Estimation"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|filter_opt_est
 argument_list|,
 name|NULL
@@ -1611,9 +1602,6 @@ argument_list|(
 literal|"_Edge Enhancement"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|filter_edge_enhance
 argument_list|,
 name|NULL

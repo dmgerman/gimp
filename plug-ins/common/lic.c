@@ -163,7 +163,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5e93490108
+DECL|struct|__anon27dceec70108
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -3372,7 +3372,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -3391,9 +3391,6 @@ name|licvals
 operator|.
 name|effect_channel
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|licvals
 operator|.
 name|effect_channel
@@ -3403,9 +3400,6 @@ argument_list|(
 literal|"_Hue"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|0
 argument_list|,
 name|NULL
@@ -3415,9 +3409,6 @@ argument_list|(
 literal|"_Saturation"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|1
 argument_list|,
 name|NULL
@@ -3427,9 +3418,6 @@ argument_list|(
 literal|"_Brightness"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|2
 argument_list|,
 name|NULL
@@ -3454,7 +3442,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -3473,9 +3461,6 @@ name|licvals
 operator|.
 name|effect_operator
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|licvals
 operator|.
 name|effect_operator
@@ -3485,9 +3470,6 @@ argument_list|(
 literal|"_Derivative"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|0
 argument_list|,
 name|NULL
@@ -3497,9 +3479,6 @@ argument_list|(
 literal|"_Gradient"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|1
 argument_list|,
 name|NULL
@@ -3524,7 +3503,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -3543,9 +3522,6 @@ name|licvals
 operator|.
 name|effect_convolve
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|licvals
 operator|.
 name|effect_convolve
@@ -3555,9 +3531,6 @@ argument_list|(
 literal|"_With White Noise"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|0
 argument_list|,
 name|NULL
@@ -3567,9 +3540,6 @@ argument_list|(
 literal|"W_ith Source Image"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|1
 argument_list|,
 name|NULL

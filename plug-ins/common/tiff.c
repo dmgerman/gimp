@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2747ea2f0108
+DECL|struct|__anon274e86e50108
 block|{
 DECL|member|compression
 name|gint
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2747ea2f0208
+DECL|struct|__anon274e86e50208
 block|{
 DECL|member|ID
 name|gint32
@@ -7755,7 +7755,7 @@ expr_stmt|;
 comment|/*  compression  */
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -7774,22 +7774,16 @@ name|tsvals
 operator|.
 name|compression
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|tsvals
 operator|.
 name|compression
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"_None"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|COMPRESSION_NONE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -7798,10 +7792,7 @@ argument_list|(
 literal|"_LZW"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|COMPRESSION_LZW
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -7810,10 +7801,7 @@ argument_list|(
 literal|"_Pack Bits"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|COMPRESSION_PACKBITS
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -7822,10 +7810,7 @@ argument_list|(
 literal|"_Deflate"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|COMPRESSION_DEFLATE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -7834,10 +7819,7 @@ argument_list|(
 literal|"_JPEG"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|COMPRESSION_JPEG
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

@@ -74,7 +74,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4065ba0103
+DECL|enum|__anon28b911d70103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4065ba0203
+DECL|enum|__anon28b911d70203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -190,7 +190,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a4065ba0308
+DECL|struct|__anon28b911d70308
 block|{
 DECL|member|params
 name|PluginParams
@@ -210,7 +210,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a4065ba0408
+DECL|struct|__anon28b911d70408
 block|{
 DECL|member|x0
 name|gint
@@ -577,7 +577,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a4065ba0508
+DECL|struct|__anon28b911d70508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject
@@ -1424,7 +1424,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -1445,9 +1445,6 @@ name|params
 operator|.
 name|fractional_type
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|p
 operator|.
 name|params
@@ -1459,9 +1456,6 @@ argument_list|(
 literal|"_Background"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|FRACTIONAL_TYPE_BACKGROUND
 argument_list|,
 name|NULL
@@ -1471,9 +1465,6 @@ argument_list|(
 literal|"_Ignore"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|FRACTIONAL_TYPE_IGNORE
 argument_list|,
 name|NULL
@@ -1483,9 +1474,6 @@ argument_list|(
 literal|"_Force"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|FRACTIONAL_TYPE_FORCE
 argument_list|,
 name|NULL
@@ -1873,7 +1861,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -1894,9 +1882,6 @@ name|params
 operator|.
 name|background_type
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|p
 operator|.
 name|params
@@ -1908,9 +1893,6 @@ argument_list|(
 literal|"_Transparent"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|BACKGROUND_TYPE_TRANSPARENT
 argument_list|,
 name|NULL
@@ -1920,9 +1902,6 @@ argument_list|(
 literal|"I_nverted Image"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|BACKGROUND_TYPE_INVERTED
 argument_list|,
 name|NULL
@@ -1932,9 +1911,6 @@ argument_list|(
 literal|"Im_age"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|BACKGROUND_TYPE_IMAGE
 argument_list|,
 name|NULL
@@ -1944,9 +1920,6 @@ argument_list|(
 literal|"Fo_reground Color"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|BACKGROUND_TYPE_FOREGROUND
 argument_list|,
 name|NULL
@@ -1956,9 +1929,6 @@ argument_list|(
 literal|"Bac_kground Color"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|BACKGROUND_TYPE_BACKGROUND
 argument_list|,
 name|NULL
@@ -1968,9 +1938,6 @@ argument_list|(
 literal|"S_elect here:"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|BACKGROUND_TYPE_COLOR
 argument_list|,
 operator|&

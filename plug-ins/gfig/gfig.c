@@ -902,7 +902,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b30bdab0108
+DECL|struct|__anon2b0047350108
 block|{
 DECL|member|gridspacing
 name|void
@@ -6295,7 +6295,7 @@ name|option_menu
 decl_stmt|;
 name|option_menu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -6306,21 +6306,15 @@ argument_list|)
 argument_list|,
 name|which_way
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 operator|*
 name|which_way
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"Clockwise"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 literal|0
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -6329,10 +6323,7 @@ argument_list|(
 literal|"Anti-Clockwise"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 literal|1
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -7618,7 +7609,7 @@ argument_list|)
 expr_stmt|;
 name|option_menu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -7630,22 +7621,16 @@ argument_list|,
 operator|*
 name|pv
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|selvals
 operator|.
 name|brshtype
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"Brush"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|BRUSH_BRUSH_TYPE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -7654,10 +7639,7 @@ argument_list|(
 literal|"Airbrush"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|BRUSH_AIRBRUSH_TYPE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -7666,10 +7648,7 @@ argument_list|(
 literal|"Pencil"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|BRUSH_PENCIL_TYPE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -7678,10 +7657,7 @@ argument_list|(
 literal|"Pattern"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|BRUSH_PATTERN_TYPE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -9156,7 +9132,7 @@ argument_list|)
 expr_stmt|;
 name|page_menu_layers
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -9177,10 +9153,7 @@ argument_list|(
 literal|"Original"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|ORIGINAL_LAYER
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -9189,10 +9162,7 @@ argument_list|(
 literal|"New"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|SINGLE_LAYER
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -9201,10 +9171,7 @@ argument_list|(
 literal|"Multiple"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|MULTI_LAYER
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -9267,7 +9234,7 @@ argument_list|)
 expr_stmt|;
 name|page_menu_type
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -9288,10 +9255,7 @@ argument_list|(
 literal|"Brush"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|PAINT_BRUSH_TYPE
-argument_list|)
 argument_list|,
 operator|&
 name|item1
@@ -9301,10 +9265,7 @@ argument_list|(
 literal|"Selection"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|PAINT_SELECTION_TYPE
-argument_list|)
 argument_list|,
 operator|&
 name|item2
@@ -9314,10 +9275,7 @@ argument_list|(
 literal|"Selection+Fill"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|PAINT_SELECTION_FILL_TYPE
-argument_list|)
 argument_list|,
 operator|&
 name|item3
@@ -9367,7 +9325,7 @@ argument_list|)
 expr_stmt|;
 name|page_menu_bg
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -9388,10 +9346,7 @@ argument_list|(
 literal|"Transparent"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|LAYER_TRANS_BG
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -9400,10 +9355,7 @@ argument_list|(
 literal|"Background"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|LAYER_BG_BG
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -9412,10 +9364,7 @@ argument_list|(
 literal|"Foreground"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|LAYER_FG_BG
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -9424,10 +9373,7 @@ argument_list|(
 literal|"White"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|LAYER_WHITE_BG
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -9436,10 +9382,7 @@ argument_list|(
 literal|"Copy"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|LAYER_COPY_BG
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -11238,7 +11181,7 @@ comment|/* The secltion settings -    * 1) Type (option menu)    * 2) Anti A (to
 comment|/* 1 */
 name|menu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -11259,10 +11202,7 @@ argument_list|(
 literal|"Add"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|ADD
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -11271,10 +11211,7 @@ argument_list|(
 literal|"Subtract"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|SUBTRACT
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -11283,10 +11220,7 @@ argument_list|(
 literal|"Replace"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|REPLACE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -11295,10 +11229,7 @@ argument_list|(
 literal|"Intersect"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|INTERSECT
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -11547,7 +11478,7 @@ expr_stmt|;
 comment|/* 5 */
 name|menu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -11568,10 +11499,7 @@ argument_list|(
 literal|"Pattern"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|FILL_PATTERN
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -11580,10 +11508,7 @@ argument_list|(
 literal|"Foreground"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|FILL_FOREGROUND
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -11592,10 +11517,7 @@ argument_list|(
 literal|"Background"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|FILL_BACKGROUND
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -11726,7 +11648,7 @@ expr_stmt|;
 comment|/* 7 */
 name|menu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -11747,10 +11669,7 @@ argument_list|(
 literal|"Each Selection"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|FILL_EACH
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -11759,10 +11678,7 @@ argument_list|(
 literal|"All Selections"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|FILL_AFTER
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -11799,7 +11715,7 @@ expr_stmt|;
 comment|/* 8 */
 name|menu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -11820,10 +11736,7 @@ argument_list|(
 literal|"Segment"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|ARC_SEGMENT
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -11832,10 +11745,7 @@ argument_list|(
 literal|"Sector"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|ARC_SECTOR
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -12193,7 +12103,7 @@ argument_list|)
 expr_stmt|;
 name|menu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -12214,10 +12124,7 @@ argument_list|(
 literal|"Rectangle"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|RECT_GRID
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -12226,10 +12133,7 @@ argument_list|(
 literal|"Polar"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|POLAR_GRID
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -12238,10 +12142,7 @@ argument_list|(
 literal|"Isometric"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|ISO_GRID
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -12283,7 +12184,7 @@ name|menu
 expr_stmt|;
 name|menu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -12304,10 +12205,7 @@ argument_list|(
 literal|"Normal"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|GTK_STATE_NORMAL
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -12316,10 +12214,7 @@ argument_list|(
 literal|"Black"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|GFIG_BLACK_GC
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -12328,10 +12223,7 @@ argument_list|(
 literal|"White"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|GFIG_WHITE_GC
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -12340,10 +12232,7 @@ argument_list|(
 literal|"Grey"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|GFIG_GREY_GC
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -12352,10 +12241,7 @@ argument_list|(
 literal|"Darker"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|GTK_STATE_ACTIVE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -12364,10 +12250,7 @@ argument_list|(
 literal|"Lighter"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|GTK_STATE_PRELIGHT
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -12376,10 +12259,7 @@ argument_list|(
 literal|"Very Dark"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|GTK_STATE_SELECTED
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

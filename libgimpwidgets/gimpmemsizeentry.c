@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c74a86e0103
+DECL|enum|__anon276b06dc0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -803,7 +803,7 @@ name|entry
 operator|->
 name|menu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -814,20 +814,14 @@ argument_list|)
 argument_list|,
 name|entry
 argument_list|,
-name|GUINT_TO_POINTER
-argument_list|(
 name|shift
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"KiloBytes"
 argument_list|)
 argument_list|,
-name|GUINT_TO_POINTER
-argument_list|(
 literal|10
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -836,10 +830,7 @@ argument_list|(
 literal|"MegaBytes"
 argument_list|)
 argument_list|,
-name|GUINT_TO_POINTER
-argument_list|(
 literal|20
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -848,10 +839,7 @@ argument_list|(
 literal|"GigaBytes"
 argument_list|)
 argument_list|,
-name|GUINT_TO_POINTER
-argument_list|(
 literal|30
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

@@ -2224,7 +2224,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -2241,20 +2241,14 @@ argument_list|,
 operator|&
 name|compression
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|compression
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"No Compression"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|SGI_COMP_NONE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2263,10 +2257,7 @@ argument_list|(
 literal|"RLE Compression"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|SGI_COMP_RLE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2275,10 +2266,7 @@ argument_list|(
 literal|"Aggressive RLE\n(Not Supported by SGI)"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|SGI_COMP_ARLE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

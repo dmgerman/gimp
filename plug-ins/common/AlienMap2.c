@@ -30523,7 +30523,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c49a210108
+DECL|struct|__anon287ee1920108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -30574,7 +30574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c49a210208
+DECL|struct|__anon287ee1920208
 block|{
 DECL|member|run
 name|gint
@@ -32673,7 +32673,7 @@ expr_stmt|;
 comment|/*  Mode toggle box  */
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -32692,9 +32692,6 @@ name|wvals
 operator|.
 name|colormodel
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|wvals
 operator|.
 name|colormodel
@@ -32704,9 +32701,6 @@ argument_list|(
 literal|"_RGB Color Model"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|RGB_MODEL
 argument_list|,
 name|NULL
@@ -32716,9 +32710,6 @@ argument_list|(
 literal|"_HSL Color Model"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|HSL_MODEL
 argument_list|,
 name|NULL

@@ -3823,7 +3823,7 @@ argument_list|)
 expr_stmt|;
 name|toggle_vbox
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -3839,9 +3839,6 @@ name|wvals
 operator|.
 name|fractaltype
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|wvals
 operator|.
 name|fractaltype
@@ -3851,9 +3848,6 @@ argument_list|(
 literal|"Mandelbrot"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|TYPE_MANDELBROT
 argument_list|,
 operator|&
@@ -3871,9 +3865,6 @@ argument_list|(
 literal|"Julia"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|TYPE_JULIA
 argument_list|,
 operator|&
@@ -3891,9 +3882,6 @@ argument_list|(
 literal|"Barnsley 1"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|TYPE_BARNSLEY_1
 argument_list|,
 operator|&
@@ -3911,9 +3899,6 @@ argument_list|(
 literal|"Barnsley 2"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|TYPE_BARNSLEY_2
 argument_list|,
 operator|&
@@ -3931,9 +3916,6 @@ argument_list|(
 literal|"Barnsley 3"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|TYPE_BARNSLEY_3
 argument_list|,
 operator|&
@@ -3951,9 +3933,6 @@ argument_list|(
 literal|"Spider"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|TYPE_SPIDER
 argument_list|,
 operator|&
@@ -3971,9 +3950,6 @@ argument_list|(
 literal|"Man'o'war"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|TYPE_MAN_O_WAR
 argument_list|,
 operator|&
@@ -3991,9 +3967,6 @@ argument_list|(
 literal|"Lambda"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|TYPE_LAMBDA
 argument_list|,
 operator|&
@@ -4011,9 +3984,6 @@ argument_list|(
 literal|"Sierpinski"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|TYPE_SIERPINSKI
 argument_list|,
 operator|&
@@ -4983,7 +4953,7 @@ expr_stmt|;
 comment|/*  Redmode radio frame  */
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -5002,9 +4972,6 @@ name|wvals
 operator|.
 name|redmode
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|wvals
 operator|.
 name|redmode
@@ -5014,9 +4981,6 @@ argument_list|(
 literal|"Sine"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|SINUS
 argument_list|,
 operator|&
@@ -5032,9 +4996,6 @@ argument_list|(
 literal|"Cosine"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COSINUS
 argument_list|,
 operator|&
@@ -5050,9 +5011,6 @@ argument_list|(
 literal|"None"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|NONE
 argument_list|,
 operator|&
@@ -5231,7 +5189,7 @@ expr_stmt|;
 comment|/*  Greenmode radio frame  */
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -5250,9 +5208,6 @@ name|wvals
 operator|.
 name|greenmode
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|wvals
 operator|.
 name|greenmode
@@ -5262,9 +5217,6 @@ argument_list|(
 literal|"Sine"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|SINUS
 argument_list|,
 operator|&
@@ -5280,9 +5232,6 @@ argument_list|(
 literal|"Cosine"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COSINUS
 argument_list|,
 operator|&
@@ -5298,9 +5247,6 @@ argument_list|(
 literal|"None"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|NONE
 argument_list|,
 operator|&
@@ -5479,7 +5425,7 @@ expr_stmt|;
 comment|/*  Bluemode radio frame  */
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -5498,9 +5444,6 @@ name|wvals
 operator|.
 name|bluemode
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|wvals
 operator|.
 name|bluemode
@@ -5510,9 +5453,6 @@ argument_list|(
 literal|"Sine"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|SINUS
 argument_list|,
 operator|&
@@ -5528,9 +5468,6 @@ argument_list|(
 literal|"Cosine"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COSINUS
 argument_list|,
 operator|&
@@ -5546,9 +5483,6 @@ argument_list|(
 literal|"None"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|NONE
 argument_list|,
 operator|&

@@ -129,7 +129,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbff9cc0103
+DECL|enum|__anon2c3dc3e50103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbff9cc0208
+DECL|struct|__anon2c3dc3e50208
 block|{
 DECL|member|run
 name|gboolean
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbff9cc0308
+DECL|struct|__anon2c3dc3e50308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -5744,7 +5744,7 @@ argument_list|)
 expr_stmt|;
 name|vbox2
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -5760,22 +5760,16 @@ name|iwarp_vals
 operator|.
 name|deform_mode
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|iwarp_vals
 operator|.
 name|deform_mode
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"_Move"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|MOVE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -5784,10 +5778,7 @@ argument_list|(
 literal|"_Grow"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|GROW
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -5796,10 +5787,7 @@ argument_list|(
 literal|"S_wirl CCW"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|SWIRL_CCW
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -5808,10 +5796,7 @@ argument_list|(
 literal|"Remo_ve"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|REMOVE
-argument_list|)
 argument_list|,
 operator|&
 name|widget
@@ -5824,10 +5809,7 @@ argument_list|(
 literal|"S_hrink"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|SHRINK
-argument_list|)
 argument_list|,
 operator|&
 name|widget
@@ -5840,10 +5822,7 @@ argument_list|(
 literal|"Sw_irl CW"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|SWIRL_CW
-argument_list|)
 argument_list|,
 operator|&
 name|widget

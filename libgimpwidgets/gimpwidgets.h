@@ -202,6 +202,30 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_int_option_menu_new
+parameter_list|(
+name|gboolean
+name|menu_only
+parameter_list|,
+name|GCallback
+name|menu_item_callback
+parameter_list|,
+name|gpointer
+name|menu_item_callback_data
+parameter_list|,
+name|gint
+name|initial
+parameter_list|,
+comment|/* item_data */
+comment|/* specify menu items as va_list: 				       *  gchar          *label, 				       *  gint            item_data, 				       *  GtkWidget     **widget_ptr, 				       */
+modifier|...
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_option_menu_set_history
 parameter_list|(
@@ -293,6 +317,35 @@ name|initial
 parameter_list|,
 comment|/* item_data */
 comment|/* specify radio buttons as va_list: 				     *  const gchar    *label, 				     *  gpointer        item_data, 				     *  GtkWidget     **widget_ptr, 				     */
+modifier|...
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_int_radio_group_new
+parameter_list|(
+name|gboolean
+name|in_frame
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|frame_title
+parameter_list|,
+name|GCallback
+name|radio_button_callback
+parameter_list|,
+name|gpointer
+name|radio_button_callback_data
+parameter_list|,
+name|gint
+name|initial
+parameter_list|,
+comment|/* item_data */
+comment|/* specify radio buttons as va_list: 				       *  const gchar    *label, 				       *  gint            item_data, 				       *  GtkWidget     **widget_ptr, 				       */
 modifier|...
 parameter_list|)
 function_decl|;

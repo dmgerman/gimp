@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287c2c8c0103
+DECL|enum|__anon2b393dfc0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -126,7 +126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287c2c8c0203
+DECL|enum|__anon2b393dfc0203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -142,7 +142,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287c2c8c0303
+DECL|enum|__anon2b393dfc0303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -4029,7 +4029,7 @@ expr_stmt|;
 comment|/*********************************************************     radio buttons for choosing wind rendering algorithm     ******************************************************/
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -4048,22 +4048,16 @@ name|config
 operator|.
 name|alg
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|config
 operator|.
 name|alg
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"_Wind"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|RENDER_WIND
-argument_list|)
 argument_list|,
 operator|&
 name|style1
@@ -4073,10 +4067,7 @@ argument_list|(
 literal|"_Blast"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|RENDER_BLAST
-argument_list|)
 argument_list|,
 operator|&
 name|style2
@@ -4146,7 +4137,7 @@ expr_stmt|;
 comment|/******************************************************     radio buttons for choosing LEFT or RIGHT     **************************************************/
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -4165,22 +4156,16 @@ name|config
 operator|.
 name|direction
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|config
 operator|.
 name|direction
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"_Left"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|LEFT
-argument_list|)
 argument_list|,
 operator|&
 name|dir1
@@ -4190,10 +4175,7 @@ argument_list|(
 literal|"_Right"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|RIGHT
-argument_list|)
 argument_list|,
 operator|&
 name|dir2
@@ -4263,7 +4245,7 @@ expr_stmt|;
 comment|/*****************************************************     radio buttons for choosing BOTH, LEADING, TRAILING     ***************************************************/
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -4282,22 +4264,16 @@ name|config
 operator|.
 name|edge
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|config
 operator|.
 name|edge
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"L_eading"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|LEADING
-argument_list|)
 argument_list|,
 operator|&
 name|edge1
@@ -4307,10 +4283,7 @@ argument_list|(
 literal|"Tr_ailing"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|TRAILING
-argument_list|)
 argument_list|,
 operator|&
 name|edge2
@@ -4320,10 +4293,7 @@ argument_list|(
 literal|"Bot_h"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|BOTH
-argument_list|)
 argument_list|,
 operator|&
 name|edge3

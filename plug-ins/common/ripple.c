@@ -124,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b42260108
+DECL|struct|__anon2a0ce7bd0108
 block|{
 DECL|member|period
 name|gint
@@ -904,7 +904,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon288b42260208
+DECL|struct|__anon2a0ce7bd0208
 typedef|typedef
 struct|struct
 block|{
@@ -2177,7 +2177,7 @@ expr_stmt|;
 comment|/*  Orientation toggle box  */
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -2196,22 +2196,16 @@ name|rvals
 operator|.
 name|orientation
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|rvals
 operator|.
 name|orientation
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"_Horizontal"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|HORIZONTAL
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2220,10 +2214,7 @@ argument_list|(
 literal|"_Vertical"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|VERTICAL
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2268,7 +2259,7 @@ expr_stmt|;
 comment|/*  Edges toggle box  */
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -2287,9 +2278,6 @@ name|rvals
 operator|.
 name|edges
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|rvals
 operator|.
 name|edges
@@ -2299,9 +2287,6 @@ argument_list|(
 literal|"_Wrap"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|WRAP
 argument_list|,
 name|NULL
@@ -2311,9 +2296,6 @@ argument_list|(
 literal|"_Smear"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|SMEAR
 argument_list|,
 name|NULL
@@ -2323,9 +2305,6 @@ argument_list|(
 literal|"_Black"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|BLACK
 argument_list|,
 name|NULL
@@ -2371,7 +2350,7 @@ expr_stmt|;
 comment|/*  Wave toggle box  */
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -2390,9 +2369,6 @@ name|rvals
 operator|.
 name|waveform
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|rvals
 operator|.
 name|waveform
@@ -2402,9 +2378,6 @@ argument_list|(
 literal|"Saw_tooth"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|SAWTOOTH
 argument_list|,
 name|NULL
@@ -2414,9 +2387,6 @@ argument_list|(
 literal|"S_ine"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|SINE
 argument_list|,
 name|NULL

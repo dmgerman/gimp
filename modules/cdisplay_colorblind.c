@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289dddc70103
+DECL|enum|__anon2c9648ac0103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_NONE
 name|COLORBLIND_DEFICIENCY_NONE
@@ -2163,7 +2163,7 @@ name|colorblind
 operator|->
 name|optionmenu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -2174,22 +2174,16 @@ argument_list|)
 argument_list|,
 name|colorblind
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|colorblind
 operator|->
 name|deficiency
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"None (normal vision)"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|COLORBLIND_DEFICIENCY_NONE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2198,10 +2192,7 @@ argument_list|(
 literal|"Protanopia (insensitivity to red)"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2210,10 +2201,7 @@ argument_list|(
 literal|"Deuteranopia (insensitivity to green)"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|COLORBLIND_DEFICIENCY_DEUTERANOPIA
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2222,10 +2210,7 @@ argument_list|(
 literal|"Tritanopia (insensitivity to blue)"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|COLORBLIND_DEFICIENCY_TRITANOPIA
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

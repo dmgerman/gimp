@@ -171,7 +171,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fe400a0103
+DECL|enum|__anon2c1a6c1a0103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -189,7 +189,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fe400a0208
+DECL|struct|__anon2c1a6c1a0208
 block|{
 DECL|member|max_p
 name|gint
@@ -562,7 +562,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29fe400a0308
+DECL|struct|__anon2c1a6c1a0308
 typedef|typedef
 struct|struct
 block|{
@@ -1047,7 +1047,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -1066,22 +1066,16 @@ name|pvals
 operator|.
 name|max_p
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|pvals
 operator|.
 name|max_p
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"_Hold the Maximal Channels"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|MAX_CHANNELS
-argument_list|)
 argument_list|,
 operator|&
 name|max
@@ -1091,10 +1085,7 @@ argument_list|(
 literal|"Ho_ld the Minimal Channels"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|MIN_CHANNELS
-argument_list|)
 argument_list|,
 operator|&
 name|min

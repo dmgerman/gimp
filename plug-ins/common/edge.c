@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8e49840103
+DECL|enum|__anon278b6a340103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -131,7 +131,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8e49840208
+DECL|struct|__anon278b6a340208
 block|{
 DECL|member|amount
 name|gdouble
@@ -3139,7 +3139,7 @@ expr_stmt|;
 comment|/*  compression  */
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -3158,22 +3158,16 @@ name|evals
 operator|.
 name|edgemode
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|evals
 operator|.
 name|edgemode
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"_Sobel"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|SOBEL
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -3182,10 +3176,7 @@ argument_list|(
 literal|"_Prewitt"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|PREWITT
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -3194,10 +3185,7 @@ argument_list|(
 literal|"_Gradient"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|GRADIENT
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -3206,10 +3194,7 @@ argument_list|(
 literal|"_Roberts"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|ROBERTS
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -3218,10 +3203,7 @@ argument_list|(
 literal|"_Differential"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|DIFFERENTIAL
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -3230,10 +3212,7 @@ argument_list|(
 literal|"_Laplace"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|LAPLACE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

@@ -70,7 +70,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c0cd630108
+DECL|struct|__anon28c9ebea0108
 block|{
 DECL|member|image
 name|gint32
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c0cd630203
+DECL|enum|__anon28c9ebea0203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c0cd630303
+DECL|enum|__anon28c9ebea0303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -165,7 +165,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon28c0cd630408
+DECL|struct|__anon28c9ebea0408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -2510,7 +2510,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -2529,28 +2529,19 @@ name|argp
 operator|->
 name|mode
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|argp
 operator|->
 name|mode
-argument_list|)
 argument_list|,
 literal|"N_TSC"
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|MODE_NTSC
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
 literal|"_PAL"
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|MODE_PAL
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2580,7 +2571,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -2599,22 +2590,16 @@ name|argp
 operator|->
 name|action
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|argp
 operator|->
 name|action
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"Reduce _Luminance"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|ACT_LREDUX
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2623,10 +2608,7 @@ argument_list|(
 literal|"Reduce _Saturation"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|ACT_SREDUX
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2635,10 +2617,7 @@ argument_list|(
 literal|"_Blacken"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|ACT_FLAG
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

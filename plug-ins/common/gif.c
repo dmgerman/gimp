@@ -131,7 +131,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2797e1500103
+DECL|enum|__anon28ddbc240103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -148,7 +148,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2797e1500208
+DECL|struct|__anon28ddbc240208
 block|{
 DECL|member|interlace
 name|gint
@@ -4845,7 +4845,7 @@ argument_list|)
 expr_stmt|;
 name|disposal_option_menu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -4859,22 +4859,16 @@ name|gsvals
 operator|.
 name|default_dispose
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|gsvals
 operator|.
 name|default_dispose
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"I don't Care"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|DISPOSE_UNSPECIFIED
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -4883,10 +4877,7 @@ argument_list|(
 literal|"Cumulative Layers (Combine)"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|DISPOSE_COMBINE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -4895,10 +4886,7 @@ argument_list|(
 literal|"One Frame per Layer (Replace)"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|DISPOSE_REPLACE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

@@ -2217,7 +2217,7 @@ argument_list|)
 expr_stmt|;
 name|optionmenu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -2231,9 +2231,6 @@ name|mapvals
 operator|.
 name|maptype
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|mapvals
 operator|.
 name|maptype
@@ -2243,9 +2240,6 @@ argument_list|(
 literal|"Plane"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|MAP_PLANE
 argument_list|,
 name|NULL
@@ -2255,9 +2249,6 @@ argument_list|(
 literal|"Sphere"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|MAP_SPHERE
 argument_list|,
 name|NULL
@@ -2267,9 +2258,6 @@ argument_list|(
 literal|"Box"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|MAP_BOX
 argument_list|,
 name|NULL
@@ -2279,9 +2267,6 @@ argument_list|(
 literal|"Cylinder"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|MAP_CYLINDER
 argument_list|,
 name|NULL
@@ -3031,7 +3016,7 @@ argument_list|)
 expr_stmt|;
 name|optionmenu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -3047,9 +3032,6 @@ name|lightsource
 operator|.
 name|type
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|mapvals
 operator|.
 name|lightsource
@@ -3061,9 +3043,6 @@ argument_list|(
 literal|"Point Light"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|POINT_LIGHT
 argument_list|,
 name|NULL
@@ -3073,9 +3052,6 @@ argument_list|(
 literal|"Directional Light"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|DIRECTIONAL_LIGHT
 argument_list|,
 name|NULL
@@ -3085,9 +3061,6 @@ argument_list|(
 literal|"No Light"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|NO_LIGHT
 argument_list|,
 name|NULL

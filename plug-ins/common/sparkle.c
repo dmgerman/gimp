@@ -127,7 +127,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c421b170108
+DECL|struct|__anon2ba8a14b0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -2480,7 +2480,7 @@ expr_stmt|;
 comment|/*  colortype  */
 name|vbox
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -2496,22 +2496,16 @@ name|svals
 operator|.
 name|colortype
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|svals
 operator|.
 name|colortype
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"_Natural Color"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|NATURAL
-argument_list|)
 argument_list|,
 operator|&
 name|r1
@@ -2521,10 +2515,7 @@ argument_list|(
 literal|"_Foreground Color"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|FOREGROUND
-argument_list|)
 argument_list|,
 operator|&
 name|r2
@@ -2534,10 +2525,7 @@ argument_list|(
 literal|"_Background Color"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|BACKGROUND
-argument_list|)
 argument_list|,
 operator|&
 name|r3

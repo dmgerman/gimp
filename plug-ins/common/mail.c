@@ -382,7 +382,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0a73c50108
+DECL|struct|__anon27da57fb0108
 block|{
 DECL|member|receipt
 name|gchar
@@ -2301,7 +2301,7 @@ expr_stmt|;
 comment|/* Encapsulation radiobuttons */
 name|vbox
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -2317,9 +2317,6 @@ name|mail_info
 operator|.
 name|encapsulation
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|mail_info
 operator|.
 name|encapsulation
@@ -2329,9 +2326,6 @@ argument_list|(
 literal|"Uuencode"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|ENCAPSULATION_UUENCODE
 argument_list|,
 name|NULL
@@ -2341,9 +2335,6 @@ argument_list|(
 literal|"MIME"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|ENCAPSULATION_MIME
 argument_list|,
 name|NULL

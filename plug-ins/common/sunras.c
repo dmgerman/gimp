@@ -143,7 +143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5cce450108
+DECL|struct|__anon28dd11f30108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -232,7 +232,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5cce450208
+DECL|struct|__anon28dd11f30208
 block|{
 DECL|member|val
 name|gint
@@ -827,7 +827,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5cce450308
+DECL|struct|__anon28dd11f30308
 block|{
 DECL|member|rle
 name|gboolean
@@ -7742,7 +7742,7 @@ expr_stmt|;
 comment|/*  file save type  */
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -7761,22 +7761,16 @@ name|psvals
 operator|.
 name|rle
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|psvals
 operator|.
 name|rle
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"RunLength Encoded"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|TRUE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -7785,10 +7779,7 @@ argument_list|(
 literal|"Standard"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|FALSE
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

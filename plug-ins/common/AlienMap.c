@@ -30519,7 +30519,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a226cea0108
+DECL|struct|__anon2c3b11850108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -30554,7 +30554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a226cea0208
+DECL|struct|__anon2c3b11850208
 block|{
 DECL|member|run
 name|gint
@@ -32273,7 +32273,7 @@ expr_stmt|;
 comment|/*  Redmode toggle box  */
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -32292,9 +32292,6 @@ name|wvals
 operator|.
 name|redmode
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|wvals
 operator|.
 name|redmode
@@ -32304,9 +32301,6 @@ argument_list|(
 literal|"_Sine"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|SINUS
 argument_list|,
 operator|&
@@ -32317,9 +32311,6 @@ argument_list|(
 literal|"Cos_ine"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COSINUS
 argument_list|,
 operator|&
@@ -32330,9 +32321,6 @@ argument_list|(
 literal|"_None"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|NONE
 argument_list|,
 operator|&
@@ -32416,7 +32404,7 @@ expr_stmt|;
 comment|/*  Greenmode toggle box  */
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -32435,9 +32423,6 @@ name|wvals
 operator|.
 name|greenmode
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|wvals
 operator|.
 name|greenmode
@@ -32447,9 +32432,6 @@ argument_list|(
 literal|"_Sine"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|SINUS
 argument_list|,
 operator|&
@@ -32460,9 +32442,6 @@ argument_list|(
 literal|"Cos_ine"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COSINUS
 argument_list|,
 operator|&
@@ -32473,9 +32452,6 @@ argument_list|(
 literal|"_None"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|NONE
 argument_list|,
 operator|&
@@ -32559,7 +32535,7 @@ expr_stmt|;
 comment|/*  Bluemode toggle box  */
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -32578,9 +32554,6 @@ name|wvals
 operator|.
 name|bluemode
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|wvals
 operator|.
 name|bluemode
@@ -32590,9 +32563,6 @@ argument_list|(
 literal|"_Sine"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|SINUS
 argument_list|,
 operator|&
@@ -32603,9 +32573,6 @@ argument_list|(
 literal|"Cos_ine"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|COSINUS
 argument_list|,
 operator|&
@@ -32616,9 +32583,6 @@ argument_list|(
 literal|"_None"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|NONE
 argument_list|,
 operator|&

@@ -488,7 +488,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon28ec82220108
+DECL|struct|__anon29ea73e00108
 block|{
 DECL|member|randomize
 name|gint
@@ -3500,7 +3500,7 @@ argument_list|)
 expr_stmt|;
 name|optionmenu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_int_option_menu_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -3514,9 +3514,6 @@ name|config
 operator|.
 name|variation
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|VARIATION_SAME
 argument_list|,
 name|_
@@ -3524,9 +3521,6 @@ argument_list|(
 literal|"Same"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|VARIATION_SAME
 argument_list|,
 name|NULL
@@ -3536,9 +3530,6 @@ argument_list|(
 literal|"Random"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|variation_random
 argument_list|,
 name|NULL
@@ -3548,9 +3539,6 @@ argument_list|(
 literal|"Linear"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|0
 argument_list|,
 name|NULL
@@ -3560,9 +3548,6 @@ argument_list|(
 literal|"Sinusoidal"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|1
 argument_list|,
 name|NULL
@@ -3572,9 +3557,6 @@ argument_list|(
 literal|"Spherical"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|2
 argument_list|,
 name|NULL
@@ -3584,9 +3566,6 @@ argument_list|(
 literal|"Swirl"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|3
 argument_list|,
 name|NULL
@@ -3596,9 +3575,6 @@ argument_list|(
 literal|"Horseshoe"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|4
 argument_list|,
 name|NULL
@@ -3608,9 +3584,6 @@ argument_list|(
 literal|"Polar"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|5
 argument_list|,
 name|NULL
@@ -3620,9 +3593,6 @@ argument_list|(
 literal|"Bent"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 literal|6
 argument_list|,
 name|NULL

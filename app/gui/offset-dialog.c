@@ -986,7 +986,7 @@ expr_stmt|;
 comment|/*  The fill options  */
 name|frame
 operator|=
-name|gimp_radio_group_new2
+name|gimp_int_radio_group_new
 argument_list|(
 name|TRUE
 argument_list|,
@@ -1005,22 +1005,16 @@ name|off_d
 operator|->
 name|fill_type
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|off_d
 operator|->
 name|fill_type
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"_Background"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|GIMP_OFFSET_BACKGROUND
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1029,10 +1023,7 @@ argument_list|(
 literal|"_Transparent"
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|GIMP_OFFSET_TRANSPARENT
-argument_list|)
 argument_list|,
 operator|&
 name|radio_button
