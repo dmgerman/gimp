@@ -1544,7 +1544,8 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b33fb6f0103
+comment|/*< skip>*/
+DECL|enum|__anon2c66808c0103
 block|{
 DECL|enumerator|INITIAL_CHANNEL_MASK
 name|INITIAL_CHANNEL_MASK
@@ -1578,7 +1579,8 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b33fb6f0203
+comment|/*< skip>*/
+DECL|enum|__anon2c66808c0203
 block|{
 DECL|enumerator|NO_COMBINATION
 name|NO_COMBINATION
