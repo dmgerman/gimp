@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b749b4d0103
+DECL|enum|__anon2bc0694a0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -3768,8 +3768,6 @@ argument_list|,
 name|context
 argument_list|,
 name|stroke_desc
-argument_list|,
-name|use_default_values
 argument_list|)
 expr_stmt|;
 name|g_object_unref
