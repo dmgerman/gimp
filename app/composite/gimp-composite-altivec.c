@@ -126,7 +126,7 @@ name|CONST_BUFFER
 parameter_list|(
 name|b
 parameter_list|)
-value|((const guchar *)(b))
+value|((guchar *)(b))
 end_define
 
 begin_endif
