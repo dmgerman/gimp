@@ -1342,11 +1342,11 @@ argument_list|,
 name|SelectionPause
 argument_list|)
 expr_stmt|;
-comment|/* add motion memory if you press mod1 first ^ perfectmouse */
+comment|/* add motion memory if perfectmouse is set */
 if|if
 condition|(
 name|perfectmouse
-operator|==
+operator|!=
 literal|0
 condition|)
 name|gdk_pointer_grab

@@ -132,7 +132,7 @@ if|if
 condition|(
 name|op
 operator|==
-name|REPLACE
+name|SELECTION_REPLACE
 condition|)
 name|gimage_mask_clear
 argument_list|(
@@ -212,7 +212,7 @@ if|if
 condition|(
 name|op
 operator|==
-name|INTERSECT
+name|SELECTION_INTERSECT
 condition|)
 block|{
 name|new_mask

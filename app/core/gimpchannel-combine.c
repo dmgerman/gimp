@@ -7094,6 +7094,8 @@ operator|&
 name|bPR
 argument_list|,
 name|radius
+argument_list|,
+name|radius
 argument_list|)
 expr_stmt|;
 name|mask

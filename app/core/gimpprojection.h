@@ -518,10 +518,15 @@ name|display_areas
 decl_stmt|;
 comment|/*  Display areas list                      */
 DECL|member|current_cursor
-name|GdkCursorType
+name|int
 name|current_cursor
 decl_stmt|;
 comment|/*  Currently installed cursor              */
+DECL|member|cursor_type
+name|short
+name|cursor_type
+decl_stmt|;
+comment|/*  Currently installed cursor type         */
 DECL|member|override_cursor
 name|GdkCursorType
 name|override_cursor
@@ -741,6 +746,18 @@ name|GDisplay
 modifier|*
 parameter_list|,
 name|GdkCursorType
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gdisplay_install_gimp_tool_cursor
+parameter_list|(
+name|GDisplay
+modifier|*
+parameter_list|,
+name|int
 parameter_list|)
 function_decl|;
 end_function_decl

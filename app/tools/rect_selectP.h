@@ -41,6 +41,11 @@ modifier|*
 name|core
 decl_stmt|;
 comment|/*  Core select object                      */
+DECL|member|op
+name|int
+name|op
+decl_stmt|;
+comment|/*  selection operation (SELECTION_ADD etc.) */
 DECL|member|x
 DECL|member|y
 name|int
@@ -62,11 +67,6 @@ name|int
 name|center
 decl_stmt|;
 comment|/*  is the selection being created from the center out? */
-DECL|member|op
-name|int
-name|op
-decl_stmt|;
-comment|/*  selection operation (ADD, SUB, etc)     */
 DECL|member|fixed_size
 name|int
 name|fixed_size

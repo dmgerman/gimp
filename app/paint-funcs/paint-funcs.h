@@ -2262,6 +2262,8 @@ name|PixelRegion
 modifier|*
 parameter_list|,
 name|gint16
+parameter_list|,
+name|gint16
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2816,7 +2818,7 @@ comment|/*  Layer Modes  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon296deee70103
+DECL|enum|__anon29afb5c10103
 typedef|typedef
 enum|enum
 block|{
