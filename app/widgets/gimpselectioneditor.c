@@ -521,7 +521,7 @@ name|GIMP_PREVIEW_SIZE_HUGE
 argument_list|,
 literal|0
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request
