@@ -9867,6 +9867,8 @@ argument_list|(
 name|menupath
 argument_list|)
 expr_stmt|;
+name|retval
+operator|=
 name|menupath
 operator|=
 name|g_strdup
@@ -9910,7 +9912,7 @@ name|NULL
 operator|)
 condition|)
 return|return
-name|menupath
+name|retval
 return|;
 comment|/*     * Work around a bug in GTK+ prior to 1.2.7 (similar workaround below)    */
 name|translation
