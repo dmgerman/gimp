@@ -2283,7 +2283,6 @@ operator|==
 name|GTK_RESPONSE_OK
 condition|)
 block|{
-specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -2361,6 +2360,11 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 block|}
 name|gtk_widget_destroy
 argument_list|(
@@ -2401,7 +2405,6 @@ name|vectors
 init|=
 name|NULL
 decl_stmt|;
-specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -2472,6 +2475,11 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 block|}
 name|gtk_widget_destroy
 argument_list|(
