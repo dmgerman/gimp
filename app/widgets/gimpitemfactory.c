@@ -6047,7 +6047,7 @@ literal|"/Xtns/DB Browser..."
 block|,
 literal|"/Xtns/PDB Explorer"
 block|,
-literal|"/Xtns/Plugin Details"
+literal|"/Xtns/Plugin Details..."
 block|,
 literal|"/Xtns/Parasite Editor"
 block|}

@@ -261,7 +261,7 @@ literal|"Andy Thomas"
 argument_list|,
 literal|"1999"
 argument_list|,
-literal|"<Toolbox>/Xtns/Plugin Details"
+literal|"<Toolbox>/Xtns/Plugin Details..."
 argument_list|,
 literal|""
 argument_list|,
@@ -407,7 +407,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27856e920108
+DECL|struct|__anon27c4cdf00108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -513,7 +513,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27856e920208
+DECL|struct|__anon27c4cdf00208
 block|{
 DECL|member|menu
 name|gchar
