@@ -423,6 +423,57 @@ end_function
 
 begin_function
 name|gint
+DECL|function|gdisplay_shell_events (GtkWidget * w,GdkEvent * event,GDisplay * gdisp)
+name|gdisplay_shell_events
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|w
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+block|{
+comment|/* Set the active Image to the image where the user clicked/typed */
+switch|switch
+condition|(
+name|event
+operator|->
+name|type
+condition|)
+block|{
+case|case
+name|GDK_BUTTON_PRESS
+case|:
+case|case
+name|GDK_KEY_PRESS
+case|:
+name|gimp_set_set_active
+argument_list|(
+name|image_context
+argument_list|,
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
+break|break;
+default|default:
+break|break;
+block|}
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
+begin_function
+name|gint
 DECL|function|gdisplay_canvas_events (GtkWidget * canvas,GdkEvent * event)
 name|gdisplay_canvas_events
 parameter_list|(
@@ -836,16 +887,6 @@ operator|=
 name|bevent
 operator|->
 name|state
-expr_stmt|;
-comment|/* Set the active Image to the image where the user clicked */
-name|gimp_set_set_active
-argument_list|(
-name|image_context
-argument_list|,
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
@@ -1575,16 +1616,6 @@ name|kevent
 operator|->
 name|state
 expr_stmt|;
-comment|/* Set the active Image to the image where the user typed */
-name|gimp_set_set_active
-argument_list|(
-name|image_context
-argument_list|,
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
 switch|switch
 condition|(
 name|kevent
@@ -2236,7 +2267,8 @@ operator|->
 name|time
 argument_list|)
 expr_stmt|;
-comment|/* Stop the signal emission so the button doesn't grab the        * pointer away from us */
+block|}
+comment|/* Stop the signal emission so the button doesn't grab the    * pointer away from us */
 name|gtk_signal_emit_stop_by_name
 argument_list|(
 name|GTK_OBJECT
@@ -2247,7 +2279,6 @@ argument_list|,
 literal|"button_press_event"
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|FALSE
 return|;

@@ -1497,7 +1497,7 @@ argument_list|(
 literal|"/Layers/Stack/Previous Layer"
 argument_list|)
 block|,
-name|NULL
+literal|"Prior"
 block|,
 name|layers_previous_cmd_callback
 block|,
@@ -1510,7 +1510,7 @@ argument_list|(
 literal|"/Layers/Stack/Next Layer"
 argument_list|)
 block|,
-name|NULL
+literal|"Next"
 block|,
 name|layers_next_cmd_callback
 block|,
@@ -1523,7 +1523,7 @@ argument_list|(
 literal|"/Layers/Stack/Raise Layer"
 argument_list|)
 block|,
-literal|"<control>F"
+literal|"<shift>Prior"
 block|,
 name|layers_raise_cmd_callback
 block|,
@@ -1536,7 +1536,7 @@ argument_list|(
 literal|"/Layers/Stack/Lower Layer"
 argument_list|)
 block|,
-literal|"<control>B"
+literal|"<shift>Next"
 block|,
 name|layers_lower_cmd_callback
 block|,
@@ -1546,10 +1546,10 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Stack/Raise to Top"
+literal|"/Layers/Stack/Layer to Top"
 argument_list|)
 block|,
-literal|"<control>T"
+literal|"<control>Prior"
 block|,
 name|layers_raise_to_top_cmd_callback
 block|,
@@ -1559,10 +1559,10 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Stack/Lower to Bottom"
+literal|"/Layers/Stack/Layer to Bottom"
 argument_list|)
 block|,
-literal|"<control>U"
+literal|"<control>Next"
 block|,
 name|layers_lower_to_bottom_cmd_callback
 block|,

@@ -9459,6 +9459,17 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
+comment|/* Expand the "Interface" branch */
+name|gtk_ctree_expand
+argument_list|(
+name|GTK_CTREE
+argument_list|(
+name|ctree
+argument_list|)
+argument_list|,
+name|top_insert
+argument_list|)
+expr_stmt|;
 comment|/* Environment */
 name|vbox
 operator|=
@@ -11588,7 +11599,7 @@ name|page_index
 operator|++
 expr_stmt|;
 block|{
-DECL|struct|__anon293e8ad60108
+DECL|struct|__anon2b79ed030108
 specifier|static
 specifier|const
 struct|struct
@@ -11813,7 +11824,7 @@ block|}
 block|}
 comment|/* Directories /<paths> */
 block|{
-DECL|struct|__anon293e8ad60208
+DECL|struct|__anon2b79ed030208
 specifier|static
 specifier|const
 struct|struct

@@ -26,6 +26,22 @@ end_define
 
 begin_function_decl
 name|gint
+name|gdisplay_shell_events
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|GdkEvent
+modifier|*
+parameter_list|,
+name|GDisplay
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
 name|gdisplay_canvas_events
 parameter_list|(
 name|GtkWidget

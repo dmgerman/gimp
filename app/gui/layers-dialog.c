@@ -1023,9 +1023,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  the dialog's toplevel callbacks  */
+end_comment
+
 begin_function_decl
 specifier|static
-name|gint
+name|void
 name|lc_dialog_auto_callback
 parameter_list|(
 name|GtkWidget
@@ -4712,7 +4716,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29c02d2c0108
+DECL|struct|__anon2c523ceb0108
 typedef|typedef
 struct|struct
 block|{
@@ -10032,7 +10036,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|void
 DECL|function|lc_dialog_auto_callback (GtkWidget * toggle_button,gpointer client_data)
 name|lc_dialog_auto_callback
 parameter_list|(
@@ -10048,6 +10052,7 @@ if|if
 condition|(
 name|layersD
 condition|)
+block|{
 name|layersD
 operator|->
 name|auto_follow_active
@@ -10060,9 +10065,29 @@ name|toggle_button
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
-name|TRUE
-return|;
+if|if
+condition|(
+name|layersD
+operator|->
+name|auto_follow_active
+condition|)
+name|lc_dialog_change_image
+argument_list|(
+name|image_context
+argument_list|,
+operator|(
+name|GimpImage
+operator|*
+operator|)
+name|gimp_set_get_active
+argument_list|(
+name|image_context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
