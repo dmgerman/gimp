@@ -441,6 +441,18 @@ block|}
 end_function
 
 begin_function
+name|void
+DECL|function|help_exit (void)
+name|help_exit
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+comment|/* nothing */
+block|}
+end_function
+
+begin_function
 specifier|static
 name|gchar
 modifier|*

@@ -697,6 +697,9 @@ argument_list|(
 name|error
 argument_list|)
 expr_stmt|;
+name|help_exit
+argument_list|()
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -1144,7 +1147,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27681de60103
+DECL|enum|__anon2c050acf0103
 block|{
 DECL|enumerator|DOMAIN_START
 name|DOMAIN_START
@@ -1169,7 +1172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27681de60208
+DECL|struct|__anon2c050acf0208
 block|{
 DECL|member|filename
 specifier|const
