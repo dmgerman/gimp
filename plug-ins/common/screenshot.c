@@ -1,14 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*    *  ScreenShot plug-in v0.9.3  *  Sven Neumann, neumanns@uni-duesseldorf.de    *  1999/09/01  *  *  Any suggestions, bug-reports or patches are very welcome.  *   *  This plug-in uses the X-utility xwd to grab an image from the screen  *  and the xwd-plug-in created by Peter Kirchgessner (pkirchg@aol.com)  *  to load this image into the gimp.  *  Hence its nothing but a simple frontend to those utilities.  */
+comment|/*    *  ScreenShot plug-in  *  Copyright 1998-1999 Sven Neumann<sven@gimp.org>  *  *  Any suggestions, bug-reports or patches are very welcome.  *   *  This plug-in uses the X-utility xwd to grab an image from the screen  *  and the xwd-plug-in created by Peter Kirchgessner (pkirchg@aol.com)  *  to load this image into the gimp.  *  Hence its nothing but a simple frontend to those utilities.  */
 end_comment
 
 begin_comment
 comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
-end_comment
-
-begin_comment
-comment|/* Revision history  *  (98/02/18)  v0.1   first development release   *  (98/02/19)  v0.2   small bugfix   *  (98/03/09)  v0.3   another one  *  (98/03/13)  v0.4   cosmetic changes to the dialog  *  (98/04/02)  v0.5   it works non-interactively now and registers  *                     itself correctly as extension  *  (98/04/18)  v0.6   cosmetic change to the dialog  *  (98/05/28)  v0.7   use g_message for error output  *  (98/06/04)  v0.8   added delay-time for root window shot  *  (98/06/06)  v0.9   fixed a stupid bug in the dialog  *  (99/08/12)  v0.9.1 somebody changed the dialog;  *                     unset the image name and set the resolution  *  (99/09/01)  v0.9.2 tried to fix a bug   *  (99/12/14)  v0.9.3 another try   */
 end_comment
 
 begin_include
@@ -134,7 +130,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon2922aa970108
+DECL|struct|__anon2c6f66dd0108
 typedef|typedef
 struct|struct
 block|{
@@ -162,7 +158,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2922aa970208
+DECL|struct|__anon2c6f66dd0208
 typedef|typedef
 struct|struct
 block|{
@@ -487,7 +483,7 @@ literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"1998, 1999"
 argument_list|,
-literal|"v0.9.3 (99/12/14)"
+literal|"v0.9.4 (99/12/28)"
 argument_list|,
 name|N_
 argument_list|(
@@ -1063,11 +1059,6 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|tmpname
-argument_list|)
-expr_stmt|;
 return|return;
 block|}
 else|else
@@ -1103,11 +1094,6 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|tmpname
-argument_list|)
-expr_stmt|;
 return|return;
 block|}
 endif|#
@@ -1132,14 +1118,9 @@ name|status
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"screenshot: xwd didn't work\n"
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|tmpname
 argument_list|)
 expr_stmt|;
 return|return;
