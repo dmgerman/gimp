@@ -7695,7 +7695,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29d0ffa90108
+DECL|struct|__anon2bf81b3a0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9018,7 +9018,7 @@ modifier|*
 name|list
 decl_stmt|;
 enum|enum
-DECL|enum|__anon29d0ffa90203
+DECL|enum|__anon2bf81b3a0203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -10284,14 +10284,14 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* ENABLE_MP */
-comment|/*  File Opening  */
+comment|/*  Image Thumbnails  */
 name|vbox2
 operator|=
 name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Opening Images"
+literal|"Image Thumbnails"
 argument_list|)
 argument_list|,
 name|GTK_CONTAINER
@@ -10306,12 +10306,37 @@ name|table
 operator|=
 name|prefs_table_new
 argument_list|(
-literal|1
+literal|2
 argument_list|,
 name|GTK_CONTAINER
 argument_list|(
 name|vbox2
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|prefs_enum_combo_box_add
+argument_list|(
+name|object
+argument_list|,
+literal|"thumbnail-size"
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|_
+argument_list|(
+literal|"Size of thumbnails:"
+argument_list|)
+argument_list|,
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|size_group
 argument_list|)
 expr_stmt|;
 name|prefs_memsize_entry_add
@@ -10322,7 +10347,7 @@ literal|"thumbnail-filesize-limit"
 argument_list|,
 name|_
 argument_list|(
-literal|"Filesize limit for thumbnailing:"
+literal|"Maximum filesize for thumbnailing:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -10330,7 +10355,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|0
+literal|1
 argument_list|,
 name|size_group
 argument_list|)
@@ -10368,43 +10393,6 @@ name|GTK_BOX
 argument_list|(
 name|vbox2
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|table
-operator|=
-name|prefs_table_new
-argument_list|(
-literal|1
-argument_list|,
-name|GTK_CONTAINER
-argument_list|(
-name|vbox2
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|prefs_enum_combo_box_add
-argument_list|(
-name|object
-argument_list|,
-literal|"thumbnail-size"
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|_
-argument_list|(
-literal|"Create thumbnails:"
-argument_list|)
-argument_list|,
-name|GTK_TABLE
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-name|size_group
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -10462,7 +10450,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29d0ffa90308
+DECL|struct|__anon2bf81b3a0308
 block|{
 DECL|member|label
 specifier|const
@@ -10619,7 +10607,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29d0ffa90408
+DECL|struct|__anon2bf81b3a0408
 block|{
 DECL|member|tree_label
 specifier|const

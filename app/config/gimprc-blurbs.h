@@ -870,7 +870,7 @@ define|#
 directive|define
 name|THUMBNAIL_SIZE_BLURB
 define|\
-value|N_("Sets the size of the thumbnail saved with each image. Note that GIMP " \    "can not save thumbnails if layer previews are disabled.")
+value|N_("Sets the size of the thumbnail shown in the Open dialog. Note that " \    "GIMP can not create thumbnails if layer previews are disabled.")
 end_define
 
 begin_define
@@ -879,7 +879,7 @@ define|#
 directive|define
 name|THUMBNAIL_FILESIZE_LIMIT_BLURB
 define|\
-value|N_("The preview thumbnail in the Open dialog will be updated on demand " \    "unless the file being previewed is larger than the size set here.")
+value|N_("The thumbnail in the Open dialog will be automatically updated " \    "if the file being previewed is smaller than the size set here.")
 end_define
 
 begin_define
