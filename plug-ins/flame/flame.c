@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app/drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"config.h"
 end_include
 
@@ -439,7 +433,7 @@ value|(-4)
 end_define
 
 begin_struct
-DECL|struct|__anon2b6412580108
+DECL|struct|__anon2bf77b070108
 struct|struct
 block|{
 DECL|member|randomize
@@ -3626,7 +3620,7 @@ name|button
 argument_list|)
 expr_stmt|;
 block|{
-DECL|struct|__anon2b6412580208
+DECL|struct|__anon2bf77b070208
 specifier|static
 struct|struct
 block|{
