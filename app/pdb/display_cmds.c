@@ -181,14 +181,6 @@ condition|(
 name|success
 condition|)
 block|{
-if|if
-condition|(
-operator|!
-name|gimp_image_is_empty
-argument_list|(
-name|gimage
-argument_list|)
-condition|)
 name|success
 operator|=
 operator|(
@@ -203,11 +195,6 @@ argument_list|)
 operator|)
 operator|!=
 name|NULL
-expr_stmt|;
-else|else
-name|success
-operator|=
-name|FALSE
 expr_stmt|;
 block|}
 name|return_args
