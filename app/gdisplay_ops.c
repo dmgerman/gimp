@@ -86,6 +86,7 @@ specifier|static
 name|void
 name|gdisplay_close_warning_dialog
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|image_name
@@ -986,9 +987,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_close_warning_dialog (gchar * image_name,GDisplay * gdisp)
+DECL|function|gdisplay_close_warning_dialog (const gchar * image_name,GDisplay * gdisp)
 name|gdisplay_close_warning_dialog
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|image_name

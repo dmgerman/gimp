@@ -815,7 +815,10 @@ name|cancel_cb
 condition|?
 name|cancel_cb
 else|:
+name|G_CALLBACK
+argument_list|(
 name|gtk_widget_destroy
+argument_list|)
 argument_list|,
 name|cancel_cb
 condition|?
