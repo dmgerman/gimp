@@ -372,7 +372,7 @@ name|PIXEL_COST
 parameter_list|(
 name|x
 parameter_list|)
-value|(x>> 8)
+value|((x)>> 8)
 end_define
 
 begin_define
@@ -383,7 +383,7 @@ name|PIXEL_DIR
 parameter_list|(
 name|x
 parameter_list|)
-value|(x& 0x000000ff)
+value|((x)& 0x000000ff)
 end_define
 
 begin_struct
