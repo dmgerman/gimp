@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0de24f0103
+DECL|enum|__anon2b3dcf370103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -56,7 +56,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0de24f0203
+DECL|enum|__anon2b3dcf370203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -143,18 +143,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
-name|gimp_preview_emit_invalidated
-parameter_list|(
-name|GimpPreview
-modifier|*
-name|preview
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|gboolean
 name|gimp_preview_button_release
 parameter_list|(
@@ -181,6 +169,18 @@ parameter_list|(
 name|GimpPreview
 modifier|*
 name|preview
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_preview_area_realize
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -439,12 +439,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|klass
-operator|->
-name|draw
-operator|=
-name|NULL
-expr_stmt|;
 name|object_class
 operator|->
 name|get_property
@@ -500,6 +494,12 @@ operator||
 name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|klass
+operator|->
+name|draw
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 end_function
@@ -1018,6 +1018,22 @@ argument_list|,
 name|preview
 argument_list|)
 expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|preview
+operator|->
+name|area
+argument_list|,
+literal|"realize"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_preview_area_realize
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
 name|preview
@@ -1374,6 +1390,54 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_preview_area_realize (GtkWidget * widget)
+name|gimp_preview_area_realize
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|)
+block|{
+name|GdkDisplay
+modifier|*
+name|display
+init|=
+name|gtk_widget_get_display
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
+name|GdkCursor
+modifier|*
+name|cursor
+init|=
+name|gdk_cursor_new_for_display
+argument_list|(
+name|display
+argument_list|,
+name|GDK_FLEUR
+argument_list|)
+decl_stmt|;
+name|gdk_window_set_cursor
+argument_list|(
+name|widget
+operator|->
+name|window
+argument_list|,
+name|cursor
+argument_list|)
+expr_stmt|;
+name|gdk_cursor_unref
+argument_list|(
+name|cursor
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|gimp_preview_area_size_allocate (GimpPreview * preview)
 name|gimp_preview_area_size_allocate
 parameter_list|(
@@ -1382,14 +1446,6 @@ modifier|*
 name|preview
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_PREVIEW
-argument_list|(
-name|preview
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_preview_draw
 argument_list|(
 name|preview
@@ -1418,14 +1474,6 @@ modifier|*
 name|preview
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_PREVIEW
-argument_list|(
-name|preview
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|preview
 operator|->
 name|xoff
@@ -1464,14 +1512,6 @@ modifier|*
 name|preview
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_PREVIEW
-argument_list|(
-name|preview
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|preview
 operator|->
 name|yoff
@@ -1514,38 +1554,11 @@ modifier|*
 name|preview
 parameter_list|)
 block|{
-name|GdkEventButton
-modifier|*
-name|button_event
-decl_stmt|;
 name|gint
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gint
-name|dx
-decl_stmt|,
-name|dy
-decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_PREVIEW
-argument_list|(
-name|preview
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|button_event
-operator|=
-operator|(
-name|GdkEventButton
-operator|*
-operator|)
-name|event
-expr_stmt|;
 switch|switch
 condition|(
 name|event
@@ -1556,15 +1569,6 @@ block|{
 case|case
 name|GDK_BUTTON_PRESS
 case|:
-if|if
-condition|(
-name|button_event
-operator|->
-name|button
-operator|==
-literal|2
-condition|)
-block|{
 name|gtk_widget_get_pointer
 argument_list|(
 name|area
@@ -1615,7 +1619,6 @@ argument_list|(
 name|area
 argument_list|)
 expr_stmt|;
-block|}
 break|break;
 case|case
 name|GDK_BUTTON_RELEASE
@@ -1625,12 +1628,6 @@ condition|(
 name|preview
 operator|->
 name|in_drag
-operator|&&
-name|button_event
-operator|->
-name|button
-operator|==
-literal|2
 condition|)
 block|{
 name|gtk_grab_remove
@@ -1661,6 +1658,11 @@ operator|->
 name|in_drag
 condition|)
 block|{
+name|gint
+name|dx
+decl_stmt|,
+name|dy
+decl_stmt|;
 name|gint
 name|xoff
 decl_stmt|,
@@ -1798,14 +1800,6 @@ modifier|*
 name|preview
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_PREVIEW
-argument_list|(
-name|preview
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gtk_toggle_button_get_active
@@ -1907,7 +1901,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_get_posistion:  * @preview: a #GimpPreview widget  * @x:       return location for horizontal offset  * @y:       return location for vertical offset  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_get_posistion:  * @preview: a #GimpPreview widget  * @x:       return location for the horizontal offset  * @y:       return location for the vertical offset  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -2009,7 +2003,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * gimp_preview_invalidate:  * @preview:     a #GimpPreview widget  *  * Since: GIMP 2.2  **/
+comment|/*  * gimp_preview_invalidate:  * @preview: a #GimpPreview widget  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
