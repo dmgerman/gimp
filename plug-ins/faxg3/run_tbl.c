@@ -1,7 +1,7 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
-begin_empty
-empty|#ident "@(#)run_tbl.c	3.1 95/08/30 Copyright (c) 1994 Gert Doering"
-end_empty
+begin_comment
+comment|/* #ident "@(#)run_tbl.c	3.1 95/08/30 Copyright (c) 1994 Gert Doering" */
+end_comment
 
 begin_comment
 comment|/* run_tbl.c  *  * this file is part of the mgetty+sendfax distribution  *  * compute a set of arrays that will speed up finding the run length  * of black or white bits in a byte enourmously  * (I do not include the array as it is larger than the source and  * computation is fast enough - 0.005 secs on my machine...)  */
