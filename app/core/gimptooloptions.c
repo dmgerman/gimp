@@ -3035,7 +3035,7 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Pixmap Brush Ootions"
+literal|"Pixmap Brush Options"
 argument_list|)
 else|:
 name|_
