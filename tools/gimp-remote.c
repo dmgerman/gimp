@@ -127,6 +127,16 @@ name|FALSE
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|no_splash
+specifier|static
+name|gboolean
+name|no_splash
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 specifier|static
 name|GdkWindow
@@ -501,6 +511,7 @@ literal|"  -v, --version         Output version info.\n"
 literal|"  --display<display>   Use the designated X display.\n"
 literal|"  -e, --existing        Use a running GIMP only, never start a new one.\n"
 literal|"  -q, --query           Query if a GIMP is running, then quit.\n"
+literal|"  -s, --no-splash       Start GIMP w/o showing the startup window.\n"
 literal|"\n"
 argument_list|)
 expr_stmt|;
@@ -631,6 +642,19 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|display_name
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|no_splash
+condition|)
+name|file_list
+operator|=
+name|g_string_prepend
+argument_list|(
+name|file_list
+argument_list|,
+literal|"--no-splash\n"
 argument_list|)
 expr_stmt|;
 name|file_list
@@ -1019,6 +1043,33 @@ literal|0
 condition|)
 block|{
 name|query
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|arg
+argument_list|,
+literal|"-s"
+argument_list|)
+operator|==
+literal|0
+operator|||
+name|strcmp
+argument_list|(
+name|arg
+argument_list|,
+literal|"--no-splash"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|no_splash
 operator|=
 name|TRUE
 expr_stmt|;
