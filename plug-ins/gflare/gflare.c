@@ -506,7 +506,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27efa0df0103
+DECL|enum|__anon27c2cad40103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -533,7 +533,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27efa0df0203
+DECL|enum|__anon27c2cad40203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -554,7 +554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27efa0df0308
+DECL|struct|__anon27c2cad40308
 block|{
 DECL|member|name
 name|gchar
@@ -695,7 +695,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27efa0df0408
+DECL|struct|__anon27c2cad40408
 block|{
 DECL|member|fp
 name|FILE
@@ -715,7 +715,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27efa0df0503
+DECL|enum|__anon27c2cad40503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -743,7 +743,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27efa0df0608
+DECL|struct|__anon27c2cad40608
 block|{
 DECL|member|init
 name|gint
@@ -765,7 +765,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27efa0df0708
+DECL|struct|__anon27c2cad40708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -839,7 +839,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27efa0df0808
+DECL|struct|__anon27c2cad40808
 block|{
 DECL|member|init
 name|gint
@@ -909,7 +909,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27efa0df0908
+DECL|struct|__anon27c2cad40908
 block|{
 DECL|member|x0
 name|gdouble
@@ -936,7 +936,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27efa0df0a08
+DECL|struct|__anon27c2cad40a08
 block|{
 DECL|member|init
 name|gint
@@ -1106,7 +1106,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27efa0df0b08
+DECL|struct|__anon27c2cad40b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1133,7 +1133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27efa0df0c08
+DECL|struct|__anon27c2cad40c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1174,7 +1174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27efa0df0d08
+DECL|struct|__anon27c2cad40d08
 block|{
 DECL|member|tile
 name|GTile
@@ -1400,7 +1400,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27efa0df0e08
+DECL|struct|__anon27c2cad40e08
 block|{
 DECL|member|tag
 name|gint
@@ -1477,7 +1477,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27efa0df0f08
+DECL|struct|__anon27c2cad40f08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1535,7 +1535,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27efa0df1008
+DECL|struct|__anon27c2cad41008
 block|{
 DECL|member|run
 name|gint
@@ -4954,7 +4954,7 @@ name|_
 argument_list|(
 literal|"No gflare-path in gimprc:\n\n"
 literal|"You need to add an entry like\n"
-literal|"(gfig-path \"${gimp_dir}/gfig:${gimp_data_dir}/gfig\n"
+literal|"(gflare-path \"${gimp_dir}/gflare:${gimp_data_dir}/gflare\")\n"
 literal|"to your %s/gimprc file."
 argument_list|)
 argument_list|,
@@ -9287,7 +9287,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon27efa0df1108
+DECL|struct|__anon27c2cad41108
 specifier|static
 struct|struct
 block|{
@@ -15866,7 +15866,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon27efa0df1208
+DECL|struct|__anon27c2cad41208
 block|{
 DECL|member|label
 name|gchar
