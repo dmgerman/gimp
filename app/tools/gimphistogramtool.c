@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphistogramoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimphistogramtool.h"
 end_include
 
@@ -417,9 +423,9 @@ call|)
 argument_list|(
 name|GIMP_TYPE_HISTOGRAM_TOOL
 argument_list|,
-name|G_TYPE_NONE
+name|GIMP_TYPE_HISTOGRAM_OPTIONS
 argument_list|,
-name|NULL
+name|gimp_histogram_options_gui
 argument_list|,
 literal|0
 argument_list|,
@@ -555,14 +561,12 @@ block|{
 name|GimpToolClass
 modifier|*
 name|tool_class
-decl_stmt|;
-name|tool_class
-operator|=
+init|=
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -1480,6 +1484,22 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_histogram_options_connect_view
+argument_list|(
+name|GIMP_HISTOGRAM_OPTIONS
+argument_list|(
+name|tool_info
+operator|->
+name|tool_options
+argument_list|)
+argument_list|,
+name|htd
+operator|->
+name|histogram_box
+operator|->
+name|histogram
+argument_list|)
+expr_stmt|;
 comment|/*  The option menu for selecting channels  */
 name|hbox
 operator|=
@@ -1557,7 +1577,7 @@ operator|->
 name|histogram
 argument_list|)
 argument_list|,
-literal|"channel"
+literal|"histogram-channel"
 argument_list|,
 literal|0
 argument_list|,
@@ -1615,7 +1635,7 @@ operator|->
 name|histogram
 argument_list|)
 argument_list|,
-literal|"scale"
+literal|"histogram-scale"
 argument_list|,
 literal|"gimp-histogram"
 argument_list|,

@@ -55,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28701b3e0103
+DECL|enum|__anon2910d9110103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -68,7 +68,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28701b3e0203
+DECL|enum|__anon2910d9110203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -406,7 +406,7 @@ name|PROP_CHANNEL
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
-literal|"channel"
+literal|"histogram-channel"
 argument_list|,
 name|NULL
 argument_list|,
@@ -430,7 +430,7 @@ name|PROP_SCALE
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
-literal|"scale"
+literal|"histogram-scale"
 argument_list|,
 name|NULL
 argument_list|,
@@ -700,6 +700,11 @@ block|{
 name|GimpHistogramView
 modifier|*
 name|view
+init|=
+name|GIMP_HISTOGRAM_VIEW
+argument_list|(
+name|widget
+argument_list|)
 decl_stmt|;
 name|gint
 name|x
@@ -717,13 +722,6 @@ decl_stmt|;
 name|gdouble
 name|max
 decl_stmt|;
-name|view
-operator|=
-name|GIMP_HISTOGRAM_VIEW
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1126,6 +1124,11 @@ block|{
 name|GtkWidget
 modifier|*
 name|widget
+init|=
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
 decl_stmt|;
 name|GdkEventButton
 modifier|*
@@ -1138,13 +1141,6 @@ decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
-name|widget
-operator|=
-name|GTK_WIDGET
-argument_list|(
-name|view
-argument_list|)
-expr_stmt|;
 switch|switch
 condition|(
 name|event
@@ -1406,16 +1402,14 @@ block|{
 name|GtkWidget
 modifier|*
 name|view
-decl_stmt|;
-name|view
-operator|=
+init|=
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_HISTOGRAM_VIEW
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gtk_widget_set_size_request
 argument_list|(
 name|view
@@ -1662,7 +1656,7 @@ argument_list|(
 name|view
 argument_list|)
 argument_list|,
-literal|"channel"
+literal|"histogram-channel"
 argument_list|)
 expr_stmt|;
 name|gtk_widget_queue_draw
@@ -1759,7 +1753,7 @@ argument_list|(
 name|view
 argument_list|)
 argument_list|,
-literal|"scale"
+literal|"histogram-scale"
 argument_list|)
 expr_stmt|;
 name|gtk_widget_queue_draw
