@@ -370,7 +370,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Artistic/GIMPressionist..."
+literal|"<Image>/Filters/Artistic/_GIMPressionist..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

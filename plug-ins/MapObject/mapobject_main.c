@@ -1102,7 +1102,7 @@ literal|"Version 1.2.0, July 16 1998"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/Map Object..."
+literal|"<Image>/Filters/Map/Map _Object..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

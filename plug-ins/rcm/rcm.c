@@ -274,7 +274,7 @@ literal|"04th April 1999"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Map/Colormap Rotation..."
+literal|"<Image>/Filters/Colors/Map/Colormap _Rotation..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

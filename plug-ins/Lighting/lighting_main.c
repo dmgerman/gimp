@@ -748,7 +748,7 @@ literal|"Version 0.2.0, March 15 1998"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Light Effects/Lighting Effects..."
+literal|"<Image>/Filters/Light Effects/_Lighting Effects..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

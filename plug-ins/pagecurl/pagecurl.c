@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b00eec00108
+DECL|struct|__anon293f50170108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -732,7 +732,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/Pagecurl..."
+literal|"<Image>/Filters/Distorts/_Pagecurl..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

@@ -601,7 +601,7 @@ literal|"1998-2002"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Web/ImageMap..."
+literal|"<Image>/Filters/Web/_ImageMap..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"

@@ -760,7 +760,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/File/Print..."
+literal|"<Image>/File/_Print..."
 argument_list|)
 argument_list|,
 name|types

@@ -182,7 +182,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd368f20108
+DECL|struct|__anon27a245080108
 block|{
 DECL|member|x
 DECL|member|y
@@ -200,7 +200,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd368f20208
+DECL|struct|__anon27a245080208
 block|{
 DECL|member|npts
 name|gint
@@ -222,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd368f20308
+DECL|struct|__anon27a245080308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd368f20408
+DECL|struct|__anon27a245080408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -310,7 +310,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd368f20508
+DECL|struct|__anon27a245080508
 block|{
 DECL|member|run
 name|gboolean
@@ -1482,7 +1482,7 @@ literal|"1996"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Distorts/Mosaic..."
+literal|"<Image>/Filters/Distorts/_Mosaic..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

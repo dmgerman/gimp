@@ -856,6 +856,14 @@ block|,
 ifdef|#
 directive|ifdef
 name|ENABLE_DEBUG_ENTRIES
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/File/D_ebug"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 literal|"/File/Debug/_Mem Profile"
