@@ -135,7 +135,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2922925e0103
+DECL|enum|__anon2b0d040e0103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -1308,7 +1308,7 @@ name|title
 else|:
 name|_
 argument_list|(
-literal|"Select Directory"
+literal|"Select Folder"
 argument_list|)
 argument_list|)
 expr_stmt|;

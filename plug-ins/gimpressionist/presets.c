@@ -4895,7 +4895,7 @@ name|tmpw
 argument_list|,
 name|_
 argument_list|(
-literal|"Reread the directory of Presets"
+literal|"Reread the folder of Presets"
 argument_list|)
 argument_list|,
 name|NULL

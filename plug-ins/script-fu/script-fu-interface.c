@@ -154,7 +154,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cb1fe10108
+DECL|struct|__anon29f608950108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -198,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cb1fe10208
+DECL|struct|__anon29f608950208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -224,7 +224,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cb1fe10308
+DECL|struct|__anon29f608950308
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -245,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cb1fe10408
+DECL|struct|__anon29f608950408
 block|{
 DECL|member|name
 name|gchar
@@ -273,7 +273,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cb1fe10508
+DECL|struct|__anon29f608950508
 block|{
 DECL|member|list
 name|GSList
@@ -293,7 +293,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon27cb1fe1060a
+DECL|union|__anon29f60895060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -363,7 +363,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cb1fe10708
+DECL|struct|__anon29f608950708
 block|{
 DECL|member|script_name
 name|gchar
@@ -449,7 +449,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cb1fe10808
+DECL|struct|__anon29f608950808
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -1170,7 +1170,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Error reading script directory '%s'\n%s"
+literal|"Error reading script folder '%s'\n%s"
 argument_list|,
 name|path
 argument_list|,
@@ -6895,7 +6895,7 @@ name|gimp_file_selection_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Script-Fu Directory Selection"
+literal|"Script-Fu Folder Selection"
 argument_list|)
 argument_list|,
 name|script

@@ -1343,7 +1343,7 @@ name|_
 argument_list|(
 literal|"Your GIMP tips file appears to be missing!\n"
 literal|"There should be a file called gimp_tips.txt in\n"
-literal|"the tips subdirectory of the GIMP data directory.\n"
+literal|"the tips subfolder of the GIMP data folder.\n"
 literal|"Please check your installation."
 argument_list|)
 argument_list|)

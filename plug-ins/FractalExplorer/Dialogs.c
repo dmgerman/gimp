@@ -8829,7 +8829,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Save: Can't save to a directory"
+literal|"Save: Can't save to a folder."
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -531,7 +531,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2764d8bd0108
+DECL|struct|__anon295ae06c0108
 block|{
 DECL|member|directory
 name|gboolean
@@ -647,9 +647,8 @@ literal|"brushes"
 block|,
 name|N_
 argument_list|(
-literal|"This is a subdirectory which can be used to store\n"
-literal|"user defined brushes.  The default gimprc file\n"
-literal|"checks this subdirectory in addition to the system-\n"
+literal|"This folder is used to store user defined brushes.\n"
+literal|"The GIMP checks this folder in addition to the system-\n"
 literal|"wide GIMP brushes installation when searching for\n"
 literal|"brushes."
 argument_list|)
@@ -662,10 +661,8 @@ literal|"generated_brushes"
 block|,
 name|N_
 argument_list|(
-literal|"This is a subdirectory which is used to store brushes\n"
-literal|"that are created with the brush editor.  The default\n"
-literal|"gimprc file checks this subdirectory when searching\n"
-literal|"for generated brushes."
+literal|"This folder is used to store brushes that are created\n"
+literal|"created with the brush editor."
 argument_list|)
 block|}
 block|,
@@ -676,11 +673,10 @@ literal|"gradients"
 block|,
 name|N_
 argument_list|(
-literal|"This is a subdirectory which can be used to store\n"
-literal|"user defined gradients.  The default gimprc file\n"
-literal|"checks this subdirectory in addition to the system-\n"
-literal|"wide GIMP gradients installation when searching\n"
-literal|"for gradients."
+literal|"This folder is used to store user defined gradients\n"
+literal|"The GIMP checks this folder in addition to the system-\n"
+literal|"wide GIMP gradients installation when searching for\n"
+literal|"gradients."
 argument_list|)
 block|}
 block|,
@@ -691,14 +687,10 @@ literal|"palettes"
 block|,
 name|N_
 argument_list|(
-literal|"This is a subdirectory which can be used to store\n"
-literal|"user defined palettes.  The default gimprc file\n"
-literal|"checks only this subdirectory (not the system-wide\n"
-literal|"installation) when searching for palettes.  During\n"
-literal|"installation, the system palettes will be copied\n"
-literal|"here.  This is done to allow modifications made to\n"
-literal|"palettes during GIMP execution to persist across\n"
-literal|"sessions."
+literal|"This folder is used to store user defined palettes.\n"
+literal|"The GIMP checks this folder in addition to the system-\n"
+literal|"wide GIMP palettes installation when searching for\n"
+literal|"palettes."
 argument_list|)
 block|}
 block|,
@@ -709,9 +701,8 @@ literal|"patterns"
 block|,
 name|N_
 argument_list|(
-literal|"This is a subdirectory which can be used to store\n"
-literal|"user defined patterns.  The default gimprc file\n"
-literal|"checks this subdirectory in addition to the system-\n"
+literal|"This folder is used to store user defined patterns.\n"
+literal|"The GIMP checks this folder in addition to the system-\n"
 literal|"wide GIMP patterns installation when searching for\n"
 literal|"patterns."
 argument_list|)
@@ -724,11 +715,10 @@ literal|"plug-ins"
 block|,
 name|N_
 argument_list|(
-literal|"This is a subdirectory which can be used to store\n"
-literal|"user created, temporary, or otherwise non-system-\n"
-literal|"supported plug-ins.  The default gimprc file checks\n"
-literal|"this subdirectory in addition to the systemwide\n"
-literal|"GIMP plug-in directories when searching for plug-ins."
+literal|"This folder is used to store user created, temporary,\n"
+literal|"or otherwise non-system-supported plug-ins.  The GIMP\n"
+literal|"checks this folder in addition to the system-wide\n"
+literal|"GIMP plug-in folder when searching for plug-ins."
 argument_list|)
 block|}
 block|,
@@ -739,11 +729,11 @@ literal|"modules"
 block|,
 name|N_
 argument_list|(
-literal|"This subdirectory can be used to store user created,\n"
-literal|"temporary, or otherwise non-system-supported DLL\n"
-literal|"modules.  The default gimprc file checks this subdirectory\n"
-literal|"in addition to the system-wide GIMP module directory\n"
-literal|"when searching for modules to load when initializing."
+literal|"This folder is used to store user created, temporary,\n"
+literal|"or otherwise non-system-supported DLL modules.  The\n"
+literal|"GIMP checks this folder in addition to the system-wide\n"
+literal|"GIMP module folder when searching for modules to load\n"
+literal|"during initialization."
 argument_list|)
 block|}
 block|,
@@ -754,10 +744,10 @@ literal|"scripts"
 block|,
 name|N_
 argument_list|(
-literal|"This subdirectory is used by the GIMP to store user\n"
-literal|"created and installed scripts.  The default gimprc file\n"
-literal|"checks this subdirectory in addition to the systemwide\n"
-literal|"GIMP scripts subdirectory when searching for scripts"
+literal|"This folder is used to store user created and installed\n"
+literal|"scripts.  The GIMP checks this folder in addition to\n"
+literal|"the systemwide GIMP scripts folder when searching for\n"
+literal|"scripts."
 argument_list|)
 block|}
 block|,
@@ -768,11 +758,11 @@ literal|"tmp"
 block|,
 name|N_
 argument_list|(
-literal|"This subdirectory is used by the GIMP to temporarily\n"
-literal|"store undo buffers to reduce memory usage.  If GIMP is\n"
-literal|"unceremoniously killed, files may persist in this directory\n"
-literal|"of the form: gimp<#>.<#>.  These files are useless across\n"
-literal|"GIMP sessions and can be destroyed with impunity."
+literal|"This folder is used to temporarily store undo buffers\n"
+literal|"to reduce memory usage.  If The GIMP is unceremoniously\n"
+literal|"killed, files of the form: gimp<#>.<#> may persist in\n"
+literal|"this folder.  These files are useless across GIMP\n"
+literal|"sessions and can be destroyed with impunity."
 argument_list|)
 block|}
 block|,
@@ -783,8 +773,8 @@ literal|"curves"
 block|,
 name|N_
 argument_list|(
-literal|"This subdirectory is used to store parameter files for\n"
-literal|"the Curves tool."
+literal|"This folder is used to store parameter files for the\n"
+literal|"Curves tool."
 argument_list|)
 block|}
 block|,
@@ -795,8 +785,8 @@ literal|"levels"
 block|,
 name|N_
 argument_list|(
-literal|"This subdirectory is used to store parameter files for\n"
-literal|"the Levels tool."
+literal|"This folder is used to store parameter files for the\n"
+literal|"Levels tool."
 argument_list|)
 block|}
 block|,
@@ -807,11 +797,10 @@ literal|"fractalexplorer"
 block|,
 name|N_
 argument_list|(
-literal|"This is a subdirectory which can be used to store\n"
-literal|"user defined fractals to be used by the FractalExplorer\n"
-literal|"plug-in.  The default gimprc file checks this subdirectory\n"
-literal|"in addition to the systemwide GIMP FractalExplorer\n"
-literal|"installation when searching for fractals."
+literal|"This is folder used to store user defined fractals to\n"
+literal|"be used by the FractalExplorer plug-in.  The GIMP\n"
+literal|"checks this folder in addition to the systemwide\n"
+literal|"FractalExplorer installation when searching for fractals."
 argument_list|)
 block|}
 block|,
@@ -822,10 +811,9 @@ literal|"gfig"
 block|,
 name|N_
 argument_list|(
-literal|"This is a subdirectory which can be used to store\n"
-literal|"user defined figures to be used by the GFig plug-in.\n"
-literal|"The default gimprc file checks this subdirectory in\n"
-literal|"addition to the systemwide GIMP GFig installation\n"
+literal|"This folder is used to store user defined figures to\n"
+literal|"be used by the GFig plug-in.  The GIMP checks this\n"
+literal|"folder in addition to the systemwide GFig installation\n"
 literal|"when searching for gfig figures."
 argument_list|)
 block|}
@@ -837,11 +825,10 @@ literal|"gflare"
 block|,
 name|N_
 argument_list|(
-literal|"This is a subdirectory which can be used to store\n"
-literal|"user defined gflares to be used by the GFlare plug-in.\n"
-literal|"The default gimprc file checks this subdirectory in\n"
-literal|"addition to the systemwide GIMP GFlares installation\n"
-literal|"when searching for gflares."
+literal|"This folder is used to store user defined gflares to\n"
+literal|"be used by the GFlare plug-in.  The GIMP checks this\n"
+literal|"folder in addition to the systemwide GFlares\n"
+literal|"installation when searching for gflares."
 argument_list|)
 block|}
 block|,
@@ -852,10 +839,9 @@ literal|"gimpressionist"
 block|,
 name|N_
 argument_list|(
-literal|"This is a subdirectory which can be used to store\n"
-literal|"user defined data to be used by the Gimpressionist\n"
-literal|"plug-in.  The default gimprc file checks this subdirectory\n"
-literal|"in addition to the systemwide GIMP Gimpressionist\n"
+literal|"This folder is used to store user defined data to be\n"
+literal|"used by the Gimpressionist plug-in.  The GIMP checks\n"
+literal|"this folder in addition to the systemwide Gimpressionist\n"
 literal|"installation when searching for data."
 argument_list|)
 block|}
@@ -1109,7 +1095,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Please wait while your personal\n"
-literal|"GIMP directory is being created..."
+literal|"GIMP folder is being created..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2916,13 +2902,13 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Personal GIMP Directory"
+literal|"Personal GIMP Folder"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"Click \"Continue\" to create "
-literal|"your personal GIMP directory."
+literal|"your personal GIMP folder."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3057,7 +3043,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"For a proper GIMP installation, a subdirectory named\n"
+literal|"For a proper GIMP installation, a folder named\n"
 literal|"%s needs to be created."
 argument_list|)
 argument_list|,
@@ -3089,8 +3075,8 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"This subdirectory will contain a number of important files.\n"
-literal|"Click on one of the files or subdirectories in the tree\n"
+literal|"This folder will contain a number of important files.\n"
+literal|"Click on one of the files or folders in the tree\n"
 literal|"to get more information about the selected item."
 argument_list|)
 argument_list|)
@@ -4799,7 +4785,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Swap Directory:"
+literal|"Swap Folder:"
 argument_list|)
 argument_list|)
 expr_stmt|;

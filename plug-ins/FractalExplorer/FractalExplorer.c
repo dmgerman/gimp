@@ -4987,7 +4987,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"fractalexplorer-path misconfigured - "
-literal|"the following directories were not found"
+literal|"the following folders were not found:"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -5487,7 +5487,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"error reading fractalexplorer directory \"%s\""
+literal|"error reading fractalexplorer folder \"%s\""
 argument_list|,
 name|path
 argument_list|)
@@ -5928,7 +5928,7 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Select directory and rescan collection"
+literal|"Select folder and rescan collection"
 argument_list|)
 argument_list|,
 name|NULL

@@ -1133,7 +1133,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276962be0103
+DECL|enum|__anon2b9cb7330103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1185,7 +1185,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276962be0203
+DECL|enum|__anon2b9cb7330203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1206,7 +1206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276962be0303
+DECL|enum|__anon2b9cb7330303
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -1227,7 +1227,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276962be0403
+DECL|enum|__anon2b9cb7330403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1254,7 +1254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276962be0503
+DECL|enum|__anon2b9cb7330503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1275,7 +1275,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276962be0603
+DECL|enum|__anon2b9cb7330603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1443,7 +1443,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276962be0708
+DECL|struct|__anon2b9cb7330708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1482,7 +1482,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276962be0808
+DECL|struct|__anon2b9cb7330808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1531,7 +1531,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276962be0908
+DECL|struct|__anon2b9cb7330908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1709,7 +1709,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276962be0a03
+DECL|enum|__anon2b9cb7330a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1739,7 +1739,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276962be0b03
+DECL|enum|__anon2b9cb7330b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1755,7 +1755,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276962be0c03
+DECL|enum|__anon2b9cb7330c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1780,7 +1780,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276962be0d03
+DECL|enum|__anon2b9cb7330d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -4412,7 +4412,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"gfig-path misconfigured - "
-literal|"the following directories were not found"
+literal|"the following folders were not found:"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -5073,7 +5073,7 @@ name|dir
 condition|)
 name|g_warning
 argument_list|(
-literal|"Error reading GFig directory \"%s\""
+literal|"Error reading GFig folder \"%s\""
 argument_list|,
 name|path
 argument_list|)
@@ -7387,7 +7387,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Save: Can't save to a directory"
+literal|"Save: Can't save to a folder."
 argument_list|)
 expr_stmt|;
 return|return;
@@ -17736,7 +17736,7 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Select directory and rescan Gfig object "
+literal|"Select folder and rescan Gfig object "
 literal|"collection"
 argument_list|)
 argument_list|,

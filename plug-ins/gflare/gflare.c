@@ -500,7 +500,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a392a70103
+DECL|enum|__anon2b5ce4ce0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -527,7 +527,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a392a70203
+DECL|enum|__anon2b5ce4ce0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -548,7 +548,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a392a70308
+DECL|struct|__anon2b5ce4ce0308
 block|{
 DECL|member|name
 name|gchar
@@ -689,7 +689,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a392a70408
+DECL|struct|__anon2b5ce4ce0408
 block|{
 DECL|member|fp
 name|FILE
@@ -709,7 +709,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a392a70503
+DECL|enum|__anon2b5ce4ce0503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -737,7 +737,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a392a70608
+DECL|struct|__anon2b5ce4ce0608
 block|{
 DECL|member|init
 name|gint
@@ -759,7 +759,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon28a392a70708
+DECL|struct|__anon2b5ce4ce0708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -833,7 +833,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a392a70808
+DECL|struct|__anon2b5ce4ce0808
 block|{
 DECL|member|init
 name|gint
@@ -903,7 +903,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a392a70908
+DECL|struct|__anon2b5ce4ce0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -930,7 +930,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a392a70a08
+DECL|struct|__anon2b5ce4ce0a08
 block|{
 DECL|member|init
 name|gint
@@ -1100,7 +1100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a392a70b08
+DECL|struct|__anon2b5ce4ce0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1127,7 +1127,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a392a70c08
+DECL|struct|__anon2b5ce4ce0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1168,7 +1168,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a392a70d08
+DECL|struct|__anon2b5ce4ce0d08
 block|{
 DECL|member|tile
 name|GimpTile
@@ -1394,7 +1394,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a392a70e08
+DECL|struct|__anon2b5ce4ce0e08
 block|{
 DECL|member|tag
 name|gint
@@ -1471,7 +1471,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a392a70f08
+DECL|struct|__anon2b5ce4ce0f08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1529,7 +1529,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a392a71008
+DECL|struct|__anon2b5ce4ce1008
 block|{
 DECL|member|run
 name|gint
@@ -4262,7 +4262,7 @@ init|=
 literal|" This plug-in produces a lense flare effect using custom gradients."
 literal|" In interactive call, the user can edit his/her own favorite lense flare"
 literal|" (GFlare) and render it. Edited gflare is saved automatically to"
-literal|" the directory in gflare-path, if it is defined in gimprc."
+literal|" the folder in gflare-path, if it is defined in gimprc."
 literal|" In non-interactive call, the user can only render one of GFlare"
 literal|" which has been stored in gflare-path already."
 decl_stmt|;
@@ -4974,7 +4974,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"gflare-path misconfigured - "
-literal|"the following directories were not found"
+literal|"the following folders were not found:"
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -7689,8 +7689,8 @@ argument_list|(
 literal|"GFlare `%s' is not saved.\n"
 literal|"If you add a new entry in %s, like:\n"
 literal|"(gflare-path \"%s\")\n"
-literal|"and make a directory %s,\n"
-literal|"then you can save your own GFlare's into that directory."
+literal|"and make a folder %s,\n"
+literal|"then you can save your own GFlare's into that folder."
 argument_list|)
 argument_list|,
 name|gflare
@@ -8827,7 +8827,7 @@ name|g_warning
 argument_list|(
 name|_
 argument_list|(
-literal|"error reading GFlare directory \"%s\""
+literal|"error reading GFlare folder \"%s\""
 argument_list|)
 argument_list|,
 name|path
@@ -9545,7 +9545,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon28a392a71108
+DECL|struct|__anon2b5ce4ce1108
 specifier|static
 struct|struct
 block|{
@@ -15985,7 +15985,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon28a392a71208
+DECL|struct|__anon2b5ce4ce1208
 block|{
 DECL|member|label
 name|gchar
