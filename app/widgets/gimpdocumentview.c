@@ -1224,9 +1224,12 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
+comment|/* FIXME: hardcoded thumbnail size */
 name|gimp_imagefile_create_thumbnail
 argument_list|(
 name|imagefile
+argument_list|,
+name|GIMP_THUMBNAIL_SIZE_NORMAL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1248,9 +1251,12 @@ modifier|*
 name|container
 parameter_list|)
 block|{
+comment|/* FIXME: hardcoded thumbnail size */
 name|gimp_imagefile_update
 argument_list|(
 name|imagefile
+argument_list|,
+name|GIMP_THUMBNAIL_SIZE_NORMAL
 argument_list|)
 expr_stmt|;
 if|if

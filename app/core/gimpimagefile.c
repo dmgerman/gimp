@@ -134,6 +134,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -249,7 +255,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ca9d760103
+DECL|enum|__anon278588330103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -263,7 +269,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca9d760208
+DECL|struct|__anon278588330208
 block|{
 DECL|member|dirname
 specifier|const
@@ -408,6 +414,9 @@ specifier|const
 name|gchar
 modifier|*
 name|thumb_name
+parameter_list|,
+name|gint
+name|thumb_size
 parameter_list|,
 name|time_t
 name|image_mtime
@@ -568,13 +577,13 @@ block|,
 block|{
 literal|"normal"
 block|,
-name|GIMP_IMAGEFILE_THUMB_SIZE_NORMAL
+name|GIMP_THUMBNAIL_SIZE_NORMAL
 block|}
 block|,
 block|{
 literal|"large"
 block|,
-name|GIMP_IMAGEFILE_THUMB_SIZE_LARGE
+name|GIMP_THUMBNAIL_SIZE_LARGE
 block|}
 block|}
 decl_stmt|;
@@ -1098,12 +1107,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_imagefile_update (GimpImagefile * imagefile)
+DECL|function|gimp_imagefile_update (GimpImagefile * imagefile,GimpThumbnailSize size)
 name|gimp_imagefile_update
 parameter_list|(
 name|GimpImagefile
 modifier|*
 name|imagefile
+parameter_list|,
+name|GimpThumbnailSize
+name|size
 parameter_list|)
 block|{
 specifier|const
@@ -1119,6 +1131,13 @@ name|imagefile
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|size
+operator|==
+name|GIMP_THUMBNAIL_SIZE_NONE
+condition|)
+return|return;
 name|uri
 operator|=
 name|gimp_object_get_name
@@ -1241,7 +1260,7 @@ name|gimp_imagefile_find_png_thumb
 argument_list|(
 name|uri
 argument_list|,
-name|GIMP_IMAGEFILE_THUMB_SIZE_NORMAL
+name|size
 argument_list|,
 operator|&
 name|thumb_size
@@ -1341,6 +1360,8 @@ name|GIMP_IMAGEFILE
 argument_list|(
 name|documents_imagefile
 argument_list|)
+argument_list|,
+name|size
 argument_list|)
 expr_stmt|;
 block|}
@@ -1350,12 +1371,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_imagefile_create_thumbnail (GimpImagefile * imagefile)
+DECL|function|gimp_imagefile_create_thumbnail (GimpImagefile * imagefile,GimpThumbnailSize size)
 name|gimp_imagefile_create_thumbnail
 parameter_list|(
 name|GimpImagefile
 modifier|*
 name|imagefile
+parameter_list|,
+name|GimpThumbnailSize
+name|size
 parameter_list|)
 block|{
 specifier|const
@@ -1371,6 +1395,13 @@ name|imagefile
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|size
+operator|==
+name|GIMP_THUMBNAIL_SIZE_NONE
+condition|)
+return|return;
 name|uri
 operator|=
 name|gimp_object_get_name
@@ -1435,7 +1466,7 @@ name|gimp_imagefile_png_thumb_path
 argument_list|(
 name|uri
 argument_list|,
-name|GIMP_IMAGEFILE_THUMB_SIZE_NORMAL
+name|size
 argument_list|)
 expr_stmt|;
 comment|/*  the thumbnail directory doesn't exist and couldn't be created */
@@ -1496,6 +1527,8 @@ argument_list|,
 name|gimage
 argument_list|,
 name|thumb_name
+argument_list|,
+name|size
 argument_list|,
 name|image_mtime
 argument_list|,
@@ -1825,6 +1858,9 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
+name|gint
+name|thumb_size
+decl_stmt|;
 name|gchar
 modifier|*
 name|thumb_name
@@ -1860,6 +1896,37 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|thumb_size
+operator|=
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|config
+operator|->
+name|thumbnail_size
+expr_stmt|;
+if|if
+condition|(
+name|thumb_size
+operator|==
+name|GIMP_THUMBNAIL_SIZE_NONE
+condition|)
+return|return
+name|TRUE
+return|;
 name|uri
 operator|=
 name|gimp_object_get_name
@@ -1923,7 +1990,7 @@ name|gimp_imagefile_png_thumb_path
 argument_list|(
 name|uri
 argument_list|,
-name|GIMP_IMAGEFILE_THUMB_SIZE_NORMAL
+name|thumb_size
 argument_list|)
 expr_stmt|;
 comment|/*  the thumbnail directory doesn't exist and couldn't be created */
@@ -1958,6 +2025,8 @@ argument_list|,
 name|gimage
 argument_list|,
 name|thumb_name
+argument_list|,
+name|thumb_size
 argument_list|,
 name|image_mtime
 argument_list|,
@@ -3428,7 +3497,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_imagefile_save_png_thumb (GimpImagefile * imagefile,GimpImage * gimage,const gchar * thumb_name,time_t image_mtime,off_t image_size)
+DECL|function|gimp_imagefile_save_png_thumb (GimpImagefile * imagefile,GimpImage * gimage,const gchar * thumb_name,gint thumb_size,time_t image_mtime,off_t image_size)
 name|gimp_imagefile_save_png_thumb
 parameter_list|(
 name|GimpImagefile
@@ -3443,6 +3512,9 @@ specifier|const
 name|gchar
 modifier|*
 name|thumb_name
+parameter_list|,
+name|gint
+name|thumb_size
 parameter_list|,
 name|time_t
 name|image_mtime
@@ -3492,13 +3564,13 @@ name|gimage
 operator|->
 name|width
 operator|<=
-name|GIMP_IMAGEFILE_THUMB_SIZE_NORMAL
+name|thumb_size
 operator|&&
 name|gimage
 operator|->
 name|height
 operator|<=
-name|GIMP_IMAGEFILE_THUMB_SIZE_NORMAL
+name|thumb_size
 condition|)
 block|{
 name|width
@@ -3529,7 +3601,7 @@ condition|)
 block|{
 name|height
 operator|=
-name|GIMP_IMAGEFILE_THUMB_SIZE_NORMAL
+name|thumb_size
 expr_stmt|;
 name|width
 operator|=
@@ -3538,7 +3610,7 @@ argument_list|(
 literal|1
 argument_list|,
 operator|(
-name|GIMP_IMAGEFILE_THUMB_SIZE_NORMAL
+name|thumb_size
 operator|*
 name|gimage
 operator|->
@@ -3555,7 +3627,7 @@ else|else
 block|{
 name|width
 operator|=
-name|GIMP_IMAGEFILE_THUMB_SIZE_NORMAL
+name|thumb_size
 expr_stmt|;
 name|height
 operator|=
@@ -3564,7 +3636,7 @@ argument_list|(
 literal|1
 argument_list|,
 operator|(
-name|GIMP_IMAGEFILE_THUMB_SIZE_NORMAL
+name|thumb_size
 operator|*
 name|gimage
 operator|->
@@ -3895,6 +3967,8 @@ expr_stmt|;
 name|gimp_imagefile_update
 argument_list|(
 name|imagefile
+argument_list|,
+name|thumb_size
 argument_list|)
 expr_stmt|;
 return|return

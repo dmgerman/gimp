@@ -132,12 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcoreconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -828,15 +822,6 @@ argument_list|,
 name|uri
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp
-operator|->
-name|config
-operator|->
-name|write_thumbnails
-condition|)
-block|{
 comment|/* save a thumbnail of every opened image */
 name|gimp_imagefile_save_thumbnail
 argument_list|(
@@ -845,7 +830,6 @@ argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 elseif|else
 if|if

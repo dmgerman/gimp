@@ -127,9 +127,9 @@ name|gchar
 modifier|*
 name|module_db_load_inhibit
 decl_stmt|;
-DECL|member|write_thumbnails
-name|gboolean
-name|write_thumbnails
+DECL|member|thumbnail_size
+name|GimpThumbnailSize
+name|thumbnail_size
 decl_stmt|;
 block|}
 struct|;

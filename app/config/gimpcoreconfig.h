@@ -217,9 +217,9 @@ DECL|member|preview_size
 name|GimpPreviewSize
 name|preview_size
 decl_stmt|;
-DECL|member|write_thumbnails
-name|gboolean
-name|write_thumbnails
+DECL|member|thumbnail_size
+name|GimpThumbnailSize
+name|thumbnail_size
 decl_stmt|;
 DECL|member|gamma_val
 name|gdouble

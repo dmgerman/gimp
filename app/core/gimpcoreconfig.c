@@ -256,9 +256,9 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|write_thumbnails
+name|thumbnail_size
 operator|=
-name|TRUE
+name|GIMP_THUMBNAIL_SIZE_NORMAL
 expr_stmt|;
 block|}
 end_function

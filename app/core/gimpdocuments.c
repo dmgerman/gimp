@@ -71,6 +71,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdocuments.h"
 end_include
 
@@ -351,6 +357,12 @@ expr_stmt|;
 name|gimp_imagefile_update
 argument_list|(
 name|imagefile
+argument_list|,
+name|gimp
+operator|->
+name|config
+operator|->
+name|thumbnail_size
 argument_list|)
 expr_stmt|;
 name|g_free

@@ -203,7 +203,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b797a0f0103
+DECL|enum|__anon28ef100a0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -948,10 +948,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|old_write_thumbnails
+DECL|variable|old_thumbnail_size
 specifier|static
-name|gboolean
-name|old_write_thumbnails
+name|GimpThumbnailSize
+name|old_thumbnail_size
 decl_stmt|;
 end_decl_stmt
 
@@ -3252,9 +3252,9 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|write_thumbnails
+name|thumbnail_size
 operator|!=
-name|old_write_thumbnails
+name|old_thumbnail_size
 condition|)
 block|{
 name|update
@@ -3263,7 +3263,7 @@ name|g_list_append
 argument_list|(
 name|update
 argument_list|,
-literal|"thumbnail-mode"
+literal|"thumbnail-size"
 argument_list|)
 expr_stmt|;
 block|}
@@ -4181,9 +4181,9 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|write_thumbnails
+name|thumbnail_size
 operator|=
-name|old_write_thumbnails
+name|old_thumbnail_size
 expr_stmt|;
 name|gimprc
 operator|.
@@ -4828,7 +4828,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|write_thumbnails
+name|thumbnail_size
 operator|||
 name|data
 operator|==
@@ -7429,13 +7429,13 @@ name|config
 operator|->
 name|levels_of_undo
 expr_stmt|;
-name|old_write_thumbnails
+name|old_thumbnail_size
 operator|=
 name|gimp
 operator|->
 name|config
 operator|->
-name|write_thumbnails
+name|thumbnail_size
 expr_stmt|;
 name|old_perfectmouse
 operator|=
@@ -13152,9 +13152,9 @@ argument_list|)
 expr_stmt|;
 name|optionmenu
 operator|=
-name|gimp_option_menu_new2
+name|gimp_enum_option_menu_new
 argument_list|(
-name|FALSE
+name|GIMP_TYPE_THUMBNAIL_SIZE
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -13166,7 +13166,15 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|write_thumbnails
+name|thumbnail_size
+argument_list|)
+expr_stmt|;
+name|gimp_option_menu_set_history
+argument_list|(
+name|GTK_OPTION_MENU
+argument_list|(
+name|optionmenu
+argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
@@ -13174,34 +13182,8 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|write_thumbnails
+name|thumbnail_size
 argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"Always"
-argument_list|)
-argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
-name|TRUE
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|,
-name|_
-argument_list|(
-literal|"Never"
-argument_list|)
-argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
-name|FALSE
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -13217,7 +13199,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Try to Write a Thumbnail File:"
+literal|"Size of Thumbnails Files:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -13277,7 +13259,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b797a0f0208
+DECL|struct|__anon28ef100a0208
 block|{
 DECL|member|label
 name|gchar
@@ -13457,7 +13439,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b797a0f0308
+DECL|struct|__anon28ef100a0308
 block|{
 DECL|member|tree_label
 name|gchar

@@ -665,7 +665,9 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|write_thumbnails
+name|thumbnail_size
+operator|!=
+name|GIMP_THUMBNAIL_SIZE_NONE
 condition|)
 block|{
 if|if
