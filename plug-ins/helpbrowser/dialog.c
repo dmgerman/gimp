@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af3dc800103
+DECL|enum|__anon2b97b3a30103
 block|{
 DECL|enumerator|BUTTON_INDEX
 name|BUTTON_INDEX
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af3dc800203
+DECL|enum|__anon2b97b3a30203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -600,6 +600,18 @@ name|window
 argument_list|)
 argument_list|,
 literal|"helpbrowser"
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_default_size
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|window
+argument_list|)
+argument_list|,
+literal|420
+argument_list|,
+literal|500
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1123,7 +1135,7 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-literal|240
+literal|200
 argument_list|)
 expr_stmt|;
 name|scroll
