@@ -1341,10 +1341,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"image depth change, unable to restore original image"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|tile_manager_destroy

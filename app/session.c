@@ -81,12 +81,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpenv.h"
 end_include
 
@@ -656,8 +650,6 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-name|_
-argument_list|(
 literal|"# GIMP sessionrc\n"
 literal|"# This file takes session-specific info (that is info,\n"
 literal|"# you want to keep between two gimp-sessions). You are\n"
@@ -665,7 +657,6 @@ literal|"# not supposed to edit it manually, but of course you\n"
 literal|"# can do. This file will be entirely rewritten every time\n"
 literal|"# you quit the gimp. If this file isn't found, defaults\n"
 literal|"# are used.\n\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* save window geometries */

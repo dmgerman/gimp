@@ -144,7 +144,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2c7559c40103
+DECL|enum|__anon2c2627e60103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -1419,10 +1419,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"layer_copy: could not allocate new layer"
-argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -1857,10 +1854,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"layer_from_tiles: could not allocate new layer"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

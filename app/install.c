@@ -422,7 +422,7 @@ name|GdkFont
 modifier|*
 name|font
 decl_stmt|;
-DECL|struct|__anon2bdff5340108
+DECL|struct|__anon2b833c210108
 specifier|static
 specifier|const
 struct|struct
@@ -554,10 +554,7 @@ block|,
 block|{
 literal|1
 block|,
-name|N_
-argument_list|(
 literal|"gimprc\n"
-argument_list|)
 block|}
 block|,
 block|{
@@ -566,41 +563,16 @@ block|,
 name|N_
 argument_list|(
 literal|"\t\tThe gimprc is used to store personal preferences\n"
-literal|"\t\tsuch as default GIMP behaviors& plug-in hotkeys.\n"
-literal|"\t\tPaths to search for brushes, palettes, gradients\n"
-literal|"\t\tpatterns, plug-ins and modules are also configured here.\n"
+literal|"\t\tthat affect GIMP's default behavior.\n"
+literal|"\t\tPaths to search for brushes, palettes, gradients,\n"
+literal|"\t\tpatterns, plug-ins and modules can also configured here.\n"
 argument_list|)
 block|}
 block|,
 block|{
 literal|1
 block|,
-name|N_
-argument_list|(
-literal|"unitrc\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|N_
-argument_list|(
-literal|"\t\tThe unitrc is used to store your user units database.\n"
-literal|"\t\tYou can define additional units and use them just\n"
-literal|"\t\tlike you use the built-in units inches, millimeters,\n"
-literal|"\t\tpoints and picas. This file is overwritten each time\n"
-literal|"\t\tyou quit the GIMP.\n"
-argument_list|)
-block|}
-block|,
-block|{
-literal|1
-block|,
-name|N_
-argument_list|(
 literal|"pluginrc\n"
-argument_list|)
 block|}
 block|,
 block|{
@@ -620,10 +592,63 @@ block|,
 block|{
 literal|1
 block|,
+literal|"menurc\n"
+block|}
+block|,
+block|{
+literal|0
+block|,
 name|N_
 argument_list|(
-literal|"brushes\n"
+literal|"\t\tKey shortcuts can be dynamically redefined in The GIMP.\n"
+literal|"\t\tThe menurc is a dump of your configuration so it can.\n"
+literal|"\t\tbe remembered for the next session. You may edit this\n"
+literal|"\t\tfile if you wish, but it is much easier to define the\n"
+literal|"\t\tkeys from within The GIMP. Deleting this file will\n"
+literal|"\t\trestore the default shortcuts.\n"
 argument_list|)
+block|}
+block|,
+block|{
+literal|1
+block|,
+literal|"sessionrc\n"
+block|}
+block|,
+block|{
+literal|0
+block|,
+name|N_
+argument_list|(
+literal|"\t\tThe sessionrc is used to store what dialog windows were\n"
+literal|"\t\topen the last time you quit The GIMP. You can configure\n"
+literal|"\t\tThe GIMP to reopen these dialogs at the saved position.\n"
+argument_list|)
+block|}
+block|,
+block|{
+literal|1
+block|,
+literal|"unitrc\n"
+block|}
+block|,
+block|{
+literal|0
+block|,
+name|N_
+argument_list|(
+literal|"\t\tThe unitrc is used to store your user units database.\n"
+literal|"\t\tYou can define additional units and use them just\n"
+literal|"\t\tlike you use the built-in units inches, millimeters,\n"
+literal|"\t\tpoints and picas. This file is overwritten each time\n"
+literal|"\t\tyou quit the GIMP.\n"
+argument_list|)
+block|}
+block|,
+block|{
+literal|1
+block|,
+literal|"brushes\n"
 block|}
 block|,
 block|{
@@ -642,10 +667,7 @@ block|,
 block|{
 literal|1
 block|,
-name|N_
-argument_list|(
 literal|"generated_brushes\n"
-argument_list|)
 block|}
 block|,
 block|{
@@ -663,10 +685,7 @@ block|,
 block|{
 literal|1
 block|,
-name|N_
-argument_list|(
 literal|"gradients\n"
-argument_list|)
 block|}
 block|,
 block|{
@@ -685,10 +704,7 @@ block|,
 block|{
 literal|1
 block|,
-name|N_
-argument_list|(
 literal|"gfig\n"
-argument_list|)
 block|}
 block|,
 block|{
@@ -707,10 +723,7 @@ block|,
 block|{
 literal|1
 block|,
-name|N_
-argument_list|(
 literal|"gflares\n"
-argument_list|)
 block|}
 block|,
 block|{
@@ -729,10 +742,7 @@ block|,
 block|{
 literal|1
 block|,
-name|N_
-argument_list|(
 literal|"fractalexplorer\n"
-argument_list|)
 block|}
 block|,
 block|{
@@ -751,10 +761,7 @@ block|,
 block|{
 literal|1
 block|,
-name|N_
-argument_list|(
 literal|"palettes\n"
-argument_list|)
 block|}
 block|,
 block|{
@@ -776,10 +783,7 @@ block|,
 block|{
 literal|1
 block|,
-name|N_
-argument_list|(
 literal|"patterns\n"
-argument_list|)
 block|}
 block|,
 block|{
@@ -798,10 +802,7 @@ block|,
 block|{
 literal|1
 block|,
-name|N_
-argument_list|(
 literal|"plug-ins\n"
-argument_list|)
 block|}
 block|,
 block|{
@@ -821,10 +822,7 @@ block|,
 block|{
 literal|1
 block|,
-name|N_
-argument_list|(
 literal|"modules\n"
-argument_list|)
 block|}
 block|,
 block|{
@@ -843,10 +841,7 @@ block|,
 block|{
 literal|1
 block|,
-name|N_
-argument_list|(
 literal|"scripts\n"
-argument_list|)
 block|}
 block|,
 block|{
@@ -864,10 +859,7 @@ block|,
 block|{
 literal|1
 block|,
-name|N_
-argument_list|(
 literal|"tmp\n"
-argument_list|)
 block|}
 block|,
 block|{

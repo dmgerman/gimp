@@ -212,7 +212,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2c1ab05d0103
+DECL|enum|__anon2bf40b200103
 typedef|typedef
 enum|enum
 block|{
@@ -9236,10 +9236,7 @@ else|else
 block|{
 name|gimp_terminate
 argument_list|(
-name|_
-argument_list|(
 literal|"transform_path(): gimprc token referenced but not defined: %s"
-argument_list|)
 argument_list|,
 name|token
 argument_list|)

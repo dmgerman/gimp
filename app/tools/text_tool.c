@@ -1380,10 +1380,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"text_call_gdyntext: gDynText procedure lookup failed"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
