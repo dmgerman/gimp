@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2888abe00108
+DECL|struct|__anon2c842d030108
 block|{
 DECL|member|new_width
 name|gint
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2888abe00208
+DECL|struct|__anon2c842d030208
 block|{
 DECL|member|sizeentry
 name|GtkWidget
@@ -1884,6 +1884,8 @@ name|tvals
 operator|.
 name|new_width
 operator|=
+name|RINT
+argument_list|(
 name|gimp_size_entry_get_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -1895,11 +1897,14 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|tvals
 operator|.
 name|new_height
 operator|=
+name|RINT
+argument_list|(
 name|gimp_size_entry_get_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -1910,6 +1915,7 @@ name|sizeentry
 argument_list|)
 argument_list|,
 literal|1
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tvals

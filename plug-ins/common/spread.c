@@ -82,7 +82,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a99b87c0108
+DECL|struct|__anon2b3f5b4c0108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a99b87c0208
+DECL|struct|__anon2b3f5b4c0208
 block|{
 DECL|member|size
 name|GtkWidget
