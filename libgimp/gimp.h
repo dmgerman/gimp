@@ -584,6 +584,15 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+comment|/* Get the size in bytes of the data stored by a gimp_get_data  * id. As size of zero may indicate that there is no such  * identifier in the database.  */
+name|guint32
+name|gimp_get_data_size
+parameter_list|(
+name|gchar
+modifier|*
+name|id
+parameter_list|)
+function_decl|;
 comment|/* Initialize the progress bar with "message". If "message"  *  is NULL, the message displayed in the progress window will  *  be the name of the plug-in.  */
 name|void
 name|gimp_progress_init
