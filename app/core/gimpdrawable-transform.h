@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fbdb430103
+DECL|enum|__anon2c40225e0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -61,7 +61,7 @@ name|drawable
 parameter_list|,
 name|TileManager
 modifier|*
-name|float_tiles
+name|orig_tiles
 parameter_list|,
 name|GimpMatrix3
 name|matrix
@@ -95,7 +95,7 @@ name|drawable
 parameter_list|,
 name|TileManager
 modifier|*
-name|orig
+name|orig_tiles
 parameter_list|,
 name|GimpOrientationType
 name|flip_type
