@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7b41750108
+DECL|struct|__anon27c497cd0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -83,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7b41750208
+DECL|struct|__anon27c497cd0208
 block|{
 DECL|member|run
 name|gint
@@ -770,7 +770,7 @@ if|if
 condition|(
 name|nparams
 operator|!=
-literal|7
+literal|8
 condition|)
 name|status
 operator|=
@@ -871,6 +871,7 @@ name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
+break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
