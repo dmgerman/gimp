@@ -1919,7 +1919,7 @@ operator|+
 name|i
 operator|+
 literal|1
-operator|<=
+operator|<
 name|end
 operator|)
 operator|&&
@@ -5647,6 +5647,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|RGB_to_chans
 argument_list|(
 name|data
@@ -5665,6 +5666,7 @@ operator|&
 name|blue
 argument_list|)
 expr_stmt|;
+block|}
 name|IFDBG
 name|printf
 argument_list|(
@@ -6611,6 +6613,21 @@ decl_stmt|;
 name|nChannel
 operator|++
 expr_stmt|;
+name|g_free
+argument_list|(
+name|red
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|green
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|blue
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|GIMP_GRAY
@@ -7143,6 +7160,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|g_free
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
