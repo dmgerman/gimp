@@ -668,7 +668,7 @@ name|no_data
 block|,
 name|N_
 argument_list|(
-literal|"Do not load brushes, gradients, palettes, patterns"
+literal|"Do not load brushes, gradients, patterns, ..."
 argument_list|)
 block|,
 name|NULL
@@ -851,7 +851,7 @@ argument_list|(
 literal|"The procedure to process batch commands with"
 argument_list|)
 block|,
-literal|"<procedure>"
+literal|"<proc>"
 block|}
 block|,
 block|{
@@ -885,12 +885,13 @@ name|G_OPTION_ARG_CALLBACK
 block|,
 name|gimp_option_pdb_compat_mode
 block|,
+comment|/*  don't translate the mode names (off|on|warn)  */
 name|N_
 argument_list|(
-literal|"PDB compatibility mode"
+literal|"PDB compatibility mode (off|on|warn)"
 argument_list|)
 block|,
-literal|"<never|query|always>"
+literal|"<mode>"
 block|}
 block|,
 block|{
@@ -904,12 +905,13 @@ name|G_OPTION_ARG_CALLBACK
 block|,
 name|gimp_option_stack_trace_mode
 block|,
+comment|/*  don't translate the mode names (never|query|always)  */
 name|N_
 argument_list|(
-literal|"Debugging mode for fatal signals"
+literal|"Debug in case of a crash (never|query|always)"
 argument_list|)
 block|,
-name|NULL
+literal|"<mode>"
 block|}
 block|,
 block|{
