@@ -26,13 +26,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"siod.h"
+file|"regex.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpregex.h"
+file|"siod.h"
 end_include
 
 begin_comment
