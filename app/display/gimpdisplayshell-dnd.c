@@ -707,10 +707,6 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpText
-modifier|*
-name|text
-decl_stmt|;
 if|if
 condition|(
 name|gimage
@@ -733,19 +729,21 @@ operator|!
 name|drawable
 condition|)
 return|return;
-comment|/* FIXME: there should be a virtual method for this that the      GimpTextLayer can override. */
+comment|/* FIXME: there should be a virtual method for this that the    *        GimpTextLayer can override.    */
 if|if
 condition|(
 name|color
 operator|&&
-name|GIMP_IS_TEXT_LAYER
+name|gimp_drawable_is_text_layer
 argument_list|(
 name|drawable
 argument_list|)
-operator|&&
-operator|(
+condition|)
+block|{
+name|GimpText
+modifier|*
 name|text
-operator|=
+init|=
 name|gimp_text_layer_get_text
 argument_list|(
 name|GIMP_TEXT_LAYER
@@ -753,11 +751,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
-operator|)
-operator|!=
-name|NULL
-condition|)
-block|{
+decl_stmt|;
 name|g_object_set
 argument_list|(
 name|text
