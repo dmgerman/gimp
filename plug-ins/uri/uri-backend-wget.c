@@ -318,6 +318,10 @@ literal|"wget"
 argument_list|,
 literal|"wget"
 argument_list|,
+literal|"e"
+argument_list|,
+literal|"server-response=off"
+argument_list|,
 literal|"-T"
 argument_list|,
 name|TIMEOUT
