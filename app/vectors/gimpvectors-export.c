@@ -638,9 +638,10 @@ expr_stmt|;
 comment|/*  FIXME: should probably use the display unit here  */
 name|unit
 operator|=
+name|gimp_image_get_unit
+argument_list|(
 name|image
-operator|->
-name|unit
+argument_list|)
 expr_stmt|;
 switch|switch
 condition|(

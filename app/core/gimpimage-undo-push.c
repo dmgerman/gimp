@@ -948,7 +948,7 @@ name|unit
 operator|=
 name|gimage
 operator|->
-name|unit
+name|resolution_unit
 expr_stmt|;
 return|return
 name|TRUE
@@ -1090,7 +1090,7 @@ name|undo
 operator|->
 name|gimage
 operator|->
-name|unit
+name|resolution_unit
 condition|)
 block|{
 name|GimpUnit
@@ -1102,13 +1102,13 @@ name|undo
 operator|->
 name|gimage
 operator|->
-name|unit
+name|resolution_unit
 expr_stmt|;
 name|undo
 operator|->
 name|gimage
 operator|->
-name|unit
+name|resolution_unit
 operator|=
 name|ru
 operator|->

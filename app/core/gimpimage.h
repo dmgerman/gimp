@@ -263,9 +263,9 @@ name|gdouble
 name|yresolution
 decl_stmt|;
 comment|/*  image y-res, in dpi          */
-DECL|member|unit
+DECL|member|resolution_unit
 name|GimpUnit
-name|unit
+name|resolution_unit
 decl_stmt|;
 comment|/*  resolution unit              */
 DECL|member|base_type

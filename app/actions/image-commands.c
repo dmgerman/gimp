@@ -2404,7 +2404,7 @@ name|unit
 operator|==
 name|gimage
 operator|->
-name|unit
+name|resolution_unit
 operator|&&
 name|options
 operator|->

@@ -985,9 +985,10 @@ name|gimp_image_set_unit
 argument_list|(
 name|gimage
 argument_list|,
+name|gimp_image_get_unit
+argument_list|(
 name|invoke
-operator|->
-name|unit
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

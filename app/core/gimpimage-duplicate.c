@@ -239,7 +239,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*  Copy resolution and unit information  */
+comment|/*  Copy resolution information  */
 name|new_gimage
 operator|->
 name|xresolution
@@ -258,11 +258,11 @@ name|yresolution
 expr_stmt|;
 name|new_gimage
 operator|->
-name|unit
+name|resolution_unit
 operator|=
 name|gimage
 operator|->
-name|unit
+name|resolution_unit
 expr_stmt|;
 comment|/*  Copy floating layer  */
 name|floating_layer

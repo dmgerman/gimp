@@ -1823,7 +1823,7 @@ expr_stmt|;
 block|}
 name|gimage
 operator|->
-name|unit
+name|resolution_unit
 operator|=
 name|unit
 expr_stmt|;
@@ -2066,7 +2066,7 @@ argument_list|)
 expr_stmt|;
 name|gimage
 operator|->
-name|unit
+name|resolution_unit
 operator|=
 name|unit
 expr_stmt|;

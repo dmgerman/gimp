@@ -1445,6 +1445,14 @@ name|parasite
 init|=
 name|NULL
 decl_stmt|;
+name|GimpUnit
+name|unit
+init|=
+name|gimp_image_get_unit
+argument_list|(
+name|gimage
+argument_list|)
+decl_stmt|;
 comment|/* check and see if we should save the colormap property */
 if|if
 condition|(
@@ -1595,8 +1603,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
-operator|->
 name|unit
 operator|<
 name|_gimp_unit_get_number_of_built_in_units
@@ -1618,8 +1624,6 @@ name|PROP_UNIT
 argument_list|,
 name|error
 argument_list|,
-name|gimage
-operator|->
 name|unit
 argument_list|)
 argument_list|)
@@ -1675,8 +1679,6 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|gimage
-operator|->
 name|unit
 operator|>=
 name|_gimp_unit_get_number_of_built_in_units
@@ -1698,8 +1700,6 @@ name|PROP_USER_UNIT
 argument_list|,
 name|error
 argument_list|,
-name|gimage
-operator|->
 name|unit
 argument_list|)
 argument_list|)
@@ -6469,7 +6469,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1276170108
+DECL|struct|__anon27d814660108
 block|{
 DECL|member|info
 name|XcfInfo

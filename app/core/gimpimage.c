@@ -276,7 +276,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2780d3e70103
+DECL|enum|__anon27a999810103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -346,7 +346,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2780d3e70203
+DECL|enum|__anon27a999810203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2127,7 +2127,7 @@ literal|1.0
 expr_stmt|;
 name|gimage
 operator|->
-name|unit
+name|resolution_unit
 operator|=
 name|GIMP_UNIT_INCH
 expr_stmt|;
@@ -2736,7 +2736,7 @@ name|yresolution
 expr_stmt|;
 name|gimage
 operator|->
-name|unit
+name|resolution_unit
 operator|=
 name|config
 operator|->
@@ -5796,7 +5796,7 @@ if|if
 condition|(
 name|gimage
 operator|->
-name|unit
+name|resolution_unit
 operator|!=
 name|unit
 condition|)
@@ -5813,7 +5813,7 @@ argument_list|)
 expr_stmt|;
 name|gimage
 operator|->
-name|unit
+name|resolution_unit
 operator|=
 name|unit
 expr_stmt|;
@@ -5850,7 +5850,7 @@ expr_stmt|;
 return|return
 name|gimage
 operator|->
-name|unit
+name|resolution_unit
 return|;
 block|}
 end_function

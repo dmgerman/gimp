@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpcoreconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp.h"
 end_include
 
@@ -141,7 +135,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5330740103
+DECL|enum|__anon27a13ae00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1408,13 +1402,6 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-literal|"unit"
-argument_list|,
-name|gimp_image_get_unit
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|,
 literal|"xresolution"
 argument_list|,
 name|xresolution
@@ -1425,15 +1412,10 @@ name|yresolution
 argument_list|,
 literal|"resolution-unit"
 argument_list|,
+name|gimp_image_get_unit
+argument_list|(
 name|gimage
-operator|->
-name|gimp
-operator|->
-name|config
-operator|->
-name|default_image
-operator|->
-name|resolution_unit
+argument_list|)
 argument_list|,
 literal|"image-type"
 argument_list|,

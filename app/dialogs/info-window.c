@@ -2054,9 +2054,10 @@ name|GIMP_UNIT_PIXEL
 condition|)
 name|unit
 operator|=
+name|gimp_image_get_unit
+argument_list|(
 name|image
-operator|->
-name|unit
+argument_list|)
 expr_stmt|;
 name|unit_factor
 operator|=
@@ -2605,9 +2606,10 @@ name|GIMP_UNIT_PIXEL
 condition|)
 name|unit
 operator|=
+name|gimp_image_get_unit
+argument_list|(
 name|image
-operator|->
-name|unit
+argument_list|)
 expr_stmt|;
 name|unit_factor
 operator|=
@@ -2694,9 +2696,10 @@ expr_stmt|;
 comment|/*  resolution  */
 name|unit
 operator|=
+name|gimp_image_get_unit
+argument_list|(
 name|image
-operator|->
-name|unit
+argument_list|)
 expr_stmt|;
 name|unit_factor
 operator|=
