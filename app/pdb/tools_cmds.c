@@ -7466,7 +7466,7 @@ name|new_layer
 argument_list|)
 expr_stmt|;
 comment|/* Determine the perspective transform that maps from        * the unit cube to the trans_info coordinates        */
-name|perspective_find_transform
+name|gimp_perspective_tool_find_transform
 argument_list|(
 name|trans_info
 argument_list|,
@@ -7574,7 +7574,7 @@ expr_stmt|;
 comment|/* Perspective the buffer */
 name|new_tiles
 operator|=
-name|perspective_tool_perspective
+name|gimp_perspective_tool_perspective
 argument_list|(
 name|gimage
 argument_list|,
@@ -8366,7 +8366,7 @@ expr_stmt|;
 comment|/* Rotate the buffer */
 name|new_tiles
 operator|=
-name|rotate_tool_rotate
+name|gimp_rotate_tool_rotate
 argument_list|(
 name|gimage
 argument_list|,
@@ -9379,7 +9379,7 @@ expr_stmt|;
 comment|/* Shear the buffer */
 name|new_tiles
 operator|=
-name|shear_tool_shear
+name|gimp_shear_tool_shear
 argument_list|(
 name|gimage
 argument_list|,

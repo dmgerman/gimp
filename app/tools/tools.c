@@ -269,12 +269,18 @@ comment|/*  transform tools  */
 name|gimp_flip_tool_register
 argument_list|()
 expr_stmt|;
-comment|/* gimp_perspective_tool_register (); */
-comment|/* gimp_shear_tool_register (); */
+name|gimp_perspective_tool_register
+argument_list|()
+expr_stmt|;
+name|gimp_shear_tool_register
+argument_list|()
+expr_stmt|;
 name|gimp_scale_tool_register
 argument_list|()
 expr_stmt|;
-comment|/* gimp_rotate_tool_register (); */
+name|gimp_rotate_tool_register
+argument_list|()
+expr_stmt|;
 name|gimp_crop_tool_register
 argument_list|()
 expr_stmt|;

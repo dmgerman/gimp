@@ -6,20 +6,140 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__PERSPECTIVE_TOOL_H__
+name|__GIMP_PERSPECTIVE_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__PERSPECTIVE_TOOL_H__
+DECL|macro|__GIMP_PERSPECTIVE_TOOL_H__
 define|#
 directive|define
-name|__PERSPECTIVE_TOOL_H__
+name|__GIMP_PERSPECTIVE_TOOL_H__
 end_define
+
+begin_include
+include|#
+directive|include
+file|"gimptransformtool.h"
+end_include
+
+begin_define
+DECL|macro|GIMP_TYPE_PERSPECTIVE_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_PERSPECTIVE_TOOL
+value|(gimp_perspective_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_PERSPECTIVE_TOOL (obj)
+define|#
+directive|define
+name|GIMP_PERSPECTIVE_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_PERSPECTIVE_TOOL, GimpPerspectiveTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_PERSPECTIVE_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_PERSPECTIVE_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_PERSPECTIVE_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_PERSPECTIVE_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_PERSPECTIVE_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PERSPECTIVE_TOOL, GimpPerspectiveToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_PERSPECTIVE_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_PERSPECTIVE_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PERSPECTIVE_TOOL))
+end_define
+
+begin_typedef
+DECL|typedef|GimpPerspectiveTool
+typedef|typedef
+name|struct
+name|_GimpPerspectiveTool
+name|GimpPerspectiveTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpPerspectiveToolClass
+typedef|typedef
+name|struct
+name|_GimpPerspectiveToolClass
+name|GimpPerspectiveToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpPerspectiveTool
+struct|struct
+name|_GimpPerspectiveTool
+block|{
+DECL|member|parent_instance
+name|GimpTransformTool
+name|parent_instance
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpPerspectiveToolClass
+struct|struct
+name|_GimpPerspectiveToolClass
+block|{
+DECL|member|parent_class
+name|GimpTransformToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_function_decl
+name|GtkType
+name|gimp_perspective_tool_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_perspective_tool_register
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|TileManager
 modifier|*
-name|perspective_tool_perspective
+name|gimp_perspective_tool_perspective
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -48,7 +168,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|perspective_find_transform
+name|gimp_perspective_tool_find_transform
 parameter_list|(
 name|gdouble
 modifier|*
@@ -60,34 +180,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|Tool
-modifier|*
-name|tools_new_perspective_tool
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|tools_free_perspective_tool
-parameter_list|(
-name|Tool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*  __PERSPECTIVE_TOOL_H__  */
+comment|/*  __GIMP_PERSPECTIVE_TOOL_H__  */
 end_comment
 
 end_unit

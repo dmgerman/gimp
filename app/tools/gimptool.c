@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e512500103
+DECL|enum|__anon277068ee0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1758,34 +1758,6 @@ begin_macro
 name|STUB
 argument_list|(
 argument|by_color_select
-argument_list|)
-end_macro
-
-begin_macro
-name|STUB
-argument_list|(
-argument|perspective_find_transform
-argument_list|)
-end_macro
-
-begin_macro
-name|STUB
-argument_list|(
-argument|perspective_tool_perspective
-argument_list|)
-end_macro
-
-begin_macro
-name|STUB
-argument_list|(
-argument|rotate_tool_rotate
-argument_list|)
-end_macro
-
-begin_macro
-name|STUB
-argument_list|(
-argument|shear_tool_shear
 argument_list|)
 end_macro
 

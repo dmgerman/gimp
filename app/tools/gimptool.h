@@ -30,30 +30,6 @@ name|GIMP_TYPE_BY_COLOR_SELECT_TOOL
 value|GTK_TYPE_NONE
 end_define
 
-begin_define
-DECL|macro|GIMP_TYPE_ROTATE_TOOL
-define|#
-directive|define
-name|GIMP_TYPE_ROTATE_TOOL
-value|GTK_TYPE_NONE
-end_define
-
-begin_define
-DECL|macro|GIMP_TYPE_SHEAR_TOOL
-define|#
-directive|define
-name|GIMP_TYPE_SHEAR_TOOL
-value|GTK_TYPE_NONE
-end_define
-
-begin_define
-DECL|macro|GIMP_TYPE_PERSPECTIVE_TOOL
-define|#
-directive|define
-name|GIMP_TYPE_PERSPECTIVE_TOOL
-value|GTK_TYPE_NONE
-end_define
-
 begin_comment
 comment|/*  The possibilities for where the cursor lies  */
 end_comment
