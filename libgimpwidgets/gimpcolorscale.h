@@ -141,6 +141,10 @@ DECL|member|rowstride
 name|guint
 name|rowstride
 decl_stmt|;
+DECL|member|needs_render
+name|gboolean
+name|needs_render
+decl_stmt|;
 block|}
 struct|;
 end_struct
