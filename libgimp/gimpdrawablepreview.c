@@ -1673,6 +1673,13 @@ decl_stmt|;
 name|gpointer
 name|iter
 decl_stmt|;
+name|src
+operator|.
+name|dirty
+operator|=
+name|FALSE
+expr_stmt|;
+comment|/* we don't dirty the tiles, just read them */
 for|for
 control|(
 name|iter
