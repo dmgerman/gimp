@@ -84,6 +84,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"text/gimptext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"text/gimptextlayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"vectors/gimpvectors.h"
 end_include
 
@@ -651,6 +663,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
+name|GimpText
+modifier|*
+name|text
+decl_stmt|;
 if|if
 condition|(
 name|gimage
@@ -673,6 +689,51 @@ operator|!
 name|drawable
 condition|)
 return|return;
+comment|/* FIXME: there should be a virtual method for this that the      GimpTextLayer can override. */
+if|if
+condition|(
+name|GIMP_IS_TEXT_LAYER
+argument_list|(
+name|drawable
+argument_list|)
+operator|&&
+operator|(
+name|text
+operator|=
+name|gimp_text_layer_get_text
+argument_list|(
+name|GIMP_TEXT_LAYER
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+operator|)
+operator|!=
+name|NULL
+condition|)
+block|{
+name|g_object_set
+argument_list|(
+name|text
+argument_list|,
+literal|"color"
+argument_list|,
+name|color
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_text_layer_flush
+argument_list|(
+name|GIMP_TEXT_LAYER
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|gimp_drawable_bucket_fill_full
 argument_list|(
 name|drawable
@@ -684,19 +745,20 @@ argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|FALSE
+argument_list|,
 comment|/* no seed fill */
-argument_list|,
 name|FALSE
 argument_list|,
 literal|0.0
 argument_list|,
 name|FALSE
 argument_list|,
+comment|/* fill params  */
 literal|0.0
 argument_list|,
 literal|0.0
-comment|/* fill params */
 argument_list|,
+comment|/* ignored      */
 name|color
 argument_list|,
 name|pattern
@@ -707,6 +769,7 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_context_set_display
 argument_list|(
 name|gimp_get_user_context
