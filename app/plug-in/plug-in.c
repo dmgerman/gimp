@@ -1823,9 +1823,13 @@ argument_list|)
 expr_stmt|;
 name|spawn_flags
 operator|=
+operator|(
 name|G_SPAWN_LEAVE_DESCRIPTORS_OPEN
 operator||
 name|G_SPAWN_DO_NOT_REAP_CHILD
+operator||
+name|G_SPAWN_CHILD_INHERITS_STDIN
+operator|)
 expr_stmt|;
 name|debug
 operator|=

@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -216,11 +222,11 @@ name|level
 init|=
 literal|0
 decl_stmt|;
-name|g_string_assign
+name|g_string_truncate
 argument_list|(
 name|command
 argument_list|,
-literal|""
+literal|0
 argument_list|)
 expr_stmt|;
 while|while
@@ -291,6 +297,20 @@ name|c
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|errno
+condition|)
+name|g_printerr
+argument_list|(
+literal|"error reading from stdin: %s\n"
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;

@@ -89,6 +89,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|cmd
@@ -99,13 +100,13 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|batch_pserver
+name|batch_perl_server
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|gint
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint
@@ -123,29 +124,27 @@ specifier|static
 name|ProcRecord
 modifier|*
 name|eval_proc
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_function
 name|void
-DECL|function|batch_init (Gimp * gimp,gchar ** batch_cmds)
+DECL|function|batch_init (Gimp * gimp,const gchar ** batch_cmds)
 name|batch_init
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 modifier|*
 name|batch_cmds
 parameter_list|)
 block|{
-name|gboolean
-name|read_from_stdin
-init|=
-name|FALSE
-decl_stmt|;
 name|gboolean
 name|perl_server_already_running
 init|=
@@ -154,15 +153,6 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|eval_proc
-operator|=
-name|procedural_db_lookup
-argument_list|(
-name|gimp
-argument_list|,
-literal|"extension_script_fu_eval"
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|batch_cmds
@@ -170,7 +160,6 @@ index|[
 literal|0
 index|]
 operator|&&
-operator|!
 name|strcmp
 argument_list|(
 name|batch_cmds
@@ -180,6 +169,8 @@ index|]
 argument_list|,
 literal|"-"
 argument_list|)
+operator|==
+literal|0
 condition|)
 block|{
 name|batch_cmds
@@ -189,23 +180,12 @@ index|]
 operator|=
 literal|"(extension-script-fu-text-console RUN-INTERACTIVE)"
 expr_stmt|;
-if|if
-condition|(
-name|batch_cmds
-index|[
-literal|1
-index|]
-condition|)
 name|batch_cmds
 index|[
 literal|1
 index|]
 operator|=
 name|NULL
-expr_stmt|;
-name|read_from_stdin
-operator|=
-name|TRUE
 expr_stmt|;
 block|}
 for|for
@@ -262,7 +242,7 @@ operator|!
 name|perl_server_already_running
 condition|)
 block|{
-name|batch_pserver
+name|batch_perl_server
 argument_list|(
 name|gimp
 argument_list|,
@@ -275,12 +255,26 @@ argument_list|)
 expr_stmt|;
 name|perl_server_already_running
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 block|}
 continue|continue;
 block|}
 block|}
+if|if
+condition|(
+operator|!
+name|eval_proc
+condition|)
+name|eval_proc
+operator|=
+name|procedural_db_lookup
+argument_list|(
+name|gimp
+argument_list|,
+literal|"extension_script_fu_eval"
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -304,17 +298,6 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|read_from_stdin
-condition|)
-name|gimp_exit
-argument_list|(
-name|gimp
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_function
@@ -322,13 +305,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|batch_run_cmd (Gimp * gimp,gchar * cmd)
+DECL|function|batch_run_cmd (Gimp * gimp,const gchar * cmd)
 name|batch_run_cmd
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|cmd
@@ -361,14 +345,10 @@ name|gimp_exit
 argument_list|(
 name|gimp
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
-name|exit
-argument_list|(
-literal|0
-argument_list|)
-expr_stmt|;
+return|return;
 block|}
 name|args
 operator|=
@@ -421,7 +401,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-literal|1
+name|GIMP_RUN_NONINTERACTIVE
 expr_stmt|;
 name|args
 index|[
@@ -432,6 +412,9 @@ name|value
 operator|.
 name|pdb_pointer
 operator|=
+operator|(
+name|gpointer
+operator|)
 name|cmd
 expr_stmt|;
 name|vals
@@ -508,14 +491,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|batch_pserver (Gimp * gimp,gint run_mode,gint flags,gint extra)
-name|batch_pserver
+DECL|function|batch_perl_server (Gimp * gimp,GimpRunMode run_mode,gint flags,gint extra)
+name|batch_perl_server
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|gint
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint
@@ -557,7 +540,8 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"extension_perl_server not available: unable to start the perl server\n"
+literal|"extension_perl_server not available: "
+literal|"unable to start the perl server"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -663,7 +647,7 @@ block|{
 case|case
 name|GIMP_PDB_EXECUTION_ERROR
 case|:
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"perl server: experienced an execution error.\n"
 argument_list|)
@@ -672,7 +656,7 @@ break|break;
 case|case
 name|GIMP_PDB_CALLING_ERROR
 case|:
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"perl server: experienced a calling error.\n"
 argument_list|)
@@ -681,7 +665,7 @@ break|break;
 case|case
 name|GIMP_PDB_SUCCESS
 case|:
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"perl server: executed successfully.\n"
 argument_list|)
