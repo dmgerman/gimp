@@ -20,12 +20,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<malloc.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<windows.h>
 end_include
 
@@ -1979,12 +1973,10 @@ expr_stmt|;
 comment|/* Allocate the buffer for the transfer */
 name|buffer
 operator|=
-operator|(
-name|char
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|char
+argument_list|,
 name|setupMemXfer
 operator|.
 name|Preferred
@@ -2161,12 +2153,8 @@ name|TWRC_SUCCESS
 condition|)
 do|;
 comment|/* Free the memory buffer */
-name|free
+name|g_free
 argument_list|(
-operator|(
-name|void
-operator|*
-operator|)
 name|imageMemXfer
 operator|.
 name|Memory
@@ -2799,15 +2787,11 @@ comment|/* Create the structure */
 name|pTW_SESSION
 name|session
 init|=
-operator|(
-name|pTW_SESSION
-operator|)
-name|malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|TW_SESSION
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 decl_stmt|;
 comment|/* Set the structure fields */
@@ -2833,15 +2817,11 @@ name|session
 operator|->
 name|dsIdentity
 operator|=
-operator|(
-name|pTW_IDENTITY
-operator|)
-name|malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|TW_IDENTITY
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|session

@@ -42,15 +42,11 @@ comment|/* Create the structure */
 name|pTW_SESSION
 name|session
 init|=
-operator|(
-name|pTW_SESSION
-operator|)
-name|malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|TW_SESSION
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 decl_stmt|;
 comment|/* Set the structure fields */
@@ -76,15 +72,11 @@ name|session
 operator|->
 name|dsIdentity
 operator|=
-operator|(
-name|pTW_IDENTITY
-operator|)
-name|malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|TW_IDENTITY
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|session

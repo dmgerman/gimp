@@ -556,7 +556,7 @@ operator|=
 operator|(
 name|TW_MEMREF
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 name|imageMemXfer
 operator|.
@@ -610,12 +610,8 @@ argument_list|)
 condition|)
 return|return;
 comment|/* Clean up the memory */
-name|free
+name|g_free
 argument_list|(
-operator|(
-name|void
-operator|*
-operator|)
 name|imageMemXfer
 operator|.
 name|Memory
