@@ -28,10 +28,13 @@ name|layer_select_init
 parameter_list|(
 name|GImage
 modifier|*
+name|gimage
 parameter_list|,
-name|int
+name|gint
+name|move
 parameter_list|,
 name|guint32
+name|time
 parameter_list|)
 function_decl|;
 end_function_decl
