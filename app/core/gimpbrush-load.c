@@ -58,7 +58,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2ad0412b0103
+DECL|enum|__anon2c1532730103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -72,6 +72,19 @@ name|LAST_SIGNAL
 block|}
 enum|;
 end_enum
+
+begin_function_decl
+specifier|static
+name|GimpBrush
+modifier|*
+name|gimp_brush_select_brush
+parameter_list|(
+name|PaintCore
+modifier|*
+name|paint_core
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_decl_stmt
 DECL|variable|gimp_brush_signals
@@ -209,6 +222,12 @@ operator|->
 name|destroy
 operator|=
 name|gimp_brush_destroy
+expr_stmt|;
+name|klass
+operator|->
+name|select_brush
+operator|=
+name|gimp_brush_select_brush
 expr_stmt|;
 name|gimp_brush_signals
 index|[
@@ -437,6 +456,26 @@ name|filename
 argument_list|)
 expr_stmt|;
 return|return
+name|brush
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|GimpBrush
+modifier|*
+DECL|function|gimp_brush_select_brush (PaintCore * paint_core)
+name|gimp_brush_select_brush
+parameter_list|(
+name|PaintCore
+modifier|*
+name|paint_core
+parameter_list|)
+block|{
+return|return
+name|paint_core
+operator|->
 name|brush
 return|;
 block|}

@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushpixmap.h"
+file|"gimpbrushpipe.h"
 end_include
 
 begin_include
@@ -3476,7 +3476,7 @@ comment|/*  *  Local functions  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27bc163d0108
+DECL|struct|__anon2875ed780108
 typedef|typedef
 struct|struct
 block|{
@@ -3862,9 +3862,10 @@ operator|*
 operator|)
 name|temp_buf_data
 argument_list|(
+name|gimp_brush_pixmap_pixmap
+argument_list|(
 name|pixmapbrush
-operator|->
-name|pixmap_mask
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -4274,12 +4275,13 @@ argument_list|(
 name|brush
 argument_list|)
 condition|?
+name|gimp_brush_pixmap_pixmap
+argument_list|(
 name|GIMP_BRUSH_PIXMAP
 argument_list|(
 name|brush
 argument_list|)
-operator|->
-name|pixmap_mask
+argument_list|)
 else|:
 name|brush
 operator|->

@@ -279,9 +279,6 @@ case|:
 case|case
 name|SMUDGE
 case|:
-case|case
-name|PIXMAPBRUSH
-case|:
 name|tool_info
 index|[
 name|i

@@ -91,15 +91,6 @@ value|4
 end_define
 
 begin_typedef
-DECL|typedef|PaintCore
-typedef|typedef
-name|struct
-name|_paint_core
-name|PaintCore
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|PaintFunc
 typedef|typedef
 name|void

@@ -88,12 +88,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushpixmap.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbrushgenerated.h"
 end_include
 
@@ -765,7 +759,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|GimpBrushPixmap
+name|GimpBrushPipe
 modifier|*
 name|brush
 decl_stmt|;
@@ -795,7 +789,7 @@ expr_stmt|;
 else|else
 name|g_message
 argument_list|(
-literal|"Warning: failed to load brush \"%s\""
+literal|"Warning: failed to load pixmap brush \"%s\""
 argument_list|,
 name|filename
 argument_list|)
@@ -853,7 +847,7 @@ expr_stmt|;
 else|else
 name|g_message
 argument_list|(
-literal|"Warning: failed to load pipe \"%s\""
+literal|"Warning: failed to load pixmap pipe \"%s\""
 argument_list|,
 name|filename
 argument_list|)

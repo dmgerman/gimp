@@ -468,7 +468,7 @@ name|GdkFont
 modifier|*
 name|font
 decl_stmt|;
-DECL|struct|__anon28a6b5730108
+DECL|struct|__anon2ad860f80108
 specifier|static
 specifier|const
 struct|struct
@@ -1509,7 +1509,6 @@ name|NATIVE_WIN32
 end_ifdef
 
 begin_function
-specifier|static
 name|char
 modifier|*
 DECL|function|quote_spaces (char * string)

@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushpixmap.h"
+file|"gimpbrushpipe.h"
 end_include
 
 begin_include
@@ -67,16 +67,6 @@ begin_include
 include|#
 directive|include
 file|"palette.h"
-end_include
-
-begin_comment
-comment|/* for color_area_with_pixmap */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"pixmapbrush.h"
 end_include
 
 begin_include
@@ -1271,15 +1261,6 @@ argument_list|)
 operator|)
 condition|)
 return|return;
-name|gimage_get_foreground
-argument_list|(
-name|gimage
-argument_list|,
-name|drawable
-argument_list|,
-name|col
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1295,18 +1276,6 @@ argument_list|)
 operator|)
 condition|)
 return|return;
-comment|/*  color the pixels  */
-name|col
-index|[
-name|area
-operator|->
-name|bytes
-operator|-
-literal|1
-index|]
-operator|=
-name|OPAQUE_OPACITY
-expr_stmt|;
 if|if
 condition|(
 name|GIMP_IS_BRUSH_PIXMAP
@@ -1319,15 +1288,13 @@ condition|)
 block|{
 name|color_area_with_pixmap
 argument_list|(
+name|paint_core
+argument_list|,
 name|gimage
 argument_list|,
 name|drawable
 argument_list|,
 name|area
-argument_list|,
-name|paint_core
-operator|->
-name|brush
 argument_list|)
 expr_stmt|;
 name|mode
@@ -1338,6 +1305,26 @@ block|}
 else|else
 block|{
 comment|/*  color the pixels  */
+name|gimage_get_foreground
+argument_list|(
+name|gimage
+argument_list|,
+name|drawable
+argument_list|,
+name|col
+argument_list|)
+expr_stmt|;
+name|col
+index|[
+name|area
+operator|->
+name|bytes
+operator|-
+literal|1
+index|]
+operator|=
+name|OPAQUE_OPACITY
+expr_stmt|;
 name|color_pixels
 argument_list|(
 name|temp_buf_data

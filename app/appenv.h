@@ -319,7 +319,7 @@ value|CLAMP(a,0,255)
 end_define
 
 begin_typedef
-DECL|enum|__anon2b5498020103
+DECL|enum|__anon2bcab2860103
 typedef|typedef
 enum|enum
 block|{
@@ -418,6 +418,29 @@ name|MessageHandlerType
 name|message_handler
 decl_stmt|;
 end_decl_stmt
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|NATIVE_WIN32
+end_ifdef
+
+begin_function_decl
+name|char
+modifier|*
+name|quote_spaces
+parameter_list|(
+name|char
+modifier|*
+name|string
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_endif
 endif|#

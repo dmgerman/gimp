@@ -31,7 +31,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba374320103
+DECL|enum|__anon2c2d4cc70103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -54,7 +54,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba374320203
+DECL|enum|__anon2c2d4cc70203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -92,7 +92,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba374320303
+DECL|enum|__anon2c2d4cc70303
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba374320403
+DECL|enum|__anon2c2d4cc70403
 block|{
 DECL|enumerator|NORMAL_MODE
 name|NORMAL_MODE
@@ -201,7 +201,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba374320503
+DECL|enum|__anon2c2d4cc70503
 block|{
 DECL|enumerator|NORMAL_CONVOL
 name|NORMAL_CONVOL
@@ -227,7 +227,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba374320603
+DECL|enum|__anon2c2d4cc70603
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -253,7 +253,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba374320703
+DECL|enum|__anon2c2d4cc70703
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -272,7 +272,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba374320803
+DECL|enum|__anon2c2d4cc70803
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -289,7 +289,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon2ba374320903
+DECL|enum|__anon2c2d4cc70903
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -310,7 +310,7 @@ comment|/* gradient paint modes */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ba374320a03
+DECL|enum|__anon2c2d4cc70a03
 typedef|typedef
 enum|enum
 block|{
@@ -347,7 +347,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba374320b03
+DECL|enum|__anon2c2d4cc70b03
 block|{
 DECL|enumerator|LINEAR_INTERPOLATION
 name|LINEAR_INTERPOLATION
@@ -455,6 +455,43 @@ begin_comment
 DECL|typedef|LayerMask
 comment|/* convenience */
 end_comment
+
+begin_typedef
+DECL|typedef|PaintCore
+typedef|typedef
+name|struct
+name|_paint_core
+name|PaintCore
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpBrush
+typedef|typedef
+name|struct
+name|_GimpBrush
+name|GimpBrush
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpBrushP
+typedef|typedef
+name|struct
+name|_GimpBrush
+modifier|*
+name|GimpBrushP
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpBrushClass
+typedef|typedef
+name|struct
+name|_GimpBrushClass
+name|GimpBrushClass
+typedef|;
+end_typedef
 
 begin_typedef
 DECL|typedef|LayerUndo

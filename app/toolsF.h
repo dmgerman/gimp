@@ -35,7 +35,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d262d40103
+DECL|enum|__anon2b39ec0c0103
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -67,7 +67,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d262d40203
+DECL|enum|__anon2b39ec0c0203
 block|{
 DECL|enumerator|FIRST_TOOLBOX_TOOL
 name|FIRST_TOOLBOX_TOOL
@@ -154,9 +154,6 @@ name|DODGEBURN
 block|,
 DECL|enumerator|SMUDGE
 name|SMUDGE
-block|,
-DECL|enumerator|PIXMAPBRUSH
-name|PIXMAPBRUSH
 block|,
 DECL|enumerator|MEASURE
 name|MEASURE

@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushpipe.h"
+file|"gimpbrushlist.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpbrushlist.h"
+file|"gimpbrushpipe.h"
 end_include
 
 begin_include
@@ -97,12 +97,6 @@ begin_include
 include|#
 directive|include
 file|"paintbrush.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixmapbrush.h"
 end_include
 
 begin_include
@@ -2125,15 +2119,13 @@ condition|)
 block|{
 name|color_area_with_pixmap
 argument_list|(
+name|paint_core
+argument_list|,
 name|gimage
 argument_list|,
 name|drawable
 argument_list|,
 name|area
-argument_list|,
-name|paint_core
-operator|->
-name|brush
 argument_list|)
 expr_stmt|;
 name|paint_appl_mode

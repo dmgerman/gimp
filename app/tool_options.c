@@ -3026,23 +3026,10 @@ argument_list|(
 literal|"Smudge Options"
 argument_list|)
 else|:
-operator|(
-operator|(
-name|tool_type
-operator|==
-name|PIXMAPBRUSH
-operator|)
-condition|?
-name|_
-argument_list|(
-literal|"Pixmap Brush Options"
-argument_list|)
-else|:
 name|_
 argument_list|(
 literal|"ERROR: Unknown Paint Type"
 argument_list|)
-operator|)
 operator|)
 operator|)
 operator|)
@@ -3352,9 +3339,6 @@ case|:
 case|case
 name|INK
 case|:
-case|case
-name|PIXMAPBRUSH
-case|:
 name|gtk_table_set_row_spacing
 argument_list|(
 name|GTK_TABLE
@@ -3592,9 +3576,6 @@ case|:
 case|case
 name|SMUDGE
 case|:
-case|case
-name|PIXMAPBRUSH
-case|:
 name|separator
 operator|=
 name|gtk_hseparator_new
@@ -3800,9 +3781,6 @@ name|DODGEBURN
 case|:
 case|case
 name|SMUDGE
-case|:
-case|case
-name|PIXMAPBRUSH
 case|:
 break|break;
 default|default:

@@ -25,7 +25,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpobjectP.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_core.h"
 end_include
 
 begin_include
@@ -39,19 +51,6 @@ include|#
 directive|include
 file|"vector2d.h"
 end_include
-
-begin_typedef
-DECL|typedef|GimpBrush
-DECL|typedef|GimpBrushP
-typedef|typedef
-name|struct
-name|_GimpBrush
-name|GimpBrush
-typedef|,
-modifier|*
-name|GimpBrushP
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpBrush
@@ -108,24 +107,27 @@ DECL|member|parent_class
 name|GimpObjectClass
 name|parent_class
 decl_stmt|;
+DECL|member|select_brush
+name|GimpBrush
+modifier|*
+function_decl|(
+modifier|*
+name|select_brush
+function_decl|)
+parameter_list|(
+name|PaintCore
+modifier|*
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
 
-begin_typedef
-DECL|typedef|GimpBrushClass
-typedef|typedef
-name|struct
-name|_GimpBrushClass
-name|GimpBrushClass
-typedef|;
-end_typedef
-
 begin_define
-DECL|macro|BRUSH_CLASS (klass)
+DECL|macro|GIMP_BRUSH_CLASS (klass)
 define|#
 directive|define
-name|BRUSH_CLASS
+name|GIMP_BRUSH_CLASS
 parameter_list|(
 name|klass
 parameter_list|)

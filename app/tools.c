@@ -210,12 +210,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pixmapbrush.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"posterize.h"
 end_include
 
@@ -1411,46 +1405,6 @@ block|,
 name|tools_new_smudge
 block|,
 name|tools_free_smudge
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|NULL
-block|,
-name|N_
-argument_list|(
-literal|"Pixmap brush"
-argument_list|)
-block|,
-literal|16
-block|,
-name|N_
-argument_list|(
-literal|"/Tools/Pixmap Brush"
-argument_list|)
-block|,
-literal|""
-block|,
-operator|(
-name|char
-operator|*
-operator|*
-operator|)
-name|paint_bits
-block|,
-name|N_
-argument_list|(
-literal|"Paint fuzzy brush strokes"
-argument_list|)
-block|,
-literal|"ContextHelp/paintbrush"
-block|,
-name|PIXMAPBRUSH
-block|,
-name|tools_new_pixmapbrush
-block|,
-name|tools_free_pixmapbrush
 block|,
 name|NULL
 block|}
