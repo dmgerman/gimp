@@ -1727,14 +1727,14 @@ name|private
 operator|->
 name|image
 argument_list|,
-name|gimp_size_entry_get_value
+name|gimp_size_entry_get_refval
 argument_list|(
 name|entry
 argument_list|,
 literal|0
 argument_list|)
 argument_list|,
-name|gimp_size_entry_get_value
+name|gimp_size_entry_get_refval
 argument_list|(
 name|entry
 argument_list|,
