@@ -273,11 +273,6 @@ argument_list|(
 name|args
 argument_list|)
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"g_on_error_query()\n"
-argument_list|)
-expr_stmt|;
 name|g_on_error_query
 argument_list|(
 name|prog_name
