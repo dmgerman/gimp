@@ -153,7 +153,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b54cf120103
+DECL|enum|__anon27bc37830103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -178,7 +178,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b54cf120203
+DECL|enum|__anon27bc37830203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1353,7 +1353,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b54cf120308
+DECL|struct|__anon27bc37830308
 block|{
 DECL|member|fd
 name|gint
@@ -2206,7 +2206,7 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|guint
+name|gulong
 name|handler_id
 decl_stmt|;
 name|g_return_val_if_fail
@@ -2426,7 +2426,7 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|guint
+name|gulong
 name|handler_id
 decl_stmt|;
 name|g_return_val_if_fail
@@ -3307,7 +3307,7 @@ modifier|*
 name|handler
 parameter_list|)
 block|{
-name|guint
+name|gulong
 name|handler_id
 decl_stmt|;
 name|handler_id
@@ -3547,7 +3547,7 @@ modifier|*
 name|handler
 parameter_list|)
 block|{
-name|guint
+name|gulong
 name|handler_id
 decl_stmt|;
 name|handler_id
