@@ -19,6 +19,12 @@ directive|include
 file|"gimphelp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"plug_in.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|help_proc
 specifier|static
