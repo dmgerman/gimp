@@ -901,6 +901,14 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
+comment|/*  get default values from prefs (see bug #120832)  */
+name|gimp_tool_options_reset
+argument_list|(
+name|tool_info
+operator|->
+name|tool_options
+argument_list|)
+expr_stmt|;
 name|gimp_tool_options_deserialize
 argument_list|(
 name|tool_info
