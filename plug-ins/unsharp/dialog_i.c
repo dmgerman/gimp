@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* $Id$  * dialog_f.c -- functions for creating a GTK gdouble slider/value input.  *  * Copyright (C) 1999 Winston Chang  *<wchang3@students.wisc.edu>  *<winston@steppe.com>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* $Id$  * dialog_i.c -- functions for creating a GTK int slider/value input.  *  * Copyright (C) 1999 Winston Chang  *<wchang3@students.wisc.edu>  *<winston@steppe.com>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -30,17 +30,17 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialog_f.h"
+file|"dialog_i.h"
 end_include
 
 begin_comment
-comment|/*  * 'dialog_create_value_f()' - Create an gdouble value control...  */
+comment|/*  * 'dialog_create_value_i()' - Create an gint value control...  */
 end_comment
 
 begin_function
 name|void
-DECL|function|dialog_create_value_f (char * title,GtkTable * table,int row,gdouble * value,gdouble increment,gint precision,int left,int right)
-name|dialog_create_value_f
+DECL|function|dialog_create_value_i (char * title,GtkTable * table,int row,gint * value,gint increment,int left,int right)
+name|dialog_create_value_i
 parameter_list|(
 name|char
 modifier|*
@@ -56,19 +56,15 @@ name|int
 name|row
 parameter_list|,
 comment|/* Row # for container */
-name|gdouble
+name|gint
 modifier|*
 name|value
 parameter_list|,
 comment|/* Value holder */
-name|gdouble
+name|gint
 name|increment
 parameter_list|,
 comment|/* Size of mouse-click and                                             keyboard increment */
-name|gint
-name|precision
-parameter_list|,
-comment|/* Number of digits after decimal point */
 name|int
 name|left
 parameter_list|,
@@ -156,11 +152,14 @@ name|label
 argument_list|)
 expr_stmt|;
 comment|/* 	* Scale... 	*/
-comment|/* the "right+increment" is necessary to make it stop on 5.0 instead 	   of 4.9.   I think this is a shortcoming of GTK's adjustments */
+comment|/* the "right+increment" is necessary to make it stop on 5.0 instead      of 4.9.   I think this is a shortcoming of GTK's adjustments */
 name|scale_data
 operator|=
 name|gtk_adjustment_new
 argument_list|(
+operator|(
+name|gfloat
+operator|)
 operator|*
 name|value
 argument_list|,
@@ -189,7 +188,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|dialog_fscale_update
+name|dialog_iscale_update
 argument_list|,
 name|value
 argument_list|)
@@ -211,7 +210,7 @@ argument_list|(
 name|scale
 argument_list|)
 argument_list|,
-name|precision
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_usize
@@ -311,7 +310,7 @@ name|sprintf
 argument_list|(
 name|buf
 argument_list|,
-literal|"%g"
+literal|"%d"
 argument_list|,
 operator|*
 name|value
@@ -339,7 +338,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|dialog_fentry_update
+name|dialog_ientry_update
 argument_list|,
 name|value
 argument_list|)
@@ -381,20 +380,20 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * 'dialog_fscale_update()' - Update the value field using the scale.  */
+comment|/*  * 'dialog_iscale_update()' - Update the value field using the scale.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|dialog_fscale_update (GtkAdjustment * adjustment,gdouble * value)
-name|dialog_fscale_update
+DECL|function|dialog_iscale_update (GtkAdjustment * adjustment,gint * value)
+name|dialog_iscale_update
 parameter_list|(
 name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|,
 comment|/* I - New value */
-name|gdouble
+name|gint
 modifier|*
 name|value
 parameter_list|)
@@ -417,6 +416,9 @@ condition|(
 operator|*
 name|value
 operator|!=
+operator|(
+name|int
+operator|)
 name|adjustment
 operator|->
 name|value
@@ -425,9 +427,22 @@ block|{
 operator|*
 name|value
 operator|=
+operator|(
+name|int
+operator|)
 name|adjustment
 operator|->
 name|value
+expr_stmt|;
+name|sprintf
+argument_list|(
+name|buf
+argument_list|,
+literal|"%d"
+argument_list|,
+operator|*
+name|value
+argument_list|)
 expr_stmt|;
 name|entry
 operator|=
@@ -437,27 +452,6 @@ name|GTK_OBJECT
 argument_list|(
 name|adjustment
 argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/* UGLY HACK ALERT */
-comment|/* use precision of 5 */
-name|sprintf
-argument_list|(
-name|buf
-argument_list|,
-literal|"%.5g"
-argument_list|,
-operator|*
-name|value
-argument_list|)
-expr_stmt|;
-comment|/* This is to round the number to a reasonable value.  For some 		   some reason it wants to increment by about 0.1000000105 instead 		   of 0.1.  That annoys me. */
-operator|*
-name|value
-operator|=
-name|atof
-argument_list|(
-name|buf
 argument_list|)
 expr_stmt|;
 comment|/* assign the text value to the entry */
@@ -496,6 +490,9 @@ name|adjustment
 operator|->
 name|value
 operator|=
+operator|(
+name|gdouble
+operator|)
 operator|*
 name|value
 expr_stmt|;
@@ -504,20 +501,20 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * 'dialog_fentry_update()' - Update the value field using the text entry.  */
+comment|/*  * 'dialog_ientry_update()' - Update the value field using the text entry.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|dialog_fentry_update (GtkWidget * widget,gdouble * value)
-name|dialog_fentry_update
+DECL|function|dialog_ientry_update (GtkWidget * widget,gint * value)
+name|dialog_ientry_update
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
 comment|/* I - Entry widget */
-name|gdouble
+name|gint
 modifier|*
 name|value
 parameter_list|)
@@ -527,18 +524,11 @@ name|GtkAdjustment
 modifier|*
 name|adjustment
 decl_stmt|;
-name|gdouble
+name|gint
 name|new_value
 decl_stmt|;
-comment|/* these three are for the string cleaner */
 name|gint
 name|shift
-decl_stmt|;
-name|gboolean
-name|periodfound
-decl_stmt|;
-name|gint
-name|digits_after_period
 decl_stmt|;
 name|gchar
 modifier|*
@@ -558,7 +548,6 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-comment|//	new_value = atod(gtk_entry_get_text(GTK_ENTRY(widget)));
 name|textvalue
 operator|=
 name|gtk_entry_get_text
@@ -593,16 +582,18 @@ argument_list|(
 name|newtextvalue
 argument_list|)
 expr_stmt|;
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"%d\n"
+argument_list|,
+operator|*
+name|value
+argument_list|)
+expr_stmt|;
 comment|/* this stuff cleans up non-numeric chars */
 name|shift
-operator|=
-literal|0
-expr_stmt|;
-name|periodfound
-operator|=
-name|FALSE
-expr_stmt|;
-name|digits_after_period
 operator|=
 literal|0
 expr_stmt|;
@@ -624,32 +615,8 @@ control|)
 block|{
 if|if
 condition|(
-name|newtextvalue
-index|[
-name|i
-index|]
-operator|==
-literal|'.'
-condition|)
-block|{
-if|if
-condition|(
-name|periodfound
-condition|)
-name|shift
-operator|++
-expr_stmt|;
-comment|/* if not first period, ignore */
-else|else
-name|periodfound
-operator|=
-name|TRUE
-expr_stmt|;
-comment|/* if first period, mark periodfound */
-block|}
-elseif|else
-if|if
-condition|(
+operator|!
+operator|(
 name|newtextvalue
 index|[
 name|i
@@ -663,29 +630,8 @@ name|i
 index|]
 operator|<=
 literal|'9'
+operator|)
 condition|)
-block|{
-if|if
-condition|(
-name|periodfound
-condition|)
-block|{
-name|digits_after_period
-operator|++
-expr_stmt|;
-comment|/* this is to ignore a certain number of digits after period */
-if|if
-condition|(
-name|digits_after_period
-operator|>
-name|ENTRY_PRECISION
-condition|)
-name|shift
-operator|++
-expr_stmt|;
-block|}
-block|}
-else|else
 name|shift
 operator|++
 expr_stmt|;
@@ -762,17 +708,14 @@ argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
-comment|//	g_print(newtextvalue);
-comment|//	g_print("\n");
 comment|/* set the adjustment thingy */
 name|new_value
 operator|=
-name|atof
+name|atoi
 argument_list|(
 name|newtextvalue
 argument_list|)
 expr_stmt|;
-comment|//	g_print("%e.", new_value);
 comment|/* set the new value */
 if|if
 condition|(

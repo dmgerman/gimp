@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__DIALOG_F_H__
+name|__DIALOG_I_H__
 end_ifndef
 
 begin_define
-DECL|macro|__DIALOG_F_H__
+DECL|macro|__DIALOG_I_H__
 define|#
 directive|define
-name|__DIALOG_F_H__
+name|__DIALOG_I_H__
 end_define
 
 begin_define
@@ -50,7 +50,7 @@ end_define
 
 begin_function_decl
 name|void
-name|dialog_create_value_f
+name|dialog_create_value_i
 parameter_list|(
 name|char
 modifier|*
@@ -63,15 +63,12 @@ parameter_list|,
 name|int
 name|row
 parameter_list|,
-name|gdouble
+name|gint
 modifier|*
 name|value
 parameter_list|,
-name|gdouble
+name|gint
 name|increment
-parameter_list|,
-name|int
-name|precision
 parameter_list|,
 name|int
 name|left
@@ -84,13 +81,13 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|dialog_fscale_update
+name|dialog_iscale_update
 parameter_list|(
 name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|,
-name|gdouble
+name|gint
 modifier|*
 name|value
 parameter_list|)
@@ -99,13 +96,13 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|dialog_fentry_update
+name|dialog_ientry_update
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gdouble
+name|gint
 modifier|*
 name|value
 parameter_list|)
@@ -118,7 +115,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __DIALOG_F_H__ */
+comment|/* __DIALOG_I_H__ */
 end_comment
 
 end_unit
