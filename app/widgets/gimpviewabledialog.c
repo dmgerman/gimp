@@ -1358,31 +1358,23 @@ block|{
 name|GtkWidget
 modifier|*
 name|widget
-decl_stmt|;
-name|GdkEventAny
-name|event
-decl_stmt|;
-name|widget
-operator|=
+init|=
 name|GTK_WIDGET
 argument_list|(
 name|dialog
 argument_list|)
-expr_stmt|;
-comment|/* Paranoia: Widget realized in a window? */
+decl_stmt|;
+comment|/* Synthesize delete_event to close dialog. */
 if|if
 condition|(
-name|G_IS_OBJECT
-argument_list|(
 name|widget
 operator|->
 name|window
-argument_list|)
-operator|==
-name|TRUE
 condition|)
 block|{
-comment|/* Synthesize delete_event to close dialog. */
+name|GdkEventAny
+name|event
+decl_stmt|;
 name|event
 operator|.
 name|type
