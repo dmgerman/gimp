@@ -82,6 +82,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -123,7 +129,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29125bda0103
+DECL|enum|__anon2ac3aa810103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -3270,6 +3276,10 @@ decl_stmt|;
 name|GimpImageType
 name|type
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
 comment|/*  Don't bother if the layer already has alpha  */
 switch|switch
 condition|(
@@ -3488,8 +3498,8 @@ name|preview_valid
 operator|=
 name|FALSE
 expr_stmt|;
-name|gimp_image_alpha_changed
-argument_list|(
+name|gimage
+operator|=
 name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
@@ -3497,8 +3507,24 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimage
+operator|->
+name|layers
+operator|->
+name|num_children
+operator|==
+literal|1
+condition|)
+block|{
+name|gimp_image_alpha_changed
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

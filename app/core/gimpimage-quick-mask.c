@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpcolorpanel.h"
 end_include
 
@@ -422,6 +428,10 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|g_assert
 argument_list|(
 name|gdisp
@@ -432,6 +442,15 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 if|if
@@ -444,7 +463,7 @@ name|qmask_state
 operator|!=
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|qmaskon
 argument_list|)
@@ -457,7 +476,7 @@ name|g_signal_handlers_block_by_func
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|qmaskoff
 argument_list|)
@@ -471,7 +490,7 @@ name|g_signal_handlers_block_by_func
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|qmaskon
 argument_list|)
@@ -486,7 +505,7 @@ name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|qmaskon
 argument_list|)
@@ -502,7 +521,7 @@ name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|qmaskoff
 argument_list|)
@@ -520,7 +539,7 @@ name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|qmaskoff
 argument_list|)
@@ -534,7 +553,7 @@ name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|qmaskon
 argument_list|)

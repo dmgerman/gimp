@@ -1240,6 +1240,16 @@ argument_list|(
 name|gimp
 argument_list|,
 name|gimage
+argument_list|,
+literal|0x0101
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

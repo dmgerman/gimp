@@ -101,7 +101,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-ops.h"
+file|"gui/gui.h"
 end_include
 
 begin_include
@@ -522,7 +522,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c4bffab0108
+DECL|struct|__anon28ffdfd30108
 block|{
 DECL|member|directory
 name|gboolean
@@ -4782,7 +4782,7 @@ name|gchar
 modifier|*
 name|str
 decl_stmt|;
-name|gdisplay_xserver_resolution
+name|gui_get_screen_resolution
 argument_list|(
 operator|&
 name|xres
@@ -5632,7 +5632,7 @@ name|gimprc
 operator|.
 name|using_xserver_resolution
 condition|)
-name|gdisplay_xserver_resolution
+name|gui_get_screen_resolution
 argument_list|(
 operator|&
 name|gimprc

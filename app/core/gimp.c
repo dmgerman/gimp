@@ -1773,7 +1773,7 @@ argument_list|,
 name|no_data
 argument_list|)
 expr_stmt|;
-comment|/*  initialize  the global parasite table  */
+comment|/*  initialize the document history  */
 call|(
 modifier|*
 name|status_callback
@@ -2177,8 +2177,9 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|gimp_create_display (Gimp * gimp,GimpImage * gimage)
+name|GimpObject
+modifier|*
+DECL|function|gimp_create_display (Gimp * gimp,GimpImage * gimage,guint scale)
 name|gimp_create_display
 parameter_list|(
 name|Gimp
@@ -2188,14 +2189,29 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|guint
+name|scale
 parameter_list|)
 block|{
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -2205,27 +2221,25 @@ operator|->
 name|create_display_func
 condition|)
 block|{
+return|return
 name|gimp
 operator|->
 name|create_display_func
 argument_list|(
 name|gimage
+argument_list|,
+name|scale
 argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|)
-expr_stmt|;
+return|;
 block|}
+return|return
+name|NULL
+return|;
 block|}
 end_function
 
 begin_comment
-comment|/* void gimp_open_file (Gimp        *gimp, 		const gchar *filename, 		gboolean     with_display) {   GimpImage *gimage;   gint       status;    g_return_if_fail (GIMP_IS_GIMP (gimp));   g_return_if_fail (filename != NULL);    gimage = file_open_image (gimp, 			    filename, 			    filename, 			    _("Open"), 			    NULL, 			    RUN_INTERACTIVE,&status);    if (gimage)     {       gchar *absolute;        * enable& clear all undo steps *       gimp_image_undo_enable (gimage);        * set the image to clean  *       gimp_image_clean_all (gimage);        if (with_display) 	gimp_create_display (gimage->gimp, gimage);        absolute = file_open_absolute_filename (filename);        document_index_add (absolute);       menus_last_opened_add (absolute);        g_free (absolute);     } } */
+comment|/* void gimp_open_file (Gimp        *gimp, 		const gchar *filename, 		gboolean     with_display) {   GimpImage *gimage;   gint       status;    g_return_if_fail (GIMP_IS_GIMP (gimp));   g_return_if_fail (filename != NULL);    gimage = file_open_image (gimp, 			    filename, 			    filename, 			    _("Open"), 			    NULL, 			    RUN_INTERACTIVE,&status);    if (gimage)     {       gchar *absolute;        * enable& clear all undo steps *       gimp_image_undo_enable (gimage);        * set the image to clean  *       gimp_image_clean_all (gimage);        if (with_display) 	gimp_create_display (gimage->gimp, gimage, 0x0101);        absolute = file_open_absolute_filename (filename);        document_index_add (absolute);       menus_last_opened_add (absolute);        g_free (absolute);     } } */
 end_comment
 
 begin_function

@@ -31,7 +31,8 @@ end_include
 begin_typedef
 DECL|typedef|GimpCreateDisplayFunc
 typedef|typedef
-name|void
+name|GimpObject
+modifier|*
 function_decl|(
 modifier|*
 name|GimpCreateDisplayFunc
@@ -40,6 +41,9 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|guint
+name|scale
 parameter_list|)
 function_decl|;
 end_typedef
@@ -486,7 +490,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpObject
+modifier|*
 name|gimp_create_display
 parameter_list|(
 name|Gimp
@@ -496,6 +501,9 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|guint
+name|scale
 parameter_list|)
 function_decl|;
 end_function_decl
