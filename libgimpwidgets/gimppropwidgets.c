@@ -4253,7 +4253,7 @@ operator|&&
 operator|(
 name|_MSC_VER
 operator|<
-literal|1200
+literal|1300
 operator|)
 name|value
 operator|=

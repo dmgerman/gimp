@@ -738,6 +738,9 @@ literal|0
 condition|)
 block|{
 comment|/*        *  The script-fu server for remote operation        */
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
 name|script_fu_server_run
 argument_list|(
 name|name
@@ -751,6 +754,15 @@ argument_list|,
 name|return_vals
 argument_list|)
 expr_stmt|;
+else|#
+directive|else
+name|g_warning
+argument_list|(
+literal|"No script-fu server on win32"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 elseif|else
 if|if

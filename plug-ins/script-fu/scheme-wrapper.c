@@ -6283,6 +6283,9 @@ argument_list|(
 name|return_val
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
 comment|/*  if we're in server mode, listen for additional commands for 10 ms  */
 if|if
 condition|(
@@ -6294,6 +6297,8 @@ argument_list|(
 literal|10
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 ifdef|#
 directive|ifdef
 name|GDK_WINDOWING_WIN32
@@ -6378,9 +6383,14 @@ name|LISP
 name|a
 parameter_list|)
 block|{
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
 name|script_fu_server_quit
 argument_list|()
 expr_stmt|;
+endif|#
+directive|endif
 return|return
 name|NIL
 return|;

@@ -177,6 +177,23 @@ value|0
 comment|/* not really */
 endif|#
 directive|endif
+comment|/* 2004-09-15  Tor Lillqvist<tml@iki.fi>  	* glib/gwin32.h: Don't define ftruncate as a macro. Was never a 	good idea, and it clashes with newest mingw headers, which have a 	ftruncate implementation as an inline function. Thanks to Dominik R.  */
+comment|/* needs coorection for msvc though ;( */
+ifdef|#
+directive|ifdef
+name|_MSC_VER
+DECL|macro|ftruncate (f,s)
+define|#
+directive|define
+name|ftruncate
+parameter_list|(
+name|f
+parameter_list|,
+name|s
+parameter_list|)
+value|g_win32_ftruncate(f,s)
+endif|#
+directive|endif
 name|G_END_DECLS
 end_expr_stmt
 

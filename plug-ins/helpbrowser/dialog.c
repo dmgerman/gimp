@@ -69,6 +69,23 @@ directive|include
 file|"libgimp/gimpui.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"libgimpbase/gimpwin32-io.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -95,7 +112,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b97b3a30103
+DECL|enum|__anon27ec9abe0103
 block|{
 DECL|enumerator|BUTTON_INDEX
 name|BUTTON_INDEX
@@ -111,7 +128,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b97b3a30203
+DECL|enum|__anon27ec9abe0203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE

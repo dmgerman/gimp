@@ -74,6 +74,20 @@ directive|include
 file|"libgimpbase/gimpwin32-io.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|<process.h>
+end_include
+
+begin_define
+DECL|macro|_getpid
+define|#
+directive|define
+name|_getpid
+value|getpid
+end_define
+
 begin_endif
 endif|#
 directive|endif
@@ -236,7 +250,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2933b9930103
+DECL|enum|__anon29e9e7370103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
