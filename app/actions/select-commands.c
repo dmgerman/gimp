@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -73,6 +79,18 @@ begin_include
 include|#
 directive|include
 file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"select-commands.h"
 end_include
 
 begin_include
@@ -974,6 +992,16 @@ expr_stmt|;
 name|gimp_image_flush
 argument_list|(
 name|gimage
+argument_list|)
+expr_stmt|;
+name|gimp_dialog_factory_dialog_raise
+argument_list|(
+name|global_dock_factory
+argument_list|,
+literal|"gimp-channel-list"
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 block|}
