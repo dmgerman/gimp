@@ -221,7 +221,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_autocrop"
 argument_list|,
-literal|"Automagically crops a picture."
+literal|"Automagically crops an image."
 argument_list|,
 literal|""
 argument_list|,
@@ -233,7 +233,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Autocrop"
+literal|"_Autocrop Image"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
@@ -278,7 +278,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Autocrop"
+literal|"_Autocrop Layer"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
