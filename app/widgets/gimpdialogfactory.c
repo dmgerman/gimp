@@ -149,7 +149,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fd1ccd0103
+DECL|enum|__anon2bc17a720103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fd1ccd0203
+DECL|enum|__anon2bc17a720203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -4758,7 +4758,9 @@ name|dockbook
 operator|=
 name|gimp_dockbook_new
 argument_list|(
-name|factory
+name|dock
+operator|->
+name|dialog_factory
 operator|->
 name|menu_factory
 argument_list|)
