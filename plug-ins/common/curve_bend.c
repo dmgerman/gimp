@@ -746,7 +746,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289f4bba0108
+DECL|struct|__anon29d7450a0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -800,7 +800,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289f4bba0208
+DECL|struct|__anon29d7450a0208
 block|{
 DECL|member|y
 name|gint32
