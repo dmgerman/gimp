@@ -1901,19 +1901,16 @@ operator|->
 name|config
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_type_hint
+name|gimp_window_set_hint
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
 name|toolbox
 argument_list|)
 argument_list|,
-name|gimp_window_type_hint_to_gdk_hint
-argument_list|(
 name|config
 operator|->
-name|toolbox_window_type
-argument_list|)
+name|toolbox_window_hint
 argument_list|)
 expr_stmt|;
 comment|/* We need to know when the current device changes, so we can update    * the correct tool - to do this we connect to motion events.    * We can't just use EXTENSION_EVENTS_CURSOR though, since that    * would get us extension events for the mouse pointer, and our    * device would change to that and not change back. So we check    * manually that all devices have a cursor, before establishing the check.    */

@@ -183,10 +183,10 @@ value|"Sets the default settings used when an image is viewed in fullscreen mode
 end_define
 
 begin_define
-DECL|macro|DOCK_WINDOW_TYPE_BLURB
+DECL|macro|DOCK_WINDOW_HINT_BLURB
 define|#
 directive|define
-name|DOCK_WINDOW_TYPE_BLURB
+name|DOCK_WINDOW_HINT_BLURB
 define|\
 value|N_("The window type hint that is set on dock windows. This may affect " \    "the way your window manager decorates and handles dock windows.")
 end_define
@@ -744,10 +744,10 @@ value|N_("The tile cache is used to make sure the GIMP doesn't thrash " \    "ti
 end_define
 
 begin_define
-DECL|macro|TOOLBOX_WINDOW_TYPE_BLURB
+DECL|macro|TOOLBOX_WINDOW_HINT_BLURB
 define|#
 directive|define
-name|TOOLBOX_WINDOW_TYPE_BLURB
+name|TOOLBOX_WINDOW_HINT_BLURB
 define|\
 value|N_("The window type hint that is set on the toolbox. This may affect " \    "how your window manager decorates and handles the toolbox window.")
 end_define

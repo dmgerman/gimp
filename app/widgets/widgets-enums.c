@@ -584,31 +584,31 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|gimp_window_type_hint_enum_values
+DECL|variable|gimp_window_hint_enum_values
 specifier|static
 specifier|const
 name|GEnumValue
-name|gimp_window_type_hint_enum_values
+name|gimp_window_hint_enum_values
 index|[]
 init|=
 block|{
 block|{
-name|GIMP_WINDOW_TYPE_HINT_NORMAL
+name|GIMP_WINDOW_HINT_NORMAL
 block|,
 name|N_
 argument_list|(
-literal|"Normal"
+literal|"Normal Window"
 argument_list|)
 block|,
 literal|"normal"
 block|}
 block|,
 block|{
-name|GIMP_WINDOW_TYPE_HINT_UTILITY
+name|GIMP_WINDOW_HINT_UTILITY
 block|,
 name|N_
 argument_list|(
-literal|"Utility"
+literal|"Utility Window"
 argument_list|)
 block|,
 literal|"utility"
@@ -627,8 +627,8 @@ end_decl_stmt
 
 begin_function
 name|GType
-DECL|function|gimp_window_type_hint_get_type (void)
-name|gimp_window_type_hint_get_type
+DECL|function|gimp_window_hint_get_type (void)
+name|gimp_window_hint_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -648,9 +648,9 @@ name|enum_type
 operator|=
 name|g_enum_register_static
 argument_list|(
-literal|"GimpWindowTypeHint"
+literal|"GimpWindowHint"
 argument_list|,
-name|gimp_window_type_hint_enum_values
+name|gimp_window_hint_enum_values
 argument_list|)
 expr_stmt|;
 return|return

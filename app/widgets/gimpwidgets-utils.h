@@ -244,10 +244,14 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GdkWindowTypeHint
-name|gimp_window_type_hint_to_gdk_hint
+name|void
+name|gimp_window_set_hint
 parameter_list|(
-name|GimpWindowTypeHint
+name|GtkWindow
+modifier|*
+name|window
+parameter_list|,
+name|GimpWindowHint
 name|hint
 parameter_list|)
 function_decl|;

@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2781d6620103
+DECL|enum|__anon28f6306e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -119,7 +119,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2781d6620203
+DECL|enum|__anon28f6306e0203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -1092,19 +1092,16 @@ operator|->
 name|config
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_type_hint
+name|gimp_window_set_hint
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
 name|object
 argument_list|)
 argument_list|,
-name|gimp_window_type_hint_to_gdk_hint
-argument_list|(
 name|config
 operator|->
-name|dock_window_type
-argument_list|)
+name|dock_window_hint
 argument_list|)
 expr_stmt|;
 return|return
