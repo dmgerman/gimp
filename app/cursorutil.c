@@ -226,7 +226,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9b48790108
+DECL|struct|__anon2975c1c40108
 block|{
 DECL|member|bits
 name|guchar
@@ -262,6 +262,19 @@ block|}
 name|BM_Cursor
 typedef|;
 end_typedef
+
+begin_comment
+comment|/* FIXME: gimp_busy HACK */
+end_comment
+
+begin_decl_stmt
+DECL|variable|gimp_busy
+name|gboolean
+name|gimp_busy
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|gimp_cursors
@@ -887,6 +900,11 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
+comment|/* FIXME: gimp_busy HACK */
+name|gimp_busy
+operator|=
+name|TRUE
+expr_stmt|;
 comment|/* Canvases */
 for|for
 control|(
@@ -987,6 +1005,11 @@ name|dialog_unidle_all
 argument_list|()
 expr_stmt|;
 name|pending_removebusy
+operator|=
+name|FALSE
+expr_stmt|;
+comment|/* FIXME: gimp_busy HACK */
+name|gimp_busy
 operator|=
 name|FALSE
 expr_stmt|;

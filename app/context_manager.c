@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"context_manager.h"
 end_include
 
@@ -91,12 +97,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|context_manager_tool_changed (GimpContext * context,ToolType tool_type,gpointer data)
+DECL|function|context_manager_tool_changed (GimpContext * user_context,ToolType tool_type,gpointer data)
 name|context_manager_tool_changed
 parameter_list|(
 name|GimpContext
 modifier|*
-name|context
+name|user_context
 parameter_list|,
 name|ToolType
 name|tool_type
@@ -104,6 +110,77 @@ parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
+block|{
+comment|/* FIXME: gimp_busy HACK */
+if|if
+condition|(
+name|gimp_busy
+condition|)
+block|{
+comment|/*  there may be contexts waiting for the user_context's "tool_changed"        *  signal, so stop emitting it.        */
+name|gtk_signal_emit_stop_by_name
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|user_context
+argument_list|)
+argument_list|,
+literal|"tool_changed"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|active_tool
+operator|->
+name|type
+operator|!=
+name|tool_type
+condition|)
+block|{
+name|gtk_signal_handler_block_by_func
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|user_context
+argument_list|)
+argument_list|,
+name|context_manager_tool_changed
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+comment|/*  explicitly set the current tool  */
+name|gimp_context_set_tool
+argument_list|(
+name|user_context
+argument_list|,
+name|active_tool
+operator|->
+name|type
+argument_list|)
+expr_stmt|;
+name|gtk_signal_handler_unblock_by_func
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|user_context
+argument_list|)
+argument_list|,
+name|context_manager_tool_changed
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+comment|/*  take care that the correct toolbox button gets re-activated  */
+name|tool_type
+operator|=
+name|active_tool
+operator|->
+name|type
+expr_stmt|;
+block|}
+else|else
 block|{
 name|GimpContext
 modifier|*
@@ -157,8 +234,7 @@ name|gimp_context_copy_args
 argument_list|(
 name|tool_context
 argument_list|,
-name|gimp_context_get_user
-argument_list|()
+name|user_context
 argument_list|,
 name|PAINT_OPTIONS_MASK
 argument_list|)
@@ -167,8 +243,7 @@ name|gimp_context_set_parent
 argument_list|(
 name|tool_context
 argument_list|,
-name|gimp_context_get_user
-argument_list|()
+name|user_context
 argument_list|)
 expr_stmt|;
 block|}
@@ -178,6 +253,7 @@ argument_list|(
 name|tool_type
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|tool_type

@@ -28,6 +28,14 @@ directive|include
 file|"tools.h"
 end_include
 
+begin_decl_stmt
+specifier|extern
+name|Channel
+modifier|*
+name|fuzzy_mask
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  fuzzy select functions  */
 end_comment
@@ -48,6 +56,7 @@ name|tools_free_fuzzy_select
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -63,19 +72,26 @@ name|find_contiguous_region
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|,
-name|int
+name|gboolean
+name|antialias
 parameter_list|,
-name|int
+name|gint
+name|threshold
 parameter_list|,
-name|int
+name|gint
+name|x
 parameter_list|,
-name|int
+name|gint
+name|y
 parameter_list|,
-name|int
+name|gboolean
+name|sample_merged
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -86,26 +102,23 @@ name|fuzzy_select
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|,
-name|int
+name|gint
+name|op
 parameter_list|,
-name|int
+name|gboolean
+name|feather
 parameter_list|,
-name|double
+name|gdouble
+name|feather_radius
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-specifier|extern
-name|Channel
-modifier|*
-name|fuzzy_mask
-decl_stmt|;
-end_decl_stmt
 
 begin_endif
 endif|#
@@ -113,7 +126,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __FUZZY_SELECT_H__  */
+comment|/* __FUZZY_SELECT_H__ */
 end_comment
 
 end_unit

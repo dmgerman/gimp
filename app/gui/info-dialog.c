@@ -781,6 +781,11 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|dialog_register
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -1108,6 +1113,13 @@ argument_list|(
 name|idialog
 operator|->
 name|field_list
+argument_list|)
+expr_stmt|;
+name|dialog_unregister
+argument_list|(
+name|idialog
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 name|session_get_window_info

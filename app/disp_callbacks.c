@@ -172,27 +172,27 @@ end_function_decl
 begin_function
 specifier|static
 name|void
-DECL|function|redraw (GDisplay * gdisp,int x,int y,int w,int h)
+DECL|function|redraw (GDisplay * gdisp,gint x,gint y,gint w,gint h)
 name|redraw
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
-name|long
+name|glong
 name|x1
 decl_stmt|,
 name|y1
@@ -338,7 +338,7 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-comment|/* gdk_input_list_devices returns an internal list, so we shouldn't      free it afterwards */
+comment|/*  gdk_input_list_devices returns an internal list, so we shouldn't    *  free it afterwards    */
 for|for
 control|(
 name|list
@@ -395,10 +395,10 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|key_to_state (int key)
+DECL|function|key_to_state (gint key)
 name|key_to_state
 parameter_list|(
-name|int
+name|gint
 name|key
 parameter_list|)
 block|{
@@ -528,8 +528,13 @@ name|kevent
 decl_stmt|;
 name|gdouble
 name|tx
-decl_stmt|,
+init|=
+literal|0
+decl_stmt|;
+name|gdouble
 name|ty
+init|=
+literal|0
 decl_stmt|;
 name|guint
 name|state
@@ -553,17 +558,11 @@ name|key_signal_id
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gboolean
 name|update_cursor
 init|=
 name|FALSE
 decl_stmt|;
-name|tx
-operator|=
-name|ty
-operator|=
-literal|0
-expr_stmt|;
 name|gdisp
 operator|=
 operator|(
@@ -723,6 +722,9 @@ block|}
 comment|/*  Find out what device the event occurred upon  */
 if|if
 condition|(
+operator|!
+name|gimp_busy
+operator|&&
 name|devices_check_change
 argument_list|(
 name|event
@@ -953,6 +955,14 @@ name|bevent
 operator|->
 name|state
 expr_stmt|;
+comment|/*  ignore new mouse events  */
+if|if
+condition|(
+name|gimp_busy
+condition|)
+return|return
+name|TRUE
+return|;
 switch|switch
 condition|(
 name|bevent
@@ -1400,6 +1410,29 @@ name|bevent
 operator|->
 name|state
 expr_stmt|;
+comment|/*  ugly side consition: all operations which set busy cursors are        *  invoked on BUTTON_RELEASE, thus no new BUTTON_PRESS events are        *  accepted while Gimp is busy, thus it should be safe to block        *  BUTTON_RELEASE.  --Mitch        *        *  ugly: fuzzy_select sets busy cursors while ACTIVE.        */
+if|if
+condition|(
+name|gimp_busy
+operator|&&
+operator|!
+operator|(
+name|active_tool
+operator|->
+name|type
+operator|==
+name|FUZZY_SELECT
+operator|&&
+name|active_tool
+operator|->
+name|state
+operator|==
+name|ACTIVE
+operator|)
+condition|)
+return|return
+name|TRUE
+return|;
 switch|switch
 condition|(
 name|bevent
@@ -1623,6 +1656,29 @@ name|mevent
 operator|->
 name|state
 expr_stmt|;
+comment|/*  for the same reason we block BUTTON_RELEASE,        *  we block MOTION_NOTIFY.  --Mitch        *        *  ugly: fuzzy_select sets busy cursors while ACTIVE.        */
+if|if
+condition|(
+name|gimp_busy
+operator|&&
+operator|!
+operator|(
+name|active_tool
+operator|->
+name|type
+operator|==
+name|FUZZY_SELECT
+operator|&&
+name|active_tool
+operator|->
+name|state
+operator|==
+name|ACTIVE
+operator|)
+condition|)
+return|return
+name|TRUE
+return|;
 comment|/* Ask for the pointer position, but ignore it except for cursor       * handling, so motion events sync with the button press/release events */
 if|if
 condition|(
@@ -1630,6 +1686,7 @@ name|mevent
 operator|->
 name|is_hint
 condition|)
+block|{
 name|gdk_input_window_get_pointer
 argument_list|(
 argument|canvas->window
@@ -1667,6 +1724,7 @@ directive|endif
 comment|/* GTK_HAVE_SIX_VALUATORS */
 argument_list|)
 empty_stmt|;
+block|}
 else|else
 block|{
 name|tx
@@ -1939,6 +1997,14 @@ name|kevent
 operator|->
 name|state
 expr_stmt|;
+comment|/*  ignore any key presses  */
+if|if
+condition|(
+name|gimp_busy
+condition|)
+return|return
+name|TRUE
+return|;
 switch|switch
 condition|(
 name|kevent
@@ -2195,6 +2261,14 @@ name|kevent
 operator|->
 name|state
 expr_stmt|;
+comment|/*  ignore any key releases  */
+if|if
+condition|(
+name|gimp_busy
+condition|)
+return|return
+name|TRUE
+return|;
 switch|switch
 condition|(
 name|kevent
@@ -2320,6 +2394,14 @@ break|break;
 default|default:
 break|break;
 block|}
+comment|/*  if re reached this point in gimp_busy mode, return now  */
+if|if
+condition|(
+name|gimp_busy
+condition|)
+return|return
+name|TRUE
+return|;
 comment|/* Cursor update support                               */
 comment|/* no_cursor_updating is TRUE (=1) when                */
 comment|/*<Toolbox>/File/Preferences.../Interface/...         */
@@ -2456,6 +2538,13 @@ name|gdisp
 decl_stmt|;
 if|if
 condition|(
+name|gimp_busy
+condition|)
+return|return
+name|TRUE
+return|;
+if|if
+condition|(
 name|event
 operator|->
 name|button
@@ -2517,6 +2606,13 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
+if|if
+condition|(
+name|gimp_busy
+condition|)
+return|return
+name|TRUE
+return|;
 if|if
 condition|(
 name|event
@@ -2582,6 +2678,9 @@ name|gdisp
 decl_stmt|;
 if|if
 condition|(
+operator|!
+name|gimp_busy
+operator|&&
 name|event
 operator|->
 name|button
@@ -2618,7 +2717,7 @@ name|time
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Stop the signal emission so the button doesn't grab the    * pointer away from us */
+comment|/*  Stop the signal emission so the button doesn't grab the    *  pointer away from us    */
 name|gtk_signal_emit_stop_by_name
 argument_list|(
 name|GTK_OBJECT
@@ -2684,6 +2783,9 @@ name|data
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|gimp_busy
+operator|&&
 operator|(
 name|src_widget
 operator|=
@@ -3356,6 +3458,11 @@ name|new_buf
 init|=
 name|FALSE
 decl_stmt|;
+if|if
+condition|(
+name|gimp_busy
+condition|)
+return|return;
 name|gimage
 operator|=
 operator|(

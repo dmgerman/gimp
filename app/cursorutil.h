@@ -63,10 +63,21 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_comment
+comment|/* FIXME: gimp_busy HACK */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|gboolean
+name|gimp_busy
+decl_stmt|;
+end_decl_stmt
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc8b3800103
+DECL|enum|__anon28ed678a0103
 block|{
 DECL|enumerator|GIMP_MOUSE_CURSOR
 name|GIMP_MOUSE_CURSOR
