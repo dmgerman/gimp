@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291af1c80103
+DECL|enum|__anon288dd22f0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -1847,36 +1847,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|layer
-operator|->
-name|mask
-condition|)
-block|{
-name|GIMP_ITEM
-argument_list|(
-name|layer
-operator|->
-name|mask
-argument_list|)
-operator|->
-name|offset_x
-operator|=
-name|offset_x
-expr_stmt|;
-name|GIMP_ITEM
-argument_list|(
-name|layer
-operator|->
-name|mask
-argument_list|)
-operator|->
-name|offset_y
-operator|=
-name|offset_y
-expr_stmt|;
-block|}
 block|}
 end_function
 
