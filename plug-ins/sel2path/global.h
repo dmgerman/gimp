@@ -66,15 +66,15 @@ value|fputs (".\n", stderr); exit (1); } while (0)
 end_define
 
 begin_define
-DECL|macro|FATAL (s)
+DECL|macro|FATAL (x)
 define|#
 directive|define
 name|FATAL
 parameter_list|(
-name|s
+name|x
 parameter_list|)
 define|\
-value|START_FATAL (); fprintf (stderr, "%s", s); END_FATAL ()
+value|START_FATAL (); fprintf (stderr, "%s", x); END_FATAL ()
 end_define
 
 begin_define
@@ -164,15 +164,15 @@ value|fputs (".\n", stderr); fflush (stderr); } while (0)
 end_define
 
 begin_define
-DECL|macro|WARNING (s)
+DECL|macro|WARNING (x)
 define|#
 directive|define
 name|WARNING
 parameter_list|(
-name|s
+name|x
 parameter_list|)
 define|\
-value|START_WARNING (); fprintf (stderr, "%s", s); END_WARNING ()
+value|START_WARNING (); fprintf (stderr, "%s", x); END_WARNING ()
 end_define
 
 begin_define

@@ -7936,7 +7936,7 @@ operator|->
 name|active_layer
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
+name|gdisplays_flush_now
 argument_list|()
 expr_stmt|;
 block|}
@@ -10880,7 +10880,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff87b40108
+DECL|struct|__anon29d61f840108
 block|{
 DECL|member|gimage
 name|GimpImage
