@@ -2064,6 +2064,11 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
+name|gimp_transform_tool_expose_preview
+argument_list|(
+name|tr_tool
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|tr_tool_class

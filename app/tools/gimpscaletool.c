@@ -1485,11 +1485,6 @@ index|]
 operator|+=
 name|diff_y
 expr_stmt|;
-name|gimp_transform_tool_expose_preview
-argument_list|(
-name|tr_tool
-argument_list|)
-expr_stmt|;
 return|return;
 default|default:
 return|return;
@@ -1737,11 +1732,6 @@ operator|*
 name|w
 expr_stmt|;
 block|}
-name|gimp_transform_tool_expose_preview
-argument_list|(
-name|tr_tool
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
