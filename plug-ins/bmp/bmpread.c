@@ -2294,7 +2294,7 @@ name|GIMP_GRAY
 expr_stmt|;
 name|image_type
 operator|=
-name|GIMP_RGB_IMAGE
+name|GIMP_GRAY_IMAGE
 expr_stmt|;
 block|}
 else|else
