@@ -1655,16 +1655,6 @@ argument_list|(
 literal|"map_object"
 argument_list|)
 expr_stmt|;
-name|gdk_set_debug_level
-argument_list|(
-literal|0
-argument_list|)
-expr_stmt|;
-name|gdk_set_show_events
-argument_list|(
-literal|0
-argument_list|)
-expr_stmt|;
 name|gdk_set_use_xshm
 argument_list|(
 name|gimp_use_xshm
