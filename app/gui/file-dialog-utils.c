@@ -30,13 +30,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/plug-in.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"plug_in.h"
+file|"file-dialog-utils.h"
 end_include
 
 begin_function

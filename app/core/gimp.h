@@ -183,6 +183,10 @@ DECL|member|no_interface
 name|gboolean
 name|no_interface
 decl_stmt|;
+DECL|member|stack_trace_mode
+name|GimpStackTraceMode
+name|stack_trace_mode
+decl_stmt|;
 DECL|member|main_loops
 name|GList
 modifier|*
@@ -416,6 +420,9 @@ name|no_data
 parameter_list|,
 name|gboolean
 name|no_interface
+parameter_list|,
+name|GimpStackTraceMode
+name|stack_trace_mode
 parameter_list|)
 function_decl|;
 end_function_decl

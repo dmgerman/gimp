@@ -16,44 +16,6 @@ directive|define
 name|__APPENV_H__
 end_define
 
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon289accdf0103
-block|{
-DECL|enumerator|MESSAGE_BOX
-name|MESSAGE_BOX
-block|,
-DECL|enumerator|CONSOLE
-name|CONSOLE
-block|,
-DECL|enumerator|ERROR_CONSOLE
-name|ERROR_CONSOLE
-DECL|typedef|MessageHandlerType
-block|}
-name|MessageHandlerType
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon289accdf0203
-block|{
-DECL|enumerator|STACK_TRACE_NEVER
-name|STACK_TRACE_NEVER
-block|,
-DECL|enumerator|STACK_TRACE_QUERY
-name|STACK_TRACE_QUERY
-block|,
-DECL|enumerator|STACK_TRACE_ALWAYS
-name|STACK_TRACE_ALWAYS
-DECL|typedef|StackTraceMode
-block|}
-name|StackTraceMode
-typedef|;
-end_typedef
-
 begin_comment
 comment|/*  command line options  */
 end_comment
@@ -116,7 +78,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|StackTraceMode
+name|GimpStackTraceMode
 name|stack_trace_mode
 decl_stmt|;
 end_decl_stmt
@@ -160,7 +122,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|MessageHandlerType
+name|GimpMessageHandlerType
 name|message_handler
 decl_stmt|;
 end_decl_stmt

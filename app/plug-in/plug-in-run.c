@@ -379,7 +379,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/display-types.h"
+file|"plug-in-types.h"
 end_include
 
 begin_include
@@ -433,6 +433,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/widgets-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -463,19 +469,13 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"errors.h"
 end_include
 
 begin_include
@@ -488,12 +488,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug_in.h"
 end_include
 
 begin_include
@@ -1792,6 +1786,8 @@ name|TRUE
 expr_stmt|;
 if|if
 condition|(
+name|gimp
+operator|->
 name|be_verbose
 condition|)
 name|g_print
@@ -1961,6 +1957,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|gimp
+operator|->
 name|be_verbose
 condition|)
 name|g_print
@@ -2004,6 +2002,8 @@ block|}
 comment|/* run the available extensions */
 if|if
 condition|(
+name|gimp
+operator|->
 name|be_verbose
 condition|)
 name|g_print
@@ -2090,6 +2090,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|gimp
+operator|->
 name|be_verbose
 condition|)
 name|g_print
@@ -2144,6 +2146,8 @@ block|}
 block|}
 if|if
 condition|(
+name|gimp
+operator|->
 name|be_verbose
 condition|)
 name|g_print
@@ -4887,9 +4891,8 @@ name|g_strdup_printf
 argument_list|(
 literal|"%d"
 argument_list|,
-operator|(
-name|gint
-operator|)
+name|the_gimp
+operator|->
 name|stack_trace_mode
 argument_list|)
 expr_stmt|;

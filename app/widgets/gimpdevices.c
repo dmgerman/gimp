@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"app_procs.h"
 end_include
 
@@ -1801,6 +1795,8 @@ block|}
 elseif|else
 if|if
 condition|(
+name|the_gimp
+operator|->
 name|no_data
 condition|)
 block|{
@@ -1872,6 +1868,8 @@ block|}
 elseif|else
 if|if
 condition|(
+name|the_gimp
+operator|->
 name|no_data
 condition|)
 block|{
@@ -1943,6 +1941,8 @@ block|}
 elseif|else
 if|if
 condition|(
+name|the_gimp
+operator|->
 name|no_data
 condition|)
 block|{

@@ -65,6 +65,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/plug-in.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"app_procs.h"
 end_include
 
@@ -78,12 +84,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug_in.h"
 end_include
 
 begin_include
@@ -200,15 +200,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**********************/
-end_comment
-
-begin_comment
 comment|/*  public functions  */
-end_comment
-
-begin_comment
-comment|/**********************/
 end_comment
 
 begin_comment
@@ -324,15 +316,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*********************/
-end_comment
-
-begin_comment
-comment|/*  local functions  */
-end_comment
-
-begin_comment
-comment|/*********************/
+comment|/*  private functions  */
 end_comment
 
 begin_function

@@ -22,16 +22,10 @@ directive|include
 file|"core/core-types.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"pdb/pdb-types.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4290340103
+DECL|enum|__anon2c87546f0103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE

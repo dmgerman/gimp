@@ -522,7 +522,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28a73f860108
+DECL|struct|__anon28b6ea7f0108
 block|{
 DECL|member|directory
 name|gboolean
@@ -1124,6 +1124,10 @@ expr_stmt|;
 name|gimprc_parse
 argument_list|(
 name|gimp
+argument_list|,
+name|alternate_system_gimprc
+argument_list|,
+name|alternate_gimprc
 argument_list|)
 expr_stmt|;
 name|user_install_tuning

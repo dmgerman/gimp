@@ -162,7 +162,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298f68fc0103
+DECL|enum|__anon292f92550103
 block|{
 DECL|enumerator|ERRORS_ALL
 name|ERRORS_ALL
@@ -671,7 +671,7 @@ expr_stmt|;
 comment|/* FIXME: interact with preferences */
 name|message_handler
 operator|=
-name|ERROR_CONSOLE
+name|GIMP_ERROR_CONSOLE
 expr_stmt|;
 return|return
 name|error_console
@@ -705,7 +705,7 @@ argument_list|)
 expr_stmt|;
 name|message_handler
 operator|=
-name|MESSAGE_BOX
+name|GIMP_MESSAGE_BOX
 expr_stmt|;
 name|g_message
 argument_list|(
@@ -799,7 +799,7 @@ expr_stmt|;
 comment|/* FIXME: interact with preferences */
 name|message_handler
 operator|=
-name|MESSAGE_BOX
+name|GIMP_MESSAGE_BOX
 expr_stmt|;
 block|}
 end_function

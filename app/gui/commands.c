@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"commands.h"
+file|"plug-in/plug-in.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"plug_in.h"
+file|"commands.h"
 end_include
 
 begin_comment

@@ -36,21 +36,15 @@ begin_comment
 comment|/* pid_t  */
 end_comment
 
-begin_comment
-comment|/* FIXME: move the plugin stuff to plug-in/ */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"plug-in/plug-in-types.h"
-end_include
-
 begin_include
 include|#
 directive|include
 file|"pdb/procedural_db.h"
 end_include
+
+begin_comment
+comment|/* ProcRecord */
+end_comment
 
 begin_define
 DECL|macro|WRITE_BUFFER_SIZE

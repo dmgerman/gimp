@@ -150,7 +150,7 @@ name|message_handler
 condition|)
 block|{
 case|case
-name|MESSAGE_BOX
+name|GIMP_MESSAGE_BOX
 case|:
 name|gimp_message_box
 argument_list|(
@@ -167,7 +167,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|ERROR_CONSOLE
+name|GIMP_ERROR_CONSOLE
 case|:
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
@@ -316,11 +316,11 @@ name|stack_trace_mode
 condition|)
 block|{
 case|case
-name|STACK_TRACE_NEVER
+name|GIMP_STACK_TRACE_NEVER
 case|:
 break|break;
 case|case
-name|STACK_TRACE_QUERY
+name|GIMP_STACK_TRACE_QUERY
 case|:
 block|{
 name|sigset_t
@@ -350,7 +350,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|STACK_TRACE_ALWAYS
+name|GIMP_STACK_TRACE_ALWAYS
 case|:
 block|{
 name|sigset_t
@@ -473,11 +473,11 @@ name|stack_trace_mode
 condition|)
 block|{
 case|case
-name|STACK_TRACE_NEVER
+name|GIMP_STACK_TRACE_NEVER
 case|:
 break|break;
 case|case
-name|STACK_TRACE_QUERY
+name|GIMP_STACK_TRACE_QUERY
 case|:
 block|{
 name|sigset_t
@@ -507,7 +507,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|STACK_TRACE_ALWAYS
+name|GIMP_STACK_TRACE_ALWAYS
 case|:
 block|{
 name|sigset_t

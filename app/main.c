@@ -277,10 +277,10 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|stack_trace_mode
-name|StackTraceMode
+name|GimpStackTraceMode
 name|stack_trace_mode
 init|=
-name|STACK_TRACE_QUERY
+name|GIMP_STACK_TRACE_QUERY
 decl_stmt|;
 end_decl_stmt
 
@@ -336,10 +336,10 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|message_handler
-name|MessageHandlerType
+name|GimpMessageHandlerType
 name|message_handler
 init|=
-name|CONSOLE
+name|GIMP_CONSOLE
 decl_stmt|;
 end_decl_stmt
 
@@ -1366,7 +1366,7 @@ argument_list|)
 condition|)
 name|stack_trace_mode
 operator|=
-name|STACK_TRACE_NEVER
+name|GIMP_STACK_TRACE_NEVER
 expr_stmt|;
 elseif|else
 if|if
@@ -1384,7 +1384,7 @@ argument_list|)
 condition|)
 name|stack_trace_mode
 operator|=
-name|STACK_TRACE_QUERY
+name|GIMP_STACK_TRACE_QUERY
 expr_stmt|;
 elseif|else
 if|if
@@ -1402,7 +1402,7 @@ argument_list|)
 condition|)
 name|stack_trace_mode
 operator|=
-name|STACK_TRACE_ALWAYS
+name|GIMP_STACK_TRACE_ALWAYS
 expr_stmt|;
 else|else
 name|show_help
@@ -1792,6 +1792,28 @@ argument_list|)
 expr_stmt|;
 name|g_log_set_handler
 argument_list|(
+literal|"Gimp-PDB"
+argument_list|,
+name|G_LOG_LEVEL_MESSAGE
+argument_list|,
+name|gimp_message_log_func
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_log_set_handler
+argument_list|(
+literal|"Gimp-Plug-In"
+argument_list|,
+name|G_LOG_LEVEL_MESSAGE
+argument_list|,
+name|gimp_message_log_func
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_log_set_handler
+argument_list|(
 literal|"Gimp-File"
 argument_list|,
 name|G_LOG_LEVEL_MESSAGE
@@ -1814,17 +1836,6 @@ argument_list|)
 expr_stmt|;
 name|g_log_set_handler
 argument_list|(
-literal|"Gimp-PDB"
-argument_list|,
-name|G_LOG_LEVEL_MESSAGE
-argument_list|,
-name|gimp_message_log_func
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_log_set_handler
-argument_list|(
 literal|"Gimp-Widgets"
 argument_list|,
 name|G_LOG_LEVEL_MESSAGE
@@ -1836,7 +1847,7 @@ argument_list|)
 expr_stmt|;
 name|g_log_set_handler
 argument_list|(
-literal|"Gimp-Tools"
+literal|"Gimp-Display"
 argument_list|,
 name|G_LOG_LEVEL_MESSAGE
 argument_list|,
@@ -1847,7 +1858,7 @@ argument_list|)
 expr_stmt|;
 name|g_log_set_handler
 argument_list|(
-literal|"Gimp-Display"
+literal|"Gimp-Tools"
 argument_list|,
 name|G_LOG_LEVEL_MESSAGE
 argument_list|,

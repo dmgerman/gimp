@@ -95,6 +95,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/plug-in.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file/file-save.h"
 end_include
 
@@ -126,12 +132,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug_in.h"
 end_include
 
 begin_include

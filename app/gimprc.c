@@ -148,13 +148,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/gimptool.h"
+file|"plug-in/plug-in.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/gimptool.h"
 end_include
 
 begin_include
@@ -178,19 +184,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"devices.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"errors.h"
 end_include
 
 begin_include
@@ -209,12 +203,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug_in.h"
 end_include
 
 begin_include
@@ -282,7 +270,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d200df0103
+DECL|enum|__anon2bb725880103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -3187,12 +3175,22 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimprc_parse (Gimp * gimp)
+DECL|function|gimprc_parse (Gimp * gimp,const gchar * cmdline_system_gimprc,const gchar * cmdline_gimprc)
 name|gimprc_parse
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|cmdline_system_gimprc
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|cmdline_gimprc
 parameter_list|)
 block|{
 name|gchar
@@ -3208,13 +3206,13 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
-name|alternate_system_gimprc
+name|cmdline_system_gimprc
 condition|)
 name|libfilename
 operator|=
 name|g_strdup
 argument_list|(
-name|alternate_system_gimprc
+name|cmdline_system_gimprc
 argument_list|)
 expr_stmt|;
 else|else
@@ -3243,7 +3241,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|alternate_gimprc
+name|cmdline_gimprc
 operator|!=
 name|NULL
 condition|)
@@ -3251,7 +3249,7 @@ name|filename
 operator|=
 name|g_strdup
 argument_list|(
-name|alternate_gimprc
+name|cmdline_gimprc
 argument_list|)
 expr_stmt|;
 else|else
@@ -3363,6 +3361,8 @@ name|FALSE
 return|;
 if|if
 condition|(
+name|the_gimp
+operator|->
 name|be_verbose
 condition|)
 name|g_print
@@ -9982,9 +9982,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_terminate
+name|g_error
 argument_list|(
-literal|"transform_path(): gimprc token referenced but not defined: %s"
+literal|"gimprc token referenced but not defined: %s"
 argument_list|,
 name|token
 argument_list|)

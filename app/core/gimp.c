@@ -435,6 +435,12 @@ name|FALSE
 expr_stmt|;
 name|gimp
 operator|->
+name|stack_trace_mode
+operator|=
+name|GIMP_STACK_TRACE_NEVER
+expr_stmt|;
+name|gimp
+operator|->
 name|main_loops
 operator|=
 name|NULL
@@ -1216,7 +1222,7 @@ end_function
 begin_function
 name|Gimp
 modifier|*
-DECL|function|gimp_new (gboolean be_verbose,gboolean no_data,gboolean no_interface)
+DECL|function|gimp_new (gboolean be_verbose,gboolean no_data,gboolean no_interface,GimpStackTraceMode stack_trace_mode)
 name|gimp_new
 parameter_list|(
 name|gboolean
@@ -1227,6 +1233,9 @@ name|no_data
 parameter_list|,
 name|gboolean
 name|no_interface
+parameter_list|,
+name|GimpStackTraceMode
+name|stack_trace_mode
 parameter_list|)
 block|{
 name|Gimp
@@ -1271,6 +1280,12 @@ condition|?
 name|TRUE
 else|:
 name|FALSE
+expr_stmt|;
+name|gimp
+operator|->
+name|stack_trace_mode
+operator|=
+name|stack_trace_mode
 expr_stmt|;
 return|return
 name|gimp

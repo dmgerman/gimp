@@ -238,6 +238,16 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|cmdline_system_gimprc
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|cmdline_gimprc
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"airbrush_blob.h"
 end_include
 

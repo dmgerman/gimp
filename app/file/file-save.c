@@ -130,6 +130,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/procedural_db.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/plug-in.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file-save.h"
 end_include
 
@@ -137,12 +149,6 @@ begin_include
 include|#
 directive|include
 file|"file-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug_in.h"
 end_include
 
 begin_include

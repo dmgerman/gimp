@@ -152,13 +152,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file-utils.h"
+file|"pdb/procedural_db.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"plug_in.h"
+file|"plug-in/plug-in.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"file-utils.h"
 end_include
 
 begin_function

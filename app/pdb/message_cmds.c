@@ -43,6 +43,12 @@ directive|include
 file|"appenv.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|message_proc
 specifier|static
@@ -379,11 +385,11 @@ if|if
 condition|(
 name|handler
 operator|<
-name|MESSAGE_BOX
+name|GIMP_MESSAGE_BOX
 operator|||
 name|handler
 operator|>
-name|ERROR_CONSOLE
+name|GIMP_ERROR_CONSOLE
 condition|)
 name|success
 operator|=

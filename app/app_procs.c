@@ -112,6 +112,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/plug-in.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file/file-open.h"
 end_include
 
@@ -166,19 +172,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"errors.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug_in.h"
 end_include
 
 begin_include
@@ -186,27 +180,6 @@ include|#
 directive|include
 file|"undo.h"
 end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|DISPLAY_FILTERS
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|"gdisplay_color.h"
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* DISPLAY_FILTERS */
-end_comment
 
 begin_include
 include|#
@@ -300,6 +273,8 @@ argument_list|,
 name|no_data
 argument_list|,
 name|no_interface
+argument_list|,
+name|stack_trace_mode
 argument_list|)
 expr_stmt|;
 comment|/*  Check if the user's gimp_directory exists    */
@@ -383,6 +358,10 @@ comment|/*  parse the local GIMP configuration file  */
 name|gimprc_parse
 argument_list|(
 name|the_gimp
+argument_list|,
+name|alternate_system_gimprc
+argument_list|,
+name|alternate_gimprc
 argument_list|)
 expr_stmt|;
 block|}
@@ -480,7 +459,7 @@ expr_stmt|;
 comment|/*  FIXME: This needs to go in preferences  */
 name|message_handler
 operator|=
-name|MESSAGE_BOX
+name|GIMP_MESSAGE_BOX
 expr_stmt|;
 name|gui_restore
 argument_list|(
@@ -539,6 +518,8 @@ block|}
 name|batch_init
 argument_list|(
 name|the_gimp
+argument_list|,
+name|batch_cmds
 argument_list|)
 expr_stmt|;
 if|if
@@ -654,7 +635,7 @@ parameter_list|)
 block|{
 name|message_handler
 operator|=
-name|CONSOLE
+name|GIMP_CONSOLE
 expr_stmt|;
 if|if
 condition|(

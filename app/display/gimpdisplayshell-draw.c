@@ -42,16 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/gui-types.h"
-end_include
-
-begin_comment
-comment|/* FIXME */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|"base/temp-buf.h"
 end_include
 
@@ -118,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/plug-in.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpcolorpanel.h"
 end_include
 
@@ -144,6 +140,16 @@ include|#
 directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/gui-types.h"
+end_include
+
+begin_comment
+comment|/* FIXME */
+end_comment
 
 begin_include
 include|#
@@ -221,12 +227,6 @@ begin_include
 include|#
 directive|include
 file|"nav_window.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug_in.h"
 end_include
 
 begin_include

@@ -43,7 +43,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon2c6ea0b90103
+DECL|enum|__anon2aa0db420103
 block|{
 DECL|enumerator|GIMP_UNIT_PIXEL
 name|GIMP_UNIT_PIXEL
@@ -90,7 +90,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon2c6ea0b90203
+DECL|enum|__anon2aa0db420203
 block|{
 DECL|enumerator|GIMP_PDB_INT32
 name|GIMP_PDB_INT32
@@ -170,7 +170,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon2c6ea0b90303
+DECL|enum|__anon2aa0db420303
 block|{
 DECL|enumerator|GIMP_INTERNAL
 name|GIMP_INTERNAL
@@ -193,7 +193,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon2c6ea0b90403
+DECL|enum|__anon2aa0db420403
 block|{
 DECL|enumerator|GIMP_PDB_EXECUTION_ERROR
 name|GIMP_PDB_EXECUTION_ERROR
@@ -212,6 +212,46 @@ name|GIMP_PDB_CANCEL
 DECL|typedef|GimpPDBStatusType
 block|}
 name|GimpPDBStatusType
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< chop=GIMP_>*/
+DECL|enum|__anon2aa0db420503
+block|{
+DECL|enumerator|GIMP_MESSAGE_BOX
+name|GIMP_MESSAGE_BOX
+block|,
+DECL|enumerator|GIMP_CONSOLE
+name|GIMP_CONSOLE
+block|,
+DECL|enumerator|GIMP_ERROR_CONSOLE
+name|GIMP_ERROR_CONSOLE
+DECL|typedef|GimpMessageHandlerType
+block|}
+name|GimpMessageHandlerType
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< chop=GIMP_>*/
+DECL|enum|__anon2aa0db420603
+block|{
+DECL|enumerator|GIMP_STACK_TRACE_NEVER
+name|GIMP_STACK_TRACE_NEVER
+block|,
+DECL|enumerator|GIMP_STACK_TRACE_QUERY
+name|GIMP_STACK_TRACE_QUERY
+block|,
+DECL|enumerator|GIMP_STACK_TRACE_ALWAYS
+name|GIMP_STACK_TRACE_ALWAYS
+DECL|typedef|GimpStackTraceMode
+block|}
+name|GimpStackTraceMode
 typedef|;
 end_typedef
 

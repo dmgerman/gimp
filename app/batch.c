@@ -71,12 +71,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"app_procs.h"
 end_include
 
@@ -140,12 +134,17 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|batch_init (Gimp * gimp)
+DECL|function|batch_init (Gimp * gimp,gchar ** batch_cmds)
 name|batch_init
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+name|batch_cmds
 parameter_list|)
 block|{
 name|gboolean

@@ -37,6 +37,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/pdb-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in/plug-in-types.h"
 end_include
 
@@ -57,7 +63,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ecc9e00103
+DECL|enum|__anon297bf8af0103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -76,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ecc9e00203
+DECL|enum|__anon297bf8af0203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -110,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ecc9e00303
+DECL|enum|__anon297bf8af0303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -139,7 +145,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon28ecc9e00403
+DECL|enum|__anon297bf8af0403
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -164,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ecc9e00503
+DECL|enum|__anon297bf8af0503
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -180,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ecc9e00603
+DECL|enum|__anon297bf8af0603
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -200,7 +206,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28ecc9e00703
+DECL|enum|__anon297bf8af0703
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -224,7 +230,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=CHANNEL_OP_>*/
-DECL|enum|__anon28ecc9e00803
+DECL|enum|__anon297bf8af0803
 block|{
 DECL|enumerator|CHANNEL_OP_ADD
 name|CHANNEL_OP_ADD
@@ -247,7 +253,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28ecc9e00903
+DECL|enum|__anon297bf8af0903
 block|{
 DECL|enumerator|GIMP_SELECTION_OFF
 name|GIMP_SELECTION_OFF
@@ -272,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ecc9e00a03
+DECL|enum|__anon297bf8af0a03
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -303,7 +309,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon28ecc9e00b03
+DECL|enum|__anon297bf8af0b03
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS
@@ -322,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ecc9e00c03
+DECL|enum|__anon297bf8af0c03
 block|{
 DECL|enumerator|OFFSET_BACKGROUND
 name|OFFSET_BACKGROUND
@@ -338,7 +344,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ecc9e00d03
+DECL|enum|__anon297bf8af0d03
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -360,7 +366,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ecc9e00e03
+DECL|enum|__anon297bf8af0e03
 block|{
 DECL|enumerator|MAKE_PALETTE
 name|MAKE_PALETTE
@@ -395,7 +401,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ecc9e00f03
+DECL|enum|__anon297bf8af0f03
 block|{
 DECL|enumerator|NO_DITHER
 name|NO_DITHER
@@ -431,7 +437,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ecc9e01003
+DECL|enum|__anon297bf8af1003
 block|{
 DECL|enumerator|FG_BUCKET_FILL
 name|FG_BUCKET_FILL
@@ -450,7 +456,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ecc9e01103
+DECL|enum|__anon297bf8af1103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -494,7 +500,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28ecc9e01203
+DECL|enum|__anon297bf8af1203
 block|{
 DECL|enumerator|GRAD_LINEAR
 name|GRAD_LINEAR
@@ -522,7 +528,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28ecc9e01303
+DECL|enum|__anon297bf8af1303
 block|{
 DECL|enumerator|GRAD_RGB
 name|GRAD_RGB
@@ -547,7 +553,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=_MODE>*/
-DECL|enum|__anon28ecc9e01403
+DECL|enum|__anon297bf8af1403
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -569,7 +575,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ecc9e01503
+DECL|enum|__anon297bf8af1503
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -589,7 +595,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28ecc9e01603
+DECL|enum|__anon297bf8af1603
 block|{
 DECL|enumerator|GIMP_TRANSFORM_FORWARD
 name|GIMP_TRANSFORM_FORWARD
@@ -606,7 +612,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28ecc9e01703
+DECL|enum|__anon297bf8af1703
 block|{
 DECL|enumerator|GIMP_PREVIEW_SIZE_NONE
 name|GIMP_PREVIEW_SIZE_NONE

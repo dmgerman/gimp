@@ -90,6 +90,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/procedural_db.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/plug-in.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -114,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"ops_buttons.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paths-dialog.h"
 end_include
 
@@ -127,6 +133,12 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"ops_buttons.h"
 end_include
 
 begin_include
@@ -145,12 +157,6 @@ begin_include
 include|#
 directive|include
 file|"path_transform.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug_in.h"
 end_include
 
 begin_include

@@ -60,6 +60,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/procedural_db.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/plug-in.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"xcf.h"
 end_include
 
@@ -85,12 +97,6 @@ begin_include
 include|#
 directive|include
 file|"xcf-save.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug_in.h"
 end_include
 
 begin_include
