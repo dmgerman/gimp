@@ -630,7 +630,7 @@ name|msg
 operator|=
 name|_
 argument_list|(
-literal|"GIMP could not initialize the GUI.\n"
+literal|"GIMP could not initialize the graphical user interface.\n"
 literal|"Make sure a proper setup for your display environment exists."
 argument_list|)
 expr_stmt|;
