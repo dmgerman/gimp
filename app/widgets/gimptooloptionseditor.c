@@ -1118,6 +1118,10 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpTool
+modifier|*
+name|active_tool
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|shell
@@ -1129,6 +1133,13 @@ name|GtkWidget
 operator|*
 operator|)
 name|data
+expr_stmt|;
+name|active_tool
+operator|=
+name|tool_manager_get_active
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimptool.h"
 end_include
 
@@ -54,12 +48,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b84efd60103
+DECL|enum|__anon2b0341cd0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1694,7 +1700,9 @@ block|{
 name|gimp_standard_help_func
 argument_list|(
 name|tool_manager_active_get_help_data
-argument_list|()
+argument_list|(
+name|the_gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -233,7 +233,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9649800103
+DECL|enum|__anon2bc994f30103
 block|{
 DECL|enumerator|TRANSFORM
 name|TRANSFORM
@@ -4341,12 +4341,15 @@ name|GimpDrawTool
 modifier|*
 name|dr_tool
 decl_stmt|;
+comment|/* EEEK!!! */
 name|tr_tool
 operator|=
 name|GIMP_TRANSFORM_TOOL
 argument_list|(
-comment|/* EEEEEEEK!!! */
-name|active_tool
+name|tool_manager_get_active
+argument_list|(
+name|the_gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|dr_tool
@@ -4402,12 +4405,15 @@ name|GimpTransformTool
 modifier|*
 name|tr_tool
 decl_stmt|;
+comment|/* EEEEEEEK!!! */
 name|tr_tool
 operator|=
 name|GIMP_TRANSFORM_TOOL
 argument_list|(
-comment|/* EEEEEEEK!!! */
-name|active_tool
+name|tool_manager_get_active
+argument_list|(
+name|the_gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -4505,15 +4511,20 @@ condition|(
 name|gimp_transform_tool_show_grid
 argument_list|()
 condition|)
+block|{
+comment|/* EEEEEEK!!! */
 name|gimp_transform_tool_setup_grid
 argument_list|(
 name|GIMP_TRANSFORM_TOOL
 argument_list|(
-comment|/* EEEEEEK!!! */
-name|active_tool
+name|tool_manager_get_active
+argument_list|(
+name|the_gimp
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -5247,7 +5258,12 @@ operator|==
 literal|0
 operator|||
 operator|(
-name|active_tool
+name|tool_manager_get_active
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 operator|&&
 name|gimp_transform_tool_clip
 argument_list|()
@@ -5277,15 +5293,18 @@ name|gdouble
 name|dx1
 decl_stmt|,
 name|dy1
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|dx2
 decl_stmt|,
 name|dy2
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|dx3
 decl_stmt|,
 name|dy3
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|dx4
 decl_stmt|,
 name|dy4

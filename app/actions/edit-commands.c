@@ -270,6 +270,12 @@ expr_stmt|;
 comment|/*  stop any active tool  */
 name|tool_manager_control_active
 argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|HALT
 argument_list|,
 name|gdisp
@@ -374,6 +380,12 @@ block|{
 comment|/*  stop any active tool  */
 name|tool_manager_control_active
 argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|HALT
 argument_list|,
 name|gdisp
@@ -457,6 +469,12 @@ block|{
 comment|/*  stop any active tool  */
 name|tool_manager_control_active
 argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|HALT
 argument_list|,
 name|gdisp
@@ -540,6 +558,12 @@ block|{
 comment|/*  stop any active tool  */
 name|tool_manager_control_active
 argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|HALT
 argument_list|,
 name|gdisp
@@ -599,6 +623,12 @@ expr_stmt|;
 comment|/*  stop any active tool  */
 name|tool_manager_control_active
 argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|HALT
 argument_list|,
 name|gdisp

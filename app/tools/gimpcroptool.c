@@ -5154,7 +5154,10 @@ decl_stmt|;
 comment|/* XXX active_tool is bad */
 name|tool
 operator|=
-name|active_tool
+name|tool_manager_get_active
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 name|crop
 operator|=
@@ -5230,7 +5233,10 @@ decl_stmt|;
 comment|/* XXX active_tool is bad */
 name|tool
 operator|=
-name|active_tool
+name|tool_manager_get_active
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 name|crop
 operator|=
@@ -5310,7 +5316,10 @@ decl_stmt|;
 comment|/* XXX active_tool is bad */
 name|tool
 operator|=
-name|active_tool
+name|tool_manager_get_active
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 name|crop
 operator|=
@@ -5402,7 +5411,10 @@ decl_stmt|;
 comment|/* XXX active_tool is bad */
 name|tool
 operator|=
-name|active_tool
+name|tool_manager_get_active
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 name|crop
 operator|=
@@ -5644,7 +5656,10 @@ decl_stmt|;
 comment|/* FIXME: active_tool is bad */
 name|tool
 operator|=
-name|active_tool
+name|tool_manager_get_active
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 name|crop
 operator|=
@@ -5944,7 +5959,10 @@ decl_stmt|;
 comment|/* XXX active_tool is bad */
 name|tool
 operator|=
-name|active_tool
+name|tool_manager_get_active
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -6120,7 +6138,10 @@ decl_stmt|;
 comment|/* XXX active_tool is bad */
 name|tool
 operator|=
-name|active_tool
+name|tool_manager_get_active
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

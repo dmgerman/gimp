@@ -241,6 +241,10 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+name|GimpTool
+modifier|*
+name|active_tool
+decl_stmt|;
 name|GDisplay
 modifier|*
 name|gdisp
@@ -284,6 +288,13 @@ directive|warning
 warning|FIXME (let the tool manager to this stuff)
 endif|#
 directive|endif
+name|active_tool
+operator|=
+name|tool_manager_get_active
+argument_list|(
+name|the_gimp
+argument_list|)
+expr_stmt|;
 comment|/*  Paranoia  */
 name|active_tool
 operator|->

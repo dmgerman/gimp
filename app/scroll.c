@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"tools/tools-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/tools-types.h"
+file|"core/gimpimage.h"
 end_include
 
 begin_include
@@ -598,15 +598,17 @@ name|offset_y
 operator|=
 name|old_y
 expr_stmt|;
-comment|/*  stop the currently active tool  */
+comment|/*  freeze the active tool  */
 name|tool_manager_control_active
 argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|PAUSE
 argument_list|,
-operator|(
-name|void
-operator|*
-operator|)
 name|gdisp
 argument_list|)
 expr_stmt|;
@@ -672,15 +674,17 @@ argument_list|)
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/*  resume the currently active tool  */
+comment|/*  re-enable the active tool  */
 name|tool_manager_control_active
 argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|RESUME
 argument_list|,
-operator|(
-name|void
-operator|*
-operator|)
 name|gdisp
 argument_list|)
 expr_stmt|;

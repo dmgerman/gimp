@@ -16,18 +16,6 @@ directive|define
 name|__TOOL_MANAGER_H__
 end_define
 
-begin_comment
-comment|/*  Global Data Structures  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|GimpTool
-modifier|*
-name|active_tool
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 name|void
 name|tool_manager_init
@@ -65,9 +53,25 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpTool
+modifier|*
+name|tool_manager_get_active
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|tool_manager_select_tool
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpTool
 modifier|*
 name|tool
@@ -79,6 +83,10 @@ begin_function_decl
 name|void
 name|tool_manager_push_tool
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpTool
 modifier|*
 name|tool
@@ -90,7 +98,9 @@ begin_function_decl
 name|void
 name|tool_manager_pop_tool
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -118,6 +128,10 @@ begin_function_decl
 name|void
 name|tool_manager_control_active
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
@@ -147,7 +161,9 @@ name|gchar
 modifier|*
 name|tool_manager_active_get_help_data
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -251,7 +251,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c03474a0103
+DECL|enum|__anon29232e730103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -5413,6 +5413,10 @@ name|gpointer
 name|tu_ptr
 parameter_list|)
 block|{
+name|GimpTool
+modifier|*
+name|active_tool
+decl_stmt|;
 name|GimpTransformTool
 modifier|*
 name|tt
@@ -5431,6 +5435,15 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|active_tool
+operator|=
+name|tool_manager_get_active
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
+expr_stmt|;
 comment|/* Can't have ANY tool selected - maybe a plugin running */
 if|if
 condition|(
@@ -5740,6 +5753,10 @@ name|gpointer
 name|pu_ptr
 parameter_list|)
 block|{
+name|GimpTool
+modifier|*
+name|active_tool
+decl_stmt|;
 name|GimpPaintTool
 modifier|*
 name|pt
@@ -5751,6 +5768,15 @@ decl_stmt|;
 name|gdouble
 name|tmp
 decl_stmt|;
+name|active_tool
+operator|=
+name|tool_manager_get_active
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
+expr_stmt|;
 comment|/* Can't have ANY tool selected - maybe a plugin running */
 if|if
 condition|(

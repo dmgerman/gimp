@@ -2666,7 +2666,14 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|active_tool
+name|tool_manager_get_active
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 operator|->
 name|state
 operator|==

@@ -197,7 +197,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277217000103
+DECL|enum|__anon2c8258ad0103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -1158,7 +1158,14 @@ operator|(
 name|GDisplay
 operator|*
 operator|)
-name|active_tool
+name|tool_manager_get_active
+argument_list|(
+name|drawable
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 operator|->
 name|gdisp
 expr_stmt|;

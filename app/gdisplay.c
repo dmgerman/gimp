@@ -1756,6 +1756,10 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|GimpTool
+modifier|*
+name|active_tool
+decl_stmt|;
 name|g_hash_table_remove
 argument_list|(
 name|display_ht
@@ -1777,13 +1781,26 @@ expr_stmt|;
 comment|/*  stop any active tool  */
 name|tool_manager_control_active
 argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|HALT
 argument_list|,
-operator|(
-name|void
-operator|*
-operator|)
 name|gdisp
+argument_list|)
+expr_stmt|;
+name|active_tool
+operator|=
+name|tool_manager_get_active
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  clear out the pointer to this gdisp from the active tool  */
@@ -3046,12 +3063,14 @@ block|{
 comment|/*  stop the currently active tool  */
 name|tool_manager_control_active
 argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|PAUSE
 argument_list|,
-operator|(
-name|void
-operator|*
-operator|)
 name|gdisp
 argument_list|)
 expr_stmt|;
@@ -3155,12 +3174,14 @@ expr_stmt|;
 comment|/* start the currently active tool */
 name|tool_manager_control_active
 argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|RESUME
 argument_list|,
-operator|(
-name|void
-operator|*
-operator|)
 name|gdisp
 argument_list|)
 expr_stmt|;

@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -2251,6 +2257,10 @@ name|HistogramToolDialog
 modifier|*
 name|htd
 decl_stmt|;
+name|GimpTool
+modifier|*
+name|active_tool
+decl_stmt|;
 name|htd
 operator|=
 operator|(
@@ -2264,6 +2274,13 @@ argument_list|(
 name|htd
 operator|->
 name|shell
+argument_list|)
+expr_stmt|;
+name|active_tool
+operator|=
+name|tool_manager_get_active
+argument_list|(
+name|the_gimp
 argument_list|)
 expr_stmt|;
 name|active_tool
