@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d9bd230103
+DECL|enum|__anon2ab17b470103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -2047,12 +2047,6 @@ name|GtkTreePath
 modifier|*
 name|path
 decl_stmt|;
-if|#
-directive|if
-literal|0
-block|GtkTreeIter  selected_iter;        if (gtk_tree_selection_get_selected (tree_view->selection, NULL,&selected_iter))         {           GimpPreviewRenderer *renderer;           gboolean             equal;            gtk_tree_model_get (tree_view->model,&selected_iter,                               COLUMN_RENDERER,&renderer,                               -1);            equal = (renderer->viewable == viewable);            g_object_unref (renderer);            if (equal)             return TRUE;         }
-endif|#
-directive|endif
 name|path
 operator|=
 name|gtk_tree_model_get_path
