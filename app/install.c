@@ -119,7 +119,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pixmaps/wilber.xpm"
+file|"pixmaps/eek.xpm"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixmaps/folder.xpm"
 end_include
 
 begin_include
@@ -131,7 +137,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pixmaps/folder.xpm"
+file|"pixmaps/wilber.xpm"
 end_include
 
 begin_ifndef
@@ -214,7 +220,15 @@ DECL|macro|NUM_PAGES
 define|#
 directive|define
 name|NUM_PAGES
-value|5
+value|6
+end_define
+
+begin_define
+DECL|macro|EEK_PAGE
+define|#
+directive|define
+name|EEK_PAGE
+value|(NUM_PAGES - 1)
 end_define
 
 begin_define
@@ -583,7 +597,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28c2bb2d0108
+DECL|struct|__anon28d43b220108
 block|{
 DECL|member|directory
 name|gboolean
@@ -615,7 +629,8 @@ argument_list|(
 literal|"The gimprc is used to store personal preferences\n"
 literal|"that affect GIMP's default behavior.\n"
 literal|"Paths to search for brushes, palettes, gradients,\n"
-literal|"patterns, plug-ins and modules can also configured here."
+literal|"patterns, plug-ins and modules can also configured\n"
+literal|"here."
 argument_list|)
 block|}
 block|,
@@ -638,8 +653,8 @@ literal|"pluginrc"
 block|,
 name|N_
 argument_list|(
-literal|"Plug-ins and extensions are external programs run by\n"
-literal|"the GIMP which provide additional functionality.\n"
+literal|"Plug-ins and extensions are external programs run\n"
+literal|"by the GIMP which provide additional functionality.\n"
 literal|"These programs are searched for at run-time and\n"
 literal|"information about their functionality and mod-times\n"
 literal|"is cached in this file.  This file is intended to\n"
@@ -656,9 +671,9 @@ name|N_
 argument_list|(
 literal|"Key shortcuts can be dynamically redefined in The GIMP.\n"
 literal|"The menurc is a dump of your configuration so it can.\n"
-literal|"be remembered for the next session. You may edit this\n"
+literal|"be remembered for the next session.  You may edit this\n"
 literal|"file if you wish, but it is much easier to define the\n"
-literal|"keys from within The GIMP. Deleting this file will\n"
+literal|"keys from within The GIMP.  Deleting this file will\n"
 literal|"restore the default shortcuts."
 argument_list|)
 block|}
@@ -671,7 +686,7 @@ block|,
 name|N_
 argument_list|(
 literal|"The sessionrc is used to store what dialog windows were\n"
-literal|"open the last time you quit The GIMP. You can configure\n"
+literal|"open the last time you quit The GIMP.  You can configure\n"
 literal|"The GIMP to reopen these dialogs at the saved position."
 argument_list|)
 block|}
@@ -686,7 +701,7 @@ argument_list|(
 literal|"The unitrc is used to store your user units database.\n"
 literal|"You can define additional units and use them just\n"
 literal|"like you use the built-in units inches, millimeters,\n"
-literal|"points and picas. This file is overwritten each time\n"
+literal|"points and picas.  This file is overwritten each time\n"
 literal|"you quit the GIMP."
 argument_list|)
 block|}
@@ -701,7 +716,7 @@ argument_list|(
 literal|"This is a subdirectory which can be used to store\n"
 literal|"user defined brushes.  The default gimprc file\n"
 literal|"checks this subdirectory in addition to the system-\n"
-literal|"wide gimp brushes installation when searching for\n"
+literal|"wide GIMP brushes installation when searching for\n"
 literal|"brushes."
 argument_list|)
 block|}
@@ -715,8 +730,8 @@ name|N_
 argument_list|(
 literal|"This is a subdirectory which is used to store brushes\n"
 literal|"that are created with the brush editor.  The default\n"
-literal|"gimprc file checks this subdirectory when searching for\n"
-literal|"generated brushes."
+literal|"gimprc file checks this subdirectory when searching\n"
+literal|"for generated brushes."
 argument_list|)
 block|}
 block|,
@@ -730,8 +745,8 @@ argument_list|(
 literal|"This is a subdirectory which can be used to store\n"
 literal|"user defined gradients.  The default gimprc file\n"
 literal|"checks this subdirectory in addition to the system-\n"
-literal|"wide gimp gradients installation when searching for\n"
-literal|"gradients."
+literal|"wide GIMP gradients installation when searching\n"
+literal|"for gradients."
 argument_list|)
 block|}
 block|,
@@ -763,7 +778,7 @@ argument_list|(
 literal|"This is a subdirectory which can be used to store\n"
 literal|"user defined patterns.  The default gimprc file\n"
 literal|"checks this subdirectory in addition to the system-\n"
-literal|"wide gimp patterns installation when searching for\n"
+literal|"wide GIMP patterns installation when searching for\n"
 literal|"patterns."
 argument_list|)
 block|}
@@ -777,10 +792,9 @@ name|N_
 argument_list|(
 literal|"This is a subdirectory which can be used to store\n"
 literal|"user created, temporary, or otherwise non-system-\n"
-literal|"supported plug-ins.  The default gimprc file\n"
-literal|"checks this subdirectory in addition to the system-\n"
-literal|"wide GIMP plug-in directories when searching for\n"
-literal|"plug-ins."
+literal|"supported plug-ins.  The default gimprc file checks\n"
+literal|"this subdirectory in addition to the systemwide\n"
+literal|"GIMP plug-in directories when searching for plug-ins."
 argument_list|)
 block|}
 block|,
@@ -792,8 +806,8 @@ block|,
 name|N_
 argument_list|(
 literal|"This subdirectory can be used to store user created,\n"
-literal|"temporary, or otherwise non-system-supported DLL modules.\n"
-literal|"The default gimprc file checks this subdirectory\n"
+literal|"temporary, or otherwise non-system-supported DLL\n"
+literal|"modules.  The default gimprc file checks this subdirectory\n"
 literal|"in addition to the system-wide GIMP module directory\n"
 literal|"when searching for modules to load when initializing."
 argument_list|)
@@ -806,10 +820,10 @@ literal|"scripts"
 block|,
 name|N_
 argument_list|(
-literal|"This subdirectory is used by the GIMP to store \n"
-literal|"user created and installed scripts. The default gimprc\n"
-literal|"file checks this subdirectory in addition to the system-\n"
-literal|"wide gimp scripts subdirectory when searching for scripts"
+literal|"This subdirectory is used by the GIMP to store user\n"
+literal|"created and installed scripts.  The default gimprc file\n"
+literal|"checks this subdirectory in addition to the systemwide\n"
+literal|"GIMP scripts subdirectory when searching for scripts"
 argument_list|)
 block|}
 block|,
@@ -861,9 +875,9 @@ name|N_
 argument_list|(
 literal|"This is a subdirectory which can be used to store\n"
 literal|"user defined fractals to be used by the FractalExplorer\n"
-literal|"plug-in. The default gimprc file checks this subdirectory in\n"
-literal|"addition to the systemwide gimp FractalExplorer installation\n"
-literal|"when searching for fractals."
+literal|"plug-in.  The default gimprc file checks this subdirectory\n"
+literal|"in addition to the systemwide GIMP FractalExplorer\n"
+literal|"installation when searching for fractals."
 argument_list|)
 block|}
 block|,
@@ -875,9 +889,9 @@ block|,
 name|N_
 argument_list|(
 literal|"This is a subdirectory which can be used to store\n"
-literal|"user defined figures to be used by the gfig plug-in.\n"
+literal|"user defined figures to be used by the GFig plug-in.\n"
 literal|"The default gimprc file checks this subdirectory in\n"
-literal|"addition to the systemwide gimp gfig installation\n"
+literal|"addition to the systemwide GIMP GFig installation\n"
 literal|"when searching for gfig figures."
 argument_list|)
 block|}
@@ -890,9 +904,9 @@ block|,
 name|N_
 argument_list|(
 literal|"This is a subdirectory which can be used to store\n"
-literal|"user defined gflares to be used by the gflare plug-in.\n"
+literal|"user defined gflares to be used by the GFlare plug-in.\n"
 literal|"The default gimprc file checks this subdirectory in\n"
-literal|"addition to the systemwide gimp gflares installation\n"
+literal|"addition to the systemwide GIMP GFlares installation\n"
 literal|"when searching for gflares."
 argument_list|)
 block|}
@@ -906,9 +920,9 @@ name|N_
 argument_list|(
 literal|"This is a subdirectory which can be used to store\n"
 literal|"user defined data to be used by the Gimpressionist\n"
-literal|"plug-in. The default gimprc file checks this subdirectory in\n"
-literal|"addition to the systemwide gimp Gimpressionist installation\n"
-literal|"when searching for data."
+literal|"plug-in.  The default gimprc file checks this subdirectory\n"
+literal|"in addition to the systemwide GIMP Gimpressionist\n"
+literal|"installation when searching for data."
 argument_list|)
 block|}
 block|}
@@ -1042,7 +1056,15 @@ name|callback
 call|)
 argument_list|()
 expr_stmt|;
+return|return;
 break|break;
+case|case
+name|EEK_PAGE
+case|:
+default|default:
+name|g_assert_not_reached
+argument_list|()
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -1080,13 +1102,50 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|gtk_widget_destroy
-argument_list|(
-name|install_dialog
-argument_list|)
-expr_stmt|;
+specifier|static
+name|gint
+name|timeout
+init|=
+literal|0
+decl_stmt|;
+if|if
+condition|(
+name|timeout
+condition|)
 name|gtk_exit
 argument_list|(
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|continue_button
+argument_list|)
+expr_stmt|;
+name|gtk_notebook_set_page
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
+argument_list|)
+argument_list|,
+name|EEK_PAGE
+argument_list|)
+expr_stmt|;
+name|timeout
+operator|=
+name|gtk_timeout_add
+argument_list|(
+literal|1024
+argument_list|,
+operator|(
+name|GtkFunction
+operator|)
+name|gtk_exit
+argument_list|,
+operator|(
+name|gpointer
+operator|)
 literal|0
 argument_list|)
 expr_stmt|;
@@ -1213,6 +1272,18 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_notebook_append_page
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
+argument_list|)
+argument_list|,
+name|page
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gtk_widget_push_style
 argument_list|(
 name|title_style
@@ -1297,6 +1368,28 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gtk_notebook_page_num
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
+argument_list|)
+argument_list|,
+name|page
+argument_list|)
+operator|==
+name|EEK_PAGE
+condition|)
+name|wilber
+operator|=
+name|gimp_pixmap_new
+argument_list|(
+name|eek_xpm
+argument_list|)
+expr_stmt|;
+else|else
 name|wilber
 operator|=
 name|gimp_pixmap_new
@@ -1626,18 +1719,6 @@ argument_list|(
 name|page
 argument_list|)
 expr_stmt|;
-name|gtk_notebook_append_page
-argument_list|(
-name|GTK_NOTEBOOK
-argument_list|(
-name|notebook
-argument_list|)
-argument_list|,
-name|page
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 return|return
 name|vbox
 return|;
@@ -1882,6 +1963,14 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_dialog_set_icon
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_realize
@@ -2284,6 +2373,10 @@ name|GdkBitmap
 modifier|*
 name|folder_mask
 decl_stmt|;
+name|gchar
+modifier|*
+name|str
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -2419,6 +2512,20 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
+name|str
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"For a proper GIMP installation, a subdirectory named\n"
+literal|"%s needs to be created."
+argument_list|)
+argument_list|,
+name|gimp_directory
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|add_label
 argument_list|(
 name|GTK_BOX
@@ -2428,11 +2535,12 @@ argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"For a proper GIMP installation, a subdirectory needs to be created.\n"
-literal|"This subdirectory will contain a number of important files."
+name|str
 argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str
 argument_list|)
 expr_stmt|;
 name|add_label
@@ -2446,6 +2554,7 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
+literal|"This subdirectory will contain a number of important files.\n"
 literal|"Click on one of the files or subdirectories in the tree\n"
 literal|"to get more information about the selected item."
 argument_list|)
@@ -3107,6 +3216,25 @@ argument_list|(
 name|sep
 argument_list|)
 expr_stmt|;
+comment|/*  EEK page  */
+name|page
+operator|=
+name|install_notebook_append_page
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Aborting Installation..."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_pop_style
+argument_list|()
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|dialog
@@ -3315,6 +3443,11 @@ name|executable
 init|=
 name|TRUE
 decl_stmt|;
+name|gtk_widget_push_style
+argument_list|(
+name|page_style
+argument_list|)
+expr_stmt|;
 comment|/*  Generate output  */
 name|g_snprintf
 argument_list|(
@@ -3956,6 +4089,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|gtk_widget_pop_style
+argument_list|()
+expr_stmt|;
 return|return
 name|executable
 return|;
@@ -4031,6 +4167,11 @@ name|GtkWidget
 modifier|*
 name|memsize
 decl_stmt|;
+name|gtk_widget_push_style
+argument_list|(
+name|page_style
+argument_list|)
+expr_stmt|;
 comment|/*  tile cache size  */
 name|add_label
 argument_list|(
@@ -4323,6 +4464,9 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
+name|gtk_widget_pop_style
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 
@@ -4374,6 +4518,11 @@ name|xres
 argument_list|,
 operator|&
 name|yres
+argument_list|)
+expr_stmt|;
+name|gtk_widget_push_style
+argument_list|(
+name|page_style
 argument_list|)
 expr_stmt|;
 name|add_label

@@ -228,7 +228,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ed3ab60103
+DECL|enum|__anon2c64c9230103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -516,13 +516,13 @@ DECL|variable|tile_cache_size
 name|gint
 name|tile_cache_size
 init|=
-literal|10485760
+literal|33554432
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
 DECL|variable|tile_cache_size
-comment|/* 10 MB */
+comment|/* 32 MB */
 end_comment
 
 begin_decl_stmt
