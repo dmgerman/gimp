@@ -6267,23 +6267,6 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* When doing multiple selections, the name 		     * of the first item touched with the cursor will 		     * become the text-field default - and we don't 		     * want to load that twice. 		     */
-if|if
-condition|(
-name|strcmp
-argument_list|(
-name|mfilename
-argument_list|,
-name|filename
-argument_list|)
-operator|==
-literal|0
-condition|)
-block|{
-goto|goto
-name|next_iter
-goto|;
-block|}
 if|if
 condition|(
 operator|(
@@ -6385,8 +6368,6 @@ block|}
 block|}
 block|}
 block|}
-name|next_iter
-label|:
 if|if
 condition|(
 name|mfilename
