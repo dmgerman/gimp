@@ -115,6 +115,7 @@ name|BlendRepeatFunc
 function_decl|)
 parameter_list|(
 name|gdouble
+name|val
 parameter_list|)
 function_decl|;
 end_typedef
@@ -122,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2966d1bf0108
+DECL|struct|__anon28d515df0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -183,7 +184,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2966d1bf0208
+DECL|struct|__anon28d515df0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -379,8 +380,8 @@ parameter_list|,
 name|gdouble
 name|y
 parameter_list|,
-name|gint
-name|cwise
+name|gboolean
+name|clockwise
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -712,12 +713,6 @@ name|PixelRegion
 name|bufPR
 decl_stmt|;
 name|gint
-name|has_alpha
-decl_stmt|;
-name|gint
-name|has_selection
-decl_stmt|;
-name|gint
 name|bytes
 decl_stmt|;
 name|gint
@@ -762,8 +757,6 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-name|has_selection
-operator|=
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
@@ -781,13 +774,6 @@ operator|&
 name|y2
 argument_list|)
 expr_stmt|;
-name|has_alpha
-operator|=
-name|gimp_drawable_has_alpha
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 name|bytes
 operator|=
 name|gimp_drawable_bytes
@@ -799,13 +785,12 @@ comment|/*  Always create an alpha temp buf (for generality) */
 if|if
 condition|(
 operator|!
-name|has_alpha
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
 condition|)
 block|{
-name|has_alpha
-operator|=
-name|TRUE
-expr_stmt|;
 name|bytes
 operator|+=
 literal|1
@@ -1895,7 +1880,7 @@ end_function
 begin_function
 specifier|static
 name|gdouble
-DECL|function|gradient_calc_spiral_factor (gdouble dist,gdouble * axis,gdouble offset,gdouble x,gdouble y,gint cwise)
+DECL|function|gradient_calc_spiral_factor (gdouble dist,gdouble * axis,gdouble offset,gdouble x,gdouble y,gboolean clockwise)
 name|gradient_calc_spiral_factor
 parameter_list|(
 name|gdouble
@@ -1914,8 +1899,8 @@ parameter_list|,
 name|gdouble
 name|y
 parameter_list|,
-name|gint
-name|cwise
+name|gboolean
+name|clockwise
 parameter_list|)
 block|{
 name|gdouble
@@ -1986,21 +1971,20 @@ name|G_PI
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|cwise
+name|clockwise
 condition|)
 name|ang
 operator|=
-name|ang0
-operator|-
 name|ang1
+operator|-
+name|ang0
 expr_stmt|;
 else|else
 name|ang
 operator|=
-name|ang1
-operator|-
 name|ang0
+operator|-
+name|ang1
 expr_stmt|;
 if|if
 condition|(
@@ -2522,10 +2506,6 @@ name|val
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -3352,12 +3332,9 @@ block|}
 comment|/* Adjust for repeat */
 name|factor
 operator|=
-call|(
-modifier|*
 name|rbd
 operator|->
 name|repeat_func
-call|)
 argument_list|(
 name|factor
 argument_list|)
@@ -3518,9 +3495,7 @@ condition|)
 block|{
 name|GimpHSV
 name|hsv
-decl_stmt|;
-name|hsv
-operator|=
+init|=
 operator|*
 operator|(
 operator|(
@@ -3529,7 +3504,7 @@ operator|*
 operator|)
 name|color
 operator|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_hsv_to_rgb
 argument_list|(
 operator|&
@@ -3546,21 +3521,20 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_put_pixel (int x,int y,GimpRGB * color,void * put_pixel_data)
+DECL|function|gradient_put_pixel (gint x,gint y,GimpRGB * color,gpointer put_pixel_data)
 name|gradient_put_pixel
 parameter_list|(
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
 name|GimpRGB
 modifier|*
 name|color
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|put_pixel_data
 parameter_list|)
 block|{
@@ -4121,9 +4095,6 @@ block|{
 name|RenderBlendData
 name|rbd
 decl_stmt|;
-name|PutPixelData
-name|ppd
-decl_stmt|;
 name|gint
 name|x
 decl_stmt|,
@@ -4178,7 +4149,6 @@ name|reverse
 operator|=
 name|reverse
 expr_stmt|;
-comment|/* Get foreground and background colors, normalized */
 name|gimp_context_get_foreground
 argument_list|(
 name|context
@@ -4189,8 +4159,6 @@ operator|.
 name|fg
 argument_list|)
 expr_stmt|;
-comment|/* rbd.fg.a = 1.0; */
-comment|/* Foreground is always opaque */
 name|gimp_context_get_background
 argument_list|(
 name|context
@@ -4201,8 +4169,6 @@ operator|.
 name|bg
 argument_list|)
 expr_stmt|;
-comment|/* rbd.bg.a = 1.0; */
-comment|/* opaque, for now */
 switch|switch
 condition|(
 name|blend_mode
@@ -4293,9 +4259,8 @@ name|bg
 operator|.
 name|a
 operator|=
-literal|0.0
+name|GIMP_OPACITY_TRANSPARENT
 expr_stmt|;
-comment|/* transparent */
 break|break;
 case|case
 name|GIMP_CUSTOM_MODE
@@ -4585,7 +4550,9 @@ condition|(
 name|supersample
 condition|)
 block|{
-comment|/* Initialize put pixel data */
+name|PutPixelData
+name|ppd
+decl_stmt|;
 name|ppd
 operator|.
 name|PR
@@ -4631,7 +4598,6 @@ name|dither_rand
 operator|=
 name|dither_rand
 expr_stmt|;
-comment|/* Render! */
 name|gimp_adaptive_supersample_area
 argument_list|(
 literal|0
@@ -4669,7 +4635,6 @@ argument_list|,
 name|progress_data
 argument_list|)
 expr_stmt|;
-comment|/* Clean up */
 name|g_free
 argument_list|(
 name|ppd
