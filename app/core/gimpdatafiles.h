@@ -16,6 +16,12 @@ directive|define
 name|_DATAFILES_H_
 end_define
 
+begin_include
+include|#
+directive|include
+file|<time.h>
+end_include
+
 begin_define
 DECL|macro|INCLUDE_TEMP_DIR
 define|#
