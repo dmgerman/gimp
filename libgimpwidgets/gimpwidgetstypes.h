@@ -33,7 +33,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be376ed0103
+DECL|enum|__anon2932a35d0103
 block|{
 DECL|enumerator|GIMP_COLOR_AREA_FLAT
 name|GIMP_COLOR_AREA_FLAT
@@ -54,7 +54,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be376ed0203
+DECL|enum|__anon2932a35d0203
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be376ed0303
+DECL|enum|__anon2932a35d0303
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -261,6 +261,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDrawablePreview
+typedef|typedef
+name|struct
+name|_GimpDrawablePreview
+name|GimpDrawablePreview
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpFileEntry
 typedef|typedef
 name|struct
@@ -329,6 +338,15 @@ typedef|typedef
 name|struct
 name|_GimpPickButton
 name|GimpPickButton
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpPreview
+typedef|typedef
+name|struct
+name|_GimpPreview
+name|GimpPreview
 typedef|;
 end_typedef
 

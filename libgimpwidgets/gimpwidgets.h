@@ -187,6 +187,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimppreview.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimppreviewarea.h>
 end_include
 

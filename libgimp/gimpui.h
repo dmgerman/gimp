@@ -55,6 +55,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpdrawablepreview.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpfontmenu.h>
 end_include
 
