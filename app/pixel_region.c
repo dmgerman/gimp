@@ -6,18 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdarg.h>
 end_include
 
@@ -36,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimprc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pixel_region.h"
 end_include
 
@@ -43,12 +37,6 @@ begin_include
 include|#
 directive|include
 file|"pixel_regionP.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_include
@@ -85,34 +73,36 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|get_portion_width
 parameter_list|(
 name|PixelRegionIterator
 modifier|*
+name|PRI
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|get_portion_height
 parameter_list|(
 name|PixelRegionIterator
 modifier|*
+name|PRI
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
-modifier|*
+name|gpointer
 name|pixel_regions_configure
 parameter_list|(
 name|PixelRegionIterator
 modifier|*
+name|PRI
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -124,9 +114,11 @@ name|pixel_region_configure
 parameter_list|(
 name|PixelRegionHolder
 modifier|*
+name|PRH
 parameter_list|,
 name|PixelRegionIterator
 modifier|*
+name|PRI
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -141,7 +133,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|pixel_region_init (PixelRegion * PR,TileManager * tiles,int x,int y,int w,int h,int dirty)
+DECL|function|pixel_region_init (PixelRegion * PR,TileManager * tiles,gint x,gint y,gint w,gint h,gboolean dirty)
 name|pixel_region_init
 parameter_list|(
 name|PixelRegion
@@ -152,19 +144,19 @@ name|TileManager
 modifier|*
 name|tiles
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|,
-name|int
+name|gboolean
 name|dirty
 parameter_list|)
 block|{
@@ -239,23 +231,23 @@ end_function
 
 begin_function
 name|void
-DECL|function|pixel_region_resize (PixelRegion * PR,int x,int y,int w,int h)
+DECL|function|pixel_region_resize (PixelRegion * PR,gint x,gint y,gint w,gint h)
 name|pixel_region_resize
 parameter_list|(
 name|PixelRegion
 modifier|*
 name|PR
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
@@ -332,29 +324,30 @@ end_comment
 
 begin_function
 name|void
-DECL|function|pixel_region_get_async (PixelRegion * PR,int ulx,int uly,int lrx,int lry)
+DECL|function|pixel_region_get_async (PixelRegion * PR,gint ulx,gint uly,gint lrx,gint lry)
 name|pixel_region_get_async
 parameter_list|(
 name|PixelRegion
 modifier|*
 name|PR
 parameter_list|,
-name|int
+name|gint
 name|ulx
 parameter_list|,
-name|int
+name|gint
 name|uly
 parameter_list|,
-name|int
+name|gint
 name|lrx
 parameter_list|,
-name|int
+name|gint
 name|lry
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|y
 decl_stmt|;
 for|for
@@ -401,28 +394,27 @@ end_function
 
 begin_function
 name|void
-DECL|function|pixel_region_get_row (PixelRegion * PR,int x,int y,int w,unsigned char * data,int subsample)
+DECL|function|pixel_region_get_row (PixelRegion * PR,gint x,gint y,gint w,guchar * data,gint subsample)
 name|pixel_region_get_row
 parameter_list|(
 name|PixelRegion
 modifier|*
 name|PR
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 parameter_list|,
-name|int
+name|gint
 name|subsample
 parameter_list|)
 block|{
@@ -430,25 +422,27 @@ name|Tile
 modifier|*
 name|tile
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|tile_data
 decl_stmt|;
-name|int
+name|gint
 name|inc
 decl_stmt|;
-name|int
+name|gint
 name|end
 decl_stmt|;
-name|int
+name|gint
 name|boundary
 decl_stmt|;
-name|int
+name|gint
 name|b
 decl_stmt|;
-name|int
+name|gint
 name|npixels
+decl_stmt|;
+name|gint
+name|tilebpp
 decl_stmt|;
 name|end
 operator|=
@@ -491,6 +485,13 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|tilebpp
+operator|=
+name|tile_bpp
+argument_list|(
+name|tile
 argument_list|)
 expr_stmt|;
 name|tile_data
@@ -552,20 +553,14 @@ name|data
 argument_list|,
 name|tile_data
 argument_list|,
-name|tile_bpp
-argument_list|(
-name|tile
-argument_list|)
+name|tilebpp
 operator|*
 name|npixels
 argument_list|)
 expr_stmt|;
 name|data
 operator|+=
-name|tile_bpp
-argument_list|(
-name|tile
-argument_list|)
+name|tilebpp
 operator|*
 name|npixels
 expr_stmt|;
@@ -586,10 +581,7 @@ name|inc
 operator|=
 name|subsample
 operator|*
-name|tile_bpp
-argument_list|(
-name|tile
-argument_list|)
+name|tilebpp
 expr_stmt|;
 for|for
 control|(
@@ -611,10 +603,7 @@ literal|0
 init|;
 name|b
 operator|<
-name|tile_bpp
-argument_list|(
-name|tile
-argument_list|)
+name|tilebpp
 condition|;
 name|b
 operator|++
@@ -647,24 +636,23 @@ end_function
 
 begin_function
 name|void
-DECL|function|pixel_region_set_row (PixelRegion * PR,int x,int y,int w,unsigned char * data)
+DECL|function|pixel_region_set_row (PixelRegion * PR,gint x,gint y,gint w,guchar * data)
 name|pixel_region_set_row
 parameter_list|(
 name|PixelRegion
 modifier|*
 name|PR
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 parameter_list|)
@@ -673,15 +661,14 @@ name|Tile
 modifier|*
 name|tile
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|tile_data
 decl_stmt|;
-name|int
+name|gint
 name|end
 decl_stmt|;
-name|int
+name|gint
 name|npixels
 decl_stmt|;
 name|end
@@ -812,28 +799,27 @@ end_function
 
 begin_function
 name|void
-DECL|function|pixel_region_get_col (PixelRegion * PR,int x,int y,int h,unsigned char * data,int subsample)
+DECL|function|pixel_region_get_col (PixelRegion * PR,gint x,gint y,gint h,guchar * data,gint subsample)
 name|pixel_region_get_col
 parameter_list|(
 name|PixelRegion
 modifier|*
 name|PR
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 parameter_list|,
-name|int
+name|gint
 name|subsample
 parameter_list|)
 block|{
@@ -841,21 +827,23 @@ name|Tile
 modifier|*
 name|tile
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|tile_data
 decl_stmt|;
-name|int
+name|gint
+name|tilebpp
+decl_stmt|;
+name|gint
 name|inc
 decl_stmt|;
-name|int
+name|gint
 name|end
 decl_stmt|;
-name|int
+name|gint
 name|boundary
 decl_stmt|;
-name|int
+name|gint
 name|b
 decl_stmt|;
 name|end
@@ -899,6 +887,13 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|tilebpp
+operator|=
+name|tile_bpp
+argument_list|(
+name|tile
 argument_list|)
 expr_stmt|;
 name|tile_data
@@ -948,10 +943,7 @@ name|inc
 operator|=
 name|subsample
 operator|*
-name|tile_bpp
-argument_list|(
-name|tile
-argument_list|)
+name|tilebpp
 operator|*
 name|tile_ewidth
 argument_list|(
@@ -978,10 +970,7 @@ literal|0
 init|;
 name|b
 operator|<
-name|tile_bpp
-argument_list|(
-name|tile
-argument_list|)
+name|tilebpp
 condition|;
 name|b
 operator|++
@@ -1013,24 +1002,23 @@ end_function
 
 begin_function
 name|void
-DECL|function|pixel_region_set_col (PixelRegion * PR,int x,int y,int h,unsigned char * data)
+DECL|function|pixel_region_set_col (PixelRegion * PR,gint x,gint y,gint h,guchar * data)
 name|pixel_region_set_col
 parameter_list|(
 name|PixelRegion
 modifier|*
 name|PR
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 parameter_list|)
@@ -1039,21 +1027,23 @@ name|Tile
 modifier|*
 name|tile
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|tile_data
 decl_stmt|;
-name|int
+name|gint
+name|tilebpp
+decl_stmt|;
+name|gint
 name|inc
 decl_stmt|;
-name|int
+name|gint
 name|end
 decl_stmt|;
-name|int
+name|gint
 name|boundary
 decl_stmt|;
-name|int
+name|gint
 name|b
 decl_stmt|;
 name|end
@@ -1099,6 +1089,13 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|tilebpp
+operator|=
+name|tile_bpp
+argument_list|(
+name|tile
+argument_list|)
+expr_stmt|;
 name|tile_data
 operator|=
 name|tile_data_pointer
@@ -1133,10 +1130,7 @@ operator|)
 expr_stmt|;
 name|inc
 operator|=
-name|tile_bpp
-argument_list|(
-name|tile
-argument_list|)
+name|tilebpp
 operator|*
 name|tile_ewidth
 argument_list|(
@@ -1173,10 +1167,7 @@ literal|0
 init|;
 name|b
 operator|<
-name|tile_bpp
-argument_list|(
-name|tile
-argument_list|)
+name|tilebpp
 condition|;
 name|b
 operator|++
@@ -1207,7 +1198,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|pixel_region_has_alpha (PixelRegion * PR)
 name|pixel_region_has_alpha
 parameter_list|(
@@ -1231,21 +1222,21 @@ operator|==
 literal|4
 condition|)
 return|return
-literal|1
+name|TRUE
 return|;
+else|else
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 end_function
 
 begin_function
-name|void
-modifier|*
-DECL|function|pixel_regions_register (int num_regions,...)
+name|gpointer
+DECL|function|pixel_regions_register (gint num_regions,...)
 name|pixel_regions_register
 parameter_list|(
-name|int
+name|gint
 name|num_regions
 parameter_list|,
 modifier|...
@@ -1263,7 +1254,7 @@ name|PixelRegionIterator
 modifier|*
 name|PRI
 decl_stmt|;
-name|int
+name|gboolean
 name|found
 decl_stmt|;
 name|va_list
@@ -1308,7 +1299,7 @@ operator|<
 literal|1
 condition|)
 return|return
-name|FALSE
+name|NULL
 return|;
 name|va_start
 argument_list|(
@@ -1467,13 +1458,11 @@ block|}
 end_function
 
 begin_function
-name|void
-modifier|*
-DECL|function|pixel_regions_process (void * PRI_ptr)
+name|gpointer
+DECL|function|pixel_regions_process (gpointer PRI_ptr)
 name|pixel_regions_process
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|PRI_ptr
 parameter_list|)
 block|{
@@ -1503,16 +1492,23 @@ name|process_count
 operator|++
 expr_stmt|;
 comment|/*  Unref all referenced tiles and increment the offsets  */
+for|for
+control|(
 name|list
 operator|=
 name|PRI
 operator|->
 name|pixel_regions
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|PRH
 operator|=
@@ -1555,7 +1551,7 @@ operator|->
 name|process_count
 operator|++
 expr_stmt|;
-comment|/*  Unref the last referenced tile if the underlying region is a tile manager  */
+comment|/*  Unref the last referenced tile if the underlying region  	      is a tile manager  */
 if|if
 condition|(
 name|PRH
@@ -1565,7 +1561,7 @@ operator|->
 name|tiles
 condition|)
 block|{
-comment|/* only set the dirty flag if PRH->dirty_tiles = true */
+comment|/* only set the dirty flag if PRH->dirty_tiles == TRUE */
 name|tile_release
 argument_list|(
 name|PRH
@@ -1645,13 +1641,6 @@ name|portion_height
 expr_stmt|;
 block|}
 block|}
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-expr_stmt|;
 block|}
 return|return
 name|pixel_regions_configure
@@ -1664,11 +1653,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|pixel_regions_process_stop (void * PRI_ptr)
+DECL|function|pixel_regions_process_stop (gpointer PRI_ptr)
 name|pixel_regions_process_stop
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|PRI_ptr
 parameter_list|)
 block|{
@@ -1698,16 +1686,23 @@ name|process_count
 operator|++
 expr_stmt|;
 comment|/*  Unref all referenced tiles and increment the offsets  */
+for|for
+control|(
 name|list
 operator|=
 name|PRI
 operator|->
 name|pixel_regions
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|PRH
 operator|=
@@ -1750,7 +1745,7 @@ operator|->
 name|process_count
 operator|++
 expr_stmt|;
-comment|/*  Unref the last referenced tile if the underlying region is a tile manager  */
+comment|/*  Unref the last referenced tile if the underlying region  	      is a tile manager  */
 if|if
 condition|(
 name|PRH
@@ -1785,13 +1780,6 @@ name|NULL
 expr_stmt|;
 block|}
 block|}
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-expr_stmt|;
 block|}
 if|if
 condition|(
@@ -1800,17 +1788,23 @@ operator|->
 name|pixel_regions
 condition|)
 block|{
+for|for
+control|(
 name|list
 operator|=
 name|PRI
 operator|->
 name|pixel_regions
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
-block|{
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 name|g_free
 argument_list|(
 name|list
@@ -1818,14 +1812,6 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-expr_stmt|;
-block|}
 name|g_slist_free
 argument_list|(
 name|PRI
@@ -1852,7 +1838,7 @@ end_comment
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|get_portion_height (PixelRegionIterator * PRI)
 name|get_portion_height
 parameter_list|(
@@ -1869,25 +1855,32 @@ name|PixelRegionHolder
 modifier|*
 name|PRH
 decl_stmt|;
-name|int
+name|gint
 name|min_height
 init|=
 name|G_MAXINT
 decl_stmt|;
-name|int
+name|gint
 name|height
 decl_stmt|;
-comment|/*  Find the minimum height to the next vertical tile (in the case of a tile manager)    *  or to the end of the pixel region (in the case of no tile manager)    */
+comment|/*  Find the minimum height to the next vertical tile     *  (in the case of a tile manager) or to the end of the     *  pixel region (in the case of no tile manager)    */
+for|for
+control|(
 name|list
 operator|=
 name|PRI
 operator|->
 name|pixel_regions
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|PRH
 operator|=
@@ -2011,13 +2004,6 @@ operator|=
 name|height
 expr_stmt|;
 block|}
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-expr_stmt|;
 block|}
 return|return
 name|min_height
@@ -2027,7 +2013,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|get_portion_width (PixelRegionIterator * PRI)
 name|get_portion_width
 parameter_list|(
@@ -2044,25 +2030,32 @@ name|PixelRegionHolder
 modifier|*
 name|PRH
 decl_stmt|;
-name|int
+name|gint
 name|min_width
 init|=
 name|G_MAXINT
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|;
-comment|/*  Find the minimum width to the next vertical tile (in the case of a tile manager)    *  or to the end of the pixel region (in the case of no tile manager)    */
+comment|/*  Find the minimum width to the next vertical tile     *  (in the case of a tile manager) or to the end of     *  the pixel region (in the case of no tile manager)    */
+for|for
+control|(
 name|list
 operator|=
 name|PRI
 operator|->
 name|pixel_regions
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|PRH
 operator|=
@@ -2186,13 +2179,6 @@ operator|=
 name|width
 expr_stmt|;
 block|}
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-expr_stmt|;
 block|}
 return|return
 name|min_width
@@ -2202,8 +2188,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
-modifier|*
+name|gpointer
 DECL|function|pixel_regions_configure (PixelRegionIterator * PRI)
 name|pixel_regions_configure
 parameter_list|(
@@ -2262,17 +2247,23 @@ operator|->
 name|pixel_regions
 condition|)
 block|{
+for|for
+control|(
 name|list
 operator|=
 name|PRI
 operator|->
 name|pixel_regions
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
-block|{
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 name|g_free
 argument_list|(
 name|list
@@ -2280,14 +2271,6 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-expr_stmt|;
-block|}
 name|g_slist_free
 argument_list|(
 name|PRI
@@ -2310,16 +2293,23 @@ operator|->
 name|process_count
 operator|++
 expr_stmt|;
+for|for
+control|(
 name|list
 operator|=
 name|PRI
 operator|->
 name|pixel_regions
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|PRH
 operator|=
@@ -2369,13 +2359,6 @@ name|PRI
 argument_list|)
 expr_stmt|;
 block|}
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-expr_stmt|;
 block|}
 return|return
 name|PRI

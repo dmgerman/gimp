@@ -47,68 +47,73 @@ struct|struct
 name|_PixelRegion
 block|{
 DECL|member|data
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|;
-comment|/*  pointer to region data  */
+comment|/*  pointer to region data        */
 DECL|member|tiles
 name|TileManager
 modifier|*
 name|tiles
 decl_stmt|;
-comment|/*  pointer to tiles  */
+comment|/*  pointer to tiles              */
 DECL|member|curtile
 name|Tile
 modifier|*
 name|curtile
 decl_stmt|;
-comment|/*  current tile  */
+comment|/*  current tile                  */
 DECL|member|offx
-DECL|member|offy
-name|int
+name|gint
 name|offx
-decl_stmt|,
+decl_stmt|;
+comment|/*  tile offsets                  */
+DECL|member|offy
+name|gint
 name|offy
 decl_stmt|;
-comment|/*  tile offsets */
+comment|/*  tile offsets                  */
 DECL|member|rowstride
-name|int
+name|gint
 name|rowstride
 decl_stmt|;
-comment|/*  bytes per pixel row  */
+comment|/*  bytes per pixel row           */
 DECL|member|x
-DECL|member|y
-name|int
+name|gint
 name|x
-decl_stmt|,
+decl_stmt|;
+comment|/*  origin                        */
+DECL|member|y
+name|gint
 name|y
 decl_stmt|;
-comment|/*  origin  */
+comment|/*  origin                        */
 DECL|member|w
-DECL|member|h
-name|int
+name|gint
 name|w
-decl_stmt|,
+decl_stmt|;
+comment|/*  width of region               */
+DECL|member|h
+name|gint
 name|h
 decl_stmt|;
-comment|/*  width and  height of region  */
+comment|/*  height of region              */
 DECL|member|bytes
-name|int
+name|gint
 name|bytes
 decl_stmt|;
-comment|/*  bytes per pixel  */
+comment|/*  bytes per pixel               */
 DECL|member|dirty
-name|int
+name|gboolean
 name|dirty
 decl_stmt|;
 comment|/*  will this region be dirtied?  */
 DECL|member|process_count
-name|int
+name|gint
 name|process_count
 decl_stmt|;
-comment|/*  used internally  */
+comment|/*  used internally               */
 block|}
 struct|;
 end_struct
@@ -123,19 +128,26 @@ name|pixel_region_init
 parameter_list|(
 name|PixelRegion
 modifier|*
+name|PR
 parameter_list|,
 name|TileManager
 modifier|*
+name|tiles
 parameter_list|,
-name|int
+name|gint
+name|x
 parameter_list|,
-name|int
+name|gint
+name|y
 parameter_list|,
-name|int
+name|gint
+name|w
 parameter_list|,
-name|int
+name|gint
+name|h
 parameter_list|,
-name|int
+name|gboolean
+name|dirty
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -146,14 +158,19 @@ name|pixel_region_resize
 parameter_list|(
 name|PixelRegion
 modifier|*
+name|PR
 parameter_list|,
-name|int
+name|gint
+name|x
 parameter_list|,
-name|int
+name|gint
+name|y
 parameter_list|,
-name|int
+name|gint
+name|w
 parameter_list|,
-name|int
+name|gint
+name|h
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -166,16 +183,16 @@ name|PixelRegion
 modifier|*
 name|PR
 parameter_list|,
-name|int
+name|gint
 name|ulx
 parameter_list|,
-name|int
+name|gint
 name|uly
 parameter_list|,
-name|int
+name|gint
 name|lrx
 parameter_list|,
-name|int
+name|gint
 name|lry
 parameter_list|)
 function_decl|;
@@ -187,18 +204,23 @@ name|pixel_region_get_row
 parameter_list|(
 name|PixelRegion
 modifier|*
+name|PR
 parameter_list|,
-name|int
+name|gint
+name|x
 parameter_list|,
-name|int
+name|gint
+name|y
 parameter_list|,
-name|int
+name|gint
+name|w
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
+name|data
 parameter_list|,
-name|int
+name|gint
+name|subsample
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -209,16 +231,20 @@ name|pixel_region_set_row
 parameter_list|(
 name|PixelRegion
 modifier|*
+name|PR
 parameter_list|,
-name|int
+name|gint
+name|x
 parameter_list|,
-name|int
+name|gint
+name|y
 parameter_list|,
-name|int
+name|gint
+name|w
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -229,18 +255,23 @@ name|pixel_region_get_col
 parameter_list|(
 name|PixelRegion
 modifier|*
+name|PR
 parameter_list|,
-name|int
+name|gint
+name|x
 parameter_list|,
-name|int
+name|gint
+name|y
 parameter_list|,
-name|int
+name|gint
+name|h
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
+name|data
 parameter_list|,
-name|int
+name|gint
+name|subsample
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -251,36 +282,41 @@ name|pixel_region_set_col
 parameter_list|(
 name|PixelRegion
 modifier|*
+name|PR
 parameter_list|,
-name|int
+name|gint
+name|x
 parameter_list|,
-name|int
+name|gint
+name|y
 parameter_list|,
-name|int
+name|gint
+name|h
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|pixel_region_has_alpha
 parameter_list|(
 name|PixelRegion
 modifier|*
+name|PR
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-modifier|*
+name|gpointer
 name|pixel_regions_register
 parameter_list|(
-name|int
+name|gint
+name|num_regions
 parameter_list|,
 modifier|...
 parameter_list|)
@@ -288,12 +324,11 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-modifier|*
+name|gpointer
 name|pixel_regions_process
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
+name|PRI_ptr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -302,8 +337,8 @@ begin_function_decl
 name|void
 name|pixel_regions_process_stop
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
+name|PRI_ptr
 parameter_list|)
 function_decl|;
 end_function_decl
