@@ -37,6 +37,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpdialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpexport.h"
 end_include
 
@@ -44,6 +50,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpfileselection.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimphelpui.h"
 end_include
 
 begin_include
