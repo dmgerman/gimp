@@ -131,10 +131,6 @@ DECL|member|nav_preview_size
 name|GimpPreviewSize
 name|nav_preview_size
 decl_stmt|;
-DECL|member|nav_window_per_display
-name|gboolean
-name|nav_window_per_display
-decl_stmt|;
 DECL|member|info_window_per_display
 name|gboolean
 name|info_window_per_display

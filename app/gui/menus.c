@@ -2073,6 +2073,27 @@ block|,
 name|NULL
 block|}
 block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/View/Shrink Wrap"
+argument_list|)
+block|,
+literal|"<control>E"
+block|,
+name|view_shrink_wrap_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+literal|"view/shrink_wrap.html"
+block|,
+name|NULL
+block|}
+block|,
 comment|/*<Image>/View/Zoom  */
 block|{
 block|{
@@ -2572,27 +2593,6 @@ block|,
 name|NULL
 block|,
 literal|"view/new_view.html"
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/View/Shrink Wrap"
-argument_list|)
-block|,
-literal|"<control>E"
-block|,
-name|view_shrink_wrap_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-name|NULL
-block|,
-literal|"view/shrink_wrap.html"
 block|,
 name|NULL
 block|}
@@ -6007,6 +6007,20 @@ literal|"/Add Tab/Images..."
 argument_list|)
 argument_list|,
 literal|"gimp-image-list"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+block|,
+name|ADD_TAB
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Add Tab/Navigation..."
+argument_list|)
+argument_list|,
+literal|"gimp-navigation-view"
 argument_list|,
 name|NULL
 argument_list|,

@@ -236,7 +236,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcc87ae0103
+DECL|enum|__anon27db3c500103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -1179,9 +1179,6 @@ block|,
 comment|/* use_help                  */
 name|TRUE
 block|,
-comment|/* nav_window_per_display    */
-name|FALSE
-block|,
 comment|/* info_window_follows_mouse */
 name|TRUE
 block|,
@@ -1818,32 +1815,6 @@ operator|&
 name|gimprc
 operator|.
 name|use_help
-block|}
-block|,
-block|{
-literal|"nav-window-per-display"
-block|,
-name|TT_BOOLEAN
-block|,
-operator|&
-name|gimprc
-operator|.
-name|nav_window_per_display
-block|,
-name|NULL
-block|}
-block|,
-block|{
-literal|"nav-window-follows-auto"
-block|,
-name|TT_BOOLEAN
-block|,
-name|NULL
-block|,
-operator|&
-name|gimprc
-operator|.
-name|nav_window_per_display
 block|}
 block|,
 block|{

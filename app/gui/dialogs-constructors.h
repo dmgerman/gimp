@@ -707,6 +707,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|dialogs_navigation_view_new
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|gint
+name|preview_size
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

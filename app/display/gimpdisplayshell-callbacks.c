@@ -192,6 +192,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpnavigationview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpstatusbar.h"
 end_include
 
@@ -199,12 +205,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"nav_window.h"
 end_include
 
 begin_include
@@ -4509,7 +4509,7 @@ literal|1
 operator|)
 condition|)
 block|{
-name|nav_dialog_create_popup
+name|gimp_navigation_view_popup
 argument_list|(
 name|shell
 argument_list|,

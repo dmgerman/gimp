@@ -93,12 +93,6 @@ directive|include
 file|"gimprc.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"nav_window.h"
-end_include
-
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -762,24 +756,9 @@ name|vruler
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|nav_dialog_update
+name|gimp_display_shell_scaled
 argument_list|(
 name|shell
-operator|->
-name|nav_dialog
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|shell
-operator|->
-name|nav_popup
-condition|)
-name|nav_dialog_update
-argument_list|(
-name|shell
-operator|->
-name|nav_popup
 argument_list|)
 expr_stmt|;
 if|#

@@ -29,7 +29,7 @@ typedef|typedef
 enum|enum
 comment|/*< proxy-resume>*/
 comment|/*< skip>*/
-DECL|enum|__anon2950ddf90103
+DECL|enum|__anon2c7395270103
 block|{
 DECL|enumerator|GIMP_CHANNEL_OP_ADD
 name|GIMP_CHANNEL_OP_ADD
@@ -178,7 +178,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip, proxy-resume>*/
-DECL|enum|__anon2950ddf90203
+DECL|enum|__anon2c7395270203
 block|{
 DECL|enumerator|GIMP_TOOL_CURSOR_NONE
 name|GIMP_TOOL_CURSOR_NONE
@@ -285,7 +285,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2950ddf90303
+DECL|enum|__anon2c7395270303
 block|{
 DECL|enumerator|GIMP_CURSOR_MODIFIER_NONE
 name|GIMP_CURSOR_MODIFIER_NONE

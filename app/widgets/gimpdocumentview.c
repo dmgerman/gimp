@@ -33,6 +33,18 @@ directive|include
 file|"widgets-types.h"
 end_include
 
+begin_warning
+warning|#
+directive|warning
+warning|FIXME #include "display/display-types.h"
+end_warning
+
+begin_include
+include|#
+directive|include
+file|"display/display-types.h"
+end_include
+
 begin_include
 include|#
 directive|include

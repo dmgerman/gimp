@@ -81,12 +81,6 @@ directive|include
 file|"gimprc.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"nav_window.h"
-end_include
-
 begin_function
 name|gboolean
 DECL|function|gimp_display_shell_scroll (GimpDisplayShell * shell,gint x_offset,gint y_offset)
@@ -460,24 +454,9 @@ name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
-name|nav_dialog_update
+name|gimp_display_shell_scrolled
 argument_list|(
 name|shell
-operator|->
-name|nav_dialog
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|shell
-operator|->
-name|nav_popup
-condition|)
-name|nav_dialog_update
-argument_list|(
-name|shell
-operator|->
-name|nav_popup
 argument_list|)
 expr_stmt|;
 comment|/* Make sure graphics expose events are processed before scrolling        * again        */

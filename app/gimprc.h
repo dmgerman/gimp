@@ -172,10 +172,6 @@ DECL|member|use_help
 name|gboolean
 name|use_help
 decl_stmt|;
-DECL|member|nav_window_per_display
-name|gboolean
-name|nav_window_per_display
-decl_stmt|;
 DECL|member|info_window_follows_mouse
 name|gboolean
 name|info_window_follows_mouse

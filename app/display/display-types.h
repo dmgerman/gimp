@@ -56,6 +56,20 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpNavigationView
+typedef|typedef
+name|struct
+name|_GimpNavigationView
+name|GimpNavigationView
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|GimpNavigationView
+comment|/*< proxy-skip>*/
+end_comment
+
+begin_typedef
 DECL|typedef|GimpStatusbar
 typedef|typedef
 name|struct
@@ -63,11 +77,6 @@ name|_GimpStatusbar
 name|GimpStatusbar
 typedef|;
 end_typedef
-
-begin_comment
-DECL|typedef|GimpStatusbar
-comment|/*< proxy-skip>*/
-end_comment
 
 begin_typedef
 DECL|typedef|NavigationDialog

@@ -86,6 +86,18 @@ directive|include
 file|"widgets-types.h"
 end_include
 
+begin_warning
+warning|#
+directive|warning
+warning|FIXME #include "display/display-types.h"
+end_warning
+
+begin_include
+include|#
+directive|include
+file|"display/display-types.h"
+end_include
+
 begin_include
 include|#
 directive|include
@@ -146,7 +158,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c545cb60103
+DECL|enum|__anon2b27602f0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
