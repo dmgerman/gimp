@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpairbrush.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -3714,6 +3720,11 @@ argument_list|,
 name|paint_opacity
 operator|*
 literal|255.999
+argument_list|,
+name|GIMP_IS_AIRBRUSH
+argument_list|(
+name|core
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

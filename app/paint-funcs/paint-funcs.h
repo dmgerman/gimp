@@ -1495,6 +1495,9 @@ name|mask
 parameter_list|,
 name|guint
 name|opacity
+parameter_list|,
+name|gboolean
+name|stipple
 parameter_list|)
 function_decl|;
 end_function_decl
