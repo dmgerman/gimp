@@ -453,11 +453,11 @@ if|if
 condition|(
 name|size_type
 operator|<
-name|PIXELS
+name|SIZE_PIXELS
 operator|||
 name|size_type
 operator|>
-name|POINTS
+name|SIZE_POINTS
 condition|)
 name|success
 operator|=
@@ -658,7 +658,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"size_type"
 block|,
-literal|"The units of specified size: PIXELS (0) or POINTS (1)"
+literal|"The units of specified size: SIZE_PIXELS (0) or SIZE_POINTS (1)"
 block|}
 block|,
 block|{
@@ -845,11 +845,11 @@ if|if
 condition|(
 name|size_type
 operator|<
-name|PIXELS
+name|SIZE_PIXELS
 operator|||
 name|size_type
 operator|>
-name|POINTS
+name|SIZE_POINTS
 condition|)
 name|success
 operator|=
@@ -1021,7 +1021,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"size_type"
 block|,
-literal|"The units of specified size: PIXELS (0) or POINTS (1)"
+literal|"The units of specified size: SIZE_PIXELS (0) or SIZE_POINTS (1)"
 block|}
 block|,
 block|{
@@ -1540,7 +1540,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"size_type"
 block|,
-literal|"The units of specified size: PIXELS (0) or POINTS (1)"
+literal|"The units of specified size: SIZE_PIXELS (0) or SIZE_POINTS (1)"
 block|}
 block|,
 block|{
@@ -2044,7 +2044,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"size_type"
 block|,
-literal|"The units of specified size: PIXELS (0) or POINTS (1)"
+literal|"The units of specified size: SIZE_PIXELS (0) or SIZE_POINTS (1)"
 block|}
 block|,
 block|{

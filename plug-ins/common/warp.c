@@ -24,18 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<unistd.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<signal.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -97,7 +85,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3f2ab80103
+DECL|enum|__anon27f00e820103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -117,7 +105,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3f2ab80208
+DECL|struct|__anon27f00e820208
 block|{
 DECL|member|amount
 name|gdouble
@@ -184,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3f2ab80308
+DECL|struct|__anon27f00e820308
 block|{
 DECL|member|run
 name|gint

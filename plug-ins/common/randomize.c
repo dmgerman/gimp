@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5133a30108
+DECL|struct|__anon2b8b86930108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -235,16 +235,14 @@ block|,
 literal|1.0
 block|,
 name|SEED_DEFAULT
-block|,
-literal|0
-block|, }
+block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5133a30208
+DECL|struct|__anon2b8b86930208
 block|{
 DECL|member|run
 name|gint

@@ -22250,7 +22250,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290c20f90108
+DECL|struct|__anon277cee1d0108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -22346,8 +22346,6 @@ literal|1.0
 block|,
 literal|1.0
 block|}
-block|,
-name|TRUE
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -22355,7 +22353,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290c20f90208
+DECL|struct|__anon277cee1d0208
 block|{
 DECL|member|height
 DECL|member|width
@@ -22437,7 +22435,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290c20f90308
+DECL|struct|__anon277cee1d0308
 block|{
 DECL|member|width
 name|gint

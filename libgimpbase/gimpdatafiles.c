@@ -735,8 +735,8 @@ name|file_data
 argument_list|)
 expr_stmt|;
 block|}
-ifdef|#
-directive|ifdef
+ifndef|#
+directive|ifndef
 name|G_OS_WIN32
 elseif|else
 if|if

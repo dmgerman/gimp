@@ -982,6 +982,21 @@ argument_list|(
 name|fd
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+comment|/* win32 rename can't overwrite */
+if|if
+condition|(
+name|success
+condition|)
+name|unlink
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|success
@@ -1563,7 +1578,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288c8e230108
+DECL|struct|__anon2ace07240108
 block|{
 DECL|member|key
 name|gchar
