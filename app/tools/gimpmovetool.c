@@ -633,14 +633,12 @@ block|{
 name|GimpTool
 modifier|*
 name|tool
-decl_stmt|;
-name|tool
-operator|=
+init|=
 name|GIMP_TOOL
 argument_list|(
 name|move_tool
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|move_tool
 operator|->
 name|layer
@@ -1269,20 +1267,6 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: gimp_layer_set_linked()
-endif|#
-directive|endif
-if|#
-directive|if
-literal|0
-block|if (state& GDK_SHIFT_MASK)                 gimp_layer_set_linked (layer, ! gimp_layer_get_linked (layer));
-endif|#
-directive|endif
 name|init_edit_selection
 argument_list|(
 name|tool
