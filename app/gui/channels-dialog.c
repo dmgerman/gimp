@@ -8050,9 +8050,6 @@ block|}
 block|}
 break|break;
 case|case
-name|GDK_ENTER_NOTIFY
-case|:
-case|case
 name|GDK_LEAVE_NOTIFY
 case|:
 name|event_widget
