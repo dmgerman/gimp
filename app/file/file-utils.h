@@ -22,6 +22,12 @@ directive|include
 file|<stdio.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"plug-in/plug-in-types.h"
+end_include
+
 begin_function_decl
 name|gchar
 modifier|*
@@ -83,6 +89,19 @@ specifier|const
 name|gchar
 modifier|*
 name|uri
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gchar
+modifier|*
+name|file_utils_filename_to_utf8
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|filename
 parameter_list|)
 function_decl|;
 end_function_decl

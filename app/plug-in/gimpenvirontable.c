@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
@@ -1002,9 +1008,12 @@ argument_list|(
 literal|"Empty variable name in environment file %s"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|file_data
 operator|->
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -1059,9 +1068,12 @@ argument_list|(
 literal|"Illegal variable name in environment file %s: %s"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|file_data
 operator|->
 name|filename
+argument_list|)
 argument_list|,
 name|name
 argument_list|)

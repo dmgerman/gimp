@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-ins.h"
 end_include
 
@@ -189,7 +195,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon277f383b0103
+DECL|enum|__anon2a09a4c20103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -541,7 +547,10 @@ argument_list|(
 literal|"Skipping '%s': wrong GIMP protocol version."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

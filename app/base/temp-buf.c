@@ -110,6 +110,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pixel-region.h"
 end_include
 
@@ -2819,7 +2825,10 @@ name|g_message
 argument_list|(
 literal|"Error in temp buf caching: \"%s\" is a directory (cannot overwrite)"
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2905,7 +2914,10 @@ name|g_message
 argument_list|(
 literal|"Cannot write \"%s\""
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2932,7 +2944,10 @@ name|g_message
 argument_list|(
 literal|"Cannot write \"%s\""
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

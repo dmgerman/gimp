@@ -292,6 +292,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in.h"
 end_include
 
@@ -1345,13 +1351,19 @@ name|g_message
 argument_list|(
 literal|"Unable to run Plug-In \"%s\"\n(%s)\n\npipe() failed: %s"
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|plug_in
 operator|->
 name|name
+argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|plug_in
 operator|->
 name|prog
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1816,13 +1828,19 @@ name|g_message
 argument_list|(
 literal|"Unable to run Plug-In \"%s\"\n(%s)\n\n%s"
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|plug_in
 operator|->
 name|name
+argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|plug_in
 operator|->
 name|prog
+argument_list|)
 argument_list|,
 name|error
 operator|->
@@ -2187,9 +2205,12 @@ name|g_warning
 argument_list|(
 literal|"Terminating %s ..."
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|plug_in
 operator|->
 name|prog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|TerminateProcess
@@ -2684,13 +2705,19 @@ literal|"You may want to save your images and restart GIMP "
 literal|"to be on the safe side."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|plug_in
 operator|->
 name|name
+argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|plug_in
 operator|->
 name|prog
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2979,8 +3006,11 @@ name|g_warning
 argument_list|(
 literal|"%s: plug_in_flush(): error: %s"
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|g_get_prgname
 argument_list|()
+argument_list|)
 argument_list|,
 name|error
 operator|->
@@ -2999,8 +3029,11 @@ name|g_warning
 argument_list|(
 literal|"%s: plug_in_flush(): error"
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|g_get_prgname
 argument_list|()
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

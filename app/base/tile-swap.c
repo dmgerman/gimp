@@ -147,6 +147,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile.h"
 end_include
 
@@ -853,9 +859,12 @@ name|g_warning
 argument_list|(
 literal|"swap file not empty: \"%s\"\n"
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|swap_file
 operator|->
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tile_swap_print_gaps

@@ -70,6 +70,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpconfig.h"
 end_include
 
@@ -123,7 +129,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d584f50103
+DECL|enum|__anon2b131dd40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1254,9 +1260,12 @@ argument_list|(
 literal|"Parsing '%s'\n"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|rc
 operator|->
 name|system_gimprc
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1315,9 +1324,12 @@ argument_list|(
 literal|"Parsing '%s'\n"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|rc
 operator|->
 name|user_gimprc
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2071,9 +2083,12 @@ argument_list|(
 literal|"Saving '%s'\n"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|rc
 operator|->
 name|user_gimprc
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

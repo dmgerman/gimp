@@ -1628,7 +1628,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|source
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1672,7 +1675,10 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|dest
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1744,7 +1750,10 @@ argument_list|(
 literal|"Error while writing '%s': %s"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|dest
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1791,7 +1800,10 @@ argument_list|(
 literal|"Error while reading '%s': %s"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|source
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1844,7 +1856,10 @@ argument_list|(
 literal|"Error while writing '%s': %s"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|dest
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1959,7 +1974,10 @@ argument_list|)
 argument_list|,
 name|name
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|backup
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

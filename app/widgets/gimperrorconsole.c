@@ -156,6 +156,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimperrorconsole.h"
 end_include
 
@@ -1648,7 +1654,10 @@ argument_list|(
 literal|"Error writing file '%s':\n%s"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(

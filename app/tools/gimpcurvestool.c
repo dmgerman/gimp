@@ -155,6 +155,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpcursor.h"
 end_include
 
@@ -6562,7 +6568,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -6603,7 +6612,10 @@ name|g_message
 argument_list|(
 literal|"Error in reading file '%s'."
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -131,6 +131,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbrush.h"
 end_include
 
@@ -1502,7 +1508,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1616,7 +1625,10 @@ argument_list|(
 literal|"Invalid UTF-8 string in brush file '%s'."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_name
@@ -1661,7 +1673,10 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"File is corrupt."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|close
@@ -1763,7 +1778,10 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"File is corrupt."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|close
@@ -2412,7 +2430,10 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"File is corrupt."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|close

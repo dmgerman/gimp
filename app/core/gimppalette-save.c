@@ -83,6 +83,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppalette.h"
 end_include
 
@@ -1644,7 +1650,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1717,7 +1726,10 @@ literal|"Missing magic header.\n"
 literal|"Does this file need converting from DOS?"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -1735,7 +1747,10 @@ literal|"Fatal parse error in palette file '%s': "
 literal|"Missing magic header."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -1793,7 +1808,10 @@ literal|"Fatal parse error in palette file '%s': "
 literal|"Read error in line %d."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|linenum
 argument_list|)
@@ -1856,7 +1874,10 @@ argument_list|(
 literal|"Invalid UTF-8 string in palette file '%s'"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_strstrip
@@ -1906,7 +1927,10 @@ literal|"Fatal parse error in palette file '%s': "
 literal|"Read error in line %d."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|linenum
 argument_list|)
@@ -1984,7 +2008,10 @@ literal|"Invalid number of columns in line %d. "
 literal|"Using default value."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|linenum
 argument_list|)
@@ -2027,7 +2054,10 @@ literal|"Fatal parse error in palette file '%s': "
 literal|"Read error in line %d."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|linenum
 argument_list|)
@@ -2155,7 +2185,10 @@ literal|"Reading palette file '%s': "
 literal|"Missing RED component in line %d."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|linenum
 argument_list|)
@@ -2189,7 +2222,10 @@ literal|"Reading palette '%s': "
 literal|"Missing GREEN component in line %d."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|linenum
 argument_list|)
@@ -2223,7 +2259,10 @@ literal|"Reading palette file '%s': "
 literal|"Missing BLUE component in line %d."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|linenum
 argument_list|)
@@ -2272,7 +2311,10 @@ literal|"Reading palette file '%s': "
 literal|"RGB value out of range in line %d."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|linenum
 argument_list|)
@@ -2346,7 +2388,10 @@ literal|"Fatal parse error in palette file '%s': "
 literal|"Read error in line %d."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|linenum
 argument_list|)
@@ -2501,9 +2546,12 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|data
 operator|->
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(

@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -1410,7 +1416,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1457,7 +1466,10 @@ literal|"Fatal parse error in gradient file '%s': "
 literal|"Not a GIMP gradient file."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -1538,7 +1550,10 @@ argument_list|(
 literal|"Invalid UTF-8 string in gradient file '%s'."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_strstrip
@@ -1654,7 +1669,10 @@ literal|"Fatal parse error in gradient file '%s': "
 literal|"File is corrupt."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -2010,7 +2028,10 @@ argument_list|)
 argument_list|,
 name|i
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2160,9 +2181,12 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|data
 operator|->
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -2660,7 +2684,10 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(

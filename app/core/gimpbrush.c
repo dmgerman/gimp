@@ -153,6 +153,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbrush.h"
 end_include
 
@@ -182,7 +188,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c06ab9b0103
+DECL|enum|__anon2b01a9a00103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -1642,7 +1648,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -2228,7 +2237,10 @@ argument_list|(
 name|header
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -2391,7 +2403,10 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"Unknown depth %d."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|header
 operator|.
@@ -2430,7 +2445,10 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"Unknown version %d."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|header
 operator|.
@@ -2503,7 +2521,10 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"File appears truncated."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2529,7 +2550,10 @@ argument_list|(
 literal|"Invalid UTF-8 string in brush file '%s'."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2733,7 +2757,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2c06ab9b020a
+DECL|union|__anon2b01a9a0020a
 block|{
 DECL|member|u
 name|guint16
@@ -3015,7 +3039,10 @@ literal|"Unsupported brush depth %d\n"
 literal|"GIMP brushes must be GRAY or RGBA."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|header
 operator|.
@@ -3056,7 +3083,10 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"File appears truncated."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"themes.h"
 end_include
 
@@ -770,7 +776,10 @@ argument_list|(
 literal|"Writing '%s'\n"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|themerc
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|file
@@ -795,7 +804,10 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|themerc
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -929,13 +941,19 @@ argument_list|(
 literal|"Adding theme '%s' (%s)\n"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|file_data
 operator|->
 name|basename
+argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|file_data
 operator|->
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_hash_table_insert

@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in.h"
 end_include
 
@@ -458,7 +464,10 @@ argument_list|(
 literal|"Resource configuration"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -563,7 +572,10 @@ call|)
 argument_list|(
 name|NULL
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|basename
+argument_list|)
 argument_list|,
 name|nth
 operator|/
@@ -601,9 +613,12 @@ argument_list|(
 literal|"Querying plug-in: '%s'\n"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|plug_in_def
 operator|->
 name|prog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_call_query
@@ -795,7 +810,10 @@ argument_list|(
 literal|"Writing '%s'\n"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1171,7 +1189,10 @@ call|)
 argument_list|(
 name|NULL
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|basename
+argument_list|)
 argument_list|,
 name|nth
 operator|/
@@ -3563,9 +3584,12 @@ name|g_printerr
 argument_list|(
 literal|"skipping duplicate plug-in: '%s'\n"
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|file_data
 operator|->
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

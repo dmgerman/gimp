@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpenummenu.h"
 end_include
 
@@ -83,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bc13fb0103
+DECL|enum|__anon28ea69d20103
 block|{
 DECL|enumerator|DIR_CHANGED
 name|DIR_CHANGED
@@ -1454,7 +1460,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1608,7 +1617,10 @@ argument_list|(
 literal|"Invalid UTF-8 data in file '%s'."
 argument_list|)
 argument_list|,
+name|file_utils_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
