@@ -90,7 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paletteP.h"
+file|"palette_import.h"
 end_include
 
 begin_include

@@ -6,64 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__PALETTE_P_H__
+name|__PALETTE_IMPORT_H__
 end_ifndef
 
 begin_define
-DECL|macro|__PALETTE_P_H__
+DECL|macro|__PALETTE_IMPORT_H__
 define|#
 directive|define
-name|__PALETTE_P_H__
+name|__PALETTE_IMPORT_H__
 end_define
 
 begin_function_decl
 name|void
-name|palette_clist_init
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|clist
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|shell
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|palette_clist_insert
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|clist
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|shell
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
-parameter_list|,
-name|GimpPalette
-modifier|*
-name|palette
-parameter_list|,
-name|gint
-name|pos
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|palette_select_palette_init
+name|palette_import_dialog_show
 parameter_list|(
 name|void
 parameter_list|)
@@ -72,11 +27,24 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|palette_create_edit
+name|palette_import_dialog_destroy
 parameter_list|(
-name|GimpPalette
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* FIXME */
+end_comment
+
+begin_function_decl
+name|void
+name|palette_import_image_renamed
+parameter_list|(
+name|GimpImage
 modifier|*
-name|palette
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -87,7 +55,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __PALETTE_P_H__ */
+comment|/* __PALETTE_IMPORT_H__ */
 end_comment
 
 end_unit
