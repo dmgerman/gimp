@@ -145,7 +145,7 @@ DECL|macro|DEFAULT_IMAGE_TITLE_FORMAT
 define|#
 directive|define
 name|DEFAULT_IMAGE_TITLE_FORMAT
-value|"%f-%p.%i (%t)"
+value|"%f-%p.%i (%t) %z%%"
 end_define
 
 begin_define
@@ -153,12 +153,12 @@ DECL|macro|DEFAULT_IMAGE_STATUS_FORMAT
 define|#
 directive|define
 name|DEFAULT_IMAGE_STATUS_FORMAT
-value|DEFAULT_IMAGE_TITLE_FORMAT
+value|"%L (%l layers, %m)"
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b57f2e0103
+DECL|enum|__anon2bb286130103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -530,7 +530,7 @@ literal|"perfect-mouse"
 argument_list|,
 name|PERFECT_MOUSE_BLURB
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
