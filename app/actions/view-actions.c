@@ -938,7 +938,10 @@ literal|"view-zoom-other"
 block|,
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"O_ther..."
+argument_list|)
 block|,
 name|NULL
 block|,
