@@ -35,6 +35,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gui_environ_init
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gui_themes_init
 parameter_list|(
 name|Gimp

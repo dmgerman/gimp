@@ -459,6 +459,11 @@ operator|!
 name|no_interface
 condition|)
 block|{
+name|gui_environ_init
+argument_list|(
+name|the_gimp
+argument_list|)
+expr_stmt|;
 name|tool_manager_init
 argument_list|(
 name|the_gimp
