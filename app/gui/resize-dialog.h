@@ -6,20 +6,20 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__RESIZE_H__
+name|__RESIZE_DIALOG_H__
 end_ifndef
 
 begin_define
-DECL|macro|__RESIZE_H__
+DECL|macro|__RESIZE_DIALOG_H__
 define|#
 directive|define
-name|__RESIZE_H__
+name|__RESIZE_DIALOG_H__
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a9d0b250103
+DECL|enum|__anon277e49bd0103
 block|{
 DECL|enumerator|ScaleWidget
 name|ScaleWidget
@@ -35,7 +35,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a9d0b250203
+DECL|enum|__anon277e49bd0203
 block|{
 DECL|enumerator|ResizeImage
 name|ResizeImage
@@ -118,7 +118,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9d0b250308
+DECL|struct|__anon277e49bd0308
 block|{
 DECL|member|resize
 name|Resize
@@ -195,7 +195,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __RESIZE_H__  */
+comment|/*  __RESIZE_DIALOG_H__  */
 end_comment
 
 end_unit

@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"layers-commands.h"
 end_include
 
@@ -108,13 +102,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"resize.h"
+file|"resize-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"drawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
 end_include
 
 begin_include
