@@ -2304,6 +2304,42 @@ end_function
 
 begin_function
 name|void
+DECL|function|gimp_composite_behind_any_any_any_generic (GimpCompositeContext * ctx)
+name|gimp_composite_behind_any_any_any_generic
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+name|ctx
+parameter_list|)
+block|{
+name|ctx
+operator|->
+name|D
+operator|=
+name|ctx
+operator|->
+name|B
+expr_stmt|;
+name|ctx
+operator|->
+name|combine
+operator|=
+name|gimp_composite_pixel_alphap
+index|[
+name|ctx
+operator|->
+name|pixelformat_A
+index|]
+condition|?
+name|BEHIND_INTEN
+else|:
+name|NO_COMBINATION
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|gimp_composite_multiply_any_any_any_generic (GimpCompositeContext * ctx)
 name|gimp_composite_multiply_any_any_any_generic
 parameter_list|(
