@@ -95,7 +95,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpThumbFileType
 name|gimp_thumb_file_test
 parameter_list|(
 specifier|const
