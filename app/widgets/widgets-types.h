@@ -129,6 +129,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpUnitStore
+typedef|typedef
+name|struct
+name|_GimpUnitStore
+name|GimpUnitStore
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpCellRendererToggle
 typedef|typedef
 name|struct
@@ -273,6 +282,15 @@ typedef|typedef
 name|struct
 name|_GimpEnumComboBox
 name|GimpEnumComboBox
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpUnitComboBox
+typedef|typedef
+name|struct
+name|_GimpUnitComboBox
+name|GimpUnitComboBox
 typedef|;
 end_typedef
 
