@@ -6448,10 +6448,6 @@ if|if
 condition|(
 name|gimage
 operator|->
-name|num_cols
-operator|&&
-name|gimage
-operator|->
 name|cmap
 condition|)
 block|{
