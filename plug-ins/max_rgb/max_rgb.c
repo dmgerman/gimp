@@ -438,7 +438,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1c56cc0108
+DECL|struct|__anon27f0dfaa0108
 block|{
 DECL|member|max_p
 name|gint
@@ -466,7 +466,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1c56cc0208
+DECL|struct|__anon27f0dfaa0208
 block|{
 DECL|member|run
 name|gint
@@ -1197,6 +1197,7 @@ operator|++
 operator|)
 operator|)
 condition|)
+block|{
 if|if
 condition|(
 name|max
@@ -1222,6 +1223,7 @@ name|max
 operator|=
 name|tmp_value
 expr_stmt|;
+block|}
 block|}
 for|for
 control|(

@@ -82,7 +82,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a352b0d0108
+DECL|struct|__anon28898fca0108
 block|{
 DECL|member|run
 name|gint
@@ -921,7 +921,7 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* And now write the header and the colormap (if any) to disk */
-name|WriteOK
+name|Write
 argument_list|(
 name|outfile
 argument_list|,
@@ -982,7 +982,7 @@ literal|0x0C
 index|]
 argument_list|)
 expr_stmt|;
-name|WriteOK
+name|Write
 argument_list|(
 name|outfile
 argument_list|,
@@ -1121,7 +1121,7 @@ literal|0x20
 index|]
 argument_list|)
 expr_stmt|;
-name|WriteOK
+name|Write
 argument_list|(
 name|outfile
 argument_list|,
@@ -1294,7 +1294,7 @@ index|[
 name|i
 index|]
 expr_stmt|;
-name|WriteOK
+name|Write
 argument_list|(
 name|f
 argument_list|,
@@ -1488,7 +1488,7 @@ expr_stmt|;
 name|xpos
 operator|++
 expr_stmt|;
-name|WriteOK
+name|Write
 argument_list|(
 name|f
 argument_list|,
@@ -1498,7 +1498,7 @@ literal|3
 argument_list|)
 expr_stmt|;
 block|}
-name|WriteOK
+name|Write
 argument_list|(
 name|f
 argument_list|,
@@ -1672,7 +1672,7 @@ operator|)
 operator|)
 expr_stmt|;
 block|}
-name|WriteOK
+name|Write
 argument_list|(
 name|f
 argument_list|,
@@ -1683,7 +1683,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-name|WriteOK
+name|Write
 argument_list|(
 name|f
 argument_list|,
@@ -1949,7 +1949,7 @@ literal|4
 operator|)
 expr_stmt|;
 block|}
-name|WriteOK
+name|Write
 argument_list|(
 name|f
 argument_list|,
@@ -2009,7 +2009,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
-name|WriteOK
+name|Write
 argument_list|(
 name|f
 argument_list|,
@@ -2116,7 +2116,7 @@ name|char
 operator|)
 name|j
 expr_stmt|;
-name|WriteOK
+name|Write
 argument_list|(
 name|f
 argument_list|,
@@ -2208,7 +2208,7 @@ operator|<<
 literal|4
 operator|)
 expr_stmt|;
-name|WriteOK
+name|Write
 argument_list|(
 name|f
 argument_list|,
@@ -2244,7 +2244,7 @@ operator|%
 literal|2
 condition|)
 block|{
-name|WriteOK
+name|Write
 argument_list|(
 name|f
 argument_list|,
@@ -2263,7 +2263,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|WriteOK
+name|Write
 argument_list|(
 name|f
 argument_list|,
@@ -2325,7 +2325,7 @@ name|SEEK_CUR
 argument_list|)
 expr_stmt|;
 comment|/* Overwrite last End of row */
-name|WriteOK
+name|Write
 argument_list|(
 name|f
 argument_list|,
@@ -2375,7 +2375,7 @@ operator|*
 literal|4
 operator|)
 expr_stmt|;
-name|WriteOK
+name|Write
 argument_list|(
 name|f
 argument_list|,

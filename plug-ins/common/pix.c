@@ -994,27 +994,9 @@ name|tile_height
 decl_stmt|,
 name|row
 decl_stmt|;
-name|gint
-name|result
-init|=
-operator|-
-literal|1
-decl_stmt|;
 name|FILE
 modifier|*
 name|file
-init|=
-name|NULL
-decl_stmt|;
-name|gint32
-modifier|*
-name|offsetTable
-init|=
-name|NULL
-decl_stmt|;
-name|gint32
-modifier|*
-name|lengthTable
 init|=
 name|NULL
 decl_stmt|;
@@ -1751,11 +1733,7 @@ name|writelen
 decl_stmt|,
 name|rectHeight
 decl_stmt|;
-name|gboolean
-name|savingAlpha
-init|=
-name|FALSE
-decl_stmt|;
+comment|/* gboolean    savingAlpha = FALSE; */
 name|gboolean
 name|savingColor
 init|=
@@ -2136,14 +2114,6 @@ literal|1
 control|)
 block|{
 comment|/* Write a row of the image */
-name|guchar
-name|count
-decl_stmt|;
-name|gint
-name|cnt
-init|=
-literal|0
-decl_stmt|;
 name|record
 index|[
 literal|0
@@ -2447,14 +2417,6 @@ literal|1
 control|)
 block|{
 comment|/* Write a row of the image */
-name|guchar
-name|count
-decl_stmt|;
-name|gint
-name|cnt
-init|=
-literal|0
-decl_stmt|;
 name|record
 index|[
 literal|0

@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -46,7 +52,7 @@ value|256
 end_define
 
 begin_typedef
-DECL|struct|__anon2bba4e1b0108
+DECL|struct|__anon2a20c34a0108
 typedef|typedef
 struct|struct
 block|{
@@ -61,7 +67,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bba4e1b0208
+DECL|struct|__anon2a20c34a0208
 typedef|typedef
 struct|struct
 block|{
@@ -749,10 +755,6 @@ decl_stmt|,
 name|c
 decl_stmt|,
 name|b
-decl_stmt|,
-name|i
-decl_stmt|,
-name|px
 decl_stmt|,
 name|xx
 decl_stmt|,

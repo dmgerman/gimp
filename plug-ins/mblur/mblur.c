@@ -103,7 +103,7 @@ value|MBLUR_ZOOM
 end_define
 
 begin_typedef
-DECL|struct|__anon2b94ec0a0108
+DECL|struct|__anon27c342b50108
 typedef|typedef
 struct|struct
 block|{
@@ -126,7 +126,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b94ec0a0208
+DECL|struct|__anon27c342b50208
 typedef|typedef
 struct|struct
 block|{
@@ -414,7 +414,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|mblur_dialog
 parameter_list|(
 name|void
@@ -474,13 +474,15 @@ begin_comment
 comment|/* mb_vals */
 end_comment
 
-begin_expr_stmt
+begin_decl_stmt
+DECL|variable|mb_run
 specifier|static
+name|gboolean
 name|mb_run
-operator|=
+init|=
 name|FALSE
-expr_stmt|;
-end_expr_stmt
+decl_stmt|;
+end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|drawable
@@ -3661,7 +3663,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|mblur_dialog (void)
 name|mblur_dialog
 parameter_list|(

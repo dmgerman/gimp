@@ -290,7 +290,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2979a0de0108
+DECL|struct|__anon2883a0b10108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -318,7 +318,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2979a0de0208
+DECL|struct|__anon2883a0b10208
 block|{
 DECL|member|name
 name|gchar
@@ -1544,7 +1544,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2979a0de0308
+DECL|struct|__anon2883a0b10308
 block|{
 DECL|member|function
 name|gint
@@ -1617,7 +1617,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2979a0de0408
+DECL|struct|__anon2883a0b10408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -2383,7 +2383,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2979a0de0508
+DECL|struct|__anon2883a0b10508
 block|{
 DECL|member|run
 name|gint
@@ -2431,7 +2431,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2979a0de0608
+DECL|struct|__anon2883a0b10608
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -12566,6 +12566,7 @@ operator|&
 name|S_IFREG
 condition|)
 comment|/* already exists */
+block|{
 ifdef|#
 directive|ifdef
 name|VERBOSE_DIALOGS
@@ -12601,6 +12602,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+block|}
 block|}
 if|if
 condition|(

@@ -66,6 +66,21 @@ value|(fread(buffer, len, 1, file) != 0)
 end_define
 
 begin_define
+DECL|macro|Write (file,buffer,len)
+define|#
+directive|define
+name|Write
+parameter_list|(
+name|file
+parameter_list|,
+name|buffer
+parameter_list|,
+name|len
+parameter_list|)
+value|fwrite(buffer, len, 1, file)
+end_define
+
+begin_define
 DECL|macro|WriteOK (file,buffer,len)
 define|#
 directive|define
@@ -77,7 +92,7 @@ name|buffer
 parameter_list|,
 name|len
 parameter_list|)
-value|(fwrite(buffer, len, 1, file) != 0)
+value|(Write(file,buffer,len) != 0)
 end_define
 
 begin_function_decl
@@ -295,9 +310,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-specifier|static
 struct|struct
-DECL|struct|__anon2b56acb20108
+DECL|struct|__anon2bb106d20108
 block|{
 DECL|member|bfSize
 name|unsigned
@@ -330,9 +344,8 @@ struct|;
 end_struct
 
 begin_struct
-specifier|static
 struct|struct
-DECL|struct|__anon2b56acb20208
+DECL|struct|__anon2bb106d20208
 block|{
 DECL|member|biWidth
 name|unsigned
@@ -402,9 +415,8 @@ struct|;
 end_struct
 
 begin_struct
-specifier|static
 struct|struct
-DECL|struct|__anon2b56acb20308
+DECL|struct|__anon2bb106d20308
 block|{
 DECL|member|bcWidth
 name|unsigned
