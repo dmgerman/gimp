@@ -153,7 +153,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277419d20103
+DECL|enum|__anon29fc91260103
 block|{
 DECL|enumerator|CURL_COLORS_FG_BG
 name|CURL_COLORS_FG_BG
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277419d20203
+DECL|enum|__anon29fc91260203
 block|{
 DECL|enumerator|CURL_ORIENTATION_VERTICAL
 name|CURL_ORIENTATION_VERTICAL
@@ -198,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277419d20303
+DECL|enum|__anon29fc91260303
 block|{
 DECL|enumerator|CURL_EDGE_LOWER_RIGHT
 name|CURL_EDGE_LOWER_RIGHT
@@ -286,7 +286,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277419d20408
+DECL|struct|__anon29fc91260408
 block|{
 DECL|member|colors
 name|CurlColors
@@ -834,10 +834,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Distorts"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
