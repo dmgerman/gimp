@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2959a7b20103
+DECL|enum|__anon2c0b02e70103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2959a7b20203
+DECL|enum|__anon2c0b02e70203
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -926,15 +926,27 @@ block|{
 name|GimpRGB
 name|color
 decl_stmt|;
-if|if
-condition|(
-operator|(
+name|gsize
+name|len
+init|=
 name|strlen
 argument_list|(
 name|text
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|len
+operator|>
+literal|0
+operator|&&
+operator|(
+operator|(
+name|len
+operator|%
+literal|3
 operator|==
-literal|6
+literal|0
 operator|&&
 name|gimp_rgb_parse_hex
 argument_list|(
@@ -943,7 +955,7 @@ name|color
 argument_list|,
 name|text
 argument_list|,
-literal|6
+name|len
 argument_list|)
 operator|)
 operator|||
@@ -958,6 +970,7 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
+operator|)
 operator|)
 condition|)
 block|{
