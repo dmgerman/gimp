@@ -2080,9 +2080,11 @@ name|draw_tool
 argument_list|)
 expr_stmt|;
 comment|/*  Draw start target  */
-name|gimp_draw_tool_draw_cross
+name|gimp_draw_tool_draw_handle
 argument_list|(
 name|draw_tool
+argument_list|,
+name|GIMP_HANDLE_CROSS
 argument_list|,
 name|floor
 argument_list|(
@@ -2104,13 +2106,19 @@ literal|0.5
 argument_list|,
 name|TARGET_SIZE
 argument_list|,
+name|TARGET_SIZE
+argument_list|,
+name|GTK_ANCHOR_CENTER
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  Draw end target  */
-name|gimp_draw_tool_draw_cross
+name|gimp_draw_tool_draw_handle
 argument_list|(
 name|draw_tool
+argument_list|,
+name|GIMP_HANDLE_CROSS
 argument_list|,
 name|floor
 argument_list|(
@@ -2131,6 +2139,10 @@ operator|+
 literal|0.5
 argument_list|,
 name|TARGET_SIZE
+argument_list|,
+name|TARGET_SIZE
+argument_list|,
+name|GTK_ANCHOR_CENTER
 argument_list|,
 name|TRUE
 argument_list|)

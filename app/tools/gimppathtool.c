@@ -3453,8 +3453,6 @@ name|draw_tool
 argument_list|,
 name|GIMP_HANDLE_CIRCLE
 argument_list|,
-name|FALSE
-argument_list|,
 name|segment
 operator|->
 name|x
@@ -3464,6 +3462,10 @@ operator|->
 name|y
 argument_list|,
 name|PATH_TOOL_WIDTH
+argument_list|,
+name|PATH_TOOL_WIDTH
+argument_list|,
+name|GTK_ANCHOR_CENTER
 argument_list|,
 name|FALSE
 argument_list|)
@@ -3475,9 +3477,7 @@ name|gimp_draw_tool_draw_handle
 argument_list|(
 name|draw_tool
 argument_list|,
-name|GIMP_HANDLE_CIRCLE
-argument_list|,
-name|TRUE
+name|GIMP_HANDLE_FILLED_CIRCLE
 argument_list|,
 name|segment
 operator|->
@@ -3488,6 +3488,10 @@ operator|->
 name|y
 argument_list|,
 name|PATH_TOOL_WIDTH
+argument_list|,
+name|PATH_TOOL_WIDTH
+argument_list|,
+name|GTK_ANCHOR_CENTER
 argument_list|,
 name|FALSE
 argument_list|)

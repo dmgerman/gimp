@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac5d4120103
+DECL|enum|__anon2ba2c4380103
 block|{
 DECL|enumerator|CROP_CROP
 name|CROP_CROP
@@ -157,14 +157,6 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 comment|/*  lower right hand coords     */
-DECL|member|cw
-DECL|member|ch
-name|gint
-name|cw
-decl_stmt|,
-name|ch
-decl_stmt|;
-comment|/*  corners in image  coords    */
 DECL|member|function
 name|guint
 name|function
@@ -185,7 +177,7 @@ name|dx2
 decl_stmt|,
 name|dy2
 decl_stmt|;
-comment|/*                             */
+comment|/*                              */
 DECL|member|dcw
 DECL|member|dch
 name|gint

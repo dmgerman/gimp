@@ -298,7 +298,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2981096a0108
+DECL|struct|__anon28de552c0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -334,7 +334,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2981096a0208
+DECL|struct|__anon28de552c0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -389,7 +389,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2981096a0308
+DECL|struct|__anon28de552c0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -555,7 +555,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2981096a0403
+DECL|enum|__anon28de552c0403
 block|{
 DECL|enumerator|BEZIER_SELECT
 name|BEZIER_SELECT
@@ -6949,7 +6949,7 @@ name|draw_tool
 operator|->
 name|draw_state
 operator|==
-name|INVISIBLE
+name|GIMP_DRAW_TOOL_STATE_INVISIBLE
 condition|)
 block|{
 name|gimp_display_shell_install_tool_cursor
