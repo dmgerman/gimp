@@ -621,9 +621,11 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|gimp_plugin_domain_add
+name|gimp_plugin_domain_register
 argument_list|(
 literal|"gimp-script-fu"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure

@@ -565,7 +565,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_layer_is_floating_selection (gint32 layer_ID)
 name|gimp_layer_is_floating_selection
 parameter_list|(
@@ -580,7 +580,7 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gint
+name|gboolean
 name|result
 decl_stmt|;
 name|return_vals
@@ -626,6 +626,10 @@ operator|.
 name|data
 operator|.
 name|d_int32
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
@@ -736,7 +740,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_layer_get_apply_mask (gint32 layer_ID)
 name|gimp_layer_get_apply_mask
 parameter_list|(
@@ -751,7 +755,7 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gint
+name|gboolean
 name|result
 decl_stmt|;
 name|return_vals
@@ -772,7 +776,7 @@ argument_list|)
 expr_stmt|;
 name|result
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 if|if
 condition|(
@@ -797,6 +801,10 @@ operator|.
 name|data
 operator|.
 name|d_int32
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
@@ -812,7 +820,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_layer_get_edit_mask (gint32 layer_ID)
 name|gimp_layer_get_edit_mask
 parameter_list|(
@@ -827,7 +835,7 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gint
+name|gboolean
 name|result
 decl_stmt|;
 name|return_vals
@@ -848,7 +856,7 @@ argument_list|)
 expr_stmt|;
 name|result
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 if|if
 condition|(
@@ -873,6 +881,10 @@ operator|.
 name|data
 operator|.
 name|d_int32
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
@@ -1121,7 +1133,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_layer_get_preserve_transparency (gint32 layer_ID)
 name|gimp_layer_get_preserve_transparency
 parameter_list|(
@@ -1157,7 +1169,7 @@ argument_list|)
 expr_stmt|;
 name|result
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 if|if
 condition|(
@@ -1182,6 +1194,10 @@ operator|.
 name|data
 operator|.
 name|d_int32
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
@@ -1197,7 +1213,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_layer_get_show_mask (gint32 layer_ID)
 name|gimp_layer_get_show_mask
 parameter_list|(
@@ -1212,7 +1228,7 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gint
+name|gboolean
 name|result
 decl_stmt|;
 name|return_vals
@@ -1233,7 +1249,7 @@ argument_list|)
 expr_stmt|;
 name|result
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 if|if
 condition|(
@@ -1258,6 +1274,10 @@ operator|.
 name|data
 operator|.
 name|d_int32
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
@@ -1273,7 +1293,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_layer_get_visible (gint32 layer_ID)
 name|gimp_layer_get_visible
 parameter_list|(
@@ -1288,7 +1308,7 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gint
+name|gboolean
 name|result
 decl_stmt|;
 name|return_vals
@@ -1309,7 +1329,7 @@ argument_list|)
 expr_stmt|;
 name|result
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 if|if
 condition|(
@@ -1334,6 +1354,10 @@ operator|.
 name|data
 operator|.
 name|d_int32
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
@@ -1350,13 +1374,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_set_apply_mask (gint32 layer_ID,gint apply_mask)
+DECL|function|gimp_layer_set_apply_mask (gint32 layer_ID,gboolean apply_mask)
 name|gimp_layer_set_apply_mask
 parameter_list|(
 name|gint32
 name|layer_ID
 parameter_list|,
-name|gint
+name|gboolean
 name|apply_mask
 parameter_list|)
 block|{
@@ -1399,13 +1423,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_set_edit_mask (gint32 layer_ID,gint edit_mask)
+DECL|function|gimp_layer_set_edit_mask (gint32 layer_ID,gboolean edit_mask)
 name|gimp_layer_set_edit_mask
 parameter_list|(
 name|gint32
 name|layer_ID
 parameter_list|,
-name|gint
+name|gboolean
 name|edit_mask
 parameter_list|)
 block|{

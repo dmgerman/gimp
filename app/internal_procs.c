@@ -163,15 +163,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|register_gimphelp_procs
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|register_gradient_procs
 parameter_list|(
 name|void
@@ -199,7 +190,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|register_interface_procs
+name|register_help_procs
 parameter_list|(
 name|void
 parameter_list|)
@@ -209,6 +200,15 @@ end_function_decl
 begin_function_decl
 name|void
 name|register_layer_procs
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|register_message_procs
 parameter_list|(
 name|void
 parameter_list|)
@@ -554,25 +554,10 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Help procedures"
-argument_list|)
-argument_list|,
-literal|0.526
-argument_list|)
-expr_stmt|;
-name|register_gimphelp_procs
-argument_list|()
-expr_stmt|;
-name|app_init_update_status
-argument_list|(
-name|NULL
-argument_list|,
-name|_
-argument_list|(
 literal|"Gradients"
 argument_list|)
 argument_list|,
-literal|0.533
+literal|0.526
 argument_list|)
 expr_stmt|;
 name|register_gradient_procs
@@ -587,7 +572,7 @@ argument_list|(
 literal|"Gradient UI"
 argument_list|)
 argument_list|,
-literal|0.548
+literal|0.542
 argument_list|)
 expr_stmt|;
 name|register_gradient_select_procs
@@ -602,7 +587,7 @@ argument_list|(
 literal|"Guide procedures"
 argument_list|)
 argument_list|,
-literal|0.56
+literal|0.554
 argument_list|)
 expr_stmt|;
 name|register_guides_procs
@@ -614,13 +599,13 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Interface"
+literal|"Help procedures"
 argument_list|)
 argument_list|,
-literal|0.579
+literal|0.573
 argument_list|)
 expr_stmt|;
-name|register_interface_procs
+name|register_help_procs
 argument_list|()
 expr_stmt|;
 name|app_init_update_status
@@ -632,7 +617,7 @@ argument_list|(
 literal|"Layer"
 argument_list|)
 argument_list|,
-literal|0.588
+literal|0.576
 argument_list|)
 expr_stmt|;
 name|register_layer_procs
@@ -644,10 +629,25 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
+literal|"Interface"
+argument_list|)
+argument_list|,
+literal|0.672
+argument_list|)
+expr_stmt|;
+name|register_message_procs
+argument_list|()
+expr_stmt|;
+name|app_init_update_status
+argument_list|(
+name|NULL
+argument_list|,
+name|_
+argument_list|(
 literal|"Miscellaneous"
 argument_list|)
 argument_list|,
-literal|0.684
+literal|0.681
 argument_list|)
 expr_stmt|;
 name|register_misc_procs
@@ -662,7 +662,7 @@ argument_list|(
 literal|"Palette"
 argument_list|)
 argument_list|,
-literal|0.69
+literal|0.687
 argument_list|)
 expr_stmt|;
 name|register_palette_procs
@@ -677,7 +677,7 @@ argument_list|(
 literal|"Parasite procedures"
 argument_list|)
 argument_list|,
-literal|0.712
+literal|0.709
 argument_list|)
 expr_stmt|;
 name|register_parasite_procs
@@ -692,7 +692,7 @@ argument_list|(
 literal|"Paths"
 argument_list|)
 argument_list|,
-literal|0.752
+literal|0.749
 argument_list|)
 expr_stmt|;
 name|register_paths_procs
@@ -707,7 +707,7 @@ argument_list|(
 literal|"Pattern UI"
 argument_list|)
 argument_list|,
-literal|0.793
+literal|0.789
 argument_list|)
 expr_stmt|;
 name|register_pattern_select_procs
@@ -722,7 +722,7 @@ argument_list|(
 literal|"Patterns"
 argument_list|)
 argument_list|,
-literal|0.802
+literal|0.799
 argument_list|)
 expr_stmt|;
 name|register_patterns_procs
@@ -737,7 +737,7 @@ argument_list|(
 literal|"Plug-in"
 argument_list|)
 argument_list|,
-literal|0.814
+literal|0.811
 argument_list|)
 expr_stmt|;
 name|register_plug_in_procs

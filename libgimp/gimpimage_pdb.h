@@ -642,6 +642,15 @@ modifier|*
 name|palette
 parameter_list|)
 function_decl|;
+name|gint32
+modifier|*
+name|gimp_image_list
+parameter_list|(
+name|gint
+modifier|*
+name|nimages
+parameter_list|)
+function_decl|;
 comment|/****************************************  *              Guides                  *  ****************************************/
 name|gint32
 name|gimp_image_add_hguide

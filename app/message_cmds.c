@@ -45,8 +45,8 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|register_interface_procs (void)
-name|register_interface_procs
+DECL|function|register_message_procs (void)
+name|register_message_procs
 parameter_list|(
 name|void
 parameter_list|)

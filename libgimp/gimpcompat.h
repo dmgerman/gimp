@@ -173,6 +173,16 @@ define|#
 directive|define
 name|gimp_plugin_help_func
 value|gimp_standard_help_func
+DECL|macro|gimp_query_database
+define|#
+directive|define
+name|gimp_query_database
+value|gimp_procedural_db_query
+DECL|macro|gimp_query_images
+define|#
+directive|define
+name|gimp_query_images
+value|gimp_image_list
 DECL|macro|Parasite
 define|#
 directive|define

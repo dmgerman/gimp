@@ -259,7 +259,7 @@ block|}
 end_function
 
 begin_function
-name|gint32
+name|gboolean
 DECL|function|gimp_selection_is_empty (gint32 image_ID)
 name|gimp_selection_is_empty
 parameter_list|(
@@ -274,7 +274,7 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gint32
+name|gboolean
 name|is_empty
 decl_stmt|;
 name|return_vals
@@ -320,6 +320,10 @@ operator|.
 name|data
 operator|.
 name|d_int32
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
@@ -373,7 +377,6 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
-return|return;
 block|}
 end_function
 

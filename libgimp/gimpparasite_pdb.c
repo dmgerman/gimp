@@ -48,6 +48,10 @@ argument_list|,
 name|PARAM_END
 argument_list|)
 expr_stmt|;
+name|parasite
+operator|=
+name|NULL
+expr_stmt|;
 if|if
 condition|(
 name|return_vals
@@ -61,7 +65,6 @@ name|d_status
 operator|==
 name|STATUS_SUCCESS
 condition|)
-block|{
 name|parasite
 operator|=
 name|gimp_parasite_copy
@@ -76,12 +79,6 @@ name|data
 operator|.
 name|d_parasite
 argument_list|)
-expr_stmt|;
-block|}
-else|else
-name|parasite
-operator|=
-name|NULL
 expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
@@ -170,7 +167,7 @@ name|nreturn_vals
 decl_stmt|;
 name|GimpParasite
 modifier|*
-name|p
+name|parasite
 init|=
 name|gimp_parasite_new
 argument_list|(
@@ -194,14 +191,14 @@ name|nreturn_vals
 argument_list|,
 name|PARAM_PARASITE
 argument_list|,
-name|p
+name|parasite
 argument_list|,
 name|PARAM_END
 argument_list|)
 expr_stmt|;
 name|gimp_parasite_free
 argument_list|(
-name|p
+name|parasite
 argument_list|)
 expr_stmt|;
 name|gimp_destroy_params
