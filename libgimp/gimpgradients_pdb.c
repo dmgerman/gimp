@@ -793,7 +793,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradients_new:  * @name: The requested name of the new gradient.  *  * Creates a new gradient  *  * This procedure creates a new, uninitialized gradient  *  * Returns: The actual new gradient name.  */
+comment|/**  * gimp_gradients_new:  * @name: The requested name of the new gradient.  *  * Creates a new gradient  *  * This procedure creates a new, uninitialized gradient  *  * Returns: The actual new gradient name.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -878,7 +878,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradients_duplicate:  * @name: The name of the gradient to duplicate.  *  * Duplicates a gradient  *  * This procedure creates an identical gradient by a different name  *  * Returns: The name of the gradient's copy.  */
+comment|/**  * gimp_gradients_duplicate:  * @name: The name of the gradient to duplicate.  *  * Duplicates a gradient  *  * This procedure creates an identical gradient by a different name  *  * Returns: The name of the gradient's copy.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -963,7 +963,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradients_delete:  * @name: The name of the gradient to delete.  *  * Deletes a gradient  *  * This procedure deletes a gradient  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_gradients_delete:  * @name: The name of the gradient to delete.  *  * Deletes a gradient  *  * This procedure deletes a gradient  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -1032,7 +1032,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradients_rename:  * @name: The name of the gradient to rename.  * @new_name: The new name of the gradient.  *  * Rename a gradient  *  * This procedure renames a gradient  *  * Returns: The actual new name of the gradient.  */
+comment|/**  * gimp_gradients_rename:  * @name: The name of the gradient to rename.  * @new_name: The new name of the gradient.  *  * Rename a gradient  *  * This procedure renames a gradient  *  * Returns: The actual new name of the gradient.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
