@@ -580,9 +580,9 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_item_get_ID
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|channel
 argument_list|)
@@ -751,7 +751,7 @@ operator|(
 name|GimpChannel
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -822,9 +822,9 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_item_get_ID
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|copy
 argument_list|)
@@ -943,7 +943,7 @@ operator|(
 name|GimpChannel
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -975,9 +975,9 @@ block|{
 if|if
 condition|(
 operator|!
-name|gimp_drawable_gimage
+name|gimp_item_get_image
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|channel
 argument_list|)
@@ -1111,7 +1111,7 @@ operator|(
 name|GimpChannel
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -1141,7 +1141,7 @@ operator|(
 name|GimpChannel
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -1367,7 +1367,7 @@ operator|(
 name|GimpChannel
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -1539,7 +1539,7 @@ operator|(
 name|GimpChannel
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -1711,7 +1711,7 @@ operator|(
 name|GimpChannel
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -1879,7 +1879,7 @@ operator|(
 name|GimpChannel
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -2041,7 +2041,7 @@ operator|(
 name|GimpChannel
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -2208,7 +2208,7 @@ operator|(
 name|GimpChannel
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -2369,7 +2369,7 @@ operator|(
 name|GimpChannel
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -2540,7 +2540,7 @@ operator|(
 name|GimpChannel
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -2718,7 +2718,7 @@ operator|(
 name|GimpChannel
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -2895,7 +2895,7 @@ operator|(
 name|GimpChannel
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -3071,7 +3071,7 @@ operator|(
 name|GimpChannel
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -3239,7 +3239,7 @@ operator|(
 name|GimpChannel
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,

@@ -197,11 +197,11 @@ name|new_layer
 operator|=
 name|gimp_layer_new_from_drawable
 argument_list|(
+name|drawable
+argument_list|,
 name|gdisp
 operator|->
 name|gimage
-argument_list|,
-name|drawable
 argument_list|)
 expr_stmt|;
 name|off_x

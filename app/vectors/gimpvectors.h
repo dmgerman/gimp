@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"core/gimpviewable.h"
+file|"core/gimpitem.h"
 end_include
 
 begin_define
@@ -91,13 +91,8 @@ struct|struct
 name|_GimpVectors
 block|{
 DECL|member|parent_instance
-name|GimpViewable
+name|GimpItem
 name|parent_instance
-decl_stmt|;
-DECL|member|gimage
-name|GimpImage
-modifier|*
-name|gimage
 decl_stmt|;
 DECL|member|visible
 name|gboolean
@@ -126,7 +121,7 @@ struct|struct
 name|_GimpVectorsClass
 block|{
 DECL|member|parent_class
-name|GimpViewableClass
+name|GimpItemClass
 name|parent_class
 decl_stmt|;
 DECL|member|changed
@@ -134,18 +129,6 @@ name|void
 function_decl|(
 modifier|*
 name|changed
-function_decl|)
-parameter_list|(
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|)
-function_decl|;
-DECL|member|removed
-name|void
-function_decl|(
-modifier|*
-name|removed
 function_decl|)
 parameter_list|(
 name|GimpVectors
@@ -363,34 +346,6 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
-
-begin_function_decl
-name|void
-name|gimp_vectors_set_image
-parameter_list|(
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpImage
-modifier|*
-name|gimp_vectors_get_image
-parameter_list|(
-specifier|const
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_comment
 comment|/* accessing / modifying the anchors */

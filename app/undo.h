@@ -23,7 +23,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b0b34c0103
+DECL|enum|__anon2ba61c030103
 block|{
 DECL|enumerator|UNDO_PUSHED
 name|UNDO_PUSHED
@@ -799,15 +799,15 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|undo_push_drawable_parasite
+name|undo_push_item_parasite
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|GimpDrawable
+name|GimpItem
 modifier|*
-name|drawable
+name|item
 parameter_list|,
 name|gpointer
 name|parasite
@@ -817,15 +817,15 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|undo_push_drawable_parasite_remove
+name|undo_push_item_parasite_remove
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|GimpDrawable
+name|GimpItem
 modifier|*
-name|drabable
+name|item
 parameter_list|,
 specifier|const
 name|gchar

@@ -144,6 +144,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"vectors/gimpvectors.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file/file-open.h"
 end_include
 
@@ -491,17 +497,17 @@ begin_function_decl
 specifier|static
 name|guchar
 modifier|*
-name|gimp_dnd_get_drawable_data
+name|gimp_dnd_get_item_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
 name|GCallback
-name|get_drawable_func
+name|get_item_func
 parameter_list|,
 name|gpointer
-name|get_drawable_data
+name|get_item_data
 parameter_list|,
 name|gint
 modifier|*
@@ -517,17 +523,17 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dnd_set_drawable_data
+name|gimp_dnd_set_item_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
 name|GCallback
-name|set_drawable_func
+name|set_item_func
 parameter_list|,
 name|gpointer
-name|set_drawable_data
+name|set_item_data
 parameter_list|,
 name|guchar
 modifier|*
@@ -873,9 +879,9 @@ literal|"gimp_dnd_set_layer_data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
-name|gimp_dnd_get_drawable_data
+name|gimp_dnd_get_item_data
 block|,
-name|gimp_dnd_set_drawable_data
+name|gimp_dnd_set_item_data
 block|,   }
 block|,
 block|{
@@ -887,9 +893,9 @@ literal|"gimp_dnd_set_channel_data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
-name|gimp_dnd_get_drawable_data
+name|gimp_dnd_get_item_data
 block|,
-name|gimp_dnd_set_drawable_data
+name|gimp_dnd_set_item_data
 block|,   }
 block|,
 block|{
@@ -901,9 +907,9 @@ literal|"gimp_dnd_set_layer_mask_data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
-name|gimp_dnd_get_drawable_data
+name|gimp_dnd_get_item_data
 block|,
-name|gimp_dnd_set_drawable_data
+name|gimp_dnd_set_item_data
 block|,   }
 block|,
 block|{
@@ -921,17 +927,17 @@ name|NULL
 block|,   }
 block|,
 block|{
-name|GIMP_TARGET_PATH
+name|GIMP_TARGET_VECTORS
 block|,
-name|NULL
+literal|"gimp_dnd_set_vectors_func"
 block|,
-name|NULL
+literal|"gimp_dnd_set_vectors_data"
 block|,
-name|NULL
+name|gimp_dnd_get_viewable_icon
 block|,
-name|NULL
+name|gimp_dnd_get_item_data
 block|,
-name|NULL
+name|gimp_dnd_set_item_data
 block|,   }
 block|,
 block|{
@@ -3098,6 +3104,22 @@ name|g_type_is_a
 argument_list|(
 name|type
 argument_list|,
+name|GIMP_TYPE_VECTORS
+argument_list|)
+condition|)
+block|{
+name|dnd_type
+operator|=
+name|GIMP_DND_TYPE_VECTORS
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|g_type_is_a
+argument_list|(
+name|type
+argument_list|,
 name|GIMP_TYPE_BRUSH
 argument_list|)
 condition|)
@@ -3923,33 +3945,33 @@ block|}
 end_function
 
 begin_comment
-comment|/****************************/
+comment|/************************/
 end_comment
 
 begin_comment
-comment|/*  drawable dnd functions  */
+comment|/*  item dnd functions  */
 end_comment
 
 begin_comment
-comment|/****************************/
+comment|/************************/
 end_comment
 
 begin_function
 specifier|static
 name|guchar
 modifier|*
-DECL|function|gimp_dnd_get_drawable_data (GtkWidget * widget,GCallback get_drawable_func,gpointer get_drawable_data,gint * format,gint * length)
-name|gimp_dnd_get_drawable_data
+DECL|function|gimp_dnd_get_item_data (GtkWidget * widget,GCallback get_item_func,gpointer get_item_data,gint * format,gint * length)
+name|gimp_dnd_get_item_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
 name|GCallback
-name|get_drawable_func
+name|get_item_func
 parameter_list|,
 name|gpointer
-name|get_drawable_data
+name|get_item_data
 parameter_list|,
 name|gint
 modifier|*
@@ -3960,18 +3982,18 @@ modifier|*
 name|length
 parameter_list|)
 block|{
-name|GimpDrawable
+name|GimpItem
 modifier|*
-name|drawable
+name|item
 decl_stmt|;
 name|gchar
 modifier|*
 name|id
 decl_stmt|;
-name|drawable
+name|item
 operator|=
 operator|(
-name|GimpDrawable
+name|GimpItem
 operator|*
 operator|)
 operator|(
@@ -3979,18 +4001,18 @@ operator|*
 operator|(
 name|GimpDndDragViewableFunc
 operator|)
-name|get_drawable_func
+name|get_item_func
 operator|)
 operator|(
 name|widget
 operator|,
-name|get_drawable_data
+name|get_item_data
 operator|)
 expr_stmt|;
 if|if
 condition|(
 operator|!
-name|drawable
+name|item
 condition|)
 return|return
 name|NULL
@@ -4001,9 +4023,9 @@ name|g_strdup_printf
 argument_list|(
 literal|"%d"
 argument_list|,
-name|gimp_drawable_get_ID
+name|gimp_item_get_ID
 argument_list|(
-name|drawable
+name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4035,18 +4057,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dnd_set_drawable_data (GtkWidget * widget,GCallback set_drawable_func,gpointer set_drawable_data,guchar * vals,gint format,gint length)
-name|gimp_dnd_set_drawable_data
+DECL|function|gimp_dnd_set_item_data (GtkWidget * widget,GCallback set_item_func,gpointer set_item_data,guchar * vals,gint format,gint length)
+name|gimp_dnd_set_item_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
 name|GCallback
-name|set_drawable_func
+name|set_item_func
 parameter_list|,
 name|gpointer
-name|set_drawable_data
+name|set_item_data
 parameter_list|,
 name|guchar
 modifier|*
@@ -4059,9 +4081,9 @@ name|gint
 name|length
 parameter_list|)
 block|{
-name|GimpDrawable
+name|GimpItem
 modifier|*
-name|drawable
+name|item
 decl_stmt|;
 name|gchar
 modifier|*
@@ -4087,7 +4109,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid drawable ID data"
+literal|"Received invalid item ID data"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -4113,9 +4135,9 @@ operator|!
 name|ID
 condition|)
 return|return;
-name|drawable
+name|item
 operator|=
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|the_gimp
 argument_list|,
@@ -4124,24 +4146,24 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|drawable
+name|item
 condition|)
 operator|(
 operator|*
 operator|(
 name|GimpDndDropViewableFunc
 operator|)
-name|set_drawable_func
+name|set_item_func
 operator|)
 operator|(
 name|widget
 operator|,
 name|GIMP_VIEWABLE
 argument_list|(
-name|drawable
+name|item
 argument_list|)
 operator|,
-name|set_drawable_data
+name|set_item_data
 operator|)
 expr_stmt|;
 block|}

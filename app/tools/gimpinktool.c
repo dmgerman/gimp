@@ -4645,7 +4645,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon291ce78c0103
+DECL|enum|__anon2af94e9d0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -5560,9 +5560,12 @@ operator|!
 operator|(
 name|gimage
 operator|=
-name|gimp_drawable_gimage
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 operator|)
 condition|)

@@ -98,7 +98,7 @@ name|l
 parameter_list|,
 name|t
 parameter_list|)
-value|gimp_drawable_set_tattoo(GIMP_DRAWABLE(l),(t))
+value|gimp_item_set_tattoo(GIMP_ITEM(l),(t))
 end_define
 
 begin_define
@@ -109,7 +109,7 @@ name|gimp_layer_get_tattoo
 parameter_list|(
 name|l
 parameter_list|)
-value|gimp_drawable_get_tattoo(GIMP_DRAWABLE(l))
+value|gimp_item_get_tattoo(GIMP_ITEM(l))
 end_define
 
 begin_define
@@ -170,7 +170,7 @@ name|c
 parameter_list|,
 name|t
 parameter_list|)
-value|gimp_drawable_set_tattoo(GIMP_DRAWABLE(c),(t))
+value|gimp_item_set_tattoo(GIMP_ITEM(c),(t))
 end_define
 
 begin_define
@@ -181,7 +181,7 @@ name|gimp_channel_get_tattoo
 parameter_list|(
 name|c
 parameter_list|)
-value|gimp_drawable_get_tattoo(GIMP_DRAWABLE(c))
+value|gimp_item_get_tattoo(GIMP_ITEM(c))
 end_define
 
 begin_define
@@ -254,6 +254,58 @@ parameter_list|,
 name|e
 parameter_list|)
 value|{ if((l)->mask) gimp_layer_mask_set_edit((l)->mask,(e)); else success = FALSE; }
+end_define
+
+begin_define
+DECL|macro|gimp_drawable_parasite_attach (d,p)
+define|#
+directive|define
+name|gimp_drawable_parasite_attach
+parameter_list|(
+name|d
+parameter_list|,
+name|p
+parameter_list|)
+value|gimp_item_parasite_attach(GIMP_ITEM(d),p)
+end_define
+
+begin_define
+DECL|macro|gimp_drawable_parasite_detach (d,p)
+define|#
+directive|define
+name|gimp_drawable_parasite_detach
+parameter_list|(
+name|d
+parameter_list|,
+name|p
+parameter_list|)
+value|gimp_item_parasite_detach(GIMP_ITEM(d),p)
+end_define
+
+begin_define
+DECL|macro|gimp_drawable_parasite_list (d,c)
+define|#
+directive|define
+name|gimp_drawable_parasite_list
+parameter_list|(
+name|d
+parameter_list|,
+name|c
+parameter_list|)
+value|gimp_item_parasite_list(GIMP_ITEM(d),c)
+end_define
+
+begin_define
+DECL|macro|gimp_drawable_parasite_find (d,p)
+define|#
+directive|define
+name|gimp_drawable_parasite_find
+parameter_list|(
+name|d
+parameter_list|,
+name|p
+parameter_list|)
+value|gimp_item_parasite_find(GIMP_ITEM(d),p)
 end_define
 
 begin_endif

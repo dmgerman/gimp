@@ -1,19 +1,19 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpdrawablelistview.h  * Copyright (C) 2001 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpitemlistview.h  * Copyright (C) 2001 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_DRAWABLE_LIST_VIEW_H__
+name|__GIMP_ITEM_LIST_VIEW_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DRAWABLE_LIST_VIEW_H__
+DECL|macro|__GIMP_ITEM_LIST_VIEW_H__
 define|#
 directive|define
-name|__GIMP_DRAWABLE_LIST_VIEW_H__
+name|__GIMP_ITEM_LIST_VIEW_H__
 end_define
 
 begin_include
@@ -41,13 +41,13 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpGetDrawableFunc
+DECL|typedef|GimpGetItemFunc
 typedef|typedef
-name|GimpDrawable
+name|GimpViewable
 modifier|*
 function_decl|(
 modifier|*
-name|GimpGetDrawableFunc
+name|GimpGetItemFunc
 function_decl|)
 parameter_list|(
 specifier|const
@@ -59,41 +59,41 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpSetDrawableFunc
+DECL|typedef|GimpSetItemFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|GimpSetDrawableFunc
+name|GimpSetItemFunc
 function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|GimpDrawable
+name|GimpViewable
 modifier|*
-name|drawable
+name|viewable
 parameter_list|)
 function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpReorderDrawableFunc
+DECL|typedef|GimpReorderItemFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|GimpReorderDrawableFunc
+name|GimpReorderItemFunc
 function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|GimpDrawable
+name|GimpViewable
 modifier|*
-name|drawable
+name|viewable
 parameter_list|,
 name|gint
 name|new_index
@@ -105,21 +105,21 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpAddDrawableFunc
+DECL|typedef|GimpAddItemFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|GimpAddDrawableFunc
+name|GimpAddItemFunc
 function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|GimpDrawable
+name|GimpViewable
 modifier|*
-name|drawable
+name|viewable
 parameter_list|,
 name|gint
 name|index
@@ -128,38 +128,38 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpRemoveDrawableFunc
+DECL|typedef|GimpRemoveItemFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|GimpRemoveDrawableFunc
+name|GimpRemoveItemFunc
 function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|GimpDrawable
+name|GimpViewable
 modifier|*
-name|drawable
+name|viewable
 parameter_list|)
 function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpCopyDrawableFunc
+DECL|typedef|GimpCopyItemFunc
 typedef|typedef
-name|GimpDrawable
+name|GimpViewable
 modifier|*
 function_decl|(
 modifier|*
-name|GimpCopyDrawableFunc
+name|GimpCopyItemFunc
 function_decl|)
 parameter_list|(
-name|GimpDrawable
+name|GimpViewable
 modifier|*
-name|drawable
+name|viewable
 parameter_list|,
 name|GType
 name|new_type
@@ -171,40 +171,40 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpConvertDrawableFunc
+DECL|typedef|GimpConvertItemFunc
 typedef|typedef
-name|GimpDrawable
+name|GimpViewable
 modifier|*
 function_decl|(
 modifier|*
-name|GimpConvertDrawableFunc
+name|GimpConvertItemFunc
 function_decl|)
 parameter_list|(
+name|GimpViewable
+modifier|*
+name|viewable
+parameter_list|,
 name|GimpImage
 modifier|*
 name|dest_gimage
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
 parameter_list|)
 function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpNewDrawableFunc
+DECL|typedef|GimpNewItemFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|GimpNewDrawableFunc
+name|GimpNewItemFunc
 function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|GimpDrawable
+name|GimpViewable
 modifier|*
 name|template
 parameter_list|)
@@ -212,97 +212,97 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpEditDrawableFunc
+DECL|typedef|GimpEditItemFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|GimpEditDrawableFunc
+name|GimpEditItemFunc
 function_decl|)
 parameter_list|(
-name|GimpDrawable
+name|GimpViewable
 modifier|*
-name|drawable
+name|viewable
 parameter_list|)
 function_decl|;
 end_typedef
 
 begin_define
-DECL|macro|GIMP_TYPE_DRAWABLE_LIST_VIEW
+DECL|macro|GIMP_TYPE_ITEM_LIST_VIEW
 define|#
 directive|define
-name|GIMP_TYPE_DRAWABLE_LIST_VIEW
-value|(gimp_drawable_list_view_get_type ())
+name|GIMP_TYPE_ITEM_LIST_VIEW
+value|(gimp_item_list_view_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_DRAWABLE_LIST_VIEW (obj)
+DECL|macro|GIMP_ITEM_LIST_VIEW (obj)
 define|#
 directive|define
-name|GIMP_DRAWABLE_LIST_VIEW
+name|GIMP_ITEM_LIST_VIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DRAWABLE_LIST_VIEW, GimpDrawableListView))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_ITEM_LIST_VIEW, GimpItemListView))
 end_define
 
 begin_define
-DECL|macro|GIMP_DRAWABLE_LIST_VIEW_CLASS (klass)
+DECL|macro|GIMP_ITEM_LIST_VIEW_CLASS (klass)
 define|#
 directive|define
-name|GIMP_DRAWABLE_LIST_VIEW_CLASS
+name|GIMP_ITEM_LIST_VIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DRAWABLE_LIST_VIEW, GimpDrawableListViewClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_ITEM_LIST_VIEW, GimpItemListViewClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_DRAWABLE_LIST_VIEW (obj)
+DECL|macro|GIMP_IS_ITEM_LIST_VIEW (obj)
 define|#
 directive|define
-name|GIMP_IS_DRAWABLE_LIST_VIEW
+name|GIMP_IS_ITEM_LIST_VIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DRAWABLE_LIST_VIEW))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_ITEM_LIST_VIEW))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_DRAWABLE_LIST_VIEW_CLASS (klass)
+DECL|macro|GIMP_IS_ITEM_LIST_VIEW_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_DRAWABLE_LIST_VIEW_CLASS
+name|GIMP_IS_ITEM_LIST_VIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DRAWABLE_LIST_VIEW))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_ITEM_LIST_VIEW))
 end_define
 
 begin_define
-DECL|macro|GIMP_DRAWABLE_LIST_VIEW_GET_CLASS (obj)
+DECL|macro|GIMP_ITEM_LIST_VIEW_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_DRAWABLE_LIST_VIEW_GET_CLASS
+name|GIMP_ITEM_LIST_VIEW_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DRAWABLE_LIST_VIEW, GimpDrawableListViewClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_ITEM_LIST_VIEW, GimpItemListViewClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpDrawableListViewClass
+DECL|typedef|GimpItemListViewClass
 typedef|typedef
 name|struct
-name|_GimpDrawableListViewClass
-name|GimpDrawableListViewClass
+name|_GimpItemListViewClass
+name|GimpItemListViewClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpDrawableListView
+DECL|struct|_GimpItemListView
 struct|struct
-name|_GimpDrawableListView
+name|_GimpItemListView
 block|{
 DECL|member|parent_instance
 name|GimpContainerListView
@@ -313,9 +313,9 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-DECL|member|drawable_type
+DECL|member|item_type
 name|GType
-name|drawable_type
+name|item_type
 decl_stmt|;
 DECL|member|signal_name
 name|gchar
@@ -326,41 +326,41 @@ DECL|member|get_container_func
 name|GimpGetContainerFunc
 name|get_container_func
 decl_stmt|;
-DECL|member|get_drawable_func
-name|GimpGetDrawableFunc
-name|get_drawable_func
+DECL|member|get_item_func
+name|GimpGetItemFunc
+name|get_item_func
 decl_stmt|;
-DECL|member|set_drawable_func
-name|GimpSetDrawableFunc
-name|set_drawable_func
+DECL|member|set_item_func
+name|GimpSetItemFunc
+name|set_item_func
 decl_stmt|;
-DECL|member|reorder_drawable_func
-name|GimpReorderDrawableFunc
-name|reorder_drawable_func
+DECL|member|reorder_item_func
+name|GimpReorderItemFunc
+name|reorder_item_func
 decl_stmt|;
-DECL|member|add_drawable_func
-name|GimpAddDrawableFunc
-name|add_drawable_func
+DECL|member|add_item_func
+name|GimpAddItemFunc
+name|add_item_func
 decl_stmt|;
-DECL|member|remove_drawable_func
-name|GimpRemoveDrawableFunc
-name|remove_drawable_func
+DECL|member|remove_item_func
+name|GimpRemoveItemFunc
+name|remove_item_func
 decl_stmt|;
-DECL|member|copy_drawable_func
-name|GimpCopyDrawableFunc
-name|copy_drawable_func
+DECL|member|copy_item_func
+name|GimpCopyItemFunc
+name|copy_item_func
 decl_stmt|;
-DECL|member|convert_drawable_func
-name|GimpConvertDrawableFunc
-name|convert_drawable_func
+DECL|member|convert_item_func
+name|GimpConvertItemFunc
+name|convert_item_func
 decl_stmt|;
-DECL|member|new_drawable_func
-name|GimpNewDrawableFunc
-name|new_drawable_func
+DECL|member|new_item_func
+name|GimpNewItemFunc
+name|new_item_func
 decl_stmt|;
-DECL|member|edit_drawable_func
-name|GimpEditDrawableFunc
-name|edit_drawable_func
+DECL|member|edit_item_func
+name|GimpEditItemFunc
+name|edit_item_func
 decl_stmt|;
 DECL|member|item_factory
 name|GimpItemFactory
@@ -402,9 +402,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpDrawableListViewClass
+DECL|struct|_GimpItemListViewClass
 struct|struct
-name|_GimpDrawableListViewClass
+name|_GimpItemListViewClass
 block|{
 DECL|member|parent_class
 name|GimpContainerListViewClass
@@ -417,7 +417,7 @@ modifier|*
 name|set_image
 function_decl|)
 parameter_list|(
-name|GimpDrawableListView
+name|GimpItemListView
 modifier|*
 name|view
 parameter_list|,
@@ -432,7 +432,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_drawable_list_view_get_type
+name|gimp_item_list_view_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -443,7 +443,7 @@ end_decl_stmt
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_drawable_list_view_new
+name|gimp_item_list_view_new
 parameter_list|(
 name|gint
 name|preview_size
@@ -453,7 +453,7 @@ modifier|*
 name|gimage
 parameter_list|,
 name|GType
-name|drawable_type
+name|item_type
 parameter_list|,
 specifier|const
 name|gchar
@@ -463,32 +463,32 @@ parameter_list|,
 name|GimpGetContainerFunc
 name|get_container_func
 parameter_list|,
-name|GimpGetDrawableFunc
-name|get_drawable_func
+name|GimpGetItemFunc
+name|get_item_func
 parameter_list|,
-name|GimpSetDrawableFunc
-name|set_drawable_func
+name|GimpSetItemFunc
+name|set_item_func
 parameter_list|,
-name|GimpReorderDrawableFunc
-name|reorder_drawable_func
+name|GimpReorderItemFunc
+name|reorder_item_func
 parameter_list|,
-name|GimpAddDrawableFunc
-name|add_drawable_func
+name|GimpAddItemFunc
+name|add_item_func
 parameter_list|,
-name|GimpRemoveDrawableFunc
-name|remove_drawable_func
+name|GimpRemoveItemFunc
+name|remove_item_func
 parameter_list|,
-name|GimpCopyDrawableFunc
-name|copy_drawable_func
+name|GimpCopyItemFunc
+name|copy_item_func
 parameter_list|,
-name|GimpConvertDrawableFunc
-name|convert_drawable_func
+name|GimpConvertItemFunc
+name|convert_item_func
 parameter_list|,
-name|GimpNewDrawableFunc
-name|new_drawable_func
+name|GimpNewItemFunc
+name|new_item_func
 parameter_list|,
-name|GimpEditDrawableFunc
-name|edit_drawable_func
+name|GimpEditItemFunc
+name|edit_item_func
 parameter_list|,
 name|GimpItemFactory
 modifier|*
@@ -499,9 +499,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_drawable_list_view_set_image
+name|gimp_item_list_view_set_image
 parameter_list|(
-name|GimpDrawableListView
+name|GimpItemListView
 modifier|*
 name|view
 parameter_list|,
@@ -518,7 +518,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_DRAWABLE_LIST_VIEW_H__  */
+comment|/*  __GIMP_ITEM_LIST_VIEW_H__  */
 end_comment
 
 end_unit

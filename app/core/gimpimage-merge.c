@@ -1579,23 +1579,23 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* Copy the tattoo and parasites of the bottom layer to the new layer */
-name|gimp_drawable_set_tattoo
+name|gimp_item_set_tattoo
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|merge_layer
 argument_list|)
 argument_list|,
-name|gimp_drawable_get_tattoo
+name|gimp_item_get_tattoo
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|merge_layer
 argument_list|)
@@ -1604,7 +1604,7 @@ name|parasites
 operator|=
 name|gimp_parasite_list_copy
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)

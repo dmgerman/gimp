@@ -591,11 +591,11 @@ name|layer
 operator|=
 name|gimp_layer_new_from_tiles
 argument_list|(
-name|gimage
-argument_list|,
 name|paste
 operator|->
 name|tiles
+argument_list|,
+name|gimage
 argument_list|,
 name|_
 argument_list|(
@@ -612,11 +612,11 @@ name|layer
 operator|=
 name|gimp_layer_new_from_tiles
 argument_list|(
-name|gimage
-argument_list|,
 name|paste
 operator|->
 name|tiles
+argument_list|,
+name|gimage
 argument_list|,
 name|_
 argument_list|(
@@ -796,9 +796,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_drawable_set_gimage
+name|gimp_item_set_image
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -914,11 +914,11 @@ name|layer
 operator|=
 name|gimp_layer_new_from_tiles
 argument_list|(
-name|gimage
-argument_list|,
 name|paste
 operator|->
 name|tiles
+argument_list|,
+name|gimage
 argument_list|,
 name|_
 argument_list|(
@@ -935,10 +935,9 @@ condition|(
 name|layer
 condition|)
 block|{
-comment|/*  add the new layer to the image  */
-name|gimp_drawable_set_gimage
+name|gimp_item_set_image
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)

@@ -2172,9 +2172,9 @@ name|options
 operator|->
 name|gimage
 operator|=
-name|gimp_drawable_gimage
+name|gimp_item_get_image
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|channel
 argument_list|)

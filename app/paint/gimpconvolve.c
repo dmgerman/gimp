@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27527cb30103
+DECL|enum|__anon278e80df0103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -791,9 +791,12 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_drawable_gimage
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 condition|)
 return|return;
@@ -1919,9 +1922,12 @@ name|context
 operator|=
 name|gimp_get_current_context
 argument_list|(
-name|gimp_drawable_gimage
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 operator|->
 name|gimp

@@ -380,9 +380,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_gimage
+name|gimp_item_set_image
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|new_layer
 argument_list|)
@@ -549,9 +549,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_gimage
+name|gimp_item_set_image
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|new_channel
 argument_list|)

@@ -2191,9 +2191,12 @@ argument_list|)
 expr_stmt|;
 name|gimage
 operator|=
-name|gimp_drawable_gimage
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|width
@@ -2344,9 +2347,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_drawable_set_gimage
+name|gimp_item_set_image
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|new_layer
 argument_list|)

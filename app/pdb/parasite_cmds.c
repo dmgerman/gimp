@@ -58,6 +58,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb_glue.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpbase/gimpparasite.h"
 end_include
 
@@ -899,7 +905,11 @@ name|NULL
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_by_ID
+operator|(
+name|GimpDrawable
+operator|*
+operator|)
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -1118,7 +1128,11 @@ name|parasite
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_by_ID
+operator|(
+name|GimpDrawable
+operator|*
+operator|)
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -1286,7 +1300,11 @@ name|name
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_by_ID
+operator|(
+name|GimpDrawable
+operator|*
+operator|)
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -1464,7 +1482,11 @@ name|NULL
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_by_ID
+operator|(
+name|GimpDrawable
+operator|*
+operator|)
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,

@@ -1005,9 +1005,12 @@ name|color
 decl_stmt|;
 name|gimp
 operator|=
-name|gimp_drawable_gimage
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 operator|->
 name|gimp

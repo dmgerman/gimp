@@ -195,7 +195,7 @@ operator|(
 name|GimpLayer
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -342,7 +342,7 @@ operator|(
 name|GimpLayer
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -489,7 +489,7 @@ operator|(
 name|GimpLayer
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -640,7 +640,7 @@ operator|(
 name|GimpLayer
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -666,7 +666,11 @@ name|FALSE
 expr_stmt|;
 name|drawable
 operator|=
-name|gimp_drawable_get_by_ID
+operator|(
+name|GimpDrawable
+operator|*
+operator|)
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -812,7 +816,7 @@ operator|(
 name|GimpLayer
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
@@ -987,7 +991,7 @@ operator|(
 name|GimpLayer
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,

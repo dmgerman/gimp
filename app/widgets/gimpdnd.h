@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b786ec60103
+DECL|enum|__anon2b606a5f0103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_NONE
 name|GIMP_DND_TYPE_NONE
@@ -71,8 +71,8 @@ name|GIMP_DND_TYPE_COMPONENT
 init|=
 literal|9
 block|,
-DECL|enumerator|GIMP_DND_TYPE_PATH
-name|GIMP_DND_TYPE_PATH
+DECL|enumerator|GIMP_DND_TYPE_VECTORS
+name|GIMP_DND_TYPE_VECTORS
 init|=
 literal|10
 block|,
@@ -199,12 +199,12 @@ value|{ "GIMP_COMPONENT", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_COMPONENT }
 end_define
 
 begin_define
-DECL|macro|GIMP_TARGET_PATH
+DECL|macro|GIMP_TARGET_VECTORS
 define|#
 directive|define
-name|GIMP_TARGET_PATH
+name|GIMP_TARGET_VECTORS
 define|\
-value|{ "GIMP_PATH", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_PATH }
+value|{ "GIMP_VECTORS", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_VECTORS }
 end_define
 
 begin_define

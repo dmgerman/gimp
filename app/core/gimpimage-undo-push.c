@@ -257,7 +257,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277aee240103
+DECL|enum|__anon2c77e5d30103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -6698,7 +6698,7 @@ name|has_alpha
 operator|!=
 name|old_has_alpha
 operator|&&
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -6714,7 +6714,7 @@ condition|)
 block|{
 name|gimp_image_alpha_changed
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -7929,9 +7929,9 @@ index|[
 literal|0
 index|]
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_item_get_ID
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -8032,7 +8032,7 @@ operator|(
 name|GimpLayer
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimage
 operator|->
@@ -8740,6 +8740,13 @@ name|channel
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|cu
+operator|->
+name|prev_channel
+condition|)
+block|{
 comment|/*  set the previous channel  */
 name|gimp_image_set_active_channel
 argument_list|(
@@ -8750,6 +8757,7 @@ operator|->
 name|prev_channel
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  update the area  */
 name|gimp_drawable_update
 argument_list|(
@@ -8816,6 +8824,13 @@ operator|->
 name|prev_position
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|cu
+operator|->
+name|channel
+condition|)
+block|{
 comment|/*  set the new channel  */
 name|gimp_image_set_active_channel
 argument_list|(
@@ -8826,6 +8841,7 @@ operator|->
 name|channel
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  update the area  */
 name|gimp_drawable_update
 argument_list|(
@@ -9985,6 +10001,13 @@ name|vectors
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|vu
+operator|->
+name|prev_vectors
+condition|)
+block|{
 comment|/*  set the previous vectors  */
 name|gimp_image_set_active_vectors
 argument_list|(
@@ -9995,6 +10018,7 @@ operator|->
 name|prev_vectors
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 else|else
 block|{
@@ -10028,6 +10052,13 @@ operator|->
 name|prev_position
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|vu
+operator|->
+name|vectors
+condition|)
+block|{
 comment|/*  set the new vectors  */
 name|gimp_image_set_active_vectors
 argument_list|(
@@ -10038,6 +10069,7 @@ operator|->
 name|vectors
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|TRUE
@@ -11302,7 +11334,7 @@ operator|(
 name|GimpLayer
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimage
 operator|->
@@ -11642,7 +11674,7 @@ operator|(
 name|GimpLayer
 operator|*
 operator|)
-name|gimp_drawable_get_by_ID
+name|gimp_item_get_by_ID
 argument_list|(
 name|gimage
 operator|->
@@ -12641,10 +12673,10 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-DECL|member|drawable
-name|GimpDrawable
+DECL|member|item
+name|GimpItem
 modifier|*
-name|drawable
+name|item
 decl_stmt|;
 DECL|member|parasite
 name|GimpParasite
@@ -12768,7 +12800,7 @@ name|gimage
 expr_stmt|;
 name|pu
 operator|->
-name|drawable
+name|item
 operator|=
 name|NULL
 expr_stmt|;
@@ -12889,7 +12921,7 @@ name|gimage
 expr_stmt|;
 name|pu
 operator|->
-name|drawable
+name|item
 operator|=
 name|NULL
 expr_stmt|;
@@ -12930,16 +12962,16 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|undo_push_drawable_parasite (GimpImage * gimage,GimpDrawable * drawable,gpointer parasite)
-name|undo_push_drawable_parasite
+DECL|function|undo_push_item_parasite (GimpImage * gimage,GimpItem * item,gpointer parasite)
+name|undo_push_item_parasite
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|GimpDrawable
+name|GimpItem
 modifier|*
-name|drawable
+name|item
 parameter_list|,
 name|gpointer
 name|parasite
@@ -13009,9 +13041,9 @@ name|NULL
 expr_stmt|;
 name|pu
 operator|->
-name|drawable
+name|item
 operator|=
-name|drawable
+name|item
 expr_stmt|;
 name|pu
 operator|->
@@ -13031,9 +13063,9 @@ name|parasite
 operator|=
 name|gimp_parasite_copy
 argument_list|(
-name|gimp_drawable_parasite_find
+name|gimp_item_parasite_find
 argument_list|(
-name|drawable
+name|item
 argument_list|,
 name|pu
 operator|->
@@ -13053,16 +13085,16 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|undo_push_drawable_parasite_remove (GimpImage * gimage,GimpDrawable * drawable,const gchar * name)
-name|undo_push_drawable_parasite_remove
+DECL|function|undo_push_item_parasite_remove (GimpImage * gimage,GimpItem * item,const gchar * name)
+name|undo_push_item_parasite_remove
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|GimpDrawable
+name|GimpItem
 modifier|*
-name|drawable
+name|item
 parameter_list|,
 specifier|const
 name|gchar
@@ -13134,9 +13166,9 @@ name|NULL
 expr_stmt|;
 name|pu
 operator|->
-name|drawable
+name|item
 operator|=
-name|drawable
+name|item
 expr_stmt|;
 name|pu
 operator|->
@@ -13153,9 +13185,9 @@ name|parasite
 operator|=
 name|gimp_parasite_copy
 argument_list|(
-name|gimp_drawable_parasite_find
+name|gimp_item_parasite_find
 argument_list|(
-name|drawable
+name|item
 argument_list|,
 name|pu
 operator|->
@@ -13269,7 +13301,7 @@ if|if
 condition|(
 name|data
 operator|->
-name|drawable
+name|item
 condition|)
 block|{
 name|data
@@ -13278,11 +13310,11 @@ name|parasite
 operator|=
 name|gimp_parasite_copy
 argument_list|(
-name|gimp_drawable_parasite_find
+name|gimp_item_parasite_find
 argument_list|(
 name|data
 operator|->
-name|drawable
+name|item
 argument_list|,
 name|data
 operator|->
@@ -13298,7 +13330,7 @@ name|gimp_parasite_list_add
 argument_list|(
 name|data
 operator|->
-name|drawable
+name|item
 operator|->
 name|parasites
 argument_list|,
@@ -13310,7 +13342,7 @@ name|gimp_parasite_list_remove
 argument_list|(
 name|data
 operator|->
-name|drawable
+name|item
 operator|->
 name|parasites
 argument_list|,

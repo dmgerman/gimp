@@ -3098,7 +3098,7 @@ name|guint32
 operator|*
 operator|)
 operator|&
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -3113,7 +3113,7 @@ case|case
 name|PROP_PARASITES
 case|:
 block|{
-name|long
+name|glong
 name|base
 init|=
 name|info
@@ -3142,9 +3142,9 @@ argument_list|(
 name|info
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_parasite_attach
+name|gimp_item_parasite_attach
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -3516,7 +3516,7 @@ operator|->
 name|fp
 argument_list|,
 operator|&
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|channel
 argument_list|)
@@ -3531,7 +3531,7 @@ case|case
 name|PROP_PARASITES
 case|:
 block|{
-name|long
+name|glong
 name|base
 init|=
 name|info
@@ -3562,9 +3562,9 @@ argument_list|(
 name|info
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_parasite_attach
+name|gimp_item_parasite_attach
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|channel
 argument_list|)

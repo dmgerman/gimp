@@ -131,7 +131,7 @@ decl_stmt|;
 comment|/*  possible layer mask        */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2b1c75570108
+DECL|struct|__anon2c4031580108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -317,13 +317,13 @@ name|GimpLayer
 modifier|*
 name|gimp_layer_new_from_tiles
 parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|TileManager
 modifier|*
 name|tiles
+parameter_list|,
+name|GimpImage
+modifier|*
+name|dest_gimage
 parameter_list|,
 specifier|const
 name|gchar
@@ -344,13 +344,13 @@ name|GimpLayer
 modifier|*
 name|gimp_layer_new_from_drawable
 parameter_list|(
-name|GimpImage
-modifier|*
-name|dest_image
-parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpImage
+modifier|*
+name|dest_image
 parameter_list|)
 function_decl|;
 end_function_decl

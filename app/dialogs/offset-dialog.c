@@ -270,9 +270,12 @@ name|off_d
 operator|->
 name|gimage
 operator|=
-name|gimp_drawable_gimage
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

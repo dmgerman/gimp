@@ -1452,9 +1452,12 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_item_get_ID
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|the_drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_run

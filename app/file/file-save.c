@@ -511,11 +511,14 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_drawable_get_ID
+name|gimp_item_get_ID
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
