@@ -158,6 +158,32 @@ value|BLUR_CONVOLVE
 end_define
 
 begin_comment
+comment|/* Different clip relationships between a blur-blob and edges:     see convolve_motion */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b613fe30103
+block|{
+DECL|enumerator|CONVOLVE_NCLIP
+name|CONVOLVE_NCLIP
+block|,
+comment|/* Left or top edge     */
+DECL|enumerator|CONVOLVE_NOT_CLIPPED
+name|CONVOLVE_NOT_CLIPPED
+block|,
+comment|/* No edges             */
+DECL|enumerator|CONVOLVE_PCLIP
+name|CONVOLVE_PCLIP
+comment|/* Right or bottom edge */
+DECL|typedef|ConvolveClipType
+block|}
+name|ConvolveClipType
+typedef|;
+end_typedef
+
+begin_comment
 comment|/*  the convolve structures  */
 end_comment
 
