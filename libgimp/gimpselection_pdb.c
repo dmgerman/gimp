@@ -542,7 +542,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_clear:  * @image_ID: The image.  *  * Set the selection to none, clearing all previous content.  *  * This procedure sets the selection mask to empty, assigning the value  * 0 to every pixel in the selection channel.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_clear:  * @image_ID: The image.  *  * This procedure is deprecated! Use gimp_selection_none() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

@@ -1699,17 +1699,17 @@ init|=
 block|{
 literal|"gimp_selection_clear"
 block|,
-literal|"Set the selection to none, clearing all previous content."
+literal|"This procedure is deprecated! Use 'gimp_selection_none' instead."
 block|,
-literal|"This procedure sets the selection mask to empty, assigning the value 0 to every pixel in the selection channel."
+literal|"This procedure is deprecated! Use 'gimp_selection_none' instead."
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"1995-1996"
+literal|""
 block|,
-name|NULL
+literal|"gimp_selection_none"
 block|,
 name|GIMP_INTERNAL
 block|,
