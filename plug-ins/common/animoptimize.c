@@ -1,18 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Animation Optimizer plug-in version 1.1.2  *  * (c) Adam D. Moss, 1997-2003  *     adam@gimp.org  *     adam@foxbox.org  *  * This is part of the GIMP package and falls under the GPL.  */
-end_comment
-
-begin_comment
-comment|/*  * REVISION HISTORY:  *  * 2003-11-23 : version 1.1.2  *              Improved optimization for GIF and file formats using  *              compression on a line-by-line basis.  See bug #66367.  *              (RaphaÃ«l Quinet)  *  * 2003-08-12 : version 1.1.1  *              Disable the semi-broken background/foreground stuff  *              unless EXPERIMENTAL_BACKDROP_CODE is defined...  *  * 2001-04-28 : version 1.1.0 [ALPHA]  *              Support automated background (or foreground) removal.  *              It's half-broken.  *              Eliminated special optimized frame alignment cases --  *              we're not trying to be real-time like animationplay  *              and it complicates the code.  *  * 2000-08-30 : version 1.0.4  *              Change default frame duration from 125ms to 100ms for  *              consistancy.  *  * 2000-06-05 : version 1.0.3  *              Fix old bug which could cause errors in evaluating the  *              final pixel of each composed layer.  *  * 2000-01-13 : version 1.0.2  *              Collapse timing of completely optimized-away frames  *              onto previous surviving frame.  Also be looser with  *              (XXXXX) tag parsing.  *  * 2000-01-07 : version 1.0.1  *              PDB interface submitted by Andreas Jaekel  *<jaekel@cablecats.de>  *  * 98.05.17 : version 1.0.0  *            Finally preserves frame timings / layer names.  Has  *            a progress bar now.  No longer beta, I suppose.  *  * 98.04.19 : version 0.70.0  *            Plug-in doubles up as Animation UnOptimize too!  (This  *            is somewhat more useful than it sounds.)  *  * 98.03.16 : version 0.61.0  *            Support more rare opaque/transparent combinations.  *  * 97.12.09 : version 0.60.0  *            Added support for INDEXED* and GRAY* images.  *  * 97.12.09 : version 0.52.0  *            Fixed some bugs.  *  * 97.12.08 : version 0.51.0  *            Relaxed bounding box on optimized layers marked  *            'replace'.  *  * 97.12.07 : version 0.50.0  *            Initial release.  */
-end_comment
-
-begin_comment
-comment|/*  * BUGS:  *  ?  */
-end_comment
-
-begin_comment
-comment|/*  * TODO:  *   User interface  */
+comment|/*  * Animation Optimizer plug-in version 1.1.2  *  * (c) Adam D. Moss, 1997-2003  *     adam@gimp.org  *     adam@foxbox.org  *  * The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
@@ -58,7 +46,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27498b590103
+DECL|enum|__anon28b6e3490103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -83,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27498b590203
+DECL|enum|__anon28b6e3490203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -4458,9 +4446,7 @@ name|layer_name
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|disposal
-operator|)
 return|;
 block|}
 end_function
@@ -4503,8 +4489,6 @@ expr_stmt|;
 if|if
 condition|(
 name|layer_name
-operator|!=
-name|NULL
 condition|)
 block|{
 name|duration
@@ -4544,11 +4528,9 @@ expr_stmt|;
 comment|/* FIXME - 0-wait is nasty */
 return|return
 operator|(
-operator|(
 name|guint32
 operator|)
 name|duration
-operator|)
 return|;
 block|}
 end_function

@@ -27,25 +27,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<time.h>
 end_include
 
 begin_include
@@ -135,7 +117,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0505fd0108
+DECL|struct|__anon29b213b00108
 block|{
 DECL|member|blur_pct
 name|gdouble
@@ -1268,7 +1250,6 @@ decl_stmt|;
 name|gboolean
 name|has_alpha
 decl_stmt|;
-comment|/*    *  Get the input area. This is the bounding box of the selection in    *  the image (or the entire image if there is no selection). Only    *  operating on the input area is simply an optimization. It doesn't    *  need to be done for correct operation. (It simply makes it go    *  faster, since fewer pixels need to be operated on).    */
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
@@ -2401,7 +2382,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Random Seed:"
+literal|"Random _seed:"
 argument_list|)
 argument_list|,
 literal|0.0

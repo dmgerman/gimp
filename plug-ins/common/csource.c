@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a17f40d0108
+DECL|struct|__anon2b3031350108
 block|{
 DECL|member|file_name
 name|gchar
@@ -3160,7 +3160,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Prefixed Name:"
+literal|"_Prefixed name:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -3250,7 +3250,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Save Comment to File"
+literal|"_Save comment to file"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3372,7 +3372,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Us_e Macros instead of Struct"
+literal|"Us_e macros instead of struct"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3433,7 +3433,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Use _1 Byte Run-Length-Encoding"
+literal|"Use _1 byte Run-Length-Encoding"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3494,7 +3494,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Sa_ve Alpha Channel (RGBA/RGB)"
+literal|"Sa_ve alpha channel (RGBA/RGB)"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -746,7 +746,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5fce5e0108
+DECL|struct|__anon2ac9be060108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -800,7 +800,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5fce5e0208
+DECL|struct|__anon2ac9be060208
 block|{
 DECL|member|y
 name|gint32
@@ -6025,7 +6025,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Automatic Pre_view"
+literal|"Automatic pre_view"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6398,7 +6398,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Work on Cop_y"
+literal|"Work on cop_y"
 argument_list|)
 argument_list|)
 expr_stmt|;

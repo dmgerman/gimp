@@ -138,7 +138,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27747b610108
+DECL|struct|__anon29b6f5670108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -1768,12 +1768,12 @@ argument_list|)
 condition|?
 name|_
 argument_list|(
-literal|"_Set Surroundings to Index 0"
+literal|"_Set surroundings to index 0"
 argument_list|)
 else|:
 name|_
 argument_list|(
-literal|"_Set Surroundings to Background Color"
+literal|"_Set surroundings to background color"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1848,7 +1848,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"_Make Surroundings Transparent"
+literal|"_Make surroundings transparent"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1934,7 +1934,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Lens Refraction Index:"
+literal|"_Lens refraction index:"
 argument_list|)
 argument_list|)
 expr_stmt|;

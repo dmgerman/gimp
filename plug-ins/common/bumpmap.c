@@ -161,7 +161,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dc26380103
+DECL|enum|__anon29ae393c0103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -179,7 +179,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dc26380203
+DECL|enum|__anon29ae393c0203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -198,7 +198,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc26380308
+DECL|struct|__anon29ae393c0308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -257,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc26380408
+DECL|struct|__anon29ae393c0408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -302,7 +302,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc26380508
+DECL|struct|__anon29ae393c0508
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -4239,7 +4239,7 @@ name|type
 argument_list|,
 name|_
 argument_list|(
-literal|"_Linear Map"
+literal|"_Linear"
 argument_list|)
 argument_list|,
 name|LINEAR
@@ -4248,7 +4248,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"_Spherical Map"
+literal|"_Spherical"
 argument_list|)
 argument_list|,
 name|SPHERICAL
@@ -4257,7 +4257,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"S_inusoidal Map"
+literal|"S_inusoidal"
 argument_list|)
 argument_list|,
 name|SINUSOIDAL
@@ -4295,7 +4295,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Co_mpensate for Darkening"
+literal|"Co_mpensate for darkening"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4357,7 +4357,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"I_nvert Bumpmap"
+literal|"I_nvert bumpmap"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4419,7 +4419,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Tile Bumpmap"
+literal|"_Tile bumpmap"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4573,7 +4573,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Bump Map:"
+literal|"_Bump map:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -4814,7 +4814,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"_X Offset:"
+literal|"_X offset:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -4883,7 +4883,7 @@ name|row
 argument_list|,
 name|_
 argument_list|(
-literal|"_Y Offset:"
+literal|"_Y offset:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

@@ -3,26 +3,10 @@ begin_comment
 comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Colorify. Changes the pixel's luminosity to a specified color  * Copyright (C) 1997 Francisco Bustamante  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
-begin_comment
-comment|/* Changes:     1.1    -Corrected small bug when calling color selection dialog    -Added LUTs to speed things a little bit up     1.0    -First release */
-end_comment
-
 begin_include
 include|#
 directive|include
 file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
 end_include
 
 begin_include
@@ -157,7 +141,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3607330108
+DECL|struct|__anon29bc7b720108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -754,7 +738,6 @@ name|lum
 decl_stmt|;
 name|lum
 operator|=
-operator|(
 name|lum_red_lookup
 index|[
 name|src
@@ -778,7 +761,6 @@ index|[
 literal|2
 index|]
 index|]
-operator|)
 expr_stmt|;
 name|dest
 index|[

@@ -7,32 +7,10 @@ begin_comment
 comment|/*  * Analyze colorcube.  *  * Author: robert@experimental.net  */
 end_comment
 
-begin_comment
-comment|/*  * Modified by Manish Singh<yosh@gimp.org> 2003  */
-end_comment
-
 begin_include
 include|#
 directive|include
 file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdarg.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
 end_include
 
 begin_include
@@ -101,7 +79,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bedb6e60103
+DECL|enum|__anon2920fb110103
 block|{
 DECL|enumerator|RED
 name|RED

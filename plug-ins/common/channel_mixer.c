@@ -152,7 +152,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298f55c00103
+DECL|enum|__anon27ebe8a80103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -171,7 +171,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298f55c00208
+DECL|struct|__anon27ebe8a80208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298f55c00308
+DECL|struct|__anon27ebe8a80308
 block|{
 DECL|member|red
 name|CmChannelType
@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298f55c00408
+DECL|struct|__anon27ebe8a80408
 block|{
 DECL|member|width
 name|gint
@@ -1465,10 +1465,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
-
 begin_function
 specifier|static
 name|gdouble
@@ -1527,10 +1523,6 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
-
 begin_function
 specifier|static
 specifier|inline
@@ -1580,38 +1572,17 @@ name|c
 operator|*=
 name|norm
 expr_stmt|;
-if|if
-condition|(
-name|c
-operator|>
-literal|255.0
-condition|)
-name|c
-operator|=
-literal|255.0
-expr_stmt|;
-if|if
-condition|(
-name|c
-operator|<
-literal|0.0
-condition|)
-name|c
-operator|=
-literal|0.0
-expr_stmt|;
 return|return
 operator|(
 name|guchar
 operator|)
+name|CLAMP0255
+argument_list|(
 name|c
+argument_list|)
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
 
 begin_function
 specifier|static
@@ -2138,10 +2109,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
 
 begin_function
 specifier|static
@@ -2713,7 +2680,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"O_utput Channel:"
+literal|"O_utput channel:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3368,7 +3335,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Preserve _Luminosity"
+literal|"Preserve _luminosity"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3534,7 +3501,6 @@ operator|&
 name|mix
 argument_list|)
 expr_stmt|;
-comment|/*........................................................... */
 if|if
 condition|(
 name|mix
@@ -3576,10 +3542,6 @@ name|run
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
 
 begin_function
 specifier|static
@@ -3687,10 +3649,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -3797,10 +3755,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -3906,10 +3860,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
 
 begin_function
 specifier|static
@@ -4281,10 +4231,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
-
 begin_function
 specifier|static
 name|mwPreview
@@ -4412,10 +4358,6 @@ name|mwp
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
 
 begin_function
 specifier|static
@@ -4630,10 +4572,6 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -4681,10 +4619,6 @@ name|FALSE
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
 
 begin_function
 specifier|static
@@ -4780,10 +4714,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
 
 begin_function
 specifier|static
@@ -4950,10 +4880,6 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -5094,10 +5020,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
 
 begin_function
 specifier|static
@@ -5797,10 +5719,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -5941,10 +5859,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
 
 begin_function
 specifier|static
@@ -6109,10 +6023,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
 
 begin_function
 specifier|static
@@ -6309,10 +6219,6 @@ name|overwrite
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
 
 begin_function
 specifier|static
@@ -6767,10 +6673,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -6810,10 +6712,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*----------------------------------------------------------------------  *  *--------------------------------------------------------------------*/
-end_comment
 
 begin_function
 specifier|static

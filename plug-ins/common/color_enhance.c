@@ -3,26 +3,10 @@ begin_comment
 comment|/* Color Enhance 0.10 --- image filter plug-in for The Gimp image  * manipulation program  *  * Copyright (C) 1999 Martin Weber  * Copyright (C) 1996 Federico Mena Quintero  *  * You can contact me at martweb@gmx.net  * You can contact the original The Gimp authors at gimp@xcf.berkeley.edu  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
-begin_comment
-comment|/* This simple plug-in does an automatic Saturation stretch.  For each    channel in the image, it finds the minimum and maximum values... it    uses those values to stretch the individual histograms to the full    range.  For some images it may do just what you want; for others    it may not work that well. This version operates in HSV space    and preserves hue. Most code is taken from autostretch_hsv */
-end_comment
-
 begin_include
 include|#
 directive|include
 file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
 end_include
 
 begin_include
@@ -889,9 +873,12 @@ operator|!
 name|cmap
 condition|)
 block|{
-name|printf
+name|g_message
+argument_list|(
+name|_
 argument_list|(
 literal|"Color_Enhance: cmap was NULL!  Quitting...\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -998,7 +985,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c0845640108
+DECL|struct|__anon29e12dc40108
 typedef|typedef
 struct|struct
 block|{

@@ -3,26 +3,10 @@ begin_comment
 comment|/* Contrast Autostretch 1.06 --- image filter plug-in for The Gimp image  * manipulation program  *  * Copyright (C) 1996 Federico Mena Quintero  *  * You can contact me at quartic@polloux.fciencias.unam.mx  * You can contact the original The Gimp authors at gimp@xcf.berkeley.edu  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
-begin_comment
-comment|/* This simple plug-in does an automatic contrast stretch.  For each    channel in the image, it finds the minimum and maximum values... it    uses those values to stretch the individual histograms to the full    contrast range.  For some images it may do just what you want; for    others it may not work that well */
-end_comment
-
 begin_include
 include|#
 directive|include
 file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
 end_include
 
 begin_include
@@ -507,14 +491,16 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|cmap
-operator|==
-name|NULL
 condition|)
 block|{
-name|printf
+name|g_message
+argument_list|(
+name|_
 argument_list|(
 literal|"c_astretch: cmap was NULL!  Quitting...\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -822,7 +808,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon274a323e0108
+DECL|struct|__anon27ca5e450108
 typedef|typedef
 struct|struct
 block|{

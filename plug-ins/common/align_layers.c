@@ -12,24 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -85,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4676ba0103
+DECL|enum|__anon2c1d96ff0103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -107,7 +89,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4676ba0203
+DECL|enum|__anon2c1d96ff0203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -123,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4676ba0303
+DECL|enum|__anon2c1d96ff0303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -145,7 +127,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4676ba0403
+DECL|enum|__anon2c1d96ff0403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -268,7 +250,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4676ba0508
+DECL|struct|__anon2c1d96ff0508
 block|{
 DECL|member|h_style
 name|gint
@@ -1508,10 +1490,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* dialog stuff */
-end_comment
-
 begin_function
 specifier|static
 name|int
@@ -1682,7 +1660,7 @@ name|RIGHT2LEFT
 argument_list|,
 name|_
 argument_list|(
-literal|"Snap to Grid"
+literal|"Snap to grid"
 argument_list|)
 argument_list|,
 name|SNAP2HGRID
@@ -1732,7 +1710,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Horizontal Style:"
+literal|"_Horizontal style:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -1752,7 +1730,7 @@ name|gimp_int_combo_box_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Left Edge"
+literal|"Left edge"
 argument_list|)
 argument_list|,
 name|H_BASE_LEFT
@@ -1766,7 +1744,7 @@ name|H_BASE_CENTER
 argument_list|,
 name|_
 argument_list|(
-literal|"Right Edge"
+literal|"Right edge"
 argument_list|)
 argument_list|,
 name|H_BASE_RIGHT
@@ -1816,7 +1794,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Ho_rizontal Base:"
+literal|"Ho_rizontal base:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -1864,7 +1842,7 @@ name|BOTTOM2TOP
 argument_list|,
 name|_
 argument_list|(
-literal|"Snap to Grid"
+literal|"Snap to grid"
 argument_list|)
 argument_list|,
 name|SNAP2VGRID
@@ -1914,7 +1892,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"_Vertical Style:"
+literal|"_Vertical style:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -1934,7 +1912,7 @@ name|gimp_int_combo_box_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Top Edge"
+literal|"Top edge"
 argument_list|)
 argument_list|,
 name|V_BASE_TOP
@@ -1948,7 +1926,7 @@ name|V_BASE_CENTER
 argument_list|,
 name|_
 argument_list|(
-literal|"Bottom Edge"
+literal|"Bottom edge"
 argument_list|)
 argument_list|,
 name|V_BASE_BOTTOM
@@ -1998,7 +1976,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Ver_tical Base:"
+literal|"Ver_tical base:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -2027,7 +2005,7 @@ literal|4
 argument_list|,
 name|_
 argument_list|(
-literal|"_Grid Size:"
+literal|"_Grid size:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2082,7 +2060,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Ignore the Bottom Layer even if Visible"
+literal|"_Ignore the bottom layer even if visible"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2144,7 +2122,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Use the (Invisible) Bottom Layer as the Base"
+literal|"_Use the (invisible) bottom layer as the base"
 argument_list|)
 argument_list|)
 expr_stmt|;

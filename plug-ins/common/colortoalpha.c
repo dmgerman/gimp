@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2787440108
+DECL|struct|__anon28b2c32a0108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -1321,6 +1321,27 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+operator|->
+name|vbox
+argument_list|)
+argument_list|,
+name|hbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|hbox
@@ -1422,7 +1443,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"to Alpha"
+literal|"to alpha"
 argument_list|)
 argument_list|)
 expr_stmt|;

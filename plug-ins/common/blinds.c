@@ -3,26 +3,10 @@ begin_comment
 comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is a plug-in for the GIMP.  *  * Blinds plug-in. Distort an image as though it was stuck to  * window blinds and the blinds where opened/closed.  *  * Copyright (C) 1997 Andy Thomas  alt@picnic.demon.co.uk  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * A fair proprotion of this code was taken from the Whirl plug-in  * which was copyrighted by Federico Mena Quintero (as below).  *  * Whirl plug-in --- distort an image into a whirlpool  * Copyright (C) 1997 Federico Mena Quintero  *  */
 end_comment
 
-begin_comment
-comment|/* Change log:-  *  * Version 0.5 10 June 1997.  * Changes required to work with 0.99.10.  *  * Version 0.4 20 May 1997.  * Fixed problem with using this plugin in GIMP_RUN_NONINTERACTIVE mode  *  * Version 0.3 8 May 1997.  * Make preview work in Quartics words "The Right Way".  *  * Allow the background to be transparent.  *  * Version 0.2 1 May 1997 (not released).  * Added patches supplied by Tim Mooney mooney@dogbert.cc.ndsu.NoDak.edu  * to allow the plug-in to build with Digitals compiler.  */
-end_comment
-
 begin_include
 include|#
 directive|include
 file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
 end_include
 
 begin_include
@@ -141,7 +125,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac1e07d0108
+DECL|struct|__anon2c5f749f0108
 block|{
 DECL|member|img_bpp
 name|gint
@@ -1372,7 +1356,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"_Num Segments:"
+literal|"_Number of segments:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
