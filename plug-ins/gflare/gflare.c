@@ -68,6 +68,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<sys/types.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<sys/stat.h>
 end_include
 
@@ -75,12 +81,6 @@ begin_include
 include|#
 directive|include
 file|<unistd.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/types.h>
 end_include
 
 begin_include
@@ -469,7 +469,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon286d73a50103
+DECL|enum|__anon2b3df80a0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -496,7 +496,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon286d73a50203
+DECL|enum|__anon2b3df80a0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -515,7 +515,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon286d73a50308
+DECL|struct|__anon2b3df80a0308
 typedef|typedef
 struct|struct
 block|{
@@ -652,7 +652,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon286d73a50408
+DECL|struct|__anon2b3df80a0408
 typedef|typedef
 struct|struct
 block|{
@@ -672,7 +672,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon286d73a50503
+DECL|enum|__anon2b3df80a0503
 typedef|typedef
 enum|enum
 block|{
@@ -700,7 +700,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon286d73a50608
+DECL|struct|__anon2b3df80a0608
 typedef|typedef
 struct|struct
 block|{
@@ -723,7 +723,7 @@ name|Preview
 modifier|*
 name|preview
 decl_stmt|;
-DECL|struct|__anon286d73a50708
+DECL|struct|__anon2b3df80a0708
 struct|struct
 block|{
 DECL|member|x0
@@ -809,7 +809,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon286d73a50808
+DECL|struct|__anon2b3df80a0808
 typedef|typedef
 struct|struct
 block|{
@@ -881,7 +881,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286d73a50908
+DECL|struct|__anon2b3df80a0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -908,7 +908,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286d73a50a08
+DECL|struct|__anon2b3df80a0a08
 block|{
 DECL|member|init
 name|gint
@@ -1078,7 +1078,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286d73a50b08
+DECL|struct|__anon2b3df80a0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1105,7 +1105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286d73a50c08
+DECL|struct|__anon2b3df80a0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1146,7 +1146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286d73a50d08
+DECL|struct|__anon2b3df80a0d08
 block|{
 DECL|member|tile
 name|GTile
@@ -1376,7 +1376,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286d73a50e08
+DECL|struct|__anon2b3df80a0e08
 block|{
 DECL|member|tag
 name|gint
@@ -1451,7 +1451,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon286d73a50f03
+DECL|enum|__anon2b3df80a0f03
 typedef|typedef
 enum|enum
 block|{
@@ -1485,7 +1485,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon286d73a51008
+DECL|struct|__anon2b3df80a1008
 typedef|typedef
 struct|struct
 block|{
@@ -1529,7 +1529,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon286d73a51108
+DECL|struct|__anon2b3df80a1108
 typedef|typedef
 struct|struct
 block|{
@@ -1587,7 +1587,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon286d73a51208
+DECL|struct|__anon2b3df80a1208
 typedef|typedef
 struct|struct
 block|{
@@ -9665,7 +9665,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon286d73a51308
+DECL|struct|__anon2b3df80a1308
 specifier|static
 struct|struct
 block|{
@@ -17081,7 +17081,7 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-DECL|struct|__anon286d73a51408
+DECL|struct|__anon2b3df80a1408
 specifier|static
 struct|struct
 block|{

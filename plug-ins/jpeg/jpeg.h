@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<sys/types.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<sys/stat.h>
 end_include
 
@@ -270,7 +276,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b0a2990108
+DECL|struct|__anon2959fd4e0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -317,7 +323,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b0a2990208
+DECL|struct|__anon2959fd4e0208
 block|{
 DECL|member|run
 name|gint
@@ -332,7 +338,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b0a2990308
+DECL|struct|__anon2959fd4e0308
 block|{
 DECL|member|cinfo
 name|struct
