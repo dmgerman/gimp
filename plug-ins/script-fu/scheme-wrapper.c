@@ -477,7 +477,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*********  	  Below can be found the functions responsible for registering the gimp functions 	  and types against the scheme interpreter.  ********/
+comment|/*  * Below can be found the functions responsible for registering the  * gimp functions and types against the scheme interpreter.  */
 end_comment
 
 begin_function
