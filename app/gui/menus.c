@@ -6555,6 +6555,10 @@ block|,
 name|dialogs_remove_tab_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_REMOVE
 block|}
 block|,
 name|NULL
