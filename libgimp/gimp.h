@@ -28,6 +28,12 @@ directive|include
 file|<libgimp/gimpenums.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpfeatures.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -41,6 +47,21 @@ block|{
 endif|#
 directive|endif
 comment|/* __cplusplus */
+specifier|extern
+specifier|const
+name|guint
+name|gimp_major_version
+decl_stmt|;
+specifier|extern
+specifier|const
+name|guint
+name|gimp_minor_version
+decl_stmt|;
+specifier|extern
+specifier|const
+name|guint
+name|gimp_micro_version
+decl_stmt|;
 DECL|typedef|GPlugInInfo
 typedef|typedef
 name|struct
