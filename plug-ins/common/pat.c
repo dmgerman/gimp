@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * pat plug-in version 1.01  * Loads/saves version 1 GIMP .pat files, by Tim Newsome<drz@frody.bloke.com>  * Some bits stolen from the .99.7 source tree.  */
+comment|/*  * pat plug-in version 1.01  * Loads/saves version 1 GIMP .pat files, by Tim Newsome<drz@frody.bloke.com>  * Some bits stolen from the .99.7 source tree.  * Updated to fix various outstanding problems, brief help -- Nick Lamb  * njl195@zepler.org.uk, April 2000  */
 end_comment
 
 begin_include
@@ -490,9 +490,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_pat_load"
 argument_list|,
-literal|"loads files of the .pat file format"
+literal|"Loads Gimp's .PAT pattern files"
 argument_list|,
-literal|"FIXME: write help"
+literal|"The images in the pattern dialog can be loaded directly with this plug-in"
 argument_list|,
 literal|"Tim Newsome"
 argument_list|,
@@ -519,9 +519,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_pat_save"
 argument_list|,
-literal|"saves files in the .pat file format"
+literal|"Saves Gimp pattern file (.PAT)"
 argument_list|,
-literal|"Yeah!"
+literal|"New Gimp patterns can be created by saving them in the appropriate place with this plug-in."
 argument_list|,
 literal|"Tim Newsome"
 argument_list|,
@@ -531,7 +531,7 @@ literal|"1997"
 argument_list|,
 literal|"<Save>/PAT"
 argument_list|,
-literal|"RGB*, GRAY*"
+literal|"RGB, GRAY"
 argument_list|,
 name|PROC_PLUG_IN
 argument_list|,
@@ -801,8 +801,6 @@ operator|(
 name|CAN_HANDLE_RGB
 operator||
 name|CAN_HANDLE_GRAY
-operator||
-name|CAN_HANDLE_ALPHA
 operator|)
 argument_list|)
 expr_stmt|;
