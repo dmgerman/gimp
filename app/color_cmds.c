@@ -3419,7 +3419,6 @@ condition|)
 block|{
 if|if
 condition|(
-operator|!
 name|gimp_drawable_indexed
 argument_list|(
 name|drawable
@@ -4621,7 +4620,6 @@ condition|)
 block|{
 if|if
 condition|(
-operator|!
 name|gimp_drawable_indexed
 argument_list|(
 name|drawable
@@ -5081,7 +5079,6 @@ condition|)
 block|{
 if|if
 condition|(
-operator|!
 name|gimp_drawable_indexed
 argument_list|(
 name|drawable
