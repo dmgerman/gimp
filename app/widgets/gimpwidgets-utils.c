@@ -1203,10 +1203,24 @@ argument_list|,
 name|screen
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: remove this hack as soon as we depend on GTK+ 2.4.4
+endif|#
+directive|endif
 if|if
 condition|(
-name|TRUE
-comment|/* gtk_check_version (2, 4, 1) */
+name|gtk_check_version
+argument_list|(
+literal|2
+argument_list|,
+literal|4
+argument_list|,
+literal|4
+argument_list|)
 condition|)
 name|gtk_menu_set_monitor
 argument_list|(
@@ -1509,10 +1523,24 @@ argument_list|,
 name|screen
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: remove this hack as soon as we depend on GTK+ 2.4.4
+endif|#
+directive|endif
 if|if
 condition|(
-name|TRUE
-comment|/* gtk_check_version (2, 4, 1) */
+name|gtk_check_version
+argument_list|(
+literal|2
+argument_list|,
+literal|4
+argument_list|,
+literal|4
+argument_list|)
 condition|)
 name|gtk_menu_set_monitor
 argument_list|(
@@ -2489,7 +2517,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon28a5017e0108
+DECL|struct|__anon2c2422440108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
