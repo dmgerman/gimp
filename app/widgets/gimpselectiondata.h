@@ -132,6 +132,40 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/*  pixbuf  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_selection_data_set_pixbuf
+parameter_list|(
+name|GtkSelectionData
+modifier|*
+name|selection
+parameter_list|,
+name|GdkAtom
+name|atom
+parameter_list|,
+name|GdkPixbuf
+modifier|*
+name|pixbuf
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GdkPixbuf
+modifier|*
+name|gimp_selection_data_get_pixbuf
+parameter_list|(
+name|GtkSelectionData
+modifier|*
+name|selection
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  image  */
 end_comment
 
