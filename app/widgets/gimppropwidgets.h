@@ -17,6 +17,30 @@ name|__GIMP_APP_PROP_WIDGETS_H__
 end_define
 
 begin_comment
+comment|/*  GParamEnum  */
+end_comment
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_prop_paint_mode_menu_new
+parameter_list|(
+name|GObject
+modifier|*
+name|config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|property_name
+parameter_list|,
+name|gboolean
+name|with_behind_mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  GimpParamColor  */
 end_comment
 
