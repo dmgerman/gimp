@@ -3284,17 +3284,6 @@ condition|(
 name|success
 condition|)
 block|{
-name|args
-index|[
-name|i
-index|]
-operator|.
-name|type
-operator|=
-name|GIMP_PDB_STRINGARRAY
-expr_stmt|;
-comment|/*  Set the array  */
-block|{
 name|gint
 name|j
 decl_stmt|;
@@ -3309,6 +3298,15 @@ decl_stmt|;
 name|LISP
 name|list
 decl_stmt|;
+name|args
+index|[
+name|i
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRINGARRAY
+expr_stmt|;
 name|list
 operator|=
 name|car
@@ -3392,7 +3390,7 @@ name|d_stringarray
 operator|=
 name|g_new
 argument_list|(
-name|char
+name|gchar
 operator|*
 argument_list|,
 name|num_strings
@@ -3432,7 +3430,6 @@ argument_list|(
 name|list
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 break|break;
@@ -4514,10 +4511,6 @@ name|GIMP_PDB_STRING
 case|:
 name|string
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|values
 index|[
 name|i
@@ -4528,6 +4521,15 @@ operator|.
 name|data
 operator|.
 name|d_string
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|string
+condition|)
+name|string
+operator|=
+literal|""
 expr_stmt|;
 name|string_len
 operator|=
@@ -4824,7 +4826,7 @@ break|break;
 case|case
 name|GIMP_PDB_STRINGARRAY
 case|:
-comment|/*  string arrays are always implemented such that the previous 	       *  return value contains the number of strings in the array 	       */
+comment|/*  string arrays are always implemented such that the previous                *  return value contains the number of strings in the array                */
 block|{
 name|gint
 name|j
@@ -4881,6 +4883,14 @@ name|j
 operator|++
 control|)
 block|{
+if|if
+condition|(
+name|array
+index|[
+name|j
+index|]
+condition|)
+block|{
 name|string_len
 operator|=
 name|strlen
@@ -4908,6 +4918,24 @@ argument_list|,
 name|string_array
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|string_array
+operator|=
+name|cons
+argument_list|(
+name|strcons
+argument_list|(
+literal|0
+argument_list|,
+literal|""
+argument_list|)
+argument_list|,
+name|string_array
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 name|return_val
 operator|=
