@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290bafd50108
+DECL|struct|__anon2914b32c0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290bafd50208
+DECL|struct|__anon2914b32c0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -2097,6 +2097,8 @@ argument_list|,
 name|distR
 operator|.
 name|w
+operator|-
+literal|0.7
 argument_list|)
 expr_stmt|;
 name|iy
@@ -2113,6 +2115,8 @@ argument_list|,
 name|distR
 operator|.
 name|h
+operator|-
+literal|0.7
 argument_list|)
 expr_stmt|;
 name|tile
@@ -2139,7 +2143,7 @@ operator|-
 operator|*
 operator|(
 operator|(
-name|float
+name|gfloat
 operator|*
 operator|)
 name|tile_data_pointer
@@ -2208,6 +2212,8 @@ argument_list|,
 name|distR
 operator|.
 name|w
+operator|-
+literal|0.7
 argument_list|)
 expr_stmt|;
 name|iy
@@ -2224,6 +2230,8 @@ argument_list|,
 name|distR
 operator|.
 name|h
+operator|-
+literal|0.7
 argument_list|)
 expr_stmt|;
 name|tile
@@ -2330,6 +2338,8 @@ argument_list|,
 name|distR
 operator|.
 name|w
+operator|-
+literal|0.7
 argument_list|)
 expr_stmt|;
 name|iy
@@ -2346,6 +2356,8 @@ argument_list|,
 name|distR
 operator|.
 name|h
+operator|-
+literal|0.7
 argument_list|)
 expr_stmt|;
 name|tile
@@ -2370,7 +2382,7 @@ operator|=
 operator|*
 operator|(
 operator|(
-name|float
+name|gfloat
 operator|*
 operator|)
 name|tile_data_pointer
