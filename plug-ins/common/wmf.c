@@ -2945,7 +2945,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297dc01b0108
+DECL|struct|__anon2c3c19e40108
 block|{
 DECL|member|scale
 name|double
@@ -2973,7 +2973,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297dc01b0208
+DECL|struct|__anon2c3c19e40208
 block|{
 DECL|member|run
 name|gint
@@ -3000,7 +3000,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297dc01b0308
+DECL|struct|__anon2c3c19e40308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -3021,7 +3021,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297dc01b0403
+DECL|enum|__anon2c3c19e40403
 block|{
 DECL|enumerator|OBJ_BITMAP
 name|OBJ_BITMAP
@@ -3052,7 +3052,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297dc01b0508
+DECL|struct|__anon2c3c19e40508
 block|{
 DECL|member|dummy
 name|int
@@ -3067,7 +3067,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297dc01b0608
+DECL|struct|__anon2c3c19e40608
 block|{
 DECL|member|color
 name|GdkColor
@@ -3094,7 +3094,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297dc01b0708
+DECL|struct|__anon2c3c19e40708
 block|{
 DECL|member|dummy
 name|int
@@ -3109,7 +3109,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297dc01b0808
+DECL|struct|__anon2c3c19e40808
 block|{
 DECL|member|color
 name|GdkColor
@@ -3136,7 +3136,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297dc01b0908
+DECL|struct|__anon2c3c19e40908
 block|{
 DECL|member|font
 name|GdkFont
@@ -3152,7 +3152,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297dc01b0a08
+DECL|struct|__anon2c3c19e40a08
 block|{
 DECL|member|dummy
 name|int
@@ -3167,14 +3167,14 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297dc01b0b08
+DECL|struct|__anon2c3c19e40b08
 block|{
 DECL|member|type
 name|ObjectType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon297dc01b0c0a
+DECL|union|__anon2c3c19e40c0a
 block|{
 DECL|member|bitmap
 name|BitmapObject
@@ -3213,7 +3213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297dc01b0d08
+DECL|struct|__anon2c3c19e40d08
 block|{
 DECL|member|gc
 name|GdkGC
@@ -3266,7 +3266,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297dc01b0e08
+DECL|struct|__anon2c3c19e40e08
 block|{
 DECL|member|pixmap
 name|GdkPixmap
@@ -3317,7 +3317,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297dc01b0f08
+DECL|struct|__anon2c3c19e40f08
 block|{
 DECL|member|valid
 name|gboolean
@@ -13072,14 +13072,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"WMF: Unhandled operation %#x. Check the web page\n"
-literal|"http://www.iki.fi/tml/gimp/wmf/ for a possible new\n"
-literal|"version of the wmf plug-in. (This is version %s).\n"
-literal|"If you already have the latest version, please send\n"
-literal|"the WMF file you tried to load to the wmf plug-in\n"
-literal|"author, Tor Lillqvist<tml@iki.fi>, and he might\n"
-literal|"try to add the missing feature. No promise that\n"
-literal|"he has any interest any longer, of course."
+literal|"WMF: Unhandled operation %#x."
 argument_list|,
 name|GUINT16_FROM_LE
 argument_list|(
@@ -13087,8 +13080,6 @@ name|record
 operator|.
 name|Function
 argument_list|)
-argument_list|,
-name|VERSION
 argument_list|)
 expr_stmt|;
 name|warned_unhandled
