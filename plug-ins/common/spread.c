@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8619710108
+DECL|struct|__anon2bc0d7d80108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -53,6 +53,10 @@ decl_stmt|;
 DECL|member|spread_amount_y
 name|gdouble
 name|spread_amount_y
+decl_stmt|;
+DECL|member|preview
+name|gboolean
+name|preview
 decl_stmt|;
 DECL|typedef|SpreadValues
 block|}
@@ -184,7 +188,10 @@ literal|5
 block|,
 comment|/*  horizontal spread amount  */
 literal|5
+block|,
 comment|/*  vertical spread amount    */
+name|TRUE
+comment|/*  preview                   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -662,7 +669,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8619710208
+DECL|struct|__anon2bc0d7d80208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher
@@ -1394,7 +1401,10 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-name|NULL
+operator|&
+name|spvals
+operator|.
+name|preview
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
