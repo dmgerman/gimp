@@ -5917,6 +5917,15 @@ name|layer
 argument_list|)
 condition|)
 block|{
+comment|/*  invalidate the boundary *before* setting the            *  floating_sel pointer to NULL because the selection's            *  outline is affected by the floating_sel and won't be            *  completely cleared otherwise (bug #160247).            */
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|undo
 operator|->
 name|gimage
