@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-1999 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2000 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -126,6 +126,22 @@ if|if
 condition|(
 name|dialog
 operator|->
+name|apply_cb
+condition|)
+name|dialog
+operator|->
+name|apply_cb
+argument_list|(
+name|dialog
+operator|->
+name|apply_cb_data
+argument_list|)
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|dialog
+operator|->
 name|ok_cb
 condition|)
 name|dialog
@@ -228,6 +244,43 @@ end_function
 
 begin_function
 name|void
+DECL|function|default_dialog_set_apply_cb (DefaultDialog_t * dialog,void (* apply_cb)(gpointer),gpointer apply_cb_data)
+name|default_dialog_set_apply_cb
+parameter_list|(
+name|DefaultDialog_t
+modifier|*
+name|dialog
+parameter_list|,
+name|void
+function_decl|(
+modifier|*
+name|apply_cb
+function_decl|)
+parameter_list|(
+name|gpointer
+parameter_list|)
+parameter_list|,
+name|gpointer
+name|apply_cb_data
+parameter_list|)
+block|{
+name|dialog
+operator|->
+name|apply_cb
+operator|=
+name|apply_cb
+expr_stmt|;
+name|dialog
+operator|->
+name|apply_cb_data
+operator|=
+name|apply_cb_data
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|default_dialog_set_cancel_cb (DefaultDialog_t * dialog,void (* cancel_cb)(gpointer),gpointer cancel_cb_data)
 name|default_dialog_set_cancel_cb
 parameter_list|(
@@ -300,6 +353,12 @@ decl_stmt|;
 name|data
 operator|->
 name|ok_cb
+operator|=
+name|NULL
+expr_stmt|;
+name|data
+operator|->
+name|apply_cb
 operator|=
 name|NULL
 expr_stmt|;
