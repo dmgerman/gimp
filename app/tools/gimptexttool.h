@@ -106,6 +106,11 @@ name|GimpText
 modifier|*
 name|proxy
 decl_stmt|;
+DECL|member|pending
+name|GList
+modifier|*
+name|pending
+decl_stmt|;
 DECL|member|idle_id
 name|guint
 name|idle_id

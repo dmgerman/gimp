@@ -233,14 +233,6 @@ argument_list|,
 literal|"transformation"
 argument_list|)
 expr_stmt|;
-name|gimp_text_layer_flush
-argument_list|(
-name|GIMP_TEXT_LAYER
-argument_list|(
-name|item
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 comment|/*  If there is a layer mask, make sure it gets flipped as well  */
 if|if
@@ -475,14 +467,6 @@ name|text
 argument_list|)
 argument_list|,
 literal|"transformation"
-argument_list|)
-expr_stmt|;
-name|gimp_text_layer_flush
-argument_list|(
-name|GIMP_TEXT_LAYER
-argument_list|(
-name|item
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -115,10 +115,6 @@ modifier|*
 name|text_parasite
 decl_stmt|;
 comment|/*  parasite name that this text was set from,                                  *  and that should be removed when the text                                  *  is changed.                                  */
-DECL|member|idle_render_id
-name|guint
-name|idle_render_id
-decl_stmt|;
 DECL|member|auto_rename
 name|gboolean
 name|auto_rename
@@ -200,17 +196,6 @@ end_function_decl
 begin_function_decl
 name|void
 name|gimp_text_layer_discard
-parameter_list|(
-name|GimpTextLayer
-modifier|*
-name|layer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_text_layer_flush
 parameter_list|(
 name|GimpTextLayer
 modifier|*
