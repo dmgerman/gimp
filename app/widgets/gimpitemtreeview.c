@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f2a2aa0103
+DECL|enum|__anon2b4176db0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -189,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f2a2aa0203
+DECL|enum|__anon2b4176db0203
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -3627,6 +3627,10 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
+name|item_view
+operator|->
+name|context
+argument_list|,
 name|GTK_WIDGET
 argument_list|(
 name|view
@@ -4050,6 +4054,10 @@ name|edit_item_func
 argument_list|(
 name|item
 argument_list|,
+name|view
+operator|->
+name|context
+argument_list|,
 name|GTK_WIDGET
 argument_list|(
 name|view
@@ -4085,6 +4093,10 @@ argument_list|(
 name|view
 operator|->
 name|gimage
+argument_list|,
+name|view
+operator|->
+name|context
 argument_list|,
 name|NULL
 argument_list|,
@@ -4131,6 +4143,10 @@ argument_list|(
 name|view
 operator|->
 name|gimage
+argument_list|,
+name|view
+operator|->
+name|context
 argument_list|,
 name|NULL
 argument_list|,
@@ -4208,6 +4224,10 @@ argument_list|(
 name|view
 operator|->
 name|gimage
+argument_list|,
+name|view
+operator|->
+name|context
 argument_list|,
 name|GIMP_ITEM
 argument_list|(

@@ -744,6 +744,10 @@ name|view
 operator|->
 name|gimage
 argument_list|,
+name|view
+operator|->
+name|context
+argument_list|,
 name|NULL
 argument_list|,
 name|FALSE

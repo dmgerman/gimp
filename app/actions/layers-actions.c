@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"image-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"layers-actions.h"
 end_include
 
@@ -540,7 +546,7 @@ name|NULL
 block|,
 name|G_CALLBACK
 argument_list|(
-name|layers_merge_layers_cmd_callback
+name|image_merge_layers_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_MERGE_LAYERS
@@ -562,7 +568,7 @@ name|NULL
 block|,
 name|G_CALLBACK
 argument_list|(
-name|layers_flatten_image_cmd_callback
+name|image_flatten_image_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_IMAGE_FLATTEN

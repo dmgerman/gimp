@@ -206,24 +206,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|image_layers_merge_query
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|gboolean
-name|merge_visible
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|parent
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|image_configure_grid_cmd_callback
 parameter_list|(
 name|GtkAction

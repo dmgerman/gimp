@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpchannel.h"
 end_include
 
@@ -55,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpchannel-select.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpcontext.h"
 end_include
 
 begin_include
@@ -157,6 +157,62 @@ end_comment
 
 begin_function
 name|void
+DECL|function|channels_edit_attributes_cmd_callback (GtkAction * action,gpointer data)
+name|channels_edit_attributes_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
+name|GimpChannel
+modifier|*
+name|channel
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
+name|return_if_no_channel
+argument_list|(
+name|gimage
+argument_list|,
+name|channel
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|channels_edit_channel_query
+argument_list|(
+name|channel
+argument_list|,
+name|action_data_get_context
+argument_list|(
+name|data
+argument_list|)
+argument_list|,
+name|widget
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|channels_new_cmd_callback (GtkAction * action,gpointer data)
 name|channels_new_cmd_callback
 parameter_list|(
@@ -194,6 +250,11 @@ name|channels_new_channel_query
 argument_list|(
 name|gimage
 argument_list|,
+name|action_data_get_context
+argument_list|(
+name|data
+argument_list|)
+argument_list|,
 name|NULL
 argument_list|,
 name|TRUE
@@ -223,13 +284,13 @@ name|gimage
 decl_stmt|;
 name|GimpChannel
 modifier|*
-name|active_channel
+name|channel
 decl_stmt|;
 name|return_if_no_channel
 argument_list|(
 name|gimage
 argument_list|,
-name|active_channel
+name|channel
 argument_list|,
 name|data
 argument_list|)
@@ -238,7 +299,7 @@ name|gimp_image_raise_channel
 argument_list|(
 name|gimage
 argument_list|,
-name|active_channel
+name|channel
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -268,13 +329,13 @@ name|gimage
 decl_stmt|;
 name|GimpChannel
 modifier|*
-name|active_channel
+name|channel
 decl_stmt|;
 name|return_if_no_channel
 argument_list|(
 name|gimage
 argument_list|,
-name|active_channel
+name|channel
 argument_list|,
 name|data
 argument_list|)
@@ -283,7 +344,7 @@ name|gimp_image_raise_channel_to_top
 argument_list|(
 name|gimage
 argument_list|,
-name|active_channel
+name|channel
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -313,13 +374,13 @@ name|gimage
 decl_stmt|;
 name|GimpChannel
 modifier|*
-name|active_channel
+name|channel
 decl_stmt|;
 name|return_if_no_channel
 argument_list|(
 name|gimage
 argument_list|,
-name|active_channel
+name|channel
 argument_list|,
 name|data
 argument_list|)
@@ -328,7 +389,7 @@ name|gimp_image_lower_channel
 argument_list|(
 name|gimage
 argument_list|,
-name|active_channel
+name|channel
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -358,13 +419,13 @@ name|gimage
 decl_stmt|;
 name|GimpChannel
 modifier|*
-name|active_channel
+name|channel
 decl_stmt|;
 name|return_if_no_channel
 argument_list|(
 name|gimage
 argument_list|,
-name|active_channel
+name|channel
 argument_list|,
 name|data
 argument_list|)
@@ -373,7 +434,7 @@ name|gimp_image_lower_channel_to_bottom
 argument_list|(
 name|gimage
 argument_list|,
-name|active_channel
+name|channel
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -536,13 +597,13 @@ else|else
 block|{
 name|GimpChannel
 modifier|*
-name|active_channel
+name|channel
 decl_stmt|;
 name|return_if_no_channel
 argument_list|(
 name|gimage
 argument_list|,
-name|active_channel
+name|channel
 argument_list|,
 name|data
 argument_list|)
@@ -555,12 +616,12 @@ name|gimp_item_duplicate
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|active_channel
+name|channel
 argument_list|)
 argument_list|,
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
-name|active_channel
+name|channel
 argument_list|)
 argument_list|,
 name|TRUE
@@ -605,13 +666,13 @@ name|gimage
 decl_stmt|;
 name|GimpChannel
 modifier|*
-name|active_channel
+name|channel
 decl_stmt|;
 name|return_if_no_channel
 argument_list|(
 name|gimage
 argument_list|,
-name|active_channel
+name|channel
 argument_list|,
 name|data
 argument_list|)
@@ -620,7 +681,7 @@ name|gimp_image_remove_channel
 argument_list|(
 name|gimage
 argument_list|,
-name|active_channel
+name|channel
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -758,57 +819,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function
-name|void
-DECL|function|channels_edit_attributes_cmd_callback (GtkAction * action,gpointer data)
-name|channels_edit_attributes_cmd_callback
-parameter_list|(
-name|GtkAction
-modifier|*
-name|action
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
-name|GimpChannel
-modifier|*
-name|active_channel
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|widget
-decl_stmt|;
-name|return_if_no_channel
-argument_list|(
-name|gimage
-argument_list|,
-name|active_channel
-argument_list|,
-name|data
-argument_list|)
-expr_stmt|;
-name|return_if_no_widget
-argument_list|(
-name|widget
-argument_list|,
-name|data
-argument_list|)
-expr_stmt|;
-name|channels_edit_channel_query
-argument_list|(
-name|active_channel
-argument_list|,
-name|widget
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
 begin_comment
 comment|/**********************************/
 end_comment
@@ -849,6 +859,11 @@ DECL|member|color_panel
 name|GtkWidget
 modifier|*
 name|color_panel
+decl_stmt|;
+DECL|member|context
+name|GimpContext
+modifier|*
+name|context
 decl_stmt|;
 DECL|member|gimage
 name|GimpImage
@@ -917,10 +932,6 @@ name|GimpChannel
 modifier|*
 name|new_channel
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
 if|if
 condition|(
 name|channel_name
@@ -945,17 +956,6 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|gimage
-operator|=
-name|options
-operator|->
-name|gimage
-operator|)
-condition|)
-block|{
 name|gimp_color_button_get_color
 argument_list|(
 name|GIMP_COLOR_BUTTON
@@ -973,12 +973,18 @@ name|new_channel
 operator|=
 name|gimp_channel_new
 argument_list|(
+name|options
+operator|->
 name|gimage
 argument_list|,
+name|options
+operator|->
 name|gimage
 operator|->
 name|width
 argument_list|,
+name|options
+operator|->
 name|gimage
 operator|->
 name|height
@@ -996,18 +1002,17 @@ argument_list|(
 name|new_channel
 argument_list|)
 argument_list|,
-name|gimp_get_user_context
-argument_list|(
-name|gimage
+name|options
 operator|->
-name|gimp
-argument_list|)
+name|context
 argument_list|,
 name|GIMP_TRANSPARENT_FILL
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_channel
 argument_list|(
+name|options
+operator|->
 name|gimage
 argument_list|,
 name|new_channel
@@ -1018,10 +1023,11 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
+name|options
+operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|gtk_widget_destroy
 argument_list|(
@@ -1035,12 +1041,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_new_channel_query (GimpImage * gimage,GimpChannel * template,gboolean interactive,GtkWidget * parent)
+DECL|function|channels_new_channel_query (GimpImage * gimage,GimpContext * context,GimpChannel * template,gboolean interactive,GtkWidget * parent)
 name|channels_new_channel_query
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpChannel
 modifier|*
@@ -1079,6 +1089,14 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1214,12 +1232,7 @@ argument_list|(
 name|new_channel
 argument_list|)
 argument_list|,
-name|gimp_get_user_context
-argument_list|(
-name|gimage
-operator|->
-name|gimp
-argument_list|)
+name|context
 argument_list|,
 name|GIMP_TRANSPARENT_FILL
 argument_list|)
@@ -1259,6 +1272,12 @@ name|gimage
 expr_stmt|;
 name|options
 operator|->
+name|context
+operator|=
+name|context
+expr_stmt|;
+name|options
+operator|->
 name|color_panel
 operator|=
 name|gimp_color_panel_new
@@ -1287,15 +1306,9 @@ operator|->
 name|color_panel
 argument_list|)
 argument_list|,
-name|gimp_get_user_context
-argument_list|(
-name|gimage
-operator|->
-name|gimp
-argument_list|)
+name|context
 argument_list|)
 expr_stmt|;
-comment|/*  The dialog  */
 name|options
 operator|->
 name|query_box
@@ -1371,7 +1384,6 @@ argument_list|,
 name|options
 argument_list|)
 expr_stmt|;
-comment|/*  The main hbox  */
 name|hbox
 operator|=
 name|gtk_hbox_new
@@ -1408,7 +1420,11 @@ argument_list|,
 name|hbox
 argument_list|)
 expr_stmt|;
-comment|/*  The vbox  */
+name|gtk_widget_show
+argument_list|(
+name|hbox
+argument_list|)
+expr_stmt|;
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -1434,7 +1450,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  The table  */
+name|gtk_widget_show
+argument_list|(
+name|vbox
+argument_list|)
+expr_stmt|;
 name|table
 operator|=
 name|gtk_table_new
@@ -1482,7 +1502,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  The name entry  */
+name|gtk_widget_show
+argument_list|(
+name|table
+argument_list|)
+expr_stmt|;
 name|options
 operator|->
 name|name_entry
@@ -1540,7 +1564,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*  The opacity scale  */
 name|opacity_scale_data
 operator|=
 name|gimp_scale_entry_new
@@ -1607,7 +1630,6 @@ operator|->
 name|color_panel
 argument_list|)
 expr_stmt|;
-comment|/*  The color panel  */
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -1647,21 +1669,6 @@ name|channels_color_changed
 argument_list|)
 argument_list|,
 name|opacity_scale_data
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|table
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|vbox
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbox
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1762,13 +1769,6 @@ name|options
 operator|->
 name|channel
 decl_stmt|;
-if|if
-condition|(
-name|options
-operator|->
-name|gimage
-condition|)
-block|{
 specifier|const
 name|gchar
 modifier|*
@@ -1925,7 +1925,6 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 name|gtk_widget_destroy
 argument_list|(
 name|options
@@ -1938,12 +1937,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_edit_channel_query (GimpChannel * channel,GtkWidget * parent)
+DECL|function|channels_edit_channel_query (GimpChannel * channel,GimpContext * context,GtkWidget * parent)
 name|channels_edit_channel_query
 parameter_list|(
 name|GimpChannel
 modifier|*
 name|channel
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -1970,6 +1973,22 @@ name|GtkObject
 modifier|*
 name|opacity_scale_data
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CHANNEL
+argument_list|(
+name|channel
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|options
 operator|=
 name|g_new0
@@ -2033,14 +2052,7 @@ operator|->
 name|color_panel
 argument_list|)
 argument_list|,
-name|gimp_get_user_context
-argument_list|(
-name|options
-operator|->
-name|gimage
-operator|->
-name|gimp
-argument_list|)
+name|context
 argument_list|)
 expr_stmt|;
 comment|/*  The dialog  */
@@ -2119,7 +2131,6 @@ argument_list|,
 name|options
 argument_list|)
 expr_stmt|;
-comment|/*  The main hbox  */
 name|hbox
 operator|=
 name|gtk_hbox_new
@@ -2156,7 +2167,11 @@ argument_list|,
 name|hbox
 argument_list|)
 expr_stmt|;
-comment|/*  The vbox  */
+name|gtk_widget_show
+argument_list|(
+name|hbox
+argument_list|)
+expr_stmt|;
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -2182,7 +2197,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  The table  */
+name|gtk_widget_show
+argument_list|(
+name|vbox
+argument_list|)
+expr_stmt|;
 name|table
 operator|=
 name|gtk_table_new
@@ -2230,7 +2249,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  The name entry  */
+name|gtk_widget_show
+argument_list|(
+name|table
+argument_list|)
+expr_stmt|;
 name|options
 operator|->
 name|name_entry
@@ -2285,7 +2308,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*  The opacity scale  */
 name|opacity_scale_data
 operator|=
 name|gimp_scale_entry_new
@@ -2352,7 +2374,6 @@ operator|->
 name|color_panel
 argument_list|)
 expr_stmt|;
-comment|/*  The color panel  */
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -2392,21 +2413,6 @@ name|channels_color_changed
 argument_list|)
 argument_list|,
 name|opacity_scale_data
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|table
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|vbox
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbox
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

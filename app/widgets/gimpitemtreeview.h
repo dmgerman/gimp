@@ -165,6 +165,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GtkWidget
 modifier|*
 name|parent
@@ -184,6 +188,10 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpItem
 modifier|*
@@ -211,6 +219,10 @@ parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GtkWidget
 modifier|*

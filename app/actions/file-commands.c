@@ -389,9 +389,9 @@ name|file_open_with_display
 argument_list|(
 name|gimp
 argument_list|,
-name|gimp_get_user_context
+name|action_data_get_context
 argument_list|(
-name|gimp
+name|data
 argument_list|)
 argument_list|,
 name|GIMP_OBJECT
@@ -572,13 +572,9 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|gimp_get_user_context
+name|action_data_get_context
 argument_list|(
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|gimp
+name|data
 argument_list|)
 argument_list|,
 name|GIMP_RUN_WITH_LAST_VALS
