@@ -563,6 +563,8 @@ argument_list|(
 name|str
 index|[
 name|len
+operator|-
+literal|1
 index|]
 argument_list|)
 condition|)
@@ -603,7 +605,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c776720108
+DECL|struct|__anon2ad790e60108
 block|{
 DECL|member|name
 specifier|const
