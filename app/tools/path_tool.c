@@ -3082,7 +3082,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c5ef1430108
+DECL|struct|__anon28f443170108
 typedef|typedef
 struct|struct
 block|{
@@ -3440,7 +3440,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c5ef1430208
+DECL|struct|__anon28f443170208
 typedef|typedef
 struct|struct
 block|{
@@ -3782,7 +3782,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c5ef1430308
+DECL|struct|__anon28f443170308
 typedef|typedef
 struct|struct
 block|{
@@ -4100,7 +4100,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c5ef1430408
+DECL|struct|__anon28f443170408
 typedef|typedef
 struct|struct
 block|{
@@ -4258,7 +4258,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c5ef1430508
+DECL|struct|__anon28f443170508
 typedef|typedef
 struct|struct
 block|{

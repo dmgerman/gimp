@@ -275,46 +275,6 @@ decl_stmt|,
 name|tcy
 decl_stmt|;
 comment|/*                              */
-DECL|member|sx1
-DECL|member|sy1
-name|gint
-name|sx1
-decl_stmt|,
-name|sy1
-decl_stmt|;
-comment|/*  transformed screen coords   */
-DECL|member|sx2
-DECL|member|sy2
-name|gint
-name|sx2
-decl_stmt|,
-name|sy2
-decl_stmt|;
-comment|/*  position of four handles    */
-DECL|member|sx3
-DECL|member|sy3
-name|gint
-name|sx3
-decl_stmt|,
-name|sy3
-decl_stmt|;
-comment|/*                              */
-DECL|member|sx4
-DECL|member|sy4
-name|gint
-name|sx4
-decl_stmt|,
-name|sy4
-decl_stmt|;
-comment|/*                              */
-DECL|member|scx
-DECL|member|scy
-name|gint
-name|scx
-decl_stmt|,
-name|scy
-decl_stmt|;
-comment|/*  and center for rotation     */
 DECL|member|transform
 name|GimpMatrix3
 name|transform

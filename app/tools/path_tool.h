@@ -316,6 +316,7 @@ name|path_set_flags
 parameter_list|(
 name|GimpPathTool
 modifier|*
+name|path_tool
 parameter_list|,
 name|NPath
 modifier|*
@@ -339,6 +340,7 @@ name|gimp_path_tool_on_curve
 parameter_list|(
 name|GimpPathTool
 modifier|*
+name|path_tool
 parameter_list|,
 name|gint
 parameter_list|,
@@ -367,6 +369,7 @@ name|gimp_path_tool_on_anchors
 parameter_list|(
 name|GimpPathTool
 modifier|*
+name|path_tool
 parameter_list|,
 name|gint
 parameter_list|,
@@ -395,6 +398,7 @@ name|gimp_path_tool_on_handles
 parameter_list|(
 name|GimpPathTool
 modifier|*
+name|path_tool
 parameter_list|,
 name|gint
 parameter_list|,
@@ -473,6 +477,7 @@ name|path_stroke
 parameter_list|(
 name|GimpPathTool
 modifier|*
+name|path_tool
 parameter_list|,
 name|NPath
 modifier|*
@@ -486,6 +491,7 @@ name|path_to_selection
 parameter_list|(
 name|GimpPathTool
 modifier|*
+name|path_tool
 parameter_list|,
 name|NPath
 modifier|*

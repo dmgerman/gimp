@@ -142,18 +142,18 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
-DECL|macro|TARGET_HEIGHT
-define|#
-directive|define
-name|TARGET_HEIGHT
-value|15
-end_define
-
-begin_define
 DECL|macro|TARGET_WIDTH
 define|#
 directive|define
 name|TARGET_WIDTH
+value|15
+end_define
+
+begin_define
+DECL|macro|TARGET_HEIGHT
+define|#
+directive|define
+name|TARGET_HEIGHT
 value|15
 end_define
 
@@ -184,7 +184,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c77e0ec0103
+DECL|enum|__anon2be7005b0103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -618,7 +618,7 @@ end_decl_stmt
 
 begin_comment
 DECL|variable|trans_tx
-comment|/*                         */
+comment|/*  transformed target     */
 end_comment
 
 begin_decl_stmt
