@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af9a5f00103
+DECL|enum|__anon276128230103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1394,47 +1394,6 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|const
-name|gchar
-modifier|*
-DECL|function|gimp_tool_get_PDB_string (GimpTool * tool)
-name|gimp_tool_get_PDB_string
-parameter_list|(
-name|GimpTool
-modifier|*
-name|tool
-parameter_list|)
-block|{
-name|GimpToolClass
-modifier|*
-name|tool_class
-decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_TOOL
-argument_list|(
-name|tool
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|tool_class
-operator|=
-name|GIMP_TOOL_GET_CLASS
-argument_list|(
-name|tool
-argument_list|)
-expr_stmt|;
-return|return
-name|tool_class
-operator|->
-name|pdb_string
-return|;
 block|}
 end_function
 

@@ -200,13 +200,6 @@ DECL|member|parent_class
 name|GimpObjectClass
 name|parent_class
 decl_stmt|;
-comment|/* stuff to be filled in by child classes */
-comment|/* FIXME: most of this stuff must go away */
-DECL|member|pdb_string
-name|gchar
-modifier|*
-name|pdb_string
-decl_stmt|;
 DECL|member|initialize
 name|void
 function_decl|(
@@ -557,19 +550,6 @@ parameter_list|,
 name|GDisplay
 modifier|*
 name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|const
-name|gchar
-modifier|*
-name|gimp_tool_get_PDB_string
-parameter_list|(
-name|GimpTool
-modifier|*
-name|tool
 parameter_list|)
 function_decl|;
 end_function_decl

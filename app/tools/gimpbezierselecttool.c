@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimptoolinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -268,7 +274,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b18850d0108
+DECL|struct|__anon2c2b0b430108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -304,7 +310,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b18850d0208
+DECL|struct|__anon2c2b0b430208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -359,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b18850d0308
+DECL|struct|__anon2c2b0b430308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -525,7 +531,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b18850d0403
+DECL|enum|__anon2c2b0b430403
 block|{
 DECL|enumerator|BEZIER_SELECT
 name|BEZIER_SELECT
@@ -15639,6 +15645,11 @@ name|BezierRenderPnts
 modifier|*
 name|rpnts
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|pdb_string
+decl_stmt|;
 name|rpnts
 operator|=
 name|g_new0
@@ -15666,6 +15677,22 @@ name|open_path
 argument_list|,
 name|rpnts
 argument_list|)
+expr_stmt|;
+name|pdb_string
+operator|=
+name|gimp_context_get_tool
+argument_list|(
+name|gimp_get_current_context
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
+argument_list|)
+operator|->
+name|pdb_string
 expr_stmt|;
 do|do
 block|{
@@ -15766,14 +15793,7 @@ name|gimage
 operator|->
 name|gimp
 argument_list|,
-name|tool_manager_active_get_PDB_string
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|gimp
-argument_list|)
+name|pdb_string
 argument_list|,
 operator|&
 name|nreturn_vals
