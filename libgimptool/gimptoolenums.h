@@ -82,7 +82,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29d5eb0c0103
+DECL|enum|__anon2b83e2630103
 block|{
 DECL|enumerator|GIMP_CROP
 name|GIMP_CROP
@@ -106,7 +106,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon29d5eb0c0203
+DECL|enum|__anon2b83e2630203
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -151,7 +151,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon29d5eb0c0303
+DECL|enum|__anon2b83e2630303
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -173,7 +173,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon29d5eb0c0403
+DECL|enum|__anon2b83e2630403
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -198,7 +198,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon29d5eb0c0503
+DECL|enum|__anon2b83e2630503
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
@@ -223,7 +223,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon29d5eb0c0603
+DECL|enum|__anon2b83e2630603
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -245,34 +245,6 @@ name|TRANSFORM_HANDLE_CENTER
 DECL|typedef|TransformAction
 block|}
 name|TransformAction
-typedef|;
-end_typedef
-
-begin_comment
-comment|/* the different states that the transformation function can be called with */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< pdb-skip>*/
-comment|/*< skip>*/
-DECL|enum|__anon29d5eb0c0703
-block|{
-DECL|enumerator|TRANSFORM_INIT
-name|TRANSFORM_INIT
-block|,
-DECL|enumerator|TRANSFORM_MOTION
-name|TRANSFORM_MOTION
-block|,
-DECL|enumerator|TRANSFORM_RECALC
-name|TRANSFORM_RECALC
-block|,
-DECL|enumerator|TRANSFORM_FINISH
-name|TRANSFORM_FINISH
-DECL|typedef|TransformState
-block|}
-name|TransformState
 typedef|;
 end_typedef
 

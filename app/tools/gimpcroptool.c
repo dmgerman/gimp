@@ -165,7 +165,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon279d61170103
+DECL|enum|__anon2c64fb170103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -580,7 +580,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|crop_close_callback
+name|crop_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1095,7 +1095,7 @@ break|break;
 case|case
 name|HALT
 case|:
-name|crop_close_callback
+name|crop_cancel_callback
 argument_list|(
 name|NULL
 argument_list|,
@@ -1685,7 +1685,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  Finish the tool  */
-name|crop_close_callback
+name|crop_cancel_callback
 argument_list|(
 name|NULL
 argument_list|,
@@ -4358,7 +4358,6 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-comment|/*  create the info dialog  */
 name|crop
 operator|->
 name|crop_info
@@ -4398,7 +4397,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  create the action area  */
 name|gimp_dialog_create_action_area
 argument_list|(
 name|GIMP_DIALOG
@@ -4410,9 +4408,9 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
-name|GTK_STOCK_CLOSE
+name|GTK_STOCK_CANCEL
 argument_list|,
-name|crop_close_callback
+name|crop_cancel_callback
 argument_list|,
 name|crop
 argument_list|,
@@ -4422,7 +4420,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|GIMP_STOCK_RESIZE
 argument_list|,
@@ -5069,7 +5067,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|crop_close_callback
+name|crop_cancel_callback
 argument_list|(
 name|NULL
 argument_list|,
@@ -5152,7 +5150,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|crop_close_callback
+name|crop_cancel_callback
 argument_list|(
 name|NULL
 argument_list|,
@@ -5165,8 +5163,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|crop_close_callback (GtkWidget * widget,GimpCropTool * crop)
-name|crop_close_callback
+DECL|function|crop_cancel_callback (GtkWidget * widget,GimpCropTool * crop)
+name|crop_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*

@@ -1867,7 +1867,6 @@ argument_list|,
 literal|"dialogs/info_window.html"
 argument_list|)
 expr_stmt|;
-comment|/*  create the action area  */
 name|gimp_dialog_create_action_area
 argument_list|(
 name|GIMP_DIALOG
@@ -1889,7 +1888,7 @@ name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|NULL
 argument_list|)
