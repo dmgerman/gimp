@@ -1571,6 +1571,15 @@ expr_stmt|;
 block|}
 break|break;
 block|}
+if|if
+condition|(
+name|run_mode
+operator|!=
+name|RUN_NONINTERACTIVE
+condition|)
+name|gimp_displays_flush
+argument_list|()
+expr_stmt|;
 name|values
 index|[
 literal|0

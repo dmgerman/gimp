@@ -2179,7 +2179,7 @@ name|image
 operator|=
 name|gdk_image_new
 argument_list|(
-name|GDK_IMAGE_SHARED
+name|GDK_IMAGE_NORMAL
 argument_list|,
 name|visual
 argument_list|,

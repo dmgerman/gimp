@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*    *  ScreenShot plug-in v0.8   *  Sven Neumann, neumanns@uni-duesseldorf.de    *  1998/06/04  *  *  Any suggestions, bug-reports or patches are very welcome.  *   *  This plug-in uses the X-utility xwd to grab an image from the screen  *  and the xwd-plug-in created by Peter Kirchgessner (pkirchg@aol.com)  *  to load this image into the gimp.  *  Hence its nothing but a simple frontend to those utilities.  */
+comment|/*    *  ScreenShot plug-in v0.9   *  Sven Neumann, neumanns@uni-duesseldorf.de    *  1998/06/06  *  *  Any suggestions, bug-reports or patches are very welcome.  *   *  This plug-in uses the X-utility xwd to grab an image from the screen  *  and the xwd-plug-in created by Peter Kirchgessner (pkirchg@aol.com)  *  to load this image into the gimp.  *  Hence its nothing but a simple frontend to those utilities.  */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Revision history  *  (98/02/18)  v0.1   first development release   *  (98/02/19)  v0.2   small bugfix   *  (98/03/09)  v0.3   another one  *  (98/03/13)  v0.4   cosmetic changes to the dialog  *  (98/04/02)  v0.5   it works non-interactively now and registers  *                     itself correctly as extension  *  (98/04/18)  v0.6   cosmetic change to the dialog  *  (98/05/28)  v0.7   use g_message for error output  *  (98/06/04)  v0.8   added delay-time for root window shot  */
+comment|/* Revision history  *  (98/02/18)  v0.1   first development release   *  (98/02/19)  v0.2   small bugfix   *  (98/03/09)  v0.3   another one  *  (98/03/13)  v0.4   cosmetic changes to the dialog  *  (98/04/02)  v0.5   it works non-interactively now and registers  *                     itself correctly as extension  *  (98/04/18)  v0.6   cosmetic change to the dialog  *  (98/05/28)  v0.7   use g_message for error output  *  (98/06/04)  v0.8   added delay-time for root window shot  *  (98/06/06)  v0.9   fixed a stupid bug in the dialog  */
 end_comment
 
 begin_include
@@ -72,7 +72,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"v0.8 (98/06/04)"
+value|"v0.9 (98/06/06)"
 end_define
 
 begin_define
@@ -167,7 +167,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon2b61a6300108
+DECL|struct|__anon2b5b7d440108
 typedef|typedef
 struct|struct
 block|{
@@ -195,7 +195,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b61a6300208
+DECL|struct|__anon2b5b7d440208
 typedef|typedef
 struct|struct
 block|{
@@ -2386,7 +2386,14 @@ name|toggle_val
 argument_list|)
 expr_stmt|;
 block|}
-else|else
+if|if
+condition|(
+name|widget
+operator|==
+name|shootint
+operator|.
+name|root_button
+condition|)
 block|{
 name|gtk_widget_set_sensitive
 argument_list|(

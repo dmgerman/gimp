@@ -269,16 +269,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|save_return_vals
-name|GParamDef
-name|save_return_vals
-index|[]
-init|=
-block|{ }
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|nsave_args
 name|gint
 name|nsave_args
@@ -291,26 +281,6 @@ operator|/
 sizeof|sizeof
 argument_list|(
 name|save_args
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|nsave_return_vals
-name|gint
-name|nsave_return_vals
-init|=
-sizeof|sizeof
-argument_list|(
-name|save_return_vals
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|save_return_vals
 index|[
 literal|0
 index|]
@@ -392,11 +362,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nsave_args
 argument_list|,
-name|nsave_return_vals
+literal|0
 argument_list|,
 name|save_args
 argument_list|,
-name|save_return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
