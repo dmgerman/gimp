@@ -321,7 +321,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2894594f0108
+DECL|struct|__anon2a1c4fca0108
 block|{
 DECL|member|raw
 name|gint
@@ -337,7 +337,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2894594f0208
+DECL|struct|__anon2a1c4fca0208
 block|{
 DECL|member|run
 name|gint
@@ -674,6 +674,22 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|void
+name|pnmscanner_getsmalltoken
+parameter_list|(
+name|PNMScanner
+modifier|*
+name|s
+parameter_list|,
+name|gchar
+modifier|*
+name|buf
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|PNMScanner
 modifier|*
 name|pnmscanner_create
@@ -723,9 +739,7 @@ parameter_list|,
 name|errmsg
 parameter_list|)
 define|\
-value|if ((predicate)) \         {
-comment|/*gimp_message((errmsg));*/
-value|longjmp((jmpbuf),1); }
+value|if ((predicate)) \         { g_message ((errmsg)); longjmp((jmpbuf),1); }
 end_define
 
 begin_struct
@@ -1623,7 +1637,11 @@ name|GPixelRgn
 name|pixel_rgn
 decl_stmt|;
 name|gint32
+specifier|volatile
 name|image_ID
+init|=
+operator|-
+literal|1
 decl_stmt|;
 name|gint32
 name|layer_ID
@@ -1653,6 +1671,7 @@ name|pnminfo
 decl_stmt|;
 name|PNMScanner
 modifier|*
+specifier|volatile
 name|scan
 decl_stmt|;
 name|int
@@ -1700,7 +1719,16 @@ operator|-
 literal|1
 condition|)
 block|{
-comment|/*gimp_message("pnm filter: can't open file\n");*/
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"PNM: Can't open file %s."
+argument_list|)
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -1756,6 +1784,18 @@ argument_list|(
 name|pnminfo
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|image_ID
+operator|!=
+operator|-
+literal|1
+condition|)
+name|gimp_image_delete
+argument_list|(
+name|image_ID
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -1803,7 +1843,10 @@ name|pnminfo
 operator|->
 name|jmpbuf
 argument_list|,
-literal|"pnm filter: premature end of file\n"
+name|_
+argument_list|(
+literal|"PNM: Premature end of file."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|CHECK_FOR_ERROR
@@ -1826,7 +1869,10 @@ name|pnminfo
 operator|->
 name|jmpbuf
 argument_list|,
-literal|"pnm filter: %s is not a valid file\n"
+name|_
+argument_list|(
+literal|"PNM: %s is not a valid file."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Look up magic number to see what type of PNM this is */
@@ -1914,7 +1960,14 @@ operator|->
 name|loader
 condition|)
 block|{
-comment|/*gimp_message("pnm filter: file not in a supported format\n");*/
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"PNM: File not in a supported format."
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|longjmp
 argument_list|(
 name|pnminfo
@@ -1945,7 +1998,10 @@ name|pnminfo
 operator|->
 name|jmpbuf
 argument_list|,
-literal|"pnm filter: premature end of file\n"
+name|_
+argument_list|(
+literal|"PNM: Premature end of file."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|pnminfo
@@ -1977,7 +2033,10 @@ name|pnminfo
 operator|->
 name|jmpbuf
 argument_list|,
-literal|"pnm filter: invalid xres while loading\n"
+name|_
+argument_list|(
+literal|"PNM: Invalid X resolution."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|pnmscanner_gettoken
@@ -2000,7 +2059,10 @@ name|pnminfo
 operator|->
 name|jmpbuf
 argument_list|,
-literal|"pnm filter: premature end of file\n"
+name|_
+argument_list|(
+literal|"PNM: Premature end of file."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|pnminfo
@@ -2032,7 +2094,10 @@ name|pnminfo
 operator|->
 name|jmpbuf
 argument_list|,
-literal|"pnm filter: invalid yres while loading\n"
+name|_
+argument_list|(
+literal|"PNM: Invalid Y resolution."
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2065,7 +2130,10 @@ name|pnminfo
 operator|->
 name|jmpbuf
 argument_list|,
-literal|"pnm filter: premature end of file\n"
+name|_
+argument_list|(
+literal|"PNM: Premature end of file."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|pnminfo
@@ -2114,7 +2182,10 @@ name|pnminfo
 operator|->
 name|jmpbuf
 argument_list|,
-literal|"pnm filter: invalid maxval while loading\n"
+name|_
+argument_list|(
+literal|"PNM: Invalid maximum value."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2460,9 +2531,18 @@ name|info
 operator|->
 name|jmpbuf
 argument_list|,
-literal|"pnm filter: premature end of file\n"
+name|_
+argument_list|(
+literal|"PNM: Premature end of file."
+argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|info
+operator|->
+name|np
+condition|)
 name|pnmscanner_gettoken
 argument_list|(
 name|scan
@@ -2470,6 +2550,14 @@ argument_list|,
 name|buf
 argument_list|,
 name|BUFLEN
+argument_list|)
+expr_stmt|;
+else|else
+name|pnmscanner_getsmalltoken
+argument_list|(
+name|scan
+argument_list|,
+name|buf
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -2776,7 +2864,10 @@ name|info
 operator|->
 name|jmpbuf
 argument_list|,
-literal|"pnm filter: premature end of file\n"
+name|_
+argument_list|(
+literal|"PNM: Premature end of file."
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -3085,7 +3176,10 @@ name|info
 operator|->
 name|jmpbuf
 argument_list|,
-literal|"pnm filter: error reading file\n"
+name|_
+argument_list|(
+literal|"PNM: Error reading file."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|bufpos
@@ -4955,6 +5049,72 @@ index|]
 operator|=
 literal|'\0'
 expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/* pnmscanner_getsmalltoken ---  *    Gets the next char, eating any leading whitespace.  */
+end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|pnmscanner_getsmalltoken (PNMScanner * s,gchar * buf)
+name|pnmscanner_getsmalltoken
+parameter_list|(
+name|PNMScanner
+modifier|*
+name|s
+parameter_list|,
+name|gchar
+modifier|*
+name|buf
+parameter_list|)
+block|{
+name|pnmscanner_eatwhitespace
+argument_list|(
+name|s
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+operator|(
+name|s
+operator|->
+name|eof
+operator|)
+operator|&&
+operator|!
+name|isspace
+argument_list|(
+name|s
+operator|->
+name|cur
+argument_list|)
+operator|&&
+operator|(
+name|s
+operator|->
+name|cur
+operator|!=
+literal|'#'
+operator|)
+condition|)
+block|{
+operator|*
+name|buf
+operator|=
+name|s
+operator|->
+name|cur
+expr_stmt|;
+name|pnmscanner_getchar
+argument_list|(
+name|s
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
