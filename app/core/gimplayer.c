@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f9d0ba0103
+DECL|enum|__anon29a4c1290103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -5129,9 +5129,20 @@ name|gimage
 argument_list|,
 name|GIMP_UNDO_GROUP_LAYER_APPLY_MASK
 argument_list|,
+operator|(
+name|mode
+operator|==
+name|GIMP_MASK_APPLY
+operator|)
+condition|?
 name|_
 argument_list|(
 literal|"Apply Layer Mask"
+argument_list|)
+else|:
+name|_
+argument_list|(
+literal|"Delete Layer Mask"
 argument_list|)
 argument_list|)
 expr_stmt|;
