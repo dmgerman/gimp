@@ -54,18 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<sys/ipc.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/shm.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<sys/time.h>
 end_include
 
@@ -80,6 +68,40 @@ include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_IPC_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<sys/ipc.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_SHM_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<sys/shm.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_ifdef
 ifdef|#
@@ -642,6 +664,9 @@ name|quit_proc
 call|)
 argument_list|()
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_SHM_H
 if|if
 condition|(
 operator|(
@@ -662,6 +687,8 @@ operator|)
 name|_shm_addr
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|gp_quit_write
 argument_list|(
 name|_writefd
@@ -4556,6 +4583,9 @@ name|config
 operator|->
 name|gdisp_ID
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_SHM_H
 if|if
 condition|(
 name|_shm_ID
@@ -4596,6 +4626,8 @@ literal|"could not attach to gimp shared memory segment\n"
 argument_list|)
 expr_stmt|;
 block|}
+endif|#
+directive|endif
 block|}
 end_function
 

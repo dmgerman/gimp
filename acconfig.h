@@ -57,7 +57,19 @@ end_undef
 begin_undef
 undef|#
 directive|undef
+name|HAVE_PUTENV
+end_undef
+
+begin_undef
+undef|#
+directive|undef
 name|HAVE_SHM_H
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|HAVE_STPCPY
 end_undef
 
 begin_undef

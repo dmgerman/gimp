@@ -317,6 +317,9 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_PUTENV
 name|gchar
 modifier|*
 name|display_name
@@ -324,6 +327,8 @@ decl_stmt|,
 modifier|*
 name|display_env
 decl_stmt|;
+endif|#
+directive|endif
 name|ATEXIT
 argument_list|(
 name|g_mem_profile
@@ -398,6 +403,9 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* !HAVE_LIBGLE */
+ifdef|#
+directive|ifdef
+name|HAVE_PUTENV
 name|display_name
 operator|=
 name|gdk_get_display
@@ -441,6 +449,8 @@ argument_list|(
 name|display_env
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|no_interface
 operator|=
 name|FALSE
@@ -457,10 +467,21 @@ name|no_splash_image
 operator|=
 name|FALSE
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_SHM_H
 name|use_shm
 operator|=
 name|TRUE
 expr_stmt|;
+else|#
+directive|else
+name|use_shm
+operator|=
+name|FALSE
+expr_stmt|;
+endif|#
+directive|endif
 name|use_debug_handler
 operator|=
 name|FALSE

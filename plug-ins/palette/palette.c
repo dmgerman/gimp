@@ -854,7 +854,7 @@ argument_list|)
 expr_stmt|;
 name|filename
 operator|=
-name|strdup
+name|g_strdup
 argument_list|(
 name|gtk_file_selection_get_filename
 argument_list|(

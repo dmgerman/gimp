@@ -2876,7 +2876,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|strdup
+name|g_strdup
 argument_list|(
 literal|"CEL file-filter"
 argument_list|)

@@ -66,18 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<sys/ipc.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/shm.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<sys/stat.h>
 end_include
 
@@ -92,6 +80,40 @@ include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_IPC_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<sys/ipc.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_SHM_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<sys/shm.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -206,7 +228,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7ac5c00103
+DECL|enum|__anon28a3669e0103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -1236,6 +1258,9 @@ argument_list|(
 name|plug_in_flush
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_SHM_H
 comment|/* allocate a piece of shared memory for use in transporting tiles    *  to plug-ins. if we can't allocate a piece of shared memory then    *  we'll fall back on sending the data over the pipe.    */
 if|if
 condition|(
@@ -1338,6 +1363,8 @@ endif|#
 directive|endif
 block|}
 block|}
+endif|#
+directive|endif
 comment|/* search for binaries in the plug-in directory path */
 name|datafiles_read_directories
 argument_list|(
@@ -1878,6 +1905,9 @@ name|PlugIn
 modifier|*
 name|plug_in
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_SHM_H
 ifndef|#
 directive|ifndef
 name|IPC_RMID_DEFERRED_RELEASE
@@ -1927,6 +1957,8 @@ operator|)
 name|shm_addr
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 endif|#
 directive|endif
 name|tmp
