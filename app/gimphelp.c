@@ -160,6 +160,12 @@ name|help_signal_id
 init|=
 literal|0
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|help_func
+condition|)
+return|return;
 comment|/*  create the help signal if not already done  */
 if|if
 condition|(
@@ -236,6 +242,8 @@ operator|=
 name|gtk_accel_group_new
 argument_list|()
 expr_stmt|;
+comment|/*  FIXME: does not work for some reason...   gtk_widget_add_accelerator (widget, "help", accel_group, 			      GDK_F1, 0, GTK_ACCEL_LOCKED);   */
+comment|/*  ...while using this internal stuff works  */
 name|gtk_accel_group_add
 argument_list|(
 name|accel_group

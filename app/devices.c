@@ -899,7 +899,7 @@ name|inputd
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/input_devices_dialog.html"
+literal|"dialogs/input_devices.html"
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3062,7 +3062,7 @@ literal|"device_status"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/device_status_dialog.html"
+literal|"dialogs/device_status.html"
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,

@@ -32,7 +32,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2bddfafe0108
+DECL|struct|__anon29e733a80108
 typedef|typedef
 struct|struct
 block|{
@@ -1308,7 +1308,7 @@ literal|"undo_history"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/undo_histroy_dialog.html"
+literal|"dialogs/undo_histroy.html"
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,

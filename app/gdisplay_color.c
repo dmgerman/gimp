@@ -1767,7 +1767,7 @@ literal|"gamma"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/gamma_dialog.html"
+literal|"dialogs/display_filters/gamma.html"
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,

@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2af4d7a50103
+DECL|enum|__anon2b309d950103
 typedef|typedef
 enum|enum
 block|{
@@ -948,7 +948,7 @@ DECL|variable|use_help
 name|int
 name|use_help
 init|=
-name|FALSE
+name|TRUE
 decl_stmt|;
 end_decl_stmt
 

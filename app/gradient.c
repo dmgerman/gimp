@@ -3212,7 +3212,7 @@ literal|"gradient_editor"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/gradient_editor_dialog.html"
+literal|"dialogs/gradient_editor/index.html"
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,
@@ -6812,7 +6812,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/gradient_editor_dialog.html"
+literal|"dialogs/gradient_editor/dialogs/new_gradient.html"
 argument_list|,
 name|_
 argument_list|(
@@ -7067,7 +7067,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/gradient_editor_dialog.html"
+literal|"dialogs/gradient_editor/dialogs/copy_gradient.html"
 argument_list|,
 name|_
 argument_list|(
@@ -7378,7 +7378,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/gradient_editor_dialog.html"
+literal|"dialogs/gradient_editor/dialogs/rename_gradient.html"
 argument_list|,
 name|_
 argument_list|(
@@ -7656,7 +7656,7 @@ literal|"delete_gradient"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/gradient_editor_dialog.html"
+literal|"dialogs/gradient_editor/dialogs/delete_gradient.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,
@@ -8172,7 +8172,7 @@ name|window
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/gradient_editor_dialog.html"
+literal|"dialogs/gradient_editor/dialogs/save_as_pov_ray.html"
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -20959,7 +20959,7 @@ literal|"gradient_segment_split_uniformly"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/gradient_editor_dialog.html"
+literal|"dialogs/gradient_editor/dialogs/split_segments_uniformly.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,
@@ -23253,7 +23253,7 @@ literal|"gradient_segment_replicate"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/gradient_editor_dialog.html"
+literal|"dialogs/gradient_editor/dialogs/replicate_segment.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,

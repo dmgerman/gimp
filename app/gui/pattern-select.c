@@ -465,7 +465,7 @@ literal|"pattern_selection"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/pattern_selection_dialog.html"
+literal|"dialogs/pattern_selection.html"
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,
@@ -531,7 +531,7 @@ literal|"pattern_selection"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/pattern_selection_dialog.html"
+literal|"dialogs/pattern_selection.html"
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,
@@ -1446,7 +1446,7 @@ comment|/*  *  Local functions  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29bd2d5f0108
+DECL|struct|__anon299eb02f0108
 typedef|typedef
 struct|struct
 block|{

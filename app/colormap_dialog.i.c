@@ -38,7 +38,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"color_select.h"
+file|"color_notebook.h"
 end_include
 
 begin_include
@@ -251,7 +251,7 @@ name|int
 parameter_list|,
 name|int
 parameter_list|,
-name|ColorSelectState
+name|ColorNotebookState
 parameter_list|,
 name|void
 modifier|*
@@ -1883,7 +1883,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/indexed_palette_dialog.html"
+literal|"dialogs/indexed_palette.html"
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show_all
@@ -4411,13 +4411,13 @@ if|if
 condition|(
 name|ipal
 operator|->
-name|color_select
+name|color_notebook
 condition|)
-name|color_select_hide
+name|color_notebook_hide
 argument_list|(
 name|ipal
 operator|->
-name|color_select
+name|color_notebook
 argument_list|)
 expr_stmt|;
 block|}
@@ -4629,14 +4629,14 @@ condition|(
 operator|!
 name|ipal
 operator|->
-name|color_select
+name|color_notebook
 condition|)
 block|{
 name|ipal
 operator|->
-name|color_select
+name|color_notebook
 operator|=
-name|color_select_new
+name|color_notebook_new
 argument_list|(
 name|r
 argument_list|,
@@ -4654,18 +4654,18 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|color_select_show
+name|color_notebook_show
 argument_list|(
 name|ipal
 operator|->
-name|color_select
+name|color_notebook
 argument_list|)
 expr_stmt|;
-name|color_select_set_color
+name|color_notebook_set_color
 argument_list|(
 name|ipal
 operator|->
-name|color_select
+name|color_notebook
 argument_list|,
 name|r
 argument_list|,
@@ -4719,7 +4719,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ipal_select_callback (int r,int g,int b,ColorSelectState state,void * client_data)
+DECL|function|ipal_select_callback (int r,int g,int b,ColorNotebookState state,void * client_data)
 name|ipal_select_callback
 parameter_list|(
 name|int
@@ -4731,7 +4731,7 @@ parameter_list|,
 name|int
 name|b
 parameter_list|,
-name|ColorSelectState
+name|ColorNotebookState
 name|state
 parameter_list|,
 name|void
@@ -4765,7 +4765,7 @@ name|g_return_if_fail
 argument_list|(
 name|ipal
 operator|->
-name|color_select
+name|color_notebook
 argument_list|)
 expr_stmt|;
 name|gimage
@@ -4780,11 +4780,11 @@ name|state
 condition|)
 block|{
 case|case
-name|COLOR_SELECT_UPDATE
+name|COLOR_NOTEBOOK_UPDATE
 case|:
 break|break;
 case|case
-name|COLOR_SELECT_OK
+name|COLOR_NOTEBOOK_OK
 case|:
 name|gimage
 operator|->
@@ -4842,13 +4842,13 @@ argument_list|)
 expr_stmt|;
 comment|/* Fall through */
 case|case
-name|COLOR_SELECT_CANCEL
+name|COLOR_NOTEBOOK_CANCEL
 case|:
-name|color_select_hide
+name|color_notebook_hide
 argument_list|(
 name|ipal
 operator|->
-name|color_select
+name|color_notebook
 argument_list|)
 expr_stmt|;
 block|}
@@ -5101,14 +5101,14 @@ condition|(
 operator|!
 name|ipal
 operator|->
-name|color_select
+name|color_notebook
 condition|)
 block|{
 name|ipal
 operator|->
-name|color_select
+name|color_notebook
 operator|=
-name|color_select_new
+name|color_notebook_new
 argument_list|(
 name|r
 argument_list|,
@@ -5126,18 +5126,18 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|color_select_show
+name|color_notebook_show
 argument_list|(
 name|ipal
 operator|->
-name|color_select
+name|color_notebook
 argument_list|)
 expr_stmt|;
-name|color_select_set_color
+name|color_notebook_set_color
 argument_list|(
 name|ipal
 operator|->
-name|color_select
+name|color_notebook
 argument_list|,
 name|r
 argument_list|,
@@ -5218,7 +5218,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2957e1730108
+DECL|struct|__anon2c028dd40108
 typedef|typedef
 struct|struct
 block|{

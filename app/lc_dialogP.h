@@ -59,6 +59,11 @@ DECL|member|auto_follow_active
 name|gboolean
 name|auto_follow_active
 decl_stmt|;
+DECL|member|notebook
+name|GtkWidget
+modifier|*
+name|notebook
+decl_stmt|;
 block|}
 struct|;
 end_struct

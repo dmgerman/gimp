@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2973728f0108
+DECL|struct|__anon29aa13c10108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -812,7 +812,7 @@ literal|"confirm_size"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/file_new_dialog.html#confirm_size_dialog"
+literal|"dialogs/file_new.html#confirm_size"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,
@@ -1571,7 +1571,7 @@ literal|"new_image"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/file_new_dialog.html"
+literal|"dialogs/file_new.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,

@@ -743,7 +743,7 @@ comment|/* Description of an extraction */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29649b3b0108
+DECL|struct|__anon2b888fb90108
 typedef|typedef
 struct|struct
 block|{
@@ -1214,7 +1214,7 @@ value|(sizeof (extract)/sizeof (extract[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon29649b3b0208
+DECL|struct|__anon2b888fb90208
 typedef|typedef
 struct|struct
 block|{
@@ -1232,7 +1232,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29649b3b0308
+DECL|struct|__anon2b888fb90308
 typedef|typedef
 struct|struct
 block|{
@@ -1463,7 +1463,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Image/Channel Ops/Decompose"
+literal|"<Image>/Image/Channels/Decompose"
 argument_list|)
 argument_list|,
 literal|"RGB*"

@@ -328,7 +328,7 @@ literal|"offset"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/offset_dialog.html"
+literal|"dialogs/offset.html"
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,

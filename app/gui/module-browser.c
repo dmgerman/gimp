@@ -137,7 +137,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|enum|__anon296803c70103
+DECL|enum|__anon27ce982e0103
 typedef|typedef
 enum|enum
 block|{
@@ -268,7 +268,7 @@ comment|/* one of these objects is kept per-module */
 end_comment
 
 begin_typedef
-DECL|struct|__anon296803c70208
+DECL|struct|__anon27ce982e0208
 typedef|typedef
 struct|struct
 block|{
@@ -385,7 +385,7 @@ value|7
 end_define
 
 begin_typedef
-DECL|struct|__anon296803c70308
+DECL|struct|__anon27ce982e0308
 typedef|typedef
 struct|struct
 block|{
@@ -1160,7 +1160,7 @@ literal|"module_db_dialog"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/module_db_dialog.html"
+literal|"dialogs/module_browser.html"
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,
@@ -1627,7 +1627,7 @@ comment|/* module_info object glue */
 end_comment
 
 begin_typedef
-DECL|struct|__anon296803c70408
+DECL|struct|__anon27ce982e0408
 typedef|typedef
 struct|struct
 block|{
@@ -1642,7 +1642,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon296803c70503
+DECL|enum|__anon27ce982e0503
 enum|enum
 block|{
 DECL|enumerator|MODIFIED
@@ -4469,7 +4469,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon296803c70608
+DECL|struct|__anon27ce982e0608
 typedef|typedef
 struct|struct
 block|{

@@ -69,7 +69,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<color_select.h>
+file|<color_notebook.h>
 end_include
 
 begin_typedef
@@ -187,9 +187,9 @@ name|GtkWidget
 modifier|*
 name|add_item
 decl_stmt|;
-DECL|member|color_select
-name|ColorSelectP
-name|color_select
+DECL|member|color_notebook
+name|ColorNotebookP
+name|color_notebook
 decl_stmt|;
 block|}
 struct|;

@@ -15651,7 +15651,7 @@ literal|"new_layer_options"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/layers_dialog.html"
+literal|"dialogs/layers/new_layer.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,
@@ -16804,7 +16804,7 @@ literal|"edit_layer_attributes"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/layers_dialog.html"
+literal|"dialogs/layers/edit_layer_attributes.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,
@@ -17376,7 +17376,7 @@ literal|"add_mask_options"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/layers_dialog.html"
+literal|"dialogs/layers/add_mask.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,
@@ -17887,7 +17887,7 @@ literal|"layer_mask_options"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/layers_dialog.html"
+literal|"dialogs/layers/apply_mask.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,
@@ -19072,7 +19072,7 @@ literal|"layer_merge_options"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/layers_dialog.html"
+literal|"dialogs/layers/merge_visible_layers.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,

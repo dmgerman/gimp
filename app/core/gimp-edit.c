@@ -112,7 +112,7 @@ file|"drawable_pvt.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2a3a73c60103
+DECL|enum|__anon29806e1d0103
 typedef|typedef
 enum|enum
 block|{
@@ -3082,7 +3082,7 @@ literal|"paste_named_buffer"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/paste_named_buffer_dialog.html"
+literal|"dialogs/paste_named.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,
@@ -3689,7 +3689,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/cut_named_dialog.html"
+literal|"dialogs/cut_named.html"
 argument_list|,
 name|_
 argument_list|(
@@ -3838,7 +3838,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/copy_named_dialog.html"
+literal|"dialogs/copy_named.html"
 argument_list|,
 name|_
 argument_list|(

@@ -323,6 +323,8 @@ name|gimp_color_selector_register
 argument_list|(
 literal|"Watercolor"
 argument_list|,
+literal|"watercolor.html"
+argument_list|,
 operator|&
 name|methods
 argument_list|)
@@ -444,7 +446,7 @@ value|40
 end_define
 
 begin_typedef
-DECL|struct|__anon27963ff20108
+DECL|struct|__anon2a4d6d6a0108
 typedef|typedef
 struct|struct
 block|{

@@ -264,7 +264,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29371c3a0108
+DECL|struct|__anon2c481bff0108
 block|{
 DECL|member|resize
 name|Resize
@@ -1336,7 +1336,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/border_selection_dialog.html"
+literal|"dialogs/border_selection.html"
 argument_list|,
 name|_
 argument_list|(
@@ -1437,7 +1437,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/feather_selection_dialog.html"
+literal|"dialogs/feather_selection.html"
 argument_list|,
 name|_
 argument_list|(
@@ -1538,7 +1538,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/grow_selection_dialog.html"
+literal|"dialogs/grow_selection.html"
 argument_list|,
 name|_
 argument_list|(
@@ -1643,7 +1643,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/shrink_selection_dialog.html"
+literal|"dialogs/shrink_selection.html"
 argument_list|,
 name|N_
 argument_list|(
@@ -4359,7 +4359,7 @@ parameter_list|)
 block|{
 name|gimp_help
 argument_list|(
-literal|""
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

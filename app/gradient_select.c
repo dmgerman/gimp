@@ -1778,7 +1778,7 @@ literal|"gradient_selection"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/gradient_selection_dialog.html"
+literal|"dialogs/gradient_selection.html"
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,

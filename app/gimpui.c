@@ -107,7 +107,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* #include "/home/mitschel/gimpfiles/wilber.xpm"  static void gimp_dialog_realize_callback (GtkWidget *widget, 			      gpointer   data)  {   static GdkPixmap *wilber_pixmap = NULL;   static GdkBitmap *wilber_mask   = NULL;   GtkStyle         *style;    style = gtk_widget_get_style (widget);    if (wilber_pixmap == NULL)     wilber_pixmap =       gdk_pixmap_create_from_xpm_d (widget->window,&wilber_mask,&style->bg[GTK_STATE_NORMAL], 				    wilber_xpm);    gdk_window_set_icon (widget->window, NULL, 		       wilber_pixmap, wilber_mask); } */
+comment|/* #include "/home/mitch/gimp.xpm"  static void gimp_dialog_realize_callback (GtkWidget *widget, 			      gpointer   data)  {   static GdkPixmap *wilber_pixmap = NULL;   static GdkBitmap *wilber_mask   = NULL;   GtkStyle         *style;    style = gtk_widget_get_style (widget);    if (wilber_pixmap == NULL)     wilber_pixmap =       gdk_pixmap_create_from_xpm_d (widget->window,&wilber_mask,&style->bg[GTK_STATE_NORMAL], 				    gimp_xpm);    gdk_window_set_icon (widget->window, NULL, 		       wilber_pixmap, wilber_mask); } */
 end_comment
 
 begin_function
@@ -144,7 +144,7 @@ parameter_list|,
 name|gint
 name|auto_shrink
 parameter_list|,
-comment|/* specify action area buttons as va_list: 		  *  gchar         *label, 		  *  GtkSignalFunc  callback, 		  *  gpointer       data, 		  *  gboolean       default_action, 		  *  gboolean       connect_delete, 		  */
+comment|/* specify action area buttons as va_list: 		  *  gchar          *label, 		  *  GtkSignalFunc   callback, 		  *  gpointer        data, 		  *  GtkWidget     **widget_ptr, 		  *  gboolean        default_action, 		  *  gboolean        connect_delete, 		  */
 modifier|...
 parameter_list|)
 block|{
@@ -650,7 +650,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  the realize callback sets the WM icon  */
-comment|/*   gtk_signal_connect (GTK_OBJECT (dialog), "realize", 		      (GtkSignalFunc) gimp_dialog_realize_callback, 		      NULL);      */
+comment|/*   gtk_signal_connect (GTK_OBJECT (dialog), "realize", 		      (GtkSignalFunc) gimp_dialog_realize_callback, 		      NULL);   */
 comment|/*  connect the "F1" help key  */
 if|if
 condition|(

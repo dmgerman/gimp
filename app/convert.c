@@ -34881,7 +34881,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ba9240108
+DECL|struct|__anon293182390108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -34958,7 +34958,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ba9240208
+DECL|struct|__anon293182390208
 block|{
 DECL|member|ncolors
 name|long
@@ -34977,7 +34977,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ba9240308
+DECL|struct|__anon293182390308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -35699,7 +35699,7 @@ literal|"indexed_color_conversion"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/indexed_color_conversion_dialog.html"
+literal|"dialogs/convert_to_indexed.html"
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,
@@ -38362,7 +38362,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ba9240408
+DECL|struct|__anon293182390408
 block|{
 DECL|member|used_count
 name|signed

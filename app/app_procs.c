@@ -3148,7 +3148,7 @@ literal|"really_quit"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/really_quit_dialog.html"
+literal|"dialogs/really_quit.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,

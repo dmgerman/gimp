@@ -121,7 +121,7 @@ value|"help"
 end_define
 
 begin_enum
-DECL|enum|__anon2b08f23f0103
+DECL|enum|__anon2b497abb0103
 enum|enum
 block|{
 DECL|enumerator|CONTENTS
@@ -137,7 +137,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2b08f23f0203
+DECL|enum|__anon2b497abb0203
 enum|enum
 block|{
 DECL|enumerator|URL_UNKNOWN
@@ -169,7 +169,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b08f23f0308
+DECL|struct|__anon2b497abb0308
 block|{
 DECL|member|index
 name|gint
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b08f23f0408
+DECL|struct|__anon2b497abb0408
 block|{
 DECL|member|title
 name|gchar
@@ -350,6 +350,17 @@ block|,
 literal|"welcome.html"
 block|}
 block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|current_locale
+specifier|static
+name|gchar
+modifier|*
+name|current_locale
+init|=
+literal|"C"
 decl_stmt|;
 end_decl_stmt
 
@@ -3044,6 +3055,10 @@ name|root_dir
 argument_list|,
 name|G_DIR_SEPARATOR_S
 argument_list|,
+literal|"images"
+argument_list|,
+name|G_DIR_SEPARATOR_S
+argument_list|,
 literal|"eek.png"
 argument_list|,
 name|NULL
@@ -3522,6 +3537,10 @@ name|initial_dir
 argument_list|,
 name|G_DIR_SEPARATOR_S
 argument_list|,
+name|current_locale
+argument_list|,
+name|G_DIR_SEPARATOR_S
+argument_list|,
 literal|"."
 argument_list|,
 name|NULL
@@ -3864,6 +3883,10 @@ name|initial_dir
 argument_list|,
 name|G_DIR_SEPARATOR_S
 argument_list|,
+name|current_locale
+argument_list|,
+name|G_DIR_SEPARATOR_S
+argument_list|,
 name|path
 argument_list|,
 name|NULL
@@ -3876,6 +3899,10 @@ operator|=
 name|g_strconcat
 argument_list|(
 name|initial_dir
+argument_list|,
+name|G_DIR_SEPARATOR_S
+argument_list|,
+name|current_locale
 argument_list|,
 name|G_DIR_SEPARATOR_S
 argument_list|,
@@ -4290,6 +4317,16 @@ literal|1
 operator|)
 operator|||
 operator|!
+name|param
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|||
+operator|!
 name|strlen
 argument_list|(
 name|param
@@ -4318,6 +4355,15 @@ name|data
 operator|.
 name|d_string
 expr_stmt|;
+name|g_strdelimit
+argument_list|(
+name|path
+argument_list|,
+literal|"/"
+argument_list|,
+name|G_DIR_SEPARATOR
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|g_path_is_absolute
@@ -4343,6 +4389,10 @@ argument_list|,
 name|G_DIR_SEPARATOR_S
 argument_list|,
 name|GIMP_HELP_PREFIX
+argument_list|,
+name|G_DIR_SEPARATOR_S
+argument_list|,
+name|current_locale
 argument_list|,
 name|G_DIR_SEPARATOR_S
 argument_list|,
@@ -4800,6 +4850,16 @@ literal|2
 operator|)
 operator|||
 operator|!
+name|param
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|||
+operator|!
 name|strlen
 argument_list|(
 name|param
@@ -4838,6 +4898,15 @@ break|break;
 default|default:
 break|break;
 block|}
+name|g_strdelimit
+argument_list|(
+name|path
+argument_list|,
+literal|"/"
+argument_list|,
+name|G_DIR_SEPARATOR
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|status

@@ -1262,7 +1262,7 @@ literal|"brush_selection"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/brush_selection_dialog.html"
+literal|"dialogs/brush_selection.html"
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,
@@ -1334,7 +1334,7 @@ literal|"brush_selection"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/brush_selection_dialog.html"
+literal|"dialogs/brush_selection.html"
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,
@@ -4531,7 +4531,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2876e4500108
+DECL|struct|__anon2bbf8b300108
 typedef|typedef
 struct|struct
 block|{

@@ -363,7 +363,7 @@ literal|"display_color"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/color_diaplsy_filters_dialog.html"
+literal|"dialogs/display_filters.html"
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,

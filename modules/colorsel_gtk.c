@@ -320,6 +320,8 @@ name|gimp_color_selector_register
 argument_list|(
 literal|"GTK"
 argument_list|,
+literal|"gtk.html"
+argument_list|,
 operator|&
 name|methods
 argument_list|)
@@ -472,7 +474,7 @@ comment|/* GTK colour selector methods */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bac09900108
+DECL|struct|__anon28d77a6b0108
 typedef|typedef
 struct|struct
 block|{

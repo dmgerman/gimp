@@ -1010,7 +1010,7 @@ literal|"edit_qmask_attributes"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/edit_qmask_attributes_dialog.html"
+literal|"dialogs/edit_qmask_attributes.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,

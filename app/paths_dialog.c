@@ -310,7 +310,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon29c1e6c80108
+DECL|struct|__anon2922690a0108
 typedef|typedef
 struct|struct
 block|{
@@ -439,7 +439,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29c1e6c80208
+DECL|struct|__anon2922690a0208
 typedef|typedef
 struct|struct
 block|{
@@ -468,7 +468,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29c1e6c80308
+DECL|struct|__anon2922690a0308
 typedef|typedef
 struct|struct
 block|{
@@ -487,7 +487,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29c1e6c80408
+DECL|struct|__anon2922690a0408
 typedef|typedef
 struct|struct
 block|{
@@ -5679,7 +5679,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/paths_dialog.html"
+literal|"dialogs/paths/rename_path.html"
 argument_list|,
 name|_
 argument_list|(

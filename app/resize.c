@@ -713,7 +713,7 @@ argument_list|)
 expr_stmt|;
 name|help_page
 operator|=
-literal|"dialogs/scale_layer_dialog.html"
+literal|"dialogs/layers/dialogs/scale_layer.html"
 expr_stmt|;
 name|frame
 operator|=
@@ -742,7 +742,7 @@ argument_list|)
 expr_stmt|;
 name|help_page
 operator|=
-literal|"dialogs/scale_image_dialog.html"
+literal|"dialogs/scale_image.html"
 expr_stmt|;
 name|frame
 operator|=
@@ -781,7 +781,7 @@ argument_list|)
 expr_stmt|;
 name|help_page
 operator|=
-literal|"dialogs/resize_layer_dialog.html"
+literal|"dialogs/layers/dialogs/resize_layer.html"
 expr_stmt|;
 break|break;
 case|case
@@ -800,7 +800,7 @@ argument_list|)
 expr_stmt|;
 name|help_page
 operator|=
-literal|"dialogs/resize_image_dialog.html"
+literal|"dialogs/resize_image.html"
 expr_stmt|;
 break|break;
 block|}

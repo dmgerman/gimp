@@ -1127,7 +1127,7 @@ name|fileload
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/file_load_dialog.html"
+literal|"dialogs/file_open.html"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2197,7 +2197,7 @@ name|filesave
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/file_save_dialog.html"
+literal|"dialogs/file_save.html"
 argument_list|)
 expr_stmt|;
 block|}
@@ -7075,7 +7075,7 @@ literal|"file_exists"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/file_exists_dialog.html"
+literal|"dialogs/file_exists.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,

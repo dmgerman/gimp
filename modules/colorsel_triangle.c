@@ -334,7 +334,7 @@ value|GDK_EXPOSURE_MASK | \                        GDK_BUTTON_PRESS_MASK | \    
 end_define
 
 begin_typedef
-DECL|enum|__anon2bc6882a0103
+DECL|enum|__anon297d99ec0103
 typedef|typedef
 enum|enum
 block|{
@@ -678,6 +678,8 @@ operator|=
 name|gimp_color_selector_register
 argument_list|(
 literal|"Triangle"
+argument_list|,
+literal|"triangle.html"
 argument_list|,
 operator|&
 name|methods

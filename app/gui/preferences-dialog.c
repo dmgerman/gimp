@@ -5415,7 +5415,7 @@ literal|"gimp_preferences"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/preferences_dialog.html"
+literal|"dialogs/preferences.html"
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,
@@ -11236,7 +11236,7 @@ name|page_index
 operator|++
 expr_stmt|;
 block|{
-DECL|struct|__anon2977c5ff0108
+DECL|struct|__anon2b0e8d250108
 specifier|static
 specifier|const
 struct|struct
@@ -11461,7 +11461,7 @@ block|}
 block|}
 comment|/* Directories /<paths> */
 block|{
-DECL|struct|__anon2977c5ff0208
+DECL|struct|__anon2b0e8d250208
 specifier|static
 specifier|const
 struct|struct

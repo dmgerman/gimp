@@ -8082,7 +8082,7 @@ name|SET_SENSITIVE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Image/Channel Ops"
+literal|"/Image/Channels"
 argument_list|)
 argument_list|,
 name|gdisp
@@ -8093,6 +8093,16 @@ argument_list|(
 name|N_
 argument_list|(
 literal|"/Image/Alpha"
+argument_list|)
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Image/Transforms"
 argument_list|)
 argument_list|,
 name|gdisp
@@ -8331,7 +8341,7 @@ name|SET_SENSITIVE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Image/Channel Ops/Offset"
+literal|"/Image/Transforms/Offset"
 argument_list|)
 argument_list|,
 name|lp
