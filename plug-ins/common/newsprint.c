@@ -213,86 +213,6 @@ begin_comment
 comment|/*#define TIMINGS*/
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|TIMINGS
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<sys/time.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<unistd.h>
-end_include
-
-begin_define
-DECL|macro|TM_INIT ()
-define|#
-directive|define
-name|TM_INIT
-parameter_list|()
-value|struct timeval tm_start, tm_end
-end_define
-
-begin_define
-DECL|macro|TM_START ()
-define|#
-directive|define
-name|TM_START
-parameter_list|()
-value|gettimeofday(&tm_start, NULL)
-end_define
-
-begin_define
-DECL|macro|TM_END ()
-define|#
-directive|define
-name|TM_END
-parameter_list|()
-define|\
-value|do {									 \     gettimeofday(&tm_end, NULL);					 \     tm_end.tv_sec  -= tm_start.tv_sec;					 \     tm_end.tv_usec -= tm_start.tv_usec;					 \     if (tm_end.tv_usec< 0)						 \     {									 \ 	tm_end.tv_usec += 1000000;					 \ 	tm_end.tv_sec  -= 1;						 \     }									 \     printf("operation took %ld.%06ld\n", tm_end.tv_sec, tm_end.tv_usec); \ } while(0)
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|TM_INIT ()
-define|#
-directive|define
-name|TM_INIT
-parameter_list|()
-end_define
-
-begin_define
-DECL|macro|TM_START ()
-define|#
-directive|define
-name|TM_START
-parameter_list|()
-end_define
-
-begin_define
-DECL|macro|TM_END ()
-define|#
-directive|define
-name|TM_END
-parameter_list|()
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_define
 DECL|macro|TILE_CACHE_SIZE
 define|#
@@ -535,7 +455,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c096c8b0108
+DECL|struct|__anon2af6b09a0108
 block|{
 DECL|member|name
 specifier|const
@@ -795,7 +715,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c096c8b0208
+DECL|struct|__anon2af6b09a0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -868,7 +788,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c096c8b0308
+DECL|struct|__anon2af6b09a0308
 block|{
 DECL|member|input_spi
 name|gint
@@ -894,7 +814,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c096c8b0408
+DECL|struct|__anon2af6b09a0408
 block|{
 DECL|member|run
 name|gint
@@ -913,7 +833,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c096c8b0508
+DECL|struct|__anon2af6b09a0508
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1020,7 +940,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c096c8b0608
+DECL|struct|__anon2af6b09a0608
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1204,7 +1124,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c096c8b0708
+DECL|struct|__anon2af6b09a0708
 block|{
 DECL|member|name
 specifier|const
@@ -7018,7 +6938,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c096c8b0808
+DECL|struct|__anon2af6b09a0808
 block|{
 DECL|member|index
 name|gint
@@ -7532,9 +7452,6 @@ decl_stmt|;
 name|gint
 name|w002
 decl_stmt|;
-name|TM_INIT
-argument_list|()
-expr_stmt|;
 name|width
 operator|=
 name|pvals
@@ -8002,9 +7919,14 @@ operator|-
 name|y1
 operator|)
 expr_stmt|;
-name|TM_START
+ifdef|#
+directive|ifdef
+name|TIMINGS
+name|gimp_timer_start
 argument_list|()
 expr_stmt|;
+endif|#
+directive|endif
 for|for
 control|(
 name|y
@@ -9019,9 +8941,14 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|TM_END
+ifdef|#
+directive|ifdef
+name|TIMINGS
+name|gimp_timer_stop
 argument_list|()
 expr_stmt|;
+endif|#
+directive|endif
 comment|/* We don't free the threshold matrices, since we're about to    * exit, and the OS should clean up after us. */
 comment|/* update the affected region */
 name|gimp_drawable_flush
