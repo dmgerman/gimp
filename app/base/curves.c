@@ -2167,6 +2167,7 @@ operator|=
 name|curves_dialog_new
 argument_list|()
 expr_stmt|;
+block|}
 comment|/*  Initialize the values  */
 name|curves_dialog
 operator|->
@@ -2231,7 +2232,6 @@ argument_list|(
 name|i
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|curves_dialog
 operator|->
@@ -2417,17 +2417,6 @@ argument_list|,
 name|GRAPH
 operator||
 name|DRAW
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|curves_dialog
-operator|->
-name|preview
-condition|)
-name|curves_preview
-argument_list|(
-name|curves_dialog
 argument_list|)
 expr_stmt|;
 block|}
