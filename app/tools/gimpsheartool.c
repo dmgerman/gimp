@@ -346,7 +346,7 @@ literal|"gimp-shear-tool"
 argument_list|,
 name|_
 argument_list|(
-literal|"Shear Tool"
+literal|"Shear"
 argument_list|)
 argument_list|,
 name|_

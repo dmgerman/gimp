@@ -1203,7 +1203,7 @@ literal|"gimp-iscissors-tool"
 argument_list|,
 name|_
 argument_list|(
-literal|"Intelligent Scissors"
+literal|"Scissors"
 argument_list|)
 argument_list|,
 name|_

@@ -300,7 +300,7 @@ literal|"gimp-flip-tool"
 argument_list|,
 name|_
 argument_list|(
-literal|"Flip Tool"
+literal|"Flip"
 argument_list|)
 argument_list|,
 name|_

@@ -436,7 +436,7 @@ literal|"gimp-path-tool"
 argument_list|,
 name|_
 argument_list|(
-literal|"Path Tool"
+literal|"Path"
 argument_list|)
 argument_list|,
 name|_

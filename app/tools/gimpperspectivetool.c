@@ -268,7 +268,7 @@ literal|"gimp-perspective-tool"
 argument_list|,
 name|_
 argument_list|(
-literal|"Perspective Tool"
+literal|"Perspective"
 argument_list|)
 argument_list|,
 name|_

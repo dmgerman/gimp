@@ -366,7 +366,7 @@ literal|"gimp-scale-tool"
 argument_list|,
 name|_
 argument_list|(
-literal|"Scale Tool"
+literal|"Scale"
 argument_list|)
 argument_list|,
 name|_

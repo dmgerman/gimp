@@ -572,7 +572,7 @@ literal|"gimp-text-tool"
 argument_list|,
 name|_
 argument_list|(
-literal|"Text Tool"
+literal|"Text"
 argument_list|)
 argument_list|,
 name|_

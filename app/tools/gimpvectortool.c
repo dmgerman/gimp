@@ -412,7 +412,7 @@ literal|"gimp-vector-tool"
 argument_list|,
 name|_
 argument_list|(
-literal|"Vector Tool"
+literal|"Vectors"
 argument_list|)
 argument_list|,
 name|_
@@ -422,7 +422,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Vector"
+literal|"/Tools/Vectors"
 argument_list|)
 argument_list|,
 name|NULL
