@@ -723,9 +723,14 @@ comment|/*              gradient thingamajig */
 comment|/* this is a little unintuitive, probabaly put the slider */
 comment|/* in a frame later with a checkbutton for "use gradients" */
 comment|/* and default the gradient length to 10 or something */
+if|#
+directive|if
+literal|0
 comment|//  hbox = gtk_hbox_new (FALSE, 1);
 comment|//gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
 comment|//gtk_widget_show(hbox);
+endif|#
+directive|endif
 name|label
 operator|=
 name|gtk_label_new

@@ -2848,7 +2848,7 @@ comment|/* if it doesnt need to be reveresed, let y be y ;-> */
 block|}
 comment|/* stolen from the fade effect in paintbrush */
 comment|/* model this on a gaussian curve */
-comment|// position = exp (- y * y * 0.5);
+comment|/* position = exp (- y * y * 0.5); */
 name|position
 operator|=
 name|y
