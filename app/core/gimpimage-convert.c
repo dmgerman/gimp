@@ -1780,7 +1780,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf78e90108
+DECL|struct|__anon2a0ad7de0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1857,7 +1857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf78e90208
+DECL|struct|__anon2a0ad7de0208
 block|{
 DECL|member|ncolors
 name|long
@@ -1876,7 +1876,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf78e90308
+DECL|struct|__anon2a0ad7de0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -3648,8 +3648,13 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|"You are attempting to convert an image with alpha/layers from RGB/GRAY to INDEXED.\n"
-literal|"\tYou should not generate a palette of more than 255 colors if you intend to create a transparent or animated GIF file from this image."
+name|_
+argument_list|(
+literal|"You are attempting to convert an image with alpha/layers "
+literal|"from RGB/GRAY to INDEXED.\nYou should not generate a "
+literal|"palette of more than 255 colors if you intend to create "
+literal|"a transparent or animated GIF file from this image."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_justify

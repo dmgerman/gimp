@@ -201,7 +201,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a10205e0103
+DECL|enum|__anon2b87cf9d0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -25737,7 +25737,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-literal|"initial_sub_region:: error :: src->w * (src->bytes + 1)> 512"
+literal|"initial_sub_region:: error :: src->w * (src->bytes + 1)> 512\n"
 argument_list|)
 expr_stmt|;
 name|s

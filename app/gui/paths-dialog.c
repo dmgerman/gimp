@@ -322,7 +322,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon28da03670108
+DECL|struct|__anon2b9bebea0108
 typedef|typedef
 struct|struct
 block|{
@@ -451,7 +451,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon28da03670208
+DECL|struct|__anon2b9bebea0208
 typedef|typedef
 struct|struct
 block|{
@@ -480,7 +480,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28da03670308
+DECL|struct|__anon2b9bebea0308
 typedef|typedef
 struct|struct
 block|{
@@ -499,7 +499,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28da03670408
+DECL|struct|__anon2b9bebea0408
 typedef|typedef
 struct|struct
 block|{
@@ -2238,7 +2238,10 @@ name|g_string_sprintf
 argument_list|(
 name|s
 argument_list|,
+name|_
+argument_list|(
 literal|"Path %d"
+argument_list|)
 argument_list|,
 name|name_seed
 argument_list|)
