@@ -83,7 +83,7 @@ end_function_decl
 
 begin_function_decl
 name|gint32
-name|gimp_drawable_transform_flip_defaults
+name|gimp_drawable_transform_flip_default
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -160,7 +160,7 @@ end_function_decl
 
 begin_function_decl
 name|gint32
-name|gimp_drawable_transform_perspective_defaults
+name|gimp_drawable_transform_perspective_default
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -262,7 +262,7 @@ end_function_decl
 
 begin_function_decl
 name|gint32
-name|gimp_drawable_transform_rotate_defaults
+name|gimp_drawable_transform_rotate_default
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -327,7 +327,7 @@ end_function_decl
 
 begin_function_decl
 name|gint32
-name|gimp_drawable_transform_scale_defaults
+name|gimp_drawable_transform_scale_default
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -386,7 +386,7 @@ end_function_decl
 
 begin_function_decl
 name|gint32
-name|gimp_drawable_transform_shear_defaults
+name|gimp_drawable_transform_shear_default
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -454,7 +454,7 @@ end_function_decl
 
 begin_function_decl
 name|gint32
-name|gimp_drawable_transform_2d_defaults
+name|gimp_drawable_transform_2d_default
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -543,7 +543,7 @@ end_function_decl
 
 begin_function_decl
 name|gint32
-name|gimp_drawable_transform_matrix_defaults
+name|gimp_drawable_transform_matrix_default
 parameter_list|(
 name|gint32
 name|drawable_ID

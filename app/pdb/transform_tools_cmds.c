@@ -1035,17 +1035,17 @@ init|=
 block|{
 literal|"gimp_perspective"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_perspective_defaults' instead."
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_perspective_default' instead."
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_perspective_defaults' instead."
-block|,
-literal|""
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_perspective_default' instead."
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|"gimp_drawable_transform_perspective_defaults"
+literal|""
+block|,
+literal|"gimp_drawable_transform_perspective_default"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1413,17 +1413,17 @@ init|=
 block|{
 literal|"gimp_rotate"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_rotate_defaults' instead."
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_rotate_default' instead."
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_rotate_defaults' instead."
-block|,
-literal|""
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_rotate_default' instead."
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|"gimp_drawable_transform_rotate_defaults"
+literal|""
+block|,
+literal|"gimp_drawable_transform_rotate_default"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1913,17 +1913,17 @@ init|=
 block|{
 literal|"gimp_scale"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_scale_defaults' instead."
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_scale_default' instead."
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_scale_defaults' instead."
-block|,
-literal|""
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_scale_default' instead."
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|"gimp_drawable_transform_scale_defaults"
+literal|""
+block|,
+literal|"gimp_drawable_transform_scale_default"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2329,17 +2329,17 @@ init|=
 block|{
 literal|"gimp_shear"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_shear_defaults' instead."
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_shear_default' instead."
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_shear_defaults' instead."
-block|,
-literal|""
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_shear_default' instead."
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|"gimp_drawable_transform_shear_defaults"
+literal|""
+block|,
+literal|"gimp_drawable_transform_shear_default"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2869,17 +2869,17 @@ init|=
 block|{
 literal|"gimp_transform_2d"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_2d_defaults' instead."
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_2d_default' instead."
 block|,
-literal|"This procedure is deprecated! Use 'gimp_drawable_transform_2d_defaults' instead."
-block|,
-literal|""
+literal|"This procedure is deprecated! Use 'gimp_drawable_transform_2d_default' instead."
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|"gimp_drawable_transform_2d_defaults"
+literal|""
+block|,
+literal|"gimp_drawable_transform_2d_default"
 block|,
 name|GIMP_INTERNAL
 block|,

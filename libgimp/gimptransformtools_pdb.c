@@ -106,7 +106,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_perspective:  * @drawable_ID: The affected drawable.  * @interpolation: Whether to use interpolation.  * @x0: The new x coordinate of upper-left corner of original bounding box.  * @y0: The new y coordinate of upper-left corner of original bounding box.  * @x1: The new x coordinate of upper-right corner of original bounding box.  * @y1: The new y coordinate of upper-right corner of original bounding box.  * @x2: The new x coordinate of lower-left corner of original bounding box.  * @y2: The new y coordinate of lower-left corner of original bounding box.  * @x3: The new x coordinate of lower-right corner of original bounding box.  * @y3: The new y coordinate of lower-right corner of original bounding box.  *  * This procedure is deprecated! Use  * gimp_drawable_transform_perspective_defaults() instead.  *  * Returns: The newly mapped drawable.  */
+comment|/**  * gimp_perspective:  * @drawable_ID: The affected drawable.  * @interpolation: Whether to use interpolation.  * @x0: The new x coordinate of upper-left corner of original bounding box.  * @y0: The new y coordinate of upper-left corner of original bounding box.  * @x1: The new x coordinate of upper-right corner of original bounding box.  * @y1: The new y coordinate of upper-right corner of original bounding box.  * @x2: The new x coordinate of lower-left corner of original bounding box.  * @y2: The new y coordinate of lower-left corner of original bounding box.  * @x3: The new x coordinate of lower-right corner of original bounding box.  * @y3: The new y coordinate of lower-right corner of original bounding box.  *  * This procedure is deprecated! Use  * gimp_drawable_transform_perspective_default() instead.  *  * Returns: The newly mapped drawable.  */
 end_comment
 
 begin_function
@@ -248,7 +248,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rotate:  * @drawable_ID: The affected drawable.  * @interpolation: Whether to use interpolation.  * @angle: The angle of rotation (radians).  *  * This procedure is deprecated! Use  * gimp_drawable_transform_rotate_defaults() instead.  *  * Returns: The rotated drawable.  */
+comment|/**  * gimp_rotate:  * @drawable_ID: The affected drawable.  * @interpolation: Whether to use interpolation.  * @angle: The angle of rotation (radians).  *  * This procedure is deprecated! Use  * gimp_drawable_transform_rotate_default() instead.  *  * Returns: The rotated drawable.  */
 end_comment
 
 begin_function
@@ -341,7 +341,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scale:  * @drawable_ID: The affected drawable.  * @interpolation: Whether to use interpolation.  * @x0: The new x coordinate of upper-left corner of newly scaled region.  * @y0: The new y coordinate of upper-left corner of newly scaled region.  * @x1: The new x coordinate of lower-right corner of newly scaled region.  * @y1: The new y coordinate of lower-right corner of newly scaled region.  *  * This procedure is deprecated! Use  * gimp_drawable_transform_scale_defaults() instead.  *  * Returns: The scaled drawable.  */
+comment|/**  * gimp_scale:  * @drawable_ID: The affected drawable.  * @interpolation: Whether to use interpolation.  * @x0: The new x coordinate of upper-left corner of newly scaled region.  * @y0: The new y coordinate of upper-left corner of newly scaled region.  * @x1: The new x coordinate of lower-right corner of newly scaled region.  * @y1: The new y coordinate of lower-right corner of newly scaled region.  *  * This procedure is deprecated! Use  * gimp_drawable_transform_scale_default() instead.  *  * Returns: The scaled drawable.  */
 end_comment
 
 begin_function
@@ -455,7 +455,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_shear:  * @drawable_ID: The affected drawable.  * @interpolation: Whether to use interpolation.  * @shear_type: Type of shear.  * @magnitude: The magnitude of the shear.  *  * This procedure is deprecated! Use  * gimp_drawable_transform_shear_defaults() instead.  *  * Returns: The sheared drawable.  */
+comment|/**  * gimp_shear:  * @drawable_ID: The affected drawable.  * @interpolation: Whether to use interpolation.  * @shear_type: Type of shear.  * @magnitude: The magnitude of the shear.  *  * This procedure is deprecated! Use  * gimp_drawable_transform_shear_default() instead.  *  * Returns: The sheared drawable.  */
 end_comment
 
 begin_function
@@ -555,7 +555,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_transform_2d:  * @drawable_ID: The affected drawable.  * @interpolation: Whether to use interpolation.  * @source_x: X coordinate of the transformation center.  * @source_y: Y coordinate of the transformation center.  * @scale_x: Amount to scale in x direction.  * @scale_y: Amount to scale in y direction.  * @angle: The angle of rotation (radians).  * @dest_x: X coordinate of where the centre goes.  * @dest_y: Y coordinate of where the centre goes.  *  * This procedure is deprecated! Use  * gimp_drawable_transform_2d_defaults() instead.  *  * Returns: The transformed drawable.  */
+comment|/**  * gimp_transform_2d:  * @drawable_ID: The affected drawable.  * @interpolation: Whether to use interpolation.  * @source_x: X coordinate of the transformation center.  * @source_y: Y coordinate of the transformation center.  * @scale_x: Amount to scale in x direction.  * @scale_y: Amount to scale in y direction.  * @angle: The angle of rotation (radians).  * @dest_x: X coordinate of where the centre goes.  * @dest_y: Y coordinate of where the centre goes.  *  * This procedure is deprecated! Use  * gimp_drawable_transform_2d_default() instead.  *  * Returns: The transformed drawable.  */
 end_comment
 
 begin_function

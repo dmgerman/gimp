@@ -269,13 +269,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_transform_flip_defaults:  * @drawable_ID: The affected drawable.  * @x0: horz. coord. of one end of axis.  * @y0: vert. coord. of one end of axis.  * @x1: horz. coord. of other end of axis.  * @y1: vert. coord. of other end of axis.  * @interpolate: Whether to use interpolation and supersampling.  * @clip_result: Whether to clip results.  *  * Flip the specified drawable around a given line.  *  * This procedure is a variant of gimp_drawable_transform_flip() which  * uses no interpolation/supersampling at all, or default values  * (depending on the 'interpolate' parameter).  *  * Returns: The flipped drawable.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_drawable_transform_flip_default:  * @drawable_ID: The affected drawable.  * @x0: horz. coord. of one end of axis.  * @y0: vert. coord. of one end of axis.  * @x1: horz. coord. of other end of axis.  * @y1: vert. coord. of other end of axis.  * @interpolate: Whether to use interpolation and supersampling.  * @clip_result: Whether to clip results.  *  * Flip the specified drawable around a given line.  *  * This procedure is a variant of gimp_drawable_transform_flip() which  * uses no interpolation/supersampling at all, or default values  * (depending on the 'interpolate' parameter).  *  * Returns: The flipped drawable.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_drawable_transform_flip_defaults (gint32 drawable_ID,gdouble x0,gdouble y0,gdouble x1,gdouble y1,gboolean interpolate,gboolean clip_result)
-name|gimp_drawable_transform_flip_defaults
+DECL|function|gimp_drawable_transform_flip_default (gint32 drawable_ID,gdouble x0,gdouble y0,gdouble x1,gdouble y1,gboolean interpolate,gboolean clip_result)
+name|gimp_drawable_transform_flip_default
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -316,7 +316,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_flip_defaults"
+literal|"gimp_drawable_transform_flip_default"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -560,13 +560,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_transform_perspective_defaults:  * @drawable_ID: The affected drawable.  * @x0: The new x coordinate of upper-left corner of original bounding box.  * @y0: The new y coordinate of upper-left corner of original bounding box.  * @x1: The new x coordinate of upper-right corner of original bounding box.  * @y1: The new y coordinate of upper-right corner of original bounding box.  * @x2: The new x coordinate of lower-left corner of original bounding box.  * @y2: The new y coordinate of lower-left corner of original bounding box.  * @x3: The new x coordinate of lower-right corner of original bounding box.  * @y3: The new y coordinate of lower-right corner of original bounding box.  * @interpolate: Whether to use interpolation and supersampling.  * @clip_result: Whether to clip results.  *  * Perform a possibly non-affine transformation on the specified  * drawable, with extra parameters.  *  * This procedure is a variant of gimp_drawable_transform_perspective()  * which uses no interpolation/supersampling at all, or default values  * (depending on the 'interpolate' parameter).  *  * Returns: The newly mapped drawable.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_drawable_transform_perspective_default:  * @drawable_ID: The affected drawable.  * @x0: The new x coordinate of upper-left corner of original bounding box.  * @y0: The new y coordinate of upper-left corner of original bounding box.  * @x1: The new x coordinate of upper-right corner of original bounding box.  * @y1: The new y coordinate of upper-right corner of original bounding box.  * @x2: The new x coordinate of lower-left corner of original bounding box.  * @y2: The new y coordinate of lower-left corner of original bounding box.  * @x3: The new x coordinate of lower-right corner of original bounding box.  * @y3: The new y coordinate of lower-right corner of original bounding box.  * @interpolate: Whether to use interpolation and supersampling.  * @clip_result: Whether to clip results.  *  * Perform a possibly non-affine transformation on the specified  * drawable, with extra parameters.  *  * This procedure is a variant of gimp_drawable_transform_perspective()  * which uses no interpolation/supersampling at all, or default values  * (depending on the 'interpolate' parameter).  *  * Returns: The newly mapped drawable.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_drawable_transform_perspective_defaults (gint32 drawable_ID,gdouble x0,gdouble y0,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gdouble x3,gdouble y3,gboolean interpolate,gboolean clip_result)
-name|gimp_drawable_transform_perspective_defaults
+DECL|function|gimp_drawable_transform_perspective_default (gint32 drawable_ID,gdouble x0,gdouble y0,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gdouble x3,gdouble y3,gboolean interpolate,gboolean clip_result)
+name|gimp_drawable_transform_perspective_default
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -619,7 +619,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_perspective_defaults"
+literal|"gimp_drawable_transform_perspective_default"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -965,13 +965,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_transform_rotate_defaults:  * @drawable_ID: The affected drawable.  * @angle: The angle of rotation (radians).  * @auto_center: Whether to automatically rotate around the selection center.  * @center_x: The hor. coordinate of the center of rotation.  * @center_y: The vert. coordinate of the center of rotation.  * @interpolate: Whether to use interpolation and supersampling.  * @clip_result: Whether to clip results.  *  * Rotate the specified drawable about given coordinates through the  * specified angle.  *  * This procedure is a variant of gimp_drawable_transform_rotate()  * which uses no interpolation/supersampling at all, or default values  * (depending on the 'interpolate' parameter).  *  * Returns: The rotated drawable.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_drawable_transform_rotate_default:  * @drawable_ID: The affected drawable.  * @angle: The angle of rotation (radians).  * @auto_center: Whether to automatically rotate around the selection center.  * @center_x: The hor. coordinate of the center of rotation.  * @center_y: The vert. coordinate of the center of rotation.  * @interpolate: Whether to use interpolation and supersampling.  * @clip_result: Whether to clip results.  *  * Rotate the specified drawable about given coordinates through the  * specified angle.  *  * This procedure is a variant of gimp_drawable_transform_rotate()  * which uses no interpolation/supersampling at all, or default values  * (depending on the 'interpolate' parameter).  *  * Returns: The rotated drawable.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_drawable_transform_rotate_defaults (gint32 drawable_ID,gdouble angle,gboolean auto_center,gint center_x,gint center_y,gboolean interpolate,gboolean clip_result)
-name|gimp_drawable_transform_rotate_defaults
+DECL|function|gimp_drawable_transform_rotate_default (gint32 drawable_ID,gdouble angle,gboolean auto_center,gint center_x,gint center_y,gboolean interpolate,gboolean clip_result)
+name|gimp_drawable_transform_rotate_default
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -1012,7 +1012,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_rotate_defaults"
+literal|"gimp_drawable_transform_rotate_default"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1228,13 +1228,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_transform_scale_defaults:  * @drawable_ID: The affected drawable.  * @x0: The new x coordinate of upper-left corner of newly scaled region.  * @y0: The new y coordinate of upper-left corner of newly scaled region.  * @x1: The new x coordinate of lower-right corner of newly scaled region.  * @y1: The new y coordinate of lower-right corner of newly scaled region.  * @interpolate: Whether to use interpolation and supersampling.  * @clip_result: Whether to clip results.  *  * Scale the specified drawable with extra parameters  *  * This procedure is a variant of gimp_drawable_transform_scale() which  * uses no interpolation/supersampling at all, or default values  * (depending on the 'interpolate' parameter).  *  * Returns: The scaled drawable.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_drawable_transform_scale_default:  * @drawable_ID: The affected drawable.  * @x0: The new x coordinate of upper-left corner of newly scaled region.  * @y0: The new y coordinate of upper-left corner of newly scaled region.  * @x1: The new x coordinate of lower-right corner of newly scaled region.  * @y1: The new y coordinate of lower-right corner of newly scaled region.  * @interpolate: Whether to use interpolation and supersampling.  * @clip_result: Whether to clip results.  *  * Scale the specified drawable with extra parameters  *  * This procedure is a variant of gimp_drawable_transform_scale() which  * uses no interpolation/supersampling at all, or default values  * (depending on the 'interpolate' parameter).  *  * Returns: The scaled drawable.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_drawable_transform_scale_defaults (gint32 drawable_ID,gdouble x0,gdouble y0,gdouble x1,gdouble y1,gboolean interpolate,gboolean clip_result)
-name|gimp_drawable_transform_scale_defaults
+DECL|function|gimp_drawable_transform_scale_default (gint32 drawable_ID,gdouble x0,gdouble y0,gdouble x1,gdouble y1,gboolean interpolate,gboolean clip_result)
+name|gimp_drawable_transform_scale_default
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -1275,7 +1275,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_scale_defaults"
+literal|"gimp_drawable_transform_scale_default"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1477,13 +1477,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_transform_shear_defaults:  * @drawable_ID: The affected drawable.  * @shear_type: Type of shear.  * @magnitude: The magnitude of the shear.  * @interpolate: Whether to use interpolation and supersampling.  * @clip_result: Whether to clip results.  *  * Shear the specified drawable about its center by the specified  * magnitude, with extra parameters.  *  * This procedure is a variant of gimp_drawable_transform_shear() which  * uses no interpolation/supersampling at all, or default values  * (depending on the 'interpolate' parameter).  *  * Returns: The sheared drawable.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_drawable_transform_shear_default:  * @drawable_ID: The affected drawable.  * @shear_type: Type of shear.  * @magnitude: The magnitude of the shear.  * @interpolate: Whether to use interpolation and supersampling.  * @clip_result: Whether to clip results.  *  * Shear the specified drawable about its center by the specified  * magnitude, with extra parameters.  *  * This procedure is a variant of gimp_drawable_transform_shear() which  * uses no interpolation/supersampling at all, or default values  * (depending on the 'interpolate' parameter).  *  * Returns: The sheared drawable.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_drawable_transform_shear_defaults (gint32 drawable_ID,GimpOrientationType shear_type,gdouble magnitude,gboolean interpolate,gboolean clip_result)
-name|gimp_drawable_transform_shear_defaults
+DECL|function|gimp_drawable_transform_shear_default (gint32 drawable_ID,GimpOrientationType shear_type,gdouble magnitude,gboolean interpolate,gboolean clip_result)
+name|gimp_drawable_transform_shear_default
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -1518,7 +1518,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_shear_defaults"
+literal|"gimp_drawable_transform_shear_default"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -1747,13 +1747,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_transform_2d_defaults:  * @drawable_ID: The affected drawable.  * @source_x: X coordinate of the transformation center.  * @source_y: Y coordinate of the transformation center.  * @scale_x: Amount to scale in x direction.  * @scale_y: Amount to scale in y direction.  * @angle: The angle of rotation (radians).  * @dest_x: X coordinate of where the center goes.  * @dest_y: Y coordinate of where the center goes.  * @interpolate: Whether to use interpolation and supersampling.  * @clip_result: Whether to clip results.  *  * Transform the specified drawable in 2d, with extra parameters.  *  * This procedure is a variant of gimp_drawable_transform_2d() which  * uses no interpolation/supersampling at all, or default values  * (depending on the 'interpolate' parameter).  *  * Returns: The transformed drawable.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_drawable_transform_2d_default:  * @drawable_ID: The affected drawable.  * @source_x: X coordinate of the transformation center.  * @source_y: Y coordinate of the transformation center.  * @scale_x: Amount to scale in x direction.  * @scale_y: Amount to scale in y direction.  * @angle: The angle of rotation (radians).  * @dest_x: X coordinate of where the center goes.  * @dest_y: Y coordinate of where the center goes.  * @interpolate: Whether to use interpolation and supersampling.  * @clip_result: Whether to clip results.  *  * Transform the specified drawable in 2d, with extra parameters.  *  * This procedure is a variant of gimp_drawable_transform_2d() which  * uses no interpolation/supersampling at all, or default values  * (depending on the 'interpolate' parameter).  *  * Returns: The transformed drawable.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_drawable_transform_2d_defaults (gint32 drawable_ID,gdouble source_x,gdouble source_y,gdouble scale_x,gdouble scale_y,gdouble angle,gdouble dest_x,gdouble dest_y,gboolean interpolate,gboolean clip_result)
-name|gimp_drawable_transform_2d_defaults
+DECL|function|gimp_drawable_transform_2d_default (gint32 drawable_ID,gdouble source_x,gdouble source_y,gdouble scale_x,gdouble scale_y,gdouble angle,gdouble dest_x,gdouble dest_y,gboolean interpolate,gboolean clip_result)
+name|gimp_drawable_transform_2d_default
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -1803,7 +1803,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_2d_defaults"
+literal|"gimp_drawable_transform_2d_default"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -2066,13 +2066,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_transform_matrix_defaults:  * @drawable_ID: The affected drawable.  * @coeff_0_0: coefficient (0,0) of the transformation matrix.  * @coeff_0_1: coefficient (0,1) of the transformation matrix.  * @coeff_0_2: coefficient (0,2) of the transformation matrix.  * @coeff_1_0: coefficient (1,0) of the transformation matrix.  * @coeff_1_1: coefficient (1,1) of the transformation matrix.  * @coeff_1_2: coefficient (1,2) of the transformation matrix.  * @coeff_2_0: coefficient (2,0) of the transformation matrix.  * @coeff_2_1: coefficient (2,1) of the transformation matrix.  * @coeff_2_2: coefficient (2,2) of the transformation matrix.  * @interpolate: Whether to use interpolation and supersampling.  * @clip_result: Whether to clip results.  *  * Transform the specified drawable in 2d, with extra parameters.  *  * This procedure is a variant of gimp_drawable_transform_matrix()  * which uses no interpolation/supersampling at all, or default values  * (depending on the 'interpolate' parameter).  *  * Returns: The transformed drawable.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_drawable_transform_matrix_default:  * @drawable_ID: The affected drawable.  * @coeff_0_0: coefficient (0,0) of the transformation matrix.  * @coeff_0_1: coefficient (0,1) of the transformation matrix.  * @coeff_0_2: coefficient (0,2) of the transformation matrix.  * @coeff_1_0: coefficient (1,0) of the transformation matrix.  * @coeff_1_1: coefficient (1,1) of the transformation matrix.  * @coeff_1_2: coefficient (1,2) of the transformation matrix.  * @coeff_2_0: coefficient (2,0) of the transformation matrix.  * @coeff_2_1: coefficient (2,1) of the transformation matrix.  * @coeff_2_2: coefficient (2,2) of the transformation matrix.  * @interpolate: Whether to use interpolation and supersampling.  * @clip_result: Whether to clip results.  *  * Transform the specified drawable in 2d, with extra parameters.  *  * This procedure is a variant of gimp_drawable_transform_matrix()  * which uses no interpolation/supersampling at all, or default values  * (depending on the 'interpolate' parameter).  *  * Returns: The transformed drawable.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_drawable_transform_matrix_defaults (gint32 drawable_ID,gdouble coeff_0_0,gdouble coeff_0_1,gdouble coeff_0_2,gdouble coeff_1_0,gdouble coeff_1_1,gdouble coeff_1_2,gdouble coeff_2_0,gdouble coeff_2_1,gdouble coeff_2_2,gboolean interpolate,gboolean clip_result)
-name|gimp_drawable_transform_matrix_defaults
+DECL|function|gimp_drawable_transform_matrix_default (gint32 drawable_ID,gdouble coeff_0_0,gdouble coeff_0_1,gdouble coeff_0_2,gdouble coeff_1_0,gdouble coeff_1_1,gdouble coeff_1_2,gdouble coeff_2_0,gdouble coeff_2_1,gdouble coeff_2_2,gboolean interpolate,gboolean clip_result)
+name|gimp_drawable_transform_matrix_default
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -2128,7 +2128,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_matrix_defaults"
+literal|"gimp_drawable_transform_matrix_default"
 argument_list|,
 operator|&
 name|nreturn_vals

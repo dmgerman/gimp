@@ -102,10 +102,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_flip_defaults_proc
+DECL|variable|drawable_transform_flip_default_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_flip_defaults_proc
+name|drawable_transform_flip_default_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -118,10 +118,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_perspective_defaults_proc
+DECL|variable|drawable_transform_perspective_default_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_perspective_defaults_proc
+name|drawable_transform_perspective_default_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -142,10 +142,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_rotate_defaults_proc
+DECL|variable|drawable_transform_rotate_default_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_rotate_defaults_proc
+name|drawable_transform_rotate_default_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -158,10 +158,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_scale_defaults_proc
+DECL|variable|drawable_transform_scale_default_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_scale_defaults_proc
+name|drawable_transform_scale_default_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -174,10 +174,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_shear_defaults_proc
+DECL|variable|drawable_transform_shear_default_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_shear_defaults_proc
+name|drawable_transform_shear_default_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -190,10 +190,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_2d_defaults_proc
+DECL|variable|drawable_transform_2d_default_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_2d_defaults_proc
+name|drawable_transform_2d_default_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -206,10 +206,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_matrix_defaults_proc
+DECL|variable|drawable_transform_matrix_default_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_matrix_defaults_proc
+name|drawable_transform_matrix_default_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -244,7 +244,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|drawable_transform_flip_defaults_proc
+name|drawable_transform_flip_default_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -260,7 +260,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|drawable_transform_perspective_defaults_proc
+name|drawable_transform_perspective_default_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -284,7 +284,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|drawable_transform_rotate_defaults_proc
+name|drawable_transform_rotate_default_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -300,7 +300,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|drawable_transform_scale_defaults_proc
+name|drawable_transform_scale_default_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -316,7 +316,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|drawable_transform_shear_defaults_proc
+name|drawable_transform_shear_default_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -332,7 +332,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|drawable_transform_2d_defaults_proc
+name|drawable_transform_2d_default_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -348,7 +348,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|drawable_transform_matrix_defaults_proc
+name|drawable_transform_matrix_default_proc
 argument_list|)
 expr_stmt|;
 block|}
@@ -1291,8 +1291,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_flip_defaults_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
-name|drawable_transform_flip_defaults_invoker
+DECL|function|drawable_transform_flip_default_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+name|drawable_transform_flip_default_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -1605,7 +1605,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_transform_flip_defaults_proc
+name|drawable_transform_flip_default_proc
 argument_list|,
 name|success
 argument_list|)
@@ -1638,10 +1638,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_transform_flip_defaults_inargs
+DECL|variable|drawable_transform_flip_default_inargs
 specifier|static
 name|ProcArg
-name|drawable_transform_flip_defaults_inargs
+name|drawable_transform_flip_default_inargs
 index|[]
 init|=
 block|{
@@ -1705,10 +1705,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_flip_defaults_outargs
+DECL|variable|drawable_transform_flip_default_outargs
 specifier|static
 name|ProcArg
-name|drawable_transform_flip_defaults_outargs
+name|drawable_transform_flip_default_outargs
 index|[]
 init|=
 block|{
@@ -1724,13 +1724,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_flip_defaults_proc
+DECL|variable|drawable_transform_flip_default_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_flip_defaults_proc
+name|drawable_transform_flip_default_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_flip_defaults"
+literal|"gimp_drawable_transform_flip_default"
 block|,
 literal|"Flip the specified drawable around a given line."
 block|,
@@ -1748,15 +1748,15 @@ name|GIMP_INTERNAL
 block|,
 literal|7
 block|,
-name|drawable_transform_flip_defaults_inargs
+name|drawable_transform_flip_default_inargs
 block|,
 literal|1
 block|,
-name|drawable_transform_flip_defaults_outargs
+name|drawable_transform_flip_default_outargs
 block|,
 block|{
 block|{
-name|drawable_transform_flip_defaults_invoker
+name|drawable_transform_flip_default_invoker
 block|}
 block|}
 block|}
@@ -2456,8 +2456,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_perspective_defaults_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
-name|drawable_transform_perspective_defaults_invoker
+DECL|function|drawable_transform_perspective_default_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+name|drawable_transform_perspective_default_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -2864,7 +2864,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_transform_perspective_defaults_proc
+name|drawable_transform_perspective_default_proc
 argument_list|,
 name|success
 argument_list|)
@@ -2897,10 +2897,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_transform_perspective_defaults_inargs
+DECL|variable|drawable_transform_perspective_default_inargs
 specifier|static
 name|ProcArg
-name|drawable_transform_perspective_defaults_inargs
+name|drawable_transform_perspective_default_inargs
 index|[]
 init|=
 block|{
@@ -2996,10 +2996,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_perspective_defaults_outargs
+DECL|variable|drawable_transform_perspective_default_outargs
 specifier|static
 name|ProcArg
-name|drawable_transform_perspective_defaults_outargs
+name|drawable_transform_perspective_default_outargs
 index|[]
 init|=
 block|{
@@ -3015,13 +3015,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_perspective_defaults_proc
+DECL|variable|drawable_transform_perspective_default_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_perspective_defaults_proc
+name|drawable_transform_perspective_default_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_perspective_defaults"
+literal|"gimp_drawable_transform_perspective_default"
 block|,
 literal|"Perform a possibly non-affine transformation on the specified drawable, with extra parameters."
 block|,
@@ -3039,15 +3039,15 @@ name|GIMP_INTERNAL
 block|,
 literal|11
 block|,
-name|drawable_transform_perspective_defaults_inargs
+name|drawable_transform_perspective_default_inargs
 block|,
 literal|1
 block|,
-name|drawable_transform_perspective_defaults_outargs
+name|drawable_transform_perspective_default_outargs
 block|,
 block|{
 block|{
-name|drawable_transform_perspective_defaults_invoker
+name|drawable_transform_perspective_default_invoker
 block|}
 block|}
 block|}
@@ -4030,8 +4030,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_rotate_defaults_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
-name|drawable_transform_rotate_defaults_invoker
+DECL|function|drawable_transform_rotate_default_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+name|drawable_transform_rotate_default_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -4359,7 +4359,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_transform_rotate_defaults_proc
+name|drawable_transform_rotate_default_proc
 argument_list|,
 name|success
 argument_list|)
@@ -4392,10 +4392,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_transform_rotate_defaults_inargs
+DECL|variable|drawable_transform_rotate_default_inargs
 specifier|static
 name|ProcArg
-name|drawable_transform_rotate_defaults_inargs
+name|drawable_transform_rotate_default_inargs
 index|[]
 init|=
 block|{
@@ -4459,10 +4459,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_rotate_defaults_outargs
+DECL|variable|drawable_transform_rotate_default_outargs
 specifier|static
 name|ProcArg
-name|drawable_transform_rotate_defaults_outargs
+name|drawable_transform_rotate_default_outargs
 index|[]
 init|=
 block|{
@@ -4478,13 +4478,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_rotate_defaults_proc
+DECL|variable|drawable_transform_rotate_default_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_rotate_defaults_proc
+name|drawable_transform_rotate_default_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_rotate_defaults"
+literal|"gimp_drawable_transform_rotate_default"
 block|,
 literal|"Rotate the specified drawable about given coordinates through the specified angle."
 block|,
@@ -4502,15 +4502,15 @@ name|GIMP_INTERNAL
 block|,
 literal|7
 block|,
-name|drawable_transform_rotate_defaults_inargs
+name|drawable_transform_rotate_default_inargs
 block|,
 literal|1
 block|,
-name|drawable_transform_rotate_defaults_outargs
+name|drawable_transform_rotate_default_outargs
 block|,
 block|{
 block|{
-name|drawable_transform_rotate_defaults_invoker
+name|drawable_transform_rotate_default_invoker
 block|}
 block|}
 block|}
@@ -5134,8 +5134,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_scale_defaults_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
-name|drawable_transform_scale_defaults_invoker
+DECL|function|drawable_transform_scale_default_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+name|drawable_transform_scale_default_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -5498,7 +5498,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_transform_scale_defaults_proc
+name|drawable_transform_scale_default_proc
 argument_list|,
 name|success
 argument_list|)
@@ -5531,10 +5531,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_transform_scale_defaults_inargs
+DECL|variable|drawable_transform_scale_default_inargs
 specifier|static
 name|ProcArg
-name|drawable_transform_scale_defaults_inargs
+name|drawable_transform_scale_default_inargs
 index|[]
 init|=
 block|{
@@ -5598,10 +5598,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_scale_defaults_outargs
+DECL|variable|drawable_transform_scale_default_outargs
 specifier|static
 name|ProcArg
-name|drawable_transform_scale_defaults_outargs
+name|drawable_transform_scale_default_outargs
 index|[]
 init|=
 block|{
@@ -5617,13 +5617,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_scale_defaults_proc
+DECL|variable|drawable_transform_scale_default_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_scale_defaults_proc
+name|drawable_transform_scale_default_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_scale_defaults"
+literal|"gimp_drawable_transform_scale_default"
 block|,
 literal|"Scale the specified drawable with extra parameters"
 block|,
@@ -5641,15 +5641,15 @@ name|GIMP_INTERNAL
 block|,
 literal|7
 block|,
-name|drawable_transform_scale_defaults_inargs
+name|drawable_transform_scale_default_inargs
 block|,
 literal|1
 block|,
-name|drawable_transform_scale_defaults_outargs
+name|drawable_transform_scale_default_outargs
 block|,
 block|{
 block|{
-name|drawable_transform_scale_defaults_invoker
+name|drawable_transform_scale_default_invoker
 block|}
 block|}
 block|}
@@ -6189,8 +6189,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_shear_defaults_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
-name|drawable_transform_shear_defaults_invoker
+DECL|function|drawable_transform_shear_default_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+name|drawable_transform_shear_default_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -6485,7 +6485,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_transform_shear_defaults_proc
+name|drawable_transform_shear_default_proc
 argument_list|,
 name|success
 argument_list|)
@@ -6518,10 +6518,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_transform_shear_defaults_inargs
+DECL|variable|drawable_transform_shear_default_inargs
 specifier|static
 name|ProcArg
-name|drawable_transform_shear_defaults_inargs
+name|drawable_transform_shear_default_inargs
 index|[]
 init|=
 block|{
@@ -6569,10 +6569,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_shear_defaults_outargs
+DECL|variable|drawable_transform_shear_default_outargs
 specifier|static
 name|ProcArg
-name|drawable_transform_shear_defaults_outargs
+name|drawable_transform_shear_default_outargs
 index|[]
 init|=
 block|{
@@ -6588,13 +6588,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_shear_defaults_proc
+DECL|variable|drawable_transform_shear_default_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_shear_defaults_proc
+name|drawable_transform_shear_default_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_shear_defaults"
+literal|"gimp_drawable_transform_shear_default"
 block|,
 literal|"Shear the specified drawable about its center by the specified magnitude, with extra parameters."
 block|,
@@ -6612,15 +6612,15 @@ name|GIMP_INTERNAL
 block|,
 literal|5
 block|,
-name|drawable_transform_shear_defaults_inargs
+name|drawable_transform_shear_default_inargs
 block|,
 literal|1
 block|,
-name|drawable_transform_shear_defaults_outargs
+name|drawable_transform_shear_default_outargs
 block|,
 block|{
 block|{
-name|drawable_transform_shear_defaults_invoker
+name|drawable_transform_shear_default_invoker
 block|}
 block|}
 block|}
@@ -7284,8 +7284,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_2d_defaults_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
-name|drawable_transform_2d_defaults_invoker
+DECL|function|drawable_transform_2d_default_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+name|drawable_transform_2d_default_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -7664,7 +7664,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_transform_2d_defaults_proc
+name|drawable_transform_2d_default_proc
 argument_list|,
 name|success
 argument_list|)
@@ -7697,10 +7697,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_transform_2d_defaults_inargs
+DECL|variable|drawable_transform_2d_default_inargs
 specifier|static
 name|ProcArg
-name|drawable_transform_2d_defaults_inargs
+name|drawable_transform_2d_default_inargs
 index|[]
 init|=
 block|{
@@ -7788,10 +7788,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_2d_defaults_outargs
+DECL|variable|drawable_transform_2d_default_outargs
 specifier|static
 name|ProcArg
-name|drawable_transform_2d_defaults_outargs
+name|drawable_transform_2d_default_outargs
 index|[]
 init|=
 block|{
@@ -7807,13 +7807,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_2d_defaults_proc
+DECL|variable|drawable_transform_2d_default_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_2d_defaults_proc
+name|drawable_transform_2d_default_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_2d_defaults"
+literal|"gimp_drawable_transform_2d_default"
 block|,
 literal|"Transform the specified drawable in 2d, with extra parameters."
 block|,
@@ -7831,15 +7831,15 @@ name|GIMP_INTERNAL
 block|,
 literal|10
 block|,
-name|drawable_transform_2d_defaults_inargs
+name|drawable_transform_2d_default_inargs
 block|,
 literal|1
 block|,
-name|drawable_transform_2d_defaults_outargs
+name|drawable_transform_2d_default_outargs
 block|,
 block|{
 block|{
-name|drawable_transform_2d_defaults_invoker
+name|drawable_transform_2d_default_invoker
 block|}
 block|}
 block|}
@@ -8609,8 +8609,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_transform_matrix_defaults_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
-name|drawable_transform_matrix_defaults_invoker
+DECL|function|drawable_transform_matrix_default_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+name|drawable_transform_matrix_default_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -9079,7 +9079,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_transform_matrix_defaults_proc
+name|drawable_transform_matrix_default_proc
 argument_list|,
 name|success
 argument_list|)
@@ -9112,10 +9112,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_transform_matrix_defaults_inargs
+DECL|variable|drawable_transform_matrix_default_inargs
 specifier|static
 name|ProcArg
-name|drawable_transform_matrix_defaults_inargs
+name|drawable_transform_matrix_default_inargs
 index|[]
 init|=
 block|{
@@ -9219,10 +9219,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_matrix_defaults_outargs
+DECL|variable|drawable_transform_matrix_default_outargs
 specifier|static
 name|ProcArg
-name|drawable_transform_matrix_defaults_outargs
+name|drawable_transform_matrix_default_outargs
 index|[]
 init|=
 block|{
@@ -9238,13 +9238,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_transform_matrix_defaults_proc
+DECL|variable|drawable_transform_matrix_default_proc
 specifier|static
 name|ProcRecord
-name|drawable_transform_matrix_defaults_proc
+name|drawable_transform_matrix_default_proc
 init|=
 block|{
-literal|"gimp_drawable_transform_matrix_defaults"
+literal|"gimp_drawable_transform_matrix_default"
 block|,
 literal|"Transform the specified drawable in 2d, with extra parameters."
 block|,
@@ -9262,15 +9262,15 @@ name|GIMP_INTERNAL
 block|,
 literal|12
 block|,
-name|drawable_transform_matrix_defaults_inargs
+name|drawable_transform_matrix_default_inargs
 block|,
 literal|1
 block|,
-name|drawable_transform_matrix_defaults_outargs
+name|drawable_transform_matrix_default_outargs
 block|,
 block|{
 block|{
-name|drawable_transform_matrix_defaults_invoker
+name|drawable_transform_matrix_default_invoker
 block|}
 block|}
 block|}
