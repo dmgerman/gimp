@@ -39,7 +39,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2998ac340103
+DECL|enum|__anon2a1140b80103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -73,7 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2998ac340203
+DECL|enum|__anon2a1140b80203
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -113,7 +113,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2998ac340303
+DECL|enum|__anon2a1140b80303
 block|{
 DECL|enumerator|GIMP_MAKE_PALETTE
 name|GIMP_MAKE_PALETTE
@@ -156,7 +156,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2998ac340403
+DECL|enum|__anon2a1140b80403
 block|{
 DECL|enumerator|GIMP_NORMAL_CONVOL
 name|GIMP_NORMAL_CONVOL
@@ -193,7 +193,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2998ac340503
+DECL|enum|__anon2a1140b80503
 block|{
 DECL|enumerator|GIMP_BLUR_CONVOLVE
 name|GIMP_BLUR_CONVOLVE
@@ -227,7 +227,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2998ac340603
+DECL|enum|__anon2a1140b80603
 block|{
 DECL|enumerator|GIMP_FOREGROUND_FILL
 name|GIMP_FOREGROUND_FILL
@@ -270,7 +270,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2998ac340703
+DECL|enum|__anon2a1140b80703
 block|{
 DECL|enumerator|GIMP_GRADIENT_SEGMENT_RGB
 name|GIMP_GRADIENT_SEGMENT_RGB
@@ -307,7 +307,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2998ac340803
+DECL|enum|__anon2a1140b80803
 block|{
 DECL|enumerator|GIMP_GRADIENT_SEGMENT_LINEAR
 name|GIMP_GRADIENT_SEGMENT_LINEAR
@@ -350,7 +350,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2998ac340903
+DECL|enum|__anon2a1140b80903
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -393,7 +393,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2998ac340a03
+DECL|enum|__anon2a1140b80a03
 block|{
 DECL|enumerator|GIMP_ALL_HUES
 name|GIMP_ALL_HUES
@@ -442,7 +442,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2998ac340b03
+DECL|enum|__anon2a1140b80b03
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -539,7 +539,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2998ac340c03
+DECL|enum|__anon2a1140b80c03
 block|{
 DECL|enumerator|GIMP_MASK_APPLY
 name|GIMP_MASK_APPLY
@@ -573,7 +573,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2998ac340d03
+DECL|enum|__anon2a1140b80d03
 block|{
 DECL|enumerator|GIMP_EXPAND_AS_NECESSARY
 name|GIMP_EXPAND_AS_NECESSARY
@@ -613,7 +613,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2998ac340e03
+DECL|enum|__anon2a1140b80e03
 block|{
 DECL|enumerator|GIMP_OFFSET_BACKGROUND
 name|GIMP_OFFSET_BACKGROUND
@@ -647,7 +647,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2998ac340f03
+DECL|enum|__anon2a1140b80f03
 block|{
 DECL|enumerator|GIMP_ORIENTATION_HORIZONTAL
 name|GIMP_ORIENTATION_HORIZONTAL
@@ -684,7 +684,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2998ac341003
+DECL|enum|__anon2a1140b81003
 block|{
 DECL|enumerator|GIMP_ROTATE_90
 name|GIMP_ROTATE_90
@@ -721,7 +721,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2998ac341103
+DECL|enum|__anon2a1140b81103
 block|{
 DECL|enumerator|GIMP_RUN_INTERACTIVE
 name|GIMP_RUN_INTERACTIVE
@@ -734,40 +734,6 @@ name|GIMP_RUN_WITH_LAST_VALS
 DECL|typedef|GimpRunMode
 block|}
 name|GimpRunMode
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_SIZE_TYPE
-define|#
-directive|define
-name|GIMP_TYPE_SIZE_TYPE
-value|(gimp_size_type_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_size_type_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2998ac341203
-block|{
-DECL|enumerator|GIMP_PIXELS
-name|GIMP_PIXELS
-block|,
-DECL|enumerator|GIMP_POINTS
-name|GIMP_POINTS
-DECL|typedef|GimpSizeType
-block|}
-name|GimpSizeType
 typedef|;
 end_typedef
 

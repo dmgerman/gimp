@@ -38,7 +38,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2af6837f0103
+DECL|enum|__anon29e0b3e90103
 block|{
 DECL|enumerator|GIMP_TEXT_BOX_DYNAMIC
 name|GIMP_TEXT_BOX_DYNAMIC
@@ -73,7 +73,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2af6837f0203
+DECL|enum|__anon29e0b3e90203
 block|{
 DECL|enumerator|GIMP_TEXT_DIRECTION_LTR
 name|GIMP_TEXT_DIRECTION_LTR
@@ -110,7 +110,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2af6837f0303
+DECL|enum|__anon29e0b3e90303
 block|{
 DECL|enumerator|GIMP_TEXT_JUSTIFY_LEFT
 name|GIMP_TEXT_JUSTIFY_LEFT
@@ -155,7 +155,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2af6837f0403
+DECL|enum|__anon29e0b3e90403
 block|{
 DECL|enumerator|GIMP_TEXT_OUTLINE_NONE
 name|GIMP_TEXT_OUTLINE_NONE
@@ -168,27 +168,6 @@ name|GIMP_TEXT_OUTLINE_STROKE_FILL
 DECL|typedef|GimpTextOutline
 block|}
 name|GimpTextOutline
-typedef|;
-end_typedef
-
-begin_comment
-comment|/*  backward compatibility enums  */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon2af6837f0503
-block|{
-DECL|enumerator|GIMP_PIXELS
-name|GIMP_PIXELS
-block|,
-DECL|enumerator|GIMP_POINTS
-name|GIMP_POINTS
-DECL|typedef|GimpSizeType
-block|}
-name|GimpSizeType
 typedef|;
 end_typedef
 
