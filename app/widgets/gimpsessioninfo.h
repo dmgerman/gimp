@@ -37,23 +37,22 @@ DECL|member|height
 name|gint
 name|height
 decl_stmt|;
-DECL|member|widget
-name|GtkWidget
-modifier|*
-name|widget
-decl_stmt|;
-comment|/*  only valid while restoring and saving the session  */
 DECL|member|open
 name|gboolean
 name|open
 decl_stmt|;
+comment|/*  only valid while restoring and saving the session  */
 comment|/*  dialog specific list of GimpSessionInfoAux  */
 DECL|member|aux_info
 name|GList
 modifier|*
 name|aux_info
 decl_stmt|;
-comment|/*  dialog specific list of GimpSessionInfoAux  */
+DECL|member|widget
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 comment|/*  only one of these is valid  */
 DECL|member|toplevel_entry
 name|GimpDialogFactoryEntry
@@ -65,12 +64,12 @@ name|GimpDialogFactoryEntry
 modifier|*
 name|dockable_entry
 decl_stmt|;
+comment|/*  list of GimpSessionInfoBook  */
 DECL|member|books
 name|GList
 modifier|*
 name|books
 decl_stmt|;
-comment|/*  GList of GimpSessionInfoBook  */
 block|}
 struct|;
 end_struct
@@ -84,18 +83,21 @@ DECL|member|position
 name|gint
 name|position
 decl_stmt|;
-DECL|member|dockables
-name|GList
-modifier|*
-name|dockables
+DECL|member|current_page
+name|gint
+name|current_page
 decl_stmt|;
-comment|/*  GList of GimpSessionInfoDockable  */
 DECL|member|widget
 name|GtkWidget
 modifier|*
 name|widget
 decl_stmt|;
-comment|/*  only used while restoring the session  */
+comment|/*  list of GimpSessionInfoDockable  */
+DECL|member|dockables
+name|GList
+modifier|*
+name|dockables
+decl_stmt|;
 block|}
 struct|;
 end_struct

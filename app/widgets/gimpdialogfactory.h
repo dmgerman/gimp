@@ -500,7 +500,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_dialog_factories_idle
+name|gimp_dialog_factories_set_busy
 parameter_list|(
 name|void
 parameter_list|)
@@ -509,9 +509,26 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_dialog_factories_unidle
+name|gimp_dialog_factories_unset_busy
 parameter_list|(
 name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpDialogFactory
+modifier|*
+name|gimp_dialog_factory_from_widget
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|dialog
+parameter_list|,
+name|GimpDialogFactoryEntry
+modifier|*
+modifier|*
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -560,7 +560,7 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_factories_idle
+name|gimp_dialog_factories_set_busy
 argument_list|()
 expr_stmt|;
 name|gdk_flush
@@ -585,7 +585,7 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_factories_unidle
+name|gimp_dialog_factories_unset_busy
 argument_list|()
 expr_stmt|;
 name|gdk_flush
