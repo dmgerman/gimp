@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a360d0a0103
+DECL|enum|__anon296317780103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -999,6 +999,8 @@ condition|(
 operator|!
 name|preview
 operator|->
+name|renderer
+operator|->
 name|viewable
 condition|)
 return|return;
@@ -1045,6 +1047,8 @@ operator|=
 name|GIMP_IMAGE
 argument_list|(
 name|preview
+operator|->
+name|renderer
 operator|->
 name|viewable
 argument_list|)
@@ -1405,9 +1409,12 @@ argument_list|)
 expr_stmt|;
 name|gdk_window_set_cursor
 argument_list|(
+name|GIMP_PREVIEW
+argument_list|(
 name|widget
+argument_list|)
 operator|->
-name|window
+name|event_window
 argument_list|,
 name|cursor
 argument_list|)
@@ -1676,6 +1683,10 @@ name|GimpNavigationPreview
 modifier|*
 name|nav_preview
 decl_stmt|;
+name|GimpPreview
+modifier|*
+name|preview
+decl_stmt|;
 name|gint
 name|tx
 decl_stmt|,
@@ -1687,6 +1698,13 @@ decl_stmt|;
 name|nav_preview
 operator|=
 name|GIMP_NAVIGATION_PREVIEW
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
+name|preview
+operator|=
+name|GIMP_PREVIEW
 argument_list|(
 name|widget
 argument_list|)
@@ -1721,10 +1739,7 @@ name|nav_preview
 operator|->
 name|p_width
 operator|==
-name|GIMP_PREVIEW
-argument_list|(
-name|widget
-argument_list|)
+name|preview
 operator|->
 name|renderer
 operator|->
@@ -1734,10 +1749,7 @@ name|nav_preview
 operator|->
 name|p_height
 operator|==
-name|GIMP_PREVIEW
-argument_list|(
-name|widget
-argument_list|)
+name|preview
 operator|->
 name|renderer
 operator|->
@@ -1746,9 +1758,9 @@ condition|)
 block|{
 name|gdk_window_set_cursor
 argument_list|(
-name|widget
+name|preview
 operator|->
-name|window
+name|event_window
 argument_list|,
 name|NULL
 argument_list|)
@@ -1821,9 +1833,9 @@ expr_stmt|;
 block|}
 name|gdk_window_set_cursor
 argument_list|(
-name|widget
+name|preview
 operator|->
-name|window
+name|event_window
 argument_list|,
 name|cursor
 argument_list|)
@@ -1839,10 +1851,7 @@ return|;
 block|}
 name|gdk_window_get_pointer
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
-name|nav_preview
-argument_list|)
+name|preview
 operator|->
 name|event_window
 argument_list|,
@@ -2034,6 +2043,8 @@ name|GIMP_IMAGE
 argument_list|(
 name|preview
 operator|->
+name|renderer
+operator|->
 name|viewable
 argument_list|)
 expr_stmt|;
@@ -2162,6 +2173,8 @@ if|if
 condition|(
 name|preview
 operator|->
+name|renderer
+operator|->
 name|viewable
 operator|&&
 name|nav_preview
@@ -2182,6 +2195,8 @@ operator|=
 name|GIMP_IMAGE
 argument_list|(
 name|preview
+operator|->
+name|renderer
 operator|->
 name|viewable
 argument_list|)
@@ -2365,6 +2380,8 @@ name|g_return_if_fail
 argument_list|(
 name|preview
 operator|->
+name|renderer
+operator|->
 name|viewable
 argument_list|)
 expr_stmt|;
@@ -2373,6 +2390,8 @@ operator|=
 name|GIMP_IMAGE
 argument_list|(
 name|preview
+operator|->
+name|renderer
 operator|->
 name|viewable
 argument_list|)
