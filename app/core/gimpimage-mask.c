@@ -48,19 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint/gimppaintcore.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint/gimppaintcore-stroke.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint/gimppaintoptions.h"
 end_include
 
 begin_include
@@ -138,28 +126,8 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
-
-begin_comment
-comment|/*  local variables  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|gimp_image_mask_stroking
-specifier|static
-name|gboolean
-name|gimp_image_mask_stroking
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/*  public functions  */
@@ -703,7 +671,9 @@ block|{
 comment|/*  in order to allow stroking of selections, we need to pretend here    *  that the selection mask is empty so that it doesn't mask the paint    *  during the stroke operation.    */
 if|if
 condition|(
-name|gimp_image_mask_stroking
+name|gimage
+operator|->
+name|mask_stroking
 condition|)
 return|return
 name|TRUE
@@ -2338,7 +2308,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_mask_stroke (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context)
+DECL|function|gimp_image_mask_stroke (GimpImage * gimage,GimpDrawable * drawable,GimpPaintInfo * paint_info)
 name|gimp_image_mask_stroke
 parameter_list|(
 name|GimpImage
@@ -2349,9 +2319,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpContext
+name|GimpPaintInfo
 modifier|*
-name|context
+name|paint_info
 parameter_list|)
 block|{
 specifier|const
@@ -2369,14 +2339,6 @@ name|num_segs_in
 decl_stmt|;
 name|gint
 name|num_segs_out
-decl_stmt|;
-name|GimpToolInfo
-modifier|*
-name|tool_info
-decl_stmt|;
-name|GimpPaintInfo
-modifier|*
-name|paint_info
 decl_stmt|;
 name|GimpPaintCore
 modifier|*
@@ -2407,9 +2369,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_CONTEXT
+name|GIMP_IS_PAINT_INFO
 argument_list|(
-name|context
+name|paint_info
 argument_list|)
 argument_list|,
 name|FALSE
@@ -2448,7 +2410,9 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_image_mask_stroking
+name|gimage
+operator|->
+name|mask_stroking
 operator|=
 name|TRUE
 expr_stmt|;
@@ -2463,19 +2427,6 @@ argument_list|(
 literal|"Stroke Selection"
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|tool_info
-operator|=
-name|gimp_context_get_tool
-argument_list|(
-name|context
-argument_list|)
-expr_stmt|;
-name|paint_info
-operator|=
-name|tool_info
-operator|->
-name|paint_info
 expr_stmt|;
 name|core
 operator|=
@@ -2519,7 +2470,9 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_image_mask_stroking
+name|gimage
+operator|->
+name|mask_stroking
 operator|=
 name|FALSE
 expr_stmt|;

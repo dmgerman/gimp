@@ -246,7 +246,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b92dd560103
+DECL|enum|__anon2b02965d0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -1917,6 +1917,12 @@ operator|->
 name|selection_mask
 operator|=
 name|NULL
+expr_stmt|;
+name|gimage
+operator|->
+name|mask_stroking
+operator|=
+name|FALSE
 expr_stmt|;
 name|gimage
 operator|->

@@ -46,6 +46,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -71,6 +77,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimptoolinfo.h"
 end_include
 
 begin_decl_stmt
@@ -1119,10 +1131,6 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
 name|drawable
 operator|=
 operator|(
@@ -1160,6 +1168,14 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
+name|GimpToolInfo
+modifier|*
+name|tool_info
+decl_stmt|;
 name|gimage
 operator|=
 name|gimp_item_get_image
@@ -1167,6 +1183,16 @@ argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|tool_info
+operator|=
+name|gimp_context_get_tool
+argument_list|(
+name|gimp_get_current_context
+argument_list|(
+name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1178,12 +1204,9 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
-name|gimp_get_current_context
-argument_list|(
-name|gimage
+name|tool_info
 operator|->
-name|gimp
-argument_list|)
+name|paint_info
 argument_list|)
 expr_stmt|;
 block|}

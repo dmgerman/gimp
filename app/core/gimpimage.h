@@ -398,6 +398,11 @@ modifier|*
 name|selection_mask
 decl_stmt|;
 comment|/*  the selection mask channel   */
+DECL|member|mask_stroking
+name|gboolean
+name|mask_stroking
+decl_stmt|;
+comment|/*  is a stroke being done       */
 DECL|member|parasites
 name|GimpParasiteList
 modifier|*

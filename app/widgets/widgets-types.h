@@ -689,22 +689,6 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpStrokeItemFunc
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|GimpStrokeItemFunc
-function_decl|)
-parameter_list|(
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|)
-function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpSelectionToVectorsFunc
 typedef|typedef
 name|void
