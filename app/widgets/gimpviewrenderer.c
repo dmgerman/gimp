@@ -195,7 +195,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8421fe0103
+DECL|enum|__anon28ccdd8a0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -564,7 +564,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|GtkType
+name|GType
 DECL|function|gimp_preview_get_type (void)
 name|gimp_preview_get_type
 parameter_list|(
@@ -572,7 +572,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GtkType
+name|GType
 name|preview_type
 init|=
 literal|0

@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__ERROR_CONSOLE_H__
+name|__ERROR_CONSOLE_DIALOG_H__
 end_ifndef
 
 begin_define
-DECL|macro|__ERROR_CONSOLE_H__
+DECL|macro|__ERROR_CONSOLE_DIALOG_H__
 define|#
 directive|define
-name|__ERROR_CONSOLE_H__
+name|__ERROR_CONSOLE_DIALOG_H__
 end_define
 
 begin_function_decl
@@ -38,22 +38,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|error_console_free
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/* __ERROR_CONSOLE_H__ */
+comment|/* __ERROR_CONSOLE_DIALOG_H__ */
 end_comment
 
 end_unit

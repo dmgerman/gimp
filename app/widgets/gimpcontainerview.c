@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27574c6d0103
+DECL|enum|__anon2b6fca6e0103
 block|{
 DECL|enumerator|SET_CONTAINER
 name|SET_CONTAINER
@@ -2187,7 +2187,7 @@ argument_list|)
 argument_list|,
 literal|"extended_clicked"
 argument_list|,
-name|callback
+name|extended_callback
 argument_list|,
 name|callback_data
 argument_list|)

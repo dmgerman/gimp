@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b65d4a20103
+DECL|enum|__anon278032b20103
 block|{
 DECL|enumerator|EXTENDED_CLICKED
 name|EXTENDED_CLICKED
@@ -123,7 +123,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|GtkType
+name|GType
 DECL|function|gimp_button_get_type (void)
 name|gimp_button_get_type
 parameter_list|(
@@ -131,7 +131,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|guint
+name|GType
 name|button_type
 init|=
 literal|0
@@ -358,15 +358,10 @@ modifier|*
 name|bevent
 parameter_list|)
 block|{
-name|g_return_val_if_fail
-argument_list|(
-name|widget
-operator|!=
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
+name|GimpButton
+modifier|*
+name|button
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_BUTTON
@@ -386,6 +381,13 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|button
+operator|=
+name|GIMP_BUTTON
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|bevent
@@ -401,17 +403,6 @@ operator|==
 literal|1
 condition|)
 block|{
-name|GimpButton
-modifier|*
-name|button
-decl_stmt|;
-name|button
-operator|=
-name|GIMP_BUTTON
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
 name|button
 operator|->
 name|press_state
@@ -419,6 +410,15 @@ operator|=
 name|bevent
 operator|->
 name|state
+expr_stmt|;
+block|}
+else|else
+block|{
+name|button
+operator|->
+name|press_state
+operator|=
+literal|0
 expr_stmt|;
 block|}
 if|if
@@ -451,7 +451,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|gimp_button_button_release (GtkWidget * widget,GdkEventButton * bevent)
 name|gimp_button_button_release
 parameter_list|(
@@ -473,20 +473,6 @@ name|extended_clicked
 init|=
 name|FALSE
 decl_stmt|;
-name|gboolean
-name|retval
-init|=
-name|TRUE
-decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|widget
-operator|!=
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_BUTTON
@@ -590,8 +576,6 @@ argument_list|)
 operator|->
 name|button_release_event
 condition|)
-name|retval
-operator|=
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class
@@ -632,7 +616,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|retval
+name|TRUE
 return|;
 block|}
 end_function

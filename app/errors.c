@@ -59,7 +59,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"widgets/widgets-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimpdialogfactory.h"
 end_include
 
 begin_include
@@ -71,13 +77,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"gui/dialogs.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"errorconsole.h"
+file|"gui/error-console-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"appenv.h"
 end_include
 
 begin_include
@@ -157,6 +169,13 @@ break|break;
 case|case
 name|ERROR_CONSOLE
 case|:
+name|gimp_dialog_factory_dialog_raise
+argument_list|(
+name|global_dock_factory
+argument_list|,
+literal|"gimp:error-console"
+argument_list|)
+expr_stmt|;
 name|error_console_add
 argument_list|(
 operator|(

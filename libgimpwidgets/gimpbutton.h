@@ -113,7 +113,7 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
-name|GtkType
+name|GType
 name|gimp_button_get_type
 parameter_list|(
 name|void

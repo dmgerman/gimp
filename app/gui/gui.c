@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"errorconsole.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"file-open-dialog.h"
 end_include
 
@@ -1311,9 +1305,6 @@ argument_list|)
 expr_stmt|;
 comment|/*  handle this in the dialog factory:  */
 name|document_index_free
-argument_list|()
-expr_stmt|;
-name|error_console_free
 argument_list|()
 expr_stmt|;
 name|tool_options_dialog_free
