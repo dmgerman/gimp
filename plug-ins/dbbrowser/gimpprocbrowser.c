@@ -111,7 +111,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2770d04c0103
+DECL|enum|__anon290f2a0b0103
 block|{
 DECL|enumerator|COLUMN_LABEL
 name|COLUMN_LABEL
@@ -128,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2770d04c0208
+DECL|struct|__anon290f2a0b0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1957,7 +1957,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|gtk_tree_model_get_iter_root
+name|gtk_tree_model_get_iter_first
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
