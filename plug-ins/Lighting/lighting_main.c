@@ -319,6 +319,12 @@ name|FALSE
 expr_stmt|;
 name|mapvals
 operator|.
+name|interactive_preview
+operator|=
+name|TRUE
+expr_stmt|;
+name|mapvals
+operator|.
 name|bumpmap_id
 operator|=
 operator|-
