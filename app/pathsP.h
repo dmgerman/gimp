@@ -25,7 +25,7 @@ comment|/* Will be used to hopefully store in XCF format...  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c52906f0108
+DECL|struct|__anon2b3cd7a80108
 typedef|typedef
 struct|struct
 block|{
@@ -52,7 +52,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c52906f0208
+DECL|struct|__anon2b3cd7a80208
 typedef|typedef
 struct|struct
 block|{
@@ -79,6 +79,11 @@ name|guint32
 name|locked
 decl_stmt|;
 comment|/* Only bottom bit used */
+DECL|member|tattoo
+name|Tattoo
+name|tattoo
+decl_stmt|;
+comment|/* The tattoo for the path */
 DECL|member|name
 name|GString
 modifier|*
@@ -95,7 +100,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c52906f0308
+DECL|struct|__anon2b3cd7a80308
 typedef|typedef
 struct|struct
 block|{
@@ -138,7 +143,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c52906f0403
+DECL|enum|__anon2b3cd7a80403
 typedef|typedef
 enum|enum
 block|{
@@ -169,10 +174,15 @@ begin_function_decl
 name|PATHP
 name|path_new
 parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|,
 name|PathType
 parameter_list|,
 name|GSList
 modifier|*
+parameter_list|,
+name|gint
 parameter_list|,
 name|gint
 parameter_list|,
@@ -248,6 +258,47 @@ name|PathsList
 modifier|*
 parameter_list|,
 name|PATHP
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|paths_distance
+parameter_list|(
+name|PATHP
+parameter_list|,
+name|gdouble
+parameter_list|,
+name|gint
+modifier|*
+parameter_list|,
+name|gint
+modifier|*
+parameter_list|,
+name|gdouble
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|Tattoo
+name|paths_get_tattoo
+parameter_list|(
+name|PATHP
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|PATHP
+name|paths_get_path_by_tattoo
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|,
+name|Tattoo
 parameter_list|)
 function_decl|;
 end_function_decl

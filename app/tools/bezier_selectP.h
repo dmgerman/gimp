@@ -97,7 +97,7 @@ value|1000
 end_define
 
 begin_enum
-DECL|enum|__anon274f246b0103
+DECL|enum|__anon29e4f8a40103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -263,6 +263,8 @@ name|GdkPoint
 modifier|*
 parameter_list|,
 name|int
+parameter_list|,
+name|gpointer
 parameter_list|)
 function_decl|;
 end_typedef
@@ -298,6 +300,8 @@ parameter_list|,
 name|BezierPointsFunc
 parameter_list|,
 name|int
+parameter_list|,
+name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -375,6 +379,29 @@ name|BezierSelect
 modifier|*
 parameter_list|,
 name|GDisplay
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|bezier_distance_along
+parameter_list|(
+name|BezierSelect
+modifier|*
+parameter_list|,
+name|gint
+parameter_list|,
+name|gdouble
+parameter_list|,
+name|gint
+modifier|*
+parameter_list|,
+name|gint
+modifier|*
+parameter_list|,
+name|gdouble
 modifier|*
 parameter_list|)
 function_decl|;
