@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287136ba0108
+DECL|struct|__anon2bd48f3c0108
 block|{
 DECL|member|interlaced
 name|gint
@@ -287,9 +287,9 @@ literal|6
 block|,
 name|TRUE
 block|,
-name|TRUE
+name|FALSE
 block|,
-name|TRUE
+name|FALSE
 block|,
 name|TRUE
 block|,
