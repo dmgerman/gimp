@@ -72,11 +72,11 @@ name|int
 name|fixed_size
 decl_stmt|;
 DECL|member|fixed_width
-name|int
+name|double
 name|fixed_width
 decl_stmt|;
 DECL|member|fixed_height
-name|int
+name|double
 name|fixed_height
 decl_stmt|;
 DECL|member|context_id

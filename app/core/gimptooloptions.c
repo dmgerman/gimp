@@ -2152,7 +2152,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|tool_options_int_adjustment_update
+name|tool_options_double_adjustment_update
 argument_list|,
 operator|&
 name|options
@@ -2332,7 +2332,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|tool_options_int_adjustment_update
+name|tool_options_double_adjustment_update
 argument_list|,
 operator|&
 name|options

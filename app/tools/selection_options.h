@@ -126,11 +126,11 @@ modifier|*
 name|fixed_size_w
 decl_stmt|;
 DECL|member|fixed_width
-name|int
+name|double
 name|fixed_width
 decl_stmt|;
 DECL|member|fixed_width_d
-name|int
+name|double
 name|fixed_width_d
 decl_stmt|;
 DECL|member|fixed_width_w
@@ -139,11 +139,11 @@ modifier|*
 name|fixed_width_w
 decl_stmt|;
 DECL|member|fixed_height
-name|int
+name|double
 name|fixed_height
 decl_stmt|;
 DECL|member|fixed_height_d
-name|int
+name|double
 name|fixed_height_d
 decl_stmt|;
 DECL|member|fixed_height_w
