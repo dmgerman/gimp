@@ -312,6 +312,8 @@ literal|"Marc Bless"
 block|,
 literal|"Roberto Boyd"
 block|,
+literal|"Seth Burgess"
+block|,
 literal|"Brent Burton"
 block|,
 literal|"Ed Connel"
@@ -387,6 +389,8 @@ block|,
 literal|"Tracy Scott"
 block|,
 literal|"Manish Singh"
+block|,
+literal|"Nathan Summers"
 block|,
 literal|"Mike Sweet"
 block|,
