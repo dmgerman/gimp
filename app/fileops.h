@@ -146,6 +146,9 @@ parameter_list|,
 name|char
 modifier|*
 name|raw_filename
+parameter_list|,
+name|gint
+name|mode
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -467,7 +467,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b3bb6b60103
+DECL|enum|__anon2991fdd60103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -853,6 +853,12 @@ operator|=
 literal|72.0
 expr_stmt|;
 comment|/* maybe should be rc-supplied default? */
+name|gimage
+operator|->
+name|save_proc
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 end_function
 
@@ -1386,6 +1392,48 @@ return|return
 name|gimage
 operator|->
 name|resolution
+return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_image_set_save_proc (GimpImage * gimage,PlugInProcDef * proc)
+name|gimp_image_set_save_proc
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|PlugInProcDef
+modifier|*
+name|proc
+parameter_list|)
+block|{
+name|gimage
+operator|->
+name|save_proc
+operator|=
+name|proc
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|PlugInProcDef
+modifier|*
+DECL|function|gimp_image_get_save_proc (GimpImage * gimage)
+name|gimp_image_get_save_proc
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+block|{
+return|return
+name|gimage
+operator|->
+name|save_proc
 return|;
 block|}
 end_function

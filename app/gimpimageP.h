@@ -82,6 +82,12 @@ name|int
 name|has_filename
 decl_stmt|;
 comment|/*  has a valid filename         */
+DECL|member|save_proc
+name|PlugInProcDef
+modifier|*
+name|save_proc
+decl_stmt|;
+comment|/*  last PDB save proc used      */
 DECL|member|width
 DECL|member|height
 name|int

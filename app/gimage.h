@@ -174,6 +174,22 @@ value|gimp_image_get_resolution
 end_define
 
 begin_define
+DECL|macro|gimage_set_save_proc
+define|#
+directive|define
+name|gimage_set_save_proc
+value|gimp_image_set_save_proc
+end_define
+
+begin_define
+DECL|macro|gimage_get_save_proc
+define|#
+directive|define
+name|gimage_get_save_proc
+value|gimp_image_get_save_proc
+end_define
+
+begin_define
 DECL|macro|gimage_resize
 define|#
 directive|define

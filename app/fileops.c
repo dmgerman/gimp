@@ -2535,6 +2535,8 @@ operator|->
 name|gimage
 argument_list|)
 argument_list|)
+argument_list|,
+literal|2
 argument_list|)
 expr_stmt|;
 block|}
@@ -3484,7 +3486,7 @@ end_function
 
 begin_function
 name|int
-DECL|function|file_save (GimpImage * gimage,char * filename,char * raw_filename)
+DECL|function|file_save (GimpImage * gimage,char * filename,char * raw_filename,gint mode)
 name|file_save
 parameter_list|(
 name|GimpImage
@@ -3498,6 +3500,9 @@ parameter_list|,
 name|char
 modifier|*
 name|raw_filename
+parameter_list|,
+name|gint
+name|mode
 parameter_list|)
 block|{
 name|PlugInProcDef
@@ -3536,7 +3541,10 @@ name|FALSE
 return|;
 name|file_proc
 operator|=
-name|save_file_proc
+name|gimage_get_save_proc
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -3636,7 +3644,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-literal|0
+name|mode
 expr_stmt|;
 name|args
 index|[
@@ -3745,6 +3753,14 @@ argument_list|(
 name|gimage
 argument_list|,
 name|filename
+argument_list|)
+expr_stmt|;
+comment|/*  use the same plug-in for this image next time  */
+name|gimage_set_save_proc
+argument_list|(
+name|gimage
+argument_list|,
+name|file_proc
 argument_list|)
 expr_stmt|;
 block|}
@@ -4489,6 +4505,13 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gimage_set_save_proc
+argument_list|(
+name|the_gimage
+argument_list|,
+name|save_file_proc
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|file_save
@@ -4498,6 +4521,8 @@ argument_list|,
 name|filename
 argument_list|,
 name|raw_filename
+argument_list|,
+literal|0
 argument_list|)
 condition|)
 block|{
@@ -5054,6 +5079,8 @@ argument_list|,
 name|overwrite_box
 operator|->
 name|raw_filename
+argument_list|,
+literal|0
 argument_list|)
 condition|)
 block|{
