@@ -460,6 +460,11 @@ name|TileManager
 modifier|*
 name|original
 decl_stmt|;
+DECL|member|path_undo
+name|void
+modifier|*
+name|path_undo
+decl_stmt|;
 block|}
 struct|;
 end_struct

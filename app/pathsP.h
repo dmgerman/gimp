@@ -16,6 +16,12 @@ directive|define
 name|__PATHSP_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmatrix.h"
+end_include
+
 begin_comment
 comment|/* Cutdown representation of the bezier curve description */
 end_comment
@@ -25,7 +31,7 @@ comment|/* Will be used to hopefully store in XCF format...  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b3cd7a80108
+DECL|struct|__anon2ab3096b0108
 typedef|typedef
 struct|struct
 block|{
@@ -52,7 +58,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b3cd7a80208
+DECL|struct|__anon2ab3096b0208
 typedef|typedef
 struct|struct
 block|{
@@ -100,7 +106,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b3cd7a80308
+DECL|struct|__anon2ab3096b0308
 typedef|typedef
 struct|struct
 block|{
@@ -143,7 +149,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b3cd7a80403
+DECL|enum|__anon2ab3096b0403
 typedef|typedef
 enum|enum
 block|{
@@ -299,6 +305,54 @@ name|GimpImage
 modifier|*
 parameter_list|,
 name|Tattoo
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+modifier|*
+name|paths_transform_start_undo
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|paths_transform_free_undo
+parameter_list|(
+name|void
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|paths_transform_do_undo
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|,
+name|void
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|paths_transform_current_path
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|,
+name|GimpMatrix
+parameter_list|,
+name|gboolean
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -294,7 +294,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon287f61aa0108
+DECL|struct|__anon292e17fe0108
 typedef|typedef
 struct|struct
 block|{
@@ -320,7 +320,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon287f61aa0208
+DECL|struct|__anon292e17fe0208
 typedef|typedef
 struct|struct
 block|{
@@ -7624,6 +7624,28 @@ block|}
 end_function
 
 begin_function
+name|gboolean
+DECL|function|bezier_tool_selected ()
+name|bezier_tool_selected
+parameter_list|()
+block|{
+return|return
+operator|(
+name|active_tool_type
+operator|==
+name|BEZIER_SELECT
+operator|&&
+name|active_tool
+operator|->
+name|state
+operator|==
+name|ACTIVE
+operator|)
+return|;
+block|}
+end_function
+
+begin_function
 name|void
 DECL|function|bezier_paste_bezierselect_to_current (GDisplay * gdisp,BezierSelect * bsel)
 name|bezier_paste_bezierselect_to_current
@@ -8106,21 +8128,8 @@ literal|0
 argument_list|)
 expr_stmt|;
 comment|/*  show selection on all views  */
-name|bezier_sel
-operator|->
-name|draw
-operator|=
-name|BEZIER_DRAW_HANDLES
-expr_stmt|;
-name|draw_core_resume
-argument_list|(
-name|bezier_sel
-operator|->
-name|core
-argument_list|,
-name|tool
-argument_list|)
-expr_stmt|;
+comment|/*   bezier_sel->draw = BEZIER_DRAW_HANDLES; */
+comment|/*   draw_core_resume (bezier_sel->core, tool);  */
 name|gdisplays_flush
 argument_list|()
 expr_stmt|;

@@ -1465,7 +1465,20 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*  Do nothing, keep the grid visible  */
+comment|/*  Only update the paths preview */
+name|paths_transform_current_path
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|,
+name|transform_core
+operator|->
+name|transform
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 else|else
@@ -1524,6 +1537,20 @@ argument_list|,
 name|tool
 argument_list|)
 expr_stmt|;
+comment|/* Update the paths preview */
+name|paths_transform_current_path
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|,
+name|transform_core
+operator|->
+name|transform
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 block|}
 comment|/*  if this tool is non-interactive, make it inactive after use  */
 if|if
@@ -1562,6 +1589,10 @@ block|{
 name|GDisplay
 modifier|*
 name|gdisp
+decl_stmt|;
+name|void
+modifier|*
+name|pundo
 decl_stmt|;
 name|TransformCore
 modifier|*
@@ -1663,6 +1694,15 @@ argument_list|)
 argument_list|,
 operator|&
 name|new_layer
+argument_list|)
+expr_stmt|;
+name|pundo
+operator|=
+name|paths_transform_start_undo
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  Send the request for the transformation to the tool...    */
@@ -1788,6 +1828,12 @@ operator|->
 name|original
 operator|=
 name|NULL
+expr_stmt|;
+name|tu
+operator|->
+name|path_undo
+operator|=
+name|pundo
 expr_stmt|;
 comment|/* Make a note of the new current drawable (since we may have 	 a floating selection, etc now. */
 name|tool
@@ -3628,6 +3674,10 @@ decl_stmt|;
 name|int
 name|gci
 decl_stmt|;
+name|GDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
 name|transform_core
 operator|=
 operator|(
@@ -3869,6 +3919,16 @@ literal|2
 expr_stmt|;
 block|}
 block|}
+name|gdisp
+operator|=
+operator|(
+name|GDisplay
+operator|*
+operator|)
+name|tool
+operator|->
+name|gdisp_ptr
+expr_stmt|;
 block|}
 end_function
 
@@ -5063,6 +5123,15 @@ name|m
 argument_list|)
 expr_stmt|;
 block|}
+name|paths_transform_current_path
+argument_list|(
+name|gimage
+argument_list|,
+name|matrix
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|x1
 operator|=
 name|float_tiles

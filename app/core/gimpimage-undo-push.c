@@ -4305,6 +4305,15 @@ operator|*
 operator|)
 name|tu_ptr
 expr_stmt|;
+name|paths_transform_do_undo
+argument_list|(
+name|gimage
+argument_list|,
+name|tu
+operator|->
+name|path_undo
+argument_list|)
+expr_stmt|;
 comment|/*  only pop if the active tool is the tool that pushed this undo  */
 if|if
 condition|(
@@ -4458,6 +4467,13 @@ argument_list|(
 name|tu
 operator|->
 name|original
+argument_list|)
+expr_stmt|;
+name|paths_transform_free_undo
+argument_list|(
+name|tu
+operator|->
+name|path_undo
 argument_list|)
 expr_stmt|;
 name|g_free
