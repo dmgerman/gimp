@@ -7459,11 +7459,12 @@ condition|)
 block|{
 name|num_bytes
 operator|=
-name|gimage
-operator|->
-name|num_cols
-operator|*
 literal|3
+operator|*
+name|gimp_image_get_colormap_size
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 name|cmap
 operator|=

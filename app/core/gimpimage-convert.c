@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  * 2002-02-10 - Quantizer version 3.0 (the rest of the commit started  *  a year ago -- whoops).  Divide colours within CIE L*a*b* space using  *  CPercep module (cpercep.[ch]), colour-match and dither likewise,  *  change the underlying box selection criteria and division point  *  logic, bump luminance precision upwards, etc.etc.  Generally  *  chooses a much richer colour set, especially for low numbers of  *  colours.  n.b.: Less luminance-sloppy in straight remapping which is  *  good for colour but a bit worse for high-frequency detail (that's  *  partly what fs-dithering is for -- use it).  [adam@gimp.org]  *  * 2001-03-25 - Define accessor function/macro for histogram reads and  *  writes.  This slows us down a little because we avoid some of the  *  dirty tricks we used when we knew that the histogram was a straight  *  3d array, so I've recovered some of the speed loss by implementing  *  a 5d accessor function with good locality of reference.  This change  *  is the first step towards quantizing in a more interesting colourspace  *  than frumpy old RGB.  [Adam]  *  * 2000/01/30 - Use palette_selector instead of option_menu for custom  *  palette. Use libgimp callback functions.  [Sven]  *   * 99/09/01 - Created a low-bleed FS-dither option.  [Adam]  *  * 99/08/29 - Deterministic colour dithering to arbitrary palettes.  *  Ideal for animations that are going to be delta-optimized or simply  *  don't want to look 'busy' in static areas.  Also a bunch of bugfixes  *  and tweaks.  [Adam]  *  * 99/08/28 - Deterministic alpha dithering over layers, reduced bleeding  *  of transparent values into opaque values, added optional stage to  *  remove duplicate or unused colour entries from final colourmap. [Adam]  *  * 99/02/24 - Many revisions to the box-cut quantizer used in RGB->INDEXED  *  conversion.  Box to be cut is chosen on the basis of posessing an axis  *  with the largest sum of weighted perceptible error, rather than based on  *  volume or population.  The box is split along this axis rather than its  *  longest axis, at the point of error mean rather than simply at its centre.  *  Error-limiting in the F-S dither has been disabled - it may become optional  *  again later.  If you're convinced that you have an image where the old  *  dither looks better, let me know.  [Adam]  *  * 99/01/10 - Hourglass... [Adam]  *  * 98/07/25 - Convert-to-indexed now remembers the last invocation's  *  settings.  Also, GRAY->INDEXED is more flexible.  [Adam]  *  * 98/07/05 - Sucked the warning about quantizing to too many colours into  *  a text widget embedded in the dialog, improved intelligence of dialog  *  to default 'custom palette' selection to 'Web' if available, and  *  in this case not bother to present the native WWW-palette radio  *  button.  [Adam]  *  * 98/04/13 - avoid a division by zero when converting an empty gray-scale  *  image (who would like to do such a thing anyway??)  [Sven ]   *  * 98/03/23 - fixed a longstanding fencepost - hopefully the *right*  *  way, *again*.  [Adam]  *  * 97/11/14 - added a proper pdb interface and support for dithering  *  to custom palettes (based on a patch by Eric Hernes) [Yosh]  *  * 97/11/04 - fixed the accidental use of the colour-counting case  *  when palette_type is WEB or MONO. [Adam]  *  * 97/10/25 - colour-counting implemented (could use some hashing, but  *  performance actually seems okay) - now RGB->INDEXED conversion isn't  *  destructive if it doesn't have to be. [Adam]  *  * 97/10/14 - fixed divide-by-zero when converting a completely transparent  *  RGB image to indexed. [Adam]  *  * 97/07/01 - started todo/revision log.  Put code back in to  *  eliminate full-alpha pixels from RGB histogram.  *  [Adam D. Moss - adam@gimp.org]  */
+comment|/*  * 2002-02-10 - Quantizer version 3.0 (the rest of the commit started  *  a year ago -- whoops).  Divide colours within CIE L*a*b* space using  *  CPercep module (cpercep.[ch]), colour-match and dither likewise,  *  change the underlying box selection criteria and division point  *  logic, bump luminance precision upwards, etc.etc.  Generally  *  chooses a much richer colour set, especially for low numbers of  *  colours.  n.b.: Less luminance-sloppy in straight remapping which is  *  good for colour but a bit worse for high-frequency detail (that's  *  partly what fs-dithering is for -- use it).  [adam@gimp.org]  *  * 2001-03-25 - Define accessor function/macro for histogram reads and  *  writes.  This slows us down a little because we avoid some of the  *  dirty tricks we used when we knew that the histogram was a straight  *  3d array, so I've recovered some of the speed loss by implementing  *  a 5d accessor function with good locality of reference.  This change  *  is the first step towards quantizing in a more interesting colourspace  *  than frumpy old RGB.  [Adam]  *  * 2000/01/30 - Use palette_selector instead of option_menu for custom  *  palette. Use libgimp callback functions.  [Sven]  *  * 99/09/01 - Created a low-bleed FS-dither option.  [Adam]  *  * 99/08/29 - Deterministic colour dithering to arbitrary palettes.  *  Ideal for animations that are going to be delta-optimized or simply  *  don't want to look 'busy' in static areas.  Also a bunch of bugfixes  *  and tweaks.  [Adam]  *  * 99/08/28 - Deterministic alpha dithering over layers, reduced bleeding  *  of transparent values into opaque values, added optional stage to  *  remove duplicate or unused colour entries from final colourmap. [Adam]  *  * 99/02/24 - Many revisions to the box-cut quantizer used in RGB->INDEXED  *  conversion.  Box to be cut is chosen on the basis of posessing an axis  *  with the largest sum of weighted perceptible error, rather than based on  *  volume or population.  The box is split along this axis rather than its  *  longest axis, at the point of error mean rather than simply at its centre.  *  Error-limiting in the F-S dither has been disabled - it may become optional  *  again later.  If you're convinced that you have an image where the old  *  dither looks better, let me know.  [Adam]  *  * 99/01/10 - Hourglass... [Adam]  *  * 98/07/25 - Convert-to-indexed now remembers the last invocation's  *  settings.  Also, GRAY->INDEXED is more flexible.  [Adam]  *  * 98/07/05 - Sucked the warning about quantizing to too many colours into  *  a text widget embedded in the dialog, improved intelligence of dialog  *  to default 'custom palette' selection to 'Web' if available, and  *  in this case not bother to present the native WWW-palette radio  *  button.  [Adam]  *  * 98/04/13 - avoid a division by zero when converting an empty gray-scale  *  image (who would like to do such a thing anyway??)  [Sven ]  *  * 98/03/23 - fixed a longstanding fencepost - hopefully the *right*  *  way, *again*.  [Adam]  *  * 97/11/14 - added a proper pdb interface and support for dithering  *  to custom palettes (based on a patch by Eric Hernes) [Yosh]  *  * 97/11/04 - fixed the accidental use of the colour-counting case  *  when palette_type is WEB or MONO. [Adam]  *  * 97/10/25 - colour-counting implemented (could use some hashing, but  *  performance actually seems okay) - now RGB->INDEXED conversion isn't  *  destructive if it doesn't have to be. [Adam]  *  * 97/10/14 - fixed divide-by-zero when converting a completely transparent  *  RGB image to indexed. [Adam]  *  * 97/07/01 - started todo/revision log.  Put code back in to  *  eliminate full-alpha pixels from RGB histogram.  *  [Adam D. Moss - adam@gimp.org]  */
 end_comment
 
 begin_comment
@@ -417,7 +417,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ac6cb5c0103
+DECL|enum|__anon29fbf9ac0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -447,7 +447,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/*   We provide two different histogram access interfaces.  HIST_LIN()   accesses the histogram in histogram-native space, taking absolute   histogram co-ordinates.  HIST_RGB() accesses the histogram in RGB   space.  This latter takes unsigned 8-bit co-ordinates, internally   converts those co-ordinates to histogram-native space and returns   the access pointer to the corresponding histogram cell.    Using these two interfaces we can import RGB data into a more   interesting space and efficiently work in the latter space until   it is time to output the quantized values in RGB again.  For   this final conversion we implement the function lin_to_rgb().      We effectively pull our three-dimensional space into five dimensions   such that the most-entropic bits lay in the lowest bits of the resulting   array index.  This gives significantly better locality of reference   and hence a small speedup despite the extra work involved in calculating   the index.      Why not six dimensions?  The expansion of dimensionality is good for random   access such as histogram population and the query pattern typical of   dithering but we have some code which iterates in a scanning manner, for   which the expansion is suboptimal.  The compromise is to leave the B   dimension unmolested in the lower-order bits of the index, since this is   the dimension most commonly iterated through in the inner loop of the   scans.      --adam      RhGhRlGlB */
+comment|/*   We provide two different histogram access interfaces.  HIST_LIN()   accesses the histogram in histogram-native space, taking absolute   histogram co-ordinates.  HIST_RGB() accesses the histogram in RGB   space.  This latter takes unsigned 8-bit co-ordinates, internally   converts those co-ordinates to histogram-native space and returns   the access pointer to the corresponding histogram cell.    Using these two interfaces we can import RGB data into a more   interesting space and efficiently work in the latter space until   it is time to output the quantized values in RGB again.  For   this final conversion we implement the function lin_to_rgb().    We effectively pull our three-dimensional space into five dimensions   such that the most-entropic bits lay in the lowest bits of the resulting   array index.  This gives significantly better locality of reference   and hence a small speedup despite the extra work involved in calculating   the index.    Why not six dimensions?  The expansion of dimensionality is good for random   access such as histogram population and the query pattern typical of   dithering but we have some code which iterates in a scanning manner, for   which the expansion is suboptimal.  The compromise is to leave the B   dimension unmolested in the lower-order bits of the index, since this is   the dimension most commonly iterated through in the inner loop of the   scans.    --adam    RhGhRlGlB */
 end_comment
 
 begin_define
@@ -948,7 +948,7 @@ name|og
 decl_stmt|,
 name|ob
 decl_stmt|;
-comment|/*   double sL, sa, sb;   {     double low_l = 999.0, low_a = 999.9, low_b = 999.0;     double high_l = -999.0, high_a = -999.0, high_b = -999.0;      int r,g,b;      for (r=0; r<256; r++)       for (g=0; g<256; g++) 	for (b=0; b<256; b++) 	  { 	    cpercep_rgb_to_space(r,g,b,&sL,&sa,&sb);  	    if (sL> high_l) 	      high_l = sL; 	    if (sL< low_l) 	      low_l = sL; 	    if (sa> high_a) 	      high_a = sa; 	    if (sa< low_a) 	      low_a = sa; 	    if (sb> high_b) 	      high_b = sb; 	    if (sb< low_b) 	      low_b = sb; 	  }          fprintf(stderr, " [L: %0.3f -> %0.3f / a: %0.3f -> %0.3f / b: %0.3f -> %0.3f]\t", low_l, high_l, low_a, high_a, low_b, high_b);          exit(-1);   }   */
+comment|/*   double sL, sa, sb;   {     double low_l = 999.0, low_a = 999.9, low_b = 999.0;     double high_l = -999.0, high_a = -999.0, high_b = -999.0;      int r,g,b;      for (r=0; r<256; r++)       for (g=0; g<256; g++) 	for (b=0; b<256; b++) 	  { 	    cpercep_rgb_to_space(r,g,b,&sL,&sa,&sb);  	    if (sL> high_l) 	      high_l = sL; 	    if (sL< low_l) 	      low_l = sL; 	    if (sa> high_a) 	      high_a = sa; 	    if (sa< low_a) 	      low_a = sa; 	    if (sb> high_b) 	      high_b = sb; 	    if (sb< low_b) 	      low_b = sb; 	  }      fprintf(stderr, " [L: %0.3f -> %0.3f / a: %0.3f -> %0.3f / b: %0.3f -> %0.3f]\t", low_l, high_l, low_a, high_a, low_b, high_b);      exit(-1);   }   */
 name|rgb_to_unshifted_lin
 argument_list|(
 name|r
@@ -1445,7 +1445,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac6cb5c0208
+DECL|struct|__anon29fbf9ac0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1522,7 +1522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac6cb5c0308
+DECL|struct|__anon29fbf9ac0308
 block|{
 DECL|member|ncolors
 name|long
@@ -1682,7 +1682,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac6cb5c0408
+DECL|struct|__anon29fbf9ac0408
 block|{
 DECL|member|used_count
 name|signed
@@ -3347,17 +3347,11 @@ block|}
 comment|/* colourmap stuff */
 if|if
 condition|(
-name|new_type
-operator|==
-name|GIMP_INDEXED
-condition|)
-block|{
-if|if
-condition|(
 name|gimage
 operator|->
 name|cmap
 condition|)
+block|{
 name|g_free
 argument_list|(
 name|gimage
@@ -3365,6 +3359,34 @@ operator|->
 name|cmap
 argument_list|)
 expr_stmt|;
+name|gimage
+operator|->
+name|cmap
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+switch|switch
+condition|(
+name|new_type
+condition|)
+block|{
+case|case
+name|GIMP_RGB
+case|:
+case|case
+name|GIMP_GRAY
+case|:
+name|gimage
+operator|->
+name|num_cols
+operator|=
+literal|0
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_INDEXED
+case|:
 name|gimage
 operator|->
 name|cmap
@@ -3649,7 +3671,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -3735,6 +3757,7 @@ operator|->
 name|actual_number_of_colors
 expr_stmt|;
 block|}
+break|break;
 block|}
 comment|/*  Delete the quantizer object, if there is one */
 if|if
@@ -5710,7 +5733,7 @@ argument_list|)
 decl_stmt|;
 else|#
 directive|else
-comment|/* 	   * Sorry about the mess, otherwise would get : 	   * error C2520: conversion from unsigned __int64 to double  	   *              not implemented, use signed __int64 	   */
+comment|/* 	   * Sorry about the mess, otherwise would get : 	   * error C2520: conversion from unsigned __int64 to double 	   *              not implemented, use signed __int64 	   */
 name|etype
 name|rpe
 init|=
@@ -7051,19 +7074,19 @@ block|tempRerror = 0;   boxp->Rhalferror = Rmin;
 warning|#
 directive|warning
 warning|r<=?
-block|for (R = Rmin; R<= Rmax; R++)     {       for (G = Gmin; G<= Gmax; G++) 	{ 	  for (B = Bmin; B<= Bmax; B++) 	    { 	      ColorFreq freq_here; 	      freq_here = *HIST_LIN(histogram, R, G, B); 	      if (freq_here != 0) 		{ 		  int re; 		  int idist; 		  double dist;  		  dummybox.Rmin = dummybox.Rmax = R; 		  dummybox.Gmin = dummybox.Gmax = G; 		  dummybox.Bmin = dummybox.Bmax = B; 		  compute_color_lin8(&dummyqo, histogram,&dummybox, 1);  		  re = dummyqo.cmap[0].red   - dummyqo.cmap[1].red; 		   		  tempRerror += freq_here * (re) * (re); 		   		  if (tempRerror*2>= boxp->rerror) 		    goto green_axisscan; 		  else 		    boxp->Rhalferror = R; 		} 	    } 	}     }   fprintf(stderr, " D:");  green_axisscan:    fprintf(stderr, "<%d: %llu/%llu> ", R, tempRerror, boxp->rerror);
+block|for (R = Rmin; R<= Rmax; R++)     {       for (G = Gmin; G<= Gmax; G++) 	{ 	  for (B = Bmin; B<= Bmax; B++) 	    { 	      ColorFreq freq_here; 	      freq_here = *HIST_LIN(histogram, R, G, B); 	      if (freq_here != 0) 		{ 		  int re; 		  int idist; 		  double dist;  		  dummybox.Rmin = dummybox.Rmax = R; 		  dummybox.Gmin = dummybox.Gmax = G; 		  dummybox.Bmin = dummybox.Bmax = B; 		  compute_color_lin8(&dummyqo, histogram,&dummybox, 1);  		  re = dummyqo.cmap[0].red   - dummyqo.cmap[1].red;  		  tempRerror += freq_here * (re) * (re);  		  if (tempRerror*2>= boxp->rerror) 		    goto green_axisscan; 		  else 		    boxp->Rhalferror = R; 		} 	    } 	}     }   fprintf(stderr, " D:");  green_axisscan:    fprintf(stderr, "<%d: %llu/%llu> ", R, tempRerror, boxp->rerror);
 comment|/* Scan again, taking note of halfway error point for green axis */
 block|tempGerror = 0;   boxp->Ghalferror = Gmin;
 warning|#
 directive|warning
 warning|G<=?
-block|for (G = Gmin; G<= Gmax; G++)     {       for (R = Rmin; R<= Rmax; R++) 	{ 	  for (B = Bmin; B<= Bmax; B++) 	    { 	      ColorFreq freq_here; 	      freq_here = *HIST_LIN(histogram, R, G, B); 	      if (freq_here != 0) 		{ 		  int ge; 		  dummybox.Rmin = dummybox.Rmax = R; 		  dummybox.Gmin = dummybox.Gmax = G; 		  dummybox.Bmin = dummybox.Bmax = B; 		  compute_color_lin8(&dummyqo, histogram,&dummybox, 1); 		   		  ge = dummyqo.cmap[0].green - dummyqo.cmap[1].green; 		   		  tempGerror += freq_here * (ge) * (ge); 		   		  if (tempGerror*2>= boxp->gerror) 		    goto blue_axisscan; 		  else 		    boxp->Ghalferror = G; 		} 	    } 	}     }   blue_axisscan:
+block|for (G = Gmin; G<= Gmax; G++)     {       for (R = Rmin; R<= Rmax; R++) 	{ 	  for (B = Bmin; B<= Bmax; B++) 	    { 	      ColorFreq freq_here; 	      freq_here = *HIST_LIN(histogram, R, G, B); 	      if (freq_here != 0) 		{ 		  int ge; 		  dummybox.Rmin = dummybox.Rmax = R; 		  dummybox.Gmin = dummybox.Gmax = G; 		  dummybox.Bmin = dummybox.Bmax = B; 		  compute_color_lin8(&dummyqo, histogram,&dummybox, 1);  		  ge = dummyqo.cmap[0].green - dummyqo.cmap[1].green;  		  tempGerror += freq_here * (ge) * (ge);  		  if (tempGerror*2>= boxp->gerror) 		    goto blue_axisscan; 		  else 		    boxp->Ghalferror = G; 		} 	    } 	}     }   blue_axisscan:
 comment|/* Scan again, taking note of halfway error point for blue axis */
 block|tempBerror = 0;   boxp->Bhalferror = Bmin;
 warning|#
 directive|warning
 warning|B<=?
-block|for (B = Bmin; B<= Bmax; B++)     {       for (R = Rmin; R<= Rmax; R++) 	{ 	  for (G = Gmin; G<= Gmax; G++) 	    { 	      ColorFreq freq_here; 	      freq_here = *HIST_LIN(histogram, R, G, B); 	      if (freq_here != 0) 		{ 		  int be;		   		  dummybox.Rmin = dummybox.Rmax = R; 		  dummybox.Gmin = dummybox.Gmax = G; 		  dummybox.Bmin = dummybox.Bmax = B; 		  compute_color_lin8(&dummyqo, histogram,&dummybox, 1); 		   		  be = dummyqo.cmap[0].blue  - dummyqo.cmap[1].blue; 		   		  tempBerror += freq_here * (be) * (be);  		  if (tempBerror*2>= boxp->berror) 		    goto finished_axesscan; 		  else 		    boxp->Bhalferror = B; 		} 	    } 	}     }  finished_axesscan:
+block|for (B = Bmin; B<= Bmax; B++)     {       for (R = Rmin; R<= Rmax; R++) 	{ 	  for (G = Gmin; G<= Gmax; G++) 	    { 	      ColorFreq freq_here; 	      freq_here = *HIST_LIN(histogram, R, G, B); 	      if (freq_here != 0) 		{ 		  int be; 		  dummybox.Rmin = dummybox.Rmax = R; 		  dummybox.Gmin = dummybox.Gmax = G; 		  dummybox.Bmin = dummybox.Bmax = B; 		  compute_color_lin8(&dummyqo, histogram,&dummybox, 1);  		  be = dummyqo.cmap[0].blue  - dummyqo.cmap[1].blue;  		  tempBerror += freq_here * (be) * (be);  		  if (tempBerror*2>= boxp->berror) 		    goto finished_axesscan; 		  else 		    boxp->Bhalferror = B; 		} 	    } 	}     }  finished_axesscan:
 else|#
 directive|else
 name|boxp
