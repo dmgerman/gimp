@@ -35,7 +35,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba3d67d0108
+DECL|struct|__anon294219b00108
 block|{
 DECL|member|x
 DECL|member|y
@@ -107,50 +107,68 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-specifier|extern
+DECL|variable|spin_pos_x
 name|GtkWidget
 modifier|*
 name|spin_pos_x
+index|[
+name|NUM_LIGHTS
+index|]
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-specifier|extern
+DECL|variable|spin_pos_y
 name|GtkWidget
 modifier|*
 name|spin_pos_y
+index|[
+name|NUM_LIGHTS
+index|]
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-specifier|extern
+DECL|variable|spin_pos_z
 name|GtkWidget
 modifier|*
 name|spin_pos_z
+index|[
+name|NUM_LIGHTS
+index|]
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-specifier|extern
+DECL|variable|spin_dir_x
 name|GtkWidget
 modifier|*
 name|spin_dir_x
+index|[
+name|NUM_LIGHTS
+index|]
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-specifier|extern
+DECL|variable|spin_dir_y
 name|GtkWidget
 modifier|*
 name|spin_dir_y
+index|[
+name|NUM_LIGHTS
+index|]
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-specifier|extern
+DECL|variable|spin_dir_z
 name|GtkWidget
 modifier|*
 name|spin_dir_z
+index|[
+name|NUM_LIGHTS
+index|]
 decl_stmt|;
 end_decl_stmt
 

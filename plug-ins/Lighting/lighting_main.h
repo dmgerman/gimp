@@ -28,6 +28,14 @@ name|TILE_CACHE_SIZE
 value|16
 end_define
 
+begin_define
+DECL|macro|NUM_LIGHTS
+define|#
+directive|define
+name|NUM_LIGHTS
+value|3
+end_define
+
 begin_comment
 comment|/* Typedefs */
 end_comment
@@ -39,7 +47,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dcb89a0103
+DECL|enum|__anon279386050103
 block|{
 DECL|enumerator|POINT_LIGHT
 name|POINT_LIGHT
@@ -60,7 +68,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dcb89a0203
+DECL|enum|__anon279386050203
 block|{
 DECL|enumerator|LINEAR_MAP
 name|LINEAR_MAP
@@ -79,7 +87,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dcb89a0303
+DECL|enum|__anon279386050303
 block|{
 DECL|enumerator|IMAGE_BUMP
 name|IMAGE_BUMP
@@ -93,7 +101,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dcb89a0408
+DECL|struct|__anon279386050408
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -115,6 +123,10 @@ DECL|member|highlight
 name|gdouble
 name|highlight
 decl_stmt|;
+DECL|member|metallic
+name|gboolean
+name|metallic
+decl_stmt|;
 DECL|member|color
 name|GimpRGB
 name|color
@@ -128,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dcb89a0508
+DECL|struct|__anon279386050508
 block|{
 DECL|member|type
 name|LightType
@@ -159,7 +171,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dcb89a0608
+DECL|struct|__anon279386050608
 block|{
 DECL|member|drawable_id
 name|gint32
@@ -186,6 +198,9 @@ decl_stmt|;
 DECL|member|lightsource
 name|LightSettings
 name|lightsource
+index|[
+name|NUM_LIGHTS
+index|]
 decl_stmt|;
 DECL|member|material
 name|MaterialSettings
