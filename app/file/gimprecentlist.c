@@ -154,7 +154,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297f07500108
+DECL|struct|__anon2a359d0b0108
 block|{
 DECL|member|states
 name|GSList
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297f07500203
+DECL|enum|__anon2a359d0b0203
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -1396,6 +1396,10 @@ condition|(
 name|written
 operator|<
 literal|0
+operator|&&
+name|errno
+operator|!=
+name|EINTR
 condition|)
 return|return
 name|FALSE
