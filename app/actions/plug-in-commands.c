@@ -282,6 +282,13 @@ condition|(
 name|gdisplay
 condition|)
 block|{
+name|gdisp_ID
+operator|=
+name|gimp_display_get_ID
+argument_list|(
+name|gdisplay
+argument_list|)
+expr_stmt|;
 name|args
 index|[
 literal|1
