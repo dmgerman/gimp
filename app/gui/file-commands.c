@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -115,6 +121,12 @@ begin_include
 include|#
 directive|include
 file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"dialogs.h"
 end_include
 
 begin_include
@@ -258,6 +270,10 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|dialog
+decl_stmt|;
 name|return_if_no_gimp
 argument_list|(
 name|gimp
@@ -285,9 +301,25 @@ name|gimage
 operator|=
 name|NULL
 expr_stmt|;
-name|file_new_dialog_create
+name|dialog
+operator|=
+name|gimp_dialog_factory_dialog_new
 argument_list|(
-name|gimp
+name|global_dialog_factory
+argument_list|,
+literal|"gimp-file-new-dialog"
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|dialog
+condition|)
+name|file_new_dialog_set
+argument_list|(
+name|dialog
 argument_list|,
 name|gimage
 argument_list|,

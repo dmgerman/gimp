@@ -330,6 +330,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file-new-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"layers-commands.h"
 end_include
 
@@ -733,6 +739,35 @@ end_comment
 begin_comment
 comment|/**********************/
 end_comment
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|dialogs_file_new_new (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
+name|dialogs_file_new_new
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|gint
+name|preview_size
+parameter_list|)
+block|{
+return|return
+name|file_new_dialog_new
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|)
+return|;
+block|}
+end_function
 
 begin_function
 name|GtkWidget

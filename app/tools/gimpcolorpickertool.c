@@ -89,7 +89,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay.h"
+file|"widgets/gimpdialogfactory.h"
 end_include
 
 begin_include
@@ -108,6 +108,18 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpviewabledialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/dialogs.h"
 end_include
 
 begin_include
@@ -2285,6 +2297,17 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|frame
+argument_list|)
+expr_stmt|;
+name|gimp_dialog_factory_add_foreign
+argument_list|(
+name|global_dialog_factory
+argument_list|,
+literal|"gimp-color-picker-tool-dialog"
+argument_list|,
+name|info_dialog
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 return|return

@@ -501,6 +501,26 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_dialog_factory_add_foreign
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|identifier
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|dialog
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_dialog_factory_remove_dialog
 parameter_list|(
 name|GimpDialogFactory

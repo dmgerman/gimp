@@ -518,6 +518,12 @@ argument_list|)
 expr_stmt|;
 name|image_map_tool
 operator|->
+name|shell_identifier
+operator|=
+literal|"gimp-brightness-contrast-tool-dialog"
+expr_stmt|;
+name|image_map_tool
+operator|->
 name|shell_desc
 operator|=
 name|_

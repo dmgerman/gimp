@@ -516,6 +516,12 @@ parameter_list|)
 block|{
 name|tool
 operator|->
+name|tool_info
+operator|=
+name|NULL
+expr_stmt|;
+name|tool
+operator|->
 name|ID
 operator|=
 name|global_tool_ID
@@ -525,14 +531,11 @@ name|tool
 operator|->
 name|control
 operator|=
-name|GIMP_TOOL_CONTROL
-argument_list|(
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_TOOL_CONTROL
 argument_list|,
 name|NULL
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|tool

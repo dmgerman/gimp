@@ -17,12 +17,24 @@ name|__FILE_NEW_DIALOG_H__
 end_define
 
 begin_function_decl
-name|void
-name|file_new_dialog_create
+name|GtkWidget
+modifier|*
+name|file_new_dialog_new
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|file_new_dialog_set
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|,
 name|GimpImage
 modifier|*

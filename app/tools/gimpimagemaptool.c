@@ -27,6 +27,29 @@ directive|include
 file|"tools-types.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|FIXME #include "gui/gui-types.h"
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_include
+include|#
+directive|include
+file|"gui/gui-types.h"
+end_include
+
 begin_include
 include|#
 directive|include
@@ -54,6 +77,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -73,6 +102,12 @@ begin_include
 include|#
 directive|include
 file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/dialogs.h"
 end_include
 
 begin_include
@@ -527,6 +562,12 @@ name|TRUE
 expr_stmt|;
 name|image_map_tool
 operator|->
+name|shell_identifier
+operator|=
+name|NULL
+expr_stmt|;
+name|image_map_tool
+operator|->
 name|shell_desc
 operator|=
 name|NULL
@@ -936,6 +977,25 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|vbox
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|image_map_tool
+operator|->
+name|shell_identifier
+condition|)
+name|gimp_dialog_factory_add_foreign
+argument_list|(
+name|global_dialog_factory
+argument_list|,
+name|image_map_tool
+operator|->
+name|shell_identifier
+argument_list|,
+name|image_map_tool
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 block|}

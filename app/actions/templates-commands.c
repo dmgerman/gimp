@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimptemplateeditor.h"
 end_include
 
@@ -73,6 +79,12 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpviewabledialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"dialogs.h"
 end_include
 
 begin_include
@@ -987,9 +999,29 @@ modifier|*
 name|template
 parameter_list|)
 block|{
-name|file_new_dialog_create
+name|GtkWidget
+modifier|*
+name|dialog
+decl_stmt|;
+name|dialog
+operator|=
+name|gimp_dialog_factory_dialog_new
 argument_list|(
-name|gimp
+name|global_dialog_factory
+argument_list|,
+literal|"gimp-file-new-dialog"
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|dialog
+condition|)
+name|file_new_dialog_set
+argument_list|(
+name|dialog
 argument_list|,
 name|NULL
 argument_list|,

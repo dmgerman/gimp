@@ -127,6 +127,12 @@ name|gboolean
 name|preview
 decl_stmt|;
 comment|/* the dialog */
+DECL|member|shell_identifier
+specifier|const
+name|gchar
+modifier|*
+name|shell_identifier
+decl_stmt|;
 DECL|member|shell_desc
 specifier|const
 name|gchar

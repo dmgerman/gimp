@@ -617,6 +617,12 @@ argument_list|)
 expr_stmt|;
 name|tr_tool
 operator|->
+name|shell_identifier
+operator|=
+literal|"gimp-rotate-tool-dialog"
+expr_stmt|;
+name|tr_tool
+operator|->
 name|shell_desc
 operator|=
 name|_

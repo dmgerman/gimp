@@ -137,13 +137,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpviewabledialog.h"
+file|"widgets/gimpdialogfactory.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/info-dialog.h"
+file|"widgets/gimpviewabledialog.h"
 end_include
 
 begin_include
@@ -162,6 +162,18 @@ begin_include
 include|#
 directive|include
 file|"display/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/info-dialog.h"
 end_include
 
 begin_include
@@ -4658,6 +4670,27 @@ operator|->
 name|dialog
 argument_list|(
 name|tr_tool
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|tr_tool
+operator|->
+name|shell_identifier
+condition|)
+name|gimp_dialog_factory_add_foreign
+argument_list|(
+name|global_dialog_factory
+argument_list|,
+name|tr_tool
+operator|->
+name|shell_identifier
+argument_list|,
+name|tr_tool
+operator|->
+name|info_dialog
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 block|}
