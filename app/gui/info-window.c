@@ -140,12 +140,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"colormaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -3369,6 +3363,16 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  visual class  */
+block|{
+name|GdkVisual
+modifier|*
+name|visual
+decl_stmt|;
+name|visual
+operator|=
+name|gdk_rgb_get_visual
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|type
@@ -3393,7 +3397,7 @@ name|gettext
 argument_list|(
 name|visual_classes
 index|[
-name|g_visual
+name|visual
 operator|->
 name|type
 index|]
@@ -3421,7 +3425,7 @@ name|gettext
 argument_list|(
 name|visual_classes
 index|[
-name|g_visual
+name|visual
 operator|->
 name|type
 index|]
@@ -3439,11 +3443,12 @@ name|MAX_BUF
 argument_list|,
 literal|"%d"
 argument_list|,
-name|g_visual
+name|visual
 operator|->
 name|depth
 argument_list|)
 expr_stmt|;
+block|}
 name|info_dialog_update
 argument_list|(
 name|info_win

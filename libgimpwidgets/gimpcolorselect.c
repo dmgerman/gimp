@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"colormaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -142,7 +136,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a39cdf0103
+DECL|enum|__anon27d33e8f0103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -193,7 +187,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a39cdf0203
+DECL|enum|__anon27d33e8f0203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -7209,7 +7203,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a39cdf0308
+DECL|struct|__anon27d33e8f0308
 block|{
 DECL|member|callback
 name|GimpColorSelectorCallback

@@ -166,12 +166,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"colormaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"errors.h"
 end_include
 
@@ -406,9 +400,6 @@ name|gui_themes_init
 argument_list|(
 name|the_gimp
 argument_list|)
-expr_stmt|;
-name|get_standard_colormaps
-argument_list|()
 expr_stmt|;
 if|if
 condition|(

@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"colormaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gximage.h"
 end_include
 
@@ -107,17 +101,17 @@ begin_function
 specifier|static
 name|GXImage
 modifier|*
-DECL|function|create_gximage (GdkVisual * visual,int width,int height)
+DECL|function|create_gximage (GdkVisual * visual,gint width,gint height)
 name|create_gximage
 parameter_list|(
 name|GdkVisual
 modifier|*
 name|visual
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 block|{
@@ -224,7 +218,8 @@ name|gximage
 operator|=
 name|create_gximage
 argument_list|(
-name|g_visual
+name|gdk_rgb_get_visual
+argument_list|()
 argument_list|,
 name|GXIMAGE_WIDTH
 argument_list|,

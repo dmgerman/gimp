@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"colormaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -129,7 +123,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b76ce4a0103
+DECL|enum|__anon2b8ce4110103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED

@@ -126,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"colormaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimphelp.h"
 end_include
 
@@ -162,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b42c750103
+DECL|enum|__anon2bd4ad2f0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -9128,7 +9122,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|g_visual
+name|gdk_rgb_get_visual
+argument_list|()
 operator|->
 name|depth
 operator|!=
@@ -13889,7 +13884,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28b42c750208
+DECL|struct|__anon2bd4ad2f0208
 block|{
 DECL|member|label
 name|gchar
@@ -14118,7 +14113,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28b42c750308
+DECL|struct|__anon2bd4ad2f0308
 block|{
 DECL|member|tree_label
 name|gchar
