@@ -303,7 +303,7 @@ name|gtk_widget_destroy
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|1
 argument_list|,
 name|NULL
 argument_list|,
