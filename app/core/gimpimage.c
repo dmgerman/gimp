@@ -228,7 +228,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2984d1240103
+DECL|enum|__anon29b1edf30103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -954,13 +954,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__INT
+name|gimp_marshal_VOID__ENUM
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_INT
+name|GIMP_TYPE_CHANNEL_TYPE
 argument_list|)
 expr_stmt|;
 name|gimp_image_signals
@@ -990,13 +990,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__INT
+name|gimp_marshal_VOID__ENUM
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_INT
+name|GIMP_TYPE_CHANNEL_TYPE
 argument_list|)
 expr_stmt|;
 name|gimp_image_signals
@@ -1162,13 +1162,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__INT
+name|gimp_marshal_VOID__ENUM
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_INT
+name|GIMP_TYPE_SELECTION_CONTROL
 argument_list|)
 expr_stmt|;
 name|gimp_image_signals

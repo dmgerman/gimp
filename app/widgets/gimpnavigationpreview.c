@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d2b9ca0103
+DECL|enum|__anon2c3db9e10103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -481,13 +481,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__INT
+name|gimp_marshal_VOID__ENUM
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_INT
+name|GIMP_TYPE_ZOOM_TYPE
 argument_list|)
 expr_stmt|;
 name|preview_signals
