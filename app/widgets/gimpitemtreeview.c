@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba8060c0103
+DECL|enum|__anon28ec85770103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1131,6 +1131,12 @@ name|tree_view
 operator|->
 name|n_model_columns
 operator|++
+expr_stmt|;
+name|tree_view
+operator|->
+name|dnd_drop_to_empty
+operator|=
+name|TRUE
 expr_stmt|;
 name|view
 operator|->
@@ -2921,6 +2927,11 @@ argument_list|(
 name|src_viewable
 argument_list|)
 operator|&&
+operator|(
+name|dest_viewable
+operator|==
+name|NULL
+operator|||
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
@@ -2936,6 +2947,7 @@ argument_list|(
 name|dest_viewable
 argument_list|)
 argument_list|)
+operator|)
 condition|)
 block|{
 if|if
@@ -3036,6 +3048,9 @@ name|container
 decl_stmt|;
 name|gint
 name|dest_index
+init|=
+operator|-
+literal|1
 decl_stmt|;
 name|container
 operator|=
@@ -3044,6 +3059,10 @@ argument_list|(
 name|container_view
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|dest_viewable
+condition|)
 name|dest_index
 operator|=
 name|gimp_container_get_child_index
@@ -3123,6 +3142,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|dest_viewable
+operator|&&
 name|drop_pos
 operator|==
 name|GTK_TREE_VIEW_DROP_AFTER
@@ -3162,7 +3183,11 @@ name|dest_index
 argument_list|)
 expr_stmt|;
 block|}
-else|else
+elseif|else
+if|if
+condition|(
+name|dest_viewable
+condition|)
 block|{
 name|gint
 name|src_index
