@@ -1501,7 +1501,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scale_entry_new:  * @table: The #GtkTable the widgets will be attached to.  * @column: The column to start with.  * @row: The row to attach the widgets.  * @text: The text for the #GtkLabel which will appear left of the #GtkHScale.  * @scale_usize: The minimum horizontal size of the #GtkHScale.  * @spinbutton_usize: The minimum horizontal size of the #GtkSpinButton.  * @value: The initial value.  * @lower: The lower boundary.  * @upper: The upper boundary.  * @step_increment: The step increment.  * @page_increment: The page increment.  * @digits: The number of decimal digits.  * @constrain: #TRUE if the range of possible values of the #GtkSpinButton  *             should be the same as of the #GtkHScale.  * @unconstrained_lower: The spinbutton's lower boundary  *                       if @constrain == #FALSE.  * @unconstrained_upper: The spinbutton's upper boundary  *                       if @constrain == #FALSE.  * @tooltip: A tooltip message for the scale and the spinbutton.  * @help_data: The widgets' help_data (see gimp_help_set_help_data()).  *  * This function creates a #GtkLabel, a #GtkHScale and a #GtkSpinButton and  * attaches them to a 3-column #GtkTable.  *  * Note that if you pass a @tooltip or @private_tip to this function you'll  * have to initialize GIMP's help system with gimp_help_init() before using it.  *  * Returns: The #GtkSpinButton's #GtkAdjustment.  *  */
+comment|/**  * gimp_scale_entry_new:  * @table: The #GtkTable the widgets will be attached to.  * @column: The column to start with.  * @row: The row to attach the widgets.  * @text: The text for the #GtkLabel which will appear left of the #GtkHScale.  * @scale_usize: The minimum horizontal size of the #GtkHScale.  * @spinbutton_usize: The minimum horizontal size of the #GtkSpinButton.  * @value: The initial value.  * @lower: The lower boundary.  * @upper: The upper boundary.  * @step_increment: The step increment.  * @page_increment: The page increment.  * @digits: The number of decimal digits.  * @constrain: #TRUE if the range of possible values of the #GtkSpinButton  *             should be the same as of the #GtkHScale.  * @unconstrained_lower: The spinbutton's lower boundary  *                       if @constrain == #FALSE.  * @unconstrained_upper: The spinbutton's upper boundary  *                       if @constrain == #FALSE.  * @tooltip: A tooltip message for the scale and the spinbutton.  * @help_data: The widgets' help_data (see gimp_help_set_help_data()).  *  * This function creates a #GtkLabel, a #GtkHScale and a #GtkSpinButton and  * attaches them to a 3-column #GtkTable.  *  * Note that if you pass a @tooltip or @help_data to this function you'll  * have to initialize GIMP's help system with gimp_help_init() before using it.  *  * Returns: The #GtkSpinButton's #GtkAdjustment.  *  */
 end_comment
 
 begin_function
@@ -2354,7 +2354,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d4c8e40108
+DECL|struct|__anon2ac7150e0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
