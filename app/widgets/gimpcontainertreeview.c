@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a05e5370103
+DECL|enum|__anon2c07e69f0103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -2198,6 +2198,15 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gtk_tree_selection_select_iter
+argument_list|(
+name|tree_view
+operator|->
+name|selection
+argument_list|,
+name|iter
+argument_list|)
+expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|tree_view
@@ -2713,7 +2722,7 @@ block|{
 if|#
 directive|if
 literal|0
-block|g_print ("click on cell at %d (%d width)\n", start_pos, width);
+block|g_print ("click on cell at %d (%d width) (%d column->x) (%d tree_x)\n",                    start_pos, width, column_area->x, tree_x);
 endif|#
 directive|endif
 return|return
