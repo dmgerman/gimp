@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon286dabef0103
+DECL|enum|__anon2c531f460103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -511,7 +511,7 @@ if|#
 directive|if
 name|_MSC_VER
 operator|<
-literal|1200
+literal|1300
 DECL|macro|CAST
 define|#
 directive|define
@@ -631,7 +631,7 @@ if|#
 directive|if
 name|_MSC_VER
 operator|<
-literal|1200
+literal|1300
 DECL|macro|CAST
 define|#
 directive|define
@@ -1071,7 +1071,7 @@ if|#
 directive|if
 name|_MSC_VER
 operator|<
-literal|1200
+literal|1300
 DECL|macro|CAST
 define|#
 directive|define

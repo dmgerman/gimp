@@ -45,6 +45,12 @@ directive|include
 file|"debug-commands.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ENABLE_DEBUG_MENU
+end_ifdef
+
 begin_decl_stmt
 DECL|variable|debug_actions
 specifier|static
@@ -121,6 +127,11 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_function
 name|void
 DECL|function|debug_actions_setup (GimpActionGroup * group)
@@ -131,6 +142,9 @@ modifier|*
 name|group
 parameter_list|)
 block|{
+ifdef|#
+directive|ifdef
+name|ENABLE_DEBUG_MENU
 name|gimp_action_group_add_actions
 argument_list|(
 name|group
@@ -143,6 +157,8 @@ name|debug_actions
 argument_list|)
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 

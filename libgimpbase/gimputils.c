@@ -530,7 +530,7 @@ operator|&&
 operator|(
 name|_MSC_VER
 operator|<
-literal|1200
+literal|1300
 operator|)
 comment|/* sorry, error C2520: conversion from unsigned __int64 to double not  *                     implemented, use signed __int64  */
 DECL|macro|CAST_DOUBLE

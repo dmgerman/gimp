@@ -315,7 +315,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e620b0108
+DECL|struct|__anon2bd27e910108
 block|{
 DECL|member|root
 name|gboolean
@@ -1248,9 +1248,20 @@ argument_list|)
 comment|/* MS Windows specific code goes here (yet to be written) */
 comment|/* basically the code should grab the pointer using a crosshair      cursor, allow the user to click on a window and return the      obtained HWND (as a GdkNativeWindow) - for more details consult      the X11 specific code above */
 comment|/* note to self: take a look at the winsnap plug-in for example      code */
+ifdef|#
+directive|ifdef
+name|__GNUC__
 warning|#
 directive|warning
 warning|Win32 screenshot window chooser not implemented yet
+else|#
+directive|else
+pragma|#
+directive|pragma
+name|message
+literal|"Win32 screenshot window chooser not implemented yet"
+endif|#
+directive|endif
 return|return
 literal|0
 return|;
