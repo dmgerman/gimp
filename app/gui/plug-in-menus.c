@@ -248,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a28f7b20103
+DECL|enum|__anon28c37e8f0103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -13769,7 +13769,6 @@ name|gdisp
 init|=
 name|NULL
 decl_stmt|;
-comment|/*printf("\nplug_in_disconnect_cancel\n");fflush(stdout);*/
 name|gdisp
 operator|=
 name|gdisplay_get_ID
@@ -13956,7 +13955,6 @@ name|progress_gdisp_ID
 operator|=
 name|gdisp_ID
 expr_stmt|;
-comment|/*printf("\nHERE\n");fflush(stdout);*/
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT

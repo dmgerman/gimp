@@ -817,16 +817,6 @@ name|TRUE
 expr_stmt|;
 comment|/*  if the floating selection exceeds the attached layer's extents,       update the new layer  */
 comment|/*  I don't think that the preview is ever valid as is, since the layer       will be added on top of the others.  Revert this if I'm wrong.       msw@gimp.org   */
-name|printf
-argument_list|(
-literal|" floating_sel_to_layer "
-argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
 name|drawable_update
 argument_list|(
 name|GIMP_DRAWABLE

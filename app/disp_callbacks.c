@@ -616,6 +616,7 @@ operator|*
 operator|)
 name|event
 expr_stmt|;
+comment|/*printf(" EXP:%d,%d(%dx%d) ",eevent->area.x, eevent->area.y, 	eevent->area.width, eevent->area.height);fflush(stdout);*/
 name|redraw
 argument_list|(
 name|gdisp
@@ -649,6 +650,7 @@ break|break;
 case|case
 name|GDK_CONFIGURE
 case|:
+comment|/*printf(" CNF ");fflush(stdout);*/
 if|if
 condition|(
 operator|(

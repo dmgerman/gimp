@@ -373,6 +373,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+comment|/* FIXME: There's something wrong here - ..set_usize() seems to not      be doing the right thing when it could... GTK problem? */
 name|gint
 name|x
 decl_stmt|,
@@ -588,6 +589,7 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
+comment|/*printf("1w:%d/%d d:%d/%d s:%d/%d b:%d/%d\n", 	     width, height, 	     disp_width, disp_height, 	     shell_width, shell_height, 	     border_x, border_y);fflush(stdout);*/
 name|gtk_widget_show
 argument_list|(
 name|gdisp
@@ -749,6 +751,7 @@ argument_list|,
 name|max_auto_height
 argument_list|)
 expr_stmt|;
+comment|/*printf("2w:%d/%d d:%d/%d s:%d/%d b:%d/%d\n", 	     width, height, 	     disp_width, disp_height, 	     shell_width, shell_height, 	     border_x, border_y);fflush(stdout);*/
 name|gtk_widget_show
 argument_list|(
 name|gdisp

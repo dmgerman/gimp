@@ -149,10 +149,7 @@ DECL|member|idleid
 name|guint
 name|idleid
 decl_stmt|;
-DECL|member|handlerid
-name|guint
-name|handlerid
-decl_stmt|;
+comment|/*guint handlerid;*/
 DECL|member|active
 name|gboolean
 name|active
@@ -632,6 +629,16 @@ end_function_decl
 begin_function_decl
 name|void
 name|gdisplay_flush
+parameter_list|(
+name|GDisplay
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gdisplay_flush_now
 parameter_list|(
 name|GDisplay
 modifier|*

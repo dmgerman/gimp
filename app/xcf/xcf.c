@@ -164,7 +164,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e977700103
+DECL|enum|__anon2a1bf07a0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e977700203
+DECL|enum|__anon2a1bf07a0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -9289,7 +9289,6 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  fflush(stdout);*/
 if|if
 condition|(
 name|offset

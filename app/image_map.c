@@ -357,7 +357,7 @@ argument_list|,
 name|h
 argument_list|)
 expr_stmt|;
-name|gdisplay_flush
+name|gdisplay_flush_now
 argument_list|(
 name|_image_map
 operator|->

@@ -1125,16 +1125,6 @@ operator|==
 literal|0
 condition|)
 return|return;
-name|printf
-argument_list|(
-literal|" channel_scale "
-argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
 comment|/*  Update the old channel position  */
 name|drawable_update
 argument_list|(
@@ -1377,16 +1367,6 @@ operator|!
 name|new_height
 condition|)
 return|return;
-name|printf
-argument_list|(
-literal|" channel_resize "
-argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
 name|x1
 operator|=
 name|BOUNDS

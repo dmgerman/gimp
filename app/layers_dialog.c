@@ -4354,7 +4354,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28ca01be0108
+DECL|struct|__anon2af2c7250108
 typedef|typedef
 struct|struct
 block|{
@@ -8017,7 +8017,6 @@ name|mode
 operator|=
 name|mode
 expr_stmt|;
-comment|/*	  reinit_layer_idlerender(gimage, layer);*/
 name|drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
@@ -8176,7 +8175,6 @@ name|opacity
 operator|=
 name|opacity
 expr_stmt|;
-comment|/*reinit_layer_idlerender (gimage, layer);*/
 name|drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
@@ -11010,7 +11008,6 @@ condition|(
 name|exclusive
 condition|)
 block|{
-comment|/*printf("Case 1, kick-ass!\n");fflush(stdout);*/
 name|gimage_invalidate_preview
 argument_list|(
 name|layer_widget
@@ -11018,7 +11015,6 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-comment|/*reinit_gimage_idlerender (layer_widget->gimage);*/
 name|gdisplays_update_area
 argument_list|(
 name|layer_widget
@@ -11062,7 +11058,6 @@ name|visible
 condition|)
 block|{
 comment|/*  Invalidate the gimage preview  */
-comment|/*printf("Case 2, what incredible irony!\n");fflush(stdout);*/
 name|gimage_invalidate_preview
 argument_list|(
 name|layer_widget
@@ -11070,7 +11065,6 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-comment|/*reinit_layer_idlerender (layer_widget->gimage, 		layer_widget->layer);*/
 name|drawable_update
 argument_list|(
 name|GIMP_DRAWABLE

@@ -461,7 +461,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b0944270103
+DECL|enum|__anon28ae29270103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -9499,16 +9499,6 @@ name|gimp_image_signals
 index|[
 name|RESTRUCTURE
 index|]
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|" gimp_image_merge_layers "
-argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
 argument_list|)
 expr_stmt|;
 name|drawable_update

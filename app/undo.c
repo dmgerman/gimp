@@ -5099,7 +5099,6 @@ name|layer
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*printf (" undo_pop1 ");fflush(stdout);*/
 name|drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
@@ -5132,7 +5131,6 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-comment|/*reinit_layer_idlerender (gimage, lu->layer);*/
 block|}
 comment|/*  restore layer  */
 else|else
@@ -5225,7 +5223,6 @@ name|lu
 operator|->
 name|layer
 expr_stmt|;
-comment|/*printf (" undo_pop2 ");fflush(stdout);*/
 name|drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
@@ -5258,7 +5255,6 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-comment|/*reinit_layer_idlerender (gimage, lu->layer);*/
 block|}
 return|return
 name|TRUE
