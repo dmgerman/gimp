@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c203ab0108
+DECL|struct|__anon2bbda3da0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c203ab0208
+DECL|struct|__anon2bbda3da0208
 block|{
 DECL|member|run
 name|gboolean
@@ -3406,14 +3406,6 @@ decl_stmt|,
 name|destPR
 decl_stmt|;
 comment|/* Pixel regions */
-if|if
-condition|(
-operator|!
-name|unsharp_params
-operator|.
-name|update_preview
-condition|)
-return|return;
 name|drawable
 operator|=
 name|gimp_drawable_preview_get_drawable

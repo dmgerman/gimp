@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a41abe0103
+DECL|enum|__anon28ef45cd0103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a41abe0203
+DECL|enum|__anon28ef45cd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1634,6 +1634,16 @@ name|update_preview
 operator|=
 name|TRUE
 expr_stmt|;
+name|g_object_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|preview
+argument_list|)
+argument_list|,
+literal|"update"
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|preview
@@ -1661,12 +1671,6 @@ name|update_preview
 operator|=
 name|FALSE
 expr_stmt|;
-name|gimp_preview_draw
-argument_list|(
-name|preview
-argument_list|)
-expr_stmt|;
-block|}
 name|g_object_notify
 argument_list|(
 name|G_OBJECT
@@ -1677,6 +1681,12 @@ argument_list|,
 literal|"update"
 argument_list|)
 expr_stmt|;
+name|gimp_preview_draw
+argument_list|(
+name|preview
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
