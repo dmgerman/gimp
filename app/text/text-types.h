@@ -29,6 +29,15 @@ file|"text/text-enums.h"
 end_include
 
 begin_typedef
+DECL|typedef|GimpFont
+typedef|typedef
+name|struct
+name|_GimpFont
+name|GimpFont
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpText
 typedef|typedef
 name|struct
