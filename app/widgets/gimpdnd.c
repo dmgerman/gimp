@@ -2476,7 +2476,7 @@ parameter_list|)
 block|{
 name|gimp_dnd_data_dest_add
 argument_list|(
-name|GIMP_DND_TYPE_URI_LIST
+name|GIMP_DND_TYPE_NETSCAPE_URL
 argument_list|,
 name|widget
 argument_list|,
@@ -2504,7 +2504,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_dnd_data_dest_add
 argument_list|(
-name|GIMP_DND_TYPE_NETSCAPE_URL
+name|GIMP_DND_TYPE_URI_LIST
 argument_list|,
 name|widget
 argument_list|,
