@@ -136,6 +136,16 @@ name|GtkWidget
 modifier|*
 name|vscr
 decl_stmt|;
+DECL|member|nav_icon
+name|GtkWidget
+modifier|*
+name|nav_icon
+decl_stmt|;
+DECL|member|nav_popup
+name|GtkWidget
+modifier|*
+name|nav_popup
+decl_stmt|;
 DECL|member|toggle
 name|GtkWidget
 modifier|*
@@ -150,6 +160,11 @@ DECL|member|cursor_busy
 name|GdkCursor
 modifier|*
 name|cursor_busy
+decl_stmt|;
+DECL|member|nav_gc
+name|GdkGC
+modifier|*
+name|nav_gc
 decl_stmt|;
 comment|/*< private>*/
 DECL|member|xoff
@@ -225,6 +240,28 @@ parameter_list|(
 name|GimpPreview
 modifier|*
 name|preview
+parameter_list|)
+function_decl|;
+DECL|member|draw_thumb
+name|void
+function_decl|(
+modifier|*
+name|draw_thumb
+function_decl|)
+parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|,
+name|GimpPreviewArea
+modifier|*
+name|area
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
 parameter_list|)
 function_decl|;
 comment|/* signal */
