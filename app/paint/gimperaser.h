@@ -6,110 +6,110 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_ERASER_TOOL_H__
+name|__GIMP_ERASER_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_ERASER_TOOL_H__
+DECL|macro|__GIMP_ERASER_H__
 define|#
 directive|define
-name|__GIMP_ERASER_TOOL_H__
+name|__GIMP_ERASER_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimppainttool.h"
+file|"gimppaintcore.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_ERASER_TOOL
+DECL|macro|GIMP_TYPE_ERASER
 define|#
 directive|define
-name|GIMP_TYPE_ERASER_TOOL
-value|(gimp_eraser_tool_get_type ())
+name|GIMP_TYPE_ERASER
+value|(gimp_eraser_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_ERASER_TOOL (obj)
+DECL|macro|GIMP_ERASER (obj)
 define|#
 directive|define
-name|GIMP_ERASER_TOOL
+name|GIMP_ERASER
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_ERASER_TOOL, GimpEraserTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_ERASER, GimpEraser))
 end_define
 
 begin_define
-DECL|macro|GIMP_ERASER_TOOL_CLASS (klass)
+DECL|macro|GIMP_ERASER_CLASS (klass)
 define|#
 directive|define
-name|GIMP_ERASER_TOOL_CLASS
+name|GIMP_ERASER_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_ERASER_TOOL, GimpEraserToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_ERASER, GimpEraserClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_ERASER_TOOL (obj)
+DECL|macro|GIMP_IS_ERASER (obj)
 define|#
 directive|define
-name|GIMP_IS_ERASER_TOOL
+name|GIMP_IS_ERASER
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_ERASER_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_ERASER))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_ERASER_TOOL_CLASS (klass)
+DECL|macro|GIMP_IS_ERASER_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_ERASER_TOOL_CLASS
+name|GIMP_IS_ERASER_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_ERASER_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_ERASER))
 end_define
 
 begin_define
-DECL|macro|GIMP_ERASER_TOOL_GET_CLASS (obj)
+DECL|macro|GIMP_ERASER_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_ERASER_TOOL_GET_CLASS
+name|GIMP_ERASER_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_ERASER_TOOL, GimpEraserToolClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_ERASER, GimpEraserClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpEraserTool
+DECL|typedef|GimpEraser
 typedef|typedef
 name|struct
-name|_GimpEraserTool
-name|GimpEraserTool
+name|_GimpEraser
+name|GimpEraser
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpEraserToolClass
+DECL|typedef|GimpEraserClass
 typedef|typedef
 name|struct
-name|_GimpEraserToolClass
-name|GimpEraserToolClass
+name|_GimpEraserClass
+name|GimpEraserClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpEraserTool
+DECL|struct|_GimpEraser
 struct|struct
-name|_GimpEraserTool
+name|_GimpEraser
 block|{
 DECL|member|parent_instance
-name|GimpPaintTool
+name|GimpPaintCore
 name|parent_instance
 decl_stmt|;
 block|}
@@ -117,35 +117,69 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpEraserToolClass
+DECL|struct|_GimpEraserClass
 struct|struct
-name|_GimpEraserToolClass
+name|_GimpEraserClass
 block|{
 DECL|member|parent_class
-name|GimpPaintToolClass
+name|GimpPaintCoreClass
 name|parent_class
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
-begin_function_decl
-name|void
-name|gimp_eraser_tool_register
-parameter_list|(
-name|Gimp
+begin_typedef
+DECL|typedef|EraserOptions
+typedef|typedef
+name|struct
+name|_EraserOptions
+name|EraserOptions
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_EraserOptions
+struct|struct
+name|_EraserOptions
+block|{
+DECL|member|paint_options
+name|PaintOptions
+name|paint_options
+decl_stmt|;
+DECL|member|hard
+name|gboolean
+name|hard
+decl_stmt|;
+DECL|member|hard_d
+name|gboolean
+name|hard_d
+decl_stmt|;
+DECL|member|hard_w
+name|GtkWidget
 modifier|*
-name|gimp
-parameter_list|,
-name|GimpToolRegisterCallback
-name|callback
-parameter_list|)
-function_decl|;
-end_function_decl
+name|hard_w
+decl_stmt|;
+DECL|member|anti_erase
+name|gboolean
+name|anti_erase
+decl_stmt|;
+DECL|member|anti_erase_d
+name|gboolean
+name|anti_erase_d
+decl_stmt|;
+DECL|member|anti_erase_w
+name|GtkWidget
+modifier|*
+name|anti_erase_w
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_eraser_tool_get_type
+name|gimp_eraser_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -153,58 +187,13 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_function_decl
-name|gboolean
-name|eraser_non_gui
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|gint
-name|num_strokes
-parameter_list|,
-name|gdouble
-modifier|*
-name|stroke_array
-parameter_list|,
-name|gint
-name|hardness
-parameter_list|,
-name|gint
-name|method
-parameter_list|,
-name|gboolean
-name|anti_erase
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|eraser_non_gui_default
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|paint_core
-parameter_list|,
-name|gint
-name|num_strokes
-parameter_list|,
-name|gdouble
-modifier|*
-name|stroke_array
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_ERASER_TOOL_H__  */
+comment|/*  __GIMP_ERASER_H__  */
 end_comment
 
 end_unit

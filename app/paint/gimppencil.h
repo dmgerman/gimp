@@ -6,114 +6,114 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_PENCIL_TOOL_H__
+name|__GIMP_PENCIL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_PENCIL_TOOL_H__
+DECL|macro|__GIMP_PENCIL_H__
 define|#
 directive|define
-name|__GIMP_PENCIL_TOOL_H__
+name|__GIMP_PENCIL_H__
 end_define
 
 begin_comment
-comment|/* FIXME: This whole tool should probably just be a paintbrush tool that  *        has an option of hard edge.  It'll give the "pencil tool" all the  *        flashy stuff the paintbrush tool has, and not duplicate code.  */
+comment|/* FIXME: This whole core should probably just be a paintbrush core that  *        has an option of hard edge.  It'll give the "pencil core" all the  *        flashy stuff the paintbrush core has, and not duplicate code.  */
 end_comment
 
 begin_include
 include|#
 directive|include
-file|"gimppainttool.h"
+file|"gimppaintcore.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_PENCIL_TOOL
+DECL|macro|GIMP_TYPE_PENCIL
 define|#
 directive|define
-name|GIMP_TYPE_PENCIL_TOOL
-value|(gimp_pencil_tool_get_type ())
+name|GIMP_TYPE_PENCIL
+value|(gimp_pencil_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_PENCIL_TOOL (obj)
+DECL|macro|GIMP_PENCIL (obj)
 define|#
 directive|define
-name|GIMP_PENCIL_TOOL
+name|GIMP_PENCIL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PENCIL_TOOL, GimpPencilTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PENCIL, GimpPencil))
 end_define
 
 begin_define
-DECL|macro|GIMP_PENCIL_TOOL_CLASS (klass)
+DECL|macro|GIMP_PENCIL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_PENCIL_TOOL_CLASS
+name|GIMP_PENCIL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PENCIL_TOOL, GimpPencilToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PENCIL, GimpPencilClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PENCIL_TOOL (obj)
+DECL|macro|GIMP_IS_PENCIL (obj)
 define|#
 directive|define
-name|GIMP_IS_PENCIL_TOOL
+name|GIMP_IS_PENCIL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_PENCIL_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_PENCIL))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PENCIL_TOOL_CLASS (klass)
+DECL|macro|GIMP_IS_PENCIL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_PENCIL_TOOL_CLASS
+name|GIMP_IS_PENCIL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PENCIL_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PENCIL))
 end_define
 
 begin_define
-DECL|macro|GIMP_PENCIL_TOOL_GET_CLASS (obj)
+DECL|macro|GIMP_PENCIL_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_PENCIL_TOOL_GET_CLASS
+name|GIMP_PENCIL_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PENCIL_TOOL, GimpPencilToolClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PENCIL, GimpPencilClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpPencilTool
+DECL|typedef|GimpPencil
 typedef|typedef
 name|struct
-name|_GimpPencilTool
-name|GimpPencilTool
+name|_GimpPencil
+name|GimpPencil
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPencilToolClass
+DECL|typedef|GimpPencilClass
 typedef|typedef
 name|struct
-name|_GimpPencilToolClass
-name|GimpPencilToolClass
+name|_GimpPencilClass
+name|GimpPencilClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpPencilTool
+DECL|struct|_GimpPencil
 struct|struct
-name|_GimpPencilTool
+name|_GimpPencil
 block|{
 DECL|member|parent_instance
-name|GimpPaintTool
+name|GimpPaintCore
 name|parent_instance
 decl_stmt|;
 block|}
@@ -121,35 +121,21 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpPencilToolClass
+DECL|struct|_GimpPencilClass
 struct|struct
-name|_GimpPencilToolClass
+name|_GimpPencilClass
 block|{
 DECL|member|parent_class
-name|GimpPaintToolClass
+name|GimpPaintCoreClass
 name|parent_class
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
-begin_function_decl
-name|void
-name|gimp_pencil_tool_register
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|GimpToolRegisterCallback
-name|callback
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 name|GType
-name|gimp_pencil_tool_get_type
+name|gimp_pencil_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -157,35 +143,13 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/* FIXME: Get rid of this non_gui stuff someday.  Preferably make  *        everything use it interally for ease of macro recording.  */
-end_comment
-
-begin_function_decl
-name|gboolean
-name|pencil_non_gui
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|gint
-name|num_strokes
-parameter_list|,
-name|gdouble
-modifier|*
-name|stroke_array
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_PENCIL_TOOL_H__  */
+comment|/*  __GIMP_PENCIL_H__  */
 end_comment
 
 end_unit

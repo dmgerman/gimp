@@ -6,27 +6,47 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_PAINT_TOOL_H__
+name|__GIMP_PAINT_CORE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_PAINT_TOOL_H__
+DECL|macro|__GIMP_PAINT_CORE_H__
 define|#
 directive|define
-name|__GIMP_PAINT_TOOL_H__
+name|__GIMP_PAINT_CORE_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimpdrawtool.h"
+file|"core/gimpobject.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"tools/tools-types.h"
+end_include
+
+begin_comment
+comment|/* temp hack */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"tools/paint_options.h"
+end_include
+
+begin_comment
+comment|/* temp hack */
+end_comment
+
 begin_define
-DECL|macro|PAINT_TOOL_SUBSAMPLE
+DECL|macro|PAINT_CORE_SUBSAMPLE
 define|#
 directive|define
-name|PAINT_TOOL_SUBSAMPLE
+name|PAINT_CORE_SUBSAMPLE
 value|4
 end_define
 
@@ -38,7 +58,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon27ae11c10103
+DECL|enum|__anon27e0aa900103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -67,9 +87,9 @@ comment|/* PaintFunc performs window tracing activity prior to rendering */
 DECL|enumerator|POSTTRACE_PAINT
 name|POSTTRACE_PAINT
 comment|/* PaintFunc performs window tracing activity following rendering */
-DECL|typedef|PaintState
+DECL|typedef|GimpPaintCoreState
 block|}
-name|PaintState
+name|GimpPaintCoreState
 typedef|;
 end_typedef
 
@@ -77,104 +97,109 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon27ae11c10203
+DECL|enum|__anon27e0aa900203
 block|{
-DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
-name|TOOL_CAN_HANDLE_CHANGING_BRUSH
+DECL|enumerator|CORE_CAN_HANDLE_CHANGING_BRUSH
+name|CORE_CAN_HANDLE_CHANGING_BRUSH
 init|=
 literal|0x0001
 block|,
 comment|/* Set for tools that don't mind 					    * if the brush changes while 					    * painting. 					    */
-DECL|enumerator|TOOL_TRACES_ON_WINDOW
-name|TOOL_TRACES_ON_WINDOW
+DECL|enumerator|CORE_TRACES_ON_WINDOW
+name|CORE_TRACES_ON_WINDOW
 comment|/* Set for tools that perform temporary                                             * rendering directly to the window. These                                             * require sequencing with gdisplay_flush()                                             * routines. See clone.c for example.                                             */
-DECL|typedef|ToolFlags
+DECL|typedef|GimpPaintCoreFlags
 block|}
-name|ToolFlags
+name|GimpPaintCoreFlags
 typedef|;
 end_typedef
 
 begin_define
-DECL|macro|GIMP_TYPE_PAINT_TOOL
+DECL|macro|GIMP_TYPE_PAINT_CORE
 define|#
 directive|define
-name|GIMP_TYPE_PAINT_TOOL
-value|(gimp_paint_tool_get_type ())
+name|GIMP_TYPE_PAINT_CORE
+value|(gimp_paint_core_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_PAINT_TOOL (obj)
+DECL|macro|GIMP_PAINT_CORE (obj)
 define|#
 directive|define
-name|GIMP_PAINT_TOOL
+name|GIMP_PAINT_CORE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PAINT_TOOL, GimpPaintTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PAINT_CORE, GimpPaintCore))
 end_define
 
 begin_define
-DECL|macro|GIMP_PAINT_TOOL_CLASS (klass)
+DECL|macro|GIMP_PAINT_CORE_CLASS (klass)
 define|#
 directive|define
-name|GIMP_PAINT_TOOL_CLASS
+name|GIMP_PAINT_CORE_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PAINT_TOOL, GimpPaintToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PAINT_CORE, GimpPaintCoreClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PAINT_TOOL (obj)
+DECL|macro|GIMP_IS_PAINT_CORE (obj)
 define|#
 directive|define
-name|GIMP_IS_PAINT_TOOL
+name|GIMP_IS_PAINT_CORE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_PAINT_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_PAINT_CORE))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PAINT_TOOL_CLASS (klass)
+DECL|macro|GIMP_IS_PAINT_CORE_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_PAINT_TOOL_CLASS
+name|GIMP_IS_PAINT_CORE_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PAINT_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PAINT_CORE))
 end_define
 
 begin_define
-DECL|macro|GIMP_PAINT_TOOL_GET_CLASS (obj)
+DECL|macro|GIMP_PAINT_CORE_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_PAINT_TOOL_GET_CLASS
+name|GIMP_PAINT_CORE_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PAINT_TOOL, GimpPaintToolClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PAINT_CORE, GimpPaintCoreClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpPaintToolClass
+DECL|typedef|GimpPaintCoreClass
 typedef|typedef
 name|struct
-name|_GimpPaintToolClass
-name|GimpPaintToolClass
+name|_GimpPaintCoreClass
+name|GimpPaintCoreClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpPaintTool
+DECL|struct|_GimpPaintCore
 struct|struct
-name|_GimpPaintTool
+name|_GimpPaintCore
 block|{
 DECL|member|parent_instance
-name|GimpDrawTool
+name|GimpObject
 name|parent_instance
 decl_stmt|;
+DECL|member|ID
+name|gint
+name|ID
+decl_stmt|;
+comment|/*  unique instance ID         */
 DECL|member|start_coords
 name|GimpCoords
 name|start_coords
@@ -190,11 +215,6 @@ name|GimpCoords
 name|last_coords
 decl_stmt|;
 comment|/*  last coords                */
-DECL|member|state
-name|gint
-name|state
-decl_stmt|;
-comment|/*  state of buttons and keys  */
 DECL|member|distance
 name|gdouble
 name|distance
@@ -217,7 +237,7 @@ name|x1
 decl_stmt|,
 name|y1
 decl_stmt|;
-comment|/*  image space coordinate     */
+comment|/*  image space coords         */
 DECL|member|x2
 DECL|member|y2
 name|gint
@@ -232,18 +252,8 @@ modifier|*
 name|brush
 decl_stmt|;
 comment|/*  current brush	      */
-DECL|member|pick_colors
-name|gboolean
-name|pick_colors
-decl_stmt|;
-comment|/*  pick color if ctrl or alt is pressed  */
-DECL|member|pick_state
-name|gboolean
-name|pick_state
-decl_stmt|;
-comment|/*  was ctrl or alt pressed when clicked? */
 DECL|member|flags
-name|ToolFlags
+name|GimpPaintCoreFlags
 name|flags
 decl_stmt|;
 comment|/*  tool flags, see ToolFlags above       */
@@ -280,27 +290,58 @@ name|MaskBuf
 modifier|*
 name|solid_brush
 decl_stmt|;
+DECL|member|last_solid_brush
+name|MaskBuf
+modifier|*
+name|last_solid_brush
+decl_stmt|;
 DECL|member|scale_brush
 name|MaskBuf
 modifier|*
 name|scale_brush
+decl_stmt|;
+DECL|member|last_scale_brush
+name|MaskBuf
+modifier|*
+name|last_scale_brush
+decl_stmt|;
+DECL|member|last_scale_width
+name|gint
+name|last_scale_width
+decl_stmt|;
+DECL|member|last_scale_height
+name|gint
+name|last_scale_height
 decl_stmt|;
 DECL|member|scale_pixmap
 name|MaskBuf
 modifier|*
 name|scale_pixmap
 decl_stmt|;
+DECL|member|last_scale_pixmap
+name|MaskBuf
+modifier|*
+name|last_scale_pixmap
+decl_stmt|;
+DECL|member|last_scale_pixmap_width
+name|gint
+name|last_scale_pixmap_width
+decl_stmt|;
+DECL|member|last_scale_pixmap_height
+name|gint
+name|last_scale_pixmap_height
+decl_stmt|;
 DECL|member|kernel_brushes
 name|MaskBuf
 modifier|*
 name|kernel_brushes
 index|[
-name|PAINT_TOOL_SUBSAMPLE
+name|PAINT_CORE_SUBSAMPLE
 operator|+
 literal|1
 index|]
 index|[
-name|PAINT_TOOL_SUBSAMPLE
+name|PAINT_CORE_SUBSAMPLE
 operator|+
 literal|1
 index|]
@@ -325,12 +366,12 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpPaintToolClass
+DECL|struct|_GimpPaintCoreClass
 struct|struct
-name|_GimpPaintToolClass
+name|_GimpPaintCoreClass
 block|{
 DECL|member|parent_class
-name|GimpDrawToolClass
+name|GimpObjectClass
 name|parent_class
 decl_stmt|;
 comment|/*  virtual function  */
@@ -341,15 +382,19 @@ modifier|*
 name|paint
 function_decl|)
 parameter_list|(
-name|GimpPaintTool
+name|GimpPaintCore
 modifier|*
-name|tool
+name|core
 parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintState
+name|PaintOptions
+modifier|*
+name|options
+parameter_list|,
+name|GimpPaintCoreState
 name|paint_state
 parameter_list|)
 function_decl|;
@@ -357,31 +402,27 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/*  Special undo type  */
-end_comment
-
 begin_typedef
-DECL|typedef|PaintUndo
+DECL|typedef|GimpPaintCoreUndo
 typedef|typedef
 name|struct
-name|_PaintUndo
-name|PaintUndo
+name|_GimpPaintCoreUndo
+name|GimpPaintCoreUndo
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_PaintUndo
+DECL|struct|_GimpPaintCoreUndo
 struct|struct
-name|_PaintUndo
+name|_GimpPaintCoreUndo
 block|{
-DECL|member|tool_ID
+DECL|member|core_ID
 name|gint
-name|tool_ID
+name|core_ID
 decl_stmt|;
-DECL|member|tool_type
+DECL|member|core_type
 name|GType
-name|tool_type
+name|core_type
 decl_stmt|;
 DECL|member|last_coords
 name|GimpCoords
@@ -393,7 +434,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_paint_tool_get_type
+name|gimp_paint_core_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -403,17 +444,21 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|gimp_paint_tool_paint
+name|gimp_paint_core_paint
 parameter_list|(
-name|GimpPaintTool
+name|GimpPaintCore
 modifier|*
-name|paint_tool
+name|core
 parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintState
+name|PaintOptions
+modifier|*
+name|options
+parameter_list|,
+name|GimpPaintCoreState
 name|state
 parameter_list|)
 function_decl|;
@@ -421,32 +466,49 @@ end_function_decl
 
 begin_function_decl
 name|int
-name|gimp_paint_tool_start
+name|gimp_paint_core_start
 parameter_list|(
-name|GimpPaintTool
+name|GimpPaintCore
 modifier|*
-name|paint_tool
+name|core
 parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gdouble
-name|x
-parameter_list|,
-name|gdouble
-name|y
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_paint_tool_interpolate
+name|gimp_paint_core_interpolate
 parameter_list|(
-name|GimpPaintTool
+name|GimpPaintCore
 modifier|*
-name|paint_tool
+name|core
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|PaintOptions
+modifier|*
+name|paint_options
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_paint_core_finish
+parameter_list|(
+name|GimpPaintCore
+modifier|*
+name|core
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -457,37 +519,22 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_paint_tool_finish
+name|gimp_paint_core_cleanup
 parameter_list|(
-name|GimpPaintTool
+name|GimpPaintCore
 modifier|*
-name|paint_tool
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
+name|core
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_paint_tool_cleanup
+name|gimp_paint_core_get_color_from_gradient
 parameter_list|(
-name|GimpPaintTool
+name|GimpPaintCore
 modifier|*
-name|paint_tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_paint_tool_get_color_from_gradient
-parameter_list|(
-name|GimpPaintTool
-modifier|*
-name|paint_tool
+name|core
 parameter_list|,
 name|GimpGradient
 modifier|*
@@ -507,17 +554,17 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  paint tool painting functions  */
+comment|/*  paint core painting functions  */
 end_comment
 
 begin_function_decl
 name|TempBuf
 modifier|*
-name|gimp_paint_tool_get_paint_area
+name|gimp_paint_core_get_paint_area
 parameter_list|(
-name|GimpPaintTool
+name|GimpPaintCore
 modifier|*
-name|paint_tool
+name|core
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -532,11 +579,11 @@ end_function_decl
 begin_function_decl
 name|TempBuf
 modifier|*
-name|gimp_paint_tool_get_orig_image
+name|gimp_paint_core_get_orig_image
 parameter_list|(
-name|GimpPaintTool
+name|GimpPaintCore
 modifier|*
-name|paint_tool
+name|core
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -559,11 +606,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_paint_tool_paste_canvas
+name|gimp_paint_core_paste_canvas
 parameter_list|(
-name|GimpPaintTool
+name|GimpPaintCore
 modifier|*
-name|paint_tool
+name|core
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -592,11 +639,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_paint_tool_replace_canvas
+name|gimp_paint_core_replace_canvas
 parameter_list|(
-name|GimpPaintTool
+name|GimpPaintCore
 modifier|*
-name|paint_tool
+name|core
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -622,11 +669,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_paint_tool_color_area_with_pixmap
+name|gimp_paint_core_color_area_with_pixmap
 parameter_list|(
-name|GimpPaintTool
+name|GimpPaintCore
 modifier|*
-name|paint_tool
+name|core
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -655,7 +702,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_PAINT_TOOL_H__  */
+comment|/*  __GIMP_PAINT_CORE_H__  */
 end_comment
 
 end_unit

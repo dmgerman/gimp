@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"paint/paint-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/display-types.h"
 end_include
 
@@ -236,94 +242,11 @@ begin_comment
 comment|/*  enums  */
 end_comment
 
-begin_comment
-comment|/* Brush application types  */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon28ffaaf40103
-block|{
-DECL|enumerator|HARD
-name|HARD
-block|,
-comment|/* pencil */
-DECL|enumerator|SOFT
-name|SOFT
-block|,
-comment|/* paintbrush */
-DECL|enumerator|PRESSURE
-name|PRESSURE
-comment|/* paintbrush with variable pressure */
-DECL|typedef|BrushApplicationMode
-block|}
-name|BrushApplicationMode
-typedef|;
-end_typedef
-
-begin_comment
-comment|/* Paint application modes  */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon28ffaaf40203
-block|{
-DECL|enumerator|CONSTANT
-name|CONSTANT
-block|,
-comment|/*< nick=CONTINUOUS>*/
-comment|/* pencil, paintbrush, airbrush, clone */
-DECL|enumerator|INCREMENTAL
-name|INCREMENTAL
-comment|/* convolve, smudge */
-DECL|typedef|PaintApplicationMode
-block|}
-name|PaintApplicationMode
-typedef|;
-end_typedef
-
-begin_comment
-comment|/* gradient paint modes */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon28ffaaf40303
-block|{
-DECL|enumerator|ONCE_FORWARD
-name|ONCE_FORWARD
-block|,
-comment|/* paint through once, then stop */
-DECL|enumerator|ONCE_BACKWARDS
-name|ONCE_BACKWARDS
-block|,
-comment|/* paint once, then stop, but run the gradient the other way */
-DECL|enumerator|LOOP_SAWTOOTH
-name|LOOP_SAWTOOTH
-block|,
-comment|/* keep painting, looping through the grad start->end,start->end /|/|/| */
-DECL|enumerator|LOOP_TRIANGLE
-name|LOOP_TRIANGLE
-block|,
-comment|/* keep paiting, looping though the grad start->end,end->start /\/\/\/  */
-DECL|enumerator|ONCE_END_COLOR
-name|ONCE_END_COLOR
-comment|/* paint once, but keep painting with the end color */
-DECL|typedef|GradientPaintMode
-block|}
-name|GradientPaintMode
-typedef|;
-end_typedef
-
 begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28ffaaf40403
+DECL|enum|__anon28c529930103
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -367,7 +290,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28ffaaf40503
+DECL|enum|__anon28c529930203
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -391,7 +314,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28ffaaf40603
+DECL|enum|__anon28c529930303
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -415,7 +338,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28ffaaf40703
+DECL|enum|__anon28c529930403
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -448,7 +371,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28ffaaf40803
+DECL|enum|__anon28c529930503
 block|{
 DECL|enumerator|TRANSFORM_INIT
 name|TRANSFORM_INIT

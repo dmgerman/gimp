@@ -1,7 +1,20 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* paint_core_kernels.h  *  *   This file was generated using kernelgen as found in the tools dir.  *   (threshold = 0.25)  */
+comment|/* gimppaintcore-kernels.h  *  *   This file was generated using kernelgen as found in the tools dir.  *   (threshold = 0.25)  */
 end_comment
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|__GIMP_PAINT_CORE_KERNELS_H__
+end_ifndef
+
+begin_define
+DECL|macro|__GIMP_PAINT_CORE_KERNELS_H__
+define|#
+directive|define
+name|__GIMP_PAINT_CORE_KERNELS_H__
+end_define
 
 begin_define
 DECL|macro|KERNEL_WIDTH
@@ -560,6 +573,15 @@ block|}
 block|}
 decl_stmt|;
 end_decl_stmt
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* __GIMP_PAINT_CORE_KERNELS_H__ */
+end_comment
 
 end_unit
 

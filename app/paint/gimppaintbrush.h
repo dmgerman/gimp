@@ -6,110 +6,110 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_PAINTBRUSH_TOOL_H__
+name|__GIMP_PAINTBRUSH_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_PAINTBRUSH_TOOL_H__
+DECL|macro|__GIMP_PAINTBRUSH_H__
 define|#
 directive|define
-name|__GIMP_PAINTBRUSH_TOOL_H__
+name|__GIMP_PAINTBRUSH_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimppainttool.h"
+file|"gimppaintcore.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_PAINTBRUSH_TOOL
+DECL|macro|GIMP_TYPE_PAINTBRUSH
 define|#
 directive|define
-name|GIMP_TYPE_PAINTBRUSH_TOOL
-value|(gimp_paintbrush_tool_get_type ())
+name|GIMP_TYPE_PAINTBRUSH
+value|(gimp_paintbrush_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_PAINTBRUSH_TOOL (obj)
+DECL|macro|GIMP_PAINTBRUSH (obj)
 define|#
 directive|define
-name|GIMP_PAINTBRUSH_TOOL
+name|GIMP_PAINTBRUSH
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PAINTBRUSH_TOOL, GimpPaintbrushTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PAINTBRUSH, GimpPaintbrush))
 end_define
 
 begin_define
-DECL|macro|GIMP_PAINTBRUSH_TOOL_CLASS (klass)
+DECL|macro|GIMP_PAINTBRUSH_CLASS (klass)
 define|#
 directive|define
-name|GIMP_PAINTBRUSH_TOOL_CLASS
+name|GIMP_PAINTBRUSH_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PAINTBRUSH_TOOL, GimpPaintbrushToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PAINTBRUSH, GimpPaintbrushClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PAINTBRUSH_TOOL (obj)
+DECL|macro|GIMP_IS_PAINTBRUSH (obj)
 define|#
 directive|define
-name|GIMP_IS_PAINTBRUSH_TOOL
+name|GIMP_IS_PAINTBRUSH
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_PAINTBRUSH_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_PAINTBRUSH))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PAINTBRUSH_TOOL_CLASS (klass)
+DECL|macro|GIMP_IS_PAINTBRUSH_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_PAINTBRUSH_TOOL_CLASS
+name|GIMP_IS_PAINTBRUSH_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PAINTBRUSH_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PAINTBRUSH))
 end_define
 
 begin_define
-DECL|macro|GIMP_PAINTBRUSH_TOOL_GET_CLASS (obj)
+DECL|macro|GIMP_PAINTBRUSH_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_PAINTBRUSH_TOOL_GET_CLASS
+name|GIMP_PAINTBRUSH_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PAINTBRUSH_TOOL, GimpPaintbrushToolClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PAINTBRUSH, GimpPaintbrushClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpPaintbrushTool
+DECL|typedef|GimpPaintbrush
 typedef|typedef
 name|struct
-name|_GimpPaintbrushTool
-name|GimpPaintbrushTool
+name|_GimpPaintbrush
+name|GimpPaintbrush
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPaintbrushToolClass
+DECL|typedef|GimpPaintbrushClass
 typedef|typedef
 name|struct
-name|_GimpPaintbrushToolClass
-name|GimpPaintbrushToolClass
+name|_GimpPaintbrushClass
+name|GimpPaintbrushClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpPaintbrushTool
+DECL|struct|_GimpPaintbrush
 struct|struct
-name|_GimpPaintbrushTool
+name|_GimpPaintbrush
 block|{
 DECL|member|parent_instance
-name|GimpPaintTool
+name|GimpPaintCore
 name|parent_instance
 decl_stmt|;
 block|}
@@ -117,35 +117,21 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpPaintbrushToolClass
+DECL|struct|_GimpPaintbrushClass
 struct|struct
-name|_GimpPaintbrushToolClass
+name|_GimpPaintbrushClass
 block|{
 DECL|member|parent_class
-name|GimpPaintToolClass
+name|GimpPaintCoreClass
 name|parent_class
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
-begin_function_decl
-name|void
-name|gimp_paintbrush_tool_register
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|GimpToolRegisterCallback
-name|callback
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 name|GType
-name|gimp_paintbrush_tool_get_type
+name|gimp_paintbrush_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -153,58 +139,13 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_function_decl
-name|gboolean
-name|gimp_paintbrush_tool_non_gui
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|gint
-name|num_srokes
-parameter_list|,
-name|gdouble
-modifier|*
-name|stroke_array
-parameter_list|,
-name|gdouble
-name|fade_out
-parameter_list|,
-name|gint
-name|incremental
-parameter_list|,
-name|gdouble
-name|gradient_length
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_paintbrush_tool_non_gui_default
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|gint
-name|num_strokes
-parameter_list|,
-name|gdouble
-modifier|*
-name|stroke_array
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_PAINTBRUSH_TOOL_H__  */
+comment|/*  __GIMP_PAINTBRUSH_H__  */
 end_comment
 
 end_unit

@@ -346,7 +346,7 @@ name|y
 decl_stmt|;
 name|printf
 argument_list|(
-literal|"/* paint_core_kernels.h\n"
+literal|"/* gimppaintcore-kernels.h\n"
 literal|" *\n"
 literal|" *   This file was generated using kernelgen as found in the tools dir.\n"
 argument_list|)
@@ -361,6 +361,16 @@ expr_stmt|;
 name|printf
 argument_list|(
 literal|" */\n\n"
+argument_list|)
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"#ifndef __GIMP_PAINT_CORE_KERNELS_H__\n"
+argument_list|)
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"#define __GIMP_PAINT_CORE_KERNELS_H__\n\n"
 argument_list|)
 expr_stmt|;
 name|printf
@@ -396,7 +406,7 @@ argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
-literal|"static const int subsample[%d][%d][%d] = {\n"
+literal|"static const int subsample[%d][%d][%d] =\n{\n"
 argument_list|,
 name|SUBSAMPLE
 operator|+
@@ -514,7 +524,12 @@ expr_stmt|;
 block|}
 name|printf
 argument_list|(
-literal|"};\n"
+literal|"};\n\n"
+argument_list|)
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"#endif /* __GIMP_PAINT_CORE_KERNELS_H__\n"
 argument_list|)
 expr_stmt|;
 name|exit

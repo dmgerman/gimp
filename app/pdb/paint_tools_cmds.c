@@ -64,6 +64,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint/gimpdodgeburn.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint/paint-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/gimpairbrushtool.h"
 end_include
 
@@ -504,17 +516,9 @@ name|success
 condition|)
 name|success
 operator|=
-name|airbrush_non_gui
-argument_list|(
-name|drawable
-argument_list|,
-name|pressure
-argument_list|,
-name|num_strokes
-argument_list|,
-name|strokes
-argument_list|)
+name|FALSE
 expr_stmt|;
+comment|/*airbrush_non_gui (drawable, pressure, num_strokes, strokes);*/
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -716,15 +720,9 @@ name|success
 condition|)
 name|success
 operator|=
-name|airbrush_non_gui_default
-argument_list|(
-name|drawable
-argument_list|,
-name|num_strokes
-argument_list|,
-name|strokes
-argument_list|)
+name|FALSE
 expr_stmt|;
+comment|/*airbrush_non_gui_default (drawable, num_strokes, strokes);*/
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -1004,23 +1002,9 @@ name|success
 condition|)
 name|success
 operator|=
-name|clone_non_gui
-argument_list|(
-name|drawable
-argument_list|,
-name|src_drawable
-argument_list|,
-name|clone_type
-argument_list|,
-name|src_x
-argument_list|,
-name|src_y
-argument_list|,
-name|num_strokes
-argument_list|,
-name|strokes
-argument_list|)
+name|FALSE
 expr_stmt|;
+comment|/*clone_non_gui (drawable, src_drawable, clone_type, src_x, src_y, 			     num_strokes, strokes);*/
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -1246,15 +1230,9 @@ name|success
 condition|)
 name|success
 operator|=
-name|clone_non_gui_default
-argument_list|(
-name|drawable
-argument_list|,
-name|num_strokes
-argument_list|,
-name|strokes
-argument_list|)
+name|FALSE
 expr_stmt|;
+comment|/*clone_non_gui_default (drawable, num_strokes, strokes);*/
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -1504,19 +1482,9 @@ name|success
 condition|)
 name|success
 operator|=
-name|convolve_non_gui
-argument_list|(
-name|drawable
-argument_list|,
-name|pressure
-argument_list|,
-name|convolve_type
-argument_list|,
-name|num_strokes
-argument_list|,
-name|strokes
-argument_list|)
+name|FALSE
 expr_stmt|;
+comment|/*convolve_non_gui (drawable, pressure, convolve_type, num_strokes, strokes);*/
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -1726,15 +1694,9 @@ name|success
 condition|)
 name|success
 operator|=
-name|convolve_non_gui_default
-argument_list|(
-name|drawable
-argument_list|,
-name|num_strokes
-argument_list|,
-name|strokes
-argument_list|)
+name|FALSE
 expr_stmt|;
+comment|/*convolve_non_gui_default (drawable, num_strokes, strokes);*/
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -2012,21 +1974,9 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimp_dodgeburn_tool_non_gui
-argument_list|(
-name|drawable
-argument_list|,
-name|exposure
-argument_list|,
-name|dodgeburn_type
-argument_list|,
-name|dodgeburn_mode
-argument_list|,
-name|num_strokes
-argument_list|,
-name|strokes
-argument_list|)
+name|FALSE
 expr_stmt|;
+comment|/*gimp_dodgeburn_tool_non_gui (drawable, exposure, dodgeburn_type, dodgeburn_mode, num_strokes, strokes);*/
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -2244,15 +2194,9 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimp_dodgeburn_tool_non_gui_default
-argument_list|(
-name|drawable
-argument_list|,
-name|num_strokes
-argument_list|,
-name|strokes
-argument_list|)
+name|FALSE
 expr_stmt|;
+comment|/*gimp_dodgeburn_tool_non_gui_default (drawable, num_strokes, strokes);*/
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -2502,21 +2446,9 @@ name|success
 condition|)
 name|success
 operator|=
-name|eraser_non_gui
-argument_list|(
-name|drawable
-argument_list|,
-name|num_strokes
-argument_list|,
-name|strokes
-argument_list|,
-name|hardness
-argument_list|,
-name|method
-argument_list|,
-name|TRUE
-argument_list|)
+name|FALSE
 expr_stmt|;
+comment|/*eraser_non_gui (drawable, num_strokes, strokes, hardness, method, TRUE);*/
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -2726,15 +2658,9 @@ name|success
 condition|)
 name|success
 operator|=
-name|eraser_non_gui_default
-argument_list|(
-name|drawable
-argument_list|,
-name|num_strokes
-argument_list|,
-name|strokes
-argument_list|)
+name|FALSE
 expr_stmt|;
+comment|/*eraser_non_gui_default (drawable, num_strokes, strokes);*/
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -3004,21 +2930,9 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimp_paintbrush_tool_non_gui
-argument_list|(
-name|drawable
-argument_list|,
-name|num_strokes
-argument_list|,
-name|strokes
-argument_list|,
-name|fade_out
-argument_list|,
-name|method
-argument_list|,
-name|gradient_length
-argument_list|)
+name|FALSE
 expr_stmt|;
+comment|/*gimp_paintbrush_tool_non_gui (drawable, num_strokes, strokes,  					    fade_out, method, gradient_length);*/
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -3236,15 +3150,9 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimp_paintbrush_tool_non_gui_default
-argument_list|(
-name|drawable
-argument_list|,
-name|num_strokes
-argument_list|,
-name|strokes
-argument_list|)
+name|FALSE
 expr_stmt|;
+comment|/*gimp_paintbrush_tool_non_gui_default (drawable, num_strokes, strokes);*/
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -3438,15 +3346,9 @@ name|success
 condition|)
 name|success
 operator|=
-name|pencil_non_gui
-argument_list|(
-name|drawable
-argument_list|,
-name|num_strokes
-argument_list|,
-name|strokes
-argument_list|)
+name|FALSE
 expr_stmt|;
+comment|/*pencil_non_gui (drawable, num_strokes, strokes);'*/
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -3668,17 +3570,9 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimp_smudge_tool_non_gui
-argument_list|(
-name|drawable
-argument_list|,
-name|pressure
-argument_list|,
-name|num_strokes
-argument_list|,
-name|strokes
-argument_list|)
+name|FALSE
 expr_stmt|;
+comment|/*gimp_smudge_tool_non_gui (drawable, pressure, num_strokes, strokes);*/
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -3880,15 +3774,9 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimp_smudge_tool_non_gui_default
-argument_list|(
-name|drawable
-argument_list|,
-name|num_strokes
-argument_list|,
-name|strokes
-argument_list|)
+name|FALSE
 expr_stmt|;
+comment|/*gimp_smudge_tool_non_gui_default (drawable, num_strokes, strokes);*/
 return|return
 name|procedural_db_return_args
 argument_list|(
