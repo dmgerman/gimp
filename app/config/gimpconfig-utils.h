@@ -17,6 +17,25 @@ name|__GIMP_CONFIG_UTILS_H__
 end_define
 
 begin_function_decl
+name|GList
+modifier|*
+name|gimp_config_diff
+parameter_list|(
+name|GObject
+modifier|*
+name|a
+parameter_list|,
+name|GObject
+modifier|*
+name|b
+parameter_list|,
+name|GParamFlags
+name|flags
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_config_copy_properties
 parameter_list|(

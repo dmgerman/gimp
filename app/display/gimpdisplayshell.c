@@ -288,7 +288,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab3151f0103
+DECL|enum|__anon28f5fd640103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2649,18 +2649,6 @@ index|[]
 init|=
 block|{
 block|{
-literal|"/---"
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-literal|"<Separator>"
-block|}
-block|,
-block|{
 name|N_
 argument_list|(
 literal|"/From Theme"
@@ -2703,6 +2691,18 @@ block|,
 name|GIMP_DISPLAY_PADDING_MODE_DARK_CHECK
 block|,
 name|NULL
+block|}
+block|,
+block|{
+literal|"/---"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|0
+block|,
+literal|"<Separator>"
 block|}
 block|,
 block|{
