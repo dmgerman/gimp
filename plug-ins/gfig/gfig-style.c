@@ -1912,7 +1912,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * set_foreground_callback() is the callback for the Foreground color select  * widget.  It reads the color from the widget, and applies this color  * to both the default style and the current style.  It then produces a  * repaint (which will be suppressed if gfig_context->enable_repaint is  * FALSE).  */
+comment|/*  * set_foreground_callback() is the callback for the Foreground color select  * widget.  It reads the color from the widget, and applies this color to the  * current style.  It then produces a repaint (which will be suppressed if  * gfig_context->enable_repaint is FALSE).  */
 end_comment
 
 begin_function
@@ -2118,7 +2118,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * gfig_brush_changed_callback() is the callback for the brush  * selector widget.  It reads the brush name from the widget, and  * applies this to both the default style and the current style,  * as well as the gfig_context->bdesc values.  It then produces a  * repaint (which will be suppressed if gfig_context->enable_repaint is  * FALSE).  */
+comment|/*  * gfig_brush_changed_callback() is the callback for the brush  * selector widget.  It reads the brush name from the widget, and  * applies this to the current style, as well as the gfig_context->bdesc  * values.  It then produces a repaint (which will be suppressed if  * gfig_context->enable_repaint is FALSE).  */
 end_comment
 
 begin_function
@@ -2162,16 +2162,6 @@ name|Style
 modifier|*
 name|current_style
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|brush_name
-condition|)
-name|g_message
-argument_list|(
-literal|"Error: setting brush name to NULL in color selector callback."
-argument_list|)
-expr_stmt|;
 name|current_style
 operator|=
 name|gfig_context_get_current_style
@@ -2186,7 +2176,6 @@ argument_list|(
 name|brush_name
 argument_list|)
 expr_stmt|;
-comment|/* DDX not sure if it should be strdup'ed */
 comment|/* this will soon be unneeded. How soon? */
 name|gfig_context
 operator|->
@@ -2199,7 +2188,6 @@ argument_list|(
 name|brush_name
 argument_list|)
 expr_stmt|;
-comment|/* idem */
 name|gfig_context
 operator|->
 name|bdesc
@@ -2276,7 +2264,6 @@ argument_list|(
 name|pattern_name
 argument_list|)
 expr_stmt|;
-comment|/* not sure if it should be strdup'ed */
 name|gfig_paint_callback
 argument_list|()
 expr_stmt|;
@@ -2326,7 +2313,6 @@ argument_list|(
 name|gradient_name
 argument_list|)
 expr_stmt|;
-comment|/* not sure if it should be strdup'ed */
 name|gfig_paint_callback
 argument_list|()
 expr_stmt|;

@@ -462,7 +462,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf2b60a0108
+DECL|struct|__anon2c09e5e90108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -7126,6 +7126,9 @@ name|obj_show_single
 argument_list|)
 expr_stmt|;
 name|draw_grid_clear
+argument_list|()
+expr_stmt|;
+name|gfig_paint_callback
 argument_list|()
 expr_stmt|;
 block|}
