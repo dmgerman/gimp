@@ -23,7 +23,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtkdrawingarea.h>
+file|<gtk/gtkscale.h>
 end_include
 
 begin_macro
@@ -108,14 +108,10 @@ struct|struct
 name|_GimpColorScale
 block|{
 DECL|member|parent_instance
-name|GtkDrawingArea
+name|GtkScale
 name|parent_instance
 decl_stmt|;
 comment|/*< private>*/
-DECL|member|orientation
-name|GtkOrientation
-name|orientation
-decl_stmt|;
 DECL|member|channel
 name|GimpColorSelectorChannel
 name|channel
@@ -127,11 +123,6 @@ decl_stmt|;
 DECL|member|hsv
 name|GimpHSV
 name|hsv
-decl_stmt|;
-DECL|member|adj
-name|GtkAdjustment
-modifier|*
-name|adj
 decl_stmt|;
 DECL|member|buf
 name|guchar
@@ -160,7 +151,7 @@ struct|struct
 name|_GimpColorScaleClass
 block|{
 DECL|member|parent_class
-name|GtkDrawingAreaClass
+name|GtkScaleClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -203,20 +194,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_color_scale_set_orientation
-parameter_list|(
-name|GimpColorScale
-modifier|*
-name|scale
-parameter_list|,
-name|GtkOrientation
-name|orientation
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_color_scale_set_channel
 parameter_list|(
 name|GimpColorScale
@@ -246,21 +223,6 @@ specifier|const
 name|GimpHSV
 modifier|*
 name|hsv
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_color_scale_set_adjustment
-parameter_list|(
-name|GimpColorScale
-modifier|*
-name|scale
-parameter_list|,
-name|GtkAdjustment
-modifier|*
-name|adj
 parameter_list|)
 function_decl|;
 end_function_decl
