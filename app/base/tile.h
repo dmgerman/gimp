@@ -33,18 +33,6 @@ value|64
 end_define
 
 begin_comment
-comment|/* Uncomment for verbose debugging on copy-on-write logic #define TILE_DEBUG */
-end_comment
-
-begin_comment
-comment|/* sanity checking on new tile hinting code */
-end_comment
-
-begin_comment
-comment|/* #define HINTS_SANITY */
-end_comment
-
-begin_comment
 comment|/*  explicit guchar type rather than enum since gcc chooses an int  *  representation but arrays of TileRowHints are quite space-critical  *  in GIMP.  */
 end_comment
 
@@ -57,10 +45,10 @@ typedef|;
 end_typedef
 
 begin_define
-DECL|macro|TILEROWHINT_BROKEN
+DECL|macro|TILEROWHINT_UNKNOWN
 define|#
 directive|define
-name|TILEROWHINT_BROKEN
+name|TILEROWHINT_UNKNOWN
 value|0
 end_define
 
@@ -105,10 +93,10 @@ value|5
 end_define
 
 begin_define
-DECL|macro|TILEROWHINT_UNKNOWN
+DECL|macro|TILEROWHINT_BROKEN
 define|#
 directive|define
-name|TILEROWHINT_UNKNOWN
+name|TILEROWHINT_BROKEN
 value|6
 end_define
 
@@ -243,10 +231,6 @@ name|tile
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* DOCUMENT ME -- adm */
-end_comment
 
 begin_function_decl
 name|TileRowHint

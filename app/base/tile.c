@@ -51,6 +51,22 @@ directive|include
 file|"tile-swap.h"
 end_include
 
+begin_comment
+comment|/*  Uncomment for verbose debugging on copy-on-write logic  */
+end_comment
+
+begin_comment
+comment|/*  #define TILE_DEBUG  */
+end_comment
+
+begin_comment
+comment|/*  Sanity checks on tile hinting code  */
+end_comment
+
+begin_comment
+comment|/*  #define HINTS_SANITY */
+end_comment
+
 begin_function_decl
 specifier|static
 name|void
@@ -82,60 +98,26 @@ modifier|*
 name|tile
 parameter_list|)
 block|{
-name|gint
-name|height
-decl_stmt|,
-name|y
-decl_stmt|;
-comment|/*  If tile has rowhints array already, do nothing.  */
 if|if
 condition|(
+operator|!
 name|tile
 operator|->
 name|rowhint
 condition|)
-return|return;
-name|height
-operator|=
-name|tile
-operator|->
-name|eheight
-expr_stmt|;
 name|tile
 operator|->
 name|rowhint
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|TileRowHint
 argument_list|,
-name|height
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|y
-operator|=
-literal|0
-init|;
-name|y
-operator|<
-name|height
-condition|;
-name|y
-operator|++
-control|)
-block|{
 name|tile
 operator|->
-name|rowhint
-index|[
-name|y
-index|]
-operator|=
-name|TILEROWHINT_UNKNOWN
+name|eheight
+argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
