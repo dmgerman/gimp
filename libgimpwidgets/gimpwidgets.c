@@ -3768,11 +3768,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Randomize"
+literal|"_Randomize"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3915,7 +3915,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bab10970108
+DECL|struct|__anon2b4c29170108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
