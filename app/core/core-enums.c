@@ -2153,6 +2153,17 @@ literal|"group-item-displace"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_GROUP_ITEM_LINKED
+block|,
+name|N_
+argument_list|(
+literal|"Linked Item"
+argument_list|)
+block|,
+literal|"group-item-linked"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_GROUP_DRAWABLE_VISIBILITY
 block|,
 name|N_
@@ -2183,17 +2194,6 @@ literal|"Resize Layer"
 argument_list|)
 block|,
 literal|"group-layer-resize"
-block|}
-block|,
-block|{
-name|GIMP_UNDO_GROUP_LAYER_LINKED
-block|,
-name|N_
-argument_list|(
-literal|"Linked Layer"
-argument_list|)
-block|,
-literal|"group-layer-linked"
 block|}
 block|,
 block|{
@@ -2461,6 +2461,17 @@ literal|"item-displace"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_ITEM_LINKED
+block|,
+name|N_
+argument_list|(
+literal|"Set Item Linked"
+argument_list|)
+block|,
+literal|"item-linked"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_DRAWABLE_VISIBILITY
 block|,
 name|N_
@@ -2568,17 +2579,6 @@ literal|"Set Preserve Trans"
 argument_list|)
 block|,
 literal|"layer-preserve-trans"
-block|}
-block|,
-block|{
-name|GIMP_UNDO_LAYER_LINKED
-block|,
-name|N_
-argument_list|(
-literal|"Set Layer Linked"
-argument_list|)
-block|,
-literal|"layer-linked"
 block|}
 block|,
 block|{

@@ -128,10 +128,6 @@ name|GtkWidget
 modifier|*
 name|anchor_button
 decl_stmt|;
-DECL|member|model_column_linked
-name|gint
-name|model_column_linked
-decl_stmt|;
 DECL|member|model_column_mask
 name|gint
 name|model_column_mask
@@ -139,11 +135,6 @@ decl_stmt|;
 DECL|member|model_column_mask_visible
 name|gint
 name|model_column_mask_visible
-decl_stmt|;
-DECL|member|chain_cell
-name|GtkCellRenderer
-modifier|*
-name|chain_cell
 decl_stmt|;
 DECL|member|mask_cell
 name|GtkCellRenderer

@@ -118,11 +118,6 @@ name|gboolean
 name|preserve_trans
 decl_stmt|;
 comment|/*  preserve transparency      */
-DECL|member|linked
-name|gboolean
-name|linked
-decl_stmt|;
-comment|/*  control linkage            */
 DECL|member|mask
 name|GimpLayerMask
 modifier|*
@@ -131,7 +126,7 @@ decl_stmt|;
 comment|/*  possible layer mask        */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon27e7e3eb0108
+DECL|struct|__anon2bb4bd080108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -212,18 +207,6 @@ name|void
 function_decl|(
 modifier|*
 name|preserve_trans_changed
-function_decl|)
-parameter_list|(
-name|GimpLayer
-modifier|*
-name|layer
-parameter_list|)
-function_decl|;
-DECL|member|linked_changed
-name|void
-function_decl|(
-modifier|*
-name|linked_changed
 function_decl|)
 parameter_list|(
 name|GimpLayer
@@ -560,35 +543,6 @@ end_function_decl
 begin_function_decl
 name|gboolean
 name|gimp_layer_get_preserve_trans
-parameter_list|(
-specifier|const
-name|GimpLayer
-modifier|*
-name|layer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_layer_set_linked
-parameter_list|(
-name|GimpLayer
-modifier|*
-name|layer
-parameter_list|,
-name|gboolean
-name|linked
-parameter_list|,
-name|gboolean
-name|push_undo
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_layer_get_linked
 parameter_list|(
 specifier|const
 name|GimpLayer
