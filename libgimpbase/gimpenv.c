@@ -340,6 +340,9 @@ argument_list|(
 literal|"GIMP_DATADIR environment variable should be an absolute path."
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|__EMX__
 name|gimp_data_dir
 operator|=
 name|g_strdup
@@ -347,6 +350,20 @@ argument_list|(
 name|env_gimp_data_dir
 argument_list|)
 expr_stmt|;
+else|#
+directive|else
+name|gimp_data_dir
+operator|=
+name|g_strdup
+argument_list|(
+name|__XOS2RedirRoot
+argument_list|(
+name|env_gimp_data_dir
+argument_list|)
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 else|else
 block|{
