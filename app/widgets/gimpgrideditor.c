@@ -81,7 +81,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c50eb990103
+DECL|enum|__anon29d089a70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -724,16 +724,6 @@ argument_list|,
 literal|2
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
