@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"info_dialog.h"
 end_include
 
@@ -2005,7 +2011,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GDK_TCROSS
+name|GIMP_COLOR_PICKER_CURSOR
 argument_list|)
 expr_stmt|;
 else|else

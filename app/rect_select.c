@@ -2489,7 +2489,7 @@ block|{
 case|case
 name|SELECTION_ADD
 case|:
-name|gdisplay_install_gimp_tool_cursor
+name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
@@ -2500,7 +2500,7 @@ break|break;
 case|case
 name|SELECTION_SUB
 case|:
-name|gdisplay_install_gimp_tool_cursor
+name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
@@ -2512,7 +2512,7 @@ case|case
 name|SELECTION_INTERSECT
 case|:
 comment|/* need a real cursor for this one */
-name|gdisplay_install_gimp_tool_cursor
+name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,

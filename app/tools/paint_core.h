@@ -91,7 +91,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c03591e0103
+DECL|enum|__anon2b9298d20103
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -117,7 +117,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c03591e0203
+DECL|enum|__anon2b9298d20203
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -138,7 +138,7 @@ comment|/* gradient paint modes */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c03591e0303
+DECL|enum|__anon2b9298d20303
 typedef|typedef
 enum|enum
 block|{
@@ -326,6 +326,16 @@ name|PaintFunc
 name|paint_func
 decl_stmt|;
 comment|/*  painting function           */
+DECL|member|pick_colors
+name|int
+name|pick_colors
+decl_stmt|;
+comment|/*  pick color if ctl or alt is pressed  */
+DECL|member|pick_state
+name|int
+name|pick_state
+decl_stmt|;
+comment|/*  was ctl or alt pressed when clicked?  */
 block|}
 struct|;
 end_struct

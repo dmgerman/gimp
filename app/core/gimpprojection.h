@@ -522,11 +522,6 @@ name|int
 name|current_cursor
 decl_stmt|;
 comment|/*  Currently installed cursor              */
-DECL|member|cursor_type
-name|short
-name|cursor_type
-decl_stmt|;
-comment|/*  Currently installed cursor type         */
 DECL|member|override_cursor
 name|GdkCursorType
 name|override_cursor
