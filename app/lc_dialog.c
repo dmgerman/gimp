@@ -172,7 +172,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|lc_dialog_add_cb
+name|lc_dialog_add_callback
 parameter_list|(
 name|GimpSet
 modifier|*
@@ -188,24 +188,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|lc_dialog_remove_cb
+name|lc_dialog_remove_callback
 parameter_list|(
 name|GimpSet
 modifier|*
 parameter_list|,
-name|GimpImage
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|lc_dialog_destroy_cb
-parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
@@ -243,7 +230,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|lc_dialog_image_menu_preview_update_cb
+name|lc_dialog_image_menu_preview_update_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -285,7 +272,7 @@ name|GimpImage
 modifier|*
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
 name|MenuItemCallback
@@ -296,7 +283,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|lc_dialog_create_image_menu_cb
+name|lc_dialog_create_image_menu_callback
 parameter_list|(
 name|gpointer
 parameter_list|,
@@ -1029,7 +1016,7 @@ literal|"add"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|lc_dialog_add_cb
+name|lc_dialog_add_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -1046,7 +1033,7 @@ literal|"remove"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|lc_dialog_remove_cb
+name|lc_dialog_remove_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -1279,7 +1266,7 @@ operator|->
 name|image_menu
 argument_list|)
 argument_list|,
-name|lc_dialog_image_menu_preview_update_cb
+name|lc_dialog_image_menu_preview_update_callback
 argument_list|,
 operator|(
 name|gpointer
@@ -1364,8 +1351,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lc_dialog_image_menu_preview_update_cb (GtkWidget * widget,gpointer data)
-name|lc_dialog_image_menu_preview_update_cb
+DECL|function|lc_dialog_image_menu_preview_update_callback (GtkWidget * widget,gpointer data)
+name|lc_dialog_image_menu_preview_update_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1662,36 +1649,13 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimage
-condition|)
-block|{
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|lc_dialog_destroy_cb
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e6bcf0108
+DECL|struct|__anon2c96b9980108
 block|{
 DECL|member|def
 name|GImage
@@ -2294,8 +2258,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lc_dialog_create_image_menu_cb (gpointer im,gpointer d)
-name|lc_dialog_create_image_menu_cb
+DECL|function|lc_dialog_create_image_menu_callback (gpointer im,gpointer d)
+name|lc_dialog_create_image_menu_callback
 parameter_list|(
 name|gpointer
 name|im
@@ -2782,7 +2746,7 @@ literal|1
 expr_stmt|;
 name|gimage_foreach
 argument_list|(
-name|lc_dialog_create_image_menu_cb
+name|lc_dialog_create_image_menu_callback
 argument_list|,
 operator|&
 name|data
@@ -2983,8 +2947,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lc_dialog_add_cb (GimpSet * set,GimpImage * gimage,gpointer data)
-name|lc_dialog_add_cb
+DECL|function|lc_dialog_add_callback (GimpSet * set,GimpImage * gimage,gpointer data)
+name|lc_dialog_add_callback
 parameter_list|(
 name|GimpSet
 modifier|*
@@ -3013,39 +2977,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lc_dialog_remove_cb (GimpSet * set,GimpImage * gimage,gpointer data)
-name|lc_dialog_remove_cb
+DECL|function|lc_dialog_remove_callback (GimpSet * set,GimpImage * gimage,gpointer data)
+name|lc_dialog_remove_callback
 parameter_list|(
 name|GimpSet
 modifier|*
 name|set
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|lc_dialog
-condition|)
-return|return;
-name|lc_dialog_update_image_list
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|lc_dialog_destroy_cb (GimpImage * gimage,gpointer data)
-name|lc_dialog_destroy_cb
-parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
@@ -3112,10 +3050,10 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-block|}
 name|lc_dialog_update_image_list
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 end_function
 
