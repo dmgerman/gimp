@@ -46,30 +46,6 @@ file|"gimphistogramview.h"
 end_include
 
 begin_define
-DECL|macro|WAITING
-define|#
-directive|define
-name|WAITING
-value|0
-end_define
-
-begin_define
-DECL|macro|WORKING
-define|#
-directive|define
-name|WORKING
-value|1
-end_define
-
-begin_define
-DECL|macro|WORK_DELAY
-define|#
-directive|define
-name|WORK_DELAY
-value|1
-end_define
-
-begin_define
 DECL|macro|HISTOGRAM_MASK
 define|#
 directive|define
@@ -103,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4ae2b20103
+DECL|enum|__anon275f89620103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
