@@ -84,6 +84,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_display_shell_clear_cursor
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

@@ -146,6 +146,11 @@ name|GtkWidget
 modifier|*
 name|unit_combo
 decl_stmt|;
+DECL|member|scale_combo
+name|GtkWidget
+modifier|*
+name|scale_combo
+decl_stmt|;
 DECL|member|progressbar
 name|GtkWidget
 modifier|*
@@ -270,7 +275,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_statusbar_update_cursor
+name|gimp_statusbar_set_cursor
 parameter_list|(
 name|GimpStatusbar
 modifier|*
@@ -287,7 +292,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_statusbar_resize_cursor
+name|gimp_statusbar_clear_cursor
 parameter_list|(
 name|GimpStatusbar
 modifier|*

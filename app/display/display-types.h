@@ -65,6 +65,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpScaleComboBox
+typedef|typedef
+name|struct
+name|_GimpScaleComboBox
+name|GimpScaleComboBox
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpStatusbar
 typedef|typedef
 name|struct

@@ -102,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpstatusbar.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -1399,16 +1393,6 @@ operator|->
 name|dot_for_dot
 operator|=
 name|dot_for_dot
-expr_stmt|;
-name|gimp_statusbar_resize_cursor
-argument_list|(
-name|GIMP_STATUSBAR
-argument_list|(
-name|shell
-operator|->
-name|statusbar
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|gimp_display_shell_scale_resize
 argument_list|(

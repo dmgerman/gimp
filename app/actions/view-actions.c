@@ -770,7 +770,7 @@ block|,
 block|{
 literal|"view-zoom-1-1"
 block|,
-name|NULL
+name|GTK_STOCK_ZOOM_100
 block|,
 name|N_
 argument_list|(

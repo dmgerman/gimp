@@ -334,7 +334,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295406dd0103
+DECL|enum|__anon2bb6ef130103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4109,22 +4109,17 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_statusbar_resize_cursor
-argument_list|(
-name|GIMP_STATUSBAR
-argument_list|(
-name|shell
-operator|->
-name|statusbar
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_display_shell_scale_setup
 argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_expose_full
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_scaled
 argument_list|(
 name|shell
 argument_list|)

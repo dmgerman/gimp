@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6413e10103
+DECL|enum|__anon27d570f20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1317,12 +1317,27 @@ name|GIMP_UNIT_STORE_UNIT_COLUMNS
 expr_stmt|;
 if|if
 condition|(
-name|column
-operator|<
+name|unit
+operator|==
+name|GIMP_UNIT_PIXEL
+condition|)
+block|{
+name|g_value_set_double
+argument_list|(
+name|value
+argument_list|,
 name|store
 operator|->
-name|num_values
-operator|&&
+name|values
+index|[
+name|column
+index|]
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
 name|store
 operator|->
 name|resolutions
@@ -1330,6 +1345,7 @@ index|[
 name|column
 index|]
 condition|)
+block|{
 name|g_value_set_double
 argument_list|(
 name|value
@@ -1354,6 +1370,7 @@ name|column
 index|]
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 block|}
 block|}
