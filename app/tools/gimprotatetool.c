@@ -776,7 +776,7 @@ name|info_dialog
 argument_list|,
 name|_
 argument_list|(
-literal|"Y:"
+literal|"Center Y:"
 argument_list|)
 argument_list|,
 name|rotate
