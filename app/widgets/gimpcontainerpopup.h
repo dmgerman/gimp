@@ -118,6 +118,14 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
+DECL|member|view_type
+name|GimpViewType
+name|view_type
+decl_stmt|;
+DECL|member|default_preview_size
+name|gint
+name|default_preview_size
+decl_stmt|;
 DECL|member|preview_size
 name|gint
 name|preview_size
@@ -222,6 +230,9 @@ name|context
 parameter_list|,
 name|GimpViewType
 name|view_type
+parameter_list|,
+name|gint
+name|default_preview_size
 parameter_list|,
 name|gint
 name|preview_size
