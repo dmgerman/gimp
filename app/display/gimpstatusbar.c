@@ -126,7 +126,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc3b2ef0103
+DECL|enum|__anon28a7f4270103
 block|{
 DECL|enumerator|SIGNAL_TEXT_PUSHED
 name|SIGNAL_TEXT_PUSHED
@@ -380,18 +380,9 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GObjectClass
-modifier|*
-name|g_object_class
-init|=
-name|G_OBJECT_CLASS
-argument_list|(
-name|klass
-argument_list|)
-decl_stmt|;
 name|GtkObjectClass
 modifier|*
-name|gtk_object_class
+name|object_class
 init|=
 name|GTK_OBJECT_CLASS
 argument_list|(
@@ -400,18 +391,9 @@ argument_list|)
 decl_stmt|;
 name|GtkWidgetClass
 modifier|*
-name|gtk_widget_class
+name|widget_class
 init|=
 name|GTK_WIDGET_CLASS
-argument_list|(
-name|klass
-argument_list|)
-decl_stmt|;
-name|GtkContainerClass
-modifier|*
-name|gtk_container_class
-init|=
-name|GTK_CONTAINER_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -423,7 +405,7 @@ argument_list|(
 name|klass
 argument_list|)
 expr_stmt|;
-name|gtk_object_class
+name|object_class
 operator|->
 name|destroy
 operator|=
@@ -435,7 +417,7 @@ name|messages_mem_chunk
 operator|=
 name|g_mem_chunk_new
 argument_list|(
-literal|"GimpStatusbar messages mem chunk"
+literal|"GimpStatusbar messages"
 argument_list|,
 sizeof|sizeof
 argument_list|(
@@ -530,7 +512,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_class_install_style_property
 argument_list|(
-name|gtk_widget_class
+name|widget_class
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
