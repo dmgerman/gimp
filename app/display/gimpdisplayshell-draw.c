@@ -322,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ff92ea0103
+DECL|enum|__anon2c6534c20103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1505,13 +1505,11 @@ name|shell
 operator|->
 name|gdisp
 condition|)
-block|{
 name|gimp_display_shell_disconnect
 argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|shell
