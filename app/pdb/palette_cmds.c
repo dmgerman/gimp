@@ -1495,9 +1495,9 @@ literal|"Tests if palette can be edited"
 block|,
 literal|"Returns True if you have permission to change the palette"
 block|,
-literal|"Michael Natterer<mitch@gimp.org>"
+literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu"
 block|,
-literal|"Michael Natterer"
+literal|"Bill Skaggs"
 block|,
 literal|"2004"
 block|,

@@ -196,7 +196,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_is_generated:  * @name: The brush name.  *  * Tests if generated  *  * Returns True if this brush is parametric, False for other types  *  * Returns: True if the brush is generated.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_is_generated:  * @name: The brush name.  *  * Tests if generated  *  * Returns True if this brush is parametric, False for other types  *  * Returns: True if the brush is generated.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -439,7 +439,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_is_editable:  * @name: The brush name.  *  * Tests if brush can be edited  *  * Returns True if you have permission to change the brush  *  * Returns: True if the brush can be edited.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_is_editable:  * @name: The brush name.  *  * Tests if brush can be edited  *  * Returns True if you have permission to change the brush  *  * Returns: True if the brush can be edited.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1061,7 +1061,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_set_spacing:  * @name: The brush name.  * @spacing: The brush spacing.  *  * Set the brush spacing.  *  * This procedure modifies the spacing setting for the specified brush.  * The value should be a integer between 0 and 1000.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_set_spacing:  * @name: The brush name.  * @spacing: The brush spacing.  *  * Set the brush spacing.  *  * This procedure modifies the spacing setting for the specified brush.  * The value should be a integer between 0 and 1000.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1137,7 +1137,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_get_shape:  * @name: The brush name.  *  * Get the shape of a generated brush.  *  * This procedure gets the shape value for a generated brush. If called  * for any other type of brush, it does not succeed. The current  * possibilities are Circle (GIMP_BRUSH_GENERATED_CIRCLE), Square  * (GIMP_BRUSH_GENERATED_SQUARE), and Diamond  * (GIMP_BRUSH_GENERATED_DIAMOND). Other shapes are likely to be added  * in the future.  *  * Returns: An enumerated value representing the brush shape.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_get_shape:  * @name: The brush name.  *  * Get the shape of a generated brush.  *  * This procedure gets the shape value for a generated brush. If called  * for any other type of brush, it does not succeed. The current  * possibilities are Circle (GIMP_BRUSH_GENERATED_CIRCLE), Square  * (GIMP_BRUSH_GENERATED_SQUARE), and Diamond  * (GIMP_BRUSH_GENERATED_DIAMOND). Other shapes are likely to be added  * in the future.  *  * Returns: An enumerated value representing the brush shape.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1217,7 +1217,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_get_radius:  * @name: The brush name.  *  * Get the radius of a generated brush.  *  * This procedure gets the radius value for a generated brush. If  * called for any other type of brush, it does not succeed.  *  * Returns: The radius of the brush in pixels.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_get_radius:  * @name: The brush name.  *  * Get the radius of a generated brush.  *  * This procedure gets the radius value for a generated brush. If  * called for any other type of brush, it does not succeed.  *  * Returns: The radius of the brush in pixels.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1297,7 +1297,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_get_spikes:  * @name: The brush name.  *  * Get the number of spikes for a generated brush.  *  * This procedure gets the number of spikes for a generated brush. If  * called for any other type of brush, it does not succeed.  *  * Returns: The number of spikes on the brush.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_get_spikes:  * @name: The brush name.  *  * Get the number of spikes for a generated brush.  *  * This procedure gets the number of spikes for a generated brush. If  * called for any other type of brush, it does not succeed.  *  * Returns: The number of spikes on the brush.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1377,7 +1377,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_get_hardness:  * @name: The brush name.  *  * Get the hardness of a generated brush.  *  * This procedure gets the hardness of a generated brush. The hardness  * of a brush is the amount its intensity fades at the outside edge. If  * called for any other type of brush, the function does not succeed.  *  * Returns: The hardness of the brush.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_get_hardness:  * @name: The brush name.  *  * Get the hardness of a generated brush.  *  * This procedure gets the hardness of a generated brush. The hardness  * of a brush is the amount its intensity fades at the outside edge. If  * called for any other type of brush, the function does not succeed.  *  * Returns: The hardness of the brush.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1457,7 +1457,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_get_aspect_ratio:  * @name: The brush name.  *  * Get the aspect ratio of a generated brush.  *  * This procedure gets the aspect ratio of a generated brush. If called  * for any other type of brush, it does not succeed.  *  * Returns: The aspect ratio of the brush.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_get_aspect_ratio:  * @name: The brush name.  *  * Get the aspect ratio of a generated brush.  *  * This procedure gets the aspect ratio of a generated brush. If called  * for any other type of brush, it does not succeed.  *  * Returns: The aspect ratio of the brush.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1537,7 +1537,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_get_angle:  * @name: The brush name.  *  * Get the rotation angle of a generated brush.  *  * This procedure gets the angle of rotation for a generated brush. If  * called for any other type of brush, it does not succeed.  *  * Returns: The rotation angle of the brush.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_get_angle:  * @name: The brush name.  *  * Get the rotation angle of a generated brush.  *  * This procedure gets the angle of rotation for a generated brush. If  * called for any other type of brush, it does not succeed.  *  * Returns: The rotation angle of the brush.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1617,7 +1617,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_set_shape:  * @name: The brush name.  * @shape_in: An enumerated value representing the desired brush shape.  *  * Set the shape of a generated brush.  *  * This procedure sets the shape value for a generated brush. If called  * for any other type of brush, it does not succeed. The current  * possibilities are Circle (GIMP_BRUSH_GENERATED_CIRCLE), Square  * (GIMP_BRUSH_GENERATED_SQUARE), and Diamond  * (GIMP_BRUSH_GENERATED_DIAMOND). Other shapes are likely to be added  * in the future.  *  * Returns: The brush shape actually assigned.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_set_shape:  * @name: The brush name.  * @shape_in: An enumerated value representing the desired brush shape.  *  * Set the shape of a generated brush.  *  * This procedure sets the shape value for a generated brush. If called  * for any other type of brush, it does not succeed. The current  * possibilities are Circle (GIMP_BRUSH_GENERATED_CIRCLE), Square  * (GIMP_BRUSH_GENERATED_SQUARE), and Diamond  * (GIMP_BRUSH_GENERATED_DIAMOND). Other shapes are likely to be added  * in the future.  *  * Returns: The brush shape actually assigned.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1704,7 +1704,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_set_radius:  * @name: The brush name.  * @radius_in: The desired brush radius.  *  * Set the radius of a generated brush.  *  * This procedure sets the radius for a generated brush. If called for  * any other type of brush, it does not succeed.  *  * Returns: The brush radius actually assigned.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_set_radius:  * @name: The brush name.  * @radius_in: The desired brush radius.  *  * Set the radius of a generated brush.  *  * This procedure sets the radius for a generated brush. If called for  * any other type of brush, it does not succeed.  *  * Returns: The brush radius actually assigned.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1791,7 +1791,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_set_spikes:  * @name: The brush name.  * @spikes_in: The desired number of spikes.  *  * Set the number of spikes for a generated brush.  *  * This procedure sets the number of spikes for a generated brush. If  * called for any other type of brush, it does not succeed.  *  * Returns: The number of spikes actually assigned.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_set_spikes:  * @name: The brush name.  * @spikes_in: The desired number of spikes.  *  * Set the number of spikes for a generated brush.  *  * This procedure sets the number of spikes for a generated brush. If  * called for any other type of brush, it does not succeed.  *  * Returns: The number of spikes actually assigned.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1878,7 +1878,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_set_hardness:  * @name: The brush name.  * @hardness_in: The desired brush hardness.  *  * Set the hardness of a generated brush.  *  * This procedure sets the hardness for a generated brush. If called  * for any other type of brush, it does not succeed.  *  * Returns: The brush hardness actually assigned.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_set_hardness:  * @name: The brush name.  * @hardness_in: The desired brush hardness.  *  * Set the hardness of a generated brush.  *  * This procedure sets the hardness for a generated brush. If called  * for any other type of brush, it does not succeed.  *  * Returns: The brush hardness actually assigned.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1965,7 +1965,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_set_aspect_ratio:  * @name: The brush name.  * @aspect_ratio_in: The desired brush aspect ratio.  *  * Set the aspect ratio of a generated brush.  *  * This procedure sets the aspect ratio for a generated brush. If  * called for any other type of brush, it does not succeed.  *  * Returns: The brush aspect ratio actually assigned.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_set_aspect_ratio:  * @name: The brush name.  * @aspect_ratio_in: The desired brush aspect ratio.  *  * Set the aspect ratio of a generated brush.  *  * This procedure sets the aspect ratio for a generated brush. If  * called for any other type of brush, it does not succeed.  *  * Returns: The brush aspect ratio actually assigned.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -2052,7 +2052,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_set_angle:  * @name: The brush name.  * @angle_in: The desired brush rotation angle.  *  * Set the rotation angle of a generated brush.  *  * This procedure sets the rotation angle for a generated brush. If  * called for any other type of brush, it does not succeed.  *  * Returns: The brush rotation angle actually assigned.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_set_angle:  * @name: The brush name.  * @angle_in: The desired brush rotation angle.  *  * Set the rotation angle of a generated brush.  *  * This procedure sets the rotation angle for a generated brush. If  * called for any other type of brush, it does not succeed.  *  * Returns: The brush rotation angle actually assigned.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function

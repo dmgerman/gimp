@@ -353,7 +353,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_is_editable:  * @name: The palette name.  *  * Tests if palette can be edited  *  * Returns True if you have permission to change the palette  *  * Returns: True if the palette can be edited.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_is_editable:  * @name: The palette name.  *  * Tests if palette can be edited  *  * Returns True if you have permission to change the palette  *  * Returns: True if the palette can be edited.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
