@@ -2112,11 +2112,12 @@ argument_list|(
 literal|"/Image/Transform/---"
 argument_list|)
 block|,
+comment|/*  please use the degree symbol in the translation  */
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Image/Transform/Rotate Right"
+literal|"/Image/Transform/Rotate 90 degrees CW"
 argument_list|)
 block|,
 name|NULL
@@ -2141,7 +2142,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Image/Transform/Rotate Left"
+literal|"/Image/Transform/Rotate 90 degrees CCW"
 argument_list|)
 block|,
 name|NULL
@@ -3009,7 +3010,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer/Transform/Rotate Right"
+literal|"/Layer/Transform/Rotate 90 degrees CW"
 argument_list|)
 block|,
 name|NULL
@@ -3034,7 +3035,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer/Transform/Rotate Left"
+literal|"/Layer/Transform/Rotate 90 degrees CCW"
 argument_list|)
 block|,
 name|NULL
@@ -5837,15 +5838,6 @@ expr_stmt|;
 comment|/*  Select  */
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Select/Invert"
-argument_list|,
-name|lp
-operator|&&
-name|sel
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
 literal|"/Select/All"
 argument_list|,
 name|lp
@@ -5854,6 +5846,15 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Select/None"
+argument_list|,
+name|lp
+operator|&&
+name|sel
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Select/Invert"
 argument_list|,
 name|lp
 operator|&&
@@ -5939,6 +5940,24 @@ argument_list|(
 literal|"/View/New View"
 argument_list|,
 name|gdisp
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/View/Dot for Dot"
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+name|SET_ACTIVE
+argument_list|(
+literal|"/View/Dot for Dot"
+argument_list|,
+name|gdisp
+operator|&&
+name|shell
+operator|->
+name|dot_for_dot
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -6041,24 +6060,6 @@ argument_list|(
 name|item_factory
 argument_list|,
 name|shell
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/View/Dot for Dot"
-argument_list|,
-name|gdisp
-argument_list|)
-expr_stmt|;
-name|SET_ACTIVE
-argument_list|(
-literal|"/View/Dot for Dot"
-argument_list|,
-name|gdisp
-operator|&&
-name|shell
-operator|->
-name|dot_for_dot
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -6290,6 +6291,27 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Image/Transform/Flip Vertically"
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Image/Transform/Rotate 90 degrees CW"
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Image/Transform/Rotate 90 degrees CCW"
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Image/Transform/Rotate 180 degrees"
 argument_list|,
 name|gdisp
 argument_list|)
@@ -6829,6 +6851,27 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Transform/Flip Vertically"
+argument_list|,
+name|lp
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Transform/Rotate 90 degrees CW"
+argument_list|,
+name|lp
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Transform/Rotate 90 degrees CCW"
+argument_list|,
+name|lp
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Image/Transform/Rotate 180 degrees"
 argument_list|,
 name|lp
 argument_list|)
