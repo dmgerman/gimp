@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279591360103
+DECL|enum|__anon2b3b2b2d0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -1225,7 +1225,6 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-empty_stmt|;
 if|if
 condition|(
 name|gimage

@@ -1220,7 +1220,6 @@ operator|->
 name|child
 argument_list|)
 expr_stmt|;
-empty_stmt|;
 block|}
 name|preview
 operator|=

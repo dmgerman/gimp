@@ -105,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27935faa0108
+DECL|struct|__anon2c0754e40108
 block|{
 DECL|member|tilable
 name|gint
@@ -140,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27935faa0208
+DECL|struct|__anon2c0754e40208
 block|{
 DECL|member|run
 name|gint
@@ -1212,7 +1212,6 @@ name|dest_rgn
 operator|.
 name|rowstride
 expr_stmt|;
-empty_stmt|;
 block|}
 comment|/*  Update progress  */
 name|progress

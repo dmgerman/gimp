@@ -70,7 +70,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b540a6d0108
+DECL|struct|__anon28bdf4da0108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -89,7 +89,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b540a6d0208
+DECL|struct|__anon28bdf4da0208
 block|{
 DECL|member|size
 name|GtkWidget
@@ -1136,7 +1136,6 @@ name|dest_rgn
 operator|.
 name|rowstride
 expr_stmt|;
-empty_stmt|;
 block|}
 name|progress
 operator|+=

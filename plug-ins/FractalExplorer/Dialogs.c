@@ -2848,7 +2848,6 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-operator|&
 name|wvals
 operator|.
 name|fractaltype

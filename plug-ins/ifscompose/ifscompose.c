@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c65dd6c0103
+DECL|enum|__anon2a18c4cb0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c65dd6c0203
+DECL|enum|__anon2a18c4cb0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -179,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c65dd6c0308
+DECL|struct|__anon2a18c4cb0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -201,7 +201,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2c65dd6c040a
+DECL|union|__anon2a18c4cb040a
 block|{
 DECL|member|d
 name|gdouble
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c65dd6c0508
+DECL|struct|__anon2a18c4cb0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -260,7 +260,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c65dd6c0608
+DECL|struct|__anon2a18c4cb0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -295,7 +295,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c65dd6c0708
+DECL|struct|__anon2a18c4cb0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c65dd6c0808
+DECL|struct|__anon2a18c4cb0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -398,7 +398,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c65dd6c0908
+DECL|struct|__anon2a18c4cb0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -570,7 +570,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c65dd6c0a08
+DECL|struct|__anon2a18c4cb0a08
 block|{
 DECL|member|run
 name|gint
@@ -8018,7 +8018,6 @@ name|dest_rgn
 operator|.
 name|rowstride
 expr_stmt|;
-empty_stmt|;
 block|}
 name|progress
 operator|+=

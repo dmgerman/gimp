@@ -1073,7 +1073,6 @@ operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
-empty_stmt|;
 block|}
 empty_stmt|;
 comment|/*    * Sharpen the image...    */

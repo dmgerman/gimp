@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5144760108
+DECL|struct|__anon2c48475f0108
 block|{
 DECL|member|file_name
 name|gchar
@@ -2340,9 +2340,14 @@ name|fp
 argument_list|,
 literal|"%u + 1];\n"
 argument_list|,
+call|(
+name|guint
+call|)
+argument_list|(
 name|img_buffer_end
 operator|-
 name|img_buffer
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -2808,9 +2813,14 @@ name|fp
 argument_list|,
 literal|"%u] =\n"
 argument_list|,
+call|(
+name|guint
+call|)
+argument_list|(
 name|img_buffer_end
 operator|-
 name|img_buffer
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else

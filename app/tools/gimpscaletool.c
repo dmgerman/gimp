@@ -1893,7 +1893,6 @@ name|sizeentry
 argument_list|)
 argument_list|)
 expr_stmt|;
-empty_stmt|;
 comment|/*  Find original sizes  */
 name|x1
 operator|=

@@ -826,7 +826,6 @@ index|[
 name|output_type
 index|]
 decl_stmt|;
-empty_stmt|;
 name|format
 operator|.
 name|width

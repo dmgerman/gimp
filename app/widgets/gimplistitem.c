@@ -1489,7 +1489,6 @@ name|TRUE
 else|:
 name|FALSE
 expr_stmt|;
-empty_stmt|;
 if|if
 condition|(
 name|reorderable
@@ -1579,7 +1578,6 @@ name|TRUE
 else|:
 name|FALSE
 expr_stmt|;
-empty_stmt|;
 block|}
 end_function
 

@@ -1457,7 +1457,6 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-empty_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER

@@ -1958,7 +1958,6 @@ name|paths_factory
 operator|->
 name|accel_group
 expr_stmt|;
-empty_stmt|;
 name|paths_dialog_set_menu_sensitivity
 argument_list|()
 expr_stmt|;

@@ -899,7 +899,6 @@ name|x
 operator|=
 name|min
 expr_stmt|;
-empty_stmt|;
 name|buf
 operator|+=
 name|inc
