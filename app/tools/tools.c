@@ -1417,7 +1417,7 @@ argument_list|(
 literal|"Measure"
 argument_list|)
 block|,
-literal|16
+literal|24
 block|,
 name|N_
 argument_list|(
@@ -1458,7 +1458,7 @@ argument_list|(
 literal|"By Color Select"
 argument_list|)
 block|,
-literal|24
+literal|25
 block|,
 name|N_
 argument_list|(
@@ -1490,7 +1490,7 @@ argument_list|(
 literal|"Color Balance"
 argument_list|)
 block|,
-literal|25
+literal|26
 block|,
 name|N_
 argument_list|(
@@ -1522,7 +1522,7 @@ argument_list|(
 literal|"Brightness-Contrast"
 argument_list|)
 block|,
-literal|26
+literal|27
 block|,
 name|N_
 argument_list|(
@@ -1554,7 +1554,7 @@ argument_list|(
 literal|"Hue-Saturation"
 argument_list|)
 block|,
-literal|27
+literal|28
 block|,
 name|N_
 argument_list|(
@@ -1586,7 +1586,7 @@ argument_list|(
 literal|"Posterize"
 argument_list|)
 block|,
-literal|28
+literal|29
 block|,
 name|N_
 argument_list|(
@@ -1618,7 +1618,7 @@ argument_list|(
 literal|"Threshold"
 argument_list|)
 block|,
-literal|29
+literal|30
 block|,
 name|N_
 argument_list|(
@@ -1650,7 +1650,7 @@ argument_list|(
 literal|"Curves"
 argument_list|)
 block|,
-literal|30
+literal|31
 block|,
 name|N_
 argument_list|(
@@ -1682,7 +1682,7 @@ argument_list|(
 literal|"Levels"
 argument_list|)
 block|,
-literal|31
+literal|32
 block|,
 name|N_
 argument_list|(
@@ -1714,7 +1714,7 @@ argument_list|(
 literal|"Histogram"
 argument_list|)
 block|,
-literal|32
+literal|33
 block|,
 name|N_
 argument_list|(
