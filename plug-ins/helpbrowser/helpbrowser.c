@@ -110,7 +110,7 @@ value|"help"
 end_define
 
 begin_enum
-DECL|enum|__anon2ba897100103
+DECL|enum|__anon2c8048e40103
 enum|enum
 block|{
 DECL|enumerator|CONTENTS
@@ -126,7 +126,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2ba897100203
+DECL|enum|__anon2c8048e40203
 enum|enum
 block|{
 DECL|enumerator|URL_UNKNOWN
@@ -158,7 +158,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba897100308
+DECL|struct|__anon2c8048e40308
 block|{
 DECL|member|index
 name|gint
@@ -198,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba897100408
+DECL|struct|__anon2c8048e40408
 block|{
 DECL|member|title
 name|gchar
@@ -234,6 +234,7 @@ init|=
 literal|"<html><head><title>Document not found</title></head>"
 literal|"<body bgcolor=\"#ffffff\">"
 literal|"<center>"
+literal|"<p>"
 literal|"%s"
 literal|"<h2>Couldn't find document</h2>"
 literal|"%s"
@@ -253,6 +254,7 @@ init|=
 literal|"<html><head><title>Directory not found</title></head>"
 literal|"<body bgcolor=\"#ffffff\">"
 literal|"<center>"
+literal|"<p>"
 literal|"%s"
 literal|"<h2>Couldn't change to directory</h2>"
 literal|"%s"
@@ -388,7 +390,7 @@ name|gchar
 modifier|*
 name|eek_png_tag
 init|=
-literal|"<h1>Eeek!</h1>\n"
+literal|"<h1>Eeek!</h1>"
 decl_stmt|;
 end_decl_stmt
 
@@ -2815,8 +2817,9 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_warning
+name|gimp_message
 argument_list|(
+literal|"GIMP Help Browser Error.\n\n"
 literal|"Couldn't find my root html directory."
 argument_list|)
 expr_stmt|;
@@ -2852,7 +2855,7 @@ name|eek_png_tag
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"<img src=\"%s\">\n"
+literal|"<img src=\"%s\">"
 argument_list|,
 name|eek_png_path
 argument_list|)

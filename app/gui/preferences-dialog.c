@@ -4437,7 +4437,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* #include "/home/mitschel/wilber3.xpm"  static void gimp_dialog_realize_callback (GtkWidget *widget, 			      gpointer   data)  {   static GdkPixmap *wilber_pixmap = NULL;   static GdkBitmap *wilber_mask   = NULL;   GtkStyle         *style;    style = gtk_widget_get_style (widget);    if (wilber_pixmap == NULL)     wilber_pixmap =       gdk_pixmap_create_from_xpm_d (widget->window,&wilber_mask,&style->bg[GTK_STATE_NORMAL], 				    wilber3_xpm);    gdk_window_set_icon (widget->window, NULL, 		       wilber_pixmap, wilber_mask); } */
+comment|/* #include "/home/mitschel/gimpfiles/wilber.xpm"  static void gimp_dialog_realize_callback (GtkWidget *widget, 			      gpointer   data)  {   static GdkPixmap *wilber_pixmap = NULL;   static GdkBitmap *wilber_mask   = NULL;   GtkStyle         *style;    style = gtk_widget_get_style (widget);    if (wilber_pixmap == NULL)     wilber_pixmap =       gdk_pixmap_create_from_xpm_d (widget->window,&wilber_mask,&style->bg[GTK_STATE_NORMAL], 				    wilber_xpm);    gdk_window_set_icon (widget->window, NULL, 		       wilber_pixmap, wilber_mask); } */
 end_comment
 
 begin_comment
@@ -4884,7 +4884,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  the realize callback sets the WM icon  */
-comment|/*   gtk_signal_connect (GTK_OBJECT (dialog), "realize", 		      (GtkSignalFunc) gimp_dialog_realize_callback, 		      NULL);   */
+comment|/*   gtk_signal_connect (GTK_OBJECT (dialog), "realize", 		      (GtkSignalFunc) gimp_dialog_realize_callback, 		      NULL);      */
 return|return
 name|dialog
 return|;
@@ -12047,7 +12047,7 @@ name|page_index
 operator|++
 expr_stmt|;
 block|{
-DECL|struct|__anon290c34140108
+DECL|struct|__anon287a3ad80108
 specifier|static
 specifier|const
 struct|struct
@@ -12272,7 +12272,7 @@ block|}
 block|}
 comment|/* Directories /<paths> */
 block|{
-DECL|struct|__anon290c34140208
+DECL|struct|__anon287a3ad80208
 specifier|static
 specifier|const
 struct|struct
