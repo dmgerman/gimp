@@ -5661,11 +5661,17 @@ operator|<
 literal|0
 condition|)
 block|{
-name|PyErr_SetString
+name|PyErr_Format
 argument_list|(
 name|pygimp_error
 argument_list|,
-literal|"could not create image"
+literal|"could not create image (width: %d, height: %d, type: %d)"
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|,
+name|type
 argument_list|)
 expr_stmt|;
 return|return
