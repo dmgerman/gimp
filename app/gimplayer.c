@@ -139,7 +139,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298f6e2c0103
+DECL|enum|__anon296bb0ec0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -3594,6 +3594,12 @@ name|new_height
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  Make sure we're not caching any old selection info  */
+name|layer_invalidate_boundary
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
 comment|/*  Update the new layer position  */
 name|drawable_update
 argument_list|(
@@ -4604,6 +4610,12 @@ name|offy
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  Make sure we're not caching any old selection info  */
+name|layer_invalidate_boundary
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
 comment|/*  update the new layer area  */
 name|drawable_update
 argument_list|(

@@ -144,7 +144,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac0e9830103
+DECL|enum|__anon2c1ef3c00103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -161,7 +161,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac0e9830208
+DECL|struct|__anon2c1ef3c00208
 block|{
 DECL|member|interlace
 name|gint
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac0e9830308
+DECL|struct|__anon2c1ef3c00308
 block|{
 DECL|member|run
 name|gint
@@ -2374,8 +2374,15 @@ name|drawable
 argument_list|)
 expr_stmt|;
 comment|/* Image has illegal bounds - ask the user what it wants to do */
+comment|/* Do the crop if we can't talk to the user, or if we asked 	   * the user and they said yes. */
 if|if
 condition|(
+operator|(
+name|run_mode
+operator|==
+name|RUN_NONINTERACTIVE
+operator|)
+operator|||
 name|badbounds_dialog
 argument_list|()
 condition|)
