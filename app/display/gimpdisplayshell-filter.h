@@ -31,6 +31,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpColorDisplayStack
+modifier|*
+name|gimp_display_shell_filter_new
+parameter_list|(
+name|GimpColorConfig
+modifier|*
+name|config
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

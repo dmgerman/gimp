@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"config/gimpdisplayconfig.h"
 end_include
 
@@ -274,7 +280,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2920be570103
+DECL|enum|__anon294ac61a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -290,7 +296,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2920be570203
+DECL|enum|__anon294ac61a0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2282,6 +2288,10 @@ decl_stmt|;
 name|GimpDisplayConfig
 modifier|*
 name|display_config
+decl_stmt|;
+name|GimpColorConfig
+modifier|*
+name|color_config
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -4318,6 +4328,28 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|main_vbox
+argument_list|)
+expr_stmt|;
+name|color_config
+operator|=
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|config
+operator|->
+name|color_management
+expr_stmt|;
+name|gimp_display_shell_filter_set
+argument_list|(
+name|shell
+argument_list|,
+name|gimp_display_shell_filter_new
+argument_list|(
+name|color_config
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_connect
