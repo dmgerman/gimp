@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* tiff loading and saving for the GIMP  *  -Peter Mattis  * The TIFF loading code has been completely revamped by Nick Lamb  * njl195@zepler.org.uk -- 18 May 1998  * And it now gains support for tiles (and doubtless a zillion bugs)  * njl195@zepler.org.uk -- 12 June 1999  * LZW patent fuss continues :(  * njl195@zepler.org.uk -- 20 April 2000  * The code for this filter is based on "tifftopnm" and "pnmtotiff",  *  2 programs that are a part of the netpbm package.  * khk@khk.net -- 13 May 2000  * Added support for ICCPROFILE tiff tag. If this tag is present in a   * TIFF file, then a parasite is created and vice versa.  */
+comment|/* tiff loading and saving for the GIMP  *  -Peter Mattis  * The TIFF loading code has been completely revamped by Nick Lamb  * njl195@zepler.org.uk -- 18 May 1998  * And it now gains support for tiles (and doubtless a zillion bugs)  * njl195@zepler.org.uk -- 12 June 1999  * LZW patent fuss continues :(  * njl195@zepler.org.uk -- 20 April 2000  * The code for this filter is based on "tifftopnm" and "pnmtotiff",  *  2 programs that are a part of the netpbm package.  * khk@khk.net -- 13 May 2000  * Added support for ICCPROFILE tiff tag. If this tag is present in a   * TIFF file, then a parasite is created and vice versa.  * peter@kirchgessner.net -- 29 Oct 2002  * Progress bar only when run interactive  */
 end_comment
 
 begin_comment
@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad7e7c50108
+DECL|struct|__anon2adf20940108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad7e7c50208
+DECL|struct|__anon2adf20940208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad7e7c50308
+DECL|struct|__anon2adf20940308
 block|{
 DECL|member|ID
 name|gint32
@@ -522,11 +522,21 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|image_comment
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|image_comment
 init|=
 name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|run_mode
+specifier|static
+name|GimpRunMode
+name|run_mode
+init|=
+name|GIMP_RUN_INTERACTIVE
 decl_stmt|;
 end_decl_stmt
 
@@ -770,9 +780,6 @@ name|values
 index|[
 literal|2
 index|]
-decl_stmt|;
-name|GimpRunMode
-name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
@@ -1571,6 +1578,13 @@ name|gimp_quit
 argument_list|()
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|run_mode
+operator|==
+name|GIMP_RUN_INTERACTIVE
+condition|)
+block|{
 name|name
 operator|=
 name|g_strdup_printf
@@ -1593,6 +1607,7 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
+block|}
 name|TIFFGetFieldDefaulted
 argument_list|(
 name|tif
@@ -2823,6 +2838,12 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|run_mode
+operator|==
+name|GIMP_RUN_INTERACTIVE
+condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
@@ -3049,6 +3070,12 @@ operator|+=
 name|tileWidth
 control|)
 block|{
+if|if
+condition|(
+name|run_mode
+operator|==
+name|GIMP_RUN_INTERACTIVE
+condition|)
 name|gimp_progress_update
 argument_list|(
 name|progress
@@ -3406,6 +3433,12 @@ operator|+=
 name|tile_height
 control|)
 block|{
+if|if
+condition|(
+name|run_mode
+operator|==
+name|GIMP_RUN_INTERACTIVE
+condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
@@ -3600,6 +3633,12 @@ operator|+=
 name|tile_height
 control|)
 block|{
+if|if
+condition|(
+name|run_mode
+operator|==
+name|GIMP_RUN_INTERACTIVE
+condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
@@ -6334,6 +6373,13 @@ return|return
 literal|0
 return|;
 block|}
+if|if
+condition|(
+name|run_mode
+operator|==
+name|GIMP_RUN_INTERACTIVE
+condition|)
+block|{
 name|name
 operator|=
 name|g_strdup_printf
@@ -6356,6 +6402,7 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
+block|}
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -7452,6 +7499,12 @@ literal|0
 return|;
 block|}
 block|}
+if|if
+condition|(
+name|run_mode
+operator|==
+name|GIMP_RUN_INTERACTIVE
+condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
