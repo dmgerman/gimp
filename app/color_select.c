@@ -57,6 +57,16 @@ directive|include
 file|"session.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"color_area.h"
+end_include
+
+begin_comment
+comment|/* for color_area_draw_rect */
+end_comment
+
 begin_define
 DECL|macro|XY_DEF_WIDTH
 define|#
@@ -114,7 +124,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_BUTTON_PRESS_MASK | GDK_
 end_define
 
 begin_typedef
-DECL|enum|__anon27b7b88c0103
+DECL|enum|__anon2795d9490103
 typedef|typedef
 enum|enum
 block|{
@@ -162,7 +172,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon27b7b88c0203
+DECL|enum|__anon2795d9490203
 typedef|typedef
 enum|enum
 block|{
@@ -4762,6 +4772,9 @@ operator|->
 name|gc
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|OLD_COLOR_AREA
 name|gdk_gc_set_foreground
 argument_list|(
 name|csp
@@ -4791,6 +4804,33 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
+else|#
+directive|else
+name|color_area_draw_rect
+argument_list|(
+name|window
+argument_list|,
+name|csp
+operator|->
+name|gc
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|,
+name|red
+argument_list|,
+name|green
+argument_list|,
+name|blue
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 block|}
 block|}

@@ -4345,6 +4345,14 @@ argument_list|,
 name|dx
 argument_list|,
 name|dy
+argument_list|,
+name|gdisp
+operator|->
+name|offset_x
+argument_list|,
+name|gdisp
+operator|->
+name|offset_y
 argument_list|)
 expr_stmt|;
 block|}

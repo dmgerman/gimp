@@ -52,6 +52,49 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/* Exported for use by color_select */
+end_comment
+
+begin_function_decl
+name|void
+name|color_area_draw_rect
+parameter_list|(
+name|GdkDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|GdkGC
+modifier|*
+name|gc
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
+parameter_list|,
+name|unsigned
+name|char
+name|r
+parameter_list|,
+name|unsigned
+name|char
+name|g
+parameter_list|,
+name|unsigned
+name|char
+name|b
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  *  Global variables  */
 end_comment
 

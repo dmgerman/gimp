@@ -312,7 +312,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gximage_put (GdkWindow * win,int x,int y,int w,int h)
+DECL|function|gximage_put (GdkWindow * win,int x,int y,int w,int h,int xdith,int ydith)
 name|gximage_put
 parameter_list|(
 name|GdkWindow
@@ -330,6 +330,12 @@ name|w
 parameter_list|,
 name|int
 name|h
+parameter_list|,
+name|int
+name|xdith
+parameter_list|,
+name|int
+name|ydith
 parameter_list|)
 block|{
 comment|/*  create the GC if it doesn't yet exist  */
@@ -360,7 +366,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-name|gdk_draw_rgb_image
+name|gdk_draw_rgb_image_dithalign
 argument_list|(
 name|win
 argument_list|,
@@ -376,9 +382,9 @@ name|w
 argument_list|,
 name|h
 argument_list|,
+comment|/* todo: make configurable */
 name|GDK_RGB_DITHER_MAX
 argument_list|,
-comment|/* todo: make configurable */
 name|gximage
 operator|->
 name|data
@@ -386,6 +392,10 @@ argument_list|,
 name|GXIMAGE_WIDTH
 operator|*
 literal|3
+argument_list|,
+name|xdith
+argument_list|,
+name|ydith
 argument_list|)
 expr_stmt|;
 block|}
