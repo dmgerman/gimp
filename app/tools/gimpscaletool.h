@@ -137,6 +137,10 @@ index|[
 name|MAX_INFO_BUF
 index|]
 decl_stmt|;
+DECL|member|aspect_ratio_val
+name|gdouble
+name|aspect_ratio_val
+decl_stmt|;
 DECL|member|sizeentry
 name|GtkWidget
 modifier|*
