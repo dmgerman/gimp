@@ -41,10 +41,6 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_comment
-comment|/* EXPERIMENTAL Copy-On-Write goodies  *  by Adam D. Moss  *   adam@gimp.org  *   adam@foxbox.org  *  *  * C.O.W. Revisions:  *  *   97.10.05 - Initial release  *   97.10.06 - Much faster tile invalidation +  *              Better swap interaction (should no longer  *                crash GIMP when GIMP swapfile is full).  *   97.10.18 - Very stable now, and even more efficient.  *   98.06.16 - Revised from GIMP 0.99.14 for 1.[01].0 - no  *                longer so sure about stability until  *                more comprehensive testing is done.  *  *  * MISC TODO:  *  *  tile_invalidate: (tile_manager) - don't let a tile become  *   invalidated if its ref-count>1, but move it to a delete-on-last-unref  *   list instead...  */
-end_comment
-
 begin_function_decl
 specifier|static
 name|void
@@ -841,13 +837,17 @@ directive|ifdef
 name|TILE_DEBUG
 name|g_print
 argument_list|(
-literal|"tile_detach: %p ~> (%p,%d) *%d\n"
+literal|"tile_detach: %p ~> (%p,%d) r%d *%d\n"
 argument_list|,
 name|tile
 argument_list|,
 name|tm
 argument_list|,
 name|tile_num
+argument_list|,
+name|tile
+operator|->
+name|ref_count
 argument_list|,
 name|tile
 operator|->
@@ -878,6 +878,7 @@ operator|)
 operator|->
 name|next
 control|)
+block|{
 if|if
 condition|(
 operator|(
@@ -899,6 +900,7 @@ operator|==
 name|tile_num
 condition|)
 break|break;
+block|}
 if|if
 condition|(
 operator|*
