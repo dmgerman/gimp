@@ -1589,14 +1589,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|floating_sel_rigor (GimpLayer * layer,gint undo)
+DECL|function|floating_sel_rigor (GimpLayer * layer,gboolean undo)
 name|floating_sel_rigor
 parameter_list|(
 name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|gint
+name|gboolean
 name|undo
 parameter_list|)
 block|{
@@ -1674,14 +1674,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|floating_sel_relax (GimpLayer * layer,gint undo)
+DECL|function|floating_sel_relax (GimpLayer * layer,gboolean undo)
 name|floating_sel_relax
 parameter_list|(
 name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|gint
+name|gboolean
 name|undo
 parameter_list|)
 block|{
@@ -1769,7 +1769,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|floating_sel_composite (GimpLayer * layer,gint x,gint y,gint w,gint h,gint undo)
+DECL|function|floating_sel_composite (GimpLayer * layer,gint x,gint y,gint w,gint h,gboolean undo)
 name|floating_sel_composite
 parameter_list|(
 name|GimpLayer
@@ -1788,7 +1788,7 @@ parameter_list|,
 name|gint
 name|h
 parameter_list|,
-name|gint
+name|gboolean
 name|undo
 parameter_list|)
 block|{
@@ -2290,7 +2290,7 @@ end_function
 begin_function
 name|BoundSeg
 modifier|*
-DECL|function|floating_sel_boundary (GimpLayer * layer,gint * num_segs)
+DECL|function|floating_sel_boundary (GimpLayer * layer,gint * n_segs)
 name|floating_sel_boundary
 parameter_list|(
 name|GimpLayer
@@ -2299,13 +2299,13 @@ name|layer
 parameter_list|,
 name|gint
 modifier|*
-name|num_segs
+name|n_segs
 parameter_list|)
 block|{
 name|PixelRegion
 name|bPR
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if
@@ -2511,7 +2511,7 @@ name|TRUE
 expr_stmt|;
 block|}
 operator|*
-name|num_segs
+name|n_segs
 operator|=
 name|layer
 operator|->

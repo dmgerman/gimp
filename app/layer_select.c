@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawablepreview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -1930,9 +1936,12 @@ argument_list|)
 expr_stmt|;
 name|preview_buf
 operator|=
-name|gimp_layer_preview
+name|gimp_drawable_preview
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|layer
+argument_list|)
 argument_list|,
 name|w
 argument_list|,

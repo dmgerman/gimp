@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawablepreview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayermask.h"
 end_include
 
@@ -10983,7 +10989,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c34fbf00108
+DECL|struct|__anon274910840108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -13601,11 +13607,14 @@ name|LAYER_PREVIEW
 case|:
 name|preview_buf
 operator|=
-name|gimp_layer_preview
+name|gimp_drawable_preview
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|layer_widget
 operator|->
 name|layer
+argument_list|)
 argument_list|,
 name|layer_widget
 operator|->
@@ -13628,11 +13637,16 @@ name|MASK_PREVIEW
 case|:
 name|preview_buf
 operator|=
-name|gimp_layer_mask_preview
+name|gimp_drawable_preview
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|layer_widget
 operator|->
 name|layer
+operator|->
+name|mask
+argument_list|)
 argument_list|,
 name|layer_widget
 operator|->

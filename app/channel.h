@@ -418,10 +418,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  access functions  */
-end_comment
-
 begin_function_decl
 name|gboolean
 name|gimp_channel_toggle_visibility
@@ -429,24 +425,6 @@ parameter_list|(
 name|GimpChannel
 modifier|*
 name|channel
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|TempBuf
-modifier|*
-name|gimp_channel_preview
-parameter_list|(
-name|GimpChannel
-modifier|*
-name|channel
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
 parameter_list|)
 function_decl|;
 end_function_decl

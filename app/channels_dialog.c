@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawablepreview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppreviewcache.h"
 end_include
 
@@ -6929,7 +6935,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0c73c20108
+DECL|struct|__anon27ca666d0108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -8745,11 +8751,14 @@ comment|/*  Preview is scaling up!  */
 block|{
 name|preview_buf
 operator|=
-name|gimp_channel_preview
+name|gimp_drawable_preview
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|channel_widget
 operator|->
 name|channel
+argument_list|)
 argument_list|,
 name|channelsD
 operator|->
@@ -8780,11 +8789,14 @@ else|else
 block|{
 name|preview_buf
 operator|=
-name|gimp_channel_preview
+name|gimp_drawable_preview
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|channel_widget
 operator|->
 name|channel
+argument_list|)
 argument_list|,
 name|channel_widget
 operator|->

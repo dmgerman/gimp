@@ -147,8 +147,10 @@ name|create_cycled_ants_pixmap
 parameter_list|(
 name|GdkWindow
 modifier|*
+name|window
 parameter_list|,
 name|gint
+name|depth
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -189,7 +191,7 @@ parameter_list|,
 name|GdkSegment
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -277,12 +279,12 @@ begin_function
 specifier|static
 name|GdkPixmap
 modifier|*
-DECL|function|create_cycled_ants_pixmap (GdkWindow * win,gint depth)
+DECL|function|create_cycled_ants_pixmap (GdkWindow * window,gint depth)
 name|create_cycled_ants_pixmap
 parameter_list|(
 name|GdkWindow
 modifier|*
-name|win
+name|window
 parameter_list|,
 name|gint
 name|depth
@@ -299,7 +301,7 @@ decl_stmt|;
 name|GdkColor
 name|col
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -308,7 +310,7 @@ name|pixmap
 operator|=
 name|gdk_pixmap_new
 argument_list|(
-name|win
+name|window
 argument_list|,
 literal|8
 argument_list|,
@@ -321,7 +323,7 @@ name|gc
 operator|=
 name|gdk_gc_new
 argument_list|(
-name|win
+name|window
 argument_list|)
 expr_stmt|;
 for|for
@@ -414,10 +416,10 @@ modifier|*
 name|select
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|index
 decl_stmt|;
 for|for

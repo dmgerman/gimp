@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawablepreview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -681,7 +687,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b709db40103
+DECL|enum|__anon27de47f20103
 block|{
 DECL|enumerator|CLEAN
 name|CLEAN
@@ -16482,9 +16488,12 @@ name|bytes
 expr_stmt|;
 name|layer_buf
 operator|=
-name|gimp_layer_preview
+name|gimp_drawable_preview
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|layer
+argument_list|)
 argument_list|,
 name|w
 argument_list|,
@@ -16585,9 +16594,14 @@ condition|)
 block|{
 name|mask_buf
 operator|=
-name|gimp_layer_mask_preview
+name|gimp_drawable_preview
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|layer
+operator|->
+name|mask
+argument_list|)
 argument_list|,
 name|w
 argument_list|,
@@ -16646,10 +16660,12 @@ name|maskPR
 expr_stmt|;
 block|}
 else|else
+block|{
 name|mask
 operator|=
 name|NULL
 expr_stmt|;
+block|}
 comment|/*  Based on the type of the layer, project the layer onto the        *   composite preview...        *  Indexed images are actually already converted to RGB and RGBA,        *   so just project them as if they were type "intensity"        *  Send in all TRUE for visible since that info doesn't matter        *   for previews        */
 switch|switch
 condition|(
