@@ -2556,7 +2556,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-comment|/*  Set a default drag dest if not already done. Explicitely set    *  DEFAULT, COPY and MOVE for file drag destinations. Some file    *  managers such as Konqueror only offer MOVE by default.    */
+comment|/*  Set a default drag dest if not already done. Explicitely set    *  COPY and MOVE for file drag destinations. Some file managers    *  such as Konqueror only offer MOVE by default.    */
 if|if
 condition|(
 operator|!
@@ -2570,23 +2570,6 @@ argument_list|,
 literal|"gtk-drag-dest"
 argument_list|)
 condition|)
-name|gtk_drag_dest_set
-argument_list|(
-name|widget
-argument_list|,
-name|GTK_DEST_DEFAULT_ALL
-argument_list|,
-name|NULL
-argument_list|,
-literal|0
-argument_list|,
-name|GDK_ACTION_DEFAULT
-operator||
-name|GDK_ACTION_COPY
-operator||
-name|GDK_ACTION_MOVE
-argument_list|)
-expr_stmt|;
 name|gtk_drag_dest_set
 argument_list|(
 name|widget

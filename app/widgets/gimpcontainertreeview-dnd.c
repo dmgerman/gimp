@@ -364,7 +364,7 @@ name|gdk_drag_status
 argument_list|(
 name|context
 argument_list|,
-name|GDK_ACTION_DEFAULT
+literal|0
 argument_list|,
 name|time
 argument_list|)
