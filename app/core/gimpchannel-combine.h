@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2876ecfb0103
+DECL|enum|__anon2ad651be0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -155,6 +155,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_typedef
+DECL|enum|__anon2ad651be0203
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|CHANNEL_ADD_UNDO
+name|CHANNEL_ADD_UNDO
+block|,
+DECL|enumerator|CHANNEL_REMOVE_UNDO
+name|CHANNEL_REMOVE_UNDO
+DECL|typedef|channel_undo_type
+block|}
+name|channel_undo_type
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  Special undo type  */
 end_comment
@@ -191,7 +207,7 @@ name|prev_channel
 decl_stmt|;
 comment|/*  previous active channel     */
 DECL|member|undo_type
-name|gint
+name|channel_undo_type
 name|undo_type
 decl_stmt|;
 comment|/*  is this a new channel undo  */

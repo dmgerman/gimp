@@ -322,7 +322,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon276149090108
+DECL|struct|__anon2b8758ea0108
 typedef|typedef
 struct|struct
 block|{
@@ -451,7 +451,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon276149090208
+DECL|struct|__anon2b8758ea0208
 typedef|typedef
 struct|struct
 block|{
@@ -480,7 +480,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon276149090308
+DECL|struct|__anon2b8758ea0308
 typedef|typedef
 struct|struct
 block|{
@@ -499,7 +499,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon276149090408
+DECL|struct|__anon2b8758ea0408
 typedef|typedef
 struct|struct
 block|{
@@ -8937,7 +8937,7 @@ name|gimage
 argument_list|)
 expr_stmt|;
 comment|/* Since beziers are part of the save format.. make the image dirty */
-comment|/*   gimp_image_dirty(gdisp->gimage); */
+comment|/*   undo_push_cantundo(gdisp->gimage, _("path modification")); */
 if|if
 condition|(
 operator|!

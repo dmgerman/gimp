@@ -3624,6 +3624,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
+default|default:
+comment|/* nothing special needs doing */
+break|break;
 block|}
 block|}
 end_function

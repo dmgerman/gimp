@@ -76,7 +76,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2b5d3d840103
+DECL|enum|__anon2b2c3ce70103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -1260,6 +1260,11 @@ case|:
 return|return
 name|INDEXEDA_GIMAGE
 return|;
+break|break;
+default|default:
+name|g_assert_not_reached
+argument_list|()
+expr_stmt|;
 break|break;
 block|}
 return|return

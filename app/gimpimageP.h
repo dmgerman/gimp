@@ -64,6 +64,12 @@ directive|include
 file|"pathsP.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"undo_types.h"
+end_include
+
 begin_define
 DECL|macro|MAX_CHANNELS
 define|#
@@ -326,10 +332,16 @@ name|group_count
 decl_stmt|;
 comment|/*  nested undo groups           */
 DECL|member|pushing_undo_group
-name|gint
+name|undo_type
 name|pushing_undo_group
 decl_stmt|;
 comment|/*  undo group status flag       */
+DECL|member|undo_history
+name|GtkWidget
+modifier|*
+name|undo_history
+decl_stmt|;
+comment|/*  history viewer, or NULL      */
 comment|/*  Composite preview  */
 DECL|member|comp_preview
 name|TempBuf

@@ -989,6 +989,19 @@ block|,
 block|{
 name|N_
 argument_list|(
+literal|"/Edit/Undo history..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|edit_show_undo_history_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
 literal|"/Edit/---"
 argument_list|)
 block|,
