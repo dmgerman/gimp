@@ -691,7 +691,7 @@ name|g_new
 argument_list|(
 name|guchar
 argument_list|,
-name|tile_size
+name|tile_size_inline
 argument_list|(
 name|tile
 argument_list|)

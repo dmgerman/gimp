@@ -2143,7 +2143,7 @@ block|}
 block|}
 name|bytes
 operator|=
-name|tile_size
+name|tile_size_inline
 argument_list|(
 name|tile
 argument_list|)
@@ -2309,7 +2309,7 @@ name|bpp
 expr_stmt|;
 name|rbytes
 operator|=
-name|tile_size
+name|tile_size_inline
 argument_list|(
 name|tile
 argument_list|)
@@ -3372,7 +3372,7 @@ return|return;
 block|}
 name|bytes
 operator|=
-name|tile_size
+name|tile_size_inline
 argument_list|(
 name|tile
 argument_list|)

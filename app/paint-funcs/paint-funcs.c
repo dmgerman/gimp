@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb6ca530103
+DECL|enum|__anon29b69f9b0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -16069,7 +16069,7 @@ name|fraction
 operator|=
 literal|255
 expr_stmt|;
-comment|/*  This might need to be changed to 0 instead of k = (min) ? (min - 1) : 0  */
+comment|/*  This might need to be changed to 0               instead of k = (min) ? (min - 1) : 0  */
 for|for
 control|(
 name|k
@@ -16117,6 +16117,9 @@ operator|>=
 name|end
 condition|)
 block|{
+name|gint
+name|width
+decl_stmt|;
 name|tile
 operator|=
 name|tile_manager_get_tile
@@ -16149,21 +16152,22 @@ operator|%
 name|TILE_HEIGHT
 argument_list|)
 expr_stmt|;
-name|boundary
+name|width
 operator|=
-name|MIN
-argument_list|(
-operator|(
-name|y
-operator|%
-name|TILE_HEIGHT
-operator|)
-argument_list|,
-operator|(
 name|tile_ewidth
 argument_list|(
 name|tile
 argument_list|)
+expr_stmt|;
+name|boundary
+operator|=
+name|MIN
+argument_list|(
+name|y
+operator|%
+name|TILE_HEIGHT
+argument_list|,
+name|width
 operator|-
 operator|(
 name|x
@@ -16172,7 +16176,6 @@ name|TILE_WIDTH
 operator|)
 operator|-
 literal|1
-operator|)
 argument_list|)
 expr_stmt|;
 name|boundary
@@ -16181,11 +16184,9 @@ name|MIN
 argument_list|(
 name|boundary
 argument_list|,
-operator|(
 name|y
 operator|-
 name|end
-operator|)
 argument_list|)
 operator|+
 literal|1
@@ -16194,10 +16195,7 @@ name|inc
 operator|=
 literal|1
 operator|-
-name|tile_ewidth
-argument_list|(
-name|tile
-argument_list|)
+name|width
 expr_stmt|;
 while|while
 condition|(

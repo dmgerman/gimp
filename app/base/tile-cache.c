@@ -579,7 +579,7 @@ name|dirty_list
 condition|)
 name|cur_cache_dirty
 operator|-=
-name|tile_size
+name|tile_size_inline
 argument_list|(
 name|tile
 argument_list|)
@@ -618,7 +618,7 @@ block|}
 block|}
 name|cur_cache_size
 operator|+=
-name|tile_size
+name|tile_size_inline
 argument_list|(
 name|tile
 argument_list|)
@@ -694,7 +694,7 @@ condition|)
 block|{
 name|cur_cache_dirty
 operator|+=
-name|tile_size
+name|tile_size_inline
 argument_list|(
 name|tile
 argument_list|)
@@ -785,7 +785,7 @@ condition|)
 block|{
 name|cur_cache_size
 operator|-=
-name|tile_size
+name|tile_size_inline
 argument_list|(
 name|tile
 argument_list|)
@@ -799,7 +799,7 @@ name|dirty_list
 condition|)
 name|cur_cache_dirty
 operator|-=
-name|tile_size
+name|tile_size_inline
 argument_list|(
 name|tile
 argument_list|)
@@ -1152,7 +1152,7 @@ name|dirty_list
 condition|)
 name|cur_cache_dirty
 operator|-=
-name|tile_size
+name|tile_size_inline
 argument_list|(
 name|tile
 argument_list|)
@@ -1415,7 +1415,7 @@ name|tile
 expr_stmt|;
 name|cur_cache_dirty
 operator|-=
-name|tile_size
+name|tile_size_inline
 argument_list|(
 name|tile
 argument_list|)
