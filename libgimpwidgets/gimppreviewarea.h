@@ -288,11 +288,9 @@ name|GimpPreviewArea
 modifier|*
 name|area
 parameter_list|,
-name|guint
-name|button
-parameter_list|,
-name|guint32
-name|activate_time
+name|GdkEventButton
+modifier|*
+name|event
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290cb9b80103
+DECL|enum|__anon294459380103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3137,20 +3137,22 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_preview_area_menu_popup:  * @area:  a #GimpPreviewArea  * @event: the button event that causes the menu to popup or %NULL  *  * Creates a popup menu that allows to configure the size and type of  * the checkerboard pattern that the @area uses to visualize transparency.  *  * Since: GIMP 2.2  **/
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_preview_area_menu_popup (GimpPreviewArea * area,guint button,guint32 activate_time)
+DECL|function|gimp_preview_area_menu_popup (GimpPreviewArea * area,GdkEventButton * event)
 name|gimp_preview_area_menu_popup
 parameter_list|(
 name|GimpPreviewArea
 modifier|*
 name|area
 parameter_list|,
-name|guint
-name|button
-parameter_list|,
-name|guint32
-name|activate_time
+name|GdkEventButton
+modifier|*
+name|event
 parameter_list|)
 block|{
 name|GtkWidget
@@ -3216,6 +3218,10 @@ literal|"check-size"
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|event
+condition|)
 name|gtk_menu_popup
 argument_list|(
 name|GTK_MENU
@@ -3231,17 +3237,37 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|event
+operator|->
 name|button
 argument_list|,
-name|activate_time
+name|event
+operator|->
+name|time
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
+else|else
+name|gtk_menu_popup
+argument_list|(
+name|GTK_MENU
+argument_list|(
+name|menu
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
 literal|0
-block|g_signal_connect (menu, "deactivate",                     G_CALLBACK (gtk_widget_destroy),                     NULL);
-endif|#
-directive|endif
+argument_list|,
+name|gtk_get_current_event_time
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
