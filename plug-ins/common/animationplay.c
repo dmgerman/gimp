@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2965bb880103
+DECL|enum|__anon276f398b0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -623,7 +623,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2965bb880208
+DECL|struct|__anon276f398b0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -5325,6 +5325,8 @@ literal|"Frame %d of %d"
 argument_list|)
 argument_list|,
 name|frame_number
+operator|+
+literal|1
 argument_list|,
 name|total_frames
 argument_list|)
