@@ -132,6 +132,11 @@ name|gchar
 modifier|*
 name|language
 decl_stmt|;
+DECL|member|base_dir
+name|gint
+name|base_dir
+decl_stmt|;
+comment|/* actually a PangoDirection */
 DECL|member|color
 name|GimpRGB
 name|color

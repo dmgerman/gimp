@@ -1562,6 +1562,15 @@ name|language
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|pango_context_set_base_dir
+argument_list|(
+name|context
+argument_list|,
+name|text
+operator|->
+name|base_dir
+argument_list|)
+expr_stmt|;
 return|return
 name|context
 return|;
