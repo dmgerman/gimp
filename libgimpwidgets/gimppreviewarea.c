@@ -1638,6 +1638,8 @@ name|area
 operator|->
 name|cmap
 operator|+
+literal|3
+operator|*
 name|s
 index|[
 literal|0
@@ -1743,7 +1745,8 @@ name|col
 operator|++
 operator|,
 name|s
-operator|++
+operator|+=
+literal|2
 operator|,
 name|d
 operator|+=
@@ -1759,6 +1762,8 @@ name|area
 operator|->
 name|cmap
 operator|+
+literal|3
+operator|*
 name|s
 index|[
 literal|0
