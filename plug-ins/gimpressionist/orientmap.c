@@ -955,11 +955,12 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
+name|PPM_IS_INITED
+argument_list|(
+operator|&
 name|nbuffer
-operator|.
-name|col
+argument_list|)
 condition|)
-block|{
 name|ppm_new
 argument_list|(
 operator|&
@@ -970,7 +971,6 @@ argument_list|,
 name|OMHEIGHT
 argument_list|)
 expr_stmt|;
-block|}
 name|fill
 argument_list|(
 operator|&

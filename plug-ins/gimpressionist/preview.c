@@ -454,23 +454,25 @@ comment|/* This portion is remmed out because of the remming out of the    * cod
 if|#
 directive|if
 literal|0
-block|guchar buf[PREVIEWSIZE*3];    if(!infile.col&& d)     grabarea();
+block|guchar buf[PREVIEWSIZE*3];    if (!PPM_IS_INITED (&infile)&& d)     grabarea();
 endif|#
 directive|endif
 comment|/* It seems that infile.col must be true here. (after grabarea() that is.)    * Thus, I'm removing this entire portion of the code in hope that    * it works OK afterwards.    *            -- Shlomi Fish    * */
 if|#
 directive|if
 literal|0
-block|if(!infile.col&& !d) {      memset(buf, 0, sizeof(buf));     for(i = 0; i< PREVIEWSIZE; i++)      {       gtk_preview_draw_row (GTK_PREVIEW(preview), buf, 0, i, PREVIEWSIZE);     }   }    else
+block|if (!PPM_IS_INITED (&infile)&& !d) {      memset(buf, 0, sizeof(buf));     for(i = 0; i< PREVIEWSIZE; i++)      {       gtk_preview_draw_row (GTK_PREVIEW(preview), buf, 0, i, PREVIEWSIZE);     }   }    else
 endif|#
 directive|endif
 block|{
 if|if
 condition|(
 operator|!
+name|PPM_IS_INITED
+argument_list|(
+operator|&
 name|backup_ppm
-operator|.
-name|col
+argument_list|)
 condition|)
 block|{
 name|infile_copy_to_ppm
@@ -551,9 +553,11 @@ block|}
 if|if
 condition|(
 operator|!
+name|PPM_IS_INITED
+argument_list|(
+operator|&
 name|preview_ppm
-operator|.
-name|col
+argument_list|)
 condition|)
 block|{
 name|ppm_copy

@@ -564,12 +564,6 @@ literal|1
 else|:
 name|bpp
 expr_stmt|;
-if|if
-condition|(
-name|brushppm
-operator|.
-name|col
-condition|)
 name|ppm_kill
 argument_list|(
 operator|&
@@ -906,7 +900,7 @@ literal|0
 end_if
 
 begin_endif
-unit|void dummybrushdmenuselect(GtkWidget *w, gpointer data) {   if(brushppm.col)     ppm_kill (&brushppm);   ppm_new (&brushppm, 10,10);   brush_from_file = 0;   update_brush_preview (NULL); }
+unit|void dummybrushdmenuselect(GtkWidget *w, gpointer data) {   ppm_kill (&brushppm);   ppm_new (&brushppm, 10,10);   brush_from_file = 0;   update_brush_preview (NULL); }
 endif|#
 directive|endif
 end_endif
@@ -1033,9 +1027,11 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
+name|PPM_IS_INITED
+argument_list|(
+operator|&
 name|brushppm
-operator|.
-name|col
+argument_list|)
 condition|)
 block|{
 name|g_message
@@ -1515,9 +1511,11 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
+name|PPM_IS_INITED
+argument_list|(
+operator|&
 name|brushppm
-operator|.
-name|col
+argument_list|)
 condition|)
 name|ppm_copy
 argument_list|(

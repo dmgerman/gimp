@@ -200,9 +200,11 @@ block|{
 if|if
 condition|(
 operator|!
+name|PPM_IS_INITED
+argument_list|(
+operator|&
 name|infile
-operator|.
-name|col
+argument_list|)
 condition|)
 name|grabarea
 argument_list|()
@@ -1579,9 +1581,11 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+name|PPM_IS_INITED
+argument_list|(
+operator|&
 name|infile
-operator|.
-name|col
+argument_list|)
 condition|)
 block|{
 name|grabarea

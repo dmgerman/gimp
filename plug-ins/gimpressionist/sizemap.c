@@ -344,9 +344,11 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
+name|PPM_IS_INITED
+argument_list|(
+operator|&
 name|nsbuffer
-operator|.
-name|col
+argument_list|)
 condition|)
 block|{
 name|ppm_new
@@ -713,7 +715,7 @@ block|{
 if|#
 directive|if
 literal|0
-block|if(!infile.col)          updatepreview (NULL, (void *)2);
+block|if (!PPM_IS_INITED (&infile))          updatepreview (NULL, (void *)2);
 comment|/* Force grabarea() */
 block|ppm_copy(&infile,&backup);
 else|#

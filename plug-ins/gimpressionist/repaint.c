@@ -6867,9 +6867,11 @@ literal|100.0
 expr_stmt|;
 if|if
 condition|(
+name|PPM_IS_INITED
+argument_list|(
+operator|&
 name|paper_ppm
-operator|.
-name|col
+argument_list|)
 condition|)
 block|{
 name|tmp

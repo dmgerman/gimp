@@ -476,6 +476,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_define
+DECL|macro|PPM_IS_INITED (ppm_ptr)
+define|#
+directive|define
+name|PPM_IS_INITED
+parameter_list|(
+name|ppm_ptr
+parameter_list|)
+value|((ppm_ptr)->col != NULL)
+end_define
+
 begin_endif
 endif|#
 directive|endif
