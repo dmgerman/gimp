@@ -2425,6 +2425,14 @@ value|"dialogs/indexed_palette.html"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TEXT_EDITOR_DIALOG
+define|#
+directive|define
+name|GIMP_HELP_TEXT_EDITOR_DIALOG
+value|"dialogs/text_editor.html"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TIPS_DIALOG
 define|#
 directive|define

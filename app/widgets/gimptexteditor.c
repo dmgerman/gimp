@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptexteditor.h"
 end_include
 
@@ -77,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2925fb9a0103
+DECL|enum|__anon2aa1b63f0103
 block|{
 DECL|enumerator|DIR_CHANGED
 name|DIR_CHANGED
@@ -607,7 +613,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/text_editor.html"
+name|GIMP_HELP_TEXT_EDITOR_DIALOG
 argument_list|,
 name|NULL
 argument_list|)
