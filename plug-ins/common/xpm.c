@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b81daed0108
+DECL|struct|__anon2a99da070108
 block|{
 DECL|member|threshold
 name|gint
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b81daed0208
+DECL|struct|__anon2a99da070208
 block|{
 DECL|member|r
 name|guchar
@@ -470,7 +470,7 @@ literal|"XPM is a portable image format designed to be "
 literal|"included in C source code. XLib provides utility "
 literal|"functions to read this format. Newer code should "
 literal|"however be using gdk-pixbuf-csource instead. "
-literal|"XPM supports coloured images, unlike the XBM "
+literal|"XPM supports colored images, unlike the XBM "
 literal|"format which XPM was designed to replace."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis& Ray Lehtiniemi"
@@ -539,7 +539,7 @@ literal|"XPM is a portable image format designed to be "
 literal|"included in C source code. XLib provides utility "
 literal|"functions to read this format. Newer code should "
 literal|"however be using gdk-pixbuf-csource instead. "
-literal|"XPM supports coloured images, unlike the XBM "
+literal|"XPM supports colored images, unlike the XBM "
 literal|"format which XPM was designed to replace."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis& Ray Lehtiniemi& Nathan Summers"
