@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpenv.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
@@ -37,6 +37,12 @@ begin_include
 include|#
 directive|include
 file|"gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpconfig-params.h"
 end_include
 
 begin_include
@@ -776,6 +782,14 @@ condition|)
 block|{
 if|if
 condition|(
+operator|(
+name|prop_spec
+operator|->
+name|flags
+operator|&
+name|GIMP_PARAM_SERIALIZE
+operator|)
+operator|&&
 name|g_type_interface_peek
 argument_list|(
 name|g_type_class_peek

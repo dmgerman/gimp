@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2901d6ae0103
+DECL|enum|__anon2c5a09980103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_NONE
 name|GIMP_DND_TYPE_NONE
@@ -111,15 +111,20 @@ name|GIMP_DND_TYPE_IMAGEFILE
 init|=
 literal|17
 block|,
+DECL|enumerator|GIMP_DND_TYPE_TEMPLATE
+name|GIMP_DND_TYPE_TEMPLATE
+init|=
+literal|18
+block|,
 DECL|enumerator|GIMP_DND_TYPE_TOOL
 name|GIMP_DND_TYPE_TOOL
 init|=
-literal|18
+literal|19
 block|,
 DECL|enumerator|GIMP_DND_TYPE_DIALOG
 name|GIMP_DND_TYPE_DIALOG
 init|=
-literal|19
+literal|20
 block|,
 DECL|enumerator|GIMP_DND_TYPE_LAST
 name|GIMP_DND_TYPE_LAST
@@ -282,6 +287,15 @@ directive|define
 name|GIMP_TARGET_IMAGEFILE
 define|\
 value|{ "GIMP_IMAGEFILE", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_IMAGEFILE }
+end_define
+
+begin_define
+DECL|macro|GIMP_TARGET_TEMPLATE
+define|#
+directive|define
+name|GIMP_TARGET_TEMPLATE
+define|\
+value|{ "GIMP_TEMPLATE", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_TEMPLATE }
 end_define
 
 begin_define

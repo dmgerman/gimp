@@ -410,6 +410,20 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
+literal|"/Add Tab/Templates..."
+argument_list|)
+argument_list|,
+literal|"gimp-template-list"
+argument_list|,
+literal|"<StockItem>"
+argument_list|,
+name|GIMP_STOCK_TEMPLATE
+argument_list|)
+block|,
+name|ADD_TAB
+argument_list|(
+name|N_
+argument_list|(
 literal|"/Add Tab/Error Console..."
 argument_list|)
 argument_list|,

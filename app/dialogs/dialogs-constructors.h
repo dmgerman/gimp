@@ -715,7 +715,7 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|dialogs_document_tree_new
+name|dialogs_template_list_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
