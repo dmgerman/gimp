@@ -565,7 +565,7 @@ index|]
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_rgb_set_uchar
+name|gimp_rgba_set_uchar
 argument_list|(
 operator|&
 name|rgb_color
@@ -584,6 +584,8 @@ name|col
 index|[
 name|BLUE_PIX
 index|]
+argument_list|,
+name|OPAQUE_OPACITY
 argument_list|)
 expr_stmt|;
 name|g_free
