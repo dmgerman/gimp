@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c148c6c0103
+DECL|enum|__anon2ae0c8180103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c148c6c0203
+DECL|enum|__anon2ae0c8180203
 block|{
 DECL|enumerator|EVENT_MAPPED
 name|EVENT_MAPPED
@@ -1474,13 +1474,13 @@ name|retval
 condition|)
 name|g_print
 argument_list|(
-literal|"   action was found\n\n"
+literal|"    action was found\n\n"
 argument_list|)
 expr_stmt|;
 else|else
 name|g_print
 argument_list|(
-literal|"   action NOT found\n\n"
+literal|"    action NOT found\n\n"
 argument_list|)
 expr_stmt|;
 return|return

@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289422bd0103
+DECL|enum|__anon2b327d0e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -57,7 +57,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289422bd0203
+DECL|enum|__anon2b327d0e0203
 block|{
 DECL|enumerator|EVENT
 name|EVENT
@@ -717,6 +717,13 @@ name|gint
 name|event_id
 parameter_list|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|name
+init|=
+name|NULL
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_CONTROLLER
@@ -736,7 +743,8 @@ argument_list|)
 operator|->
 name|get_event_name
 condition|)
-return|return
+name|name
+operator|=
 name|GIMP_CONTROLLER_GET_CLASS
 argument_list|(
 name|controller
@@ -748,9 +756,18 @@ name|controller
 argument_list|,
 name|event_id
 argument_list|)
-return|;
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|name
+condition|)
+name|name
+operator|=
+literal|"<invalid event id>"
+expr_stmt|;
 return|return
-name|NULL
+name|name
 return|;
 block|}
 end_function
@@ -770,6 +787,13 @@ name|gint
 name|event_id
 parameter_list|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|blurb
+init|=
+name|NULL
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_CONTROLLER
@@ -789,7 +813,8 @@ argument_list|)
 operator|->
 name|get_event_blurb
 condition|)
-return|return
+name|blurb
+operator|=
 name|GIMP_CONTROLLER_GET_CLASS
 argument_list|(
 name|controller
@@ -801,9 +826,18 @@ name|controller
 argument_list|,
 name|event_id
 argument_list|)
-return|;
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|blurb
+condition|)
+name|blurb
+operator|=
+literal|"<invalid event id>"
+expr_stmt|;
 return|return
-name|NULL
+name|blurb
 return|;
 block|}
 end_function

@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6100f80108
+DECL|struct|__anon2ae979890108
 block|{
 DECL|member|code
 name|__u16
@@ -414,7 +414,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6100f80203
+DECL|enum|__anon2ae979890203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1654,6 +1654,15 @@ operator|.
 name|code
 condition|)
 block|{
+name|GimpController
+modifier|*
+name|controller
+init|=
+name|GIMP_CONTROLLER
+argument_list|(
+name|data
+argument_list|)
+decl_stmt|;
 name|GimpControllerEvent
 name|cevent
 decl_stmt|;
@@ -1684,6 +1693,15 @@ name|event_id
 operator|=
 name|i
 expr_stmt|;
+name|gimp_controller_event
+argument_list|(
+name|controller
+argument_list|,
+operator|&
+name|cevent
+argument_list|)
+expr_stmt|;
+break|break;
 block|}
 break|break;
 case|case
