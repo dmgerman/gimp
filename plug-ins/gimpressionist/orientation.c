@@ -88,6 +88,12 @@ directive|include
 file|"ppmtool.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimp/stdplugins-intl.h>
+end_include
+
 begin_decl_stmt
 DECL|variable|orientnumadjust
 name|GtkObject
@@ -284,7 +290,10 @@ name|sprintf
 argument_list|(
 name|title
 argument_list|,
+name|_
+argument_list|(
 literal|"Orientation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|labelbox
@@ -449,7 +458,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Directions:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -476,9 +488,12 @@ expr_stmt|;
 name|tmpw
 operator|=
 name|gtk_label_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Start angle:"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -505,7 +520,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Angle span:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -645,7 +663,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"The number of directions (i.e. brushes) to use"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -741,7 +762,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"The angle of the first brush to create"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -837,7 +861,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"How large an angle-span to use (360 = full circle)"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -881,7 +908,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Orientation:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -952,8 +982,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Value"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -1016,7 +1049,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Let the value (brightness) of the region determine the direction of the stroke"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1054,8 +1090,11 @@ name|tmpw
 argument_list|)
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Radius"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -1118,7 +1157,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"The distance from the center of the image determines the direction of the stroke"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1156,8 +1198,11 @@ name|tmpw
 argument_list|)
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Random"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -1220,7 +1265,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Selects a random direction of each stroke"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1258,7 +1306,10 @@ name|tmpw
 argument_list|)
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Radial"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1322,7 +1373,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Let the direction from the center determine the direction of the stroke"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1390,8 +1444,11 @@ name|tmpw
 argument_list|)
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Flowing"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -1454,7 +1511,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"The strokes follow a \"flowing\" pattern"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1492,8 +1552,11 @@ name|tmpw
 argument_list|)
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Hue"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -1556,7 +1619,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"The hue of the region determines the direction of the stroke"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1594,7 +1660,10 @@ name|tmpw
 argument_list|)
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Adaptive"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1658,7 +1727,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"The direction that matches the original image the closest is selected"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1726,7 +1798,10 @@ name|tmpw
 argument_list|)
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Manual"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1790,7 +1865,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Manually specify the stroke orientation"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1815,7 +1893,10 @@ name|tmpw
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Edit..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1865,7 +1946,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Opens up the Orientation Map Editor"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

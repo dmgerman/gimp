@@ -62,6 +62,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -185,7 +197,7 @@ value|GDK_EXPOSURE_MASK | \ 		       GDK_BUTTON_PRESS_MASK | \ 		       GDK_BUTT
 end_define
 
 begin_typedef
-DECL|struct|__anon28f4e18f0108
+DECL|struct|__anon29e62f7d0108
 typedef|typedef
 struct|struct
 block|{
@@ -200,7 +212,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28f4e18f0208
+DECL|struct|__anon29e62f7d0208
 typedef|typedef
 struct|struct
 block|{
@@ -227,7 +239,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f4e18f0308
+DECL|struct|__anon29e62f7d0308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -455,7 +467,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28f4e18f0408
+DECL|struct|__anon29e62f7d0408
 typedef|typedef
 struct|struct
 block|{
@@ -1229,7 +1241,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Normal"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1248,7 +1263,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Dissolve"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1267,7 +1285,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Multiply"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1286,7 +1307,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Screen"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1305,7 +1329,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Overlay"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1324,7 +1351,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Difference"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1343,7 +1373,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Addition"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1362,7 +1395,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Subtract"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1381,7 +1417,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Darken Only"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1400,7 +1439,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Lighten Only"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1419,7 +1461,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Hue"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1438,7 +1483,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Saturation"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1457,7 +1505,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Color"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1476,7 +1527,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Value"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1526,7 +1580,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Left  Top"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1545,7 +1602,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Left  Bottom"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1564,7 +1624,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Right Top"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1583,7 +1646,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Right Bottom"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1602,7 +1668,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Center"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1652,7 +1721,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Loop"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1671,7 +1743,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Loop Reverse"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1690,7 +1765,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Once"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1709,7 +1787,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"OnceReverse"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1728,7 +1809,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"PingPong"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1747,7 +1831,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"None"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -2393,7 +2480,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Move Path"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2505,7 +2595,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2568,7 +2661,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2628,7 +2724,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"UpdPreview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2682,7 +2781,10 @@ name|g_tooltips
 argument_list|,
 name|button
 argument_list|,
+name|_
+argument_list|(
 literal|"Show PreviewFame with Selected       \nSrcLayer at current Controlpoint"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2702,7 +2804,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Copy moving source-layer(s) into frames"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -2879,7 +2984,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Load Points"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2938,7 +3046,10 @@ name|g_tooltips
 argument_list|,
 name|button
 argument_list|,
+name|_
+argument_list|(
 literal|"Load Controlpoints from file"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2952,7 +3063,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Save Points"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3011,7 +3125,10 @@ name|g_tooltips
 argument_list|,
 name|button
 argument_list|,
+name|_
+argument_list|(
 literal|"Save Controlpoints to file"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3025,7 +3142,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Reset Points"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3084,7 +3204,10 @@ name|g_tooltips
 argument_list|,
 name|button
 argument_list|,
+name|_
+argument_list|(
 literal|"Reset Controlpoints  \nto one Defaultpoint"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3098,7 +3221,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Add Point"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3157,7 +3283,10 @@ name|g_tooltips
 argument_list|,
 name|button
 argument_list|,
+name|_
+argument_list|(
 literal|"Add Controlpoint at end        \n(the last Point is duplicated)"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3171,7 +3300,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Prev Point"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3230,7 +3362,10 @@ name|g_tooltips
 argument_list|,
 name|button
 argument_list|,
+name|_
+argument_list|(
 literal|"Show Previous Controlpoint"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3244,7 +3379,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Next Point"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3303,7 +3441,10 @@ name|g_tooltips
 argument_list|,
 name|button
 argument_list|,
+name|_
+argument_list|(
 literal|"Show Next Controlpoint"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3355,7 +3496,10 @@ literal|0
 argument_list|,
 literal|3
 argument_list|,
+name|_
+argument_list|(
 literal|"Start Frame:"
+argument_list|)
 argument_list|,
 operator|&
 name|pvals
@@ -3372,7 +3516,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"first handled frame"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|mov_int_entryscale_new
@@ -3386,7 +3533,10 @@ literal|0
 argument_list|,
 literal|4
 argument_list|,
+name|_
+argument_list|(
 literal|"End Frame:"
+argument_list|)
 argument_list|,
 operator|&
 name|pvals
@@ -3403,7 +3553,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"last handled frame"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|mov_int_entryscale_new
@@ -3417,7 +3570,10 @@ literal|0
 argument_list|,
 literal|5
 argument_list|,
+name|_
+argument_list|(
 literal|"Preview Frame:"
+argument_list|)
 argument_list|,
 operator|&
 name|path_ptr
@@ -3434,7 +3590,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"frame to show when UpdPreview\nbutton is pressed"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|mov_int_entryscale_new
@@ -3448,7 +3607,10 @@ literal|0
 argument_list|,
 literal|6
 argument_list|,
+name|_
+argument_list|(
 literal|"Layerstack:"
+argument_list|)
 argument_list|,
 operator|&
 name|pvals
@@ -3465,7 +3627,10 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"How to insert SrcLayer into the\nDst.Frame's Layerstack\n0 means on top i.e in front"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* toggle clip_to_image */
@@ -3473,7 +3638,10 @@ name|check_button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Clip To Frame"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -3539,7 +3707,10 @@ name|g_tooltips
 argument_list|,
 name|check_button
 argument_list|,
+name|_
+argument_list|(
 literal|"Clip all copied Src-Layers\nat Frame Boundaries"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3653,7 +3824,10 @@ name|p_msg_win
 argument_list|(
 name|RUN_INTERACTIVE
 argument_list|,
+name|_
+argument_list|(
 literal|"No Source Image was selected\n(Please open a 2nd Image of the same type before opening Move Path)\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -4311,7 +4485,10 @@ name|filesel
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Load Path Points from file"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|path_ptr
@@ -4450,7 +4627,10 @@ name|filesel
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Save Path Points to file"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|path_ptr
@@ -5482,7 +5662,10 @@ index|[
 literal|0
 index|]
 argument_list|,
+name|_
+argument_list|(
 literal|"X [%d]: "
+argument_list|)
 argument_list|,
 name|pvals
 operator|->
@@ -5501,7 +5684,10 @@ index|[
 literal|0
 index|]
 argument_list|,
+name|_
+argument_list|(
 literal|"Y [%d]: "
+argument_list|)
 argument_list|,
 name|pvals
 operator|->
@@ -5520,7 +5706,10 @@ index|[
 literal|0
 index|]
 argument_list|,
+name|_
+argument_list|(
 literal|"Opacity [%d]: "
+argument_list|)
 argument_list|,
 name|pvals
 operator|->
@@ -5539,7 +5728,10 @@ index|[
 literal|0
 index|]
 argument_list|,
+name|_
+argument_list|(
 literal|"Width [%d]: "
+argument_list|)
 argument_list|,
 name|pvals
 operator|->
@@ -5558,7 +5750,10 @@ index|[
 literal|0
 index|]
 argument_list|,
+name|_
+argument_list|(
 literal|"Height [%d]: "
+argument_list|)
 argument_list|,
 name|pvals
 operator|->
@@ -5577,7 +5772,10 @@ index|[
 literal|0
 index|]
 argument_list|,
+name|_
+argument_list|(
 literal|"Rotate deg[%d]: "
+argument_list|)
 argument_list|,
 name|pvals
 operator|->
@@ -6419,11 +6617,17 @@ name|GtkWidget
 modifier|*
 name|label
 decl_stmt|;
+name|int
+name|gettextize_loop
+decl_stmt|;
 name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Source Select"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*   gtk_signal_connect( GTK_OBJECT( frame ), "destroy", 		      (GtkSignalFunc) mov_src_sel_destroy, 		      path_ptr ); */
@@ -6503,7 +6707,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"SourceImage/Layer:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -6590,7 +6797,10 @@ name|g_tooltips
 argument_list|,
 name|option_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Source Object to insert into Framerange"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -6635,7 +6845,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Mode:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -6722,7 +6935,10 @@ name|g_tooltips
 argument_list|,
 name|option_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Paintmode"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -6730,6 +6946,41 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|option_menu
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|gettextize_loop
+operator|=
+literal|0
+init|;
+name|option_paint_items
+index|[
+name|gettextize_loop
+index|]
+operator|.
+name|label
+operator|!=
+name|NULL
+condition|;
+name|gettextize_loop
+operator|++
+control|)
+name|option_paint_items
+index|[
+name|gettextize_loop
+index|]
+operator|.
+name|label
+operator|=
+name|gettext
+argument_list|(
+name|option_paint_items
+index|[
+name|gettextize_loop
+index|]
+operator|.
+name|label
 argument_list|)
 expr_stmt|;
 name|menu
@@ -6759,7 +7010,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Stepmode:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -6843,6 +7097,41 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|option_menu
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|gettextize_loop
+operator|=
+literal|0
+init|;
+name|option_step_items
+index|[
+name|gettextize_loop
+index|]
+operator|.
+name|label
+operator|!=
+name|NULL
+condition|;
+name|gettextize_loop
+operator|++
+control|)
+name|option_step_items
+index|[
+name|gettextize_loop
+index|]
+operator|.
+name|label
+operator|=
+name|gettext
+argument_list|(
+name|option_step_items
+index|[
+name|gettextize_loop
+index|]
+operator|.
+name|label
 argument_list|)
 expr_stmt|;
 name|menu
@@ -6868,7 +7157,10 @@ name|g_tooltips
 argument_list|,
 name|option_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"How to fetch te next SrcLayer   \nat the next handled frame"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -6883,7 +7175,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Handle:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -6969,6 +7264,41 @@ argument_list|(
 name|option_menu
 argument_list|)
 expr_stmt|;
+for|for
+control|(
+name|gettextize_loop
+operator|=
+literal|0
+init|;
+name|option_handle_items
+index|[
+name|gettextize_loop
+index|]
+operator|.
+name|label
+operator|!=
+name|NULL
+condition|;
+name|gettextize_loop
+operator|++
+control|)
+name|option_handle_items
+index|[
+name|gettextize_loop
+index|]
+operator|.
+name|label
+operator|=
+name|gettext
+argument_list|(
+name|option_handle_items
+index|[
+name|gettextize_loop
+index|]
+operator|.
+name|label
+argument_list|)
+expr_stmt|;
 name|menu
 operator|=
 name|p_buildmenu
@@ -6992,7 +7322,10 @@ name|g_tooltips
 argument_list|,
 name|option_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"How to place the SrcLayer at   \nControlpoint Koordinates"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -7166,7 +7499,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Move Path Preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -7602,7 +7938,10 @@ name|path_ptr
 operator|->
 name|wres_adj
 argument_list|,
+name|_
+argument_list|(
 literal|"Scale SrcLayer's Width\nin percent"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|path_ptr
@@ -7649,7 +7988,10 @@ name|path_ptr
 operator|->
 name|hres_adj
 argument_list|,
+name|_
+argument_list|(
 literal|"Scale SrcLayer's Height\nin percent"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|path_ptr
@@ -7696,7 +8038,10 @@ name|path_ptr
 operator|->
 name|opacity_adj
 argument_list|,
+name|_
+argument_list|(
 literal|"SrcLayer's Opacity\nin percent"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Rotation */
@@ -7745,7 +8090,10 @@ name|path_ptr
 operator|->
 name|rotation_adj
 argument_list|,
+name|_
+argument_list|(
 literal|"Rotate SrcLayer (in degree)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* frame (shadow_in) that contains preview */

@@ -91,6 +91,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/stdplugins-intl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<math.h>
 end_include
 
@@ -1229,7 +1235,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIMPressionist: Can only save drawables!\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1253,7 +1262,10 @@ name|window
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Save brush"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2531,7 +2543,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Brush Preview:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2601,7 +2616,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Gamma:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2733,7 +2751,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Changes the gamma (brightness) of the selected brush"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2808,7 +2829,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Select:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2837,7 +2861,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Aspect ratio:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2865,7 +2892,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Relief:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2965,7 +2995,10 @@ name|emptyitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"(None)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -3056,7 +3089,10 @@ name|tmpw
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Save..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3190,7 +3226,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Specifies the aspect ratio of the brush"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3303,7 +3342,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Specifies the amount of embossing to apply to each brush stroke"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

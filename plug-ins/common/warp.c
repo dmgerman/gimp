@@ -52,6 +52,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -132,7 +144,7 @@ value|3
 end_define
 
 begin_typedef
-DECL|struct|__anon2c4b577e0108
+DECL|struct|__anon275aa38b0108
 typedef|typedef
 struct|struct
 block|{
@@ -199,7 +211,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c4b577e0208
+DECL|struct|__anon275aa38b0208
 typedef|typedef
 struct|struct
 block|{
@@ -1121,13 +1133,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_warp"
 argument_list|,
+name|_
+argument_list|(
 literal|"Twist or smear an image. (only first six arguments are required)"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Smears an image along vector paths calculated as the gradient of a separate control matrix. The effect can look like brushstrokes of acrylic or watercolor paint, in some cases."
+argument_list|)
 argument_list|,
 literal|"John P. Beale"
 argument_list|,
@@ -1135,7 +1156,10 @@ literal|"John P. Beale"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Artistic/Warp"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -1314,6 +1338,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -1337,6 +1364,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Make sure minimum args (mode, image, draw, amount, warp_map, iter) are there  */
 if|if
 condition|(
@@ -1959,7 +1989,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Warp"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2074,7 +2107,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2136,7 +2172,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2197,7 +2236,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Main Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -2298,7 +2340,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Step Size"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2336,7 +2381,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Iterations"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2556,7 +2604,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Displacement Map:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2710,8 +2761,11 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"On Edges: "
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -2740,8 +2794,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Wrap"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -2808,8 +2865,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Smear"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -2876,8 +2936,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Black"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -2944,7 +3007,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"FG Color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -3027,7 +3093,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Secondary Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -3127,7 +3196,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Dither Size"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -3255,7 +3327,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Substeps"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -3384,7 +3459,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Rotation Angle"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -3513,7 +3591,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Magnitude Map:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -3667,7 +3748,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Use Mag Map: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3697,7 +3781,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|groupmag
 argument_list|,
+name|_
+argument_list|(
 literal|"Yes"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|groupmag
@@ -3765,7 +3852,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|groupmag
 argument_list|,
+name|_
+argument_list|(
 literal|"No"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|groupmag
@@ -3848,7 +3938,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Other Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -3948,7 +4041,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Gradient Scale"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -4143,7 +4239,10 @@ name|tooltips
 argument_list|,
 name|option_menu_grad
 argument_list|,
+name|_
+argument_list|(
 literal|"Gradient map selection menu"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4158,7 +4257,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Vector Mag"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -4287,7 +4389,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Angle"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -4482,7 +4587,10 @@ name|tooltips
 argument_list|,
 name|option_menu_vector
 argument_list|,
+name|_
+argument_list|(
 literal|"Fixed-direction-vector map selection menu"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -6224,7 +6332,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"Warp diff: error allocating memory.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|exit
@@ -7611,7 +7722,10 @@ expr_stmt|;
 comment|/* make sure layer is visible */
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Smoothing X gradient..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|blur16
@@ -7621,7 +7735,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Smoothing Y gradient..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|blur16
@@ -7815,7 +7932,10 @@ expr_stmt|;
 comment|/* calculate new X,Y Displacement image maps */
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Finding XY gradient..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|diff
@@ -7932,7 +8052,10 @@ name|sprintf
 argument_list|(
 name|string
 argument_list|,
+name|_
+argument_list|(
 literal|"Flow Step %d..."
+argument_list|)
 argument_list|,
 name|warp_iter
 operator|+

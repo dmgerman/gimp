@@ -34,6 +34,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -193,7 +205,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b88d6dd0108
+DECL|struct|__anon28d776d10108
 block|{
 DECL|member|x
 DECL|member|y
@@ -211,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b88d6dd0208
+DECL|struct|__anon28d776d10208
 block|{
 DECL|member|npts
 name|gint
@@ -233,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b88d6dd0308
+DECL|struct|__anon28d776d10308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -262,7 +274,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b88d6dd0408
+DECL|struct|__anon28d776d10408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -317,7 +329,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b88d6dd0508
+DECL|struct|__anon28d776d10508
 block|{
 DECL|member|run
 name|gint
@@ -1521,13 +1533,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_mosaic"
 argument_list|,
+name|_
+argument_list|(
 literal|"Convert the input drawable into a collection of tiles"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Help not yet written for this plug-in"
+argument_list|)
 argument_list|,
 literal|"Spencer Kimball"
 argument_list|,
@@ -1535,7 +1556,10 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1996"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Artistic/Mosaic"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -1648,6 +1672,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -1669,6 +1696,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Make sure all the arguments are there!  */
 if|if
 condition|(
@@ -2113,7 +2143,10 @@ expr_stmt|;
 comment|/*  progress bar for gradient finding  */
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Finding Edges..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Find the gradients  */
@@ -2373,7 +2406,10 @@ expr_stmt|;
 comment|/*  Progress bar for rendering tiles  */
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Rendering Tiles..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Render the tiles  */
@@ -2649,7 +2685,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Mosaic"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2684,7 +2723,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2746,7 +2788,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3099,7 +3144,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Antialiasing"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3158,9 +3206,12 @@ expr_stmt|;
 name|toggle
 operator|=
 name|gtk_check_button_new_with_label
+argument_list|(
+name|_
 argument_list|(
 literal|"Color Averaging"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -3219,7 +3270,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Pitted Surfaces"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3283,7 +3337,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"FG/BG Lighting"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3363,7 +3420,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Tiling Primitives"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -3427,8 +3487,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Squares"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -3495,8 +3558,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Hexagons"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -3563,7 +3629,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Octagons& Squares"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -3645,7 +3714,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Parameter Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -3709,7 +3781,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Tile Size"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3868,7 +3943,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Tile Height"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4026,9 +4104,12 @@ expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Tile Spacing"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
 argument_list|(
@@ -4186,7 +4267,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Tile Neatness"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4355,7 +4439,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Light Direction"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4514,7 +4601,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Color Variation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -15522,7 +15612,10 @@ block|}
 else|else
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"Unable to add additional point.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

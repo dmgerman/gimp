@@ -64,6 +64,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -227,7 +239,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Splitting into Frames .."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -532,7 +547,10 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 argument_list|,
+name|_
+argument_list|(
 literal|"Split Frames: SAVE operation FAILED\n- desired save plugin cant handle type\n- or desired save plugin not available\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -646,11 +664,20 @@ name|sprintf
 argument_list|(
 name|buf
 argument_list|,
+name|_
+argument_list|(
 literal|"%s\n%s\n(%s_0001.%s)\n"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Make a frame (diskfile) from each Layer"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"frames are named: base_nr.extension"
+argument_list|)
 argument_list|,
 name|ainfo_ptr
 operator|->
@@ -701,7 +728,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Extension:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -710,7 +740,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"extension of resulting frames       \n(is also used to define Fileformat)"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -748,7 +781,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Inverse Order :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -757,7 +793,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Start frame 0001 at Top Layer"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -786,7 +825,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Flatten :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -795,7 +837,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Remove Alpha Channel in resulting Frames,    \ntransparent parts are filled with BG color"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -812,9 +857,15 @@ name|TRUE
 operator|==
 name|p_array_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Split Image into Frames"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Split Settings :"
+argument_list|)
 argument_list|,
 literal|4
 argument_list|,
@@ -959,7 +1010,10 @@ name|p_msg_win
 argument_list|(
 name|run_mode
 argument_list|,
+name|_
+argument_list|(
 literal|"OPERATION CANCELLED\nThis image is already an AnimFrame\nTry again on a Duplicate\n(image/channel ops/duplicate)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

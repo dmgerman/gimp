@@ -79,6 +79,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<libgimp/stdplugins-intl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpressionist.h"
 end_include
 
@@ -605,7 +611,10 @@ name|window
 operator|=
 name|gtk_color_selection_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Color Selection Dialog"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -789,7 +798,10 @@ name|sprintf
 argument_list|(
 name|title
 argument_list|,
+name|_
+argument_list|(
 literal|"General"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|labelbox
@@ -954,7 +966,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Edge darken:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1099,7 +1114,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"How much to \"darken\" the edges of each brush stroke"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1138,7 +1156,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Background:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1203,7 +1224,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Keep original"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1267,7 +1291,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Preserve the original image as a background"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1307,7 +1334,10 @@ name|tmpw
 argument_list|)
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"From paper"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1371,7 +1401,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Copy the texture of the selected paper as a background"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1471,7 +1504,10 @@ name|tmpw
 argument_list|)
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Solid"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1535,7 +1571,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Solid colored background"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1662,7 +1701,10 @@ index|]
 argument_list|)
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Transparent"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1726,7 +1768,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Use a transparent background; Only the strokes painted will be visible"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1827,7 +1872,10 @@ name|tmpw
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Paint edges"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1897,7 +1945,10 @@ name|tmpw
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Tileable"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1940,7 +1991,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Selects if the resulting image should be seamlessly tileable"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1997,7 +2051,10 @@ name|tmpw
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Drop Shadow"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2040,7 +2097,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Adds a shadow effect to each brush stroke"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2152,7 +2212,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"How much to \"darken\" the drop shadow"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2190,9 +2253,12 @@ expr_stmt|;
 name|tmpw
 operator|=
 name|gtk_label_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Shadow depth:"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -2306,7 +2372,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"The depth of the drop shadow, i.e. how far apart from the object it should be"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2344,9 +2413,12 @@ expr_stmt|;
 name|tmpw
 operator|=
 name|gtk_label_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Shadow blur:"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -2460,7 +2532,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"How much to blur the drop shadow"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2499,7 +2574,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Deviation threshold:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2614,7 +2692,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"A bailout-value for adaptive selections"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

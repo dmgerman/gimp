@@ -42,7 +42,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
@@ -118,7 +130,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2002ab0103
+DECL|enum|__anon2c485dfc0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -784,11 +796,17 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_animationplay"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin allows you to preview a GIMP layer-based animation."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -798,7 +816,10 @@ literal|"Adam D. Moss<adam@gimp.org>"
 argument_list|,
 literal|"1997, 1998..."
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Animation/Animation Playback"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -898,6 +919,15 @@ operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
 block|}
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -2410,7 +2440,10 @@ name|g_malloc
 argument_list|(
 name|strlen
 argument_list|(
+name|_
+argument_list|(
 literal|"Animation Playback: "
+argument_list|)
 argument_list|)
 operator|+
 name|strlen
@@ -2425,7 +2458,10 @@ name|strcpy
 argument_list|(
 name|windowname
 argument_list|,
+name|_
+argument_list|(
 literal|"Animation Playback: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|strcat
@@ -2482,7 +2518,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Close"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2551,7 +2590,10 @@ name|g_malloc
 argument_list|(
 name|strlen
 argument_list|(
+name|_
+argument_list|(
 literal|"Playback: "
+argument_list|)
 argument_list|)
 operator|+
 name|strlen
@@ -2573,7 +2615,10 @@ name|strcpy
 argument_list|(
 name|windowname
 argument_list|,
+name|_
+argument_list|(
 literal|"Playback: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|strcat
@@ -2748,7 +2793,10 @@ name|psbutton
 operator|=
 name|gtk_toggle_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Play/Stop"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -2793,7 +2841,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Rewind"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -2838,7 +2889,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Step"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -3131,7 +3185,10 @@ argument_list|(
 name|progress
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Frame %v of %u"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_progress_set_show_text
@@ -3847,7 +3904,10 @@ condition|)
 block|{
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"playback: Asked for frame number %d in a %d-frame animation!\n"
+argument_list|)
 argument_list|,
 call|(
 name|int

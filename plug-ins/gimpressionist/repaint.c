@@ -106,6 +106,12 @@ directive|include
 file|<libgimp/gimp.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimp/stdplugins-intl.h>
+end_include
+
 begin_decl_stmt
 DECL|variable|runningvals
 name|gimpressionist_vals_t
@@ -1134,7 +1140,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"What!? No brushes?!\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2310,7 +2319,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"Huh? Image size != alpha size?\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -5783,7 +5795,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"Internal error; Unknown orientationtype\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|on
@@ -5874,7 +5889,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"Internal error; Unknown sizetype\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|sn
@@ -7519,7 +7537,10 @@ operator|->
 name|child
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|" Update "
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|#
@@ -7536,7 +7557,10 @@ operator|->
 name|child
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|" Update "
+argument_list|)
 argument_list|)
 expr_stmt|;
 endif|#

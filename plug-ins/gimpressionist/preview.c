@@ -76,6 +76,12 @@ directive|include
 file|"ppmtool.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimp/stdplugins-intl.h>
+end_include
+
 begin_decl_stmt
 DECL|variable|previewprev
 name|GtkWidget
@@ -747,7 +753,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -828,7 +837,10 @@ name|tmpw
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|" Update "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -882,7 +894,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Refresh the Preview window"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -893,7 +908,10 @@ name|tmpw
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|" Reset "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -947,7 +965,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Revert to the original image"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

@@ -178,6 +178,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -280,7 +292,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29787e750108
+DECL|struct|__anon28d169490108
 block|{
 DECL|member|r
 DECL|member|g
@@ -367,7 +379,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29787e750208
+DECL|struct|__anon28d169490208
 typedef|typedef
 struct|struct
 block|{
@@ -4776,7 +4788,10 @@ name|gimp_layer_new
 argument_list|(
 name|new_image_id
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|width
 argument_list|,
@@ -4828,7 +4843,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Van Gogh (LIC)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -4959,7 +4977,10 @@ condition|)
 block|{
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"LIC: Couldn't allocate temporary buffer - out of memory!\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -5408,7 +5429,10 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Van Gogh (LIC)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -5514,7 +5538,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -5560,7 +5587,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Create new image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -5610,7 +5640,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Effect channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -5658,7 +5691,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Hue"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -5736,7 +5772,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Saturation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -5804,7 +5843,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Brightness"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -5879,9 +5921,12 @@ expr_stmt|;
 name|frame
 operator|=
 name|gtk_frame_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Effect operator"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
 argument_list|(
@@ -5928,7 +5973,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Derivative"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -6006,7 +6054,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Gradient"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -6082,7 +6133,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Convolve"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -6130,7 +6184,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"With white noise"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -6208,7 +6265,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"With source image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -6314,7 +6374,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Parameters"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -6380,7 +6443,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Effect image:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -6452,7 +6518,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Filter length:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -6563,7 +6632,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Noise magnitude:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -6674,7 +6746,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Integration steps:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -6785,7 +6860,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Minimum value:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -6897,7 +6975,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Maximum value:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -7044,7 +7125,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -7109,7 +7193,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -7362,11 +7449,17 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_lic"
 argument_list|,
+name|_
+argument_list|(
 literal|"Creates a Van Gogh effect (Line Integral Convolution)"
+argument_list|)
 argument_list|,
 literal|"No help yet"
 argument_list|,
@@ -7376,7 +7469,10 @@ literal|"Tom Bech& Federico Mena Quintero"
 argument_list|,
 literal|"Version 0.14, September 24 1997"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Artistic/Van Gogh (LIC)"
+argument_list|)
 argument_list|,
 literal|"RGB"
 argument_list|,
@@ -7451,6 +7547,23 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+if|if
+condition|(
+name|run_mode
+operator|==
+name|RUN_INTERACTIVE
+condition|)
+block|{
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+block|}
 operator|*
 name|nreturn_vals
 operator|=
@@ -7730,7 +7843,10 @@ parameter_list|)
 block|{
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Noninteractive not yet implemented! Sorry.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

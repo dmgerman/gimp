@@ -42,13 +42,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4fcdb90103
+DECL|enum|__anon29eaf9650103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -354,12 +366,18 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_animationoptimize"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin applies various optimizations to"
 literal|" a GIMP layer-based animation."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -369,7 +387,10 @@ literal|"Adam D. Moss<adam@gimp.org>"
 argument_list|,
 literal|"1997-98"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Animation/Animation Optimize"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -388,11 +409,14 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_animationunoptimize"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin 'simplifies' a GIMP layer-based"
 literal|" animation that has been AnimationOptimized.  This"
 literal|" makes the animation much easier to work with if,"
 literal|" for example, the optimized version is all you"
 literal|" have."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -402,7 +426,10 @@ literal|"Adam D. Moss<adam@gimp.org>"
 argument_list|,
 literal|"1997-98"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Animation/Animation UnOptimize"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -503,6 +530,9 @@ name|STATUS_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* Check the procedure name we were called with, to decide      what needs to be done. */
 if|if
 condition|(
@@ -971,13 +1001,19 @@ name|optimize
 condition|)
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Optimizing Animation..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"UnOptimizing Animation..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|width
@@ -1156,7 +1192,10 @@ operator|)
 condition|)
 name|g_error
 argument_list|(
+name|_
+argument_list|(
 literal|"Not enough memory to allocate buffers for optimization.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for

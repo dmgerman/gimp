@@ -57,6 +57,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -1451,11 +1463,17 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_next"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin exchanges current image with (next nubered) image from disk."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1465,7 +1483,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Goto Next"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -1484,7 +1505,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_prev"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin exchanges current image with (previous nubered) image from disk."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1494,7 +1518,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Goto Prev"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -1513,7 +1540,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_first"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin exchanges current image with (lowest nubered) image from disk."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1523,7 +1553,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Goto First"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -1542,7 +1575,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_last"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin exchanges current image with (highest nubered) image from disk."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1552,7 +1588,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Goto Last"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -1571,7 +1610,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_goto"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin exchanges current image with requested image (nr) from disk."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1581,7 +1623,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Goto Any"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -1600,7 +1645,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_del"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin deletes the given number of frames from disk including the current frame."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1610,7 +1658,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Delete Frames"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -1629,7 +1680,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_dup"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin duplicates the current frames on disk n-times."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1639,7 +1693,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Duplicate Frames"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -1658,7 +1715,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_exchg"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin exchanges content of the current with destination frame."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1668,7 +1728,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Exchange Frame"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -1687,7 +1750,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_move"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin copies layer(s) from one sourceimage to multiple frames on disk, varying position, size and opacity."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1697,7 +1763,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Move Path"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -1716,7 +1785,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_range_to_multilayer"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin creates a new image from the given range of frame-images. Each frame is converted to one layer in the new image, according to flatten_mode. (the frames on disk are not changed)."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1726,7 +1798,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Frames to Image"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -1745,7 +1820,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_range_flatten"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin flattens the given range of frame-images (on disk)"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1755,7 +1833,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Frames Flatten"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -1774,7 +1855,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_range_layer_del"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin deletes one layer in the given range of frame-images (on disk). exception: the last remaining layer of a frame is not deleted"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1784,7 +1868,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Frames LayerDel"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -1803,7 +1890,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_range_convert"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin converts the given range of frame-images to other fileformats (on disk) depending on extension"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1813,7 +1903,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Frames Convert"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -1832,7 +1925,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_anim_resize"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin resizes all anim_frames (images on disk) to the given new_width/new_height"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1842,7 +1938,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Frames Resize"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -1861,7 +1960,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_anim_crop"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin crops all anim_frames (images on disk) to the given new_width/new_height"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1871,7 +1973,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Frames Crop"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -1890,7 +1995,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_anim_scale"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin scales all anim_frames (images on disk) to the given new_width/new_height"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1900,7 +2008,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Frames Scale"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -1919,7 +2030,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_split"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin splits the current image to anim frames (images on disk). Each layer is saved as one frame"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1929,7 +2043,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Split Img to Frames"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -1948,7 +2065,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_mpeg_encode"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin calls mpeg_encode to convert anim frames to MPEG1, or just generates a param file for mpeg_encode. (mpeg_encode must be installed on your system)"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1958,7 +2078,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Frames MPEG1 encode"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -1977,7 +2100,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_mpeg2encode"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin calls mpeg2encode to convert anim frames to MPEG1 or MPEG2, or just generates a param file for mpeg2encode. (mpeg2encode must be installed on your system)"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1987,7 +2113,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Frames MPEG2 encode"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -2006,7 +2135,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_shift"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin exchanges frame numbers in the given range. (discfile frame_0001.xcf is renamed to frame_0002.xcf, 2->3, 3->4 ... n->1)"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -2016,7 +2148,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Framesequence Shift"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -2035,7 +2170,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_modify"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin performs a modifying action on each selected layer in each selected framerange"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -2045,7 +2183,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/AnimFrames/Frames Modify"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -2096,7 +2237,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon291285a80108
+DECL|struct|__anon28d72e4f0108
 block|{
 DECL|member|lock
 name|long
@@ -2427,6 +2568,23 @@ name|l_lock
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|run_mode
+operator|==
+name|RUN_NONINTERACTIVE
+condition|)
+block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|strcmp

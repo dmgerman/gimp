@@ -42,6 +42,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -240,11 +252,17 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_layers_run_animfilter"
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin calls another plugin for each layer of an image, varying its settings (to produce animated effects). The called plugin must work on a single drawable and must be able to RUN_WITH_LAST_VALS"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -254,7 +272,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_filter_version
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Animation/Filter all Layers"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -486,6 +507,9 @@ operator|=
 literal|'\0'
 expr_stmt|;
 block|}
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -502,6 +526,12 @@ literal|"plug_in_gap_layers_run_animfilter"
 argument_list|,
 name|l_plugin_name
 argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|INIT_I18N_UI
+argument_list|()
 expr_stmt|;
 block|}
 if|if

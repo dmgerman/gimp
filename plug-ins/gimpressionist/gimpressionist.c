@@ -129,6 +129,12 @@ directive|include
 file|<libgimp/gimp.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimp/stdplugins-intl.h>
+end_include
+
 begin_comment
 comment|/* #include<libgimp/gimpenv.h> */
 end_comment
@@ -423,7 +429,10 @@ else|#
 directive|else
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"*** Warning ***\nIt is highly recommended to add\n  (gimpressionist-path \"%s\")\n(or similar) to your gimprc file.\n"
+argument_list|)
 argument_list|,
 name|defaultpath
 argument_list|)
@@ -516,7 +525,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"*** Warning ***\nNo home directory!\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|home
@@ -2038,7 +2050,10 @@ argument_list|(
 name|window
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"The GIMPressionist!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2101,7 +2116,10 @@ name|tmpw
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2630,7 +2648,10 @@ argument_list|(
 name|window
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"The GIMPressionist!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -2872,7 +2893,10 @@ name|tmpw
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|" OK "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -2934,7 +2958,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Run with the selected settings"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2943,7 +2970,10 @@ name|tmpw
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|" Cancel "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -2993,7 +3023,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Quit the program"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3002,7 +3035,10 @@ name|tmpw
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|" About... "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -3052,7 +3088,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Show some information about program"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

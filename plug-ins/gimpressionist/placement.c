@@ -88,6 +88,12 @@ directive|include
 file|"ppmtool.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimp/stdplugins-intl.h>
+end_include
+
 begin_define
 DECL|macro|NUMPLACERADIO
 define|#
@@ -275,7 +281,10 @@ name|sprintf
 argument_list|(
 name|title
 argument_list|,
+name|_
+argument_list|(
 literal|"Placement"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|labelbox
@@ -470,7 +479,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Placement:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -541,7 +553,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Randomly"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -605,7 +620,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Place strokes randomly around the image"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -643,7 +661,10 @@ name|tmpw
 argument_list|)
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Evenly distributed"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -707,7 +728,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"The strokes are evenly distributed across the image"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -762,7 +786,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Stroke density:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -877,7 +904,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"The relative density of the brush strokes"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -888,7 +918,10 @@ name|tmpw
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Centerize"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -931,7 +964,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Focus the brush strokes around the center of the image"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

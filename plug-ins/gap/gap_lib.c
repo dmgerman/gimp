@@ -88,6 +88,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -2955,8 +2967,6 @@ specifier|static
 name|char
 modifier|*
 name|l_msg
-init|=
-literal|"You are using a fileformat != xcf\nSave Operations may result\nin loss of layerinformation"
 decl_stmt|;
 specifier|static
 name|char
@@ -2981,6 +2991,13 @@ decl_stmt|;
 name|GRunModeType
 name|l_run_mode
 decl_stmt|;
+name|l_msg
+operator|=
+name|_
+argument_list|(
+literal|"You are using a fileformat != xcf\nSave Operations may result\nin loss of layerinformation"
+argument_list|)
+expr_stmt|;
 comment|/* check if there are SAVE_AS_MODE settings (from privious calls within one gimp session) */
 name|l_save_as_mode
 operator|=
@@ -3019,7 +3036,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
+name|_
+argument_list|(
 literal|"CANCEL"
+argument_list|)
 expr_stmt|;
 name|l_argv
 index|[
@@ -3038,7 +3058,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
+name|_
+argument_list|(
 literal|"SAVE Flattened"
+argument_list|)
 expr_stmt|;
 name|l_argv
 index|[
@@ -3056,7 +3079,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
+name|_
+argument_list|(
 literal|"SAVE As Is"
+argument_list|)
 expr_stmt|;
 name|l_argv
 index|[
@@ -3075,7 +3101,10 @@ name|l_save_as_mode
 operator|=
 name|p_buttons_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"GAP Question"
+argument_list|)
 argument_list|,
 name|l_msg
 argument_list|,
@@ -5129,7 +5158,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Duplicating frames .."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -5933,7 +5965,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Renumber Framesequence .."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -6664,7 +6699,10 @@ name|sprintf
 argument_list|(
 name|l_title
 argument_list|,
+name|_
+argument_list|(
 literal|"Goto Frame (%ld/%ld)"
+argument_list|)
 argument_list|,
 name|ainfo_ptr
 operator|->
@@ -6679,7 +6717,10 @@ name|sprintf
 argument_list|(
 name|l_hline
 argument_list|,
+name|_
+argument_list|(
 literal|"Destination Frame Number (%ld  - %ld)"
+argument_list|)
 argument_list|,
 name|ainfo_ptr
 operator|->
@@ -6698,7 +6739,10 @@ name|l_title
 argument_list|,
 name|l_hline
 argument_list|,
+name|_
+argument_list|(
 literal|"Number :"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -6896,7 +6940,10 @@ name|sprintf
 argument_list|(
 name|l_title
 argument_list|,
+name|_
+argument_list|(
 literal|"Delete Frames (%ld/%ld)"
+argument_list|)
 argument_list|,
 name|ainfo_ptr
 operator|->
@@ -6911,7 +6958,10 @@ name|sprintf
 argument_list|(
 name|l_hline
 argument_list|,
+name|_
+argument_list|(
 literal|"Delete Frames from %ld to (Number)"
+argument_list|)
 argument_list|,
 name|ainfo_ptr
 operator|->
@@ -6946,7 +6996,10 @@ name|l_title
 argument_list|,
 name|l_hline
 argument_list|,
+name|_
+argument_list|(
 literal|"Number :"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -7082,7 +7135,10 @@ name|sprintf
 argument_list|(
 name|l_title
 argument_list|,
+name|_
+argument_list|(
 literal|"Duplicate Frames (%ld/%ld)"
+argument_list|)
 argument_list|,
 name|ainfo_ptr
 operator|->
@@ -7111,7 +7167,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"From :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -7171,7 +7230,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Source Range starts at this framenumber"
+argument_list|)
 expr_stmt|;
 name|p_init_arr_arg
 argument_list|(
@@ -7191,7 +7253,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"To :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -7251,7 +7316,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Source Range ends at this framenumber"
+argument_list|)
 expr_stmt|;
 name|p_init_arr_arg
 argument_list|(
@@ -7271,7 +7339,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"N-Times :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -7316,7 +7387,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Copy selected Range n-times  \n(you may type in Values> 99)"
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -7326,7 +7400,10 @@ name|p_array_dialog
 argument_list|(
 name|l_title
 argument_list|,
+name|_
+argument_list|(
 literal|"Duplicate Framerange"
+argument_list|)
 argument_list|,
 literal|3
 argument_list|,
@@ -7715,7 +7792,10 @@ name|sprintf
 argument_list|(
 name|l_title
 argument_list|,
+name|_
+argument_list|(
 literal|"Exchange current Frame (%ld)"
+argument_list|)
 argument_list|,
 name|ainfo_ptr
 operator|->
@@ -7726,7 +7806,10 @@ name|sprintf
 argument_list|(
 name|l_hline
 argument_list|,
+name|_
+argument_list|(
 literal|"With Frame (Number)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|l_dest
@@ -7737,7 +7820,10 @@ name|l_title
 argument_list|,
 name|l_hline
 argument_list|,
+name|_
+argument_list|(
 literal|"Number :"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -7867,7 +7953,10 @@ name|sprintf
 argument_list|(
 name|l_title
 argument_list|,
+name|_
+argument_list|(
 literal|"Framesequence Shift (%ld/%ld)"
+argument_list|)
 argument_list|,
 name|ainfo_ptr
 operator|->
@@ -7896,7 +7985,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"From :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -7956,7 +8048,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Affected Range starts at this framenumber"
+argument_list|)
 expr_stmt|;
 name|p_init_arr_arg
 argument_list|(
@@ -7976,7 +8071,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"To :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -8036,7 +8134,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Affected Range ends at this framenumber"
+argument_list|)
 expr_stmt|;
 name|p_init_arr_arg
 argument_list|(
@@ -8056,7 +8157,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"N-Shift :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -8114,7 +8218,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Renumber the affected framesequence     \n(numbers are shifted in circle by N)"
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -8124,7 +8231,10 @@ name|p_array_dialog
 argument_list|(
 name|l_title
 argument_list|,
+name|_
+argument_list|(
 literal|"Framesequence shift"
+argument_list|)
 argument_list|,
 literal|3
 argument_list|,

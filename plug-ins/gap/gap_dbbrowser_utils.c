@@ -10,6 +10,18 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gap_dbbrowser_utils.h"
 end_include
 
@@ -106,7 +118,10 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
+name|_
+argument_list|(
 literal|"GAP Animated Filter apply"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -187,7 +202,10 @@ operator|->
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Animated Filter apply (init)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -483,7 +501,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Search :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -642,7 +663,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Gen Code by name"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -704,7 +728,10 @@ name|name_button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Search by name"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -773,7 +800,10 @@ name|blurb_button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Search by blurb"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1004,7 +1034,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1597,7 +1630,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Name :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1717,7 +1753,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Blurb :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1882,7 +1921,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"In :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2226,7 +2268,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Out :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2583,7 +2628,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Help :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2881,7 +2929,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Author :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2994,7 +3045,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Date :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3107,7 +3161,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Copyright :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3719,7 +3776,10 @@ operator|->
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Animated Filter apply (by name - please wait)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|query
@@ -3837,7 +3897,10 @@ operator|->
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Animated Filter apply (by blurb - please wait)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_query_database
@@ -3883,7 +3946,10 @@ operator|->
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Animated Filter apply (please wait)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_query_database
@@ -4109,7 +4175,10 @@ operator|->
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Animated Filter apply"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_clist_thaw

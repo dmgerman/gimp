@@ -41,6 +41,18 @@ directive|include
 file|"ppmtool.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/stdplugins-intl.h>
+end_include
+
 begin_define
 DECL|macro|MAPFILE
 define|#
@@ -3117,7 +3129,10 @@ argument_list|(
 name|omwindow
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Orientation Map Editor"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -3164,7 +3179,10 @@ name|tmpw
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Vectors"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -3248,7 +3266,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"The vector-field. Left-click to move selected vector, Right-click to point it towards mouse, Middle-click to add a new vector."
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3427,7 +3448,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Adjust the preview's brightness"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3438,7 +3462,10 @@ name|tmpw
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -3616,7 +3643,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Select previous vector"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3675,7 +3705,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Select next vector"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3684,7 +3717,10 @@ name|tmpw
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Add"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3734,7 +3770,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Add new vector"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3743,7 +3782,10 @@ name|tmpw
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Kill"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3793,7 +3835,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Delete selected vector"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3843,7 +3888,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Angle:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3965,7 +4013,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Change the angle of the selected vector"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3974,7 +4025,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Strength:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -4096,7 +4150,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Change the strength of the selected vector"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4105,7 +4162,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Type:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -4186,7 +4246,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Normal"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4247,7 +4310,10 @@ index|]
 argument_list|)
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Vortex"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4352,7 +4418,10 @@ index|]
 argument_list|)
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Vortex2"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4413,7 +4482,10 @@ index|]
 argument_list|)
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Vortex3"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4502,7 +4574,10 @@ name|tmpw
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4552,7 +4627,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Apply and exit the editor"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4561,7 +4639,10 @@ name|tmpw
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Apply"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4611,7 +4692,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Apply, but stay inside the editor"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4620,7 +4704,10 @@ name|tmpw
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4670,7 +4757,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Cancel all changes and exit"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4720,7 +4810,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Strength exp.:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -4844,7 +4937,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Change the exponent of the strength"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4853,7 +4949,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Angle offset:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -4977,7 +5076,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Offset all vectors with a given angle"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4988,7 +5090,10 @@ name|tmpw
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Voronoi"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach_defaults
@@ -5066,7 +5171,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Voronoi-mode makes only the vector closest to the given point have any influence"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

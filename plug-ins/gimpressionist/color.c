@@ -79,6 +79,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<libgimp/stdplugins-intl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpressionist.h"
 end_include
 
@@ -265,7 +271,10 @@ name|sprintf
 argument_list|(
 name|title
 argument_list|,
+name|_
+argument_list|(
 literal|"Color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|labelbox
@@ -460,7 +469,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Color:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -531,7 +543,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Average under brush"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -595,7 +610,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Color is computed from the average of all pixels under the brush"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -633,7 +651,10 @@ name|tmpw
 argument_list|)
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Center of brush"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -697,7 +718,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Samples the color from the pixel in the center of the brush"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -752,7 +776,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Color noise:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -867,7 +894,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Adds random noise to the color"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

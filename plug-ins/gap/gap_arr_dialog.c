@@ -57,6 +57,18 @@ directive|include
 file|"libgimp/gimpui.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimp.h"
+end_include
+
 begin_comment
 comment|/* private includes */
 end_comment
@@ -88,7 +100,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27ddef5e0108
+DECL|struct|__anon2ad1d84b0108
 typedef|typedef
 struct|struct
 block|{
@@ -116,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ddef5e0208
+DECL|struct|__anon2ad1d84b0208
 block|{
 DECL|member|arr_ptr
 name|t_arr_arg
@@ -134,7 +146,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27ddef5e0308
+DECL|struct|__anon2ad1d84b0308
 typedef|typedef
 struct|struct
 block|{
@@ -1343,7 +1355,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"File-Browser"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -3213,7 +3228,10 @@ condition|)
 block|{
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"pair_flt_create_value: Bad FloatFormat ignored %s\n"
+argument_list|)
 argument_list|,
 name|arr_ptr
 operator|->
@@ -4044,7 +4062,10 @@ condition|)
 block|{
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"pair_int_create_value: Bad IntFormat ignored %s\n"
+argument_list|)
 argument_list|,
 name|arr_ptr
 operator|->
@@ -4848,7 +4869,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -4951,7 +4975,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"CLOSE"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -5024,7 +5051,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Enter Values"
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -5151,7 +5181,10 @@ name|NULL
 condition|)
 name|l_label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Value: "
+argument_list|)
 expr_stmt|;
 else|else
 name|l_label_txt
@@ -5398,7 +5431,10 @@ name|WGT_ACT_BUTTON
 case|:
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"WGT_ACT_BUTTON not implemented yet, widget type ignored\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5406,7 +5442,10 @@ default|default:
 comment|/* undefined widget type */
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Unknown widget type %d ignored\n"
+argument_list|)
 argument_list|,
 name|arr_ptr
 operator|->
@@ -5488,7 +5527,10 @@ name|NULL
 condition|)
 name|l_label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Value: "
+argument_list|)
 expr_stmt|;
 else|else
 name|l_label_txt
@@ -5962,7 +6004,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 expr_stmt|;
 name|b_argv
 index|[
@@ -5980,7 +6025,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 expr_stmt|;
 name|b_argv
 index|[
@@ -6064,12 +6112,18 @@ literal|1
 condition|)
 name|frame_txt
 operator|=
+name|_
+argument_list|(
 literal|"Press Button"
+argument_list|)
 expr_stmt|;
 else|else
 name|frame_txt
 operator|=
+name|_
+argument_list|(
 literal|"Select"
+argument_list|)
 expr_stmt|;
 name|p_init_arr_arg
 argument_list|(

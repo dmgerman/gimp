@@ -52,6 +52,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -199,19 +211,40 @@ literal|7
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Pattern is equal to LayerName"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Pattern is Start of LayerName"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Pattern is End of Layername"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Pattern is a Part of LayerName"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Pattern is LayerstackNumber List"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Pattern is REVERSE-stack List"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"All Visible (ignore Pattern)"
+argument_list|)
 block|}
 decl_stmt|;
 specifier|static
@@ -223,19 +256,40 @@ literal|7
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"select all Layers where Layername is equal to Pattern"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"select all Layers where Layername starts with Pattern"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"select all Layers where Layername ends up with Pattern"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"select all Layers where Layername contains Pattern"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"select Layerstack positions.\n0, 4-5, 8\nwhere 0 == Top-layer"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"select Layerstack positions.\n0, 4-5, 8\nwhere 0 == BG-layer"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"select all visible Layers"
+argument_list|)
 block|}
 decl_stmt|;
 comment|/* action items what to do with the selected layer(s) */
@@ -248,34 +302,143 @@ literal|13
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"set Layer(s) visible"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"set Layer(s) invisible"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"set Layer(s) linked"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"set Layer(s) unlinked"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"raise Layer(s)"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"lower Layer(s)"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"merge Layer(s) expand as necessary"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"merge Layer(s) clipped to image"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"merge Layer(s) clipped to bg-layer"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"apply filter on Layer(s)"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"duplicate Layer(s)"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"delete Layer(s)"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"rename Layer(s)"
+argument_list|)
 block|}
 decl_stmt|;
 comment|/*                                                                      static char *action_help[13]  = {"set all selected layers visible",                                   "set all selected layers  invisible",                                   "set all selected layers  linked",                                   "set all selected layers  unlinked",                                   "raise all selected layers",                                   "lower all selected layers",                                   "merge expand as necessary",                                   "merge clipped to image",                                   "merge clipped to bg-layer",                                   "APPLY FILTER to all selected layers",                                   "duplicate all selected layers",                                   "delete REMOVES all selected layers",                                   "rename all selected layers\nto NewLayername."                                   }; */
+name|int
+name|get_textize_loop
+decl_stmt|;
+for|for
+control|(
+name|get_textize_loop
+operator|=
+literal|0
+init|;
+name|get_textize_loop
+operator|<
+literal|7
+condition|;
+name|get_textize_loop
+operator|++
+control|)
+block|{
+name|sel_args
+index|[
+name|get_textize_loop
+index|]
+operator|=
+name|gettext
+argument_list|(
+name|sel_args
+index|[
+name|get_textize_loop
+index|]
+argument_list|)
+expr_stmt|;
+name|sel_help
+index|[
+name|get_textize_loop
+index|]
+operator|=
+name|gettext
+argument_list|(
+name|sel_help
+index|[
+name|get_textize_loop
+index|]
+argument_list|)
+expr_stmt|;
+block|}
+for|for
+control|(
+name|get_textize_loop
+operator|=
+literal|0
+init|;
+name|get_textize_loop
+operator|<
+literal|13
+condition|;
+name|get_textize_loop
+operator|++
+control|)
+name|action_args
+index|[
+name|get_textize_loop
+index|]
+operator|=
+name|gettext
+argument_list|(
+name|action_args
+index|[
+name|get_textize_loop
+index|]
+argument_list|)
+expr_stmt|;
 name|l_rc
 operator|=
 operator|-
@@ -285,7 +448,10 @@ name|sprintf
 argument_list|(
 name|l_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"Perform function on one or more Layer(s)\nin all frames of the selected framerange\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* the 3 Action Buttons */
@@ -296,7 +462,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 expr_stmt|;
 name|b_argv
 index|[
@@ -314,7 +483,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 expr_stmt|;
 name|b_argv
 index|[
@@ -377,7 +549,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"From Frame:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -386,7 +561,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"first handled frame"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -457,7 +635,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"To   Frame:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -466,7 +647,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"last handled frame"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -529,7 +713,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Select Layer(s):"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -593,7 +780,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Select Pattern:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -612,7 +802,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"String to identify layer names    \nor layerstack position numbers\n0,3-5"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -651,7 +844,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Case sensitive"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -660,7 +856,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Lowercase and UPPERCASE letters are considered as different"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -690,7 +889,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Invert Selection"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -699,7 +901,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Perform actions on all unselected Layers"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -729,7 +934,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Function :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -757,7 +965,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Function to be performed on all selected layers"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -792,7 +1003,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"New Layername:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -811,7 +1025,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"New Layername for all handled layers \n[####] is replaced by frame number\n(is used on function rename only)"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -835,9 +1052,15 @@ name|l_rc
 operator|=
 name|p_array_std_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Frames Modify"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Settings"
+argument_list|)
 argument_list|,
 literal|9
 argument_list|,
@@ -985,7 +1208,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
+name|_
+argument_list|(
 literal|"Continue"
+argument_list|)
 expr_stmt|;
 name|l_but_argv
 index|[
@@ -1003,7 +1229,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 expr_stmt|;
 name|l_but_argv
 index|[
@@ -1072,7 +1301,10 @@ name|sprintf
 argument_list|(
 name|l_msg
 argument_list|,
+name|_
+argument_list|(
 literal|"2.nd call of %s\n(define end-settings)"
+argument_list|)
 argument_list|,
 name|filter_procname
 argument_list|)
@@ -1084,7 +1316,10 @@ name|sprintf
 argument_list|(
 name|l_msg
 argument_list|,
+name|_
+argument_list|(
 literal|"Non-Interactive call of %s\n(for all selected layers)"
+argument_list|)
 argument_list|,
 name|filter_procname
 argument_list|)
@@ -1094,7 +1329,10 @@ name|l_continue
 operator|=
 name|p_array_std_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Animated Filter apply"
+argument_list|)
 argument_list|,
 name|l_msg
 argument_list|,
@@ -2486,11 +2724,20 @@ if|if
 condition|(
 name|gap_db_browser_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Select Filter for Animated frames-apply"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Apply Constant"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Apply Varying"
+argument_list|)
 argument_list|,
 name|p_constraint_proc
 argument_list|,
@@ -2940,7 +3187,10 @@ name|p_msg_win
 argument_list|(
 name|RUN_INTERACTIVE
 argument_list|,
+name|_
+argument_list|(
 literal|"GAP Modify: No layer selected in last handled frame\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -3251,7 +3501,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Modifying Frames/Layer(s) .."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3582,7 +3835,10 @@ name|p_msg_win
 argument_list|(
 name|RUN_INTERACTIVE
 argument_list|,
+name|_
+argument_list|(
 literal|"No selected Layer in start frame\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto

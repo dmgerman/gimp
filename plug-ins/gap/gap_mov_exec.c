@@ -64,6 +64,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -658,7 +670,10 @@ name|dst_ainfo_ptr
 operator|->
 name|run_mode
 argument_list|,
+name|_
+argument_list|(
 literal|"No Source Image was selected\n(Please open a 2nd Image of the same type before opening Move Path)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -683,7 +698,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Copying Layers into Frames .."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

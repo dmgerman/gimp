@@ -34,7 +34,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -42,7 +54,7 @@ comment|/* --- Typedefs --- */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b72fbb70108
+DECL|struct|__anon2b44c3ed0108
 typedef|typedef
 struct|struct
 block|{
@@ -61,7 +73,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b72fbb70208
+DECL|struct|__anon2b44c3ed0208
 typedef|typedef
 struct|struct
 block|{
@@ -347,13 +359,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_apply_canvas"
 argument_list|,
+name|_
+argument_list|(
 literal|"Adds a canvas texture map to the picture"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This function applies a canvas texture map to the drawable."
+argument_list|)
 argument_list|,
 literal|"Karl-Johan Andersson"
 argument_list|,
@@ -363,7 +384,10 @@ argument_list|,
 comment|/* Copyright */
 literal|"1997"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Artistic/Apply Canvas"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -468,6 +492,23 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
+if|if
+condition|(
+name|run_mode
+operator|==
+name|RUN_INTERACTIVE
+condition|)
+block|{
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+block|}
 comment|/*  Get the specified drawable  */
 name|drawable
 operator|=
@@ -836,7 +877,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Struc"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -881,7 +925,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -943,7 +990,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1044,7 +1094,10 @@ name|oframe
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Filter options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1107,7 +1160,10 @@ name|iframe
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Direction"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1177,13 +1233,25 @@ literal|4
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Top-right"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Top-left"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Bottom-left"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Bottom-right"
+argument_list|)
 block|}
 decl_stmt|;
 name|button
@@ -1224,10 +1292,13 @@ name|button
 argument_list|)
 argument_list|)
 argument_list|,
+name|gettext
+argument_list|(
 name|name
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -1304,7 +1375,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Depth"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment

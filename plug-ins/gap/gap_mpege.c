@@ -52,6 +52,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -252,7 +264,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Conditions to run mpeg_encode 1.5:"
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -268,7 +283,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Conditions to run mpeg2encode 1.2:"
+argument_list|)
 expr_stmt|;
 block|}
 name|l_idx
@@ -315,7 +333,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"1.) mpeg_encode 1.5 must be installed"
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -331,7 +352,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"1.) mpeg2encode 1.2 must be installed"
+argument_list|)
 expr_stmt|;
 block|}
 name|l_idx
@@ -355,7 +379,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"    you can get mpeg_encode at"
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -371,7 +398,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"    you can get mpeg2encode at http://www.mpeg.org/MSSG"
+argument_list|)
 expr_stmt|;
 block|}
 name|l_idx
@@ -395,7 +425,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"    ftp://mm-ftp.cs.berkeley.edu/pub/multimedia/mpeg/bmt1r1.tar.gz"
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -411,7 +444,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"   or at ftp://ftp.mpeg.org/pub/mpeg/mssg "
+argument_list|)
 expr_stmt|;
 block|}
 name|l_idx
@@ -435,7 +471,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"2.) You need a series of single Images on disk (AnimFrames)"
+argument_list|)
 expr_stmt|;
 name|l_idx
 operator|++
@@ -458,7 +497,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"    all with fileformat JPEG (or YUV or PNM or PPM)"
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -474,7 +516,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"   all with fileformat PPM (or YUV)"
+argument_list|)
 expr_stmt|;
 block|}
 name|l_idx
@@ -498,7 +543,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"    (use 'Frames Convert' from the AnimFrames Menu"
+argument_list|)
 expr_stmt|;
 name|l_idx
 operator|++
@@ -521,7 +569,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"    or 'Split Img to Frames' from the AnimFrames Menu)"
+argument_list|)
 expr_stmt|;
 name|l_idx
 operator|++
@@ -544,7 +595,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"3.) All Images must have the same size,"
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -574,7 +628,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"    width and height must be a multiple of 16"
+argument_list|)
 expr_stmt|;
 name|l_idx
 operator|++
@@ -597,7 +654,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"    (use Scale or Crop from the AnimFrames Menu)"
+argument_list|)
 expr_stmt|;
 block|}
 name|l_idx
@@ -634,7 +694,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
+name|_
+argument_list|(
 literal|"CANCEL"
+argument_list|)
 expr_stmt|;
 name|b_argv
 index|[
@@ -653,7 +716,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 expr_stmt|;
 name|b_argv
 index|[
@@ -668,7 +734,10 @@ name|l_rc
 operator|=
 name|p_array_std_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"MPEG_ENCODE Information"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -743,6 +812,12 @@ decl_stmt|;
 name|char
 modifier|*
 name|l_str
+decl_stmt|;
+specifier|static
+name|int
+name|gettextize_loop
+init|=
+literal|0
 decl_stmt|;
 specifier|static
 name|char
@@ -880,11 +955,40 @@ literal|2
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"generate MPEG1 (ISO/IEC 11172-2) stream"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"generate MPEG2 (ISO/IEC DIS 13818-2) stream"
+argument_list|)
 block|}
 decl_stmt|;
+for|for
+control|(
+init|;
+name|gettextize_loop
+operator|<
+literal|2
+condition|;
+name|gettextize_loop
+operator|++
+control|)
+name|mpeg_help
+index|[
+name|gettextize_loop
+index|]
+operator|=
+name|gettext
+argument_list|(
+name|mpeg_help
+index|[
+name|gettextize_loop
+index|]
+argument_list|)
+expr_stmt|;
 name|l_rc
 operator|=
 operator|-
@@ -898,7 +1002,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 expr_stmt|;
 name|b_argv
 index|[
@@ -917,7 +1024,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
+name|_
+argument_list|(
 literal|"GenParams"
+argument_list|)
 expr_stmt|;
 name|b_argv
 index|[
@@ -1038,7 +1148,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"From Frame:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1047,7 +1160,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"first handled frame"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1118,7 +1234,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"To   Frame:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1127,7 +1246,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"last handled frame"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1189,7 +1311,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Framerate :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1198,7 +1323,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"framerate in frames/second"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1254,7 +1382,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Bitrate:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1263,7 +1394,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"used for constant bitrates (bit/sec)                  \n(low rate gives good compression + bad quality)"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1334,7 +1468,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Outputfile:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1353,7 +1490,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Name of the resulting MPEG outputfile"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1401,7 +1541,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Paramfile:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1420,7 +1563,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Name of the Encoder-Parameterfile\n(is generated)"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1468,7 +1614,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Startscript:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1487,7 +1636,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Name of the Startscript           \n(is generated/executed)"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1525,7 +1677,10 @@ name|sprintf
 argument_list|(
 name|l_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"Generate parameterfile for mpeg_encode 1.5\n(the freely distributed Berkeley MPEG-1 Video  Encoder.)\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|p_init_arr_arg
@@ -1546,7 +1701,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Constant Bitrate :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1555,7 +1713,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Iqnore I/P/QSCALE values and use constant bit-rate)"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1591,7 +1752,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Pattern:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1610,7 +1774,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"How to encode MPEG framesequence (I/P/B frames)"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1664,7 +1831,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"IQSCALE:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1673,7 +1843,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Quality scale for I-Frames                       \n(1 = best quality, 31 = best comression)"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1729,7 +1902,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"PQSCALE:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1738,7 +1914,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Quality scale for P-Frames                  \n(1 = best quality, 31 = best comression)"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1794,7 +1973,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"BQSCALE:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1803,7 +1985,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Quality scale for B-Frames                  \n(1 = best quality, 31 = best comression)"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1850,7 +2035,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"P-Search :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1859,7 +2047,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Search Algorithmus used for P-frames"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1906,7 +2097,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"B-Search :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1915,7 +2109,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Search Algorithmus used for B-frames"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1948,9 +2145,15 @@ name|l_rc
 operator|=
 name|p_array_std_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Gen MPEG_ENCODE Parameters"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Encode Values"
+argument_list|)
 argument_list|,
 literal|15
 argument_list|,
@@ -2049,7 +2252,10 @@ name|sprintf
 argument_list|(
 name|l_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"Generate parameterfile for mpeg2encode 1.2\n(MPEG-2 Video  Encoder.)\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|p_init_arr_arg
@@ -2070,7 +2276,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"MPEG-type :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -2126,7 +2335,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Videoformat :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -2135,7 +2347,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Videoformat"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -2178,9 +2393,15 @@ name|l_rc
 operator|=
 name|p_array_std_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Gen MPEG2ENCODE Parameters"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Encode Values"
+argument_list|)
 argument_list|,
 literal|10
 argument_list|,
@@ -2797,7 +3018,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"cant open MPEG Paramfile %s for write\n"
+argument_list|)
 argument_list|,
 name|mp_ptr
 operator|->
@@ -5111,7 +5335,10 @@ name|strcat
 argument_list|(
 name|l_errlist
 argument_list|,
+name|_
+argument_list|(
 literal|"\nWARNING: mpeg_encode does not support Fileformat "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|strcat
@@ -5139,7 +5366,10 @@ name|strcat
 argument_list|(
 name|l_errlist
 argument_list|,
+name|_
+argument_list|(
 literal|"\nERROR: width not a multiple of 16"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -5158,7 +5388,10 @@ name|strcat
 argument_list|(
 name|l_errlist
 argument_list|,
+name|_
+argument_list|(
 literal|"\nERROR: height not a multiple of 16"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -5181,7 +5414,10 @@ name|strcat
 argument_list|(
 name|l_errlist
 argument_list|,
+name|_
+argument_list|(
 literal|"\nWARNING: mpeg2encode does not support Fileformat "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|strcat
@@ -5208,7 +5444,10 @@ name|strcat
 argument_list|(
 name|l_errlist
 argument_list|,
+name|_
+argument_list|(
 literal|"\nERROR: invoked from a single image, animframe required"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -5290,7 +5529,10 @@ else|else
 block|{
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"sorry folks, NON_INTERACTIVE call .. not implemented yet\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|l_rc

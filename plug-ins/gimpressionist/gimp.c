@@ -53,6 +53,18 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -403,13 +415,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
+name|_
+argument_list|(
 literal|"Performs various artistic operations on an image"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Performs various artistic operations on an image"
+argument_list|)
 argument_list|,
 literal|"Vidar Madsen<vidar@prosalg.no>"
 argument_list|,
@@ -417,7 +438,10 @@ literal|"Vidar Madsen"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Artistic/GIMPressionist"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -641,6 +665,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|gimpressionist_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -660,6 +687,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|g_message
 argument_list|(
 literal|"GIMPressionist: RUN_NONINTERACTIVE not implemented yet!\n"
@@ -673,6 +703,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|gimpressionist_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -1637,7 +1670,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Painting..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

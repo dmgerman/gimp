@@ -52,6 +52,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -263,7 +275,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"backup to file"
+argument_list|)
 expr_stmt|;
 name|l_argv
 index|[
@@ -282,7 +297,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Make backup of the image after each step"
+argument_list|)
 expr_stmt|;
 name|l_argv
 index|[
@@ -309,7 +327,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
+name|_
+argument_list|(
 literal|"Continue"
+argument_list|)
 expr_stmt|;
 name|l_but_argv
 index|[
@@ -327,7 +348,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 expr_stmt|;
 name|l_but_argv
 index|[
@@ -433,7 +457,10 @@ name|sprintf
 argument_list|(
 name|l_msg
 argument_list|,
+name|_
+argument_list|(
 literal|"2.nd call of %s\n(define end-settings)"
+argument_list|)
 argument_list|,
 name|plugin_name
 argument_list|)
@@ -445,7 +472,10 @@ name|sprintf
 argument_list|(
 name|l_msg
 argument_list|,
+name|_
+argument_list|(
 literal|"Non-Interactive call of %s\n(for all layers inbetween)"
+argument_list|)
 argument_list|,
 name|plugin_name
 argument_list|)
@@ -463,7 +493,10 @@ name|l_continue
 operator|=
 name|p_array_std_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Animated Filter apply"
+argument_list|)
 argument_list|,
 name|l_msg
 argument_list|,
@@ -612,7 +645,10 @@ else|else
 block|{
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Error: Plugin %s has changed Nr. of layers from %d to %d\ncould not restore Layer visibilty.\n"
+argument_list|)
 argument_list|,
 name|plugin_name
 argument_list|,
@@ -686,7 +722,10 @@ condition|)
 block|{
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Warning: cant get layers (maybe the image was closed)\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -713,7 +752,10 @@ condition|)
 block|{
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Error: Plugin %s has changed Nr. of layers from %d to %d\nAnim Filter apply stopped.\n"
+argument_list|)
 argument_list|,
 name|plugin_name
 argument_list|,
@@ -891,7 +933,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"ERROR: Plugin not available or wrong type %s\n"
+argument_list|)
 argument_list|,
 name|plugin_name
 argument_list|)
@@ -922,7 +967,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Applying Filter to all Layers .."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -958,7 +1006,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"ERROR: need at 1 Layers to apply plugin !\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1109,7 +1160,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"ERROR: fork failed !\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1882,7 +1936,10 @@ condition|)
 block|{
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Saving image to backupfile:%s step = %d\n"
+argument_list|)
 argument_list|,
 name|l_step_backup_file
 argument_list|,
@@ -2006,11 +2063,20 @@ if|if
 condition|(
 name|gap_db_browser_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Select Filter for Animated apply"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Apply Constant"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Apply Varying"
+argument_list|)
 argument_list|,
 name|p_constraint_proc
 argument_list|,

@@ -88,6 +88,12 @@ directive|include
 file|"ppmtool.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimp/stdplugins-intl.h>
+end_include
+
 begin_decl_stmt
 DECL|variable|paperlist
 name|GtkWidget
@@ -506,7 +512,10 @@ name|sprintf
 argument_list|(
 name|fname
 argument_list|,
+name|_
+argument_list|(
 literal|"Paper/%s"
+argument_list|)
 argument_list|,
 name|l
 argument_list|)
@@ -576,7 +585,10 @@ name|sprintf
 argument_list|(
 name|title
 argument_list|,
+name|_
+argument_list|(
 literal|"Paper"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|labelbox
@@ -865,7 +877,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Paper Preview:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -938,7 +953,10 @@ name|tmpw
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Invert"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -998,7 +1016,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Inverts the Papers texture"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1025,7 +1046,10 @@ name|tmpw
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Overlay"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1068,7 +1092,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Applies the paper as it is (without embossing it)"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1153,7 +1180,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Scale:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1181,7 +1211,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Relief:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1326,7 +1359,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Specifies the scale of the texture (in percent of original file)"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1422,7 +1458,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Specifies the amount of embossing to apply to the image (in percent)"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

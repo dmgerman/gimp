@@ -2,17 +2,14 @@ begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__STDPLUGINS
-name|-
-name|INTL_H__
+name|__STDPLUGINS_INTL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__STDPLUGINS
+DECL|macro|__STDPLUGINS_INTL_H__
 define|#
 directive|define
-name|__STDPLUGINS
-value|-INTL_H__
+name|__STDPLUGINS_INTL_H__
 end_define
 
 begin_include
@@ -79,7 +76,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __STDPLUGINS-INTL_H__ */
+comment|/* __STDPLUGINS_INTL_H__ */
 end_comment
 
 end_unit

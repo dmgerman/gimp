@@ -88,6 +88,12 @@ directive|include
 file|"gimpressionist.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimp/stdplugins-intl.h>
+end_include
+
 begin_function
 DECL|function|readline (FILE * f,char * buffer,int len)
 name|int
@@ -228,14 +234,20 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"(When allocating %u bytes.)\n"
+argument_list|)
 argument_list|,
 name|len
 argument_list|)
 expr_stmt|;
 name|fatal
 argument_list|(
+name|_
+argument_list|(
 literal|"Out of memory!\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1580,7 +1592,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"loadgbr: Unable to open file \"%s\"!\n"
+argument_list|)
 argument_list|,
 name|fn
 argument_list|)
@@ -1890,7 +1905,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"loadppm: Unable to open file \"%s\"!\n"
+argument_list|)
 argument_list|,
 name|fn
 argument_list|)
@@ -1943,7 +1961,10 @@ argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"loadppm: File \"%s\" not PPM/PGM? (line=\"%s\")%c\n"
+argument_list|)
 argument_list|,
 name|fn
 argument_list|,
@@ -2024,7 +2045,10 @@ condition|)
 block|{
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"loadppm: File \"%s\" not valid PPM/PGM? (line=\"%s\")%c\n"
+argument_list|)
 argument_list|,
 name|fn
 argument_list|,

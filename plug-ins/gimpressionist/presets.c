@@ -94,6 +94,12 @@ directive|include
 file|"ppmtool.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimp/stdplugins-intl.h>
+end_include
+
 begin_decl_stmt
 DECL|variable|presetnameentry
 name|GtkWidget
@@ -287,7 +293,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"Error opening file \"%s\" for reading!%c\n"
+argument_list|)
 argument_list|,
 name|fname
 argument_list|,
@@ -1947,7 +1956,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"Error opening file \"%s\" for reading!\n"
+argument_list|)
 argument_list|,
 name|fn
 argument_list|)
@@ -2545,7 +2557,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Description:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2673,7 +2688,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect_object
@@ -2721,7 +2739,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect_object
@@ -2852,7 +2873,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"Internal error: (savepreset) thispath == NULL"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2893,7 +2917,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"Error opening file \"%s\" for writing!%c\n"
+argument_list|)
 argument_list|,
 name|fname
 argument_list|,
@@ -3849,7 +3876,10 @@ name|sprintf
 argument_list|(
 name|title
 argument_list|,
+name|_
+argument_list|(
 literal|"Presets"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|labelbox
@@ -4031,7 +4061,10 @@ name|tmpw
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|" Save current "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4081,7 +4114,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Save the current settings to the specified file"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4297,7 +4333,10 @@ name|tmpw
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|" Apply "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4347,7 +4386,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Reads the selected Preset into memory"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4356,7 +4398,10 @@ name|tmpw
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|" Delete "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4406,7 +4451,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Deletes the selected Preset"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4415,7 +4463,10 @@ name|tmpw
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|" Refresh "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4465,7 +4516,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Reread the directory of Presets"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4476,7 +4530,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"(Desc)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4504,7 +4561,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"\nIf you come up with some nice Presets,\n\ (or Brushes and Papers for that matter)\n\ feel free to send them to me<vidar@prosalg.no>\n\ for inclusion into the next release!\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

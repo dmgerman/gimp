@@ -64,6 +64,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -224,7 +236,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"New Width :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -280,7 +295,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"New Height :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -336,7 +354,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Offest X :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -392,7 +413,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Offest Y :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -440,13 +464,19 @@ name|ASIZ_CROP
 case|:
 name|title
 operator|=
+name|_
+argument_list|(
 literal|"Crop AnimFrames (all)"
+argument_list|)
 expr_stmt|;
 name|sprintf
 argument_list|(
 name|hline
 argument_list|,
+name|_
+argument_list|(
 literal|"Crop (original %dx%d)"
+argument_list|)
 argument_list|,
 name|l_width
 argument_list|,
@@ -517,13 +547,19 @@ name|ASIZ_RESIZE
 case|:
 name|title
 operator|=
+name|_
+argument_list|(
 literal|"Resize AnimFrames (all)"
+argument_list|)
 expr_stmt|;
 name|sprintf
 argument_list|(
 name|hline
 argument_list|,
+name|_
+argument_list|(
 literal|"Resize (original %dx%d)"
+argument_list|)
 argument_list|,
 name|l_width
 argument_list|,
@@ -558,13 +594,19 @@ break|break;
 default|default:
 name|title
 operator|=
+name|_
+argument_list|(
 literal|"Scale AnimFrames (all)"
+argument_list|)
 expr_stmt|;
 name|sprintf
 argument_list|(
 name|hline
 argument_list|,
+name|_
+argument_list|(
 literal|"Scale (original %dx%d)"
+argument_list|)
 argument_list|,
 name|l_width
 argument_list|,
@@ -851,7 +893,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"From :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -922,7 +967,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"To :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -993,7 +1041,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Layerstack :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1202,15 +1253,56 @@ literal|4
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"KEEP_TYPE"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Conv to RGB"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Conv to GRAY"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Conv to INDEXED"
+argument_list|)
 block|}
 decl_stmt|;
+specifier|static
+name|int
+name|gettextize_loop
+init|=
+literal|0
+decl_stmt|;
+for|for
+control|(
+init|;
+name|gettextize_loop
+operator|<
+literal|4
+condition|;
+name|gettextize_loop
+operator|++
+control|)
+name|radio_args
+index|[
+name|gettextize_loop
+index|]
+operator|=
+name|gettext
+argument_list|(
+name|radio_args
+index|[
+name|gettextize_loop
+index|]
+argument_list|)
+expr_stmt|;
 name|p_init_arr_arg
 argument_list|(
 operator|&
@@ -1238,7 +1330,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"From Frame:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1247,7 +1342,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"first handled frame"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1318,7 +1416,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"To   Frame:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1327,7 +1428,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"last handled frame"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1389,7 +1493,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"\nSelect destination fileformat by extension\noptionally convert imagetype\n"
+argument_list|)
 expr_stmt|;
 name|p_init_arr_arg
 argument_list|(
@@ -1409,7 +1516,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Basename:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1418,7 +1528,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"basename of the resulting frames       \n(0001.ext is added)"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1456,7 +1569,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Extension:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1465,7 +1581,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"extension of resulting frames       \n(is also used to define Fileformat)"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1503,7 +1622,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Imagetype :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1512,7 +1634,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Convert to, or keep imagetype           \n(most fileformats cant handle all types)"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1559,7 +1684,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Flatten  :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1568,7 +1696,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Flatten all resulting frames               \n(most fileformats need flattened frames)"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1606,7 +1737,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Colors  :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1615,7 +1749,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Number of resulting Colors               \n(ignored if not converted to indexed)"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1662,7 +1799,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Dither  :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1671,7 +1811,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Enable Floyd-Steinberg dithering      \n(ignored if not converted to indexed)"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -1701,9 +1844,15 @@ name|TRUE
 operator|==
 name|p_array_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Convert Frames to other Formats"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Convert Settings :"
+argument_list|)
 argument_list|,
 literal|9
 argument_list|,
@@ -1946,13 +2095,25 @@ literal|4
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Expand as necessary"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Clipped to image"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Clipped to bottom layer"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Flattened image"
+argument_list|)
 block|}
 decl_stmt|;
 specifier|static
@@ -1964,13 +2125,25 @@ literal|4
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Resulting Layer Size is made of the outline-rectangle \nof all visible layers (may differ from frame to frame)"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Resulting Layer Size is the frame size"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Resulting Layer Size is the size of the bottom layer\n(may differ from frame to frame)"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Resulting Layer Size is the frame size     \ntransparent parts are filled with BG color"
+argument_list|)
 block|}
 decl_stmt|;
 comment|/* Layer select modes */
@@ -1983,19 +2156,40 @@ literal|7
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Pattern is equal to LayerName"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Pattern is Start of LayerName"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Pattern is End of Layername"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Pattern is a Part of LayerName"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Pattern is LayerstackNumber List"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Pattern is REVERSE-stack List"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"All Visible (ignore Pattern)"
+argument_list|)
 block|}
 decl_stmt|;
 specifier|static
@@ -2007,21 +2201,128 @@ literal|7
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"select all Layers where Layername is equal to Pattern"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"select all Layers where Layername starts with Pattern"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"select all Layers where Layername ends up with Pattern"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"select all Layers where Layername contains Pattern"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"select Layerstack positions.\n0, 4-5, 8\nwhere 0 == Top-layer"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"select Layerstack positions.\n0, 4-5, 8\nwhere 0 == BG-layer"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"select all visible Layers"
+argument_list|)
 block|}
 decl_stmt|;
+specifier|static
+name|int
+name|gettextize_radio
+init|=
+literal|0
+decl_stmt|,
+name|gettextize_sel
+init|=
+literal|0
+decl_stmt|;
+for|for
+control|(
+init|;
+name|gettextize_radio
+operator|<
+literal|4
+condition|;
+name|gettextize_radio
+operator|++
+control|)
+block|{
+name|radio_args
+index|[
+name|gettextize_radio
+index|]
+operator|=
+name|gettext
+argument_list|(
+name|radio_args
+index|[
+name|gettextize_radio
+index|]
+argument_list|)
+expr_stmt|;
+name|radio_help
+index|[
+name|gettextize_radio
+index|]
+operator|=
+name|gettext
+argument_list|(
+name|radio_help
+index|[
+name|gettextize_radio
+index|]
+argument_list|)
+expr_stmt|;
+block|}
+for|for
+control|(
+init|;
+name|gettextize_sel
+operator|<
+literal|4
+condition|;
+name|gettextize_sel
+operator|++
+control|)
+block|{
+name|sel_args
+index|[
+name|gettextize_sel
+index|]
+operator|=
+name|gettext
+argument_list|(
+name|sel_args
+index|[
+name|gettextize_sel
+index|]
+argument_list|)
+expr_stmt|;
+name|sel_help
+index|[
+name|gettextize_sel
+index|]
+operator|=
+name|gettext
+argument_list|(
+name|sel_help
+index|[
+name|gettextize_sel
+index|]
+argument_list|)
+expr_stmt|;
+block|}
 name|p_init_arr_arg
 argument_list|(
 operator|&
@@ -2049,7 +2350,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"From :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -2058,7 +2362,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"first handled frame"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -2129,7 +2436,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"To :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -2138,7 +2448,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"last handled frame"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -2200,7 +2513,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Layer Basename:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -2209,7 +2525,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Basename for all Layers    \n[####] is replaced by frame number"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -2269,7 +2588,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Layer Mergemode :"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -2325,7 +2647,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Exclude BG-Layer"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -2334,7 +2659,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Exclude the BG-Layers    \nin all handled frames\nregardless to selection"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -2365,7 +2693,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Select Layer(s):"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -2429,7 +2760,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Select Pattern:"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -2448,7 +2782,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"String to identify layer names    \nor layerstack position numbers\n0,3-5"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -2487,7 +2824,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Case sensitive"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -2496,7 +2836,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Lowercase and UPPERCASE letters are considered as different"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -2526,7 +2869,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
+name|_
+argument_list|(
 literal|"Invert Selection"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -2535,7 +2881,10 @@ index|]
 operator|.
 name|help_txt
 operator|=
+name|_
+argument_list|(
 literal|"Use all unselected Layers"
+argument_list|)
 expr_stmt|;
 name|argv
 index|[
@@ -2863,7 +3212,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Creating Layer-Animated Image .."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3720,9 +4072,15 @@ name|frame_basename
 argument_list|,
 name|frame_basename_len
 argument_list|,
+name|_
+argument_list|(
 literal|"Frames to Image"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Create Multilayer-Image from Frames"
+argument_list|)
 argument_list|,
 operator|&
 name|l_sel_mode
@@ -4198,13 +4556,19 @@ name|NULL
 condition|)
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Flattening Frames .."
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Converting Frames .."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -4555,7 +4919,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
+name|_
+argument_list|(
 literal|"OVERWRITE frame"
+argument_list|)
 expr_stmt|;
 name|l_argv
 index|[
@@ -4573,7 +4940,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
+name|_
+argument_list|(
 literal|"OVERWRITE all"
+argument_list|)
 expr_stmt|;
 name|l_argv
 index|[
@@ -4591,7 +4961,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
+name|_
+argument_list|(
 literal|"CANCEL"
+argument_list|)
 expr_stmt|;
 name|l_argv
 index|[
@@ -4607,7 +4980,10 @@ name|l_overwrite_mode
 operator|=
 name|p_buttons_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"GAP Question"
+argument_list|)
 argument_list|,
 name|l_sav_name
 argument_list|,
@@ -4661,7 +5037,10 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 argument_list|,
+name|_
+argument_list|(
 literal|"Convert Frames: SAVE operation FAILED\n- desired save plugin cant handle type\n- or desired save plugin not available\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -4976,7 +5355,10 @@ name|ASIZ_CROP
 case|:
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Cropping all Animation Frames .."
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4985,14 +5367,20 @@ name|ASIZ_RESIZE
 case|:
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Resizing all Animation Frames .."
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
 default|default:
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Scaling all Animation Frames .."
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5298,9 +5686,15 @@ argument_list|,
 operator|&
 name|l_to
 argument_list|,
+name|_
+argument_list|(
 literal|"Flatten Frames"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Select Frame Range"
+argument_list|)
 argument_list|,
 literal|2
 argument_list|)
@@ -5489,7 +5883,10 @@ name|sprintf
 argument_list|(
 name|l_buff
 argument_list|,
+name|_
+argument_list|(
 literal|"Removing Layer (pos:%ld) from Frames .."
+argument_list|)
 argument_list|,
 name|position
 argument_list|)
@@ -5927,9 +6324,15 @@ argument_list|,
 operator|&
 name|l_to
 argument_list|,
+name|_
+argument_list|(
 literal|"Delete Layers in Frames"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Select Frame Range& Position"
+argument_list|)
 argument_list|,
 literal|3
 argument_list|)
