@@ -37,7 +37,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon278ad59c0103
+DECL|enum|__anon288cf3ad0103
 block|{
 DECL|enumerator|GIMP_CHECK_SIZE_SMALL_CHECKS
 name|GIMP_CHECK_SIZE_SMALL_CHECKS
@@ -84,7 +84,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon278ad59c0203
+DECL|enum|__anon288cf3ad0203
 block|{
 DECL|enumerator|GIMP_CHECK_TYPE_LIGHT_CHECKS
 name|GIMP_CHECK_TYPE_LIGHT_CHECKS
@@ -148,7 +148,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278ad59c0303
+DECL|enum|__anon288cf3ad0303
 block|{
 DECL|enumerator|GIMP_RGB
 name|GIMP_RGB
@@ -188,7 +188,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278ad59c0403
+DECL|enum|__anon288cf3ad0403
 block|{
 DECL|enumerator|GIMP_RGB_IMAGE
 name|GIMP_RGB_IMAGE
@@ -219,11 +219,95 @@ name|GimpImageType
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_INTERPOLATION_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_INTERPOLATION_TYPE
+value|(gimp_interpolation_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_interpolation_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon288cf3ad0503
+block|{
+DECL|enumerator|GIMP_INTERPOLATION_NONE
+name|GIMP_INTERPOLATION_NONE
+block|,
+comment|/*< desc="None (Fastest)">*/
+DECL|enumerator|GIMP_INTERPOLATION_LINEAR
+name|GIMP_INTERPOLATION_LINEAR
+block|,
+comment|/*< desc="Linear">*/
+DECL|enumerator|GIMP_INTERPOLATION_CUBIC
+name|GIMP_INTERPOLATION_CUBIC
+block|,
+comment|/*< desc="Cubic">*/
+DECL|enumerator|GIMP_INTERPOLATION_LANCZOS
+name|GIMP_INTERPOLATION_LANCZOS
+comment|/*< desc="Lanczos (Best)">*/
+DECL|typedef|GimpInterpolationType
+block|}
+name|GimpInterpolationType
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_TRANSFER_MODE
+define|#
+directive|define
+name|GIMP_TYPE_TRANSFER_MODE
+value|(gimp_transfer_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_transfer_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon288cf3ad0603
+block|{
+DECL|enumerator|GIMP_SHADOWS
+name|GIMP_SHADOWS
+block|,
+comment|/*< desc="Shadows">*/
+DECL|enumerator|GIMP_MIDTONES
+name|GIMP_MIDTONES
+block|,
+comment|/*< desc="Midtones">*/
+DECL|enumerator|GIMP_HIGHLIGHTS
+name|GIMP_HIGHLIGHTS
+comment|/*< desc="Highlights">*/
+DECL|typedef|GimpTransferMode
+block|}
+name|GimpTransferMode
+typedef|;
+end_typedef
+
 begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon278ad59c0503
+DECL|enum|__anon288cf3ad0703
 block|{
 DECL|enumerator|GIMP_UNIT_PIXEL
 name|GIMP_UNIT_PIXEL
@@ -287,7 +371,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278ad59c0603
+DECL|enum|__anon288cf3ad0803
 block|{
 DECL|enumerator|GIMP_PDB_INT32
 name|GIMP_PDB_INT32
@@ -384,7 +468,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278ad59c0703
+DECL|enum|__anon288cf3ad0903
 block|{
 DECL|enumerator|GIMP_INTERNAL
 name|GIMP_INTERNAL
@@ -424,7 +508,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278ad59c0803
+DECL|enum|__anon288cf3ad0a03
 block|{
 DECL|enumerator|GIMP_PDB_EXECUTION_ERROR
 name|GIMP_PDB_EXECUTION_ERROR
@@ -467,7 +551,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278ad59c0903
+DECL|enum|__anon288cf3ad0b03
 block|{
 DECL|enumerator|GIMP_MESSAGE_BOX
 name|GIMP_MESSAGE_BOX
@@ -504,7 +588,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278ad59c0a03
+DECL|enum|__anon288cf3ad0c03
 block|{
 DECL|enumerator|GIMP_STACK_TRACE_NEVER
 name|GIMP_STACK_TRACE_NEVER
@@ -541,7 +625,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278ad59c0b03
+DECL|enum|__anon288cf3ad0d03
 block|{
 DECL|enumerator|GIMP_PROGRESS_COMMAND_START
 name|GIMP_PROGRESS_COMMAND_START
