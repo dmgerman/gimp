@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b30e6b0103
+DECL|enum|__anon2b7ecb0d0103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -950,15 +950,15 @@ literal|"model"
 argument_list|,
 name|list
 argument_list|,
-literal|"search_column"
+literal|"search-column"
 argument_list|,
 name|COLUMN_NAME
 argument_list|,
-literal|"enable_search"
+literal|"enable-search"
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-literal|"headers_visible"
+literal|"headers-visible"
 argument_list|,
 name|FALSE
 argument_list|,
