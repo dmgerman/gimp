@@ -1461,7 +1461,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"WARNING: Plug-In \"%s\"\n(%s)\n\n"
+literal|"WARNING: Plug-In \"%s\"\n(%s)\n"
 literal|"called deprecated procedure '%s'.\n"
 literal|"It should call '%s' instead!"
 argument_list|,
