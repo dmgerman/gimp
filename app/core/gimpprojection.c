@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b88deda0103
+DECL|enum|__anon28aea6990103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -892,6 +892,8 @@ argument_list|(
 name|projection
 operator|->
 name|tiles
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 return|return

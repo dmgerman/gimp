@@ -411,6 +411,9 @@ specifier|const
 name|TileManager
 modifier|*
 name|tm
+parameter_list|,
+name|gboolean
+name|sparse
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294f0e590103
+DECL|enum|__anon27e5251d0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -1572,6 +1572,8 @@ operator|->
 name|fs
 operator|.
 name|backing_store
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 operator|*

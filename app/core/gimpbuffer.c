@@ -510,6 +510,8 @@ argument_list|(
 name|buffer
 operator|->
 name|tiles
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 return|return

@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae1bcaf0103
+DECL|enum|__anon2b99c9da0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1181,6 +1181,8 @@ argument_list|(
 name|drawable
 operator|->
 name|tiles
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if

@@ -270,7 +270,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon278addcb0103
+DECL|enum|__anon2aea9b4e0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -340,7 +340,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon278addcb0203
+DECL|enum|__anon2aea9b4e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3809,6 +3809,8 @@ argument_list|(
 name|gimage
 operator|->
 name|shadow
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if

@@ -2468,6 +2468,8 @@ operator|+
 name|tile_manager_get_memsize
 argument_list|(
 name|tiles
+argument_list|,
+name|sparse
 argument_list|)
 expr_stmt|;
 if|if
@@ -2601,6 +2603,10 @@ argument_list|(
 name|drawable_undo
 operator|->
 name|tiles
+argument_list|,
+name|drawable_undo
+operator|->
+name|sparse
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_swap_pixels
@@ -2649,6 +2655,10 @@ argument_list|(
 name|drawable_undo
 operator|->
 name|tiles
+argument_list|,
+name|drawable_undo
+operator|->
+name|sparse
 argument_list|)
 expr_stmt|;
 return|return
@@ -2833,6 +2843,8 @@ argument_list|(
 name|drawable
 operator|->
 name|tiles
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -2994,6 +3006,8 @@ argument_list|(
 name|drawable_undo
 operator|->
 name|tiles
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|tiles
@@ -3092,6 +3106,8 @@ argument_list|(
 name|drawable_undo
 operator|->
 name|tiles
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
@@ -3396,6 +3412,8 @@ operator|+=
 name|tile_manager_get_memsize
 argument_list|(
 name|undo_tiles
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3578,6 +3596,8 @@ argument_list|(
 name|mu
 operator|->
 name|tiles
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -3991,6 +4011,8 @@ argument_list|(
 name|mu
 operator|->
 name|tiles
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
