@@ -1241,7 +1241,7 @@ name|tmpname
 argument_list|)
 expr_stmt|;
 return|return
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
 block|}
 name|sleep
@@ -1772,7 +1772,7 @@ expr_stmt|;
 operator|*
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 return|return
 operator|-
