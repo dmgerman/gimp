@@ -937,7 +937,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Xtns/Module Browser..."
+literal|"/Xtns/Module Manager..."
 argument_list|)
 block|,
 name|NULL
@@ -947,9 +947,9 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp-module-browser-dialog"
+literal|"gimp-module-manager-dialog"
 block|,
-literal|"dialogs/module_browser.html"
+literal|"dialogs/module_manager.html"
 block|,
 name|NULL
 block|}
@@ -1153,7 +1153,7 @@ argument_list|(
 name|factory
 argument_list|)
 argument_list|,
-literal|"/Xtns/Module Browser..."
+literal|"/Xtns/Module Manager..."
 argument_list|)
 expr_stmt|;
 if|if

@@ -538,7 +538,7 @@ name|FALSE
 block|}
 block|,
 block|{
-literal|"gimp-module-browser-dialog"
+literal|"gimp-module-manager-dialog"
 block|,
 name|dialogs_module_browser_get
 block|,

@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bba6af30103
+DECL|enum|__anon2a4f291d0103
 block|{
 DECL|enumerator|PATH_COLUMN
 name|PATH_COLUMN
@@ -432,7 +432,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Module Browser"
+literal|"Module Manager"
 argument_list|)
 argument_list|,
 literal|"module_db_dialog"
@@ -441,12 +441,12 @@ name|GTK_STOCK_EXECUTE
 argument_list|,
 name|_
 argument_list|(
-literal|"Browse& Manage Loadable Modules"
+literal|"Manage Loadable Modules"
 argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/module_browser.html"
+literal|"dialogs/module_manager.html"
 argument_list|,
 name|GTK_STOCK_REFRESH
 argument_list|,
