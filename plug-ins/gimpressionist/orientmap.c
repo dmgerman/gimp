@@ -1495,7 +1495,7 @@ name|infile
 operator|.
 name|col
 condition|)
-name|updatepreviewprev
+name|updatepreview
 argument_list|(
 name|NULL
 argument_list|,

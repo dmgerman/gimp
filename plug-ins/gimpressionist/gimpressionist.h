@@ -119,7 +119,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4db65e0108
+DECL|struct|__anon29f5e80e0108
 block|{
 DECL|member|orientnum
 name|int
@@ -781,13 +781,15 @@ begin_function_decl
 name|GtkWidget
 modifier|*
 name|create_preview
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|updatepreviewprev
+name|updatepreview
 parameter_list|(
 name|GtkWidget
 modifier|*
