@@ -475,7 +475,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ab61b90103
+DECL|enum|__anon2af7b7d80103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -502,7 +502,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ab61b90203
+DECL|enum|__anon2af7b7d80203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -523,7 +523,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ab61b90308
+DECL|struct|__anon2af7b7d80308
 block|{
 DECL|member|name
 name|gchar
@@ -660,7 +660,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ab61b90408
+DECL|struct|__anon2af7b7d80408
 block|{
 DECL|member|fp
 name|FILE
@@ -680,7 +680,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ab61b90503
+DECL|enum|__anon2af7b7d80503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -708,7 +708,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ab61b90608
+DECL|struct|__anon2af7b7d80608
 block|{
 DECL|member|init
 name|gint
@@ -730,7 +730,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29ab61b90708
+DECL|struct|__anon2af7b7d80708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -804,7 +804,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ab61b90808
+DECL|struct|__anon2af7b7d80808
 block|{
 DECL|member|init
 name|gint
@@ -874,7 +874,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ab61b90908
+DECL|struct|__anon2af7b7d80908
 block|{
 DECL|member|x0
 name|gdouble
@@ -901,7 +901,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ab61b90a08
+DECL|struct|__anon2af7b7d80a08
 block|{
 DECL|member|init
 name|gint
@@ -1071,7 +1071,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ab61b90b08
+DECL|struct|__anon2af7b7d80b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1098,7 +1098,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ab61b90c08
+DECL|struct|__anon2af7b7d80c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1139,7 +1139,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ab61b90d08
+DECL|struct|__anon2af7b7d80d08
 block|{
 DECL|member|tile
 name|GimpTile
@@ -1365,7 +1365,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ab61b90e08
+DECL|struct|__anon2af7b7d80e08
 block|{
 DECL|member|tag
 name|gint
@@ -1442,7 +1442,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ab61b90f08
+DECL|struct|__anon2af7b7d80f08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1500,7 +1500,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ab61b91008
+DECL|struct|__anon2af7b7d81008
 block|{
 DECL|member|run
 name|gint
@@ -1575,16 +1575,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
-name|plug_in_parse_gflare_path
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|GFlare
 modifier|*
 name|gflare_new_with_default
@@ -1603,6 +1593,7 @@ name|GFlare
 modifier|*
 name|gflare_dup
 parameter_list|(
+specifier|const
 name|GFlare
 modifier|*
 name|src
@@ -1624,6 +1615,7 @@ name|GFlare
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|GFlare
 modifier|*
 name|src
@@ -2058,10 +2050,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* static void             gradient_menu_destroy (GradientMenu *gm); */
-end_comment
-
 begin_function_decl
 specifier|static
 name|void
@@ -2471,7 +2459,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|tk_read
 specifier|static
-name|TileKeeper
+name|GimpPixelFetcher
 modifier|*
 name|tk_read
 decl_stmt|;
@@ -2480,7 +2468,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|tk_write
 specifier|static
-name|TileKeeper
+name|GimpPixelFetcher
 modifier|*
 name|tk_write
 decl_stmt|;
@@ -2759,52 +2747,6 @@ name|curr_y
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|TileKeeper
-modifier|*
-name|tile_keeper_new
-parameter_list|(
-name|gint
-name|shadow
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|guchar
-modifier|*
-name|tile_keeper_provide
-parameter_list|(
-name|TileKeeper
-modifier|*
-name|tk
-parameter_list|,
-name|gint
-name|ix
-parameter_list|,
-name|gint
-name|iy
-parameter_list|,
-name|gint
-name|dirty
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|tile_keeper_free
-parameter_list|(
-name|TileKeeper
-modifier|*
-name|tk
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3117,39 +3059,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
-name|dlg_page_map_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gint
+name|gboolean
 name|dlg_preview_handle_event
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|event
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gint
-name|ed_preview_handle_event
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4259,7 +4170,6 @@ literal|"Eiichi Takamori, and a lot of GIMP people"
 argument_list|,
 literal|"1997"
 argument_list|,
-comment|/* don't translate<Image>, it's a special 			   * keyword for the gtk toolkit */
 name|N_
 argument_list|(
 literal|"<Image>/Filters/Light Effects/GFlare..."
@@ -4461,8 +4371,14 @@ name|gradient_init
 argument_list|()
 expr_stmt|;
 comment|/*    *	Parse gflare path from gimprc and load gflares    */
-name|plug_in_parse_gflare_path
-argument_list|()
+name|gflare_path_list
+operator|=
+name|gimp_plug_in_parse_path
+argument_list|(
+literal|"gflare-path"
+argument_list|,
+literal|"gflare"
+argument_list|)
 expr_stmt|;
 name|gflares_list_load_all
 argument_list|()
@@ -4816,204 +4732,6 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*  *	Query gimprc for gflare-path, and parse it.  *	This code is based on script_fu_find_scripts ()  */
-end_comment
-
-begin_function
-name|void
-DECL|function|plug_in_parse_gflare_path (void)
-name|plug_in_parse_gflare_path
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|gchar
-modifier|*
-name|gflare_path
-decl_stmt|;
-name|GList
-modifier|*
-name|fail_list
-init|=
-name|NULL
-decl_stmt|;
-name|GList
-modifier|*
-name|list
-decl_stmt|;
-name|gimp_path_free
-argument_list|(
-name|gflare_path_list
-argument_list|)
-expr_stmt|;
-name|gflare_path_list
-operator|=
-name|NULL
-expr_stmt|;
-name|gflare_path
-operator|=
-name|gimp_gimprc_query
-argument_list|(
-literal|"gflare-path"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|gflare_path
-condition|)
-block|{
-name|gchar
-modifier|*
-name|gimprc
-init|=
-name|gimp_personal_rc_file
-argument_list|(
-literal|"gimprc"
-argument_list|)
-decl_stmt|;
-name|gchar
-modifier|*
-name|path
-init|=
-name|g_strescape
-argument_list|(
-literal|"${gimp_dir}"
-name|G_DIR_SEPARATOR_S
-literal|"gflare"
-name|G_SEARCHPATH_SEPARATOR_S
-literal|"${gimp_data_dir}"
-name|G_DIR_SEPARATOR_S
-literal|"gflare"
-argument_list|,
-name|NULL
-argument_list|)
-decl_stmt|;
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"No gflare-path in gimprc:\n"
-literal|"You need to add an entry like\n"
-literal|"(gflare-path \"%s\")\n"
-literal|"to your %s file."
-argument_list|)
-argument_list|,
-name|path
-argument_list|,
-name|gimprc
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|gimprc
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
-name|gflare_path_list
-operator|=
-name|gimp_path_parse
-argument_list|(
-name|gflare_path
-argument_list|,
-literal|16
-argument_list|,
-name|TRUE
-argument_list|,
-operator|&
-name|fail_list
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|gflare_path
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|fail_list
-condition|)
-block|{
-name|GString
-modifier|*
-name|err
-init|=
-name|g_string_new
-argument_list|(
-name|_
-argument_list|(
-literal|"gflare-path misconfigured - "
-literal|"the following folders were not found:"
-argument_list|)
-argument_list|)
-decl_stmt|;
-for|for
-control|(
-name|list
-operator|=
-name|fail_list
-init|;
-name|list
-condition|;
-name|list
-operator|=
-name|g_list_next
-argument_list|(
-name|list
-argument_list|)
-control|)
-block|{
-name|g_string_append_c
-argument_list|(
-name|err
-argument_list|,
-literal|'\n'
-argument_list|)
-expr_stmt|;
-name|g_string_append
-argument_list|(
-name|err
-argument_list|,
-operator|(
-name|gchar
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-argument_list|)
-expr_stmt|;
-block|}
-name|g_message
-argument_list|(
-name|err
-operator|->
-name|str
-argument_list|)
-expr_stmt|;
-name|g_string_free
-argument_list|(
-name|err
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|gimp_path_free
-argument_list|(
-name|fail_list
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -5608,15 +5326,22 @@ parameter_list|)
 block|{
 name|tk_read
 operator|=
-name|tile_keeper_new
+name|gimp_pixel_fetcher_new
 argument_list|(
-name|FALSE
+name|drawable
 argument_list|)
 expr_stmt|;
 name|tk_write
 operator|=
-name|tile_keeper_new
+name|gimp_pixel_fetcher_new
 argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+name|gimp_pixel_fetcher_set_shadow
+argument_list|(
+name|tk_write
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -5663,14 +5388,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|tile_keeper_free
-argument_list|(
-name|tk_read
-argument_list|)
-expr_stmt|;
-name|tile_keeper_free
+name|gimp_pixel_fetcher_destroy
 argument_list|(
 name|tk_write
+argument_list|)
+expr_stmt|;
+name|gimp_pixel_fetcher_destroy
+argument_list|(
+name|tk_read
 argument_list|)
 expr_stmt|;
 block|}
@@ -5713,8 +5438,10 @@ literal|4
 index|]
 decl_stmt|;
 name|guchar
-modifier|*
 name|src
+index|[
+literal|4
+index|]
 decl_stmt|;
 name|gint
 name|b
@@ -5743,9 +5470,7 @@ operator|+
 literal|0.5
 argument_list|)
 expr_stmt|;
-name|src
-operator|=
-name|tile_keeper_provide
+name|gimp_pixel_fetcher_get_pixel2
 argument_list|(
 name|tk_read
 argument_list|,
@@ -5753,7 +5478,9 @@ name|ix
 argument_list|,
 name|iy
 argument_list|,
-name|FALSE
+name|PIXEL_BLACK
+argument_list|,
+name|src
 argument_list|)
 expr_stmt|;
 for|for
@@ -5887,22 +5614,11 @@ name|data
 parameter_list|)
 block|{
 name|guchar
-modifier|*
 name|dest
+index|[
+literal|4
+index|]
 decl_stmt|;
-name|dest
-operator|=
-name|tile_keeper_provide
-argument_list|(
-name|tk_write
-argument_list|,
-name|ix
-argument_list|,
-name|iy
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|dinfo
@@ -5988,6 +5704,17 @@ name|a
 operator|*
 literal|255
 expr_stmt|;
+name|gimp_pixel_fetcher_put_pixel
+argument_list|(
+name|tk_write
+argument_list|,
+name|ix
+argument_list|,
+name|iy
+argument_list|,
+name|dest
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -6031,343 +5758,6 @@ block|}
 end_function
 
 begin_comment
-comment|/** ***	The Tile Keeper **/
-end_comment
-
-begin_function
-specifier|static
-name|TileKeeper
-modifier|*
-DECL|function|tile_keeper_new (gint shadow)
-name|tile_keeper_new
-parameter_list|(
-name|gint
-name|shadow
-parameter_list|)
-block|{
-name|TileKeeper
-modifier|*
-name|tk
-decl_stmt|;
-name|tk
-operator|=
-name|g_new0
-argument_list|(
-name|TileKeeper
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|tk
-operator|->
-name|tile
-operator|=
-name|NULL
-expr_stmt|;
-name|tk
-operator|->
-name|col
-operator|=
-literal|0
-expr_stmt|;
-name|tk
-operator|->
-name|row
-operator|=
-literal|0
-expr_stmt|;
-name|tk
-operator|->
-name|shadow
-operator|=
-name|shadow
-expr_stmt|;
-name|tk
-operator|->
-name|dirty
-operator|=
-name|FALSE
-expr_stmt|;
-return|return
-name|tk
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/*   Return the pointer to specified pixel in allocated tile   */
-end_comment
-
-begin_function
-specifier|static
-name|guchar
-modifier|*
-DECL|function|tile_keeper_provide (TileKeeper * tk,gint ix,gint iy,gint dirty)
-name|tile_keeper_provide
-parameter_list|(
-name|TileKeeper
-modifier|*
-name|tk
-parameter_list|,
-name|gint
-name|ix
-parameter_list|,
-name|gint
-name|iy
-parameter_list|,
-name|gint
-name|dirty
-parameter_list|)
-block|{
-specifier|static
-name|guchar
-name|black
-index|[
-literal|4
-index|]
-decl_stmt|;
-name|gint
-name|col
-decl_stmt|,
-name|row
-decl_stmt|,
-name|offx
-decl_stmt|,
-name|offy
-decl_stmt|;
-if|if
-condition|(
-name|ix
-operator|<
-literal|0
-operator|||
-name|ix
-operator|>=
-name|drawable
-operator|->
-name|width
-operator|||
-name|iy
-operator|<
-literal|0
-operator|||
-name|iy
-operator|>=
-name|drawable
-operator|->
-name|height
-condition|)
-block|{
-name|black
-index|[
-literal|0
-index|]
-operator|=
-name|black
-index|[
-literal|1
-index|]
-operator|=
-name|black
-index|[
-literal|2
-index|]
-operator|=
-name|black
-index|[
-literal|3
-index|]
-operator|=
-literal|0
-expr_stmt|;
-return|return
-name|black
-return|;
-block|}
-name|col
-operator|=
-name|ix
-operator|/
-name|dinfo
-operator|.
-name|tile_width
-expr_stmt|;
-name|row
-operator|=
-name|iy
-operator|/
-name|dinfo
-operator|.
-name|tile_height
-expr_stmt|;
-name|offx
-operator|=
-name|ix
-operator|%
-name|dinfo
-operator|.
-name|tile_width
-expr_stmt|;
-name|offy
-operator|=
-name|iy
-operator|%
-name|dinfo
-operator|.
-name|tile_height
-expr_stmt|;
-if|if
-condition|(
-name|tk
-operator|->
-name|tile
-operator|==
-name|NULL
-operator|||
-name|col
-operator|!=
-name|tk
-operator|->
-name|col
-operator|||
-name|row
-operator|!=
-name|tk
-operator|->
-name|row
-condition|)
-block|{
-if|if
-condition|(
-name|tk
-operator|->
-name|tile
-condition|)
-name|gimp_tile_unref
-argument_list|(
-name|tk
-operator|->
-name|tile
-argument_list|,
-name|tk
-operator|->
-name|dirty
-argument_list|)
-expr_stmt|;
-name|tk
-operator|->
-name|col
-operator|=
-name|col
-expr_stmt|;
-name|tk
-operator|->
-name|row
-operator|=
-name|row
-expr_stmt|;
-name|tk
-operator|->
-name|tile
-operator|=
-name|gimp_drawable_get_tile
-argument_list|(
-name|drawable
-argument_list|,
-name|tk
-operator|->
-name|shadow
-argument_list|,
-name|row
-argument_list|,
-name|col
-argument_list|)
-expr_stmt|;
-name|tk
-operator|->
-name|dirty
-operator|=
-name|FALSE
-expr_stmt|;
-name|gimp_tile_ref
-argument_list|(
-name|tk
-operator|->
-name|tile
-argument_list|)
-expr_stmt|;
-block|}
-name|tk
-operator|->
-name|dirty
-operator||=
-name|dirty
-expr_stmt|;
-return|return
-name|tk
-operator|->
-name|tile
-operator|->
-name|data
-operator|+
-operator|(
-name|offy
-operator|*
-name|tk
-operator|->
-name|tile
-operator|->
-name|ewidth
-operator|+
-name|offx
-operator|)
-operator|*
-name|tk
-operator|->
-name|tile
-operator|->
-name|bpp
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|tile_keeper_free (TileKeeper * tk)
-name|tile_keeper_free
-parameter_list|(
-name|TileKeeper
-modifier|*
-name|tk
-parameter_list|)
-block|{
-if|if
-condition|(
-name|tk
-operator|->
-name|tile
-condition|)
-name|gimp_tile_unref
-argument_list|(
-name|tk
-operator|->
-name|tile
-argument_list|,
-name|tk
-operator|->
-name|dirty
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|tk
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
 comment|/*************************************************************************/
 end_comment
 
@@ -6402,16 +5792,14 @@ block|{
 name|GFlare
 modifier|*
 name|gflare
-decl_stmt|;
-name|gflare
-operator|=
+init|=
 name|g_new0
 argument_list|(
 name|GFlare
 argument_list|,
 literal|1
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gflare
 operator|->
 name|name
@@ -6431,6 +5819,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|GFlare
 modifier|*
 DECL|function|gflare_new_with_default (const gchar * new_name)
@@ -6442,15 +5831,6 @@ modifier|*
 name|new_name
 parameter_list|)
 block|{
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"gflare_new_with_default %s\n"
-operator|,
-name|new_name
-operator|)
-argument_list|)
-expr_stmt|;
 return|return
 name|gflare_dup
 argument_list|(
@@ -6464,11 +5844,13 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|GFlare
 modifier|*
-DECL|function|gflare_dup (GFlare * src,const gchar * new_name)
+DECL|function|gflare_dup (const GFlare * src,const gchar * new_name)
 name|gflare_dup
 parameter_list|(
+specifier|const
 name|GFlare
 modifier|*
 name|src
@@ -6482,36 +5864,19 @@ block|{
 name|GFlare
 modifier|*
 name|dest
-decl_stmt|;
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"gflare_dup %s\n"
-operator|,
-name|new_name
-operator|)
-argument_list|)
-expr_stmt|;
-name|dest
-operator|=
+init|=
 name|g_new0
 argument_list|(
 name|GFlare
 argument_list|,
 literal|1
 argument_list|)
-expr_stmt|;
-name|memcpy
-argument_list|(
+decl_stmt|;
+operator|*
 name|dest
-argument_list|,
+operator|=
+operator|*
 name|src
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GFlare
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|dest
 operator|->
@@ -6535,14 +5900,16 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|gflare_copy (GFlare * dest,GFlare * src)
+DECL|function|gflare_copy (GFlare * dest,const GFlare * src)
 name|gflare_copy
 parameter_list|(
 name|GFlare
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|GFlare
 modifier|*
 name|src
@@ -6555,13 +5922,6 @@ decl_stmt|,
 modifier|*
 name|filename
 decl_stmt|;
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"gflare_copy\n"
-operator|)
-argument_list|)
-expr_stmt|;
 name|name
 operator|=
 name|dest
@@ -6574,17 +5934,11 @@ name|dest
 operator|->
 name|filename
 expr_stmt|;
-name|memcpy
-argument_list|(
+operator|*
 name|dest
-argument_list|,
+operator|=
+operator|*
 name|src
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|GFlare
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|dest
 operator|->
@@ -6676,17 +6030,6 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"gflare_load: %s, %s\n"
-operator|,
-name|filename
-operator|,
-name|name
-operator|)
-argument_list|)
-expr_stmt|;
 name|g_assert
 argument_list|(
 name|filename
@@ -7151,15 +6494,6 @@ return|return
 name|NULL
 return|;
 block|}
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"Loaded %s\n"
-operator|,
-name|filename
-operator|)
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|gf
@@ -7342,17 +6676,6 @@ argument_list|(
 name|name
 argument_list|,
 name|dec
-argument_list|)
-expr_stmt|;
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"read_gradient_name: \"%s\" => \"%s\"\n"
-operator|,
-name|tmp
-operator|,
-name|dec
-operator|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -7551,6 +6874,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gflare_save (GFlare * gflare)
 name|gflare_save
@@ -8221,17 +7545,6 @@ argument_list|(
 name|fp
 argument_list|)
 expr_stmt|;
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"Saved %s\n"
-operator|,
-name|gflare
-operator|->
-name|filename
-operator|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -8273,21 +7586,11 @@ argument_list|,
 name|enc
 argument_list|)
 expr_stmt|;
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"write_gradient_name: \"%s\" => \"%s\"\n"
-operator|,
-name|name
-operator|,
-name|enc
-operator|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gflare_name_copy (gchar * dest,const gchar * src)
 name|gflare_name_copy
@@ -8344,6 +7647,39 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
+specifier|static
+name|gint
+DECL|function|gflare_compare (const GFlare * flare1,const GFlare * flare2)
+name|gflare_compare
+parameter_list|(
+specifier|const
+name|GFlare
+modifier|*
+name|flare1
+parameter_list|,
+specifier|const
+name|GFlare
+modifier|*
+name|flare2
+parameter_list|)
+block|{
+return|return
+name|strcmp
+argument_list|(
+name|flare1
+operator|->
+name|name
+argument_list|,
+name|flare2
+operator|->
+name|name
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|gint
 DECL|function|gflares_list_insert (GFlare * gflare)
 name|gflares_list_insert
@@ -8353,97 +7689,64 @@ modifier|*
 name|gflare
 parameter_list|)
 block|{
-name|GList
-modifier|*
-name|tmp
-decl_stmt|;
-name|GFlare
-modifier|*
-name|g
-decl_stmt|;
-name|int
-name|n
-decl_stmt|;
-comment|/*    *	Insert gflare in alphabetical order    */
-name|n
-operator|=
-literal|0
-expr_stmt|;
-name|tmp
-operator|=
-name|gflares_list
-expr_stmt|;
-while|while
-condition|(
-name|tmp
-condition|)
-block|{
-name|g
-operator|=
-name|tmp
-operator|->
-name|data
-expr_stmt|;
-if|if
-condition|(
-name|strcmp
-argument_list|(
-name|gflare
-operator|->
-name|name
-argument_list|,
-name|g
-operator|->
-name|name
-argument_list|)
-operator|<=
-literal|0
-condition|)
-break|break;
-name|n
-operator|++
-expr_stmt|;
-name|tmp
-operator|=
-name|tmp
-operator|->
-name|next
-expr_stmt|;
-block|}
 name|num_gflares
 operator|++
 expr_stmt|;
 name|gflares_list
 operator|=
-name|g_list_insert
+name|g_list_insert_sorted
 argument_list|(
 name|gflares_list
 argument_list|,
 name|gflare
 argument_list|,
-name|n
-argument_list|)
-expr_stmt|;
-name|DEBUG_PRINT
-argument_list|(
 operator|(
-literal|"gflares_list_insert %s => %d\n"
-operator|,
-name|gflare
-operator|->
-name|name
-operator|,
-name|n
+name|GCompareFunc
 operator|)
+name|gflare_compare
 argument_list|)
 expr_stmt|;
 return|return
-name|n
+name|gflares_list_index
+argument_list|(
+name|gflare
+argument_list|)
 return|;
 block|}
 end_function
 
 begin_function
+specifier|static
+name|gint
+DECL|function|gflare_compare_name (const GFlare * flare,const gchar * name)
+name|gflare_compare_name
+parameter_list|(
+specifier|const
+name|GFlare
+modifier|*
+name|flare
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|)
+block|{
+return|return
+name|strcmp
+argument_list|(
+name|flare
+operator|->
+name|name
+argument_list|,
+name|name
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|GFlare
 modifier|*
 DECL|function|gflares_list_lookup (const gchar * name)
@@ -8457,66 +7760,38 @@ parameter_list|)
 block|{
 name|GList
 modifier|*
-name|tmp
+name|llink
 decl_stmt|;
-name|GFlare
-modifier|*
-name|gflare
-decl_stmt|;
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"gflares_list_lookup %s\n"
-operator|,
-name|name
-operator|)
-argument_list|)
-expr_stmt|;
-name|tmp
+name|llink
 operator|=
+name|g_list_find_custom
+argument_list|(
 name|gflares_list
-expr_stmt|;
-while|while
-condition|(
-name|tmp
-condition|)
-block|{
-name|gflare
-operator|=
-name|tmp
-operator|->
-name|data
-expr_stmt|;
-name|tmp
-operator|=
-name|tmp
-operator|->
-name|next
-expr_stmt|;
-if|if
-condition|(
-name|strcmp
-argument_list|(
-name|gflare
-operator|->
-name|name
 argument_list|,
 name|name
+argument_list|,
+operator|(
+name|GCompareFunc
+operator|)
+name|gflare_compare_name
 argument_list|)
-operator|==
-literal|0
-condition|)
+expr_stmt|;
 return|return
-name|gflare
-return|;
-block|}
-return|return
+operator|(
+name|llink
+operator|)
+condition|?
+name|llink
+operator|->
+name|data
+else|:
 name|NULL
 return|;
 block|}
 end_function
 
 begin_function
+specifier|static
 name|gint
 DECL|function|gflares_list_index (GFlare * gflare)
 name|gflares_list_index
@@ -8526,66 +7801,19 @@ modifier|*
 name|gflare
 parameter_list|)
 block|{
-name|GList
-modifier|*
-name|tmp
-decl_stmt|;
-name|gint
-name|n
-decl_stmt|;
-name|DEBUG_PRINT
+return|return
+name|g_list_index
 argument_list|(
-operator|(
-literal|"gflares_list_index %s\n"
-operator|,
-name|gflare
-operator|->
-name|name
-operator|)
-argument_list|)
-expr_stmt|;
-name|n
-operator|=
-literal|0
-expr_stmt|;
-name|tmp
-operator|=
 name|gflares_list
-expr_stmt|;
-while|while
-condition|(
-name|tmp
-condition|)
-block|{
-if|if
-condition|(
-name|tmp
-operator|->
-name|data
-operator|==
+argument_list|,
 name|gflare
-condition|)
-return|return
-name|n
-return|;
-name|tmp
-operator|=
-name|tmp
-operator|->
-name|next
-expr_stmt|;
-name|n
-operator|++
-expr_stmt|;
-block|}
-return|return
-operator|-
-literal|1
+argument_list|)
 return|;
 block|}
 end_function
 
 begin_function
+specifier|static
 name|gint
 DECL|function|gflares_list_remove (GFlare * gflare)
 name|gflares_list_remove
@@ -8602,17 +7830,6 @@ decl_stmt|;
 name|gint
 name|n
 decl_stmt|;
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"gflares_list_remove %s\n"
-operator|,
-name|gflare
-operator|->
-name|name
-operator|)
-argument_list|)
-expr_stmt|;
 name|n
 operator|=
 literal|0
@@ -8678,10 +7895,11 @@ block|}
 end_function
 
 begin_comment
-comment|/*   Load all gflares, which are founded in gflare-path-list, into gflares_list.    gflares-path-list must be initialized first. (plug_in_parse_gflare_path ())  */
+comment|/*  * Load all gflares, which are founded in gflare-path-list, into gflares_list.  */
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|gflares_list_load_all (void)
 name|gflares_list_load_all
@@ -8714,14 +7932,6 @@ name|gchar
 modifier|*
 name|dir_ent
 decl_stmt|;
-if|#
-directive|if
-literal|0
-comment|/* @@@ */
-block|printf("Waiting... (pid %d)\n", getpid());   kill(getpid(), 19);
-comment|/* SIGSTOP */
-endif|#
-directive|endif
 comment|/*  Make sure to clear any existing gflares  */
 name|gflares_list_free_all
 argument_list|()
@@ -8848,6 +8058,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gflares_list_free_all (void)
 name|gflares_list_free_all
@@ -8855,45 +8066,18 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GList
-modifier|*
-name|list
-decl_stmt|;
-name|GFlare
-modifier|*
-name|gflare
-decl_stmt|;
-name|list
-operator|=
-name|gflares_list
-expr_stmt|;
-while|while
-condition|(
-name|list
-condition|)
-block|{
-name|gflare
-operator|=
-operator|(
-name|GFlare
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-expr_stmt|;
-name|gflare_free
+name|g_list_foreach
 argument_list|(
-name|gflare
+name|gflares_list
+argument_list|,
+operator|(
+name|GFunc
+operator|)
+name|gflare_free
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|list
-operator|=
-name|list
-operator|->
-name|next
-expr_stmt|;
-block|}
 name|g_list_free
 argument_list|(
 name|gflares_list
@@ -8931,6 +8115,7 @@ comment|/*  * These routines calculates pixel values of particular gflare, at  *
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|calc_init_params (GFlare * gflare,gint calc_type,gdouble xcenter,gdouble ycenter,gdouble radius,gdouble rotation,gdouble hue,gdouble vangle,gdouble vlength)
 name|calc_init_params
@@ -8964,13 +8149,6 @@ name|gdouble
 name|vlength
 parameter_list|)
 block|{
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"//// calc_init_params ////\n"
-operator|)
-argument_list|)
-expr_stmt|;
 name|calc
 operator|.
 name|type
@@ -9436,6 +8614,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|int
 DECL|function|calc_init_progress ()
 name|calc_init_progress
@@ -9469,7 +8648,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon29ab61b91108
+DECL|struct|__anon2af7b7d81108
 specifier|static
 struct|struct
 block|{
@@ -10105,13 +9284,6 @@ operator|==
 literal|0
 condition|)
 return|return;
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"calc_place_sflare\n"
-operator|)
-argument_list|)
-expr_stmt|;
 name|gflare
 operator|=
 name|calc
@@ -10458,22 +9630,12 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|calc_deinit ()
 name|calc_deinit
 parameter_list|()
 block|{
-name|GList
-modifier|*
-name|list
-decl_stmt|;
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"\\\\\\\\ calc_deinit \\\\\\\\ \n"
-operator|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -10489,31 +9651,20 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|list
-operator|=
+name|g_list_foreach
+argument_list|(
 name|calc
 operator|.
 name|sflare_list
-expr_stmt|;
-while|while
-condition|(
-name|list
-condition|)
-block|{
+argument_list|,
+operator|(
+name|GFunc
+operator|)
 name|g_free
-argument_list|(
-name|list
-operator|->
-name|data
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|list
-operator|=
-name|list
-operator|->
-name|next
-expr_stmt|;
-block|}
 name|g_list_free
 argument_list|(
 name|calc
@@ -10764,6 +9915,7 @@ comment|/*  *  Calc glow's pixel (RGBA) value  *  INPUT:  *	gdouble x, y			image
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|calc_glow_pix (guchar * dest_pix,gdouble x,gdouble y)
 name|calc_glow_pix
@@ -11034,6 +10186,7 @@ comment|/*  *  Calc rays's pixel (RGBA) value  *  */
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|calc_rays_pix (guchar * dest_pix,gdouble x,gdouble y)
 name|calc_rays_pix
@@ -11671,6 +10824,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|calc_gflare_pix (guchar * dest_pix,gdouble x,gdouble y,guchar * src_pix)
 name|calc_gflare_pix
@@ -12453,6 +11607,7 @@ comment|/* 	This is gflare main dialog, one which opens in first.  */
 end_comment
 
 begin_function
+specifier|static
 name|gint
 DECL|function|dlg_run (void)
 name|dlg_run
@@ -12950,16 +12105,6 @@ operator|=
 name|gtk_notebook_new
 argument_list|()
 expr_stmt|;
-name|gtk_notebook_set_tab_pos
-argument_list|(
-name|GTK_NOTEBOOK
-argument_list|(
-name|notebook
-argument_list|)
-argument_list|,
-name|GTK_POS_TOP
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -12995,25 +12140,11 @@ argument_list|,
 name|notebook
 argument_list|)
 expr_stmt|;
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"shell is shown\n"
-operator|)
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-comment|/*    *	Make sure the selector page is realized    *	This idea is from app/layers_dialog.c    */
-if|#
-directive|if
-literal|0
-block|gtk_notebook_set_current_page (GTK_NOTEBOOK (notebook), 1);   gtk_notebook_set_current_page (GTK_NOTEBOOK (notebook), 0);
-endif|#
-directive|endif
 comment|/*    *	Initialization done    */
 name|dlg
 operator|->
@@ -13023,13 +12154,6 @@ name|FALSE
 expr_stmt|;
 name|dlg_preview_update
 argument_list|()
-expr_stmt|;
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"dlg init done\n"
-operator|)
-argument_list|)
 expr_stmt|;
 name|gtk_main
 argument_list|()
@@ -13059,7 +12183,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-comment|/* @GFLARE_NAME */
 name|gflare_name_copy
 argument_list|(
 name|pvals
@@ -13112,11 +12235,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|dlg
 operator|->
 name|gflare
-operator|==
-name|NULL
 condition|)
 block|{
 name|dlg
@@ -13130,11 +12252,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|dlg
 operator|->
 name|gflare
-operator|==
-name|NULL
 condition|)
 block|{
 name|g_warning
@@ -13166,24 +12287,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|dlg_page_map_callback (GtkWidget * widget,gpointer data)
-name|dlg_page_map_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-comment|/* dlg_preview_update (); */
 block|}
 end_function
 
@@ -13556,7 +12659,8 @@ block|}
 end_function
 
 begin_function
-name|gint
+specifier|static
+name|gboolean
 DECL|function|dlg_preview_handle_event (GtkWidget * widget,GdkEvent * event)
 name|dlg_preview_handle_event
 parameter_list|(
@@ -13671,245 +12775,6 @@ name|by
 operator|/
 name|DLG_PREVIEW_HEIGHT
 expr_stmt|;
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"dlg_preview_handle_event: bxy [%d,%d] xy [%d,%d]\n"
-operator|,
-name|bx
-operator|,
-name|by
-operator|,
-name|x
-operator|,
-name|y
-operator|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|(
-name|x
-operator|!=
-name|pvals
-operator|.
-name|xcenter
-operator|||
-name|y
-operator|!=
-name|pvals
-operator|.
-name|ycenter
-operator|)
-condition|)
-block|{
-if|if
-condition|(
-name|x
-operator|!=
-name|pvals
-operator|.
-name|xcenter
-condition|)
-block|{
-name|pvals
-operator|.
-name|xcenter
-operator|=
-name|x
-expr_stmt|;
-name|gimp_size_entry_set_refval
-argument_list|(
-name|GIMP_SIZE_ENTRY
-argument_list|(
-name|dlg
-operator|->
-name|sizeentry
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-name|x
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|y
-operator|!=
-name|pvals
-operator|.
-name|ycenter
-condition|)
-block|{
-name|pvals
-operator|.
-name|ycenter
-operator|=
-name|y
-expr_stmt|;
-name|gimp_size_entry_set_refval
-argument_list|(
-name|GIMP_SIZE_ENTRY
-argument_list|(
-name|dlg
-operator|->
-name|sizeentry
-argument_list|)
-argument_list|,
-literal|1
-argument_list|,
-name|y
-argument_list|)
-expr_stmt|;
-block|}
-name|dlg_preview_update
-argument_list|()
-expr_stmt|;
-block|}
-return|return
-name|TRUE
-return|;
-default|default:
-break|break;
-block|}
-return|return
-name|FALSE
-return|;
-block|}
-end_function
-
-begin_function
-name|gint
-DECL|function|ed_preview_handle_event (GtkWidget * widget,GdkEvent * event)
-name|ed_preview_handle_event
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|event
-parameter_list|)
-block|{
-name|GdkEventButton
-modifier|*
-name|bevent
-decl_stmt|;
-name|gint
-name|bx
-decl_stmt|,
-name|by
-decl_stmt|,
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
-switch|switch
-condition|(
-name|event
-operator|->
-name|type
-condition|)
-block|{
-case|case
-name|GDK_BUTTON_PRESS
-case|:
-name|bevent
-operator|=
-operator|(
-name|GdkEventButton
-operator|*
-operator|)
-name|event
-expr_stmt|;
-name|bx
-operator|=
-name|bevent
-operator|->
-name|x
-expr_stmt|;
-name|by
-operator|=
-name|bevent
-operator|->
-name|y
-expr_stmt|;
-comment|/* convert widget coord to drawable coord */
-name|x
-operator|=
-name|dlg
-operator|->
-name|pwin
-operator|.
-name|x0
-operator|+
-call|(
-name|double
-call|)
-argument_list|(
-name|dlg
-operator|->
-name|pwin
-operator|.
-name|x1
-operator|-
-name|dlg
-operator|->
-name|pwin
-operator|.
-name|x0
-argument_list|)
-operator|*
-name|bx
-operator|/
-name|DLG_PREVIEW_WIDTH
-expr_stmt|;
-name|y
-operator|=
-name|dlg
-operator|->
-name|pwin
-operator|.
-name|y0
-operator|+
-call|(
-name|double
-call|)
-argument_list|(
-name|dlg
-operator|->
-name|pwin
-operator|.
-name|y1
-operator|-
-name|dlg
-operator|->
-name|pwin
-operator|.
-name|y0
-argument_list|)
-operator|*
-name|by
-operator|/
-name|DLG_PREVIEW_HEIGHT
-expr_stmt|;
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"dlg_preview_handle_event: bxy [%d,%d] xy [%d,%d]\n"
-operator|,
-name|bx
-operator|,
-name|by
-operator|,
-name|x
-operator|,
-name|y
-operator|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -14012,13 +12877,11 @@ parameter_list|()
 block|{
 if|if
 condition|(
+operator|!
 name|dlg
 operator|->
 name|init
-condition|)
-return|return;
-if|if
-condition|(
+operator|&&
 name|dlg
 operator|->
 name|update_preview
@@ -15569,7 +14432,6 @@ operator|.
 name|asupsample_threshold
 argument_list|)
 expr_stmt|;
-comment|/*    *	Create Page    */
 name|gtk_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
@@ -15586,23 +14448,6 @@ argument_list|(
 literal|"_Settings"
 argument_list|)
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|table
-argument_list|,
-literal|"map"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|dlg_page_map_callback
-argument_list|)
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|PAGE_SETTINGS
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -15782,7 +14627,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon29ab61b91208
+DECL|struct|__anon2af7b7d81208
 block|{
 DECL|member|label
 specifier|const
@@ -16054,7 +14899,6 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
-comment|/*    *	Create Page    */
 name|gtk_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
@@ -16071,23 +14915,6 @@ argument_list|(
 literal|"S_elector"
 argument_list|)
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|vbox
-argument_list|,
-literal|"map"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|dlg_page_map_callback
-argument_list|)
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|PAGE_SELECTOR
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -16122,13 +14949,6 @@ decl_stmt|;
 name|gint
 name|n
 decl_stmt|;
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"dlg_selector_setup_listbox\n"
-operator|)
-argument_list|)
-expr_stmt|;
 name|list
 operator|=
 name|gflares_list
@@ -16218,19 +15038,6 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"dlg_selector_insert %s %d\n"
-operator|,
-name|gflare
-operator|->
-name|name
-operator|,
-name|pos
-operator|)
-argument_list|)
-expr_stmt|;
 name|list_item
 operator|=
 name|gtk_list_item_new_with_label
@@ -16324,10 +15131,10 @@ condition|(
 name|widget
 operator|->
 name|state
-operator|!=
+operator|==
 name|GTK_STATE_SELECTED
 condition|)
-return|return;
+block|{
 name|dlg
 operator|->
 name|gflare
@@ -16337,6 +15144,7 @@ expr_stmt|;
 name|dlg_preview_update
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -17503,7 +16311,7 @@ literal|"event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|ed_preview_handle_event
+name|dlg_preview_handle_event
 argument_list|)
 argument_list|,
 name|NULL
@@ -18405,7 +17213,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/*    *	Create Page    */
 name|gtk_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
@@ -18419,7 +17226,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"General"
+literal|"_General"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -19038,7 +17845,6 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-comment|/*    *  Create Page    */
 name|gtk_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
@@ -19052,7 +17858,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Glow"
+literal|"G_low"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -19836,7 +18642,6 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-comment|/*    *	Create Pages    */
 name|gtk_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
@@ -19850,7 +18655,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Rays"
+literal|"_Rays"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -21027,7 +19832,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*    *	Create Pages    */
 name|gtk_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
@@ -21041,7 +19845,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Second Flares"
+literal|"_Second Flares"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -22272,6 +21076,7 @@ comment|/*     Routines to render the preview in background  */
 end_comment
 
 begin_function
+specifier|static
 name|Preview
 modifier|*
 DECL|function|preview_new (gint width,gint height,PreviewInitFunc init_func,gpointer init_data,PreviewRenderFunc render_func,gpointer render_data,PreviewDeinitFunc deinit_func,gpointer deinit_data)
@@ -22431,6 +21236,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|preview_free (Preview * preview)
 name|preview_free
@@ -22466,6 +21272,7 @@ comment|/*   Start rendering of the preview in background using an idle event.  
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|preview_render_start (Preview * preview)
 name|preview_render_start
@@ -22475,13 +21282,6 @@ modifier|*
 name|preview
 parameter_list|)
 block|{
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"preview_render_start\n"
-operator|)
-argument_list|)
-expr_stmt|;
 name|preview_render_end
 argument_list|(
 name|preview
@@ -22562,6 +21362,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|preview_render_end (Preview * preview)
 name|preview_render_end
@@ -22635,13 +21436,6 @@ operator|->
 name|idle_tag
 operator|=
 literal|0
-expr_stmt|;
-name|DEBUG_PRINT
-argument_list|(
-operator|(
-literal|"preview_render_end\n\n"
-operator|)
-argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -22883,6 +21677,7 @@ comment|/*   Convert RGBA to RGB with rendering gray check if needed. 	(from nov
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|preview_rgba_to_rgb (guchar * dest,gint x,gint y,guchar * src)
 name|preview_rgba_to_rgb
@@ -23085,6 +21880,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|gradient_menu_init ()
 name|gradient_menu_init
@@ -23101,6 +21897,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gradient_menu_rescan ()
 name|gradient_menu_rescan
@@ -23271,6 +22068,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|GradientMenu
 modifier|*
 DECL|function|gradient_menu_new (GradientMenuCallback callback,gpointer callback_data,gchar * default_gradient_name)
@@ -23412,10 +22210,6 @@ name|gm
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* static void gradient_menu_destroy (GradientMenu *gm) {   gtk_widget_destroy (gm->preview);   gtk_widget_destroy (gm->option_menu);    g_free (gm); } */
-end_comment
 
 begin_comment
 comment|/* Local Functions */
@@ -24311,6 +23105,7 @@ comment|/*     Manage both internal and external gradients: list up, cache,     
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|gradient_name_copy (gchar * dest,const gchar * src)
 name|gradient_name_copy
@@ -24351,6 +23146,7 @@ comment|/*   Translate SPACE to "\\040", etc.  */
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|gradient_name_encode (gchar * dest,const gchar * src)
 name|gradient_name_encode
@@ -24440,6 +23236,7 @@ comment|/*   Translate "\\040" to SPACE, etc.  */
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|gradient_name_decode (gchar * dest,const gchar * src)
 name|gradient_name_decode
@@ -24544,6 +23341,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gradient_init (void)
 name|gradient_init
@@ -24563,6 +23361,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gradient_free (void)
 name|gradient_free
@@ -24577,6 +23376,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gchar
 modifier|*
 modifier|*
@@ -24708,6 +23508,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gradient_get_values (gchar * gradient_name,guchar * values,gint nvalues)
 name|gradient_get_values
@@ -24724,7 +23525,6 @@ name|gint
 name|nvalues
 parameter_list|)
 block|{
-comment|/* DEBUG_PRINT (("gradient_get_values: %s %d\n", gradient_name, nvalues)); */
 comment|/*     Criteria to distinguish internal and external is rather simple here.     It should be fixed later.    */
 if|if
 condition|(

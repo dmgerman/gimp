@@ -35,7 +35,7 @@ comment|/* Preview stuff. WARNING: don't use this in new code!!!!!!!  * It's jus
 end_comment
 
 begin_typedef
-DECL|struct|__anon29d98b2a0108
+DECL|struct|__anon29c50e590108
 typedef|typedef
 struct|struct
 block|{
@@ -180,6 +180,23 @@ parameter_list|,
 name|guchar
 modifier|*
 name|src
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GList
+modifier|*
+name|gimp_plug_in_parse_path
+parameter_list|(
+name|gchar
+modifier|*
+name|path_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|dir_name
 parameter_list|)
 function_decl|;
 end_function_decl
