@@ -118,6 +118,14 @@ name|GtkWidget
 modifier|*
 name|wrap_box
 decl_stmt|;
+DECL|member|rows
+name|gint
+name|rows
+decl_stmt|;
+DECL|member|columns
+name|gint
+name|columns
+decl_stmt|;
 block|}
 struct|;
 end_struct
