@@ -277,6 +277,16 @@ argument_list|,
 name|stack_trace_mode
 argument_list|)
 expr_stmt|;
+name|gimp_object_set_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|the_gimp
+argument_list|)
+argument_list|,
+name|prog_name
+argument_list|)
+expr_stmt|;
 comment|/*  Check if the user's gimp_directory exists    */
 name|gimp_dir
 operator|=
@@ -456,11 +466,6 @@ condition|)
 name|splash_destroy
 argument_list|()
 expr_stmt|;
-comment|/*  FIXME: This needs to go in preferences  */
-name|message_handler
-operator|=
-name|GIMP_MESSAGE_BOX
-expr_stmt|;
 name|gui_restore
 argument_list|(
 name|the_gimp
@@ -633,10 +638,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|message_handler
-operator|=
-name|GIMP_CONSOLE
-expr_stmt|;
 if|if
 condition|(
 operator|!

@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/pdb-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/boundary.h"
 end_include
 

@@ -270,7 +270,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb725880103
+DECL|enum|__anon274ce8a20103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -11370,6 +11370,8 @@ argument_list|()
 expr_stmt|;
 name|devices_rc_update
 argument_list|(
+name|the_gimp
+argument_list|,
 name|name
 argument_list|,
 name|values

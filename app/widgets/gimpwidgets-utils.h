@@ -35,6 +35,7 @@ begin_function_decl
 name|void
 name|gimp_message_box
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|message

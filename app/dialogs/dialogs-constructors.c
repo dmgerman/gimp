@@ -385,7 +385,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5c9c520108
+DECL|struct|__anon2a961ef60108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -806,7 +806,11 @@ parameter_list|)
 block|{
 return|return
 name|device_status_create
-argument_list|()
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|)
 return|;
 block|}
 end_function
@@ -976,7 +980,11 @@ parameter_list|)
 block|{
 return|return
 name|input_dialog_create
-argument_list|()
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|)
 return|;
 block|}
 end_function
@@ -2827,7 +2835,11 @@ return|;
 name|view
 operator|=
 name|error_console_create
-argument_list|()
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 name|g_object_add_weak_pointer
 argument_list|(

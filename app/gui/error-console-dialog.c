@@ -150,7 +150,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"error-console-dialog.h"
 end_include
 
 begin_include
@@ -162,7 +168,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292f92550103
+DECL|enum|__anon2aba78c20103
 block|{
 DECL|enumerator|ERRORS_ALL
 name|ERRORS_ALL
@@ -330,10 +336,12 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|error_console_create (void)
+DECL|function|error_console_create (Gimp * gimp)
 name|error_console_create
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|GtkTextBuffer
@@ -356,6 +364,16 @@ name|GtkWidget
 modifier|*
 name|menuitem
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|error_console
@@ -403,7 +421,7 @@ name|GWeakNotify
 operator|)
 name|error_console_destroy_callback
 argument_list|,
-name|NULL
+name|gimp
 argument_list|)
 expr_stmt|;
 name|scrolled_window
@@ -668,7 +686,8 @@ argument_list|,
 name|menu
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: interact with preferences */
+name|gimp
+operator|->
 name|message_handler
 operator|=
 name|GIMP_ERROR_CONSOLE
@@ -681,15 +700,27 @@ end_function
 
 begin_function
 name|void
-DECL|function|error_console_add (const gchar * errormsg)
+DECL|function|error_console_add (Gimp * gimp,const gchar * errormsg)
 name|error_console_add
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|errormsg
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -703,6 +734,8 @@ argument_list|,
 name|G_STRLOC
 argument_list|)
 expr_stmt|;
+name|gimp
+operator|->
 name|message_handler
 operator|=
 name|GIMP_MESSAGE_BOX
@@ -792,11 +825,23 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
+name|gimp
+operator|=
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 name|error_console
 operator|=
 name|NULL
 expr_stmt|;
-comment|/* FIXME: interact with preferences */
+name|gimp
+operator|->
 name|message_handler
 operator|=
 name|GIMP_MESSAGE_BOX

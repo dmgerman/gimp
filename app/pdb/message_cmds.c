@@ -40,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -281,6 +281,8 @@ name|value
 operator|.
 name|pdb_int
 operator|=
+name|gimp
+operator|->
 name|message_handler
 expr_stmt|;
 return|return
@@ -399,6 +401,8 @@ if|if
 condition|(
 name|success
 condition|)
+name|gimp
+operator|->
 name|message_handler
 operator|=
 name|handler

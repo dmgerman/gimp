@@ -334,15 +334,6 @@ DECL|variable|prog_name
 comment|/* our executable name */
 end_comment
 
-begin_decl_stmt
-DECL|variable|message_handler
-name|GimpMessageHandlerType
-name|message_handler
-init|=
-name|GIMP_CONSOLE
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/*  *  argv processing:   *      Arguments are either switches, their associated  *      values, or image files.  As switches and their  *      associated values are processed, those slots in  *      the argv[] array are NULLed. We do this because  *      unparsed args are treated as images to load on  *      startup.  *  *      The GTK switches are processed first (X switches are  *      processed here, not by any X routines).  Then the  *      general GIMP switches are processed.  Any args  *      left are assumed to be image files the GIMP should  *      display.  *  *      The exception is the batch switch.  When this is  *      encountered, all remaining args are treated as batch  *      commands.  */
 end_comment

@@ -142,9 +142,10 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_message_box (gchar * message,GtkCallback callback,gpointer data)
+DECL|function|gimp_message_box (const gchar * message,GtkCallback callback,gpointer data)
 name|gimp_message_box
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|message

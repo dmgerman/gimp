@@ -539,11 +539,12 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  global data  */
+comment|/*  local data  */
 end_comment
 
 begin_decl_stmt
 DECL|variable|current_device
+specifier|static
 name|GdkDevice
 modifier|*
 name|current_device
@@ -551,10 +552,6 @@ init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-comment|/*  local data  */
-end_comment
 
 begin_decl_stmt
 DECL|variable|device_info_list
@@ -735,10 +732,12 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|input_dialog_create (void)
+DECL|function|input_dialog_create (Gimp * gimp)
 name|input_dialog_create
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 specifier|static
@@ -748,6 +747,16 @@ name|inputd
 init|=
 name|NULL
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|inputd
@@ -1194,10 +1203,41 @@ block|}
 end_function
 
 begin_function
+name|GdkDevice
+modifier|*
+DECL|function|devices_get_current (Gimp * gimp)
+name|devices_get_current
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|current_device
+return|;
+block|}
+end_function
+
+begin_function
 name|void
-DECL|function|devices_rc_update (gchar * name,DeviceValues values,GdkInputMode mode,gint num_axes,GdkAxisUse * axes,gint num_keys,GdkDeviceKey * keys,const gchar * tool_name,GimpRGB * foreground,GimpRGB * background,const gchar * brush_name,const gchar * pattern_name,const gchar * gradient_name)
+DECL|function|devices_rc_update (Gimp * gimp,gchar * name,DeviceValues values,GdkInputMode mode,gint num_axes,GdkAxisUse * axes,gint num_keys,GdkDeviceKey * keys,const gchar * tool_name,GimpRGB * foreground,GimpRGB * background,const gchar * brush_name,const gchar * pattern_name,const gchar * gradient_name)
 name|devices_rc_update
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gchar
 modifier|*
 name|name
@@ -1973,9 +2013,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_device (GdkDevice * new_device)
+DECL|function|select_device (Gimp * gimp,GdkDevice * new_device)
 name|select_device
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GdkDevice
 modifier|*
 name|new_device
@@ -1989,6 +2033,22 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GDK_IS_DEVICE
+argument_list|(
+name|new_device
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|device_info
 operator|=
 name|device_info_get_by_device
@@ -2057,9 +2117,13 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|devices_check_change (GdkEvent * event)
+DECL|function|devices_check_change (Gimp * gimp,GdkEvent * event)
 name|devices_check_change
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GdkEvent
 modifier|*
 name|event
@@ -2069,6 +2133,25 @@ name|GdkDevice
 modifier|*
 name|device
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|event
+operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|event
@@ -2168,6 +2251,8 @@ condition|)
 block|{
 name|select_device
 argument_list|(
+name|gimp
+argument_list|,
 name|device
 argument_list|)
 expr_stmt|;
@@ -2999,10 +3084,12 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|device_status_create (void)
+DECL|function|device_status_create (Gimp * gimp)
 name|device_status_create
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|DeviceInfo
@@ -3023,6 +3110,16 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|deviceD
@@ -4324,12 +4421,22 @@ end_function
 
 begin_function
 name|void
-DECL|function|device_status_free (void)
+DECL|function|device_status_free (Gimp * gimp)
 name|device_status_free
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Save device status on exit */
 if|if
 condition|(

@@ -563,6 +563,11 @@ parameter_list|)
 block|{
 name|devices_check_change
 argument_list|(
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+argument_list|,
 name|event
 argument_list|)
 expr_stmt|;
@@ -1447,7 +1452,7 @@ argument_list|(
 name|toolbox_check_device
 argument_list|)
 argument_list|,
-name|NULL
+name|gimp
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_events

@@ -120,13 +120,6 @@ name|prog_name
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-specifier|extern
-name|GimpMessageHandlerType
-name|message_handler
-decl_stmt|;
-end_decl_stmt
-
 begin_endif
 endif|#
 directive|endif
