@@ -162,7 +162,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b518bca0108
+DECL|struct|__anon29c6bd730108
 typedef|typedef
 struct|struct
 block|{
@@ -202,7 +202,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b518bca0208
+DECL|struct|__anon29c6bd730208
 typedef|typedef
 struct|struct
 block|{
@@ -311,7 +311,7 @@ comment|/* Declarations for objects of type Image */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b518bca0308
+DECL|struct|__anon29c6bd730308
 typedef|typedef
 struct|struct
 block|{
@@ -365,7 +365,7 @@ comment|/* Declarations for objects of type Display */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b518bca0408
+DECL|struct|__anon29c6bd730408
 typedef|typedef
 struct|struct
 block|{
@@ -419,7 +419,7 @@ comment|/* Declarations for objects of type Layer and channel */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b518bca0508
+DECL|struct|__anon29c6bd730508
 typedef|typedef
 struct|struct
 block|{
@@ -543,7 +543,7 @@ comment|/* Declarations for objects of type Tile */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b518bca0608
+DECL|struct|__anon29c6bd730608
 typedef|typedef
 struct|struct
 block|{
@@ -609,7 +609,7 @@ comment|/* Declarations for objects of type PixelRegion */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b518bca0708
+DECL|struct|__anon29c6bd730708
 typedef|typedef
 struct|struct
 block|{
@@ -689,7 +689,7 @@ comment|/* Declarations for objects of type Parasite */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b518bca0808
+DECL|struct|__anon29c6bd730808
 typedef|typedef
 struct|struct
 block|{
@@ -20712,7 +20712,7 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|NATIVE_WIN32
+name|G_OS_WIN32
 block|{
 specifier|extern
 name|void
