@@ -73,7 +73,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296db0070108
+DECL|struct|__anon297c280a0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296db0070208
+DECL|struct|__anon297c280a0208
 block|{
 DECL|member|run
 name|gint
@@ -1872,6 +1872,19 @@ decl_stmt|,
 modifier|*
 name|gi_tmp2
 decl_stmt|;
+comment|/* Take care of the case that neither horizontal nor vertical is selected */
+if|if
+condition|(
+operator|!
+operator|(
+name|horz
+operator|||
+name|vert
+operator|)
+condition|)
+block|{
+return|return;
+block|}
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
