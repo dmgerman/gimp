@@ -142,7 +142,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b1e52e0103
+DECL|enum|__anon28841dec0103
 block|{
 DECL|enumerator|BUTTON_HOME
 name|BUTTON_HOME
@@ -162,7 +162,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b1e52e0208
+DECL|struct|__anon28841dec0208
 block|{
 DECL|member|title
 specifier|const
@@ -200,18 +200,22 @@ name|doc_not_found_format_string
 init|=
 name|N_
 argument_list|(
-literal|"<html><head><title>Document not found</title></head>"
-literal|"<body bgcolor=\"#ffffff\">"
-literal|"<center>"
-literal|"<p>"
-literal|"%s"
-literal|"<h3>Couldn't find document</h3>"
+literal|"<html><head><title>Document Not Found</title></head>"
+literal|"<body bgcolor=\"white\">"
+literal|"<div align=\"center\">"
+literal|"<div>%s</div>"
+literal|"<h3>Could not locate help documentation</h3>"
 literal|"<tt>%s</tt>"
-literal|"</center>"
-literal|"<p>"
-literal|"<small>This either means that the help for this topic has not been "
-literal|"written yet or that something is wrong with your installation. "
-literal|"Please check carefully before you report this as a bug.</small>"
+literal|"</div>"
+literal|"<br /><br />"
+literal|"<div align=\"justify\">"
+literal|"<small>"
+literal|"The requested document could not be found in your GIMP-Help path as "
+literal|"shown above. This means that the topic has not yet been written or your "
+literal|"installation is not complete. Ensure that your installation is complete "
+literal|"before reporting this error as a bug."
+literal|"</small>"
+literal|"</div>"
 literal|"</body>"
 literal|"</html>"
 argument_list|)
