@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277ff4980108
+DECL|struct|__anon273e09a50108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277ff4980208
+DECL|struct|__anon273e09a50208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277ff4980308
+DECL|struct|__anon273e09a50308
 block|{
 DECL|member|ID
 name|gint32
@@ -732,7 +732,9 @@ literal|"file_tiff_save"
 argument_list|,
 literal|"saves files in the tiff file format"
 argument_list|,
-literal|"FIXME: write help for tiff_save"
+literal|"Saves files in the Tagged Image File Format.  "
+literal|"The value for the saved comment is taken "
+literal|"from the 'gimp-comment' parasite."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

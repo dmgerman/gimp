@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b76c8600108
+DECL|struct|__anon2c1a575f0108
 block|{
 DECL|member|file_name
 name|gchar
@@ -336,7 +336,7 @@ literal|"file_csource_save"
 argument_list|,
 literal|"Dump image data in RGB(A) format for C source"
 argument_list|,
-literal|"FIXME: write help"
+literal|"CSource cannot be run non-interactively."
 argument_list|,
 literal|"Tim Janik"
 argument_list|,

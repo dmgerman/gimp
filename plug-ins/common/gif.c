@@ -144,7 +144,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9e43910103
+DECL|enum|__anon2964c10a0103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -161,7 +161,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9e43910208
+DECL|struct|__anon2964c10a0208
 block|{
 DECL|member|interlace
 name|gint
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9e43910308
+DECL|struct|__anon2964c10a0308
 block|{
 DECL|member|run
 name|gint
@@ -581,7 +581,13 @@ literal|"file_gif_save"
 argument_list|,
 literal|"saves files in Compuserve GIF file format"
 argument_list|,
-literal|"FIXME: write help for gif_save"
+literal|"Save a file in Compuserve GIF format, with "
+literal|"possible animation, transparency, and comment.  "
+literal|"To save an animation, operate on a multi-layer "
+literal|"file.  The plug-in will intrepret<50% alpha as "
+literal|"transparent.  When run non-interactively, the "
+literal|"value for the comment is taken from the "
+literal|"'gimp-comment' parasite.  "
 argument_list|,
 literal|"Spencer Kimball, Peter Mattis, Adam Moss, David Koblas"
 argument_list|,

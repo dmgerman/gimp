@@ -75,6 +75,7 @@ end_comment
 
 begin_define
 DECL|macro|DEFAULT_USE_COMMENT
+DECL|macro|DEFAULT_USE_COMMENT
 define|#
 directive|define
 name|DEFAULT_USE_COMMENT
@@ -83,6 +84,7 @@ end_define
 
 begin_define
 DECL|macro|MAX_COMMENT
+DECL|macro|MAX_COMMENT
 define|#
 directive|define
 name|MAX_COMMENT
@@ -90,6 +92,7 @@ value|72
 end_define
 
 begin_define
+DECL|macro|MAX_MASK_EXT
 DECL|macro|MAX_MASK_EXT
 define|#
 directive|define
@@ -103,6 +106,7 @@ end_comment
 
 begin_define
 DECL|macro|DEFAULT_PREFIX
+DECL|macro|DEFAULT_PREFIX
 define|#
 directive|define
 name|DEFAULT_PREFIX
@@ -110,6 +114,7 @@ value|"bitmap"
 end_define
 
 begin_define
+DECL|macro|MAX_PREFIX
 DECL|macro|MAX_PREFIX
 define|#
 directive|define
@@ -123,6 +128,7 @@ end_comment
 
 begin_define
 DECL|macro|DEFAULT_X10_FORMAT
+DECL|macro|DEFAULT_X10_FORMAT
 define|#
 directive|define
 name|DEFAULT_X10_FORMAT
@@ -131,10 +137,12 @@ end_define
 
 begin_typedef
 DECL|struct|_XBMSaveVals
+DECL|struct|_XBMSaveVals
 typedef|typedef
 struct|struct
 name|_XBMSaveVals
 block|{
+DECL|member|comment
 DECL|member|comment
 name|gchar
 name|comment
@@ -145,21 +153,26 @@ literal|1
 index|]
 decl_stmt|;
 DECL|member|x10_format
+DECL|member|x10_format
 name|gint
 name|x10_format
 decl_stmt|;
+DECL|member|use_hot
 DECL|member|use_hot
 name|gint
 name|use_hot
 decl_stmt|;
 DECL|member|x_hot
+DECL|member|x_hot
 name|gint
 name|x_hot
 decl_stmt|;
 DECL|member|y_hot
+DECL|member|y_hot
 name|gint
 name|y_hot
 decl_stmt|;
+DECL|member|prefix
 DECL|member|prefix
 name|gchar
 name|prefix
@@ -170,9 +183,11 @@ literal|1
 index|]
 decl_stmt|;
 DECL|member|write_mask
+DECL|member|write_mask
 name|gboolean
 name|write_mask
 decl_stmt|;
+DECL|member|mask_ext
 DECL|member|mask_ext
 name|gchar
 name|mask_ext
@@ -183,12 +198,14 @@ literal|1
 index|]
 decl_stmt|;
 DECL|typedef|XBMSaveVals
+DECL|typedef|XBMSaveVals
 block|}
 name|XBMSaveVals
 typedef|;
 end_typedef
 
 begin_decl_stmt
+DECL|variable|xsvals
 DECL|variable|xsvals
 specifier|static
 name|XBMSaveVals
@@ -222,14 +239,17 @@ end_decl_stmt
 
 begin_typedef
 DECL|struct|_XBMSaveInterface
+DECL|struct|_XBMSaveInterface
 typedef|typedef
 struct|struct
 name|_XBMSaveInterface
 block|{
 DECL|member|run
+DECL|member|run
 name|gint
 name|run
 decl_stmt|;
+DECL|typedef|XBMSaveInterface
 DECL|typedef|XBMSaveInterface
 block|}
 name|XBMSaveInterface
@@ -237,6 +257,7 @@ typedef|;
 end_typedef
 
 begin_decl_stmt
+DECL|variable|xsint
 DECL|variable|xsint
 specifier|static
 name|XBMSaveInterface
@@ -405,6 +426,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+DECL|variable|PLUG_IN_INFO
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -453,6 +475,7 @@ end_endif
 begin_function
 specifier|static
 name|void
+DECL|function|query (void)
 DECL|function|query (void)
 name|query
 parameter_list|(
@@ -745,6 +768,7 @@ specifier|static
 name|gchar
 modifier|*
 DECL|function|init_prefix (gchar * filename)
+DECL|function|init_prefix (gchar * filename)
 name|init_prefix
 parameter_list|(
 name|gchar
@@ -841,6 +865,7 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
@@ -1459,6 +1484,12 @@ break|break;
 default|default:
 break|break;
 block|}
+if|if
+condition|(
+name|runmode
+operator|==
+name|GIMP_RUN_INTERACTIVE
+condition|)
 comment|/* Get the parasites */
 name|parasite
 operator|=
@@ -1604,13 +1635,6 @@ name|parasite
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|run_mode
-operator|==
-name|GIMP_RUN_INTERACTIVE
-condition|)
-block|{
 comment|/*  Acquire information with a dialog  */
 if|if
 condition|(
@@ -1852,6 +1876,9 @@ name|image_ID
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_else
 else|else
 block|{
 name|status
@@ -1859,6 +1886,9 @@ operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
+end_else
+
+begin_expr_stmt
 name|values
 index|[
 literal|0
@@ -1870,17 +1900,16 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-block|}
-end_function
+end_expr_stmt
 
 begin_comment
+unit|}
 comment|/* Return the value of a digit. */
 end_comment
 
 begin_function
-specifier|static
+unit|static
 name|gint
-DECL|function|getval (gint c,gint base)
 name|getval
 parameter_list|(
 name|gint
@@ -1964,7 +1993,6 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|fgetcomment (FILE * fp)
 name|fgetcomment
 parameter_list|(
 name|FILE
@@ -2185,7 +2213,6 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|cpp_fgetc (FILE * fp)
 name|cpp_fgetc
 parameter_list|(
 name|FILE
@@ -2320,7 +2347,6 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|match (FILE * fp,gchar * s)
 name|match
 parameter_list|(
 name|FILE
@@ -2402,7 +2428,6 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|get_int (FILE * fp)
 name|get_int
 parameter_list|(
 name|FILE
@@ -2579,7 +2604,6 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_image (gchar * filename)
 name|load_image
 parameter_list|(
 name|gchar
@@ -3508,7 +3532,6 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_image (gchar * filename,gchar * prefix,gchar * comment,gboolean save_mask,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
 name|gchar
@@ -4387,7 +4410,6 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_dialog (gint32 drawable_ID)
 name|save_dialog
 parameter_list|(
 name|gint32
@@ -5414,7 +5436,6 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|comment_entry_callback (GtkWidget * widget,gpointer data)
 name|comment_entry_callback
 parameter_list|(
 name|GtkWidget
@@ -5464,7 +5485,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|prefix_entry_callback (GtkWidget * widget,gpointer data)
 name|prefix_entry_callback
 parameter_list|(
 name|GtkWidget
@@ -5514,7 +5534,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|mask_ext_entry_callback (GtkWidget * widget,gpointer data)
 name|mask_ext_entry_callback
 parameter_list|(
 name|GtkWidget
@@ -5564,7 +5583,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|save_ok_callback (GtkWidget * widget,gpointer data)
 name|save_ok_callback
 parameter_list|(
 name|GtkWidget
