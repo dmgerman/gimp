@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"procedural_db.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"buildmenu.h"
 end_include
 
@@ -91,6 +97,11 @@ name|GtkAdjustment
 modifier|*
 name|sbar_data
 decl_stmt|;
+DECL|member|edit_button
+name|GtkWidget
+modifier|*
+name|edit_button
+decl_stmt|;
 DECL|member|width
 DECL|member|height
 name|int
@@ -124,10 +135,37 @@ name|GtkWidget
 modifier|*
 name|brush_preview
 decl_stmt|;
-DECL|member|edit_button
-name|GtkWidget
+comment|/* Call back function name */
+DECL|member|callback_name
+name|gchar
 modifier|*
-name|edit_button
+name|callback_name
+decl_stmt|;
+comment|/* current brush */
+DECL|member|brush
+name|GimpBrushP
+name|brush
+decl_stmt|;
+comment|/* Stuff for current selection */
+DECL|member|old_row
+name|int
+name|old_row
+decl_stmt|;
+DECL|member|old_col
+name|int
+name|old_col
+decl_stmt|;
+DECL|member|opacity_value
+name|gdouble
+name|opacity_value
+decl_stmt|;
+DECL|member|spacing_value
+name|gint
+name|spacing_value
+decl_stmt|;
+DECL|member|paint_mode
+name|gint
+name|paint_mode
 decl_stmt|;
 block|}
 struct|;
@@ -137,7 +175,19 @@ begin_function_decl
 name|BrushSelectP
 name|brush_select_new
 parameter_list|(
-name|void
+name|gchar
+modifier|*
+parameter_list|,
+name|gchar
+modifier|*
+parameter_list|,
+comment|/* These are the required initial vals*/
+name|gdouble
+parameter_list|,
+comment|/* If init_name == NULL then  							   * use current brush  							   */
+name|gint
+parameter_list|,
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -162,6 +212,26 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|brush_change_callbacks
+parameter_list|(
+name|BrushSelectP
+parameter_list|,
+name|gint
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|brushes_check_dialogs
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  An interface to other dialogs which need to create a paint mode menu  */
 end_comment
@@ -172,9 +242,22 @@ modifier|*
 name|create_paint_mode_menu
 parameter_list|(
 name|MenuItemCallback
+parameter_list|,
+name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/* PDB entry */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|brushes_popup_proc
+decl_stmt|;
+end_decl_stmt
 
 begin_endif
 endif|#

@@ -142,6 +142,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|"brush_select.h"
+end_include
+
+begin_comment
+comment|/* Need for closing dialogs */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -228,7 +238,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a3669e0103
+DECL|enum|__anon29fd16c00103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -693,6 +703,19 @@ specifier|static
 name|Argument
 modifier|*
 name|message_handler_set_invoker
+parameter_list|(
+name|Argument
+modifier|*
+name|args
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|Argument
+modifier|*
+name|plugin_temp_PDB_name_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -1176,6 +1199,63 @@ block|, }
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|plugin_temp_PDB_name_out_args
+specifier|static
+name|ProcArg
+name|plugin_temp_PDB_name_out_args
+index|[]
+init|=
+block|{
+block|{
+name|PDB_STRING
+block|,
+literal|"Temp name"
+block|,
+literal|"A unique temporary name for a temporary PDB entry name"
+block|,   }
+block|, }
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|plugin_temp_PDB_name_proc
+specifier|static
+name|ProcRecord
+name|plugin_temp_PDB_name_proc
+init|=
+block|{
+literal|"gimp_temp_PDB_name"
+block|,
+literal|"Generates a unique temporary PDB name"
+block|,
+literal|"This procedure generates a temporary PDB entry name that is guaranteed to be unique. It is many used by the interactive popup dialogs to generate a PDB entry name."
+block|,
+literal|"Andy Thomas"
+block|,
+literal|"Andy Thomas"
+block|,
+literal|"1998"
+block|,
+name|PDB_INTERNAL
+block|,
+literal|0
+block|,
+name|NULL
+block|,
+literal|1
+block|,
+name|plugin_temp_PDB_name_out_args
+block|,
+block|{
+block|{
+name|plugin_temp_PDB_name_invoker
+block|}
+block|}
+block|, }
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 name|void
 DECL|function|plug_in_init ()
@@ -1242,6 +1322,13 @@ name|procedural_db_register
 argument_list|(
 operator|&
 name|message_handler_set_proc
+argument_list|)
+expr_stmt|;
+comment|/* initialize the message box procedural db calls */
+name|procedural_db_register
+argument_list|(
+operator|&
+name|plugin_temp_PDB_name_proc
 argument_list|)
 expr_stmt|;
 comment|/* initialize the gimp protocol library and set the read and    *  write handlers.    */
@@ -4337,6 +4424,10 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+comment|/* Close any dialogs that this plugin might have opened */
+name|brushes_check_dialogs
+argument_list|()
+expr_stmt|;
 name|open_plug_ins
 operator|=
 name|g_slist_remove
@@ -10649,9 +10740,7 @@ goto|goto
 name|done
 goto|;
 block|}
-name|plug_in_pop
-argument_list|()
-expr_stmt|;
+comment|/*       plug_in_pop (); */
 name|plug_in_params_destroy
 argument_list|(
 name|proc_run
@@ -10677,14 +10766,15 @@ name|recurse
 operator|=
 name|TRUE
 expr_stmt|;
-name|gtk_main
-argument_list|()
-expr_stmt|;
+comment|/*       gtk_main (); */
+comment|/*       return_vals = plug_in_get_current_return_vals (proc_rec); */
 name|return_vals
 operator|=
-name|plug_in_get_current_return_vals
+name|procedural_db_return_args
 argument_list|(
 name|proc_rec
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|plug_in
@@ -14636,6 +14726,85 @@ name|message_handler_set_proc
 argument_list|,
 name|success
 argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|Argument
+modifier|*
+DECL|function|plugin_temp_PDB_name_invoker (Argument * args)
+name|plugin_temp_PDB_name_invoker
+parameter_list|(
+name|Argument
+modifier|*
+name|args
+parameter_list|)
+block|{
+name|Argument
+modifier|*
+name|return_args
+decl_stmt|;
+specifier|static
+name|gint
+name|proc_number
+init|=
+literal|0
+decl_stmt|;
+specifier|static
+name|gchar
+modifier|*
+name|proc_name
+init|=
+literal|"temp_plugin_number_%d"
+decl_stmt|;
+specifier|static
+name|gchar
+name|temp_area
+index|[
+literal|20
+operator|+
+literal|10
+index|]
+decl_stmt|;
+comment|/* 10 should allow enough plugins! */
+name|return_args
+operator|=
+name|procedural_db_return_args
+argument_list|(
+operator|&
+name|plugin_temp_PDB_name_proc
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|sprintf
+argument_list|(
+name|temp_area
+argument_list|,
+name|proc_name
+argument_list|,
+name|proc_number
+operator|++
+argument_list|)
+expr_stmt|;
+name|return_args
+index|[
+literal|1
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_pointer
+operator|=
+name|g_strdup
+argument_list|(
+name|temp_area
+argument_list|)
+expr_stmt|;
+return|return
+name|return_args
 return|;
 block|}
 end_function

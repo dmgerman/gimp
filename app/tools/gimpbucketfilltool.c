@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b650e80103
+DECL|enum|__anon2be5813d0103
 block|{
 DECL|enumerator|FgColorFill
 name|FgColorFill
@@ -1071,6 +1071,8 @@ operator|=
 name|create_paint_mode_menu
 argument_list|(
 name|bucket_fill_paint_mode_callback
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|option_menu

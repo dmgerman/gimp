@@ -1005,6 +1005,57 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+comment|/* Popup the brush dialog interactively */
+DECL|typedef|GRunBrushCallback
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|GRunBrushCallback
+function_decl|)
+parameter_list|(
+name|gchar
+modifier|*
+parameter_list|,
+comment|/* Name */
+name|gdouble
+parameter_list|,
+comment|/* opacity */
+name|gint
+parameter_list|,
+comment|/* spacing */
+name|gint
+parameter_list|,
+comment|/* paint_mode */
+name|gint
+parameter_list|,
+comment|/* width */
+name|gint
+parameter_list|,
+comment|/* height */
+name|gchar
+modifier|*
+parameter_list|,
+comment|/* mask data */
+name|gint
+comment|/* dialog closing */
+parameter_list|)
+function_decl|;
+name|void
+name|gimp_interactive_selection_brush
+parameter_list|(
+name|gchar
+modifier|*
+name|dialogname
+parameter_list|,
+name|gchar
+modifier|*
+name|brush_name
+parameter_list|,
+name|GRunBrushCallback
+name|callback
+parameter_list|)
+function_decl|;
 comment|/****************************************  *              Images                  *  ****************************************/
 name|gint32
 name|gimp_image_new

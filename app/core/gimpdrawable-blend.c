@@ -204,7 +204,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2919e6ae0103
+DECL|enum|__anon2b5697980103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -241,7 +241,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2919e6ae0203
+DECL|enum|__anon2b5697980203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -263,7 +263,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2919e6ae0303
+DECL|enum|__anon2b5697980303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -407,7 +407,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2919e6ae0408
+DECL|struct|__anon2b5697980408
 typedef|typedef
 struct|struct
 block|{
@@ -459,7 +459,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2919e6ae0508
+DECL|struct|__anon2b5697980508
 typedef|typedef
 struct|struct
 block|{
@@ -2449,6 +2449,8 @@ operator|=
 name|create_paint_mode_menu
 argument_list|(
 name|paint_mode_callback
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|pm_option_menu

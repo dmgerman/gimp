@@ -48,13 +48,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"bucket_fill.h"
+file|"brightness_contrast.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"brightness_contrast.h"
+file|"brush_select.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"bucket_fill.h"
 end_include
 
 begin_include
@@ -348,7 +354,7 @@ comment|/* grep -c procedural_db_register internal_procs.c */
 name|gfloat
 name|total_pcount
 init|=
-literal|206
+literal|213
 decl_stmt|;
 name|app_init_update_status
 argument_list|(
@@ -2163,6 +2169,15 @@ name|procedural_db_register
 argument_list|(
 operator|&
 name|brushes_list_proc
+argument_list|)
+expr_stmt|;
+name|pcount
+operator|++
+expr_stmt|;
+name|procedural_db_register
+argument_list|(
+operator|&
+name|brushes_popup_proc
 argument_list|)
 expr_stmt|;
 name|pcount
