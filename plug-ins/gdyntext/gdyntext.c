@@ -159,7 +159,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2755bc1a0103
+DECL|enum|__anon2c7552ae0103
 block|{
 DECL|enumerator|TEXT
 name|TEXT
@@ -2145,11 +2145,14 @@ name|data
 operator|->
 name|messages
 argument_list|,
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
-literal|"Upgrading old GDynText layer to "
+literal|"Upgrading old GDynText layer to %s\n"
+argument_list|)
+argument_list|,
 name|GDYNTEXT_MAGIC
-literal|".\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2176,14 +2179,17 @@ name|data
 operator|->
 name|messages
 argument_list|,
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"WARNING: GDynText is too old!\n"
 literal|"  You may loose some data by changing this text.\n"
 literal|"  A newer version is reqired to handle this layer.\n"
-literal|"  Get it from "
+literal|"  Get it from %s\n"
+argument_list|)
+argument_list|,
 name|GDYNTEXT_WEB_PAGE
-literal|"\n"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -329,10 +329,7 @@ literal|"Jochen Friedrich, Gert Doering, Spencer Kimball& Peter Mattis"
 argument_list|,
 name|VERSION
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Load>/Fax G3"
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

@@ -141,7 +141,7 @@ file|"graphics/text_load.xpm"
 end_include
 
 begin_typedef
-DECL|struct|__anon273b23e00108
+DECL|struct|__anon2a1da9dc0108
 typedef|typedef
 struct|struct
 block|{
@@ -1104,21 +1104,19 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
+comment|/* note: if you insist on translation this string, remember that       you can not use #defined strings with gettext */
 name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|_
-argument_list|(
 literal|"GIMP Dynamic Text "
 name|GDYNTEXT_VERSION
 literal|"\n"
-literal|"Copyright (C) 1998,1999 Marco Lamberto\n"
+literal|"Copyright (C) 1998, 1999  Marco Lamberto\n"
 literal|"E-mail: lm@geocities.com\n"
 literal|"Web page: "
 name|GDYNTEXT_WEB_PAGE
 literal|"\n\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
