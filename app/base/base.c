@@ -188,12 +188,15 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|base_init (GimpBaseConfig * config,gboolean use_cpu_accel)
+DECL|function|base_init (GimpBaseConfig * config,gboolean be_verbose,gboolean use_cpu_accel)
 name|base_init
 parameter_list|(
 name|GimpBaseConfig
 modifier|*
 name|config
+parameter_list|,
+name|gboolean
+name|be_verbose
 parameter_list|,
 name|gboolean
 name|use_cpu_accel
@@ -354,6 +357,8 @@ argument_list|()
 expr_stmt|;
 name|gimp_composite_init
 argument_list|(
+name|be_verbose
+argument_list|,
 name|use_cpu_accel
 argument_list|)
 expr_stmt|;

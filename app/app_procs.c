@@ -735,6 +735,8 @@ operator|->
 name|config
 argument_list|)
 argument_list|,
+name|be_verbose
+argument_list|,
 name|use_cpu_accel
 argument_list|)
 expr_stmt|;

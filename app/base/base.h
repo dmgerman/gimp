@@ -25,6 +25,9 @@ modifier|*
 name|config
 parameter_list|,
 name|gboolean
+name|be_verbose
+parameter_list|,
+name|gboolean
 name|use_cpu_accel
 parameter_list|)
 function_decl|;
