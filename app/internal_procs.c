@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brightness_contrast.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"brush_select.h"
 end_include
 
@@ -97,6 +91,12 @@ begin_include
 include|#
 directive|include
 file|"color_balance.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"color_cmds.h"
 end_include
 
 begin_include
@@ -222,12 +222,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"levels.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"internal_procs.h"
 end_include
 
@@ -259,12 +253,6 @@ begin_include
 include|#
 directive|include
 file|"perspective_tool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"posterize.h"
 end_include
 
 begin_include

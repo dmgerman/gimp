@@ -396,6 +396,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpparasite.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -2487,10 +2493,6 @@ name|xcf_init
 argument_list|()
 expr_stmt|;
 comment|/*  initialize the xcf file format routines */
-name|gimp_init_parasites
-argument_list|()
-expr_stmt|;
-comment|/*  initialize the parasite table */
 name|app_init_update_status
 argument_list|(
 name|_
@@ -2500,10 +2502,26 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Brushes"
+literal|"Parasites"
 argument_list|)
 argument_list|,
 literal|0.00
+argument_list|)
+expr_stmt|;
+name|gimp_init_parasites
+argument_list|()
+expr_stmt|;
+comment|/*  initialize  the global parasite table */
+name|app_init_update_status
+argument_list|(
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Brushes"
+argument_list|)
+argument_list|,
+literal|0.20
 argument_list|)
 expr_stmt|;
 name|brushes_init
@@ -2521,7 +2539,7 @@ argument_list|(
 literal|"Patterns"
 argument_list|)
 argument_list|,
-literal|0.25
+literal|0.40
 argument_list|)
 expr_stmt|;
 name|patterns_init
@@ -2539,7 +2557,7 @@ argument_list|(
 literal|"Palettes"
 argument_list|)
 argument_list|,
-literal|0.50
+literal|0.60
 argument_list|)
 expr_stmt|;
 name|palettes_init
@@ -2557,7 +2575,7 @@ argument_list|(
 literal|"Gradients"
 argument_list|)
 argument_list|,
-literal|0.75
+literal|0.80
 argument_list|)
 expr_stmt|;
 name|gradients_init
@@ -2825,6 +2843,9 @@ name|tile_swap_exit
 argument_list|()
 expr_stmt|;
 name|save_unitrc
+argument_list|()
+expr_stmt|;
+name|gimp_parasiterc_save
 argument_list|()
 expr_stmt|;
 comment|/*  Things to do only if there is an interface  */

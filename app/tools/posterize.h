@@ -22,12 +22,6 @@ directive|include
 file|"tools.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"procedural_db.h"
-end_include
-
 begin_comment
 comment|/*  by_color select functions  */
 end_comment
@@ -61,17 +55,6 @@ modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  Procedure definition and marshalling function  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|posterize_proc
-decl_stmt|;
-end_decl_stmt
 
 begin_endif
 endif|#

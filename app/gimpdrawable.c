@@ -76,7 +76,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2bdd68440103
+DECL|enum|__anon29b1509a0103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -2728,13 +2728,6 @@ operator|->
 name|tattoo
 operator|=
 literal|0
-expr_stmt|;
-name|gimp_matrix_identity
-argument_list|(
-name|drawable
-operator|->
-name|transform
-argument_list|)
 expr_stmt|;
 name|drawable
 operator|->

@@ -60,12 +60,6 @@ directive|include
 file|"pathsP.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmatrix.h"
-end_include
-
 begin_define
 DECL|macro|MAX_CHANNELS
 define|#
@@ -260,11 +254,6 @@ modifier|*
 name|paths
 decl_stmt|;
 comment|/*  Paths data for this image    */
-DECL|member|transform
-name|GimpMatrix
-name|transform
-decl_stmt|;
-comment|/* a matrix describing all of the 					 transformations this image 					 has undergone */
 DECL|member|visible
 name|int
 name|visible

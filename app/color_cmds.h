@@ -6,55 +6,42 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__POSTERIZE_H__
+name|__COLOR_CMDS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__POSTERIZE_H__
+DECL|macro|__COLOR_CMDS_H__
 define|#
 directive|define
-name|__POSTERIZE_H__
+name|__COLOR_CMDS_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"procedural_db.h"
 end_include
 
-begin_comment
-comment|/*  by_color select functions  */
-end_comment
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|brightness_contrast_proc
+decl_stmt|;
+end_decl_stmt
 
-begin_function_decl
-name|Tool
-modifier|*
-name|tools_new_posterize
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|levels_proc
+decl_stmt|;
+end_decl_stmt
 
-begin_function_decl
-name|void
-name|tools_free_posterize
-parameter_list|(
-name|Tool
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|posterize_initialize
-parameter_list|(
-name|GDisplay
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|posterize_proc
+decl_stmt|;
+end_decl_stmt
 
 begin_endif
 endif|#
@@ -62,7 +49,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __POSTERIZE_H__  */
+comment|/* __COLOR_CMDS_H__ */
 end_comment
 
 end_unit

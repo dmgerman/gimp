@@ -142,6 +142,25 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/* gimp_lut_process_inline is like gimp_lut_process except it uses a    single PixelRegion as both the source and destination */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_lut_process_inline
+parameter_list|(
+name|GimpLut
+modifier|*
+name|lut
+parameter_list|,
+name|PixelRegion
+modifier|*
+name|src_destPR
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* gimp_lut_process_2 is the same as gimp_lut_process but the lut    perameter is last instead of first.  this is necesary because    pixel_region_process_paralell sends the user_data as the 1st    parameter, and the image_map functions send user_data as the last    parameter */
 end_comment
 

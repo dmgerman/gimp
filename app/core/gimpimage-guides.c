@@ -503,7 +503,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2967d54a0103
+DECL|enum|__anon2a1f88e10103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -896,13 +896,6 @@ name|parasites
 operator|=
 name|parasite_list_new
 argument_list|()
-expr_stmt|;
-name|gimp_matrix_identity
-argument_list|(
-name|gimage
-operator|->
-name|transform
-argument_list|)
 expr_stmt|;
 name|gimage
 operator|->

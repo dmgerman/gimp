@@ -34,12 +34,6 @@ directive|include
 file|"parasitelistF.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmatrix.h"
-end_include
-
 begin_struct
 DECL|struct|_GimpDrawable
 struct|struct
@@ -124,11 +118,6 @@ modifier|*
 name|parasites
 decl_stmt|;
 comment|/* Plug-in parasite data   */
-DECL|member|transform
-name|GimpMatrix
-name|transform
-decl_stmt|;
-comment|/* a matrix describing all of the 					   transformations this drawable 					   has undergone */
 comment|/*  Preview variables  */
 DECL|member|preview
 name|TempBuf

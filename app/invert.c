@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"lut_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -182,56 +188,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function
-specifier|static
-name|float
-DECL|function|invert_lut_func (void * unused,int nchannels,int channel,float value)
-name|invert_lut_func
-parameter_list|(
-name|void
-modifier|*
-name|unused
-parameter_list|,
-name|int
-name|nchannels
-parameter_list|,
-name|int
-name|channel
-parameter_list|,
-name|float
-name|value
-parameter_list|)
-block|{
-comment|/* don't invert the alpha channel */
-if|if
-condition|(
-operator|(
-name|nchannels
-operator|==
-literal|2
-operator|||
-name|nchannels
-operator|==
-literal|4
-operator|)
-operator|&&
-name|channel
-operator|==
-name|nchannels
-operator|-
-literal|1
-condition|)
-return|return
-name|value
-return|;
-return|return
-literal|1.0
-operator|-
-name|value
-return|;
-block|}
-end_function
-
 begin_comment
 comment|/*  Inverter  */
 end_comment
@@ -267,24 +223,8 @@ name|lut
 decl_stmt|;
 name|lut
 operator|=
-name|gimp_lut_new
-argument_list|()
-expr_stmt|;
-name|gimp_lut_setup_exact
+name|invert_lut_new
 argument_list|(
-name|lut
-argument_list|,
-operator|(
-name|GimpLutFunc
-operator|)
-name|invert_lut_func
-argument_list|,
-operator|(
-name|void
-operator|*
-operator|)
-name|NULL
-argument_list|,
 name|gimp_drawable_bytes
 argument_list|(
 name|drawable
@@ -421,7 +361,15 @@ block|}
 end_function
 
 begin_comment
-comment|/*  The invert procedure definition  */
+comment|/*  ------------------------------------------------------------------  */
+end_comment
+
+begin_comment
+comment|/*  ----------------- The invert procedure definition ----------------  */
+end_comment
+
+begin_comment
+comment|/*  ------------------------------------------------------------------  */
 end_comment
 
 begin_decl_stmt
