@@ -12,7 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushpixmap.h"
+file|"gimpbrushpipe.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpbrushpipeP.h"
 end_include
 
 begin_include
@@ -204,7 +210,7 @@ value|(GDK_BUTTON_PRESS_MASK |   \                                    GDK_BUTTON
 end_define
 
 begin_enum
-DECL|enum|__anon2abf404b0103
+DECL|enum|__anon27b516a20103
 enum|enum
 block|{
 DECL|enumerator|CLICKED
