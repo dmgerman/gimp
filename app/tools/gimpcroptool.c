@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon288ec6f00103
+DECL|enum|__anon278dd3160103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -496,6 +496,9 @@ parameter_list|(
 name|GimpCropTool
 modifier|*
 name|crop
+parameter_list|,
+name|gboolean
+name|recalc_highlight
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1027,6 +1030,15 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|GimpCropTool
+modifier|*
+name|crop
+init|=
+name|GIMP_CROP_TOOL
+argument_list|(
+name|tool
+argument_list|)
+decl_stmt|;
 switch|switch
 condition|(
 name|action
@@ -1039,6 +1051,13 @@ break|break;
 case|case
 name|RESUME
 case|:
+name|crop_recalc
+argument_list|(
+name|crop
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|HALT
@@ -1049,10 +1068,7 @@ name|NULL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GIMP_CROP_TOOL
-argument_list|(
-name|tool
-argument_list|)
+name|crop
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2134,6 +2150,8 @@ comment|/*  recalculate the coordinates for crop_draw based on the new values  *
 name|crop_recalc
 argument_list|(
 name|crop
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -2765,6 +2783,8 @@ block|}
 name|crop_recalc
 argument_list|(
 name|crop
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
@@ -3838,12 +3858,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|crop_recalc (GimpCropTool * crop)
+DECL|function|crop_recalc (GimpCropTool * crop,gboolean recalc_highlight)
 name|crop_recalc
 parameter_list|(
 name|GimpCropTool
 modifier|*
 name|crop
+parameter_list|,
+name|gboolean
+name|recalc_highlight
 parameter_list|)
 block|{
 name|GimpTool
@@ -3868,9 +3891,6 @@ operator|->
 name|shell
 argument_list|)
 decl_stmt|;
-name|GdkRectangle
-name|rect
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -3879,6 +3899,14 @@ operator|->
 name|gdisp
 condition|)
 return|return;
+if|if
+condition|(
+name|recalc_highlight
+condition|)
+block|{
+name|GdkRectangle
+name|rect
+decl_stmt|;
 name|rect
 operator|.
 name|x
@@ -3927,6 +3955,7 @@ operator|&
 name|rect
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_display_shell_transform_xy
 argument_list|(
 name|shell
@@ -4103,6 +4132,8 @@ decl_stmt|;
 name|crop_recalc
 argument_list|(
 name|crop
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
@@ -5788,6 +5819,8 @@ expr_stmt|;
 name|crop_recalc
 argument_list|(
 name|crop
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
@@ -6115,6 +6148,8 @@ expr_stmt|;
 name|crop_recalc
 argument_list|(
 name|crop
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
@@ -6254,6 +6289,8 @@ expr_stmt|;
 name|crop_recalc
 argument_list|(
 name|crop
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
@@ -6371,6 +6408,8 @@ expr_stmt|;
 name|crop_recalc
 argument_list|(
 name|crop
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
@@ -6455,6 +6494,8 @@ expr_stmt|;
 name|crop_recalc
 argument_list|(
 name|crop
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|crop
