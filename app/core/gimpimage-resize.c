@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"general.h"
 end_include
 
@@ -455,7 +461,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon278d11200103
+DECL|enum|__anon2783aeb70103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -9495,6 +9501,16 @@ name|RESTRUCTURE
 index|]
 argument_list|)
 expr_stmt|;
+name|printf
+argument_list|(
+literal|" gimp_image_merge_layers "
+argument_list|)
+expr_stmt|;
+name|fflush
+argument_list|(
+name|stdout
+argument_list|)
+expr_stmt|;
 name|drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
@@ -9523,6 +9539,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*reinit_layer_idlerender (gimage, merge_layer);*/
 return|return
 name|merge_layer
 return|;
@@ -9803,6 +9820,16 @@ name|float_layer
 argument_list|)
 expr_stmt|;
 comment|/*  update the new layer's area  */
+name|printf
+argument_list|(
+literal|" gimp_image_add_layer "
+argument_list|)
+expr_stmt|;
+name|fflush
+argument_list|(
+name|stdout
+argument_list|)
+expr_stmt|;
 name|drawable_update
 argument_list|(
 name|GIMP_DRAWABLE

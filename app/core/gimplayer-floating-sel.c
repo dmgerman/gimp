@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimage.h"
 end_include
 
@@ -811,30 +817,23 @@ name|TRUE
 expr_stmt|;
 comment|/*  if the floating selection exceeds the attached layer's extents,       update the new layer  */
 comment|/*  I don't think that the preview is ever valid as is, since the layer       will be added on top of the others.  Revert this if I'm wrong.       msw@gimp.org   */
-name|drawable_update
+name|printf
 argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
+literal|" floating_sel_to_layer "
 argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|GIMP_DRAWABLE
+expr_stmt|;
+name|fflush
 argument_list|(
-name|layer
+name|stdout
 argument_list|)
-operator|->
-name|width
-argument_list|,
-name|GIMP_DRAWABLE
+expr_stmt|;
+comment|/*   drawable_update (GIMP_DRAWABLE(layer), 0, 0, 		   GIMP_DRAWABLE(layer)->width, GIMP_DRAWABLE(layer)->height);   */
+comment|/* This may be undesirable when invoked non-interactively... we'll see. */
+name|reinit_layer_idlerender
 argument_list|(
+name|gimage
+argument_list|,
 name|layer
-argument_list|)
-operator|->
-name|height
 argument_list|)
 expr_stmt|;
 block|}

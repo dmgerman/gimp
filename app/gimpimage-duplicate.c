@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab158590108
+DECL|struct|__anon2aeae72e0108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -2535,6 +2535,16 @@ operator|->
 name|tiles
 operator|=
 name|new_tiles
+expr_stmt|;
+name|printf
+argument_list|(
+literal|" offset "
+argument_list|)
+expr_stmt|;
+name|fflush
+argument_list|(
+name|stdout
+argument_list|)
 expr_stmt|;
 comment|/*  update the drawable  */
 name|drawable_update
