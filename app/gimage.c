@@ -332,6 +332,11 @@ expr_stmt|;
 name|indexed_palette_update_image_list
 argument_list|()
 expr_stmt|;
+name|palette_import_image_new
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 return|return
 name|gimage
 return|;
@@ -525,6 +530,11 @@ expr_stmt|;
 name|indexed_palette_update_image_list
 argument_list|()
 expr_stmt|;
+name|palette_import_image_destroyed
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -549,6 +559,11 @@ argument_list|()
 expr_stmt|;
 name|indexed_palette_update_image_list
 argument_list|()
+expr_stmt|;
+name|palette_import_image_renamed
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 end_function

@@ -485,7 +485,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2a4242050103
+DECL|enum|__anon2a3e38830103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -13000,7 +13000,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|TempBuf
 modifier|*
 DECL|function|gimp_image_construct_composite_preview (GimpImage * gimage,int width,int height)

@@ -28,6 +28,12 @@ directive|include
 file|"gimpimageF.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"palette_entries.h"
+end_include
+
 begin_comment
 comment|/*  convert functions  */
 end_comment

@@ -285,6 +285,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|extern
+name|void
+name|import_palette_grad_update
+parameter_list|(
+name|gradient_t
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* ALT Hmm... */
+end_comment
+
 begin_decl_stmt
 DECL|variable|action_items
 specifier|static
@@ -1120,6 +1135,11 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
+name|import_palette_grad_update
+argument_list|(
+name|grad
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1195,6 +1215,13 @@ operator|->
 name|grad
 operator|->
 name|name
+argument_list|)
+expr_stmt|;
+name|import_palette_grad_update
+argument_list|(
+name|gsp
+operator|->
+name|grad
 argument_list|)
 expr_stmt|;
 block|}
