@@ -16,30 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
 end_include
 
@@ -76,19 +52,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"layer.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"layers_dialog.h"
 end_include
 
 begin_include
@@ -122,7 +86,7 @@ file|"tile_manager_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon274a1fed0103
+DECL|enum|__anon2c1d898a0103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -849,10 +813,10 @@ end_comment
 begin_function
 name|Layer
 modifier|*
-DECL|function|layer_new (gimage_ID,width,height,type,name,opacity,mode)
+DECL|function|layer_new (gimage,width,height,type,name,opacity,mode)
 name|layer_new
 parameter_list|(
-name|gimage_ID
+name|gimage
 parameter_list|,
 name|width
 parameter_list|,
@@ -866,8 +830,9 @@ name|opacity
 parameter_list|,
 name|mode
 parameter_list|)
-name|int
-name|gimage_ID
+name|GimpImage
+modifier|*
+name|gimage
 decl_stmt|;
 name|int
 name|width
@@ -927,7 +892,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|gimage_ID
+name|gimage
 argument_list|,
 name|width
 argument_list|,
@@ -1241,7 +1206,7 @@ argument_list|(
 name|layer
 argument_list|)
 operator|->
-name|gimage_ID
+name|gimage
 argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2067,7 +2032,7 @@ argument_list|(
 name|layer
 argument_list|)
 operator|->
-name|gimage_ID
+name|gimage
 argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2684,15 +2649,12 @@ block|{
 comment|/*  the undo call goes here  */
 name|undo_push_layer_displace
 argument_list|(
-name|gimage_get_ID
-argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
 operator|->
-name|gimage_ID
-argument_list|)
+name|gimage
 argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3003,15 +2965,12 @@ expr_stmt|;
 comment|/*  Push the layer on the undo stack  */
 name|undo_push_layer_mod
 argument_list|(
-name|gimage_get_ID
-argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
 operator|->
-name|gimage_ID
-argument_list|)
+name|gimage
 argument_list|,
 name|layer
 argument_list|)
@@ -3071,7 +3030,7 @@ argument_list|(
 name|layer
 argument_list|)
 operator|->
-name|gimage_ID
+name|gimage
 argument_list|)
 expr_stmt|;
 block|}
@@ -3266,15 +3225,12 @@ expr_stmt|;
 comment|/*  Push the layer on the undo stack  */
 name|undo_push_layer_mod
 argument_list|(
-name|gimage_get_ID
-argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
 operator|->
-name|gimage_ID
-argument_list|)
+name|gimage
 argument_list|,
 name|layer
 argument_list|)
@@ -3617,7 +3573,7 @@ condition|)
 return|return;
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|offx
 argument_list|,
@@ -3628,7 +3584,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|offy
 argument_list|,
@@ -3639,7 +3595,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 name|offx
@@ -3659,7 +3615,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 name|offy
@@ -3878,15 +3834,12 @@ index|]
 decl_stmt|;
 name|gimage_get_background
 argument_list|(
-name|gimage_get_ID
-argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
 operator|->
-name|gimage_ID
-argument_list|)
+name|gimage
 argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3942,15 +3895,12 @@ expr_stmt|;
 comment|/*  Push the layer on the undo stack  */
 name|undo_push_layer_mod
 argument_list|(
-name|gimage_get_ID
-argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
 operator|->
-name|gimage_ID
-argument_list|)
+name|gimage
 argument_list|,
 name|layer
 argument_list|)
@@ -4547,15 +4497,12 @@ operator|!
 operator|(
 name|gimage
 operator|=
-name|gimage_get_ID
-argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
 operator|->
-name|gimage_ID
-argument_list|)
+name|gimage
 operator|)
 condition|)
 return|return;
@@ -4563,8 +4510,6 @@ comment|/*  Turn the current selection off  */
 name|gdisplays_selection_visibility
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|SelectionOff
 argument_list|)
@@ -4607,7 +4552,7 @@ argument_list|(
 name|layer
 argument_list|)
 operator|->
-name|gimage_ID
+name|gimage
 argument_list|,
 name|SelectionLayerOff
 argument_list|)
@@ -5110,15 +5055,12 @@ else|else
 block|{
 name|gimage
 operator|=
-name|gimage_get_ID
-argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
 operator|->
-name|gimage_ID
-argument_list|)
+name|gimage
 expr_stmt|;
 switch|switch
 condition|(
@@ -5748,14 +5690,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|layer_invalidate_previews (gimage_id)
+DECL|function|layer_invalidate_previews (GimpImage * gimage)
 name|layer_invalidate_previews
 parameter_list|(
-name|gimage_id
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|)
-name|int
-name|gimage_id
-decl_stmt|;
 block|{
 name|GSList
 modifier|*
@@ -5765,23 +5706,6 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|GImage
-modifier|*
-name|gimage
-decl_stmt|;
-if|if
-condition|(
-operator|!
-operator|(
-name|gimage
-operator|=
-name|gimage_get_ID
-argument_list|(
-name|gimage_id
-argument_list|)
-operator|)
-condition|)
-return|return;
 name|tmp
 operator|=
 name|gimage
@@ -6648,11 +6572,12 @@ end_function
 begin_function
 name|LayerMask
 modifier|*
-DECL|function|layer_mask_new (int gimage_ID,int width,int height,char * name,int opacity,unsigned char * col)
+DECL|function|layer_mask_new (GimpImage * gimage,int width,int height,char * name,int opacity,unsigned char * col)
 name|layer_mask_new
 parameter_list|(
-name|int
-name|gimage_ID
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|,
 name|int
 name|width
@@ -6695,7 +6620,7 @@ argument_list|(
 name|layer_mask
 argument_list|)
 argument_list|,
-name|gimage_ID
+name|gimage
 argument_list|,
 name|width
 argument_list|,
@@ -6927,7 +6852,7 @@ argument_list|(
 name|layer_mask
 argument_list|)
 operator|->
-name|gimage_ID
+name|gimage
 argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7307,7 +7232,7 @@ argument_list|)
 expr_stmt|;
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7328,7 +7253,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7349,7 +7274,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7377,7 +7302,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

@@ -1696,8 +1696,6 @@ block|{
 name|gdisplays_shrink_wrap
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|)
 expr_stmt|;
 name|shrink_wrap
@@ -5698,8 +5696,6 @@ comment|/*  Issue the first update  */
 name|gdisplays_update_area
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
@@ -5953,7 +5949,7 @@ argument_list|(
 name|layer
 argument_list|)
 operator|->
-name|gimage_ID
+name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  Set the new tile manager  */
@@ -8819,15 +8815,11 @@ expr_stmt|;
 name|channel_invalidate_previews
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|)
 expr_stmt|;
 name|layer_invalidate_previews
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|)
 expr_stmt|;
 name|gimage_invalidate_preview
@@ -8838,15 +8830,11 @@ expr_stmt|;
 name|gdisplays_update_full
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|)
 expr_stmt|;
 name|gdisplays_update_title
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|)
 expr_stmt|;
 name|indexed_palette_update_image_list
@@ -9113,8 +9101,6 @@ expr_stmt|;
 name|gdisplays_expose_guide
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|data
 operator|->
@@ -9124,8 +9110,6 @@ expr_stmt|;
 name|gdisplays_expose_guide
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 operator|&
 name|data

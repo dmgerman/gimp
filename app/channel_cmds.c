@@ -348,7 +348,10 @@ name|channel
 operator|=
 name|channel_new
 argument_list|(
+name|gimage_get_ID
+argument_list|(
 name|gimage_id
+argument_list|)
 argument_list|,
 name|width
 argument_list|,

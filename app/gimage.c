@@ -632,8 +632,6 @@ block|{
 name|gdisplays_update_title
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|)
 expr_stmt|;
 name|lc_dialog_update_image_list
@@ -665,15 +663,11 @@ comment|/*  shrink wrap and update all views  */
 name|channel_invalidate_previews
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|)
 expr_stmt|;
 name|layer_invalidate_previews
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|)
 expr_stmt|;
 name|gimp_image_invalidate_preview
@@ -684,15 +678,11 @@ expr_stmt|;
 name|gdisplays_update_full
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|)
 expr_stmt|;
 name|gdisplays_shrink_wrap
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|)
 expr_stmt|;
 block|}
@@ -712,8 +702,6 @@ block|{
 name|gdisplays_update_title
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|)
 expr_stmt|;
 block|}
@@ -745,8 +733,6 @@ block|{
 name|gdisplays_update_area
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|x
 argument_list|,
@@ -834,8 +820,6 @@ expr_stmt|;
 name|gdisplays_update_area
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|off_x
 argument_list|,
@@ -970,8 +954,6 @@ expr_stmt|;
 name|gdisplays_update_area
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|off_x
 argument_list|,

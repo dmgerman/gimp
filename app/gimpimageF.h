@@ -21,6 +21,19 @@ name|GimpImage
 typedef|;
 end_typedef
 
+begin_comment
+comment|/* Move this someplace else */
+end_comment
+
+begin_typedef
+DECL|typedef|Guide
+typedef|typedef
+name|struct
+name|_Guide
+name|Guide
+typedef|;
+end_typedef
+
 begin_endif
 endif|#
 directive|endif

@@ -1107,12 +1107,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_ID
+DECL|variable|the_gimage
 specifier|static
-name|int
-name|image_ID
-init|=
-literal|0
+name|GimpImage
+modifier|*
+name|the_gimage
 decl_stmt|;
 end_decl_stmt
 
@@ -2356,8 +2355,6 @@ argument_list|(
 name|gdisplay
 operator|->
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|gimage_filename
 argument_list|(
@@ -2570,13 +2567,11 @@ operator|=
 name|gdisplay_active
 argument_list|()
 expr_stmt|;
-name|image_ID
+name|the_gimage
 operator|=
 name|gdisplay
 operator|->
 name|gimage
-operator|->
-name|ID
 expr_stmt|;
 if|if
 condition|(
@@ -3073,7 +3068,7 @@ modifier|*
 name|gimage
 decl_stmt|;
 name|int
-name|gimage_ID
+name|gimage_id
 decl_stmt|;
 name|int
 name|return_val
@@ -3236,7 +3231,7 @@ operator|==
 name|PDB_SUCCESS
 operator|)
 expr_stmt|;
-name|gimage_ID
+name|gimage_id
 operator|=
 name|return_vals
 index|[
@@ -3268,7 +3263,7 @@ name|gimage
 operator|=
 name|gimage_get_ID
 argument_list|(
-name|gimage_ID
+name|gimage_id
 argument_list|)
 operator|)
 operator|!=
@@ -3304,11 +3299,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|file_save (int image_ID,char * filename,char * raw_filename)
+DECL|function|file_save (GimpImage * gimage,char * filename,char * raw_filename)
 name|file_save
 parameter_list|(
-name|int
-name|image_ID
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|,
 name|char
 modifier|*
@@ -3338,29 +3334,9 @@ decl_stmt|;
 name|int
 name|return_val
 decl_stmt|;
-name|GImage
-modifier|*
-name|gimage
-decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-if|if
-condition|(
-operator|(
-name|gimage
-operator|=
-name|gimage_get_ID
-argument_list|(
-name|image_ID
-argument_list|)
-operator|)
-operator|==
-name|NULL
-condition|)
-return|return
-name|FALSE
-return|;
 if|if
 condition|(
 name|gimage_active_drawable
@@ -3486,7 +3462,9 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|image_ID
+name|the_gimage
+operator|->
+name|ID
 expr_stmt|;
 name|args
 index|[
@@ -4033,7 +4011,7 @@ if|if
 condition|(
 name|file_save
 argument_list|(
-name|image_ID
+name|the_gimage
 argument_list|,
 name|filename
 argument_list|,
@@ -4542,21 +4520,16 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-operator|(
 name|gimage
 operator|=
-name|gimage_get_ID
-argument_list|(
-name|image_ID
-argument_list|)
+name|the_gimage
 operator|)
 operator|!=
 name|NULL
-operator|)
 operator|&&
 name|file_save
 argument_list|(
-name|image_ID
+name|the_gimage
 argument_list|,
 name|overwrite_box
 operator|->
@@ -4568,9 +4541,9 @@ name|raw_filename
 argument_list|)
 condition|)
 block|{
-name|image_ID
+name|the_gimage
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 name|file_dialog_hide
 argument_list|(

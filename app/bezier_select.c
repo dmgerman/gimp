@@ -849,7 +849,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2a9dbb570103
+DECL|enum|__anon2b8b1fc30103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -6039,8 +6039,6 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|gdisp
 operator|->
@@ -9648,7 +9646,7 @@ modifier|*
 name|box
 parameter_list|)
 block|{
-DECL|struct|__anon2a9dbb570208
+DECL|struct|__anon2b8b1fc30208
 specifier|static
 struct|struct
 block|{

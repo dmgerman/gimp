@@ -10650,8 +10650,6 @@ operator|=
 name|layer_new
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|newmask
 operator|->

@@ -276,7 +276,7 @@ specifier|static
 name|void
 name|gdisplay_format_title
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 parameter_list|,
 name|char
@@ -435,10 +435,10 @@ end_decl_stmt
 begin_function
 name|GDisplay
 modifier|*
-DECL|function|gdisplay_new (GImage * gimage,unsigned int scale)
+DECL|function|gdisplay_new (GimpImage * gimage,unsigned int scale)
 name|gdisplay_new
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -741,10 +741,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_format_title (GImage * gimage,char * title)
+DECL|function|gdisplay_format_title (GimpImage * gimage,char * title)
 name|gdisplay_format_title
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -848,7 +848,9 @@ name|sprintf
 argument_list|(
 name|title
 argument_list|,
-literal|"%s-%d.%d (%s)"
+literal|"%s"
+comment|/*"-%d"*/
+literal|".%d (%s)"
 argument_list|,
 name|prune_filename
 argument_list|(
@@ -858,10 +860,7 @@ name|gimage
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimage
-operator|->
-name|ID
-argument_list|,
+comment|/*gimage->ID,*/
 name|gimage
 operator|->
 name|instance_count
@@ -6240,11 +6239,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplays_update_title (int ID)
+DECL|function|gdisplays_update_title (GimpImage * gimage)
 name|gdisplays_update_title
 parameter_list|(
-name|int
-name|ID
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|)
 block|{
 name|GDisplay
@@ -6284,10 +6284,8 @@ condition|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|ID
 operator|==
-name|ID
+name|gimage
 condition|)
 block|{
 comment|/* format the title */
@@ -6325,11 +6323,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplays_update_area (int ID,int x,int y,int w,int h)
+DECL|function|gdisplays_update_area (GimpImage * gimage,int x,int y,int w,int h)
 name|gdisplays_update_area
 parameter_list|(
-name|int
-name|ID
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|,
 name|int
 name|x
@@ -6385,10 +6384,8 @@ condition|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|ID
 operator|==
-name|ID
+name|gimage
 condition|)
 block|{
 comment|/*  We only need to update the first instance that 	      we find of this gimage ID.  Otherwise, we would 	      be reconverting the same region unnecessarily.   */
@@ -6480,11 +6477,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplays_expose_guides (int ID)
+DECL|function|gdisplays_expose_guides (GimpImage * gimage)
 name|gdisplays_expose_guides
 parameter_list|(
-name|int
-name|ID
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|)
 block|{
 name|GDisplay
@@ -6524,10 +6522,8 @@ condition|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|ID
 operator|==
-name|ID
+name|gimage
 condition|)
 block|{
 name|tmp_list
@@ -6573,11 +6569,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplays_expose_guide (int ID,Guide * guide)
+DECL|function|gdisplays_expose_guide (GimpImage * gimage,Guide * guide)
 name|gdisplays_expose_guide
 parameter_list|(
-name|int
-name|ID
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|,
 name|Guide
 modifier|*
@@ -6617,10 +6614,8 @@ condition|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|ID
 operator|==
-name|ID
+name|gimage
 condition|)
 name|gdisplay_expose_guide
 argument_list|(
@@ -6642,11 +6637,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplays_update_full (int ID)
+DECL|function|gdisplays_update_full (GimpImage * gimage)
 name|gdisplays_update_full
 parameter_list|(
-name|int
-name|ID
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|)
 block|{
 name|GDisplay
@@ -6685,10 +6681,8 @@ condition|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|ID
 operator|==
-name|ID
+name|gimage
 condition|)
 block|{
 if|if
@@ -6752,11 +6746,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplays_shrink_wrap (int ID)
+DECL|function|gdisplays_shrink_wrap (GimpImage * gimage)
 name|gdisplays_shrink_wrap
 parameter_list|(
-name|int
-name|ID
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|)
 block|{
 name|GDisplay
@@ -6790,10 +6785,8 @@ condition|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|ID
 operator|==
-name|ID
+name|gimage
 condition|)
 name|shrink_wrap_display
 argument_list|(
@@ -6861,11 +6854,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplays_selection_visibility (int gimage_ID,SelectionControl function)
+DECL|function|gdisplays_selection_visibility (GimpImage * gimage,SelectionControl function)
 name|gdisplays_selection_visibility
 parameter_list|(
-name|int
-name|gimage_ID
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|,
 name|SelectionControl
 name|function
@@ -6907,10 +6901,8 @@ condition|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|ID
 operator|==
-name|gimage_ID
+name|gimage
 operator|&&
 name|gdisp
 operator|->

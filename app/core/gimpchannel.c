@@ -357,11 +357,12 @@ end_function
 begin_function
 name|Channel
 modifier|*
-DECL|function|channel_new (int gimage_ID,int width,int height,char * name,int opacity,unsigned char * col)
+DECL|function|channel_new (GimpImage * gimage,int width,int height,char * name,int opacity,unsigned char * col)
 name|channel_new
 parameter_list|(
-name|int
-name|gimage_ID
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|,
 name|int
 name|width
@@ -404,7 +405,7 @@ argument_list|(
 name|channel
 argument_list|)
 argument_list|,
-name|gimage_ID
+name|gimage
 argument_list|,
 name|width
 argument_list|,
@@ -648,7 +649,7 @@ argument_list|(
 name|channel
 argument_list|)
 operator|->
-name|gimage_ID
+name|gimage
 argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1078,15 +1079,12 @@ expr_stmt|;
 comment|/*  Push the channel on the undo stack  */
 name|undo_push_channel_mod
 argument_list|(
-name|gimage_get_ID
-argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|channel
 argument_list|)
 operator|->
-name|gimage_ID
-argument_list|)
+name|gimage
 argument_list|,
 name|channel
 argument_list|)
@@ -1523,15 +1521,12 @@ expr_stmt|;
 comment|/*  Push the channel on the undo stack  */
 name|undo_push_channel_mod
 argument_list|(
-name|gimage_get_ID
-argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|channel
 argument_list|)
 operator|->
-name|gimage_ID
-argument_list|)
+name|gimage
 argument_list|,
 name|channel
 argument_list|)
@@ -1955,11 +1950,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_invalidate_previews (int gimage_id)
+DECL|function|channel_invalidate_previews (GimpImage * gimage)
 name|channel_invalidate_previews
 parameter_list|(
-name|int
-name|gimage_id
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|)
 block|{
 name|GSList
@@ -1970,23 +1966,6 @@ name|Channel
 modifier|*
 name|channel
 decl_stmt|;
-name|GImage
-modifier|*
-name|gimage
-decl_stmt|;
-if|if
-condition|(
-operator|!
-operator|(
-name|gimage
-operator|=
-name|gimage_get_ID
-argument_list|(
-name|gimage_id
-argument_list|)
-operator|)
-condition|)
-return|return;
 name|tmp
 operator|=
 name|gimage
@@ -2038,11 +2017,12 @@ end_comment
 begin_function
 name|Channel
 modifier|*
-DECL|function|channel_new_mask (int gimage_ID,int width,int height)
+DECL|function|channel_new_mask (GimpImage * gimage,int width,int height)
 name|channel_new_mask
 parameter_list|(
-name|int
-name|gimage_ID
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|,
 name|int
 name|width
@@ -2075,7 +2055,7 @@ name|new_channel
 operator|=
 name|channel_new
 argument_list|(
-name|gimage_ID
+name|gimage
 argument_list|,
 name|width
 argument_list|,
@@ -6017,15 +5997,12 @@ expr_stmt|;
 comment|/* push the undo buffer onto the undo stack */
 name|gimage
 operator|=
-name|gimage_get_ID
-argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|mask
 argument_list|)
 operator|->
-name|gimage_ID
-argument_list|)
+name|gimage
 expr_stmt|;
 name|undo_push_mask
 argument_list|(
@@ -7405,7 +7382,7 @@ argument_list|(
 name|mask
 argument_list|)
 operator|->
-name|gimage_ID
+name|gimage
 argument_list|,
 name|width
 argument_list|,

@@ -91,11 +91,12 @@ name|int
 name|ID
 decl_stmt|;
 comment|/* provides a unique ID */
-DECL|member|gimage_ID
-name|int
-name|gimage_ID
+DECL|member|gimage
+name|GimpImage
+modifier|*
+name|gimage
 decl_stmt|;
-comment|/* ID of gimage owner */
+comment|/* gimage owner */
 DECL|member|type
 name|int
 name|type

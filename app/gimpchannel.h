@@ -40,6 +40,12 @@ directive|include
 file|"tile_manager.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpimageF.h"
+end_include
+
 begin_comment
 comment|/* OPERATIONS */
 end_comment
@@ -274,7 +280,8 @@ name|Channel
 modifier|*
 name|channel_new
 parameter_list|(
-name|int
+name|GimpImage
+modifier|*
 parameter_list|,
 name|int
 parameter_list|,
@@ -421,7 +428,8 @@ begin_function_decl
 name|void
 name|channel_invalidate_previews
 parameter_list|(
-name|int
+name|GimpImage
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -435,7 +443,8 @@ name|Channel
 modifier|*
 name|channel_new_mask
 parameter_list|(
-name|int
+name|GimpImage
+modifier|*
 parameter_list|,
 name|int
 parameter_list|,

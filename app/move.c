@@ -427,8 +427,6 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|guide
 argument_list|)
@@ -1100,8 +1098,6 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|move
 operator|->

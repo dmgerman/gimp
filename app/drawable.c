@@ -100,7 +100,7 @@ file|"drawable_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2bc30b6d0103
+DECL|enum|__anon2bcb6cac0103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -458,12 +458,9 @@ name|tiles
 condition|)
 name|undo_push_image
 argument_list|(
-name|gimage_get_ID
-argument_list|(
 name|drawable
 operator|->
-name|gimage_ID
-argument_list|)
+name|gimage
 argument_list|,
 name|drawable
 argument_list|,
@@ -479,12 +476,9 @@ expr_stmt|;
 else|else
 name|undo_push_image_mod
 argument_list|(
-name|gimage_get_ID
-argument_list|(
 name|drawable
 operator|->
-name|gimage_ID
-argument_list|)
+name|gimage
 argument_list|,
 name|drawable
 argument_list|,
@@ -1031,8 +1025,6 @@ expr_stmt|;
 name|gdisplays_update_area
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|x
 argument_list|,
@@ -1420,12 +1412,9 @@ condition|(
 name|drawable
 condition|)
 return|return
-name|gimage_get_ID
-argument_list|(
 name|drawable
 operator|->
-name|gimage_ID
-argument_list|)
+name|gimage
 return|;
 else|else
 return|return
@@ -2143,10 +2132,9 @@ name|FALSE
 expr_stmt|;
 name|drawable
 operator|->
-name|gimage_ID
+name|gimage
 operator|=
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 name|drawable
 operator|->
@@ -2330,15 +2318,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_configure (GimpDrawable * drawable,int gimage_ID,int width,int height,int type,char * name)
+DECL|function|gimp_drawable_configure (GimpDrawable * drawable,GimpImage * gimage,int width,int height,int type,char * name)
 name|gimp_drawable_configure
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
-name|gimage_ID
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|,
 name|int
 name|width
@@ -2560,9 +2549,9 @@ name|TRUE
 expr_stmt|;
 name|drawable
 operator|->
-name|gimage_ID
+name|gimage
 operator|=
-name|gimage_ID
+name|gimage
 expr_stmt|;
 comment|/*  preview variables  */
 name|drawable

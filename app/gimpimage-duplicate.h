@@ -22,6 +22,12 @@ directive|include
 file|"procedural_db.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpimageF.h"
+end_include
+
 begin_comment
 comment|/*  channel_ops functions  */
 end_comment
@@ -30,7 +36,7 @@ begin_function_decl
 name|void
 name|channel_ops_offset
 parameter_list|(
-name|void
+name|GimpImage
 modifier|*
 parameter_list|)
 function_decl|;

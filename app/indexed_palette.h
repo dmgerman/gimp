@@ -24,7 +24,8 @@ begin_function_decl
 name|void
 name|indexed_palette_create
 parameter_list|(
-name|int
+name|GimpImage
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -117,7 +117,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7df24d0103
+DECL|enum|__anon2a119a680103
 block|{
 DECL|enumerator|SelectionOff
 name|SelectionOff
@@ -243,7 +243,7 @@ name|vsbdata
 decl_stmt|;
 comment|/*  vertical data information               */
 DECL|member|gimage
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -367,7 +367,7 @@ name|GDisplay
 modifier|*
 name|gdisplay_new
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 parameter_list|,
 name|unsigned
@@ -721,7 +721,8 @@ begin_function_decl
 name|void
 name|gdisplays_update_title
 parameter_list|(
-name|int
+name|GimpImage
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -730,7 +731,8 @@ begin_function_decl
 name|void
 name|gdisplays_update_area
 parameter_list|(
-name|int
+name|GimpImage
+modifier|*
 parameter_list|,
 name|int
 parameter_list|,
@@ -747,7 +749,8 @@ begin_function_decl
 name|void
 name|gdisplays_expose_guides
 parameter_list|(
-name|int
+name|GimpImage
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -756,7 +759,8 @@ begin_function_decl
 name|void
 name|gdisplays_expose_guide
 parameter_list|(
-name|int
+name|GimpImage
+modifier|*
 parameter_list|,
 name|Guide
 modifier|*
@@ -768,7 +772,8 @@ begin_function_decl
 name|void
 name|gdisplays_update_full
 parameter_list|(
-name|int
+name|GimpImage
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -777,7 +782,8 @@ begin_function_decl
 name|void
 name|gdisplays_shrink_wrap
 parameter_list|(
-name|int
+name|GimpImage
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -795,7 +801,8 @@ begin_function_decl
 name|void
 name|gdisplays_selection_visibility
 parameter_list|(
-name|int
+name|GimpImage
+modifier|*
 parameter_list|,
 name|SelectionControl
 parameter_list|)

@@ -2456,8 +2456,6 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|SelectionPause
 argument_list|)
@@ -2636,8 +2634,6 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|SelectionResume
 argument_list|)
@@ -3546,7 +3542,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2a2c43690103
+DECL|enum|__anon2b4da9e00103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -4764,8 +4760,6 @@ expr_stmt|;
 name|gdisplays_update_area
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|canvas_buf
 operator|->

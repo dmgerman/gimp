@@ -34,6 +34,12 @@ directive|include
 file|"temp_buf.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpimageF.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_TYPE_DRAWABLE
 define|#
@@ -432,7 +438,8 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 parameter_list|,
-name|int
+name|GimpImage
+modifier|*
 parameter_list|,
 name|int
 parameter_list|,

@@ -16,11 +16,18 @@ directive|define
 name|__LAYERS_DIALOG_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"gimpimageF.h"
+end_include
+
 begin_function_decl
 name|void
 name|lc_dialog_create
 parameter_list|(
-name|int
+name|GimpImage
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -47,7 +47,8 @@ name|GtkWidget
 modifier|*
 name|create_image_menu
 parameter_list|(
-name|int
+name|GimpImage
+modifier|*
 modifier|*
 parameter_list|,
 name|int
@@ -62,7 +63,8 @@ begin_function_decl
 name|void
 name|layers_dialog_update
 parameter_list|(
-name|int
+name|GimpImage
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -71,7 +73,8 @@ begin_function_decl
 name|void
 name|channels_dialog_update
 parameter_list|(
-name|int
+name|GimpImage
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl

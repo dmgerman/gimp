@@ -84,7 +84,7 @@ file|"tile_manager_pvt.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2b045ce40108
+DECL|struct|__anon29628d370108
 typedef|typedef
 struct|struct
 block|{
@@ -686,8 +686,6 @@ operator|=
 name|layer_new
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|gimage
 operator|->

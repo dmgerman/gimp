@@ -75,10 +75,16 @@ directive|include
 file|"tools.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimage.h"
+end_include
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fa5eda0103
+DECL|enum|__anon293e41020103
 block|{
 DECL|enumerator|Blur
 name|Blur

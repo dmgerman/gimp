@@ -77,8 +77,14 @@ argument_list|(
 name|GimpObjectClass
 argument_list|)
 block|,
+operator|(
+name|GtkClassInitFunc
+operator|)
 name|gimp_object_class_init
 block|,
+operator|(
+name|GtkObjectInitFunc
+operator|)
 name|gimp_object_init
 block|,
 name|NULL

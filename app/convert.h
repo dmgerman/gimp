@@ -22,6 +22,12 @@ directive|include
 file|"procedural_db.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpimageF.h"
+end_include
+
 begin_comment
 comment|/*  convert functions  */
 end_comment
@@ -30,7 +36,7 @@ begin_function_decl
 name|void
 name|convert_to_rgb
 parameter_list|(
-name|void
+name|GimpImage
 modifier|*
 parameter_list|)
 function_decl|;
@@ -40,7 +46,7 @@ begin_function_decl
 name|void
 name|convert_to_grayscale
 parameter_list|(
-name|void
+name|GimpImage
 modifier|*
 parameter_list|)
 function_decl|;
@@ -50,7 +56,7 @@ begin_function_decl
 name|void
 name|convert_to_indexed
 parameter_list|(
-name|void
+name|GimpImage
 modifier|*
 parameter_list|)
 function_decl|;

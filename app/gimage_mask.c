@@ -568,8 +568,6 @@ comment|/*  Turn the current selection off  */
 name|gdisplays_selection_visibility
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|SelectionOff
 argument_list|)
@@ -1197,8 +1195,6 @@ comment|/*  Update the region  */
 name|gdisplays_update_area
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|tiles
 operator|->

@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fa45570103
+DECL|enum|__anon2a16fa050103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -309,11 +309,11 @@ name|int
 name|index
 decl_stmt|;
 comment|/*  colormap index        */
-DECL|member|colormap_ID
-name|int
-name|colormap_ID
+DECL|member|gimage
+name|GimpImage
+modifier|*
+name|gimage
 decl_stmt|;
-comment|/*  colormap ID           */
 block|}
 struct|;
 end_struct
@@ -1483,10 +1483,9 @@ index|[
 name|i
 index|]
 operator|.
-name|colormap_ID
+name|gimage
 operator|=
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 name|color_hash_misses
 operator|=
@@ -10115,7 +10114,7 @@ end_function
 
 begin_function
 name|int
-DECL|function|map_rgb_to_indexed (unsigned char * cmap,int num_cols,int ID,int r,int g,int b)
+DECL|function|map_rgb_to_indexed (unsigned char * cmap,int num_cols,GimpImage * gimage,int r,int g,int b)
 name|map_rgb_to_indexed
 parameter_list|(
 name|unsigned
@@ -10126,8 +10125,9 @@ parameter_list|,
 name|int
 name|num_cols
 parameter_list|,
-name|int
-name|ID
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|,
 name|int
 name|r
@@ -10179,9 +10179,9 @@ index|[
 name|hash_index
 index|]
 operator|.
-name|colormap_ID
+name|gimage
 operator|==
-name|ID
+name|gimage
 operator|&&
 name|color_hash_table
 index|[
@@ -10333,9 +10333,9 @@ index|[
 name|hash_index
 index|]
 operator|.
-name|colormap_ID
+name|gimage
 operator|=
-name|ID
+name|gimage
 expr_stmt|;
 name|color_hash_misses
 operator|++

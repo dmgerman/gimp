@@ -300,7 +300,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6f12b00108
+DECL|struct|__anon2b4fdeee0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -3744,8 +3744,7 @@ name|NULL
 condition|)
 name|lc_dialog_create
 argument_list|(
-operator|-
-literal|1
+name|NULL
 argument_list|)
 expr_stmt|;
 else|else
@@ -3754,8 +3753,6 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|ID
 argument_list|)
 expr_stmt|;
 block|}
@@ -3788,8 +3785,6 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|ID
 argument_list|)
 expr_stmt|;
 block|}

@@ -75,6 +75,12 @@ directive|include
 file|"tools.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimage.h"
+end_include
+
 begin_typedef
 DECL|typedef|AirbrushTimeout
 typedef|typedef

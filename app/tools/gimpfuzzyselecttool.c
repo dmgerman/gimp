@@ -1583,8 +1583,6 @@ operator|=
 name|channel_new_mask
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|srcPR
 operator|.

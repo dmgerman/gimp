@@ -65,7 +65,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a31e0930103
+DECL|enum|__anon29489b990103
 block|{
 DECL|enumerator|WhiteMask
 name|WhiteMask
@@ -409,7 +409,8 @@ name|Layer
 modifier|*
 name|layer_new
 parameter_list|(
-name|int
+name|GimpImage
+modifier|*
 parameter_list|,
 name|int
 parameter_list|,
@@ -645,7 +646,8 @@ name|LayerMask
 modifier|*
 name|layer_mask_new
 parameter_list|(
-name|int
+name|GimpImage
+modifier|*
 parameter_list|,
 name|int
 parameter_list|,
@@ -806,7 +808,8 @@ begin_function_decl
 name|void
 name|layer_invalidate_previews
 parameter_list|(
-name|int
+name|GimpImage
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl

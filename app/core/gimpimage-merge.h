@@ -83,7 +83,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2adccab20103
+DECL|enum|__anon2b7a0f5c0103
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -186,7 +186,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2adccab20203
+DECL|enum|__anon2b7a0f5c0203
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -265,7 +265,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2adccab20303
+DECL|enum|__anon2b7a0f5c0303
 block|{
 DECL|enumerator|Red
 name|Red
@@ -293,7 +293,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2adccab20403
+DECL|enum|__anon2b7a0f5c0403
 block|{
 DECL|enumerator|ExpandAsNecessary
 name|ExpandAsNecessary
@@ -313,17 +313,8 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/* Ugly! Move this someplace else! */
+comment|/* Ugly! Move this someplace else! Prolly to gdisplay.. */
 end_comment
-
-begin_typedef
-DECL|typedef|Guide
-typedef|typedef
-name|struct
-name|_Guide
-name|Guide
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_Guide

@@ -129,8 +129,9 @@ begin_function_decl
 name|int
 name|file_save
 parameter_list|(
-name|int
-name|image_ID
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|,
 name|char
 modifier|*

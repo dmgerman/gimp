@@ -9983,11 +9983,9 @@ argument_list|(
 name|new_layer
 argument_list|)
 operator|->
-name|gimage_ID
+name|gimage
 operator|=
 name|new_gimage
-operator|->
-name|ID
 expr_stmt|;
 comment|/*  Make sure the copied layer doesn't say: "<old layer> copy"  */
 name|g_free
@@ -10166,11 +10164,9 @@ argument_list|(
 name|new_channel
 argument_list|)
 operator|->
-name|gimage_ID
+name|gimage
 operator|=
 name|new_gimage
-operator|->
-name|ID
 expr_stmt|;
 comment|/*  Make sure the copied channel doesn't say: "<old channel> copy"  */
 name|g_free

@@ -7100,8 +7100,6 @@ expr_stmt|;
 name|gdisplays_update_area
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(

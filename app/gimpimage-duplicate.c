@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289db8e30108
+DECL|struct|__anon2ab158590108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -142,9 +142,10 @@ DECL|member|background
 name|int
 name|background
 decl_stmt|;
-DECL|member|gimage_id
-name|int
-name|gimage_id
+DECL|member|gimage
+name|GimpImage
+modifier|*
+name|gimage
 decl_stmt|;
 DECL|typedef|OffsetDialog
 block|}
@@ -293,12 +294,12 @@ end_function_decl
 
 begin_function
 name|void
-DECL|function|channel_ops_offset (void * gimage_ptr)
+DECL|function|channel_ops_offset (GimpImage * gimage)
 name|channel_ops_offset
 parameter_list|(
-name|void
+name|GimpImage
 modifier|*
-name|gimage_ptr
+name|gimage
 parameter_list|)
 block|{
 name|OffsetDialog
@@ -347,18 +348,6 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GImage
-modifier|*
-name|gimage
-decl_stmt|;
-name|gimage
-operator|=
-operator|(
-name|GImage
-operator|*
-operator|)
-name|gimage_ptr
-expr_stmt|;
 name|drawable
 operator|=
 name|gimage_active_drawable
@@ -401,11 +390,9 @@ name|transparent
 expr_stmt|;
 name|off_d
 operator|->
-name|gimage_id
+name|gimage
 operator|=
 name|gimage
-operator|->
-name|ID
 expr_stmt|;
 name|off_d
 operator|->
@@ -2623,12 +2610,9 @@ condition|(
 operator|(
 name|gimage
 operator|=
-name|gimage_get_ID
-argument_list|(
 name|off_d
 operator|->
-name|gimage_id
-argument_list|)
+name|gimage
 operator|)
 operator|!=
 name|NULL
@@ -2950,12 +2934,9 @@ name|data
 expr_stmt|;
 name|gimage
 operator|=
-name|gimage_get_ID
-argument_list|(
 name|off_d
 operator|->
-name|gimage_id
-argument_list|)
+name|gimage
 expr_stmt|;
 name|sprintf
 argument_list|(

@@ -620,11 +620,12 @@ begin_function
 specifier|static
 name|Channel
 modifier|*
-DECL|function|scan_convert (int gimage_ID,int num_pts,FreeSelectPoint * pts,int width,int height,int antialias)
+DECL|function|scan_convert (GimpImage * gimage,int num_pts,FreeSelectPoint * pts,int width,int height,int antialias)
 name|scan_convert
 parameter_list|(
-name|int
-name|gimage_ID
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|,
 name|int
 name|num_pts
@@ -711,7 +712,7 @@ name|mask
 operator|=
 name|channel_new_mask
 argument_list|(
-name|gimage_ID
+name|gimage
 argument_list|,
 name|width
 argument_list|,
@@ -1512,8 +1513,6 @@ operator|=
 name|scan_convert
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|num_pts
 argument_list|,

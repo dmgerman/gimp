@@ -1279,8 +1279,6 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|SelectionPause
 argument_list|)
@@ -1500,8 +1498,6 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|SelectionResume
 argument_list|)
@@ -5375,8 +5371,6 @@ expr_stmt|;
 name|gdisplays_update_area
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|canvas_buf
 operator|->
@@ -5764,8 +5758,6 @@ expr_stmt|;
 name|gdisplays_update_area
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|canvas_buf
 operator|->

@@ -13971,8 +13971,6 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|gdisp
 operator|->

@@ -156,7 +156,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ff39850103
+DECL|enum|__anon27546f760103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -261,7 +261,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ff39850203
+DECL|enum|__anon27546f760203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -7687,8 +7687,6 @@ operator|=
 name|layer_new
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|width
 argument_list|,
@@ -8085,8 +8083,6 @@ operator|=
 name|channel_new
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|width
 argument_list|,
@@ -8342,8 +8338,6 @@ operator|=
 name|layer_mask_new
 argument_list|(
 name|gimage
-operator|->
-name|ID
 argument_list|,
 name|width
 argument_list|,
