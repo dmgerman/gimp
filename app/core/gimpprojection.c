@@ -7942,7 +7942,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"File/Revert"
+literal|"File/Revert..."
 argument_list|,
 name|gdisp
 operator|&&

@@ -10913,7 +10913,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c77f5450108
+DECL|struct|__anon29b06c940108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -17468,7 +17468,7 @@ literal|"add_mask_options"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/layers/add_mask.html"
+literal|"dialogs/layers/add_layer_mask.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,

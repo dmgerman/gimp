@@ -4298,7 +4298,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"paths/dialogs/rename_path.html"
+literal|"paths/dialogs/edit_path_attributes.html"
 argument_list|,
 name|_
 argument_list|(

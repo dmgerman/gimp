@@ -289,7 +289,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2756ca8c0103
+DECL|enum|__anon2c9c45eb0103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -329,7 +329,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2756ca8c0203
+DECL|enum|__anon2c9c45eb0203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2756ca8c0308
+DECL|struct|__anon2c9c45eb0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -636,7 +636,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon2756ca8c0408
+DECL|struct|__anon2c9c45eb0408
 block|{
 DECL|member|r
 DECL|member|g
@@ -4627,7 +4627,7 @@ argument_list|(
 literal|"Save as POV-Ray"
 argument_list|)
 argument_list|,
-literal|"dialogs/gradient_editor/save_as_pov_ray.html"
+literal|"dialogs/gradient_editor/save_as_povray.html"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
@@ -9134,7 +9134,7 @@ name|window
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/gradient_editor/save_as_pov_ray.html"
+literal|"dialogs/gradient_editor/save_as_povray.html"
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

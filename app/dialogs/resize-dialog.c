@@ -851,7 +851,7 @@ argument_list|)
 expr_stmt|;
 name|help_page
 operator|=
-literal|"layers/dialogs/resize_layer.html"
+literal|"layers/dialogs/layer_boundary_size.html"
 expr_stmt|;
 break|break;
 case|case
@@ -870,7 +870,7 @@ argument_list|)
 expr_stmt|;
 name|help_page
 operator|=
-literal|"dialogs/resize_image.html"
+literal|"dialogs/set_canvas_size.html"
 expr_stmt|;
 break|break;
 block|}
@@ -940,7 +940,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|_
 argument_list|(

@@ -6864,7 +6864,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b94e37c0108
+DECL|struct|__anon29920e0a0108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -11438,7 +11438,7 @@ literal|"edit_channel_attributes"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/channels/dialogs/edit_channel_attributes.html"
+literal|"dialogs/channels/edit_channel_attributes.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,

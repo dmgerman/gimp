@@ -1209,7 +1209,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Revert"
+literal|"/File/Revert..."
 argument_list|)
 block|,
 name|NULL
@@ -4271,7 +4271,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"dialogs/resize_layer.html"
+literal|"dialogs/layer_boundary_size.html"
 block|,
 name|NULL
 block|}
@@ -4421,7 +4421,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"dialogs/add_mask.html"
+literal|"dialogs/add_layer_mask.html"
 block|,
 name|NULL
 block|}
@@ -8300,7 +8300,7 @@ argument_list|)
 operator|->
 name|active_menu_item
 expr_stmt|;
-comment|/*  first, check if the user tries to assign a shortcut to the help    *  menu items and ignore it...    */
+comment|/*  first, get the help page from the item    */
 if|if
 condition|(
 name|active_menu_item
@@ -8322,6 +8322,17 @@ argument_list|,
 literal|"help_page"
 argument_list|)
 expr_stmt|;
+block|}
+comment|/*  For any key except F1, continue with the standard    *  GtkItemFactory callback and assign a new shortcut, but don't    *  assign a shortcut to the help menu entries...    */
+if|if
+condition|(
+name|kevent
+operator|->
+name|keyval
+operator|!=
+name|GDK_F1
+condition|)
+block|{
 if|if
 condition|(
 name|help_page
@@ -8368,19 +8379,13 @@ return|return
 name|TRUE
 return|;
 block|}
-block|}
-comment|/*  ...otherwise, for any key except F1, continue with the standard    *  GtkItemFactory callback and assign a new shortcut...    */
-if|if
-condition|(
-name|kevent
-operator|->
-name|keyval
-operator|!=
-name|GDK_F1
-condition|)
+else|else
+block|{
 return|return
 name|FALSE
 return|;
+block|}
+block|}
 comment|/*  ...finally, if F1 was pressed over any menu, show it's help page...    */
 name|gtk_signal_emit_stop_by_name
 argument_list|(

@@ -132,7 +132,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a08a25c0103
+DECL|enum|__anon2a10539b0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -7393,7 +7393,7 @@ argument_list|(
 literal|"Default Comment"
 argument_list|)
 argument_list|,
-literal|"dialogs/preferences/default_comment.html"
+literal|"dialogs/preferences/new_file.html#default_comment"
 argument_list|,
 name|top_insert
 argument_list|,
@@ -12381,7 +12381,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a08a25c0208
+DECL|struct|__anon2a10539b0208
 block|{
 DECL|member|label
 name|gchar
@@ -12610,7 +12610,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a08a25c0308
+DECL|struct|__anon2a10539b0308
 block|{
 DECL|member|tree_label
 name|gchar
