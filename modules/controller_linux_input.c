@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cbfaf40103
+DECL|enum|__anon2b181d880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -547,11 +547,11 @@ block|,
 block|{
 name|EV_REL
 block|,
-name|REL_DIAL
+name|REL_WHEEL
 block|,
 name|N_
 argument_list|(
-literal|"Dial (rel.)"
+literal|"Wheel Turn Left"
 argument_list|)
 block|}
 block|,
@@ -562,21 +562,10 @@ name|REL_WHEEL
 block|,
 name|N_
 argument_list|(
-literal|"Wheel (rel.)"
+literal|"Wheel Turn Right"
 argument_list|)
 block|}
-block|,
-block|{
-name|EV_ABS
-block|,
-name|ABS_WHEEL
-block|,
-name|N_
-argument_list|(
-literal|"Wheel (abs.)"
-argument_list|)
-block|}
-block|}
+block|, }
 decl_stmt|;
 end_decl_stmt
 
@@ -1355,6 +1344,34 @@ name|event_id
 operator|=
 name|i
 expr_stmt|;
+comment|/* EEEEEEK */
+if|if
+condition|(
+name|ev
+operator|.
+name|code
+operator|==
+name|REL_WHEEL
+condition|)
+block|{
+name|gint
+name|count
+decl_stmt|;
+for|for
+control|(
+name|count
+operator|=
+name|ev
+operator|.
+name|value
+init|;
+name|count
+operator|<
+literal|0
+condition|;
+name|count
+operator|++
+control|)
 name|gimp_controller_event
 argument_list|(
 name|controller
@@ -1363,6 +1380,48 @@ operator|&
 name|cevent
 argument_list|)
 expr_stmt|;
+name|cevent
+operator|.
+name|any
+operator|.
+name|event_id
+operator|++
+expr_stmt|;
+for|for
+control|(
+name|count
+operator|=
+name|ev
+operator|.
+name|value
+init|;
+name|count
+operator|>
+literal|0
+condition|;
+name|count
+operator|--
+control|)
+name|gimp_controller_event
+argument_list|(
+name|controller
+argument_list|,
+operator|&
+name|cevent
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|gimp_controller_event
+argument_list|(
+name|controller
+argument_list|,
+operator|&
+name|cevent
+argument_list|)
+expr_stmt|;
+block|}
 break|break;
 block|}
 block|}
