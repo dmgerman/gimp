@@ -702,12 +702,19 @@ specifier|static
 name|gint
 name|scroll_text_widths
 index|[
-literal|100
-index|]
-init|=
-block|{
+sizeof|sizeof
+argument_list|(
+name|scroll_text
+argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|scroll_text
+index|[
 literal|0
-block|}
+index|]
+argument_list|)
+index|]
 decl_stmt|;
 end_decl_stmt
 
@@ -753,12 +760,9 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|about_dialog_create (gint timeout)
+DECL|function|about_dialog_create ()
 name|about_dialog_create
-parameter_list|(
-name|gint
-name|timeout
-parameter_list|)
+parameter_list|()
 block|{
 name|GtkWidget
 modifier|*

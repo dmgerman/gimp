@@ -4622,9 +4622,7 @@ name|client_data
 parameter_list|)
 block|{
 name|about_dialog_create
-argument_list|(
-name|FALSE
-argument_list|)
+argument_list|()
 expr_stmt|;
 block|}
 end_function

@@ -20,8 +20,7 @@ begin_function_decl
 name|void
 name|about_dialog_create
 parameter_list|(
-name|gint
-name|timeout
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
