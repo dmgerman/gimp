@@ -522,7 +522,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2aacd6830108
+DECL|struct|__anon2b460bea0108
 block|{
 DECL|member|directory
 name|gboolean
@@ -3869,6 +3869,8 @@ argument_list|(
 name|gimp_data_directory
 argument_list|()
 argument_list|,
+literal|"misc"
+argument_list|,
 name|USER_INSTALL
 argument_list|,
 name|NULL
@@ -4051,6 +4053,8 @@ operator|=
 name|g_build_filename
 argument_list|(
 name|quoted_data_dir
+argument_list|,
+literal|"misc"
 argument_list|,
 name|USER_INSTALL
 argument_list|,

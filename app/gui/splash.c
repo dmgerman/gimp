@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29259c6c0103
+DECL|enum|__anon279389fa0103
 block|{
 DECL|enumerator|SPLASH_SHOW_LOGO_NEVER
 name|SPLASH_SHOW_LOGO_NEVER
@@ -897,6 +897,8 @@ argument_list|(
 name|gimp_data_directory
 argument_list|()
 argument_list|,
+literal|"images"
+argument_list|,
 literal|"gimp_splash.ppm"
 argument_list|,
 name|NULL
@@ -1062,6 +1064,8 @@ name|g_build_filename
 argument_list|(
 name|gimp_data_directory
 argument_list|()
+argument_list|,
+literal|"images"
 argument_list|,
 literal|"gimp_splash.ppm"
 argument_list|,

@@ -1631,6 +1631,8 @@ argument_list|(
 name|gimp_data_directory
 argument_list|()
 argument_list|,
+literal|"images"
+argument_list|,
 literal|"gimp_logo.ppm"
 argument_list|,
 name|NULL
