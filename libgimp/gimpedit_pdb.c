@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_edit_cut:  * @drawable_ID: The drawable to cut from.  *  * Cut from the specified drawable.  *  * If there is a selection in the image, then the area specified by the  * selection is cut from the specified drawable and placed in an  * internal GIMP edit buffer. It can subsequently be retrieved using  * the 'gimp-edit-paste' command. If there is no selection, then the  * specified drawable will be removed and its contents stored in the  * internal GIMP edit buffer.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_edit_cut:  * @drawable_ID: The drawable to cut from.  *  * Cut from the specified drawable.  *  * If there is a selection in the image, then the area specified by the  * selection is cut from the specified drawable and placed in an  * internal GIMP edit buffer. It can subsequently be retrieved using  * the 'gimp-edit-paste' command. If there is no selection, then the  * specified drawable will be removed and its contents stored in the  * internal GIMP edit buffer.  *  * Returns: TRUE if the cut was successful, FALSE if the selection contained only transparent pixels.  */
 end_comment
 
 begin_function
@@ -40,9 +40,9 @@ name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gboolean
-name|success
+name|non_empty
 init|=
-name|TRUE
+name|FALSE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -60,8 +60,8 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
-name|success
-operator|=
+if|if
+condition|(
 name|return_vals
 index|[
 literal|0
@@ -72,6 +72,17 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+condition|)
+name|non_empty
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
 expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
@@ -81,13 +92,13 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|success
+name|non_empty
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_copy:  * @drawable_ID: The drawable to copy from.  *  * Copy from the specified drawable.  *  * If there is a selection in the image, then the area specified by the  * selection is copied from the specified drawable and placed in an  * internal GIMP edit buffer. It can subsequently be retrieved using  * the 'gimp-edit-paste' command. If there is no selection, then the  * specified drawable's contents will be stored in the internal GIMP  * edit buffer.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_edit_copy:  * @drawable_ID: The drawable to copy from.  *  * Copy from the specified drawable.  *  * If there is a selection in the image, then the area specified by the  * selection is copied from the specified drawable and placed in an  * internal GIMP edit buffer. It can subsequently be retrieved using  * the 'gimp-edit-paste' command. If there is no selection, then the  * specified drawable's contents will be stored in the internal GIMP  * edit buffer.  *  * Returns: TRUE if the copy was successful, FALSE if the selection contained only transparent pixels.  */
 end_comment
 
 begin_function
@@ -107,9 +118,9 @@ name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gboolean
-name|success
+name|non_empty
 init|=
-name|TRUE
+name|FALSE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -127,8 +138,8 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
-name|success
-operator|=
+if|if
+condition|(
 name|return_vals
 index|[
 literal|0
@@ -139,6 +150,17 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+condition|)
+name|non_empty
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
 expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
@@ -148,7 +170,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|success
+name|non_empty
 return|;
 block|}
 end_function
