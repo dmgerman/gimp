@@ -12,7 +12,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
@@ -41,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6594940103
+DECL|enum|__anon28c97a8a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -54,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6594940203
+DECL|enum|__anon28c97a8a0203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -604,6 +616,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/*  implementing the clone method is deprecated    */
 if|if
 condition|(
 name|GIMP_COLOR_DISPLAY_GET_CLASS
@@ -649,7 +662,16 @@ name|clone
 return|;
 block|}
 return|return
-name|NULL
+name|GIMP_COLOR_DISPLAY
+argument_list|(
+name|gimp_config_duplicate
+argument_list|(
+name|GIMP_CONFIG
+argument_list|(
+name|display
+argument_list|)
+argument_list|)
+argument_list|)
 return|;
 block|}
 end_function
@@ -753,6 +775,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/*  implementing the load_state method is deprecated    */
 if|if
 condition|(
 name|GIMP_COLOR_DISPLAY_GET_CLASS
@@ -762,6 +785,7 @@ argument_list|)
 operator|->
 name|load_state
 condition|)
+block|{
 name|GIMP_COLOR_DISPLAY_GET_CLASS
 argument_list|(
 name|display
@@ -774,6 +798,32 @@ argument_list|,
 name|state
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|gimp_config_deserialize_string
+argument_list|(
+name|GIMP_CONFIG
+argument_list|(
+name|display
+argument_list|)
+argument_list|,
+name|gimp_parasite_data
+argument_list|(
+name|state
+argument_list|)
+argument_list|,
+name|gimp_parasite_data_size
+argument_list|(
+name|state
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -788,6 +838,14 @@ modifier|*
 name|display
 parameter_list|)
 block|{
+name|GimpParasite
+modifier|*
+name|parasite
+decl_stmt|;
+name|gchar
+modifier|*
+name|str
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_DISPLAY
@@ -798,6 +856,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/*  implementing the save_state method is deprecated    */
 if|if
 condition|(
 name|GIMP_COLOR_DISPLAY_GET_CLASS
@@ -807,6 +866,7 @@ argument_list|)
 operator|->
 name|save_state
 condition|)
+block|{
 return|return
 name|GIMP_COLOR_DISPLAY_GET_CLASS
 argument_list|(
@@ -818,8 +878,44 @@ argument_list|(
 name|display
 argument_list|)
 return|;
-return|return
+block|}
+name|str
+operator|=
+name|gimp_config_serialize_to_string
+argument_list|(
+name|GIMP_CONFIG
+argument_list|(
+name|display
+argument_list|)
+argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|parasite
+operator|=
+name|gimp_parasite_new
+argument_list|(
+literal|"Display/Proof"
+argument_list|,
+name|GIMP_PARASITE_PERSISTENT
+argument_list|,
+name|strlen
+argument_list|(
+name|str
+argument_list|)
+operator|+
+literal|1
+argument_list|,
+name|str
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str
+argument_list|)
+expr_stmt|;
+return|return
+name|parasite
 return|;
 block|}
 end_function
@@ -889,6 +985,7 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*  implementing the configure_reset method is deprecated    */
 if|if
 condition|(
 name|GIMP_COLOR_DISPLAY_GET_CLASS
@@ -898,6 +995,7 @@ argument_list|)
 operator|->
 name|configure_reset
 condition|)
+block|{
 name|GIMP_COLOR_DISPLAY_GET_CLASS
 argument_list|(
 name|display
@@ -908,6 +1006,18 @@ argument_list|(
 name|display
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|gimp_config_reset
+argument_list|(
+name|GIMP_CONFIG
+argument_list|(
+name|display
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 

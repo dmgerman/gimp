@@ -135,6 +135,7 @@ modifier|*
 name|help_id
 decl_stmt|;
 comment|/*  virtual functions  */
+comment|/*  implementing the GimpColorDisplay::clone method is deprecated       */
 DECL|member|clone
 name|GimpColorDisplay
 modifier|*
@@ -176,6 +177,7 @@ name|gint
 name|bpl
 parameter_list|)
 function_decl|;
+comment|/*  implementing the GimpColorDisplay::load_state method is deprecated  */
 DECL|member|load_state
 name|void
 function_decl|(
@@ -192,6 +194,7 @@ modifier|*
 name|state
 parameter_list|)
 function_decl|;
+comment|/*  implementing the GimpColorDisplay::save_state method is deprecated  */
 DECL|member|save_state
 name|GimpParasite
 modifier|*
@@ -218,6 +221,7 @@ modifier|*
 name|display
 parameter_list|)
 function_decl|;
+comment|/*  implementing the GimpColorDisplay::configure_reset method is deprecated */
 DECL|member|configure_reset
 name|void
 function_decl|(
