@@ -1642,7 +1642,7 @@ name|PDB_INT32
 block|,
 literal|"type_with_alpha"
 block|,
-literal|"the drawable's type with alpha: { RGBA (0), GRAYA (1), INDEXEDA (2) }"
+literal|"the drawable's type with alpha: { RGBA (1), GRAYA (3), INDEXEDA (5) }"
 block|}
 block|}
 decl_stmt|;
