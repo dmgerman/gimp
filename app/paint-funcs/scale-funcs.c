@@ -1117,7 +1117,6 @@ name|g_assert_not_reached
 argument_list|()
 expr_stmt|;
 break|break;
-comment|/* Lanczos */
 case|case
 name|GIMP_INTERPOLATION_LANCZOS
 case|:
@@ -1125,7 +1124,6 @@ name|g_assert_not_reached
 argument_list|()
 expr_stmt|;
 break|break;
-comment|/* Lanczos */
 block|}
 block|}
 end_function
@@ -1809,7 +1807,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-comment|/* Lanczos */
 elseif|else
 if|if
 condition|(
@@ -1827,7 +1824,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-comment|/* Lanczos */
 name|orig_width
 operator|=
 name|srcPR
@@ -2553,7 +2549,6 @@ name|g_assert_not_reached
 argument_list|()
 expr_stmt|;
 break|break;
-comment|/* Lanczos */
 case|case
 name|GIMP_INTERPOLATION_LANCZOS
 case|:
@@ -2561,7 +2556,6 @@ name|g_assert_not_reached
 argument_list|()
 expr_stmt|;
 break|break;
-comment|/* Lanczos */
 block|}
 block|}
 else|else
@@ -3628,7 +3622,7 @@ begin_function
 specifier|static
 specifier|inline
 name|gdouble
-DECL|function|lanczos_sum (guchar ** src,gdouble * l,gint row,gint col,gint bytes,gint byte)
+DECL|function|lanczos_sum (guchar ** src,const gdouble * l,gint row,gint col,gint bytes,gint byte)
 name|lanczos_sum
 parameter_list|(
 name|guchar
@@ -3636,6 +3630,7 @@ modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|l
@@ -3719,7 +3714,7 @@ begin_function
 specifier|static
 specifier|inline
 name|gdouble
-DECL|function|lanczos_sum_mul (guchar ** src,gdouble * l,gint row,gint col,gint bytes,gint byte,gint alpha)
+DECL|function|lanczos_sum_mul (guchar ** src,const gdouble * l,gint row,gint col,gint bytes,gint byte,gint alpha)
 name|lanczos_sum_mul
 parameter_list|(
 name|guchar
@@ -3727,6 +3722,7 @@ modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|l
@@ -5178,10 +5174,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* End Lanczos */
-end_comment
 
 end_unit
 

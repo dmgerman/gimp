@@ -434,6 +434,7 @@ name|guchar
 modifier|*
 name|color
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|buffer
@@ -1339,7 +1340,10 @@ name|g_new0
 argument_list|(
 name|guchar
 argument_list|,
+name|SQR
+argument_list|(
 name|LANCZOS_WIDTH2
+argument_list|)
 operator|*
 name|bytes
 argument_list|)
@@ -2303,11 +2307,6 @@ literal|0
 index|]
 decl_stmt|;
 name|gint
-name|fu
-decl_stmt|,
-name|fv
-decl_stmt|;
-name|gint
 name|b
 decl_stmt|;
 if|if
@@ -2375,28 +2374,20 @@ operator|*
 name|LANCZOS_WIDTH2
 argument_list|)
 expr_stmt|;
-name|fu
-operator|=
-name|u
-operator|-
-name|iu
-expr_stmt|;
 name|su
 operator|=
 call|(
 name|gint
 call|)
 argument_list|(
-name|fu
+operator|(
+name|u
+operator|-
+name|iu
+operator|)
 operator|*
 name|LANCZOS_SPP
 argument_list|)
-expr_stmt|;
-name|fv
-operator|=
-name|v
-operator|-
-name|iv
 expr_stmt|;
 name|sv
 operator|=
@@ -2404,7 +2395,11 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|fv
+operator|(
+name|v
+operator|-
+name|iv
+operator|)
 operator|*
 name|LANCZOS_SPP
 argument_list|)
@@ -8421,13 +8416,15 @@ begin_function
 specifier|static
 specifier|inline
 name|gdouble
-DECL|function|lanczos_sum_mul (guchar * buffer,gdouble * l,gint row,gint bytes,gint byte,gint alpha)
+DECL|function|lanczos_sum_mul (const guchar * buffer,const gdouble * l,gint row,gint bytes,gint byte,gint alpha)
 name|lanczos_sum_mul
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|buffer
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|l
@@ -8634,7 +8631,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|sample_lanczos (const gdouble * kernel,gint su,gint sv,guchar * color,guchar * buffer,gint bytes,gint alpha)
+DECL|function|sample_lanczos (const gdouble * kernel,gint su,gint sv,guchar * color,const guchar * buffer,gint bytes,gint alpha)
 name|sample_lanczos
 parameter_list|(
 specifier|const
@@ -8652,6 +8649,7 @@ name|guchar
 modifier|*
 name|color
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|buffer
