@@ -2328,9 +2328,12 @@ name|GtkMisc
 modifier|*
 name|misc
 init|=
+name|GTK_MISC
+argument_list|(
 name|bin
 operator|->
 name|child
+argument_list|)
 decl_stmt|;
 name|gtk_misc_set_padding
 argument_list|(
