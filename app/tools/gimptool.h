@@ -183,11 +183,11 @@ name|gboolean
 name|handle_empty_image
 decl_stmt|;
 comment|/*  invoke the tool on images without    *                                       *  active drawable                      */
-DECL|member|perfectmouse
-name|gboolean
-name|perfectmouse
+DECL|member|motion_mode
+name|GimpMotionMode
+name|motion_mode
 decl_stmt|;
-comment|/*  tool is affected by gimprc's         *                                       *  "prefectmouse" setting               */
+comment|/*  how to process motion events before  *                                       *  they are forwarded to the tool       */
 DECL|member|cursor
 name|GdkCursorType
 name|cursor

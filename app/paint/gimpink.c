@@ -1323,9 +1323,9 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|perfectmouse
+name|motion_mode
 operator|=
-name|TRUE
+name|GIMP_MOTION_MODE_EXACT
 expr_stmt|;
 name|tool
 operator|->
@@ -4645,7 +4645,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2a54cea80103
+DECL|enum|__anon27aef4930103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

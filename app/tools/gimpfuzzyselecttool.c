@@ -609,7 +609,12 @@ name|scroll_lock
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/*  Do not allow scrolling  */
+name|tool
+operator|->
+name|motion_mode
+operator|=
+name|GIMP_MOTION_MODE_COMPRESS
+expr_stmt|;
 name|fuzzy_select
 operator|->
 name|fuzzy_mask
@@ -695,6 +700,16 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+name|G_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|finalize
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

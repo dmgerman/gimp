@@ -558,11 +558,10 @@ expr_stmt|;
 comment|/*  Require active drawable          */
 name|tool
 operator|->
-name|perfectmouse
+name|motion_mode
 operator|=
-name|FALSE
+name|GIMP_MOTION_MODE_HINT
 expr_stmt|;
-comment|/*  Use MOTION_HINT compression      */
 name|tool
 operator|->
 name|cursor

@@ -582,9 +582,9 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|perfectmouse
+name|motion_mode
 operator|=
-name|TRUE
+name|GIMP_MOTION_MODE_EXACT
 expr_stmt|;
 name|paint_tool
 operator|->

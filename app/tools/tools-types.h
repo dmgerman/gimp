@@ -246,7 +246,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c27422f0103
+DECL|enum|__anon2a985a5c0103
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -290,7 +290,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c27422f0203
+DECL|enum|__anon2a985a5c0203
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -311,7 +311,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c27422f0303
+DECL|enum|__anon2a985a5c0303
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -328,6 +328,30 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/*  Motion event report modes  */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon2a985a5c0403
+block|{
+DECL|enumerator|GIMP_MOTION_MODE_EXACT
+name|GIMP_MOTION_MODE_EXACT
+block|,
+DECL|enumerator|GIMP_MOTION_MODE_HINT
+name|GIMP_MOTION_MODE_HINT
+block|,
+DECL|enumerator|GIMP_MOTION_MODE_COMPRESS
+name|GIMP_MOTION_MODE_COMPRESS
+DECL|typedef|GimpMotionMode
+block|}
+name|GimpMotionMode
+typedef|;
+end_typedef
+
+begin_comment
 comment|/* possible transform functions */
 end_comment
 
@@ -335,7 +359,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c27422f0403
+DECL|enum|__anon2a985a5c0503
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -368,7 +392,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c27422f0503
+DECL|enum|__anon2a985a5c0603
 block|{
 DECL|enumerator|TRANSFORM_INIT
 name|TRANSFORM_INIT
