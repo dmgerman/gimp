@@ -2521,7 +2521,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"cant find any extracted frames,\n%s\nmaybe xanim has failed or was canclled"
+literal|"can't find any extracted frames,\n%s\nmaybe xanim has failed or was cancelled"
 argument_list|)
 argument_list|,
 name|l_src_frame
@@ -4475,7 +4475,7 @@ literal|0.1
 argument_list|)
 expr_stmt|;
 comment|/* fake some progress */
-comment|/* note:       *  we cant show realistic progress for the extracting process       *  because we know nothing about videofileformat and how much frames       *  are realy stored in the videofile.       *       *  one guess could assume, that xanim will write 0 upto last_frame       *  to disk, and check for the frames that the xanim process creates.       *  The periodically checking can be done in the poll procedure for asynchron       *  startmode only.       */
+comment|/* note:       *  we can't show realistic progress for the extracting process       *  because we know nothing about videofileformat and how much frames       *  are realy stored in the videofile.       *       *  one guess could assume, that xanim will write 0 upto last_frame       *  to disk, and check for the frames that the xanim process creates.       *  The periodically checking can be done in the poll procedure for asynchron       *  startmode only.       */
 name|l_xanim_pid
 operator|=
 name|p_start_xanim_process
@@ -4591,8 +4591,8 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"cant find any extracted frames,\n"
-literal|"xanim has failed or was canclled"
+literal|"can't find any extracted frames,\n"
+literal|"xanim has failed or was cancelled"
 argument_list|)
 argument_list|)
 expr_stmt|;

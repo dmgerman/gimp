@@ -437,7 +437,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b246500103
+DECL|enum|__anon2beb8a5d0103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -2504,7 +2504,7 @@ index|]
 operator|=
 name|_
 argument_list|(
-literal|"How man units make up an inch."
+literal|"How many units make up an inch."
 argument_list|)
 expr_stmt|;
 name|help_strings

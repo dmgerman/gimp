@@ -217,7 +217,7 @@ value|256
 end_define
 
 begin_typedef
-DECL|struct|__anon28f9fe9c0108
+DECL|struct|__anon29c642570108
 typedef|typedef
 struct|struct
 block|{
@@ -232,7 +232,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28f9fe9c0208
+DECL|struct|__anon29c642570208
 typedef|typedef
 struct|struct
 block|{
@@ -259,7 +259,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f9fe9c0308
+DECL|struct|__anon29c642570308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -424,7 +424,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28f9fe9c0408
+DECL|struct|__anon29c642570408
 typedef|typedef
 struct|struct
 block|{
@@ -3260,7 +3260,7 @@ argument_list|,
 comment|/* lower, upper (unconstrained) */
 name|_
 argument_list|(
-literal|"How to insert SrcLayer into the\nDst.Frame's Layerstack\n0 means on top i.e in front"
+literal|"How to insert SrcLayer into the\nDst. Frame's Layerstack\n0 means on top i.e. in front"
 argument_list|)
 argument_list|,
 name|NULL
@@ -5467,7 +5467,7 @@ operator|->
 name|src_layer_id
 argument_list|)
 expr_stmt|;
-comment|/* TODO: 	 * if any remove old src layer from preview 	 * add this layer to preview (at current point koords) 	 * update_preview  	 */
+comment|/* TODO: 	 * if any remove old src layer from preview 	 * add this layer to preview (at current point coords) 	 * update_preview  	 */
 block|}
 end_function
 
@@ -7460,7 +7460,7 @@ name|option_menu
 argument_list|,
 name|_
 argument_list|(
-literal|"How to place the SrcLayer at   \nControlpoint Koordinates"
+literal|"How to place the SrcLayer at   \nControlpoint Coordinates"
 argument_list|)
 argument_list|,
 name|NULL
@@ -13076,7 +13076,7 @@ operator|)
 operator|+
 name|l_src_offset_y
 expr_stmt|;
-comment|/* modify koordinate offsets of the copied layer within dest. image */
+comment|/* modify coordinate offsets of the copied layer within dest. image */
 name|gimp_layer_set_offsets
 argument_list|(
 name|l_cp_layer_id
