@@ -237,9 +237,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_fatal_error (gchar * fmt,...)
+DECL|function|gimp_fatal_error (const gchar * fmt,...)
 name|gimp_fatal_error
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|fmt
@@ -388,9 +389,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_terminate (gchar * fmt,...)
+DECL|function|gimp_terminate (const gchar * fmt,...)
 name|gimp_terminate
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|fmt

@@ -555,9 +555,9 @@ comment|/* inhibits error messages by caller */
 block|}
 block|}
 comment|/* ref the image, so it can't get deleted during save */
-name|gtk_object_ref
+name|g_object_ref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gimage
 argument_list|)
@@ -798,9 +798,9 @@ argument_list|(
 name|args
 argument_list|)
 expr_stmt|;
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gimage
 argument_list|)

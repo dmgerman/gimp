@@ -149,7 +149,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b730b50103
+DECL|enum|__anon2bd6196e0103
 block|{
 DECL|enumerator|ST_MODULE_ERROR
 name|ST_MODULE_ERROR
@@ -323,7 +323,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b730b50208
+DECL|struct|__anon2bd6196e0208
 block|{
 DECL|member|parent_instance
 name|GtkObject
@@ -438,7 +438,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b730b50308
+DECL|struct|__anon2bd6196e0308
 block|{
 DECL|member|table
 name|GtkWidget
@@ -1757,7 +1757,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b730b50403
+DECL|enum|__anon2bd6196e0403
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -2133,9 +2133,9 @@ modifier|*
 name|mod
 parameter_list|)
 block|{
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|mod
 argument_list|)
@@ -4717,7 +4717,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b730b50508
+DECL|struct|__anon2bd6196e0508
 block|{
 DECL|member|search_key
 specifier|const

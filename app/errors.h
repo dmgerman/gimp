@@ -66,6 +66,7 @@ begin_function_decl
 name|void
 name|gimp_fatal_error
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 parameter_list|,
@@ -78,6 +79,7 @@ begin_function_decl
 name|void
 name|gimp_terminate
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 parameter_list|,
