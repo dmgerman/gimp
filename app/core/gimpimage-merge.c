@@ -558,7 +558,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon29b46ba90103
+DECL|enum|__anon27c85bdd0103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -5793,7 +5793,7 @@ block|}
 if|if
 condition|(
 name|val
-operator|<=
+operator|<
 name|maxval
 condition|)
 name|retval
