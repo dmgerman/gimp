@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad05a0c0103
+DECL|enum|__anon294704220103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1092,6 +1092,33 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|area
+operator|->
+name|type
+operator|==
+name|GIMP_COLOR_AREA_FLAT
+condition|)
+block|{
+if|if
+condition|(
+name|gimp_rgb_distance
+argument_list|(
+operator|&
+name|area
+operator|->
+name|color
+argument_list|,
+name|color
+argument_list|)
+operator|<
+literal|0.000001
+condition|)
+return|return;
+block|}
+else|else
+block|{
+if|if
+condition|(
 name|gimp_rgba_distance
 argument_list|(
 operator|&
@@ -1101,10 +1128,11 @@ name|color
 argument_list|,
 name|color
 argument_list|)
-operator|>
+operator|<
 literal|0.000001
 condition|)
-block|{
+return|return;
+block|}
 name|area
 operator|->
 name|color
@@ -1138,7 +1166,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
