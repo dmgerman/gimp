@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  * version 0.52  * This version requires gtk-1.0.4 or above.  *  * This plug-in puts an image through a screen at a particular angle  * and lines per inch, to arrive at a newspaper-style effect.  *  * Austin Donnelly<austin@greenend.org.uk>  * http://www.cl.cam.ac.uk/~and1000/newsprint/  *  * Richard Mortier<rmm1002@cam.ac.uk> did the spot_round() function  * with correct tonal balance.  *  * Tim Harris<tim.harris@acm.org> provided valuable feedback on  * pre-press issues.  *  *  * 0.52: 10 Jan 1999<austin@greenend.org.uk>  *    gtk_label_set() -> gtk_label_set_text()  */
+comment|/*  * version 0.52  * This version requires gtk-1.0.4 or above.  *  * This plug-in puts an image through a screen at a particular angle  * and lines per inch, to arrive at a newspaper-style effect.  *  * Austin Donnelly<austin@greenend.org.uk>  * http://www.cl.cam.ac.uk/~and1000/newsprint/  *  * Richard Mortier<rmm1002@cam.ac.uk> did the spot_round() function  * with correct tonal balance.  *  * Tim Harris<tim.harris@acm.org> provided valuable feedback on  * pre-press issues.  *  *  * 0.52: 10 Jan 1999<austin@greenend.org.uk>  *    gtk_label_set() -> gtk_label_set_text()  * 0.60: 18 Jun 2001<austin@gimp.org>  *    fixed long-standing bug where newsprint() function in GREYA images  *    treated them as RGB (bpp rather than colour_bpp) to select  *    colourspace to use.  Thanks to warner-gnome.bugzilla@lothar.com for  *    spotting this and providing the patch.  Bug #52981.  */
 end_comment
 
 begin_include
@@ -82,7 +82,7 @@ DECL|macro|VERSION
 define|#
 directive|define
 name|VERSION
-value|"v0.52"
+value|"v0.60"
 end_define
 
 begin_comment
@@ -512,7 +512,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a80e1a0108
+DECL|struct|__anon292e37ff0108
 block|{
 DECL|member|name
 specifier|const
@@ -772,7 +772,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a80e1a0208
+DECL|struct|__anon292e37ff0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -845,7 +845,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a80e1a0308
+DECL|struct|__anon292e37ff0308
 block|{
 DECL|member|input_spi
 name|gint
@@ -871,7 +871,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a80e1a0408
+DECL|struct|__anon292e37ff0408
 block|{
 DECL|member|run
 name|gint
@@ -890,7 +890,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a80e1a0508
+DECL|struct|__anon292e37ff0508
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -997,7 +997,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a80e1a0608
+DECL|struct|__anon292e37ff0608
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1181,7 +1181,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a80e1a0708
+DECL|struct|__anon292e37ff0708
 block|{
 DECL|member|name
 specifier|const
@@ -6928,7 +6928,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a80e1a0808
+DECL|struct|__anon292e37ff0808
 block|{
 DECL|member|index
 name|gint
@@ -7555,7 +7555,7 @@ name|colourspace
 expr_stmt|;
 if|if
 condition|(
-name|bpp
+name|colour_bpp
 operator|==
 literal|1
 condition|)
@@ -7615,7 +7615,7 @@ value|do {								\     if (!VALID_SPOTFN(_x))					\     {								\ 	printf("new
 comment|/* calculate the RGB / CMYK rotations and threshold matrices */
 if|if
 condition|(
-name|bpp
+name|colour_bpp
 operator|==
 literal|1
 operator|||
