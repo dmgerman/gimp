@@ -223,7 +223,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2881263c0103
+DECL|enum|__anon2898a3290103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -26407,6 +26407,9 @@ name|has_alpha1
 decl_stmt|,
 name|has_alpha2
 decl_stmt|;
+name|int
+name|i
+decl_stmt|;
 name|struct
 name|combine_regions_struct
 name|st
@@ -26520,7 +26523,8 @@ name|has_alpha2
 operator|=
 name|has_alpha2
 expr_stmt|;
-comment|/* cheap and easy when the row of src2 is completely opaque/transparent      and the wind is otherwise blowing in the right direction. */
+comment|/* cheap and easy when the row of src2 is completely opaque/transparent      and the wind is otherwise blowing in the right direction.   */
+comment|/* First check - we can't do an opacity quickskip if the drawable      has a mask, or non-full opacity, or the layer mode dictates      that we might gain transparency.   */
 name|st
 operator|.
 name|opacity_quickskip_possible
@@ -26568,6 +26572,52 @@ index|]
 operator|)
 operator|)
 expr_stmt|;
+comment|/* Second check - if any single colour channel can't be affected,      we can't use the opacity quickskip.   */
+if|if
+condition|(
+name|st
+operator|.
+name|opacity_quickskip_possible
+condition|)
+block|{
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|src1
+operator|->
+name|bytes
+operator|-
+literal|1
+condition|;
+name|i
+operator|++
+control|)
+block|{
+if|if
+condition|(
+operator|!
+name|affect
+index|[
+name|i
+index|]
+condition|)
+block|{
+name|st
+operator|.
+name|opacity_quickskip_possible
+operator|=
+name|FALSE
+expr_stmt|;
+break|break;
+block|}
+block|}
+block|}
+comment|/* transparency quickskip is only possible if the layer mode      dictates that we cannot possibly gain opacity, or the 'overall'      opacity of the layer is set to zero anyway.    */
 name|st
 operator|.
 name|transparency_quickskip_possible
@@ -26590,6 +26640,7 @@ literal|0
 operator|)
 operator|)
 expr_stmt|;
+comment|/* Start the actual processing.    */
 name|pixel_regions_process_parallel
 argument_list|(
 operator|(
