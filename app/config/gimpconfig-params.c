@@ -760,7 +760,7 @@ name|NULL
 block|,
 sizeof|sizeof
 argument_list|(
-name|GParamSpecUInt
+name|GParamSpecULong
 argument_list|)
 block|,
 literal|0
