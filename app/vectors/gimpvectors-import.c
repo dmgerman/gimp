@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bddf120108
+DECL|struct|__anon2b205a8f0108
 block|{
 DECL|member|stack
 name|GQueue
@@ -192,7 +192,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bddf120208
+DECL|struct|__anon2b205a8f0208
 block|{
 DECL|member|id
 name|gchar
@@ -2491,8 +2491,10 @@ name|gimp_matrix3_translate
 argument_list|(
 name|matrix
 argument_list|,
+operator|-
 name|x
 argument_list|,
+operator|-
 name|y
 argument_list|)
 expr_stmt|;
@@ -3158,7 +3160,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bddf120308
+DECL|struct|__anon2b205a8f0308
 block|{
 DECL|member|strokes
 name|GList
