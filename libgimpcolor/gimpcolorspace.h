@@ -61,6 +61,9 @@ name|GimpRGB
 modifier|*
 name|rgb
 parameter_list|,
+name|gdouble
+name|pullout
+parameter_list|,
 name|GimpCMYK
 modifier|*
 name|cmyk
@@ -229,8 +232,8 @@ comment|/* returns yellow     */
 parameter_list|,
 name|gint
 modifier|*
-name|black
-comment|/* ignored as input   */
+name|pullout
+comment|/* returns black      */
 parameter_list|)
 function_decl|;
 end_function_decl

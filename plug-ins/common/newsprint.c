@@ -455,7 +455,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0e61d60108
+DECL|struct|__anon2a198f6d0108
 block|{
 DECL|member|name
 specifier|const
@@ -715,7 +715,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0e61d60208
+DECL|struct|__anon2a198f6d0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -788,7 +788,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0e61d60308
+DECL|struct|__anon2a198f6d0308
 block|{
 DECL|member|input_spi
 name|gint
@@ -814,7 +814,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0e61d60408
+DECL|struct|__anon2a198f6d0408
 block|{
 DECL|member|run
 name|gboolean
@@ -833,7 +833,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0e61d60508
+DECL|struct|__anon2a198f6d0508
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -940,7 +940,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0e61d60608
+DECL|struct|__anon2a198f6d0608
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1124,7 +1124,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0e61d60708
+DECL|struct|__anon2a198f6d0708
 block|{
 DECL|member|name
 specifier|const
@@ -6879,7 +6879,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0e61d60808
+DECL|struct|__anon2a198f6d0808
 block|{
 DECL|member|index
 name|gint
@@ -7329,9 +7329,6 @@ literal|4
 index|]
 decl_stmt|;
 name|gint
-name|k_pullout
-decl_stmt|;
-name|gint
 name|bpp
 decl_stmt|,
 name|colour_bpp
@@ -7437,18 +7434,6 @@ operator|=
 name|pvals
 operator|.
 name|oversample
-expr_stmt|;
-name|k_pullout
-operator|=
-operator|(
-literal|255
-operator|*
-name|pvals
-operator|.
-name|k_pullout
-operator|)
-operator|/
-literal|100
 expr_stmt|;
 name|width
 operator|*=
@@ -8216,6 +8201,8 @@ index|]
 expr_stmt|;
 name|k
 operator|=
+name|pvals
+operator|.
 name|k_pullout
 expr_stmt|;
 name|gimp_rgb_to_cmyk_int

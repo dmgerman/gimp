@@ -3568,6 +3568,8 @@ argument_list|(
 operator|&
 name|rgb
 argument_list|,
+literal|1.0
+argument_list|,
 operator|&
 name|cmyk
 argument_list|)

@@ -1174,13 +1174,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rgb_to_cmyk (const GimpRGB * rgb,GimpCMYK * cmyk)
+DECL|function|gimp_rgb_to_cmyk (const GimpRGB * rgb,gdouble pullout,GimpCMYK * cmyk)
 name|gimp_rgb_to_cmyk
 parameter_list|(
 specifier|const
 name|GimpRGB
 modifier|*
 name|rgb
+parameter_list|,
+name|gdouble
+name|pullout
 parameter_list|,
 name|GimpCMYK
 modifier|*
@@ -1267,6 +1270,10 @@ condition|)
 name|k
 operator|=
 name|y
+expr_stmt|;
+name|k
+operator|*=
+name|pullout
 expr_stmt|;
 if|if
 condition|(
@@ -3204,7 +3211,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_to_cmyk_int:  * @red:     the red channel; returns the cyan value (0-255)  * @green:   the green channel; returns the magenta value (0-255)  * @blue:    the blue channel; returns the yellow value (0-255)  * @pullout: the maximum amount of black to pull out; returns  *           the black value (0-255)  *  * Does a naive conversion from RGB to CMYK colorspace. A simple  * formula that doesn't take any color-profiles into account is used.  * The amount of black pullout how can be controlled via the @pullout  * parameter. A @pullout value of 0 makes this a conversion to CMY.  * For most cases, @pullout should be choosen as 255.  **/
+comment|/**  * gimp_rgb_to_cmyk_int:  * @red:     the red channel; returns the cyan value (0-255)  * @green:   the green channel; returns the magenta value (0-255)  * @blue:    the blue channel; returns the yellow value (0-255)  * @pullout: the percentage of black to pull out (0-100); returns  *           the black value (0-255)  *  * Does a naive conversion from RGB to CMYK colorspace. A simple  * formula that doesn't take any color-profiles into account is used.  * The amount of black pullout how can be controlled via the @pullout  * parameter. A @pullout value of 0 makes this a conversion to CMY.  * A value of 100 causes the maximum amount of black to be pulled out.  **/
 end_comment
 
 begin_function
@@ -3286,15 +3293,7 @@ block|{
 name|gint
 name|k
 init|=
-name|CLAMP
-argument_list|(
-operator|*
-name|pullout
-argument_list|,
-literal|0
-argument_list|,
 literal|255
-argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -3325,6 +3324,24 @@ condition|)
 name|k
 operator|=
 name|y
+expr_stmt|;
+name|k
+operator|=
+operator|(
+name|k
+operator|*
+name|CLAMP
+argument_list|(
+operator|*
+name|pullout
+argument_list|,
+literal|0
+argument_list|,
+literal|100
+argument_list|)
+operator|)
+operator|/
+literal|100
 expr_stmt|;
 operator|*
 name|red
