@@ -50,12 +50,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-composite-dispatch.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-composite-regression.h"
 end_include
 

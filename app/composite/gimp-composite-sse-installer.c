@@ -98,7 +98,7 @@ operator|)
 operator|&&
 name|defined
 argument_list|(
-name|USE_MMX
+name|USE_SSE
 argument_list|)
 operator|&&
 name|defined

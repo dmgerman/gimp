@@ -499,13 +499,13 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
+name|gimp_composite_init
+argument_list|()
+expr_stmt|;
 name|paint_funcs_setup
 argument_list|(
 name|use_mmx
 argument_list|)
-expr_stmt|;
-name|gimp_composite_init
-argument_list|()
 expr_stmt|;
 block|}
 end_function

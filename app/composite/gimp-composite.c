@@ -589,7 +589,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2c0b068d0108
+DECL|struct|__anon27c72f880108
 struct|struct
 block|{
 DECL|member|announce_function
@@ -1338,6 +1338,9 @@ name|gchar
 modifier|*
 name|p
 decl_stmt|;
+name|guint32
+name|cpu
+decl_stmt|;
 if|if
 condition|(
 operator|(
@@ -1416,10 +1419,6 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|ARCH_X86
-ifdef|#
-directive|ifdef
-name|USE_MMX
-comment|/* USE_MMX here means "use cpu optimisations" XXX */
 if|if
 condition|(
 name|cpu_accel
@@ -1428,6 +1427,13 @@ operator|&
 name|CPU_ACCEL_X86_MMX
 condition|)
 block|{
+specifier|extern
+name|void
+name|gimp_composite_mmx_install
+argument_list|(
+name|void
+argument_list|)
+decl_stmt|;
 name|g_printerr
 argument_list|(
 literal|" mmx"
@@ -1443,8 +1449,20 @@ name|cpu_accel
 argument_list|()
 operator|&
 name|CPU_ACCEL_X86_SSE
+operator|||
+name|cpu_accel
+argument_list|()
+operator|&
+name|CPU_ACCEL_X86_MMXEXT
 condition|)
 block|{
+specifier|extern
+name|void
+name|gimp_composite_sse_install
+argument_list|(
+name|void
+argument_list|)
+decl_stmt|;
 name|g_printerr
 argument_list|(
 literal|" sse"
@@ -1454,35 +1472,76 @@ name|gimp_composite_sse_install
 argument_list|()
 expr_stmt|;
 block|}
-if|#
-directive|if
-literal|0
-block|if (cpu_accel()& CPU_ACCEL_X86_MMXEXT) { 								g_printerr (" mmxext"); 								gimp_composite_mmxext_install(); 						}
-endif|#
-directive|endif
-if|#
-directive|if
-literal|0
-block|if (cpu_accel()& CPU_ACCEL_X86_SSE2) { 								g_printerr (" sse2"); 								gimp_composite_sse2_install(); 						}
-endif|#
-directive|endif
-if|#
-directive|if
-literal|0
-block|if (cpu_accel()& CPU_ACCEL_X86_3DNOW) { 								g_printerr (" 3dnow"); 								gimp_composite_3dnow_install(); 						}
-endif|#
-directive|endif
+if|if
+condition|(
+name|cpu_accel
+argument_list|()
+operator|&
+name|CPU_ACCEL_X86_SSE2
+condition|)
+block|{
+specifier|extern
+name|void
+name|gimp_composite_sse2_install
+argument_list|(
+name|void
+argument_list|)
+decl_stmt|;
+name|g_printerr
+argument_list|(
+literal|" sse2"
+argument_list|)
+expr_stmt|;
+name|gimp_composite_sse2_install
+argument_list|()
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|cpu_accel
+argument_list|()
+operator|&
+name|CPU_ACCEL_X86_3DNOW
+condition|)
+block|{
+specifier|extern
+name|void
+name|gimp_composite_3dnow_install
+argument_list|(
+name|void
+argument_list|)
+decl_stmt|;
+name|g_printerr
+argument_list|(
+literal|" 3dnow"
+argument_list|)
+expr_stmt|;
+name|gimp_composite_3dnow_install
+argument_list|()
+expr_stmt|;
+block|}
 endif|#
 directive|endif
 ifdef|#
 directive|ifdef
 name|ARCH_PPC
-if|#
-directive|if
-literal|0
-block|if (cpu_accel()& CPU_ACCEL_PPC_ALTIVEC) { 								g_printerr (" altivec"); 								gimp_composite_altivec_install(); 						}
-endif|#
-directive|endif
+if|if
+condition|(
+name|cpu_accel
+argument_list|()
+operator|&
+name|CPU_ACCEL_PPC_ALTIVEC
+condition|)
+block|{
+name|g_printerr
+argument_list|(
+literal|" altivec"
+argument_list|)
+expr_stmt|;
+name|gimp_composite_altivec_install
+argument_list|()
+expr_stmt|;
+block|}
 endif|#
 directive|endif
 ifdef|#
@@ -1492,8 +1551,6 @@ if|#
 directive|if
 literal|0
 block|g_printerr (" vis"); 						gimp_composite_vis_install();
-endif|#
-directive|endif
 endif|#
 directive|endif
 endif|#
