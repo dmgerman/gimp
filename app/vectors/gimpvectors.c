@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27962a740103
+DECL|enum|__anon28d6afb60103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -3875,7 +3875,7 @@ expr_stmt|;
 operator|*
 name|x2
 operator|=
-name|MIN
+name|MAX
 argument_list|(
 operator|*
 name|x2
@@ -3888,7 +3888,7 @@ expr_stmt|;
 operator|*
 name|y2
 operator|=
-name|MIN
+name|MAX
 argument_list|(
 operator|*
 name|y2
