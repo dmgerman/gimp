@@ -36,7 +36,7 @@ end_include
 begin_function_decl
 specifier|static
 name|void
-name|gimp_docked_iface_init
+name|gimp_docked_iface_base_init
 parameter_list|(
 name|GimpDockedInterface
 modifier|*
@@ -79,7 +79,7 @@ block|,
 operator|(
 name|GBaseInitFunc
 operator|)
-name|gimp_docked_iface_init
+name|gimp_docked_iface_base_init
 block|,
 operator|(
 name|GBaseFinalizeFunc
@@ -118,45 +118,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_docked_iface_init (GimpDockedInterface * docked_iface)
-name|gimp_docked_iface_init
+DECL|function|gimp_docked_iface_base_init (GimpDockedInterface * docked_iface)
+name|gimp_docked_iface_base_init
 parameter_list|(
 name|GimpDockedInterface
 modifier|*
 name|docked_iface
 parameter_list|)
-block|{
-name|docked_iface
-operator|->
-name|set_aux_info
-operator|=
-name|NULL
-expr_stmt|;
-name|docked_iface
-operator|->
-name|get_aux_info
-operator|=
-name|NULL
-expr_stmt|;
-name|docked_iface
-operator|->
-name|get_preview
-operator|=
-name|NULL
-expr_stmt|;
-name|docked_iface
-operator|->
-name|set_context
-operator|=
-name|NULL
-expr_stmt|;
-name|docked_iface
-operator|->
-name|get_menu
-operator|=
-name|NULL
-expr_stmt|;
-block|}
+block|{ }
 end_function
 
 begin_function
@@ -451,6 +420,12 @@ argument_list|(
 name|docked
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_print ("gimp_docked_get_menu: docked = %p\n"            "iface->set_aux_info = %p\n"            "iface->get_aux_info = %p\n"            "iface->get_preview  = %p\n"            "iface->set_context  = %p\n"            "iface->get_menu     = %p\n\n",            docked,            docked_iface->set_aux_info,            docked_iface->get_aux_info,            docked_iface->get_preview,            docked_iface->set_context,            docked_iface->get_menu);
+endif|#
+directive|endif
 if|if
 condition|(
 name|docked_iface
