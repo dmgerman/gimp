@@ -688,10 +688,7 @@ argument_list|(
 literal|"Use Netscape instead"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|NULL
 argument_list|,

@@ -17,7 +17,7 @@ name|__QMASK_H__
 end_define
 
 begin_function_decl
-name|void
+name|gboolean
 name|qmask_click_handler
 parameter_list|(
 name|GtkWidget

@@ -397,7 +397,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28acb52d0108
+DECL|struct|__anon2a2dfd0b0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2664,12 +2664,6 @@ name|brush
 argument_list|)
 condition|)
 block|{
-if|if
-condition|(
-operator|!
-name|brush_editor_dialog
-condition|)
-block|{
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|global_dialog_factory
@@ -2677,7 +2671,6 @@ argument_list|,
 literal|"gimp:brush-editor"
 argument_list|)
 expr_stmt|;
-block|}
 name|brush_editor_set_brush
 argument_list|(
 name|brush_editor_dialog
@@ -2721,12 +2714,6 @@ argument_list|(
 name|data
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|gradient_editor_dialog
-condition|)
-block|{
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|global_dialog_factory
@@ -2734,7 +2721,6 @@ argument_list|,
 literal|"gimp:gradient-editor"
 argument_list|)
 expr_stmt|;
-block|}
 name|gradient_editor_set_gradient
 argument_list|(
 name|gradient_editor_dialog
@@ -2766,12 +2752,6 @@ argument_list|(
 name|data
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|palette_editor_dialog
-condition|)
-block|{
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|global_dialog_factory
@@ -2779,7 +2759,6 @@ argument_list|,
 literal|"gimp:palette-editor"
 argument_list|)
 expr_stmt|;
-block|}
 name|palette_editor_set_palette
 argument_list|(
 name|palette_editor_dialog

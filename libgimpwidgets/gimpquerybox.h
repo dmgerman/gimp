@@ -158,7 +158,7 @@ name|gchar
 modifier|*
 name|initial
 parameter_list|,
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|,
@@ -205,7 +205,7 @@ parameter_list|,
 name|gint
 name|upper
 parameter_list|,
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|,
@@ -255,7 +255,7 @@ parameter_list|,
 name|gint
 name|digits
 parameter_list|,
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|,
@@ -314,7 +314,7 @@ parameter_list|,
 name|gboolean
 name|dot_for_dot
 parameter_list|,
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|,
@@ -365,7 +365,7 @@ name|gchar
 modifier|*
 name|false_button
 parameter_list|,
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|,

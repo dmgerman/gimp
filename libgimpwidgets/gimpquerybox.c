@@ -103,7 +103,7 @@ modifier|*
 name|entry
 decl_stmt|;
 DECL|member|object
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 decl_stmt|;
@@ -111,9 +111,9 @@ DECL|member|callback
 name|GCallback
 name|callback
 decl_stmt|;
-DECL|member|data
+DECL|member|callback_data
 name|gpointer
-name|data
+name|callback_data
 decl_stmt|;
 block|}
 struct|;
@@ -159,7 +159,7 @@ name|gchar
 modifier|*
 name|cancel_button
 parameter_list|,
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|,
@@ -172,7 +172,7 @@ name|GCallback
 name|callback
 parameter_list|,
 name|gpointer
-name|data
+name|callback_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -302,7 +302,7 @@ begin_function
 specifier|static
 name|QueryBox
 modifier|*
-DECL|function|create_query_box (const gchar * title,GimpHelpFunc help_func,const gchar * help_data,GCallback ok_callback,GCallback cancel_callback,const gchar * message,const gchar * ok_button,const gchar * cancel_button,GtkObject * object,const gchar * signal,GCallback callback,gpointer data)
+DECL|function|create_query_box (const gchar * title,GimpHelpFunc help_func,const gchar * help_data,GCallback ok_callback,GCallback cancel_callback,const gchar * message,const gchar * ok_button,const gchar * cancel_button,GObject * object,const gchar * signal,GCallback callback,gpointer callback_data)
 name|create_query_box
 parameter_list|(
 specifier|const
@@ -339,7 +339,7 @@ name|gchar
 modifier|*
 name|cancel_button
 parameter_list|,
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|,
@@ -352,7 +352,7 @@ name|GCallback
 name|callback
 parameter_list|,
 name|gpointer
-name|data
+name|callback_data
 parameter_list|)
 block|{
 name|QueryBox
@@ -380,7 +380,7 @@ name|object
 operator|==
 name|NULL
 operator|||
-name|GTK_IS_OBJECT
+name|G_IS_OBJECT
 argument_list|(
 name|object
 argument_list|)
@@ -461,16 +461,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|qbox
 argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gtk_widget_destroyed
 argument_list|)
@@ -487,41 +487,48 @@ condition|(
 name|object
 condition|)
 block|{
-name|gtk_signal_connect
+name|GClosure
+modifier|*
+name|closure
+decl_stmt|;
+name|closure
+operator|=
+name|g_cclosure_new
 argument_list|(
-name|GTK_OBJECT
+name|G_CALLBACK
 argument_list|(
-name|object
+name|query_box_cancel_callback
 argument_list|)
 argument_list|,
-literal|"destroy"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|gtk_widget_destroyed
-argument_list|)
-argument_list|,
-operator|&
 name|query_box
-operator|->
-name|object
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_object_watch_closure
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
+argument_list|(
+name|query_box
+operator|->
+name|qbox
+argument_list|)
+argument_list|,
+name|closure
+argument_list|)
+expr_stmt|;
+name|g_signal_connect_closure
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|object
 argument_list|)
 argument_list|,
 name|signal
 argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|query_box_cancel_callback
-argument_list|)
+name|closure
 argument_list|,
-name|query_box
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -637,9 +644,9 @@ name|callback
 expr_stmt|;
 name|query_box
 operator|->
-name|data
+name|callback_data
 operator|=
-name|data
+name|callback_data
 expr_stmt|;
 return|return
 name|query_box
@@ -648,13 +655,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_query_string_box:  * @title: The query box dialog's title.  * @help_func: The help function to show this dialog's help page.  * @help_data: A string pointing to this dialog's html help page.  * @message: A string which will be shown above the dialog's entry widget.  * @initial: The initial value.  * @object: The object this query box is associated with.  * @signal: The object's signal which will cause the query box to be closed.  * @callback: The function which will be called when the user selects "OK".  * @data: The callback's user data.  *  * Returns: A pointer to the new #GtkDialog.  **/
+comment|/**  * gimp_query_string_box:  * @title:     The query box dialog's title.  * @help_func: The help function to show this dialog's help page.  * @help_data: A string pointing to this dialog's html help page.  * @message:   A string which will be shown above the dialog's entry widget.  * @initial:   The initial value.  * @object:    The object this query box is associated with.  * @signal:    The object's signal which will cause the query box to be closed.  * @callback:  The function which will be called when the user selects "OK".  * @data:      The callback's user data.  *  * Returns: A pointer to the new #GtkDialog.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_query_string_box (const gchar * title,GimpHelpFunc help_func,const gchar * help_data,const gchar * message,const gchar * initial,GtkObject * object,const gchar * signal,GimpQueryStringCallback callback,gpointer data)
+DECL|function|gimp_query_string_box (const gchar * title,GimpHelpFunc help_func,const gchar * help_data,const gchar * message,const gchar * initial,GObject * object,const gchar * signal,GimpQueryStringCallback callback,gpointer data)
 name|gimp_query_string_box
 parameter_list|(
 specifier|const
@@ -680,7 +687,7 @@ name|gchar
 modifier|*
 name|initial
 parameter_list|,
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|,
@@ -726,15 +733,9 @@ argument_list|)
 argument_list|,
 name|message
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|object
 argument_list|,
@@ -818,13 +819,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_query_int_box:  * @title: The query box dialog's title.  * @help_func: The help function to show this dialog's help page.  * @help_data: A string pointing to this dialog's html help page.  * @message: A string which will be shown above the dialog's entry widget.  * @initial: The initial value.  * @lower: The lower boundary of the range of possible values.  * @upper: The upper boundray of the range of possible values.  * @object: The object this query box is associated with.  * @signal: The object's signal which will cause the query box to be closed.  * @callback: The function which will be called when the user selects "OK".  * @data: The callback's user data.  *  * Returns: A pointer to the new #GtkDialog.  **/
+comment|/**  * gimp_query_int_box:  * @title:     The query box dialog's title.  * @help_func: The help function to show this dialog's help page.  * @help_data: A string pointing to this dialog's html help page.  * @message:   A string which will be shown above the dialog's entry widget.  * @initial:   The initial value.  * @lower:     The lower boundary of the range of possible values.  * @upper:     The upper boundray of the range of possible values.  * @object:    The object this query box is associated with.  * @signal:    The object's signal which will cause the query box to be closed.  * @callback:  The function which will be called when the user selects "OK".  * @data:      The callback's user data.  *  * Returns: A pointer to the new #GtkDialog.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_query_int_box (const gchar * title,GimpHelpFunc help_func,const gchar * help_data,const gchar * message,gint initial,gint lower,gint upper,GtkObject * object,const gchar * signal,GimpQueryIntCallback callback,gpointer data)
+DECL|function|gimp_query_int_box (const gchar * title,GimpHelpFunc help_func,const gchar * help_data,const gchar * message,gint initial,gint lower,gint upper,GObject * object,const gchar * signal,GimpQueryIntCallback callback,gpointer data)
 name|gimp_query_int_box
 parameter_list|(
 specifier|const
@@ -854,7 +855,7 @@ parameter_list|,
 name|gint
 name|upper
 parameter_list|,
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|,
@@ -904,15 +905,9 @@ argument_list|)
 argument_list|,
 name|message
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|object
 argument_list|,
@@ -1001,13 +996,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_query_double_box:  * @title: The query box dialog's title.  * @help_func: The help function to show this dialog's help page.  * @help_data: A string pointing to this dialog's html help page.  * @message: A string which will be shown above the dialog's entry widget.  * @initial: The initial value.  * @lower: The lower boundary of the range of possible values.  * @upper: The upper boundray of the range of possible values.  * @digits: The number of decimal digits the #GtkSpinButton will provide.  * @object: The object this query box is associated with.  * @signal: The object's signal which will cause the query box to be closed.  * @callback: The function which will be called when the user selects "OK".  * @data: The callback's user data.  *  * Returns: A pointer to the new #GtkDialog.  **/
+comment|/**  * gimp_query_double_box:  * @title:     The query box dialog's title.  * @help_func: The help function to show this dialog's help page.  * @help_data: A string pointing to this dialog's html help page.  * @message:   A string which will be shown above the dialog's entry widget.  * @initial:   The initial value.  * @lower:     The lower boundary of the range of possible values.  * @upper:     The upper boundray of the range of possible values.  * @digits:    The number of decimal digits the #GtkSpinButton will provide.  * @object:    The object this query box is associated with.  * @signal:    The object's signal which will cause the query box to be closed.  * @callback:  The function which will be called when the user selects "OK".  * @data:      The callback's user data.  *  * Returns: A pointer to the new #GtkDialog.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_query_double_box (const gchar * title,GimpHelpFunc help_func,const gchar * help_data,const gchar * message,gdouble initial,gdouble lower,gdouble upper,gint digits,GtkObject * object,const gchar * signal,GimpQueryDoubleCallback callback,gpointer data)
+DECL|function|gimp_query_double_box (const gchar * title,GimpHelpFunc help_func,const gchar * help_data,const gchar * message,gdouble initial,gdouble lower,gdouble upper,gint digits,GObject * object,const gchar * signal,GimpQueryDoubleCallback callback,gpointer data)
 name|gimp_query_double_box
 parameter_list|(
 specifier|const
@@ -1040,7 +1035,7 @@ parameter_list|,
 name|gint
 name|digits
 parameter_list|,
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|,
@@ -1090,15 +1085,9 @@ argument_list|)
 argument_list|,
 name|message
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|object
 argument_list|,
@@ -1187,13 +1176,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_query_size_box:  * @title: The query box dialog's title.  * @help_func: The help function to show this dialog's help page.  * @help_data: A string pointing to this dialog's html help page.  * @message: A string which will be shown above the dialog's entry widget.  * @initial: The initial value.  * @lower: The lower boundary of the range of possible values.  * @upper: The upper boundray of the range of possible values.  * @digits: The number of decimal digits the #GimpSizeEntry provide in  *          "pixel" mode.  * @unit: The unit initially shown by the #GimpUnitMenu.  * @resolution: The resolution (in dpi) which will be used for pixel/unit  *              calculations.  * @dot_for_dot: #TRUE if the #GimpUnitMenu's initial unit should be "pixels".  * @object: The object this query box is associated with.  * @signal: The object's signal which will cause the query box to be closed.  * @callback: The function which will be called when the user selects "OK".  * @data: The callback's user data.  *  * Returns: A pointer to the new #GtkDialog.  **/
+comment|/**  * gimp_query_size_box:  * @title:       The query box dialog's title.  * @help_func:   The help function to show this dialog's help page.  * @help_data:   A string pointing to this dialog's html help page.  * @message:     A string which will be shown above the dialog's entry widget.  * @initial:     The initial value.  * @lower:       The lower boundary of the range of possible values.  * @upper:       The upper boundray of the range of possible values.  * @digits:      The number of decimal digits the #GimpSizeEntry provide in  *               "pixel" mode.  * @unit:        The unit initially shown by the #GimpUnitMenu.  * @resolution:  The resolution (in dpi) which will be used for pixel/unit  *               calculations.  * @dot_for_dot: #TRUE if the #GimpUnitMenu's initial unit should be "pixels".  * @object:      The object this query box is associated with.  * @signal:      The object's signal which will cause the query box  *               to be closed.  * @callback:    The function which will be called when the user selects "OK".  * @data:        The callback's user data.  *  * Returns: A pointer to the new #GtkDialog.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_query_size_box (const gchar * title,GimpHelpFunc help_func,const gchar * help_data,const gchar * message,gdouble initial,gdouble lower,gdouble upper,gint digits,GimpUnit unit,gdouble resolution,gboolean dot_for_dot,GtkObject * object,const gchar * signal,GimpQuerySizeCallback callback,gpointer data)
+DECL|function|gimp_query_size_box (const gchar * title,GimpHelpFunc help_func,const gchar * help_data,const gchar * message,gdouble initial,gdouble lower,gdouble upper,gint digits,GimpUnit unit,gdouble resolution,gboolean dot_for_dot,GObject * object,const gchar * signal,GimpQuerySizeCallback callback,gpointer data)
 name|gimp_query_size_box
 parameter_list|(
 specifier|const
@@ -1235,7 +1224,7 @@ parameter_list|,
 name|gboolean
 name|dot_for_dot
 parameter_list|,
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|,
@@ -1281,15 +1270,9 @@ argument_list|)
 argument_list|,
 name|message
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|object
 argument_list|,
@@ -1444,13 +1427,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_query_boolean_box:  * @title: The query box dialog's title.  * @help_func: The help function to show this dialog's help page.  * @help_data: A string pointing to this dialog's html help page.  * @eek: #TRUE if you want the "Eek" wilber to appear left of the dialog's  *       message.  * @message: A string which will be shown in the query box.  * @true_button: The string to be shown in the dialog's left button.  * @false_button: The string to be shown in the dialog's right button.  * @object: The object this query box is associated with.  * @signal: The object's signal which will cause the query box to be closed.  * @callback: The function which will be called when the user clicks one  *            of the buttons.  * @data: The callback's user data.  *  * Returns: A pointer to the new #GtkDialog.  **/
+comment|/**  * gimp_query_boolean_box:  * @title:        The query box dialog's title.  * @help_func:    The help function to show this dialog's help page.  * @help_data:    A string pointing to this dialog's html help page.  * @eek:          #TRUE if you want the "Eek" wilber to appear left of  *                the dialog's message.  * @message:      A string which will be shown in the query box.  * @true_button:  The string to be shown in the dialog's left button.  * @false_button: The string to be shown in the dialog's right button.  * @object:       The object this query box is associated with.  * @signal:       The object's signal which will cause the query box  *                to be closed.  * @callback:     The function which will be called when the user clicks one  *                of the buttons.  * @data:         The callback's user data.  *  * Returns: A pointer to the new #GtkDialog.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_query_boolean_box (const gchar * title,GimpHelpFunc help_func,const gchar * help_data,gboolean eek,const gchar * message,const gchar * true_button,const gchar * false_button,GtkObject * object,const gchar * signal,GimpQueryBooleanCallback callback,gpointer data)
+DECL|function|gimp_query_boolean_box (const gchar * title,GimpHelpFunc help_func,const gchar * help_data,gboolean eek,const gchar * message,const gchar * true_button,const gchar * false_button,GObject * object,const gchar * signal,GimpQueryBooleanCallback callback,gpointer data)
 name|gimp_query_boolean_box
 parameter_list|(
 specifier|const
@@ -1484,7 +1467,7 @@ name|gchar
 modifier|*
 name|false_button
 parameter_list|,
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|,
@@ -1724,15 +1707,19 @@ name|query_box
 operator|->
 name|object
 condition|)
-name|gtk_signal_disconnect_by_data
+block|{
+name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|query_box
 operator|->
 name|object
 argument_list|,
+name|query_box_cancel_callback
+argument_list|,
 name|query_box
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|query_box
 return|;
@@ -1803,7 +1790,7 @@ name|string
 operator|,
 name|query_box
 operator|->
-name|data
+name|callback_data
 operator|)
 expr_stmt|;
 comment|/*  Destroy the box  */
@@ -1888,7 +1875,7 @@ name|value
 operator|,
 name|query_box
 operator|->
-name|data
+name|callback_data
 operator|)
 expr_stmt|;
 comment|/*  Destroy the box  */
@@ -1973,7 +1960,7 @@ name|value
 operator|,
 name|query_box
 operator|->
-name|data
+name|callback_data
 operator|)
 expr_stmt|;
 comment|/*  Destroy the box  */
@@ -2077,7 +2064,7 @@ name|unit
 operator|,
 name|query_box
 operator|->
-name|data
+name|callback_data
 operator|)
 expr_stmt|;
 comment|/*  Destroy the box  */
@@ -2146,7 +2133,7 @@ name|TRUE
 operator|,
 name|query_box
 operator|->
-name|data
+name|callback_data
 operator|)
 expr_stmt|;
 comment|/*  Destroy the box  */
@@ -2215,7 +2202,7 @@ name|FALSE
 operator|,
 name|query_box
 operator|->
-name|data
+name|callback_data
 operator|)
 expr_stmt|;
 comment|/*  Destroy the box  */

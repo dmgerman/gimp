@@ -439,7 +439,7 @@ argument_list|(
 literal|"GIMP Message"
 argument_list|)
 argument_list|,
-literal|"gimp_message"
+literal|"gimp-message"
 argument_list|,
 name|NULL
 argument_list|,
@@ -453,10 +453,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
+name|GTK_STOCK_OK
 argument_list|,
 name|gimp_message_box_close_callback
 argument_list|,

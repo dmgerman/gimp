@@ -1751,15 +1751,9 @@ name|FALSE
 argument_list|,
 name|overwrite_text
 argument_list|,
-name|_
-argument_list|(
-literal|"Yes"
-argument_list|)
+name|GTK_STOCK_YES
 argument_list|,
-name|_
-argument_list|(
-literal|"No"
-argument_list|)
+name|GTK_STOCK_NO
 argument_list|,
 name|NULL
 argument_list|,

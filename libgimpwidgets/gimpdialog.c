@@ -74,7 +74,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|gimp_dialog_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|gimp_dialog_delete_callback
 parameter_list|(
@@ -232,7 +232,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_new:  * @title: The dialog's title which will be set with gtk_window_set_title().  * @wmclass_name: The dialog's @wmclass_name which will be set with  *                gtk_window_set_wmclass(). The @wmclass_class will be  *                automatically set to "Gimp".  * @help_func: The function which will be called if the user presses "F1".  * @help_data: The data pointer which will be passed to @help_func.  * @position: The dialog's initial position which will be set with  *            gtk_window_set_position().  * @allow_shrink: The dialog's @allow_shrink flag, ...  * @allow_grow: ... it't @allow_grow flag and ...  * @auto_shrink: ... it's @auto_shrink flag which will all be set with  *               gtk_window_set_policy().  * @...: A #NULL terminated @va_list destribing the action_area buttons.  *  * This function simply packs the action_area arguments passed in "..."  * into a @va_list variable and passes everything to gimp_dialog_newv().  *  * For a description of the format of the @va_list describing the  * action_area buttons see gimp_dialog_create_action_areav().  *  * Returns: A #GtkDialog.  *  */
+comment|/**  * gimp_dialog_new:  * @title:        The dialog's title which will be set with  *                gtk_window_set_title().  * @wmclass_name: The dialog's @wmclass_name which will be set with  *                gtk_window_set_wmclass(). The @wmclass_class will be  *                automatically set to "Gimp".  * @help_func:    The function which will be called if the user presses "F1".  * @help_data:    The data pointer which will be passed to @help_func.  * @position:     The dialog's initial position which will be set with  *                gtk_window_set_position().  * @allow_shrink: The dialog's @allow_shrink flag, ...  * @allow_grow:   ... it't @allow_grow flag and ...  * @auto_shrink:  ... it's @auto_shrink flag which will all be set with  *                gtk_window_set_policy().  * @...:          A #NULL terminated @va_list destribing the  *                action_area buttons.  *  * This function simply packs the action_area arguments passed in "..."  * into a @va_list variable and passes everything to gimp_dialog_newv().  *  * For a description of the format of the @va_list describing the  * action_area buttons see gimp_dialog_create_action_areav().  *  * Returns: A #GtkDialog.  **/
 end_comment
 
 begin_function
@@ -271,7 +271,7 @@ parameter_list|,
 name|gint
 name|auto_shrink
 parameter_list|,
-comment|/* specify action area buttons as va_list: 		  *  const gchar    *label, 		  *  GtkSignalFunc   callback, 		  *  gpointer        data, 		  *  GtkObject      *slot_object, 		  *  GtkWidget     **widget_ptr, 		  *  gboolean        default_action, 		  *  gboolean        connect_delete, 		  */
+comment|/* specify action area buttons as va_list: 		  *  const gchar    *label, 		  *  GCallback       callback, 		  *  gpointer        callback_data, 		  *  GObject        *slot_object, 		  *  GtkWidget     **widget_ptr, 		  *  gboolean        default_action, 		  *  gboolean        connect_delete, 		  */
 modifier|...
 parameter_list|)
 block|{
@@ -324,7 +324,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_newv:  * @title: The dialog's title which will be set with gtk_window_set_title().  * @wmclass_name: The dialog's @wmclass_name which will be set with  *                gtk_window_set_wmclass(). The @wmclass_class will be  *                automatically set to "Gimp".  * @help_func: The function which will be called if the user presses "F1".  * @help_data: The data pointer which will be passed to @help_func.  * @position: The dialog's initial position which will be set with  *            gtk_window_set_position().  * @allow_shrink: The dialog's @allow_shrink flag, ...  * @allow_grow: ... it't @allow_grow flag and ...  * @auto_shrink: ... it's @auto_shrink flag which will all be set with  *               gtk_window_set_policy().  * @args: A @va_list as obtained with va_start() describing the action_area  *        buttons.  *  * This function performs all neccessary setps to set up a standard GIMP  * dialog.  *  * The @va_list describing the action_area buttons will be passed to  * gimp_dialog_create_action_areav().  *  * Returns: A #GtkDialog.  *  */
+comment|/**  * gimp_dialog_newv:  * @title:        The dialog's title which will be set with  *                gtk_window_set_title().  * @wmclass_name: The dialog's @wmclass_name which will be set with  *                gtk_window_set_wmclass(). The @wmclass_class will be  *                automatically set to "Gimp".  * @help_func:    The function which will be called if the user presses "F1".  * @help_data:    The data pointer which will be passed to @help_func.  * @position:     The dialog's initial position which will be set with  *                gtk_window_set_position().  * @allow_shrink: The dialog's @allow_shrink flag, ...  * @allow_grow:   ... it't @allow_grow flag and ...  * @auto_shrink:  ... it's @auto_shrink flag which will all be set with  *                gtk_window_set_policy().  * @args:         A @va_list as obtained with va_start() describing the  *                action_area buttons.  *  * This function performs all neccessary setps to set up a standard GIMP  * dialog.  *  * The @va_list describing the action_area buttons will be passed to  * gimp_dialog_create_action_areav().  *  * Returns: A #GtkDialog.  *  */
 end_comment
 
 begin_function
@@ -519,16 +519,16 @@ name|NULL
 argument_list|)
 expr_stmt|;
 else|else
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
 literal|"realize"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_dialog_realize_callback
 argument_list|)
@@ -540,7 +540,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_create_action_area:  * @dialog: The #GtkDialog you want to create the action_area for.  * @...: A #NULL terminated @va_list destribing the action_area buttons.  *  * This function simply packs the action_area arguments passed in "..."  * into a @va_list variable and passes everything to  * gimp_dialog_create_action_areav().  *  */
+comment|/**  * gimp_dialog_create_action_area:  * @dialog: The #GtkDialog you want to create the action_area for.  * @...:    A #NULL terminated @va_list destribing the action_area buttons.  *  * This function simply packs the action_area arguments passed in "..."  * into a @va_list variable and passes everything to  * gimp_dialog_create_action_areav().  *  */
 end_comment
 
 begin_function
@@ -552,7 +552,7 @@ name|GtkDialog
 modifier|*
 name|dialog
 parameter_list|,
-comment|/* specify action area buttons as va_list: 				 *  const gchar    *label, 				 *  GtkSignalFunc   callback, 				 *  gpointer        data, 				 *  GtkObject      *slot_object, 				 *  GtkWidget     **widget_ptr, 				 *  gboolean        default_action, 				 *  gboolean        connect_delete, 				 */
+comment|/* specify action area buttons as va_list: 				 *  const gchar    *label, 				 *  GCallback       callback, 				 *  gpointer        callback_data, 				 *  GObject        *slot_object, 				 *  GtkWidget     **widget_ptr, 				 *  gboolean        default_action, 				 *  gboolean        connect_delete, 				 */
 modifier|...
 parameter_list|)
 block|{
@@ -600,12 +600,6 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|hbbox
-init|=
-name|NULL
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|button
 decl_stmt|;
 comment|/*  action area variables  */
@@ -614,13 +608,13 @@ name|gchar
 modifier|*
 name|label
 decl_stmt|;
-name|GtkSignalFunc
+name|GCallback
 name|callback
 decl_stmt|;
 name|gpointer
-name|data
+name|callback_data
 decl_stmt|;
-name|GtkObject
+name|GObject
 modifier|*
 name|slot_object
 decl_stmt|;
@@ -678,10 +672,10 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|GtkSignalFunc
+name|GCallback
 argument_list|)
 expr_stmt|;
-name|data
+name|callback_data
 operator|=
 name|va_arg
 argument_list|(
@@ -696,7 +690,7 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|GtkObject
+name|GObject
 operator|*
 argument_list|)
 expr_stmt|;
@@ -734,25 +728,25 @@ condition|(
 name|slot_object
 operator|==
 operator|(
-name|GtkObject
+name|GObject
 operator|*
 operator|)
 literal|1
 condition|)
 name|slot_object
 operator|=
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|data
+name|callback_data
 operator|==
 name|NULL
 condition|)
-name|data
+name|callback_data
 operator|=
 name|dialog
 expr_stmt|;
@@ -788,9 +782,9 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dialog
 argument_list|)
@@ -800,9 +794,9 @@ argument_list|,
 name|callback
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dialog
 argument_list|)
@@ -813,28 +807,28 @@ name|slot_object
 condition|?
 name|slot_object
 else|:
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  catch the WM delete event  */
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
 literal|"delete_event"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_dialog_delete_callback
 argument_list|)
 argument_list|,
-name|data
+name|callback_data
 argument_list|)
 expr_stmt|;
 name|delete_connected
@@ -845,91 +839,15 @@ block|}
 comment|/* otherwise just create the requested button. */
 else|else
 block|{
-if|if
-condition|(
-operator|!
-name|hbbox
-condition|)
-block|{
-name|gtk_box_set_homogeneous
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|dialog
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|hbbox
-operator|=
-name|gtk_hbutton_box_new
-argument_list|()
-expr_stmt|;
-name|gtk_button_box_set_spacing
-argument_list|(
-name|GTK_BUTTON_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_end
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|dialog
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|hbbox
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbbox
-argument_list|)
-expr_stmt|;
-block|}
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_dialog_add_button
 argument_list|(
+name|dialog
+argument_list|,
 name|label
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
 argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
+name|GTK_RESPONSE_NONE
 argument_list|)
 expr_stmt|;
 if|if
@@ -941,16 +859,16 @@ if|if
 condition|(
 name|slot_object
 condition|)
-name|gtk_signal_connect_object
+name|g_signal_connect_swapped
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|button
 argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|callback
 argument_list|)
@@ -959,21 +877,21 @@ name|slot_object
 argument_list|)
 expr_stmt|;
 else|else
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|button
 argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|callback
 argument_list|)
 argument_list|,
-name|data
+name|callback_data
 argument_list|)
 expr_stmt|;
 block|}
@@ -996,9 +914,9 @@ operator|!
 name|delete_connected
 condition|)
 block|{
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dialog
 argument_list|)
@@ -1008,9 +926,9 @@ argument_list|,
 name|callback
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dialog
 argument_list|)
@@ -1021,28 +939,28 @@ name|slot_object
 condition|?
 name|slot_object
 else|:
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|button
 argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  catch the WM delete event  */
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
 literal|"delete_event"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_dialog_delete_callback
 argument_list|)
 argument_list|,
-name|data
+name|callback_data
 argument_list|)
 expr_stmt|;
 name|delete_connected
@@ -1055,11 +973,6 @@ condition|(
 name|default_action
 condition|)
 name|gtk_widget_grab_default
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
 argument_list|(
 name|button
 argument_list|)
