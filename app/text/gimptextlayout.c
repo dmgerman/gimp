@@ -701,7 +701,7 @@ break|break;
 case|case
 name|GIMP_TEXT_JUSTIFY_FILL
 case|:
-comment|/* FIXME: This just doesn't work to do this */
+comment|/* FIXME: This doesn't work since the implementation is missing          at the Pango level.        */
 name|alignment
 operator|=
 name|PANGO_ALIGN_LEFT
