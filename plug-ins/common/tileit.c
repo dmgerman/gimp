@@ -151,7 +151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf2c8c20108
+DECL|struct|__anon2b07a3b40108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -586,7 +586,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf2c8c20203
+DECL|enum|__anon2b07a3b40203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -605,7 +605,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf2c8c20308
+DECL|struct|__anon2b07a3b40308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -675,7 +675,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf2c8c20408
+DECL|struct|__anon2b07a3b40408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -1982,12 +1982,9 @@ name|toggle
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"Reset"
-argument_list|)
+name|GIMP_STOCK_RESET
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

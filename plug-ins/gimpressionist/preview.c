@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpressionist.h"
 end_include
 
@@ -899,12 +905,9 @@ name|resetpreviewbutton
 operator|=
 name|tmpw
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"Reset"
-argument_list|)
+name|GIMP_STOCK_RESET
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

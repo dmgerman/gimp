@@ -149,7 +149,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c071db90103
+DECL|enum|__anon2c4d5c670103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c071db90203
+DECL|enum|__anon2c4d5c670203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -185,7 +185,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c071db90308
+DECL|struct|__anon2c4d5c670308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -207,7 +207,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2c071db9040a
+DECL|union|__anon2c4d5c67040a
 block|{
 DECL|member|d
 name|gdouble
@@ -236,7 +236,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c071db90508
+DECL|struct|__anon2c4d5c670508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -266,7 +266,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c071db90608
+DECL|struct|__anon2c4d5c670608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -301,7 +301,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c071db90708
+DECL|struct|__anon2c4d5c670708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -337,7 +337,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c071db90808
+DECL|struct|__anon2c4d5c670808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -404,7 +404,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c071db90908
+DECL|struct|__anon2c4d5c670908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -576,7 +576,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c071db90a08
+DECL|struct|__anon2c4d5c670a08
 block|{
 DECL|member|run
 name|gint
@@ -4142,10 +4142,7 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
-argument_list|(
-literal|"Delete"
-argument_list|)
+name|GTK_STOCK_DELETE
 argument_list|,
 name|ifs_compose_delete_callback
 argument_list|,
@@ -4159,10 +4156,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Reset"
-argument_list|)
+name|GIMP_STOCK_RESET
 argument_list|,
 name|ifs_compose_defaults_callback
 argument_list|,
@@ -4176,10 +4170,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"New"
-argument_list|)
+name|GTK_STOCK_NEW
 argument_list|,
 name|ifs_compose_new_callback
 argument_list|,

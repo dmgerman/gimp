@@ -431,7 +431,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c6413f70108
+DECL|struct|__anon2aa60a040108
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -5210,10 +5210,7 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
-argument_list|(
-literal|"Reset"
-argument_list|)
+name|GIMP_STOCK_RESET
 argument_list|,
 name|resetFilterPacks
 argument_list|,

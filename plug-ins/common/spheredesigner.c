@@ -285,7 +285,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2ab0cc7e0103
+DECL|enum|__anon2a52acd70103
 enum|enum
 block|{
 DECL|enumerator|TRIANGLE
@@ -310,7 +310,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2ab0cc7e0203
+DECL|enum|__anon2a52acd70203
 enum|enum
 block|{
 DECL|enumerator|SOLID
@@ -359,7 +359,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2ab0cc7e0303
+DECL|enum|__anon2a52acd70303
 enum|enum
 block|{
 DECL|enumerator|PERSPECTIVE
@@ -375,7 +375,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2ab0cc7e0403
+DECL|enum|__anon2a52acd70403
 enum|enum
 block|{
 DECL|enumerator|FOG
@@ -421,7 +421,7 @@ value|0x00000001
 end_define
 
 begin_typedef
-DECL|struct|__anon2ab0cc7e0508
+DECL|struct|__anon2a52acd70508
 typedef|typedef
 struct|struct
 block|{
@@ -445,7 +445,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ab0cc7e0608
+DECL|struct|__anon2a52acd70608
 typedef|typedef
 struct|struct
 block|{
@@ -469,7 +469,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ab0cc7e0708
+DECL|struct|__anon2a52acd70708
 typedef|typedef
 struct|struct
 block|{
@@ -498,7 +498,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ab0cc7e0808
+DECL|struct|__anon2a52acd70808
 typedef|typedef
 struct|struct
 block|{
@@ -594,7 +594,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ab0cc7e0908
+DECL|struct|__anon2a52acd70908
 typedef|typedef
 struct|struct
 block|{
@@ -621,7 +621,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ab0cc7e0a08
+DECL|struct|__anon2a52acd70a08
 typedef|typedef
 struct|struct
 block|{
@@ -663,7 +663,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ab0cc7e0b08
+DECL|struct|__anon2a52acd70b08
 typedef|typedef
 struct|struct
 block|{
@@ -688,7 +688,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ab0cc7e0c08
+DECL|struct|__anon2a52acd70c08
 typedef|typedef
 struct|struct
 block|{
@@ -714,7 +714,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ab0cc7e0d08
+DECL|struct|__anon2a52acd70d08
 typedef|typedef
 struct|struct
 block|{
@@ -737,7 +737,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ab0cc7e0e08
+DECL|struct|__anon2a52acd70e08
 typedef|typedef
 struct|struct
 block|{
@@ -762,7 +762,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ab0cc7e0f08
+DECL|struct|__anon2a52acd70f08
 typedef|typedef
 struct|struct
 block|{
@@ -785,7 +785,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ab0cc7e1008
+DECL|struct|__anon2a52acd71008
 typedef|typedef
 struct|struct
 block|{
@@ -808,7 +808,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ab0cc7e1108
+DECL|struct|__anon2a52acd71108
 typedef|typedef
 struct|struct
 block|{
@@ -834,7 +834,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|union|__anon2ab0cc7e120a
+DECL|union|__anon2a52acd7120a
 typedef|typedef
 union|union
 block|{
@@ -1170,7 +1170,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2ab0cc7e1308
+DECL|struct|__anon2a52acd71308
 struct|struct
 block|{
 DECL|member|solid
@@ -14902,24 +14902,6 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Reset"
-argument_list|)
-argument_list|,
-name|sphere_reset
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-operator|&
-name|resetbutton
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
 name|sphere_cancel
@@ -14934,6 +14916,21 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
+argument_list|,
+name|GIMP_STOCK_RESET
+argument_list|,
+name|sphere_reset
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+operator|&
+name|resetbutton
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
 argument_list|,
 name|GTK_STOCK_OK
 argument_list|,

@@ -138,7 +138,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b78d9a20108
+DECL|struct|__anon2be83af20108
 block|{
 DECL|member|film_height
 name|gint
@@ -242,7 +242,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b78d9a20208
+DECL|struct|__anon2be83af20208
 block|{
 DECL|member|font_entry
 name|GtkWidget
@@ -7245,12 +7245,9 @@ operator|++
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"Reset to Defaults"
-argument_list|)
+name|GIMP_STOCK_RESET
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_padding
