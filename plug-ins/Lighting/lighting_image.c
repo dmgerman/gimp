@@ -1667,7 +1667,7 @@ operator|(
 name|sin
 argument_list|(
 operator|(
-name|M_PI
+name|G_PI
 operator|*
 name|c
 operator|*
@@ -1679,7 +1679,7 @@ operator|)
 operator|-
 literal|0.5
 operator|*
-name|M_PI
+name|G_PI
 argument_list|)
 operator|+
 literal|1.0
@@ -1703,7 +1703,7 @@ name|sqrt
 argument_list|(
 name|sin
 argument_list|(
-name|M_PI
+name|G_PI
 operator|*
 operator|(
 name|gdouble

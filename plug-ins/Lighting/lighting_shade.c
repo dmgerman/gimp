@@ -2473,7 +2473,7 @@ name|v
 operator|=
 name|alpha
 operator|/
-name|M_PI
+name|G_PI
 expr_stmt|;
 if|if
 condition|(
@@ -2545,7 +2545,7 @@ operator|/
 operator|(
 literal|2.0
 operator|*
-name|M_PI
+name|G_PI
 operator|)
 expr_stmt|;
 name|cross_prod

@@ -307,7 +307,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d5c7d0108
+DECL|struct|__anon2c8297a40108
 block|{
 DECL|member|quality
 name|gdouble
@@ -354,7 +354,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d5c7d0208
+DECL|struct|__anon2c8297a40208
 block|{
 DECL|member|run
 name|gint
@@ -369,7 +369,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d5c7d0308
+DECL|struct|__anon2c8297a40308
 block|{
 DECL|member|cinfo
 name|struct
@@ -1077,7 +1077,7 @@ literal|"jpg,jpeg"
 argument_list|,
 literal|""
 argument_list|,
-literal|"6,string,JFIF"
+literal|"6,string,JFIF,6,string,Exif"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler

@@ -41,7 +41,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29c22a2f0108
+DECL|struct|__anon2c1340e30108
 typedef|typedef
 struct|struct
 block|{
@@ -1429,7 +1429,7 @@ name|v
 operator|=
 name|alpha
 operator|/
-name|M_PI
+name|G_PI
 expr_stmt|;
 if|if
 condition|(
@@ -1503,7 +1503,7 @@ operator|/
 operator|(
 literal|2.0
 operator|*
-name|M_PI
+name|G_PI
 operator|)
 expr_stmt|;
 name|cross_prod
@@ -2958,7 +2958,7 @@ argument_list|(
 name|angle
 operator|*
 operator|(
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 operator|)
@@ -2971,7 +2971,7 @@ argument_list|(
 name|angle
 operator|*
 operator|(
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 operator|)
@@ -5943,7 +5943,7 @@ expr_stmt|;
 else|else
 name|a
 operator|=
-name|M_PI
+name|G_PI
 expr_stmt|;
 block|}
 else|else
@@ -5973,7 +5973,7 @@ literal|0.0
 condition|)
 name|a
 operator|=
-name|M_PI
+name|G_PI
 operator|/
 literal|2.0
 expr_stmt|;
@@ -5982,7 +5982,7 @@ name|a
 operator|=
 literal|1.5
 operator|*
-name|M_PI
+name|G_PI
 expr_stmt|;
 block|}
 if|if
@@ -6000,7 +6000,7 @@ name|a
 operator|=
 literal|2.0
 operator|*
-name|M_PI
+name|G_PI
 operator|+
 name|a
 expr_stmt|;
@@ -6018,7 +6018,7 @@ condition|)
 comment|/* 3rd quad, a is positive */
 name|a
 operator|=
-name|M_PI
+name|G_PI
 operator|+
 name|a
 expr_stmt|;
@@ -6036,7 +6036,7 @@ condition|)
 comment|/* 2nd quad, a is negative */
 name|a
 operator|=
-name|M_PI
+name|G_PI
 operator|+
 name|a
 expr_stmt|;
@@ -6446,7 +6446,7 @@ operator|/
 operator|(
 literal|2.0
 operator|*
-name|M_PI
+name|G_PI
 operator|)
 expr_stmt|;
 name|face_intersect
