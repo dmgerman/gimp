@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2acf3c0103
+DECL|enum|__anon2c120f860103
 block|{
 DECL|enumerator|DODGE
 name|DODGE
@@ -41,7 +41,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2acf3c0203
+DECL|enum|__anon2c120f860203
 block|{
 DECL|enumerator|DODGEBURN_HIGHLIGHTS
 name|DODGEBURN_HIGHLIGHTS
@@ -171,13 +171,9 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* FIXME: Get rid of this non_gui stuff someday.  Preferably make  *        everything use it interally for ease of macro recording.  */
-end_comment
-
 begin_function_decl
 name|gboolean
-name|dodgeburn_non_gui
+name|gimp_dodgeburn_tool_non_gui
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -204,7 +200,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|dodgeburn_non_gui_default
+name|gimp_dodgeburn_tool_non_gui_default
 parameter_list|(
 name|GimpDrawable
 modifier|*

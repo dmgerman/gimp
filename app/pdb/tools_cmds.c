@@ -4296,7 +4296,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|dodgeburn_non_gui
+name|gimp_dodgeburn_tool_non_gui
 argument_list|(
 name|drawable
 argument_list|,
@@ -4522,7 +4522,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|dodgeburn_non_gui_default
+name|gimp_dodgeburn_tool_non_gui_default
 argument_list|(
 name|drawable
 argument_list|,

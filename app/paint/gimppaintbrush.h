@@ -136,10 +136,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* FIXME: this antique code doesn't follow the coding style */
-end_comment
-
 begin_function_decl
 name|gboolean
 name|gimp_paintbrush_tool_non_gui

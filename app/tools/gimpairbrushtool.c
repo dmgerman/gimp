@@ -140,26 +140,26 @@ comment|/* Default pressure setting */
 end_comment
 
 begin_define
-DECL|macro|AIRBRUSH_RATE_DEFAULT
+DECL|macro|AIRBRUSH_DEFAULT_RATE
 define|#
 directive|define
-name|AIRBRUSH_RATE_DEFAULT
+name|AIRBRUSH_DEFAULT_RATE
 value|0.0
 end_define
 
 begin_define
-DECL|macro|AIRBRUSH_PRESSURE_DEFAULT
+DECL|macro|AIRBRUSH_DEFAULT_PRESSURE
 define|#
 directive|define
-name|AIRBRUSH_PRESSURE_DEFAULT
+name|AIRBRUSH_DEFAULT_PRESSURE
 value|10.0
 end_define
 
 begin_define
-DECL|macro|AIRBRUSH_INCREMENTAL_DEFAULT
+DECL|macro|AIRBRUSH_DEFAULT_INCREMENTAL
 define|#
 directive|define
-name|AIRBRUSH_INCREMENTAL_DEFAULT
+name|AIRBRUSH_DEFAULT_INCREMENTAL
 value|FALSE
 end_define
 
@@ -338,8 +338,8 @@ parameter_list|,
 name|gdouble
 name|pressure
 parameter_list|,
-name|PaintApplicationMode
-name|mode
+name|gboolean
+name|incremental
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -937,10 +937,6 @@ argument_list|,
 name|pressure
 argument_list|,
 name|incremental
-condition|?
-name|INCREMENTAL
-else|:
-name|CONSTANT
 argument_list|)
 expr_stmt|;
 if|if
@@ -1129,10 +1125,6 @@ argument_list|,
 name|pressure
 argument_list|,
 name|incremental
-condition|?
-name|INCREMENTAL
-else|:
-name|CONSTANT
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush
@@ -1196,7 +1188,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_airbrush_tool_motion (GimpPaintTool * paint_tool,GimpDrawable * drawable,PaintPressureOptions * pressure_options,gdouble pressure,PaintApplicationMode mode)
+DECL|function|gimp_airbrush_tool_motion (GimpPaintTool * paint_tool,GimpDrawable * drawable,PaintPressureOptions * pressure_options,gdouble pressure,gboolean incremental)
 name|gimp_airbrush_tool_motion
 parameter_list|(
 name|GimpPaintTool
@@ -1214,8 +1206,8 @@ parameter_list|,
 name|gdouble
 name|pressure
 parameter_list|,
-name|PaintApplicationMode
-name|mode
+name|gboolean
+name|incremental
 parameter_list|)
 block|{
 name|GimpImage
@@ -1234,6 +1226,15 @@ index|]
 decl_stmt|;
 name|gdouble
 name|scale
+decl_stmt|;
+name|PaintApplicationMode
+name|paint_appl_mode
+init|=
+name|incremental
+condition|?
+name|INCREMENTAL
+else|:
+name|CONSTANT
 decl_stmt|;
 if|if
 condition|(
@@ -1344,7 +1345,7 @@ name|ALPHA_PIX
 index|]
 argument_list|)
 expr_stmt|;
-name|mode
+name|paint_appl_mode
 operator|=
 name|INCREMENTAL
 expr_stmt|;
@@ -1385,7 +1386,7 @@ operator|->
 name|pixmap
 condition|)
 block|{
-name|mode
+name|paint_appl_mode
 operator|=
 name|INCREMENTAL
 expr_stmt|;
@@ -1501,7 +1502,7 @@ name|SOFT
 argument_list|,
 name|scale
 argument_list|,
-name|mode
+name|paint_appl_mode
 argument_list|)
 expr_stmt|;
 block|}
@@ -1533,7 +1534,7 @@ decl_stmt|;
 name|gdouble
 name|pressure
 init|=
-name|AIRBRUSH_PRESSURE_DEFAULT
+name|AIRBRUSH_DEFAULT_PRESSURE
 decl_stmt|;
 if|if
 condition|(
@@ -1637,7 +1638,7 @@ condition|)
 block|{
 name|non_gui_rate
 operator|=
-name|AIRBRUSH_RATE_DEFAULT
+name|AIRBRUSH_DEFAULT_RATE
 expr_stmt|;
 name|non_gui_pressure
 operator|=
@@ -1645,7 +1646,7 @@ name|pressure
 expr_stmt|;
 name|non_gui_incremental
 operator|=
-name|AIRBRUSH_INCREMENTAL_DEFAULT
+name|AIRBRUSH_DEFAULT_INCREMENTAL
 expr_stmt|;
 name|paint_tool
 operator|->
@@ -1829,7 +1830,7 @@ name|options
 operator|->
 name|pressure_d
 operator|=
-name|AIRBRUSH_PRESSURE_DEFAULT
+name|AIRBRUSH_DEFAULT_PRESSURE
 expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox

@@ -197,19 +197,23 @@ name|drawable
 parameter_list|,
 name|PaintPressureOptions
 modifier|*
-name|pressure
+name|pressure_options
 parameter_list|,
 name|PaintGradientOptions
 modifier|*
-name|gradient
+name|gradient_options
 parameter_list|,
 name|gdouble
+name|fade_out
 parameter_list|,
 name|gdouble
+name|gradient_length
 parameter_list|,
-name|PaintApplicationMode
+name|gboolean
+name|incremental
 parameter_list|,
 name|GradientPaintMode
+name|gradient_type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -807,7 +811,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paintbrush_tool_motion (GimpPaintTool * paint_tool,GimpDrawable * drawable,PaintPressureOptions * pressure_options,PaintGradientOptions * gradient_options,double fade_out,double gradient_length,PaintApplicationMode incremental,GradientPaintMode gradient_type)
+DECL|function|gimp_paintbrush_tool_motion (GimpPaintTool * paint_tool,GimpDrawable * drawable,PaintPressureOptions * pressure_options,PaintGradientOptions * gradient_options,gdouble fade_out,gdouble gradient_length,gboolean incremental,GradientPaintMode gradient_type)
 name|gimp_paintbrush_tool_motion
 parameter_list|(
 name|GimpPaintTool
@@ -826,13 +830,13 @@ name|PaintGradientOptions
 modifier|*
 name|gradient_options
 parameter_list|,
-name|double
+name|gdouble
 name|fade_out
 parameter_list|,
-name|double
+name|gdouble
 name|gradient_length
 parameter_list|,
-name|PaintApplicationMode
+name|gboolean
 name|incremental
 parameter_list|,
 name|GradientPaintMode
@@ -854,6 +858,8 @@ name|paint_left
 decl_stmt|;
 name|gdouble
 name|position
+init|=
+literal|0.0
 decl_stmt|;
 name|guchar
 name|local_blend
@@ -892,10 +898,6 @@ name|INCREMENTAL
 else|:
 name|CONSTANT
 decl_stmt|;
-name|position
-operator|=
-literal|0.0
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1128,7 +1130,7 @@ name|bytes
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* we check to see if this is a pixmap, if so composite the 	 pixmap image into the are instead of the color */
+comment|/* we check to see if this is a pixmap, if so composite the        * pixmap image into the area instead of the color        */
 elseif|else
 if|if
 condition|(
@@ -1290,7 +1292,7 @@ end_decl_stmt
 
 begin_function
 name|gboolean
-DECL|function|gimp_paintbrush_tool_non_gui_default (GimpDrawable * drawable,gint num_strokes,double * stroke_array)
+DECL|function|gimp_paintbrush_tool_non_gui_default (GimpDrawable * drawable,gint num_strokes,gdouble * stroke_array)
 name|gimp_paintbrush_tool_non_gui_default
 parameter_list|(
 name|GimpDrawable
@@ -1300,7 +1302,7 @@ parameter_list|,
 name|gint
 name|num_strokes
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|stroke_array
 parameter_list|)
@@ -1593,12 +1595,6 @@ index|[
 literal|1
 index|]
 expr_stmt|;
-if|if
-condition|(
-name|num_strokes
-operator|==
-literal|1
-condition|)
 name|gimp_paint_tool_paint
 argument_list|(
 name|paint_tool
@@ -1672,7 +1668,6 @@ operator|->
 name|cury
 expr_stmt|;
 block|}
-comment|/* Finish the painting */
 name|gimp_paint_tool_finish
 argument_list|(
 name|paint_tool

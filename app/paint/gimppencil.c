@@ -896,17 +896,17 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|pencil_non_gui (GimpDrawable * drawable,int num_strokes,double * stroke_array)
+DECL|function|pencil_non_gui (GimpDrawable * drawable,gint num_strokes,gdouble * stroke_array)
 name|pencil_non_gui
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|num_strokes
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|stroke_array
 parameter_list|)
