@@ -152,10 +152,6 @@ name|FILE
 modifier|*
 name|file
 decl_stmt|;
-name|gchar
-modifier|*
-name|data
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -361,11 +357,6 @@ return|return
 name|FALSE
 return|;
 block|}
-name|g_free
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 return|return
 name|TRUE
 return|;
@@ -514,7 +505,6 @@ condition|(
 operator|!
 name|first_stroke
 condition|)
-block|{
 name|g_string_append_printf
 argument_list|(
 name|str
@@ -522,7 +512,6 @@ argument_list|,
 literal|"\n           "
 argument_list|)
 expr_stmt|;
-block|}
 name|first_stroke
 operator|=
 name|FALSE

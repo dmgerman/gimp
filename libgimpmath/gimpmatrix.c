@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpmatrix.c  * Copyright (C) 1998 Jay Cox<jaycox@earthlink.net>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpmatrix.c  * Copyright (C) 1998 Jay Cox<jaycox@earthlink.net>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -30,7 +30,7 @@ value|1e-6
 end_define
 
 begin_comment
-comment|/**  * gimp_matrix2_identity:  * @matrix: A matrix.  *   * Sets the matrix to the identity matrix.  */
+comment|/**  * gimp_matrix2_identity:  * @matrix: A matrix.  *  * Sets the matrix to the identity matrix.  */
 end_comment
 
 begin_function
@@ -73,7 +73,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix2_mult:  * @matrix1: The first input matrix.  * @matrix2: The second input matrix which will be overwritten by the result.  *   * Multiplies two matrices and puts the result into the second one.  */
+comment|/**  * gimp_matrix2_mult:  * @matrix1: The first input matrix.  * @matrix2: The second input matrix which will be overwritten by the result.  *  * Multiplies two matrices and puts the result into the second one.  */
 end_comment
 
 begin_function
@@ -311,7 +311,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix3_identity:  * @matrix: A matrix.  *   * Sets the matrix to the identity matrix.  */
+comment|/**  * gimp_matrix3_identity:  * @matrix: A matrix.  *  * Sets the matrix to the identity matrix.  */
 end_comment
 
 begin_function
@@ -366,7 +366,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix3_transform_point:  * @matrix: The transformation matrix.  * @x: The source X coordinate.  * @y: The source Y coordinate.  * @newx: The transformed X coordinate.  * @newy: The transformed Y coordinate.  *   * Transforms a point in 2D as specified by the transformation matrix.  */
+comment|/**  * gimp_matrix3_transform_point:  * @matrix: The transformation matrix.  * @x: The source X coordinate.  * @y: The source Y coordinate.  * @newx: The transformed X coordinate.  * @newy: The transformed Y coordinate.  *  * Transforms a point in 2D as specified by the transformation matrix.  */
 end_comment
 
 begin_function
@@ -536,7 +536,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix3_mult:  * @matrix1: The first input matrix.  * @matrix2: The second input matrix which will be overwritten by the result.  *   * Multiplies two matrices and puts the result into the second one.  */
+comment|/**  * gimp_matrix3_mult:  * @matrix1: The first input matrix.  * @matrix2: The second input matrix which will be overwritten by the result.  *  * Multiplies two matrices and puts the result into the second one.  */
 end_comment
 
 begin_function
@@ -710,7 +710,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix3_translate:  * @matrix: The matrix that is to be translated.  * @x: Translation in X direction.  * @y: Translation in Y direction.  *   * Translates the matrix by x and y.  */
+comment|/**  * gimp_matrix3_translate:  * @matrix: The matrix that is to be translated.  * @x: Translation in X direction.  * @y: Translation in Y direction.  *  * Translates the matrix by x and y.  */
 end_comment
 
 begin_function
@@ -860,7 +860,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix3_scale:  * @matrix: The matrix that is to be scaled.  * @x: X scale factor.  * @y: Y scale factor.  *   * Scales the matrix by x and y   */
+comment|/**  * gimp_matrix3_scale:  * @matrix: The matrix that is to be scaled.  * @x: X scale factor.  * @y: Y scale factor.  *  * Scales the matrix by x and y  */
 end_comment
 
 begin_function
@@ -955,7 +955,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix3_rotate:  * @matrix: The matrix that is to be rotated.  * @theta: The angle of rotation (in radians).  *   * Rotates the matrix by theta degrees.  */
+comment|/**  * gimp_matrix3_rotate:  * @matrix: The matrix that is to be rotated.  * @theta: The angle of rotation (in radians).  *  * Rotates the matrix by theta degrees.  */
 end_comment
 
 begin_function
@@ -1179,7 +1179,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix3_xshear:  * @matrix: The matrix that is to be sheared.  * @amount: X shear amount.  *   * Shears the matrix in the X direction.  */
+comment|/**  * gimp_matrix3_xshear:  * @matrix: The matrix that is to be sheared.  * @amount: X shear amount.  *  * Shears the matrix in the X direction.  */
 end_comment
 
 begin_function
@@ -1265,7 +1265,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix3_yshear:  * @matrix: The matrix that is to be sheared.  * @amount: Y shear amount.  *   * Shears the matrix in the Y direction.  */
+comment|/**  * gimp_matrix3_yshear:  * @matrix: The matrix that is to be sheared.  * @amount: Y shear amount.  *  * Shears the matrix in the Y direction.  */
 end_comment
 
 begin_function
@@ -1351,7 +1351,161 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix3_determinant:  * @matrix: The input matrix.   *   * Calculates the determinant of the given matrix.  *   * Returns: The determinant.  */
+comment|/**  * gimp_matrix3_affine:  * @matrix: The input matrix.  * @a:  * @b:  * @c:  * @d:  * @e:  * @f:  *  * Applies the affine transformation given by six values to @matrix.  * The six values form define an affine transformation matrix as  * illustrated below:  *  *  ( a c e )  *  ( b d f )  *  ( 0 0 1 )  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_matrix3_affine (GimpMatrix3 * matrix,gdouble a,gdouble b,gdouble c,gdouble d,gdouble e,gdouble f)
+name|gimp_matrix3_affine
+parameter_list|(
+name|GimpMatrix3
+modifier|*
+name|matrix
+parameter_list|,
+name|gdouble
+name|a
+parameter_list|,
+name|gdouble
+name|b
+parameter_list|,
+name|gdouble
+name|c
+parameter_list|,
+name|gdouble
+name|d
+parameter_list|,
+name|gdouble
+name|e
+parameter_list|,
+name|gdouble
+name|f
+parameter_list|)
+block|{
+name|GimpMatrix3
+name|affine
+decl_stmt|;
+name|affine
+operator|.
+name|coeff
+index|[
+literal|0
+index|]
+index|[
+literal|0
+index|]
+operator|=
+name|a
+expr_stmt|;
+name|affine
+operator|.
+name|coeff
+index|[
+literal|1
+index|]
+index|[
+literal|0
+index|]
+operator|=
+name|b
+expr_stmt|;
+name|affine
+operator|.
+name|coeff
+index|[
+literal|2
+index|]
+index|[
+literal|0
+index|]
+operator|=
+literal|0.0
+expr_stmt|;
+name|affine
+operator|.
+name|coeff
+index|[
+literal|0
+index|]
+index|[
+literal|1
+index|]
+operator|=
+name|c
+expr_stmt|;
+name|affine
+operator|.
+name|coeff
+index|[
+literal|1
+index|]
+index|[
+literal|1
+index|]
+operator|=
+name|d
+expr_stmt|;
+name|affine
+operator|.
+name|coeff
+index|[
+literal|2
+index|]
+index|[
+literal|1
+index|]
+operator|=
+literal|0.0
+expr_stmt|;
+name|affine
+operator|.
+name|coeff
+index|[
+literal|0
+index|]
+index|[
+literal|2
+index|]
+operator|=
+name|e
+expr_stmt|;
+name|affine
+operator|.
+name|coeff
+index|[
+literal|1
+index|]
+index|[
+literal|2
+index|]
+operator|=
+name|f
+expr_stmt|;
+name|affine
+operator|.
+name|coeff
+index|[
+literal|2
+index|]
+index|[
+literal|2
+index|]
+operator|=
+literal|1.0
+expr_stmt|;
+name|gimp_matrix3_mult
+argument_list|(
+operator|&
+name|affine
+argument_list|,
+name|matrix
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_matrix3_determinant:  * @matrix: The input matrix.  *  * Calculates the determinant of the given matrix.  *  * Returns: The determinant.  */
 end_comment
 
 begin_function
@@ -1543,7 +1697,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix3_invert:  * @matrix: The matrix that is to be inverted.  *   * Inverts the given matrix.  */
+comment|/**  * gimp_matrix3_invert:  * @matrix: The matrix that is to be inverted.  *  * Inverts the given matrix.  */
 end_comment
 
 begin_function
@@ -2085,7 +2239,7 @@ comment|/*  functions to test for matrix properties  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_matrix3_is_diagonal:  * @matrix: The matrix that is to be tested.  *   * Checks if the given matrix is diagonal.  *   * Returns: TRUE if the matrix is diagonal.  */
+comment|/**  * gimp_matrix3_is_diagonal:  * @matrix: The matrix that is to be tested.  *  * Checks if the given matrix is diagonal.  *  * Returns: TRUE if the matrix is diagonal.  */
 end_comment
 
 begin_function
@@ -2165,7 +2319,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix3_is_identity:  * @matrix: The matrix that is to be tested.  *   * Checks if the given matrix is the identity matrix.  *   * Returns: TRUE if the matrix is the identity matrix.  */
+comment|/**  * gimp_matrix3_is_identity:  * @matrix: The matrix that is to be tested.  *  * Checks if the given matrix is the identity matrix.  *  * Returns: TRUE if the matrix is the identity matrix.  */
 end_comment
 
 begin_function
@@ -2274,11 +2428,11 @@ block|}
 end_function
 
 begin_comment
-comment|/*  Check if we'll need to interpolate when applying this matrix.      This function returns TRUE if all entries of the upper left      2x2 matrix are either 0 or 1   */
+comment|/*  Check if we'll need to interpolate when applying this matrix.     This function returns TRUE if all entries of the upper left     2x2 matrix are either 0 or 1  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_matrix3_is_simple:  * @matrix: The matrix that is to be tested.  *   * Checks if we'll need to interpolate when applying this matrix as  * a transformation.  *   * Returns: TRUE if all entries of the upper left 2x2 matrix are either   * 0 or 1  */
+comment|/**  * gimp_matrix3_is_simple:  * @matrix: The matrix that is to be tested.  *  * Checks if we'll need to interpolate when applying this matrix as  * a transformation.  *  * Returns: TRUE if all entries of the upper left 2x2 matrix are either  * 0 or 1  */
 end_comment
 
 begin_function
