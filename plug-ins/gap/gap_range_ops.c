@@ -4642,11 +4642,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_range_to_multilayer (GimpRunModeType run_mode,gint32 image_id,long range_from,long range_to,long flatten_mode,long bg_visible,long framerate,char * frame_basename,int frame_basename_len,gint32 sel_mode,gint32 sel_case,gint32 sel_invert,char * sel_pattern)
+DECL|function|gap_range_to_multilayer (GimpRunMode run_mode,gint32 image_id,long range_from,long range_to,long flatten_mode,long bg_visible,long framerate,char * frame_basename,int frame_basename_len,gint32 sel_mode,gint32 sel_case,gint32 sel_invert,char * sel_pattern)
 name|gint32
 name|gap_range_to_multilayer
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32
@@ -5324,7 +5324,7 @@ modifier|*
 name|palette
 parameter_list|)
 block|{
-name|GimpRunModeType
+name|GimpRunMode
 name|l_run_mode
 decl_stmt|;
 name|gint32
@@ -6625,11 +6625,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_range_flatten (GimpRunModeType run_mode,gint32 image_id,long range_from,long range_to)
+DECL|function|gap_range_flatten (GimpRunMode run_mode,gint32 image_id,long range_from,long range_to)
 name|int
 name|gap_range_flatten
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32
@@ -7260,11 +7260,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_range_layer_del (GimpRunModeType run_mode,gint32 image_id,long range_from,long range_to,long position)
+DECL|function|gap_range_layer_del (GimpRunMode run_mode,gint32 image_id,long range_from,long range_to,long position)
 name|int
 name|gap_range_layer_del
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32
@@ -7464,11 +7464,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_range_conv (GimpRunModeType run_mode,gint32 image_id,long range_from,long range_to,long flatten,GimpImageBaseType dest_type,gint32 dest_colors,gint32 dest_dither,char * basename,char * extension,gint32 palette_type,gint32 alpha_dither,gint32 remove_unused,char * palette)
+DECL|function|gap_range_conv (GimpRunMode run_mode,gint32 image_id,long range_from,long range_to,long flatten,GimpImageBaseType dest_type,gint32 dest_colors,gint32 dest_dither,char * basename,char * extension,gint32 palette_type,gint32 alpha_dither,gint32 remove_unused,char * palette)
 name|gint32
 name|gap_range_conv
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32
@@ -7977,11 +7977,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_anim_sizechange (GimpRunModeType run_mode,t_gap_asiz asiz_mode,gint32 image_id,long size_x,long size_y,long offs_x,long offs_y)
+DECL|function|gap_anim_sizechange (GimpRunMode run_mode,t_gap_asiz asiz_mode,gint32 image_id,long size_x,long size_y,long offs_x,long offs_y)
 name|int
 name|gap_anim_sizechange
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|t_gap_asiz

@@ -112,7 +112,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a105f480108
+DECL|struct|__anon298b85f50108
 block|{
 DECL|member|root
 name|gboolean
@@ -443,7 +443,7 @@ name|return_vals
 parameter_list|)
 block|{
 comment|/* Get the runmode from the in-parameters */
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 init|=
 name|param

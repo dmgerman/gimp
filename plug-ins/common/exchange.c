@@ -72,7 +72,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0904b50108
+DECL|struct|__anon2784bccb0108
 block|{
 DECL|member|from
 name|GimpRGB
@@ -602,7 +602,7 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|runmode
 decl_stmt|;
 name|GimpPDBStatusType

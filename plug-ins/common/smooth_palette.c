@@ -274,7 +274,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c490dc30108
+DECL|struct|__anon27bbff940108
 block|{
 DECL|member|width
 name|gint
@@ -348,7 +348,7 @@ index|[
 literal|3
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

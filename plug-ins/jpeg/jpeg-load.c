@@ -306,7 +306,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b18ba880108
+DECL|struct|__anon2ae4ba7d0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b18ba880208
+DECL|struct|__anon2ae4ba7d0208
 block|{
 DECL|member|run
 name|gint
@@ -368,7 +368,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b18ba880308
+DECL|struct|__anon2ae4ba7d0308
 block|{
 DECL|member|cinfo
 name|struct
@@ -493,7 +493,7 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|GimpRunModeType
+name|GimpRunMode
 name|runmode
 parameter_list|,
 name|gboolean
@@ -1032,7 +1032,7 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType
@@ -2502,14 +2502,14 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (gchar * filename,GimpRunModeType runmode,gboolean preview)
+DECL|function|load_image (gchar * filename,GimpRunMode runmode,gboolean preview)
 name|load_image
 parameter_list|(
 name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|GimpRunModeType
+name|GimpRunMode
 name|runmode
 parameter_list|,
 name|gboolean

@@ -539,7 +539,7 @@ name|basename
 argument_list|,
 name|NULL
 argument_list|,
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 argument_list|,
 name|TRUE
 argument_list|)
@@ -994,7 +994,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 argument_list|,
 operator|&
 name|status

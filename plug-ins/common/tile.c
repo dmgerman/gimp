@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f81d1f0108
+DECL|struct|__anon2b5043d10108
 block|{
 DECL|member|new_width
 name|gint
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f81d1f0208
+DECL|struct|__anon2b5043d10208
 block|{
 DECL|member|sizeentry
 name|GtkWidget
@@ -429,7 +429,7 @@ index|[
 literal|3
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

@@ -150,7 +150,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ba72d40103
+DECL|enum|__anon2a09ef890103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -167,7 +167,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ba72d40208
+DECL|struct|__anon2a09ef890208
 block|{
 DECL|member|interlace
 name|gint
@@ -198,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ba72d40308
+DECL|struct|__anon2a09ef890308
 block|{
 DECL|member|run
 name|gint
@@ -370,7 +370,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|run_mode
 specifier|static
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 end_decl_stmt

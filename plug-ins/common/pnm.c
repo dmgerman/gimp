@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1a51000108
+DECL|struct|__anon28834c860108
 block|{
 DECL|member|raw
 name|gint
@@ -325,7 +325,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1a51000208
+DECL|struct|__anon28834c860208
 block|{
 DECL|member|run
 name|gint
@@ -1148,7 +1148,7 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

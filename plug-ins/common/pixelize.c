@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295382220108
+DECL|struct|__anon290bade30108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -125,7 +125,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295382220208
+DECL|struct|__anon290bade30208
 block|{
 DECL|member|sizeentry
 name|GtkWidget
@@ -145,7 +145,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295382220308
+DECL|struct|__anon290bade30308
 block|{
 DECL|member|x
 DECL|member|y
@@ -593,7 +593,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

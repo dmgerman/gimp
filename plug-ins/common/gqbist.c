@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b6ea890103
+DECL|enum|__anon2ab3224b0103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -202,7 +202,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b6ea890208
+DECL|struct|__anon2ab3224b0208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -241,7 +241,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b6ea890308
+DECL|struct|__anon2ab3224b0308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -2279,7 +2279,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

@@ -22238,7 +22238,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290f2d710108
+DECL|struct|__anon2ad711c10108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -22341,7 +22341,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290f2d710208
+DECL|struct|__anon2ad711c10208
 block|{
 DECL|member|height
 DECL|member|width
@@ -23014,7 +23014,7 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

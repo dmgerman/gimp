@@ -154,7 +154,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f73680108
+DECL|struct|__anon2c2d9fc90108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -198,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f73680208
+DECL|struct|__anon2c2d9fc90208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -224,7 +224,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f73680308
+DECL|struct|__anon2c2d9fc90308
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -245,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f73680408
+DECL|struct|__anon2c2d9fc90408
 block|{
 DECL|member|name
 name|gchar
@@ -273,7 +273,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f73680508
+DECL|struct|__anon2c2d9fc90508
 block|{
 DECL|member|list
 name|GSList
@@ -293,7 +293,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2b9f7368060a
+DECL|union|__anon2c2d9fc9060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -363,7 +363,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f73680708
+DECL|struct|__anon2c2d9fc90708
 block|{
 DECL|member|script_name
 name|gchar
@@ -449,7 +449,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f73680808
+DECL|struct|__anon2c2d9fc90808
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -4194,7 +4194,7 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|SFScript

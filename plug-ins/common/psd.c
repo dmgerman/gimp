@@ -149,7 +149,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276de20d0103
+DECL|enum|__anon296dfb830103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276de20d0208
+DECL|struct|__anon296dfb830208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -589,7 +589,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon276de20d0308
+DECL|struct|__anon296dfb830308
 block|{
 DECL|member|signature
 name|gchar
@@ -1241,7 +1241,7 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 comment|/*  GimpPDBStatusType status = GIMP_PDB_SUCCESS;*/

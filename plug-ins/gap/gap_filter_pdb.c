@@ -164,7 +164,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|p_call_plugin (char * plugin_name,gint32 image_id,gint32 layer_id,GimpRunModeType run_mode)
+DECL|function|p_call_plugin (char * plugin_name,gint32 image_id,gint32 layer_id,GimpRunMode run_mode)
 name|gint
 name|p_call_plugin
 parameter_list|(
@@ -178,7 +178,7 @@ parameter_list|,
 name|gint32
 name|layer_id
 parameter_list|,
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|)
 block|{

@@ -26,7 +26,7 @@ comment|/* For information look into the C source or the html documentation */
 name|gint32
 name|gimp_file_load
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gchar
@@ -44,7 +44,7 @@ begin_function_decl
 name|gboolean
 name|gimp_file_save
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32

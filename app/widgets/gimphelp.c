@@ -722,7 +722,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 expr_stmt|;
 name|args
 index|[
@@ -984,7 +984,7 @@ name|nreturn_vals
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,

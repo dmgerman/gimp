@@ -82,7 +82,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bf3deb0108
+DECL|struct|__anon27aeca630108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bf3deb0208
+DECL|struct|__anon27aeca630208
 block|{
 DECL|member|size
 name|GtkWidget
@@ -452,7 +452,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

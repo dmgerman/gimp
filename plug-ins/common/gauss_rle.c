@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae7e2c50108
+DECL|struct|__anon2964c33e0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae7e2c50208
+DECL|struct|__anon2964c33e0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae7e2c50308
+DECL|struct|__anon2964c33e0308
 block|{
 DECL|member|size
 name|GtkWidget
@@ -578,7 +578,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

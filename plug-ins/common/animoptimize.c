@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0175460103
+DECL|enum|__anon2c2be7ea0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0175460203
+DECL|enum|__anon2c2be7ea0203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -159,7 +159,7 @@ specifier|static
 name|gint32
 name|do_optimizations
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|)
 function_decl|;
@@ -681,7 +681,7 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType
@@ -1265,10 +1265,10 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|do_optimizations (GimpRunModeType run_mode)
+DECL|function|do_optimizations (GimpRunMode run_mode)
 name|do_optimizations
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|)
 block|{

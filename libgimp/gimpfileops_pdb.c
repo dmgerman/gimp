@@ -19,10 +19,10 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_file_load (GimpRunModeType run_mode,gchar * filename,gchar * raw_filename)
+DECL|function|gimp_file_load (GimpRunMode run_mode,gchar * filename,gchar * raw_filename)
 name|gimp_file_load
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gchar
@@ -114,10 +114,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_file_save (GimpRunModeType run_mode,gint32 image_ID,gint32 drawable_ID,gchar * filename,gchar * raw_filename)
+DECL|function|gimp_file_save (GimpRunMode run_mode,gint32 image_ID,gint32 drawable_ID,gchar * filename,gchar * raw_filename)
 name|gimp_file_save
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32

@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d61dc90108
+DECL|struct|__anon2bf8f15f0108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -83,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d61dc90208
+DECL|struct|__anon2bf8f15f0208
 block|{
 DECL|member|run
 name|gboolean
@@ -98,7 +98,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d61dc90308
+DECL|struct|__anon2bf8f15f0308
 block|{
 DECL|member|color_button
 name|GtkWidget
@@ -240,7 +240,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|run_mode
 specifier|static
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 end_decl_stmt

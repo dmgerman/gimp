@@ -5167,11 +5167,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_mpeg_encode (GimpRunModeType run_mode,gint32 image_id,t_gap_mpeg_encoder encoder)
+DECL|function|gap_mpeg_encode (GimpRunMode run_mode,gint32 image_id,t_gap_mpeg_encoder encoder)
 name|int
 name|gap_mpeg_encode
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32

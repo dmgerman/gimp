@@ -147,7 +147,7 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|GimpPDBStatusType
@@ -321,7 +321,7 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType
@@ -467,14 +467,14 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (gchar * filename,GimpRunModeType run_mode,GimpPDBStatusType * status)
+DECL|function|load_image (gchar * filename,GimpRunMode run_mode,GimpPDBStatusType * status)
 name|load_image
 parameter_list|(
 name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|GimpPDBStatusType

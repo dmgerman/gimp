@@ -897,7 +897,7 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|runMode
 decl_stmt|;
 name|GimpPDBStatusType
@@ -912,7 +912,7 @@ expr_stmt|;
 name|runMode
 operator|=
 operator|(
-name|GimpRunModeType
+name|GimpRunMode
 operator|)
 name|param
 index|[

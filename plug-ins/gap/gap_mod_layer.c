@@ -4411,11 +4411,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_mod_layer (GimpRunModeType run_mode,gint32 image_id,gint32 range_from,gint32 range_to,gint32 action_mode,gint32 sel_mode,gint32 sel_case,gint32 sel_invert,char * sel_pattern,char * new_layername)
+DECL|function|gap_mod_layer (GimpRunMode run_mode,gint32 image_id,gint32 range_from,gint32 range_to,gint32 action_mode,gint32 sel_mode,gint32 sel_case,gint32 sel_invert,char * sel_pattern,char * new_layername)
 name|gint
 name|gap_mod_layer
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32

@@ -942,7 +942,7 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|gdouble

@@ -694,7 +694,7 @@ name|return_vals
 parameter_list|)
 comment|/* O - Return values */
 block|{
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 comment|/* Current run mode */

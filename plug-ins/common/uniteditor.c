@@ -234,7 +234,7 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|run_mode
@@ -429,7 +429,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fc78de0103
+DECL|enum|__anon289ced440103
 block|{
 DECL|enumerator|SAVE
 name|SAVE

@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295b958b0108
+DECL|struct|__anon2907b0ba0108
 block|{
 DECL|member|angle
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295b958b0208
+DECL|struct|__anon2907b0ba0208
 block|{
 DECL|member|ID
 name|gint32
@@ -646,7 +646,7 @@ name|return_vals
 parameter_list|)
 block|{
 comment|/* Get the runmode from the in-parameters */
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 init|=
 name|param

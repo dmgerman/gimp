@@ -162,7 +162,7 @@ name|l_width
 decl_stmt|,
 name|l_height
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|l_run_mode
 decl_stmt|;
 name|gint32
@@ -943,11 +943,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_split_image (GimpRunModeType run_mode,gint32 image_id,gint32 inverse_order,gint32 no_alpha,char * extension)
+DECL|function|gap_split_image (GimpRunMode run_mode,gint32 image_id,gint32 inverse_order,gint32 no_alpha,char * extension)
 name|int
 name|gap_split_image
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32

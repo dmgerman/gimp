@@ -755,11 +755,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_msg_win (GimpRunModeType run_mode,char * msg)
+DECL|function|p_msg_win (GimpRunMode run_mode,char * msg)
 name|void
 name|p_msg_win
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|char
@@ -2316,7 +2316,7 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_alloc_ainfo (gint32 image_id,GimpRunModeType run_mode)
+DECL|function|p_alloc_ainfo (gint32 image_id,GimpRunMode run_mode)
 name|t_anim_info
 modifier|*
 name|p_alloc_ainfo
@@ -2324,7 +2324,7 @@ parameter_list|(
 name|gint32
 name|image_id
 parameter_list|,
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|)
 block|{
@@ -3688,7 +3688,7 @@ decl_stmt|;
 name|int
 name|l_save_as_mode
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|l_run_mode
 decl_stmt|;
 name|l_msg
@@ -3908,7 +3908,7 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_save_named_image (gint32 image_id,char * sav_name,GimpRunModeType run_mode)
+DECL|function|p_save_named_image (gint32 image_id,char * sav_name,GimpRunMode run_mode)
 name|gint32
 name|p_save_named_image
 parameter_list|(
@@ -3919,7 +3919,7 @@ name|char
 modifier|*
 name|sav_name
 parameter_list|,
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|)
 block|{
@@ -7125,11 +7125,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_next (GimpRunModeType run_mode,gint32 image_id)
+DECL|function|gap_next (GimpRunMode run_mode,gint32 image_id)
 name|int
 name|gap_next
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32
@@ -7201,11 +7201,11 @@ comment|/* end gap_next */
 end_comment
 
 begin_function
-DECL|function|gap_prev (GimpRunModeType run_mode,gint32 image_id)
+DECL|function|gap_prev (GimpRunMode run_mode,gint32 image_id)
 name|int
 name|gap_prev
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32
@@ -7281,11 +7281,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_first (GimpRunModeType run_mode,gint32 image_id)
+DECL|function|gap_first (GimpRunMode run_mode,gint32 image_id)
 name|int
 name|gap_first
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32
@@ -7366,11 +7366,11 @@ comment|/* end gap_first */
 end_comment
 
 begin_function
-DECL|function|gap_last (GimpRunModeType run_mode,gint32 image_id)
+DECL|function|gap_last (GimpRunMode run_mode,gint32 image_id)
 name|int
 name|gap_last
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32
@@ -7455,11 +7455,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_goto (GimpRunModeType run_mode,gint32 image_id,int nr)
+DECL|function|gap_goto (GimpRunMode run_mode,gint32 image_id,int nr)
 name|int
 name|gap_goto
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32
@@ -7699,11 +7699,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_del (GimpRunModeType run_mode,gint32 image_id,int nr)
+DECL|function|gap_del (GimpRunMode run_mode,gint32 image_id,int nr)
 name|int
 name|gap_del
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32
@@ -8359,11 +8359,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_dup (GimpRunModeType run_mode,gint32 image_id,int nr,long range_from,long range_to)
+DECL|function|gap_dup (GimpRunMode run_mode,gint32 image_id,int nr,long range_from,long range_to)
 name|int
 name|gap_dup
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32
@@ -8587,11 +8587,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_exchg (GimpRunModeType run_mode,gint32 image_id,int nr)
+DECL|function|gap_exchg (GimpRunMode run_mode,gint32 image_id,int nr)
 name|int
 name|gap_exchg
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32
@@ -9224,11 +9224,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_shift (GimpRunModeType run_mode,gint32 image_id,int nr,long range_from,long range_to)
+DECL|function|gap_shift (GimpRunMode run_mode,gint32 image_id,int nr,long range_from,long range_to)
 name|int
 name|gap_shift
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32
@@ -9911,10 +9911,10 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|gap_vid_edit_copy (GimpRunModeType run_mode,gint32 image_id,long range_from,long range_to)
+DECL|function|gap_vid_edit_copy (GimpRunMode run_mode,gint32 image_id,long range_from,long range_to)
 name|gap_vid_edit_copy
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32
@@ -10349,10 +10349,10 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|gap_vid_edit_paste (GimpRunModeType run_mode,gint32 image_id,long paste_mode)
+DECL|function|gap_vid_edit_paste (GimpRunMode run_mode,gint32 image_id,long paste_mode)
 name|gap_vid_edit_paste
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32
@@ -11398,13 +11398,13 @@ end_function
 
 begin_function
 name|gint
-DECL|function|p_gap_lock_is_locked (gint32 image_id,GimpRunModeType run_mode)
+DECL|function|p_gap_lock_is_locked (gint32 image_id,GimpRunMode run_mode)
 name|p_gap_lock_is_locked
 parameter_list|(
 name|gint32
 name|image_id
 parameter_list|,
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|)
 block|{

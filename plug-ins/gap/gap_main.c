@@ -3220,10 +3220,10 @@ index|[
 literal|10
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|lock_run_mode
 decl_stmt|;
 name|GimpPDBStatusType

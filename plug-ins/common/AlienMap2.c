@@ -30500,7 +30500,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bff8fe20108
+DECL|struct|__anon2baac24f0108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -30551,7 +30551,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bff8fe20208
+DECL|struct|__anon2baac24f0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -31724,7 +31724,7 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|double

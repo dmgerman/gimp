@@ -5595,7 +5595,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 expr_stmt|;
 name|args
 index|[
@@ -5770,7 +5770,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 expr_stmt|;
 name|args
 index|[

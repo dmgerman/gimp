@@ -74,7 +74,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29aa2e230103
+DECL|enum|__anon290012d50103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29aa2e230203
+DECL|enum|__anon290012d50203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -190,7 +190,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29aa2e230308
+DECL|struct|__anon290012d50308
 block|{
 DECL|member|params
 name|PluginParams
@@ -210,7 +210,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29aa2e230408
+DECL|struct|__anon290012d50408
 block|{
 DECL|member|x0
 name|gint
@@ -241,7 +241,7 @@ block|}
 name|selection
 struct|;
 DECL|member|run_mode
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 DECL|member|run
@@ -577,7 +577,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29aa2e230508
+DECL|struct|__anon290012d50508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject

@@ -475,6 +475,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in-proc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"app_procs.h"
 end_include
 
@@ -5899,9 +5905,9 @@ operator|=
 operator|(
 name|with_interface
 condition|?
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 else|:
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 operator|)
 expr_stmt|;
 name|args
@@ -12084,7 +12090,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 expr_stmt|;
 name|argc
 operator|=
@@ -12115,7 +12121,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 expr_stmt|;
 name|args
 index|[
@@ -12184,7 +12190,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 expr_stmt|;
 name|argc
 operator|=

@@ -684,7 +684,7 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType
@@ -1043,7 +1043,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27cc2faa0108
+DECL|struct|__anon2a3e151e0108
 block|{
 DECL|member|manufacturer
 name|guint8

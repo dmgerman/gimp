@@ -208,7 +208,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28c8dee70108
+DECL|struct|__anon29b3a4f90108
 typedef|typedef
 struct|struct
 block|{
@@ -226,7 +226,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28c8dee70208
+DECL|struct|__anon29b3a4f90208
 typedef|typedef
 struct|struct
 block|{
@@ -1505,7 +1505,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c8dee70308
+DECL|struct|__anon29b3a4f90308
 block|{
 DECL|member|color
 name|double
@@ -1524,7 +1524,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c8dee70408
+DECL|struct|__anon29b3a4f90408
 block|{
 DECL|member|coord
 name|double
@@ -1541,7 +1541,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28c8dee70503
+DECL|enum|__anon29b3a4f90503
 typedef|typedef
 enum|enum
 block|{
@@ -1563,7 +1563,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28c8dee70603
+DECL|enum|__anon29b3a4f90603
 typedef|typedef
 enum|enum
 block|{
@@ -1581,7 +1581,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c8dee70708
+DECL|struct|__anon29b3a4f90708
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -1616,7 +1616,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c8dee70808
+DECL|struct|__anon29b3a4f90808
 block|{
 DECL|member|type
 name|t_LightType
@@ -3388,7 +3388,7 @@ comment|/* ---------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|gap_run_iterators_ALT (char * name,GimpRunModeType run_mode,gint32 total_steps,gdouble current_step,gint32 len_struct)
+DECL|function|gap_run_iterators_ALT (char * name,GimpRunMode run_mode,gint32 total_steps,gdouble current_step,gint32 len_struct)
 name|gint
 name|gap_run_iterators_ALT
 parameter_list|(
@@ -3396,7 +3396,7 @@ name|char
 modifier|*
 name|name
 parameter_list|,
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32

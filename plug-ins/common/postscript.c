@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4299d90108
+DECL|struct|__anon2ba729190108
 block|{
 DECL|member|resolution
 name|guint
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4299d90208
+DECL|struct|__anon2ba729190208
 block|{
 DECL|member|run
 name|gint
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4299d90308
+DECL|struct|__anon2ba729190308
 block|{
 DECL|member|width
 DECL|member|height
@@ -308,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4299d90408
+DECL|struct|__anon2ba729190408
 block|{
 DECL|member|run
 name|gint
@@ -848,7 +848,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4299d90508
+DECL|struct|__anon2ba729190508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -937,7 +937,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|l_run_mode
 specifier|static
-name|GimpRunModeType
+name|GimpRunMode
 name|l_run_mode
 decl_stmt|;
 end_decl_stmt
@@ -1719,7 +1719,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4299d90608
+DECL|struct|__anon2ba729190608
 block|{
 DECL|member|eol
 name|long
@@ -2511,7 +2511,7 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

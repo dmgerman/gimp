@@ -234,7 +234,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon289d9fe70103
+DECL|enum|__anon2b1e17130103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -252,7 +252,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289d9fe70208
+DECL|struct|__anon2b1e17130208
 block|{
 DECL|member|max_p
 name|gint
@@ -268,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289d9fe70308
+DECL|struct|__anon2b1e17130308
 block|{
 DECL|member|run
 name|gint
@@ -459,7 +459,7 @@ name|status
 init|=
 name|GIMP_PDB_EXECUTION_ERROR
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|run_mode

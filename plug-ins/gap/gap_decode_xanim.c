@@ -4139,10 +4139,10 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|gap_xanim_decode (GimpRunModeType run_mode)
+DECL|function|gap_xanim_decode (GimpRunMode run_mode)
 name|gap_xanim_decode
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|)
 block|{

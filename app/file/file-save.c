@@ -142,6 +142,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/plug-in-proc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file-save.h"
 end_include
 
@@ -169,7 +175,7 @@ end_comment
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|file_save (GimpImage * gimage,const gchar * filename,const gchar * raw_filename,PlugInProcDef * file_proc,RunModeType run_mode,gboolean set_filename)
+DECL|function|file_save (GimpImage * gimage,const gchar * filename,const gchar * raw_filename,PlugInProcDef * file_proc,GimpRunMode run_mode,gboolean set_filename)
 name|file_save
 parameter_list|(
 name|GimpImage
@@ -190,7 +196,7 @@ name|PlugInProcDef
 modifier|*
 name|file_proc
 parameter_list|,
-name|RunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gboolean
@@ -392,10 +398,10 @@ argument_list|)
 expr_stmt|;
 name|proc
 operator|=
-operator|&
+name|plug_in_proc_def_get_proc
+argument_list|(
 name|file_proc
-operator|->
-name|db_info
+argument_list|)
 expr_stmt|;
 name|args
 operator|=

@@ -771,7 +771,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b52410e0108
+DECL|struct|__anon295b6f940108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -857,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b52410e0208
+DECL|struct|__anon295b6f940208
 block|{
 DECL|member|y
 name|gint32
@@ -3084,7 +3084,7 @@ operator|-
 literal|1
 decl_stmt|;
 comment|/* Get the runmode from the in-parameters */
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 init|=
 name|param

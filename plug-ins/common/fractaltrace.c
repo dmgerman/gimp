@@ -191,7 +191,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon28d7bbb10103
+DECL|enum|__anon2c351a8a0103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -211,7 +211,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d7bbb10208
+DECL|struct|__anon2c351a8a0208
 block|{
 DECL|member|x1
 name|gdouble
@@ -407,7 +407,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d7bbb10308
+DECL|struct|__anon2c351a8a0308
 block|{
 DECL|member|x1
 name|gint
@@ -450,7 +450,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d7bbb10408
+DECL|struct|__anon2c351a8a0408
 block|{
 DECL|member|width
 name|gint
@@ -525,7 +525,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType
@@ -1009,7 +1009,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d7bbb10508
+DECL|struct|__anon2c351a8a0508
 block|{
 DECL|member|r
 name|guchar
@@ -2810,7 +2810,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d7bbb10608
+DECL|struct|__anon2c351a8a0608
 block|{
 DECL|member|preview
 name|GtkWidget

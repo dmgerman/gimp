@@ -115,7 +115,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0b1c910108
+DECL|struct|__anon29e71d5b0108
 block|{
 DECL|member|film_height
 name|gint
@@ -219,7 +219,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0b1c910208
+DECL|struct|__anon29e71d5b0208
 block|{
 DECL|member|font_entry
 name|GtkWidget
@@ -767,7 +767,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|run_mode
 specifier|static
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 end_decl_stmt

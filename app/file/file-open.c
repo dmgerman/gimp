@@ -130,6 +130,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/plug-in-proc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file-open.h"
 end_include
 
@@ -158,7 +164,7 @@ end_comment
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|file_open_image (Gimp * gimp,const gchar * filename,const gchar * raw_filename,const gchar * open_mode,PlugInProcDef * file_proc,RunModeType run_mode,GimpPDBStatusType * status)
+DECL|function|file_open_image (Gimp * gimp,const gchar * filename,const gchar * raw_filename,const gchar * open_mode,PlugInProcDef * file_proc,GimpRunMode run_mode,GimpPDBStatusType * status)
 name|file_open_image
 parameter_list|(
 name|Gimp
@@ -184,7 +190,7 @@ name|PlugInProcDef
 modifier|*
 name|file_proc
 parameter_list|,
-name|RunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|GimpPDBStatusType
@@ -266,7 +272,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 name|g_message
 argument_list|(
@@ -316,7 +322,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 name|g_message
 argument_list|(
@@ -352,7 +358,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 name|g_message
 argument_list|(
@@ -379,10 +385,10 @@ block|}
 block|}
 name|proc
 operator|=
-operator|&
+name|plug_in_proc_def_get_proc
+argument_list|(
 name|file_proc
-operator|->
-name|db_info
+argument_list|)
 expr_stmt|;
 name|args
 operator|=
@@ -650,7 +656,7 @@ argument_list|)
 argument_list|,
 name|file_proc
 argument_list|,
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 argument_list|,
 operator|&
 name|status

@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2d6f710108
+DECL|struct|__anon2af9d9190108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2d6f710208
+DECL|struct|__anon2af9d9190208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -762,7 +762,7 @@ name|GimpDrawable
 modifier|*
 name|active_drawable
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

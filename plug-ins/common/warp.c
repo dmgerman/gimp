@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc2699e0103
+DECL|enum|__anon2bf9722c0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -127,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc2699e0208
+DECL|struct|__anon2bf9722c0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc2699e0308
+DECL|struct|__anon2bf9722c0308
 block|{
 DECL|member|run
 name|gint
@@ -715,7 +715,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|run_mode
 specifier|static
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 end_decl_stmt

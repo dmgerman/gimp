@@ -65,7 +65,7 @@ end_define
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28eaaf2c0108
+DECL|struct|__anon298e3a290108
 block|{
 DECL|member|prDlg
 name|PRINTDLG
@@ -783,7 +783,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

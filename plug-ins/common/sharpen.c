@@ -845,7 +845,7 @@ modifier|*
 name|return_vals
 parameter_list|)
 block|{
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 comment|/* Current run mode */

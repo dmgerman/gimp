@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289b59f70103
+DECL|enum|__anon2c1d1b4f0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289b59f70203
+DECL|enum|__anon2c1d1b4f0203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289b59f70303
+DECL|enum|__anon2c1d1b4f0303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -781,7 +781,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

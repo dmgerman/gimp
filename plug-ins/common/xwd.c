@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b030a50108
+DECL|struct|__anon2b56e20b0108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -248,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b030a50208
+DECL|struct|__anon2b56e20b0208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -306,7 +306,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b030a50308
+DECL|struct|__anon2b56e20b0308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -333,7 +333,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b030a50408
+DECL|struct|__anon2b56e20b0408
 block|{
 DECL|member|npixel
 name|gint
@@ -865,7 +865,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|l_run_mode
 specifier|static
-name|GimpRunModeType
+name|GimpRunMode
 name|l_run_mode
 decl_stmt|;
 end_decl_stmt
@@ -1101,7 +1101,7 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

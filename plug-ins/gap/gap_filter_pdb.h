@@ -29,7 +29,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d704660103
+DECL|enum|__anon28c0c33a0103
 DECL|enumerator|PTYP_ANY
 block|{
 name|PTYP_ANY
@@ -54,7 +54,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d704660203
+DECL|enum|__anon28c0c33a0203
 DECL|enumerator|PAPP_CONSTANT
 block|{
 name|PAPP_CONSTANT
@@ -89,7 +89,7 @@ parameter_list|,
 name|gint32
 name|layer_id
 parameter_list|,
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|)
 function_decl|;

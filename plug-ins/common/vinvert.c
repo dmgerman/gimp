@@ -133,7 +133,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|run_mode
 specifier|static
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 end_decl_stmt

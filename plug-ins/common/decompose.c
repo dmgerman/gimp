@@ -620,7 +620,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27963bf50108
+DECL|struct|__anon2a9fb72a0108
 block|{
 DECL|member|type
 name|gchar
@@ -1089,7 +1089,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27963bf50208
+DECL|struct|__anon2a9fb72a0208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1107,7 +1107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27963bf50308
+DECL|struct|__anon2a9fb72a0308
 block|{
 DECL|member|extract_flag
 name|gint
@@ -1182,7 +1182,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|run_mode
 specifier|static
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 end_decl_stmt

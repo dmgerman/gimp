@@ -294,7 +294,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4eb13a0108
+DECL|struct|__anon29edc36c0108
 block|{
 DECL|member|hwidth
 name|gint
@@ -656,7 +656,7 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

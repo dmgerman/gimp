@@ -341,7 +341,7 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GtkWidget
@@ -438,7 +438,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b5b7b70108
+DECL|struct|__anon28e68aa10108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -544,7 +544,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b5b7b70208
+DECL|struct|__anon28e68aa10208
 block|{
 DECL|member|menu
 name|gchar

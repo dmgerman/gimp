@@ -1406,7 +1406,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 expr_stmt|;
 name|args
 index|[
@@ -1603,7 +1603,7 @@ name|raw_filename
 argument_list|,
 name|save_file_proc
 argument_list|,
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|set_filename
 argument_list|)
@@ -1820,7 +1820,7 @@ name|raw_filename
 argument_list|,
 name|save_file_proc
 argument_list|,
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|set_filename
 argument_list|)

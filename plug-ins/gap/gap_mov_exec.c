@@ -6811,10 +6811,10 @@ end_comment
 
 begin_function
 name|int
-DECL|function|gap_move_path (GimpRunModeType run_mode,gint32 image_id,t_mov_values * pvals,gchar * pointfile,gint rotation_follow,gint32 startangle)
+DECL|function|gap_move_path (GimpRunMode run_mode,gint32 image_id,t_mov_values * pvals,gchar * pointfile,gint rotation_follow,gint32 startangle)
 name|gap_move_path
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32

@@ -397,7 +397,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9675350108
+DECL|struct|__anon2b5fd5a00108
 block|{
 DECL|member|compose_type
 name|gchar
@@ -671,7 +671,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9675350208
+DECL|struct|__anon2b5fd5a00208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -702,7 +702,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9675350308
+DECL|struct|__anon2b5fd5a00308
 block|{
 DECL|member|width
 DECL|member|height
@@ -837,7 +837,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|run_mode
 specifier|static
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 end_decl_stmt

@@ -756,7 +756,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType
@@ -848,7 +848,7 @@ expr_stmt|;
 name|run_mode
 operator|=
 operator|(
-name|GimpRunModeType
+name|GimpRunMode
 operator|)
 name|param
 index|[

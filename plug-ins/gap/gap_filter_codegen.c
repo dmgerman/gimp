@@ -922,7 +922,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"gint p_%s_iter_ALT(GimpRunModeType run_mode, gint32 total_steps, gdouble current_step, gint32 len_struct) \n"
+literal|"gint p_%s_iter_ALT(GimpRunMode run_mode, gint32 total_steps, gdouble current_step, gint32 len_struct) \n"
 argument_list|,
 name|l_clean_proc_name
 argument_list|)
@@ -1443,7 +1443,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"static gint p_%s_iter_ALT (GimpRunModeType run_mode, gint32 total_steps, gdouble current_step, gint32 len_struct);\n"
+literal|"static gint p_%s_iter_ALT (GimpRunMode run_mode, gint32 total_steps, gdouble current_step, gint32 len_struct);\n"
 argument_list|,
 name|l_clean_proc_name
 argument_list|)
@@ -2991,7 +2991,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"gint p_%s_iter(GimpRunModeType run_mode, gint32 total_steps, gdouble current_step, gint32 len_struct) \n"
+literal|"gint p_%s_iter(GimpRunMode run_mode, gint32 total_steps, gdouble current_step, gint32 len_struct) \n"
 argument_list|,
 name|l_clean_proc_name
 argument_list|)
@@ -3760,7 +3760,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"  GimpRunModeType run_mode;\n"
+literal|"  GimpRunMode run_mode;\n"
 argument_list|)
 expr_stmt|;
 name|fprintf

@@ -244,7 +244,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b67003a0108
+DECL|struct|__anon298dc1bb0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -279,7 +279,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b67003a0208
+DECL|struct|__anon298dc1bb0208
 block|{
 DECL|member|run
 name|gint
@@ -294,7 +294,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b67003a0308
+DECL|struct|__anon298dc1bb0308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -816,7 +816,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

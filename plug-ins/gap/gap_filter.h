@@ -34,7 +34,7 @@ begin_function_decl
 name|gint
 name|gap_proc_anim_apply
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32
@@ -63,7 +63,7 @@ name|char
 modifier|*
 name|name
 parameter_list|,
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32
@@ -90,7 +90,7 @@ comment|/* ------------------------  * gap_dbbrowser.h  * ----------------------
 end_comment
 
 begin_typedef
-DECL|struct|__anon27e6c15f0108
+DECL|struct|__anon28afa1ce0108
 typedef|typedef
 struct|struct
 block|{

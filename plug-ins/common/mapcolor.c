@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afd454c0108
+DECL|struct|__anon2afa00e30108
 block|{
 DECL|member|colors
 name|GimpRGB
@@ -197,7 +197,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afd454c0208
+DECL|struct|__anon2afa00e30208
 block|{
 DECL|member|width
 DECL|member|height
@@ -220,7 +220,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afd454c0308
+DECL|struct|__anon2afa00e30308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -491,7 +491,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|l_run_mode
 specifier|static
-name|GimpRunModeType
+name|GimpRunMode
 name|l_run_mode
 decl_stmt|;
 end_decl_stmt
@@ -1585,7 +1585,7 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpDrawable

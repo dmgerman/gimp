@@ -302,7 +302,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab902c0108
+DECL|struct|__anon2bc0d7f30108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -348,7 +348,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab902c0208
+DECL|struct|__anon2bc0d7f30208
 block|{
 DECL|member|run
 name|gint
@@ -624,7 +624,7 @@ name|status
 init|=
 name|GIMP_PDB_EXECUTION_ERROR
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|run_mode

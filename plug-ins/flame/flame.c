@@ -524,7 +524,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2a0a4f3f0108
+DECL|struct|__anon28f818d10108
 block|{
 DECL|member|randomize
 name|gint
@@ -872,7 +872,7 @@ name|drawable
 init|=
 name|NULL
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

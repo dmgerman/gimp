@@ -30504,7 +30504,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27aa984a0108
+DECL|struct|__anon2c2d3d730108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -30539,7 +30539,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27aa984a0208
+DECL|struct|__anon2c2d3d730208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -31472,7 +31472,7 @@ index|]
 decl_stmt|;
 comment|/*   GDrawable *drawable; */
 comment|/*   gint32 image_ID; */
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|double

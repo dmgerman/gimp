@@ -322,10 +322,10 @@ argument_list|)
 return|;
 name|proc
 operator|=
-operator|&
+name|plug_in_proc_def_get_proc
+argument_list|(
 name|file_proc
-operator|->
-name|db_info
+argument_list|)
 expr_stmt|;
 return|return
 name|procedural_db_execute
@@ -355,7 +355,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
-literal|"The run mode: RUN_INTERACTIVE (0) or RUN_NONINTERACTIVE (1)"
+literal|"The run mode: GIMP_RUN_INTERACTIVE (0) or GIMP_RUN_NONINTERACTIVE (1)"
 block|}
 block|,
 block|{
@@ -507,10 +507,10 @@ argument_list|)
 return|;
 name|proc
 operator|=
-operator|&
+name|plug_in_proc_def_get_proc
+argument_list|(
 name|file_proc
-operator|->
-name|db_info
+argument_list|)
 expr_stmt|;
 name|new_args
 operator|=
@@ -650,7 +650,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
-literal|"The run mode: RUN_INTERACTIVE (0) or RUN_NONINTERACTIVE (1)"
+literal|"The run mode: GIMP_RUN_INTERACTIVE (0) or GIMP_RUN_NONINTERACTIVE (1)"
 block|}
 block|,
 block|{

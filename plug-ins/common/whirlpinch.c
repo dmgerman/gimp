@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b63dd030108
+DECL|struct|__anon28fbc6910108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b63dd030208
+DECL|struct|__anon28fbc6910208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b63dd030308
+DECL|struct|__anon28fbc6910308
 block|{
 DECL|member|col
 DECL|member|row
@@ -782,7 +782,7 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

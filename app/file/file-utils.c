@@ -164,6 +164,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in/plug-in-proc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file-utils.h"
 end_include
 

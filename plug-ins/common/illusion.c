@@ -173,7 +173,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9eb5870108
+DECL|struct|__anon2b6300270108
 block|{
 DECL|member|division
 name|gint32
@@ -413,7 +413,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 specifier|static

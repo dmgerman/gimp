@@ -714,7 +714,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab28e920108
+DECL|struct|__anon2b1553a10108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -866,7 +866,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab28e920208
+DECL|struct|__anon2b1553a10208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1091,7 +1091,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab28e920308
+DECL|struct|__anon2b1553a10308
 block|{
 DECL|member|run
 name|gint
@@ -1363,7 +1363,7 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|run_mode
@@ -3928,7 +3928,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab28e920408
+DECL|struct|__anon2b1553a10408
 block|{
 DECL|member|min_modified
 name|gshort

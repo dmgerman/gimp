@@ -142,7 +142,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in.h"
+file|"plug-in/plug-in-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-in/plug-in-proc.h"
 end_include
 
 begin_include
@@ -2884,7 +2890,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
 operator|&
 name|dummy

@@ -1148,7 +1148,7 @@ modifier|*
 name|drawable
 decl_stmt|;
 comment|/* Drawable for image */
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 comment|/* Current run mode */
@@ -1251,7 +1251,7 @@ expr_stmt|;
 name|run_mode
 operator|=
 operator|(
-name|GimpRunModeType
+name|GimpRunMode
 operator|)
 name|param
 index|[

@@ -220,12 +220,12 @@ comment|/* pitstop dialog  *   return -1 on cancel, 0 .. on continue, 1 .. on sk
 end_comment
 
 begin_function
-DECL|function|p_pitstop (GimpRunModeType run_mode,char * plugin_name,gint text_flag,char * step_backup_file,gint len_step_backup_file,gint32 layer_idx)
+DECL|function|p_pitstop (GimpRunMode run_mode,char * plugin_name,gint text_flag,char * step_backup_file,gint len_step_backup_file,gint32 layer_idx)
 specifier|static
 name|gint
 name|p_pitstop
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|char
@@ -834,11 +834,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_foreach_multilayer (GimpRunModeType run_mode,gint32 image_id,char * plugin_name,t_apply_mode apply_mode)
+DECL|function|p_foreach_multilayer (GimpRunMode run_mode,gint32 image_id,char * plugin_name,t_apply_mode apply_mode)
 name|int
 name|p_foreach_multilayer
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32
@@ -2049,11 +2049,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_proc_anim_apply (GimpRunModeType run_mode,gint32 image_id,char * plugin_name)
+DECL|function|gap_proc_anim_apply (GimpRunMode run_mode,gint32 image_id,char * plugin_name)
 name|gint
 name|gap_proc_anim_apply
 parameter_list|(
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gint32

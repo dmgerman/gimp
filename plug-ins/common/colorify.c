@@ -192,7 +192,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adbcd780108
+DECL|struct|__anon279672920108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -207,7 +207,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adbcd780208
+DECL|struct|__anon279672920208
 block|{
 DECL|member|run
 name|gboolean
@@ -573,7 +573,7 @@ modifier|*
 name|return_vals
 parameter_list|)
 block|{
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

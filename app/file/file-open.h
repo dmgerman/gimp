@@ -44,7 +44,7 @@ name|PlugInProcDef
 modifier|*
 name|file_proc
 parameter_list|,
-name|RunModeType
+name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|GimpPDBStatusType

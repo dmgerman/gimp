@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bb77530103
+DECL|enum|__anon2af0d4620103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -78,7 +78,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bb77530203
+DECL|enum|__anon2af0d4620203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -2202,7 +2202,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b182c590108
+DECL|struct|__anon2a47c2d90108
 block|{
 DECL|member|independent
 name|gint
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b182c590208
+DECL|struct|__anon2a47c2d90208
 block|{
 DECL|member|channels
 name|gint
@@ -540,7 +540,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

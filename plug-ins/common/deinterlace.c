@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1dbc600103
+DECL|enum|__anon2b52d7530103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -281,7 +281,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

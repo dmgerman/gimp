@@ -368,7 +368,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c46d01b0108
+DECL|struct|__anon2b9f88050108
 typedef|typedef
 struct|struct
 block|{
@@ -415,7 +415,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c46d01b0208
+DECL|struct|__anon2b9f88050208
 typedef|typedef
 struct|struct
 block|{
@@ -4042,7 +4042,7 @@ name|return_vals
 parameter_list|)
 comment|/* out-parameters */
 block|{
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|int

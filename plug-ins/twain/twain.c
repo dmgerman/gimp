@@ -502,7 +502,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a09363d0108
+DECL|struct|__anon2c3f2df40108
 typedef|typedef
 struct|struct
 block|{
@@ -1622,7 +1622,7 @@ name|return_vals
 parameter_list|)
 comment|/* out-parameters */
 block|{
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 comment|/* Initialize the return values    * Always return at least the status to the caller.     */
@@ -1875,7 +1875,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a09363d0208
+DECL|struct|__anon2c3f2df40208
 typedef|typedef
 struct|struct
 block|{

@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b97d16b0108
+DECL|struct|__anon27a4926f0108
 block|{
 DECL|member|npts
 name|gint
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b97d16b0208
+DECL|struct|__anon27a4926f0208
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b97d16b0308
+DECL|struct|__anon27a4926f0308
 block|{
 DECL|member|run
 name|gint
@@ -678,7 +678,7 @@ name|GimpDrawable
 modifier|*
 name|active_drawable
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

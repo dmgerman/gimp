@@ -479,7 +479,7 @@ literal|2
 index|]
 decl_stmt|;
 comment|/* Return values */
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType

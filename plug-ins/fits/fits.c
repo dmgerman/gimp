@@ -79,7 +79,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2777648a0108
+DECL|struct|__anon2b0e80a40108
 block|{
 DECL|member|replace
 name|gint
@@ -105,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2777648a0208
+DECL|struct|__anon2b0e80a40208
 block|{
 DECL|member|run
 name|gint
@@ -414,7 +414,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|l_run_mode
 specifier|static
-name|GimpRunModeType
+name|GimpRunMode
 name|l_run_mode
 decl_stmt|;
 end_decl_stmt
@@ -654,7 +654,7 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType
@@ -678,7 +678,7 @@ operator|=
 name|run_mode
 operator|=
 operator|(
-name|GimpRunModeType
+name|GimpRunMode
 operator|)
 name|param
 index|[

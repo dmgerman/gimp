@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b01670108
+DECL|struct|__anon2c97320a0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -563,7 +563,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0b01670203
+DECL|enum|__anon2c97320a0203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -582,7 +582,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b01670308
+DECL|struct|__anon2c97320a0308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -652,7 +652,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b01670408
+DECL|struct|__anon2c97320a0408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -934,7 +934,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpRunModeType
+name|GimpRunMode
 name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType
