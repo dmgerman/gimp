@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295a1f9a0103
+DECL|enum|__anon27ca9eb40103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -12963,7 +12963,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|shrink_line (gdouble * dest,gdouble * src,guint bytes,gint old_width,gint width,GimpInterpolationType interp)
+DECL|function|shrink_line (gdouble * dest,gdouble * src,gint bytes,gint old_width,gint width,GimpInterpolationType interp)
 name|shrink_line
 parameter_list|(
 name|gdouble
@@ -12974,7 +12974,7 @@ name|gdouble
 modifier|*
 name|src
 parameter_list|,
-name|guint
+name|gint
 name|bytes
 parameter_list|,
 name|gint
