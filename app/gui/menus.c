@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"errorconsole.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"fileops.h"
 end_include
 
@@ -313,7 +307,7 @@ literal|"/File/Dialogs/Error Console..."
 block|,
 name|NULL
 block|,
-name|error_console_show_callback
+name|dialogs_error_console_cmd_callback
 block|,
 literal|0
 block|}

@@ -339,6 +339,32 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|error_console_session_info
+name|SessionInfo
+name|error_console_session_info
+init|=
+block|{
+literal|"error-console"
+block|,
+operator|(
+name|GtkItemFactoryCallback
+operator|)
+name|dialogs_error_console_cmd_callback
+block|,
+literal|400
+block|,
+literal|0
+block|,
+literal|250
+block|,
+literal|300
+block|,
+name|FALSE
+block|}
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/* public functions */
 end_comment

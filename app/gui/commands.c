@@ -300,7 +300,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2957e2be0108
+DECL|struct|__anon29f89ddd0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -3820,6 +3820,27 @@ parameter_list|)
 block|{
 name|create_device_status
 argument_list|()
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|dialogs_error_console_cmd_callback (GtkWidget * widget,gpointer client_data)
+name|dialogs_error_console_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|client_data
+parameter_list|)
+block|{
+name|error_console_add
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 block|}
 end_function

@@ -142,7 +142,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2ab36e750103
+DECL|enum|__anon287caf5a0103
 typedef|typedef
 enum|enum
 block|{
@@ -2000,6 +2000,9 @@ name|gradient_editor_session_info
 block|,
 operator|&
 name|device_status_session_info
+block|,
+operator|&
+name|error_console_session_info
 block|}
 decl_stmt|;
 end_decl_stmt

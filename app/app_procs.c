@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"errorconsole.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"fileops.h"
 end_include
 
@@ -2583,6 +2589,9 @@ name|procedural_db_free
 argument_list|()
 expr_stmt|;
 name|device_status_free
+argument_list|()
+expr_stmt|;
+name|error_console_free
 argument_list|()
 expr_stmt|;
 name|menus_quit

@@ -150,6 +150,13 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
+name|SessionInfo
+name|error_console_session_info
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
 name|GList
 modifier|*
 name|session_info_updates
