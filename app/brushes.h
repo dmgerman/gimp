@@ -20,7 +20,7 @@ begin_decl_stmt
 specifier|extern
 name|GimpList
 modifier|*
-name|brush_list
+name|global_brush_list
 decl_stmt|;
 end_decl_stmt
 

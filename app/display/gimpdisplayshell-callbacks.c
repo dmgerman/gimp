@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppattern.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -121,12 +127,6 @@ begin_include
 include|#
 directive|include
 file|"paint_funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"patterns.h"
 end_include
 
 begin_include
@@ -4199,14 +4199,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_drop_pattern (GtkWidget * widget,GPattern * pattern,gpointer data)
+DECL|function|gdisplay_drop_pattern (GtkWidget * widget,GimpPattern * pattern,gpointer data)
 name|gdisplay_drop_pattern
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 parameter_list|,

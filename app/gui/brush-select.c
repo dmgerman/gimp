@@ -1718,7 +1718,7 @@ operator|*
 operator|)
 name|gimp_list_get_child_by_name
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|,
 name|init_name
 argument_list|)
@@ -3066,7 +3066,7 @@ name|gimp_container_add_handler
 argument_list|(
 name|GIMP_CONTAINER
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|)
 argument_list|,
 literal|"name_changed"
@@ -3087,7 +3087,7 @@ name|gimp_container_add_handler
 argument_list|(
 name|GIMP_CONTAINER
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|)
 argument_list|,
 literal|"dirty"
@@ -3104,7 +3104,7 @@ name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|)
 argument_list|,
 literal|"add"
@@ -3121,7 +3121,7 @@ name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|)
 argument_list|,
 literal|"remove"
@@ -3329,7 +3329,7 @@ name|gimp_container_remove_handler
 argument_list|(
 name|GIMP_CONTAINER
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|)
 argument_list|,
 name|bsp
@@ -3341,7 +3341,7 @@ name|gimp_container_remove_handler
 argument_list|(
 name|GIMP_CONTAINER
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|)
 argument_list|,
 name|bsp
@@ -3353,7 +3353,7 @@ name|gtk_signal_disconnect_by_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|)
 argument_list|,
 name|bsp
@@ -4322,7 +4322,7 @@ name|index
 operator|=
 name|gimp_list_get_child_index
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -4565,7 +4565,7 @@ name|index
 operator|=
 name|gimp_list_get_child_index
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -5176,7 +5176,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae7334e0108
+DECL|struct|__anon291e751e0108
 block|{
 DECL|member|bsp
 name|BrushSelect
@@ -7237,7 +7237,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|brush_list
+name|global_brush_list
 operator|==
 name|NULL
 operator|||
@@ -7245,7 +7245,7 @@ name|gimp_container_num_children
 argument_list|(
 name|GIMP_CONTAINER
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|)
 argument_list|)
 operator|==
@@ -7289,7 +7289,7 @@ name|gimp_container_foreach
 argument_list|(
 name|GIMP_CONTAINER
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|)
 argument_list|,
 operator|(
@@ -7976,7 +7976,7 @@ name|gimp_container_num_children
 argument_list|(
 name|GIMP_CONTAINER
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|)
 argument_list|)
 operator|+
@@ -8217,7 +8217,7 @@ name|gimp_container_num_children
 argument_list|(
 name|GIMP_CONTAINER
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|)
 argument_list|)
 operator|+
@@ -8356,7 +8356,7 @@ name|GIMP_BRUSH
 argument_list|(
 name|gimp_list_get_child_by_index
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|,
 name|index
 argument_list|)
@@ -8432,7 +8432,7 @@ operator|*
 operator|)
 name|gimp_list_get_child_by_index
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|,
 name|index
 argument_list|)
@@ -8829,7 +8829,7 @@ name|index
 operator|=
 name|gimp_list_get_child_index
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -9250,7 +9250,7 @@ name|gimp_container_add
 argument_list|(
 name|GIMP_CONTAINER
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|)
 argument_list|,
 name|GIMP_OBJECT
@@ -9464,7 +9464,7 @@ name|gimp_container_remove
 argument_list|(
 name|GIMP_CONTAINER
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|)
 argument_list|,
 name|GIMP_OBJECT

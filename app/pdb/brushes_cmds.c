@@ -562,7 +562,7 @@ name|object
 operator|=
 name|gimp_list_get_child_by_name
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|,
 name|name
 argument_list|)
@@ -1396,7 +1396,7 @@ operator|*
 argument_list|,
 name|GIMP_CONTAINER
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|)
 operator|->
 name|num_children
@@ -1409,7 +1409,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|)
 operator|->
 name|list
@@ -1473,7 +1473,7 @@ name|pdb_int
 operator|=
 name|GIMP_CONTAINER
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|)
 operator|->
 name|num_children
@@ -1655,7 +1655,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|)
 operator|->
 name|list

@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppattern.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -91,12 +97,6 @@ begin_include
 include|#
 directive|include
 file|"paint_funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"patterns.h"
 end_include
 
 begin_include
@@ -1601,7 +1601,7 @@ decl_stmt|,
 modifier|*
 name|d2
 decl_stmt|;
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 decl_stmt|;

@@ -84,13 +84,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint_funcs.h"
+file|"gimppattern.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"patterns.h"
+file|"paint_funcs.h"
 end_include
 
 begin_include
@@ -184,7 +184,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad5ca500103
+DECL|enum|__anon280018390103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -381,7 +381,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 parameter_list|,
@@ -1943,23 +1943,21 @@ name|int
 name|offset_y
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|src_gimage
 init|=
 name|NULL
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|s
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|d
 decl_stmt|;
@@ -1971,14 +1969,13 @@ name|TempBuf
 modifier|*
 name|area
 decl_stmt|;
-name|void
-modifier|*
+name|gpointer
 name|pr
 decl_stmt|;
-name|int
+name|gint
 name|y
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -1987,7 +1984,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|has_alpha
 init|=
 operator|-
@@ -1998,7 +1995,7 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 decl_stmt|;
@@ -2962,7 +2959,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|clone_line_pattern (GImage * dest,GimpDrawable * drawable,GPattern * pattern,unsigned char * d,int x,int y,int bytes,int width)
+DECL|function|clone_line_pattern (GImage * dest,GimpDrawable * drawable,GimpPattern * pattern,unsigned char * d,int x,int y,int bytes,int width)
 name|clone_line_pattern
 parameter_list|(
 name|GImage
@@ -2973,7 +2970,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 parameter_list|,

@@ -184,6 +184,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPattern
+typedef|typedef
+name|struct
+name|_GimpPattern
+name|GimpPattern
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPalette
 typedef|typedef
 name|struct
@@ -323,15 +332,6 @@ typedef|typedef
 name|struct
 name|_GimpProgress
 name|GimpProgress
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GPattern
-typedef|typedef
-name|struct
-name|_GPattern
-name|GPattern
 typedef|;
 end_typedef
 

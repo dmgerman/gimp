@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppattern.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gradient.h"
 end_include
 
@@ -693,7 +699,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon290a3ef00103
+DECL|enum|__anon2949ba650103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -1796,23 +1802,23 @@ case|case
 name|GCP_PATTERN
 case|:
 block|{
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 init|=
-operator|(
-name|GPattern
-operator|*
-operator|)
-operator|(
+name|GIMP_PATTERN
+argument_list|(
 name|gcp
 operator|->
 name|data
-operator|)
+argument_list|)
 decl_stmt|;
 name|name
 operator|=
+name|GIMP_OBJECT
+argument_list|(
 name|pattern
+argument_list|)
 operator|->
 name|name
 expr_stmt|;
@@ -2049,7 +2055,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon290a3ef00208
+DECL|struct|__anon2949ba650208
 typedef|typedef
 struct|struct
 block|{
@@ -2311,17 +2317,16 @@ case|case
 name|GCP_PATTERN
 case|:
 block|{
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 init|=
-operator|(
-name|GPattern
-operator|*
-operator|)
+name|GIMP_PATTERN
+argument_list|(
 name|gcp
 operator|->
 name|data
+argument_list|)
 decl_stmt|;
 name|gcp
 operator|->
@@ -4018,14 +4023,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|draw_pattern (GtkPreview * preview,GPattern * pattern,gint width,gint height)
+DECL|function|draw_pattern (GtkPreview * preview,GimpPattern * pattern,gint width,gint height)
 name|draw_pattern
 parameter_list|(
 name|GtkPreview
 modifier|*
 name|preview
 parameter_list|,
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 parameter_list|,
@@ -4292,7 +4297,7 @@ modifier|*
 name|gcp
 parameter_list|)
 block|{
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 decl_stmt|;
@@ -4311,15 +4316,12 @@ argument_list|)
 expr_stmt|;
 name|pattern
 operator|=
-operator|(
-name|GPattern
-operator|*
-operator|)
-operator|(
+name|GIMP_PATTERN
+argument_list|(
 name|gcp
 operator|->
 name|data
-operator|)
+argument_list|)
 expr_stmt|;
 name|draw_pattern
 argument_list|(
@@ -4353,7 +4355,7 @@ modifier|*
 name|gcp
 parameter_list|)
 block|{
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 decl_stmt|;
@@ -4372,15 +4374,12 @@ argument_list|)
 expr_stmt|;
 name|pattern
 operator|=
-operator|(
-name|GPattern
-operator|*
-operator|)
-operator|(
+name|GIMP_PATTERN
+argument_list|(
 name|gcp
 operator|->
 name|data
-operator|)
+argument_list|)
 expr_stmt|;
 name|draw_pattern
 argument_list|(

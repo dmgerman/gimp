@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontextpreview.h"
 end_include
 
@@ -90,7 +96,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontext.h"
+file|"gimppattern.h"
 end_include
 
 begin_include
@@ -503,7 +509,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 parameter_list|,
@@ -1914,7 +1920,7 @@ operator|*
 operator|)
 name|gimp_list_get_child_by_name
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|,
 name|brush_name
 argument_list|)
@@ -1969,15 +1975,19 @@ operator|&
 name|DEVICE_PATTERN
 condition|)
 block|{
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 decl_stmt|;
 name|pattern
 operator|=
-name|pattern_list_get_pattern
+operator|(
+name|GimpPattern
+operator|*
+operator|)
+name|gimp_list_get_child_by_name
 argument_list|(
-name|pattern_list
+name|global_pattern_list
 argument_list|,
 name|pattern_name
 argument_list|)
@@ -2873,11 +2883,14 @@ name|fp
 argument_list|,
 literal|"\n    (pattern \"%s\")"
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|gimp_context_get_pattern
 argument_list|(
 name|device_info
 operator|->
 name|context
+argument_list|)
 argument_list|)
 operator|->
 name|name
@@ -5345,14 +5358,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|device_status_drop_pattern (GtkWidget * widget,GPattern * pattern,gpointer data)
+DECL|function|device_status_drop_pattern (GtkWidget * widget,GimpPattern * pattern,gpointer data)
 name|device_status_drop_pattern
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 parameter_list|,

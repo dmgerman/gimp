@@ -18,7 +18,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2ce0280103
+DECL|enum|__anon2abe26c60103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_URI_LIST
 name|GIMP_DND_TYPE_URI_LIST
@@ -206,7 +206,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2ce0280203
+DECL|enum|__anon2abe26c60203
 block|{
 DECL|enumerator|GIMP_DROP_NONE
 name|GIMP_DROP_NONE
@@ -405,7 +405,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 parameter_list|,
@@ -418,7 +418,7 @@ end_typedef
 begin_typedef
 DECL|typedef|GimpDndDragPatternFunc
 typedef|typedef
-name|GPattern
+name|GimpPattern
 modifier|*
 function_decl|(
 modifier|*

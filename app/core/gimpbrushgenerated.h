@@ -186,7 +186,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|file_name
+name|directory
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -77,7 +77,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28792ebd0103
+DECL|enum|__anon274edbf70103
 block|{
 DECL|enumerator|GIMP_CONTEXT_ARG_IMAGE
 name|GIMP_CONTEXT_ARG_IMAGE
@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28792ebd0203
+DECL|enum|__anon274edbf70203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -294,7 +294,7 @@ modifier|*
 name|brush_name
 decl_stmt|;
 DECL|member|pattern
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 decl_stmt|;
@@ -462,7 +462,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 parameter_list|)
@@ -1141,7 +1141,7 @@ comment|/*  pattern  */
 end_comment
 
 begin_function_decl
-name|GPattern
+name|GimpPattern
 modifier|*
 name|gimp_context_get_pattern
 parameter_list|(
@@ -1160,7 +1160,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 parameter_list|)
@@ -1183,17 +1183,6 @@ name|void
 name|gimp_context_refresh_patterns
 parameter_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_context_update_patterns
-parameter_list|(
-name|GPattern
-modifier|*
-name|pattern
 parameter_list|)
 function_decl|;
 end_function_decl

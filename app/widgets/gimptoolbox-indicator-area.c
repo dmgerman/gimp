@@ -261,14 +261,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|pattern_area_update (GimpContext * context,GPattern * pattern,gpointer data)
+DECL|function|pattern_area_update (GimpContext * context,GimpPattern * pattern,gpointer data)
 name|pattern_area_update
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 parameter_list|,
@@ -316,14 +316,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|pattern_preview_drop_pattern (GtkWidget * widget,GPattern * pattern,gpointer data)
+DECL|function|pattern_preview_drop_pattern (GtkWidget * widget,GimpPattern * pattern,gpointer data)
 name|pattern_preview_drop_pattern
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 parameter_list|,

@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppattern.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -154,7 +160,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279f969a0103
+DECL|enum|__anon2b61959e0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR
@@ -2460,7 +2466,7 @@ operator|*
 operator|)
 name|gimp_list_get_child_by_name
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|,
 name|name
 argument_list|)
@@ -2587,7 +2593,7 @@ name|GtkWidget
 modifier|*
 name|preview
 decl_stmt|;
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 decl_stmt|;
@@ -2679,7 +2685,7 @@ modifier|*
 name|length
 parameter_list|)
 block|{
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 decl_stmt|;
@@ -2714,7 +2720,10 @@ name|name
 operator|=
 name|g_strdup
 argument_list|(
+name|GIMP_OBJECT
+argument_list|(
 name|pattern
+argument_list|)
 operator|->
 name|name
 argument_list|)
@@ -2771,7 +2780,7 @@ name|gint
 name|length
 parameter_list|)
 block|{
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 decl_stmt|;
@@ -2828,9 +2837,13 @@ expr_stmt|;
 else|else
 name|pattern
 operator|=
-name|pattern_list_get_pattern
+operator|(
+name|GimpPattern
+operator|*
+operator|)
+name|gimp_list_get_child_by_name
 argument_list|(
-name|pattern_list
+name|global_pattern_list
 argument_list|,
 name|name
 argument_list|)

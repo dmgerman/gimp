@@ -74,7 +74,7 @@ name|GimpContextPreviewClass
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6ff4640103
+DECL|enum|__anon29aa8dec0103
 block|{
 DECL|enumerator|GCP_BRUSH
 name|GCP_BRUSH
@@ -238,7 +238,7 @@ name|GtkPreview
 modifier|*
 name|preview
 parameter_list|,
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 parameter_list|,

@@ -897,7 +897,7 @@ name|object
 init|=
 name|gimp_list_get_child_by_name
 argument_list|(
-name|brush_list
+name|global_brush_list
 argument_list|,
 name|brush_name
 argument_list|)

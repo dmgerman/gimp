@@ -166,7 +166,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GPattern
+name|GimpPattern
 modifier|*
 name|pattern
 parameter_list|,
