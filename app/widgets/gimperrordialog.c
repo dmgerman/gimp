@@ -911,10 +911,6 @@ literal|"stock_id"
 argument_list|,
 name|stock_id
 argument_list|,
-literal|"border_width"
-argument_list|,
-literal|12
-argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;

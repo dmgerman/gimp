@@ -616,6 +616,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpMessageDialog
+typedef|typedef
+name|struct
+name|_GimpMessageDialog
+name|GimpMessageDialog
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpProgressDialog
 typedef|typedef
 name|struct

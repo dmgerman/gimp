@@ -49,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon278a69530103
+DECL|enum|__anon27389d400103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -469,6 +469,16 @@ decl_stmt|;
 name|gtk_box_set_spacing
 argument_list|(
 name|GTK_BOX
+argument_list|(
+name|box
+argument_list|)
+argument_list|,
+literal|12
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
 argument_list|(
 name|box
 argument_list|)
