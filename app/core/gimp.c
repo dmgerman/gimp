@@ -255,7 +255,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c74e2790103
+DECL|enum|__anon2bb0b6110103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -4364,7 +4364,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_menus_create_entry (Gimp * gimp,PlugInProcDef * proc_def,const gchar * locale_domain,const gchar * help_domain)
+DECL|function|gimp_menus_create_entry (Gimp * gimp,PlugInProcDef * proc_def)
 name|gimp_menus_create_entry
 parameter_list|(
 name|Gimp
@@ -4374,16 +4374,6 @@ parameter_list|,
 name|PlugInProcDef
 modifier|*
 name|proc_def
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|locale_domain
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|help_domain
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -4414,10 +4404,6 @@ argument_list|(
 name|gimp
 argument_list|,
 name|proc_def
-argument_list|,
-name|locale_domain
-argument_list|,
-name|help_domain
 argument_list|)
 expr_stmt|;
 block|}
