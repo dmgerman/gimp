@@ -125,7 +125,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be3527a0103
+DECL|enum|__anon2c0b715f0103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -142,7 +142,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be3527a0208
+DECL|struct|__anon2c0b715f0208
 block|{
 DECL|member|interlace
 name|gint
@@ -3453,7 +3453,7 @@ condition|)
 block|{
 name|layer_name
 operator|=
-name|gimp_layer_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|layers
 index|[
@@ -3485,7 +3485,7 @@ name|default_dispose
 expr_stmt|;
 name|layer_name
 operator|=
-name|gimp_layer_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|layers
 index|[

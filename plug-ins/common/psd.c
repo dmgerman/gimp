@@ -131,7 +131,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb16b780103
+DECL|enum|__anon27e8e7340103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -319,7 +319,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb16b780208
+DECL|struct|__anon27e8e7340208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -568,7 +568,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bb16b780308
+DECL|struct|__anon27e8e7340308
 block|{
 DECL|member|signature
 name|gchar
@@ -6689,7 +6689,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_channel_set_visible
+name|gimp_drawable_set_visible
 argument_list|(
 name|channel_ID
 argument_list|,
@@ -6940,7 +6940,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_channel_set_visible
+name|gimp_drawable_set_visible
 argument_list|(
 name|channel_ID
 argument_list|,
@@ -8559,7 +8559,7 @@ operator|->
 name|protecttrans
 argument_list|)
 expr_stmt|;
-name|gimp_layer_set_visible
+name|gimp_drawable_set_visible
 argument_list|(
 name|layer_ID
 argument_list|,

@@ -902,7 +902,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abb80870108
+DECL|struct|__anon29d3be4b0108
 block|{
 DECL|member|gridspacing
 name|void
@@ -15777,7 +15777,7 @@ name|old_drawable
 expr_stmt|;
 return|return;
 block|}
-name|gimp_layer_set_name
+name|gimp_drawable_set_name
 argument_list|(
 name|gfig_drawable
 argument_list|,

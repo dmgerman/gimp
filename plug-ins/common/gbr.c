@@ -163,7 +163,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293766270108
+DECL|struct|__anon27bba9e80108
 block|{
 DECL|member|description
 name|gchar
@@ -811,7 +811,7 @@ name|info
 operator|.
 name|description
 argument_list|,
-name|gimp_drawable_name
+name|gimp_drawable_get_name
 argument_list|(
 name|drawable_ID
 argument_list|)
@@ -1796,7 +1796,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon29376627020a
+DECL|union|__anon27bba9e8020a
 block|{
 DECL|member|u
 name|guint16

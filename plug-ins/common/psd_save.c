@@ -3328,7 +3328,7 @@ index|[
 name|i
 index|]
 operator|=
-name|gimp_channel_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|PSDImageData
 operator|.
@@ -4972,7 +4972,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_layer_get_visible
+name|gimp_drawable_get_visible
 argument_list|(
 name|PSDImageData
 operator|.
@@ -5068,7 +5068,7 @@ argument_list|)
 decl_stmt|;
 name|layerName
 operator|=
-name|gimp_layer_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|PSDImageData
 operator|.

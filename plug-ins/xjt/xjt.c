@@ -243,7 +243,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0598520103
+DECL|enum|__anon2bbc6bc00103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -443,7 +443,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0598520203
+DECL|enum|__anon2bbc6bc00203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -503,7 +503,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0598520303
+DECL|enum|__anon2bbc6bc00303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -533,7 +533,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0598520403
+DECL|enum|__anon2bbc6bc00403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -555,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0598520503
+DECL|enum|__anon2bbc6bc00503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -575,7 +575,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0598520603
+DECL|enum|__anon2bbc6bc00603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -610,7 +610,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0598520703
+DECL|enum|__anon2bbc6bc00703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -735,7 +735,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0598520808
+DECL|struct|__anon2bbc6bc00808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -771,7 +771,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0598520908
+DECL|struct|__anon2bbc6bc00908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -820,7 +820,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0598520a08
+DECL|struct|__anon2bbc6bc00a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -857,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0598520b08
+DECL|struct|__anon2bbc6bc00b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -907,7 +907,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0598520c08
+DECL|struct|__anon2bbc6bc00c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -981,7 +981,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0598520d08
+DECL|struct|__anon2bbc6bc00d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1066,7 +1066,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0598520e08
+DECL|struct|__anon2bbc6bc00e08
 block|{
 DECL|member|position
 name|gint32
@@ -1090,7 +1090,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0598520f08
+DECL|struct|__anon2bbc6bc00f08
 block|{
 DECL|member|version
 name|gchar
@@ -6270,7 +6270,7 @@ name|int_val1
 operator|=
 name|p_invert
 argument_list|(
-name|gimp_layer_get_visible
+name|gimp_drawable_get_visible
 argument_list|(
 name|layer_id
 argument_list|)
@@ -6432,7 +6432,7 @@ name|l_param
 operator|.
 name|int_val1
 operator|=
-name|gimp_layer_get_tattoo
+name|gimp_drawable_get_tattoo
 argument_list|(
 name|layer_id
 argument_list|)
@@ -6453,7 +6453,7 @@ name|l_param
 operator|.
 name|string_val
 operator|=
-name|gimp_layer_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|layer_id
 argument_list|)
@@ -6661,7 +6661,7 @@ name|int_val1
 operator|=
 name|p_invert
 argument_list|(
-name|gimp_channel_get_visible
+name|gimp_drawable_get_visible
 argument_list|(
 name|channel_id
 argument_list|)
@@ -6792,7 +6792,7 @@ name|l_param
 operator|.
 name|int_val1
 operator|=
-name|gimp_channel_get_tattoo
+name|gimp_drawable_get_tattoo
 argument_list|(
 name|channel_id
 argument_list|)
@@ -6813,7 +6813,7 @@ name|l_param
 operator|.
 name|string_val
 operator|=
-name|gimp_channel_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|channel_id
 argument_list|)
@@ -14773,7 +14773,7 @@ operator|->
 name|offy
 argument_list|)
 expr_stmt|;
-name|gimp_layer_set_visible
+name|gimp_drawable_set_visible
 argument_list|(
 name|l_layer_id
 argument_list|,
@@ -14809,7 +14809,7 @@ operator|>=
 literal|0
 condition|)
 block|{
-name|gimp_layer_set_tattoo
+name|gimp_drawable_set_tattoo
 argument_list|(
 name|l_layer_id
 argument_list|,
@@ -15000,7 +15000,7 @@ operator|>=
 literal|0
 condition|)
 block|{
-name|gimp_channel_set_tattoo
+name|gimp_drawable_set_tattoo
 argument_list|(
 name|l_channel_id
 argument_list|,
@@ -15193,7 +15193,7 @@ operator|>=
 literal|0
 condition|)
 block|{
-name|gimp_channel_set_tattoo
+name|gimp_drawable_set_tattoo
 argument_list|(
 name|l_channel_id
 argument_list|,
@@ -15249,7 +15249,7 @@ literal|0
 argument_list|)
 expr_stmt|;
 comment|/* adjust offsets and other channelproperties */
-name|gimp_channel_set_visible
+name|gimp_drawable_set_visible
 argument_list|(
 name|l_channel_id
 argument_list|,

@@ -620,7 +620,7 @@ condition|)
 block|{
 name|name
 operator|=
-name|gimp_layer_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|layers
 index|[
@@ -948,7 +948,7 @@ condition|)
 block|{
 name|name
 operator|=
-name|gimp_channel_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|channels
 index|[
@@ -1287,7 +1287,7 @@ condition|)
 block|{
 name|name
 operator|=
-name|gimp_layer_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|layers
 index|[
@@ -1398,7 +1398,7 @@ condition|)
 block|{
 name|name
 operator|=
-name|gimp_channel_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|channels
 index|[

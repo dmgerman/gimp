@@ -2056,7 +2056,7 @@ name|MNG_ITERACTION_LASTFRAME
 argument_list|,
 name|parse_ms_tag_from_layer_name
 argument_list|(
-name|gimp_layer_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|layers
 index|[
@@ -2117,7 +2117,7 @@ name|MNG_ITERACTION_LASTFRAME
 argument_list|,
 name|parse_ms_tag_from_layer_name
 argument_list|(
-name|gimp_layer_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|layers
 index|[
@@ -2402,7 +2402,7 @@ control|)
 block|{
 name|layer_name
 operator|=
-name|gimp_layer_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|layers
 index|[

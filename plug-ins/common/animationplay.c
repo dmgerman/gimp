@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274efb130103
+DECL|enum|__anon27b45d470103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -6053,7 +6053,7 @@ name|disposal
 decl_stmt|;
 name|layer_name
 operator|=
-name|gimp_layer_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|layers
 index|[
@@ -6109,7 +6109,7 @@ literal|0
 decl_stmt|;
 name|layer_name
 operator|=
-name|gimp_layer_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|layers
 index|[

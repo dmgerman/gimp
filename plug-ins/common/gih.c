@@ -179,7 +179,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27dd6ee90108
+DECL|struct|__anon29d49b540108
 block|{
 DECL|member|spacing
 name|guint
@@ -226,7 +226,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dd6ee90208
+DECL|struct|__anon29d49b540208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -1059,7 +1059,7 @@ condition|)
 block|{
 name|layer_name
 operator|=
-name|gimp_layer_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|layer_ID
 index|[
@@ -6309,7 +6309,7 @@ argument_list|,
 operator|&
 name|pixel_rgn
 argument_list|,
-name|gimp_drawable_name
+name|gimp_drawable_get_name
 argument_list|(
 name|layer_ID
 index|[

@@ -47,6 +47,76 @@ define|#
 directive|define
 name|gimp_crop
 value|gimp_image_crop
+DECL|macro|gimp_channel_get_name
+define|#
+directive|define
+name|gimp_channel_get_name
+value|gimp_drawable_get_name
+DECL|macro|gimp_channel_set_name
+define|#
+directive|define
+name|gimp_channel_set_name
+value|gimp_drawable_set_name
+DECL|macro|gimp_channel_get_visible
+define|#
+directive|define
+name|gimp_channel_get_visible
+value|gimp_drawable_get_visible
+DECL|macro|gimp_channel_set_visible
+define|#
+directive|define
+name|gimp_channel_set_visible
+value|gimp_drawable_set_visible
+DECL|macro|gimp_channel_get_tattoo
+define|#
+directive|define
+name|gimp_channel_get_tattoo
+value|gimp_drawable_get_tattoo
+DECL|macro|gimp_channel_set_tattoo
+define|#
+directive|define
+name|gimp_channel_set_tattoo
+value|gimp_drawable_set_tattoo
+DECL|macro|gimp_layer_get_name
+define|#
+directive|define
+name|gimp_layer_get_name
+value|gimp_drawable_get_name
+DECL|macro|gimp_layer_set_name
+define|#
+directive|define
+name|gimp_layer_set_name
+value|gimp_drawable_set_name
+DECL|macro|gimp_layer_get_visible
+define|#
+directive|define
+name|gimp_layer_get_visible
+value|gimp_drawable_get_visible
+DECL|macro|gimp_layer_set_visible
+define|#
+directive|define
+name|gimp_layer_set_visible
+value|gimp_drawable_set_visible
+DECL|macro|gimp_layer_get_tattoo
+define|#
+directive|define
+name|gimp_layer_get_tattoo
+value|gimp_drawable_get_tattoo
+DECL|macro|gimp_layer_set_tattoo
+define|#
+directive|define
+name|gimp_layer_set_tattoo
+value|gimp_drawable_set_tattoo
+DECL|macro|gimp_drawable_name
+define|#
+directive|define
+name|gimp_drawable_name
+value|gimp_drawable_get_name
+DECL|macro|gimp_drawable_visible
+define|#
+directive|define
+name|gimp_drawable_visible
+value|gimp_drawable_get_visible
 DECL|macro|gimp_gradients_get_active
 define|#
 directive|define
@@ -202,7 +272,7 @@ directive|define
 name|GIMP_IS_FILE_SELECTION
 value|GIMP_IS_FILE_ENTRY
 name|enum
-DECL|enum|__anon29ffb9760103
+DECL|enum|__anon28a77c2d0103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -234,7 +304,7 @@ end_decl_stmt
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon29ffb9760203
+DECL|enum|__anon28a77c2d0203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -261,7 +331,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ffb9760303
+DECL|enum|__anon28a77c2d0303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -288,7 +358,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ffb9760403
+DECL|enum|__anon28a77c2d0403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -320,7 +390,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ffb9760503
+DECL|enum|__anon28a77c2d0503
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -337,7 +407,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ffb9760603
+DECL|enum|__anon28a77c2d0603
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -354,7 +424,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ffb9760703
+DECL|enum|__anon28a77c2d0703
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS
@@ -371,7 +441,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ffb9760803
+DECL|enum|__anon28a77c2d0803
 block|{
 DECL|enumerator|GIMP_HORIZONTAL
 name|GIMP_HORIZONTAL
@@ -393,7 +463,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ffb9760903
+DECL|enum|__anon28a77c2d0903
 block|{
 DECL|enumerator|GIMP_LINEAR
 name|GIMP_LINEAR

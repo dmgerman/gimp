@@ -738,7 +738,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dfe19a0108
+DECL|struct|__anon296d347a0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -792,7 +792,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dfe19a0208
+DECL|struct|__anon296d347a0208
 block|{
 DECL|member|y
 name|gint32
@@ -14273,7 +14273,7 @@ argument_list|)
 expr_stmt|;
 name|l_visible
 operator|=
-name|gimp_layer_get_visible
+name|gimp_drawable_get_visible
 argument_list|(
 name|src_drawable
 operator|->
@@ -14282,7 +14282,7 @@ argument_list|)
 expr_stmt|;
 name|l_name2
 operator|=
-name|gimp_layer_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|src_drawable
 operator|->
@@ -14397,7 +14397,7 @@ name|stack_position
 argument_list|)
 expr_stmt|;
 comment|/* copy visiblity state */
-name|gimp_layer_set_visible
+name|gimp_drawable_set_visible
 argument_list|(
 name|l_new_layer_id
 argument_list|,
@@ -14918,10 +14918,6 @@ name|l_outline
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* end p_bender_calculate_iter_curve */
-end_comment
 
 begin_comment
 comment|/* ============================================================================  * p_vertical_bend  * ============================================================================  */
@@ -16592,14 +16588,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_layer_set_visible
+name|gimp_drawable_set_visible
 argument_list|(
 name|l_tmp_layer_id
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_layer_set_name
+name|gimp_drawable_set_name
 argument_list|(
 name|l_tmp_layer_id
 argument_list|,
@@ -17037,10 +17033,6 @@ name|drawable_id
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* end p_main_bend */
-end_comment
 
 end_unit
 

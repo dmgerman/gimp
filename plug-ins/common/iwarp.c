@@ -129,7 +129,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3dc3e50103
+DECL|enum|__anon27ea548e0103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3dc3e50208
+DECL|struct|__anon27ea548e0208
 block|{
 DECL|member|run
 name|gboolean
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3dc3e50308
+DECL|struct|__anon27ea548e0308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -4051,7 +4051,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|gimp_layer_set_name
+name|gimp_drawable_set_name
 argument_list|(
 name|animlayers
 index|[
@@ -4225,7 +4225,7 @@ operator|+
 name|animate_num_frames
 argument_list|)
 expr_stmt|;
-name|gimp_layer_set_name
+name|gimp_drawable_set_name
 argument_list|(
 name|layerID
 argument_list|,
