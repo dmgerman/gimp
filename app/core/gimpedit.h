@@ -17,6 +17,7 @@ name|__GIMP_EDIT_H__
 end_define
 
 begin_function_decl
+specifier|const
 name|GimpBuffer
 modifier|*
 name|gimp_edit_cut
@@ -33,6 +34,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|GimpBuffer
 modifier|*
 name|gimp_edit_copy

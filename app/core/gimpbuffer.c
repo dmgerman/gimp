@@ -1250,10 +1250,7 @@ name|tiles
 expr_stmt|;
 block|}
 return|return
-name|GIMP_BUFFER
-argument_list|(
 name|buffer
-argument_list|)
 return|;
 block|}
 end_function

@@ -36,7 +36,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/* TODO: the GimpLutFunc should really be passed the ColorModel of the region,  * not just the number of channels  */
+comment|/* TODO: the GimpLutFunc should really be passed the ColorModel of the  * region, not just the number of channels  */
 end_comment
 
 begin_comment

@@ -124,6 +124,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_function
+specifier|const
 name|GimpBuffer
 modifier|*
 DECL|function|gimp_edit_cut (GimpImage * gimage,GimpDrawable * drawable)
@@ -313,24 +314,25 @@ name|cropped_cut
 argument_list|,
 literal|"Global Buffer"
 argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|gimp_buffer_new
-argument_list|(
-name|cropped_cut
-argument_list|,
-literal|"Cut Pixels"
-argument_list|,
 name|FALSE
 argument_list|)
+expr_stmt|;
+return|return
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|global_buffer
+return|;
+block|}
+return|return
+name|NULL
 return|;
 block|}
 end_function
 
 begin_function
+specifier|const
 name|GimpBuffer
 modifier|*
 DECL|function|gimp_edit_copy (GimpImage * gimage,GimpDrawable * drawable)
@@ -520,19 +522,19 @@ name|cropped_copy
 argument_list|,
 literal|"Global Buffer"
 argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|gimp_buffer_new
-argument_list|(
-name|cropped_copy
-argument_list|,
-literal|"Copied Pixels"
-argument_list|,
 name|FALSE
 argument_list|)
+expr_stmt|;
+return|return
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|global_buffer
+return|;
+block|}
+return|return
+name|NULL
 return|;
 block|}
 end_function

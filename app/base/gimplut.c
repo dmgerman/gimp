@@ -124,6 +124,11 @@ operator|->
 name|luts
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|lut
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -304,6 +309,10 @@ block|}
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/*  see comment in gimplut.h  */
+end_comment
 
 begin_function
 name|void

@@ -220,6 +220,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1317,13 +1318,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|file_new_template_callback (GtkWidget * widget,gchar * name,gpointer data)
+DECL|function|file_new_template_callback (GtkWidget * widget,const gchar * name,gpointer data)
 name|file_new_template_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name

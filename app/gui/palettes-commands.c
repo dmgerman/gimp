@@ -112,6 +112,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|palette_name
@@ -258,13 +259,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palettes_merge_palettes_callback (GtkWidget * widget,gchar * palette_name,gpointer data)
+DECL|function|palettes_merge_palettes_callback (GtkWidget * widget,const gchar * palette_name,gpointer data)
 name|palettes_merge_palettes_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|palette_name

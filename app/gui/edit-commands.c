@@ -170,6 +170,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -189,6 +190,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -981,6 +983,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+specifier|const
 name|GimpBuffer
 modifier|*
 name|cut_buffer
@@ -1076,13 +1079,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|copy_named_buffer_callback (GtkWidget * widget,gchar * name,gpointer data)
+DECL|function|copy_named_buffer_callback (GtkWidget * widget,const gchar * name,gpointer data)
 name|copy_named_buffer_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1091,6 +1095,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+specifier|const
 name|GimpBuffer
 modifier|*
 name|copy_buffer
