@@ -44,8 +44,13 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
+name|batch_interpreter
+parameter_list|,
+specifier|const
+name|gchar
 modifier|*
-name|batch_cmds
+modifier|*
+name|batch_commands
 parameter_list|)
 function_decl|;
 end_function_decl
