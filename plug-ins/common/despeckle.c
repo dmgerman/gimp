@@ -2566,6 +2566,7 @@ operator|++
 expr_stmt|;
 block|}
 block|}
+block|}
 if|if
 condition|(
 name|count
@@ -2631,7 +2632,6 @@ argument_list|,
 name|bpp
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 comment|/*            * Check the histogram and adjust the diameter accordingly...            */
 if|if
