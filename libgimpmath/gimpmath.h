@@ -139,7 +139,7 @@ parameter_list|(
 name|x
 parameter_list|)
 value|((x) * (x))
-comment|/* limit a (0->511) int to 255 */
+comment|/* Limit a (0->511) int to 255 */
 DECL|macro|MAX255 (a)
 define|#
 directive|define
@@ -148,8 +148,7 @@ parameter_list|(
 name|a
 parameter_list|)
 value|((a) | (((a)& 256) - (((a)& 256)>> 8)))
-comment|/* clamp a>>int32<<-range int between 0 and 255 inclusive */
-comment|/* broken! -> #define CLAMP0255(a)  ((a& 0xFFFFFF00)? (~(a>>31)) : a) */
+comment|/* Clamp a>>int32<<-range int between 0 and 255 inclusive */
 DECL|macro|CLAMP0255 (a)
 define|#
 directive|define
@@ -174,65 +173,6 @@ parameter_list|(
 name|angle
 parameter_list|)
 value|((angle) * 360.0 / (2.0 * G_PI))
-ifdef|#
-directive|ifdef
-name|HAVE_FINITE
-DECL|macro|FINITE (x)
-define|#
-directive|define
-name|FINITE
-parameter_list|(
-name|x
-parameter_list|)
-value|finite(x)
-else|#
-directive|else
-ifdef|#
-directive|ifdef
-name|HAVE_ISFINITE
-define|#
-directive|define
-name|FINITE
-parameter_list|(
-name|x
-parameter_list|)
-value|isfinite(x)
-else|#
-directive|else
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-define|#
-directive|define
-name|FINITE
-parameter_list|(
-name|x
-parameter_list|)
-value|_finite(x)
-else|#
-directive|else
-ifdef|#
-directive|ifdef
-name|__EMX__
-define|#
-directive|define
-name|FINITE
-parameter_list|(
-name|x
-parameter_list|)
-value|isfinite(x)
-endif|#
-directive|endif
-comment|/* __EMX__ */
-endif|#
-directive|endif
-comment|/* G_OS_WIN32 */
-endif|#
-directive|endif
-comment|/* HAVE_ISFINITE */
-endif|#
-directive|endif
-comment|/* HAVE_FINITE */
 name|G_END_DECLS
 end_expr_stmt
 

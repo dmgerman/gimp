@@ -12912,6 +12912,70 @@ condition|(
 name|success
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|HAVE_FINITE
+DECL|macro|FINITE (x)
+define|#
+directive|define
+name|FINITE
+parameter_list|(
+name|x
+parameter_list|)
+value|finite(x)
+else|#
+directive|else
+ifdef|#
+directive|ifdef
+name|HAVE_ISFINITE
+define|#
+directive|define
+name|FINITE
+parameter_list|(
+name|x
+parameter_list|)
+value|isfinite(x)
+else|#
+directive|else
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+define|#
+directive|define
+name|FINITE
+parameter_list|(
+name|x
+parameter_list|)
+value|_finite(x)
+else|#
+directive|else
+ifdef|#
+directive|ifdef
+name|__EMX__
+define|#
+directive|define
+name|FINITE
+parameter_list|(
+name|x
+parameter_list|)
+value|isfinite(x)
+else|#
+directive|else
+error|#
+directive|error
+literal|"no FINITE() implementation available?!"
+endif|#
+directive|endif
+comment|/* __EMX__ */
+endif|#
+directive|endif
+comment|/* G_OS_WIN32 */
+endif|#
+directive|endif
+comment|/* HAVE_ISFINITE */
+endif|#
+directive|endif
+comment|/* HAVE_FINITE */
 if|if
 condition|(
 operator|!

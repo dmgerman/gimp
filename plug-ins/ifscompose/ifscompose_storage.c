@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -32,7 +38,7 @@ file|"ifscompose.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2c6208df0103
+DECL|enum|__anon29c7edc00103
 enum|enum
 block|{
 DECL|enumerator|TOKEN_INVALID
@@ -118,7 +124,7 @@ end_enum
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c6208df0208
+DECL|struct|__anon29c7edc00208
 block|{
 DECL|member|name
 name|gchar

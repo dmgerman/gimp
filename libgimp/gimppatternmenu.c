@@ -6,7 +6,13 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"string.h"
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<string.h>
 end_include
 
 begin_ifdef
