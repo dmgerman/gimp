@@ -214,7 +214,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ad62b80108
+DECL|struct|__anon2bc19bdc0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -241,7 +241,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ad62b80203
+DECL|enum|__anon2bc19bdc0203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -364,7 +364,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ad62b80303
+DECL|enum|__anon2bc19bdc0303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -503,7 +503,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ad62b80403
+DECL|enum|__anon2bc19bdc0403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -602,7 +602,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ad62b80503
+DECL|enum|__anon2bc19bdc0503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -694,7 +694,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ad62b80608
+DECL|struct|__anon2bc19bdc0608
 block|{
 DECL|member|function
 name|gint
@@ -767,7 +767,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ad62b80708
+DECL|struct|__anon2bc19bdc0708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1541,7 +1541,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ad62b80808
+DECL|struct|__anon2bc19bdc0808
 block|{
 DECL|member|run
 name|gboolean
@@ -1591,7 +1591,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ad62b80908
+DECL|struct|__anon2bc19bdc0908
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -11955,10 +11955,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|filesel
-argument_list|)
 argument_list|,
 literal|"delete_event"
 argument_list|,
@@ -13050,10 +13047,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|filesel
-argument_list|)
 argument_list|,
 literal|"delete_event"
 argument_list|,

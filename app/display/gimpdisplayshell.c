@@ -286,7 +286,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdcaf3f0103
+DECL|enum|__anon290144a20103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6229,10 +6229,7 @@ condition|)
 block|{
 name|g_object_get
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|grid
-argument_list|)
 argument_list|,
 literal|"xspacing"
 argument_list|,

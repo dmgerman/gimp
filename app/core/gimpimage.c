@@ -246,7 +246,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1176060103
+DECL|enum|__anon2b92dd560103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -3295,14 +3295,11 @@ argument_list|)
 expr_stmt|;
 name|gimage
 operator|=
-name|GIMP_IMAGE
-argument_list|(
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_IMAGE
 argument_list|,
 name|NULL
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimage

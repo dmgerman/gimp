@@ -1493,14 +1493,11 @@ decl_stmt|;
 comment|/* set up normal brush data */
 name|brush
 operator|=
-name|GIMP_BRUSH_GENERATED
-argument_list|(
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_BRUSH_GENERATED
 argument_list|,
 name|NULL
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_name
@@ -1766,14 +1763,11 @@ block|}
 comment|/* create new brush */
 name|brush
 operator|=
-name|GIMP_BRUSH_GENERATED
-argument_list|(
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_BRUSH_GENERATED
 argument_list|,
 name|NULL
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_data_set_filename

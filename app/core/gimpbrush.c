@@ -176,7 +176,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac397c60103
+DECL|enum|__anon2bef40150103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -2507,14 +2507,11 @@ literal|1
 case|:
 name|brush
 operator|=
-name|GIMP_BRUSH
-argument_list|(
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_BRUSH
 argument_list|,
 name|NULL
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|brush
@@ -2608,14 +2605,11 @@ literal|4
 case|:
 name|brush
 operator|=
-name|GIMP_BRUSH
-argument_list|(
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_BRUSH
 argument_list|,
 name|NULL
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|brush

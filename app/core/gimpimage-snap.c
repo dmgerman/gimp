@@ -292,10 +292,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_get
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|grid
-argument_list|)
 argument_list|,
 literal|"xspacing"
 argument_list|,
@@ -606,10 +603,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_get
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|grid
-argument_list|)
 argument_list|,
 literal|"yspacing"
 argument_list|,
@@ -1015,10 +1009,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_get
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|grid
-argument_list|)
 argument_list|,
 literal|"xspacing"
 argument_list|,

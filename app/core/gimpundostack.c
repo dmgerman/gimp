@@ -682,14 +682,11 @@ argument_list|)
 expr_stmt|;
 name|stack
 operator|=
-name|GIMP_UNDO_STACK
-argument_list|(
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_UNDO_STACK
 argument_list|,
 name|NULL
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|GIMP_UNDO

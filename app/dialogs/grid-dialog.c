@@ -356,10 +356,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|grid_backup
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1362,10 +1359,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|grid
-argument_list|)
 argument_list|,
 literal|"spacing-unit"
 argument_list|,
@@ -1378,10 +1372,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|grid
-argument_list|)
 argument_list|,
 literal|"offset-unit"
 argument_list|,
@@ -1609,10 +1600,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|grid
-argument_list|)
 argument_list|,
 literal|"spacing-unit"
 argument_list|,
@@ -1623,10 +1611,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|grid
-argument_list|)
 argument_list|,
 literal|"offset-unit"
 argument_list|,
