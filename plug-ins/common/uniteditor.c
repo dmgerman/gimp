@@ -292,7 +292,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_unit_editor"
+literal|"extension_gimp_unit_editor"
 argument_list|)
 operator|==
 literal|0
