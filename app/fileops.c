@@ -2262,6 +2262,20 @@ name|filesave
 argument_list|)
 condition|)
 return|return;
+name|gtk_window_set_title
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|filesave
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Save Image"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 name|gtk_file_selection_set_filename
 argument_list|(
 name|GTK_FILE_SELECTION
@@ -2286,20 +2300,6 @@ literal|"."
 name|G_DIR_SEPARATOR_S
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_title
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|filesave
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"Save Image"
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 operator|!
