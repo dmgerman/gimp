@@ -180,7 +180,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c17993c0103
+DECL|enum|__anon2a9575c40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -230,7 +230,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|cdisplay_lcms_finalize
+name|cdisplay_lcms_dispose
 parameter_list|(
 name|GObject
 modifier|*
@@ -555,9 +555,9 @@ argument_list|)
 expr_stmt|;
 name|object_class
 operator|->
-name|finalize
+name|dispose
 operator|=
-name|cdisplay_lcms_finalize
+name|cdisplay_lcms_dispose
 expr_stmt|;
 name|object_class
 operator|->
@@ -650,8 +650,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|cdisplay_lcms_finalize (GObject * object)
-name|cdisplay_lcms_finalize
+DECL|function|cdisplay_lcms_dispose (GObject * object)
+name|cdisplay_lcms_dispose
 parameter_list|(
 name|GObject
 modifier|*
@@ -679,7 +679,7 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|finalize
+name|dispose
 argument_list|(
 name|object
 argument_list|)
