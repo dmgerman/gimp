@@ -1806,7 +1806,6 @@ decl_stmt|;
 name|gint
 name|y
 decl_stmt|;
-specifier|const
 name|guchar
 modifier|*
 name|src

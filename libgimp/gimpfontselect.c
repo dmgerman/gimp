@@ -68,6 +68,7 @@ specifier|static
 name|void
 name|gimp_temp_font_run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -75,6 +76,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -414,9 +416,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_temp_font_run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|gimp_temp_font_run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|gimp_temp_font_run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -424,6 +427,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
