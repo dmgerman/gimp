@@ -290,7 +290,7 @@ name|GIMP_TRANSFORM_TYPE_LAYER
 block|,
 name|N_
 argument_list|(
-literal|"Transform Active Layer"
+literal|"Transform Layer"
 argument_list|)
 block|,
 literal|"layer"
@@ -312,7 +312,7 @@ name|GIMP_TRANSFORM_TYPE_PATH
 block|,
 name|N_
 argument_list|(
-literal|"Transform Active Path"
+literal|"Transform Path"
 argument_list|)
 block|,
 literal|"path"

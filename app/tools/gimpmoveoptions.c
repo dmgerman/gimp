@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad6d9b10103
+DECL|enum|__anon27821e7b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -572,7 +572,7 @@ name|true_label
 operator|=
 name|_
 argument_list|(
-literal|"Move the Active Layer"
+literal|"Move the Current Layer"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -608,7 +608,7 @@ name|true_label
 operator|=
 name|_
 argument_list|(
-literal|"Move the Active Path"
+literal|"Move the Current Path"
 argument_list|)
 expr_stmt|;
 break|break;
