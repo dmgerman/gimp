@@ -295,7 +295,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5a36ca0108
+DECL|struct|__anon28fcd7300108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5a36ca0208
+DECL|struct|__anon28fcd7300208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5a36ca0308
+DECL|struct|__anon28fcd7300308
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -386,7 +386,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5a36ca0408
+DECL|struct|__anon28fcd7300408
 block|{
 DECL|member|name
 name|gchar
@@ -414,7 +414,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5a36ca0508
+DECL|struct|__anon28fcd7300508
 block|{
 DECL|member|list
 name|GSList
@@ -434,7 +434,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2c5a36ca060a
+DECL|union|__anon28fcd730060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -504,7 +504,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5a36ca0708
+DECL|struct|__anon28fcd7300708
 block|{
 DECL|member|script_name
 name|gchar
@@ -590,7 +590,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5a36ca0808
+DECL|struct|__anon28fcd7300808
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -6038,7 +6038,7 @@ argument_list|,
 name|script
 argument_list|)
 expr_stmt|;
-name|gimp_help_connect_help_accel
+name|gimp_help_connect
 argument_list|(
 name|dlg
 argument_list|,

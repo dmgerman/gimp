@@ -8232,7 +8232,7 @@ argument_list|(
 name|temp
 argument_list|)
 expr_stmt|;
-name|gimp_help_connect_help_accel
+name|gimp_help_connect
 argument_list|(
 name|file_dlg
 argument_list|,

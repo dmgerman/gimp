@@ -8460,7 +8460,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  Connect the "F1" help key  */
-name|gimp_help_connect_help_accel
+name|gimp_help_connect
 argument_list|(
 name|file_dlg
 argument_list|,

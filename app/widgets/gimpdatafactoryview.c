@@ -1668,7 +1668,7 @@ argument_list|(
 literal|"Cancel"
 argument_list|)
 argument_list|,
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|data
 argument_list|)

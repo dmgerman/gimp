@@ -178,7 +178,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ac0bdd0103
+DECL|enum|__anon294a46210103
 block|{
 DECL|enumerator|ERRORS_ALL
 name|ERRORS_ALL
@@ -803,7 +803,7 @@ name|filesel
 argument_list|)
 expr_stmt|;
 comment|/*  Connect the "F1" help key  */
-name|gimp_help_connect_help_accel
+name|gimp_help_connect
 argument_list|(
 name|filesel
 argument_list|,

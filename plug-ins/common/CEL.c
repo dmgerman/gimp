@@ -2960,7 +2960,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_help_connect_help_accel
+name|gimp_help_connect
 argument_list|(
 name|dialog
 argument_list|,

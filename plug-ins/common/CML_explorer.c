@@ -209,7 +209,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27585a700108
+DECL|struct|__anon2b6918780108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -236,7 +236,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27585a700203
+DECL|enum|__anon2b6918780203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -359,7 +359,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27585a700303
+DECL|enum|__anon2b6918780303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -498,7 +498,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27585a700403
+DECL|enum|__anon2b6918780403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -597,7 +597,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27585a700503
+DECL|enum|__anon2b6918780503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -689,7 +689,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27585a700608
+DECL|struct|__anon2b6918780608
 block|{
 DECL|member|function
 name|gint
@@ -762,7 +762,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27585a700708
+DECL|struct|__anon2b6918780708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1540,7 +1540,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27585a700808
+DECL|struct|__anon2b6918780808
 block|{
 DECL|member|run
 name|gint
@@ -1590,7 +1590,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27585a700908
+DECL|struct|__anon2b6918780908
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -12224,7 +12224,7 @@ operator|.
 name|last_file_name
 argument_list|)
 expr_stmt|;
-name|gimp_help_connect_help_accel
+name|gimp_help_connect
 argument_list|(
 name|filesel
 argument_list|,
@@ -13234,7 +13234,7 @@ operator|.
 name|last_file_name
 argument_list|)
 expr_stmt|;
-name|gimp_help_connect_help_accel
+name|gimp_help_connect
 argument_list|(
 name|filesel
 argument_list|,

@@ -686,7 +686,7 @@ argument_list|,
 name|GTK_WIN_POS_CENTER
 argument_list|)
 expr_stmt|;
-name|gimp_help_connect_help_accel
+name|gimp_help_connect
 argument_list|(
 name|about_dialog
 argument_list|,

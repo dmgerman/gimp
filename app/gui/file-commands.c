@@ -712,7 +712,7 @@ name|GTK_STOCK_YES
 argument_list|,
 name|GTK_STOCK_NO
 argument_list|,
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gdisp
 operator|->

@@ -524,7 +524,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c072c650108
+DECL|struct|__anon2b9e3fcb0108
 block|{
 DECL|member|randomize
 name|gint
@@ -2378,7 +2378,7 @@ name|file_dlg
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_help_connect_help_accel
+name|gimp_help_connect
 argument_list|(
 name|file_dlg
 argument_list|,

@@ -64,9 +64,9 @@ modifier|*
 name|help_data
 parameter_list|)
 function_decl|;
-comment|/*  connect the "F1" accelerator of a window  */
+comment|/*  connect the help callback of a window  */
 name|void
-name|gimp_help_connect_help_accel
+name|gimp_help_connect
 parameter_list|(
 name|GtkWidget
 modifier|*

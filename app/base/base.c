@@ -221,8 +221,11 @@ name|base_config
 operator|->
 name|swap_path
 operator|=
+name|g_strdup
+argument_list|(
 name|g_get_tmp_dir
 argument_list|()
+argument_list|)
 expr_stmt|;
 name|path
 operator|=

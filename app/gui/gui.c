@@ -597,7 +597,7 @@ name|images
 argument_list|,
 literal|"destroy"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gui_image_destroy
 argument_list|)
@@ -615,7 +615,7 @@ name|images
 argument_list|,
 literal|"mode_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gui_image_mode_changed
 argument_list|)
@@ -633,7 +633,7 @@ name|images
 argument_list|,
 literal|"colormap_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gui_image_colormap_changed
 argument_list|)
@@ -651,7 +651,7 @@ name|images
 argument_list|,
 literal|"name_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gui_image_name_changed
 argument_list|)
@@ -669,7 +669,7 @@ name|images
 argument_list|,
 literal|"size_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gui_image_size_changed
 argument_list|)
@@ -687,7 +687,7 @@ name|images
 argument_list|,
 literal|"alpha_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gui_image_alpha_changed
 argument_list|)
@@ -705,7 +705,7 @@ name|images
 argument_list|,
 literal|"update"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gui_image_update
 argument_list|)
@@ -713,9 +713,9 @@ argument_list|,
 name|gimp
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
@@ -725,7 +725,7 @@ argument_list|)
 argument_list|,
 literal|"display_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gui_display_changed
 argument_list|)
@@ -1277,7 +1277,7 @@ argument_list|)
 argument_list|,
 literal|"expose_event"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gui_rotate_the_shield_harmonics
 argument_list|)
@@ -1451,17 +1451,14 @@ name|height
 init|=
 literal|0
 decl_stmt|;
-name|gtk_signal_disconnect_by_func
+name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
 name|gui_rotate_the_shield_harmonics
-argument_list|)
 argument_list|,
 name|data
 argument_list|)

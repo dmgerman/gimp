@@ -439,7 +439,7 @@ name|gdisp
 operator|->
 name|dot_for_dot
 argument_list|,
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gdisp
 operator|->
@@ -579,7 +579,7 @@ name|gdisp
 operator|->
 name|dot_for_dot
 argument_list|,
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gdisp
 operator|->
@@ -751,7 +751,7 @@ name|gdisp
 operator|->
 name|dot_for_dot
 argument_list|,
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gdisp
 operator|->
@@ -852,7 +852,7 @@ name|gdisp
 operator|->
 name|dot_for_dot
 argument_list|,
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gdisp
 operator|->
