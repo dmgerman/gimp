@@ -218,7 +218,10 @@ name|info_dialog_add_label
 argument_list|(
 name|transform_info
 argument_list|,
+name|_
+argument_list|(
 literal|"Matrix:"
+argument_list|)
 argument_list|,
 name|matrix_row_buf
 index|[
