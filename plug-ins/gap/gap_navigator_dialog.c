@@ -178,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293fc8400103
+DECL|enum|__anon2790a2270103
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293fc8400203
+DECL|enum|__anon2790a2270203
 block|{
 DECL|enumerator|OPS_BUTTON_NORMAL
 name|OPS_BUTTON_NORMAL
@@ -1270,10 +1270,6 @@ specifier|static
 name|gint
 name|navi_dialog_poll
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -10401,13 +10397,9 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|navi_dialog_poll (GtkWidget * w,gpointer data)
+DECL|function|navi_dialog_poll (gpointer data)
 name|navi_dialog_poll
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -10535,15 +10527,12 @@ name|naviD
 operator|->
 name|timer
 operator|=
-name|gtk_timeout_add
+name|g_timeout_add
 argument_list|(
 name|naviD
 operator|->
 name|cycle_time
 argument_list|,
-operator|(
-name|GtkFunction
-operator|)
 name|navi_dialog_poll
 argument_list|,
 name|NULL
@@ -13835,15 +13824,12 @@ name|naviD
 operator|->
 name|timer
 operator|=
-name|gtk_timeout_add
+name|g_timeout_add
 argument_list|(
 name|naviD
 operator|->
 name|cycle_time
 argument_list|,
-operator|(
-name|GtkFunction
-operator|)
 name|navi_dialog_poll
 argument_list|,
 name|NULL

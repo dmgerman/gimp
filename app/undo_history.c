@@ -153,7 +153,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2948c3e90108
+DECL|struct|__anon28b5becb0108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2948c3e90208
+DECL|struct|__anon28b5becb0208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -1816,7 +1816,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* check if a preview is already made, otherwise gtk_idle_add the pixmap func */
+comment|/* check if a preview is already made, otherwise g_idle_add the pixmap func */
 end_comment
 
 begin_function
@@ -1888,11 +1888,8 @@ name|gimage
 operator|=
 name|gimage
 expr_stmt|;
-name|gtk_idle_add
+name|g_idle_add
 argument_list|(
-operator|(
-name|GtkFunction
-operator|)
 name|undo_history_set_pixmap_idle
 argument_list|,
 operator|&

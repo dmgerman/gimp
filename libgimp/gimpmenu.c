@@ -285,8 +285,7 @@ specifier|static
 name|gint
 name|idle_test_brush
 parameter_list|(
-name|GimpBrushData
-modifier|*
+name|gpointer
 name|bdata
 parameter_list|)
 function_decl|;
@@ -297,8 +296,7 @@ specifier|static
 name|gint
 name|idle_test_pattern
 parameter_list|(
-name|GimpPatternData
-modifier|*
+name|gpointer
 name|pdata
 parameter_list|)
 function_decl|;
@@ -309,8 +307,7 @@ specifier|static
 name|gint
 name|idle_test_gradient
 parameter_list|(
-name|GimpGradientData
-modifier|*
+name|gpointer
 name|gdata
 parameter_list|)
 function_decl|;
@@ -3815,11 +3812,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|idle_test_brush (GimpBrushData * bdata)
+DECL|function|idle_test_brush (gpointer bdata)
 name|idle_test_brush
 parameter_list|(
-name|GimpBrushData
-modifier|*
+name|gpointer
 name|bdata
 parameter_list|)
 block|{
@@ -3837,11 +3833,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|idle_test_pattern (GimpPatternData * pdata)
+DECL|function|idle_test_pattern (gpointer pdata)
 name|idle_test_pattern
 parameter_list|(
-name|GimpPatternData
-modifier|*
+name|gpointer
 name|pdata
 parameter_list|)
 block|{
@@ -3859,11 +3854,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|idle_test_gradient (GimpGradientData * gdata)
+DECL|function|idle_test_gradient (gpointer gdata)
 name|idle_test_gradient
 parameter_list|(
-name|GimpGradientData
-modifier|*
+name|gpointer
 name|gdata
 parameter_list|)
 block|{
@@ -4101,11 +4095,8 @@ name|busy
 operator|=
 name|TRUE
 expr_stmt|;
-name|gtk_idle_add
+name|g_idle_add
 argument_list|(
-operator|(
-name|GtkFunction
-operator|)
 name|idle_test_brush
 argument_list|,
 name|active_brush_pdb
@@ -4339,11 +4330,8 @@ name|busy
 operator|=
 name|TRUE
 expr_stmt|;
-name|gtk_idle_add
+name|g_idle_add
 argument_list|(
-operator|(
-name|GtkFunction
-operator|)
 name|idle_test_pattern
 argument_list|,
 name|active_pattern_pdb
@@ -4591,11 +4579,8 @@ name|busy
 operator|=
 name|TRUE
 expr_stmt|;
-name|gtk_idle_add
+name|g_idle_add
 argument_list|(
-operator|(
-name|GtkFunction
-operator|)
 name|idle_test_gradient
 argument_list|,
 name|active_gradient_pdb

@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a18c4cb0103
+DECL|enum|__anon2af9a56f0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a18c4cb0203
+DECL|enum|__anon2af9a56f0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -179,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a18c4cb0308
+DECL|struct|__anon2af9a56f0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -201,7 +201,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2a18c4cb040a
+DECL|union|__anon2af9a56f040a
 block|{
 DECL|member|d
 name|gdouble
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a18c4cb0508
+DECL|struct|__anon2af9a56f0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -260,7 +260,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a18c4cb0608
+DECL|struct|__anon2af9a56f0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -295,7 +295,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a18c4cb0708
+DECL|struct|__anon2af9a56f0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a18c4cb0808
+DECL|struct|__anon2af9a56f0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -398,7 +398,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a18c4cb0908
+DECL|struct|__anon2af9a56f0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -570,7 +570,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a18c4cb0a08
+DECL|struct|__anon2af9a56f0a08
 block|{
 DECL|member|run
 name|gint
@@ -1180,7 +1180,8 @@ specifier|static
 name|gint
 name|preview_idle_render
 parameter_list|(
-name|void
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -13642,10 +13643,11 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|preview_idle_render (void)
+DECL|function|preview_idle_render (gpointer data)
 name|preview_idle_render
 parameter_list|(
-name|void
+name|gpointer
+name|data
 parameter_list|)
 block|{
 name|gint
@@ -14023,11 +14025,8 @@ name|preview_iterations
 operator|==
 literal|0
 condition|)
-name|gtk_idle_add
+name|g_idle_add
 argument_list|(
-operator|(
-name|GtkFunction
-operator|)
 name|preview_idle_render
 argument_list|,
 name|NULL

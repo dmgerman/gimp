@@ -5102,7 +5102,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|_timeout
 specifier|static
-name|gint
+name|guint
 name|_timeout
 decl_stmt|;
 end_decl_stmt
@@ -5330,7 +5330,7 @@ if|if
 condition|(
 name|_timeout
 condition|)
-name|gtk_timeout_remove
+name|g_source_remove
 argument_list|(
 name|_timeout
 argument_list|)
@@ -5485,7 +5485,7 @@ name|keyval
 expr_stmt|;
 name|_timeout
 operator|=
-name|gtk_timeout_add
+name|g_timeout_add
 argument_list|(
 literal|250
 argument_list|,

@@ -1672,7 +1672,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c4081d30108
+DECL|struct|__anon2790e65e0108
 typedef|typedef
 struct|struct
 block|{
@@ -1726,7 +1726,7 @@ name|gint
 name|selected_row
 decl_stmt|;
 DECL|member|timeout
-name|gint
+name|guint
 name|timeout
 decl_stmt|;
 DECL|typedef|PolygonProperties_t
@@ -3529,7 +3529,7 @@ name|props
 operator|->
 name|timeout
 condition|)
-name|gtk_timeout_remove
+name|g_source_remove
 argument_list|(
 name|props
 operator|->
@@ -3540,7 +3540,7 @@ name|props
 operator|->
 name|timeout
 operator|=
-name|gtk_timeout_add
+name|g_timeout_add
 argument_list|(
 literal|1000
 argument_list|,

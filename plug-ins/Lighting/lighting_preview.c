@@ -267,10 +267,11 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|interactive_preview_timer_callback
 parameter_list|(
-name|void
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2558,7 +2559,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|gtk_timeout_remove
+name|g_source_remove
 argument_list|(
 name|preview_update_timer
 argument_list|)
@@ -2567,13 +2568,10 @@ block|}
 comment|/* start new timer */
 name|preview_update_timer
 operator|=
-name|gtk_timeout_add
+name|g_timeout_add
 argument_list|(
 literal|100
 argument_list|,
-operator|(
-name|GtkFunction
-operator|)
 name|interactive_preview_timer_callback
 argument_list|,
 name|NULL
@@ -2583,18 +2581,15 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|interactive_preview_timer_callback (void)
+specifier|static
+name|gboolean
+DECL|function|interactive_preview_timer_callback (gpointer data)
 name|interactive_preview_timer_callback
 parameter_list|(
-name|void
+name|gpointer
+name|data
 parameter_list|)
 block|{
-name|gtk_timeout_remove
-argument_list|(
-name|preview_update_timer
-argument_list|)
-expr_stmt|;
 name|gtk_spin_button_set_value
 argument_list|(
 name|GTK_SPIN_BUTTON
@@ -2696,6 +2691,13 @@ argument_list|(
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|preview_update_timer
+operator|=
+literal|0
+expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 

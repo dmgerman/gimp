@@ -475,7 +475,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af7b7d80103
+DECL|enum|__anon2747f9d90103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -502,7 +502,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af7b7d80203
+DECL|enum|__anon2747f9d90203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -523,7 +523,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af7b7d80308
+DECL|struct|__anon2747f9d90308
 block|{
 DECL|member|name
 name|gchar
@@ -660,7 +660,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af7b7d80408
+DECL|struct|__anon2747f9d90408
 block|{
 DECL|member|fp
 name|FILE
@@ -680,7 +680,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af7b7d80503
+DECL|enum|__anon2747f9d90503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -708,7 +708,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af7b7d80608
+DECL|struct|__anon2747f9d90608
 block|{
 DECL|member|init
 name|gint
@@ -730,7 +730,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2af7b7d80708
+DECL|struct|__anon2747f9d90708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -804,7 +804,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af7b7d80808
+DECL|struct|__anon2747f9d90808
 block|{
 DECL|member|init
 name|gint
@@ -874,7 +874,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af7b7d80908
+DECL|struct|__anon2747f9d90908
 block|{
 DECL|member|x0
 name|gdouble
@@ -901,7 +901,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af7b7d80a08
+DECL|struct|__anon2747f9d90a08
 block|{
 DECL|member|init
 name|gint
@@ -1071,7 +1071,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af7b7d80b08
+DECL|struct|__anon2747f9d90b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1098,7 +1098,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af7b7d80c08
+DECL|struct|__anon2747f9d90c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1139,7 +1139,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af7b7d80d08
+DECL|struct|__anon2747f9d90d08
 block|{
 DECL|member|tile
 name|GimpTile
@@ -1365,7 +1365,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af7b7d80e08
+DECL|struct|__anon2747f9d90e08
 block|{
 DECL|member|tag
 name|gint
@@ -1442,7 +1442,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af7b7d80f08
+DECL|struct|__anon2747f9d90f08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1500,7 +1500,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af7b7d81008
+DECL|struct|__anon2747f9d91008
 block|{
 DECL|member|run
 name|gint
@@ -8648,7 +8648,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon2af7b7d81108
+DECL|struct|__anon2747f9d91108
 specifier|static
 struct|struct
 block|{
@@ -14627,7 +14627,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2af7b7d81208
+DECL|struct|__anon2747f9d91208
 block|{
 DECL|member|label
 specifier|const
@@ -21309,12 +21309,12 @@ name|preview
 operator|->
 name|timeout_tag
 operator|=
-name|gtk_timeout_add
+name|g_timeout_add
 argument_list|(
 literal|100
 argument_list|,
 operator|(
-name|GtkFunction
+name|GSourceFunc
 operator|)
 name|preview_render_start_2
 argument_list|,
@@ -21345,10 +21345,10 @@ name|preview
 operator|->
 name|idle_tag
 operator|=
-name|gtk_idle_add
+name|g_idle_add
 argument_list|(
 operator|(
-name|GtkFunction
+name|GSourceFunc
 operator|)
 name|preview_handle_idle
 argument_list|,
@@ -21381,7 +21381,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|gtk_timeout_remove
+name|g_source_remove
 argument_list|(
 name|preview
 operator|->
@@ -21424,7 +21424,7 @@ operator|->
 name|deinit_data
 argument_list|)
 expr_stmt|;
-name|gtk_idle_remove
+name|g_source_remove
 argument_list|(
 name|preview
 operator|->

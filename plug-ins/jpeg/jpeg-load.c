@@ -306,7 +306,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed187e0108
+DECL|struct|__anon27a887360108
 block|{
 DECL|member|quality
 name|gdouble
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed187e0208
+DECL|struct|__anon27a887360208
 block|{
 DECL|member|run
 name|gint
@@ -368,7 +368,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed187e0308
+DECL|struct|__anon27a887360308
 block|{
 DECL|member|cinfo
 name|struct
@@ -5258,16 +5258,13 @@ name|error_exit
 operator|=
 name|background_error_exit
 expr_stmt|;
-name|gtk_idle_add
+name|g_idle_add
 argument_list|(
 operator|(
-name|GtkFunction
+name|GSourceFunc
 operator|)
 name|background_jpeg_save
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|pp
 argument_list|)
 expr_stmt|;

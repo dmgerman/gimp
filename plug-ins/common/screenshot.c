@@ -112,7 +112,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a234a40108
+DECL|struct|__anon2981144c0108
 block|{
 DECL|member|root
 name|gboolean
@@ -246,7 +246,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|shoot_delay_callback
 parameter_list|(
 name|gpointer
@@ -1923,12 +1923,7 @@ name|gint
 name|delay
 parameter_list|)
 block|{
-name|gint
-name|timeout
-decl_stmt|;
-name|timeout
-operator|=
-name|gtk_timeout_add
+name|g_timeout_add
 argument_list|(
 literal|1000
 argument_list|,
@@ -1945,7 +1940,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|shoot_delay_callback (gpointer data)
 name|shoot_delay_callback
 parameter_list|(

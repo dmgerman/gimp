@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c0422f0103
+DECL|enum|__anon27dc70c60103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -582,7 +582,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|timer
 specifier|static
-name|gint
+name|guint
 name|timer
 init|=
 literal|0
@@ -5742,7 +5742,7 @@ condition|(
 name|timer
 condition|)
 block|{
-name|gtk_timeout_remove
+name|g_source_remove
 argument_list|(
 name|timer
 argument_list|)
@@ -5880,13 +5880,9 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|advance_frame_callback (GtkWidget * widget,gpointer data)
+DECL|function|advance_frame_callback (gpointer data)
 name|advance_frame_callback
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -5896,7 +5892,7 @@ argument_list|()
 expr_stmt|;
 name|timer
 operator|=
-name|gtk_timeout_add
+name|g_timeout_add
 argument_list|(
 name|get_frame_duration
 argument_list|(
@@ -5909,9 +5905,6 @@ operator|%
 name|total_frames
 argument_list|)
 argument_list|,
-operator|(
-name|GtkFunction
-operator|)
 name|advance_frame_callback
 argument_list|,
 name|NULL
@@ -5956,16 +5949,13 @@ name|TRUE
 expr_stmt|;
 name|timer
 operator|=
-name|gtk_timeout_add
+name|g_timeout_add
 argument_list|(
 name|get_frame_duration
 argument_list|(
 name|frame_number
 argument_list|)
 argument_list|,
-operator|(
-name|GtkFunction
-operator|)
 name|advance_frame_callback
 argument_list|,
 name|NULL
