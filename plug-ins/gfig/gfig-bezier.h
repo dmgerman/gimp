@@ -85,9 +85,15 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|bezier_dialog
+name|tool_options_bezier
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|notebook
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
