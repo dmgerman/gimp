@@ -139,26 +139,6 @@ value|0.5
 end_define
 
 begin_comment
-comment|/*  enums  */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2c5b1c640103
-block|{
-DECL|enumerator|GIMP_PIXELS
-name|GIMP_PIXELS
-block|,
-DECL|enumerator|GIMP_POINTS
-name|GIMP_POINTS
-DECL|typedef|SizeType
-block|}
-name|SizeType
-typedef|;
-end_typedef
-
-begin_comment
 comment|/*  base objects  */
 end_comment
 
