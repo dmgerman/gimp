@@ -2414,7 +2414,7 @@ argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|gtk_signal_connect_object
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
