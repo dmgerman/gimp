@@ -137,6 +137,10 @@ name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gint
 name|preview_width
 parameter_list|,

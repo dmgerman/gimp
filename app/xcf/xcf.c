@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bbdccb0103
+DECL|enum|__anon2c51845f0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -359,7 +359,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bbdccb0203
+DECL|enum|__anon2c51845f0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -8902,9 +8902,12 @@ literal|"XCF: This file is corrupt!  I could not even\n"
 literal|"salvage any partial image data from it."
 argument_list|)
 expr_stmt|;
-name|gimage_delete
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -123,10 +129,6 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_comment
-comment|/* New palette code... */
-end_comment
-
 begin_define
 DECL|macro|IMPORT_PREVIEW_WIDTH
 define|#
@@ -148,13 +150,13 @@ DECL|macro|MAX_IMAGE_COLORS
 define|#
 directive|define
 name|MAX_IMAGE_COLORS
-value|(10000*2)
+value|(10000 * 2)
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c96b70b0103
+DECL|enum|__anon2bc151150103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -1373,8 +1375,10 @@ operator|==
 name|INDEXED_IMPORT
 condition|)
 block|{
-name|gimage_foreach
+name|gimp_container_foreach
 argument_list|(
+name|image_context
+argument_list|,
 name|palette_import_gimlist_indexed_cb
 argument_list|,
 operator|&
@@ -1384,8 +1388,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimage_foreach
+name|gimp_container_foreach
 argument_list|(
+name|image_context
+argument_list|,
 name|palette_import_gimlist_cb
 argument_list|,
 operator|&
@@ -1947,8 +1953,10 @@ operator|==
 name|INDEXED_IMPORT
 condition|)
 block|{
-name|gimage_foreach
+name|gimp_container_foreach
 argument_list|(
+name|image_context
+argument_list|,
 name|palette_import_gimlist_indexed_cb
 argument_list|,
 operator|&
@@ -1958,8 +1966,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimage_foreach
+name|gimp_container_foreach
 argument_list|(
+name|image_context
+argument_list|,
 name|palette_import_gimlist_cb
 argument_list|,
 operator|&

@@ -4799,7 +4799,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|container_view_new (gboolean list,gchar * title,GimpContainer * container,gint preview_width,gint preview_height)
+DECL|function|container_view_new (gboolean list,gchar * title,GimpContainer * container,GimpContext * context,gint preview_width,gint preview_height)
 name|container_view_new
 parameter_list|(
 name|gboolean
@@ -4812,6 +4812,10 @@ parameter_list|,
 name|GimpContainer
 modifier|*
 name|container
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|preview_width
@@ -4887,6 +4891,8 @@ name|gimp_container_list_view_new
 argument_list|(
 name|container
 argument_list|,
+name|context
+argument_list|,
 name|preview_width
 argument_list|,
 name|preview_height
@@ -4904,6 +4910,8 @@ operator|=
 name|gimp_container_grid_view_new
 argument_list|(
 name|container
+argument_list|,
+name|context
 argument_list|,
 name|preview_width
 argument_list|,
@@ -5034,6 +5042,9 @@ literal|"Image List"
 argument_list|,
 name|image_context
 argument_list|,
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
 literal|64
 argument_list|,
 literal|64
@@ -5062,6 +5073,9 @@ argument_list|,
 literal|"Pattern List"
 argument_list|,
 name|global_pattern_list
+argument_list|,
+name|gimp_context_get_user
+argument_list|()
 argument_list|,
 literal|24
 argument_list|,
@@ -5092,6 +5106,9 @@ literal|"Brush List"
 argument_list|,
 name|global_brush_list
 argument_list|,
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
 literal|24
 argument_list|,
 literal|24
@@ -5120,6 +5137,9 @@ argument_list|,
 literal|"Image Grid"
 argument_list|,
 name|image_context
+argument_list|,
+name|gimp_context_get_user
+argument_list|()
 argument_list|,
 literal|64
 argument_list|,
@@ -5150,6 +5170,9 @@ literal|"Pattern Grid"
 argument_list|,
 name|global_pattern_list
 argument_list|,
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
 literal|24
 argument_list|,
 literal|24
@@ -5178,6 +5201,9 @@ argument_list|,
 literal|"Brush Grid"
 argument_list|,
 name|global_brush_list
+argument_list|,
+name|gimp_context_get_user
+argument_list|()
 argument_list|,
 literal|32
 argument_list|,

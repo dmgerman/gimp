@@ -202,7 +202,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2772e4130103
+DECL|enum|__anon2c2b170e0103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -6778,8 +6778,10 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|gimage_foreach
+name|gimp_container_foreach
 argument_list|(
+name|image_context
+argument_list|,
 name|gimlist_cb
 argument_list|,
 operator|&

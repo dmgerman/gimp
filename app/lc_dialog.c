@@ -1736,7 +1736,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b1e6ba0108
+DECL|struct|__anon294094af0108
 block|{
 DECL|member|def
 name|GImage
@@ -2922,8 +2922,10 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-name|gimage_foreach
+name|gimp_container_foreach
 argument_list|(
+name|image_context
+argument_list|,
 name|lc_dialog_create_image_menu_callback
 argument_list|,
 operator|&

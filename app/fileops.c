@@ -7209,9 +7209,12 @@ argument_list|,
 name|RGBbuf_h
 argument_list|)
 expr_stmt|;
-name|gimage_delete
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|gimage_to_be_thumbed
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

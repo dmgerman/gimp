@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"context_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -65,6 +71,12 @@ begin_include
 include|#
 directive|include
 file|"gimpchannel.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcontainer.h"
 end_include
 
 begin_include
@@ -1025,8 +1037,10 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-name|gimage_foreach
+name|gimp_container_foreach
 argument_list|(
+name|image_context
+argument_list|,
 name|gimlist_cb
 argument_list|,
 operator|&
@@ -1931,9 +1945,12 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_delete
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
