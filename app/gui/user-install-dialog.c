@@ -203,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6f41970103
+DECL|enum|__anon2b401d490103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -231,7 +231,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6f41970203
+DECL|enum|__anon2b401d490203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -476,7 +476,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6f41970303
+DECL|enum|__anon2b401d490303
 block|{
 DECL|enumerator|TREE_ITEM_DONT
 name|TREE_ITEM_DONT
@@ -502,7 +502,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b6f41970408
+DECL|struct|__anon2b401d490408
 block|{
 DECL|member|directory
 name|gboolean
@@ -878,13 +878,7 @@ name|TRUE
 block|,
 literal|"fractalexplorer"
 block|,
-name|N_
-argument_list|(
-literal|"This is folder used to store user defined fractals to\n"
-literal|"be used by the FractalExplorer plug-in.  The GIMP\n"
-literal|"checks this folder in addition to the systemwide\n"
-literal|"FractalExplorer installation when searching for fractals."
-argument_list|)
+name|NULL
 block|,
 name|TREE_ITEM_MKDIR_ONLY
 block|,
@@ -896,13 +890,7 @@ name|TRUE
 block|,
 literal|"gfig"
 block|,
-name|N_
-argument_list|(
-literal|"This folder is used to store user defined figures to\n"
-literal|"be used by the GFig plug-in.  The GIMP checks this\n"
-literal|"folder in addition to the systemwide GFig installation\n"
-literal|"when searching for gfig figures."
-argument_list|)
+name|NULL
 block|,
 name|TREE_ITEM_MKDIR_ONLY
 block|,
@@ -914,13 +902,7 @@ name|TRUE
 block|,
 literal|"gflare"
 block|,
-name|N_
-argument_list|(
-literal|"This folder is used to store user defined gflares to\n"
-literal|"be used by the GFlare plug-in.  The GIMP checks this\n"
-literal|"folder in addition to the systemwide GFlares\n"
-literal|"installation when searching for gflares."
-argument_list|)
+name|NULL
 block|,
 name|TREE_ITEM_MKDIR_ONLY
 block|,
@@ -932,13 +914,7 @@ name|TRUE
 block|,
 literal|"gimpressionist"
 block|,
-name|N_
-argument_list|(
-literal|"This folder is used to store user defined data to be\n"
-literal|"used by the Gimpressionist plug-in.  The GIMP checks\n"
-literal|"this folder in addition to the systemwide Gimpressionist\n"
-literal|"installation when searching for data."
-argument_list|)
+name|NULL
 block|,
 name|TREE_ITEM_MKDIR_ONLY
 block|,
@@ -3534,6 +3510,17 @@ name|i
 operator|++
 control|)
 block|{
+if|if
+condition|(
+operator|!
+name|tree_items
+index|[
+name|i
+index|]
+operator|.
+name|description
+condition|)
+continue|continue;
 name|gtk_tree_store_append
 argument_list|(
 name|tree

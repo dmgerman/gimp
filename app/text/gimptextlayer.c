@@ -387,6 +387,12 @@ name|gimp_text_layer_get_memsize
 expr_stmt|;
 name|viewable_class
 operator|->
+name|default_stock_id
+operator|=
+literal|"gimp-tool-text"
+expr_stmt|;
+name|viewable_class
+operator|->
 name|get_preview
 operator|=
 name|gimp_text_layer_get_preview

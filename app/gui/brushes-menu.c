@@ -240,7 +240,7 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|brushes_menu_update (GtkItemFactory * factory,gpointer data)
+DECL|function|brushes_menu_update (GtkItemFactory * factory,gpointer user_data)
 name|brushes_menu_update
 parameter_list|(
 name|GtkItemFactory
@@ -248,7 +248,7 @@ modifier|*
 name|factory
 parameter_list|,
 name|gpointer
-name|data
+name|user_data
 parameter_list|)
 block|{
 name|GimpContainerEditor
@@ -259,16 +259,17 @@ name|GimpBrush
 modifier|*
 name|brush
 decl_stmt|;
-name|gboolean
-name|internal
+name|GimpData
+modifier|*
+name|data
 init|=
-name|FALSE
+name|NULL
 decl_stmt|;
 name|editor
 operator|=
 name|GIMP_CONTAINER_EDITOR
 argument_list|(
-name|data
+name|user_data
 argument_list|)
 expr_stmt|;
 name|brush
@@ -286,14 +287,12 @@ if|if
 condition|(
 name|brush
 condition|)
-name|internal
+name|data
 operator|=
 name|GIMP_DATA
 argument_list|(
 name|brush
 argument_list|)
-operator|->
-name|internal
 expr_stmt|;
 DECL|macro|SET_SENSITIVE (menu,condition)
 define|#
@@ -314,7 +313,7 @@ name|brush
 operator|&&
 name|GIMP_DATA_GET_CLASS
 argument_list|(
-name|brush
+name|data
 argument_list|)
 operator|->
 name|duplicate
@@ -340,7 +339,13 @@ literal|"/Delete Brush..."
 argument_list|,
 name|brush
 operator|&&
+name|data
+operator|->
+name|writeable
+operator|&&
 operator|!
+name|data
+operator|->
 name|internal
 argument_list|)
 expr_stmt|;

@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2ae040103
+DECL|enum|__anon290770a90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1037,11 +1037,23 @@ name|GdkPixbuf
 modifier|*
 name|pixbuf
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
+decl_stmt|;
 name|viewable
 operator|=
 name|cellviewable
 operator|->
 name|viewable
+expr_stmt|;
+name|stock_id
+operator|=
+name|gimp_viewable_get_stock_id
+argument_list|(
+name|viewable
+argument_list|)
 expr_stmt|;
 name|icon_set
 operator|=
@@ -1051,8 +1063,6 @@ name|widget
 operator|->
 name|style
 argument_list|,
-name|viewable
-operator|->
 name|stock_id
 argument_list|)
 expr_stmt|;

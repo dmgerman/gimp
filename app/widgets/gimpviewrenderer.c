@@ -142,7 +142,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon276213cd0103
+DECL|enum|__anon2b31efea0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -4098,6 +4098,11 @@ name|GdkPixbuf
 modifier|*
 name|pixbuf
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
+decl_stmt|;
 name|gint
 name|width
 decl_stmt|,
@@ -4145,6 +4150,15 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+name|stock_id
+operator|=
+name|gimp_viewable_get_stock_id
+argument_list|(
+name|preview
+operator|->
+name|viewable
+argument_list|)
+expr_stmt|;
 name|pixbuf
 operator|=
 name|gtk_widget_render_icon
@@ -4154,10 +4168,6 @@ argument_list|(
 name|preview
 argument_list|)
 argument_list|,
-name|preview
-operator|->
-name|viewable
-operator|->
 name|stock_id
 argument_list|,
 name|GTK_ICON_SIZE_DIALOG

@@ -297,7 +297,7 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|palettes_menu_update (GtkItemFactory * factory,gpointer data)
+DECL|function|palettes_menu_update (GtkItemFactory * factory,gpointer user_data)
 name|palettes_menu_update
 parameter_list|(
 name|GtkItemFactory
@@ -305,7 +305,7 @@ modifier|*
 name|factory
 parameter_list|,
 name|gpointer
-name|data
+name|user_data
 parameter_list|)
 block|{
 name|GimpContainerEditor
@@ -316,16 +316,17 @@ name|GimpPalette
 modifier|*
 name|palette
 decl_stmt|;
-name|gboolean
-name|internal
+name|GimpData
+modifier|*
+name|data
 init|=
-name|FALSE
+name|NULL
 decl_stmt|;
 name|editor
 operator|=
 name|GIMP_CONTAINER_EDITOR
 argument_list|(
-name|data
+name|user_data
 argument_list|)
 expr_stmt|;
 name|palette
@@ -343,14 +344,12 @@ if|if
 condition|(
 name|palette
 condition|)
-name|internal
+name|data
 operator|=
 name|GIMP_DATA
 argument_list|(
 name|palette
 argument_list|)
-operator|->
-name|internal
 expr_stmt|;
 DECL|macro|SET_SENSITIVE (menu,condition)
 define|#
@@ -371,7 +370,7 @@ name|palette
 operator|&&
 name|GIMP_DATA_GET_CLASS
 argument_list|(
-name|palette
+name|data
 argument_list|)
 operator|->
 name|duplicate
@@ -397,7 +396,13 @@ literal|"/Delete Palette..."
 argument_list|,
 name|palette
 operator|&&
+name|data
+operator|->
+name|writeable
+operator|&&
 operator|!
+name|data
+operator|->
 name|internal
 argument_list|)
 expr_stmt|;

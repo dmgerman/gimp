@@ -165,7 +165,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2780e0090103
+DECL|enum|__anon28d9cc1a0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -4231,6 +4231,11 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
+decl_stmt|;
 name|tool
 operator|=
 name|GIMP_TOOL
@@ -4251,6 +4256,18 @@ argument_list|(
 name|gdisp
 operator|->
 name|shell
+argument_list|)
+expr_stmt|;
+name|stock_id
+operator|=
+name|gimp_viewable_get_stock_id
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|tool
+operator|->
+name|tool_info
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|crop
@@ -4276,13 +4293,6 @@ argument_list|)
 operator|->
 name|name
 argument_list|,
-name|GIMP_VIEWABLE
-argument_list|(
-name|tool
-operator|->
-name|tool_info
-argument_list|)
-operator|->
 name|stock_id
 argument_list|,
 name|_

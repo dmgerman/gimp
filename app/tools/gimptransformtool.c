@@ -4540,6 +4540,7 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|stock_id
@@ -4555,12 +4556,13 @@ name|tool_info
 expr_stmt|;
 name|stock_id
 operator|=
+name|gimp_viewable_get_stock_id
+argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
 name|tool_info
 argument_list|)
-operator|->
-name|stock_id
+argument_list|)
 expr_stmt|;
 name|tr_tool
 operator|->

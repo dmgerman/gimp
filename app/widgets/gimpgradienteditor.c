@@ -2401,6 +2401,10 @@ if|if
 condition|(
 name|data
 operator|&&
+name|data
+operator|->
+name|writeable
+operator|&&
 operator|!
 name|data
 operator|->

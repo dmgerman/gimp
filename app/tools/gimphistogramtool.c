@@ -1302,6 +1302,11 @@ name|GtkWidget
 modifier|*
 name|menu
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -1374,6 +1379,16 @@ name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|stock_id
+operator|=
+name|gimp_viewable_get_stock_id
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|tool_info
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  The shell and main vbox  */
 name|htd
 operator|->
@@ -1394,11 +1409,6 @@ argument_list|)
 operator|->
 name|name
 argument_list|,
-name|GIMP_VIEWABLE
-argument_list|(
-name|tool_info
-argument_list|)
-operator|->
 name|stock_id
 argument_list|,
 name|_
