@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"resolution_calibrate.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"session.h"
 end_include
 
@@ -126,7 +132,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be5c8820103
+DECL|enum|__anon27a84c070103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -149,7 +155,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|PrefsState
-name|file_prefs_check_settings
+name|prefs_check_settings
 parameter_list|(
 name|void
 parameter_list|)
@@ -159,7 +165,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_prefs_ok_callback
+name|prefs_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -173,7 +179,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_prefs_save_callback
+name|prefs_save_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -187,7 +193,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_prefs_cancel_callback
+name|prefs_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -201,25 +207,14 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|file_prefs_preview_size_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -227,12 +222,14 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_prefs_nav_preview_size_callback
+name|prefs_preview_size_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -240,12 +237,14 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_prefs_string_callback
+name|prefs_nav_preview_size_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -253,12 +252,14 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_prefs_text_callback
+name|prefs_string_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -266,12 +267,14 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_prefs_filename_callback
+name|prefs_text_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -279,12 +282,14 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_prefs_path_callback
+name|prefs_filename_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -292,12 +297,14 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_prefs_clear_session_info_callback
+name|prefs_path_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -305,12 +312,14 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_prefs_default_size_callback
+name|prefs_clear_session_info_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -318,12 +327,14 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_prefs_default_resolution_callback
+name|prefs_default_size_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -331,12 +342,14 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_prefs_res_source_callback
+name|prefs_default_resolution_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -344,12 +357,14 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_prefs_monitor_resolution_callback
+name|prefs_res_source_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -357,7 +372,37 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_prefs_restart_notification
+name|prefs_monitor_resolution_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|prefs_resolution_calibrate_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|prefs_restart_notification
 parameter_list|(
 name|void
 parameter_list|)
@@ -1044,8 +1089,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_strset (gchar ** dst,gchar * src)
-name|file_prefs_strset
+DECL|function|prefs_strset (gchar ** dst,gchar * src)
+name|prefs_strset
 parameter_list|(
 name|gchar
 modifier|*
@@ -1087,8 +1132,8 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|file_prefs_strdup (gchar * src)
-name|file_prefs_strdup
+DECL|function|prefs_strdup (gchar * src)
+name|prefs_strdup
 parameter_list|(
 name|gchar
 modifier|*
@@ -1117,8 +1162,8 @@ end_comment
 begin_function
 specifier|static
 name|int
-DECL|function|file_prefs_strcmp (gchar * src1,gchar * src2)
-name|file_prefs_strcmp
+DECL|function|prefs_strcmp (gchar * src1,gchar * src2)
+name|prefs_strcmp
 parameter_list|(
 name|gchar
 modifier|*
@@ -1155,8 +1200,8 @@ end_function
 begin_function
 specifier|static
 name|PrefsState
-DECL|function|file_prefs_check_settings (void)
-name|file_prefs_check_settings
+DECL|function|prefs_check_settings (void)
+name|prefs_check_settings
 parameter_list|(
 name|void
 parameter_list|)
@@ -1457,63 +1502,63 @@ name|edit_info_window_follows_mouse
 operator|!=
 name|old_info_window_follows_mouse
 operator|||
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|old_temp_path
 argument_list|,
 name|edit_temp_path
 argument_list|)
 operator|||
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|old_swap_path
 argument_list|,
 name|edit_swap_path
 argument_list|)
 operator|||
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|old_brush_path
 argument_list|,
 name|edit_brush_path
 argument_list|)
 operator|||
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|old_brush_vbr_path
 argument_list|,
 name|edit_brush_vbr_path
 argument_list|)
 operator|||
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|old_pattern_path
 argument_list|,
 name|edit_pattern_path
 argument_list|)
 operator|||
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|old_palette_path
 argument_list|,
 name|edit_palette_path
 argument_list|)
 operator|||
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|old_gradient_path
 argument_list|,
 name|edit_gradient_path
 argument_list|)
 operator|||
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|old_plug_in_path
 argument_list|,
 name|edit_plug_in_path
 argument_list|)
 operator|||
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|old_module_path
 argument_list|,
@@ -1534,8 +1579,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_restart_notification_save_callback (GtkWidget * widget,gpointer data)
-name|file_prefs_restart_notification_save_callback
+DECL|function|prefs_restart_notification_save_callback (GtkWidget * widget,gpointer data)
+name|prefs_restart_notification_save_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1545,7 +1590,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|file_prefs_save_callback
+name|prefs_save_callback
 argument_list|(
 name|widget
 argument_list|,
@@ -1570,8 +1615,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_restart_notification (void)
-name|file_prefs_restart_notification
+DECL|function|prefs_restart_notification (void)
+name|prefs_restart_notification
 parameter_list|(
 name|void
 parameter_list|)
@@ -1616,7 +1661,7 @@ argument_list|(
 literal|"Save"
 argument_list|)
 argument_list|,
-name|file_prefs_restart_notification_save_callback
+name|prefs_restart_notification_save_callback
 argument_list|,
 name|NULL
 argument_list|,
@@ -1760,8 +1805,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_ok_callback (GtkWidget * widget,GtkWidget * dlg)
-name|file_prefs_ok_callback
+DECL|function|prefs_ok_callback (GtkWidget * widget,GtkWidget * dlg)
+name|prefs_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1777,7 +1822,7 @@ name|state
 decl_stmt|;
 name|state
 operator|=
-name|file_prefs_check_settings
+name|prefs_check_settings
 argument_list|()
 expr_stmt|;
 switch|switch
@@ -1800,7 +1845,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|file_prefs_restart_notification
+name|prefs_restart_notification
 argument_list|()
 expr_stmt|;
 break|break;
@@ -1860,8 +1905,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_save_callback (GtkWidget * widget,GtkWidget * dlg)
-name|file_prefs_save_callback
+DECL|function|prefs_save_callback (GtkWidget * widget,GtkWidget * dlg)
+name|prefs_save_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1951,7 +1996,7 @@ name|save_gradient_path
 decl_stmt|;
 name|state
 operator|=
-name|file_prefs_check_settings
+name|prefs_check_settings
 argument_list|()
 expr_stmt|;
 switch|switch
@@ -2511,7 +2556,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|default_comment
 argument_list|,
@@ -2709,7 +2754,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|image_title_format
 argument_list|,
@@ -3105,7 +3150,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|old_temp_path
 argument_list|,
@@ -3129,7 +3174,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|old_swap_path
 argument_list|,
@@ -3153,7 +3198,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|old_brush_path
 argument_list|,
@@ -3177,7 +3222,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|old_brush_vbr_path
 argument_list|,
@@ -3201,7 +3246,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|old_pattern_path
 argument_list|,
@@ -3225,7 +3270,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|old_palette_path
 argument_list|,
@@ -3249,7 +3294,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|old_gradient_path
 argument_list|,
@@ -3273,7 +3318,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|old_plug_in_path
 argument_list|,
@@ -3297,7 +3342,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|file_prefs_strcmp
+name|prefs_strcmp
 argument_list|(
 name|old_module_path
 argument_list|,
@@ -3449,8 +3494,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_cancel_callback (GtkWidget * widget,GtkWidget * dlg)
-name|file_prefs_cancel_callback
+DECL|function|prefs_cancel_callback (GtkWidget * widget,GtkWidget * dlg)
+name|prefs_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -3681,7 +3726,7 @@ name|gdisplays_flush
 argument_list|()
 expr_stmt|;
 block|}
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|image_title_format
@@ -3689,7 +3734,7 @@ argument_list|,
 name|old_image_title_format
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|default_comment
@@ -3735,7 +3780,7 @@ name|edit_info_window_follows_mouse
 operator|=
 name|old_info_window_follows_mouse
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|edit_temp_path
@@ -3743,7 +3788,7 @@ argument_list|,
 name|old_temp_path
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|edit_swap_path
@@ -3751,7 +3796,7 @@ argument_list|,
 name|old_swap_path
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|edit_brush_path
@@ -3759,7 +3804,7 @@ argument_list|,
 name|old_brush_path
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|edit_brush_vbr_path
@@ -3767,7 +3812,7 @@ argument_list|,
 name|old_brush_vbr_path
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|edit_pattern_path
@@ -3775,7 +3820,7 @@ argument_list|,
 name|old_pattern_path
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|edit_palette_path
@@ -3783,7 +3828,7 @@ argument_list|,
 name|old_palette_path
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|edit_gradient_path
@@ -3791,7 +3836,7 @@ argument_list|,
 name|old_gradient_path
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|edit_plug_in_path
@@ -3799,7 +3844,7 @@ argument_list|,
 name|old_plug_in_path
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|edit_module_path
@@ -3814,8 +3859,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_toggle_callback (GtkWidget * widget,gpointer data)
-name|file_prefs_toggle_callback
+DECL|function|prefs_toggle_callback (GtkWidget * widget,gpointer data)
+name|prefs_toggle_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4083,7 +4128,7 @@ block|{
 comment|/*  Are you a gimp-hacker who is getting this message?  You        *  probably have to set your preferences value in one of the        *  branches above...        */
 name|g_warning
 argument_list|(
-literal|"Unknown file_prefs_toggle_callback() invoker - ignored."
+literal|"Unknown prefs_toggle_callback() invoker - ignored."
 argument_list|)
 expr_stmt|;
 block|}
@@ -4093,8 +4138,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_preview_size_callback (GtkWidget * widget,gpointer data)
-name|file_prefs_preview_size_callback
+DECL|function|prefs_preview_size_callback (GtkWidget * widget,gpointer data)
+name|prefs_preview_size_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4127,8 +4172,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_nav_preview_size_callback (GtkWidget * widget,gpointer data)
-name|file_prefs_nav_preview_size_callback
+DECL|function|prefs_nav_preview_size_callback (GtkWidget * widget,gpointer data)
+name|prefs_nav_preview_size_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4161,8 +4206,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_string_callback (GtkWidget * widget,gpointer data)
-name|file_prefs_string_callback
+DECL|function|prefs_string_callback (GtkWidget * widget,gpointer data)
+name|prefs_string_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4181,7 +4226,7 @@ name|val
 operator|=
 name|data
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 name|val
 argument_list|,
@@ -4200,8 +4245,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_text_callback (GtkWidget * widget,gpointer data)
-name|file_prefs_text_callback
+DECL|function|prefs_text_callback (GtkWidget * widget,gpointer data)
+name|prefs_text_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4279,7 +4324,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 name|val
 argument_list|,
@@ -4292,8 +4337,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_filename_callback (GtkWidget * widget,gpointer data)
-name|file_prefs_filename_callback
+DECL|function|prefs_filename_callback (GtkWidget * widget,gpointer data)
+name|prefs_filename_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4326,7 +4371,7 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 name|val
 argument_list|,
@@ -4344,8 +4389,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_path_callback (GtkWidget * widget,gpointer data)
-name|file_prefs_path_callback
+DECL|function|prefs_path_callback (GtkWidget * widget,gpointer data)
+name|prefs_path_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4383,7 +4428,7 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 name|val
 argument_list|,
@@ -4401,8 +4446,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_clear_session_info_callback (GtkWidget * widget,gpointer data)
-name|file_prefs_clear_session_info_callback
+DECL|function|prefs_clear_session_info_callback (GtkWidget * widget,gpointer data)
+name|prefs_clear_session_info_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4427,8 +4472,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_default_size_callback (GtkWidget * widget,gpointer data)
-name|file_prefs_default_size_callback
+DECL|function|prefs_default_size_callback (GtkWidget * widget,gpointer data)
+name|prefs_default_size_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4492,8 +4537,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_default_resolution_callback (GtkWidget * widget,gpointer data)
-name|file_prefs_default_resolution_callback
+DECL|function|prefs_default_resolution_callback (GtkWidget * widget,gpointer data)
+name|prefs_default_resolution_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4742,8 +4787,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_res_source_callback (GtkWidget * widget,gpointer data)
-name|file_prefs_res_source_callback
+DECL|function|prefs_res_source_callback (GtkWidget * widget,gpointer data)
+name|prefs_res_source_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4755,59 +4800,14 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|resolution_xserver_label
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|monitor_resolution_sizeentry
 decl_stmt|;
-name|resolution_xserver_label
-operator|=
-name|gtk_object_get_data
+name|gimp_toggle_button_sensitive_update
 argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|widget
-argument_list|)
-argument_list|,
-literal|"resolution_xserver_label"
-argument_list|)
-expr_stmt|;
-name|monitor_resolution_sizeentry
-operator|=
-name|gtk_object_get_data
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|widget
-argument_list|)
-argument_list|,
-literal|"monitor_resolution_sizeentry"
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_sensitive
-argument_list|(
-name|resolution_xserver_label
-argument_list|,
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|widget
 argument_list|)
-operator|->
-name|active
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_sensitive
-argument_list|(
-name|monitor_resolution_sizeentry
-argument_list|,
-operator|!
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|widget
-argument_list|)
-operator|->
-name|active
 argument_list|)
 expr_stmt|;
 if|if
@@ -4836,6 +4836,18 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|monitor_resolution_sizeentry
+operator|=
+name|gtk_object_get_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+literal|"monitor_resolution_sizeentry"
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|monitor_resolution_sizeentry
@@ -4877,8 +4889,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_monitor_resolution_callback (GtkWidget * widget,gpointer data)
-name|file_prefs_monitor_resolution_callback
+DECL|function|prefs_monitor_resolution_callback (GtkWidget * widget,gpointer data)
+name|prefs_monitor_resolution_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -5032,6 +5044,37 @@ expr_stmt|;
 block|}
 end_function
 
+begin_function
+specifier|static
+name|void
+DECL|function|prefs_resolution_calibrate_callback (GtkWidget * widget,gpointer data)
+name|prefs_resolution_calibrate_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|resolution_calibrate_dialog
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|data
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 begin_comment
 comment|/*  create a new notebook page  */
 end_comment
@@ -5040,8 +5083,8 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|file_prefs_notebook_append_page (GtkNotebook * notebook,gchar * notebook_label,GtkCTree * ctree,gchar * tree_label,gchar * help_data,GtkCTreeNode * parent,GtkCTreeNode ** new_node,gint page_index)
-name|file_prefs_notebook_append_page
+DECL|function|prefs_notebook_append_page (GtkNotebook * notebook,gchar * notebook_label,GtkCTree * ctree,gchar * tree_label,gchar * help_data,GtkCTreeNode * parent,GtkCTreeNode ** new_node,gint page_index)
+name|prefs_notebook_append_page
 parameter_list|(
 name|GtkNotebook
 modifier|*
@@ -5334,8 +5377,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|file_pref_tree_select_callback (GtkWidget * widget,GtkCTreeNode * node)
-name|file_pref_tree_select_callback
+DECL|function|prefs_tree_select_callback (GtkWidget * widget,GtkCTreeNode * node)
+name|prefs_tree_select_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -5411,8 +5454,8 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|file_prefs_frame_new (gchar * label,GtkBox * vbox)
-name|file_prefs_frame_new
+DECL|function|prefs_frame_new (gchar * label,GtkBox * vbox)
+name|prefs_frame_new
 parameter_list|(
 name|gchar
 modifier|*
@@ -5499,8 +5542,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_prefs_help_func (gchar * help_data)
-name|file_prefs_help_func
+DECL|function|prefs_help_func (gchar * help_data)
+name|prefs_help_func
 parameter_list|(
 name|gchar
 modifier|*
@@ -5576,8 +5619,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|file_pref_cmd_callback (GtkWidget * widget,gpointer client_data)
-name|file_pref_cmd_callback
+DECL|function|prefs_cmd_callback (GtkWidget * widget,gpointer client_data)
+name|prefs_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -5683,6 +5726,14 @@ name|sizeentry2
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|separator
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|calibrate_button
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|text
 decl_stmt|;
 name|GSList
@@ -5755,63 +5806,63 @@ name|info_window_follows_mouse
 expr_stmt|;
 name|edit_temp_path
 operator|=
-name|file_prefs_strdup
+name|prefs_strdup
 argument_list|(
 name|temp_path
 argument_list|)
 expr_stmt|;
 name|edit_swap_path
 operator|=
-name|file_prefs_strdup
+name|prefs_strdup
 argument_list|(
 name|swap_path
 argument_list|)
 expr_stmt|;
 name|edit_plug_in_path
 operator|=
-name|file_prefs_strdup
+name|prefs_strdup
 argument_list|(
 name|plug_in_path
 argument_list|)
 expr_stmt|;
 name|edit_module_path
 operator|=
-name|file_prefs_strdup
+name|prefs_strdup
 argument_list|(
 name|module_path
 argument_list|)
 expr_stmt|;
 name|edit_brush_path
 operator|=
-name|file_prefs_strdup
+name|prefs_strdup
 argument_list|(
 name|brush_path
 argument_list|)
 expr_stmt|;
 name|edit_brush_vbr_path
 operator|=
-name|file_prefs_strdup
+name|prefs_strdup
 argument_list|(
 name|brush_vbr_path
 argument_list|)
 expr_stmt|;
 name|edit_pattern_path
 operator|=
-name|file_prefs_strdup
+name|prefs_strdup
 argument_list|(
 name|pattern_path
 argument_list|)
 expr_stmt|;
 name|edit_palette_path
 operator|=
-name|file_prefs_strdup
+name|prefs_strdup
 argument_list|(
 name|palette_path
 argument_list|)
 expr_stmt|;
 name|edit_gradient_path
 operator|=
-name|file_prefs_strdup
+name|prefs_strdup
 argument_list|(
 name|gradient_path
 argument_list|)
@@ -5975,7 +6026,7 @@ name|old_num_processors
 operator|=
 name|num_processors
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|old_image_title_format
@@ -5983,7 +6034,7 @@ argument_list|,
 name|image_title_format
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|old_default_comment
@@ -6024,7 +6075,7 @@ name|old_info_window_follows_mouse
 operator|=
 name|edit_info_window_follows_mouse
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|old_temp_path
@@ -6032,7 +6083,7 @@ argument_list|,
 name|edit_temp_path
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|old_swap_path
@@ -6040,7 +6091,7 @@ argument_list|,
 name|edit_swap_path
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|old_plug_in_path
@@ -6048,7 +6099,7 @@ argument_list|,
 name|edit_plug_in_path
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|old_module_path
@@ -6056,7 +6107,7 @@ argument_list|,
 name|edit_module_path
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|old_brush_path
@@ -6064,7 +6115,7 @@ argument_list|,
 name|edit_brush_path
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|old_brush_vbr_path
@@ -6072,7 +6123,7 @@ argument_list|,
 name|edit_brush_vbr_path
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|old_pattern_path
@@ -6080,7 +6131,7 @@ argument_list|,
 name|edit_pattern_path
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|old_palette_path
@@ -6088,7 +6139,7 @@ argument_list|,
 name|edit_palette_path
 argument_list|)
 expr_stmt|;
-name|file_prefs_strset
+name|prefs_strset
 argument_list|(
 operator|&
 name|old_gradient_path
@@ -6113,7 +6164,7 @@ argument_list|)
 argument_list|,
 literal|"gimp_preferences"
 argument_list|,
-name|file_prefs_help_func
+name|prefs_help_func
 argument_list|,
 literal|"dialogs/preferences/preferences.html"
 argument_list|,
@@ -6130,7 +6181,7 @@ argument_list|(
 literal|"OK"
 argument_list|)
 argument_list|,
-name|file_prefs_ok_callback
+name|prefs_ok_callback
 argument_list|,
 name|NULL
 argument_list|,
@@ -6147,7 +6198,7 @@ argument_list|(
 literal|"Save"
 argument_list|)
 argument_list|,
-name|file_prefs_save_callback
+name|prefs_save_callback
 argument_list|,
 name|NULL
 argument_list|,
@@ -6164,7 +6215,7 @@ argument_list|(
 literal|"Cancel"
 argument_list|)
 argument_list|,
-name|file_prefs_cancel_callback
+name|prefs_cancel_callback
 argument_list|,
 name|NULL
 argument_list|,
@@ -6380,7 +6431,7 @@ literal|"tree_select_row"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_pref_tree_select_callback
+name|prefs_tree_select_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -6393,7 +6444,7 @@ expr_stmt|;
 comment|/* New File page */
 name|vbox
 operator|=
-name|file_prefs_notebook_append_page
+name|prefs_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -6678,7 +6729,7 @@ literal|"unit_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_default_size_callback
+name|prefs_default_size_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -6695,7 +6746,7 @@ literal|"value_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_default_size_callback
+name|prefs_default_size_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -6712,7 +6763,7 @@ literal|"refval_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_default_size_callback
+name|prefs_default_size_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -7023,7 +7074,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|file_prefs_default_resolution_callback
+name|prefs_default_resolution_callback
 argument_list|,
 name|button
 argument_list|)
@@ -7040,7 +7091,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|file_prefs_default_resolution_callback
+name|prefs_default_resolution_callback
 argument_list|,
 name|button
 argument_list|)
@@ -7057,7 +7108,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|file_prefs_default_resolution_callback
+name|prefs_default_resolution_callback
 argument_list|,
 name|button
 argument_list|)
@@ -7181,7 +7232,7 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|,
 operator|&
 name|default_type
@@ -7329,7 +7380,7 @@ expr_stmt|;
 comment|/* Default Comment page */
 name|vbox
 operator|=
-name|file_prefs_notebook_append_page
+name|prefs_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -7483,7 +7534,7 @@ literal|"changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_text_callback
+name|prefs_text_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -7508,7 +7559,7 @@ expr_stmt|;
 comment|/* Display page */
 name|vbox
 operator|=
-name|file_prefs_notebook_append_page
+name|prefs_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -7671,7 +7722,7 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|,
 operator|&
 name|transparency_type
@@ -7789,7 +7840,7 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|,
 operator|&
 name|transparency_size
@@ -7867,7 +7918,7 @@ argument_list|)
 expr_stmt|;
 name|vbox2
 operator|=
-name|file_prefs_frame_new
+name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -8073,7 +8124,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -8132,7 +8183,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -8163,7 +8214,7 @@ expr_stmt|;
 comment|/* Interface */
 name|vbox
 operator|=
-name|file_prefs_notebook_append_page
+name|prefs_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -8205,7 +8256,7 @@ operator|++
 expr_stmt|;
 name|vbox2
 operator|=
-name|file_prefs_frame_new
+name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -8280,14 +8331,14 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-comment|/* Don't show the Auto-save button until we really       have auto-saving in the gimp.       button = gtk_check_button_new_with_label(_("Auto save"));      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button),                                    auto_save);      gtk_box_pack_start (GTK_BOX (vbox2), button, FALSE, FALSE, 0);      gtk_signal_connect (GTK_OBJECT (button), "toggled", 	                 GTK_SIGNAL_FUNC (file_prefs_toggle_callback),&auto_save);      gtk_widget_show (button);   */
+comment|/* Don't show the Auto-save button until we really       have auto-saving in the gimp.       button = gtk_check_button_new_with_label(_("Auto save"));      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button),                                    auto_save);      gtk_box_pack_start (GTK_BOX (vbox2), button, FALSE, FALSE, 0);      gtk_signal_connect (GTK_OBJECT (button), "toggled", 	                 GTK_SIGNAL_FUNC (prefs_toggle_callback),&auto_save);      gtk_widget_show (button);   */
 name|optionmenu
 operator|=
 name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
-name|file_prefs_preview_size_callback
+name|prefs_preview_size_callback
 argument_list|,
 operator|&
 name|preview_size
@@ -8405,7 +8456,7 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
-name|file_prefs_nav_preview_size_callback
+name|prefs_nav_preview_size_callback
 argument_list|,
 operator|&
 name|nav_preview_size
@@ -8553,7 +8604,7 @@ expr_stmt|;
 comment|/* Indicators */
 name|vbox2
 operator|=
-name|file_prefs_frame_new
+name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -8613,7 +8664,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -8627,7 +8678,7 @@ argument_list|)
 expr_stmt|;
 name|vbox2
 operator|=
-name|file_prefs_frame_new
+name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -8687,7 +8738,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -8746,7 +8797,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -8761,7 +8812,7 @@ expr_stmt|;
 comment|/* Interface / Help System */
 name|vbox
 operator|=
-name|file_prefs_notebook_append_page
+name|prefs_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -8803,7 +8854,7 @@ operator|++
 expr_stmt|;
 name|vbox2
 operator|=
-name|file_prefs_frame_new
+name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -8863,7 +8914,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -8922,7 +8973,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -8936,7 +8987,7 @@ argument_list|)
 expr_stmt|;
 name|vbox2
 operator|=
-name|file_prefs_frame_new
+name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -9007,7 +9058,7 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|,
 operator|&
 name|help_browser
@@ -9074,7 +9125,7 @@ expr_stmt|;
 comment|/* Interface / Image Windows */
 name|vbox
 operator|=
-name|file_prefs_notebook_append_page
+name|prefs_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -9116,7 +9167,7 @@ operator|++
 expr_stmt|;
 name|vbox2
 operator|=
-name|file_prefs_frame_new
+name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -9176,7 +9227,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -9235,7 +9286,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -9294,7 +9345,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -9353,7 +9404,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -9767,7 +9818,7 @@ literal|"changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_string_callback
+name|prefs_string_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -9804,7 +9855,7 @@ expr_stmt|;
 comment|/* End of the title format string */
 name|vbox2
 operator|=
-name|file_prefs_frame_new
+name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -9864,7 +9915,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -9923,7 +9974,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -9993,7 +10044,7 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|,
 operator|&
 name|cursor_mode
@@ -10072,7 +10123,7 @@ expr_stmt|;
 comment|/* Interface / Tool Options */
 name|vbox
 operator|=
-name|file_prefs_notebook_append_page
+name|prefs_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -10114,7 +10165,7 @@ operator|++
 expr_stmt|;
 name|vbox2
 operator|=
-name|file_prefs_frame_new
+name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -10174,7 +10225,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -10188,7 +10239,7 @@ argument_list|)
 expr_stmt|;
 name|vbox2
 operator|=
-name|file_prefs_frame_new
+name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -10347,7 +10398,7 @@ expr_stmt|;
 comment|/* Environment */
 name|vbox
 operator|=
-name|file_prefs_notebook_append_page
+name|prefs_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -10389,7 +10440,7 @@ operator|++
 expr_stmt|;
 name|vbox2
 operator|=
-name|file_prefs_frame_new
+name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -10433,7 +10484,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -10881,7 +10932,7 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|,
 operator|&
 name|interpolation_type
@@ -10959,7 +11010,7 @@ argument_list|)
 expr_stmt|;
 name|vbox2
 operator|=
-name|file_prefs_frame_new
+name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -11070,7 +11121,7 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|,
 operator|&
 name|thumbnail_mode
@@ -11140,7 +11191,7 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|,
 operator|&
 name|trust_dirty_flag
@@ -11207,7 +11258,7 @@ expr_stmt|;
 comment|/* Session Management */
 name|vbox
 operator|=
-name|file_prefs_notebook_append_page
+name|prefs_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -11249,7 +11300,7 @@ operator|++
 expr_stmt|;
 name|vbox2
 operator|=
-name|file_prefs_frame_new
+name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -11309,7 +11360,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -11415,7 +11466,7 @@ literal|"clicked"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_clear_session_info_callback
+name|prefs_clear_session_info_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -11473,7 +11524,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -11487,7 +11538,7 @@ argument_list|)
 expr_stmt|;
 name|vbox2
 operator|=
-name|file_prefs_frame_new
+name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -11547,7 +11598,7 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_toggle_callback
+name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -11562,7 +11613,7 @@ expr_stmt|;
 comment|/* Monitor */
 name|vbox
 operator|=
-name|file_prefs_notebook_append_page
+name|prefs_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -11604,7 +11655,7 @@ operator|++
 expr_stmt|;
 name|vbox2
 operator|=
-name|file_prefs_frame_new
+name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -11738,6 +11789,18 @@ name|button
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_object_set_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|sizeentry
+argument_list|)
+argument_list|,
+literal|"chain_button"
+argument_list|,
+name|button
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach_defaults
@@ -11883,7 +11946,7 @@ literal|"value_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_monitor_resolution_callback
+name|prefs_monitor_resolution_callback
 argument_list|)
 argument_list|,
 name|button
@@ -11900,7 +11963,7 @@ literal|"refval_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_monitor_resolution_callback
+name|prefs_monitor_resolution_callback
 argument_list|)
 argument_list|,
 name|button
@@ -11924,6 +11987,98 @@ expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
 name|sizeentry
+argument_list|,
+operator|!
+name|using_xserver_resolution
+argument_list|)
+expr_stmt|;
+name|hbox
+operator|=
+name|gtk_hbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|calibrate_button
+operator|=
+name|gtk_button_new_with_label
+argument_list|(
+name|_
+argument_list|(
+literal|"Calibrate"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_padding
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|GTK_BIN
+argument_list|(
+name|calibrate_button
+argument_list|)
+operator|->
+name|child
+argument_list|)
+argument_list|,
+literal|4
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|calibrate_button
+argument_list|)
+argument_list|,
+literal|"clicked"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|prefs_resolution_calibrate_callback
+argument_list|)
+argument_list|,
+name|sizeentry
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+name|calibrate_button
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|calibrate_button
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|calibrate_button
 argument_list|,
 operator|!
 name|using_xserver_resolution
@@ -11966,22 +12121,10 @@ literal|"toggled"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_res_source_callback
+name|prefs_res_source_callback
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_object_set_data
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"resolution_xserver_label"
-argument_list|,
-name|label
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -11996,6 +12139,42 @@ argument_list|,
 name|sizeentry
 argument_list|)
 expr_stmt|;
+name|gtk_object_set_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+literal|"set_sensitive"
+argument_list|,
+name|label
+argument_list|)
+expr_stmt|;
+name|gtk_object_set_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+literal|"inverse_sensitive"
+argument_list|,
+name|sizeentry
+argument_list|)
+expr_stmt|;
+name|gtk_object_set_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|sizeentry
+argument_list|)
+argument_list|,
+literal|"inverse_sensitive"
+argument_list|,
+name|calibrate_button
+argument_list|)
+expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -12036,6 +12215,32 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|label
+argument_list|)
+expr_stmt|;
+name|separator
+operator|=
+name|gtk_hseparator_new
+argument_list|()
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|,
+name|separator
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|separator
 argument_list|)
 expr_stmt|;
 name|button
@@ -12102,6 +12307,27 @@ argument_list|(
 name|abox
 argument_list|)
 expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|,
+name|hbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbox
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -12120,7 +12346,7 @@ expr_stmt|;
 comment|/* Directories */
 name|vbox
 operator|=
-name|file_prefs_notebook_append_page
+name|prefs_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -12164,7 +12390,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2be5c8820208
+DECL|struct|__anon27a84c070208
 block|{
 DECL|member|label
 name|gchar
@@ -12343,7 +12569,7 @@ literal|"filename_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_filename_callback
+name|prefs_filename_callback
 argument_list|)
 argument_list|,
 name|dirs
@@ -12393,7 +12619,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2be5c8820308
+DECL|struct|__anon27a84c070308
 block|{
 DECL|member|tree_label
 name|gchar
@@ -12614,7 +12840,7 @@ control|)
 block|{
 name|vbox
 operator|=
-name|file_prefs_notebook_append_page
+name|prefs_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -12705,7 +12931,7 @@ literal|"path_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_prefs_path_callback
+name|prefs_path_callback
 argument_list|)
 argument_list|,
 name|paths

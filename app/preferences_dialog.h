@@ -18,12 +18,14 @@ end_define
 
 begin_function_decl
 name|void
-name|file_pref_cmd_callback
+name|prefs_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"preferences_dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"procedural_db.h"
 end_include
 
@@ -490,7 +496,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|file_pref_cmd_callback
+name|prefs_cmd_callback
 block|,
 literal|0
 block|}
