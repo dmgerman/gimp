@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27da71eb0103
+DECL|enum|__anon28d2e0640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -641,6 +641,14 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
+name|gchar
+modifier|*
+name|header
+decl_stmt|;
+name|gchar
+modifier|*
+name|footer
+decl_stmt|;
 name|gboolean
 name|retval
 decl_stmt|;
@@ -677,6 +685,38 @@ argument_list|,
 name|extension
 argument_list|)
 expr_stmt|;
+name|header
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"GIMP %s options"
+argument_list|,
+name|GIMP_OBJECT
+argument_list|(
+name|tool_options
+operator|->
+name|tool_info
+argument_list|)
+operator|->
+name|name
+argument_list|)
+expr_stmt|;
+name|footer
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"end of %s options"
+argument_list|,
+name|GIMP_OBJECT
+argument_list|(
+name|tool_options
+operator|->
+name|tool_info
+argument_list|)
+operator|->
+name|name
+argument_list|)
+expr_stmt|;
 name|retval
 operator|=
 name|gimp_config_serialize_to_file
@@ -688,9 +728,9 @@ argument_list|)
 argument_list|,
 name|filename
 argument_list|,
-literal|"GIMP tool options"
+name|header
 argument_list|,
-literal|"end of tool options"
+name|footer
 argument_list|,
 name|NULL
 argument_list|,
@@ -700,6 +740,16 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|filename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|header
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|footer
 argument_list|)
 expr_stmt|;
 return|return
