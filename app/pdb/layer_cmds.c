@@ -1244,7 +1244,7 @@ name|ADD_WHITE_MASK
 operator|||
 name|mask_type
 operator|>
-name|ADD_ALPHA_MASK
+name|ADD_INV_SELECTION_MASK
 condition|)
 name|success
 operator|=
@@ -1330,7 +1330,7 @@ name|PDB_INT32
 block|,
 literal|"mask_type"
 block|,
-literal|"The type of mask: { WHITE_MASK (0), BLACK_MASK (1), ALPHA_MASK (2) }"
+literal|"The type of mask: { WHITE_MASK (0), BLACK_MASK (1), ALPHA_MASK (2), SELECTION_MASK (3), INV_SELECTION_MASK (4) }"
 block|}
 block|}
 decl_stmt|;

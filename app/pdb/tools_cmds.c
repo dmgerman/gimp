@@ -82,12 +82,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/gimpcolorpickertool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools/convolve.h"
 end_include
 
@@ -131,6 +125,12 @@ begin_include
 include|#
 directive|include
 file|"tools/fuzzy_select.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/gimpcolorpickertool.h"
 end_include
 
 begin_include
