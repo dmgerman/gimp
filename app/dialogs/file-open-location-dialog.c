@@ -423,7 +423,7 @@ name|NULL
 argument_list|,
 name|GIMP_VIEW_SIZE_SMALL
 argument_list|,
-literal|1
+literal|0
 argument_list|)
 expr_stmt|;
 name|completion
