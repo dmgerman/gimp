@@ -136,7 +136,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c2f6e60103
+DECL|enum|__anon2a4660930103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -187,7 +187,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c2f6e60203
+DECL|enum|__anon2a4660930203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -1612,13 +1612,11 @@ operator|->
 name|rgb
 argument_list|)
 expr_stmt|;
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|csp
 operator|->
 name|xy_color
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1650,13 +1648,11 @@ operator|->
 name|rgb
 argument_list|)
 expr_stmt|;
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|csp
 operator|->
 name|z_color
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -7203,7 +7199,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c2f6e60308
+DECL|struct|__anon2a4660930308
 block|{
 DECL|member|callback
 name|GimpColorSelectorCallback

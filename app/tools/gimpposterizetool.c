@@ -1023,7 +1023,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,

@@ -167,7 +167,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b79660d0103
+DECL|enum|__anon2b05f1510103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -4890,9 +4890,9 @@ argument_list|,
 name|GTK_BUTTONBOX_SPREAD
 argument_list|)
 expr_stmt|;
-name|gtk_button_box_set_spacing
+name|gtk_box_set_spacing
 argument_list|(
-name|GTK_BUTTON_BOX
+name|GTK_BOX
 argument_list|(
 name|bbox
 argument_list|)

@@ -1328,7 +1328,7 @@ name|GRAD_PREVIEW_HEIGHT
 argument_list|)
 expr_stmt|;
 comment|/*  Enable auto-resizing of the preview but ensure a minimal size  */
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|editor
 operator|->
@@ -1501,14 +1501,11 @@ operator|=
 name|gtk_drawing_area_new
 argument_list|()
 expr_stmt|;
-name|gtk_drawing_area_size
-argument_list|(
-name|GTK_DRAWING_AREA
+name|gtk_widget_set_size_request
 argument_list|(
 name|editor
 operator|->
 name|control
-argument_list|)
 argument_list|,
 name|GRAD_PREVIEW_WIDTH
 argument_list|,
@@ -4575,13 +4572,11 @@ operator|->
 name|page_size
 argument_list|)
 expr_stmt|;
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|editor
 operator|->
 name|preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}

@@ -404,11 +404,14 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_uposition
+name|gtk_window_move
+argument_list|(
+name|GTK_WINDOW
 argument_list|(
 name|psel
 operator|->
 name|device_patpopup
+argument_list|)
 argument_list|,
 name|x
 argument_list|,
@@ -637,14 +640,11 @@ argument_list|(
 name|buf
 argument_list|)
 expr_stmt|;
-comment|/*  Draw the brush preview  */
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|psel
 operator|->
 name|device_patpreview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1068,12 +1068,9 @@ argument_list|(
 name|buf
 argument_list|)
 expr_stmt|;
-comment|/*  Draw the brush preview  */
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|pattern_preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}

@@ -713,13 +713,14 @@ argument_list|,
 name|transform_tool
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|widget
 argument_list|,
 literal|180
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|spinbutton2

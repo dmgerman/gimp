@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a77e900103
+DECL|enum|__anon2c7fc4e90103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -117,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a77e900203
+DECL|enum|__anon2c7fc4e90203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -4239,9 +4239,12 @@ operator|-
 literal|32
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_uposition
+name|gtk_window_move
+argument_list|(
+name|GTK_WINDOW
 argument_list|(
 name|window
+argument_list|)
 argument_list|,
 name|info
 operator|->

@@ -1925,7 +1925,7 @@ expr_stmt|;
 comment|/*  Get the spinbutton data  */
 name|value
 operator|=
-name|gtk_spin_button_get_value_as_float
+name|gtk_spin_button_get_value
 argument_list|(
 name|GTK_SPIN_BUTTON
 argument_list|(

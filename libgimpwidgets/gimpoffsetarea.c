@@ -9,6 +9,29 @@ directive|include
 file|<stdio.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -37,7 +60,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b30f7300103
+DECL|enum|__anon29626f540103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -1477,7 +1500,7 @@ name|offset_area
 operator|->
 name|orig_height
 expr_stmt|;
-name|gtk_draw_shadow
+name|gtk_paint_shadow
 argument_list|(
 name|widget
 operator|->
@@ -1490,6 +1513,12 @@ argument_list|,
 name|GTK_STATE_NORMAL
 argument_list|,
 name|GTK_SHADOW_OUT
+argument_list|,
+name|NULL
+argument_list|,
+name|widget
+argument_list|,
+name|NULL
 argument_list|,
 name|x
 argument_list|,

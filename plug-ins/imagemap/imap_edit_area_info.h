@@ -28,12 +28,6 @@ end_typedef
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"imap_default_dialog.h"
 end_include
 

@@ -1061,7 +1061,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|scrolledwindow
 argument_list|,
@@ -4112,13 +4112,11 @@ literal|0
 condition|)
 block|{
 comment|/* This row only */
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|palette_editor
 operator|->
 name|color_area
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -4188,13 +4186,11 @@ name|palette_editor
 operator|->
 name|freeze_update
 condition|)
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|palette_editor
 operator|->
 name|color_area
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}

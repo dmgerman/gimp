@@ -16,12 +16,6 @@ directive|define
 name|_IMAP_FILE_H
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
-end_include
-
 begin_function_decl
 name|void
 name|do_file_open_dialog

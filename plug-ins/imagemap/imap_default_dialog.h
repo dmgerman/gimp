@@ -16,14 +16,8 @@ directive|define
 name|_IMAP_DEFAULT_DIALOG_H
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
-end_include
-
 begin_typedef
-DECL|struct|__anon2acb20ae0108
+DECL|struct|__anon2ae89de40108
 typedef|typedef
 struct|struct
 block|{

@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_cmd_create.h"
 end_include
 
@@ -58,7 +64,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2b81fbcd0108
+DECL|struct|__anon2c08da280108
 typedef|typedef
 struct|struct
 block|{
@@ -937,9 +943,9 @@ argument_list|,
 literal|100
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|data
 operator|->
@@ -948,7 +954,7 @@ argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|recalc_bounds
 argument_list|)
@@ -992,9 +998,9 @@ argument_list|,
 literal|100
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|data
 operator|->
@@ -1003,7 +1009,7 @@ argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|recalc_bounds
 argument_list|)
@@ -1047,9 +1053,9 @@ argument_list|,
 literal|100
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|data
 operator|->
@@ -1058,7 +1064,7 @@ argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|recalc_bounds
 argument_list|)
@@ -1102,9 +1108,9 @@ argument_list|,
 literal|100
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|data
 operator|->
@@ -1113,7 +1119,7 @@ argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|recalc_bounds
 argument_list|)
@@ -1157,9 +1163,9 @@ argument_list|,
 literal|100
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|data
 operator|->
@@ -1168,7 +1174,7 @@ argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|recalc_bounds
 argument_list|)
@@ -1212,9 +1218,9 @@ argument_list|,
 literal|100
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|data
 operator|->
@@ -1223,7 +1229,7 @@ argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|recalc_bounds
 argument_list|)
@@ -1267,9 +1273,9 @@ argument_list|,
 literal|100
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|data
 operator|->
@@ -1278,7 +1284,7 @@ argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|recalc_bounds
 argument_list|)
@@ -1322,9 +1328,9 @@ argument_list|,
 literal|100
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|data
 operator|->
@@ -1333,7 +1339,7 @@ argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|recalc_bounds
 argument_list|)
@@ -1602,7 +1608,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b81fbcd0208
+DECL|struct|__anon2c08da280208
 typedef|typedef
 struct|struct
 block|{

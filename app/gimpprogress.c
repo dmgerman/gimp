@@ -460,7 +460,7 @@ operator|=
 name|gtk_progress_bar_new
 argument_list|()
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|progress
 operator|->
@@ -664,7 +664,7 @@ name|progressbar
 expr_stmt|;
 block|}
 comment|/* reset the progress bar */
-name|gtk_progress_bar_update
+name|gtk_progress_bar_set_fraction
 argument_list|(
 name|GTK_PROGRESS_BAR
 argument_list|(
@@ -756,7 +756,7 @@ operator|->
 name|progressbar
 expr_stmt|;
 block|}
-name|gtk_progress_bar_update
+name|gtk_progress_bar_set_fraction
 argument_list|(
 name|GTK_PROGRESS_BAR
 argument_list|(
@@ -848,7 +848,7 @@ name|GtkWidget
 modifier|*
 name|bar
 decl_stmt|;
-name|float
+name|gdouble
 name|val
 decl_stmt|;
 name|g_return_if_fail
@@ -890,9 +890,9 @@ expr_stmt|;
 block|}
 name|val
 operator|=
-name|gtk_progress_get_current_percentage
+name|gtk_progress_bar_get_fraction
 argument_list|(
-name|GTK_PROGRESS
+name|GTK_PROGRESS_BAR
 argument_list|(
 name|bar
 argument_list|)
@@ -1002,7 +1002,7 @@ argument_list|,
 name|cid
 argument_list|)
 expr_stmt|;
-name|gtk_progress_bar_update
+name|gtk_progress_bar_set_fraction
 argument_list|(
 name|GTK_PROGRESS_BAR
 argument_list|(

@@ -1452,7 +1452,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,
@@ -1524,7 +1524,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,
@@ -1596,7 +1596,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,
@@ -2331,7 +2331,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_button_group
+name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(

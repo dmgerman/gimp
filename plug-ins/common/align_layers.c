@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c88bf20103
+DECL|enum|__anon2aedb97c0103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c88bf20203
+DECL|enum|__anon2aedb97c0203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c88bf20303
+DECL|enum|__anon2aedb97c0303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c88bf20403
+DECL|enum|__anon2aedb97c0403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c88bf20508
+DECL|struct|__anon2aedb97c0508
 block|{
 DECL|member|h_style
 name|gint
@@ -336,7 +336,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c88bf20608
+DECL|struct|__anon2aedb97c0608
 block|{
 DECL|member|run
 name|gint
@@ -1671,16 +1671,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gtk_main_quit
 argument_list|)
@@ -2234,16 +2234,21 @@ argument_list|,
 literal|5
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|gtk_widget_show
 argument_list|(
-name|GTK_OBJECT
+name|toggle
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|toggle
 argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_toggle_button_update
 argument_list|)
@@ -2252,11 +2257,6 @@ operator|&
 name|VALS
 operator|.
 name|ignore_bottom
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle
 argument_list|)
 expr_stmt|;
 name|toggle
@@ -2299,16 +2299,21 @@ argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|gtk_widget_show
 argument_list|(
-name|GTK_OBJECT
+name|toggle
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|toggle
 argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_toggle_button_update
 argument_list|)
@@ -2317,11 +2322,6 @@ operator|&
 name|VALS
 operator|.
 name|base_is_bottom_layer
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle
 argument_list|)
 expr_stmt|;
 name|adj
@@ -2371,16 +2371,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|adj
 argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_int_adjustment_update
 argument_list|)

@@ -499,12 +499,9 @@ argument_list|(
 name|odd
 argument_list|)
 expr_stmt|;
-comment|/*  Draw the brush preview  */
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|gradient_preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}

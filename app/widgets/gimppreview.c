@@ -207,7 +207,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d392df0103
+DECL|enum|__anon29419d330103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -3310,9 +3310,12 @@ name|popup_height
 else|:
 name|y
 expr_stmt|;
-name|gtk_widget_set_uposition
+name|gtk_window_move
+argument_list|(
+name|GTK_WINDOW
 argument_list|(
 name|window
+argument_list|)
 argument_list|,
 name|x
 argument_list|,

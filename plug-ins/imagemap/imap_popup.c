@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -55,6 +55,12 @@ begin_include
 include|#
 directive|include
 file|"imap_tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_decl_stmt

@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b52d7530103
+DECL|enum|__anon27e5cf660103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -1070,16 +1070,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gtk_main_quit
 argument_list|)
@@ -1151,20 +1151,20 @@ argument_list|,
 operator|&
 name|DeinterlaceValue
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|DeinterlaceValue
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"Keep Odd Fields"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|ODD_FIELDS
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1173,10 +1173,10 @@ argument_list|(
 literal|"Keep Even Fields"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|EVEN_FIELDS
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

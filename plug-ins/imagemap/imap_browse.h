@@ -16,12 +16,6 @@ directive|define
 name|_IMAP_BROWSE_H
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
-end_include
-
 begin_typedef
 DECL|typedef|BrowseFilter_t
 typedef|typedef
@@ -43,7 +37,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29abff6d0108
+DECL|struct|__anon28c107270108
 typedef|typedef
 struct|struct
 block|{

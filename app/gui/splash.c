@@ -567,7 +567,7 @@ argument_list|,
 name|text2
 argument_list|)
 expr_stmt|;
-name|gtk_progress_bar_update
+name|gtk_progress_bar_set_fraction
 argument_list|(
 name|GTK_PROGRESS_BAR
 argument_list|(

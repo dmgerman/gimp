@@ -16,12 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
 end_include
 
@@ -40,26 +34,24 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|"libgimp/gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|"libgimp/gimpui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimp.h>
+file|"libgimpmath/gimpmath.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpui.h>
-end_include
+begin_empty
+empty|#
+end_empty
 
 begin_include
 include|#
@@ -1399,16 +1391,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gtk_main_quit
 argument_list|)

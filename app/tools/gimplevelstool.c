@@ -2166,7 +2166,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,
@@ -2266,7 +2266,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,
@@ -2366,7 +2366,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,
@@ -2725,9 +2725,7 @@ operator|=
 name|gtk_drawing_area_new
 argument_list|()
 expr_stmt|;
-name|gtk_drawing_area_size
-argument_list|(
-name|GTK_DRAWING_AREA
+name|gtk_widget_set_size_request
 argument_list|(
 name|ld
 operator|->
@@ -2735,7 +2733,6 @@ name|input_levels_da
 index|[
 literal|1
 index|]
-argument_list|)
 argument_list|,
 name|DA_WIDTH
 argument_list|,
@@ -2929,7 +2926,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,
@@ -3029,7 +3026,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,
@@ -3477,9 +3474,9 @@ operator|=
 name|gtk_hbutton_box_new
 argument_list|()
 expr_stmt|;
-name|gtk_button_box_set_spacing
+name|gtk_box_set_spacing
 argument_list|(
-name|GTK_BUTTON_BOX
+name|GTK_BOX
 argument_list|(
 name|hbbox
 argument_list|)
@@ -4633,7 +4630,7 @@ name|update
 operator|&
 name|DRAW
 condition|)
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|ld
 operator|->
@@ -4641,8 +4638,6 @@ name|input_levels_da
 index|[
 literal|0
 index|]
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -4822,7 +4817,7 @@ name|update
 operator|&
 name|DRAW
 condition|)
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|ld
 operator|->
@@ -4830,8 +4825,6 @@ name|output_levels_da
 index|[
 literal|0
 index|]
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}

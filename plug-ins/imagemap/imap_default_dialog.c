@@ -84,7 +84,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|dialog_destroy (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|dialog_destroy
 parameter_list|(
@@ -107,6 +107,9 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -399,16 +402,16 @@ argument_list|,
 name|title
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
 literal|"delete_event"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|dialog_destroy
 argument_list|)
@@ -455,9 +458,9 @@ operator|=
 name|gtk_hbutton_box_new
 argument_list|()
 expr_stmt|;
-name|gtk_button_box_set_spacing
+name|gtk_box_set_spacing
 argument_list|(
-name|GTK_BUTTON_BOX
+name|GTK_BOX
 argument_list|(
 name|hbbox
 argument_list|)
@@ -509,9 +512,9 @@ argument_list|,
 name|GTK_CAN_DEFAULT
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|data
 operator|->
@@ -520,7 +523,7 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|dialog_ok
 argument_list|)
@@ -584,9 +587,9 @@ argument_list|,
 name|GTK_CAN_DEFAULT
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|data
 operator|->
@@ -595,7 +598,7 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|dialog_apply
 argument_list|)
@@ -649,9 +652,9 @@ argument_list|,
 name|GTK_CAN_DEFAULT
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|data
 operator|->
@@ -660,7 +663,7 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|dialog_cancel
 argument_list|)

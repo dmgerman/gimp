@@ -1193,6 +1193,9 @@ decl_stmt|;
 name|GList
 modifier|*
 name|widget_list
+decl_stmt|,
+modifier|*
+name|free_list
 decl_stmt|;
 name|GList
 modifier|*
@@ -1204,18 +1207,22 @@ name|menu_widget
 operator|->
 name|parent
 expr_stmt|;
-comment|/*  EEK: we rely a 1:1 and left-to-right mapping of gtk_container_children()      *  and notebook->children      */
-for|for
-control|(
-name|widget_list
+name|free_list
 operator|=
-name|gtk_container_children
+name|gtk_container_get_children
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|dockbook
 argument_list|)
 argument_list|)
+expr_stmt|;
+comment|/*  EEK: we rely a 1:1 and left-to-right mapping of      *  gtk_container_get_children() and notebook->children      */
+for|for
+control|(
+name|widget_list
+operator|=
+name|free_list
 operator|,
 name|page_list
 operator|=
@@ -1318,6 +1325,11 @@ expr_stmt|;
 break|break;
 block|}
 block|}
+name|g_list_free
+argument_list|(
+name|free_list
+argument_list|)
+expr_stmt|;
 block|}
 name|gtk_widget_show
 argument_list|(

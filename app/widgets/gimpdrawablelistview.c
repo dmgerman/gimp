@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6a0f700103
+DECL|enum|__anon2985e79d0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -696,7 +696,7 @@ name|view
 operator|->
 name|drawable_type
 operator|=
-name|GTK_TYPE_NONE
+name|G_TYPE_NONE
 expr_stmt|;
 name|view
 operator|->
@@ -2912,6 +2912,10 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+name|GList
+modifier|*
+name|free_list
+decl_stmt|;
 name|floating_sel
 operator|=
 operator|(
@@ -2923,11 +2927,13 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-for|for
-control|(
 name|list
 operator|=
-name|GTK_LIST
+name|free_list
+operator|=
+name|gtk_container_get_children
+argument_list|(
+name|GTK_CONTAINER
 argument_list|(
 name|GIMP_CONTAINER_LIST_VIEW
 argument_list|(
@@ -2936,8 +2942,10 @@ argument_list|)
 operator|->
 name|gtk_list
 argument_list|)
-operator|->
-name|children
+argument_list|)
+expr_stmt|;
+for|for
+control|(
 init|;
 name|list
 condition|;
@@ -2987,6 +2995,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|g_list_free
+argument_list|(
+name|free_list
+argument_list|)
+expr_stmt|;
 comment|/*  update button states  */
 name|gimp_drawable_list_view_drawable_changed
 argument_list|(

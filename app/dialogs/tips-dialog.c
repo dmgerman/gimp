@@ -849,9 +849,9 @@ argument_list|,
 name|GTK_BUTTONBOX_END
 argument_list|)
 expr_stmt|;
-name|gtk_button_box_set_spacing
+name|gtk_box_set_spacing
 argument_list|(
-name|GTK_BUTTON_BOX
+name|GTK_BOX
 argument_list|(
 name|bbox
 argument_list|)

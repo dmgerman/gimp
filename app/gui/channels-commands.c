@@ -1672,7 +1672,7 @@ operator|=
 name|gtk_entry_new
 argument_list|()
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|options
 operator|->
@@ -1680,7 +1680,8 @@ name|name_entry
 argument_list|,
 literal|150
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach_defaults
@@ -2480,7 +2481,7 @@ operator|=
 name|gtk_entry_new
 argument_list|()
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|options
 operator|->
@@ -2488,7 +2489,8 @@ name|name_entry
 argument_list|,
 literal|150
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach_defaults

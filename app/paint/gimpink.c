@@ -2815,7 +2815,7 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
-name|gtk_draw_shadow
+name|gtk_paint_shadow
 argument_list|(
 name|widget
 operator|->
@@ -2830,6 +2830,12 @@ operator|->
 name|state
 argument_list|,
 name|GTK_SHADOW_OUT
+argument_list|,
+name|NULL
+argument_list|,
+name|widget
+argument_list|,
+name|NULL
 argument_list|,
 name|rect
 operator|.
@@ -3161,11 +3167,9 @@ name|aspect
 operator|=
 literal|10.0
 expr_stmt|;
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|widget
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -4720,7 +4724,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c2dc9fd0103
+DECL|enum|__anon2bcba9a70103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -7941,12 +7945,9 @@ name|widget
 operator|=
 name|darea
 expr_stmt|;
-name|gtk_drawing_area_size
-argument_list|(
-name|GTK_DRAWING_AREA
+name|gtk_widget_set_size_request
 argument_list|(
 name|darea
-argument_list|)
 argument_list|,
 literal|60
 argument_list|,

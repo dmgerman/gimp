@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<pango/pangoft2.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<pango/pangoft2.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -55,6 +55,35 @@ begin_include
 include|#
 directive|include
 file|"gimpfontselection-dialog.h"
+end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtkclist.h>
 end_include
 
 begin_include
@@ -512,7 +541,7 @@ operator|=
 name|gtk_drawing_area_new
 argument_list|()
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|dialog
 operator|->
@@ -660,7 +689,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|scrolled_win
 argument_list|,
@@ -786,7 +815,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|scrolled_win
 argument_list|,
@@ -2657,7 +2686,7 @@ name|allocation
 operator|.
 name|height
 condition|)
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|dialog
 operator|->

@@ -872,7 +872,7 @@ name|xthickness
 operator|*
 literal|4
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|grid_view
 operator|->

@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7f32190103
+DECL|enum|__anon2c4ae2b20103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -1013,9 +1013,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_drawing_area_size
+name|gtk_widget_set_size_request
 argument_list|(
-name|GTK_DRAWING_AREA
+name|GTK_WIDGET
 argument_list|(
 name|view
 argument_list|)
@@ -1106,14 +1106,12 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|view
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_emit

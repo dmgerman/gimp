@@ -466,7 +466,7 @@ parameter_list|(
 name|sizeentry
 parameter_list|)
 define|\
-value|GIMP_CHAIN_BUTTON (gtk_object_get_data (GTK_OBJECT (sizeentry), \                                                 "chainbutton"))
+value|GIMP_CHAIN_BUTTON (g_object_get_data (G_OBJECT (sizeentry), \                                               "chainbutton"))
 end_define
 
 begin_function_decl

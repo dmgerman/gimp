@@ -739,7 +739,7 @@ argument_list|,
 name|color
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|GTK_WIDGET
 argument_list|(

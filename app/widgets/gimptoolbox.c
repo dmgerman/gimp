@@ -1058,7 +1058,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_button_group
+name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(

@@ -48,18 +48,18 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"sgi.h"
 end_include
 
 begin_comment
 comment|/* SGI image library definitions */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
 
 begin_comment
 comment|/*  * Constants...  */
@@ -2294,20 +2294,6 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|GTK_STOCK_OK
-argument_list|,
-name|save_ok_callback
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
@@ -2322,19 +2308,33 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
+name|GTK_STOCK_OK
+argument_list|,
+name|save_ok_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gtk_main_quit
 argument_list|)
@@ -2361,20 +2361,20 @@ argument_list|,
 operator|&
 name|compression
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|compression
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"No Compression"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|SGI_COMP_NONE
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2383,10 +2383,10 @@ argument_list|(
 literal|"RLE Compression"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|SGI_COMP_RLE
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2395,10 +2395,10 @@ argument_list|(
 literal|"Aggressive RLE\n(Not Supported by SGI)"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|SGI_COMP_ARLE
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

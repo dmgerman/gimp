@@ -16,12 +16,6 @@ directive|define
 name|_IMAP_STRING_H
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
-end_include
-
 begin_function_decl
 name|gchar
 modifier|*

@@ -235,7 +235,9 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"entry refers to unknown item factory: \"%s\""
+literal|"%s: Could not find item factory for path \"%s\""
+argument_list|,
+name|G_STRLOC
 argument_list|,
 name|path
 argument_list|)
@@ -303,6 +305,10 @@ modifier|*
 name|path
 parameter_list|)
 block|{
+name|GtkItemFactory
+modifier|*
+name|factory
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|path
@@ -310,13 +316,38 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_item_factories_path_delete
+name|factory
+operator|=
+name|gtk_item_factory_from_path
 argument_list|(
-name|NULL
+name|path
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|factory
+condition|)
+block|{
+name|gtk_item_factory_delete_item
+argument_list|(
+name|factory
 argument_list|,
 name|path
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|g_warning
+argument_list|(
+literal|"%s: Could not find item factory for path \"%s\""
+argument_list|,
+name|G_STRLOC
+argument_list|,
+name|path
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -46,12 +46,6 @@ end_typedef
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"imap_edit_area_info.h"
 end_include
 
@@ -1008,7 +1002,7 @@ value|((obj)->class->fill_info_tab((obj), (data)))
 end_define
 
 begin_typedef
-DECL|struct|__anon27e8d5690108
+DECL|struct|__anon2aae3d150108
 typedef|typedef
 struct|struct
 block|{
@@ -1112,7 +1106,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon27e8d5690208
+DECL|struct|__anon2aae3d150208
 typedef|typedef
 struct|struct
 block|{

@@ -19,17 +19,11 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"imap_command.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon28ffbda80108
+DECL|struct|__anon2c9594670108
 typedef|typedef
 struct|struct
 block|{

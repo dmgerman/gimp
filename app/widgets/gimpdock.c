@@ -431,7 +431,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -731,7 +731,7 @@ name|child
 argument_list|)
 condition|)
 block|{
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|child
 argument_list|,
@@ -776,7 +776,7 @@ operator|=
 name|gtk_event_box_new
 argument_list|()
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|event_box
 argument_list|,
@@ -1635,7 +1635,7 @@ argument_list|)
 expr_stmt|;
 name|children
 operator|=
-name|gtk_container_children
+name|gtk_container_get_children
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -1655,6 +1655,11 @@ name|widget
 argument_list|)
 operator|/
 literal|2
+expr_stmt|;
+name|g_list_free
+argument_list|(
+name|children
+argument_list|)
 expr_stmt|;
 name|dockbook
 operator|=

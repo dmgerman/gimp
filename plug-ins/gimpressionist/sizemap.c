@@ -2,6 +2,12 @@ begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -22,6 +28,29 @@ include|#
 directive|include
 file|<string.h>
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
 
 begin_include
 include|#
@@ -44,13 +73,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/stdplugins-intl.h>
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define

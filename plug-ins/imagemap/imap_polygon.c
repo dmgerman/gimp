@@ -21,6 +21,35 @@ directive|include
 file|<stdio.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
 begin_include
 include|#
 directive|include
@@ -1690,7 +1719,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon289cf6ae0108
+DECL|struct|__anon2c47d00a0108
 typedef|typedef
 struct|struct
 block|{

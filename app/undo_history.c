@@ -13,6 +13,29 @@ directive|include
 file|"config.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -118,7 +141,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d3c7850108
+DECL|struct|__anon2aa63f520108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -169,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d3c7850208
+DECL|struct|__anon2aa63f520208
 block|{
 DECL|member|clist
 name|GtkCList

@@ -16,14 +16,8 @@ directive|define
 name|_IMAP_STATUSBAR_H
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
-end_include
-
 begin_typedef
-DECL|struct|__anon29b5a25d0108
+DECL|struct|__anon2a1c0c3d0108
 typedef|typedef
 struct|struct
 block|{

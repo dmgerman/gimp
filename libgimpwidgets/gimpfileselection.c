@@ -135,7 +135,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e54ac90103
+DECL|enum|__anon2922925e0103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -1090,9 +1090,9 @@ argument_list|(
 name|gfs
 argument_list|)
 expr_stmt|;
-name|gtk_entry_set_position
+name|gtk_editable_set_position
 argument_list|(
-name|GTK_ENTRY
+name|GTK_EDITABLE
 argument_list|(
 name|gfs
 operator|->

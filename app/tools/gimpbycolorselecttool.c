@@ -3177,17 +3177,13 @@ name|gchar
 modifier|*
 name|basename
 decl_stmt|;
-comment|/*  Draw the image buf to the preview window  */
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|bcd
 operator|->
 name|preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  Update the gimage label to reflect the displayed gimage name  */
 name|basename
 operator|=
 name|g_path_get_basename

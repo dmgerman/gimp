@@ -2394,14 +2394,11 @@ argument_list|,
 literal|"gimp-canvas"
 argument_list|)
 expr_stmt|;
-name|gtk_drawing_area_size
-argument_list|(
-name|GTK_DRAWING_AREA
+name|gtk_widget_set_size_request
 argument_list|(
 name|shell
 operator|->
 name|canvas
-argument_list|)
 argument_list|,
 name|n_width
 argument_list|,
@@ -2656,7 +2653,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -2955,7 +2952,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|shell
 operator|->
@@ -3015,7 +3012,7 @@ operator|=
 name|gtk_progress_bar_new
 argument_list|()
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|shell
 operator|->
@@ -7461,7 +7458,7 @@ name|allocation
 operator|.
 name|width
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|shell
 operator|->
@@ -7478,7 +7475,7 @@ if|if
 condition|(
 name|label_frame_size_difference
 condition|)
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|shell
 operator|->

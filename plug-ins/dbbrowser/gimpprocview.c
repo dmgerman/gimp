@@ -19,6 +19,29 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -49,9 +72,22 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_comment
-comment|/* FIXME: remove usage of the 'broken' GtkText */
-end_comment
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_ENABLE_BROKEN
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_define
 DECL|macro|GTK_ENABLE_BROKEN
@@ -65,10 +101,6 @@ include|#
 directive|include
 file|<gtk/gtktext.h>
 end_include
-
-begin_comment
-comment|/* configuration */
-end_comment
 
 begin_define
 DECL|macro|DBL_LIST_WIDTH
@@ -94,14 +126,10 @@ name|DBL_HEIGHT
 value|250
 end_define
 
-begin_comment
-comment|/* end of configuration */
-end_comment
-
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c725160108
+DECL|struct|__anon2b418bdd0108
 block|{
 DECL|member|label
 name|gchar
@@ -122,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c725160208
+DECL|struct|__anon2b418bdd0208
 block|{
 DECL|member|dlg
 name|GtkWidget

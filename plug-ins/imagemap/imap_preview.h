@@ -16,20 +16,8 @@ directive|define
 name|_IMAP_PREVIEW_H
 end_define
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
-end_include
-
 begin_typedef
-DECL|struct|__anon296494580108
+DECL|struct|__anon29c400f80108
 typedef|typedef
 struct|struct
 block|{

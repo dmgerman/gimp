@@ -1011,7 +1011,7 @@ operator||
 name|GDK_BUTTON2_MASK
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|deviceD
 operator|->
@@ -1102,7 +1102,7 @@ operator||
 name|GDK_BUTTON2_MASK
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|deviceD
 operator|->

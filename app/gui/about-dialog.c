@@ -879,12 +879,9 @@ operator|=
 name|gtk_drawing_area_new
 argument_list|()
 expr_stmt|;
-name|gtk_drawing_area_size
-argument_list|(
-name|GTK_DRAWING_AREA
+name|gtk_widget_set_size_request
 argument_list|(
 name|logo_area
-argument_list|)
 argument_list|,
 name|logo_width
 argument_list|,
@@ -1309,12 +1306,9 @@ operator|=
 name|gtk_drawing_area_new
 argument_list|()
 expr_stmt|;
-name|gtk_drawing_area_size
-argument_list|(
-name|GTK_DRAWING_AREA
+name|gtk_widget_set_size_request
 argument_list|(
 name|scroll_area
-argument_list|)
 argument_list|,
 name|max_width
 operator|+

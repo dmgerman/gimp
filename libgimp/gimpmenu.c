@@ -1156,7 +1156,7 @@ argument_list|,
 name|MENU_THUMBNAIL_HEIGHT
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -1751,7 +1751,7 @@ argument_list|,
 name|MENU_THUMBNAIL_HEIGHT
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -2353,7 +2353,7 @@ argument_list|,
 name|MENU_THUMBNAIL_HEIGHT
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -2688,7 +2688,7 @@ argument_list|,
 name|MENU_THUMBNAIL_HEIGHT
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|GTK_WIDGET
 argument_list|(

@@ -16,11 +16,24 @@ directive|define
 name|__GIMP_LIST_ITEM_H__
 end_define
 
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
 file|<gtk/gtklistitem.h>
 end_include
+
+begin_define
+DECL|macro|GTK_DISABLE_DEPRECATED
+define|#
+directive|define
+name|GTK_DISABLE_DEPRECATED
+end_define
 
 begin_define
 DECL|macro|GIMP_TYPE_LIST_ITEM

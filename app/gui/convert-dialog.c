@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d776eb0108
+DECL|struct|__anon2894e0440108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -825,7 +825,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_button_group
+name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -1242,7 +1242,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_button_group
+name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -1463,7 +1463,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_button_group
+name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -1570,7 +1570,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_button_group
+name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -1741,7 +1741,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_button_group
+name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -1846,7 +1846,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_button_group
+name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -1951,7 +1951,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_button_group
+name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -2056,7 +2056,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_button_group
+name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(

@@ -15,11 +15,41 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
 file|<gtk/gtk.h>
 end_include
+
+begin_define
+DECL|macro|GTK_DISABLE_DEPRECATED
+define|#
+directive|define
+name|GTK_DISABLE_DEPRECATED
+end_define
 
 begin_include
 include|#
@@ -47,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e12ae20103
+DECL|enum|__anon292025050103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED

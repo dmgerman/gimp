@@ -21,6 +21,35 @@ directive|include
 file|<stdio.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
 begin_include
 include|#
 directive|include
@@ -45,9 +74,22 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_comment
-comment|/* FIXME: remove usage of the 'broken' GtkText */
-end_comment
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_ENABLE_BROKEN
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_define
 DECL|macro|GTK_ENABLE_BROKEN

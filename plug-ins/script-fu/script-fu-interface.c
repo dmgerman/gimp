@@ -154,7 +154,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2d9fc90108
+DECL|struct|__anon27cb1fe10108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -198,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2d9fc90208
+DECL|struct|__anon27cb1fe10208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -224,7 +224,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2d9fc90308
+DECL|struct|__anon27cb1fe10308
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -245,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2d9fc90408
+DECL|struct|__anon27cb1fe10408
 block|{
 DECL|member|name
 name|gchar
@@ -273,7 +273,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2d9fc90508
+DECL|struct|__anon27cb1fe10508
 block|{
 DECL|member|list
 name|GSList
@@ -293,7 +293,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2c2d9fc9060a
+DECL|union|__anon27cb1fe1060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -363,7 +363,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2d9fc90708
+DECL|struct|__anon27cb1fe10708
 block|{
 DECL|member|script_name
 name|gchar
@@ -449,7 +449,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2d9fc90808
+DECL|struct|__anon27cb1fe10808
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -6485,7 +6485,7 @@ operator|=
 name|gtk_entry_new
 argument_list|()
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|sf_interface
 operator|->
@@ -6496,7 +6496,8 @@ index|]
 argument_list|,
 name|TEXT_WIDTH
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_entry_set_text
@@ -6646,7 +6647,7 @@ operator|.
 name|adj
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -6762,7 +6763,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|sf_interface
 operator|->
@@ -6773,7 +6774,8 @@ index|]
 argument_list|,
 name|SPINNER_WIDTH
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_spin_button_set_digits
@@ -7007,7 +7009,7 @@ name|dialog
 operator|=
 name|NULL
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|sf_interface
 operator|->
@@ -7018,7 +7020,8 @@ index|]
 argument_list|,
 name|FONT_PREVIEW_WIDTH
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -7336,12 +7339,14 @@ name|data
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_user_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|menu_item
 argument_list|)
+argument_list|,
+literal|"gimp-item-data"
 argument_list|,
 name|GUINT_TO_POINTER
 argument_list|(
@@ -7637,9 +7642,9 @@ operator|=
 name|gtk_hbutton_box_new
 argument_list|()
 expr_stmt|;
-name|gtk_button_box_set_spacing
+name|gtk_box_set_spacing
 argument_list|(
-name|GTK_BUTTON_BOX
+name|GTK_BOX
 argument_list|(
 name|bbox
 argument_list|)
@@ -7722,9 +7727,9 @@ operator|=
 name|gtk_hbutton_box_new
 argument_list|()
 expr_stmt|;
-name|gtk_button_box_set_spacing
+name|gtk_box_set_spacing
 argument_list|(
-name|GTK_BUTTON_BOX
+name|GTK_BOX
 argument_list|(
 name|bbox
 argument_list|)
@@ -7888,9 +7893,9 @@ operator|=
 name|gtk_entry_new
 argument_list|()
 expr_stmt|;
-name|gtk_entry_set_editable
+name|gtk_editable_set_editable
 argument_list|(
-name|GTK_ENTRY
+name|GTK_EDITABLE
 argument_list|(
 name|sf_interface
 operator|->
@@ -9143,7 +9148,7 @@ name|sfa_adjustment
 operator|.
 name|value
 operator|=
-name|gtk_spin_button_get_value_as_float
+name|gtk_spin_button_get_value
 argument_list|(
 name|GTK_SPIN_BUTTON
 argument_list|(
@@ -9426,12 +9431,14 @@ name|history
 operator|=
 name|GPOINTER_TO_UINT
 argument_list|(
-name|gtk_object_get_user_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|menu_item
 argument_list|)
+argument_list|,
+literal|"gimp-item-data"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -9916,7 +9923,7 @@ argument_list|,
 name|GTK_WRAP_WORD
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|text_view
 argument_list|,

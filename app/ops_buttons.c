@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf409790103
+DECL|enum|__anon2c02da1a0103
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -162,7 +162,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_button_group
+name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(

@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_cmd_select.h"
 end_include
 
@@ -95,7 +101,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2af58b2c0108
+DECL|struct|__anon277926160108
 typedef|typedef
 struct|struct
 block|{

@@ -552,7 +552,7 @@ literal|100
 argument_list|)
 expr_stmt|;
 comment|/*  Enable auto-resizing of the preview but ensure a minimal size  */
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|brush_editor
 operator|->

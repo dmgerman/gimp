@@ -16,12 +16,6 @@ directive|define
 name|_IMAP_MENU_FUNCS_H
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
-end_include
-
 begin_typedef
 DECL|typedef|MenuCallback
 typedef|typedef

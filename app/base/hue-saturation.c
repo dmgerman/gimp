@@ -2039,7 +2039,7 @@ argument_list|)
 expr_stmt|;
 name|group
 operator|=
-name|gtk_radio_button_group
+name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -2522,7 +2522,7 @@ operator|->
 name|hue_data
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|slider
 argument_list|,
@@ -2618,7 +2618,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,
@@ -2802,7 +2802,7 @@ operator|->
 name|lightness_data
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|slider
 argument_list|,
@@ -2898,7 +2898,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,
@@ -3082,7 +3082,7 @@ operator|->
 name|saturation_data
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|slider
 argument_list|,
@@ -3178,7 +3178,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|spinbutton
 argument_list|,
@@ -3755,7 +3755,7 @@ name|update
 operator|&
 name|DRAW
 condition|)
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|hsd
 operator|->
@@ -3763,8 +3763,6 @@ name|hue_partition_da
 index|[
 name|i
 index|]
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}

@@ -22,12 +22,6 @@ directive|include
 file|<stdio.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
-end_include
-
 begin_define
 DECL|macro|DEFAULT_MRU_SIZE
 define|#
@@ -37,7 +31,7 @@ value|4
 end_define
 
 begin_typedef
-DECL|struct|__anon2af8c67b0108
+DECL|struct|__anon2c1ae2fe0108
 typedef|typedef
 struct|struct
 block|{
