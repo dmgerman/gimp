@@ -2058,12 +2058,12 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
-name|gint
-name|status
-decl_stmt|;
 ifndef|#
 directive|ifndef
 name|G_OS_WIN32
+name|gint
+name|status
+decl_stmt|;
 name|struct
 name|timeval
 name|tv
@@ -2298,6 +2298,24 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/* FIXME: Wait for it like on Unix? */
+comment|/* Close handle which is no longer needed */
+if|if
+condition|(
+name|plug_in
+operator|->
+name|pid
+condition|)
+name|CloseHandle
+argument_list|(
+operator|(
+name|HANDLE
+operator|)
+name|plug_in
+operator|->
+name|pid
+argument_list|)
+expr_stmt|;
 endif|#
 directive|endif
 name|plug_in
