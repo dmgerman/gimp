@@ -2457,6 +2457,30 @@ value|"gimp-prefs-folders-themes"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_INDEXED_PALETTE_DIALOG
+define|#
+directive|define
+name|GIMP_HELP_INDEXED_PALETTE_DIALOG
+value|"gimp-indexed-palette-dialog"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_INDEXED_PALETTE_EDIT
+define|#
+directive|define
+name|GIMP_HELP_INDEXED_PALETTE_EDIT
+value|"gimp-indexed-palette-edit"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_INDEXED_PALETTE_ADD
+define|#
+directive|define
+name|GIMP_HELP_INDEXED_PALETTE_ADD
+value|"gimp-indexed-palette-add"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_DOCK
 define|#
 directive|define
@@ -2582,14 +2606,6 @@ define|#
 directive|define
 name|GIMP_HELP_UNDO_DIALOG
 value|"gimp-undo-dialog"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_INDEXED_PALETTE_DIALOG
-define|#
-directive|define
-name|GIMP_HELP_INDEXED_PALETTE_DIALOG
-value|"gimp-indexed-palette-dialog"
 end_define
 
 begin_define

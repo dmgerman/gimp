@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -90,7 +96,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_INDEXED_PALETTE_EDIT
 block|,
 name|NULL
 block|}
@@ -110,12 +116,12 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GTK_STOCK_NEW
+name|GTK_STOCK_ADD
 block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_INDEXED_PALETTE_ADD
 block|,
 name|NULL
 block|}

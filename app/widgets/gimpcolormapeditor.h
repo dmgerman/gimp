@@ -138,6 +138,16 @@ DECL|member|cellsize
 name|gint
 name|cellsize
 decl_stmt|;
+DECL|member|edit_button
+name|GtkWidget
+modifier|*
+name|edit_button
+decl_stmt|;
+DECL|member|add_button
+name|GtkWidget
+modifier|*
+name|add_button
+decl_stmt|;
 DECL|member|index_adjustment
 name|GtkAdjustment
 modifier|*
