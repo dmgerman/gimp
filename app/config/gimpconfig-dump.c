@@ -113,7 +113,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baf468a0103
+DECL|enum|__anon2c04bc880103
 block|{
 DECL|enumerator|DUMP_NONE
 name|DUMP_NONE
@@ -406,11 +406,6 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_RC
 argument_list|,
-literal|"module-load-inhibit"
-argument_list|,
-literal|"foo"
-argument_list|,
-comment|/* for completeness */
 name|NULL
 argument_list|)
 expr_stmt|;
