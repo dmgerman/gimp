@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gximage.h"
 end_include
 

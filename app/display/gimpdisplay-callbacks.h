@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__DISP_CALLBACKS_H__
+name|__GIMP_DISPLAY_CALLBACKS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__DISP_CALLBACKS_H__
+DECL|macro|__GIMP_DISPLAY_CALLBACKS_H__
 define|#
 directive|define
-name|__DISP_CALLBACKS_H__
+name|__GIMP_DISPLAY_CALLBACKS_H__
 end_define
 
 begin_define
@@ -36,9 +36,9 @@ name|GdkEvent
 modifier|*
 name|event
 parameter_list|,
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -55,9 +55,9 @@ name|GdkEvent
 modifier|*
 name|event
 parameter_list|,
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -74,8 +74,9 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|data
+name|GimpDisplayShell
+modifier|*
+name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -92,8 +93,9 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|data
+name|GimpDisplayShell
+modifier|*
+name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -110,8 +112,9 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|gpointer
-name|data
+name|GimpDisplayShell
+modifier|*
+name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -195,7 +198,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __DISP_CALLBACKS_H__ */
+comment|/* __GIMP_DISPLAY_CALLBACKS_H__ */
 end_comment
 
 end_unit

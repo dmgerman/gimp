@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpeditselectiontool.h"
 end_include
 
@@ -145,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2782140d0103
+DECL|enum|__anon27cb8bf90103
 block|{
 DECL|enumerator|RECT_SELECT
 name|RECT_SELECT
@@ -693,6 +699,10 @@ name|GimpSelectionTool
 modifier|*
 name|sel_tool
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|SelectionOptions
 modifier|*
 name|sel_options
@@ -728,6 +738,15 @@ operator|=
 name|GIMP_SELECTION_TOOL
 argument_list|(
 name|tool
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 name|sel_options
@@ -940,7 +959,7 @@ name|FALSE
 expr_stmt|;
 name|gdk_pointer_grab
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -1024,7 +1043,7 @@ name|gtk_statusbar_get_context_id
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -1110,7 +1129,7 @@ name|gtk_statusbar_push
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -1129,7 +1148,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -1166,6 +1185,10 @@ name|GimpSelectionTool
 modifier|*
 name|sel_tool
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|gint
 name|x1
 decl_stmt|,
@@ -1195,6 +1218,15 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
 name|gdk_pointer_ungrab
 argument_list|(
 name|bevent
@@ -1209,7 +1241,7 @@ name|gtk_statusbar_pop
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -1446,6 +1478,10 @@ name|GimpSelectionTool
 modifier|*
 name|sel_tool
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|gchar
 name|size
 index|[
@@ -1489,6 +1525,15 @@ operator|=
 name|GIMP_SELECTION_TOOL
 argument_list|(
 name|tool
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 comment|/*  needed for immediate cursor update on modifier event  */
@@ -2112,7 +2157,7 @@ name|gtk_statusbar_pop
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -2135,7 +2180,7 @@ name|size
 argument_list|,
 name|STATUSBAR_SIZE
 argument_list|,
-name|gdisp
+name|shell
 operator|->
 name|cursor_format_str
 argument_list|,
@@ -2183,7 +2228,7 @@ name|size
 argument_list|,
 name|STATUSBAR_SIZE
 argument_list|,
-name|gdisp
+name|shell
 operator|->
 name|cursor_format_str
 argument_list|,
@@ -2236,7 +2281,7 @@ name|gtk_statusbar_push
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)

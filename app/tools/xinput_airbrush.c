@@ -13652,7 +13652,7 @@ name|height
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/*  Update the gimage--it is important to call gdisplays_update_area    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
+comment|/*  Update the gimage--it is important to call gimp_image_update    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
 name|drawable_offsets
 argument_list|(
 name|drawable
@@ -13664,7 +13664,7 @@ operator|&
 name|offy
 argument_list|)
 expr_stmt|;
-name|gdisplays_update_area
+name|gimp_image_update
 argument_list|(
 name|gimage
 argument_list|,

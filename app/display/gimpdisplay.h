@@ -74,7 +74,7 @@ name|SCREEN_XRES
 parameter_list|(
 name|g
 parameter_list|)
-value|(g->dot_for_dot? g->gimage->xresolution : gimprc.monitor_xres)
+value|(g->dot_for_dot ? \                            g->gimage->xresolution : gimprc.monitor_xres)
 end_define
 
 begin_define
@@ -85,7 +85,7 @@ name|SCREEN_YRES
 parameter_list|(
 name|g
 parameter_list|)
-value|(g->dot_for_dot? g->gimage->yresolution : gimprc.monitor_yres)
+value|(g->dot_for_dot ? \                            g->gimage->yresolution : gimprc.monitor_yres)
 end_define
 
 begin_comment
@@ -100,7 +100,7 @@ name|SCALEFACTOR_X
 parameter_list|(
 name|g
 parameter_list|)
-value|((SCALEDEST(g) * SCREEN_XRES(g)) /          \ 			    (SCALESRC(g) * g->gimage->xresolution))
+value|((SCALEDEST(g) * SCREEN_XRES(g)) / \ 			   (SCALESRC(g) * g->gimage->xresolution))
 end_define
 
 begin_define
@@ -111,7 +111,7 @@ name|SCALEFACTOR_Y
 parameter_list|(
 name|g
 parameter_list|)
-value|((SCALEDEST(g) * SCREEN_YRES(g)) /          \ 			    (SCALESRC(g) * g->gimage->yresolution))
+value|((SCALEDEST(g) * SCREEN_YRES(g)) / \ 			   (SCALESRC(g) * g->gimage->yresolution))
 end_define
 
 begin_comment
@@ -128,7 +128,7 @@ name|g
 parameter_list|,
 name|x
 parameter_list|)
-value|((int)(x * SCALEFACTOR_X(g)))
+value|((gint) (x * SCALEFACTOR_X(g)))
 end_define
 
 begin_define
@@ -141,7 +141,7 @@ name|g
 parameter_list|,
 name|y
 parameter_list|)
-value|((int)(y * SCALEFACTOR_Y(g)))
+value|((gint) (y * SCALEFACTOR_Y(g)))
 end_define
 
 begin_comment
@@ -158,7 +158,7 @@ name|g
 parameter_list|,
 name|x
 parameter_list|)
-value|((int)(x / SCALEFACTOR_X(g)))
+value|((gint) (x / SCALEFACTOR_X(g)))
 end_define
 
 begin_define
@@ -171,7 +171,7 @@ name|g
 parameter_list|,
 name|y
 parameter_list|)
-value|((int)(y / SCALEFACTOR_Y(g)))
+value|((gint) (y / SCALEFACTOR_Y(g)))
 end_define
 
 begin_comment
@@ -188,7 +188,7 @@ name|g
 parameter_list|,
 name|x
 parameter_list|)
-value|((x / SCALEFACTOR_X(g)))
+value|(x / SCALEFACTOR_X(g))
 end_define
 
 begin_define
@@ -201,50 +201,7 @@ name|g
 parameter_list|,
 name|y
 parameter_list|)
-value|((y / SCALEFACTOR_Y(g)))
-end_define
-
-begin_define
-DECL|macro|LOWPASS (x)
-define|#
-directive|define
-name|LOWPASS
-parameter_list|(
-name|x
-parameter_list|)
-value|((x>0) ? x : 0)
-end_define
-
-begin_comment
-comment|/* #define HIGHPASS(x,y) ((x>y) ? y : x) */
-end_comment
-
-begin_comment
-comment|/* unused - == MIN */
-end_comment
-
-begin_comment
-comment|/* maximal width of the string holding the cursor-coordinates for    the status line */
-end_comment
-
-begin_define
-DECL|macro|CURSOR_STR_LENGTH
-define|#
-directive|define
-name|CURSOR_STR_LENGTH
-value|256
-end_define
-
-begin_comment
-comment|/* maximal length of the format string for the cursor-coordinates */
-end_comment
-
-begin_define
-DECL|macro|CURSOR_FORMAT_LENGTH
-define|#
-directive|define
-name|CURSOR_FORMAT_LENGTH
-value|32
+value|(y / SCALEFACTOR_Y(g))
 end_define
 
 begin_typedef
@@ -396,219 +353,29 @@ DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
 decl_stmt|;
-DECL|member|shell
-name|GtkWidget
-modifier|*
-name|shell
-decl_stmt|;
-comment|/*  shell widget for this gdisplay          */
-DECL|member|gimage
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
-comment|/*  pointer to the associated gimage struct */
-comment|/*   				   *  these need to be first in the sturuct 				   *  because of an ugly hack in 				   *  core/gimpcontext.c 				   */
 DECL|member|ID
 name|gint
 name|ID
 decl_stmt|;
 comment|/*  unique identifier for this gdisplay     */
-DECL|member|ifactory
-name|GtkItemFactory
+DECL|member|gimage
+name|GimpImage
 modifier|*
-name|ifactory
+name|gimage
 decl_stmt|;
-comment|/*  factory for popup menu                  */
-DECL|member|canvas
-name|GtkWidget
-modifier|*
-name|canvas
-decl_stmt|;
-comment|/*  canvas widget for this gdisplay         */
-DECL|member|hsb
-name|GtkWidget
-modifier|*
-name|hsb
-decl_stmt|;
-comment|/*  widgets for scroll bars                 */
-DECL|member|vsb
-name|GtkWidget
-modifier|*
-name|vsb
-decl_stmt|;
-DECL|member|qmaskoff
-name|GtkWidget
-modifier|*
-name|qmaskoff
-decl_stmt|;
-comment|/*  widgets for qmask buttons               */
-DECL|member|qmaskon
-name|GtkWidget
-modifier|*
-name|qmaskon
-decl_stmt|;
-DECL|member|hrule
-name|GtkWidget
-modifier|*
-name|hrule
-decl_stmt|;
-comment|/*  widgets for rulers                      */
-DECL|member|vrule
-name|GtkWidget
-modifier|*
-name|vrule
-decl_stmt|;
-DECL|member|origin
-name|GtkWidget
-modifier|*
-name|origin
-decl_stmt|;
-comment|/*  widgets for rulers                      */
-DECL|member|statusarea
-name|GtkWidget
-modifier|*
-name|statusarea
-decl_stmt|;
-comment|/*  hbox holding the statusbar and stuff    */
-DECL|member|statusbar
-name|GtkWidget
-modifier|*
-name|statusbar
-decl_stmt|;
-comment|/*  widget for statusbar                    */
-DECL|member|progressbar
-name|GtkWidget
-modifier|*
-name|progressbar
-decl_stmt|;
-comment|/*  widget for progressbar                  */
-DECL|member|cursor_label
-name|GtkWidget
-modifier|*
-name|cursor_label
-decl_stmt|;
-comment|/*  widget for cursor position              */
-DECL|member|cursor_format_str
-name|gchar
-name|cursor_format_str
-index|[
-name|CURSOR_FORMAT_LENGTH
-index|]
-decl_stmt|;
-comment|/* we need a variable format string because 				   * different units have different number 				   * of decimals 				   */
-DECL|member|cancelbutton
-name|GtkWidget
-modifier|*
-name|cancelbutton
-decl_stmt|;
-comment|/*  widget for cancel button                */
-DECL|member|progressid
-name|guint
-name|progressid
-decl_stmt|;
-comment|/*  id of statusbar message for progress    */
-DECL|member|window_info_dialog
-name|InfoDialog
-modifier|*
-name|window_info_dialog
-decl_stmt|;
-comment|/*  dialog box for image information  */
-DECL|member|window_nav_dialog
-name|NavigationDialog
-modifier|*
-name|window_nav_dialog
-decl_stmt|;
-comment|/*  dialog box for image navigation   */
-DECL|member|nav_popup
-name|NavigationDialog
-modifier|*
-name|nav_popup
-decl_stmt|;
-comment|/*  the popup navigation window       */
-DECL|member|warning_dialog
-name|GtkWidget
-modifier|*
-name|warning_dialog
-decl_stmt|;
-comment|/* "Changes were made to %s. Close anyway?" */
-DECL|member|hsbdata
-name|GtkAdjustment
-modifier|*
-name|hsbdata
-decl_stmt|;
-comment|/*  horizontal data information             */
-DECL|member|vsbdata
-name|GtkAdjustment
-modifier|*
-name|vsbdata
-decl_stmt|;
-comment|/*  vertical data information               */
-DECL|member|icon
-name|GdkPixmap
-modifier|*
-name|icon
-decl_stmt|;
-comment|/*  Pixmap for the icon                     */
-DECL|member|iconmask
-name|GdkBitmap
-modifier|*
-name|iconmask
-decl_stmt|;
-comment|/*  Bitmap for the icon mask                */
-DECL|member|iconsize
-name|guint
-name|iconsize
-decl_stmt|;
-comment|/*  The size of the icon pixmap             */
-DECL|member|icon_needs_update
-name|gboolean
-name|icon_needs_update
-decl_stmt|;
-comment|/*  Do we need to render a new icon?        */
-DECL|member|icon_timeout_id
-name|guint
-name|icon_timeout_id
-decl_stmt|;
-comment|/*  The ID of the timeout-function          */
-DECL|member|icon_idle_id
-name|guint
-name|icon_idle_id
-decl_stmt|;
-comment|/*  The ID of the idle-function             */
+comment|/*  pointer to the associated gimage        */
 DECL|member|instance
 name|gint
 name|instance
 decl_stmt|;
 comment|/*  the instance # of this gdisplay as      */
 comment|/*  taken from the gimage at creation       */
-DECL|member|disp_width
-name|gint
-name|disp_width
+DECL|member|shell
+name|GtkWidget
+modifier|*
+name|shell
 decl_stmt|;
-comment|/*  width of drawing area in the window     */
-DECL|member|disp_height
-name|gint
-name|disp_height
-decl_stmt|;
-comment|/*  height of drawing area in the window    */
-DECL|member|disp_xoffset
-name|gint
-name|disp_xoffset
-decl_stmt|;
-DECL|member|disp_yoffset
-name|gint
-name|disp_yoffset
-decl_stmt|;
-DECL|member|offset_x
-name|gint
-name|offset_x
-decl_stmt|;
-comment|/*  offset of display image into raw image  */
-DECL|member|offset_y
-name|gint
-name|offset_y
-decl_stmt|;
+comment|/*  shell widget for this gdisplay          */
 DECL|member|scale
 name|gint
 name|scale
@@ -619,6 +386,32 @@ name|gboolean
 name|dot_for_dot
 decl_stmt|;
 comment|/*  is monitor resolution being ignored?    */
+DECL|member|offset_x
+name|gint
+name|offset_x
+decl_stmt|;
+DECL|member|offset_y
+name|gint
+name|offset_y
+decl_stmt|;
+DECL|member|disp_width
+name|gint
+name|disp_width
+decl_stmt|;
+comment|/*  width of drawing area                   */
+DECL|member|disp_height
+name|gint
+name|disp_height
+decl_stmt|;
+comment|/*  height of drawing area                  */
+DECL|member|disp_xoffset
+name|gint
+name|disp_xoffset
+decl_stmt|;
+DECL|member|disp_yoffset
+name|gint
+name|disp_yoffset
+decl_stmt|;
 DECL|member|draw_guides
 name|gboolean
 name|draw_guides
@@ -635,97 +428,17 @@ modifier|*
 name|select
 decl_stmt|;
 comment|/*  Selection object                        */
-DECL|member|scroll_gc
-name|GdkGC
-modifier|*
-name|scroll_gc
-decl_stmt|;
-comment|/*  GC for scrolling                        */
 DECL|member|update_areas
 name|GSList
 modifier|*
 name|update_areas
 decl_stmt|;
 comment|/*  Update areas list                       */
-DECL|member|display_areas
-name|GSList
-modifier|*
-name|display_areas
-decl_stmt|;
-comment|/*  Display areas list                      */
-DECL|member|current_cursor
-name|GdkCursorType
-name|current_cursor
-decl_stmt|;
-comment|/*  Currently installed main cursor    */
-DECL|member|tool_cursor
-name|GimpToolCursorType
-name|tool_cursor
-decl_stmt|;
-comment|/*  Current Tool cursor                */
-DECL|member|cursor_modifier
-name|GimpCursorModifier
-name|cursor_modifier
-decl_stmt|;
-comment|/*  Cursor modifier (plus, minus, ...) */
-DECL|member|override_cursor
-name|GdkCursorType
-name|override_cursor
-decl_stmt|;
-comment|/*  Overriding cursor (ie. hourglass)       */
-DECL|member|using_override_cursor
-name|gboolean
-name|using_override_cursor
-decl_stmt|;
-comment|/* is the cursor overridden? (ie. hourglass)*/
-DECL|member|draw_cursor
-name|gboolean
-name|draw_cursor
-decl_stmt|;
-comment|/* should we draw software cursor ?         */
-DECL|member|cursor_x
-name|gint
-name|cursor_x
-decl_stmt|;
-comment|/* software cursor X value                  */
-DECL|member|cursor_y
-name|gint
-name|cursor_y
-decl_stmt|;
-comment|/* software cursor Y value                  */
-DECL|member|proximity
-name|gboolean
-name|proximity
-decl_stmt|;
-comment|/* is a device in proximity of gdisplay ?   */
-DECL|member|have_cursor
-name|gboolean
-name|have_cursor
-decl_stmt|;
-comment|/* is cursor currently drawn ?              */
 DECL|member|idle_render
 name|IdleRenderStruct
 name|idle_render
 decl_stmt|;
-comment|/* state of this gdisplay's render thread   */
-ifdef|#
-directive|ifdef
-name|DISPLAY_FILTERS
-DECL|member|cd_list
-name|GList
-modifier|*
-name|cd_list
-decl_stmt|;
-comment|/* color display conversion stuff           */
-DECL|member|cd_ui
-name|GtkWidget
-modifier|*
-name|cd_ui
-decl_stmt|;
-comment|/* color display filter dialog              */
-endif|#
-directive|endif
-comment|/* DISPLAY_FILTERS */
+comment|/*  state of this gdisplay's render thread  */
 block|}
 struct|;
 end_struct
@@ -773,6 +486,32 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gdisplay_delete
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpDisplay
+modifier|*
+name|gdisplay_get_by_ID
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|gint
+name|ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gdisplay_reconnect
 parameter_list|(
 name|GimpDisplay
@@ -782,17 +521,6 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_remove_and_delete
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -816,50 +544,6 @@ name|w
 parameter_list|,
 name|gint
 name|h
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gint
-name|gdisplay_mask_value
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gint
-name|gdisplay_mask_bounds
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|,
-name|gint
-modifier|*
-name|x1
-parameter_list|,
-name|gint
-modifier|*
-name|y1
-parameter_list|,
-name|gint
-modifier|*
-name|x2
-parameter_list|,
-name|gint
-modifier|*
-name|y2
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -981,145 +665,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplay_real_install_tool_cursor
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|,
-name|GdkCursorType
-name|cursor_type
-parameter_list|,
-name|GimpToolCursorType
-name|tool_cursor
-parameter_list|,
-name|GimpCursorModifier
-name|modifier
-parameter_list|,
-name|gboolean
-name|always_install
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_install_tool_cursor
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|,
-name|GdkCursorType
-name|cursor_type
-parameter_list|,
-name|GimpToolCursorType
-name|tool_cursor
-parameter_list|,
-name|GimpCursorModifier
-name|modifier
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_remove_tool_cursor
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_install_override_cursor
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|,
-name|GdkCursorType
-name|cursor_type
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_remove_override_cursor
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_set_menu_sensitivity
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_expose_area
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|,
-name|gint
-name|w
-parameter_list|,
-name|gint
-name|h
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_expose_guide
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|,
-name|GimpGuide
-modifier|*
-name|guide
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_expose_full
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gdisplay_selection_visibility
 parameter_list|(
 name|GimpDisplay
@@ -1150,251 +695,6 @@ parameter_list|(
 name|GimpDisplay
 modifier|*
 name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_update_icon
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gdisplay_update_icon_timer
-parameter_list|(
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gdisplay_update_icon_invoker
-parameter_list|(
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_update_icon_scheduler
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_draw_guides
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_draw_guide
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|,
-name|GimpGuide
-modifier|*
-name|guide
-parameter_list|,
-name|gboolean
-name|active
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpGuide
-modifier|*
-name|gdisplay_find_guide
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|,
-name|gdouble
-name|x
-parameter_list|,
-name|double
-name|y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gdisplay_snap_point
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|,
-name|gdouble
-name|x
-parameter_list|,
-name|gdouble
-name|y
-parameter_list|,
-name|gdouble
-modifier|*
-name|tx
-parameter_list|,
-name|gdouble
-modifier|*
-name|ty
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_snap_rectangle
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|,
-name|gdouble
-name|x1
-parameter_list|,
-name|gdouble
-name|y1
-parameter_list|,
-name|gdouble
-name|x2
-parameter_list|,
-name|gdouble
-name|y2
-parameter_list|,
-name|gdouble
-modifier|*
-name|tx1
-parameter_list|,
-name|gdouble
-modifier|*
-name|ty1
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_update_cursor
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_set_dot_for_dot
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|,
-name|gboolean
-name|dot_for_dot
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_resize_cursor_label
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_update_title
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_flush_displays_only
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* no rerender! */
-end_comment
-
-begin_function_decl
-name|void
-name|gdisplay_flush_whenever
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|,
-name|gboolean
-name|now
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpDisplay
-modifier|*
-name|gdisplay_get_by_ID
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|gint
-name|ID
 parameter_list|)
 function_decl|;
 end_function_decl

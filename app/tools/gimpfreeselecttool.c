@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpeditselectiontool.h"
 end_include
 
@@ -684,6 +690,10 @@ name|GimpFreeSelectTool
 modifier|*
 name|free_sel
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|free_sel
 operator|=
 name|GIMP_FREE_SELECT_TOOL
@@ -691,9 +701,18 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
-name|gdk_pointer_grab
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|gdisp
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
+name|gdk_pointer_grab
+argument_list|(
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -797,7 +816,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->

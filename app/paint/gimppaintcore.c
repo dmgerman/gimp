@@ -150,6 +150,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawtool.h"
 end_include
 
@@ -245,7 +251,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af04b160103
+DECL|enum|__anon2b2cd57f0103
 block|{
 DECL|enumerator|PAINT
 name|PAINT
@@ -1310,6 +1316,10 @@ name|GimpPaintTool
 modifier|*
 name|paint_tool
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|GimpBrush
 modifier|*
 name|current_brush
@@ -1345,6 +1355,15 @@ operator|=
 name|GIMP_PAINT_TOOL
 argument_list|(
 name|tool
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 name|gdisplay_untransform_coords_f
@@ -1463,7 +1482,7 @@ name|gtk_statusbar_get_context_id
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -1883,7 +1902,7 @@ literal|0
 condition|)
 name|gdk_pointer_grab
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -1907,7 +1926,7 @@ expr_stmt|;
 else|else
 name|gdk_pointer_grab
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -2555,10 +2574,6 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|GimpLayer
-modifier|*
-name|layer
-decl_stmt|;
 name|GimpPaintTool
 modifier|*
 name|paint_tool
@@ -2566,6 +2581,14 @@ decl_stmt|;
 name|GimpDrawTool
 modifier|*
 name|draw_tool
+decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
+name|GimpLayer
+modifier|*
+name|layer
 decl_stmt|;
 name|gint
 name|x
@@ -2607,6 +2630,15 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
 comment|/*  undraw the current tool  */
 name|gimp_draw_tool_pause
 argument_list|(
@@ -2637,7 +2669,7 @@ name|gtk_statusbar_get_context_id
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -2656,7 +2688,7 @@ name|gtk_statusbar_pop
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -3187,7 +3219,7 @@ name|gtk_statusbar_push
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -3212,7 +3244,7 @@ name|gimp_draw_tool_start
 argument_list|(
 name|draw_tool
 argument_list|,
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -3395,9 +3427,9 @@ name|GIMP_MOUSE_CURSOR
 expr_stmt|;
 block|}
 block|}
-name|gdisplay_install_tool_cursor
+name|gimp_display_shell_install_tool_cursor
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|ctype
 argument_list|,
@@ -3439,6 +3471,10 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|GimpPaintTool
 modifier|*
 name|paint_tool
@@ -3470,14 +3506,12 @@ argument_list|(
 name|draw_tool
 argument_list|)
 expr_stmt|;
-comment|/* if shift was never used, draw_tool->gc is NULL      and we don't care about a redraw                       */
+comment|/* if shift was never used, draw_tool->gc is NULL    * and we don't care about a redraw    */
 if|if
 condition|(
 name|draw_tool
 operator|->
 name|gc
-operator|!=
-name|NULL
 condition|)
 block|{
 name|gdisp
@@ -3485,6 +3519,15 @@ operator|=
 name|tool
 operator|->
 name|gdisp
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
 expr_stmt|;
 name|gdisplay_transform_coords
 argument_list|(
@@ -3589,7 +3632,7 @@ expr_stmt|;
 comment|/*  Draw start target  */
 name|gdk_draw_line
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -3622,7 +3665,7 @@ argument_list|)
 expr_stmt|;
 name|gdk_draw_line
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -3656,7 +3699,7 @@ expr_stmt|;
 comment|/*  Draw end target  */
 name|gdk_draw_line
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -3689,7 +3732,7 @@ argument_list|)
 expr_stmt|;
 name|gdk_draw_line
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -3723,7 +3766,7 @@ expr_stmt|;
 comment|/*  Draw the line between the start and end coords  */
 name|gdk_draw_line
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -7826,7 +7869,7 @@ name|height
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/*  Update the gimage--it is important to call gdisplays_update_area    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
+comment|/*  Update the gimage--it is important to call gimp_image_update    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
 name|gimp_drawable_offsets
 argument_list|(
 name|drawable
@@ -7838,7 +7881,7 @@ operator|&
 name|offy
 argument_list|)
 expr_stmt|;
-name|gdisplays_update_area
+name|gimp_image_update
 argument_list|(
 name|gimage
 argument_list|,
@@ -8269,7 +8312,7 @@ name|height
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/*  Update the gimage--it is important to call gdisplays_update_area    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
+comment|/*  Update the gimage--it is important to call gimp_image_update    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
 name|gimp_drawable_offsets
 argument_list|(
 name|drawable
@@ -8281,7 +8324,7 @@ operator|&
 name|offy
 argument_list|)
 expr_stmt|;
-name|gdisplays_update_area
+name|gimp_image_update
 argument_list|(
 name|gimage
 argument_list|,

@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawtool.h"
 end_include
 
@@ -755,11 +761,24 @@ name|GimpMeasureTool
 modifier|*
 name|measure_tool
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|measure_tool
 operator|=
 name|GIMP_MEASURE_TOOL
 argument_list|(
 name|tool
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -782,7 +801,7 @@ name|gtk_statusbar_pop
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -851,6 +870,10 @@ name|GimpMeasureTool
 modifier|*
 name|measure_tool
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|gint
 name|x
 index|[
@@ -871,6 +894,15 @@ operator|=
 name|GIMP_MEASURE_TOOL
 argument_list|(
 name|tool
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 comment|/*  if we are changing displays, pop the statusbar of the old one  */
@@ -901,7 +933,12 @@ name|gtk_statusbar_pop
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
+name|GIMP_DISPLAY_SHELL
+argument_list|(
 name|old_gdisp
+operator|->
+name|shell
+argument_list|)
 operator|->
 name|statusbar
 argument_list|)
@@ -915,7 +952,7 @@ name|gtk_statusbar_push
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -1471,7 +1508,7 @@ name|gtk_statusbar_pop
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -1485,7 +1522,7 @@ name|gtk_statusbar_push
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -1530,7 +1567,7 @@ name|gtk_statusbar_get_context_id
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -1603,10 +1640,10 @@ name|gimp_draw_tool_start
 argument_list|(
 name|GIMP_DRAW_TOOL
 argument_list|(
-name|measure_tool
+name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -1628,7 +1665,7 @@ operator|||
 operator|!
 name|GTK_WIDGET_VISIBLE
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusarea
 argument_list|)
@@ -1702,7 +1739,7 @@ expr_stmt|;
 block|}
 name|gdk_pointer_grab
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -1732,9 +1769,9 @@ operator|=
 name|ACTIVE
 expr_stmt|;
 comment|/*  set the pointer to the crosshair,    *  so one actually sees the cursor position    */
-name|gdisplay_install_tool_cursor
+name|gimp_display_shell_install_tool_cursor
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|GIMP_CROSSHAIR_SMALL_CURSOR
 argument_list|,
@@ -1818,6 +1855,10 @@ name|GimpMeasureTool
 modifier|*
 name|measure_tool
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|gint
 name|x
 decl_stmt|,
@@ -1861,6 +1902,15 @@ operator|=
 name|GIMP_MEASURE_TOOL
 argument_list|(
 name|tool
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 comment|/*  undraw the current tool  */
@@ -2981,7 +3031,7 @@ name|gtk_statusbar_pop
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -2995,7 +3045,7 @@ name|gtk_statusbar_push
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -3052,6 +3102,10 @@ name|GimpMeasureTool
 modifier|*
 name|measure_tool
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|gint
 name|x
 index|[
@@ -3087,6 +3141,15 @@ operator|=
 name|GIMP_MEASURE_TOOL
 argument_list|(
 name|tool
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 if|if
@@ -3315,9 +3378,9 @@ operator|=
 name|GIMP_CURSOR_MODIFIER_MOVE
 expr_stmt|;
 block|}
-name|gdisplay_install_tool_cursor
+name|gimp_display_shell_install_tool_cursor
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|ctype
 argument_list|,

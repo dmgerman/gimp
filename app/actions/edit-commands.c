@@ -436,13 +436,6 @@ name|FALSE
 argument_list|)
 condition|)
 block|{
-name|gdisplays_update_title
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
 name|gdisplays_flush
 argument_list|()
 expr_stmt|;
@@ -527,13 +520,6 @@ name|TRUE
 argument_list|)
 condition|)
 block|{
-name|gdisplays_update_title
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
 name|gdisplays_flush
 argument_list|()
 expr_stmt|;

@@ -156,6 +156,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tool_manager.h"
 end_include
 
@@ -239,7 +245,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299ae0270103
+DECL|enum|__anon28eaba020103
 block|{
 DECL|enumerator|TRANSFORM
 name|TRANSFORM
@@ -1388,6 +1394,10 @@ name|GimpTransformTool
 modifier|*
 name|gt_tool
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1416,6 +1426,15 @@ operator|=
 name|GIMP_TRANSFORM_TOOL
 argument_list|(
 name|tool
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 name|gt_tool
@@ -1497,10 +1516,10 @@ name|gimp_draw_tool_start
 argument_list|(
 name|GIMP_DRAW_TOOL
 argument_list|(
-name|gt_tool
+name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -1737,7 +1756,7 @@ name|starty
 expr_stmt|;
 name|gdk_pointer_grab
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -1935,7 +1954,7 @@ name|interactive
 condition|)
 name|gdk_pointer_grab
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -1943,13 +1962,11 @@ name|window
 argument_list|,
 name|FALSE
 argument_list|,
-operator|(
 name|GDK_POINTER_MOTION_HINT_MASK
 operator||
 name|GDK_BUTTON1_MOTION_MASK
 operator||
 name|GDK_BUTTON_RELEASE_MASK
-operator|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2360,6 +2377,10 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|GimpTool
 modifier|*
 name|tool
@@ -2400,6 +2421,15 @@ operator|=
 name|GIMP_TOOL
 argument_list|(
 name|gt_tool
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 comment|/* undraw the tool before we muck around with the transform matrix */
@@ -2646,7 +2676,7 @@ condition|)
 block|{
 name|x
 operator|=
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -2656,7 +2686,7 @@ name|width
 expr_stmt|;
 name|y
 operator|=
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -2671,9 +2701,9 @@ operator|->
 name|disp_yoffset
 condition|)
 block|{
-name|gdisplay_expose_area
+name|gimp_display_shell_add_expose_area
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 literal|0
 argument_list|,
@@ -2688,9 +2718,9 @@ operator|->
 name|disp_yoffset
 argument_list|)
 expr_stmt|;
-name|gdisplay_expose_area
+name|gimp_display_shell_add_expose_area
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 literal|0
 argument_list|,
@@ -2717,9 +2747,9 @@ operator|->
 name|disp_xoffset
 condition|)
 block|{
-name|gdisplay_expose_area
+name|gimp_display_shell_add_expose_area
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 literal|0
 argument_list|,
@@ -2734,9 +2764,9 @@ operator|->
 name|disp_height
 argument_list|)
 expr_stmt|;
-name|gdisplay_expose_area
+name|gimp_display_shell_add_expose_area
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|gdisp
 operator|->
@@ -2951,6 +2981,10 @@ name|GimpTransformTool
 modifier|*
 name|tr_tool
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -2970,6 +3004,15 @@ operator|=
 name|GIMP_TRANSFORM_TOOL
 argument_list|(
 name|tool
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 name|gdisplay_untransform_coords
@@ -3098,9 +3141,9 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|gdisplay_install_tool_cursor
+name|gimp_display_shell_install_tool_cursor
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|ctype
 argument_list|,
@@ -7128,7 +7171,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gdisplays_update_area
+name|gimp_image_update
 argument_list|(
 name|gimage
 argument_list|,

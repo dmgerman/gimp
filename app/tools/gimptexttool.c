@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpeditselectiontool.h"
 end_include
 
@@ -1635,6 +1641,10 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|GimpLayer
 modifier|*
 name|layer
@@ -1644,6 +1654,15 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
 name|gdisplay_untransform_coords
 argument_list|(
 name|gdisp
@@ -1693,9 +1712,9 @@ name|layer
 argument_list|)
 condition|)
 block|{
-name|gdisplay_install_tool_cursor
+name|gimp_display_shell_install_tool_cursor
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|GDK_FLEUR
 argument_list|,
@@ -1706,9 +1725,9 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|gdisplay_install_tool_cursor
+name|gimp_display_shell_install_tool_cursor
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|GDK_XTERM
 argument_list|,

@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpeditselectiontool.h"
 end_include
 
@@ -755,6 +761,10 @@ name|GimpFuzzySelectTool
 modifier|*
 name|fuzzy_sel
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|fuzzy_sel
 operator|=
 name|GIMP_FUZZY_SELECT_TOOL
@@ -762,9 +772,18 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
-name|gdk_pointer_grab
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|gdisp
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
+name|gdk_pointer_grab
+argument_list|(
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -902,7 +921,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->

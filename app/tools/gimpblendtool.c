@@ -138,6 +138,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"app_procs.h"
 end_include
 
@@ -341,7 +347,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d299e80108
+DECL|struct|__anon297983f10108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -398,7 +404,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d299e80208
+DECL|struct|__anon297983f10208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -1449,11 +1455,24 @@ name|GimpBlendTool
 modifier|*
 name|blend_tool
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|blend_tool
 operator|=
 name|GIMP_BLEND_TOOL
 argument_list|(
 name|tool
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1535,7 +1554,7 @@ expr_stmt|;
 comment|/*  Make the tool active and set the gdisplay which owns it  */
 name|gdk_pointer_grab
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -1579,7 +1598,7 @@ name|gtk_statusbar_get_context_id
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -1591,7 +1610,7 @@ name|gtk_statusbar_push
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -1614,7 +1633,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -1651,6 +1670,10 @@ name|GimpBlendTool
 modifier|*
 name|blend_tool
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 ifdef|#
 directive|ifdef
 name|BLEND_UI_CALLS_VIA_PDB
@@ -1676,6 +1699,15 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
 name|gimage
 operator|=
 name|gdisp
@@ -1696,7 +1728,7 @@ name|gtk_statusbar_pop
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -2086,6 +2118,10 @@ name|GimpBlendTool
 modifier|*
 name|blend_tool
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|gchar
 name|vector
 index|[
@@ -2097,6 +2133,15 @@ operator|=
 name|GIMP_BLEND_TOOL
 argument_list|(
 name|tool
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 comment|/*  undraw the current tool  */
@@ -2369,7 +2414,7 @@ name|gtk_statusbar_pop
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -2395,7 +2440,7 @@ argument_list|(
 name|vector
 argument_list|)
 argument_list|,
-name|gdisp
+name|shell
 operator|->
 name|cursor_format_str
 argument_list|,
@@ -2448,7 +2493,7 @@ argument_list|(
 name|vector
 argument_list|)
 argument_list|,
-name|gdisp
+name|shell
 operator|->
 name|cursor_format_str
 argument_list|,
@@ -2497,7 +2542,7 @@ name|gtk_statusbar_push
 argument_list|(
 name|GTK_STATUSBAR
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|statusbar
 argument_list|)
@@ -2540,6 +2585,19 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|gimp_drawable_type
@@ -2559,9 +2617,9 @@ case|:
 case|case
 name|INDEXEDA_GIMAGE
 case|:
-name|gdisplay_install_tool_cursor
+name|gimp_display_shell_install_tool_cursor
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|GIMP_BAD_CURSOR
 argument_list|,
@@ -2572,9 +2630,9 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|gdisplay_install_tool_cursor
+name|gimp_display_shell_install_tool_cursor
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,

@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbucketfilltool.h"
 end_include
 
@@ -1234,6 +1240,10 @@ name|GimpBucketFillTool
 modifier|*
 name|bucket_tool
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|gboolean
 name|use_offsets
 decl_stmt|;
@@ -1242,6 +1252,15 @@ operator|=
 name|GIMP_BUCKET_FILL_TOOL
 argument_list|(
 name|tool
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 name|use_offsets
@@ -1286,7 +1305,7 @@ expr_stmt|;
 comment|/*  Make the tool active and set the gdisplay which owns it  */
 name|gdk_pointer_grab
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -1560,6 +1579,10 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|GimpLayer
 modifier|*
 name|layer
@@ -1584,6 +1607,15 @@ name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
 name|gdisplay_untransform_coords
 argument_list|(
 name|gdisp
@@ -1735,9 +1767,9 @@ block|}
 block|}
 block|}
 block|}
-name|gdisplay_install_tool_cursor
+name|gimp_display_shell_install_tool_cursor
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|ctype
 argument_list|,

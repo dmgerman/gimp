@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimppreview.h"
 end_include
 
@@ -1903,13 +1909,6 @@ operator|->
 name|visual_depth_str
 argument_list|)
 expr_stmt|;
-comment|/*  update the fields  */
-comment|/*gdisp->window_info_dialog = info_win;*/
-name|info_window_update
-argument_list|(
-name|gdisp
-argument_list|)
-expr_stmt|;
 comment|/*  Add extra tabs  */
 name|info_window_create_extended
 argument_list|(
@@ -1940,6 +1939,12 @@ name|info_window_image_renamed_callback
 argument_list|)
 argument_list|,
 name|info_win
+argument_list|)
+expr_stmt|;
+comment|/*  update the fields  */
+name|info_window_update
+argument_list|(
+name|gdisp
 argument_list|)
 expr_stmt|;
 return|return
@@ -2276,10 +2281,6 @@ decl_stmt|;
 name|InfoDialog
 modifier|*
 name|info_win
-init|=
-name|gdisp
-operator|->
-name|window_info_dialog
 decl_stmt|;
 name|gboolean
 name|force_update
@@ -2289,6 +2290,17 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|info_win
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+operator|->
+name|info_dialog
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -3005,11 +3017,18 @@ decl_stmt|;
 name|InfoDialog
 modifier|*
 name|info_win
-init|=
+decl_stmt|;
+name|info_win
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
 name|gdisp
 operator|->
-name|window_info_dialog
-decl_stmt|;
+name|shell
+argument_list|)
+operator|->
+name|info_dialog
+expr_stmt|;
 if|if
 condition|(
 operator|!

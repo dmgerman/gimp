@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptool.h"
 end_include
 
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8ca7090103
+DECL|enum|__anon276091100103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1587,9 +1593,22 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|gdisplay_install_tool_cursor
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|gdisp
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_install_tool_cursor
+argument_list|(
+name|shell
 argument_list|,
 name|GDK_TOP_LEFT_ARROW
 argument_list|,

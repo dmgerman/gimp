@@ -2119,7 +2119,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*  a non-layer drawable can't have an alpha channel,        *  so add one        */
+comment|/*  a non-layer drawable can't have an alpha channel so add one  */
 name|PixelRegion
 name|srcPR
 decl_stmt|,
@@ -2288,6 +2288,16 @@ operator|->
 name|gimp
 argument_list|,
 name|new_gimage
+argument_list|,
+literal|0x0101
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|new_gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

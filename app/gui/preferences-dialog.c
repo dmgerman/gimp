@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-ops.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplay-render.h"
 end_include
 
@@ -109,6 +103,12 @@ begin_include
 include|#
 directive|include
 file|"tools/tool_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui.h"
 end_include
 
 begin_include
@@ -168,7 +168,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29472f100103
+DECL|enum|__anon28ca1f790103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -3813,7 +3813,7 @@ name|gimprc
 operator|.
 name|using_xserver_resolution
 condition|)
-name|gdisplay_xserver_resolution
+name|gui_get_screen_resolution
 argument_list|(
 operator|&
 name|gimprc
@@ -5626,7 +5626,7 @@ operator|->
 name|active
 condition|)
 block|{
-name|gdisplay_xserver_resolution
+name|gui_get_screen_resolution
 argument_list|(
 operator|&
 name|gimprc
@@ -12988,7 +12988,7 @@ name|gchar
 modifier|*
 name|str
 decl_stmt|;
-name|gdisplay_xserver_resolution
+name|gui_get_screen_resolution
 argument_list|(
 operator|&
 name|xres
@@ -13714,7 +13714,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29472f100208
+DECL|struct|__anon28ca1f790208
 block|{
 DECL|member|label
 name|gchar
@@ -13943,7 +13943,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29472f100308
+DECL|struct|__anon28ca1f790308
 block|{
 DECL|member|tree_label
 name|gchar

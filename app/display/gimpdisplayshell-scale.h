@@ -6,21 +6,46 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_DISPLAY_SCALE_H__
+name|__GIMP_DISPLAY_SHELL_SCALE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DISPLAY_SCALE_H__
+DECL|macro|__GIMP_DISPLAY_SHELL_SCALE_H__
 define|#
 directive|define
-name|__GIMP_DISPLAY_SCALE_H__
+name|__GIMP_DISPLAY_SHELL_SCALE_H__
 end_define
 
 begin_function_decl
 name|void
-name|gimp_display_scale
+name|gimp_display_shell_scale_setup
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_shell_scale_set_dot_for_dot
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|gdisp
+parameter_list|,
+name|gboolean
+name|dot_for_dot
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_shell_scale
+parameter_list|(
+name|GimpDisplayShell
 modifier|*
 name|gdisp
 parameter_list|,
@@ -32,22 +57,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_scale_setup
+name|gimp_display_shell_scale_resize
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_display_scale_resize
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|gboolean
 name|resize_window
@@ -60,11 +74,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_scale_shrink_wrap
+name|gimp_display_shell_scale_shrink_wrap
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -75,7 +89,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_DISPLAY_SCALE_H__  */
+comment|/*  __GIMP_DISPLAY_SHELL_SCALE_H__  */
 end_comment
 
 end_unit

@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpinktool.h"
 end_include
 
@@ -4763,6 +4769,10 @@ name|GimpInkTool
 modifier|*
 name|ink_tool
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -4781,6 +4791,15 @@ operator|=
 name|GIMP_INK_TOOL
 argument_list|(
 name|tool
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 comment|/*  Keep the coordinates of the target  */
@@ -4878,7 +4897,7 @@ operator|)
 condition|)
 name|gdk_pointer_grab
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -4902,7 +4921,7 @@ expr_stmt|;
 else|else
 name|gdk_pointer_grab
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|canvas
 operator|->
@@ -5817,6 +5836,10 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|GimpLayer
 modifier|*
 name|layer
@@ -5831,6 +5854,15 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
 name|gdisplay_untransform_coords
 argument_list|(
 name|gdisp
@@ -5960,9 +5992,9 @@ name|GIMP_MOUSE_CURSOR
 expr_stmt|;
 block|}
 block|}
-name|gdisplay_install_tool_cursor
+name|gimp_display_shell_install_tool_cursor
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|ctype
 argument_list|,
@@ -6457,7 +6489,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon275cbff90103
+DECL|enum|__anon2757e4200103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -7672,7 +7704,7 @@ name|height
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/*  Update the gimage--it is important to call gdisplays_update_area    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
+comment|/*  Update the gimage--it is important to call gimp_image_update    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
 name|gimp_drawable_offsets
 argument_list|(
 name|drawable
@@ -7684,7 +7716,7 @@ operator|&
 name|offy
 argument_list|)
 expr_stmt|;
-name|gdisplays_update_area
+name|gimp_image_update
 argument_list|(
 name|gimage
 argument_list|,
