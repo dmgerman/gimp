@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpcontrollers.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdevices.h"
 end_include
 
@@ -1281,6 +1287,11 @@ argument_list|,
 name|gui_device_change_notify
 argument_list|)
 expr_stmt|;
+name|gimp_controllers_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 name|session_init
 argument_list|(
 name|gimp
@@ -1396,6 +1407,13 @@ expr_stmt|;
 name|gimp_devices_restore
 argument_list|(
 name|gimp
+argument_list|)
+expr_stmt|;
+name|gimp_controllers_restore
+argument_list|(
+name|gimp
+argument_list|,
+name|image_ui_manager
 argument_list|)
 expr_stmt|;
 if|if
@@ -1601,6 +1619,16 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|TRUE
+comment|/* gui_config->save_controllers */
+condition|)
+name|gimp_controllers_save
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 name|gimp_displays_delete
 argument_list|(
 name|gimp
@@ -1697,6 +1725,11 @@ name|gimp
 argument_list|)
 expr_stmt|;
 name|dialogs_exit
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|gimp_controllers_exit
 argument_list|(
 name|gimp
 argument_list|)

@@ -236,6 +236,15 @@ name|GimpPreviewRendererVectors
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpControllerWheel
+typedef|typedef
+name|struct
+name|_GimpControllerWheel
+name|GimpControllerWheel
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  widgets  */
 end_comment
