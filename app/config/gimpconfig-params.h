@@ -25,11 +25,19 @@ value|(1<< (0 + G_PARAM_USER_SHIFT))
 end_define
 
 begin_define
+DECL|macro|GIMP_PARAM_AGGREGATE
+define|#
+directive|define
+name|GIMP_PARAM_AGGREGATE
+value|(1<< (1 + G_PARAM_USER_SHIFT))
+end_define
+
+begin_define
 DECL|macro|GIMP_PARAM_RESTART
 define|#
 directive|define
 name|GIMP_PARAM_RESTART
-value|(1<< (1 + G_PARAM_USER_SHIFT))
+value|(1<< (2 + G_PARAM_USER_SHIFT))
 end_define
 
 begin_define
@@ -37,7 +45,7 @@ DECL|macro|GIMP_PARAM_CONFIRM
 define|#
 directive|define
 name|GIMP_PARAM_CONFIRM
-value|(1<< (2 + G_PARAM_USER_SHIFT))
+value|(1<< (3 + G_PARAM_USER_SHIFT))
 end_define
 
 begin_define
@@ -187,7 +195,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ed95bc0103
+DECL|enum|__anon2c6f4b200103
 block|{
 DECL|enumerator|GIMP_PARAM_PATH_FILE
 name|GIMP_PARAM_PATH_FILE
@@ -541,7 +549,7 @@ define|default, flags)\   g_object_class_install_property (class, id,\          
 end_define
 
 begin_comment
-comment|/*  object properties are _not_ writeable by default  */
+comment|/*  object properties are _not_ G_PARAM_CONSTRUCT  */
 end_comment
 
 begin_define
@@ -563,7 +571,7 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|g_object_class_install_property (class, id,\                                    g_param_spec_object (name, NULL, blurb,\                                    object_type,\                                    flags |\                                    G_PARAM_READABLE | GIMP_PARAM_SERIALIZE))
+value|g_object_class_install_property (class, id,\                                    g_param_spec_object (name, NULL, blurb,\                                    object_type,\                                    flags |\                                    G_PARAM_READWRITE | GIMP_PARAM_SERIALIZE))
 end_define
 
 begin_endif

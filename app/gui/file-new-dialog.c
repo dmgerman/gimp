@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289bebb40108
+DECL|struct|__anon2c1aefb90108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -614,7 +614,11 @@ operator|->
 name|editor
 operator|=
 name|gimp_template_editor_new
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|,
+name|TRUE
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
