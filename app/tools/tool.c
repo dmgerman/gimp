@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fb47480103
+DECL|enum|__anon279b66390103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1884,13 +1884,6 @@ end_macro
 begin_macro
 name|STUB
 argument_list|(
-argument|bucket_fill_region
-argument_list|)
-end_macro
-
-begin_macro
-name|STUB
-argument_list|(
 argument|pathpoints_copy
 argument_list|)
 end_macro
@@ -2185,13 +2178,6 @@ end_macro
 begin_macro
 name|STUB
 argument_list|(
-argument|find_contiguous_region
-argument_list|)
-end_macro
-
-begin_macro
-name|STUB
-argument_list|(
 argument|fuzzy_mask
 argument_list|)
 end_macro
@@ -2291,13 +2277,6 @@ begin_macro
 name|STUB
 argument_list|(
 argument|blend
-argument_list|)
-end_macro
-
-begin_macro
-name|STUB
-argument_list|(
-argument|bucket_fill
 argument_list|)
 end_macro
 

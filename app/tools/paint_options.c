@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"bucket_fill.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppaintbrushtool.h"
 end_include
 

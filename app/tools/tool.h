@@ -63,14 +63,6 @@ value|GTK_TYPE_NONE
 end_define
 
 begin_define
-DECL|macro|GIMP_TYPE_BUCKET_FILL_TOOL
-define|#
-directive|define
-name|GIMP_TYPE_BUCKET_FILL_TOOL
-value|GTK_TYPE_NONE
-end_define
-
-begin_define
 DECL|macro|GIMP_TYPE_BLEND_TOOL
 define|#
 directive|define

@@ -215,6 +215,9 @@ expr_stmt|;
 name|gimp_paintbrush_tool_register
 argument_list|()
 expr_stmt|;
+name|gimp_bucket_fill_tool_register
+argument_list|()
+expr_stmt|;
 name|gimp_measure_tool_register
 argument_list|()
 expr_stmt|;

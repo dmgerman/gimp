@@ -6,20 +6,26 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__BUCKET_FILL_H__
+name|__GIMP_BUCKET_FILL_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__BUCKET_FILL_H__
+DECL|macro|__GIMP_BUCKET_FILL_TOOL_H__
 define|#
 directive|define
-name|__BUCKET_FILL_H__
+name|__GIMP_BUCKET_FILL_TOOL_H__
 end_define
+
+begin_include
+include|#
+directive|include
+file|"tool.h"
+end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7812b90103
+DECL|enum|__anon298bac770103
 block|{
 DECL|enumerator|FG_BUCKET_FILL
 name|FG_BUCKET_FILL
@@ -34,6 +40,140 @@ block|}
 name|BucketFillMode
 typedef|;
 end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_BUCKET_FILL_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_BUCKET_FILL_TOOL
+value|(gimp_bucket_fill_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_BUCKET_FILL_TOOL (obj)
+define|#
+directive|define
+name|GIMP_BUCKET_FILL_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_BUCKET_FILL_TOOL, GimpBucketFillTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_BUCKET_FILL_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_BUCKET_FILL_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_BUCKET_FILL_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_BUCKET_FILL_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_BUCKET_FILL_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_BUCKET_FILL_TOOL, GimpBucketFillToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_BUCKET_FILL_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_BUCKET_FILL_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_BUCKET_FILL_TOOL))
+end_define
+
+begin_typedef
+DECL|typedef|GimpBucketFillTool
+typedef|typedef
+name|struct
+name|_GimpBucketFillTool
+name|GimpBucketFillTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpBucketFillToolClass
+typedef|typedef
+name|struct
+name|_GimpBucketFillToolClass
+name|GimpBucketFillToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpBucketFillTool
+struct|struct
+name|_GimpBucketFillTool
+block|{
+DECL|member|parent_instance
+name|GimpTool
+name|parent_instance
+decl_stmt|;
+DECL|member|target_x
+name|gint
+name|target_x
+decl_stmt|;
+comment|/*  starting x coord  */
+DECL|member|target_y
+name|gint
+name|target_y
+decl_stmt|;
+comment|/*  starting y coord  */
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpBucketFillToolClass
+struct|struct
+name|_GimpBucketFillToolClass
+block|{
+DECL|member|parent_class
+name|GimpToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_function_decl
+name|void
+name|gimp_bucket_fill_tool_register
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkType
+name|gimp_bucket_fill_tool_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpTool
+modifier|*
+name|gimp_bucket_fill_tool_new
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void
@@ -106,34 +246,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|Tool
-modifier|*
-name|tools_new_bucket_fill
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|tools_free_bucket_fill
-parameter_list|(
-name|Tool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*  __BUCKET_FILL_H__  */
+comment|/*  __GIMP_BUCKET_FILL_TOOL_H__  */
 end_comment
 
 end_unit
