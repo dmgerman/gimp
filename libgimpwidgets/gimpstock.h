@@ -671,6 +671,16 @@ define|#
 directive|define
 name|GIMP_STOCK_LANDSCAPE
 value|"gimp-landscape"
+DECL|macro|GIMP_STOCK_WEB
+define|#
+directive|define
+name|GIMP_STOCK_WEB
+value|"gimp-web"
+DECL|macro|GIMP_STOCK_VIDEO
+define|#
+directive|define
+name|GIMP_STOCK_VIDEO
+value|"gimp-video"
 comment|/*  in dialog size:  */
 DECL|macro|GIMP_STOCK_ERROR
 define|#
