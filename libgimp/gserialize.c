@@ -595,6 +595,11 @@ name|list
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|d
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

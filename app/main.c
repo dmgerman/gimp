@@ -2027,7 +2027,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0558d50108
+DECL|struct|__anon2c1a8bf30108
 block|{
 DECL|member|test_gint32
 name|gint32
@@ -2445,7 +2445,6 @@ literal|1
 index|]
 argument_list|)
 expr_stmt|;
-comment|/*  really should free the memory... */
 ifndef|#
 directive|ifndef
 name|NATIVE_WIN32
@@ -2456,12 +2455,45 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+comment|/*  free the memory  */
+name|g_free
+argument_list|(
+name|ts
+operator|->
+name|test_array
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|ts
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|to
+operator|->
+name|test_array
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|to
+operator|->
+name|test_string
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|to
+argument_list|)
+expr_stmt|;
+name|g_free_serial_description
+argument_list|(
+name|test_struct_descript
+argument_list|)
+expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*      67108864 */
-end_comment
 
 end_unit
 
