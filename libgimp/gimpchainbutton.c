@@ -1329,12 +1329,6 @@ name|gcb
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|event
-condition|)
-empty_stmt|;
-comment|/* avoid unused variable compiler warning */
 name|gdk_window_clear_area
 argument_list|(
 name|widget

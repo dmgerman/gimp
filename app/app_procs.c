@@ -2343,9 +2343,12 @@ expr_stmt|;
 name|RESET_BAR
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
 name|parse_buffers_init
 argument_list|()
-expr_stmt|;
+condition|)
+block|{
 name|parse_unitrc
 argument_list|()
 expr_stmt|;
@@ -2354,6 +2357,7 @@ name|parse_gimprc
 argument_list|()
 expr_stmt|;
 comment|/*  parse the local GIMP configuration file      */
+block|}
 if|if
 condition|(
 name|always_restore_session

@@ -40,7 +40,7 @@ end_comment
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|plug_in_path
 decl_stmt|;
@@ -48,7 +48,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|temp_path
 decl_stmt|;
@@ -56,7 +56,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|swap_path
 decl_stmt|;
@@ -64,7 +64,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|brush_path
 decl_stmt|;
@@ -72,7 +72,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|brush_vbr_path
 decl_stmt|;
@@ -80,7 +80,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|default_brush
 decl_stmt|;
@@ -88,7 +88,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|pattern_path
 decl_stmt|;
@@ -96,7 +96,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|default_pattern
 decl_stmt|;
@@ -104,7 +104,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|palette_path
 decl_stmt|;
@@ -112,7 +112,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|default_palette
 decl_stmt|;
@@ -120,7 +120,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|gradient_path
 decl_stmt|;
@@ -128,7 +128,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|default_gradient
 decl_stmt|;
@@ -136,7 +136,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|pluginrc_path
 decl_stmt|;
@@ -144,7 +144,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|module_path
 decl_stmt|;
@@ -152,63 +152,63 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|tile_cache_size
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|marching_speed
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|last_opened_size
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|double
+name|gdouble
 name|gamma_val
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|transparency_type
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|perfectmouse
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|transparency_size
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|levels_of_undo
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|color_cube_shades
 index|[]
 decl_stmt|;
@@ -216,63 +216,63 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|install_cmap
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|cycled_marching_ants
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|default_threshold
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|stingy_memory_use
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|allow_resize_windows
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|no_cursor_updating
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|preview_size
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|nav_preview_size
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|show_rulers
 decl_stmt|;
 end_decl_stmt
@@ -286,14 +286,14 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|show_statusbar
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|auto_save
 decl_stmt|;
 end_decl_stmt
@@ -307,14 +307,14 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|confirm_on_close
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|default_width
 decl_stmt|,
 name|default_height
@@ -323,7 +323,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|default_type
 decl_stmt|;
 end_decl_stmt
@@ -337,21 +337,21 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|double
+name|gdouble
 name|default_xresolution
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|double
+name|gdouble
 name|default_yresolution
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|default_comment
 decl_stmt|;
@@ -359,84 +359,84 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|default_dot_for_dot
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|save_session_info
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|save_device_status
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|always_restore_session
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|show_tips
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|last_tip
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|show_tool_tips
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|double
+name|gdouble
 name|monitor_xres
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|double
+name|gdouble
 name|monitor_yres
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|using_xserver_resolution
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|num_processors
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|image_title_format
 decl_stmt|;
@@ -444,63 +444,63 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|global_paint_options
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|show_indicators
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|max_new_image_size
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|thumbnail_mode
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|trust_dirty_flag
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|use_help
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|nav_window_per_display
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gboolean
 name|info_window_follows_mouse
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|help_browser
 decl_stmt|;
 end_decl_stmt
@@ -510,14 +510,16 @@ comment|/*  function prototypes  */
 end_comment
 
 begin_function_decl
-name|void
+name|gboolean
 name|parse_buffers_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* this has to be called before any file 				   * is parsed 				   */
+comment|/* this has to be called before any file 					 * is parsed 					 */
 end_comment
 
 begin_function_decl
@@ -533,7 +535,7 @@ begin_function_decl
 name|gboolean
 name|parse_gimprc_file
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -558,11 +560,11 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|char
+name|gchar
 modifier|*
 name|gimprc_find_token
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|token
 parameter_list|)
@@ -570,11 +572,11 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|char
+name|gchar
 modifier|*
 name|gimprc_value_to_str
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)

@@ -226,9 +226,9 @@ value|3
 end_define
 
 begin_typedef
-DECL|enum|__anon2b16d9970103
 typedef|typedef
 enum|enum
+DECL|enum|__anon28ed3ab60103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -319,7 +319,7 @@ struct|struct
 name|_ParseFunc
 block|{
 DECL|member|name
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
@@ -354,12 +354,12 @@ struct|struct
 name|_UnknownToken
 block|{
 DECL|member|token
-name|char
+name|gchar
 modifier|*
 name|token
 decl_stmt|;
 DECL|member|value
-name|char
+name|gchar
 modifier|*
 name|value
 decl_stmt|;
@@ -373,7 +373,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|plug_in_path
-name|char
+name|gchar
 modifier|*
 name|plug_in_path
 init|=
@@ -383,7 +383,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|temp_path
-name|char
+name|gchar
 modifier|*
 name|temp_path
 init|=
@@ -393,7 +393,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|swap_path
-name|char
+name|gchar
 modifier|*
 name|swap_path
 init|=
@@ -403,7 +403,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|brush_path
-name|char
+name|gchar
 modifier|*
 name|brush_path
 init|=
@@ -413,7 +413,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|brush_vbr_path
-name|char
+name|gchar
 modifier|*
 name|brush_vbr_path
 init|=
@@ -423,7 +423,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|default_brush
-name|char
+name|gchar
 modifier|*
 name|default_brush
 init|=
@@ -433,7 +433,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|pattern_path
-name|char
+name|gchar
 modifier|*
 name|pattern_path
 init|=
@@ -443,7 +443,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|default_pattern
-name|char
+name|gchar
 modifier|*
 name|default_pattern
 init|=
@@ -453,7 +453,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|palette_path
-name|char
+name|gchar
 modifier|*
 name|palette_path
 init|=
@@ -463,7 +463,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|default_palette
-name|char
+name|gchar
 modifier|*
 name|default_palette
 init|=
@@ -473,7 +473,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|gradient_path
-name|char
+name|gchar
 modifier|*
 name|gradient_path
 init|=
@@ -483,7 +483,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|default_gradient
-name|char
+name|gchar
 modifier|*
 name|default_gradient
 init|=
@@ -493,7 +493,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|pluginrc_path
-name|char
+name|gchar
 modifier|*
 name|pluginrc_path
 init|=
@@ -503,7 +503,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|module_path
-name|char
+name|gchar
 modifier|*
 name|module_path
 init|=
@@ -513,7 +513,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|tile_cache_size
-name|int
+name|gint
 name|tile_cache_size
 init|=
 literal|10485760
@@ -527,7 +527,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|marching_speed
-name|int
+name|gint
 name|marching_speed
 init|=
 literal|300
@@ -541,7 +541,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|gamma_val
-name|double
+name|gdouble
 name|gamma_val
 init|=
 literal|1.0
@@ -550,7 +550,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|transparency_type
-name|int
+name|gint
 name|transparency_type
 init|=
 literal|1
@@ -564,10 +564,10 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|perfectmouse
-name|int
+name|gboolean
 name|perfectmouse
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -578,7 +578,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|transparency_size
-name|int
+name|gint
 name|transparency_size
 init|=
 literal|1
@@ -592,7 +592,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|levels_of_undo
-name|int
+name|gint
 name|levels_of_undo
 init|=
 literal|2
@@ -606,7 +606,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|last_opened_size
-name|int
+name|gint
 name|last_opened_size
 init|=
 literal|4
@@ -620,7 +620,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|color_cube_shades
-name|int
+name|gint
 name|color_cube_shades
 index|[
 literal|4
@@ -640,16 +640,16 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|install_cmap
-name|int
+name|gboolean
 name|install_cmap
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|cycled_marching_ants
-name|int
+name|gint
 name|cycled_marching_ants
 init|=
 literal|0
@@ -658,7 +658,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|default_threshold
-name|int
+name|gint
 name|default_threshold
 init|=
 literal|15
@@ -667,34 +667,34 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|stingy_memory_use
-name|int
+name|gboolean
 name|stingy_memory_use
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|allow_resize_windows
-name|int
+name|gboolean
 name|allow_resize_windows
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|no_cursor_updating
-name|int
+name|gboolean
 name|no_cursor_updating
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|preview_size
-name|int
+name|gint
 name|preview_size
 init|=
 literal|32
@@ -703,7 +703,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|nav_preview_size
-name|int
+name|gint
 name|nav_preview_size
 init|=
 literal|112
@@ -712,7 +712,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|show_rulers
-name|int
+name|gboolean
 name|show_rulers
 init|=
 name|TRUE
@@ -721,7 +721,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|show_statusbar
-name|int
+name|gboolean
 name|show_statusbar
 init|=
 name|TRUE
@@ -739,7 +739,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|auto_save
-name|int
+name|gboolean
 name|auto_save
 init|=
 name|TRUE
@@ -757,7 +757,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|confirm_on_close
-name|int
+name|gboolean
 name|confirm_on_close
 init|=
 name|TRUE
@@ -766,7 +766,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|save_session_info
-name|int
+name|gboolean
 name|save_session_info
 init|=
 name|TRUE
@@ -775,7 +775,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|save_device_status
-name|int
+name|gboolean
 name|save_device_status
 init|=
 name|FALSE
@@ -784,7 +784,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|always_restore_session
-name|int
+name|gboolean
 name|always_restore_session
 init|=
 name|FALSE
@@ -793,7 +793,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|default_width
-name|int
+name|gint
 name|default_width
 init|=
 literal|983
@@ -802,7 +802,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|default_height
-name|int
+name|gint
 name|default_height
 init|=
 literal|857
@@ -815,7 +815,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|default_type
-name|int
+name|gint
 name|default_type
 init|=
 name|RGB
@@ -824,7 +824,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|default_xresolution
-name|double
+name|gdouble
 name|default_xresolution
 init|=
 literal|72.0
@@ -833,7 +833,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|default_yresolution
-name|double
+name|gdouble
 name|default_yresolution
 init|=
 literal|72.0
@@ -851,7 +851,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|default_comment
-name|char
+name|gchar
 modifier|*
 name|default_comment
 init|=
@@ -861,7 +861,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|default_dot_for_dot
-name|int
+name|gboolean
 name|default_dot_for_dot
 init|=
 name|TRUE
@@ -870,7 +870,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|show_tips
-name|int
+name|gboolean
 name|show_tips
 init|=
 name|TRUE
@@ -879,7 +879,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|last_tip
-name|int
+name|gint
 name|last_tip
 init|=
 operator|-
@@ -889,7 +889,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|show_tool_tips
-name|int
+name|gboolean
 name|show_tool_tips
 init|=
 name|TRUE
@@ -898,7 +898,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|monitor_xres
-name|double
+name|gdouble
 name|monitor_xres
 init|=
 literal|72.0
@@ -907,7 +907,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|monitor_yres
-name|double
+name|gdouble
 name|monitor_yres
 init|=
 literal|72.0
@@ -916,7 +916,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|using_xserver_resolution
-name|int
+name|gboolean
 name|using_xserver_resolution
 init|=
 name|FALSE
@@ -925,7 +925,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|num_processors
-name|int
+name|gint
 name|num_processors
 init|=
 literal|1
@@ -934,7 +934,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|image_title_format
-name|char
+name|gchar
 modifier|*
 name|image_title_format
 init|=
@@ -944,7 +944,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|global_paint_options
-name|int
+name|gboolean
 name|global_paint_options
 init|=
 name|TRUE
@@ -953,7 +953,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|show_indicators
-name|int
+name|gboolean
 name|show_indicators
 init|=
 name|TRUE
@@ -962,7 +962,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|max_new_image_size
-name|int
+name|gint
 name|max_new_image_size
 init|=
 literal|33554432
@@ -976,7 +976,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|thumbnail_mode
-name|int
+name|gint
 name|thumbnail_mode
 init|=
 literal|1
@@ -985,7 +985,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|trust_dirty_flag
-name|int
+name|gboolean
 name|trust_dirty_flag
 init|=
 name|FALSE
@@ -994,7 +994,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|use_help
-name|int
+name|gboolean
 name|use_help
 init|=
 name|TRUE
@@ -1003,7 +1003,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|nav_window_per_display
-name|int
+name|gboolean
 name|nav_window_per_display
 init|=
 name|FALSE
@@ -1012,7 +1012,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|info_window_follows_mouse
-name|int
+name|gboolean
 name|info_window_follows_mouse
 init|=
 name|FALSE
@@ -1021,7 +1021,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|help_browser
-name|int
+name|gint
 name|help_browser
 init|=
 name|HELP_BROWSER_GIMP
@@ -1038,7 +1038,7 @@ end_decl_stmt
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|get_next_token
 parameter_list|(
 name|void
@@ -1048,7 +1048,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|peek_next_token
 parameter_list|(
 name|void
@@ -1058,7 +1058,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_statement
 parameter_list|(
 name|void
@@ -1068,7 +1068,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_string
 parameter_list|(
 name|gpointer
@@ -1082,7 +1082,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_path
 parameter_list|(
 name|gpointer
@@ -1096,7 +1096,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_double
 parameter_list|(
 name|gpointer
@@ -1110,7 +1110,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_float
 parameter_list|(
 name|gpointer
@@ -1124,7 +1124,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_int
 parameter_list|(
 name|gpointer
@@ -1138,7 +1138,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_boolean
 parameter_list|(
 name|gpointer
@@ -1152,7 +1152,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_position
 parameter_list|(
 name|gpointer
@@ -1166,7 +1166,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_mem_size
 parameter_list|(
 name|gpointer
@@ -1180,7 +1180,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_image_type
 parameter_list|(
 name|gpointer
@@ -1194,7 +1194,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_interpolation_type
 parameter_list|(
 name|gpointer
@@ -1208,7 +1208,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_color_cube
 parameter_list|(
 name|gpointer
@@ -1222,7 +1222,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_preview_size
 parameter_list|(
 name|gpointer
@@ -1236,7 +1236,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_nav_preview_size
 parameter_list|(
 name|gpointer
@@ -1250,7 +1250,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_units
 parameter_list|(
 name|gpointer
@@ -1264,7 +1264,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_plug_in
 parameter_list|(
 name|gpointer
@@ -1278,7 +1278,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_plug_in_def
 parameter_list|(
 name|gpointer
@@ -1292,7 +1292,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_device
 parameter_list|(
 name|gpointer
@@ -1306,7 +1306,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_menu_path
 parameter_list|(
 name|gpointer
@@ -1320,7 +1320,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_session_info
 parameter_list|(
 name|gpointer
@@ -1334,7 +1334,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_unit_info
 parameter_list|(
 name|gpointer
@@ -1348,7 +1348,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_parasite
 parameter_list|(
 name|gpointer
@@ -1362,7 +1362,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_help_browser
 parameter_list|(
 name|gpointer
@@ -1376,7 +1376,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_locale_def
 parameter_list|(
 name|PlugInDef
@@ -1388,7 +1388,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_proc_def
 parameter_list|(
 name|PlugInProcDef
@@ -1401,7 +1401,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_proc_arg
 parameter_list|(
 name|ProcArg
@@ -1413,10 +1413,10 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_unknown
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|token_sym
 parameter_list|)
@@ -1424,11 +1424,11 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|char
+name|gchar
 modifier|*
 name|gimprc_value_to_str
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -1437,11 +1437,11 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|value_to_str
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -1451,7 +1451,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 name|string_to_str
 parameter_list|(
@@ -1467,7 +1467,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 name|path_to_str
 parameter_list|(
@@ -1483,7 +1483,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 name|double_to_str
 parameter_list|(
@@ -1499,7 +1499,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 name|float_to_str
 parameter_list|(
@@ -1515,7 +1515,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 name|int_to_str
 parameter_list|(
@@ -1531,7 +1531,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 name|boolean_to_str
 parameter_list|(
@@ -1547,7 +1547,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 name|position_to_str
 parameter_list|(
@@ -1563,7 +1563,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 name|mem_size_to_str
 parameter_list|(
@@ -1579,7 +1579,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 name|image_type_to_str
 parameter_list|(
@@ -1595,7 +1595,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 name|interpolation_type_to_str
 parameter_list|(
@@ -1611,7 +1611,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 name|color_cube_to_str
 parameter_list|(
@@ -1627,7 +1627,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 name|preview_size_to_str
 parameter_list|(
@@ -1643,7 +1643,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 name|nav_preview_size_to_str
 parameter_list|(
@@ -1659,7 +1659,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 name|units_to_str
 parameter_list|(
@@ -1675,7 +1675,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 name|help_browser_to_str
 parameter_list|(
@@ -1691,7 +1691,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 name|comment_to_str
 parameter_list|(
@@ -1706,15 +1706,15 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|transform_path
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|path
 parameter_list|,
-name|int
+name|gboolean
 name|destroy
 parameter_list|)
 function_decl|;
@@ -1725,11 +1725,11 @@ specifier|static
 name|void
 name|gimprc_set_token
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|token
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|value
 parameter_list|)
@@ -1741,7 +1741,7 @@ specifier|static
 name|void
 name|add_gimp_directory_token
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|gimp_dir
 parameter_list|)
@@ -1759,7 +1759,7 @@ specifier|static
 name|void
 name|add_x11root_token
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|x11root
 parameter_list|)
@@ -1773,19 +1773,19 @@ end_endif
 
 begin_function_decl
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|open_backup_file
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|secondary_filename
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|name_used
@@ -1808,6 +1808,10 @@ DECL|variable|parse_info
 specifier|static
 name|ParseInfo
 name|parse_info
+init|=
+block|{
+name|NULL
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -2968,12 +2972,20 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|parse_buffers_init (void)
 name|parse_buffers_init
 parameter_list|(
 name|void
 parameter_list|)
+block|{
+if|if
+condition|(
+operator|!
+name|parse_info
+operator|.
+name|buffer
+condition|)
 block|{
 name|parse_info
 operator|.
@@ -2981,7 +2993,7 @@ name|buffer
 operator|=
 name|g_new
 argument_list|(
-name|char
+name|gchar
 argument_list|,
 literal|4096
 argument_list|)
@@ -3008,6 +3020,13 @@ name|tokenbuf_size
 operator|=
 literal|2048
 expr_stmt|;
+return|return
+name|TRUE
+return|;
+block|}
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 
@@ -9304,46 +9323,46 @@ end_function
 
 begin_function
 specifier|static
-name|char
+name|gchar
 modifier|*
-DECL|function|transform_path (char * path,int destroy)
+DECL|function|transform_path (gchar * path,gboolean destroy)
 name|transform_path
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|path
 parameter_list|,
-name|int
+name|gboolean
 name|destroy
 parameter_list|)
 block|{
-name|int
+name|gint
 name|length
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|new_path
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|home
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|token
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|tmp
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|tmp2
 decl_stmt|;
-name|int
+name|gint
 name|substituted
 decl_stmt|;
-name|int
+name|gint
 name|is_env
 decl_stmt|;
 name|UnknownToken

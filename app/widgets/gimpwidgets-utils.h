@@ -31,7 +31,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpchainbutton.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpdialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpfileselection.h"
 end_include
 
 begin_include
@@ -43,7 +55,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimppatheditor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpquerybox.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpsizeentry.h"
 end_include
 
 begin_include

@@ -398,6 +398,42 @@ name|ysize_100
 comment|/* % */
 parameter_list|)
 function_decl|;
+DECL|macro|GIMP_MEM_SIZE_ENTRY_SPINBUTTON (memsize)
+define|#
+directive|define
+name|GIMP_MEM_SIZE_ENTRY_SPINBUTTON
+parameter_list|(
+name|memsize
+parameter_list|)
+define|\
+value|GTK_SPIN_BUTTON (gtk_object_get_data (GTK_OBJECT (memsize), \                                               "spinbutton"))
+DECL|macro|GIMP_MEM_SIZE_ENTRY_SPINBUTTON_ADJ (memsize)
+define|#
+directive|define
+name|GIMP_MEM_SIZE_ENTRY_SPINBUTTON_ADJ
+parameter_list|(
+name|memsize
+parameter_list|)
+define|\
+value|gtk_spin_button_get_adjustment \         (GTK_SPIN_BUTTON (gtk_object_get_data (GTK_OBJECT (memsize), \                                                "spinbutton")))
+DECL|macro|GIMP_MEM_SIZE_ENTRY_OPTIONMENU (memsize)
+define|#
+directive|define
+name|GIMP_MEM_SIZE_ENTRY_OPTIONMENU
+parameter_list|(
+name|memsize
+parameter_list|)
+define|\
+value|GTK_OPTION_MENU (gtk_object_get_data (GTK_OBJECT (memsize), \                                               "optionmenu"))
+name|GtkWidget
+modifier|*
+name|gimp_mem_size_entry_new
+parameter_list|(
+name|GtkAdjustment
+modifier|*
+name|adjustment
+parameter_list|)
+function_decl|;
 name|GtkWidget
 modifier|*
 name|gimp_pixmap_button_new
