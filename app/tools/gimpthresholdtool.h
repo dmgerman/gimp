@@ -137,6 +137,15 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|threshold_dialog_hide
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|threshold_initialize
 parameter_list|(
 name|GDisplay

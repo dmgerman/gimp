@@ -45,6 +45,15 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|posterize_dialog_hide
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|posterize_initialize
 parameter_list|(
 name|GDisplay

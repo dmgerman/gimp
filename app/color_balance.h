@@ -43,7 +43,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae2d90b0103
+DECL|enum|__anon290afb9a0103
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -188,6 +188,15 @@ parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|color_balance_dialog_hide
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl

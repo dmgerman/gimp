@@ -672,19 +672,8 @@ break|break;
 case|case
 name|HALT
 case|:
-if|if
-condition|(
-name|threshold_dialog
-condition|)
-name|threshold_cancel_callback
-argument_list|(
-name|NULL
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|threshold_dialog
-argument_list|)
+name|threshold_dialog_hide
+argument_list|()
 expr_stmt|;
 break|break;
 default|default:
@@ -789,6 +778,31 @@ end_function
 
 begin_function
 name|void
+DECL|function|threshold_dialog_hide (void)
+name|threshold_dialog_hide
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|threshold_dialog
+condition|)
+name|threshold_cancel_callback
+argument_list|(
+name|NULL
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|threshold_dialog
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|tools_free_threshold (Tool * tool)
 name|tools_free_threshold
 parameter_list|(
@@ -812,19 +826,8 @@ operator|->
 name|private
 expr_stmt|;
 comment|/*  Close the threshold dialog  */
-if|if
-condition|(
-name|threshold_dialog
-condition|)
-name|threshold_cancel_callback
-argument_list|(
-name|NULL
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|threshold_dialog
-argument_list|)
+name|threshold_dialog_hide
+argument_list|()
 expr_stmt|;
 name|g_free
 argument_list|(

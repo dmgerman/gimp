@@ -388,19 +388,8 @@ break|break;
 case|case
 name|HALT
 case|:
-if|if
-condition|(
-name|brightness_contrast_dialog
-condition|)
-name|brightness_contrast_cancel_callback
-argument_list|(
-name|NULL
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|brightness_contrast_dialog
-argument_list|)
+name|brightness_contrast_dialog_hide
+argument_list|()
 expr_stmt|;
 break|break;
 default|default:
@@ -505,6 +494,31 @@ end_function
 
 begin_function
 name|void
+DECL|function|brightness_contrast_dialog_hide (void)
+name|brightness_contrast_dialog_hide
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|brightness_contrast_dialog
+condition|)
+name|brightness_contrast_cancel_callback
+argument_list|(
+name|NULL
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|brightness_contrast_dialog
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|tools_free_brightness_contrast (Tool * tool)
 name|tools_free_brightness_contrast
 parameter_list|(
@@ -528,19 +542,8 @@ operator|->
 name|private
 expr_stmt|;
 comment|/*  Close the brightness-contrast dialog  */
-if|if
-condition|(
-name|brightness_contrast_dialog
-condition|)
-name|brightness_contrast_cancel_callback
-argument_list|(
-name|NULL
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|brightness_contrast_dialog
-argument_list|)
+name|brightness_contrast_dialog_hide
+argument_list|()
 expr_stmt|;
 name|g_free
 argument_list|(

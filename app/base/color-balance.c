@@ -666,19 +666,8 @@ break|break;
 case|case
 name|HALT
 case|:
-if|if
-condition|(
-name|color_balance_dialog
-condition|)
-name|color_balance_cancel_callback
-argument_list|(
-name|NULL
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|color_balance_dialog
-argument_list|)
+name|color_balance_dialog_hide
+argument_list|()
 expr_stmt|;
 break|break;
 default|default:
@@ -783,6 +772,31 @@ end_function
 
 begin_function
 name|void
+DECL|function|color_balance_dialog_hide (void)
+name|color_balance_dialog_hide
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|color_balance_dialog
+condition|)
+name|color_balance_cancel_callback
+argument_list|(
+name|NULL
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|color_balance_dialog
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|tools_free_color_balance (Tool * tool)
 name|tools_free_color_balance
 parameter_list|(
@@ -806,19 +820,8 @@ operator|->
 name|private
 expr_stmt|;
 comment|/*  Close the color select dialog  */
-if|if
-condition|(
-name|color_balance_dialog
-condition|)
-name|color_balance_cancel_callback
-argument_list|(
-name|NULL
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|color_balance_dialog
-argument_list|)
+name|color_balance_dialog_hide
+argument_list|()
 expr_stmt|;
 name|g_free
 argument_list|(

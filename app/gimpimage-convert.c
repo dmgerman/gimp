@@ -44,6 +44,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"color_balance.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"convert.h"
 end_include
 
@@ -81,6 +87,12 @@ begin_include
 include|#
 directive|include
 file|"gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"hue_saturation.h"
 end_include
 
 begin_include
@@ -34882,7 +34894,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab2acc90108
+DECL|struct|__anon2b70f4cc0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -34959,7 +34971,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab2acc90208
+DECL|struct|__anon2b70f4cc0208
 block|{
 DECL|member|ncolors
 name|long
@@ -34978,7 +34990,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab2acc90308
+DECL|struct|__anon2b70f4cc0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -37816,6 +37828,28 @@ name|dither_type
 operator|=
 name|FIXED_DITHER
 expr_stmt|;
+comment|/*  Close the dialogs when open because they're useless for indexed images       and could crash the GIMP when used nevertheless		       */
+name|color_balance_dialog_hide
+argument_list|()
+expr_stmt|;
+name|hue_saturation_dialog_hide
+argument_list|()
+expr_stmt|;
+name|brightness_contrast_dialog_hide
+argument_list|()
+expr_stmt|;
+name|threshold_dialog_hide
+argument_list|()
+expr_stmt|;
+name|levels_dialog_hide
+argument_list|()
+expr_stmt|;
+name|curves_dialog_hide
+argument_list|()
+expr_stmt|;
+name|posterize_dialog_hide
+argument_list|()
+expr_stmt|;
 comment|/*  Convert the image to indexed color  */
 name|convert_image
 argument_list|(
@@ -38273,7 +38307,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab2acc90408
+DECL|struct|__anon2b70f4cc0408
 block|{
 DECL|member|used_count
 name|signed

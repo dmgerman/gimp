@@ -1152,19 +1152,8 @@ break|break;
 case|case
 name|HALT
 case|:
-if|if
-condition|(
-name|hue_saturation_dialog
-condition|)
-name|hue_saturation_cancel_callback
-argument_list|(
-name|NULL
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|hue_saturation_dialog
-argument_list|)
+name|hue_saturation_dialog_hide
+argument_list|()
 expr_stmt|;
 break|break;
 default|default:
@@ -1269,6 +1258,31 @@ end_function
 
 begin_function
 name|void
+DECL|function|hue_saturation_dialog_hide (void)
+name|hue_saturation_dialog_hide
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|hue_saturation_dialog
+condition|)
+name|hue_saturation_cancel_callback
+argument_list|(
+name|NULL
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|hue_saturation_dialog
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|tools_free_hue_saturation (Tool * tool)
 name|tools_free_hue_saturation
 parameter_list|(
@@ -1292,19 +1306,8 @@ operator|->
 name|private
 expr_stmt|;
 comment|/*  Close the hue saturation dialog  */
-if|if
-condition|(
-name|hue_saturation_dialog
-condition|)
-name|hue_saturation_cancel_callback
-argument_list|(
-name|NULL
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|hue_saturation_dialog
-argument_list|)
+name|hue_saturation_dialog_hide
+argument_list|()
 expr_stmt|;
 name|g_free
 argument_list|(

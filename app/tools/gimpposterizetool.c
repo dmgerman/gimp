@@ -316,19 +316,8 @@ break|break;
 case|case
 name|HALT
 case|:
-if|if
-condition|(
-name|posterize_dialog
-condition|)
-name|posterize_cancel_callback
-argument_list|(
-name|NULL
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|posterize_dialog
-argument_list|)
+name|posterize_dialog_hide
+argument_list|()
 expr_stmt|;
 break|break;
 default|default:
@@ -432,6 +421,31 @@ end_function
 
 begin_function
 name|void
+DECL|function|posterize_dialog_hide (void)
+name|posterize_dialog_hide
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|posterize_dialog
+condition|)
+name|posterize_cancel_callback
+argument_list|(
+name|NULL
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|posterize_dialog
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|tools_free_posterize (Tool * tool)
 name|tools_free_posterize
 parameter_list|(
@@ -455,19 +469,8 @@ operator|->
 name|private
 expr_stmt|;
 comment|/*  Close the posterize dialog  */
-if|if
-condition|(
-name|posterize_dialog
-condition|)
-name|posterize_cancel_callback
-argument_list|(
-name|NULL
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|posterize_dialog
-argument_list|)
+name|posterize_dialog_hide
+argument_list|()
 expr_stmt|;
 name|g_free
 argument_list|(

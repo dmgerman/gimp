@@ -879,19 +879,8 @@ break|break;
 case|case
 name|HALT
 case|:
-if|if
-condition|(
-name|levels_dialog
-condition|)
-name|levels_cancel_callback
-argument_list|(
-name|NULL
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|levels_dialog
-argument_list|)
+name|levels_dialog_hide
+argument_list|()
 expr_stmt|;
 break|break;
 default|default:
@@ -996,6 +985,31 @@ end_function
 
 begin_function
 name|void
+DECL|function|levels_dialog_hide (void)
+name|levels_dialog_hide
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|levels_dialog
+condition|)
+name|levels_cancel_callback
+argument_list|(
+name|NULL
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|levels_dialog
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|tools_free_levels (Tool * tool)
 name|tools_free_levels
 parameter_list|(
@@ -1019,19 +1033,8 @@ operator|->
 name|private
 expr_stmt|;
 comment|/*  Close the color select dialog  */
-if|if
-condition|(
-name|levels_dialog
-condition|)
-name|levels_cancel_callback
-argument_list|(
-name|NULL
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|levels_dialog
-argument_list|)
+name|levels_dialog_hide
+argument_list|()
 expr_stmt|;
 name|g_free
 argument_list|(
