@@ -453,20 +453,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|(
 name|key
 operator|==
-name|GDK_CONTROL_MASK
-operator|)
-operator|&&
-operator|!
-operator|(
-name|state
-operator|&
-name|GDK_SHIFT_MASK
-operator|)
+name|GDK_MOD1_MASK
 condition|)
-comment|/* leave stuff untouched in line draw mode */
 block|{
 name|GimpEraserOptions
 modifier|*
@@ -642,7 +632,7 @@ argument_list|(
 literal|"Anti Erase  %s"
 argument_list|)
 argument_list|,
-name|gimp_get_mod_name_control
+name|gimp_get_mod_name_alt
 argument_list|()
 argument_list|)
 expr_stmt|;
