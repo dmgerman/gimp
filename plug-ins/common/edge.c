@@ -99,7 +99,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27db7d770103
+DECL|enum|__anon29d5a2190103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -125,7 +125,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27db7d770208
+DECL|struct|__anon29d5a2190208
 block|{
 DECL|member|amount
 name|gdouble
@@ -360,7 +360,10 @@ name|SOBEL
 block|,
 comment|/* Edge detection algorithm */
 name|GIMP_PIXEL_FETCHER_EDGE_SMEAR
+block|,
 comment|/* wrapmode */
+name|TRUE
+comment|/* update_preview */
 block|}
 decl_stmt|;
 end_decl_stmt
