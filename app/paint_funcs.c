@@ -183,7 +183,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae8ccb50103
+DECL|enum|__anon2a30e8660103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -8578,6 +8578,7 @@ name|OPAQUE_OPACITY
 condition|)
 comment|/* HAS MASK, FULL OPACITY */
 block|{
+specifier|const
 name|int
 modifier|*
 name|mask_ip
@@ -8587,6 +8588,16 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
+if|if
+condition|(
+name|length
+operator|>=
+sizeof|sizeof
+argument_list|(
+name|int
+argument_list|)
+condition|)
+block|{
 comment|/* HEAD */
 name|i
 operator|=
@@ -8989,6 +9000,7 @@ operator|*
 operator|)
 name|mask_ip
 expr_stmt|;
+block|}
 comment|/* TAIL */
 while|while
 condition|(
@@ -9122,6 +9134,7 @@ block|}
 else|else
 comment|/* HAS MASK, SEMI-OPACITY */
 block|{
+specifier|const
 name|int
 modifier|*
 name|mask_ip
@@ -9131,6 +9144,16 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
+if|if
+condition|(
+name|length
+operator|>=
+sizeof|sizeof
+argument_list|(
+name|int
+argument_list|)
+condition|)
+block|{
 comment|/* HEAD */
 name|i
 operator|=
@@ -9537,6 +9560,7 @@ operator|*
 operator|)
 name|mask_ip
 expr_stmt|;
+block|}
 comment|/* TAIL */
 while|while
 condition|(
@@ -23999,10 +24023,8 @@ name|w
 operator|>
 literal|128
 condition|)
-name|fprintf
+name|g_error
 argument_list|(
-name|stderr
-argument_list|,
 literal|"combine_sub_region::src1->w = %d\n"
 argument_list|,
 name|src1
@@ -24139,6 +24161,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
+name|g_warning
+argument_list|(
+literal|"combine_sub_region: unhandled combine-type."
+argument_list|)
+expr_stmt|;
 break|break;
 block|}
 comment|/*  based on the type of the initial image...  */
