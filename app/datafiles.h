@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c06173a0103
+DECL|enum|__anon27946b780103
 block|{
 DECL|enumerator|INCLUDE_TEMP_DIR
 name|INCLUDE_TEMP_DIR
@@ -44,26 +44,6 @@ DECL|typedef|GimpDataFileFlags
 block|}
 name|GimpDataFileFlags
 typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpDataFileLoaderFunc
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|GimpDataFileLoaderFunc
-function_decl|)
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|,
-name|gpointer
-name|loader_data
-parameter_list|)
-function_decl|;
 end_typedef
 
 begin_function_decl
