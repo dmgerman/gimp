@@ -594,9 +594,12 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|channel_delete
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|mask
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

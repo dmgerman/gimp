@@ -52,6 +52,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb_glue.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -900,9 +906,12 @@ if|if
 condition|(
 name|success
 condition|)
-name|channel_delete
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|channel
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

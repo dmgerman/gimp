@@ -3575,9 +3575,9 @@ argument_list|,
 name|new_gimage
 argument_list|)
 expr_stmt|;
-name|gimp_layer_set_name
+name|gimp_object_set_name
 argument_list|(
-name|GIMP_LAYER
+name|GIMP_OBJECT
 argument_list|(
 name|new_layer
 argument_list|)

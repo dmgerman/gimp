@@ -1817,10 +1817,12 @@ argument_list|,
 name|off_y
 argument_list|)
 expr_stmt|;
-comment|/*  free the fuzzy region struct  */
-name|channel_delete
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|fuzzy_mask
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fuzzy_mask

@@ -207,7 +207,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bff7dcc0103
+DECL|enum|__anon2a1854230103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -233,7 +233,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bff7dcc0203
+DECL|enum|__anon2a1854230203
 block|{
 DECL|enumerator|DRAW_NOTHING
 name|DRAW_NOTHING
@@ -2440,11 +2440,14 @@ name|iscissors
 operator|->
 name|mask
 condition|)
-name|channel_delete
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|iscissors
 operator|->
 name|mask
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|iscissors
@@ -5001,11 +5004,15 @@ name|iscissors
 operator|->
 name|mask
 condition|)
-name|channel_delete
+block|{
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|iscissors
 operator|->
 name|mask
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|iscissors
@@ -5014,6 +5021,7 @@ name|mask
 operator|=
 name|NULL
 expr_stmt|;
+block|}
 comment|/* free the gradient map */
 if|if
 condition|(

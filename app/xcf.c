@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae8f2620103
+DECL|enum|__anon28ffc1c80103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -359,7 +359,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae8f2620203
+DECL|enum|__anon28ffc1c80203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -10544,11 +10544,14 @@ break|break;
 case|case
 name|PROP_SELECTION
 case|:
-name|channel_delete
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|gimage
 operator|->
 name|selection_mask
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimage
@@ -11583,9 +11586,12 @@ name|channel
 return|;
 name|error
 label|:
-name|channel_delete
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|channel
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

@@ -22,34 +22,6 @@ directive|include
 file|"gimpobject.h"
 end_include
 
-begin_comment
-comment|/* PDB stuff */
-end_comment
-
-begin_define
-DECL|macro|gimp_drawable_layer
-define|#
-directive|define
-name|gimp_drawable_layer
-value|GIMP_IS_LAYER
-end_define
-
-begin_define
-DECL|macro|gimp_drawable_layer_mask
-define|#
-directive|define
-name|gimp_drawable_layer_mask
-value|GIMP_IS_LAYER_MASK
-end_define
-
-begin_define
-DECL|macro|gimp_drawable_channel
-define|#
-directive|define
-name|gimp_drawable_channel
-value|GIMP_IS_CHANNEL
-end_define
-
 begin_define
 DECL|macro|GIMP_TYPE_DRAWABLE
 define|#

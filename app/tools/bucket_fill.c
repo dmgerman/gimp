@@ -2336,9 +2336,12 @@ if|if
 condition|(
 name|mask
 condition|)
-name|channel_delete
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|mask
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

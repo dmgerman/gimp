@@ -64,6 +64,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb_glue.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"undo.h"
 end_include
 
@@ -2042,9 +2048,12 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_layer_delete
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

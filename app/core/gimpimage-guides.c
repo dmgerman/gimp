@@ -681,7 +681,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon275527d20103
+DECL|enum|__anon2c0a572d0103
 block|{
 DECL|enumerator|CLEAN
 name|CLEAN
@@ -5979,9 +5979,12 @@ name|data
 expr_stmt|;
 name|ctattoo
 operator|=
-name|channel_get_tattoo
+name|gimp_drawable_get_tattoo
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|channel
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -9405,9 +9408,12 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|channel_get_tattoo
+name|gimp_drawable_get_tattoo
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|channel
+argument_list|)
 argument_list|)
 operator|==
 name|tattoo

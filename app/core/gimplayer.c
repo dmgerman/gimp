@@ -2149,28 +2149,6 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|gimp_layer_delete (GimpLayer * layer)
-name|gimp_layer_delete
-parameter_list|(
-name|GimpLayer
-modifier|*
-name|layer
-parameter_list|)
-block|{
-comment|/*  Layers are normally deleted by removing them from the associated       image. The only case where layer_delete() is useful is if you want       to remove a floating layer object that has not been added to an       image yet. We use gtk_object_sink() for this reason here.    */
-name|gtk_object_sink
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
 specifier|static
 name|void
 DECL|function|gimp_layer_destroy (GtkObject * object)

@@ -22,58 +22,6 @@ directive|include
 file|"gimpdrawable.h"
 end_include
 
-begin_comment
-comment|/*  PDB stuff  */
-end_comment
-
-begin_define
-DECL|macro|gimp_layer_set_name (l,n)
-define|#
-directive|define
-name|gimp_layer_set_name
-parameter_list|(
-name|l
-parameter_list|,
-name|n
-parameter_list|)
-value|gimp_object_set_name(GIMP_OBJECT(l),(n))
-end_define
-
-begin_define
-DECL|macro|gimp_layer_get_name (l)
-define|#
-directive|define
-name|gimp_layer_get_name
-parameter_list|(
-name|l
-parameter_list|)
-value|gimp_object_get_name(GIMP_OBJECT(l))
-end_define
-
-begin_define
-DECL|macro|gimp_layer_set_tattoo (l,t)
-define|#
-directive|define
-name|gimp_layer_set_tattoo
-parameter_list|(
-name|l
-parameter_list|,
-name|t
-parameter_list|)
-value|gimp_drawable_set_tattoo(GIMP_DRAWABLE(l),(t))
-end_define
-
-begin_define
-DECL|macro|gimp_layer_get_tattoo (l)
-define|#
-directive|define
-name|gimp_layer_get_tattoo
-parameter_list|(
-name|l
-parameter_list|)
-value|gimp_drawable_get_tattoo(GIMP_DRAWABLE(l))
-end_define
-
 begin_define
 DECL|macro|GIMP_TYPE_LAYER
 define|#
@@ -187,7 +135,7 @@ decl_stmt|;
 comment|/*  layer combination mode         */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon28caf2520108
+DECL|struct|__anon28a449ad0108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -427,17 +375,6 @@ parameter_list|,
 name|GimpLayerMask
 modifier|*
 name|mask
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_layer_delete
-parameter_list|(
-name|GimpLayer
-modifier|*
-name|layer
 parameter_list|)
 function_decl|;
 end_function_decl
