@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -964,43 +958,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp_check_glib_version
-argument_list|(
-literal|2
-argument_list|,
-literal|4
-argument_list|,
-literal|4
-argument_list|)
-operator|==
-name|NULL
-operator|&&
-name|gimp_check_glib_version
-argument_list|(
-literal|2
-argument_list|,
-literal|4
-argument_list|,
-literal|5
-argument_list|)
-operator|!=
-name|NULL
-condition|)
-block|{
-name|g_message
-argument_list|(
-literal|"You are using GLib version 2.4.4.\n\n"
-literal|"This version of GLib contains a bug "
-literal|"affecting filename conversions. "
-literal|"The GIMP won't be able to open any file "
-literal|"with non-ASCII characters (e.g. umlauts) "
-literal|"in its filename.\n\n"
-literal|"Please upgrade to GLib 2.4.5 or newer."
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -1037,7 +994,7 @@ DECL|macro|GTK_REQUIRED_MICRO
 define|#
 directive|define
 name|GTK_REQUIRED_MICRO
-value|1
+value|4
 name|mismatch
 operator|=
 name|gtk_check_version

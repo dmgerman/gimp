@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpbrush.h"
 end_include
 
@@ -637,9 +631,6 @@ name|gchar
 modifier|*
 name|buffer
 decl_stmt|;
-name|gboolean
-name|file_uris_are_utf8
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|selection
@@ -829,32 +820,6 @@ condition|)
 return|return
 name|NULL
 return|;
-name|file_uris_are_utf8
-operator|=
-operator|(
-name|gimp_check_glib_version
-argument_list|(
-literal|2
-argument_list|,
-literal|4
-argument_list|,
-literal|0
-argument_list|)
-operator|==
-name|NULL
-operator|&&
-name|gimp_check_glib_version
-argument_list|(
-literal|2
-argument_list|,
-literal|4
-argument_list|,
-literal|4
-argument_list|)
-operator|!=
-name|NULL
-operator|)
-expr_stmt|;
 comment|/*  do various checks because file drag sources send all kinds of    *  arbitrary crap...    */
 for|for
 control|(
@@ -1048,6 +1013,10 @@ literal|"%"
 argument_list|)
 condition|)
 block|{
+name|gchar
+modifier|*
+name|local_filename
+decl_stmt|;
 name|unescaped_filename
 operator|=
 name|gimp_unescape_uri_string
@@ -1062,17 +1031,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|file_uris_are_utf8
-condition|)
-block|{
-comment|/*  if we run with a GLib that correctly encodes                        *  file: URIs, we still may get a drop from an                        *  application that encodes file: URIs as UTF-8                        */
-name|gchar
-modifier|*
-name|local_filename
-decl_stmt|;
+comment|/*  check if we got a drop from an application that                    *  encodes file: URIs as UTF-8 (apps linked against                    *  GLib< 2.4.4)                    */
 name|local_filename
 operator|=
 name|g_filename_from_utf8
@@ -1103,7 +1062,6 @@ name|unescaped_filename
 operator|=
 name|local_filename
 expr_stmt|;
-block|}
 block|}
 block|}
 else|else

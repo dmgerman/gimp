@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288c6f780103
+DECL|enum|__anon29e9f16c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon288c6f780203
+DECL|enum|__anon29e9f16c0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -575,26 +575,6 @@ name|get_property
 operator|=
 name|gimp_ui_manager_get_property
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: remove version check as soon as we depend on GTK+ 2.4.2
-endif|#
-directive|endif
-if|if
-condition|(
-operator|!
-name|gtk_check_version
-argument_list|(
-literal|2
-argument_list|,
-literal|4
-argument_list|,
-literal|2
-argument_list|)
-condition|)
 name|manager_class
 operator|->
 name|connect_proxy
@@ -727,39 +707,6 @@ operator|->
 name|gimp
 operator|=
 name|NULL
-expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: remove this hack as soon as we depend on GTK+ 2.4.2
-endif|#
-directive|endif
-if|if
-condition|(
-name|gtk_check_version
-argument_list|(
-literal|2
-argument_list|,
-literal|4
-argument_list|,
-literal|2
-argument_list|)
-condition|)
-name|g_signal_connect
-argument_list|(
-name|manager
-argument_list|,
-literal|"connect-proxy"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gimp_ui_manager_connect_proxy
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -2020,7 +1967,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288c6f780308
+DECL|struct|__anon29e9f16c0308
 block|{
 DECL|member|x
 name|guint
