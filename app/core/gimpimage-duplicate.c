@@ -930,6 +930,14 @@ if|if
 condition|(
 name|parasites
 condition|)
+block|{
+name|g_object_unref
+argument_list|(
+name|new_gimage
+operator|->
+name|parasites
+argument_list|)
+expr_stmt|;
 name|new_gimage
 operator|->
 name|parasites
@@ -939,6 +947,7 @@ argument_list|(
 name|parasites
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* Copy paths */
 name|paths
 operator|=

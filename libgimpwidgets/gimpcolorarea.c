@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ef4f720103
+DECL|enum|__anon2c4220e30103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -865,6 +865,10 @@ operator|!
 name|gca
 operator|->
 name|buf
+operator|||
+name|gca
+operator|->
+name|idle_id
 condition|)
 return|return
 name|FALSE

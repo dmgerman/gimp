@@ -768,6 +768,11 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+name|temp_buf_free
+argument_list|(
+name|render_buf
+argument_list|)
+expr_stmt|;
 block|}
 break|break;
 default|default:

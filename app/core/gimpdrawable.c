@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c98ff0b0103
+DECL|enum|__anon2997aed10103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -1260,6 +1260,11 @@ argument_list|)
 argument_list|,
 name|new_image_type
 argument_list|,
+name|new_name
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|new_name
 argument_list|)
 expr_stmt|;

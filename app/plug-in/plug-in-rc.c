@@ -282,7 +282,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon29029f890103
+DECL|enum|__anon29236e210103
 block|{
 DECL|enumerator|PLUG_IN_DEF
 name|PLUG_IN_DEF
@@ -652,6 +652,11 @@ return|;
 name|plug_in_def
 operator|=
 name|plug_in_def_new
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|name
 argument_list|)
