@@ -130,6 +130,11 @@ index|[
 literal|6
 index|]
 decl_stmt|;
+DECL|member|overlap_data
+name|GtkAdjustment
+modifier|*
+name|overlap_data
+decl_stmt|;
 DECL|member|hue_data
 name|GtkAdjustment
 modifier|*

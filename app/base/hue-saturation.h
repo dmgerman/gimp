@@ -42,6 +42,10 @@ index|[
 literal|7
 index|]
 decl_stmt|;
+DECL|member|overlap
+name|gdouble
+name|overlap
+decl_stmt|;
 DECL|member|hue_transfer
 name|gint
 name|hue_transfer
