@@ -687,7 +687,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"regex.h"
+file|"regexrepl.h"
 end_include
 
 begin_comment
@@ -1614,7 +1614,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2779c3420103
+DECL|enum|__anon2a4f11790103
 block|{
 DECL|enumerator|no_op
 name|no_op
@@ -3960,7 +3960,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2779c3420208
+DECL|struct|__anon2a4f11790208
 block|{
 DECL|member|stack
 name|fail_stack_elt_t
@@ -4067,7 +4067,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2779c3420308
+DECL|struct|__anon2a4f11790308
 block|{
 DECL|member|stack
 name|fail_stack_elt_t
@@ -4530,14 +4530,14 @@ end_comment
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2779c342040a
+DECL|union|__anon2a4f1179040a
 block|{
 DECL|member|word
 name|fail_stack_elt_t
 name|word
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2779c3420508
+DECL|struct|__anon2a4f11790508
 block|{
 comment|/* This field is one if this group can match the empty string,          zero if not.  If not yet determined,  `MATCH_NULL_UNSET_VALUE'.  */
 DECL|macro|MATCH_NULL_UNSET_VALUE
@@ -5282,7 +5282,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2779c3420608
+DECL|struct|__anon2a4f11790608
 block|{
 DECL|member|begalt_offset
 name|pattern_offset_t
@@ -5313,7 +5313,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2779c3420708
+DECL|struct|__anon2a4f11790708
 block|{
 DECL|member|stack
 name|compile_stack_elt_t

@@ -49,11 +49,33 @@ directive|include
 file|"procedural_db.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_GLIBC_REGEX
+end_ifdef
+
 begin_include
 include|#
 directive|include
-file|"regex.h"
+file|<regex.h>
 end_include
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_include
+include|#
+directive|include
+file|"regexrepl.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
