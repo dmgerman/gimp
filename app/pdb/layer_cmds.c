@@ -1705,9 +1705,12 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_layer_scale_by_origin
+name|gimp_item_scale_by_origin
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|layer
+argument_list|)
 argument_list|,
 name|new_width
 argument_list|,
