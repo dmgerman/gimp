@@ -1564,7 +1564,7 @@ value|75
 end_define
 
 begin_comment
-comment|/**  * gimp_config_serialize_comment:  * @str: a #GString.  * @comment: the comment to serialize  *   * Appends the @comment to @str and inserts linebreaks and hash-marks to  * format it as a comment.  **/
+comment|/**  * gimp_config_serialize_comment:  * @str: a #GString.  * @comment: the comment to serialize (ASCII only)  *   * Appends the @comment to @str and inserts linebreaks and hash-marks to  * format it as a comment. Note that this function does not handle non-ASCII  * characters.  **/
 end_comment
 
 begin_function

@@ -1948,9 +1948,12 @@ name|gimp_help_set_help_data
 argument_list|(
 name|button
 argument_list|,
+name|gettext
+argument_list|(
 name|value
 operator|->
 name|value_name
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

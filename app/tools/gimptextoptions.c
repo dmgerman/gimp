@@ -509,7 +509,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Font:"
+literal|"_Font:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -567,7 +567,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Size:"
+literal|"_Size:"
 argument_list|)
 argument_list|,
 literal|1.0

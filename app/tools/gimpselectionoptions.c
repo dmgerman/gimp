@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29300f210103
+DECL|enum|__anon2c5b9dbd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -441,7 +441,7 @@ name|PROP_ANTIALIAS
 argument_list|,
 literal|"antialias"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Smooth edges"
 argument_list|)
@@ -493,7 +493,7 @@ name|PROP_SELECT_TRANSPARENT
 argument_list|,
 literal|"select-transparent"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Allow completely transparent regions "
 literal|"to be selected"
@@ -512,7 +512,7 @@ name|PROP_SAMPLE_MERGED
 argument_list|,
 literal|"sample-merged"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Base selection on all visible layers"
 argument_list|)
@@ -530,7 +530,7 @@ name|PROP_THRESHOLD
 argument_list|,
 literal|"threshold"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Maximum color difference"
 argument_list|)
@@ -567,7 +567,7 @@ name|PROP_SHRINK_MERGED
 argument_list|,
 literal|"shrink-merged"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"Use all visible layers when shrinking "
 literal|"the selection"

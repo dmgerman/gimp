@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1f1f7a0103
+DECL|enum|__anon2976758b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -487,10 +487,10 @@ name|PROP_INDENTATION
 argument_list|,
 literal|"indent"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"How many pixels the "
-literal|"first line should be shorter."
+literal|"first line should be shorter"
 argument_list|)
 argument_list|,
 operator|-
@@ -511,9 +511,9 @@ name|PROP_LINE_SPACING
 argument_list|,
 literal|"line-spacing"
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"Additional line spacing (in pixels)."
+literal|"Additional line spacing (in pixels)"
 argument_list|)
 argument_list|,
 operator|-
