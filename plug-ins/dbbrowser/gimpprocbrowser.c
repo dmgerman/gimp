@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b76e720108
+DECL|struct|__anon2b31a40b0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -498,6 +498,16 @@ operator|=
 name|gtk_hpaned_new
 argument_list|()
 expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|hpaned
+argument_list|)
+argument_list|,
+literal|12
+argument_list|)
+expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -533,7 +543,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_paned_pack1
@@ -752,7 +762,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -768,7 +778,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|2
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -799,7 +809,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|2
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -924,7 +934,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -936,7 +946,7 @@ operator|->
 name|descr_vbox
 argument_list|)
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_scrolled_window_add_with_viewport
@@ -1415,7 +1425,7 @@ argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_table_set_row_spacing
+name|gtk_table_set_row_spacings
 argument_list|(
 name|GTK_TABLE
 argument_list|(
@@ -1424,9 +1434,7 @@ operator|->
 name|description
 argument_list|)
 argument_list|,
-literal|0
-argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 comment|/* show the name */
@@ -1448,7 +1456,7 @@ argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_selectable
@@ -1480,9 +1488,9 @@ argument_list|(
 literal|"Name:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|,
 name|label
 argument_list|,
@@ -1510,7 +1518,7 @@ argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -1532,9 +1540,9 @@ argument_list|(
 literal|"Blurb:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|,
 name|label
 argument_list|,
@@ -1611,9 +1619,9 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -1697,7 +1705,7 @@ argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -1768,7 +1776,7 @@ argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -1959,9 +1967,9 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2045,7 +2053,7 @@ argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2114,7 +2122,7 @@ argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2176,7 +2184,7 @@ argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2311,7 +2319,7 @@ argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_line_wrap
@@ -2343,9 +2351,9 @@ argument_list|(
 literal|"Help:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|,
 name|label
 argument_list|,
@@ -2417,7 +2425,7 @@ argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacing
@@ -2453,9 +2461,9 @@ argument_list|(
 literal|"Author:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|,
 name|label
 argument_list|,
@@ -2482,7 +2490,7 @@ argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacing
@@ -2518,9 +2526,9 @@ argument_list|(
 literal|"Date:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|,
 name|label
 argument_list|,
@@ -2547,7 +2555,7 @@ argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacing
@@ -2583,9 +2591,9 @@ argument_list|(
 literal|"Copyright:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|,
 name|label
 argument_list|,
