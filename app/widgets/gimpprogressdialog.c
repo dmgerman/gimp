@@ -913,6 +913,14 @@ literal|"role"
 argument_list|,
 literal|"progress"
 argument_list|,
+literal|"skip_taskbar_hint"
+argument_list|,
+name|TRUE
+argument_list|,
+literal|"skip_pager_hint"
+argument_list|,
+name|TRUE
+argument_list|,
 literal|"resizable"
 argument_list|,
 name|FALSE
