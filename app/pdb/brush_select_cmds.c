@@ -85,6 +85,12 @@ directive|include
 file|"gui/brush-select.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"widgets/gimpbrushfactoryview.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|brushes_popup_proc
 specifier|static
@@ -936,6 +942,21 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+name|GtkAdjustment
+modifier|*
+name|spacing_adj
+decl_stmt|;
+name|spacing_adj
+operator|=
+name|GIMP_BRUSH_FACTORY_VIEW
+argument_list|(
+name|bsp
+operator|->
+name|view
+argument_list|)
+operator|->
+name|spacing_adjustment
+expr_stmt|;
 comment|/* Updating the context updates the widgets as well */
 name|gimp_context_set_brush
 argument_list|(
@@ -966,12 +987,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
-name|bsp
-operator|->
-name|spacing_data
-argument_list|)
+name|spacing_adj
 argument_list|,
 name|spacing
 argument_list|)

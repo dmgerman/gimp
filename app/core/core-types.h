@@ -33,7 +33,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b98f32b0103
+DECL|enum|__anon28c13bc80103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -56,7 +56,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b98f32b0203
+DECL|enum|__anon28c13bc80203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b98f32b0303
+DECL|enum|__anon28c13bc80303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b98f32b0403
+DECL|enum|__anon28c13bc80403
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -132,6 +132,40 @@ name|DISCARD
 DECL|typedef|MaskApplyMode
 block|}
 name|MaskApplyMode
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Fill types */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon28c13bc80503
+block|{
+DECL|enumerator|FOREGROUND_FILL
+name|FOREGROUND_FILL
+block|,
+comment|/*< nick=FG_IMAGE_FILL>*/
+DECL|enumerator|BACKGROUND_FILL
+name|BACKGROUND_FILL
+block|,
+comment|/*< nick=BG_IMAGE_FILL>*/
+DECL|enumerator|WHITE_FILL
+name|WHITE_FILL
+block|,
+comment|/*< nick=WHITE_IMAGE_FILL>*/
+DECL|enumerator|TRANSPARENT_FILL
+name|TRANSPARENT_FILL
+block|,
+comment|/*< nick=TRANS_IMAGE_FILL>*/
+DECL|enumerator|NO_FILL
+name|NO_FILL
+comment|/*< nick=NO_IMAGE_FILL>*/
+DECL|typedef|GimpFillType
+block|}
+name|GimpFillType
 typedef|;
 end_typedef
 

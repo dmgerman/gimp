@@ -158,6 +158,18 @@ DECL|member|parent_class
 name|GimpDataClass
 name|parent_class
 decl_stmt|;
+DECL|member|spacing_changed
+name|void
+function_decl|(
+modifier|*
+name|spacing_changed
+function_decl|)
+parameter_list|(
+name|GimpBrush
+modifier|*
+name|brush
+parameter_list|)
+function_decl|;
 comment|/* FIXME: these are no virtual function pointers but bad hacks: */
 DECL|member|select_brush
 name|GimpBrush
@@ -297,6 +309,17 @@ name|brush
 parameter_list|,
 name|gint
 name|spacing
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_brush_spacing_changed
+parameter_list|(
+name|GimpBrush
+modifier|*
+name|brush
 parameter_list|)
 function_decl|;
 end_function_decl

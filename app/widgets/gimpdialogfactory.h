@@ -58,6 +58,15 @@ name|GimpDialogFactoryEntry
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpSessionInfo
+typedef|typedef
+name|struct
+name|_GimpSessionInfo
+name|GimpSessionInfo
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpDialogFactoryEntry
 struct|struct
@@ -87,15 +96,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|GimpSessionInfo
-typedef|typedef
-name|struct
-name|_GimpSessionInfo
-name|GimpSessionInfo
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpSessionInfo
@@ -128,11 +128,22 @@ DECL|member|open
 name|gboolean
 name|open
 decl_stmt|;
+comment|/*  GList of gchar* of optional additional dialog specific info  */
+DECL|member|aux_info
+name|GList
+modifier|*
+name|aux_info
+decl_stmt|;
 comment|/*  only one of these is valid  */
 DECL|member|toplevel_entry
 name|GimpDialogFactoryEntry
 modifier|*
 name|toplevel_entry
+decl_stmt|;
+DECL|member|dockable_entry
+name|GimpDialogFactoryEntry
+modifier|*
+name|dockable_entry
 decl_stmt|;
 DECL|member|sub_dialogs
 name|GList
@@ -394,6 +405,23 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
+name|gimp_dialog_factory_dialog_raise
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|identifier
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkWidget
+modifier|*
 name|gimp_dialog_factory_dockable_new
 parameter_list|(
 name|GimpDialogFactory
@@ -426,7 +454,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_dialog_factory_add_toplevel
+name|gimp_dialog_factory_add_dialog
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
@@ -434,14 +462,14 @@ name|factory
 parameter_list|,
 name|GtkWidget
 modifier|*
-name|toplevel
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_dialog_factory_remove_toplevel
+name|gimp_dialog_factory_remove_dialog
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
@@ -449,7 +477,7 @@ name|factory
 parameter_list|,
 name|GtkWidget
 modifier|*
-name|toplevel
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl

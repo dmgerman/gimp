@@ -49,6 +49,23 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|file_last_opened_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|,
+name|guint
+name|action
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|file_save_cmd_callback
 parameter_list|(
 name|GtkWidget

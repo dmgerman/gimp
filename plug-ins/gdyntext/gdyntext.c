@@ -306,7 +306,7 @@ literal|"Jan 1999"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Dynamic Text..."
+literal|"<Image>/Filters/Text/Dynamic Text..."
 argument_list|)
 argument_list|,
 literal|"RGB*,GRAY*,INDEXED*"

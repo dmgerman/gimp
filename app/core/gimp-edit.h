@@ -19,7 +19,7 @@ end_define
 begin_function_decl
 name|TileManager
 modifier|*
-name|edit_cut
+name|gimp_edit_cut
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -35,7 +35,7 @@ end_function_decl
 begin_function_decl
 name|TileManager
 modifier|*
-name|edit_copy
+name|gimp_edit_copy
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -51,7 +51,7 @@ end_function_decl
 begin_function_decl
 name|GimpLayer
 modifier|*
-name|edit_paste
+name|gimp_edit_paste
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -74,7 +74,7 @@ end_function_decl
 begin_function_decl
 name|GimpImage
 modifier|*
-name|edit_paste_as_new
+name|gimp_edit_paste_as_new
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -89,7 +89,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|edit_clear
+name|gimp_edit_clear
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -104,7 +104,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|edit_fill
+name|gimp_edit_fill
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -116,17 +116,6 @@ name|drawable
 parameter_list|,
 name|GimpFillType
 name|fill_type
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|named_edit_paste
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -40,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenums.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
@@ -236,7 +236,7 @@ argument_list|)
 expr_stmt|;
 name|success
 operator|=
-name|edit_cut
+name|gimp_edit_cut
 argument_list|(
 name|gimage
 argument_list|,
@@ -381,7 +381,7 @@ argument_list|)
 expr_stmt|;
 name|success
 operator|=
-name|edit_copy
+name|gimp_edit_copy
 argument_list|(
 name|gimage
 argument_list|,
@@ -554,7 +554,7 @@ argument_list|)
 expr_stmt|;
 name|layer
 operator|=
-name|edit_paste
+name|gimp_edit_paste
 argument_list|(
 name|gimage
 argument_list|,
@@ -759,7 +759,7 @@ argument_list|)
 expr_stmt|;
 name|success
 operator|=
-name|edit_clear
+name|gimp_edit_clear
 argument_list|(
 name|gimage
 argument_list|,
@@ -930,7 +930,7 @@ argument_list|)
 expr_stmt|;
 name|success
 operator|=
-name|edit_fill
+name|gimp_edit_fill
 argument_list|(
 name|gimage
 argument_list|,

@@ -78,6 +78,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"edit-commands.h"
 end_include
 
@@ -265,7 +277,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|edit_cut
+name|gimp_edit_cut
 argument_list|(
 name|gdisp
 operator|->
@@ -309,7 +321,7 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|edit_copy
+name|gimp_edit_copy
 argument_list|(
 name|gdisp
 operator|->
@@ -363,7 +375,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|edit_paste
+name|gimp_edit_paste
 argument_list|(
 name|gdisp
 operator|->
@@ -434,7 +446,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|edit_paste
+name|gimp_edit_paste
 argument_list|(
 name|gdisp
 operator|->
@@ -503,7 +515,7 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|edit_paste_as_new
+name|gimp_edit_paste_as_new
 argument_list|(
 name|gdisp
 operator|->
@@ -686,11 +698,11 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|named_edit_paste
+name|gimp_dialog_factory_dialog_raise
 argument_list|(
-name|gdisp
-operator|->
-name|gimage
+name|global_dock_factory
+argument_list|,
+literal|"gimp:buffer-list"
 argument_list|)
 expr_stmt|;
 block|}
@@ -718,7 +730,7 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|edit_clear
+name|gimp_edit_clear
 argument_list|(
 name|gdisp
 operator|->
@@ -773,7 +785,7 @@ name|GimpFillType
 operator|)
 name|action
 expr_stmt|;
-name|edit_fill
+name|gimp_edit_fill
 argument_list|(
 name|gdisp
 operator|->
@@ -877,7 +889,7 @@ name|data
 expr_stmt|;
 name|new_tiles
 operator|=
-name|edit_cut
+name|gimp_edit_cut
 argument_list|(
 name|gimage
 argument_list|,
@@ -958,7 +970,7 @@ name|data
 expr_stmt|;
 name|new_tiles
 operator|=
-name|edit_copy
+name|gimp_edit_copy
 argument_list|(
 name|gimage
 argument_list|,

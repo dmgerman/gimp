@@ -94,6 +94,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpbrushfactoryview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpbufferview.h"
 end_include
 
@@ -1197,7 +1203,7 @@ name|view
 decl_stmt|;
 name|view
 operator|=
-name|gimp_data_factory_view_new
+name|gimp_brush_factory_view_new
 argument_list|(
 name|GIMP_VIEW_TYPE_LIST
 argument_list|,
@@ -1206,6 +1212,8 @@ argument_list|,
 name|dialogs_edit_brush_func
 argument_list|,
 name|context
+argument_list|,
+name|TRUE
 argument_list|,
 literal|32
 argument_list|,
@@ -1578,7 +1586,7 @@ name|view
 decl_stmt|;
 name|view
 operator|=
-name|gimp_data_factory_view_new
+name|gimp_brush_factory_view_new
 argument_list|(
 name|GIMP_VIEW_TYPE_GRID
 argument_list|,
@@ -1587,6 +1595,8 @@ argument_list|,
 name|dialogs_edit_brush_func
 argument_list|,
 name|context
+argument_list|,
+name|TRUE
 argument_list|,
 literal|32
 argument_list|,
@@ -2998,9 +3008,15 @@ if|if
 condition|(
 name|editor
 condition|)
-block|{
-comment|/* TODO: gimp_container_editor_set_context (editor, context); */
-block|}
+name|gimp_container_view_set_context
+argument_list|(
+name|editor
+operator|->
+name|view
+argument_list|,
+name|context
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

@@ -34,6 +34,12 @@ DECL|member|entry
 name|GtkItemFactoryEntry
 name|entry
 decl_stmt|;
+DECL|member|quark_string
+specifier|const
+name|gchar
+modifier|*
+name|quark_string
+decl_stmt|;
 DECL|member|help_page
 specifier|const
 name|gchar
@@ -49,6 +55,14 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_decl_stmt
+specifier|extern
+name|GSList
+modifier|*
+name|last_opened_raw_filenames
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|GtkItemFactory

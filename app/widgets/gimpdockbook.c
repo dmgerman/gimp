@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdock.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdockable.h"
 end_include
 
@@ -55,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"gimpdockbook.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimagedock.h"
 end_include
 
 begin_define
@@ -1635,6 +1635,10 @@ name|add_widget
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|toggle_widget
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|notebook_menu
 decl_stmt|;
 name|gint
@@ -1668,6 +1672,15 @@ argument_list|(
 name|ifactory
 argument_list|,
 literal|"/Select Tab"
+argument_list|)
+expr_stmt|;
+name|toggle_widget
+operator|=
+name|gtk_item_factory_get_widget
+argument_list|(
+name|ifactory
+argument_list|,
+literal|"/Show Image Menu"
 argument_list|)
 expr_stmt|;
 name|notebook_menu
@@ -1807,6 +1820,28 @@ argument_list|(
 name|GTK_OBJECT
 argument_list|(
 name|dockbook
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_check_menu_item_set_active
+argument_list|(
+name|GTK_CHECK_MENU_ITEM
+argument_list|(
+name|toggle_widget
+argument_list|)
+argument_list|,
+name|GTK_WIDGET_VISIBLE
+argument_list|(
+name|GIMP_IMAGE_DOCK
+argument_list|(
+name|dockbook
+operator|->
+name|dock
+argument_list|)
+operator|->
+name|option_menu
+operator|->
+name|parent
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -45,11 +45,6 @@ name|GtkWidget
 modifier|*
 name|paint_options_box
 decl_stmt|;
-DECL|member|spacing_data
-name|GtkAdjustment
-modifier|*
-name|spacing_data
-decl_stmt|;
 DECL|member|opacity_data
 name|GtkAdjustment
 modifier|*
