@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptextlayout.h"
+file|"gimptext-private.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimptextlayout-private.h"
+file|"gimptextlayout.h"
 end_include
 
 begin_function_decl

@@ -16,6 +16,10 @@ directive|define
 name|__GIMP_TEXT_LAYOUT_PRIVATE_H__
 end_define
 
+begin_comment
+comment|/*  The purpose of this extra header file is to hide any Pango or  *  FreeType types from the rest of the gimp core.  */
+end_comment
+
 begin_struct
 DECL|struct|_GimpTextLayout
 struct|struct
@@ -55,6 +59,37 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_typedef
+DECL|typedef|GimpTextRenderFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|GimpTextRenderFunc
+function_decl|)
+parameter_list|(
+name|PangoFont
+modifier|*
+name|font
+parameter_list|,
+name|PangoGlyph
+name|glyph
+parameter_list|,
+name|gint
+name|flags
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
+name|gpointer
+name|render_data
+parameter_list|)
+function_decl|;
+end_typedef
 
 begin_endif
 endif|#

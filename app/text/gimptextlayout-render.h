@@ -17,19 +17,18 @@ name|__GIMP_TEXT_LAYOUT_RENDER_H__
 end_define
 
 begin_function_decl
-name|TileManager
-modifier|*
+name|void
 name|gimp_text_layout_render
 parameter_list|(
 name|GimpTextLayout
 modifier|*
 name|layout
 parameter_list|,
-name|gint
-name|width
+name|GimpTextRenderFunc
+name|render_func
 parameter_list|,
-name|gint
-name|height
+name|gpointer
+name|render_data
 parameter_list|)
 function_decl|;
 end_function_decl
