@@ -178,6 +178,86 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|gint
+name|gimp_path_tool_button_press_canvas
+parameter_list|(
+name|GimpPathTool
+modifier|*
+name|tool
+parameter_list|,
+name|GdkEventButton
+modifier|*
+name|bevent
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gint
+name|gimp_path_tool_button_press_anchor
+parameter_list|(
+name|GimpPathTool
+modifier|*
+name|tool
+parameter_list|,
+name|GdkEventButton
+modifier|*
+name|bevent
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gint
+name|gimp_path_tool_button_press_handle
+parameter_list|(
+name|GimpPathTool
+modifier|*
+name|tool
+parameter_list|,
+name|GdkEventButton
+modifier|*
+name|bevent
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gint
+name|gimp_path_tool_button_press_curve
+parameter_list|(
+name|GimpPathTool
+modifier|*
+name|tool
+parameter_list|,
+name|GdkEventButton
+modifier|*
+name|bevent
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|void
 name|gimp_path_tool_button_release
 parameter_list|(
@@ -204,6 +284,66 @@ parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
+parameter_list|,
+name|GdkEventMotion
+modifier|*
+name|mevent
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_path_tool_motion_anchor
+parameter_list|(
+name|GimpPathTool
+modifier|*
+name|path_tool
+parameter_list|,
+name|GdkEventMotion
+modifier|*
+name|mevent
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_path_tool_motion_handle
+parameter_list|(
+name|GimpPathTool
+modifier|*
+name|path_tool
+parameter_list|,
+name|GdkEventMotion
+modifier|*
+name|mevent
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_path_tool_motion_curve
+parameter_list|(
+name|GimpPathTool
+modifier|*
+name|path_tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
@@ -719,6 +859,13 @@ expr_stmt|;
 endif|#
 directive|endif
 endif|PATH_TOOL_DEBUG
+name|path_free_path
+argument_list|(
+name|path_tool
+operator|->
+name|cur_path
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|GTK_OBJECT_CLASS
@@ -736,13 +883,6 @@ operator|->
 name|destroy
 argument_list|(
 name|object
-argument_list|)
-expr_stmt|;
-name|path_free_path
-argument_list|(
-name|path_tool
-operator|->
-name|cur_path
 argument_list|)
 expr_stmt|;
 block|}
@@ -1186,6 +1326,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gint
 DECL|function|gimp_path_tool_button_press_anchor (GimpPathTool * path_tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|gimp_path_tool_button_press_anchor
@@ -1704,6 +1845,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gint
 DECL|function|gimp_path_tool_button_press_handle (GimpPathTool * path_tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|gimp_path_tool_button_press_handle
@@ -1831,6 +1973,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gint
 DECL|function|gimp_path_tool_button_press_canvas (GimpPathTool * path_tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|gimp_path_tool_button_press_canvas
@@ -2151,6 +2294,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gint
 DECL|function|gimp_path_tool_button_press_curve (GimpPathTool * path_tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|gimp_path_tool_button_press_curve
@@ -2520,6 +2664,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_path_tool_motion_anchor (GimpPathTool * path_tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|gimp_path_tool_motion_anchor
@@ -2810,6 +2955,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_path_tool_motion_handle (GimpPathTool * path_tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|gimp_path_tool_motion_handle
@@ -2983,6 +3129,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_path_tool_motion_curve (GimpPathTool * path_tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|gimp_path_tool_motion_curve

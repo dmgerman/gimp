@@ -433,6 +433,62 @@ begin_comment
 comment|/* Functions necessary for the tool */
 end_comment
 
+begin_function_decl
+name|gboolean
+name|path_tool_on_anchors
+parameter_list|(
+name|NPath
+modifier|*
+parameter_list|,
+name|gdouble
+parameter_list|,
+name|gdouble
+parameter_list|,
+name|gint
+parameter_list|,
+name|NPath
+modifier|*
+modifier|*
+parameter_list|,
+name|PathCurve
+modifier|*
+modifier|*
+parameter_list|,
+name|PathSegment
+modifier|*
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|path_tool_on_handles
+parameter_list|(
+name|NPath
+modifier|*
+parameter_list|,
+name|gdouble
+parameter_list|,
+name|gdouble
+parameter_list|,
+name|gint
+parameter_list|,
+name|NPath
+modifier|*
+modifier|*
+parameter_list|,
+name|PathCurve
+modifier|*
+modifier|*
+parameter_list|,
+name|PathSegment
+modifier|*
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_if
 if|#
 directive|if
@@ -440,7 +496,7 @@ literal|0
 end_if
 
 begin_endif
-unit|void     path_tool_button_press    (Tool *, GdkEventButton *, gpointer); void     path_tool_button_release  (Tool *, GdkEventButton *, gpointer); void     path_tool_motion          (Tool *, GdkEventMotion *, gpointer); void     path_tool_cursor_update   (Tool *, GdkEventMotion *, gpointer); void     path_tool_control         (Tool *, ToolAction,       gpointer); void     path_tool_draw            (Tool *); void     path_tool_draw_curve      (Tool *, PathCurve *); void     path_tool_draw_segment    (Tool *, PathSegment *);  gdouble  path_tool_on_curve        (Tool *, gint, gint, gint, 				    NPath**, PathCurve**, PathSegment**); gboolean path_tool_on_anchors      (Tool *, gint, gint, gint, 				    NPath**, PathCurve**, PathSegment**); gint     path_tool_on_handles      (Tool *, gint, gint, gint, 		                    NPath **, PathCurve **, PathSegment **);  gint path_tool_button_press_canvas (Tool *, GdkEventButton *, GDisplay *); gint path_tool_button_press_anchor (Tool *, GdkEventButton *, GDisplay *); gint path_tool_button_press_handle (Tool *, GdkEventButton *, GDisplay *); gint path_tool_button_press_curve  (Tool *, GdkEventButton *, GDisplay *); void path_tool_motion_anchor       (Tool *, GdkEventMotion *, GDisplay *); void path_tool_motion_handle       (Tool *, GdkEventMotion *, GDisplay *); void path_tool_motion_curve        (Tool *, GdkEventMotion *, GDisplay *);
+unit|void     path_tool_button_press    (Tool *, GdkEventButton *, gpointer); void     path_tool_button_release  (Tool *, GdkEventButton *, gpointer); void     path_tool_motion          (Tool *, GdkEventMotion *, gpointer); void     path_tool_cursor_update   (Tool *, GdkEventMotion *, gpointer); void     path_tool_control         (Tool *, ToolAction,       gpointer); void     path_tool_draw            (Tool *); void     path_tool_draw_curve      (Tool *, PathCurve *); void     path_tool_draw_segment    (Tool *, PathSegment *);  gdouble  path_tool_on_curve        (Tool *, gint, gint, gint, 				    NPath**, PathCurve**, PathSegment**);  gint path_tool_button_press_canvas (Tool *, GdkEventButton *, GDisplay *); gint path_tool_button_press_anchor (Tool *, GdkEventButton *, GDisplay *); gint path_tool_button_press_handle (Tool *, GdkEventButton *, GDisplay *); gint path_tool_button_press_curve  (Tool *, GdkEventButton *, GDisplay *); void path_tool_motion_anchor       (Tool *, GdkEventMotion *, GDisplay *); void path_tool_motion_handle       (Tool *, GdkEventMotion *, GDisplay *); void path_tool_motion_curve        (Tool *, GdkEventMotion *, GDisplay *);
 endif|#
 directive|endif
 end_endif
@@ -3098,7 +3154,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c3697d0108
+DECL|struct|__anon295c20c90108
 typedef|typedef
 struct|struct
 block|{
@@ -3456,7 +3512,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c3697d0208
+DECL|struct|__anon295c20c90208
 typedef|typedef
 struct|struct
 block|{
@@ -3798,7 +3854,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c3697d0308
+DECL|struct|__anon295c20c90308
 typedef|typedef
 struct|struct
 block|{
@@ -4116,7 +4172,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c3697d0408
+DECL|struct|__anon295c20c90408
 typedef|typedef
 struct|struct
 block|{
@@ -4274,7 +4330,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c3697d0508
+DECL|struct|__anon295c20c90508
 typedef|typedef
 struct|struct
 block|{
