@@ -765,9 +765,6 @@ name|GimpLayer
 modifier|*
 name|bottom_layer
 decl_stmt|;
-name|GimpLayerModeEffects
-name|bottom_mode
-decl_stmt|;
 name|guchar
 name|bg
 index|[
@@ -872,10 +869,6 @@ expr_stmt|;
 name|bottom_layer
 operator|=
 name|NULL
-expr_stmt|;
-name|bottom_mode
-operator|=
-name|GIMP_NORMAL_MODE
 expr_stmt|;
 comment|/*  Get the layer extents  */
 name|count
@@ -1545,32 +1538,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* set the mode of the bottom layer to normal so that the contents    *  aren't lost when merging with the all-alpha merge_layer    *  Keep a pointer to it so that we can set the mode right after it's    *  been merged so that undo works correctly.    */
 name|bottom_layer
 operator|=
 name|layer
-expr_stmt|;
-name|bottom_mode
-operator|=
-name|bottom_layer
-operator|->
-name|mode
-expr_stmt|;
-comment|/* DISSOLVE_MODE is special since it is the only mode that does not    *  work on the projection with the lower layer, but only locally on    *  the layers alpha channel.     */
-if|if
-condition|(
-name|bottom_layer
-operator|->
-name|mode
-operator|!=
-name|GIMP_DISSOLVE_MODE
-condition|)
-name|gimp_layer_set_mode
-argument_list|(
-name|bottom_layer
-argument_list|,
-name|GIMP_NORMAL_MODE
-argument_list|)
 expr_stmt|;
 comment|/* Copy the tattoo and parasites of the bottom layer to the new layer */
 name|gimp_item_set_tattoo
@@ -1584,7 +1554,7 @@ name|gimp_item_get_tattoo
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|layer
+name|bottom_layer
 argument_list|)
 argument_list|)
 argument_list|)
@@ -1600,7 +1570,7 @@ name|gimp_parasite_list_copy
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|layer
+name|bottom_layer
 argument_list|)
 operator|->
 name|parasites
@@ -1611,6 +1581,9 @@ condition|(
 name|reverse_list
 condition|)
 block|{
+name|GimpLayerModeEffects
+name|mode
+decl_stmt|;
 name|layer
 operator|=
 operator|(
@@ -1885,6 +1858,27 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+comment|/* DISSOLVE_MODE is special since it is the only mode that does not        *  work on the projection with the lower layer, but only locally on        *  the layers alpha channel.         */
+name|mode
+operator|=
+name|layer
+operator|->
+name|mode
+expr_stmt|;
+if|if
+condition|(
+name|layer
+operator|==
+name|bottom_layer
+operator|&&
+name|mode
+operator|!=
+name|GIMP_DISSOLVE_MODE
+condition|)
+name|mode
+operator|=
+name|GIMP_NORMAL_MODE
+expr_stmt|;
 name|combine_regions
 argument_list|(
 operator|&
@@ -1906,8 +1900,6 @@ name|opacity
 operator|*
 literal|255.999
 argument_list|,
-name|layer
-operator|->
 name|mode
 argument_list|,
 name|active
@@ -1930,18 +1922,6 @@ name|reverse_list
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Save old mode in undo */
-if|if
-condition|(
-name|bottom_layer
-condition|)
-name|gimp_layer_set_mode
-argument_list|(
-name|bottom_layer
-argument_list|,
-name|bottom_mode
-argument_list|)
-expr_stmt|;
 name|g_slist_free
 argument_list|(
 name|reverse_list
