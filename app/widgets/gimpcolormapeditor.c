@@ -211,7 +211,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2947ae5a0103
+DECL|enum|__anon29581c8e0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -1676,7 +1676,7 @@ operator|->
 name|color_entry
 argument_list|)
 argument_list|,
-literal|7
+literal|8
 argument_list|)
 expr_stmt|;
 name|gtk_entry_set_max_length
@@ -1688,7 +1688,7 @@ operator|->
 name|color_entry
 argument_list|)
 argument_list|,
-literal|7
+literal|6
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -1704,7 +1704,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Hex Triplet:"
+literal|"He_x Triplet:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -3534,7 +3534,7 @@ name|string
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"#%02x%02x%02x"
+literal|"%02x%02x%02x"
 argument_list|,
 name|col
 index|[
@@ -4221,7 +4221,7 @@ name|sscanf
 argument_list|(
 name|s
 argument_list|,
-literal|"#%lx"
+literal|"%lx"
 argument_list|,
 operator|&
 name|i
