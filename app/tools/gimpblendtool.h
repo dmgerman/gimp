@@ -113,22 +113,22 @@ name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
 DECL|member|startx
-name|gint
+name|gdouble
 name|startx
 decl_stmt|;
 comment|/*  starting x coord     */
 DECL|member|starty
-name|gint
+name|gdouble
 name|starty
 decl_stmt|;
 comment|/*  starting y coord     */
 DECL|member|endx
-name|gint
+name|gdouble
 name|endx
 decl_stmt|;
 comment|/*  ending x coord       */
 DECL|member|endy
-name|gint
+name|gdouble
 name|endy
 decl_stmt|;
 comment|/*  ending y coord       */

@@ -448,17 +448,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_paint_core_constrain
-parameter_list|(
-name|GimpPaintCore
-modifier|*
-name|core
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_paint_core_interpolate
 parameter_list|(
 name|GimpPaintCore
