@@ -16,14 +16,9 @@ directive|define
 name|__GIMP_RC_BLURBS_H__
 end_define
 
-begin_define
-DECL|macro|RESTORE_SESSION_BLURB
-define|#
-directive|define
-name|RESTORE_SESSION_BLURB
-define|\
-value|"Let GIMP try to restore your last saved session."
-end_define
+begin_comment
+comment|/*  Not all strings defined here are used in the user interface  *  and only those that are should be marked for translation.  */
+end_comment
 
 begin_define
 DECL|macro|BRUSH_PATH_BLURB
@@ -40,7 +35,7 @@ define|#
 directive|define
 name|CANVAS_PADDING_MODE_BLURB
 define|\
-value|"Sets the canvas padding mode."
+value|N_("Specifies how the area around the image should be drawn.")
 end_define
 
 begin_define
@@ -49,7 +44,7 @@ define|#
 directive|define
 name|CANVAS_PADDING_COLOR_BLURB
 define|\
-value|"Sets the canvas padding color."
+value|N_("Sets the canvas padding color used if the padding mode is set to " \    "custom color.")
 end_define
 
 begin_define
@@ -58,7 +53,7 @@ define|#
 directive|define
 name|COLORMAP_CYCLING_BLURB
 define|\
-value|"Specify that marching ants for selected regions will be drawn with " \ "colormap cycling as oposed to redrawing with different stipple masks. " \ "This color cycling option works only with 8-bit displays."
+value|N_("Specify that marching ants for selected regions will be drawn with " \    "colormap cycling as opposed to be drawn as animated lines.  This color " \    "cycling option works only with 8-bit displays.")
 end_define
 
 begin_define
@@ -67,7 +62,7 @@ define|#
 directive|define
 name|CONFIRM_ON_CLOSE_BLURB
 define|\
-value|"Ask for confirmation before closing an image without saving."
+value|N_("Ask for confirmation before closing an image without saving.")
 end_define
 
 begin_define
@@ -76,7 +71,7 @@ define|#
 directive|define
 name|CURSOR_MODE_BLURB
 define|\
-value|"Sets the mode of cursor the GIMP will use."
+value|N_("Sets the mode of cursor the GIMP will use.")
 end_define
 
 begin_define
@@ -85,7 +80,7 @@ define|#
 directive|define
 name|CURSOR_UPDATING_BLURB
 define|\
-value|"Context-dependent cursors are cool.  They are enabled by default. " \ "However, they require overhead that you may want to do without."
+value|N_("Context-dependent cursors are cool.  They are enabled by default. " \    "However, they require overhead that you may want to do without.")
 end_define
 
 begin_define
@@ -112,7 +107,7 @@ define|#
 directive|define
 name|DEFAULT_DOT_FOR_DOT_BLURB
 define|\
-value|"When set to yes, this will ensure that each pixel of an image gets " \ "mapped to a pixel on the screen."
+value|N_("When set to yes, this will ensure that each pixel of an image gets " \    "mapped to a pixel on the screen.")
 end_define
 
 begin_define
@@ -184,7 +179,7 @@ define|#
 directive|define
 name|DEFAULT_THRESHOLD_BLURB
 define|\
-value|"Tools such as fuzzy-select and bucket fill find regions based on a " \ "seed-fill algorithm.  The seed fill starts at the intially selected " \ "pixel and progresses in all directions until the difference of pixel " \ "intensity from the original is greater than a specified threshold. " \ "This value represents the default threshold."
+value|N_("Tools such as fuzzy-select and bucket fill find regions based on a " \    "seed-fill algorithm.  The seed fill starts at the intially selected " \    "pixel and progresses in all directions until the difference of pixel " \    "intensity from the original is greater than a specified threshold. " \    "This value represents the default threshold.")
 end_define
 
 begin_define
@@ -295,7 +290,7 @@ define|#
 directive|define
 name|HELP_BROWSER_BLURB
 define|\
-value|"Sets the browser gimp-help will use."
+value|N_("Sets the browser used by the help system.")
 end_define
 
 begin_define
@@ -304,7 +299,7 @@ define|#
 directive|define
 name|IMAGE_STATUS_FORMAT_BLURB
 define|\
-value|"Sets the text to appear in image window status bars. See image-title-format " \ "for the list of possible % sequences."
+value|"Sets the text to appear in image window status bars. See " \ "image-title-format for the list of possible % sequences."
 end_define
 
 begin_define
@@ -322,7 +317,7 @@ define|#
 directive|define
 name|INFO_WINDOW_PER_DISPLAY_BLURB
 define|\
-value|"When set to yes, the GIMP will use a different info window per image " \ "view."
+value|N_("When set to yes, the GIMP will use a different info window per image " \    "view.")
 end_define
 
 begin_define
@@ -331,7 +326,7 @@ define|#
 directive|define
 name|INSTALL_COLORMAP_BLURB
 define|\
-value|"Install a private colormap; might be useful on pseudocolor visuals."
+value|N_("Install a private colormap; might be useful on pseudocolor visuals.")
 end_define
 
 begin_define
@@ -340,7 +335,7 @@ define|#
 directive|define
 name|INTERPOLATION_TYPE_BLURB
 define|\
-value|"Sets the level of interpolation used for scaling and other transformations."
+value|N_("Sets the level of interpolation used for scaling and other " \    "transformations.")
 end_define
 
 begin_define
@@ -349,7 +344,7 @@ define|#
 directive|define
 name|LAST_OPENED_SIZE_BLURB
 define|\
-value|"How many recently opened image filenames to keep on the File menu."
+value|N_("How many recently opened image filenames to keep on the File menu.")
 end_define
 
 begin_define
@@ -358,7 +353,7 @@ define|#
 directive|define
 name|MARCHING_ANTS_SPEED_BLURB
 define|\
-value|"Speed of marching ants in the selection outline.  This value is in " \ "milliseconds (less time indicates faster marching)."
+value|N_("Speed of marching ants in the selection outline.  This value is in " \    "milliseconds (less time indicates faster marching).")
 end_define
 
 begin_define
@@ -367,7 +362,7 @@ define|#
 directive|define
 name|MAX_NEW_IMAGE_SIZE_BLURB
 define|\
-value|"Sets the max-new-image-size limit."
+value|N_("GIMP will warn the user if an attempt is made to create an image that " \    "would take more memory than the size specified here.")
 end_define
 
 begin_define
@@ -376,7 +371,7 @@ define|#
 directive|define
 name|MIN_COLORS_BLURB
 define|\
-value|"Generally only a concern for 8-bit displays, this sets the minimum " \ "number of colors."
+value|N_("Generally only a concern for 8-bit displays, this sets the minimum " \    "number of system colors allocated for the GIMP.")
 end_define
 
 begin_define
@@ -430,7 +425,7 @@ define|#
 directive|define
 name|NAVIGATION_PREVIEW_SIZE_BLURB
 define|\
-value|"Sets the navigation preview size."
+value|N_("Sets the size of the navigation preview available in the lower right " \    "corner of the image window.")
 end_define
 
 begin_define
@@ -439,7 +434,7 @@ define|#
 directive|define
 name|NUM_PROCESSORS_BLURB
 define|\
-value|"On multiprocessor machines, if GIMP has been compiled with --enable-mp " \ "this sets how many processors GIMP should use simultaneously."
+value|N_("On multiprocessor machines, if GIMP has been compiled with --enable-mp " \    "this sets how many processors GIMP should use simultaneously.")
 end_define
 
 begin_define
@@ -466,7 +461,7 @@ define|#
 directive|define
 name|PERFECT_MOUSE_BLURB
 define|\
-value|"When set to yes, the X server is queried for the mouse's current " \ "position on each motion event, rather than relying on the position " \ "hint.  This means painting with large brushes should be more accurate, " \ "but it may be slower.  Perversely, on some X servers turning on this " \ "option results in faster painting."
+value|N_("When set to yes, the X server is queried for the mouse's current " \    "position on each motion event, rather than relying on the position " \    "hint.  This means painting with large brushes should be more accurate, " \    "but it may be slower.  Perversely, on some X servers turning on this " \    "option results in faster painting.")
 end_define
 
 begin_define
@@ -493,7 +488,7 @@ define|#
 directive|define
 name|PREVIEW_SIZE_BLURB
 define|\
-value|"Sets the default preview size."
+value|N_("Sets the default preview size.")
 end_define
 
 begin_define
@@ -502,7 +497,7 @@ define|#
 directive|define
 name|RESIZE_WINDOWS_ON_RESIZE_BLURB
 define|\
-value|"When the physical image size changes, setting this option to yes " \ "enables the automatic resizing of windows."
+value|N_("When the physical image size changes, setting this option to yes " \    "enables the automatic resizing of windows.")
 end_define
 
 begin_define
@@ -511,7 +506,16 @@ define|#
 directive|define
 name|RESIZE_WINDOWS_ON_ZOOM_BLURB
 define|\
-value|"When zooming into and out of images, this setting this option to " \ "yes enables the automatic resizing of windows."
+value|N_("When zooming into and out of images, setting this option to yes " \    "enables the automatic resizing of windows.")
+end_define
+
+begin_define
+DECL|macro|RESTORE_SESSION_BLURB
+define|#
+directive|define
+name|RESTORE_SESSION_BLURB
+define|\
+value|N_("Let GIMP try to restore your last saved session on each startup.")
 end_define
 
 begin_define
@@ -520,7 +524,7 @@ define|#
 directive|define
 name|SAVE_DEVICE_STATUS_BLURB
 define|\
-value|"Remember the current tool, pattern, color, and brush across GIMP " \ "sessions."
+value|N_("Remember the current tool, pattern, color, and brush across GIMP " \    "sessions.")
 end_define
 
 begin_define
@@ -529,7 +533,7 @@ define|#
 directive|define
 name|SAVE_SESSION_INFO_BLURB
 define|\
-value|"Remember the positions and sizes of the main dialogs and asks your " \ "window-manager to place them there again the next time you use the " \ "GIMP."
+value|N_("Save the positions and sizes of the main dialogs when the GIMP exits.")
 end_define
 
 begin_define
@@ -547,7 +551,7 @@ define|#
 directive|define
 name|SHOW_MENUBAR_BLURB
 define|\
-value|"Sets the menubar visibility. This can also be toggled with the "\ "View->Toggle Menubar command."
+value|N_("Sets the default menubar visibility. This can also be toggled with the "\    "View->Toggle Menubar command.")
 end_define
 
 begin_define
@@ -556,7 +560,7 @@ define|#
 directive|define
 name|SHOW_RULERS_BLURB
 define|\
-value|"Sets the ruler visibility. This can also be toggled with the " \ "View->Toggle Rulers command."
+value|N_("Sets the default ruler visibility. This can also be toggled with the " \    "View->Toggle Rulers command.")
 end_define
 
 begin_define
@@ -565,7 +569,7 @@ define|#
 directive|define
 name|SHOW_STATUSBAR_BLURB
 define|\
-value|"Set to yes to make the statusbar visible. This can also be toggled "\ "with the View->Toggle Statusbar command."
+value|N_("Set to yes to make the statusbar visible by default. This can also be " \    "toggled with the View->Toggle Statusbar command.")
 end_define
 
 begin_define
@@ -574,7 +578,7 @@ define|#
 directive|define
 name|SHOW_TIPS_BLURB
 define|\
-value|"To display a handy GIMP tip on startup, set to yes."
+value|N_("To display a handy GIMP tip on startup, set to yes.")
 end_define
 
 begin_define
@@ -583,7 +587,7 @@ define|#
 directive|define
 name|SHOW_TOOL_TIPS_BLURB
 define|\
-value|"To display tooltips, set to yes."
+value|N_("To display tooltips, set to yes.")
 end_define
 
 begin_define
@@ -592,7 +596,7 @@ define|#
 directive|define
 name|STINGY_MEMORY_USE_BLURB
 define|\
-value|"There is always a tradeoff between memory usage and speed.  In most " \ "cases, the GIMP opts for speed over memory.  However, if memory is a " \ "big issue, set stingy-memory-use to yes."
+value|N_("There is always a tradeoff between memory usage and speed.  In most " \    "cases, the GIMP opts for speed over memory.  However, if memory is a " \    "big issue, try to enable this setting.")
 end_define
 
 begin_define
@@ -601,7 +605,7 @@ define|#
 directive|define
 name|SWAP_PATH_BLURB
 define|\
-value|"Sets the swap file location. The gimp uses a tile based memory " \ "allocation scheme. The swap file is used to quickly and easily " \ "swap tiles out to disk and back in. Be aware that the swap file " \ "can easily get very large if the GIMP is used with large images. " \ "Also, things can get horribly slow if the swap file is created on " \ "a directory that is mounted over NFS.  For these reasons, it may " \ "be desirable to put your swap file in \"/tmp\"."
+value|N_("Sets the swap file location. The gimp uses a tile based memory " \    "allocation scheme. The swap file is used to quickly and easily " \    "swap tiles out to disk and back in. Be aware that the swap file " \    "can easily get very large if the GIMP is used with large images. " \    "Also, things can get horribly slow if the swap file is created on " \    "a directory that is mounted over NFS.  For these reasons, it may " \    "be desirable to put your swap file in \"/tmp\".")
 end_define
 
 begin_define
@@ -610,7 +614,7 @@ define|#
 directive|define
 name|TEAROFF_MENUS_BLURB
 define|\
-value|"When set to yes, enables tear off menus."
+value|N_("When set to yes, enables tear off menus.")
 end_define
 
 begin_define
@@ -619,7 +623,7 @@ define|#
 directive|define
 name|TEMP_PATH_BLURB
 define|\
-value|"Sets the temporary storage directory. Files will appear here " \ "during the course of running the GIMP.  Most files will disappear " \ "when the GIMP exits, but some files are likely to remain, " \ "such as working palette files, so it is best if this directory " \ "not be one that is shared by other users or is cleared on machine " \ "reboot such as /tmp."
+value|N_("Sets the temporary storage directory. Files will appear here " \    "during the course of running the GIMP.  Most files will disappear " \    "when the GIMP exits, but some files are likely to remain, so it is" \    "best if this directory not be one that is shared by other users.")
 end_define
 
 begin_define
@@ -646,7 +650,7 @@ define|#
 directive|define
 name|THUMBNAIL_SIZE_BLURB
 define|\
-value|"Sets the thumbnail size."
+value|N_("Sets the size of the thumbnail saved with each image.")
 end_define
 
 begin_define
@@ -655,7 +659,7 @@ define|#
 directive|define
 name|TILE_CACHE_SIZE_BLURB
 define|\
-value|"The tile cache is used to make sure the GIMP doesn't thrash " \ "tiles between memory and disk. Setting this value higher will " \ "cause the GIMP to use less swap space, but will also cause " \ "the GIMP to use more memory. Conversely, a smaller cache size " \ "causes the GIMP to use more swap space and less memory."
+value|N_("The tile cache is used to make sure the GIMP doesn't thrash " \    "tiles between memory and disk. Setting this value higher will " \    "cause the GIMP to use less swap space, but will also cause " \    "the GIMP to use more memory. Conversely, a smaller cache size " \    "causes the GIMP to use more swap space and less memory.")
 end_define
 
 begin_define
@@ -673,7 +677,7 @@ define|#
 directive|define
 name|TRANSPARENCY_TYPE_BLURB
 define|\
-value|"Sets the manner in which transparency is displayed in images."
+value|N_("Sets the manner in which transparency is displayed in images.")
 end_define
 
 begin_define
@@ -682,7 +686,7 @@ define|#
 directive|define
 name|TRANSPARENCY_SIZE_BLURB
 define|\
-value|"Sets the size of the checkerboard used to display transparency."
+value|N_("Sets the size of the checkerboard used to display transparency.")
 end_define
 
 begin_define
@@ -691,7 +695,7 @@ define|#
 directive|define
 name|TRUST_DIRTY_FLAG_BLURB
 define|\
-value|"When set to yes, the GIMP will not save if the image is unchanged since " \ "opening it."
+value|N_("When set to yes, the GIMP will not save if the image is unchanged since " \    "opening it.")
 end_define
 
 begin_define
@@ -700,7 +704,7 @@ define|#
 directive|define
 name|UNDO_LEVELS_BLURB
 define|\
-value|"Sets the number of operations kept on the undo stack."
+value|N_("Sets the number of operations kept on the undo stack.")
 end_define
 
 begin_define
@@ -709,7 +713,7 @@ define|#
 directive|define
 name|USE_HELP_BLURB
 define|\
-value|"When set to no the F1 help binding will be disabled."
+value|N_("When set to no the F1 help binding will be disabled.")
 end_define
 
 begin_endif

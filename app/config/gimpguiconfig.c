@@ -57,6 +57,12 @@ directive|include
 file|"gimpguiconfig.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -138,7 +144,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29379d750103
+DECL|enum|__anon299198ad0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5445640103
+DECL|enum|__anon2b20e84f0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -440,10 +440,6 @@ name|GimpMemsizeEntry
 modifier|*
 name|entry
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|spinbutton
-decl_stmt|;
 name|guint
 name|shift
 decl_stmt|;
@@ -533,6 +529,8 @@ name|shift
 operator|=
 name|shift
 expr_stmt|;
+name|entry
+operator|->
 name|spinbutton
 operator|=
 name|gimp_spin_button_new
@@ -591,6 +589,8 @@ name|gtk_entry_set_width_chars
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
+name|entry
+operator|->
 name|spinbutton
 argument_list|)
 argument_list|,
@@ -604,6 +604,8 @@ argument_list|(
 name|entry
 argument_list|)
 argument_list|,
+name|entry
+operator|->
 name|spinbutton
 argument_list|,
 name|FALSE
@@ -615,6 +617,8 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|entry
+operator|->
 name|spinbutton
 argument_list|)
 expr_stmt|;

@@ -128,6 +128,11 @@ name|GtkAdjustment
 modifier|*
 name|adjustment
 decl_stmt|;
+DECL|member|spinbutton
+name|GtkWidget
+modifier|*
+name|spinbutton
+decl_stmt|;
 DECL|member|menu
 name|GtkWidget
 modifier|*
