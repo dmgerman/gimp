@@ -464,7 +464,7 @@ name|gtk_widget_set_size_request
 argument_list|(
 name|entry
 argument_list|,
-literal|300
+literal|400
 argument_list|,
 operator|-
 literal|1

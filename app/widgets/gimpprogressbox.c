@@ -782,7 +782,7 @@ name|box
 operator|->
 name|progress
 argument_list|,
-literal|150
+literal|250
 argument_list|,
 literal|20
 argument_list|)
