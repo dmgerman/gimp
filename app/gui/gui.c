@@ -1249,6 +1249,10 @@ expr_stmt|;
 name|devices_restore
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|restore_session
+condition|)
 name|session_restore
 argument_list|()
 expr_stmt|;

@@ -86,6 +86,17 @@ parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CHANNEL))
 end_define
 
+begin_define
+DECL|macro|GIMP_CHANNEL_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_CHANNEL_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CHANNEL, GimpChannelClass))
+end_define
+
 begin_typedef
 DECL|typedef|GimpChannelClass
 typedef|typedef
@@ -659,11 +670,7 @@ name|gimp_channel_feather
 parameter_list|(
 name|GimpChannel
 modifier|*
-name|input
-parameter_list|,
-name|GimpChannel
-modifier|*
-name|output
+name|mask
 parameter_list|,
 name|gdouble
 name|radius_x
@@ -671,14 +678,8 @@ parameter_list|,
 name|gdouble
 name|radius_y
 parameter_list|,
-name|ChannelOps
-name|op
-parameter_list|,
-name|gint
-name|off_x
-parameter_list|,
-name|gint
-name|off_y
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl

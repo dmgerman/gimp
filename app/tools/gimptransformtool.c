@@ -239,7 +239,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0e9cb00103
+DECL|enum|__anon299ae0270103
 block|{
 DECL|enumerator|TRANSFORM
 name|TRANSFORM
@@ -339,7 +339,7 @@ name|GimpTransformTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -355,7 +355,7 @@ name|GimpTransformTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -371,7 +371,7 @@ name|GimpTransformTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -474,7 +474,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -494,7 +494,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -514,7 +514,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -534,7 +534,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -553,7 +553,7 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -951,14 +951,14 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_transform_tool_transform (GimpTransformTool * tool,GDisplay * gdisp,TransformState state)
+DECL|function|gimp_transform_tool_transform (GimpTransformTool * tool,GimpDisplay * gdisp,TransformState state)
 name|gimp_transform_tool_transform
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -1268,7 +1268,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_control (GimpTool * tool,ToolAction action,GDisplay * gdisp)
+DECL|function|gimp_transform_tool_control (GimpTool * tool,ToolAction action,GimpDisplay * gdisp)
 name|gimp_transform_tool_control
 parameter_list|(
 name|GimpTool
@@ -1278,7 +1278,7 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1368,7 +1368,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_button_press (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|gimp_transform_tool_button_press (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|gimp_transform_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -1379,7 +1379,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2141,7 +2141,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|gimp_transform_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|gimp_transform_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -2152,7 +2152,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2348,14 +2348,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_doit (GimpTransformTool * gt_tool,GDisplay * gdisp)
+DECL|function|gimp_transform_tool_doit (GimpTransformTool * gt_tool,GimpDisplay * gdisp)
 name|gimp_transform_tool_doit
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|gt_tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2796,7 +2796,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_motion (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_transform_tool_motion (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_transform_tool_motion
 parameter_list|(
 name|GimpTool
@@ -2807,7 +2807,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2931,7 +2931,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_transform_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_transform_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -2942,7 +2942,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -3125,7 +3125,7 @@ modifier|*
 name|dr_tool
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -4072,14 +4072,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_transform_tool_reset (GimpTransformTool * tr_tool,GDisplay * gdisp)
+DECL|function|gimp_transform_tool_reset (GimpTransformTool * tr_tool,GimpDisplay * gdisp)
 name|gimp_transform_tool_reset
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -4160,14 +4160,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_bounds (GimpTransformTool * tr_tool,GDisplay * gdisp)
+DECL|function|gimp_transform_tool_bounds (GimpTransformTool * tr_tool,GimpDisplay * gdisp)
 name|gimp_transform_tool_bounds
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -4872,14 +4872,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_recalc (GimpTransformTool * tr_tool,GDisplay * gdisp)
+DECL|function|gimp_transform_tool_recalc (GimpTransformTool * tr_tool,GimpDisplay * gdisp)
 name|gimp_transform_tool_recalc
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)

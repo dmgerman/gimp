@@ -58,12 +58,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -118,10 +112,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-if|if
-condition|(
-name|restore_session
-condition|)
 name|gimp_dialog_factories_session_restore
 argument_list|()
 expr_stmt|;

@@ -340,6 +340,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|register_selection_tools_procs
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|register_text_tool_procs
 parameter_list|(
 name|Gimp
@@ -966,10 +977,30 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Text procedures"
+literal|"Selection Tool procedures"
 argument_list|)
 argument_list|,
 literal|0.856
+argument_list|)
+expr_stmt|;
+name|register_selection_tools_procs
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+call|(
+modifier|*
+name|status_callback
+call|)
+argument_list|(
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Text procedures"
+argument_list|)
+argument_list|,
+literal|0.871
 argument_list|)
 expr_stmt|;
 name|register_text_tool_procs
@@ -989,7 +1020,7 @@ argument_list|(
 literal|"Tool procedures"
 argument_list|)
 argument_list|,
-literal|0.868
+literal|0.883
 argument_list|)
 expr_stmt|;
 name|register_tools_procs

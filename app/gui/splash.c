@@ -54,18 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28934ab40103
+DECL|enum|__anon2bf18b650103
 block|{
 DECL|enumerator|SPLASH_SHOW_LOGO_NEVER
 name|SPLASH_SHOW_LOGO_NEVER
@@ -286,10 +280,11 @@ end_comment
 
 begin_function
 name|void
-DECL|function|splash_create (void)
+DECL|function|splash_create (gboolean show_image)
 name|splash_create
 parameter_list|(
-name|void
+name|gboolean
+name|show_image
 parameter_list|)
 block|{
 name|GtkWidget
@@ -387,9 +382,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|no_splash_image
-operator|==
-name|FALSE
+name|show_image
 operator|&&
 name|splash_logo_load_size
 argument_list|(

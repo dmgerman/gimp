@@ -131,11 +131,6 @@ DECL|member|parent_class
 name|GimpContainerViewClass
 name|parent_class
 decl_stmt|;
-DECL|member|white_style
-name|GtkStyle
-modifier|*
-name|white_style
-decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -180,12 +180,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"devices.h"
 end_include
 
@@ -251,7 +245,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fe14990103
+DECL|enum|__anon2c113dff0103
 block|{
 DECL|enumerator|PAINT
 name|PAINT
@@ -3977,7 +3971,12 @@ name|context
 operator|=
 name|gimp_get_current_context
 argument_list|(
-name|the_gimp
+name|gimp_drawable_gimage
+argument_list|(
+name|drawable
+argument_list|)
+operator|->
+name|gimp
 argument_list|)
 expr_stmt|;
 name|paint_tool
@@ -4985,12 +4984,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_paint_tool_get_color_from_gradient (GimpPaintTool * paint_tool,gdouble gradient_length,GimpRGB * color,GradientPaintMode mode)
+DECL|function|gimp_paint_tool_get_color_from_gradient (GimpPaintTool * paint_tool,GimpGradient * gradient,gdouble gradient_length,GimpRGB * color,GradientPaintMode mode)
 name|gimp_paint_tool_get_color_from_gradient
 parameter_list|(
 name|GimpPaintTool
 modifier|*
 name|paint_tool
+parameter_list|,
+name|GimpGradient
+modifier|*
+name|gradient
 parameter_list|,
 name|gdouble
 name|gradient_length
@@ -5003,24 +5006,13 @@ name|GradientPaintMode
 name|mode
 parameter_list|)
 block|{
-name|GimpContext
-modifier|*
-name|context
-decl_stmt|;
-name|gdouble
-name|y
-decl_stmt|;
 name|gdouble
 name|distance
 decl_stmt|;
 comment|/* distance in current brush stroke */
-name|context
-operator|=
-name|gimp_get_current_context
-argument_list|(
-name|the_gimp
-argument_list|)
-expr_stmt|;
+name|gdouble
+name|y
+decl_stmt|;
 name|distance
 operator|=
 name|paint_tool
@@ -5030,13 +5022,11 @@ expr_stmt|;
 name|y
 operator|=
 operator|(
-operator|(
-name|double
+name|gdouble
 operator|)
 name|distance
 operator|/
 name|gradient_length
-operator|)
 expr_stmt|;
 comment|/* for the once modes, set y close to 1.0 after the first chunk */
 if|if
@@ -5064,7 +5054,7 @@ condition|(
 operator|(
 operator|(
 operator|(
-name|int
+name|gint
 operator|)
 name|y
 operator|&
@@ -5088,7 +5078,7 @@ operator|(
 name|y
 operator|-
 operator|(
-name|int
+name|gint
 operator|)
 name|y
 operator|)
@@ -5099,16 +5089,13 @@ operator|=
 name|y
 operator|-
 operator|(
-name|int
+name|gint
 operator|)
 name|y
 expr_stmt|;
 name|gimp_gradient_get_color_at
 argument_list|(
-name|gimp_context_get_gradient
-argument_list|(
-name|context
-argument_list|)
+name|gradient
 argument_list|,
 name|y
 argument_list|,

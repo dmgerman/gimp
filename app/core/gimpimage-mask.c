@@ -187,6 +187,52 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|segs_in
+operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|segs_out
+operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|num_segs_in
+operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|num_segs_out
+operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -1719,23 +1765,8 @@ name|gdouble
 name|feather_radius_y
 parameter_list|)
 block|{
-comment|/*  push the current mask onto the undo stack--need to do this here because    *  gimp_channel_feather doesn't do it    */
-name|gimp_channel_push_undo
-argument_list|(
-name|gimp_image_get_mask
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/*  feather the region  */
 name|gimp_channel_feather
 argument_list|(
-name|gimp_image_get_mask
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|,
 name|gimp_image_get_mask
 argument_list|(
 name|gimage
@@ -1745,11 +1776,8 @@ name|feather_radius_x
 argument_list|,
 name|feather_radius_y
 argument_list|,
-name|CHANNEL_OP_REPLACE
-argument_list|,
-literal|0
-argument_list|,
-literal|0
+name|TRUE
+comment|/* push undo */
 argument_list|)
 expr_stmt|;
 block|}
@@ -1771,7 +1799,6 @@ name|gint
 name|border_radius_y
 parameter_list|)
 block|{
-comment|/*  feather the region  */
 name|gimp_channel_border
 argument_list|(
 name|gimp_image_get_mask
@@ -1803,7 +1830,6 @@ name|int
 name|grow_pixels_y
 parameter_list|)
 block|{
-comment|/*  feather the region  */
 name|gimp_channel_grow
 argument_list|(
 name|gimp_image_get_mask
@@ -1838,7 +1864,6 @@ name|gboolean
 name|edge_lock
 parameter_list|)
 block|{
-comment|/*  feather the region  */
 name|gimp_channel_shrink
 argument_list|(
 name|gimp_image_get_mask

@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-contiguous-region.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-mask.h"
 end_include
 
@@ -121,18 +127,6 @@ begin_include
 include|#
 directive|include
 file|"gimpbucketfilltool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpfuzzyselecttool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimptool.h"
 end_include
 
 begin_include
@@ -316,7 +310,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -336,7 +330,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -356,7 +350,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -376,7 +370,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1220,7 +1214,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_bucket_fill_tool_button_press (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|gimp_bucket_fill_tool_button_press (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|gimp_bucket_fill_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -1231,7 +1225,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1334,7 +1328,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_bucket_fill_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|gimp_bucket_fill_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|gimp_bucket_fill_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -1345,7 +1339,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1550,7 +1544,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_bucket_fill_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_bucket_fill_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_bucket_fill_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -1561,7 +1555,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1758,7 +1752,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_bucket_fill_tool_modifier_key (GimpTool * tool,GdkEventKey * kevent,GDisplay * gdisp)
+DECL|function|gimp_bucket_fill_tool_modifier_key (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
 name|gimp_bucket_fill_tool_modifier_key
 parameter_list|(
 name|GimpTool
@@ -1769,7 +1763,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2261,30 +2255,30 @@ condition|)
 block|{
 name|mask
 operator|=
-name|find_contiguous_region
+name|gimp_image_contiguous_region_by_seed
 argument_list|(
 name|gimage
 argument_list|,
 name|drawable
 argument_list|,
+name|sample_merged
+argument_list|,
 name|TRUE
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|threshold
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|x
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|y
-argument_list|,
-name|sample_merged
 argument_list|)
 expr_stmt|;
 name|gimp_channel_bounds

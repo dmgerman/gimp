@@ -966,7 +966,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_initialize_tool (Gimp * gimp,GimpTool * tool,GDisplay * gdisp)
+DECL|function|tool_manager_initialize_tool (Gimp * gimp,GimpTool * tool,GimpDisplay * gdisp)
 name|tool_manager_initialize_tool
 parameter_list|(
 name|Gimp
@@ -978,7 +978,7 @@ modifier|*
 name|tool
 parameter_list|,
 comment|/* FIXME: remove tool param */
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1117,7 +1117,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_control_active (Gimp * gimp,ToolAction action,GDisplay * gdisp)
+DECL|function|tool_manager_control_active (Gimp * gimp,ToolAction action,GimpDisplay * gdisp)
 name|tool_manager_control_active
 parameter_list|(
 name|Gimp
@@ -1127,7 +1127,7 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2288,7 +2288,7 @@ operator|->
 name|preserve
 condition|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 init|=

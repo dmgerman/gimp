@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-mask-select.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpscanconvert.h"
 end_include
 
@@ -486,7 +492,7 @@ parameter_list|,
 name|ToolAction
 name|tool_action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -506,7 +512,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -526,7 +532,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -546,7 +552,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -566,7 +572,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -586,7 +592,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -606,7 +612,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -657,7 +663,7 @@ name|GimpIscissorsTool
 modifier|*
 name|iscissors
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -756,7 +762,7 @@ specifier|static
 name|void
 name|iscissors_draw_curve
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -1664,7 +1670,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_iscissors_tool_control (GimpTool * tool,ToolAction action,GDisplay * gdisp)
+DECL|function|gimp_iscissors_tool_control (GimpTool * tool,ToolAction action,GimpDisplay * gdisp)
 name|gimp_iscissors_tool_control
 parameter_list|(
 name|GimpTool
@@ -1674,7 +1680,7 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1787,7 +1793,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_iscissors_tool_button_press (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|gimp_iscissors_tool_button_press (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|gimp_iscissors_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -1798,7 +1804,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2149,31 +2155,24 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
+name|gimp_image_mask_select_channel
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|iscissors
+operator|->
+name|mask
+argument_list|,
 name|iscissors
 operator|->
 name|op
-operator|==
-name|SELECTION_REPLACE
-condition|)
-name|gimage_mask_clear
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
-else|else
-name|gimage_mask_undo
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
+argument_list|,
 operator|(
 operator|(
 name|SelectionOptions
@@ -2183,19 +2182,6 @@ name|iscissors_options
 operator|)
 operator|->
 name|feather
-condition|)
-name|gimp_channel_feather
-argument_list|(
-name|iscissors
-operator|->
-name|mask
-argument_list|,
-name|gimp_image_get_mask
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
 argument_list|,
 operator|(
 operator|(
@@ -2216,37 +2202,6 @@ name|iscissors_options
 operator|)
 operator|->
 name|feather_radius
-argument_list|,
-name|iscissors
-operator|->
-name|op
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-else|else
-name|gimp_channel_combine_mask
-argument_list|(
-name|gimp_image_get_mask
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-argument_list|,
-name|iscissors
-operator|->
-name|mask
-argument_list|,
-name|iscissors
-operator|->
-name|op
-argument_list|,
-literal|0
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_iscissors_tool_reset
@@ -2348,14 +2303,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|iscissors_convert (GimpIscissorsTool * iscissors,GDisplay * gdisp)
+DECL|function|iscissors_convert (GimpIscissorsTool * iscissors,GimpDisplay * gdisp)
 name|iscissors_convert
 parameter_list|(
 name|GimpIscissorsTool
 modifier|*
 name|iscissors
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2572,7 +2527,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_iscissors_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|gimp_iscissors_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|gimp_iscissors_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -2583,7 +2538,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -3045,7 +3000,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_iscissors_tool_motion (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_iscissors_tool_motion (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_iscissors_tool_motion
 parameter_list|(
 name|GimpTool
@@ -3056,7 +3011,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -3409,7 +3364,7 @@ name|GimpIscissorsTool
 modifier|*
 name|iscissors
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -4121,10 +4076,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|iscissors_draw_curve (GDisplay * gdisp,GimpDrawTool * draw_tool,ICurve * curve)
+DECL|function|iscissors_draw_curve (GimpDisplay * gdisp,GimpDrawTool * draw_tool,ICurve * curve)
 name|iscissors_draw_curve
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -4285,7 +4240,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_iscissors_tool_oper_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_iscissors_tool_oper_update (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_iscissors_tool_oper_update
 parameter_list|(
 name|GimpTool
@@ -4296,7 +4251,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -4506,7 +4461,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_iscissors_tool_modifier_key (GimpTool * tool,GdkEventKey * kevent,GDisplay * gdisp)
+DECL|function|gimp_iscissors_tool_modifier_key (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
 name|gimp_iscissors_tool_modifier_key
 parameter_list|(
 name|GimpTool
@@ -4517,7 +4472,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -4670,7 +4625,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_iscissors_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_iscissors_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_iscissors_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -4681,7 +4636,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -5875,7 +5830,7 @@ name|GimpIscissorsTool
 modifier|*
 name|iscissors
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;

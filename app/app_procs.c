@@ -427,7 +427,10 @@ operator|!
 name|no_splash
 condition|)
 name|splash_create
-argument_list|()
+argument_list|(
+operator|!
+name|no_splash_image
+argument_list|)
 expr_stmt|;
 block|}
 comment|/*  initialize lowlevel stuff  */
