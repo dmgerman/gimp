@@ -39,7 +39,7 @@ name|G_BEGIN_DECLS
 end_macro
 
 begin_comment
-comment|/*  increment the ABI version each time one of the following changes:  *  *  - the libgimpmodule implementation (if the change affects modules).  *  - one of the classes implemented by modules (currently GimpColorDisplay  *    and GimpColorSelector).  */
+comment|/*  increment the ABI version each time one of the following changes:  *  *  - the libgimpmodule implementation (if the change affects modules).  *  - one of the classes implemented by modules (currently GimpColorDisplay,  *    GimpColorSelector and GimpController).  */
 end_comment
 
 begin_define
@@ -47,13 +47,13 @@ DECL|macro|GIMP_MODULE_ABI_VERSION
 define|#
 directive|define
 name|GIMP_MODULE_ABI_VERSION
-value|0x0003
+value|0x0004
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a965e20103
+DECL|enum|__anon2881e3650103
 block|{
 DECL|enumerator|GIMP_MODULE_STATE_ERROR
 name|GIMP_MODULE_STATE_ERROR
@@ -428,6 +428,31 @@ name|gimp_module_state_name
 parameter_list|(
 name|GimpModuleState
 name|state
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  supplement for missing GTypeModule API  */
+end_comment
+
+begin_function_decl
+name|GType
+name|gimp_module_register_enum
+parameter_list|(
+name|GTypeModule
+modifier|*
+name|module
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|,
+specifier|const
+name|GEnumValue
+modifier|*
+name|const_static_values
 parameter_list|)
 function_decl|;
 end_function_decl
