@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpundo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbrushpreview.h"
 end_include
 
@@ -127,6 +133,12 @@ begin_include
 include|#
 directive|include
 file|"gimptoolinfopreview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpundopreview.h"
 end_include
 
 begin_function
@@ -296,6 +308,22 @@ block|{
 name|type
 operator|=
 name|GIMP_TYPE_IMAGEFILE_PREVIEW
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|g_type_is_a
+argument_list|(
+name|viewable_type
+argument_list|,
+name|GIMP_TYPE_UNDO
+argument_list|)
+condition|)
+block|{
+name|type
+operator|=
+name|GIMP_TYPE_UNDO_PREVIEW
 expr_stmt|;
 block|}
 return|return

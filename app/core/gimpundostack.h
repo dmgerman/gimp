@@ -103,11 +103,6 @@ DECL|member|parent_instance
 name|GimpUndo
 name|parent_instance
 decl_stmt|;
-DECL|member|gimage
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
 DECL|member|undos
 name|GimpContainer
 modifier|*
@@ -187,7 +182,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpUndo
+modifier|*
 name|gimp_undo_stack_free_bottom
 parameter_list|(
 name|GimpUndoStack

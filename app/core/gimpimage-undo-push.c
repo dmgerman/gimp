@@ -255,10 +255,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -277,10 +273,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -864,16 +856,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_image (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_image (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_image
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -1235,16 +1223,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_image (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_image (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_image
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -1322,10 +1306,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -1344,10 +1324,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -1447,16 +1423,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_image_type (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_image_type (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_image_type
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -1493,10 +1465,14 @@ name|itu
 operator|->
 name|base_type
 operator|=
+name|undo
+operator|->
 name|gimage
 operator|->
 name|base_type
 expr_stmt|;
+name|undo
+operator|->
 name|gimage
 operator|->
 name|base_type
@@ -1505,11 +1481,15 @@ name|tmp
 expr_stmt|;
 name|gimp_image_projection_allocate
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
 name|gimp_image_colormap_changed
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 operator|-
@@ -1522,6 +1502,8 @@ name|itu
 operator|->
 name|base_type
 operator|!=
+name|undo
+operator|->
 name|gimage
 operator|->
 name|base_type
@@ -1541,16 +1523,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_image_type (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_image_type (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_image_type
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -1613,10 +1591,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -1635,10 +1609,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -1717,12 +1687,6 @@ name|new
 operator|->
 name|data
 expr_stmt|;
-name|new
-operator|->
-name|data
-operator|=
-name|isu
-expr_stmt|;
 name|isu
 operator|->
 name|width
@@ -1752,16 +1716,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_image_size (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_image_size (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_image_size
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -1807,6 +1767,8 @@ name|isu
 operator|->
 name|width
 operator|=
+name|undo
+operator|->
 name|gimage
 operator|->
 name|width
@@ -1815,16 +1777,22 @@ name|isu
 operator|->
 name|height
 operator|=
+name|undo
+operator|->
 name|gimage
 operator|->
 name|height
 expr_stmt|;
+name|undo
+operator|->
 name|gimage
 operator|->
 name|width
 operator|=
 name|width
 expr_stmt|;
+name|undo
+operator|->
 name|gimage
 operator|->
 name|height
@@ -1833,16 +1801,22 @@ name|height
 expr_stmt|;
 name|gimp_image_projection_allocate
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
 name|gimp_image_mask_invalidate
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|undo
+operator|->
 name|gimage
 operator|->
 name|width
@@ -1851,6 +1825,8 @@ name|isu
 operator|->
 name|width
 operator|||
+name|undo
+operator|->
 name|gimage
 operator|->
 name|height
@@ -1874,16 +1850,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_image_size (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_image_size (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_image_size
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -1950,10 +1922,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -1972,10 +1940,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -2091,16 +2055,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_image_resolution (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_image_resolution (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_image_resolution
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -2132,6 +2092,8 @@ name|ru
 operator|->
 name|xres
 operator|-
+name|undo
+operator|->
 name|gimage
 operator|->
 name|xresolution
@@ -2145,6 +2107,8 @@ name|ru
 operator|->
 name|yres
 operator|-
+name|undo
+operator|->
 name|gimage
 operator|->
 name|yresolution
@@ -2161,16 +2125,22 @@ name|yres
 decl_stmt|;
 name|xres
 operator|=
+name|undo
+operator|->
 name|gimage
 operator|->
 name|xresolution
 expr_stmt|;
 name|yres
 operator|=
+name|undo
+operator|->
 name|gimage
 operator|->
 name|yresolution
 expr_stmt|;
+name|undo
+operator|->
 name|gimage
 operator|->
 name|xresolution
@@ -2179,6 +2149,8 @@ name|ru
 operator|->
 name|xres
 expr_stmt|;
+name|undo
+operator|->
 name|gimage
 operator|->
 name|yresolution
@@ -2212,6 +2184,8 @@ name|ru
 operator|->
 name|unit
 operator|!=
+name|undo
+operator|->
 name|gimage
 operator|->
 name|unit
@@ -2222,10 +2196,14 @@ name|unit
 decl_stmt|;
 name|unit
 operator|=
+name|undo
+operator|->
 name|gimage
 operator|->
 name|unit
 expr_stmt|;
+name|undo
+operator|->
 name|gimage
 operator|->
 name|unit
@@ -2256,16 +2234,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_image_resolution (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_image_resolution (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_image_resolution
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -2307,14 +2281,9 @@ DECL|struct|_QmaskUndo
 struct|struct
 name|_QmaskUndo
 block|{
-DECL|member|gimage
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
-DECL|member|qmask
+DECL|member|qmask_state
 name|gboolean
-name|qmask
+name|qmask_state
 decl_stmt|;
 block|}
 struct|;
@@ -2328,10 +2297,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -2351,10 +2316,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -2435,13 +2396,7 @@ name|data
 expr_stmt|;
 name|qu
 operator|->
-name|gimage
-operator|=
-name|gimage
-expr_stmt|;
-name|qu
-operator|->
-name|qmask
+name|qmask_state
 operator|=
 name|gimage
 operator|->
@@ -2460,16 +2415,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_image_qmask (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_image_qmask (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_image_qmask
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -2481,12 +2432,12 @@ parameter_list|)
 block|{
 name|QmaskUndo
 modifier|*
-name|data
+name|qu
 decl_stmt|;
 name|gboolean
 name|tmp
 decl_stmt|;
-name|data
+name|qu
 operator|=
 operator|(
 name|QmaskUndo
@@ -2498,21 +2449,25 @@ name|data
 expr_stmt|;
 name|tmp
 operator|=
+name|undo
+operator|->
 name|gimage
 operator|->
 name|qmask_state
 expr_stmt|;
+name|undo
+operator|->
 name|gimage
 operator|->
 name|qmask_state
 operator|=
-name|data
+name|qu
 operator|->
-name|qmask
+name|qmask_state
 expr_stmt|;
-name|data
+name|qu
 operator|->
-name|qmask
+name|qmask_state
 operator|=
 name|tmp
 expr_stmt|;
@@ -2531,16 +2486,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_image_qmask (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_image_qmask (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_image_qmask
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -2582,11 +2533,6 @@ DECL|struct|_GuideUndo
 struct|struct
 name|_GuideUndo
 block|{
-DECL|member|gimage
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
 DECL|member|guide
 name|GimpGuide
 modifier|*
@@ -2609,10 +2555,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -2631,10 +2573,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -2733,12 +2671,6 @@ operator|++
 expr_stmt|;
 name|gu
 operator|->
-name|gimage
-operator|=
-name|gimage
-expr_stmt|;
-name|gu
-operator|->
 name|guide
 operator|=
 name|guide
@@ -2763,16 +2695,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_image_guide (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_image_guide (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_image_guide
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -2784,7 +2712,7 @@ parameter_list|)
 block|{
 name|GuideUndo
 modifier|*
-name|data
+name|gu
 decl_stmt|;
 name|GimpGuide
 name|tmp_guide
@@ -2792,7 +2720,7 @@ decl_stmt|;
 name|gint
 name|tmp_ref
 decl_stmt|;
-name|data
+name|gu
 operator|=
 operator|(
 name|GuideUndo
@@ -2804,16 +2732,18 @@ name|data
 expr_stmt|;
 name|gimp_image_update_guide
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
-name|data
+name|gu
 operator|->
 name|guide
 argument_list|)
 expr_stmt|;
 name|tmp_ref
 operator|=
-name|data
+name|gu
 operator|->
 name|guide
 operator|->
@@ -2823,23 +2753,23 @@ name|tmp_guide
 operator|=
 operator|*
 operator|(
-name|data
+name|gu
 operator|->
 name|guide
 operator|)
 expr_stmt|;
 operator|*
 operator|(
-name|data
+name|gu
 operator|->
 name|guide
 operator|)
 operator|=
-name|data
+name|gu
 operator|->
 name|orig
 expr_stmt|;
-name|data
+name|gu
 operator|->
 name|guide
 operator|->
@@ -2847,7 +2777,7 @@ name|ref_count
 operator|=
 name|tmp_ref
 expr_stmt|;
-name|data
+name|gu
 operator|->
 name|orig
 operator|=
@@ -2855,9 +2785,11 @@ name|tmp_guide
 expr_stmt|;
 name|gimp_image_update_guide
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
-name|data
+name|gu
 operator|->
 name|guide
 argument_list|)
@@ -2871,16 +2803,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_image_guide (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_image_guide (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_image_guide
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -2888,9 +2816,9 @@ parameter_list|)
 block|{
 name|GuideUndo
 modifier|*
-name|data
+name|gu
 decl_stmt|;
-name|data
+name|gu
 operator|=
 operator|(
 name|GuideUndo
@@ -2900,7 +2828,7 @@ name|undo
 operator|->
 name|data
 expr_stmt|;
-name|data
+name|gu
 operator|->
 name|guide
 operator|->
@@ -2909,7 +2837,7 @@ operator|--
 expr_stmt|;
 if|if
 condition|(
-name|data
+name|gu
 operator|->
 name|guide
 operator|->
@@ -2917,7 +2845,7 @@ name|position
 operator|<
 literal|0
 operator|&&
-name|data
+name|gu
 operator|->
 name|guide
 operator|->
@@ -2928,16 +2856,18 @@ condition|)
 block|{
 name|gimp_image_remove_guide
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
-name|data
+name|gu
 operator|->
 name|guide
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|data
+name|gu
 operator|->
 name|guide
 argument_list|)
@@ -2945,7 +2875,7 @@ expr_stmt|;
 block|}
 name|g_free
 argument_list|(
-name|data
+name|gu
 argument_list|)
 expr_stmt|;
 block|}
@@ -3010,10 +2940,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -3032,10 +2958,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -3267,33 +3189,33 @@ condition|)
 block|{
 name|MaskUndo
 modifier|*
-name|mask_undo
+name|mu
 decl_stmt|;
-name|mask_undo
+name|mu
 operator|=
 name|new
 operator|->
 name|data
 expr_stmt|;
-name|mask_undo
+name|mu
 operator|->
 name|channel
 operator|=
 name|mask
 expr_stmt|;
-name|mask_undo
+name|mu
 operator|->
 name|tiles
 operator|=
 name|undo_tiles
 expr_stmt|;
-name|mask_undo
+name|mu
 operator|->
 name|x
 operator|=
 name|x1
 expr_stmt|;
-name|mask_undo
+name|mu
 operator|->
 name|y
 operator|=
@@ -3321,16 +3243,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_mask (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_mask (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_mask
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -3342,7 +3260,7 @@ parameter_list|)
 block|{
 name|MaskUndo
 modifier|*
-name|mask_undo
+name|mu
 decl_stmt|;
 name|TileManager
 modifier|*
@@ -3378,7 +3296,7 @@ name|height
 operator|=
 literal|0
 expr_stmt|;
-name|mask_undo
+name|mu
 operator|=
 operator|(
 name|MaskUndo
@@ -3392,7 +3310,7 @@ if|if
 condition|(
 name|gimp_channel_bounds
 argument_list|(
-name|mask_undo
+name|mu
 operator|->
 name|channel
 argument_list|,
@@ -3436,7 +3354,7 @@ name|srcPR
 argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
-name|mask_undo
+name|mu
 operator|->
 name|channel
 argument_list|)
@@ -3504,7 +3422,7 @@ name|srcPR
 argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
-name|mask_undo
+name|mu
 operator|->
 name|channel
 argument_list|)
@@ -3547,7 +3465,7 @@ name|NULL
 expr_stmt|;
 if|if
 condition|(
-name|mask_undo
+name|mu
 operator|->
 name|tiles
 condition|)
@@ -3556,7 +3474,7 @@ name|width
 operator|=
 name|tile_manager_width
 argument_list|(
-name|mask_undo
+name|mu
 operator|->
 name|tiles
 argument_list|)
@@ -3565,7 +3483,7 @@ name|height
 operator|=
 name|tile_manager_height
 argument_list|(
-name|mask_undo
+name|mu
 operator|->
 name|tiles
 argument_list|)
@@ -3575,7 +3493,7 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|mask_undo
+name|mu
 operator|->
 name|tiles
 argument_list|,
@@ -3597,18 +3515,18 @@ name|destPR
 argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
-name|mask_undo
+name|mu
 operator|->
 name|channel
 argument_list|)
 operator|->
 name|tiles
 argument_list|,
-name|mask_undo
+name|mu
 operator|->
 name|x
 argument_list|,
-name|mask_undo
+name|mu
 operator|->
 name|y
 argument_list|,
@@ -3630,7 +3548,7 @@ argument_list|)
 expr_stmt|;
 name|tile_manager_destroy
 argument_list|(
-name|mask_undo
+name|mu
 operator|->
 name|tiles
 argument_list|)
@@ -3638,12 +3556,14 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|mask_undo
+name|mu
 operator|->
 name|channel
 operator|==
 name|gimp_image_get_mask
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|)
 condition|)
@@ -3651,13 +3571,15 @@ block|{
 comment|/* invalidate the current bounds and boundary of the mask */
 name|gimp_image_mask_invalidate
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
 block|}
 else|else
 block|{
-name|mask_undo
+name|mu
 operator|->
 name|channel
 operator|->
@@ -3667,7 +3589,7 @@ name|FALSE
 expr_stmt|;
 name|GIMP_DRAWABLE
 argument_list|(
-name|mask_undo
+name|mu
 operator|->
 name|channel
 argument_list|)
@@ -3679,12 +3601,12 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|mask_undo
+name|mu
 operator|->
 name|tiles
 condition|)
 block|{
-name|mask_undo
+name|mu
 operator|->
 name|channel
 operator|->
@@ -3692,45 +3614,45 @@ name|empty
 operator|=
 name|FALSE
 expr_stmt|;
-name|mask_undo
+name|mu
 operator|->
 name|channel
 operator|->
 name|x1
 operator|=
-name|mask_undo
+name|mu
 operator|->
 name|x
 expr_stmt|;
-name|mask_undo
+name|mu
 operator|->
 name|channel
 operator|->
 name|y1
 operator|=
-name|mask_undo
+name|mu
 operator|->
 name|y
 expr_stmt|;
-name|mask_undo
+name|mu
 operator|->
 name|channel
 operator|->
 name|x2
 operator|=
-name|mask_undo
+name|mu
 operator|->
 name|x
 operator|+
 name|width
 expr_stmt|;
-name|mask_undo
+name|mu
 operator|->
 name|channel
 operator|->
 name|y2
 operator|=
-name|mask_undo
+name|mu
 operator|->
 name|y
 operator|+
@@ -3739,7 +3661,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|mask_undo
+name|mu
 operator|->
 name|channel
 operator|->
@@ -3747,7 +3669,7 @@ name|empty
 operator|=
 name|TRUE
 expr_stmt|;
-name|mask_undo
+name|mu
 operator|->
 name|channel
 operator|->
@@ -3755,7 +3677,7 @@ name|x1
 operator|=
 literal|0
 expr_stmt|;
-name|mask_undo
+name|mu
 operator|->
 name|channel
 operator|->
@@ -3763,7 +3685,7 @@ name|y1
 operator|=
 literal|0
 expr_stmt|;
-name|mask_undo
+name|mu
 operator|->
 name|channel
 operator|->
@@ -3771,14 +3693,14 @@ name|x2
 operator|=
 name|GIMP_DRAWABLE
 argument_list|(
-name|mask_undo
+name|mu
 operator|->
 name|channel
 argument_list|)
 operator|->
 name|width
 expr_stmt|;
-name|mask_undo
+name|mu
 operator|->
 name|channel
 operator|->
@@ -3786,7 +3708,7 @@ name|y2
 operator|=
 name|GIMP_DRAWABLE
 argument_list|(
-name|mask_undo
+name|mu
 operator|->
 name|channel
 argument_list|)
@@ -3795,7 +3717,7 @@ name|height
 expr_stmt|;
 block|}
 comment|/* we know the bounds */
-name|mask_undo
+name|mu
 operator|->
 name|channel
 operator|->
@@ -3804,19 +3726,19 @@ operator|=
 name|TRUE
 expr_stmt|;
 comment|/*  set the new mask undo parameters  */
-name|mask_undo
+name|mu
 operator|->
 name|tiles
 operator|=
 name|new_tiles
 expr_stmt|;
-name|mask_undo
+name|mu
 operator|->
 name|x
 operator|=
 name|x1
 expr_stmt|;
-name|mask_undo
+name|mu
 operator|->
 name|y
 operator|=
@@ -3824,12 +3746,14 @@ name|y1
 expr_stmt|;
 if|if
 condition|(
-name|mask_undo
+name|mu
 operator|->
 name|channel
 operator|==
 name|gimp_image_get_mask
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|)
 condition|)
@@ -3847,7 +3771,7 @@ name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
-name|mask_undo
+name|mu
 operator|->
 name|channel
 argument_list|)
@@ -3858,7 +3782,7 @@ literal|0
 argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
-name|mask_undo
+name|mu
 operator|->
 name|channel
 argument_list|)
@@ -3867,7 +3791,7 @@ name|width
 argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
-name|mask_undo
+name|mu
 operator|->
 name|channel
 argument_list|)
@@ -3885,16 +3809,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_mask (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_mask (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_mask
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -3902,9 +3822,9 @@ parameter_list|)
 block|{
 name|MaskUndo
 modifier|*
-name|mask_undo
+name|mu
 decl_stmt|;
-name|mask_undo
+name|mu
 operator|=
 operator|(
 name|MaskUndo
@@ -3916,20 +3836,20 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|mask_undo
+name|mu
 operator|->
 name|tiles
 condition|)
 name|tile_manager_destroy
 argument_list|(
-name|mask_undo
+name|mu
 operator|->
 name|tiles
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|mask_undo
+name|mu
 argument_list|)
 expr_stmt|;
 block|}
@@ -3984,10 +3904,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -4006,10 +3922,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -4102,12 +4014,6 @@ name|new
 operator|->
 name|data
 expr_stmt|;
-name|new
-operator|->
-name|data
-operator|=
-name|iru
-expr_stmt|;
 name|iru
 operator|->
 name|item
@@ -4142,16 +4048,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_item_rename (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_item_rename (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_item_rename
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -4230,16 +4132,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_item_rename (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_item_rename (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_item_rename
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -4361,10 +4259,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -4383,10 +4277,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -4656,16 +4546,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_layer (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_layer (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_layer
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -4724,6 +4610,8 @@ name|prev_position
 operator|=
 name|gimp_image_get_layer_index
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 name|lu
@@ -4740,6 +4628,8 @@ name|prev_layer
 condition|)
 name|gimp_image_set_active_layer
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 name|lu
@@ -4750,6 +4640,8 @@ expr_stmt|;
 comment|/*  remove the layer  */
 name|gimp_container_remove
 argument_list|(
+name|undo
+operator|->
 name|gimage
 operator|->
 name|layers
@@ -4762,12 +4654,16 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|undo
+operator|->
 name|gimage
 operator|->
 name|layer_stack
 operator|=
 name|g_slist_remove
 argument_list|(
+name|undo
+operator|->
 name|gimage
 operator|->
 name|layer_stack
@@ -4788,6 +4684,8 @@ name|layer
 argument_list|)
 condition|)
 block|{
+name|undo
+operator|->
 name|gimage
 operator|->
 name|floating_sel
@@ -4804,6 +4702,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_floating_selection_changed
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
@@ -4844,6 +4744,8 @@ if|if
 condition|(
 name|gimp_container_num_children
 argument_list|(
+name|undo
+operator|->
 name|gimage
 operator|->
 name|layers
@@ -4856,6 +4758,8 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|GIMP_LIST
 argument_list|(
+name|undo
+operator|->
 name|gimage
 operator|->
 name|layers
@@ -4885,6 +4789,8 @@ name|prev_layer
 operator|=
 name|gimp_image_get_active_layer
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
@@ -4893,6 +4799,8 @@ if|if
 condition|(
 name|gimp_image_get_active_layer
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|)
 condition|)
@@ -4900,6 +4808,8 @@ name|gimp_layer_invalidate_boundary
 argument_list|(
 name|gimp_image_get_active_layer
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|)
 argument_list|)
@@ -4914,6 +4824,8 @@ operator|->
 name|layer
 argument_list|)
 condition|)
+name|undo
+operator|->
 name|gimage
 operator|->
 name|floating_sel
@@ -4926,6 +4838,8 @@ if|if
 condition|(
 name|gimp_container_num_children
 argument_list|(
+name|undo
+operator|->
 name|gimage
 operator|->
 name|layers
@@ -4938,6 +4852,8 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|GIMP_LIST
 argument_list|(
+name|undo
+operator|->
 name|gimage
 operator|->
 name|layers
@@ -4959,6 +4875,8 @@ block|}
 comment|/*  add the new layer  */
 name|gimp_container_insert
 argument_list|(
+name|undo
+operator|->
 name|gimage
 operator|->
 name|layers
@@ -4977,6 +4895,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_set_active_layer
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 name|lu
@@ -4995,6 +4915,8 @@ argument_list|)
 condition|)
 name|gimp_image_floating_selection_changed
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
@@ -5040,16 +4962,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_layer (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_layer (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_layer
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -5145,10 +5063,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -5167,10 +5081,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -5351,16 +5261,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_layer_mod (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_layer_mod (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_layer_mod
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -5409,6 +5315,8 @@ expr_stmt|;
 comment|/*  Issue the first update  */
 name|gimp_image_update
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 name|GIMP_DRAWABLE
@@ -5641,10 +5549,7 @@ operator|->
 name|type
 argument_list|)
 operator|&&
-name|GIMP_ITEM
-argument_list|(
-name|layer
-argument_list|)
+name|undo
 operator|->
 name|gimage
 operator|->
@@ -5657,10 +5562,7 @@ condition|)
 block|{
 name|gimp_image_alpha_changed
 argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|layer
-argument_list|)
+name|undo
 operator|->
 name|gimage
 argument_list|)
@@ -5742,16 +5644,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_layer_mod (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_layer_mod (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_layer_mod
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -5865,10 +5763,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -5887,10 +5781,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -6137,16 +6027,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_layer_mask (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_layer_mask (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_layer_mask
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -6236,16 +6122,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_layer_mask (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_layer_mask (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_layer_mask
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -6328,10 +6210,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -6350,10 +6228,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -6476,16 +6350,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_layer_reposition (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_layer_reposition (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_layer_reposition
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -6517,6 +6387,8 @@ name|pos
 operator|=
 name|gimp_image_get_layer_index
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 name|lru
@@ -6526,6 +6398,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_position_layer
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 name|lru
@@ -6556,16 +6430,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_layer_reposition (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_layer_reposition (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_layer_reposition
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -6638,10 +6508,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -6660,10 +6526,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -6809,16 +6671,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_layer_displace (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_layer_displace (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_layer_displace
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -7043,6 +6901,8 @@ name|path_undo
 condition|)
 name|path_transform_do_undo
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 name|ldu
@@ -7059,16 +6919,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_layer_displace (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_layer_displace (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_layer_displace
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -7203,10 +7059,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -7225,10 +7077,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -7498,16 +7346,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_channel (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_channel (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_channel
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -7566,6 +7410,8 @@ name|prev_position
 operator|=
 name|gimp_image_get_channel_index
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 name|cu
@@ -7576,6 +7422,8 @@ expr_stmt|;
 comment|/*  remove the channel  */
 name|gimp_container_remove
 argument_list|(
+name|undo
+operator|->
 name|gimage
 operator|->
 name|channels
@@ -7597,6 +7445,8 @@ name|prev_channel
 condition|)
 name|gimp_image_set_active_channel
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 name|cu
@@ -7648,12 +7498,16 @@ name|prev_channel
 operator|=
 name|gimp_image_get_active_channel
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  add the new channel  */
 name|gimp_container_insert
 argument_list|(
+name|undo
+operator|->
 name|gimage
 operator|->
 name|channels
@@ -7673,6 +7527,8 @@ expr_stmt|;
 comment|/*  set the new channel  */
 name|gimp_image_set_active_channel
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 name|cu
@@ -7723,16 +7579,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_channel (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_channel (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_channel
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -7816,10 +7668,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -7838,10 +7686,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -7989,16 +7833,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_channel_mod (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_channel_mod (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_channel_mod
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -8198,16 +8038,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_channel_mod (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_channel_mod (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_channel_mod
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -8290,10 +8126,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -8312,10 +8144,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -8438,16 +8266,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_channel_reposition (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_channel_reposition (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_channel_reposition
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -8479,6 +8303,8 @@ name|pos
 operator|=
 name|gimp_image_get_channel_index
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 name|cru
@@ -8488,6 +8314,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_position_channel
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 name|cru
@@ -8518,16 +8346,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_channel_reposition (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_channel_reposition (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_channel_reposition
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -8630,10 +8454,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -8652,10 +8472,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -8925,16 +8741,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_vectors (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_vectors (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_vectors
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -8993,6 +8805,8 @@ name|prev_position
 operator|=
 name|gimp_image_get_vectors_index
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 name|vu
@@ -9003,6 +8817,8 @@ expr_stmt|;
 comment|/*  remove the vectors  */
 name|gimp_container_remove
 argument_list|(
+name|undo
+operator|->
 name|gimage
 operator|->
 name|vectors
@@ -9024,6 +8840,8 @@ name|prev_vectors
 condition|)
 name|gimp_image_set_active_vectors
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 name|vu
@@ -9042,12 +8860,16 @@ name|prev_vectors
 operator|=
 name|gimp_image_get_active_vectors
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  add the new vectors  */
 name|gimp_container_insert
 argument_list|(
+name|undo
+operator|->
 name|gimage
 operator|->
 name|vectors
@@ -9067,6 +8889,8 @@ expr_stmt|;
 comment|/*  set the new vectors  */
 name|gimp_image_set_active_vectors
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 name|vu
@@ -9084,16 +8908,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_vectors (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_vectors (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_vectors
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -9177,10 +8997,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -9199,10 +9015,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -9353,16 +9165,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_vectors_mod (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_vectors_mod (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_vectors_mod
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -9445,16 +9253,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_vectors_mod (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_vectors_mod (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_vectors_mod
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -9537,10 +9341,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -9559,10 +9359,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -9685,16 +9481,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_vectors_reposition (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_vectors_reposition (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_vectors_reposition
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -9726,6 +9518,8 @@ name|pos
 operator|=
 name|gimp_image_get_vectors_index
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 name|vru
@@ -9735,6 +9529,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_position_vectors
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 name|vru
@@ -9765,16 +9561,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_vectors_reposition (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_vectors_reposition (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_vectors_reposition
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -9841,10 +9633,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -9863,10 +9651,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -10015,16 +9799,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_fs_to_layer (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_fs_to_layer (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_fs_to_layer
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -10081,6 +9861,8 @@ name|drawable
 expr_stmt|;
 name|gimp_image_set_active_layer
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 name|fsu
@@ -10088,6 +9870,8 @@ operator|->
 name|floating_layer
 argument_list|)
 expr_stmt|;
+name|undo
+operator|->
 name|gimage
 operator|->
 name|floating_sel
@@ -10247,6 +10031,8 @@ name|drawable
 operator|=
 name|NULL
 expr_stmt|;
+name|undo
+operator|->
 name|gimage
 operator|->
 name|floating_sel
@@ -10268,6 +10054,8 @@ break|break;
 block|}
 name|gimp_image_floating_selection_changed
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
@@ -10280,16 +10068,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_fs_to_layer (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_fs_to_layer (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_fs_to_layer
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -10390,10 +10174,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -10412,10 +10192,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -10530,16 +10306,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_fs_rigor (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_fs_rigor (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_fs_rigor
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -10617,16 +10389,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_fs_rigor (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_fs_rigor (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_fs_rigor
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -10705,10 +10473,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -10727,10 +10491,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -10845,16 +10605,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_fs_relax (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_fs_relax (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_fs_relax
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -10932,16 +10688,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_fs_relax (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_fs_relax (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_fs_relax
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -11035,10 +10787,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -11057,10 +10805,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -11573,16 +11317,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_parasite (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_parasite (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_parasite
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -11631,6 +11371,8 @@ name|gimp_parasite_copy
 argument_list|(
 name|gimp_image_parasite_find
 argument_list|(
+name|undo
+operator|->
 name|gimage
 argument_list|,
 name|pu
@@ -11735,6 +11477,8 @@ name|gimp_parasite_copy
 argument_list|(
 name|gimp_parasite_find
 argument_list|(
+name|undo
+operator|->
 name|gimage
 operator|->
 name|gimp
@@ -11751,6 +11495,8 @@ name|tmp
 condition|)
 name|gimp_parasite_attach
 argument_list|(
+name|undo
+operator|->
 name|gimage
 operator|->
 name|gimp
@@ -11761,6 +11507,8 @@ expr_stmt|;
 else|else
 name|gimp_parasite_detach
 argument_list|(
+name|undo
+operator|->
 name|gimage
 operator|->
 name|gimp
@@ -11789,16 +11537,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_parasite (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_parasite (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_parasite
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -11872,10 +11616,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -11956,16 +11696,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_cantundo (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_cantundo (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_cantundo
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode

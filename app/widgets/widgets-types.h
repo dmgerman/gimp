@@ -88,11 +88,20 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpImagePreview
+DECL|typedef|GimpBrushPreview
 typedef|typedef
 name|struct
-name|_GimpImagePreview
-name|GimpImagePreview
+name|_GimpBrushPreview
+name|GimpBrushPreview
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpBufferPreview
+typedef|typedef
+name|struct
+name|_GimpBufferPreview
+name|GimpBufferPreview
 typedef|;
 end_typedef
 
@@ -106,20 +115,29 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpGradientPreview
+typedef|typedef
+name|struct
+name|_GimpGradientPreview
+name|GimpGradientPreview
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpImagePreview
+typedef|typedef
+name|struct
+name|_GimpImagePreview
+name|GimpImagePreview
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpImagefilePreview
 typedef|typedef
 name|struct
 name|_GimpImagefilePreview
 name|GimpImagefilePreview
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpBrushPreview
-typedef|typedef
-name|struct
-name|_GimpBrushPreview
-name|GimpBrushPreview
 typedef|;
 end_typedef
 
@@ -133,15 +151,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPatternPreview
-typedef|typedef
-name|struct
-name|_GimpPatternPreview
-name|GimpPatternPreview
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpPalettePreview
 typedef|typedef
 name|struct
@@ -151,11 +160,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpGradientPreview
+DECL|typedef|GimpPatternPreview
 typedef|typedef
 name|struct
-name|_GimpGradientPreview
-name|GimpGradientPreview
+name|_GimpPatternPreview
+name|GimpPatternPreview
 typedef|;
 end_typedef
 
@@ -169,11 +178,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpBufferPreview
+DECL|typedef|GimpUndoPreview
 typedef|typedef
 name|struct
-name|_GimpBufferPreview
-name|GimpBufferPreview
+name|_GimpUndoPreview
+name|GimpUndoPreview
 typedef|;
 end_typedef
 
@@ -282,6 +291,15 @@ typedef|typedef
 name|struct
 name|_GimpSelectionEditor
 name|GimpSelectionEditor
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpUndoEditor
+typedef|typedef
+name|struct
+name|_GimpUndoEditor
+name|GimpUndoEditor
 typedef|;
 end_typedef
 

@@ -759,8 +759,12 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|gint
+name|GimpUndoEvent
 name|event
+parameter_list|,
+name|GimpUndo
+modifier|*
+name|undo
 parameter_list|)
 function_decl|;
 DECL|member|flush
@@ -1418,8 +1422,12 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|gint
+name|GimpUndoEvent
 name|event
+parameter_list|,
+name|GimpUndo
+modifier|*
+name|undo
 parameter_list|)
 function_decl|;
 end_function_decl

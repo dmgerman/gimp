@@ -234,7 +234,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon279d93590103
+DECL|enum|__anon2c2311500103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -1426,13 +1426,15 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__INT
+name|gimp_marshal_VOID__ENUM_OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
-literal|1
+literal|2
 argument_list|,
-name|G_TYPE_INT
+name|GIMP_TYPE_UNDO_EVENT
+argument_list|,
+name|GIMP_TYPE_UNDO
 argument_list|)
 expr_stmt|;
 name|gimp_image_signals
@@ -6424,17 +6426,41 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_undo_event (GimpImage * gimage,gint event)
+DECL|function|gimp_image_undo_event (GimpImage * gimage,GimpUndoEvent event,GimpUndo * undo)
 name|gimp_image_undo_event
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|gint
+name|GimpUndoEvent
 name|event
+parameter_list|,
+name|GimpUndo
+modifier|*
+name|undo
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|event
+operator|==
+name|GIMP_UNDO_EVENT_UNDO_FREE
+operator|||
+name|GIMP_IS_UNDO
+argument_list|(
+name|undo
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_signal_emit
 argument_list|(
 name|gimage
@@ -6447,6 +6473,8 @@ argument_list|,
 literal|0
 argument_list|,
 name|event
+argument_list|,
+name|undo
 argument_list|)
 expr_stmt|;
 block|}

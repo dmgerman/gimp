@@ -3856,21 +3856,6 @@ operator|=
 name|GIMP_DND_TYPE_TOOL
 expr_stmt|;
 block|}
-else|else
-block|{
-name|g_warning
-argument_list|(
-literal|"%s(): unsupported GType \"%s\""
-argument_list|,
-name|G_GNUC_FUNCTION
-argument_list|,
-name|g_type_name
-argument_list|(
-name|type
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
 return|return
 name|dnd_type
 return|;
@@ -3878,7 +3863,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_dnd_drag_source_set_by_type (GtkWidget * widget,GdkModifierType start_button_mask,GType type,GdkDragAction actions)
 name|gimp_dnd_drag_source_set_by_type
 parameter_list|(
@@ -3899,12 +3884,14 @@ block|{
 name|GimpDndType
 name|dnd_type
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GTK_IS_WIDGET
 argument_list|(
 name|widget
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dnd_type
@@ -3920,7 +3907,9 @@ name|dnd_type
 operator|==
 name|GIMP_DND_TYPE_NONE
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 name|gtk_drag_source_set
 argument_list|(
 name|widget
@@ -3940,11 +3929,14 @@ argument_list|,
 name|actions
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_dnd_drag_dest_set_by_type (GtkWidget * widget,GtkDestDefaults flags,GType type,GdkDragAction actions)
 name|gimp_dnd_drag_dest_set_by_type
 parameter_list|(
@@ -3965,12 +3957,14 @@ block|{
 name|GimpDndType
 name|dnd_type
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GTK_IS_WIDGET
 argument_list|(
 name|widget
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dnd_type
@@ -3986,7 +3980,9 @@ name|dnd_type
 operator|==
 name|GIMP_DND_TYPE_NONE
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 name|gtk_drag_dest_set
 argument_list|(
 name|widget
@@ -4006,11 +4002,14 @@ argument_list|,
 name|actions
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_dnd_viewable_source_set (GtkWidget * widget,GType type,GimpDndDragViewableFunc get_viewable_func,gpointer data)
 name|gimp_dnd_viewable_source_set
 parameter_list|(
@@ -4031,19 +4030,23 @@ block|{
 name|GimpDndType
 name|dnd_type
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GTK_IS_WIDGET
 argument_list|(
 name|widget
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|get_viewable_func
 operator|!=
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dnd_type
@@ -4059,7 +4062,9 @@ name|dnd_type
 operator|==
 name|GIMP_DND_TYPE_NONE
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 name|gimp_dnd_data_source_set
 argument_list|(
 name|dnd_type
@@ -4074,11 +4079,14 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_dnd_viewable_source_unset (GtkWidget * widget,GType type)
 name|gimp_dnd_viewable_source_unset
 parameter_list|(
@@ -4093,12 +4101,14 @@ block|{
 name|GimpDndType
 name|dnd_type
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GTK_IS_WIDGET
 argument_list|(
 name|widget
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dnd_type
@@ -4114,17 +4124,22 @@ name|dnd_type
 operator|==
 name|GIMP_DND_TYPE_NONE
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 name|gimp_dnd_data_source_unset
 argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_dnd_viewable_dest_add (GtkWidget * widget,GType type,GimpDndDropViewableFunc set_viewable_func,gpointer data)
 name|gimp_dnd_viewable_dest_add
 parameter_list|(
@@ -4145,19 +4160,23 @@ block|{
 name|GimpDndType
 name|dnd_type
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GTK_IS_WIDGET
 argument_list|(
 name|widget
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|set_viewable_func
 operator|!=
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dnd_type
@@ -4173,7 +4192,9 @@ name|dnd_type
 operator|==
 name|GIMP_DND_TYPE_NONE
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 name|gimp_dnd_data_dest_add
 argument_list|(
 name|dnd_type
@@ -4188,11 +4209,14 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_dnd_viewable_dest_remove (GtkWidget * widget,GType type)
 name|gimp_dnd_viewable_dest_remove
 parameter_list|(
@@ -4207,12 +4231,14 @@ block|{
 name|GimpDndType
 name|dnd_type
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GTK_IS_WIDGET
 argument_list|(
 name|widget
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dnd_type
@@ -4228,7 +4254,9 @@ name|dnd_type
 operator|==
 name|GIMP_DND_TYPE_NONE
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 name|gimp_dnd_data_dest_remove
 argument_list|(
 name|dnd_type
@@ -4236,6 +4264,9 @@ argument_list|,
 name|widget
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 

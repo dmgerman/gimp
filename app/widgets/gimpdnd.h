@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a354cf20103
+DECL|enum|__anon275dfc620103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_NONE
 name|GIMP_DND_TYPE_NONE
@@ -509,7 +509,7 @@ function_decl|;
 end_typedef
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_dnd_drag_source_set_by_type
 parameter_list|(
 name|GtkWidget
@@ -529,7 +529,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_dnd_viewable_source_set
 parameter_list|(
 name|GtkWidget
@@ -549,7 +549,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_dnd_viewable_source_unset
 parameter_list|(
 name|GtkWidget
@@ -563,7 +563,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_dnd_drag_dest_set_by_type
 parameter_list|(
 name|GtkWidget
@@ -583,7 +583,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_dnd_viewable_dest_add
 parameter_list|(
 name|GtkWidget
@@ -603,7 +603,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_dnd_viewable_dest_remove
 parameter_list|(
 name|GtkWidget

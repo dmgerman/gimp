@@ -122,8 +122,12 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|gint
+name|GimpUndoEvent
 name|event
+parameter_list|,
+name|GimpUndo
+modifier|*
+name|undo
 parameter_list|,
 name|GimpDisplayShell
 modifier|*
@@ -1127,15 +1131,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_undo_event_handler (GimpImage * gimage,gint event,GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_undo_event_handler (GimpImage * gimage,GimpUndoEvent event,GimpUndo * undo,GimpDisplayShell * shell)
 name|gimp_display_shell_undo_event_handler
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|gint
+name|GimpUndoEvent
 name|event
+parameter_list|,
+name|GimpUndo
+modifier|*
+name|undo
 parameter_list|,
 name|GimpDisplayShell
 modifier|*

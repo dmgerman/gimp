@@ -71,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29cecd9e0103
+DECL|enum|__anon2a218e4f0103
 block|{
 DECL|enumerator|GIMP_PIXELS
 name|GIMP_PIXELS
@@ -81,42 +81,6 @@ name|GIMP_POINTS
 DECL|typedef|SizeType
 block|}
 name|SizeType
-typedef|;
-end_typedef
-
-begin_comment
-comment|/*  Argument to undo_event signal emitted by images  */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< pdb-skip>*/
-comment|/*< skip>*/
-DECL|enum|__anon29cecd9e0203
-block|{
-DECL|enumerator|UNDO_PUSHED
-name|UNDO_PUSHED
-block|,
-comment|/* a new undo has been added to the undo stack       */
-DECL|enumerator|UNDO_EXPIRED
-name|UNDO_EXPIRED
-block|,
-comment|/* an undo has been freed from the undo stack        */
-DECL|enumerator|UNDO_POPPED
-name|UNDO_POPPED
-block|,
-comment|/* an undo has been executed and moved to redo stack */
-DECL|enumerator|UNDO_REDO
-name|UNDO_REDO
-block|,
-comment|/* a redo has been executed and moved to undo stack  */
-DECL|enumerator|UNDO_FREE
-name|UNDO_FREE
-comment|/* all undo and redo info has been cleared           */
-DECL|typedef|undo_event_t
-block|}
-name|undo_event_t
 typedef|;
 end_typedef
 
@@ -624,10 +588,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -650,10 +610,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode

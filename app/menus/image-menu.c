@@ -2009,32 +2009,6 @@ block|,
 name|NULL
 block|}
 block|,
-name|MENU_SEPARATOR
-argument_list|(
-literal|"/Image/---"
-argument_list|)
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Image/Undo History..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|dialogs_create_toplevel_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-literal|"gimp-undo-history-dialog"
-block|,
-literal|"dialogs/undo_history.html"
-block|,
-name|NULL
-block|}
-block|,
 comment|/*<Image>/Layer  */
 comment|/*<Image>/Layer/Stack  */
 block|{
@@ -3032,6 +3006,31 @@ name|GIMP_STOCK_NAVIGATION
 block|}
 block|,
 literal|"gimp-navigation-view"
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Dialogs/Undo History..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_create_dockable_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_UNDO
+block|}
+block|,
+literal|"gimp-undo-history"
 block|,
 name|NULL
 block|,
@@ -5828,13 +5827,6 @@ operator|!
 name|aux
 operator|&&
 name|lp
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Image/Undo History..."
-argument_list|,
-name|gdisp
 argument_list|)
 expr_stmt|;
 comment|/*  Layer  */

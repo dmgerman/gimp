@@ -256,6 +256,20 @@ argument_list|,
 name|GIMP_STOCK_NAVIGATION
 argument_list|)
 block|,
+name|ADD_TAB
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Add Tab/Undo History..."
+argument_list|)
+argument_list|,
+literal|"gimp-undo-history"
+argument_list|,
+literal|"<StockItem>"
+argument_list|,
+name|GTK_STOCK_UNDO
+argument_list|)
+block|,
 name|MENU_SEPARATOR
 argument_list|(
 literal|"/Add Tab/---"

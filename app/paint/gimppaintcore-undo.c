@@ -99,10 +99,6 @@ name|GimpUndo
 modifier|*
 name|undo
 parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpUndoMode
 name|undo_mode
 parameter_list|,
@@ -121,10 +117,6 @@ parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -260,16 +252,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|undo_pop_paint (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
+DECL|function|undo_pop_paint (GimpUndo * undo,GimpUndoMode undo_mode,GimpUndoAccumulator * accum)
 name|undo_pop_paint
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
@@ -338,16 +326,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_paint (GimpUndo * undo,GimpImage * gimage,GimpUndoMode undo_mode)
+DECL|function|undo_free_paint (GimpUndo * undo,GimpUndoMode undo_mode)
 name|undo_free_paint
 parameter_list|(
 name|GimpUndo
 modifier|*
 name|undo
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
 parameter_list|,
 name|GimpUndoMode
 name|undo_mode
