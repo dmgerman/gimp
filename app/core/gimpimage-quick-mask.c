@@ -130,6 +130,13 @@ name|gboolean
 name|qmask_state
 parameter_list|)
 block|{
+name|GimpChannel
+modifier|*
+name|mask
+decl_stmt|;
+name|GimpRGB
+name|color
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -141,19 +148,12 @@ expr_stmt|;
 if|if
 condition|(
 name|qmask_state
-operator|!=
+operator|==
 name|gimage
 operator|->
 name|qmask_state
 condition|)
-block|{
-name|GimpChannel
-modifier|*
-name|mask
-decl_stmt|;
-name|GimpRGB
-name|color
-decl_stmt|;
+return|return;
 if|if
 condition|(
 name|qmask_state
@@ -200,12 +200,12 @@ argument_list|(
 name|gimage
 argument_list|)
 condition|)
+comment|/* if no selection */
 block|{
 name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-comment|/* if no selection */
 if|if
 condition|(
 operator|(
@@ -242,15 +242,6 @@ literal|"Qmask"
 argument_list|,
 operator|&
 name|color
-argument_list|)
-expr_stmt|;
-name|gimp_image_add_channel
-argument_list|(
-name|gimage
-argument_list|,
-name|mask
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_fill_by_type
@@ -328,6 +319,7 @@ argument_list|,
 literal|"Qmask"
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_image_add_channel
 argument_list|(
 name|gimage
@@ -337,7 +329,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|gimage
@@ -408,7 +399,7 @@ literal|"Disable QuickMask"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  push the undo here since removing the mask will                *  call the qmask_removed_callback() which will set                *  the qmask_state to FALSE                */
+comment|/*  push the undo here since removing the mask will            *  call the qmask_removed_callback() which will set            *  the qmask_state to FALSE            */
 name|gimp_image_undo_push_image_qmask
 argument_list|(
 name|gimage
@@ -465,7 +456,6 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
