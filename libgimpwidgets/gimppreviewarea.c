@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d445180103
+DECL|enum|__anon292c818a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1154,9 +1154,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp_preview_area_queue_draw (GimpPreviewArea * area,gint x,gint y,gint width,gint height)
 specifier|static
 name|void
+DECL|function|gimp_preview_area_queue_draw (GimpPreviewArea * area,gint x,gint y,gint width,gint height)
 name|gimp_preview_area_queue_draw
 parameter_list|(
 name|GimpPreviewArea
@@ -1176,21 +1176,19 @@ name|gint
 name|height
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_PREVIEW_AREA
-argument_list|(
-name|area
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|x
-operator|+=
-operator|(
+name|GtkWidget
+modifier|*
+name|widget
+init|=
 name|GTK_WIDGET
 argument_list|(
 name|area
 argument_list|)
+decl_stmt|;
+name|x
+operator|+=
+operator|(
+name|widget
 operator|->
 name|allocation
 operator|.
@@ -1206,10 +1204,7 @@ expr_stmt|;
 name|y
 operator|+=
 operator|(
-name|GTK_WIDGET
-argument_list|(
-name|area
-argument_list|)
+name|widget
 operator|->
 name|allocation
 operator|.
@@ -1224,10 +1219,7 @@ literal|2
 expr_stmt|;
 name|gtk_widget_queue_draw_area
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|area
-argument_list|)
+name|widget
 argument_list|,
 name|x
 argument_list|,
