@@ -366,7 +366,12 @@ operator|)
 name|gtk_multi_option_menu_init
 block|,
 operator|(
-name|GtkArgFunc
+name|GtkArgSetFunc
+operator|)
+name|NULL
+block|,
+operator|(
+name|GtkArgGetFunc
 operator|)
 name|NULL
 block|,       }
