@@ -240,7 +240,10 @@ init|=
 block|{
 literal|"gimp_xcf_load"
 block|,
-literal|"XCF (GIMP)"
+name|N_
+argument_list|(
+literal|"GIMP XCF image"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -249,6 +252,8 @@ block|,
 literal|""
 block|,
 literal|"0,string,gimp\\040xcf\\040"
+block|,
+literal|"image/x-xcf"
 block|,
 name|NULL
 block|,
@@ -360,7 +365,10 @@ init|=
 block|{
 literal|"gimp_xcf_save"
 block|,
-literal|"XCF (GIMP)"
+name|N_
+argument_list|(
+literal|"GIMP XCF image"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -369,6 +377,8 @@ block|,
 literal|""
 block|,
 name|NULL
+block|,
+literal|"image/x-xcf"
 block|,
 literal|"RGB*, GRAY*, INDEXED*"
 block|,

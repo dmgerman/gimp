@@ -455,6 +455,73 @@ block|,   }
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
+literal|"file_dicom_load"
+argument_list|,
+literal|"loads files of the dicom file format"
+argument_list|,
+literal|"Load a file in the DICOM standard format."
+literal|"The standard is defined at "
+literal|"http://medical.nema.org/. The plug-in currently "
+literal|"only supports reading images with uncompressed "
+literal|"pixel sections."
+argument_list|,
+literal|"Dov Grobgeld"
+argument_list|,
+literal|"Dov Grobgeld<dov@imagic.weizmann.ac.il>"
+argument_list|,
+literal|"2003"
+argument_list|,
+name|N_
+argument_list|(
+literal|"Digital Imaging and Communications in Medicine image"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|load_args
+argument_list|)
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|load_return_vals
+argument_list|)
+argument_list|,
+name|load_args
+argument_list|,
+name|load_return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_dicom_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_dicom_load"
+argument_list|,
+literal|"image/x-dcm"
+argument_list|)
+expr_stmt|;
+name|gimp_register_magic_load_handler
+argument_list|(
+literal|"file_dicom_load"
+argument_list|,
+literal|"dcm,DCM,dicom,DICOM"
+argument_list|,
+literal|""
+argument_list|,
+literal|"128,string,DICM"
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
 literal|"file_dicom_save"
 argument_list|,
 literal|"Save file in the DICOM file format"
@@ -472,7 +539,10 @@ literal|"Dov Grobgeld<dov@imagic.weizmann.ac.il>"
 argument_list|,
 literal|"2003"
 argument_list|,
-literal|"<Save>/DICOM"
+name|N_
+argument_list|(
+literal|"Digital Imaging and Communications in Medicine image"
+argument_list|)
 argument_list|,
 literal|"RGB, GRAY"
 argument_list|,
@@ -490,54 +560,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_install_procedure
+name|gimp_plugin_menu_register
 argument_list|(
-literal|"file_dicom_load"
+literal|"file_dicom_save"
 argument_list|,
-literal|"loads files of the dicom file format"
-argument_list|,
-literal|"Load a file in the DICOM standard format."
-literal|"The standard is defined at "
-literal|"http://medical.nema.org/. The plug-in currently "
-literal|"only supports reading images with uncompressed "
-literal|"pixel sections."
-argument_list|,
-literal|"Dov Grobgeld"
-argument_list|,
-literal|"Dov Grobgeld<dov@imagic.weizmann.ac.il>"
-argument_list|,
-literal|"2003"
-argument_list|,
-literal|"<Load>/DICOM"
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_PLUGIN
-argument_list|,
-name|G_N_ELEMENTS
-argument_list|(
-name|load_args
-argument_list|)
-argument_list|,
-name|G_N_ELEMENTS
-argument_list|(
-name|load_return_vals
-argument_list|)
-argument_list|,
-name|load_args
-argument_list|,
-name|load_return_vals
+literal|"<Save>"
 argument_list|)
 expr_stmt|;
-name|gimp_register_magic_load_handler
+name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_dicom_load"
+literal|"file_dicom_save"
 argument_list|,
-literal|"dcm,DCM,dicom,DICOM"
-argument_list|,
-literal|""
-argument_list|,
-literal|"128,string,DICM"
+literal|"image/x-dcm"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler

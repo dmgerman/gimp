@@ -50,6 +50,12 @@ name|GimpPDBStatusType
 modifier|*
 name|status
 parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+modifier|*
+name|mime_type
+parameter_list|,
 name|GError
 modifier|*
 modifier|*

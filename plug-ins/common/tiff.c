@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290fe1390108
+DECL|struct|__anon28a182f60108
 block|{
 DECL|member|compression
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290fe1390208
+DECL|struct|__anon28a182f60208
 block|{
 DECL|member|ID
 name|gint32
@@ -626,7 +626,10 @@ literal|"Nick Lamb<njl195@zepler.org.uk>"
 argument_list|,
 literal|"1995-1996,1998-2003"
 argument_list|,
-literal|"<Load>/Tiff"
+name|N_
+argument_list|(
+literal|"TIFF images"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -645,6 +648,31 @@ argument_list|,
 name|load_args
 argument_list|,
 name|load_return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_tiff_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_tiff_load"
+argument_list|,
+literal|"image/tiff"
+argument_list|)
+expr_stmt|;
+name|gimp_register_magic_load_handler
+argument_list|(
+literal|"file_tiff_load"
+argument_list|,
+literal|"tif,tiff"
+argument_list|,
+literal|""
+argument_list|,
+literal|"0,string,II*\\0,0,string,MM\\0*"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -663,7 +691,10 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996,2000-2003"
 argument_list|,
-literal|"<Save>/Tiff"
+name|N_
+argument_list|(
+literal|"TIFF image"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED"
 argument_list|,
@@ -681,7 +712,29 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* Add a save menu path for this procedure, since it is registered as a     * save handler below. */
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_tiff_save"
+argument_list|,
+literal|"<Save>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_tiff_save"
+argument_list|,
+literal|"image/tiff"
+argument_list|)
+expr_stmt|;
+name|gimp_register_save_handler
+argument_list|(
+literal|"file_tiff_save"
+argument_list|,
+literal|"tif,tiff"
+argument_list|,
+literal|""
+argument_list|)
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_tiff_save2"
@@ -698,7 +751,10 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1995-1996,2000-2003"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"TIFF image"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED"
 argument_list|,
@@ -716,24 +772,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_register_magic_load_handler
+name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_tiff_load"
+literal|"file_tiff_save2"
 argument_list|,
-literal|"tif,tiff"
-argument_list|,
-literal|""
-argument_list|,
-literal|"0,string,II*\\0,0,string,MM\\0*"
-argument_list|)
-expr_stmt|;
-name|gimp_register_save_handler
-argument_list|(
-literal|"file_tiff_save"
-argument_list|,
-literal|"tif,tiff"
-argument_list|,
-literal|""
+literal|"image/tiff"
 argument_list|)
 expr_stmt|;
 block|}

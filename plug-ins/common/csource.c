@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295703250108
+DECL|struct|__anon2be1eb160108
 block|{
 DECL|member|file_name
 name|gchar
@@ -321,7 +321,10 @@ literal|"Tim Janik"
 argument_list|,
 literal|"1999"
 argument_list|,
-literal|"<Save>/C-Source"
+name|N_
+argument_list|(
+literal|"C source code"
+argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -337,6 +340,20 @@ argument_list|,
 name|save_args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_csource_save"
+argument_list|,
+literal|"<Save>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_csource_save"
+argument_list|,
+literal|"text/x-csrc"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler

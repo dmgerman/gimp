@@ -152,6 +152,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_register_file_handler_mime
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|procedure_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|mime_type
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro

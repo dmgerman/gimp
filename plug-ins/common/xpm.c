@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b7d97c0108
+DECL|struct|__anon2c13c8130108
 block|{
 DECL|member|threshold
 name|gint
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b7d97c0208
+DECL|struct|__anon2c13c8130208
 block|{
 DECL|member|r
 name|guchar
@@ -473,7 +473,10 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Load>/Xpm"
+name|N_
+argument_list|(
+literal|"X PixMap image"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -494,6 +497,31 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_xpm_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_xpm_load"
+argument_list|,
+literal|"image/x-xpixmap"
+argument_list|)
+expr_stmt|;
+name|gimp_register_magic_load_handler
+argument_list|(
+literal|"file_xpm_load"
+argument_list|,
+literal|"xpm"
+argument_list|,
+literal|"<Load>/Xpm"
+argument_list|,
+literal|"0, string,/*\\040XPM\\040*/"
+argument_list|)
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_xpm_save"
@@ -508,7 +536,10 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Save>/Xpm"
+name|N_
+argument_list|(
+literal|"X PixMap image"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -526,15 +557,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_register_magic_load_handler
+name|gimp_plugin_menu_register
 argument_list|(
-literal|"file_xpm_load"
+literal|"file_xpm_save"
 argument_list|,
-literal|"xpm"
+literal|"<Save>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_xpm_save"
 argument_list|,
-literal|"<Load>/Xpm"
-argument_list|,
-literal|"0, string,/*\\040XPM\\040*/"
+literal|"image/x-xpixmap"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler

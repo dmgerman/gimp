@@ -800,6 +800,10 @@ argument_list|(
 name|documents
 argument_list|,
 name|uri
+argument_list|,
+name|file_proc
+operator|->
+name|mime_type
 argument_list|)
 expr_stmt|;
 if|if

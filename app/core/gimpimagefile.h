@@ -113,6 +113,11 @@ name|GimpThumbnail
 modifier|*
 name|thumbnail
 decl_stmt|;
+DECL|member|mime_type
+name|gchar
+modifier|*
+name|mime_type
+decl_stmt|;
 DECL|member|description
 name|gchar
 modifier|*

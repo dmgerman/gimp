@@ -655,7 +655,10 @@ literal|"Monigotes"
 argument_list|,
 literal|"2000"
 argument_list|,
-literal|"<Save>/PSD"
+name|N_
+argument_list|(
+literal|"Photoshop image"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -671,6 +674,20 @@ argument_list|,
 name|save_args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_psd_save"
+argument_list|,
+literal|"<Save>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_psd_save"
+argument_list|,
+literal|"image/x-psd"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler

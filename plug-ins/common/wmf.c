@@ -76,7 +76,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293e426b0108
+DECL|struct|__anon2ba098c50108
 block|{
 DECL|member|scale
 name|gdouble
@@ -281,7 +281,10 @@ literal|"Dom Lachowicz<cinamod@hotmail.com>"
 argument_list|,
 literal|"(c) 2003 - Version 0.3.0"
 argument_list|,
-literal|"<Load>/WMF"
+name|N_
+argument_list|(
+literal|"Microsoft WMF file"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -300,6 +303,20 @@ argument_list|,
 name|load_args
 argument_list|,
 name|load_return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_wmf_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_wmf_load"
+argument_list|,
+literal|"image/x-wmf"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler

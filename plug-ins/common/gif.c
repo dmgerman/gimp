@@ -125,7 +125,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28794f060103
+DECL|enum|__anon2a1e6f360103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -142,7 +142,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28794f060208
+DECL|struct|__anon2a1e6f360208
 block|{
 DECL|member|interlace
 name|gint
@@ -491,7 +491,10 @@ literal|"Spencer Kimball, Peter Mattis, Adam Moss, David Koblas"
 argument_list|,
 literal|"1995-1997"
 argument_list|,
-literal|"<Save>/GIF"
+name|N_
+argument_list|(
+literal|"GIF image"
+argument_list|)
 argument_list|,
 literal|"INDEXED*, GRAY*"
 argument_list|,
@@ -507,6 +510,20 @@ argument_list|,
 name|save_args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_gif_save"
+argument_list|,
+literal|"<Save>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_gif_save"
+argument_list|,
+literal|"image/gif"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler

@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0062790108
+DECL|struct|__anon2b3c7cae0108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -254,7 +254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0062790208
+DECL|struct|__anon2b3c7cae0208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -312,7 +312,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0062790308
+DECL|struct|__anon2b3c7cae0308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0062790408
+DECL|struct|__anon2b3c7cae0408
 block|{
 DECL|member|npixel
 name|gint
@@ -1007,7 +1007,10 @@ literal|"Peter Kirchgessner"
 argument_list|,
 literal|"1996"
 argument_list|,
-literal|"<Load>/XWD"
+name|N_
+argument_list|(
+literal|"X window image"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1028,6 +1031,31 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_xwd_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_xwd_load"
+argument_list|,
+literal|"image/x-xwindowdump"
+argument_list|)
+expr_stmt|;
+name|gimp_register_magic_load_handler
+argument_list|(
+literal|"file_xwd_load"
+argument_list|,
+literal|"xwd"
+argument_list|,
+literal|""
+argument_list|,
+literal|"4,long,0x00000007"
+argument_list|)
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_xwd_save"
@@ -1042,7 +1070,10 @@ literal|"Peter Kirchgessner"
 argument_list|,
 literal|"1996"
 argument_list|,
-literal|"<Save>/XWD"
+name|N_
+argument_list|(
+literal|"X window image"
+argument_list|)
 argument_list|,
 literal|"RGB, GRAY, INDEXED"
 argument_list|,
@@ -1060,15 +1091,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_register_magic_load_handler
+name|gimp_plugin_menu_register
 argument_list|(
-literal|"file_xwd_load"
+literal|"file_xwd_save"
 argument_list|,
-literal|"xwd"
+literal|"<Save>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_xwd_save"
 argument_list|,
-literal|""
-argument_list|,
-literal|"4,long,0x00000007"
+literal|"image/x-xwindowdump"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler

@@ -149,6 +149,11 @@ specifier|const
 name|gchar
 modifier|*
 name|uri
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|mime_type
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -196,7 +196,7 @@ end_comment
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|file_open_image (Gimp * gimp,GimpContext * context,const gchar * uri,const gchar * entered_filename,PlugInProcDef * file_proc,GimpRunMode run_mode,GimpPDBStatusType * status,GError ** error)
+DECL|function|file_open_image (Gimp * gimp,GimpContext * context,const gchar * uri,const gchar * entered_filename,PlugInProcDef * file_proc,GimpRunMode run_mode,GimpPDBStatusType * status,const gchar ** mime_type,GError ** error)
 name|file_open_image
 parameter_list|(
 name|Gimp
@@ -227,6 +227,12 @@ parameter_list|,
 name|GimpPDBStatusType
 modifier|*
 name|status
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+modifier|*
+name|mime_type
 parameter_list|,
 name|GError
 modifier|*
@@ -281,6 +287,20 @@ name|g_return_val_if_fail
 argument_list|(
 name|status
 operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|mime_type
+operator|==
+name|NULL
+operator|||
+operator|*
+name|mime_type
+operator|==
 name|NULL
 argument_list|,
 name|NULL
@@ -667,6 +687,17 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|mime_type
+condition|)
+operator|*
+name|mime_type
+operator|=
+name|file_proc
+operator|->
+name|mime_type
+expr_stmt|;
 return|return
 name|gimage
 return|;
@@ -817,6 +848,13 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|mime_type
+init|=
+name|NULL
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
@@ -864,6 +902,9 @@ name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|status
 argument_list|,
+operator|&
+name|mime_type
+argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
@@ -907,6 +948,8 @@ argument_list|(
 name|documents
 argument_list|,
 name|uri
+argument_list|,
+name|mime_type
 argument_list|)
 expr_stmt|;
 comment|/*  can only create a thumbnail if the passed uri and the        *  resulting image's uri match.        */

@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275cb3ba0103
+DECL|enum|__anon27b8a0730103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -926,6 +926,13 @@ decl_stmt|;
 name|gboolean
 name|success
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|mime_type
+init|=
+name|NULL
+decl_stmt|;
 name|GError
 modifier|*
 name|error
@@ -957,6 +964,9 @@ argument_list|,
 operator|&
 name|dummy
 argument_list|,
+operator|&
+name|mime_type
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -965,6 +975,21 @@ condition|(
 name|gimage
 condition|)
 block|{
+if|if
+condition|(
+name|mime_type
+condition|)
+name|g_object_set
+argument_list|(
+name|thumbnail
+argument_list|,
+literal|"image-mimetype"
+argument_list|,
+name|mime_type
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|success
 operator|=
 name|gimp_imagefile_save_thumb

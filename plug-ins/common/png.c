@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cc4b900108
+DECL|struct|__anon28e45d3e0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cc4b900208
+DECL|struct|__anon28e45d3e0208
 block|{
 DECL|member|run
 name|gboolean
@@ -617,7 +617,10 @@ literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-literal|"<Load>/PNG"
+name|N_
+argument_list|(
+literal|"PNG image"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -638,6 +641,31 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_png_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_png_load"
+argument_list|,
+literal|"image/png"
+argument_list|)
+expr_stmt|;
+name|gimp_register_magic_load_handler
+argument_list|(
+literal|"file_png_load"
+argument_list|,
+literal|"png"
+argument_list|,
+literal|""
+argument_list|,
+literal|"0,string,\211PNG\r\n\032\n"
+argument_list|)
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_png_save"
@@ -652,7 +680,10 @@ literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"PNG image"
+argument_list|)
 argument_list|,
 literal|"RGB*,GRAY*,INDEXED*"
 argument_list|,
@@ -668,6 +699,13 @@ argument_list|,
 name|save_args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_png_save"
+argument_list|,
+literal|"image/png"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -685,7 +723,10 @@ literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"PNG image"
+argument_list|)
 argument_list|,
 literal|"RGB*,GRAY*,INDEXED*"
 argument_list|,
@@ -703,7 +744,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* We only register a save menu path for this one, since it is the only one    * registered as a save handler below.    */
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_png_save2"
+argument_list|,
+literal|"image/png"
+argument_list|)
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_png_save_defaults"
@@ -718,7 +765,10 @@ literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-literal|"<Save>/PNG"
+name|N_
+argument_list|(
+literal|"PNG image"
+argument_list|)
 argument_list|,
 literal|"RGB*,GRAY*,INDEXED*"
 argument_list|,
@@ -736,15 +786,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_register_magic_load_handler
+name|gimp_plugin_menu_register
 argument_list|(
-literal|"file_png_load"
+literal|"file_png_save_defaults"
 argument_list|,
-literal|"png"
+literal|"<Save>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_png_save_defaults"
 argument_list|,
-literal|""
-argument_list|,
-literal|"0,string,\211PNG\r\n\032\n"
+literal|"image/png"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler

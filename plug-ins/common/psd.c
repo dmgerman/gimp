@@ -143,7 +143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e8f0800103
+DECL|enum|__anon2ac0de280103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e8f0800208
+DECL|struct|__anon2ac0de280208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -580,7 +580,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29e8f0800308
+DECL|struct|__anon2ac0de280308
 block|{
 DECL|member|signature
 name|gchar
@@ -1127,7 +1127,7 @@ literal|"Adam D. Moss& Torsten Martinsen"
 argument_list|,
 literal|"1996-1998"
 argument_list|,
-literal|"<Load>/PSD"
+literal|"Photoshop image"
 argument_list|,
 name|NULL
 argument_list|,
@@ -1146,6 +1146,20 @@ argument_list|,
 name|load_args
 argument_list|,
 name|load_return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_psd_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_psd_load"
+argument_list|,
+literal|"image/x-psd"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler

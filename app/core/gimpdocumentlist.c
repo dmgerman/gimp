@@ -610,7 +610,7 @@ end_function
 begin_function
 name|GimpImagefile
 modifier|*
-DECL|function|gimp_document_list_add_uri (GimpDocumentList * document_list,const gchar * uri)
+DECL|function|gimp_document_list_add_uri (GimpDocumentList * document_list,const gchar * uri,const gchar * mime_type)
 name|gimp_document_list_add_uri
 parameter_list|(
 name|GimpDocumentList
@@ -621,6 +621,11 @@ specifier|const
 name|gchar
 modifier|*
 name|uri
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|mime_type
 parameter_list|)
 block|{
 name|GimpImagefile
@@ -717,6 +722,19 @@ name|imagefile
 argument_list|)
 expr_stmt|;
 block|}
+name|g_object_set
+argument_list|(
+name|imagefile
+operator|->
+name|thumbnail
+argument_list|,
+literal|"image-mimetype"
+argument_list|,
+name|mime_type
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 return|return
 name|imagefile
 return|;

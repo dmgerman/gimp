@@ -71,6 +71,11 @@ name|gchar
 modifier|*
 name|magics
 decl_stmt|;
+DECL|member|mime_type
+name|gchar
+modifier|*
+name|mime_type
+decl_stmt|;
 DECL|member|image_types
 name|gchar
 modifier|*

@@ -643,7 +643,10 @@ literal|"Raphael FRANCOIS, Gordon Matzigkeit"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Load>/TGA"
+name|N_
+argument_list|(
+literal|"TarGA image"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -664,6 +667,29 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_tga_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_tga_load"
+argument_list|,
+literal|"image/x-tga"
+argument_list|)
+expr_stmt|;
+name|gimp_register_load_handler
+argument_list|(
+literal|"file_tga_load"
+argument_list|,
+literal|"tga"
+argument_list|,
+literal|""
+argument_list|)
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_tga_save"
@@ -678,7 +704,10 @@ literal|"Raphael FRANCOIS, Gordon Matzigkeit"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Save>/TGA"
+name|N_
+argument_list|(
+literal|"TarGA image"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -696,13 +725,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_register_load_handler
+name|gimp_plugin_menu_register
 argument_list|(
-literal|"file_tga_load"
+literal|"file_tga_save"
 argument_list|,
-literal|"tga"
+literal|"<Save>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_tga_save"
 argument_list|,
-literal|""
+literal|"image/x-tga"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler

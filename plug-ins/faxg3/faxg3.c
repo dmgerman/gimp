@@ -313,7 +313,10 @@ literal|"Jochen Friedrich, Gert Doering, Spencer Kimball& Peter Mattis"
 argument_list|,
 name|VERSION
 argument_list|,
-literal|"<Load>/Fax G3"
+name|N_
+argument_list|(
+literal|"G3 fax image"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -332,6 +335,20 @@ argument_list|,
 name|load_args
 argument_list|,
 name|load_return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_faxg3_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_faxg3_load"
+argument_list|,
+literal|"image/g3-fax"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler

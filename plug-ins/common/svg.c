@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ce94820108
+DECL|struct|__anon293578fb0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -375,7 +375,10 @@ literal|"Dom Lachowicz<cinamod@hotmail.com>"
 argument_list|,
 name|SVG_VERSION
 argument_list|,
-literal|"<Load>/SVG"
+name|N_
+argument_list|(
+literal|"Scalable SVG image"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -394,6 +397,20 @@ argument_list|,
 name|load_args
 argument_list|,
 name|load_return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_svg_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_svg_load"
+argument_list|,
+literal|"image/svg+xml"
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler

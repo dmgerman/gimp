@@ -143,7 +143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b30c24b0108
+DECL|struct|__anon2a8d385e0108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -232,7 +232,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b30c24b0208
+DECL|struct|__anon2a8d385e0208
 block|{
 DECL|member|val
 name|gint
@@ -827,7 +827,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b30c24b0308
+DECL|struct|__anon2a8d385e0308
 block|{
 DECL|member|rle
 name|gboolean
@@ -994,7 +994,10 @@ literal|"Peter Kirchgessner"
 argument_list|,
 literal|"1996"
 argument_list|,
-literal|"<Load>/SUNRAS"
+name|N_
+argument_list|(
+literal|"SUN Rasterfile image"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1013,6 +1016,31 @@ argument_list|,
 name|load_args
 argument_list|,
 name|load_return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_sunras_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_sunras_load"
+argument_list|,
+literal|"image/x-sun-raster"
+argument_list|)
+expr_stmt|;
+name|gimp_register_magic_load_handler
+argument_list|(
+literal|"file_sunras_load"
+argument_list|,
+literal|"im1,im8,im24,im32,rs,ras"
+argument_list|,
+literal|""
+argument_list|,
+literal|"0,long,0x59a66a95"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -1030,7 +1058,10 @@ literal|"Peter Kirchgessner"
 argument_list|,
 literal|"1996"
 argument_list|,
-literal|"<Save>/SUNRAS"
+name|N_
+argument_list|(
+literal|"SUN Rasterfile image"
+argument_list|)
 argument_list|,
 literal|"RGB, GRAY, INDEXED"
 argument_list|,
@@ -1048,16 +1079,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* Magic information for sunras would be "0,long,0x59a66a95" */
-name|gimp_register_magic_load_handler
+name|gimp_plugin_menu_register
 argument_list|(
-literal|"file_sunras_load"
+literal|"file_sunrad_save"
 argument_list|,
-literal|"im1,im8,im24,im32,rs,ras"
+literal|"<Save>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_sunras_save"
 argument_list|,
-literal|""
-argument_list|,
-literal|"0,long,0x59a66a95"
+literal|"image/x-sun-raster"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
