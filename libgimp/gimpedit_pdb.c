@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_edit_cut:  * @drawable_ID: The drawable to cut from.  *  * Cut from the specified drawable.  *  * If there is a selection in the image, then the area specified by the  * selection is cut from the specified drawable and placed in an  * internal GIMP edit buffer. It can subsequently be retrieved using  * the 'gimp-edit-paste' command. If there is no selection, then the  * specified drawable will be removed and its contents stored in the  * internal GIMP edit buffer. The drawable MUST belong to the specified  * image, or an error is returned.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_edit_cut:  * @drawable_ID: The drawable to cut from.  *  * Cut from the specified drawable.  *  * If there is a selection in the image, then the area specified by the  * selection is cut from the specified drawable and placed in an  * internal GIMP edit buffer. It can subsequently be retrieved using  * the 'gimp-edit-paste' command. If there is no selection, then the  * specified drawable will be removed and its contents stored in the  * internal GIMP edit buffer.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -87,7 +87,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_edit_copy:  * @drawable_ID: The drawable to copy from.  *  * Copy from the specified drawable.  *  * If there is a selection in the image, then the area specified by the  * selection is copied from the specified drawable and placed in an  * internal GIMP edit buffer. It can subsequently be retrieved using  * the 'gimp-edit-paste' command. If there is no selection, then the  * specified drawable's contents will be stored in the internal GIMP  * edit buffer. The drawable MUST belong to the specified image, or an  * error is returned.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_edit_copy:  * @drawable_ID: The drawable to copy from.  *  * Copy from the specified drawable.  *  * If there is a selection in the image, then the area specified by the  * selection is copied from the specified drawable and placed in an  * internal GIMP edit buffer. It can subsequently be retrieved using  * the 'gimp-edit-paste' command. If there is no selection, then the  * specified drawable's contents will be stored in the internal GIMP  * edit buffer.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

@@ -368,7 +368,7 @@ literal|"gimp_edit_cut"
 block|,
 literal|"Cut from the specified drawable."
 block|,
-literal|"If there is a selection in the image, then the area specified by the selection is cut from the specified drawable and placed in an internal GIMP edit buffer. It can subsequently be retrieved using the 'gimp-edit-paste' command. If there is no selection, then the specified drawable will be removed and its contents stored in the internal GIMP edit buffer. The drawable MUST belong to the specified image, or an error is returned."
+literal|"If there is a selection in the image, then the area specified by the selection is cut from the specified drawable and placed in an internal GIMP edit buffer. It can subsequently be retrieved using the 'gimp-edit-paste' command. If there is no selection, then the specified drawable will be removed and its contents stored in the internal GIMP edit buffer."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -525,7 +525,7 @@ literal|"gimp_edit_copy"
 block|,
 literal|"Copy from the specified drawable."
 block|,
-literal|"If there is a selection in the image, then the area specified by the selection is copied from the specified drawable and placed in an internal GIMP edit buffer. It can subsequently be retrieved using the 'gimp-edit-paste' command. If there is no selection, then the specified drawable's contents will be stored in the internal GIMP edit buffer. The drawable MUST belong to the specified image, or an error is returned."
+literal|"If there is a selection in the image, then the area specified by the selection is copied from the specified drawable and placed in an internal GIMP edit buffer. It can subsequently be retrieved using the 'gimp-edit-paste' command. If there is no selection, then the specified drawable's contents will be stored in the internal GIMP edit buffer."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
