@@ -1,12 +1,18 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * The GIMP Help Browser  * Copyright (C) 1999-2002 Sven Neumann<sven@gimp.org>  *                         Michael Natterer<mitch@gimp.org>  *  * domain.c  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * The GIMP Help Browser  * Copyright (C) 1999-2003 Sven Neumann<sven@gimp.org>  *                         Michael Natterer<mitch@gimp.org>  *  * domain.c  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
 include|#
 directive|include
 file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<errno.h>
 end_include
 
 begin_include
@@ -548,7 +554,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29cff8be0103
+DECL|enum|__anon274fb7fe0103
 block|{
 DECL|enumerator|DOMAIN_START
 name|DOMAIN_START
@@ -570,7 +576,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cff8be0208
+DECL|struct|__anon274fb7fe0208
 block|{
 DECL|member|filename
 specifier|const
@@ -907,11 +913,16 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|"Could not open gimp-help.xml mapping file from '%s'"
+literal|"Could not open gimp-help.xml mapping file from '%s': %s"
 argument_list|,
 name|domain
 operator|->
 name|help_uri
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1270,7 +1281,7 @@ name|DOMAIN_START
 case|:
 name|g_warning
 argument_list|(
-literal|"tips_parser: This shouldn't happen.\n"
+literal|"tips_parser: This shouldn't happen."
 argument_list|)
 expr_stmt|;
 break|break;

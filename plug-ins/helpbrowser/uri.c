@@ -34,7 +34,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a408bd40103
+DECL|enum|__anon2bdc4ecf0103
 block|{
 DECL|enumerator|URI_UNKNOWN
 name|URI_UNKNOWN
