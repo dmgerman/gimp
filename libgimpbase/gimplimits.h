@@ -67,6 +67,23 @@ value|65536.0
 end_define
 
 begin_comment
+comment|/*  memory sizes  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_MAX_MEMSIZE
+define|#
+directive|define
+name|GIMP_MAX_MEMSIZE
+value|((guint64) 1<< 42)
+end_define
+
+begin_comment
+DECL|macro|GIMP_MAX_MEMSIZE
+comment|/*  4 terabyte;                                         *  needs a 64bit variable                                         *  and must be< G_MAXDOUBLE                                         */
+end_comment
+
+begin_comment
 comment|/*  the size of the checks which indicate transparency...  */
 end_comment
 
@@ -98,11 +115,6 @@ name|GIMP_CHECK_DARK
 value|0.4
 end_define
 
-begin_comment
-DECL|macro|GIMP_CHECK_DARK
-comment|/*  corresponds to GRAY_CHECKS as  */
-end_comment
-
 begin_define
 DECL|macro|GIMP_CHECK_LIGHT
 define|#
@@ -110,11 +122,6 @@ directive|define
 name|GIMP_CHECK_LIGHT
 value|0.6
 end_define
-
-begin_comment
-DECL|macro|GIMP_CHECK_LIGHT
-comment|/*  defined in app/image_render.c  */
-end_comment
 
 begin_endif
 endif|#

@@ -192,7 +192,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon286e8b1d0103
+DECL|enum|__anon2965a8800103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -657,12 +657,7 @@ name|MAX_NEW_IMAGE_SIZE_BLURB
 argument_list|,
 literal|0
 argument_list|,
-operator|(
-name|guint64
-operator|)
-literal|1
-operator|<<
-literal|40
+name|GIMP_MAX_MEMSIZE
 argument_list|,
 literal|1
 operator|<<

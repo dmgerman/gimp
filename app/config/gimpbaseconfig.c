@@ -130,7 +130,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2757a5640103
+DECL|enum|__anon287f40990103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -374,7 +374,7 @@ name|TILE_CACHE_SIZE_BLURB
 argument_list|,
 literal|0
 argument_list|,
-name|G_MAXULONG
+name|GIMP_MAX_MEMSIZE
 argument_list|,
 literal|1
 operator|<<

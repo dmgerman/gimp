@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a30a45b0103
+DECL|enum|__anon2b520f3c0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -685,6 +685,9 @@ condition|(
 name|value
 operator|>
 operator|(
+operator|(
+name|guint64
+operator|)
 literal|1
 operator|<<
 name|shift
@@ -693,6 +696,9 @@ operator|&&
 name|value
 operator|%
 operator|(
+operator|(
+name|guint64
+operator|)
 literal|1
 operator|<<
 name|shift
@@ -991,6 +997,9 @@ condition|(
 name|value
 operator|>
 operator|(
+operator|(
+name|guint64
+operator|)
 literal|1
 operator|<<
 name|shift
@@ -999,6 +1008,9 @@ operator|&&
 name|value
 operator|%
 operator|(
+operator|(
+name|guint64
+operator|)
 literal|1
 operator|<<
 name|shift

@@ -258,7 +258,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a9e64a0103
+DECL|enum|__anon2b6d6cc60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -792,7 +792,7 @@ name|UNDO_SIZE_BLURB
 argument_list|,
 literal|0
 argument_list|,
-name|G_MAXULONG
+name|GIMP_MAX_MEMSIZE
 argument_list|,
 literal|1
 operator|<<
