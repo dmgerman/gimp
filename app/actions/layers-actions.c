@@ -493,7 +493,7 @@ argument_list|(
 literal|"_Anchor Layer"
 argument_list|)
 block|,
-name|NULL
+literal|"<control>H"
 block|,
 name|N_
 argument_list|(
