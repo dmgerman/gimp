@@ -95,7 +95,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c36d700108
+DECL|struct|__anon2b7bc9e40108
 block|{
 DECL|member|name
 name|gchar
@@ -115,7 +115,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c36d700203
+DECL|enum|__anon2b7bc9e40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1813,7 +1813,7 @@ name|alsa
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"ALSA: %d:%d"
+literal|"ALSA (%d:%d)"
 argument_list|,
 name|snd_seq_client_id
 argument_list|(
