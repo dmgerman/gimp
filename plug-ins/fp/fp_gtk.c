@@ -407,13 +407,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|allOrSell
 DECL|variable|dlg
 specifier|static
 name|GtkWidget
-modifier|*
-name|allOrSell
-decl_stmt|,
 modifier|*
 name|dlg
 decl_stmt|;
@@ -438,7 +434,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c1223c30108
+DECL|struct|__anon2bf5b2ae0108
 block|{
 DECL|member|bna
 name|GtkWidget

@@ -722,6 +722,8 @@ name|base_type
 decl_stmt|;
 name|gint
 name|bytes
+init|=
+literal|0
 decl_stmt|;
 name|gint
 name|subsample
