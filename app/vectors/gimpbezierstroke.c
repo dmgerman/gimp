@@ -3953,17 +3953,7 @@ argument_list|,
 name|EXTEND_SIMPLE
 argument_list|)
 expr_stmt|;
-name|gimp_stroke_anchor_select
-argument_list|(
-name|stroke
-argument_list|,
-name|anchor
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|anchor
-operator|=
+comment|/* we return the GIMP_ANCHOR_ANCHOR */
 name|gimp_bezier_stroke_extend
 argument_list|(
 name|stroke
@@ -4441,7 +4431,7 @@ expr_stmt|;
 case|case
 literal|2
 case|:
-name|neighbor
+name|anchor
 operator|=
 name|gimp_bezier_stroke_extend
 argument_list|(
@@ -4454,16 +4444,7 @@ argument_list|,
 name|EXTEND_SIMPLE
 argument_list|)
 expr_stmt|;
-name|gimp_stroke_anchor_select
-argument_list|(
-name|stroke
-argument_list|,
 name|neighbor
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|anchor
 operator|=
 name|gimp_bezier_stroke_extend
 argument_list|(
@@ -4471,7 +4452,7 @@ name|stroke
 argument_list|,
 name|coords
 argument_list|,
-name|neighbor
+name|anchor
 argument_list|,
 name|EXTEND_SIMPLE
 argument_list|)

@@ -74,7 +74,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28c8e5690103
+DECL|enum|__anon2c40b3b70103
 block|{
 DECL|enumerator|GIMP_CROP
 name|GIMP_CROP
@@ -97,7 +97,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon28c8e5690203
+DECL|enum|__anon2c40b3b70203
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -144,7 +144,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon28c8e5690303
+DECL|enum|__anon2c40b3b70303
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -168,7 +168,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon28c8e5690403
+DECL|enum|__anon2c40b3b70403
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
@@ -206,7 +206,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28c8e5690503
+DECL|enum|__anon2c40b3b70503
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -247,7 +247,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28c8e5690603
+DECL|enum|__anon2c40b3b70603
 block|{
 DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
 name|GIMP_TRANSFORM_TYPE_LAYER
@@ -288,7 +288,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28c8e5690703
+DECL|enum|__anon2c40b3b70703
 block|{
 DECL|enumerator|GIMP_VECTOR_MODE_CREATE
 name|GIMP_VECTOR_MODE_CREATE
@@ -298,6 +298,10 @@ DECL|enumerator|GIMP_VECTOR_MODE_ADJUST
 name|GIMP_VECTOR_MODE_ADJUST
 block|,
 comment|/*< desc="Insert/Delete Nodes">*/
+DECL|enumerator|GIMP_VECTOR_MODE_MOVE
+name|GIMP_VECTOR_MODE_MOVE
+block|,
+comment|/*< desc="Move Stroke/Path">*/
 DECL|typedef|GimpVectorMode
 block|}
 name|GimpVectorMode
@@ -326,7 +330,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28c8e5690803
+DECL|enum|__anon2c40b3b70803
 block|{
 DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_NONE
 name|GIMP_TRANSFORM_GRID_TYPE_NONE
@@ -353,7 +357,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon28c8e5690903
+DECL|enum|__anon2c40b3b70903
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING

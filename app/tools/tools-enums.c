@@ -319,6 +319,17 @@ literal|"adjust"
 block|}
 block|,
 block|{
+name|GIMP_VECTOR_MODE_MOVE
+block|,
+name|N_
+argument_list|(
+literal|"Move Stroke/Path"
+argument_list|)
+block|,
+literal|"move"
+block|}
+block|,
+block|{
 literal|0
 block|,
 name|NULL
