@@ -1300,10 +1300,9 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
-DECL|function|menu_preview_dirty (GtkObject * obj,gpointer client_data)
-name|menu_preview_dirty
+DECL|function|lc_dialog_menu_preview_dirty (GtkObject * obj,gpointer client_data)
+name|lc_dialog_menu_preview_dirty
 parameter_list|(
 name|GtkObject
 modifier|*
@@ -1385,15 +1384,13 @@ name|GimpImage
 modifier|*
 name|gimage_to_update
 init|=
-name|GIMP_IMAGE
-argument_list|(
 operator|(
 name|GimpImage
 operator|*
 operator|)
 name|client_data
-argument_list|)
 decl_stmt|;
+comment|/* This is called via an idle  function, so it is possible    * that the client_data no longer points to a GimpImage.. So don't    * pass it to the GIMP_IMAGE() cast function. We never deference    * it here anyways.    */
 name|menu_preview
 operator|=
 operator|(
@@ -1429,7 +1426,6 @@ literal|"menu_preview_gimage"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*    printf("image_menu_preview_update::menu_preview = %p gimage %p gimage_to_update %d\n",menu_preview,gimage,gimage_to_update);  */
 if|if
 condition|(
 name|menu_preview
@@ -1691,7 +1687,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbc94810108
+DECL|struct|__anon2c95928a0108
 block|{
 DECL|member|def
 name|GImage
@@ -2824,7 +2820,7 @@ literal|"dirty"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|menu_preview_dirty
+name|lc_dialog_menu_preview_dirty
 argument_list|)
 argument_list|,
 name|NULL

@@ -11245,6 +11245,24 @@ name|gdk_flush
 argument_list|()
 expr_stmt|;
 block|}
+name|lc_dialog_menu_preview_dirty
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gimp_drawable_gimage
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer_widget
+operator|->
+name|layer
+argument_list|)
+argument_list|)
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
