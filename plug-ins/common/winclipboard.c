@@ -2162,7 +2162,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Pasteing ..."
+literal|"Pasting ..."
 argument_list|)
 argument_list|)
 expr_stmt|;
