@@ -3981,7 +3981,7 @@ name|gint
 name|xpos
 parameter_list|)
 block|{
-name|int
+name|gint
 name|y
 decl_stmt|;
 for|for
@@ -5941,11 +5941,6 @@ block|{
 case|case
 name|GDK_BUTTON_PRESS
 case|:
-name|gtk_grab_add
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
 name|bevent
 operator|=
 operator|(
@@ -6027,11 +6022,6 @@ break|break;
 case|case
 name|GDK_BUTTON_RELEASE
 case|:
-name|gtk_grab_remove
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
 switch|switch
 condition|(
 name|l_tool

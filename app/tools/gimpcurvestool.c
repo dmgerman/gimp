@@ -4788,11 +4788,6 @@ name|y
 expr_stmt|;
 break|break;
 block|}
-name|gtk_grab_add
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
 name|curves_calculate_curve
 argument_list|(
 name|c_tool
@@ -4841,11 +4836,6 @@ name|GIMP_IMAGE_MAP_TOOL
 argument_list|(
 name|c_tool
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_grab_remove
-argument_list|(
-name|widget
 argument_list|)
 expr_stmt|;
 return|return

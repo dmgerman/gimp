@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d7b65f0103
+DECL|enum|__anon295047310103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1560,9 +1560,9 @@ name|GtkWidget
 modifier|*
 name|widget
 decl_stmt|;
-DECL|member|state
+DECL|member|active
 name|gboolean
-name|state
+name|active
 decl_stmt|;
 comment|/* EEK */
 DECL|member|ink_options
@@ -1760,7 +1760,7 @@ argument_list|()
 expr_stmt|;
 name|brush_w
 operator|->
-name|state
+name|active
 operator|=
 name|FALSE
 expr_stmt|;
@@ -2561,16 +2561,9 @@ condition|)
 block|{
 name|brush_widget
 operator|->
-name|state
+name|active
 operator|=
 name|TRUE
-expr_stmt|;
-name|gtk_grab_add
-argument_list|(
-name|brush_widget
-operator|->
-name|widget
-argument_list|)
 expr_stmt|;
 block|}
 return|return
@@ -2600,16 +2593,9 @@ parameter_list|)
 block|{
 name|brush_widget
 operator|->
-name|state
+name|active
 operator|=
 name|FALSE
-expr_stmt|;
-name|gtk_grab_remove
-argument_list|(
-name|brush_widget
-operator|->
-name|widget
-argument_list|)
 expr_stmt|;
 return|return
 name|TRUE
@@ -2640,7 +2626,7 @@ if|if
 condition|(
 name|brush_widget
 operator|->
-name|state
+name|active
 condition|)
 block|{
 name|gint
