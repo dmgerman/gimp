@@ -758,11 +758,6 @@ name|d_status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
-name|g_assert
-argument_list|(
-name|FALSE
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 elseif|else
