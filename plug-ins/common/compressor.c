@@ -12,11 +12,15 @@ comment|/* 4 Oct 1997 -- Risacher */
 end_comment
 
 begin_comment
-comment|/* gzip plug-in for the gimp */
+comment|/* compressor plug-in for the gimp       */
 end_comment
 
 begin_comment
-comment|/* loosley based on url.c by */
+comment|/* based on gz.c which in turn is        */
+end_comment
+
+begin_comment
+comment|/* loosley based on url.c by             */
 end_comment
 
 begin_comment
@@ -32,7 +36,7 @@ comment|/* Albert Cahalan<acahalan at cs.uml.edu> */
 end_comment
 
 begin_comment
-comment|/* This is reads and writes gziped image files for the Gimp  *  * You need to have gzip installed for it to work.  *  * It should work with file names of the form  * filename.foo.gz where foo is some already-recognized extension  *  * and it also works for names of the form  * filename.xcfgz - which is equivalent to  * filename.xcf.gz  *  * I added the xcfgz bit because having a default extension of xcf.gz  * can confuse the file selection dialog box somewhat, forcing the  * user to type sometimes when he/she otherwise wouldn't need to.  *  * I later decided I didn't like it because I don't like to bloat  * the file-extension namespace.  But I left in the recognition  * feature/bug so if people want to use files named foo.xcfgz by  * default, they can just hack their pluginrc file.  *  * to do this hack, change :  *                      "xcf.gz,gz,xcfgz"  * to  *                      "xcfgz,gz,xcf.gz"  *  *  * -Dan Risacher, 0430 CDT, 26 May 1997  */
+comment|/* This is reads and writes compressed image files for the Gimp  *  * You need to have gzip or bzip2 installed for it to work.  *  * It should work with file names of the form  * filename.foo.[gz|bz2] where foo is some already-recognized extension  *  * and it also works for names of the form  * filename.xcf[gz|bz2] - which is equivalent to  * filename.xcf.[gz|bz2]  *  * I added the xcfgz bit because having a default extension of xcf.gz  * can confuse the file selection dialog box somewhat, forcing the  * user to type sometimes when he/she otherwise wouldn't need to.  *  * I later decided I didn't like it because I don't like to bloat  * the file-extension namespace.  But I left in the recognition  * feature/bug so if people want to use files named foo.xcfgz by  * default, they can just hack their pluginrc file.  *  * to do this hack, change :  *                      "xcf.gz,gz,xcfgz"  * to  *                      "xcfgz,gz,xcf.gz"  *  *  * -Dan Risacher, 0430 CDT, 26 May 1997  */
 end_comment
 
 begin_include
@@ -189,11 +193,15 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
-comment|/* Author 1: Josh MacDonald (url.c) */
+comment|/* Author 1: Josh MacDonald (url.c)          */
 end_comment
 
 begin_comment
-comment|/* Author 2: Daniel Risacher (gz.c) */
+comment|/* Author 2: Daniel Risacher (gz.c)          */
+end_comment
+
+begin_comment
+comment|/* Author 3: Michael Natterer (compressor.c) */
 end_comment
 
 begin_comment
@@ -203,6 +211,132 @@ end_comment
 begin_comment
 comment|/* But you got it free.   Magic of Gnu. */
 end_comment
+
+begin_typedef
+DECL|typedef|Compressor
+typedef|typedef
+name|struct
+name|_Compressor
+name|Compressor
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_Compressor
+struct|struct
+name|_Compressor
+block|{
+DECL|member|file_type
+specifier|const
+name|gchar
+modifier|*
+name|file_type
+decl_stmt|;
+DECL|member|mime_type
+specifier|const
+name|gchar
+modifier|*
+name|mime_type
+decl_stmt|;
+DECL|member|extensions
+specifier|const
+name|gchar
+modifier|*
+name|extensions
+decl_stmt|;
+DECL|member|magic
+specifier|const
+name|gchar
+modifier|*
+name|magic
+decl_stmt|;
+DECL|member|xcf_extension
+specifier|const
+name|gchar
+modifier|*
+name|xcf_extension
+decl_stmt|;
+DECL|member|generic_extension
+specifier|const
+name|gchar
+modifier|*
+name|generic_extension
+decl_stmt|;
+DECL|member|load_proc
+specifier|const
+name|gchar
+modifier|*
+name|load_proc
+decl_stmt|;
+DECL|member|load_blurb
+specifier|const
+name|gchar
+modifier|*
+name|load_blurb
+decl_stmt|;
+DECL|member|load_help
+specifier|const
+name|gchar
+modifier|*
+name|load_help
+decl_stmt|;
+DECL|member|load_program
+specifier|const
+name|gchar
+modifier|*
+name|load_program
+decl_stmt|;
+DECL|member|load_options
+specifier|const
+name|gchar
+modifier|*
+name|load_options
+decl_stmt|;
+DECL|member|load_program_win32
+specifier|const
+name|gchar
+modifier|*
+name|load_program_win32
+decl_stmt|;
+DECL|member|save_proc
+specifier|const
+name|gchar
+modifier|*
+name|save_proc
+decl_stmt|;
+DECL|member|save_blurb
+specifier|const
+name|gchar
+modifier|*
+name|save_blurb
+decl_stmt|;
+DECL|member|save_help
+specifier|const
+name|gchar
+modifier|*
+name|save_help
+decl_stmt|;
+DECL|member|save_program
+specifier|const
+name|gchar
+modifier|*
+name|save_program
+decl_stmt|;
+DECL|member|save_options
+specifier|const
+name|gchar
+modifier|*
+name|save_options
+decl_stmt|;
+DECL|member|save_program_win32
+specifier|const
+name|gchar
+modifier|*
+name|save_program_win32
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_function_decl
 specifier|static
@@ -246,30 +380,14 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint32
-name|load_image
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|,
-name|gint32
-name|run_mode
-parameter_list|,
-name|GimpPDBStatusType
-modifier|*
-name|status
-comment|/* return value */
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|GimpPDBStatusType
 name|save_image
 parameter_list|(
+specifier|const
+name|Compressor
+modifier|*
+name|compressor
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -283,6 +401,31 @@ name|drawable_ID
 parameter_list|,
 name|gint32
 name|run_mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gint32
+name|load_image
+parameter_list|(
+specifier|const
+name|Compressor
+modifier|*
+name|compressor
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|filename
+parameter_list|,
+name|gint32
+name|run_mode
+parameter_list|,
+name|GimpPDBStatusType
+modifier|*
+name|status
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -308,12 +451,111 @@ modifier|*
 name|find_extension
 parameter_list|(
 specifier|const
+name|Compressor
+modifier|*
+name|compressor
+parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_decl_stmt
+DECL|variable|compressors
+specifier|static
+specifier|const
+name|Compressor
+name|compressors
+index|[]
+init|=
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"gzip archive"
+argument_list|)
+block|,
+literal|"application/x-gzip"
+block|,
+literal|"gz,xcfgz"
+block|,
+literal|"0,string,\037\213"
+block|,
+literal|".xcfgz"
+block|,
+literal|".gz"
+block|,
+literal|"file_gz_load"
+block|,
+literal|"loads files compressed with gzip"
+block|,
+literal|"You need to have gzip installed."
+block|,
+literal|"gzip"
+block|,
+literal|"-cfd"
+block|,
+literal|"minigzip -d"
+block|,
+literal|"file_gz_save"
+block|,
+literal|"saves files compressed with gzip"
+block|,
+literal|"You need to have gzip installed."
+block|,
+literal|"gzip"
+block|,
+literal|"-cfn"
+block|,
+literal|"minigzip"
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"bzip archive"
+argument_list|)
+block|,
+literal|"application/x-bzip"
+block|,
+literal|"bz2,xcfbz2"
+block|,
+literal|"0,string,BZh"
+block|,
+literal|".xcfbz2"
+block|,
+literal|".bz2"
+block|,
+literal|"file_bz2_load"
+block|,
+literal|"loads files compressed with bzip2"
+block|,
+literal|"You need to have bzip2 installed."
+block|,
+literal|"bzip2"
+block|,
+literal|"-cfd"
+block|,
+name|NULL
+block|,
+literal|"file_bz2_save"
+block|,
+literal|"saves files compressed with bzip2"
+block|,
+literal|"You need to have bzip2 installed"
+block|,
+literal|"bzip2"
+block|,
+literal|"-cf"
+block|,
+name|NULL
+block|}
+block|}
+decl_stmt|;
+end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
@@ -444,13 +686,50 @@ literal|"The name of the file to save the image in"
 block|}
 block|}
 decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|G_N_ELEMENTS
+argument_list|(
+name|compressors
+argument_list|)
+condition|;
+name|i
+operator|++
+control|)
+block|{
+specifier|const
+name|Compressor
+modifier|*
+name|compressor
+init|=
+operator|&
+name|compressors
+index|[
+name|i
+index|]
+decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_gz_load"
+name|compressor
+operator|->
+name|load_proc
 argument_list|,
-literal|"loads files compressed with gzip"
+name|compressor
+operator|->
+name|load_blurb
 argument_list|,
-literal|"You need to have gzip installed."
+name|compressor
+operator|->
+name|load_help
 argument_list|,
 literal|"Daniel Risacher"
 argument_list|,
@@ -458,10 +737,9 @@ literal|"Daniel Risacher, Spencer Kimball and Peter Mattis"
 argument_list|,
 literal|"1995-1997"
 argument_list|,
-name|N_
-argument_list|(
-literal|"gzip archive"
-argument_list|)
+name|compressor
+operator|->
+name|file_type
 argument_list|,
 name|NULL
 argument_list|,
@@ -484,36 +762,54 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"file_gz_load"
+name|compressor
+operator|->
+name|load_proc
 argument_list|,
 literal|"<Load>"
 argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_gz_load"
+name|compressor
+operator|->
+name|load_proc
 argument_list|,
-literal|"application/x-gzip"
+name|compressor
+operator|->
+name|mime_type
 argument_list|)
 expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
-literal|"file_gz_load"
+name|compressor
+operator|->
+name|load_proc
 argument_list|,
-literal|"gz,xcfgz"
+name|compressor
+operator|->
+name|extensions
 argument_list|,
 literal|""
 argument_list|,
-literal|"0,string,\037\213"
+name|compressor
+operator|->
+name|magic
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_gz_save"
+name|compressor
+operator|->
+name|save_proc
 argument_list|,
-literal|"saves files compressed with gzip"
+name|compressor
+operator|->
+name|save_blurb
 argument_list|,
-literal|"You need to have gzip installed."
+name|compressor
+operator|->
+name|save_help
 argument_list|,
 literal|"Daniel Risacher"
 argument_list|,
@@ -521,10 +817,9 @@ literal|"Daniel Risacher, Spencer Kimball and Peter Mattis"
 argument_list|,
 literal|"1995-1997"
 argument_list|,
-name|N_
-argument_list|(
-literal|"gzip archive"
-argument_list|)
+name|compressor
+operator|->
+name|file_type
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -544,20 +839,29 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_gz_save"
+name|compressor
+operator|->
+name|save_proc
 argument_list|,
-literal|"application/x-gzip"
+name|compressor
+operator|->
+name|mime_type
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_gz_save"
+name|compressor
+operator|->
+name|save_proc
 argument_list|,
-literal|"gz,xcfgz"
+name|compressor
+operator|->
+name|extensions
 argument_list|,
 literal|""
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -608,6 +912,9 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -652,22 +959,53 @@ name|d_status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|G_N_ELEMENTS
+argument_list|(
+name|compressors
+argument_list|)
+condition|;
+name|i
+operator|++
+control|)
+block|{
+specifier|const
+name|Compressor
+modifier|*
+name|compressor
+init|=
+operator|&
+name|compressors
+index|[
+name|i
+index|]
+decl_stmt|;
 if|if
 condition|(
+operator|!
 name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_gz_load"
+name|compressor
+operator|->
+name|load_proc
 argument_list|)
-operator|==
-literal|0
 condition|)
 block|{
 name|image_ID
 operator|=
 name|load_image
 argument_list|(
+name|compressor
+argument_list|,
 name|param
 index|[
 literal|1
@@ -728,18 +1066,20 @@ operator|=
 name|image_ID
 expr_stmt|;
 block|}
+break|break;
 block|}
 elseif|else
 if|if
 condition|(
+operator|!
 name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"file_gz_save"
+name|compressor
+operator|->
+name|save_proc
 argument_list|)
-operator|==
-literal|0
 condition|)
 block|{
 switch|switch
@@ -779,11 +1119,12 @@ name|status
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-block|{
 name|status
 operator|=
 name|save_image
 argument_list|(
+name|compressor
+argument_list|,
 name|param
 index|[
 literal|3
@@ -821,15 +1162,22 @@ operator|.
 name|d_int32
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 block|}
-else|else
-block|{
+if|if
+condition|(
+name|i
+operator|==
+name|G_N_ELEMENTS
+argument_list|(
+name|compressors
+argument_list|)
+condition|)
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
-block|}
 name|values
 index|[
 literal|0
@@ -847,9 +1195,14 @@ end_function
 begin_function
 specifier|static
 name|GimpPDBStatusType
-DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 run_mode)
+DECL|function|save_image (const Compressor * compressor,const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 run_mode)
 name|save_image
 parameter_list|(
+specifier|const
+name|Compressor
+modifier|*
+name|compressor
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -874,52 +1227,19 @@ name|gchar
 modifier|*
 name|tmpname
 decl_stmt|;
-ifndef|#
-directive|ifndef
-name|G_OS_WIN32
-name|FILE
-modifier|*
-name|f
-decl_stmt|;
-name|gint
-name|pid
-decl_stmt|;
-name|gint
-name|wpid
-decl_stmt|;
-name|gint
-name|process_status
-decl_stmt|;
-else|#
-directive|else
-name|FILE
-modifier|*
-name|in
-decl_stmt|;
-name|FILE
-modifier|*
-name|out
-decl_stmt|;
-name|STARTUPINFO
-name|startupinfo
-decl_stmt|;
-name|PROCESS_INFORMATION
-name|processinfo
-decl_stmt|;
-endif|#
-directive|endif
-if|if
-condition|(
-name|NULL
-operator|==
-operator|(
 name|ext
 operator|=
 name|find_extension
 argument_list|(
+name|compressor
+argument_list|,
 name|filename
 argument_list|)
-operator|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|ext
 condition|)
 block|{
 name|g_message
@@ -986,7 +1306,11 @@ block|}
 ifndef|#
 directive|ifndef
 name|G_OS_WIN32
-comment|/* fork off a gzip process */
+block|{
+name|gint
+name|pid
+decl_stmt|;
+comment|/* fork off a compressor process */
 if|if
 condition|(
 operator|(
@@ -1026,6 +1350,10 @@ operator|==
 literal|0
 condition|)
 block|{
+name|FILE
+modifier|*
+name|f
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -1073,9 +1401,6 @@ block|}
 comment|/* make stdout for this process be the output file */
 if|if
 condition|(
-operator|-
-literal|1
-operator|==
 name|dup2
 argument_list|(
 name|fileno
@@ -1088,6 +1413,9 @@ argument_list|(
 name|stdout
 argument_list|)
 argument_list|)
+operator|==
+operator|-
+literal|1
 condition|)
 name|g_message
 argument_list|(
@@ -1099,14 +1427,20 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* and gzip into it */
+comment|/* and compress into it */
 name|execlp
 argument_list|(
-literal|"gzip"
+name|compressor
+operator|->
+name|save_program
 argument_list|,
-literal|"gzip"
+name|compressor
+operator|->
+name|save_program
 argument_list|,
-literal|"-cfn"
+name|compressor
+operator|->
+name|save_options
 argument_list|,
 name|tmpname
 argument_list|,
@@ -1115,7 +1449,15 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"execlp(\"gzip -cfn\") failed: %s"
+literal|"execlp(\"%s %s\") failed: %s"
+argument_list|,
+name|compressor
+operator|->
+name|save_program
+argument_list|,
+name|compressor
+operator|->
+name|save_options
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1136,6 +1478,12 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gint
+name|wpid
+decl_stmt|;
+name|gint
+name|process_status
+decl_stmt|;
 name|wpid
 operator|=
 name|waitpid
@@ -1174,7 +1522,11 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"gzip exited abnormally on file '%s'"
+literal|"%s exited abnormally on file '%s'"
+argument_list|,
+name|compressor
+operator|->
+name|save_program
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -1188,13 +1540,29 @@ name|tmpname
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
+block|}
 block|}
 block|}
 else|#
 directive|else
 comment|/* G_OS_WIN32 */
+block|{
+name|FILE
+modifier|*
+name|in
+decl_stmt|;
+name|FILE
+modifier|*
+name|out
+decl_stmt|;
+name|STARTUPINFO
+name|startupinfo
+decl_stmt|;
+name|PROCESS_INFORMATION
+name|processinfo
+decl_stmt|;
 name|in
 operator|=
 name|fopen
@@ -1244,11 +1612,13 @@ name|startupinfo
 operator|.
 name|dwFlags
 operator|=
+operator|(
 name|STARTF_FORCEOFFFEEDBACK
 operator||
 name|STARTF_USESHOWWINDOW
 operator||
 name|STARTF_USESTDHANDLES
+operator|)
 expr_stmt|;
 name|startupinfo
 operator|.
@@ -1314,7 +1684,9 @@ name|CreateProcess
 argument_list|(
 name|NULL
 argument_list|,
-literal|"minigzip"
+name|compressor
+operator|->
+name|save_program_win32
 argument_list|,
 name|NULL
 argument_list|,
@@ -1338,7 +1710,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"CreateProcess failed. Minigzip.exe not in the path?"
+literal|"CreateProcess failed: %d"
+argument_list|,
+name|GetLastError
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1346,11 +1721,9 @@ argument_list|(
 name|tmpname
 argument_list|)
 expr_stmt|;
-name|_exit
-argument_list|(
-literal|127
-argument_list|)
-expr_stmt|;
+return|return
+name|GIMP_PDB_EXECUTION_ERROR
+return|;
 block|}
 name|CloseHandle
 argument_list|(
@@ -1368,6 +1741,17 @@ argument_list|,
 name|INFINITE
 argument_list|)
 expr_stmt|;
+name|fclose
+argument_list|(
+name|in
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|out
+argument_list|)
+expr_stmt|;
+block|}
 endif|#
 directive|endif
 comment|/* G_OS_WIN32 */
@@ -1390,9 +1774,14 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (const gchar * filename,gint32 run_mode,GimpPDBStatusType * status)
+DECL|function|load_image (const Compressor * compressor,const gchar * filename,gint32 run_mode,GimpPDBStatusType * status)
 name|load_image
 parameter_list|(
+specifier|const
+name|Compressor
+modifier|*
+name|compressor
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -1404,7 +1793,6 @@ parameter_list|,
 name|GimpPDBStatusType
 modifier|*
 name|status
-comment|/* return value */
 parameter_list|)
 block|{
 name|gint32
@@ -1419,50 +1807,19 @@ name|gchar
 modifier|*
 name|tmpname
 decl_stmt|;
-ifndef|#
-directive|ifndef
-name|G_OS_WIN32
-name|gint
-name|pid
-decl_stmt|;
-name|gint
-name|wpid
-decl_stmt|;
-name|gint
-name|process_status
-decl_stmt|;
-else|#
-directive|else
-name|FILE
-modifier|*
-name|in
-decl_stmt|,
-modifier|*
-name|out
-decl_stmt|;
-name|SECURITY_ATTRIBUTES
-name|secattr
-decl_stmt|;
-name|STARTUPINFO
-name|startupinfo
-decl_stmt|;
-name|PROCESS_INFORMATION
-name|processinfo
-decl_stmt|;
-endif|#
-directive|endif
-if|if
-condition|(
-name|NULL
-operator|==
-operator|(
 name|ext
 operator|=
 name|find_extension
 argument_list|(
+name|compressor
+argument_list|,
 name|filename
 argument_list|)
-operator|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|ext
 condition|)
 block|{
 name|g_message
@@ -1492,7 +1849,11 @@ expr_stmt|;
 ifndef|#
 directive|ifndef
 name|G_OS_WIN32
-comment|/* fork off a g(un)zip and wait for it */
+block|{
+name|gint
+name|pid
+decl_stmt|;
+comment|/* fork off a compressor and wait for it */
 if|if
 condition|(
 operator|(
@@ -1590,9 +1951,6 @@ block|}
 comment|/* make stdout for this child process be the temp file */
 if|if
 condition|(
-operator|-
-literal|1
-operator|==
 name|dup2
 argument_list|(
 name|fileno
@@ -1605,6 +1963,9 @@ argument_list|(
 name|stdout
 argument_list|)
 argument_list|)
+operator|==
+operator|-
+literal|1
 condition|)
 block|{
 name|g_free
@@ -1623,14 +1984,20 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* and unzip into it */
+comment|/* and uncompress into it */
 name|execlp
 argument_list|(
-literal|"gzip"
+name|compressor
+operator|->
+name|load_program
 argument_list|,
-literal|"gzip"
+name|compressor
+operator|->
+name|load_program
 argument_list|,
-literal|"-cfd"
+name|compressor
+operator|->
+name|load_options
 argument_list|,
 name|filename
 argument_list|,
@@ -1639,7 +2006,15 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"execlp(\"gzip -cfd\") failed: %s"
+literal|"execlp(\"%s %s\") failed: %s"
+argument_list|,
+name|compressor
+operator|->
+name|load_program
+argument_list|,
+name|compressor
+operator|->
+name|load_options
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1661,6 +2036,12 @@ block|}
 else|else
 comment|/* parent process */
 block|{
+name|gint
+name|wpid
+decl_stmt|;
+name|gint
+name|process_status
+decl_stmt|;
 name|wpid
 operator|=
 name|waitpid
@@ -1699,7 +2080,11 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"gzip exited abnormally on file '%s'"
+literal|"%s exited abnormally on file '%s'"
+argument_list|,
+name|compressor
+operator|->
+name|load_program
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -1723,8 +2108,27 @@ literal|1
 return|;
 block|}
 block|}
+block|}
 else|#
 directive|else
+block|{
+name|FILE
+modifier|*
+name|in
+decl_stmt|;
+name|FILE
+modifier|*
+name|out
+decl_stmt|;
+name|SECURITY_ATTRIBUTES
+name|secattr
+decl_stmt|;
+name|STARTUPINFO
+name|startupinfo
+decl_stmt|;
+name|PROCESS_INFORMATION
+name|processinfo
+decl_stmt|;
 name|in
 operator|=
 name|fopen
@@ -1774,11 +2178,13 @@ name|startupinfo
 operator|.
 name|dwFlags
 operator|=
+operator|(
 name|STARTF_FORCEOFFFEEDBACK
 operator||
 name|STARTF_USESHOWWINDOW
 operator||
 name|STARTF_USESTDHANDLES
+operator|)
 expr_stmt|;
 name|startupinfo
 operator|.
@@ -1844,7 +2250,9 @@ name|CreateProcess
 argument_list|(
 name|NULL
 argument_list|,
-literal|"minigzip -d"
+name|compressor
+operator|->
+name|load_program_win32
 argument_list|,
 name|NULL
 argument_list|,
@@ -1879,11 +2287,15 @@ argument_list|(
 name|tmpname
 argument_list|)
 expr_stmt|;
-name|_exit
-argument_list|(
-literal|127
-argument_list|)
+operator|*
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 block|}
 name|CloseHandle
 argument_list|(
@@ -1911,10 +2323,11 @@ argument_list|(
 name|out
 argument_list|)
 expr_stmt|;
+block|}
 endif|#
 directive|endif
 comment|/* G_OS_WIN32 */
-comment|/* now that we un-gziped it, load the temp file */
+comment|/* now that we uncompressed it, load the temp file */
 name|image_ID
 operator|=
 name|gimp_file_load
@@ -1958,11 +2371,13 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 operator|*
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
+block|}
 return|return
 name|image_ID
 return|;
@@ -1981,15 +2396,11 @@ modifier|*
 name|filename
 parameter_list|)
 block|{
-name|gint
-name|stat_res
-decl_stmt|;
 name|struct
 name|stat
 name|buf
 decl_stmt|;
-name|stat_res
-operator|=
+return|return
 name|stat
 argument_list|(
 name|filename
@@ -1997,29 +2408,14 @@ argument_list|,
 operator|&
 name|buf
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|(
-literal|0
 operator|==
-name|stat_res
-operator|)
+literal|0
 operator|&&
-operator|(
 name|buf
 operator|.
 name|st_size
 operator|>
 literal|0
-operator|)
-condition|)
-return|return
-name|TRUE
-return|;
-else|else
-return|return
-name|FALSE
 return|;
 block|}
 end_function
@@ -2029,9 +2425,14 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-DECL|function|find_extension (const gchar * filename)
+DECL|function|find_extension (const Compressor * compressor,const gchar * filename)
 name|find_extension
 parameter_list|(
+specifier|const
+name|Compressor
+modifier|*
+name|compressor
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -2101,7 +2502,9 @@ name|g_ascii_strcasecmp
 argument_list|(
 name|ext
 argument_list|,
-literal|".xcfgz"
+name|compressor
+operator|->
+name|xcf_extension
 argument_list|)
 condition|)
 block|{
@@ -2118,7 +2521,9 @@ name|g_ascii_strcasecmp
 argument_list|(
 name|ext
 argument_list|,
-literal|".gz"
+name|compressor
+operator|->
+name|generic_extension
 argument_list|)
 condition|)
 block|{
