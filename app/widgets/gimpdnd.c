@@ -1720,6 +1720,13 @@ decl_stmt|;
 name|GimpDndType
 name|data_type
 decl_stmt|;
+name|g_print
+argument_list|(
+literal|"\ngimp_dnd_data_drag_handle(%d)\n"
+argument_list|,
+name|info
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|data_type
@@ -1924,6 +1931,13 @@ block|{
 name|GimpDndType
 name|data_type
 decl_stmt|;
+name|g_print
+argument_list|(
+literal|"\ngimp_dnd_data_drop_handle(%d)\n"
+argument_list|,
+name|info
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|selection_data
@@ -4548,7 +4562,7 @@ modifier|*
 name|length
 parameter_list|)
 block|{
-name|guchar
+name|gchar
 modifier|*
 name|svg_data
 decl_stmt|;
@@ -4584,6 +4598,10 @@ operator|=
 name|svg_data_length
 expr_stmt|;
 return|return
+operator|(
+name|guchar
+operator|*
+operator|)
 name|svg_data
 return|;
 block|}
@@ -4642,6 +4660,10 @@ operator|)
 operator|(
 name|widget
 operator|,
+operator|(
+name|gchar
+operator|*
+operator|)
 name|vals
 operator|,
 name|length
@@ -6339,13 +6361,6 @@ name|gchar
 operator|*
 operator|)
 name|vals
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"gimp_dnd_set_brush_data() got>>%s<<\n"
-argument_list|,
-name|name
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
