@@ -124,7 +124,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon286f5d450103
+DECL|enum|__anon276e2fdc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -369,6 +369,8 @@ argument_list|,
 name|GIMP_TYPE_INTERPOLATION_TYPE
 argument_list|,
 name|GIMP_INTERPOLATION_LINEAR
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -383,6 +385,8 @@ name|gimp_config_build_plug_in_path
 argument_list|(
 literal|"plug-ins"
 argument_list|)
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -397,6 +401,8 @@ name|gimp_config_build_plug_in_path
 argument_list|(
 literal|"tool-plug-ins"
 argument_list|)
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -411,6 +417,8 @@ name|gimp_config_build_plug_in_path
 argument_list|(
 literal|"modules"
 argument_list|)
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -425,6 +433,8 @@ name|gimp_config_build_plug_in_path
 argument_list|(
 literal|"environ"
 argument_list|)
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -439,6 +449,8 @@ name|gimp_config_build_data_path
 argument_list|(
 literal|"brushes"
 argument_list|)
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -453,6 +465,8 @@ name|gimp_config_build_data_path
 argument_list|(
 literal|"patterns"
 argument_list|)
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -467,6 +481,8 @@ name|gimp_config_build_data_path
 argument_list|(
 literal|"palettes"
 argument_list|)
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -481,6 +497,8 @@ name|gimp_config_build_data_path
 argument_list|(
 literal|"gradients"
 argument_list|)
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -492,6 +510,8 @@ argument_list|,
 literal|"default-brush"
 argument_list|,
 name|NULL
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -503,6 +523,8 @@ argument_list|,
 literal|"default-pattern"
 argument_list|,
 name|NULL
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -514,6 +536,8 @@ argument_list|,
 literal|"default-palette"
 argument_list|,
 name|NULL
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -525,6 +549,8 @@ argument_list|,
 literal|"default-gradient"
 argument_list|,
 name|NULL
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -536,6 +562,8 @@ argument_list|,
 literal|"default-comment"
 argument_list|,
 literal|"Created with The GIMP"
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -549,6 +577,8 @@ argument_list|,
 name|GIMP_TYPE_IMAGE_BASE_TYPE
 argument_list|,
 name|GIMP_RGB
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -564,6 +594,8 @@ argument_list|,
 literal|0x8000
 argument_list|,
 literal|256
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -579,6 +611,8 @@ argument_list|,
 literal|0x8000
 argument_list|,
 literal|256
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_UNIT
@@ -590,6 +624,8 @@ argument_list|,
 literal|"default-unit"
 argument_list|,
 name|GIMP_UNIT_INCH
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -602,9 +638,11 @@ literal|"default-xresolution"
 argument_list|,
 name|GIMP_MIN_RESOLUTION
 argument_list|,
-name|G_MAXDOUBLE
+name|GIMP_MAX_RESOLUTION
 argument_list|,
 literal|72.0
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -617,9 +655,11 @@ literal|"default-yresolution"
 argument_list|,
 name|GIMP_MIN_RESOLUTION
 argument_list|,
-name|G_MAXDOUBLE
+name|GIMP_MAX_RESOLUTION
 argument_list|,
 literal|72.0
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_UNIT
@@ -631,6 +671,8 @@ argument_list|,
 literal|"default-resolution-unit"
 argument_list|,
 name|GIMP_UNIT_INCH
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -646,6 +688,8 @@ argument_list|,
 name|G_MAXINT
 argument_list|,
 literal|5
+argument_list|,
+name|GIMP_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -665,6 +709,8 @@ literal|"pluginrc"
 argument_list|,
 name|NULL
 argument_list|)
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -676,6 +722,8 @@ argument_list|,
 literal|"module-load-inhibit"
 argument_list|,
 name|NULL
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -689,6 +737,8 @@ argument_list|,
 name|GIMP_TYPE_PREVIEW_SIZE
 argument_list|,
 name|GIMP_PREVIEW_SIZE_SMALL
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -702,6 +752,8 @@ argument_list|,
 name|GIMP_TYPE_THUMBNAIL_SIZE
 argument_list|,
 name|GIMP_THUMBNAIL_SIZE_NORMAL
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -717,6 +769,8 @@ argument_list|,
 literal|100.0
 argument_list|,
 literal|1.0
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -728,6 +782,8 @@ argument_list|,
 literal|"install-colormap"
 argument_list|,
 name|FALSE
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -743,6 +799,8 @@ argument_list|,
 literal|256
 argument_list|,
 literal|144
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 block|}

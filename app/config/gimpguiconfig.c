@@ -124,7 +124,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon296b4ef80103
+DECL|enum|__anon2a22bbb30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -338,6 +338,8 @@ argument_list|,
 name|G_MAXINT
 argument_list|,
 literal|4
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -351,6 +353,8 @@ argument_list|,
 name|GIMP_TYPE_CHECK_SIZE
 argument_list|,
 name|GIMP_MEDIUM_CHECKS
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -364,6 +368,8 @@ argument_list|,
 name|GIMP_TYPE_CHECK_TYPE
 argument_list|,
 name|GIMP_GRAY_CHECKS
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -379,6 +385,8 @@ argument_list|,
 literal|255
 argument_list|,
 literal|15
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -392,6 +400,8 @@ argument_list|,
 name|GIMP_TYPE_PREVIEW_SIZE
 argument_list|,
 name|GIMP_PREVIEW_SIZE_HUGE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -403,6 +413,8 @@ argument_list|,
 literal|"info-window-per-display"
 argument_list|,
 name|FALSE
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -414,6 +426,8 @@ argument_list|,
 literal|"trust-dirty-flag"
 argument_list|,
 name|FALSE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -425,6 +439,8 @@ argument_list|,
 literal|"save-device-status"
 argument_list|,
 name|FALSE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -436,6 +452,8 @@ argument_list|,
 literal|"save-session-info"
 argument_list|,
 name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -447,6 +465,8 @@ argument_list|,
 literal|"restore-session"
 argument_list|,
 name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -458,6 +478,8 @@ argument_list|,
 literal|"show-tips"
 argument_list|,
 name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -469,6 +491,8 @@ argument_list|,
 literal|"show-tool-tips"
 argument_list|,
 name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -480,6 +504,8 @@ argument_list|,
 literal|"tearoff-menus"
 argument_list|,
 name|TRUE
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_MEMSIZE
@@ -497,6 +523,8 @@ argument_list|,
 literal|1
 operator|<<
 literal|25
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -511,6 +539,8 @@ name|gimp_config_build_data_path
 argument_list|(
 literal|"themes"
 argument_list|)
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -522,6 +552,8 @@ argument_list|,
 literal|"theme"
 argument_list|,
 name|NULL
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -533,6 +565,8 @@ argument_list|,
 literal|"use-help"
 argument_list|,
 name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -546,6 +580,8 @@ argument_list|,
 name|GIMP_TYPE_HELP_BROWSER_TYPE
 argument_list|,
 name|GIMP_HELP_BROWSER_GIMP
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}

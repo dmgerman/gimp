@@ -118,7 +118,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon29af3d550103
+DECL|enum|__anon275dd20f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -297,6 +297,8 @@ literal|"tmp"
 argument_list|,
 name|NULL
 argument_list|)
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -312,6 +314,8 @@ argument_list|(
 name|gimp_directory
 argument_list|()
 argument_list|)
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -323,6 +327,8 @@ argument_list|,
 literal|"stingy-memory-use"
 argument_list|,
 name|FALSE
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_UINT
@@ -338,6 +344,8 @@ argument_list|,
 literal|30
 argument_list|,
 literal|1
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_MEMSIZE
@@ -355,6 +363,8 @@ argument_list|,
 literal|1
 operator|<<
 literal|25
+argument_list|,
+name|GIMP_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 block|}

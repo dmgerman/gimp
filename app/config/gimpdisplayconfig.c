@@ -140,7 +140,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f77cc00103
+DECL|enum|__anon291dca0b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -348,6 +348,8 @@ argument_list|,
 name|G_MAXINT
 argument_list|,
 literal|300
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -359,6 +361,8 @@ argument_list|,
 literal|"colormap-cycling"
 argument_list|,
 name|FALSE
+argument_list|,
+name|GIMP_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -370,6 +374,8 @@ argument_list|,
 literal|"resize-windows-on-zoom"
 argument_list|,
 name|FALSE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -381,6 +387,8 @@ argument_list|,
 literal|"resize-windows-on-resize"
 argument_list|,
 name|FALSE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -392,6 +400,8 @@ argument_list|,
 literal|"default-dot-for-dot"
 argument_list|,
 name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -403,6 +413,8 @@ argument_list|,
 literal|"perfect-mouse"
 argument_list|,
 name|FALSE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -416,6 +428,8 @@ argument_list|,
 name|GIMP_TYPE_CURSOR_MODE
 argument_list|,
 name|GIMP_CURSOR_MODE_TOOL_ICON
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -427,6 +441,8 @@ argument_list|,
 literal|"cursor-updating"
 argument_list|,
 name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -438,6 +454,8 @@ argument_list|,
 literal|"image-title-format"
 argument_list|,
 name|DEFAULT_IMAGE_TITLE_FORMAT
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -449,6 +467,8 @@ argument_list|,
 literal|"image-status-format"
 argument_list|,
 name|DEFAULT_IMAGE_STATUS_FORMAT
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -460,6 +480,8 @@ argument_list|,
 literal|"show-rulers"
 argument_list|,
 name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -471,6 +493,8 @@ argument_list|,
 literal|"show-statusbar"
 argument_list|,
 name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -482,6 +506,8 @@ argument_list|,
 literal|"confirm-on-close"
 argument_list|,
 name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -497,6 +523,8 @@ argument_list|,
 name|G_MAXDOUBLE
 argument_list|,
 literal|72.0
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -512,6 +540,8 @@ argument_list|,
 name|G_MAXDOUBLE
 argument_list|,
 literal|72.0
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -523,6 +553,8 @@ argument_list|,
 literal|"monitor-resolution-from-windowing-system"
 argument_list|,
 name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}

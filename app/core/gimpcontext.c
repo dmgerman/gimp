@@ -1264,7 +1264,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f1cab80103
+DECL|enum|__anon29fad9ab0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1316,7 +1316,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f1cab80203
+DECL|enum|__anon29fad9ab0203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -2561,6 +2561,8 @@ name|TOOL_CHANGED
 index|]
 argument_list|,
 name|GIMP_TYPE_TOOL_INFO
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_COLOR
@@ -2576,6 +2578,8 @@ index|]
 argument_list|,
 operator|&
 name|black
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_COLOR
@@ -2591,6 +2595,8 @@ index|]
 argument_list|,
 operator|&
 name|white
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -2609,6 +2615,8 @@ argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -2625,6 +2633,8 @@ argument_list|,
 name|GIMP_TYPE_LAYER_MODE_EFFECTS
 argument_list|,
 name|GIMP_NORMAL_MODE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -2639,6 +2649,8 @@ name|BRUSH_CHANGED
 index|]
 argument_list|,
 name|GIMP_TYPE_BRUSH
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -2653,6 +2665,8 @@ name|PATTERN_CHANGED
 index|]
 argument_list|,
 name|GIMP_TYPE_PATTERN
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -2667,6 +2681,8 @@ name|GRADIENT_CHANGED
 index|]
 argument_list|,
 name|GIMP_TYPE_GRADIENT
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -2681,6 +2697,8 @@ name|PALETTE_CHANGED
 index|]
 argument_list|,
 name|GIMP_TYPE_PALETTE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|g_object_class_install_property
