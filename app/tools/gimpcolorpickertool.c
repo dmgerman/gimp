@@ -954,6 +954,22 @@ name|options
 operator|->
 name|pick_mode
 expr_stmt|;
+name|GIMP_TOOL_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|oper_update
+argument_list|(
+name|tool
+argument_list|,
+name|coords
+argument_list|,
+name|state
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

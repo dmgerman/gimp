@@ -2149,7 +2149,7 @@ name|gimage
 operator|->
 name|sample_points
 operator|=
-name|g_list_prepend
+name|g_list_append
 argument_list|(
 name|undo
 operator|->
