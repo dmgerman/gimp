@@ -103,10 +103,6 @@ name|gdouble
 name|xscale
 decl_stmt|,
 name|yscale
-decl_stmt|,
-name|xres
-decl_stmt|,
-name|yres
 decl_stmt|;
 name|gint
 name|x

@@ -26,10 +26,14 @@ name|GimpCoords
 name|position
 decl_stmt|;
 DECL|member|type
-name|gint
+name|GimpAnchorType
 name|type
 decl_stmt|;
 comment|/* Interpretation dependant on GimpStroke type */
+DECL|member|selected
+name|gboolean
+name|selected
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -32,6 +32,22 @@ typedef|;
 end_typedef
 
 begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2c621b9b0103
+block|{
+DECL|enumerator|ANCHOR_HANDLE
+name|ANCHOR_HANDLE
+block|,
+DECL|enumerator|CONTROL_HANDLE
+name|CONTROL_HANDLE
+block|, }
+DECL|typedef|GimpAnchorType
+name|GimpAnchorType
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpStroke
 typedef|typedef
 name|struct
