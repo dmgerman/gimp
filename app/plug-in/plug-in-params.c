@@ -2676,6 +2676,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|p
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|plug_in_name
@@ -3117,9 +3121,9 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|"Plug-In \"%s\"\n(%s)\n\n"
+literal|"Plug-In \"%s\"\n(%s)\n"
 literal|"attempted to install procedure \"%s\" "
-literal|"in an invalid menu location.\n"
+literal|"in the invalid menu location \"%s\".\n"
 literal|"Use either \"<Toolbox>\", \"<Image>\", "
 literal|"\"<Load>\", or \"<Save>\"."
 argument_list|,
@@ -3134,6 +3138,65 @@ name|plug_in_prog
 argument_list|)
 argument_list|,
 name|procedure_name
+argument_list|,
+name|menu_path
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
+name|p
+operator|=
+name|strchr
+argument_list|(
+name|menu_path
+argument_list|,
+literal|'>'
+argument_list|)
+operator|+
+literal|1
+expr_stmt|;
+if|if
+condition|(
+operator|*
+name|p
+operator|!=
+literal|'/'
+operator|&&
+operator|*
+name|p
+operator|!=
+literal|'\0'
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|"Plug-In \"%s\"\n(%s)\n"
+literal|"attempted to install procedure \"%s\"\n"
+literal|"in the invalid menu location \"%s\".\n"
+literal|"The menu path must look like either \"<Prefix>\" "
+literal|"or \"<Prefix>/path/to/item\"."
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|plug_in_name
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|plug_in_prog
+argument_list|)
+argument_list|,
+name|procedure_name
+argument_list|,
+name|menu_path
 argument_list|)
 expr_stmt|;
 return|return
