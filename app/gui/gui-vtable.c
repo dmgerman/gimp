@@ -305,10 +305,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-specifier|const
-name|gchar
+name|PlugInProcDef
 modifier|*
-name|menu_path
+name|proc_def
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -944,22 +943,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gui_menus_delete_entry (Gimp * gimp,const gchar * menu_path)
+DECL|function|gui_menus_delete_entry (Gimp * gimp,PlugInProcDef * proc_def)
 name|gui_menus_delete_entry
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-specifier|const
-name|gchar
+name|PlugInProcDef
 modifier|*
-name|menu_path
+name|proc_def
 parameter_list|)
 block|{
 name|plug_in_menus_delete_entry
 argument_list|(
-name|menu_path
+name|proc_def
 argument_list|)
 expr_stmt|;
 block|}

@@ -80,10 +80,9 @@ begin_function_decl
 name|void
 name|plug_in_menus_delete_entry
 parameter_list|(
-specifier|const
-name|gchar
+name|PlugInProcDef
 modifier|*
-name|menu_path
+name|proc_def
 parameter_list|)
 function_decl|;
 end_function_decl

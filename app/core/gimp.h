@@ -200,10 +200,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-specifier|const
-name|gchar
+name|PlugInProcDef
 modifier|*
-name|menu_path
+name|proc_def
 parameter_list|)
 function_decl|;
 end_typedef
@@ -1152,10 +1151,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-specifier|const
-name|gchar
+name|PlugInProcDef
 modifier|*
-name|menu_path
+name|proc_def
 parameter_list|)
 function_decl|;
 end_function_decl

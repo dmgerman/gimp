@@ -2552,8 +2552,6 @@ argument_list|(
 name|gimp
 argument_list|,
 name|proc_def
-operator|->
-name|menu_path
 argument_list|)
 expr_stmt|;
 block|}

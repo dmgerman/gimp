@@ -845,13 +845,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_menus_delete_entry (const gchar * menu_path)
+DECL|function|plug_in_menus_delete_entry (PlugInProcDef * proc_def)
 name|plug_in_menus_delete_entry
 parameter_list|(
-specifier|const
-name|gchar
+name|PlugInProcDef
 modifier|*
-name|menu_path
+name|proc_def
 parameter_list|)
 block|{
 name|GList
@@ -864,6 +863,15 @@ name|path
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|proc_def
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|proc_def
+operator|->
 name|menu_path
 operator|!=
 name|NULL
@@ -873,6 +881,8 @@ name|path
 operator|=
 name|gimp_strip_uline
 argument_list|(
+name|proc_def
+operator|->
 name|menu_path
 argument_list|)
 expr_stmt|;
@@ -882,6 +892,8 @@ name|list
 operator|=
 name|gimp_item_factories_from_path
 argument_list|(
+name|proc_def
+operator|->
 name|menu_path
 argument_list|)
 init|;

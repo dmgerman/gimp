@@ -255,7 +255,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f21ed30103
+DECL|enum|__anon2c74e2790103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -4425,17 +4425,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_menus_delete_entry (Gimp * gimp,const gchar * menu_path)
+DECL|function|gimp_menus_delete_entry (Gimp * gimp,PlugInProcDef * proc_def)
 name|gimp_menus_delete_entry
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-specifier|const
-name|gchar
+name|PlugInProcDef
 modifier|*
-name|menu_path
+name|proc_def
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -4448,7 +4447,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|menu_path
+name|proc_def
 operator|!=
 name|NULL
 argument_list|)
@@ -4465,7 +4464,7 @@ name|gui_menus_delete_func
 argument_list|(
 name|gimp
 argument_list|,
-name|menu_path
+name|proc_def
 argument_list|)
 expr_stmt|;
 block|}
