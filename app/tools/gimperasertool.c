@@ -766,6 +766,12 @@ name|paint_func
 operator|=
 name|eraser_paint_func
 expr_stmt|;
+name|private
+operator|->
+name|flags
+operator||=
+name|TOOL_CAN_HANDLE_CHANGING_BRUSH
+expr_stmt|;
 name|tool
 operator|->
 name|modifier_key_func
