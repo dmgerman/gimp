@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b295f50108
+DECL|struct|__anon287f61920108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -133,7 +133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon29b295f5020a
+DECL|union|__anon287f6192020a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b295f50308
+DECL|struct|__anon287f61920308
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -254,7 +254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b295f50408
+DECL|struct|__anon287f61920408
 block|{
 DECL|member|cc
 name|GtkWidget
@@ -667,7 +667,7 @@ modifier|*
 name|command
 decl_stmt|;
 name|gint
-name|err
+name|my_err
 decl_stmt|;
 name|DIR
 modifier|*
@@ -884,7 +884,7 @@ expr_stmt|;
 block|}
 comment|/* else */
 comment|/* Check if directory exists and if it has any items in it */
-name|err
+name|my_err
 operator|=
 name|stat
 argument_list|(
@@ -897,7 +897,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|err
+name|my_err
 operator|&&
 name|S_ISDIR
 argument_list|(
@@ -1014,7 +1014,7 @@ literal|0
 condition|)
 block|{
 comment|/* Check the file and see that it is not a sub-directory */
-name|err
+name|my_err
 operator|=
 name|stat
 argument_list|(
@@ -1027,7 +1027,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|err
+name|my_err
 operator|&&
 name|S_ISREG
 argument_list|(
@@ -1175,7 +1175,7 @@ operator|<
 literal|7
 condition|)
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"Too few arguments to script-fu-register"
 argument_list|,
@@ -1563,7 +1563,7 @@ name|tc_flonum
 argument_list|)
 condition|)
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"script-fu-register: argument types must be integer values"
 argument_list|,
@@ -1595,7 +1595,7 @@ expr_stmt|;
 block|}
 else|else
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"script-fu-register: missing type specifier"
 argument_list|,
@@ -1623,7 +1623,7 @@ name|tc_string
 argument_list|)
 condition|)
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"script-fu-register: argument labels must be strings"
 argument_list|,
@@ -1658,7 +1658,7 @@ expr_stmt|;
 block|}
 else|else
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"script-fu-register: missing arguments label"
 argument_list|,
@@ -1708,7 +1708,7 @@ name|tc_flonum
 argument_list|)
 condition|)
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"script-fu-register: drawable defaults must be integer values"
 argument_list|,
@@ -1901,7 +1901,7 @@ name|tc_cons
 argument_list|)
 condition|)
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"script-fu-register: color defaults must be a list of 3 integers"
 argument_list|,
@@ -2111,7 +2111,7 @@ name|tc_flonum
 argument_list|)
 condition|)
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"script-fu-register: toggle default must be an integer value"
 argument_list|,
@@ -2215,7 +2215,7 @@ name|tc_string
 argument_list|)
 condition|)
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"script-fu-register: value defaults must be string values"
 argument_list|,
@@ -2294,7 +2294,7 @@ expr_stmt|;
 block|}
 else|else
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"script-fu-register: missing default argument"
 argument_list|,

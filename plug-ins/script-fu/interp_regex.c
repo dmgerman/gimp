@@ -119,7 +119,7 @@ name|ptr
 operator|,
 name|tc_regex
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"not a regular expression"
 argument_list|,
@@ -331,7 +331,7 @@ argument_list|)
 expr_stmt|;
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 name|errbuff
 argument_list|,

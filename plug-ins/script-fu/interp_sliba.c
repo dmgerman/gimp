@@ -1468,7 +1468,7 @@ name|fitsize
 operator|<
 name|fromlen
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"print to string overflow"
 argument_list|,
@@ -1494,7 +1494,7 @@ parameter_list|)
 block|{
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"not a string"
 argument_list|,
@@ -1605,7 +1605,7 @@ if|if NFLONUMP
 condition|(
 name|i
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"bad index to aref"
 argument_list|,
@@ -1628,7 +1628,7 @@ name|k
 operator|<
 literal|0
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"negative index to aref"
 argument_list|,
@@ -1658,7 +1658,7 @@ name|string
 operator|.
 name|dim
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"index too large"
 argument_list|,
@@ -1700,7 +1700,7 @@ name|double_array
 operator|.
 name|dim
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"index too large"
 argument_list|,
@@ -1739,7 +1739,7 @@ name|long_array
 operator|.
 name|dim
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"index too large"
 argument_list|,
@@ -1778,7 +1778,7 @@ name|lisp_array
 operator|.
 name|dim
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"index too large"
 argument_list|,
@@ -1802,7 +1802,7 @@ return|;
 default|default:
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"invalid argument to aref"
 argument_list|,
@@ -1823,7 +1823,7 @@ name|LISP
 name|i
 parameter_list|)
 block|{
-name|err
+name|my_err
 argument_list|(
 literal|"index to aset too large"
 argument_list|,
@@ -1842,7 +1842,7 @@ name|LISP
 name|v
 parameter_list|)
 block|{
-name|err
+name|my_err
 argument_list|(
 literal|"bad value to store in array"
 argument_list|,
@@ -1874,7 +1874,7 @@ if|if NFLONUMP
 condition|(
 name|i
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"bad index to aset"
 argument_list|,
@@ -1897,7 +1897,7 @@ name|k
 operator|<
 literal|0
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"negative index to aset"
 argument_list|,
@@ -2109,7 +2109,7 @@ return|;
 default|default:
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"invalid argument to aset"
 argument_list|,
@@ -2640,7 +2640,7 @@ operator|)
 condition|)
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"bad dimension to cons-array"
 argument_list|,
@@ -3068,7 +3068,7 @@ name|NIL
 expr_stmt|;
 block|}
 else|else
-name|err
+name|my_err
 argument_list|(
 literal|"bad type of array"
 argument_list|,
@@ -3432,7 +3432,7 @@ operator|>
 name|e
 operator|)
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"bad start index"
 argument_list|,
@@ -3453,7 +3453,7 @@ operator|>
 name|n
 operator|)
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"bad end index"
 argument_list|,
@@ -4024,7 +4024,7 @@ name|c
 operator|==
 name|EOF
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"eof after \\"
 argument_list|,
@@ -4109,7 +4109,7 @@ name|c
 operator|==
 name|EOF
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"eof after \\0"
 argument_list|,
@@ -4161,7 +4161,7 @@ operator|)
 operator|>=
 name|TKBUFFERN
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"read string overflow"
 argument_list|,
@@ -4356,7 +4356,7 @@ return|;
 default|default:
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"readsharp syntax not handled"
 argument_list|,
@@ -5572,7 +5572,7 @@ name|table
 operator|,
 name|tc_lisp_array
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"not a hash table"
 argument_list|,
@@ -5615,7 +5615,7 @@ name|dim
 operator|)
 condition|)
 block|{
-name|err
+name|my_err
 argument_list|(
 literal|"sxhash inconsistency"
 argument_list|,
@@ -5862,7 +5862,7 @@ operator|)
 return|;
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"improper list to assoc"
 argument_list|,
@@ -5958,7 +5958,7 @@ operator|)
 return|;
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"improper list to assv"
 argument_list|,
@@ -6530,7 +6530,7 @@ name|len
 operator|>=
 name|TKBUFFERN
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"symbol name too long"
 argument_list|,
@@ -6605,7 +6605,7 @@ return|;
 else|else
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"cannot fast-print"
 argument_list|,
@@ -6978,7 +6978,7 @@ name|len
 operator|>=
 name|TKBUFFERN
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"symbol name too long"
 argument_list|,
@@ -7041,7 +7041,7 @@ return|;
 else|else
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"unknown fast-read opcode"
 argument_list|,
@@ -7769,7 +7769,7 @@ if|if NFLONUMP
 condition|(
 name|x
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"not a number"
 argument_list|,
@@ -7803,7 +7803,7 @@ if|if NFLONUMP
 condition|(
 name|x
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"not a number"
 argument_list|,
@@ -8243,7 +8243,7 @@ name|len
 operator|>
 name|dim
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"write length too long"
 argument_list|,
@@ -8547,7 +8547,7 @@ if|if NNULLP
 condition|(
 name|l
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"improper list to length"
 argument_list|,
@@ -8560,7 +8560,7 @@ name|n
 operator|)
 return|;
 default|default:
-name|err
+name|my_err
 argument_list|(
 literal|"wta to length"
 argument_list|,
@@ -8637,7 +8637,7 @@ if|if NFLONUMP
 condition|(
 name|x
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta"
 argument_list|,
@@ -8672,7 +8672,7 @@ name|width
 operator|>
 literal|100
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"width too long"
 argument_list|,
@@ -8700,7 +8700,7 @@ name|prec
 operator|>
 literal|100
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"precision too large"
 argument_list|,
@@ -8963,7 +8963,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-name|err
+name|my_err
 argument_list|(
 literal|"number base not handled"
 argument_list|,
@@ -9191,7 +9191,7 @@ literal|10
 expr_stmt|;
 block|}
 else|else
-name|err
+name|my_err
 argument_list|(
 literal|"number base not handled"
 argument_list|,
@@ -9355,7 +9355,7 @@ name|slen
 operator|>
 name|ddim
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"string too long"
 argument_list|,
@@ -9454,7 +9454,7 @@ operator|)
 operator|>
 name|ddim
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"string too long"
 argument_list|,
@@ -10297,7 +10297,7 @@ name|n
 operator|%
 literal|4
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"illegal base64 data length"
 argument_list|,
@@ -10843,7 +10843,7 @@ operator|)
 return|;
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"improper list to memq"
 argument_list|,
@@ -10928,7 +10928,7 @@ operator|)
 return|;
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"improper list to member"
 argument_list|,
@@ -11013,7 +11013,7 @@ operator|)
 return|;
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"improper list to memv"
 argument_list|,
@@ -11095,7 +11095,7 @@ return|;
 else|else
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"bad arg to nth"
 argument_list|,
@@ -11639,7 +11639,7 @@ argument_list|(
 name|v1
 argument_list|)
 else|:
-name|err
+name|my_err
 argument_list|(
 literal|"bad arg to last"
 argument_list|,
@@ -11699,7 +11699,7 @@ if|if NULLP
 condition|(
 name|l
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"list is empty"
 argument_list|,
@@ -11746,7 +11746,7 @@ return|;
 block|}
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"not a list"
 argument_list|,
@@ -12042,7 +12042,7 @@ if|if NNULLP
 condition|(
 name|v
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"bad list to qsort"
 argument_list|,
@@ -12836,7 +12836,7 @@ return|;
 default|default:
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"mapcar case not handled"
 argument_list|,
@@ -12864,7 +12864,7 @@ if|if NFLONUMP
 condition|(
 name|x
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(1st) to fmod"
 argument_list|,
@@ -12875,7 +12875,7 @@ if|if NFLONUMP
 condition|(
 name|y
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(2nd) to fmod"
 argument_list|,
@@ -13066,7 +13066,7 @@ operator|)
 return|;
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"improper list to ass"
 argument_list|,
@@ -14100,7 +14100,7 @@ name|n
 operator|<
 literal|1
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"no object repeat count"
 argument_list|,
@@ -14257,7 +14257,7 @@ if|if NFLONUMP
 condition|(
 name|x
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(1st) to pow"
 argument_list|,
@@ -14268,7 +14268,7 @@ if|if NFLONUMP
 condition|(
 name|y
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(2nd) to pow"
 argument_list|,
@@ -14884,7 +14884,7 @@ name|LISP
 name|value
 parameter_list|)
 block|{
-name|err
+name|my_err
 argument_list|(
 literal|"not implemented"
 argument_list|,

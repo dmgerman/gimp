@@ -2857,7 +2857,7 @@ operator|==
 name|NIL
 condition|)
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"Procedure database argument marshaller was called with no arguments.  The procedure to be executed and the arguments it requires (possibly none) must be specified."
 argument_list|,
@@ -2939,7 +2939,7 @@ operator|==
 name|FALSE
 condition|)
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"Invalid procedure name specified."
 argument_list|,
@@ -2982,7 +2982,7 @@ name|nparams
 argument_list|)
 expr_stmt|;
 return|return
-name|err
+name|my_err
 argument_list|(
 name|error_str
 argument_list|,
@@ -3633,7 +3633,7 @@ operator|!=
 name|num_strings
 condition|)
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"String array argument has incorrectly specified length"
 argument_list|,
@@ -3815,7 +3815,7 @@ case|case
 name|PARAM_REGION
 case|:
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"Regions are currently unsupported as arguments"
 argument_list|,
@@ -4148,7 +4148,7 @@ case|case
 name|PARAM_BOUNDARY
 case|:
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"Boundaries are currently unsupported as arguments"
 argument_list|,
@@ -4163,7 +4163,7 @@ case|case
 name|PARAM_PATH
 case|:
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"Paths are currently unsupported as arguments"
 argument_list|,
@@ -4178,7 +4178,7 @@ case|case
 name|PARAM_STATUS
 case|:
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"Status is for return types, not arguments"
 argument_list|,
@@ -4191,7 +4191,7 @@ return|;
 break|break;
 default|default:
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"Unknown argument type"
 argument_list|,
@@ -4227,7 +4227,7 @@ argument_list|)
 expr_stmt|;
 else|else
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"Invalid types specified for arguments"
 argument_list|,
@@ -4261,7 +4261,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-name|err
+name|my_err
 argument_list|(
 name|error_str
 argument_list|,
@@ -4304,7 +4304,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-name|err
+name|my_err
 argument_list|(
 name|error_str
 argument_list|,
@@ -4335,7 +4335,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-name|err
+name|my_err
 argument_list|(
 name|error_str
 argument_list|,
@@ -4609,7 +4609,7 @@ case|case
 name|PARAM_INT16ARRAY
 case|:
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"Arrays are currently unsupported as return values"
 argument_list|,
@@ -4977,7 +4977,7 @@ case|case
 name|PARAM_REGION
 case|:
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"Regions are currently unsupported as return values"
 argument_list|,
@@ -5139,7 +5139,7 @@ case|case
 name|PARAM_BOUNDARY
 case|:
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"Boundaries are currently unsupported as return values"
 argument_list|,
@@ -5151,7 +5151,7 @@ case|case
 name|PARAM_PATH
 case|:
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"Paths are currently unsupported as return values"
 argument_list|,
@@ -5163,7 +5163,7 @@ case|case
 name|PARAM_STATUS
 case|:
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"Procedural database execution returned multiple status values"
 argument_list|,
@@ -5173,7 +5173,7 @@ return|;
 break|break;
 default|default:
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"Unknown return type"
 argument_list|,

@@ -30,10 +30,10 @@ name|short
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2bc86683010a
+DECL|union|__anon2c6e9fdd010a
 block|{
 struct|struct
-DECL|struct|__anon2bc866830208
+DECL|struct|__anon2c6e9fdd0208
 block|{
 DECL|member|car
 name|struct
@@ -52,7 +52,7 @@ DECL|member|cons
 name|cons
 struct|;
 struct|struct
-DECL|struct|__anon2bc866830308
+DECL|struct|__anon2c6e9fdd0308
 block|{
 DECL|member|data
 name|double
@@ -63,7 +63,7 @@ DECL|member|flonum
 name|flonum
 struct|;
 struct|struct
-DECL|struct|__anon2bc866830408
+DECL|struct|__anon2c6e9fdd0408
 block|{
 DECL|member|pname
 name|char
@@ -81,7 +81,7 @@ DECL|member|symbol
 name|symbol
 struct|;
 struct|struct
-DECL|struct|__anon2bc866830508
+DECL|struct|__anon2c6e9fdd0508
 block|{
 DECL|member|name
 name|char
@@ -105,7 +105,7 @@ DECL|member|subr0
 name|subr0
 struct|;
 struct|struct
-DECL|struct|__anon2bc866830608
+DECL|struct|__anon2c6e9fdd0608
 block|{
 DECL|member|name
 name|char
@@ -131,7 +131,7 @@ DECL|member|subr1
 name|subr1
 struct|;
 struct|struct
-DECL|struct|__anon2bc866830708
+DECL|struct|__anon2c6e9fdd0708
 block|{
 DECL|member|name
 name|char
@@ -161,7 +161,7 @@ DECL|member|subr2
 name|subr2
 struct|;
 struct|struct
-DECL|struct|__anon2bc866830808
+DECL|struct|__anon2c6e9fdd0808
 block|{
 DECL|member|name
 name|char
@@ -195,7 +195,7 @@ DECL|member|subr3
 name|subr3
 struct|;
 struct|struct
-DECL|struct|__anon2bc866830908
+DECL|struct|__anon2c6e9fdd0908
 block|{
 DECL|member|name
 name|char
@@ -233,7 +233,7 @@ DECL|member|subr4
 name|subr4
 struct|;
 struct|struct
-DECL|struct|__anon2bc866830a08
+DECL|struct|__anon2c6e9fdd0a08
 block|{
 DECL|member|name
 name|char
@@ -275,7 +275,7 @@ DECL|member|subr5
 name|subr5
 struct|;
 struct|struct
-DECL|struct|__anon2bc866830b08
+DECL|struct|__anon2c6e9fdd0b08
 block|{
 DECL|member|name
 name|char
@@ -307,7 +307,7 @@ DECL|member|subrm
 name|subrm
 struct|;
 struct|struct
-DECL|struct|__anon2bc866830c08
+DECL|struct|__anon2c6e9fdd0c08
 block|{
 DECL|member|name
 name|char
@@ -334,7 +334,7 @@ DECL|member|subr
 name|subr
 struct|;
 struct|struct
-DECL|struct|__anon2bc866830d08
+DECL|struct|__anon2c6e9fdd0d08
 block|{
 DECL|member|env
 name|struct
@@ -353,7 +353,7 @@ DECL|member|closure
 name|closure
 struct|;
 struct|struct
-DECL|struct|__anon2bc866830e08
+DECL|struct|__anon2c6e9fdd0e08
 block|{
 DECL|member|dim
 name|long
@@ -369,7 +369,7 @@ DECL|member|long_array
 name|long_array
 struct|;
 struct|struct
-DECL|struct|__anon2bc866830f08
+DECL|struct|__anon2c6e9fdd0f08
 block|{
 DECL|member|dim
 name|long
@@ -385,7 +385,7 @@ DECL|member|double_array
 name|double_array
 struct|;
 struct|struct
-DECL|struct|__anon2bc866831008
+DECL|struct|__anon2c6e9fdd1008
 block|{
 DECL|member|dim
 name|long
@@ -401,7 +401,7 @@ DECL|member|string
 name|string
 struct|;
 struct|struct
-DECL|struct|__anon2bc866831108
+DECL|struct|__anon2c6e9fdd1108
 block|{
 DECL|member|dim
 name|long
@@ -419,7 +419,7 @@ DECL|member|lisp_array
 name|lisp_array
 struct|;
 struct|struct
-DECL|struct|__anon2bc866831208
+DECL|struct|__anon2c6e9fdd1208
 block|{
 DECL|member|f
 name|FILE
@@ -1334,7 +1334,7 @@ end_function_decl
 
 begin_function_decl
 name|LISP
-name|err
+name|my_err
 parameter_list|(
 name|char
 modifier|*

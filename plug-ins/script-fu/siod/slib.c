@@ -1336,7 +1336,7 @@ argument_list|,
 name|handle_sigfpe
 argument_list|)
 expr_stmt|;
-name|err
+name|my_err
 argument_list|(
 literal|"floating point exception"
 argument_list|,
@@ -1388,7 +1388,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|err
+name|my_err
 argument_list|(
 literal|"control-c interrupt"
 argument_list|,
@@ -2747,8 +2747,8 @@ end_decl_stmt
 
 begin_function
 name|LISP
-DECL|function|err (char * message,LISP x)
-name|err
+DECL|function|my_err (char * message,LISP x)
+name|my_err
 parameter_list|(
 name|char
 modifier|*
@@ -3137,7 +3137,7 @@ parameter_list|)
 block|{
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"BUG. Reached impossible case"
 argument_list|,
@@ -3159,7 +3159,7 @@ name|ptr
 parameter_list|)
 comment|/* The user could be given an option to continue here */
 block|{
-name|err
+name|my_err
 argument_list|(
 literal|"the currently assigned stack limit has been exceded"
 argument_list|,
@@ -3338,7 +3338,7 @@ name|data
 operator|)
 return|;
 else|else
-name|err
+name|my_err
 argument_list|(
 literal|"not a symbol or string"
 argument_list|,
@@ -3460,7 +3460,7 @@ name|data
 operator|)
 return|;
 default|default:
-name|err
+name|my_err
 argument_list|(
 literal|"not a symbol or string"
 argument_list|,
@@ -3505,7 +3505,7 @@ argument_list|,
 name|tc_string
 argument_list|)
 condition|)
-name|err
+name|my_err
 argument_list|(
 name|NULL
 argument_list|,
@@ -3513,7 +3513,7 @@ name|message
 argument_list|)
 expr_stmt|;
 else|else
-name|err
+name|my_err
 argument_list|(
 name|get_c_string
 argument_list|(
@@ -3539,7 +3539,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|err
+name|my_err
 argument_list|(
 literal|"ran out of storage"
 argument_list|,
@@ -3683,7 +3683,7 @@ return|;
 default|default:
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"wta to car"
 argument_list|,
@@ -3731,7 +3731,7 @@ return|;
 default|default:
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"wta to cdr"
 argument_list|,
@@ -3759,7 +3759,7 @@ if|if NCONSP
 condition|(
 name|cell
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta to setcar"
 argument_list|,
@@ -3795,7 +3795,7 @@ if|if NCONSP
 condition|(
 name|cell
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta to setcdr"
 argument_list|,
@@ -3959,7 +3959,7 @@ if|if NFLONUMP
 condition|(
 name|x
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(1st) to plus"
 argument_list|,
@@ -3970,7 +3970,7 @@ if|if NFLONUMP
 condition|(
 name|y
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(2nd) to plus"
 argument_list|,
@@ -4031,7 +4031,7 @@ if|if NFLONUMP
 condition|(
 name|x
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(1st) to times"
 argument_list|,
@@ -4042,7 +4042,7 @@ if|if NFLONUMP
 condition|(
 name|y
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(2nd) to times"
 argument_list|,
@@ -4084,7 +4084,7 @@ if|if NFLONUMP
 condition|(
 name|x
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(1st) to difference"
 argument_list|,
@@ -4113,7 +4113,7 @@ if|if NFLONUMP
 condition|(
 name|y
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(2nd) to difference"
 argument_list|,
@@ -4156,7 +4156,7 @@ if|if NFLONUMP
 condition|(
 name|x
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(1st) to quotient"
 argument_list|,
@@ -4186,7 +4186,7 @@ if|if NFLONUMP
 condition|(
 name|y
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(2nd) to quotient"
 argument_list|,
@@ -4229,7 +4229,7 @@ if|if NFLONUMP
 condition|(
 name|x
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta to abs"
 argument_list|,
@@ -4280,7 +4280,7 @@ if|if NFLONUMP
 condition|(
 name|x
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta to sqrt"
 argument_list|,
@@ -4320,7 +4320,7 @@ if|if NFLONUMP
 condition|(
 name|x
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(1st) to greaterp"
 argument_list|,
@@ -4331,7 +4331,7 @@ if|if NFLONUMP
 condition|(
 name|y
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(2nd) to greaterp"
 argument_list|,
@@ -4379,7 +4379,7 @@ if|if NFLONUMP
 condition|(
 name|x
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(1st) to lessp"
 argument_list|,
@@ -4390,7 +4390,7 @@ if|if NFLONUMP
 condition|(
 name|y
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(2nd) to lessp"
 argument_list|,
@@ -4438,7 +4438,7 @@ if|if NFLONUMP
 condition|(
 name|x
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(1st) to greaterp"
 argument_list|,
@@ -4449,7 +4449,7 @@ if|if NFLONUMP
 condition|(
 name|y
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(2nd) to greaterp"
 argument_list|,
@@ -4497,7 +4497,7 @@ if|if NFLONUMP
 condition|(
 name|x
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(1st) to lessp"
 argument_list|,
@@ -4508,7 +4508,7 @@ if|if NFLONUMP
 condition|(
 name|y
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(2nd) to lessp"
 argument_list|,
@@ -4565,7 +4565,7 @@ if|if NFLONUMP
 condition|(
 name|x
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(1st) to max"
 argument_list|,
@@ -4576,7 +4576,7 @@ if|if NFLONUMP
 condition|(
 name|y
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(2nd) to max"
 argument_list|,
@@ -4630,7 +4630,7 @@ if|if NFLONUMP
 condition|(
 name|x
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(1st) to min"
 argument_list|,
@@ -4641,7 +4641,7 @@ if|if NFLONUMP
 condition|(
 name|y
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(2nd) to min"
 argument_list|,
@@ -4854,7 +4854,7 @@ parameter_list|)
 block|{
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"unbound variable"
 argument_list|,
@@ -4884,7 +4884,7 @@ if|if NSYMBOLP
 condition|(
 name|x
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"not a symbol"
 argument_list|,
@@ -4951,7 +4951,7 @@ if|if NSYMBOLP
 condition|(
 name|x
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"not a symbol"
 argument_list|,
@@ -5047,7 +5047,7 @@ operator|*
 operator|)
 name|NULL
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"failed to allocate storage from system"
 argument_list|,
@@ -5879,7 +5879,7 @@ operator|<
 literal|1
 operator|)
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"invalid number of heaps"
 argument_list|,
@@ -6804,7 +6804,7 @@ operator|)
 return|;
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"improper list to assq"
 argument_list|,
@@ -6892,7 +6892,7 @@ index|]
 operator|)
 return|;
 else|else
-name|err
+name|my_err
 argument_list|(
 literal|"type number out of range"
 argument_list|,
@@ -6926,7 +6926,7 @@ name|x
 operator|>
 name|tc_user_max
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"ran out of user type codes"
 argument_list|,
@@ -8940,7 +8940,7 @@ name|gc_kind_copying
 operator|==
 literal|1
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"cannot perform operation with stop-and-copy GC mode. Use -g0\n"
 argument_list|,
@@ -9402,7 +9402,7 @@ if|if NCONSP
 condition|(
 name|l
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"bad syntax argument list"
 argument_list|,
@@ -9485,7 +9485,7 @@ if|if NNULLP
 condition|(
 name|v2
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"bad syntax argument list"
 argument_list|,
@@ -9621,7 +9621,7 @@ if|if NCONSP
 condition|(
 name|tmp
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"damaged frame"
 argument_list|,
@@ -9668,7 +9668,7 @@ if|if NCONSP
 condition|(
 name|al
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"too few arguments"
 argument_list|,
@@ -9727,7 +9727,7 @@ if|if NNULLP
 condition|(
 name|frame
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"damaged env"
 argument_list|,
@@ -9798,7 +9798,7 @@ parameter_list|)
 block|{
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"closure code type not valid"
 argument_list|,
@@ -11073,7 +11073,7 @@ goto|goto
 name|loop
 goto|;
 block|}
-name|err
+name|my_err
 argument_list|(
 literal|"bad function"
 argument_list|,
@@ -11423,7 +11423,7 @@ case|:
 case|case
 name|tc_symbol
 case|:
-name|err
+name|my_err
 argument_list|(
 literal|"cannot be applied"
 argument_list|,
@@ -11754,7 +11754,7 @@ operator|->
 name|leval
 condition|)
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"have eval, dont know apply"
 argument_list|,
@@ -11763,7 +11763,7 @@ argument_list|)
 return|;
 else|else
 return|return
-name|err
+name|my_err
 argument_list|(
 literal|"cannot be applied"
 argument_list|,
@@ -11796,7 +11796,7 @@ if|if NSYMBOLP
 condition|(
 name|var
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(non-symbol) to setvar"
 argument_list|,
@@ -11984,7 +11984,7 @@ if|if NSYMBOLP
 condition|(
 name|var
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(non-symbol) to define"
 argument_list|,
@@ -12785,7 +12785,7 @@ literal|2
 argument_list|)
 expr_stmt|;
 block|}
-name|err
+name|my_err
 argument_list|(
 literal|"no *catch found with this tag"
 argument_list|,
@@ -13514,7 +13514,7 @@ if|if NSYMBOLP
 condition|(
 name|s
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"wta(non-symbol) to symbolconc"
 argument_list|,
@@ -13539,7 +13539,7 @@ name|size
 operator|>
 name|TKBUFFERN
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"symbolconc buffer overflow"
 argument_list|,
@@ -14484,7 +14484,7 @@ if|if
 condition|(
 name|eoferr
 condition|)
-name|err
+name|my_err
 argument_list|(
 name|eoferr
 argument_list|,
@@ -14793,7 +14793,7 @@ return|;
 case|case
 literal|')'
 case|:
-name|err
+name|my_err
 argument_list|(
 literal|"unexpected close paren"
 argument_list|,
@@ -15056,7 +15056,7 @@ expr_stmt|;
 block|}
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 literal|"token larger than TKBUFFERN"
 argument_list|,
@@ -15147,7 +15147,7 @@ name|c
 operator|!=
 literal|')'
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"missing close paren"
 argument_list|,
@@ -15680,7 +15680,7 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-name|err
+name|my_err
 argument_list|(
 name|errmsg
 argument_list|,
@@ -15904,7 +15904,7 @@ name|p
 operator|,
 name|tc_c_file
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"not a file"
 argument_list|,
@@ -16732,7 +16732,7 @@ operator|=
 literal|"a"
 expr_stmt|;
 else|else
-name|err
+name|my_err
 argument_list|(
 literal|"bad argument to save-forms"
 argument_list|,
@@ -16866,7 +16866,7 @@ parameter_list|)
 block|{
 return|return
 operator|(
-name|err
+name|my_err
 argument_list|(
 name|NULL
 argument_list|,
@@ -16956,7 +16956,7 @@ if|if NNULLP
 condition|(
 name|l
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"improper formal argument list"
 argument_list|,
@@ -17176,7 +17176,7 @@ name|p
 operator|,
 name|tc_c_file
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"not a file"
 argument_list|,
@@ -17194,7 +17194,7 @@ name|c_file
 operator|.
 name|f
 condition|)
-name|err
+name|my_err
 argument_list|(
 literal|"file is closed"
 argument_list|,
@@ -19182,7 +19182,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|err
+name|my_err
 argument_list|(
 literal|"0"
 argument_list|,
