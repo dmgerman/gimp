@@ -130,6 +130,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_define
+DECL|macro|GIMP_HELP_ID
+define|#
+directive|define
+name|GIMP_HELP_ID
+value|(gimp_help_id_quark ())
+end_define
+
+begin_decl_stmt
+name|GQuark
+name|gimp_help_id_quark
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_macro
 name|G_END_DECLS
 end_macro
