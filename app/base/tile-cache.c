@@ -532,9 +532,16 @@ operator|!
 name|tile_cache_zorch_next
 argument_list|()
 condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"cache: unable to find room for a tile"
+argument_list|)
+expr_stmt|;
 goto|goto
 name|out
 goto|;
+block|}
 block|}
 comment|/* Note the increase in the number of bytes the cache        *  is referencing.        */
 name|cur_cache_size
@@ -917,6 +924,7 @@ name|Tile
 modifier|*
 name|tile
 decl_stmt|;
+comment|/* printf("cache zorch: %u/%u\n", cur_cache_size, cur_cache_dirty); */
 if|if
 condition|(
 name|clean_list

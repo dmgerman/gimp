@@ -182,6 +182,24 @@ literal|0
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|tile_share_count
+name|int
+name|tile_share_count
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|tile_active_count
+name|int
+name|tile_active_count
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 name|void
 DECL|function|tile_lock (Tile * tile)
@@ -248,6 +266,9 @@ name|tile
 argument_list|)
 expr_stmt|;
 block|}
+name|tile_active_count
+operator|++
+expr_stmt|;
 block|}
 name|TILE_MUTEX_UNLOCK
 argument_list|(
@@ -360,6 +381,9 @@ name|tile
 argument_list|)
 expr_stmt|;
 block|}
+name|tile_active_count
+operator|--
+expr_stmt|;
 block|}
 name|TILE_MUTEX_UNLOCK
 argument_list|(
@@ -385,9 +409,7 @@ name|tile
 operator|->
 name|data
 condition|)
-goto|goto
-name|out
-goto|;
+return|return;
 comment|/* Allocate the data for the tile.    */
 name|tile
 operator|->
@@ -403,8 +425,6 @@ name|tile
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|out
-label|:
 block|}
 end_function
 
@@ -419,6 +439,34 @@ modifier|*
 name|tile
 parameter_list|)
 block|{
+if|if
+condition|(
+name|tile
+operator|->
+name|ref_count
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"tried to destroy a ref'd tile"
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+if|if
+condition|(
+name|tile
+operator|->
+name|share_count
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"tried to destroy an attached tile"
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
 if|if
 condition|(
 name|tile
@@ -570,6 +618,9 @@ block|}
 name|tile
 operator|->
 name|share_count
+operator|++
+expr_stmt|;
+name|tile_share_count
 operator|++
 expr_stmt|;
 ifdef|#
@@ -751,6 +802,9 @@ name|g_free
 argument_list|(
 name|tmp
 argument_list|)
+expr_stmt|;
+name|tile_share_count
+operator|--
 expr_stmt|;
 name|tile
 operator|->
