@@ -3066,7 +3066,7 @@ literal|1
 argument_list|,
 name|gimage
 operator|->
-name|width
+name|height
 operator|/
 literal|2
 argument_list|)
