@@ -139,7 +139,7 @@ value|0.5
 end_define
 
 begin_comment
-comment|/*  base objects  */
+comment|/*  base classes  */
 end_comment
 
 begin_typedef
@@ -148,42 +148,6 @@ typedef|typedef
 name|struct
 name|_GimpObject
 name|GimpObject
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|Gimp
-typedef|typedef
-name|struct
-name|_Gimp
-name|Gimp
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpContainer
-typedef|typedef
-name|struct
-name|_GimpContainer
-name|GimpContainer
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpList
-typedef|typedef
-name|struct
-name|_GimpList
-name|GimpList
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpContext
-typedef|typedef
-name|struct
-name|_GimpContext
-name|GimpContext
 typedef|;
 end_typedef
 
@@ -206,6 +170,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|Gimp
+typedef|typedef
+name|struct
+name|_Gimp
+name|Gimp
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpImage
 typedef|typedef
 name|struct
@@ -215,51 +188,86 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/*  item objects  */
+comment|/*  containers  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpDrawable
+DECL|typedef|GimpContainer
 typedef|typedef
 name|struct
-name|_GimpDrawable
-name|GimpDrawable
+name|_GimpContainer
+name|GimpContainer
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpChannel
+DECL|typedef|GimpList
 typedef|typedef
 name|struct
-name|_GimpChannel
-name|GimpChannel
+name|_GimpList
+name|GimpList
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpSelection
+DECL|typedef|GimpDocumentList
 typedef|typedef
 name|struct
-name|_GimpSelection
-name|GimpSelection
+name|_GimpDocumentList
+name|GimpDocumentList
+typedef|;
+end_typedef
+
+begin_comment
+comment|/*  context objects  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpContext
+typedef|typedef
+name|struct
+name|_GimpContext
+name|GimpContext
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpLayer
+DECL|typedef|GimpStrokeOptions
 typedef|typedef
 name|struct
-name|_GimpLayer
-name|GimpLayer
+name|_GimpStrokeOptions
+name|GimpStrokeOptions
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpLayerMask
+DECL|typedef|GimpToolOptions
 typedef|typedef
 name|struct
-name|_GimpLayerMask
-name|GimpLayerMask
+name|_GimpToolOptions
+name|GimpToolOptions
+typedef|;
+end_typedef
+
+begin_comment
+comment|/*  info objects  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpPaintInfo
+typedef|typedef
+name|struct
+name|_GimpPaintInfo
+name|GimpPaintInfo
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpToolInfo
+typedef|typedef
+name|struct
+name|_GimpToolInfo
+name|GimpToolInfo
 typedef|;
 end_typedef
 
@@ -340,6 +348,55 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/*  drawable objects  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpDrawable
+typedef|typedef
+name|struct
+name|_GimpDrawable
+name|GimpDrawable
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpChannel
+typedef|typedef
+name|struct
+name|_GimpChannel
+name|GimpChannel
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpSelection
+typedef|typedef
+name|struct
+name|_GimpSelection
+name|GimpSelection
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpLayer
+typedef|typedef
+name|struct
+name|_GimpLayer
+name|GimpLayer
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpLayerMask
+typedef|typedef
+name|struct
+name|_GimpLayerMask
+name|GimpLayerMask
+typedef|;
+end_typedef
+
+begin_comment
 comment|/*  undo objects  */
 end_comment
 
@@ -380,46 +437,6 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/*  info& option objects  */
-end_comment
-
-begin_typedef
-DECL|typedef|GimpPaintInfo
-typedef|typedef
-name|struct
-name|_GimpPaintInfo
-name|GimpPaintInfo
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpToolInfo
-typedef|typedef
-name|struct
-name|_GimpToolInfo
-name|GimpToolInfo
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpStrokeOptions
-typedef|typedef
-name|struct
-name|_GimpStrokeOptions
-name|GimpStrokeOptions
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpToolOptions
-typedef|typedef
-name|struct
-name|_GimpToolOptions
-name|GimpToolOptions
-typedef|;
-end_typedef
-
-begin_comment
 comment|/*  misc objects  */
 end_comment
 
@@ -431,6 +448,19 @@ name|_GimpBuffer
 name|GimpBuffer
 typedef|;
 end_typedef
+
+begin_typedef
+DECL|typedef|GimpEnvironTable
+typedef|typedef
+name|struct
+name|_GimpEnvironTable
+name|GimpEnvironTable
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* typedef struct _GimpGrid         GimpGrid; in config-types.h */
+end_comment
 
 begin_typedef
 DECL|typedef|GimpImagefile
@@ -451,24 +481,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpDocumentList
-typedef|typedef
-name|struct
-name|_GimpDocumentList
-name|GimpDocumentList
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpEnvironTable
-typedef|typedef
-name|struct
-name|_GimpEnvironTable
-name|GimpEnvironTable
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpParasiteList
 typedef|typedef
 name|struct
@@ -485,6 +497,10 @@ name|_GimpProjection
 name|GimpProjection
 typedef|;
 end_typedef
+
+begin_comment
+comment|/* typedef struct _GimpTemplate     GimpTemplate; in config-types.h */
+end_comment
 
 begin_comment
 comment|/*  interfaces  */

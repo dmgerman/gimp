@@ -55,6 +55,10 @@ name|GimpDisplayShell
 typedef|;
 end_typedef
 
+begin_comment
+comment|/* typedef struct _GimpDisplayOptions GimpDisplayOptions; in config-types.h */
+end_comment
+
 begin_typedef
 DECL|typedef|GimpNavigationView
 typedef|typedef

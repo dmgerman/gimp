@@ -31,15 +31,6 @@ comment|/* dummy typedef */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpConfigInterface
-typedef|typedef
-name|struct
-name|_GimpConfigInterface
-name|GimpConfigInterface
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpBaseConfig
 typedef|typedef
 name|struct
@@ -111,6 +102,10 @@ name|GimpXmlParser
 typedef|;
 end_typedef
 
+begin_comment
+comment|/* should be in display/display-types.h */
+end_comment
+
 begin_typedef
 DECL|typedef|GimpDisplayOptions
 typedef|typedef
@@ -119,6 +114,10 @@ name|_GimpDisplayOptions
 name|GimpDisplayOptions
 typedef|;
 end_typedef
+
+begin_comment
+comment|/* should be in core/core-types.h */
+end_comment
 
 begin_typedef
 DECL|typedef|GimpGrid

@@ -57,6 +57,15 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_INTERFACE ((obj), GIMP_TYPE_CONFIG, GimpConfigInterface))
 end_define
 
+begin_typedef
+DECL|typedef|GimpConfigInterface
+typedef|typedef
+name|struct
+name|_GimpConfigInterface
+name|GimpConfigInterface
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpConfigInterface
 struct|struct
