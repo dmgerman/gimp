@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * gimppropwidgets.h  * Copyright (C) 2002 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
@@ -15,6 +15,10 @@ define|#
 directive|define
 name|__GIMP_PROP_WIDGETS_H__
 end_define
+
+begin_comment
+comment|/*  GParamBoolean  */
+end_comment
 
 begin_function_decl
 name|GtkWidget
@@ -37,6 +41,37 @@ name|label
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_prop_boolean_option_menu_new
+parameter_list|(
+name|GObject
+modifier|*
+name|config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|property_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|true_text
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|false_text
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  GParamEnum  */
+end_comment
 
 begin_function_decl
 name|GtkWidget
@@ -106,32 +141,9 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|GtkWidget
-modifier|*
-name|gimp_prop_boolean_option_menu_new
-parameter_list|(
-name|GObject
-modifier|*
-name|config
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|property_name
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|true_text
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|false_text
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_comment
+comment|/*  GParamInt, GParamUInt, GParamLong, GParamULong, GParamDouble  */
+end_comment
 
 begin_function_decl
 name|GtkWidget
@@ -159,6 +171,10 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  GimpParamMemsize  */
+end_comment
+
 begin_function_decl
 name|GtkWidget
 modifier|*
@@ -172,6 +188,30 @@ specifier|const
 name|gchar
 modifier|*
 name|property_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  GParamString  */
+end_comment
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_prop_entry_new
+parameter_list|(
+name|GObject
+modifier|*
+name|config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|property_name
+parameter_list|,
+name|gint
+name|max_len
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -195,6 +235,10 @@ name|max_len
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  GimpParamPath  */
+end_comment
 
 begin_function_decl
 name|GtkWidget
@@ -245,6 +289,10 @@ name|filesel_title
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  x,y: GParamInt, GParamDouble   unit: GimpParamUnit  */
+end_comment
 
 begin_function_decl
 name|GtkWidget
