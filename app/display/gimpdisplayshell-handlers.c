@@ -99,6 +99,14 @@ directive|include
 file|"gimpstatusbar.h"
 end_include
 
+begin_define
+DECL|macro|GIMP_DISPLAY_UPDATE_ICON_TIMEOUT
+define|#
+directive|define
+name|GIMP_DISPLAY_UPDATE_ICON_TIMEOUT
+value|1000
+end_define
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -1520,9 +1528,11 @@ name|shell
 operator|->
 name|icon_idle_id
 operator|=
-name|g_idle_add_full
+name|g_timeout_add_full
 argument_list|(
 name|G_PRIORITY_LOW
+argument_list|,
+name|GIMP_DISPLAY_UPDATE_ICON_TIMEOUT
 argument_list|,
 name|gimp_display_shell_idle_update_icon
 argument_list|,
