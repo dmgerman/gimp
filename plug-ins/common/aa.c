@@ -58,7 +58,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
-comment|/*   * Declare some local functions.  */
+comment|/*  * Declare some local functions.  */
 end_comment
 
 begin_function_decl
@@ -176,7 +176,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*   * Some global variables.  */
+comment|/*  * Some global variables.  */
 end_comment
 
 begin_decl_stmt
@@ -982,6 +982,18 @@ name|drawable
 operator|->
 name|bpp
 expr_stmt|;
+name|gimp_tile_cache_ntiles
+argument_list|(
+operator|(
+name|width
+operator|/
+name|gimp_tile_width
+argument_list|()
+operator|)
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -1306,7 +1318,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   * User Interface dialog thingie.  */
+comment|/*  * User Interface dialog thingie.  */
 end_comment
 
 begin_function
@@ -1690,6 +1702,7 @@ operator|=
 name|get_type_from_string
 argument_list|(
 operator|(
+specifier|const
 name|gchar
 operator|*
 operator|)
