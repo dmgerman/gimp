@@ -6023,7 +6023,7 @@ decl_stmt|;
 name|guchar
 name|bg
 init|=
-literal|0
+name|TRANSPARENT_OPACITY
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -6222,7 +6222,7 @@ decl_stmt|;
 name|guchar
 name|bg
 init|=
-literal|255
+name|OPAQUE_OPACITY
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(

@@ -16,21 +16,21 @@ directive|define
 name|__CURVES_H__
 end_define
 
-begin_define
-DECL|macro|CURVES_SMOOTH
-define|#
-directive|define
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon29fabdbc0103
+block|{
+DECL|enumerator|CURVES_SMOOTH
 name|CURVES_SMOOTH
-value|0
-end_define
-
-begin_define
-DECL|macro|CURVES_FREE
-define|#
-directive|define
+block|,
+DECL|enumerator|CURVES_FREE
 name|CURVES_FREE
-value|1
-end_define
+block|, }
+DECL|typedef|CurvesType
+name|CurvesType
+typedef|;
+end_typedef
 
 begin_struct
 DECL|struct|_Curves
@@ -38,7 +38,7 @@ struct|struct
 name|_Curves
 block|{
 DECL|member|curve_type
-name|gint
+name|CurvesType
 name|curve_type
 index|[
 literal|5
