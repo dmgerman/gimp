@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e16700108
+DECL|struct|__anon2bf89cc50108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e16700208
+DECL|struct|__anon2bf89cc50208
 block|{
 DECL|member|run
 name|gboolean
@@ -1224,7 +1224,7 @@ argument_list|(
 name|drawable_ID
 argument_list|)
 expr_stmt|;
-comment|/* 	   * If the image has no transparency, then there is usually 	   * no need to save a bKGD chunk.  For more information, see: 	   * http://bugzilla.gnome.org/show_bug.cgi?id=92395 	   */
+comment|/*            * If the image has no transparency, then there is usually            * no need to save a bKGD chunk.  For more information, see:            * http://bugzilla.gnome.org/show_bug.cgi?id=92395            */
 if|if
 condition|(
 operator|!
@@ -2569,7 +2569,6 @@ operator|-
 literal|1
 return|;
 block|}
-empty_stmt|;
 name|image
 operator|=
 name|gimp_image_new
@@ -2607,7 +2606,6 @@ name|gimp_quit
 argument_list|()
 expr_stmt|;
 block|}
-empty_stmt|;
 comment|/*    * Create the "background" layer to hold the image...    */
 name|layer
 operator|=
@@ -3271,40 +3269,6 @@ argument_list|,
 name|num
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|num_passes
-operator|==
-literal|1
-condition|)
-block|{
-for|for
-control|(
-name|i
-operator|=
-literal|0
-init|;
-name|i
-operator|<
-name|num
-condition|;
-name|i
-operator|++
-control|)
-name|png_read_row
-argument_list|(
-name|pp
-argument_list|,
-name|pixels
-index|[
-name|i
-index|]
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-block|}
-else|else
 name|png_read_rows
 argument_list|(
 name|pp
@@ -3362,9 +3326,7 @@ name|num_passes
 argument_list|)
 expr_stmt|;
 block|}
-empty_stmt|;
 block|}
-empty_stmt|;
 name|png_read_end
 argument_list|(
 name|pp
@@ -4462,7 +4424,6 @@ return|return
 literal|0
 return|;
 block|}
-empty_stmt|;
 comment|/*    * Fix bit depths for (possibly) smaller colormap images    */
 if|if
 condition|(
@@ -5338,9 +5299,7 @@ name|num_passes
 argument_list|)
 expr_stmt|;
 block|}
-empty_stmt|;
 block|}
-empty_stmt|;
 name|png_write_end
 argument_list|(
 name|pp
