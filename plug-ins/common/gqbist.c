@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Written 1997 Jens Ch. Restemeier<jrestemeier@currantbun.com>  * This program is based on an algorithm / article by  * Jörn Loviscach.  *  * It appeared in c't 10/95, page 326 and is called   * "Ausgewürfelt - Moderne Kunst algorithmisch erzeugen".  * (~modern art created with algorithms)  *   * It generates one main formula (the middle button) and 8 variations of it.  * If you select a variation it becomes the new main formula. If you  * press "OK" the main formula will be applied to the image.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,   * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * Written 1997 Jens Ch. Restemeier<jrestemeier@currantbun.com>  * This program is based on an algorithm / article by  * Jörn Loviscach.  *  * It appeared in c't 10/95, page 326 and is called   * "Ausgewürfelt - Moderne Kunst algorithmisch erzeugen"  * (~modern art created with algorithms).  *   * It generates one main formula (the middle button) and 8 variations of it.  * If you select a variation it becomes the new main formula. If you  * press "OK" the main formula will be applied to the image.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,   * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_comment
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb9db5b0103
+DECL|enum|__anon2c3d53050103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -202,7 +202,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb9db5b0208
+DECL|struct|__anon2c3d53050208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -241,7 +241,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb9db5b0308
+DECL|struct|__anon2c3d53050308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -2207,11 +2207,11 @@ name|PLUG_IN_NAME
 argument_list|,
 literal|"Create images based on a random genetic formula"
 argument_list|,
-literal|"This Plug-in is based on an article by Jörn Loviscach (appeared in c't 10/95, page 326). It generates modern art pictures from a random genetic formula."
+literal|"This Plug-in is based on an article by JÃ¶rn Loviscach (appeared in c't 10/95, page 326). It generates modern art pictures from a random genetic formula."
 argument_list|,
-literal|"Jörn Loviscach, Jens Ch. Restemeier"
+literal|"JÃ¶rn Loviscach, Jens Ch. Restemeier"
 argument_list|,
-literal|"Jörn Loviscach, Jens Ch. Restemeier"
+literal|"JÃ¶rn Loviscach, Jens Ch. Restemeier"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,

@@ -819,6 +819,22 @@ name|NULL
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|g_utf8_validate
+argument_list|(
+name|buffer
+operator|->
+name|str
+argument_list|,
+name|buffer
+operator|->
+name|len
+argument_list|,
+name|NULL
+argument_list|)
+condition|)
+block|{
 name|gimp_object_set_name
 argument_list|(
 name|GIMP_OBJECT
@@ -831,6 +847,33 @@ operator|->
 name|str
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Invalid UTF-8 string in GIMP brush file \"%s\"."
+argument_list|)
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_object_set_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|pipe
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Unnamed"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 name|g_string_free
 argument_list|(
@@ -847,7 +890,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Couldn't read name for brush pipe from file '%s'\n"
+literal|"Couldn't read name for brush pipe from file \"%s\".\n"
 argument_list|,
 name|filename
 argument_list|)
