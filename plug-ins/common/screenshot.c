@@ -112,7 +112,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c70321b0108
+DECL|struct|__anon29873bc00108
 block|{
 DECL|member|root
 name|gboolean
@@ -799,7 +799,7 @@ name|gint
 name|pid
 decl_stmt|;
 name|gint
-name|wret
+name|wpid
 decl_stmt|;
 name|gint
 name|status
@@ -1011,7 +1011,7 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-name|wret
+name|wpid
 operator|=
 name|waitpid
 argument_list|(
@@ -1026,7 +1026,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|wret
+name|wpid
 operator|<
 literal|0
 operator|)
