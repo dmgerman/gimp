@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba4de1c0108
+DECL|struct|__anon28f9a4810108
 block|{
 DECL|member|interlaced
 name|gint
@@ -2367,6 +2367,10 @@ break|break;
 case|case
 name|INDEXED_IMAGE
 case|:
+name|bpp
+operator|=
+literal|1
+expr_stmt|;
 name|info
 operator|->
 name|valid
@@ -2400,10 +2404,21 @@ name|num_palette
 operator|=
 name|num_colors
 expr_stmt|;
-name|bpp
-operator|=
-literal|1
+break|break;
+case|case
+name|INDEXEDA_IMAGE
+case|:
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Can't save image with alpha\n"
+argument_list|)
+argument_list|)
 expr_stmt|;
+return|return
+literal|0
+return|;
 break|break;
 default|default:
 name|abort
