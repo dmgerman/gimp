@@ -4,7 +4,7 @@ comment|/*  * Adam D. Moss : 1998 : adam@gimp.org : adam@foxbox.org  *  * This i
 end_comment
 
 begin_comment
-comment|/*  *     Version 1.02 : 98.07.18  *  * 1.02:  * Massive speedup if you have a very recent version of GTK 1.1.  * Removed possible div-by-0 errors, took the plugin out  * of hiding (guess we need a new easter-egg for GIMP 1.2!)  */
+comment|/*  * Version 1.03 : 98.07.27  *  * 1.03:  * Fix for pseudocolor displays w/gdkrgb.  *  * 1.02:  * Massive speedup if you have a very recent version of GTK 1.1.  * Removed possible div-by-0 errors, took the plugin out  * of hiding (guess we need a new easter-egg for GIMP 1.2!)  */
 end_comment
 
 begin_include
@@ -795,6 +795,23 @@ name|gimp_use_xshm
 argument_list|()
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|RAPH_IS_HOME
+name|gtk_widget_set_default_visual
+argument_list|(
+name|gdk_rgb_get_visual
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_default_colormap
+argument_list|(
+name|gdk_rgb_get_cmap
+argument_list|()
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|gtk_preview_set_gamma
 argument_list|(
 name|gimp_gamma
@@ -847,6 +864,8 @@ name|gtk_preview_get_cmap
 argument_list|()
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|dlg
 operator|=
 name|gtk_dialog_new
