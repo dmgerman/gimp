@@ -244,26 +244,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_file_dialog_set_uri
-parameter_list|(
-name|GimpFileDialog
-modifier|*
-name|dialog
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|uri
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_file_dialog_set_image
 parameter_list|(
 name|GimpFileDialog
