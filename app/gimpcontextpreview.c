@@ -375,7 +375,7 @@ comment|/*  signals  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b5ffe110103
+DECL|enum|__anon29b754330103
 enum|enum
 block|{
 DECL|enumerator|CLICKED
@@ -1172,8 +1172,6 @@ name|gcp
 argument_list|)
 argument_list|,
 name|GDK_BUTTON1_MASK
-operator||
-name|GDK_BUTTON3_MASK
 argument_list|,
 name|context_preview_target_table
 index|[
@@ -2176,11 +2174,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gtk_widget_realize
-argument_list|(
-name|gcp_drag_window
-argument_list|)
-expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -2231,6 +2224,11 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|gcp_drag_preview
+argument_list|)
+expr_stmt|;
+name|gtk_widget_realize
+argument_list|(
+name|gcp_drag_window
 argument_list|)
 expr_stmt|;
 block|}
