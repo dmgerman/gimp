@@ -80,7 +80,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4bbc020103
+DECL|enum|__anon2958a9150103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -1383,7 +1383,7 @@ operator|->
 name|file_dialog
 argument_list|)
 argument_list|,
-literal|"gimp-file-entry-file-selection"
+literal|"gimp-file-entry-file-dialog"
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
