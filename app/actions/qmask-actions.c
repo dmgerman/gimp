@@ -305,26 +305,6 @@ argument_list|,
 literal|"<Actions>/qmask/qmask-toggle"
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: remove accel_path hack
-endif|#
-directive|endif
-name|g_object_set_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|action
-argument_list|)
-argument_list|,
-literal|"gimp-accel-path"
-argument_list|,
-literal|"<Actions>/qmask/qmask-toggle"
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
