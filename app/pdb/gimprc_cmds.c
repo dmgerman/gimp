@@ -264,7 +264,6 @@ condition|(
 name|success
 condition|)
 block|{
-comment|/*  use edit_config so we get the values back we have set using        *  gimprc_set() before        */
 name|success
 operator|=
 operator|(
@@ -276,7 +275,7 @@ name|GIMP_RC
 argument_list|(
 name|gimp
 operator|->
-name|edit_config
+name|config
 argument_list|)
 argument_list|,
 name|token
@@ -499,14 +498,13 @@ condition|(
 name|success
 condition|)
 block|{
-comment|/*  set the value in edit_config so we don't accidentially set        *  GIMP_PARAM_RESTART values via the PDB        */
 name|gimp_config_add_unknown_token
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
 name|gimp
 operator|->
-name|edit_config
+name|config
 argument_list|)
 argument_list|,
 name|token
