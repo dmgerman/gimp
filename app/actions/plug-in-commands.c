@@ -383,20 +383,6 @@ return|return;
 block|}
 block|}
 block|}
-else|else
-block|{
-name|g_warning
-argument_list|(
-literal|"Uh-oh, no active display for the plug-in!"
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|args
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
 block|}
 break|break;
 default|default:

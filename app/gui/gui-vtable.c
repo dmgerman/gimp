@@ -1179,6 +1179,8 @@ block|{
 name|GimpDisplay
 modifier|*
 name|gdisp
+init|=
+name|NULL
 decl_stmt|;
 name|GdkScreen
 modifier|*
@@ -1187,6 +1189,12 @@ decl_stmt|;
 name|gint
 name|monitor
 decl_stmt|;
+if|if
+condition|(
+name|gdisp_ID
+operator|>
+literal|0
+condition|)
 name|gdisp
 operator|=
 name|gimp_display_get_by_ID

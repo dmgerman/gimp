@@ -365,6 +365,7 @@ operator|==
 operator|-
 literal|1
 condition|)
+block|{
 name|image
 operator|=
 name|images
@@ -372,6 +373,7 @@ index|[
 name|i
 index|]
 expr_stmt|;
+block|}
 name|k
 operator|+=
 literal|1
@@ -388,19 +390,12 @@ argument_list|(
 name|menu
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|image
-operator|!=
-operator|-
-literal|1
-condition|)
 call|(
 modifier|*
 name|callback
 call|)
 argument_list|(
-name|active_image
+name|image
 argument_list|,
 name|data
 argument_list|)
@@ -680,6 +675,7 @@ operator|==
 operator|-
 literal|1
 condition|)
+block|{
 name|layer
 operator|=
 name|layers
@@ -687,6 +683,7 @@ index|[
 name|j
 index|]
 expr_stmt|;
+block|}
 name|k
 operator|+=
 literal|1
@@ -719,13 +716,6 @@ argument_list|(
 name|menu
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|layer
-operator|!=
-operator|-
-literal|1
-condition|)
 call|(
 modifier|*
 name|callback
@@ -1008,6 +998,7 @@ operator|==
 operator|-
 literal|1
 condition|)
+block|{
 name|channel
 operator|=
 name|channels
@@ -1015,6 +1006,7 @@ index|[
 name|j
 index|]
 expr_stmt|;
+block|}
 name|k
 operator|+=
 literal|1
@@ -1047,13 +1039,6 @@ argument_list|(
 name|menu
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|channel
-operator|!=
-operator|-
-literal|1
-condition|)
 call|(
 modifier|*
 name|callback
@@ -1347,6 +1332,7 @@ operator|==
 operator|-
 literal|1
 condition|)
+block|{
 name|drawable
 operator|=
 name|layers
@@ -1354,6 +1340,7 @@ index|[
 name|j
 index|]
 expr_stmt|;
+block|}
 name|k
 operator|+=
 literal|1
@@ -1458,6 +1445,7 @@ operator|==
 operator|-
 literal|1
 condition|)
+block|{
 name|drawable
 operator|=
 name|channels
@@ -1465,6 +1453,7 @@ index|[
 name|j
 index|]
 expr_stmt|;
+block|}
 name|k
 operator|+=
 literal|1
@@ -1502,13 +1491,6 @@ argument_list|(
 name|menu
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|drawable
-operator|!=
-operator|-
-literal|1
-condition|)
 call|(
 modifier|*
 name|callback
