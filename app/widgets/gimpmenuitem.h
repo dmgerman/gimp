@@ -106,6 +106,11 @@ DECL|member|preview_size
 name|gint
 name|preview_size
 decl_stmt|;
+comment|/*< private>*/
+DECL|member|get_name_func
+name|GimpItemGetNameFunc
+name|get_name_func
+decl_stmt|;
 block|}
 struct|;
 DECL|struct|_GimpMenuItemClass
@@ -150,6 +155,17 @@ name|viewable
 parameter_list|,
 name|gint
 name|preview_size
+parameter_list|)
+function_decl|;
+name|void
+name|gimp_menu_item_set_name_func
+parameter_list|(
+name|GimpMenuItem
+modifier|*
+name|menu_item
+parameter_list|,
+name|GimpItemGetNameFunc
+name|get_name_func
 parameter_list|)
 function_decl|;
 ifdef|#

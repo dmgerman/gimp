@@ -120,6 +120,10 @@ DECL|member|drop_type
 name|GimpDropType
 name|drop_type
 decl_stmt|;
+DECL|member|get_name_func
+name|GimpItemGetNameFunc
+name|get_name_func
+decl_stmt|;
 block|}
 struct|;
 DECL|struct|_GimpListItemClass
@@ -191,6 +195,17 @@ parameter_list|,
 name|GimpContainer
 modifier|*
 name|container
+parameter_list|)
+function_decl|;
+name|void
+name|gimp_list_item_set_name_func
+parameter_list|(
+name|GimpListItem
+modifier|*
+name|list_item
+parameter_list|,
+name|GimpItemGetNameFunc
+name|get_name_func
 parameter_list|)
 function_decl|;
 comment|/*  protected  */

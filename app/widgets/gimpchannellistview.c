@@ -1288,6 +1288,16 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_queue_resize
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|view
+operator|->
+name|component_frame
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
