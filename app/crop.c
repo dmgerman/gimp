@@ -3731,10 +3731,6 @@ name|Channel
 modifier|*
 name|channel
 decl_stmt|;
-name|GimpDrawable
-modifier|*
-name|drawable
-decl_stmt|;
 name|GList
 modifier|*
 name|guide_list_ptr
