@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* Sparkle --- image filter plug-in for The Gimp image manipulation program  * Copyright (C) 1996 by John Beale;  ported to Gimp by Michael J. Hammel;  * It has been optimized a little, bugfixed and modified by Martin Weber  * for additional functionality.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * You can contact Michael at mjhammel@csn.net  * You can contact Martin at martweb@gmx.net  * Note: set tabstops to 3 to make this more readable.  */
+comment|/* Sparkle --- image filter plug-in for The Gimp image manipulation program  * Copyright (C) 1996 by John Beale;  ported to Gimp by Michael J. Hammel;  * It has been optimized a little, bugfixed and modified by Martin Weber  * for additional functionality.  Also bugfixed by Seth Burgess (9/17/03)   * to take rowstrides into account when selections are present (bug #50911).  * Attempted reformatting.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * You can contact Michael at mjhammel@csn.net  * You can contact Martin at martweb@gmx.net  * You can contact Seth at sjburges@gimp.org  */
 end_comment
 
 begin_comment
-comment|/*  * Sparkle 1.26 - simulate pixel bloom and diffraction effects  */
+comment|/*  * Sparkle 1.27 - simulate pixel bloom and diffraction effects  */
 end_comment
 
 begin_include
@@ -127,7 +127,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5edade0108
+DECL|struct|__anon298e18c40108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5edade0208
+DECL|struct|__anon298e18c40208
 block|{
 DECL|member|run
 name|gboolean
@@ -683,15 +683,15 @@ literal|"plug_in_sparkle"
 argument_list|,
 literal|"Simulates pixel bloom and diffraction effects"
 argument_list|,
-literal|"No help yet"
+literal|"Uses a percentage based luminoisty threhsold to find "
+literal|"candidate pixels for adding some sparkles (spikes). "
 argument_list|,
-literal|"John Beale,& (ported to GIMP v0.54) Michael J. Hammel& ted to GIMP v1.0) Spencer Kimball"
+literal|"John Beale,& (ported to GIMP v0.54) Michael J. Hammel& ted to GIMP v1.0)& Seth Burgess& Spencer Kimball"
 argument_list|,
 literal|"John Beale"
 argument_list|,
-literal|"Version 1.26, December 1998"
+literal|"Version 1.27, September 2003"
 argument_list|,
-comment|/* don't translate '<Image>', it's a special 			   * keyword for the gtk toolkit */
 name|N_
 argument_list|(
 literal|"<Image>/Filters/Light Effects/_Sparkle..."
@@ -1565,9 +1565,9 @@ argument_list|)
 operator|->
 name|vbox
 argument_list|,
-literal|1
+literal|0
 argument_list|,
-literal|3
+literal|0
 argument_list|)
 expr_stmt|;
 name|table
@@ -2934,9 +2934,6 @@ decl_stmt|,
 name|sum
 decl_stmt|;
 name|gint
-name|size
-decl_stmt|;
-name|gint
 name|gray
 decl_stmt|;
 name|gint
@@ -3058,27 +3055,48 @@ name|pr
 argument_list|)
 control|)
 block|{
+name|int
+name|sx
+decl_stmt|,
+name|sy
+decl_stmt|;
 name|data
 operator|=
 name|src_rgn
 operator|.
 name|data
 expr_stmt|;
-name|size
+for|for
+control|(
+name|sy
 operator|=
-name|src_rgn
-operator|.
-name|w
-operator|*
+literal|0
+init|;
+name|sy
+operator|<
 name|src_rgn
 operator|.
 name|h
-expr_stmt|;
-while|while
-condition|(
-name|size
-operator|--
-condition|)
+condition|;
+name|sy
+operator|++
+control|)
+block|{
+for|for
+control|(
+name|sx
+operator|=
+literal|0
+init|;
+name|sx
+operator|<
+name|src_rgn
+operator|.
+name|w
+condition|;
+name|sx
+operator|++
+control|)
 block|{
 name|values
 index|[
@@ -3098,6 +3116,23 @@ operator|+=
 name|src_rgn
 operator|.
 name|bpp
+expr_stmt|;
+block|}
+name|data
+operator|+=
+name|src_rgn
+operator|.
+name|rowstride
+operator|-
+operator|(
+name|src_rgn
+operator|.
+name|w
+operator|*
+name|src_rgn
+operator|.
+name|bpp
+operator|)
 expr_stmt|;
 block|}
 block|}
@@ -3220,8 +3255,6 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 name|gint
-name|size
-decl_stmt|,
 name|lum
 decl_stmt|,
 name|x
@@ -3331,6 +3364,7 @@ name|max_progress
 operator|=
 name|num_sparkles
 expr_stmt|;
+comment|/* copy what is already there */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -3414,6 +3448,11 @@ name|pr
 argument_list|)
 control|)
 block|{
+name|int
+name|sx
+decl_stmt|,
+name|sy
+decl_stmt|;
 name|src
 operator|=
 name|src_rgn
@@ -3426,21 +3465,37 @@ name|dest_rgn
 operator|.
 name|data
 expr_stmt|;
-name|size
+for|for
+control|(
+name|sy
 operator|=
-name|src_rgn
-operator|.
-name|w
-operator|*
+literal|0
+init|;
+name|sy
+operator|<
 name|src_rgn
 operator|.
 name|h
-expr_stmt|;
-while|while
-condition|(
-name|size
-operator|--
-condition|)
+condition|;
+name|sy
+operator|++
+control|)
+block|{
+for|for
+control|(
+name|sx
+operator|=
+literal|0
+init|;
+name|sx
+operator|<
+name|src_rgn
+operator|.
+name|w
+condition|;
+name|sx
+operator|++
+control|)
 block|{
 if|if
 condition|(
@@ -3521,6 +3576,39 @@ operator|+=
 name|src_rgn
 operator|.
 name|bpp
+expr_stmt|;
+block|}
+name|src
+operator|+=
+name|src_rgn
+operator|.
+name|rowstride
+operator|-
+operator|(
+name|src_rgn
+operator|.
+name|bpp
+operator|*
+name|src_rgn
+operator|.
+name|w
+operator|)
+expr_stmt|;
+name|dest
+operator|+=
+name|dest_rgn
+operator|.
+name|rowstride
+operator|-
+operator|(
+name|dest_rgn
+operator|.
+name|bpp
+operator|*
+name|dest_rgn
+operator|.
+name|w
+operator|)
 expr_stmt|;
 block|}
 block|}
@@ -3629,6 +3717,7 @@ condition|;
 name|y
 operator|++
 control|)
+block|{
 for|for
 control|(
 name|x
@@ -3786,6 +3875,14 @@ operator|>
 literal|0
 condition|)
 block|{
+name|gdouble
+name|random_1
+init|=
+name|g_rand_double
+argument_list|(
+name|gr
+argument_list|)
+decl_stmt|;
 comment|/* major spikes */
 if|if
 condition|(
@@ -3816,10 +3913,7 @@ name|spike_angle
 expr_stmt|;
 if|if
 condition|(
-name|g_rand_double
-argument_list|(
-name|gr
-argument_list|)
+name|random_1
 operator|<=
 name|svals
 operator|.
@@ -3962,6 +4056,23 @@ operator|+=
 name|src_rgn
 operator|.
 name|bpp
+expr_stmt|;
+block|}
+name|src
+operator|+=
+name|src_rgn
+operator|.
+name|rowstride
+operator|-
+operator|(
+name|src_rgn
+operator|.
+name|w
+operator|*
+name|src_rgn
+operator|.
+name|bpp
+operator|)
 expr_stmt|;
 block|}
 block|}
@@ -4702,7 +4813,7 @@ name|NATURAL
 condition|)
 name|gimp_pixel_rgn_get_pixel
 argument_list|(
-name|dest_rgn
+name|src_rgn
 argument_list|,
 name|pixel
 argument_list|,
