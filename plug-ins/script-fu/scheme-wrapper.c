@@ -379,15 +379,9 @@ expr_stmt|;
 comment|/* init the interpreter */
 name|process_cla
 argument_list|(
-sizeof|sizeof
+name|G_N_ELEMENTS
 argument_list|(
 name|siod_argv
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|char
-operator|*
 argument_list|)
 argument_list|,
 name|siod_argv

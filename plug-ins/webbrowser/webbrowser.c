@@ -375,7 +375,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275527130108
+DECL|struct|__anon2c95d2360108
 block|{
 DECL|member|url
 name|gchar
@@ -466,23 +466,6 @@ literal|"Create a new window or use existing one?"
 block|}
 block|,   }
 decl_stmt|;
-specifier|static
-name|gint
-name|nargs
-init|=
-sizeof|sizeof
-argument_list|(
-name|args
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"extension_web_browser"
@@ -506,7 +489,10 @@ name|NULL
 argument_list|,
 name|GIMP_EXTENSION
 argument_list|,
-name|nargs
+name|G_N_ELEMENTS
+argument_list|(
+name|args
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
