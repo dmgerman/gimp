@@ -3027,7 +3027,9 @@ name|hsv
 operator|.
 name|h
 operator|*
-literal|360.999
+literal|359.999
+operator|+
+literal|0.5
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3065,7 +3067,9 @@ name|hsv
 operator|.
 name|s
 operator|*
-literal|100.999
+literal|99.999
+operator|+
+literal|0.5
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3103,7 +3107,9 @@ name|hsv
 operator|.
 name|v
 operator|*
-literal|100.999
+literal|99.999
+operator|+
+literal|0.5
 argument_list|)
 argument_list|)
 expr_stmt|;

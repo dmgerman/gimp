@@ -71,7 +71,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2997f5bf0108
+DECL|struct|__anon2949e7f50108
 block|{
 DECL|member|point
 name|GdkPoint
@@ -5618,9 +5618,11 @@ call|(
 name|gint
 call|)
 argument_list|(
-literal|255.999
+literal|254.999
 operator|*
 name|r
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gi
@@ -5629,9 +5631,11 @@ call|(
 name|gint
 call|)
 argument_list|(
-literal|255.999
+literal|254.999
 operator|*
 name|g
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|bi
@@ -5640,9 +5644,11 @@ call|(
 name|gint
 call|)
 argument_list|(
-literal|255.999
+literal|254.999
 operator|*
 name|b
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 if|if

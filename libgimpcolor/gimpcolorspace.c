@@ -2634,7 +2634,9 @@ call|)
 argument_list|(
 name|value
 operator|*
-literal|255
+literal|254.999
+operator|+
+literal|0.5
 argument_list|)
 return|;
 block|}
@@ -3320,7 +3322,9 @@ index|]
 operator|=
 name|hue
 operator|*
-literal|255
+literal|254.999
+operator|+
+literal|0.5
 expr_stmt|;
 name|rgb
 index|[
@@ -3329,7 +3333,9 @@ index|]
 operator|=
 name|saturation
 operator|*
-literal|255
+literal|254.999
+operator|+
+literal|0.5
 expr_stmt|;
 name|rgb
 index|[
@@ -3338,7 +3344,9 @@ index|]
 operator|=
 name|value
 operator|*
-literal|255
+literal|254.999
+operator|+
+literal|0.5
 expr_stmt|;
 block|}
 end_function

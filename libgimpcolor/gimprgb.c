@@ -223,7 +223,9 @@ argument_list|,
 literal|1.0
 argument_list|)
 operator|*
-literal|255.999
+literal|254.999
+operator|+
+literal|0.5
 expr_stmt|;
 if|if
 condition|(
@@ -243,7 +245,9 @@ argument_list|,
 literal|1.0
 argument_list|)
 operator|*
-literal|255.999
+literal|254.999
+operator|+
+literal|0.5
 expr_stmt|;
 if|if
 condition|(
@@ -263,7 +267,9 @@ argument_list|,
 literal|1.0
 argument_list|)
 operator|*
-literal|255.999
+literal|254.999
+operator|+
+literal|0.5
 expr_stmt|;
 block|}
 end_function
@@ -877,7 +883,9 @@ argument_list|(
 name|rgb
 argument_list|)
 operator|*
-literal|255.999
+literal|254.999
+operator|+
+literal|0.5
 return|;
 block|}
 end_function
@@ -1313,7 +1321,9 @@ argument_list|,
 literal|1.0
 argument_list|)
 operator|*
-literal|255.999
+literal|254.999
+operator|+
+literal|0.5
 expr_stmt|;
 if|if
 condition|(
@@ -1333,7 +1343,9 @@ argument_list|,
 literal|1.0
 argument_list|)
 operator|*
-literal|255.999
+literal|254.999
+operator|+
+literal|0.5
 expr_stmt|;
 if|if
 condition|(
@@ -1353,7 +1365,9 @@ argument_list|,
 literal|1.0
 argument_list|)
 operator|*
-literal|255.999
+literal|254.999
+operator|+
+literal|0.5
 expr_stmt|;
 if|if
 condition|(
@@ -1373,7 +1387,9 @@ argument_list|,
 literal|1.0
 argument_list|)
 operator|*
-literal|255.999
+literal|254.999
+operator|+
+literal|0.5
 expr_stmt|;
 block|}
 end_function

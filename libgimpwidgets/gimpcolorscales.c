@@ -1745,7 +1745,9 @@ name|hsv
 operator|.
 name|h
 operator|*
-literal|360.999
+literal|359.999
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|values
@@ -1763,7 +1765,9 @@ name|hsv
 operator|.
 name|s
 operator|*
-literal|100.999
+literal|99.999
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|values
@@ -1781,7 +1785,9 @@ name|hsv
 operator|.
 name|v
 operator|*
-literal|100.999
+literal|99.999
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|values
@@ -1799,7 +1805,9 @@ name|rgb
 operator|.
 name|r
 operator|*
-literal|255.999
+literal|254.999
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|values
@@ -1817,7 +1825,9 @@ name|rgb
 operator|.
 name|g
 operator|*
-literal|255.999
+literal|254.999
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|values
@@ -1835,7 +1845,9 @@ name|rgb
 operator|.
 name|b
 operator|*
-literal|255.999
+literal|254.999
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|values
@@ -1853,7 +1865,9 @@ name|rgb
 operator|.
 name|a
 operator|*
-literal|100.999
+literal|99.999
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 for|for
