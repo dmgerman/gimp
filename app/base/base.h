@@ -17,7 +17,7 @@ name|__BASE_H__
 end_define
 
 begin_function_decl
-name|void
+name|gboolean
 name|base_init
 parameter_list|(
 name|GimpBaseConfig

@@ -315,6 +315,9 @@ name|GMainLoop
 modifier|*
 name|loop
 decl_stmt|;
+name|gboolean
+name|swap_is_ok
+decl_stmt|;
 comment|/*  Create an instance of the "Gimp" object which is the root of the    *  core object system    */
 name|gimp
 operator|=
@@ -616,6 +619,8 @@ name|alternate_gimprc
 argument_list|)
 expr_stmt|;
 comment|/*  initialize lowlevel stuff  */
+name|swap_is_ok
+operator|=
 name|base_init
 argument_list|(
 name|GIMP_BASE_CONFIG
@@ -665,6 +670,32 @@ argument_list|(
 name|gimp
 argument_list|,
 name|update_status_func
+argument_list|)
+expr_stmt|;
+comment|/* display a warning when no test swap file could be generated */
+if|if
+condition|(
+operator|!
+name|swap_is_ok
+condition|)
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Unable to open a test swap file. To avoid data loss "
+literal|"please check the location and permissions of the swap "
+literal|"directory defined in your Preferences "
+literal|"(currently \"%s\")."
+argument_list|)
+argument_list|,
+name|GIMP_BASE_CONFIG
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
+name|swap_path
 argument_list|)
 expr_stmt|;
 comment|/*  enable autosave late so we don't autosave when the    *  monitor resolution is set in gui_init()    */

@@ -187,7 +187,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|void
+name|gboolean
 DECL|function|base_init (GimpBaseConfig * config,gboolean use_cpu_accel)
 name|base_init
 parameter_list|(
@@ -211,19 +211,26 @@ name|gchar
 modifier|*
 name|path
 decl_stmt|;
-name|g_return_if_fail
+name|gboolean
+name|swap_is_ok
+decl_stmt|;
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_BASE_CONFIG
 argument_list|(
 name|config
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|base_config
 operator|==
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|base_config
@@ -340,6 +347,11 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
+name|swap_is_ok
+operator|=
+name|tile_swap_test
+argument_list|()
+expr_stmt|;
 name|gimp_composite_init
 argument_list|(
 name|use_cpu_accel
@@ -348,6 +360,9 @@ expr_stmt|;
 name|paint_funcs_setup
 argument_list|()
 expr_stmt|;
+return|return
+name|swap_is_ok
+return|;
 block|}
 end_function
 

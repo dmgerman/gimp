@@ -168,6 +168,12 @@ directive|include
 file|"tile-swap.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_define
 DECL|macro|MAX_OPEN_SWAP_FILES
 define|#
@@ -1341,6 +1347,117 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/* check if we can open a swap file */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|tile_swap_test ()
+name|tile_swap_test
+parameter_list|()
+block|{
+name|SwapFile
+modifier|*
+name|swap_file
+decl_stmt|;
+name|int
+name|swap_num
+init|=
+literal|1
+decl_stmt|;
+name|g_assert
+argument_list|(
+name|initialize
+operator|==
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|swap_file
+operator|=
+name|g_hash_table_lookup
+argument_list|(
+name|swap_files
+argument_list|,
+operator|&
+name|swap_num
+argument_list|)
+expr_stmt|;
+name|g_assert
+argument_list|(
+name|swap_file
+operator|->
+name|fd
+operator|==
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+comment|/* make sure this duplicates the open() call from tile_swap_open() */
+name|swap_file
+operator|->
+name|fd
+operator|=
+name|open
+argument_list|(
+name|swap_file
+operator|->
+name|filename
+argument_list|,
+name|O_CREAT
+operator||
+name|O_RDWR
+operator||
+name|_O_BINARY
+operator||
+name|_O_TEMPORARY
+argument_list|,
+name|S_IREAD
+operator||
+name|S_IWRITE
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|swap_file
+operator|->
+name|fd
+operator|!=
+operator|-
+literal|1
+condition|)
+block|{
+name|close
+argument_list|(
+name|swap_file
+operator|->
+name|fd
+argument_list|)
+expr_stmt|;
+name|swap_file
+operator|->
+name|fd
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+name|unlink
+argument_list|(
+name|swap_file
+operator|->
+name|filename
+argument_list|)
+expr_stmt|;
+return|return
+name|TRUE
+return|;
+block|}
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
 begin_function
 specifier|static
 name|void
@@ -1647,6 +1764,7 @@ operator|-=
 literal|1
 expr_stmt|;
 block|}
+comment|/* duplicate this open() call in tile_swap_test() */
 name|swap_file
 operator|->
 name|fd
@@ -1682,7 +1800,14 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"unable to open swap file...BAD THINGS WILL HAPPEN SOON"
+name|_
+argument_list|(
+literal|"Unable to open swap file. The Gimp has run out of memory "
+literal|"and cannot use the swap file. Some parts of your images "
+literal|"may be corrupted. Try to save your work using different "
+literal|"filenames, restart the Gimp and check the location of the "
+literal|"swap directory in your Preferences."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

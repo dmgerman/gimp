@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b06c1fe0103
+DECL|enum|__anon2b0e91fe0103
 block|{
 DECL|enumerator|SWAP_IN
 name|SWAP_IN
@@ -154,6 +154,15 @@ name|tile_swap_compress
 parameter_list|(
 name|gint
 name|swap_num
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|tile_swap_test
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
