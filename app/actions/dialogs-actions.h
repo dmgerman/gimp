@@ -16,6 +16,27 @@ directive|define
 name|__DIALOGS_ACTIONS_H__
 end_define
 
+begin_comment
+comment|/*  this check is needed for the extern declaration below to be correct  */
+end_comment
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|__GIMP_ACTION_GROUP_H__
+end_ifndef
+
+begin_error
+error|#
+directive|error
+literal|"widgets/gimpactiongroup.h must be included prior to dialog-actions.h"
+end_error
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_decl_stmt
 specifier|extern
 name|GimpStringActionEntry

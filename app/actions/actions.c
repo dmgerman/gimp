@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpactiongroup.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpcontainereditor.h"
 end_include
 
