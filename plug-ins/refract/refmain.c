@@ -99,7 +99,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"../megawidget/megawidget.h"
+file|<plug-ins/megawidget/megawidget.h>
 end_include
 
 begin_else
@@ -123,7 +123,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon2c4e61f50108
+DECL|struct|__anon2b4ad11d0108
 typedef|typedef
 struct|struct
 block|{

@@ -515,7 +515,7 @@ name|gimp_tile_unref
 argument_list|(
 name|tile
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c53cf400108
+DECL|struct|__anon28f9aab30108
 block|{
 DECL|member|horizontal
 name|gint
@@ -75,7 +75,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c53cf400208
+DECL|struct|__anon28f9aab30208
 block|{
 DECL|member|run
 name|gint
@@ -1423,6 +1423,9 @@ block|{
 name|data
 index|[
 operator|-
+operator|(
+name|int
+operator|)
 name|pixel_rgn
 operator|->
 name|bpp

@@ -526,6 +526,9 @@ block|{
 name|data
 index|[
 operator|-
+operator|(
+name|int
+operator|)
 name|pixel_rgn
 operator|->
 name|bpp

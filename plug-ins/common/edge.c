@@ -122,7 +122,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|struct|__anon2b2955d10108
+DECL|struct|__anon29e5385e0108
 typedef|typedef
 struct|struct
 block|{
@@ -141,7 +141,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b2955d10208
+DECL|struct|__anon29e5385e0208
 typedef|typedef
 struct|struct
 block|{
@@ -156,7 +156,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b2955d10308
+DECL|struct|__anon29e5385e0308
 typedef|typedef
 struct|struct
 block|{
@@ -2070,7 +2070,7 @@ name|X
 parameter_list|,
 name|Y
 parameter_list|)
-value|src[ (Y-1)*src_rgn.rowstride + (X-1)*src_rgn.bpp + chan ]
+value|src[ (Y-1)*(int)src_rgn.rowstride + (X-1)*(int)src_rgn.bpp + chan ]
 comment|/* make convolusion */
 name|sum1
 operator|=
