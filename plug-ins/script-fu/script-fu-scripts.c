@@ -348,7 +348,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b12a70108
+DECL|struct|__anon28cb70c20108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -383,7 +383,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b12a70208
+DECL|struct|__anon28cb70c20208
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -427,7 +427,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b12a70308
+DECL|struct|__anon28cb70c20308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -453,7 +453,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b12a70408
+DECL|struct|__anon28cb70c20408
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -474,7 +474,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b12a70508
+DECL|struct|__anon28cb70c20508
 block|{
 DECL|member|name
 name|gchar
@@ -502,7 +502,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon288b12a7060a
+DECL|union|__anon28cb70c2060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -568,7 +568,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b12a70708
+DECL|struct|__anon28cb70c20708
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -649,7 +649,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b12a70808
+DECL|struct|__anon28cb70c20808
 block|{
 DECL|member|status
 name|GtkWidget
@@ -8599,7 +8599,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|g_free
+name|gdk_font_unref
 argument_list|(
 name|font
 argument_list|)
@@ -9005,7 +9005,8 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|g_free
+else|else
+name|gdk_font_unref
 argument_list|(
 name|font
 argument_list|)
