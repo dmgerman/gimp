@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c01fd340108
+DECL|struct|__anon28a548dc0108
 block|{
 DECL|member|code
 name|guint16
@@ -418,7 +418,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c01fd340203
+DECL|enum|__anon28a548dc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1807,8 +1807,9 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_free_error
 argument_list|(
+operator|&
 name|error
 argument_list|)
 expr_stmt|;
