@@ -60,7 +60,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon292370740108
+DECL|struct|__anon29ab5cc80108
 typedef|typedef
 struct|struct
 block|{
@@ -80,7 +80,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon292370740208
+DECL|struct|__anon29ab5cc80208
 typedef|typedef
 struct|struct
 block|{
@@ -3972,6 +3972,10 @@ operator|=
 name|PyString_FromString
 argument_list|(
 name|name
+condition|?
+name|name
+else|:
+literal|""
 argument_list|)
 expr_stmt|;
 name|self
@@ -3981,6 +3985,10 @@ operator|=
 name|PyString_FromString
 argument_list|(
 name|b
+condition|?
+name|b
+else|:
+literal|""
 argument_list|)
 expr_stmt|;
 name|self
@@ -3990,6 +3998,10 @@ operator|=
 name|PyString_FromString
 argument_list|(
 name|h
+condition|?
+name|h
+else|:
+literal|""
 argument_list|)
 expr_stmt|;
 name|self
@@ -3999,6 +4011,10 @@ operator|=
 name|PyString_FromString
 argument_list|(
 name|a
+condition|?
+name|a
+else|:
+literal|""
 argument_list|)
 expr_stmt|;
 name|self
@@ -4008,6 +4024,10 @@ operator|=
 name|PyString_FromString
 argument_list|(
 name|c
+condition|?
+name|c
+else|:
+literal|""
 argument_list|)
 expr_stmt|;
 name|self
@@ -4017,6 +4037,10 @@ operator|=
 name|PyString_FromString
 argument_list|(
 name|d
+condition|?
+name|d
+else|:
+literal|""
 argument_list|)
 expr_stmt|;
 name|self
