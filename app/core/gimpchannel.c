@@ -174,7 +174,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpstrokeoptions.h"
+file|"gimpstrokedesc.h"
 end_include
 
 begin_include
@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b907710103
+DECL|enum|__anon27818b610103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -487,7 +487,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpObject
+name|GimpStrokeDesc
 modifier|*
 name|stroke_desc
 parameter_list|)
@@ -2875,7 +2875,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_channel_stroke (GimpItem * item,GimpDrawable * drawable,GimpContext * context,GimpObject * stroke_desc)
+DECL|function|gimp_channel_stroke (GimpItem * item,GimpDrawable * drawable,GimpContext * context,GimpStrokeDesc * stroke_desc)
 name|gimp_channel_stroke
 parameter_list|(
 name|GimpItem
@@ -2890,7 +2890,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpObject
+name|GimpStrokeDesc
 modifier|*
 name|stroke_desc
 parameter_list|)
@@ -2985,22 +2985,23 @@ operator|&
 name|offset_y
 argument_list|)
 expr_stmt|;
-if|if
+switch|switch
 condition|(
-name|GIMP_IS_STROKE_OPTIONS
-argument_list|(
 name|stroke_desc
-argument_list|)
+operator|->
+name|method
 condition|)
 block|{
+case|case
+name|GIMP_STROKE_METHOD_LIBART
+case|:
 name|gimp_drawable_stroke_boundary
 argument_list|(
 name|drawable
 argument_list|,
-name|GIMP_STROKE_OPTIONS
-argument_list|(
 name|stroke_desc
-argument_list|)
+operator|->
+name|stroke_options
 argument_list|,
 name|segs_in
 argument_list|,
@@ -3015,25 +3016,11 @@ name|retval
 operator|=
 name|TRUE
 expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|GIMP_IS_PAINT_OPTIONS
-argument_list|(
-name|stroke_desc
-argument_list|)
-condition|)
+break|break;
+case|case
+name|GIMP_STROKE_METHOD_PAINT_CORE
+case|:
 block|{
-name|GimpPaintOptions
-modifier|*
-name|paint_options
-init|=
-name|GIMP_PAINT_OPTIONS
-argument_list|(
-name|stroke_desc
-argument_list|)
-decl_stmt|;
 name|GimpPaintCore
 modifier|*
 name|core
@@ -3042,7 +3029,7 @@ name|core
 operator|=
 name|g_object_new
 argument_list|(
-name|paint_options
+name|stroke_desc
 operator|->
 name|paint_info
 operator|->
@@ -3059,6 +3046,8 @@ name|core
 argument_list|,
 name|drawable
 argument_list|,
+name|stroke_desc
+operator|->
 name|paint_options
 argument_list|,
 name|segs_in
@@ -3073,6 +3062,14 @@ expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|core
+argument_list|)
+expr_stmt|;
+block|}
+break|break;
+default|default:
+name|g_return_val_if_reached
+argument_list|(
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

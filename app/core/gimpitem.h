@@ -480,7 +480,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpObject
+name|GimpStrokeDesc
 modifier|*
 name|stroke_desc
 parameter_list|)
@@ -1005,7 +1005,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpObject
+name|GimpStrokeDesc
 modifier|*
 name|stroke_desc
 parameter_list|,
