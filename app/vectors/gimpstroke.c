@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libart_lgpl/libart.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<glib-object.h>
 end_include
 
@@ -41,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28baa1200103
+DECL|enum|__anon2c4afa2b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -752,19 +746,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_stroke_art_stroke
-parameter_list|(
-specifier|const
-name|GimpStroke
-modifier|*
-name|stroke
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/*  private variables  */
 end_comment
@@ -1140,12 +1121,6 @@ operator|->
 name|control_points_get
 operator|=
 name|gimp_stroke_real_control_points_get
-expr_stmt|;
-name|klass
-operator|->
-name|art_stroke
-operator|=
-name|gimp_stroke_art_stroke
 expr_stmt|;
 name|anchor_param_spec
 operator|=
@@ -4965,40 +4940,6 @@ expr_stmt|;
 return|return
 name|ret_array
 return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_stroke_art_stroke (const GimpStroke * stroke)
-name|gimp_stroke_art_stroke
-parameter_list|(
-specifier|const
-name|GimpStroke
-modifier|*
-name|stroke
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_STROKE
-argument_list|(
-name|stroke
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|GIMP_STROKE_GET_CLASS
-argument_list|(
-name|stroke
-argument_list|)
-operator|->
-name|art_stroke
-argument_list|(
-name|stroke
-argument_list|)
-expr_stmt|;
-return|return;
 block|}
 end_function
 

@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libart_lgpl/libart.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<glib-object.h>
 end_include
 
@@ -527,19 +521,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_bezier_stroke_art_stroke
-parameter_list|(
-specifier|const
-name|GimpStroke
-modifier|*
-name|stroke
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/*  private variables  */
 end_comment
@@ -783,12 +764,6 @@ operator|->
 name|interpolate
 operator|=
 name|gimp_bezier_stroke_interpolate
-expr_stmt|;
-name|stroke_class
-operator|->
-name|art_stroke
-operator|=
-name|gimp_bezier_stroke_art_stroke
 expr_stmt|;
 block|}
 end_function
@@ -9445,27 +9420,6 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_bezier_stroke_art_stroke (const GimpStroke * stroke)
-name|gimp_bezier_stroke_art_stroke
-parameter_list|(
-specifier|const
-name|GimpStroke
-modifier|*
-name|stroke
-parameter_list|)
-block|{
-name|g_printerr
-argument_list|(
-literal|"gimp_bezier_stroke_art_stroke: implement me!\n"
-argument_list|)
-expr_stmt|;
-return|return;
 block|}
 end_function
 

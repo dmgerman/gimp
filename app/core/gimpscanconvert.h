@@ -58,7 +58,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Add "npoints" from "pointlist" to the polygon currently being  * described by "scan_converter".  */
+comment|/* Add "npoints" from "pointlist" to the polygon currently being  * described by "scan_converter". DEPRECATED.  */
 end_comment
 
 begin_function_decl
@@ -83,7 +83,56 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Scan convert the polygon described by the list of points passed to  * scan_convert_add_points, and return a channel with a bits set if  * they fall within the polygon defined.  The polygon is filled  * according to the even-odd rule.  The polygon is closed by  * joining the final point to the initial point.  */
+comment|/* Add a polygon with "npoints" "points" that may be open or closed.  * It is not recommended to mix gimp_scan_convert_add_polyline with  * gimp_scan_convert_add_points.  *  * Please note that if you should use gimp_scan_convert_stroke() if you  * specify open polygons.  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_scan_convert_add_polyline
+parameter_list|(
+name|GimpScanConvert
+modifier|*
+name|sc
+parameter_list|,
+name|guint
+name|n_points
+parameter_list|,
+name|GimpVector2
+modifier|*
+name|points
+parameter_list|,
+name|gboolean
+name|closed
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* Stroke the content of a GimpScanConvert. The next  * gimp_scan_convert_to_channel will result in the outline of the polygon  * defined with the commands above.  *  * You cannot add additional polygons after this command.  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_scan_convert_stroke
+parameter_list|(
+name|GimpScanConvert
+modifier|*
+name|sc
+parameter_list|,
+name|GimpJoinType
+name|join
+parameter_list|,
+name|GimpCapType
+name|cap
+parameter_list|,
+name|gdouble
+name|width
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* Return a new Channel according to the polygonal shapes defined with  * the commands above.   *  * You cannot add additional polygons after this command.  */
 end_comment
 
 begin_function_decl
@@ -98,6 +147,25 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* This is a more low level version. Expects a tile manager of depth 1.  *  * You cannot add additional polygons after this command.  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_scan_convert_render
+parameter_list|(
+name|GimpScanConvert
+modifier|*
+name|scan_converter
+parameter_list|,
+name|TileManager
+modifier|*
+name|tile_manager
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -582,7 +582,7 @@ else|:
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_scan_convert_add_points
+name|gimp_scan_convert_add_polyline
 argument_list|(
 name|scan_convert
 argument_list|,
@@ -590,7 +590,7 @@ name|n_points
 argument_list|,
 name|points
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|mask
@@ -915,7 +915,7 @@ name|num_coords
 operator|++
 expr_stmt|;
 block|}
-name|gimp_scan_convert_add_points
+name|gimp_scan_convert_add_polyline
 argument_list|(
 name|scan_convert
 argument_list|,
