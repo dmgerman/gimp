@@ -997,6 +997,12 @@ literal|0.0
 expr_stmt|;
 name|vector_tool
 operator|->
+name|undo_motion
+operator|=
+name|FALSE
+expr_stmt|;
+name|vector_tool
+operator|->
 name|have_undo
 operator|=
 name|FALSE
@@ -1231,6 +1237,12 @@ operator|==
 name|VECTORS_CREATE_VECTOR
 argument_list|)
 expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|FALSE
+expr_stmt|;
 comment|/* Save the current modifier state */
 name|vector_tool
 operator|->
@@ -1375,6 +1387,12 @@ name|have_undo
 operator|=
 name|TRUE
 expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|TRUE
+expr_stmt|;
 name|gimp_image_add_vectors
 argument_list|(
 name|gdisp
@@ -1464,6 +1482,12 @@ argument_list|)
 expr_stmt|;
 name|vector_tool
 operator|->
+name|undo_motion
+operator|=
+name|TRUE
+expr_stmt|;
+name|vector_tool
+operator|->
 name|sel_stroke
 operator|=
 name|vector_tool
@@ -1508,6 +1532,12 @@ argument_list|(
 literal|"Add Anchor"
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|TRUE
 expr_stmt|;
 name|vector_tool
 operator|->
@@ -1582,6 +1612,12 @@ argument_list|(
 literal|"Insert Anchor"
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|TRUE
 expr_stmt|;
 name|vector_tool
 operator|->
@@ -1678,6 +1714,16 @@ operator|==
 name|GIMP_ANCHOR_ANCHOR
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|vector_tool
+operator|->
+name|cur_anchor
+operator|->
+name|selected
+condition|)
+block|{
 name|gimp_vectors_anchor_select
 argument_list|(
 name|vector_tool
@@ -1697,6 +1743,13 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 name|gimp_draw_tool_on_vectors_handle
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -1766,6 +1819,16 @@ literal|"Drag Anchor"
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|vector_tool
+operator|->
+name|cur_anchor
+operator|->
+name|selected
+condition|)
+block|{
 name|gimp_vectors_anchor_select
 argument_list|(
 name|vector_tool
@@ -1785,6 +1848,13 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 block|}
 comment|/* move multiple anchors */
 if|if
@@ -1837,6 +1907,12 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|TRUE
+expr_stmt|;
 if|if
 condition|(
 name|vector_tool
@@ -1886,6 +1962,7 @@ literal|5.0
 operator|/
 literal|6.0
 condition|)
+block|{
 name|gimp_vectors_anchor_select
 argument_list|(
 name|vector_tool
@@ -1905,6 +1982,13 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|vector_tool
@@ -1915,6 +1999,7 @@ literal|1.0
 operator|/
 literal|6.0
 condition|)
+block|{
 name|gimp_vectors_anchor_select
 argument_list|(
 name|vector_tool
@@ -1942,6 +2027,13 @@ literal|6.0
 operator|)
 argument_list|)
 expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 block|}
 comment|/* connect two strokes */
 if|if
@@ -1981,6 +2073,12 @@ name|vector_tool
 operator|->
 name|cur_anchor
 argument_list|)
+expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|TRUE
 expr_stmt|;
 if|if
 condition|(
@@ -2070,6 +2168,16 @@ operator|==
 name|VECTORS_MOVE_VECTORS
 condition|)
 block|{
+name|gimp_vector_tool_undo_push
+argument_list|(
+name|vector_tool
+argument_list|,
+name|_
+argument_list|(
+literal|"Drag Path"
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Work is being done in gimp_vector_tool_motion ()... */
 block|}
 comment|/* convert an anchor to something that looks like an edge */
@@ -2104,6 +2212,12 @@ name|cur_anchor
 argument_list|,
 name|GIMP_ANCHOR_FEATURE_EDGE
 argument_list|)
+expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|TRUE
 expr_stmt|;
 if|if
 condition|(
@@ -2196,6 +2310,12 @@ operator|->
 name|cur_anchor
 argument_list|)
 expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|TRUE
+expr_stmt|;
 if|if
 condition|(
 name|gimp_stroke_is_empty
@@ -2284,6 +2404,12 @@ name|vectors
 argument_list|,
 name|new_stroke
 argument_list|)
+expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|TRUE
 expr_stmt|;
 name|vector_tool
 operator|->
@@ -2394,6 +2520,12 @@ name|VECTORS_FINISHED
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|vector_tool
+operator|->
+name|undo_motion
+operator|||
+operator|(
 name|state
 operator|&
 name|GDK_BUTTON3_MASK
@@ -2401,6 +2533,7 @@ operator|&&
 name|vector_tool
 operator|->
 name|have_undo
+operator|)
 condition|)
 block|{
 name|GimpUndo
@@ -2414,7 +2547,6 @@ block|{
 literal|0
 block|, }
 decl_stmt|;
-comment|/* Ok, Apparently this is not the right thing to do, but it        * is pretty close...        * For some reason the Undo step e.g. does not disappear        * from the Undo History */
 name|undo
 operator|=
 name|gimp_undo_stack_pop_undo
@@ -2453,6 +2585,12 @@ block|}
 name|vector_tool
 operator|->
 name|have_undo
+operator|=
+name|FALSE
+expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
 operator|=
 name|FALSE
 expr_stmt|;
@@ -2621,6 +2759,7 @@ if|if
 condition|(
 name|anchor
 condition|)
+block|{
 name|gimp_stroke_anchor_move_absolute
 argument_list|(
 name|vector_tool
@@ -2638,6 +2777,13 @@ operator|->
 name|restriction
 argument_list|)
 expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 break|break;
 case|case
 name|VECTORS_MOVE_CURVE
@@ -2670,6 +2816,12 @@ operator|->
 name|last_y
 argument_list|)
 expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -2693,6 +2845,12 @@ name|vector_tool
 operator|->
 name|restriction
 argument_list|)
+expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 break|break;
@@ -2719,6 +2877,12 @@ name|vector_tool
 operator|->
 name|last_y
 argument_list|)
+expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|TRUE
 expr_stmt|;
 break|break;
 case|case
@@ -2754,6 +2918,12 @@ operator|->
 name|last_y
 argument_list|)
 expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -2785,6 +2955,12 @@ name|vector_tool
 operator|->
 name|last_y
 argument_list|)
+expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 break|break;
@@ -2818,6 +2994,12 @@ name|last_y
 argument_list|,
 name|FALSE
 argument_list|)
+expr_stmt|;
+name|vector_tool
+operator|->
+name|undo_motion
+operator|=
+name|TRUE
 expr_stmt|;
 break|break;
 default|default:
@@ -4198,7 +4380,7 @@ name|new_status
 operator|=
 name|_
 argument_list|(
-literal|"Click to pick Path to edit"
+literal|"Click to pick path to edit."
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4209,7 +4391,7 @@ name|new_status
 operator|=
 name|_
 argument_list|(
-literal|"Click to create a new Path"
+literal|"Click to create a new path."
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4220,7 +4402,7 @@ name|new_status
 operator|=
 name|_
 argument_list|(
-literal|"Click to create a new component of the path"
+literal|"Click to create a new component of the path."
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4231,8 +4413,7 @@ name|new_status
 operator|=
 name|_
 argument_list|(
-literal|"Click to create a new anchor, "
-literal|"use SHIFT to create a new component."
+literal|"Click to create a new anchor. (try SHIFT)"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4243,7 +4424,7 @@ name|new_status
 operator|=
 name|_
 argument_list|(
-literal|"Click-Drag to move the anchor around"
+literal|"Click-Drag to move the anchor around."
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4254,7 +4435,7 @@ name|new_status
 operator|=
 name|_
 argument_list|(
-literal|"Click-Drag to move the anchors around"
+literal|"Click-Drag to move the anchors around."
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4265,8 +4446,7 @@ name|new_status
 operator|=
 name|_
 argument_list|(
-literal|"Click-Drag to move the handle around. "
-literal|"SHIFT moves the opposite handle symmetrically."
+literal|"Click-Drag to move the handle around. (try SHIFT)"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4278,8 +4458,7 @@ operator|=
 name|_
 argument_list|(
 literal|"Click-Drag to change the shape of the curve. "
-literal|"SHIFT moves the opposite handles of the "
-literal|"endpoints symmetrically."
+literal|"(SHIFT: symmetrical)"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4291,7 +4470,7 @@ operator|=
 name|_
 argument_list|(
 literal|"Click-Drag to move the component around. "
-literal|"SHIFT moves the complete path around."
+literal|"(try SHIFT)"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4302,8 +4481,7 @@ name|new_status
 operator|=
 name|_
 argument_list|(
-literal|"Click-Drag to move the component around. "
-literal|"SHIFT moves the complete path around."
+literal|"Click-Drag to move the path around."
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4314,7 +4492,7 @@ name|new_status
 operator|=
 name|_
 argument_list|(
-literal|"Click to insert an anchor on the path."
+literal|"Click to insert an anchor on the path. (try SHIFT)"
 argument_list|)
 expr_stmt|;
 break|break;

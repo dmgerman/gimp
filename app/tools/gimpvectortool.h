@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276cd7b20103
+DECL|enum|__anon2bf72b0e0103
 block|{
 DECL|enumerator|VECTORS_SELECT_VECTOR
 name|VECTORS_SELECT_VECTOR
@@ -210,6 +210,11 @@ name|gdouble
 name|last_y
 decl_stmt|;
 comment|/* last y coordinate                 */
+DECL|member|undo_motion
+name|gboolean
+name|undo_motion
+decl_stmt|;
+comment|/* we need a motion to have an undo  */
 DECL|member|have_undo
 name|gboolean
 name|have_undo
