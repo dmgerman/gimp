@@ -185,7 +185,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ed89d00108
+DECL|struct|__anon2c42fdd60108
 block|{
 DECL|member|console
 name|GtkWidget
@@ -712,6 +712,15 @@ literal|"Script-Fu Console"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_help_connect_help_accel
+argument_list|(
+name|dlg
+argument_list|,
+name|gimp_plugin_help_func
+argument_list|,
+literal|"filters/script-fu.html"
+argument_list|)
+expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -774,7 +783,7 @@ operator|->
 name|action_area
 argument_list|)
 argument_list|,
-literal|2
+literal|0
 argument_list|)
 expr_stmt|;
 comment|/*  Action area  */
@@ -788,7 +797,7 @@ literal|"Close"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|gtk_signal_connect_object
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -800,9 +809,12 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|script_fu_close_callback
+name|gtk_widget_destroy
 argument_list|,
-name|NULL
+operator|(
+name|gpointer
+operator|)
+name|dlg
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1152,7 +1164,30 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|"Copyright (C) 1995 Spencer Kimball and Peter Mattis\n"
+literal|"Copyright (C) 1995-2000\n"
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|gtk_text_insert
+argument_list|(
+name|GTK_TEXT
+argument_list|(
+name|cint
+operator|.
+name|console
+argument_list|)
+argument_list|,
+name|cint
+operator|.
+name|font_emphasis
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+literal|"Spencer Kimball, Peter Mattis and the GIMP Development Team\n"
 argument_list|,
 operator|-
 literal|1
