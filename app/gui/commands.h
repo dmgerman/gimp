@@ -1148,6 +1148,18 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_help_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|tips_dialog_cmd_callback
 parameter_list|(
 name|GtkWidget

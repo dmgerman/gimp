@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"actionarea.h"
+file|"gimpui.h"
 end_include
 
 begin_include
@@ -52,11 +52,8 @@ name|brush_edit_close_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
 parameter_list|,
-name|void
-modifier|*
-name|data
+name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -80,34 +77,6 @@ name|begw
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  the action area structure  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|action_items
-specifier|static
-name|ActionAreaItem
-name|action_items
-index|[]
-init|=
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"Close"
-argument_list|)
-block|,
-name|brush_edit_close_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|}
-decl_stmt|;
-end_decl_stmt
 
 begin_function
 specifier|static
@@ -260,39 +229,6 @@ name|brush
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|gint
-DECL|function|brush_edit_delete_callback (GtkWidget * w,BrushEditGeneratedWindow * begw)
-name|brush_edit_delete_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|BrushEditGeneratedWindow
-modifier|*
-name|begw
-parameter_list|)
-block|{
-if|if
-condition|(
-name|GTK_WIDGET_VISIBLE
-argument_list|(
-name|w
-argument_list|)
-condition|)
-name|gtk_widget_hide
-argument_list|(
-name|w
-argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
-return|;
 block|}
 end_function
 
@@ -773,8 +709,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|brush_renamed_callback (GtkWidget * widget,BrushEditGeneratedWindow * begw)
 name|void
+DECL|function|brush_renamed_callback (GtkWidget * widget,BrushEditGeneratedWindow * begw)
 name|brush_renamed_callback
 parameter_list|(
 name|GtkWidget
@@ -1074,8 +1010,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|name_changed_func (GtkWidget * widget,BrushEditGeneratedWindow * begw)
 name|void
+DECL|function|name_changed_func (GtkWidget * widget,BrushEditGeneratedWindow * begw)
 name|name_changed_func
 parameter_list|(
 name|GtkWidget
@@ -1117,8 +1053,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|focus_out_func (GtkWidget * wid1,GtkWidget * wid2,BrushEditGeneratedWindow * begw)
 name|void
+DECL|function|focus_out_func (GtkWidget * wid1,GtkWidget * wid2,BrushEditGeneratedWindow * begw)
 name|focus_out_func
 parameter_list|(
 name|GtkWidget
@@ -1173,12 +1109,11 @@ name|table
 decl_stmt|;
 name|begw
 operator|=
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|BrushEditGeneratedWindow
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|begw
@@ -1191,52 +1126,43 @@ name|begw
 operator|->
 name|shell
 operator|=
-name|gtk_dialog_new
-argument_list|()
-expr_stmt|;
-name|gtk_window_set_wmclass
+name|gimp_dialog_new
 argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|begw
-operator|->
-name|shell
-argument_list|)
-argument_list|,
-literal|"generatedbrusheditor"
-argument_list|,
-literal|"Gimp"
-argument_list|)
-expr_stmt|;
-name|gtk_window_set_title
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|begw
-operator|->
-name|shell
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"Brush Editor"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_window_set_policy
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|begw
-operator|->
-name|shell
-argument_list|)
+argument_list|,
+literal|"generated_brush_editor"
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"dialogs/generated_brush_editor_dialog.html"
+argument_list|,
+name|GTK_WIN_POS_NONE
 argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Close"
+argument_list|)
+argument_list|,
+name|brush_edit_close_callback
+argument_list|,
+name|begw
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|vbox
@@ -1258,9 +1184,9 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_container_add
 argument_list|(
-name|GTK_BOX
+name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -1273,32 +1199,6 @@ name|vbox
 argument_list|)
 argument_list|,
 name|vbox
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-comment|/* handle the wm close signal */
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|begw
-operator|->
-name|shell
-argument_list|)
-argument_list|,
-literal|"delete_event"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|brush_edit_delete_callback
-argument_list|)
-argument_list|,
-name|begw
 argument_list|)
 expr_stmt|;
 comment|/*  Populate the window with some widgets */
@@ -2197,32 +2097,6 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-comment|/*  The action area  */
-name|action_items
-index|[
-literal|0
-index|]
-operator|.
-name|user_data
-operator|=
-name|begw
-expr_stmt|;
-name|build_action_area
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|begw
-operator|->
-name|shell
-argument_list|)
-argument_list|,
-name|action_items
-argument_list|,
-literal|1
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|vbox
@@ -2314,15 +2188,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brush_edit_close_callback (GtkWidget * w,void * data)
+DECL|function|brush_edit_close_callback (GtkWidget * widget,gpointer data)
 name|brush_edit_close_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 block|{

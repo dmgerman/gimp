@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -1350,6 +1356,10 @@ name|_
 argument_list|(
 literal|"Color Picker"
 argument_list|)
+argument_list|,
+name|tools_help_func
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  if the gdisplay is for a color image, the dialog must have RGB  */

@@ -134,12 +134,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"actionarea.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"cursorutil.h"
 end_include
 
@@ -170,13 +164,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"fileops.h"
+file|"gimpui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"interface.h"
+file|"fileops.h"
 end_include
 
 begin_include
@@ -295,10 +289,8 @@ name|file_overwrite_yes_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
 parameter_list|,
 name|gpointer
-name|client_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -310,29 +302,8 @@ name|file_overwrite_no_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
 parameter_list|,
 name|gpointer
-name|client_data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gint
-name|file_overwrite_delete_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|e
-parameter_list|,
-name|gpointer
-name|client_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -364,10 +335,8 @@ name|genbutton_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
 parameter_list|,
 name|gpointer
-name|client_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -379,10 +348,8 @@ name|file_open_clistrow_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
 parameter_list|,
-name|int
-name|client_data
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -394,10 +361,8 @@ name|file_open_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
 parameter_list|,
 name|gpointer
-name|client_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -409,10 +374,8 @@ name|file_save_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
 parameter_list|,
 name|gpointer
-name|client_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -464,10 +427,8 @@ name|file_load_type_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
 parameter_list|,
 name|gpointer
-name|client_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -479,10 +440,8 @@ name|file_save_type_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
 parameter_list|,
 name|gpointer
-name|client_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -530,8 +489,7 @@ parameter_list|,
 name|int
 name|headsize
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|file_head
 parameter_list|,
@@ -554,8 +512,7 @@ parameter_list|,
 name|int
 name|headsize
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|head
 parameter_list|,
@@ -776,21 +733,21 @@ name|FILE_ERR_MESSAGE
 parameter_list|(
 name|str
 parameter_list|)
-value|G_STMT_START{	\   if (message_handler == MESSAGE_BOX)					\     message_box ((str), file_message_box_close_callback, (void *) fs);	\   else									\     g_message (str);							\     gtk_widget_set_sensitive (GTK_WIDGET (fs), TRUE);	}G_STMT_END
+value|G_STMT_START{	    \   if (message_handler == MESSAGE_BOX)					    \     gimp_message_box ((str), file_message_box_close_callback, (void *) fs); \   else									    \     g_message (str);							    \     gtk_widget_set_sensitive (GTK_WIDGET (fs), TRUE);	}G_STMT_END
 end_define
 
 begin_function
 specifier|static
 name|void
-DECL|function|file_message_box_close_callback (GtkWidget * w,gpointer client_data)
+DECL|function|file_message_box_close_callback (GtkWidget * widget,gpointer data)
 name|file_message_box_close_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|GtkFileSelection
@@ -803,7 +760,7 @@ operator|(
 name|GtkFileSelection
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
@@ -978,15 +935,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_open_callback (GtkWidget * w,gpointer client_data)
+DECL|function|file_open_callback (GtkWidget * widget,gpointer data)
 name|file_open_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1161,6 +1118,16 @@ operator|)
 name|file_open_clistrow_callback
 argument_list|,
 name|fileload
+argument_list|)
+expr_stmt|;
+comment|/*  Connect the "F1" help key  */
+name|gimp_help_connect_help_accel
+argument_list|(
+name|fileload
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"dialogs/file_load_dialog.html"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1940,15 +1907,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_save_callback (GtkWidget * w,gpointer client_data)
+DECL|function|file_save_callback (GtkWidget * widget,gpointer data)
 name|file_save_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|GDisplay
@@ -1994,9 +1961,9 @@ condition|)
 block|{
 name|file_save_as_callback
 argument_list|(
-name|w
+name|widget
 argument_list|,
-name|client_data
+name|data
 argument_list|)
 expr_stmt|;
 block|}
@@ -2035,15 +2002,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_save_as_callback (GtkWidget * w,gpointer client_data)
+DECL|function|file_save_as_callback (GtkWidget * widget,gpointer data)
 name|file_save_as_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|GtkWidget
@@ -2221,6 +2188,16 @@ name|_
 argument_list|(
 literal|"Save Image"
 argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/*  Connect the "F1" help key  */
+name|gimp_help_connect_help_accel
+argument_list|(
+name|filesave
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"dialogs/file_save_dialog.html"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2456,15 +2433,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_revert_callback (GtkWidget * w,gpointer client_data)
+DECL|function|file_revert_callback (GtkWidget * widget,gpointer data)
 name|file_revert_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|GDisplay
@@ -2475,12 +2452,16 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|filename
+init|=
+name|NULL
 decl_stmt|,
 modifier|*
 name|raw_filename
+init|=
+name|NULL
 decl_stmt|;
 name|gdisplay
 operator|=
@@ -2580,15 +2561,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_load_by_extension_callback (GtkWidget * w,gpointer client_data)
+DECL|function|file_load_by_extension_callback (GtkWidget * widget,gpointer data)
 name|file_load_by_extension_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|load_file_proc
@@ -2600,15 +2581,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_save_by_extension_callback (GtkWidget * w,gpointer client_data)
+DECL|function|file_save_by_extension_callback (GtkWidget * widget,gpointer data)
 name|file_save_by_extension_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|save_file_proc
@@ -2758,15 +2739,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_load_type_callback (GtkWidget * w,gpointer client_data)
+DECL|function|file_load_type_callback (GtkWidget * widget,gpointer data)
 name|file_load_type_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|PlugInProcDef
@@ -2777,7 +2758,7 @@ operator|(
 name|PlugInProcDef
 operator|*
 operator|)
-name|client_data
+name|data
 decl_stmt|;
 name|file_update_name
 argument_list|(
@@ -2796,15 +2777,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_save_type_callback (GtkWidget * w,gpointer client_data)
+DECL|function|file_save_type_callback (GtkWidget * widget,gpointer data)
 name|file_save_type_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|PlugInProcDef
@@ -2815,7 +2796,7 @@ operator|(
 name|PlugInProcDef
 operator|*
 operator|)
-name|client_data
+name|data
 decl_stmt|;
 name|file_update_name
 argument_list|(
@@ -5827,15 +5808,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_open_clistrow_callback (GtkWidget * w,int client_data)
+DECL|function|file_open_clistrow_callback (GtkWidget * widget,int data)
 name|file_open_clistrow_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|int
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|gchar
@@ -5881,15 +5862,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|genbutton_callback (GtkWidget * w,gpointer client_data)
+DECL|function|genbutton_callback (GtkWidget * widget,gpointer data)
 name|genbutton_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|GimpImage
@@ -6073,15 +6054,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_open_ok_callback (GtkWidget * w,gpointer client_data)
+DECL|function|file_open_ok_callback (GtkWidget * widget,gpointer data)
 name|file_open_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|GtkFileSelection
@@ -6117,7 +6098,7 @@ name|fs
 operator|=
 name|GTK_FILE_SELECTION
 argument_list|(
-name|client_data
+name|data
 argument_list|)
 expr_stmt|;
 name|filename
@@ -6262,7 +6243,7 @@ condition|)
 block|{
 name|file_dialog_hide
 argument_list|(
-name|client_data
+name|data
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -6492,7 +6473,7 @@ condition|)
 block|{
 name|file_dialog_hide
 argument_list|(
-name|client_data
+name|data
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -6594,15 +6575,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_save_ok_callback (GtkWidget * w,gpointer client_data)
+DECL|function|file_save_ok_callback (GtkWidget * widget,gpointer data)
 name|file_save_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|GtkFileSelection
@@ -6631,7 +6612,7 @@ name|fs
 operator|=
 name|GTK_FILE_SELECTION
 argument_list|(
-name|client_data
+name|data
 argument_list|)
 expr_stmt|;
 name|filename
@@ -6818,7 +6799,7 @@ condition|)
 block|{
 name|file_dialog_hide
 argument_list|(
-name|client_data
+name|data
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -7030,41 +7011,6 @@ modifier|*
 name|raw_filename
 parameter_list|)
 block|{
-specifier|static
-name|ActionAreaItem
-name|obox_action_items
-index|[
-literal|2
-index|]
-init|=
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"Yes"
-argument_list|)
-block|,
-name|file_overwrite_yes_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"No"
-argument_list|)
-block|,
-name|file_overwrite_no_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|}
-decl_stmt|;
 name|OverwriteBox
 modifier|*
 name|overwrite_box
@@ -7083,16 +7029,11 @@ name|overwrite_text
 decl_stmt|;
 name|overwrite_box
 operator|=
-operator|(
-name|OverwriteBox
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|OverwriteBox
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|overwrite_text
@@ -7123,67 +7064,58 @@ name|overwrite_box
 operator|->
 name|obox
 operator|=
-name|gtk_dialog_new
-argument_list|()
-expr_stmt|;
-name|gtk_window_set_wmclass
+name|gimp_dialog_new
 argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|overwrite_box
-operator|->
-name|obox
-argument_list|)
-argument_list|,
-literal|"file_exists"
-argument_list|,
-literal|"Gimp"
-argument_list|)
-expr_stmt|;
-name|gtk_window_set_title
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|overwrite_box
-operator|->
-name|obox
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"File Exists!"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_window_set_position
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|overwrite_box
-operator|->
-name|obox
-argument_list|)
+argument_list|,
+literal|"file_exists"
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"dialogs/file_exists_dialog.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
 argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|overwrite_box
-operator|->
-name|obox
+literal|"Yes"
 argument_list|)
 argument_list|,
-literal|"delete_event"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|file_overwrite_delete_callback
+name|file_overwrite_yes_callback
 argument_list|,
 name|overwrite_box
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"No"
+argument_list|)
+argument_list|,
+name|file_overwrite_no_callback
+argument_list|,
+name|overwrite_box
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|vbox
@@ -7192,7 +7124,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -7202,12 +7134,12 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|1
+literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_container_add
 argument_list|(
-name|GTK_BOX
+name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -7220,12 +7152,6 @@ name|vbox
 argument_list|)
 argument_list|,
 name|vbox
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|label
@@ -7247,40 +7173,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|obox_action_items
-index|[
-literal|0
-index|]
-operator|.
-name|user_data
-operator|=
-name|overwrite_box
-expr_stmt|;
-name|obox_action_items
-index|[
-literal|1
-index|]
-operator|.
-name|user_data
-operator|=
-name|overwrite_box
-expr_stmt|;
-name|build_action_area
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|overwrite_box
-operator|->
-name|obox
-argument_list|)
-argument_list|,
-name|obox_action_items
-argument_list|,
-literal|2
 argument_list|,
 literal|0
 argument_list|)
@@ -7313,15 +7205,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_overwrite_yes_callback (GtkWidget * w,gpointer client_data)
+DECL|function|file_overwrite_yes_callback (GtkWidget * widget,gpointer data)
 name|file_overwrite_yes_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|OverwriteBox
@@ -7338,7 +7230,7 @@ operator|(
 name|OverwriteBox
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
@@ -7455,47 +7347,16 @@ end_function
 
 begin_function
 specifier|static
-name|gint
-DECL|function|file_overwrite_delete_callback (GtkWidget * w,GdkEvent * e,gpointer client_data)
-name|file_overwrite_delete_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|e
-parameter_list|,
-name|gpointer
-name|client_data
-parameter_list|)
-block|{
-name|file_overwrite_no_callback
-argument_list|(
-name|w
-argument_list|,
-name|client_data
-argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
 name|void
-DECL|function|file_overwrite_no_callback (GtkWidget * w,gpointer client_data)
+DECL|function|file_overwrite_no_callback (GtkWidget * widget,gpointer data)
 name|file_overwrite_no_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|OverwriteBox
@@ -7508,7 +7369,7 @@ operator|(
 name|OverwriteBox
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(

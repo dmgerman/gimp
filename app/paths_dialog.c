@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"actionarea.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormaps.h"
 end_include
 
@@ -126,7 +120,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"general.h"
+file|"gimpui.h"
 end_include
 
 begin_include
@@ -187,12 +181,6 @@ begin_include
 include|#
 directive|include
 file|"paths_dialogP.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"resize.h"
 end_include
 
 begin_include
@@ -322,7 +310,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon27930f1a0108
+DECL|struct|__anon29c1e6c80108
 typedef|typedef
 struct|struct
 block|{
@@ -451,7 +439,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon27930f1a0208
+DECL|struct|__anon29c1e6c80208
 typedef|typedef
 struct|struct
 block|{
@@ -480,7 +468,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27930f1a0308
+DECL|struct|__anon29c1e6c80308
 typedef|typedef
 struct|struct
 block|{
@@ -499,7 +487,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27930f1a0408
+DECL|struct|__anon29c1e6c80408
 typedef|typedef
 struct|struct
 block|{
@@ -5636,6 +5624,10 @@ modifier|*
 name|widget
 parameter_list|)
 block|{
+name|GtkWidget
+modifier|*
+name|qbox
+decl_stmt|;
 name|GdkBitmap
 modifier|*
 name|mask
@@ -5676,14 +5668,18 @@ operator|&
 name|mask
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|query_string_box
+name|qbox
+operator|=
+name|gimp_query_string_box
 argument_list|(
 name|_
 argument_list|(
 literal|"Rename path"
 argument_list|)
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"dialogs/paths_dialog.html"
 argument_list|,
 name|_
 argument_list|(
@@ -5700,6 +5696,10 @@ name|do_rename_paths_callback
 argument_list|,
 name|widget
 argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|qbox
 argument_list|)
 expr_stmt|;
 block|}

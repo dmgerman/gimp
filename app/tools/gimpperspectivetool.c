@@ -208,6 +208,10 @@ name|_
 argument_list|(
 literal|"Perspective Transform Information"
 argument_list|)
+argument_list|,
+name|tools_help_func
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_label

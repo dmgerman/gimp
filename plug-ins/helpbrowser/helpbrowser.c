@@ -129,7 +129,7 @@ value|"help"
 end_define
 
 begin_enum
-DECL|enum|__anon27981ec70103
+DECL|enum|__anon2c30cf3a0103
 enum|enum
 block|{
 DECL|enumerator|CONTENTS
@@ -145,7 +145,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon27981ec70203
+DECL|enum|__anon2c30cf3a0203
 enum|enum
 block|{
 DECL|enumerator|URL_UNKNOWN
@@ -177,7 +177,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27981ec70308
+DECL|struct|__anon2c30cf3a0308
 block|{
 DECL|member|index
 name|gint
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27981ec70408
+DECL|struct|__anon2c30cf3a0408
 block|{
 DECL|member|title
 name|gchar
@@ -3957,21 +3957,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run_temp_proc (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run_temp_proc (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run_temp_proc
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -3997,20 +3997,27 @@ name|gchar
 modifier|*
 name|path
 decl_stmt|;
-name|g_print
-argument_list|(
-literal|"starting idle page loader (%i)\n"
-argument_list|,
-name|getpid
-argument_list|()
-argument_list|)
-expr_stmt|;
 comment|/*  Make sure all the arguments are there!  */
 if|if
 condition|(
+operator|(
 name|nparams
 operator|!=
 literal|1
+operator|)
+operator|||
+operator|!
+name|strlen
+argument_list|(
+name|param
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+argument_list|)
 condition|)
 name|path
 operator|=
@@ -4066,14 +4073,6 @@ argument_list|(
 name|idle_load_page
 argument_list|,
 name|path
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"idle page loader started (%i)\n"
-argument_list|,
-name|getpid
-argument_list|()
 argument_list|)
 expr_stmt|;
 operator|*
@@ -4141,24 +4140,8 @@ parameter_list|)
 block|{
 comment|/* We have some data in the wire - read it */
 comment|/* The below will only ever run a single proc */
-name|g_print
-argument_list|(
-literal|"before gimp_run_temp (%i)\n"
-argument_list|,
-name|getpid
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|gimp_run_temp
 argument_list|()
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"after gimp_run_temp (%i)\n"
-argument_list|,
-name|getpid
-argument_list|()
-argument_list|)
 expr_stmt|;
 return|return
 name|TRUE
@@ -4289,65 +4272,6 @@ modifier|*
 name|path
 parameter_list|)
 block|{
-name|GParam
-modifier|*
-name|return_params
-decl_stmt|;
-name|gint
-name|n_return_params
-decl_stmt|;
-name|g_print
-argument_list|(
-literal|"before run_procedure(%i)\n"
-argument_list|,
-name|getpid
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|return_params
-operator|=
-name|gimp_run_procedure
-argument_list|(
-name|GIMP_HELP_TEMP_EXT_NAME
-argument_list|,
-operator|&
-name|n_return_params
-argument_list|,
-name|PARAM_STRING
-argument_list|,
-name|path
-argument_list|,
-name|PARAM_END
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"after run_procedure(%i)\n"
-argument_list|,
-name|getpid
-argument_list|()
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_params
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|STATUS_SUCCESS
-condition|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-else|else
-block|{
 if|if
 condition|(
 operator|!
@@ -4368,7 +4292,6 @@ expr_stmt|;
 return|return
 name|TRUE
 return|;
-block|}
 block|}
 end_function
 
@@ -4453,7 +4376,7 @@ literal|"Sven Neumann& Michael Natterer"
 argument_list|,
 literal|"1999"
 argument_list|,
-literal|"<Toolbox>/Xtns/Help Browser"
+name|NULL
 argument_list|,
 literal|""
 argument_list|,
@@ -4587,9 +4510,24 @@ case|:
 comment|/*  Make sure all the arguments are there!  */
 if|if
 condition|(
+operator|(
 name|nparams
 operator|!=
 literal|2
+operator|)
+operator|||
+operator|!
+name|strlen
+argument_list|(
+name|param
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+argument_list|)
 condition|)
 name|path
 operator|=

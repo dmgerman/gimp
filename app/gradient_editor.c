@@ -79,12 +79,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"actionarea.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -127,13 +121,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gradient.h"
+file|"gimpui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"interface.h"
+file|"gradient.h"
 end_include
 
 begin_include
@@ -406,22 +400,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
-name|ed_delete_delete_gradient_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|GdkEvent
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|void
 name|ed_rename_gradient_callback
 parameter_list|(
@@ -522,22 +500,6 @@ name|void
 name|ed_refresh_grads_callback
 parameter_list|(
 name|GtkWidget
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gint
-name|ed_delete_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|GdkEvent
 modifier|*
 parameter_list|,
 name|gpointer
@@ -767,7 +729,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gboolean
 name|control_point_in_handle
 parameter_list|(
 name|gint
@@ -1695,22 +1657,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
-name|cpopup_split_uniform_delete_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|GdkEvent
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|void
 name|cpopup_split_uniform
 parameter_list|(
@@ -1846,22 +1792,6 @@ name|void
 name|cpopup_replicate_cancel_callback
 parameter_list|(
 name|GtkWidget
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gint
-name|cpopup_replicate_delete_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|GdkEvent
 modifier|*
 parameter_list|,
 name|gpointer
@@ -3210,52 +3140,6 @@ decl_stmt|;
 name|gint
 name|select_pos
 decl_stmt|;
-specifier|static
-name|ActionAreaItem
-name|action_items
-index|[]
-init|=
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"Save"
-argument_list|)
-block|,
-name|ed_save_grads_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"Refresh"
-argument_list|)
-block|,
-name|ed_refresh_grads_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"Close"
-argument_list|)
-block|,
-name|ed_close_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|}
-decl_stmt|;
 comment|/* If the editor already exists, just show it */
 if|if
 condition|(
@@ -3325,54 +3209,71 @@ name|g_editor
 operator|->
 name|shell
 operator|=
-name|gtk_dialog_new
-argument_list|()
-expr_stmt|;
-name|gtk_window_set_wmclass
+name|gimp_dialog_new
 argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|g_editor
-operator|->
-name|shell
-argument_list|)
-argument_list|,
-literal|"gradient_editor"
-argument_list|,
-literal|"Gimp"
-argument_list|)
-expr_stmt|;
-name|gtk_window_set_title
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|g_editor
-operator|->
-name|shell
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"Gradient Editor"
 argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/* Handle the wm delete event */
-name|gtk_signal_connect
+argument_list|,
+literal|"gradient_editor"
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"dialogs/gradient_editor_dialog.html"
+argument_list|,
+name|GTK_WIN_POS_NONE
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
 argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|g_editor
-operator|->
-name|shell
+literal|"Save"
 argument_list|)
 argument_list|,
-literal|"delete_event"
+name|ed_save_grads_callback
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
 argument_list|(
-name|ed_delete_callback
+literal|"Refresh"
 argument_list|)
+argument_list|,
+name|ed_refresh_grads_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Close"
+argument_list|)
+argument_list|,
+name|ed_close_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
 argument_list|,
 name|NULL
 argument_list|)
@@ -5043,23 +4944,6 @@ operator|->
 name|hint_label
 argument_list|)
 expr_stmt|;
-comment|/* The action area */
-name|build_action_area
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|g_editor
-operator|->
-name|shell
-argument_list|)
-argument_list|,
-name|action_items
-argument_list|,
-literal|3
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
 comment|/* Initialize other data */
 name|g_editor
 operator|->
@@ -5173,10 +5057,6 @@ end_function
 
 begin_comment
 comment|/***** Gradient editor functions *****/
-end_comment
-
-begin_comment
-comment|/*****/
 end_comment
 
 begin_function
@@ -6927,10 +6807,6 @@ begin_comment
 comment|/***** the "new gradient" dialog functions *****/
 end_comment
 
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -6945,14 +6821,22 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|gtk_widget_show
-argument_list|(
-name|query_string_box
+name|GtkWidget
+modifier|*
+name|qbox
+decl_stmt|;
+name|qbox
+operator|=
+name|gimp_query_string_box
 argument_list|(
 name|_
 argument_list|(
 literal|"New gradient"
 argument_list|)
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"dialogs/gradient_editor_dialog.html"
 argument_list|,
 name|_
 argument_list|(
@@ -6972,6 +6856,10 @@ name|ed_do_new_gradient_callback
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|qbox
 argument_list|)
 expr_stmt|;
 block|}
@@ -7149,10 +7037,6 @@ begin_comment
 comment|/***** The "copy gradient" dialog functions *****/
 end_comment
 
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -7167,6 +7051,10 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|GtkWidget
+modifier|*
+name|qbox
+decl_stmt|;
 name|gchar
 modifier|*
 name|name
@@ -7192,14 +7080,18 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|query_string_box
+name|qbox
+operator|=
+name|gimp_query_string_box
 argument_list|(
 name|_
 argument_list|(
 literal|"Copy gradient"
 argument_list|)
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"dialogs/gradient_editor_dialog.html"
 argument_list|,
 name|_
 argument_list|(
@@ -7216,6 +7108,10 @@ name|ed_do_copy_gradient_callback
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|qbox
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -7470,10 +7366,6 @@ begin_comment
 comment|/***** The "rename gradient" dialog functions *****/
 end_comment
 
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -7488,6 +7380,10 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|GtkWidget
+modifier|*
+name|qbox
+decl_stmt|;
 if|if
 condition|(
 name|curr_gradient
@@ -7495,14 +7391,18 @@ operator|==
 name|NULL
 condition|)
 return|return;
-name|gtk_widget_show
-argument_list|(
-name|query_string_box
+name|qbox
+operator|=
+name|gimp_query_string_box
 argument_list|(
 name|_
 argument_list|(
 literal|"Rename gradient"
 argument_list|)
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"dialogs/gradient_editor_dialog.html"
 argument_list|,
 name|_
 argument_list|(
@@ -7521,6 +7421,10 @@ name|ed_do_rename_gradient_callback
 argument_list|,
 name|curr_gradient
 argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|qbox
 argument_list|)
 expr_stmt|;
 block|}
@@ -7726,10 +7630,6 @@ begin_comment
 comment|/***** The "delete gradient" dialog functions *****/
 end_comment
 
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -7760,39 +7660,6 @@ name|gchar
 modifier|*
 name|str
 decl_stmt|;
-specifier|static
-name|ActionAreaItem
-name|action_items
-index|[]
-init|=
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"Delete"
-argument_list|)
-block|,
-name|ed_do_delete_gradient_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"Cancel"
-argument_list|)
-block|,
-name|ed_cancel_delete_gradient_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|}
-decl_stmt|;
 if|if
 condition|(
 name|num_gradients
@@ -7802,60 +7669,58 @@ condition|)
 return|return;
 name|dialog
 operator|=
-name|gtk_dialog_new
-argument_list|()
-expr_stmt|;
-name|gtk_window_set_wmclass
+name|gimp_dialog_new
 argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|,
-literal|"delete_gradient"
-argument_list|,
-literal|"Gimp"
-argument_list|)
-expr_stmt|;
-name|gtk_window_set_title
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"Delete gradient"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_window_position
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
+argument_list|,
+literal|"delete_gradient"
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"dialogs/gradient_editor_dialog.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
-argument_list|)
-expr_stmt|;
-comment|/*  Handle the wm delete event  */
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|dialog
-argument_list|)
 argument_list|,
-literal|"delete_event"
+name|FALSE
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
 argument_list|(
-name|ed_delete_delete_gradient_callback
+literal|"Delete"
 argument_list|)
 argument_list|,
-name|dialog
+name|ed_do_delete_gradient_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Cancel"
+argument_list|)
+argument_list|,
+name|ed_cancel_delete_gradient_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  The main vbox  */
@@ -7944,39 +7809,6 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|str
-argument_list|)
-expr_stmt|;
-comment|/*  The action area  */
-name|action_items
-index|[
-literal|0
-index|]
-operator|.
-name|user_data
-operator|=
-name|dialog
-expr_stmt|;
-name|action_items
-index|[
-literal|1
-index|]
-operator|.
-name|user_data
-operator|=
-name|dialog
-expr_stmt|;
-name|build_action_area
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|,
-name|action_items
-argument_list|,
-literal|2
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -8247,43 +8079,8 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function
-specifier|static
-name|gint
-DECL|function|ed_delete_delete_gradient_callback (GtkWidget * widget,GdkEvent * event,gpointer data)
-name|ed_delete_delete_gradient_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|event
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|ed_cancel_delete_gradient_callback
-argument_list|(
-name|widget
-argument_list|,
-name|data
-argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
-return|;
-block|}
-end_function
-
 begin_comment
 comment|/***** The "save as pov" dialog functions *****/
-end_comment
-
-begin_comment
-comment|/*****/
 end_comment
 
 begin_function
@@ -8321,7 +8118,7 @@ literal|"Save as POV-Ray"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -8390,6 +8187,16 @@ operator|)
 name|ed_delete_save_pov_callback
 argument_list|,
 name|window
+argument_list|)
+expr_stmt|;
+comment|/*  Connect the "F1" help key  */
+name|gimp_help_connect_help_accel
+argument_list|(
+name|window
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"dialogs/gradient_editor_dialog.html"
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -8734,10 +8541,6 @@ begin_comment
 comment|/***** The main dialog action area button callbacks *****/
 end_comment
 
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -8904,43 +8707,8 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function
-specifier|static
-name|gint
-DECL|function|ed_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer data)
-name|ed_delete_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|event
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|ed_close_callback
-argument_list|(
-name|widget
-argument_list|,
-name|data
-argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
-return|;
-block|}
-end_function
-
 begin_comment
 comment|/***** Zoom, scrollbar& instant update callbacks *****/
-end_comment
-
-begin_comment
-comment|/*****/
 end_comment
 
 begin_function
@@ -9409,10 +9177,6 @@ end_function
 
 begin_comment
 comment|/***** Gradient preview functions *****/
-end_comment
-
-begin_comment
-comment|/*****/
 end_comment
 
 begin_function
@@ -10705,7 +10469,6 @@ operator|=
 name|GRAD_CHECK_LIGHT
 expr_stmt|;
 block|}
-comment|/* else */
 operator|*
 name|p0
 operator|++
@@ -10819,7 +10582,6 @@ operator|+=
 name|dx
 expr_stmt|;
 block|}
-comment|/* for */
 comment|/* Fill image */
 for|for
 control|(
@@ -10895,19 +10657,11 @@ block|}
 end_function
 
 begin_comment
-comment|/* prev_fill_image */
-end_comment
-
-begin_comment
 comment|/***** Gradient control functions *****/
 end_comment
 
 begin_comment
 comment|/* *** WARNING *** WARNING *** WARNING ***  *  * All the event-handling code for the gradient control widget is  * extremely hairy.  You are not expected to understand it.  If you  * find bugs, mail me unless you are very brave and you want to fix  * them yourself ;-)  */
-end_comment
-
-begin_comment
-comment|/*****/
 end_comment
 
 begin_function
@@ -11314,7 +11068,7 @@ decl_stmt|;
 name|control_drag_mode_t
 name|handle
 decl_stmt|;
-name|int
+name|gboolean
 name|in_handle
 decl_stmt|;
 name|double
@@ -11451,7 +11205,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-comment|/* switch */
 block|}
 else|else
 name|ed_set_hint
@@ -11465,10 +11218,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* control_do_hint */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -11503,7 +11252,7 @@ decl_stmt|;
 name|double
 name|xpos
 decl_stmt|;
-name|gint
+name|gboolean
 name|in_handle
 decl_stmt|;
 comment|/* See which button was pressed */
@@ -11946,7 +11695,7 @@ end_comment
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|control_point_in_handle (gint x,gint y,grad_segment_t * seg,control_drag_mode_t handle)
 name|control_point_in_handle
 parameter_list|(
@@ -12009,7 +11758,6 @@ name|right
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* else */
 break|break;
 case|case
 name|GRAD_DRAG_MIDDLE
@@ -12036,10 +11784,9 @@ name|handle
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
-comment|/* switch */
 name|y
 operator|/=
 literal|2
@@ -12067,18 +11814,14 @@ operator|)
 operator|)
 condition|)
 return|return
-literal|1
+name|TRUE
 return|;
 else|else
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* control_point_in_handle */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -12109,10 +11852,6 @@ name|seg
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* control_select_single_segment */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -12171,10 +11910,6 @@ name|seg
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* control_extend_selection */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -12486,7 +12221,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-comment|/* switch */
 name|curr_gradient
 operator|->
 name|dirty
@@ -12514,10 +12248,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* control_motion */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -12602,7 +12332,6 @@ operator|=
 name|drag_seg
 expr_stmt|;
 block|}
-comment|/* else */
 comment|/* Calculate left bound for dragged hadle */
 if|if
 condition|(
@@ -12650,7 +12379,6 @@ operator|->
 name|prev
 expr_stmt|;
 block|}
-comment|/* while */
 comment|/* 2*k handles have to fit */
 name|lbound
 operator|=
@@ -12665,7 +12393,6 @@ operator|*
 name|EPSILON
 expr_stmt|;
 block|}
-comment|/* else */
 comment|/* Calculate right bound for dragged handle */
 if|if
 condition|(
@@ -12715,7 +12442,6 @@ operator|->
 name|next
 expr_stmt|;
 block|}
-comment|/* while */
 comment|/* 2*k handles have to fit */
 name|rbound
 operator|=
@@ -12730,7 +12456,6 @@ operator|*
 name|EPSILON
 expr_stmt|;
 block|}
-comment|/* else */
 comment|/* Calculate position */
 name|pos
 operator|=
@@ -12823,10 +12548,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* control_compress_left */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -12969,10 +12690,6 @@ condition|)
 do|;
 block|}
 end_function
-
-begin_comment
-comment|/* control_compress_range */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -13147,7 +12864,6 @@ operator|-
 name|EPSILON
 expr_stmt|;
 block|}
-comment|/* if */
 comment|/* Fix the delta if necessary */
 if|if
 condition|(
@@ -13248,7 +12964,6 @@ operator|->
 name|middle
 expr_stmt|;
 block|}
-comment|/* else */
 comment|/* Move all the segments inside the range */
 name|seg
 operator|=
@@ -13417,10 +13132,6 @@ name|delta
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* control_move */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -13834,7 +13545,6 @@ operator|->
 name|next
 expr_stmt|;
 block|}
-comment|/* while */
 comment|/* Draw the handle which is closest to the mouse position */
 name|g_pos
 operator|=
@@ -13911,7 +13621,6 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* else */
 break|break;
 case|case
 name|GRAD_DRAG_MIDDLE
@@ -13931,13 +13640,8 @@ break|break;
 default|default:
 break|break;
 block|}
-comment|/* switch */
 block|}
 end_function
-
-begin_comment
-comment|/* control_draw */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -13991,14 +13695,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* control_draw_normal_handle */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -14049,14 +13745,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* control_draw_middle_handle */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -14200,10 +13888,6 @@ block|}
 end_function
 
 begin_comment
-comment|/* control_draw_handle */
-end_comment
-
-begin_comment
 comment|/*****/
 end_comment
 
@@ -14226,7 +13910,7 @@ name|GtkAdjustment
 modifier|*
 name|adjustment
 decl_stmt|;
-comment|/* Calculate the position (in widget's coordinates) of the 	 * requested point from the gradient.  Rounding is done to 	 * minimize mismatches between the rendered gradient preview 	 * and the gradient control's handles. 	 */
+comment|/* Calculate the position (in widget's coordinates) of the    * requested point from the gradient.  Rounding is done to    * minimize mismatches between the rendered gradient preview    * and the gradient control's handles.    */
 name|adjustment
 operator|=
 name|GTK_ADJUSTMENT
@@ -14277,10 +13961,6 @@ argument_list|)
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* control_calc_p_pos */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -14349,15 +14029,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* control_calc_g_pos */
-end_comment
-
-begin_comment
 comment|/***** Control popup functions *****/
-end_comment
-
-begin_comment
-comment|/*****/
 end_comment
 
 begin_function
@@ -15434,10 +15106,6 @@ begin_comment
 comment|/***** Create a single menu item *****/
 end_comment
 
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
 name|GtkWidget
@@ -15740,10 +15408,6 @@ end_function
 
 begin_comment
 comment|/***** Update all menus *****/
-end_comment
-
-begin_comment
-comment|/*****/
 end_comment
 
 begin_function
@@ -17389,7 +17053,6 @@ operator|=
 name|b1
 expr_stmt|;
 block|}
-comment|/* else */
 operator|*
 name|p2
 operator|++
@@ -17409,7 +17072,6 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-comment|/* for */
 comment|/* Fill preview */
 name|gtk_preview_draw_row
 argument_list|(
@@ -17507,15 +17169,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* cpopup_render_color_box */
-end_comment
-
-begin_comment
 comment|/***** Creale load& save menus *****/
-end_comment
-
-begin_comment
-comment|/*****/
 end_comment
 
 begin_function
@@ -18191,10 +17845,6 @@ block|}
 end_function
 
 begin_comment
-comment|/* cpopup_update_saved_color */
-end_comment
-
-begin_comment
 comment|/*****/
 end_comment
 
@@ -18524,7 +18174,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-comment|/* switch */
 name|curr_gradient
 operator|->
 name|dirty
@@ -18538,14 +18187,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* cpopup_load_left_callback */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -18635,14 +18276,6 @@ name|a0
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* cpopup_save_left_callback */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -18967,7 +18600,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-comment|/* switch */
 name|curr_gradient
 operator|->
 name|dirty
@@ -18981,14 +18613,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* cpopup_load_right_callback */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -19080,10 +18704,6 @@ block|}
 end_function
 
 begin_comment
-comment|/* cpopup_save_right_callback */
-end_comment
-
-begin_comment
 comment|/*****/
 end_comment
 
@@ -19153,10 +18773,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* cpopup_set_color_selection_color */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -19236,10 +18852,6 @@ index|]
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* cpopup_get_color_selection_color */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -19361,10 +18973,6 @@ block|}
 end_function
 
 begin_comment
-comment|/* cpopup_save_selection */
-end_comment
-
-begin_comment
 comment|/*****/
 end_comment
 
@@ -19386,10 +18994,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* cpopup_free_selection */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -19520,15 +19124,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* cpopup_replace_selection */
-end_comment
-
-begin_comment
 comment|/***** Color dialogs for left and right endpoint *****/
-end_comment
-
-begin_comment
-comment|/*****/
 end_comment
 
 begin_function
@@ -20408,10 +20004,6 @@ begin_comment
 comment|/***** Blending menu *****/
 end_comment
 
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
 name|GtkWidget
@@ -20696,10 +20288,6 @@ end_function
 
 begin_comment
 comment|/***** Coloring menu *****/
-end_comment
-
-begin_comment
-comment|/*****/
 end_comment
 
 begin_function
@@ -21370,66 +20958,11 @@ name|GtkObject
 modifier|*
 name|scale_data
 decl_stmt|;
-specifier|static
-name|ActionAreaItem
-name|action_items
-index|[]
-init|=
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"Split"
-argument_list|)
-block|,
-name|cpopup_split_uniform_split_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"Cancel"
-argument_list|)
-block|,
-name|cpopup_split_uniform_cancel_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|}
-decl_stmt|;
 comment|/*  Create dialog window  */
 name|dialog
 operator|=
-name|gtk_dialog_new
-argument_list|()
-expr_stmt|;
-name|gtk_window_set_wmclass
+name|gimp_dialog_new
 argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|g_editor
-operator|->
-name|shell
-argument_list|)
-argument_list|,
-literal|"gradient_segment_split_uniformly"
-argument_list|,
-literal|"Gimp"
-argument_list|)
-expr_stmt|;
-name|gtk_window_set_title
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|,
 operator|(
 name|g_editor
 operator|->
@@ -21449,34 +20982,52 @@ name|_
 argument_list|(
 literal|"Split segments uniformly"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_window_position
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
+argument_list|,
+literal|"gradient_segment_split_uniformly"
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"dialogs/gradient_editor_dialog.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
-argument_list|)
-expr_stmt|;
-comment|/*  Handle the wm delete event  */
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|dialog
-argument_list|)
 argument_list|,
-literal|"delete_event"
+name|FALSE
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
 argument_list|(
-name|cpopup_split_uniform_delete_callback
+literal|"Split"
 argument_list|)
 argument_list|,
-name|dialog
+name|cpopup_split_uniform_split_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Cancel"
+argument_list|)
+argument_list|,
+name|cpopup_split_uniform_cancel_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  The main vbox  */
@@ -21684,39 +21235,6 @@ operator|)
 name|cpopup_split_uniform_scale_update
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-comment|/*  The action area  */
-name|action_items
-index|[
-literal|0
-index|]
-operator|.
-name|user_data
-operator|=
-name|dialog
-expr_stmt|;
-name|action_items
-index|[
-literal|1
-index|]
-operator|.
-name|user_data
-operator|=
-name|dialog
-expr_stmt|;
-name|build_action_area
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|,
-name|action_items
-argument_list|,
-literal|2
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 comment|/*  Show!  */
@@ -21941,37 +21459,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|gint
-DECL|function|cpopup_split_uniform_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer data)
-name|cpopup_split_uniform_delete_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|event
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|cpopup_split_uniform_cancel_callback
-argument_list|(
-name|widget
-argument_list|,
-name|data
-argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
-return|;
 block|}
 end_function
 
@@ -22945,10 +22432,6 @@ begin_comment
 comment|/***** Control popup -> selection options functions *****/
 end_comment
 
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
 name|GtkWidget
@@ -23769,64 +23252,11 @@ name|GtkObject
 modifier|*
 name|scale_data
 decl_stmt|;
-specifier|static
-name|ActionAreaItem
-name|action_items
-index|[]
-init|=
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"Replicate"
-argument_list|)
-block|,
-name|cpopup_do_replicate_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"Cancel"
-argument_list|)
-block|,
-name|cpopup_replicate_cancel_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|}
-decl_stmt|;
 comment|/*  Create dialog window  */
 name|dialog
 operator|=
-name|gtk_dialog_new
-argument_list|()
-expr_stmt|;
-name|gtk_window_set_wmclass
+name|gimp_dialog_new
 argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|,
-literal|"gradient_segment_replicate"
-argument_list|,
-literal|"Gimp"
-argument_list|)
-expr_stmt|;
-name|gtk_window_set_title
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|,
 operator|(
 name|g_editor
 operator|->
@@ -23846,34 +23276,52 @@ name|_
 argument_list|(
 literal|"Replicate selection"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_window_position
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
+argument_list|,
+literal|"gradient_segment_replicate"
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"dialogs/gradient_editor_dialog.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
-argument_list|)
-expr_stmt|;
-comment|/*  Handle the wm delete event  */
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|dialog
-argument_list|)
 argument_list|,
-literal|"delete_event"
+name|FALSE
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
 argument_list|(
-name|cpopup_replicate_delete_callback
+literal|"Replicate"
 argument_list|)
 argument_list|,
-name|dialog
+name|cpopup_do_replicate_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Cancel"
+argument_list|)
+argument_list|,
+name|cpopup_replicate_cancel_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|vbox
@@ -24080,39 +23528,6 @@ operator|)
 name|cpopup_replicate_scale_update
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-comment|/*  The action area  */
-name|action_items
-index|[
-literal|0
-index|]
-operator|.
-name|user_data
-operator|=
-name|dialog
-expr_stmt|;
-name|action_items
-index|[
-literal|1
-index|]
-operator|.
-name|user_data
-operator|=
-name|dialog
-expr_stmt|;
-name|build_action_area
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|,
-name|action_items
-argument_list|,
-literal|2
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 comment|/*  Show!  */
@@ -24681,37 +24096,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function
-specifier|static
-name|gint
-DECL|function|cpopup_replicate_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer data)
-name|cpopup_replicate_delete_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|event
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|cpopup_replicate_cancel_callback
-argument_list|(
-name|widget
-argument_list|,
-name|data
-argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
-return|;
-block|}
-end_function
-
 begin_comment
 comment|/*****/
 end_comment
@@ -24884,10 +24268,6 @@ end_function
 
 begin_comment
 comment|/***** Main blend function *****/
-end_comment
-
-begin_comment
-comment|/*****/
 end_comment
 
 begin_function
@@ -25181,10 +24561,6 @@ begin_comment
 comment|/***** Gradient functions *****/
 end_comment
 
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
 name|gradient_t
@@ -25201,12 +24577,11 @@ name|grad
 decl_stmt|;
 name|grad
 operator|=
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|gradient_t
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|grad
@@ -25250,10 +24625,6 @@ name|grad
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* grad_new_gradient */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -25325,10 +24696,6 @@ block|}
 end_function
 
 begin_comment
-comment|/* grad_free_gradient */
-end_comment
-
-begin_comment
 comment|/*****/
 end_comment
 
@@ -25398,7 +24765,6 @@ name|node
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* while */
 block|}
 end_function
 
@@ -25439,10 +24805,6 @@ name|NULL
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* grad_free_gradients */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -25587,7 +24949,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"grad_load_gradient(): invalid number of segments in \"%s\""
+literal|"grad_load_gradient(): "
+literal|"invalid number of segments in \"%s\""
 argument_list|)
 argument_list|,
 name|filename
@@ -25600,7 +24963,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-comment|/* if */
 name|prev
 operator|=
 name|NULL
@@ -25787,13 +25149,11 @@ operator|)
 name|color
 expr_stmt|;
 block|}
-comment|/* else */
 name|prev
 operator|=
 name|seg
 expr_stmt|;
 block|}
-comment|/* for */
 name|fclose
 argument_list|(
 name|file
@@ -25824,10 +25184,6 @@ name|grad
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* grad_load_gradient */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -25876,13 +25232,13 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"grad_save_gradient(): can not save gradient with NULL filename"
+literal|"grad_save_gradient(): "
+literal|"can not save gradient with NULL filename"
 argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
 block|}
-comment|/* if */
 name|file
 operator|=
 name|fopen
@@ -25910,8 +25266,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-comment|/* if */
-comment|/* File format is: 	 * 	 *   GIMP Gradient 	 *   number_of_segments 	 *   left middle right r0 g0 b0 a0 r1 g1 b1 a1 type coloring 	 *   left middle right r0 g0 b0 a0 r1 g1 b1 a1 type coloring 	 *   ... 	 */
+comment|/* File format is:    *    *   GIMP Gradient    *   number_of_segments    *   left middle right r0 g0 b0 a0 r1 g1 b1 a1 type coloring    *   left middle right r0 g0 b0 a0 r1 g1 b1 a1 type coloring    *   ...    */
 name|fprintf
 argument_list|(
 name|file
@@ -25945,7 +25300,6 @@ operator|->
 name|next
 expr_stmt|;
 block|}
-comment|/* while */
 comment|/* Write rest of file */
 name|fprintf
 argument_list|(
@@ -26052,10 +25406,6 @@ block|}
 end_function
 
 begin_comment
-comment|/* grad_save_gradient */
-end_comment
-
-begin_comment
 comment|/*****/
 end_comment
 
@@ -26092,10 +25442,6 @@ block|}
 end_function
 
 begin_comment
-comment|/* grad_create_default_gradient */
-end_comment
-
-begin_comment
 comment|/*****/
 end_comment
 
@@ -26121,7 +25467,7 @@ decl_stmt|;
 name|int
 name|n
 decl_stmt|;
-comment|/* We insert gradients in alphabetical order.  Find the index 	 * of the gradient after which we will insert the current one. 	 */
+comment|/* We insert gradients in alphabetical order.  Find the index    * of the gradient after which we will insert the current one.    */
 name|n
 operator|=
 literal|0
@@ -26169,7 +25515,6 @@ name|tmp
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* while */
 name|num_gradients
 operator|++
 expr_stmt|;
@@ -26189,10 +25534,6 @@ name|n
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* grad_insert_in_gradients_list */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -26355,20 +25696,11 @@ operator|->
 name|next
 expr_stmt|;
 block|}
-comment|/* while */
 block|}
 end_function
 
 begin_comment
-comment|/* grad_dump_gradient */
-end_comment
-
-begin_comment
 comment|/***** Segment functions *****/
-end_comment
-
-begin_comment
-comment|/*****/
 end_comment
 
 begin_function
@@ -26387,12 +25719,11 @@ name|seg
 decl_stmt|;
 name|seg
 operator|=
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|grad_segment_t
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|seg
@@ -26478,10 +25809,6 @@ block|}
 end_function
 
 begin_comment
-comment|/* seg_new_segment */
-end_comment
-
-begin_comment
 comment|/*****/
 end_comment
 
@@ -26510,10 +25837,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* seg_free_segment */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -26562,13 +25885,8 @@ operator|=
 name|tmp
 expr_stmt|;
 block|}
-comment|/* while */
 block|}
 end_function
-
-begin_comment
-comment|/* seg_free_segments */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -26600,6 +25918,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* handle FP imprecision at the edges of the gradient */
 name|pos
 operator|=
 name|BOUNDS
@@ -26611,7 +25930,6 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-comment|/* to handle FP imprecision at the edges of the gradient */
 if|if
 condition|(
 name|grad
@@ -26635,6 +25953,7 @@ while|while
 condition|(
 name|seg
 condition|)
+block|{
 if|if
 condition|(
 name|pos
@@ -26665,6 +25984,7 @@ name|seg
 return|;
 block|}
 else|else
+block|{
 name|seg
 operator|=
 name|seg
@@ -26672,13 +25992,17 @@ operator|->
 name|next
 expr_stmt|;
 block|}
+block|}
 else|else
+block|{
 name|seg
 operator|=
 name|seg
 operator|->
 name|prev
 expr_stmt|;
+block|}
+block|}
 comment|/* Oops: we should have found a segment, but we didn't */
 name|grad_dump_gradient
 argument_list|(
@@ -26691,7 +26015,8 @@ name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
-literal|"seg_get_segment_at(): No matching segment for position %0.15f"
+literal|"seg_get_segment_at(): "
+literal|"No matching segment for position %0.15f"
 argument_list|)
 argument_list|,
 name|pos
@@ -26703,10 +26028,6 @@ return|;
 comment|/* To shut up -Wall */
 block|}
 end_function
-
-begin_comment
-comment|/* seg_get_segment_at */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -26749,10 +26070,6 @@ name|seg
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* seg_get_last_segment */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -26878,11 +26195,13 @@ name|m_delta
 operator|<
 name|r_delta
 condition|)
+block|{
 operator|*
 name|handle
 operator|=
 name|GRAD_DRAG_MIDDLE
 expr_stmt|;
+block|}
 else|else
 block|{
 operator|*
@@ -26901,22 +26220,12 @@ operator|=
 name|GRAD_DRAG_LEFT
 expr_stmt|;
 block|}
-comment|/* else */
 block|}
-comment|/* else */
 block|}
 end_function
 
 begin_comment
-comment|/* seg_get_closest_handle */
-end_comment
-
-begin_comment
 comment|/***** Calculation functions *****/
-end_comment
-
-begin_comment
-comment|/*****/
 end_comment
 
 begin_function
@@ -26989,13 +26298,8 @@ operator|/
 name|middle
 return|;
 block|}
-comment|/* else */
 block|}
 end_function
-
-begin_comment
-comment|/* calc_linear_factor */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -27042,10 +26346,6 @@ argument_list|)
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* calc_curved_factor */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -27098,10 +26398,6 @@ block|}
 end_function
 
 begin_comment
-comment|/* calc_sine_factor */
-end_comment
-
-begin_comment
 comment|/*****/
 end_comment
 
@@ -27144,10 +26440,6 @@ block|}
 end_function
 
 begin_comment
-comment|/* calc_sphere_increasing_factor */
-end_comment
-
-begin_comment
 comment|/*****/
 end_comment
 
@@ -27188,10 +26480,6 @@ return|;
 comment|/* Works for convex decreasing and concave increasing */
 block|}
 end_function
-
-begin_comment
-comment|/* calc_sphere_decreasing_factor */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -27329,7 +26617,6 @@ operator|=
 name|blue
 expr_stmt|;
 block|}
-comment|/* else */
 name|v
 operator|=
 name|max
@@ -27361,10 +26648,12 @@ name|s
 operator|==
 literal|0.0
 condition|)
+block|{
 name|h
 operator|=
 literal|0.0
 expr_stmt|;
+block|}
 else|else
 block|{
 name|delta
@@ -27453,7 +26742,6 @@ operator|-=
 literal|1.0
 expr_stmt|;
 block|}
-comment|/* else */
 operator|*
 name|r
 operator|=
@@ -27471,10 +26759,6 @@ name|v
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* calc_rgb_to_hsv */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -27742,22 +27026,12 @@ name|q
 expr_stmt|;
 break|break;
 block|}
-comment|/* switch */
 block|}
-comment|/* else */
 block|}
 end_function
 
 begin_comment
-comment|/* calc_hsv_to_rgb */
-end_comment
-
-begin_comment
 comment|/***** Files and paths functions *****/
-end_comment
-
-begin_comment
-comment|/*****/
 end_comment
 
 begin_function

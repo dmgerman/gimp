@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"info_dialog.h"
 end_include
 
@@ -631,7 +637,7 @@ comment|/* Crop area-select functions */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c2dec980103
+DECL|enum|__anon294801ea0103
 typedef|typedef
 enum|enum
 block|{
@@ -5663,6 +5669,10 @@ name|_
 argument_list|(
 literal|"Crop& Resize Information"
 argument_list|)
+argument_list|,
+name|tools_help_func
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  add the information fields  */

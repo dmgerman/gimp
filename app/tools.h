@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2c9be50103
+DECL|enum|__anon2bc1049e0103
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -363,6 +363,15 @@ name|void
 name|tools_options_dialog_free
 parameter_list|(
 name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|tools_help_func
+parameter_list|(
+name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl

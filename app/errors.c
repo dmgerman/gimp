@@ -117,12 +117,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"errorconsole.h"
 end_include
 
@@ -130,6 +124,12 @@ begin_include
 include|#
 directive|include
 file|"errors.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpui.h"
 end_include
 
 begin_include
@@ -187,7 +187,7 @@ block|{
 case|case
 name|MESSAGE_BOX
 case|:
-name|message_box
+name|gimp_message_box
 argument_list|(
 name|str
 argument_list|,

@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gximage.h"
 end_include
 
@@ -178,7 +184,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6d23cc0103
+DECL|enum|__anon29885b310103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -5407,6 +5413,10 @@ operator|=
 name|info_dialog_new
 argument_list|(
 name|title_buf
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"dialogs/navigation_window.html"
 argument_list|)
 expr_stmt|;
 name|dialog_register

@@ -462,6 +462,13 @@ name|trust_dirty_flag
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|int
+name|use_help
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  function prototypes  */
 end_comment

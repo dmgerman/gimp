@@ -463,9 +463,9 @@ typedef|;
 end_typedef
 
 begin_function
-DECL|function|pixel_surround_init (PixelSurround * ps,TileManager * t,int w,int h,unsigned char bg[MAX_CHANNELS])
 specifier|static
 name|void
+DECL|function|pixel_surround_init (PixelSurround * ps,TileManager * t,int w,int h,guchar bg[MAX_CHANNELS])
 name|pixel_surround_init
 parameter_list|(
 name|PixelSurround
@@ -482,8 +482,7 @@ parameter_list|,
 name|int
 name|h
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 name|bg
 index|[
 name|MAX_CHANNELS
@@ -599,11 +598,10 @@ comment|/* otherwise just copy into out own malloced buffer and return that */
 end_comment
 
 begin_function
-DECL|function|pixel_surround_lock (PixelSurround * ps,int x,int y)
 specifier|static
-name|unsigned
-name|char
+name|guchar
 modifier|*
+DECL|function|pixel_surround_lock (PixelSurround * ps,int x,int y)
 name|pixel_surround_lock
 parameter_list|(
 name|PixelSurround
@@ -938,9 +936,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|pixel_surround_rowstride (PixelSurround * ps)
 specifier|static
 name|int
+DECL|function|pixel_surround_rowstride (PixelSurround * ps)
 name|pixel_surround_rowstride
 parameter_list|(
 name|PixelSurround
@@ -957,9 +955,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|pixel_surround_release (PixelSurround * ps)
 specifier|static
 name|void
+DECL|function|pixel_surround_release (PixelSurround * ps)
 name|pixel_surround_release
 parameter_list|(
 name|PixelSurround
@@ -995,9 +993,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|pixel_surround_clear (PixelSurround * ps)
 specifier|static
 name|void
+DECL|function|pixel_surround_clear (PixelSurround * ps)
 name|pixel_surround_clear
 parameter_list|(
 name|PixelSurround

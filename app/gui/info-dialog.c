@@ -689,12 +689,18 @@ begin_function
 specifier|static
 name|InfoDialog
 modifier|*
-DECL|function|info_dialog_new_extended (gchar * title,gboolean in_notebook)
+DECL|function|info_dialog_new_extended (gchar * title,GimpHelpFunc help_func,gpointer help_data,gboolean in_notebook)
 name|info_dialog_new_extended
 parameter_list|(
 name|gchar
 modifier|*
 name|title
+parameter_list|,
+name|GimpHelpFunc
+name|help_func
+parameter_list|,
+name|gpointer
+name|help_data
 parameter_list|,
 name|gboolean
 name|in_notebook
@@ -957,6 +963,18 @@ operator|->
 name|vbox
 argument_list|)
 expr_stmt|;
+comment|/*  Connect the "F1" help key  */
+name|gimp_help_connect_help_accel
+argument_list|(
+name|idialog
+operator|->
+name|shell
+argument_list|,
+name|help_func
+argument_list|,
+name|help_data
+argument_list|)
+expr_stmt|;
 return|return
 name|idialog
 return|;
@@ -970,18 +988,28 @@ end_comment
 begin_function
 name|InfoDialog
 modifier|*
-DECL|function|info_dialog_notebook_new (gchar * title)
+DECL|function|info_dialog_notebook_new (gchar * title,GimpHelpFunc help_func,gpointer help_data)
 name|info_dialog_notebook_new
 parameter_list|(
 name|gchar
 modifier|*
 name|title
+parameter_list|,
+name|GimpHelpFunc
+name|help_func
+parameter_list|,
+name|gpointer
+name|help_data
 parameter_list|)
 block|{
 return|return
 name|info_dialog_new_extended
 argument_list|(
 name|title
+argument_list|,
+name|help_func
+argument_list|,
+name|help_data
 argument_list|,
 name|TRUE
 argument_list|)
@@ -992,18 +1020,28 @@ end_function
 begin_function
 name|InfoDialog
 modifier|*
-DECL|function|info_dialog_new (gchar * title)
+DECL|function|info_dialog_new (gchar * title,GimpHelpFunc help_func,gpointer help_data)
 name|info_dialog_new
 parameter_list|(
 name|gchar
 modifier|*
 name|title
+parameter_list|,
+name|GimpHelpFunc
+name|help_func
+parameter_list|,
+name|gpointer
+name|help_data
 parameter_list|)
 block|{
 return|return
 name|info_dialog_new_extended
 argument_list|(
 name|title
+argument_list|,
+name|help_func
+argument_list|,
+name|help_data
 argument_list|,
 name|FALSE
 argument_list|)

@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"info_dialog.h"
 end_include
 
@@ -106,7 +112,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba9512d0103
+DECL|enum|__anon29663f770103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -1336,6 +1342,10 @@ name|_
 argument_list|(
 literal|"Measure Tool"
 argument_list|)
+argument_list|,
+name|tools_help_func
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_label

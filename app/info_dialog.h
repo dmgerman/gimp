@@ -19,7 +19,13 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimphelp.h"
 end_include
 
 begin_include
@@ -37,7 +43,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a51ef40103
+DECL|enum|__anon27c402bf0103
 block|{
 DECL|enumerator|INFO_LABEL
 name|INFO_LABEL
@@ -163,6 +169,12 @@ parameter_list|(
 name|gchar
 modifier|*
 name|title
+parameter_list|,
+name|GimpHelpFunc
+name|help_func
+parameter_list|,
+name|gpointer
+name|help_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -175,6 +187,12 @@ parameter_list|(
 name|gchar
 modifier|*
 name|title
+parameter_list|,
+name|GimpHelpFunc
+name|help_func
+parameter_list|,
+name|gpointer
+name|help_data
 parameter_list|)
 function_decl|;
 end_function_decl

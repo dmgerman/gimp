@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"actionarea.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"airbrush.h"
 end_include
 
@@ -121,6 +115,12 @@ begin_include
 include|#
 directive|include
 file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpui.h"
 end_include
 
 begin_include
@@ -399,7 +399,7 @@ argument_list|(
 literal|"Select rectangular regions"
 argument_list|)
 block|,
-literal|"ContextHelp/rect-select"
+literal|"rect_select"
 block|,
 name|RECT_SELECT
 block|,
@@ -439,7 +439,7 @@ argument_list|(
 literal|"Select elliptical regions"
 argument_list|)
 block|,
-literal|"ContextHelp/ellipse-select"
+literal|"ellipse_select"
 block|,
 name|ELLIPSE_SELECT
 block|,
@@ -479,7 +479,7 @@ argument_list|(
 literal|"Select hand-drawn regions"
 argument_list|)
 block|,
-literal|"ContextHelp/free-select"
+literal|"free_select"
 block|,
 name|FREE_SELECT
 block|,
@@ -519,7 +519,7 @@ argument_list|(
 literal|"Select contiguous regions"
 argument_list|)
 block|,
-literal|"ContextHelp/fuzzy-select"
+literal|"fuzzy_select"
 block|,
 name|FUZZY_SELECT
 block|,
@@ -559,7 +559,7 @@ argument_list|(
 literal|"Select regions using Bezier curves"
 argument_list|)
 block|,
-literal|"ContextHelp/bezier-select"
+literal|"bezier_select"
 block|,
 name|BEZIER_SELECT
 block|,
@@ -599,7 +599,7 @@ argument_list|(
 literal|"Select shapes from image"
 argument_list|)
 block|,
-literal|"ContextHelp/iscissors"
+literal|"intelligent_scissors"
 block|,
 name|ISCISSORS
 block|,
@@ -639,7 +639,7 @@ argument_list|(
 literal|"Move layers& selections"
 argument_list|)
 block|,
-literal|"ContextHelp/move"
+literal|"move"
 block|,
 name|MOVE
 block|,
@@ -679,7 +679,7 @@ argument_list|(
 literal|"Zoom in& out"
 argument_list|)
 block|,
-literal|"ContextHelp/magnify"
+literal|"magnify"
 block|,
 name|MAGNIFY
 block|,
@@ -719,7 +719,7 @@ argument_list|(
 literal|"Crop or resize the image"
 argument_list|)
 block|,
-literal|"ContextHelp/crop"
+literal|"crop"
 block|,
 name|CROP
 block|,
@@ -759,7 +759,7 @@ argument_list|(
 literal|"Transform the layer or selection"
 argument_list|)
 block|,
-literal|"ContextHelp/rotate"
+literal|"transform"
 block|,
 name|ROTATE
 block|,
@@ -789,7 +789,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"transform"
 block|,
 name|SCALE
 block|,
@@ -819,7 +819,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"transform"
 block|,
 name|SHEAR
 block|,
@@ -849,7 +849,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"transform"
 block|,
 name|PERSPECTIVE
 block|,
@@ -890,7 +890,7 @@ argument_list|(
 literal|"Flip the layer or selection"
 argument_list|)
 block|,
-literal|"ContextHelp/flip"
+literal|"flip"
 block|,
 name|FLIP
 block|,
@@ -930,7 +930,7 @@ argument_list|(
 literal|"Add text to the image"
 argument_list|)
 block|,
-literal|"ContextHelp/text"
+literal|"text"
 block|,
 name|TEXT
 block|,
@@ -970,7 +970,7 @@ argument_list|(
 literal|"Pick colors from the image"
 argument_list|)
 block|,
-literal|"ContextHelp/color-picker"
+literal|"color_picker"
 block|,
 name|COLOR_PICKER
 block|,
@@ -1010,7 +1010,7 @@ argument_list|(
 literal|"Fill with a color or pattern"
 argument_list|)
 block|,
-literal|"ContextHelp/bucket-fill"
+literal|"bucket_fill"
 block|,
 name|BUCKET_FILL
 block|,
@@ -1050,7 +1050,7 @@ argument_list|(
 literal|"Fill with a color gradient"
 argument_list|)
 block|,
-literal|"ContextHelp/gradient"
+literal|"blend"
 block|,
 name|BLEND
 block|,
@@ -1090,7 +1090,7 @@ argument_list|(
 literal|"Draw sharp pencil strokes"
 argument_list|)
 block|,
-literal|"ContextHelp/pencil"
+literal|"pencil"
 block|,
 name|PENCIL
 block|,
@@ -1130,7 +1130,7 @@ argument_list|(
 literal|"Paint fuzzy brush strokes"
 argument_list|)
 block|,
-literal|"ContextHelp/paintbrush"
+literal|"paintbrush"
 block|,
 name|PAINTBRUSH
 block|,
@@ -1170,7 +1170,7 @@ argument_list|(
 literal|"Erase to background or transparency"
 argument_list|)
 block|,
-literal|"ContextHelp/eraser"
+literal|"eraser"
 block|,
 name|ERASER
 block|,
@@ -1210,7 +1210,7 @@ argument_list|(
 literal|"Airbrush with variable pressure"
 argument_list|)
 block|,
-literal|"ContextHelp/airbrush"
+literal|"airbrush"
 block|,
 name|AIRBRUSH
 block|,
@@ -1250,7 +1250,7 @@ argument_list|(
 literal|"Paint using patterns or image regions"
 argument_list|)
 block|,
-literal|"ContextHelp/clone"
+literal|"clone"
 block|,
 name|CLONE
 block|,
@@ -1290,7 +1290,7 @@ argument_list|(
 literal|"Blur or sharpen"
 argument_list|)
 block|,
-literal|"ContextHelp/convolve"
+literal|"convolve"
 block|,
 name|CONVOLVE
 block|,
@@ -1330,7 +1330,7 @@ argument_list|(
 literal|"Draw in ink"
 argument_list|)
 block|,
-literal|"ContextHelp/ink"
+literal|"ink"
 block|,
 name|INK
 block|,
@@ -1370,7 +1370,7 @@ argument_list|(
 literal|"Dodge or Burn"
 argument_list|)
 block|,
-literal|"ContextHelp/dodgeburn"
+literal|"dodgeburn"
 block|,
 name|DODGEBURN
 block|,
@@ -1410,7 +1410,7 @@ argument_list|(
 literal|"Smudge"
 argument_list|)
 block|,
-literal|"ContextHelp/smudge"
+literal|"smudge"
 block|,
 name|SMUDGE
 block|,
@@ -1450,7 +1450,7 @@ argument_list|(
 literal|"Measure distances and angles"
 argument_list|)
 block|,
-literal|"ContextHelp/measure"
+literal|"measure"
 block|,
 name|MEASURE
 block|,
@@ -1490,7 +1490,7 @@ argument_list|(
 literal|"Natural Airbrush"
 argument_list|)
 block|,
-literal|"ContextHelp/xinput_airbrush"
+literal|"xinput_airbrush"
 block|,
 name|XINPUT_AIRBRUSH
 block|,
@@ -1530,7 +1530,7 @@ argument_list|(
 literal|"Manipulate paths"
 argument_list|)
 block|,
-literal|"ContextHelp/path"
+literal|"path"
 block|,
 name|PATH_TOOL
 block|,
@@ -1563,7 +1563,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"by_color_select"
 block|,
 name|BY_COLOR_SELECT
 block|,
@@ -1595,7 +1595,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"color_balance"
 block|,
 name|COLOR_BALANCE
 block|,
@@ -1627,7 +1627,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"brightness_contrast"
 block|,
 name|BRIGHTNESS_CONTRAST
 block|,
@@ -1659,7 +1659,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"hue_saturation"
 block|,
 name|HUE_SATURATION
 block|,
@@ -1691,7 +1691,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"posterize"
 block|,
 name|POSTERIZE
 block|,
@@ -1723,7 +1723,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"threshold"
 block|,
 name|THRESHOLD
 block|,
@@ -1755,7 +1755,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"curves"
 block|,
 name|CURVES
 block|,
@@ -1787,7 +1787,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"levels"
 block|,
 name|LEVELS
 block|,
@@ -1819,7 +1819,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"histogram"
 block|,
 name|HISTOGRAM
 block|,
@@ -1903,22 +1903,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|gint
-name|tools_options_delete_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|GdkEvent
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/*  Function definitions  */
 end_comment
@@ -1977,17 +1961,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_select (ToolType type)
+DECL|function|tools_select (ToolType tool_type)
 name|tools_select
 parameter_list|(
 name|ToolType
-name|type
+name|tool_type
 parameter_list|)
 block|{
 comment|/*  Care for switching to the tool's private context  */
 name|context_manager_set_tool
 argument_list|(
-name|type
+name|tool_type
 argument_list|)
 expr_stmt|;
 if|if
@@ -2006,7 +1990,7 @@ index|[
 operator|(
 name|int
 operator|)
-name|type
+name|tool_type
 index|]
 operator|.
 name|new_func
@@ -2032,11 +2016,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_initialize (ToolType type,GDisplay * gdisp)
+DECL|function|tools_initialize (ToolType tool_type,GDisplay * gdisp)
 name|tools_initialize
 parameter_list|(
 name|ToolType
-name|type
+name|tool_type
 parameter_list|,
 name|GDisplay
 modifier|*
@@ -2051,7 +2035,7 @@ index|[
 operator|(
 name|int
 operator|)
-name|type
+name|tool_type
 index|]
 operator|.
 name|init_func
@@ -2059,7 +2043,7 @@ operator|&&
 operator|!
 name|gdisp
 condition|)
-name|type
+name|tool_type
 operator|=
 name|RECT_SELECT
 expr_stmt|;
@@ -2070,12 +2054,12 @@ name|active_tool
 operator|->
 name|type
 operator|==
-name|type
+name|tool_type
 condition|)
 block|{
 name|tools_select
 argument_list|(
-name|type
+name|tool_type
 argument_list|)
 expr_stmt|;
 block|}
@@ -2085,7 +2069,7 @@ name|gtk_widget_activate
 argument_list|(
 name|tool_info
 index|[
-name|type
+name|tool_type
 index|]
 operator|.
 name|tool_widget
@@ -2099,7 +2083,7 @@ index|[
 operator|(
 name|int
 operator|)
-name|type
+name|tool_type
 index|]
 operator|.
 name|init_func
@@ -2112,7 +2096,7 @@ index|[
 operator|(
 name|int
 operator|)
-name|type
+name|tool_type
 index|]
 operator|.
 name|init_func
@@ -2554,11 +2538,11 @@ end_comment
 begin_function
 name|Tool
 modifier|*
-DECL|function|tools_new_tool (ToolType type)
+DECL|function|tools_new_tool (ToolType tool_type)
 name|tools_new_tool
 parameter_list|(
 name|ToolType
-name|type
+name|tool_type
 parameter_list|)
 block|{
 name|Tool
@@ -2578,7 +2562,7 @@ name|tool
 operator|->
 name|type
 operator|=
-name|type
+name|tool_type
 expr_stmt|;
 name|tool
 operator|->
@@ -2704,87 +2688,68 @@ name|GtkWidget
 modifier|*
 name|vbox
 decl_stmt|;
-name|ActionAreaItem
-name|action_items
-index|[]
-init|=
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"Reset"
-argument_list|)
-block|,
-name|tools_options_reset_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"Close"
-argument_list|)
-block|,
-name|tools_options_close_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|}
-decl_stmt|;
 comment|/*  The shell and main vbox  */
 name|options_shell
 operator|=
-name|gtk_dialog_new
-argument_list|()
-expr_stmt|;
-comment|/*  Register dialog */
-name|dialog_register
+name|gimp_dialog_new
 argument_list|(
-name|options_shell
-argument_list|)
-expr_stmt|;
-name|gtk_window_set_wmclass
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|options_shell
-argument_list|)
-argument_list|,
-literal|"tool_options"
-argument_list|,
-literal|"Gimp"
-argument_list|)
-expr_stmt|;
-name|gtk_window_set_title
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|options_shell
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"Tool Options"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_window_set_policy
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|options_shell
-argument_list|)
+argument_list|,
+literal|"tool_options"
+argument_list|,
+name|tools_help_func
+argument_list|,
+name|NULL
+argument_list|,
+name|GTK_WIN_POS_NONE
 argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Reset"
+argument_list|)
+argument_list|,
+name|tools_options_reset_callback
+argument_list|,
+name|NULL
+argument_list|,
+operator|&
+name|options_reset_button
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Close"
+argument_list|)
+argument_list|,
+name|tools_options_close_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+comment|/*  Register dialog */
+name|dialog_register
+argument_list|(
+name|options_shell
 argument_list|)
 expr_stmt|;
 name|session_set_window_geometry
@@ -2968,65 +2933,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  handle the window manager trying to close the window  */
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|options_shell
-argument_list|)
-argument_list|,
-literal|"delete_event"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|tools_options_delete_callback
-argument_list|)
-argument_list|,
-name|options_shell
-argument_list|)
-expr_stmt|;
-name|action_items
-index|[
-literal|0
-index|]
-operator|.
-name|user_data
-operator|=
-name|options_shell
-expr_stmt|;
-name|action_items
-index|[
-literal|1
-index|]
-operator|.
-name|user_data
-operator|=
-name|options_shell
-expr_stmt|;
-name|build_action_area
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|options_shell
-argument_list|)
-argument_list|,
-name|action_items
-argument_list|,
-literal|2
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|options_reset_button
-operator|=
-name|action_items
-index|[
-literal|0
-index|]
-operator|.
-name|widget
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|options_vbox
@@ -3077,6 +2983,51 @@ expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|options_shell
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|tools_help_func (gpointer help_data)
+name|tools_help_func
+parameter_list|(
+name|gpointer
+name|help_data
+parameter_list|)
+block|{
+name|gchar
+modifier|*
+name|help_page
+decl_stmt|;
+name|help_page
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"tools/%s.html"
+argument_list|,
+name|tool_info
+index|[
+operator|(
+name|int
+operator|)
+name|active_tool
+operator|->
+name|type
+index|]
+operator|.
+name|private_tip
+argument_list|)
+expr_stmt|;
+name|gimp_help
+argument_list|(
+name|help_page
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|help_page
 argument_list|)
 expr_stmt|;
 block|}
@@ -3173,18 +3124,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tools_options_show (ToolType tooltype)
+DECL|function|tools_options_show (ToolType tool_type)
 name|tools_options_show
 parameter_list|(
 name|ToolType
-name|tooltype
+name|tool_type
 parameter_list|)
 block|{
 if|if
 condition|(
 name|tool_info
 index|[
-name|tooltype
+name|tool_type
 index|]
 operator|.
 name|tool_options
@@ -3195,7 +3146,7 @@ name|gtk_widget_show
 argument_list|(
 name|tool_info
 index|[
-name|tooltype
+name|tool_type
 index|]
 operator|.
 name|tool_options
@@ -3207,7 +3158,7 @@ if|if
 condition|(
 name|tool_info
 index|[
-name|tooltype
+name|tool_type
 index|]
 operator|.
 name|tool_options
@@ -3225,7 +3176,7 @@ name|_
 argument_list|(
 name|tool_info
 index|[
-name|tooltype
+name|tool_type
 index|]
 operator|.
 name|tool_options
@@ -3238,7 +3189,7 @@ if|if
 condition|(
 name|tool_info
 index|[
-name|tooltype
+name|tool_type
 index|]
 operator|.
 name|tool_options
@@ -3266,18 +3217,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tools_options_hide (ToolType tooltype)
+DECL|function|tools_options_hide (ToolType tool_type)
 name|tools_options_hide
 parameter_list|(
 name|ToolType
-name|tooltype
+name|tool_type
 parameter_list|)
 block|{
 if|if
 condition|(
 name|tool_info
 index|[
-name|tooltype
+name|tool_type
 index|]
 operator|.
 name|tool_options
@@ -3286,7 +3237,7 @@ name|gtk_widget_hide
 argument_list|(
 name|tool_info
 index|[
-name|tooltype
+name|tool_type
 index|]
 operator|.
 name|tool_options
@@ -3303,47 +3254,16 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
-DECL|function|tools_options_delete_callback (GtkWidget * w,GdkEvent * e,gpointer client_data)
-name|tools_options_delete_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|e
-parameter_list|,
-name|gpointer
-name|client_data
-parameter_list|)
-block|{
-name|tools_options_close_callback
-argument_list|(
-name|w
-argument_list|,
-name|client_data
-argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
 name|void
-DECL|function|tools_options_close_callback (GtkWidget * w,gpointer client_data)
+DECL|function|tools_options_close_callback (GtkWidget * widget,gpointer data)
 name|tools_options_close_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|GtkWidget
@@ -3356,7 +3276,7 @@ operator|(
 name|GtkWidget
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 name|gtk_widget_hide
 argument_list|(
@@ -3369,15 +3289,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tools_options_reset_callback (GtkWidget * w,gpointer client_data)
+DECL|function|tools_options_reset_callback (GtkWidget * widget,gpointer data)
 name|tools_options_reset_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|GtkWidget
@@ -3390,7 +3310,7 @@ operator|(
 name|GtkWidget
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 if|if
 condition|(
