@@ -797,10 +797,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|addfactorydefaults (void)
+DECL|function|add_factory_defaults (void)
 specifier|static
 name|void
-name|addfactorydefaults
+name|add_factory_defaults
 parameter_list|(
 name|void
 parameter_list|)
@@ -852,10 +852,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|presetsrefresh (void)
+DECL|function|preset_refresh_presets (void)
 specifier|static
 name|void
-name|presetsrefresh
+name|preset_refresh_presets
 parameter_list|(
 name|void
 parameter_list|)
@@ -865,7 +865,7 @@ argument_list|(
 name|store
 argument_list|)
 expr_stmt|;
-name|addfactorydefaults
+name|add_factory_defaults
 argument_list|()
 expr_stmt|;
 name|preset_read_dir_into_list
@@ -875,10 +875,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|loadoldpreset (const gchar * fname)
+DECL|function|load_old_preset (const gchar * fname)
 specifier|static
 name|int
-name|loadoldpreset
+name|load_old_preset
 parameter_list|(
 specifier|const
 name|gchar
@@ -1017,11 +1017,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|parsergbstring (const gchar * s)
+DECL|function|parse_rgb_string (const gchar * s)
 specifier|static
 name|char
 modifier|*
-name|parsergbstring
+name|parse_rgb_string
 parameter_list|(
 specifier|const
 name|gchar
@@ -1118,10 +1118,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|setorientvector (const gchar * str)
+DECL|function|set_orient_vector (const gchar * str)
 specifier|static
 name|void
-name|setorientvector
+name|set_orient_vector
 parameter_list|(
 specifier|const
 name|gchar
@@ -1372,10 +1372,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|setsizevector (const gchar * str)
+DECL|function|set_size_vector (const gchar * str)
 specifier|static
 name|void
-name|setsizevector
+name|set_size_vector
 parameter_list|(
 specifier|const
 name|gchar
@@ -1532,10 +1532,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|parsedesc (const gchar * str,gchar * d,gssize d_len)
+DECL|function|parse_desc (const gchar * str,gchar * d,gssize d_len)
 specifier|static
 name|void
-name|parsedesc
+name|parse_desc
 parameter_list|(
 specifier|const
 name|gchar
@@ -1577,10 +1577,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|setval (const gchar * key,const gchar * val)
+DECL|function|set_values (const gchar * key,const gchar * val)
 specifier|static
 name|void
-name|setval
+name|set_values
 parameter_list|(
 specifier|const
 name|gchar
@@ -1603,7 +1603,7 @@ argument_list|,
 literal|"desc"
 argument_list|)
 condition|)
-name|parsedesc
+name|parse_desc
 argument_list|(
 name|val
 argument_list|,
@@ -2286,7 +2286,7 @@ name|char
 modifier|*
 name|c
 init|=
-name|parsergbstring
+name|parse_rgb_string
 argument_list|(
 name|val
 argument_list|)
@@ -2348,7 +2348,7 @@ argument_list|,
 literal|"orientvector"
 argument_list|)
 condition|)
-name|setorientvector
+name|set_orient_vector
 argument_list|(
 name|val
 argument_list|)
@@ -2448,7 +2448,7 @@ argument_list|,
 literal|"sizevector"
 argument_list|)
 condition|)
-name|setsizevector
+name|set_size_vector
 argument_list|(
 name|val
 argument_list|)
@@ -2541,10 +2541,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|loadpreset (const gchar * fn)
+DECL|function|load_preset (const gchar * fn)
 specifier|static
 name|int
-name|loadpreset
+name|load_preset
 parameter_list|(
 specifier|const
 name|gchar
@@ -2620,7 +2620,7 @@ name|f
 argument_list|)
 expr_stmt|;
 return|return
-name|loadoldpreset
+name|load_old_preset
 argument_list|(
 name|fn
 argument_list|)
@@ -2683,7 +2683,7 @@ expr_stmt|;
 name|tmps
 operator|++
 expr_stmt|;
-name|setval
+name|set_values
 argument_list|(
 name|line
 argument_list|,
@@ -2763,7 +2763,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|loadpreset
+name|load_preset
 argument_list|(
 name|abs
 argument_list|)
@@ -2811,10 +2811,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|applypreset (GtkWidget * w,GtkTreeSelection * selection)
+DECL|function|apply_preset (GtkWidget * w,GtkTreeSelection * selection)
 specifier|static
 name|void
-name|applypreset
+name|apply_preset
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2889,10 +2889,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|deletepreset (GtkWidget * w,GtkTreeSelection * selection)
+DECL|function|delete_preset (GtkWidget * w,GtkTreeSelection * selection)
 specifier|static
 name|void
-name|deletepreset
+name|delete_preset
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -3002,7 +3002,7 @@ name|abs
 argument_list|)
 expr_stmt|;
 block|}
-name|presetsrefresh
+name|preset_refresh_presets
 argument_list|()
 expr_stmt|;
 name|g_free
@@ -3018,7 +3018,7 @@ end_function
 begin_function_decl
 specifier|static
 name|void
-name|savepreset
+name|save_preset
 parameter_list|(
 name|void
 parameter_list|)
@@ -3026,10 +3026,10 @@ function_decl|;
 end_function_decl
 
 begin_function
-DECL|function|presetdesccallback (GtkTextBuffer * buffer,gpointer data)
+DECL|function|preset_desc_callback (GtkTextBuffer * buffer,gpointer data)
 specifier|static
 name|void
-name|presetdesccallback
+name|preset_desc_callback
 parameter_list|(
 name|GtkTextBuffer
 modifier|*
@@ -3097,8 +3097,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|savepresetresponse (GtkWidget * widget,gint response_id,gpointer data)
-name|savepresetresponse
+DECL|function|save_preset_response (GtkWidget * widget,gint response_id,gpointer data)
+name|save_preset_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -3122,7 +3122,7 @@ name|response_id
 operator|==
 name|GTK_RESPONSE_OK
 condition|)
-name|savepreset
+name|save_preset
 argument_list|()
 expr_stmt|;
 block|}
@@ -3131,8 +3131,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|create_savepreset (void)
-name|create_savepreset
+DECL|function|create_save_preset (void)
+name|create_save_preset
 parameter_list|(
 name|void
 parameter_list|)
@@ -3215,7 +3215,7 @@ literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|savepresetresponse
+name|save_preset_response
 argument_list|)
 argument_list|,
 name|NULL
@@ -3379,7 +3379,7 @@ literal|"changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|presetdesccallback
+name|preset_desc_callback
 argument_list|)
 argument_list|,
 name|NULL
@@ -3436,10 +3436,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|savepreset (void)
+DECL|function|save_preset (void)
 specifier|static
 name|void
-name|savepreset
+name|save_preset
 parameter_list|(
 name|void
 parameter_list|)
@@ -3521,7 +3521,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"Internal error: (savepreset) thispath == NULL"
+literal|"Internal error: (save_preset) thispath == NULL"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -4682,7 +4682,7 @@ argument_list|(
 name|f
 argument_list|)
 expr_stmt|;
-name|presetsrefresh
+name|preset_refresh_presets
 argument_list|()
 expr_stmt|;
 name|reselect
@@ -4701,10 +4701,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|readdesc (const char * fn)
+DECL|function|read_description (const char * fn)
 specifier|static
 name|void
-name|readdesc
+name|read_description
 parameter_list|(
 specifier|const
 name|char
@@ -4863,7 +4863,7 @@ literal|5
 argument_list|)
 condition|)
 block|{
-name|parsedesc
+name|parse_desc
 argument_list|(
 name|line
 operator|+
@@ -4905,10 +4905,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|selectpreset (GtkTreeSelection * selection,gpointer data)
+DECL|function|presets_list_select_preset (GtkTreeSelection * selection,gpointer data)
 specifier|static
 name|void
-name|selectpreset
+name|presets_list_select_preset
 parameter_list|(
 name|GtkTreeSelection
 modifier|*
@@ -5025,7 +5025,7 @@ name|selected_preset_filename
 argument_list|)
 expr_stmt|;
 block|}
-name|readdesc
+name|read_description
 argument_list|(
 name|preset_filename
 argument_list|)
@@ -5048,26 +5048,12 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|create_presets_list (GtkWidget * parent,void (* changed_cb)(GtkTreeSelection * selection,gpointer data))
+DECL|function|create_presets_list (GtkWidget * parent)
 name|create_presets_list
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|parent
-parameter_list|,
-name|void
-function_decl|(
-modifier|*
-name|changed_cb
-function_decl|)
-parameter_list|(
-name|GtkTreeSelection
-modifier|*
-name|selection
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
 parameter_list|)
 block|{
 name|GtkListStore
@@ -5261,7 +5247,7 @@ literal|"changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|changed_cb
+name|presets_list_select_preset
 argument_list|)
 argument_list|,
 name|NULL
@@ -5458,7 +5444,7 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|create_savepreset
+name|create_save_preset
 argument_list|)
 argument_list|,
 name|NULL
@@ -5513,8 +5499,6 @@ operator|=
 name|create_presets_list
 argument_list|(
 name|box1
-argument_list|,
-name|selectpreset
 argument_list|)
 expr_stmt|;
 name|store
@@ -5540,7 +5524,7 @@ name|view
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|addfactorydefaults
+name|add_factory_defaults
 argument_list|()
 expr_stmt|;
 name|vbox
@@ -5669,7 +5653,7 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|applypreset
+name|apply_preset
 argument_list|)
 argument_list|,
 name|selection
@@ -5725,7 +5709,7 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|deletepreset
+name|delete_preset
 argument_list|)
 argument_list|,
 name|selection
@@ -5779,7 +5763,7 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|presetsrefresh
+name|preset_refresh_presets
 argument_list|)
 argument_list|,
 name|NULL
