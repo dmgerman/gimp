@@ -102,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2871b84e0108
+DECL|struct|__anon2a1edb250108
 block|{
 DECL|member|radius
 name|gdouble
@@ -125,7 +125,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2871b84e0208
+DECL|struct|__anon2a1edb250208
 block|{
 DECL|member|run
 name|gboolean
@@ -4170,10 +4170,6 @@ name|y
 decl_stmt|;
 comment|/* Current location in image */
 name|gint
-name|row
-decl_stmt|,
-name|buf_y
-decl_stmt|,
 name|offset
 decl_stmt|;
 comment|/* Preview loop control      */
@@ -4476,16 +4472,6 @@ operator|=
 name|preview_x1
 operator|-
 name|preview_buf_x1
-expr_stmt|;
-name|row
-operator|=
-literal|0
-expr_stmt|;
-name|buf_y
-operator|=
-name|y
-operator|+
-name|preview_height
 expr_stmt|;
 name|offset
 operator|=
