@@ -395,30 +395,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  a utility function which returns a paint mode menu  */
-end_comment
-
-begin_function_decl
-name|GtkWidget
-modifier|*
-name|paint_mode_menu_new
-parameter_list|(
-name|GtkSignalFunc
-name|callback
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|,
-name|gboolean
-name|with_behind_mode
-parameter_list|,
-name|LayerModeEffects
-name|initial
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

@@ -84,13 +84,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"widgets/gimpwidgets-utils.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
+file|"gdisplay.h"
 end_include
 
 begin_include

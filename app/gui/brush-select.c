@@ -72,13 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/paint_options.h"
+file|"widgets/gimpdatafactoryview.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"widgets/gimpdatafactoryview.h"
+file|"widgets/gimpwidgets-constructors.h"
 end_include
 
 begin_include
@@ -962,7 +962,7 @@ name|bsp
 operator|->
 name|option_menu
 operator|=
-name|paint_mode_menu_new
+name|gimp_paint_mode_menu_new
 argument_list|(
 name|paint_mode_menu_callback
 argument_list|,

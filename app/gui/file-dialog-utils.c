@@ -30,19 +30,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpui.h"
+file|"widgets/gimpwidgets-utils.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"menus.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
 end_include
 
 begin_include

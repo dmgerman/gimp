@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpthresholdtool.h"
 end_include
 
@@ -97,12 +103,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpui.h"
 end_include
 
 begin_include

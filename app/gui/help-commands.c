@@ -210,12 +210,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"global_edit.h"
 end_include
 

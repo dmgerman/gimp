@@ -65,6 +65,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -84,12 +90,6 @@ begin_include
 include|#
 directive|include
 file|"errors.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpui.h"
 end_include
 
 begin_ifdef

@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbrightnesscontrasttool.h"
 end_include
 
@@ -79,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpui.h"
 end_include
 
 begin_include

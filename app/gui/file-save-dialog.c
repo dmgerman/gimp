@@ -119,12 +119,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"menus.h"
 end_include
 

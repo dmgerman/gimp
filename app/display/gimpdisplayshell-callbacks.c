@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"devices.h"
 end_include
 
@@ -181,12 +187,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpui.h"
 end_include
 
 begin_include
