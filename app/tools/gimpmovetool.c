@@ -1892,7 +1892,7 @@ name|move
 operator|->
 name|guide_position
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 name|coords
 operator|->
@@ -1904,7 +1904,7 @@ name|move
 operator|->
 name|guide_position
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 name|coords
 operator|->
