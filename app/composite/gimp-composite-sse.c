@@ -644,7 +644,7 @@ literal|0
 end_if
 
 begin_comment
-unit|void xxxgimp_composite_divide_rgba8_rgba8_rgba8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm volatile ("  movq    %0, %%mm0\n"                 "\tmovq    %1, %%mm7\n"                 :                 : "m" (*rgba8_alpha_mask_64), "m" (*rgba8_w1_64)                 : "%mm0", "%mm7");    for (; op.n_pixels>= 2; op.n_pixels -= 2)     {       asm volatile ("  movq         %0,%%mm0\n"                     "\tmovq         %1,%%mm1\n"                     "\tpxor      %%mm2,%%mm2\n"                     "\tpunpcklbw %%mm0,%%mm2\n"
+unit|void xxxgimp_composite_divide_rgba8_rgba8_rgba8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm volatile ("  movq    %0, %%mm0\n"                 "\tmovq    %1, %%mm7\n"                 :                 : "m" (*rgba8_alpha_mask_64), "m" (*rgba8_w1_64)                 : "%mm0", "%mm7");    for (; op.n_pixels>= 2; op.n_pixels -= 2)     {       asm volatile ("  movq         %1,%%mm0\n"                     "\tmovq         %2,%%mm1\n"                     "\tpxor      %%mm2,%%mm2\n"                     "\tpunpcklbw %%mm0,%%mm2\n"
 comment|/* mm2 = A*256 */
 end_comment
 
@@ -679,12 +679,7 @@ comment|/* expects mm4 and mm5 to be signed values */
 end_comment
 
 begin_comment
-unit|"\tpminub    %%mm0,%%mm1\n"                     "\tmovq         %3,%%mm3\n"                     "\tmovq      %%mm3,%%mm2\n"                      "\tpandn     %%mm5,%%mm3\n"                      "\tpand      %%mm2,%%mm1\n"                     "\tpor       %%mm1,%%mm3\n"                      "\tmovq      %%mm3,%2\n"                     :
-comment|/* empty */
-end_comment
-
-begin_comment
-unit|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_alpha_mask_64)                     : "%eax", "%ecx", "%edx", "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");       op.A += 8;       op.B += 8;       op.D += 8;     }    if (op.n_pixels)     {       asm volatile ("  movd         %0,%%mm0\n"                     "\tmovd         %1,%%mm1\n"                      "\tpxor      %%mm2,%%mm2\n"                     "\tpunpcklbw %%mm0,%%mm2\n"
+unit|"\tpminub    %%mm0,%%mm1\n"                     "\tmovq         %3,%%mm3\n"                     "\tmovq      %%mm3,%%mm2\n"                      "\tpandn     %%mm5,%%mm3\n"                      "\tpand      %%mm2,%%mm1\n"                     "\tpor       %%mm1,%%mm3\n"                      "\tmovq      %%mm3,%0\n"                     : "=m" (*op.D)                     : "m" (*op.A), "m" (*op.B), "m" (*rgba8_alpha_mask_64)                     : "%eax", "%ecx", "%edx", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");       op.A += 8;       op.B += 8;       op.D += 8;     }    if (op.n_pixels)     {       asm volatile ("  movd         %1,%%mm0\n"                     "\tmovd         %2,%%mm1\n"                      "\tpxor      %%mm2,%%mm2\n"                     "\tpunpcklbw %%mm0,%%mm2\n"
 comment|/* mm2 = A*256 */
 end_comment
 
@@ -716,15 +711,10 @@ end_comment
 begin_comment
 unit|"\tpackuswb  %%mm4,%%mm5\n"
 comment|/* expects mm4 and mm5 to be signed values */
-end_comment
-
-begin_comment
-unit|"\tpminub    %%mm0,%%mm1\n"                     "\tmovq         %3,%%mm3\n"                     "\tmovq      %%mm3,%%mm2\n"                      "\tpandn     %%mm5,%%mm3\n"                      "\tpand      %%mm2,%%mm1\n"                     "\tpor       %%mm1,%%mm3\n"                      "\tmovd      %%mm3,%2\n"                     :
-comment|/* empty */
 end_comment
 
 begin_endif
-unit|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_alpha_mask_64)                     : "%eax", "%ecx", "%edx", "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");     }    asm("emms"); }
+unit|"\tpminub    %%mm0,%%mm1\n"                     "\tmovq         %3,%%mm3\n"                     "\tmovq      %%mm3,%%mm2\n"                      "\tpandn     %%mm5,%%mm3\n"                      "\tpand      %%mm2,%%mm1\n"                     "\tpor       %%mm1,%%mm3\n"                      "\tmovd      %%mm3,%0\n"                     : "=m" (*op.D)                     : "m" (*op.A), "m" (*op.B), "m" (*rgba8_alpha_mask_64)                     : "%eax", "%ecx", "%edx", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");     }    asm("emms"); }
 endif|#
 directive|endif
 end_endif
@@ -735,18 +725,8 @@ directive|if
 literal|0
 end_if
 
-begin_comment
-unit|void xxxgimp_composite_dodge_rgba8_rgba8_rgba8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    for (; op.n_pixels>= 2; op.n_pixels -= 2)     {       asm volatile ("  movq         %0,%%mm0\n"                     "\tmovq         %1,%%mm1\n"                     "\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm2,%%mm2\n"                     "\tpunpcklbw %%mm2,%%mm3\n"                     "\tpunpcklbw %%mm0,%%mm2\n"                      "\tmovq         %3,%%mm4\n"                     "\tpsubw     %%mm3,%%mm4\n"                      "\t" pdivwuqX(mm2,mm4,mm5) "\n"                      "\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm2,%%mm2\n"                     "\tpunpckhbw %%mm2,%%mm3\n"                     "\tpunpckhbw %%mm0,%%mm2\n"                      "\tmovq         %3,%%mm4\n"                     "\tpsubw     %%mm3,%%mm4\n"                      "\t" pdivwuqX(mm2,mm4,mm6) "\n"                      "\tpackuswb  %%mm6,%%mm5\n"                      "\tmovq         %4,%%mm6\n"                     "\tmovq      %%mm1,%%mm7\n"                     "\t" pminub(mm0,mm7,mm2) "\n"                     "\tpand      %%mm6,%%mm7\n"                     "\tpandn     %%mm5,%%mm6\n"                      "\tpor       %%mm6,%%mm7\n"                      "\tmovq      %%mm7,%2\n"                     :
-comment|/* empty */
-end_comment
-
-begin_comment
-unit|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_w256_64), "m" (*rgba8_alpha_mask_64)                     : "0", "1", "2", "%eax", "%ecx", "%edx", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");       op.A += 8;       op.B += 8;       op.D += 8;     }    if (op.n_pixels)     {       asm volatile ("  movd         %0,%%mm0\n"                     "\tmovq         %1,%%mm1\n"                     "\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm2,%%mm2\n"                     "\tpunpcklbw %%mm2,%%mm3\n"                     "\tpunpcklbw %%mm0,%%mm2\n"                      "\tmovq         %3,%%mm4\n"                     "\tpsubw     %%mm3,%%mm4\n"                      "\t" pdivwuqX(mm2,mm4,mm5) "\n"                      "\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm2,%%mm2\n"                     "\tpunpckhbw %%mm2,%%mm3\n"                     "\tpunpckhbw %%mm0,%%mm2\n"                      "\tmovq         %3,%%mm4\n"                     "\tpsubw     %%mm3,%%mm4\n"                      "\t" pdivwuqX(mm2,mm4,mm6) "\n"                      "\tpackuswb  %%mm6,%%mm5\n"                      "\tmovq         %4,%%mm6\n"                     "\tmovq      %%mm1,%%mm7\n"                     "\tpminub    %%mm0,%%mm7\n"                     "\tpand      %%mm6,%%mm7\n"                     "\tpandn     %%mm5,%%mm6\n"                      "\tpor       %%mm6,%%mm7\n"                      "\tmovd      %%mm7,%2\n"                     :
-comment|/* empty */
-end_comment
-
 begin_endif
-unit|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_w256_64), "m" (*rgba8_alpha_mask_64)                     : "0", "1", "2", "%eax", "%ecx", "%edx", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");     }    asm("emms"); }
+unit|void xxxgimp_composite_dodge_rgba8_rgba8_rgba8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    for (; op.n_pixels>= 2; op.n_pixels -= 2)     {       asm volatile ("  movq         %1,%%mm0\n"                     "\tmovq         %2,%%mm1\n"                     "\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm2,%%mm2\n"                     "\tpunpcklbw %%mm2,%%mm3\n"                     "\tpunpcklbw %%mm0,%%mm2\n"                      "\tmovq         %3,%%mm4\n"                     "\tpsubw     %%mm3,%%mm4\n"                      "\t" pdivwuqX(mm2,mm4,mm5) "\n"                      "\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm2,%%mm2\n"                     "\tpunpckhbw %%mm2,%%mm3\n"                     "\tpunpckhbw %%mm0,%%mm2\n"                      "\tmovq         %3,%%mm4\n"                     "\tpsubw     %%mm3,%%mm4\n"                      "\t" pdivwuqX(mm2,mm4,mm6) "\n"                      "\tpackuswb  %%mm6,%%mm5\n"                      "\tmovq         %4,%%mm6\n"                     "\tmovq      %%mm1,%%mm7\n"                     "\t" pminub(mm0,mm7,mm2) "\n"                     "\tpand      %%mm6,%%mm7\n"                     "\tpandn     %%mm5,%%mm6\n"                      "\tpor       %%mm6,%%mm7\n"                      "\tmovq      %%mm7,%0\n"                     : "=m" (*op.D)                     : "m" (*op.A), "m" (*op.B), "m" (*rgba8_w256_64), "m" (*rgba8_alpha_mask_64)                     : "%eax", "%ecx", "%edx", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");       op.A += 8;       op.B += 8;       op.D += 8;     }    if (op.n_pixels)     {       asm volatile ("  movd         %1,%%mm0\n"                     "\tmovq         %2,%%mm1\n"                     "\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm2,%%mm2\n"                     "\tpunpcklbw %%mm2,%%mm3\n"                     "\tpunpcklbw %%mm0,%%mm2\n"                      "\tmovq         %3,%%mm4\n"                     "\tpsubw     %%mm3,%%mm4\n"                      "\t" pdivwuqX(mm2,mm4,mm5) "\n"                      "\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm2,%%mm2\n"                     "\tpunpckhbw %%mm2,%%mm3\n"                     "\tpunpckhbw %%mm0,%%mm2\n"                      "\tmovq         %3,%%mm4\n"                     "\tpsubw     %%mm3,%%mm4\n"                      "\t" pdivwuqX(mm2,mm4,mm6) "\n"                      "\tpackuswb  %%mm6,%%mm5\n"                      "\tmovq         %4,%%mm6\n"                     "\tmovq      %%mm1,%%mm7\n"                     "\tpminub    %%mm0,%%mm7\n"                     "\tpand      %%mm6,%%mm7\n"                     "\tpandn     %%mm5,%%mm6\n"                      "\tpor       %%mm6,%%mm7\n"                      "\tmovd      %%mm7,%2\n"                     : "=m" (*op.D)                     : "m" (*op.A), "m" (*op.B), "m" (*rgba8_w256_64), "m" (*rgba8_alpha_mask_64)                     : "%eax", "%ecx", "%edx", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");     }    asm("emms"); }
 endif|#
 directive|endif
 end_endif
@@ -761,7 +741,6 @@ modifier|*
 name|_op
 parameter_list|)
 block|{
-comment|/*  GimpCompositeContext op = *_op;*/
 name|uint64
 modifier|*
 name|d
@@ -1237,7 +1216,7 @@ comment|/* empty */
 end_comment
 
 begin_comment
-unit|: "m" (*rgba8_w128_64) : "%mm0");    for (; op.n_pixels>= 2; op.n_pixels -= 2)     {       asm volatile ("  movq         %0,%%mm2\n"                     "\tmovq         %1,%%mm3\n"
+unit|: "m" (*rgba8_w128_64) : "%mm0");    for (; op.n_pixels>= 2; op.n_pixels -= 2)     {       asm volatile ("  movq         %1,%%mm2\n"                     "\tmovq         %2,%%mm3\n"
 comment|/* low bytes */
 end_comment
 
@@ -1311,7 +1290,7 @@ comment|/* mm1 = INT_MULT(mm6, mm1) high bytes */
 end_comment
 
 begin_comment
-unit|"\tpackuswb  %%mm1,%%mm5\n"                      "\tmovq         %4,%%mm0\n"                     "\tmovq      %%mm0,%%mm1\n"                     "\tpandn     %%mm5,%%mm1\n"                      "\t" pminub(mm2,mm3,mm4) "\n"                     "\tpand      %%mm0,%%mm3\n"                      "\tpor       %%mm3,%%mm1\n"                      "\tmovq      %%mm1,%2\n"                     : "+m" (*op.A), "+m" (*op.B), "+m" (*op.D)                     : "m" (*rgba8_w2_64), "m" (*rgba8_alpha_mask_64)                     : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");       op.A += 8;       op.B += 8;       op.D += 8;     }    if (op.n_pixels)     {       asm volatile ("  movd         %0,%%mm2\n"                     "\tmovd         %1,%%mm3\n"
+unit|"\tpackuswb  %%mm1,%%mm5\n"                      "\tmovq         %4,%%mm0\n"                     "\tmovq      %%mm0,%%mm1\n"                     "\tpandn     %%mm5,%%mm1\n"                      "\t" pminub(mm2,mm3,mm4) "\n"                     "\tpand      %%mm0,%%mm3\n"                      "\tpor       %%mm3,%%mm1\n"                      "\tmovq      %%mm1,%0\n"                     : "=m" (*op.D)                     : "m" (*op.A), "m" (*op.B), "m" (*rgba8_w2_64), "m" (*rgba8_alpha_mask_64)                     : "%mm1", "%mm2", "%mm3", "%mm4");       op.A += 8;       op.B += 8;       op.D += 8;     }    if (op.n_pixels)     {       asm volatile ("  movd         %1,%%mm2\n"                     "\tmovd         %2,%%mm3\n"
 comment|/* low bytes */
 end_comment
 
@@ -1382,15 +1361,10 @@ end_comment
 begin_comment
 unit|mmx_high_bytes_to_words(mm4,mm1,mm0)                     mmx_high_bytes_to_words(mm2,mm6,mm0)                     "\tpaddw     %%mm6,%%mm1\n"                     mmx_int_mult(mm6,mm1,mm7)
 comment|/* mm1 = INT_MULT(mm6, mm1) high bytes */
-end_comment
-
-begin_comment
-unit|"\tpackuswb  %%mm1,%%mm5\n"                      "\tmovq         %4,%%mm0\n"                     "\tmovq      %%mm0,%%mm1\n"                     "\tpandn     %%mm5,%%mm1\n"                      "\t" pminub(mm2,mm3,mm4) "\n"                     "\tpand      %%mm0,%%mm3\n"                      "\tpor       %%mm3,%%mm1\n"                      "\tmovd      %%mm1,%2\n"                     :
-comment|/* empty */
 end_comment
 
 begin_endif
-unit|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_w2_64), "m" (*rgba8_alpha_mask_64)                     : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");     }    asm("emms"); }
+unit|"\tpackuswb  %%mm1,%%mm5\n"                      "\tmovq         %4,%%mm0\n"                     "\tmovq      %%mm0,%%mm1\n"                     "\tpandn     %%mm5,%%mm1\n"                      "\t" pminub(mm2,mm3,mm4) "\n"                     "\tpand      %%mm0,%%mm3\n"                      "\tpor       %%mm3,%%mm1\n"                      "\tmovd      %%mm1,%0\n"                     : "=m" (*op.D)                     : "m" (*op.A), "m" (*op.B), "m" (*rgba8_w2_64), "m" (*rgba8_alpha_mask_64)                     : "%mm1", "%mm2", "%mm3", "%mm4");     }    asm("emms"); }
 endif|#
 directive|endif
 end_endif
@@ -1591,11 +1565,48 @@ modifier|*
 name|_op
 parameter_list|)
 block|{
-name|GimpCompositeContext
-name|op
+name|uint64
+modifier|*
+name|d
 init|=
+operator|(
+name|uint64
 operator|*
+operator|)
 name|_op
+operator|->
+name|D
+decl_stmt|;
+name|uint64
+modifier|*
+name|a
+init|=
+operator|(
+name|uint64
+operator|*
+operator|)
+name|_op
+operator|->
+name|A
+decl_stmt|;
+name|uint64
+modifier|*
+name|b
+init|=
+operator|(
+name|uint64
+operator|*
+operator|)
+name|_op
+operator|->
+name|B
+decl_stmt|;
+name|gulong
+name|n_pixels
+init|=
+name|_op
+operator|->
+name|n_pixels
 decl_stmt|;
 asm|asm
 specifier|volatile
@@ -1603,14 +1614,10 @@ asm|("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask_64) : "%mm0");
 for|for
 control|(
 init|;
-name|op
-operator|.
 name|n_pixels
 operator|>=
 literal|2
 condition|;
-name|op
-operator|.
 name|n_pixels
 operator|-=
 literal|2
@@ -1618,36 +1625,27 @@ control|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movq       %1,%%mm2\n"                     "\tmovq       %2,%%mm3\n"                     "\tmovq    %%mm2,%%mm4\n"                     "\tpsubusb %%mm3,%%mm4\n"                     "\tmovq    %%mm0,%%mm1\n"                     "\tpandn   %%mm4,%%mm1\n"                     "\tpminub  %%mm3,%%mm2\n"                     "\tpand    %%mm0,%%mm2\n"                     "\tpor     %%mm2,%%mm1\n"                     "\tmovq    %%mm1,%0\n"                     : "+m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "%mm1", "%mm2", "%mm3", "%mm4");
-name|op
-operator|.
-name|A
-operator|+=
-literal|8
+asm|("  movq       %1,%%mm2\n"                     "\tmovq       %2,%%mm3\n"                     "\tmovq    %%mm2,%%mm4\n"                     "\tpsubusb %%mm3,%%mm4\n"                     "\tmovq    %%mm0,%%mm1\n"                     "\tpandn   %%mm4,%%mm1\n"                     "\tpminub  %%mm3,%%mm2\n"                     "\tpand    %%mm0,%%mm2\n"                     "\tpor     %%mm2,%%mm1\n"                     "\tmovq    %%mm1,%0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b)                     : "%mm1", "%mm2", "%mm3", "%mm4");
+name|a
+operator|++
 expr_stmt|;
-name|op
-operator|.
-name|B
-operator|+=
-literal|8
+name|b
+operator|++
 expr_stmt|;
-name|op
-operator|.
-name|D
-operator|+=
-literal|8
+name|d
+operator|++
 expr_stmt|;
 block|}
 if|if
 condition|(
-name|op
-operator|.
 name|n_pixels
+operator|>
+literal|0
 condition|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movd       %1,%%mm2\n"                     "\tmovd       %2,%%mm3\n"                     "\tmovq    %%mm2,%%mm4\n"                     "\tpsubusb %%mm3,%%mm4\n"                     "\tmovq    %%mm0,%%mm1\n"                     "\tpandn   %%mm4,%%mm1\n"                     "\tpminub  %%mm3,%%mm2\n"                     "\tpand    %%mm0,%%mm2\n"                     "\tpor     %%mm2,%%mm1\n"                     "\tmovd    %%mm1,%0\n"                     : "+m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "%mm1", "%mm2", "%mm3", "%mm4");
+asm|("  movd       %1,%%mm2\n"                     "\tmovd       %2,%%mm3\n"                     "\tmovq    %%mm2,%%mm4\n"                     "\tpsubusb %%mm3,%%mm4\n"                     "\tmovq    %%mm0,%%mm1\n"                     "\tpandn   %%mm4,%%mm1\n"                     "\tpminub  %%mm3,%%mm2\n"                     "\tpand    %%mm0,%%mm2\n"                     "\tpor     %%mm2,%%mm1\n"                     "\tmovd    %%mm1,%0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b)                     : "%mm1", "%mm2", "%mm3", "%mm4");
 block|}
 asm|asm("emms");
 block|}
@@ -1663,23 +1661,56 @@ modifier|*
 name|_op
 parameter_list|)
 block|{
-name|GimpCompositeContext
-name|op
+name|uint64
+modifier|*
+name|d
 init|=
+operator|(
+name|uint64
 operator|*
+operator|)
 name|_op
+operator|->
+name|D
+decl_stmt|;
+name|uint64
+modifier|*
+name|a
+init|=
+operator|(
+name|uint64
+operator|*
+operator|)
+name|_op
+operator|->
+name|A
+decl_stmt|;
+name|uint64
+modifier|*
+name|b
+init|=
+operator|(
+name|uint64
+operator|*
+operator|)
+name|_op
+operator|->
+name|B
+decl_stmt|;
+name|gulong
+name|n_pixels
+init|=
+name|_op
+operator|->
+name|n_pixels
 decl_stmt|;
 for|for
 control|(
 init|;
-name|op
-operator|.
 name|n_pixels
 operator|>=
 literal|2
 condition|;
-name|op
-operator|.
 name|n_pixels
 operator|-=
 literal|2
@@ -1687,30 +1718,24 @@ control|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movq       %0,%%mm2\n"                     "\tmovq       %1,%%mm3\n"                     "\tmovq    %%mm3,%0\n"                     "\tmovq    %%mm2,%1\n"                     : "+m" (*op.A), "+m" (*op.B)                     :                     : "%mm1", "%mm2", "%mm3", "%mm4");
-name|op
-operator|.
-name|A
-operator|+=
-literal|8
+asm|("  movq       %0,%%mm2\n"                     "\tmovq       %1,%%mm3\n"                     "\tmovq    %%mm3,%0\n"                     "\tmovq    %%mm2,%1\n"                     : "+m" (*a), "+m" (*b)                     :                     : "%mm1", "%mm2", "%mm3", "%mm4");
+name|a
+operator|++
 expr_stmt|;
-name|op
-operator|.
-name|B
-operator|+=
-literal|8
+name|b
+operator|++
 expr_stmt|;
 block|}
 if|if
 condition|(
-name|op
-operator|.
 name|n_pixels
+operator|>
+literal|0
 condition|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movd       %0,%%mm2\n"                     "\tmovd       %1,%%mm3\n"                     "\tmovd    %%mm3,%0\n"                     "\tmovd    %%mm2,%1\n"                     : "+m" (*op.A), "+m" (*op.B)                     :
+asm|("  movd       %0,%%mm2\n"                     "\tmovd       %1,%%mm3\n"                     "\tmovd    %%mm3,%0\n"                     "\tmovd    %%mm2,%1\n"                     : "+m" (*a), "+m" (*b)                     :
 comment|/* empty */
 asm|: "%mm1", "%mm2", "%mm3", "%mm4");
 block|}
@@ -1775,7 +1800,7 @@ comment|/* mm7 = mm7 | mm1 */
 end_comment
 
 begin_comment
-unit|"\tmovq      %%mm7,(%2); addl $8,%2\n"                     : "+r" (op.A), "+r" (op.B), "+r" (op.D)                     : "m" (*va8_b255), "m" (*va8_w1), "m" (*va8_w255), "m" (*va8_alpha_mask)                     : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");     }    if (op.n_pixels)     {       asm volatile ("  movd      (%0),%%mm0\n"                     "\tmovd      (%1),%%mm1\n"                      "\tmovq      %3,%%mm2\n"                     "\tpsubb     %%mm0,%%mm2\n"
+unit|"\tmovq      %%mm7,(%2); addl $8,%2\n"                     : "+r" (op.A), "+r" (op.B), "+r" (op.D)                     : "m" (*va8_b255), "m" (*va8_w1), "m" (*va8_w255), "m" (*va8_alpha_mask)                     : "%mm1", "%mm2", "%mm3", "%mm4");     }    if (op.n_pixels)     {       asm volatile ("  movd      (%0),%%mm0\n"                     "\tmovd      (%1),%%mm1\n"                      "\tmovq      %3,%%mm2\n"                     "\tpsubb     %%mm0,%%mm2\n"
 comment|/* mm2 = 255 - A */
 end_comment
 
@@ -1830,7 +1855,7 @@ comment|/* empty */
 end_comment
 
 begin_endif
-unit|: "r" (op.A), "r" (op.B), "r" (op.D), "m" (*va8_b255), "m" (*va8_w1), "m" (*va8_w255), "m" (*va8_alpha_mask)                     : "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");     }    asm("emms"); }  void xxxgimp_composite_coloronly_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void gimp_composite_darken_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .darken_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".darken_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("movq %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .darken_pixels_1a_1a_loop");    asm(".darken_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .darken_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("movq %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".darken_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .darken_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("movq %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".darken_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void gimp_composite_difference_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .difference_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".difference_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("movq %mm3, %mm5");   asm("psubusb %mm3, %mm4");   asm("psubusb %mm2, %mm5");   asm("movq %mm0, %mm1");   asm("paddb %mm5, %mm4");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .difference_pixels_1a_1a_loop");    asm(".difference_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .difference_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("movq %mm3, %mm5");   asm("psubusb %mm3, %mm4");   asm("psubusb %mm2, %mm5");   asm("movq %mm0, %mm1");   asm("paddb %mm5, %mm4");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".difference_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .difference_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("movq %mm3, %mm5");   asm("psubusb %mm3, %mm4");   asm("psubusb %mm2, %mm5");   asm("movq %mm0, %mm1");   asm("paddb %mm5, %mm4");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".difference_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_dissolve_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_divide_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_dodge_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_grainextract_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_grainmerge_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_hardlight_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_hueonly_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_lighten_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .lighten_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".lighten_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("paddb %mm4, %mm3");   asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .lighten_pixels_1a_1a_loop");    asm(".lighten_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .lighten_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("paddb %mm4, %mm3");   asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".lighten_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .lighten_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("paddb %mm4, %mm3");   asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".lighten_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_multiply_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .multiply_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".multiply_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");     asm("movq %mm2, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm3, %mm5");   asm("punpcklbw %mm6, %mm5");   asm("pmullw %mm5, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm2, %mm4");   asm("punpckhbw %mm6, %mm4");   asm("movq %mm3, %mm5");   asm("punpckhbw %mm6, %mm5");   asm("pmullw %mm5, %mm4");   asm("paddw %mm7, %mm4");   asm("movq %mm4, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm4");   asm("psrlw $ 8, %mm4");    asm("packuswb %mm4, %mm1");    asm("movq %mm0, %mm4");   asm("pandn %mm1, %mm4");   asm("movq %mm4, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .multiply_pixels_1a_1a_loop");    asm(".multiply_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .multiply_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");     asm("movq %mm2, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm3, %mm5");   asm("punpcklbw %mm6, %mm5");   asm("pmullw %mm5, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm2, %mm4");   asm("punpckhbw %mm6, %mm4");   asm("movq %mm3, %mm5");   asm("punpckhbw %mm6, %mm5");   asm("pmullw %mm5, %mm4");   asm("paddw %mm7, %mm4");   asm("movq %mm4, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm4");   asm("psrlw $ 8, %mm4");    asm("packuswb %mm4, %mm1");    asm("movq %mm0, %mm4");   asm("pandn %mm1, %mm4");   asm("movq %mm4, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".multiply_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .multiply_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");     asm("movq %mm2, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm3, %mm5");   asm("punpcklbw %mm6, %mm5");   asm("pmullw %mm5, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm2, %mm4");   asm("punpckhbw %mm6, %mm4");   asm("movq %mm3, %mm5");   asm("punpckhbw %mm6, %mm5");   asm("pmullw %mm5, %mm4");   asm("paddw %mm7, %mm4");   asm("movq %mm4, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm4");   asm("psrlw $ 8, %mm4");    asm("packuswb %mm4, %mm1");    asm("movq %mm0, %mm4");   asm("pandn %mm1, %mm4");   asm("movq %mm4, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".multiply_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void gimp_composite_overlay_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .overlay_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".overlay_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");   asm("call op_overlay");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .overlay_pixels_1a_1a_loop");    asm(".overlay_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .overlay_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");   asm("call op_overlay");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".overlay_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .overlay_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");   asm("call op_overlay");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".overlay_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_replace_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_saturationonly_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_screen_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .screen_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".screen_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");     asm("pcmpeqb %mm4, %mm4");   asm("psubb %mm2, %mm4");   asm("pcmpeqb %mm5, %mm5");   asm("psubb %mm3, %mm5");    asm("movq %mm4, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm5, %mm3");   asm("punpcklbw %mm6, %mm3");   asm("pmullw %mm3, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm4, %mm2");   asm("punpckhbw %mm6, %mm2");   asm("movq %mm5, %mm3");   asm("punpckhbw %mm6, %mm3");   asm("pmullw %mm3, %mm2");   asm("paddw %mm7, %mm2");   asm("movq %mm2, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm2");   asm("psrlw $ 8, %mm2");    asm("packuswb %mm2, %mm1");    asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm1, %mm3");    asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm5, %mm2");   asm("paddb %mm2, %mm5");   asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm5, %mm3");    asm("pand %mm0, %mm3");   asm("por %mm3, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .screen_pixels_1a_1a_loop");    asm(".screen_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .screen_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");     asm("pcmpeqb %mm4, %mm4");   asm("psubb %mm2, %mm4");   asm("pcmpeqb %mm5, %mm5");   asm("psubb %mm3, %mm5");    asm("movq %mm4, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm5, %mm3");   asm("punpcklbw %mm6, %mm3");   asm("pmullw %mm3, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm4, %mm2");   asm("punpckhbw %mm6, %mm2");   asm("movq %mm5, %mm3");   asm("punpckhbw %mm6, %mm3");   asm("pmullw %mm3, %mm2");   asm("paddw %mm7, %mm2");   asm("movq %mm2, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm2");   asm("psrlw $ 8, %mm2");    asm("packuswb %mm2, %mm1");    asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm1, %mm3");    asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm5, %mm2");   asm("paddb %mm2, %mm5");   asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm5, %mm3");    asm("pand %mm0, %mm3");   asm("por %mm3, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".screen_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .screen_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");     asm("pcmpeqb %mm4, %mm4");   asm("psubb %mm2, %mm4");   asm("pcmpeqb %mm5, %mm5");   asm("psubb %mm3, %mm5");    asm("movq %mm4, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm5, %mm3");   asm("punpcklbw %mm6, %mm3");   asm("pmullw %mm3, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm4, %mm2");   asm("punpckhbw %mm6, %mm2");   asm("movq %mm5, %mm3");   asm("punpckhbw %mm6, %mm3");   asm("pmullw %mm3, %mm2");   asm("paddw %mm7, %mm2");   asm("movq %mm2, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm2");   asm("psrlw $ 8, %mm2");    asm("packuswb %mm2, %mm1");    asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm1, %mm3");    asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm5, %mm2");   asm("paddb %mm2, %mm5");   asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm5, %mm3");    asm("pand %mm0, %mm3");   asm("por %mm3, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".screen_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_softlight_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_subtract_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .substract_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".substract_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .substract_pixels_1a_1a_loop");    asm(".substract_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .substract_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".substract_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .substract_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".substract_pixels_1a_1a_end:");   asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_swap_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_valueonly_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }
+unit|: "r" (op.A), "r" (op.B), "r" (op.D), "m" (*va8_b255), "m" (*va8_w1), "m" (*va8_w255), "m" (*va8_alpha_mask)                     : "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");     }    asm("emms"); }  void xxxgimp_composite_coloronly_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void gimp_composite_darken_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .darken_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".darken_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("movq %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .darken_pixels_1a_1a_loop");    asm(".darken_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .darken_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("movq %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".darken_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .darken_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("movq %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".darken_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void gimp_composite_difference_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .difference_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".difference_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("movq %mm3, %mm5");   asm("psubusb %mm3, %mm4");   asm("psubusb %mm2, %mm5");   asm("movq %mm0, %mm1");   asm("paddb %mm5, %mm4");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .difference_pixels_1a_1a_loop");    asm(".difference_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .difference_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("movq %mm3, %mm5");   asm("psubusb %mm3, %mm4");   asm("psubusb %mm2, %mm5");   asm("movq %mm0, %mm1");   asm("paddb %mm5, %mm4");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".difference_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .difference_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("movq %mm3, %mm5");   asm("psubusb %mm3, %mm4");   asm("psubusb %mm2, %mm5");   asm("movq %mm0, %mm1");   asm("paddb %mm5, %mm4");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".difference_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_dissolve_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_divide_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_dodge_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_grainextract_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_grainmerge_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_hardlight_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_hueonly_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_lighten_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .lighten_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".lighten_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("paddb %mm4, %mm3");   asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .lighten_pixels_1a_1a_loop");    asm(".lighten_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .lighten_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("paddb %mm4, %mm3");   asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".lighten_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .lighten_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("paddb %mm4, %mm3");   asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".lighten_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_multiply_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .multiply_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".multiply_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");     asm("movq %mm2, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm3, %mm5");   asm("punpcklbw %mm6, %mm5");   asm("pmullw %mm5, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm2, %mm4");   asm("punpckhbw %mm6, %mm4");   asm("movq %mm3, %mm5");   asm("punpckhbw %mm6, %mm5");   asm("pmullw %mm5, %mm4");   asm("paddw %mm7, %mm4");   asm("movq %mm4, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm4");   asm("psrlw $ 8, %mm4");    asm("packuswb %mm4, %mm1");    asm("movq %mm0, %mm4");   asm("pandn %mm1, %mm4");   asm("movq %mm4, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .multiply_pixels_1a_1a_loop");    asm(".multiply_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .multiply_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");     asm("movq %mm2, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm3, %mm5");   asm("punpcklbw %mm6, %mm5");   asm("pmullw %mm5, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm2, %mm4");   asm("punpckhbw %mm6, %mm4");   asm("movq %mm3, %mm5");   asm("punpckhbw %mm6, %mm5");   asm("pmullw %mm5, %mm4");   asm("paddw %mm7, %mm4");   asm("movq %mm4, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm4");   asm("psrlw $ 8, %mm4");    asm("packuswb %mm4, %mm1");    asm("movq %mm0, %mm4");   asm("pandn %mm1, %mm4");   asm("movq %mm4, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".multiply_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .multiply_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");     asm("movq %mm2, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm3, %mm5");   asm("punpcklbw %mm6, %mm5");   asm("pmullw %mm5, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm2, %mm4");   asm("punpckhbw %mm6, %mm4");   asm("movq %mm3, %mm5");   asm("punpckhbw %mm6, %mm5");   asm("pmullw %mm5, %mm4");   asm("paddw %mm7, %mm4");   asm("movq %mm4, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm4");   asm("psrlw $ 8, %mm4");    asm("packuswb %mm4, %mm1");    asm("movq %mm0, %mm4");   asm("pandn %mm1, %mm4");   asm("movq %mm4, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".multiply_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void gimp_composite_overlay_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .overlay_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".overlay_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");   asm("call op_overlay");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .overlay_pixels_1a_1a_loop");    asm(".overlay_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .overlay_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");   asm("call op_overlay");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".overlay_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .overlay_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");   asm("call op_overlay");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".overlay_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_replace_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_saturationonly_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_screen_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .screen_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".screen_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");     asm("pcmpeqb %mm4, %mm4");   asm("psubb %mm2, %mm4");   asm("pcmpeqb %mm5, %mm5");   asm("psubb %mm3, %mm5");    asm("movq %mm4, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm5, %mm3");   asm("punpcklbw %mm6, %mm3");   asm("pmullw %mm3, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm4, %mm2");   asm("punpckhbw %mm6, %mm2");   asm("movq %mm5, %mm3");   asm("punpckhbw %mm6, %mm3");   asm("pmullw %mm3, %mm2");   asm("paddw %mm7, %mm2");   asm("movq %mm2, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm2");   asm("psrlw $ 8, %mm2");    asm("packuswb %mm2, %mm1");    asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm1, %mm3");    asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm5, %mm2");   asm("paddb %mm2, %mm5");   asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm5, %mm3");    asm("pand %mm0, %mm3");   asm("por %mm3, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .screen_pixels_1a_1a_loop");    asm(".screen_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .screen_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");     asm("pcmpeqb %mm4, %mm4");   asm("psubb %mm2, %mm4");   asm("pcmpeqb %mm5, %mm5");   asm("psubb %mm3, %mm5");    asm("movq %mm4, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm5, %mm3");   asm("punpcklbw %mm6, %mm3");   asm("pmullw %mm3, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm4, %mm2");   asm("punpckhbw %mm6, %mm2");   asm("movq %mm5, %mm3");   asm("punpckhbw %mm6, %mm3");   asm("pmullw %mm3, %mm2");   asm("paddw %mm7, %mm2");   asm("movq %mm2, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm2");   asm("psrlw $ 8, %mm2");    asm("packuswb %mm2, %mm1");    asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm1, %mm3");    asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm5, %mm2");   asm("paddb %mm2, %mm5");   asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm5, %mm3");    asm("pand %mm0, %mm3");   asm("por %mm3, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".screen_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .screen_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");     asm("pcmpeqb %mm4, %mm4");   asm("psubb %mm2, %mm4");   asm("pcmpeqb %mm5, %mm5");   asm("psubb %mm3, %mm5");    asm("movq %mm4, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm5, %mm3");   asm("punpcklbw %mm6, %mm3");   asm("pmullw %mm3, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm4, %mm2");   asm("punpckhbw %mm6, %mm2");   asm("movq %mm5, %mm3");   asm("punpckhbw %mm6, %mm3");   asm("pmullw %mm3, %mm2");   asm("paddw %mm7, %mm2");   asm("movq %mm2, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm2");   asm("psrlw $ 8, %mm2");    asm("packuswb %mm2, %mm1");    asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm1, %mm3");    asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm5, %mm2");   asm("paddb %mm2, %mm5");   asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm5, %mm3");    asm("pand %mm0, %mm3");   asm("por %mm3, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".screen_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_softlight_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_subtract_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .substract_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".substract_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .substract_pixels_1a_1a_loop");    asm(".substract_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .substract_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".substract_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .substract_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".substract_pixels_1a_1a_end:");   asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_swap_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_valueonly_va8_va8_va8_sse (GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }
 endif|#
 directive|endif
 end_endif

@@ -293,6 +293,22 @@ name|uint64
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|struct|__anon2936dd930108
+DECL|typedef|uint128
+typedef|typedef
+struct|struct
+block|{
+name|uint64
+name|__uint64
+index|[
+literal|2
+index|]
+block|}
+name|uint128
+typedef|;
+end_typedef
+
 begin_decl_stmt
 specifier|extern
 specifier|const
