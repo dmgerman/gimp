@@ -70,7 +70,7 @@ define|#
 directive|define
 name|COLOR_MANAGEMENT_BLURB
 define|\
-value|"Defines the color management behaviour."
+value|"Defines the color management behavior."
 end_define
 
 begin_define

@@ -10,7 +10,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a0b3660103
+DECL|enum|__anon2b1f9bb70103
 block|{
 DECL|enumerator|CARTESIAN_MODE
 name|CARTESIAN_MODE
@@ -115,7 +115,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a0b3660208
+DECL|struct|__anon2b1f9bb70208
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -1960,7 +1960,7 @@ name|TRUE
 argument_list|,
 name|_
 argument_list|(
-literal|"Edge behaviour"
+literal|"Edge Behavior"
 argument_list|)
 argument_list|,
 name|G_CALLBACK

@@ -1016,7 +1016,7 @@ argument_list|,
 name|dialog
 argument_list|)
 expr_stmt|;
-comment|/*  The edge behaviour frame  */
+comment|/*  The edge behavior frame  */
 name|frame
 operator|=
 name|gimp_int_radio_group_new
@@ -1025,7 +1025,7 @@ name|TRUE
 argument_list|,
 name|_
 argument_list|(
-literal|"Edge Behaviour"
+literal|"Edge Behavior"
 argument_list|)
 argument_list|,
 name|G_CALLBACK
