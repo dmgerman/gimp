@@ -844,7 +844,7 @@ argument_list|)
 expr_stmt|;
 name|x1
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 name|MIN4
 argument_list|(
@@ -860,7 +860,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 name|MIN4
 argument_list|(
@@ -876,7 +876,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 name|MAX4
 argument_list|(
@@ -892,7 +892,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 name|MAX4
 argument_list|(
@@ -2580,7 +2580,7 @@ name|GIMP_ORIENTATION_HORIZONTAL
 case|:
 name|new_x
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 operator|-
 operator|(
@@ -2606,7 +2606,7 @@ name|GIMP_ORIENTATION_VERTICAL
 case|:
 name|new_y
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 operator|-
 operator|(
@@ -3044,7 +3044,7 @@ case|:
 operator|*
 name|new_x
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 name|center_x
 operator|-
@@ -3059,7 +3059,7 @@ expr_stmt|;
 operator|*
 name|new_y
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 name|center_y
 operator|+
@@ -3078,7 +3078,7 @@ case|:
 operator|*
 name|new_x
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 name|center_x
 operator|-
@@ -3095,7 +3095,7 @@ expr_stmt|;
 operator|*
 name|new_y
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 name|center_y
 operator|-
@@ -3116,7 +3116,7 @@ case|:
 operator|*
 name|new_x
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 name|center_x
 operator|+
@@ -3131,7 +3131,7 @@ expr_stmt|;
 operator|*
 name|new_y
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 name|center_y
 operator|-
