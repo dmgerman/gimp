@@ -71,6 +71,10 @@ begin_comment
 comment|/*  *  Widget Constructors  */
 end_comment
 
+begin_comment
+comment|/**  * gimp_option_menu_new:  * @menu_only:  * @...:  *  * Returns:  *  */
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
@@ -358,6 +362,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_option_menu_new2:  * @menu_only:  * @menu_item_callback:  * @data:  * @initial:  * @...:  *  * Returns:  *  */
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
@@ -621,6 +629,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_option_menu_set_history:  * @option_menu:  * @user_data:  *  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_option_menu_set_history (GtkOptionMenu * option_menu,gpointer user_data)
@@ -734,6 +746,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_radio_group_new:  * @in_frame:  * @frame_title:  * @...:  *  * Returns:  *  */
+end_comment
 
 begin_function
 name|GtkWidget
@@ -1047,6 +1063,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_radio_group_new2:  * @in_frame:  * @frame_title:  * @radio_button_callback:  * @data:  * @initial:  * @...:  *  * Returns:  *  */
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
@@ -1335,6 +1355,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_spin_button_new:  * @adjustment:  * @value:  * @lower:  * @upper:  * @step_increment:  * @page_increment:  * @page_size:  * @climb_rate:  * @digits:  *  * Returns:  *  */
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
@@ -1491,6 +1515,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_scale_entry_new:  * @table:  * @column:  * @row:  * @text:  * @scale_usize:  * @spinbutton_usize:  * @value:  * @lower:  * @upper:  * @step_increment:  * @page_increment:  * @digits:  * @constrain:  * @unconstrained_lower:  * @unconstrained_upper:  * @tooltip:  * @private_tip:  *  * Returns:  *  */
+end_comment
 
 begin_function
 name|GtkObject
@@ -2047,6 +2075,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_random_seed_new:  * @seed:  * @seed_spinbutton:  * @use_time:  * @time_button:  * @time_true:  * @time_false:  *  * Returns:  *  */
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
@@ -2342,7 +2374,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b95236e0108
+DECL|struct|__anon2ad6457a0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -2678,6 +2710,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_coordinates_new:  * @unit:  * @unit_format:  * @menu_show_pixels:  * @menu_show_percent:  * @spinbutton_usize:  * @update_policy:  * @chainbutton_active:  * @chain_constrains_ratio:  * @chainbutton:  * @xlabel:  * @x:  * @xres:  * @lower_boundary_x:  * @upper_boundary_x:  * @xsize_0:  * @xsize_100:  * @ylabel:  * @y:  * @yres:  * @lower_boundary_y:  * @upper_boundary_y:  * @ysize_0:  * @ysize_100:  *  * Returns:  *  */
+end_comment
 
 begin_function
 name|GtkWidget
@@ -3205,6 +3241,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_pixmap_button_new:  * @xpm_data:  *  * Returns:  *  */
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
@@ -3365,6 +3405,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_toggle_button_update:  * @widget:  * @data:  *  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_toggle_button_update (GtkWidget * widget,gpointer data)
@@ -3422,6 +3466,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_menu_item_update:  * @widget:  * @data:  *  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_menu_item_update (GtkWidget * widget,gpointer data)
@@ -3463,6 +3511,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_radio_button_update:  * @widget:  * @data:  *  */
+end_comment
 
 begin_function
 name|void
@@ -3526,6 +3578,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_int_adjustment_update:  * @adjustment:  * @data:  *  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_int_adjustment_update (GtkAdjustment * adjustment,gpointer data)
@@ -3568,6 +3624,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_float_adjustment_update:  * @adjustment:  * @data:  *  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_float_adjustment_update (GtkAdjustment * adjustment,gpointer data)
@@ -3603,6 +3663,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_double_adjustment_update:  * @adjustment:  * @data:  *  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_double_adjustment_update (GtkAdjustment * adjustment,gpointer data)
@@ -3637,6 +3701,10 @@ name|value
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_unit_menu_update:  * @widget:  * @data:  *  */
+end_comment
 
 begin_function
 name|void
@@ -3771,7 +3839,7 @@ comment|/*  *  Helper Functions  */
 end_comment
 
 begin_comment
-comment|/*  add aligned label& widget to a table  */
+comment|/**  * gimp_table_attach_aligned:  * @table:  * @column:  * @row:  * @label_text:  * @xalign:  * @yalign:  * @widget:  * @colspan:  * @left_align:  *  */
 end_comment
 
 begin_function
