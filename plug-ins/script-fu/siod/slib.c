@@ -18405,20 +18405,10 @@ call|)
 argument_list|(
 name|siod_output
 argument_list|,
-literal|"HELP for SIOD, Version %s\n"
+literal|"SIOD, Scheme In One Defun, Version %s\n"
 argument_list|,
 name|siod_version
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|put_st
-argument_list|(
-literal|"For the latest Script-Fu tips, tutorials,& info:\n"
-argument_list|)
-expr_stmt|;
-name|put_st
-argument_list|(
-literal|"\thttp://www.gimp.org/scripts.html\n\n"
 argument_list|)
 expr_stmt|;
 return|return
