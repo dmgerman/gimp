@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* IWarp  a plug-in for the GIMP    Version 0.1         IWarp is a gimp plug-in for interactive image warping. To apply the     selected deformation to the image, press the left mouse button and     move the mouse pointer in the preview image.        Copyright (C) 1997 Norbert Schmitz    nobert.schmitz@student.uni-tuebingen.de     Most of the gimp and gtk specific code is taken from other plug-ins      v0.11a     animation of non-alpha layers (background) creates now layers with      alpha channel. (thanks to Adrian Likins for reporting this bug)  */
+comment|/* IWarp  a plug-in for the GIMP    Version 0.1         IWarp is a gimp plug-in for interactive image warping. To apply the     selected deformation to the image, press the left mouse button and     move the mouse pointer in the preview image.        Copyright (C) 1997 Norbert Schmitz    nobert.schmitz@student.uni-tuebingen.de     Most of the gimp and gtk specific code is taken from other plug-ins      v0.11a     animation of non-alpha layers (background) creates now layers with      alpha channel. (thanks to Adrian Likins for reporting this bug)    v0.12      fixes a very bad bug.       (thanks to Arthur Hagen for reporting it)      */
 end_comment
 
 begin_include
@@ -127,7 +127,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290c652a0108
+DECL|struct|__anon2ac4792c0108
 block|{
 DECL|member|x
 name|gfloat
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290c652a0208
+DECL|struct|__anon2ac4792c0208
 block|{
 DECL|member|run
 name|gint
@@ -161,7 +161,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290c652a0308
+DECL|struct|__anon2ac4792c0308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -8479,7 +8479,7 @@ decl_stmt|;
 name|guchar
 name|color
 index|[
-literal|3
+literal|4
 index|]
 decl_stmt|;
 if|if
