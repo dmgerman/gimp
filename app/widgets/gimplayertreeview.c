@@ -3793,7 +3793,7 @@ name|dest_image
 argument_list|,
 name|layer
 argument_list|,
-name|drop_pos
+name|index
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush

@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3b73080103
+DECL|enum|__anon27c89b8e0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1748,7 +1748,10 @@ name|gimp_drawable_set_tiles_full
 argument_list|(
 name|drawable
 argument_list|,
-name|TRUE
+name|gimp_item_is_attached
+argument_list|(
+name|item
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2074,7 +2077,10 @@ name|gimp_drawable_set_tiles_full
 argument_list|(
 name|drawable
 argument_list|,
-name|TRUE
+name|gimp_item_is_attached
+argument_list|(
+name|item
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
