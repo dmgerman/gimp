@@ -306,7 +306,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a887360108
+DECL|struct|__anon2ad58aad0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a887360208
+DECL|struct|__anon2ad58aad0208
 block|{
 DECL|member|run
 name|gint
@@ -368,7 +368,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a887360308
+DECL|struct|__anon2ad58aad0308
 block|{
 DECL|member|cinfo
 name|struct
@@ -1670,6 +1670,21 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|/* Once the PDB gets default parameters, remove this hack */
+if|if
+condition|(
+name|param
+index|[
+literal|5
+index|]
+operator|.
+name|data
+operator|.
+name|d_float
+operator|>
+literal|0.05
+condition|)
+block|{
 name|jsvals
 operator|.
 name|quality
@@ -1780,12 +1795,6 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|jsvals
-operator|.
-name|preview
-operator|=
-name|FALSE
-expr_stmt|;
 comment|/* free up the default -- wasted some effort earlier */
 name|g_free
 argument_list|(
@@ -1805,6 +1814,13 @@ name|data
 operator|.
 name|d_string
 argument_list|)
+expr_stmt|;
+block|}
+name|jsvals
+operator|.
+name|preview
+operator|=
+name|FALSE
 expr_stmt|;
 if|if
 condition|(
