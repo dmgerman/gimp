@@ -2884,6 +2884,28 @@ literal|"group-image-guide"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_GROUP_DRAWABLE
+block|,
+name|N_
+argument_list|(
+literal|"Drawable"
+argument_list|)
+block|,
+literal|"group-drawable"
+block|}
+block|,
+block|{
+name|GIMP_UNDO_GROUP_DRAWABLE_MOD
+block|,
+name|N_
+argument_list|(
+literal|"Drawable Mod"
+argument_list|)
+block|,
+literal|"group-drawable-mod"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_GROUP_MASK
 block|,
 name|N_
@@ -3365,6 +3387,17 @@ literal|"Text"
 argument_list|)
 block|,
 literal|"text-layer"
+block|}
+block|,
+block|{
+name|GIMP_UNDO_TEXT_LAYER_MODIFIED
+block|,
+name|N_
+argument_list|(
+literal|"Text Modified"
+argument_list|)
+block|,
+literal|"text-layer-modified"
 block|}
 block|,
 block|{

@@ -482,7 +482,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  text layer undo  */
+comment|/*  text layer undos  */
 end_comment
 
 begin_function_decl
@@ -506,6 +506,26 @@ specifier|const
 name|GParamSpec
 modifier|*
 name|pspec
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_image_undo_push_text_layer_modified
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+parameter_list|,
+name|GimpTextLayer
+modifier|*
+name|layer
 parameter_list|)
 function_decl|;
 end_function_decl
