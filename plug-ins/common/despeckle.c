@@ -33,38 +33,6 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2bc4b2d40103
-block|{
-DECL|enumerator|MEDIAN
-name|MEDIAN
-DECL|typedef|FilterMethod
-block|}
-name|FilterMethod
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon2bc4b2d40208
-block|{
-DECL|member|diameter
-name|gint
-name|diameter
-decl_stmt|;
-DECL|member|method
-name|FilterMethod
-name|method
-decl_stmt|;
-DECL|typedef|FilterValues
-block|}
-name|FilterValues
-typedef|;
-end_typedef
-
 begin_comment
 comment|/*  * Constants...  */
 end_comment
@@ -455,7 +423,7 @@ end_decl_stmt
 
 begin_comment
 DECL|variable|preview
-comment|/* Preview widget */
+comment|/* Preview widget   */
 end_comment
 
 begin_decl_stmt
@@ -471,7 +439,7 @@ end_decl_stmt
 
 begin_comment
 DECL|variable|drawable
-comment|/* Current image */
+comment|/* Current drawable */
 end_comment
 
 begin_decl_stmt
@@ -498,21 +466,6 @@ block|,
 comment|/* Default value for the white level */
 name|TRUE
 comment|/* Default value for the update toggle */
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|fvals
-specifier|static
-name|FilterValues
-name|fvals
-init|=
-block|{
-literal|3.0
-block|,
-comment|/*  y diameter  */
-name|MEDIAN
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1588,12 +1541,6 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
-name|fvals
-operator|.
-name|method
-operator|=
-name|MEDIAN
-expr_stmt|;
 comment|/*  parameter settings  */
 name|frame
 operator|=
@@ -1662,15 +1609,9 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-operator|(
 name|filter_type
 operator|&
 name|FILTER_ADAPTIVE
-operator|)
-condition|?
-name|TRUE
-else|:
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1725,15 +1666,9 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-operator|(
 name|filter_type
 operator|&
 name|FILTER_RECURSIVE
-operator|)
-condition|?
-name|TRUE
-else|:
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
