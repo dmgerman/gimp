@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpimagefile.h  * Copyright (C) 2001  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpfileimage.h  * Thumbnail handling according to the Thumbnail Managing Standard.  * http://triq.net/~pearl/thumbnail-spec/  *  * Copyright (C) 2001-2002  Sven Neumann<sven@gimp.org>  *                          Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
@@ -51,7 +51,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fb0c170103
+DECL|enum|__anon29a1125a0103
 block|{
 DECL|enumerator|GIMP_IMAGEFILE_STATE_UNKNOWN
 name|GIMP_IMAGEFILE_STATE_UNKNOWN
@@ -67,6 +67,9 @@ name|GIMP_IMAGEFILE_STATE_EXISTS
 block|,
 DECL|enumerator|GIMP_IMAGEFILE_STATE_THUMBNAIL_NOT_FOUND
 name|GIMP_IMAGEFILE_STATE_THUMBNAIL_NOT_FOUND
+block|,
+DECL|enumerator|GIMP_IMAGEFILE_STATE_THUMBNAIL_EXISTS
+name|GIMP_IMAGEFILE_STATE_THUMBNAIL_EXISTS
 block|,
 DECL|enumerator|GIMP_IMAGEFILE_STATE_THUMBNAIL_OLD
 name|GIMP_IMAGEFILE_STATE_THUMBNAIL_OLD
@@ -174,10 +177,6 @@ decl_stmt|;
 DECL|member|image_size
 name|gssize
 name|image_size
-decl_stmt|;
-DECL|member|thumb_mtime
-name|time_t
-name|thumb_mtime
 decl_stmt|;
 DECL|member|width
 name|gint

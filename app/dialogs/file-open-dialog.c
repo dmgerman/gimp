@@ -991,7 +991,7 @@ name|ebox
 argument_list|,
 name|_
 argument_list|(
-literal|"Click to create preview"
+literal|"Click to update preview"
 argument_list|)
 argument_list|,
 name|NULL
@@ -2715,13 +2715,11 @@ name|status
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-block|{
 name|file_dialog_hide
 argument_list|(
 name|open_dialog
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
