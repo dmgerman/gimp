@@ -54,6 +54,22 @@ end_comment
 
 begin_function_decl
 specifier|static
+name|gint
+name|palette_select_button_press
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|GdkEventButton
+modifier|*
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|void
 name|palette_select_close_callback
 parameter_list|(
@@ -85,8 +101,8 @@ end_comment
 begin_function
 name|PaletteSelect
 modifier|*
-DECL|function|palette_new_selection (gchar * title,gchar * initial_palette)
-name|palette_new_selection
+DECL|function|palette_select_new (gchar * title,gchar * initial_palette)
+name|palette_select_new
 parameter_list|(
 name|gchar
 modifier|*
@@ -166,7 +182,7 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"dialogs/palette_selection.html"
 argument_list|,
-name|GTK_WIN_POS_NONE
+name|GTK_WIN_POS_MOUSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -462,9 +478,6 @@ operator|->
 name|clist
 argument_list|)
 expr_stmt|;
-comment|/*   gtk_signal_connect(GTK_OBJECT(gsp->clist), "select_row", */
-comment|/* 		     GTK_SIGNAL_FUNC(sel_list_item_update), */
-comment|/* 		     (gpointer) gsp); */
 name|select_pos
 operator|=
 operator|-
@@ -558,6 +571,28 @@ argument_list|,
 name|psp
 operator|->
 name|gc
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|psp
+operator|->
+name|clist
+argument_list|)
+argument_list|,
+literal|"button_press_event"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|palette_select_button_press
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|psp
 argument_list|)
 expr_stmt|;
 comment|/* Now show the dialog */
@@ -1029,6 +1064,68 @@ end_function
 begin_comment
 comment|/*  local functions  */
 end_comment
+
+begin_function
+specifier|static
+name|gint
+DECL|function|palette_select_button_press (GtkWidget * widget,GdkEventButton * bevent,gpointer data)
+name|palette_select_button_press
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEventButton
+modifier|*
+name|bevent
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|PaletteSelect
+modifier|*
+name|psp
+decl_stmt|;
+name|psp
+operator|=
+operator|(
+name|PaletteSelect
+operator|*
+operator|)
+name|data
+expr_stmt|;
+if|if
+condition|(
+name|bevent
+operator|->
+name|button
+operator|==
+literal|1
+operator|&&
+name|bevent
+operator|->
+name|type
+operator|==
+name|GDK_2BUTTON_PRESS
+condition|)
+block|{
+name|palette_select_edit_callback
+argument_list|(
+name|widget
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+return|return
+name|TRUE
+return|;
+block|}
+return|return
+name|FALSE
+return|;
+block|}
+end_function
 
 begin_function
 specifier|static

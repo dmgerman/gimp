@@ -73,7 +73,7 @@ end_struct
 begin_function_decl
 name|PaletteSelect
 modifier|*
-name|palette_new_selection
+name|palette_select_new
 parameter_list|(
 name|gchar
 modifier|*
