@@ -203,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad62ae10103
+DECL|enum|__anon2a4563310103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -231,7 +231,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad62ae10203
+DECL|enum|__anon2a4563310203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -476,7 +476,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad62ae10303
+DECL|enum|__anon2a4563310303
 block|{
 DECL|enumerator|TREE_ITEM_DONT
 name|TREE_ITEM_DONT
@@ -502,7 +502,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ad62ae10408
+DECL|struct|__anon2a4563310408
 block|{
 DECL|member|directory
 name|gboolean
@@ -4394,7 +4394,19 @@ argument_list|(
 name|gimp_directory
 argument_list|()
 argument_list|,
-literal|0755
+name|S_IRUSR
+operator||
+name|S_IWUSR
+operator||
+name|S_IXUSR
+operator||
+name|S_IRGRP
+operator||
+name|S_IXGRP
+operator||
+name|S_IROTH
+operator||
+name|S_IXOTH
 argument_list|)
 operator|==
 operator|-
