@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278ec8ba0103
+DECL|enum|__anon27dc15580103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -12747,7 +12747,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|expand_line (gdouble * dest,gdouble * src,guint bytes,guint old_width,gint width,GimpInterpolationType interp)
+DECL|function|expand_line (gdouble * dest,gdouble * src,gint bytes,gint old_width,gint width,GimpInterpolationType interp)
 name|expand_line
 parameter_list|(
 name|gdouble
@@ -12758,10 +12758,10 @@ name|gdouble
 modifier|*
 name|src
 parameter_list|,
-name|guint
+name|gint
 name|bytes
 parameter_list|,
-name|guint
+name|gint
 name|old_width
 parameter_list|,
 name|gint
@@ -12854,7 +12854,6 @@ operator|)
 operator|-
 name|src_col
 expr_stmt|;
-comment|/* cast bytes to signed int to make sure the result is signed */
 name|s
 operator|=
 operator|&
@@ -12862,9 +12861,6 @@ name|src
 index|[
 name|src_col
 operator|*
-operator|(
-name|int
-operator|)
 name|bytes
 index|]
 expr_stmt|;
@@ -12974,7 +12970,6 @@ operator|)
 operator|-
 name|src_col
 expr_stmt|;
-comment|/* cast bytes to signed int to make sure the result is signed */
 name|s
 operator|=
 operator|&
@@ -12982,9 +12977,6 @@ name|src
 index|[
 name|src_col
 operator|*
-operator|(
-name|int
-operator|)
 name|bytes
 index|]
 expr_stmt|;
