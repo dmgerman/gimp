@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets-types.h"
 end_include
 
@@ -101,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a35f41e0103
+DECL|enum|__anon28a0274a0103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
