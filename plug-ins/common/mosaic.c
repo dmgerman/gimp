@@ -164,7 +164,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b2adeb0108
+DECL|struct|__anon2ad7aec20108
 block|{
 DECL|member|x
 DECL|member|y
@@ -182,7 +182,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b2adeb0208
+DECL|struct|__anon2ad7aec20208
 block|{
 DECL|member|npts
 name|gint
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b2adeb0308
+DECL|struct|__anon2ad7aec20308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -233,7 +233,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b2adeb0408
+DECL|struct|__anon2ad7aec20408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -2584,7 +2584,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Co_lor Averaging"
+literal|"Co_lor averaging"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2644,7 +2644,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Allo_w Tile splitting"
+literal|"Allo_w tile splitting"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2704,7 +2704,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Pitted Surfaces"
+literal|"_Pitted surfaces"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2768,7 +2768,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_FG/BG Lighting"
+literal|"_FG/BG lighting"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2882,7 +2882,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Oc_tagons& Squares"
+literal|"Oc_tagons& squares"
 argument_list|)
 argument_list|,
 name|OCTAGONS
@@ -3001,7 +3001,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"T_ile Size:"
+literal|"T_ile size:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3065,7 +3065,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Tile _Height:"
+literal|"Tile _height:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3129,7 +3129,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Til_e Spacing:"
+literal|"Til_e spacing:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3193,7 +3193,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Tile _Neatness:"
+literal|"Tile _neatness:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3257,7 +3257,7 @@ literal|4
 argument_list|,
 name|_
 argument_list|(
-literal|"Light _Direction:"
+literal|"Light _direction:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3321,7 +3321,7 @@ literal|5
 argument_list|,
 name|_
 argument_list|(
-literal|"Color _Variation:"
+literal|"Color _variation:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

@@ -89,7 +89,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274c742c0103
+DECL|enum|__anon273c7c2f0103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -137,7 +137,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274c742c0208
+DECL|struct|__anon273c7c2f0208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -3056,7 +3056,7 @@ name|effect_convolve
 argument_list|,
 name|_
 argument_list|(
-literal|"_With White Noise"
+literal|"_With white noise"
 argument_list|)
 argument_list|,
 literal|0
@@ -3065,7 +3065,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"W_ith Source Image"
+literal|"W_ith source image"
 argument_list|)
 argument_list|,
 literal|1
@@ -3263,7 +3263,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"_Filter Length:"
+literal|"_Filter length:"
 argument_list|)
 argument_list|,
 literal|0
@@ -3328,7 +3328,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"_Noise Magnitude:"
+literal|"_Noise magnitude:"
 argument_list|)
 argument_list|,
 literal|0
@@ -3393,7 +3393,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"In_tegration Steps:"
+literal|"In_tegration steps:"
 argument_list|)
 argument_list|,
 literal|0
@@ -3458,7 +3458,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"_Minimum Value:"
+literal|"_Minimum value:"
 argument_list|)
 argument_list|,
 literal|0
@@ -3524,7 +3524,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"M_aximum Value:"
+literal|"M_aximum value:"
 argument_list|)
 argument_list|,
 literal|0

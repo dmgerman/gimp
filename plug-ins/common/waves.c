@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae9384e0103
+DECL|enum|__anon2a45d2440103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -67,7 +67,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae9384e0208
+DECL|struct|__anon2a45d2440208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -2082,7 +2082,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Do Preview"
+literal|"_Do preview"
 argument_list|)
 argument_list|)
 expr_stmt|;

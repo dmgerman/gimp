@@ -124,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed5b8a0108
+DECL|struct|__anon287daad20108
 block|{
 DECL|member|period
 name|gint
@@ -914,7 +914,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bed5b8a0208
+DECL|struct|__anon287daad20208
 typedef|typedef
 struct|struct
 block|{
@@ -2110,7 +2110,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Retain Tilability"
+literal|"_Retain tilability"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -85,7 +85,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dec2450103
+DECL|enum|__anon27504f640103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -105,7 +105,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dec2450208
+DECL|struct|__anon27504f640208
 block|{
 DECL|member|amount
 name|gdouble
@@ -1716,7 +1716,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Step Size:"
+literal|"Step size:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -1852,7 +1852,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Displacement Map:"
+literal|"Displacement map:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1973,7 +1973,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"On Edges:"
+literal|"On edges:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2335,7 +2335,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"FG Color"
+literal|"FG color"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2555,7 +2555,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Dither Size:"
+literal|"Dither size:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -2641,7 +2641,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Rotation Angle:"
+literal|"Rotation angle:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -2772,7 +2772,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Magnitude Map:"
+literal|"Magnitude map:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2942,7 +2942,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Use Magnitude Map"
+literal|"Use magnitude map"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3137,7 +3137,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Gradient Scale:"
+literal|"Gradient scale:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -3325,7 +3325,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Vector Mag:"
+literal|"Vector mag:"
 argument_list|)
 argument_list|,
 literal|0.0

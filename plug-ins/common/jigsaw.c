@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296e173b0103
+DECL|enum|__anon29fc9f660103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296e173b0203
+DECL|enum|__anon29fc9f660203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -15283,7 +15283,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Bevel Width:"
+literal|"_Bevel width:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

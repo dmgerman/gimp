@@ -138,7 +138,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b6f5670108
+DECL|struct|__anon2b16f8350108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -1696,7 +1696,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"_Keep Original Surroundings"
+literal|"_Keep original surroundings"
 argument_list|)
 argument_list|)
 expr_stmt|;

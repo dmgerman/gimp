@@ -162,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276dab180108
+DECL|struct|__anon2b0da8a90108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -271,7 +271,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276dab180208
+DECL|struct|__anon2b0da8a90208
 block|{
 DECL|member|height
 DECL|member|width
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276dab180308
+DECL|struct|__anon2b0da8a90308
 block|{
 DECL|member|width
 name|gint
@@ -4028,7 +4028,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"R_andom Seed:"
+literal|"R_andom seed:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -4083,7 +4083,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Force Tiling?"
+literal|"_Force tiling?"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4377,7 +4377,7 @@ name|colors
 argument_list|,
 name|_
 argument_list|(
-literal|"Bl_ack& White"
+literal|"Bl_ack& white"
 argument_list|)
 argument_list|,
 name|B_W
@@ -4386,7 +4386,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"_Foreground& Background"
+literal|"_Foreground& background"
 argument_list|)
 argument_list|,
 name|USE_FG_BG
@@ -4466,7 +4466,7 @@ name|gimp_color_button_new
 argument_list|(
 name|_
 argument_list|(
-literal|"First Color"
+literal|"First color"
 argument_list|)
 argument_list|,
 literal|32
@@ -4525,7 +4525,7 @@ name|gimp_color_button_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Second Color"
+literal|"Second color"
 argument_list|)
 argument_list|,
 literal|32

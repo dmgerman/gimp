@@ -709,7 +709,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fc88b40108
+DECL|struct|__anon2aedd3660108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -861,7 +861,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fc88b40208
+DECL|struct|__anon2aedd3660208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -931,7 +931,7 @@ name|VP_WO_ALPHA
 block|,
 name|N_
 argument_list|(
-literal|"More _White (Larger Value)"
+literal|"More _white (larger value)"
 argument_list|)
 block|,
 name|initialize_white
@@ -952,7 +952,7 @@ name|VP_WO_ALPHA
 block|,
 name|N_
 argument_list|(
-literal|"More Blac_k (Smaller Value)"
+literal|"More blac_k (smaller value)"
 argument_list|)
 block|,
 name|initialize_black
@@ -973,7 +973,7 @@ name|VP_WO_ALPHA
 block|,
 name|N_
 argument_list|(
-literal|"_Middle Value to Peaks"
+literal|"_Middle value to peaks"
 argument_list|)
 block|,
 name|initialize_middle
@@ -994,7 +994,7 @@ name|VP_WO_ALPHA
 block|,
 name|N_
 argument_list|(
-literal|"_Foreground to Peaks"
+literal|"_Foreground to peaks"
 argument_list|)
 block|,
 name|initialize_middle
@@ -1013,7 +1013,7 @@ name|VP_WO_ALPHA
 block|,
 name|N_
 argument_list|(
-literal|"O_nly Foreground"
+literal|"O_nly foreground"
 argument_list|)
 block|,
 name|initialize_foreground
@@ -1032,7 +1032,7 @@ name|VP_WO_ALPHA
 block|,
 name|N_
 argument_list|(
-literal|"Only B_ackground"
+literal|"Only b_ackground"
 argument_list|)
 block|,
 name|initialize_background
@@ -1051,7 +1051,7 @@ name|VP_WITH_ALPHA
 block|,
 name|N_
 argument_list|(
-literal|"Mor_e Opaque"
+literal|"Mor_e opaque"
 argument_list|)
 block|,
 name|NULL
@@ -1070,7 +1070,7 @@ name|VP_WITH_ALPHA
 block|,
 name|N_
 argument_list|(
-literal|"More T_ransparent"
+literal|"More t_ransparent"
 argument_list|)
 block|,
 name|NULL
@@ -3934,7 +3934,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fc88b40308
+DECL|struct|__anon2aedd3660308
 block|{
 DECL|member|min_modified
 name|gshort
@@ -5991,7 +5991,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Lower T_hreshold:"
+literal|"Lower t_hreshold:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -6055,7 +6055,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"_Upper Threshold:"
+literal|"_Upper threshold:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -6119,7 +6119,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"_Propagating Rate:"
+literal|"_Propagating rate:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -6174,7 +6174,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"To L_eft"
+literal|"To l_eft"
 argument_list|)
 argument_list|,
 literal|0
@@ -6201,7 +6201,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"To _Right"
+literal|"To _right"
 argument_list|)
 argument_list|,
 literal|2
@@ -6228,7 +6228,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"To _Top"
+literal|"To _top"
 argument_list|)
 argument_list|,
 literal|1
@@ -6255,7 +6255,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"To _Bottom"
+literal|"To _bottom"
 argument_list|)
 argument_list|,
 literal|1

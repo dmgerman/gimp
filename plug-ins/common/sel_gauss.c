@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e42cf90108
+DECL|struct|__anon2c2eb8310108
 block|{
 DECL|member|radius
 name|gdouble
@@ -797,7 +797,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Blur Radius:"
+literal|"_Blur radius:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -843,7 +843,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"_Max. Delta:"
+literal|"_Max. delta:"
 argument_list|)
 argument_list|,
 literal|128

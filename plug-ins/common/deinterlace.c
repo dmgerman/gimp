@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c6d47b0103
+DECL|enum|__anon275822e70103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -1169,7 +1169,7 @@ name|DeinterlaceValue
 argument_list|,
 name|_
 argument_list|(
-literal|"Keep o_dd Fields"
+literal|"Keep o_dd fields"
 argument_list|)
 argument_list|,
 name|ODD_FIELDS
@@ -1178,7 +1178,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Keep _even Fields"
+literal|"Keep _even fields"
 argument_list|)
 argument_list|,
 name|EVEN_FIELDS

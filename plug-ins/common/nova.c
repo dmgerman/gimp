@@ -155,7 +155,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d931720108
+DECL|struct|__anon2a8d5ba70108
 block|{
 DECL|member|xcenter
 name|gint
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d931720208
+DECL|struct|__anon2a8d5ba70208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1472,7 +1472,7 @@ literal|5
 argument_list|,
 name|_
 argument_list|(
-literal|"R_andom Hue:"
+literal|"R_andom hue:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2200,7 +2200,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"S_how Cursor"
+literal|"S_how cursor"
 argument_list|)
 argument_list|)
 expr_stmt|;

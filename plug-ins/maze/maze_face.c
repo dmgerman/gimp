@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2955ec350108
+DECL|struct|__anon2ba625290108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -750,7 +750,7 @@ name|trow
 argument_list|,
 name|_
 argument_list|(
-literal|"Width (Pixels):"
+literal|"Width (pixels):"
 argument_list|)
 argument_list|,
 operator|&
@@ -873,7 +873,7 @@ name|trow
 argument_list|,
 name|_
 argument_list|(
-literal|"Height (Pixels):"
+literal|"Height (pixels):"
 argument_list|)
 argument_list|,
 operator|&
@@ -1298,7 +1298,7 @@ name|algorithm
 argument_list|,
 name|_
 argument_list|(
-literal|"Depth First"
+literal|"Depth first"
 argument_list|)
 argument_list|,
 name|DEPTH_FIRST
@@ -1307,7 +1307,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Prim's Algorithm"
+literal|"Prim's algorithm"
 argument_list|)
 argument_list|,
 name|PRIMS_ALGORITHM

@@ -384,7 +384,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974db9a0108
+DECL|struct|__anon274fa3370108
 block|{
 DECL|member|name
 specifier|const
@@ -644,7 +644,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974db9a0208
+DECL|struct|__anon274fa3370208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -717,7 +717,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974db9a0308
+DECL|struct|__anon274fa3370308
 block|{
 DECL|member|input_spi
 name|gint
@@ -747,7 +747,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974db9a0408
+DECL|struct|__anon274fa3370408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -854,7 +854,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974db9a0508
+DECL|struct|__anon274fa3370508
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1025,7 +1025,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974db9a0608
+DECL|struct|__anon274fa3370608
 block|{
 DECL|member|name
 specifier|const
@@ -4042,7 +4042,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Spot Function:"
+literal|"_Spot function:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5072,7 +5072,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"C_ell Size:"
+literal|"C_ell size:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5240,7 +5240,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"B_lack Pullout (%):"
+literal|"B_lack pullout (%):"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5710,7 +5710,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Lock Channels"
+literal|"_Lock channels"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5770,7 +5770,7 @@ name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Factory Defaults"
+literal|"_Factory defaults"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6565,7 +6565,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974db9a0708
+DECL|struct|__anon274fa3370708
 block|{
 DECL|member|index
 name|gint

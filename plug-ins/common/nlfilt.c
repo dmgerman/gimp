@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1698660108
+DECL|struct|__anon29a409160108
 block|{
 DECL|member|img
 name|gint32
@@ -89,7 +89,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1698660203
+DECL|enum|__anon29a409160203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -1576,7 +1576,7 @@ name|filter
 argument_list|,
 name|_
 argument_list|(
-literal|"_Alpha Trimmed Mean"
+literal|"_Alpha trimmed mean"
 argument_list|)
 argument_list|,
 name|filter_alpha_trim
@@ -1585,7 +1585,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Op_timal Estimation"
+literal|"Op_timal estimation"
 argument_list|)
 argument_list|,
 name|filter_opt_est
@@ -1594,7 +1594,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"_Edge Enhancement"
+literal|"_Edge enhancement"
 argument_list|)
 argument_list|,
 name|filter_edge_enhance
@@ -2162,7 +2162,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Do Preview"
+literal|"_Do preview"
 argument_list|)
 argument_list|)
 expr_stmt|;

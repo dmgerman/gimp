@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eaf3520108
+DECL|struct|__anon292c3f950108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -1307,7 +1307,7 @@ name|orientation
 argument_list|,
 name|_
 argument_list|(
-literal|"Shift _Horizontally"
+literal|"Shift _horizontally"
 argument_list|)
 argument_list|,
 name|HORIZONTAL
@@ -1316,7 +1316,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Shift _Vertically"
+literal|"Shift _vertically"
 argument_list|)
 argument_list|,
 name|VERTICAL
@@ -1475,7 +1475,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Shift _Amount:"
+literal|"Shift _amount:"
 argument_list|)
 argument_list|,
 literal|1

@@ -129,7 +129,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275c0c180103
+DECL|enum|__anon298f7e570103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275c0c180208
+DECL|struct|__anon298f7e570208
 block|{
 DECL|member|run
 name|gboolean
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275c0c180308
+DECL|struct|__anon298f7e570308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -4164,7 +4164,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Ping Pong"
+literal|"Ping pong"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5830,7 +5830,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Deform Radius:"
+literal|"_Deform radius:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5894,7 +5894,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"D_eform Amount:"
+literal|"D_eform amount:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -6037,7 +6037,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Adaptive S_upersample"
+literal|"Adaptive s_upersample"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6167,7 +6167,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Ma_x Depth:"
+literal|"Ma_x depth:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

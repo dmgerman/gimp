@@ -142,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a5c9350108
+DECL|struct|__anon2c6677ec0108
 block|{
 DECL|member|circle
 name|gdouble
@@ -2765,7 +2765,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Circle _Depth in Percent:"
+literal|"Circle _depth in percent:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2829,7 +2829,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Offset _Angle:"
+literal|"Offset _angle:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2910,7 +2910,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Map Backwards"
+literal|"_Map backwards"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2983,7 +2983,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Map from _Top"
+literal|"Map from _top"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3057,7 +3057,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"To _Polar"
+literal|"To _polar"
 argument_list|)
 argument_list|)
 expr_stmt|;

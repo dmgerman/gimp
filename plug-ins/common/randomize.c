@@ -217,7 +217,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5fdedb0108
+DECL|struct|__anon27a5beab0108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -2544,7 +2544,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Random Seed:"
+literal|"_Random seed:"
 argument_list|)
 argument_list|,
 literal|0.0

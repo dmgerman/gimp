@@ -121,7 +121,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbe0b380108
+DECL|struct|__anon2798e8240108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbe0b380208
+DECL|struct|__anon2798e8240208
 block|{
 DECL|member|run
 name|gint
@@ -652,36 +652,36 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"_Modify Red Channel"
+literal|"_Modify red channel"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"_Modify Hue Channel"
-argument_list|)
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"Mo_dify Green Channel"
-argument_list|)
-block|,
-name|N_
-argument_list|(
-literal|"Mo_dify Saturation Channel"
+literal|"_Modify hue channel"
 argument_list|)
 block|}
 block|,
 block|{
 name|N_
 argument_list|(
-literal|"Mod_ify Blue Channel"
+literal|"Mo_dify green channel"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Mod_ify Luminosity Channel"
+literal|"Mo_dify saturation channel"
+argument_list|)
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"Mod_ify blue channel"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Mod_ify luminosity channel"
 argument_list|)
 block|}
 block|}
@@ -716,24 +716,24 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Green Fr_equency:"
+literal|"Green fr_equency:"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Saturation Fr_equency:"
+literal|"Saturation fr_equency:"
 argument_list|)
 block|}
 block|,
 block|{
 name|N_
 argument_list|(
-literal|"Blue Freq_uency:"
+literal|"Blue freq_uency:"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Luminosity Freq_uency:"
+literal|"Luminosity freq_uency:"
 argument_list|)
 block|}
 block|,
@@ -752,24 +752,24 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Green Ph_aseshift:"
+literal|"Green ph_aseshift:"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Saturation Ph_aseshift:"
+literal|"Saturation ph_aseshift:"
 argument_list|)
 block|}
 block|,
 block|{
 name|N_
 argument_list|(
-literal|"Blue Pha_seshift:"
+literal|"Blue pha_seshift:"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Luminosity Pha_seshift:"
+literal|"Luminosity pha_seshift:"
 argument_list|)
 block|}
 block|, }
@@ -2686,7 +2686,7 @@ name|colormodel
 argument_list|,
 name|_
 argument_list|(
-literal|"_RGB Color Model"
+literal|"_RGB color model"
 argument_list|)
 argument_list|,
 name|RGB_MODEL
@@ -2695,7 +2695,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"_HSL Color Model"
+literal|"_HSL color model"
 argument_list|)
 argument_list|,
 name|HSL_MODEL

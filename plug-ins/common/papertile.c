@@ -82,7 +82,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b511d330103
+DECL|enum|__anon2c8923c90103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -110,7 +110,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b511d330203
+DECL|enum|__anon2c8923c90203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -198,7 +198,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b511d330308
+DECL|struct|__anon2c8923c90308
 block|{
 DECL|member|params
 name|PluginParams
@@ -218,7 +218,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b511d330408
+DECL|struct|__anon2c8923c90408
 block|{
 DECL|member|x0
 name|gint
@@ -585,7 +585,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b511d330508
+DECL|struct|__anon2c8923c90508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject
@@ -1744,7 +1744,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Wrap Around"
+literal|"_Wrap around"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1844,7 +1844,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"I_nverted Image"
+literal|"I_nverted image"
 argument_list|)
 argument_list|,
 name|BACKGROUND_TYPE_INVERTED
@@ -1862,7 +1862,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Fo_reground Color"
+literal|"Fo_reground color"
 argument_list|)
 argument_list|,
 name|BACKGROUND_TYPE_FOREGROUND
@@ -1871,7 +1871,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Bac_kground Color"
+literal|"Bac_kground color"
 argument_list|)
 argument_list|,
 name|BACKGROUND_TYPE_BACKGROUND

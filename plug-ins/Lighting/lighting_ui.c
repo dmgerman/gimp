@@ -939,7 +939,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"T_ransparent Background"
+literal|"T_ransparent background"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1012,7 +1012,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Cre_ate New Image"
+literal|"Cre_ate new image"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1084,7 +1084,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"High _Quality Preview"
+literal|"High _Quality preview"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1155,7 +1155,7 @@ directive|if
 literal|0
 comment|/* Antialiasing options */
 comment|/* commented out -- there is no code to implement this -- WES 4/02/04 */
-block|frame = gtk_frame_new (NULL);   gtk_box_pack_start (GTK_BOX (page), frame, FALSE, FALSE, 0);   gtk_widget_show (frame);    toggle = gtk_check_button_new_with_mnemonic (_("E_nable Antialiasing"));   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), 				mapvals.antialiasing);   gtk_frame_set_label_widget (GTK_FRAME (frame), toggle);   gtk_widget_show (toggle);    g_signal_connect (toggle, "toggled",                     G_CALLBACK (gimp_toggle_button_update),&mapvals.antialiasing);    table = gtk_table_new (2, 3, FALSE);   gtk_table_set_col_spacings (GTK_TABLE (table), 12);   gtk_table_set_row_spacings (GTK_TABLE (table), 12);   gtk_container_add (GTK_CONTAINER (frame), table);   gtk_widget_show (table);    gtk_widget_set_sensitive (table, mapvals.antialiasing);   g_object_set_data (G_OBJECT (toggle), "set_sensitive", table);    adj = gimp_scale_entry_new (GTK_TABLE (table), 0, 0, 			      _("_Depth:"), 0, 6, 			      mapvals.max_depth, 1.0, 5.0, 0.5, 1.0, 			      1, TRUE, 0, 0, 			      _("Antialiasing quality. Higher is better, " 				"but slower"), NULL);   g_signal_connect (adj, "value_changed",                     G_CALLBACK (gimp_double_adjustment_update),&mapvals.max_depth);    adj = gimp_scale_entry_new (GTK_TABLE (table), 0, 1, 			      _("T_hreshold:"), 0, 6, 			      mapvals.pixel_treshold, 0.01, 1000.0, 1.0, 15.0, 2, 			      TRUE, 0, 0, 			      _("Stop when pixel differences are smaller than " 			        "this value"), NULL);   g_signal_connect (adj, "value_changed",                     G_CALLBACK (gimp_double_adjustment_update),&mapvals.pixel_treshold);    spinbutton = gimp_spin_button_new (&adj, mapvals.pixel_treshold, 				     0.001, 1000, 0.1, 1, 1, 0, 3);   g_signal_connect (adj, "value_changed", 		    G_CALLBACK (gimp_double_adjustment_update),&mapvals.pixel_treshold);   gimp_table_attach_aligned (GTK_TABLE (table), 0, 1, 			     _("Threshold:"), 0.0, 1.0, 			     spinbutton, 1, TRUE);    gimp_help_set_help_data (spinbutton, 			   _("Stop when pixel differences are smaller than " 			     "this value"), NULL);
+block|frame = gtk_frame_new (NULL);   gtk_box_pack_start (GTK_BOX (page), frame, FALSE, FALSE, 0);   gtk_widget_show (frame);    toggle = gtk_check_button_new_with_mnemonic (_("E_nable antialiasing"));   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), 				mapvals.antialiasing);   gtk_frame_set_label_widget (GTK_FRAME (frame), toggle);   gtk_widget_show (toggle);    g_signal_connect (toggle, "toggled",                     G_CALLBACK (gimp_toggle_button_update),&mapvals.antialiasing);    table = gtk_table_new (2, 3, FALSE);   gtk_table_set_col_spacings (GTK_TABLE (table), 12);   gtk_table_set_row_spacings (GTK_TABLE (table), 12);   gtk_container_add (GTK_CONTAINER (frame), table);   gtk_widget_show (table);    gtk_widget_set_sensitive (table, mapvals.antialiasing);   g_object_set_data (G_OBJECT (toggle), "set_sensitive", table);    adj = gimp_scale_entry_new (GTK_TABLE (table), 0, 0, 			      _("_Depth:"), 0, 6, 			      mapvals.max_depth, 1.0, 5.0, 0.5, 1.0, 			      1, TRUE, 0, 0, 			      _("Antialiasing quality. Higher is better, " 				"but slower"), NULL);   g_signal_connect (adj, "value_changed",                     G_CALLBACK (gimp_double_adjustment_update),&mapvals.max_depth);    adj = gimp_scale_entry_new (GTK_TABLE (table), 0, 1, 			      _("T_hreshold:"), 0, 6, 			      mapvals.pixel_treshold, 0.01, 1000.0, 1.0, 15.0, 2, 			      TRUE, 0, 0, 			      _("Stop when pixel differences are smaller than " 			        "this value"), NULL);   g_signal_connect (adj, "value_changed",                     G_CALLBACK (gimp_double_adjustment_update),&mapvals.pixel_treshold);    spinbutton = gimp_spin_button_new (&adj, mapvals.pixel_treshold, 				     0.001, 1000, 0.1, 1, 1, 0, 3);   g_signal_connect (adj, "value_changed", 		    G_CALLBACK (gimp_double_adjustment_update),&mapvals.pixel_treshold);   gimp_table_attach_aligned (GTK_TABLE (table), 0, 1, 			     _("Threshold:"), 0.0, 1.0, 			     spinbutton, 1, TRUE);    gimp_help_set_help_data (spinbutton, 			   _("Stop when pixel differences are smaller than " 			     "this value"), NULL);
 endif|#
 directive|endif
 name|gtk_widget_show
@@ -1410,7 +1410,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"L_ight Type:"
+literal|"L_ight yype:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -1442,7 +1442,7 @@ name|gimp_color_button_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Select Lightsource Color"
+literal|"Select lightsource color"
 argument_list|)
 argument_list|,
 literal|64
@@ -1505,7 +1505,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Lig_ht Color:"
+literal|"Lig_ht color:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -3751,7 +3751,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"E_nable Bump Mapping"
+literal|"E_nable bump mapping"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3936,7 +3936,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Bumpm_ap Image:"
+literal|"Bumpm_ap image:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -4080,7 +4080,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Ma_ximum Height:"
+literal|"Ma_ximum height:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -4235,7 +4235,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"E_nable Environment Mapping"
+literal|"E_nable environment mapping"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4437,7 +4437,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"En_vironment Image:"
+literal|"En_vironment image:"
 argument_list|)
 argument_list|,
 literal|0.0

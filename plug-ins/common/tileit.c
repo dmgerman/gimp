@@ -137,7 +137,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a99cc90108
+DECL|struct|__anon2b1e6a160108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -519,7 +519,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a99cc90203
+DECL|enum|__anon2b1e6a160203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -538,7 +538,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a99cc90308
+DECL|struct|__anon2b1e6a160308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -608,7 +608,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a99cc90408
+DECL|struct|__anon2b1e6a160408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -1894,7 +1894,7 @@ name|orientation_group
 argument_list|,
 name|_
 argument_list|(
-literal|"A_ll Tiles"
+literal|"A_ll tiles"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1981,7 +1981,7 @@ name|orientation_group
 argument_list|,
 name|_
 argument_list|(
-literal|"Al_ternate Tiles"
+literal|"Al_ternate tiles"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2068,7 +2068,7 @@ name|orientation_group
 argument_list|,
 name|_
 argument_list|(
-literal|"_Explicit Tile"
+literal|"_Explicit tile"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -70,7 +70,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297982b60108
+DECL|struct|__anon291dd2870108
 block|{
 DECL|member|image
 name|gint32
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297982b60203
+DECL|enum|__anon291dd2870203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297982b60303
+DECL|enum|__anon291dd2870303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -165,7 +165,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon297982b60408
+DECL|struct|__anon291dd2870408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -2525,7 +2525,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Create _New Layer"
+literal|"Create _New layer"
 argument_list|)
 argument_list|)
 expr_stmt|;

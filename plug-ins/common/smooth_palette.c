@@ -299,7 +299,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ad4ade60108
+DECL|struct|__anon289302430108
 block|{
 DECL|member|width
 name|gint
@@ -2212,7 +2212,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"_Search Depth:"
+literal|"_Search depth:"
 argument_list|)
 argument_list|,
 literal|0.0

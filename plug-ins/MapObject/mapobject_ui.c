@@ -2041,7 +2041,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"General Options"
+literal|"General options"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2274,7 +2274,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Transparent Background"
+literal|"Transparent background"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2346,7 +2346,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Tile Source Image"
+literal|"Tile source image"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2418,7 +2418,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Create New Image"
+literal|"Create new image"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2519,7 +2519,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Enable _Antialiasing"
+literal|"Enable _antialiasing"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2965,21 +2965,21 @@ name|gimp_int_combo_box_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Point Light"
+literal|"Point light"
 argument_list|)
 argument_list|,
 name|POINT_LIGHT
 argument_list|,
 name|_
 argument_list|(
-literal|"Directional Light"
+literal|"Directional light"
 argument_list|)
 argument_list|,
 name|DIRECTIONAL_LIGHT
 argument_list|,
 name|_
 argument_list|(
-literal|"No Light"
+literal|"No light"
 argument_list|)
 argument_list|,
 name|NO_LIGHT
@@ -3053,7 +3053,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Lightsource Type:"
+literal|"Lightsource type:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -3085,7 +3085,7 @@ name|gimp_color_button_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Select Lightsource Color"
+literal|"Select lightsource color"
 argument_list|)
 argument_list|,
 literal|64
@@ -3115,7 +3115,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Lightsource Color:"
+literal|"Lightsource color:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -7749,7 +7749,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Show Preview _Wireframe"
+literal|"Show preview _wireframe"
 argument_list|)
 argument_list|)
 expr_stmt|;

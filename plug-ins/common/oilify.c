@@ -97,7 +97,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fe88f10108
+DECL|struct|__anon2ae6afb10108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -2175,7 +2175,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Mask Size:"
+literal|"_Mask size:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2230,7 +2230,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Use Intensity Algorithm"
+literal|"_Use intensity algorithm"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -50,7 +50,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278e968a0108
+DECL|struct|__anon278b3e030108
 block|{
 DECL|member|horizontal
 name|gint
@@ -911,7 +911,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Keep Sign of Result (one Direction only)"
+literal|"_Keep sign of result (one direction only)"
 argument_list|)
 argument_list|)
 expr_stmt|;

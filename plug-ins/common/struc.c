@@ -40879,7 +40879,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c899dd10103
+DECL|enum|__anon29c766c60103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40899,7 +40899,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c899dd10208
+DECL|struct|__anon29c766c60208
 block|{
 DECL|member|direction
 name|gint
@@ -41635,7 +41635,7 @@ name|direction
 argument_list|,
 name|_
 argument_list|(
-literal|"_Top-Right"
+literal|"_Top-right"
 argument_list|)
 argument_list|,
 name|TOP_RIGHT
@@ -41644,7 +41644,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Top-_Left"
+literal|"Top-_left"
 argument_list|)
 argument_list|,
 name|TOP_LEFT
@@ -41653,7 +41653,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"_Bottom-Left"
+literal|"_Bottom-left"
 argument_list|)
 argument_list|,
 name|BOTTOM_LEFT
@@ -41662,7 +41662,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Bottom-_Right"
+literal|"Bottom-_right"
 argument_list|)
 argument_list|,
 name|BOTTOM_RIGHT

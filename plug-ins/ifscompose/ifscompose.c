@@ -181,7 +181,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bc04e60103
+DECL|enum|__anon2b7c447d0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bc04e60203
+DECL|enum|__anon2b7c447d0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc04e60308
+DECL|struct|__anon2b7c447d0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -239,7 +239,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon27bc04e6040a
+DECL|union|__anon2b7c447d040a
 block|{
 DECL|member|d
 name|gdouble
@@ -264,7 +264,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc04e60508
+DECL|struct|__anon2b7c447d0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -294,7 +294,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc04e60608
+DECL|struct|__anon2b7c447d0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -329,7 +329,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc04e60708
+DECL|struct|__anon2b7c447d0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc04e60808
+DECL|struct|__anon2b7c447d0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -432,7 +432,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc04e60908
+DECL|struct|__anon2b7c447d0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -634,7 +634,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc04e60a08
+DECL|struct|__anon2b7c447d0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -4627,7 +4627,7 @@ name|gtk_toggle_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Rotate/Scale"
+literal|"Rotate/scale"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4815,7 +4815,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Render Options"
+literal|"Render options"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5274,7 +5274,7 @@ name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Select _All"
+literal|"Select _all"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5319,7 +5319,7 @@ name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Recompute _Center"
+literal|"Recompute _center"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5579,7 +5579,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Relative Probability:"
+literal|"Relative probability:"
 argument_list|)
 argument_list|)
 expr_stmt|;

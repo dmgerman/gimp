@@ -152,7 +152,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4979f20108
+DECL|struct|__anon2a31d97a0108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4979f20208
+DECL|struct|__anon2a31d97a0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -3003,7 +3003,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Whirl Angle:"
+literal|"_Whirl angle:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3068,7 +3068,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"_Pinch Amount:"
+literal|"_Pinch amount:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

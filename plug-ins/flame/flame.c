@@ -496,7 +496,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon28b3caa10108
+DECL|struct|__anon29050c770108
 block|{
 DECL|member|randomize
 name|gint
@@ -5225,7 +5225,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Sample _Density:"
+literal|"Sample _density:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5293,7 +5293,7 @@ literal|4
 argument_list|,
 name|_
 argument_list|(
-literal|"Spa_tial Oversample:"
+literal|"Spa_tial oversample:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5361,7 +5361,7 @@ literal|5
 argument_list|,
 name|_
 argument_list|(
-literal|"Spatial _Filter Radius:"
+literal|"Spatial _filter radius:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5624,7 +5624,7 @@ name|GIMP_INT_STORE_LABEL
 argument_list|,
 name|_
 argument_list|(
-literal|"Custom Gradient"
+literal|"Custom gradient"
 argument_list|)
 argument_list|,
 name|GIMP_INT_STORE_STOCK_ID

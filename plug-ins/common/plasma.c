@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d817ec0108
+DECL|struct|__anon28a53ccc0108
 block|{
 DECL|member|seed
 name|guint32
@@ -1230,7 +1230,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Random _Seed:"
+literal|"Random _seed:"
 argument_list|)
 argument_list|,
 literal|0.0

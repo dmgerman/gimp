@@ -115,7 +115,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2739831d0108
+DECL|struct|__anon27d434690108
 block|{
 DECL|member|tilable
 name|gint
@@ -2601,7 +2601,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Random Seed:"
+literal|"_Random seed:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2920,7 +2920,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"_X Size:"
+literal|"_X size:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2999,7 +2999,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"_Y Size:"
+literal|"_Y size:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

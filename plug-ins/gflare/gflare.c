@@ -430,7 +430,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28eeba750103
+DECL|enum|__anon2b5643ae0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -457,7 +457,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28eeba750203
+DECL|enum|__anon2b5643ae0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -478,7 +478,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba750308
+DECL|struct|__anon2b5643ae0308
 block|{
 DECL|member|name
 name|gchar
@@ -619,7 +619,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba750408
+DECL|struct|__anon2b5643ae0408
 block|{
 DECL|member|fp
 name|FILE
@@ -639,7 +639,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28eeba750503
+DECL|enum|__anon2b5643ae0503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -667,7 +667,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba750608
+DECL|struct|__anon2b5643ae0608
 block|{
 DECL|member|init
 name|gint
@@ -689,7 +689,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon28eeba750708
+DECL|struct|__anon2b5643ae0708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -763,7 +763,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba750808
+DECL|struct|__anon2b5643ae0808
 block|{
 DECL|member|init
 name|gint
@@ -833,7 +833,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba750908
+DECL|struct|__anon2b5643ae0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -860,7 +860,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba750a08
+DECL|struct|__anon2b5643ae0a08
 block|{
 DECL|member|init
 name|gint
@@ -1030,7 +1030,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba750b08
+DECL|struct|__anon2b5643ae0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1057,7 +1057,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba750c08
+DECL|struct|__anon2b5643ae0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1293,7 +1293,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba750d08
+DECL|struct|__anon2b5643ae0d08
 block|{
 DECL|member|tag
 name|gint
@@ -1370,7 +1370,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eeba750e08
+DECL|struct|__anon2b5643ae0e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -8564,7 +8564,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-DECL|struct|__anon28eeba750f08
+DECL|struct|__anon2b5643ae0f08
 specifier|static
 struct|struct
 block|{
@@ -11887,7 +11887,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"A_uto Update Preview"
+literal|"A_uto update preview"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -13727,7 +13727,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"_Hue Rotation:"
+literal|"_Hue rotation:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -13989,7 +13989,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"A_daptive Supersampling"
+literal|"A_daptive supersampling"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -14429,7 +14429,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon28eeba751008
+DECL|struct|__anon2b5643ae1008
 block|{
 DECL|member|label
 specifier|const

@@ -907,7 +907,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcf7d320108
+DECL|struct|__anon29188a940108
 block|{
 DECL|member|gridspacing
 name|void
@@ -9339,7 +9339,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Reverse Line"
+literal|"Reverse line"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -9449,7 +9449,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Scale to Image"
+literal|"Scale to image"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -9692,7 +9692,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Approx. Circles/Ellipses"
+literal|"Approx. circles/ellipses"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -10620,7 +10620,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"No Options..."
+literal|"No options..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -10731,7 +10731,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Set Brush..."
+literal|"Set brush..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -11388,7 +11388,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Fill Type:"
+literal|"Fill type:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -11503,14 +11503,14 @@ name|gimp_int_combo_box_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Each Selection"
+literal|"Each selection"
 argument_list|)
 argument_list|,
 name|FILL_EACH
 argument_list|,
 name|_
 argument_list|(
-literal|"All Selections"
+literal|"All selections"
 argument_list|)
 argument_list|,
 name|FILL_AFTER
@@ -11839,7 +11839,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Show Image"
+literal|"Show image"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -11911,7 +11911,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Reload Image"
+literal|"Reload image"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -12038,7 +12038,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Grid Type:"
+literal|"Grid type:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -12106,7 +12106,7 @@ name|GTK_STATE_PRELIGHT
 argument_list|,
 name|_
 argument_list|(
-literal|"Very Dark"
+literal|"Very dark"
 argument_list|)
 argument_list|,
 name|GTK_STATE_SELECTED
@@ -12154,7 +12154,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Grid Color:"
+literal|"Grid color:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -12183,7 +12183,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Max Undo:"
+literal|"Max undo:"
 argument_list|)
 argument_list|,
 literal|0
@@ -12238,7 +12238,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Show Position"
+literal|"Show position"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -12310,7 +12310,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Hide Control Points"
+literal|"Hide control points"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -12566,7 +12566,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Show Grid"
+literal|"Show grid"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -12636,7 +12636,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Snap to Grid"
+literal|"Snap to grid"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -12690,7 +12690,7 @@ if|#
 directive|if
 literal|0
 comment|/* 17/10/2003 (Maurits): this option is not implemented. Therefore removing      it from the user interface */
-block|toggle = gtk_check_button_new_with_label (_("Lock on Grid"));   gtk_box_pack_start (GTK_BOX (hbox), toggle, FALSE, FALSE, 0);   g_signal_connect (toggle, "toggled",                     G_CALLBACK (gimp_toggle_button_update),&selvals.opts.lockongrid);   gtk_widget_show (toggle);   gfig_opt_widget.lockongrid = toggle;
+block|toggle = gtk_check_button_new_with_label (_("Lock on grid"));   gtk_box_pack_start (GTK_BOX (hbox), toggle, FALSE, FALSE, 0);   g_signal_connect (toggle, "toggled",                     G_CALLBACK (gimp_toggle_button_update),&selvals.opts.lockongrid);   gtk_widget_show (toggle);   gfig_opt_widget.lockongrid = toggle;
 endif|#
 directive|endif
 name|table
@@ -13417,7 +13417,7 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Merge Gfig Object collection into the "
+literal|"Merge Gfig Ooject collection into the "
 literal|"current edit session"
 argument_list|)
 argument_list|,
@@ -15026,7 +15026,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Enter Gfig Object Name"
+literal|"Enter Gfig object name"
 argument_list|)
 argument_list|,
 literal|"gfig"
@@ -15151,7 +15151,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Gfig Object Name:"
+literal|"Gfig object name:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -15383,7 +15383,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Rescan for Gfig Objects"
+literal|"Rescan for Gfig objects"
 argument_list|)
 argument_list|,
 literal|"gfig"
@@ -15442,7 +15442,7 @@ name|gimp_path_editor_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Add Gfig Path"
+literal|"Add Gfig path"
 argument_list|)
 argument_list|,
 name|gfig_path
@@ -16152,7 +16152,7 @@ name|buf
 argument_list|,
 name|_
 argument_list|(
-literal|"Gfig Layer %d"
+literal|"Gfig layer %d"
 argument_list|)
 argument_list|,
 name|layer_count
@@ -17156,7 +17156,7 @@ name|gimp_query_boolean_box
 argument_list|(
 name|_
 argument_list|(
-literal|"Delete Gfig Drawing"
+literal|"Delete Gfig drawing"
 argument_list|)
 argument_list|,
 name|gtk_widget_get_toplevel

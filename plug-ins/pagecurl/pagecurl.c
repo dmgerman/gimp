@@ -144,7 +144,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be655ae0108
+DECL|struct|__anon2b895dd90108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -2093,22 +2093,22 @@ init|=
 block|{
 name|N_
 argument_list|(
-literal|"Upper Left"
+literal|"Upper left"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Upper Right"
+literal|"Upper right"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Lower Left"
+literal|"Lower left"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Lower Right"
+literal|"Lower right"
 argument_list|)
 block|}
 decl_stmt|;
@@ -2620,7 +2620,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Shade under Curl"
+literal|"Shade under curl"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2684,8 +2684,8 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Use Current Gradient\n"
-literal|"instead of FG/BG-Color"
+literal|"Use current gradient\n"
+literal|"instead of FG/BG-color"
 argument_list|)
 argument_list|)
 expr_stmt|;

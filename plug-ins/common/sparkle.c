@@ -127,7 +127,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b31bef0108
+DECL|struct|__anon2b898c220108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -1660,7 +1660,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"F_lare Intensity:"
+literal|"F_lare intensity:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -1727,7 +1727,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"_Spike Length:"
+literal|"_Spike length:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -1794,7 +1794,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Sp_ike Points:"
+literal|"Sp_ike points:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -1861,7 +1861,7 @@ literal|4
 argument_list|,
 name|_
 argument_list|(
-literal|"Spi_ke Angle (-1: Random):"
+literal|"Spi_ke angle (-1: random):"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -1930,7 +1930,7 @@ literal|5
 argument_list|,
 name|_
 argument_list|(
-literal|"Spik_e Density:"
+literal|"Spik_e density:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2064,7 +2064,7 @@ literal|7
 argument_list|,
 name|_
 argument_list|(
-literal|"_Random Hue:"
+literal|"_Random hue:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2132,7 +2132,7 @@ literal|8
 argument_list|,
 name|_
 argument_list|(
-literal|"Rando_m Saturation:"
+literal|"Rando_m saturation:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2251,7 +2251,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Preserve Luminosity"
+literal|"_Preserve luminosity"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2395,7 +2395,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"A_dd Border"
+literal|"A_dd border"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2486,7 +2486,7 @@ name|colortype
 argument_list|,
 name|_
 argument_list|(
-literal|"_Natural Color"
+literal|"_Natural color"
 argument_list|)
 argument_list|,
 name|NATURAL
@@ -2496,7 +2496,7 @@ name|r1
 argument_list|,
 name|_
 argument_list|(
-literal|"_Foreground Color"
+literal|"_Foreground color"
 argument_list|)
 argument_list|,
 name|FOREGROUND
@@ -2506,7 +2506,7 @@ name|r2
 argument_list|,
 name|_
 argument_list|(
-literal|"_Background Color"
+literal|"_Background color"
 argument_list|)
 argument_list|,
 name|BACKGROUND
@@ -2544,7 +2544,7 @@ name|r1
 argument_list|,
 name|_
 argument_list|(
-literal|"Use the Color of the Image"
+literal|"Use the color of the image"
 argument_list|)
 argument_list|,
 name|NULL
@@ -2556,7 +2556,7 @@ name|r2
 argument_list|,
 name|_
 argument_list|(
-literal|"Use the Foreground Color"
+literal|"Use the foreground color"
 argument_list|)
 argument_list|,
 name|NULL
@@ -2568,7 +2568,7 @@ name|r3
 argument_list|,
 name|_
 argument_list|(
-literal|"Use the Background Color"
+literal|"Use the background color"
 argument_list|)
 argument_list|,
 name|NULL

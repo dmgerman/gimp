@@ -210,7 +210,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c2eaab0108
+DECL|struct|__anon28d11a880108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -237,7 +237,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c2eaab0203
+DECL|enum|__anon28d11a880203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -366,7 +366,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c2eaab0303
+DECL|enum|__anon28d11a880303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -511,7 +511,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c2eaab0403
+DECL|enum|__anon28d11a880403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -616,7 +616,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c2eaab0503
+DECL|enum|__anon28d11a880503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -714,7 +714,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c2eaab0608
+DECL|struct|__anon28d11a880608
 block|{
 DECL|member|function
 name|gint
@@ -787,7 +787,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c2eaab0708
+DECL|struct|__anon28d11a880708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1599,7 +1599,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c2eaab0808
+DECL|struct|__anon28d11a880808
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -6857,7 +6857,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"New Seed"
+literal|"New seed"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6915,7 +6915,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Fix Seed"
+literal|"Fix seed"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6973,7 +6973,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Random Seed"
+literal|"Random seed"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7347,7 +7347,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Channel Independed Parameters"
+literal|"Channel Independent Parameters"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7490,7 +7490,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Initial Value:"
+literal|"Initial value:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -7531,7 +7531,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Zoom Scale:"
+literal|"Zoom scale:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -7607,7 +7607,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Start Offset:"
+literal|"Start offset:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -7849,7 +7849,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Switch to \"From Seed\" with the last Seed"
+literal|"Switch to \"From seed\" with the last seed"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8128,7 +8128,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Source Channel:"
+literal|"Source channel:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -8206,7 +8206,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Destination Channel:"
+literal|"Destination channel:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -8233,7 +8233,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Copy Parameters"
+literal|"Copy parameters"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8414,7 +8414,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Source Channel in File:"
+literal|"Source channel in file:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -8487,7 +8487,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Destination Channel:"
+literal|"Destination channel:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -8729,7 +8729,7 @@ name|index
 argument_list|,
 name|_
 argument_list|(
-literal|"Function Type:"
+literal|"Function type:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -8903,7 +8903,7 @@ name|index
 argument_list|,
 name|_
 argument_list|(
-literal|"Misc Arrange:"
+literal|"Misc arrange:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -8926,7 +8926,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Use Cyclic Range"
+literal|"Use cyclic range"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -9004,7 +9004,7 @@ name|index
 argument_list|,
 name|_
 argument_list|(
-literal|"Mod. Rate:"
+literal|"Mod. rate:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -9073,7 +9073,7 @@ name|index
 argument_list|,
 name|_
 argument_list|(
-literal|"Env. Sensitivity:"
+literal|"Env. sensitivity:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -9142,7 +9142,7 @@ name|index
 argument_list|,
 name|_
 argument_list|(
-literal|"Diffusion Dist.:"
+literal|"Diffusion dist.:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -9211,7 +9211,7 @@ name|index
 argument_list|,
 name|_
 argument_list|(
-literal|"# of Subranges:"
+literal|"# of subranges:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -9280,7 +9280,7 @@ name|index
 argument_list|,
 name|_
 argument_list|(
-literal|"P(ower Factor):"
+literal|"P(ower factor):"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -9418,7 +9418,7 @@ name|index
 argument_list|,
 name|_
 argument_list|(
-literal|"Range Low:"
+literal|"Range low:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -9487,7 +9487,7 @@ name|index
 argument_list|,
 name|_
 argument_list|(
-literal|"Range High:"
+literal|"Range high:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -9573,7 +9573,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Plot the Graph of the Settings"
+literal|"Plot a graph of the settings"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -9813,7 +9813,7 @@ name|index
 argument_list|,
 name|_
 argument_list|(
-literal|"Ch. Sensitivity:"
+literal|"Ch. sensitivity:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -9884,7 +9884,7 @@ name|index
 argument_list|,
 name|_
 argument_list|(
-literal|"Mutation Rate:"
+literal|"Mutation rate:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -9955,7 +9955,7 @@ name|index
 argument_list|,
 name|_
 argument_list|(
-literal|"Mutation Dist.:"
+literal|"Mutation dist.:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
