@@ -2635,7 +2635,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"SIZE-PIXELS"
+literal|"PIXELS"
 argument_list|)
 argument_list|,
 name|flocons
@@ -2650,7 +2650,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"SIZE-POINTS"
+literal|"POINTS"
 argument_list|)
 argument_list|,
 name|flocons
