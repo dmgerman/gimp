@@ -19,13 +19,13 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f6d4620103
+DECL|enum|__anon29c357980103
 block|{
-DECL|enumerator|ScaleWidget
-name|ScaleWidget
+DECL|enumerator|SCALE_DIALOG
+name|SCALE_DIALOG
 block|,
-DECL|enumerator|ResizeWidget
-name|ResizeWidget
+DECL|enumerator|RESIZE_DIALOG
+name|RESIZE_DIALOG
 DECL|typedef|ResizeType
 block|}
 name|ResizeType
@@ -35,13 +35,13 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f6d4620203
+DECL|enum|__anon29c357980203
 block|{
-DECL|enumerator|ResizeImage
-name|ResizeImage
+DECL|enumerator|RESIZE_IMAGE
+name|RESIZE_IMAGE
 block|,
-DECL|enumerator|ResizeLayer
-name|ResizeLayer
+DECL|enumerator|RESIZE_LAYER
+name|RESIZE_LAYER
 DECL|typedef|ResizeTarget
 block|}
 name|ResizeTarget
@@ -49,23 +49,23 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|Resize
+DECL|typedef|ResizeDialog
 typedef|typedef
 name|struct
-name|_Resize
-name|Resize
+name|_ResizeDialog
+name|ResizeDialog
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_Resize
+DECL|struct|_ResizeDialog
 struct|struct
-name|_Resize
+name|_ResizeDialog
 block|{
-DECL|member|resize_shell
+DECL|member|shell
 name|GtkWidget
 modifier|*
-name|resize_shell
+name|shell
 decl_stmt|;
 DECL|member|gimage
 name|GimpImage
@@ -125,13 +125,13 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  If resolution_x is zero, then don't show resolution modification  *  parts of the dialog.  *  *  If object and signal are non-NULL, then attach the cancel callback to signal.  *  *  If cancel_callback is NULL, then the dialog will be destroyed on "Cancel".  */
+comment|/*  If resolution_x is zero, then don't show resolution modification  *  parts of the dialog.  *  *  If object and signal are non-NULL, then attach the cancel callback  *  to signal.  *  *  If cancel_callback is NULL, then the dialog will be destroyed on  *  "Cancel".  */
 end_comment
 
 begin_function_decl
-name|Resize
+name|ResizeDialog
 modifier|*
-name|resize_widget_new
+name|resize_dialog_new
 parameter_list|(
 name|GimpViewable
 modifier|*
