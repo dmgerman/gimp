@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc1379e0103
+DECL|enum|__anon2b276be90103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
@@ -1185,7 +1185,13 @@ name|cx
 decl_stmt|,
 name|cy
 decl_stmt|;
-comment|/*  Make a new layer  */
+comment|/*  Make a new layer: iff drawable == NULL, user is pasting into an empty display. */
+if|if
+condition|(
+name|drawable
+operator|!=
+name|NULL
+condition|)
 name|layer
 operator|=
 name|layer_new_from_tiles
@@ -1195,6 +1201,30 @@ argument_list|,
 name|gimp_drawable_type_with_alpha
 argument_list|(
 name|drawable
+argument_list|)
+argument_list|,
+name|paste
+argument_list|,
+name|_
+argument_list|(
+literal|"Pasted Layer"
+argument_list|)
+argument_list|,
+name|OPAQUE_OPACITY
+argument_list|,
+name|NORMAL_MODE
+argument_list|)
+expr_stmt|;
+else|else
+name|layer
+operator|=
+name|layer_new_from_tiles
+argument_list|(
+name|gimage
+argument_list|,
+name|gimp_image_base_type_with_alpha
+argument_list|(
+name|gimage
 argument_list|)
 argument_list|,
 name|paste
