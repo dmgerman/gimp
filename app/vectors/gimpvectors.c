@@ -124,7 +124,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2894afa40103
+DECL|enum|__anon29c6e2e90103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -2204,15 +2204,8 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-name|GimpPaintCore
-modifier|*
-name|core
-decl_stmt|;
 name|gboolean
 name|retval
-decl_stmt|;
-name|GimpRGB
-name|color
 decl_stmt|;
 name|vectors
 operator|=
@@ -2244,6 +2237,10 @@ block|}
 ifdef|#
 directive|ifdef
 name|LIBART_STROKE
+block|{
+name|GimpRGB
+name|color
+decl_stmt|;
 name|gimp_rgba_set
 argument_list|(
 operator|&
@@ -2284,10 +2281,14 @@ name|retval
 operator|=
 name|TRUE
 expr_stmt|;
+block|}
 else|#
 directive|else
+block|{
+name|GimpPaintCore
+modifier|*
 name|core
-operator|=
+init|=
 name|g_object_new
 argument_list|(
 name|paint_info
@@ -2296,7 +2297,7 @@ name|paint_type
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|retval
 operator|=
 name|gimp_paint_core_stroke_vectors
@@ -2317,6 +2318,7 @@ argument_list|(
 name|core
 argument_list|)
 expr_stmt|;
+block|}
 endif|#
 directive|endif
 return|return

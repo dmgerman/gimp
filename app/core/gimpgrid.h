@@ -136,7 +136,7 @@ name|GimpRGB
 name|bgcolor
 decl_stmt|;
 DECL|member|type
-name|GimpGridType
+name|GimpGridStyle
 name|type
 decl_stmt|;
 block|}

@@ -614,9 +614,9 @@ argument_list|)
 argument_list|,
 literal|"type"
 argument_list|,
-name|GIMP_GRID_TYPE_DOTS
+name|GIMP_GRID_DOTS
 argument_list|,
-name|GIMP_GRID_TYPE_SOLID
+name|GIMP_GRID_SOLID
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

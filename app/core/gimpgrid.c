@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ae40180103
+DECL|enum|__anon2c84f1670103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -526,9 +526,9 @@ literal|"type"
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_TYPE_GRID_TYPE
+name|GIMP_TYPE_GRID_STYLE
 argument_list|,
-name|GIMP_GRID_TYPE_INTERSECTIONS
+name|GIMP_GRID_INTERSECTIONS
 argument_list|,
 literal|0
 argument_list|)

@@ -119,10 +119,10 @@ name|GimpScanConvert
 modifier|*
 name|sc
 parameter_list|,
-name|GimpJoinType
+name|GimpJoinStyle
 name|join
 parameter_list|,
-name|GimpCapType
+name|GimpCapStyle
 name|cap
 parameter_list|,
 name|gdouble
@@ -132,7 +132,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Return a new Channel according to the polygonal shapes defined with  * the commands above.   *  * You cannot add additional polygons after this command.  */
+comment|/* Return a new Channel according to the polygonal shapes defined with  * the commands above.  *  * You cannot add additional polygons after this command.  */
 end_comment
 
 begin_function_decl

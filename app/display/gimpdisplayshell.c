@@ -292,7 +292,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c980bc0103
+DECL|enum|__anon2b0bbe060103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6306,7 +6306,7 @@ name|type
 condition|)
 block|{
 case|case
-name|GIMP_GRID_TYPE_ON_OFF_DASH
+name|GIMP_GRID_ON_OFF_DASH
 case|:
 name|values
 operator|.
@@ -6316,7 +6316,7 @@ name|GDK_LINE_ON_OFF_DASH
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_GRID_TYPE_DOUBLE_DASH
+name|GIMP_GRID_DOUBLE_DASH
 case|:
 name|values
 operator|.
@@ -6326,13 +6326,13 @@ name|GDK_LINE_DOUBLE_DASH
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_GRID_TYPE_DOTS
+name|GIMP_GRID_DOTS
 case|:
 case|case
-name|GIMP_GRID_TYPE_INTERSECTIONS
+name|GIMP_GRID_INTERSECTIONS
 case|:
 case|case
-name|GIMP_GRID_TYPE_SOLID
+name|GIMP_GRID_SOLID
 case|:
 name|values
 operator|.
@@ -6479,7 +6479,7 @@ name|type
 condition|)
 block|{
 case|case
-name|GIMP_GRID_TYPE_DOTS
+name|GIMP_GRID_DOTS
 case|:
 for|for
 control|(
@@ -6575,7 +6575,7 @@ block|}
 block|}
 break|break;
 case|case
-name|GIMP_GRID_TYPE_INTERSECTIONS
+name|GIMP_GRID_INTERSECTIONS
 case|:
 for|for
 control|(
@@ -6742,13 +6742,13 @@ block|}
 block|}
 break|break;
 case|case
-name|GIMP_GRID_TYPE_ON_OFF_DASH
+name|GIMP_GRID_ON_OFF_DASH
 case|:
 case|case
-name|GIMP_GRID_TYPE_DOUBLE_DASH
+name|GIMP_GRID_DOUBLE_DASH
 case|:
 case|case
-name|GIMP_GRID_TYPE_SOLID
+name|GIMP_GRID_SOLID
 case|:
 for|for
 control|(

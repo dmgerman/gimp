@@ -41,11 +41,11 @@ parameter_list|,
 name|gdouble
 name|width
 parameter_list|,
-name|GimpJoinType
-name|jointype
+name|GimpJoinStyle
+name|join
 parameter_list|,
-name|GimpCapType
-name|captype
+name|GimpCapStyle
+name|cap
 parameter_list|,
 name|gboolean
 name|antialias

@@ -1130,16 +1130,16 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|gimp_grid_type_enum_values
+DECL|variable|gimp_grid_style_enum_values
 specifier|static
 specifier|const
 name|GEnumValue
-name|gimp_grid_type_enum_values
+name|gimp_grid_style_enum_values
 index|[]
 init|=
 block|{
 block|{
-name|GIMP_GRID_TYPE_DOTS
+name|GIMP_GRID_DOTS
 block|,
 name|N_
 argument_list|(
@@ -1150,7 +1150,7 @@ literal|"dots"
 block|}
 block|,
 block|{
-name|GIMP_GRID_TYPE_INTERSECTIONS
+name|GIMP_GRID_INTERSECTIONS
 block|,
 name|N_
 argument_list|(
@@ -1161,7 +1161,7 @@ literal|"intersections"
 block|}
 block|,
 block|{
-name|GIMP_GRID_TYPE_ON_OFF_DASH
+name|GIMP_GRID_ON_OFF_DASH
 block|,
 name|N_
 argument_list|(
@@ -1172,7 +1172,7 @@ literal|"on-off-dash"
 block|}
 block|,
 block|{
-name|GIMP_GRID_TYPE_DOUBLE_DASH
+name|GIMP_GRID_DOUBLE_DASH
 block|,
 name|N_
 argument_list|(
@@ -1183,7 +1183,7 @@ literal|"double-dash"
 block|}
 block|,
 block|{
-name|GIMP_GRID_TYPE_SOLID
+name|GIMP_GRID_SOLID
 block|,
 name|N_
 argument_list|(
@@ -1206,8 +1206,8 @@ end_decl_stmt
 
 begin_function
 name|GType
-DECL|function|gimp_grid_type_get_type (void)
-name|gimp_grid_type_get_type
+DECL|function|gimp_grid_style_get_type (void)
+name|gimp_grid_style_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -1227,9 +1227,9 @@ name|enum_type
 operator|=
 name|g_enum_register_static
 argument_list|(
-literal|"GimpGridType"
+literal|"GimpGridStyle"
 argument_list|,
-name|gimp_grid_type_enum_values
+name|gimp_grid_style_enum_values
 argument_list|)
 expr_stmt|;
 return|return
@@ -1239,11 +1239,11 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|gimp_join_type_enum_values
+DECL|variable|gimp_join_style_enum_values
 specifier|static
 specifier|const
 name|GEnumValue
-name|gimp_join_type_enum_values
+name|gimp_join_style_enum_values
 index|[]
 init|=
 block|{
@@ -1293,8 +1293,8 @@ end_decl_stmt
 
 begin_function
 name|GType
-DECL|function|gimp_join_type_get_type (void)
-name|gimp_join_type_get_type
+DECL|function|gimp_join_style_get_type (void)
+name|gimp_join_style_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -1314,9 +1314,9 @@ name|enum_type
 operator|=
 name|g_enum_register_static
 argument_list|(
-literal|"GimpJoinType"
+literal|"GimpJoinStyle"
 argument_list|,
-name|gimp_join_type_enum_values
+name|gimp_join_style_enum_values
 argument_list|)
 expr_stmt|;
 return|return
@@ -1326,11 +1326,11 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|gimp_cap_type_enum_values
+DECL|variable|gimp_cap_style_enum_values
 specifier|static
 specifier|const
 name|GEnumValue
-name|gimp_cap_type_enum_values
+name|gimp_cap_style_enum_values
 index|[]
 init|=
 block|{
@@ -1380,8 +1380,8 @@ end_decl_stmt
 
 begin_function
 name|GType
-DECL|function|gimp_cap_type_get_type (void)
-name|gimp_cap_type_get_type
+DECL|function|gimp_cap_style_get_type (void)
+name|gimp_cap_style_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -1401,9 +1401,9 @@ name|enum_type
 operator|=
 name|g_enum_register_static
 argument_list|(
-literal|"GimpCapType"
+literal|"GimpCapStyle"
 argument_list|,
-name|gimp_cap_type_enum_values
+name|gimp_cap_style_enum_values
 argument_list|)
 expr_stmt|;
 return|return

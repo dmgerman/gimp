@@ -111,7 +111,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_stroke_vectors (GimpDrawable * drawable,GimpVectors * vectors,gdouble opacity,GimpRGB * color,GimpLayerModeEffects paint_mode,gdouble width,GimpJoinType jointype,GimpCapType captype,gboolean antialias)
+DECL|function|gimp_drawable_stroke_vectors (GimpDrawable * drawable,GimpVectors * vectors,gdouble opacity,GimpRGB * color,GimpLayerModeEffects paint_mode,gdouble width,GimpJoinStyle join,GimpCapStyle cap,gboolean antialias)
 name|gimp_drawable_stroke_vectors
 parameter_list|(
 name|GimpDrawable
@@ -135,11 +135,11 @@ parameter_list|,
 name|gdouble
 name|width
 parameter_list|,
-name|GimpJoinType
-name|jointype
+name|GimpJoinStyle
+name|join
 parameter_list|,
-name|GimpCapType
-name|captype
+name|GimpCapStyle
+name|cap
 parameter_list|,
 name|gboolean
 name|antialias
@@ -422,9 +422,9 @@ name|gimp_scan_convert_stroke
 argument_list|(
 name|scan_convert
 argument_list|,
-name|jointype
+name|join
 argument_list|,
-name|captype
+name|cap
 argument_list|,
 name|width
 argument_list|)

@@ -860,17 +860,17 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_scan_convert_stroke (GimpScanConvert * sc,GimpJoinType join,GimpCapType cap,gdouble width)
+DECL|function|gimp_scan_convert_stroke (GimpScanConvert * sc,GimpJoinStyle join,GimpCapStyle cap,gdouble width)
 name|gimp_scan_convert_stroke
 parameter_list|(
 name|GimpScanConvert
 modifier|*
 name|sc
 parameter_list|,
-name|GimpJoinType
+name|GimpJoinStyle
 name|join
 parameter_list|,
-name|GimpCapType
+name|GimpCapStyle
 name|cap
 parameter_list|,
 name|gdouble
@@ -883,9 +883,13 @@ name|stroke
 decl_stmt|;
 name|ArtPathStrokeJoinType
 name|artjoin
+init|=
+literal|0
 decl_stmt|;
 name|ArtPathStrokeCapType
 name|artcap
+init|=
+literal|0
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
