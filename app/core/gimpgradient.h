@@ -19,13 +19,21 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpviewable.h"
+file|"gimpdata.h"
 end_include
+
+begin_define
+DECL|macro|GIMP_GRADIENT_FILE_EXTENSION
+define|#
+directive|define
+name|GIMP_GRADIENT_FILE_EXTENSION
+value|".ggr"
+end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b6276f0103
+DECL|enum|__anon27b9d3240103
 block|{
 DECL|enumerator|GRAD_LINEAR
 name|GRAD_LINEAR
@@ -52,7 +60,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b6276f0203
+DECL|enum|__anon27b9d3240203
 block|{
 DECL|enumerator|GRAD_RGB
 name|GRAD_RGB
@@ -196,17 +204,8 @@ struct|struct
 name|_GimpGradient
 block|{
 DECL|member|parent_instance
-name|GimpViewable
+name|GimpData
 name|parent_instance
-decl_stmt|;
-DECL|member|filename
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
-DECL|member|dirty
-name|gboolean
-name|dirty
 decl_stmt|;
 DECL|member|segments
 name|GimpGradientSegment
@@ -234,7 +233,7 @@ struct|struct
 name|_GimpGradientClass
 block|{
 DECL|member|parent_class
-name|GimpViewableClass
+name|GimpDataClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -278,17 +277,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_gradient_save
-parameter_list|(
-name|GimpGradient
-modifier|*
-name|gradient
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_gradient_get_color_at
 parameter_list|(
 name|GimpGradient
@@ -305,20 +293,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  gradient segment functions  */
-end_comment
-
-begin_function_decl
-name|GimpGradientSegment
-modifier|*
-name|gimp_gradient_segment_new
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function_decl
 name|GimpGradientSegment
 modifier|*
@@ -330,6 +304,20 @@ name|grad
 parameter_list|,
 name|gdouble
 name|pos
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  gradient segment functions  */
+end_comment
+
+begin_function_decl
+name|GimpGradientSegment
+modifier|*
+name|gimp_gradient_segment_new
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl

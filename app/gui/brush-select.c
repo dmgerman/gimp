@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdata.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdnd.h"
 end_include
 
@@ -5185,7 +5191,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5edc570108
+DECL|struct|__anon28e181da0108
 block|{
 DECL|member|bsp
 name|BrushSelect
@@ -9468,9 +9474,9 @@ name|brush
 argument_list|)
 condition|)
 block|{
-name|gimp_brush_generated_delete
+name|gimp_data_delete_from_disk
 argument_list|(
-name|GIMP_BRUSH_GENERATED
+name|GIMP_DATA
 argument_list|(
 name|brush
 argument_list|)

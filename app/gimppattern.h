@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpviewable.h"
+file|"gimpdata.h"
 end_include
 
 begin_define
@@ -89,21 +89,14 @@ struct|struct
 name|_GimpPattern
 block|{
 DECL|member|parent_instance
-name|GimpViewable
+name|GimpData
 name|parent_instance
 decl_stmt|;
-DECL|member|filename
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
-comment|/*  actual filename--pattern's location on disk  */
 DECL|member|mask
 name|TempBuf
 modifier|*
 name|mask
 decl_stmt|;
-comment|/*  the actual mask                            */
 block|}
 struct|;
 end_struct
@@ -114,7 +107,7 @@ struct|struct
 name|_GimpPatternClass
 block|{
 DECL|member|parent_class
-name|GimpViewableClass
+name|GimpDataClass
 name|parent_class
 decl_stmt|;
 block|}

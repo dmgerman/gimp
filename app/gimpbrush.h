@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpviewable.h"
+file|"gimpdata.h"
 end_include
 
 begin_define
@@ -89,42 +89,36 @@ struct|struct
 name|_GimpBrush
 block|{
 DECL|member|parent_instance
-name|GimpViewable
+name|GimpData
 name|parent_instance
 decl_stmt|;
-DECL|member|filename
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
-comment|/*  actual filename--brush's location on disk  */
-DECL|member|spacing
-name|gint
-name|spacing
-decl_stmt|;
-comment|/*  brush's spacing                            */
-DECL|member|x_axis
-name|GimpVector2
-name|x_axis
-decl_stmt|;
-comment|/*  for calculating brush spacing              */
-DECL|member|y_axis
-name|GimpVector2
-name|y_axis
-decl_stmt|;
-comment|/*  for calculating brush spacing              */
 DECL|member|mask
 name|TempBuf
 modifier|*
 name|mask
 decl_stmt|;
-comment|/*  the actual mask                            */
+comment|/*  the actual mask                */
 DECL|member|pixmap
 name|TempBuf
 modifier|*
 name|pixmap
 decl_stmt|;
-comment|/*  optional pixmap data                       */
+comment|/*  optional pixmap data           */
+DECL|member|spacing
+name|gint
+name|spacing
+decl_stmt|;
+comment|/*  brush's spacing                */
+DECL|member|x_axis
+name|GimpVector2
+name|x_axis
+decl_stmt|;
+comment|/*  for calculating brush spacing  */
+DECL|member|y_axis
+name|GimpVector2
+name|y_axis
+decl_stmt|;
+comment|/*  for calculating brush spacing  */
 block|}
 struct|;
 end_struct
@@ -135,7 +129,7 @@ struct|struct
 name|_GimpBrushClass
 block|{
 DECL|member|parent_class
-name|GimpViewableClass
+name|GimpDataClass
 name|parent_class
 decl_stmt|;
 comment|/* FIXME: these are no virtual function pointers but bad hacks: */

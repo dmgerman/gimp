@@ -293,12 +293,6 @@ argument_list|)
 expr_stmt|;
 name|standard_pattern
 operator|->
-name|filename
-operator|=
-name|NULL
-expr_stmt|;
-name|standard_pattern
-operator|->
 name|mask
 operator|=
 name|temp_buf_new

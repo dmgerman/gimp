@@ -166,6 +166,15 @@ comment|/*  data objects  */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpData
+typedef|typedef
+name|struct
+name|_GimpData
+name|GimpData
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpBrush
 typedef|typedef
 name|struct
