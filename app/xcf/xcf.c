@@ -149,6 +149,16 @@ directive|include
 file|"tile_manager_pvt.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"tile_pvt.h"
+end_include
+
+begin_comment
+comment|/* ick. */
+end_comment
+
 begin_comment
 comment|/* #define SWAP_FROM_FILE */
 end_comment
@@ -156,7 +166,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28eb73a80103
+DECL|enum|__anon2a22c0d20103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -261,7 +271,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28eb73a80203
+DECL|enum|__anon2a22c0d20203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE

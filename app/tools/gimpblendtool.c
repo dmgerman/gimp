@@ -129,6 +129,16 @@ directive|include
 file|"undo.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"tile_pvt.h"
+end_include
+
+begin_comment
+comment|/* ick. */
+end_comment
+
 begin_comment
 comment|/*  target size  */
 end_comment
@@ -190,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278af54b0103
+DECL|enum|__anon2c84c31c0103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -227,7 +237,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278af54b0203
+DECL|enum|__anon2c84c31c0203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -249,7 +259,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278af54b0303
+DECL|enum|__anon2c84c31c0303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -388,7 +398,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon278af54b0408
+DECL|struct|__anon2c84c31c0408
 typedef|typedef
 struct|struct
 block|{
@@ -440,7 +450,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon278af54b0508
+DECL|struct|__anon2c84c31c0508
 typedef|typedef
 struct|struct
 block|{

@@ -33,6 +33,16 @@ directive|include
 file|"boundary.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"tile_pvt.h"
+end_include
+
+begin_comment
+comment|/* ick. */
+end_comment
+
 begin_comment
 comment|/* half intensity for mask */
 end_comment

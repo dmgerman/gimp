@@ -177,6 +177,16 @@ directive|include
 file|"plug_in.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"tile_pvt.h"
+end_include
+
+begin_comment
+comment|/* ick. */
+end_comment
+
 begin_define
 DECL|macro|SEPARATE_PROGRESS_BAR
 define|#
@@ -196,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295d14ae0103
+DECL|enum|__anon2af20d3e0103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE

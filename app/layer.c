@@ -85,8 +85,18 @@ directive|include
 file|"tile_manager_pvt.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"tile_pvt.h"
+end_include
+
+begin_comment
+comment|/* ick. */
+end_comment
+
 begin_enum
-DECL|enum|__anon2a21e4620103
+DECL|enum|__anon29eb69f40103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL

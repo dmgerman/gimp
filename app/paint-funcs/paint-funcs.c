@@ -61,6 +61,16 @@ begin_comment
 comment|/* For copy-on-write */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|"tile_pvt.h"
+end_include
+
+begin_comment
+comment|/* ick. */
+end_comment
+
 begin_define
 DECL|macro|STD_BUF_SIZE
 define|#
@@ -127,7 +137,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bffe7be0103
+DECL|enum|__anon2c8548ea0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY

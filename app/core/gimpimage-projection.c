@@ -70,6 +70,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"tile_pvt.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"layer_pvt.h"
 end_include
 
@@ -433,7 +439,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon28c9dac40103
+DECL|enum|__anon2befc22b0103
 enum|enum
 block|{
 DECL|enumerator|DIRTY

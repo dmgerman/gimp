@@ -60,6 +60,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tile_pvt.h"
+end_include
+
+begin_comment
+comment|/* ick. */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|<math.h>
 end_include
 
@@ -3542,7 +3552,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2b4da9e00103
+DECL|enum|__anon2c73909e0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

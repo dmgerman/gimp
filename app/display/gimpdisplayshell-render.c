@@ -63,6 +63,16 @@ directive|include
 file|"scale.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"tile_pvt.h"
+end_include
+
+begin_comment
+comment|/* ick. */
+end_comment
+
 begin_typedef
 DECL|typedef|RenderInfo
 typedef|typedef
