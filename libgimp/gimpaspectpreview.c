@@ -632,7 +632,8 @@ name|gint
 name|width
 decl_stmt|,
 name|height
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|bpp
 decl_stmt|;
 name|selection_id
@@ -640,15 +641,6 @@ operator|=
 name|gimp_image_get_selection
 argument_list|(
 name|image_id
-argument_list|)
-expr_stmt|;
-name|bpp
-operator|=
-name|gimp_drawable_bpp
-argument_list|(
-name|drawable
-operator|->
-name|drawable_id
 argument_list|)
 expr_stmt|;
 name|width
@@ -681,10 +673,6 @@ operator|&
 name|bpp
 argument_list|)
 expr_stmt|;
-name|bpp
-operator|=
-literal|1
-expr_stmt|;
 name|sel
 operator|=
 name|gimp_drawable_get_thumbnail_data
@@ -701,7 +689,6 @@ operator|&
 name|bpp
 argument_list|)
 expr_stmt|;
-comment|/*      gimp_preview_area_draw (GIMP_PREVIEW_AREA (preview->area),                               0, 0,                               preview->width, preview->height,                               GIMP_GRAY_IMAGE,                               sel,                               preview->width);*/
 name|gimp_preview_area_mask
 argument_list|(
 name|GIMP_PREVIEW_AREA
