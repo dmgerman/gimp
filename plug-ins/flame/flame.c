@@ -524,7 +524,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon298fb2ed0108
+DECL|struct|__anon2a0a4f3f0108
 block|{
 DECL|member|randomize
 name|gint
@@ -615,23 +615,6 @@ literal|"Input drawable"
 block|}
 block|,   }
 decl_stmt|;
-specifier|static
-name|gint
-name|nargs
-init|=
-sizeof|sizeof
-argument_list|(
-name|args
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_flame"
@@ -655,7 +638,10 @@ literal|"RGB*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|nargs
+name|G_N_ELEMENTS
+argument_list|(
+name|args
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -5896,18 +5882,10 @@ name|i
 decl_stmt|,
 name|n
 init|=
-operator|(
-sizeof|sizeof
+name|G_N_ELEMENTS
+argument_list|(
 name|good
-operator|)
-operator|/
-operator|(
-sizeof|sizeof
-name|good
-index|[
-literal|0
-index|]
-operator|)
+argument_list|)
 decl_stmt|;
 for|for
 control|(

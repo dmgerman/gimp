@@ -150,7 +150,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ed3aad0103
+DECL|enum|__anon27ba72d40103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -167,7 +167,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ed3aad0208
+DECL|struct|__anon27ba72d40208
 block|{
 DECL|member|interlace
 name|gint
@@ -198,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ed3aad0308
+DECL|struct|__anon27ba72d40308
 block|{
 DECL|member|run
 name|gint
@@ -561,23 +561,6 @@ literal|"(animated gif) Default disposal type (0=`don't care`, 1=combine, 2=repl
 block|}
 block|}
 decl_stmt|;
-specifier|static
-name|gint
-name|nsave_args
-init|=
-sizeof|sizeof
-argument_list|(
-name|save_args
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|save_args
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_gif_save"
@@ -604,7 +587,10 @@ literal|"INDEXED*, GRAY*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|nsave_args
+name|G_N_ELEMENTS
+argument_list|(
+name|save_args
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,

@@ -208,7 +208,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2ba6f1190108
+DECL|struct|__anon28c8dee70108
 typedef|typedef
 struct|struct
 block|{
@@ -226,7 +226,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ba6f1190208
+DECL|struct|__anon28c8dee70208
 typedef|typedef
 struct|struct
 block|{
@@ -1505,7 +1505,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba6f1190308
+DECL|struct|__anon28c8dee70308
 block|{
 DECL|member|color
 name|double
@@ -1524,7 +1524,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba6f1190408
+DECL|struct|__anon28c8dee70408
 block|{
 DECL|member|coord
 name|double
@@ -1541,7 +1541,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ba6f1190503
+DECL|enum|__anon28c8dee70503
 typedef|typedef
 enum|enum
 block|{
@@ -1563,7 +1563,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ba6f1190603
+DECL|enum|__anon28c8dee70603
 typedef|typedef
 enum|enum
 block|{
@@ -1581,7 +1581,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba6f1190708
+DECL|struct|__anon28c8dee70708
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -1616,7 +1616,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba6f1190808
+DECL|struct|__anon28c8dee70808
 block|{
 DECL|member|type
 name|t_LightType
@@ -3270,23 +3270,6 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
-name|nargs_iter
-init|=
-sizeof|sizeof
-argument_list|(
-name|args_iter
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|args_iter
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
-specifier|static
 name|GimpParamDef
 modifier|*
 name|return_vals
@@ -3338,7 +3321,10 @@ name|NULL
 argument_list|,
 name|GIMP_EXTENSION
 argument_list|,
-name|nargs_iter
+name|G_N_ELEMENTS
+argument_list|(
+name|args_iter
+argument_list|)
 argument_list|,
 name|nreturn_vals
 argument_list|,

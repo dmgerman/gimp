@@ -376,7 +376,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon2b9dd0d00108
+DECL|struct|__anon2c76fb3f0108
 typedef|typedef
 struct|struct
 block|{
@@ -445,7 +445,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9dd0d00208
+DECL|struct|__anon2c76fb3f0208
 typedef|typedef
 struct|struct
 block|{
@@ -563,7 +563,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9dd0d00308
+DECL|struct|__anon2c76fb3f0308
 typedef|typedef
 struct|struct
 block|{
@@ -592,7 +592,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9dd0d00408
+DECL|struct|__anon2c76fb3f0408
 typedef|typedef
 struct|struct
 block|{
@@ -619,7 +619,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9dd0d00508
+DECL|struct|__anon2c76fb3f0508
 typedef|typedef
 struct|struct
 block|{
@@ -1350,23 +1350,6 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|gint
-name|nargs
-init|=
-sizeof|sizeof
-argument_list|(
-name|args
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
-specifier|static
 name|gchar
 modifier|*
 name|help_string
@@ -1427,7 +1410,10 @@ literal|"RGB*, GRAY*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|nargs
+name|G_N_ELEMENTS
+argument_list|(
+name|args
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,

@@ -74,7 +74,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275ff3900103
+DECL|enum|__anon29aa2e230103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275ff3900203
+DECL|enum|__anon29aa2e230203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -190,7 +190,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon275ff3900308
+DECL|struct|__anon29aa2e230308
 block|{
 DECL|member|params
 name|PluginParams
@@ -210,7 +210,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon275ff3900408
+DECL|struct|__anon29aa2e230408
 block|{
 DECL|member|x0
 name|gint
@@ -577,7 +577,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon275ff3900508
+DECL|struct|__anon29aa2e230508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject
@@ -4844,19 +4844,6 @@ literal|"opacity (for bg-type 5)"
 block|}
 block|}
 decl_stmt|;
-specifier|static
-name|gint
-name|numof_args
-init|=
-sizeof|sizeof
-name|args
-operator|/
-sizeof|sizeof
-name|args
-index|[
-literal|0
-index|]
-decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUGIN_PROCEDURE_NAME
@@ -4883,7 +4870,10 @@ literal|"RGB*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|numof_args
+name|G_N_ELEMENTS
+argument_list|(
+name|args
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,

@@ -234,7 +234,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be1474d0103
+DECL|enum|__anon289d9fe70103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -252,7 +252,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be1474d0208
+DECL|struct|__anon289d9fe70208
 block|{
 DECL|member|max_p
 name|gint
@@ -268,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be1474d0308
+DECL|struct|__anon289d9fe70308
 block|{
 DECL|member|run
 name|gint
@@ -375,23 +375,6 @@ literal|"1 for maximizing, 0 for minimizing"
 block|}
 block|}
 decl_stmt|;
-specifier|static
-name|gint
-name|nargs
-init|=
-sizeof|sizeof
-argument_list|(
-name|args
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
@@ -418,7 +401,10 @@ literal|"RGB*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|nargs
+name|G_N_ELEMENTS
+argument_list|(
+name|args
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,

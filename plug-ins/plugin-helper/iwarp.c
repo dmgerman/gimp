@@ -104,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279061ff0103
+DECL|enum|__anon2a17db680103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -132,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279061ff0208
+DECL|struct|__anon2a17db680208
 block|{
 DECL|member|run
 name|gint
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279061ff0308
+DECL|struct|__anon2a17db680308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -960,23 +960,6 @@ literal|"Input drawable"
 block|}
 block|}
 decl_stmt|;
-specifier|static
-name|gint
-name|nargs
-init|=
-sizeof|sizeof
-argument_list|(
-name|args
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
 name|plugin_module_install_procedure
 argument_list|(
 literal|"plug_in_iwarp_tool"
@@ -998,7 +981,10 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|nargs
+name|G_N_ELEMENTS
+argument_list|(
+name|args
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,

@@ -209,7 +209,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7c0a680108
+DECL|struct|__anon288dd2380108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -236,7 +236,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7c0a680203
+DECL|enum|__anon288dd2380203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -359,7 +359,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7c0a680303
+DECL|enum|__anon288dd2380303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -498,7 +498,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7c0a680403
+DECL|enum|__anon288dd2380403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -597,7 +597,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7c0a680503
+DECL|enum|__anon288dd2380503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -689,7 +689,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7c0a680608
+DECL|struct|__anon288dd2380608
 block|{
 DECL|member|function
 name|gint
@@ -762,7 +762,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7c0a680708
+DECL|struct|__anon288dd2380708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1540,7 +1540,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7c0a680808
+DECL|struct|__anon288dd2380808
 block|{
 DECL|member|run
 name|gint
@@ -1590,7 +1590,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7c0a680908
+DECL|struct|__anon288dd2380908
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1844,23 +1844,6 @@ literal|"The name of parameter file. CML_explorer makes an image with its settin
 block|}
 block|}
 decl_stmt|;
-specifier|static
-name|gint
-name|nargs
-init|=
-sizeof|sizeof
-argument_list|(
-name|args
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
@@ -1890,7 +1873,10 @@ literal|"RGB*, GRAY*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|nargs
+name|G_N_ELEMENTS
+argument_list|(
+name|args
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -11962,17 +11948,9 @@ control|(
 init|;
 name|i
 operator|<
-sizeof|sizeof
+name|G_N_ELEMENTS
 argument_list|(
 name|random_sensitives
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|random_sensitives
-index|[
-literal|0
-index|]
 argument_list|)
 condition|;
 name|i

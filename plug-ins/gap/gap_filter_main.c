@@ -223,23 +223,6 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|int
-name|nargs_foreach
-init|=
-sizeof|sizeof
-argument_list|(
-name|args_foreach
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|args_foreach
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
-specifier|static
 name|GimpParamDef
 modifier|*
 name|return_vals
@@ -278,7 +261,10 @@ literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|nargs_foreach
+name|G_N_ELEMENTS
+argument_list|(
+name|args_foreach
+argument_list|)
 argument_list|,
 name|nreturn_vals
 argument_list|,

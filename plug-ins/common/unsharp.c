@@ -141,7 +141,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c19a8bd0108
+DECL|struct|__anon2784c0b80108
 block|{
 DECL|member|radius
 name|gdouble
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c19a8bd0208
+DECL|struct|__anon2784c0b80208
 block|{
 DECL|member|run
 name|gint
@@ -702,23 +702,6 @@ literal|"Threshold"
 block|}
 block|}
 decl_stmt|;
-specifier|static
-name|gint
-name|nargs
-init|=
-sizeof|sizeof
-argument_list|(
-name|args
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
 comment|/* Install a procedure in the procedure database. */
 name|gimp_install_procedure
 argument_list|(
@@ -748,7 +731,10 @@ literal|"GRAY*, RGB*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|nargs
+name|G_N_ELEMENTS
+argument_list|(
+name|args
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,

@@ -40878,7 +40878,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0ef9d40103
+DECL|enum|__anon2a9c2d810103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40898,7 +40898,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0ef9d40208
+DECL|struct|__anon2a9c2d810208
 block|{
 DECL|member|direction
 name|gint
@@ -40917,7 +40917,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0ef9d40308
+DECL|struct|__anon2a9c2d810308
 block|{
 DECL|member|run
 name|gint
@@ -41128,23 +41128,6 @@ literal|"Texture depth (1 - 50)"
 block|}
 block|,   }
 decl_stmt|;
-specifier|static
-name|gint
-name|nargs
-init|=
-sizeof|sizeof
-argument_list|(
-name|args
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
@@ -41173,7 +41156,10 @@ literal|"RGB*, GRAY*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|nargs
+name|G_N_ELEMENTS
+argument_list|(
+name|args
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,

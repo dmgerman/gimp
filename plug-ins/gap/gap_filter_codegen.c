@@ -3501,7 +3501,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"  static int nargs_iter = sizeof(args_iter) / sizeof(args_iter[0]);\n"
+literal|"  static int nargs_iter = G_N_ELEMENTS (args_iter);\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
