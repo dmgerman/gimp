@@ -171,10 +171,9 @@ struct|struct
 name|PsdImageData
 block|{
 DECL|member|compression
-name|gint
+name|gboolean
 name|compression
 decl_stmt|;
-comment|/* 0, if there's no compresion; 1, if there is */
 DECL|member|image_height
 name|gint32
 name|image_height
@@ -184,7 +183,7 @@ name|gint32
 name|image_width
 decl_stmt|;
 DECL|member|baseType
-name|gint
+name|GimpImageBaseType
 name|baseType
 decl_stmt|;
 DECL|member|nChannels
@@ -2458,10 +2457,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|gimpBaseTypeToPsdMode (gint gimpBaseType)
+DECL|function|gimpBaseTypeToPsdMode (GimpImageBaseType gimpBaseType)
 name|gimpBaseTypeToPsdMode
 parameter_list|(
-name|gint
+name|GimpImageBaseType
 name|gimpBaseType
 parameter_list|)
 block|{
@@ -2471,21 +2470,21 @@ name|gimpBaseType
 condition|)
 block|{
 case|case
-name|GIMP_RGB_IMAGE
+name|GIMP_RGB
 case|:
 return|return
 literal|3
 return|;
 comment|/* RGB */
 case|case
-name|GIMP_GRAY_IMAGE
+name|GIMP_GRAY
 case|:
 return|return
 literal|1
 return|;
 comment|/* Grayscale */
 case|case
-name|GIMP_INDEXED_IMAGE
+name|GIMP_INDEXED
 case|:
 return|return
 literal|2
@@ -2552,7 +2551,7 @@ name|gimpBaseType
 condition|)
 block|{
 case|case
-name|GIMP_RGB_IMAGE
+name|GIMP_RGB
 case|:
 return|return
 literal|3
@@ -2561,7 +2560,7 @@ name|incAlpha
 return|;
 comment|/* R,G,B& Alpha (if any) */
 case|case
-name|GIMP_GRAY_IMAGE
+name|GIMP_GRAY
 case|:
 return|return
 literal|1
@@ -2570,7 +2569,7 @@ name|incAlpha
 return|;
 comment|/* G& Alpha (if any) */
 case|case
-name|GIMP_INDEXED_IMAGE
+name|GIMP_INDEXED
 case|:
 return|return
 literal|1
@@ -2917,7 +2916,7 @@ name|baseType
 condition|)
 block|{
 case|case
-name|GIMP_INDEXED_IMAGE
+name|GIMP_INDEXED
 case|:
 name|IFDBG
 name|printf
@@ -5295,7 +5294,7 @@ name|baseType
 condition|)
 block|{
 case|case
-name|GIMP_RGB_IMAGE
+name|GIMP_RGB
 case|:
 if|if
 condition|(
@@ -5521,7 +5520,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_GRAY_IMAGE
+name|GIMP_GRAY
 case|:
 if|if
 condition|(
@@ -5683,7 +5682,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_INDEXED_IMAGE
+name|GIMP_INDEXED
 case|:
 name|IFDBG
 name|printf
@@ -6148,7 +6147,7 @@ name|baseType
 condition|)
 block|{
 case|case
-name|GIMP_RGB_IMAGE
+name|GIMP_RGB
 case|:
 name|RGB_to_chans
 argument_list|(
@@ -6311,10 +6310,10 @@ operator|++
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_GRAY_IMAGE
+name|GIMP_GRAY
 case|:
 case|case
-name|GIMP_INDEXED_IMAGE
+name|GIMP_INDEXED
 case|:
 name|gray_indexed
 operator|=
@@ -6698,7 +6697,7 @@ name|baseType
 condition|)
 block|{
 case|case
-name|GIMP_RGB_IMAGE
+name|GIMP_RGB
 case|:
 name|xfwrite
 argument_list|(
@@ -6735,10 +6734,10 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_GRAY_IMAGE
+name|GIMP_GRAY
 case|:
 case|case
-name|GIMP_INDEXED_IMAGE
+name|GIMP_INDEXED
 case|:
 name|xfwrite
 argument_list|(
@@ -6868,9 +6867,8 @@ name|PSDImageData
 operator|.
 name|compression
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
-comment|/* No compression */
 name|PSDImageData
 operator|.
 name|image_height
@@ -6935,7 +6933,7 @@ name|PSDImageData
 operator|.
 name|baseType
 operator|==
-name|GIMP_INDEXED_IMAGE
+name|GIMP_INDEXED
 condition|)
 block|{
 name|IFDBG
@@ -7142,7 +7140,7 @@ name|PSDImageData
 operator|.
 name|baseType
 operator|==
-name|GIMP_INDEXED_IMAGE
+name|GIMP_INDEXED
 condition|)
 name|write_glong
 argument_list|(
