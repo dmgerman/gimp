@@ -588,7 +588,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GTK_STOCK_SELECT_COLOR
+name|GIMP_STOCK_DEFAULT_COLORS
 block|}
 block|,
 literal|"gimp-color-editor"

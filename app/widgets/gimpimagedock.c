@@ -1654,7 +1654,7 @@ name|title
 argument_list|,
 name|dockable
 operator|->
-name|short_name
+name|name
 argument_list|)
 expr_stmt|;
 if|if

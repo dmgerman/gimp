@@ -233,6 +233,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_dockbook_get_tab_widget
+parameter_list|(
+name|GimpDockbook
+modifier|*
+name|dockbook
+parameter_list|,
+name|GimpDockable
+modifier|*
+name|dockable
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

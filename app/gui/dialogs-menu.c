@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdockable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdockbook.h"
 end_include
 
@@ -123,6 +129,20 @@ name|size
 parameter_list|)
 define|\
 value|{ { (path), NULL, dialogs_preview_size_cmd_callback, \       (size), "/Preview Size/Tiny" }, NULL, NULL, NULL }
+end_define
+
+begin_define
+DECL|macro|TAB_STYLE (path,style)
+define|#
+directive|define
+name|TAB_STYLE
+parameter_list|(
+name|path
+parameter_list|,
+name|style
+parameter_list|)
+define|\
+value|{ { (path), NULL, dialogs_tab_style_cmd_callback, \       (style), "/Tab Style/Icon" }, NULL, NULL, NULL }
 end_define
 
 begin_decl_stmt
@@ -300,7 +320,7 @@ literal|"gimp-color-editor"
 argument_list|,
 literal|"<StockItem>"
 argument_list|,
-name|GTK_STOCK_SELECT_COLOR
+name|GIMP_STOCK_DEFAULT_COLORS
 argument_list|)
 block|,
 name|ADD_TAB
@@ -494,7 +514,7 @@ block|}
 block|,
 name|MENU_SEPARATOR
 argument_list|(
-literal|"/view-type-separator"
+literal|"/---"
 argument_list|)
 block|,
 name|MENU_BRANCH
@@ -603,6 +623,54 @@ literal|"/Preview Size/Gigantic"
 argument_list|)
 argument_list|,
 name|GIMP_PREVIEW_SIZE_GIGANTIC
+argument_list|)
+block|,
+name|MENU_BRANCH
+argument_list|(
+literal|"/Tab Style"
+argument_list|)
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Tab Style/Icon"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_tab_style_cmd_callback
+block|,
+name|GIMP_TAB_STYLE_ICON
+block|,
+literal|"<RadioItem>"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+name|TAB_STYLE
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Tab Style/Text"
+argument_list|)
+argument_list|,
+name|GIMP_TAB_STYLE_NAME
+argument_list|)
+block|,
+name|TAB_STYLE
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Tab Style/Icon& Text"
+argument_list|)
+argument_list|,
+name|GIMP_TAB_STYLE_ICON_NAME
 argument_list|)
 block|,
 block|{
@@ -717,6 +785,12 @@ directive|undef
 name|PREVIEW_SIZE
 end_undef
 
+begin_undef
+undef|#
+directive|undef
+name|TAB_STYLE
+end_undef
+
 begin_decl_stmt
 name|gint
 name|n_dialogs_menu_entries
@@ -793,6 +867,9 @@ name|preview_size
 init|=
 operator|-
 literal|1
+decl_stmt|;
+name|GimpTabStyle
+name|tab_style
 decl_stmt|;
 name|page_num
 operator|=
@@ -972,6 +1049,12 @@ name|view
 operator|->
 name|preview_size
 expr_stmt|;
+name|tab_style
+operator|=
+name|dockable
+operator|->
+name|tab_style
+expr_stmt|;
 DECL|macro|SET_ACTIVE (path,active)
 define|#
 directive|define
@@ -1005,21 +1088,6 @@ name|sensitive
 parameter_list|)
 define|\
 value|gimp_item_factory_set_sensitive (factory, (path), (sensitive))
-name|SET_VISIBLE
-argument_list|(
-literal|"/view-type-separator"
-argument_list|,
-name|preview_size
-operator|!=
-operator|-
-literal|1
-operator|||
-name|view_type
-operator|!=
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
 name|SET_VISIBLE
 argument_list|(
 literal|"/Preview Size"
@@ -1182,6 +1250,47 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|tab_style
+operator|==
+name|GIMP_TAB_STYLE_ICON
+condition|)
+name|SET_ACTIVE
+argument_list|(
+literal|"/Tab Style/Icon"
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|tab_style
+operator|==
+name|GIMP_TAB_STYLE_NAME
+condition|)
+name|SET_ACTIVE
+argument_list|(
+literal|"/Tab Style/Text"
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|tab_style
+operator|==
+name|GIMP_TAB_STYLE_ICON_NAME
+condition|)
+name|SET_ACTIVE
+argument_list|(
+literal|"/Tab Style/Icon& Text"
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|SET_VISIBLE
 argument_list|(
 literal|"/View as Grid"
