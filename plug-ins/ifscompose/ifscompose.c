@@ -181,7 +181,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c2a5080103
+DECL|enum|__anon2a4819150103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c2a5080203
+DECL|enum|__anon2a4819150203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c2a5080308
+DECL|struct|__anon2a4819150308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -239,7 +239,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon28c2a508040a
+DECL|union|__anon2a481915040a
 block|{
 DECL|member|d
 name|gdouble
@@ -264,7 +264,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c2a5080508
+DECL|struct|__anon2a4819150508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -294,7 +294,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c2a5080608
+DECL|struct|__anon2a4819150608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -329,7 +329,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c2a5080708
+DECL|struct|__anon2a4819150708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c2a5080808
+DECL|struct|__anon2a4819150808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -432,7 +432,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c2a5080908
+DECL|struct|__anon2a4819150908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -634,7 +634,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c2a5080a08
+DECL|struct|__anon2a4819150a08
 block|{
 DECL|member|run
 name|gboolean
@@ -2187,7 +2187,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -3087,7 +3087,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -6819,16 +6819,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|6
-argument_list|)
-expr_stmt|;
 name|gtk_table_set_row_spacings
 argument_list|(
 name|GTK_TABLE
@@ -6836,7 +6826,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -6846,7 +6836,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

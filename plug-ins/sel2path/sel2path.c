@@ -1311,7 +1311,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

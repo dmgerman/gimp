@@ -806,7 +806,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|6
 argument_list|)
 expr_stmt|;
 comment|/* To make life easier for the callbacks, we store the      layer's ID and stacking number with the hbox. */
@@ -1094,7 +1094,7 @@ name|vbox
 expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -1125,7 +1125,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|5
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1152,16 +1152,6 @@ argument_list|,
 name|GTK_POLICY_AUTOMATIC
 argument_list|,
 name|GTK_POLICY_AUTOMATIC
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|scrolledwindow
-argument_list|)
-argument_list|,
-literal|5
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1209,7 +1199,7 @@ name|gtk_vbox_new
 argument_list|(
 name|TRUE
 argument_list|,
-literal|0
+literal|6
 argument_list|)
 expr_stmt|;
 name|g_object_set_data

@@ -132,7 +132,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|load_dialog
 parameter_list|(
 specifier|const
@@ -143,13 +143,9 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* return TRUE or FALSE */
-end_comment
-
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_image
 parameter_list|(
 specifier|const
@@ -171,7 +167,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_dialog
 parameter_list|(
 name|gint32
@@ -180,13 +176,9 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* return TRUE or FALSE */
-end_comment
-
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|get_info
 parameter_list|(
 specifier|const
@@ -1526,7 +1518,8 @@ comment|/*  * Open FLI animation and return header-info  */
 end_comment
 
 begin_function
-name|gint
+specifier|static
+name|gboolean
 DECL|function|get_info (const gchar * filename,gint32 * width,gint32 * height,gint32 * frames)
 name|get_info
 parameter_list|(
@@ -1652,6 +1645,7 @@ comment|/*  * load fli animation and store as framestack  */
 end_comment
 
 begin_function
+specifier|static
 name|gint32
 DECL|function|load_image (const gchar * filename,gint32 from_frame,gint32 to_frame)
 name|load_image
@@ -2258,7 +2252,8 @@ comment|/*  * get framestack and store as fli animation  * (some code was taken 
 end_comment
 
 begin_function
-name|gint
+specifier|static
+name|gboolean
 DECL|function|save_image (const gchar * filename,gint32 image_id,gint32 from_frame,gint32 to_frame)
 name|save_image
 parameter_list|(
@@ -3359,7 +3354,8 @@ comment|/*  * Dialogs for interactive usage  */
 end_comment
 
 begin_function
-name|gint
+specifier|static
+name|gboolean
 DECL|function|load_dialog (const gchar * name)
 name|load_dialog
 parameter_list|(
@@ -3472,7 +3468,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -3482,7 +3478,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -3492,7 +3488,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3562,7 +3558,7 @@ argument_list|(
 literal|"From:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -3628,7 +3624,7 @@ argument_list|(
 literal|"To:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -3685,7 +3681,8 @@ block|}
 end_function
 
 begin_function
-name|gint
+specifier|static
+name|gboolean
 DECL|function|save_dialog (gint32 image_id)
 name|save_dialog
 parameter_list|(
@@ -3782,7 +3779,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -3792,7 +3789,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -3802,7 +3799,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3872,7 +3869,7 @@ argument_list|(
 literal|"From:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -3938,7 +3935,7 @@ argument_list|(
 literal|"To:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,

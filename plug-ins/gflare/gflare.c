@@ -430,7 +430,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b4aae90103
+DECL|enum|__anon28eeba750103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -457,7 +457,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b4aae90203
+DECL|enum|__anon28eeba750203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -478,7 +478,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4aae90308
+DECL|struct|__anon28eeba750308
 block|{
 DECL|member|name
 name|gchar
@@ -619,7 +619,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4aae90408
+DECL|struct|__anon28eeba750408
 block|{
 DECL|member|fp
 name|FILE
@@ -639,7 +639,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b4aae90503
+DECL|enum|__anon28eeba750503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -667,7 +667,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4aae90608
+DECL|struct|__anon28eeba750608
 block|{
 DECL|member|init
 name|gint
@@ -689,7 +689,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29b4aae90708
+DECL|struct|__anon28eeba750708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -763,7 +763,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4aae90808
+DECL|struct|__anon28eeba750808
 block|{
 DECL|member|init
 name|gint
@@ -833,7 +833,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4aae90908
+DECL|struct|__anon28eeba750908
 block|{
 DECL|member|x0
 name|gdouble
@@ -860,7 +860,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4aae90a08
+DECL|struct|__anon28eeba750a08
 block|{
 DECL|member|init
 name|gint
@@ -1030,7 +1030,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4aae90b08
+DECL|struct|__anon28eeba750b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1057,7 +1057,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4aae90c08
+DECL|struct|__anon28eeba750c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1293,7 +1293,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4aae90d08
+DECL|struct|__anon28eeba750d08
 block|{
 DECL|member|tag
 name|gint
@@ -1370,7 +1370,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b4aae90e08
+DECL|struct|__anon28eeba750e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1794,7 +1794,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|dlg_run
 parameter_list|(
 name|void
@@ -8564,7 +8564,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-DECL|struct|__anon29b4aae90f08
+DECL|struct|__anon28eeba750f08
 specifier|static
 struct|struct
 block|{
@@ -11528,7 +11528,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|dlg_run (void)
 name|dlg_run
 parameter_list|(
@@ -11673,7 +11673,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -11683,7 +11683,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -11713,14 +11713,13 @@ name|hbox
 argument_list|)
 expr_stmt|;
 comment|/*    *	Preview    */
-name|frame
+name|vbox
 operator|=
-name|gtk_frame_new
+name|gtk_vbox_new
 argument_list|(
-name|_
-argument_list|(
-literal|"Preview"
-argument_list|)
+name|FALSE
+argument_list|,
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -11730,47 +11729,13 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-name|frame
+name|vbox
 argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
-name|vbox
-operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|vbox
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -11782,9 +11747,9 @@ name|abox
 operator|=
 name|gtk_alignment_new
 argument_list|(
-literal|0.5
+literal|0.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|,
 literal|0.0
 argument_list|,
@@ -13311,7 +13276,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -13321,12 +13286,12 @@ argument_list|(
 name|main_vbox
 argument_list|)
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -13454,16 +13419,6 @@ name|center
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|center
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -13514,7 +13469,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -13554,16 +13509,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
 name|gtk_table_set_row_spacings
 argument_list|(
 name|GTK_TABLE
@@ -13571,7 +13516,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -13581,7 +13526,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -14012,7 +13957,7 @@ name|dlg
 operator|->
 name|asupsample_frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|NULL
 argument_list|)
@@ -14086,16 +14031,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|asup_table
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
 name|gtk_table_set_col_spacings
 argument_list|(
 name|GTK_TABLE
@@ -14103,7 +14038,7 @@ argument_list|(
 name|asup_table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -14113,7 +14048,7 @@ argument_list|(
 name|asup_table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -14494,7 +14429,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon29b4aae91008
+DECL|struct|__anon28eeba751008
 block|{
 DECL|member|label
 specifier|const
@@ -14561,7 +14496,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -14571,7 +14506,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 comment|/*    *	List Box    */
@@ -14670,7 +14605,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -15963,7 +15898,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -15973,7 +15908,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -16003,14 +15938,17 @@ name|hbox
 argument_list|)
 expr_stmt|;
 comment|/*    *	Preview    */
-name|frame
+name|abox
 operator|=
-name|gtk_frame_new
+name|gtk_alignment_new
 argument_list|(
-name|_
-argument_list|(
-literal|"Preview"
-argument_list|)
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -16020,51 +15958,13 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-name|frame
+name|abox
 argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
-name|abox
-operator|=
-name|gtk_alignment_new
-argument_list|(
-literal|0.5
-argument_list|,
-literal|0.5
-argument_list|,
-literal|0.0
-argument_list|,
-literal|0.0
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|abox
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|abox
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -16458,7 +16358,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -16468,13 +16368,13 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 comment|/*  Glow  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -16514,16 +16414,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
 name|gtk_table_set_row_spacings
 argument_list|(
 name|GTK_TABLE
@@ -16531,7 +16421,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -16541,7 +16431,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -16663,7 +16553,7 @@ argument_list|(
 literal|"Paint Mode:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -16671,13 +16561,13 @@ name|combo
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  Rays  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -16717,16 +16607,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
 name|gtk_table_set_row_spacings
 argument_list|(
 name|GTK_TABLE
@@ -16734,7 +16614,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -16744,7 +16624,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -16866,7 +16746,7 @@ argument_list|(
 literal|"Paint Mode:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -16874,13 +16754,13 @@ name|combo
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  Rays  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -16920,16 +16800,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
 name|gtk_table_set_row_spacings
 argument_list|(
 name|GTK_TABLE
@@ -16937,7 +16807,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -16947,7 +16817,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -17069,7 +16939,7 @@ argument_list|(
 literal|"Paint Mode:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -17077,7 +16947,7 @@ name|combo
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page
@@ -17175,7 +17045,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -17185,13 +17055,13 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 comment|/*    *  Gradient Menus    */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -17238,7 +17108,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -17248,17 +17118,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -17384,7 +17244,7 @@ expr_stmt|;
 comment|/*    *  Scales    */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -17431,7 +17291,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -17441,17 +17301,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -17807,7 +17657,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -17817,13 +17667,13 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 comment|/*    *  Gradient Menus    */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -17870,7 +17720,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -17880,17 +17730,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -18023,7 +17863,7 @@ expr_stmt|;
 comment|/*    *	Scales    */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -18063,16 +17903,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
 name|gtk_table_set_row_spacings
 argument_list|(
 name|GTK_TABLE
@@ -18080,7 +17910,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -18090,7 +17920,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -18644,7 +18474,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -18654,13 +18484,13 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 comment|/*    *  Gradient Menus    */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -18700,16 +18530,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
 name|gtk_table_set_row_spacings
 argument_list|(
 name|GTK_TABLE
@@ -18717,7 +18537,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -18727,7 +18547,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -18853,7 +18673,7 @@ expr_stmt|;
 comment|/*    *	Scales    */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -18893,16 +18713,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
 name|gtk_table_set_row_spacings
 argument_list|(
 name|GTK_TABLE
@@ -18910,7 +18720,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -18920,7 +18730,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -19184,7 +18994,7 @@ expr_stmt|;
 comment|/*    *	Shape Radio Button Frame    */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -19219,17 +19029,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|shape_vbox
-argument_list|)
-argument_list|,
-literal|4
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -19342,7 +19142,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -19572,7 +19372,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -24325,9 +24125,10 @@ name|get_values_external_clock
 operator|/
 name|CLOCKS_PER_SEC
 decl_stmt|;
-name|printf
+name|g_printerr
 argument_list|(
-literal|"gradient_get_values_external %.2f sec. / %d times (ave %.2f sec.)\n"
+literal|"gradient_get_values_external "
+literal|"%.2f sec. / %d times (ave %.2f sec.)\n"
 argument_list|,
 name|total
 argument_list|,

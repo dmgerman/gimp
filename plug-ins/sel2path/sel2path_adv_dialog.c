@@ -268,7 +268,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -278,7 +278,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|row
@@ -2074,10 +2074,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-name|GTK_WIDGET
-argument_list|(
 name|table
-argument_list|)
 return|;
 block|}
 end_function

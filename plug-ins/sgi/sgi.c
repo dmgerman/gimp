@@ -151,7 +151,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_dialog
 parameter_list|(
 name|void
@@ -2224,7 +2224,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|save_dialog (void)
 name|save_dialog
 parameter_list|(
@@ -2330,7 +2330,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
