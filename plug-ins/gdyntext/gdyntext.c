@@ -249,7 +249,7 @@ literal|"fontname"
 block|,
 literal|"The fontname (conforming to the X Logical Font Description Conventions)"
 block|}
-block|, 		}
+block|,     }
 decl_stmt|;
 specifier|static
 name|GimpParamDef
@@ -264,7 +264,7 @@ literal|"layer"
 block|,
 literal|"The text layer"
 block|}
-block|, 		}
+block|,     }
 decl_stmt|;
 specifier|static
 name|int
@@ -337,23 +337,23 @@ block|}
 end_function
 
 begin_function
-DECL|function|gdt_run (char * name,int nparams,GimpParam * param,int * nreturn_vals,GimpParam ** return_vals)
 specifier|static
 name|void
+DECL|function|gdt_run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|gdt_run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GimpParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -470,7 +470,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -481,7 +481,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 expr_stmt|;
 name|values
 index|[
@@ -490,7 +490,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_LAYER
+name|GIMP_PDB_LAYER
 expr_stmt|;
 name|values
 index|[
@@ -779,6 +779,9 @@ operator|.
 name|color
 operator|=
 operator|(
+operator|(
+name|guint
+operator|)
 name|param
 index|[
 literal|8
@@ -794,6 +797,9 @@ literal|16
 operator|)
 operator|+
 operator|(
+operator|(
+name|guint
+operator|)
 name|param
 index|[
 literal|8
@@ -808,6 +814,9 @@ operator|<<
 literal|8
 operator|)
 operator|+
+operator|(
+name|guint
+operator|)
 name|param
 index|[
 literal|8
@@ -963,8 +972,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|gdt_load (GdtVals * data)
 name|void
+DECL|function|gdt_load (GdtVals * data)
 name|gdt_load
 parameter_list|(
 name|GdtVals
@@ -1099,7 +1108,6 @@ name|new_layer
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/* 		strcpy(data->text, ""); 		strcpy(data->xlfd, ""); 		{ 			GParam *ret_vals; 			gint nret_vals;  			ret_vals = gimp_run_procedure("gimp_palette_get_foreground",&nret_vals, 				PARAM_END); 			data->color = 				(ret_vals[1].data.d_color.red<< 16) + 				(ret_vals[1].data.d_color.green<< 8) + 				ret_vals[1].data.d_color.blue; 			gimp_destroy_params(ret_vals, nret_vals); 		} 		data->antialias				= TRUE; 		data->alignment 			= LEFT; 		data->rotation				= 0; 		data->line_spacing		= 0; 		data->layer_alignment	= LA_NONE; 		*/
 return|return;
 block|}
 ifdef|#
@@ -1358,8 +1366,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|gdt_save (GdtVals * data)
 name|void
+DECL|function|gdt_save (GdtVals * data)
 name|gdt_save
 parameter_list|(
 name|GdtVals
@@ -1516,8 +1524,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|gdt_render_text (GdtVals * data)
 name|void
+DECL|function|gdt_render_text (GdtVals * data)
 name|gdt_render_text
 parameter_list|(
 name|GdtVals
@@ -1536,8 +1544,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|gdt_render_text_p (GdtVals * data,gboolean show_progress)
 name|void
+DECL|function|gdt_render_text_p (GdtVals * data,gboolean show_progress)
 name|gdt_render_text_p
 parameter_list|(
 name|GdtVals
@@ -1669,13 +1677,13 @@ argument_list|,
 operator|&
 name|nret_vals
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|data
 operator|->
 name|image_id
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|selection_channel
@@ -2755,17 +2763,17 @@ argument_list|,
 operator|&
 name|nret_vals
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|data
 operator|->
 name|image_id
 argument_list|,
-name|PARAM_CHANNEL
+name|GIMP_PDB_CHANNEL
 argument_list|,
 name|selection_channel
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|gimp_destroy_params
@@ -2812,10 +2820,6 @@ argument_list|()
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* vim: set ts=2 sw=2 tw=79 ai nowrap: */
-end_comment
 
 end_unit
 

@@ -83,7 +83,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c88189a0103
+DECL|enum|__anon2b89ac6c0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -108,7 +108,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c88189a0203
+DECL|enum|__anon2b89ac6c0203
 block|{
 DECL|enumerator|TEXT
 name|TEXT
@@ -149,8 +149,8 @@ DECL|enumerator|XLFD
 name|XLFD
 init|=
 literal|7
-block|, }
 DECL|typedef|GDTBlock
+block|}
 name|GDTBlock
 typedef|;
 end_typedef
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c88189a0303
+DECL|enum|__anon2b89ac6c0303
 block|{
 DECL|enumerator|XLFD_NONE
 name|XLFD_NONE
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c88189a0403
+DECL|enum|__anon2b89ac6c0403
 block|{
 DECL|enumerator|LA_NONE
 name|LA_NONE
@@ -294,14 +294,14 @@ DECL|enumerator|LA_TOP_RIGHT
 name|LA_TOP_RIGHT
 init|=
 literal|9
-block|, }
 DECL|typedef|LayerAlignments
+block|}
 name|LayerAlignments
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c88189a0508
+DECL|struct|__anon2b89ac6c0508
 typedef|typedef
 struct|struct
 block|{
