@@ -173,7 +173,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28944f8f0108
+DECL|struct|__anon29c1cc760108
 block|{
 DECL|member|console
 name|GtkTextBuffer
@@ -1159,16 +1159,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|cint
-operator|.
-name|cc
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_widget_grab_default
+name|gtk_widget_grab_focus
 argument_list|(
 name|cint
 operator|.
