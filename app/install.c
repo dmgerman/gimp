@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<sys/types.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<sys/stat.h>
 end_include
 
@@ -92,6 +98,12 @@ directive|ifndef
 name|NATIVE_WIN32
 end_ifndef
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|__EMX__
+end_ifndef
+
 begin_define
 DECL|macro|USER_INSTALL
 define|#
@@ -99,6 +111,30 @@ directive|define
 name|USER_INSTALL
 value|"user_install"
 end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_include
+include|#
+directive|include
+file|<process.h>
+end_include
+
+begin_define
+DECL|macro|USER_INSTALL
+define|#
+directive|define
+name|USER_INSTALL
+value|"user_install.cmd"
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_else
 else|#
@@ -432,7 +468,7 @@ name|GdkFont
 modifier|*
 name|font
 decl_stmt|;
-DECL|struct|__anon2c87c1140108
+DECL|struct|__anon278b8c970108
 specifier|static
 specifier|const
 struct|struct
@@ -2809,6 +2845,9 @@ argument_list|)
 expr_stmt|;
 else|#
 directive|else
+ifndef|#
+directive|ifndef
+name|__EMX__
 name|g_snprintf
 argument_list|(
 argument|buffer
@@ -2826,6 +2865,59 @@ argument_list|,
 argument|gimp_directory ()
 argument_list|)
 empty_stmt|;
+else|#
+directive|else
+name|g_snprintf
+argument_list|(
+argument|buffer
+argument_list|,
+argument|sizeof(buffer)
+argument_list|,
+literal|"cmd.exe /c %s"
+argument|G_DIR_SEPARATOR_S USER_INSTALL
+literal|" %s %s"
+argument_list|,
+argument|gimp_data_directory ()
+argument_list|,
+argument|gimp_data_directory()
+argument_list|,
+argument|gimp_directory ()
+argument_list|)
+empty_stmt|;
+block|{
+name|char
+modifier|*
+name|s
+init|=
+name|buffer
+operator|+
+literal|10
+decl_stmt|;
+while|while
+condition|(
+operator|*
+name|s
+condition|)
+block|{
+if|if
+condition|(
+operator|*
+name|s
+operator|==
+literal|'/'
+condition|)
+operator|*
+name|s
+operator|=
+literal|'\\'
+expr_stmt|;
+name|s
+operator|++
+expr_stmt|;
+block|}
+block|}
+endif|#
+directive|endif
 comment|/* urk - should really use something better than popen(), since        * we can't tell if the installation script failed --austin */
 if|if
 condition|(
