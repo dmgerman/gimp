@@ -1130,22 +1130,21 @@ modifier|*
 name|blob
 decl_stmt|;
 name|gdouble
-name|lasttime
-decl_stmt|,
-name|thistime
-decl_stmt|;
-name|gdouble
 name|dist
 decl_stmt|;
 name|gdouble
 name|velocity
 decl_stmt|;
+name|guint32
 name|lasttime
-operator|=
+init|=
 name|ink
 operator|->
 name|last_time
-expr_stmt|;
+decl_stmt|;
+name|guint32
+name|thistime
+decl_stmt|;
 name|time_smoother_add
 argument_list|(
 name|ink
@@ -2407,7 +2406,7 @@ comment|/* Some of this stuff should probably be combined with the  * code it wa
 end_comment
 
 begin_enum
-DECL|enum|__anon2959f9d80103
+DECL|enum|__anon2afb86ba0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

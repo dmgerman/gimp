@@ -171,7 +171,7 @@ name|gint
 name|ts_index
 decl_stmt|;
 DECL|member|last_time
-name|gdouble
+name|guint32
 name|last_time
 decl_stmt|;
 comment|/*  previous time of a motion event      */
