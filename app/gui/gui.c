@@ -550,6 +550,9 @@ parameter_list|)
 block|{
 name|gchar
 modifier|*
+name|display
+decl_stmt|,
+modifier|*
 name|name
 init|=
 name|NULL
@@ -586,6 +589,12 @@ if|if
 condition|(
 name|name
 condition|)
+block|{
+name|display
+operator|=
+name|gdk_get_display
+argument_list|()
+expr_stmt|;
 name|gimp_environ_table_add
 argument_list|(
 name|gimp
@@ -594,12 +603,17 @@ name|environ_table
 argument_list|,
 name|name
 argument_list|,
-name|gdk_get_display
-argument_list|()
+name|display
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 

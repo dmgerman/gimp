@@ -46,7 +46,7 @@ name|GTK_WRAP_BOX
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GTK_TYPE_WRAP_BOX, GtkWrapBox))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_WRAP_BOX, GtkWrapBox))
 end_define
 
 begin_define
@@ -57,7 +57,7 @@ name|GTK_WRAP_BOX_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GTK_TYPE_WRAP_BOX, GtkWrapBoxClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GTK_TYPE_WRAP_BOX, GtkWrapBoxClass))
 end_define
 
 begin_define
@@ -68,7 +68,7 @@ name|GTK_IS_WRAP_BOX
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GTK_TYPE_WRAP_BOX))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_WRAP_BOX))
 end_define
 
 begin_define
@@ -79,7 +79,7 @@ name|GTK_IS_WRAP_BOX_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GTK_TYPE_WRAP_BOX))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GTK_TYPE_WRAP_BOX))
 end_define
 
 begin_define
@@ -90,7 +90,7 @@ name|GTK_WRAP_BOX_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_GET_CLASS ((obj), GTK_TYPE_WRAP_BOX, GtkWrapBoxClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GTK_TYPE_WRAP_BOX, GtkWrapBoxClass))
 end_define
 
 begin_comment
@@ -298,7 +298,7 @@ comment|/* --- prototypes --- */
 end_comment
 
 begin_decl_stmt
-name|GtkType
+name|GType
 name|gtk_wrap_box_get_type
 argument_list|(
 name|void
