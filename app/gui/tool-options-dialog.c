@@ -943,12 +943,6 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
-name|GError
-modifier|*
-name|error
-init|=
-name|NULL
-decl_stmt|;
 name|tool_info
 operator|=
 name|gimp_context_get_tool
@@ -962,9 +956,14 @@ operator|!
 name|tool_info
 condition|)
 return|return;
-if|if
-condition|(
-operator|!
+comment|/*  Need to reset the tool-options since only the changes    *  from the default values are written to disk.    */
+name|gimp_tool_options_reset
+argument_list|(
+name|tool_info
+operator|->
+name|tool_options
+argument_list|)
+expr_stmt|;
 name|gimp_tool_options_deserialize
 argument_list|(
 name|tool_info
@@ -973,27 +972,9 @@ name|tool_options
 argument_list|,
 literal|"user"
 argument_list|,
-operator|&
-name|error
-argument_list|)
-condition|)
-block|{
-name|g_message
-argument_list|(
-literal|"EEK: %s\n"
-argument_list|,
-name|error
-operator|->
-name|message
+name|NULL
 argument_list|)
 expr_stmt|;
-name|g_clear_error
-argument_list|(
-operator|&
-name|error
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
