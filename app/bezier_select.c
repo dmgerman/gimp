@@ -855,7 +855,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon29d14dbd0103
+DECL|enum|__anon291dfdae0103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -9685,7 +9685,7 @@ modifier|*
 name|box
 parameter_list|)
 block|{
-DECL|struct|__anon29d14dbd0208
+DECL|struct|__anon291dfdae0208
 specifier|static
 struct|struct
 block|{
@@ -9957,6 +9957,32 @@ block|}
 end_function
 
 begin_function
+specifier|static
+name|gint
+DECL|function|bezier_extends_delete_callback (GtkWidget * dialog)
+name|bezier_extends_delete_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|dialog
+parameter_list|)
+block|{
+name|dialog_open
+operator|=
+literal|2
+expr_stmt|;
+name|gtk_widget_hide
+argument_list|(
+name|dialog
+argument_list|)
+expr_stmt|;
+return|return
+name|TRUE
+return|;
+block|}
+end_function
+
+begin_function
 DECL|function|bezier_named_buffer_proc (GDisplay * gdisp)
 specifier|static
 name|void
@@ -10125,6 +10151,25 @@ expr_stmt|;
 name|curPndlg
 operator|=
 name|pn_dlg
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|pn_dlg
+operator|->
+name|shell
+argument_list|)
+argument_list|,
+literal|"delete_event"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|bezier_extends_delete_callback
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|gtk_window_set_title
 argument_list|(
