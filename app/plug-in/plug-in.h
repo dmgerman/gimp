@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
+file|"pdb/procedural_db.h"
 end_include
 
 begin_define
@@ -81,7 +81,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b7bacf0103
+DECL|enum|__anon27ede1500103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE

@@ -102,19 +102,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"session.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"pdb/procedural_db.h"
 end_include
 
 begin_include
@@ -127,6 +121,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
@@ -1725,7 +1725,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d96f880108
+DECL|struct|__anon279e24b80108
 block|{
 DECL|member|def
 name|GImage

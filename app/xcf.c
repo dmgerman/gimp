@@ -166,12 +166,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tile.h"
 end_include
 
@@ -218,7 +212,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb8209b0103
+DECL|enum|__anon28da5a790103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -353,7 +347,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb8209b0203
+DECL|enum|__anon28da5a790203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE

@@ -288,12 +288,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"internal_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"lc_dialog.h"
 end_include
 
@@ -343,12 +337,6 @@ begin_include
 include|#
 directive|include
 file|"module_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"procedural_db.h"
 end_include
 
 begin_include
@@ -454,6 +442,12 @@ begin_include
 include|#
 directive|include
 file|"gimpparasite.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pdb/internal_procs.h"
 end_include
 
 begin_include

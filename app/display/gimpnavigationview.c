@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"scroll.h"
 end_include
 
@@ -133,6 +127,12 @@ begin_include
 include|#
 directive|include
 file|"scale.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pdb/procedural_db.h"
 end_include
 
 begin_include
@@ -214,7 +214,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4f5a5d0103
+DECL|enum|__anon288443aa0103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW

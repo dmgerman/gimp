@@ -102,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tile_manager.h"
 end_include
 
@@ -121,6 +115,12 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pdb/procedural_db.h"
 end_include
 
 begin_include

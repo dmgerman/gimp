@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"selection_options.h"
 end_include
 
@@ -145,6 +139,12 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pdb/procedural_db.h"
 end_include
 
 begin_include
@@ -248,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a45b230108
+DECL|struct|__anon294464600108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -284,7 +284,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a45b230208
+DECL|struct|__anon294464600208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a45b230308
+DECL|struct|__anon294464600308
 block|{
 DECL|member|curve_count
 name|CountCurves

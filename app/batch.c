@@ -89,7 +89,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
+file|"pdb/procedural_db.h"
 end_include
 
 begin_function_decl
@@ -97,7 +97,7 @@ specifier|static
 name|void
 name|batch_run_cmd
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|cmd
 parameter_list|)
@@ -126,13 +126,13 @@ specifier|static
 name|void
 name|batch_pserver
 parameter_list|(
-name|int
+name|gint
 name|run_mode
 parameter_list|,
-name|int
+name|gint
 name|flags
 parameter_list|,
-name|int
+name|gint
 name|extra
 parameter_list|)
 function_decl|;
@@ -149,26 +149,28 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|batch_init ()
+DECL|function|batch_init (void)
 name|batch_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|extern
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|batch_cmds
 decl_stmt|;
-name|int
+name|gboolean
 name|read_from_stdin
 decl_stmt|;
-name|int
-name|i
-decl_stmt|;
-name|int
+name|gboolean
 name|perl_server_already_running
 init|=
-literal|0
+name|FALSE
+decl_stmt|;
+name|gint
+name|i
 decl_stmt|;
 name|eval_proc
 operator|=
@@ -198,7 +200,7 @@ control|)
 block|{
 comment|/* until --batch-interp=xxx or something similar is implemented         * and gimp-1.0 is not extinct use a shortcut to speed up starting the        * perl-server tremendously. This is also fully compatible with 1.0.        */
 block|{
-name|int
+name|gint
 name|run_mode
 decl_stmt|,
 name|flags
@@ -339,10 +341,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|batch_run_cmd (char * cmd)
+DECL|function|batch_run_cmd (gchar * cmd)
 name|batch_run_cmd
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|cmd
 parameter_list|)
@@ -355,7 +357,7 @@ name|Argument
 modifier|*
 name|vals
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if
@@ -541,18 +543,20 @@ name|GString
 modifier|*
 name|string
 decl_stmt|;
-name|char
+name|gchar
 name|buf
 index|[
 literal|32
 index|]
-decl_stmt|,
+decl_stmt|;
+name|gchar
 modifier|*
 name|t
 decl_stmt|;
-name|int
+name|gint
 name|nread
-decl_stmt|,
+decl_stmt|;
+name|gboolean
 name|done
 decl_stmt|;
 if|if
@@ -762,16 +766,16 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|batch_pserver (int run_mode,int flags,int extra)
+DECL|function|batch_pserver (gint run_mode,gint flags,gint extra)
 name|batch_pserver
 parameter_list|(
-name|int
+name|gint
 name|run_mode
 parameter_list|,
-name|int
+name|gint
 name|flags
 parameter_list|,
-name|int
+name|gint
 name|extra
 parameter_list|)
 block|{
@@ -787,7 +791,7 @@ name|Argument
 modifier|*
 name|vals
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|pserver_proc
