@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a6f4710108
+DECL|struct|__anon2c229f540108
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a6f4710208
+DECL|struct|__anon2c229f540208
 block|{
 DECL|member|col
 DECL|member|row
@@ -1157,6 +1157,9 @@ name|length
 expr_stmt|;
 name|px
 operator|=
+operator|(
+name|gdouble
+operator|)
 name|n
 operator|*
 name|cos
@@ -1172,6 +1175,9 @@ argument_list|)
 expr_stmt|;
 name|py
 operator|=
+operator|(
+name|gdouble
+operator|)
 name|n
 operator|*
 name|sin
@@ -1478,6 +1484,8 @@ condition|(
 name|e
 operator|>=
 literal|0
+operator|&&
+name|dx
 condition|)
 block|{
 if|if

@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * 1.2.1a;  2001/07/07   hof: p_file_copy use binary modes in fopen (hope that fixes bug #52890 in video/duplicate)  * 1.1.29a; 2000/11/23   hof: gap locking (changed to procedures and placed here)  * 1.1.28a; 2000/11/05   hof: check for GIMP_PDB_SUCCESS (not for FALSE)  * 1.1.20a; 2000/04/25   hof: new: p_get_video_paste_name p_vid_edit_clear  * 1.1.17b; 2000/02/27   hof: bug/style fixes  * 1.1.14a; 1999/12/18   hof: handle .xvpics on fileops (copy, rename and delete)  *                            new: p_get_frame_nr,  * 1.1.9a;  1999/09/14   hof: handle frame filenames with framenumbers  *                            that are not the 4digit style. (like frame1.xcf)  * 1.1.8a;  1999/08/31   hof: for AnimFrame Filtypes != XCF:  *                            p_decide_save_as does save INTERACTIVE at 1.st time  *                            and uses GIMP_RUN_WITH_LAST_VALS for subsequent calls  *                            (this enables to set Fileformat specific save-Parameters  *                            at least at the 1.st call, using the save dialog  *                            of the selected (by gimp_file_save) file_save procedure.  *                            in NONINTERACTIVE mode we have no access to  *                            the Fileformat specific save-Parameters  *          1999/07/22   hof: accept anim framenames without underscore '_'  *                            (suggested by Samuel Meder)  * 0.99.00; 1999/03/15   hof: prepared for win/dos filename conventions  * 0.98.00; 1998/11/30   hof: started Port to GIMP 1.1:  *                               exchange of Images (by next frame) is now handled in the  *                               new module: gap_exchange_image.c  * 0.96.02; 1998/07/30   hof: extended gap_dup (duplicate range instead of singele frame)  *                            added gap_shift  * 0.96.00               hof: - now using gap_arr_dialog.h  * 0.95.00               hof:  increased duplicate frames limit from 50 to 99  * 0.93.01               hof: fixup bug when frames are not in the current directory  * 0.90.00;              hof: 1.st (pre) release  */
+comment|/* revision history:  * 1.2.2a;  2001/10/21   hof: bufix # 61677 (error in duplicate frames GUI)   *                            and disable duplicate for Unsaved/untitled Images.  *                            (creating frames from such images with a default name may cause problems  *                             as unexpected overwriting frames or mixing animations with different sized frames)  * 1.2.1a;  2001/07/07   hof: p_file_copy use binary modes in fopen (hope that fixes bug #52890 in video/duplicate)  * 1.1.29a; 2000/11/23   hof: gap locking (changed to procedures and placed here)  * 1.1.28a; 2000/11/05   hof: check for GIMP_PDB_SUCCESS (not for FALSE)  * 1.1.20a; 2000/04/25   hof: new: p_get_video_paste_name p_vid_edit_clear  * 1.1.17b; 2000/02/27   hof: bug/style fixes  * 1.1.14a; 1999/12/18   hof: handle .xvpics on fileops (copy, rename and delete)  *                            new: p_get_frame_nr,  * 1.1.9a;  1999/09/14   hof: handle frame filenames with framenumbers  *                            that are not the 4digit style. (like frame1.xcf)  * 1.1.8a;  1999/08/31   hof: for AnimFrame Filtypes != XCF:  *                            p_decide_save_as does save INTERACTIVE at 1.st time  *                            and uses GIMP_RUN_WITH_LAST_VALS for subsequent calls  *                            (this enables to set Fileformat specific save-Parameters  *                            at least at the 1.st call, using the save dialog  *                            of the selected (by gimp_file_save) file_save procedure.  *                            in NONINTERACTIVE mode we have no access to  *                            the Fileformat specific save-Parameters  *          1999/07/22   hof: accept anim framenames without underscore '_'  *                            (suggested by Samuel Meder)  * 0.99.00; 1999/03/15   hof: prepared for win/dos filename conventions  * 0.98.00; 1998/11/30   hof: started Port to GIMP 1.1:  *                               exchange of Images (by next frame) is now handled in the  *                               new module: gap_exchange_image.c  * 0.96.02; 1998/07/30   hof: extended gap_dup (duplicate range instead of singele frame)  *                            added gap_shift  * 0.96.00               hof: - now using gap_arr_dialog.h  * 0.95.00               hof:  increased duplicate frames limit from 50 to 99  * 0.93.01               hof: fixup bug when frames are not in the current directory  * 0.90.00;              hof: 1.st (pre) release  */
 end_comment
 
 begin_include
@@ -2400,6 +2400,7 @@ operator|==
 name|NULL
 condition|)
 block|{
+comment|/* note: gimp versions> 1.2  have default filenames for new created images       * and we'll probably never step into this place anymore       */
 name|l_ainfo_ptr
 operator|->
 name|old_filename
@@ -3074,7 +3075,12 @@ name|ainfo_ptr
 operator|->
 name|first_frame_nr
 operator|=
+name|MIN
+argument_list|(
 name|l_minnr
+argument_list|,
+name|l_maxnr
+argument_list|)
 expr_stmt|;
 return|return
 literal|0
@@ -3464,8 +3470,8 @@ argument_list|,
 name|_
 argument_list|(
 literal|"OPERATION CANCELLED.\n"
-literal|"GAP-plugins works only with filenames\n"
-literal|"that end with _0001.xcf.\n"
+literal|"GAP plug-ins only work with filenames\n"
+literal|"that end in numbers like _0001.xcf.\n"
 literal|"==> Rename your image, then try again."
 argument_list|)
 argument_list|)
@@ -5617,7 +5623,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-literal|"DEBUG  p_dup fr:%d to:%d cnt:%d\n"
+literal|"DEBUG  p_dup fr:%d to:%d cnt:%d extension:%s: basename:%s frame_cnt:%d\n"
 argument_list|,
 operator|(
 name|int
@@ -5633,6 +5639,21 @@ operator|(
 name|int
 operator|)
 name|cnt
+argument_list|,
+name|ainfo_ptr
+operator|->
+name|extension
+argument_list|,
+name|ainfo_ptr
+operator|->
+name|basename
+argument_list|,
+operator|(
+name|int
+operator|)
+name|ainfo_ptr
+operator|->
+name|frame_cnt
 argument_list|)
 expr_stmt|;
 if|if
@@ -5663,6 +5684,8 @@ name|extension
 argument_list|)
 expr_stmt|;
 comment|/* save current frame  */
+if|if
+condition|(
 name|p_save_named_frame
 argument_list|(
 name|ainfo_ptr
@@ -5671,7 +5694,45 @@ name|image_id
 argument_list|,
 name|l_curr_name
 argument_list|)
+operator|<
+literal|0
+condition|)
+block|{
+name|gchar
+modifier|*
+name|tmp_errtxt
+decl_stmt|;
+name|tmp_errtxt
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Error: could not save frame %s"
+argument_list|)
+argument_list|,
+name|l_curr_name
+argument_list|)
 expr_stmt|;
+name|p_msg_win
+argument_list|(
+name|ainfo_ptr
+operator|->
+name|run_mode
+argument_list|,
+name|tmp_errtxt
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|tmp_errtxt
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
 comment|/* use a new name (0001.xcf Konvention) */
 name|gimp_image_set_filename
 argument_list|(
@@ -8156,7 +8217,7 @@ index|]
 operator|.
 name|int_min
 operator|=
-literal|0
+literal|1
 expr_stmt|;
 name|argv
 index|[
@@ -8183,7 +8244,7 @@ index|]
 operator|.
 name|umin
 operator|=
-literal|0
+literal|1
 expr_stmt|;
 name|argv
 index|[
@@ -8388,6 +8449,43 @@ expr_stmt|;
 block|}
 else|else
 block|{
+if|if
+condition|(
+operator|*
+name|ainfo_ptr
+operator|->
+name|extension
+operator|==
+literal|'\0'
+operator|&&
+name|ainfo_ptr
+operator|->
+name|frame_cnt
+operator|==
+literal|0
+condition|)
+block|{
+comment|/* duplicate was called on a frame without extension and without framenumer in its name 	      * (typical for new created images named like 'Untitled' (or 'Unbenannt' for german GUI or .. in other languages) 	      */
+name|p_msg_win
+argument_list|(
+name|ainfo_ptr
+operator|->
+name|run_mode
+argument_list|,
+name|_
+argument_list|(
+literal|"OPERATION CANCELLED.\n"
+literal|"GAP plug-ins only work with filenames\n"
+literal|"that end in numbers like _0001.xcf.\n"
+literal|"==> Rename your image, then try again."
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
 name|l_cnt
 operator|=
 name|p_dup_dialog
@@ -11415,7 +11513,7 @@ expr_stmt|;
 block|}
 name|printf
 argument_list|(
-literal|"GAP plugin is LOCKED  ID:%s PID:%d\n"
+literal|"GAP plug-in is LOCKED  ID:%s PID:%d\n"
 argument_list|,
 name|l_lock
 operator|.
