@@ -252,7 +252,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba8389c0103
+DECL|enum|__anon2ac352e00103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -11641,7 +11641,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Remove Layer"
+literal|"Remove Channel"
 argument_list|)
 argument_list|,
 name|channel
