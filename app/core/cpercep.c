@@ -1776,8 +1776,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|init_conversions (void)
-name|init_conversions
+DECL|function|cpercep_init_conversions (void)
+name|cpercep_init_conversions
 parameter_list|(
 name|void
 parameter_list|)
@@ -2333,8 +2333,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|rgb_to_space (double inr,double ing,double inb,double * outr,double * outg,double * outb)
-name|rgb_to_space
+DECL|function|cpercep_rgb_to_space (double inr,double ing,double inb,double * outr,double * outg,double * outb)
+name|cpercep_rgb_to_space
 parameter_list|(
 name|double
 name|inr
@@ -2762,8 +2762,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|space_to_rgb (double inr,double ing,double inb,double * outr,double * outg,double * outb)
-name|space_to_rgb
+DECL|function|cpercep_space_to_rgb (double inr,double ing,double inb,double * outr,double * outg,double * outb)
+name|cpercep_space_to_rgb
 parameter_list|(
 name|double
 name|inr

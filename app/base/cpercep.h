@@ -22,7 +22,7 @@ end_comment
 
 begin_function_decl
 name|void
-name|init_conversions
+name|cpercep_init_conversions
 parameter_list|(
 name|void
 parameter_list|)
@@ -31,7 +31,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|rgb_to_space
+name|cpercep_rgb_to_space
 parameter_list|(
 name|double
 name|inr
@@ -59,7 +59,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|space_to_rgb
+name|cpercep_space_to_rgb
 parameter_list|(
 name|double
 name|inr
@@ -93,8 +93,8 @@ begin_function
 specifier|static
 specifier|const
 name|double
-DECL|function|distance_space (const double L1,const double a1,const double b1,const double L2,const double a2,const double b2)
-name|distance_space
+DECL|function|cpercep_distance_space (const double L1,const double a1,const double b1,const double L2,const double a2,const double b2)
+name|cpercep_distance_space
 parameter_list|(
 specifier|const
 name|double

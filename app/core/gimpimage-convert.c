@@ -399,7 +399,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28efd9130103
+DECL|enum|__anon28b1d68e0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -787,7 +787,7 @@ name|og
 decl_stmt|,
 name|ob
 decl_stmt|;
-name|rgb_to_space
+name|cpercep_rgb_to_space
 argument_list|(
 name|r
 argument_list|,
@@ -930,7 +930,7 @@ name|og
 decl_stmt|,
 name|ob
 decl_stmt|;
-comment|/*   double sL, sa, sb;   {     double low_l = 999.0, low_a = 999.9, low_b = 999.0;     double high_l = -999.0, high_a = -999.0, high_b = -999.0;      int r,g,b;      for (r=0; r<256; r++)       for (g=0; g<256; g++) 	for (b=0; b<256; b++) 	  { 	    rgb_to_space(r,g,b,&sL,&sa,&sb);  	    if (sL> high_l) 	      high_l = sL; 	    if (sL< low_l) 	      low_l = sL; 	    if (sa> high_a) 	      high_a = sa; 	    if (sa< low_a) 	      low_a = sa; 	    if (sb> high_b) 	      high_b = sb; 	    if (sb< low_b) 	      low_b = sb; 	  }          fprintf(stderr, " [L: %0.3f -> %0.3f / a: %0.3f -> %0.3f / b: %0.3f -> %0.3f]\t", low_l, high_l, low_a, high_a, low_b, high_b);          exit(-1);   }   */
+comment|/*   double sL, sa, sb;   {     double low_l = 999.0, low_a = 999.9, low_b = 999.0;     double high_l = -999.0, high_a = -999.0, high_b = -999.0;      int r,g,b;      for (r=0; r<256; r++)       for (g=0; g<256; g++) 	for (b=0; b<256; b++) 	  { 	    cpercep_rgb_to_space(r,g,b,&sL,&sa,&sb);  	    if (sL> high_l) 	      high_l = sL; 	    if (sL< low_l) 	      low_l = sL; 	    if (sa> high_a) 	      high_a = sa; 	    if (sa< low_a) 	      low_a = sa; 	    if (sb> high_b) 	      high_b = sb; 	    if (sb< low_b) 	      low_b = sb; 	  }          fprintf(stderr, " [L: %0.3f -> %0.3f / a: %0.3f -> %0.3f / b: %0.3f -> %0.3f]\t", low_l, high_l, low_a, high_a, low_b, high_b);          exit(-1);   }   */
 name|rgb_to_unshifted_lin
 argument_list|(
 name|r
@@ -1259,7 +1259,7 @@ operator|+
 name|LOWB
 expr_stmt|;
 comment|/*  fprintf(stderr, "%0.1f,%0.1f,%0.1f ", ir,ig,ib); */
-name|space_to_rgb
+name|cpercep_space_to_rgb
 argument_list|(
 name|ir
 argument_list|,
@@ -1427,7 +1427,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28efd9130208
+DECL|struct|__anon28b1d68e0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1504,7 +1504,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28efd9130308
+DECL|struct|__anon28b1d68e0308
 block|{
 DECL|member|ncolors
 name|long
@@ -1664,7 +1664,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28efd9130408
+DECL|struct|__anon28b1d68e0408
 block|{
 DECL|member|used_count
 name|signed
@@ -2749,7 +2749,7 @@ operator|=
 name|new_type
 expr_stmt|;
 comment|/* initialize the colour conversion routines */
-name|init_conversions
+name|cpercep_init_conversions
 argument_list|()
 expr_stmt|;
 comment|/*  Convert to indexed?  Build histogram if necessary.  */
