@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d4fc270108
+DECL|struct|__anon2aef68e70108
 block|{
 DECL|member|name
 name|gchar
@@ -86,7 +86,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d4fc270203
+DECL|enum|__anon2aef68e70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1329,6 +1329,22 @@ block|{
 name|gint
 name|fd
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+name|fd
+operator|=
+name|open
+argument_list|(
+name|midi
+operator|->
+name|device
+argument_list|,
+name|O_RDONLY
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|fd
 operator|=
 name|open
@@ -1342,6 +1358,8 @@ operator||
 name|O_NONBLOCK
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|fd
