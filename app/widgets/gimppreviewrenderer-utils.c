@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"text/gimptextlayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppreviewrendererbrush.h"
 end_include
 
@@ -49,6 +55,12 @@ begin_include
 include|#
 directive|include
 file|"gimppreviewrendererdrawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppreviewrenderertextlayer.h"
 end_include
 
 begin_include
@@ -112,6 +124,22 @@ block|{
 name|type
 operator|=
 name|GIMP_TYPE_PREVIEW_RENDERER_IMAGE
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|g_type_is_a
+argument_list|(
+name|viewable_type
+argument_list|,
+name|GIMP_TYPE_TEXT_LAYER
+argument_list|)
+condition|)
+block|{
+name|type
+operator|=
+name|GIMP_TYPE_PREVIEW_RENDERER_TEXT_LAYER
 expr_stmt|;
 block|}
 elseif|else

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpdrawablepreview.c  * Copyright (C) 2001 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimppreviewrendererdrawable.c  * Copyright (C) 2003 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -70,7 +70,7 @@ name|gimp_preview_renderer_drawable_init
 parameter_list|(
 name|GimpPreviewRendererDrawable
 modifier|*
-name|preview
+name|renderer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -226,12 +226,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_renderer_drawable_init (GimpPreviewRendererDrawable * preview)
+DECL|function|gimp_preview_renderer_drawable_init (GimpPreviewRendererDrawable * renderer)
 name|gimp_preview_renderer_drawable_init
 parameter_list|(
 name|GimpPreviewRendererDrawable
 modifier|*
-name|preview
+name|renderer
 parameter_list|)
 block|{ }
 end_function
@@ -666,7 +666,7 @@ operator|/
 literal|2
 expr_stmt|;
 block|}
-name|gimp_preview_renderer_render_preview
+name|gimp_preview_renderer_render_buffer
 argument_list|(
 name|renderer
 argument_list|,

@@ -111,6 +111,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPreviewRendererTextLayer
+typedef|typedef
+name|struct
+name|_GimpPreviewRendererTextLayer
+name|GimpPreviewRendererTextLayer
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPreviewRendererImage
 typedef|typedef
 name|struct

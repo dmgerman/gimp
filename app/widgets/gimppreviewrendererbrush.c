@@ -64,7 +64,7 @@ name|gimp_preview_renderer_brush_init
 parameter_list|(
 name|GimpPreviewRendererBrush
 modifier|*
-name|preview
+name|renderer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -501,7 +501,7 @@ operator|->
 name|is_popup
 condition|)
 block|{
-name|gimp_preview_renderer_render_preview
+name|gimp_preview_renderer_render_buffer
 argument_list|(
 name|renderer
 argument_list|,
@@ -556,7 +556,7 @@ expr_stmt|;
 block|}
 return|return;
 block|}
-name|gimp_preview_renderer_render_preview
+name|gimp_preview_renderer_render_buffer
 argument_list|(
 name|renderer
 argument_list|,
@@ -1475,7 +1475,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_render_preview
+name|gimp_preview_renderer_render_buffer
 argument_list|(
 name|renderer
 argument_list|,
