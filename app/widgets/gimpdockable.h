@@ -147,7 +147,7 @@ struct|struct
 name|_GimpDockable
 block|{
 DECL|member|parent_instance
-name|GtkVBox
+name|GtkBin
 name|parent_instance
 decl_stmt|;
 DECL|member|name
@@ -197,7 +197,7 @@ struct|struct
 name|_GimpDockableClass
 block|{
 DECL|member|parent_class
-name|GtkVBoxClass
+name|GtkBinClass
 name|parent_class
 decl_stmt|;
 DECL|member|get_tab_widget
