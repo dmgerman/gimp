@@ -58,7 +58,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon2c7639480103
+DECL|enum|__anon28a703120103
 enum|enum
 block|{
 DECL|enumerator|UNIT_CHANGED
@@ -1709,7 +1709,7 @@ name|g_warning
 argument_list|(
 name|_
 argument_list|(
-literal|"unit-menu-format contains unknown"
+literal|"unit-menu-format contains unknown "
 literal|"format sequence '%%%c'"
 argument_list|)
 argument_list|,

@@ -758,7 +758,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29590bfe0108
+DECL|struct|__anon2b78f6750108
 block|{
 DECL|member|Width
 name|unsigned
@@ -808,7 +808,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29590bfe0208
+DECL|struct|__anon2b78f6750208
 block|{
 DECL|member|transparent
 name|int
@@ -1504,7 +1504,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"GIF: OF / read error on extension function code\n"
+literal|"GIF: EOF / read error on extension function code\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
