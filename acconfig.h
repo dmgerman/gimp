@@ -21,6 +21,12 @@ end_undef
 begin_undef
 undef|#
 directive|undef
+name|HAVE_ASM_MMX
+end_undef
+
+begin_undef
+undef|#
+directive|undef
 name|HAVE_CATGETS
 end_undef
 
