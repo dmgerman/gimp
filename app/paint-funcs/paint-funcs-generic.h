@@ -5096,7 +5096,7 @@ index|[
 name|b
 index|]
 expr_stmt|;
-comment|/*  dissolve if random value is> opacity  */
+comment|/*  dissolve if random value is>= opacity  */
 name|rand_val
 operator|=
 name|g_rand_int_range
@@ -5105,7 +5105,7 @@ name|gr
 argument_list|,
 literal|0
 argument_list|,
-literal|256
+literal|255
 argument_list|)
 expr_stmt|;
 if|if
@@ -5179,7 +5179,7 @@ index|]
 operator|=
 operator|(
 name|rand_val
-operator|>
+operator|>=
 name|combined_opacity
 operator|)
 condition|?
