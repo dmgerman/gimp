@@ -851,6 +851,9 @@ name|i
 index|]
 condition|)
 break|break;
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
 if|if
 condition|(
 operator|*
@@ -883,6 +886,8 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+endif|#
+directive|endif
 block|{
 name|dir
 operator|=
