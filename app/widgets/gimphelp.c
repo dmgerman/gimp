@@ -725,6 +725,11 @@ name|plug_in_run
 argument_list|(
 name|gimp
 argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
 name|proc_rec
 argument_list|,
 name|args
@@ -1042,6 +1047,11 @@ expr_stmt|;
 name|plug_in_run
 argument_list|(
 name|gimp
+argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
 argument_list|,
 name|proc_rec
 argument_list|,

@@ -239,6 +239,10 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -277,6 +281,10 @@ name|GimpInitStatusFunc
 name|status_callback
 parameter_list|)
 block|{
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 name|gchar
 modifier|*
 name|filename
@@ -326,6 +334,17 @@ name|g_return_if_fail
 argument_list|(
 name|status_callback
 operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|context
+operator|=
+name|gimp_context_new
+argument_list|(
+name|gimp
+argument_list|,
+literal|"temp"
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -620,6 +639,8 @@ name|plug_in_call_query
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|plug_in_def
 argument_list|)
 expr_stmt|;
@@ -894,6 +915,8 @@ comment|/* add the plug-in procs to the procedure database */
 name|plug_ins_add_to_db
 argument_list|(
 name|gimp
+argument_list|,
+name|context
 argument_list|)
 expr_stmt|;
 comment|/* sort file procs */
@@ -1282,6 +1305,8 @@ name|plug_in_call_init
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|plug_in_def
 argument_list|)
 expr_stmt|;
@@ -1479,6 +1504,8 @@ name|plug_in_run
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 operator|&
 name|proc_def
 operator|->
@@ -1554,6 +1581,11 @@ operator|->
 name|plug_in_defs
 operator|=
 name|NULL
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|context
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -3699,18 +3731,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_ins_add_to_db (Gimp * gimp)
+DECL|function|plug_ins_add_to_db (Gimp * gimp,GimpContext * context)
 name|plug_ins_add_to_db
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|)
-block|{
+parameter_list|,
 name|GimpContext
 modifier|*
 name|context
-decl_stmt|;
+parameter_list|)
+block|{
 name|PlugInProcDef
 modifier|*
 name|proc_def
@@ -3719,17 +3751,6 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|context
-operator|=
-name|gimp_context_new
-argument_list|(
-name|gimp
-argument_list|,
-literal|"temp"
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|list
@@ -3992,11 +4013,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|g_object_unref
-argument_list|(
-name|context
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

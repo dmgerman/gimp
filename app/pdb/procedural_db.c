@@ -357,7 +357,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b33333c0108
+DECL|struct|__anon2b9f887d0108
 block|{
 DECL|member|old_name
 specifier|const
@@ -1237,6 +1237,8 @@ operator|=
 name|plug_in_run
 argument_list|(
 name|gimp
+argument_list|,
+name|context
 argument_list|,
 name|procedure
 argument_list|,

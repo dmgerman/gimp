@@ -44,6 +44,11 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
+DECL|member|context
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 DECL|member|ref_count
 name|gint
 name|ref_count
@@ -244,6 +249,10 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|PlugInDef
 modifier|*
 name|plug_in_def
@@ -258,6 +267,10 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|PlugInDef
 modifier|*
@@ -274,6 +287,10 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|ProcRecord
 modifier|*

@@ -430,6 +430,11 @@ name|plug_in_run
 argument_list|(
 name|gimp
 argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
 name|proc_rec
 argument_list|,
 name|args
@@ -570,6 +575,15 @@ operator|->
 name|gimage
 operator|->
 name|gimp
+argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 argument_list|,
 name|gimp_display_get_ID
 argument_list|(

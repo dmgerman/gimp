@@ -289,6 +289,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GimpObject
 modifier|*
 name|stroke_desc
@@ -1269,7 +1273,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_selection_stroke (GimpItem * item,GimpDrawable * drawable,GimpObject * stroke_desc,gboolean use_default_values)
+DECL|function|gimp_selection_stroke (GimpItem * item,GimpDrawable * drawable,GimpContext * context,GimpObject * stroke_desc,gboolean use_default_values)
 name|gimp_selection_stroke
 parameter_list|(
 name|GimpItem
@@ -1279,6 +1283,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpObject
 modifier|*
@@ -1401,6 +1409,8 @@ argument_list|(
 name|item
 argument_list|,
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 name|stroke_desc
 argument_list|,

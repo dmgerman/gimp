@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -147,12 +153,16 @@ end_comment
 begin_function
 name|Argument
 modifier|*
-DECL|function|plug_in_run (Gimp * gimp,ProcRecord * proc_rec,Argument * args,gint argc,gboolean synchronous,gboolean destroy_return_vals,gint gdisp_ID)
+DECL|function|plug_in_run (Gimp * gimp,GimpContext * context,ProcRecord * proc_rec,Argument * args,gint argc,gboolean synchronous,gboolean destroy_return_vals,gint gdisp_ID)
 name|plug_in_run
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|ProcRecord
 modifier|*
@@ -190,6 +200,16 @@ argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -261,6 +281,8 @@ operator|=
 name|plug_in_new
 argument_list|(
 name|gimp
+argument_list|,
+name|context
 argument_list|,
 name|proc_rec
 argument_list|,
@@ -685,12 +707,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_repeat (Gimp * gimp,gint display_ID,gint image_ID,gint drawable_ID,gboolean with_interface)
+DECL|function|plug_in_repeat (Gimp * gimp,GimpContext * context,gint display_ID,gint image_ID,gint drawable_ID,gboolean with_interface)
 name|plug_in_repeat
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|display_ID
@@ -717,6 +743,14 @@ argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -813,6 +847,8 @@ comment|/* run the plug-in procedure */
 name|plug_in_run
 argument_list|(
 name|gimp
+argument_list|,
+name|context
 argument_list|,
 name|gimp
 operator|->

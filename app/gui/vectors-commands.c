@@ -1172,6 +1172,13 @@ name|gimage
 operator|->
 name|gimp
 argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
+argument_list|,
 name|proc_rec
 argument_list|,
 name|args

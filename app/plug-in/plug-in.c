@@ -268,19 +268,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/tile.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"base/tile-manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpcontext.h"
 end_include
 
 begin_include
@@ -564,12 +558,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_call_query (Gimp * gimp,PlugInDef * plug_in_def)
+DECL|function|plug_in_call_query (Gimp * gimp,GimpContext * context,PlugInDef * plug_in_def)
 name|plug_in_call_query
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|PlugInDef
 modifier|*
@@ -590,6 +588,14 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
 name|plug_in_def
 operator|!=
 name|NULL
@@ -600,6 +606,8 @@ operator|=
 name|plug_in_new
 argument_list|(
 name|gimp
+argument_list|,
+name|context
 argument_list|,
 name|NULL
 argument_list|,
@@ -703,12 +711,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_call_init (Gimp * gimp,PlugInDef * plug_in_def)
+DECL|function|plug_in_call_init (Gimp * gimp,GimpContext * context,PlugInDef * plug_in_def)
 name|plug_in_call_init
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|PlugInDef
 modifier|*
@@ -729,6 +741,14 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
 name|plug_in_def
 operator|!=
 name|NULL
@@ -739,6 +759,8 @@ operator|=
 name|plug_in_new
 argument_list|(
 name|gimp
+argument_list|,
+name|context
 argument_list|,
 name|NULL
 argument_list|,
@@ -843,12 +865,16 @@ end_function
 begin_function
 name|PlugIn
 modifier|*
-DECL|function|plug_in_new (Gimp * gimp,ProcRecord * proc_rec,const gchar * prog)
+DECL|function|plug_in_new (Gimp * gimp,GimpContext * context,ProcRecord * proc_rec,const gchar * prog)
 name|plug_in_new
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|ProcRecord
 modifier|*
@@ -869,6 +895,16 @@ argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -907,6 +943,15 @@ operator|->
 name|gimp
 operator|=
 name|gimp
+expr_stmt|;
+name|plug_in
+operator|->
+name|context
+operator|=
+name|g_object_ref
+argument_list|(
+name|context
+argument_list|)
 expr_stmt|;
 name|plug_in
 operator|->
@@ -1156,6 +1201,13 @@ condition|)
 name|plug_in_progress_end
 argument_list|(
 name|plug_in
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|plug_in
+operator|->
+name|context
 argument_list|)
 expr_stmt|;
 name|g_free

@@ -1572,12 +1572,9 @@ name|plug_in
 operator|->
 name|gimp
 argument_list|,
-name|gimp_get_user_context
-argument_list|(
 name|plug_in
 operator|->
-name|gimp
-argument_list|)
+name|context
 argument_list|,
 name|proc_name
 argument_list|,

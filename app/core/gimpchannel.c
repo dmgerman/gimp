@@ -444,6 +444,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GimpObject
 modifier|*
 name|stroke_desc
@@ -2706,7 +2710,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_channel_stroke (GimpItem * item,GimpDrawable * drawable,GimpObject * stroke_desc,gboolean use_default_values)
+DECL|function|gimp_channel_stroke (GimpItem * item,GimpDrawable * drawable,GimpContext * context,GimpObject * stroke_desc,gboolean use_default_values)
 name|gimp_channel_stroke
 parameter_list|(
 name|GimpItem
@@ -2716,6 +2720,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpObject
 modifier|*
@@ -2899,7 +2907,7 @@ operator|->
 name|paint_options_type
 argument_list|)
 expr_stmt|;
-comment|/*  undefine the paint-relevant context properties and get them            *  from the current context            */
+comment|/*  undefine the paint-relevant context properties and get them            *  from the passed context            */
 name|gimp_context_define_properties
 argument_list|(
 name|GIMP_CONTEXT
@@ -2919,12 +2927,7 @@ argument_list|(
 name|paint_options
 argument_list|)
 argument_list|,
-name|gimp_get_user_context
-argument_list|(
-name|gimage
-operator|->
-name|gimp
-argument_list|)
+name|context
 argument_list|)
 expr_stmt|;
 block|}

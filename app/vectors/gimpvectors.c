@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2dcea40103
+DECL|enum|__anon2ac007880103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -440,6 +440,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpObject
 modifier|*
@@ -2398,7 +2402,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_vectors_stroke (GimpItem * item,GimpDrawable * drawable,GimpObject * stroke_desc,gboolean use_default_values)
+DECL|function|gimp_vectors_stroke (GimpItem * item,GimpDrawable * drawable,GimpContext * context,GimpObject * stroke_desc,gboolean use_default_values)
 name|gimp_vectors_stroke
 parameter_list|(
 name|GimpItem
@@ -2408,6 +2412,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpObject
 modifier|*
@@ -2529,7 +2537,7 @@ operator|->
 name|paint_options_type
 argument_list|)
 expr_stmt|;
-comment|/*  undefine the paint-relevant context properties and get them            *  from the current context            */
+comment|/*  undefine the paint-relevant context properties and get them            *  from the passed context            */
 name|gimp_context_define_properties
 argument_list|(
 name|GIMP_CONTEXT
@@ -2549,12 +2557,7 @@ argument_list|(
 name|paint_options
 argument_list|)
 argument_list|,
-name|gimp_get_user_context
-argument_list|(
-name|gimage
-operator|->
-name|gimp
-argument_list|)
+name|context
 argument_list|)
 expr_stmt|;
 block|}

@@ -150,7 +150,7 @@ modifier|*
 name|viewable
 parameter_list|,
 name|gpointer
-name|insert_date
+name|insert_data
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -1418,6 +1418,8 @@ name|item
 argument_list|,
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 name|options
 argument_list|,
 name|FALSE
@@ -1444,7 +1446,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|stroke_dialog_paint_info_selected (GtkWidget * menu,GimpViewable * viewable,gpointer insert_date,GtkWidget * dialog)
+DECL|function|stroke_dialog_paint_info_selected (GtkWidget * menu,GimpViewable * viewable,gpointer insert_data,GtkWidget * dialog)
 name|stroke_dialog_paint_info_selected
 parameter_list|(
 name|GtkWidget
@@ -1456,7 +1458,7 @@ modifier|*
 name|viewable
 parameter_list|,
 name|gpointer
-name|insert_date
+name|insert_data
 parameter_list|,
 name|GtkWidget
 modifier|*
