@@ -120,6 +120,17 @@ index|[]
 init|=
 block|{
 block|{
+literal|"dockable-popup"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Dialogs Menu"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"dockable-menu"
 block|,
 name|GTK_STOCK_MISSING_IMAGE

@@ -84,6 +84,17 @@ index|[]
 init|=
 block|{
 block|{
+literal|"templates-popup"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Templates Menu"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"templates-create-image"
 block|,
 name|GIMP_STOCK_IMAGE

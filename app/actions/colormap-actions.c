@@ -78,6 +78,17 @@ index|[]
 init|=
 block|{
 block|{
+literal|"colormap-editor-popup"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Indexed Palette Menu"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"colormap-editor-edit-color"
 block|,
 name|GIMP_STOCK_EDIT

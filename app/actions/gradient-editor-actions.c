@@ -102,6 +102,17 @@ index|[]
 init|=
 block|{
 block|{
+literal|"gradient-editor-popup"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Gradient Editor Menu"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"gradient-editor-left-color"
 block|,
 name|NULL

@@ -102,6 +102,17 @@ index|[]
 init|=
 block|{
 block|{
+literal|"gradients-popup"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Gradients Menu"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"gradients-edit"
 block|,
 name|GIMP_STOCK_EDIT

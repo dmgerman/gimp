@@ -84,6 +84,17 @@ index|[]
 init|=
 block|{
 block|{
+literal|"qmask-popup"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"QMask Menu"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"qmask-configure"
 block|,
 name|NULL

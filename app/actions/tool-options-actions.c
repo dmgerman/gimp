@@ -135,6 +135,17 @@ index|[]
 init|=
 block|{
 block|{
+literal|"tool-options-popup"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Tool Options Menu"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"tool-options-save-menu"
 block|,
 name|NULL
@@ -143,28 +154,6 @@ name|N_
 argument_list|(
 literal|"_Save Options to"
 argument_list|)
-block|}
-block|,
-block|{
-literal|"tool-options-save-new"
-block|,
-name|GTK_STOCK_NEW
-block|,
-name|N_
-argument_list|(
-literal|"_New Entry..."
-argument_list|)
-block|,
-literal|""
-block|,
-name|NULL
-block|,
-name|G_CALLBACK
-argument_list|(
-name|tool_options_save_new_cmd_callback
-argument_list|)
-block|,
-name|GIMP_HELP_TOOL_OPTIONS_SAVE
 block|}
 block|,
 block|{
@@ -198,6 +187,28 @@ name|N_
 argument_list|(
 literal|"_Delete Saved Options"
 argument_list|)
+block|}
+block|,
+block|{
+literal|"tool-options-save-new"
+block|,
+name|GTK_STOCK_NEW
+block|,
+name|N_
+argument_list|(
+literal|"_New Entry..."
+argument_list|)
+block|,
+literal|""
+block|,
+name|NULL
+block|,
+name|G_CALLBACK
+argument_list|(
+name|tool_options_save_new_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_TOOL_OPTIONS_SAVE
 block|}
 block|,
 block|{

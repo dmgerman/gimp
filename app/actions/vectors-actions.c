@@ -90,6 +90,17 @@ index|[]
 init|=
 block|{
 block|{
+literal|"vectors-popup"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Paths Menu"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"vectors-path-tool"
 block|,
 name|GIMP_STOCK_TOOL_PATH

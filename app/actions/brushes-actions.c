@@ -96,6 +96,17 @@ index|[]
 init|=
 block|{
 block|{
+literal|"brushes-popup"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Brushes Menu"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"brushes-edit"
 block|,
 name|GIMP_STOCK_EDIT

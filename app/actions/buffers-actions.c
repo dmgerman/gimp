@@ -84,6 +84,17 @@ index|[]
 init|=
 block|{
 block|{
+literal|"buffers-popup"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Buffers Menu"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"buffers-paste"
 block|,
 name|GTK_STOCK_PASTE
@@ -106,7 +117,7 @@ name|GIMP_HELP_BUFFER_PASTE
 block|}
 block|,
 block|{
-literal|"buffers-paste-info"
+literal|"buffers-paste-into"
 block|,
 name|GIMP_STOCK_PASTE_INTO
 block|,

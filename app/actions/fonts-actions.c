@@ -90,6 +90,17 @@ index|[]
 init|=
 block|{
 block|{
+literal|"fonts-popup"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Fonts Menu"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"fonts-refresh"
 block|,
 name|GTK_STOCK_REFRESH

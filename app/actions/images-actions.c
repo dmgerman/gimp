@@ -84,6 +84,17 @@ index|[]
 init|=
 block|{
 block|{
+literal|"images-popup"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Images Menu"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"images-raise-views"
 block|,
 name|GTK_STOCK_GOTO_TOP

@@ -414,6 +414,14 @@ name|palettes_actions_update
 block|}
 block|,
 block|{
+literal|"patterns"
+block|,
+name|patterns_actions_setup
+block|,
+name|patterns_actions_update
+block|}
+block|,
+block|{
 literal|"plug-in"
 block|,
 name|plug_in_actions_setup

@@ -845,7 +845,7 @@ literal|"view-zoom-other"
 block|,
 name|NULL
 block|,
-literal|"/View/Zoom/O_ther..."
+literal|"O_ther..."
 block|,
 name|NULL
 block|,
@@ -1621,7 +1621,7 @@ condition|)
 block|{
 name|action
 operator|=
-literal|"/View/Zoom/Other..."
+literal|"view-zoom-other"
 expr_stmt|;
 name|label
 operator|=

@@ -96,6 +96,17 @@ index|[]
 init|=
 block|{
 block|{
+literal|"patterns-popup"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Patterns Menu"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"patterns-edit"
 block|,
 name|GIMP_STOCK_EDIT

@@ -108,6 +108,17 @@ index|[]
 init|=
 block|{
 block|{
+literal|"toolbox-menubar"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Toolbox Menu"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"image-menubar"
 block|,
 name|NULL

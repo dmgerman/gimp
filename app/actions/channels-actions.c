@@ -90,6 +90,17 @@ index|[]
 init|=
 block|{
 block|{
+literal|"channels-popup"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Channels Menu"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"channels-edit-attributes"
 block|,
 name|GIMP_STOCK_EDIT

@@ -72,6 +72,17 @@ index|[]
 init|=
 block|{
 block|{
+literal|"palette-editor-popup"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Palette Editor Menu"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"palette-editor-edit-color"
 block|,
 name|GIMP_STOCK_EDIT

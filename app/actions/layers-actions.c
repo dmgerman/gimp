@@ -108,6 +108,17 @@ index|[]
 init|=
 block|{
 block|{
+literal|"layers-popup"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Layers Menu"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"layers-menu"
 block|,
 name|NULL

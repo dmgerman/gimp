@@ -84,6 +84,17 @@ index|[]
 init|=
 block|{
 block|{
+literal|"ducuments-popup"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Documents Menu"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"documents-open"
 block|,
 name|GTK_STOCK_OPEN
