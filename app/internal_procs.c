@@ -348,7 +348,7 @@ comment|/* grep -c procedural_db_register internal_procs.c */
 name|gfloat
 name|total_pcount
 init|=
-literal|204
+literal|206
 decl_stmt|;
 name|app_init_update_status
 argument_list|(

@@ -848,9 +848,7 @@ name|title
 argument_list|,
 name|MAX_TITLE_BUF
 argument_list|,
-literal|"%s"
-literal|"-%p"
-literal|".%d (%s)"
+literal|"%s-%d.%d (%s)"
 argument_list|,
 name|prune_filename
 argument_list|(
@@ -860,7 +858,10 @@ name|gimage
 argument_list|)
 argument_list|)
 argument_list|,
+name|pdb_image_to_id
+argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|gimage
 operator|->
@@ -6218,6 +6219,8 @@ decl_stmt|;
 name|GDisplay
 modifier|*
 name|gdisp
+init|=
+name|NULL
 decl_stmt|;
 comment|/*  If the popup shell is valid, then get the gdisplay associated with that shell  */
 name|event
@@ -6253,6 +6256,10 @@ argument_list|(
 name|event_widget
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|display_ht
+condition|)
 name|gdisp
 operator|=
 name|g_hash_table_lookup
