@@ -96,7 +96,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon29740c200108
+DECL|struct|__anon2bf20f1d0108
 typedef|typedef
 struct|struct
 block|{
@@ -555,6 +555,7 @@ name|height_spinbutton
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* resolution is always in DPI, but the value in the spinner may not    * be */
 name|vals
 operator|->
 name|resolution
@@ -568,6 +569,14 @@ operator|->
 name|resolution_spinbutton
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|vals
+operator|->
+name|resolution
+operator|*=
+name|vals
+operator|->
+name|res_unit
 expr_stmt|;
 name|last_new_image
 operator|=
@@ -2251,12 +2260,15 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-comment|/* this is wrong, but until resolution and unit is stored in the image... */
 name|vals
 operator|->
 name|resolution
 operator|=
-name|last_resolution
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|resolution
 expr_stmt|;
 name|vals
 operator|->
@@ -2268,7 +2280,7 @@ name|vals
 operator|->
 name|res_unit
 operator|=
-name|last_res_unit
+literal|1.0
 expr_stmt|;
 block|}
 else|else
@@ -2351,6 +2363,7 @@ name|global_buf
 operator|->
 name|height
 expr_stmt|;
+comment|/* It would be good to set the resolution here, but that would        * require TileManagers to know about the resolution of tiles        * they're dealing with.  It's not clear we want to go down that        * road. -- austin */
 block|}
 name|vals
 operator|->
@@ -2998,6 +3011,10 @@ operator|/
 name|vals
 operator|->
 name|resolution
+operator|*
+name|vals
+operator|->
+name|unit
 expr_stmt|;
 name|adj
 operator|=
@@ -3153,6 +3170,10 @@ operator|/
 name|vals
 operator|->
 name|resolution
+operator|*
+name|vals
+operator|->
+name|unit
 expr_stmt|;
 name|adj
 operator|=
@@ -3458,6 +3479,24 @@ argument_list|,
 name|menu
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|vals
+operator|->
+name|unit
+operator|!=
+literal|1.0
+condition|)
+name|gtk_option_menu_set_history
+argument_list|(
+name|GTK_OPTION_MENU
+argument_list|(
+name|optionmenu
+argument_list|)
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
 name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
@@ -3572,6 +3611,10 @@ argument_list|(
 name|vals
 operator|->
 name|resolution
+operator|/
+name|vals
+operator|->
+name|res_unit
 argument_list|,
 literal|1.0
 argument_list|,
@@ -3800,6 +3843,24 @@ name|optionmenu
 argument_list|)
 argument_list|,
 name|menu
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|vals
+operator|->
+name|res_unit
+operator|!=
+literal|1.0
+condition|)
+name|gtk_option_menu_set_history
+argument_list|(
+name|GTK_OPTION_MENU
+argument_list|(
+name|optionmenu
+argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
