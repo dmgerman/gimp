@@ -263,6 +263,11 @@ DECL|member|min_colors
 name|gint
 name|min_colors
 decl_stmt|;
+DECL|member|color_management
+name|GimpColorConfig
+modifier|*
+name|color_management
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -76,6 +76,12 @@ directive|include
 file|<libgimpconfig/gimpscanner.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimpconfig/gimpcolorconfig.h>
+end_include
+
 begin_endif
 endif|#
 directive|endif

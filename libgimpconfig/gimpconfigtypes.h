@@ -45,6 +45,21 @@ name|GimpConfigWriter
 typedef|;
 end_typedef
 
+begin_include
+include|#
+directive|include
+file|<libgimpconfig/gimpcolorconfig-enums.h>
+end_include
+
+begin_typedef
+DECL|typedef|GimpColorConfig
+typedef|typedef
+name|struct
+name|_GimpColorConfig
+name|GimpColorConfig
+typedef|;
+end_typedef
+
 begin_endif
 endif|#
 directive|endif

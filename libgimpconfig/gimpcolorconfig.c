@@ -134,7 +134,7 @@ define|#
 directive|define
 name|SIMULATION_RENDERING_INTENT_BLURB
 define|\
-value|N_("Sets how colors from workspace to simulation device are converted.")
+value|N_("Sets how colors are converted from workspace to simulation device.")
 end_define
 
 begin_define
@@ -143,7 +143,7 @@ define|#
 directive|define
 name|OPEN_BEHAVIOUR_NO_PROFILE_BLURB
 define|\
-value|N_("Defines what will be done if no color profile is available.")
+value|"Defines what will be done if no color profile is available."
 end_define
 
 begin_define
@@ -152,7 +152,7 @@ define|#
 directive|define
 name|OPEN_BEHAVIOUR_RGB_PROFILE_BLURB
 define|\
-value|N_("Defines what will be done if an RGB profile is available.")
+value|"Defines what will be done if an RGB profile is available."
 end_define
 
 begin_define
@@ -161,12 +161,12 @@ define|#
 directive|define
 name|OPEN_BEHAVIOUR_CMYK_PROFILE_BLURB
 define|\
-value|N_("Defines what will be done if a CMYK profile is available.")
+value|"Defines what will be done if a CMYK profile is available."
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2917185b0103
+DECL|enum|__anon2c65e1700103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -579,57 +579,12 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_OPEN_BEHAVIOUR_NO_PROFILE
-argument_list|,
-literal|"open-behaviour-no-profile"
-argument_list|,
-name|OPEN_BEHAVIOUR_NO_PROFILE_BLURB
-argument_list|,
-name|GIMP_TYPE_COLOR_FILE_OPEN_BEHAVIOUR
-argument_list|,
-name|GIMP_COLOR_FILE_OPEN_ASK
-argument_list|,
+if|#
+directive|if
 literal|0
-argument_list|)
-expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_OPEN_BEHAVIOUR_RGB_PROFILE
-argument_list|,
-literal|"open-behaviour-rgb-profile"
-argument_list|,
-name|OPEN_BEHAVIOUR_RGB_PROFILE_BLURB
-argument_list|,
-name|GIMP_TYPE_COLOR_FILE_OPEN_BEHAVIOUR
-argument_list|,
-name|GIMP_COLOR_FILE_OPEN_ASK
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_ENUM
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_OPEN_BEHAVIOUR_CMYK_PROFILE
-argument_list|,
-literal|"open-behaviour-cmyk-profile"
-argument_list|,
-name|OPEN_BEHAVIOUR_CMYK_PROFILE_BLURB
-argument_list|,
-name|GIMP_TYPE_COLOR_FILE_OPEN_BEHAVIOUR
-argument_list|,
-name|GIMP_COLOR_FILE_OPEN_ASK
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
+block|GIMP_CONFIG_INSTALL_PROP_ENUM (object_class, PROP_OPEN_BEHAVIOUR_NO_PROFILE,                                  "open-behaviour-no-profile",                                  OPEN_BEHAVIOUR_NO_PROFILE_BLURB,                                  GIMP_TYPE_COLOR_FILE_OPEN_BEHAVIOUR,                                  GIMP_COLOR_FILE_OPEN_ASK,                                  0);   GIMP_CONFIG_INSTALL_PROP_ENUM (object_class, PROP_OPEN_BEHAVIOUR_RGB_PROFILE,                                  "open-behaviour-rgb-profile",                                  OPEN_BEHAVIOUR_RGB_PROFILE_BLURB,                                  GIMP_TYPE_COLOR_FILE_OPEN_BEHAVIOUR,                                  GIMP_COLOR_FILE_OPEN_ASK,                                  0);   GIMP_CONFIG_INSTALL_PROP_ENUM (object_class, PROP_OPEN_BEHAVIOUR_CMYK_PROFILE,                                  "open-behaviour-cmyk-profile",                                  OPEN_BEHAVIOUR_CMYK_PROFILE_BLURB,                                  GIMP_TYPE_COLOR_FILE_OPEN_BEHAVIOUR,                                  GIMP_COLOR_FILE_OPEN_ASK,                                  0);
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -856,7 +811,7 @@ name|PROP_DISPLAY_RENDERING_INTENT
 case|:
 name|color_config
 operator|->
-name|display_rendering_intent
+name|display_intent
 operator|=
 name|g_value_get_enum
 argument_list|(
@@ -869,7 +824,7 @@ name|PROP_SIMULATION_RENDERING_INTENT
 case|:
 name|color_config
 operator|->
-name|simulation_rendering_intent
+name|simulation_intent
 operator|=
 name|g_value_get_enum
 argument_list|(
@@ -877,45 +832,12 @@ name|value
 argument_list|)
 expr_stmt|;
 break|break;
-case|case
-name|PROP_OPEN_BEHAVIOUR_NO_PROFILE
-case|:
-name|color_config
-operator|->
-name|open_behaviour_no_profile
-operator|=
-name|g_value_get_enum
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|PROP_OPEN_BEHAVIOUR_RGB_PROFILE
-case|:
-name|color_config
-operator|->
-name|open_behaviour_rgb_profile
-operator|=
-name|g_value_get_enum
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|PROP_OPEN_BEHAVIOUR_CMYK_PROFILE
-case|:
-name|color_config
-operator|->
-name|open_behaviour_cmyk_profile
-operator|=
-name|g_value_get_enum
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
+if|#
+directive|if
+literal|0
+block|case PROP_OPEN_BEHAVIOUR_NO_PROFILE:       color_config->open_behaviour_no_profile = g_value_get_enum (value);       break;     case PROP_OPEN_BEHAVIOUR_RGB_PROFILE:       color_config->open_behaviour_rgb_profile = g_value_get_enum (value);       break;     case PROP_OPEN_BEHAVIOUR_CMYK_PROFILE:       color_config->open_behaviour_cmyk_profile = g_value_get_enum (value);       break;
+endif|#
+directive|endif
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
@@ -1054,7 +976,7 @@ name|value
 argument_list|,
 name|color_config
 operator|->
-name|display_rendering_intent
+name|display_intent
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1067,49 +989,16 @@ name|value
 argument_list|,
 name|color_config
 operator|->
-name|simulation_rendering_intent
+name|simulation_intent
 argument_list|)
 expr_stmt|;
 break|break;
-case|case
-name|PROP_OPEN_BEHAVIOUR_NO_PROFILE
-case|:
-name|g_value_set_enum
-argument_list|(
-name|value
-argument_list|,
-name|color_config
-operator|->
-name|open_behaviour_no_profile
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|PROP_OPEN_BEHAVIOUR_RGB_PROFILE
-case|:
-name|g_value_set_enum
-argument_list|(
-name|value
-argument_list|,
-name|color_config
-operator|->
-name|open_behaviour_rgb_profile
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|PROP_OPEN_BEHAVIOUR_CMYK_PROFILE
-case|:
-name|g_value_set_enum
-argument_list|(
-name|value
-argument_list|,
-name|color_config
-operator|->
-name|open_behaviour_cmyk_profile
-argument_list|)
-expr_stmt|;
-break|break;
+if|#
+directive|if
+literal|0
+block|case PROP_OPEN_BEHAVIOUR_NO_PROFILE:       g_value_set_enum (value, color_config->open_behaviour_no_profile);       break;     case PROP_OPEN_BEHAVIOUR_RGB_PROFILE:       g_value_set_enum (value, color_config->open_behaviour_rgb_profile);       break;     case PROP_OPEN_BEHAVIOUR_CMYK_PROFILE:       g_value_set_enum (value, color_config->open_behaviour_cmyk_profile);       break;
+endif|#
+directive|endif
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
