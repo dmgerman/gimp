@@ -5037,6 +5037,8 @@ operator|!
 name|aux
 operator|&&
 name|lp
+operator|&&
+name|alpha
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
@@ -5050,6 +5052,8 @@ operator|!
 name|aux
 operator|&&
 name|lp
+operator|&&
+name|alpha
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
@@ -5098,6 +5102,8 @@ operator|!
 name|aux
 operator|&&
 name|lp
+operator|&&
+name|alpha
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive

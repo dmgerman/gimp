@@ -6558,6 +6558,8 @@ operator|&&
 name|gimage
 operator|&&
 name|lp
+operator|&&
+name|alpha
 argument_list|)
 expr_stmt|;
 name|ops_button_set_sensitive
@@ -6574,6 +6576,8 @@ operator|&&
 name|gimage
 operator|&&
 name|lp
+operator|&&
+name|alpha
 argument_list|)
 expr_stmt|;
 comment|/* lower layer */
@@ -6593,6 +6597,8 @@ operator|&&
 name|gimage
 operator|&&
 name|lp
+operator|&&
+name|alpha
 argument_list|)
 expr_stmt|;
 name|ops_button_set_sensitive
@@ -6609,6 +6615,8 @@ operator|&&
 name|gimage
 operator|&&
 name|lp
+operator|&&
+name|alpha
 argument_list|)
 expr_stmt|;
 comment|/* duplicate layer */
@@ -6848,6 +6856,8 @@ operator|&&
 name|gimage
 operator|&&
 name|lp
+operator|&&
+name|alpha
 argument_list|)
 expr_stmt|;
 comment|/* mask select */
