@@ -2710,6 +2710,10 @@ if|if
 condition|(
 name|proc_def
 operator|->
+name|menu_label
+operator|||
+name|proc_def
+operator|->
 name|menu_paths
 condition|)
 name|gimp_menus_create_entry
@@ -2717,6 +2721,8 @@ argument_list|(
 name|gimp
 argument_list|,
 name|proc_def
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2787,6 +2793,10 @@ condition|)
 block|{
 if|if
 condition|(
+name|proc_def
+operator|->
+name|menu_label
+operator|||
 name|proc_def
 operator|->
 name|menu_paths

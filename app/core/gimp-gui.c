@@ -1203,7 +1203,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_menus_create_entry (Gimp * gimp,PlugInProcDef * proc_def)
+DECL|function|gimp_menus_create_entry (Gimp * gimp,PlugInProcDef * proc_def,const gchar * menu_path)
 name|gimp_menus_create_entry
 parameter_list|(
 name|Gimp
@@ -1213,6 +1213,11 @@ parameter_list|,
 name|PlugInProcDef
 modifier|*
 name|proc_def
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|menu_path
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1247,6 +1252,8 @@ argument_list|(
 name|gimp
 argument_list|,
 name|proc_def
+argument_list|,
+name|menu_path
 argument_list|)
 expr_stmt|;
 block|}
