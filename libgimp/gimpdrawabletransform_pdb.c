@@ -20,12 +20,12 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_drawable_transform_flip:  * @drawable_ID: The affected drawable.  * @flip_type: Type of flip.  * @center: Whether to automatically position the axis in the image center.  * @axis: coord. of flip axis.  * @transform_direction: Direction of Transformation.  * @clip_result: Whether to clip results.  *  * Flip the specified drawable either vertically or horizontally.  *  * This procedure flips the specified drawable if no selection exists.  * If a selection exists, the portion of the drawable which lies under  * the selection is cut from the drawable and made into a floating  * selection which is then flipped. If center is set to true, the flip  * is around the image center. Otherwise, the coordinate of the axis  * needs to be specified. The return value is the ID of the flipped  * drawable. If there was no selection, this will be equal to the  * drawable ID supplied as input. Otherwise, this will be the newly  * created and flipped drawable.  *  * Returns: The flipped drawable.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_drawable_transform_flip:  * @drawable_ID: The affected drawable.  * @flip_type: Type of flip.  * @auto_center: Whether to automatically position the axis in the selection center.  * @axis: coord. of flip axis.  * @clip_result: Whether to clip results.  *  * Flip the specified drawable either vertically or horizontally.  *  * This procedure flips the specified drawable if no selection exists.  * If a selection exists, the portion of the drawable which lies under  * the selection is cut from the drawable and made into a floating  * selection which is then flipped. If auto_center is set to true, the  * flip is around the selection's center. Otherwise, the coordinate of  * the axis needs to be specified. The return value is the ID of the  * flipped drawable. If there was no selection, this will be equal to  * the drawable ID supplied as input. Otherwise, this will be the newly  * created and flipped drawable.  *  * Returns: The flipped drawable.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_drawable_transform_flip (gint32 drawable_ID,GimpOrientationType flip_type,gboolean center,gdouble axis,GimpTransformDirection transform_direction,gboolean clip_result)
+DECL|function|gimp_drawable_transform_flip (gint32 drawable_ID,GimpOrientationType flip_type,gboolean auto_center,gdouble axis,gboolean clip_result)
 name|gimp_drawable_transform_flip
 parameter_list|(
 name|gint32
@@ -35,13 +35,10 @@ name|GimpOrientationType
 name|flip_type
 parameter_list|,
 name|gboolean
-name|center
+name|auto_center
 parameter_list|,
 name|gdouble
 name|axis
-parameter_list|,
-name|GimpTransformDirection
-name|transform_direction
 parameter_list|,
 name|gboolean
 name|clip_result
@@ -79,15 +76,11 @@ name|flip_type
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
-name|center
+name|auto_center
 argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
 name|axis
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|transform_direction
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -446,19 +439,136 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_transform_rotate:  * @drawable_ID: The affected drawable.  * @angle: The angle of rotation (radians).  * @center_x: The hor. coordinate of the center of rotation.  * @center_y: The vert. coordinate of the center of rotation.  * @transform_direction: Direction of Transformation.  * @interpolation: Type of interpolation.  * @supersample: Whether to perform supersample.  * @recursion_level: Level of recursion (3 is a nice default).  * @clip_result: Whether to clip results.  *  * Rotate the specified drawable about given coordinates through the  * specified angle.  *  * This function rotates the specified drawable if no selection exists.  * If a selection exists, the portion of the drawable which lies under  * the selection is cut from the drawable and made into a floating  * selection which is then rotated by the specified amount. The return  * value is the ID of the rotated drawable. If there was no selection,  * this will be equal to the drawable ID supplied as input. Otherwise,  * this will be the newly created and rotated drawable.  *  * Returns: The rotated drawable.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_drawable_transform_rotate:  * @drawable_ID: The affected drawable.  * @rotate_type: Type of rotation.  * @auto_center: Whether to automatically rotate around the selection center.  * @center_x: The hor. coordinate of the center of rotation.  * @center_y: The vert. coordinate of the center of rotation.  * @clip_result: Whether to clip results.  *  * Rotate the specified drawable about given coordinates through the  * specified angle.  *  * This function rotates the specified drawable if no selection exists.  * If a selection exists, the portion of the drawable which lies under  * the selection is cut from the drawable and made into a floating  * selection which is then rotated by the specified amount. The return  * value is the ID of the rotated drawable. If there was no selection,  * this will be equal to the drawable ID supplied as input. Otherwise,  * this will be the newly created and rotated drawable.  *  * Returns: The rotated drawable.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_drawable_transform_rotate (gint32 drawable_ID,gdouble angle,gint center_x,gint center_y,GimpTransformDirection transform_direction,GimpInterpolationType interpolation,gboolean supersample,gint recursion_level,gboolean clip_result)
+DECL|function|gimp_drawable_transform_rotate (gint32 drawable_ID,GimpRotationType rotate_type,gboolean auto_center,gint center_x,gint center_y,gboolean clip_result)
 name|gimp_drawable_transform_rotate
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|,
+name|GimpRotationType
+name|rotate_type
+parameter_list|,
+name|gboolean
+name|auto_center
+parameter_list|,
+name|gint
+name|center_x
+parameter_list|,
+name|gint
+name|center_y
+parameter_list|,
+name|gboolean
+name|clip_result
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gint32
+name|ret_drawable_ID
+init|=
+operator|-
+literal|1
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp_drawable_transform_rotate"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_DRAWABLE
+argument_list|,
+name|drawable_ID
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|rotate_type
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|auto_center
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|center_x
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|center_y
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|clip_result
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+name|ret_drawable_ID
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_drawable
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|ret_drawable_ID
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_drawable_transform_rotate_free:  * @drawable_ID: The affected drawable.  * @angle: The angle of rotation (radians).  * @auto_center: Whether to automatically rotate around the selection center.  * @center_x: The hor. coordinate of the center of rotation.  * @center_y: The vert. coordinate of the center of rotation.  * @transform_direction: Direction of Transformation.  * @interpolation: Type of interpolation.  * @supersample: Whether to perform supersample.  * @recursion_level: Level of recursion (3 is a nice default).  * @clip_result: Whether to clip results.  *  * Rotate the specified drawable about given coordinates through the  * specified angle.  *  * This function rotates the specified drawable if no selection exists.  * If a selection exists, the portion of the drawable which lies under  * the selection is cut from the drawable and made into a floating  * selection which is then rotated by the specified amount. The return  * value is the ID of the rotated drawable. If there was no selection,  * this will be equal to the drawable ID supplied as input. Otherwise,  * this will be the newly created and rotated drawable.  *  * Returns: The rotated drawable.  *  * Since: GIMP 2.2  */
+end_comment
+
+begin_function
+name|gint32
+DECL|function|gimp_drawable_transform_rotate_free (gint32 drawable_ID,gdouble angle,gboolean auto_center,gint center_x,gint center_y,GimpTransformDirection transform_direction,GimpInterpolationType interpolation,gboolean supersample,gint recursion_level,gboolean clip_result)
+name|gimp_drawable_transform_rotate_free
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gboolean
+name|auto_center
 parameter_list|,
 name|gint
 name|center_x
@@ -499,7 +609,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_transform_rotate"
+literal|"gimp_drawable_transform_rotate_free"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -511,6 +621,10 @@ argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
 name|angle
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|auto_center
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
