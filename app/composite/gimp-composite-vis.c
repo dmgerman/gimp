@@ -14,12 +14,16 @@ if|#
 directive|if
 name|defined
 argument_list|(
-name|sparc
+name|USE_VIS
 argument_list|)
-operator|||
+end_if
+
+begin_if
+if|#
+directive|if
 name|defined
 argument_list|(
-name|__sparc__
+name|ARCH_SPARC
 argument_list|)
 end_if
 
@@ -76,7 +80,16 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* defined(sparc) || defined(__sparc__) */
+comment|/* defined(ARCH_SPARC) */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* defined(USE_VIS) */
 end_comment
 
 begin_function
