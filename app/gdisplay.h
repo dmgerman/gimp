@@ -186,6 +186,36 @@ parameter_list|)
 value|((int)(y / SCALEFACTOR_Y(g)))
 end_define
 
+begin_comment
+comment|/* (and float-returning versions) */
+end_comment
+
+begin_define
+DECL|macro|FUNSCALEX (g,x)
+define|#
+directive|define
+name|FUNSCALEX
+parameter_list|(
+name|g
+parameter_list|,
+name|x
+parameter_list|)
+value|((x / SCALEFACTOR_X(g)))
+end_define
+
+begin_define
+DECL|macro|FUNSCALEY (g,y)
+define|#
+directive|define
+name|FUNSCALEY
+parameter_list|(
+name|g
+parameter_list|,
+name|y
+parameter_list|)
+value|((y / SCALEFACTOR_Y(g)))
+end_define
+
 begin_define
 DECL|macro|LOWPASS (x)
 define|#

@@ -3238,18 +3238,8 @@ operator||
 name|GDK_BUTTON_RELEASE_MASK
 argument_list|)
 expr_stmt|;
-name|gtk_ruler_set_metric
-argument_list|(
-name|GTK_RULER
-argument_list|(
-name|gdisp
-operator|->
-name|hrule
-argument_list|)
-argument_list|,
-name|ruler_units
-argument_list|)
-expr_stmt|;
+comment|/* Still need to sort out the best way of using this metrics stuff.    * For the moment, we do everything in terms of pixels    *    -- austin 25/Jan/99 */
+comment|/*gtk_ruler_set_metric (GTK_RULER (gdisp->hrule), ruler_units);*/
 name|gtk_signal_connect_object
 argument_list|(
 name|GTK_OBJECT
@@ -3326,18 +3316,7 @@ operator||
 name|GDK_BUTTON_RELEASE_MASK
 argument_list|)
 expr_stmt|;
-name|gtk_ruler_set_metric
-argument_list|(
-name|GTK_RULER
-argument_list|(
-name|gdisp
-operator|->
-name|vrule
-argument_list|)
-argument_list|,
-name|ruler_units
-argument_list|)
-expr_stmt|;
+comment|/*gtk_ruler_set_metric (GTK_RULER (gdisp->vrule), ruler_units);*/
 name|gtk_signal_connect_object
 argument_list|(
 name|GTK_OBJECT
