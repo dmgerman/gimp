@@ -74,7 +74,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a9cc66e0103
+DECL|enum|__anon2c2fc2f50103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a9cc66e0203
+DECL|enum|__anon2c2fc2f50203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -191,7 +191,7 @@ comment|/*======================================================================
 end_comment
 
 begin_struct
-DECL|struct|__anon2a9cc66e0308
+DECL|struct|__anon2c2fc2f50308
 specifier|static
 struct|struct
 block|{
@@ -212,7 +212,7 @@ DECL|member|drawable_has_alpha
 name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
-DECL|struct|__anon2a9cc66e0408
+DECL|struct|__anon2c2fc2f50408
 struct|struct
 block|{
 DECL|member|x0
@@ -581,7 +581,7 @@ comment|/*======================================================================
 end_comment
 
 begin_struct
-DECL|struct|__anon2a9cc66e0508
+DECL|struct|__anon2c2fc2f50508
 specifier|static
 struct|struct
 block|{
@@ -2891,7 +2891,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Ok"
+literal|"OK"
 argument_list|)
 argument_list|)
 expr_stmt|;
