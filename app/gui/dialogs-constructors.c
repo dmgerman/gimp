@@ -3212,20 +3212,26 @@ end_function
 
 begin_function
 name|void
-DECL|function|dialogs_edit_brush_func (GimpData * data)
+DECL|function|dialogs_edit_brush_func (GimpData * data,GtkWidget * parent)
 name|dialogs_edit_brush_func
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|global_dock_factory
 argument_list|,
-name|gdk_screen_get_default
-argument_list|()
+name|gtk_widget_get_screen
+argument_list|(
+name|parent
+argument_list|)
 argument_list|,
 literal|"gimp-brush-editor"
 argument_list|,
@@ -3314,20 +3320,26 @@ end_function
 
 begin_function
 name|void
-DECL|function|dialogs_edit_gradient_func (GimpData * data)
+DECL|function|dialogs_edit_gradient_func (GimpData * data,GtkWidget * parent)
 name|dialogs_edit_gradient_func
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|global_dock_factory
 argument_list|,
-name|gdk_screen_get_default
-argument_list|()
+name|gtk_widget_get_screen
+argument_list|(
+name|parent
+argument_list|)
 argument_list|,
 literal|"gimp-gradient-editor"
 argument_list|,
@@ -3416,20 +3428,26 @@ end_function
 
 begin_function
 name|void
-DECL|function|dialogs_edit_palette_func (GimpData * data)
+DECL|function|dialogs_edit_palette_func (GimpData * data,GtkWidget * parent)
 name|dialogs_edit_palette_func
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|global_dock_factory
 argument_list|,
-name|gdk_screen_get_default
-argument_list|()
+name|gtk_widget_get_screen
+argument_list|(
+name|parent
+argument_list|)
 argument_list|,
 literal|"gimp-palette-editor"
 argument_list|,

@@ -1110,6 +1110,11 @@ operator|->
 name|data_edit_func
 argument_list|(
 name|data
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

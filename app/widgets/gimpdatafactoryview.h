@@ -34,6 +34,10 @@ parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_typedef

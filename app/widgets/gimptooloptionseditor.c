@@ -935,8 +935,13 @@ name|height
 decl_stmt|;
 name|screen
 operator|=
-name|gdk_screen_get_default
-argument_list|()
+name|gtk_widget_get_screen
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|docked
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_icon_size_lookup_for_settings
 argument_list|(
