@@ -35,7 +35,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a152230103
+DECL|enum|__anon2a99c0e10103
 block|{
 DECL|enumerator|GIMP_IMAGEFILE_STATE_UNKNOWN
 name|GIMP_IMAGEFILE_STATE_UNKNOWN
@@ -247,7 +247,7 @@ name|GimpImagefile
 modifier|*
 name|imagefile
 parameter_list|,
-name|GimpThumbnailSize
+name|gint
 name|size
 parameter_list|)
 function_decl|;
@@ -261,7 +261,7 @@ name|GimpImagefile
 modifier|*
 name|imagefile
 parameter_list|,
-name|GimpThumbnailSize
+name|gint
 name|size
 parameter_list|)
 function_decl|;

@@ -245,17 +245,9 @@ name|TAG_THUMB_GIMP_LAYERS
 value|"tEXt::Thumb::X-GIMP::Layers"
 end_define
 
-begin_define
-DECL|macro|GIMP_IMAGEFILE_THUMB_SIZE_FAIL
-define|#
-directive|define
-name|GIMP_IMAGEFILE_THUMB_SIZE_FAIL
-value|-1
-end_define
-
 begin_enum
 enum|enum
-DECL|enum|__anon278588330103
+DECL|enum|__anon296176480103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -269,7 +261,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278588330208
+DECL|struct|__anon296176480208
 block|{
 DECL|member|dirname
 specifier|const
@@ -559,6 +551,14 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_define
+DECL|macro|THUMB_SIZE_FAIL
+define|#
+directive|define
+name|THUMB_SIZE_FAIL
+value|-1
+end_define
+
 begin_decl_stmt
 DECL|variable|thumb_sizes
 specifier|static
@@ -571,19 +571,19 @@ block|{
 block|{
 literal|"fail"
 block|,
-name|GIMP_IMAGEFILE_THUMB_SIZE_FAIL
+name|THUMB_SIZE_FAIL
 block|}
 block|,
 block|{
 literal|"normal"
 block|,
-name|GIMP_THUMBNAIL_SIZE_NORMAL
+literal|128
 block|}
 block|,
 block|{
 literal|"large"
 block|,
-name|GIMP_THUMBNAIL_SIZE_LARGE
+literal|256
 block|}
 block|}
 decl_stmt|;
@@ -1107,14 +1107,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_imagefile_update (GimpImagefile * imagefile,GimpThumbnailSize size)
+DECL|function|gimp_imagefile_update (GimpImagefile * imagefile,gint size)
 name|gimp_imagefile_update
 parameter_list|(
 name|GimpImagefile
 modifier|*
 name|imagefile
 parameter_list|,
-name|GimpThumbnailSize
+name|gint
 name|size
 parameter_list|)
 block|{
@@ -1134,8 +1134,8 @@ expr_stmt|;
 if|if
 condition|(
 name|size
-operator|==
-name|GIMP_THUMBNAIL_SIZE_NONE
+operator|<
+literal|1
 condition|)
 return|return;
 name|uri
@@ -1168,7 +1168,7 @@ decl_stmt|;
 name|gint
 name|thumb_size
 init|=
-name|GIMP_IMAGEFILE_THUMB_SIZE_FAIL
+name|THUMB_SIZE_FAIL
 decl_stmt|;
 name|off_t
 name|image_size
@@ -1371,14 +1371,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_imagefile_create_thumbnail (GimpImagefile * imagefile,GimpThumbnailSize size)
+DECL|function|gimp_imagefile_create_thumbnail (GimpImagefile * imagefile,gint size)
 name|gimp_imagefile_create_thumbnail
 parameter_list|(
 name|GimpImagefile
 modifier|*
 name|imagefile
 parameter_list|,
-name|GimpThumbnailSize
+name|gint
 name|size
 parameter_list|)
 block|{
@@ -1661,7 +1661,7 @@ name|gimp_imagefile_png_thumb_path
 argument_list|(
 name|uri
 argument_list|,
-name|GIMP_IMAGEFILE_THUMB_SIZE_FAIL
+name|THUMB_SIZE_FAIL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1921,8 +1921,8 @@ expr_stmt|;
 if|if
 condition|(
 name|thumb_size
-operator|==
-name|GIMP_THUMBNAIL_SIZE_NONE
+operator|<
+literal|1
 condition|)
 return|return
 name|TRUE
@@ -3067,7 +3067,7 @@ decl_stmt|;
 name|gint
 name|thumb_size
 init|=
-name|GIMP_IMAGEFILE_THUMB_SIZE_FAIL
+name|THUMB_SIZE_FAIL
 decl_stmt|;
 specifier|const
 name|gchar
@@ -3311,7 +3311,7 @@ if|if
 condition|(
 name|thumb_size
 operator|==
-name|GIMP_IMAGEFILE_THUMB_SIZE_FAIL
+name|THUMB_SIZE_FAIL
 condition|)
 name|imagefile
 operator|->
@@ -3331,7 +3331,7 @@ if|if
 condition|(
 name|thumb_size
 operator|==
-name|GIMP_IMAGEFILE_THUMB_SIZE_FAIL
+name|THUMB_SIZE_FAIL
 condition|)
 block|{
 name|gimp_imagefile_set_info
@@ -4192,7 +4192,7 @@ if|if
 condition|(
 name|size
 operator|==
-name|GIMP_IMAGEFILE_THUMB_SIZE_FAIL
+name|THUMB_SIZE_FAIL
 condition|)
 block|{
 name|i
