@@ -1587,11 +1587,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_display_flush
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 return|return;
 block|}
 comment|/*  the new options structure  */

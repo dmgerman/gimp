@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dc19440103
+DECL|enum|__anon28b1f0bb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -171,7 +171,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dc19440203
+DECL|enum|__anon28b1f0bb0203
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -4081,6 +4081,13 @@ name|GTK_WIDGET
 argument_list|(
 name|view
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_image_flush
+argument_list|(
+name|view
+operator|->
+name|gimage
 argument_list|)
 expr_stmt|;
 block|}

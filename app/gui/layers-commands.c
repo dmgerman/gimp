@@ -2707,11 +2707,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_image_flush
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
 name|gimage
