@@ -180,11 +180,11 @@ decl_stmt|,
 name|h
 decl_stmt|;
 DECL|member|scalex
-name|gfloat
+name|gdouble
 name|scalex
 decl_stmt|;
 DECL|member|scaley
-name|gfloat
+name|gdouble
 name|scaley
 decl_stmt|;
 DECL|member|src_x
@@ -1246,7 +1246,7 @@ parameter_list|,
 name|gint
 name|start
 parameter_list|,
-name|gfloat
+name|gdouble
 name|scalex
 parameter_list|)
 function_decl|;
@@ -3700,7 +3700,7 @@ operator|->
 name|src_x
 operator|=
 operator|(
-name|gfloat
+name|gdouble
 operator|)
 name|info
 operator|->
@@ -3715,7 +3715,7 @@ operator|->
 name|src_y
 operator|=
 operator|(
-name|gfloat
+name|gdouble
 operator|)
 name|info
 operator|->
@@ -3934,7 +3934,7 @@ begin_function
 specifier|static
 name|guchar
 modifier|*
-DECL|function|render_image_accelerate_scaling (gint width,gint start,gfloat scalex)
+DECL|function|render_image_accelerate_scaling (gint width,gint start,gdouble scalex)
 name|render_image_accelerate_scaling
 parameter_list|(
 name|gint
@@ -3943,7 +3943,7 @@ parameter_list|,
 name|gint
 name|start
 parameter_list|,
-name|gfloat
+name|gdouble
 name|scalex
 parameter_list|)
 block|{
