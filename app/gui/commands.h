@@ -1151,7 +1151,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|dialogs_test_image_container_view_cmd_callback
+name|dialogs_test_image_container_list_view_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1163,7 +1163,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|dialogs_test_pattern_container_view_cmd_callback
+name|dialogs_test_pattern_container_list_view_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1175,7 +1175,43 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|dialogs_test_brush_container_view_cmd_callback
+name|dialogs_test_brush_container_list_view_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|dialogs_test_image_container_grid_view_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|dialogs_test_pattern_container_grid_view_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|dialogs_test_brush_container_grid_view_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*

@@ -97,6 +97,14 @@ name|GtkWidget
 modifier|*
 name|gtk_list
 decl_stmt|;
+DECL|member|preview_width
+name|gint
+name|preview_width
+decl_stmt|;
+DECL|member|preview_height
+name|gint
+name|preview_height
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -131,6 +139,12 @@ parameter_list|(
 name|GimpContainer
 modifier|*
 name|container
+parameter_list|,
+name|gint
+name|preview_width
+parameter_list|,
+name|gint
+name|preview_height
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_CONTAINER_LIST_VIEW_H__
+name|__GIMP_CONTAINER_GRID_VIEW_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_CONTAINER_LIST_VIEW_H__
+DECL|macro|__GIMP_CONTAINER_GRID_VIEW_H__
 define|#
 directive|define
-name|__GIMP_CONTAINER_LIST_VIEW_H__
+name|__GIMP_CONTAINER_GRID_VIEW_H__
 end_define
 
 begin_include
@@ -23,79 +23,79 @@ file|"gimpcontainerview.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_CONTAINER_LIST_VIEW
+DECL|macro|GIMP_TYPE_CONTAINER_GRID_VIEW
 define|#
 directive|define
-name|GIMP_TYPE_CONTAINER_LIST_VIEW
-value|(gimp_container_list_view_get_type ())
+name|GIMP_TYPE_CONTAINER_GRID_VIEW
+value|(gimp_container_grid_view_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_CONTAINER_LIST_VIEW (obj)
+DECL|macro|GIMP_CONTAINER_GRID_VIEW (obj)
 define|#
 directive|define
-name|GIMP_CONTAINER_LIST_VIEW
+name|GIMP_CONTAINER_GRID_VIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_CONTAINER_LIST_VIEW, GimpContainerListView))
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_CONTAINER_GRID_VIEW, GimpContainerGridView))
 end_define
 
 begin_define
-DECL|macro|GIMP_CONTAINER_LIST_VIEW_CLASS (klass)
+DECL|macro|GIMP_CONTAINER_GRID_VIEW_CLASS (klass)
 define|#
 directive|define
-name|GIMP_CONTAINER_LIST_VIEW_CLASS
+name|GIMP_CONTAINER_GRID_VIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CONTAINER_LIST_VIEW, GimpContainerListViewClass))
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CONTAINER_GRID_VIEW, GimpContainerGridViewClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_CONTAINER_LIST_VIEW (obj)
+DECL|macro|GIMP_IS_CONTAINER_GRID_VIEW (obj)
 define|#
 directive|define
-name|GIMP_IS_CONTAINER_LIST_VIEW
+name|GIMP_IS_CONTAINER_GRID_VIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_CONTAINER_LIST_VIEW))
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_CONTAINER_GRID_VIEW))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_CONTAINER_LIST_VIEW_CLASS (klass)
+DECL|macro|GIMP_IS_CONTAINER_GRID_VIEW_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_CONTAINER_LIST_VIEW_CLASS
+name|GIMP_IS_CONTAINER_GRID_VIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONTAINER_LIST_VIEW))
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONTAINER_GRID_VIEW))
 end_define
 
 begin_typedef
-DECL|typedef|GimpContainerListViewClass
+DECL|typedef|GimpContainerGridViewClass
 typedef|typedef
 name|struct
-name|_GimpContainerListViewClass
-name|GimpContainerListViewClass
+name|_GimpContainerGridViewClass
+name|GimpContainerGridViewClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpContainerListView
+DECL|struct|_GimpContainerGridView
 struct|struct
-name|_GimpContainerListView
+name|_GimpContainerGridView
 block|{
 DECL|member|parent_instance
 name|GimpContainerView
 name|parent_instance
 decl_stmt|;
-DECL|member|gtk_list
+DECL|member|wrapbox
 name|GtkWidget
 modifier|*
-name|gtk_list
+name|wrapbox
 decl_stmt|;
 DECL|member|preview_width
 name|gint
@@ -110,9 +110,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpContainerListViewClass
+DECL|struct|_GimpContainerGridViewClass
 struct|struct
-name|_GimpContainerListViewClass
+name|_GimpContainerGridViewClass
 block|{
 DECL|member|parent_class
 name|GimpContainerViewClass
@@ -124,7 +124,7 @@ end_struct
 
 begin_function_decl
 name|GtkType
-name|gimp_container_list_view_get_type
+name|gimp_container_grid_view_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -134,7 +134,7 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_container_list_view_new
+name|gimp_container_grid_view_new
 parameter_list|(
 name|GimpContainer
 modifier|*
@@ -155,7 +155,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_CONTAINER_LIST_VIEW_H__  */
+comment|/*  __GIMP_CONTAINER_GRID_VIEW_H__  */
 end_comment
 
 end_unit

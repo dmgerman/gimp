@@ -120,6 +120,12 @@ parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
 parameter_list|)
 function_decl|;
 ifdef|#
