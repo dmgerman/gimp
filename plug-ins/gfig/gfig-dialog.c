@@ -544,7 +544,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf7bcb60108
+DECL|struct|__anon28b88eda0108
 block|{
 DECL|member|gridspacing
 name|void
@@ -963,20 +963,6 @@ name|GtkWidget
 modifier|*
 name|vbox
 decl_stmt|;
-name|gint
-name|tmpwidth
-decl_stmt|,
-name|tmpheight
-decl_stmt|;
-name|gint
-name|bpp
-decl_stmt|,
-name|rowstride
-decl_stmt|;
-name|guchar
-modifier|*
-name|back_data
-decl_stmt|;
 name|GFigObj
 modifier|*
 name|gfig
@@ -1042,15 +1028,7 @@ operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
-name|tmpwidth
-operator|=
-name|preview_width
-expr_stmt|;
-name|tmpheight
-operator|=
-name|preview_height
-expr_stmt|;
-comment|/*     * See if there is a "gfig" parasite.  If so, this is a gfig layer,    * and we start by clearing it to transparent.    * If not, we create a new transparent layer.    */
+comment|/*    * See if there is a "gfig" parasite.  If so, this is a gfig layer,    * and we start by clearing it to transparent.    * If not, we create a new transparent layer.    */
 name|gfig_list
 operator|=
 name|NULL
@@ -1244,26 +1222,6 @@ name|gfig_context
 operator|->
 name|drawable_id
 argument_list|)
-expr_stmt|;
-comment|/*    * Make a thumbnail of the image to use as a background for the preview.    */
-comment|/*   back_data = gimp_image_get_thumbnail_data (gfig_context->image_id, */
-comment|/*&tmpwidth,&tmpheight,&bpp); */
-comment|/*   rowstride = tmpwidth * bpp; */
-comment|/*   /\* we only handle RGB because GdkPixbuf doesn't do grayscale *\/ */
-comment|/*   if (bpp == 3) */
-comment|/*     back_pixbuf = gdk_pixbuf_new_from_data (back_data, GDK_COLORSPACE_RGB, FALSE, */
-comment|/*                                             8, tmpwidth, tmpheight, rowstride,  */
-comment|/*                                             NULL, NULL); */
-comment|/*   else if (bpp == 4) */
-comment|/*     back_pixbuf = gdk_pixbuf_new_from_data (back_data, GDK_COLORSPACE_RGB, TRUE, */
-comment|/*                                             8, tmpwidth, tmpheight, rowstride,  */
-comment|/*                                             NULL, NULL); */
-comment|/*   back_pixbuf = gimp_image_get_thumbnail (gfig_context->image_id, */
-comment|/*                                        tmpwidth, tmpheight, */
-comment|/*                                        GIMP_PIXBUF_LARGE_CHECKS); */
-name|back_pixbuf
-operator|=
-name|NULL
 expr_stmt|;
 name|gfig_stock_init
 argument_list|()
@@ -7911,7 +7869,12 @@ comment|/*   gfig_style_apply (&gfig_context->gimp_style); */
 name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
-name|g_free
+if|if
+condition|(
+name|back_pixbuf
+condition|)
+block|{
+name|g_object_unref
 argument_list|(
 name|back_pixbuf
 argument_list|)
@@ -7920,6 +7883,7 @@ name|back_pixbuf
 operator|=
 name|NULL
 expr_stmt|;
+block|}
 name|gfig_preview_expose
 argument_list|(
 name|gfig_context

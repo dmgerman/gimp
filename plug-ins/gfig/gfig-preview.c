@@ -1609,9 +1609,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_background ()
+DECL|function|draw_background (void)
 name|draw_background
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
