@@ -4159,7 +4159,7 @@ name|lastx
 decl_stmt|,
 name|lasty
 decl_stmt|;
-name|int
+name|gint32
 name|newx
 decl_stmt|,
 name|newy
@@ -5415,7 +5415,8 @@ name|cd
 decl_stmt|;
 name|int
 name|i
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|index
 decl_stmt|;
 name|cd

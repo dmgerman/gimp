@@ -82,6 +82,18 @@ DECL|variable|doing_update
 comment|/* Prevent multiple keypresses  				      from unsetting me. 				   */
 end_comment
 
+begin_decl_stmt
+specifier|extern
+name|GtkWidget
+modifier|*
+name|fileload
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/* It's in fileops.c       */
+end_comment
+
 begin_comment
 comment|/* State of individual dialogs */
 end_comment
@@ -100,7 +112,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon27cba7c10103
+DECL|enum|__anon2893cffd0103
 typedef|typedef
 enum|enum
 block|{
@@ -145,7 +157,7 @@ comment|/* ie how many times we have pressed the tab key */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27cba7c10203
+DECL|enum|__anon2893cffd0203
 typedef|typedef
 enum|enum
 block|{
@@ -513,6 +525,26 @@ name|GDK_WATCH
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|fileload
+operator|&&
+name|GTK_WIDGET_VISIBLE
+argument_list|(
+name|fileload
+argument_list|)
+condition|)
+block|{
+name|change_win_cursor
+argument_list|(
+name|fileload
+operator|->
+name|window
+argument_list|,
+name|GDK_WATCH
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -594,6 +626,24 @@ argument_list|(
 name|toolbox_shell
 operator|->
 name|d
+operator|->
+name|window
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|fileload
+operator|&&
+name|GTK_WIDGET_VISIBLE
+argument_list|(
+name|fileload
+argument_list|)
+condition|)
+block|{
+name|unset_win_cursor
+argument_list|(
+name|fileload
 operator|->
 name|window
 argument_list|)

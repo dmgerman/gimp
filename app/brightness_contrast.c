@@ -597,7 +597,7 @@ name|h
 decl_stmt|,
 name|b
 decl_stmt|;
-name|int
+name|gint32
 name|value
 decl_stmt|;
 name|int

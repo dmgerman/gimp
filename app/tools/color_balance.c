@@ -3406,7 +3406,8 @@ index|]
 decl_stmt|;
 name|int
 name|i
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|r_n
 decl_stmt|,
 name|g_n

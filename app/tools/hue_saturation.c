@@ -1140,12 +1140,6 @@ argument_list|,
 literal|255
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|saturation_transfer[hue][i] = (unsigned char) (CLAMP0255 ((i * (255 + value)) / 255));
-else|#
-directive|else
 if|if
 condition|(
 name|value
@@ -1207,8 +1201,6 @@ operator|/
 literal|255
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 block|}
 block|}
 end_function
