@@ -196,7 +196,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290cec8f0103
+DECL|enum|__anon2c2e6a920103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -4774,6 +4774,12 @@ modifier|*
 name|iwd
 parameter_list|)
 block|{
+name|iwd
+operator|->
+name|timer_id
+operator|=
+literal|0
+expr_stmt|;
 name|gtk_idle_add
 argument_list|(
 operator|(
