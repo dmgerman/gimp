@@ -2724,7 +2724,7 @@ name|GIMP_UNDO_GROUP_IMAGE_QMASK
 block|,
 name|N_
 argument_list|(
-literal|"QuickMask"
+literal|"Quick Mask"
 argument_list|)
 block|,
 literal|"group-image-qmask"

@@ -84,7 +84,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"QuickMask Menu"
+literal|"Quick Mask Menu"
 argument_list|)
 block|,
 name|NULL
@@ -136,7 +136,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"_QuickMask Active"
+literal|"_Quick Mask Active"
 argument_list|)
 block|,
 name|NULL
@@ -160,7 +160,7 @@ name|GIMP_STOCK_QMASK_ON
 block|,
 name|N_
 argument_list|(
-literal|"Toggle _QuickMask"
+literal|"Toggle _Quick Mask"
 argument_list|)
 block|,
 literal|"<shift>Q"

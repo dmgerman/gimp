@@ -173,7 +173,7 @@ name|GIMP_UNDO_GROUP_IMAGE_QMASK
 argument_list|,
 name|_
 argument_list|(
-literal|"Enable QuickMask"
+literal|"Enable Quick Mask"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -343,7 +343,7 @@ name|GIMP_UNDO_GROUP_IMAGE_QMASK
 argument_list|,
 name|_
 argument_list|(
-literal|"Disable QuickMask"
+literal|"Disable Quick Mask"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -322,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac353240103
+DECL|enum|__anon2b7361e10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -338,7 +338,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac353240203
+DECL|enum|__anon2b7361e10203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3655,7 +3655,7 @@ name|qmask_button
 argument_list|,
 name|_
 argument_list|(
-literal|"Toggle QuickMask"
+literal|"Toggle Quick Mask"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_IMAGE_WINDOW_QMASK_BUTTON

@@ -460,7 +460,7 @@ name|gimp_color_panel_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Edit QuickMask Color"
+literal|"Edit Quick Mask Color"
 argument_list|)
 argument_list|,
 operator|&
@@ -510,7 +510,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"QuickMask Attributes"
+literal|"Quick Mask Attributes"
 argument_list|)
 argument_list|,
 literal|"gimp-qmask-edit"
@@ -519,7 +519,7 @@ name|GIMP_STOCK_QMASK_ON
 argument_list|,
 name|_
 argument_list|(
-literal|"Edit QuickMask Attributes"
+literal|"Edit Quick Mask Attributes"
 argument_list|)
 argument_list|,
 name|GTK_WIDGET

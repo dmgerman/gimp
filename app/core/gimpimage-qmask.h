@@ -16,6 +16,10 @@ directive|define
 name|__GIMP_IMAGE_QMASK_H__
 end_define
 
+begin_comment
+comment|/*  don't change this string, it's used to identify the Quick Mask  *  when opening files.  */
+end_comment
+
 begin_define
 DECL|macro|GIMP_IMAGE_QMASK_NAME
 define|#
