@@ -131,7 +131,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296dfebd0103
+DECL|enum|__anon28d0a38f0103
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -1631,7 +1631,7 @@ if|if
 condition|(
 name|preview_size
 operator|<
-name|GIMP_PREVIEW_SIZE_TINY
+name|GIMP_VIEW_SIZE_TINY
 condition|)
 name|preview_size
 operator|=
@@ -1709,7 +1709,7 @@ argument_list|,
 name|entry
 argument_list|)
 expr_stmt|;
-comment|/*  If we created a dock before, the newly created dialog is 	   *  supposed to be a GimpDockable. 	   */
+comment|/*  If we created a dock before, the newly created dialog is            *  supposed to be a GimpDockable.            */
 if|if
 condition|(
 name|dock

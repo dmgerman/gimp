@@ -352,13 +352,13 @@ name|button
 operator|->
 name|popup_preview_size
 operator|=
-name|GIMP_PREVIEW_SIZE_SMALL
+name|GIMP_VIEW_SIZE_SMALL
 expr_stmt|;
 name|button
 operator|->
 name|preview_size
 operator|=
-name|GIMP_PREVIEW_SIZE_SMALL
+name|GIMP_VIEW_SIZE_SMALL
 expr_stmt|;
 name|button
 operator|->

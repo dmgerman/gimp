@@ -1950,8 +1950,8 @@ end_function
 
 begin_function
 name|GType
-DECL|function|gimp_preview_size_get_type (void)
-name|gimp_preview_size_get_type
+DECL|function|gimp_view_size_get_type (void)
+name|gimp_view_size_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -1964,7 +1964,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_PREVIEW_SIZE_TINY
+name|GIMP_VIEW_SIZE_TINY
 block|,
 name|N_
 argument_list|(
@@ -1975,7 +1975,7 @@ literal|"tiny"
 block|}
 block|,
 block|{
-name|GIMP_PREVIEW_SIZE_EXTRA_SMALL
+name|GIMP_VIEW_SIZE_EXTRA_SMALL
 block|,
 name|N_
 argument_list|(
@@ -1986,7 +1986,7 @@ literal|"extra-small"
 block|}
 block|,
 block|{
-name|GIMP_PREVIEW_SIZE_SMALL
+name|GIMP_VIEW_SIZE_SMALL
 block|,
 name|N_
 argument_list|(
@@ -1997,7 +1997,7 @@ literal|"small"
 block|}
 block|,
 block|{
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 block|,
 name|N_
 argument_list|(
@@ -2008,7 +2008,7 @@ literal|"medium"
 block|}
 block|,
 block|{
-name|GIMP_PREVIEW_SIZE_LARGE
+name|GIMP_VIEW_SIZE_LARGE
 block|,
 name|N_
 argument_list|(
@@ -2019,7 +2019,7 @@ literal|"large"
 block|}
 block|,
 block|{
-name|GIMP_PREVIEW_SIZE_EXTRA_LARGE
+name|GIMP_VIEW_SIZE_EXTRA_LARGE
 block|,
 name|N_
 argument_list|(
@@ -2030,7 +2030,7 @@ literal|"extra-large"
 block|}
 block|,
 block|{
-name|GIMP_PREVIEW_SIZE_HUGE
+name|GIMP_VIEW_SIZE_HUGE
 block|,
 name|N_
 argument_list|(
@@ -2041,7 +2041,7 @@ literal|"huge"
 block|}
 block|,
 block|{
-name|GIMP_PREVIEW_SIZE_ENORMOUS
+name|GIMP_VIEW_SIZE_ENORMOUS
 block|,
 name|N_
 argument_list|(
@@ -2052,7 +2052,7 @@ literal|"enormous"
 block|}
 block|,
 block|{
-name|GIMP_PREVIEW_SIZE_GIGANTIC
+name|GIMP_VIEW_SIZE_GIGANTIC
 block|,
 name|N_
 argument_list|(
@@ -2086,7 +2086,7 @@ name|type
 operator|=
 name|g_enum_register_static
 argument_list|(
-literal|"GimpPreviewSize"
+literal|"GimpViewSize"
 argument_list|,
 name|values
 argument_list|)

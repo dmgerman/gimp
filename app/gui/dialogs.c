@@ -614,7 +614,7 @@ literal|"gimp-image-list"
 block|,
 name|dialogs_image_list_view_new
 block|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -630,7 +630,7 @@ literal|"gimp-brush-list"
 block|,
 name|dialogs_brush_list_view_new
 block|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -646,7 +646,7 @@ literal|"gimp-pattern-list"
 block|,
 name|dialogs_pattern_list_view_new
 block|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -662,7 +662,7 @@ literal|"gimp-gradient-list"
 block|,
 name|dialogs_gradient_list_view_new
 block|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -678,7 +678,7 @@ literal|"gimp-palette-list"
 block|,
 name|dialogs_palette_list_view_new
 block|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -694,7 +694,7 @@ literal|"gimp-font-list"
 block|,
 name|dialogs_font_list_view_new
 block|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -710,7 +710,7 @@ literal|"gimp-tool-list"
 block|,
 name|dialogs_tool_list_view_new
 block|,
-name|GIMP_PREVIEW_SIZE_SMALL
+name|GIMP_VIEW_SIZE_SMALL
 block|,
 name|FALSE
 block|,
@@ -726,7 +726,7 @@ literal|"gimp-buffer-list"
 block|,
 name|dialogs_buffer_list_view_new
 block|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -742,7 +742,7 @@ literal|"gimp-document-list"
 block|,
 name|dialogs_document_list_new
 block|,
-name|GIMP_PREVIEW_SIZE_LARGE
+name|GIMP_VIEW_SIZE_LARGE
 block|,
 name|FALSE
 block|,
@@ -758,7 +758,7 @@ literal|"gimp-template-list"
 block|,
 name|dialogs_template_list_new
 block|,
-name|GIMP_PREVIEW_SIZE_SMALL
+name|GIMP_VIEW_SIZE_SMALL
 block|,
 name|FALSE
 block|,
@@ -775,7 +775,7 @@ literal|"gimp-image-grid"
 block|,
 name|dialogs_image_grid_view_new
 block|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -791,7 +791,7 @@ literal|"gimp-brush-grid"
 block|,
 name|dialogs_brush_grid_view_new
 block|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -807,7 +807,7 @@ literal|"gimp-pattern-grid"
 block|,
 name|dialogs_pattern_grid_view_new
 block|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -823,7 +823,7 @@ literal|"gimp-gradient-grid"
 block|,
 name|dialogs_gradient_grid_view_new
 block|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -839,7 +839,7 @@ literal|"gimp-palette-grid"
 block|,
 name|dialogs_palette_grid_view_new
 block|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -855,7 +855,7 @@ literal|"gimp-font-grid"
 block|,
 name|dialogs_font_grid_view_new
 block|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -871,7 +871,7 @@ literal|"gimp-tool-grid"
 block|,
 name|dialogs_tool_grid_view_new
 block|,
-name|GIMP_PREVIEW_SIZE_SMALL
+name|GIMP_VIEW_SIZE_SMALL
 block|,
 name|FALSE
 block|,
@@ -887,7 +887,7 @@ literal|"gimp-buffer-grid"
 block|,
 name|dialogs_buffer_grid_view_new
 block|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 block|,
 name|FALSE
 block|,
@@ -903,7 +903,7 @@ literal|"gimp-document-grid"
 block|,
 name|dialogs_document_grid_new
 block|,
-name|GIMP_PREVIEW_SIZE_LARGE
+name|GIMP_VIEW_SIZE_LARGE
 block|,
 name|FALSE
 block|,

@@ -177,7 +177,7 @@ name|gboolean
 name|monitor_res_from_gdk
 decl_stmt|;
 DECL|member|nav_preview_size
-name|GimpPreviewSize
+name|GimpViewSize
 name|nav_preview_size
 decl_stmt|;
 DECL|member|default_view

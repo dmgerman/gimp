@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc2db440103
+DECL|enum|__anon2b69e47e0103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc2db440203
+DECL|enum|__anon2b69e47e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1833,7 +1833,7 @@ name|GimpViewable
 modifier|*
 name|preview_viewable
 decl_stmt|;
-name|GimpPreviewSize
+name|GimpViewSize
 name|preview_size
 decl_stmt|;
 name|gint

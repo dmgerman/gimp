@@ -258,7 +258,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c16715d0103
+DECL|enum|__anon28ca6cda0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1019,9 +1019,9 @@ literal|"undo-preview-size"
 argument_list|,
 name|UNDO_PREVIEW_SIZE_BLURB
 argument_list|,
-name|GIMP_TYPE_PREVIEW_SIZE
+name|GIMP_TYPE_VIEW_SIZE
 argument_list|,
-name|GIMP_PREVIEW_SIZE_LARGE
+name|GIMP_VIEW_SIZE_LARGE
 argument_list|,
 name|GIMP_PARAM_RESTART
 argument_list|)
@@ -1070,9 +1070,9 @@ literal|"layer-preview-size"
 argument_list|,
 name|LAYER_PREVIEW_SIZE_BLURB
 argument_list|,
-name|GIMP_TYPE_PREVIEW_SIZE
+name|GIMP_TYPE_VIEW_SIZE
 argument_list|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 argument_list|,
 literal|0
 argument_list|)

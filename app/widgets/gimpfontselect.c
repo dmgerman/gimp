@@ -340,7 +340,7 @@ name|dialog
 operator|->
 name|context
 argument_list|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 argument_list|,
 literal|1
 argument_list|,
@@ -366,7 +366,7 @@ argument_list|,
 literal|6
 operator|*
 operator|(
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 operator|+
 literal|2
 operator|)
@@ -374,7 +374,7 @@ argument_list|,
 literal|6
 operator|*
 operator|(
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 operator|+
 literal|2
 operator|)

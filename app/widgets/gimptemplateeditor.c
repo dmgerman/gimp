@@ -134,7 +134,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bff3d6d0103
+DECL|enum|__anon27bab4370103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2778,7 +2778,7 @@ name|editor
 operator|->
 name|stock_id_context
 argument_list|,
-name|GIMP_PREVIEW_SIZE_SMALL
+name|GIMP_VIEW_SIZE_SMALL
 argument_list|,
 literal|0
 argument_list|,

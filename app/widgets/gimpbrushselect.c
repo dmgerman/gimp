@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2a90d70103
+DECL|enum|__anon27500ed00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -653,7 +653,7 @@ name|context
 argument_list|,
 name|FALSE
 argument_list|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 argument_list|,
 literal|1
 argument_list|,
@@ -679,7 +679,7 @@ argument_list|,
 literal|5
 operator|*
 operator|(
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 operator|+
 literal|2
 operator|)
@@ -687,7 +687,7 @@ argument_list|,
 literal|5
 operator|*
 operator|(
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 operator|+
 literal|2
 operator|)

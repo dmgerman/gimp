@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293beea60103
+DECL|enum|__anon2ac4f08c0103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -763,7 +763,7 @@ literal|1
 argument_list|,
 name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)

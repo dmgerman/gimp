@@ -695,7 +695,7 @@ name|GIMP_TYPE_NAVIGATION_VIEW
 argument_list|,
 name|GIMP_TYPE_IMAGE
 argument_list|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 argument_list|,
 literal|0
 argument_list|,
@@ -1822,9 +1822,9 @@ name|editor
 operator|->
 name|view
 argument_list|,
-name|GIMP_PREVIEW_SIZE_HUGE
+name|GIMP_VIEW_SIZE_HUGE
 argument_list|,
-name|GIMP_PREVIEW_SIZE_HUGE
+name|GIMP_VIEW_SIZE_HUGE
 argument_list|)
 expr_stmt|;
 name|gimp_view_set_expand

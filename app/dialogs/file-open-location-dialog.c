@@ -434,7 +434,7 @@ name|documents
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_PREVIEW_SIZE_SMALL
+name|GIMP_VIEW_SIZE_SMALL
 argument_list|,
 literal|1
 argument_list|)

@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f76b140103
+DECL|enum|__anon2a3dba980103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1645,7 +1645,7 @@ argument_list|(
 name|options
 argument_list|)
 argument_list|,
-name|GIMP_PREVIEW_SIZE_SMALL
+name|GIMP_VIEW_SIZE_SMALL
 argument_list|,
 literal|1
 argument_list|,
@@ -1700,7 +1700,7 @@ argument_list|(
 name|options
 argument_list|)
 argument_list|,
-name|GIMP_PREVIEW_SIZE_SMALL
+name|GIMP_VIEW_SIZE_SMALL
 argument_list|,
 literal|1
 argument_list|)

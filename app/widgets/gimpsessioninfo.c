@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b74142d0103
+DECL|enum|__anon2990cb350103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -3059,13 +3059,13 @@ name|dockable_info
 operator|->
 name|preview_size
 operator|<
-name|GIMP_PREVIEW_SIZE_TINY
+name|GIMP_VIEW_SIZE_TINY
 operator|||
 name|dockable_info
 operator|->
 name|preview_size
 operator|>
-name|GIMP_PREVIEW_SIZE_GIGANTIC
+name|GIMP_VIEW_SIZE_GIGANTIC
 condition|)
 name|dockable_info
 operator|->

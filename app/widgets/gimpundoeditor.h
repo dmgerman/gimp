@@ -114,7 +114,7 @@ modifier|*
 name|view
 decl_stmt|;
 DECL|member|preview_size
-name|GimpPreviewSize
+name|GimpViewSize
 name|preview_size
 decl_stmt|;
 DECL|member|base_item

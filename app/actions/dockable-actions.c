@@ -356,7 +356,7 @@ argument_list|(
 literal|"_Tiny"
 argument_list|)
 argument_list|,
-name|GIMP_PREVIEW_SIZE_TINY
+name|GIMP_VIEW_SIZE_TINY
 argument_list|)
 block|,
 name|PREVIEW_SIZE
@@ -368,7 +368,7 @@ argument_list|(
 literal|"E_xtra Small"
 argument_list|)
 argument_list|,
-name|GIMP_PREVIEW_SIZE_EXTRA_SMALL
+name|GIMP_VIEW_SIZE_EXTRA_SMALL
 argument_list|)
 block|,
 name|PREVIEW_SIZE
@@ -380,7 +380,7 @@ argument_list|(
 literal|"_Small"
 argument_list|)
 argument_list|,
-name|GIMP_PREVIEW_SIZE_SMALL
+name|GIMP_VIEW_SIZE_SMALL
 argument_list|)
 block|,
 name|PREVIEW_SIZE
@@ -392,7 +392,7 @@ argument_list|(
 literal|"_Medium"
 argument_list|)
 argument_list|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 argument_list|)
 block|,
 name|PREVIEW_SIZE
@@ -404,7 +404,7 @@ argument_list|(
 literal|"_Large"
 argument_list|)
 argument_list|,
-name|GIMP_PREVIEW_SIZE_LARGE
+name|GIMP_VIEW_SIZE_LARGE
 argument_list|)
 block|,
 name|PREVIEW_SIZE
@@ -416,7 +416,7 @@ argument_list|(
 literal|"Ex_tra Large"
 argument_list|)
 argument_list|,
-name|GIMP_PREVIEW_SIZE_EXTRA_LARGE
+name|GIMP_VIEW_SIZE_EXTRA_LARGE
 argument_list|)
 block|,
 name|PREVIEW_SIZE
@@ -428,7 +428,7 @@ argument_list|(
 literal|"_Huge"
 argument_list|)
 argument_list|,
-name|GIMP_PREVIEW_SIZE_HUGE
+name|GIMP_VIEW_SIZE_HUGE
 argument_list|)
 block|,
 name|PREVIEW_SIZE
@@ -440,7 +440,7 @@ argument_list|(
 literal|"_Enormous"
 argument_list|)
 argument_list|,
-name|GIMP_PREVIEW_SIZE_ENORMOUS
+name|GIMP_VIEW_SIZE_ENORMOUS
 argument_list|)
 block|,
 name|PREVIEW_SIZE
@@ -451,7 +451,7 @@ argument|N_(
 literal|"_Gigantic"
 argument|)
 argument_list|,
-argument|GIMP_PREVIEW_SIZE_GIGANTIC
+argument|GIMP_VIEW_SIZE_GIGANTIC
 argument_list|)
 block|}
 decl_stmt|;
@@ -647,7 +647,7 @@ argument_list|(
 name|dockable_preview_size_actions
 argument_list|)
 argument_list|,
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -741,7 +741,7 @@ name|grid_view_available
 init|=
 name|FALSE
 decl_stmt|;
-name|GimpPreviewSize
+name|GimpViewSize
 name|preview_size
 init|=
 operator|-
@@ -1060,7 +1060,7 @@ if|if
 condition|(
 name|preview_size
 operator|>=
-name|GIMP_PREVIEW_SIZE_GIGANTIC
+name|GIMP_VIEW_SIZE_GIGANTIC
 condition|)
 block|{
 name|SET_ACTIVE
@@ -1076,7 +1076,7 @@ if|if
 condition|(
 name|preview_size
 operator|>=
-name|GIMP_PREVIEW_SIZE_ENORMOUS
+name|GIMP_VIEW_SIZE_ENORMOUS
 condition|)
 block|{
 name|SET_ACTIVE
@@ -1092,7 +1092,7 @@ if|if
 condition|(
 name|preview_size
 operator|>=
-name|GIMP_PREVIEW_SIZE_HUGE
+name|GIMP_VIEW_SIZE_HUGE
 condition|)
 block|{
 name|SET_ACTIVE
@@ -1108,7 +1108,7 @@ if|if
 condition|(
 name|preview_size
 operator|>=
-name|GIMP_PREVIEW_SIZE_EXTRA_LARGE
+name|GIMP_VIEW_SIZE_EXTRA_LARGE
 condition|)
 block|{
 name|SET_ACTIVE
@@ -1124,7 +1124,7 @@ if|if
 condition|(
 name|preview_size
 operator|>=
-name|GIMP_PREVIEW_SIZE_LARGE
+name|GIMP_VIEW_SIZE_LARGE
 condition|)
 block|{
 name|SET_ACTIVE
@@ -1140,7 +1140,7 @@ if|if
 condition|(
 name|preview_size
 operator|>=
-name|GIMP_PREVIEW_SIZE_MEDIUM
+name|GIMP_VIEW_SIZE_MEDIUM
 condition|)
 block|{
 name|SET_ACTIVE
@@ -1156,7 +1156,7 @@ if|if
 condition|(
 name|preview_size
 operator|>=
-name|GIMP_PREVIEW_SIZE_SMALL
+name|GIMP_VIEW_SIZE_SMALL
 condition|)
 block|{
 name|SET_ACTIVE
@@ -1172,7 +1172,7 @@ if|if
 condition|(
 name|preview_size
 operator|>=
-name|GIMP_PREVIEW_SIZE_EXTRA_SMALL
+name|GIMP_VIEW_SIZE_EXTRA_SMALL
 condition|)
 block|{
 name|SET_ACTIVE
@@ -1188,7 +1188,7 @@ if|if
 condition|(
 name|preview_size
 operator|>=
-name|GIMP_PREVIEW_SIZE_TINY
+name|GIMP_VIEW_SIZE_TINY
 condition|)
 block|{
 name|SET_ACTIVE

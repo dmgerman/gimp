@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3df9150103
+DECL|enum|__anon292490a90103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -637,13 +637,13 @@ name|popup
 operator|->
 name|default_preview_size
 operator|=
-name|GIMP_PREVIEW_SIZE_SMALL
+name|GIMP_VIEW_SIZE_SMALL
 expr_stmt|;
 name|popup
 operator|->
 name|preview_size
 operator|=
-name|GIMP_PREVIEW_SIZE_SMALL
+name|GIMP_VIEW_SIZE_SMALL
 expr_stmt|;
 name|popup
 operator|->
@@ -2221,7 +2221,7 @@ name|preview_size
 operator|=
 name|MAX
 argument_list|(
-name|GIMP_PREVIEW_SIZE_TINY
+name|GIMP_VIEW_SIZE_TINY
 argument_list|,
 name|preview_size
 operator|*
@@ -2299,7 +2299,7 @@ name|preview_size
 operator|=
 name|MAX
 argument_list|(
-name|GIMP_PREVIEW_SIZE_TINY
+name|GIMP_VIEW_SIZE_TINY
 argument_list|,
 name|preview_size
 operator|*

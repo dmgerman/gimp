@@ -231,7 +231,7 @@ name|guint64
 name|undo_size
 decl_stmt|;
 DECL|member|undo_preview_size
-name|GimpPreviewSize
+name|GimpViewSize
 name|undo_preview_size
 decl_stmt|;
 DECL|member|plug_in_rc_path
@@ -244,7 +244,7 @@ name|gboolean
 name|layer_previews
 decl_stmt|;
 DECL|member|layer_preview_size
-name|GimpPreviewSize
+name|GimpViewSize
 name|layer_preview_size
 decl_stmt|;
 DECL|member|thumbnail_size

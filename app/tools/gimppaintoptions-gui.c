@@ -581,7 +581,7 @@ name|container
 argument_list|,
 name|context
 argument_list|,
-name|GIMP_PREVIEW_SIZE_SMALL
+name|GIMP_VIEW_SIZE_SMALL
 argument_list|,
 literal|1
 argument_list|,
@@ -652,7 +652,7 @@ name|container
 argument_list|,
 name|context
 argument_list|,
-name|GIMP_PREVIEW_SIZE_SMALL
+name|GIMP_VIEW_SIZE_SMALL
 argument_list|,
 literal|1
 argument_list|,
@@ -751,7 +751,7 @@ name|container
 argument_list|,
 name|context
 argument_list|,
-name|GIMP_PREVIEW_SIZE_LARGE
+name|GIMP_VIEW_SIZE_LARGE
 argument_list|,
 literal|1
 argument_list|,
@@ -775,7 +775,7 @@ argument_list|)
 operator|->
 name|preview_size
 operator|=
-name|GIMP_PREVIEW_SIZE_SMALL
+name|GIMP_VIEW_SIZE_SMALL
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
