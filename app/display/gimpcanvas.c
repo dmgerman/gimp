@@ -901,14 +901,11 @@ name|style
 condition|)
 block|{
 default|default:
+return|return
+name|gc
+return|;
 case|case
 name|GIMP_CANVAS_STYLE_WHITE
-case|:
-case|case
-name|GIMP_CANVAS_STYLE_XOR
-case|:
-case|case
-name|GIMP_CANVAS_STYLE_XOR_DASHED
 case|:
 name|fg
 operator|.

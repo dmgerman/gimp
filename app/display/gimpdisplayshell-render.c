@@ -1392,14 +1392,7 @@ name|g_message
 argument_list|(
 literal|"unknown gimage projection type: %d"
 argument_list|,
-name|gimp_image_projection_type
-argument_list|(
-name|shell
-operator|->
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
+name|image_type
 argument_list|)
 expr_stmt|;
 return|return;
