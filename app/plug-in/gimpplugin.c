@@ -2383,12 +2383,17 @@ operator|->
 name|temp_main_loops
 condition|)
 block|{
-name|g_warning
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
+name|g_printerr
 argument_list|(
 literal|"plug_in_close: plug-in aborted before sending its "
-literal|"temporary procedure return values"
+literal|"temporary procedure return values\n"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|plug_in_main_loop_quit
 argument_list|(
 name|plug_in
@@ -2409,12 +2414,17 @@ name|recurse_main_loop
 argument_list|)
 condition|)
 block|{
-name|g_warning
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
+name|g_printerr
 argument_list|(
 literal|"plug_in_close: plug-in aborted before sending its "
-literal|"procedure return values"
+literal|"procedure return values\n"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|g_main_loop_quit
 argument_list|(
 name|plug_in
@@ -2437,12 +2447,17 @@ name|ext_main_loop
 argument_list|)
 condition|)
 block|{
-name|g_warning
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
+name|g_printerr
 argument_list|(
 literal|"plug_in_close: extension aborted before sending its "
-literal|"extension_ack message"
+literal|"extension_ack message\n"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|g_main_loop_quit
 argument_list|(
 name|plug_in

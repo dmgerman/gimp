@@ -724,15 +724,23 @@ name|GSList
 modifier|*
 name|tmp3
 decl_stmt|;
-name|g_warning
+name|g_printerr
 argument_list|(
-literal|"removing duplicate PDB procedure \"%s\""
+literal|"removing duplicate PDB procedure \"%s\" "
+literal|"registered by '%s'\n"
 argument_list|,
 name|overridden_proc_def
 operator|->
 name|db_info
 operator|.
 name|name
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|overridden_proc_def
+operator|->
+name|prog
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* search the plugin list to see if any plugins had references to                * the overridden_proc_def.                */
@@ -3482,9 +3490,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
-literal|"image_type contains unrecognizable parts: '%s'"
+literal|"image_type contains unrecognizable parts: '%s'\n"
 argument_list|,
 name|type_spec
 argument_list|)
