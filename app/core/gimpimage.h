@@ -125,10 +125,10 @@ value|GTK_CHECK_TYPE (obj, GIMP_TYPE_IMAGE)
 end_define
 
 begin_define
-DECL|macro|TYPE_HAS_ALPHA (t)
+DECL|macro|GIMP_IMAGE_TYPE_HAS_ALPHA (t)
 define|#
 directive|define
-name|TYPE_HAS_ALPHA
+name|GIMP_IMAGE_TYPE_HAS_ALPHA
 parameter_list|(
 name|t
 parameter_list|)
@@ -211,7 +211,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b1fb48f0103
+DECL|enum|__anon2b2e765f0103
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1fb48f0203
+DECL|enum|__anon2b2e765f0203
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -249,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1fb48f0303
+DECL|enum|__anon2b2e765f0303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -277,7 +277,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1fb48f0403
+DECL|enum|__anon2b2e765f0403
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -1562,6 +1562,7 @@ name|gimp_image_base_type
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1572,6 +1573,7 @@ name|gimp_image_base_type_with_alpha
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1644,7 +1646,7 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl

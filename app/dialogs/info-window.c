@@ -2155,7 +2155,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|TYPE_HAS_ALPHA
+name|GIMP_IMAGE_TYPE_HAS_ALPHA
 argument_list|(
 name|sample_type
 argument_list|)

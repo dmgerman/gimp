@@ -219,7 +219,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c08d32c0103
+DECL|enum|__anon292c8c350103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -6839,7 +6839,7 @@ argument_list|)
 operator|->
 name|has_alpha
 operator|=
-name|TYPE_HAS_ALPHA
+name|GIMP_IMAGE_TYPE_HAS_ALPHA
 argument_list|(
 name|layer_type
 argument_list|)

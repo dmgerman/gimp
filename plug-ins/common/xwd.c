@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28936e960108
+DECL|struct|__anon2b3b2eaf0108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -248,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28936e960208
+DECL|struct|__anon2b3b2eaf0208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -306,7 +306,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28936e960308
+DECL|struct|__anon2b3b2eaf0308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -333,7 +333,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28936e960408
+DECL|struct|__anon2b3b2eaf0408
 block|{
 DECL|member|npixel
 name|gint

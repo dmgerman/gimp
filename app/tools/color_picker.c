@@ -2503,7 +2503,7 @@ expr_stmt|;
 block|}
 name|has_alpha
 operator|=
-name|TYPE_HAS_ALPHA
+name|GIMP_IMAGE_TYPE_HAS_ALPHA
 argument_list|(
 name|sample_type
 argument_list|)

@@ -34923,7 +34923,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2a46fe0108
+DECL|struct|__anon2be264480108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35000,7 +35000,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2a46fe0208
+DECL|struct|__anon2be264480208
 block|{
 DECL|member|ncolors
 name|long
@@ -35019,7 +35019,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2a46fe0308
+DECL|struct|__anon2be264480308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -38359,7 +38359,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2a46fe0408
+DECL|struct|__anon2be264480408
 block|{
 DECL|member|used_count
 name|signed
@@ -39963,7 +39963,7 @@ argument_list|)
 operator|->
 name|has_alpha
 operator|=
-name|TYPE_HAS_ALPHA
+name|GIMP_IMAGE_TYPE_HAS_ALPHA
 argument_list|(
 name|new_layer_type
 argument_list|)
