@@ -40,6 +40,12 @@ end_decl_stmt
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -127,7 +133,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2781ebb10108
+DECL|struct|__anon2c39d2520108
 block|{
 DECL|member|colors
 name|guchar
@@ -540,9 +546,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_color_adjust"
 argument_list|,
+name|_
+argument_list|(
 literal|"Adjust current foreground/background color in the\  drawable to black/white"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"The current foreground color is mapped to black, \ the current background color is mapped to white."
+argument_list|)
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,
@@ -550,7 +562,10 @@ literal|"Peter Kirchgessner"
 argument_list|,
 name|dversio
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Colors/Adjust Fgrd.-Bkgrd."
+argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -569,9 +584,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_color_map"
 argument_list|,
+name|_
+argument_list|(
 literal|"Map two source colors to two destination colors. \ Other colors are mapped by interpolation."
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Map two source colors to two destination colors. \ Other colors are mapped by interpolation."
+argument_list|)
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,
@@ -579,7 +600,10 @@ literal|"Peter Kirchgessner"
 argument_list|,
 name|dversio
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Colors/Color Mapping"
+argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,

@@ -238,7 +238,7 @@ value|GDK_EXPOSURE_MASK | \                        GDK_BUTTON_PRESS_MASK | \    
 end_define
 
 begin_typedef
-DECL|struct|__anon2c75a80d0108
+DECL|struct|__anon28ca01850108
 typedef|typedef
 struct|struct
 block|{
@@ -275,7 +275,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c75a80d0208
+DECL|struct|__anon28ca01850208
 typedef|typedef
 struct|struct
 block|{
@@ -290,7 +290,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c75a80d0308
+DECL|struct|__anon28ca01850308
 typedef|typedef
 struct|struct
 block|{
@@ -317,7 +317,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c75a80d0408
+DECL|struct|__anon28ca01850408
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -922,22 +922,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
-name|gchar
-modifier|*
-name|help_string
-init|=
-literal|" This plug-in produces an effect like a supernova burst. The"
-literal|" amount of the light effect is approximately in proportion to 1/r,"
-literal|" where r is the distance from the center of the star. It works with"
-literal|" RGB*, GRAY* image."
-decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_nova"
 argument_list|,
+name|_
+argument_list|(
 literal|"Produce Supernova effect to the specified drawable"
+argument_list|)
 argument_list|,
-name|help_string
+name|_
+argument_list|(
+literal|"This plug-in produces an effect like a supernova burst. The "
+literal|"amount of the light effect is approximately in proportion to 1/r, "
+literal|"where r is the distance from the center of the star. It works with "
+literal|"RGB*, GRAY* image."
+argument_list|)
 argument_list|,
 literal|"Eiichi Takamori"
 argument_list|,
@@ -945,7 +945,10 @@ literal|"Eiichi Takamori"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Light Effects/SuperNova"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

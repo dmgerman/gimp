@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -178,7 +184,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1902b10108
+DECL|struct|__anon2ba682c50108
 block|{
 DECL|member|hwidth
 name|gint
@@ -503,9 +509,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_grid"
 argument_list|,
+name|_
+argument_list|(
 literal|"Draws a grid."
+argument_list|)
 argument_list|,
-literal|""
+name|_
+argument_list|(
+literal|"no help available"
+argument_list|)
 argument_list|,
 literal|"Tim Newsome"
 argument_list|,
@@ -513,7 +525,10 @@ literal|"Tim Newsome, Sven Neumann, Tom Rathborne"
 argument_list|,
 literal|"1997, 1999"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Render/Grid"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

@@ -224,7 +224,7 @@ value|1L
 end_define
 
 begin_typedef
-DECL|struct|__anon2c09fd9a0108
+DECL|struct|__anon28c981a40108
 typedef|typedef
 struct|struct
 block|{
@@ -333,7 +333,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c09fd9a0208
+DECL|struct|__anon28c981a40208
 typedef|typedef
 struct|struct
 block|{
@@ -888,7 +888,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_sinus"
 argument_list|,
+name|_
+argument_list|(
 literal|"Generates a texture with sinus functions"
+argument_list|)
 argument_list|,
 literal|"FIX ME: sinus help"
 argument_list|,
@@ -898,7 +901,10 @@ literal|"Xavier Bouchoux"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Render/Sinus"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -1491,7 +1497,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-DECL|struct|__anon2c09fd9a0308
+DECL|struct|__anon28c981a40308
 DECL|member|r
 DECL|member|g
 DECL|member|b

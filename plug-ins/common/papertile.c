@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -53,22 +59,6 @@ name|PLUGIN_PROCEDURE_NAME
 value|"plug_in_papertile"
 end_define
 
-begin_define
-DECL|macro|PLUGIN_TITLE
-define|#
-directive|define
-name|PLUGIN_TITLE
-value|"Paper Tile"
-end_define
-
-begin_define
-DECL|macro|PLUGIN_PATH
-define|#
-directive|define
-name|PLUGIN_PATH
-value|"<Image>/Filters/Map/Paper Tile"
-end_define
-
 begin_comment
 comment|/*============================================================================*/
 end_comment
@@ -84,7 +74,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1f1c940103
+DECL|enum|__anon2bba4d110103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -112,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1f1c940203
+DECL|enum|__anon2bba4d110203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -201,7 +191,7 @@ comment|/*======================================================================
 end_comment
 
 begin_struct
-DECL|struct|__anon2a1f1c940308
+DECL|struct|__anon2bba4d110308
 specifier|static
 struct|struct
 block|{
@@ -222,7 +212,7 @@ DECL|member|drawable_has_alpha
 name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
-DECL|struct|__anon2a1f1c940408
+DECL|struct|__anon2bba4d110408
 struct|struct
 block|{
 DECL|member|x0
@@ -591,7 +581,7 @@ comment|/*======================================================================
 end_comment
 
 begin_struct
-DECL|struct|__anon2a1f1c940508
+DECL|struct|__anon2bba4d110508
 specifier|static
 struct|struct
 block|{
@@ -5888,18 +5878,29 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUGIN_PROCEDURE_NAME
 argument_list|,
-literal|"cuts an image into paper tiles, and slides each paper tile."
+name|_
+argument_list|(
+literal|"Cuts an image into paper tiles, and slides each paper tile."
+argument_list|)
 argument_list|,
-literal|"This plug-in cuts an image into paper tiles "
-literal|"and slides each paper tile."
+name|_
+argument_list|(
+literal|"This plug-in cuts an image into paper tiles and slides each paper tile."
+argument_list|)
 argument_list|,
 literal|"Hirotsuna Mizuno<s1041150@u-aizu.ac.jp>"
 argument_list|,
 literal|"Copyright (c)1997-1999 Hirotsuna Mizuno"
 argument_list|,
+name|_
+argument_list|(
 literal|"September 31, 1999"
+argument_list|)
 argument_list|,
-name|PLUGIN_PATH
+name|_
+argument_list|(
+literal|"<Image>/Filters/Map/Paper Tile"
+argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,

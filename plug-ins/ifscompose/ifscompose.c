@@ -124,7 +124,7 @@ value|"plug_in_ifscompose"
 end_define
 
 begin_typedef
-DECL|enum|__anon2b5f25260103
+DECL|enum|__anon29694dbb0103
 typedef|typedef
 enum|enum
 block|{
@@ -144,7 +144,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b5f25260203
+DECL|enum|__anon29694dbb0203
 typedef|typedef
 enum|enum
 block|{
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5f25260308
+DECL|struct|__anon29694dbb0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -183,7 +183,7 @@ DECL|member|type
 name|ValuePairType
 name|type
 decl_stmt|;
-DECL|union|__anon2b5f2526040a
+DECL|union|__anon29694dbb040a
 union|union
 block|{
 DECL|member|d
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5f25260508
+DECL|struct|__anon29694dbb0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5f25260608
+DECL|struct|__anon29694dbb0608
 block|{
 DECL|member|color
 name|IfsColor
@@ -292,7 +292,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5f25260708
+DECL|struct|__anon29694dbb0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -328,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5f25260808
+DECL|struct|__anon29694dbb0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -395,7 +395,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5f25260908
+DECL|struct|__anon29694dbb0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -566,7 +566,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5f25260a08
+DECL|struct|__anon29694dbb0a08
 block|{
 DECL|member|run
 name|gint
@@ -1603,8 +1603,13 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_ifs_compose"
 argument_list|,
+name|_
+argument_list|(
 literal|"Create an Iterated Function System Fractal"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Interactively create an Iterated Function System fractal."
 literal|"Use the window on the upper left to adjust the component"
 literal|"transformations of the fractal. The operation that is performed"
@@ -1612,6 +1617,7 @@ literal|"is selected by the buttons underneath the window, or from a"
 literal|"menu popped up by the right mouse button. The fractal will be"
 literal|"rendered with a transparent background if the current image has"
 literal|"a transparent background."
+argument_list|)
 argument_list|,
 literal|"Owen Taylor"
 argument_list|,
@@ -1619,7 +1625,10 @@ literal|"Owen Taylor"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Render/IfsCompose"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -60,7 +66,7 @@ value|20
 end_define
 
 begin_typedef
-DECL|struct|__anon2ad30dc60108
+DECL|struct|__anon28cb1a340108
 typedef|typedef
 struct|struct
 block|{
@@ -78,7 +84,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ad30dc60208
+DECL|struct|__anon28cb1a340208
 typedef|typedef
 struct|struct
 block|{
@@ -93,7 +99,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ad30dc60308
+DECL|struct|__anon28cb1a340308
 typedef|typedef
 struct|struct
 block|{
@@ -390,17 +396,29 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_colortoalpha"
 argument_list|,
+name|_
+argument_list|(
 literal|"Convert the color in an image to alpha"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This replaces as much of a given color as possible in each pixel with a corresponding amount of alpha, then readjusts the color accordingly."
+argument_list|)
 argument_list|,
 literal|"Seth Burgess"
 argument_list|,
 literal|"Seth Burgess<sjburges@gimp.org>"
 argument_list|,
+name|_
+argument_list|(
 literal|"7th Aug 1999"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Colors/Color To Alpha"
+argument_list|)
 argument_list|,
 literal|"RGBA"
 argument_list|,
