@@ -97,6 +97,17 @@ name|GimpDock
 modifier|*
 name|dock
 decl_stmt|;
+comment|/*< private>*/
+DECL|member|remove_item
+name|GtkWidget
+modifier|*
+name|remove_item
+decl_stmt|;
+DECL|member|add_item
+name|GtkWidget
+modifier|*
+name|add_item
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -297,9 +297,6 @@ expr_stmt|;
 name|gimp_iscissors_tool_register
 argument_list|()
 expr_stmt|;
-name|gimp_bezier_select_tool_register
-argument_list|()
-expr_stmt|;
 name|gimp_fuzzy_select_tool_register
 argument_list|()
 expr_stmt|;
