@@ -114,7 +114,7 @@ name|parent_instance
 decl_stmt|;
 DECL|member|x
 DECL|member|y
-name|gint
+name|gdouble
 name|x
 decl_stmt|,
 name|y
@@ -122,14 +122,14 @@ decl_stmt|;
 comment|/*  upper left hand coordinate  */
 DECL|member|w
 DECL|member|h
-name|gint
+name|gdouble
 name|w
 decl_stmt|,
 name|h
 decl_stmt|;
 comment|/*  width and height  */
 DECL|member|center
-name|gint
+name|gboolean
 name|center
 decl_stmt|;
 comment|/*  is the selection being created from the                                    *  center out?  */
