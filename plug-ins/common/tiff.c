@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* tiff loading and saving for the GIMP  *  -Peter Mattis  * The TIFF loading code has been completely revamped by Nick Lamb  * njl195@zepler.org.uk -- 18 May 1998  * And it now gains support for tiles (and doubtless a zillion bugs)  * njl195@zepler.org.uk -- 12 June 1999  * LZW patent fuss continues :(  * njl195@zepler.org.uk -- 20 April 2000  * The code for this filter is based on "tifftopnm" and "pnmtotiff",  *  2 programs that are a part of the netpbm package.  * khk@khk.net -- 13 May 2000  * Added support for ICCPROFILE tiff tag. If this tag is present in a   * TIFF file, then a parasite is created and vice versa.  * peter@kirchgessner.net -- 29 Oct 2002  * Progress bar only when run interactive  */
+comment|/* tiff loading and saving for the GIMP  *  -Peter Mattis  * The TIFF loading code has been completely revamped by Nick Lamb  * njl195@zepler.org.uk -- 18 May 1998  * And it now gains support for tiles (and doubtless a zillion bugs)  * njl195@zepler.org.uk -- 12 June 1999  * LZW patent fuss continues :(  * njl195@zepler.org.uk -- 20 April 2000  * The code for this filter is based on "tifftopnm" and "pnmtotiff",  *  2 programs that are a part of the netpbm package.  * khk@khk.net -- 13 May 2000  * Added support for ICCPROFILE tiff tag. If this tag is present in a  * TIFF file, then a parasite is created and vice versa.  * peter@kirchgessner.net -- 29 Oct 2002  * Progress bar only when run interactive  */
 end_comment
 
 begin_comment
@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55d0ea0108
+DECL|struct|__anon291407780108
 block|{
 DECL|member|compression
 name|gint
@@ -77,10 +77,10 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55d0ea0208
+DECL|struct|__anon291407780208
 block|{
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 DECL|typedef|TiffSaveInterface
@@ -92,7 +92,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55d0ea0308
+DECL|struct|__anon291407780308
 block|{
 DECL|member|ID
 name|gint32
@@ -420,7 +420,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_image
 parameter_list|(
 specifier|const
@@ -442,7 +442,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_dialog
 parameter_list|(
 name|void
@@ -1352,16 +1352,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tiff_warning (const char * module,const char * fmt,va_list ap)
+DECL|function|tiff_warning (const gchar * module,const gchar * fmt,va_list ap)
 name|tiff_warning
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|module
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|fmt
 parameter_list|,
@@ -1386,16 +1386,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tiff_error (const char * module,const char * fmt,va_list ap)
+DECL|function|tiff_error (const gchar * module,const gchar * fmt,va_list ap)
 name|tiff_error
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|module
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|fmt
 parameter_list|,
@@ -1499,10 +1499,11 @@ name|gint
 name|i
 decl_stmt|,
 name|j
-decl_stmt|,
+decl_stmt|;
+name|gboolean
 name|worst_case
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1638,13 +1639,11 @@ name|bps
 operator|!=
 literal|16
 condition|)
-block|{
 name|worst_case
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 comment|/* Wrong sample width => RGBA */
-block|}
 name|TIFFGetFieldDefaulted
 argument_list|(
 name|tif
@@ -1740,7 +1739,7 @@ argument_list|(
 literal|"Can't get photometric\nAssuming min-is-black"
 argument_list|)
 expr_stmt|;
-comment|/* old AppleScan software misses out the photometric tag (and      * incidentally assumes min-is-white, but xv assumes min-is-black,      * so we follow xv's lead.  It's not much hardship to invert the      * image later). */
+comment|/* old AppleScan software misses out the photometric tag (and        * incidentally assumes min-is-white, but xv assumes min-is-black,        * so we follow xv's lead.  It's not much hardship to invert the        * image later). */
 name|photomet
 operator|=
 name|PHOTOMETRIC_MINISBLACK
@@ -1892,8 +1891,9 @@ break|break;
 default|default:
 name|worst_case
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
+break|break;
 block|}
 if|if
 condition|(
@@ -1948,7 +1948,7 @@ comment|/* attach a parasite containing an ICC profile - if found in the TIFF fi
 ifdef|#
 directive|ifdef
 name|TIFFTAG_ICCPROFILE
-comment|/* If TIFFTAG_ICCPROFILE is defined we are dealing with a libtiff version           * that can handle ICC profiles. Otherwise just ignore this section. */
+comment|/* If TIFFTAG_ICCPROFILE is defined we are dealing with a libtiff version    * that can handle ICC profiles. Otherwise just ignore this section. */
 if|if
 condition|(
 name|TIFFGetField
@@ -2051,7 +2051,8 @@ argument_list|)
 expr_stmt|;
 comment|/* Attach a parasite containing the image description.  Pretend to    * be a gimp comment so other plugins will use this description as    * an image comment where appropriate. */
 block|{
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|img_desc
 decl_stmt|;
@@ -2066,38 +2067,18 @@ argument_list|,
 operator|&
 name|img_desc
 argument_list|)
-condition|)
-block|{
-name|int
-name|len
-decl_stmt|;
-name|len
-operator|=
-name|strlen
+operator|&&
+name|g_utf8_validate
 argument_list|(
 name|img_desc
-argument_list|)
-operator|+
-literal|1
-expr_stmt|;
-name|len
-operator|=
-name|MIN
-argument_list|(
-name|len
 argument_list|,
-literal|241
-argument_list|)
-expr_stmt|;
-name|img_desc
-index|[
-name|len
 operator|-
 literal|1
-index|]
-operator|=
-literal|'\000'
-expr_stmt|;
+argument_list|,
+name|NULL
+argument_list|)
+condition|)
+block|{
 name|parasite
 operator|=
 name|gimp_parasite_new
@@ -2106,7 +2087,12 @@ literal|"gimp-comment"
 argument_list|,
 name|GIMP_PARASITE_PERSISTENT
 argument_list|,
-name|len
+name|strlen
+argument_list|(
+name|img_desc
+argument_list|)
+operator|+
+literal|1
 argument_list|,
 name|img_desc
 argument_list|)
@@ -2222,7 +2208,7 @@ name|unit
 operator|=
 name|GIMP_UNIT_MM
 expr_stmt|;
-comment|/* as this is our default metric unit */
+comment|/* this is our default metric unit */
 break|break;
 default|default:
 name|g_message
@@ -2242,8 +2228,8 @@ comment|/* no res unit tag */
 comment|/* old AppleScan software produces these */
 name|g_message
 argument_list|(
-literal|"Warning: resolution specified without any units tag, "
-literal|"assuming dpi"
+literal|"Warning: resolution specified without "
+literal|"any units tag, assuming dpi"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2262,7 +2248,7 @@ name|xres
 expr_stmt|;
 block|}
 comment|/* now set the new image's resolution info */
-comment|/* If it is invalid, instead of forcing 72dpi, do not set the resolution  	 at all. Gimp will then use the default set by the user */
+comment|/* If it is invalid, instead of forcing 72dpi, do not set the resolution            at all. Gimp will then use the default set by the user */
 if|if
 condition|(
 name|read_unit
@@ -2645,13 +2631,6 @@ name|orientation
 argument_list|)
 condition|)
 block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|int
-name|nreturn_vals
-decl_stmt|;
 switch|switch
 condition|(
 name|orientation
@@ -2738,68 +2717,24 @@ if|if
 condition|(
 name|flip_horizontal
 condition|)
-block|{
-name|return_vals
-operator|=
-name|gimp_run_procedure
+name|gimp_flip
 argument_list|(
-literal|"gimp_flip"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
 name|layer
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-literal|0
-argument_list|,
-name|GIMP_PDB_END
+name|GIMP_ORIENTATION_HORIZONTAL
 argument_list|)
 expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|flip_vertical
 condition|)
-block|{
-name|return_vals
-operator|=
-name|gimp_run_procedure
+name|gimp_flip
 argument_list|(
-literal|"gimp_flip"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
 name|layer
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-literal|1
-argument_list|,
-name|GIMP_PDB_END
+name|GIMP_ORIENTATION_VERTICAL
 argument_list|)
 expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|flip_horizontal
@@ -3106,14 +3041,14 @@ name|guchar
 modifier|*
 name|buffer
 decl_stmt|;
-name|double
+name|gdouble
 name|progress
 init|=
 literal|0.0
 decl_stmt|,
 name|one_row
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|TIFFGetField
@@ -3169,12 +3104,12 @@ expr_stmt|;
 name|one_row
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 name|tileLength
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|imageLength
 expr_stmt|;
@@ -3266,12 +3201,12 @@ name|one_row
 operator|*
 operator|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|x
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|imageWidth
 operator|)
@@ -3430,7 +3365,6 @@ condition|;
 operator|++
 name|i
 control|)
-block|{
 name|g_free
 argument_list|(
 name|channel
@@ -3441,7 +3375,6 @@ operator|.
 name|pixels
 argument_list|)
 expr_stmt|;
-block|}
 name|g_free
 argument_list|(
 name|buffer
@@ -3497,11 +3430,12 @@ name|guchar
 modifier|*
 name|buffer
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|y
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|tile_height
 init|=
 name|gimp_tile_height
@@ -3618,12 +3552,12 @@ block|{
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|y
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|imageLength
 argument_list|)
@@ -3812,12 +3746,12 @@ block|{
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|y
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|imageLength
 argument_list|)
@@ -3904,7 +3838,6 @@ condition|;
 operator|++
 name|i
 control|)
-block|{
 name|g_free
 argument_list|(
 name|channel
@@ -3915,7 +3848,6 @@ operator|.
 name|pixels
 argument_list|)
 expr_stmt|;
-block|}
 name|g_free
 argument_list|(
 name|buffer
@@ -4092,7 +4024,6 @@ condition|;
 operator|++
 name|i
 control|)
-block|{
 name|channel
 index|[
 name|i
@@ -4111,7 +4042,6 @@ name|row
 operator|*
 name|cols
 expr_stmt|;
-block|}
 for|for
 control|(
 name|col
@@ -4523,7 +4453,6 @@ condition|;
 operator|++
 name|i
 control|)
-block|{
 operator|*
 name|channel
 index|[
@@ -4540,7 +4469,6 @@ name|source
 operator|+=
 literal|2
 expr_stmt|;
-block|}
 block|}
 if|if
 condition|(
@@ -4610,7 +4538,6 @@ condition|;
 operator|++
 name|i
 control|)
-block|{
 name|gimp_pixel_rgn_set_rect
 argument_list|(
 operator|&
@@ -4639,7 +4566,6 @@ argument_list|,
 name|rows
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -4800,7 +4726,6 @@ condition|;
 operator|++
 name|i
 control|)
-block|{
 name|channel
 index|[
 name|i
@@ -4819,7 +4744,6 @@ name|row
 operator|*
 name|cols
 expr_stmt|;
-block|}
 for|for
 control|(
 name|col
@@ -5186,7 +5110,6 @@ condition|;
 operator|++
 name|i
 control|)
-block|{
 operator|*
 name|channel
 index|[
@@ -5200,7 +5123,6 @@ operator|*
 name|source
 operator|++
 expr_stmt|;
-block|}
 block|}
 if|if
 condition|(
@@ -5266,7 +5188,6 @@ condition|;
 operator|++
 name|i
 control|)
-block|{
 name|gimp_pixel_rgn_set_rect
 argument_list|(
 operator|&
@@ -5295,7 +5216,6 @@ argument_list|,
 name|rows
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -5490,7 +5410,6 @@ condition|;
 operator|++
 name|i
 control|)
-block|{
 name|channel
 index|[
 name|i
@@ -5509,7 +5428,6 @@ name|row
 operator|*
 name|cols
 expr_stmt|;
-block|}
 for|for
 control|(
 name|col
@@ -5705,7 +5623,6 @@ if|if
 condition|(
 name|alpha
 condition|)
-block|{
 name|NEXTSAMPLE
 argument_list|(
 operator|*
@@ -5713,23 +5630,25 @@ name|dest
 operator|++
 argument_list|)
 expr_stmt|;
-block|}
 break|break;
 case|case
 name|PHOTOMETRIC_RGB
 case|:
 name|NEXTSAMPLE
 argument_list|(
-argument|red_val
+name|red_val
 argument_list|)
+expr_stmt|;
 name|NEXTSAMPLE
 argument_list|(
-argument|green_val
+name|green_val
 argument_list|)
+expr_stmt|;
 name|NEXTSAMPLE
 argument_list|(
-argument|blue_val
+name|blue_val
 argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|alpha
@@ -5737,8 +5656,9 @@ condition|)
 block|{
 name|NEXTSAMPLE
 argument_list|(
-argument|alpha_val
+name|alpha_val
 argument_list|)
+expr_stmt|;
 name|red_val
 operator|=
 name|MIN
@@ -5936,13 +5856,11 @@ condition|;
 operator|++
 name|i
 control|)
-block|{
 name|NEXTSAMPLE
 argument_list|(
 name|alpha_val
 argument_list|)
 expr_stmt|;
-block|}
 break|break;
 case|case
 name|PHOTOMETRIC_RGB
@@ -5968,13 +5886,11 @@ condition|;
 operator|++
 name|i
 control|)
-block|{
 name|NEXTSAMPLE
 argument_list|(
 name|alpha_val
 argument_list|)
 expr_stmt|;
-block|}
 break|break;
 block|}
 block|}
@@ -5996,7 +5912,6 @@ condition|;
 operator|++
 name|i
 control|)
-block|{
 name|gimp_pixel_rgn_set_rect
 argument_list|(
 operator|&
@@ -6025,7 +5940,6 @@ argument_list|,
 name|rows
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -6272,7 +6186,6 @@ condition|;
 operator|++
 name|col
 control|)
-block|{
 name|NEXTSAMPLE
 argument_list|(
 name|dest
@@ -6292,7 +6205,6 @@ name|sample
 index|]
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 else|else
 block|{
@@ -6356,7 +6268,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|save_image (const gchar * filename,gint32 image,gint32 layer,gint32 orig_image)
 name|save_image
 parameter_list|(
@@ -6549,7 +6461,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 name|name
@@ -6830,12 +6742,9 @@ break|break;
 case|case
 name|GIMP_INDEXEDA_IMAGE
 case|:
-return|return
-literal|0
-return|;
 default|default:
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 comment|/* Set TIFF parameters. */
@@ -7139,6 +7048,70 @@ argument_list|,
 name|save_unit
 argument_list|)
 expr_stmt|;
+block|}
+block|}
+comment|/* The TIFF spec explicitely says ASCII for the image description. */
+if|if
+condition|(
+name|image_comment
+condition|)
+block|{
+specifier|const
+name|gchar
+modifier|*
+name|c
+init|=
+name|image_comment
+decl_stmt|;
+name|gint
+name|len
+decl_stmt|;
+for|for
+control|(
+name|len
+operator|=
+name|strlen
+argument_list|(
+name|c
+argument_list|)
+init|;
+name|len
+condition|;
+name|c
+operator|++
+operator|,
+name|len
+operator|--
+control|)
+block|{
+if|if
+condition|(
+operator|*
+name|c
+operator|<
+literal|0
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"The TIFF format only supports comments in\n"
+literal|"7bit ASCII encoding. No comment is saved."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|image_comment
+argument_list|)
+expr_stmt|;
+name|image_comment
+operator|=
+name|NULL
+expr_stmt|;
+break|break;
+block|}
 block|}
 block|}
 comment|/* do we have a comment?  If so, create a new parasite to hold it,    * and attach it to the image. The attach function automatically    * detaches a previous incarnation of the parasite. */
@@ -7667,7 +7640,7 @@ name|row
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 block|}
@@ -7706,14 +7679,14 @@ name|data
 argument_list|)
 expr_stmt|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|save_dialog (void)
 name|save_dialog
 parameter_list|(
@@ -8095,9 +8068,6 @@ expr_stmt|;
 name|gtk_main
 argument_list|()
 expr_stmt|;
-name|gdk_flush
-argument_list|()
-expr_stmt|;
 return|return
 name|tsint
 operator|.
@@ -8156,9 +8126,6 @@ name|gchar
 modifier|*
 name|text
 decl_stmt|;
-name|gint
-name|len
-decl_stmt|;
 name|text
 operator|=
 name|gtk_entry_get_text
@@ -8169,31 +8136,6 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|len
-operator|=
-name|strlen
-argument_list|(
-name|text
-argument_list|)
-expr_stmt|;
-comment|/* Temporary kludge for overlength strings - just return */
-if|if
-condition|(
-name|len
-operator|>
-literal|240
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Your comment string is too long."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
 name|g_free
 argument_list|(
 name|image_comment
