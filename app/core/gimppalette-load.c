@@ -3052,8 +3052,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_palette_set_num_columns (GimpPalette * palette,gint columns)
-name|gimp_palette_set_num_columns
+DECL|function|gimp_palette_set_columns (GimpPalette * palette,gint columns)
+name|gimp_palette_set_columns
 parameter_list|(
 name|GimpPalette
 modifier|*
@@ -3111,8 +3111,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_palette_get_num_columns (GimpPalette * palette)
-name|gimp_palette_get_num_columns
+DECL|function|gimp_palette_get_columns (GimpPalette * palette)
+name|gimp_palette_get_columns
 parameter_list|(
 name|GimpPalette
 modifier|*

@@ -4630,7 +4630,7 @@ operator|->
 name|data
 argument_list|)
 decl_stmt|;
-name|gimp_palette_set_num_columns
+name|gimp_palette_set_columns
 argument_list|(
 name|palette
 argument_list|,

@@ -107,8 +107,20 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint
+name|gimp_palette_get_columns
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
-name|gimp_palette_set_num_columns
+name|gimp_palette_set_columns
 parameter_list|(
 specifier|const
 name|gchar

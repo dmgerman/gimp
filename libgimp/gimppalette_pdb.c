@@ -527,13 +527,93 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_set_num_columns:  * @name: The palette name.  * @columns: The new number of columns.  *  * Sets the number of columns to use when displaying the palette  *  * This procedures allows to control how many colors are shown per row  * when the palette is being displayed. This value can only be changed  * if the palette is writable. The maximum allowed value is 64.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_palette_get_columns:  * @name: The palette name.  *  * Retrieves the number of columns to use to display this palette  *  * This procedures retrieves the prefered number of columns to use when  * the palette is being displayed.  *  * Returns: The number of columns used to display this palette.  *  * Since: GIMP 2.4  */
+end_comment
+
+begin_function
+name|gint
+DECL|function|gimp_palette_get_columns (const gchar * name)
+name|gimp_palette_get_columns
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gint
+name|num_columns
+init|=
+literal|0
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp_palette_get_columns"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_STRING
+argument_list|,
+name|name
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+name|num_columns
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|num_columns
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_palette_set_columns:  * @name: The palette name.  * @columns: The new number of columns.  *  * Sets the number of columns to use when displaying the palette  *  * This procedures allows to control how many colors are shown per row  * when the palette is being displayed. This value can only be changed  * if the palette is writable. The maximum allowed value is 64.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_palette_set_num_columns (const gchar * name,gint columns)
-name|gimp_palette_set_num_columns
+DECL|function|gimp_palette_set_columns (const gchar * name,gint columns)
+name|gimp_palette_set_columns
 parameter_list|(
 specifier|const
 name|gchar
@@ -560,7 +640,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palette_set_num_columns"
+literal|"gimp_palette_set_columns"
 argument_list|,
 operator|&
 name|nreturn_vals

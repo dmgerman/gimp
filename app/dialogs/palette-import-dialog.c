@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9eaa680103
+DECL|enum|__anon2c59fde70103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -2882,12 +2882,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_columns_changed (GtkAdjustment * adjustment,ImportDialog * import_dialog)
+DECL|function|palette_import_columns_changed (GtkAdjustment * adj,ImportDialog * import_dialog)
 name|palette_import_columns_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
-name|adjustment
+name|adj
 parameter_list|,
 name|ImportDialog
 modifier|*
@@ -2900,7 +2900,7 @@ name|import_dialog
 operator|->
 name|palette
 condition|)
-name|gimp_palette_set_num_columns
+name|gimp_palette_set_columns
 argument_list|(
 name|import_dialog
 operator|->
@@ -2908,7 +2908,7 @@ name|palette
 argument_list|,
 name|ROUND
 argument_list|(
-name|adjustment
+name|adj
 operator|->
 name|value
 argument_list|)
