@@ -1248,7 +1248,9 @@ argument_list|)
 expr_stmt|;
 name|g_set_message_handler
 argument_list|(
-operator|&
+operator|(
+name|GPrintFunc
+operator|)
 name|message_func
 argument_list|)
 expr_stmt|;
