@@ -165,6 +165,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_cell_renderer_viewable_clicked
+parameter_list|(
+name|GimpCellRendererViewable
+modifier|*
+name|cell
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|path
+parameter_list|,
+name|GdkModifierType
+name|state
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

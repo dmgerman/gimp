@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b86b9c0103
+DECL|enum|__anon2925632d0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b86b9c0203
+DECL|enum|__anon2925632d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1315,6 +1315,58 @@ argument_list|,
 name|NULL
 argument_list|)
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_cell_renderer_viewable_clicked (GimpCellRendererViewable * cell,const gchar * path,GdkModifierType state)
+name|gimp_cell_renderer_viewable_clicked
+parameter_list|(
+name|GimpCellRendererViewable
+modifier|*
+name|cell
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|path
+parameter_list|,
+name|GdkModifierType
+name|state
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CELL_RENDERER_VIEWABLE
+argument_list|(
+name|cell
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|path
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_signal_emit
+argument_list|(
+name|cell
+argument_list|,
+name|viewable_cell_signals
+index|[
+name|CLICKED
+index|]
+argument_list|,
+literal|0
+argument_list|,
+name|path
+argument_list|,
+name|state
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
