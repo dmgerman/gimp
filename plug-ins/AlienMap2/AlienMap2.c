@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -155,7 +161,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b91d32f0108
+DECL|struct|__anon27d458da0108
 typedef|typedef
 struct|struct
 block|{
@@ -206,7 +212,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b91d32f0208
+DECL|struct|__anon27d458da0208
 typedef|typedef
 struct|struct
 block|{

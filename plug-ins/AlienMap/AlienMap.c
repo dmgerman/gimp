@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -136,7 +142,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b9fb34d0108
+DECL|struct|__anon2ae9ad2d0108
 typedef|typedef
 struct|struct
 block|{
@@ -171,7 +177,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9fb34d0208
+DECL|struct|__anon2ae9ad2d0208
 typedef|typedef
 struct|struct
 block|{
@@ -926,7 +932,7 @@ argument_list|(
 literal|"1th May 1997"
 argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"<Image>/Filters/Colors/Alien Map"
 argument_list|)
