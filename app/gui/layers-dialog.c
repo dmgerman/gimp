@@ -4315,7 +4315,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2761378e0108
+DECL|struct|__anon2b5bff640108
 typedef|typedef
 struct|struct
 block|{
@@ -4485,11 +4485,14 @@ name|sprintf
 argument_list|(
 name|menu_item_label
 argument_list|,
-literal|"%s-%p"
+literal|"%s-%d"
 argument_list|,
 name|image_name
 argument_list|,
+name|pdb_image_to_id
+argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|menu_item
