@@ -480,9 +480,9 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_mask_selection_replace_cmd_callback
+name|layers_mask_to_selection_cmd_callback
 block|,
-literal|0
+name|GIMP_CHANNEL_OP_REPLACE
 block|,
 literal|"<StockItem>"
 block|,
@@ -531,9 +531,9 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_alpha_selection_replace_cmd_callback
+name|layers_alpha_to_selection_cmd_callback
 block|,
-literal|0
+name|GIMP_CHANNEL_OP_REPLACE
 block|,
 literal|"<StockItem>"
 block|,

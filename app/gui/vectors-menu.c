@@ -233,9 +233,9 @@ argument_list|)
 block|,
 literal|"<control>S"
 block|,
-name|vectors_selection_replace_cmd_callback
+name|vectors_to_selection_cmd_callback
 block|,
-literal|0
+name|GIMP_CHANNEL_OP_REPLACE
 block|,
 literal|"<StockItem>"
 block|,
@@ -258,9 +258,9 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|vectors_selection_add_cmd_callback
+name|vectors_to_selection_cmd_callback
 block|,
-literal|0
+name|GIMP_CHANNEL_OP_ADD
 block|,
 literal|"<StockItem>"
 block|,
@@ -283,9 +283,9 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|vectors_selection_sub_cmd_callback
+name|vectors_to_selection_cmd_callback
 block|,
-literal|0
+name|GIMP_CHANNEL_OP_SUBTRACT
 block|,
 literal|"<StockItem>"
 block|,
@@ -308,9 +308,9 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|vectors_selection_intersect_cmd_callback
+name|vectors_to_selection_cmd_callback
 block|,
-literal|0
+name|GIMP_CHANNEL_OP_INTERSECT
 block|,
 literal|"<StockItem>"
 block|,
