@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*    *  ScreenShot plug-in v0.6 by Sven Neumann, neumanns@uni-duesseldorf.de    *  1998/04/18  *  *  Any suggestions, bug-reports or patches are very welcome.  *   *  This plug-in uses the X-utility xwd to grab an image from the screen  *  and the xwd-plug-in created by Peter Kirchgessner (pkirchg@aol.com)  *  to load this image into the gimp.  *  Hence its nothing but a simple frontend to those utilities.  */
+comment|/*    *  ScreenShot plug-in v0.7   *  Sven Neumann, neumanns@uni-duesseldorf.de    *  1998/05/28  *  *  Any suggestions, bug-reports or patches are very welcome.  *   *  This plug-in uses the X-utility xwd to grab an image from the screen  *  and the xwd-plug-in created by Peter Kirchgessner (pkirchg@aol.com)  *  to load this image into the gimp.  *  Hence its nothing but a simple frontend to those utilities.  */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Revision history  *  (98/02/18)  v0.1   first development release   *  (98/02/19)  v0.2   small bugfix   *  (98/03/09)  v0.3   another one  *  (98/03/13)  v0.4   cosmetic changes to the dialog  *  (98/04/02)  v0.5   it works non-interactively now and registers  *                     itself correctly as extension  *  (98/04/18)  v0.6   cosmetic change to the dialog  */
+comment|/* Revision history  *  (98/02/18)  v0.1   first development release   *  (98/02/19)  v0.2   small bugfix   *  (98/03/09)  v0.3   another one  *  (98/03/13)  v0.4   cosmetic changes to the dialog  *  (98/04/02)  v0.5   it works non-interactively now and registers  *                     itself correctly as extension  *  (98/04/18)  v0.6   cosmetic change to the dialog  *  (98/05/28)  v0.7   use g_message for error output  */
 end_comment
 
 begin_include
@@ -72,7 +72,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"v0.6 (98/04/18)"
+value|"v0.7 (98/05/28)"
 end_define
 
 begin_define
@@ -167,7 +167,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon28ea986b0108
+DECL|struct|__anon28af1fec0108
 typedef|typedef
 struct|struct
 block|{
@@ -191,7 +191,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28ea986b0208
+DECL|struct|__anon28af1fec0208
 typedef|typedef
 struct|struct
 block|{
@@ -699,26 +699,6 @@ comment|/* Run the main function */
 name|shoot
 argument_list|()
 expr_stmt|;
-comment|/* Store variable states for next run */
-if|if
-condition|(
-name|run_mode
-operator|==
-name|RUN_INTERACTIVE
-condition|)
-name|gimp_set_data
-argument_list|(
-name|PLUG_IN_NAME
-argument_list|,
-operator|&
-name|shootvals
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|ScreenShotValues
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 name|status
 operator|=
@@ -747,6 +727,20 @@ operator|==
 name|RUN_INTERACTIVE
 condition|)
 block|{
+comment|/* Store variable states for next run */
+name|gimp_set_data
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+operator|&
+name|shootvals
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|ScreenShotValues
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* display the image */
 name|shoot_display_image
 argument_list|(
@@ -974,7 +968,7 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"screenshot: fork failed: %s\n"
 argument_list|,
@@ -1002,7 +996,7 @@ name|xwdargv
 argument_list|)
 expr_stmt|;
 comment|/* What are we doing here? exec must have failed */
-name|g_warning
+name|g_message
 argument_list|(
 literal|"screenshot: exec failed: xwd: %s\n"
 argument_list|,
@@ -1035,7 +1029,7 @@ name|status
 argument_list|)
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"screenshot: xwd didn't work\n"
 argument_list|)
