@@ -76,7 +76,7 @@ value|4
 end_define
 
 begin_comment
-comment|/* uncomment this line to get a rough feel of how long the    plug-in takes to run */
+comment|/* Uncomment this line to get a rough estimate of  * how long the plug-in takes to run.  */
 end_comment
 
 begin_comment
@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbda3da0108
+DECL|struct|__anon2c0ad89b0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbda3da0208
+DECL|struct|__anon2c0ad89b0208
 block|{
 DECL|member|run
 name|gboolean
@@ -375,14 +375,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
-end_decl_stmt
-
 begin_macro
 DECL|function|MAIN ()
 name|MAIN
@@ -546,6 +538,9 @@ decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
+decl_stmt|;
+name|GimpRunMode
+name|run_mode
 decl_stmt|;
 ifdef|#
 directive|ifdef
