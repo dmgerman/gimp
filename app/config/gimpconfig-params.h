@@ -16,6 +16,10 @@ directive|define
 name|__GIMP_CONFIG_PARAMS_H__
 end_define
 
+begin_comment
+comment|/*  * GIMP_PARAM_SERIALIZE - A property that can and should be  *                        serialized and deserialized.  * GIMP_PARAM_AGGREGATE - The object property is to be treated as  *                        part of the parent object.  * GIMP_PARAM_RESTART   - Changes to this property take effect only  *                        after a restart.  * GIMP_PARAM_CONFIRM   - Changes to this property should be  *                        confirmed by the user before being applied.  * GIMP_PARAM_DEFAULTS  - Don't serialize this property if it has the  *                        default value.  * GIMP_PARAM_IGNORE    - This property exists for obscure reasons  *                        and is needed for backward compatibility.  *                        Ignore the value read and don't serialize it.  */
+end_comment
+
 begin_define
 DECL|macro|GIMP_PARAM_SERIALIZE
 define|#
@@ -46,6 +50,22 @@ define|#
 directive|define
 name|GIMP_PARAM_CONFIRM
 value|(1<< (3 + G_PARAM_USER_SHIFT))
+end_define
+
+begin_define
+DECL|macro|GIMP_PARAM_DEFAULTS
+define|#
+directive|define
+name|GIMP_PARAM_DEFAULTS
+value|(1<< (4 + G_PARAM_USER_SHIFT))
+end_define
+
+begin_define
+DECL|macro|GIMP_PARAM_IGNORE
+define|#
+directive|define
+name|GIMP_PARAM_IGNORE
+value|(1<< (5 + G_PARAM_USER_SHIFT))
 end_define
 
 begin_define
@@ -259,7 +279,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295474310103
+DECL|enum|__anon2bc388530103
 block|{
 DECL|enumerator|GIMP_PARAM_PATH_FILE
 name|GIMP_PARAM_PATH_FILE

@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aae00370103
+DECL|enum|__anon2a31db3d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1142,7 +1142,7 @@ name|options
 operator|->
 name|text
 operator|->
-name|font_size_unit
+name|unit
 argument_list|)
 expr_stmt|;
 name|spinbutton
