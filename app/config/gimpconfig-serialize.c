@@ -277,6 +277,8 @@ operator|&
 name|value
 argument_list|,
 name|str
+argument_list|,
+name|TRUE
 argument_list|)
 condition|)
 block|{
@@ -596,6 +598,8 @@ operator|&
 name|new_value
 argument_list|,
 name|str
+argument_list|,
+name|TRUE
 argument_list|)
 condition|)
 block|{
@@ -685,12 +689,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_value:  * @value: a #GValue.  * @str: a #Gstring.  *  * This utility function appends a string representation of #GValue to @str.  *   * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  **/
+comment|/**  * gimp_config_serialize_value:  * @value: a #GValue.  * @str: a #Gstring.  * @escaped: whether to escape string values.  *  * This utility function appends a string representation of #GValue to @str.  *   * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_serialize_value (const GValue * value,GString * str)
+DECL|function|gimp_config_serialize_value (const GValue * value,GString * str,gboolean escaped)
 name|gimp_config_serialize_value
 parameter_list|(
 specifier|const
@@ -701,6 +705,9 @@ parameter_list|,
 name|GString
 modifier|*
 name|str
+parameter_list|,
+name|gboolean
+name|escaped
 parameter_list|)
 block|{
 if|if
@@ -826,7 +833,7 @@ condition|)
 block|{
 name|gchar
 modifier|*
-name|escaped
+name|esc
 decl_stmt|;
 specifier|const
 name|gchar
@@ -846,7 +853,12 @@ condition|)
 return|return
 name|FALSE
 return|;
+if|if
+condition|(
 name|escaped
+condition|)
+block|{
+name|esc
 operator|=
 name|g_strescape
 argument_list|(
@@ -861,14 +873,25 @@ name|str
 argument_list|,
 literal|"\"%s\""
 argument_list|,
-name|escaped
+name|esc
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|escaped
+name|esc
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|g_string_append
+argument_list|(
+name|str
+argument_list|,
+name|cstr
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|TRUE
 return|;

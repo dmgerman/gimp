@@ -12,6 +12,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"stdlib.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"string.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -273,8 +285,7 @@ name|message
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|EXIT_FAILURE
 return|;
 block|}
 name|g_print
@@ -333,8 +344,7 @@ name|message
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|EXIT_FAILURE
 return|;
 block|}
 name|header
@@ -455,8 +465,7 @@ name|NULL
 argument_list|)
 condition|)
 return|return
-operator|-
-literal|1
+name|EXIT_FAILURE
 return|;
 name|g_print
 argument_list|(
@@ -517,13 +526,12 @@ literal|"This test should have failed :-(\n"
 argument_list|)
 expr_stmt|;
 return|return
-operator|-
-literal|1
+name|EXIT_FAILURE
 return|;
 block|}
 name|g_print
 argument_list|(
-literal|"\n Querying for default-comment ... "
+literal|"\n Querying for \"default-comment\" ... "
 argument_list|)
 expr_stmt|;
 name|result
@@ -539,19 +547,26 @@ if|if
 condition|(
 name|result
 condition|)
+block|{
 name|g_print
 argument_list|(
-literal|"OK, found %s.\n"
+literal|"OK, found \"%s\".\n"
 argument_list|,
 name|result
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|g_print
 argument_list|(
 literal|"failed!\n"
 argument_list|)
 expr_stmt|;
+return|return
+name|EXIT_FAILURE
+return|;
+block|}
 name|g_free
 argument_list|(
 name|result
@@ -559,7 +574,7 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|" Querying for foobar ... "
+literal|" Querying for \"foobar\" ... "
 argument_list|)
 expr_stmt|;
 name|result
@@ -584,19 +599,26 @@ argument_list|)
 operator|==
 literal|0
 condition|)
+block|{
 name|g_print
 argument_list|(
-literal|"OK, found %s.\n"
+literal|"OK, found \"%s\".\n"
 argument_list|,
 name|result
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|g_print
 argument_list|(
 literal|"failed!\n"
 argument_list|)
 expr_stmt|;
+return|return
+name|EXIT_FAILURE
+return|;
+block|}
 name|g_free
 argument_list|(
 name|result
@@ -616,7 +638,7 @@ literal|"\nFinished test of GimpConfig.\n\n"
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|EXIT_SUCCESS
 return|;
 block|}
 end_function

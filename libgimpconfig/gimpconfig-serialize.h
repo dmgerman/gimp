@@ -74,6 +74,9 @@ parameter_list|,
 name|GString
 modifier|*
 name|str
+parameter_list|,
+name|gboolean
+name|escaped
 parameter_list|)
 function_decl|;
 end_function_decl
