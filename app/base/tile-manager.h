@@ -211,6 +211,30 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* Request that (if possible) the tile at x,y,layer be swapped  * in.  This is only a hint to improve performance; no guarantees.  * The tile may be swapped in or otherwise made more accessible  * if it is convenient...  */
+end_comment
+
+begin_function_decl
+name|void
+name|tile_manager_get_async
+parameter_list|(
+name|TileManager
+modifier|*
+name|tm
+parameter_list|,
+name|int
+name|xpixel
+parameter_list|,
+name|int
+name|ypixel
+parameter_list|,
+name|int
+name|level
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function_decl
 name|void
 name|tile_manager_map_tile

@@ -19,7 +19,7 @@ file|"tile.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon28db1a450103
+DECL|enum|__anon293333fd0103
 typedef|typedef
 enum|enum
 block|{
@@ -27,6 +27,9 @@ DECL|enumerator|SWAP_IN
 name|SWAP_IN
 init|=
 literal|1
+block|,
+DECL|enumerator|SWAP_IN_ASYNC
+name|SWAP_IN_ASYNC
 block|,
 DECL|enumerator|SWAP_OUT
 name|SWAP_OUT
@@ -106,6 +109,17 @@ end_function_decl
 begin_function_decl
 name|void
 name|tile_swap_in
+parameter_list|(
+name|Tile
+modifier|*
+name|tile
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|tile_swap_in_async
 parameter_list|(
 name|Tile
 modifier|*
