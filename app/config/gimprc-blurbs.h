@@ -659,7 +659,7 @@ define|#
 directive|define
 name|CAN_CHANGE_ACCELS_BLURB
 define|\
-value|N_("When enabled, you can change keyboard shortcuts for menu items on the fly.")
+value|N_("When enabled, you can change keyboard shortcuts for menu items " \    "by hitting a key combination while the menu item is highlighted.")
 end_define
 
 begin_define
