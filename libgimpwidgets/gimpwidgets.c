@@ -2677,7 +2677,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f50ff30108
+DECL|struct|__anon276d01550108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3557,7 +3557,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f50ff30208
+DECL|struct|__anon276d01550208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -3979,6 +3979,19 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|optionmenu
+argument_list|)
+expr_stmt|;
+name|g_object_ref
+argument_list|(
+name|adjustment
+argument_list|)
+expr_stmt|;
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|adjustment
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
