@@ -2446,7 +2446,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Your window setup will be reset to default values. "
+literal|"Your window setup will be reset to default values "
 literal|"the next time you start GIMP."
 argument_list|)
 argument_list|)
@@ -7739,7 +7739,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon289ad59f0108
+DECL|struct|__anon29893b9e0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9841,7 +9841,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon289ad59f0208
+DECL|struct|__anon29893b9e0208
 block|{
 DECL|member|label
 specifier|const
@@ -9998,7 +9998,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon289ad59f0308
+DECL|struct|__anon29893b9e0308
 block|{
 DECL|member|tree_label
 specifier|const
