@@ -161,11 +161,6 @@ DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
 decl_stmt|;
-DECL|member|has_filename
-name|gboolean
-name|has_filename
-decl_stmt|;
-comment|/*  has a valid filename         */
 DECL|member|save_proc
 name|PlugInProcDef
 modifier|*
@@ -540,7 +535,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ef10640103
+DECL|enum|__anon2792033c0103
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -568,7 +563,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ef10640203
+DECL|enum|__anon2792033c0203
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY

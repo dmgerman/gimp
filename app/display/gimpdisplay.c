@@ -8049,11 +8049,14 @@ literal|"File/Revert..."
 argument_list|,
 name|gdisp
 operator|&&
+name|GIMP_OBJECT
+argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
 operator|->
-name|has_filename
+name|name
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
