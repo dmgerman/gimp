@@ -336,6 +336,11 @@ name|remainder
 decl_stmt|,
 name|next_cf
 decl_stmt|;
+name|gboolean
+name|swapped
+init|=
+name|FALSE
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|scalesrc
@@ -350,6 +355,25 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* make sure that zooming behaves symmetrically */
+if|if
+condition|(
+name|zoom_factor
+operator|<
+literal|1.0
+condition|)
+block|{
+name|zoom_factor
+operator|=
+literal|1.0
+operator|/
+name|zoom_factor
+expr_stmt|;
+name|swapped
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 comment|/* calculate the continued fraction for the desired zoom factor */
 name|p0
 operator|=
@@ -432,6 +456,7 @@ operator|+
 name|q0
 expr_stmt|;
 comment|/* Numerator and Denominator are limited by 255 */
+comment|/* also absurd ratios like 170:171 are excluded */
 if|if
 condition|(
 name|p2
@@ -441,6 +466,22 @@ operator|||
 name|q2
 operator|>
 literal|255
+operator|||
+operator|(
+name|p2
+operator|>
+literal|1
+operator|&&
+name|q2
+operator|>
+literal|1
+operator|&&
+name|p2
+operator|*
+name|q2
+operator|>
+literal|200
+operator|)
 condition|)
 break|break;
 comment|/* remember the last two fractions */
@@ -512,6 +553,24 @@ operator|=
 literal|255
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|swapped
+condition|)
+block|{
+operator|*
+name|scalesrc
+operator|=
+name|p1
+expr_stmt|;
+operator|*
+name|scaledest
+operator|=
+name|q1
+expr_stmt|;
+block|}
+else|else
+block|{
 operator|*
 name|scalesrc
 operator|=
@@ -522,6 +581,7 @@ name|scaledest
 operator|=
 name|p1
 expr_stmt|;
+block|}
 block|}
 end_function
 
