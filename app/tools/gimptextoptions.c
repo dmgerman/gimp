@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b974d530103
+DECL|enum|__anon2c2c78740103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1244,7 +1244,6 @@ argument_list|,
 literal|0
 argument_list|,
 name|row
-operator|++
 argument_list|,
 name|_
 argument_list|(
