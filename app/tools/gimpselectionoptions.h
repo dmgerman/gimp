@@ -167,6 +167,14 @@ DECL|member|fixed_unit
 name|GimpUnit
 name|fixed_unit
 decl_stmt|;
+DECL|member|adjustable
+name|gboolean
+name|adjustable
+decl_stmt|;
+DECL|member|show_dialog
+name|gboolean
+name|show_dialog
+decl_stmt|;
 comment|/*  used by iscissors */
 DECL|member|interactive
 name|gboolean

@@ -440,6 +440,11 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_RECT_SELECT
 value|"gimp-tool-rect-select"
+DECL|macro|GIMP_STOCK_TOOL_NEW_RECT_SELECT
+define|#
+directive|define
+name|GIMP_STOCK_TOOL_NEW_RECT_SELECT
+value|"gimp-tool-new-rect-select"
 DECL|macro|GIMP_STOCK_TOOL_ROTATE
 define|#
 directive|define
