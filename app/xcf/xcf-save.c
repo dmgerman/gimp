@@ -420,7 +420,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START {   \ 	  info->cp += xcf_write_int32 (fp, data, count,&tmp_error);  \ 	  if (tmp_error)                                              \ 	   {                                                          \ 	     g_propagate_error (error, tmp_error);                    \ 	     return FALSE;                                            \ 	   }                                                          \ 	 } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_int32 (fp, data, count,&tmp_error);  \   if (tmp_error)                                              \     {                                                         \       g_propagate_error (error, tmp_error);                   \       return FALSE;                                           \     }                                                         \   } G_STMT_END
 end_define
 
 begin_define
@@ -435,7 +435,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START {    \ 	  info->cp += xcf_write_int8 (fp, data, count,&tmp_error);   \ 	  if (tmp_error)                                              \ 	   {                                                          \ 	     g_propagate_error (error, tmp_error);                    \ 	     return FALSE;                                            \ 	   }                                                          \ 	 } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_int8 (fp, data, count,&tmp_error);   \   if (tmp_error)                                              \     {                                                         \       g_propagate_error (error, tmp_error);                   \       return FALSE;                                           \     }                                                         \   } G_STMT_END
 end_define
 
 begin_define
@@ -450,7 +450,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START {   \ 	  info->cp += xcf_write_float (fp, data, count,&tmp_error);  \ 	  if (tmp_error)                                              \ 	   {                                                          \ 	     g_propagate_error (error, tmp_error);                    \ 	     return FALSE;                                            \ 	   }                                                          \ 	 } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_float (fp, data, count,&tmp_error);  \   if (tmp_error)                                              \     {                                                         \       g_propagate_error (error, tmp_error);                   \       return FALSE;                                           \     }                                                         \   } G_STMT_END
 end_define
 
 begin_define
@@ -465,7 +465,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START {  \ 	  info->cp += xcf_write_string (fp, data, count,&tmp_error); \ 	  if (tmp_error)                                              \ 	   {                                                          \ 	     g_propagate_error (error, tmp_error);                    \ 	     return FALSE;                                            \ 	   }                                                          \ 	 } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_string (fp, data, count,&tmp_error); \   if (tmp_error)                                              \     {                                                         \       g_propagate_error (error, tmp_error);                   \       return FALSE;                                           \     }                                                         \   } G_STMT_END
 end_define
 
 begin_define
@@ -480,7 +480,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START {   \ 	  info->cp += xcf_write_int32 (fp, data, count,&error);      \ 	  if (error)                                                  \ 	    {                                                         \ 	       g_message (_("Error saving XCF file: %s"),             \ 	                  error->message);                            \ 	       return FALSE;                                          \ 	    }                                                         \ 	 } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_int32 (fp, data, count,&error);      \   if (error)                                                  \     {                                                         \       g_message (_("Error saving XCF file: %s"),              \                  error->message);                             \       return FALSE;                                           \     }                                                         \   } G_STMT_END
 end_define
 
 begin_define
@@ -495,7 +495,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START {    \ 	  info->cp += xcf_write_int8 (fp, data, count,&error);       \ 	  if (error)                                                  \ 	    {                                                         \ 	       g_message (_("Error saving XCF file: %s"),             \ 	                  error->message);                            \ 	       return FALSE;                                          \ 	    }                                                         \ 	 } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_int8 (fp, data, count,&error);       \   if (error)                                                  \     {                                                         \       g_message (_("Error saving XCF file: %s"),              \                  error->message);                             \       return FALSE;                                           \     }                                                         \   } G_STMT_END
 end_define
 
 begin_define
@@ -510,7 +510,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START {   \ 	  info->cp += xcf_write_float (fp, data, count,&error);      \ 	  if (error)                                                  \ 	    {                                                         \ 	       g_message (_("Error saving XCF file: %s"),             \ 	                  error->message);                            \ 	       return FALSE;                                          \ 	    }                                                         \ 	 } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_float (fp, data, count,&error);      \   if (error)                                                  \     {                                                         \       g_message (_("Error saving XCF file: %s"),              \                  error->message);                             \       return FALSE;                                           \     }                                                         \   } G_STMT_END
 end_define
 
 begin_define
@@ -525,7 +525,7 @@ name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START {  \ 	  info->cp += xcf_write_string (fp, data, count,&error);     \ 	  if (error)                                                  \ 	    {                                                         \ 	       g_message (_("Error saving XCF file: %s"),             \ 	                  error->message);                            \ 	       return FALSE;                                          \ 	    }                                                         \ 	 } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_string (fp, data, count,&error);     \   if (error)                                                  \     {                                                         \       g_message (_("Error saving XCF file: %s"),              \                  error->message);                             \       return FALSE;                                           \     }                                                         \   } G_STMT_END
 end_define
 
 begin_define
@@ -536,7 +536,7 @@ name|xcf_check_error
 parameter_list|(
 name|x
 parameter_list|)
-value|G_STMT_START {                             \ 	if (! (x))                                                    \ 	  return FALSE;                                               \ 	} G_STMT_END
+value|G_STMT_START { \   if (! (x))                                                  \     return FALSE;                                             \   } G_STMT_END
 end_define
 
 begin_define
@@ -547,7 +547,7 @@ name|xcf_print_error
 parameter_list|(
 name|x
 parameter_list|)
-value|G_STMT_START {                             \ 	if (! (x))                                                    \ 	  {                                                           \ 	     g_message (_("Error saving XCF file: %s"),               \ 	                error->message);                              \ 	     return FALSE;                                            \ 	  }                                                           \ 	} G_STMT_END
+value|G_STMT_START { \   if (! (x))                                                  \     {                                                         \       g_message (_("Error saving XCF file: %s"),              \                  error->message);                             \       return FALSE;                                           \     }                                                         \   } G_STMT_END
 end_define
 
 begin_function
@@ -2222,12 +2222,13 @@ block|{
 comment|/* can't fail fast because there is no way to exit g_slist_foreach */
 if|if
 condition|(
+operator|!
 name|gimp_parasite_is_persistent
 argument_list|(
 name|parasite
 argument_list|)
 condition|)
-block|{
+return|return;
 name|info
 operator|->
 name|cp
@@ -2309,7 +2310,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
