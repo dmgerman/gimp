@@ -44,6 +44,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"brightness_contrast.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"color_balance.h"
 end_include
 
@@ -57,6 +63,12 @@ begin_include
 include|#
 directive|include
 file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"curves.h"
 end_include
 
 begin_include
@@ -98,6 +110,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"levels.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"undo.h"
 end_include
 
@@ -111,6 +129,18 @@ begin_include
 include|#
 directive|include
 file|"palette_select.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"posterize.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"threshold.h"
 end_include
 
 begin_include
@@ -34792,11 +34822,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|Histogram
+DECL|typedef|CFHistogram
 typedef|typedef
 name|ColorFreq
 modifier|*
-name|Histogram
+name|CFHistogram
 typedef|;
 end_typedef
 
@@ -34865,8 +34895,7 @@ index|]
 decl_stmt|;
 comment|/* colormap created by quantization  */
 DECL|member|index_used_count
-name|unsigned
-name|long
+name|gulong
 name|index_used_count
 index|[
 literal|256
@@ -34874,7 +34903,7 @@ index|]
 decl_stmt|;
 comment|/* how many times an index was used */
 DECL|member|histogram
-name|Histogram
+name|CFHistogram
 name|histogram
 decl_stmt|;
 comment|/* holds the histogram               */
@@ -34894,7 +34923,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b70f4cc0108
+DECL|struct|__anon2774c01a0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -34971,7 +35000,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b70f4cc0208
+DECL|struct|__anon2774c01a0208
 block|{
 DECL|member|ncolors
 name|long
@@ -34990,7 +35019,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b70f4cc0308
+DECL|struct|__anon2774c01a0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -35165,7 +35194,7 @@ specifier|static
 name|void
 name|zero_histogram_gray
 parameter_list|(
-name|Histogram
+name|CFHistogram
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -35175,7 +35204,7 @@ specifier|static
 name|void
 name|zero_histogram_rgb
 parameter_list|(
-name|Histogram
+name|CFHistogram
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -35185,7 +35214,7 @@ specifier|static
 name|void
 name|generate_histogram_gray
 parameter_list|(
-name|Histogram
+name|CFHistogram
 parameter_list|,
 name|Layer
 modifier|*
@@ -35201,7 +35230,7 @@ specifier|static
 name|void
 name|generate_histogram_rgb
 parameter_list|(
-name|Histogram
+name|CFHistogram
 parameter_list|,
 name|Layer
 modifier|*
@@ -35243,7 +35272,7 @@ name|QuantizeObj
 modifier|*
 name|quantobj
 parameter_list|,
-name|Histogram
+name|CFHistogram
 name|histogram
 parameter_list|,
 name|boxptr
@@ -38307,7 +38336,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b70f4cc0408
+DECL|struct|__anon2774c01a0408
 block|{
 DECL|member|used_count
 name|signed
@@ -41204,10 +41233,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|zero_histogram_gray (Histogram histogram)
+DECL|function|zero_histogram_gray (CFHistogram histogram)
 name|zero_histogram_gray
 parameter_list|(
-name|Histogram
+name|CFHistogram
 name|histogram
 parameter_list|)
 block|{
@@ -41240,10 +41269,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|zero_histogram_rgb (Histogram histogram)
+DECL|function|zero_histogram_rgb (CFHistogram histogram)
 name|zero_histogram_rgb
 parameter_list|(
-name|Histogram
+name|CFHistogram
 name|histogram
 parameter_list|)
 block|{
@@ -41314,10 +41343,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|generate_histogram_gray (Histogram histogram,Layer * layer,int alpha_dither)
+DECL|function|generate_histogram_gray (CFHistogram histogram,Layer * layer,int alpha_dither)
 name|generate_histogram_gray
 parameter_list|(
-name|Histogram
+name|CFHistogram
 name|histogram
 parameter_list|,
 name|Layer
@@ -41456,10 +41485,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|generate_histogram_rgb (Histogram histogram,Layer * layer,int col_limit,int alpha_dither)
+DECL|function|generate_histogram_rgb (CFHistogram histogram,Layer * layer,int col_limit,int alpha_dither)
 name|generate_histogram_rgb
 parameter_list|(
-name|Histogram
+name|CFHistogram
 name|histogram
 parameter_list|,
 name|Layer
@@ -42397,10 +42426,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|update_box_gray (Histogram histogram,boxptr boxp)
+DECL|function|update_box_gray (CFHistogram histogram,boxptr boxp)
 name|update_box_gray
 parameter_list|(
-name|Histogram
+name|CFHistogram
 name|histogram
 parameter_list|,
 name|boxptr
@@ -42572,10 +42601,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|update_box_rgb (Histogram histogram,boxptr boxp)
+DECL|function|update_box_rgb (CFHistogram histogram,boxptr boxp)
 name|update_box_rgb
 parameter_list|(
-name|Histogram
+name|CFHistogram
 name|histogram
 parameter_list|,
 name|boxptr
@@ -44085,10 +44114,10 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|median_cut_gray (Histogram histogram,boxptr boxlist,int numboxes,int desired_colors)
+DECL|function|median_cut_gray (CFHistogram histogram,boxptr boxlist,int numboxes,int desired_colors)
 name|median_cut_gray
 parameter_list|(
-name|Histogram
+name|CFHistogram
 name|histogram
 parameter_list|,
 name|boxptr
@@ -44224,10 +44253,10 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|median_cut_rgb (Histogram histogram,boxptr boxlist,int numboxes,int desired_colors)
+DECL|function|median_cut_rgb (CFHistogram histogram,boxptr boxlist,int numboxes,int desired_colors)
 name|median_cut_rgb
 parameter_list|(
-name|Histogram
+name|CFHistogram
 name|histogram
 parameter_list|,
 name|boxptr
@@ -44589,14 +44618,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compute_color_gray (QuantizeObj * quantobj,Histogram histogram,boxptr boxp,int icolor)
+DECL|function|compute_color_gray (QuantizeObj * quantobj,CFHistogram histogram,boxptr boxp,int icolor)
 name|compute_color_gray
 parameter_list|(
 name|QuantizeObj
 modifier|*
 name|quantobj
 parameter_list|,
-name|Histogram
+name|CFHistogram
 name|histogram
 parameter_list|,
 name|boxptr
@@ -44787,14 +44816,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compute_color_rgb (QuantizeObj * quantobj,Histogram histogram,boxptr boxp,int icolor)
+DECL|function|compute_color_rgb (QuantizeObj * quantobj,CFHistogram histogram,boxptr boxp,int icolor)
 name|compute_color_rgb
 parameter_list|(
 name|QuantizeObj
 modifier|*
 name|quantobj
 parameter_list|,
-name|Histogram
+name|CFHistogram
 name|histogram
 parameter_list|,
 name|boxptr
@@ -45143,14 +45172,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|select_colors_gray (QuantizeObj * quantobj,Histogram histogram)
+DECL|function|select_colors_gray (QuantizeObj * quantobj,CFHistogram histogram)
 name|select_colors_gray
 parameter_list|(
 name|QuantizeObj
 modifier|*
 name|quantobj
 parameter_list|,
-name|Histogram
+name|CFHistogram
 name|histogram
 parameter_list|)
 comment|/* Master routine for color selection */
@@ -45271,14 +45300,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|select_colors_rgb (QuantizeObj * quantobj,Histogram histogram)
+DECL|function|select_colors_rgb (QuantizeObj * quantobj,CFHistogram histogram)
 name|select_colors_rgb
 parameter_list|(
 name|QuantizeObj
 modifier|*
 name|quantobj
 parameter_list|,
-name|Histogram
+name|CFHistogram
 name|histogram
 parameter_list|)
 comment|/* Master routine for color selection */
@@ -46617,14 +46646,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|fill_inverse_cmap_gray (QuantizeObj * quantobj,Histogram histogram,int pixel)
+DECL|function|fill_inverse_cmap_gray (QuantizeObj * quantobj,CFHistogram histogram,int pixel)
 name|fill_inverse_cmap_gray
 parameter_list|(
 name|QuantizeObj
 modifier|*
 name|quantobj
 parameter_list|,
-name|Histogram
+name|CFHistogram
 name|histogram
 parameter_list|,
 name|int
@@ -46734,14 +46763,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|fill_inverse_cmap_rgb (QuantizeObj * quantobj,Histogram histogram,int R,int G,int B)
+DECL|function|fill_inverse_cmap_rgb (QuantizeObj * quantobj,CFHistogram histogram,int R,int G,int B)
 name|fill_inverse_cmap_rgb
 parameter_list|(
 name|QuantizeObj
 modifier|*
 name|quantobj
 parameter_list|,
-name|Histogram
+name|CFHistogram
 name|histogram
 parameter_list|,
 name|int
@@ -47378,7 +47407,7 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|Histogram
+name|CFHistogram
 name|histogram
 init|=
 name|quantobj
@@ -47771,7 +47800,7 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|Histogram
+name|CFHistogram
 name|histogram
 init|=
 name|quantobj
@@ -48252,7 +48281,7 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|Histogram
+name|CFHistogram
 name|histogram
 init|=
 name|quantobj
@@ -48715,7 +48744,7 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|Histogram
+name|CFHistogram
 name|histogram
 init|=
 name|quantobj
@@ -50147,7 +50176,7 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|Histogram
+name|CFHistogram
 name|histogram
 init|=
 name|quantobj
@@ -51175,7 +51204,7 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|Histogram
+name|CFHistogram
 name|histogram
 init|=
 name|quantobj
