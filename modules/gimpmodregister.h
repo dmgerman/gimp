@@ -25,6 +25,12 @@ end_ifdef
 begin_include
 include|#
 directive|include
+file|<libgimp/gimptypes.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpcolordisplay.h>
 end_include
 
