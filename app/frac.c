@@ -46,6 +46,107 @@ file|"frac.h"
 end_include
 
 begin_define
+DECL|macro|FRAC_DONT_WORK
+define|#
+directive|define
+name|FRAC_DONT_WORK
+end_define
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|FRAC_DONT_WORK
+end_ifdef
+
+begin_function
+DECL|function|xcf_compress_frac_info (int _layer_type)
+name|void
+name|xcf_compress_frac_info
+parameter_list|(
+name|int
+name|_layer_type
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+DECL|function|xcf_save_compress_frac_init (int _dom_density,double quality)
+name|void
+name|xcf_save_compress_frac_init
+parameter_list|(
+name|int
+name|_dom_density
+parameter_list|,
+name|double
+name|quality
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+DECL|function|xcf_load_compress_frac_init (int _image_scale,int _iterations)
+name|void
+name|xcf_load_compress_frac_init
+parameter_list|(
+name|int
+name|_image_scale
+parameter_list|,
+name|int
+name|_iterations
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+DECL|function|xcf_load_frac_compressed_tile (XcfInfo * info,Tile * tile)
+name|gint
+name|xcf_load_frac_compressed_tile
+parameter_list|(
+name|XcfInfo
+modifier|*
+name|info
+parameter_list|,
+name|Tile
+modifier|*
+name|tile
+parameter_list|)
+block|{
+return|return
+literal|0
+return|;
+block|}
+end_function
+
+begin_function
+DECL|function|xcf_save_frac_compressed_tile (XcfInfo * info,Tile * tile)
+name|gint
+name|xcf_save_frac_compressed_tile
+parameter_list|(
+name|XcfInfo
+modifier|*
+name|info
+parameter_list|,
+name|Tile
+modifier|*
+name|tile
+parameter_list|)
+block|{
+return|return
+literal|0
+return|;
+block|}
+end_function
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_comment
+comment|/* FRAC_DONT_WORK */
+end_comment
+
+begin_define
 DECL|macro|float
 define|#
 directive|define
@@ -7091,6 +7192,15 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* FRAC_DONT_WORK */
+end_comment
 
 end_unit
 
