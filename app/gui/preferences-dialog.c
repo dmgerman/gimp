@@ -3640,7 +3640,7 @@ literal|"show-menubar"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show _Menubar"
+literal|"Show _menubar"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -3657,7 +3657,7 @@ literal|"show-rulers"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show _Rulers"
+literal|"Show _rulers"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -3674,7 +3674,7 @@ literal|"show-scrollbars"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show Scroll_bars"
+literal|"Show scroll_bars"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -3691,7 +3691,7 @@ literal|"show-statusbar"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show S_tatusbar"
+literal|"Show s_tatusbar"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -3738,7 +3738,7 @@ literal|"show-selection"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show S_election"
+literal|"Show s_election"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -3755,7 +3755,7 @@ literal|"show-layer-boundary"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show _Layer Boundary"
+literal|"Show _layer boundary"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -3772,7 +3772,7 @@ literal|"show-guides"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show _Guides"
+literal|"Show _guides"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -3789,7 +3789,7 @@ literal|"show-grid"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show Gri_d"
+literal|"Show gri_d"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -3845,12 +3845,12 @@ literal|"padding-color"
 argument_list|,
 name|_
 argument_list|(
-literal|"Custom Padding Color:"
+literal|"Custom padding color:"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Select Custom Canvas Padding Color"
+literal|"Select custom canvas padding color"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -5054,7 +5054,7 @@ literal|"layer-previews"
 argument_list|,
 name|_
 argument_list|(
-literal|"_Enable Layer& Channel Previews"
+literal|"_Enable layer& channel previews"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5087,7 +5087,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Default _Layer& Channel Preview Size:"
+literal|"Default _layer& channel preview size:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -5112,7 +5112,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Navigation Preview Size:"
+literal|"_Navigation preview size:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -5151,7 +5151,7 @@ literal|"can-change-accels"
 argument_list|,
 name|_
 argument_list|(
-literal|"Use Dynamic _Keyboard Shortcuts"
+literal|"Use Dynamic _keyboard shortcuts"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5168,7 +5168,7 @@ literal|"save-accels"
 argument_list|,
 name|_
 argument_list|(
-literal|"Save Keyboard Shortcuts on Exit"
+literal|"Save keyboard shortcuts on exit"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5185,7 +5185,7 @@ name|GTK_STOCK_SAVE
 argument_list|,
 name|_
 argument_list|(
-literal|"Save Keyboard Shortcuts Now"
+literal|"Save keyboard shortcuts now"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5216,7 +5216,7 @@ name|GTK_STOCK_CLEAR
 argument_list|,
 name|_
 argument_list|(
-literal|"Clear Saved Keyboard Shortcuts Now"
+literal|"Clear saved keyboard shortcuts now"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5872,7 +5872,7 @@ literal|"web-browser"
 argument_list|,
 name|_
 argument_list|(
-literal|"Select Web Browser"
+literal|"Select web browser"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -5886,7 +5886,7 @@ name|fileselection
 argument_list|,
 name|_
 argument_list|(
-literal|"Web Browser to Use:"
+literal|"Web browser to use:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -6005,7 +6005,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Snap Distance:"
+literal|"_Snap distance:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -6062,7 +6062,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Default _Threshold:"
+literal|"Default _threshold:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -6282,7 +6282,7 @@ literal|"toolbox-color-area"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show Foreground& Background _Color"
+literal|"Show foreground& background _color"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_DEFAULT_COLORS
@@ -6301,7 +6301,7 @@ literal|"toolbox-foo-area"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show Active _Brush, Pattern& Gradient"
+literal|"Show active _brush, pattern& gradient"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_BRUSH
@@ -6320,7 +6320,7 @@ literal|"toolbox-image-area"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show Active _Image"
+literal|"Show active _image"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_IMAGE
@@ -6406,7 +6406,7 @@ literal|"default-dot-for-dot"
 argument_list|,
 name|_
 argument_list|(
-literal|"Use \"_Dot for Dot\" by default"
+literal|"Use \"_Dot for dot\" by default"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -6441,7 +6441,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Marching _Ants Speed:"
+literal|"Marching _ants speed:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -6480,7 +6480,7 @@ literal|"resize-windows-on-zoom"
 argument_list|,
 name|_
 argument_list|(
-literal|"Resize Window on _Zoom"
+literal|"Resize window on _zoom"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -6497,7 +6497,7 @@ literal|"resize-windows-on-resize"
 argument_list|,
 name|_
 argument_list|(
-literal|"Resize Window on Image _Size Change"
+literal|"Resize window on image _size change"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -6526,14 +6526,14 @@ literal|"initial-zoom-to-fit"
 argument_list|,
 name|_
 argument_list|(
-literal|"Fit to Window"
+literal|"Fit to window"
 argument_list|)
 argument_list|,
 literal|"1:1"
 argument_list|,
 name|_
 argument_list|(
-literal|"Initial Zoom Ratio:"
+literal|"Initial zoom ratio:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -6572,7 +6572,7 @@ literal|"show-brush-outline"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show _Brush Outline"
+literal|"Show _brush outline"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -6589,7 +6589,7 @@ literal|"show-paint-tool-cursor"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show Paint _Tool Cursor"
+literal|"Show paint _tool cursor"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -6859,7 +6859,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29307a880108
+DECL|struct|__anon2a34642c0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7388,7 +7388,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Transparency _Type:"
+literal|"Transparency _type:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -7413,7 +7413,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Check _Size:"
+literal|"Check _size:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -7637,7 +7637,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"From _Windowing System (currently %d x %d dpi)"
+literal|"From _windowing system (currently %d x %d dpi)"
 argument_list|)
 argument_list|,
 name|ROUND
@@ -8174,7 +8174,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 enum|enum
-DECL|enum|__anon29307a880203
+DECL|enum|__anon2a34642c0203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -8740,7 +8740,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Hint for the _Toolbox:"
+literal|"Hint for the _toolbox:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -8765,7 +8765,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Hint for the _Docks:"
+literal|"Hint for the _docks:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -8803,7 +8803,7 @@ literal|"activate-on-focus"
 argument_list|,
 name|_
 argument_list|(
-literal|"Activate the _Focused Image"
+literal|"Activate the _focused image"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -8838,7 +8838,7 @@ literal|"save-session-info"
 argument_list|,
 name|_
 argument_list|(
-literal|"_Save Window Positions on Exit"
+literal|"_Save window positions on exit"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -9021,7 +9021,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Minimal Number of Undo Levels:"
+literal|"Minimal number of undo levels:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -9042,7 +9042,7 @@ literal|"undo-size"
 argument_list|,
 name|_
 argument_list|(
-literal|"Maximum Undo Memory:"
+literal|"Maximum undo memory:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -9063,7 +9063,7 @@ literal|"tile-cache-size"
 argument_list|,
 name|_
 argument_list|(
-literal|"Tile Cache Size:"
+literal|"Tile cache size:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -9084,7 +9084,7 @@ literal|"max-new-image-size"
 argument_list|,
 name|_
 argument_list|(
-literal|"Maximum New Image Size:"
+literal|"Maximum new image size:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -9114,7 +9114,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Number of Processors to Use:"
+literal|"Number of processors to use:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -9156,7 +9156,7 @@ literal|"confirm-on-close"
 argument_list|,
 name|_
 argument_list|(
-literal|"Confirm Closing of Unsaved Images"
+literal|"Confirm closing of unsaved images"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -9189,7 +9189,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Size of Thumbnail Files:"
+literal|"Size of thumbnail files:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -9257,7 +9257,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29307a880308
+DECL|struct|__anon2a34642c0308
 block|{
 DECL|member|label
 specifier|const
@@ -9285,7 +9285,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"Temp Dir:"
+literal|"Temp dir:"
 argument_list|)
 block|,
 name|N_
@@ -9299,7 +9299,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Swap Dir:"
+literal|"Swap dir:"
 argument_list|)
 block|,
 name|N_
@@ -9414,7 +9414,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29307a880408
+DECL|struct|__anon2a34642c0408
 block|{
 DECL|member|tree_label
 specifier|const

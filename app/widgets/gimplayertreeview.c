@@ -1309,7 +1309,7 @@ name|toggle
 argument_list|,
 name|_
 argument_list|(
-literal|"Keep Transparency"
+literal|"Keep transparency"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_LAYER_DIALOG_KEEP_TRANS_BUTTON

@@ -1225,7 +1225,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Current Width:"
+literal|"Current width:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1282,7 +1282,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Current Height:"
+literal|"Current height:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1464,7 +1464,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"New Width:"
+literal|"New width:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1521,7 +1521,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"New Height:"
+literal|"New height:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1912,7 +1912,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"X Ratio:"
+literal|"X ratio:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1969,7 +1969,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Y Ratio:"
+literal|"Y ratio:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3174,7 +3174,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"New Width:"
+literal|"New width:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3231,7 +3231,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"New Height:"
+literal|"New height:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3640,7 +3640,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"X Resolution:"
+literal|"X resolution:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3697,7 +3697,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Y Resolution:"
+literal|"Y resolution:"
 argument_list|)
 argument_list|)
 expr_stmt|;

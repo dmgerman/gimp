@@ -134,7 +134,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e4b6620103
+DECL|enum|__anon2be4ebf40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1558,7 +1558,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"X Resolution:"
+literal|"X resolution:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1615,7 +1615,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Y Resolution:"
+literal|"Y resolution:"
 argument_list|)
 argument_list|)
 expr_stmt|;

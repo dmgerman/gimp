@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5e38820103
+DECL|enum|__anon29433e6d0103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -1043,7 +1043,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Palette _File"
+literal|"Palette _file"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1428,7 +1428,7 @@ name|name
 else|:
 name|_
 argument_list|(
-literal|"New Import"
+literal|"New import"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1481,7 +1481,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"N_umber of Colors:"
+literal|"N_umber of colors:"
 argument_list|)
 argument_list|,
 operator|-

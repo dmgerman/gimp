@@ -644,7 +644,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Channel to Selection\n"
+literal|"Channel to selection\n"
 literal|"%s  Add\n"
 literal|"%s  Subtract\n"
 literal|"%s%s%s  Intersect"

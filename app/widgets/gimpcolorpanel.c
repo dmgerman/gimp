@@ -544,7 +544,7 @@ name|gimp_item_factory_set_visible
 argument_list|(
 name|item_factory
 argument_list|,
-literal|"/Foreground Color"
+literal|"/Foreground color"
 argument_list|,
 name|color_panel
 operator|->
@@ -557,7 +557,7 @@ name|gimp_item_factory_set_visible
 argument_list|(
 name|item_factory
 argument_list|,
-literal|"/Background Color"
+literal|"/Background color"
 argument_list|,
 name|color_panel
 operator|->
@@ -615,7 +615,7 @@ name|gimp_item_factory_set_color
 argument_list|(
 name|item_factory
 argument_list|,
-literal|"/Foreground Color"
+literal|"/Foreground color"
 argument_list|,
 operator|&
 name|fg
@@ -627,7 +627,7 @@ name|gimp_item_factory_set_color
 argument_list|(
 name|item_factory
 argument_list|,
-literal|"/Background Color"
+literal|"/Background color"
 argument_list|,
 operator|&
 name|bg

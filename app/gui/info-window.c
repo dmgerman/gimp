@@ -1185,7 +1185,7 @@ name|info_win
 argument_list|,
 name|_
 argument_list|(
-literal|"Pixel Dimensions:"
+literal|"Pixel dimensions:"
 argument_list|)
 argument_list|,
 name|iwd
@@ -1199,7 +1199,7 @@ name|info_win
 argument_list|,
 name|_
 argument_list|(
-literal|"Print Size:"
+literal|"Print size:"
 argument_list|)
 argument_list|,
 name|iwd
@@ -1227,7 +1227,7 @@ name|info_win
 argument_list|,
 name|_
 argument_list|(
-literal|"Scale Ratio:"
+literal|"Scale ratio:"
 argument_list|)
 argument_list|,
 name|iwd
@@ -1241,7 +1241,7 @@ name|info_win
 argument_list|,
 name|_
 argument_list|(
-literal|"Number of Layers:"
+literal|"Number of layers:"
 argument_list|)
 argument_list|,
 name|iwd
@@ -1255,7 +1255,7 @@ name|info_win
 argument_list|,
 name|_
 argument_list|(
-literal|"Size in Memory:"
+literal|"Size in memory:"
 argument_list|)
 argument_list|,
 name|iwd
@@ -1269,7 +1269,7 @@ name|info_win
 argument_list|,
 name|_
 argument_list|(
-literal|"Display Type:"
+literal|"Display type:"
 argument_list|)
 argument_list|,
 name|iwd
@@ -1283,7 +1283,7 @@ name|info_win
 argument_list|,
 name|_
 argument_list|(
-literal|"Visual Class:"
+literal|"Visual class:"
 argument_list|)
 argument_list|,
 name|iwd
@@ -1297,7 +1297,7 @@ name|info_win
 argument_list|,
 name|_
 argument_list|(
-literal|"Visual Depth:"
+literal|"Visual depth:"
 argument_list|)
 argument_list|,
 name|iwd

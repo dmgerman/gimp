@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a098eb50108
+DECL|struct|__anon28ebaecb0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -640,7 +640,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Generate Optimum Palette:"
+literal|"Generate optimum palette:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -798,7 +798,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Max. Number of Colors:"
+literal|"Max. number of colors:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -968,7 +968,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Use Black and White (1-Bit) Palette"
+literal|"Use black and white (1-bit) palette"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1053,7 +1053,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Remove Unused Colors from Final Palette"
+literal|"Remove unused colors from final palette"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1125,7 +1125,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Use Custom Palette:"
+literal|"Use custom palette:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1456,7 +1456,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Enable Dithering of Transparency"
+literal|"Enable dithering of transparency"
 argument_list|)
 argument_list|)
 expr_stmt|;

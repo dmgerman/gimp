@@ -329,7 +329,7 @@ name|edit_desc
 operator|=
 name|_
 argument_list|(
-literal|"Edit Path Attributes"
+literal|"Edit path attributes"
 argument_list|)
 expr_stmt|;
 name|item_view_class
@@ -344,7 +344,7 @@ name|new_desc
 operator|=
 name|_
 argument_list|(
-literal|"New Path\n%s New Path Dialog"
+literal|"New path\n%s new path dialog"
 argument_list|)
 expr_stmt|;
 name|item_view_class
@@ -359,7 +359,7 @@ name|duplicate_desc
 operator|=
 name|_
 argument_list|(
-literal|"Duplicate Path"
+literal|"Duplicate path"
 argument_list|)
 expr_stmt|;
 name|item_view_class
@@ -374,7 +374,7 @@ name|delete_desc
 operator|=
 name|_
 argument_list|(
-literal|"Delete Path"
+literal|"Delete path"
 argument_list|)
 expr_stmt|;
 name|item_view_class
@@ -389,7 +389,7 @@ name|raise_desc
 operator|=
 name|_
 argument_list|(
-literal|"Raise Path"
+literal|"Raise path"
 argument_list|)
 expr_stmt|;
 name|item_view_class
@@ -404,7 +404,7 @@ name|raise_to_top_desc
 operator|=
 name|_
 argument_list|(
-literal|"Raise Path to Top"
+literal|"Raise path to top"
 argument_list|)
 expr_stmt|;
 name|item_view_class
@@ -419,7 +419,7 @@ name|lower_desc
 operator|=
 name|_
 argument_list|(
-literal|"Lower Path"
+literal|"Lower path"
 argument_list|)
 expr_stmt|;
 name|item_view_class
@@ -434,7 +434,7 @@ name|lower_to_bottom_desc
 operator|=
 name|_
 argument_list|(
-literal|"Lower Path to Bottom"
+literal|"Lower path to bottom"
 argument_list|)
 expr_stmt|;
 name|item_view_class
@@ -449,7 +449,7 @@ name|reorder_desc
 operator|=
 name|_
 argument_list|(
-literal|"Reorder Path"
+literal|"Reorder path"
 argument_list|)
 expr_stmt|;
 block|}

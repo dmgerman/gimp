@@ -197,7 +197,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfff4ff0103
+DECL|enum|__anon2b6d6f3c0103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -219,7 +219,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfff4ff0203
+DECL|enum|__anon2b6d6f3c0203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -407,7 +407,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bfff4ff0303
+DECL|enum|__anon2b6d6f3c0303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -430,7 +430,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bfff4ff0408
+DECL|struct|__anon2b6d6f3c0408
 block|{
 DECL|member|directory
 name|gboolean
@@ -4673,7 +4673,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Tile Cache Size:"
+literal|"Tile cache size:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4794,7 +4794,7 @@ literal|"swap-path"
 argument_list|,
 name|_
 argument_list|(
-literal|"Select Swap Dir"
+literal|"Select swap dir"
 argument_list|)
 argument_list|,
 name|TRUE
@@ -4829,7 +4829,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Swap Folder:"
+literal|"Swap folder:"
 argument_list|)
 argument_list|)
 expr_stmt|;

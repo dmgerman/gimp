@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon287f6cb30103
+DECL|enum|__anon27ec38fa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -824,7 +824,7 @@ literal|"fgcolor"
 argument_list|,
 name|_
 argument_list|(
-literal|"Change Grid Foreground Color"
+literal|"Change grid foreground color"
 argument_list|)
 argument_list|,
 name|GRID_EDITOR_COLOR_BUTTON_WIDTH
@@ -847,7 +847,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"_Foreground Color:"
+literal|"_Foreground color:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -876,7 +876,7 @@ literal|"bgcolor"
 argument_list|,
 name|_
 argument_list|(
-literal|"Change Grid Background Color"
+literal|"Change grid background color"
 argument_list|)
 argument_list|,
 name|GRID_EDITOR_COLOR_BUTTON_WIDTH

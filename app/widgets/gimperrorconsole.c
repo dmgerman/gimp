@@ -682,7 +682,7 @@ name|GTK_STOCK_CLEAR
 argument_list|,
 name|_
 argument_list|(
-literal|"Clear Errors"
+literal|"Clear errors"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_ERRORS_CLEAR
@@ -703,8 +703,8 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Save all Errors\n"
-literal|"%s  Save Selection"
+literal|"Save all errors\n"
+literal|"%s  Save selection"
 argument_list|)
 argument_list|,
 name|gimp_get_mod_name_shift

@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d2bb6c0103
+DECL|enum|__anon288f52380103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED
@@ -657,7 +657,7 @@ name|GTK_STOCK_OPEN
 argument_list|,
 name|_
 argument_list|(
-literal|"Load Text from File"
+literal|"Load text from file"
 argument_list|)
 argument_list|,
 name|NULL
@@ -680,7 +680,7 @@ name|GTK_STOCK_CLEAR
 argument_list|,
 name|_
 argument_list|(
-literal|"Clear all Text"
+literal|"Clear all text"
 argument_list|)
 argument_list|,
 name|NULL

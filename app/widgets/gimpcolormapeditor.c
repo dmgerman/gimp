@@ -205,7 +205,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2948d2a10103
+DECL|enum|__anon2b16b14e0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -940,7 +940,7 @@ name|GIMP_STOCK_EDIT
 argument_list|,
 name|_
 argument_list|(
-literal|"Edit Color"
+literal|"Edit color"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_INDEXED_PALETTE_EDIT
@@ -961,7 +961,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Add Color from FG\n%s  from BG"
+literal|"Add color from FG\n%s  from BG"
 argument_list|)
 argument_list|,
 name|gimp_get_mod_name_control
@@ -1665,7 +1665,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Color Index:"
+literal|"Color index:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -1741,7 +1741,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"He_x Triplet:"
+literal|"He_x triplet:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -4442,7 +4442,7 @@ name|GIMP_STOCK_CONVERT_INDEXED
 argument_list|,
 name|_
 argument_list|(
-literal|"Edit Indexed Image Palette Color"
+literal|"Edit indexed image palette color"
 argument_list|)
 argument_list|,
 name|GTK_WIDGET

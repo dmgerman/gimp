@@ -632,7 +632,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Stroke Line"
+literal|"Stroke line"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -778,7 +778,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Stroke With a Paint Tool"
+literal|"Stroke with a paint tool"
 argument_list|)
 argument_list|)
 expr_stmt|;

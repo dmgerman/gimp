@@ -1059,7 +1059,7 @@ name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Previous Tip"
+literal|"_Previous tip"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1116,7 +1116,7 @@ name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Next Tip"
+literal|"_Next tip"
 argument_list|)
 argument_list|)
 expr_stmt|;

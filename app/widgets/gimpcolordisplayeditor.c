@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3846480103
+DECL|enum|__anon28a2d20e0103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -73,7 +73,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3846480203
+DECL|enum|__anon28a2d20e0203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -2394,7 +2394,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Configure Selected Filter: %s"
+literal|"Configure selected filter: %s"
 argument_list|)
 argument_list|,
 name|GIMP_COLOR_DISPLAY_GET_CLASS
@@ -2433,7 +2433,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"No Filter Selected"
+literal|"No filter selected"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2457,7 +2457,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Configure Selected Filter"
+literal|"Configure selected filter"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -205,7 +205,7 @@ name|GIMP_COLOR_FRAME_MODE_PIXEL
 block|,
 name|N_
 argument_list|(
-literal|"Pixel Values"
+literal|"Pixel values"
 argument_list|)
 block|,
 literal|"pixel"
@@ -303,7 +303,7 @@ name|GIMP_CURSOR_FORMAT_BITMAP
 block|,
 name|N_
 argument_list|(
-literal|"Black& White"
+literal|"Black& white"
 argument_list|)
 block|,
 literal|"bitmap"
@@ -390,7 +390,7 @@ name|GIMP_HELP_BROWSER_WEB_BROWSER
 block|,
 name|N_
 argument_list|(
-literal|"Web Browser"
+literal|"Web browser"
 argument_list|)
 block|,
 literal|"web-browser"
@@ -542,7 +542,7 @@ name|GIMP_TAB_STYLE_PREVIEW
 block|,
 name|N_
 argument_list|(
-literal|"Current Status"
+literal|"Current status"
 argument_list|)
 block|,
 literal|"preview"
@@ -575,7 +575,7 @@ name|GIMP_TAB_STYLE_ICON_NAME
 block|,
 name|N_
 argument_list|(
-literal|"Icon& Text"
+literal|"Icon& text"
 argument_list|)
 block|,
 literal|"icon-name"
@@ -586,7 +586,7 @@ name|GIMP_TAB_STYLE_ICON_BLURB
 block|,
 name|N_
 argument_list|(
-literal|"Icon& Desc"
+literal|"Icon& desc"
 argument_list|)
 block|,
 literal|"icon-blurb"
@@ -597,7 +597,7 @@ name|GIMP_TAB_STYLE_PREVIEW_NAME
 block|,
 name|N_
 argument_list|(
-literal|"Status& Text"
+literal|"Status& text"
 argument_list|)
 block|,
 literal|"preview-name"
@@ -608,7 +608,7 @@ name|GIMP_TAB_STYLE_PREVIEW_BLURB
 block|,
 name|N_
 argument_list|(
-literal|"Status& Desc"
+literal|"Status& desc"
 argument_list|)
 block|,
 literal|"preview-blurb"
@@ -673,7 +673,7 @@ name|GIMP_VIEW_TYPE_LIST
 block|,
 name|N_
 argument_list|(
-literal|"View as List"
+literal|"View as list"
 argument_list|)
 block|,
 literal|"list"
@@ -684,7 +684,7 @@ name|GIMP_VIEW_TYPE_GRID
 block|,
 name|N_
 argument_list|(
-literal|"View as Grid"
+literal|"View as grid"
 argument_list|)
 block|,
 literal|"grid"
@@ -749,7 +749,7 @@ name|GIMP_WINDOW_HINT_NORMAL
 block|,
 name|N_
 argument_list|(
-literal|"Normal Window"
+literal|"Normal window"
 argument_list|)
 block|,
 literal|"normal"
@@ -760,7 +760,7 @@ name|GIMP_WINDOW_HINT_UTILITY
 block|,
 name|N_
 argument_list|(
-literal|"Utility Window"
+literal|"Utility window"
 argument_list|)
 block|,
 literal|"utility"
@@ -771,7 +771,7 @@ name|GIMP_WINDOW_HINT_KEEP_ABOVE
 block|,
 name|N_
 argument_list|(
-literal|"Keep Above"
+literal|"Keep above"
 argument_list|)
 block|,
 literal|"keep-above"

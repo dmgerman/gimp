@@ -608,7 +608,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Aspect Ratio:"
+literal|"Aspect ratio:"
 argument_list|)
 argument_list|,
 operator|-

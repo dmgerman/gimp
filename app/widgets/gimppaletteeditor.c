@@ -1481,7 +1481,7 @@ name|GIMP_STOCK_EDIT
 argument_list|,
 name|_
 argument_list|(
-literal|"Edit Color"
+literal|"Edit color"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_PALETTE_EDITOR_EDIT
@@ -1502,7 +1502,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"New Color from FG\n%s  from BG"
+literal|"New color from FG\n%s  from BG"
 argument_list|)
 argument_list|,
 name|gimp_get_mod_name_control
@@ -1559,7 +1559,7 @@ name|GTK_STOCK_DELETE
 argument_list|,
 name|_
 argument_list|(
-literal|"Delete Color"
+literal|"Delete color"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_PALETTE_EDITOR_DELETE
@@ -1589,7 +1589,7 @@ name|GTK_STOCK_ZOOM_OUT
 argument_list|,
 name|_
 argument_list|(
-literal|"Zoom Out"
+literal|"Zoom out"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_PALETTE_EDITOR_ZOOM_OUT
@@ -1619,7 +1619,7 @@ name|GTK_STOCK_ZOOM_IN
 argument_list|,
 name|_
 argument_list|(
-literal|"Zoom In"
+literal|"Zoom in"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_PALETTE_EDITOR_ZOOM_IN
@@ -1649,7 +1649,7 @@ name|GTK_STOCK_ZOOM_FIT
 argument_list|,
 name|_
 argument_list|(
-literal|"Zoom All"
+literal|"Zoom all"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_PALETTE_EDITOR_ZOOM_ALL

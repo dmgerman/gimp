@@ -889,7 +889,7 @@ name|gimp_query_boolean_box
 argument_list|(
 name|_
 argument_list|(
-literal|"File Exists!"
+literal|"File exists!"
 argument_list|)
 argument_list|,
 name|save_dialog

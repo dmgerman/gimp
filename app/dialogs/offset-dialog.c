@@ -1027,7 +1027,7 @@ name|fill_type
 argument_list|,
 name|_
 argument_list|(
-literal|"_Wrap Around"
+literal|"_Wrap around"
 argument_list|)
 argument_list|,
 name|WRAP_AROUND
@@ -1036,7 +1036,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Fill with _Background Color"
+literal|"Fill with _background color"
 argument_list|)
 argument_list|,
 name|GIMP_OFFSET_BACKGROUND
@@ -1045,7 +1045,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Make _Transparent"
+literal|"Make _transparent"
 argument_list|)
 argument_list|,
 name|GIMP_OFFSET_TRANSPARENT

@@ -131,7 +131,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Color Erase"
+literal|"Color erase"
 argument_list|)
 argument_list|,
 name|GIMP_COLOR_ERASE_MODE
@@ -206,7 +206,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Hard Light"
+literal|"Hard light"
 argument_list|)
 argument_list|,
 name|GIMP_HARDLIGHT_MODE
@@ -215,7 +215,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Soft Light"
+literal|"Soft light"
 argument_list|)
 argument_list|,
 name|GIMP_SOFTLIGHT_MODE
@@ -224,7 +224,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Grain Extract"
+literal|"Grain extract"
 argument_list|)
 argument_list|,
 name|GIMP_GRAIN_EXTRACT_MODE
@@ -233,7 +233,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Grain Merge"
+literal|"Grain merge"
 argument_list|)
 argument_list|,
 name|GIMP_GRAIN_MERGE_MODE
@@ -275,7 +275,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Darken Only"
+literal|"Darken only"
 argument_list|)
 argument_list|,
 name|GIMP_DARKEN_ONLY_MODE
@@ -284,7 +284,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Lighten Only"
+literal|"Lighten only"
 argument_list|)
 argument_list|,
 name|GIMP_LIGHTEN_ONLY_MODE
@@ -437,7 +437,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Hard Light"
+literal|"Hard light"
 argument_list|)
 argument_list|,
 name|GIMP_HARDLIGHT_MODE
@@ -446,7 +446,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Soft Light"
+literal|"Soft light"
 argument_list|)
 argument_list|,
 name|GIMP_SOFTLIGHT_MODE
@@ -455,7 +455,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Grain Extract"
+literal|"Grain extract"
 argument_list|)
 argument_list|,
 name|GIMP_GRAIN_EXTRACT_MODE
@@ -464,7 +464,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Grain Merge"
+literal|"Grain merge"
 argument_list|)
 argument_list|,
 name|GIMP_GRAIN_MERGE_MODE
@@ -506,7 +506,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Darken Only"
+literal|"Darken only"
 argument_list|)
 argument_list|,
 name|GIMP_DARKEN_ONLY_MODE
@@ -515,7 +515,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Lighten Only"
+literal|"Lighten only"
 argument_list|)
 argument_list|,
 name|GIMP_LIGHTEN_ONLY_MODE
