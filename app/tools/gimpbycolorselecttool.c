@@ -1020,6 +1020,52 @@ expr_stmt|;
 block|}
 end_function
 
+begin_function
+name|void
+DECL|function|gimp_by_color_select_tool_initialize_by_image (GimpImage * gimage)
+name|gimp_by_color_select_tool_initialize_by_image
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+block|{
+comment|/*  update the preview window  */
+if|if
+condition|(
+name|by_color_dialog
+condition|)
+block|{
+name|by_color_dialog
+operator|->
+name|gimage
+operator|=
+name|gimage
+expr_stmt|;
+name|gimage
+operator|->
+name|by_color_select
+operator|=
+name|TRUE
+expr_stmt|;
+name|by_color_select_render
+argument_list|(
+name|by_color_dialog
+argument_list|,
+name|gimage
+argument_list|)
+expr_stmt|;
+name|by_color_select_draw
+argument_list|(
+name|by_color_dialog
+argument_list|,
+name|gimage
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
 begin_comment
 comment|/* private functions */
 end_comment
@@ -2946,52 +2992,6 @@ end_function
 
 begin_function
 name|void
-DECL|function|by_color_select_initialize_by_image (GimpImage * gimage)
-name|by_color_select_initialize_by_image
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-block|{
-comment|/*  update the preview window  */
-if|if
-condition|(
-name|by_color_dialog
-condition|)
-block|{
-name|by_color_dialog
-operator|->
-name|gimage
-operator|=
-name|gimage
-expr_stmt|;
-name|gimage
-operator|->
-name|by_color_select
-operator|=
-name|TRUE
-expr_stmt|;
-name|by_color_select_render
-argument_list|(
-name|by_color_dialog
-argument_list|,
-name|gimage
-argument_list|)
-expr_stmt|;
-name|by_color_select_draw
-argument_list|(
-name|by_color_dialog
-argument_list|,
-name|gimage
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-end_function
-
-begin_function
-name|void
 DECL|function|by_color_select_initialize (GimpTool * tool,GDisplay * gdisp)
 name|by_color_select_initialize
 parameter_list|(
@@ -3033,7 +3033,7 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-name|by_color_select_initialize_by_image
+name|gimp_by_color_select_tool_initialize_by_image
 argument_list|(
 name|gdisp
 operator|->

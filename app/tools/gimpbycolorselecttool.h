@@ -153,8 +153,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_by_color_select_tool_initialize_by_image
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
-comment|/*  * void    gimp_by_color_select_tool_initialize          (GDisplay     *gdisp);  * void    gimp_by_color_select_tool_initialize_by_image (GimpImage    *gimage);  */
+comment|/* Should be a private function */
 end_comment
 
 begin_function_decl
