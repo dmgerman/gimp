@@ -277,6 +277,11 @@ DECL|member|write_modulerc
 name|gboolean
 name|write_modulerc
 decl_stmt|;
+DECL|member|environ_table
+name|GimpEnvironTable
+modifier|*
+name|environ_table
+decl_stmt|;
 DECL|member|images
 name|GimpContainer
 modifier|*

@@ -248,7 +248,7 @@ value|gtk_widget_modify_style (widget, title_style)
 end_define
 
 begin_enum
-DECL|enum|__anon28fe61ff0103
+DECL|enum|__anon28ed1e100103
 enum|enum
 block|{
 DECL|enumerator|DIRENT_COLUMN
@@ -509,7 +509,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28fe61ff0208
+DECL|struct|__anon28ed1e100208
 block|{
 DECL|member|directory
 name|gboolean
@@ -712,6 +712,22 @@ literal|"or otherwise non-system-supported DLL modules.  The\n"
 literal|"GIMP checks this folder in addition to the system-wide\n"
 literal|"GIMP module folder when searching for modules to load\n"
 literal|"during initialization."
+argument_list|)
+block|}
+block|,
+block|{
+name|TRUE
+block|,
+literal|"environ"
+block|,
+name|N_
+argument_list|(
+literal|"This folder is used to store user created, temporary,\n"
+literal|"or otherwise non-system-supported additions to the\n"
+literal|"plug-in environment.  The GIMP checks this folder in\n"
+literal|"addition to the system-wide GIMP environment folder\n"
+literal|"when searching for plug-in environment modification\n"
+literal|"files."
 argument_list|)
 block|}
 block|,

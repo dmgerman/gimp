@@ -375,6 +375,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpenvirontable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -2777,7 +2783,7 @@ operator|=
 name|NULL
 expr_stmt|;
 comment|/* Execute the filter. The "_exit" call should never            *  be reached, unless some strange error condition            *  exists.            */
-name|execvp
+name|execve
 argument_list|(
 name|plug_in
 operator|->
@@ -2789,6 +2795,15 @@ argument_list|,
 name|plug_in
 operator|->
 name|args
+argument_list|,
+name|gimp_environ_table_get_envp
+argument_list|(
+name|plug_in
+operator|->
+name|gimp
+operator|->
+name|environ_table
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|_exit
