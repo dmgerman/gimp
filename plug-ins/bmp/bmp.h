@@ -172,7 +172,7 @@ name|biWidth
 decl_stmt|;
 comment|/* 12 */
 DECL|member|biHeight
-name|gulong
+name|glong
 name|biHeight
 decl_stmt|;
 comment|/* 16 */

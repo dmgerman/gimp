@@ -817,13 +817,23 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"'%s' is not a valid BMP file"
+literal|"'%s' is not a valid BMP file 0, magick = %c%c"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
+argument_list|,
+name|magick
+index|[
+literal|0
+index|]
+argument_list|,
+name|magick
+index|[
+literal|1
+index|]
 argument_list|)
 expr_stmt|;
 return|return
@@ -861,7 +871,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"'%s' is not a valid BMP file"
+literal|"'%s' is not a valid BMP file 1"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -892,7 +902,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"'%s' is not a valid BMP file"
+literal|"'%s' is not a valid BMP file 2"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -924,7 +934,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"'%s' is not a valid BMP file"
+literal|"'%s' is not a valid BMP file 3"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -1818,7 +1828,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"'%s' is not a valid BMP file"
+literal|"'%s' is not a valid BMP file 4"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -1996,9 +2006,12 @@ name|Bitmap_Head
 operator|.
 name|biWidth
 argument_list|,
+name|ABS
+argument_list|(
 name|Bitmap_Head
 operator|.
 name|biHeight
+argument_list|)
 argument_list|,
 name|ColorMap
 argument_list|,
@@ -2070,6 +2083,21 @@ name|yresolution
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|Bitmap_Head
+operator|.
+name|biHeight
+operator|<
+literal|0
+condition|)
+name|gimp_image_flip
+argument_list|(
+name|image_ID
+argument_list|,
+name|GIMP_ORIENTATION_VERTICAL
+argument_list|)
+expr_stmt|;
 return|return
 name|image_ID
 return|;
