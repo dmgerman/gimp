@@ -805,7 +805,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
-name|gimage
+name|drawable
 argument_list|)
 argument_list|,
 name|NULL
