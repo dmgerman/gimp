@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbf55b40103
+DECL|enum|__anon2c94a7da0103
 block|{
 DECL|enumerator|BUTTON_HOME
 name|BUTTON_HOME
@@ -108,7 +108,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbf55b40203
+DECL|enum|__anon2c94a7da0203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -1502,6 +1502,17 @@ argument_list|)
 expr_stmt|;
 name|update_toolbar
 argument_list|()
+expr_stmt|;
+name|gtk_window_present
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|gtk_widget_get_toplevel
+argument_list|(
+name|html
+argument_list|)
+argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function
