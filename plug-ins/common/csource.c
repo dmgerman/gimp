@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be1eb160108
+DECL|struct|__anon2a17f40d0108
 block|{
 DECL|member|file_name
 name|gchar
@@ -3056,7 +3056,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|2
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -3066,7 +3066,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -3107,7 +3107,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -3117,7 +3117,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3163,7 +3163,7 @@ argument_list|(
 literal|"_Prefixed Name:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -3214,7 +3214,7 @@ argument_list|(
 literal|"Co_mment:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,

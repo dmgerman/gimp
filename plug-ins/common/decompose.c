@@ -772,7 +772,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|decompose_dialog
 parameter_list|(
 name|void
@@ -786,8 +786,9 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|Xn
+specifier|static
 specifier|const
-name|double
+name|gdouble
 name|Xn
 init|=
 literal|0.951
@@ -796,8 +797,9 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|Yn
+specifier|static
 specifier|const
-name|double
+name|gdouble
 name|Yn
 init|=
 literal|1.0
@@ -806,8 +808,9 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|Zn
+specifier|static
 specifier|const
-name|double
+name|gdouble
 name|Zn
 init|=
 literal|1.089
@@ -833,7 +836,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c626e530108
+DECL|struct|__anon2a3d41cd0108
 block|{
 DECL|member|type
 name|gchar
@@ -1454,7 +1457,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c626e530208
+DECL|struct|__anon2a3d41cd0208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1476,7 +1479,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c626e530308
+DECL|struct|__anon2a3d41cd0308
 block|{
 DECL|member|extract_flag
 name|gint
@@ -6657,7 +6660,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|decompose_dialog (void)
 name|decompose_dialog
 parameter_list|(
@@ -6667,6 +6670,10 @@ block|{
 name|GtkWidget
 modifier|*
 name|dlg
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|main_vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -6727,25 +6734,23 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  parameter settings  */
-name|frame
+name|main_vbox
 operator|=
-name|gtk_frame_new
+name|gtk_vbox_new
 argument_list|(
-name|_
-argument_list|(
-literal|"Extract Channels:"
-argument_list|)
+name|FALSE
+argument_list|,
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|frame
+name|main_vbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -6758,6 +6763,38 @@ name|dlg
 argument_list|)
 operator|->
 name|vbox
+argument_list|)
+argument_list|,
+name|main_vbox
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|main_vbox
+argument_list|)
+expr_stmt|;
+comment|/*  parameter settings  */
+name|frame
+operator|=
+name|gimp_frame_new
+argument_list|(
+name|_
+argument_list|(
+literal|"Extract Channels"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|main_vbox
 argument_list|)
 argument_list|,
 name|frame
@@ -6774,16 +6811,6 @@ operator|=
 name|gtk_vbox_new
 argument_list|(
 name|FALSE
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
 argument_list|,
 literal|2
 argument_list|)
@@ -6955,7 +6982,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|main_vbox
 argument_list|)
 argument_list|,
 name|toggle

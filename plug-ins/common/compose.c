@@ -505,7 +505,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be26e250108
+DECL|struct|__anon2934fb310108
 block|{
 DECL|member|compose_type
 specifier|const
@@ -999,7 +999,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be26e250208
+DECL|struct|__anon2934fb310208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -1030,7 +1030,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be26e250308
+DECL|struct|__anon2934fb310308
 block|{
 DECL|member|width
 DECL|member|height
@@ -6152,7 +6152,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -6162,7 +6162,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -6194,7 +6194,7 @@ expr_stmt|;
 comment|/* The left frame keeps the compose type toggles */
 name|left_frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -6224,17 +6224,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|left_vbox
-argument_list|)
-argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -6253,7 +6243,7 @@ comment|/* in the left frame is changed, fill in the right part first. */
 comment|/* Otherwise it can occur, that a non-existing label might be changed. */
 name|right_frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -6283,17 +6273,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|right_vbox
-argument_list|)
-argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -6324,7 +6304,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -6334,7 +6314,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -6490,7 +6470,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|)
