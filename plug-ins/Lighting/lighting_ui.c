@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gck/gck.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"lighting_ui.h"
 end_include
 
@@ -127,16 +121,6 @@ begin_decl_stmt
 specifier|extern
 name|LightingValues
 name|mapvals
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|visinfo
-name|GckVisualInfo
-modifier|*
-name|visinfo
-init|=
-name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -5384,16 +5368,6 @@ argument_list|(
 name|previewarea
 argument_list|)
 expr_stmt|;
-name|visinfo
-operator|=
-name|gck_visualinfo_new
-argument_list|(
-name|gtk_widget_get_screen
-argument_list|(
-name|previewarea
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/* create preview options, frame and vbox */
 name|hbox
 operator|=
@@ -5682,22 +5656,6 @@ condition|)
 name|g_free
 argument_list|(
 name|preview_rgb_data
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|image
-operator|!=
-name|NULL
-condition|)
-name|g_object_unref
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
-name|gck_visualinfo_destroy
-argument_list|(
-name|visinfo
 argument_list|)
 expr_stmt|;
 name|gtk_widget_destroy

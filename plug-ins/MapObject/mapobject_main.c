@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gck/gck.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"arcball.h"
 end_include
 

@@ -38,12 +38,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gck/gck.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"mapobject_main.h"
 end_include
 

@@ -32,12 +32,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gck/gck.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"lighting_main.h"
 end_include
 

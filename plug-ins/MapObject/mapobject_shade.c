@@ -32,12 +32,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gck/gck.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"mapobject_apply.h"
 end_include
 
@@ -85,7 +79,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962c3360108
+DECL|struct|__anon2b412d140108
 block|{
 DECL|member|u
 DECL|member|v

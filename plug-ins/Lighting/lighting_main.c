@@ -12,13 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimp.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gck/gck.h>
+file|<libgimp/gimp.h>
 end_include
 
 begin_include

@@ -44,13 +44,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimp.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gck/gck.h>
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
@@ -152,16 +152,6 @@ DECL|variable|preview_rgb_data
 name|guchar
 modifier|*
 name|preview_rgb_data
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|image
-name|GdkImage
-modifier|*
-name|image
 init|=
 name|NULL
 decl_stmt|;
@@ -1834,9 +1824,6 @@ name|gint
 name|interactive
 parameter_list|)
 block|{
-name|glong
-name|numbytes
-decl_stmt|;
 comment|/* Set the tile cache size */
 comment|/* ======================= */
 name|gimp_tile_cache_ntiles
@@ -1997,62 +1984,17 @@ operator|==
 name|TRUE
 condition|)
 block|{
-comment|/* Allocate memory for temp. images */
-comment|/* ================================ */
-name|numbytes
-operator|=
-name|PREVIEW_HEIGHT
-operator|*
-name|PREVIEW_WIDTH
-operator|*
-literal|3
-expr_stmt|;
-name|image
-operator|=
-name|gdk_image_new
-argument_list|(
-name|GDK_IMAGE_FASTEST
-argument_list|,
-name|visinfo
-operator|->
-name|visual
-argument_list|,
-name|PREVIEW_WIDTH
-argument_list|,
-name|PREVIEW_HEIGHT
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|image
-operator|==
-name|NULL
-condition|)
-return|return
-name|FALSE
-return|;
 name|preview_rgb_data
 operator|=
 name|g_new0
 argument_list|(
 name|guchar
 argument_list|,
-name|numbytes
-argument_list|)
-expr_stmt|;
-comment|/* Convert from raw RGB to GdkImage */
-comment|/* ================================ */
-name|gck_rgb_to_gdkimage
-argument_list|(
-name|visinfo
-argument_list|,
-name|preview_rgb_data
-argument_list|,
-name|image
-argument_list|,
-name|PREVIEW_WIDTH
-argument_list|,
 name|PREVIEW_HEIGHT
+operator|*
+name|PREVIEW_WIDTH
+operator|*
+literal|3
 argument_list|)
 expr_stmt|;
 block|}
