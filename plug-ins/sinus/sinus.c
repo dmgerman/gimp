@@ -50,12 +50,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gdk/gdk.h>
 end_include
 
@@ -74,19 +68,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
+file|<libgimp/gimpmath.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|<plug-ins/megawidget/megawidget.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_ifdef
@@ -224,9 +224,9 @@ value|1L
 end_define
 
 begin_typedef
-DECL|struct|__anon292da94f0108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2af952c20108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -333,9 +333,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon292da94f0208
 typedef|typedef
 struct|struct
+DECL|struct|__anon2af952c20208
 block|{
 DECL|member|height
 DECL|member|width
@@ -451,7 +451,9 @@ begin_function_decl
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -487,52 +489,48 @@ begin_function_decl
 specifier|static
 name|void
 name|sinus
-parameter_list|()
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|double
-name|frac
 parameter_list|(
-name|double
-name|v
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|double
+specifier|static
+name|gdouble
 name|linear
 parameter_list|(
-name|double
+name|gdouble
 name|v
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|double
+specifier|static
+name|gdouble
 name|bilinear
 parameter_list|(
-name|double
+name|gdouble
 name|v
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|double
+specifier|static
+name|gdouble
 name|cosinus
 parameter_list|(
-name|double
+name|gdouble
 name|v
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+specifier|static
+name|gint
 name|sinus_dialog
 parameter_list|(
 name|void
@@ -541,22 +539,13 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|sinus_do_preview
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|DrawPreviewImage
-parameter_list|(
-name|gint
-name|DoCompute
+name|widget
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -717,7 +706,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -1500,7 +1491,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-DECL|struct|__anon292da94f0308
+DECL|struct|__anon2af952c20308
 DECL|member|r
 DECL|member|g
 DECL|member|b
@@ -2348,9 +2339,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|sinus ()
+DECL|function|sinus (void)
 name|sinus
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|params
 name|p
@@ -2699,11 +2692,11 @@ block|}
 end_function
 
 begin_function
-name|double
-DECL|function|linear (double v)
+name|gdouble
+DECL|function|linear (gdouble v)
 name|linear
 parameter_list|(
-name|double
+name|gdouble
 name|v
 parameter_list|)
 block|{
@@ -2735,11 +2728,11 @@ block|}
 end_function
 
 begin_function
-name|double
-DECL|function|bilinear (double v)
+name|gdouble
+DECL|function|bilinear (gdouble v)
 name|bilinear
 parameter_list|(
-name|double
+name|gdouble
 name|v
 parameter_list|)
 block|{
@@ -2789,11 +2782,11 @@ block|}
 end_function
 
 begin_function
-name|double
-DECL|function|cosinus (double v)
+name|gdouble
+DECL|function|cosinus (gdouble v)
 name|cosinus
 parameter_list|(
-name|double
+name|gdouble
 name|v
 parameter_list|)
 block|{
@@ -4125,6 +4118,44 @@ expr_stmt|;
 block|}
 end_function
 
+begin_decl_stmt
+DECL|variable|run_flag
+name|gboolean
+name|run_flag
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_function
+specifier|static
+name|void
+DECL|function|sinus_ok_callback (GtkWidget * widget,gpointer data)
+name|sinus_ok_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|run_flag
+operator|=
+name|TRUE
+expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|data
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 begin_comment
 comment|/*****************************************/
 end_comment
@@ -4138,7 +4169,7 @@ comment|/*****************************************/
 end_comment
 
 begin_function
-name|int
+name|gint
 DECL|function|sinus_dialog (void)
 name|sinus_dialog
 parameter_list|(
@@ -4152,9 +4183,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|preview
-decl_stmt|;
-name|gint
-name|runp
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -4370,17 +4398,79 @@ comment|/* Create Main window with a vbox */
 comment|/* ============================== */
 name|dlg
 operator|=
-name|mw_app_new
+name|gimp_dialog_new
 argument_list|(
-literal|"plug_in_sinus"
-argument_list|,
 name|_
 argument_list|(
 literal|"Sinus"
 argument_list|)
 argument_list|,
-operator|&
-name|runp
+literal|"sinus"
+argument_list|,
+name|gimp_plugin_help_func
+argument_list|,
+literal|"filters/sinus.html"
+argument_list|,
+name|GTK_WIN_POS_MOUSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"OK"
+argument_list|)
+argument_list|,
+name|sinus_ok_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Cancel"
+argument_list|)
+argument_list|,
+name|gtk_widget_destroy
+argument_list|,
+name|NULL
+argument_list|,
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|,
+literal|"destroy"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gtk_main_quit
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|main_hbox
@@ -4389,17 +4479,17 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|main_hbox
 argument_list|)
 argument_list|,
-literal|5
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4436,7 +4526,7 @@ name|gtk_vbox_new
 argument_list|(
 name|TRUE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4448,7 +4538,7 @@ argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4644,14 +4734,14 @@ argument_list|,
 literal|5
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|page
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|frame
@@ -4660,7 +4750,7 @@ name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Drawing settings"
+literal|"Drawing Settings"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4683,9 +4773,9 @@ argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -4699,21 +4789,21 @@ name|table
 operator|=
 name|gtk_table_new
 argument_list|(
-literal|4
+literal|3
 argument_list|,
 literal|2
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -4842,7 +4932,7 @@ name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Calculation settings"
+literal|"Calculation Settings"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4865,9 +4955,9 @@ argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -4883,7 +4973,17 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -4909,7 +5009,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Random seed:"
+literal|"Random Seed:"
 argument_list|)
 argument_list|,
 operator|&
@@ -4926,7 +5026,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Force tiling?"
+literal|"Force Tiling?"
 argument_list|)
 argument_list|,
 operator|&
@@ -4996,17 +5096,17 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|page
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|frame
@@ -5038,9 +5138,9 @@ argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -5048,6 +5148,40 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|frame
+argument_list|)
+expr_stmt|;
+name|vbox
+operator|=
+name|gtk_vbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|frame
+argument_list|)
+argument_list|,
+name|vbox
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|vbox
 argument_list|)
 expr_stmt|;
 if|if
@@ -5082,7 +5216,7 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|frame
+name|vbox
 argument_list|)
 argument_list|,
 name|label
@@ -5096,30 +5230,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|vbox
-operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|5
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|vbox
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|vbox
-argument_list|)
-expr_stmt|;
 name|mw_value_radio_group_new
 argument_list|(
 name|vbox
@@ -5152,7 +5262,7 @@ argument_list|)
 argument_list|,
 name|hbox
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5276,9 +5386,9 @@ argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -5292,21 +5402,41 @@ name|table
 operator|=
 name|gtk_table_new
 argument_list|(
-literal|3
+literal|2
 argument_list|,
 literal|2
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -5325,7 +5455,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"First Color: "
+literal|"First Color:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5336,7 +5466,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|1.0
 argument_list|)
@@ -5544,7 +5674,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Second Color: "
+literal|"Second Color:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5555,7 +5685,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|1.0
 argument_list|)
@@ -5807,45 +5937,23 @@ argument_list|)
 expr_stmt|;
 comment|/* blend settings dialog: */
 comment|/* ====================== */
-name|label
-operator|=
-name|gtk_label_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Blend"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_misc_set_alignment
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|label
-argument_list|)
-argument_list|,
-literal|0.5
-argument_list|,
-literal|0.5
-argument_list|)
-expr_stmt|;
 name|page
 operator|=
 name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|page
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|frame
@@ -5854,7 +5962,7 @@ name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Blend settings"
+literal|"Blend Settings"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5895,7 +6003,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -5915,7 +6023,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -5944,21 +6052,11 @@ name|table
 operator|=
 name|gtk_table_new
 argument_list|(
-literal|2
+literal|1
 argument_list|,
-literal|2
+literal|3
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|5
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -5977,7 +6075,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"Exponent "
+literal|"Exponent:"
 argument_list|)
 argument_list|,
 operator|-
@@ -6010,6 +6108,28 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
+name|gtk_label_new
+argument_list|(
+name|_
+argument_list|(
+literal|"Blend"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|0.5
+argument_list|,
+literal|0.5
+argument_list|)
+expr_stmt|;
 name|gtk_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
@@ -6040,7 +6160,7 @@ argument_list|()
 expr_stmt|;
 comment|/* argp->type = mw_radio_result(mode); */
 return|return
-name|runp
+name|run_flag
 return|;
 block|}
 end_function
@@ -6058,13 +6178,13 @@ comment|/******************************************************************/
 end_comment
 
 begin_function
-DECL|function|sinus_do_preview (GtkWidget * w)
 name|void
+DECL|function|sinus_do_preview (GtkWidget * widget)
 name|sinus_do_preview
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|)
 block|{
 specifier|static
@@ -6098,7 +6218,7 @@ condition|)
 block|{
 name|theWidget
 operator|=
-name|w
+name|widget
 expr_stmt|;
 block|}
 name|rowsize
@@ -6115,12 +6235,10 @@ name|savbuf
 operator|=
 name|buf
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|thePreview
 operator|->
 name|width
@@ -6273,7 +6391,7 @@ operator|+=
 name|rowsize
 expr_stmt|;
 block|}
-name|free
+name|g_free
 argument_list|(
 name|savbuf
 argument_list|)

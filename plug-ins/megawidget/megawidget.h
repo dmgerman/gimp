@@ -75,46 +75,6 @@ block|}
 struct|;
 end_struct
 
-begin_struct
-DECL|struct|mwColorSel
-struct|struct
-name|mwColorSel
-block|{
-DECL|member|color
-name|gdouble
-modifier|*
-name|color
-decl_stmt|;
-DECL|member|savcolor
-name|gdouble
-name|savcolor
-index|[
-literal|4
-index|]
-decl_stmt|;
-DECL|member|opacity
-name|gint
-name|opacity
-decl_stmt|;
-DECL|member|name
-name|guchar
-modifier|*
-name|name
-decl_stmt|;
-DECL|member|window
-name|GtkWidget
-modifier|*
-name|window
-decl_stmt|;
-DECL|member|preview
-name|GtkWidget
-modifier|*
-name|preview
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -133,26 +93,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_function_decl
-name|GtkWidget
-modifier|*
-name|mw_app_new
-parameter_list|(
-name|gchar
-modifier|*
-name|resname
-parameter_list|,
-name|gchar
-modifier|*
-name|appname
-parameter_list|,
-name|gint
-modifier|*
-name|runpp
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|void
@@ -404,30 +344,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|struct
-name|mwColorSel
-modifier|*
-name|mw_color_select_button_create
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|parent
-parameter_list|,
-name|gchar
-modifier|*
-name|name
-parameter_list|,
-name|gdouble
-modifier|*
-name|color
-parameter_list|,
-name|gint
-name|opacity
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|mw_ientry_new
 parameter_list|(
@@ -540,10 +456,6 @@ end_endif
 
 begin_comment
 comment|/* MEGAWIDGET_H */
-end_comment
-
-begin_comment
-comment|/* end of megawidget/megawidget.h */
 end_comment
 
 end_unit

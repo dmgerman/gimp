@@ -421,7 +421,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a0b3660108
+DECL|struct|__anon27f89aa90108
 block|{
 DECL|member|name
 name|gchar
@@ -958,7 +958,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a0b3660208
+DECL|struct|__anon27f89aa90208
 block|{
 DECL|member|h_style
 name|gint
@@ -1021,7 +1021,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a0b3660308
+DECL|struct|__anon27f89aa90308
 block|{
 DECL|member|run
 name|gint
@@ -2938,7 +2938,7 @@ name|vbox
 argument_list|,
 name|_
 argument_list|(
-literal|"Parameter settings"
+literal|"Parameter Settings"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2959,7 +2959,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"Horizontal style"
+literal|"Horizontal Style:"
 argument_list|)
 argument_list|,
 literal|0
@@ -2999,7 +2999,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"Horizontal base"
+literal|"Horizontal Base:"
 argument_list|)
 argument_list|,
 literal|0
@@ -3039,7 +3039,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"Vertical style"
+literal|"Vertical Style:"
 argument_list|)
 argument_list|,
 literal|0
@@ -3079,7 +3079,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"Vertical base"
+literal|"Vertical Base:"
 argument_list|)
 argument_list|,
 literal|0
@@ -3121,7 +3121,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"Ignore the bottom layer even if visible"
+literal|"Ignore the Bottom Layer even if Visible"
 argument_list|)
 argument_list|,
 literal|0
@@ -3146,7 +3146,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"Use the (invisible) bottom layer as the base"
+literal|"Use the (Invisible) Bottom Layer as the Base"
 argument_list|)
 argument_list|,
 literal|0
@@ -3171,7 +3171,7 @@ name|table
 argument_list|,
 name|_
 argument_list|(
-literal|"Grid size"
+literal|"Grid Size:"
 argument_list|)
 argument_list|,
 literal|0
@@ -3757,14 +3757,14 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|GTKW_BORDER_WIDTH
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3958,14 +3958,34 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|GTKW_BORDER_WIDTH
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -4219,14 +4239,14 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-name|GTKW_BORDER_WIDTH
+literal|6
 argument_list|)
 expr_stmt|;
 if|if
@@ -4446,7 +4466,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -4480,7 +4500,7 @@ literal|0
 operator|&
 name|GTK_FILL
 argument_list|,
-literal|5
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -4593,14 +4613,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_scale_set_value_pos
+name|gtk_scale_set_draw_value
 argument_list|(
 name|GTK_SCALE
 argument_list|(
 name|scale
 argument_list|)
 argument_list|,
-name|GTK_POS_TOP
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_scale_set_digits
@@ -4611,16 +4631,6 @@ name|scale
 argument_list|)
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_range_set_update_policy
-argument_list|(
-name|GTK_RANGE
-argument_list|(
-name|scale
-argument_list|)
-argument_list|,
-name|GTK_UPDATE_DELAYED
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -5114,7 +5124,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -5148,7 +5158,7 @@ literal|0
 operator|&
 name|GTK_FILL
 argument_list|,
-name|GTKW_BORDER_WIDTH
+literal|0
 argument_list|,
 literal|0
 argument_list|)

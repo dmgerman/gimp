@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -22,31 +28,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"logo.h"
+file|<libgimp/gimpmath.h>
 end_include
 
 begin_include
@@ -55,35 +55,11 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_comment
-comment|/***** Macros *****/
-end_comment
-
-begin_define
-DECL|macro|ALIEN_MIN (a,b)
-define|#
-directive|define
-name|ALIEN_MIN
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|)
-value|(((a)< (b)) ? (a) : (b))
-end_define
-
-begin_define
-DECL|macro|ALIEN_MAX (a,b)
-define|#
-directive|define
-name|ALIEN_MAX
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|)
-value|(((a)> (b)) ? (a) : (b))
-end_define
+begin_include
+include|#
+directive|include
+file|"logo.h"
+end_include
 
 begin_comment
 comment|/***** Magic numbers *****/
@@ -161,9 +137,9 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e6fc070108
 typedef|typedef
 struct|struct
+DECL|struct|__anon294832e60108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -212,9 +188,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e6fc070208
 typedef|typedef
 struct|struct
+DECL|struct|__anon294832e60208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -340,6 +316,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|transform
 parameter_list|(
@@ -457,37 +434,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|dialog_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|dialog_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|dialog_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -515,6 +462,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|alienmap2_logo_dialog
 parameter_list|(
@@ -663,10 +611,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/* wint */
-end_comment
-
 begin_decl_stmt
 DECL|variable|wvals
 specifier|static
@@ -696,10 +640,6 @@ name|TRUE
 block|, }
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-comment|/* wvals */
-end_comment
 
 begin_decl_stmt
 DECL|variable|drawable
@@ -835,7 +775,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -1009,7 +951,7 @@ argument_list|(
 literal|"<Image>/Filters/Colors/Map/Alien Map 2..."
 argument_list|)
 argument_list|,
-literal|"RGB_MODEL*"
+literal|"RGB*"
 argument_list|,
 name|PROC_PLUG_IN
 argument_list|,
@@ -1590,7 +1532,7 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
-comment|/*   image_ID = param[1].data.d_image; */
+comment|/* image_ID = param[1].data.d_image; */
 name|tile_width
 operator|=
 name|gimp_tile_width
@@ -1763,7 +1705,6 @@ operator|=
 literal|1.0
 expr_stmt|;
 block|}
-comment|/* else */
 comment|/* Calculate preview size */
 if|if
 condition|(
@@ -1774,7 +1715,7 @@ condition|)
 block|{
 name|pwidth
 operator|=
-name|ALIEN_MIN
+name|MIN
 argument_list|(
 name|sel_width
 argument_list|,
@@ -1794,7 +1735,7 @@ else|else
 block|{
 name|pheight
 operator|=
-name|ALIEN_MIN
+name|MIN
 argument_list|(
 name|sel_height
 argument_list|,
@@ -1810,10 +1751,9 @@ operator|/
 name|sel_height
 expr_stmt|;
 block|}
-comment|/* else */
 name|preview_width
 operator|=
-name|ALIEN_MAX
+name|MAX
 argument_list|(
 name|pwidth
 argument_list|,
@@ -1823,7 +1763,7 @@ expr_stmt|;
 comment|/* Min size is 2 */
 name|preview_height
 operator|=
-name|ALIEN_MAX
+name|MAX
 argument_list|(
 name|pheight
 argument_list|,
@@ -1877,6 +1817,7 @@ name|status
 operator|==
 name|STATUS_SUCCESS
 condition|)
+block|{
 name|wvals
 operator|.
 name|redfrequency
@@ -2019,6 +1960,7 @@ name|TRUE
 else|:
 name|FALSE
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|RUN_WITH_LAST_VALS
@@ -2036,7 +1978,6 @@ break|break;
 default|default:
 break|break;
 block|}
-comment|/* switch */
 if|if
 condition|(
 name|status
@@ -2081,7 +2022,7 @@ operator|)
 argument_list|)
 expr_stmt|;
 comment|/* Run! */
-comment|/*          gimp_tile_cache_ntiles (2 * (drawable->width / gimp_tile_width()+1));*/
+comment|/* gimp_tile_cache_ntiles (2 * (drawable->width / gimp_tile_width()+1));*/
 name|alienmap2
 argument_list|(
 name|drawable
@@ -2119,7 +2060,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*           gimp_message("This filter only applies on RGB_MODEL-images"); */
+comment|/* gimp_message("This filter only applies on RGB_MODEL-images"); */
 name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
@@ -2144,10 +2085,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -2254,7 +2191,6 @@ literal|0
 expr_stmt|;
 return|return;
 block|}
-comment|/* if */
 name|newcol
 operator|=
 name|x
@@ -2341,7 +2277,6 @@ operator|=
 name|newrow
 expr_stmt|;
 block|}
-comment|/* if */
 name|p
 operator|=
 name|the_tile
@@ -2383,10 +2318,6 @@ operator|++
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* alienmap2_get_pixel */
-end_comment
 
 begin_function
 specifier|static
@@ -2884,10 +2815,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -3104,70 +3031,13 @@ operator|+=
 name|dx
 expr_stmt|;
 block|}
-comment|/* for */
 name|py
 operator|+=
 name|dy
 expr_stmt|;
 block|}
-comment|/* for */
 block|}
 end_function
-
-begin_comment
-comment|/* build_preview_source_image */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|set_tooltip (GtkTooltips * tooltips,GtkWidget * widget,const char * desc)
-name|set_tooltip
-parameter_list|(
-name|GtkTooltips
-modifier|*
-name|tooltips
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-specifier|const
-name|char
-modifier|*
-name|desc
-parameter_list|)
-block|{
-if|if
-condition|(
-name|desc
-operator|&&
-name|desc
-index|[
-literal|0
-index|]
-condition|)
-name|gtk_tooltips_set_tip
-argument_list|(
-name|tooltips
-argument_list|,
-name|widget
-argument_list|,
-operator|(
-name|char
-operator|*
-operator|)
-name|desc
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -3201,14 +3071,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|table
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|hbbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|button
 decl_stmt|;
 name|GSList
 modifier|*
@@ -3269,7 +3131,7 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
-literal|"alienmap"
+literal|"alienmap2"
 argument_list|)
 expr_stmt|;
 name|gtk_init
@@ -3346,40 +3208,79 @@ name|dialog
 operator|=
 name|maindlg
 operator|=
-name|gtk_dialog_new
-argument_list|()
-expr_stmt|;
-name|gtk_window_set_title
+name|gimp_dialog_new
 argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"AlienMap2"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_window_position
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
+argument_list|,
+literal|"alienmap2"
+argument_list|,
+name|gimp_plugin_help_func
+argument_list|,
+literal|"filters/alienmap2.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
-argument_list|)
-expr_stmt|;
-name|gtk_container_border_width
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
 argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|dialog
+literal|"About"
 argument_list|)
 argument_list|,
-literal|0
+name|alienmap2_logo_dialog
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"OK"
+argument_list|)
+argument_list|,
+name|dialog_ok_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Cancel"
+argument_list|)
+argument_list|,
+name|gtk_widget_destroy
+argument_list|,
+name|NULL
+argument_list|,
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -3391,10 +3292,10 @@ argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|dialog_close_callback
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gtk_main_quit
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3403,14 +3304,34 @@ name|top_table
 operator|=
 name|gtk_table_new
 argument_list|(
-literal|7
+literal|2
 argument_list|,
-literal|4
+literal|2
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|top_table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|top_table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -3456,81 +3377,8 @@ argument_list|(
 name|top_table
 argument_list|)
 expr_stmt|;
-comment|/* use black as foreground: */
-name|tips
-operator|=
-name|gtk_tooltips_new
+name|gimp_help_init
 argument_list|()
-expr_stmt|;
-name|tips_fg
-operator|.
-name|red
-operator|=
-literal|0
-expr_stmt|;
-name|tips_fg
-operator|.
-name|green
-operator|=
-literal|0
-expr_stmt|;
-name|tips_fg
-operator|.
-name|blue
-operator|=
-literal|0
-expr_stmt|;
-comment|/* postit yellow (khaki) as background: */
-name|gdk_color_alloc
-argument_list|(
-name|gtk_widget_get_colormap
-argument_list|(
-name|top_table
-argument_list|)
-argument_list|,
-operator|&
-name|tips_fg
-argument_list|)
-expr_stmt|;
-name|tips_bg
-operator|.
-name|red
-operator|=
-literal|61669
-expr_stmt|;
-name|tips_bg
-operator|.
-name|green
-operator|=
-literal|59113
-expr_stmt|;
-name|tips_bg
-operator|.
-name|blue
-operator|=
-literal|35979
-expr_stmt|;
-name|gdk_color_alloc
-argument_list|(
-name|gtk_widget_get_colormap
-argument_list|(
-name|top_table
-argument_list|)
-argument_list|,
-operator|&
-name|tips_bg
-argument_list|)
-expr_stmt|;
-name|gtk_tooltips_set_colors
-argument_list|(
-name|tips
-argument_list|,
-operator|&
-name|tips_bg
-argument_list|,
-operator|&
-name|tips_fg
-argument_list|)
 expr_stmt|;
 comment|/* Preview */
 name|frame
@@ -3635,14 +3483,24 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_table_set_col_spacings
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_TABLE
 argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|0
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -3656,7 +3514,7 @@ name|table
 argument_list|,
 literal|0
 argument_list|,
-literal|4
+literal|2
 argument_list|,
 literal|1
 argument_list|,
@@ -3668,9 +3526,9 @@ name|GTK_FILL
 argument_list|,
 literal|0
 argument_list|,
-literal|5
+literal|0
 argument_list|,
-literal|5
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3690,7 +3548,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 operator|&
 name|wvals
@@ -3699,7 +3557,7 @@ name|redfrequency
 argument_list|,
 literal|0
 argument_list|,
-literal|5.0000000000000
+literal|5.0
 argument_list|,
 name|_
 argument_list|(
@@ -3729,7 +3587,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|1
 argument_list|,
 operator|&
 name|wvals
@@ -3738,7 +3596,7 @@ name|redangle
 argument_list|,
 literal|0
 argument_list|,
-literal|360.00000000000000
+literal|360.0
 argument_list|,
 name|_
 argument_list|(
@@ -3758,7 +3616,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|3
+literal|2
 argument_list|,
 operator|&
 name|wvals
@@ -3767,7 +3625,7 @@ name|greenfrequency
 argument_list|,
 literal|0
 argument_list|,
-literal|5.00000000000
+literal|5.0
 argument_list|,
 name|_
 argument_list|(
@@ -3787,7 +3645,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|3
 argument_list|,
 operator|&
 name|wvals
@@ -3796,7 +3654,7 @@ name|greenangle
 argument_list|,
 literal|0
 argument_list|,
-literal|360.00000000000000
+literal|360.0
 argument_list|,
 name|_
 argument_list|(
@@ -3816,7 +3674,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|,
 operator|&
 name|wvals
@@ -3825,7 +3683,7 @@ name|bluefrequency
 argument_list|,
 literal|0
 argument_list|,
-literal|5.00000000000
+literal|5.0
 argument_list|,
 name|_
 argument_list|(
@@ -3845,7 +3703,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|6
+literal|5
 argument_list|,
 operator|&
 name|wvals
@@ -3854,7 +3712,7 @@ name|blueangle
 argument_list|,
 literal|0
 argument_list|,
-literal|360.00000000000
+literal|360.0
 argument_list|,
 name|_
 argument_list|(
@@ -3869,7 +3727,7 @@ name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Mode:"
+literal|"Mode"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3908,9 +3766,9 @@ name|GTK_FILL
 operator||
 name|GTK_EXPAND
 argument_list|,
-literal|5
+literal|0
 argument_list|,
-literal|5
+literal|0
 argument_list|)
 expr_stmt|;
 name|toggle_vbox
@@ -3919,17 +3777,17 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|toggle_vbox
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -3950,7 +3808,7 @@ name|mode_group
 argument_list|,
 name|_
 argument_list|(
-literal|"RGB_MODEL color model"
+literal|"RGB_MODEL Color Model"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3989,10 +3847,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|alienmap2_toggle_update
+argument_list|)
 argument_list|,
 operator|&
 name|use_rgb
@@ -4013,16 +3871,16 @@ argument_list|(
 name|toggle
 argument_list|)
 expr_stmt|;
-name|set_tooltip
+name|gimp_help_set_help_data
 argument_list|(
-name|tips
-argument_list|,
 name|toggle
 argument_list|,
 name|_
 argument_list|(
 literal|"Use RGB_MODEL color model"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|toggle
@@ -4033,7 +3891,7 @@ name|mode_group
 argument_list|,
 name|_
 argument_list|(
-literal|"HSL_MODEL color model"
+literal|"HSL_MODEL Color Model"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4072,10 +3930,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|alienmap2_toggle_update
+argument_list|)
 argument_list|,
 operator|&
 name|use_hsl
@@ -4096,16 +3954,16 @@ argument_list|(
 name|toggle
 argument_list|)
 expr_stmt|;
-name|set_tooltip
+name|gimp_help_set_help_data
 argument_list|(
-name|tips
-argument_list|,
 name|toggle
 argument_list|,
 name|_
 argument_list|(
 literal|"Use HSL_MODEL color model"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|toggle
@@ -4114,7 +3972,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Modify red/hue channel"
+literal|"Modify Red/Hue Channel"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4143,10 +4001,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|alienmap2_toggle_update
+argument_list|)
 argument_list|,
 operator|&
 name|wvals
@@ -4171,16 +4029,16 @@ argument_list|(
 name|toggle
 argument_list|)
 expr_stmt|;
-name|set_tooltip
+name|gimp_help_set_help_data
 argument_list|(
-name|tips
-argument_list|,
 name|toggle
 argument_list|,
 name|_
 argument_list|(
 literal|"Use function for red/hue component"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|toggle
@@ -4189,7 +4047,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Modify green/saturation channel"
+literal|"Modify Green/Caturation Channel"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4218,10 +4076,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|alienmap2_toggle_update
+argument_list|)
 argument_list|,
 operator|&
 name|wvals
@@ -4246,16 +4104,16 @@ argument_list|(
 name|toggle
 argument_list|)
 expr_stmt|;
-name|set_tooltip
+name|gimp_help_set_help_data
 argument_list|(
-name|tips
-argument_list|,
 name|toggle
 argument_list|,
 name|_
 argument_list|(
 literal|"Use function for green/saturation component"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|toggle
@@ -4264,7 +4122,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Modify blue/luminance channel"
+literal|"Modify Blue/Luminance Channel"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4293,10 +4151,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|alienmap2_toggle_update
+argument_list|)
 argument_list|,
 operator|&
 name|wvals
@@ -4321,16 +4179,16 @@ argument_list|(
 name|toggle
 argument_list|)
 expr_stmt|;
-name|set_tooltip
+name|gimp_help_set_help_data
 argument_list|(
-name|tips
-argument_list|,
 name|toggle
 argument_list|,
 name|_
 argument_list|(
 literal|"Use function for blue/luminance component"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -4343,326 +4201,6 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-comment|/*  Action area  */
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_box_set_homogeneous
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|hbbox
-operator|=
-name|gtk_hbutton_box_new
-argument_list|()
-expr_stmt|;
-name|gtk_button_box_set_spacing
-argument_list|(
-name|GTK_BUTTON_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|hbbox
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbbox
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"About"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|alienmap2_logo_dialog
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|set_tooltip
-argument_list|(
-name|tips
-argument_list|,
-name|button
-argument_list|,
-name|_
-argument_list|(
-literal|"Show information about this plug-in and the author"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|hbbox
-operator|=
-name|gtk_hbutton_box_new
-argument_list|()
-expr_stmt|;
-name|gtk_button_box_set_spacing
-argument_list|(
-name|GTK_BUTTON_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_end
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|hbbox
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbbox
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|dialog_ok_callback
-argument_list|,
-name|dialog
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_grab_default
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|set_tooltip
-argument_list|(
-name|tips
-argument_list|,
-name|button
-argument_list|,
-name|_
-argument_list|(
-literal|"Accept settings and apply filter on image"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|dialog_cancel_callback
-argument_list|,
-name|dialog
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|set_tooltip
-argument_list|(
-name|tips
-argument_list|,
-name|button
-argument_list|,
-name|_
-argument_list|(
-literal|"Reject any changes and close plug-in"
-argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/* Done */
 name|gtk_widget_show
 argument_list|(
 name|dialog
@@ -4674,13 +4212,8 @@ expr_stmt|;
 name|gtk_main
 argument_list|()
 expr_stmt|;
-name|gtk_object_unref
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|tips
-argument_list|)
-argument_list|)
+name|gimp_help_free
+argument_list|()
 expr_stmt|;
 name|gdk_flush
 argument_list|()
@@ -4704,7 +4237,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/* if */
 name|g_free
 argument_list|(
 name|wint
@@ -4726,14 +4258,6 @@ name|run
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* alienmap2_dialog */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -4991,14 +4515,12 @@ literal|1
 expr_stmt|;
 comment|/* dx; */
 block|}
-comment|/* for */
 name|py
 operator|+=
 literal|1
 expr_stmt|;
 comment|/* dy; */
 block|}
-comment|/* for */
 name|p
 operator|=
 name|wint
@@ -5044,7 +4566,6 @@ operator|*
 literal|3
 expr_stmt|;
 block|}
-comment|/* for */
 name|gtk_widget_draw
 argument_list|(
 name|wint
@@ -5059,14 +4580,6 @@ argument_list|()
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_update_preview */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -5117,7 +4630,7 @@ name|GtkObject
 modifier|*
 name|scale_data
 decl_stmt|;
-name|char
+name|gchar
 name|buf
 index|[
 literal|256
@@ -5137,7 +4650,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -5162,7 +4675,7 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|4
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -5260,9 +4773,9 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|5
+literal|0
 argument_list|,
-literal|5
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_scale_set_draw_value
@@ -5300,13 +4813,13 @@ argument_list|(
 name|scale
 argument_list|)
 expr_stmt|;
-name|set_tooltip
+name|gimp_help_set_help_data
 argument_list|(
-name|tips
-argument_list|,
 name|scale
 argument_list|,
 name|desc
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|entry
@@ -5340,9 +4853,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%0.2f"
 argument_list|,
@@ -5400,7 +4918,7 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|4
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -5410,25 +4928,17 @@ argument_list|(
 name|entry
 argument_list|)
 expr_stmt|;
-name|set_tooltip
+name|gimp_help_set_help_data
 argument_list|(
-name|tips
-argument_list|,
 name|entry
 argument_list|,
 name|desc
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_create_value */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -5449,7 +4959,7 @@ name|GtkWidget
 modifier|*
 name|entry
 decl_stmt|;
-name|char
+name|gchar
 name|buf
 index|[
 literal|256
@@ -5482,9 +4992,14 @@ name|adjustment
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%0.2f"
 argument_list|,
@@ -5526,17 +5041,8 @@ name|dialog_update_preview
 argument_list|()
 expr_stmt|;
 block|}
-comment|/* if */
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_scale_update */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -5635,43 +5141,9 @@ name|dialog_update_preview
 argument_list|()
 expr_stmt|;
 block|}
-comment|/* if */
 block|}
-comment|/* if */
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_entry_update */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|dialog_close_callback (GtkWidget * widget,gpointer data)
-name|dialog_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/* dialog_close_callback */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -5703,43 +5175,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_ok_callback */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|dialog_cancel_callback (GtkWidget * widget,gpointer data)
-name|dialog_cancel_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_widget_destroy
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/* dialog_cancel_callback */
-end_comment
 
 begin_function
 specifier|static
@@ -5817,17 +5252,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|alienmap2_logo_dialog ()
+DECL|function|alienmap2_logo_dialog (void)
 name|alienmap2_logo_dialog
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
 name|xlabel
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|xbutton
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -5852,7 +5285,7 @@ name|GtkWidget
 modifier|*
 name|xhbox
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|text
 decl_stmt|;
@@ -5880,30 +5313,45 @@ condition|)
 block|{
 name|logodlg
 operator|=
-name|gtk_dialog_new
-argument_list|()
-expr_stmt|;
-name|gtk_window_set_title
+name|gimp_dialog_new
 argument_list|(
-name|GTK_WINDOW
+name|_
 argument_list|(
-name|logodlg
+literal|"About AlienMap2"
 argument_list|)
+argument_list|,
+literal|"alienmap2"
+argument_list|,
+name|gimp_plugin_help_func
+argument_list|,
+literal|"filters/alienmap2.html"
+argument_list|,
+name|GTK_WIN_POS_MOUSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"About Alien Map 2"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_window_position
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|logodlg
+literal|"OK"
 argument_list|)
 argument_list|,
-name|GTK_WIN_POS_MOUSE
+name|gtk_widget_hide
+argument_list|,
+name|NULL
+argument_list|,
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -5934,104 +5382,6 @@ name|logodlg
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|logodlg
-argument_list|)
-argument_list|,
-literal|"delete_event"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|gtk_widget_hide_on_delete
-argument_list|)
-argument_list|,
-operator|&
-name|logodlg
-argument_list|)
-expr_stmt|;
-name|xbutton
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|xbutton
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect_object
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|xbutton
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|gtk_widget_hide
-argument_list|)
-argument_list|,
-name|GTK_OBJECT
-argument_list|(
-name|logodlg
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|logodlg
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|xbutton
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_grab_default
-argument_list|(
-name|xbutton
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|xbutton
-argument_list|)
-expr_stmt|;
-name|set_tooltip
-argument_list|(
-name|tips
-argument_list|,
-name|xbutton
-argument_list|,
-name|_
-argument_list|(
-literal|"This closes the information box"
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|xframe
 operator|=
 name|gtk_frame_new
@@ -6049,14 +5399,14 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|xframe
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -6086,7 +5436,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -6096,7 +5446,7 @@ argument_list|(
 name|xvbox
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -6358,11 +5708,13 @@ argument_list|)
 expr_stmt|;
 name|text
 operator|=
+operator|(
 literal|"\nMartin Weber\n"
 literal|"martin.weber@usa.net\n"
 literal|"http://diverse.freepage.de/martin.weber\n\n"
 literal|"AlienMap2 Plug-In for the GIMP\n"
 literal|"Version 1.0\n"
+operator|)
 expr_stmt|;
 name|xlabel
 operator|=

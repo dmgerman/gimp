@@ -34,13 +34,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -66,9 +66,9 @@ value|20
 end_define
 
 begin_typedef
-DECL|struct|__anon2c235e5b0108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2bbe1c210108
 block|{
 DECL|member|color
 name|guchar
@@ -84,9 +84,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c235e5b0208
 typedef|typedef
 struct|struct
+DECL|struct|__anon2bbe1c210208
 block|{
 DECL|member|run
 name|gint
@@ -99,9 +99,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c235e5b0308
 typedef|typedef
 struct|struct
+DECL|struct|__anon2bbe1c210308
 block|{
 DECL|member|color_button
 name|GtkWidget
@@ -133,18 +133,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -211,22 +211,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|C2A_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|C2A_ok_callback
+name|colortoalpha_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -321,7 +306,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -442,21 +429,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -1784,7 +1771,7 @@ argument_list|(
 literal|"OK"
 argument_list|)
 argument_list|,
-name|C2A_ok_callback
+name|colortoalpha_ok_callback
 argument_list|,
 name|NULL
 argument_list|,
@@ -1827,7 +1814,7 @@ literal|"destroy"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|C2A_close_callback
+name|gtk_main_quit
 argument_list|)
 argument_list|,
 name|NULL
@@ -1852,6 +1839,42 @@ name|table
 argument_list|)
 argument_list|,
 literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|6
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+operator|->
+name|vbox
+argument_list|)
+argument_list|,
+name|table
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|table
 argument_list|)
 expr_stmt|;
 name|label
@@ -1962,7 +1985,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"to alpha"
+literal|"to Alpha"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2001,32 +2024,6 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
-name|vbox
-argument_list|)
-argument_list|,
-name|table
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|table
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|dlg
@@ -2049,28 +2046,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|C2A_close_callback (GtkWidget * widget,gpointer data)
-name|C2A_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|C2A_ok_callback (GtkWidget * widget,gpointer data)
-name|C2A_ok_callback
+DECL|function|colortoalpha_ok_callback (GtkWidget * widget,gpointer data)
+name|colortoalpha_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*

@@ -80,9 +80,9 @@ value|50
 end_define
 
 begin_typedef
-DECL|struct|__anon295382350108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2c53b7680108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -99,9 +99,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon295382350208
 typedef|typedef
 struct|struct
+DECL|struct|__anon2c53b7680208
 block|{
 DECL|member|run
 name|gint
@@ -338,7 +338,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -805,10 +807,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -1427,9 +1425,11 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|spread_dialog ()
+DECL|function|spread_dialog (void)
 name|spread_dialog
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
@@ -1741,8 +1741,6 @@ argument_list|,
 literal|1
 argument_list|,
 name|GTK_FILL
-operator||
-name|GTK_EXPAND
 argument_list|,
 name|GTK_FILL
 argument_list|,
@@ -2028,14 +2026,12 @@ argument_list|,
 literal|2
 argument_list|,
 name|GTK_FILL
-operator||
-name|GTK_EXPAND
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|10
+literal|0
 argument_list|,
-literal|5
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2312,10 +2308,6 @@ name|run
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static

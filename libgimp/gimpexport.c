@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpenums.h"
 end_include
 
@@ -65,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292363260108
+DECL|struct|__anon2a0571520108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -431,13 +437,13 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can't handle layers"
+literal|"can't Handle Layers"
 argument_list|)
 block|,
 block|{
 name|N_
 argument_list|(
-literal|"Merge visible layers"
+literal|"Merge Visible Layers"
 argument_list|)
 block|,
 name|NULL
@@ -461,18 +467,18 @@ name|export_merge
 block|,
 name|N_
 argument_list|(
-literal|"can only handle layers as animation frames"
+literal|"can only Handle Layers as Animation Frames"
 argument_list|)
 block|,
 block|{
 name|N_
 argument_list|(
-literal|"Save as animation"
+literal|"Save as Animation"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Merge visible layers"
+literal|"Merge Visible Layers"
 argument_list|)
 block|}
 block|,
@@ -495,7 +501,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can't handle transparency"
+literal|"can't Handle Transparency"
 argument_list|)
 block|,
 block|{
@@ -526,7 +532,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can only handle RGB images"
+literal|"can only Handle RGB Images"
 argument_list|)
 block|,
 block|{
@@ -557,13 +563,13 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can only handle grayscale images"
+literal|"can only Handle Grayscale Images"
 argument_list|)
 block|,
 block|{
 name|N_
 argument_list|(
-literal|"Convert to grayscale"
+literal|"Convert to Grayscale"
 argument_list|)
 block|,
 name|NULL
@@ -588,13 +594,14 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can only handle indexed images"
+literal|"can only Handle Indexed Images"
 argument_list|)
 block|,
 block|{
 name|N_
 argument_list|(
-literal|"Convert to indexed using default settings\n(Do it manually to tune the result)"
+literal|"Convert to indexed using default settings\n"
+literal|"(Do it manually to tune the result)"
 argument_list|)
 block|,
 name|NULL
@@ -620,7 +627,7 @@ name|export_convert_grayscale
 block|,
 name|N_
 argument_list|(
-literal|"can only handle RGB or grayscale images"
+literal|"can only Handle RGB or Grayscale Images"
 argument_list|)
 block|,
 block|{
@@ -631,7 +638,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Convert to grayscale"
+literal|"Convert to Grayscale"
 argument_list|)
 block|}
 block|,
@@ -655,7 +662,7 @@ name|export_convert_indexed
 block|,
 name|N_
 argument_list|(
-literal|"can only handle RGB or indexed images"
+literal|"can only Handle RGB or Indexed Images"
 argument_list|)
 block|,
 block|{
@@ -666,7 +673,8 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Convert to indexed using default settings\n(Do it manually to tune the result)"
+literal|"Convert to indexed using default settings\n"
+literal|"(Do it manually to tune the result)"
 argument_list|)
 block|}
 block|,
@@ -690,18 +698,19 @@ name|export_convert_grayscale
 block|,
 name|N_
 argument_list|(
-literal|"can only handle grayscale or indexed images"
+literal|"can only Handle Grayscale or Indexed Images"
 argument_list|)
 block|,
 block|{
 name|N_
 argument_list|(
-literal|"Convert to indexed using default settings\n(Do it manually to tune the result)"
+literal|"Convert to indexed using default settings\n"
+literal|"(Do it manually to tune the result)"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Convert to grayscale"
+literal|"Convert to Grayscale"
 argument_list|)
 block|}
 block|,
@@ -724,13 +733,13 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"needs an alpha channel"
+literal|"needs an Alpha Channel"
 argument_list|)
 block|,
 block|{
 name|N_
 argument_list|(
-literal|"Add alpha channel"
+literal|"Add Alpha Channel"
 argument_list|)
 block|,
 name|NULL
@@ -915,10 +924,6 @@ name|frame
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|button
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|vbox
 decl_stmt|;
 name|GtkWidget
@@ -927,7 +932,7 @@ name|hbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|hbbox
+name|button
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -966,30 +971,79 @@ comment|/*    *  Plug-ins have called gtk_init () before calling gimp_export ().
 comment|/* the dialog */
 name|dialog
 operator|=
-name|gtk_dialog_new
-argument_list|()
-expr_stmt|;
-name|gtk_window_set_title
+name|gimp_dialog_new
 argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"Export File"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_window_position
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
+argument_list|,
+literal|"export_file"
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"dialogs/export_file.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Export"
+argument_list|)
+argument_list|,
+name|export_export_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Ignore"
+argument_list|)
+argument_list|,
+name|export_skip_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Cancel"
+argument_list|)
+argument_list|,
+name|gtk_widget_destroy
+argument_list|,
+name|NULL
+argument_list|,
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -1001,257 +1055,12 @@ argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|export_cancel_callback
+argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-comment|/*  Action area  */
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_box_set_homogeneous
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|hbbox
-operator|=
-name|gtk_hbutton_box_new
-argument_list|()
-expr_stmt|;
-name|gtk_button_box_set_spacing
-argument_list|(
-name|GTK_BUTTON_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_end
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|hbbox
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbbox
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"Export"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|export_export_callback
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_grab_default
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"Ignore"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|export_skip_callback
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect_object
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|gtk_widget_destroy
-argument_list|,
-name|GTK_OBJECT
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 comment|/* the headline */
@@ -1300,7 +1109,8 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Your image should be exported before it can be saved for the following reasons:"
+literal|"Your image should be exported before it "
+literal|"can be saved for the following reasons:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1442,7 +1252,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
 if|if
@@ -1535,10 +1345,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|export_toggle_callback
+argument_list|)
 argument_list|,
 operator|&
 name|action
@@ -1771,7 +1581,8 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"The export conversion won't modify your original image."
+literal|"The export conversion won't modify "
+literal|"your original image."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1805,9 +1616,7 @@ name|gtk_main
 argument_list|()
 expr_stmt|;
 return|return
-operator|(
 name|dialog_return
-operator|)
 return|;
 block|}
 end_function
@@ -2416,9 +2225,7 @@ name|actions
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|dialog_return
-operator|)
 return|;
 block|}
 end_function

@@ -7,6 +7,23 @@ begin_comment
 comment|/****************************************************************************  * Blur:  *  * blur version 2.0 (1 May 1998, MEO)  * history  *     2.0 -  1 May 1998 MEO  *         based on randomize 1.7  *  * Please send any patches or suggestions to the author: meo@rru.com .  *   * Blur applies a 3x3 blurring convolution kernel to the specified drawable.  *   * For each pixel in the selection or image,  * whether to change the pixel is decided by picking a  * random number, weighted by the user's "randomization" percentage.  * If the random number is in range, the pixel is modified.  For  * blurring, an average is determined from the current and adjacent  * pixels. *(Except for the random factor, the blur code came  * straight from the original S&P blur plug-in.)*  *   * This works only with RGB and grayscale images.  *   ****************************************************************************/
 end_comment
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_CONFIG_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -34,19 +51,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -54,23 +71,6 @@ include|#
 directive|include
 file|<plug-ins/gpc/gpc.h>
 end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_CONFIG_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -147,7 +147,7 @@ comment|/*********************************  *  *  PLUGIN-SPECIFIC STRUCTURES AND
 end_comment
 
 begin_typedef
-DECL|struct|__anon29f8a15b0108
+DECL|struct|__anon2b9df2470108
 typedef|typedef
 struct|struct
 block|{
@@ -196,7 +196,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29f8a15b0208
+DECL|struct|__anon2b9df2470208
 typedef|typedef
 struct|struct
 block|{
@@ -329,7 +329,9 @@ begin_function_decl
 specifier|static
 name|gint
 name|blur_dialog
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -366,7 +368,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -397,7 +401,7 @@ literal|"drawable"
 block|,
 literal|"Input drawable"
 block|}
-block|,     }
+block|,   }
 decl_stmt|;
 specifier|static
 name|int
@@ -477,7 +481,7 @@ literal|"blur_seed"
 block|,
 literal|"Seed value (used only if seed type is 11)"
 block|}
-block|,     }
+block|,   }
 decl_stmt|;
 specifier|static
 name|int
@@ -717,7 +721,7 @@ decl_stmt|;
 name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
-comment|/*  *  Get the specified drawable, do standard initialization.  */
+comment|/*    *  Get the specified drawable, do standard initialization.    */
 name|run_mode
 operator|=
 name|param
@@ -773,7 +777,7 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
-comment|/*  *  Make sure the drawable type is appropriate.  */
+comment|/*    *  Make sure the drawable type is appropriate.    */
 if|if
 condition|(
 name|gimp_drawable_is_rgb
@@ -796,7 +800,7 @@ condition|(
 name|run_mode
 condition|)
 block|{
-comment|/*  *  If we're running interactively, pop up the dialog box.  */
+comment|/* 	   *  If we're running interactively, pop up the dialog box. 	   */
 case|case
 name|RUN_INTERACTIVE
 case|:
@@ -817,7 +821,7 @@ condition|)
 comment|/* return on Cancel */
 return|return;
 break|break;
-comment|/*  *  If we're not interactive (probably scripting), we  *  get the parameters from the param[] array, since  *  we don't use the dialog box.  Make sure all  *  parameters have legitimate values.  */
+comment|/* 	   *  If we're not interactive (probably scripting), we 	   *  get the parameters from the param[] array, since 	   *  we don't use the dialog box.  Make sure all 	   *  parameters have legitimate values. 	   */
 case|case
 name|RUN_NONINTERACTIVE
 case|:
@@ -1080,7 +1084,7 @@ name|STATUS_CALLING_ERROR
 expr_stmt|;
 block|}
 break|break;
-comment|/*  *  If we're running with the last set of values, get those values.  */
+comment|/* 	   *  If we're running with the last set of values, get those values. 	   */
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
@@ -1093,7 +1097,7 @@ name|pivals
 argument_list|)
 expr_stmt|;
 break|break;
-comment|/*  *  Hopefully we never get here!  */
+comment|/* 	   *  Hopefully we never get here! 	   */
 default|default:
 break|break;
 block|}
@@ -1104,7 +1108,7 @@ operator|==
 name|STATUS_SUCCESS
 condition|)
 block|{
-comment|/*  *  JUST DO IT!  */
+comment|/* 	   *  JUST DO IT! 	   */
 name|strcpy
 argument_list|(
 name|prog_label
@@ -1133,7 +1137,7 @@ literal|1
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/*  *  Initialize the rand() function seed  */
+comment|/* 	   *  Initialize the rand() function seed 	   */
 if|if
 condition|(
 name|pivals
@@ -1163,7 +1167,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-comment|/*  *  If we ran interactively (even repeating) update the display.  */
+comment|/* 	   *  If we ran interactively (even repeating) update the display. 	   */
 if|if
 condition|(
 name|run_mode
@@ -1175,7 +1179,7 @@ name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
 block|}
-comment|/*  *  If we use the dialog popup, set the data for future use.  */
+comment|/* 	   *  If we use the dialog popup, set the data for future use. 	   */
 if|if
 condition|(
 name|run_mode
@@ -1201,13 +1205,13 @@ block|}
 block|}
 else|else
 block|{
-comment|/*  *  If we got the wrong drawable type, we need to complain.  */
+comment|/*        *  If we got the wrong drawable type, we need to complain.        */
 name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 block|}
-comment|/*  *  DONE!  *  Set the status where the GIMP can see it, and let go  *  of the drawable.  */
+comment|/*    *  DONE!    *  Set the status where the GIMP can see it, and let go    *  of the drawable.    */
 name|values
 index|[
 literal|0
@@ -1328,7 +1332,7 @@ name|w
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  *  Fill in edge pixels  */
+comment|/*    *  Fill in edge pixels    */
 for|for
 control|(
 name|b
@@ -1486,7 +1490,7 @@ name|has_alpha
 decl_stmt|,
 name|ind
 decl_stmt|;
-comment|/*  *  Get the input area. This is the bounding box of the selection in  *  the image (or the entire image if there is no selection). Only  *  operating on the input area is simply an optimization. It doesn't  *  need to be done for correct operation. (It simply makes it go  *  faster, since fewer pixels need to be operated on).  */
+comment|/*    *  Get the input area. This is the bounding box of the selection in    *  the image (or the entire image if there is no selection). Only    *  operating on the input area is simply an optimization. It doesn't    *  need to be done for correct operation. (It simply makes it go    *  faster, since fewer pixels need to be operated on).    */
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
@@ -1506,7 +1510,7 @@ operator|&
 name|y2
 argument_list|)
 expr_stmt|;
-comment|/*  *  Get the size of the input image. (This will/must be the same  *  as the size of the output image.  Also get alpha info.  */
+comment|/*    *  Get the size of the input image. (This will/must be the same    *  as the size of the output image.  Also get alpha info.    */
 name|width
 operator|=
 name|drawable
@@ -1534,7 +1538,7 @@ operator|->
 name|id
 argument_list|)
 expr_stmt|;
-comment|/*  *  allocate row buffers  */
+comment|/*    *  allocate row buffers    */
 name|prev_row
 operator|=
 operator|(
@@ -1609,7 +1613,7 @@ operator|*
 name|bytes
 argument_list|)
 expr_stmt|;
-comment|/*  *  initialize the pixel regions  */
+comment|/*    *  initialize the pixel regions    */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -1718,7 +1722,7 @@ name|cnt
 operator|++
 control|)
 block|{
-comment|/*  *  prepare the first row and previous row  */
+comment|/*        *  prepare the first row and previous row        */
 name|blur_prepare_row
 argument_list|(
 name|sp
@@ -1755,7 +1759,7 @@ name|x1
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/*  *  loop through the rows, applying the selected convolution  */
+comment|/*        *  loop through the rows, applying the selected convolution        */
 for|for
 control|(
 name|row
@@ -1852,7 +1856,7 @@ name|has_alpha
 operator|)
 condition|)
 block|{
-comment|/*  *  If no alpha channel, or if there is one and this is it...  */
+comment|/* 		       *  If no alpha channel, 		       *   or if there is one and this is it... 		       */
 operator|*
 name|d
 operator|++
@@ -1952,7 +1956,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*  *  otherwise we have an alpha channel, but this is a color channel  */
+comment|/* 		       *  otherwise we have an alpha channel, 		       *   but this is a color channel 		       */
 operator|*
 name|d
 operator|++
@@ -2260,7 +2264,7 @@ argument_list|)
 operator|)
 expr_stmt|;
 block|}
-comment|/*  *  Otherwise, this pixel was not selected for randomization,  *  so use the current value.  */
+comment|/* 		   *  Otherwise, this pixel was not selected for randomization, 		   *  so use the current value. 		   */
 block|}
 else|else
 block|{
@@ -2278,7 +2282,7 @@ index|]
 expr_stmt|;
 block|}
 block|}
-comment|/*  *  Save the modified row, shuffle the row pointers, and every  *  so often, update the progress meter.  */
+comment|/* 	   *  Save the modified row, shuffle the row pointers, and every 	   *  so often, update the progress meter. 	   */
 name|gimp_pixel_rgn_set_row
 argument_list|(
 name|dp
@@ -2334,7 +2338,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  *  if we have more cycles to perform, swap the src and dest Pixel Regions  */
+comment|/*        *  if we have more cycles to perform, swap the src and dest Pixel Regions        */
 if|if
 condition|(
 name|cnt
@@ -2392,7 +2396,7 @@ operator|)
 literal|100
 argument_list|)
 expr_stmt|;
-comment|/*  *  update the blurred region  */
+comment|/*    *  update the blurred region    */
 name|gimp_drawable_flush
 argument_list|(
 name|drawable
@@ -2430,7 +2434,7 @@ name|y1
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/*  *  clean up after ourselves.  */
+comment|/*    *  clean up after ourselves.    */
 name|free
 argument_list|(
 name|prev_row
@@ -2455,36 +2459,43 @@ block|}
 end_function
 
 begin_comment
-comment|/*********************************  *  *  GUI ROUTINES  *  ********************************/
-end_comment
-
-begin_comment
-comment|/*********************************  *  *  blur_dialog() - set up the plug-in's dialog box  *  ********************************/
+comment|/*********************************  *  GUI ROUTINES  ********************************/
 end_comment
 
 begin_function
 specifier|static
 name|gint
-DECL|function|blur_dialog ()
+DECL|function|blur_dialog (void)
 name|blur_dialog
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
 name|dlg
-decl_stmt|,
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|label
+decl_stmt|;
+name|GtkWidget
 modifier|*
 name|entry
-decl_stmt|,
+decl_stmt|;
+name|GtkWidget
 modifier|*
 name|frame
-decl_stmt|,
+decl_stmt|;
+name|GtkWidget
 modifier|*
 name|seed_hbox
-decl_stmt|,
+decl_stmt|;
+name|GtkWidget
 modifier|*
 name|seed_vbox
-decl_stmt|,
+decl_stmt|;
+name|GtkWidget
 modifier|*
 name|table
 decl_stmt|;
@@ -2508,7 +2519,6 @@ index|[
 literal|10
 index|]
 decl_stmt|;
-comment|/*  *  various initializations  */
 name|gint
 name|do_time
 init|=
@@ -2570,7 +2580,6 @@ name|gimp_gtkrc
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|/*  *  Open a new dialog, label it and set up its  *  destroy callback.  */
 name|dlg
 operator|=
 name|gimp_dialog_new
@@ -2639,13 +2648,13 @@ literal|"destroy"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gpc_close_callback
+name|gtk_main_quit
 argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  *  Parameter settings  *  *  First set up the basic containers, label them, etc.  */
+comment|/*    *  Parameter settings    *    *  First set up the basic containers, label them, etc.    */
 name|frame
 operator|=
 name|gtk_frame_new
@@ -2666,14 +2675,14 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2708,14 +2717,34 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2738,15 +2767,36 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-comment|/*  *  Randomization seed initialization controls  */
-name|gpc_add_label
+name|label
+operator|=
+name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
 literal|"Randomization Seed:"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
 argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
+argument_list|)
+expr_stmt|;
+name|gtk_table_attach_defaults
+argument_list|(
+name|GTK_TABLE
+argument_list|(
 name|table
+argument_list|)
+argument_list|,
+name|label
 argument_list|,
 literal|0
 argument_list|,
@@ -2757,7 +2807,12 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-comment|/*  *  Box to hold seed initialization radio buttons  */
+name|gtk_widget_show
+argument_list|(
+name|label
+argument_list|)
+expr_stmt|;
+comment|/*    *  Box to hold seed initialization radio buttons    */
 name|seed_vbox
 operator|=
 name|gtk_vbox_new
@@ -2765,16 +2820,6 @@ argument_list|(
 name|FALSE
 argument_list|,
 literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|seed_vbox
-argument_list|)
-argument_list|,
-literal|5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2800,12 +2845,12 @@ name|GTK_EXPAND
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|5
+literal|0
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  *  Time button  */
+comment|/*    *  Time button    */
 name|gpc_add_radio_button
 argument_list|(
 operator|&
@@ -2823,28 +2868,19 @@ name|do_time
 argument_list|,
 name|_
 argument_list|(
-literal|"Seed random number generator from the current time - this guarantees a reasonable randomization"
+literal|"Seed random number generator from the current "
+literal|"time - this guarantees a reasonable randomization"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  *  Box to hold seed user initialization controls  */
+comment|/*    *  Box to hold seed user initialization controls    */
 name|seed_hbox
 operator|=
 name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|3
-argument_list|)
-expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|seed_hbox
-argument_list|)
-argument_list|,
-literal|0
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2863,7 +2899,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  *  User button  */
+comment|/*    *  User button    */
 name|gpc_add_radio_button
 argument_list|(
 operator|&
@@ -2881,11 +2917,13 @@ name|do_user
 argument_list|,
 name|_
 argument_list|(
-literal|"Enable user-entered value for random number generator seed - this allows you to repeat a given \"random\" operation"
+literal|"Enable user-entered value for random number "
+literal|"generator seed - this allows you to repeat a "
+literal|"given \"random\" operation"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  *  Randomization seed number (text)  */
+comment|/*    *  Randomization seed number (text)    */
 name|entry
 operator|=
 name|gtk_entry_new
@@ -2916,9 +2954,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -2977,15 +3020,37 @@ argument_list|(
 name|seed_hbox
 argument_list|)
 expr_stmt|;
-comment|/*  *  Randomization percentage label& scale (1 to 100)  */
-name|gpc_add_label
+comment|/*    *  Randomization percentage label& scale (1 to 100)    */
+name|label
+operator|=
+name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
 literal|"Randomization %:"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
 argument_list|,
+literal|1.0
+argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
+name|gtk_table_attach_defaults
+argument_list|(
+name|GTK_TABLE
+argument_list|(
 name|table
+argument_list|)
+argument_list|,
+name|label
 argument_list|,
 literal|0
 argument_list|,
@@ -2994,6 +3059,11 @@ argument_list|,
 literal|2
 argument_list|,
 literal|3
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|label
 argument_list|)
 expr_stmt|;
 name|gpc_add_hscale
@@ -3025,15 +3095,37 @@ literal|"Percentage of pixels to be filtered"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  *  Repeat count label& scale (1 to 100)  */
-name|gpc_add_label
+comment|/*    *  Repeat count label& scale (1 to 100)    */
+name|label
+operator|=
+name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
 literal|"Repeat:"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
 argument_list|,
+literal|1.0
+argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
+name|gtk_table_attach_defaults
+argument_list|(
+name|GTK_TABLE
+argument_list|(
 name|table
+argument_list|)
+argument_list|,
+name|label
 argument_list|,
 literal|0
 argument_list|,
@@ -3042,6 +3134,11 @@ argument_list|,
 literal|3
 argument_list|,
 literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|label
 argument_list|)
 expr_stmt|;
 name|gpc_add_hscale
@@ -3073,7 +3170,7 @@ literal|"Number of times to apply filter"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  *  Display everything.  */
+comment|/*    *  Display everything.    */
 name|gtk_widget_show
 argument_list|(
 name|frame
@@ -3090,7 +3187,7 @@ expr_stmt|;
 name|gdk_flush
 argument_list|()
 expr_stmt|;
-comment|/*  *  Figure out which type of seed initialization to apply.  */
+comment|/*    *  Figure out which type of seed initialization to apply.    */
 if|if
 condition|(
 name|do_time

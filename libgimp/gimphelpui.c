@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimphelpui.h"
 end_include
 
@@ -265,6 +271,19 @@ operator|!
 name|help_func
 condition|)
 return|return;
+comment|/*  for convenience we set the wm icon here because    *  this function is called for almost all gimp windows    */
+if|if
+condition|(
+name|GTK_IS_WINDOW
+argument_list|(
+name|widget
+argument_list|)
+condition|)
+name|gimp_dialog_set_icon
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
 comment|/*  set up the help signals and tips query widget  */
 if|if
 condition|(
@@ -496,13 +515,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_help_set_help_data (GtkWidget * widget,gchar * tooltip,gchar * help_data)
+DECL|function|gimp_help_set_help_data (GtkWidget * widget,const gchar * tooltip,gchar * help_data)
 name|gimp_help_set_help_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|tooltip

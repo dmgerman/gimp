@@ -4,7 +4,7 @@ comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is 
 end_comment
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------  * Change log:  *   * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------  * Change log:  *   * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *---------------------------------------------------------------------------*/
 end_comment
 
 begin_include
@@ -86,7 +86,7 @@ file|"rcm_callback.h"
 end_include
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_comment
@@ -94,7 +94,7 @@ comment|/* Misc functions */
 end_comment
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -301,35 +301,16 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_comment
-comment|/* Ok/Cancel Buttons */
+comment|/* Ok Button */
 end_comment
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
-
-begin_function
-DECL|function|rcm_close_callback (GtkWidget * widget,gpointer data)
-name|void
-name|rcm_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-block|}
-end_function
 
 begin_function
 DECL|function|rcm_ok_callback (GtkWidget * widget,gpointer data)
@@ -344,6 +325,12 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|Current
+operator|.
+name|Success
+operator|=
+literal|1
+expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|GTK_WIDGET
@@ -352,17 +339,11 @@ name|data
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|Current
-operator|.
-name|Success
-operator|=
-literal|1
-expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_comment
@@ -370,7 +351,7 @@ comment|/* Circle buttons */
 end_comment
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -644,7 +625,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_comment
@@ -652,7 +633,7 @@ comment|/* Misc: units buttons */
 end_comment
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -918,7 +899,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -1184,7 +1165,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -1450,7 +1431,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_comment
@@ -1458,7 +1439,7 @@ comment|/* Misc: Gray: mode buttons */
 end_comment
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -1554,7 +1535,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_comment
@@ -1562,7 +1543,7 @@ comment|/* Misc: Preview buttons */
 end_comment
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -1605,7 +1586,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -1750,7 +1731,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -1871,7 +1852,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_comment
@@ -1879,7 +1860,7 @@ comment|/* Circle events */
 end_comment
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -1961,7 +1942,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -2251,7 +2232,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -2330,7 +2311,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -2687,7 +2668,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_comment
@@ -2695,7 +2676,7 @@ comment|/* Gray circle events */
 end_comment
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -2789,7 +2770,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -3010,7 +2991,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -3093,7 +3074,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -3381,7 +3362,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_comment
@@ -3389,7 +3370,7 @@ comment|/* Spinbuttons */
 end_comment
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -3492,7 +3473,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -3595,7 +3576,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -3721,7 +3702,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -3840,7 +3821,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -3925,7 +3906,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 end_unit

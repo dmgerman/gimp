@@ -30,7 +30,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad76c4b0103
+DECL|enum|__anon297bcb170103
 block|{
 DECL|enumerator|HELP_BROWSER_GIMP
 name|HELP_BROWSER_GIMP
@@ -40,21 +40,6 @@ name|HELP_BROWSER_NETSCAPE
 block|}
 enum|;
 end_enum
-
-begin_comment
-comment|/*  the standard help function  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_standard_help_func
-parameter_list|(
-name|gchar
-modifier|*
-name|help_data
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_comment
 comment|/*  the main help function  */

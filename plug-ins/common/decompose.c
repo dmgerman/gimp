@@ -72,13 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -690,21 +690,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|decompose_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|decompose_ok_callback
 parameter_list|(
 name|GtkWidget
@@ -749,7 +734,7 @@ comment|/* Description of an extraction */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c6cfae40108
+DECL|struct|__anon279520100108
 typedef|typedef
 struct|struct
 block|{
@@ -1220,7 +1205,7 @@ value|(sizeof (extract)/sizeof (extract[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon2c6cfae40208
+DECL|struct|__anon279520100208
 typedef|typedef
 struct|struct
 block|{
@@ -1238,7 +1223,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c6cfae40308
+DECL|struct|__anon279520100308
 typedef|typedef
 struct|struct
 block|{
@@ -1330,7 +1315,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -1489,9 +1476,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|show_message (const char * message)
 specifier|static
 name|void
+DECL|function|show_message (const char * message)
 name|show_message
 parameter_list|(
 specifier|const
@@ -1512,7 +1499,7 @@ name|message
 argument_list|)
 expr_stmt|;
 else|else
-name|printf
+name|g_print
 argument_list|(
 literal|"%s\n"
 argument_list|,
@@ -5227,7 +5214,7 @@ literal|"destroy"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|decompose_close_callback
+name|gtk_main_quit
 argument_list|)
 argument_list|,
 name|NULL
@@ -5261,7 +5248,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|5
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5291,7 +5278,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -5301,7 +5288,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -5417,10 +5404,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|decompose_toggle_update
+argument_list|)
 argument_list|,
 operator|&
 operator|(
@@ -5480,30 +5467,6 @@ name|decoint
 operator|.
 name|run
 return|;
-block|}
-end_function
-
-begin_comment
-comment|/*  Decompose interface functions  */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|decompose_close_callback (GtkWidget * widget,gpointer data)
-name|decompose_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 

@@ -3182,14 +3182,6 @@ parameter_list|)
 function_decl|;
 comment|/****************************************  *                Help                  *  ****************************************/
 name|void
-name|gimp_standard_help_func
-parameter_list|(
-name|gchar
-modifier|*
-name|help_data
-parameter_list|)
-function_decl|;
-name|void
 name|gimp_plugin_help_func
 parameter_list|(
 name|gchar

@@ -72,13 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -418,21 +418,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|compose_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|compose_ok_callback
 parameter_list|(
 name|GtkWidget
@@ -477,7 +462,7 @@ comment|/* Description of a composition */
 end_comment
 
 begin_typedef
-DECL|struct|__anon296b3cb00108
+DECL|struct|__anon2755c1e40108
 typedef|typedef
 struct|struct
 block|{
@@ -753,7 +738,7 @@ value|(sizeof (compose_dsc) / sizeof (compose_dsc[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon296b3cb00208
+DECL|struct|__anon2755c1e40208
 typedef|typedef
 struct|struct
 block|{
@@ -784,7 +769,7 @@ comment|/* Dialog structure */
 end_comment
 
 begin_typedef
-DECL|struct|__anon296b3cb00308
+DECL|struct|__anon2755c1e40308
 typedef|typedef
 struct|struct
 block|{
@@ -4326,7 +4311,7 @@ literal|"destroy"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|compose_close_callback
+name|gtk_main_quit
 argument_list|)
 argument_list|,
 name|NULL
@@ -4339,7 +4324,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -4349,7 +4334,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-literal|0
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4385,7 +4370,7 @@ name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Compose channels:"
+literal|"Compose Channels"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4399,16 +4384,6 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|left_frame
-argument_list|)
-argument_list|,
-literal|5
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -4418,9 +4393,9 @@ argument_list|)
 argument_list|,
 name|left_frame
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -4431,7 +4406,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -4441,7 +4416,7 @@ argument_list|(
 name|left_vbox
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -4464,7 +4439,7 @@ name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Channel representations:"
+literal|"Channel Representations"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4476,16 +4451,6 @@ name|right_frame
 argument_list|)
 argument_list|,
 name|GTK_SHADOW_ETCHED_IN
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|right_frame
-argument_list|)
-argument_list|,
-literal|5
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4510,7 +4475,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -4520,7 +4485,7 @@ argument_list|(
 name|right_vbox
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -4539,7 +4504,7 @@ name|gtk_table_new
 argument_list|(
 name|MAX_COMPOSE_IMAGES
 argument_list|,
-literal|3
+literal|2
 argument_list|,
 name|FALSE
 argument_list|)
@@ -4551,7 +4516,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|5
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -4561,7 +4526,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4632,7 +4597,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -4646,9 +4611,9 @@ argument_list|)
 argument_list|,
 name|label
 argument_list|,
-literal|1
+literal|0
 argument_list|,
-literal|2
+literal|1
 argument_list|,
 name|j
 argument_list|,
@@ -4776,9 +4741,9 @@ argument_list|)
 argument_list|,
 name|image_option_menu
 argument_list|,
-literal|2
+literal|1
 argument_list|,
-literal|3
+literal|2
 argument_list|,
 name|j
 argument_list|,
@@ -5567,26 +5532,6 @@ operator|)
 name|data
 operator|=
 name|id
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|compose_close_callback (GtkWidget * widget,gpointer data)
-name|compose_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_main_quit
-argument_list|()
 expr_stmt|;
 block|}
 end_function

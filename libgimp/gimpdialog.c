@@ -323,11 +323,6 @@ argument_list|,
 name|args
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_set_icon
-argument_list|(
-name|dialog
-argument_list|)
-expr_stmt|;
 comment|/*  connect the "F1" help key  */
 if|if
 condition|(
