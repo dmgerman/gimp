@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2795ddbe0103
+DECL|enum|__anon28a0dfb80103
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -592,6 +592,18 @@ name|viewable
 argument_list|)
 argument_list|,
 literal|"static-viewable-preview"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|viewable
+argument_list|)
+argument_list|,
+literal|"static-viewable-preview-pixbuf"
 argument_list|,
 name|NULL
 argument_list|)
