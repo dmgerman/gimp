@@ -5263,9 +5263,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
 name|main_hbox
 operator|=
 name|gtk_hbox_new
@@ -5773,9 +5770,6 @@ name|gtk_widget_destroy
 argument_list|(
 name|appwin
 argument_list|)
-expr_stmt|;
-name|gimp_help_free
-argument_list|()
 expr_stmt|;
 name|gdk_flush
 argument_list|()

@@ -30519,7 +30519,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5e41010108
+DECL|struct|__anon29be9c3c0108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -30554,7 +30554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5e41010208
+DECL|struct|__anon29be9c3c0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -32421,9 +32421,6 @@ argument_list|(
 name|top_table
 argument_list|)
 expr_stmt|;
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
 comment|/* Preview */
 name|frame
 operator|=
@@ -33219,9 +33216,6 @@ name|dialog_update_preview
 argument_list|()
 expr_stmt|;
 name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gimp_help_free
 argument_list|()
 expr_stmt|;
 name|gdk_flush

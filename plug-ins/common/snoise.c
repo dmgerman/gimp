@@ -105,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2909675f0108
+DECL|struct|__anon27935faa0108
 block|{
 DECL|member|tilable
 name|gint
@@ -140,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2909675f0208
+DECL|struct|__anon27935faa0208
 block|{
 DECL|member|run
 name|gint
@@ -2093,9 +2093,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
 name|frame
 operator|=
 name|gtk_frame_new
@@ -2605,9 +2602,6 @@ name|dlg
 argument_list|)
 expr_stmt|;
 name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gimp_help_free
 argument_list|()
 expr_stmt|;
 name|gdk_flush

@@ -199,6 +199,9 @@ argument_list|(
 name|icon_list
 argument_list|)
 expr_stmt|;
+name|_gimp_help_init
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 
@@ -3035,7 +3038,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2f23300108
+DECL|struct|__anon28dda4e40108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton

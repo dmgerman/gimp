@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c90ce7e0103
+DECL|enum|__anon299881740103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -2270,9 +2270,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
 comment|/*  the main vbox  */
 name|main_vbox
 operator|=
@@ -2988,9 +2985,6 @@ name|main_dialog
 argument_list|)
 expr_stmt|;
 name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gimp_help_free
 argument_list|()
 expr_stmt|;
 block|}

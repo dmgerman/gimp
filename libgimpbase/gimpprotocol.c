@@ -1996,7 +1996,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|unused
+name|show_tool_tips
 argument_list|,
 literal|1
 argument_list|,
@@ -2229,7 +2229,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|unused
+name|show_tool_tips
 argument_list|,
 literal|1
 argument_list|,

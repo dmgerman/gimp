@@ -133,7 +133,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5fb1720108
+DECL|struct|__anon290f04320108
 block|{
 DECL|member|seed
 name|guint32
@@ -152,7 +152,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5fb1720208
+DECL|struct|__anon290f04320208
 block|{
 DECL|member|run
 name|gint
@@ -1084,9 +1084,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
 name|main_vbox
 operator|=
 name|gtk_vbox_new
@@ -1506,9 +1503,6 @@ name|dlg
 argument_list|)
 expr_stmt|;
 name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gimp_help_free
 argument_list|()
 expr_stmt|;
 name|gdk_flush

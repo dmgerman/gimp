@@ -62,7 +62,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4a74e00108
+DECL|struct|__anon278f1a410108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4a74e00208
+DECL|struct|__anon278f1a410208
 block|{
 DECL|member|run
 name|gint
@@ -1675,10 +1675,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* Initialize Tooltips */
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
 name|main_vbox
 operator|=
 name|gtk_vbox_new
@@ -3080,9 +3076,6 @@ name|dlg
 argument_list|)
 expr_stmt|;
 name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gimp_help_free
 argument_list|()
 expr_stmt|;
 name|gdk_flush

@@ -223,7 +223,7 @@ value|256
 end_define
 
 begin_typedef
-DECL|struct|__anon29ec76410108
+DECL|struct|__anon2b6cf1840108
 typedef|typedef
 struct|struct
 block|{
@@ -238,7 +238,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29ec76410208
+DECL|struct|__anon2b6cf1840208
 typedef|typedef
 struct|struct
 block|{
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ec76410308
+DECL|struct|__anon2b6cf1840308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -443,7 +443,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29ec76410408
+DECL|struct|__anon2b6cf1840408
 typedef|typedef
 struct|struct
 block|{
@@ -538,7 +538,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ec76410503
+DECL|enum|__anon2b6cf1840503
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -2728,10 +2728,6 @@ name|mov_close_callback
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-comment|/* Initialize Tooltips */
-name|gimp_help_init
-argument_list|()
 expr_stmt|;
 comment|/*  Action area  */
 name|gtk_container_set_border_width

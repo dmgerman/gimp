@@ -85,7 +85,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e76f880103
+DECL|enum|__anon2911f59e0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -105,7 +105,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e76f880208
+DECL|struct|__anon2911f59e0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e76f880308
+DECL|struct|__anon2911f59e0308
 block|{
 DECL|member|run
 name|gint
@@ -1654,9 +1654,6 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-name|gimp_help_init
-argument_list|()
 expr_stmt|;
 name|vbox
 operator|=
@@ -3505,9 +3502,6 @@ name|dlg
 argument_list|)
 expr_stmt|;
 name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gimp_help_free
 argument_list|()
 expr_stmt|;
 name|gdk_flush

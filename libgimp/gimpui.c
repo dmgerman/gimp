@@ -163,6 +163,15 @@ expr_stmt|;
 name|gimp_widgets_init
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_show_tool_tips
+argument_list|()
+condition|)
+name|gimp_help_disable_tooltips
+argument_list|()
+expr_stmt|;
 name|initialized
 operator|=
 name|TRUE

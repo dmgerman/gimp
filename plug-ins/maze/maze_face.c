@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b3754e0108
+DECL|struct|__anon2780d9620108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -582,9 +582,6 @@ literal|"maze"
 argument_list|,
 name|FALSE
 argument_list|)
-expr_stmt|;
-name|gimp_help_init
-argument_list|()
 expr_stmt|;
 name|dlg
 operator|=
@@ -1544,9 +1541,6 @@ name|dlg
 argument_list|)
 expr_stmt|;
 name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gimp_help_free
 argument_list|()
 expr_stmt|;
 name|gdk_flush

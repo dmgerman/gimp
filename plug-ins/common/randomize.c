@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a977dff0108
+DECL|struct|__anon2b3043920108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -242,7 +242,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a977dff0208
+DECL|struct|__anon2b3043920208
 block|{
 DECL|member|run
 name|gint
@@ -2458,9 +2458,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
 comment|/*    *  Parameter settings    *    *  First set up the basic containers, label them, etc.    */
 name|frame
 operator|=
@@ -2769,9 +2766,6 @@ name|dlg
 argument_list|)
 expr_stmt|;
 name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gimp_help_free
 argument_list|()
 expr_stmt|;
 name|gdk_flush

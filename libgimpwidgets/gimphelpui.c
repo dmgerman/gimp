@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2783415a0103
+DECL|enum|__anon29249d630103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -217,13 +217,13 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_help_init:  *  * This function initializes GIMP's help system.  *  * Currently it only creates a #GtkTooltips object with gtk_tooltips_new()  * which will be used by gimp_help_set_help_data().  **/
+comment|/**  * _gimp_help_init:  *  * This function initializes GIMP's help system.  *  * Currently it only creates a #GtkTooltips object with gtk_tooltips_new()  * which will be used by gimp_help_set_help_data().  *  * Nota that this function is called automatically by gimp_widgets_init().  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_help_init (void)
-name|gimp_help_init
+DECL|function|_gimp_help_init (void)
+name|_gimp_help_init
 parameter_list|(
 name|void
 parameter_list|)
@@ -246,45 +246,6 @@ argument_list|(
 name|tool_tips
 argument_list|)
 argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_help_free:  *  * This function frees the memory used by the #GtkTooltips created by  * gimp_help_init().  **/
-end_comment
-
-begin_function
-name|void
-DECL|function|gimp_help_free (void)
-name|gimp_help_free
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|g_object_unref
-argument_list|(
-name|tool_tips
-argument_list|)
-expr_stmt|;
-name|tool_tips
-operator|=
-name|NULL
-expr_stmt|;
-name|tips_query
-operator|->
-name|parent
-operator|=
-name|NULL
-expr_stmt|;
-name|gtk_widget_destroy
-argument_list|(
-name|tips_query
-argument_list|)
-expr_stmt|;
-name|tips_query
-operator|=
-name|NULL
 expr_stmt|;
 block|}
 end_function

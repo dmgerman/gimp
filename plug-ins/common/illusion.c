@@ -142,7 +142,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294a66c40108
+DECL|struct|__anon278af74b0108
 block|{
 DECL|member|division
 name|gint32
@@ -2007,10 +2007,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* Initialize Tooltips */
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
 name|main_vbox
 operator|=
 name|gtk_vbox_new
@@ -2463,9 +2459,6 @@ name|dlg
 argument_list|)
 expr_stmt|;
 name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gimp_help_free
 argument_list|()
 expr_stmt|;
 name|gdk_flush

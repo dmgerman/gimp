@@ -127,7 +127,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d1a2fb0108
+DECL|struct|__anon27c3edaf0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d1a2fb0208
+DECL|struct|__anon27c3edaf0208
 block|{
 DECL|member|run
 name|gint
@@ -1559,9 +1559,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
 comment|/*  parameter settings  */
 name|frame
 operator|=
@@ -2781,9 +2778,6 @@ name|dlg
 argument_list|)
 expr_stmt|;
 name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gimp_help_free
 argument_list|()
 expr_stmt|;
 name|gdk_flush

@@ -108,7 +108,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af1c8420108
+DECL|struct|__anon2b3860ce0108
 block|{
 DECL|member|arr_ptr
 name|t_arr_arg
@@ -126,7 +126,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2af1c8420208
+DECL|struct|__anon2b3860ce0208
 typedef|typedef
 struct|struct
 block|{
@@ -3470,10 +3470,6 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
-comment|/* Initialize Tooltips */
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
 comment|/* dialog */
 name|g_arrint
 operator|.

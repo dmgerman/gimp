@@ -1139,9 +1139,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
 name|top_hbox
 operator|=
 name|gtk_hbox_new
@@ -5321,9 +5318,6 @@ name|dialog_update_preview
 argument_list|()
 expr_stmt|;
 name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gimp_help_free
 argument_list|()
 expr_stmt|;
 name|gdk_flush

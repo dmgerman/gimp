@@ -55,8 +55,20 @@ define|#
 directive|define
 name|gimp_gradients_set_active
 value|gimp_gradients_set_gradient
+DECL|macro|gimp_help_init ()
+define|#
+directive|define
+name|gimp_help_init
+parameter_list|()
+value|((void) 0)
+DECL|macro|gimp_help_free ()
+define|#
+directive|define
+name|gimp_help_free
+parameter_list|()
+value|((void) 0)
 name|enum
-DECL|enum|__anon28b7f27c0103
+DECL|enum|__anon2a2391cb0103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -97,7 +109,7 @@ end_decl_stmt
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon28b7f27c0203
+DECL|enum|__anon2a2391cb0203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -124,7 +136,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b7f27c0303
+DECL|enum|__anon2a2391cb0303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -151,7 +163,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b7f27c0403
+DECL|enum|__anon2a2391cb0403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -183,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b7f27c0503
+DECL|enum|__anon2a2391cb0503
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -200,7 +212,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b7f27c0603
+DECL|enum|__anon2a2391cb0603
 block|{
 DECL|enumerator|GIMP_ONCE_FORWARD
 name|GIMP_ONCE_FORWARD
@@ -227,7 +239,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b7f27c0703
+DECL|enum|__anon2a2391cb0703
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -244,7 +256,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b7f27c0803
+DECL|enum|__anon2a2391cb0803
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS

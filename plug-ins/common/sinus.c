@@ -22250,7 +22250,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296c21cb0108
+DECL|struct|__anon279e53080108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -22353,7 +22353,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296c21cb0208
+DECL|struct|__anon279e53080208
 block|{
 DECL|member|height
 DECL|member|width
@@ -22435,7 +22435,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296c21cb0308
+DECL|struct|__anon279e53080308
 block|{
 DECL|member|width
 name|gint
@@ -26263,9 +26263,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
 name|main_hbox
 operator|=
 name|gtk_hbox_new
@@ -28176,9 +28173,6 @@ name|dlg
 argument_list|)
 expr_stmt|;
 name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gimp_help_free
 argument_list|()
 expr_stmt|;
 name|gdk_flush

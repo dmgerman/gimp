@@ -753,10 +753,6 @@ argument_list|(
 name|gtkrc
 argument_list|)
 expr_stmt|;
-comment|/*  tooltips  */
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -2086,9 +2082,6 @@ name|gimp_devices_exit
 argument_list|(
 name|gimp
 argument_list|)
-expr_stmt|;
-name|gimp_help_free
-argument_list|()
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(

@@ -208,7 +208,7 @@ file|"graphics/layer_align_9.xpm"
 end_include
 
 begin_typedef
-DECL|struct|__anon2a559aff0108
+DECL|struct|__anon27ca79ac0108
 typedef|typedef
 struct|struct
 block|{
@@ -1684,9 +1684,6 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gdyntext.html"
 argument_list|)
-expr_stmt|;
-name|gimp_help_init
-argument_list|()
 expr_stmt|;
 name|vbox
 operator|=
@@ -4404,9 +4401,6 @@ name|message_window
 argument_list|)
 expr_stmt|;
 name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gimp_help_free
 argument_list|()
 expr_stmt|;
 if|if

@@ -641,6 +641,14 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|_show_tool_tips
+specifier|static
+name|gboolean
+name|_show_tool_tips
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|_min_colors
 specifier|static
 name|gint
@@ -3371,6 +3379,20 @@ block|}
 end_function
 
 begin_function
+name|gboolean
+DECL|function|gimp_show_tool_tips (void)
+name|gimp_show_tool_tips
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|_show_tool_tips
+return|;
+block|}
+end_function
+
+begin_function
 specifier|static
 name|void
 DECL|function|gimp_process_message (WireMessage * msg)
@@ -4507,6 +4529,12 @@ operator|=
 name|config
 operator|->
 name|install_cmap
+expr_stmt|;
+name|_show_tool_tips
+operator|=
+name|config
+operator|->
+name|show_tool_tips
 expr_stmt|;
 name|_min_colors
 operator|=

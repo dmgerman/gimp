@@ -20,16 +20,7 @@ begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|void
-name|gimp_help_init
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_help_free
+name|_gimp_help_init
 parameter_list|(
 name|void
 parameter_list|)

@@ -165,7 +165,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd296330108
+DECL|struct|__anon2bd36c5c0108
 block|{
 DECL|member|circle
 name|gdouble
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd296330208
+DECL|struct|__anon2bd36c5c0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -3599,10 +3599,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* Initialize Tooltips */
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
 name|main_vbox
 operator|=
 name|gtk_vbox_new
@@ -4300,9 +4296,6 @@ name|dialog_update_preview
 argument_list|()
 expr_stmt|;
 name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gimp_help_free
 argument_list|()
 expr_stmt|;
 name|gdk_flush

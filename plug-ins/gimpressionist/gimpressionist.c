@@ -2505,9 +2505,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
 name|box1
 operator|=
 name|gtk_hbox_new
@@ -2736,9 +2733,6 @@ argument_list|()
 expr_stmt|;
 block|}
 name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gimp_help_free
 argument_list|()
 expr_stmt|;
 name|g_rand_free

@@ -346,12 +346,6 @@ name|FALSE
 expr_stmt|;
 name|mapvals
 operator|.
-name|tooltips_enabled
-operator|=
-name|TRUE
-expr_stmt|;
-name|mapvals
-operator|.
 name|lightsource
 operator|.
 name|intensity

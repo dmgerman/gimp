@@ -7856,9 +7856,6 @@ name|v
 operator|)
 expr_stmt|;
 comment|/*    * Create the various dialog components.  Note that we're not    * actually initializing the values at this point; that will be done after    * the UI is fully created.    */
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
 name|create_top_level_structure
 argument_list|()
 expr_stmt|;

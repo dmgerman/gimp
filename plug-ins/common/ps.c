@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d2b9690108
+DECL|struct|__anon2973902d0108
 block|{
 DECL|member|resolution
 name|guint
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d2b9690208
+DECL|struct|__anon2973902d0208
 block|{
 DECL|member|run
 name|gint
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d2b9690308
+DECL|struct|__anon2973902d0308
 block|{
 DECL|member|width
 DECL|member|height
@@ -308,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d2b9690408
+DECL|struct|__anon2973902d0408
 block|{
 DECL|member|run
 name|gint
@@ -848,7 +848,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d2b9690508
+DECL|struct|__anon2973902d0508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1719,7 +1719,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d2b9690608
+DECL|struct|__anon2973902d0608
 block|{
 DECL|member|eol
 name|long
@@ -14589,9 +14589,6 @@ decl_stmt|;
 name|gint
 name|j
 decl_stmt|;
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
 name|vals
 operator|=
 name|g_new
@@ -15907,9 +15904,6 @@ name|dialog
 argument_list|)
 expr_stmt|;
 name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gimp_help_free
 argument_list|()
 expr_stmt|;
 name|gdk_flush

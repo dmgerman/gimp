@@ -794,7 +794,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279f848d0108
+DECL|struct|__anon27d820ed0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -880,7 +880,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279f848d0208
+DECL|struct|__anon27d820ed0208
 block|{
 DECL|member|y
 name|gint32
@@ -5922,9 +5922,6 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
 name|cd
 operator|=
 name|g_new
