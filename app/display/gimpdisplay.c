@@ -5907,7 +5907,7 @@ argument_list|,
 literal|""
 argument_list|)
 expr_stmt|;
-name|info_window_update_RGB
+name|info_window_update_extended
 argument_list|(
 name|gdisp
 argument_list|,
@@ -6017,7 +6017,7 @@ argument_list|,
 name|buffer
 argument_list|)
 expr_stmt|;
-name|info_window_update_RGB
+name|info_window_update_extended
 argument_list|(
 name|gdisp
 argument_list|,

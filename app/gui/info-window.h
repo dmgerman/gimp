@@ -52,7 +52,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|info_window_update_RGB
+name|info_window_update_extended
 parameter_list|(
 name|GDisplay
 modifier|*
