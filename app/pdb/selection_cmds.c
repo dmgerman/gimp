@@ -3152,11 +3152,11 @@ argument_list|)
 argument_list|,
 name|channel
 argument_list|,
-name|GIMP_CHANNEL_OP_REPLACE
-argument_list|,
 name|off_x
 argument_list|,
 name|off_y
+argument_list|,
+name|GIMP_CHANNEL_OP_REPLACE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3565,11 +3565,11 @@ argument_list|)
 argument_list|,
 name|channel
 argument_list|,
-name|operation
-argument_list|,
 name|off_x
 argument_list|,
 name|off_y
+argument_list|,
+name|operation
 argument_list|,
 name|FALSE
 argument_list|,
