@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ee7c310103
+DECL|enum|__anon29137d680103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -160,7 +160,7 @@ end_macro
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ee7c310208
+DECL|struct|__anon29137d680208
 block|{
 DECL|member|title
 specifier|const
@@ -2557,20 +2557,7 @@ literal|"text"
 argument_list|,
 name|i
 argument_list|,
-operator|(
-name|GTK_CHECK_VERSION
-argument_list|(
-literal|2
-argument_list|,
-literal|2
-argument_list|,
-literal|0
-argument_list|)
-condition|?
 literal|"cell-background-gdk"
-else|:
-name|NULL
-operator|)
 argument_list|,
 name|BG_COLOR
 argument_list|,
