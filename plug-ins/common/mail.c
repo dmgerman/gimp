@@ -392,7 +392,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b446e950108
+DECL|struct|__anon2a4677570108
 block|{
 DECL|member|receipt
 name|gchar
@@ -1972,7 +1972,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"To:"
+literal|"Recipient:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2060,7 +2060,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"From:"
+literal|"Sender:"
 argument_list|)
 argument_list|,
 literal|1.0
