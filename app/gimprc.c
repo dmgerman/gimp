@@ -212,7 +212,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2ac42ced0103
+DECL|enum|__anon2c1ab05d0103
 typedef|typedef
 enum|enum
 block|{
@@ -1327,7 +1327,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|int
-name|parse_help_broswer
+name|parse_help_browser
 parameter_list|(
 name|gpointer
 name|val1p
