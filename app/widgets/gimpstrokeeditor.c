@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29111c0c0103
+DECL|enum|__anon2bc2e4b80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1136,6 +1136,16 @@ argument_list|(
 name|GIMP_TYPE_DASH_PRESET
 argument_list|)
 expr_stmt|;
+name|gimp_int_combo_box_set_active
+argument_list|(
+name|GIMP_INT_COMBO_BOX
+argument_list|(
+name|box
+argument_list|)
+argument_list|,
+name|GIMP_DASH_CUSTOM
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|box
@@ -1264,7 +1274,7 @@ operator|++
 expr_stmt|;
 name|box
 operator|=
-name|gimp_prop_enum_radio_frame_new
+name|gimp_prop_enum_radio_box_new
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -1274,11 +1284,6 @@ name|options
 argument_list|)
 argument_list|,
 literal|"style"
-argument_list|,
-name|_
-argument_list|(
-literal|"Style"
-argument_list|)
 argument_list|,
 literal|0
 argument_list|,
