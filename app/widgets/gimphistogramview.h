@@ -124,6 +124,14 @@ DECL|member|end
 name|gint
 name|end
 decl_stmt|;
+DECL|member|border_width
+name|gint
+name|border_width
+decl_stmt|;
+DECL|member|subdivisions
+name|gint
+name|subdivisions
+decl_stmt|;
 DECL|member|range_gc
 name|GdkGC
 modifier|*
