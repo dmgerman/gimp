@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad27c920103
+DECL|enum|__anon2b4c575c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad27c920203
+DECL|enum|__anon2b4c575c0203
 block|{
 DECL|enumerator|COLOR_CLICKED
 name|COLOR_CLICKED
@@ -95,7 +95,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad27c920303
+DECL|enum|__anon2b4c575c0303
 block|{
 DECL|enumerator|INVALID_AREA
 name|INVALID_AREA
@@ -2123,10 +2123,9 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
-name|editor
-operator|->
-name|dnd_target
-operator|=
+name|FgBgTarget
+name|target
+init|=
 name|gimp_fg_bg_editor_target
 argument_list|(
 name|editor
@@ -2135,18 +2134,14 @@ name|x
 argument_list|,
 name|y
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
-name|editor
-operator|->
-name|dnd_target
+name|target
 operator|==
 name|FORE_AREA
 operator|||
-name|editor
-operator|->
-name|dnd_target
+name|target
 operator|==
 name|BACK_AREA
 condition|)
@@ -2523,9 +2518,14 @@ condition|)
 block|{
 switch|switch
 condition|(
+name|gimp_fg_bg_editor_target
+argument_list|(
 name|editor
-operator|->
-name|dnd_target
+argument_list|,
+name|x
+argument_list|,
+name|y
+argument_list|)
 condition|)
 block|{
 case|case

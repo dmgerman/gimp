@@ -143,10 +143,6 @@ DECL|member|click_target
 name|gint
 name|click_target
 decl_stmt|;
-DECL|member|dnd_target
-name|gint
-name|dnd_target
-decl_stmt|;
 block|}
 struct|;
 end_struct
