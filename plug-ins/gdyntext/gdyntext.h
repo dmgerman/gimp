@@ -27,7 +27,7 @@ DECL|macro|GDYNTEXT_VERSION
 define|#
 directive|define
 name|GDYNTEXT_VERSION
-value|"1.4.0"
+value|"1.4.1"
 end_define
 
 begin_define
@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c06606f0103
+DECL|enum|__anon29300bcd0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -188,7 +188,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c06606f0208
+DECL|struct|__anon29300bcd0208
 typedef|typedef
 struct|struct
 block|{
