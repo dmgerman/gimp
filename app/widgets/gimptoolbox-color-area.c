@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|<stdio.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -98,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ea40d30103
+DECL|enum|__anon28f4c9900103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA

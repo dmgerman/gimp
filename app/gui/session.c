@@ -69,6 +69,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"color_notebook.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"commands.h"
 end_include
 
@@ -89,6 +95,22 @@ include|#
 directive|include
 file|"libgimp/gimpenv.h"
 end_include
+
+begin_define
+DECL|macro|LEFT_OFFSET
+define|#
+directive|define
+name|LEFT_OFFSET
+value|60
+end_define
+
+begin_define
+DECL|macro|TOP_OFFSET
+define|#
+directive|define
+name|TOP_OFFSET
+value|60
+end_define
 
 begin_function_decl
 specifier|static
@@ -139,22 +161,6 @@ init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
-
-begin_define
-DECL|macro|LEFT_OFFSET
-define|#
-directive|define
-name|LEFT_OFFSET
-value|60
-end_define
-
-begin_define
-DECL|macro|TOP_OFFSET
-define|#
-directive|define
-name|TOP_OFFSET
-value|60
-end_define
 
 begin_comment
 comment|/* global session variables */
@@ -493,7 +499,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* public functions */
+comment|/*  public functions  */
 end_comment
 
 begin_function
@@ -883,6 +889,11 @@ argument_list|,
 name|last_tip
 operator|+
 literal|1
+argument_list|)
+expr_stmt|;
+name|color_history_write
+argument_list|(
+name|fp
 argument_list|)
 expr_stmt|;
 name|fclose
