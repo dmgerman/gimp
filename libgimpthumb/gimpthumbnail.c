@@ -219,7 +219,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6e47840103
+DECL|enum|__anon2c7738830103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3383,24 +3383,14 @@ name|i
 operator|=
 literal|0
 init|;
+name|keys
+index|[
 name|i
-operator|<
-name|G_N_ELEMENTS
-argument_list|(
-name|values
-argument_list|)
+index|]
 condition|;
 name|i
 operator|++
 control|)
-block|{
-if|if
-condition|(
-name|values
-index|[
-name|i
-index|]
-condition|)
 name|g_free
 argument_list|(
 name|values
@@ -3409,7 +3399,6 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|success
