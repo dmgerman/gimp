@@ -219,7 +219,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"tools/tools.h"
+file|"tools/tool_manager.h"
 end_include
 
 begin_include
@@ -1598,7 +1598,7 @@ name|canvas
 argument_list|)
 expr_stmt|;
 comment|/*  stop any active tool  */
-name|active_tool_control
+name|tool_manager_control_active
 argument_list|(
 name|HALT
 argument_list|,
@@ -2825,7 +2825,7 @@ name|list
 condition|)
 block|{
 comment|/*  stop the currently active tool  */
-name|active_tool_control
+name|tool_manager_control_active
 argument_list|(
 name|PAUSE
 argument_list|,
@@ -2934,7 +2934,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* start the currently active tool */
-name|active_tool_control
+name|tool_manager_control_active
 argument_list|(
 name|RESUME
 argument_list|,

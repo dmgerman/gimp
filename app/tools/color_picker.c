@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995-2001 Spencer Kimball, Peter Mattis, and others  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -36,7 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
+file|"appenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"color_picker.h"
 end_include
 
 begin_include
@@ -78,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"info_dialog.h"
 end_include
 
@@ -90,7 +102,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"color_picker.h"
+file|"tool.h"
 end_include
 
 begin_include
@@ -102,13 +114,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"pixmaps2.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"cursors/dropper_small.xbm"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"cursors/dropper_small_mask.xbm"
 end_include
 
 begin_comment
@@ -209,31 +233,6 @@ name|_ColorPickerTool
 name|ColorPickerTool
 typedef|;
 end_typedef
-
-begin_struct
-DECL|struct|_ColorPickerTool
-struct|struct
-name|_ColorPickerTool
-block|{
-DECL|member|core
-name|DrawCore
-modifier|*
-name|core
-decl_stmt|;
-comment|/*  Core select object  */
-DECL|member|centerx
-name|gint
-name|centerx
-decl_stmt|;
-comment|/*  starting x coord    */
-DECL|member|centery
-name|gint
-name|centery
-decl_stmt|;
-comment|/*  starting y coord    */
-block|}
-struct|;
-end_struct
 
 begin_comment
 comment|/*  the color picker tool options  */
@@ -396,15 +395,70 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
+comment|/*The cursor */
+end_comment
+
+begin_decl_stmt
+DECL|variable|tool_cursor
+name|BitmapCursor
+name|tool_cursor
+init|=
+block|{
+name|dropper_small_bits
+block|,
+name|dropper_small_mask_bits
+block|,
+name|dropper_small_width
+block|,
+name|dropper_small_height
+block|,
+literal|0
+block|,
+literal|0
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
 comment|/*  local function prototypes  */
 end_comment
 
 begin_function_decl
 specifier|static
 name|void
+name|color_picker_class_init
+parameter_list|(
+name|GimpToolClass
+modifier|*
+name|klass
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|color_picker_initialize
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|color_picker_button_press
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -424,7 +478,7 @@ specifier|static
 name|void
 name|color_picker_button_release
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -444,7 +498,7 @@ specifier|static
 name|void
 name|color_picker_motion
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -464,7 +518,7 @@ specifier|static
 name|void
 name|color_picker_cursor_update
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -484,7 +538,7 @@ specifier|static
 name|void
 name|color_picker_control
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -518,7 +572,7 @@ specifier|static
 name|void
 name|color_picker_info_update
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -568,6 +622,107 @@ end_function_decl
 begin_comment
 comment|/*  functions  */
 end_comment
+
+begin_function
+name|GtkType
+DECL|function|gimp_color_picker_get_type (void)
+name|gimp_color_picker_get_type
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+specifier|static
+name|GtkType
+name|tool_type
+init|=
+literal|0
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|tool_type
+condition|)
+block|{
+name|GtkTypeInfo
+name|tool_info
+init|=
+block|{
+literal|"GimpColorPicker"
+block|,
+sizeof|sizeof
+argument_list|(
+name|GimpColorPicker
+argument_list|)
+block|,
+sizeof|sizeof
+argument_list|(
+name|GimpColorPickerClass
+argument_list|)
+block|,
+operator|(
+name|GtkClassInitFunc
+operator|)
+name|color_picker_class_init
+block|,
+operator|(
+name|GtkObjectInitFunc
+operator|)
+name|color_picker_initialize
+block|,
+comment|/* reserved_1 */
+name|NULL
+block|,
+comment|/* reserved_2 */
+name|NULL
+block|,
+operator|(
+name|GtkClassInitFunc
+operator|)
+name|NULL
+block|,       }
+decl_stmt|;
+name|tool_type
+operator|=
+name|gtk_type_unique
+argument_list|(
+name|GIMP_TYPE_TOOL
+argument_list|,
+operator|&
+name|tool_info
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|tool_type
+return|;
+block|}
+end_function
+
+begin_function
+name|GimpTool
+modifier|*
+DECL|function|gimp_color_picker_new (void)
+name|gimp_color_picker_new
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GimpTool
+modifier|*
+name|tool
+decl_stmt|;
+name|tool
+operator|=
+name|gtk_type_new
+argument_list|(
+name|GIMP_TYPE_COLOR_PICKER
+argument_list|)
+expr_stmt|;
+return|return
+name|tool
+return|;
+block|}
+end_function
 
 begin_function
 specifier|static
@@ -1289,10 +1444,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_picker_button_press (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|color_picker_button_press (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|color_picker_button_press
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -1305,7 +1460,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|ColorPickerTool
+name|GimpColorPicker
 modifier|*
 name|cp_tool
 decl_stmt|;
@@ -1316,13 +1471,10 @@ name|y
 decl_stmt|;
 name|cp_tool
 operator|=
-operator|(
-name|ColorPickerTool
-operator|*
-operator|)
+name|GIMP_COLOR_PICKER
+argument_list|(
 name|tool
-operator|->
-name|private
+argument_list|)
 expr_stmt|;
 comment|/*  Make the tool active and set it's gdisplay& drawable  */
 name|tool
@@ -1375,7 +1527,7 @@ argument_list|(
 literal|"Color Picker"
 argument_list|)
 argument_list|,
-name|tools_help_func
+name|gimp_tool_help_func
 argument_list|,
 name|NULL
 argument_list|)
@@ -1958,10 +2110,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_picker_button_release (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|color_picker_button_release (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|color_picker_button_release
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -1974,7 +2126,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|ColorPickerTool
+name|GimpColorPicker
 modifier|*
 name|cp_tool
 decl_stmt|;
@@ -1995,13 +2147,10 @@ argument_list|()
 expr_stmt|;
 name|cp_tool
 operator|=
-operator|(
-name|ColorPickerTool
-operator|*
-operator|)
+name|GIMP_COLOR_PICKER
+argument_list|(
 name|tool
-operator|->
-name|private
+argument_list|)
 expr_stmt|;
 comment|/*  First, transform the coordinates to gimp image space  */
 name|gdisplay_untransform_coords
@@ -2086,10 +2235,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_picker_motion (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|color_picker_motion (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|color_picker_motion
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -2102,7 +2251,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|ColorPickerTool
+name|GimpColorPicker
 modifier|*
 name|cp_tool
 decl_stmt|;
@@ -2113,13 +2262,10 @@ name|y
 decl_stmt|;
 name|cp_tool
 operator|=
-operator|(
-name|ColorPickerTool
-operator|*
-operator|)
+name|GIMP_COLOR_PICKER
+argument_list|(
 name|tool
-operator|->
-name|private
+argument_list|)
 expr_stmt|;
 comment|/*  undraw the current tool  */
 name|draw_core_pause
@@ -2236,10 +2382,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_picker_cursor_update (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|color_picker_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|color_picker_cursor_update
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -2348,10 +2494,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_picker_control (Tool * tool,ToolAction action,GDisplay * gdisp)
+DECL|function|color_picker_control (GimpTool * tool,ToolAction action,GDisplay * gdisp)
 name|color_picker_control
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -2363,19 +2509,16 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|ColorPickerTool
+name|GimpColorPicker
 modifier|*
 name|cp_tool
 decl_stmt|;
 name|cp_tool
 operator|=
-operator|(
-name|ColorPickerTool
-operator|*
-operator|)
+name|GIMP_COLOR_PICKER
+argument_list|(
 name|tool
-operator|->
-name|private
+argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
@@ -3014,15 +3157,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|colorpicker_draw (Tool * tool)
+DECL|function|colorpicker_draw (GimpTool * tool)
 name|colorpicker_draw
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|)
 block|{
-name|ColorPickerTool
+name|GimpColorPicker
 modifier|*
 name|cp_tool
 decl_stmt|;
@@ -3051,13 +3194,10 @@ condition|)
 return|return;
 name|cp_tool
 operator|=
-operator|(
-name|ColorPickerTool
-operator|*
-operator|)
+name|GIMP_COLOR_PICKER
+argument_list|(
 name|tool
-operator|->
-name|private
+argument_list|)
 expr_stmt|;
 name|gdisplay_transform_coords
 argument_list|(
@@ -3231,10 +3371,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_picker_info_update (Tool * tool,gboolean valid)
+DECL|function|color_picker_info_update (GimpTool * tool,gboolean valid)
 name|color_picker_info_update
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -3877,19 +4017,18 @@ block|}
 end_function
 
 begin_function
-name|Tool
-modifier|*
-DECL|function|tools_new_color_picker ()
-name|tools_new_color_picker
-parameter_list|()
-block|{
-name|Tool
+name|void
+DECL|function|color_picker_initialize (GimpTool * tool)
+name|color_picker_initialize
+parameter_list|(
+name|GimpTool
 modifier|*
 name|tool
-decl_stmt|;
-name|ColorPickerTool
+parameter_list|)
+block|{
+name|GimpColorPicker
 modifier|*
-name|private
+name|cp_tool
 decl_stmt|;
 comment|/*  The tool options  */
 if|if
@@ -3915,23 +4054,14 @@ name|color_picker_options
 argument_list|)
 expr_stmt|;
 block|}
+name|cp_tool
+operator|=
+name|GIMP_COLOR_PICKER
+argument_list|(
 name|tool
-operator|=
-name|tools_new_tool
-argument_list|(
-name|COLOR_PICKER
 argument_list|)
 expr_stmt|;
-name|private
-operator|=
-name|g_new0
-argument_list|(
-name|ColorPickerTool
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|private
+name|cp_tool
 operator|->
 name|core
 operator|=
@@ -3947,75 +4077,135 @@ operator|=
 name|FALSE
 expr_stmt|;
 comment|/*  Don't preserve on drawable change  */
-name|tool
+block|}
+end_function
+
+begin_function
+DECL|function|color_picker_class_init (GimpToolClass * klass)
+name|void
+name|color_picker_class_init
+parameter_list|(
+name|GimpToolClass
+modifier|*
+name|klass
+parameter_list|)
+block|{
+name|klass
 operator|->
-name|private
+name|tool_name
+operator|=
+name|N_
+argument_list|(
+literal|"Color Picker"
+argument_list|)
+expr_stmt|;
+name|klass
+operator|->
+name|menu_path
+operator|=
+name|N_
+argument_list|(
+literal|"/Tools/Color Picker"
+argument_list|)
+expr_stmt|;
+name|klass
+operator|->
+name|menu_accel
+operator|=
+literal|"O"
+expr_stmt|;
+name|klass
+operator|->
+name|icon_data
 operator|=
 operator|(
-name|void
+name|char
+operator|*
 operator|*
 operator|)
-name|private
+name|colorpicker_bits
 expr_stmt|;
-name|tool
+name|klass
+operator|->
+name|tool_desc
+operator|=
+name|N_
+argument_list|(
+literal|"Pick colors from the image"
+argument_list|)
+operator|,
+name|klass
+operator|->
+name|help_data
+operator|=
+literal|"tools/color_picker.html"
+expr_stmt|;
+name|klass
+operator|->
+name|tool_id
+operator|=
+name|COLOR_PICKER
+expr_stmt|;
+name|klass
+operator|->
+name|tool_cursor
+operator|=
+operator|&
+name|tool_cursor
+expr_stmt|;
+name|klass
 operator|->
 name|button_press_func
 operator|=
 name|color_picker_button_press
 expr_stmt|;
-name|tool
+name|klass
 operator|->
 name|button_release_func
 operator|=
 name|color_picker_button_release
 expr_stmt|;
-name|tool
+name|klass
 operator|->
 name|motion_func
 operator|=
 name|color_picker_motion
 expr_stmt|;
-name|tool
+name|klass
 operator|->
 name|cursor_update_func
 operator|=
 name|color_picker_cursor_update
 expr_stmt|;
-name|tool
+name|klass
 operator|->
 name|control_func
 operator|=
 name|color_picker_control
 expr_stmt|;
-return|return
-name|tool
-return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|tools_free_color_picker (Tool * tool)
-name|tools_free_color_picker
+DECL|function|finalize_color_picker (GimpTool * tool)
+name|finalize_color_picker
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|)
 block|{
-name|ColorPickerTool
+name|GimpColorPicker
 modifier|*
 name|cp_tool
 decl_stmt|;
 name|cp_tool
 operator|=
-operator|(
-name|ColorPickerTool
-operator|*
-operator|)
+name|GIMP_COLOR_PICKER
+argument_list|(
 name|tool
-operator|->
-name|private
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -4060,11 +4250,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|g_free
-argument_list|(
-name|cp_tool
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

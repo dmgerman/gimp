@@ -295,7 +295,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8d6eb60108
+DECL|struct|__anon2bdff8900108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8d6eb60208
+DECL|struct|__anon2bdff8900208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8d6eb60308
+DECL|struct|__anon2bdff8900308
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -386,7 +386,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8d6eb60408
+DECL|struct|__anon2bdff8900408
 block|{
 DECL|member|name
 name|gchar
@@ -414,7 +414,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8d6eb60508
+DECL|struct|__anon2bdff8900508
 block|{
 DECL|member|list
 name|GSList
@@ -434,7 +434,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2b8d6eb6060a
+DECL|union|__anon2bdff890060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -504,7 +504,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8d6eb60708
+DECL|struct|__anon2bdff8900708
 block|{
 DECL|member|script_name
 name|gchar
@@ -590,7 +590,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8d6eb60808
+DECL|struct|__anon2bdff8900808
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -4150,7 +4150,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   *  The following function is a GTraverseFunction, Please   *  note that it frees the script->args structure.  --Sven   */
+comment|/*   *  The following function is a GTraverseFunction.  Please   *  note that it frees the script->args structure.  --Sven   */
 end_comment
 
 begin_function

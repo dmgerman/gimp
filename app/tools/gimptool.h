@@ -6,21 +6,79 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__TOOLS_H__
+name|__TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__TOOLS_H__
+DECL|macro|__TOOL_H__
 define|#
 directive|define
-name|__TOOLS_H__
+name|__TOOL_H__
 end_define
+
+begin_include
+include|#
+directive|include
+file|"gimpdrawable.h"
+end_include
 
 begin_include
 include|#
 directive|include
 file|"cursorutil.h"
 end_include
+
+begin_define
+DECL|macro|GIMP_TYPE_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_TOOL
+value|(gimp_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_TOOL (obj)
+define|#
+directive|define
+name|GIMP_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_TOOL, GimpTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_TOOL, GimpToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_TOOL))
+end_define
 
 begin_comment
 comment|/*  The possibilities for where the cursor lies  */
@@ -50,6 +108,15 @@ name|NON_ACTIVE_LAYER
 value|(1<< 2)
 end_define
 
+begin_typedef
+DECL|typedef|GimpTool
+typedef|typedef
+name|struct
+name|_GimpTool
+name|GimpTool
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  Tool action function declarations  */
 end_comment
@@ -63,7 +130,7 @@ modifier|*
 name|ButtonPressFunc
 function_decl|)
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -87,7 +154,7 @@ modifier|*
 name|ButtonReleaseFunc
 function_decl|)
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -111,7 +178,7 @@ modifier|*
 name|MotionFunc
 function_decl|)
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -135,7 +202,7 @@ modifier|*
 name|ArrowKeysFunc
 function_decl|)
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -159,7 +226,7 @@ modifier|*
 name|ModifierKeyFunc
 function_decl|)
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -183,7 +250,7 @@ modifier|*
 name|CursorUpdateFunc
 function_decl|)
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -207,7 +274,7 @@ modifier|*
 name|OperUpdateFunc
 function_decl|)
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -231,7 +298,7 @@ modifier|*
 name|ToolCtlFunc
 function_decl|)
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -245,18 +312,14 @@ parameter_list|)
 function_decl|;
 end_typedef
 
-begin_comment
-comment|/*  ToolInfo function declarations  */
-end_comment
-
 begin_typedef
-DECL|typedef|ToolInfoNewFunc
+DECL|typedef|GimpToolNewFunc
 typedef|typedef
-name|Tool
+name|GimpTool
 modifier|*
 function_decl|(
 modifier|*
-name|ToolInfoNewFunc
+name|GimpToolNewFunc
 function_decl|)
 parameter_list|(
 name|void
@@ -265,15 +328,15 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|ToolInfoFreeFunc
+DECL|typedef|GimpToolUnrefFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|ToolInfoFreeFunc
+name|GimpToolUnrefFunc
 function_decl|)
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|)
@@ -281,14 +344,18 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|ToolInfoInitFunc
+DECL|typedef|GimpToolInitFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|ToolInfoInitFunc
+name|GimpToolInitFunc
 function_decl|)
 parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|,
 name|GDisplay
 modifier|*
 name|gdisp
@@ -296,26 +363,29 @@ parameter_list|)
 function_decl|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpToolClass
+typedef|typedef
+name|struct
+name|_GimpToolClass
+name|GimpToolClass
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  The types of tools...  */
 end_comment
 
 begin_struct
-DECL|struct|_Tool
+DECL|struct|_GimpTool
 struct|struct
-name|_Tool
+name|_GimpTool
 block|{
+DECL|member|parent_instance
+name|GimpObject
+name|parent_instance
+decl_stmt|;
 comment|/*  Data  */
-DECL|member|type
-name|ToolType
-name|type
-decl_stmt|;
-comment|/*  Tool type                                   */
-DECL|member|ID
-name|gint
-name|ID
-decl_stmt|;
-comment|/*  unique tool ID                              */
 DECL|member|state
 name|ToolState
 name|state
@@ -358,57 +428,34 @@ name|gboolean
 name|toggled
 decl_stmt|;
 comment|/*  Bad hack to let the paint_core show the 			       *  right toggle cursors 			       */
-DECL|member|private
-name|gpointer
-name|private
-decl_stmt|;
-comment|/*  Tool-specific information                 */
-comment|/*  Action functions  */
-DECL|member|button_press_func
-name|ButtonPressFunc
-name|button_press_func
-decl_stmt|;
-DECL|member|button_release_func
-name|ButtonReleaseFunc
-name|button_release_func
-decl_stmt|;
-DECL|member|motion_func
-name|MotionFunc
-name|motion_func
-decl_stmt|;
-DECL|member|arrow_keys_func
-name|ArrowKeysFunc
-name|arrow_keys_func
-decl_stmt|;
-DECL|member|modifier_key_func
-name|ModifierKeyFunc
-name|modifier_key_func
-decl_stmt|;
-DECL|member|cursor_update_func
-name|CursorUpdateFunc
-name|cursor_update_func
-decl_stmt|;
-DECL|member|oper_update_func
-name|OperUpdateFunc
-name|oper_update_func
-decl_stmt|;
-DECL|member|control_func
-name|ToolCtlFunc
-name|control_func
+DECL|member|paintcore
+name|PaintCore
+modifier|*
+name|paintcore
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_struct
-DECL|struct|_ToolInfo
+DECL|struct|_GimpToolClass
 struct|struct
-name|_ToolInfo
+name|_GimpToolClass
 block|{
+DECL|member|parent_class
+name|GimpObjectClass
+name|parent_class
+decl_stmt|;
+comment|/* stuff to be filled in by child classes */
 DECL|member|tool_options
 name|ToolOptions
 modifier|*
 name|tool_options
+decl_stmt|;
+DECL|member|pdb_string
+name|gchar
+modifier|*
+name|pdb_string
 decl_stmt|;
 DECL|member|tool_name
 name|gchar
@@ -446,27 +493,15 @@ name|gchar
 modifier|*
 name|tool_desc
 decl_stmt|;
-DECL|member|private_tip
+DECL|member|help_data
 specifier|const
 name|gchar
 modifier|*
-name|private_tip
+name|help_data
 decl_stmt|;
 DECL|member|tool_id
 name|ToolType
 name|tool_id
-decl_stmt|;
-DECL|member|new_func
-name|ToolInfoNewFunc
-name|new_func
-decl_stmt|;
-DECL|member|free_func
-name|ToolInfoFreeFunc
-name|free_func
-decl_stmt|;
-DECL|member|init_func
-name|ToolInfoInitFunc
-name|init_func
 decl_stmt|;
 DECL|member|tool_widget
 name|GtkWidget
@@ -480,11 +515,59 @@ name|tool_context
 decl_stmt|;
 DECL|member|tool_cursor
 name|BitmapCursor
+modifier|*
 name|tool_cursor
 decl_stmt|;
 DECL|member|toggle_cursor
 name|BitmapCursor
+modifier|*
 name|toggle_cursor
+decl_stmt|;
+comment|/*  Action functions  */
+DECL|member|button_press_func
+name|ButtonPressFunc
+name|button_press_func
+decl_stmt|;
+DECL|member|button_release_func
+name|ButtonReleaseFunc
+name|button_release_func
+decl_stmt|;
+DECL|member|motion_func
+name|MotionFunc
+name|motion_func
+decl_stmt|;
+DECL|member|arrow_keys_func
+name|ArrowKeysFunc
+name|arrow_keys_func
+decl_stmt|;
+DECL|member|modifier_key_func
+name|ModifierKeyFunc
+name|modifier_key_func
+decl_stmt|;
+DECL|member|cursor_update_func
+name|CursorUpdateFunc
+name|cursor_update_func
+decl_stmt|;
+DECL|member|oper_update_func
+name|OperUpdateFunc
+name|oper_update_func
+decl_stmt|;
+DECL|member|control_func
+name|ToolCtlFunc
+name|control_func
+decl_stmt|;
+comment|/* put lots of interesting signals here */
+DECL|member|reserved1
+name|ToolCtlFunc
+name|reserved1
+decl_stmt|;
+DECL|member|reserved2
+name|ToolCtlFunc
+name|reserved2
+decl_stmt|;
+DECL|member|reserved3
+name|ToolCtlFunc
+name|reserved3
 decl_stmt|;
 block|}
 struct|;
@@ -495,44 +578,32 @@ comment|/*  Function declarations  */
 end_comment
 
 begin_function_decl
-name|Tool
+name|GtkType
+name|gimp_tool_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpTool
 modifier|*
-name|tools_new_tool
+name|gimp_tool_new
 parameter_list|(
-name|ToolType
-name|tool_type
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|tools_select
+name|gimp_tool_control
 parameter_list|(
-name|ToolType
-name|tool_type
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|tools_initialize
-parameter_list|(
-name|ToolType
-name|tool_type
+name|GimpTool
+modifier|*
+name|tool
 parameter_list|,
-name|GDisplay
-modifier|*
-name|gdisplay
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|active_tool_control
-parameter_list|(
 name|ToolAction
 name|action
 parameter_list|,
@@ -545,7 +616,45 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tools_help_func
+name|gimp_tool_initialize
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_tool_old_initialize
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisplay
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gchar
+modifier|*
+name|gimp_tool_get_help_data
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_tool_help_func
 parameter_list|(
 specifier|const
 name|gchar
@@ -557,14 +666,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tools_register
+name|gimp_tool_show_options
 parameter_list|(
-name|ToolType
-name|tool_type
-parameter_list|,
-name|ToolOptions
+name|GimpTool
 modifier|*
-name|tool_options
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -572,9 +678,11 @@ end_function_decl
 begin_function_decl
 name|gchar
 modifier|*
-name|tool_active_PDB_string
+name|tool_get_PDB_string
 parameter_list|(
-name|void
+name|GimpTool
+modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -586,10 +694,11 @@ end_comment
 begin_function_decl
 name|GdkPixmap
 modifier|*
-name|tool_get_pixmap
+name|gimp_tool_get_pixmap
 parameter_list|(
-name|ToolType
-name|tool_type
+name|GimpToolClass
+modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -597,40 +706,14 @@ end_function_decl
 begin_function_decl
 name|GdkBitmap
 modifier|*
-name|tool_get_mask
+name|gimp_tool_get_mask
 parameter_list|(
-name|ToolType
-name|tool_type
+name|GimpToolClass
+modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  Global Data Structures  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|Tool
-modifier|*
-name|active_tool
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|ToolInfo
-name|tool_info
-index|[]
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gint
-name|num_tools
-decl_stmt|;
-end_decl_stmt
 
 begin_endif
 endif|#
@@ -638,7 +721,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __TOOLS_H__  */
+comment|/*  __TOOL_H__  */
 end_comment
 
 end_unit

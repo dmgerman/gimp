@@ -360,7 +360,8 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|ToolType
+name|GimpTool
+modifier|*
 name|tool
 parameter_list|)
 function_decl|;
@@ -884,7 +885,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac636380103
+DECL|enum|__anon29a4d6430103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -927,7 +928,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac636380203
+DECL|enum|__anon29a4d6430203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -1555,13 +1556,13 @@ argument_list|,
 name|tool_changed
 argument_list|)
 argument_list|,
-name|gtk_marshal_NONE__INT
+name|gtk_marshal_NONE__POINTER
 argument_list|,
 name|GTK_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|GTK_TYPE_INT
+name|GTK_TYPE_POINTER
 argument_list|)
 expr_stmt|;
 name|gimp_context_signals
@@ -1971,7 +1972,7 @@ name|context
 operator|->
 name|tool
 operator|=
-name|RECT_SELECT
+name|NULL
 expr_stmt|;
 name|gimp_rgba_set
 argument_list|(
@@ -4807,7 +4808,8 @@ comment|/*  tool  **************************************************************
 end_comment
 
 begin_function
-name|ToolType
+name|GimpTool
+modifier|*
 DECL|function|gimp_context_get_tool (GimpContext * context)
 name|gimp_context_get_tool
 parameter_list|(
@@ -4838,14 +4840,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_context_set_tool (GimpContext * context,ToolType tool)
+DECL|function|gimp_context_set_tool (GimpContext * context,GimpTool * tool)
 name|gimp_context_set_tool
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|ToolType
+name|GimpTool
+modifier|*
 name|tool
 parameter_list|)
 block|{
@@ -4919,14 +4922,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_context_real_set_tool (GimpContext * context,ToolType tool)
+DECL|function|gimp_context_real_set_tool (GimpContext * context,GimpTool * tool)
 name|gimp_context_real_set_tool
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|ToolType
+name|GimpTool
+modifier|*
 name|tool
 parameter_list|)
 block|{

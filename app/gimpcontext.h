@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"tools/tool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpobject.h"
 end_include
 
@@ -77,7 +83,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be59f860103
+DECL|enum|__anon2acf22430103
 block|{
 DECL|enumerator|GIMP_CONTEXT_ARG_IMAGE
 name|GIMP_CONTEXT_ARG_IMAGE
@@ -123,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be59f860203
+DECL|enum|__anon2acf22430203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -280,7 +286,8 @@ modifier|*
 name|display
 decl_stmt|;
 DECL|member|tool
-name|ToolType
+name|GimpTool
+modifier|*
 name|tool
 decl_stmt|;
 DECL|member|foreground
@@ -967,7 +974,8 @@ comment|/*  tool  */
 end_comment
 
 begin_function_decl
-name|ToolType
+name|GimpTool
+modifier|*
 name|gimp_context_get_tool
 parameter_list|(
 name|GimpContext
@@ -985,7 +993,8 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|ToolType
+name|GimpTool
+modifier|*
 name|tool_type
 parameter_list|)
 function_decl|;

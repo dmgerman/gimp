@@ -16,6 +16,12 @@ directive|define
 name|__DRAW_CORE_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"tools/tool.h"
+end_include
+
 begin_comment
 comment|/*  drawing states  */
 end_comment
@@ -49,7 +55,7 @@ modifier|*
 name|DrawCoreDraw
 function_decl|)
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 parameter_list|)
 function_decl|;
@@ -140,7 +146,7 @@ parameter_list|,
 name|GdkWindow
 modifier|*
 parameter_list|,
-name|Tool
+name|GimpTool
 modifier|*
 parameter_list|)
 function_decl|;
@@ -153,7 +159,7 @@ parameter_list|(
 name|DrawCore
 modifier|*
 parameter_list|,
-name|Tool
+name|GimpTool
 modifier|*
 parameter_list|)
 function_decl|;
@@ -166,7 +172,7 @@ parameter_list|(
 name|DrawCore
 modifier|*
 parameter_list|,
-name|Tool
+name|GimpTool
 modifier|*
 parameter_list|)
 function_decl|;
@@ -179,7 +185,7 @@ parameter_list|(
 name|DrawCore
 modifier|*
 parameter_list|,
-name|Tool
+name|GimpTool
 modifier|*
 parameter_list|)
 function_decl|;

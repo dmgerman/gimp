@@ -162,7 +162,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"tool.h"
 end_include
 
 begin_include
@@ -871,10 +871,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_button_press (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|paint_core_button_press (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|paint_core_button_press
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -909,13 +909,9 @@ name|drawable
 decl_stmt|;
 name|paint_core
 operator|=
-operator|(
-name|PaintCore
-operator|*
-operator|)
 name|tool
 operator|->
-name|private
+name|paint_core
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1859,10 +1855,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_button_release (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|paint_core_button_release (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|paint_core_button_release
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -1891,13 +1887,9 @@ name|gimage
 expr_stmt|;
 name|paint_core
 operator|=
-operator|(
-name|PaintCore
-operator|*
-operator|)
 name|tool
 operator|->
-name|private
+name|paint_core
 expr_stmt|;
 comment|/*  resume the current selection and ungrab the pointer  */
 name|gdisplays_selection_visibility
@@ -1985,10 +1977,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_motion (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|paint_core_motion (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|paint_core_motion
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -2007,13 +1999,9 @@ name|paint_core
 decl_stmt|;
 name|paint_core
 operator|=
-operator|(
-name|PaintCore
-operator|*
-operator|)
 name|tool
 operator|->
-name|private
+name|paint_core
 expr_stmt|;
 name|gdisplay_untransform_coords_f
 argument_list|(
@@ -2305,13 +2293,9 @@ name|FALSE
 decl_stmt|;
 name|paint_core
 operator|=
-operator|(
-name|PaintCore
-operator|*
-operator|)
 name|tool
 operator|->
-name|private
+name|paint_core
 expr_stmt|;
 comment|/*  undraw the current tool  */
 name|draw_core_pause
@@ -3121,10 +3105,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_control (Tool * tool,ToolAction action,GDisplay * gdisp)
+DECL|function|paint_core_control (GimpTool * tool,ToolAction action,GDisplay * gdisp)
 name|paint_core_control
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -3152,7 +3136,7 @@ operator|*
 operator|)
 name|tool
 operator|->
-name|private
+name|paint_core
 expr_stmt|;
 name|drawable
 operator|=
@@ -3214,10 +3198,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_draw (Tool * tool)
+DECL|function|paint_core_draw (GimpTool * tool)
 name|paint_core_draw
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|)
@@ -3241,13 +3225,9 @@ name|ty2
 decl_stmt|;
 name|paint_core
 operator|=
-operator|(
-name|PaintCore
-operator|*
-operator|)
 name|tool
 operator|->
-name|private
+name|paint_core
 expr_stmt|;
 comment|/* if shift was never used, paint_core->core->gc is NULL       and we don't care about a redraw                       */
 if|if
@@ -3542,14 +3522,15 @@ end_function
 begin_function
 name|Tool
 modifier|*
-DECL|function|paint_core_new (ToolType type)
+DECL|function|paint_core_new (GimpToolClas * type)
 name|paint_core_new
 parameter_list|(
-name|ToolType
+name|GimpToolClas
+modifier|*
 name|type
 parameter_list|)
 block|{
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 decl_stmt|;
@@ -3648,10 +3629,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_free (Tool * tool)
+DECL|function|paint_core_free (GimpTool * tool)
 name|paint_core_free
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|)
@@ -3668,7 +3649,7 @@ operator|*
 operator|)
 name|tool
 operator|->
-name|private
+name|paint_core
 expr_stmt|;
 comment|/*  Make sure the selection core is not visible  */
 if|if

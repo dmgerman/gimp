@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools.h"
+file|"tools/tool.h"
 end_include
 
 begin_function
@@ -174,7 +174,7 @@ name|redisplay
 parameter_list|)
 block|{
 comment|/* freeze the active tool */
-name|active_tool_control
+name|tool_manager_control_active
 argument_list|(
 name|PAUSE
 argument_list|,
@@ -227,7 +227,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* re-enable the active tool */
-name|active_tool_control
+name|tool_manager_control_active
 argument_list|(
 name|RESUME
 argument_list|,
@@ -252,7 +252,7 @@ name|gdisp
 parameter_list|)
 block|{
 comment|/* freeze the active tool */
-name|active_tool_control
+name|tool_manager_control_active
 argument_list|(
 name|PAUSE
 argument_list|,
@@ -287,7 +287,7 @@ name|gdisplays_flush
 argument_list|()
 expr_stmt|;
 comment|/* re-enable the active tool */
-name|active_tool_control
+name|tool_manager_control_active
 argument_list|(
 name|RESUME
 argument_list|,

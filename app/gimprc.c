@@ -190,7 +190,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools.h"
+file|"tools/tool.h"
 end_include
 
 begin_include
@@ -260,7 +260,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299899300103
+DECL|enum|__anon297bafda0103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -10561,10 +10561,9 @@ name|keys
 init|=
 name|NULL
 decl_stmt|;
-name|ToolType
+name|GimpTool
+modifier|*
 name|tool
-init|=
-name|RECT_SELECT
 decl_stmt|;
 name|GimpRGB
 name|foreground
@@ -11140,37 +11139,15 @@ name|get_next_token
 argument_list|()
 expr_stmt|;
 comment|/* FIXME: this shouldn't be hard coded like this */
-for|for
-control|(
-name|tool
-operator|=
-name|FIRST_TOOLBOX_TOOL
-init|;
-name|tool
-operator|<=
-name|LAST_TOOLBOX_TOOL
-condition|;
-name|tool
-operator|++
-control|)
-block|{
-if|if
-condition|(
-operator|!
-name|strcmp
-argument_list|(
-name|tool_info
-index|[
-name|tool
-index|]
-operator|.
-name|tool_name
-argument_list|,
-name|token_str
-argument_list|)
-condition|)
-break|break;
-block|}
+warning|#
+directive|warning
+warning|deep bogosity error
+if|#
+directive|if
+literal|0
+block|for (tool = FIRST_TOOLBOX_TOOL; tool<= LAST_TOOLBOX_TOOL; tool++) 	    { 	      if (!strcmp (tool_info[tool].tool_name, token_str)) 		break; 	    }
+endif|#
+directive|endif
 if|if
 condition|(
 name|tool

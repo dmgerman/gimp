@@ -123,7 +123,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|draw_core_start (DrawCore * core,GdkWindow * win,Tool * tool)
+DECL|function|draw_core_start (DrawCore * core,GdkWindow * win,GimpTool * tool)
 name|draw_core_start
 parameter_list|(
 name|DrawCore
@@ -134,7 +134,7 @@ name|GdkWindow
 modifier|*
 name|win
 parameter_list|,
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|)
@@ -284,14 +284,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|draw_core_stop (DrawCore * core,Tool * tool)
+DECL|function|draw_core_stop (DrawCore * core,GimpTool * tool)
 name|draw_core_stop
 parameter_list|(
 name|DrawCore
 modifier|*
 name|core
 parameter_list|,
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|)
@@ -326,14 +326,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|draw_core_resume (DrawCore * core,Tool * tool)
+DECL|function|draw_core_resume (DrawCore * core,GimpTool * tool)
 name|draw_core_resume
 parameter_list|(
 name|DrawCore
 modifier|*
 name|core
 parameter_list|,
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|)
@@ -389,14 +389,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|draw_core_pause (DrawCore * core,Tool * tool)
+DECL|function|draw_core_pause (DrawCore * core,GimpTool * tool)
 name|draw_core_pause
 parameter_list|(
 name|DrawCore
 modifier|*
 name|core
 parameter_list|,
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|)

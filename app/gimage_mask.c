@@ -120,7 +120,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools.h"
+file|"tools/tool.h"
 end_include
 
 begin_include
@@ -2391,7 +2391,7 @@ name|return_vals
 operator|=
 name|procedural_db_run_proc
 argument_list|(
-name|tool_active_PDB_string
+name|tool_manager_get_active_PDB_string
 argument_list|()
 argument_list|,
 operator|&

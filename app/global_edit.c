@@ -120,7 +120,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools.h"
+file|"tools/tool.h"
 end_include
 
 begin_include
@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2e29740103
+DECL|enum|__anon29146e8c0103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
@@ -2269,7 +2269,7 @@ name|gdisp
 parameter_list|)
 block|{
 comment|/*  stop any active tool  */
-name|active_tool_control
+name|tool_manager_control_active
 argument_list|(
 name|HALT
 argument_list|,
@@ -2356,7 +2356,7 @@ name|paste_into
 parameter_list|)
 block|{
 comment|/*  stop any active tool  */
-name|active_tool_control
+name|tool_manager_control_active
 argument_list|(
 name|HALT
 argument_list|,
@@ -2423,7 +2423,7 @@ return|return
 name|FALSE
 return|;
 comment|/*  stop any active tool  */
-name|active_tool_control
+name|tool_manager_control_active
 argument_list|(
 name|HALT
 argument_list|,
@@ -3776,7 +3776,7 @@ modifier|*
 name|qbox
 decl_stmt|;
 comment|/*  stop any active tool  */
-name|active_tool_control
+name|tool_manager_control_active
 argument_list|(
 name|HALT
 argument_list|,

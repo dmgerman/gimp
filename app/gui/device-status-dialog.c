@@ -132,7 +132,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools.h"
+file|"tools/tool.h"
 end_include
 
 begin_include
@@ -414,7 +414,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|ToolType
+name|GimpTool
+modifier|*
 name|device_status_drag_tool
 parameter_list|(
 name|GtkWidget
@@ -436,7 +437,8 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|ToolType
+name|GimpTool
+modifier|*
 name|tool
 parameter_list|,
 name|gpointer
@@ -1444,7 +1446,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|devices_rc_update (gchar * name,DeviceValues values,GdkInputMode mode,gint num_axes,GdkAxisUse * axes,gint num_keys,GdkDeviceKey * keys,ToolType tool,GimpRGB * foreground,GimpRGB * background,gchar * brush_name,gchar * pattern_name,gchar * gradient_name)
+DECL|function|devices_rc_update (gchar * name,DeviceValues values,GdkInputMode mode,gint num_axes,GdkAxisUse * axes,gint num_keys,GdkDeviceKey * keys,GimpTool * tool,GimpRGB * foreground,GimpRGB * background,gchar * brush_name,gchar * pattern_name,gchar * gradient_name)
 name|devices_rc_update
 parameter_list|(
 name|gchar
@@ -1471,7 +1473,8 @@ name|GdkDeviceKey
 modifier|*
 name|keys
 parameter_list|,
-name|ToolType
+name|GimpTool
+modifier|*
 name|tool
 parameter_list|,
 name|GimpRGB
@@ -2758,25 +2761,15 @@ operator|<=
 name|LAST_TOOLBOX_TOOL
 condition|)
 block|{
-name|fprintf
-argument_list|(
-name|fp
-argument_list|,
-literal|"\n    (tool \"%s\")"
-argument_list|,
-name|tool_info
-index|[
-name|gimp_context_get_tool
-argument_list|(
-name|device_info
-operator|->
-name|context
-argument_list|)
-index|]
-operator|.
-name|tool_name
-argument_list|)
-expr_stmt|;
+warning|#
+directive|warning
+warning|somebody fix me, please
+if|#
+directive|if
+literal|0
+block|fprintf (fp, "\n    (tool \"%s\")", 	       tool_info[gimp_context_get_tool (device_info->context)].tool_name);
+endif|#
+directive|endif
 block|}
 block|{
 name|GimpRGB
@@ -3554,12 +3547,12 @@ index|]
 operator|=
 name|gtk_pixmap_new
 argument_list|(
-name|tool_get_pixmap
+name|gimp_tool_get_pixmap
 argument_list|(
 name|RECT_SELECT
 argument_list|)
 argument_list|,
-name|tool_get_mask
+name|gimp_tool_get_mask
 argument_list|(
 name|RECT_SELECT
 argument_list|)
@@ -4838,7 +4831,7 @@ name|i
 index|]
 argument_list|)
 argument_list|,
-name|tool_get_pixmap
+name|gimp_tool_get_pixmap
 argument_list|(
 name|gimp_context_get_tool
 argument_list|(
@@ -4848,7 +4841,7 @@ name|context
 argument_list|)
 argument_list|)
 argument_list|,
-name|tool_get_mask
+name|gimp_tool_get_mask
 argument_list|(
 name|gimp_context_get_tool
 argument_list|(
@@ -4891,46 +4884,15 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|deviceD
-operator|->
-name|eventboxes
-index|[
-name|i
-index|]
-argument_list|,
-name|tool_info
-index|[
-operator|(
-name|gint
-operator|)
-name|gimp_context_get_tool
-argument_list|(
-name|device_info
-operator|->
-name|context
-argument_list|)
-index|]
-operator|.
-name|tool_desc
-argument_list|,
-name|tool_info
-index|[
-operator|(
-name|gint
-operator|)
-name|gimp_context_get_tool
-argument_list|(
-name|device_info
-operator|->
-name|context
-argument_list|)
-index|]
-operator|.
-name|private_tip
-argument_list|)
-expr_stmt|;
+warning|#
+directive|warning
+warning|fixme
+if|#
+directive|if
+literal|0
+block|gimp_help_set_help_data (deviceD->eventboxes[i], 			       tool_info[(gint) gimp_context_get_tool (device_info->context)].tool_desc, 			       tool_info[(gint) gimp_context_get_tool (device_info->context)].private_tip);
+endif|#
+directive|endif
 comment|/*  foreground color  */
 name|gimp_context_get_foreground
 argument_list|(
@@ -5208,7 +5170,8 @@ end_comment
 
 begin_function
 specifier|static
-name|ToolType
+name|GimpTool
+modifier|*
 DECL|function|device_status_drag_tool (GtkWidget * widget,gpointer data)
 name|device_status_drag_tool
 parameter_list|(
@@ -5260,14 +5223,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|device_status_drop_tool (GtkWidget * widget,ToolType tool,gpointer data)
+DECL|function|device_status_drop_tool (GtkWidget * widget,GimpTool * tool,gpointer data)
 name|device_status_drop_tool
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|ToolType
+name|GimpTool
+modifier|*
 name|tool
 parameter_list|,
 name|gpointer

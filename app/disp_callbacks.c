@@ -186,7 +186,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools.h"
+file|"tools/tool_manager.h"
 end_include
 
 begin_include
@@ -1015,6 +1015,11 @@ block|{
 case|case
 literal|1
 case|:
+name|g_message
+argument_list|(
+literal|"disp_callbacks button pressed"
+argument_list|)
+expr_stmt|;
 name|state
 operator||=
 name|GDK_BUTTON1_MASK
@@ -1050,18 +1055,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* FIXME!!! This code is ugly, and active_tool shouldn't be referenced directly */
 if|if
 condition|(
 name|active_tool
 operator|&&
 operator|(
-operator|(
+name|GIMP_IS_MOVE_TOOL
+argument_list|(
 name|active_tool
-operator|->
-name|type
-operator|==
-name|MOVE
-operator|)
+argument_list|)
 operator|||
 operator|!
 name|gimp_image_is_empty
@@ -1148,11 +1151,9 @@ operator|->
 name|preserve
 condition|)
 block|{
-name|tools_initialize
+name|gimp_tool_old_initialize
 argument_list|(
 name|active_tool
-operator|->
-name|type
 argument_list|,
 name|gdisp
 argument_list|)
@@ -1180,12 +1181,7 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
-call|(
-modifier|*
-name|active_tool
-operator|->
-name|button_press_func
-call|)
+name|gimp_tool_emit_button_press
 argument_list|(
 name|active_tool
 argument_list|,
@@ -1459,11 +1455,10 @@ name|gimp_busy
 operator|&&
 operator|!
 operator|(
+name|GIMP_IS_FUZZY_SELECT
+argument_list|(
 name|active_tool
-operator|->
-name|type
-operator|==
-name|FUZZY_SELECT
+argument_list|)
 operator|&&
 name|active_tool
 operator|->
@@ -1529,13 +1524,10 @@ condition|(
 name|active_tool
 operator|&&
 operator|(
-operator|(
+name|GIMP_IS_MOVE_TOOL
+argument_list|(
 name|active_tool
-operator|->
-name|type
-operator|==
-name|MOVE
-operator|)
+argument_list|)
 operator|||
 operator|!
 name|gimp_image_is_empty
@@ -1599,12 +1591,7 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-call|(
-modifier|*
-name|active_tool
-operator|->
-name|button_release_func
-call|)
+name|gimp_tool_emit_button_release
 argument_list|(
 name|active_tool
 argument_list|,
@@ -1705,11 +1692,10 @@ name|gimp_busy
 operator|&&
 operator|!
 operator|(
+name|GIMP_IS_FUZZY_SELECT
+argument_list|(
 name|active_tool
-operator|->
-name|type
-operator|==
-name|FUZZY_SELECT
+argument_list|)
 operator|&&
 name|active_tool
 operator|->
@@ -1721,7 +1707,7 @@ condition|)
 return|return
 name|TRUE
 return|;
-comment|/* Ask for the pointer position, but ignore it except for cursor       * handling, so motion events sync with the button press/release events       */
+comment|/* Ask for the pointer position, but ignore it except for cursor       * handling, so motion events sync with the button press/release events        */
 if|if
 condition|(
 name|mevent
@@ -1811,13 +1797,10 @@ condition|(
 name|active_tool
 operator|&&
 operator|(
-operator|(
+name|GIMP_IS_MOVE_TOOL
+argument_list|(
 name|active_tool
-operator|->
-name|type
-operator|==
-name|MOVE
-operator|)
+argument_list|)
 operator|||
 operator|!
 name|gimp_image_is_empty
@@ -1944,12 +1927,7 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-call|(
-modifier|*
-name|active_tool
-operator|->
-name|motion_func
-call|)
+name|gimp_tool_emit_motion
 argument_list|(
 name|active_tool
 argument_list|,
@@ -2006,12 +1984,7 @@ condition|)
 block|{
 comment|/* ...then preconditions to modify a tool */
 comment|/* operator state have been met.          */
-call|(
-modifier|*
-name|active_tool
-operator|->
-name|oper_update_func
-call|)
+name|gimp_tool_emit_oper_update
 argument_list|(
 name|active_tool
 argument_list|,
@@ -2078,12 +2051,7 @@ operator|->
 name|gimage
 argument_list|)
 condition|)
-call|(
-modifier|*
-name|active_tool
-operator|->
-name|arrow_keys_func
-call|)
+name|gimp_tool_emit_arrow_keys
 argument_list|(
 name|active_tool
 argument_list|,
@@ -2264,12 +2232,7 @@ directive|endif
 comment|/* GTK_HAVE_SIX_VALUATORS */
 argument_list|)
 expr_stmt|;
-call|(
-modifier|*
-name|active_tool
-operator|->
-name|modifier_key_func
-call|)
+name|gimp_tool_emit_modifier_key
 argument_list|(
 name|active_tool
 argument_list|,
@@ -2407,12 +2370,7 @@ directive|endif
 comment|/* GTK_HAVE_SIX_VALUATORS */
 argument_list|)
 expr_stmt|;
-call|(
-modifier|*
-name|active_tool
-operator|->
-name|modifier_key_func
-call|)
+name|gimp_tool_emit_modifier_key
 argument_list|(
 name|active_tool
 argument_list|,
@@ -2502,12 +2460,7 @@ name|state
 operator|=
 name|state
 expr_stmt|;
-call|(
-modifier|*
-name|active_tool
-operator|->
-name|cursor_update_func
-call|)
+name|gimp_tool_emit_cursor_update
 argument_list|(
 name|active_tool
 argument_list|,
@@ -3701,26 +3654,15 @@ name|gimp_add_busy_cursors
 argument_list|()
 expr_stmt|;
 comment|/*  Get the bucket fill context  */
-if|if
-condition|(
-operator|!
-name|global_paint_options
-condition|)
-name|context
-operator|=
-name|tool_info
-index|[
-name|BUCKET_FILL
-index|]
-operator|.
-name|tool_context
-expr_stmt|;
-else|else
-name|context
-operator|=
-name|gimp_context_get_user
-argument_list|()
-expr_stmt|;
+warning|#
+directive|warning
+warning|I like cheese
+if|#
+directive|if
+literal|0
+block|if (! global_paint_options)     context = tool_info[BUCKET_FILL].tool_context;   else     context = gimp_context_get_user ();
+endif|#
+directive|endif
 comment|/*  Transform the passed data for the dest image  */
 if|if
 condition|(

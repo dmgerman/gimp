@@ -96,7 +96,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools.h"
+file|"tools/tool_manager.h"
 end_include
 
 begin_comment
@@ -411,21 +411,17 @@ name|gimage
 operator|==
 name|gimage
 condition|)
-name|tools_initialize
+name|gimp_tool_old_initialize
 argument_list|(
 name|active_tool
-operator|->
-name|type
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 else|else
-name|tools_initialize
+name|gimp_tool_old_initialize
 argument_list|(
 name|active_tool
-operator|->
-name|type
 argument_list|,
 name|NULL
 argument_list|)

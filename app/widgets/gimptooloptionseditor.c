@@ -72,7 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"tool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tool_manager.h"
 end_include
 
 begin_include

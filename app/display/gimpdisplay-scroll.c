@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools.h"
+file|"tools/tool.h"
 end_include
 
 begin_comment
@@ -689,7 +689,7 @@ operator|=
 name|old_y
 expr_stmt|;
 comment|/*  stop the currently active tool  */
-name|active_tool_control
+name|tool_manager_control_active
 argument_list|(
 name|PAUSE
 argument_list|,
@@ -763,7 +763,7 @@ operator|)
 argument_list|)
 expr_stmt|;
 comment|/*  resume the currently active tool  */
-name|active_tool_control
+name|tool_manager_control_active
 argument_list|(
 name|RESUME
 argument_list|,

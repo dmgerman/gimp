@@ -403,7 +403,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools.h"
+file|"tools/tool.h"
 end_include
 
 begin_include
@@ -4095,64 +4095,21 @@ operator|=
 name|gdisplay_active
 argument_list|()
 expr_stmt|;
-name|gimp_context_set_tool
-argument_list|(
-name|gimp_context_get_user
-argument_list|()
-argument_list|,
-name|tool_type
-argument_list|)
-expr_stmt|;
+warning|#
+directive|warning
+warning|fix tools_select_cmd_callback
+if|#
+directive|if
+literal|0
+block|gimp_context_set_tool (gimp_context_get_user (), tool_type);
 comment|/*  Paranoia  */
-name|active_tool
-operator|->
-name|drawable
-operator|=
-name|NULL
-expr_stmt|;
+block|active_tool->drawable = NULL;
 comment|/*  Complete the initialisation by doing the same stuff    *  tools_initialize() does after it did what tools_select() does    */
-if|if
-condition|(
-name|tool_info
-index|[
-name|tool_type
-index|]
-operator|.
-name|init_func
-condition|)
-block|{
-operator|(
-operator|*
-name|tool_info
-index|[
-name|tool_type
-index|]
-operator|.
-name|init_func
-operator|)
-operator|(
-name|gdisp
-operator|)
-expr_stmt|;
-name|active_tool
-operator|->
-name|drawable
-operator|=
-name|gimp_image_active_drawable
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
-block|}
+block|if (tool_info[tool_type].init_func)     {       (* tool_info[tool_type].init_func) (gdisp);        active_tool->drawable = gimp_image_active_drawable (gdisp->gimage);     }
 comment|/*  setting the tool->gdisp here is a HACK to allow the tools'    *  dialog windows being hidden if the tool was selected from    *  a tear-off-menu and there was no mouse click in the display    *  before deleting it    */
-name|active_tool
-operator|->
-name|gdisp
-operator|=
-name|gdisp
-expr_stmt|;
+block|active_tool->gdisp = gdisp;
+endif|#
+directive|endif
 block|}
 end_function
 

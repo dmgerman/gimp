@@ -16,10 +16,16 @@ directive|define
 name|__DEVICES_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"tools/tool.h"
+end_include
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278e73350103
+DECL|enum|__anon294430e40103
 block|{
 DECL|enumerator|DEVICE_MODE
 name|DEVICE_MODE
@@ -202,7 +208,8 @@ name|GdkDeviceKey
 modifier|*
 name|keys
 parameter_list|,
-name|ToolType
+name|GimpTool
+modifier|*
 name|tool
 parameter_list|,
 name|GimpRGB

@@ -16,6 +16,143 @@ directive|define
 name|__COLOR_PICKER_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"tool.h"
+end_include
+
+begin_define
+DECL|macro|GIMP_TYPE_COLOR_PICKER
+define|#
+directive|define
+name|GIMP_TYPE_COLOR_PICKER
+value|(gimp_color_picker_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_COLOR_PICKER (obj)
+define|#
+directive|define
+name|GIMP_COLOR_PICKER
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_COLOR_PICKER, GimpColorPicker))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_COLOR_PICKER (obj)
+define|#
+directive|define
+name|GIMP_IS_COLOR_PICKER
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_COLOR_PICKER))
+end_define
+
+begin_define
+DECL|macro|GIMP_COLOR_PICKER_CLASS (klass)
+define|#
+directive|define
+name|GIMP_COLOR_PICKER_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_COLOR_PICKER, GimpColorPickerClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_COLOR_PICKER_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_COLOR_PICKER_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_COLOR_PICKER))
+end_define
+
+begin_function_decl
+name|GtkType
+name|gimp_color_picker_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_struct
+DECL|struct|_GimpColorPicker
+struct|struct
+name|_GimpColorPicker
+block|{
+DECL|member|parent_instance
+name|GimpTool
+name|parent_instance
+decl_stmt|;
+DECL|member|core
+name|DrawCore
+modifier|*
+name|core
+decl_stmt|;
+comment|/*  Core select object  */
+DECL|member|centerx
+name|gint
+name|centerx
+decl_stmt|;
+comment|/*  starting x coord    */
+DECL|member|centery
+name|gint
+name|centery
+decl_stmt|;
+comment|/*  starting y coord    */
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpColorPickerClass
+struct|struct
+name|_GimpColorPickerClass
+block|{
+DECL|member|parent_class
+name|GimpToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_typedef
+DECL|typedef|GimpColorPicker
+typedef|typedef
+name|struct
+name|_GimpColorPicker
+name|GimpColorPicker
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|GimpColorPicker
+comment|/* This is one of the stupidest parts of the gnu coding standards */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpColorPickerClass
+typedef|typedef
+name|struct
+name|_GimpColorPickerClass
+name|GimpColorPickerClass
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|GimpColorPickerClass
+comment|/* making the typedef and the struct one line like everyone else does confuses nobody */
+end_comment
+
 begin_decl_stmt
 specifier|extern
 name|gint
@@ -60,22 +197,11 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Tool
+name|GimpTool
 modifier|*
-name|tools_new_color_picker
+name|gimp_color_picker_new
 parameter_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|tools_free_color_picker
-parameter_list|(
-name|Tool
-modifier|*
-name|tool
 parameter_list|)
 function_decl|;
 end_function_decl

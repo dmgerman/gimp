@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools.h"
+file|"tools/tool.h"
 end_include
 
 begin_include
@@ -635,12 +635,12 @@ name|pixmap
 operator|=
 name|gtk_pixmap_new
 argument_list|(
-name|tool_get_pixmap
+name|gimp_tool_get_pixmap
 argument_list|(
 name|COLOR_PICKER
 argument_list|)
 argument_list|,
-name|tool_get_mask
+name|gimp_tool_get_mask
 argument_list|(
 name|COLOR_PICKER
 argument_list|)
