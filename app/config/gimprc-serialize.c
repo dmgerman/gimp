@@ -121,10 +121,7 @@ name|gimp_rc_serialize_properties_diff
 argument_list|(
 name|config
 argument_list|,
-name|GIMP_CONFIG
-argument_list|(
 name|data
-argument_list|)
 argument_list|,
 name|writer
 argument_list|)
@@ -237,9 +234,15 @@ name|diff
 operator|=
 name|gimp_config_diff
 argument_list|(
+name|G_OBJECT
+argument_list|(
 name|config
+argument_list|)
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|compare
+argument_list|)
 argument_list|,
 name|GIMP_CONFIG_PARAM_SERIALIZE
 argument_list|)

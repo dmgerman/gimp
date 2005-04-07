@@ -1015,7 +1015,7 @@ operator|==
 name|GTK_RESPONSE_OK
 condition|)
 block|{
-name|GimpConfig
+name|GObject
 modifier|*
 name|config_copy
 decl_stmt|;
@@ -1070,7 +1070,7 @@ name|confirm_diff
 operator|=
 name|gimp_config_diff
 argument_list|(
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|gimp
 operator|->
@@ -1111,6 +1111,10 @@ block|{
 name|GParamSpec
 modifier|*
 name|param_spec
+init|=
+name|list
+operator|->
+name|data
 decl_stmt|;
 name|GValue
 name|value
@@ -1119,16 +1123,6 @@ block|{
 literal|0
 block|, }
 decl_stmt|;
-name|param_spec
-operator|=
-operator|(
-name|GParamSpec
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-expr_stmt|;
 name|g_value_init
 argument_list|(
 operator|&
@@ -1141,10 +1135,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_get_property
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|config_copy
-argument_list|)
 argument_list|,
 name|param_spec
 operator|->
@@ -1208,14 +1199,14 @@ name|restart_diff
 operator|=
 name|gimp_config_diff
 argument_list|(
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|gimp
 operator|->
 name|edit_config
 argument_list|)
 argument_list|,
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|gimp
 operator|->
@@ -1312,7 +1303,7 @@ block|}
 else|else
 comment|/* cancel */
 block|{
-name|GimpConfig
+name|GObject
 modifier|*
 name|config_orig
 decl_stmt|;
@@ -1363,7 +1354,7 @@ name|diff
 operator|=
 name|gimp_config_diff
 argument_list|(
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|gimp
 operator|->
@@ -1404,6 +1395,10 @@ block|{
 name|GParamSpec
 modifier|*
 name|param_spec
+init|=
+name|list
+operator|->
+name|data
 decl_stmt|;
 name|GValue
 name|value
@@ -1412,16 +1407,6 @@ block|{
 literal|0
 block|, }
 decl_stmt|;
-name|param_spec
-operator|=
-operator|(
-name|GParamSpec
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-expr_stmt|;
 name|g_value_init
 argument_list|(
 operator|&
@@ -1434,10 +1419,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_get_property
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|config_orig
-argument_list|)
 argument_list|,
 name|param_spec
 operator|->
@@ -1536,12 +1518,12 @@ name|template
 condition|)
 name|gimp_config_sync
 argument_list|(
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|template
 argument_list|)
 argument_list|,
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|edit_template
 argument_list|)
@@ -8272,7 +8254,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c8bec920108
+DECL|struct|__anon274987130108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9429,7 +9411,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c8bec920208
+DECL|struct|__anon274987130208
 block|{
 DECL|member|label
 specifier|const
@@ -10355,7 +10337,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c8bec920308
+DECL|struct|__anon274987130308
 block|{
 DECL|member|label
 specifier|const
@@ -10516,7 +10498,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c8bec920408
+DECL|struct|__anon274987130408
 block|{
 DECL|member|tree_label
 specifier|const

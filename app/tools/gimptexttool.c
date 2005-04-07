@@ -1691,12 +1691,12 @@ condition|)
 block|{
 name|gimp_config_sync
 argument_list|(
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|text
 argument_list|)
 argument_list|,
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|text_tool
 operator|->
