@@ -230,14 +230,14 @@ begin_function
 specifier|static
 name|GList
 modifier|*
-DECL|function|gimp_config_diff_same (GimpConfig * a,GimpConfig * b,GParamFlags flags)
+DECL|function|gimp_config_diff_same (GObject * a,GObject * b,GParamFlags flags)
 name|gimp_config_diff_same
 parameter_list|(
-name|GimpConfig
+name|GObject
 modifier|*
 name|a
 parameter_list|,
-name|GimpConfig
+name|GObject
 modifier|*
 name|b
 parameter_list|,
@@ -320,15 +320,9 @@ if|if
 condition|(
 name|gimp_config_diff_property
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|a
-argument_list|)
 argument_list|,
-name|G_OBJECT
-argument_list|(
 name|b
-argument_list|)
 argument_list|,
 name|prop_spec
 argument_list|)
@@ -359,14 +353,14 @@ begin_function
 specifier|static
 name|GList
 modifier|*
-DECL|function|gimp_config_diff_other (GimpConfig * a,GimpConfig * b,GParamFlags flags)
+DECL|function|gimp_config_diff_other (GObject * a,GObject * b,GParamFlags flags)
 name|gimp_config_diff_other
 parameter_list|(
-name|GimpConfig
+name|GObject
 modifier|*
 name|a
 parameter_list|,
-name|GimpConfig
+name|GObject
 modifier|*
 name|b
 parameter_list|,
@@ -481,15 +475,9 @@ if|if
 condition|(
 name|gimp_config_diff_property
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|a
-argument_list|)
 argument_list|,
-name|G_OBJECT
-argument_list|(
 name|b
-argument_list|)
 argument_list|,
 name|b_spec
 argument_list|)
@@ -517,20 +505,20 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_diff:  * @a: a #GimpConfig object  * @b: another #GimpConfig object  * @flags: a mask of GParamFlags  *  * Compares all properties of @a and @b that have all @flags set. If  * @flags is 0, all properties are compared.  *  * If the two objects are not of the same type, only properties that  * exist in both object classes and are of the same value_type are  * compared.  *  * Return value: a GList of differing GParamSpecs.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_diff:  * @a: a #GObject  * @b: another #GObject object  * @flags: a mask of GParamFlags  *  * Compares all properties of @a and @b that have all @flags set. If  * @flags is 0, all properties are compared.  *  * If the two objects are not of the same type, only properties that  * exist in both object classes and are of the same value_type are  * compared.  *  * Return value: a GList of differing GParamSpecs.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_config_diff (GimpConfig * a,GimpConfig * b,GParamFlags flags)
+DECL|function|gimp_config_diff (GObject * a,GObject * b,GParamFlags flags)
 name|gimp_config_diff
 parameter_list|(
-name|GimpConfig
+name|GObject
 modifier|*
 name|a
 parameter_list|,
-name|GimpConfig
+name|GObject
 modifier|*
 name|b
 parameter_list|,
@@ -544,7 +532,7 @@ name|diff
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_CONFIG
+name|G_IS_OBJECT
 argument_list|(
 name|a
 argument_list|)
@@ -554,7 +542,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_CONFIG
+name|G_IS_OBJECT
 argument_list|(
 name|b
 argument_list|)
@@ -607,19 +595,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_sync:  * @src: a #GimpConfig object  * @dest: another #GimpConfig object  * @flags: a mask of GParamFlags  *  * Compares all read- and write-able properties from @src and @dest  * that have all @flags set. Differing values are then copied from  * @src to @dest. If @flags is 0, all differing read/write properties.  *  * Properties marked as "construct-only" are not touched.  *  * If the two objects are not of the same type, only  * properties that exist in both object classes and are of the same  * value_type are synchronized  *  * Return value: %TRUE if @dest was modified, %FALSE otherwise  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_sync:  * @src: a #GObject  * @dest: another #GObject  * @flags: a mask of GParamFlags  *  * Compares all read- and write-able properties from @src and @dest  * that have all @flags set. Differing values are then copied from  * @src to @dest. If @flags is 0, all differing read/write properties.  *  * Properties marked as "construct-only" are not touched.  *  * If the two objects are not of the same type, only properties that  * exist in both object classes and are of the same value_type are  * synchronized  *  * Return value: %TRUE if @dest was modified, %FALSE otherwise  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_sync (GimpConfig * src,GimpConfig * dest,GParamFlags flags)
+DECL|function|gimp_config_sync (GObject * src,GObject * dest,GParamFlags flags)
 name|gimp_config_sync
 parameter_list|(
-name|GimpConfig
+name|GObject
 modifier|*
 name|src
 parameter_list|,
-name|GimpConfig
+name|GObject
 modifier|*
 name|dest
 parameter_list|,
@@ -637,7 +625,7 @@ name|list
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_CONFIG
+name|G_IS_OBJECT
 argument_list|(
 name|src
 argument_list|)
@@ -647,7 +635,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_CONFIG
+name|G_IS_OBJECT
 argument_list|(
 name|dest
 argument_list|)
@@ -757,10 +745,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_get_property
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|src
-argument_list|)
 argument_list|,
 name|prop_spec
 operator|->
@@ -772,10 +757,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_set_property
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dest
-argument_list|)
 argument_list|,
 name|prop_spec
 operator|->
@@ -805,23 +787,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_reset_properties:  * @config: a #GimpConfig object  *  * Resets all writable properties of @object to the default values as  * defined in their #GParamSpec. Properties marked as "construct-only"  * are not touched.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_reset_properties:  * @object: a #GObject  *  * Resets all writable properties of @object to the default values as  * defined in their #GParamSpec. Properties marked as "construct-only"  * are not touched.  *  * If you want to reset a #GimpConfig object, please use gimp_config_reset().  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_config_reset_properties (GimpConfig * config)
+DECL|function|gimp_config_reset_properties (GObject * object)
 name|gimp_config_reset_properties
 parameter_list|(
-name|GimpConfig
-modifier|*
-name|config
-parameter_list|)
-block|{
 name|GObject
 modifier|*
 name|object
-decl_stmt|;
+parameter_list|)
+block|{
 name|GObjectClass
 modifier|*
 name|klass
@@ -846,9 +824,9 @@ name|i
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_CONFIG
+name|G_IS_OBJECT
 argument_list|(
-name|config
+name|object
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -856,7 +834,7 @@ name|klass
 operator|=
 name|G_OBJECT_GET_CLASS
 argument_list|(
-name|config
+name|object
 argument_list|)
 expr_stmt|;
 name|property_specs
@@ -875,13 +853,6 @@ operator|!
 name|property_specs
 condition|)
 return|return;
-name|object
-operator|=
-name|G_OBJECT
-argument_list|(
-name|config
-argument_list|)
-expr_stmt|;
 name|g_object_freeze_notify
 argument_list|(
 name|object
@@ -1068,17 +1039,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_reset_property:  * @config: a #GimpConfig object  * @property_name: name of the property to reset  *  * Resets the property named @property_name to its default value.  * Nothing happens if the property is not writable or marked as  * "construct-only".  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_reset_property:  * @object: a #GObject  * @property_name: name of the property to reset  *  * Resets the property named @property_name to its default value.  The  * property must be writable and must not be marked as "construct-only".  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_config_reset_property (GimpConfig * config,const gchar * property_name)
+DECL|function|gimp_config_reset_property (GObject * object,const gchar * property_name)
 name|gimp_config_reset_property
 parameter_list|(
-name|GimpConfig
+name|GObject
 modifier|*
-name|config
+name|object
 parameter_list|,
 specifier|const
 name|gchar
@@ -1096,9 +1067,9 @@ name|prop_spec
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_CONFIG
+name|G_IS_OBJECT
 argument_list|(
-name|config
+name|object
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1113,7 +1084,7 @@ name|klass
 operator|=
 name|G_OBJECT_GET_CLASS
 argument_list|(
-name|config
+name|object
 argument_list|)
 expr_stmt|;
 name|prop_spec
@@ -1151,15 +1122,6 @@ name|G_PARAM_CONSTRUCT_ONLY
 operator|)
 condition|)
 block|{
-name|GObject
-modifier|*
-name|object
-init|=
-name|G_OBJECT
-argument_list|(
-name|config
-argument_list|)
-decl_stmt|;
 name|GValue
 name|value
 init|=

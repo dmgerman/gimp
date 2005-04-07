@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275046cd0103
+DECL|enum|__anon28f7972d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1006,9 +1006,15 @@ argument_list|)
 decl_stmt|;
 name|gimp_config_sync
 argument_list|(
+name|G_OBJECT
+argument_list|(
 name|config
+argument_list|)
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|dup
+argument_list|)
 argument_list|,
 literal|0
 argument_list|)

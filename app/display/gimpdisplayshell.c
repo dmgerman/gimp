@@ -257,7 +257,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon280396870103
+DECL|enum|__anon2b0b39e80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -273,7 +273,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon280396870203
+DECL|enum|__anon2b0b39e80203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2386,14 +2386,14 @@ name|default_dot_for_dot
 expr_stmt|;
 name|gimp_config_sync
 argument_list|(
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|display_config
 operator|->
 name|default_view
 argument_list|)
 argument_list|,
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|shell
 operator|->
@@ -2405,14 +2405,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_sync
 argument_list|(
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|display_config
 operator|->
 name|default_fullscreen_view
 argument_list|)
 argument_list|,
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|shell
 operator|->

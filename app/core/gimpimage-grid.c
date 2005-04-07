@@ -157,12 +157,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_sync
 argument_list|(
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|grid
 argument_list|)
 argument_list|,
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|gimage
 operator|->

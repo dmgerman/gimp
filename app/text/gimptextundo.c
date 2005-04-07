@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c66476e0103
+DECL|enum|__anon28b8e2fb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -969,14 +969,14 @@ name|text
 condition|)
 name|gimp_config_sync
 argument_list|(
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|text_undo
 operator|->
 name|text
 argument_list|)
 argument_list|,
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|layer
 operator|->

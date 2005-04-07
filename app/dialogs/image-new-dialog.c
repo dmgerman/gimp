@@ -134,7 +134,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc59e90108
+DECL|struct|__anon2bdac9740108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -758,12 +758,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_sync
 argument_list|(
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|template
 argument_list|)
 argument_list|,
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|dialog
 operator|->
@@ -814,7 +814,7 @@ name|RESPONSE_RESET
 case|:
 name|gimp_config_sync
 argument_list|(
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|dialog
 operator|->
@@ -825,7 +825,7 @@ operator|->
 name|default_image
 argument_list|)
 argument_list|,
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|dialog
 operator|->
@@ -957,12 +957,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_sync
 argument_list|(
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|template
 argument_list|)
 argument_list|,
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|dialog
 operator|->

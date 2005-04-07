@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279568a20103
+DECL|enum|__anon2c2c711a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1376,12 +1376,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_sync
 argument_list|(
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|options
 argument_list|)
 argument_list|,
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|text
 argument_list|)

@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275ee1600103
+DECL|enum|__anon2b7397d10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -709,15 +709,12 @@ argument_list|)
 condition|)
 name|gimp_config_sync
 argument_list|(
-name|GIMP_CONFIG
-argument_list|(
 name|g_value_get_object
 argument_list|(
 name|value
 argument_list|)
-argument_list|)
 argument_list|,
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|desc
 operator|->

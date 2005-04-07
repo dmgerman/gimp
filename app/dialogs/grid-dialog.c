@@ -486,7 +486,7 @@ name|GRID_RESPONSE_RESET
 case|:
 name|gimp_config_sync
 argument_list|(
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|gimage
 operator|->
@@ -497,7 +497,7 @@ operator|->
 name|default_grid
 argument_list|)
 argument_list|,
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|grid
 argument_list|)

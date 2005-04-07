@@ -1075,14 +1075,14 @@ argument_list|)
 decl_stmt|;
 name|gimp_config_sync
 argument_list|(
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|editor
 operator|->
 name|template
 argument_list|)
 argument_list|,
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|options
 operator|->

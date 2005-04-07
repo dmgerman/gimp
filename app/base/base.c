@@ -303,7 +303,7 @@ name|swap_path
 condition|)
 name|gimp_config_reset_property
 argument_list|(
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|config
 argument_list|)
@@ -346,7 +346,7 @@ name|temp_path
 condition|)
 name|gimp_config_reset_property
 argument_list|(
-name|GIMP_CONFIG
+name|G_OBJECT
 argument_list|(
 name|config
 argument_list|)
