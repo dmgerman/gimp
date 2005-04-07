@@ -218,7 +218,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon29549ee10103
+DECL|enum|__anon2947a55e0103
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -347,7 +347,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29549ee10203
+DECL|enum|__anon2947a55e0203
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -492,7 +492,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29549ee10303
+DECL|enum|__anon2947a55e0303
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -597,7 +597,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29549ee10403
+DECL|enum|__anon2947a55e0403
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -695,7 +695,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29549ee10508
+DECL|struct|__anon2947a55e0508
 block|{
 DECL|member|function
 name|gint
@@ -768,7 +768,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29549ee10608
+DECL|struct|__anon2947a55e0608
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1580,7 +1580,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29549ee10708
+DECL|struct|__anon2947a55e0708
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -11058,6 +11058,21 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 name|gtk_dialog_set_default_response
 argument_list|(
 name|GTK_DIALOG
@@ -11951,6 +11966,21 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_dialog_set_default_response

@@ -180,7 +180,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon279cce0f0103
+DECL|enum|__anon2bfef1350103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -381,6 +381,10 @@ block|{
 name|GObjectClass
 modifier|*
 name|object_class
+decl_stmt|;
+name|gchar
+modifier|*
+name|path
 decl_stmt|;
 name|parent_class
 operator|=
@@ -713,6 +717,13 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|path
+operator|=
+name|gimp_config_build_data_path
+argument_list|(
+literal|"themes"
+argument_list|)
+expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
 argument_list|(
 name|object_class
@@ -725,12 +736,14 @@ name|THEME_PATH_BLURB
 argument_list|,
 name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
-name|gimp_config_build_data_path
-argument_list|(
-literal|"themes"
-argument_list|)
+name|path
 argument_list|,
 name|GIMP_CONFIG_PARAM_RESTART
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|path
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
