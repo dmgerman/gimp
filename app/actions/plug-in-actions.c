@@ -1616,6 +1616,16 @@ argument_list|,
 name|full
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|full_translated
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|full
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

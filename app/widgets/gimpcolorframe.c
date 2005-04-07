@@ -1550,6 +1550,14 @@ literal|" "
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|values
+index|[
+name|i
+index|]
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
