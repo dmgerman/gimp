@@ -411,7 +411,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_config_build_data_path:  * @name:  *  * Returns:  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_build_data_path:  * @name: directory name (in UTF-8 encoding)  *  * Creates a search path as it is used in the gimprc file.  The path  * returned by gimp_config_build_data_path() includes a directory  * below the user's gimp directory and one in the system-wide data  * directory.  *  * Note that you cannot use this path directly with gimp_path_parse().  * As it is in the gimprc notation, you first need to expand and  * recode it using gimp_config_path_expand().  *  * Returns: a newly allocated string  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -450,7 +450,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_build_plug_in_path:  * @name:  *  * Returns:  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_build_plug_in_path:  * @name: directory name (in UTF-8 encoding)  *  * Creates a search path as it is used in the gimprc file.  The path  * returned by gimp_config_build_plug_in_path() includes a directory  * below the user's gimp directory and one in the system-wide plug-in  * directory.  *  * Note that you cannot use this path directly with gimp_path_parse().  * As it is in the gimprc notation, you first need to expand and  * recode it using gimp_config_path_expand().  *  * Returns: a newly allocated string  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -489,7 +489,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_build_writable_path:  * @name:  *  * Returns:  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_build_writable_path:  * @name: directory name (in UTF-8 encoding)  *  * Creates a search path as it is used in the gimprc file.  The path  * returned by gimp_config_build_writable_path() is just the writable  * parts of the search path constructed by gimp_config_build_data_path().  *  * Note that you cannot use this path directly with gimp_path_parse().  * As it is in the gimprc notation, you first need to expand and  * recode it using gimp_config_path_expand().  *  * Returns: a newly allocated string  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
