@@ -733,6 +733,14 @@ name|frame
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|frame
+operator|->
+name|sample_valid
+condition|)
+return|return;
 name|frame
 operator|->
 name|sample_valid
