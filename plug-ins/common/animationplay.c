@@ -52,7 +52,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f7005a0103
+DECL|enum|__anon29c5aaa10103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -326,7 +326,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gboolean
 name|is_disposal_tag
 parameter_list|(
 specifier|const
@@ -347,7 +347,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gboolean
 name|is_ms_tag
 parameter_list|(
 specifier|const
@@ -599,7 +599,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f7005a0208
+DECL|struct|__anon29c5aaa10208
 block|{
 DECL|member|x
 DECL|member|y
@@ -2386,9 +2386,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|int
-name|i
-decl_stmt|;
 name|width
 operator|=
 name|gimp_image_width
@@ -2426,6 +2423,7 @@ name|imagetype
 operator|==
 name|GIMP_INDEXED
 condition|)
+block|{
 name|palette
 operator|=
 name|gimp_image_get_colormap
@@ -2436,6 +2434,7 @@ operator|&
 name|ncolours
 argument_list|)
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -2444,7 +2443,9 @@ operator|==
 name|GIMP_GRAY
 condition|)
 block|{
-comment|/* This is a bit sick, until this plugin ever gets          real GRAY support (not worth it?) */
+name|gint
+name|i
+decl_stmt|;
 name|palette
 operator|=
 name|g_malloc
@@ -2465,7 +2466,6 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
 name|palette
 index|[
 name|i
@@ -2493,7 +2493,6 @@ index|]
 operator|=
 name|i
 expr_stmt|;
-block|}
 name|ncolours
 operator|=
 literal|256
@@ -2897,7 +2896,6 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-comment|/*  gimp_pixel_rgns_register (1,&pixel_rgn);*/
 name|gimp_drawable_offsets
 argument_list|(
 name|drawable
@@ -2985,12 +2983,10 @@ if|if
 condition|(
 operator|!
 operator|(
-operator|*
-operator|(
 name|srcptr
-operator|+
+index|[
 literal|3
-operator|)
+index|]
 operator|&
 literal|128
 operator|)
@@ -3365,12 +3361,10 @@ condition|)
 block|{
 if|if
 condition|(
-operator|*
-operator|(
 name|srcptr
-operator|+
+index|[
 literal|3
-operator|)
+index|]
 operator|&
 literal|128
 condition|)
@@ -3735,6 +3729,7 @@ expr_stmt|;
 name|bottom
 operator|=
 operator|(
+operator|(
 name|rawy
 operator|+
 name|rawheight
@@ -3751,6 +3746,7 @@ else|:
 name|height
 operator|-
 literal|1
+operator|)
 expr_stmt|;
 name|reshape_from_bitmap
 argument_list|(
@@ -3789,15 +3785,13 @@ name|GDK_RGB_DITHER_MAX
 else|:
 name|DITHERTYPE
 argument_list|,
-operator|&
 name|preview_data
-index|[
+operator|+
 literal|3
 operator|*
 name|top
 operator|*
 name|width
-index|]
 argument_list|,
 name|width
 operator|*
@@ -3888,6 +3882,7 @@ expr_stmt|;
 name|bottom
 operator|=
 operator|(
+operator|(
 name|rawy
 operator|+
 name|rawheight
@@ -3904,6 +3899,7 @@ else|:
 name|height
 operator|-
 literal|1
+operator|)
 expr_stmt|;
 name|gdk_draw_rgb_image
 argument_list|(
@@ -3937,15 +3933,13 @@ name|GDK_RGB_DITHER_MAX
 else|:
 name|DITHERTYPE
 argument_list|,
-operator|&
 name|preview_data
-index|[
+operator|+
 literal|3
 operator|*
 name|top
 operator|*
 name|width
-index|]
 argument_list|,
 name|width
 operator|*
@@ -4066,14 +4060,10 @@ block|{
 if|if
 condition|(
 operator|!
-operator|(
-operator|*
-operator|(
 name|srcptr
-operator|+
+index|[
 literal|1
-operator|)
-operator|)
+index|]
 condition|)
 block|{
 name|srcptr
@@ -4094,6 +4084,8 @@ operator|)
 operator|=
 name|palette
 index|[
+literal|0
+operator|+
 literal|3
 operator|*
 operator|(
@@ -4266,6 +4258,8 @@ operator|)
 operator|=
 name|palette
 index|[
+literal|0
+operator|+
 literal|3
 operator|*
 operator|(
@@ -4531,10 +4525,14 @@ name|i
 operator|)
 operator|*
 literal|3
+operator|+
+literal|0
 index|]
 operator|=
 name|palette
 index|[
+literal|0
+operator|+
 literal|3
 operator|*
 operator|(
@@ -4797,10 +4795,14 @@ name|i
 operator|)
 operator|*
 literal|3
+operator|+
+literal|0
 index|]
 operator|=
 name|palette
 index|[
+literal|0
+operator|+
 literal|3
 operator|*
 operator|(
@@ -4917,6 +4919,7 @@ expr_stmt|;
 name|bottom
 operator|=
 operator|(
+operator|(
 name|rawy
 operator|+
 name|rawheight
@@ -4933,6 +4936,7 @@ else|:
 name|height
 operator|-
 literal|1
+operator|)
 expr_stmt|;
 name|reshape_from_bitmap
 argument_list|(
@@ -4971,15 +4975,13 @@ name|GDK_RGB_DITHER_MAX
 else|:
 name|DITHERTYPE
 argument_list|,
-operator|&
 name|preview_data
-index|[
+operator|+
 literal|3
 operator|*
 name|top
 operator|*
 name|width
-index|]
 argument_list|,
 name|width
 operator|*
@@ -5070,6 +5072,7 @@ expr_stmt|;
 name|bottom
 operator|=
 operator|(
+operator|(
 name|rawy
 operator|+
 name|rawheight
@@ -5086,6 +5089,7 @@ else|:
 name|height
 operator|-
 literal|1
+operator|)
 expr_stmt|;
 name|gdk_draw_rgb_image
 argument_list|(
@@ -5119,15 +5123,13 @@ name|GDK_RGB_DITHER_MAX
 else|:
 name|DITHERTYPE
 argument_list|,
-operator|&
 name|preview_data
-index|[
+operator|+
 literal|3
 operator|*
 name|top
 operator|*
 name|width
-index|]
 argument_list|,
 name|width
 operator|*
@@ -5187,10 +5189,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* If we're using GDKRGB, we don't reshape in this function because    it's too late (GDKRGB is synchronous).  So this just updates the    progress bar. */
-end_comment
 
 begin_function
 specifier|static
@@ -6043,7 +6041,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|is_ms_tag (const char * str,int * duration,int * taglength)
 name|is_ms_tag
 parameter_list|(
@@ -6089,7 +6087,7 @@ operator|!=
 literal|'('
 condition|)
 return|return
-literal|0
+name|FALSE
 return|;
 name|offset
 operator|=
@@ -6136,7 +6134,7 @@ argument_list|)
 operator|)
 condition|)
 return|return
-literal|0
+name|FALSE
 return|;
 do|do
 block|{
@@ -6185,7 +6183,7 @@ operator|<=
 literal|2
 condition|)
 return|return
-literal|0
+name|FALSE
 return|;
 comment|/* eat any spaces between number and 'ms' */
 while|while
@@ -6239,7 +6237,7 @@ operator|!=
 literal|'S'
 condition|)
 return|return
-literal|0
+name|FALSE
 return|;
 name|offset
 operator|+=
@@ -6286,7 +6284,7 @@ literal|')'
 operator|)
 condition|)
 return|return
-literal|0
+name|FALSE
 return|;
 name|offset
 operator|++
@@ -6302,7 +6300,7 @@ operator|=
 name|offset
 expr_stmt|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
@@ -6382,7 +6380,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|is_disposal_tag (const char * str,DisposeType * disposal,int * taglength)
 name|is_disposal_tag
 parameter_list|(
@@ -6410,7 +6408,7 @@ operator|!=
 literal|9
 condition|)
 return|return
-literal|0
+name|FALSE
 return|;
 if|if
 condition|(
@@ -6437,7 +6435,7 @@ operator|=
 name|DISPOSE_COMBINE
 expr_stmt|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 elseif|else
@@ -6466,11 +6464,11 @@ operator|=
 name|DISPOSE_REPLACE
 expr_stmt|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 end_function
