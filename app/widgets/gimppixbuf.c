@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -177,7 +183,6 @@ operator|++
 control|)
 block|{
 name|GdkAtom
-modifier|*
 name|atom
 init|=
 name|gdk_atom_intern
@@ -299,7 +304,6 @@ operator|++
 control|)
 block|{
 name|GdkAtom
-modifier|*
 name|atom
 init|=
 name|gdk_atom_intern
