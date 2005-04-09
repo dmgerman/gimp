@@ -156,6 +156,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpBuffer
+modifier|*
+name|gimp_buffer_new_from_pixbuf
+parameter_list|(
+name|GdkPixbuf
+modifier|*
+name|pixbuf
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_buffer_get_width
 parameter_list|(
