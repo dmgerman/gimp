@@ -1903,9 +1903,12 @@ literal|"/bin/sh"
 argument_list|,
 literal|"-c"
 argument_list|,
+name|g_shell_quote
+argument_list|(
 name|stp_get_output_to
 argument_list|(
 name|vars
+argument_list|)
 argument_list|)
 argument_list|,
 name|NULL
