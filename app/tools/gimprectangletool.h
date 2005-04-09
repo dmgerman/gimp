@@ -16,29 +16,6 @@ directive|define
 name|__GIMP_RECTANGLE_TOOL_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "gui/gui-types.h"
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|"gui/gui-types.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -114,7 +91,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4d7a0f0103
+DECL|enum|__anon2be2f06f0103
 block|{
 DECL|enumerator|RECT_CREATING
 name|RECT_CREATING
@@ -297,7 +274,7 @@ name|parent_class
 decl_stmt|;
 comment|/*  virtual function  */
 DECL|member|execute
-name|void
+name|gboolean
 function_decl|(
 modifier|*
 name|execute
@@ -333,6 +310,20 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|void
+name|gimp_rectangle_tool_width_changed
+parameter_list|(
+name|GimpRectangleTool
+modifier|*
+name|rectangle
+parameter_list|,
+name|gint
+name|new_width
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#
