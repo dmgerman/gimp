@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -101,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae6bd1b0103
+DECL|enum|__anon2a0e182a0103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
