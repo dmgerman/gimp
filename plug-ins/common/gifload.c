@@ -708,7 +708,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27bf9fde0108
+DECL|struct|__anon2c523b0b0108
 block|{
 DECL|member|Width
 name|unsigned
@@ -758,7 +758,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27bf9fde0208
+DECL|struct|__anon2c523b0b0208
 block|{
 DECL|member|transparent
 name|int
@@ -2569,9 +2569,7 @@ decl_stmt|,
 name|j
 decl_stmt|,
 name|ret
-decl_stmt|;
-name|unsigned
-name|char
+decl_stmt|,
 name|count
 decl_stmt|;
 if|if
