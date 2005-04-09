@@ -293,7 +293,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5140270103
+DECL|enum|__anon2c811a260103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -312,7 +312,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5140270208
+DECL|struct|__anon2c811a260208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -359,7 +359,7 @@ name|ScreenShotValues
 name|shootvals
 init|=
 block|{
-name|SHOOT_ROOT
+name|SHOOT_WINDOW
 block|,
 comment|/* root window  */
 name|TRUE
@@ -1007,11 +1007,19 @@ condition|)
 block|{
 if|if
 condition|(
+operator|(
 name|shootvals
 operator|.
 name|shoot_type
 operator|==
 name|SHOOT_ROOT
+operator|||
+name|shootvals
+operator|.
+name|shoot_type
+operator|==
+name|SHOOT_WINDOW
+operator|)
 operator|&&
 name|shootvals
 operator|.
@@ -3651,21 +3659,8 @@ operator|.
 name|window_id
 condition|)
 block|{
-if|if
-condition|(
-name|shootvals
-operator|.
-name|select_delay
-operator|>
-literal|0
-condition|)
-name|shoot_delay
-argument_list|(
-name|shootvals
-operator|.
-name|select_delay
-argument_list|)
-expr_stmt|;
+comment|/*          if (shootvals.select_delay> 0) */
+comment|/*            shoot_delay (shootvals.select_delay); */
 name|shootvals
 operator|.
 name|window_id
