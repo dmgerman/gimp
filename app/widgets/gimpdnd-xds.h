@@ -46,9 +46,6 @@ parameter_list|,
 name|GtkSelectionData
 modifier|*
 name|selection
-parameter_list|,
-name|GdkAtom
-name|atom
 parameter_list|)
 function_decl|;
 end_function_decl

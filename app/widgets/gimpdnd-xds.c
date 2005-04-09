@@ -303,7 +303,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dnd_xds_save_image (GdkDragContext * context,GimpImage * image,GtkSelectionData * selection,GdkAtom atom)
+DECL|function|gimp_dnd_xds_save_image (GdkDragContext * context,GimpImage * image,GtkSelectionData * selection)
 name|gimp_dnd_xds_save_image
 parameter_list|(
 name|GdkDragContext
@@ -317,9 +317,6 @@ parameter_list|,
 name|GtkSelectionData
 modifier|*
 name|selection
-parameter_list|,
-name|GdkAtom
-name|atom
 parameter_list|)
 block|{
 name|PlugInProcDef
@@ -520,7 +517,9 @@ name|gtk_selection_data_set
 argument_list|(
 name|selection
 argument_list|,
-name|atom
+name|selection
+operator|->
+name|target
 argument_list|,
 literal|8
 argument_list|,
@@ -536,7 +535,9 @@ name|gtk_selection_data_set
 argument_list|(
 name|selection
 argument_list|,
-name|atom
+name|selection
+operator|->
+name|target
 argument_list|,
 literal|8
 argument_list|,
@@ -598,7 +599,9 @@ name|gtk_selection_data_set
 argument_list|(
 name|selection
 argument_list|,
-name|atom
+name|selection
+operator|->
+name|target
 argument_list|,
 literal|8
 argument_list|,

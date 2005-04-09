@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7ecb0d0103
+DECL|enum|__anon2ae6bd1b0103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -657,6 +657,12 @@ expr_stmt|;
 name|klass
 operator|->
 name|drop_component
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|drop_pixbuf
 operator|=
 name|NULL
 expr_stmt|;
