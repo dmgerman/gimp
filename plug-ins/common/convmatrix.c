@@ -50,7 +50,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c59cab40103
+DECL|enum|__anon2bfa58620103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -68,15 +68,6 @@ block|}
 name|BorderMode
 typedef|;
 end_typedef
-
-begin_decl_stmt
-DECL|variable|drawable
-specifier|static
-name|GimpDrawable
-modifier|*
-name|drawable
-decl_stmt|;
-end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|channel_labels
@@ -191,9 +182,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|dialog
+name|convmatrix_dialog
 parameter_list|(
-name|void
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -203,7 +196,9 @@ specifier|static
 name|void
 name|convmatrix
 parameter_list|(
-name|void
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -213,7 +208,32 @@ specifier|static
 name|void
 name|check_config
 parameter_list|(
-name|void
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gfloat
+name|calcmatrix
+parameter_list|(
+name|guchar
+modifier|*
+modifier|*
+name|srcrow
+parameter_list|,
+name|gint
+name|xoff
+parameter_list|,
+name|gint
+name|i
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -241,14 +261,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|bytes
-specifier|static
-name|gint
-name|bytes
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|run_flag
 specifier|static
 name|gboolean
@@ -261,7 +273,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c59cab40208
+DECL|struct|__anon2bfa58620208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -297,7 +309,7 @@ literal|5
 index|]
 decl_stmt|;
 DECL|member|autoset
-name|gint
+name|gboolean
 name|autoset
 decl_stmt|;
 DECL|typedef|config
@@ -402,7 +414,7 @@ literal|1
 block|}
 block|,
 comment|/* Channels mask */
-literal|0
+name|FALSE
 comment|/* autoset */
 block|}
 decl_stmt|;
@@ -418,7 +430,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c59cab40308
+DECL|struct|__anon2bfa58620308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -675,6 +687,10 @@ name|gint
 name|x
 decl_stmt|,
 name|y
+decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -972,7 +988,9 @@ operator|.
 name|d_int32
 expr_stmt|;
 name|check_config
-argument_list|()
+argument_list|(
+name|drawable
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -993,15 +1011,19 @@ operator|==
 name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
-comment|/*  Oh boy. We get to do a dialog box, because we can't really 	   *  expect the user to set us up with the right values using gdb. 	   */
+comment|/*  Oh boy. We get to do a dialog box, because we can't really            *  expect the user to set us up with the right values using gdb.            */
 name|check_config
-argument_list|()
+argument_list|(
+name|drawable
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
 operator|!
-name|dialog
-argument_list|()
+name|convmatrix_dialog
+argument_list|(
+name|drawable
+argument_list|)
 condition|)
 block|{
 comment|/* The dialog was closed, or something similarly evil happened. */
@@ -1062,7 +1084,9 @@ operator|)
 argument_list|)
 expr_stmt|;
 name|convmatrix
-argument_list|()
+argument_list|(
+name|drawable
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1695,7 +1719,7 @@ end_function
 begin_function
 specifier|static
 name|gfloat
-DECL|function|calcmatrix (guchar ** srcrow,gint xoff,gint i)
+DECL|function|calcmatrix (guchar ** srcrow,gint xoff,gint i,GimpDrawable * drawable)
 name|calcmatrix
 parameter_list|(
 name|guchar
@@ -1708,6 +1732,10 @@ name|xoff
 parameter_list|,
 name|gint
 name|i
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 specifier|static
@@ -1962,10 +1990,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|convmatrix (void)
+DECL|function|convmatrix (GimpDrawable * drawable)
 name|convmatrix
 parameter_list|(
-name|void
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|GimpPixelRgn
@@ -2036,6 +2066,9 @@ name|chanmask
 index|[
 literal|4
 index|]
+decl_stmt|;
+name|gint
+name|bytes
 decl_stmt|;
 comment|/* Get the input area. This is the bounding box of the selection in    *  the image (or the entire image if there is no selection). Only    *  operating on the input area is simply an optimization. It doesn't    *  need to be done for correct operation. (It simply makes it go    *  faster, since fewer pixels need to be operated on).    */
 name|gimp_drawable_mask_bounds
@@ -2425,6 +2458,8 @@ argument_list|,
 name|xoff
 argument_list|,
 name|i
+argument_list|,
+name|drawable
 argument_list|)
 expr_stmt|;
 name|destrow
@@ -3285,7 +3320,7 @@ name|offset
 operator|=
 literal|128
 expr_stmt|;
-comment|/* The sum is 0, so this is probably some sort of 	   * embossing filter. Should divisor be autoset to 1 	   * or left undefined, ie. for the user to define? */
+comment|/* The sum is 0, so this is probably some sort of            * embossing filter. Should divisor be autoset to 1            * or left undefined, ie. for the user to define? */
 name|my_config
 operator|.
 name|divisor
@@ -3304,7 +3339,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|response_callback (GtkWidget * widget,gint response_id,gpointer data)
+DECL|function|response_callback (GtkWidget * widget,gint response_id,GimpDrawable * drawable)
 name|response_callback
 parameter_list|(
 name|GtkWidget
@@ -3314,8 +3349,9 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|gpointer
-name|data
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 switch|switch
@@ -3331,7 +3367,9 @@ operator|=
 name|default_config
 expr_stmt|;
 name|check_config
-argument_list|()
+argument_list|(
+name|drawable
+argument_list|)
 expr_stmt|;
 name|redraw_all
 argument_list|()
@@ -3365,10 +3403,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|check_config (void)
+DECL|function|check_config (GimpDrawable * drawable)
 name|check_config
 parameter_list|(
-name|void
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|gint
@@ -3746,15 +3786,17 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|dialog (void)
-name|dialog
+DECL|function|convmatrix_dialog (GimpDrawable * drawable)
+name|convmatrix_dialog
 parameter_list|(
-name|void
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|dlg
+name|dialog
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -3810,7 +3852,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|dlg
+name|dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
@@ -3848,7 +3890,7 @@ name|gtk_dialog_set_alternative_button_order
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 argument_list|,
 name|RESPONSE_RESET
@@ -3859,34 +3901,6 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 operator|-
 literal|1
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|dlg
-argument_list|,
-literal|"response"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|response_callback
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|dlg
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gtk_main_quit
-argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|main_hbox
@@ -3914,7 +3928,7 @@ name|GTK_BOX
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 operator|->
 name|vbox
@@ -5003,9 +5017,37 @@ argument_list|(
 name|main_hbox
 argument_list|)
 expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|dialog
+argument_list|,
+literal|"response"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|response_callback
+argument_list|)
+argument_list|,
+name|drawable
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|dialog
+argument_list|,
+literal|"destroy"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gtk_main_quit
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 expr_stmt|;
 name|redraw_all
