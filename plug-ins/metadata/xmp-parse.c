@@ -4,7 +4,7 @@ comment|/* xmp-parse.c - simple parser for XMP metadata  *  * Copyright (C) 2004
 end_comment
 
 begin_comment
-comment|/* This code implements a simple parser for XMP metadata.  Its API is  * based on the one provided by GMarkupParser (part of Glib).  *  * This is not a full RDF parser: it shares some of the limitations  * inherited from glib (UTF-8 only, no special entities) and supports  * RDF only to the extent needed for XMP.  XMP defines several  * "schemas" containing a list of "properties".  Each property in a  * schema has one value, which can be a simple type (e.g., integer or  * text) or a structured type (rdf:Alt, rdf:Bag, rdf:Seq).  As there  * is no need to support a much deeper nesting of elements, this  * parser does not try to maintain an arbitrarily large stack of  * elements.  Also, it does not support RDF features that are  * forbidden by the XMP specs, such as rdf:parseType="Litteral".  *  * The design goals for this parser are: support all RDF features  * needed for XMP (at least the features explicitely described in the  * XMP spec), be tolerant in case unknown elements or attributes are  * found, be as simple as possible, avoid building a DOM tree.  *  * TODO:  * - support UCS-2 and UCS-4 besides UTF-8 (copy and convert the data)  * - write a decent scanner for finding<?xpacket...?> as recommended  *   in the XMP specification (including support for UCS-2 and UCS-4)  * - provide an API for passing unknown elements or tags to the caller  */
+comment|/* This code implements a simple parser for XMP metadata.  Its API is  * based on the one provided by GMarkupParser (part of Glib).  *  * This is not a full RDF parser: it shares some of the limitations  * inherited from glib (UTF-8 only, no special entities) and supports  * RDF only to the extent needed for XMP.  XMP defines several  * "schemas" containing a list of "properties".  Each property in a  * schema has one value, which can be a simple type (e.g., integer or  * text) or a structured type (rdf:Alt, rdf:Bag, rdf:Seq).  As there  * is no need to support a much deeper nesting of elements, this  * parser does not try to maintain an arbitrarily large stack of  * elements.  Also, it does not support RDF features that are  * forbidden by the XMP specs, such as rdf:parseType="Litteral".  *  * The design goals for this parser are: support all RDF features  * needed for XMP (at least the features explicitely described in the  * XMP spec), be tolerant in case unknown elements or attributes are  * found, be as simple as possible, avoid building a DOM tree.  *  * TODO:  * - support UCS-2 and UCS-4 besides UTF-8 (copy and convert the data)  * - write a decent scanner for finding<?xpacket...?> as recommended  *   in the XMP specification (including support for UCS-2 and UCS-4)  * - provide an API for passing unknown elements or tags to the caller  * - think about re-writing this using a better XML parser (expat?)  *   instead of GMarkupParser  */
 end_comment
 
 begin_ifndef
@@ -28,12 +28,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"xmp-parse.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -46,12 +40,6 @@ begin_include
 include|#
 directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"xmp-parse.h"
 end_include
 
 begin_define
@@ -80,6 +68,18 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_include
+include|#
+directive|include
+file|"base64.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"xmp-parse.h"
+end_include
 
 begin_function
 name|GQuark
@@ -121,7 +121,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2934f2010103
+DECL|enum|__anon2af93a4a0103
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -165,6 +165,12 @@ block|,
 DECL|enumerator|STATE_INSIDE_ALT_LI
 name|STATE_INSIDE_ALT_LI
 block|,
+DECL|enumerator|STATE_INSIDE_ALT_LI_RSC
+name|STATE_INSIDE_ALT_LI_RSC
+block|,
+DECL|enumerator|STATE_INSIDE_ALT_LI_RSC_IMG
+name|STATE_INSIDE_ALT_LI_RSC_IMG
+block|,
 DECL|enumerator|STATE_INSIDE_BAG
 name|STATE_INSIDE_BAG
 block|,
@@ -195,6 +201,9 @@ block|,
 DECL|enumerator|STATE_SKIPPING_UNKNOWN_ELEMENTS
 name|STATE_SKIPPING_UNKNOWN_ELEMENTS
 block|,
+DECL|enumerator|STATE_SKIPPING_IGNORED_ELEMENTS
+name|STATE_SKIPPING_IGNORED_ELEMENTS
+block|,
 DECL|enumerator|STATE_ERROR
 name|STATE_ERROR
 DECL|typedef|XMPParseState
@@ -206,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2934f2010208
+DECL|struct|__anon2af93a4a0208
 block|{
 DECL|member|depth
 name|gint
@@ -321,6 +330,10 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/* FIXME - debugging static const char *state_names[] = {   "START",   "INSIDE_XPACKET",   "INSIDE_XMPMETA",   "INSIDE_RDF",   "INSIDE_TOPLEVEL_DESC",   "INSIDE_PROPERTY",   "INSIDE_QDESC",   "INSIDE_QDESC_VALUE",   "INSIDE_QDESC_QUAL",   "INSIDE_STRUCT_ADD_NS",   "INSIDE_STRUCT",   "INSIDE_STRUCT_ELEMENT",   "INSIDE_ALT",   "INSIDE_ALT_LI",   "INSIDE_ALT_LI_RSC",   "INSIDE_ALT_LI_RSC_IMG",   "INSIDE_BAG",   "INSIDE_BAG_LI",   "INSIDE_BAG_LI_RSC",   "INSIDE_SEQ",   "INSIDE_SEQ_LI",   "INSIDE_SEQ_LI_RSC",   "AFTER_RDF",   "AFTER_XMPMETA",   "AFTER_XPACKET",   "SKIPPING_UNKNOWN_ELEMENTS",   "SKIPPING_IGNORED_ELEMENTS",   "ERROR", }; */
+end_comment
 
 begin_function
 specifier|static
@@ -587,6 +600,14 @@ modifier|*
 name|element_name
 parameter_list|)
 block|{
+name|g_print
+argument_list|(
+literal|"XMP: SKIPPING %s\n"
+argument_list|,
+name|element_name
+argument_list|)
+expr_stmt|;
+comment|/* FIXME - debugging */
 if|if
 condition|(
 name|context
@@ -615,6 +636,14 @@ else|else
 block|{
 name|context
 operator|->
+name|saved_depth
+operator|=
+name|context
+operator|->
+name|depth
+expr_stmt|;
+name|context
+operator|->
 name|saved_state
 operator|=
 name|context
@@ -627,6 +656,21 @@ name|state
 operator|=
 name|STATE_SKIPPING_UNKNOWN_ELEMENTS
 expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|ignore_element (XMPParseContext * context)
+name|ignore_element
+parameter_list|(
+name|XMPParseContext
+modifier|*
+name|context
+parameter_list|)
+block|{
 name|context
 operator|->
 name|saved_depth
@@ -635,7 +679,20 @@ name|context
 operator|->
 name|depth
 expr_stmt|;
-block|}
+name|context
+operator|->
+name|saved_state
+operator|=
+name|context
+operator|->
+name|state
+expr_stmt|;
+name|context
+operator|->
+name|state
+operator|=
+name|STATE_SKIPPING_IGNORED_ELEMENTS
+expr_stmt|;
 block|}
 end_function
 
@@ -1360,6 +1417,7 @@ name|prop_max_value
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* some types store a name and a value; most others store only a value */
 if|if
 condition|(
 name|type
@@ -1369,7 +1427,12 @@ operator|||
 name|type
 operator|==
 name|XMP_PTYPE_STRUCTURE
+operator|||
+name|type
+operator|==
+name|XMP_PTYPE_ALT_THUMBS
 condition|)
+comment|/* for thumbnails, name is the size */
 block|{
 name|context
 operator|->
@@ -1388,6 +1451,14 @@ operator|=
 name|name
 expr_stmt|;
 block|}
+else|else
+name|g_assert
+argument_list|(
+name|name
+operator|==
+name|NULL
+argument_list|)
+expr_stmt|;
 name|context
 operator|->
 name|prop_cur_value
@@ -1715,7 +1786,8 @@ decl_stmt|;
 name|gint
 name|attr
 decl_stmt|;
-comment|/*   printf ("[%02d/%02d] %d<%s>\n", context->state, context->saved_state,           context->depth, element_name);   */
+comment|/*   g_print ("[%02d/%02d] %d<%s>\n", context->state, context->saved_state,            context->depth, element_name);   */
+comment|/* FIXME - debugging   g_print ("[%25s/%17s] %d<%s>\n",            state_names[context->state],            (context->saved_state == STATE_ERROR             ? "-"             : state_names[context->saved_state]),            context->depth, element_name);   */
 name|context
 operator|->
 name|depth
@@ -2616,6 +2688,37 @@ index|[
 name|attr
 index|]
 argument_list|,
+literal|"rdf:parseType"
+argument_list|)
+operator|&&
+operator|!
+name|strcmp
+argument_list|(
+name|attribute_values
+index|[
+name|attr
+index|]
+argument_list|,
+literal|"Resource"
+argument_list|)
+condition|)
+name|context
+operator|->
+name|state
+operator|=
+name|STATE_INSIDE_ALT_LI_RSC
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|attribute_names
+index|[
+name|attr
+index|]
+argument_list|,
 literal|"xml:lang"
 argument_list|)
 condition|)
@@ -2967,6 +3070,70 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|STATE_INSIDE_ALT_LI_RSC
+case|:
+comment|/* store the thumbnail image and ignore the other elements */
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|element_name
+argument_list|,
+literal|"xapGImg:image"
+argument_list|)
+condition|)
+comment|/* FIXME */
+name|context
+operator|->
+name|state
+operator|=
+name|STATE_INSIDE_ALT_LI_RSC_IMG
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|element_name
+argument_list|,
+literal|"xapGImg:format"
+argument_list|)
+operator|||
+operator|!
+name|strcmp
+argument_list|(
+name|element_name
+argument_list|,
+literal|"xapGImg:width"
+argument_list|)
+operator|||
+operator|!
+name|strcmp
+argument_list|(
+name|element_name
+argument_list|,
+literal|"xapGImg:height"
+argument_list|)
+condition|)
+name|ignore_element
+argument_list|(
+name|context
+argument_list|)
+expr_stmt|;
+else|else
+name|unknown_element
+argument_list|(
+name|context
+argument_list|,
+name|error
+argument_list|,
+name|element_name
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|STATE_INSIDE_BAG_LI_RSC
 case|:
 case|case
@@ -2984,6 +3151,9 @@ expr_stmt|;
 break|break;
 case|case
 name|STATE_SKIPPING_UNKNOWN_ELEMENTS
+case|:
+case|case
+name|STATE_SKIPPING_IGNORED_ELEMENTS
 case|:
 break|break;
 default|default:
@@ -3042,7 +3212,8 @@ name|context
 init|=
 name|user_data
 decl_stmt|;
-comment|/*   printf ("[%02d/%02d] %d</%s>\n", context->state, context->saved_state,           context->depth, element_name);   */
+comment|/*   g_print ("[%02d/%02d] %d</%s>\n", context->state, context->saved_state,            context->depth, element_name);   */
+comment|/* FIXME - debugging   g_print ("[%25s/%17s] %d</%s>\n",            state_names[context->state],            (context->saved_state == STATE_ERROR             ? "-"             : state_names[context->saved_state]),            context->depth, element_name);   */
 switch|switch
 condition|(
 name|context
@@ -3237,6 +3408,26 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|STATE_INSIDE_ALT_LI_RSC
+case|:
+name|context
+operator|->
+name|state
+operator|=
+name|STATE_INSIDE_ALT
+expr_stmt|;
+break|break;
+case|case
+name|STATE_INSIDE_ALT_LI_RSC_IMG
+case|:
+name|context
+operator|->
+name|state
+operator|=
+name|STATE_INSIDE_ALT_LI_RSC
+expr_stmt|;
+break|break;
+case|case
 name|STATE_INSIDE_BAG_LI
 case|:
 case|case
@@ -3335,6 +3526,9 @@ expr_stmt|;
 break|break;
 case|case
 name|STATE_SKIPPING_UNKNOWN_ELEMENTS
+case|:
+case|case
+name|STATE_SKIPPING_IGNORED_ELEMENTS
 case|:
 if|if
 condition|(
@@ -3504,6 +3698,131 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|STATE_INSIDE_ALT_LI_RSC_IMG
+case|:
+block|{
+name|gint
+name|max_size
+decl_stmt|;
+name|gchar
+modifier|*
+name|decoded
+decl_stmt|;
+name|gint
+name|decoded_size
+decl_stmt|;
+comment|/* g_print ("XMP: Pushing text:\n%s\n", text); */
+name|max_size
+operator|=
+name|text_len
+operator|-
+name|text_len
+operator|/
+literal|4
+operator|+
+literal|1
+expr_stmt|;
+name|decoded
+operator|=
+name|g_malloc
+argument_list|(
+name|max_size
+argument_list|)
+expr_stmt|;
+name|decoded_size
+operator|=
+name|base64_decode
+argument_list|(
+name|text
+argument_list|,
+name|text_len
+argument_list|,
+name|decoded
+argument_list|,
+name|max_size
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|decoded_size
+operator|>
+literal|0
+condition|)
+block|{
+comment|/* FIXME: remove this debugging code */
+comment|/*             FILE *ttt;              ttt = fopen ("/tmp/xmp-thumb.jpg", "w");             fwrite (decoded, decoded_size, 1, ttt);             fclose (ttt);             */
+name|g_print
+argument_list|(
+literal|"XMP: Thumb text len: %d (1/4 = %d)\nMax size: %d\nUsed size: %d\n"
+argument_list|,
+name|text_len
+argument_list|,
+name|text_len
+operator|/
+literal|4
+argument_list|,
+name|max_size
+argument_list|,
+name|decoded_size
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|decoded_size
+operator|>
+literal|0
+condition|)
+block|{
+name|gint
+modifier|*
+name|size_p
+decl_stmt|;
+name|size_p
+operator|=
+name|g_new
+argument_list|(
+name|gint
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+operator|*
+name|size_p
+operator|=
+name|decoded_size
+expr_stmt|;
+name|add_property_value
+argument_list|(
+name|context
+argument_list|,
+name|XMP_PTYPE_ALT_THUMBS
+argument_list|,
+operator|(
+name|char
+operator|*
+operator|)
+name|size_p
+argument_list|,
+name|decoded
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+name|add_property_value
+argument_list|(
+name|context
+argument_list|,
+name|XMP_PTYPE_ALT_THUMBS
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+break|break;
+case|case
 name|STATE_INSIDE_QDESC_VALUE
 case|:
 if|if
@@ -3557,11 +3876,14 @@ break|break;
 case|case
 name|STATE_INSIDE_QDESC_QUAL
 case|:
-comment|/*       printf ("ignoring qualifier for part of \"%s\"[]: \"%.*s\"\n", 	      context->property, 	      (int)text_len, text);       */
+comment|/*       g_print ("ignoring qualifier for part of \"%s\"[]: \"%.*s\"\n", 	       context->property, 	       (int)text_len, text);       */
 comment|/* FIXME: notify the user? add a way to collect qualifiers? */
 break|break;
 case|case
 name|STATE_SKIPPING_UNKNOWN_ELEMENTS
+case|:
+case|case
+name|STATE_SKIPPING_IGNORED_ELEMENTS
 case|:
 break|break;
 default|default:

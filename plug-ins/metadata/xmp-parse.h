@@ -29,7 +29,7 @@ end_macro
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dc16dd0103
+DECL|enum|__anon293dd6dd0103
 block|{
 DECL|enumerator|XMP_ERROR_NO_XPACKET
 name|XMP_ERROR_NO_XPACKET
@@ -83,7 +83,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dc16dd0203
+DECL|enum|__anon293dd6dd0203
 block|{
 DECL|enumerator|XMP_FLAG_FIND_XPACKET
 name|XMP_FLAG_FIND_XPACKET
@@ -141,7 +141,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dc16dd0303
+DECL|enum|__anon293dd6dd0303
 block|{
 DECL|enumerator|XMP_PTYPE_TEXT
 name|XMP_PTYPE_TEXT
@@ -157,6 +157,10 @@ block|,
 comment|/* values in value[0..n] */
 DECL|enumerator|XMP_PTYPE_UNORDERED_LIST
 name|XMP_PTYPE_UNORDERED_LIST
+block|,
+comment|/* values in value[0..n] */
+DECL|enumerator|XMP_PTYPE_ALT_THUMBS
+name|XMP_PTYPE_ALT_THUMBS
 block|,
 comment|/* values in value[0..n] */
 DECL|enumerator|XMP_PTYPE_ALT_LANG
