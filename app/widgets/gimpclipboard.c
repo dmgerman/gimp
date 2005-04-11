@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpviewable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpclipboard.h"
 end_include
 
