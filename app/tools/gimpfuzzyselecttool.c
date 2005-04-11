@@ -820,6 +820,16 @@ name|coords
 argument_list|)
 condition|)
 return|return;
+name|gimp_tool_push_status
+argument_list|(
+name|tool
+argument_list|,
+name|_
+argument_list|(
+literal|"Move the mouse to change threshold."
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  calculate the region boundary  */
 name|fuzzy_sel
 operator|->
@@ -897,6 +907,11 @@ operator|->
 name|tool_info
 operator|->
 name|tool_options
+argument_list|)
+expr_stmt|;
+name|gimp_tool_pop_status
+argument_list|(
+name|tool
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_stop
