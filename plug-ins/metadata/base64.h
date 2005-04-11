@@ -24,7 +24,7 @@ end_include
 
 begin_function_decl
 name|G_BEGIN_DECLS
-name|gint
+name|gssize
 name|base64_decode
 parameter_list|(
 specifier|const
@@ -32,21 +32,21 @@ name|gchar
 modifier|*
 name|src_b64
 parameter_list|,
-name|guint
+name|gsize
 name|src_size
 parameter_list|,
 name|gchar
 modifier|*
 name|dest
 parameter_list|,
-name|guint
+name|gsize
 name|dest_size
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gssize
 name|base64_encode
 parameter_list|(
 specifier|const
@@ -54,14 +54,14 @@ name|gchar
 modifier|*
 name|src
 parameter_list|,
-name|guint
+name|gsize
 name|src_size
 parameter_list|,
 name|gchar
 modifier|*
 name|dest_b64
 parameter_list|,
-name|guint
+name|gsize
 name|dest_size
 parameter_list|)
 function_decl|;
