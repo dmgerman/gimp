@@ -1841,6 +1841,12 @@ expr_stmt|;
 name|gimp_tools_save
 argument_list|(
 name|gimp
+argument_list|,
+name|gui_config
+operator|->
+name|save_tool_options
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_tools_exit

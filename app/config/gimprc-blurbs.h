@@ -685,6 +685,15 @@ value|N_("Save the positions and sizes of the main dialogs when the GIMP exits."
 end_define
 
 begin_define
+DECL|macro|SAVE_TOOL_OPTIONS_BLURB
+define|#
+directive|define
+name|SAVE_TOOL_OPTIONS_BLURB
+define|\
+value|N_("Save the tool options when the GIMP exits.")
+end_define
+
+begin_define
 DECL|macro|SCRIPT_FU_PATH_BLURB
 define|#
 directive|define
