@@ -363,7 +363,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"progressive"
 block|,
-literal|"Enable progressive jpeg image loading - ignored if not compiled with HAVE_PROGRESSIVE_JPEG (0/1)"
+literal|"Enable progressive jpeg image loading (0/1)"
 block|}
 block|,
 block|{
@@ -1221,6 +1221,12 @@ name|save_thumbnail
 operator|=
 name|DEFAULT_THUMBNAIL
 expr_stmt|;
+name|jsvals
+operator|.
+name|save_xmp
+operator|=
+name|DEFAULT_XMP
+expr_stmt|;
 ifdef|#
 directive|ifdef
 name|HAVE_EXIF
@@ -1373,6 +1379,14 @@ name|save_vals
 operator|->
 name|save_thumbnail
 expr_stmt|;
+name|jsvals
+operator|.
+name|save_xmp
+operator|=
+name|save_vals
+operator|->
+name|save_xmp
+expr_stmt|;
 name|gimp_parasite_free
 argument_list|(
 name|parasite
@@ -1517,9 +1531,6 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|HAVE_PROGRESSIVE_JPEG
 name|jsvals
 operator|.
 name|progressive
@@ -1533,9 +1544,6 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-endif|#
-directive|endif
-comment|/* HAVE_PROGRESSIVE_JPEG */
 name|jsvals
 operator|.
 name|baseline

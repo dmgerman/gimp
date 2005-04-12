@@ -12,22 +12,6 @@ value|125
 end_define
 
 begin_comment
-comment|/* if you are not compiling this from inside the gimp tree, you have to  */
-end_comment
-
-begin_comment
-comment|/* take care yourself if your JPEG library supports progressive mode     */
-end_comment
-
-begin_comment
-comment|/* #undef HAVE_PROGRESSIVE_JPEG   if your library doesn't support it     */
-end_comment
-
-begin_comment
-comment|/* #define HAVE_PROGRESSIVE_JPEG  if your library knows how to handle it */
-end_comment
-
-begin_comment
 comment|/* See bugs #63610 and #61088 for a discussion about the quality settings */
 end_comment
 
@@ -119,10 +103,18 @@ name|DEFAULT_THUMBNAIL
 value|FALSE
 end_define
 
+begin_define
+DECL|macro|DEFAULT_XMP
+define|#
+directive|define
+name|DEFAULT_XMP
+value|TRUE
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275cadfc0108
+DECL|struct|__anon2be8254a0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -167,6 +159,10 @@ decl_stmt|;
 DECL|member|save_thumbnail
 name|gboolean
 name|save_thumbnail
+decl_stmt|;
+DECL|member|save_xmp
+name|gboolean
+name|save_xmp
 decl_stmt|;
 DECL|typedef|JpegSaveVals
 block|}
