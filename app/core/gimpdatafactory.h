@@ -317,6 +317,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_data_factory_data_refresh
+parameter_list|(
+name|GimpDataFactory
+modifier|*
+name|factory
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_data_factory_data_save
 parameter_list|(
 name|GimpDataFactory

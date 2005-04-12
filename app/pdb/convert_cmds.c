@@ -730,14 +730,14 @@ name|GIMP_CUSTOM_PALETTE
 case|:
 if|if
 condition|(
-operator|!
+name|gimp_container_is_empty
+argument_list|(
 name|gimp
 operator|->
 name|palette_factory
 operator|->
 name|container
-operator|->
-name|num_children
+argument_list|)
 condition|)
 name|gimp_data_factory_data_init
 argument_list|(
