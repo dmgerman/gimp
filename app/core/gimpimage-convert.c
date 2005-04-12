@@ -442,7 +442,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon276c6e900103
+DECL|enum|__anon298f7e390103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1483,7 +1483,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276c6e900208
+DECL|struct|__anon298f7e390208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1560,7 +1560,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276c6e900308
+DECL|struct|__anon298f7e390308
 block|{
 DECL|member|ncolors
 name|long
@@ -1745,7 +1745,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276c6e900408
+DECL|struct|__anon298f7e390408
 block|{
 DECL|member|used_count
 name|signed
@@ -2878,7 +2878,7 @@ parameter_list|,
 name|GimpImageBaseType
 name|new_type
 parameter_list|,
-comment|/* The following three params used only for                      * new_type == GIMP_INDEXED                      */
+comment|/* The following are only used for new_type == GIMP_INDEXED                      */
 name|gint
 name|num_cols
 parameter_list|,
@@ -2974,7 +2974,31 @@ condition|(
 name|palette_type
 operator|==
 name|GIMP_CUSTOM_PALETTE
-operator|&&
+condition|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|custom_palette
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PALETTE
+argument_list|(
+name|custom_palette
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|custom_palette
+condition|)
+name|palette_type
+operator|=
+name|GIMP_MONO_PALETTE
+expr_stmt|;
+if|if
+condition|(
 name|custom_palette
 operator|->
 name|n_colors
@@ -2991,6 +3015,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
+block|}
 block|}
 name|theCustomPalette
 operator|=

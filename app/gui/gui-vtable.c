@@ -2410,20 +2410,6 @@ name|object
 init|=
 name|NULL
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: re-enable gimp->no_data case
-endif|#
-directive|endif
-if|#
-directive|if
-literal|0
-block|if (gimp->no_data)         {           static gboolean first_call = TRUE;            if (first_call)             gimp_data_factory_data_init (gimp->pattern_factory, FALSE);            first_call = FALSE;         }
-endif|#
-directive|endif
 if|if
 condition|(
 name|object_name
