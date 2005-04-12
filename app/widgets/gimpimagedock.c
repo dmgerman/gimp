@@ -2455,11 +2455,19 @@ argument_list|)
 decl_stmt|;
 name|GimpContainer
 modifier|*
-name|container
+name|image_container
 init|=
 name|image_dock
 operator|->
 name|image_container
+decl_stmt|;
+name|GimpContainer
+modifier|*
+name|display_container
+init|=
+name|image_dock
+operator|->
+name|display_container
 decl_stmt|;
 if|if
 condition|(
@@ -2470,7 +2478,7 @@ operator|&&
 operator|!
 name|gimp_container_is_empty
 argument_list|(
-name|container
+name|image_container
 argument_list|)
 condition|)
 block|{
@@ -2480,7 +2488,7 @@ name|GIMP_IMAGE
 argument_list|(
 name|gimp_container_get_child_by_index
 argument_list|(
-name|container
+name|image_container
 argument_list|,
 literal|0
 argument_list|)
@@ -2519,7 +2527,7 @@ operator|&&
 operator|!
 name|gimp_container_is_empty
 argument_list|(
-name|container
+name|display_container
 argument_list|)
 condition|)
 block|{
@@ -2597,7 +2605,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|container
+name|display_container
 argument_list|)
 operator|->
 name|list
