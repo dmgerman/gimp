@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c59fde70103
+DECL|enum|__anon2c0230210103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -1034,14 +1034,13 @@ name|import_dialog
 operator|->
 name|image_radio
 argument_list|,
-name|gimp_container_num_children
+operator|!
+name|gimp_container_is_empty
 argument_list|(
 name|gimp
 operator|->
 name|images
 argument_list|)
-operator|>
-literal|0
 argument_list|)
 expr_stmt|;
 name|group

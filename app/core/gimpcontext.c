@@ -1251,7 +1251,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c6de740103
+DECL|enum|__anon2be556d80103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1265,7 +1265,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c6de740203
+DECL|enum|__anon2be556d80203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -12581,12 +12581,11 @@ condition|(
 operator|!
 name|object
 operator|&&
-name|gimp_container_num_children
+operator|!
+name|gimp_container_is_empty
 argument_list|(
 name|container
 argument_list|)
-operator|>
-literal|0
 condition|)
 name|object
 operator|=

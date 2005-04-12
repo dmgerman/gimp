@@ -124,7 +124,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon294dfed80103
+DECL|enum|__anon2b249e460103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -149,7 +149,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon294dfed80203
+DECL|enum|__anon2b249e460203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1261,7 +1261,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294dfed80308
+DECL|struct|__anon2b249e460308
 block|{
 DECL|member|writer
 name|GimpConfigWriter
@@ -2832,6 +2832,39 @@ name|container
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_container_is_empty (const GimpContainer * container)
+name|gimp_container_is_empty
+parameter_list|(
+specifier|const
+name|GimpContainer
+modifier|*
+name|container
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTAINER
+argument_list|(
+name|container
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+operator|(
+name|container
+operator|->
+name|num_children
+operator|==
+literal|0
+operator|)
+return|;
 block|}
 end_function
 

@@ -481,6 +481,18 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_container_is_empty
+parameter_list|(
+specifier|const
+name|GimpContainer
+modifier|*
+name|container
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_container_have
 parameter_list|(
 specifier|const

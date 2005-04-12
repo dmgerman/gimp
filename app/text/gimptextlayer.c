@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b161f00103
+DECL|enum|__anon28eae48c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2198,7 +2198,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_container_num_children
+name|gimp_container_is_empty
 argument_list|(
 name|image
 operator|->
@@ -2206,8 +2206,6 @@ name|gimp
 operator|->
 name|fonts
 argument_list|)
-operator|==
-literal|0
 condition|)
 block|{
 name|g_message

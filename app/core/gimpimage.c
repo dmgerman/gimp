@@ -276,7 +276,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1c67760103
+DECL|enum|__anon2b17c0b90103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -355,7 +355,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1c67760203
+DECL|enum|__anon2b17c0b90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6227,16 +6227,12 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
-name|gimp_container_num_children
+name|gimp_container_is_empty
 argument_list|(
 name|gimage
 operator|->
 name|layers
 argument_list|)
-operator|==
-literal|0
-operator|)
 return|;
 block|}
 end_function
