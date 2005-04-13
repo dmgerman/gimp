@@ -8525,7 +8525,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bb27a010108
+DECL|struct|__anon2749a1660108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9682,7 +9682,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bb27a010208
+DECL|struct|__anon2749a1660208
 block|{
 DECL|member|label
 specifier|const
@@ -10608,7 +10608,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bb27a010308
+DECL|struct|__anon2749a1660308
 block|{
 DECL|member|label
 specifier|const
@@ -10769,7 +10769,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bb27a010408
+DECL|struct|__anon2749a1660408
 block|{
 DECL|member|tree_label
 specifier|const
@@ -10940,7 +10940,7 @@ argument_list|)
 block|,
 literal|"font-path"
 block|,
-literal|"font-path-writable"
+name|NULL
 block|}
 block|,
 block|{

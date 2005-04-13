@@ -259,7 +259,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d6bf200103
+DECL|enum|__anon29918f070103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -912,19 +912,12 @@ name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
 name|path
 argument_list|,
-literal|0
+name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
 name|path
-argument_list|)
-expr_stmt|;
-name|path
-operator|=
-name|gimp_config_build_writable_path
-argument_list|(
-literal|"fonts"
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -939,14 +932,9 @@ name|FONT_PATH_WRITABLE_BLURB
 argument_list|,
 name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,
-name|path
+name|NULL
 argument_list|,
-name|GIMP_CONFIG_PARAM_RESTART
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
+name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING

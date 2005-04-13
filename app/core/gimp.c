@@ -255,7 +255,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4d56d00103
+DECL|enum|__anon29ebff2f0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -3728,6 +3728,13 @@ argument_list|,
 literal|0.5
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp
+operator|->
+name|no_fonts
+condition|)
 name|gimp_fonts_load
 argument_list|(
 name|gimp
