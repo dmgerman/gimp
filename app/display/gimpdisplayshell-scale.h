@@ -91,6 +91,26 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_display_shell_scale_to
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|gdisp
+parameter_list|,
+name|GimpZoomType
+name|zoom_type
+parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_display_shell_scale_fit_in
 parameter_list|(
 name|GimpDisplayShell
