@@ -514,6 +514,8 @@ literal|"Gimp-Menus"
 block|,
 literal|"Gimp-PDB"
 block|,
+literal|"Gimp-Paint"
+block|,
 literal|"Gimp-Paint-Funcs"
 block|,
 literal|"Gimp-Plug-In"

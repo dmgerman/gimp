@@ -756,7 +756,6 @@ name|factory
 parameter_list|,
 name|gboolean
 name|no_data
-comment|/* FIXME */
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -767,6 +766,20 @@ name|factory
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*  Freeze and thaw the container even if no_data,    *  this creates the standard data that serves as fallback.    */
+name|gimp_container_freeze
+argument_list|(
+name|factory
+operator|->
+name|container
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|no_data
+condition|)
+block|{
 if|if
 condition|(
 name|factory
@@ -801,18 +814,12 @@ literal|"???"
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_container_freeze
-argument_list|(
-name|factory
-operator|->
-name|container
-argument_list|)
-expr_stmt|;
 name|gimp_data_factory_data_load
 argument_list|(
 name|factory
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_container_thaw
 argument_list|(
 name|factory
