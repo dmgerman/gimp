@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0e84f40103
+DECL|enum|__anon275e5cae0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -3833,7 +3833,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_pixbuf:  * @tiles:       The pixbuf to make the new layer from.  * @dest_gimage: The image the new layer will be added to.  * @type:        The #GimpImageType of the new layer.  * @name:        The new layer's name.  * @opacity:     The new layer's opacity.  * @mode:        The new layer's mode.  *  * Copies %pixbuf to a layer taking into consideration the  * possibility of transforming the contents to meet the requirements  * of the target image type  *  * Return value: The new layer.  **/
+comment|/**  * gimp_layer_new_from_pixbuf:  * @pixbuf:      The pixbuf to make the new layer from.  * @dest_gimage: The image the new layer will be added to.  * @type:        The #GimpImageType of the new layer.  * @name:        The new layer's name.  * @opacity:     The new layer's opacity.  * @mode:        The new layer's mode.  *  * Copies %pixbuf to a layer taking into consideration the  * possibility of transforming the contents to meet the requirements  * of the target image type  *  * Return value: The new layer.  **/
 end_comment
 
 begin_function
