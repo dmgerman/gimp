@@ -989,7 +989,7 @@ operator|*
 literal|2
 expr_stmt|;
 comment|/*<h2v-skip>*/
-comment|/* g_print ("choosen: height %d, width %d\n",      requisition->height,      requisition->width);   */
+comment|/* g_print ("chosen: height %d, width %d\n",      requisition->height,      requisition->width);   */
 block|}
 end_function
 

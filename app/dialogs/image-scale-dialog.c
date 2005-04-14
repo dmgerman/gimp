@@ -740,7 +740,7 @@ name|box
 argument_list|,
 name|_
 argument_list|(
-literal|"Scaling the image to the choosen size will "
+literal|"Scaling the image to the chosen size will "
 literal|"make it use more memory than what is "
 literal|"configured as \"Maximum Image Size\" in the "
 literal|"Preferences dialog (currently %s)."
@@ -793,7 +793,7 @@ name|box
 argument_list|,
 name|_
 argument_list|(
-literal|"Scaling the image to the choosen size "
+literal|"Scaling the image to the chosen size "
 literal|"will shrink some layers completely "
 literal|"away."
 argument_list|)
