@@ -117,7 +117,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gint
+name|gboolean
 name|shadow
 parameter_list|,
 name|gint
@@ -138,7 +138,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gint
+name|gboolean
 name|shadow
 parameter_list|,
 name|gint

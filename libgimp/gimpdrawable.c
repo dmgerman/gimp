@@ -738,14 +738,14 @@ end_function
 begin_function
 name|GimpTile
 modifier|*
-DECL|function|gimp_drawable_get_tile2 (GimpDrawable * drawable,gint shadow,gint x,gint y)
+DECL|function|gimp_drawable_get_tile2 (GimpDrawable * drawable,gboolean shadow,gint x,gint y)
 name|gimp_drawable_get_tile2
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gint
+name|gboolean
 name|shadow
 parameter_list|,
 name|gint
