@@ -3094,6 +3094,8 @@ name|shell
 argument_list|,
 name|GIMP_ZOOM_IN
 argument_list|,
+literal|0.0
+argument_list|,
 name|sevent
 operator|->
 name|x
@@ -3112,6 +3114,8 @@ argument_list|(
 name|shell
 argument_list|,
 name|GIMP_ZOOM_OUT
+argument_list|,
+literal|0.0
 argument_list|,
 name|sevent
 operator|->

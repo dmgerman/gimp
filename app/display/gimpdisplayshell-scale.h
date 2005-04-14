@@ -84,7 +84,7 @@ name|GimpZoomType
 name|zoom_type
 parameter_list|,
 name|gdouble
-name|new_scale
+name|scale
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -99,6 +99,9 @@ name|gdisp
 parameter_list|,
 name|GimpZoomType
 name|zoom_type
+parameter_list|,
+name|gdouble
+name|scale
 parameter_list|,
 name|gdouble
 name|x
