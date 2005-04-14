@@ -168,16 +168,7 @@ modifier|*
 name|event
 parameter_list|)
 block|{
-name|int
-name|position
-init|=
-name|object_get_position_in_list
-argument_list|(
-name|obj
-argument_list|)
-operator|+
-literal|1
-decl_stmt|;
+comment|/* int position = object_get_position_in_list(obj) + 1; */
 name|_current_obj
 operator|=
 name|popup

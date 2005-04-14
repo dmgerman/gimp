@@ -1839,6 +1839,12 @@ expr_stmt|;
 block|}
 end_function
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|_NOT_READY_YET
+end_ifdef
+
 begin_function
 specifier|static
 name|void
@@ -1884,6 +1890,11 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|const
@@ -3620,6 +3631,12 @@ expr_stmt|;
 block|}
 end_function
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|_NOT_READY_YET_
+end_ifdef
+
 begin_function
 specifier|static
 name|void
@@ -3681,6 +3698,11 @@ argument_list|()
 expr_stmt|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 name|void
@@ -4755,6 +4777,12 @@ expr_stmt|;
 block|}
 end_function
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|_NOT_READY_YET_
+end_ifdef
+
 begin_function
 specifier|static
 name|void
@@ -4771,6 +4799,11 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static
@@ -5682,6 +5715,12 @@ comment|/* Fix me!    Command_t *command = object_down_command_new(_current_obj-
 block|}
 end_function
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|_NOT_READY_YET_
+end_ifdef
+
 begin_function
 specifier|static
 name|Command_t
@@ -5816,6 +5855,11 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static
