@@ -109,6 +109,10 @@ modifier|*
 name|strokes
 decl_stmt|;
 comment|/* The List of GimpStrokes        */
+DECL|member|last_stroke_ID
+name|gint
+name|last_stroke_ID
+decl_stmt|;
 DECL|member|freeze_count
 name|gint
 name|freeze_count
@@ -117,7 +121,6 @@ DECL|member|precision
 name|gdouble
 name|precision
 decl_stmt|;
-comment|/* Stuff missing */
 block|}
 struct|;
 end_struct
@@ -621,6 +624,22 @@ parameter_list|,
 name|GimpStroke
 modifier|*
 name|stroke
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpStroke
+modifier|*
+name|gimp_vectors_stroke_get_by_ID
+parameter_list|(
+specifier|const
+name|GimpVectors
+modifier|*
+name|vectors
+parameter_list|,
+name|gint
+name|id
 parameter_list|)
 function_decl|;
 end_function_decl

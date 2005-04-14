@@ -237,6 +237,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint
+modifier|*
+name|gimp_image_get_vectors
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|gint
+modifier|*
+name|num_vectors
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint32
 name|gimp_image_get_active_drawable
 parameter_list|(

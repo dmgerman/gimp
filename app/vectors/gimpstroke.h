@@ -103,6 +103,10 @@ DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
 decl_stmt|;
+DECL|member|ID
+name|gint
+name|ID
+decl_stmt|;
 DECL|member|anchors
 name|GList
 modifier|*
@@ -804,6 +808,32 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|void
+name|gimp_stroke_set_ID
+parameter_list|(
+name|GimpStroke
+modifier|*
+name|stroke
+parameter_list|,
+name|gint
+name|id
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|gimp_stroke_get_ID
+parameter_list|(
+specifier|const
+name|GimpStroke
+modifier|*
+name|stroke
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_comment
 comment|/* accessing / modifying the anchors */
