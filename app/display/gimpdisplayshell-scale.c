@@ -1432,7 +1432,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scale:  * @shell:     the #GimpDisplayShell  * @zoom_type: whether to zoom in, our or to a specific scale  * @scale:     ignored unless @zoom_type == %GIMP_ZOOM_TO  *  * This function calls gimp_display_shell_scale_to() using the center  * of the display as coordinates.  **/
+comment|/**  * gimp_display_shell_scale:  * @shell:     the #GimpDisplayShell  * @zoom_type: whether to zoom in, our or to a specific scale  * @scale:     ignored unless @zoom_type == %GIMP_ZOOM_TO  *  * This function calls gimp_display_shell_scale_to() using the  * position of the mouse pointer as coordinates.  **/
 end_comment
 
 begin_function
@@ -1451,12 +1451,31 @@ name|gdouble
 name|new_scale
 parameter_list|)
 block|{
+name|gint
+name|x
+decl_stmt|,
+name|y
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
 argument_list|(
 name|shell
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_get_pointer
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+operator|&
+name|x
+argument_list|,
+operator|&
+name|y
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_scale_to
@@ -1467,17 +1486,9 @@ name|zoom_type
 argument_list|,
 name|new_scale
 argument_list|,
-name|shell
-operator|->
-name|disp_width
-operator|/
-literal|2.0
+name|x
 argument_list|,
-name|shell
-operator|->
-name|disp_height
-operator|/
-literal|2.0
+name|y
 argument_list|)
 expr_stmt|;
 block|}
