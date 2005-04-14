@@ -257,7 +257,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0b39e80103
+DECL|enum|__anon2966e5ca0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -273,7 +273,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0b39e80203
+DECL|enum|__anon2966e5ca0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1738,6 +1738,12 @@ block|{
 case|case
 name|PROP_SCALE
 case|:
+if|if
+condition|(
+name|shell
+operator|->
+name|canvas
+condition|)
 name|gimp_display_shell_scale
 argument_list|(
 name|shell
@@ -1748,6 +1754,16 @@ name|g_value_get_double
 argument_list|(
 name|value
 argument_list|)
+argument_list|)
+expr_stmt|;
+else|else
+name|shell
+operator|->
+name|scale
+operator|=
+name|g_value_get_double
+argument_list|(
+name|value
 argument_list|)
 expr_stmt|;
 break|break;

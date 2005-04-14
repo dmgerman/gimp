@@ -1432,7 +1432,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scale:  * @shell:     the #GimpDisplayShell  * @zoom_type: whether to zoom in, our or to a specific scale  * @scale:     ignored unless @zoom_type == %GIMP_ZOOM_TO  *  * This function calls gimp_display_shell_scale_to() using the  * position of the mouse pointer as coordinates.  **/
+comment|/**  * gimp_display_shell_scale:  * @shell:     the #GimpDisplayShell  * @zoom_type: whether to zoom in, our or to a specific scale  * @scale:     ignored unless @zoom_type == %GIMP_ZOOM_TO  *  * This function calls gimp_display_shell_scale_to(). It tries to be  * smart whether to use the position of the mouse pointer or the  * center of the display as coordinates.+  **/
 end_comment
 
 begin_function
@@ -1451,6 +1451,10 @@ name|gdouble
 name|new_scale
 parameter_list|)
 block|{
+name|GdkEvent
+modifier|*
+name|event
+decl_stmt|;
 name|gint
 name|x
 decl_stmt|,
@@ -1462,6 +1466,15 @@ name|GIMP_IS_DISPLAY_SHELL
 argument_list|(
 name|shell
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|shell
+operator|->
+name|canvas
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 name|x
@@ -1480,20 +1493,32 @@ name|disp_height
 operator|/
 literal|2
 expr_stmt|;
+name|event
+operator|=
+name|gtk_get_current_event
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
-name|shell
-operator|->
-name|canvas
-condition|)
-name|gtk_widget_get_pointer
+operator|!
+name|event
+operator|||
+name|gtk_get_event_widget
 argument_list|(
+name|event
+argument_list|)
+operator|==
 name|GTK_WIDGET
 argument_list|(
 name|shell
+argument_list|)
+condition|)
+block|{
+name|gtk_widget_get_pointer
+argument_list|(
+name|shell
 operator|->
 name|canvas
-argument_list|)
 argument_list|,
 operator|&
 name|x
@@ -1502,6 +1527,7 @@ operator|&
 name|y
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_display_shell_scale_to
 argument_list|(
 name|shell
