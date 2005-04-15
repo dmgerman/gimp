@@ -43,7 +43,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad4ac5c0108
+DECL|struct|__anon28d5bb2e0108
 block|{
 DECL|member|uri
 name|gchar
@@ -767,6 +767,9 @@ decl_stmt|;
 if|if
 condition|(
 name|queue_has_next
+argument_list|(
+name|h
+argument_list|)
 condition|)
 block|{
 name|GList
@@ -852,6 +855,9 @@ decl_stmt|;
 if|if
 condition|(
 name|queue_has_prev
+argument_list|(
+name|h
+argument_list|)
 condition|)
 block|{
 name|GList
