@@ -87,6 +87,9 @@ parameter_list|(
 name|Queue
 modifier|*
 name|queue
+parameter_list|,
+name|gint
+name|skip
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -100,6 +103,9 @@ parameter_list|(
 name|Queue
 modifier|*
 name|queue
+parameter_list|,
+name|gint
+name|skip
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -111,6 +117,9 @@ parameter_list|(
 name|Queue
 modifier|*
 name|queue
+parameter_list|,
+name|gint
+name|skip
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -122,6 +131,9 @@ parameter_list|(
 name|Queue
 modifier|*
 name|queue
+parameter_list|,
+name|gint
+name|skip
 parameter_list|)
 function_decl|;
 end_function_decl

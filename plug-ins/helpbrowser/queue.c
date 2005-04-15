@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * The GIMP Help Browser  * Copyright (C) 1999 Sven Neumann<sven@gimp.org>  *                    Michael Natterer<mitschel@cs.tu-berlin.de>  *  * queue.c - a history queue  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * The GIMP Help Browser  * Copyright (C) 1999-2005 Sven Neumann<sven@gimp.org>  *                         Michael Natterer<mitschel@cs.tu-berlin.de>  *  * queue.c - a history queue  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -43,7 +43,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d5bb2e0108
+DECL|struct|__anon2bab59080108
 block|{
 DECL|member|uri
 name|gchar
@@ -210,12 +210,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|queue_move_prev (Queue * h)
+DECL|function|queue_move_prev (Queue * h,gint skip)
 name|queue_move_prev
 parameter_list|(
 name|Queue
 modifier|*
 name|h
+parameter_list|,
+name|gint
+name|skip
 parameter_list|)
 block|{
 if|if
@@ -253,17 +256,40 @@ operator|->
 name|current
 argument_list|)
 expr_stmt|;
+while|while
+condition|(
+name|h
+operator|->
+name|current
+operator|&&
+name|skip
+operator|--
+condition|)
+name|h
+operator|->
+name|current
+operator|=
+name|g_list_previous
+argument_list|(
+name|h
+operator|->
+name|current
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|queue_move_next (Queue * h)
+DECL|function|queue_move_next (Queue * h,gint skip)
 name|queue_move_next
 parameter_list|(
 name|Queue
 modifier|*
 name|h
+parameter_list|,
+name|gint
+name|skip
 parameter_list|)
 block|{
 if|if
@@ -301,6 +327,26 @@ operator|->
 name|current
 argument_list|)
 expr_stmt|;
+while|while
+condition|(
+name|h
+operator|->
+name|current
+operator|&&
+name|skip
+operator|--
+condition|)
+name|h
+operator|->
+name|current
+operator|=
+name|g_list_next
+argument_list|(
+name|h
+operator|->
+name|current
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -308,12 +354,15 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|queue_prev (Queue * h)
+DECL|function|queue_prev (Queue * h,gint skip)
 name|queue_prev
 parameter_list|(
 name|Queue
 modifier|*
 name|h
+parameter_list|,
+name|gint
+name|skip
 parameter_list|)
 block|{
 name|GList
@@ -359,6 +408,28 @@ operator|->
 name|current
 argument_list|)
 expr_stmt|;
+while|while
+condition|(
+name|p
+operator|&&
+name|skip
+operator|--
+condition|)
+name|p
+operator|=
+name|g_list_previous
+argument_list|(
+name|p
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|p
+condition|)
+return|return
+name|NULL
+return|;
 name|item
 operator|=
 name|p
@@ -382,12 +453,15 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|queue_next (Queue * h)
+DECL|function|queue_next (Queue * h,gint skip)
 name|queue_next
 parameter_list|(
 name|Queue
 modifier|*
 name|h
+parameter_list|,
+name|gint
+name|skip
 parameter_list|)
 block|{
 name|GList
@@ -433,6 +507,28 @@ operator|->
 name|current
 argument_list|)
 expr_stmt|;
+while|while
+condition|(
+name|p
+operator|&&
+name|skip
+operator|--
+condition|)
+name|p
+operator|=
+name|g_list_next
+argument_list|(
+name|p
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|p
+condition|)
+return|return
+name|NULL
+return|;
 name|item
 operator|=
 name|p
