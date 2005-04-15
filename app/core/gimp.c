@@ -136,6 +136,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpbrush-load.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbrushgenerated.h"
 end_include
 
@@ -255,7 +261,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ebff2f0103
+DECL|enum|__anon29107d3e0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2254,6 +2260,22 @@ block|{
 name|gimp_brush_load
 block|,
 name|GIMP_BRUSH_PIXMAP_FILE_EXTENSION
+block|,
+name|FALSE
+block|}
+block|,
+block|{
+name|gimp_brush_load_abr
+block|,
+name|GIMP_BRUSH_PS_FILE_EXTENSION
+block|,
+name|FALSE
+block|}
+block|,
+block|{
+name|gimp_brush_load_abr
+block|,
+name|GIMP_BRUSH_PSP_FILE_EXTENSION
 block|,
 name|FALSE
 block|}

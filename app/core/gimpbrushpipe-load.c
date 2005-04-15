@@ -137,25 +137,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrush.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpbrush-header.h"
+file|"gimpbrush-load.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpbrushpipe.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimppattern-header.h"
 end_include
 
 begin_include
