@@ -308,7 +308,7 @@ name|widget
 parameter_list|,
 name|GtkWidget
 modifier|*
-name|sizeentry
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1634,10 +1634,8 @@ else|else
 block|{
 name|GimpSizeEntry
 modifier|*
-name|sizeentry
-decl_stmt|;
-name|sizeentry
-operator|=
+name|entry
+init|=
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -1647,17 +1645,17 @@ argument_list|)
 argument_list|,
 literal|"monitor_resolution_sizeentry"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
-name|sizeentry
+name|entry
 condition|)
 block|{
 name|xres
 operator|=
 name|gimp_size_entry_get_refval
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|0
 argument_list|)
@@ -1666,7 +1664,7 @@ name|yres
 operator|=
 name|gimp_size_entry_get_refval
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|1
 argument_list|)
@@ -1698,7 +1696,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|prefs_resolution_calibrate_callback (GtkWidget * widget,GtkWidget * sizeentry)
+DECL|function|prefs_resolution_calibrate_callback (GtkWidget * widget,GtkWidget * entry)
 name|prefs_resolution_calibrate_callback
 parameter_list|(
 name|GtkWidget
@@ -1707,7 +1705,7 @@ name|widget
 parameter_list|,
 name|GtkWidget
 modifier|*
-name|sizeentry
+name|entry
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1726,7 +1724,7 @@ name|dialog
 operator|=
 name|gtk_widget_get_toplevel
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 expr_stmt|;
 name|notebook
@@ -1755,7 +1753,7 @@ argument_list|)
 expr_stmt|;
 name|resolution_calibrate_dialog
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 name|gtk_image_get_pixbuf
 argument_list|(
@@ -5148,10 +5146,6 @@ name|button2
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|patheditor
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|table
 decl_stmt|;
 name|GtkWidget
@@ -5164,7 +5158,7 @@ name|image
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|sizeentry
+name|entry
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -7149,9 +7143,9 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|button
+name|entry
 operator|=
-name|gimp_prop_file_chooser_button_new
+name|gimp_prop_file_entry_new
 argument_list|(
 name|object
 argument_list|,
@@ -7162,12 +7156,14 @@ argument_list|(
 literal|"Select web browser"
 argument_list|)
 argument_list|,
-name|GTK_FILE_CHOOSER_ACTION_OPEN
+name|FALSE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|prefs_widget_add_aligned
 argument_list|(
-name|button
+name|entry
 argument_list|,
 name|_
 argument_list|(
@@ -8525,7 +8521,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2749a1660108
+DECL|struct|__anon289fe01c0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -8648,10 +8644,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|view
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|entry
 decl_stmt|;
 name|GtkTreeSelection
 modifier|*
@@ -9145,7 +9137,7 @@ argument_list|,
 name|NULL
 argument_list|)
 decl_stmt|;
-name|sizeentry
+name|entry
 operator|=
 name|gimp_prop_coordinates_new
 argument_list|(
@@ -9178,7 +9170,7 @@ name|gtk_table_set_col_spacings
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|2
@@ -9188,7 +9180,7 @@ name|gtk_table_set_row_spacings
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|2
@@ -9198,7 +9190,7 @@ name|gimp_size_entry_attach_label
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 name|_
@@ -9217,7 +9209,7 @@ name|gimp_size_entry_attach_label
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 name|_
@@ -9236,7 +9228,7 @@ name|gimp_size_entry_attach_label
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 name|_
@@ -9267,7 +9259,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-name|sizeentry
+name|entry
 argument_list|,
 name|FALSE
 argument_list|,
@@ -9278,12 +9270,12 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 operator|!
 name|display_config
@@ -9391,7 +9383,7 @@ argument_list|)
 argument_list|,
 literal|"monitor_resolution_sizeentry"
 argument_list|,
-name|sizeentry
+name|entry
 argument_list|)
 expr_stmt|;
 name|g_object_set_data
@@ -9415,7 +9407,7 @@ argument_list|)
 argument_list|,
 literal|"inverse_sensitive"
 argument_list|,
-name|sizeentry
+name|entry
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -9605,7 +9597,7 @@ name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"inverse_sensitive"
@@ -9624,7 +9616,7 @@ argument_list|(
 name|prefs_resolution_calibrate_callback
 argument_list|)
 argument_list|,
-name|sizeentry
+name|entry
 argument_list|)
 expr_stmt|;
 comment|/**********************/
@@ -9682,7 +9674,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2749a1660208
+DECL|struct|__anon289fe01c0208
 block|{
 DECL|member|label
 specifier|const
@@ -10166,6 +10158,11 @@ block|{
 name|GimpContainer
 modifier|*
 name|controllers
+init|=
+name|gimp_controllers_get_list
+argument_list|(
+name|gimp
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -10175,13 +10172,6 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|controllers
-operator|=
-name|gimp_controllers_get_list
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
 name|notebook
 operator|=
 name|gtk_notebook_new
@@ -10608,7 +10598,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2749a1660308
+DECL|struct|__anon289fe01c0308
 block|{
 DECL|member|label
 specifier|const
@@ -10696,10 +10686,6 @@ name|i
 operator|++
 control|)
 block|{
-name|GtkWidget
-modifier|*
-name|entry
-decl_stmt|;
 name|entry
 operator|=
 name|gimp_prop_file_entry_new
@@ -10769,7 +10755,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2749a1660408
+DECL|struct|__anon289fe01c0408
 block|{
 DECL|member|tree_label
 specifier|const
@@ -11111,6 +11097,10 @@ name|i
 operator|++
 control|)
 block|{
+name|GtkWidget
+modifier|*
+name|editor
+decl_stmt|;
 name|vbox
 operator|=
 name|prefs_notebook_append_page
@@ -11171,7 +11161,7 @@ name|page_index
 operator|++
 argument_list|)
 expr_stmt|;
-name|patheditor
+name|editor
 operator|=
 name|gimp_prop_path_editor_new
 argument_list|(
@@ -11209,12 +11199,12 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|patheditor
+name|editor
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|patheditor
+name|editor
 argument_list|)
 expr_stmt|;
 block|}
