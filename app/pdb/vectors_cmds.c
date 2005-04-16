@@ -46,12 +46,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpchannel-select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimplist.h"
 end_include
 
@@ -153,6 +147,8 @@ name|vectors
 decl_stmt|;
 name|gint32
 name|num_strokes
+init|=
+literal|0
 decl_stmt|;
 name|gint32
 modifier|*
@@ -208,14 +204,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|stroke_list
-operator|=
-name|NULL
-expr_stmt|;
-name|num_strokes
-operator|=
-literal|0
-expr_stmt|;
+comment|/* nothing yet */
 block|}
 name|return_args
 operator|=
