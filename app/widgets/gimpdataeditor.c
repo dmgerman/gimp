@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fa74f40103
+DECL|enum|__anon28d568390103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -666,6 +666,15 @@ argument_list|(
 name|editor
 operator|->
 name|name_entry
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|editor
+operator|->
+name|name_entry
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

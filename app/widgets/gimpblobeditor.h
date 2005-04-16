@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpdataeditor.h"
+file|"gtk/gtkdrawingarea.h"
 end_include
 
 begin_define

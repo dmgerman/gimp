@@ -1251,7 +1251,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be556d80103
+DECL|enum|__anon298e98060103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1265,7 +1265,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be556d80203
+DECL|enum|__anon298e98060203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -8927,6 +8927,10 @@ modifier|*
 name|brush
 parameter_list|)
 block|{
+name|GimpBaseConfig
+modifier|*
+name|base_config
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -8974,18 +8978,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/*  disconnect from the old brush's signals  */
-if|if
-condition|(
-name|context
-operator|->
-name|brush
-condition|)
-block|{
-name|GimpBaseConfig
-modifier|*
-name|base_config
-decl_stmt|;
 name|base_config
 operator|=
 name|GIMP_BASE_CONFIG
@@ -8997,6 +8989,14 @@ operator|->
 name|config
 argument_list|)
 expr_stmt|;
+comment|/*  disconnect from the old brush's signals  */
+if|if
+condition|(
+name|context
+operator|->
+name|brush
+condition|)
+block|{
 comment|/*  make sure the active brush is swapped before we get a new one...  */
 if|if
 condition|(
@@ -9062,21 +9062,6 @@ condition|(
 name|brush
 condition|)
 block|{
-name|GimpBaseConfig
-modifier|*
-name|base_config
-decl_stmt|;
-name|base_config
-operator|=
-name|GIMP_BASE_CONFIG
-argument_list|(
-name|context
-operator|->
-name|gimp
-operator|->
-name|config
-argument_list|)
-expr_stmt|;
 name|g_object_ref
 argument_list|(
 name|brush
@@ -9616,21 +9601,6 @@ condition|(
 name|pattern
 condition|)
 block|{
-name|GimpBaseConfig
-modifier|*
-name|base_config
-decl_stmt|;
-name|base_config
-operator|=
-name|GIMP_BASE_CONFIG
-argument_list|(
-name|context
-operator|->
-name|gimp
-operator|->
-name|config
-argument_list|)
-expr_stmt|;
 name|g_object_ref
 argument_list|(
 name|pattern
