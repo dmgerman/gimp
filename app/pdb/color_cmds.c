@@ -2078,6 +2078,8 @@ condition|)
 name|gimp_drawable_desaturate
 argument_list|(
 name|drawable
+argument_list|,
+name|GIMP_DESATURATE_LIGHTNESS
 argument_list|)
 expr_stmt|;
 block|}

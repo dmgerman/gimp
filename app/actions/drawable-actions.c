@@ -102,7 +102,7 @@ name|GIMP_STOCK_CONVERT_GRAYSCALE
 block|,
 name|N_
 argument_list|(
-literal|"_Desaturate"
+literal|"_Desaturate..."
 argument_list|)
 block|,
 name|NULL

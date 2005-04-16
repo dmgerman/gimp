@@ -6,23 +6,60 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_DRAWABLE_DESATURATE_H__
+name|__DESATURATE_DIALOG_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DRAWABLE_DESATURATE_H__
+DECL|macro|__DESATURATE_DIALOG_H__
 define|#
 directive|define
-name|__GIMP_DRAWABLE_DESATURATE_H__
+name|__DESATURATE_DIALOG_H__
 end_define
 
+begin_typedef
+DECL|typedef|DesaturateDialog
+typedef|typedef
+name|struct
+name|_DesaturateDialog
+name|DesaturateDialog
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_DesaturateDialog
+struct|struct
+name|_DesaturateDialog
+block|{
+DECL|member|dialog
+name|GtkWidget
+modifier|*
+name|dialog
+decl_stmt|;
+DECL|member|drawable
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
+DECL|member|mode
+name|GimpDesaturateMode
+name|mode
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_function_decl
-name|void
-name|gimp_drawable_desaturate
+name|DesaturateDialog
+modifier|*
+name|desaturate_dialog_new
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|,
 name|GimpDesaturateMode
 name|mode
@@ -36,7 +73,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_DRAWABLE_DESATURATE_H__  */
+comment|/* __DESATURATE_DIALOG_H__ */
 end_comment
 
 end_unit
