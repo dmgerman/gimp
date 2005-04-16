@@ -162,6 +162,12 @@ modifier|*
 name|data
 parameter_list|)
 function_decl|;
+DECL|member|title
+specifier|const
+name|gchar
+modifier|*
+name|title
+decl_stmt|;
 block|}
 struct|;
 end_struct

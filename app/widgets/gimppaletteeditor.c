@@ -833,6 +833,15 @@ name|set_data
 operator|=
 name|gimp_palette_editor_set_data
 expr_stmt|;
+name|editor_class
+operator|->
+name|title
+operator|=
+name|_
+argument_list|(
+literal|"Palette Editor"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

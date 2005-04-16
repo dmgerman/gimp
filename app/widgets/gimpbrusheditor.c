@@ -308,6 +308,15 @@ name|set_data
 operator|=
 name|gimp_brush_editor_set_data
 expr_stmt|;
+name|editor_class
+operator|->
+name|title
+operator|=
+name|_
+argument_list|(
+literal|"Brush Editor"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
