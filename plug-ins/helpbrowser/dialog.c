@@ -118,7 +118,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298fc8530103
+DECL|enum|__anon2ba7250a0103
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -217,6 +217,21 @@ begin_function_decl
 specifier|static
 name|void
 name|close_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|online_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -932,6 +947,35 @@ operator|=
 name|GTK_WIDGET
 argument_list|(
 name|item
+argument_list|)
+expr_stmt|;
+name|item
+operator|=
+name|GTK_TOOL_ITEM
+argument_list|(
+name|gtk_ui_manager_get_widget
+argument_list|(
+name|ui_manager
+argument_list|,
+literal|"/help-browser-toolbar/space"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_separator_tool_item_set_draw
+argument_list|(
+name|GTK_SEPARATOR_TOOL_ITEM
+argument_list|(
+name|item
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_tool_item_set_expand
+argument_list|(
+name|item
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|hbox
@@ -1845,13 +1889,53 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"online"
+block|,
+name|GIMP_STOCK_WILBER
+block|,
+literal|""
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Visit the GIMP documentation website"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+argument|online_callback
+argument_list|)
+block|}
+block|,
+block|{
 literal|"close"
 block|,
 name|GTK_STOCK_CLOSE
 block|,
 name|NULL
 block|,
+literal|"<control>W"
+block|,
+name|N_
+argument_list|(
+literal|"Close the help browser"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+argument|close_callback
+argument_list|)
+block|}
+block|,
+block|{
+literal|"quit"
+block|,
+name|GTK_STOCK_QUIT
+block|,
 name|NULL
+block|,
+literal|"<control>Q"
 block|,
 name|N_
 argument_list|(
@@ -1951,9 +2035,11 @@ argument_list|,
 literal|"<ui>"
 literal|"<toolbar name=\"help-browser-toolbar\">"
 literal|"<toolitem action=\"index\" />"
-literal|"<separator />"
-literal|"<toolitem action=\"close\" />"
+literal|"<separator name=\"space\" />"
+literal|"<toolitem action=\"online\" />"
 literal|"</toolbar>"
+literal|"<accelerator action=\"close\" />"
+literal|"<accelerator action=\"quit\" />"
 literal|"</ui>"
 argument_list|,
 operator|-
@@ -1967,6 +2053,7 @@ if|if
 condition|(
 name|error
 condition|)
+block|{
 name|g_warning
 argument_list|(
 literal|"error parsing ui: %s"
@@ -1976,6 +2063,13 @@ operator|->
 name|message
 argument_list|)
 expr_stmt|;
+name|g_clear_error
+argument_list|(
+operator|&
+name|error
+argument_list|)
+expr_stmt|;
+block|}
 name|gtk_ui_manager_add_ui_from_string
 argument_list|(
 name|ui_manager
@@ -1990,9 +2084,31 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-name|NULL
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|error
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"error parsing ui: %s"
+argument_list|,
+name|error
+operator|->
+name|message
+argument_list|)
+expr_stmt|;
+name|g_clear_error
+argument_list|(
+operator|&
+name|error
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|ui_manager
 return|;
@@ -2211,6 +2327,28 @@ argument_list|(
 literal|"index.html"
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|online_callback (GtkAction * action,gpointer data)
+name|online_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|load_remote_page
+argument_list|(
+literal|"http://www.gimp.org/docs/"
 argument_list|)
 expr_stmt|;
 block|}
