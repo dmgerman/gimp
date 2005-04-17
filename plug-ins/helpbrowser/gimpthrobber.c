@@ -23,7 +23,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275c54ce0103
+DECL|enum|__anon2b60e5240103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -36,7 +36,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275c54ce0203
+DECL|enum|__anon2b60e5240203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -636,6 +636,13 @@ argument_list|(
 name|tool_item
 argument_list|)
 expr_stmt|;
+name|icon_size
+operator|=
+name|gtk_tool_item_get_icon_size
+argument_list|(
+name|tool_item
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|style
@@ -649,9 +656,13 @@ expr_stmt|;
 else|else
 name|icon_size
 operator|=
-name|gtk_tool_item_get_icon_size
+name|MIN
 argument_list|(
-name|tool_item
+name|icon_size
+operator|+
+literal|1
+argument_list|,
+name|GTK_ICON_SIZE_BUTTON
 argument_list|)
 expr_stmt|;
 name|icon
