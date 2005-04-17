@@ -23,7 +23,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b60e5240103
+DECL|enum|__anon291e80d20103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -36,7 +36,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b60e5240203
+DECL|enum|__anon291e80d20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -509,21 +509,11 @@ literal|"yalign"
 argument_list|,
 literal|0.0
 argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_button_set_focus_on_click
-argument_list|(
-name|GTK_BUTTON
-argument_list|(
-name|button
-operator|->
-name|priv
-operator|->
-name|button
-argument_list|)
+literal|"focus-on-click"
 argument_list|,
 name|FALSE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
@@ -594,7 +584,7 @@ argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|icon
+name|image
 decl_stmt|;
 name|GtkToolbarStyle
 name|style
@@ -665,7 +655,7 @@ argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
 expr_stmt|;
-name|icon
+name|image
 operator|=
 name|gtk_image_new_from_stock
 argument_list|(
@@ -689,12 +679,12 @@ operator|->
 name|button
 argument_list|)
 argument_list|,
-name|icon
+name|image
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|icon
+name|image
 argument_list|)
 expr_stmt|;
 name|gtk_button_set_relief
@@ -986,21 +976,7 @@ modifier|*
 name|stock_id
 parameter_list|)
 block|{
-name|GimpThrobber
-modifier|*
-name|button
-decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|stock_id
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
+return|return
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_THROBBER
@@ -1010,12 +986,6 @@ argument_list|,
 name|stock_id
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-return|return
-name|GTK_TOOL_ITEM
-argument_list|(
-name|button
 argument_list|)
 return|;
 block|}
@@ -1094,7 +1064,7 @@ block|}
 end_function
 
 begin_function
-name|G_CONST_RETURN
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_throbber_get_stock_id (GimpThrobber * button)

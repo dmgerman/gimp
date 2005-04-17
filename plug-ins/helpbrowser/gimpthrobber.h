@@ -148,7 +148,7 @@ function_decl|)
 parameter_list|(
 name|GimpThrobber
 modifier|*
-name|tool_item
+name|button
 parameter_list|)
 function_decl|;
 block|}
