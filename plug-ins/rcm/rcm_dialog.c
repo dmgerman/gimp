@@ -2996,6 +2996,16 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
+name|gtk_spin_button_set_numeric
+argument_list|(
+name|GTK_SPIN_BUTTON
+argument_list|(
+name|entry
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX

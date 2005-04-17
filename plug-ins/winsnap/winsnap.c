@@ -351,7 +351,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28f4d8f50108
+DECL|struct|__anon275b24c20108
 typedef|typedef
 struct|struct
 block|{
@@ -398,7 +398,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28f4d8f50208
+DECL|struct|__anon275b24c20208
 typedef|typedef
 struct|struct
 block|{
@@ -2732,7 +2732,7 @@ name|GtkWidget
 modifier|*
 name|label
 decl_stmt|;
-name|GtkAdjustment
+name|GtkObject
 modifier|*
 name|adj
 decl_stmt|;
@@ -3120,17 +3120,15 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-name|adj
+name|winsnapintf
+operator|.
+name|delay_spinner
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
-name|gtk_adjustment_new
+name|gimp_spin_button_new
 argument_list|(
-operator|(
-name|gfloat
-operator|)
+operator|&
+name|adj
+argument_list|,
 name|winsnapvals
 operator|.
 name|delay
@@ -3144,15 +3142,6 @@ argument_list|,
 literal|5.0
 argument_list|,
 literal|0.0
-argument_list|)
-expr_stmt|;
-name|winsnapintf
-operator|.
-name|delay_spinner
-operator|=
-name|gtk_spin_button_new
-argument_list|(
-name|adj
 argument_list|,
 literal|0
 argument_list|,

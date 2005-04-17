@@ -1146,7 +1146,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_spin_button_new:  * @adjustment:     Returns the spinbutton's #GtkAdjustment.  * @value:          The initial value of the spinbutton.  * @lower:          The lower boundary.  * @upper:          The uppper boundary.  * @step_increment: The spinbutton's step increment.  * @page_increment: The spinbutton's page increment (mouse button 2).  * @page_size:      The spinbutton's page size.  * @climb_rate:     The spinbutton's climb rate.  * @digits:         The spinbutton's number of decimal digits.  *  * This function is a shortcut for gtk_adjustment_new() and a subsequent  * gtk_spin_button_new() and does some more initialisation stuff like  * setting a standard minimum horizontal size.  *  * Returns: A #GtkSpinbutton and it's #GtkAdjustment.  **/
+comment|/**  * gimp_spin_button_new:  * @adjustment:     Returns the spinbutton's #GtkAdjustment.  * @value:          The initial value of the spinbutton.  * @lower:          The lower boundary.  * @upper:          The uppper boundary.  * @step_increment: The spinbutton's step increment.  * @page_increment: The spinbutton's page increment (mouse button 2).  * @page_size:      The spinbutton's page size.  * @climb_rate:     The spinbutton's climb rate.  * @digits:         The spinbutton's number of decimal digits.  *  * This function is a shortcut for gtk_adjustment_new() and a  * subsequent gtk_spin_button_new(). It also calls  * gtk_spin_button_set_numeric() so that non-numeric text cannot be  * entered.  *  * Returns: A #GtkSpinbutton and it's #GtkAdjustment.  **/
 end_comment
 
 begin_function
@@ -3363,7 +3363,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f3c8d40108
+DECL|struct|__anon2b7985570108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
