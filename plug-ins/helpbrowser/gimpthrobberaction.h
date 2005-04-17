@@ -122,6 +122,11 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
+name|label
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
 name|tooltip
 parameter_list|,
 specifier|const

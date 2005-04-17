@@ -231,10 +231,6 @@ modifier|*
 name|proxy
 parameter_list|)
 block|{
-name|GParamSpec
-modifier|*
-name|pspec
-decl_stmt|;
 name|GTK_ACTION_CLASS
 argument_list|(
 name|parent_class
@@ -247,6 +243,18 @@ argument_list|,
 name|proxy
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|GIMP_IS_THROBBER
+argument_list|(
+name|proxy
+argument_list|)
+condition|)
+block|{
+name|GParamSpec
+modifier|*
+name|pspec
+decl_stmt|;
 name|pspec
 operator|=
 name|g_object_class_find_property
@@ -300,6 +308,7 @@ argument_list|,
 name|G_CONNECT_SWAPPED
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -388,13 +397,18 @@ end_function
 begin_function
 name|GtkAction
 modifier|*
-DECL|function|gimp_throbber_action_new (const gchar * name,const gchar * tooltip,const gchar * stock_id)
+DECL|function|gimp_throbber_action_new (const gchar * name,const gchar * label,const gchar * tooltip,const gchar * stock_id)
 name|gimp_throbber_action_new
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|label
 parameter_list|,
 specifier|const
 name|gchar
@@ -415,6 +429,10 @@ argument_list|,
 literal|"name"
 argument_list|,
 name|name
+argument_list|,
+literal|"label"
+argument_list|,
+name|label
 argument_list|,
 literal|"tooltip"
 argument_list|,
