@@ -130,7 +130,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ebebd50103
+DECL|enum|__anon2c1ac3e60103
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -947,6 +947,16 @@ name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_object_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|action
+argument_list|)
+argument_list|,
+literal|"tooltip"
+argument_list|)
+expr_stmt|;
 name|button_next
 operator|=
 name|GTK_WIDGET
@@ -1000,6 +1010,16 @@ name|GTK_WIDGET
 argument_list|(
 name|item
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|action
+argument_list|)
+argument_list|,
+literal|"tooltip"
 argument_list|)
 expr_stmt|;
 name|button_prev
@@ -1304,7 +1324,7 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-literal|210
+literal|200
 argument_list|)
 expr_stmt|;
 name|scroll
