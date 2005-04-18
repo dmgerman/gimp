@@ -134,7 +134,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fcd7e90108
+DECL|struct|__anon2a395a5d0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -1838,6 +1838,9 @@ name|g_print
 argument_list|(
 literal|"jpeg-save: saving image comment (%d bytes)\n"
 argument_list|,
+operator|(
+name|int
+operator|)
 name|strlen
 argument_list|(
 name|image_comment
@@ -4676,7 +4679,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fcd7e90208
+DECL|struct|__anon2a395a5d0208
 block|{
 DECL|member|pub
 name|struct

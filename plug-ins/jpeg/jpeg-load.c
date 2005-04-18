@@ -1003,6 +1003,10 @@ name|g_print
 argument_list|(
 literal|"jpeg-load: found EXIF block (%d bytes)\n"
 argument_list|,
+call|(
+name|int
+call|)
+argument_list|(
 name|marker
 operator|->
 name|data_length
@@ -1010,6 +1014,7 @@ operator|-
 sizeof|sizeof
 argument_list|(
 name|JPEG_APP_HEADER_EXIF
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1063,6 +1068,10 @@ name|g_print
 argument_list|(
 literal|"jpeg-load: found XMP packet (%d bytes)\n"
 argument_list|,
+call|(
+name|int
+call|)
+argument_list|(
 name|marker
 operator|->
 name|data_length
@@ -1070,6 +1079,7 @@ operator|-
 sizeof|sizeof
 argument_list|(
 name|JPEG_APP_HEADER_XMP
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1742,7 +1752,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c13f0e40108
+DECL|struct|__anon28c746330108
 block|{
 DECL|member|pub
 name|struct

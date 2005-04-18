@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b373630108
+DECL|struct|__anon2baadbd50108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -722,7 +722,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b373630208
+DECL|struct|__anon2baadbd50208
 block|{
 DECL|member|schema
 specifier|const
@@ -769,20 +769,14 @@ name|user_data
 decl_stmt|;
 name|g_print
 argument_list|(
-literal|"XMP: %s 0x%x 0x%x %s\n"
+literal|"XMP: %s %p %p %s\n"
 argument_list|,
 name|xref
 operator|->
 name|property_name
 argument_list|,
-operator|(
-name|int
-operator|)
 name|entry
 argument_list|,
-operator|(
-name|int
-operator|)
 name|user_data
 argument_list|,
 name|gtk_entry_get_text
@@ -911,20 +905,14 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"XMP: %s 0x%x 0x%x %s\n"
+literal|"XMP: %s %p %p %s\n"
 argument_list|,
 name|xref
 operator|->
 name|property_name
 argument_list|,
-operator|(
-name|int
-operator|)
 name|text_buffer
 argument_list|,
-operator|(
-name|int
-operator|)
 name|user_data
 argument_list|,
 name|gtk_text_buffer_get_text

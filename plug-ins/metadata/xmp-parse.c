@@ -121,7 +121,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af93a4a0103
+DECL|enum|__anon29d6b7a40103
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -215,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af93a4a0208
+DECL|struct|__anon29d6b7a40208
 block|{
 DECL|member|depth
 name|gint
@@ -3755,8 +3755,14 @@ name|g_print
 argument_list|(
 literal|"XMP: Thumb text len: %d (1/4 = %d)\nMax size: %d\nUsed size: %d\n"
 argument_list|,
+operator|(
+name|int
+operator|)
 name|text_len
 argument_list|,
+operator|(
+name|int
+operator|)
 name|text_len
 operator|/
 literal|4

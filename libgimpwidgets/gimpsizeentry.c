@@ -24,19 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpwidgetstypes.h"
+file|"gimpwidgets.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpsizeentry.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpunitmenu.h"
 end_include
 
 begin_define
@@ -60,7 +54,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7d58000103
+DECL|enum|__anon294144060103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
