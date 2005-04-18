@@ -63,6 +63,9 @@ name|dest_b64
 parameter_list|,
 name|gsize
 name|dest_size
+parameter_list|,
+name|gint
+name|columns
 parameter_list|)
 function_decl|;
 end_function_decl

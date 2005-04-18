@@ -4,7 +4,7 @@ comment|/* base64.h - encode and decode base64 encoding according to RFC 1521  *
 end_comment
 
 begin_comment
-comment|/* Yet another implementation of base64 decoding.  I ended up writing this  * because most of the implementations that I found required a null-terminated  * buffer, some of the others did not ignore whitespace (especially those  * written for HTTP usage) and the rest were not compatible with the LGPL.  Or  * at least I haven't been able to find LGPL implementations.  Writing this  * according to RFC 1521 did not take long anyway.  */
+comment|/* Yet another implementation of base64 encoding and decoding.  I  * ended up writing this because most of the implementations that I  * found required a null-terminated buffer, some of the others did not  * ignore whitespace (especially those written for HTTP usage) and the  * rest were not compatible with the LGPL (some were GPL, not LGPL).  * Or at least I haven't been able to find LGPL implementations.  * Writing this according to RFC 1521 did not take long anyway.  */
 end_comment
 
 begin_ifndef
@@ -850,7 +850,7 @@ comment|/* -1: skip whitespace, -2: end of input, -3: error */
 end_comment
 
 begin_comment
-comment|/*  * FIXME: update this comment...  * - dest_size should be at least 3/4 of strlen (src) minus all CRLF  * - returns the number of bytes stored in dest  */
+comment|/**  * base64_decode:  * @src_b64: input buffer containing base64-encoded data  * @src_size: input buffer size (in bytes) or -1 if @src_b64 is nul-terminated  * @dest: buffer in which the decoded data should be stored  * @dest_size: size of the destination buffer  *  * Read base64-encoded data from the input buffer @src_b64 and write  * the decoded data into @dest.  *  * The base64 encoding uses 4 bytes for every 3 bytes of input, so  * @dest_size should be at least 3/4 of @src_size (or less if the  * input contains whitespace characters).  The base64 encoding has no  * reliable EOF marker, so this can cause additional data following  * the base64-encoded block to be misinterpreted if @src_size is not  * specified correctly.  The decoder will stop at the first nul byte  * or at the first '=' (padding byte) so you should ensure that one of  * these is present if you supply -1 for @src_size.  For more details  * about the base64 encoding, see RFC 1521.  *  * Returns: the number of bytes stored in @dest, or -1 if invalid data was found.  */
 end_comment
 
 begin_function
@@ -926,7 +926,7 @@ literal|0
 init|;
 operator|(
 name|src_size
-operator|>
+operator|!=
 literal|0
 operator|)
 operator|&&
@@ -1140,9 +1140,17 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * base64_encode:  * @src: input buffer  * @src_size: input buffer size (in bytes) or -1 if @src is nul-terminated  * @dest_b64: buffer in which the base64 encoded data should be stored  * @dest_size: size of the destination buffer  * @columns: if> 0, add line breaks in the output after this many columns  *  * Read binary data from the input buffer @src and write  * base64-encoded data into @dest_b64.  *  * Since the base64 encoding uses 4 bytes for every 3 bytes of input,  * @dest_size should be at least 4/3 of @src_size, plus optional line  * breaks if @columns> 0 and up to two padding bytes at the end.  For  * more details about the base64 encoding, see RFC 1521.  *  * Returns: the number of bytes stored in @dest.  */
+end_comment
+
+begin_comment
+comment|/*  * FIXME: docs!  * if columns<= 0, no line breaks  */
+end_comment
+
 begin_function
 name|gssize
-DECL|function|base64_encode (const gchar * src,gsize src_size,gchar * dest_b64,gsize dest_size)
+DECL|function|base64_encode (const gchar * src,gsize src_size,gchar * dest_b64,gsize dest_size,gint columns)
 name|base64_encode
 parameter_list|(
 specifier|const
@@ -1159,6 +1167,9 @@ name|dest_b64
 parameter_list|,
 name|gsize
 name|dest_size
+parameter_list|,
+name|gint
+name|columns
 parameter_list|)
 block|{
 name|gint32
@@ -1169,6 +1180,9 @@ name|i
 decl_stmt|;
 name|gint
 name|n
+decl_stmt|;
+name|gint
+name|c
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -1198,6 +1212,10 @@ name|bits
 operator|=
 literal|0
 expr_stmt|;
+name|c
+operator|=
+literal|0
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -1206,7 +1224,7 @@ literal|0
 init|;
 operator|(
 name|src_size
-operator|>
+operator|!=
 literal|0
 operator|)
 operator|&&
@@ -1310,6 +1328,46 @@ name|n
 operator|=
 literal|0
 expr_stmt|;
+if|if
+condition|(
+name|columns
+operator|>
+literal|0
+condition|)
+block|{
+name|c
+operator|+=
+literal|4
+expr_stmt|;
+if|if
+condition|(
+operator|(
+name|c
+operator|>=
+name|columns
+operator|)
+operator|&&
+operator|(
+name|i
+operator|<
+name|dest_size
+operator|)
+condition|)
+block|{
+name|dest_b64
+index|[
+name|i
+operator|++
+index|]
+operator|=
+literal|'\n'
+expr_stmt|;
+name|c
+operator|=
+literal|0
+expr_stmt|;
+block|}
+block|}
 block|}
 else|else
 block|{
@@ -1457,6 +1515,44 @@ literal|'='
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+operator|(
+name|columns
+operator|>
+literal|0
+operator|)
+operator|&&
+operator|(
+operator|(
+name|c
+operator|!=
+literal|0
+operator|)
+operator|||
+operator|(
+name|n
+operator|!=
+literal|0
+operator|)
+operator|)
+operator|&&
+operator|(
+name|i
+operator|+
+literal|1
+operator|<
+name|dest_size
+operator|)
+condition|)
+name|dest_b64
+index|[
+name|i
+operator|++
+index|]
+operator|=
+literal|'\n'
+expr_stmt|;
 if|if
 condition|(
 name|i
