@@ -276,7 +276,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b17c0b90103
+DECL|enum|__anon29d952990103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -355,7 +355,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b17c0b90203
+DECL|enum|__anon29d952990203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4553,6 +4553,13 @@ operator|==
 name|GIMP_INDEXED
 condition|)
 block|{
+name|gimp_image_color_hash_invalidate
+argument_list|(
+name|gimage
+argument_list|,
+name|color_index
+argument_list|)
+expr_stmt|;
 comment|/* A colormap alteration affects the whole image */
 name|gimp_image_update
 argument_list|(
@@ -4571,19 +4578,17 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
+name|gimp_image_invalidate_layer_previews
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 name|gimp_viewable_invalidate_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
 name|gimage
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_image_color_hash_invalidate
-argument_list|(
-name|gimage
-argument_list|,
-name|color_index
 argument_list|)
 expr_stmt|;
 block|}
