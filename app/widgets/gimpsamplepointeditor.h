@@ -116,6 +116,17 @@ index|[
 literal|4
 index|]
 decl_stmt|;
+DECL|member|dirty
+name|gboolean
+name|dirty
+index|[
+literal|4
+index|]
+decl_stmt|;
+DECL|member|dirty_idle_id
+name|guint
+name|dirty_idle_id
+decl_stmt|;
 block|}
 struct|;
 end_struct
