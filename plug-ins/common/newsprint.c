@@ -335,7 +335,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1bfa050108
+DECL|struct|__anon288a48da0108
 block|{
 DECL|member|name
 specifier|const
@@ -595,7 +595,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1bfa050208
+DECL|struct|__anon288a48da0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -668,7 +668,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1bfa050308
+DECL|struct|__anon288a48da0308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -702,7 +702,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1bfa050408
+DECL|struct|__anon288a48da0408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -809,7 +809,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1bfa050508
+DECL|struct|__anon288a48da0508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -977,7 +977,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1bfa050608
+DECL|struct|__anon288a48da0608
 block|{
 DECL|member|name
 specifier|const
@@ -6823,7 +6823,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* The following functions were derived from a peice of PostScript by  * Peter Fink and published in his book, "PostScript Screening: Adobe  * Accurate Screens" (Adobe Press, 1992).  Adobe Systems Incorporated  * allow its use, provided the following copyright message is present:  *  *  % Film Test Pages for Screenset Development  *  % Copyright (c) 1991 and 1992 Adobe Systems Incorporated  *  % All rights reserved.  *  %  *  % NOTICE: This code is copyrighted by Adobe Systems Incorporated, and  *  % may not be reproduced for sale except by permission of Adobe Systems  *  % Incorporated. Adobe Systems Incorporated grants permission to use  *  % this code for the development of screen sets for use with Adobe  *  % Accurate Screens software, as long as the copyright notice remains  *  % intact.  *  %  *  % By Peter Fink 1991/1992  */
+comment|/* NOTICE: The following comment and the associated copyright notice  * were added on a previous version of this code.  They are related to  * 6 short lines of code that have been slightly modified and adapted  * for usage in the GIMP.  Such a short amount of code that is a  * simple translation of an algorithm into code is usually not  * considered to be copyrightable.  The restrictions in the copyright  * notice are therefore not applicable here, but we kept this notice  * for reference and for crediting the original authors.  *  * Old comment:  * The following functions were derived from a piece of PostScript by  * Peter Fink and published in his book, "PostScript Screening: Adobe  * Accurate Screens" (Adobe Press, 1992).  Adobe Systems Incorporated  * allow its use, provided the following copyright message is present:  *  *  % Film Test Pages for Screenset Development  *  % Copyright (c) 1991 and 1992 Adobe Systems Incorporated  *  % All rights reserved.  *  %  *  % NOTICE: This code is copyrighted by Adobe Systems Incorporated, and  *  % may not be reproduced for sale except by permission of Adobe Systems  *  % Incorporated. Adobe Systems Incorporated grants permission to use  *  % this code for the development of screen sets for use with Adobe  *  % Accurate Screens software, as long as the copyright notice remains  *  % intact.  *  %  *  % By Peter Fink 1991/1992  */
 end_comment
 
 begin_comment
@@ -7044,7 +7044,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1bfa050708
+DECL|struct|__anon288a48da0708
 block|{
 DECL|member|index
 name|gint
