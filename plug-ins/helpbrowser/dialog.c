@@ -130,7 +130,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1ac3e60103
+DECL|enum|__anon28e9ee960103
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -2629,7 +2629,7 @@ name|GCallback
 name|callback
 parameter_list|)
 block|{
-name|GtkMenuShell
+name|GtkWidget
 modifier|*
 name|menu
 decl_stmt|;
@@ -2646,11 +2646,8 @@ name|NULL
 return|;
 name|menu
 operator|=
-name|GTK_MENU_SHELL
-argument_list|(
 name|gtk_menu_new
 argument_list|()
-argument_list|)
 expr_stmt|;
 for|for
 control|(
@@ -2659,6 +2656,10 @@ operator|=
 literal|0
 init|;
 name|list
+operator|&&
+name|i
+operator|<
+literal|15
 condition|;
 name|list
 operator|=
@@ -2684,7 +2685,10 @@ argument_list|)
 decl_stmt|;
 name|gtk_menu_shell_append
 argument_list|(
+name|GTK_MENU_SHELL
+argument_list|(
 name|menu
+argument_list|)
 argument_list|,
 name|menu_item
 argument_list|)
@@ -2718,10 +2722,7 @@ name|list
 argument_list|)
 expr_stmt|;
 return|return
-name|GTK_WIDGET
-argument_list|(
 name|menu
-argument_list|)
 return|;
 block|}
 end_function
