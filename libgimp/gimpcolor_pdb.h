@@ -126,6 +126,19 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_desaturate_full
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|,
+name|GimpDesaturateMode
+name|desaturate_mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_equalize
 parameter_list|(
 name|gint32
