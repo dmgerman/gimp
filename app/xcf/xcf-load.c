@@ -3568,12 +3568,18 @@ name|layer_mask_offset
 decl_stmt|;
 name|gboolean
 name|apply_mask
+init|=
+name|TRUE
 decl_stmt|;
 name|gboolean
 name|edit_mask
+init|=
+name|FALSE
 decl_stmt|;
 name|gboolean
 name|show_mask
+init|=
+name|FALSE
 decl_stmt|;
 name|gboolean
 name|active
@@ -3583,6 +3589,8 @@ name|floating
 decl_stmt|;
 name|guint32
 name|text_layer_flags
+init|=
+literal|0
 decl_stmt|;
 name|gint
 name|width
