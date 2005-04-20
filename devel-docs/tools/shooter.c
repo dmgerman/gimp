@@ -49,6 +49,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpmodule/gimpmodule.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -56,24 +74,6 @@ begin_include
 include|#
 directive|include
 file|"libgimpwidgets/gimpwidgets-private.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpmodule/gimpmoduletypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpmodule/gimpmoduledb.h"
 end_include
 
 begin_include
@@ -216,7 +216,7 @@ name|gdk_pixbuf_fill
 argument_list|(
 name|retval
 argument_list|,
-literal|0xFF
+literal|0xFFFFFFFF
 argument_list|)
 expr_stmt|;
 name|gdk_pixbuf_copy_area
@@ -925,6 +925,15 @@ operator|!
 name|module_db
 condition|)
 block|{
+name|gchar
+modifier|*
+name|path
+init|=
+name|gimp_config_build_plug_in_path
+argument_list|(
+literal|"modules"
+argument_list|)
+decl_stmt|;
 name|module_db
 operator|=
 name|gimp_module_db_new
@@ -932,18 +941,16 @@ argument_list|(
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_module_db_set_load_inhibit
-argument_list|(
-name|module_db
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|gimp_module_db_load
 argument_list|(
 name|module_db
 argument_list|,
-literal|""
+name|path
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|path
 argument_list|)
 expr_stmt|;
 block|}
@@ -978,7 +985,12 @@ name|GList
 modifier|*
 name|node
 decl_stmt|;
-comment|/* If there's no DISPLAY, we silently error out.  We don't want to break    * headless builds. */
+name|g_set_application_name
+argument_list|(
+literal|"GIMP documention shooter"
+argument_list|)
+expr_stmt|;
+comment|/* If there's no DISPLAY, we silently error out.    * We don't want to break headless builds.    */
 if|if
 condition|(
 operator|!
@@ -994,9 +1006,6 @@ condition|)
 return|return
 name|EXIT_SUCCESS
 return|;
-name|gimp_stock_init
-argument_list|()
-expr_stmt|;
 name|gimp_widgets_init
 argument_list|(
 name|shooter_standard_help
@@ -1038,9 +1047,9 @@ modifier|*
 name|info
 decl_stmt|;
 name|XID
-name|id
+name|xid
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
@@ -1104,7 +1113,7 @@ name|gtk_main_iteration
 argument_list|()
 expr_stmt|;
 block|}
-name|id
+name|xid
 operator|=
 name|gdk_x11_drawable_get_xid
 argument_list|(
@@ -1118,7 +1127,7 @@ name|screenshot
 operator|=
 name|take_window_shot
 argument_list|(
-name|id
+name|xid
 argument_list|,
 name|info
 operator|->
@@ -1129,7 +1138,7 @@ name|filename
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"./%s.png"
+literal|"%s.png"
 argument_list|,
 name|info
 operator|->
