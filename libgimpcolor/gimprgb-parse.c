@@ -139,7 +139,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b3db6e0108
+DECL|struct|__anon2c731f2f0108
 block|{
 DECL|member|name
 specifier|const
@@ -1651,7 +1651,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * gimp_rgb_parse_name:  * @rgb:  a #GimpRGB struct used to return the parsed color  * @name: a color name (in UTF-8 encoding)  * @len:  the length of @name, in bytes. or -1 if @name is nul-terminated  *  * Attempts to parse a color name. This function accepts RGB hex  * values or<ulink url="http://www.w3.org/TR/SVG/types.html">SVG 1.0  * color keywords</ulink>.  The format of an RGB value in hexadecimal  * notation is a '#' immediately followed by either three or six  * hexadecimal characters.  *  * This funcion does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @name was parsed successfully and @rgb has been  *               set, %FALSE otherwise  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_rgb_parse_name:  * @rgb:  a #GimpRGB struct used to return the parsed color  * @name: a color name (in UTF-8 encoding)  * @len:  the length of @name, in bytes. or -1 if @name is nul-terminated  *  * Attempts to parse a color name. This function accepts RGB hex  * values or<ulink url="http://www.w3.org/TR/SVG/types.html">SVG 1.0  * color keywords</ulink>.  The format of an RGB value in hexadecimal  * notation is a '#' immediately followed by either three or six  * hexadecimal characters.  *  * This function does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @name was parsed successfully and @rgb has been  *               set, %FALSE otherwise  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1727,7 +1727,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_parse_hex:  * @rgb: a #GimpRGB struct used to return the parsed color  * @hex: a string describing a color in hexadecimal notation  * @len: the length of @hex, in bytes. or -1 if @hex is nul-terminated  *  * Attempts to parse a string describing a color in RGB value in  * hexadecimal notation (optionally prefixed with a '#').  *  * This funcion does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @hex was parsed successfully and @rgb has been  *               set, %FALSE otherwise  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_rgb_parse_hex:  * @rgb: a #GimpRGB struct used to return the parsed color  * @hex: a string describing a color in hexadecimal notation  * @len: the length of @hex, in bytes. or -1 if @hex is nul-terminated  *  * Attempts to parse a string describing a color in RGB value in  * hexadecimal notation (optionally prefixed with a '#').  *  * This function does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @hex was parsed successfully and @rgb has been  *               set, %FALSE otherwise  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1803,7 +1803,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_parse_css:  * @rgb: a #GimpRGB struct used to return the parsed color  * @css: a string describing a color in CSS notation  * @len: the length of @hex, in bytes. or -1 if @hex is nul-terminated  *  * Attempts to parse a string describing a color in RGB value in CSS  * notation. This can be either a numerical representation  * (<code>rgb(255,0,0)</code> or<code>rgb(100%,0%,0%)</code>) or  * a hexadecimal notation as parsed by gimp_rgb_parse_hex()  * (<code>##ff0000</code>) or a color name as parsed by  * gimp_rgb_parse_name() (<code>red</code>).  *  * This funcion does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @css was parsed successfully and @rgb has been  *               set, %FALSE otherwise  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_rgb_parse_css:  * @rgb: a #GimpRGB struct used to return the parsed color  * @css: a string describing a color in CSS notation  * @len: the length of @hex, in bytes. or -1 if @hex is nul-terminated  *  * Attempts to parse a string describing a color in RGB value in CSS  * notation. This can be either a numerical representation  * (<code>rgb(255,0,0)</code> or<code>rgb(100%,0%,0%)</code>) or  * a hexadecimal notation as parsed by gimp_rgb_parse_hex()  * (<code>##ff0000</code>) or a color name as parsed by  * gimp_rgb_parse_name() (<code>red</code>).  *  * This function does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @css was parsed successfully and @rgb has been  *               set, %FALSE otherwise  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
