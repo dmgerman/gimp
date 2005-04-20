@@ -216,7 +216,7 @@ name|gdk_pixbuf_fill
 argument_list|(
 name|retval
 argument_list|,
-literal|0xFFFFFFFF
+literal|0xFF000000
 argument_list|)
 expr_stmt|;
 name|gdk_pixbuf_copy_area
