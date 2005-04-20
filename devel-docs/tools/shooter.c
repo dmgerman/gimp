@@ -49,12 +49,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpconfig/gimpconfig.h"
 end_include
 
@@ -892,15 +886,7 @@ parameter_list|,
 name|gpointer
 name|help_data
 parameter_list|)
-block|{
-name|gimp_help
-argument_list|(
-name|NULL
-argument_list|,
-name|help_id
-argument_list|)
-expr_stmt|;
-block|}
+block|{ }
 end_function
 
 begin_function
@@ -927,11 +913,24 @@ condition|)
 block|{
 name|gchar
 modifier|*
-name|path
+name|config
 init|=
 name|gimp_config_build_plug_in_path
 argument_list|(
 literal|"modules"
+argument_list|)
+decl_stmt|;
+name|gchar
+modifier|*
+name|path
+init|=
+name|gimp_config_path_expand
+argument_list|(
+name|config
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 decl_stmt|;
 name|module_db
@@ -951,6 +950,11 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|path
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|config
 argument_list|)
 expr_stmt|;
 block|}
