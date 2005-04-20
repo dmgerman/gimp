@@ -2406,7 +2406,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b87d1710108
+DECL|struct|__anon2be5ce060108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3091,12 +3091,6 @@ name|stock_warning_24
 block|}
 block|,
 block|{
-name|GIMP_STOCK_WILBER
-block|,
-name|stock_wilber_32
-block|}
-block|,
-block|{
 name|GIMP_TOILET_PAPER
 block|,
 name|stock_toilet_paper_24
@@ -3120,7 +3114,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b87d1710208
+DECL|struct|__anon2be5ce060208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3918,7 +3912,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b87d1710308
+DECL|struct|__anon2be5ce060308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4014,7 +4008,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b87d1710408
+DECL|struct|__anon2be5ce060408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4158,7 +4152,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b87d1710508
+DECL|struct|__anon2be5ce060508
 block|{
 DECL|member|stock_id
 specifier|const
