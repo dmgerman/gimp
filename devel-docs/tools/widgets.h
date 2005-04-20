@@ -12,16 +12,10 @@ directive|define
 name|__WIDGETS_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dee5590103
+DECL|enum|__anon2b888d620103
 block|{
 DECL|enumerator|SMALL
 name|SMALL
