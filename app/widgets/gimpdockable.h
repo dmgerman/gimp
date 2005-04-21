@@ -152,11 +152,6 @@ name|GtkWidget
 modifier|*
 name|menu_button
 decl_stmt|;
-DECL|member|close_button
-name|GtkWidget
-modifier|*
-name|close_button
-decl_stmt|;
 DECL|member|blink_timeout_id
 name|guint
 name|blink_timeout_id
