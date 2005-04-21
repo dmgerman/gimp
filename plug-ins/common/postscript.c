@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d35c990108
+DECL|struct|__anon2befce780108
 block|{
 DECL|member|resolution
 name|guint
@@ -313,7 +313,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d35c990208
+DECL|struct|__anon2befce780208
 block|{
 DECL|member|width
 DECL|member|height
@@ -887,7 +887,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d35c990308
+DECL|struct|__anon2befce780308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1743,7 +1743,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d35c990408
+DECL|struct|__anon2befce780408
 block|{
 DECL|member|eol
 name|long
@@ -6675,12 +6675,26 @@ name|resolution
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* For PDF, we can't set geometry */
 if|if
 condition|(
-operator|!
 name|is_pdf
 condition|)
+block|{
+comment|/* Acrobat Reader honors CropBox over MediaBox, so let's match that        * behavior.        */
+name|g_ptr_array_add
+argument_list|(
+name|cmdA
+argument_list|,
+name|g_strdup
+argument_list|(
+literal|"-dUseCropBox"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+comment|/* For PDF, we can't set geometry */
 name|g_ptr_array_add
 argument_list|(
 name|cmdA
@@ -6695,6 +6709,7 @@ name|height
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* Antialiasing not available for PBM-device */
 if|if
 condition|(
