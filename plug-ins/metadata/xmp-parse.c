@@ -4,7 +4,7 @@ comment|/* xmp-parse.c - simple parser for XMP metadata  *  * Copyright (C) 2004
 end_comment
 
 begin_comment
-comment|/* This code implements a simple parser for XMP metadata.  Its API is  * based on the one provided by GMarkupParser (part of Glib).  *  * This is not a full RDF parser: it shares some of the limitations  * inherited from glib (UTF-8 only, no special entities) and supports  * RDF only to the extent needed for XMP.  XMP defines several  * "schemas" containing a list of "properties".  Each property in a  * schema has one value, which can be a simple type (e.g., integer or  * text) or a structured type (rdf:Alt, rdf:Bag, rdf:Seq).  As there  * is no need to support a much deeper nesting of elements, this  * parser does not try to maintain an arbitrarily large stack of  * elements.  Also, it does not support RDF features that are  * forbidden by the XMP specs, such as rdf:parseType="Litteral".  *  * The design goals for this parser are: support all RDF features  * needed for XMP (at least the features explicitely described in the  * XMP spec), be tolerant in case unknown elements or attributes are  * found, be as simple as possible, avoid building a DOM tree.  *  * TODO:  * - support UCS-2 and UCS-4 besides UTF-8 (copy and convert the data)  * - write a decent scanner for finding<?xpacket...?> as recommended  *   in the XMP specification (including support for UCS-2 and UCS-4)  * - provide an API for passing unknown elements or tags to the caller  * - think about re-writing this using a better XML parser (expat?)  *   instead of GMarkupParser  */
+comment|/* This code implements a simple parser for XMP metadata.  Its API is  * based on the one provided by GMarkupParser (part of Glib).  *  * This is not a full RDF parser: it shares some of the limitations  * inherited from glib (UTF-8 only, no special entities) and supports  * RDF only to the extent needed for XMP.  XMP defines several  * "schemas" containing a list of "properties".  Each property in a  * schema has one value, which can be a simple type (e.g., integer or  * text) or a structured type (rdf:Alt, rdf:Bag, rdf:Seq).  As there  * is no need to support a much deeper nesting of elements, this  * parser does not try to maintain an arbitrarily large stack of  * elements.  Also, it does not support RDF features that are  * forbidden by the XMP specs, such as rdf:parseType="Litteral".  *  * The design goals for this parser are: support all RDF features  * needed for XMP (at least the features explicitely described in the  * XMP spec), be tolerant in case unknown elements or attributes are  * found, be as simple as possible, avoid building a DOM tree.  *  * TODO:  * - support UCS-2 and UCS-4 besides UTF-8 (copy and convert the data)  * - write a decent scanner for finding<?xpacket...?> as recommended  *   in the XMP specification (including support for UCS-2 and UCS-4)  * - provide an API for passing unknown elements or tags to the caller  * - think about re-writing this using a better XML parser (expat?)  *   instead of the GMarkup parser  */
 end_comment
 
 begin_ifndef
@@ -115,13 +115,13 @@ block|}
 end_function
 
 begin_comment
-comment|/* The current version of XMP (January 2004) is relatively simple in  * that only a few elements (<rdf:Description>,<rdf:Alt>,<rdf:Bag>,  *<rdf:Seq>) may include other elements and no deep nesting is  * allowed.  As a result, it is possible to include all allowed  * combinations directly into the state instead of having to maintain  * a separate stack besides the simple state enum.  There is only a  * 1-element stack (saved_state) used for some special cases such as  * when skipping unknown tags or parsing a property with qualifiers.  *  * Here is a quick overview of the structure of an XMP document and  * the corresponding state after reading each element.  Depending on  * the contents of each property, we can have the following cases  * that are summarized as STATE_INSIDE... below:  * - structured types can use any valid combination of the states  *   between STATE_INSIDE_QDESC and STATE_INSIDE_SEQ_LI_RSC;  * - simple property types contain some text and no other element so  *   the only state will be STATE_INSIDE_PROPERTY while reading that  *   text;  * - if the shorthand notation is used for some simple properties,  *   then they will be written as attributes of a top level  *   rdf:Description instead of being a separate element, so the  *   state will not go deeper than STATE_INSIDE_TOPLEVEL_DESC.  *  * (init)                                 STATE_START  *<?xpacket begin='' id='...'?>           STATE_INSIDE_XPACKET  *<x:xmpmeta xmlns:x='adobe:ns:meta/'>    STATE_INSIDE_XMPMETA  *<rdf:RDF xmlns:rdf='...'>               STATE_INSIDE_RDF  *<rdf:Description rdf:about='' ...>      STATE_INSIDE_TOPLEVEL_DESC  *<foo:bar>                               STATE_INSIDE_PROPERTY  *       ... (simple or structured property)    STATE_INSIDE...  *</foo:bar>                             STATE_INSIDE_TOPLEVEL_DESC  *<foo:baz>                               STATE_INSIDE_PROPERTY  *       ... (simple or structured property)    STATE_INSIDE...  *</foo:baz>                             STATE_INSIDE_TOPLEVEL_DESC  *</rdf:Description>                     STATE_INSIDE_RDF  *<rdf:Description ...>                   STATE_INSIDE_TOPLEVEL_DESC  *     ... (some properties)                   STATE_INSIDE_PROPERTY  *</rdf:Description>                     STATE_INSIDE_RDF  *    ...  *</rdf:RDF>                             STATE_AFTER_RDF  *</x:xmpmeta>                           STATE_AFTER_XMPMETA  *<?xpacket end='r'?>                    STATE_AFTER_XPACKET  *  * Note: The abbreviation QDESC is used for the properties with  * qualifiers (when<rdf:Description> is used deeper than at the top  * level inside<rdf:RDF>).  In that case, QDESC_VALUE contains the  * value of the property and QDESC_QUAL is used for each of the  * optional qualifiers.  */
+comment|/* The current version of XMP (January 2004) is relatively simple in  * that only a few elements (<rdf:Description>,<rdf:Alt>,<rdf:Bag>,  *<rdf:Seq>) may include other elements and no deep nesting is  * allowed.  As a result, it is possible to include all allowed  * combinations directly into the state instead of having to maintain  * a separate stack besides the simple state enum.  There is only a  * 1-element stack (saved_state) used for some special cases such as  * when skipping unknown tags or parsing a property with qualifiers.  *  * Here is a quick overview of the structure of an XMP document and  * the corresponding state after reading each element.  Depending on  * the contents of each property, we can have the following cases  * that are summarized as STATE_INSIDE... below:  * - structured types can use any valid combination of the states  *   between STATE_INSIDE_QDESC and STATE_INSIDE_SEQ_LI_RSC;  * - simple property types contain some text and no other element so  *   the only state will be STATE_INSIDE_PROPERTY while reading that  *   text;  * - if the shorthand notation is used for some simple properties,  *   then they will be written as attributes of a top level  *   rdf:Description instead of being a separate element, so the  *   state will not go deeper than STATE_INSIDE_TOPLEVEL_DESC.  *  * (init)                                 STATE_START  *<?xpacket begin='' id='...'?>           STATE_INSIDE_XPACKET  *<x:xmpmeta xmlns:x='adobe:ns:meta/'>    STATE_INSIDE_XMPMETA  *<rdf:RDF xmlns:rdf='...'>               STATE_INSIDE_RDF  *<rdf:Description rdf:about='' ...>      STATE_INSIDE_TOPLEVEL_DESC  *<foo:bar>                               STATE_INSIDE_PROPERTY  *       ... (simple or structured property)    STATE_INSIDE...  *</foo:bar>                             STATE_INSIDE_TOPLEVEL_DESC  *<foo:baz>                               STATE_INSIDE_PROPERTY  *       ... (simple or structured property)    STATE_INSIDE...  *</foo:baz>                             STATE_INSIDE_TOPLEVEL_DESC  *</rdf:Description>                     STATE_INSIDE_RDF  *<rdf:Description ...>                   STATE_INSIDE_TOPLEVEL_DESC  *     ... (some properties)                   STATE_INSIDE_PROPERTY  *</rdf:Description>                     STATE_INSIDE_RDF  *    ...  *</rdf:RDF>                             STATE_AFTER_RDF  *</x:xmpmeta>                           STATE_AFTER_XMPMETA  *<?xpacket end='r'?>                    STATE_AFTER_XPACKET  *  * Note: The abbreviation QDESC is used for the properties with  * qualifiers (when<rdf:Description> is used deeper than at the top  * level inside<rdf:RDF>).  In that case, QDESC_VALUE contains the  * value of the property and QDESC_QUAL is used for each of the  * optional qualifiers (which are currently ignored).  */
 end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d6b7a40103
+DECL|enum|__anon275738120103
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -215,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d6b7a40208
+DECL|struct|__anon275738120208
 block|{
 DECL|member|depth
 name|gint
@@ -331,8 +331,88 @@ block|}
 struct|;
 end_struct
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|DEBUG_XMP_PARSER
+end_ifdef
+
+begin_decl_stmt
+DECL|variable|state_names
+specifier|static
+specifier|const
+name|char
+modifier|*
+name|state_names
+index|[]
+init|=
+block|{
+literal|"START"
+block|,
+literal|"INSIDE_XPACKET"
+block|,
+literal|"INSIDE_XMPMETA"
+block|,
+literal|"INSIDE_RDF"
+block|,
+literal|"INSIDE_TOPLEVEL_DESC"
+block|,
+literal|"INSIDE_PROPERTY"
+block|,
+literal|"INSIDE_QDESC"
+block|,
+literal|"INSIDE_QDESC_VALUE"
+block|,
+literal|"INSIDE_QDESC_QUAL"
+block|,
+literal|"INSIDE_STRUCT_ADD_NS"
+block|,
+literal|"INSIDE_STRUCT"
+block|,
+literal|"INSIDE_STRUCT_ELEMENT"
+block|,
+literal|"INSIDE_ALT"
+block|,
+literal|"INSIDE_ALT_LI"
+block|,
+literal|"INSIDE_ALT_LI_RSC"
+block|,
+literal|"INSIDE_ALT_LI_RSC_IMG"
+block|,
+literal|"INSIDE_BAG"
+block|,
+literal|"INSIDE_BAG_LI"
+block|,
+literal|"INSIDE_BAG_LI_RSC"
+block|,
+literal|"INSIDE_SEQ"
+block|,
+literal|"INSIDE_SEQ_LI"
+block|,
+literal|"INSIDE_SEQ_LI_RSC"
+block|,
+literal|"AFTER_RDF"
+block|,
+literal|"AFTER_XMPMETA"
+block|,
+literal|"AFTER_XPACKET"
+block|,
+literal|"SKIPPING_UNKNOWN_ELEMENTS"
+block|,
+literal|"SKIPPING_IGNORED_ELEMENTS"
+block|,
+literal|"ERROR"
+block|, }
+decl_stmt|;
+end_decl_stmt
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
-comment|/* FIXME - debugging static const char *state_names[] = {   "START",   "INSIDE_XPACKET",   "INSIDE_XMPMETA",   "INSIDE_RDF",   "INSIDE_TOPLEVEL_DESC",   "INSIDE_PROPERTY",   "INSIDE_QDESC",   "INSIDE_QDESC_VALUE",   "INSIDE_QDESC_QUAL",   "INSIDE_STRUCT_ADD_NS",   "INSIDE_STRUCT",   "INSIDE_STRUCT_ELEMENT",   "INSIDE_ALT",   "INSIDE_ALT_LI",   "INSIDE_ALT_LI_RSC",   "INSIDE_ALT_LI_RSC_IMG",   "INSIDE_BAG",   "INSIDE_BAG_LI",   "INSIDE_BAG_LI_RSC",   "INSIDE_SEQ",   "INSIDE_SEQ_LI",   "INSIDE_SEQ_LI_RSC",   "AFTER_RDF",   "AFTER_XMPMETA",   "AFTER_XPACKET",   "SKIPPING_UNKNOWN_ELEMENTS",   "SKIPPING_IGNORED_ELEMENTS",   "ERROR", }; */
+comment|/* report an error and propagate it */
 end_comment
 
 begin_function
@@ -365,12 +445,40 @@ name|GError
 modifier|*
 name|tmp_error
 decl_stmt|;
+if|if
+condition|(
+name|code
+operator|==
+name|XMP_ERROR_NO_XPACKET
+condition|)
+name|tmp_error
+operator|=
+name|g_error_new
+argument_list|(
+name|XMP_PARSE_ERROR
+argument_list|,
+name|code
+argument_list|,
+name|_
+argument_list|(
+literal|"Error: No XMP packet found"
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|else
+block|{
 name|gchar
 modifier|*
 name|s
 decl_stmt|;
 name|va_list
 name|args
+decl_stmt|;
+name|gint
+name|line_number
+decl_stmt|;
+name|gint
+name|char_number
 decl_stmt|;
 name|va_start
 argument_list|(
@@ -393,36 +501,6 @@ argument_list|(
 name|args
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|code
-operator|==
-name|XMP_ERROR_NO_XPACKET
-condition|)
-name|tmp_error
-operator|=
-name|g_error_new
-argument_list|(
-name|XMP_PARSE_ERROR
-argument_list|,
-name|code
-argument_list|,
-name|_
-argument_list|(
-literal|"Error: %s"
-argument_list|)
-argument_list|,
-name|s
-argument_list|)
-expr_stmt|;
-else|else
-block|{
-name|gint
-name|line_number
-decl_stmt|;
-name|gint
-name|char_number
-decl_stmt|;
 name|g_markup_parse_context_get_position
 argument_list|(
 name|context
@@ -456,12 +534,12 @@ argument_list|,
 name|s
 argument_list|)
 expr_stmt|;
-block|}
 name|g_free
 argument_list|(
 name|s
 argument_list|)
 expr_stmt|;
+block|}
 name|context
 operator|->
 name|state
@@ -503,6 +581,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/* report an error if an unexpected element is found in the wrong context */
+end_comment
 
 begin_function
 specifier|static
@@ -579,6 +661,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/* skip an unknown element (unknown property) and its contents */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -600,6 +686,9 @@ modifier|*
 name|element_name
 parameter_list|)
 block|{
+ifdef|#
+directive|ifdef
+name|DEBUG_XMP_PARSER
 name|g_print
 argument_list|(
 literal|"XMP: SKIPPING %s\n"
@@ -607,7 +696,8 @@ argument_list|,
 name|element_name
 argument_list|)
 expr_stmt|;
-comment|/* FIXME - debugging */
+endif|#
+directive|endif
 if|if
 condition|(
 name|context
@@ -660,6 +750,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/* skip and element and all other elements that it may contain */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -695,6 +789,10 @@ name|STATE_SKIPPING_IGNORED_ELEMENTS
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/* skip an unknown attribute (or abort if flags forbid unknown attributes) */
+end_comment
 
 begin_function
 specifier|static
@@ -755,6 +853,22 @@ argument_list|,
 name|element_name
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|DEBUG_XMP_PARSER
+name|g_print
+argument_list|(
+literal|"skipping unknown attribute \"%s\"=\"%s\" in element<%s>\n"
+argument_list|,
+name|attribute_name
+argument_list|,
+name|attribute_value
+argument_list|,
+name|element_name
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -827,6 +941,10 @@ name|TRUE
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/* new namespace/schema seen - add it to the list of namespaces */
+end_comment
 
 begin_function
 specifier|static
@@ -984,6 +1102,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/* free all namespaces that are deeper than the current element depth */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -1013,7 +1135,6 @@ operator|==
 name|NULL
 condition|)
 return|return;
-comment|/* free all namespaces that are deeper than the current element depth */
 name|ns
 operator|=
 name|context
@@ -1113,6 +1234,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/* checks if an element name starts with the prefix of the given namespace */
+end_comment
+
 begin_function
 specifier|static
 name|gboolean
@@ -1171,6 +1296,14 @@ operator|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/* add a new property to the schema referenced by its prefix */
+end_comment
+
+begin_comment
+comment|/* the value(s) of the property will be added later by add_property_value() */
+end_comment
 
 begin_function
 specifier|static
@@ -1300,6 +1433,22 @@ name|NULL
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/* store a value for the current property - if the element containing the */
+end_comment
+
+begin_comment
+comment|/* value is being parsed but the actual value has not been seen yet, then */
+end_comment
+
+begin_comment
+comment|/* call this function with a NULL value so that its data structure is */
+end_comment
+
+begin_comment
+comment|/* allocated now; it will be updated later with update_property_value() */
+end_comment
 
 begin_function
 specifier|static
@@ -1488,6 +1637,7 @@ index|]
 operator|=
 name|NULL
 expr_stmt|;
+comment|/* if value was NULL, then we must update it later */
 name|context
 operator|->
 name|prop_missing_value
@@ -1500,6 +1650,10 @@ operator|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/* update a value that has been allocated but not stored yet */
+end_comment
 
 begin_function
 specifier|static
@@ -1562,6 +1716,10 @@ name|FALSE
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/* invoke the 'set_property' callback and free the temporary structures */
+end_comment
 
 begin_function
 specifier|static
@@ -1786,8 +1944,46 @@ decl_stmt|;
 name|gint
 name|attr
 decl_stmt|;
-comment|/*   g_print ("[%02d/%02d] %d<%s>\n", context->state, context->saved_state,            context->depth, element_name);   */
-comment|/* FIXME - debugging   g_print ("[%25s/%17s] %d<%s>\n",            state_names[context->state],            (context->saved_state == STATE_ERROR             ? "-"             : state_names[context->saved_state]),            context->depth, element_name);   */
+ifdef|#
+directive|ifdef
+name|DEBUG_XMP_PARSER
+name|g_print
+argument_list|(
+literal|"[%25s/%17s] %d<%s>\n"
+argument_list|,
+name|state_names
+index|[
+name|context
+operator|->
+name|state
+index|]
+argument_list|,
+operator|(
+name|context
+operator|->
+name|saved_state
+operator|==
+name|STATE_ERROR
+condition|?
+literal|"-"
+else|:
+name|state_names
+index|[
+name|context
+operator|->
+name|saved_state
+index|]
+operator|)
+argument_list|,
+name|context
+operator|->
+name|depth
+argument_list|,
+name|element_name
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|context
 operator|->
 name|depth
@@ -3212,8 +3408,47 @@ name|context
 init|=
 name|user_data
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|DEBUG_XMP_PARSER
 comment|/*   g_print ("[%02d/%02d] %d</%s>\n", context->state, context->saved_state,            context->depth, element_name);   */
-comment|/* FIXME - debugging   g_print ("[%25s/%17s] %d</%s>\n",            state_names[context->state],            (context->saved_state == STATE_ERROR             ? "-"             : state_names[context->saved_state]),            context->depth, element_name);   */
+name|g_print
+argument_list|(
+literal|"[%25s/%17s] %d</%s>\n"
+argument_list|,
+name|state_names
+index|[
+name|context
+operator|->
+name|state
+index|]
+argument_list|,
+operator|(
+name|context
+operator|->
+name|saved_state
+operator|==
+name|STATE_ERROR
+condition|?
+literal|"-"
+else|:
+name|state_names
+index|[
+name|context
+operator|->
+name|saved_state
+index|]
+operator|)
+argument_list|,
+name|context
+operator|->
+name|depth
+argument_list|,
+name|element_name
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 switch|switch
 condition|(
 name|context
@@ -3711,7 +3946,12 @@ decl_stmt|;
 name|gint
 name|decoded_size
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|DEBUG_XMP_PARSER
 comment|/* g_print ("XMP: Pushing text:\n%s\n", text); */
+endif|#
+directive|endif
 name|max_size
 operator|=
 name|text_len
@@ -3742,6 +3982,9 @@ argument_list|,
 name|max_size
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|DEBUG_XMP_PARSER
 if|if
 condition|(
 name|decoded_size
@@ -3773,6 +4016,8 @@ name|decoded_size
 argument_list|)
 expr_stmt|;
 block|}
+endif|#
+directive|endif
 if|if
 condition|(
 name|decoded_size
@@ -3882,7 +4127,27 @@ break|break;
 case|case
 name|STATE_INSIDE_QDESC_QUAL
 case|:
-comment|/*       g_print ("ignoring qualifier for part of \"%s\"[]: \"%.*s\"\n", 	       context->property, 	       (int)text_len, text);       */
+ifdef|#
+directive|ifdef
+name|DEBUG_XMP_PARSER
+name|g_print
+argument_list|(
+literal|"ignoring qualifier for part of \"%s\"[]: \"%.*s\"\n"
+argument_list|,
+name|context
+operator|->
+name|property
+argument_list|,
+operator|(
+name|int
+operator|)
+name|text_len
+argument_list|,
+name|text
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 comment|/* FIXME: notify the user? add a way to collect qualifiers? */
 break|break;
 case|case
@@ -4719,10 +4984,7 @@ name|error
 argument_list|,
 name|XMP_ERROR_NO_XPACKET
 argument_list|,
-name|_
-argument_list|(
-literal|"No XMP packet found"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -4801,10 +5063,7 @@ name|error
 argument_list|,
 name|XMP_ERROR_NO_XPACKET
 argument_list|,
-name|_
-argument_list|(
-literal|"No XMP packet found"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return

@@ -56,7 +56,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"Schema %s = \"%s\"\n"
 argument_list|,
@@ -96,7 +96,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-comment|/* printf ("End of %s\n", user_ns_prefix); */
+comment|/* g_print ("End of %s\n", user_ns_prefix); */
 block|}
 end_function
 
@@ -154,7 +154,7 @@ block|{
 case|case
 name|XMP_PTYPE_TEXT
 case|:
-name|printf
+name|g_print
 argument_list|(
 literal|"\t%s:%s = \"%s\"\n"
 argument_list|,
@@ -172,7 +172,7 @@ break|break;
 case|case
 name|XMP_PTYPE_RESOURCE
 case|:
-name|printf
+name|g_print
 argument_list|(
 literal|"\t%s:%s @ = \"%s\"\n"
 argument_list|,
@@ -193,7 +193,7 @@ case|:
 case|case
 name|XMP_PTYPE_UNORDERED_LIST
 case|:
-name|printf
+name|g_print
 argument_list|(
 literal|"\t%s:%s [] ="
 argument_list|,
@@ -224,7 +224,7 @@ name|i
 operator|==
 literal|0
 condition|)
-name|printf
+name|g_print
 argument_list|(
 literal|" \"%s\""
 argument_list|,
@@ -235,7 +235,7 @@ index|]
 argument_list|)
 expr_stmt|;
 else|else
-name|printf
+name|g_print
 argument_list|(
 literal|", \"%s\""
 argument_list|,
@@ -245,7 +245,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"\n"
 argument_list|)
@@ -271,7 +271,7 @@ name|i
 operator|+=
 literal|2
 control|)
-name|printf
+name|g_print
 argument_list|(
 literal|"\t%s:%s [size = %d] = \"...\"\n"
 argument_list|,
@@ -314,7 +314,7 @@ name|i
 operator|+=
 literal|2
 control|)
-name|printf
+name|g_print
 argument_list|(
 literal|"\t%s:%s [lang:%s] = \"%s\"\n"
 argument_list|,
@@ -339,7 +339,7 @@ break|break;
 case|case
 name|XMP_PTYPE_STRUCTURE
 case|:
-name|printf
+name|g_print
 argument_list|(
 literal|"\tLocal schema %s = \"%s\"\n"
 argument_list|,
@@ -371,7 +371,7 @@ name|i
 operator|+=
 literal|2
 control|)
-name|printf
+name|g_print
 argument_list|(
 literal|"\t%s:%s [%s] = \"%s\"\n"
 argument_list|,
@@ -394,7 +394,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|printf
+name|g_print
 argument_list|(
 literal|"\t%s:%s = ?\n"
 argument_list|,
@@ -432,10 +432,8 @@ name|filename
 init|=
 name|user_data
 decl_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"While parsing XMP metadata in %s:\n%s\n"
 argument_list|,
 name|filename
@@ -493,7 +491,7 @@ name|XMPParseContext
 modifier|*
 name|context
 decl_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"\nFile: %s\n"
 argument_list|,
@@ -671,10 +669,8 @@ return|;
 block|}
 else|else
 block|{
-name|fprintf
+name|g_print
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Usage:\n"
 literal|"\txmpdump file [file [...]]\n\n"
 literal|"The file(s) given on the command line will be scanned "
