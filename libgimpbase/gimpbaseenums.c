@@ -3104,7 +3104,7 @@ name|GIMP_TRANSFORM_FORWARD
 block|,
 name|N_
 argument_list|(
-literal|"Forward (traditional)"
+literal|"Forward"
 argument_list|)
 block|,
 name|NULL
@@ -3115,7 +3115,7 @@ name|GIMP_TRANSFORM_BACKWARD
 block|,
 name|N_
 argument_list|(
-literal|"Backward (corrective)"
+literal|"Backward"
 argument_list|)
 block|,
 name|NULL
