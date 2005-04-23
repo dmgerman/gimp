@@ -382,10 +382,12 @@ name|y
 operator|++
 control|)
 block|{
+specifier|const
 name|guchar
 modifier|*
 name|src_pixels
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|dest_pixels
 decl_stmt|;
