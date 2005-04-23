@@ -462,6 +462,9 @@ case|case
 name|XMP_TYPE_DEVICE_SETTINGS
 case|:
 case|case
+name|XMP_TYPE_CONTACT_INFO
+case|:
+case|case
 name|XMP_TYPE_GENERIC_STRUCTURE
 case|:
 if|if
