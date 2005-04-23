@@ -850,12 +850,12 @@ comment|/* -1: skip whitespace, -2: end of input, -3: error */
 end_comment
 
 begin_comment
-comment|/**  * base64_decode:  * @src_b64: input buffer containing base64-encoded data  * @src_size: input buffer size (in bytes) or -1 if @src_b64 is nul-terminated  * @dest: buffer in which the decoded data should be stored  * @dest_size: size of the destination buffer  *  * Read base64-encoded data from the input buffer @src_b64 and write  * the decoded data into @dest.  *  * The base64 encoding uses 4 bytes for every 3 bytes of input, so  * @dest_size should be at least 3/4 of @src_size (or less if the  * input contains whitespace characters).  The base64 encoding has no  * reliable EOF marker, so this can cause additional data following  * the base64-encoded block to be misinterpreted if @src_size is not  * specified correctly.  The decoder will stop at the first nul byte  * or at the first '=' (padding byte) so you should ensure that one of  * these is present if you supply -1 for @src_size.  For more details  * about the base64 encoding, see RFC 2045, chapter 6.8.  *  * Returns: the number of bytes stored in @dest, or -1 if invalid data was found.  */
+comment|/**  * base64_decode:  * @src_b64: input buffer containing base64-encoded data  * @src_size: input buffer size (in bytes) or -1 if @src_b64 is nul-terminated  * @dest: buffer in which the decoded data should be stored  * @dest_size: size of the destination buffer  * @ignore_errors: if #TRUE, skip all invalid characters (no data validation)  *  * Read base64-encoded data from the input buffer @src_b64 and write  * the decoded data into @dest.  *  * The base64 encoding uses 4 bytes for every 3 bytes of input, so  * @dest_size should be at least 3/4 of @src_size (or less if the  * input contains whitespace characters).  The base64 encoding has no  * reliable EOF marker, so this can cause additional data following  * the base64-encoded block to be misinterpreted if @src_size is not  * specified correctly.  The decoder will stop at the first nul byte  * or at the first '=' (padding byte) so you should ensure that one of  * these is present if you supply -1 for @src_size.  For more details  * about the base64 encoding, see RFC 2045, chapter 6.8.  *  * Returns: the number of bytes stored in @dest, or -1 if invalid data was found.  */
 end_comment
 
 begin_function
 name|gssize
-DECL|function|base64_decode (const gchar * src_b64,gsize src_size,gchar * dest,gsize dest_size)
+DECL|function|base64_decode (const gchar * src_b64,gsize src_size,gchar * dest,gsize dest_size,gboolean ignore_errors)
 name|base64_decode
 parameter_list|(
 specifier|const
@@ -872,6 +872,9 @@ name|dest
 parameter_list|,
 name|gsize
 name|dest_size
+parameter_list|,
+name|gboolean
+name|ignore_errors
 parameter_list|)
 block|{
 name|gint32
@@ -968,11 +971,28 @@ block|{
 if|if
 condition|(
 name|bits
-operator|<
+operator|==
 operator|-
-literal|1
+literal|2
 condition|)
 break|break;
+elseif|else
+if|if
+condition|(
+operator|(
+name|bits
+operator|==
+operator|-
+literal|3
+operator|)
+operator|&&
+operator|!
+name|ignore_errors
+condition|)
+return|return
+operator|-
+literal|1
+return|;
 else|else
 continue|continue;
 block|}
@@ -1037,17 +1057,6 @@ literal|0
 expr_stmt|;
 block|}
 block|}
-if|if
-condition|(
-name|bits
-operator|<
-operator|-
-literal|2
-condition|)
-return|return
-operator|-
-literal|1
-return|;
 if|if
 condition|(
 operator|(

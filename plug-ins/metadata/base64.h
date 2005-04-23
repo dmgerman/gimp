@@ -41,6 +41,9 @@ name|dest
 parameter_list|,
 name|gsize
 name|dest_size
+parameter_list|,
+name|gboolean
+name|ignore_errors
 parameter_list|)
 function_decl|;
 end_function_decl

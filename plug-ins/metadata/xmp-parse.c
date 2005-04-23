@@ -121,7 +121,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275738120103
+DECL|enum|__anon2af3e9420103
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -215,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275738120208
+DECL|struct|__anon2af3e9420208
 block|{
 DECL|member|depth
 name|gint
@@ -3980,6 +3980,8 @@ argument_list|,
 name|decoded
 argument_list|,
 name|max_size
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 ifdef|#

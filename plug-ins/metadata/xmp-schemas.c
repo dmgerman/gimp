@@ -818,7 +818,7 @@ block|,
 name|FALSE
 block|}
 block|,
-comment|/* 3 * 256 ints */
+comment|/*3 * 256 ints*/
 block|{
 literal|"WhitePoint"
 block|,
@@ -948,7 +948,7 @@ block|,
 name|FALSE
 block|}
 block|,
-comment|/* "0100" */
+comment|/*"0100"*/
 block|{
 literal|"ColorSpace"
 block|,
@@ -957,7 +957,7 @@ block|,
 name|FALSE
 block|}
 block|,
-comment|/* 1 or -32768 */
+comment|/*1 or -32768*/
 block|{
 literal|"ComponentsConfiguration"
 block|,
@@ -966,7 +966,7 @@ block|,
 name|FALSE
 block|}
 block|,
-comment|/* 4 ints */
+comment|/*4 ints*/
 block|{
 literal|"CompressedBitsPerPixel"
 block|,
@@ -999,7 +999,7 @@ block|,
 name|FALSE
 block|}
 block|,
-comment|/* base64 enc.? */
+comment|/*base64 enc.?*/
 block|{
 literal|"UserComment"
 block|,
@@ -1016,7 +1016,7 @@ block|,
 name|FALSE
 block|}
 block|,
-comment|/* DOS 8.3 fname */
+comment|/*DOS 8.3*/
 block|{
 literal|"DateTimeOriginal"
 block|,
@@ -1131,7 +1131,7 @@ block|,
 name|FALSE
 block|}
 block|,
-comment|/* in meters */
+comment|/*in meters*/
 block|{
 literal|"MeteringMode"
 block|,
@@ -1140,7 +1140,7 @@ block|,
 name|FALSE
 block|}
 block|,
-comment|/* 0-6 or 255 */
+comment|/*0-6 or 255*/
 block|{
 literal|"LightSource"
 block|,
@@ -1149,7 +1149,7 @@ block|,
 name|FALSE
 block|}
 block|,
-comment|/* 0-3,17-22,255*/
+comment|/*0-3,17-22,255*/
 block|{
 literal|"Flash"
 block|,
@@ -1214,7 +1214,7 @@ block|,
 name|FALSE
 block|}
 block|,
-comment|/* unit: 2 or 3 */
+comment|/*unit: 2 or 3*/
 block|{
 literal|"SubjectLocation"
 block|,
@@ -1223,7 +1223,7 @@ block|,
 name|FALSE
 block|}
 block|,
-comment|/* 2 ints: X, Y */
+comment|/*2 ints: X, Y*/
 block|{
 literal|"ExposureIndex"
 block|,
@@ -1476,7 +1476,7 @@ block|,
 name|FALSE
 block|}
 block|,
-comment|/* "K","M","N" */
+comment|/*"K","M","N"*/
 block|{
 literal|"GPSSpeed"
 block|,
@@ -1493,7 +1493,7 @@ block|,
 name|FALSE
 block|}
 block|,
-comment|/* "T" or "M"" */
+comment|/* "T" or "M" */
 block|{
 literal|"GPSTrack"
 block|,
@@ -1510,7 +1510,7 @@ block|,
 name|FALSE
 block|}
 block|,
-comment|/* "T" or "M"" */
+comment|/* "T" or "M" */
 block|{
 literal|"GPSImgDirection"
 block|,
@@ -1551,7 +1551,7 @@ block|,
 name|FALSE
 block|}
 block|,
-comment|/* "T" or "M"" */
+comment|/* "T" or "M" */
 block|{
 literal|"GPSDestBearing"
 block|,
@@ -1568,7 +1568,7 @@ block|,
 name|FALSE
 block|}
 block|,
-comment|/* "K","M","N" */
+comment|/* "K","M","N"*/
 block|{
 literal|"GPSDestDistance"
 block|,
@@ -1656,15 +1656,58 @@ name|iptccore_properties
 index|[]
 init|=
 block|{
-comment|/* FIXME */
 block|{
-literal|"CreatorContactInfo"
+literal|"CountryCode"
 block|,
-name|XMP_TYPE_GENERIC_STRUCTURE
+name|XMP_TYPE_TEXT
 block|,
 name|TRUE
 block|}
 block|,
+comment|/* ISO 3166 */
+block|{
+literal|"CreatorContactInfo"
+block|,
+name|XMP_TYPE_CONTACT_INFO
+block|,
+name|TRUE
+block|}
+block|,
+comment|/* RFC 2426 */
+block|{
+literal|"IntellectualGenre"
+block|,
+name|XMP_TYPE_TEXT
+block|,
+name|TRUE
+block|}
+block|,
+block|{
+literal|"Location"
+block|,
+name|XMP_TYPE_TEXT
+block|,
+name|TRUE
+block|}
+block|,
+block|{
+literal|"Scene"
+block|,
+name|XMP_TYPE_TEXT_BAG
+block|,
+name|TRUE
+block|}
+block|,
+comment|/*newscodes*/
+block|{
+literal|"SubjectCode"
+block|,
+name|XMP_TYPE_TEXT_BAG
+block|,
+name|TRUE
+block|}
+block|,
+comment|/*newscodes*/
 block|{
 name|NULL
 block|,

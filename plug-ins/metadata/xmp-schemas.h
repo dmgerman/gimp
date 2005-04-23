@@ -27,7 +27,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29aa4beb0103
+DECL|enum|__anon29099ea80103
 block|{
 DECL|enumerator|XMP_TYPE_BOOLEAN
 name|XMP_TYPE_BOOLEAN
@@ -129,6 +129,10 @@ DECL|enumerator|XMP_TYPE_DEVICE_SETTINGS
 name|XMP_TYPE_DEVICE_SETTINGS
 block|,
 comment|/* (?) */
+DECL|enumerator|XMP_TYPE_CONTACT_INFO
+name|XMP_TYPE_CONTACT_INFO
+block|,
+comment|/* STRUCTURE */
 DECL|enumerator|XMP_TYPE_GENERIC_STRUCTURE
 name|XMP_TYPE_GENERIC_STRUCTURE
 block|,
@@ -148,7 +152,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29aa4beb0208
+DECL|struct|__anon29099ea80208
 block|{
 DECL|member|name
 specifier|const
@@ -177,7 +181,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29aa4beb0308
+DECL|struct|__anon29099ea80308
 block|{
 DECL|member|uri
 specifier|const
