@@ -49,6 +49,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpconfig/gimpconfig.h"
 end_include
 
@@ -1012,6 +1018,12 @@ condition|)
 return|return
 name|EXIT_SUCCESS
 return|;
+name|gtk_rc_add_default_file
+argument_list|(
+name|gimp_gtkrc
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|gimp_widgets_init
 argument_list|(
 name|shooter_standard_help
