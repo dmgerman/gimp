@@ -78,25 +78,6 @@ begin_comment
 comment|/* For _getpid() */
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|_MSC_VER
-end_ifdef
-
-begin_typedef
-DECL|typedef|pid_t
-typedef|typedef
-name|int
-name|pid_t
-typedef|;
-end_typedef
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_endif
 endif|#
 directive|endif
@@ -2543,9 +2524,6 @@ modifier|*
 name|config
 parameter_list|)
 block|{
-name|pid_t
-name|pid
-decl_stmt|;
 name|gchar
 modifier|*
 name|tmpdir
@@ -2571,11 +2549,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|pid
-operator|=
-name|getpid
-argument_list|()
-expr_stmt|;
 name|tmpfile
 operator|=
 name|g_strdup_printf
@@ -2585,7 +2558,8 @@ argument_list|,
 operator|(
 name|gint
 operator|)
-name|pid
+name|getpid
+argument_list|()
 argument_list|,
 name|tmp_file_index
 operator|++
