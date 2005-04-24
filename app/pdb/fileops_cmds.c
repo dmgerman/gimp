@@ -2247,7 +2247,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"attempt to register non-existant load handler \"%s\""
+literal|"attempt to register nonexistent load handler \"%s\""
 argument_list|,
 name|name
 argument_list|)
@@ -2797,7 +2797,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"attempt to register non-existant save handler \"%s\""
+literal|"attempt to register nonexistent save handler \"%s\""
 argument_list|,
 name|name
 argument_list|)
