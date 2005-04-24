@@ -78,6 +78,25 @@ begin_comment
 comment|/* For _getpid() */
 end_comment
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|_MSC_VER
+end_ifdef
+
+begin_typedef
+DECL|typedef|pid_t
+typedef|typedef
+name|int
+name|pid_t
+typedef|;
+end_typedef
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_endif
 endif|#
 directive|endif
