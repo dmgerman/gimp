@@ -243,6 +243,12 @@ block|{
 ifdef|#
 directive|ifdef
 name|ENABLE_MP
+if|if
+condition|(
+operator|!
+name|g_thread_supported
+argument_list|()
+condition|)
 name|g_thread_init
 argument_list|(
 name|NULL
