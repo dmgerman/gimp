@@ -50,7 +50,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bba412b0108
+DECL|struct|__anon29bd6b970108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -111,9 +111,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|inline
 specifier|static
 name|void
-specifier|inline
 name|color_to_alpha
 parameter_list|(
 name|GimpRGB
@@ -686,8 +686,8 @@ block|}
 end_function
 
 begin_function
-specifier|static
 specifier|inline
+specifier|static
 name|void
 DECL|function|color_to_alpha (GimpRGB * src,const GimpRGB * color)
 name|color_to_alpha
@@ -1740,6 +1740,16 @@ operator|.
 name|color
 argument_list|,
 name|GIMP_COLOR_AREA_FLAT
+argument_list|)
+expr_stmt|;
+name|gimp_color_button_set_update
+argument_list|(
+name|GIMP_COLOR_BUTTON
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
