@@ -153,7 +153,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4a7b1b0108
+DECL|struct|__anon2b5f6a5f0108
 block|{
 DECL|member|states
 name|GSList
@@ -179,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4a7b1b0203
+DECL|enum|__anon2b5f6a5f0203
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -2146,6 +2146,11 @@ name|g_strerror
 argument_list|(
 name|errno
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|close
+argument_list|(
+name|fd
 argument_list|)
 expr_stmt|;
 return|return
