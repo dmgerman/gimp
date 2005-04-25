@@ -98,6 +98,10 @@ name|ProcRecord
 name|db_info
 decl_stmt|;
 comment|/*  file proc specific members  */
+DECL|member|file_proc
+name|gboolean
+name|file_proc
+decl_stmt|;
 DECL|member|extensions
 name|gchar
 modifier|*

@@ -306,6 +306,8 @@ block|}
 block|}
 block|,   }
 block|,
+name|TRUE
+block|,
 literal|"xcf"
 block|,
 literal|""
@@ -442,6 +444,8 @@ name|xcf_save_invoker
 block|}
 block|}
 block|,   }
+block|,
+name|TRUE
 block|,
 literal|"xcf"
 block|,
