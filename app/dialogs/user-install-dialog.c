@@ -163,7 +163,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c75281e0103
+DECL|enum|__anon29dacab00103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -188,7 +188,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c75281e0203
+DECL|enum|__anon29dacab00203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -400,7 +400,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c75281e0303
+DECL|enum|__anon29dacab00303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -422,7 +422,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c75281e0408
+DECL|struct|__anon29dacab00408
 block|{
 DECL|member|directory
 name|gboolean
@@ -486,12 +486,12 @@ literal|"pluginrc"
 block|,
 name|N_
 argument_list|(
-literal|"Plug-ins and extensions are external programs run "
-literal|"by the GIMP which provide additional functionality.  "
-literal|"These programs are searched for at run-time and "
-literal|"information about their functionality and mod-times "
-literal|"is cached in this file.  This file is intended to "
-literal|"be GIMP-readable only, and should not be edited."
+literal|"Plug-ins and extensions are external programs which "
+literal|"provide additional functionality to GIMP.  These "
+literal|"programs are searched for at run-time and information "
+literal|"about their functionality is cached in this file.  "
+literal|"This file is intended to be written by GIMP only, "
+literal|"and should not be edited."
 argument_list|)
 block|,
 name|TREE_ITEM_DO_NOTHING
@@ -504,11 +504,11 @@ literal|"menurc"
 block|,
 name|N_
 argument_list|(
-literal|"Key shortcuts can be dynamically redefined in The GIMP. "
+literal|"Key shortcuts can be dynamically redefined. "
 literal|"The menurc is a dump of your configuration so it can. "
 literal|"be remembered for the next session.  You may edit this "
 literal|"file if you wish, but it is much easier to define the "
-literal|"keys from within The GIMP.  Deleting this file will "
+literal|"keys from within GIMP.  Deleting this file will "
 literal|"restore the default shortcuts."
 argument_list|)
 block|,
@@ -523,8 +523,8 @@ block|,
 name|N_
 argument_list|(
 literal|"The sessionrc is used to store what dialog windows were "
-literal|"open the last time you quit The GIMP.  You can configure "
-literal|"The GIMP to reopen these dialogs at the saved position."
+literal|"open the last time you quit GIMP.  You can configure "
+literal|"GIMP to reopen these dialogs at the saved position."
 argument_list|)
 block|,
 name|TREE_ITEM_DO_NOTHING
@@ -569,9 +569,8 @@ block|,
 name|N_
 argument_list|(
 literal|"This folder is used to store user defined brushes. "
-literal|"The GIMP checks this folder in addition to the system-wide "
-literal|"GIMP brushes installation when searching for "
-literal|"brushes."
+literal|"GIMP checks this folder in addition to the system-wide "
+literal|"brushes installation."
 argument_list|)
 block|,
 name|TREE_ITEM_MKDIR
@@ -584,11 +583,10 @@ literal|"fonts"
 block|,
 name|N_
 argument_list|(
-literal|"This folder is used to store fonts you only want "
-literal|"visible in the GIMP. The GIMP checks this folder in "
-literal|"addition to the system-wide GIMP fonts installation "
-literal|"when searching for fonts. Use this only if you really "
-literal|"want to have GIMP-only fonts, otherwise put things "
+literal|"This folder is used to store fonts you only want to be "
+literal|"visible in GIMP. GIMP checks this folder in addition to "
+literal|"the system-wide fonts installation. Use this only if you really "
+literal|"want to have fonts available in GIMP only, otherwise put them "
 literal|"in your global font directory."
 argument_list|)
 block|,
@@ -603,8 +601,8 @@ block|,
 name|N_
 argument_list|(
 literal|"This folder is used to store user defined gradients.  "
-literal|"The GIMP checks this folder in addition to the system-wide "
-literal|"GIMP gradients installation when searching for gradients."
+literal|"GIMP checks this folder in addition to the system-wide "
+literal|"gradients installation."
 argument_list|)
 block|,
 name|TREE_ITEM_MKDIR
@@ -618,8 +616,8 @@ block|,
 name|N_
 argument_list|(
 literal|"This folder is used to store user defined palettes.  "
-literal|"The GIMP checks this folder in addition to the system-wide "
-literal|"GIMP palettes installation when searching for palettes."
+literal|"GIMP checks this folder in addition to the system-wide "
+literal|"palettes installation."
 argument_list|)
 block|,
 name|TREE_ITEM_MKDIR
@@ -633,8 +631,8 @@ block|,
 name|N_
 argument_list|(
 literal|"This folder is used to store user defined patterns.  "
-literal|"The GIMP checks this folder in addition to the system-wide "
-literal|"GIMP patterns installation when searching for patterns."
+literal|"GIMP checks this folder in addition to the system-wide "
+literal|"patterns installation when searching for patterns."
 argument_list|)
 block|,
 name|TREE_ITEM_MKDIR
@@ -648,9 +646,9 @@ block|,
 name|N_
 argument_list|(
 literal|"This folder is used to store user created, temporary, "
-literal|"or otherwise non-system-supported plug-ins.  The GIMP "
+literal|"or otherwise non-system-supported plug-ins.  GIMP "
 literal|"checks this folder in addition to the system-wide "
-literal|"GIMP plug-in folder when searching for plug-ins."
+literal|"plug-in folder."
 argument_list|)
 block|,
 name|TREE_ITEM_MKDIR
@@ -664,10 +662,9 @@ block|,
 name|N_
 argument_list|(
 literal|"This folder is used to store user created, temporary, "
-literal|"or otherwise non-system-supported DLL modules.  The "
-literal|"GIMP checks this folder in addition to the system-wide "
-literal|"GIMP module folder when searching for modules to load "
-literal|"during initialization."
+literal|"or otherwise non-system-supported DLL modules.  GIMP "
+literal|"checks this folder in addition to the system-wide "
+literal|"module folder."
 argument_list|)
 block|,
 name|TREE_ITEM_MKDIR
@@ -682,7 +679,7 @@ name|N_
 argument_list|(
 literal|"This folder is used to store configuration for user "
 literal|"created, temporary, or otherwise non-system-supported "
-literal|"plug-in interpreters.  The GIMP checks this folder in "
+literal|"plug-in interpreters.  GIMP checks this folder in "
 literal|"addition to the system-wide GIMP interpreters folder "
 literal|"when searching for plug-in interpreter configuration "
 literal|"files."
@@ -700,7 +697,7 @@ name|N_
 argument_list|(
 literal|"This folder is used to store user created, temporary, "
 literal|"or otherwise non-system-supported additions to the "
-literal|"plug-in environment.  The GIMP checks this folder in "
+literal|"plug-in environment.  GIMP checks this folder in "
 literal|"addition to the system-wide GIMP environment folder "
 literal|"when searching for plug-in environment modification "
 literal|"files."
@@ -717,9 +714,8 @@ block|,
 name|N_
 argument_list|(
 literal|"This folder is used to store user created and installed "
-literal|"scripts.  The GIMP checks this folder in addition to "
-literal|"the systemwide GIMP scripts folder when searching for "
-literal|"scripts."
+literal|"scripts.  GIMP checks this folder in addition to "
+literal|"the systemwide scripts folder."
 argument_list|)
 block|,
 name|TREE_ITEM_MKDIR
@@ -758,11 +754,7 @@ literal|"tmp"
 block|,
 name|N_
 argument_list|(
-literal|"This folder is used to temporarily store undo buffers "
-literal|"to reduce memory usage.  If The GIMP is unceremoniously "
-literal|"killed, files of the form: gimp<#>.<#> may persist in "
-literal|"this folder.  These files are useless across GIMP "
-literal|"sessions and can be destroyed with impunity."
+literal|"This folder is used for temporary files."
 argument_list|)
 block|,
 name|TREE_ITEM_MKDIR
