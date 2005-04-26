@@ -50,7 +50,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bd6b970108
+DECL|struct|__anon2bac93590108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -111,8 +111,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|inline
 specifier|static
+specifier|inline
 name|void
 name|color_to_alpha
 parameter_list|(
@@ -686,8 +686,8 @@ block|}
 end_function
 
 begin_function
-specifier|inline
 specifier|static
+specifier|inline
 name|void
 DECL|function|color_to_alpha (GimpRGB * src,const GimpRGB * color)
 name|color_to_alpha
