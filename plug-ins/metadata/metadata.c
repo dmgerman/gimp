@@ -566,10 +566,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_metadata_editor"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/File/Info"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_icon_register
