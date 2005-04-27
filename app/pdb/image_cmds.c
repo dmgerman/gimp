@@ -13470,6 +13470,11 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
+name|g_free
+argument_list|(
+name|utf8
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 name|success
