@@ -136,7 +136,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3b4de90103
+DECL|enum|__anon297ff6b70103
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -2021,7 +2021,7 @@ name|GTK_STOCK_GO_BACK
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"<alt>Left"
 block|,
 name|N_
 argument_list|(
@@ -2041,7 +2041,7 @@ name|GTK_STOCK_GO_FORWARD
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"<alt>Right"
 block|,
 name|N_
 argument_list|(
@@ -2061,7 +2061,7 @@ name|GTK_STOCK_INDEX
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"<alt>Home"
 block|,
 name|N_
 argument_list|(
@@ -2081,7 +2081,7 @@ name|GTK_STOCK_ZOOM_IN
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"<control>plus"
 block|,
 name|NULL
 block|,
@@ -2098,7 +2098,7 @@ name|GTK_STOCK_ZOOM_OUT
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"<control>minus"
 block|,
 name|NULL
 block|,
@@ -2325,6 +2325,7 @@ literal|"<ui>"
 literal|"<popup name=\"help-browser-popup\">"
 literal|"<menuitem action=\"back\" />"
 literal|"<menuitem action=\"forward\" />"
+literal|"<menuitem action=\"index\" />"
 literal|"<separator />"
 literal|"<menuitem action=\"zoom-in\" />"
 literal|"<menuitem action=\"zoom-out\" />"
