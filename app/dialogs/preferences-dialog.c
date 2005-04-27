@@ -8521,7 +8521,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon289fe01c0108
+DECL|struct|__anon2bae0c1a0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9065,7 +9065,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Transparency _type:"
+literal|"_Check Style:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -9090,7 +9090,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Check _size:"
+literal|"Check _Size:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -9674,7 +9674,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon289fe01c0208
+DECL|struct|__anon2bae0c1a0208
 block|{
 DECL|member|label
 specifier|const
@@ -10598,7 +10598,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon289fe01c0308
+DECL|struct|__anon2bae0c1a0308
 block|{
 DECL|member|label
 specifier|const
@@ -10755,7 +10755,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon289fe01c0408
+DECL|struct|__anon2bae0c1a0408
 block|{
 DECL|member|tree_label
 specifier|const
