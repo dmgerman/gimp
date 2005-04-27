@@ -58,6 +58,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_function
+specifier|const
 name|guchar
 modifier|*
 DECL|function|gimp_image_get_colormap (const GimpImage * gimage)

@@ -25,6 +25,7 @@ value|768
 end_define
 
 begin_function_decl
+specifier|const
 name|guchar
 modifier|*
 name|gimp_image_get_colormap
