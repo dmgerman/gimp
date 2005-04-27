@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4ecd110103
+DECL|enum|__anon274ac6310103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -69,7 +69,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4ecd110203
+DECL|enum|__anon274ac6310203
 block|{
 DECL|enumerator|COLUMN_UTF8
 name|COLUMN_UTF8
@@ -1407,22 +1407,17 @@ expr_stmt|;
 if|if
 condition|(
 name|old_path
-operator|==
-name|path
-operator|||
-operator|(
-name|old_path
 operator|&&
 name|path
 operator|&&
-operator|!
 name|strcmp
 argument_list|(
 name|old_path
 argument_list|,
 name|path
 argument_list|)
-operator|)
+operator|==
+literal|0
 condition|)
 block|{
 name|g_free
@@ -1432,6 +1427,11 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+name|g_free
+argument_list|(
+name|old_path
+argument_list|)
+expr_stmt|;
 name|path_list
 operator|=
 name|gimp_path_parse
