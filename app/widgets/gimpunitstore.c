@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a76e810103
+DECL|enum|__anon2adf08360103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1736,8 +1736,6 @@ name|store
 operator|->
 name|num_values
 condition|;
-name|i
-operator|++
 control|)
 block|{
 name|store
@@ -1749,6 +1747,15 @@ index|]
 operator|=
 name|first_value
 expr_stmt|;
+if|if
+condition|(
+operator|++
+name|i
+operator|<
+name|store
+operator|->
+name|num_values
+condition|)
 name|first_value
 operator|=
 name|va_arg
@@ -1864,8 +1871,6 @@ name|store
 operator|->
 name|num_values
 condition|;
-name|i
-operator|++
 control|)
 block|{
 name|store
@@ -1877,6 +1882,15 @@ index|]
 operator|=
 name|first_resolution
 expr_stmt|;
+if|if
+condition|(
+operator|++
+name|i
+operator|<
+name|store
+operator|->
+name|num_values
+condition|)
 name|first_resolution
 operator|=
 name|va_arg
@@ -2035,8 +2049,6 @@ name|store
 operator|->
 name|num_values
 condition|;
-name|i
-operator|++
 control|)
 block|{
 if|if
@@ -2055,6 +2067,15 @@ argument_list|,
 name|i
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|++
+name|i
+operator|<
+name|store
+operator|->
+name|num_values
+condition|)
 name|first_value
 operator|=
 name|va_arg
