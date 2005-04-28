@@ -52,7 +52,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278069de0108
+DECL|struct|__anon27a6b5760108
 block|{
 DECL|member|factor
 name|gdouble
@@ -126,6 +126,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|gimp_unit_percent
 specifier|static
+specifier|const
 name|GimpUnitDef
 name|gimp_unit_percent
 init|=

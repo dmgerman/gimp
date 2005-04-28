@@ -52,7 +52,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c786be40108
+DECL|struct|__anon27c1b5160108
 block|{
 DECL|member|delete_on_exit
 name|gboolean
@@ -104,6 +104,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|gimp_unit_defs
 specifier|static
+specifier|const
 name|GimpUnitDef
 name|gimp_unit_defs
 index|[
@@ -244,6 +245,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|gimp_unit_percent
 specifier|static
+specifier|const
 name|GimpUnitDef
 name|gimp_unit_percent
 init|=
