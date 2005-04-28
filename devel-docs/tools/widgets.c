@@ -3114,15 +3114,15 @@ name|menu
 operator|=
 name|gimp_unit_menu_new
 argument_list|(
-literal|"%a - %y (%f\""
+literal|"%p"
 argument_list|,
-name|GIMP_UNIT_POINT
-argument_list|,
-name|TRUE
+name|GIMP_UNIT_MM
 argument_list|,
 name|TRUE
 argument_list|,
-name|TRUE
+name|FALSE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -3368,7 +3368,16 @@ name|create_preview_area
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|/*    * The following doesn't work, we should init the unit system before.    * retval = g_list_append (retval, create_unit_menu ());    */
+name|retval
+operator|=
+name|g_list_append
+argument_list|(
+name|retval
+argument_list|,
+name|create_unit_menu
+argument_list|()
+argument_list|)
+expr_stmt|;
 return|return
 name|retval
 return|;

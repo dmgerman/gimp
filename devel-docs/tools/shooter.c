@@ -79,13 +79,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets.h"
+file|"shadow.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"shadow.h"
+file|"units.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets.h"
 end_include
 
 begin_function
@@ -1023,6 +1029,9 @@ argument_list|(
 name|gimp_gtkrc
 argument_list|()
 argument_list|)
+expr_stmt|;
+name|units_init
+argument_list|()
 expr_stmt|;
 name|gimp_widgets_init
 argument_list|(
