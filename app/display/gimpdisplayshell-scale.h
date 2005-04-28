@@ -64,7 +64,7 @@ name|gimp_display_shell_scale_set_dot_for_dot
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|gboolean
 name|dot_for_dot
@@ -78,7 +78,7 @@ name|gimp_display_shell_scale
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|GimpZoomType
 name|zoom_type
@@ -95,7 +95,7 @@ name|gimp_display_shell_scale_to
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|GimpZoomType
 name|zoom_type
@@ -140,7 +140,7 @@ name|gimp_display_shell_scale_by_values
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|gdouble
 name|scale
