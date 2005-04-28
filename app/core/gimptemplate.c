@@ -129,7 +129,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c7e9a90103
+DECL|enum|__anon2c0668ad0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1675,15 +1675,6 @@ argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
-name|gimp_image_add_layer
-argument_list|(
-name|gimage
-argument_list|,
-name|layer
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 name|gimp_drawable_fill_by_type
 argument_list|(
 name|GIMP_DRAWABLE
@@ -1696,6 +1687,15 @@ argument_list|,
 name|template
 operator|->
 name|fill_type
+argument_list|)
+expr_stmt|;
+name|gimp_image_add_layer
+argument_list|(
+name|gimage
+argument_list|,
+name|layer
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_enable
