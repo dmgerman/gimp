@@ -3343,12 +3343,6 @@ expr_stmt|;
 if|if
 condition|(
 name|error
-operator|&&
-name|y
-operator|+
-literal|1
-operator|<
-name|ye
 condition|)
 block|{
 name|info
@@ -4406,8 +4400,6 @@ expr_stmt|;
 if|if
 condition|(
 name|step
-operator|!=
-literal|0
 condition|)
 block|{
 name|x
