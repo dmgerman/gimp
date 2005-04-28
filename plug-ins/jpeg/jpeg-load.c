@@ -1670,7 +1670,12 @@ name|infile
 argument_list|)
 expr_stmt|;
 comment|/* At this point you may want to check to see whether any corrupt-data    * warnings occurred (test whether jerr.num_warnings is nonzero).    */
-comment|/* Tell the GIMP to display the image.    */
+comment|/* Detach from the drawable and add it to the image.    */
+name|gimp_drawable_detach
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|gimp_image_add_layer
 argument_list|(
 name|image_ID
@@ -1678,11 +1683,6 @@ argument_list|,
 name|layer_ID
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gimp_drawable_flush
-argument_list|(
-name|drawable
 argument_list|)
 expr_stmt|;
 comment|/* pw - Last of all, attach the parasites (couldn't do it earlier -      there was no image. */
@@ -1752,7 +1752,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c746330108
+DECL|struct|__anon2be302d70108
 block|{
 DECL|member|pub
 name|struct
