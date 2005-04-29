@@ -704,7 +704,8 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-literal|500
+operator|-
+literal|1
 argument_list|,
 literal|120
 operator|+
@@ -713,11 +714,11 @@ name|num_layers
 operator|>
 literal|4
 condition|?
-literal|400
+literal|500
 else|:
 name|num_layers
 operator|*
-literal|100
+literal|120
 operator|)
 argument_list|)
 expr_stmt|;
