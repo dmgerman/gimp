@@ -55,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2e59760103
+DECL|enum|__anon2c66f8650103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -521,6 +521,10 @@ argument_list|,
 literal|"selectable"
 argument_list|,
 name|TRUE
+argument_list|,
+literal|"can-focus"
+argument_list|,
+name|FALSE
 argument_list|,
 literal|"xalign"
 argument_list|,
