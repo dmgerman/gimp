@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -332,35 +338,17 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|gint xoff;   gint yoff;
-comment|/*  set the construct flag, used to determine if anything    *  has been written to the gimage raw image yet.    */
-block|gimage->construct_flag = FALSE;    if (gimage->layers)     {       gimp_item_offsets (GIMP_ITEM (gimage->layers->data),&xoff,&yoff);     }    if ((gimage->layers)&&
-comment|/* There's a layer.      */
-block|(! g_slist_next (gimage->layers))&&
-comment|/* It's the only layer.  */
-block|(gimp_drawable_has_alpha (GIMP_DRAWABLE (gimage->layers->data)))&&
-comment|/* It's !flat.           */
-block|(gimp_item_get_visible (GIMP_ITEM (gimage->layers->data)))&&
-comment|/* It's visible.         */
-block|(gimp_item_width  (GIMP_ITEM (gimage->layers->data)) ==        gimage->width)&&       (gimp_item_height (GIMP_ITEM (gimage->layers->data)) ==        gimage->height)&&
-comment|/* Covers all.           */
-block|(!gimp_drawable_is_indexed (GIMP_DRAWABLE (gimage->layers->data)))&&
-comment|/* Not indexed.          */
-block|(((GimpLayer *)(gimage->layers->data))->opacity == GIMP_OPACITY_OPAQUE)
-comment|/* Opaque                */
-block|)     {       gint xoff;       gint yoff;        gimp_item_offsets (GIMP_ITEM (gimage->layers->data),&xoff,&yoff);        if ((xoff==0)&& (yoff==0))
-comment|/* Starts at 0,0         */
-block|{ 	  PixelRegion srcPR, destPR; 	  gpointer    pr;  	  g_warning("Can use cow-projection hack.  Yay!");  	  pixel_region_init (&srcPR, gimp_drawable_data 			     (GIMP_DRAWABLE (gimage->layers->data)), 			     x, y, w,h, FALSE); 	  pixel_region_init (&destPR, 			     gimp_image_projection (gimage), 			     x, y, w,h, TRUE);  	  for (pr = pixel_regions_register (2,&srcPR,&destPR); 	       pr != NULL; 	       pr = pixel_regions_process (pr)) 	    { 	      tile_manager_map_over_tile (destPR.tiles, 					  destPR.curtile, srcPR.curtile); 	    }  	  gimage->construct_flag = TRUE; 	  gimp_image_construct_channels (gimage, x, y, w, h);  	  return; 	}     }
-else|#
-directive|else
+block|GimpImage *gimage = proj->gimage;    if ((gimp_container_num_children (gimage->layers) == 1))
+comment|/* a single layer */
+block|{       GimpDrawable *layer;        layer = GIMP_DRAWABLE (gimp_container_get_child_by_index (gimage->layers,                                                                 0));       if (gimp_drawable_has_alpha (layer)&&           (gimp_item_get_visible (GIMP_ITEM (layer)))&&           (gimp_item_width (GIMP_ITEM (layer))  == gimage->width)&&           (gimp_item_height (GIMP_ITEM (layer)) == gimage->height)&&           (! gimp_drawable_is_indexed (layer))&&           (gimp_layer_get_opacity (GIMP_LAYER (layer)) == GIMP_OPACITY_OPAQUE))         {           gint xoff;           gint yoff;            gimp_item_offsets (GIMP_ITEM (layer),&xoff,&yoff);            if (xoff == 0&& yoff == 0)             {               PixelRegion srcPR, destPR;               gpointer    pr;                g_printerr ("Can use cow-projection hack.  Yay!");                pixel_region_init (&srcPR, gimp_drawable_data (layer),                                  x, y, w,h, FALSE);               pixel_region_init (&destPR, gimp_projection_get_tiles (proj),                                  x, y, w,h, TRUE);                for (pr = pixel_regions_register (2,&srcPR,&destPR);                    pr != NULL;                    pr = pixel_regions_process (pr))                 {                   tile_manager_map_over_tile (destPR.tiles,                                               destPR.curtile, srcPR.curtile);                 }                proj->construct_flag = TRUE;                gimp_projection_construct_channels (proj, x, y, w, h);                return;             } 	}     }
+endif|#
+directive|endif
 name|proj
 operator|->
 name|construct_flag
 operator|=
 name|FALSE
 expr_stmt|;
-endif|#
-directive|endif
 comment|/*  First, determine if the projection image needs to be    *  initialized--this is the case when there are no visible    *  layers that cover the entire canvas--either because layers    *  are offset or only a floating selection is visible    */
 name|gimp_projection_initialize
 argument_list|(
