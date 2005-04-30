@@ -3133,6 +3133,9 @@ operator|<=
 name|width
 condition|)
 block|{
+if|if
+condition|(
+operator|!
 name|ReadOK
 argument_list|(
 name|fd
@@ -3141,7 +3144,18 @@ name|buffer
 argument_list|,
 literal|2
 argument_list|)
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"The bitmap ends unexpectedly."
+argument_list|)
+argument_list|)
 expr_stmt|;
+break|break;
+block|}
 if|if
 condition|(
 operator|(
@@ -3386,6 +3400,9 @@ operator|)
 control|)
 block|{
 comment|/* read the next byte in the record */
+if|if
+condition|(
+operator|!
 name|ReadOK
 argument_list|(
 name|fd
@@ -3395,7 +3412,18 @@ name|v
 argument_list|,
 literal|1
 argument_list|)
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"The bitmap ends unexpectedly."
+argument_list|)
+argument_list|)
 expr_stmt|;
+break|break;
+block|}
 name|total_bytes_read
 operator|++
 expr_stmt|;
@@ -3646,6 +3674,9 @@ operator|)
 condition|)
 comment|/* Deltarecord */
 block|{
+if|if
+condition|(
+operator|!
 name|ReadOK
 argument_list|(
 name|fd
@@ -3654,7 +3685,18 @@ name|buffer
 argument_list|,
 literal|2
 argument_list|)
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"The bitmap ends unexpectedly."
+argument_list|)
+argument_list|)
 expr_stmt|;
+break|break;
+block|}
 name|xpos
 operator|+=
 operator|(
