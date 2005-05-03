@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpeditor.h"
+file|<gtk/gtkvbox.h>
 end_include
 
 begin_define

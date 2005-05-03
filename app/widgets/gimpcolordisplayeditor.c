@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpeditor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -57,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a660190103
+DECL|enum|__anon299c6fca0103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -73,7 +79,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a660190203
+DECL|enum|__anon299c6fca0203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
