@@ -168,6 +168,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|PlugInProcDef
+modifier|*
+name|plug_in_proc_def_find
+parameter_list|(
+name|GSList
+modifier|*
+name|list
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|proc_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 specifier|const
 name|ProcRecord
 modifier|*
