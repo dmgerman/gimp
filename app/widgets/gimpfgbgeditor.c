@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a070d190103
+DECL|enum|__anon29df79f70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a070d190203
+DECL|enum|__anon29df79f70203
 block|{
 DECL|enumerator|COLOR_CLICKED
 name|COLOR_CLICKED
@@ -95,16 +95,16 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a070d190303
+DECL|enum|__anon29df79f70303
 block|{
 DECL|enumerator|INVALID_AREA
 name|INVALID_AREA
 block|,
-DECL|enumerator|FORE_AREA
-name|FORE_AREA
+DECL|enumerator|FOREGROUND_AREA
+name|FOREGROUND_AREA
 block|,
-DECL|enumerator|BACK_AREA
-name|BACK_AREA
+DECL|enumerator|BACKGROUND_AREA
+name|BACKGROUND_AREA
 block|,
 DECL|enumerator|SWAP_AREA
 name|SWAP_AREA
@@ -1775,7 +1775,7 @@ operator|<
 name|rect_h
 condition|)
 return|return
-name|FORE_AREA
+name|FOREGROUND_AREA
 return|;
 elseif|else
 if|if
@@ -1805,7 +1805,7 @@ operator|<
 name|height
 condition|)
 return|return
-name|BACK_AREA
+name|BACKGROUND_AREA
 return|;
 elseif|else
 if|if
@@ -1932,7 +1932,7 @@ name|target
 condition|)
 block|{
 case|case
-name|FORE_AREA
+name|FOREGROUND_AREA
 case|:
 if|if
 condition|(
@@ -1949,16 +1949,15 @@ argument_list|,
 name|GIMP_ACTIVE_COLOR_FOREGROUND
 argument_list|)
 expr_stmt|;
-else|else
 name|editor
 operator|->
 name|click_target
 operator|=
-name|FORE_AREA
+name|FOREGROUND_AREA
 expr_stmt|;
 break|break;
 case|case
-name|BACK_AREA
+name|BACKGROUND_AREA
 case|:
 if|if
 condition|(
@@ -1975,12 +1974,11 @@ argument_list|,
 name|GIMP_ACTIVE_COLOR_BACKGROUND
 argument_list|)
 expr_stmt|;
-else|else
 name|editor
 operator|->
 name|click_target
 operator|=
-name|BACK_AREA
+name|BACKGROUND_AREA
 expr_stmt|;
 break|break;
 case|case
@@ -2091,7 +2089,7 @@ name|target
 condition|)
 block|{
 case|case
-name|FORE_AREA
+name|FOREGROUND_AREA
 case|:
 name|g_signal_emit
 argument_list|(
@@ -2109,7 +2107,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|BACK_AREA
+name|BACKGROUND_AREA
 case|:
 name|g_signal_emit
 argument_list|(
@@ -2192,11 +2190,11 @@ if|if
 condition|(
 name|target
 operator|==
-name|FORE_AREA
+name|FOREGROUND_AREA
 operator|||
 name|target
 operator|==
-name|BACK_AREA
+name|BACKGROUND_AREA
 condition|)
 block|{
 name|gdk_drag_status
@@ -2582,7 +2580,7 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|FORE_AREA
+name|FOREGROUND_AREA
 case|:
 name|gimp_context_set_foreground
 argument_list|(
@@ -2595,7 +2593,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|BACK_AREA
+name|BACKGROUND_AREA
 case|:
 name|gimp_context_set_background
 argument_list|(

@@ -3671,9 +3671,9 @@ name|col_area
 argument_list|,
 name|_
 argument_list|(
-literal|"Foreground& background colors.  The black and white squares "
-literal|"reset colors.  The arrows swap colors. Double click to open "
-literal|"the color selection dialog."
+literal|"Foreground& background colors.  The black and white "
+literal|"squares reset colors.  The arrows swap colors. Click "
+literal|"to open the color selection dialog."
 argument_list|)
 argument_list|,
 name|NULL
