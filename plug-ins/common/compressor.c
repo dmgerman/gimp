@@ -2471,7 +2471,7 @@ name|strchr
 argument_list|(
 name|ext
 argument_list|,
-literal|'/'
+name|G_DIR_SEPARATOR
 argument_list|)
 condition|)
 block|{
