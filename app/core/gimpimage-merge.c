@@ -960,10 +960,6 @@ condition|)
 block|{
 name|layer
 operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
 name|merge_list
 operator|->
 name|data
@@ -1590,10 +1586,6 @@ expr_stmt|;
 comment|/*  Find the index in the layer list of the bottom layer--we need this        *  in order to add the final, merged layer to the layer list correctly        */
 name|layer
 operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
 name|reverse_list
 operator|->
 name|data
@@ -1678,10 +1670,6 @@ name|mode
 decl_stmt|;
 name|layer
 operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
 name|reverse_list
 operator|->
 name|data
@@ -2045,10 +2033,6 @@ condition|)
 block|{
 name|layer
 operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
 name|list
 operator|->
 name|data
@@ -2259,10 +2243,6 @@ control|)
 block|{
 name|vectors
 operator|=
-operator|(
-name|GimpVectors
-operator|*
-operator|)
 name|list
 operator|->
 name|data
