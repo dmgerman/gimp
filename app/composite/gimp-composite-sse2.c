@@ -1376,7 +1376,7 @@ name|n_pixels
 decl_stmt|;
 asm|asm
 specifier|volatile
-asm|("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask_64) : "%mm0");
+asm|("movdqu    %0,%%xmm0"  :  : "m" (*rgba8_alpha_mask_64) : "%xmm0");
 for|for
 control|(
 init|;
