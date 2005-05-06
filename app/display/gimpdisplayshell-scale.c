@@ -1970,10 +1970,6 @@ name|gboolean
 name|resize_window
 parameter_list|)
 block|{
-name|Gimp
-modifier|*
-name|gimp
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -1982,16 +1978,28 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp
-operator|=
+comment|/*  Abort early if the values are all setup already. We don't    *  want to inadvertently resize the window (bug #164281).    */
+if|if
+condition|(
 name|shell
 operator|->
-name|gdisp
+name|scale
+operator|==
+name|scale
+operator|&&
+name|shell
 operator|->
-name|gimage
+name|offset_x
+operator|==
+name|offset_x
+operator|&&
+name|shell
 operator|->
-name|gimp
-expr_stmt|;
+name|offset_y
+operator|==
+name|offset_y
+condition|)
+return|return;
 comment|/* freeze the active tool */
 name|gimp_display_shell_pause
 argument_list|(
