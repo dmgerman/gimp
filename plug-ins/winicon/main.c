@@ -480,7 +480,7 @@ condition|)
 block|{
 name|image_ID
 operator|=
-name|LoadICO
+name|ico_load_image
 argument_list|(
 name|param
 index|[
