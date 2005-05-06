@@ -473,9 +473,8 @@ name|value
 condition|)
 block|{
 case|case
-literal|0
+name|GRADIENT_EDITOR_COLOR_NEIGHBOR_ENDPOINT
 case|:
-comment|/* Fetch from left neighbor's right endpoint */
 if|if
 condition|(
 name|editor
@@ -512,9 +511,8 @@ name|right_color
 expr_stmt|;
 break|break;
 case|case
-literal|1
+name|GRADIENT_EDITOR_COLOR_OTHER_ENDPOINT
 case|:
-comment|/* Fetch from right endpoint */
 name|color
 operator|=
 name|editor
@@ -525,9 +523,8 @@ name|right_color
 expr_stmt|;
 break|break;
 case|case
-literal|2
+name|GRADIENT_EDITOR_COLOR_FOREGROUND
 case|:
-comment|/* Fetch from FG color */
 name|gimp_context_get_foreground
 argument_list|(
 name|context
@@ -538,9 +535,8 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-literal|3
+name|GRADIENT_EDITOR_COLOR_BACKGROUND
 case|:
-comment|/* Fetch from BG color */
 name|gimp_context_get_background
 argument_list|(
 name|context
@@ -560,7 +556,7 @@ name|saved_colors
 index|[
 name|value
 operator|-
-literal|4
+name|GRADIENT_EDITOR_COLOR_FIRST_CUSTOM
 index|]
 expr_stmt|;
 break|break;
@@ -907,9 +903,8 @@ name|value
 condition|)
 block|{
 case|case
-literal|0
+name|GRADIENT_EDITOR_COLOR_NEIGHBOR_ENDPOINT
 case|:
-comment|/* Fetch from right neighbor's left endpoint */
 if|if
 condition|(
 name|editor
@@ -946,9 +941,8 @@ name|left_color
 expr_stmt|;
 break|break;
 case|case
-literal|1
+name|GRADIENT_EDITOR_COLOR_OTHER_ENDPOINT
 case|:
-comment|/* Fetch from left endpoint */
 name|color
 operator|=
 name|editor
@@ -959,9 +953,8 @@ name|left_color
 expr_stmt|;
 break|break;
 case|case
-literal|2
+name|GRADIENT_EDITOR_COLOR_FOREGROUND
 case|:
-comment|/* Fetch from FG color */
 name|gimp_context_get_foreground
 argument_list|(
 name|context
@@ -972,9 +965,8 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-literal|3
+name|GRADIENT_EDITOR_COLOR_BACKGROUND
 case|:
-comment|/* Fetch from BG color */
 name|gimp_context_get_background
 argument_list|(
 name|context
@@ -994,7 +986,7 @@ name|saved_colors
 index|[
 name|value
 operator|-
-literal|4
+name|GRADIENT_EDITOR_COLOR_FIRST_CUSTOM
 index|]
 expr_stmt|;
 break|break;

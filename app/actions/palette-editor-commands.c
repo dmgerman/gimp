@@ -154,10 +154,6 @@ operator|!
 operator|(
 name|data_editor
 operator|->
-name|data
-operator|&&
-name|data_editor
-operator|->
 name|data_editable
 operator|&&
 name|editor
@@ -218,11 +214,6 @@ argument_list|)
 argument_list|,
 literal|"gimp-palette-editor-color-dialog"
 argument_list|,
-operator|(
-specifier|const
-name|GimpRGB
-operator|*
-operator|)
 operator|&
 name|editor
 operator|->
@@ -357,10 +348,6 @@ if|if
 condition|(
 name|data_editor
 operator|->
-name|data
-operator|&&
-name|data_editor
-operator|->
 name|data_editable
 condition|)
 block|{
@@ -468,10 +455,6 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|data_editor
-operator|->
-name|data
-operator|&&
 name|data_editor
 operator|->
 name|data_editable

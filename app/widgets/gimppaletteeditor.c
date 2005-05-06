@@ -1468,10 +1468,6 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|editor
-operator|->
-name|edit_button
-operator|=
 name|gimp_editor_add_action_button
 argument_list|(
 name|GIMP_EDITOR
@@ -1486,10 +1482,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|editor
-operator|->
-name|new_button
-operator|=
 name|gimp_editor_add_action_button
 argument_list|(
 name|GIMP_EDITOR
@@ -1508,10 +1500,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|editor
-operator|->
-name|delete_button
-operator|=
 name|gimp_editor_add_action_button
 argument_list|(
 name|GIMP_EDITOR
@@ -1526,10 +1514,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|editor
-operator|->
-name|zoom_out_button
-operator|=
 name|gimp_editor_add_action_button
 argument_list|(
 name|GIMP_EDITOR
@@ -1544,10 +1528,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|editor
-operator|->
-name|zoom_in_button
-operator|=
 name|gimp_editor_add_action_button
 argument_list|(
 name|GIMP_EDITOR
@@ -1562,10 +1542,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|editor
-operator|->
-name|zoom_all_button
-operator|=
 name|gimp_editor_add_action_button
 argument_list|(
 name|GIMP_EDITOR
