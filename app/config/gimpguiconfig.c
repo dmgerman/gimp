@@ -180,7 +180,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b30d35b0103
+DECL|enum|__anon29576d7c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -540,7 +540,7 @@ literal|"save-tool-options"
 argument_list|,
 name|SAVE_TOOL_OPTIONS_BLURB
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
