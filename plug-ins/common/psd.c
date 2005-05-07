@@ -120,7 +120,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b80a3f70103
+DECL|enum|__anon2c770fc40103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -308,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b80a3f70208
+DECL|struct|__anon2c770fc40208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -557,7 +557,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b80a3f70308
+DECL|struct|__anon2c770fc40308
 block|{
 DECL|member|signature
 name|gchar
@@ -2066,7 +2066,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\t\tPath data is irrelevant to GIMP at this time.\n"
+literal|"\t\tThe psd plugin does not currently support reading path data.\n"
 argument_list|)
 decl_stmt|;
 name|throwchunk
@@ -3390,6 +3390,70 @@ literal|65536.0
 argument_list|)
 decl_stmt|;
 block|}
+break|break;
+case|case
+literal|0x0409
+case|:
+comment|/* DATA LAYOUT for thumbail resource */
+comment|/* 4 bytes     format             (1 = jfif, 0 = raw) */
+comment|/* 4 bytes     width              width of thumbnail  */
+comment|/* 4 bytes     height             height of thumbnail */
+comment|/* 4 bytes     widthbytes         for validation only?*/
+comment|/* 4 bytes     size               for validation only?*/
+comment|/* 4 bytes     compressed size    for validation only?*/
+comment|/* 2 bytes     bits per pixel     Always 24?          */
+comment|/* 2 bytes     planes             Always 1?           */
+comment|/* size bytes  data               JFIF (or raw) data  */
+name|IFDBG
+name|printf
+argument_list|(
+literal|"\t\t<Photoshop 4.0 style thumbnail (BGR)>  unhandled\n"
+argument_list|)
+decl_stmt|;
+comment|/* for resource 0x0409 we have to swap the r and b channels 	   after decoding */
+name|throwchunk
+argument_list|(
+name|Size
+argument_list|,
+name|fd
+argument_list|,
+literal|"dispatch_res"
+argument_list|)
+expr_stmt|;
+operator|(
+operator|*
+name|offset
+operator|)
+operator|+=
+name|Size
+expr_stmt|;
+break|break;
+case|case
+literal|0x040C
+case|:
+comment|/* See above */
+name|IFDBG
+name|printf
+argument_list|(
+literal|"\t\t<Photoshop 5.0 style thumbnail (RGB)> unhandled\n"
+argument_list|)
+decl_stmt|;
+name|throwchunk
+argument_list|(
+name|Size
+argument_list|,
+name|fd
+argument_list|,
+literal|"dispatch_res"
+argument_list|)
+expr_stmt|;
+operator|(
+operator|*
+name|offset
+operator|)
+operator|+=
+name|Size
+expr_stmt|;
 break|break;
 case|case
 literal|0x03e9
