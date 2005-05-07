@@ -132,9 +132,9 @@ DECL|member|recursion_level
 name|gint
 name|recursion_level
 decl_stmt|;
-DECL|member|clip
-name|gboolean
-name|clip
+DECL|member|resize
+name|GimpTransformResize
+name|resize
 decl_stmt|;
 DECL|member|preview_type
 name|GimpTransformPreviewType
