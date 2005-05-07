@@ -1917,6 +1917,8 @@ argument_list|(
 name|edit_select
 argument_list|)
 argument_list|,
+name|gdisp
+argument_list|,
 name|_
 argument_list|(
 literal|"Move: "
@@ -2002,6 +2004,8 @@ expr_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|)
 expr_stmt|;
 comment|/*  Stop and free the selection core  */
@@ -2866,11 +2870,15 @@ comment|/********************************************************************/
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|)
 expr_stmt|;
 name|gimp_tool_push_status_coords
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|,
 name|_
 argument_list|(

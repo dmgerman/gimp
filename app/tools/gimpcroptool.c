@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ad1b780103
+DECL|enum|__anon27cb5bdb0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -1327,6 +1327,8 @@ expr_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|)
 expr_stmt|;
 if|if
@@ -2310,11 +2312,15 @@ block|{
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|)
 expr_stmt|;
 name|gimp_tool_push_status_coords
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|,
 name|_
 argument_list|(
@@ -4569,6 +4575,10 @@ comment|/* initialize the statusbar display */
 name|gimp_tool_push_status_coords
 argument_list|(
 name|tool
+argument_list|,
+name|tool
+operator|->
+name|gdisp
 argument_list|,
 name|_
 argument_list|(

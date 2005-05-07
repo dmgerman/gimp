@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c62f5850103
+DECL|enum|__anon292378e70103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -1058,6 +1058,8 @@ name|gimp_tool_push_status_coords
 argument_list|(
 name|tool
 argument_list|,
+name|gdisp
+argument_list|,
 name|_
 argument_list|(
 literal|"Move Sample Point: "
@@ -1227,6 +1229,8 @@ decl_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_stop
@@ -1730,6 +1734,8 @@ expr_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|)
 expr_stmt|;
 if|if
@@ -1740,6 +1746,8 @@ block|{
 name|gimp_tool_push_status
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|,
 name|color_tool
 operator|->
@@ -1762,6 +1770,8 @@ block|{
 name|gimp_tool_push_status_coords
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|,
 name|color_tool
 operator|->

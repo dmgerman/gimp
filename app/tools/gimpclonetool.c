@@ -1036,7 +1036,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|gimp_paint_tool_replace_status
+name|gimp_tool_replace_status
 argument_list|(
 name|tool
 argument_list|,

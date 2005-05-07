@@ -1178,6 +1178,8 @@ name|gimp_tool_push_status_length
 argument_list|(
 name|tool
 argument_list|,
+name|gdisp
+argument_list|,
 name|_
 argument_list|(
 literal|"Move Guide: "
@@ -1534,6 +1536,8 @@ decl_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_scroll_lock
@@ -2216,6 +2220,8 @@ expr_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|)
 expr_stmt|;
 if|if
@@ -2226,6 +2232,8 @@ block|{
 name|gimp_tool_push_status
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|,
 name|move
 operator|->
@@ -2248,6 +2256,8 @@ block|{
 name|gimp_tool_push_status_length
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|,
 name|move
 operator|->

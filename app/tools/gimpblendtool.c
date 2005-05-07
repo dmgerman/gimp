@@ -713,6 +713,8 @@ name|gimp_tool_push_status_coords
 argument_list|(
 name|tool
 argument_list|,
+name|gdisp
+argument_list|,
 name|_
 argument_list|(
 literal|"Blend: "
@@ -823,6 +825,8 @@ expr_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_stop
@@ -1108,11 +1112,15 @@ block|}
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|)
 expr_stmt|;
 name|gimp_tool_push_status_coords
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|,
 name|_
 argument_list|(

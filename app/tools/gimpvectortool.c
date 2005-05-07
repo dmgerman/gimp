@@ -1105,6 +1105,8 @@ expr_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4664,6 +4666,8 @@ name|gimp_tool_push_status
 argument_list|(
 name|tool
 argument_list|,
+name|gdisp
+argument_list|,
 name|status
 argument_list|)
 expr_stmt|;
@@ -4671,6 +4675,8 @@ else|else
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}

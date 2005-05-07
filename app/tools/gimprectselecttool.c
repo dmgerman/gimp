@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gdk/gdkkeysyms.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -894,72 +888,6 @@ name|coords
 argument_list|)
 condition|)
 return|return;
-switch|switch
-condition|(
-name|sel_tool
-operator|->
-name|op
-condition|)
-block|{
-case|case
-name|SELECTION_ADD
-case|:
-name|gimp_tool_push_status
-argument_list|(
-name|tool
-argument_list|,
-name|_
-argument_list|(
-literal|"Selection: ADD"
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|SELECTION_SUBTRACT
-case|:
-name|gimp_tool_push_status
-argument_list|(
-name|tool
-argument_list|,
-name|_
-argument_list|(
-literal|"Selection: SUBTRACT"
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|SELECTION_INTERSECT
-case|:
-name|gimp_tool_push_status
-argument_list|(
-name|tool
-argument_list|,
-name|_
-argument_list|(
-literal|"Selection: INTERSECT"
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|SELECTION_REPLACE
-case|:
-name|gimp_tool_push_status
-argument_list|(
-name|tool
-argument_list|,
-name|_
-argument_list|(
-literal|"Selection: REPLACE"
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-default|default:
-break|break;
-block|}
 name|gimp_draw_tool_start
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -1010,6 +938,8 @@ decl_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_stop
@@ -1278,7 +1208,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* Change the selection rectangle's size, first calculate absolute         * width and height, then take care of quadrants.        */
+comment|/* Change the selection rectangle's size, first calculate absolute        * width and height, then take care of quadrants.        */
 if|if
 condition|(
 name|rect_sel
@@ -1680,11 +1610,15 @@ expr_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|)
 expr_stmt|;
 name|gimp_tool_push_status_coords
 argument_list|(
 name|tool
+argument_list|,
+name|gdisp
 argument_list|,
 name|_
 argument_list|(
