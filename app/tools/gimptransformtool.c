@@ -3761,7 +3761,7 @@ name|recursion_level
 argument_list|,
 name|options
 operator|->
-name|resize
+name|clip
 argument_list|,
 name|progress
 argument_list|)
@@ -3828,7 +3828,7 @@ name|recursion_level
 argument_list|,
 name|options
 operator|->
-name|resize
+name|clip
 argument_list|,
 name|progress
 argument_list|)
@@ -3848,12 +3848,12 @@ case|case
 name|GIMP_TRANSFORM_TYPE_SELECTION
 case|:
 block|{
-name|GimpTransformResize
-name|resize
+name|gboolean
+name|clip_result
 init|=
 name|options
 operator|->
-name|resize
+name|clip
 decl_stmt|;
 comment|/*  always clip the selction and unfloated channels          *  so they keep their size          */
 if|if
@@ -3879,12 +3879,10 @@ argument_list|)
 operator|==
 literal|1
 condition|)
-block|{
-name|resize
+name|clip_result
 operator|=
-name|GIMP_TRANSFORM_SIZE_CLIP
+name|TRUE
 expr_stmt|;
-block|}
 name|ret
 operator|=
 name|gimp_drawable_transform_tiles_affine
@@ -3921,7 +3919,7 @@ name|options
 operator|->
 name|recursion_level
 argument_list|,
-name|resize
+name|clip_result
 argument_list|,
 name|progress
 argument_list|)
@@ -3961,7 +3959,7 @@ name|recursion_level
 argument_list|,
 name|options
 operator|->
-name|resize
+name|clip
 argument_list|,
 name|progress
 argument_list|)
