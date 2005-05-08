@@ -5149,6 +5149,10 @@ name|entry
 argument_list|)
 argument_list|,
 name|value
+condition|?
+name|value
+else|:
+literal|""
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -5356,6 +5360,10 @@ name|entry
 argument_list|)
 argument_list|,
 name|value
+condition|?
+name|value
+else|:
+literal|""
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
