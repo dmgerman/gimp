@@ -551,6 +551,7 @@ parameter_list|,
 name|gint
 name|y2
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|buffer
@@ -600,6 +601,7 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|buffer
