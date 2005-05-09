@@ -804,6 +804,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpControllerList
+typedef|typedef
+name|struct
+name|_GimpControllerList
+name|GimpControllerList
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDashEditor
 typedef|typedef
 name|struct

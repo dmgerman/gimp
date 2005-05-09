@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpcontrollerinfo.c  * Copyright (C) 2004 Michael Natterer<mitch@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpcontrollerinfo.c  * Copyright (C) 2004-2005 Michael Natterer<mitch@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -78,7 +78,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0dbc920103
+DECL|enum|__anon2981a4460103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -100,7 +100,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0dbc920203
+DECL|enum|__anon2981a4460203
 block|{
 DECL|enumerator|EVENT_MAPPED
 name|EVENT_MAPPED
@@ -289,7 +289,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GimpObjectClass
+name|GimpViewableClass
 modifier|*
 name|parent_class
 init|=
@@ -400,7 +400,7 @@ name|controller_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GIMP_TYPE_OBJECT
+name|GIMP_TYPE_VIEWABLE
 argument_list|,
 literal|"GimpControllerInfo"
 argument_list|,
@@ -1373,6 +1373,93 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  public functions  */
+end_comment
+
+begin_function
+name|GimpControllerInfo
+modifier|*
+DECL|function|gimp_controller_info_new (GType type)
+name|gimp_controller_info_new
+parameter_list|(
+name|GType
+name|type
+parameter_list|)
+block|{
+name|GimpControllerClass
+modifier|*
+name|controller_class
+decl_stmt|;
+name|GimpController
+modifier|*
+name|controller
+decl_stmt|;
+name|GimpControllerInfo
+modifier|*
+name|info
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|g_type_is_a
+argument_list|(
+name|type
+argument_list|,
+name|GIMP_TYPE_CONTROLLER
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|controller_class
+operator|=
+name|g_type_class_ref
+argument_list|(
+name|type
+argument_list|)
+expr_stmt|;
+name|controller
+operator|=
+name|gimp_controller_new
+argument_list|(
+name|type
+argument_list|)
+expr_stmt|;
+name|info
+operator|=
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_CONTROLLER_INFO
+argument_list|,
+literal|"name"
+argument_list|,
+name|controller_class
+operator|->
+name|name
+argument_list|,
+literal|"controller"
+argument_list|,
+name|controller
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|controller
+argument_list|)
+expr_stmt|;
+name|g_type_class_unref
+argument_list|(
+name|controller_class
+argument_list|)
+expr_stmt|;
+return|return
+name|info
+return|;
+block|}
+end_function
+
 begin_function
 name|void
 DECL|function|gimp_controller_info_set_enabled (GimpControllerInfo * info,gboolean enabled)
@@ -1443,6 +1530,10 @@ name|enabled
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/*  private functions  */
+end_comment
 
 begin_function
 specifier|static

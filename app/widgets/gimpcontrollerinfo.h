@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpcontrollerinfo.h  * Copyright (C) 2004 Michael Natterer<mitch@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpcontrollerinfo.h  * Copyright (C) 2004-2005 Michael Natterer<mitch@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"core/gimpobject.h"
+file|"core/gimpviewable.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpControllerInfo
 block|{
 DECL|member|parent_instance
-name|GimpObject
+name|GimpViewable
 name|parent_instance
 decl_stmt|;
 DECL|member|enabled
@@ -131,7 +131,7 @@ struct|struct
 name|_GimpControllerInfoClass
 block|{
 DECL|member|parent_class
-name|GimpObjectClass
+name|GimpViewableClass
 name|parent_class
 decl_stmt|;
 DECL|member|event_mapped
@@ -173,6 +173,17 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|GimpControllerInfo
+modifier|*
+name|gimp_controller_info_new
+parameter_list|(
+name|GType
+name|type
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void
