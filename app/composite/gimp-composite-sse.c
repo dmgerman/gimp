@@ -255,7 +255,7 @@ control|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movq       %1, %%mm2\n"                     "\tmovq       %2, %%mm3\n"                     "\tmovq    %%mm2, %%mm4\n"                     "\tpaddusb %%mm3, %%mm4\n"                     "\tmovq    %%mm0, %%mm1\n"                     "\tpandn   %%mm4, %%mm1\n"                     "\t" pminub(mm3, mm2, mm4) "\n"                     "\tpand    %%mm0, %%mm2\n"                     "\tpor     %%mm2, %%mm1\n"                     "\tmovq    %%mm1, %0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b)                     : "%mm0", "%mm1", "%mm2", "%mm3", "%mm4");
+asm|("  movq       %1, %%mm2\n"                     "\tmovq       %2, %%mm3\n"                     "\tmovq    %%mm2, %%mm4\n"                     "\tpaddusb %%mm3, %%mm4\n"                     "\tmovq    %%mm0, %%mm1\n"                     "\tpandn   %%mm4, %%mm1\n"                     "\t" pminub(mm3, mm2, mm4) "\n"                     "\tpand    %%mm0, %%mm2\n"                     "\tpor     %%mm2, %%mm1\n"                     "\tmovntq  %%mm1, %0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b)                     : "%mm0", "%mm1", "%mm2", "%mm3", "%mm4");
 name|a
 operator|++
 expr_stmt|;
@@ -465,7 +465,7 @@ control|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movq    %1, %%mm2\n"                     "\tmovq    %2, %%mm3\n"                     "\t" pminub(mm3, mm2, mm4) "\n"                     "\tmovq    %%mm2, %0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b)                     : "%mm1", "%mm2", "%mm3", "%mm4");
+asm|("  movq    %1, %%mm2\n"                     "\tmovq    %2, %%mm3\n"                     "\t" pminub(mm3, mm2, mm4) "\n"                     "\tmovntq  %%mm2, %0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b)                     : "%mm1", "%mm2", "%mm3", "%mm4");
 name|a
 operator|++
 expr_stmt|;
@@ -967,7 +967,7 @@ condition|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movd       %1, %%mm2\n"                     "\tmovd       %2, %%mm3\n"                     "\tmovq    %%mm2, %%mm4\n"                     "\tpmaxub  %%mm3, %%mm4\n"                      "\tmovq    %%mm0, %%mm1\n"                     "\tpandn   %%mm4, %%mm1\n"                      "\tpminub  %%mm2,%%mm3\n"                      "\tpand    %%mm0, %%mm3\n"                     "\tpor     %%mm3, %%mm1\n"                     "\tmovd    %%mm1, %0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b)                     : "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
+asm|("  movd       %1, %%mm2\n"                     "\tmovd       %2, %%mm3\n"                     "\tmovq    %%mm2, %%mm4\n"                     "\tpmaxub  %%mm3, %%mm4\n"                     "\tmovq    %%mm0, %%mm1\n"                     "\tpandn   %%mm4, %%mm1\n"                     "\tpminub  %%mm2, %%mm3\n"                     "\tpand    %%mm0, %%mm3\n"                     "\tpor     %%mm3, %%mm1\n"                     "\tmovd    %%mm1, %0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b)                     : "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
 block|}
 asm|asm("emms");
 block|}
