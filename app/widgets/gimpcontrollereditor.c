@@ -85,12 +85,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpviewabledialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fc09520103
+DECL|enum|__anon29aaf92a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -103,7 +109,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fc09520203
+DECL|enum|__anon29aaf92a0203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -2330,8 +2336,15 @@ name|editor
 operator|->
 name|edit_dialog
 operator|=
-name|gimp_dialog_new
+name|gimp_viewable_dialog_new
 argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|editor
+operator|->
+name|info
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Select Controller Event Action"
@@ -2339,12 +2352,17 @@ argument_list|)
 argument_list|,
 literal|"gimp-controller-action-dialog"
 argument_list|,
+name|GIMP_STOCK_EDIT
+argument_list|,
+name|_
+argument_list|(
+literal|"Select Controller Event Action"
+argument_list|)
+argument_list|,
 name|GTK_WIDGET
 argument_list|(
 name|editor
 argument_list|)
-argument_list|,
-literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

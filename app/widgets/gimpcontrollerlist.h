@@ -152,6 +152,16 @@ name|GtkWidget
 modifier|*
 name|edit_button
 decl_stmt|;
+DECL|member|up_button
+name|GtkWidget
+modifier|*
+name|up_button
+decl_stmt|;
+DECL|member|down_button
+name|GtkWidget
+modifier|*
+name|down_button
+decl_stmt|;
 block|}
 struct|;
 end_struct

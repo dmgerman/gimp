@@ -2937,6 +2937,16 @@ operator|=
 name|gtk_event_box_new
 argument_list|()
 expr_stmt|;
+name|gtk_event_box_set_visible_window
+argument_list|(
+name|GTK_EVENT_BOX
+argument_list|(
+name|event_box
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gtk_notebook_append_page
 argument_list|(
 name|notebook
@@ -8458,7 +8468,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2adfdd8f0108
+DECL|struct|__anon2b3ab9d60108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9611,7 +9621,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2adfdd8f0208
+DECL|struct|__anon2b3ab9d60208
 block|{
 DECL|member|label
 specifier|const
@@ -10424,7 +10434,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2adfdd8f0308
+DECL|struct|__anon2b3ab9d60308
 block|{
 DECL|member|label
 specifier|const
@@ -10581,7 +10591,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2adfdd8f0408
+DECL|struct|__anon2b3ab9d60408
 block|{
 DECL|member|tree_label
 specifier|const
