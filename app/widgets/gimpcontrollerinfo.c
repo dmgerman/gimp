@@ -78,7 +78,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2981a4460103
+DECL|enum|__anon28c0e99b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -100,7 +100,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2981a4460203
+DECL|enum|__anon28c0e99b0203
 block|{
 DECL|enumerator|EVENT_MAPPED
 name|EVENT_MAPPED
@@ -1531,6 +1531,45 @@ return|;
 block|}
 end_function
 
+begin_function
+name|void
+DECL|function|gimp_controller_info_set_event_snooper (GimpControllerInfo * info,GimpControllerEventSnooper snooper,gpointer snooper_data)
+name|gimp_controller_info_set_event_snooper
+parameter_list|(
+name|GimpControllerInfo
+modifier|*
+name|info
+parameter_list|,
+name|GimpControllerEventSnooper
+name|snooper
+parameter_list|,
+name|gpointer
+name|snooper_data
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTROLLER_INFO
+argument_list|(
+name|info
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|info
+operator|->
+name|snooper
+operator|=
+name|snooper
+expr_stmt|;
+name|info
+operator|->
+name|snooper_data
+operator|=
+name|snooper_data
+expr_stmt|;
+block|}
+end_function
+
 begin_comment
 comment|/*  private functions  */
 end_comment
@@ -1604,6 +1643,7 @@ name|info
 operator|->
 name|debug_events
 condition|)
+block|{
 name|g_print
 argument_list|(
 literal|"Received '%s' (class '%s')\n"
@@ -1637,12 +1677,6 @@ block|{
 case|case
 name|GIMP_CONTROLLER_EVENT_TRIGGER
 case|:
-if|if
-condition|(
-name|info
-operator|->
-name|debug_events
-condition|)
 name|g_print
 argument_list|(
 literal|"    (trigger event)\n"
@@ -1652,13 +1686,6 @@ break|break;
 case|case
 name|GIMP_CONTROLLER_EVENT_VALUE
 case|:
-if|if
-condition|(
-name|info
-operator|->
-name|debug_events
-condition|)
-block|{
 if|if
 condition|(
 name|G_VALUE_HOLDS_DOUBLE
@@ -1703,8 +1730,49 @@ name|g_type
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 break|break;
+block|}
+block|}
+if|if
+condition|(
+name|info
+operator|->
+name|snooper
+condition|)
+block|{
+if|if
+condition|(
+name|info
+operator|->
+name|snooper
+argument_list|(
+name|info
+argument_list|,
+name|controller
+argument_list|,
+name|event
+argument_list|,
+name|info
+operator|->
+name|snooper_data
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|info
+operator|->
+name|debug_events
+condition|)
+name|g_print
+argument_list|(
+literal|"    intercepted by event snooper\n\n"
+argument_list|)
+expr_stmt|;
+return|return
+name|TRUE
+return|;
+block|}
 block|}
 if|if
 condition|(

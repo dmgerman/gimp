@@ -113,6 +113,11 @@ name|GtkTreeSelection
 modifier|*
 name|sel
 decl_stmt|;
+DECL|member|grab_button
+name|GtkWidget
+modifier|*
+name|grab_button
+decl_stmt|;
 DECL|member|edit_button
 name|GtkWidget
 modifier|*
