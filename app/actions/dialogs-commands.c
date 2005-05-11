@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpimagedock.h"
+file|"widgets/gimpmenudock.h"
 end_include
 
 begin_include
@@ -521,9 +521,9 @@ argument_list|,
 name|screen
 argument_list|)
 expr_stmt|;
-name|gimp_image_dock_set_show_image_menu
+name|gimp_menu_dock_set_show_image_menu
 argument_list|(
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 argument_list|(
 name|dock
 argument_list|)

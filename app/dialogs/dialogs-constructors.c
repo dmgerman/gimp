@@ -186,12 +186,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpimagedock.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpimageview.h"
 end_include
 
@@ -199,6 +193,12 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimplayertreeview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimpmenudock.h"
 end_include
 
 begin_include
@@ -725,7 +725,7 @@ name|preview_size
 parameter_list|)
 block|{
 return|return
-name|gimp_image_dock_new
+name|gimp_menu_dock_new
 argument_list|(
 name|factory
 argument_list|,

@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpimagedock.h"
+file|"widgets/gimpmenudock.h"
 end_include
 
 begin_include
@@ -298,17 +298,17 @@ define|\
 value|gimp_action_group_set_action_visible (group, action, (active) != 0)
 if|if
 condition|(
-name|GIMP_IS_IMAGE_DOCK
+name|GIMP_IS_MENU_DOCK
 argument_list|(
 name|toplevel
 argument_list|)
 condition|)
 block|{
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
-name|image_dock
+name|menu_dock
 init|=
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 argument_list|(
 name|toplevel
 argument_list|)
@@ -331,7 +331,7 @@ name|SET_ACTIVE
 argument_list|(
 literal|"dock-show-image-menu"
 argument_list|,
-name|image_dock
+name|menu_dock
 operator|->
 name|show_image_menu
 argument_list|)
@@ -340,7 +340,7 @@ name|SET_ACTIVE
 argument_list|(
 literal|"dock-auto-follow-active"
 argument_list|,
-name|image_dock
+name|menu_dock
 operator|->
 name|auto_follow_active
 argument_list|)

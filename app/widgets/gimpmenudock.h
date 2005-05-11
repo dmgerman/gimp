@@ -1,106 +1,106 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpimagedock.h  * Copyright (C) 2001 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpmenudock.h  * Copyright (C) 2001-2005 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_IMAGE_DOCK_H__
+name|__GIMP_MENU_DOCK_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_IMAGE_DOCK_H__
+DECL|macro|__GIMP_MENU_DOCK_H__
 define|#
 directive|define
-name|__GIMP_IMAGE_DOCK_H__
+name|__GIMP_MENU_DOCK_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimpdock.h"
+file|"gimpimagedock.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_IMAGE_DOCK
+DECL|macro|GIMP_TYPE_MENU_DOCK
 define|#
 directive|define
-name|GIMP_TYPE_IMAGE_DOCK
-value|(gimp_image_dock_get_type ())
+name|GIMP_TYPE_MENU_DOCK
+value|(gimp_menu_dock_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_IMAGE_DOCK (obj)
+DECL|macro|GIMP_MENU_DOCK (obj)
 define|#
 directive|define
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_IMAGE_DOCK, GimpImageDock))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_MENU_DOCK, GimpMenuDock))
 end_define
 
 begin_define
-DECL|macro|GIMP_IMAGE_DOCK_CLASS (klass)
+DECL|macro|GIMP_MENU_DOCK_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IMAGE_DOCK_CLASS
+name|GIMP_MENU_DOCK_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_IMAGE_DOCK, GimpImageDockClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_MENU_DOCK, GimpMenuDockClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_IMAGE_DOCK (obj)
+DECL|macro|GIMP_IS_MENU_DOCK (obj)
 define|#
 directive|define
-name|GIMP_IS_IMAGE_DOCK
+name|GIMP_IS_MENU_DOCK
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_IMAGE_DOCK))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_MENU_DOCK))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_IMAGE_DOCK_CLASS (klass)
+DECL|macro|GIMP_IS_MENU_DOCK_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_IMAGE_DOCK_CLASS
+name|GIMP_IS_MENU_DOCK_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_IMAGE_DOCK))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_MENU_DOCK))
 end_define
 
 begin_define
-DECL|macro|GIMP_IMAGE_DOCK_GET_CLASS (obj)
+DECL|macro|GIMP_MENU_DOCK_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_IMAGE_DOCK_GET_CLASS
+name|GIMP_MENU_DOCK_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_IMAGE_DOCK, GimpImageDockClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_MENU_DOCK, GimpMenuDockClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpImageDockClass
+DECL|typedef|GimpMenuDockClass
 typedef|typedef
 name|struct
-name|_GimpImageDockClass
-name|GimpImageDockClass
+name|_GimpMenuDockClass
+name|GimpMenuDockClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpImageDock
+DECL|struct|_GimpMenuDock
 struct|struct
-name|_GimpImageDock
+name|_GimpMenuDock
 block|{
 DECL|member|parent_instance
-name|GimpDock
+name|GimpImageDock
 name|parent_instance
 decl_stmt|;
 DECL|member|image_container
@@ -140,12 +140,12 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpImageDockClass
+DECL|struct|_GimpMenuDockClass
 struct|struct
-name|_GimpImageDockClass
+name|_GimpMenuDockClass
 block|{
 DECL|member|parent_class
-name|GimpDockClass
+name|GimpImageDockClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -154,7 +154,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_image_dock_get_type
+name|gimp_menu_dock_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -165,7 +165,7 @@ end_decl_stmt
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_image_dock_new
+name|gimp_menu_dock_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
@@ -184,11 +184,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_dock_set_auto_follow_active
+name|gimp_menu_dock_set_auto_follow_active
 parameter_list|(
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
-name|image_dock
+name|menu_dock
 parameter_list|,
 name|gboolean
 name|show
@@ -198,11 +198,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_dock_set_show_image_menu
+name|gimp_menu_dock_set_show_image_menu
 parameter_list|(
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
-name|image_dock
+name|menu_dock
 parameter_list|,
 name|gboolean
 name|show
@@ -216,7 +216,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_IMAGE_DOCK_H__ */
+comment|/* __GIMP_MENU_DOCK_H__ */
 end_comment
 
 end_unit

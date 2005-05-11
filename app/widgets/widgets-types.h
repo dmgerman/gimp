@@ -97,6 +97,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpMenuDock
+typedef|typedef
+name|struct
+name|_GimpMenuDock
+name|GimpMenuDock
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpToolbox
 typedef|typedef
 name|struct

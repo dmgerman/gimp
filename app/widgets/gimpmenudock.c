@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpimagedock.c  * Copyright (C) 2001-2004 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpmenudock.c  * Copyright (C) 2001-2004 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimagedock.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcontainercombobox.h"
 end_include
 
@@ -109,6 +103,12 @@ begin_include
 include|#
 directive|include
 file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpmenudock.h"
 end_include
 
 begin_include
@@ -142,9 +142,9 @@ end_define
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_dock_class_init
+name|gimp_menu_dock_class_init
 parameter_list|(
-name|GimpImageDockClass
+name|GimpMenuDockClass
 modifier|*
 name|klass
 parameter_list|)
@@ -154,9 +154,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_dock_init
+name|gimp_menu_dock_init
 parameter_list|(
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
 name|dock
 parameter_list|)
@@ -167,7 +167,7 @@ begin_function_decl
 specifier|static
 name|GObject
 modifier|*
-name|gimp_image_dock_constructor
+name|gimp_menu_dock_constructor
 parameter_list|(
 name|GType
 name|type
@@ -185,7 +185,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_dock_destroy
+name|gimp_menu_dock_destroy
 parameter_list|(
 name|GtkObject
 modifier|*
@@ -197,7 +197,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_dock_style_set
+name|gimp_menu_dock_style_set
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -213,7 +213,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_dock_setup
+name|gimp_menu_dock_setup
 parameter_list|(
 name|GimpDock
 modifier|*
@@ -230,7 +230,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_dock_set_aux_info
+name|gimp_menu_dock_set_aux_info
 parameter_list|(
 name|GimpDock
 modifier|*
@@ -247,7 +247,7 @@ begin_function_decl
 specifier|static
 name|GList
 modifier|*
-name|gimp_image_dock_get_aux_info
+name|gimp_menu_dock_get_aux_info
 parameter_list|(
 name|GimpDock
 modifier|*
@@ -259,23 +259,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_dock_book_added
-parameter_list|(
-name|GimpDock
-modifier|*
-name|dock
-parameter_list|,
-name|GimpDockbook
-modifier|*
-name|dockbook
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_image_dock_book_removed
+name|gimp_menu_dock_book_added
 parameter_list|(
 name|GimpDock
 modifier|*
@@ -291,7 +275,23 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_dock_dockbook_changed
+name|gimp_menu_dock_book_removed
+parameter_list|(
+name|GimpDock
+modifier|*
+name|dock
+parameter_list|,
+name|GimpDockbook
+modifier|*
+name|dockbook
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_menu_dock_dockbook_changed
 parameter_list|(
 name|GimpDockbook
 modifier|*
@@ -301,7 +301,7 @@ name|GimpDockable
 modifier|*
 name|dockable
 parameter_list|,
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
 name|dock
 parameter_list|)
@@ -311,9 +311,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_dock_update_title
+name|gimp_menu_dock_update_title
 parameter_list|(
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
 name|dock
 parameter_list|)
@@ -323,7 +323,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_dock_factory_display_changed
+name|gimp_menu_dock_factory_display_changed
 parameter_list|(
 name|GimpContext
 modifier|*
@@ -343,7 +343,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_dock_factory_image_changed
+name|gimp_menu_dock_factory_image_changed
 parameter_list|(
 name|GimpContext
 modifier|*
@@ -363,7 +363,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_dock_image_changed
+name|gimp_menu_dock_image_changed
 parameter_list|(
 name|GimpContext
 modifier|*
@@ -383,7 +383,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_dock_auto_clicked
+name|gimp_menu_dock_auto_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -409,8 +409,8 @@ end_decl_stmt
 
 begin_function
 name|GType
-DECL|function|gimp_image_dock_get_type (void)
-name|gimp_image_dock_get_type
+DECL|function|gimp_menu_dock_get_type (void)
+name|gimp_menu_dock_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -435,7 +435,7 @@ init|=
 block|{
 sizeof|sizeof
 argument_list|(
-name|GimpImageDockClass
+name|GimpMenuDockClass
 argument_list|)
 block|,
 name|NULL
@@ -447,7 +447,7 @@ comment|/* base_finalize */
 operator|(
 name|GClassInitFunc
 operator|)
-name|gimp_image_dock_class_init
+name|gimp_menu_dock_class_init
 block|,
 name|NULL
 block|,
@@ -457,7 +457,7 @@ block|,
 comment|/* class_data */
 sizeof|sizeof
 argument_list|(
-name|GimpImageDock
+name|GimpMenuDock
 argument_list|)
 block|,
 literal|0
@@ -466,16 +466,16 @@ comment|/* n_preallocs */
 operator|(
 name|GInstanceInitFunc
 operator|)
-name|gimp_image_dock_init
+name|gimp_menu_dock_init
 block|,       }
 decl_stmt|;
 name|dock_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GIMP_TYPE_DOCK
+name|GIMP_TYPE_IMAGE_DOCK
 argument_list|,
-literal|"GimpImageDock"
+literal|"GimpMenuDock"
 argument_list|,
 operator|&
 name|dock_info
@@ -493,10 +493,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_dock_class_init (GimpImageDockClass * klass)
-name|gimp_image_dock_class_init
+DECL|function|gimp_menu_dock_class_init (GimpMenuDockClass * klass)
+name|gimp_menu_dock_class_init
 parameter_list|(
-name|GimpImageDockClass
+name|GimpMenuDockClass
 modifier|*
 name|klass
 parameter_list|)
@@ -548,49 +548,49 @@ name|object_class
 operator|->
 name|constructor
 operator|=
-name|gimp_image_dock_constructor
+name|gimp_menu_dock_constructor
 expr_stmt|;
 name|gtk_object_class
 operator|->
 name|destroy
 operator|=
-name|gimp_image_dock_destroy
+name|gimp_menu_dock_destroy
 expr_stmt|;
 name|widget_class
 operator|->
 name|style_set
 operator|=
-name|gimp_image_dock_style_set
+name|gimp_menu_dock_style_set
 expr_stmt|;
 name|dock_class
 operator|->
 name|setup
 operator|=
-name|gimp_image_dock_setup
+name|gimp_menu_dock_setup
 expr_stmt|;
 name|dock_class
 operator|->
 name|set_aux_info
 operator|=
-name|gimp_image_dock_set_aux_info
+name|gimp_menu_dock_set_aux_info
 expr_stmt|;
 name|dock_class
 operator|->
 name|get_aux_info
 operator|=
-name|gimp_image_dock_get_aux_info
+name|gimp_menu_dock_get_aux_info
 expr_stmt|;
 name|dock_class
 operator|->
 name|book_added
 operator|=
-name|gimp_image_dock_book_added
+name|gimp_menu_dock_book_added
 expr_stmt|;
 name|dock_class
 operator|->
 name|book_removed
 operator|=
-name|gimp_image_dock_book_removed
+name|gimp_menu_dock_book_removed
 expr_stmt|;
 name|gtk_widget_class_install_style_property
 argument_list|(
@@ -640,10 +640,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_dock_init (GimpImageDock * dock)
-name|gimp_image_dock_init
+DECL|function|gimp_menu_dock_init (GimpMenuDock * dock)
+name|gimp_menu_dock_init
 parameter_list|(
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
 name|dock
 parameter_list|)
@@ -871,7 +871,7 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_dock_auto_clicked
+name|gimp_menu_dock_auto_clicked
 argument_list|)
 argument_list|,
 name|dock
@@ -899,8 +899,8 @@ begin_function
 specifier|static
 name|GObject
 modifier|*
-DECL|function|gimp_image_dock_constructor (GType type,guint n_params,GObjectConstructParam * params)
-name|gimp_image_dock_constructor
+DECL|function|gimp_menu_dock_constructor (GType type,guint n_params,GObjectConstructParam * params)
+name|gimp_menu_dock_constructor
 parameter_list|(
 name|GType
 name|type
@@ -917,7 +917,7 @@ name|GObject
 modifier|*
 name|object
 decl_stmt|;
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
 name|dock
 decl_stmt|;
@@ -939,7 +939,7 @@ argument_list|)
 expr_stmt|;
 name|dock
 operator|=
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 argument_list|(
 name|object
 argument_list|)
@@ -953,19 +953,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_dock_destroy (GtkObject * object)
-name|gimp_image_dock_destroy
+DECL|function|gimp_menu_dock_destroy (GtkObject * object)
+name|gimp_menu_dock_destroy
 parameter_list|(
 name|GtkObject
 modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
 name|dock
 init|=
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 argument_list|(
 name|object
 argument_list|)
@@ -1048,8 +1048,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_dock_style_set (GtkWidget * widget,GtkStyle * prev_style)
-name|gimp_image_dock_style_set
+DECL|function|gimp_menu_dock_style_set (GtkWidget * widget,GtkStyle * prev_style)
+name|gimp_menu_dock_style_set
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1060,9 +1060,9 @@ modifier|*
 name|prev_style
 parameter_list|)
 block|{
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
-name|image_dock
+name|menu_dock
 decl_stmt|;
 name|gint
 name|minimal_width
@@ -1093,9 +1093,9 @@ decl_stmt|;
 name|gint
 name|ythickness
 decl_stmt|;
-name|image_dock
+name|menu_dock
 operator|=
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 argument_list|(
 name|widget
 argument_list|)
@@ -1142,7 +1142,7 @@ name|screen
 operator|=
 name|gtk_widget_get_screen
 argument_list|(
-name|image_dock
+name|menu_dock
 operator|->
 name|image_combo
 argument_list|)
@@ -1165,7 +1165,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_style_get
 argument_list|(
-name|image_dock
+name|menu_dock
 operator|->
 name|auto_button
 argument_list|,
@@ -1184,7 +1184,7 @@ argument_list|)
 expr_stmt|;
 name|ythickness
 operator|=
-name|image_dock
+name|menu_dock
 operator|->
 name|auto_button
 operator|->
@@ -1206,7 +1206,7 @@ name|gimp_container_view_set_preview_size
 argument_list|(
 name|GIMP_CONTAINER_VIEW
 argument_list|(
-name|image_dock
+name|menu_dock
 operator|->
 name|image_combo
 argument_list|)
@@ -1218,7 +1218,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request
 argument_list|(
-name|image_dock
+name|menu_dock
 operator|->
 name|auto_button
 argument_list|,
@@ -1247,8 +1247,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_dock_setup (GimpDock * dock,const GimpDock * template)
-name|gimp_image_dock_setup
+DECL|function|gimp_menu_dock_setup (GimpDock * dock,const GimpDock * template)
+name|gimp_menu_dock_setup
 parameter_list|(
 name|GimpDock
 modifier|*
@@ -1262,7 +1262,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|GIMP_IS_IMAGE_DOCK
+name|GIMP_IS_MENU_DOCK
 argument_list|(
 name|template
 argument_list|)
@@ -1276,7 +1276,7 @@ name|show_image_menu
 decl_stmt|;
 name|auto_follow_active
 operator|=
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 argument_list|(
 name|template
 argument_list|)
@@ -1285,16 +1285,16 @@ name|auto_follow_active
 expr_stmt|;
 name|show_image_menu
 operator|=
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 argument_list|(
 name|template
 argument_list|)
 operator|->
 name|show_image_menu
 expr_stmt|;
-name|gimp_image_dock_set_auto_follow_active
+name|gimp_menu_dock_set_auto_follow_active
 argument_list|(
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 argument_list|(
 name|dock
 argument_list|)
@@ -1302,9 +1302,9 @@ argument_list|,
 name|auto_follow_active
 argument_list|)
 expr_stmt|;
-name|gimp_image_dock_set_show_image_menu
+name|gimp_menu_dock_set_show_image_menu
 argument_list|(
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 argument_list|(
 name|dock
 argument_list|)
@@ -1335,8 +1335,8 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_dock_set_aux_info (GimpDock * dock,GList * aux_info)
-name|gimp_image_dock_set_aux_info
+DECL|function|gimp_menu_dock_set_aux_info (GimpDock * dock,GList * aux_info)
+name|gimp_menu_dock_set_aux_info
 parameter_list|(
 name|GimpDock
 modifier|*
@@ -1347,11 +1347,11 @@ modifier|*
 name|aux_info
 parameter_list|)
 block|{
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
-name|image_dock
+name|menu_dock
 init|=
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 argument_list|(
 name|dock
 argument_list|)
@@ -1363,14 +1363,14 @@ decl_stmt|;
 name|gboolean
 name|menu_shown
 init|=
-name|image_dock
+name|menu_dock
 operator|->
 name|show_image_menu
 decl_stmt|;
 name|gboolean
 name|auto_follow
 init|=
-name|image_dock
+name|menu_dock
 operator|->
 name|auto_follow_active
 decl_stmt|;
@@ -1456,13 +1456,13 @@ if|if
 condition|(
 name|menu_shown
 operator|!=
-name|image_dock
+name|menu_dock
 operator|->
 name|show_image_menu
 condition|)
-name|gimp_image_dock_set_show_image_menu
+name|gimp_menu_dock_set_show_image_menu
 argument_list|(
-name|image_dock
+name|menu_dock
 argument_list|,
 name|menu_shown
 argument_list|)
@@ -1471,13 +1471,13 @@ if|if
 condition|(
 name|auto_follow
 operator|!=
-name|image_dock
+name|menu_dock
 operator|->
 name|auto_follow_active
 condition|)
-name|gimp_image_dock_set_auto_follow_active
+name|gimp_menu_dock_set_auto_follow_active
 argument_list|(
-name|image_dock
+name|menu_dock
 argument_list|,
 name|auto_follow
 argument_list|)
@@ -1489,19 +1489,19 @@ begin_function
 specifier|static
 name|GList
 modifier|*
-DECL|function|gimp_image_dock_get_aux_info (GimpDock * dock)
-name|gimp_image_dock_get_aux_info
+DECL|function|gimp_menu_dock_get_aux_info (GimpDock * dock)
+name|gimp_menu_dock_get_aux_info
 parameter_list|(
 name|GimpDock
 modifier|*
 name|dock
 parameter_list|)
 block|{
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
-name|image_dock
+name|menu_dock
 init|=
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 argument_list|(
 name|dock
 argument_list|)
@@ -1522,7 +1522,7 @@ name|gimp_session_info_aux_new
 argument_list|(
 name|AUX_INFO_SHOW_IMAGE_MENU
 argument_list|,
-name|image_dock
+name|menu_dock
 operator|->
 name|show_image_menu
 condition|?
@@ -1546,7 +1546,7 @@ name|gimp_session_info_aux_new
 argument_list|(
 name|AUX_INFO_FOLLOW_ACTIVE_IMAGE
 argument_list|,
-name|image_dock
+name|menu_dock
 operator|->
 name|auto_follow_active
 condition|?
@@ -1573,8 +1573,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_dock_book_added (GimpDock * dock,GimpDockbook * dockbook)
-name|gimp_image_dock_book_added
+DECL|function|gimp_menu_dock_book_added (GimpDock * dock,GimpDockbook * dockbook)
+name|gimp_menu_dock_book_added
 parameter_list|(
 name|GimpDock
 modifier|*
@@ -1593,7 +1593,7 @@ literal|"dockable_added"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_dock_dockbook_changed
+name|gimp_menu_dock_dockbook_changed
 argument_list|)
 argument_list|,
 name|dock
@@ -1607,7 +1607,7 @@ literal|"dockable_removed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_dock_dockbook_changed
+name|gimp_menu_dock_dockbook_changed
 argument_list|)
 argument_list|,
 name|dock
@@ -1621,15 +1621,15 @@ literal|"dockable_reordered"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_dock_dockbook_changed
+name|gimp_menu_dock_dockbook_changed
 argument_list|)
 argument_list|,
 name|dock
 argument_list|)
 expr_stmt|;
-name|gimp_image_dock_update_title
+name|gimp_menu_dock_update_title
 argument_list|(
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 argument_list|(
 name|dock
 argument_list|)
@@ -1653,8 +1653,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_dock_book_removed (GimpDock * dock,GimpDockbook * dockbook)
-name|gimp_image_dock_book_removed
+DECL|function|gimp_menu_dock_book_removed (GimpDock * dock,GimpDockbook * dockbook)
+name|gimp_menu_dock_book_removed
 parameter_list|(
 name|GimpDock
 modifier|*
@@ -1669,14 +1669,14 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|dockbook
 argument_list|,
-name|gimp_image_dock_dockbook_changed
+name|gimp_menu_dock_dockbook_changed
 argument_list|,
 name|dock
 argument_list|)
 expr_stmt|;
-name|gimp_image_dock_update_title
+name|gimp_menu_dock_update_title
 argument_list|(
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 argument_list|(
 name|dock
 argument_list|)
@@ -1700,8 +1700,8 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_image_dock_new (GimpDialogFactory * dialog_factory,GimpContainer * image_container,GimpContainer * display_container)
-name|gimp_image_dock_new
+DECL|function|gimp_menu_dock_new (GimpDialogFactory * dialog_factory,GimpContainer * image_container,GimpContainer * display_container)
+name|gimp_menu_dock_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
@@ -1716,9 +1716,9 @@ modifier|*
 name|display_container
 parameter_list|)
 block|{
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
-name|image_dock
+name|menu_dock
 decl_stmt|;
 name|GimpContext
 modifier|*
@@ -1779,11 +1779,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|image_dock
+name|menu_dock
 operator|=
 name|g_object_new
 argument_list|(
-name|GIMP_TYPE_IMAGE_DOCK
+name|GIMP_TYPE_MENU_DOCK
 argument_list|,
 literal|"context"
 argument_list|,
@@ -1796,13 +1796,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|image_dock
+name|menu_dock
 operator|->
 name|image_container
 operator|=
 name|image_container
 expr_stmt|;
-name|image_dock
+name|menu_dock
 operator|->
 name|display_container
 operator|=
@@ -1812,7 +1812,7 @@ name|gimp_help_connect
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|image_dock
+name|menu_dock
 argument_list|)
 argument_list|,
 name|gimp_standard_help_func
@@ -1849,7 +1849,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_dock
+name|menu_dock
 operator|->
 name|auto_follow_active
 condition|)
@@ -1897,10 +1897,10 @@ literal|"display_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_dock_factory_display_changed
+name|gimp_menu_dock_factory_display_changed
 argument_list|)
 argument_list|,
-name|image_dock
+name|menu_dock
 argument_list|,
 literal|0
 argument_list|)
@@ -1915,10 +1915,10 @@ literal|"image_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_dock_factory_image_changed
+name|gimp_menu_dock_factory_image_changed
 argument_list|)
 argument_list|,
-name|image_dock
+name|menu_dock
 argument_list|,
 literal|0
 argument_list|)
@@ -1931,10 +1931,10 @@ literal|"image_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_dock_image_changed
+name|gimp_menu_dock_image_changed
 argument_list|)
 argument_list|,
-name|image_dock
+name|menu_dock
 argument_list|,
 literal|0
 argument_list|)
@@ -1945,7 +1945,7 @@ name|gtk_widget_get_screen
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|image_dock
+name|menu_dock
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1967,7 +1967,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|image_dock
+name|menu_dock
 operator|->
 name|image_combo
 argument_list|,
@@ -1985,7 +1985,7 @@ expr_stmt|;
 return|return
 name|GTK_WIDGET
 argument_list|(
-name|image_dock
+name|menu_dock
 argument_list|)
 return|;
 block|}
@@ -1993,12 +1993,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_dock_set_auto_follow_active (GimpImageDock * image_dock,gboolean auto_follow_active)
-name|gimp_image_dock_set_auto_follow_active
+DECL|function|gimp_menu_dock_set_auto_follow_active (GimpMenuDock * menu_dock,gboolean auto_follow_active)
+name|gimp_menu_dock_set_auto_follow_active
 parameter_list|(
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
-name|image_dock
+name|menu_dock
 parameter_list|,
 name|gboolean
 name|auto_follow_active
@@ -2006,9 +2006,9 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_IMAGE_DOCK
+name|GIMP_IS_MENU_DOCK
 argument_list|(
-name|image_dock
+name|menu_dock
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2016,7 +2016,7 @@ name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|image_dock
+name|menu_dock
 operator|->
 name|auto_button
 argument_list|)
@@ -2033,12 +2033,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_dock_set_show_image_menu (GimpImageDock * image_dock,gboolean show)
-name|gimp_image_dock_set_show_image_menu
+DECL|function|gimp_menu_dock_set_show_image_menu (GimpMenuDock * menu_dock,gboolean show)
+name|gimp_menu_dock_set_show_image_menu
 parameter_list|(
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
-name|image_dock
+name|menu_dock
 parameter_list|,
 name|gboolean
 name|show
@@ -2046,9 +2046,9 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_IMAGE_DOCK
+name|GIMP_IS_MENU_DOCK
 argument_list|(
-name|image_dock
+name|menu_dock
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2058,7 +2058,7 @@ name|show
 condition|)
 name|gtk_widget_show
 argument_list|(
-name|image_dock
+name|menu_dock
 operator|->
 name|image_combo
 operator|->
@@ -2068,14 +2068,14 @@ expr_stmt|;
 else|else
 name|gtk_widget_hide
 argument_list|(
-name|image_dock
+name|menu_dock
 operator|->
 name|image_combo
 operator|->
 name|parent
 argument_list|)
 expr_stmt|;
-name|image_dock
+name|menu_dock
 operator|->
 name|show_image_menu
 operator|=
@@ -2091,8 +2091,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_dock_dockbook_changed (GimpDockbook * dockbook,GimpDockable * dockable,GimpImageDock * dock)
-name|gimp_image_dock_dockbook_changed
+DECL|function|gimp_menu_dock_dockbook_changed (GimpDockbook * dockbook,GimpDockable * dockable,GimpMenuDock * dock)
+name|gimp_menu_dock_dockbook_changed
 parameter_list|(
 name|GimpDockbook
 modifier|*
@@ -2102,12 +2102,12 @@ name|GimpDockable
 modifier|*
 name|dockable
 parameter_list|,
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
 name|dock
 parameter_list|)
 block|{
-name|gimp_image_dock_update_title
+name|gimp_menu_dock_update_title
 argument_list|(
 name|dock
 argument_list|)
@@ -2118,12 +2118,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_dock_update_title_idle (GimpImageDock * image_dock)
-name|gimp_image_dock_update_title_idle
+DECL|function|gimp_menu_dock_update_title_idle (GimpMenuDock * menu_dock)
+name|gimp_menu_dock_update_title_idle
 parameter_list|(
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
-name|image_dock
+name|menu_dock
 parameter_list|)
 block|{
 name|GString
@@ -2147,7 +2147,7 @@ name|list
 operator|=
 name|GIMP_DOCK
 argument_list|(
-name|image_dock
+name|menu_dock
 argument_list|)
 operator|->
 name|dockbooks
@@ -2260,7 +2260,7 @@ name|gtk_window_set_title
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|image_dock
+name|menu_dock
 argument_list|)
 argument_list|,
 name|title
@@ -2275,7 +2275,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|image_dock
+name|menu_dock
 operator|->
 name|update_title_idle_id
 operator|=
@@ -2290,28 +2290,28 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_dock_update_title (GimpImageDock * image_dock)
-name|gimp_image_dock_update_title
+DECL|function|gimp_menu_dock_update_title (GimpMenuDock * menu_dock)
+name|gimp_menu_dock_update_title
 parameter_list|(
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
-name|image_dock
+name|menu_dock
 parameter_list|)
 block|{
 if|if
 condition|(
-name|image_dock
+name|menu_dock
 operator|->
 name|update_title_idle_id
 condition|)
 name|g_source_remove
 argument_list|(
-name|image_dock
+name|menu_dock
 operator|->
 name|update_title_idle_id
 argument_list|)
 expr_stmt|;
-name|image_dock
+name|menu_dock
 operator|->
 name|update_title_idle_id
 operator|=
@@ -2320,9 +2320,9 @@ argument_list|(
 operator|(
 name|GSourceFunc
 operator|)
-name|gimp_image_dock_update_title_idle
+name|gimp_menu_dock_update_title_idle
 argument_list|,
-name|image_dock
+name|menu_dock
 argument_list|)
 expr_stmt|;
 block|}
@@ -2331,8 +2331,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_dock_factory_display_changed (GimpContext * context,GimpObject * display,GimpDock * dock)
-name|gimp_image_dock_factory_display_changed
+DECL|function|gimp_menu_dock_factory_display_changed (GimpContext * context,GimpObject * display,GimpDock * dock)
+name|gimp_menu_dock_factory_display_changed
 parameter_list|(
 name|GimpContext
 modifier|*
@@ -2347,11 +2347,11 @@ modifier|*
 name|dock
 parameter_list|)
 block|{
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
-name|image_dock
+name|menu_dock
 init|=
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 argument_list|(
 name|dock
 argument_list|)
@@ -2360,7 +2360,7 @@ if|if
 condition|(
 name|display
 operator|&&
-name|image_dock
+name|menu_dock
 operator|->
 name|auto_follow_active
 condition|)
@@ -2379,8 +2379,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_dock_factory_image_changed (GimpContext * context,GimpImage * gimage,GimpDock * dock)
-name|gimp_image_dock_factory_image_changed
+DECL|function|gimp_menu_dock_factory_image_changed (GimpContext * context,GimpImage * gimage,GimpDock * dock)
+name|gimp_menu_dock_factory_image_changed
 parameter_list|(
 name|GimpContext
 modifier|*
@@ -2395,11 +2395,11 @@ modifier|*
 name|dock
 parameter_list|)
 block|{
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
-name|image_dock
+name|menu_dock
 init|=
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 argument_list|(
 name|dock
 argument_list|)
@@ -2409,7 +2409,7 @@ if|if
 condition|(
 name|gimage
 operator|&&
-name|image_dock
+name|menu_dock
 operator|->
 name|auto_follow_active
 condition|)
@@ -2428,8 +2428,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_dock_image_changed (GimpContext * context,GimpImage * gimage,GimpDock * dock)
-name|gimp_image_dock_image_changed
+DECL|function|gimp_menu_dock_image_changed (GimpContext * context,GimpImage * gimage,GimpDock * dock)
+name|gimp_menu_dock_image_changed
 parameter_list|(
 name|GimpContext
 modifier|*
@@ -2444,11 +2444,11 @@ modifier|*
 name|dock
 parameter_list|)
 block|{
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
-name|image_dock
+name|menu_dock
 init|=
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 argument_list|(
 name|dock
 argument_list|)
@@ -2457,7 +2457,7 @@ name|GimpContainer
 modifier|*
 name|image_container
 init|=
-name|image_dock
+name|menu_dock
 operator|->
 name|image_container
 decl_stmt|;
@@ -2465,7 +2465,7 @@ name|GimpContainer
 modifier|*
 name|display_container
 init|=
-name|image_dock
+name|menu_dock
 operator|->
 name|display_container
 decl_stmt|;
@@ -2679,8 +2679,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_dock_auto_clicked (GtkWidget * widget,GimpDock * dock)
-name|gimp_image_dock_auto_clicked
+DECL|function|gimp_menu_dock_auto_clicked (GtkWidget * widget,GimpDock * dock)
+name|gimp_menu_dock_auto_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2691,11 +2691,11 @@ modifier|*
 name|dock
 parameter_list|)
 block|{
-name|GimpImageDock
+name|GimpMenuDock
 modifier|*
-name|image_dock
+name|menu_dock
 init|=
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 argument_list|(
 name|dock
 argument_list|)
@@ -2705,14 +2705,14 @@ argument_list|(
 name|widget
 argument_list|,
 operator|&
-name|image_dock
+name|menu_dock
 operator|->
 name|auto_follow_active
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_dock
+name|menu_dock
 operator|->
 name|auto_follow_active
 condition|)

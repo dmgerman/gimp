@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdock.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdockable.h"
 end_include
 
@@ -61,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpdockbook.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpimagedock.h"
 end_include
 
 begin_include

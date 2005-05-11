@@ -556,7 +556,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GimpDockClass
+name|GimpImageDockClass
 modifier|*
 name|parent_class
 init|=
@@ -630,7 +630,7 @@ name|type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GIMP_TYPE_DOCK
+name|GIMP_TYPE_IMAGE_DOCK
 argument_list|,
 literal|"GimpToolbox"
 argument_list|,
@@ -685,6 +685,15 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|GimpImageDockClass
+modifier|*
+name|image_dock_class
+init|=
+name|GIMP_IMAGE_DOCK_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -728,7 +737,7 @@ name|book_removed
 operator|=
 name|gimp_toolbox_book_removed
 expr_stmt|;
-name|dock_class
+name|image_dock_class
 operator|->
 name|ui_manager_name
 operator|=
@@ -979,7 +988,7 @@ name|manager
 operator|=
 name|GTK_UI_MANAGER
 argument_list|(
-name|GIMP_DOCK
+name|GIMP_IMAGE_DOCK
 argument_list|(
 name|toolbox
 argument_list|)
@@ -3341,7 +3350,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_DOCK
+name|GIMP_IMAGE_DOCK
 argument_list|(
 name|toolbox
 argument_list|)
@@ -3422,7 +3431,7 @@ name|action
 operator|=
 name|gimp_ui_manager_find_action
 argument_list|(
-name|GIMP_DOCK
+name|GIMP_IMAGE_DOCK
 argument_list|(
 name|toolbox
 argument_list|)

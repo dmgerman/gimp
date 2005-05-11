@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpimagedock.h"
+file|"widgets/gimpmenudock.h"
 end_include
 
 begin_include
@@ -306,14 +306,14 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_IS_IMAGE_DOCK
+name|GIMP_IS_MENU_DOCK
 argument_list|(
 name|widget
 argument_list|)
 condition|)
-name|gimp_image_dock_set_show_image_menu
+name|gimp_menu_dock_set_show_image_menu
 argument_list|(
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 argument_list|(
 name|widget
 argument_list|)
@@ -378,14 +378,14 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_IS_IMAGE_DOCK
+name|GIMP_IS_MENU_DOCK
 argument_list|(
 name|widget
 argument_list|)
 condition|)
-name|gimp_image_dock_set_auto_follow_active
+name|gimp_menu_dock_set_auto_follow_active
 argument_list|(
-name|GIMP_IMAGE_DOCK
+name|GIMP_MENU_DOCK
 argument_list|(
 name|widget
 argument_list|)
