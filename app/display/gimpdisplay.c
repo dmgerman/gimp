@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2912ee610103
+DECL|enum|__anon2c65d9dc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -117,6 +117,9 @@ name|PROP_ID
 block|,
 DECL|enumerator|PROP_IMAGE
 name|PROP_IMAGE
+block|,
+DECL|enumerator|PROP_SHELL
+name|PROP_SHELL
 block|}
 enum|;
 end_enum
@@ -575,6 +578,26 @@ name|G_PARAM_READABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_object_class_install_property
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_SHELL
+argument_list|,
+name|g_param_spec_object
+argument_list|(
+literal|"shell"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_TYPE_DISPLAY_SHELL
+argument_list|,
+name|G_PARAM_READABLE
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -731,6 +754,9 @@ break|break;
 case|case
 name|PROP_IMAGE
 case|:
+case|case
+name|PROP_SHELL
+case|:
 name|g_assert_not_reached
 argument_list|()
 expr_stmt|;
@@ -809,6 +835,19 @@ argument_list|,
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_SHELL
+case|:
+name|g_value_set_object
+argument_list|(
+name|value
+argument_list|,
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 break|break;
