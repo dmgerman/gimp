@@ -113,7 +113,12 @@ parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|msg
+name|primary
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|secondary
 parameter_list|,
 specifier|const
 name|gchar
@@ -243,14 +248,16 @@ operator|&&
 name|orient
 operator|<=
 literal|8
-condition|)
-if|if
-condition|(
+operator|&&
 name|jpeg_query
 argument_list|(
 name|_
 argument_list|(
-literal|"According to the EXIF data, this image is rotated. "
+literal|"According to the EXIF data, this image is rotated."
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
 literal|"Would you like GIMP to rotate it into the standard "
 literal|"orientation?"
 argument_list|)
@@ -277,7 +284,7 @@ break|break;
 case|case
 literal|2
 case|:
-comment|/* flipped right-left */
+comment|/* flipped right-left               */
 name|gimp_image_flip
 argument_list|(
 name|image_ID
@@ -289,12 +296,12 @@ break|break;
 case|case
 literal|3
 case|:
-comment|/* rotated 180 */
+comment|/* rotated 180                      */
 break|break;
 case|case
 literal|4
 case|:
-comment|/* flipped top-bottom */
+comment|/* flipped top-bottom               */
 name|gimp_image_flip
 argument_list|(
 name|image_ID
@@ -306,7 +313,7 @@ break|break;
 case|case
 literal|5
 case|:
-comment|/* flipped diagonally around '\' */
+comment|/* flipped diagonally around '\'    */
 name|gimp_image_rotate
 argument_list|(
 name|image_ID
@@ -325,7 +332,7 @@ break|break;
 case|case
 literal|6
 case|:
-comment|/* 90 CW */
+comment|/* 90 CW                            */
 name|gimp_image_rotate
 argument_list|(
 name|image_ID
@@ -337,7 +344,7 @@ break|break;
 case|case
 literal|7
 case|:
-comment|/* flipped diagonally around '/' */
+comment|/* flipped diagonally around '/'    */
 name|gimp_image_rotate
 argument_list|(
 name|image_ID
@@ -356,7 +363,7 @@ break|break;
 case|case
 literal|8
 case|:
-comment|/* 90 CCW */
+comment|/* 90 CCW                           */
 name|gimp_image_rotate
 argument_list|(
 name|image_ID
@@ -366,7 +373,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-comment|/* can't happen */
+comment|/* can't happen                     */
 break|break;
 block|}
 block|}
@@ -824,13 +831,18 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|jpeg_query (const gchar * msg,const gchar * cancel_label,const gchar * ok_label)
+DECL|function|jpeg_query (const gchar * primary,const gchar * secondary,const gchar * cancel_label,const gchar * ok_label)
 name|jpeg_query
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|msg
+name|primary
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|secondary
 parameter_list|,
 specifier|const
 name|gchar
@@ -865,7 +877,19 @@ name|GTK_BUTTONS_NONE
 argument_list|,
 literal|"%s"
 argument_list|,
-name|msg
+name|primary
+argument_list|)
+expr_stmt|;
+name|gtk_message_dialog_format_secondary_text
+argument_list|(
+name|GTK_MESSAGE_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+literal|"%s"
+argument_list|,
+name|secondary
 argument_list|)
 expr_stmt|;
 name|gtk_dialog_add_buttons
