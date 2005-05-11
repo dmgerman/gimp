@@ -257,7 +257,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2966e5ca0103
+DECL|enum|__anon2a23eb8e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -273,7 +273,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2966e5ca0203
+DECL|enum|__anon2a23eb8e0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6106,12 +6106,21 @@ name|FALSE
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GTK_WIDGET_REALIZED
+name|GIMP_IS_DISPLAY_SHELL
 argument_list|(
 name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|GTK_WIDGET_REALIZED
+argument_list|(
+name|shell
+argument_list|)
+condition|)
+return|return;
 name|widget
 operator|=
 name|GTK_WIDGET
