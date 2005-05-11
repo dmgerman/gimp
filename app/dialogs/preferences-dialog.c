@@ -8468,7 +8468,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b3ab9d60108
+DECL|struct|__anon2900cae90108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9621,7 +9621,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b3ab9d60208
+DECL|struct|__anon2900cae90208
 block|{
 DECL|member|label
 specifier|const
@@ -10234,7 +10234,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Hint for the _docks:"
+literal|"Hint for other _docks:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -10245,6 +10245,24 @@ argument_list|,
 literal|1
 argument_list|,
 name|size_group
+argument_list|)
+expr_stmt|;
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
+literal|"transient-docks"
+argument_list|,
+name|_
+argument_list|(
+literal|"Toolbox and other docks are transient "
+literal|"to the active display"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|vbox2
@@ -10434,7 +10452,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b3ab9d60308
+DECL|struct|__anon2900cae90308
 block|{
 DECL|member|label
 specifier|const
@@ -10591,7 +10609,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b3ab9d60408
+DECL|struct|__anon2900cae90408
 block|{
 DECL|member|tree_label
 specifier|const

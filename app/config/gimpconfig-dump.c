@@ -406,6 +406,15 @@ name|GIMP_CONFIG_PARAM_SERIALIZE
 operator|)
 condition|)
 continue|continue;
+if|if
+condition|(
+name|prop_spec
+operator|->
+name|flags
+operator|&
+name|GIMP_CONFIG_PARAM_IGNORE
+condition|)
+continue|continue;
 name|comment
 operator|=
 name|dump_describe_param

@@ -110,6 +110,7 @@ DECL|member|info_window_per_display
 name|gboolean
 name|info_window_per_display
 decl_stmt|;
+comment|/*  unused  */
 DECL|member|trust_dirty_flag
 name|gboolean
 name|trust_dirty_flag
@@ -217,6 +218,10 @@ decl_stmt|;
 DECL|member|dock_window_hint
 name|GimpWindowHint
 name|dock_window_hint
+decl_stmt|;
+DECL|member|transient_docks
+name|gboolean
+name|transient_docks
 decl_stmt|;
 DECL|member|cursor_format
 name|GimpCursorFormat

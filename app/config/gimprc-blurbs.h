@@ -408,15 +408,6 @@ value|N_("Sets the text to appear in image window titles.")
 end_define
 
 begin_define
-DECL|macro|INFO_WINDOW_PER_DISPLAY_BLURB
-define|#
-directive|define
-name|INFO_WINDOW_PER_DISPLAY_BLURB
-define|\
-value|N_("When enabled, the GIMP will use a different info window per image view.")
-end_define
-
-begin_define
 DECL|macro|INITIAL_ZOOM_TO_FIT_BLURB
 define|#
 directive|define
@@ -853,6 +844,15 @@ directive|define
 name|TEAROFF_MENUS_BLURB
 define|\
 value|N_("When enabled, menus can be torn off.")
+end_define
+
+begin_define
+DECL|macro|TRANSIENT_DOCKS_BLURB
+define|#
+directive|define
+name|TRANSIENT_DOCKS_BLURB
+define|\
+value|N_("When enabled, dock windows (the toolbox and palettes) are transient " \    "transient to the active image window. With most window managers this " \    "keeps the dock windows above the image window.")
 end_define
 
 begin_define
