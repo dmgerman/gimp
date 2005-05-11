@@ -1432,7 +1432,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scale:  * @shell:     the #GimpDisplayShell  * @zoom_type: whether to zoom in, our or to a specific scale  * @scale:     ignored unless @zoom_type == %GIMP_ZOOM_TO  *  * This function calls gimp_display_shell_scale_to(). It tries to be  * smart whether to use the position of the mouse pointer or the  * center of the display as coordinates.+  **/
+comment|/**  * gimp_display_shell_scale:  * @shell:     the #GimpDisplayShell  * @zoom_type: whether to zoom in, our or to a specific scale  * @scale:     ignored unless @zoom_type == %GIMP_ZOOM_TO  *  * This function calls gimp_display_shell_scale_to(). It tries to be  * smart whether to use the position of the mouse pointer or the  * center of the display as coordinates.  **/
 end_comment
 
 begin_function
@@ -1493,6 +1493,7 @@ name|disp_height
 operator|/
 literal|2
 expr_stmt|;
+comment|/*  Center on the mouse position instead of the display center,    *  if one of the following conditions is fulfilled:    *    *   (1) there's no current event (the action was triggered by an    *       input controller)    *   (2) the event originates from the canvas (a scroll event)    *   (3) the event originates from the shell (a key press event)    *    *  Basically the only situation where we don't want to center on    *  mouse position is if the action is being called from a menu.    */
 name|event
 operator|=
 name|gtk_get_current_event
@@ -1502,6 +1503,15 @@ if|if
 condition|(
 operator|!
 name|event
+operator|||
+name|gtk_get_event_widget
+argument_list|(
+name|event
+argument_list|)
+operator|==
+name|shell
+operator|->
+name|canvas
 operator|||
 name|gtk_get_event_widget
 argument_list|(

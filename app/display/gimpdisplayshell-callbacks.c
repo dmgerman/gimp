@@ -1739,25 +1739,16 @@ name|space_shaded_tool
 init|=
 name|NULL
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|canvas
-operator|->
-name|window
-condition|)
-block|{
-name|g_warning
+name|g_return_val_if_fail
 argument_list|(
-literal|"%s: called unrealized"
+name|GTK_WIDGET_REALIZED
+argument_list|(
+name|canvas
+argument_list|)
 argument_list|,
-name|G_STRFUNC
+name|FALSE
 argument_list|)
 expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
 comment|/*  are we in destruction?  */
 if|if
 condition|(
