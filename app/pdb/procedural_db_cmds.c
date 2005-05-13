@@ -1452,50 +1452,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* This really doesn't belong here, but it depends on our generated type_str  * array.  */
-end_comment
-
-begin_function
-specifier|const
-name|char
-modifier|*
-DECL|function|pdb_type_name (gint type)
-name|pdb_type_name
-parameter_list|(
-name|gint
-name|type
-parameter_list|)
-block|{
-if|if
-condition|(
-name|type
-operator|>=
-literal|0
-operator|&&
-name|type
-operator|<=
-name|GIMP_PDB_END
-condition|)
-return|return
-name|type_str
-index|[
-name|type
-index|]
-return|;
-else|else
-return|return
-name|g_strdup_printf
-argument_list|(
-literal|"(PDB type %d unknown)"
-argument_list|,
-name|type
-argument_list|)
-return|;
-comment|/* Yeah, we leak the memory.  But then you shouldn't try and     * get the name of a PDB type that doesn't exist, should you.     */
-block|}
-end_function
-
 begin_function
 specifier|static
 name|Argument

@@ -598,26 +598,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* "type" should really be a GimpPDBArgType, but we can cope with  *  out-of-range values.  */
-end_comment
-
-begin_function_decl
-specifier|const
-name|gchar
-modifier|*
-name|pdb_type_name
-parameter_list|(
-name|gint
-name|type
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* really exists in _cmds.c file */
-end_comment
-
 begin_endif
 endif|#
 directive|endif
