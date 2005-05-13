@@ -29,6 +29,16 @@ directive|include
 file|<glib/gstdio.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<gdkconfig.h>
+end_include
+
+begin_comment
+comment|/* For GDK_WINDOWING_WIN32 */
+end_comment
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -120,7 +130,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277035e50108
+DECL|struct|__anon2c7f3a940108
 block|{
 DECL|member|threshold
 name|gint
@@ -135,7 +145,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277035e50208
+DECL|struct|__anon2c7f3a940208
 block|{
 DECL|member|r
 name|guchar

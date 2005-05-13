@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<time.h>
 end_include
 
@@ -91,12 +85,6 @@ directive|include
 file|<winsock2.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<libgimpbase/gimpwin32-io.h>
-end_include
-
 begin_else
 else|#
 directive|else
@@ -107,29 +95,6 @@ include|#
 directive|include
 file|<sys/socket.h>
 end_include
-
-begin_include
-include|#
-directive|include
-file|<netinet/in.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<arpa/inet.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<netdb.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_ifdef
 ifdef|#
@@ -151,6 +116,35 @@ end_endif
 begin_comment
 comment|/* HAVE_SYS_SELECT_H */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|<netinet/in.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<arpa/inet.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<netdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<errno.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -187,6 +181,44 @@ include|#
 directive|include
 file|"script-fu-server.h"
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_define
+DECL|macro|CLOSESOCKET (fd)
+define|#
+directive|define
+name|CLOSESOCKET
+parameter_list|(
+name|fd
+parameter_list|)
+value|closesocket(fd)
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|CLOSESOCKET (fd)
+define|#
+directive|define
+name|CLOSESOCKET
+parameter_list|(
+name|fd
+parameter_list|)
+value|close(fd)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_define
 DECL|macro|COMMAND_HEADER
@@ -351,10 +383,10 @@ value|2
 end_define
 
 begin_define
-DECL|macro|ERROR
+DECL|macro|ERROR_BYTE
 define|#
 directive|define
-name|ERROR
+name|ERROR_BYTE
 value|1
 end_define
 
@@ -381,7 +413,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae96d680108
+DECL|struct|__anon28b8247c0108
 block|{
 DECL|member|command
 name|gchar
@@ -405,7 +437,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae96d680208
+DECL|struct|__anon28b8247c0208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -548,6 +580,19 @@ name|response_id
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|print_socket_api_error
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|api_name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -956,7 +1001,7 @@ operator|)
 name|value
 argument_list|)
 expr_stmt|;
-name|close
+name|CLOSESOCKET
 argument_list|(
 name|fd
 argument_list|)
@@ -1112,7 +1157,7 @@ operator|<
 literal|0
 condition|)
 block|{
-name|perror
+name|print_socket_api_error
 argument_list|(
 literal|"select"
 argument_list|)
@@ -1170,7 +1215,7 @@ operator|<
 literal|0
 condition|)
 block|{
-name|perror
+name|print_socket_api_error
 argument_list|(
 literal|"accept"
 argument_list|)
@@ -1272,7 +1317,7 @@ operator|<
 literal|0
 condition|)
 block|{
-name|perror
+name|print_socket_api_error
 argument_list|(
 literal|"listen"
 argument_list|)
@@ -1546,7 +1591,7 @@ name|MAGIC
 expr_stmt|;
 name|buffer
 index|[
-name|ERROR
+name|ERROR_BYTE
 index|]
 operator|=
 name|error
@@ -1605,7 +1650,7 @@ name|filedes
 operator|>
 literal|0
 operator|&&
-name|write
+name|send
 argument_list|(
 name|cmd
 operator|->
@@ -1616,15 +1661,17 @@ operator|+
 name|i
 argument_list|,
 literal|1
+argument_list|,
+literal|0
 argument_list|)
 operator|<
 literal|0
 condition|)
 block|{
 comment|/*  Write error  */
-name|perror
+name|print_socket_api_error
 argument_list|(
-literal|"write"
+literal|"send"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1652,7 +1699,7 @@ name|filedes
 operator|>
 literal|0
 operator|&&
-name|write
+name|send
 argument_list|(
 name|cmd
 operator|->
@@ -1663,15 +1710,17 @@ operator|+
 name|i
 argument_list|,
 literal|1
+argument_list|,
+literal|0
 argument_list|)
 operator|<
 literal|0
 condition|)
 block|{
 comment|/*  Write error  */
-name|perror
+name|print_socket_api_error
 argument_list|(
-literal|"write"
+literal|"send"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1738,7 +1787,7 @@ control|)
 block|{
 name|nbytes
 operator|=
-name|read
+name|recv
 argument_list|(
 name|filedes
 argument_list|,
@@ -1749,6 +1798,8 @@ argument_list|,
 name|COMMAND_HEADER
 operator|-
 name|i
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -1758,6 +1809,9 @@ operator|<
 literal|0
 condition|)
 block|{
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
 if|if
 condition|(
 name|errno
@@ -1765,6 +1819,8 @@ operator|==
 name|EINTR
 condition|)
 continue|continue;
+endif|#
+directive|endif
 name|server_log
 argument_list|(
 literal|"Error reading command header.\n"
@@ -1852,7 +1908,7 @@ control|)
 block|{
 name|nbytes
 operator|=
-name|read
+name|recv
 argument_list|(
 name|filedes
 argument_list|,
@@ -1863,6 +1919,8 @@ argument_list|,
 name|command_len
 operator|-
 name|i
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -1872,6 +1930,9 @@ operator|<=
 literal|0
 condition|)
 block|{
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
 if|if
 condition|(
 name|nbytes
@@ -1883,6 +1944,8 @@ operator|==
 name|EINTR
 condition|)
 continue|continue;
+endif|#
+directive|endif
 name|server_log
 argument_list|(
 literal|"Error reading command.  Read %d out of %d bytes.\n"
@@ -2081,9 +2144,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|perror
+name|print_socket_api_error
 argument_list|(
-literal|"Can't initialize the Winsock DLL"
+literal|"WSAStartup"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -2112,7 +2175,7 @@ operator|<
 literal|0
 condition|)
 block|{
-name|perror
+name|print_socket_api_error
 argument_list|(
 literal|"socket"
 argument_list|)
@@ -2188,7 +2251,7 @@ operator|<
 literal|0
 condition|)
 block|{
-name|perror
+name|print_socket_api_error
 argument_list|(
 literal|"bind"
 argument_list|)
@@ -2309,7 +2372,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|close
+name|CLOSESOCKET
 argument_list|(
 name|server_sock
 argument_list|)
@@ -2728,6 +2791,499 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|print_socket_api_error (const gchar * api_name)
+name|print_socket_api_error
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|api_name
+parameter_list|)
+block|{
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+comment|/* Yes, this functionality really belongs to GLib. */
+specifier|const
+name|gchar
+modifier|*
+name|emsg
+decl_stmt|;
+name|gchar
+name|unk
+index|[
+literal|100
+index|]
+decl_stmt|;
+name|int
+name|number
+init|=
+name|WSAGetLastError
+argument_list|()
+decl_stmt|;
+switch|switch
+condition|(
+name|number
+condition|)
+block|{
+case|case
+name|WSAEINTR
+case|:
+name|emsg
+operator|=
+literal|"Interrupted function call"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEACCES
+case|:
+name|emsg
+operator|=
+literal|"Permission denied"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEFAULT
+case|:
+name|emsg
+operator|=
+literal|"Bad address"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEINVAL
+case|:
+name|emsg
+operator|=
+literal|"Invalid argument"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEMFILE
+case|:
+name|emsg
+operator|=
+literal|"Too many open sockets"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEWOULDBLOCK
+case|:
+name|emsg
+operator|=
+literal|"Resource temporarily unavailable"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEINPROGRESS
+case|:
+name|emsg
+operator|=
+literal|"Operation now in progress"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEALREADY
+case|:
+name|emsg
+operator|=
+literal|"Operation already in progress"
+expr_stmt|;
+break|break;
+case|case
+name|WSAENOTSOCK
+case|:
+name|emsg
+operator|=
+literal|"Socket operation on nonsocket"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEDESTADDRREQ
+case|:
+name|emsg
+operator|=
+literal|"Destination address required"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEMSGSIZE
+case|:
+name|emsg
+operator|=
+literal|"Message too long"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEPROTOTYPE
+case|:
+name|emsg
+operator|=
+literal|"Protocol wrong type for socket"
+expr_stmt|;
+break|break;
+case|case
+name|WSAENOPROTOOPT
+case|:
+name|emsg
+operator|=
+literal|"Bad protocol option"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEPROTONOSUPPORT
+case|:
+name|emsg
+operator|=
+literal|"Protocol not supported"
+expr_stmt|;
+break|break;
+case|case
+name|WSAESOCKTNOSUPPORT
+case|:
+name|emsg
+operator|=
+literal|"Socket type not supported"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEOPNOTSUPP
+case|:
+name|emsg
+operator|=
+literal|"Operation not supported on transport endpoint"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEPFNOSUPPORT
+case|:
+name|emsg
+operator|=
+literal|"Protocol family not supported"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEAFNOSUPPORT
+case|:
+name|emsg
+operator|=
+literal|"Address family not supported by protocol family"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEADDRINUSE
+case|:
+name|emsg
+operator|=
+literal|"Address already in use"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEADDRNOTAVAIL
+case|:
+name|emsg
+operator|=
+literal|"Address not available"
+expr_stmt|;
+break|break;
+case|case
+name|WSAENETDOWN
+case|:
+name|emsg
+operator|=
+literal|"Network interface is not configured"
+expr_stmt|;
+break|break;
+case|case
+name|WSAENETUNREACH
+case|:
+name|emsg
+operator|=
+literal|"Network is unreachable"
+expr_stmt|;
+break|break;
+case|case
+name|WSAENETRESET
+case|:
+name|emsg
+operator|=
+literal|"Network dropped connection on reset"
+expr_stmt|;
+break|break;
+case|case
+name|WSAECONNABORTED
+case|:
+name|emsg
+operator|=
+literal|"Software caused connection abort"
+expr_stmt|;
+break|break;
+case|case
+name|WSAECONNRESET
+case|:
+name|emsg
+operator|=
+literal|"Connection reset by peer"
+expr_stmt|;
+break|break;
+case|case
+name|WSAENOBUFS
+case|:
+name|emsg
+operator|=
+literal|"No buffer space available"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEISCONN
+case|:
+name|emsg
+operator|=
+literal|"Socket is already connected"
+expr_stmt|;
+break|break;
+case|case
+name|WSAENOTCONN
+case|:
+name|emsg
+operator|=
+literal|"Socket is not connected"
+expr_stmt|;
+break|break;
+case|case
+name|WSAESHUTDOWN
+case|:
+name|emsg
+operator|=
+literal|"Can't send after socket shutdown"
+expr_stmt|;
+break|break;
+case|case
+name|WSAETIMEDOUT
+case|:
+name|emsg
+operator|=
+literal|"Connection timed out"
+expr_stmt|;
+break|break;
+case|case
+name|WSAECONNREFUSED
+case|:
+name|emsg
+operator|=
+literal|"Connection refused"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEHOSTDOWN
+case|:
+name|emsg
+operator|=
+literal|"Host is down"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEHOSTUNREACH
+case|:
+name|emsg
+operator|=
+literal|"Host is unreachable"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEPROCLIM
+case|:
+name|emsg
+operator|=
+literal|"Too many processes"
+expr_stmt|;
+break|break;
+case|case
+name|WSASYSNOTREADY
+case|:
+name|emsg
+operator|=
+literal|"Network subsystem is unavailable"
+expr_stmt|;
+break|break;
+case|case
+name|WSAVERNOTSUPPORTED
+case|:
+name|emsg
+operator|=
+literal|"Winsock.dll version out of range"
+expr_stmt|;
+break|break;
+case|case
+name|WSANOTINITIALISED
+case|:
+name|emsg
+operator|=
+literal|"Successful WSAStartup not yet performed"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEDISCON
+case|:
+name|emsg
+operator|=
+literal|"Graceful shutdown in progress"
+expr_stmt|;
+break|break;
+case|case
+name|WSATYPE_NOT_FOUND
+case|:
+name|emsg
+operator|=
+literal|"Class type not found"
+expr_stmt|;
+break|break;
+case|case
+name|WSAHOST_NOT_FOUND
+case|:
+name|emsg
+operator|=
+literal|"Host not found"
+expr_stmt|;
+break|break;
+case|case
+name|WSATRY_AGAIN
+case|:
+name|emsg
+operator|=
+literal|"Nonauthoritative host not found"
+expr_stmt|;
+break|break;
+case|case
+name|WSANO_RECOVERY
+case|:
+name|emsg
+operator|=
+literal|"This is a nonrecoverable error"
+expr_stmt|;
+break|break;
+case|case
+name|WSANO_DATA
+case|:
+name|emsg
+operator|=
+literal|"Valid name, no data record of requested type"
+expr_stmt|;
+break|break;
+case|case
+name|WSA_INVALID_HANDLE
+case|:
+name|emsg
+operator|=
+literal|"Specified event object handle is invalid"
+expr_stmt|;
+break|break;
+case|case
+name|WSA_INVALID_PARAMETER
+case|:
+name|emsg
+operator|=
+literal|"One or more parameters are invalid"
+expr_stmt|;
+break|break;
+case|case
+name|WSA_IO_INCOMPLETE
+case|:
+name|emsg
+operator|=
+literal|"Overlapped I/O event object not in signaled state"
+expr_stmt|;
+break|break;
+case|case
+name|WSA_NOT_ENOUGH_MEMORY
+case|:
+name|emsg
+operator|=
+literal|"Insufficient memory available"
+expr_stmt|;
+break|break;
+case|case
+name|WSA_OPERATION_ABORTED
+case|:
+name|emsg
+operator|=
+literal|"Overlapped operation aborted"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEINVALIDPROCTABLE
+case|:
+name|emsg
+operator|=
+literal|"Invalid procedure table from service provider"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEINVALIDPROVIDER
+case|:
+name|emsg
+operator|=
+literal|"Invalid service provider version number"
+expr_stmt|;
+break|break;
+case|case
+name|WSAEPROVIDERFAILEDINIT
+case|:
+name|emsg
+operator|=
+literal|"Unable to initialize a service provider"
+expr_stmt|;
+break|break;
+case|case
+name|WSASYSCALLFAILURE
+case|:
+name|emsg
+operator|=
+literal|"System call failure"
+expr_stmt|;
+break|break;
+default|default:
+name|sprintf
+argument_list|(
+name|unk
+argument_list|,
+literal|"Unknown WinSock error %d"
+argument_list|,
+name|number
+argument_list|)
+expr_stmt|;
+name|emsg
+operator|=
+name|unk
+expr_stmt|;
+break|break;
+block|}
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"%s failed: %s\n"
+argument_list|,
+name|api_name
+argument_list|,
+name|emsg
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
+name|perror
+argument_list|(
+name|api_name
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 
