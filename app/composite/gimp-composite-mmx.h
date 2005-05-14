@@ -37,7 +37,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  * Rummage through the compile-time environment to ensure this file  * can actually be compiled like we expect it to.  If all is okay,  * define the manifest constant COMPILE_IS_OKAY.  */
+comment|/*  * Rummage through the compile-time environment to ensure this file  * can actually be compiled like we expect it to.  If all is okay,  * define the manifest constant COMPILE_MMX_IS_OKAY.  */
 end_comment
 
 begin_if
@@ -446,6 +446,22 @@ name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_function_decl
+specifier|extern
+name|void
+name|gimp_composite_subtract_va8_va8_va8_mmx
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+name|ctx
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*extern void gimp_composite_multiply_va8_va8_va8_mmx (GimpCompositeContext *ctx);*/
+end_comment
 
 begin_endif
 endif|#
