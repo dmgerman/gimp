@@ -892,7 +892,7 @@ control|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movdqu          %1,%%xmm2\n"                     "\tmovdqu          %2,%%xmm3\n"                     "\tpminub      %%xmm3,%%xmm2\n"                     "\tmovdqu      %%xmm2,%0\n"                     : "=m" (*D)                     : "m" (*A), "m" (*B)                     : "%xmm1", "%xmm2", "%xmm3", "%xmm4");
+asm|("  movdqu          %1,%%xmm2\n"                     "\tmovdqu          %2,%%xmm3\n"                     "\tpminub      %%xmm3,%%xmm2\n"                     "\tmovdqu      %%xmm2,%0\n"                     : "=m" (*D)                     : "m" (*A), "m" (*B)                     : "%xmm2", "%xmm3");
 name|A
 operator|++
 expr_stmt|;
@@ -941,7 +941,7 @@ control|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movq       %1, %%mm2\n"                     "\tpminub     %2, %%mm2\n"                     "\tmovntq  %%mm2, %0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b)                     : "%mm1", "%mm2", "%mm3", "%mm4");
+asm|("  movq   %1,%%mm2\n"                     "\tmovq   %2,%%mm3\n"                     "\tpminub %%mm3,%%mm2\n"                     "\tmovntq %%mm2,%0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b)                     : "%mm2", "%mm3");
 name|a
 operator|++
 expr_stmt|;
@@ -1636,38 +1636,14 @@ operator|-=
 literal|16
 control|)
 block|{
-ifdef|#
-directive|ifdef
-name|__OPTIMIZE__
 asm|asm
 specifier|volatile
-asm|("  movdqu      %0,%%xmm0\n"                     "\tmovdqu      %1,%%xmm1\n"                     "\tmovdqu      %2,%%xmm2\n"                     "\tmovdqu      %3,%%xmm3\n"                     "\tmovdqu      %4,%%xmm4\n"                     "\tmovdqu      %5,%%xmm5\n"                     "\tmovdqu      %6,%%xmm6\n"                     "\tmovdqu      %7,%%xmm7\n"                      "\tmovdqu      %%xmm0,%1\n"                     "\tmovdqu      %%xmm1,%0\n"                     "\tmovdqu      %%xmm2,%3\n"                     "\tmovdqu      %%xmm3,%2\n"                     "\tmovdqu      %%xmm4,%5\n"                     "\tmovdqu      %%xmm5,%4\n"                     "\tmovdqu      %%xmm6,%7\n"                     "\tmovdqu      %%xmm7,%6\n"                     : "+m" (op.A[0]), "+m" (op.B[0]),                       "+m" (op.A[1]), "+m" (op.B[1]),                       "+m" (op.A[2]), "+m" (op.B[2]),                       "+m" (op.A[3]), "+m" (op.B[3])                     :
-comment|/* empty */
-asm|: "%xmm0", "%xmm1", "%xmm2", "%xmm3", "%xmm4", "%xmm5", "%xmm6", "%xmm7"                     );
-else|#
-directive|else
+asm|("  movdqu      %0,%%xmm0\n"                     "\tmovdqu      %1,%%xmm1\n"                     "\tmovdqu      %2,%%xmm2\n"                     "\tmovdqu      %3,%%xmm3\n"                     "\tmovdqu      %4,%%xmm4\n"                     "\tmovdqu      %5,%%xmm5\n"                     "\tmovdqu      %6,%%xmm6\n"                     "\tmovdqu      %7,%%xmm7\n"                     :                     : "m" (op.A[0]), "m" (op.B[0]),                       "m" (op.A[1]), "m" (op.B[1]),                       "m" (op.A[2]), "m" (op.B[2]),                       "m" (op.A[3]), "m" (op.B[3])                     : "%xmm0", "%xmm1", "%xmm2", "%xmm3", "%xmm4", "%xmm5", "%xmm6", "%xmm7"                     );
 asm|asm
 specifier|volatile
-asm|("  movdqu      %0,%%xmm0\n"                     "\tmovdqu      %1,%%xmm1\n"                     "\tmovdqu      %2,%%xmm2\n"                     "\tmovdqu      %3,%%xmm3\n"                     : "+m" (op.A[0]), "+m" (op.B[0]),                       "+m" (op.A[1]), "+m" (op.B[1])                     :
+asm|("\tmovdqu      %%xmm0,%1\n"                     "\tmovdqu      %%xmm1,%0\n"                     "\tmovdqu      %%xmm2,%3\n"                     "\tmovdqu      %%xmm3,%2\n"                     "\tmovdqu      %%xmm4,%5\n"                     "\tmovdqu      %%xmm5,%4\n"                     "\tmovdqu      %%xmm6,%7\n"                     "\tmovdqu      %%xmm7,%6\n"                     : "=m" (op.A[0]), "=m" (op.B[0]),                       "=m" (op.A[1]), "=m" (op.B[1]),                       "=m" (op.A[2]), "=m" (op.B[2]),                       "=m" (op.A[3]), "=m" (op.B[3])                     :
 comment|/* empty */
-asm|: "%xmm0", "%xmm1", "%xmm2", "%xmm3", "%xmm4", "%xmm5", "%xmm6", "%xmm7"                     );
-asm|asm
-specifier|volatile
-asm|("\tmovdqu      %4,%%xmm4\n"                     "\tmovdqu      %5,%%xmm5\n"                     "\tmovdqu      %6,%%xmm6\n"                     "\tmovdqu      %7,%%xmm7\n"                     : "+m" (op.A[2]), "+m" (op.B[2]),                       "+m" (op.A[3]), "+m" (op.B[3])                     :
-comment|/* empty */
-asm|: "%xmm0", "%xmm1", "%xmm2", "%xmm3", "%xmm4", "%xmm5", "%xmm6", "%xmm7"                     );
-asm|asm
-specifier|volatile
-asm|("\tmovdqu      %%xmm0,%1\n"                     "\tmovdqu      %%xmm1,%0\n"                     "\tmovdqu      %%xmm2,%3\n"                     "\tmovdqu      %%xmm3,%2\n"                     : "+m" (op.A[0]), "+m" (op.B[0]),                       "+m" (op.A[1]), "+m" (op.B[1])                     :
-comment|/* empty */
-asm|: "%xmm0", "%xmm1", "%xmm2", "%xmm3", "%xmm4", "%xmm5", "%xmm6", "%xmm7"                     );
-asm|asm
-specifier|volatile
-asm|("\tmovdqu      %%xmm4,%5\n"                     "\tmovdqu      %%xmm5,%4\n"                     "\tmovdqu      %%xmm6,%7\n"                     "\tmovdqu      %%xmm7,%6\n"                     : "+m" (op.A[2]), "+m" (op.B[2]),                       "+m" (op.A[3]), "+m" (op.B[3])                     :
-comment|/* empty */
-asm|: "%xmm0", "%xmm1", "%xmm2", "%xmm3", "%xmm4", "%xmm5", "%xmm6", "%xmm7"                     );
-endif|#
-directive|endif
+asm|);
 name|op
 operator|.
 name|A
@@ -1760,7 +1736,7 @@ asm|asm
 specifier|volatile
 asm|("  movd      %0,%%mm2\n"                     "\tmovd      %1,%%mm3\n"                     "\tmovd   %%mm3,%0\n"                     "\tmovd   %%mm2,%1\n"                     : "+m" (*op.A), "+m" (*op.B)                     :
 comment|/* empty */
-asm|: "%mm1", "%mm2", "%mm3", "%mm4");
+asm|: "%mm3", "%mm4");
 block|}
 asm|asm("emms");
 block|}
