@@ -3690,7 +3690,10 @@ block|{
 block|{
 name|GIMP_INTERNAL
 block|,
-literal|"GIMP_INTERNAL"
+name|N_
+argument_list|(
+literal|"Internal GIMP procedure"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -3698,7 +3701,10 @@ block|,
 block|{
 name|GIMP_PLUGIN
 block|,
-literal|"GIMP_PLUGIN"
+name|N_
+argument_list|(
+literal|"GIMP Plug-In"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -3706,7 +3712,10 @@ block|,
 block|{
 name|GIMP_EXTENSION
 block|,
-literal|"GIMP_EXTENSION"
+name|N_
+argument_list|(
+literal|"GIMP Extension"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -3714,7 +3723,10 @@ block|,
 block|{
 name|GIMP_TEMPORARY
 block|,
-literal|"GIMP_TEMPORARY"
+name|N_
+argument_list|(
+literal|"Temporary Procedure"
+argument_list|)
 block|,
 name|NULL
 block|}
