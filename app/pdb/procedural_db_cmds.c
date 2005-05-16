@@ -305,7 +305,7 @@ literal|"gimp_procedural_db_temp_name"
 block|,
 literal|"Generates a unique temporary PDB name."
 block|,
-literal|"This procedure generates a temporary PDB entry name that is guaranteed to be unique. It is many used by the interactive popup dialogs to generate a PDB entry name."
+literal|"This procedure generates a temporary PDB entry name that is guaranteed to be unique. It is mainly used by the interactive popup dialogs to generate a PDB entry name."
 block|,
 literal|"Andy Thomas"
 block|,

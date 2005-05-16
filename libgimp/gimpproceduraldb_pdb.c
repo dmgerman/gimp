@@ -26,7 +26,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_procedural_db_temp_name:  *  * Generates a unique temporary PDB name.  *  * This procedure generates a temporary PDB entry name that is  * guaranteed to be unique. It is many used by the interactive popup  * dialogs to generate a PDB entry name.  *  * Returns: A unique temporary name for a temporary PDB entry.  */
+comment|/**  * gimp_procedural_db_temp_name:  *  * Generates a unique temporary PDB name.  *  * This procedure generates a temporary PDB entry name that is  * guaranteed to be unique. It is mainly used by the interactive popup  * dialogs to generate a PDB entry name.  *  * Returns: A unique temporary name for a temporary PDB entry.  */
 end_comment
 
 begin_function
