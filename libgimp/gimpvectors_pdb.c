@@ -26,7 +26,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_vectors_get_strokes:  * @vectors_ID: The vectors object.  * @num_strokes: The number of strokes returned.  *  * List the strokes associated with the passed path.  *  * Returns an Array with the stroke-IDs associated with the passed  * path.  *  * Returns: List of the paths belonging to this image.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_get_strokes:  * @vectors_ID: The vectors object.  * @num_strokes: The number of strokes returned.  *  * List the strokes associated with the passed path.  *  * Returns an Array with the stroke-IDs associated with the passed  * path.  *  * Returns: List of the strokes belonging to the path.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -52,7 +52,7 @@ name|nreturn_vals
 decl_stmt|;
 name|gint
 modifier|*
-name|stroke_list
+name|stroke_ids
 init|=
 name|NULL
 decl_stmt|;
@@ -103,7 +103,7 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|stroke_list
+name|stroke_ids
 operator|=
 name|g_new
 argument_list|(
@@ -115,7 +115,7 @@ argument_list|)
 expr_stmt|;
 name|memcpy
 argument_list|(
-name|stroke_list
+name|stroke_ids
 argument_list|,
 name|return_vals
 index|[
@@ -144,7 +144,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|stroke_list
+name|stroke_ids
 return|;
 block|}
 end_function
