@@ -1671,6 +1671,11 @@ argument_list|)
 expr_stmt|;
 comment|/* At this point you may want to check to see whether any corrupt-data    * warnings occurred (test whether jerr.num_warnings is nonzero).    */
 comment|/* Detach from the drawable and add it to the image.    */
+if|if
+condition|(
+operator|!
+name|preview
+condition|)
 name|gimp_drawable_detach
 argument_list|(
 name|drawable
@@ -1752,7 +1757,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be302d70108
+DECL|struct|__anon278f3c290108
 block|{
 DECL|member|pub
 name|struct
