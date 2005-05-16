@@ -616,6 +616,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_xml_parser_parse_buffer:  * @parser: a #GimpXmlParser  * @buffer: a string buffer  * @len: the number of byes in @buffer or -1 if @buffer is nul-terminated  * @error: return location for possible errors  *  * This function uses the given @parser to parse the XML in @buffer.  *  * Return value: %TRUE on success, %FALSE otherwise  **/
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_xml_parser_parse_buffer (GimpXmlParser * parser,const gchar * buffer,gssize len,GError ** error)
@@ -714,6 +718,8 @@ argument_list|,
 operator|&
 name|encoding
 argument_list|)
+operator|&&
+name|encoding
 condition|)
 block|{
 if|if
@@ -753,20 +759,27 @@ argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|encoding
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
 name|conv
 condition|)
+block|{
+name|g_free
+argument_list|(
+name|encoding
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
 block|}
+block|}
+name|g_free
+argument_list|(
+name|encoding
+argument_list|)
+expr_stmt|;
 block|}
 name|success
 operator|=
@@ -787,6 +800,10 @@ argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|conv
+condition|)
 name|g_free
 argument_list|(
 name|conv
