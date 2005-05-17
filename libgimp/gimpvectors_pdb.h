@@ -37,6 +37,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_vectors_stroke_translate
+parameter_list|(
+name|gint32
+name|vectors_ID
+parameter_list|,
+name|gint
+name|stroke_id
+parameter_list|,
+name|gint
+name|offx
+parameter_list|,
+name|gint
+name|offy
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
