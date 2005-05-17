@@ -28,7 +28,7 @@ parameter_list|,
 name|zero
 parameter_list|)
 define|\
-value|"\tmovq      %%"#src", %%"#dst"; " \          "\tpunpcklbw %%"#zero", %%"#dst"\n"
+value|"\tmovq      %%"#src", %%"#dst"\n" \          "\tpunpcklbw %%"#zero", %%"#dst"\n"
 end_define
 
 begin_comment
@@ -48,7 +48,7 @@ parameter_list|,
 name|zero
 parameter_list|)
 define|\
-value|"\tmovq      %%"#src", %%"#dst"; " \          "\tpunpckhbw %%"#zero", %%"#dst"\n"
+value|"\tmovq      %%"#src", %%"#dst"\n" \          "\tpunpckhbw %%"#zero", %%"#dst"\n"
 end_define
 
 begin_define
@@ -135,7 +135,7 @@ name|divisor
 parameter_list|,
 name|quotient
 parameter_list|)
-value|"movd %%" #dividend ",%%eax; " \                                           "movd %%" #divisor  ",%%ecx; " \                                           "xorl %%edx,%%edx; "           \                                           "divw %%cx; "                  \                                           "roll $16, %%eax; "            \                                           "roll $16, %%ecx; "            \                                           "xorl %%edx,%%edx; "           \                                           "divw %%cx; "                  \                                           "btr $15, %%eax; "             \                                           "roll $16, %%eax; "            \                                           "btr $15, %%eax; "             \                                           "movd %%eax,%%" #quotient ";"
+value|"movd %%" #dividend ",%%eax\n" \                                           "movd %%" #divisor  ",%%ecx\n" \                                           "xorl %%edx,%%edx\n"           \                                           "divw %%cx\n"                  \                                           "roll $16, %%eax\n"            \                                           "roll $16, %%ecx\n"            \                                           "xorl %%edx,%%edx\n"           \                                           "divw %%cx\n"                  \                                           "btr $15, %%eax\n"             \                                           "roll $16, %%eax\n"            \                                           "btr $15, %%eax\n"             \                                           "movd %%eax,%%" #quotient "\n"
 end_define
 
 begin_comment
@@ -321,7 +321,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2961b8630108
+DECL|struct|__anon2a061eb00108
 DECL|member|__uint64
 DECL|typedef|uint128
 typedef|typedef

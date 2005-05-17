@@ -1619,7 +1619,7 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-comment|/*    * Inhale one whole i686 cache line at once. 64 bytes, 16 rgba8    * pixels, 4 128 bit xmm registers.    */
+comment|/*    * Inhale one whole i686 cache line at once. 128 bytes == 32 rgba8    * pixels == 8 128 bit xmm registers.    */
 for|for
 control|(
 init|;
@@ -1638,12 +1638,52 @@ control|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movdqu      %0,%%xmm0\n"                     "\tmovdqu      %1,%%xmm1\n"                     "\tmovdqu      %2,%%xmm2\n"                     "\tmovdqu      %3,%%xmm3\n"                     "\tmovdqu      %4,%%xmm4\n"                     "\tmovdqu      %5,%%xmm5\n"                     "\tmovdqu      %6,%%xmm6\n"                     "\tmovdqu      %7,%%xmm7\n"                     :                     : "m" (op.A[0]), "m" (op.B[0]),                       "m" (op.A[1]), "m" (op.B[1]),                       "m" (op.A[2]), "m" (op.B[2]),                       "m" (op.A[3]), "m" (op.B[3])                     : "%xmm0", "%xmm1", "%xmm2", "%xmm3", "%xmm4", "%xmm5", "%xmm6", "%xmm7"                     );
+asm|("  movdqu      %0,%%xmm0\n" : :"m" (op.A[0]) : "%xmm0");
 asm|asm
 specifier|volatile
-asm|("\tmovdqu      %%xmm0,%1\n"                     "\tmovdqu      %%xmm1,%0\n"                     "\tmovdqu      %%xmm2,%3\n"                     "\tmovdqu      %%xmm3,%2\n"                     "\tmovdqu      %%xmm4,%5\n"                     "\tmovdqu      %%xmm5,%4\n"                     "\tmovdqu      %%xmm6,%7\n"                     "\tmovdqu      %%xmm7,%6\n"                     : "=m" (op.A[0]), "=m" (op.B[0]),                       "=m" (op.A[1]), "=m" (op.B[1]),                       "=m" (op.A[2]), "=m" (op.B[2]),                       "=m" (op.A[3]), "=m" (op.B[3])                     :
-comment|/* empty */
-asm|);
+asm|("  movdqu      %0,%%xmm1\n" : :"m" (op.B[0]) : "%xmm1");
+asm|asm
+specifier|volatile
+asm|("  movdqu      %0,%%xmm2\n" : :"m" (op.A[1]) : "%xmm2");
+asm|asm
+specifier|volatile
+asm|("  movdqu      %0,%%xmm3\n" : :"m" (op.B[1]) : "%xmm3");
+asm|asm
+specifier|volatile
+asm|("  movdqu      %0,%%xmm4\n" : :"m" (op.A[2]) : "%xmm4");
+asm|asm
+specifier|volatile
+asm|("  movdqu      %0,%%xmm5\n" : :"m" (op.B[2]) : "%xmm5");
+asm|asm
+specifier|volatile
+asm|("  movdqu      %0,%%xmm6\n" : :"m" (op.A[3]) : "%xmm6");
+asm|asm
+specifier|volatile
+asm|("  movdqu      %0,%%xmm7\n" : :"m" (op.B[3]) : "%xmm7");
+asm|asm
+specifier|volatile
+asm|("\tmovdqu      %%xmm0,%0\n" : "=m" (op.A[0]));
+asm|asm
+specifier|volatile
+asm|("\tmovdqu      %%xmm1,%0\n" : "=m" (op.B[0]));
+asm|asm
+specifier|volatile
+asm|("\tmovdqu      %%xmm2,%0\n" : "=m" (op.A[1]));
+asm|asm
+specifier|volatile
+asm|("\tmovdqu      %%xmm3,%0\n" : "=m" (op.B[1]));
+asm|asm
+specifier|volatile
+asm|("\tmovdqu      %%xmm4,%0\n" : "=m" (op.A[2]));
+asm|asm
+specifier|volatile
+asm|("\tmovdqu      %%xmm5,%0\n" : "=m" (op.B[2]));
+asm|asm
+specifier|volatile
+asm|("\tmovdqu      %%xmm6,%0\n" : "=m" (op.A[3]));
+asm|asm
+specifier|volatile
+asm|("\tmovdqu      %%xmm7,%0\n" : "=m" (op.B[3]));
 name|op
 operator|.
 name|A
