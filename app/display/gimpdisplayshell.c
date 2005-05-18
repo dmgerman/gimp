@@ -257,7 +257,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d4374f0103
+DECL|enum|__anon2782c24b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -273,7 +273,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d4374f0203
+DECL|enum|__anon2782c24b0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2734,7 +2734,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2886,16 +2886,6 @@ argument_list|(
 name|FALSE
 argument_list|,
 literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|disp_vbox
-argument_list|)
-argument_list|,
-literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
