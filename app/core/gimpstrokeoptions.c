@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3ebcc60103
+DECL|enum|__anon2b0bf9120103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3ebcc60203
+DECL|enum|__anon2b0bf9120203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED
@@ -877,7 +877,7 @@ break|break;
 case|case
 name|PROP_DASH_INFO
 case|:
-name|gimp_dash_pattern_set_value
+name|gimp_dash_pattern_value_set
 argument_list|(
 name|options
 operator|->

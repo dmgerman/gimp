@@ -563,8 +563,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dash_pattern_set_value (GArray * pattern,GValue * value)
-name|gimp_dash_pattern_set_value
+DECL|function|gimp_dash_pattern_value_set (GArray * pattern,GValue * value)
+name|gimp_dash_pattern_value_set
 parameter_list|(
 name|GArray
 modifier|*

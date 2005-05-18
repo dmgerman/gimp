@@ -42,7 +42,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_dash_pattern_set_value
+name|gimp_dash_pattern_value_set
 parameter_list|(
 name|GArray
 modifier|*
