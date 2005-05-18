@@ -257,7 +257,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a23eb8e0103
+DECL|enum|__anon27d4374f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -273,7 +273,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a23eb8e0203
+DECL|enum|__anon27d4374f0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -491,6 +491,23 @@ modifier|*
 name|parent_class
 init|=
 name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|display_rc_style
+specifier|static
+specifier|const
+name|gchar
+modifier|*
+name|display_rc_style
+init|=
+literal|"style \"fullscreen-menubar-style\"\n"
+literal|"{\n"
+literal|"  GtkMenuBar::shadow-type      = none\n"
+literal|"  GtkMenuBar::internal-padding = 0\n"
+literal|"}\n"
+literal|"widget \"*.gimp-menubar-fullscreen\" style \"fullscreen-menubar-style\""
 decl_stmt|;
 end_decl_stmt
 
@@ -836,6 +853,11 @@ name|GIMP_UNIT_PIXEL
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_rc_parse_string
+argument_list|(
+name|display_rc_style
 argument_list|)
 expr_stmt|;
 block|}
