@@ -398,6 +398,22 @@ block|}
 if|if
 condition|(
 name|copy_filename
+operator|&&
+name|paste_filename
+condition|)
+block|{
+name|g_printerr
+argument_list|(
+literal|"Can't copy and paste at the same time\n"
+argument_list|)
+expr_stmt|;
+return|return
+name|EXIT_FAILURE
+return|;
+block|}
+if|if
+condition|(
+name|copy_filename
 condition|)
 block|{
 if|if
@@ -405,6 +421,7 @@ condition|(
 operator|!
 name|target
 condition|)
+block|{
 name|g_printerr
 argument_list|(
 literal|"Usage: %s -t<target> -c<file>\n"
@@ -415,6 +432,10 @@ literal|0
 index|]
 argument_list|)
 expr_stmt|;
+return|return
+name|EXIT_FAILURE
+return|;
+block|}
 name|test_clipboard_copy
 argument_list|(
 name|clipboard
@@ -438,6 +459,7 @@ condition|(
 operator|!
 name|target
 condition|)
+block|{
 name|g_printerr
 argument_list|(
 literal|"Usage: %s -t<target> -p<file>\n"
@@ -448,6 +470,10 @@ literal|0
 index|]
 argument_list|)
 expr_stmt|;
+return|return
+name|EXIT_FAILURE
+return|;
+block|}
 name|test_clipboard_paste
 argument_list|(
 name|clipboard
@@ -458,7 +484,7 @@ name|paste_filename
 argument_list|)
 expr_stmt|;
 return|return
-name|EXIT_FAILURE
+name|EXIT_SUCCESS
 return|;
 block|}
 return|return
