@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpbrowser.c  * Copyright (C) 2005 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpbrowser.c  * Copyright (C) 2005 Michael Natterer<mitch@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -24,13 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimp.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpui.h>
+file|"gimpwidgetstypes.h"
 end_include
 
 begin_include
@@ -42,36 +36,24 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
+file|"gimpintcombobox.h"
 end_include
 
-begin_define
-DECL|macro|DBL_LIST_WIDTH
-define|#
-directive|define
-name|DBL_LIST_WIDTH
-value|250
-end_define
+begin_include
+include|#
+directive|include
+file|"gimpwidgetsmarshal.h"
+end_include
 
-begin_define
-DECL|macro|DBL_WIDTH
-define|#
-directive|define
-name|DBL_WIDTH
-value|(DBL_LIST_WIDTH + 400)
-end_define
-
-begin_define
-DECL|macro|DBL_HEIGHT
-define|#
-directive|define
-name|DBL_HEIGHT
-value|250
-end_define
+begin_include
+include|#
+directive|include
+file|"libgimp/libgimp-intl.h"
+end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcb8fb10103
+DECL|enum|__anon2a4bde680103
 block|{
 DECL|enumerator|SEARCH
 name|SEARCH
@@ -308,11 +290,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__INT
+name|_gimp_widgets_marshal_VOID__STRING_INT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
-literal|1
+literal|2
+argument_list|,
+name|G_TYPE_STRING
 argument_list|,
 name|G_TYPE_INT
 argument_list|)
@@ -1223,8 +1207,34 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|search_string
+decl_stmt|;
 name|GDK_THREADS_ENTER
 argument_list|()
+expr_stmt|;
+name|search_string
+operator|=
+name|gtk_entry_get_text
+argument_list|(
+name|GTK_ENTRY
+argument_list|(
+name|browser
+operator|->
+name|search_entry
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|search_string
+condition|)
+name|search_string
+operator|=
+literal|""
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
@@ -1237,19 +1247,21 @@ index|]
 argument_list|,
 literal|0
 argument_list|,
+name|search_string
+argument_list|,
 name|browser
 operator|->
 name|search_type
 argument_list|)
-expr_stmt|;
-name|GDK_THREADS_LEAVE
-argument_list|()
 expr_stmt|;
 name|browser
 operator|->
 name|search_timeout_id
 operator|=
 literal|0
+expr_stmt|;
+name|GDK_THREADS_LEAVE
+argument_list|()
 expr_stmt|;
 return|return
 name|FALSE

@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrowser.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpprocview.h"
 end_include
 
@@ -83,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf5290e0103
+DECL|enum|__anon2a2ebcd00103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -108,7 +102,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf5290e0203
+DECL|enum|__anon2a2ebcd00203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -134,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf5290e0308
+DECL|struct|__anon2a2ebcd00308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -165,7 +159,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf5290e0408
+DECL|struct|__anon2a2ebcd00408
 block|{
 DECL|member|menu
 name|gchar
@@ -1231,12 +1225,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|browser_search (GimpBrowser * gimp_browser,gint search_type,PluginBrowser * browser)
+DECL|function|browser_search (GimpBrowser * gimp_browser,const gchar * search_text,gint search_type,PluginBrowser * browser)
 name|browser_search
 parameter_list|(
 name|GimpBrowser
 modifier|*
 name|gimp_browser
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|search_text
 parameter_list|,
 name|gint
 name|search_type
@@ -1246,11 +1245,6 @@ modifier|*
 name|browser
 parameter_list|)
 block|{
-specifier|const
-name|gchar
-modifier|*
-name|search_text
-decl_stmt|;
 name|GimpParam
 modifier|*
 name|return_vals
@@ -1273,27 +1267,6 @@ name|GtkTreeStore
 modifier|*
 name|tree_store
 decl_stmt|;
-name|search_text
-operator|=
-name|gtk_entry_get_text
-argument_list|(
-name|GTK_ENTRY
-argument_list|(
-name|gimp_browser
-operator|->
-name|search_entry
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|search_text
-condition|)
-name|search_text
-operator|=
-literal|""
-expr_stmt|;
 name|gimp_browser_show_message
 argument_list|(
 name|GIMP_BROWSER
@@ -2831,6 +2804,8 @@ name|browser
 operator|->
 name|browser
 argument_list|)
+argument_list|,
+literal|""
 argument_list|,
 literal|0
 argument_list|,
