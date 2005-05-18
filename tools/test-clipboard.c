@@ -283,28 +283,6 @@ return|return
 name|EXIT_FAILURE
 return|;
 block|}
-if|if
-condition|(
-name|argc
-operator|<
-literal|1
-condition|)
-block|{
-name|g_printerr
-argument_list|(
-literal|"Usage: %s -m<mime-type> -c<file>\n"
-argument_list|,
-name|argv
-index|[
-literal|0
-index|]
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
 name|gtk_init
 argument_list|(
 operator|&
@@ -360,7 +338,7 @@ name|mime_type
 condition|)
 name|g_printerr
 argument_list|(
-literal|"Usage: %s -m<mime-type> -p<file>\n"
+literal|"Usage: %s -m<mime-type> -c<file>\n"
 argument_list|,
 name|argv
 index|[
@@ -393,7 +371,7 @@ name|mime_type
 condition|)
 name|g_printerr
 argument_list|(
-literal|"Usage: %s -m<mime-type> -c<file>\n"
+literal|"Usage: %s -m<mime-type> -p<file>\n"
 argument_list|,
 name|argv
 index|[
