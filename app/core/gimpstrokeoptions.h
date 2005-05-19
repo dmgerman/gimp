@@ -184,7 +184,7 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|gimp_stroke_options_set_dash_preset
+name|gimp_stroke_options_set_dash_pattern
 parameter_list|(
 name|GimpStrokeOptions
 modifier|*
@@ -192,6 +192,10 @@ name|options
 parameter_list|,
 name|GimpDashPreset
 name|preset
+parameter_list|,
+name|GArray
+modifier|*
+name|pattern
 parameter_list|)
 function_decl|;
 end_function_decl

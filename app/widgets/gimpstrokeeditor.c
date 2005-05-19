@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c45dd9c0103
+DECL|enum|__anon29fb6cff0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -191,8 +191,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
-name|data
+name|GimpStrokeOptions
+modifier|*
+name|options
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1655,15 +1656,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_stroke_editor_dash_preset (GtkWidget * widget,gpointer data)
+DECL|function|gimp_stroke_editor_dash_preset (GtkWidget * widget,GimpStrokeOptions * options)
 name|gimp_stroke_editor_dash_preset
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
-name|data
+name|GimpStrokeOptions
+modifier|*
+name|options
 parameter_list|)
 block|{
 name|gint
@@ -1681,17 +1683,22 @@ argument_list|,
 operator|&
 name|value
 argument_list|)
+operator|&&
+name|value
+operator|!=
+name|GIMP_DASH_CUSTOM
 condition|)
-name|gimp_stroke_options_set_dash_preset
+block|{
+name|gimp_stroke_options_set_dash_pattern
 argument_list|(
-name|GIMP_STROKE_OPTIONS
-argument_list|(
-name|data
-argument_list|)
+name|options
 argument_list|,
 name|value
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
