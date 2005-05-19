@@ -47,6 +47,24 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_dash_pattern_segments_set
+parameter_list|(
+name|GArray
+modifier|*
+name|pattern
+parameter_list|,
+name|gboolean
+modifier|*
+name|segments
+parameter_list|,
+name|gint
+name|n_segments
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GArray
 modifier|*
 name|gimp_dash_pattern_from_value
