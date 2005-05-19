@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fb6cff0103
+DECL|enum|__anon2b98c8ac0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -999,7 +999,7 @@ operator|->
 name|options
 argument_list|)
 argument_list|,
-literal|"miter"
+literal|"miter-limit"
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -1298,7 +1298,7 @@ name|box
 argument_list|,
 literal|2
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1365,7 +1365,7 @@ name|button
 argument_list|,
 literal|0
 argument_list|,
-literal|2
+literal|3
 argument_list|,
 name|row
 argument_list|,

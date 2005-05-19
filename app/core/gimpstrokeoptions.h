@@ -123,9 +123,9 @@ DECL|member|join_style
 name|GimpJoinStyle
 name|join_style
 decl_stmt|;
-DECL|member|miter
+DECL|member|miter_limit
 name|gdouble
-name|miter
+name|miter_limit
 decl_stmt|;
 DECL|member|antialias
 name|gboolean

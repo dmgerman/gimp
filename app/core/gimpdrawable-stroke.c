@@ -1033,7 +1033,7 @@ name|cap_style
 argument_list|,
 name|options
 operator|->
-name|miter
+name|miter_limit
 argument_list|,
 name|options
 operator|->

@@ -51,9 +51,15 @@ directive|include
 file|"gimpstrokeoptions.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon2b35bd680103
+DECL|enum|__anon2bc3a8160103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -73,8 +79,8 @@ block|,
 DECL|enumerator|PROP_JOIN_STYLE
 name|PROP_JOIN_STYLE
 block|,
-DECL|enumerator|PROP_MITER
-name|PROP_MITER
+DECL|enumerator|PROP_MITER_LIMIT
+name|PROP_MITER_LIMIT
 block|,
 DECL|enumerator|PROP_ANTIALIAS
 name|PROP_ANTIALIAS
@@ -93,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b35bd680203
+DECL|enum|__anon2bc3a8160203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED
@@ -452,11 +458,17 @@ name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_MITER
+name|PROP_MITER_LIMIT
 argument_list|,
-literal|"miter"
+literal|"miter-limit"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Convert a mitered join to a bevelled "
+literal|"join if the miter would extend to a "
+literal|"distance of more than miter-limit * "
+literal|"line-width from the actual join point."
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -646,11 +658,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_MITER
+name|PROP_MITER_LIMIT
 case|:
 name|options
 operator|->
-name|miter
+name|miter_limit
 operator|=
 name|g_value_get_double
 argument_list|(
@@ -817,7 +829,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_MITER
+name|PROP_MITER_LIMIT
 case|:
 name|g_value_set_double
 argument_list|(
@@ -825,7 +837,7 @@ name|value
 argument_list|,
 name|options
 operator|->
-name|miter
+name|miter_limit
 argument_list|)
 expr_stmt|;
 break|break;
