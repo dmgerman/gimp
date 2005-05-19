@@ -127,6 +127,11 @@ name|GtkWidget
 modifier|*
 name|fg_bg
 decl_stmt|;
+DECL|member|hex_entry
+name|GtkWidget
+modifier|*
+name|hex_entry
+decl_stmt|;
 block|}
 struct|;
 end_struct
