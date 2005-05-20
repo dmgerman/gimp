@@ -567,9 +567,7 @@ specifier|const
 name|gchar
 modifier|*
 name|slider_tips
-index|[
-literal|7
-index|]
+index|[]
 init|=
 block|{
 name|N_
@@ -712,6 +710,19 @@ literal|3
 argument_list|)
 expr_stmt|;
 comment|/* hsv<-> rgb   */
+name|gtk_table_set_row_spacing
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|5
+argument_list|,
+literal|3
+argument_list|)
+expr_stmt|;
+comment|/* rgb<-> alpha */
 name|gtk_table_set_col_spacings
 argument_list|(
 name|GTK_TABLE
@@ -1239,6 +1250,7 @@ argument_list|(
 name|table
 argument_list|)
 condition|)
+block|{
 name|gtk_table_set_row_spacing
 argument_list|(
 name|GTK_TABLE
@@ -1256,6 +1268,7 @@ else|:
 literal|0
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|show_alpha

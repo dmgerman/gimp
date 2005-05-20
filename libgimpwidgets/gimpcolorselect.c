@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c53fbf70103
+DECL|enum|__anon2a40ef7c0103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c53fbf70203
+DECL|enum|__anon2a40ef7c0203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -1487,9 +1487,7 @@ specifier|const
 name|gchar
 modifier|*
 name|tips
-index|[
-literal|7
-index|]
+index|[]
 init|=
 block|{
 name|N_
@@ -1520,11 +1518,6 @@ block|,
 name|N_
 argument_list|(
 literal|"Blue"
-argument_list|)
-block|,
-name|N_
-argument_list|(
-literal|"Alpha"
 argument_list|)
 block|}
 decl_stmt|;
