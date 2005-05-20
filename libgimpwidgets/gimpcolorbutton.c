@@ -159,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b03cc2c0103
+DECL|enum|__anon29b39bb90103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1354,9 +1354,12 @@ name|title
 argument_list|,
 name|COLOR_SELECTION_KEY
 argument_list|,
+name|gtk_widget_get_toplevel
+argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|button
+argument_list|)
 argument_list|)
 argument_list|,
 literal|0
