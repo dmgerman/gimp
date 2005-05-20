@@ -104,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4984cb0103
+DECL|enum|__anon2c497cce0103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -149,7 +149,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4984cb0203
+DECL|enum|__anon2c497cce0203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1190,7 +1190,7 @@ argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_end
+name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
