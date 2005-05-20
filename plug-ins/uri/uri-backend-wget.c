@@ -318,7 +318,7 @@ literal|"wget"
 argument_list|,
 literal|"wget"
 argument_list|,
-literal|"e"
+literal|"-e"
 argument_list|,
 literal|"server-response=off"
 argument_list|,
