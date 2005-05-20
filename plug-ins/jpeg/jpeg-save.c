@@ -134,7 +134,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a395a5d0108
+DECL|struct|__anon27f2fee70108
 block|{
 DECL|member|cinfo
 name|struct
@@ -1908,10 +1908,17 @@ name|app_block
 decl_stmt|;
 name|xmp_data
 operator|=
+operator|(
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
 name|gimp_parasite_data
 argument_list|(
 name|parasite
 argument_list|)
+operator|)
 operator|+
 literal|10
 expr_stmt|;
@@ -4679,7 +4686,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a395a5d0208
+DECL|struct|__anon27f2fee70208
 block|{
 DECL|member|pub
 name|struct
