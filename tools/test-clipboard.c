@@ -270,6 +270,10 @@ literal|"Paste clipoard into<file>"
 block|,
 literal|"<file>"
 block|}
+block|,
+block|{
+name|NULL
+block|}
 block|}
 decl_stmt|;
 name|context
