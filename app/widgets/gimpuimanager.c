@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c80b3900103
+DECL|enum|__anon2785e13f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c80b3900203
+DECL|enum|__anon2785e13f0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2059,7 +2059,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c80b3900308
+DECL|struct|__anon2785e13f0308
 block|{
 DECL|member|x
 name|guint
@@ -2695,6 +2695,21 @@ name|error
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|error
+operator|->
+name|domain
+operator|==
+name|G_FILE_ERROR
+operator|&&
+name|error
+operator|->
+name|code
+operator|==
+name|G_FILE_ERROR_EXIST
+condition|)
+block|{
 name|g_message
 argument_list|(
 literal|"%s\n\n%s\n\n%s"
@@ -2715,6 +2730,30 @@ literal|"installed."
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"There was an error parsing the menu definition "
+literal|"from %s: %s"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|entry
+operator|->
+name|basename
+argument_list|)
+argument_list|,
+name|error
+operator|->
+name|message
+argument_list|)
+expr_stmt|;
+block|}
 name|g_clear_error
 argument_list|(
 operator|&
