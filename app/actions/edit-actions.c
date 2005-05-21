@@ -993,13 +993,7 @@ argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"edit-paste"
-argument_list|,
-name|gimage
-argument_list|)
-expr_stmt|;
+comment|/*             "edit-paste" is always enabled  */
 name|SET_SENSITIVE
 argument_list|(
 literal|"edit-paste-into"
