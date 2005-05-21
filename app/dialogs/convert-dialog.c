@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289a1cc30108
+DECL|struct|__anon28a1ac570108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -250,7 +250,7 @@ specifier|static
 name|GimpConvertDitherType
 name|saved_dither_type
 init|=
-name|GIMP_FS_DITHER
+name|GIMP_NO_DITHER
 decl_stmt|;
 end_decl_stmt
 
