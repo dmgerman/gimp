@@ -1068,6 +1068,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpCellRendererDashes
+typedef|typedef
+name|struct
+name|_GimpCellRendererDashes
+name|GimpCellRendererDashes
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpCellRendererViewable
 typedef|typedef
 name|struct
