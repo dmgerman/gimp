@@ -36,7 +36,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ab949710103
+DECL|enum|__anon28bf1af70103
 block|{
 DECL|enumerator|GIMP_COLOR_AREA_FLAT
 name|GIMP_COLOR_AREA_FLAT
@@ -54,32 +54,56 @@ name|GimpColorAreaType
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_COLOR_SELECTOR_CHANNEL
+define|#
+directive|define
+name|GIMP_TYPE_COLOR_SELECTOR_CHANNEL
+value|(gimp_color_selector_channel_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_color_selector_channel_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon2ab949710203
+DECL|enum|__anon28bf1af70203
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
 block|,
+comment|/*< desc="_H", help="Hue">*/
 DECL|enumerator|GIMP_COLOR_SELECTOR_SATURATION
 name|GIMP_COLOR_SELECTOR_SATURATION
 block|,
+comment|/*< desc="_S", help="Saturation">*/
 DECL|enumerator|GIMP_COLOR_SELECTOR_VALUE
 name|GIMP_COLOR_SELECTOR_VALUE
 block|,
+comment|/*< desc="_V", help="Value">*/
 DECL|enumerator|GIMP_COLOR_SELECTOR_RED
 name|GIMP_COLOR_SELECTOR_RED
 block|,
+comment|/*< desc="_R", help="Red">*/
 DECL|enumerator|GIMP_COLOR_SELECTOR_GREEN
 name|GIMP_COLOR_SELECTOR_GREEN
 block|,
+comment|/*< desc="_G", help="Green">*/
 DECL|enumerator|GIMP_COLOR_SELECTOR_BLUE
 name|GIMP_COLOR_SELECTOR_BLUE
 block|,
+comment|/*< desc="_B", help="Blue">*/
 DECL|enumerator|GIMP_COLOR_SELECTOR_ALPHA
 name|GIMP_COLOR_SELECTOR_ALPHA
+comment|/*< desc="_A", help="Alpha">*/
 DECL|typedef|GimpColorSelectorChannel
 block|}
 name|GimpColorSelectorChannel
@@ -90,7 +114,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2ab949710303
+DECL|enum|__anon28bf1af70303
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
