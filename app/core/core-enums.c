@@ -1753,7 +1753,7 @@ name|GIMP_DASH_DASH_DOT
 block|,
 name|N_
 argument_list|(
-literal|"Dash dot..."
+literal|"Dash, dot"
 argument_list|)
 block|,
 name|NULL
@@ -1764,7 +1764,7 @@ name|GIMP_DASH_DASH_DOT_DOT
 block|,
 name|N_
 argument_list|(
-literal|"Dash dot dot..."
+literal|"Dash, dot, dot"
 argument_list|)
 block|,
 name|NULL
