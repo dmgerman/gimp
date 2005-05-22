@@ -525,8 +525,6 @@ operator|)
 operator|/
 name|n_segments
 decl_stmt|;
-name|pattern
-operator|=
 name|g_array_append_val
 argument_list|(
 name|pattern
@@ -896,8 +894,6 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
-name|pattern
-operator|=
 name|g_array_append_val
 argument_list|(
 name|pattern
@@ -1094,8 +1090,6 @@ condition|;
 name|i
 operator|++
 control|)
-name|copy
-operator|=
 name|g_array_append_val
 argument_list|(
 name|copy
