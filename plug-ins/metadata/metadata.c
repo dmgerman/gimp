@@ -1038,6 +1038,11 @@ name|xmp_model_parse_buffer
 argument_list|(
 name|xmp_model
 argument_list|,
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
 name|gimp_parasite_data
 argument_list|(
 name|parasite
