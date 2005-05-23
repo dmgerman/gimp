@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276dd4a60103
+DECL|enum|__anon2b3b200e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1335,8 +1335,16 @@ argument_list|)
 expr_stmt|;
 name|cell
 operator|=
-name|gimp_cell_renderer_dashes_new
-argument_list|()
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_CELL_RENDERER_DASHES
+argument_list|,
+literal|"xpad"
+argument_list|,
+literal|2
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|gtk_cell_layout_pack_start
 argument_list|(

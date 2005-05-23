@@ -103,11 +103,6 @@ DECL|member|parent_instance
 name|GtkCellRenderer
 name|parent_instance
 decl_stmt|;
-DECL|member|pattern
-name|GArray
-modifier|*
-name|pattern
-decl_stmt|;
 DECL|member|segments
 name|gboolean
 modifier|*
