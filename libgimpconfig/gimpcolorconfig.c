@@ -149,7 +149,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2907268f0103
+DECL|enum|__anon297739520103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -823,6 +823,13 @@ break|break;
 case|case
 name|PROP_DISPLAY_MODULE
 case|:
+name|g_free
+argument_list|(
+name|color_config
+operator|->
+name|display_module
+argument_list|)
+expr_stmt|;
 name|color_config
 operator|->
 name|display_module
