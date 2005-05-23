@@ -551,7 +551,7 @@ argument_list|()
 expr_stmt|;
 name|gfig_context
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GFigContext
 argument_list|,

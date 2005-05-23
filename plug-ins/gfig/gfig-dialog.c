@@ -428,7 +428,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4311a40108
+DECL|struct|__anon293e4bc90108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -1749,7 +1749,7 @@ name|gfig_context
 operator|->
 name|fg_color
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GimpRGB
 argument_list|,
@@ -2150,7 +2150,7 @@ name|gfig_context
 operator|->
 name|bg_color
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GimpRGB
 argument_list|,
