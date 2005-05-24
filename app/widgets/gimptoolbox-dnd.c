@@ -1399,9 +1399,9 @@ name|pixbuf
 argument_list|,
 name|new_image
 argument_list|,
-name|gimp_image_base_type_with_alpha
+name|GIMP_IMAGE_TYPE_FROM_BASE_TYPE
 argument_list|(
-name|new_image
+name|base_type
 argument_list|)
 argument_list|,
 name|_
