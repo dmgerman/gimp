@@ -86,7 +86,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e09f6a0103
+DECL|enum|__anon2c4ad8e30103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -137,7 +137,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e09f6a0203
+DECL|enum|__anon2c4ad8e30203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -1323,7 +1323,8 @@ name|z_color
 argument_list|,
 name|GIMP_COLOR_SELECTOR_BAR_SIZE
 argument_list|,
-name|GIMP_COLOR_SELECTOR_SIZE
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_events
