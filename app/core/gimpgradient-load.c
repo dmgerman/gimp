@@ -266,6 +266,10 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_GRADIENT
 argument_list|,
+literal|"mime-type"
+argument_list|,
+literal|"application/x-gimp-gradient"
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -925,7 +929,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a4ecfc0108
+DECL|struct|__anon298d301b0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -953,7 +957,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a4ecfc0208
+DECL|struct|__anon298d301b0208
 block|{
 DECL|member|offset
 name|gdouble
@@ -1444,6 +1448,10 @@ argument_list|,
 literal|"name"
 argument_list|,
 name|name
+argument_list|,
+literal|"mime-type"
+argument_list|,
+literal|"image/svg+xml"
 argument_list|,
 name|NULL
 argument_list|)

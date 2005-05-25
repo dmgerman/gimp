@@ -1655,6 +1655,10 @@ literal|"name"
 argument_list|,
 name|name
 argument_list|,
+literal|"mime-type"
+argument_list|,
+literal|"image/x-gimp-pat"
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -1971,6 +1975,11 @@ literal|"name"
 argument_list|,
 name|name
 argument_list|,
+literal|"mime-type"
+argument_list|,
+name|NULL
+argument_list|,
+comment|/* FIXME!! */
 name|NULL
 argument_list|)
 expr_stmt|;

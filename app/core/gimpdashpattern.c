@@ -67,6 +67,15 @@ name|preset
 condition|)
 block|{
 case|case
+name|GIMP_DASH_CUSTOM
+case|:
+name|g_warning
+argument_list|(
+literal|"GIMP_DASH_CUSTOM passed to gimp_dash_pattern_from_preset()"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|GIMP_DASH_LINE
 case|:
 break|break;
@@ -379,14 +388,6 @@ argument_list|)
 expr_stmt|;
 block|}
 break|break;
-case|case
-name|GIMP_DASH_CUSTOM
-case|:
-name|g_warning
-argument_list|(
-literal|"GIMP_DASH_CUSTOM passed to gimp_dash_pattern_from_preset()"
-argument_list|)
-expr_stmt|;
 block|}
 if|if
 condition|(

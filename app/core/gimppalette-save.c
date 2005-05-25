@@ -1701,6 +1701,10 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_PALETTE
 argument_list|,
+literal|"mime-type"
+argument_list|,
+literal|"application/x-gimp-palette"
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;

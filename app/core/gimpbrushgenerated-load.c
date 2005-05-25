@@ -102,7 +102,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ae9a630103
+DECL|enum|__anon29b37eb50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2508,6 +2508,10 @@ argument_list|,
 literal|"name"
 argument_list|,
 name|name
+argument_list|,
+literal|"mime-type"
+argument_list|,
+literal|"application/x-gimp-brush-generated"
 argument_list|,
 literal|"shape"
 argument_list|,

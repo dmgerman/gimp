@@ -1550,6 +1550,10 @@ literal|"name"
 argument_list|,
 name|utf8
 argument_list|,
+literal|"mime-type"
+argument_list|,
+literal|"image/x-gimp-gih"
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;

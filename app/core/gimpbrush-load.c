@@ -1088,6 +1088,10 @@ literal|"name"
 argument_list|,
 name|name
 argument_list|,
+literal|"mime-type"
+argument_list|,
+literal|"image/x-gimp-gbr"
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -1263,7 +1267,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon274ceb9b010a
+DECL|union|__anon2959fc16010a
 block|{
 DECL|member|u
 name|guint16
@@ -2248,6 +2252,11 @@ argument_list|,
 literal|"name"
 argument_list|,
 name|name
+argument_list|,
+comment|/*  FIXME: MIME type!!  */
+literal|"mime-type"
+argument_list|,
+literal|"application/x-photoshop-abr"
 argument_list|,
 name|NULL
 argument_list|)
