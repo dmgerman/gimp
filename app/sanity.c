@@ -643,8 +643,8 @@ argument_list|(
 literal|"The name of the directory holding the GIMP user configuration "
 literal|"cannot be converted to UTF-8: "
 literal|"%s\n\n"
-literal|"Most probably your filesystem stores files in an encoding "
-literal|"different from UTF-8 and you didn't tell GLib about this. "
+literal|"Your filesystem probably stores files in an encoding "
+literal|"other than UTF-8 and you didn't tell GLib about this. "
 literal|"Please set the environment variable G_FILENAME_ENCODING."
 argument_list|)
 argument_list|,
