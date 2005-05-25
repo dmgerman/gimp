@@ -902,13 +902,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_clipboard_get_svg:  * @gimp: pointer to #Gimp  *  * Retrieves SVG data from %GDK_SELECTION_CLIPBOARD.  *  * The returned data needs to be freed when it's no longer  * needed.  *  * Return value: a reference to a #GimpBuffer or %NULL if there's no  *               image data  **/
+comment|/**  * gimp_clipboard_get_svg:  * @gimp: pointer to #Gimp  * @svg_length: returns the size of the SVG stream in bytes  *  * Retrieves SVG data from %GDK_SELECTION_CLIPBOARD.  *  * The returned data needs to be freed when it's no longer needed.  *  * Return value: a reference to a #GimpBuffer or %NULL if there's no  *               image data  **/
 end_comment
 
 begin_function
 name|guchar
 modifier|*
-DECL|function|gimp_clipboard_get_svg (Gimp * gimp,gsize * svg_size)
+DECL|function|gimp_clipboard_get_svg (Gimp * gimp,gsize * svg_length)
 name|gimp_clipboard_get_svg
 parameter_list|(
 name|Gimp
@@ -917,7 +917,7 @@ name|gimp
 parameter_list|,
 name|gsize
 modifier|*
-name|svg_size
+name|svg_length
 parameter_list|)
 block|{
 name|GtkClipboard
@@ -939,7 +939,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|svg_size
+name|svg_length
 operator|!=
 name|NULL
 argument_list|,
@@ -1014,7 +1014,7 @@ name|gimp_selection_data_get_stream
 argument_list|(
 name|data
 argument_list|,
-name|svg_size
+name|svg_length
 argument_list|)
 expr_stmt|;
 if|if
@@ -1028,7 +1028,7 @@ argument_list|(
 name|svg
 argument_list|,
 operator|*
-name|svg_size
+name|svg_length
 argument_list|)
 expr_stmt|;
 name|gtk_selection_data_free
