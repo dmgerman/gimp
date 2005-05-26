@@ -79,6 +79,20 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|queue_set_scroll_offset
+parameter_list|(
+name|Queue
+modifier|*
+name|queue
+parameter_list|,
+name|gdouble
+name|pos
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 specifier|const
 name|gchar
 modifier|*
@@ -90,6 +104,10 @@ name|queue
 parameter_list|,
 name|gint
 name|skip
+parameter_list|,
+name|gdouble
+modifier|*
+name|pos
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -106,6 +124,10 @@ name|queue
 parameter_list|,
 name|gint
 name|skip
+parameter_list|,
+name|gdouble
+modifier|*
+name|pos
 parameter_list|)
 function_decl|;
 end_function_decl
