@@ -257,7 +257,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2782c24b0103
+DECL|enum|__anon29d9eecb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -273,7 +273,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2782c24b0203
+DECL|enum|__anon29d9eecb0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6638,6 +6638,16 @@ name|rects
 argument_list|,
 operator|&
 name|num_rects
+argument_list|)
+expr_stmt|;
+name|gdk_region_destroy
+argument_list|(
+name|old
+argument_list|)
+expr_stmt|;
+name|gdk_region_destroy
+argument_list|(
+name|new
 argument_list|)
 expr_stmt|;
 for|for
