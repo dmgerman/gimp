@@ -45,6 +45,11 @@ name|GtkWidget
 modifier|*
 name|color_panel
 decl_stmt|;
+DECL|member|save_sel_checkbutton
+name|GtkWidget
+modifier|*
+name|save_sel_checkbutton
+decl_stmt|;
 DECL|member|gimage
 name|GimpImage
 modifier|*
@@ -129,6 +134,9 @@ specifier|const
 name|gchar
 modifier|*
 name|opacity_label
+parameter_list|,
+name|gboolean
+name|show_from_sel
 parameter_list|)
 function_decl|;
 end_function_decl

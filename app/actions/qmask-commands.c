@@ -336,6 +336,8 @@ name|_
 argument_list|(
 literal|"Mask Opacity:"
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
