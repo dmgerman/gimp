@@ -304,7 +304,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Fill Opacity:"
+literal|"_Fill Opacity:"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -425,7 +425,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Fill Opacity:"
+literal|"_Fill Opacity:"
 argument_list|)
 argument_list|,
 name|TRUE
@@ -1250,16 +1250,14 @@ block|{
 name|GimpChannel
 modifier|*
 name|selection
-decl_stmt|;
-name|selection
-operator|=
+init|=
 name|gimp_image_get_mask
 argument_list|(
 name|options
 operator|->
 name|gimage
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|new_channel
 operator|=
 name|GIMP_CHANNEL
@@ -1285,6 +1283,16 @@ name|new_channel
 argument_list|)
 argument_list|,
 name|channel_name
+argument_list|)
+expr_stmt|;
+name|gimp_channel_set_color
+argument_list|(
+name|new_channel
+argument_list|,
+operator|&
+name|channel_color
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

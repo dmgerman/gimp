@@ -630,7 +630,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Channel Name:"
+literal|"Channel _Name:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -780,7 +780,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Initialize From Selection"
+literal|"Initialize from _selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -810,13 +810,6 @@ name|save_sel_checkbutton
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-name|options
-operator|->
-name|save_sel_checkbutton
-operator|=
-name|NULL
-expr_stmt|;
 return|return
 name|options
 return|;
