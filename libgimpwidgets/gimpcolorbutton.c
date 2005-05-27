@@ -159,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1b2dfb0103
+DECL|enum|__anon27c2e0f50103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -172,7 +172,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1b2dfb0203
+DECL|enum|__anon27c2e0f50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -712,7 +712,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -964,7 +964,7 @@ name|button
 operator|->
 name|color_area
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1972,7 +1972,7 @@ name|g_signal_connect
 argument_list|(
 name|selection
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2032,7 +2032,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_color_button_new:  * @title: String that will be used as title for the color_selector.  * @width: Width of the colorpreview in pixels.  * @height: Height of the colorpreview in pixels.  * @color: A pointer to a #GimpRGB color.  * @type:  *  * Creates a new #GimpColorButton widget.  *  * This returns a button with a preview showing the color.  * When the button is clicked a GtkColorSelectionDialog is opened.  * If the user changes the color the new color is written into the  * array that was used to pass the initial color and the "color_changed"  * signal is emitted.  *  * Returns: Pointer to the new #GimpColorButton widget.  **/
+comment|/**  * gimp_color_button_new:  * @title: String that will be used as title for the color_selector.  * @width: Width of the colorpreview in pixels.  * @height: Height of the colorpreview in pixels.  * @color: A pointer to a #GimpRGB color.  * @type:  *  * Creates a new #GimpColorButton widget.  *  * This returns a button with a preview showing the color.  * When the button is clicked a GtkColorSelectionDialog is opened.  * If the user changes the color the new color is written into the  * array that was used to pass the initial color and the "color-changed"  * signal is emitted.  *  * Returns: Pointer to the new #GimpColorButton widget.  **/
 end_comment
 
 begin_function
@@ -2346,7 +2346,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_set_update:  * @button:     A #GimpColorButton widget.  * @continuous: The new setting of the @continuous_update property.  *  * When set to #TRUE, the @button will emit the "color_changed"  * continuously while the color is changed in the color selection  * dialog.  **/
+comment|/**  * gimp_color_button_set_update:  * @button:     A #GimpColorButton widget.  * @continuous: The new setting of the @continuous_update property.  *  * When set to #TRUE, the @button will emit the "color-changed"  * continuously while the color is changed in the color selection  * dialog.  **/
 end_comment
 
 begin_function

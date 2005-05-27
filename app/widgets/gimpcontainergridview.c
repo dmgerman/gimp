@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fe057f0103
+DECL|enum|__anon29d4693f0103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -636,7 +636,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"move_cursor"
+literal|"move-cursor"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -677,7 +677,7 @@ name|GDK_Home
 argument_list|,
 literal|0
 argument_list|,
-literal|"move_cursor"
+literal|"move-cursor"
 argument_list|,
 literal|2
 argument_list|,
@@ -699,7 +699,7 @@ name|GDK_End
 argument_list|,
 literal|0
 argument_list|,
-literal|"move_cursor"
+literal|"move-cursor"
 argument_list|,
 literal|2
 argument_list|,
@@ -720,7 +720,7 @@ name|GDK_Page_Up
 argument_list|,
 literal|0
 argument_list|,
-literal|"move_cursor"
+literal|"move-cursor"
 argument_list|,
 literal|2
 argument_list|,
@@ -742,7 +742,7 @@ name|GDK_Page_Down
 argument_list|,
 literal|0
 argument_list|,
-literal|"move_cursor"
+literal|"move-cursor"
 argument_list|,
 literal|2
 argument_list|,
@@ -892,7 +892,7 @@ name|wrap_box
 operator|->
 name|parent
 argument_list|,
-literal|"size_allocate"
+literal|"size-allocate"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1816,7 +1816,7 @@ name|g_signal_connect
 argument_list|(
 name|preview
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1830,7 +1830,7 @@ name|g_signal_connect
 argument_list|(
 name|preview
 argument_list|,
-literal|"double_clicked"
+literal|"double-clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

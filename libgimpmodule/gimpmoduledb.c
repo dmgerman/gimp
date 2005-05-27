@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c05a0e00103
+DECL|enum|__anon2a3d2df50103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -422,7 +422,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"module_modified"
+literal|"module-modified"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(

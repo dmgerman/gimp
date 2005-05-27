@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290f71d60103
+DECL|enum|__anon29b05ead0103
 block|{
 DECL|enumerator|TITLE_CHANGED
 name|TITLE_CHANGED
@@ -179,7 +179,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"title_changed"
+literal|"title-changed"
 argument_list|,
 name|GIMP_TYPE_DOCKED
 argument_list|,

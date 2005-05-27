@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275e5cae0103
+DECL|enum|__anon291becc30103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -829,7 +829,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"opacity_changed"
+literal|"opacity-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -863,7 +863,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"mode_changed"
+literal|"mode-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -897,7 +897,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"preserve_trans_changed"
+literal|"preserve-trans-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -931,7 +931,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"mask_changed"
+literal|"mask-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(

@@ -523,7 +523,7 @@ name|gradient_sel
 operator|->
 name|preview
 argument_list|,
-literal|"size_allocate"
+literal|"size-allocate"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -539,7 +539,7 @@ name|gradient_sel
 operator|->
 name|preview
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc2284a0103
+DECL|enum|__anon29468a730103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -300,7 +300,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"filename_changed"
+literal|"filename-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -501,7 +501,7 @@ name|entry
 operator|->
 name|entry
 argument_list|,
-literal|"focus_out_event"
+literal|"focus-out-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1368,7 +1368,7 @@ name|g_signal_connect
 argument_list|(
 name|chooser
 argument_list|,
-literal|"delete_event"
+literal|"delete-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

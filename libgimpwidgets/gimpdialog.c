@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4b7cb30103
+DECL|enum|__anon2c54554f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1413,7 +1413,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4b7cb30208
+DECL|struct|__anon2c54554f0208
 block|{
 DECL|member|dialog
 name|GtkDialog
@@ -1681,7 +1681,7 @@ name|g_signal_connect
 argument_list|(
 name|dialog
 argument_list|,
-literal|"delete_event"
+literal|"delete-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

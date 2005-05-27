@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1c7e520103
+DECL|enum|__anon2c4b9c240103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -521,7 +521,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"dockable_added"
+literal|"dockable-added"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -557,7 +557,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"dockable_removed"
+literal|"dockable-removed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -593,7 +593,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"dockable_reordered"
+literal|"dockable-reordered"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -664,7 +664,7 @@ name|widget_class
 argument_list|,
 name|g_param_spec_int
 argument_list|(
-literal|"tab_border"
+literal|"tab-border"
 argument_list|,
 name|NULL
 argument_list|,
@@ -686,7 +686,7 @@ name|widget_class
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
-literal|"tab_icon_size"
+literal|"tab-icon-size"
 argument_list|,
 name|NULL
 argument_list|,

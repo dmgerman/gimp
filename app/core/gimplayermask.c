@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7bf4b30103
+DECL|enum|__anon29f7998d0103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -327,7 +327,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"apply_changed"
+literal|"apply-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -361,7 +361,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"edit_changed"
+literal|"edit-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -395,7 +395,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"show_changed"
+literal|"show-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(

@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294339da0103
+DECL|enum|__anon27baa67e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -145,7 +145,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon294339da0203
+DECL|enum|__anon27baa67e0203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -607,7 +607,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"book_added"
+literal|"book-added"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -643,7 +643,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"book_removed"
+literal|"book-removed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(

@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cbc31b0103
+DECL|enum|__anon2b885caf0103
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -397,7 +397,7 @@ name|button
 operator|->
 name|line1
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -413,7 +413,7 @@ name|button
 operator|->
 name|line2
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

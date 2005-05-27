@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdd661b0103
+DECL|enum|__anon2c77499e0103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED
@@ -388,7 +388,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"color_picked"
+literal|"color-picked"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1143,7 +1143,7 @@ name|g_signal_connect
 argument_list|(
 name|widget
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1157,7 +1157,7 @@ name|g_signal_connect
 argument_list|(
 name|widget
 argument_list|,
-literal|"key_press_event"
+literal|"key-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1208,7 +1208,7 @@ name|g_signal_connect
 argument_list|(
 name|invisible
 argument_list|,
-literal|"motion_notify_event"
+literal|"motion-notify-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1222,7 +1222,7 @@ name|g_signal_connect
 argument_list|(
 name|invisible
 argument_list|,
-literal|"button_release_event"
+literal|"button-release-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

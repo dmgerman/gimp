@@ -764,7 +764,7 @@ argument_list|)
 operator|->
 name|area
 argument_list|,
-literal|"size_allocate"
+literal|"size-allocate"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -847,7 +847,7 @@ name|preview
 operator|->
 name|nav_icon
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

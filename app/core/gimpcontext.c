@@ -1251,7 +1251,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon298e98060103
+DECL|enum|__anon2785113e0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1265,7 +1265,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298e98060203
+DECL|enum|__anon2785113e0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -1702,7 +1702,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"image_changed"
+literal|"image-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1738,7 +1738,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"display_changed"
+literal|"display-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1774,7 +1774,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"tool_changed"
+literal|"tool-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1810,7 +1810,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"foreground_changed"
+literal|"foreground-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1848,7 +1848,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"background_changed"
+literal|"background-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1886,7 +1886,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"opacity_changed"
+literal|"opacity-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1922,7 +1922,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"paint_mode_changed"
+literal|"paint-mode-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1958,7 +1958,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"brush_changed"
+literal|"brush-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1994,7 +1994,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"pattern_changed"
+literal|"pattern-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -2030,7 +2030,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"gradient_changed"
+literal|"gradient-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -2066,7 +2066,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"palette_changed"
+literal|"palette-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -2102,7 +2102,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"font_changed"
+literal|"font-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -2138,7 +2138,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"buffer_changed"
+literal|"buffer-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -2174,7 +2174,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"imagefile_changed"
+literal|"imagefile-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -2210,7 +2210,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"template_changed"
+literal|"template-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(

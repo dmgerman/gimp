@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ec85770103
+DECL|enum|__anon289333290103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -877,7 +877,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"set_image"
+literal|"set-image"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(

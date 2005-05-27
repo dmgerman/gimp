@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29900fbf0103
+DECL|enum|__anon2c00eaa70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -78,7 +78,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29900fbf0203
+DECL|enum|__anon2c00eaa70203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -552,7 +552,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"invalidate_preview"
+literal|"invalidate-preview"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -586,7 +586,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"size_changed"
+literal|"size-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -647,7 +647,7 @@ name|klass
 operator|->
 name|name_changed_signal
 operator|=
-literal|"name_changed"
+literal|"name-changed"
 expr_stmt|;
 name|klass
 operator|->

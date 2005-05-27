@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274ac6310103
+DECL|enum|__anon2b4591e50103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -69,7 +69,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon274ac6310203
+DECL|enum|__anon2b4591e50203
 block|{
 DECL|enumerator|COLUMN_UTF8
 name|COLUMN_UTF8
@@ -349,7 +349,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"path_changed"
+literal|"path-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -384,7 +384,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"writable_changed"
+literal|"writable-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1186,7 +1186,7 @@ name|editor
 operator|->
 name|file_entry
 argument_list|,
-literal|"filename_changed"
+literal|"filename-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -652,7 +652,7 @@ name|g_signal_connect
 argument_list|(
 name|gimage
 argument_list|,
-literal|"undo_event"
+literal|"undo-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -682,7 +682,7 @@ name|g_signal_connect
 argument_list|(
 name|gimage
 argument_list|,
-literal|"name_changed"
+literal|"name-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -696,7 +696,7 @@ name|g_signal_connect
 argument_list|(
 name|gimage
 argument_list|,
-literal|"selection_control"
+literal|"selection-control"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -710,7 +710,7 @@ name|g_signal_connect
 argument_list|(
 name|gimage
 argument_list|,
-literal|"size_changed"
+literal|"size-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -724,7 +724,7 @@ name|g_signal_connect
 argument_list|(
 name|gimage
 argument_list|,
-literal|"resolution_changed"
+literal|"resolution-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -738,7 +738,7 @@ name|g_signal_connect
 argument_list|(
 name|gimage
 argument_list|,
-literal|"qmask_changed"
+literal|"qmask-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -752,7 +752,7 @@ name|g_signal_connect
 argument_list|(
 name|gimage
 argument_list|,
-literal|"update_guide"
+literal|"update-guide"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -766,7 +766,7 @@ name|g_signal_connect
 argument_list|(
 name|gimage
 argument_list|,
-literal|"update_sample_point"
+literal|"update-sample-point"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -780,7 +780,7 @@ name|g_signal_connect
 argument_list|(
 name|gimage
 argument_list|,
-literal|"invalidate_preview"
+literal|"invalidate-preview"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -840,7 +840,7 @@ name|gimage
 operator|->
 name|vectors
 argument_list|,
-literal|"visibility_changed"
+literal|"visibility-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

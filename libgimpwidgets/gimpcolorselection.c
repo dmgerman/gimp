@@ -104,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c497cce0103
+DECL|enum|__anon2babd8fe0103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -149,7 +149,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c497cce0203
+DECL|enum|__anon2babd8fe0203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -463,7 +463,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -730,7 +730,7 @@ name|selection
 operator|->
 name|notebook
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -751,7 +751,7 @@ argument_list|)
 operator|->
 name|notebook
 argument_list|,
-literal|"switch_page"
+literal|"switch-page"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -920,7 +920,7 @@ name|selection
 operator|->
 name|new_color
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1154,7 +1154,7 @@ name|selection
 operator|->
 name|scales
 argument_list|,
-literal|"channel_changed"
+literal|"channel-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1170,7 +1170,7 @@ name|selection
 operator|->
 name|scales
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1309,7 +1309,7 @@ name|g_signal_connect
 argument_list|(
 name|entry
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1749,7 +1749,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selection_color_changed:  * @selection: A #GimpColorSelection widget.  *  * Emits the "color_changed" signal.  **/
+comment|/**  * gimp_color_selection_color_changed:  * @selection: A #GimpColorSelection widget.  *  * Emits the "color-changed" signal.  **/
 end_comment
 
 begin_function

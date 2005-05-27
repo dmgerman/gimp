@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc0f92d0103
+DECL|enum|__anon2b526dc60103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE
@@ -613,7 +613,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"double_clicked"
+literal|"double-clicked"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(

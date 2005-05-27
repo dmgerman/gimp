@@ -560,7 +560,7 @@ name|brush_sel
 operator|->
 name|preview
 argument_list|,
-literal|"size_allocate"
+literal|"size-allocate"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

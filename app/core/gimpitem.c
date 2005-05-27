@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29055b1e0103
+DECL|enum|__anon2b2c69820103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -538,7 +538,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"visibility_changed"
+literal|"visibility-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -572,7 +572,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"linked_changed"
+literal|"linked-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(

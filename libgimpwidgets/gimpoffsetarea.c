@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6732710103
+DECL|enum|__anon27d8ba610103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -285,7 +285,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"offsets_changed"
+literal|"offsets-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -559,7 +559,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_offset_area_set_size:  * @offset_area: a #GimpOffsetArea.  * @width: the new width  * @height: the new height  *  * Sets the size of the image/drawable displayed by the #GimpOffsetArea.  * If the offsets change as a result of this change, the %offsets_changed  * signal is emitted.  **/
+comment|/**  * gimp_offset_area_set_size:  * @offset_area: a #GimpOffsetArea.  * @width: the new width  * @height: the new height  *  * Sets the size of the image/drawable displayed by the #GimpOffsetArea.  * If the offsets change as a result of this change, the "offsets-changed"  * signal is emitted.  **/
 end_comment
 
 begin_function
@@ -782,7 +782,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_offset_area_set_offsets:  * @offset_area: a #GimpOffsetArea.  * @offset_x: the X offset  * @offset_y: the Y offset  *  * Sets the offsets of the image/drawable displayed by the #GimpOffsetArea.  * It does not emit the %offsets_changed signal.  **/
+comment|/**  * gimp_offset_area_set_offsets:  * @offset_area: a #GimpOffsetArea.  * @offset_x: the X offset  * @offset_y: the Y offset  *  * Sets the offsets of the image/drawable displayed by the #GimpOffsetArea.  * It does not emit the "offsets-changed" signal.  **/
 end_comment
 
 begin_function

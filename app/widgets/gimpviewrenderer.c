@@ -118,7 +118,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5b88d10103
+DECL|enum|__anon291343880103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1322,7 +1322,7 @@ name|renderer
 operator|->
 name|viewable
 argument_list|,
-literal|"invalidate_preview"
+literal|"invalidate-preview"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1338,7 +1338,7 @@ name|renderer
 operator|->
 name|viewable
 argument_list|,
-literal|"size_changed"
+literal|"size-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

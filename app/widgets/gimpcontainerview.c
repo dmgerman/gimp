@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294869430103
+DECL|enum|__anon2a4f0ae30103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -532,7 +532,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"select_item"
+literal|"select-item"
 argument_list|,
 name|G_TYPE_FROM_INTERFACE
 argument_list|(
@@ -570,7 +570,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"activate_item"
+literal|"activate-item"
 argument_list|,
 name|G_TYPE_FROM_INTERFACE
 argument_list|(
@@ -608,7 +608,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"context_item"
+literal|"context-item"
 argument_list|,
 name|G_TYPE_FROM_INTERFACE
 argument_list|(

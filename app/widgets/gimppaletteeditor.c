@@ -2017,7 +2017,7 @@ name|editor
 operator|->
 name|data
 argument_list|,
-literal|"invalidate_preview"
+literal|"invalidate-preview"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

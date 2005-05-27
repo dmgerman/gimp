@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b65c260103
+DECL|enum|__anon2ae0efeb0103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -417,7 +417,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"marker_changed"
+literal|"marker-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(

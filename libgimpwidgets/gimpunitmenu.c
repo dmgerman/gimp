@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6fa0c80103
+DECL|enum|__anon27dd95f90103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6fa0c80203
+DECL|enum|__anon27dd95f90203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -306,7 +306,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"unit_changed"
+literal|"unit-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -2563,7 +2563,7 @@ name|menu
 operator|->
 name|tv
 argument_list|,
-literal|"row_activated"
+literal|"row-activated"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2ac9190103
+DECL|enum|__anon28eda3320103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -69,7 +69,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2ac9190203
+DECL|enum|__anon28eda3320203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -386,7 +386,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"name_changed"
+literal|"name-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(

@@ -1724,7 +1724,7 @@ argument_list|(
 name|constrained_adj
 argument_list|)
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1741,7 +1741,7 @@ argument_list|(
 name|adjustment
 argument_list|)
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2600,7 +2600,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2614,7 +2614,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2766,7 +2766,7 @@ name|g_signal_connect
 argument_list|(
 name|scale_adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2780,7 +2780,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3114,7 +3114,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3363,7 +3363,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7985570108
+DECL|struct|__anon278491d30108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3510,7 +3510,7 @@ name|g_signal_stop_emission_by_name
 argument_list|(
 name|widget
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval
@@ -3574,7 +3574,7 @@ name|g_signal_stop_emission_by_name
 argument_list|(
 name|widget
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval
@@ -3625,7 +3625,7 @@ name|g_signal_stop_emission_by_name
 argument_list|(
 name|widget
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval
@@ -3677,7 +3677,7 @@ name|g_signal_stop_emission_by_name
 argument_list|(
 name|widget
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval
@@ -4288,7 +4288,7 @@ name|g_signal_connect
 argument_list|(
 name|sizeentry
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

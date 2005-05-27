@@ -104,8 +104,8 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4c10990103
-DECL|enum|__anon2b4c10990203
+DECL|enum|__anon294080720103
+DECL|enum|__anon294080720203
 block|{
 DECL|enumerator|SET_BRUSH
 DECL|enumerator|SET_BRUSH
@@ -3326,7 +3326,7 @@ name|core
 operator|->
 name|main_brush
 argument_list|,
-literal|"invalidate_preview"
+literal|"invalidate-preview"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

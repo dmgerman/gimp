@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b2da470103
+DECL|enum|__anon288abdff0103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b2da470203
+DECL|enum|__anon288abdff0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -993,7 +993,7 @@ name|preview
 operator|->
 name|area
 argument_list|,
-literal|"size_allocate"
+literal|"size-allocate"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27aa2edd0103
+DECL|enum|__anon28c376e50103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -275,7 +275,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -845,7 +845,7 @@ name|entry
 operator|->
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

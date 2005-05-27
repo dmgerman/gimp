@@ -963,7 +963,7 @@ index|[
 name|i
 index|]
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

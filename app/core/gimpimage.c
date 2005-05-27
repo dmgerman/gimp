@@ -276,7 +276,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b88ba60103
+DECL|enum|__anon291491b60103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -355,7 +355,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b88ba60203
+DECL|enum|__anon291491b60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1091,7 +1091,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"mode_changed"
+literal|"mode-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1125,7 +1125,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"alpha_changed"
+literal|"alpha-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1159,7 +1159,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"floating_selection_changed"
+literal|"floating-selection-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1193,7 +1193,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"active_layer_changed"
+literal|"active-layer-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1227,7 +1227,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"active_channel_changed"
+literal|"active-channel-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1261,7 +1261,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"active_vectors_changed"
+literal|"active-vectors-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1295,7 +1295,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"component_visibility_changed"
+literal|"component-visibility-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1331,7 +1331,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"component_active_changed"
+literal|"component-active-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1367,7 +1367,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"mask_changed"
+literal|"mask-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1401,7 +1401,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"resolution_changed"
+literal|"resolution-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1435,7 +1435,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"unit_changed"
+literal|"unit-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1469,7 +1469,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"qmask_changed"
+literal|"qmask-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1503,7 +1503,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"selection_control"
+literal|"selection-control"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1653,7 +1653,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"update_guide"
+literal|"update-guide"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1689,7 +1689,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"update_sample_point"
+literal|"update-sample-point"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1725,7 +1725,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"sample_point_added"
+literal|"sample-point-added"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1761,7 +1761,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"sample_point_removed"
+literal|"sample-point-removed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1797,7 +1797,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"colormap_changed"
+literal|"colormap-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1833,7 +1833,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"undo_event"
+literal|"undo-event"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -2448,7 +2448,7 @@ name|gimage
 operator|->
 name|layers
 argument_list|,
-literal|"visibility_changed"
+literal|"visibility-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2468,7 +2468,7 @@ name|gimage
 operator|->
 name|layers
 argument_list|,
-literal|"alpha_changed"
+literal|"alpha-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2508,7 +2508,7 @@ name|gimage
 operator|->
 name|channels
 argument_list|,
-literal|"visibility_changed"
+literal|"visibility-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2528,7 +2528,7 @@ name|gimage
 operator|->
 name|channels
 argument_list|,
-literal|"name_changed"
+literal|"name-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2548,7 +2548,7 @@ name|gimage
 operator|->
 name|channels
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ee7fc60103
+DECL|enum|__anon2b7a431f0103
 block|{
 DECL|enumerator|EXTENDED_CLICKED
 name|EXTENDED_CLICKED
@@ -243,7 +243,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"extended_clicked"
+literal|"extended-clicked"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(

@@ -86,7 +86,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4ad8e30103
+DECL|enum|__anon28fe9dd30103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -137,7 +137,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4ad8e30203
+DECL|enum|__anon28fe9dd30203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -1221,7 +1221,7 @@ name|select
 operator|->
 name|xy_color
 argument_list|,
-literal|"size_allocate"
+literal|"size-allocate"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1237,7 +1237,7 @@ name|select
 operator|->
 name|xy_color
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1361,7 +1361,7 @@ name|select
 operator|->
 name|z_color
 argument_list|,
-literal|"size_allocate"
+literal|"size-allocate"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1377,7 +1377,7 @@ name|select
 operator|->
 name|z_color
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

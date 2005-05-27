@@ -3275,7 +3275,7 @@ name|g_signal_connect
 argument_list|(
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3541,7 +3541,7 @@ name|g_signal_connect
 argument_list|(
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3788,7 +3788,7 @@ name|g_signal_connect
 argument_list|(
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4604,7 +4604,7 @@ name|g_signal_connect
 argument_list|(
 name|entry
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -6082,7 +6082,7 @@ name|g_signal_connect
 argument_list|(
 name|entry
 argument_list|,
-literal|"filename_changed"
+literal|"filename-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -7074,7 +7074,7 @@ name|g_signal_connect
 argument_list|(
 name|editor
 argument_list|,
-literal|"path_changed"
+literal|"path-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -7119,7 +7119,7 @@ name|g_signal_connect
 argument_list|(
 name|editor
 argument_list|,
-literal|"writable_changed"
+literal|"writable-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -8074,7 +8074,7 @@ name|g_signal_connect
 argument_list|(
 name|sizeentry
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -8119,7 +8119,7 @@ name|g_signal_connect
 argument_list|(
 name|sizeentry
 argument_list|,
-literal|"unit_changed"
+literal|"unit-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -9327,7 +9327,7 @@ name|g_signal_connect
 argument_list|(
 name|sizeentry
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -9341,7 +9341,7 @@ name|g_signal_connect
 argument_list|(
 name|sizeentry
 argument_list|,
-literal|"refval_changed"
+literal|"refval-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -9431,7 +9431,7 @@ name|g_signal_connect
 argument_list|(
 name|sizeentry
 argument_list|,
-literal|"unit_changed"
+literal|"unit-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -10371,7 +10371,7 @@ name|g_signal_connect
 argument_list|(
 name|area
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -10779,7 +10779,7 @@ name|g_signal_connect
 argument_list|(
 name|menu
 argument_list|,
-literal|"unit_changed"
+literal|"unit-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

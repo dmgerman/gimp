@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f83fe00103
+DECL|enum|__anon2c2bdf820103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f83fe00203
+DECL|enum|__anon2c2bdf820203
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -264,7 +264,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -524,7 +524,7 @@ name|g_signal_connect
 argument_list|(
 name|entry
 argument_list|,
-literal|"focus_out_event"
+literal|"focus-out-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -538,7 +538,7 @@ name|g_signal_connect
 argument_list|(
 name|entry
 argument_list|,
-literal|"key_press_event"
+literal|"key-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -552,7 +552,7 @@ name|g_signal_connect
 argument_list|(
 name|completion
 argument_list|,
-literal|"match_selected"
+literal|"match-selected"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -590,7 +590,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_hex_entry_set_color:  * @entry: a #GimpColorHexEntry widget  * @color: pointer to a #GimpRGB  *  * Sets the color displayed by a #GimpColorHexEntry. If the new color  * is different to the previously set color, the "color_changed"  * signal is emitted.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_color_hex_entry_set_color:  * @entry: a #GimpColorHexEntry widget  * @color: pointer to a #GimpRGB  *  * Sets the color displayed by a #GimpColorHexEntry. If the new color  * is different to the previously set color, the "color-changed"  * signal is emitted.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function

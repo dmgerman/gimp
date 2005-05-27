@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc3a8160103
+DECL|enum|__anon2a3f672d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc3a8160203
+DECL|enum|__anon2a3f672d0203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED
@@ -336,7 +336,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"dash_info_changed"
+literal|"dash-info-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(

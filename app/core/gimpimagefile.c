@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fae5bd0103
+DECL|enum|__anon2a447bcc0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -490,7 +490,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"info_changed"
+literal|"info-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -533,7 +533,7 @@ name|viewable_class
 operator|->
 name|name_changed_signal
 operator|=
-literal|"info_changed"
+literal|"info-changed"
 expr_stmt|;
 name|viewable_class
 operator|->

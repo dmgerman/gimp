@@ -54,7 +54,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294144060103
+DECL|enum|__anon298a32b70103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -425,7 +425,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -459,7 +459,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"refval_changed"
+literal|"refval-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -493,7 +493,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"unit_changed"
+literal|"unit-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1127,7 +1127,7 @@ name|gsef
 operator|->
 name|value_adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1229,7 +1229,7 @@ name|gsef
 operator|->
 name|refval_adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1350,7 +1350,7 @@ name|gse
 operator|->
 name|unitmenu
 argument_list|,
-literal|"unit_changed"
+literal|"unit-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1574,7 +1574,7 @@ name|gsef
 operator|->
 name|value_adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1618,7 +1618,7 @@ name|gsef
 operator|->
 name|refval_adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

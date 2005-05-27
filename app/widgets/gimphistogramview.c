@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon274dbc3f0103
+DECL|enum|__anon28b5b9ea0103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon274dbc3f0203
+DECL|enum|__anon28b5b9ea0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -440,7 +440,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"range_changed"
+literal|"range-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(

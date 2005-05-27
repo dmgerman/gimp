@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3128f30103
+DECL|enum|__anon290cc2b70103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -217,7 +217,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -255,7 +255,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"channel_changed"
+literal|"channel-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(

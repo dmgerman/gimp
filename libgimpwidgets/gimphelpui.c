@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290002df0103
+DECL|enum|__anon2a1f2b6b0103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -429,7 +429,7 @@ name|g_signal_connect
 argument_list|(
 name|widget
 argument_list|,
-literal|"show_help"
+literal|"show-help"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -982,7 +982,7 @@ name|g_signal_connect
 argument_list|(
 name|invisible
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

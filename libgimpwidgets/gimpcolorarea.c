@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d6fb30103
+DECL|enum|__anon2b243f670103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d6fb30203
+DECL|enum|__anon2b243f670203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -478,7 +478,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
