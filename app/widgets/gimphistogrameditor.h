@@ -117,11 +117,6 @@ DECL|member|idle_id
 name|guint
 name|idle_id
 decl_stmt|;
-DECL|member|name
-name|GtkWidget
-modifier|*
-name|name
-decl_stmt|;
 DECL|member|menu
 name|GtkWidget
 modifier|*

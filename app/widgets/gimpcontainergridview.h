@@ -103,11 +103,6 @@ DECL|member|parent_instance
 name|GimpContainerBox
 name|parent_instance
 decl_stmt|;
-DECL|member|name_label
-name|GtkWidget
-modifier|*
-name|name_label
-decl_stmt|;
 DECL|member|wrap_box
 name|GtkWidget
 modifier|*

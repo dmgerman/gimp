@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292490a90103
+DECL|enum|__anon2ab0e5b00103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -2006,7 +2006,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_IS_CONTAINER_GRID_VIEW
+name|GIMP_IS_EDITOR
 argument_list|(
 name|popup
 operator|->
@@ -2015,9 +2015,9 @@ operator|->
 name|view
 argument_list|)
 condition|)
-name|gtk_widget_hide
+name|gimp_editor_set_show_name
 argument_list|(
-name|GIMP_CONTAINER_GRID_VIEW
+name|GIMP_EDITOR
 argument_list|(
 name|popup
 operator|->
@@ -2025,8 +2025,8 @@ name|editor
 operator|->
 name|view
 argument_list|)
-operator|->
-name|name_label
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
