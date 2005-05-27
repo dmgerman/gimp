@@ -711,7 +711,7 @@ name|scale
 operator|->
 name|sizeentry
 argument_list|,
-literal|"unit_changed"
+literal|"unit-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -1061,7 +1061,7 @@ name|histogram_box
 operator|->
 name|view
 argument_list|,
-literal|"range_changed"
+literal|"range-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

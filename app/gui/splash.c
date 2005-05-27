@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ed89bb0108
+DECL|struct|__anon2b2b197a0108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -406,7 +406,7 @@ literal|"type"
 argument_list|,
 name|GTK_WINDOW_TOPLEVEL
 argument_list|,
-literal|"type_hint"
+literal|"type-hint"
 argument_list|,
 name|GDK_WINDOW_TYPE_HINT_SPLASHSCREEN
 argument_list|,
@@ -421,7 +421,7 @@ literal|"role"
 argument_list|,
 literal|"gimp-startup"
 argument_list|,
-literal|"window_position"
+literal|"window-position"
 argument_list|,
 name|GTK_WIN_POS_CENTER
 argument_list|,
@@ -438,7 +438,7 @@ name|splash
 operator|->
 name|window
 argument_list|,
-literal|"delete_event"
+literal|"delete-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -725,7 +725,7 @@ name|splash
 operator|->
 name|area
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

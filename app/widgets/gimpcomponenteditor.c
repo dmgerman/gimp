@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7772a20103
+DECL|enum|__anon2a2103e20103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -768,7 +768,7 @@ name|editor
 operator|->
 name|view
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1042,7 +1042,7 @@ name|editor
 operator|->
 name|gimage
 argument_list|,
-literal|"mode_changed"
+literal|"mode-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1058,7 +1058,7 @@ name|editor
 operator|->
 name|gimage
 argument_list|,
-literal|"alpha_changed"
+literal|"alpha-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1074,7 +1074,7 @@ name|editor
 operator|->
 name|gimage
 argument_list|,
-literal|"component_visibility_changed"
+literal|"component-visibility-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1090,7 +1090,7 @@ name|editor
 operator|->
 name|gimage
 argument_list|,
-literal|"component_active_changed"
+literal|"component-active-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

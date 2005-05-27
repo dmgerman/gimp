@@ -1893,7 +1893,7 @@ name|dialog_factory
 operator|->
 name|context
 argument_list|,
-literal|"display_changed"
+literal|"display-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1911,7 +1911,7 @@ name|dialog_factory
 operator|->
 name|context
 argument_list|,
-literal|"image_changed"
+literal|"image-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1927,7 +1927,7 @@ name|g_signal_connect_object
 argument_list|(
 name|context
 argument_list|,
-literal|"image_changed"
+literal|"image-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2512,7 +2512,7 @@ name|g_signal_stop_emission_by_name
 argument_list|(
 name|context
 argument_list|,
-literal|"image_changed"
+literal|"image-changed"
 argument_list|)
 expr_stmt|;
 block|}

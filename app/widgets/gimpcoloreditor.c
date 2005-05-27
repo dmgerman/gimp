@@ -732,7 +732,7 @@ name|editor
 operator|->
 name|notebook
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1180,7 +1180,7 @@ name|editor
 operator|->
 name|hex_entry
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1679,7 +1679,7 @@ name|editor
 operator|->
 name|context
 argument_list|,
-literal|"foreground_changed"
+literal|"foreground-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1695,7 +1695,7 @@ name|editor
 operator|->
 name|context
 argument_list|,
-literal|"background_changed"
+literal|"background-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

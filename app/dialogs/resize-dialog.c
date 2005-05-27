@@ -1100,7 +1100,7 @@ name|g_signal_connect
 argument_list|(
 name|entry
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1300,7 +1300,7 @@ name|private
 operator|->
 name|area
 argument_list|,
-literal|"offsets_changed"
+literal|"offsets-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2189,7 +2189,7 @@ name|private
 operator|->
 name|offset
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 literal|0
 argument_list|)

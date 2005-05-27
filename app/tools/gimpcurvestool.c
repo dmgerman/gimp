@@ -2609,7 +2609,7 @@ name|tool
 operator|->
 name|graph
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

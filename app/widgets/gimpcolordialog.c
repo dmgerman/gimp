@@ -87,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4cb1090103
+DECL|enum|__anon2b2c2c5e0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -553,7 +553,7 @@ name|dialog
 operator|->
 name|selection
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -875,7 +875,7 @@ index|[
 name|i
 index|]
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

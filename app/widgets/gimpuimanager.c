@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2785e13f0103
+DECL|enum|__anon29e2c2820103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2785e13f0203
+DECL|enum|__anon29e2c2820203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2059,7 +2059,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2785e13f0308
+DECL|struct|__anon29e2c2820308
 block|{
 DECL|member|x
 name|guint
@@ -3331,7 +3331,7 @@ name|widget
 operator|->
 name|parent
 argument_list|,
-literal|"key_press_event"
+literal|"key-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

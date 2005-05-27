@@ -1060,7 +1060,7 @@ name|shell
 operator|->
 name|hsbdata
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1076,7 +1076,7 @@ name|shell
 operator|->
 name|vsbdata
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

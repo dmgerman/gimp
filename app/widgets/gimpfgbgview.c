@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b1f8060103
+DECL|enum|__anon2944df3f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1210,7 +1210,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|context
 argument_list|,
-literal|"foreground_changed"
+literal|"foreground-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1224,7 +1224,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|context
 argument_list|,
-literal|"background_changed"
+literal|"background-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

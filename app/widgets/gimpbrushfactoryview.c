@@ -427,7 +427,7 @@ name|view
 operator|->
 name|spacing_adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -693,7 +693,7 @@ name|factory
 operator|->
 name|container
 argument_list|,
-literal|"spacing_changed"
+literal|"spacing-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

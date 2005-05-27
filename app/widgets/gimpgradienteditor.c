@@ -1540,7 +1540,7 @@ name|editor
 operator|->
 name|scroll_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

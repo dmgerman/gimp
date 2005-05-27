@@ -641,7 +641,7 @@ name|g_signal_connect_object
 argument_list|(
 name|context
 argument_list|,
-literal|"foreground_changed"
+literal|"foreground-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -657,7 +657,7 @@ name|g_signal_connect_object
 argument_list|(
 name|context
 argument_list|,
-literal|"background_changed"
+literal|"background-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -673,7 +673,7 @@ name|g_signal_connect_object
 argument_list|(
 name|context
 argument_list|,
-literal|"pattern_changed"
+literal|"pattern-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

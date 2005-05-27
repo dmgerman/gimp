@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2912a3070103
+DECL|enum|__anon2ba6030e0103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2912a3070203
+DECL|enum|__anon2ba6030e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -654,7 +654,7 @@ name|g_signal_connect
 argument_list|(
 name|object
 argument_list|,
-literal|"foreground_changed"
+literal|"foreground-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -668,7 +668,7 @@ name|g_signal_connect
 argument_list|(
 name|object
 argument_list|,
-literal|"background_changed"
+literal|"background-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -682,7 +682,7 @@ name|g_signal_connect
 argument_list|(
 name|object
 argument_list|,
-literal|"tool_changed"
+literal|"tool-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -696,7 +696,7 @@ name|g_signal_connect
 argument_list|(
 name|object
 argument_list|,
-literal|"brush_changed"
+literal|"brush-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -710,7 +710,7 @@ name|g_signal_connect
 argument_list|(
 name|object
 argument_list|,
-literal|"pattern_changed"
+literal|"pattern-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -724,7 +724,7 @@ name|g_signal_connect
 argument_list|(
 name|object
 argument_list|,
-literal|"gradient_changed"
+literal|"gradient-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

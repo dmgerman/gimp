@@ -427,7 +427,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|context
 argument_list|,
-literal|"image_changed"
+literal|"image-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

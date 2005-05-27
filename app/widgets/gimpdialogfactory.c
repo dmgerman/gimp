@@ -131,7 +131,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bce60700103
+DECL|enum|__anon2af948ae0103
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -2954,7 +2954,7 @@ name|g_signal_connect
 argument_list|(
 name|dialog
 argument_list|,
-literal|"configure_event"
+literal|"configure-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3118,7 +3118,7 @@ name|g_signal_connect
 argument_list|(
 name|dialog
 argument_list|,
-literal|"configure_event"
+literal|"configure-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3186,7 +3186,7 @@ name|g_signal_connect_object
 argument_list|(
 name|dialog
 argument_list|,
-literal|"configure_event"
+literal|"configure-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -1005,7 +1005,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon27dfb4b00108
+DECL|struct|__anon27afe3d00108
 block|{
 DECL|member|label
 specifier|const
@@ -1795,7 +1795,7 @@ name|g_signal_connect
 argument_list|(
 name|data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2013,7 +2013,7 @@ name|g_signal_connect
 argument_list|(
 name|data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2121,7 +2121,7 @@ name|g_signal_connect
 argument_list|(
 name|data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2231,7 +2231,7 @@ name|hs_tool
 operator|->
 name|saturation_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

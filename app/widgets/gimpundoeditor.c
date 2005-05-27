@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27718a210103
+DECL|enum|__anon2b7987b40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -770,7 +770,7 @@ name|image_editor
 operator|->
 name|gimage
 argument_list|,
-literal|"undo_event"
+literal|"undo-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

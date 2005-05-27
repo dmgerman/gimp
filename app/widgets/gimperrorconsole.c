@@ -455,7 +455,7 @@ name|console
 operator|->
 name|text_view
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

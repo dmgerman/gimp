@@ -1448,7 +1448,7 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
-literal|"display_changed"
+literal|"display-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

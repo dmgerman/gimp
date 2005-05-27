@@ -469,7 +469,7 @@ name|g_signal_connect
 argument_list|(
 name|view
 argument_list|,
-literal|"range_changed"
+literal|"range-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -588,7 +588,7 @@ name|g_signal_connect_after
 argument_list|(
 name|slider_area
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -812,7 +812,7 @@ name|g_signal_connect
 argument_list|(
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -881,7 +881,7 @@ name|g_signal_connect
 argument_list|(
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

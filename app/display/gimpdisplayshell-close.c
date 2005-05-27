@@ -533,7 +533,7 @@ name|g_signal_connect_object
 argument_list|(
 name|gimage
 argument_list|,
-literal|"name_changed"
+literal|"name-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

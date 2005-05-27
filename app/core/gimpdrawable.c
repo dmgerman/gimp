@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8c27670103
+DECL|enum|__anon27f39d630103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -864,7 +864,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"alpha_changed"
+literal|"alpha-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(

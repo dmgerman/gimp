@@ -1251,7 +1251,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2785113e0103
+DECL|enum|__anon2b686d0c0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1265,7 +1265,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2785113e0203
+DECL|enum|__anon2b686d0c0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -7658,7 +7658,7 @@ name|g_signal_connect_object
 argument_list|(
 name|tool_info
 argument_list|,
-literal|"name_changed"
+literal|"name-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -9071,7 +9071,7 @@ name|g_signal_connect_object
 argument_list|(
 name|brush
 argument_list|,
-literal|"name_changed"
+literal|"name-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -9610,7 +9610,7 @@ name|g_signal_connect_object
 argument_list|(
 name|pattern
 argument_list|,
-literal|"name_changed"
+literal|"name-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -10097,7 +10097,7 @@ name|g_signal_connect_object
 argument_list|(
 name|gradient
 argument_list|,
-literal|"name_changed"
+literal|"name-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -10555,7 +10555,7 @@ name|g_signal_connect_object
 argument_list|(
 name|palette
 argument_list|,
-literal|"name_changed"
+literal|"name-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -11110,7 +11110,7 @@ name|g_signal_connect_object
 argument_list|(
 name|font
 argument_list|,
-literal|"name_changed"
+literal|"name-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -11560,7 +11560,7 @@ name|g_signal_connect_object
 argument_list|(
 name|buffer
 argument_list|,
-literal|"name_changed"
+literal|"name-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -12005,7 +12005,7 @@ name|g_signal_connect_object
 argument_list|(
 name|imagefile
 argument_list|,
-literal|"name_changed"
+literal|"name-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -12450,7 +12450,7 @@ name|g_signal_connect_object
 argument_list|(
 name|template
 argument_list|,
-literal|"name_changed"
+literal|"name-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

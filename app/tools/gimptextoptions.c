@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2c711a0103
+DECL|enum|__anon2b63679b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2421,7 +2421,7 @@ name|g_signal_connect_object
 argument_list|(
 name|editor
 argument_list|,
-literal|"dir_changed"
+literal|"dir-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

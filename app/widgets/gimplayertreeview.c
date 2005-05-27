@@ -1585,7 +1585,7 @@ name|view
 operator|->
 name|opacity_adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2445,7 +2445,7 @@ name|gimp_container_add_handler
 argument_list|(
 name|container
 argument_list|,
-literal|"mode_changed"
+literal|"mode-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2463,7 +2463,7 @@ name|gimp_container_add_handler
 argument_list|(
 name|container
 argument_list|,
-literal|"opacity_changed"
+literal|"opacity-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2481,7 +2481,7 @@ name|gimp_container_add_handler
 argument_list|(
 name|container
 argument_list|,
-literal|"preserve_trans_changed"
+literal|"preserve-trans-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2499,7 +2499,7 @@ name|gimp_container_add_handler
 argument_list|(
 name|container
 argument_list|,
-literal|"mask_changed"
+literal|"mask-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2517,7 +2517,7 @@ name|gimp_container_add_handler
 argument_list|(
 name|container
 argument_list|,
-literal|"alpha_changed"
+literal|"alpha-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3759,7 +3759,7 @@ name|view
 operator|->
 name|gimage
 argument_list|,
-literal|"floating_selection_changed"
+literal|"floating-selection-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5036,7 +5036,7 @@ name|g_signal_connect_closure
 argument_list|(
 name|mask
 argument_list|,
-literal|"apply_changed"
+literal|"apply-changed"
 argument_list|,
 name|closure
 argument_list|,
@@ -5047,7 +5047,7 @@ name|g_signal_connect_closure
 argument_list|(
 name|mask
 argument_list|,
-literal|"edit_changed"
+literal|"edit-changed"
 argument_list|,
 name|closure
 argument_list|,
@@ -5058,7 +5058,7 @@ name|g_signal_connect_closure
 argument_list|(
 name|mask
 argument_list|,
-literal|"show_changed"
+literal|"show-changed"
 argument_list|,
 name|closure
 argument_list|,

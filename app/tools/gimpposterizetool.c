@@ -876,7 +876,7 @@ name|posterize_tool
 operator|->
 name|levels_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b03218f0103
+DECL|enum|__anon2c1cf5650103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -425,7 +425,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"spacing_changed"
+literal|"spacing-changed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(

@@ -527,7 +527,7 @@ name|g_signal_connect
 argument_list|(
 name|tips_dialog
 argument_list|,
-literal|"delete_event"
+literal|"delete-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

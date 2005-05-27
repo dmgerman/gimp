@@ -1359,7 +1359,7 @@ name|cb_tool
 operator|->
 name|cyan_red_adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1396,7 +1396,7 @@ name|cb_tool
 operator|->
 name|magenta_green_adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1433,7 +1433,7 @@ name|cb_tool
 operator|->
 name|yellow_blue_adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

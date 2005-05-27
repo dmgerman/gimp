@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c28d8930103
+DECL|enum|__anon2c1bd3c70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -693,7 +693,7 @@ name|editor
 operator|->
 name|name_entry
 argument_list|,
-literal|"focus_out_event"
+literal|"focus-out-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1400,7 +1400,7 @@ name|editor
 operator|->
 name|data
 argument_list|,
-literal|"name_changed"
+literal|"name-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

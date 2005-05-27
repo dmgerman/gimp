@@ -187,7 +187,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c18be9f0103
+DECL|enum|__anon2bbd27630103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -905,7 +905,7 @@ name|editor
 operator|->
 name|palette
 argument_list|,
-literal|"size_allocate"
+literal|"size-allocate"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -921,7 +921,7 @@ name|editor
 operator|->
 name|palette
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1078,7 +1078,7 @@ name|editor
 operator|->
 name|index_adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1142,7 +1142,7 @@ name|editor
 operator|->
 name|color_entry
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1493,7 +1493,7 @@ name|g_signal_connect
 argument_list|(
 name|gimage
 argument_list|,
-literal|"mode_changed"
+literal|"mode-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1507,7 +1507,7 @@ name|g_signal_connect
 argument_list|(
 name|gimage
 argument_list|,
-literal|"colormap_changed"
+literal|"colormap-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

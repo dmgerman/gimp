@@ -5900,7 +5900,7 @@ name|item
 operator|->
 name|gimage
 argument_list|,
-literal|"active_vectors_changed"
+literal|"active-vectors-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5932,7 +5932,7 @@ name|g_signal_connect_object
 argument_list|(
 name|vectors
 argument_list|,
-literal|"visibility_changed"
+literal|"visibility-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

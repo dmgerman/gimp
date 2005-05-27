@@ -990,7 +990,7 @@ name|g_signal_connect
 argument_list|(
 name|eventbox
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1006,7 +1006,7 @@ name|eventbox
 operator|->
 name|parent
 argument_list|,
-literal|"size_allocate"
+literal|"size-allocate"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1129,7 +1129,7 @@ name|editor
 operator|->
 name|color_area
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1373,7 +1373,7 @@ name|editor
 operator|->
 name|columns_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

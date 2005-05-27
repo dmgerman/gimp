@@ -3061,7 +3061,7 @@ name|g_signal_connect
 argument_list|(
 name|chooser
 argument_list|,
-literal|"delete_event"
+literal|"delete-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

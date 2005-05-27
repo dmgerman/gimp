@@ -327,7 +327,7 @@ name|g_signal_connect
 argument_list|(
 name|user_context
 argument_list|,
-literal|"tool_changed"
+literal|"tool-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1609,12 +1609,12 @@ operator|->
 name|busy
 condition|)
 block|{
-comment|/*  there may be contexts waiting for the user_context's "tool_changed"        *  signal, so stop emitting it.        */
+comment|/*  there may be contexts waiting for the user_context's "tool-changed"        *  signal, so stop emitting it.        */
 name|g_signal_stop_emission_by_name
 argument_list|(
 name|user_context
 argument_list|,
-literal|"tool_changed"
+literal|"tool-changed"
 argument_list|)
 expr_stmt|;
 if|if

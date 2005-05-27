@@ -560,7 +560,7 @@ name|editor
 operator|->
 name|preview
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -829,7 +829,7 @@ name|g_signal_connect
 argument_list|(
 name|gimage
 argument_list|,
-literal|"mask_changed"
+literal|"mask-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

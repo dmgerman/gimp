@@ -2189,7 +2189,7 @@ name|tool
 operator|->
 name|input_area
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2485,7 +2485,7 @@ name|tool
 operator|->
 name|low_input
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2568,7 +2568,7 @@ name|tool
 operator|->
 name|gamma
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2699,7 +2699,7 @@ name|tool
 operator|->
 name|high_input
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2872,7 +2872,7 @@ name|tool
 operator|->
 name|output_area
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3056,7 +3056,7 @@ name|tool
 operator|->
 name|low_output
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3127,7 +3127,7 @@ name|tool
 operator|->
 name|high_output
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

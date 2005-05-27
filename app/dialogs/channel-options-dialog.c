@@ -714,7 +714,7 @@ name|g_signal_connect
 argument_list|(
 name|opacity_adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -757,7 +757,7 @@ name|options
 operator|->
 name|color_panel
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

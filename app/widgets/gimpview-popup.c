@@ -373,7 +373,7 @@ name|g_signal_connect
 argument_list|(
 name|widget
 argument_list|,
-literal|"button_release_event"
+literal|"button-release-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

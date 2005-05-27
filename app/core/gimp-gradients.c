@@ -319,7 +319,7 @@ name|gimp
 operator|->
 name|user_context
 argument_list|,
-literal|"foreground_changed"
+literal|"foreground-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -335,7 +335,7 @@ name|gimp
 operator|->
 name|user_context
 argument_list|,
-literal|"background_changed"
+literal|"background-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0230210103
+DECL|enum|__anon29f4f2430103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -1541,7 +1541,7 @@ name|import_dialog
 operator|->
 name|num_colors
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1609,7 +1609,7 @@ name|import_dialog
 operator|->
 name|columns
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1689,7 +1689,7 @@ name|import_dialog
 operator|->
 name|threshold
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1840,7 +1840,7 @@ name|import_dialog
 operator|->
 name|context
 argument_list|,
-literal|"gradient_changed"
+literal|"gradient-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1856,7 +1856,7 @@ name|import_dialog
 operator|->
 name|context
 argument_list|,
-literal|"image_changed"
+literal|"image-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1872,7 +1872,7 @@ name|import_dialog
 operator|->
 name|filename_entry
 argument_list|,
-literal|"filename_changed"
+literal|"filename-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -863,7 +863,7 @@ name|g_signal_connect
 argument_list|(
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|callback
 argument_list|,
@@ -1032,7 +1032,7 @@ name|g_signal_connect
 argument_list|(
 name|adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|callback
 argument_list|,
@@ -1220,7 +1220,7 @@ name|g_signal_connect
 argument_list|(
 name|sizeentry
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|callback
 argument_list|,

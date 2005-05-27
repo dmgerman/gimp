@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277e886c0103
+DECL|enum|__anon2bc1e9960103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1406,7 +1406,7 @@ name|editor
 operator|->
 name|options
 argument_list|,
-literal|"dash_info_changed"
+literal|"dash-info-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

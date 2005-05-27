@@ -1191,7 +1191,7 @@ name|g_signal_connect_object
 argument_list|(
 name|user_context
 argument_list|,
-literal|"tool_changed"
+literal|"tool-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

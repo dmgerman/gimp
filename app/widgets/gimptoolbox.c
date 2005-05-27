@@ -1243,7 +1243,7 @@ name|g_signal_connect
 argument_list|(
 name|toolbox
 argument_list|,
-literal|"motion_notify_event"
+literal|"motion-notify-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3338,7 +3338,7 @@ name|g_signal_connect
 argument_list|(
 name|button
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3487,7 +3487,7 @@ name|g_signal_connect_object
 argument_list|(
 name|accel_group
 argument_list|,
-literal|"accel_changed"
+literal|"accel-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

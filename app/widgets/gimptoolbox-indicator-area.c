@@ -575,7 +575,7 @@ name|g_signal_connect_object
 argument_list|(
 name|context
 argument_list|,
-literal|"brush_changed"
+literal|"brush-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -690,7 +690,7 @@ name|g_signal_connect_object
 argument_list|(
 name|context
 argument_list|,
-literal|"pattern_changed"
+literal|"pattern-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -805,7 +805,7 @@ name|g_signal_connect_object
 argument_list|(
 name|context
 argument_list|,
-literal|"gradient_changed"
+literal|"gradient-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -257,7 +257,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d9eecb0103
+DECL|enum|__anon28b83b380103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -273,7 +273,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d9eecb0203
+DECL|enum|__anon28b83b380203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1350,7 +1350,7 @@ name|g_signal_connect
 argument_list|(
 name|shell
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1364,7 +1364,7 @@ name|g_signal_connect
 argument_list|(
 name|shell
 argument_list|,
-literal|"button_release_event"
+literal|"button-release-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1378,7 +1378,7 @@ name|g_signal_connect
 argument_list|(
 name|shell
 argument_list|,
-literal|"key_press_event"
+literal|"key-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1392,7 +1392,7 @@ name|g_signal_connect
 argument_list|(
 name|shell
 argument_list|,
-literal|"window_state_event"
+literal|"window-state-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2835,7 +2835,7 @@ name|shell
 operator|->
 name|menubar
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2851,7 +2851,7 @@ name|shell
 operator|->
 name|menubar
 argument_list|,
-literal|"button_release_event"
+literal|"button-release-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2867,7 +2867,7 @@ name|shell
 operator|->
 name|menubar
 argument_list|,
-literal|"key_press_event"
+literal|"key-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3196,7 +3196,7 @@ name|shell
 operator|->
 name|origin_button
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3261,7 +3261,7 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
-literal|"motion_notify_event"
+literal|"motion-notify-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3286,7 +3286,7 @@ name|shell
 operator|->
 name|hrule
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3335,7 +3335,7 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
-literal|"motion_notify_event"
+literal|"motion-notify-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3360,7 +3360,7 @@ name|shell
 operator|->
 name|vrule
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3442,7 +3442,7 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
-literal|"size_allocate"
+literal|"size-allocate"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3458,7 +3458,7 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3474,7 +3474,7 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
-literal|"enter_notify_event"
+literal|"enter-notify-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3490,7 +3490,7 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
-literal|"leave_notify_event"
+literal|"leave-notify-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3506,7 +3506,7 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
-literal|"proximity_in_event"
+literal|"proximity-in-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3522,7 +3522,7 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
-literal|"proximity_out_event"
+literal|"proximity-out-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3538,7 +3538,7 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
-literal|"focus_in_event"
+literal|"focus-in-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3554,7 +3554,7 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
-literal|"focus_out_event"
+literal|"focus-out-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3570,7 +3570,7 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3586,7 +3586,7 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
-literal|"button_release_event"
+literal|"button-release-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3602,7 +3602,7 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
-literal|"scroll_event"
+literal|"scroll-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3618,7 +3618,7 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
-literal|"motion_notify_event"
+literal|"motion-notify-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3634,7 +3634,7 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
-literal|"key_press_event"
+literal|"key-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3650,7 +3650,7 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
-literal|"key_release_event"
+literal|"key-release-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3868,7 +3868,7 @@ name|shell
 operator|->
 name|qmask_button
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3918,7 +3918,7 @@ name|shell
 operator|->
 name|nav_ebox
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

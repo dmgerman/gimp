@@ -679,7 +679,7 @@ name|g_signal_connect
 argument_list|(
 name|area
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -694,7 +694,7 @@ name|g_signal_connect
 argument_list|(
 name|area
 argument_list|,
-literal|"motion_notify_event"
+literal|"motion-notify-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -708,7 +708,7 @@ name|g_signal_connect
 argument_list|(
 name|area
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -722,7 +722,7 @@ name|g_signal_connect
 argument_list|(
 name|area
 argument_list|,
-literal|"button_release_event"
+literal|"button-release-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -736,7 +736,7 @@ name|g_signal_connect
 argument_list|(
 name|area
 argument_list|,
-literal|"proximity_out_event"
+literal|"proximity-out-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -803,7 +803,7 @@ name|g_signal_connect
 argument_list|(
 name|adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

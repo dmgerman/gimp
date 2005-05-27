@@ -634,7 +634,7 @@ name|g_signal_stop_emission_by_name
 argument_list|(
 name|tree_view
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|)
 expr_stmt|;
 name|closure
@@ -1266,7 +1266,7 @@ name|g_signal_connect
 argument_list|(
 name|view
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1771,7 +1771,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a11bc050108
+DECL|struct|__anon2b42e9050108
 block|{
 DECL|member|accel_path
 name|gchar

@@ -647,7 +647,7 @@ name|editor
 operator|->
 name|radius_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -718,7 +718,7 @@ name|editor
 operator|->
 name|spikes_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -789,7 +789,7 @@ name|editor
 operator|->
 name|hardness_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -860,7 +860,7 @@ name|editor
 operator|->
 name|aspect_ratio_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -931,7 +931,7 @@ name|editor
 operator|->
 name|angle_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1005,7 +1005,7 @@ name|editor
 operator|->
 name|spacing_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

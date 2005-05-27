@@ -4960,7 +4960,7 @@ name|g_signal_connect
 argument_list|(
 name|button
 argument_list|,
-literal|"color_changed"
+literal|"color-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -8468,7 +8468,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2900cae90108
+DECL|struct|__anon27f0f0e30108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9621,7 +9621,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2900cae90208
+DECL|struct|__anon27f0f0e30208
 block|{
 DECL|member|label
 specifier|const
@@ -10452,7 +10452,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2900cae90308
+DECL|struct|__anon27f0f0e30308
 block|{
 DECL|member|label
 specifier|const
@@ -10609,7 +10609,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2900cae90408
+DECL|struct|__anon27f0f0e30408
 block|{
 DECL|member|tree_label
 specifier|const

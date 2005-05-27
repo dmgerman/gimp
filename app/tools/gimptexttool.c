@@ -3280,7 +3280,7 @@ name|text_tool
 operator|->
 name|editor
 argument_list|,
-literal|"text_changed"
+literal|"text-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3996,7 +3996,7 @@ name|text_tool
 operator|->
 name|image
 argument_list|,
-literal|"active_layer_changed"
+literal|"active-layer-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

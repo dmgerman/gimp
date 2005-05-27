@@ -643,7 +643,7 @@ name|editor
 operator|->
 name|view
 argument_list|,
-literal|"marker_changed"
+literal|"marker-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -836,7 +836,7 @@ name|g_signal_connect
 argument_list|(
 name|context
 argument_list|,
-literal|"display_changed"
+literal|"display-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1101,7 +1101,7 @@ name|editor
 operator|->
 name|view
 argument_list|,
-literal|"button_release_event"
+literal|"button-release-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1691,7 +1691,7 @@ name|editor
 operator|->
 name|zoom_adjustment
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

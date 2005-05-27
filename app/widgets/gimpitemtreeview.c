@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289333290103
+DECL|enum|__anon2ad7dae40103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1327,7 +1327,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|context
 argument_list|,
-literal|"image_changed"
+literal|"image-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2324,7 +2324,7 @@ name|view
 operator|->
 name|gimage
 argument_list|,
-literal|"size_changed"
+literal|"size-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2490,7 +2490,7 @@ name|gimp_container_add_handler
 argument_list|(
 name|container
 argument_list|,
-literal|"visibility_changed"
+literal|"visibility-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2508,7 +2508,7 @@ name|gimp_container_add_handler
 argument_list|(
 name|container
 argument_list|,
-literal|"linked_changed"
+literal|"linked-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

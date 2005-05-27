@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae9ed1c0103
+DECL|enum|__anon2c6f690a0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1126,7 +1126,7 @@ name|g_signal_connect_object
 argument_list|(
 name|gimage
 argument_list|,
-literal|"size_changed"
+literal|"size-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1142,7 +1142,7 @@ name|g_signal_connect_object
 argument_list|(
 name|gimage
 argument_list|,
-literal|"mode_changed"
+literal|"mode-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

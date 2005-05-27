@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ead7ad0103
+DECL|enum|__anon2c77894b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -598,7 +598,7 @@ name|dialog
 operator|->
 name|context
 argument_list|,
-literal|"opacity_changed"
+literal|"opacity-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -614,7 +614,7 @@ name|dialog
 operator|->
 name|context
 argument_list|,
-literal|"paint_mode_changed"
+literal|"paint-mode-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -821,7 +821,7 @@ name|select
 operator|->
 name|opacity_data
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -927,7 +927,7 @@ name|g_signal_connect
 argument_list|(
 name|spacing_adj
 argument_list|,
-literal|"value_changed"
+literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

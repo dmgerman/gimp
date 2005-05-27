@@ -116,7 +116,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1ade150103
+DECL|enum|__anon2c69c2540103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2806,7 +2806,7 @@ name|editor
 operator|->
 name|stock_id_context
 argument_list|,
-literal|"template_changed"
+literal|"template-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

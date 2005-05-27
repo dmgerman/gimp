@@ -163,7 +163,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29dacab00103
+DECL|enum|__anon28c5b62c0103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -188,7 +188,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29dacab00203
+DECL|enum|__anon28c5b62c0203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -400,7 +400,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29dacab00303
+DECL|enum|__anon28c5b62c0303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -422,7 +422,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29dacab00408
+DECL|struct|__anon28c5b62c0408
 block|{
 DECL|member|directory
 name|gboolean
@@ -2786,7 +2786,7 @@ name|g_signal_connect
 argument_list|(
 name|darea
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2853,7 +2853,7 @@ name|g_signal_connect
 argument_list|(
 name|darea
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4019,7 +4019,7 @@ name|g_signal_connect
 argument_list|(
 name|tv
 argument_list|,
-literal|"size_allocate"
+literal|"size-allocate"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

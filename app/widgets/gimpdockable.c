@@ -683,7 +683,7 @@ name|widget_class
 argument_list|,
 name|g_param_spec_int
 argument_list|(
-literal|"content_border"
+literal|"content-border"
 argument_list|,
 name|NULL
 argument_list|,
@@ -870,7 +870,7 @@ name|dockable
 operator|->
 name|menu_button
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -904,7 +904,7 @@ name|g_signal_connect
 argument_list|(
 name|dockable
 argument_list|,
-literal|"button_press_event"
+literal|"button-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2024,7 +2024,7 @@ name|gtk_widget_style_get
 argument_list|(
 name|widget
 argument_list|,
-literal|"content_border"
+literal|"content-border"
 argument_list|,
 operator|&
 name|content_border
@@ -2535,7 +2535,7 @@ name|g_signal_connect
 argument_list|(
 name|widget
 argument_list|,
-literal|"title_changed"
+literal|"title-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -786,7 +786,7 @@ name|g_signal_connect_swapped
 argument_list|(
 name|view
 argument_list|,
-literal|"range_changed"
+literal|"range-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1389,7 +1389,7 @@ name|g_signal_connect_object
 argument_list|(
 name|gimage
 argument_list|,
-literal|"mode_changed"
+literal|"mode-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1405,7 +1405,7 @@ name|g_signal_connect_object
 argument_list|(
 name|gimage
 argument_list|,
-literal|"active_layer_changed"
+literal|"active-layer-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1421,7 +1421,7 @@ name|g_signal_connect_object
 argument_list|(
 name|gimage
 argument_list|,
-literal|"mask_changed"
+literal|"mask-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

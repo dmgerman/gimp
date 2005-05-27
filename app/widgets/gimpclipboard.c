@@ -295,7 +295,7 @@ name|g_signal_connect_object
 argument_list|(
 name|gimp
 argument_list|,
-literal|"buffer_changed"
+literal|"buffer-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

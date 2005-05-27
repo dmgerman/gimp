@@ -256,7 +256,7 @@ name|dialog
 operator|->
 name|dialog
 argument_list|,
-literal|"delete_event"
+literal|"delete-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

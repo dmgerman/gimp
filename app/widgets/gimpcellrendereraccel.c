@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a993b2f0103
+DECL|enum|__anon274882a40103
 block|{
 DECL|enumerator|ACCEL_EDITED
 name|ACCEL_EDITED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a993b2f0203
+DECL|enum|__anon274882a40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1526,7 +1526,7 @@ name|g_signal_connect
 argument_list|(
 name|widget
 argument_list|,
-literal|"key_press_event"
+literal|"key-press-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
