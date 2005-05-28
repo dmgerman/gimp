@@ -24,6 +24,30 @@ begin_comment
 comment|/* For information look into the C source or the html documentation */
 end_comment
 
+begin_define
+DECL|macro|GIMP_TYPE_IMAGE_COMBO_BOX
+define|#
+directive|define
+name|GIMP_TYPE_IMAGE_COMBO_BOX
+value|(gimp_image_combo_box_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_IMAGE_COMBO_BOX
+define|#
+directive|define
+name|GIMP_IMAGE_COMBO_BOX
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_IMAGE_COMBO_BOX, GimpImageComboBox))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_IMAGE_COMBO_BOX
+define|#
+directive|define
+name|GIMP_IS_IMAGE_COMBO_BOX
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_IMAGE_COMBO_BOX)
+end_define
+
 begin_typedef
 DECL|typedef|GimpImageConstraintFunc
 typedef|typedef
@@ -41,6 +65,16 @@ name|data
 parameter_list|)
 function_decl|;
 end_typedef
+
+begin_decl_stmt
+name|GType
+name|gimp_image_combo_box_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|GtkWidget
@@ -66,7 +100,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_DRAWABLE_COMBO_BOX_H__ */
+comment|/* __GIMP_IMAGE_COMBO_BOX_H__ */
 end_comment
 
 end_unit

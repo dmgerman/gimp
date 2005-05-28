@@ -49,6 +49,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpImageComboBox
+typedef|typedef
+name|struct
+name|_GimpImageComboBox
+name|GimpImageComboBox
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpProgressBar
 typedef|typedef
 name|struct
