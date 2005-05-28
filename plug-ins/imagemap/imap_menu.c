@@ -204,6 +204,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|do_create_guides_dialog
+parameter_list|()
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|do_use_gimp_guides_dialog
+parameter_list|()
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|imap_help
 parameter_list|()
 function_decl|;
@@ -1176,7 +1190,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+name|do_use_gimp_guides_dialog
 block|}
 block|,
 block|{
@@ -1190,7 +1204,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+name|do_create_guides_dialog
 block|}
 block|,
 block|{
@@ -1204,7 +1218,7 @@ block|,
 block|{
 literal|"Contents"
 block|,
-name|NULL
+name|GTK_STOCK_HELP
 block|,
 literal|"_Contents"
 block|,
@@ -1218,7 +1232,7 @@ block|,
 block|{
 literal|"About"
 block|,
-name|NULL
+name|GTK_STOCK_ABOUT
 block|,
 literal|"_About ImageMap..."
 block|,
