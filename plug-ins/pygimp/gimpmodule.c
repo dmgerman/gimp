@@ -4347,7 +4347,7 @@ name|PyArg_ParseTuple
 argument_list|(
 name|args
 argument_list|,
-literal|"sO|i:gradient_get_uniform_samples"
+literal|"sO|i:gradient_get_custom_samples"
 argument_list|,
 operator|&
 name|name
@@ -6991,11 +6991,22 @@ literal|"This module provides interfaces to allow you to write gimp plugins"
 decl_stmt|;
 end_decl_stmt
 
-begin_function
-name|void
-DECL|function|initgimp ()
+begin_macro
+name|DL_EXPORT
+argument_list|(
+argument|void
+argument_list|)
+end_macro
+
+begin_macro
+DECL|function|initgimp (void)
 name|initgimp
-parameter_list|()
+argument_list|(
+argument|void
+argument_list|)
+end_macro
+
+begin_block
 block|{
 name|PyObject
 modifier|*
@@ -7296,10 +7307,6 @@ name|gimp_methods
 argument_list|,
 name|gimp_module_documentation
 argument_list|,
-operator|(
-name|PyObject
-operator|*
-operator|)
 name|NULL
 argument_list|,
 name|PYTHON_API_VERSION
@@ -7522,7 +7529,7 @@ literal|"can't initialize module gimp"
 argument_list|)
 expr_stmt|;
 block|}
-end_function
+end_block
 
 end_unit
 

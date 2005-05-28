@@ -108,7 +108,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a4260f0108
+DECL|struct|__anon2b571e450108
 block|{
 DECL|member|func
 name|PyObject
@@ -717,13 +717,22 @@ literal|"This module provides a simple interface for the GIMP PDB Browser"
 decl_stmt|;
 end_decl_stmt
 
-begin_function
-name|void
+begin_macro
+name|DL_EXPORT
+argument_list|(
+argument|void
+argument_list|)
+end_macro
+
+begin_macro
 DECL|function|initgimpprocbrowser (void)
 name|initgimpprocbrowser
-parameter_list|(
-name|void
-parameter_list|)
+argument_list|(
+argument|void
+argument_list|)
+end_macro
+
+begin_block
 block|{
 name|PyObject
 modifier|*
@@ -860,7 +869,7 @@ literal|"can't initialize module gimpprocbrowser"
 argument_list|)
 expr_stmt|;
 block|}
-end_function
+end_block
 
 end_unit
 
