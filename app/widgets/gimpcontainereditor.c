@@ -740,7 +740,7 @@ name|editor
 operator|->
 name|view
 argument_list|,
-literal|"select_item"
+literal|"select-item"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -758,7 +758,7 @@ name|editor
 operator|->
 name|view
 argument_list|,
-literal|"activate_item"
+literal|"activate-item"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -776,7 +776,7 @@ name|editor
 operator|->
 name|view
 argument_list|,
-literal|"context_item"
+literal|"context-item"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

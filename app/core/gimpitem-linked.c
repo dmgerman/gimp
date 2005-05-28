@@ -703,10 +703,6 @@ control|)
 block|{
 name|linked_item
 operator|=
-operator|(
-name|GimpItem
-operator|*
-operator|)
 name|list
 operator|->
 name|data
@@ -765,10 +761,6 @@ control|)
 block|{
 name|linked_item
 operator|=
-operator|(
-name|GimpItem
-operator|*
-operator|)
 name|list
 operator|->
 name|data
@@ -827,10 +819,6 @@ control|)
 block|{
 name|linked_item
 operator|=
-operator|(
-name|GimpItem
-operator|*
-operator|)
 name|list
 operator|->
 name|data

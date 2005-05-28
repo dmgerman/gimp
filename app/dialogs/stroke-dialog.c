@@ -939,7 +939,7 @@ name|g_signal_connect
 argument_list|(
 name|combo
 argument_list|,
-literal|"select_item"
+literal|"select-item"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

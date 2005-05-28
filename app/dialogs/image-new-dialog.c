@@ -134,7 +134,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4a4a7b0108
+DECL|struct|__anon2bc2606d0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -564,7 +564,7 @@ name|dialog
 operator|->
 name|combo
 argument_list|,
-literal|"select_item"
+literal|"select-item"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

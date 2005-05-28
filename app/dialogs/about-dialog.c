@@ -168,7 +168,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dac60e0108
+DECL|struct|__anon29b112a00108
 block|{
 DECL|member|about_dialog
 name|GtkWidget
@@ -888,7 +888,7 @@ name|g_signal_connect
 argument_list|(
 name|widget
 argument_list|,
-literal|"expose_event"
+literal|"expose-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -1568,7 +1568,7 @@ name|g_signal_connect
 argument_list|(
 name|source
 argument_list|,
-literal|"selection_get"
+literal|"selection-get"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

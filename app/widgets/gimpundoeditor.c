@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7987b40103
+DECL|enum|__anon2a102c540103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -548,7 +548,7 @@ name|undo_editor
 operator|->
 name|view
 argument_list|,
-literal|"select_item"
+literal|"select-item"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
