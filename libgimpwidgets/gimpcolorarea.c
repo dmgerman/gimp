@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b243f670103
+DECL|enum|__anon2b8c32c80103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b243f670203
+DECL|enum|__anon2b8c32c80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1382,33 +1382,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|area
-operator|->
-name|type
-operator|==
-name|GIMP_COLOR_AREA_FLAT
-condition|)
-block|{
-if|if
-condition|(
-name|gimp_rgb_distance
-argument_list|(
-operator|&
-name|area
-operator|->
-name|color
-argument_list|,
-name|color
-argument_list|)
-operator|<
-literal|0.000001
-condition|)
-return|return;
-block|}
-else|else
-block|{
-if|if
-condition|(
 name|gimp_rgba_distance
 argument_list|(
 operator|&
@@ -1422,7 +1395,6 @@ operator|<
 literal|0.000001
 condition|)
 return|return;
-block|}
 name|area
 operator|->
 name|color

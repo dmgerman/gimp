@@ -4098,7 +4098,7 @@ argument_list|(
 operator|&
 name|color
 argument_list|,
-name|TRUE
+name|GIMP_COLOR_AREA_SMALL_CHECKS
 argument_list|,
 literal|0
 argument_list|)
