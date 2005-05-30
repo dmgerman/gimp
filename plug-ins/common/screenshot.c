@@ -299,7 +299,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27698b4f0103
+DECL|enum|__anon297a06900103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -318,7 +318,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27698b4f0208
+DECL|struct|__anon297a06900208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -2890,6 +2890,10 @@ name|button
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|toggle
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|spinner
 decl_stmt|;
 name|GdkPixbuf
@@ -2953,7 +2957,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Grab"
+literal|"_Grab"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
@@ -3141,7 +3145,7 @@ name|radio_group
 argument_list|,
 name|_
 argument_list|(
-literal|"a _Single Window"
+literal|"a single _window"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3255,7 +3259,7 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
-name|button
+name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
@@ -3269,7 +3273,7 @@ name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|button
+name|toggle
 argument_list|)
 argument_list|,
 name|shootvals
@@ -3284,7 +3288,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-name|button
+name|toggle
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3295,7 +3299,19 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|toggle
+argument_list|)
+expr_stmt|;
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
 name|button
+argument_list|)
+argument_list|,
+literal|"set_sensitive"
+argument_list|,
+name|toggle
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -3327,7 +3343,7 @@ name|radio_group
 argument_list|,
 name|_
 argument_list|(
-literal|"Selected Region"
+literal|"the selected _region"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3417,7 +3433,7 @@ name|radio_group
 argument_list|,
 name|_
 argument_list|(
-literal|"the _Whole Screen"
+literal|"the whole _screen"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3545,7 +3561,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Delay for"
+literal|"W_ait for"
 argument_list|)
 argument_list|)
 expr_stmt|;
