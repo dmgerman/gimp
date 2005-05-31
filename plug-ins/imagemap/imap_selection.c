@@ -256,7 +256,12 @@ decl_stmt|;
 name|GList
 modifier|*
 name|list
-init|=
+decl_stmt|,
+modifier|*
+name|selected_rows
+decl_stmt|;
+name|selected_rows
+operator|=
 name|gtk_tree_selection_get_selected_rows
 argument_list|(
 name|selection
@@ -264,7 +269,7 @@ argument_list|,
 operator|&
 name|model
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|command
 operator|=
 name|subcommand_start
@@ -292,6 +297,9 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
+name|list
+operator|=
+name|selected_rows
 init|;
 name|list
 condition|;
@@ -381,7 +389,7 @@ argument_list|)
 expr_stmt|;
 name|g_list_foreach
 argument_list|(
-name|list
+name|selected_rows
 argument_list|,
 operator|(
 name|GFunc
@@ -393,7 +401,7 @@ argument_list|)
 expr_stmt|;
 name|g_list_free
 argument_list|(
-name|list
+name|selected_rows
 argument_list|)
 expr_stmt|;
 name|set_buttons
