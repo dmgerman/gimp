@@ -299,7 +299,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2975a0ed0103
+DECL|enum|__anon29636e630103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -318,7 +318,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2975a0ed0208
+DECL|struct|__anon29636e630208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -2004,6 +2004,7 @@ if|if
 condition|(
 name|keys
 condition|)
+block|{
 name|XUngrabKey
 argument_list|(
 name|x_dpy
@@ -2020,6 +2021,12 @@ argument_list|,
 name|x_root
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|keys
+argument_list|)
+expr_stmt|;
+block|}
 name|XUngrabPointer
 argument_list|(
 name|x_dpy
