@@ -81,7 +81,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b31f0cf0103
+DECL|enum|__anon2ab058880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -976,7 +976,10 @@ name|help_id
 operator|=
 name|g_object_get_qdata
 argument_list|(
+name|G_OBJECT
+argument_list|(
 name|proxy
+argument_list|)
 argument_list|,
 name|GIMP_HELP_ID
 argument_list|)
