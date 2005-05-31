@@ -299,7 +299,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29636e630103
+DECL|enum|__anon2974e9640103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -318,7 +318,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29636e630208
+DECL|struct|__anon2974e9640208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -3318,7 +3318,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Include decoration"
+literal|"Include window decoration"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3343,11 +3343,11 @@ argument_list|)
 argument_list|,
 name|toggle
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-literal|20
+literal|24
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
