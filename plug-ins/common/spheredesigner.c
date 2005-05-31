@@ -1,6 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * SphereDesigner v0.4 - creates textured spheres  * by Vidar Madsen<vidar@prosalg.no>  *  * Status: Last updated 1999-09-11  *  * Known issues:  * - Might crash if you click OK or Cancel before first preview is rendered  * - Phong might look weird with transparent textures  *  * Todo:  * - Saving / Loading of presets needs an overhaul  * - Antialiasing  * - Global controls: Gamma, ++  * - Beautification of GUI  * - Clean up messy source (lots of Glade remnants)  * - (Probably more. ;-)  */
+comment|/*  * The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+end_comment
+
+begin_comment
+comment|/*  * SphereDesigner v0.4 - creates textured spheres  * by Vidar Madsen<vidar@prosalg.no>  *  * Status: Last updated 1999-09-11  *  * Known issues:  * - Might crash if you click OK or Cancel before first preview is rendered  * - Phong might look weird with transparent textures  *  * Todo:  * - Saving / Loading of presets needs an overhaul  * - Antialiasing  * - Global controls: Gamma, ++  * - Beautification of GUI  * - Clean up messy source (lots of Glade remnants)  * - (Probably more. ;-)  */
 end_comment
 
 begin_define
@@ -201,7 +205,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon276717480103
+DECL|enum|__anon28ddc4850103
 block|{
 DECL|enumerator|TRIANGLE
 name|TRIANGLE
@@ -226,7 +230,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276717480203
+DECL|enum|__anon28ddc4850203
 block|{
 DECL|enumerator|SOLID
 name|SOLID
@@ -275,7 +279,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276717480303
+DECL|enum|__anon28ddc4850303
 block|{
 DECL|enumerator|PERSPECTIVE
 name|PERSPECTIVE
@@ -291,7 +295,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276717480403
+DECL|enum|__anon28ddc4850403
 block|{
 DECL|enumerator|FOG
 name|FOG
@@ -301,7 +305,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276717480503
+DECL|enum|__anon28ddc4850503
 block|{
 DECL|enumerator|TYPE
 name|TYPE
@@ -354,7 +358,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276717480608
+DECL|struct|__anon28ddc4850608
 block|{
 DECL|member|xsize
 DECL|member|ysize
@@ -377,7 +381,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276717480708
+DECL|struct|__anon28ddc4850708
 block|{
 DECL|member|numcol
 name|gshort
@@ -406,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276717480808
+DECL|struct|__anon28ddc4850808
 block|{
 DECL|member|majtype
 name|gint
@@ -501,7 +505,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276717480908
+DECL|struct|__anon28ddc4850908
 block|{
 DECL|member|type
 name|gshort
@@ -528,7 +532,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276717480a08
+DECL|struct|__anon28ddc4850a08
 block|{
 DECL|member|type
 name|gshort
@@ -569,7 +573,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276717480b08
+DECL|struct|__anon28ddc4850b08
 block|{
 DECL|member|com
 name|common
@@ -594,7 +598,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276717480c08
+DECL|struct|__anon28ddc4850c08
 block|{
 DECL|member|com
 name|common
@@ -620,7 +624,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276717480d08
+DECL|struct|__anon28ddc4850d08
 block|{
 DECL|member|com
 name|common
@@ -643,7 +647,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276717480e08
+DECL|struct|__anon28ddc4850e08
 block|{
 DECL|member|com
 name|common
@@ -668,7 +672,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276717480f08
+DECL|struct|__anon28ddc4850f08
 block|{
 DECL|member|com
 name|common
@@ -691,7 +695,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276717481008
+DECL|struct|__anon28ddc4851008
 block|{
 DECL|member|com
 name|common
@@ -714,7 +718,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276717481108
+DECL|struct|__anon28ddc4851108
 block|{
 DECL|member|v1
 DECL|member|v2
@@ -740,7 +744,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon27671748120a
+DECL|union|__anon28ddc485120a
 block|{
 DECL|member|com
 name|common
@@ -1056,7 +1060,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon276717481308
+DECL|struct|__anon28ddc4851308
 block|{
 DECL|member|solid
 DECL|member|phong

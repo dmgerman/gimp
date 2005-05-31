@@ -1,5 +1,9 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
+comment|/*  * The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+end_comment
+
+begin_comment
 comment|/*  * hot.c - Scan an image for pixels with RGB values that will give  *	"unsafe" values of chrominance signal or composite signal  *	amplitude when encoded into an NTSC or PAL colour signal.  *	(This happens for certain high-intensity high-saturation colours  *	that are rare in real scenes, but can easily be present  *	in synthetic images.)  *  * 	Such pixels can be flagged so the user may then choose other  *	colours.  Or, the offending pixels can be made "safe"  *	in a manner that preserves hue.  *  *	There are two reasonable ways to make a pixel "safe":  *	We can reduce its intensity (luminance) while leaving  *	hue and saturation the same.  Or, we can reduce saturation  *	while leaving hue and luminance the same.  A #define selects  *	which strategy to use.  *  * Note to the user: You must add your own read_pixel() and write_pixel()  *	routines.  You may have to modify pix_decode() and pix_encode().  *	MAXPIX, WID, and HGT are likely to need modification.  */
 end_comment
 
@@ -9,10 +13,6 @@ end_comment
 
 begin_comment
 comment|/*  * Compile time options:  *  *  * CHROMA_LIM is the limit (in IRE units) of the overall  *	chrominance amplitude; it should be 50 or perhaps  *	very slightly higher.  *  * COMPOS_LIM is the maximum amplitude (in IRE units) allowed for  *	the composite signal.  A value of 100 is the maximum  *	monochrome white, and is always safe.  120 is the absolute  *	limit for NTSC broadcasting, since the transmitter's carrier  *	goes to zero with 120 IRE input signal.  Generally, 110  *	is a good compromise - it allows somewhat brighter colours  *	than 100, while staying safely away from the hard limit.  */
-end_comment
-
-begin_comment
-comment|/*  * run-time options:  *  * Define either NTSC or PAL as 1 to select the colour system.  * Define the other one as zero, or leave it undefined.  *  * Define FLAG_HOT as 1 if you want "hot" pixels set to black  *	to identify them.  Otherwise they will be made safe.  *  * Define REDUCE_SAT as 1 if you want hot pixels to be repaired by  *	reducing their saturation.  By default, luminance is reduced.  *  */
 end_comment
 
 begin_include
@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c83fdc90108
+DECL|struct|__anon2c23bcd90108
 block|{
 DECL|member|image
 name|gint32
@@ -79,7 +79,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c83fdc90203
+DECL|enum|__anon2c23bcd90203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -98,7 +98,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c83fdc90303
+DECL|enum|__anon2c23bcd90303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -143,7 +143,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c83fdc90408
+DECL|struct|__anon2c23bcd90408
 block|{
 DECL|member|pedestal
 name|gdouble

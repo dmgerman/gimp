@@ -1,10 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * ZealousCrop plug-in version 1.00  * by Adam D. Moss<adam@foxbox.org>  * loosely based on Autocrop by Tim Newsome<drz@froody.bloke.com>  */
-end_comment
-
-begin_comment
-comment|/*  * BUGS:  *  Doesn't undo properly.  *  Progress bar doesn't do anything yet.  */
+comment|/*  * ZealousCrop plug-in version 1.00  * by Adam D. Moss<adam@foxbox.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -919,31 +915,23 @@ block|}
 if|if
 condition|(
 operator|(
-operator|(
 name|livingcols
 operator|==
 literal|0
-operator|)
 operator|||
-operator|(
 name|livingrows
 operator|==
 literal|0
 operator|)
-operator|)
 operator|||
-operator|(
 operator|(
 name|livingcols
 operator|==
 name|width
-operator|)
 operator|&&
-operator|(
 name|livingrows
 operator|==
 name|height
-operator|)
 operator|)
 condition|)
 block|{
