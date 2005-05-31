@@ -519,6 +519,11 @@ argument_list|(
 literal|"Error while loading object (no type data)"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|new_obj
+argument_list|)
+expr_stmt|;
 return|return
 name|NULL
 return|;
@@ -547,6 +552,11 @@ block|{
 name|g_message
 argument_list|(
 literal|"Syntax error while loading object"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|new_obj
 argument_list|)
 expr_stmt|;
 return|return
