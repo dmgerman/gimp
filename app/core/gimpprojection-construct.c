@@ -340,7 +340,7 @@ directive|if
 literal|0
 block|GimpImage *gimage = proj->gimage;    if ((gimp_container_num_children (gimage->layers) == 1))
 comment|/* a single layer */
-block|{       GimpDrawable *layer;        layer = GIMP_DRAWABLE (gimp_container_get_child_by_index (gimage->layers,                                                                 0));       if (gimp_drawable_has_alpha (layer)&&           (gimp_item_get_visible (GIMP_ITEM (layer)))&&           (gimp_item_width (GIMP_ITEM (layer))  == gimage->width)&&           (gimp_item_height (GIMP_ITEM (layer)) == gimage->height)&&           (! gimp_drawable_is_indexed (layer))&&           (gimp_layer_get_opacity (GIMP_LAYER (layer)) == GIMP_OPACITY_OPAQUE))         {           gint xoff;           gint yoff;            gimp_item_offsets (GIMP_ITEM (layer),&xoff,&yoff);            if (xoff == 0&& yoff == 0)             {               PixelRegion srcPR, destPR;                g_printerr ("cow-projection!");                pixel_region_init (&srcPR, gimp_drawable_data (layer),                                  x, y, w,h, FALSE);               pixel_region_init (&destPR, gimp_projection_get_tiles (proj),                                  x, y, w,h, TRUE);                copy_region (&srcPR,&destPR);                proj->construct_flag = TRUE;                gimp_projection_construct_channels (proj, x, y, w, h);                return;             } 	}     }
+block|{       GimpDrawable *layer;        layer = GIMP_DRAWABLE (gimp_container_get_child_by_index (gimage->layers,                                                                 0));        if (gimp_drawable_has_alpha (layer)&&           (gimp_item_get_visible (GIMP_ITEM (layer)))&&           (gimp_item_width (GIMP_ITEM (layer))  == gimage->width)&&           (gimp_item_height (GIMP_ITEM (layer)) == gimage->height)&&           (! gimp_drawable_is_indexed (layer))&&           (gimp_layer_get_opacity (GIMP_LAYER (layer)) == GIMP_OPACITY_OPAQUE))         {           gint xoff;           gint yoff;            gimp_item_offsets (GIMP_ITEM (layer),&xoff,&yoff);            if (xoff == 0&& yoff == 0)             {               PixelRegion srcPR, destPR;                g_printerr ("cow-projection!");                pixel_region_init (&srcPR, gimp_drawable_data (layer),                                  x, y, w,h, FALSE);               pixel_region_init (&destPR, gimp_projection_get_tiles (proj),                                  x, y, w,h, TRUE);                copy_region (&srcPR,&destPR);                proj->construct_flag = TRUE;                gimp_projection_construct_channels (proj, x, y, w, h);                return;             } 	}     }
 endif|#
 directive|endif
 name|proj
@@ -424,6 +424,14 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+name|GList
+modifier|*
+name|list
+decl_stmt|;
+name|GList
+modifier|*
+name|reverse_list
+decl_stmt|;
 name|gint
 name|x1
 decl_stmt|,
@@ -432,25 +440,6 @@ decl_stmt|,
 name|x2
 decl_stmt|,
 name|y2
-decl_stmt|;
-name|PixelRegion
-name|src1PR
-decl_stmt|,
-name|src2PR
-decl_stmt|,
-name|maskPR
-decl_stmt|;
-name|PixelRegion
-modifier|*
-name|mask
-decl_stmt|;
-name|GList
-modifier|*
-name|list
-decl_stmt|;
-name|GList
-modifier|*
-name|reverse_list
 decl_stmt|;
 name|gint
 name|off_x
@@ -518,10 +507,6 @@ control|)
 block|{
 name|layer
 operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
 name|list
 operator|->
 name|data
@@ -571,12 +556,17 @@ name|list
 argument_list|)
 control|)
 block|{
+name|PixelRegion
+name|src1PR
+decl_stmt|;
+name|PixelRegion
+name|src2PR
+decl_stmt|;
+name|PixelRegion
+name|maskPR
+decl_stmt|;
 name|layer
 operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
 name|list
 operator|->
 name|data
@@ -762,6 +752,12 @@ block|}
 comment|/*  Otherwise, normal  */
 else|else
 block|{
+name|PixelRegion
+modifier|*
+name|mask
+init|=
+name|NULL
+decl_stmt|;
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -863,11 +859,6 @@ operator|&
 name|maskPR
 expr_stmt|;
 block|}
-else|else
-name|mask
-operator|=
-name|NULL
-expr_stmt|;
 comment|/*  Based on the type of the layer, project the layer onto the 	   *  projection image... 	   */
 switch|switch
 condition|(
@@ -1005,16 +996,6 @@ name|gint
 name|h
 parameter_list|)
 block|{
-name|GimpChannel
-modifier|*
-name|channel
-decl_stmt|;
-name|PixelRegion
-name|src1PR
-decl_stmt|;
-name|PixelRegion
-name|src2PR
-decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -1079,16 +1060,14 @@ name|list
 argument_list|)
 control|)
 block|{
-name|channel
-operator|=
-operator|(
 name|GimpChannel
-operator|*
-operator|)
+modifier|*
+name|channel
+init|=
 name|list
 operator|->
 name|data
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|gimp_item_get_visible
@@ -1100,6 +1079,12 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
+name|PixelRegion
+name|src1PR
+decl_stmt|;
+name|PixelRegion
+name|src2PR
+decl_stmt|;
 comment|/* configure the pixel regions  */
 name|pixel_region_init
 argument_list|(
