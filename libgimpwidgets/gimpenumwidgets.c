@@ -1064,6 +1064,10 @@ parameter_list|)
 block|{
 name|GList
 modifier|*
+name|children
+decl_stmt|;
+name|GList
+modifier|*
 name|list
 decl_stmt|;
 name|g_return_if_fail
@@ -1074,9 +1078,7 @@ name|stock_box
 argument_list|)
 argument_list|)
 expr_stmt|;
-for|for
-control|(
-name|list
+name|children
 operator|=
 name|gtk_container_get_children
 argument_list|(
@@ -1085,6 +1087,12 @@ argument_list|(
 name|stock_box
 argument_list|)
 argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|list
+operator|=
+name|children
 init|;
 name|list
 condition|;
@@ -1152,6 +1160,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|g_list_free
+argument_list|(
+name|children
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
