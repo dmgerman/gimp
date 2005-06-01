@@ -152,6 +152,11 @@ index|[
 name|GIMP_COLOR_FRAME_ROWS
 index|]
 decl_stmt|;
+DECL|member|color_area
+name|GtkWidget
+modifier|*
+name|color_area
+decl_stmt|;
 block|}
 struct|;
 end_struct
