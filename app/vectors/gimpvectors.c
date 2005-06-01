@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288d27650103
+DECL|enum|__anon2a0e257b0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -2839,6 +2839,11 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
+name|dest_vectors
+operator|->
+name|last_stroke_ID
+operator|++
+expr_stmt|;
 name|gimp_stroke_set_ID
 argument_list|(
 name|current_lstroke
@@ -2848,7 +2853,6 @@ argument_list|,
 name|dest_vectors
 operator|->
 name|last_stroke_ID
-operator|++
 argument_list|)
 expr_stmt|;
 name|current_lstroke
@@ -2964,6 +2968,11 @@ argument_list|,
 name|stroke
 argument_list|)
 expr_stmt|;
+name|vectors
+operator|->
+name|last_stroke_ID
+operator|++
+expr_stmt|;
 name|gimp_stroke_set_ID
 argument_list|(
 name|stroke
@@ -2971,7 +2980,6 @@ argument_list|,
 name|vectors
 operator|->
 name|last_stroke_ID
-operator|++
 argument_list|)
 expr_stmt|;
 name|g_object_ref
