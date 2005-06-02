@@ -299,7 +299,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2974e9640103
+DECL|enum|__anon27d700df0103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -318,7 +318,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974e9640208
+DECL|struct|__anon27d700df0208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -1452,6 +1452,9 @@ name|num_keys
 argument_list|)
 condition|)
 block|{
+name|gdk_error_trap_push
+argument_list|()
+expr_stmt|;
 name|XGrabKey
 argument_list|(
 name|x_dpy
@@ -1473,6 +1476,12 @@ name|GrabModeAsync
 argument_list|,
 name|GrabModeAsync
 argument_list|)
+expr_stmt|;
+name|gdk_flush
+argument_list|()
+expr_stmt|;
+name|gdk_error_trap_pop
+argument_list|()
 expr_stmt|;
 block|}
 while|while
