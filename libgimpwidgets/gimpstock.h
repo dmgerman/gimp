@@ -160,6 +160,16 @@ define|#
 directive|define
 name|GIMP_STOCK_GRAVITY_WEST
 value|"gimp-gravity-west"
+DECL|macro|GIMP_STOCK_HCENTER
+define|#
+directive|define
+name|GIMP_STOCK_HCENTER
+value|"gimp-hcenter"
+DECL|macro|GIMP_STOCK_VCENTER
+define|#
+directive|define
+name|GIMP_STOCK_VCENTER
+value|"gimp-vcenter"
 DECL|macro|GIMP_STOCK_HCHAIN
 define|#
 directive|define
