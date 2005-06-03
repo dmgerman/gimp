@@ -616,6 +616,16 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|gimp_color_frame_set_has_color_area
+argument_list|(
+name|GIMP_COLOR_FRAME
+argument_list|(
+name|frame
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gimp_color_frame_set_number
 argument_list|(
 name|GIMP_COLOR_FRAME
