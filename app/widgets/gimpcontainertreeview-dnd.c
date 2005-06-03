@@ -161,6 +161,15 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
+name|gimp_container_view_get_container
+argument_list|(
+name|GIMP_CONTAINER_VIEW
+argument_list|(
+name|tree_view
+argument_list|)
+argument_list|)
+operator|||
+operator|!
 name|gimp_container_view_get_reorderable
 argument_list|(
 name|GIMP_CONTAINER_VIEW
