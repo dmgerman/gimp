@@ -49,6 +49,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpProgressBar
+typedef|typedef
+name|struct
+name|_GimpProgressBar
+name|GimpProgressBar
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpImageComboBox
 typedef|typedef
 name|struct
@@ -58,11 +67,29 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpProgressBar
+DECL|typedef|GimpDrawableComboBox
 typedef|typedef
 name|struct
-name|_GimpProgressBar
-name|GimpProgressBar
+name|_GimpDrawableComboBox
+name|GimpDrawableComboBox
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpChannelComboBox
+typedef|typedef
+name|struct
+name|_GimpChannelComboBox
+name|GimpChannelComboBox
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpLayerComboBox
+typedef|typedef
+name|struct
+name|_GimpLayerComboBox
+name|GimpLayerComboBox
 typedef|;
 end_typedef
 

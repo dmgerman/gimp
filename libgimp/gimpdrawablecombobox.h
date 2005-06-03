@@ -24,6 +24,78 @@ begin_comment
 comment|/* For information look into the C source or the html documentation */
 end_comment
 
+begin_define
+DECL|macro|GIMP_TYPE_DRAWABLE_COMBO_BOX
+define|#
+directive|define
+name|GIMP_TYPE_DRAWABLE_COMBO_BOX
+value|(gimp_drawable_combo_box_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_DRAWABLE_COMBO_BOX
+define|#
+directive|define
+name|GIMP_DRAWABLE_COMBO_BOX
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DRAWABLE_COMBO_BOX, GimpDrawableComboBox))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_DRAWABLE_COMBO_BOX
+define|#
+directive|define
+name|GIMP_IS_DRAWABLE_COMBO_BOX
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DRAWABLE_COMBO_BOX)
+end_define
+
+begin_define
+DECL|macro|GIMP_TYPE_CHANNEL_COMBO_BOX
+define|#
+directive|define
+name|GIMP_TYPE_CHANNEL_COMBO_BOX
+value|(gimp_channel_combo_box_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_CHANNEL_COMBO_BOX
+define|#
+directive|define
+name|GIMP_CHANNEL_COMBO_BOX
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CHANNEL_COMBO_BOX, GimpChannelComboBox))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_CHANNEL_COMBO_BOX
+define|#
+directive|define
+name|GIMP_IS_CHANNEL_COMBO_BOX
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CHANNEL_COMBO_BOX)
+end_define
+
+begin_define
+DECL|macro|GIMP_TYPE_LAYER_COMBO_BOX
+define|#
+directive|define
+name|GIMP_TYPE_LAYER_COMBO_BOX
+value|(gimp_layer_combo_box_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_LAYER_COMBO_BOX
+define|#
+directive|define
+name|GIMP_LAYER_COMBO_BOX
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_LAYER_COMBO_BOX, GimpLayerComboBox))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_LAYER_COMBO_BOX
+define|#
+directive|define
+name|GIMP_IS_LAYER_COMBO_BOX
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_LAYER_COMBO_BOX)
+end_define
+
 begin_typedef
 DECL|typedef|GimpDrawableConstraintFunc
 typedef|typedef
@@ -44,6 +116,36 @@ name|data
 parameter_list|)
 function_decl|;
 end_typedef
+
+begin_decl_stmt
+name|GType
+name|gimp_drawable_combo_box_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+name|GType
+name|gimp_channel_combo_box_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+name|GType
+name|gimp_layer_combo_box_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|GtkWidget

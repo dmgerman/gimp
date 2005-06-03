@@ -19,11 +19,51 @@ end_define
 begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+DECL|macro|GIMP_TYPE_CHAIN_POSITION
+define|#
+directive|define
+name|GIMP_TYPE_CHAIN_POSITION
+value|(gimp_chain_position_get_type ())
+name|GType
+name|gimp_chain_position_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon296601b10103
+block|{
+DECL|enumerator|GIMP_CHAIN_TOP
+name|GIMP_CHAIN_TOP
+block|,
+DECL|enumerator|GIMP_CHAIN_LEFT
+name|GIMP_CHAIN_LEFT
+block|,
+DECL|enumerator|GIMP_CHAIN_BOTTOM
+name|GIMP_CHAIN_BOTTOM
+block|,
+DECL|enumerator|GIMP_CHAIN_RIGHT
+name|GIMP_CHAIN_RIGHT
+DECL|typedef|GimpChainPosition
+block|}
+name|GimpChainPosition
+typedef|;
+end_typedef
+
+begin_define
 DECL|macro|GIMP_TYPE_COLOR_AREA_TYPE
 define|#
 directive|define
 name|GIMP_TYPE_COLOR_AREA_TYPE
 value|(gimp_color_area_type_get_type ())
+end_define
+
+begin_decl_stmt
 name|GType
 name|gimp_color_area_type_get_type
 argument_list|(
@@ -36,7 +76,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28bf1af70103
+DECL|enum|__anon296601b10203
 block|{
 DECL|enumerator|GIMP_COLOR_AREA_FLAT
 name|GIMP_COLOR_AREA_FLAT
@@ -75,7 +115,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28bf1af70203
+DECL|enum|__anon296601b10303
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
@@ -110,11 +150,28 @@ name|GimpColorSelectorChannel
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_SIZE_ENTRY_UPDATE_POLICY
+define|#
+directive|define
+name|GIMP_TYPE_SIZE_ENTRY_UPDATE_POLICY
+value|(gimp_size_entry_update_policy_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_size_entry_update_policy_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< skip>*/
-DECL|enum|__anon28bf1af70303
+DECL|enum|__anon296601b10403
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
