@@ -2611,8 +2611,6 @@ argument_list|,
 name|align_tool
 operator|->
 name|horz_offset
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -2693,8 +2691,6 @@ argument_list|,
 name|align_tool
 operator|->
 name|vert_offset
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush

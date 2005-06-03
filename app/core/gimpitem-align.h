@@ -36,9 +36,6 @@ name|reference_alignment
 parameter_list|,
 name|gint
 name|offset
-parameter_list|,
-name|gboolean
-name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -58,12 +58,12 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_item_align:  * @target:               The #GimpItem to move.  * @target_alignment:     The part of the target to align..  * @reference:            The #GimpItem to align the target with.  * @reference_alignment:  The part of the reference item to align the target item with..  * @offset:               How much to shift the target from perfect alignment..  * @push_undo:            If #TRUE, create an entry in the image's undo stack  *                        for this action.  *  * Aligns the target item with the reference item in the specified way.  If  * the reference item is #NULL, then the target item is aligned with the  * image it belongs to.  */
+comment|/**  * gimp_item_align:  * @target:               The #GimpItem to move.  * @target_alignment:     The part of the target to align..  * @reference:            The #GimpItem to align the target with.  * @reference_alignment:  The part of the reference item to align the target item with..  * @offset:               How much to shift the target from perfect alignment..  *  * Aligns the target item with the reference item in the specified way.  If  * the reference item is #NULL, then the target item is aligned with the  * image it belongs to.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_item_align (GimpItem * target,GimpAlignmentType target_alignment,GimpItem * reference,GimpAlignmentType reference_alignment,gint offset,gboolean push_undo)
+DECL|function|gimp_item_align (GimpItem * target,GimpAlignmentType target_alignment,GimpItem * reference,GimpAlignmentType reference_alignment,gint offset)
 name|gimp_item_align
 parameter_list|(
 name|GimpItem
@@ -82,9 +82,6 @@ name|reference_alignment
 parameter_list|,
 name|gint
 name|offset
-parameter_list|,
-name|gboolean
-name|push_undo
 parameter_list|)
 block|{
 name|gboolean
@@ -446,7 +443,7 @@ name|xtranslate
 argument_list|,
 name|ytranslate
 argument_list|,
-name|push_undo
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
