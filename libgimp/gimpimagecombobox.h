@@ -33,18 +33,24 @@ value|(gimp_image_combo_box_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_IMAGE_COMBO_BOX
+DECL|macro|GIMP_IMAGE_COMBO_BOX (obj)
 define|#
 directive|define
 name|GIMP_IMAGE_COMBO_BOX
+parameter_list|(
+name|obj
+parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_IMAGE_COMBO_BOX, GimpImageComboBox))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_IMAGE_COMBO_BOX
+DECL|macro|GIMP_IS_IMAGE_COMBO_BOX (obj)
 define|#
 directive|define
 name|GIMP_IS_IMAGE_COMBO_BOX
+parameter_list|(
+name|obj
+parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_IMAGE_COMBO_BOX)
 end_define
 

@@ -33,18 +33,24 @@ value|(gimp_drawable_combo_box_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_DRAWABLE_COMBO_BOX
+DECL|macro|GIMP_DRAWABLE_COMBO_BOX (obj)
 define|#
 directive|define
 name|GIMP_DRAWABLE_COMBO_BOX
+parameter_list|(
+name|obj
+parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DRAWABLE_COMBO_BOX, GimpDrawableComboBox))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_DRAWABLE_COMBO_BOX
+DECL|macro|GIMP_IS_DRAWABLE_COMBO_BOX (obj)
 define|#
 directive|define
 name|GIMP_IS_DRAWABLE_COMBO_BOX
+parameter_list|(
+name|obj
+parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DRAWABLE_COMBO_BOX)
 end_define
 
@@ -57,18 +63,24 @@ value|(gimp_channel_combo_box_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_CHANNEL_COMBO_BOX
+DECL|macro|GIMP_CHANNEL_COMBO_BOX (obj)
 define|#
 directive|define
 name|GIMP_CHANNEL_COMBO_BOX
+parameter_list|(
+name|obj
+parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CHANNEL_COMBO_BOX, GimpChannelComboBox))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_CHANNEL_COMBO_BOX
+DECL|macro|GIMP_IS_CHANNEL_COMBO_BOX (obj)
 define|#
 directive|define
 name|GIMP_IS_CHANNEL_COMBO_BOX
+parameter_list|(
+name|obj
+parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CHANNEL_COMBO_BOX)
 end_define
 
@@ -81,18 +93,24 @@ value|(gimp_layer_combo_box_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_LAYER_COMBO_BOX
+DECL|macro|GIMP_LAYER_COMBO_BOX (obj)
 define|#
 directive|define
 name|GIMP_LAYER_COMBO_BOX
+parameter_list|(
+name|obj
+parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_LAYER_COMBO_BOX, GimpLayerComboBox))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_LAYER_COMBO_BOX
+DECL|macro|GIMP_IS_LAYER_COMBO_BOX (obj)
 define|#
 directive|define
 name|GIMP_IS_LAYER_COMBO_BOX
+parameter_list|(
+name|obj
+parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_LAYER_COMBO_BOX)
 end_define
 
