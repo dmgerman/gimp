@@ -2961,6 +2961,14 @@ value|"gimp-dock-view-as-grid"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_DOCK_SHOW_BUTTON_BAR
+define|#
+directive|define
+name|GIMP_HELP_DOCK_SHOW_BUTTON_BAR
+value|"gimp-dock-show-button-bar"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_ABOUT_DIALOG
 define|#
 directive|define
