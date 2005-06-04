@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0c14d20103
+DECL|enum|__anon2b31ec340103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -331,17 +331,6 @@ specifier|static
 name|GtkVBoxClass
 modifier|*
 name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|parent_docked_iface
-specifier|static
-name|GimpDockedInterface
-modifier|*
-name|parent_docked_iface
 init|=
 name|NULL
 decl_stmt|;
@@ -853,13 +842,6 @@ modifier|*
 name|docked_iface
 parameter_list|)
 block|{
-name|parent_docked_iface
-operator|=
-name|g_type_interface_peek_parent
-argument_list|(
-name|docked_iface
-argument_list|)
-expr_stmt|;
 name|docked_iface
 operator|->
 name|get_menu
