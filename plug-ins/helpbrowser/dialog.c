@@ -136,7 +136,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1a48990103
+DECL|enum|__anon2b137a430103
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -3647,6 +3647,8 @@ argument_list|(
 name|filename
 argument_list|,
 name|O_RDONLY
+operator||
+name|O_BINARY
 argument_list|,
 literal|0
 argument_list|)
