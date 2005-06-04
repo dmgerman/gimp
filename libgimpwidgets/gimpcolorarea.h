@@ -326,6 +326,10 @@ begin_function_decl
 name|void
 name|_gimp_color_area_render_buf
 parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
 name|GimpColorAreaType
 name|type
 parameter_list|,

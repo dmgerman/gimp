@@ -159,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c2e0f50103
+DECL|enum|__anon28be64a00103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -172,7 +172,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c2e0f50203
+DECL|enum|__anon28be64a00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -953,7 +953,7 @@ name|GIMP_TYPE_COLOR_AREA
 argument_list|,
 literal|"drag-mask"
 argument_list|,
-name|GDK_BUTTON2_MASK
+name|GDK_BUTTON1_MASK
 argument_list|,
 name|NULL
 argument_list|)
