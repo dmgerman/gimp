@@ -407,7 +407,8 @@ name|gint
 operator|)
 name|ShellExecute
 argument_list|(
-name|HWND_DESKTOP
+name|GetDesktopWindow
+argument_list|()
 argument_list|,
 literal|"open"
 argument_list|,
@@ -417,7 +418,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|SW_SHOWNORMAL
+name|SW_SHOW
 argument_list|)
 operator|>
 literal|32
