@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8c32c80103
+DECL|enum|__anon2960e66c0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8c32c80203
+DECL|enum|__anon2960e66c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -83,6 +83,9 @@ name|PROP_TYPE
 block|,
 DECL|enumerator|PROP_DRAG_MASK
 name|PROP_DRAG_MASK
+block|,
+DECL|enumerator|PROP_DRAW_BORDER
+name|PROP_DRAW_BORDER
 block|}
 enum|;
 end_enum
@@ -653,6 +656,27 @@ name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/**    * GimpColorArea:draw-border:    *    * Whether to draw a thin border in the foreground color around the area.    *    * Since: GIMP 2.4    */
+name|g_object_class_install_property
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_DRAW_BORDER
+argument_list|,
+name|g_param_spec_boolean
+argument_list|(
+literal|"draw-border"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|G_PARAM_READWRITE
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -838,6 +862,19 @@ name|type
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|PROP_DRAW_BORDER
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|area
+operator|->
+name|draw_border
+argument_list|)
+expr_stmt|;
+break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
@@ -960,6 +997,20 @@ argument_list|,
 name|GDK_ACTION_COPY
 operator||
 name|GDK_ACTION_MOVE
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_DRAW_BORDER
+case|:
+name|gimp_color_area_set_draw_border
+argument_list|(
+name|area
+argument_list|,
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1543,6 +1594,15 @@ name|area
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|area
+operator|->
+name|type
+operator|!=
+name|type
+condition|)
+block|{
 name|area
 operator|->
 name|type
@@ -1574,6 +1634,7 @@ literal|"type"
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_comment
@@ -1601,8 +1662,6 @@ name|area
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|area
-operator|->
 name|draw_border
 operator|=
 name|draw_border
@@ -1610,6 +1669,21 @@ condition|?
 name|TRUE
 else|:
 name|FALSE
+expr_stmt|;
+if|if
+condition|(
+name|area
+operator|->
+name|draw_border
+operator|!=
+name|draw_border
+condition|)
+block|{
+name|area
+operator|->
+name|draw_border
+operator|=
+name|draw_border
 expr_stmt|;
 name|gtk_widget_queue_draw
 argument_list|(
@@ -1619,6 +1693,17 @@ name|area
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_object_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|area
+argument_list|)
+argument_list|,
+literal|"draw-border"
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 

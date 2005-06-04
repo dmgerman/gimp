@@ -5740,7 +5740,7 @@ literal|0.5
 argument_list|,
 literal|"max-width-chars"
 argument_list|,
-literal|80
+literal|30
 argument_list|,
 literal|"ellipsize"
 argument_list|,
