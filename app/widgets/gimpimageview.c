@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpeditor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimageview.h"
 end_include
 

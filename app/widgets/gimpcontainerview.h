@@ -16,15 +16,9 @@ directive|define
 name|__GIMP_CONTAINER_VIEW_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimpeditor.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon28f89e750103
+DECL|enum|__anon2a3f1fa20103
 block|{
 DECL|enumerator|GIMP_CONTAINER_VIEW_PROP_0
 name|GIMP_CONTAINER_VIEW_PROP_0
