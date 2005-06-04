@@ -5699,7 +5699,7 @@ name|s
 operator|=
 name|PyString_FromFormat
 argument_list|(
-literal|"<gimp.image '%s'>"
+literal|"<gimp.Image '%s'>"
 argument_list|,
 name|name
 condition|?
