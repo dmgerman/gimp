@@ -1841,7 +1841,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2af9b60a0108
+DECL|struct|__anon27f066df0108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -3058,6 +3058,17 @@ argument_list|,
 name|leftover
 operator|-
 name|buf
+argument_list|)
+expr_stmt|;
+name|gtk_text_buffer_get_iter_at_offset
+argument_list|(
+name|buffer
+argument_list|,
+operator|&
+name|iter
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|remaining
