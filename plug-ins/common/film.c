@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b66da160108
+DECL|struct|__anon2b9d2c6f0108
 block|{
 DECL|member|film_height
 name|gint
@@ -188,7 +188,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b66da160208
+DECL|struct|__anon2b9d2c6f0208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -557,6 +557,10 @@ specifier|static
 name|void
 name|film_font_select_callback
 parameter_list|(
+name|GimpFontSelectButton
+modifier|*
+name|button
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -5262,7 +5266,7 @@ name|button
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|font_sel
+name|font_button
 decl_stmt|;
 name|gint32
 modifier|*
@@ -5906,17 +5910,27 @@ name|number_start
 argument_list|)
 expr_stmt|;
 comment|/* Fontfamily for numbering */
-name|font_sel
+name|font_button
 operator|=
-name|gimp_font_select_widget_new
+name|gimp_font_select_button_new
 argument_list|(
 name|NULL
 argument_list|,
 name|filmvals
 operator|.
 name|number_font
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|font_button
 argument_list|,
+literal|"font-set"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|film_font_select_callback
+argument_list|)
 argument_list|,
 operator|&
 name|filmvals
@@ -5944,7 +5958,7 @@ literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|font_sel
+name|font_button
 argument_list|,
 literal|1
 argument_list|,
@@ -7324,9 +7338,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|film_font_select_callback (const gchar * name,gboolean closing,gpointer data)
+DECL|function|film_font_select_callback (GimpFontSelectButton * button,const gchar * name,gboolean closing,gpointer data)
 name|film_font_select_callback
 parameter_list|(
+name|GimpFontSelectButton
+modifier|*
+name|button
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

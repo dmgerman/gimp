@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7700be0108
+DECL|struct|__anon27b486650108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -343,6 +343,9 @@ specifier|static
 name|void
 name|script_fu_font_callback
 parameter_list|(
+name|gpointer
+name|data
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -350,9 +353,6 @@ name|name
 parameter_list|,
 name|gboolean
 name|closing
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2042,7 +2042,7 @@ name|SF_FONT
 case|:
 name|widget
 operator|=
-name|gimp_font_select_widget_new
+name|gimp_font_select_button_new
 argument_list|(
 name|_
 argument_list|(
@@ -2057,8 +2057,18 @@ name|i
 index|]
 operator|.
 name|sfa_font
+argument_list|)
+expr_stmt|;
+name|g_signal_connect_swapped
+argument_list|(
+name|widget
 argument_list|,
+literal|"font-set"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|script_fu_font_callback
+argument_list|)
 argument_list|,
 operator|&
 name|script
@@ -2771,7 +2781,9 @@ block|{
 case|case
 name|SF_FONT
 case|:
-name|gimp_font_select_widget_close
+name|gimp_font_select_button_close_popup
+argument_list|(
+name|GIMP_FONT_SELECT_BUTTON
 argument_list|(
 name|sf_interface
 operator|->
@@ -2779,6 +2791,7 @@ name|args_widgets
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3066,9 +3079,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_font_callback (const gchar * name,gboolean closing,gpointer data)
+DECL|function|script_fu_font_callback (gpointer data,const gchar * name,gboolean closing)
 name|script_fu_font_callback
 parameter_list|(
+name|gpointer
+name|data
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -3076,9 +3092,6 @@ name|name
 parameter_list|,
 name|gboolean
 name|closing
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|script_fu_string_update
@@ -4204,9 +4217,12 @@ break|break;
 case|case
 name|SF_FONT
 case|:
-name|gimp_font_select_widget_set
+name|gimp_font_select_button_set_font_name
+argument_list|(
+name|GIMP_FONT_SELECT_BUTTON
 argument_list|(
 name|widget
+argument_list|)
 argument_list|,
 name|script
 operator|->
