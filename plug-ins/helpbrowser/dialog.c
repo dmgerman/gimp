@@ -136,7 +136,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b137a430103
+DECL|enum|__anon2a9b1b400103
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -3639,6 +3639,9 @@ condition|(
 name|filename
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
 name|gint
 name|fd
 init|=
@@ -3653,6 +3656,22 @@ argument_list|,
 literal|0
 argument_list|)
 decl_stmt|;
+else|#
+directive|else
+name|gint
+name|fd
+init|=
+name|g_open
+argument_list|(
+name|filename
+argument_list|,
+name|O_RDONLY
+argument_list|,
+literal|0
+argument_list|)
+decl_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|fd
