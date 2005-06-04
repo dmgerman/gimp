@@ -902,7 +902,7 @@ name|combo_box
 operator|=
 name|g_object_new
 argument_list|(
-name|GIMP_TYPE_CHANNEL_COMBO_BOX
+name|GIMP_TYPE_LAYER_COMBO_BOX
 argument_list|,
 literal|"width-request"
 argument_list|,
