@@ -299,7 +299,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d700df0103
+DECL|enum|__anon2ac57cd00103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -318,7 +318,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d700df0208
+DECL|struct|__anon2ac57cd00208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -1573,6 +1573,7 @@ name|shootvals
 operator|.
 name|decorate
 condition|)
+block|{
 name|x_win
 operator|=
 name|XmuClientWindow
@@ -1582,6 +1583,7 @@ argument_list|,
 name|x_win
 argument_list|)
 expr_stmt|;
+block|}
 endif|#
 directive|endif
 name|shootvals
@@ -3378,7 +3380,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|button
+name|toggle
 argument_list|,
 literal|"toggled"
 argument_list|,
