@@ -473,7 +473,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"_Show Button Bar"
+literal|"Show _Button Bar"
 argument_list|)
 block|,
 name|NULL
