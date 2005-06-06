@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1720be0103
+DECL|enum|__anon28efbb860103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -810,9 +810,6 @@ argument_list|)
 decl_stmt|;
 name|GtkStateType
 name|state
-decl_stmt|;
-name|GdkRectangle
-name|rect
 decl_stmt|;
 name|gint
 name|width
