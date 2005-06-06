@@ -70,7 +70,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2a514ac20103
+DECL|enum|__anon29ae7db30103
 DECL|enumerator|GRID_HIDDEN
 DECL|enumerator|GRID_LINES
 DECL|enumerator|GRID_CROSSES
@@ -89,7 +89,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a514ac20208
+DECL|struct|__anon29ae7db30208
 typedef|typedef
 struct|struct
 block|{
@@ -2216,7 +2216,7 @@ block|}
 end_function
 
 begin_function
-name|gboolean
+name|void
 DECL|function|toggle_grid (void)
 name|toggle_grid
 parameter_list|(
@@ -2231,9 +2231,6 @@ expr_stmt|;
 name|redraw_preview
 argument_list|()
 expr_stmt|;
-return|return
-name|grid_snap
-return|;
 block|}
 end_function
 

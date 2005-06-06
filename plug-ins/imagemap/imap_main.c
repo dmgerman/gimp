@@ -100,12 +100,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"imap_grid.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"imap_main.h"
 end_include
 
@@ -5717,6 +5711,44 @@ end_function
 
 begin_function
 name|void
+DECL|function|do_move_to_front (void)
+name|do_move_to_front
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|command_execute
+argument_list|(
+name|move_to_front_command_new
+argument_list|(
+name|_shapes
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|do_send_to_back (void)
+name|do_send_to_back
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|command_execute
+argument_list|(
+name|send_to_back_command_new
+argument_list|(
+name|_shapes
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|do_use_gimp_guides_dialog (void)
 name|do_use_gimp_guides_dialog
 parameter_list|(
@@ -5813,44 +5845,6 @@ return|return
 name|command_new
 argument_list|(
 name|set_preview_gray
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|Command_t
-modifier|*
-DECL|function|factory_move_to_front (void)
-name|factory_move_to_front
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|move_to_front_command_new
-argument_list|(
-name|_shapes
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|Command_t
-modifier|*
-DECL|function|factory_send_to_back (void)
-name|factory_send_to_back
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|send_to_back_command_new
-argument_list|(
-name|_shapes
 argument_list|)
 return|;
 block|}

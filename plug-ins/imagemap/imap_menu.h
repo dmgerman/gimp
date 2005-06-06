@@ -29,7 +29,7 @@ file|"imap_mru.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon27a4b4640108
+DECL|struct|__anon2adc18660108
 typedef|typedef
 struct|struct
 block|{
@@ -125,6 +125,19 @@ block|}
 name|Menu_t
 typedef|;
 end_typedef
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|menu_get_widget
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|path
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|Menu_t

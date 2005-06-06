@@ -111,6 +111,10 @@ directive|include
 file|"libgimpwidgets/gimpstock.h"
 end_include
 
+begin_comment
+comment|/* Fix me: move all of these prototypes to imap_menu.h */
+end_comment
+
 begin_function_decl
 name|void
 name|save
@@ -197,6 +201,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|do_move_to_front
+parameter_list|()
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|do_send_to_back
+parameter_list|()
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|do_edit_selected_shape
 parameter_list|()
 function_decl|;
@@ -243,11 +261,35 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|ui_manager
+specifier|static
 name|GtkUIManager
 modifier|*
 name|ui_manager
 decl_stmt|;
 end_decl_stmt
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|menu_get_widget (const gchar * path)
+name|menu_get_widget
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|path
+parameter_list|)
+block|{
+return|return
+name|gtk_ui_manager_get_widget
+argument_list|(
+name|ui_manager
+argument_list|,
+name|path
+argument_list|)
+return|;
+block|}
+end_function
 
 begin_function
 specifier|static
@@ -982,7 +1024,7 @@ block|,
 block|{
 literal|"EditAreaInfo"
 block|,
-name|GTK_STOCK_PROPERTIES
+name|GTK_STOCK_EDIT
 block|,
 literal|"Edit Area Info..."
 block|,
@@ -1012,13 +1054,13 @@ literal|"MoveToFront"
 block|,
 name|IMAP_STOCK_TO_FRONT
 block|,
-name|NULL
+literal|""
 block|,
 name|NULL
 block|,
 literal|"Move to Front"
 block|,
-name|NULL
+name|do_move_to_front
 block|}
 block|,
 block|{
@@ -1026,13 +1068,13 @@ literal|"SendToBack"
 block|,
 name|IMAP_STOCK_TO_BACK
 block|,
-name|NULL
+literal|""
 block|,
 name|NULL
 block|,
 literal|"Send to Back"
 block|,
-name|NULL
+name|do_send_to_back
 block|}
 block|,
 block|{
@@ -1075,6 +1117,34 @@ block|,
 name|NULL
 block|,
 name|NULL
+block|}
+block|,
+block|{
+literal|"InsertPoint"
+block|,
+name|NULL
+block|,
+literal|"Insert Point"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|polygon_insert_point
+block|}
+block|,
+block|{
+literal|"DeletePoint"
+block|,
+name|NULL
+block|,
+literal|"Delete Point"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|polygon_delete_point
 block|}
 block|,
 block|{
@@ -1154,7 +1224,7 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+name|do_settings_dialog
 block|}
 block|,
 block|{
@@ -1293,7 +1363,7 @@ name|NULL
 block|,
 literal|"Grid"
 block|,
-name|NULL
+name|toggle_grid
 block|,
 name|FALSE
 block|}
@@ -1629,6 +1699,17 @@ literal|"<menuitem action='Cut'/>"
 literal|"<menuitem action='Copy'/>"
 literal|"</popup>"
 literal|""
+literal|"<popup name='PolygonPopupMenu'>"
+literal|"<menuitem action='InsertPoint'/>"
+literal|"<menuitem action='DeletePoint'/>"
+literal|"<menuitem action='EditAreaInfo'/>"
+literal|"<menuitem action='DeleteArea'/>"
+literal|"<menuitem action='MoveUp'/>"
+literal|"<menuitem action='MoveDown'/>"
+literal|"<menuitem action='Cut'/>"
+literal|"<menuitem action='Copy'/>"
+literal|"</popup>"
+literal|""
 literal|"<toolbar name='Toolbar'>"
 literal|"<toolitem action='Open'/>"
 literal|"<toolitem action='Save'/>"
@@ -1646,6 +1727,9 @@ literal|"<toolitem action='ZoomIn'/>"
 literal|"<toolitem action='ZoomOut'/>"
 literal|"<separator/>"
 literal|"<toolitem action='EditMapInfo'/>"
+literal|"<separator/>"
+literal|"<toolitem action='MoveToFront'/>"
+literal|"<toolitem action='SendToBack'/>"
 literal|"<separator/>"
 literal|"<toolitem action='Grid'/>"
 literal|"</toolbar>"
