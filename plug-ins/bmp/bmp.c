@@ -439,7 +439,7 @@ argument_list|(
 literal|"Windows BMP image"
 argument_list|)
 argument_list|,
-literal|"INDEXED, GRAY, RGB"
+literal|"INDEXED, GRAY, RGB*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -752,6 +752,8 @@ literal|"BMP"
 argument_list|,
 operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB
+operator||
+name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
 operator||
