@@ -64,6 +64,14 @@ name|CPU_ACCEL_X86_SSE2
 value|0x08000000
 end_define
 
+begin_define
+DECL|macro|CPU_ACCEL_X86_SSE3
+define|#
+directive|define
+name|CPU_ACCEL_X86_SSE3
+value|0x02000000
+end_define
+
 begin_comment
 comment|/* powerpc accelerations */
 end_comment
