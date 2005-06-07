@@ -127,6 +127,10 @@ name|GimpItem
 modifier|*
 name|reference_item
 decl_stmt|;
+DECL|member|select_reference
+name|gboolean
+name|select_reference
+decl_stmt|;
 DECL|member|target_horz_align_type
 name|GimpAlignmentType
 name|target_horz_align_type
