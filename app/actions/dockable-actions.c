@@ -790,11 +790,14 @@ return|return;
 block|}
 name|docked
 operator|=
+name|GIMP_DOCKED
+argument_list|(
 name|gtk_bin_get_child
 argument_list|(
 name|GTK_BIN
 argument_list|(
 name|dockable
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
