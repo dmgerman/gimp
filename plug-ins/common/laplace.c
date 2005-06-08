@@ -4,19 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* This plugin by thorsten@arch.usyd.edu.au           */
-end_comment
-
-begin_comment
-comment|/* Based on S&P's Gauss and Laplace filters              */
-end_comment
-
-begin_comment
-comment|/* updated 1/30/03:<sjburges@gimp.org>  * fixed an off-by-1 error that was causing an attempt to read a  * get_pixel_by_row at the -1'th row  */
-end_comment
-
-begin_comment
-comment|/* updated 11/04/97:    Use 8-pixel neighbourhood to create outline,    use min-max operation for local gradient,    don't use rint;    if gamma-channel: set to white if at least one colour channel is>15 */
+comment|/* This plugin by thorsten@arch.usyd.edu.au.  * Based on S&P's Gauss and Laplace filters.  */
 end_comment
 
 begin_include
@@ -438,6 +426,13 @@ name|w
 parameter_list|)
 block|{
 name|gint
+name|bpp
+init|=
+name|pixel_rgn
+operator|->
+name|bpp
+decl_stmt|;
+name|gint
 name|b
 decl_stmt|;
 if|if
@@ -446,6 +441,7 @@ name|y
 operator|<
 literal|0
 condition|)
+block|{
 name|gimp_pixel_rgn_get_row
 argument_list|(
 name|pixel_rgn
@@ -463,6 +459,7 @@ argument_list|,
 name|w
 argument_list|)
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -472,6 +469,7 @@ name|pixel_rgn
 operator|->
 name|h
 condition|)
+block|{
 name|gimp_pixel_rgn_get_row
 argument_list|(
 name|pixel_rgn
@@ -489,7 +487,9 @@ argument_list|,
 name|w
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|gimp_pixel_rgn_get_row
 argument_list|(
 name|pixel_rgn
@@ -503,6 +503,7 @@ argument_list|,
 name|w
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  Fill in edge pixels  */
 for|for
 control|(
@@ -512,8 +513,6 @@ literal|0
 init|;
 name|b
 operator|<
-name|pixel_rgn
-operator|->
 name|bpp
 condition|;
 name|b
@@ -522,15 +521,9 @@ control|)
 block|{
 name|data
 index|[
-operator|-
-operator|(
-name|int
-operator|)
-name|pixel_rgn
-operator|->
-name|bpp
-operator|+
 name|b
+operator|-
+name|bpp
 index|]
 operator|=
 name|data
@@ -542,8 +535,6 @@ name|data
 index|[
 name|w
 operator|*
-name|pixel_rgn
-operator|->
 name|bpp
 operator|+
 name|b
@@ -557,8 +548,6 @@ operator|-
 literal|1
 operator|)
 operator|*
-name|pixel_rgn
-operator|->
 name|bpp
 operator|+
 name|b
@@ -1256,6 +1245,7 @@ operator|++
 operator|=
 operator|(
 operator|(
+operator|(
 name|pr
 index|[
 name|col
@@ -1327,6 +1317,7 @@ operator|(
 literal|128
 operator|+
 name|gradient
+operator|)
 operator|)
 expr_stmt|;
 block|}
@@ -1564,6 +1555,7 @@ expr_stmt|;
 name|current
 operator|=
 operator|(
+operator|(
 name|WHITE_REGION
 argument_list|(
 name|current
@@ -1677,6 +1669,7 @@ operator|)
 argument_list|)
 else|:
 literal|0
+operator|)
 expr_stmt|;
 if|if
 condition|(
