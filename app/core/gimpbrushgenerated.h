@@ -193,9 +193,6 @@ name|aspect_ratio
 parameter_list|,
 name|gfloat
 name|angle
-parameter_list|,
-name|gboolean
-name|stingy_memory_use
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -209,9 +206,6 @@ specifier|const
 name|gchar
 modifier|*
 name|file_name
-parameter_list|,
-name|gboolean
-name|stingy_memory_use
 parameter_list|,
 name|GError
 modifier|*

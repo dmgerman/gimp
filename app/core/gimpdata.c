@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be099c30103
+DECL|enum|__anon2bb9c37c0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -112,7 +112,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be099c30203
+DECL|enum|__anon2bb9c37c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2022,21 +2022,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_duplicate:  * @data:              a #GimpData object  * @stingy_memory_use: if %TRUE, use the disk rather than RAM  *                     where possible.  *  * Creates a copy of @data, if possible.  Only the object data is  * copied:  the newly created object is not automatically given an  * object name, file name, preview, etc.  *  * Returns: the newly created copy, or %NULL if @data cannot be copied.  **/
+comment|/**  * gimp_data_duplicate:  * @data: a #GimpData object  *  * Creates a copy of @data, if possible.  Only the object data is  * copied:  the newly created object is not automatically given an  * object name, file name, preview, etc.  *  * Returns: the newly created copy, or %NULL if @data cannot be copied.  **/
 end_comment
 
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_data_duplicate (GimpData * data,gboolean stingy_memory_use)
+DECL|function|gimp_data_duplicate (GimpData * data)
 name|gimp_data_duplicate
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
-parameter_list|,
-name|gboolean
-name|stingy_memory_use
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -2067,8 +2064,6 @@ operator|->
 name|duplicate
 argument_list|(
 name|data
-argument_list|,
-name|stingy_memory_use
 argument_list|)
 return|;
 return|return

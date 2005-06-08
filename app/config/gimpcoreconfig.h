@@ -172,6 +172,7 @@ name|gchar
 modifier|*
 name|font_path_writable
 decl_stmt|;
+comment|/*  unused  */
 DECL|member|default_brush
 name|gchar
 modifier|*

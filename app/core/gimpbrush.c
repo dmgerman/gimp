@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpbaseconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbrush.h"
 end_include
 
@@ -77,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1cf5650103
+DECL|enum|__anon28f4e34e0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -1288,16 +1282,13 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_brush_new (const gchar * name,gboolean stingy_memory_use)
+DECL|function|gimp_brush_new (const gchar * name)
 name|gimp_brush_new
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|name
-parameter_list|,
-name|gboolean
-name|stingy_memory_use
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1325,8 +1316,6 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|0.0
-argument_list|,
-name|stingy_memory_use
 argument_list|)
 return|;
 block|}
@@ -1359,8 +1348,6 @@ operator|=
 name|gimp_brush_new
 argument_list|(
 literal|"Standard"
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|standard_brush

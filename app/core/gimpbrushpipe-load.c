@@ -1327,16 +1327,13 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_brush_pipe_load (const gchar * filename,gboolean stingy_memory_use,GError ** error)
+DECL|function|gimp_brush_pipe_load (const gchar * filename,GError ** error)
 name|gimp_brush_pipe_load
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-name|gboolean
-name|stingy_memory_use
 parameter_list|,
 name|GError
 modifier|*

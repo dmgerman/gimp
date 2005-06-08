@@ -42,23 +42,12 @@ decl_stmt|,
 name|y
 decl_stmt|;
 comment|/*  origin of data source                          */
-DECL|member|swapped
-name|gboolean
-name|swapped
-decl_stmt|;
-comment|/*  flag indicating whether buf is cached to disk  */
-DECL|member|filename
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
-comment|/*  filename of cached information                 */
 DECL|member|data
 name|guchar
 modifier|*
 name|data
 decl_stmt|;
-comment|/*  The data buffer. Do never access this field                             directly, use temp_buf_data() instead !!       */
+comment|/*  The data buffer. Do never access this field                           directly, use temp_buf_data() instead !!       */
 block|}
 struct|;
 end_struct
@@ -304,56 +293,6 @@ parameter_list|(
 name|MaskBuf
 modifier|*
 name|mask_buf
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/*  The disk caching functions  */
-end_comment
-
-begin_function_decl
-name|void
-name|temp_buf_swap
-parameter_list|(
-name|TempBuf
-modifier|*
-name|buf
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|temp_buf_unswap
-parameter_list|(
-name|TempBuf
-modifier|*
-name|buf
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|temp_buf_swap_free
-parameter_list|(
-name|TempBuf
-modifier|*
-name|buf
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/*  Called by app_procs:exit() to free up the cached undo buffer  */
-end_comment
-
-begin_function_decl
-name|void
-name|swapping_free
-parameter_list|(
-name|void
 parameter_list|)
 function_decl|;
 end_function_decl

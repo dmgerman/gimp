@@ -134,12 +134,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tile-cache.h"
 end_include
 
@@ -148,16 +142,6 @@ include|#
 directive|include
 file|"tile-swap.h"
 end_include
-
-begin_decl_stmt
-DECL|variable|base_config
-name|GimpBaseConfig
-modifier|*
-name|base_config
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -209,6 +193,17 @@ name|data
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_decl_stmt
+DECL|variable|base_config
+specifier|static
+name|GimpBaseConfig
+modifier|*
+name|base_config
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  public functions  */
@@ -450,9 +445,6 @@ name|NULL
 argument_list|)
 expr_stmt|;
 name|pixel_processor_exit
-argument_list|()
-expr_stmt|;
-name|swapping_free
 argument_list|()
 expr_stmt|;
 name|paint_funcs_free

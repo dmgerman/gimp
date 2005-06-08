@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpbaseconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp.h"
 end_include
 
@@ -374,23 +368,10 @@ modifier|*
 name|id
 parameter_list|)
 block|{
-name|GimpBaseConfig
-modifier|*
-name|base_config
-decl_stmt|;
 name|GimpGradient
 modifier|*
 name|gradient
 decl_stmt|;
-name|base_config
-operator|=
-name|GIMP_BASE_CONFIG
-argument_list|(
-name|gimp
-operator|->
-name|config
-argument_list|)
-expr_stmt|;
 name|gradient
 operator|=
 name|GIMP_GRADIENT
@@ -398,10 +379,6 @@ argument_list|(
 name|gimp_gradient_new
 argument_list|(
 name|name
-argument_list|,
-name|base_config
-operator|->
-name|stingy_memory_use
 argument_list|)
 argument_list|)
 expr_stmt|;

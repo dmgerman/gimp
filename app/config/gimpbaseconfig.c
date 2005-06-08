@@ -130,7 +130,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2979ee0f0103
+DECL|enum|__anon273a8e8b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -340,7 +340,7 @@ name|STINGY_MEMORY_USE_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
-name|GIMP_CONFIG_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_UINT

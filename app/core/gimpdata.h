@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b53a2e40103
+DECL|enum|__anon2b7902860103
 block|{
 DECL|enumerator|GIMP_DATA_ERROR_OPEN
 name|GIMP_DATA_ERROR_OPEN
@@ -234,9 +234,6 @@ parameter_list|(
 name|GimpData
 modifier|*
 name|data
-parameter_list|,
-name|gboolean
-name|stingy_memory_use
 parameter_list|)
 function_decl|;
 block|}
@@ -390,9 +387,6 @@ parameter_list|(
 name|GimpData
 modifier|*
 name|data
-parameter_list|,
-name|gboolean
-name|stingy_memory_use
 parameter_list|)
 function_decl|;
 end_function_decl

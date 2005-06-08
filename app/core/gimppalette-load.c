@@ -282,9 +282,6 @@ parameter_list|(
 name|GimpData
 modifier|*
 name|data
-parameter_list|,
-name|gboolean
-name|stingy_memory_use
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1362,16 +1359,13 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_palette_new (const gchar * name,gboolean stingy_memory_use)
+DECL|function|gimp_palette_new (const gchar * name)
 name|gimp_palette_new
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|name
-parameter_list|,
-name|gboolean
-name|stingy_memory_use
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1435,8 +1429,6 @@ operator|=
 name|gimp_palette_new
 argument_list|(
 literal|"Standard"
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|standard_palette
@@ -1465,16 +1457,13 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_palette_load (const gchar * filename,gboolean stingy_memory_use,GError ** error)
+DECL|function|gimp_palette_load (const gchar * filename,GError ** error)
 name|gimp_palette_load
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-name|gboolean
-name|stingy_memory_use
 parameter_list|,
 name|GError
 modifier|*
@@ -2617,15 +2606,12 @@ begin_function
 specifier|static
 name|GimpData
 modifier|*
-DECL|function|gimp_palette_duplicate (GimpData * data,gboolean stingy_memory_use)
+DECL|function|gimp_palette_duplicate (GimpData * data)
 name|gimp_palette_duplicate
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
-parameter_list|,
-name|gboolean
-name|stingy_memory_use
 parameter_list|)
 block|{
 name|GimpPalette

@@ -337,16 +337,13 @@ end_comment
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_brush_load (const gchar * filename,gboolean stingy_memory_use,GError ** error)
+DECL|function|gimp_brush_load (const gchar * filename,GError ** error)
 name|gimp_brush_load
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-name|gboolean
-name|stingy_memory_use
 parameter_list|,
 name|GError
 modifier|*
@@ -467,33 +464,6 @@ condition|)
 return|return
 name|NULL
 return|;
-comment|/*  Swap the brush to disk (if we're being stingy with memory) */
-if|if
-condition|(
-name|stingy_memory_use
-condition|)
-block|{
-name|temp_buf_swap
-argument_list|(
-name|brush
-operator|->
-name|mask
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|brush
-operator|->
-name|pixmap
-condition|)
-name|temp_buf_swap
-argument_list|(
-name|brush
-operator|->
-name|pixmap
-argument_list|)
-expr_stmt|;
-block|}
 return|return
 name|g_list_prepend
 argument_list|(
@@ -1267,7 +1237,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2959fc16010a
+DECL|union|__anon2b7bc34f010a
 block|{
 DECL|member|u
 name|guint16
@@ -1655,16 +1625,13 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_brush_load_abr (const gchar * filename,gboolean stingy_memory_use,GError ** error)
+DECL|function|gimp_brush_load_abr (const gchar * filename,GError ** error)
 name|gimp_brush_load_abr
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-name|gboolean
-name|stingy_memory_use
 parameter_list|,
 name|GError
 modifier|*
@@ -1879,18 +1846,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-comment|/*  Swap the brush to disk (if we're being stingy with memory) */
-if|if
-condition|(
-name|stingy_memory_use
-condition|)
-name|temp_buf_swap
-argument_list|(
-name|brush
-operator|->
-name|mask
-argument_list|)
-expr_stmt|;
 name|brush_list
 operator|=
 name|g_list_prepend

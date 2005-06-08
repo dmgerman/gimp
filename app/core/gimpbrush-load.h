@@ -58,9 +58,6 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gboolean
-name|stingy_memory_use
-parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -99,9 +96,6 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-name|gboolean
-name|stingy_memory_use
 parameter_list|,
 name|GError
 modifier|*
