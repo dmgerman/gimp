@@ -259,7 +259,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29918f070103
+DECL|enum|__anon28a5af8d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -928,7 +928,7 @@ name|PROP_FONT_PATH_WRITABLE
 argument_list|,
 literal|"font-path-writable"
 argument_list|,
-name|FONT_PATH_WRITABLE_BLURB
+name|NULL
 argument_list|,
 name|GIMP_CONFIG_PATH_DIR_LIST
 argument_list|,

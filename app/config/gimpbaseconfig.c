@@ -130,7 +130,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon273a8e8b0103
+DECL|enum|__anon2a0570bc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -336,7 +336,7 @@ name|PROP_STINGY_MEMORY_USE
 argument_list|,
 literal|"stingy-memory-use"
 argument_list|,
-name|STINGY_MEMORY_USE_BLURB
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|,

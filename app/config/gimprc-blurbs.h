@@ -364,14 +364,6 @@ value|"Where to look for fonts."
 end_define
 
 begin_define
-DECL|macro|FONT_PATH_WRITABLE_BLURB
-define|#
-directive|define
-name|FONT_PATH_WRITABLE_BLURB
-value|""
-end_define
-
-begin_define
 DECL|macro|HELP_BROWSER_BLURB
 define|#
 directive|define
@@ -817,15 +809,6 @@ directive|define
 name|SHOW_TOOL_TIPS_BLURB
 define|\
 value|N_("Enable to display tooltips.")
-end_define
-
-begin_define
-DECL|macro|STINGY_MEMORY_USE_BLURB
-define|#
-directive|define
-name|STINGY_MEMORY_USE_BLURB
-define|\
-value|N_("There is always a tradeoff between memory usage and speed.  In most " \    "cases, the GIMP opts for speed over memory.  However, if memory is a " \    "big issue, try to enable this setting.")
 end_define
 
 begin_define
