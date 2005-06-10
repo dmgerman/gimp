@@ -2857,6 +2857,15 @@ return|return
 name|NULL
 return|;
 block|}
+comment|/*  If there is a selection, we must add alpha because the selection    *  could have any shape.    */
+if|if
+condition|(
+name|non_empty
+condition|)
+name|add_alpha
+operator|=
+name|TRUE
+expr_stmt|;
 comment|/*  How many bytes in the temp buffer?  */
 switch|switch
 condition|(
