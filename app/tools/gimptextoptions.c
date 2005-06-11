@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b63679b0103
+DECL|enum|__anon2c76d1c30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2271,8 +2271,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_options_dir_changed (GimpTextEditor * editor,GimpTextOptions * options)
-name|gimp_text_options_dir_changed
+DECL|function|gimp_text_options_editor_dir_changed (GimpTextEditor * editor,GimpTextOptions * options)
+name|gimp_text_options_editor_dir_changed
 parameter_list|(
 name|GimpTextEditor
 modifier|*
@@ -2302,8 +2302,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_options_notify_dir (GimpTextOptions * options,GParamSpec * pspec,GimpTextEditor * editor)
-name|gimp_text_options_notify_dir
+DECL|function|gimp_text_options_editor_notify_dir (GimpTextOptions * options,GParamSpec * pspec,GimpTextEditor * editor)
+name|gimp_text_options_editor_notify_dir
 parameter_list|(
 name|GimpTextOptions
 modifier|*
@@ -2344,6 +2344,50 @@ block|}
 end_function
 
 begin_function
+specifier|static
+name|void
+DECL|function|gimp_text_options_editor_notify_font (GimpTextOptions * options,GParamSpec * pspec,GimpTextEditor * editor)
+name|gimp_text_options_editor_notify_font
+parameter_list|(
+name|GimpTextOptions
+modifier|*
+name|options
+parameter_list|,
+name|GParamSpec
+modifier|*
+name|pspec
+parameter_list|,
+name|GimpTextEditor
+modifier|*
+name|editor
+parameter_list|)
+block|{
+specifier|const
+name|gchar
+modifier|*
+name|font_name
+decl_stmt|;
+name|font_name
+operator|=
+name|gimp_context_get_font_name
+argument_list|(
+name|GIMP_CONTEXT
+argument_list|(
+name|options
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_text_editor_set_font_name
+argument_list|(
+name|editor
+argument_list|,
+name|font_name
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|GtkWidget
 modifier|*
 DECL|function|gimp_text_options_editor_new (GimpTextOptions * options,GimpMenuFactory * menu_factory,const gchar * title)
@@ -2366,6 +2410,11 @@ block|{
 name|GtkWidget
 modifier|*
 name|editor
+decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|font_name
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -2405,6 +2454,16 @@ argument_list|,
 name|menu_factory
 argument_list|)
 expr_stmt|;
+name|font_name
+operator|=
+name|gimp_context_get_font_name
+argument_list|(
+name|GIMP_CONTEXT
+argument_list|(
+name|options
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_text_editor_set_direction
 argument_list|(
 name|GIMP_TEXT_EDITOR
@@ -2417,6 +2476,16 @@ operator|->
 name|base_dir
 argument_list|)
 expr_stmt|;
+name|gimp_text_editor_set_font_name
+argument_list|(
+name|GIMP_TEXT_EDITOR
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+name|font_name
+argument_list|)
+expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
 name|editor
@@ -2425,7 +2494,7 @@ literal|"dir-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_text_options_dir_changed
+name|gimp_text_options_editor_dir_changed
 argument_list|)
 argument_list|,
 name|options
@@ -2441,7 +2510,23 @@ literal|"notify::base-direction"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_text_options_notify_dir
+name|gimp_text_options_editor_notify_dir
+argument_list|)
+argument_list|,
+name|editor
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|g_signal_connect_object
+argument_list|(
+name|options
+argument_list|,
+literal|"notify::font"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_text_options_editor_notify_font
 argument_list|)
 argument_list|,
 name|editor
