@@ -123,7 +123,7 @@ name|c
 parameter_list|,
 name|d
 parameter_list|)
-value|MIN(MIN(a,b),MIN(c,d))
+value|MIN(MIN((a),(b)),MIN((c),(d)))
 end_define
 
 begin_define
@@ -140,13 +140,13 @@ name|c
 parameter_list|,
 name|d
 parameter_list|)
-value|MAX(MAX(a,b),MAX(c,d))
+value|MAX(MAX((a),(b)),MAX((c),(d)))
 end_define
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf144760108
+DECL|struct|__anon2a31a5690108
 block|{
 DECL|member|x
 DECL|member|y
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf144760208
+DECL|struct|__anon2a31a5690208
 block|{
 DECL|member|xmin
 DECL|member|xmax
