@@ -299,7 +299,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac57cd00103
+DECL|enum|__anon2bf7873d0103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -318,7 +318,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac57cd00208
+DECL|struct|__anon2bf7873d0208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -626,18 +626,19 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-literal|"Creates a screenshot of a portion of the screen"
+literal|"Creates screenshots"
 argument_list|,
-literal|"After a user specified time out the user selects a window and "
-literal|"another time out is started. At the end of the second time out "
-literal|"the window is grabbed and the image is loaded into The GIMP. "
-literal|"Alternatively the whole screen can be grabbed. When called "
-literal|"non-interactively it may grab the root window, or use the "
-literal|"window-id passed as a parameter.  If 7 arguments are given,"
-literal|"the last four will be used as corners of the region to be"
-literal|"grabbed"
+literal|"The plug-in allows to take screenshots of a an "
+literal|"interactively selected window or of the desktop, "
+literal|"either the whole desktop or an interactively "
+literal|"selected region. When called non-interactively it "
+literal|"may grab the root window, or use the window-id "
+literal|"passed as a parameter.  If 7 arguments are given,"
+literal|"the last four will be used as corners of the region "
+literal|"to be grabbed"
 argument_list|,
-literal|"Sven Neumann<sven@gimp.org>, Henrik Brix Andersen<brix@gimp.org>"
+literal|"Sven Neumann<sven@gimp.org>, "
+literal|"Henrik Brix Andersen<brix@gimp.org>"
 argument_list|,
 literal|"1998 - 2003"
 argument_list|,
@@ -2221,7 +2222,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading Screen Shot..."
+literal|"Loading Screenshot..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2263,7 +2264,7 @@ name|image
 argument_list|,
 name|_
 argument_list|(
-literal|"Screen Shot"
+literal|"Screenshot"
 argument_list|)
 argument_list|,
 name|width
@@ -2930,14 +2931,6 @@ name|dialog
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|main_vbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|frame
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|vbox
 decl_stmt|;
 name|GtkWidget
@@ -2975,8 +2968,33 @@ modifier|*
 name|adj
 decl_stmt|;
 name|gboolean
+name|region
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
 name|run
 decl_stmt|;
+if|if
+condition|(
+name|shootvals
+operator|.
+name|shoot_type
+operator|==
+name|SHOOT_REGION
+condition|)
+block|{
+name|shootvals
+operator|.
+name|shoot_type
+operator|=
+name|SHOOT_ROOT
+expr_stmt|;
+name|region
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 name|gimp_ui_init
 argument_list|(
 literal|"screenshot"
@@ -3080,7 +3098,7 @@ name|pixbuf
 argument_list|)
 expr_stmt|;
 block|}
-name|main_vbox
+name|vbox
 operator|=
 name|gtk_vbox_new
 argument_list|(
@@ -3093,7 +3111,7 @@ name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|main_vbox
+name|vbox
 argument_list|)
 argument_list|,
 literal|12
@@ -3111,93 +3129,17 @@ operator|->
 name|vbox
 argument_list|)
 argument_list|,
-name|main_vbox
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|main_vbox
-argument_list|)
-expr_stmt|;
-name|hbox
-operator|=
-name|gtk_hbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|12
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|main_vbox
-argument_list|)
-argument_list|,
-name|hbox
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbox
-argument_list|)
-expr_stmt|;
-comment|/*  single window  */
-name|frame
-operator|=
-name|gimp_frame_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Grab"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-name|frame
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 name|vbox
-operator|=
-name|gtk_vbox_new
-argument_list|(
+argument_list|,
 name|FALSE
 argument_list|,
-literal|6
+name|FALSE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_widget_show
 argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
 name|vbox
 argument_list|)
 expr_stmt|;
@@ -3209,6 +3151,7 @@ name|radio_group
 argument_list|,
 name|_
 argument_list|(
+literal|"Take a screenshot of "
 literal|"a single _window"
 argument_list|)
 argument_list|)
@@ -3398,96 +3341,6 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* HAVE_X11_XMU_WINUTIL_H */
-comment|/*  dragged region  */
-name|button
-operator|=
-name|gtk_radio_button_new_with_mnemonic
-argument_list|(
-name|radio_group
-argument_list|,
-name|_
-argument_list|(
-literal|"the selected _region"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|radio_group
-operator|=
-name|gtk_radio_button_get_group
-argument_list|(
-name|GTK_RADIO_BUTTON
-argument_list|(
-name|button
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_toggle_button_set_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-name|shootvals
-operator|.
-name|shoot_type
-operator|==
-name|SHOOT_REGION
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|g_object_set_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"gimp-item-data"
-argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
-name|SHOOT_REGION
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|button
-argument_list|,
-literal|"toggled"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gimp_radio_button_update
-argument_list|)
-argument_list|,
-operator|&
-name|shootvals
-operator|.
-name|shoot_type
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
 comment|/*  root window  */
 name|button
 operator|=
@@ -3497,7 +3350,8 @@ name|radio_group
 argument_list|,
 name|_
 argument_list|(
-literal|"the whole _screen"
+literal|"Take a screenshot of "
+literal|"your _desktop"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3578,14 +3432,117 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
+comment|/*  dragged region  */
+name|hbox
+operator|=
+name|gtk_hbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|12
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
 argument_list|(
 name|vbox
+argument_list|)
+argument_list|,
+name|hbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|frame
+name|hbox
+argument_list|)
+expr_stmt|;
+name|toggle
+operator|=
+name|gtk_check_button_new_with_label
+argument_list|(
+name|_
+argument_list|(
+literal|"Select a region"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|toggle
+argument_list|)
+argument_list|,
+name|region
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+name|toggle
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|24
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|toggle
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|toggle
+argument_list|,
+name|_
+argument_list|(
+literal|"If enabled, you can use the mouse to "
+literal|"select a rectangular region of the "
+literal|"screen."
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+literal|"set_sensitive"
+argument_list|,
+name|toggle
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|toggle
+argument_list|,
+literal|"toggled"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
+argument_list|,
+operator|&
+name|region
 argument_list|)
 expr_stmt|;
 comment|/*  grab delay  */
@@ -3602,7 +3559,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|main_vbox
+name|vbox
 argument_list|)
 argument_list|,
 name|hbox
@@ -3625,7 +3582,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"W_ait for"
+literal|"W_ait"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3730,7 +3687,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"seconds"
+literal|"seconds before grabbing"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3755,6 +3712,20 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|spinner
+argument_list|,
+name|_
+argument_list|(
+literal|"The number of seconds to wait after "
+literal|"selecting the window or region and "
+literal|"actually taking the screenshot."
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|dialog
@@ -3773,6 +3744,22 @@ argument_list|)
 operator|==
 name|GTK_RESPONSE_OK
 operator|)
+expr_stmt|;
+if|if
+condition|(
+name|shootvals
+operator|.
+name|shoot_type
+operator|==
+name|SHOOT_ROOT
+operator|&&
+name|region
+condition|)
+name|shootvals
+operator|.
+name|shoot_type
+operator|=
+name|SHOOT_REGION
 expr_stmt|;
 if|if
 condition|(
