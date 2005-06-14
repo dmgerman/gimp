@@ -68,7 +68,7 @@ DECL|macro|FG_BG_RGB_KEY
 define|#
 directive|define
 name|FG_BG_RGB_KEY
-value|"gimp-fg-bg-rgb-gradient"
+value|"gimp-gradient-fg-bg-rgb"
 end_define
 
 begin_define
@@ -76,7 +76,7 @@ DECL|macro|FG_BG_HSV_CCW_KEY
 define|#
 directive|define
 name|FG_BG_HSV_CCW_KEY
-value|"gimp-fg-bg-hsv-ccw-gradient"
+value|"gimp-gradient-fg-bg-hsv-ccw"
 end_define
 
 begin_define
@@ -84,7 +84,7 @@ DECL|macro|FG_BG_HSV_CW_KEY
 define|#
 directive|define
 name|FG_BG_HSV_CW_KEY
-value|"gimp-fg-bg-hsv-cw-gradient"
+value|"gimp-gradient-fg-bg-hsv-cw"
 end_define
 
 begin_define
@@ -92,7 +92,7 @@ DECL|macro|FG_TRANSPARENT_KEY
 define|#
 directive|define
 name|FG_TRANSPARENT_KEY
-value|"gimp-fg-transparent-gradient"
+value|"gimp-gradient-fg-transparent"
 end_define
 
 begin_comment
