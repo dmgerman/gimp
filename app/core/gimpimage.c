@@ -276,7 +276,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b99e9890103
+DECL|enum|__anon2c5451b00103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -355,7 +355,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b99e9890203
+DECL|enum|__anon2c5451b00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -12021,30 +12021,6 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Layer is already on top."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
-if|if
-condition|(
-operator|!
-name|gimp_drawable_has_alpha
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Cannot raise a layer without alpha."
 argument_list|)
 argument_list|)
 expr_stmt|;
