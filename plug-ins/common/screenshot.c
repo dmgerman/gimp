@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  *  ScreenShot plug-in  *  Copyright 1998-2000 Sven Neumann<sven@gimp.org>  *  Copyright 2003      Henrik Brix Andersen<brix@gimp.org>  *  *  Any suggestions, bug-reports or patches are very welcome.  *  */
+comment|/*  *  Screenshot plug-in  *  Copyright 1998-2000 Sven Neumann<sven@gimp.org>  *  Copyright 2003      Henrik Brix Andersen<brix@gimp.org>  *  *  Any suggestions, bug-reports or patches are very welcome.  *  */
 end_comment
 
 begin_comment
@@ -299,7 +299,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf7873d0103
+DECL|enum|__anon2b77cf530103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -318,7 +318,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf7873d0208
+DECL|struct|__anon2b77cf530208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -352,16 +352,16 @@ DECL|member|y2
 name|gint
 name|y2
 decl_stmt|;
-DECL|typedef|ScreenShotValues
+DECL|typedef|ScreenshotValues
 block|}
-name|ScreenShotValues
+name|ScreenshotValues
 typedef|;
 end_typedef
 
 begin_decl_stmt
 DECL|variable|shootvals
 specifier|static
-name|ScreenShotValues
+name|ScreenshotValues
 name|shootvals
 init|=
 block|{
@@ -626,16 +626,16 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-literal|"Creates screenshots"
+literal|"Take a screenshot"
 argument_list|,
 literal|"The plug-in allows to take screenshots of a an "
 literal|"interactively selected window or of the desktop, "
 literal|"either the whole desktop or an interactively "
-literal|"selected region. When called non-interactively it "
-literal|"may grab the root window, or use the window-id "
-literal|"passed as a parameter.  If 7 arguments are given,"
-literal|"the last four will be used as corners of the region "
-literal|"to be grabbed"
+literal|"selected region. When called non-interactively, it "
+literal|"may grab the root window or use the window-id "
+literal|"passed as a parameter.  The last four parameters "
+literal|"are optional and can be used to specify the corners "
+literal|"of the region to be grabbed."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>, "
 literal|"Henrik Brix Andersen<brix@gimp.org>"
@@ -646,7 +646,7 @@ literal|"v0.9.7 (2003/11/15)"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Screen Shot..."
+literal|"_Screenshot..."
 argument_list|)
 argument_list|,
 name|NULL
@@ -1072,7 +1072,7 @@ name|shootvals
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|ScreenShotValues
+name|ScreenshotValues
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2538,7 +2538,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* The main ScreenShot function */
+comment|/* The main Screenshot function */
 end_comment
 
 begin_function
@@ -2882,7 +2882,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error obtaining Screen shot"
+literal|"There was an error taking the screenshot."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2910,7 +2910,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  ScreenShot dialog  */
+comment|/*  Screenshot dialog  */
 end_comment
 
 begin_function
@@ -3008,7 +3008,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Screen Shot"
+literal|"Screenshot"
 argument_list|)
 argument_list|,
 literal|"screenshot"
