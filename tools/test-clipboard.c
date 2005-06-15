@@ -1477,7 +1477,17 @@ operator|->
 name|error
 argument_list|)
 condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|option_store_filename
+condition|)
+name|gtk_main_quit
+argument_list|()
+expr_stmt|;
 return|return;
+block|}
 name|gtk_selection_data_set
 argument_list|(
 name|selection
