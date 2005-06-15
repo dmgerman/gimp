@@ -3190,6 +3190,17 @@ name|idle_id
 operator|=
 literal|0
 expr_stmt|;
+if|if
+condition|(
+name|thumb
+operator|->
+name|image_state
+operator|==
+name|GIMP_THUMB_STATE_NOT_FOUND
+condition|)
+return|return
+name|FALSE
+return|;
 switch|switch
 condition|(
 name|thumb

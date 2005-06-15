@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a447bcc0103
+DECL|enum|__anon2c3f33a70103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -2597,6 +2597,17 @@ name|size
 argument_list|)
 operator|<
 name|GIMP_THUMB_STATE_EXISTS
+condition|)
+return|return
+name|NULL
+return|;
+if|if
+condition|(
+name|thumbnail
+operator|->
+name|image_state
+operator|==
+name|GIMP_THUMB_STATE_NOT_FOUND
 condition|)
 return|return
 name|NULL
