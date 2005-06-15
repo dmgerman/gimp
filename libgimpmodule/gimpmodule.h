@@ -53,7 +53,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2881e3650103
+DECL|enum|__anon2c3a869b0103
 block|{
 DECL|enumerator|GIMP_MODULE_STATE_ERROR
 name|GIMP_MODULE_STATE_ERROR
@@ -432,9 +432,11 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  supplement for missing GTypeModule API  */
-end_comment
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
 
 begin_function_decl
 name|GType
@@ -456,6 +458,15 @@ name|const_static_values
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
 
 begin_comment
 comment|/*  GimpModuleInfo functions  */

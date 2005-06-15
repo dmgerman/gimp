@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27de1d1a0103
+DECL|enum|__anon2a2a89780103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -1399,7 +1399,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_register_enum:  * @module:  * @name:  * @const_static_values:  *  * Registers an enum similar to g_enum_register_static() but for  * modules. This function should actually live in GLib but since  * there's no such API, it is provided here.  *  * Return value: a new enum #GType  **/
+comment|/**  * gimp_module_register_enum:  * @module:  * @name:  * @const_static_values:  *  * This function is deprecated! Use g_type_module_register_enum() instead.  *  * Return value: a new enum #GType  **/
 end_comment
 
 begin_function
@@ -1422,67 +1422,14 @@ modifier|*
 name|const_static_values
 parameter_list|)
 block|{
-name|GTypeInfo
-name|enum_type_info
-init|=
-block|{
-literal|0
-block|, }
-decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|G_IS_TYPE_MODULE
-argument_list|(
-name|module
-argument_list|)
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|name
-operator|!=
-name|NULL
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|const_static_values
-operator|!=
-name|NULL
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|g_enum_complete_type_info
-argument_list|(
-name|G_TYPE_ENUM
-argument_list|,
-operator|&
-name|enum_type_info
-argument_list|,
-name|const_static_values
-argument_list|)
-expr_stmt|;
 return|return
-name|g_type_module_register_type
-argument_list|(
-name|G_TYPE_MODULE
+name|g_type_module_register_enum
 argument_list|(
 name|module
-argument_list|)
-argument_list|,
-name|G_TYPE_ENUM
 argument_list|,
 name|name
 argument_list|,
-operator|&
-name|enum_type_info
-argument_list|,
-literal|0
+name|const_static_values
 argument_list|)
 return|;
 block|}

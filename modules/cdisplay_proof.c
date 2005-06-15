@@ -323,7 +323,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c1c1070103
+DECL|enum|__anon29f51c920103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -697,7 +697,7 @@ condition|)
 block|{
 name|cdisplay_proof_intent_type
 operator|=
-name|gimp_module_register_enum
+name|g_type_module_register_enum
 argument_list|(
 name|module
 argument_list|,
