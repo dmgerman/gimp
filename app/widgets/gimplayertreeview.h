@@ -123,11 +123,6 @@ name|GtkAdjustment
 modifier|*
 name|opacity_adjustment
 decl_stmt|;
-DECL|member|anchor_button
-name|GtkWidget
-modifier|*
-name|anchor_button
-decl_stmt|;
 DECL|member|model_column_mask
 name|gint
 name|model_column_mask

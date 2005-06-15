@@ -1774,6 +1774,10 @@ name|GimpLayerTreeView
 modifier|*
 name|layer_view
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|button
+decl_stmt|;
 name|GObject
 modifier|*
 name|object
@@ -1985,9 +1989,7 @@ operator|->
 name|edit_button
 argument_list|)
 expr_stmt|;
-name|layer_view
-operator|->
-name|anchor_button
+name|button
 operator|=
 name|gimp_editor_add_action_button
 argument_list|(
@@ -2012,9 +2014,7 @@ argument_list|)
 argument_list|,
 name|GTK_BUTTON
 argument_list|(
-name|layer_view
-operator|->
-name|anchor_button
+name|button
 argument_list|)
 argument_list|,
 name|GIMP_TYPE_LAYER
@@ -2032,9 +2032,7 @@ operator|->
 name|button_box
 argument_list|)
 argument_list|,
-name|layer_view
-operator|->
-name|anchor_button
+name|button
 argument_list|,
 literal|5
 argument_list|)
