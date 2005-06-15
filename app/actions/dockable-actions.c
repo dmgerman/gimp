@@ -1004,6 +1004,15 @@ name|sensitive
 parameter_list|)
 define|\
 value|gimp_action_group_set_action_sensitive (group, action, (sensitive) != 0)
+name|SET_SENSITIVE
+argument_list|(
+literal|"dockable-detach-tab"
+argument_list|,
+name|n_pages
+operator|>
+literal|1
+argument_list|)
+expr_stmt|;
 name|SET_VISIBLE
 argument_list|(
 literal|"dockable-preview-size-menu"
