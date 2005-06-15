@@ -423,7 +423,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Do_n't save"
+literal|"Do_n't Save"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CLOSE
