@@ -415,7 +415,7 @@ name|GIMP_STOCK_RESET
 block|,
 name|N_
 argument_list|(
-literal|"Reset all _Filters..."
+literal|"Reset all _Filters"
 argument_list|)
 block|,
 name|NULL

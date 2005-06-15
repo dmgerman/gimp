@@ -280,7 +280,7 @@ name|GIMP_STOCK_RESET
 block|,
 name|N_
 argument_list|(
-literal|"Reset _all Tool Options..."
+literal|"Reset _all Tool Options"
 argument_list|)
 block|,
 literal|""
