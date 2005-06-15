@@ -1800,8 +1800,19 @@ return|return;
 block|}
 name|input_dialog
 operator|=
-name|gtk_input_dialog_new
-argument_list|()
+name|g_object_new
+argument_list|(
+name|GTK_TYPE_INPUT_DIALOG
+argument_list|,
+literal|"title"
+argument_list|,
+name|_
+argument_list|(
+literal|"Configure Input Devices"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|g_object_add_weak_pointer
 argument_list|(
@@ -8468,7 +8479,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b3346300108
+DECL|struct|__anon2ab0ddc20108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9621,7 +9632,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b3346300208
+DECL|struct|__anon2ab0ddc20208
 block|{
 DECL|member|label
 specifier|const
@@ -10452,7 +10463,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b3346300308
+DECL|struct|__anon2ab0ddc20308
 block|{
 DECL|member|label
 specifier|const
@@ -10609,7 +10620,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b3346300408
+DECL|struct|__anon2ab0ddc20408
 block|{
 DECL|member|tree_label
 specifier|const
