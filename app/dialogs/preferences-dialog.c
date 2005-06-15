@@ -8479,7 +8479,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2ab0ddc20108
+DECL|struct|__anon299f60ed0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9632,7 +9632,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ab0ddc20208
+DECL|struct|__anon299f60ed0208
 block|{
 DECL|member|label
 specifier|const
@@ -9660,7 +9660,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"_RGB Profile:"
+literal|"_RGB profile:"
 argument_list|)
 block|,
 name|N_
@@ -9674,7 +9674,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"_CMYK Profile:"
+literal|"_CMYK profile:"
 argument_list|)
 block|,
 name|N_
@@ -9688,7 +9688,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"_Monitor Profile:"
+literal|"_Monitor profile:"
 argument_list|)
 block|,
 name|N_
@@ -9702,7 +9702,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"_Printer Profile:"
+literal|"_Printer profile:"
 argument_list|)
 block|,
 name|N_
@@ -9767,7 +9767,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Display Rendering Intent:"
+literal|"_Display rendering intent:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -9792,7 +9792,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Softproof Rendering Intent:"
+literal|"_Softproof rendering intent:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -10463,7 +10463,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ab0ddc20308
+DECL|struct|__anon299f60ed0308
 block|{
 DECL|member|label
 specifier|const
@@ -10620,7 +10620,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ab0ddc20408
+DECL|struct|__anon299f60ed0408
 block|{
 DECL|member|tree_label
 specifier|const
