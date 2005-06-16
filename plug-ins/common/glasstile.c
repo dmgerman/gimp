@@ -44,7 +44,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be38da50108
+DECL|struct|__anon27e748f70108
 block|{
 DECL|member|xblock
 name|gint
@@ -72,7 +72,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be38da50208
+DECL|struct|__anon27e748f70208
 block|{
 DECL|member|gval
 name|GlassValues
@@ -354,7 +354,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_glasstile"
 argument_list|,
-literal|"<Image>/Filters/Glass Effects"
+literal|"<Image>/Filters/Light Effects/Glass"
 argument_list|)
 expr_stmt|;
 block|}

@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c06953c0108
+DECL|struct|__anon29771abe0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -95,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c06953c0208
+DECL|struct|__anon29771abe0208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -528,7 +528,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_nova"
 argument_list|,
-literal|"<Image>/Filters/Light Effects"
+literal|"<Image>/Filters/Light Effects/Light"
 argument_list|)
 expr_stmt|;
 block|}

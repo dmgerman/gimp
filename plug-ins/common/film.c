@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9d2c6f0108
+DECL|struct|__anon28e219140108
 block|{
 DECL|member|film_height
 name|gint
@@ -188,7 +188,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9d2c6f0208
+DECL|struct|__anon28e219140208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -885,7 +885,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Film..."
+literal|"_Filmstrip..."
 argument_list|)
 argument_list|,
 literal|"INDEXED*, GRAY*, RGB*"
@@ -5363,7 +5363,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Film"
+literal|"Filmstrip"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6279,7 +6279,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"All Values are Fractions of the Film Height"
+literal|"All Values are Fractions of the Strip Height"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7037,7 +7037,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Film"
+literal|"Filmstrip"
 argument_list|)
 argument_list|,
 literal|"film"

@@ -44,7 +44,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a065ce0108
+DECL|struct|__anon291e6c120108
 block|{
 DECL|member|posx
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a065ce0208
+DECL|struct|__anon291e6c120208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -776,7 +776,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_flarefx"
 argument_list|,
-literal|"<Image>/Filters/Light Effects"
+literal|"<Image>/Filters/Light Effects/Light"
 argument_list|)
 expr_stmt|;
 block|}

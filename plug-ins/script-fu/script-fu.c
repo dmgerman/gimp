@@ -894,17 +894,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Image>"
-argument_list|,
-name|N_
-argument_list|(
-literal|"S_cript-Fu"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_branch_register
-argument_list|(
-literal|"<Image>/Script-Fu"
+literal|"<Image>/Filters"
 argument_list|,
 name|N_
 argument_list|(
@@ -914,7 +904,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Image>/Script-Fu"
+literal|"<Image>/Filters"
 argument_list|,
 name|N_
 argument_list|(
@@ -924,7 +914,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Image>/Script-Fu"
+literal|"<Image>/Filters/Animation"
 argument_list|,
 name|N_
 argument_list|(
@@ -934,7 +924,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Image>/Script-Fu"
+literal|"<Image>/Filters"
 argument_list|,
 name|N_
 argument_list|(
@@ -944,7 +934,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Image>/Script-Fu"
+literal|"<Image>/Filters"
 argument_list|,
 name|N_
 argument_list|(
@@ -954,7 +944,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Image>/Script-Fu"
+literal|"<Image>/Filters"
 argument_list|,
 name|N_
 argument_list|(
@@ -964,7 +954,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Image>/Script-Fu"
+literal|"<Image>/Filters"
 argument_list|,
 name|N_
 argument_list|(
@@ -974,7 +964,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Image>/Script-Fu"
+literal|"<Image>/Filters/Decor"
 argument_list|,
 name|N_
 argument_list|(
@@ -984,7 +974,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Image>/Script-Fu"
+literal|"<Image>/Filters"
 argument_list|,
 name|N_
 argument_list|(
