@@ -651,6 +651,10 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
+name|gchar
+modifier|*
+name|tmp
+decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"gee_zoom"
@@ -711,17 +715,31 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|tmp
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"An obsolete creation by %s"
+argument_list|)
+argument_list|,
+literal|"Adam D. Moss / adam@gimp.org / adam@foxbox.org "
+literal|"/ 1998-2000"
+argument_list|)
+expr_stmt|;
 name|gimp_help_set_help_data
 argument_list|(
 name|button
 argument_list|,
-name|_
-argument_list|(
-literal|"An obsolete creation of Adam D. Moss / "
-literal|"adam@gimp.org / adam@foxbox.org / 1998-2000"
-argument_list|)
+name|tmp
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|tmp
 argument_list|)
 expr_stmt|;
 comment|/* The 'fun' half of the dialog */
