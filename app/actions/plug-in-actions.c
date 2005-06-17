@@ -398,17 +398,6 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"plug-in-toys-menu"
-block|,
-name|NULL
-block|,
-name|N_
-argument_list|(
-literal|"To_ys"
-argument_list|)
-block|}
-block|,
-block|{
 literal|"plug-in-reset-all"
 block|,
 name|GIMP_STOCK_RESET

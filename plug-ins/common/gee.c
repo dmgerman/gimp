@@ -383,7 +383,7 @@ literal|"2000"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Gee-_Slime"
+literal|"Gee Slime"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -400,13 +400,6 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-literal|"plug_in_the_slimy_egg"
-argument_list|,
-literal|"<Image>/Filters/Toys"
 argument_list|)
 expr_stmt|;
 block|}
@@ -598,7 +591,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"GEE-SLIME"
+literal|"Gee Slime"
 argument_list|)
 argument_list|,
 literal|"gee"
@@ -651,7 +644,7 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"A less-obsolete creation of Adam D. Moss / "
+literal|"A less obsolete creation of Adam D. Moss / "
 literal|"adam@gimp.org / adam@foxbox.org / 1998-2000"
 argument_list|)
 argument_list|,

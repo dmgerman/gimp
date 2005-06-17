@@ -446,7 +446,7 @@ literal|"1998"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Gee-_Zoom"
+literal|"Gee Zoom"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -463,13 +463,6 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-literal|"plug_in_the_old_egg"
-argument_list|,
-literal|"<Image>/Filters/Toys"
 argument_list|)
 expr_stmt|;
 block|}
@@ -671,7 +664,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"GEE-ZOOM"
+literal|"Gee Zoom"
 argument_list|)
 argument_list|,
 literal|"gee_zoom"
