@@ -10046,7 +10046,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|extract_from_region (PixelRegion * src,PixelRegion * dest,PixelRegion * mask,guchar * cmap,guchar * bg,gint type,gboolean has_alpha,gboolean cut)
+DECL|function|extract_from_region (PixelRegion * src,PixelRegion * dest,PixelRegion * mask,const guchar * cmap,const guchar * bg,GimpImageBaseType type,gboolean has_alpha,gboolean cut)
 name|extract_from_region
 parameter_list|(
 name|PixelRegion
@@ -10061,15 +10061,17 @@ name|PixelRegion
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|cmap
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|bg
 parameter_list|,
-name|gint
+name|GimpImageBaseType
 name|type
 parameter_list|,
 name|gboolean
@@ -10165,13 +10167,11 @@ name|type
 condition|)
 block|{
 case|case
-literal|0
+name|GIMP_RGB
 case|:
-comment|/*  RGB      */
 case|case
-literal|1
+name|GIMP_GRAY
 case|:
-comment|/*  GRAY     */
 name|extract_from_inten_pixels
 argument_list|(
 name|s
@@ -10197,9 +10197,8 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-literal|2
+name|GIMP_INDEXED
 case|:
-comment|/*  INDEXED  */
 name|extract_from_indexed_pixels
 argument_list|(
 name|s
